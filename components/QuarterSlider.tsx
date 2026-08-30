@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 interface Props {
   quarters: string[];
@@ -8,10 +8,9 @@ interface Props {
   onChange: (q: string) => void;
 }
 
-// Slider along the bottom. Drag, ‹ › buttons or arrow keys step, ▸ or space plays.
+// Slider along the bottom. Drag, ‹ › buttons or arrow keys step.
 export function QuarterSlider({ quarters, q, onChange }: Props) {
   const idx = Math.max(0, quarters.indexOf(q));
-  const [playing, setPlaying] = useState(false);
   const idxRef = useRef(idx);
   idxRef.current = idx;
 
@@ -25,25 +24,11 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
       if ((e.target as HTMLElement)?.tagName === "INPUT" && (e.target as HTMLInputElement).type !== "range") return;
       if (e.key === "ArrowLeft") step(-1);
       if (e.key === "ArrowRight") step(1);
-      if (e.key === " ") {
-        e.preventDefault();
-        setPlaying((p) => !p);
-      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quarters, onChange]);
-
-  useEffect(() => {
-    if (!playing) return;
-    if (idxRef.current >= quarters.length - 1) onChange(quarters[0]);
-    const t = setInterval(() => {
-      if (idxRef.current >= quarters.length - 1) return setPlaying(false);
-      onChange(quarters[idxRef.current + 1]);
-    }, 700);
-    return () => clearInterval(t);
-  }, [playing, quarters, onChange]);
 
   const pct = quarters.length > 1 ? (idx / (quarters.length - 1)) * 100 : 0;
   const years = quarters.filter((x) => x.endsWith("Q1") || x === quarters[0]).map((x) => ({ y: x.slice(0, 4), i: quarters.indexOf(x) }));
@@ -55,9 +40,6 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
       <div className="absolute bottom-2 right-2 top-2 flex items-center">
         <button type="button" className={btn} onClick={() => step(-1)} aria-label="Previous quarter" title="previous quarter (←)">
           ‹
-        </button>
-        <button type="button" className={btn} onClick={() => setPlaying((p) => !p)} aria-label="Play" title="play through time (space)">
-          {playing ? "❚❚" : "▸"}
         </button>
         <button type="button" className={btn} onClick={() => step(1)} aria-label="Next quarter" title="next quarter (→)">
           ›

@@ -36,7 +36,10 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
         />
         <div className="pointer-events-none absolute top-[19px] h-px w-full bg-ink/40" />
         <div className="pointer-events-none absolute top-[15px] h-[9px] w-[2px] -translate-x-1/2 bg-ink" style={{ left: `${pct}%` }} />
-        <div className="pointer-events-none absolute top-[24px] -translate-x-1/2 text-[11px] leading-none" style={{ left: `${pct}%` }}>
+        <div
+          className="pointer-events-none absolute top-[24px] whitespace-nowrap text-[11px] leading-none"
+          style={{ left: `clamp(0px, calc(${pct}% - 24px), calc(100% - 48px))` }}
+        >
           {q}
         </div>
       </div>

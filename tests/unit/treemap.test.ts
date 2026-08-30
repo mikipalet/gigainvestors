@@ -30,7 +30,7 @@ describe("format", () => {
     expect(formatMoney(4.24e9)).toBe("$4.2B");
     expect(formatMoney(1.92e8)).toBe("$192M");
     expect(formatDelta(110, 100)).toBe("+10%");
-    expect(formatDelta(95, 100)).toBe("-5.0%");
+    expect(formatDelta(95, 100)).toBe("−5.0%");
     expect(formatDelta(1, undefined)).toBeNull();
   });
 });

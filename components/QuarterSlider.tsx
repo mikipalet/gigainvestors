@@ -35,7 +35,9 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
   }, [quarters, onChange]);
 
   const pct = quarters.length > 1 ? (idx / (quarters.length - 1)) * 100 : 0;
-  const years = quarters.filter((x) => x.endsWith("Q1") || x === quarters[0]).map((x) => ({ y: x.slice(0, 4), i: quarters.indexOf(x) }));
+  const q1s = quarters.filter((x) => x.endsWith("Q1"));
+  const firstQ1Idx = q1s.length ? quarters.indexOf(q1s[0]) : quarters.length;
+  const years = (firstQ1Idx >= 4 ? [quarters[0], ...q1s] : q1s).map((x) => ({ y: x.slice(0, 4), i: quarters.indexOf(x) }));
 
   const btn = "h-8 w-8 text-[15px] leading-none transition-opacity";
 

@@ -3,11 +3,15 @@
 :root {
   --ink: #111111;
   --paper: #f4f2ec;
+  --buy: #257a4a;
+  --sell: #bf3b2b;
 }
 
 @theme inline {
   --color-ink: var(--ink);
   --color-paper: var(--paper);
+  --color-buy: var(--buy);
+  --color-sell: var(--sell);
   --font-sans: var(--font-inter), system-ui, sans-serif;
 }
 
@@ -47,25 +51,30 @@ body {
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 6px,
-    color-mix(in oklab, var(--ink) 22%, transparent) 6px 7px
+    color-mix(in oklab, var(--sell) 45%, transparent) 6px 7px
   );
 }
 
 .ghost {
   box-shadow: none;
-  outline: 1.5px dashed var(--ink);
+  outline: 1.5px dashed var(--sell);
   outline-offset: -2px;
   background: transparent;
 }
 
 .add {
-  background: color-mix(in oklab, var(--ink) 9%, var(--paper));
+  background: color-mix(in oklab, var(--buy) 14%, var(--paper));
+}
+
+.buy-solid {
+  background: var(--buy);
+  color: var(--paper);
 }
 
 .hatch-light {
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 9px,
-    color-mix(in oklab, var(--ink) 14%, transparent) 9px 10px
+    color-mix(in oklab, var(--sell) 30%, transparent) 9px 10px
   );
 }

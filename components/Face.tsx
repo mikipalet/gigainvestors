@@ -8,9 +8,9 @@ interface Props {
 export function Face({ slug, size, priority, className }: Props) {
   return (
     <picture className={`pointer-events-none block h-full w-full ${className ?? ""}`}>
-      <source type="image/avif" srcSet={`/faces/${slug}-${size}.avif`} />
+      <source type="image/avif" srcSet={`/faces/v2/${slug}-${size}.avif`} />
       <img
-        src={`/faces/${slug}-${size}.webp`}
+        src={`/faces/v2/${slug}-${size}.webp`}
         alt=""
         loading={priority ? "eager" : "lazy"}
         decoding="async"

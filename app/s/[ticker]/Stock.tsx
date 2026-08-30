@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { ChangeBadge, effectiveActivity } from "@/components/ChangeBadge";
+import { effectiveActivity } from "@/components/ChangeBadge";
 import { HolderTile, type HolderTileData } from "@/components/HolderTile";
 import { QuarterSlider } from "@/components/QuarterSlider";
+import { Sparkline } from "@/components/Sparkline";
 import { Treemap, type Frame } from "@/components/Treemap";
 import { formatDelta, formatMoney, formatPct } from "@/lib/format";
 import { prevQ } from "@/lib/quarters";
@@ -36,15 +37,25 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
     return out;
   }, [stock, investors]);
 
+  const conviction = useMemo(() => stock.quarters.map((x) => x.holders.filter((h) => h.activity !== "sold").reduce((s, h) => s + h.value, 0)), [stock]);
+
+  const longestHolder = useMemo(() => {
+    const liveNow = new Set(stock.quarters[stock.quarters.length - 1].holders.filter((h) => h.activity !== "sold").map((h) => h.code));
+    for (const quarter of stock.quarters) {
+      const hit = quarter.holders.find((h) => liveNow.has(h.code) && investors[h.code]);
+      if (hit) return { person: investors[hit.code].person, since: quarter.q.slice(0, 4) };
+    }
+    return null;
+  }, [stock, investors]);
+
   const live = current.holders.filter((h) => h.activity !== "sold");
   const total = live.reduce((s, h) => s + h.value, 0);
   const totalBefore = before?.holders.filter((h) => h.activity !== "sold").reduce((s, h) => s + h.value, 0);
   const normalized = current.holders.map((h) => ({ ...h, activity: effectiveActivity(h.activity, h.change) }));
   const buying = normalized.filter((h) => h.activity === "new" || h.activity === "add").length;
   const selling = normalized.filter((h) => h.activity === "reduce" || h.activity === "sold").length;
-  const movers = normalized
-    .filter((h) => h.activity !== "hold")
-    .sort((a, b) => (b.activity === "sold" ? b.value : Math.abs((b.change ?? 100) / 100) * b.value) - (a.activity === "sold" ? a.value : Math.abs((a.change ?? 100) / 100) * a.value));
+  const top = live[0] && investors[live[0].code] ? { person: investors[live[0].code].person, money: formatMoney(live[0].value) } : null;
+  const qIndex = quarters.indexOf(current.q);
 
   return (
     <>
@@ -53,7 +64,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
           <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] opacity-50 hover:opacity-100">
             ←
           </Link>
-          <div className="mt-6 text-[13px] leading-snug">
+          <div className="mt-6 min-h-0 flex-1 text-[13px] leading-snug">
             <div className="text-[34px] font-semibold leading-none">{stock.ticker}</div>
             <div className="mt-1 opacity-55">{stock.name}</div>
             <div className="mt-5 flex items-baseline gap-2">
@@ -61,25 +72,30 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
               {formatDelta(total, totalBefore) && <span className="opacity-55">{formatDelta(total, totalBefore)}</span>}
             </div>
             <div className="opacity-55">held by {live.length} superinvestors · {current.q}</div>
-            <div className="mt-3 flex gap-4">
-              <span>
-                <span className="font-semibold">{buying}</span> <span className="opacity-55">buying</span>
+            <div className="mt-2 flex gap-4">
+              <span className="text-buy">
+                <span className="font-semibold">{buying}</span> buying
               </span>
-              <span>
-                <span className="font-semibold">{selling}</span> <span className="opacity-55">selling</span>
+              <span className="text-sell">
+                <span className="font-semibold">{selling}</span> selling
               </span>
             </div>
+            {top && (
+              <div className="mt-4 text-[12px] opacity-55">
+                top holder {top.person} · {top.money}
+              </div>
+            )}
           </div>
-          <div className="mt-5 min-h-0 flex-1 overflow-y-auto text-[12px] leading-snug">
-            {movers.map((h) => (
-              <Link key={h.code} href={`/${h.code}?q=${encodeURIComponent(q)}`} className="flex items-center gap-2 py-[3px] hover:opacity-70">
-                <span className="w-[4.2em] shrink-0">
-                  <ChangeBadge activity={h.activity} change={h.change} size={11} />
+          <div className="mt-4">
+            <Sparkline values={conviction} index={qIndex} onSeek={(i) => setQ(quarters[i])} ariaLabel="Superinvestor holdings over time" />
+            <div className="mt-1 flex justify-between text-[11px] opacity-45">
+              <span>{quarters[0]}</span>
+              {longestHolder && (
+                <span>
+                  {longestHolder.person} holds since {longestHolder.since}
                 </span>
-                <span className={`truncate font-semibold ${h.activity === "sold" ? "line-through opacity-60" : ""}`}>{investors[h.code]?.person ?? h.code}</span>
-                <span className="ml-auto shrink-0 opacity-50">{formatMoney(h.value)}</span>
-              </Link>
-            ))}
+              )}
+            </div>
           </div>
         </aside>
         <Treemap frames={frames} q={current.q} className="h-full flex-1" render={(d, tier, rect) => <HolderTile d={d} tier={tier} rect={rect} q={q} />} />

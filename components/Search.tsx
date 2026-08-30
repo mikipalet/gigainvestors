@@ -79,9 +79,9 @@ export function Search() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Search"
-        className="fixed right-4 top-3 z-40 h-7 w-7 rounded-full text-[13px] opacity-40 transition-opacity hover:opacity-100"
+        className="fixed right-3 top-3 z-40 rounded-[3px] px-2 py-1 text-[12px] opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
       >
-        /
+        search <span className="ml-1 opacity-60">/</span>
       </button>
       {open && (
         <div className="fixed inset-0 z-50 flex items-start justify-center bg-paper/85 pt-[18vh] backdrop-blur-[2px]" onMouseDown={() => setOpen(false)}>

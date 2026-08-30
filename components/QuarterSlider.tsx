@@ -8,18 +8,23 @@ interface Props {
   onChange: (q: string) => void;
 }
 
-// Slider along the bottom. Arrow keys step, space plays through time.
+// Slider along the bottom. Drag, ‹ › buttons or arrow keys step, ▸ or space plays.
 export function QuarterSlider({ quarters, q, onChange }: Props) {
   const idx = Math.max(0, quarters.indexOf(q));
   const [playing, setPlaying] = useState(false);
   const idxRef = useRef(idx);
   idxRef.current = idx;
 
+  const step = (d: number) => {
+    const n = idxRef.current + d;
+    if (n >= 0 && n < quarters.length) onChange(quarters[n]);
+  };
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement)?.tagName === "INPUT" && (e.target as HTMLInputElement).type !== "range") return;
-      if (e.key === "ArrowLeft" && idxRef.current > 0) onChange(quarters[idxRef.current - 1]);
-      if (e.key === "ArrowRight" && idxRef.current < quarters.length - 1) onChange(quarters[idxRef.current + 1]);
+      if (e.key === "ArrowLeft") step(-1);
+      if (e.key === "ArrowRight") step(1);
       if (e.key === " ") {
         e.preventDefault();
         setPlaying((p) => !p);
@@ -27,12 +32,12 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quarters, onChange]);
 
   useEffect(() => {
     if (!playing) return;
-    const start = idxRef.current >= quarters.length - 1 ? 0 : idxRef.current;
-    onChange(quarters[start]);
+    if (idxRef.current >= quarters.length - 1) onChange(quarters[0]);
     const t = setInterval(() => {
       if (idxRef.current >= quarters.length - 1) return setPlaying(false);
       onChange(quarters[idxRef.current + 1]);
@@ -43,9 +48,22 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
   const pct = quarters.length > 1 ? (idx / (quarters.length - 1)) * 100 : 0;
   const years = quarters.filter((x) => x.endsWith("Q1") || x === quarters[0]).map((x) => ({ y: x.slice(0, 4), i: quarters.indexOf(x) }));
 
+  const btn = "h-8 w-8 text-[15px] leading-none opacity-45 transition-opacity hover:opacity-100";
+
   return (
     <div className="fixed inset-x-0 bottom-0 h-12 select-none bg-paper">
-      <div className="relative mx-5 h-full">
+      <div className="absolute bottom-2 right-2 top-2 flex items-center">
+        <button type="button" className={btn} onClick={() => step(-1)} aria-label="Previous quarter" title="previous quarter (←)">
+          ‹
+        </button>
+        <button type="button" className={btn} onClick={() => setPlaying((p) => !p)} aria-label="Play" title="play through time (space)">
+          {playing ? "❚❚" : "▸"}
+        </button>
+        <button type="button" className={btn} onClick={() => step(1)} aria-label="Next quarter" title="next quarter (→)">
+          ›
+        </button>
+      </div>
+      <div className="relative ml-5 mr-[120px] h-full">
         <input
           type="range"
           min={0}
@@ -69,7 +87,6 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
           style={{ left: `clamp(0px, calc(${pct}% - 26px), calc(100% - 52px))` }}
         >
           {q}
-          {playing && <span className="ml-1 opacity-50">▶</span>}
         </div>
       </div>
       <style>{`

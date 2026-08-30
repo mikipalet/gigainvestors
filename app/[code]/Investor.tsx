@@ -2,14 +2,15 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { ChangeBadge, effectiveActivity } from "@/components/ChangeBadge";
+import { effectiveActivity } from "@/components/ChangeBadge";
 import { Face } from "@/components/Face";
 import { PositionTile, type PositionTileData } from "@/components/PositionTile";
 import { QuarterSlider } from "@/components/QuarterSlider";
+import { Sparkline } from "@/components/Sparkline";
 import { Treemap, type Frame } from "@/components/Treemap";
 import { formatDelta, formatMoney, formatPct } from "@/lib/format";
 import { prevQ } from "@/lib/quarters";
-import type { InvestorData, Position } from "@/lib/types";
+import type { InvestorData } from "@/lib/types";
 import { useQuarter } from "@/lib/use-quarter";
 
 interface Props {
@@ -17,8 +18,6 @@ interface Props {
   slug: string;
   sketch: boolean;
 }
-
-const moveWeight = (p: Position) => (p.activity === "sold" ? p.value : Math.abs((p.change ?? 0) / 100) * p.value || p.value);
 
 export function Investor({ data, slug, sketch }: Props) {
   const quarters = useMemo(() => data.quarters.map((x) => x.q), [data]);
@@ -38,12 +37,23 @@ export function Investor({ data, slug, sketch }: Props) {
     return out;
   }, [data]);
 
+  const longestHeld = useMemo(() => {
+    const liveNow = new Set(data.quarters[data.quarters.length - 1].positions.filter((p) => p.activity !== "sold").map((p) => p.ticker));
+    for (const quarter of data.quarters) {
+      const hit = quarter.positions.find((p) => liveNow.has(p.ticker));
+      if (hit) return { ticker: hit.ticker, since: quarter.q.slice(0, 4) };
+    }
+    return null;
+  }, [data]);
+
   const live = current.positions.filter((p) => p.activity !== "sold");
-  const moves = current.positions
-    .map((p) => ({ ...p, activity: effectiveActivity(p.activity, p.change) }))
-    .filter((p) => p.activity !== "hold")
-    .sort((a, b) => moveWeight(b) - moveWeight(a));
+  const counts = current.positions.reduce(
+    (a, p) => ((a[effectiveActivity(p.activity, p.change)] += 1), a),
+    { new: 0, add: 0, reduce: 0, sold: 0, hold: 0 } as Record<string, number>,
+  );
   const delta = formatDelta(current.total, before?.total);
+  const totals = useMemo(() => data.quarters.map((x) => x.total), [data]);
+  const qIndex = quarters.indexOf(current.q);
 
   return (
     <>
@@ -52,7 +62,7 @@ export function Investor({ data, slug, sketch }: Props) {
           <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] opacity-50 hover:opacity-100">
             ←
           </Link>
-          <div className="relative mt-3 h-[38vh] shrink-0">{sketch && <Face slug={slug} size={1200} priority className="[&_img]:object-left-bottom" />}</div>
+          <div className="relative mt-3 min-h-0 flex-1">{sketch && <Face slug={slug} size={1200} priority className="[&_img]:object-left-bottom" />}</div>
           <div className="mt-4 text-[13px] leading-snug">
             <div className="text-[17px] font-semibold">{data.person}</div>
             <div className="opacity-55">{data.firm}</div>
@@ -63,19 +73,23 @@ export function Investor({ data, slug, sketch }: Props) {
             <div className="opacity-55">
               {live.length} positions · {current.q}
             </div>
+            <div className="mt-1 flex flex-wrap gap-x-3 text-[12px]">
+              {counts.new > 0 && <span className="font-semibold text-buy">{counts.new} new</span>}
+              {counts.add > 0 && <span className="text-buy">{counts.add} add{counts.add > 1 ? "s" : ""}</span>}
+              {counts.reduce > 0 && <span className="text-sell">{counts.reduce} reduce{counts.reduce > 1 ? "s" : ""}</span>}
+              {counts.sold > 0 && <span className="font-semibold text-sell">{counts.sold} sold</span>}
+            </div>
           </div>
-          <div className="mt-5 min-h-0 flex-1 overflow-y-auto text-[12px] leading-snug">
-            {moves.length === 0 && <div className="opacity-40">no changes this quarter</div>}
-            {moves.map((p) => (
-              <Link key={p.ticker} href={`/s/${encodeURIComponent(p.ticker)}?q=${encodeURIComponent(q)}`} className="flex items-center gap-2 py-[3px] hover:opacity-70">
-                <span className="w-[4.2em] shrink-0">
-                  <ChangeBadge activity={p.activity} change={p.change} size={11} />
+          <div className="mt-4">
+            <Sparkline values={totals} index={qIndex} onSeek={(i) => setQ(quarters[i])} ariaLabel="Portfolio value over time" />
+            <div className="mt-1 flex justify-between text-[11px] opacity-45">
+              <span>{quarters[0]}</span>
+              {longestHeld && (
+                <span>
+                  longest held {longestHeld.ticker} · since {longestHeld.since}
                 </span>
-                <span className={`truncate font-semibold ${p.activity === "sold" ? "line-through opacity-60" : ""}`}>{p.ticker}</span>
-                <span className="truncate opacity-50">{p.name}</span>
-                <span className="ml-auto shrink-0 opacity-50">{formatMoney(p.value)}</span>
-              </Link>
-            ))}
+              )}
+            </div>
           </div>
         </aside>
         <Treemap frames={frames} q={current.q} className="h-full flex-1" render={(d, tier, rect) => <PositionTile d={d} tier={tier} rect={rect} q={q} />} />

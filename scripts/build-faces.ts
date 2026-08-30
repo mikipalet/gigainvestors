@@ -5,7 +5,7 @@ import path from "node:path";
 // Sketches become pure ink strokes on a transparent background: alpha is derived from
 // stroke darkness, so the face blends into whatever paper the page paints.
 const SRC = "assets/sketches";
-const OUT = "public/faces";
+const OUT = "public/faces/v2";
 const WIDTHS = [320, 1200] as const;
 const INK = { r: 17, g: 17, b: 17 };
 mkdirSync(OUT, { recursive: true });
@@ -26,12 +26,12 @@ async function toInk(file: string) {
   const gray = sharp(path.join(SRC, file)).grayscale();
   const { data, info } = await gray.raw().toBuffer({ resolveWithObject: true });
   const px = new Uint8Array(data.buffer, data.byteOffset, data.byteLength);
-  const paper = percentile(px, 0.6);
+  const paper = percentile(px, 0.65);
   const ink = Math.min(percentile(px, 0.02), paper - 60);
   const range = Math.max(paper - ink, 1);
   const rgba = Buffer.alloc(info.width * info.height * 4);
   for (let i = 0, j = 0; i < px.length; i++, j += 4) {
-    const a = Math.max(0, Math.min(1, (paper - 8 - px[i]) / range));
+    const a = Math.pow(Math.max(0, Math.min(1, (paper - 14 - px[i]) / range)), 1.4);
     rgba[j] = INK.r;
     rgba[j + 1] = INK.g;
     rgba[j + 2] = INK.b;

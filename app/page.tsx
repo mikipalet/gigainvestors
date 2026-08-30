@@ -1,7 +1,7 @@
 import { getIndex } from "@/lib/data";
 import { Home } from "./Home";
 
-export const revalidate = 86400;
+export const dynamic = "force-static";
 
 export default async function Page() {
   const index = await getIndex();

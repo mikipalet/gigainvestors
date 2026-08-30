@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import { getIndex, getSearchIndex, getStock } from "@/lib/data";
 import { Stock } from "./Stock";
 
-export const revalidate = 86400;
-export const dynamicParams = true;
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const search = await getSearchIndex();

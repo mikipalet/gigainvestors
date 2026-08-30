@@ -11,7 +11,6 @@
     "sync": "tsx scripts/sync-local.ts"
   },
   "dependencies": {
-    "@vercel/blob": "^1.1.1",
     "d3-hierarchy": "^3.1.2",
     "next": "16.3.3",
     "react": "19.2.8",

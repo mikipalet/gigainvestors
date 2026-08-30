@@ -1,19 +1,9 @@
-import { blobUrl } from "./blob";
+import { readJson } from "./blob";
 import type { Index, InvestorData, SearchIndex, StockData, StockShard } from "./types";
 
-async function readCached<T>(key: string): Promise<T | null> {
-  try {
-    const res = await fetch(blobUrl(key), { next: { revalidate: 86400, tags: ["blob"] } });
-    if (!res.ok) return null;
-    return (await res.json()) as T;
-  } catch {
-    return null;
-  }
-}
-
-export const getIndex = () => readCached<Index>("index.json");
-export const getInvestor = (code: string) => readCached<InvestorData>(`investors/${code}.json`);
-export const getSearchIndex = () => readCached<SearchIndex>("search.json");
+export const getIndex = () => readJson<Index>("index.json");
+export const getInvestor = (code: string) => readJson<InvestorData>(`investors/${code}.json`);
+export const getSearchIndex = () => readJson<SearchIndex>("search.json");
 
 const shardOf = (ticker: string) => {
   const c = ticker[0]?.toUpperCase() ?? "0";
@@ -21,6 +11,6 @@ const shardOf = (ticker: string) => {
 };
 
 export async function getStock(ticker: string): Promise<StockData | null> {
-  const shard = await readCached<StockShard>(`stocks/${shardOf(ticker)}.json`);
+  const shard = await readJson<StockShard>(`stocks/${shardOf(ticker)}.json`);
   return shard?.[ticker] ?? null;
 }

@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import { getIndex, getInvestor } from "@/lib/data";
 import { Investor } from "./Investor";
 
-export const revalidate = 86400;
-export const dynamicParams = true;
+export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const index = await getIndex();

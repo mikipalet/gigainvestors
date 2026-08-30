@@ -7,6 +7,7 @@ export interface Position {
   pct: number;
   value: number;
   activity: Activity;
+  change: number | null;
 }
 
 export interface Quarter {
@@ -41,4 +42,30 @@ export interface Index {
   generatedAt: string;
   quarters: string[];
   investors: IndexInvestor[];
+}
+
+export interface Holder {
+  code: string;
+  value: number;
+  pct: number;
+  activity: Activity;
+  change: number | null;
+}
+
+export interface StockQuarter {
+  q: string;
+  holders: Holder[];
+}
+
+export interface StockData {
+  ticker: string;
+  name: string;
+  quarters: StockQuarter[];
+}
+
+export type StockShard = Record<string, StockData>;
+
+export interface SearchIndex {
+  investors: { code: string; person: string; firm: string }[];
+  stocks: { t: string; n: string; h: number }[];
 }

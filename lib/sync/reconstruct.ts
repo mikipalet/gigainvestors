@@ -4,6 +4,13 @@ import { mapActivity, type HoldingsPage } from "../dataroma/parse-holdings";
 import { compareQ, prevQ } from "../quarters";
 import type { InvestorData, Position, Quarter } from "../types";
 
+export const parseChange = (raw: string): number | null => {
+  const m = /^(Add|Reduce)\s+([\d.]+)%/i.exec(raw.trim());
+  if (!m) return null;
+  const n = Number(m[2]);
+  return m[1].toLowerCase() === "add" ? n : -n;
+};
+
 export interface ReconstructInput {
   code: string;
   person: string;
@@ -34,6 +41,7 @@ export function buildInvestorData(input: ReconstructInput): InvestorData {
         pct: r.pct,
         value: Math.round(r.shares * r.price),
         activity,
+        change: parseChange(r.activity),
       });
     });
   }
@@ -48,6 +56,7 @@ export function buildInvestorData(input: ReconstructInput): InvestorData {
         pct: h.pct,
         value: h.value,
         activity: h.activity ? mapActivity(h.activity) : prev?.activity ?? "hold",
+        change: h.activity ? parseChange(h.activity) : prev?.change ?? null,
       });
     }
   }
@@ -57,7 +66,7 @@ export function buildInvestorData(input: ReconstructInput): InvestorData {
       if (it.kind !== "Sell") continue;
       const before = byQ.get(prevQ(aq.q))?.get(it.ticker);
       if (!before || byQ.get(aq.q)?.has(it.ticker)) continue;
-      put(aq.q, { ticker: it.ticker, name: it.name || before.name, shares: 0, pct: 0, value: before.value, activity: "sold" });
+      put(aq.q, { ticker: it.ticker, name: it.name || before.name, shares: 0, pct: 0, value: before.value, activity: "sold", change: null });
     }
   }
 

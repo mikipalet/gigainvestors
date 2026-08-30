@@ -23,10 +23,20 @@ export function Home({ index }: { index: Index }) {
         items.push({
           id: inv.code,
           value: pt.total,
-          data: { code: inv.code, slug: inv.slug, person: inv.person, sketch: inv.sketch, money: formatMoney(pt.total), delta: formatDelta(pt.total, before), priority: false },
+          data: {
+            code: inv.code,
+            slug: inv.slug,
+            person: inv.person,
+            firm: inv.firm,
+            sketch: inv.sketch,
+            money: formatMoney(pt.total),
+            delta: formatDelta(pt.total, before),
+            positions: pt.positions,
+            priority: false,
+          },
         });
       }
-      items.sort((a, b) => b.value - a.value).slice(0, 12).forEach((i) => (i.data.priority = true));
+      items.sort((a, b) => b.value - a.value).slice(0, 16).forEach((i) => (i.data.priority = true));
       out[quarter] = items;
     }
     return out;
@@ -34,7 +44,7 @@ export function Home({ index }: { index: Index }) {
 
   return (
     <>
-      <Treemap frames={frames} q={q} className="h-[calc(100vh-40px)] w-screen" render={(d, tier) => <InvestorTile d={d} tier={tier} q={q} />} />
+      <Treemap frames={frames} q={q} className="h-[calc(100vh-48px)] w-screen" render={(d, tier, rect) => <InvestorTile d={d} tier={tier} rect={rect} q={q} />} />
       <QuarterSlider quarters={index.quarters} q={q} onChange={setQ} />
     </>
   );

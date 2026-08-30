@@ -56,3 +56,13 @@ describe("buildInvestorData", () => {
     expect(() => buildInvestorData({ ...base, hists: {}, activity: [] })).not.toThrow();
   });
 });
+
+describe("parseChange", () => {
+  it("signs adds and reduces", async () => {
+    const { parseChange } = await import("@/lib/sync/reconstruct");
+    expect(parseChange("Add 45.24%")).toBe(45.24);
+    expect(parseChange("Reduce 4.32%")).toBe(-4.32);
+    expect(parseChange("Buy")).toBeNull();
+    expect(parseChange("")).toBeNull();
+  });
+});

@@ -10,7 +10,16 @@ export function formatDelta(now: number, before: number | undefined): string | n
   if (!before || before <= 0) return null;
   const d = ((now - before) / before) * 100;
   const s = d.toFixed(Math.abs(d) < 10 ? 1 : 0);
-  return `${d >= 0 ? "+" : ""}${s}%`;
+  return `${d >= 0 ? "+" : "−"}${s.replace("-", "")}%`;
 }
 
 export const formatPct = (p: number) => `${p.toFixed(p < 10 ? 1 : 0)}%`;
+
+export function formatChange(change: number | null): string | null {
+  if (change === null) return null;
+  const s = Math.abs(change).toFixed(Math.abs(change) < 10 ? 1 : 0);
+  return `${change >= 0 ? "+" : "−"}${s}%`;
+}
+
+// Text size that follows tile size, so a big tile reads big without a font ladder.
+export const scaleFor = (w: number, h: number) => Math.max(11, Math.min(26, Math.sqrt(w * h) / 14));

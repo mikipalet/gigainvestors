@@ -6,7 +6,7 @@ import { parseHist, type HistRow } from "../dataroma/parse-hist";
 import { parseHoldings, type HoldingsPage } from "../dataroma/parse-holdings";
 import { parseManagers, type ManagerRow } from "../dataroma/parse-managers";
 import { compareQ } from "../quarters";
-import type { Index, IndexInvestor, InvestorData } from "../types";
+import type { Index, IndexInvestor, InvestorData, SearchIndex, StockShard } from "../types";
 import { diffManagers, fingerprint, type SyncState } from "./fingerprint";
 import { buildInvestorData } from "./reconstruct";
 
@@ -58,12 +58,19 @@ function tickersNeedingHist(stored: InvestorData | null, h: HoldingsPage, full: 
   return h.positions.filter((p) => prevMap.get(p.ticker)?.shares !== p.shares).map((p) => p.ticker);
 }
 
+const activityString = (p: { activity: string; change: number | null }) => {
+  if (p.activity === "new") return "Buy";
+  if (p.activity === "add") return `Add ${p.change ?? 0}%`;
+  if (p.activity === "reduce") return `Reduce ${Math.abs(p.change ?? 0)}%`;
+  return "";
+};
+
 function carriedHists(stored: InvestorData | null): Record<string, HistRow[]> {
   const out: Record<string, HistRow[]> = {};
   for (const q of stored?.quarters ?? []) {
     for (const p of q.positions) {
       if (p.activity === "sold" || p.shares <= 0) continue;
-      (out[p.ticker] ??= []).push({ q: q.q, shares: p.shares, pct: p.pct, activity: "", price: p.value / p.shares });
+      (out[p.ticker] ??= []).push({ q: q.q, shares: p.shares, pct: p.pct, activity: activityString(p), price: p.value / p.shares });
     }
   }
   return out;
@@ -101,9 +108,11 @@ async function rebuildIndex(managers: ManagerRow[]): Promise<Index> {
   const keys = await listKeys("investors/");
   const investors: IndexInvestor[] = [];
   const quarterSet = new Set<string>();
+  const all: InvestorData[] = [];
   for (const key of keys) {
     const d = await readJson<InvestorData>(key);
     if (!d || !managers.some((m) => m.code === d.code)) continue;
+    all.push(d);
     const entry = ROSTER[d.code];
     const person = entry?.person ?? d.person;
     d.quarters.forEach((q) => quarterSet.add(q.q));
@@ -117,9 +126,46 @@ async function rebuildIndex(managers: ManagerRow[]): Promise<Index> {
     });
   }
   investors.sort((a, b) => a.person.localeCompare(b.person));
+  await writeStocks(all);
   const index: Index = { generatedAt: new Date().toISOString(), quarters: [...quarterSet].sort(compareQ), investors };
   await writeJson(INDEX_KEY, index);
   return index;
+}
+
+const shardOf = (ticker: string) => {
+  const c = ticker[0]?.toUpperCase() ?? "0";
+  return /[A-Z]/.test(c) ? c : "0";
+};
+
+async function writeStocks(all: InvestorData[]) {
+  const stocks = new Map<string, { name: string; quarters: Map<string, StockShard[string]["quarters"][number]["holders"]> }>();
+  for (const inv of all) {
+    for (const q of inv.quarters) {
+      for (const p of q.positions) {
+        if (!stocks.has(p.ticker)) stocks.set(p.ticker, { name: p.name, quarters: new Map() });
+        const st = stocks.get(p.ticker)!;
+        if (p.name.length > st.name.length) st.name = p.name;
+        if (!st.quarters.has(q.q)) st.quarters.set(q.q, []);
+        st.quarters.get(q.q)!.push({ code: inv.code, value: p.value, pct: p.pct, activity: p.activity, change: p.change });
+      }
+    }
+  }
+  const shards: Record<string, StockShard> = {};
+  const search: SearchIndex["stocks"] = [];
+  for (const [ticker, st] of stocks) {
+    const quarters = [...st.quarters.entries()]
+      .sort((a, b) => compareQ(a[0], b[0]))
+      .map(([q, holders]) => ({ q, holders: holders.sort((a, b) => b.value - a.value) }));
+    (shards[shardOf(ticker)] ??= {})[ticker] = { ticker, name: st.name, quarters };
+    const latest = quarters[quarters.length - 1];
+    search.push({ t: ticker, n: st.name, h: latest.holders.filter((h) => h.activity !== "sold").length });
+  }
+  for (const [shard, data] of Object.entries(shards)) await writeJson(`stocks/${shard}.json`, data);
+  const searchIndex: SearchIndex = {
+    investors: all.map((d) => ({ code: d.code, person: ROSTER[d.code]?.person ?? d.person, firm: d.firm })).sort((a, b) => a.person.localeCompare(b.person)),
+    stocks: search.sort((a, b) => b.h - a.h),
+  };
+  await writeJson("search.json", searchIndex);
 }
 
 export async function runSync(opts: SyncOptions = {}): Promise<SyncResult> {

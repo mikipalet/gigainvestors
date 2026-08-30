@@ -7,7 +7,7 @@ interface Props {
 
 export function Face({ slug, size, priority, className }: Props) {
   return (
-    <picture className={className}>
+    <picture className={`pointer-events-none block h-full w-full ${className ?? ""}`}>
       <source type="image/avif" srcSet={`/faces/${slug}-${size}.avif`} />
       <img
         src={`/faces/${slug}-${size}.webp`}
@@ -15,7 +15,7 @@ export function Face({ slug, size, priority, className }: Props) {
         loading={priority ? "eager" : "lazy"}
         decoding="async"
         draggable={false}
-        className="block h-full w-full object-cover object-top"
+        className="block h-full w-full object-contain object-bottom"
       />
     </picture>
   );

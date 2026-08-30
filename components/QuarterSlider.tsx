@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   quarters: string[];
@@ -8,23 +8,44 @@ interface Props {
   onChange: (q: string) => void;
 }
 
+// Slider along the bottom. Arrow keys step, space plays through time.
 export function QuarterSlider({ quarters, q, onChange }: Props) {
   const idx = Math.max(0, quarters.indexOf(q));
+  const [playing, setPlaying] = useState(false);
+  const idxRef = useRef(idx);
+  idxRef.current = idx;
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft" && idx > 0) onChange(quarters[idx - 1]);
-      if (e.key === "ArrowRight" && idx < quarters.length - 1) onChange(quarters[idx + 1]);
+      if ((e.target as HTMLElement)?.tagName === "INPUT" && (e.target as HTMLInputElement).type !== "range") return;
+      if (e.key === "ArrowLeft" && idxRef.current > 0) onChange(quarters[idxRef.current - 1]);
+      if (e.key === "ArrowRight" && idxRef.current < quarters.length - 1) onChange(quarters[idxRef.current + 1]);
+      if (e.key === " ") {
+        e.preventDefault();
+        setPlaying((p) => !p);
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [idx, quarters, onChange]);
+  }, [quarters, onChange]);
+
+  useEffect(() => {
+    if (!playing) return;
+    const start = idxRef.current >= quarters.length - 1 ? 0 : idxRef.current;
+    onChange(quarters[start]);
+    const t = setInterval(() => {
+      if (idxRef.current >= quarters.length - 1) return setPlaying(false);
+      onChange(quarters[idxRef.current + 1]);
+    }, 700);
+    return () => clearInterval(t);
+  }, [playing, quarters, onChange]);
 
   const pct = quarters.length > 1 ? (idx / (quarters.length - 1)) * 100 : 0;
+  const years = quarters.filter((x) => x.endsWith("Q1") || x === quarters[0]).map((x) => ({ y: x.slice(0, 4), i: quarters.indexOf(x) }));
 
   return (
-    <div className="fixed inset-x-0 bottom-0 h-10 bg-paper select-none">
-      <div className="relative mx-4 h-full">
+    <div className="fixed inset-x-0 bottom-0 h-12 select-none bg-paper">
+      <div className="relative mx-5 h-full">
         <input
           type="range"
           min={0}
@@ -32,20 +53,28 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
           value={idx}
           onChange={(e) => onChange(quarters[Number(e.target.value)])}
           aria-label="Quarter"
-          className="slider absolute inset-x-0 top-3 m-0 h-4 w-full cursor-ew-resize appearance-none bg-transparent"
+          className="slider absolute inset-x-0 top-2 z-10 m-0 h-6 w-full cursor-ew-resize appearance-none bg-transparent"
         />
-        <div className="pointer-events-none absolute top-[19px] h-px w-full bg-ink/40" />
-        <div className="pointer-events-none absolute top-[15px] h-[9px] w-[2px] -translate-x-1/2 bg-ink" style={{ left: `${pct}%` }} />
+        <div className="pointer-events-none absolute top-[20px] h-px w-full bg-ink/30" />
+        {years.map((y) => (
+          <div key={y.y} className="pointer-events-none absolute top-[17px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / (quarters.length - 1)) * 100}%` }}>
+            {quarters.length < 60 || Number(y.y) % 2 === 0 ? (
+              <span className="absolute top-[10px] -translate-x-1/2 text-[10px] leading-none opacity-40">{y.y}</span>
+            ) : null}
+          </div>
+        ))}
+        <div className="pointer-events-none absolute top-[14px] h-[13px] w-[2px] -translate-x-1/2 bg-ink" style={{ left: `${pct}%` }} />
         <div
-          className="pointer-events-none absolute top-[24px] whitespace-nowrap text-[11px] leading-none"
-          style={{ left: `clamp(0px, calc(${pct}% - 24px), calc(100% - 48px))` }}
+          className="pointer-events-none absolute top-[30px] whitespace-nowrap bg-paper px-1 text-[11px] font-semibold leading-none"
+          style={{ left: `clamp(0px, calc(${pct}% - 26px), calc(100% - 52px))` }}
         >
           {q}
+          {playing && <span className="ml-1 opacity-50">▶</span>}
         </div>
       </div>
       <style>{`
-        .slider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:16px;background:transparent}
-        .slider::-moz-range-thumb{width:24px;height:16px;background:transparent;border:0}
+        .slider::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:24px;background:transparent}
+        .slider::-moz-range-thumb{width:28px;height:24px;background:transparent;border:0}
         .slider::-webkit-slider-runnable-track{background:transparent}
         .slider::-moz-range-track{background:transparent}
       `}</style>

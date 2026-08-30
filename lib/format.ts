@@ -16,8 +16,8 @@ export function formatDelta(now: number, before: number | undefined): string | n
 
 export const formatPct = (p: number) => `${p.toFixed(p < 10 ? 1 : 0)}%`;
 
-export function formatChange(change: number | null): string | null {
-  if (change === null) return null;
+export function formatChange(change: number | null | undefined): string | null {
+  if (change === null || change === undefined || !Number.isFinite(change)) return null;
   const s = Math.abs(change).toFixed(Math.abs(change) < 10 ? 1 : 0);
   return `${change >= 0 ? "+" : "−"}${s}%`;
 }

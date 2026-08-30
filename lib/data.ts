@@ -4,7 +4,7 @@ import type { Index, InvestorData, SearchIndex, StockData, StockShard } from "./
 async function readCached<T>(key: string): Promise<T | null> {
   try {
     const meta = await head(key);
-    const res = await fetch(meta.url, { next: { revalidate: 86400 } });
+    const res = await fetch(meta.url, { next: { revalidate: 86400, tags: ["blob"] } });
     if (!res.ok) return null;
     return (await res.json()) as T;
   } catch {

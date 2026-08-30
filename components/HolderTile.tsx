@@ -32,13 +32,16 @@ export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier
     <Link
       href={href}
       prefetch={false}
-      onPointerEnter={() => router.prefetch(href)}
+      onPointerEnter={() => {
+        router.prefetch(href);
+        if (d.sketch) new Image().src = `/faces/v3/${d.slug}-1200.avif`;
+      }}
       className={`tile-edge relative block h-full w-full overflow-hidden bg-paper ${surface[d.activity]}`}
       style={{ fontSize: fs }}
     >
       {d.sketch && rect.w > 14 && (
         <div className={`absolute inset-x-0 bottom-0 ${d.activity === "sold" ? "opacity-40" : ""}`} style={{ top: textBlock, padding: `0 ${pad * 0.5}px` }}>
-          <Face slug={d.slug} size={rect.w > 420 ? 1200 : 320} />
+          <Face slug={d.slug} size={320} sizes={`${Math.round(rect.w)}px`} />
         </div>
       )}
       {rect.w > fs * 5 && rect.h > fs * 2.5 && (

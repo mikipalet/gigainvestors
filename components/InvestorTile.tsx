@@ -25,19 +25,21 @@ export function InvestorTile({ d, tier, rect, q }: { d: InvestorTileData; tier: 
   const fs = scaleFor(rect.w, rect.h);
   const pad = Math.round(fs * 0.6);
   const textBlock = tier === "full" ? fs * 2.6 + pad : tier === "name" ? fs * 1.4 + pad : 0;
-  const size = rect.w > 420 ? 1200 : 320;
   const negative = d.delta?.startsWith("−");
   return (
     <Link
       href={href}
       prefetch={d.priority ? true : false}
-      onPointerEnter={() => router.prefetch(href)}
+      onPointerEnter={() => {
+        router.prefetch(href);
+        if (d.sketch) new Image().src = `/faces/v3/${d.slug}-1200.avif`;
+      }}
       className="tile-edge relative block h-full w-full overflow-hidden bg-paper"
       style={{ fontSize: fs }}
     >
       {d.sketch && rect.w > 14 && (
         <div className="absolute inset-x-0 bottom-0" style={{ top: textBlock, padding: `0 ${pad * 0.5}px` }}>
-          <Face slug={d.slug} size={size} priority={d.priority} />
+          <Face slug={d.slug} size={320} sizes={`${Math.round(rect.w)}px`} priority={d.priority} />
         </div>
       )}
       {tier === "face" && (

@@ -1,4 +1,4 @@
-import { revalidatePath } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
 import { NextResponse, type NextRequest } from "next/server";
 import { runSync } from "@/lib/sync/run";
 
@@ -13,6 +13,7 @@ export async function GET(req: NextRequest) {
   const full = req.nextUrl.searchParams.get("full") === "1";
   const result = await runSync({ full });
   if (result.changed.length) {
+    updateTag("blob");
     revalidatePath("/");
     for (const code of result.changed) revalidatePath(`/${code}`);
   }

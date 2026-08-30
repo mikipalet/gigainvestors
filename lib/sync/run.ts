@@ -156,22 +156,30 @@ async function rebuildIndex(managers: ManagerRow[]): Promise<Index> {
   return index;
 }
 
+// One filer's 13F "value" can be options notional rather than share value; the
+// median price across all holders rejects those outliers.
+function medianRow(rows: PriceRow[] | undefined): PriceRow | null {
+  if (!rows?.length) return null;
+  const sorted = [...rows].sort((a, b) => a.value / a.shares - b.value / b.shares);
+  return sorted[Math.floor(sorted.length / 2)];
+}
+
 const shardOf = (ticker: string) => {
   const c = ticker[0]?.toUpperCase() ?? "0";
   return /[A-Z]/.test(c) ? c : "0";
 };
 
 async function writeStocks(all: InvestorData[]) {
-  const stocks = new Map<string, { name: string; quarters: Map<string, StockShard[string]["quarters"][number]["holders"]>; best: Map<string, PriceRow> }>();
+  const stocks = new Map<string, { name: string; quarters: Map<string, StockShard[string]["quarters"][number]["holders"]>; rows: Map<string, PriceRow[]> }>();
   for (const inv of all) {
     for (const q of inv.quarters) {
       for (const p of q.positions) {
-        if (!stocks.has(p.ticker)) stocks.set(p.ticker, { name: p.name, quarters: new Map(), best: new Map() });
+        if (!stocks.has(p.ticker)) stocks.set(p.ticker, { name: p.name, quarters: new Map(), rows: new Map() });
         const st = stocks.get(p.ticker)!;
         if (p.name.length > st.name.length) st.name = p.name;
         if (!st.quarters.has(q.q)) st.quarters.set(q.q, []);
         st.quarters.get(q.q)!.push({ code: inv.code, value: p.value, pct: p.pct, activity: p.activity, change: p.change });
-        if (p.shares > 0 && p.activity !== "sold" && (st.best.get(q.q)?.shares ?? 0) < p.shares) st.best.set(q.q, { shares: p.shares, value: p.value });
+        if (p.shares > 0 && p.activity !== "sold") (st.rows.get(q.q) ?? st.rows.set(q.q, []).get(q.q)!).push({ shares: p.shares, value: p.value });
       }
     }
   }
@@ -186,7 +194,7 @@ async function writeStocks(all: InvestorData[]) {
         for (let q = nextQ(sparse[i][0]); compareQ(q, sparse[i + 1][0]) < 0; q = nextQ(q)) sorted.push([q, []]);
       }
     }
-    const prices = adjustedPriceSeries(sorted.map(([q]) => st.best.get(q) ?? null));
+    const prices = adjustedPriceSeries(sorted.map(([q]) => medianRow(st.rows.get(q))));
     const quarters = sorted.map(([q, holders], i) => ({ q, holders: holders.sort((a, b) => b.value - a.value), price: prices[i] }));
     (shards[shardOf(ticker)] ??= {})[ticker] = { ticker, name: st.name, quarters };
     const latest = quarters[quarters.length - 1];

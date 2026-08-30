@@ -59,7 +59,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
               <span className="text-[22px] font-semibold">{formatMoney(total)}</span>
               {formatDelta(total, totalBefore) && <span className="opacity-55">{formatDelta(total, totalBefore)}</span>}
             </div>
-            <div className="opacity-55">held by {live.length} superinvestors · {current.q}</div>
+            <div className="opacity-55">held by {live.length} gigainvestors · {current.q}</div>
             <div className="mt-2 flex items-center gap-4">
               <span className="inline-flex items-center gap-1.5 text-buy">
                 <span className="add-strong inline-block h-[10px] w-[14px] rounded-[1px]" />
@@ -77,7 +77,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
               prices={stock.quarters.map((x) => x.price ?? null)}
               labels={quarters}
               index={qIndex}
-              caption="held by superinvestors"
+              caption="held by gigainvestors"
               format={formatMoney}
               people={Object.fromEntries(Object.entries(investors).map(([c, m]) => [c, m.person]))}
               onSeek={(i) => setQ(quarters[i])}

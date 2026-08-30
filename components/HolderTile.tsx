@@ -20,7 +20,7 @@ export interface HolderTileData {
   change: number | null;
 }
 
-const surface: Record<Activity, string> = { new: "add", add: "add", reduce: "hatch-light", sold: "ghost", hold: "" };
+const surface: Record<Activity, string> = { new: "add-strong", add: "add", reduce: "hatch-light", sold: "ghost", hold: "" };
 
 export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier; rect: Rect; q: string }) {
   const router = useRouter();
@@ -47,7 +47,7 @@ export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier
         </div>
       )}
       {tier === "face" && (
-        <div className="absolute inset-x-0 bottom-0 truncate px-1 pb-[2px] text-center font-medium" style={{ fontSize: Math.max(9, fs * 0.78) }}>
+        <div className="absolute inset-x-0 bottom-0 truncate px-[5px] pb-[3px] text-left font-medium" style={{ fontSize: Math.max(9, fs * 0.78) }}>
           {d.person}
         </div>
       )}

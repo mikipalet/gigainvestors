@@ -33,5 +33,5 @@ export const paths = {
   holdings: (code: string) => `/m/holdings.php?m=${encodeURIComponent(code)}`,
   hist: (code: string, ticker: string) =>
     `/m/hist/hist.php?f=${encodeURIComponent(code)}&s=${encodeURIComponent(ticker)}`,
-  activity: (code: string) => `/m/m_activity.php?m=${encodeURIComponent(code)}&typ=a`,
+  activity: (code: string, page = 1) => `/m/m_activity.php?m=${encodeURIComponent(code)}&typ=a${page > 1 ? `&L=${page}&o=a` : ""}`,
 };

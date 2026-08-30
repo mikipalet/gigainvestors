@@ -43,8 +43,9 @@ export function Search() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      const tag = (e.target as HTMLElement)?.tagName;
-      if (e.key === "/" && tag !== "INPUT" && !e.metaKey && !e.ctrlKey) {
+      const t = e.target as HTMLInputElement;
+      const typing = t?.tagName === "INPUT" && t.type !== "range";
+      if (e.key === "/" && !typing && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
         setOpen(true);
       }
@@ -79,7 +80,7 @@ export function Search() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Search"
-        className="fixed bottom-[9px] right-[116px] z-40 rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
+        className="fixed bottom-[9px] right-[76px] z-40 rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
       >
         search <span className="ml-1 opacity-60">/</span>
       </button>
@@ -112,7 +113,7 @@ export function Search() {
                     onClick={() => go(h)}
                     className={`flex cursor-pointer items-baseline gap-3 px-4 py-2 text-[13px] ${i === sel ? "bg-ink text-paper" : ""}`}
                   >
-                    <span className="w-[5.5em] shrink-0 font-semibold">{h.title}</span>
+                    <span className="shrink-0 whitespace-nowrap font-semibold">{h.title}</span>
                     <span className="truncate opacity-60">{h.sub}</span>
                     {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{h.holders} holders</span>}
                     {h.kind === "investor" && <span className="ml-auto shrink-0 opacity-60">investor</span>}

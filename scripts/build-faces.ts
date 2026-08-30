@@ -5,7 +5,7 @@ import path from "node:path";
 // Sketches become pure ink strokes on a transparent background: alpha is derived from
 // stroke darkness, so the face blends into whatever paper the page paints.
 const SRC = "assets/sketches";
-const OUT = "public/faces/v2";
+const OUT = "public/faces/v3";
 const WIDTHS = [320, 1200] as const;
 const INK = { r: 17, g: 17, b: 17 };
 mkdirSync(OUT, { recursive: true });
@@ -40,15 +40,41 @@ async function toInk(file: string) {
   return sharp(rgba, { raw: { width: info.width, height: info.height, channels: 4 } });
 }
 
+// Crop around the ink bounding box so no head is ever sliced by a blind centre crop.
+function inkBounds(rgba: Buffer, w: number, h: number) {
+  let top = h, bottom = 0, left = w, right = 0;
+  for (let yPos = 0; yPos < h; yPos++) {
+    for (let xPos = 0; xPos < w; xPos++) {
+      if (rgba[(yPos * w + xPos) * 4 + 3] > 32) {
+        if (yPos < top) top = yPos;
+        if (yPos > bottom) bottom = yPos;
+        if (xPos < left) left = xPos;
+        if (xPos > right) right = xPos;
+      }
+    }
+  }
+  return top > bottom ? { top: 0, bottom: h - 1, left: 0, right: w - 1 } : { top, bottom, left, right };
+}
+
 async function build(file: string) {
   const slug = file.replace(/\.png$/, "");
   const base = await toInk(file);
   const meta = await base.metadata();
   const w = meta.width!, h = meta.height!;
+  const raw = await base.clone().raw().toBuffer();
+  const bb = inkBounds(raw as Buffer, w, h);
   const targetH = Math.round((w * 5) / 4);
-  const crop = targetH <= h
-    ? { left: 0, top: Math.max(0, Math.round((h - targetH) / 2)), width: w, height: targetH }
-    : { left: Math.round((w - Math.round((h * 4) / 5)) / 2), top: 0, width: Math.round((h * 4) / 5), height: h };
+  let crop;
+  if (targetH <= h) {
+    const margin = Math.round(h * 0.03);
+    const top = Math.max(0, Math.min(bb.top - margin, h - targetH));
+    crop = { left: 0, top, width: w, height: targetH };
+  } else {
+    const targetW = Math.round((h * 4) / 5);
+    const cx = Math.round((bb.left + bb.right) / 2);
+    const left = Math.max(0, Math.min(cx - Math.round(targetW / 2), w - targetW));
+    crop = { left, top: 0, width: targetW, height: h };
+  }
   const cropped = await base.extract(crop).png().toBuffer();
   let bytes = 0;
   for (const width of WIDTHS) {

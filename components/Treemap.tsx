@@ -51,7 +51,17 @@ export function Treemap<T>({ frames, q, render, label, className }: Props<T>) {
 
   const current = useMemo(() => new Map((frames[q] ?? []).map((f) => [f.id, f.data])), [frames, q]);
 
-  const hoverText = hover ? (() => { const d = current.get(hover.id); return d !== undefined && label ? label(d) : null; })() : null;
+  const hoverText = hover
+    ? (() => {
+        if (hover.x === 0 && hover.y === 0) return null;
+        const d = current.get(hover.id);
+        const r = rects.get(hover.id);
+        if (d === undefined || !label) return null;
+        const tier = r ? tierFor(r.w, r.h) : "blank";
+        if (tier === "full" || tier === "name") return null;
+        return label(d);
+      })()
+    : null;
 
   return (
     <div
@@ -82,7 +92,14 @@ export function Treemap<T>({ frames, q, render, label, className }: Props<T>) {
       {hoverText && hover && (
         <div
           className="pointer-events-none fixed z-40 hidden max-w-[280px] truncate bg-ink px-2 py-1 text-[11px] font-medium leading-none text-paper [@media(hover:hover)]:block"
-          style={{ left: hover.x + 12, top: hover.y + 14 }}
+          style={{
+            ...(hover.x > (typeof window !== "undefined" ? window.innerWidth : 9999) - 300
+              ? { right: (typeof window !== "undefined" ? window.innerWidth : 0) - hover.x + 12 }
+              : { left: hover.x + 12 }),
+            ...(hover.y > (typeof window !== "undefined" ? window.innerHeight : 9999) - 60
+              ? { bottom: (typeof window !== "undefined" ? window.innerHeight : 0) - hover.y + 10 }
+              : { top: hover.y + 14 }),
+          }}
         >
           {hoverText}
         </div>

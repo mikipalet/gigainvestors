@@ -41,7 +41,7 @@ export function InvestorTile({ d, tier, rect, q }: { d: InvestorTileData; tier: 
         </div>
       )}
       {tier === "face" && (
-        <div className="absolute inset-x-0 bottom-0 truncate px-1 pb-[2px] text-center font-medium" style={{ fontSize: Math.max(9, fs * 0.78) }}>
+        <div className="absolute inset-x-0 bottom-0 truncate px-[5px] pb-[3px] text-left font-medium" style={{ fontSize: Math.max(9, fs * 0.78) }}>
           {d.person}
         </div>
       )}
@@ -56,7 +56,7 @@ export function InvestorTile({ d, tier, rect, q }: { d: InvestorTileData; tier: 
               <div className="font-semibold">{d.money}</div>
               <div style={{ fontSize: "0.8em" }} className={negative ? "opacity-55" : "opacity-55"}>
                 {d.delta ?? " "}
-                <span className="ml-[0.6em]">{d.positions} pos</span>
+                <span className="ml-[0.6em]">{d.positions} positions</span>
               </div>
             </div>
           )}

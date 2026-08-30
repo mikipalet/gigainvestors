@@ -8,7 +8,8 @@ interface Props {
   onChange: (q: string) => void;
 }
 
-// Slider along the bottom. Drag, ‹ › buttons or arrow keys step.
+// Timeline along the bottom. The quarter pill IS the thumb; drag it, click the track,
+// use the ‹ › buttons or arrow keys.
 export function QuarterSlider({ quarters, q, onChange }: Props) {
   const idx = Math.max(0, quarters.indexOf(q));
   const idxRef = useRef(idx);
@@ -21,9 +22,12 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if ((e.target as HTMLElement)?.tagName === "INPUT" && (e.target as HTMLInputElement).type !== "range") return;
-      if (e.key === "ArrowLeft") step(-1);
-      if (e.key === "ArrowRight") step(1);
+      const t = e.target as HTMLInputElement;
+      if (t?.tagName === "INPUT" && t.type !== "range") return;
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        e.preventDefault();
+        step(e.key === "ArrowLeft" ? -1 : 1);
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -33,49 +37,72 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
   const pct = quarters.length > 1 ? (idx / (quarters.length - 1)) * 100 : 0;
   const years = quarters.filter((x) => x.endsWith("Q1") || x === quarters[0]).map((x) => ({ y: x.slice(0, 4), i: quarters.indexOf(x) }));
 
-  const btn = "h-8 w-8 text-[15px] leading-none opacity-45 transition-opacity hover:opacity-100";
+  const btn = "h-8 w-8 text-[15px] leading-none transition-opacity";
 
   return (
     <div className="fixed inset-x-0 bottom-0 h-12 select-none bg-paper">
-      <div className="absolute bottom-2 right-2 top-2 flex items-center">
-        <button type="button" className={btn} onClick={() => step(-1)} aria-label="Previous quarter" title="previous quarter (←)">
-          ‹
-        </button>
-        <button type="button" className={btn} onClick={() => step(1)} aria-label="Next quarter" title="next quarter (→)">
-          ›
-        </button>
+      <div className="absolute bottom-2 right-2 top-2 flex items-center gap-2">
+        <a
+          href="https://www.dataroma.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden text-[9px] leading-none opacity-35 transition-opacity hover:opacity-80 md:block"
+        >
+          quarterly 13F filings · dataroma.com
+        </a>
+        <div className="flex items-center">
+          <button
+            type="button"
+            className={`${btn} ${idx === 0 ? "pointer-events-none opacity-15" : "opacity-45 hover:opacity-100"}`}
+            onClick={() => step(-1)}
+            aria-label="Previous quarter"
+            title="previous quarter (←)"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            className={`${btn} ${idx === quarters.length - 1 ? "pointer-events-none opacity-15" : "opacity-45 hover:opacity-100"}`}
+            onClick={() => step(1)}
+            aria-label="Next quarter"
+            title="next quarter (→)"
+          >
+            ›
+          </button>
+        </div>
       </div>
-      <div className="relative ml-5 mr-[196px] h-full">
+      <div className="relative ml-5 mr-[240px] h-full sm:mr-[300px]">
         <input
           type="range"
           min={0}
           max={quarters.length - 1}
           value={idx}
           onChange={(e) => onChange(quarters[Number(e.target.value)])}
+          onPointerUp={(e) => (e.currentTarget as HTMLInputElement).blur()}
           aria-label="Quarter"
-          className="slider absolute inset-x-0 top-2 z-10 m-0 h-6 w-full cursor-ew-resize appearance-none bg-transparent"
+          className="slider absolute inset-x-0 top-1 z-10 m-0 h-10 w-full cursor-ew-resize appearance-none bg-transparent"
         />
-        <div className="pointer-events-none absolute top-[20px] h-px w-full bg-ink/30" />
+        <div className="pointer-events-none absolute top-[24px] h-px w-full bg-ink/30" />
         {years.map((y) => (
-          <div key={y.y} className="pointer-events-none absolute top-[17px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / (quarters.length - 1)) * 100}%` }}>
+          <div key={y.y} className="pointer-events-none absolute top-[21px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / (quarters.length - 1)) * 100}%` }}>
             {quarters.length < 60 || Number(y.y) % 2 === 0 ? (
               <span className={`absolute -top-[13px] -translate-x-1/2 text-[10px] leading-none opacity-40 ${Number(y.y) % 4 === 0 ? "" : "hidden sm:inline"}`}>{y.y}</span>
             ) : null}
           </div>
         ))}
-        <div className="pointer-events-none absolute top-[14px] h-[13px] w-[2px] -translate-x-1/2 bg-ink" style={{ left: `${pct}%` }} />
         <div
-          className="pointer-events-none absolute top-[30px] whitespace-nowrap bg-paper px-1 text-[11px] font-semibold leading-none"
-          style={{ left: `clamp(0px, calc(${pct}% - 26px), calc(100% - 52px))` }}
+          className="pointer-events-none absolute top-[24px] z-20 -translate-y-1/2 whitespace-nowrap rounded-[3px] bg-ink px-[7px] py-[4px] text-[10px] font-semibold leading-none text-paper shadow-[0_0_0_2px_var(--paper)]"
+          style={{ left: `clamp(28px, ${pct}%, calc(100% - 28px))`, transform: "translate(-50%, -50%)" }}
         >
           {q}
         </div>
       </div>
       <style>{`
-        .slider::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:24px;background:transparent}
-        .slider::-moz-range-thumb{width:28px;height:24px;background:transparent;border:0}
+        .slider::-webkit-slider-thumb{-webkit-appearance:none;width:56px;height:40px;background:transparent}
+        .slider::-moz-range-thumb{width:56px;height:40px;background:transparent;border:0}
         .slider::-webkit-slider-runnable-track{background:transparent}
         .slider::-moz-range-track{background:transparent}
+        .slider:focus-visible{outline:none}
       `}</style>
     </div>
   );

@@ -32,5 +32,6 @@ describe("format", () => {
     expect(formatDelta(110, 100)).toBe("+10%");
     expect(formatDelta(95, 100)).toBe("−5.0%");
     expect(formatDelta(1, undefined)).toBeNull();
+    expect(formatDelta(100.001, 100)).toBeNull();
   });
 });

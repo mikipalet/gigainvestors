@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Attribution } from "@/components/Attribution";
 import { Search } from "@/components/Search";
 import "./globals.css";
 
@@ -26,7 +25,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <Search />
-        <Attribution />
       </body>
     </html>
   );

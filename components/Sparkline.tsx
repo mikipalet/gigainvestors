@@ -64,6 +64,9 @@ export function Sparkline({ values, labels, index, caption, format, onSeek }: Pr
         >
           <path d={d} fill="none" stroke="var(--ink)" strokeWidth="1.1" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" opacity="0.75" />
           <line x1={x(index)} y1="0" x2={x(index)} y2={H} stroke="var(--ink)" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.35" />
+          {hoverIdx !== null && hoverIdx !== index && (
+            <line x1={x(hoverIdx)} y1="0" x2={x(hoverIdx)} y2={H} stroke="var(--ink)" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.15" />
+          )}
         </svg>
         <div
           className="pointer-events-none absolute h-[7px] w-[7px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink"

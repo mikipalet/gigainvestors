@@ -9,6 +9,7 @@ export function formatMoney(n: number): string {
 export function formatDelta(now: number, before: number | undefined): string | null {
   if (!before || before <= 0) return null;
   const d = ((now - before) / before) * 100;
+  if (Math.abs(d) < 0.05) return null;
   const s = d.toFixed(Math.abs(d) < 10 ? 1 : 0);
   return `${d >= 0 ? "+" : "−"}${s.replace("-", "")}%`;
 }

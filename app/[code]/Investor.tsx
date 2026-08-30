@@ -26,12 +26,24 @@ export function Investor({ data, slug, sketch }: Props) {
   const before = data.quarters.find((x) => x.q === prevQ(current.q));
 
   const frames = useMemo(() => {
+    const series: Record<string, number[]> = {};
+    for (const quarter of data.quarters) {
+      for (const p of quarter.positions) (series[p.ticker] ??= []).push(p.activity === "sold" ? 0 : p.value);
+    }
     const out: Record<string, Frame<PositionTileData>[]> = {};
     for (const quarter of data.quarters) {
       out[quarter.q] = quarter.positions.map((p) => ({
         id: p.ticker,
         value: p.value,
-        data: { ticker: p.ticker, name: p.name, pct: formatPct(p.pct), money: formatMoney(p.value), activity: effectiveActivity(p.activity, p.change), change: p.change },
+        data: {
+          ticker: p.ticker,
+          name: p.name,
+          pct: formatPct(p.pct),
+          money: formatMoney(p.value),
+          activity: effectiveActivity(p.activity, p.change),
+          change: p.change,
+          series: series[p.ticker],
+        },
       }));
     }
     return out;
@@ -50,8 +62,8 @@ export function Investor({ data, slug, sketch }: Props) {
     <>
       <div className="flex h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
         <aside className="flex shrink-0 flex-col p-4 md:w-[28%] md:min-w-[240px] md:max-w-[420px] md:p-6 md:pr-4">
-          <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] opacity-50 hover:opacity-100">
-            ←
+          <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
+            GigaInvestors
           </Link>
           <div className="relative mt-3 hidden min-h-0 flex-1 md:block">{sketch && <Face slug={slug} size={1200} priority className="[&_img]:object-left-bottom" />}</div>
           <div className="flex items-start gap-4 md:mt-4 md:block">
@@ -66,11 +78,19 @@ export function Investor({ data, slug, sketch }: Props) {
             <div className="opacity-55">
               {live.length} positions · {current.q}
             </div>
-            <div className="mt-1 flex flex-wrap gap-x-3 text-[12px]">
-              {counts.new > 0 && <span className="font-semibold text-buy">{counts.new} new</span>}
-              {counts.add > 0 && <span className="text-buy">{counts.add} add{counts.add > 1 ? "s" : ""}</span>}
-              {counts.reduce > 0 && <span className="text-sell">{counts.reduce} reduce{counts.reduce > 1 ? "s" : ""}</span>}
-              {counts.sold > 0 && <span className="font-semibold text-sell">{counts.sold} sold</span>}
+            <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px]">
+              {counts.new > 0 && (
+                <span className="inline-flex items-center gap-1.5 text-buy"><span className="buy-solid inline-block h-[10px] w-[14px] rounded-[1px]" />{counts.new} new</span>
+              )}
+              {counts.add > 0 && (
+                <span className="inline-flex items-center gap-1.5 text-buy"><span className="add inline-block h-[10px] w-[14px] rounded-[1px] shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--buy)_45%,transparent)]" />{counts.add} add{counts.add > 1 ? "s" : ""}</span>
+              )}
+              {counts.reduce > 0 && (
+                <span className="inline-flex items-center gap-1.5 text-sell"><span className="hatch inline-block h-[10px] w-[14px] rounded-[1px] shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--sell)_45%,transparent)]" />{counts.reduce} reduce{counts.reduce > 1 ? "s" : ""}</span>
+              )}
+              {counts.sold > 0 && (
+                <span className="inline-flex items-center gap-1.5 text-sell"><span className="inline-block h-[10px] w-[14px] rounded-[1px] border border-dashed border-sell" />{counts.sold} sold</span>
+              )}
             </div>
             </div>
           </div>

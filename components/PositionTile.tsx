@@ -15,6 +15,7 @@ export interface PositionTileData {
   money: string;
   activity: Activity;
   change: number | null;
+  series?: number[];
 }
 
 const surface: Record<Activity, string> = {
@@ -43,6 +44,17 @@ export function PositionTile({ d, tier, rect, q }: { d: PositionTileData; tier: 
         <div className="absolute right-0 top-0" style={{ padding: pad }}>
           <ChangeBadge activity={d.activity} change={d.change} size={fs} />
         </div>
+      )}
+      {tier === "full" && d.series && d.series.length > 3 && !ghost && (
+        <svg viewBox="0 0 100 30" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 bottom-0 h-[45%] w-full opacity-[0.13]">
+          <path
+            d={d.series.map((v, i) => `${i === 0 ? "M" : "L"}${((i / (d.series!.length - 1)) * 100).toFixed(1)},${(28 - (v / Math.max(...d.series!)) * 26).toFixed(1)}`).join("")}
+            fill="none"
+            stroke="var(--ink)"
+            strokeWidth="1.4"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
       )}
       {tier !== "blank" && (
         <div className="absolute inset-0 flex flex-col justify-between leading-[1.15]" style={{ padding: pad }}>

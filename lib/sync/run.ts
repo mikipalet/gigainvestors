@@ -1,7 +1,7 @@
 import roster from "@/data/roster.json";
 import { listKeys, readJson, writeJson } from "../blob";
 import { fetchHtml, paths } from "../dataroma/client";
-import { parseActivity } from "../dataroma/parse-activity";
+import { parseActivity, type ActivityQuarter } from "../dataroma/parse-activity";
 import { parseHist, type HistRow } from "../dataroma/parse-hist";
 import { parseHoldings, type HoldingsPage } from "../dataroma/parse-holdings";
 import { parseManagers, type ManagerRow } from "../dataroma/parse-managers";
@@ -76,6 +76,22 @@ function carriedHists(stored: InvestorData | null): Record<string, HistRow[]> {
   return out;
 }
 
+// Full mode crawls every activity page so positions exited years ago (not in current
+// holdings) still get their history fetched; dataroma keeps hist.php for exited tickers.
+async function fetchAllActivity(code: string, full: boolean): Promise<ActivityQuarter[]> {
+  const out: ActivityQuarter[] = [];
+  for (let page = 1; page <= (full ? 20 : 1); page++) {
+    const qs = parseActivity(await fetchHtml(paths.activity(code, page)));
+    if (!qs.length || qs.every((aq) => out.some((o) => o.q === aq.q && o.items.length >= aq.items.length))) break;
+    out.push(...qs.filter((aq) => !out.some((o) => o.q === aq.q)));
+    for (const aq of qs) {
+      const seen = out.find((o) => o.q === aq.q)!;
+      for (const it of aq.items) if (!seen.items.some((x) => x.ticker === it.ticker && x.kind === it.kind)) seen.items.push(it);
+    }
+  }
+  return out;
+}
+
 async function syncManager(m: ManagerRow, full: boolean, log: (s: string) => void): Promise<"changed" | "skipped"> {
   const entry = ROSTER[m.code];
   const stored = await readJson<InvestorData>(investorKey(m.code));
@@ -84,12 +100,16 @@ async function syncManager(m: ManagerRow, full: boolean, log: (s: string) => voi
   if (!full && samePositions(stored, holdings)) return "skipped";
 
   const hists = carriedHists(stored);
-  const need = tickersNeedingHist(stored, holdings, full);
-  log(`${m.code}: ${holdings.period}, ${holdings.positions.length} positions, ${need.length} hist fetches`);
+  const activity = await fetchAllActivity(m.code, full);
+  const need = new Set(tickersNeedingHist(stored, holdings, full));
+  if (full) {
+    for (const aq of activity) for (const it of aq.items) need.add(it.ticker);
+  }
+  log(`${m.code}: ${holdings.period}, ${holdings.positions.length} positions, ${need.size} hist fetches, ${activity.length} activity quarters`);
   for (const t of need) hists[t] = parseHist(await fetchHtml(paths.hist(m.code, t)));
-  const activity = parseActivity(await fetchHtml(paths.activity(m.code)));
   const names = Object.fromEntries(holdings.positions.map((p) => [p.ticker, p.name]));
   for (const q of stored?.quarters ?? []) for (const p of q.positions) names[p.ticker] ??= p.name;
+  for (const aq of activity) for (const it of aq.items) names[it.ticker] ??= it.name;
 
   const data = buildInvestorData({
     code: m.code,

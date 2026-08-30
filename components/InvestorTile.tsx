@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Tier } from "@/lib/treemap/tier";
 import { Face } from "./Face";
 
@@ -13,9 +16,11 @@ export interface InvestorTileData {
 }
 
 export function InvestorTile({ d, tier, q }: { d: InvestorTileData; tier: Tier; q: string }) {
+  const router = useRouter();
+  const href = `/${d.code}?q=${encodeURIComponent(q)}`;
   const showFace = d.sketch && tier !== "blank";
   return (
-    <Link href={`/${d.code}?q=${encodeURIComponent(q)}`} prefetch className="relative block h-full w-full bg-paper">
+    <Link href={href} prefetch={false} onPointerEnter={() => router.prefetch(href)} className="relative block h-full w-full bg-paper">
       {showFace && <Face slug={d.slug} size={320} priority={d.priority} className="absolute inset-0" />}
       {(tier === "full" || tier === "name") && (
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 px-2 pb-1.5 text-[12px] leading-tight">

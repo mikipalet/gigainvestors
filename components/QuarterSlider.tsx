@@ -59,7 +59,7 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
         {years.map((y) => (
           <div key={y.y} className="pointer-events-none absolute top-[17px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / (quarters.length - 1)) * 100}%` }}>
             {quarters.length < 60 || Number(y.y) % 2 === 0 ? (
-              <span className="absolute top-[10px] -translate-x-1/2 text-[10px] leading-none opacity-40">{y.y}</span>
+              <span className="absolute -top-[13px] -translate-x-1/2 text-[10px] leading-none opacity-40">{y.y}</span>
             ) : null}
           </div>
         ))}

@@ -57,3 +57,15 @@ body {
   outline-offset: -2px;
   background: transparent;
 }
+
+.add {
+  background: color-mix(in oklab, var(--ink) 9%, var(--paper));
+}
+
+.hatch-light {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 9px,
+    color-mix(in oklab, var(--ink) 14%, transparent) 9px 10px
+  );
+}

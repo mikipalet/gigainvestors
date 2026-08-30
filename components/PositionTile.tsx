@@ -18,7 +18,7 @@ export interface PositionTileData {
 
 const surface: Record<Activity, string> = {
   new: "bg-ink text-paper",
-  add: "bg-ink/10",
+  add: "add",
   reduce: "hatch",
   sold: "ghost",
   hold: "",

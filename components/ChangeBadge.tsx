@@ -1,6 +1,10 @@
 import type { Activity } from "@/lib/types";
 import { formatChange } from "@/lib/format";
 
+// A reported "Add 0.0%" is noise, not a move.
+export const effectiveActivity = (activity: Activity, change: number | null): Activity =>
+  (activity === "add" || activity === "reduce") && change !== null && Math.abs(change) < 0.05 ? "hold" : activity;
+
 export function changeLabel(activity: Activity, change: number | null): string | null {
   if (activity === "new") return "NEW";
   if (activity === "sold") return "SOLD";

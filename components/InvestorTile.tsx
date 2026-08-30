@@ -35,7 +35,7 @@ export function InvestorTile({ d, tier, rect, q }: { d: InvestorTileData; tier: 
       className="tile-edge relative block h-full w-full overflow-hidden bg-paper"
       style={{ fontSize: fs }}
     >
-      {d.sketch && tier !== "blank" && (
+      {d.sketch && rect.w > 14 && (
         <div className="absolute inset-x-0 bottom-0" style={{ top: textBlock, padding: `0 ${pad * 0.5}px` }}>
           <Face slug={d.slug} size={size} priority={d.priority} />
         </div>

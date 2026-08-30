@@ -19,7 +19,7 @@ export interface HolderTileData {
   change: number | null;
 }
 
-const surface: Record<Activity, string> = { new: "bg-ink/10", add: "bg-ink/10", reduce: "hatch", sold: "ghost", hold: "" };
+const surface: Record<Activity, string> = { new: "add", add: "add", reduce: "hatch-light", sold: "ghost", hold: "" };
 
 export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier; rect: Rect; q: string }) {
   const fs = scaleFor(rect.w, rect.h);
@@ -32,7 +32,7 @@ export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier
       className={`tile-edge relative block h-full w-full overflow-hidden bg-paper ${surface[d.activity]}`}
       style={{ fontSize: fs }}
     >
-      {d.sketch && tier !== "blank" && (
+      {d.sketch && rect.w > 14 && (
         <div className={`absolute inset-x-0 bottom-0 ${d.activity === "sold" ? "opacity-40" : ""}`} style={{ top: textBlock, padding: `0 ${pad * 0.5}px` }}>
           <Face slug={d.slug} size={rect.w > 420 ? 1200 : 320} />
         </div>

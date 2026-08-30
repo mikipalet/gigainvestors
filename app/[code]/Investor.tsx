@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { ChangeBadge } from "@/components/ChangeBadge";
+import { ChangeBadge, effectiveActivity } from "@/components/ChangeBadge";
 import { Face } from "@/components/Face";
 import { PositionTile, type PositionTileData } from "@/components/PositionTile";
 import { QuarterSlider } from "@/components/QuarterSlider";
@@ -32,14 +32,17 @@ export function Investor({ data, slug, sketch }: Props) {
       out[quarter.q] = quarter.positions.map((p) => ({
         id: p.ticker,
         value: p.value,
-        data: { ticker: p.ticker, name: p.name, pct: formatPct(p.pct), money: formatMoney(p.value), activity: p.activity, change: p.change },
+        data: { ticker: p.ticker, name: p.name, pct: formatPct(p.pct), money: formatMoney(p.value), activity: effectiveActivity(p.activity, p.change), change: p.change },
       }));
     }
     return out;
   }, [data]);
 
   const live = current.positions.filter((p) => p.activity !== "sold");
-  const moves = current.positions.filter((p) => p.activity !== "hold").sort((a, b) => moveWeight(b) - moveWeight(a));
+  const moves = current.positions
+    .map((p) => ({ ...p, activity: effectiveActivity(p.activity, p.change) }))
+    .filter((p) => p.activity !== "hold")
+    .sort((a, b) => moveWeight(b) - moveWeight(a));
   const delta = formatDelta(current.total, before?.total);
 
   return (
@@ -49,7 +52,7 @@ export function Investor({ data, slug, sketch }: Props) {
           <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] opacity-50 hover:opacity-100">
             ←
           </Link>
-          <div className="relative mt-3 h-[34vh] shrink-0">{sketch && <Face slug={slug} size={1200} priority className="[&_img]:object-left-bottom" />}</div>
+          <div className="relative mt-3 h-[38vh] shrink-0">{sketch && <Face slug={slug} size={1200} priority className="[&_img]:object-left-bottom" />}</div>
           <div className="mt-4 text-[13px] leading-snug">
             <div className="text-[17px] font-semibold">{data.person}</div>
             <div className="opacity-55">{data.firm}</div>

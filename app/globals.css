@@ -30,11 +30,9 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 1px;
-  height: 1px;
-  transform-origin: 0 0;
-  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), opacity 0.4s;
-  will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), width 0.4s cubic-bezier(0.2, 0, 0, 1),
+    height 0.4s cubic-bezier(0.2, 0, 0, 1), opacity 0.4s;
+  will-change: transform, width, height;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -77,4 +75,8 @@ body {
     transparent 0 9px,
     color-mix(in oklab, var(--sell) 30%, transparent) 9px 10px
   );
+}
+
+.slider:focus-visible {
+  outline: none;
 }

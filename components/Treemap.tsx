@@ -65,19 +65,17 @@ export function Treemap<T>({ frames, q, render, label, className }: Props<T>) {
           const r = rects.get(id);
           const data = current.get(id);
           if (!r || data === undefined) {
-            return <div key={id} className="tile" style={{ opacity: 0, pointerEvents: "none", transform: "translate(0,0) scale(0,0)" }} />;
+            return <div key={id} className="tile" style={{ opacity: 0, pointerEvents: "none", transform: "translate(0,0)", width: 0, height: 0 }} />;
           }
           const tier = tierFor(r.w, r.h);
           return (
             <div
               key={id}
-              className="tile"
-              style={{ transform: `translate(${r.x}px,${r.y}px) scale(${r.w},${r.h})` }}
+              className="tile overflow-hidden"
+              style={{ transform: `translate(${r.x}px,${r.y}px)`, width: r.w, height: r.h }}
               onPointerEnter={label ? (e) => setHover({ id, x: e.clientX, y: e.clientY }) : undefined}
             >
-              <div className="absolute left-0 top-0 origin-top-left" style={{ width: r.w, height: r.h, transform: `scale(${1 / r.w},${1 / r.h})` }}>
-                {render(data, tier, r)}
-              </div>
+              {render(data, tier, r)}
             </div>
           );
         })}

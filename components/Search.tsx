@@ -79,7 +79,7 @@ export function Search() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Search"
-        className="fixed right-3 top-3 z-40 rounded-[3px] px-2 py-1 text-[12px] opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
+        className="fixed bottom-[9px] right-[116px] z-40 rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
       >
         search <span className="ml-1 opacity-60">/</span>
       </button>

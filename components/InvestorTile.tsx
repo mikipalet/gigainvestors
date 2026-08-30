@@ -40,6 +40,11 @@ export function InvestorTile({ d, tier, rect, q }: { d: InvestorTileData; tier: 
           <Face slug={d.slug} size={size} priority={d.priority} />
         </div>
       )}
+      {tier === "face" && (
+        <div className="absolute inset-x-0 bottom-0 truncate px-1 pb-[2px] text-center font-medium" style={{ fontSize: Math.max(9, fs * 0.78) }}>
+          {d.person}
+        </div>
+      )}
       {tier !== "blank" && tier !== "face" && (
         <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-[1em] leading-[1.15]" style={{ padding: pad }}>
           <div className="min-w-0">

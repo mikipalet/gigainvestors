@@ -50,13 +50,13 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
 
   return (
     <>
-      <div className="flex h-[calc(100vh-48px)] w-screen">
-        <aside className="flex w-[28%] min-w-[240px] max-w-[420px] flex-col p-6 pr-4">
+      <div className="flex h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
+        <aside className="flex shrink-0 flex-col p-4 md:w-[28%] md:min-w-[240px] md:max-w-[420px] md:p-6 md:pr-4">
           <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] opacity-50 hover:opacity-100">
             ←
           </Link>
-          <div className="mt-6 min-h-0 flex-1 text-[13px] leading-snug">
-            <div className="text-[34px] font-semibold leading-none">{stock.ticker}</div>
+          <div className="mt-2 text-[13px] leading-snug md:mt-6 md:min-h-0 md:flex-1">
+            <div className="text-[26px] font-semibold leading-none md:text-[34px]">{stock.ticker}</div>
             <div className="mt-1 opacity-55">{stock.name}</div>
             <div className="mt-5 flex items-baseline gap-2">
               <span className="text-[22px] font-semibold">{formatMoney(total)}</span>
@@ -82,7 +82,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
 
           </div>
         </aside>
-        <Treemap frames={frames} q={current.q} label={(d) => `${d.person} · ${d.money}`} className="h-full flex-1" render={(d, tier, rect) => <HolderTile d={d} tier={tier} rect={rect} q={q} />} />
+        <Treemap frames={frames} q={current.q} label={(d) => `${d.person} · ${d.money}`} className="min-h-0 w-full flex-1" render={(d, tier, rect) => <HolderTile d={d} tier={tier} rect={rect} q={q} />} />
       </div>
       <QuarterSlider quarters={quarters} q={current.q} onChange={setQ} />
     </>

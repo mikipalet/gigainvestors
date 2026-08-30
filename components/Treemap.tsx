@@ -81,7 +81,7 @@ export function Treemap<T>({ frames, q, render, label, className }: Props<T>) {
         })}
       {hoverText && hover && (
         <div
-          className="pointer-events-none fixed z-40 max-w-[280px] truncate bg-ink px-2 py-1 text-[11px] font-medium leading-none text-paper"
+          className="pointer-events-none fixed z-40 hidden max-w-[280px] truncate bg-ink px-2 py-1 text-[11px] font-medium leading-none text-paper [@media(hover:hover)]:block"
           style={{ left: hover.x + 12, top: hover.y + 14 }}
         >
           {hoverText}

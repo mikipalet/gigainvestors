@@ -6,7 +6,19 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
 
-export const metadata: Metadata = { title: "GigaInvestors" };
+export const metadata: Metadata = {
+  metadataBase: new URL("https://gigainvestors.com"),
+  title: "GigaInvestors",
+  description: "82 superinvestors, every quarterly move since 2006. Portfolios, positions and who holds what, drawn in pencil.",
+  openGraph: {
+    title: "GigaInvestors",
+    description: "82 superinvestors, every quarterly move since 2006.",
+    url: "https://gigainvestors.com",
+    siteName: "GigaInvestors",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "GigaInvestors" },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

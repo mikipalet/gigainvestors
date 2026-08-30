@@ -24,7 +24,7 @@ export function ChangeBadge({ activity, change, size }: { activity: Activity; ch
   };
   return (
     <span
-      className={`inline-block shrink-0 rounded-[2px] px-[0.4em] py-[0.1em] font-semibold leading-none tracking-wide ${styles[activity]}`}
+      className={`inline-flex shrink-0 items-center rounded-[2px] px-[0.45em] pb-[0.3em] pt-[0.34em] font-semibold leading-none tracking-wide ${styles[activity]}`}
       style={{ fontSize: size * 0.85 }}
     >
       {label}

@@ -46,14 +46,14 @@ export function PositionTile({ d, tier, rect, q }: { d: PositionTileData; tier: 
         </div>
       )}
       {tier === "full" && d.series && d.series.length > 3 && !ghost && (
-        <svg viewBox="0 0 100 30" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 bottom-0 h-[45%] w-full opacity-[0.13]">
-          <path
-            d={d.series.map((v, i) => `${i === 0 ? "M" : "L"}${((i / (d.series!.length - 1)) * 100).toFixed(1)},${(28 - (v / Math.max(...d.series!)) * 26).toFixed(1)}`).join("")}
-            fill="none"
-            stroke="var(--ink)"
-            strokeWidth="1.4"
-            vectorEffect="non-scaling-stroke"
-          />
+        <svg viewBox="0 0 100 30" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] w-full opacity-[0.1]">
+          {d.series.map((v, i) => {
+            const n = d.series!.length;
+            const max = Math.max(...d.series!);
+            const bw = (100 / n) * 0.66;
+            const bh = Math.max((v / Math.max(max, 1)) * 29, v > 0 ? 0.5 : 0);
+            return <rect key={i} x={(i / n) * 100 + (100 / n - bw) / 2} y={30 - bh} width={bw} height={bh} fill="var(--ink)" />;
+          })}
         </svg>
       )}
       {tier !== "blank" && (

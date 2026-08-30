@@ -39,15 +39,6 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
 
   const conviction = useMemo(() => stock.quarters.map((x) => x.holders.filter((h) => h.activity !== "sold").reduce((s, h) => s + h.value, 0)), [stock]);
 
-  const longestHolder = useMemo(() => {
-    const liveNow = new Set(stock.quarters[stock.quarters.length - 1].holders.filter((h) => h.activity !== "sold").map((h) => h.code));
-    for (const quarter of stock.quarters) {
-      const hit = quarter.holders.find((h) => liveNow.has(h.code) && investors[h.code]);
-      if (hit) return { person: investors[hit.code].person, since: quarter.q.slice(0, 4) };
-    }
-    return null;
-  }, [stock, investors]);
-
   const live = current.holders.filter((h) => h.activity !== "sold");
   const total = live.reduce((s, h) => s + h.value, 0);
   const totalBefore = before?.holders.filter((h) => h.activity !== "sold").reduce((s, h) => s + h.value, 0);
@@ -87,18 +78,11 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
             )}
           </div>
           <div className="mt-4">
-            <Sparkline values={conviction} index={qIndex} onSeek={(i) => setQ(quarters[i])} ariaLabel="Superinvestor holdings over time" />
-            <div className="mt-1 flex justify-between text-[11px] opacity-45">
-              <span>{quarters[0]}</span>
-              {longestHolder && (
-                <span>
-                  {longestHolder.person} holds since {longestHolder.since}
-                </span>
-              )}
-            </div>
+            <Sparkline values={conviction} labels={quarters} index={qIndex} caption="held by superinvestors" format={formatMoney} onSeek={(i) => setQ(quarters[i])} />
+
           </div>
         </aside>
-        <Treemap frames={frames} q={current.q} className="h-full flex-1" render={(d, tier, rect) => <HolderTile d={d} tier={tier} rect={rect} q={q} />} />
+        <Treemap frames={frames} q={current.q} label={(d) => `${d.person} · ${d.money}`} className="h-full flex-1" render={(d, tier, rect) => <HolderTile d={d} tier={tier} rect={rect} q={q} />} />
       </div>
       <QuarterSlider quarters={quarters} q={current.q} onChange={setQ} />
     </>

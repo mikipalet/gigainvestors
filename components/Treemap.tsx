@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { layout, type Rect } from "@/lib/treemap/layout";
 import { tierFor, type Tier } from "@/lib/treemap/tier";
 
@@ -14,15 +14,19 @@ interface Props<T> {
   frames: Record<string, Frame<T>[]>;
   q: string;
   render: (item: T, tier: Tier, rect: Rect) => ReactNode;
+  label?: (item: T) => string;
   className?: string;
 }
 
-export function Treemap<T>({ frames, q, render, className }: Props<T>) {
+export function Treemap<T>({ frames, q, render, label, className }: Props<T>) {
   const ref = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
+  const [hover, setHover] = useState<{ id: string; x: number; y: number } | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current!;
+    const r = el.getBoundingClientRect();
+    setSize({ w: r.width, h: r.height });
     const ro = new ResizeObserver(([e]) => setSize({ w: e.contentRect.width, h: e.contentRect.height }));
     ro.observe(el);
     return () => ro.disconnect();
@@ -47,8 +51,15 @@ export function Treemap<T>({ frames, q, render, className }: Props<T>) {
 
   const current = useMemo(() => new Map((frames[q] ?? []).map((f) => [f.id, f.data])), [frames, q]);
 
+  const hoverText = hover ? (() => { const d = current.get(hover.id); return d !== undefined && label ? label(d) : null; })() : null;
+
   return (
-    <div ref={ref} className={`relative overflow-hidden ${className ?? ""}`}>
+    <div
+      ref={ref}
+      className={`relative overflow-hidden ${className ?? ""}`}
+      onPointerMove={label ? (e) => setHover((h) => (h ? { ...h, x: e.clientX, y: e.clientY } : h)) : undefined}
+      onPointerLeave={label ? () => setHover(null) : undefined}
+    >
       {size.w > 0 &&
         ids.map((id) => {
           const r = rects.get(id);
@@ -58,13 +69,26 @@ export function Treemap<T>({ frames, q, render, className }: Props<T>) {
           }
           const tier = tierFor(r.w, r.h);
           return (
-            <div key={id} className="tile" style={{ transform: `translate(${r.x}px,${r.y}px) scale(${r.w},${r.h})` }}>
+            <div
+              key={id}
+              className="tile"
+              style={{ transform: `translate(${r.x}px,${r.y}px) scale(${r.w},${r.h})` }}
+              onPointerEnter={label ? (e) => setHover({ id, x: e.clientX, y: e.clientY }) : undefined}
+            >
               <div className="absolute left-0 top-0 origin-top-left" style={{ width: r.w, height: r.h, transform: `scale(${1 / r.w},${1 / r.h})` }}>
                 {render(data, tier, r)}
               </div>
             </div>
           );
         })}
+      {hoverText && hover && (
+        <div
+          className="pointer-events-none fixed z-40 max-w-[280px] truncate bg-ink px-2 py-1 text-[11px] font-medium leading-none text-paper"
+          style={{ left: hover.x + 12, top: hover.y + 14 }}
+        >
+          {hoverText}
+        </div>
+      )}
     </div>
   );
 }

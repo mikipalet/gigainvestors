@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Activity } from "@/lib/types";
 import type { Rect } from "@/lib/treemap/layout";
 import type { Tier } from "@/lib/treemap/tier";
@@ -25,24 +26,29 @@ const surface: Record<Activity, string> = {
 };
 
 export function PositionTile({ d, tier, rect, q }: { d: PositionTileData; tier: Tier; rect: Rect; q: string }) {
+  const router = useRouter();
   const fs = scaleFor(rect.w, rect.h);
   const pad = Math.round(fs * 0.55);
   const ghost = d.activity === "sold";
+  const href = `/s/${encodeURIComponent(d.ticker)}?q=${encodeURIComponent(q)}`;
   return (
     <Link
-      href={`/s/${encodeURIComponent(d.ticker)}?q=${encodeURIComponent(q)}`}
+      href={href}
       prefetch={false}
+      onPointerEnter={() => router.prefetch(href)}
       className={`tile-edge relative block h-full w-full overflow-hidden bg-paper ${surface[d.activity]}`}
       style={{ fontSize: fs }}
     >
+      {rect.w > fs * 5 && rect.h > fs * 2.5 && (
+        <div className="absolute right-0 top-0" style={{ padding: pad }}>
+          <ChangeBadge activity={d.activity} change={d.change} size={fs} />
+        </div>
+      )}
       {tier !== "blank" && (
         <div className="absolute inset-0 flex flex-col justify-between leading-[1.15]" style={{ padding: pad }}>
-          <div className="flex items-start justify-between gap-[0.6em]">
-            <div className="min-w-0">
-              <div className={`truncate font-semibold ${ghost ? "line-through opacity-60" : ""}`}>{d.ticker}</div>
-              {tier === "full" && <div className="truncate opacity-60" style={{ fontSize: "0.78em" }}>{d.name}</div>}
-            </div>
-            <ChangeBadge activity={d.activity} change={d.change} size={fs} />
+          <div className="min-w-0" style={{ paddingRight: rect.w > fs * 5 ? fs * 4 : 0 }}>
+            <div className={`truncate font-semibold ${ghost ? "line-through opacity-60" : ""}`}>{d.ticker}</div>
+            {tier === "full" && <div className="truncate opacity-60" style={{ fontSize: "0.78em" }}>{d.name}</div>}
           </div>
           {tier !== "face" && !ghost && (
             <div className="flex items-baseline justify-between">

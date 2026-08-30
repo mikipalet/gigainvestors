@@ -37,15 +37,6 @@ export function Investor({ data, slug, sketch }: Props) {
     return out;
   }, [data]);
 
-  const longestHeld = useMemo(() => {
-    const liveNow = new Set(data.quarters[data.quarters.length - 1].positions.filter((p) => p.activity !== "sold").map((p) => p.ticker));
-    for (const quarter of data.quarters) {
-      const hit = quarter.positions.find((p) => liveNow.has(p.ticker));
-      if (hit) return { ticker: hit.ticker, since: quarter.q.slice(0, 4) };
-    }
-    return null;
-  }, [data]);
-
   const live = current.positions.filter((p) => p.activity !== "sold");
   const counts = current.positions.reduce(
     (a, p) => ((a[effectiveActivity(p.activity, p.change)] += 1), a),
@@ -81,18 +72,11 @@ export function Investor({ data, slug, sketch }: Props) {
             </div>
           </div>
           <div className="mt-4">
-            <Sparkline values={totals} index={qIndex} onSeek={(i) => setQ(quarters[i])} ariaLabel="Portfolio value over time" />
-            <div className="mt-1 flex justify-between text-[11px] opacity-45">
-              <span>{quarters[0]}</span>
-              {longestHeld && (
-                <span>
-                  longest held {longestHeld.ticker} · since {longestHeld.since}
-                </span>
-              )}
-            </div>
+            <Sparkline values={totals} labels={quarters} index={qIndex} caption="portfolio value" format={formatMoney} onSeek={(i) => setQ(quarters[i])} />
+
           </div>
         </aside>
-        <Treemap frames={frames} q={current.q} className="h-full flex-1" render={(d, tier, rect) => <PositionTile d={d} tier={tier} rect={rect} q={q} />} />
+        <Treemap frames={frames} q={current.q} label={(d) => `${d.ticker} · ${d.name} · ${d.money}`} className="h-full flex-1" render={(d, tier, rect) => <PositionTile d={d} tier={tier} rect={rect} q={q} />} />
       </div>
       <QuarterSlider quarters={quarters} q={current.q} onChange={setQ} />
     </>

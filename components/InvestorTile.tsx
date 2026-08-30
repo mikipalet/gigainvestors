@@ -30,7 +30,7 @@ export function InvestorTile({ d, tier, rect, q }: { d: InvestorTileData; tier: 
   return (
     <Link
       href={href}
-      prefetch={false}
+      prefetch={d.priority ? true : false}
       onPointerEnter={() => router.prefetch(href)}
       className="tile-edge relative block h-full w-full overflow-hidden bg-paper"
       style={{ fontSize: fs }}

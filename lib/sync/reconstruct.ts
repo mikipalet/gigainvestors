@@ -61,13 +61,18 @@ export function buildInvestorData(input: ReconstructInput): InvestorData {
     }
   }
 
+  const ghost = (q: string, ticker: string, name: string) => {
+    const before = byQ.get(prevQ(q))?.get(ticker);
+    if (!before || byQ.get(q)?.has(ticker)) return;
+    put(q, { ticker, name: name || before.name, shares: 0, pct: 0, value: before.value, activity: "sold", change: null });
+  };
+
+  // Exits come from hist sell rows first (activity pages cap at 10 for high-churn funds).
+  for (const [ticker, rows] of Object.entries(hists)) {
+    for (const r of rows) if (r.shares === 0 && /^sell/i.test(r.activity)) ghost(r.q, ticker, names[ticker] ?? ticker);
+  }
   for (const aq of activity) {
-    for (const it of aq.items) {
-      if (it.kind !== "Sell") continue;
-      const before = byQ.get(prevQ(aq.q))?.get(it.ticker);
-      if (!before || byQ.get(aq.q)?.has(it.ticker)) continue;
-      put(aq.q, { ticker: it.ticker, name: it.name || before.name, shares: 0, pct: 0, value: before.value, activity: "sold", change: null });
-    }
+    for (const it of aq.items) if (it.kind === "Sell") ghost(aq.q, it.ticker, it.name);
   }
 
   const quarters: Quarter[] = [];
@@ -75,7 +80,10 @@ export function buildInvestorData(input: ReconstructInput): InvestorData {
     const positions = [...map.values()].sort((a, b) => b.value - a.value);
     const live = positions.filter((p) => p.activity !== "sold");
     const sumPct = live.reduce((s, p) => s + p.pct, 0);
-    if (sumPct <= 0) continue;
+    if (sumPct <= 0) {
+      if (positions.length) quarters.push({ q, total: 0, positions });
+      continue;
+    }
     const sumVal = live.reduce((s, p) => s + p.value, 0);
     const total =
       q === holdings.period && holdings.portfolioValue > 0

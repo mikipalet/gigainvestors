@@ -5,10 +5,11 @@ import { parseActivity, type ActivityQuarter } from "../dataroma/parse-activity"
 import { parseHist, type HistRow } from "../dataroma/parse-hist";
 import { parseHoldings, type HoldingsPage } from "../dataroma/parse-holdings";
 import { parseManagers, type ManagerRow } from "../dataroma/parse-managers";
-import { compareQ } from "../quarters";
+import { compareQ, nextQ } from "../quarters";
 import type { Index, IndexInvestor, InvestorData, SearchIndex, StockShard } from "../types";
 import { diffManagers, fingerprint, type SyncState } from "./fingerprint";
 import { buildInvestorData } from "./reconstruct";
+import { adjustedPriceSeries, type PriceRow } from "../stock-price";
 
 interface RosterEntry {
   dataromaCode: string;
@@ -69,7 +70,10 @@ function carriedHists(stored: InvestorData | null): Record<string, HistRow[]> {
   const out: Record<string, HistRow[]> = {};
   for (const q of stored?.quarters ?? []) {
     for (const p of q.positions) {
-      if (p.activity === "sold" || p.shares <= 0) continue;
+      if (p.activity === "sold" || p.shares <= 0) {
+        if (p.activity === "sold") (out[p.ticker] ??= []).push({ q: q.q, shares: 0, pct: 0, activity: "Sell 100.00%", price: 0 });
+        continue;
+      }
       (out[p.ticker] ??= []).push({ q: q.q, shares: p.shares, pct: p.pct, activity: activityString(p), price: p.value / p.shares });
     }
   }
@@ -158,24 +162,32 @@ const shardOf = (ticker: string) => {
 };
 
 async function writeStocks(all: InvestorData[]) {
-  const stocks = new Map<string, { name: string; quarters: Map<string, StockShard[string]["quarters"][number]["holders"]> }>();
+  const stocks = new Map<string, { name: string; quarters: Map<string, StockShard[string]["quarters"][number]["holders"]>; best: Map<string, PriceRow> }>();
   for (const inv of all) {
     for (const q of inv.quarters) {
       for (const p of q.positions) {
-        if (!stocks.has(p.ticker)) stocks.set(p.ticker, { name: p.name, quarters: new Map() });
+        if (!stocks.has(p.ticker)) stocks.set(p.ticker, { name: p.name, quarters: new Map(), best: new Map() });
         const st = stocks.get(p.ticker)!;
         if (p.name.length > st.name.length) st.name = p.name;
         if (!st.quarters.has(q.q)) st.quarters.set(q.q, []);
         st.quarters.get(q.q)!.push({ code: inv.code, value: p.value, pct: p.pct, activity: p.activity, change: p.change });
+        if (p.shares > 0 && p.activity !== "sold" && (st.best.get(q.q)?.shares ?? 0) < p.shares) st.best.set(q.q, { shares: p.shares, value: p.value });
       }
     }
   }
   const shards: Record<string, StockShard> = {};
   const search: SearchIndex["stocks"] = [];
   for (const [ticker, st] of stocks) {
-    const quarters = [...st.quarters.entries()]
-      .sort((a, b) => compareQ(a[0], b[0]))
-      .map(([q, holders]) => ({ q, holders: holders.sort((a, b) => b.value - a.value) }));
+    const sparse = [...st.quarters.entries()].sort((a, b) => compareQ(a[0], b[0]));
+    const sorted: typeof sparse = [];
+    for (let i = 0; i < sparse.length; i++) {
+      sorted.push(sparse[i]);
+      if (i < sparse.length - 1) {
+        for (let q = nextQ(sparse[i][0]); compareQ(q, sparse[i + 1][0]) < 0; q = nextQ(q)) sorted.push([q, []]);
+      }
+    }
+    const prices = adjustedPriceSeries(sorted.map(([q]) => st.best.get(q) ?? null));
+    const quarters = sorted.map(([q, holders], i) => ({ q, holders: holders.sort((a, b) => b.value - a.value), price: prices[i] }));
     (shards[shardOf(ticker)] ??= {})[ticker] = { ticker, name: st.name, quarters };
     const latest = quarters[quarters.length - 1];
     search.push({ t: ticker, n: st.name, h: latest.holders.filter((h) => h.activity !== "sold").length });
@@ -186,6 +198,12 @@ async function writeStocks(all: InvestorData[]) {
     stocks: search.sort((a, b) => b.h - a.h),
   };
   await writeJson("search.json", searchIndex);
+}
+
+export async function runReindex(): Promise<{ investors: number }> {
+  const managers = parseManagers(await fetchHtml(paths.managers));
+  const index = await rebuildIndex(managers);
+  return { investors: index.investors.length };
 }
 
 export async function runSync(opts: SyncOptions = {}): Promise<SyncResult> {

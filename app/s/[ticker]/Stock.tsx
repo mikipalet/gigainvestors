@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import { effectiveActivity } from "@/components/ChangeBadge";
 import { HolderTile, type HolderTileData } from "@/components/HolderTile";
 import { QuarterSlider } from "@/components/QuarterSlider";
-import { Sparkline } from "@/components/Sparkline";
+import { StackedBars } from "@/components/StackedBars";
 import { Treemap, type Frame } from "@/components/Treemap";
 import { formatDelta, formatMoney, formatPct } from "@/lib/format";
 import { prevQ } from "@/lib/quarters";
@@ -36,8 +36,6 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
     }
     return out;
   }, [stock, investors]);
-
-  const conviction = useMemo(() => stock.quarters.map((x) => x.holders.filter((h) => h.activity !== "sold").reduce((s, h) => s + h.value, 0)), [stock]);
 
   const live = current.holders.filter((h) => h.activity !== "sold");
   const total = live.reduce((s, h) => s + h.value, 0);
@@ -73,9 +71,17 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
               </span>
             </div>
           </div>
-          <div className="mt-5 h-16 md:h-auto md:min-h-0 md:flex-1 md:pb-2">
-            <Sparkline tall variant="bars" values={conviction} labels={quarters} index={qIndex} caption="held by superinvestors" format={formatMoney} onSeek={(i) => setQ(quarters[i])} />
-
+          <div className="mt-5 h-24 md:h-auto md:min-h-0 md:flex-1 md:pb-2">
+            <StackedBars
+              quarters={stock.quarters}
+              prices={stock.quarters.map((x) => x.price ?? null)}
+              labels={quarters}
+              index={qIndex}
+              caption="held by superinvestors"
+              format={formatMoney}
+              people={Object.fromEntries(Object.entries(investors).map(([c, m]) => [c, m.person]))}
+              onSeek={(i) => setQ(quarters[i])}
+            />
           </div>
         </aside>
         <Treemap frames={frames} q={current.q} label={(d) => `${d.person} · ${d.money}`} className="min-h-0 w-full flex-1" render={(d, tier, rect) => <HolderTile d={d} tier={tier} rect={rect} q={q} />} />

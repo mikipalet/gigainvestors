@@ -66,3 +66,47 @@ describe("parseChange", () => {
     expect(parseChange("")).toBeNull();
   });
 });
+
+describe("adjustedPriceSeries", () => {
+  it("rebases across a 7:1 split and keeps gaps", async () => {
+    const { adjustedPriceSeries } = await import("@/lib/stock-price");
+    const out = adjustedPriceSeries([
+      { shares: 100, value: 65000 },
+      null,
+      { shares: 700, value: 65100 },
+      { shares: 700, value: 70000 },
+    ]);
+    expect(out[0]).toBeCloseTo(93, 0);
+    expect(out[1]).toBeNull();
+    expect(out[2]).toBeCloseTo(93, 0);
+    expect(out[3]).toBeCloseTo(100, 0);
+  });
+  it("leaves genuine moves alone", async () => {
+    const { adjustedPriceSeries } = await import("@/lib/stock-price");
+    const out = adjustedPriceSeries([
+      { shares: 100, value: 10000 },
+      { shares: 100, value: 5000 },
+    ]);
+    expect(out[0]).toBeCloseTo(100, 5);
+    expect(out[1]).toBeCloseTo(50, 5);
+  });
+});
+
+describe("hist-based sold ghosts", () => {
+  it("creates a ghost from a Sell 100% hist row", () => {
+    const d = buildInvestorData({
+      ...base,
+      hists: {
+        A: [{ q: "2026 Q2", shares: 6, pct: 60, activity: "", price: 100 }],
+        B: [{ q: "2026 Q2", shares: 4, pct: 40, activity: "", price: 100 }],
+        C: [
+          { q: "2017 Q1", shares: 10, pct: 100, activity: "", price: 20 },
+          { q: "2017 Q2", shares: 0, pct: 0, activity: "Sell 100.00%", price: 18 },
+        ],
+      },
+      activity: [],
+    });
+    const g = d.quarters.find((q) => q.q === "2017 Q2")!.positions.find((p) => p.ticker === "C")!;
+    expect(g).toMatchObject({ activity: "sold", value: 200 });
+  });
+});

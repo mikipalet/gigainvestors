@@ -55,6 +55,7 @@ export interface Holder {
 export interface StockQuarter {
   q: string;
   holders: Holder[];
+  price: number | null;
 }
 
 export interface StockData {

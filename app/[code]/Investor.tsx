@@ -26,10 +26,6 @@ export function Investor({ data, slug, sketch }: Props) {
   const before = data.quarters.find((x) => x.q === prevQ(current.q));
 
   const frames = useMemo(() => {
-    const series: Record<string, number[]> = {};
-    for (const quarter of data.quarters) {
-      for (const p of quarter.positions) (series[p.ticker] ??= []).push(p.activity === "sold" ? 0 : p.value);
-    }
     const out: Record<string, Frame<PositionTileData>[]> = {};
     for (const quarter of data.quarters) {
       out[quarter.q] = quarter.positions.map((p) => ({
@@ -42,7 +38,6 @@ export function Investor({ data, slug, sketch }: Props) {
           money: formatMoney(p.value),
           activity: effectiveActivity(p.activity, p.change),
           change: p.change,
-          series: series[p.ticker],
         },
       }));
     }

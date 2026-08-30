@@ -4,7 +4,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { SearchIndex } from "@/lib/types";
 
-type Hit = { kind: "investor"; code: string; title: string; sub: string } | { kind: "stock"; ticker: string; title: string; sub: string; holders: number };
+type Hit =
+  | { kind: "investor"; code: string; title: string; sub: string }
+  | { kind: "stock"; ticker: string; title: string; sub: string; holders: number }
+  | { kind: "munger" };
 
 let cached: Promise<SearchIndex> | null = null;
 const loadIndex = () => (cached ??= fetch("/api/search").then((r) => r.json() as Promise<SearchIndex>));
@@ -21,6 +24,7 @@ function rank(index: SearchIndex, query: string): Hit[] {
     return 0;
   };
   const hits: { h: Hit; s: number }[] = [];
+  if ("charlie munger".includes(qn) && qn.length >= 3) hits.push({ h: { kind: "munger" }, s: 4 });
   for (const i of index.investors) {
     const s = Math.max(score(i.person), score(i.firm) * 0.9, score(i.code) * 0.8);
     if (s) hits.push({ h: { kind: "investor", code: i.code, title: i.person, sub: i.firm }, s: s + 0.05 });
@@ -71,7 +75,7 @@ export function Search() {
 
   const go = (h: Hit) => {
     setOpen(false);
-    router.push(h.kind === "investor" ? `/${h.code}` : `/s/${encodeURIComponent(h.ticker)}`);
+    router.push(h.kind === "munger" ? "/munger" : h.kind === "investor" ? `/${h.code}` : `/s/${encodeURIComponent(h.ticker)}`);
   };
 
   return (
@@ -108,15 +112,16 @@ export function Search() {
               <ul className="max-h-[50vh] overflow-y-auto border-t border-ink/15 py-1">
                 {hits.map((h, i) => (
                   <li
-                    key={h.kind === "investor" ? `i${h.code}` : `s${h.ticker}`}
+                    key={h.kind === "munger" ? "munger" : h.kind === "investor" ? `i${h.code}` : `s${h.ticker}`}
                     onMouseEnter={() => setSel(i)}
                     onClick={() => go(h)}
                     className={`flex cursor-pointer items-baseline gap-3 px-4 py-2 text-[13px] ${i === sel ? "bg-ink text-paper" : ""}`}
                   >
-                    <span className="shrink-0 whitespace-nowrap font-semibold">{h.title}</span>
-                    <span className="truncate opacity-60">{h.sub}</span>
+                    <span className="shrink-0 whitespace-nowrap font-semibold">{h.kind === "munger" ? "Charlie Munger" : h.title}</span>
+                    <span className="truncate opacity-60">{h.kind === "munger" ? "1924 – 2023" : h.sub}</span>
                     {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{h.holders} holders</span>}
                     {h.kind === "investor" && <span className="ml-auto shrink-0 opacity-60">investor</span>}
+                    {h.kind === "munger" && <span className="ml-auto shrink-0 opacity-60">the waiting</span>}
                   </li>
                 ))}
               </ul>

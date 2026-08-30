@@ -56,21 +56,26 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
   };
 
   const priceMax = Math.max(...prices.filter((p): p is number => p !== null), 0);
-  const pricePath = (() => {
-    if (priceMax <= 0) return null;
-    const segs: string[] = [];
-    let pen = false;
-    prices.forEach((p, i) => {
-      if (p === null) {
-        pen = false;
+  const { pricePath, gapPath } = (() => {
+    if (priceMax <= 0) return { pricePath: null, gapPath: null };
+    const pt = (i: number, p: number) => `${((i + 0.5) * (W / prices.length)).toFixed(2)},${(4 + (1 - p / priceMax) * (H - 12)).toFixed(2)}`;
+    const known = prices.map((p, i) => ({ p, i })).filter((x): x is { p: number; i: number } => x.p !== null);
+    let solid = "";
+    let dashed = "";
+    known.forEach((k, j) => {
+      if (j === 0) {
+        solid += `M${pt(k.i, k.p)}`;
         return;
       }
-      const px = (i + 0.5) * (W / prices.length);
-      const py = 4 + (1 - p / priceMax) * (H - 12);
-      segs.push(`${pen ? "L" : "M"}${px.toFixed(2)},${py.toFixed(2)}`);
-      pen = true;
+      const prev = known[j - 1];
+      if (k.i === prev.i + 1) solid += `L${pt(k.i, k.p)}`;
+      else {
+        // No filings between the two known quarters: bridge with a dashed segment.
+        dashed += `M${pt(prev.i, prev.p)}L${pt(k.i, k.p)}`;
+        solid += `M${pt(k.i, k.p)}`;
+      }
     });
-    return segs.join("");
+    return { pricePath: solid || null, gapPath: dashed || null };
   })();
 
   const shown = hover?.qi ?? index;
@@ -131,6 +136,8 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
         {pricePath && (
           <>
             <path d={pricePath} fill="none" stroke="var(--paper)" strokeWidth="3.5" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
+            {gapPath && <path d={gapPath} fill="none" stroke="var(--paper)" strokeWidth="3.5" vectorEffect="non-scaling-stroke" />}
+            {gapPath && <path d={gapPath} fill="none" stroke="var(--ink)" strokeWidth="1.1" strokeDasharray="3 3" vectorEffect="non-scaling-stroke" opacity="0.5" />}
             <path d={pricePath} fill="none" stroke="var(--ink)" strokeWidth="1.3" strokeLinejoin="round" vectorEffect="non-scaling-stroke" opacity="0.8" />
           </>
         )}

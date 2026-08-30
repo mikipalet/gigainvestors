@@ -7,7 +7,7 @@ export const dynamicParams = true;
 
 export async function generateStaticParams() {
   const search = await getSearchIndex();
-  return (search?.stocks ?? []).slice(0, 150).map((s) => ({ ticker: s.t }));
+  return (search?.stocks ?? []).map((s) => ({ ticker: s.t }));
 }
 
 export default async function Page(props: { params: Promise<{ ticker: string }> }) {

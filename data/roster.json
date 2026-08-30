@@ -1,0 +1,749 @@
+[
+  {
+    "dataromaCode": "abc",
+    "dataromaLabel": "David Abrams - Abrams Capital Management",
+    "person": "David Abrams",
+    "firm": "Abrams Capital Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "david-abrams.png"
+  },
+  {
+    "dataromaCode": "ABI",
+    "dataromaLabel": "Abrams Bison Investments",
+    "person": "Gavin Abrams",
+    "firm": "Abrams Bison Investments",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": true,
+    "file": "gavin-abrams.png"
+  },
+  {
+    "dataromaCode": "AC",
+    "dataromaLabel": "Chuck Akre - Akre Capital Management",
+    "person": "Chuck Akre",
+    "firm": "Akre Capital Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "chuck-akre.png"
+  },
+  {
+    "dataromaCode": "AI",
+    "dataromaLabel": "John Rogers - Ariel Investments",
+    "person": "John Rogers",
+    "firm": "Ariel Investments",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "john-rogers.png"
+  },
+  {
+    "dataromaCode": "AIM",
+    "dataromaLabel": "Alex Roepers - Atlantic Investment Management",
+    "person": "Alex Roepers",
+    "firm": "Atlantic Investment Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "alex-roepers.png"
+  },
+  {
+    "dataromaCode": "AKO",
+    "dataromaLabel": "AKO Capital",
+    "person": "Nicolai Tangen",
+    "firm": "AKO Capital",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "nicolai-tangen.png"
+  },
+  {
+    "dataromaCode": "AM",
+    "dataromaLabel": "David Tepper - Appaloosa Management",
+    "person": "David Tepper",
+    "firm": "Appaloosa Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "david-tepper.png"
+  },
+  {
+    "dataromaCode": "AP",
+    "dataromaLabel": "AltaRock Partners",
+    "person": "Mark Massey",
+    "firm": "AltaRock Partners",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": true,
+    "file": "mark-massey.png"
+  },
+  {
+    "dataromaCode": "aq",
+    "dataromaLabel": "Guy Spier - Aquamarine Capital",
+    "person": "Guy Spier",
+    "firm": "Aquamarine Capital",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "guy-spier.png"
+  },
+  {
+    "dataromaCode": "BAUPOST",
+    "dataromaLabel": "Seth Klarman - Baupost Group",
+    "person": "Seth Klarman",
+    "firm": "Baupost Group",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "seth-klarman.png"
+  },
+  {
+    "dataromaCode": "BRK",
+    "dataromaLabel": "Warren Buffett - Berkshire Hathaway",
+    "person": "Warren Buffett",
+    "firm": "Berkshire Hathaway",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "warren-buffett.png"
+  },
+  {
+    "dataromaCode": "ca",
+    "dataromaLabel": "Francis Chou - Chou Associates",
+    "person": "Francis Chou",
+    "firm": "Chou Associates",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "francis-chou.png"
+  },
+  {
+    "dataromaCode": "CAS",
+    "dataromaLabel": "Clifford Sosin - CAS Investment Partners",
+    "person": "Clifford Sosin",
+    "firm": "CAS Investment Partners",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "clifford-sosin.png"
+  },
+  {
+    "dataromaCode": "CAU",
+    "dataromaLabel": "Sarah Ketterer - Causeway Capital Management",
+    "person": "Sarah Ketterer",
+    "firm": "Causeway Capital Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "sarah-ketterer.png"
+  },
+  {
+    "dataromaCode": "CCM",
+    "dataromaLabel": "Glenn Greenberg - Brave Warrior Advisors",
+    "person": "Glenn Greenberg",
+    "firm": "Brave Warrior Advisors",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "glenn-greenberg.png"
+  },
+  {
+    "dataromaCode": "cc",
+    "dataromaLabel": "William Von Mueffling - Cantillon Capital Management",
+    "person": "William Von Mueffling",
+    "firm": "Cantillon Capital Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "william-von-mueffling.png"
+  },
+  {
+    "dataromaCode": "CHE",
+    "dataromaLabel": "Steven Check - Check Capital Management",
+    "person": "Steven Check",
+    "firm": "Check Capital Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "steven-check.png"
+  },
+  {
+    "dataromaCode": "CM",
+    "dataromaLabel": "Greg Alexander - Conifer Management",
+    "person": "Greg Alexander",
+    "firm": "Conifer Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "greg-alexander.png"
+  },
+  {
+    "dataromaCode": "DAC",
+    "dataromaLabel": "Dodge & Cox Funds",
+    "person": "David Hoeft",
+    "firm": "Dodge & Cox Funds",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "david-hoeft.png"
+  },
+  {
+    "dataromaCode": "DA",
+    "dataromaLabel": "Pat Dorsey - Dorsey Asset Management",
+    "person": "Pat Dorsey",
+    "firm": "Dorsey Asset Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "pat-dorsey.png"
+  },
+  {
+    "dataromaCode": "DAV",
+    "dataromaLabel": "Christopher Davis - Davis Advisors",
+    "person": "Christopher Davis",
+    "firm": "Davis Advisors",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "christopher-davis.png"
+  },
+  {
+    "dataromaCode": "DCP",
+    "dataromaLabel": "Henry Ellenbogen - Durable Capital Partners",
+    "person": "Henry Ellenbogen",
+    "firm": "Durable Capital Partners",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "henry-ellenbogen.png"
+  },
+  {
+    "dataromaCode": "EC",
+    "dataromaLabel": "John Armitage - Egerton Capital",
+    "person": "John Armitage",
+    "firm": "Egerton Capital",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "john-armitage.png"
+  },
+  {
+    "dataromaCode": "ENG",
+    "dataromaLabel": "Glenn Welling - Engaged Capital",
+    "person": "Glenn Welling",
+    "firm": "Engaged Capital",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "glenn-welling.png"
+  },
+  {
+    "dataromaCode": "fairx",
+    "dataromaLabel": "Bruce Berkowitz - Fairholme Capital",
+    "person": "Bruce Berkowitz",
+    "firm": "Fairholme Capital",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "bruce-berkowitz.png"
+  },
+  {
+    "dataromaCode": "FE",
+    "dataromaLabel": "First Eagle Investment Management",
+    "person": "Matthew McLennan",
+    "firm": "First Eagle Investment Management",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "matthew-mclennan.png"
+  },
+  {
+    "dataromaCode": "FFH",
+    "dataromaLabel": "Prem Watsa - Fairfax Financial Holdings",
+    "person": "Prem Watsa",
+    "firm": "Fairfax Financial Holdings",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "prem-watsa.png"
+  },
+  {
+    "dataromaCode": "FPA",
+    "dataromaLabel": "First Pacific Advisors",
+    "person": "Steven Romick",
+    "firm": "First Pacific Advisors",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "steven-romick.png"
+  },
+  {
+    "dataromaCode": "FS",
+    "dataromaLabel": "Terry Smith - Fundsmith",
+    "person": "Terry Smith",
+    "firm": "Fundsmith",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "terry-smith.png"
+  },
+  {
+    "dataromaCode": "GA",
+    "dataromaLabel": "Greenhaven Associates",
+    "person": "Edgar Wachenheim",
+    "firm": "Greenhaven Associates",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "edgar-wachenheim.png"
+  },
+  {
+    "dataromaCode": "GC",
+    "dataromaLabel": "Francois Rochon - Giverny Capital",
+    "person": "Francois Rochon",
+    "firm": "Giverny Capital",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "francois-rochon.png"
+  },
+  {
+    "dataromaCode": "GFT",
+    "dataromaLabel": "Bill & Melinda Gates Foundation Trust",
+    "person": "Bill Gates",
+    "firm": "Bill & Melinda Gates Foundation Trust",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "bill-gates.png"
+  },
+  {
+    "dataromaCode": "GLC",
+    "dataromaLabel": "Josh Tarasoff - Greenlea Lane Capital",
+    "person": "Josh Tarasoff",
+    "firm": "Greenlea Lane Capital",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "josh-tarasoff.png"
+  },
+  {
+    "dataromaCode": "GLRE",
+    "dataromaLabel": "David Einhorn - Greenlight Capital",
+    "person": "David Einhorn",
+    "firm": "Greenlight Capital",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "david-einhorn.png"
+  },
+  {
+    "dataromaCode": "GR",
+    "dataromaLabel": "Thomas Russo - Gardner Russo & Quinn",
+    "person": "Thomas Russo",
+    "firm": "Gardner Russo & Quinn",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "thomas-russo.png"
+  },
+  {
+    "dataromaCode": "HA",
+    "dataromaLabel": "Bill Nygren - Oakmark Funds",
+    "person": "Bill Nygren",
+    "firm": "Oakmark Funds",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "bill-nygren.png"
+  },
+  {
+    "dataromaCode": "HC",
+    "dataromaLabel": "Li Lu - Himalaya Capital Management",
+    "person": "Li Lu",
+    "firm": "Himalaya Capital Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "li-lu.png"
+  },
+  {
+    "dataromaCode": "HCM",
+    "dataromaLabel": "Hillman Capital Management",
+    "person": "Mark Hillman",
+    "firm": "Hillman Capital Management",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "mark-hillman.png"
+  },
+  {
+    "dataromaCode": "HH",
+    "dataromaLabel": "Duan Yongping - H&H International Investment",
+    "person": "Duan Yongping",
+    "firm": "H&H International Investment",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "duan-yongping.png"
+  },
+  {
+    "dataromaCode": "ic",
+    "dataromaLabel": "Carl Icahn - Icahn Capital Management",
+    "person": "Carl Icahn",
+    "firm": "Icahn Capital Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "carl-icahn.png"
+  },
+  {
+    "dataromaCode": "JIM",
+    "dataromaLabel": "Jensen Investment Management",
+    "person": "Allen Bond",
+    "firm": "Jensen Investment Management",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "allen-bond.png"
+  },
+  {
+    "dataromaCode": "KB",
+    "dataromaLabel": "Kahn Brothers Group",
+    "person": "Thomas Graham Kahn",
+    "firm": "Kahn Brothers Group",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "thomas-graham-kahn.png"
+  },
+  {
+    "dataromaCode": "LMM",
+    "dataromaLabel": "Bill Miller - Miller Value Partners",
+    "person": "Bill Miller",
+    "firm": "Miller Value Partners",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "bill-miller.png"
+  },
+  {
+    "dataromaCode": "LPC",
+    "dataromaLabel": "Stephen Mandel - Lone Pine Capital",
+    "person": "Stephen Mandel",
+    "firm": "Lone Pine Capital",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "stephen-mandel.png"
+  },
+  {
+    "dataromaCode": "LT",
+    "dataromaLabel": "Lindsell Train",
+    "person": "Nick Train",
+    "firm": "Lindsell Train",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "nick-train.png"
+  },
+  {
+    "dataromaCode": "MAVFX",
+    "dataromaLabel": "David Katz - Matrix Asset Advisors",
+    "person": "David Katz",
+    "firm": "Matrix Asset Advisors",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "david-katz.png"
+  },
+  {
+    "dataromaCode": "mc",
+    "dataromaLabel": "Lee Ainslie - Maverick Capital",
+    "person": "Lee Ainslie",
+    "firm": "Maverick Capital",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "lee-ainslie.png"
+  },
+  {
+    "dataromaCode": "MKL",
+    "dataromaLabel": "Thomas Gayner - Markel Group",
+    "person": "Thomas Gayner",
+    "firm": "Markel Group",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "thomas-gayner.png"
+  },
+  {
+    "dataromaCode": "MPF",
+    "dataromaLabel": "Mairs & Power Funds",
+    "person": "Andrew Adams",
+    "firm": "Mairs & Power Funds",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "andrew-adams.png"
+  },
+  {
+    "dataromaCode": "MP",
+    "dataromaLabel": "Tom Bancroft - Makaira Partners",
+    "person": "Tom Bancroft",
+    "firm": "Makaira Partners",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "tom-bancroft.png"
+  },
+  {
+    "dataromaCode": "MUHL",
+    "dataromaLabel": "Muhlenkamp",
+    "person": "Ron Muhlenkamp",
+    "firm": "Muhlenkamp",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "ron-muhlenkamp.png"
+  },
+  {
+    "dataromaCode": "oa",
+    "dataromaLabel": "Leon Cooperman",
+    "person": "Leon Cooperman",
+    "firm": "Leon Cooperman",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "leon-cooperman.png"
+  },
+  {
+    "dataromaCode": "oc",
+    "dataromaLabel": "Howard Marks - Oaktree Capital Management",
+    "person": "Howard Marks",
+    "firm": "Oaktree Capital Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "howard-marks.png"
+  },
+  {
+    "dataromaCode": "OCL",
+    "dataromaLabel": "Bryan Lawrence - Oakcliff Capital",
+    "person": "Bryan Lawrence",
+    "firm": "Oakcliff Capital",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "bryan-lawrence.png"
+  },
+  {
+    "dataromaCode": "pcm",
+    "dataromaLabel": "Polen Capital Management",
+    "person": "Dan Davidowitz",
+    "firm": "Polen Capital Management",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "dan-davidowitz.png"
+  },
+  {
+    "dataromaCode": "PC",
+    "dataromaLabel": "Norbert Lou - Punch Card Management",
+    "person": "Norbert Lou",
+    "firm": "Punch Card Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": null
+  },
+  {
+    "dataromaCode": "PI",
+    "dataromaLabel": "Mohnish Pabrai - Pabrai Investments",
+    "person": "Mohnish Pabrai",
+    "firm": "Pabrai Investments",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "mohnish-pabrai.png"
+  },
+  {
+    "dataromaCode": "PIM",
+    "dataromaLabel": "Richard Pzena - Pzena Investment Management",
+    "person": "Richard Pzena",
+    "firm": "Pzena Investment Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "richard-pzena.png"
+  },
+  {
+    "dataromaCode": "psc",
+    "dataromaLabel": "Bill Ackman - Pershing Square Capital Management",
+    "person": "Bill Ackman",
+    "firm": "Pershing Square Capital Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "bill-ackman.png"
+  },
+  {
+    "dataromaCode": "PTNT",
+    "dataromaLabel": "Samantha McLemore - Patient Capital Management",
+    "person": "Samantha McLemore",
+    "firm": "Patient Capital Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "samantha-mclemore.png"
+  },
+  {
+    "dataromaCode": "RC",
+    "dataromaLabel": "Ruane Cunniff LP",
+    "person": "Bill Ruane",
+    "firm": "Ruane Cunniff LP",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "bill-ruane.png"
+  },
+  {
+    "dataromaCode": "RVC",
+    "dataromaLabel": "Robert Vinall - RV Capital GmbH",
+    "person": "Robert Vinall",
+    "firm": "RV Capital GmbH",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "robert-vinall.png"
+  },
+  {
+    "dataromaCode": "SA",
+    "dataromaLabel": "Christopher Bloomstran - Semper Augustus",
+    "person": "Christopher Bloomstran",
+    "firm": "Semper Augustus",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "christopher-bloomstran.png"
+  },
+  {
+    "dataromaCode": "SAM",
+    "dataromaLabel": "Michael Burry - Scion Asset Management",
+    "person": "Michael Burry",
+    "firm": "Scion Asset Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "michael-burry.png"
+  },
+  {
+    "dataromaCode": "SE",
+    "dataromaLabel": "Mason Hawkins - Southeastern Asset Management",
+    "person": "Mason Hawkins",
+    "firm": "Southeastern Asset Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "mason-hawkins.png"
+  },
+  {
+    "dataromaCode": "SP",
+    "dataromaLabel": "Dennis Hong - ShawSpring Partners",
+    "person": "Dennis Hong",
+    "firm": "ShawSpring Partners",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "dennis-hong.png"
+  },
+  {
+    "dataromaCode": "SSHFX",
+    "dataromaLabel": "Harry Burn - Sound Shore",
+    "person": "Harry Burn",
+    "firm": "Sound Shore",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "harry-burn.png"
+  },
+  {
+    "dataromaCode": "TA",
+    "dataromaLabel": "Third Avenue Management",
+    "person": "Martin Whitman",
+    "firm": "Third Avenue Management",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "martin-whitman.png"
+  },
+  {
+    "dataromaCode": "TB",
+    "dataromaLabel": "Tweedy Browne",
+    "person": "William Browne",
+    "firm": "Tweedy Browne",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "william-browne.png"
+  },
+  {
+    "dataromaCode": "tci",
+    "dataromaLabel": "Chris Hohn - TCI Fund Management",
+    "person": "Chris Hohn",
+    "firm": "TCI Fund Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "chris-hohn.png"
+  },
+  {
+    "dataromaCode": "TF",
+    "dataromaLabel": "Nelson Peltz - Trian Fund Management",
+    "person": "Nelson Peltz",
+    "firm": "Trian Fund Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "nelson-peltz.png"
+  },
+  {
+    "dataromaCode": "TFP",
+    "dataromaLabel": "Triple Frond Partners",
+    "person": "Stuart McLaughlin",
+    "firm": "Triple Frond Partners",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "stuart-mclaughlin.png"
+  },
+  {
+    "dataromaCode": "TGM",
+    "dataromaLabel": "Chase Coleman - Tiger Global Management",
+    "person": "Chase Coleman",
+    "firm": "Tiger Global Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "chase-coleman.png"
+  },
+  {
+    "dataromaCode": "tp",
+    "dataromaLabel": "Daniel Loeb - Third Point",
+    "person": "Daniel Loeb",
+    "firm": "Third Point",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "daniel-loeb.png"
+  },
+  {
+    "dataromaCode": "T",
+    "dataromaLabel": "Torray Funds",
+    "person": "Robert Torray",
+    "firm": "Torray Funds",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "robert-torray.png"
+  },
+  {
+    "dataromaCode": "VAN",
+    "dataromaLabel": "Arnold Van Den Berg - Century Management",
+    "person": "Arnold Van Den Berg",
+    "firm": "Century Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "arnold-van-den-berg.png"
+  },
+  {
+    "dataromaCode": "VA",
+    "dataromaLabel": "ValueAct Capital",
+    "person": "Jeffrey Ubben",
+    "firm": "ValueAct Capital",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "jeffrey-ubben.png"
+  },
+  {
+    "dataromaCode": "VFC",
+    "dataromaLabel": "Valley Forge Capital Management",
+    "person": "Dev Kantesaria",
+    "firm": "Valley Forge Capital Management",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "dev-kantesaria.png"
+  },
+  {
+    "dataromaCode": "vg",
+    "dataromaLabel": "Viking Global Investors",
+    "person": "Andreas Halvorsen",
+    "firm": "Viking Global Investors",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "andreas-halvorsen.png"
+  },
+  {
+    "dataromaCode": "VVP",
+    "dataromaLabel": "Vulcan Value Partners",
+    "person": "C.T. Fitzpatrick",
+    "firm": "Vulcan Value Partners",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "c-t-fitzpatrick.png"
+  },
+  {
+    "dataromaCode": "WIM",
+    "dataromaLabel": "Wallace Weitz - Weitz Investment Management",
+    "person": "Wallace Weitz",
+    "firm": "Weitz Investment Management",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "wallace-weitz.png"
+  },
+  {
+    "dataromaCode": "WP",
+    "dataromaLabel": "David Rolfe - Wedgewood Partners",
+    "person": "David Rolfe",
+    "firm": "Wedgewood Partners",
+    "principalResolvedFromFirm": false,
+    "photoIdentityUnverified": false,
+    "file": "david-rolfe.png"
+  },
+  {
+    "dataromaCode": "YAM",
+    "dataromaLabel": "Yacktman Asset Management",
+    "person": "Donald Yacktman",
+    "firm": "Yacktman Asset Management",
+    "principalResolvedFromFirm": true,
+    "photoIdentityUnverified": false,
+    "file": "donald-yacktman.png"
+  }
+]

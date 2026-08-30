@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #111111;
+  --paper: #f4f2ec;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  overflow: hidden;
+}
+
+.tile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  transform-origin: 0 0;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1), opacity 0.4s;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile {
+    transition: none;
+  }
+}

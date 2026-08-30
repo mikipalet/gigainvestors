@@ -41,15 +41,15 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
 
   return (
     <div className="fixed inset-x-0 bottom-0 h-12 select-none bg-paper">
+      <a
+        href="https://www.dataroma.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute bottom-[3px] left-5 z-10 hidden text-[9px] leading-none opacity-35 transition-opacity hover:opacity-80 md:block"
+      >
+        quarterly 13F filings · dataroma.com
+      </a>
       <div className="absolute bottom-2 right-2 top-2 flex items-center gap-2">
-        <a
-          href="https://www.dataroma.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden text-[9px] leading-none opacity-35 transition-opacity hover:opacity-80 md:block"
-        >
-          quarterly 13F filings · dataroma.com
-        </a>
         <div className="flex items-center">
           <button
             type="button"
@@ -71,7 +71,7 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
           </button>
         </div>
       </div>
-      <div className="relative ml-5 mr-[240px] h-full sm:mr-[300px]">
+      <div className="relative ml-5 mr-[240px] h-full">
         <input
           type="range"
           min={0}

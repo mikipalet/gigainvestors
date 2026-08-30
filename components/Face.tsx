@@ -12,7 +12,8 @@ export function Face({ slug, size, priority, className }: Props) {
       <img
         src={`/faces/v3/${slug}-${size}.webp`}
         alt=""
-        loading={priority ? "eager" : "lazy"}
+        loading="eager"
+        fetchPriority={priority ? "high" : "auto"}
         decoding="async"
         draggable={false}
         className="block h-full w-full object-contain object-bottom"

@@ -45,7 +45,6 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
   const normalized = current.holders.map((h) => ({ ...h, activity: effectiveActivity(h.activity, h.change) }));
   const buying = normalized.filter((h) => h.activity === "new" || h.activity === "add").length;
   const selling = normalized.filter((h) => h.activity === "reduce" || h.activity === "sold").length;
-  const top = live[0] && investors[live[0].code] ? { person: investors[live[0].code].person, money: formatMoney(live[0].value) } : null;
   const qIndex = quarters.indexOf(current.q);
 
   return (
@@ -73,14 +72,9 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
                 <span className="font-semibold">{selling}</span> selling
               </span>
             </div>
-            {top && (
-              <div className="mt-4 text-[12px] opacity-55">
-                top holder {top.person} · {top.money}
-              </div>
-            )}
           </div>
-          <div className="mt-5 md:min-h-0 md:flex-1">
-            <Sparkline values={conviction} labels={quarters} index={qIndex} caption="held by superinvestors" format={formatMoney} onSeek={(i) => setQ(quarters[i])} />
+          <div className="mt-5 h-16 md:h-auto md:min-h-0 md:flex-1 md:pb-2">
+            <Sparkline tall variant="bars" values={conviction} labels={quarters} index={qIndex} caption="held by superinvestors" format={formatMoney} onSeek={(i) => setQ(quarters[i])} />
 
           </div>
         </aside>

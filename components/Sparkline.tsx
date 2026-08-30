@@ -9,10 +9,12 @@ interface Props {
   caption: string;
   format: (v: number) => string;
   onSeek: (i: number) => void;
+  tall?: boolean;
+  variant?: "line" | "bars";
 }
 
 // The whole history as one ink line. Hover to read a quarter, click or drag to travel to it.
-export function Sparkline({ values, labels, index, caption, format, onSeek }: Props) {
+export function Sparkline({ values, labels, index, caption, format, onSeek, tall, variant = "line" }: Props) {
   const ref = useRef<SVGSVGElement>(null);
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   if (values.length < 2) return null;
@@ -36,21 +38,21 @@ export function Sparkline({ values, labels, index, caption, format, onSeek }: Pr
   const dotTop = (y(values[shown]) / H) * 100;
 
   return (
-    <div>
+    <div className={tall ? "flex h-full min-h-0 flex-col" : ""}>
       <div className="mb-1 flex items-baseline justify-between text-[11px] leading-none">
         <span className="opacity-45">{caption}</span>
         <span className={hoverIdx !== null ? "font-semibold" : "opacity-45"}>
           {format(values[shown])} · {labels[shown]}
         </span>
       </div>
-      <div className="relative">
+      <div className={`relative ${tall ? "min-h-0 flex-1" : ""}`}>
         <svg
           ref={ref}
           viewBox={`0 0 ${W} ${H}`}
           preserveAspectRatio="none"
           role="slider"
           aria-label={caption}
-          className="h-16 w-full cursor-ew-resize touch-none select-none"
+          className={`w-full cursor-ew-resize touch-none select-none ${tall ? "h-full" : "h-16"}`}
           onPointerDown={(e) => {
             e.currentTarget.setPointerCapture(e.pointerId);
             onSeek(idxAt(e.clientX));
@@ -62,16 +64,38 @@ export function Sparkline({ values, labels, index, caption, format, onSeek }: Pr
           }}
           onPointerLeave={() => setHoverIdx(null)}
         >
-          <path d={d} fill="none" stroke="var(--ink)" strokeWidth="1.1" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" opacity="0.75" />
-          <line x1={x(index)} y1="0" x2={x(index)} y2={H} stroke="var(--ink)" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.35" />
-          {hoverIdx !== null && hoverIdx !== index && (
-            <line x1={x(hoverIdx)} y1="0" x2={x(hoverIdx)} y2={H} stroke="var(--ink)" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.15" />
+          {variant === "bars" ? (
+            values.map((v, i) => {
+              const bw = (W / values.length) * 0.68;
+              const bh = Math.max((v / Math.max(max, 1)) * (H - 3), v > 0 ? 0.6 : 0);
+              return (
+                <rect
+                  key={i}
+                  x={(i / values.length) * W + ((W / values.length) - bw) / 2}
+                  y={H - bh}
+                  width={bw}
+                  height={bh}
+                  fill="var(--ink)"
+                  opacity={i === index ? 0.85 : i === hoverIdx ? 0.55 : 0.28}
+                />
+              );
+            })
+          ) : (
+            <>
+              <path d={d} fill="none" stroke="var(--ink)" strokeWidth="1.1" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" opacity="0.75" />
+              <line x1={x(index)} y1="0" x2={x(index)} y2={H} stroke="var(--ink)" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.35" />
+              {hoverIdx !== null && hoverIdx !== index && (
+                <line x1={x(hoverIdx)} y1="0" x2={x(hoverIdx)} y2={H} stroke="var(--ink)" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.15" />
+              )}
+            </>
           )}
         </svg>
-        <div
-          className="pointer-events-none absolute h-[7px] w-[7px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink"
-          style={{ left: `${dotLeft}%`, top: `${dotTop}%` }}
-        />
+        {variant === "line" && (
+          <div
+            className="pointer-events-none absolute h-[7px] w-[7px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink"
+            style={{ left: `${dotLeft}%`, top: `${dotTop}%` }}
+          />
+        )}
       </div>
     </div>
   );

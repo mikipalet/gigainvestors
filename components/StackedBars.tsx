@@ -103,6 +103,9 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
         }}
         onPointerLeave={() => setHover(null)}
       >
+        {hover && (
+          <rect x={hover.qi * band} y="0" width={band} height={H} fill="var(--ink)" opacity="0.07" />
+        )}
         {columns.map((col, qi) => {
           const x = qi * band + (band - bw) / 2;
           const dim = qi === index ? 1 : qi === hover?.qi ? 0.85 : 0.55;

@@ -10,10 +10,10 @@ export async function generateStaticParams() {
   return (index?.investors ?? []).map((i) => ({ code: i.code }));
 }
 
-export default async function Page(props: { params: Promise<{ code: string }>; searchParams: Promise<{ q?: string }> }) {
+export default async function Page(props: { params: Promise<{ code: string }> }) {
   const params = await props.params;
-  const [index, data, sp] = await Promise.all([getIndex(), getInvestor(params.code), props.searchParams]);
+  const [index, data] = await Promise.all([getIndex(), getInvestor(params.code)]);
   const meta = index?.investors.find((i) => i.code === params.code);
   if (!index || !data || !meta || data.quarters.length === 0) notFound();
-  return <Investor data={data} slug={meta.slug} sketch={meta.sketch} allQuarters={index.quarters} initialQ={sp.q} />;
+  return <Investor data={data} slug={meta.slug} sketch={meta.sketch} />;
 }

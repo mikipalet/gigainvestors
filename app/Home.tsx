@@ -9,8 +9,8 @@ import { prevQ } from "@/lib/quarters";
 import type { Index } from "@/lib/types";
 import { useQuarter } from "@/lib/use-quarter";
 
-export function Home({ index, initialQ }: { index: Index; initialQ?: string }) {
-  const [q, setQ] = useQuarter(index.quarters, initialQ);
+export function Home({ index }: { index: Index }) {
+  const [q, setQ] = useQuarter(index.quarters);
 
   const frames = useMemo(() => {
     const out: Record<string, Frame<InvestorTileData>[]> = {};

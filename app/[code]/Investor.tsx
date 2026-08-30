@@ -15,13 +15,11 @@ interface Props {
   data: InvestorData;
   slug: string;
   sketch: boolean;
-  allQuarters: string[];
-  initialQ?: string;
 }
 
-export function Investor({ data, slug, sketch, allQuarters, initialQ }: Props) {
-  const quarters = data.quarters.map((x) => x.q);
-  const [q, setQ] = useQuarter(quarters, initialQ && quarters.includes(initialQ) ? initialQ : undefined);
+export function Investor({ data, slug, sketch }: Props) {
+  const quarters = useMemo(() => data.quarters.map((x) => x.q), [data]);
+  const [q, setQ] = useQuarter(quarters);
   const current = data.quarters.find((x) => x.q === q) ?? data.quarters[data.quarters.length - 1];
   const before = data.quarters.find((x) => x.q === prevQ(current.q));
 
@@ -39,7 +37,6 @@ export function Investor({ data, slug, sketch, allQuarters, initialQ }: Props) {
 
   const live = current.positions.filter((p) => p.activity !== "sold").length;
   const delta = formatDelta(current.total, before?.total);
-  void allQuarters;
 
   return (
     <>

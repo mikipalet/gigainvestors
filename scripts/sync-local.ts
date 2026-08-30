@@ -1,10 +1,12 @@
-import "dotenv/config";
-import { runSync } from "../lib/sync/run";
+import { config } from "dotenv";
+
+config({ path: [".env.local", ".env"] });
 
 const full = process.argv.includes("--full");
-const only = process.argv.filter((a) => /^[A-Za-z]+$/.test(a) && a !== "--full");
+const only = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 
-runSync({ full, only: only.length ? only : undefined })
+import("../lib/sync/run")
+  .then(({ runSync }) => runSync({ full, only: only.length ? only : undefined }))
   .then((r) => console.log(JSON.stringify(r, null, 2)))
   .catch((e) => {
     console.error(e);

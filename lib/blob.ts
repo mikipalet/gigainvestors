@@ -1,9 +1,15 @@
-import { head, list, put } from "@vercel/blob";
+import { put } from "@vercel/blob";
+
+// The store is public with stable URLs; deriving the URL from the token avoids a
+// billable head() API operation on every read.
+export function blobUrl(key: string): string {
+  const id = process.env.BLOB_READ_WRITE_TOKEN?.split("_")[3]?.toLowerCase();
+  return `https://${id}.public.blob.vercel-storage.com/${key}`;
+}
 
 export async function readJson<T>(key: string): Promise<T | null> {
   try {
-    const meta = await head(key);
-    const res = await fetch(meta.url, { cache: "no-store" });
+    const res = await fetch(blobUrl(key), { cache: "no-store" });
     if (!res.ok) return null;
     return (await res.json()) as T;
   } catch {
@@ -22,13 +28,3 @@ export async function writeJson(key: string, data: unknown): Promise<string> {
   return r.url;
 }
 
-export async function listKeys(prefix: string): Promise<string[]> {
-  const out: string[] = [];
-  let cursor: string | undefined;
-  do {
-    const r = await list({ prefix, cursor, limit: 1000 });
-    out.push(...r.blobs.map((b) => b.pathname));
-    cursor = r.hasMore ? r.cursor : undefined;
-  } while (cursor);
-  return out;
-}

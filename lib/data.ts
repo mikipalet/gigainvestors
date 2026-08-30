@@ -1,10 +1,9 @@
-import { head } from "@vercel/blob";
+import { blobUrl } from "./blob";
 import type { Index, InvestorData, SearchIndex, StockData, StockShard } from "./types";
 
 async function readCached<T>(key: string): Promise<T | null> {
   try {
-    const meta = await head(key);
-    const res = await fetch(meta.url, { next: { revalidate: 86400, tags: ["blob"] } });
+    const res = await fetch(blobUrl(key), { next: { revalidate: 86400, tags: ["blob"] } });
     if (!res.ok) return null;
     return (await res.json()) as T;
   } catch {

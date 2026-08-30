@@ -1,5 +1,5 @@
 import roster from "@/data/roster.json";
-import { listKeys, readJson, writeJson } from "../blob";
+import { readJson, writeJson } from "../blob";
 import { fetchHtml, paths } from "../dataroma/client";
 import { parseActivity, type ActivityQuarter } from "../dataroma/parse-activity";
 import { parseHist, type HistRow } from "../dataroma/parse-hist";
@@ -129,12 +129,11 @@ async function syncManager(m: ManagerRow, full: boolean, log: (s: string) => voi
 }
 
 async function rebuildIndex(managers: ManagerRow[]): Promise<Index> {
-  const keys = await listKeys("investors/");
   const investors: IndexInvestor[] = [];
   const quarterSet = new Set<string>();
   const all: InvestorData[] = [];
-  for (const key of keys) {
-    const d = await readJson<InvestorData>(key);
+  for (const m of managers) {
+    const d = await readJson<InvestorData>(investorKey(m.code));
     if (!d || !managers.some((m) => m.code === d.code)) continue;
     all.push(d);
     const entry = ROSTER[d.code];

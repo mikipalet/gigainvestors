@@ -17,7 +17,7 @@ async function main() {
   const from = "GigaInvestors <letters@gigainvestors.com>";
 
   if (testTo) {
-    const r = await resend.emails.send({ from, to: testTo, subject: `[test] ${manifest.subject}`, html: html.replace("{{{RESEND_UNSUBSCRIBE_URL}}}", "https://gigainvestors.com/unsubscribe"), tags: [{ name: "issue", value: slug }] });
+    const r = await resend.emails.send({ from, to: testTo, subject: `[test] ${manifest.subject}`, html: html.replace("?u={{{RESEND_UNSUBSCRIBE_URL}}}", ""), tags: [{ name: "issue", value: slug }] });
     console.log("test sent", r.data?.id ?? r.error);
     return;
   }

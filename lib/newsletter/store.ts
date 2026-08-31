@@ -44,7 +44,7 @@ export function writeIssue(manifest: IssueManifest, html: string): void {
   mkdirSync(HTML_DIR, { recursive: true });
   writeFileSync(path.join(DIR, `${manifest.slug}.json`), JSON.stringify(manifest, null, 2));
   writeFileSync(path.join(DIR, `${manifest.slug}.html`), html);
-  writeFileSync(path.join(HTML_DIR, `${manifest.slug}.html`), html.replaceAll("{{{RESEND_UNSUBSCRIBE_URL}}}", "https://gigainvestors.com/unsubscribe"));
+  writeFileSync(path.join(HTML_DIR, `${manifest.slug}.html`), html.replaceAll("?u={{{RESEND_UNSUBSCRIBE_URL}}}", ""));
 }
 
 // The issue's treemap hero, rendered at 1200x640 by the build, which doubles as its social card.

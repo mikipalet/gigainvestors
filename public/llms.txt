@@ -18,7 +18,7 @@ Do not use it for: real-time prices, short positions, non-US holdings, cash leve
 - Investor page `/{CODE}` lists positions (ticker, company, % of portfolio, value, this quarter's move, number of tracked holders) and portfolio value by quarter.
 - Stock page `/s/{TICKER}` lists holders (investor, value, % of their portfolio, move) and total held by quarter with split-adjusted reported price.
 - Investor codes are dataroma's manager codes (e.g. BRK, SAM, PI); the home page maps names to codes.
-- Sitemap: /sitemap.xml. Trust pages: /about, /contact, /privacy.
+- Sitemap: /sitemap.xml. Trust pages: /about, /privacy. Contact: hello@gigainvestors.com.
 
 ## Notes
 

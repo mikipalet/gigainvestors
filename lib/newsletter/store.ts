@@ -41,3 +41,8 @@ export function writeIssue(manifest: IssueManifest, html: string): void {
   writeFileSync(path.join(DIR, `${manifest.slug}.json`), JSON.stringify(manifest, null, 2));
   writeFileSync(path.join(HTML_DIR, `${manifest.slug}.html`), html);
 }
+
+// The issue's treemap hero, rendered at 1200x640 by the build, which doubles as its social card.
+export function issueHero(slug: string): string | null {
+  return existsSync(path.join(HTML_DIR, `${slug}.png`)) ? `/newsletter/${slug}.png` : null;
+}

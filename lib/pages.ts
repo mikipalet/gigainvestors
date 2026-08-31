@@ -7,14 +7,7 @@ export const PAGES: Record<string, { title: string; paragraphs: string[] }> = {
       "The data comes from quarterly 13F filings, the reports institutional managers file with the SEC, as compiled by dataroma.com. Values are the quarter-end reported values; prices are derived from value divided by shares and adjusted for splits. 13F filings cover US-listed long positions only, are published up to 45 days after quarter end, and do not include short positions, cash, or non-US holdings, so a portfolio here is the reported slice, not the whole fund.",
       "The portraits are pencil sketches generated from public photographs in a single house style. Norbert Lou of Punch Card Management has no public photograph anywhere, so he is drawn as a mystery man. The site has no accounts, no tracking, and no advertising; it is a static site rebuilt whenever new filings arrive.",
       "GigaInvestors is an independent project and is not affiliated with dataroma, the SEC, or any of the investors shown. Nothing here is investment advice. It is a record of what these investors reported owning, published up to 45 days after the quarter ended.",
-    ],
-  },
-  contact: {
-    title: "Contact",
-    paragraphs: [
-      "GigaInvestors is built and maintained by a single independent developer. For corrections to an investor's data, a wrong portrait, a missing investor, or a bug, please write to hello@gigainvestors.com and include the page URL you are referring to. Data issues are checked against the underlying 13F filing before anything is changed.",
-      "For press, partnership, or licensing questions, the same address works. The project is run from Palamós, Girona, Spain. There is no support team, no phone line, and no office to visit; replies usually arrive within a few days. If you would rather not email, the sketches and data pipeline are described on the About page, and machine-readable representations of every page are available to any client that sends an Accept: text/markdown header.",
-      "If you are an agent or crawler: the site map is at /sitemap.xml, the agent guide is at /llms.txt, and every investor and stock page has a markdown twin at the same URL via content negotiation. There is no write API and nothing to authenticate against.",
+      "It is built and maintained by one developer, from Palamós, Girona, Spain. For a correction to an investor's data, a wrong portrait, a missing investor, a bug, or a press or licensing question, write to hello@gigainvestors.com and include the page URL. Data issues are checked against the underlying 13F filing before anything changes.",
     ],
   },
   privacy: {

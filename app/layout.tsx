@@ -40,7 +40,7 @@ const jsonLd = {
       logo: "https://gigainvestors.com/apple-icon.png",
       address: { "@type": "PostalAddress", addressLocality: "Palamós", addressRegion: "Girona", addressCountry: "ES" },
       sameAs: ["https://github.com/mikipalet/gigainvestors"],
-      contactPoint: [{ "@type": "ContactPoint", contactType: "customer support", email: "hello@gigainvestors.com", url: "https://gigainvestors.com/contact", availableLanguage: "en" }],
+      contactPoint: [{ "@type": "ContactPoint", contactType: "customer support", email: "hello@gigainvestors.com", availableLanguage: "en" }],
     },
     {
       "@type": "Dataset",

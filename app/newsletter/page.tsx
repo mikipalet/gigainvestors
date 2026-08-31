@@ -1,12 +1,25 @@
 import Link from "next/link";
 import { NewsletterClient } from "./NewsletterClient";
-import { listIssues } from "@/lib/newsletter/store";
+import { issueHero, listIssues } from "@/lib/newsletter/store";
 
 export const dynamic = "force-static";
+const latest = listIssues()[0];
+const card = latest ? issueHero(latest.slug) : null;
+const description = "One letter a quarter on what 83 famous investors bought and sold, from their 13F filings. Open stats, no tracking on the site.";
+
 export const metadata = {
   title: "The quarter, by email · GigaInvestors",
-  description: "One email per quarter: what 83 famous investors just bought and sold, from their 13F filings. Open stats, no tracking on the site.",
+  description,
   alternates: { canonical: "https://gigainvestors.com/newsletter" },
+  openGraph: {
+    type: "website",
+    url: "https://gigainvestors.com/newsletter",
+    siteName: "GigaInvestors",
+    title: "The quarter, by email",
+    description,
+    ...(card ? { images: [{ url: card, width: 1200, height: 640, alt: latest.headline }] } : {}),
+  },
+  twitter: { card: "summary_large_image", title: "The quarter, by email", description, ...(card ? { images: [card] } : {}) },
 };
 
 export default function Page() {
@@ -23,7 +36,6 @@ export default function Page() {
       <NewsletterClient issues={issues.map((i) => ({ quarter: i.quarter, slug: i.slug, headline: i.headline, sentAt: i.sentAt ?? null }))} />
       <nav className="mt-6 flex gap-4 text-[12px] opacity-50">
         <Link href="/about">about</Link>
-        <Link href="/contact">contact</Link>
         <Link href="/privacy">privacy</Link>
       </nav>
     </main>

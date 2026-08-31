@@ -28,7 +28,7 @@ export function HomeContent({ index }: { index: Index }) {
       </ul>
       <h2>About this site</h2>
       <p>
-        <Link href="/about">About</Link> · <Link href="/contact">Contact</Link> · <Link href="/privacy">Privacy</Link> · <a href="/llms.txt">Agent guide</a> ·{" "}
+        <Link href="/about">About</Link> · <Link href="/privacy">Privacy</Link> · <a href="/llms.txt">Agent guide</a> ·{" "}
         <a href="/sitemap.xml">Sitemap</a>
       </p>
     </section>

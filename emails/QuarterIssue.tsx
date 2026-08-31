@@ -90,7 +90,7 @@ export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps
                 Archive
               </Link>{" "}
               ·{" "}
-              <Link href="{{{RESEND_UNSUBSCRIBE_URL}}}" style={{ color: ink }}>
+              <Link href="https://gigainvestors.com/unsubscribe?e={{{contact.email}}}" style={{ color: ink }}>
                 Unsubscribe
               </Link>
             </Text>

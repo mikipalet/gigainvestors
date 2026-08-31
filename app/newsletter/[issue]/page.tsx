@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { listIssues, readIssue } from "@/lib/newsletter/store";
+import { issueHero, listIssues, readIssue } from "@/lib/newsletter/store";
+import { firstSentences } from "@/lib/format";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -12,7 +13,19 @@ export async function generateStaticParams() {
 export async function generateMetadata(props: { params: Promise<{ issue: string }> }) {
   const { issue } = await props.params;
   const found = readIssue(issue);
-  return { title: found ? `${found.manifest.quarter} · GigaInvestors` : "GigaInvestors", alternates: { canonical: `https://gigainvestors.com/newsletter/${issue}` } };
+  const url = `https://gigainvestors.com/newsletter/${issue}`;
+  if (!found) return { title: "GigaInvestors", alternates: { canonical: url } };
+  const { quarter, headline, prose } = found.manifest;
+  const description = firstSentences(prose?.paragraphs[0] ?? `The ${quarter} letter from GigaInvestors.`, 200);
+  const hero = issueHero(issue);
+  const images = hero ? [{ url: hero, width: 1200, height: 640, alt: `${quarter}: ${headline}` }] : undefined;
+  return {
+    title: `${quarter}: ${headline}`,
+    description,
+    alternates: { canonical: url },
+    openGraph: { type: "article", url, siteName: "GigaInvestors", title: headline, description, images },
+    twitter: { card: "summary_large_image", title: headline, description, images: hero ? [hero] : undefined },
+  };
 }
 
 export default async function Page(props: { params: Promise<{ issue: string }> }) {

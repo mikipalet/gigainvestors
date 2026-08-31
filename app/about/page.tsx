@@ -18,7 +18,6 @@ export default function Page() {
       ))}
       <nav className="mt-6 flex gap-4 text-[12px] opacity-50">
         <Link href="/about">about</Link>
-        <Link href="/contact">contact</Link>
         <Link href="/privacy">privacy</Link>
         <Link href="/newsletter">newsletter</Link>
         <a href="/llms.txt">llms.txt</a>

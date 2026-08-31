@@ -28,3 +28,12 @@ export function formatChange(change: number | null | undefined): string | null {
 
 // Text size that follows tile size, so a big tile reads big without a font ladder.
 export const scaleFor = (w: number, h: number) => Math.max(11, Math.min(26, Math.sqrt(w * h) / 14));
+
+// Trims to whole sentences under a limit, falling back to a word boundary, for meta descriptions.
+export function firstSentences(text: string, limit: number): string {
+  if (text.length <= limit) return text;
+  const cut = text.slice(0, limit);
+  const sentence = cut.lastIndexOf(". ");
+  if (sentence > limit * 0.5) return cut.slice(0, sentence + 1);
+  return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
+}

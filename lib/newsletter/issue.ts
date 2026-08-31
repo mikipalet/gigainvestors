@@ -29,14 +29,6 @@ export interface Consensus {
   priceMove: number | null;
 }
 
-export interface RollCallEntry {
-  code: string;
-  person: string;
-  slug: string;
-  sentences: string[];
-  impact: number;
-}
-
 export interface Issue {
   quarter: string;
   filed: number;
@@ -49,19 +41,11 @@ export interface Issue {
   subject: string;
   preview: string;
   headline: string;
-  standfirst: string[];
-  rollCall: RollCallEntry[];
+  standfirst: string;
   bets: Move[];
-  agreedBuys: Consensus[];
-  agreedSells: Consensus[];
-  contested: Consensus[];
-  crowd: { ticker: string; before: number; now: number }[];
-  quiet: string[];
-  loud: string[];
+  agreed: Consensus[];
   nextDeadline: string;
 }
-
-const ALWAYS = ["BRK", "psc", "AM", "BAUPOST", "HC", "PI", "ic", "tci", "FS", "vg"];
 
 export const canonical = (t: string) => {
   const s = t.replace(/-OLD$/, "");
@@ -73,7 +57,7 @@ export const canonical = (t: string) => {
 const pts = (n: number) => (n >= 10 ? Math.round(n) : Math.round(n * 10) / 10);
 const pctText = (p: number) => (p > 0 && p < 0.1 ? "<0.1%" : `${pts(p)}%`);
 const signed = (n: number) => `${n >= 0 ? "+" : "−"}${Math.abs(Math.round(n))}%`;
-const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? "" : "s"}`;
+const ORDINAL = ["", "largest", "second-largest", "third-largest", "fourth-largest", "fifth-largest"];
 const oxford = (xs: string[]) => (xs.length <= 1 ? xs.join("") : xs.length === 2 ? `${xs[0]} and ${xs[1]}` : `${xs.slice(0, -1).join(", ")} and ${xs[xs.length - 1]}`);
 const lastName = (p: string) => p.split(" ").pop() ?? p;
 const shortName = (name: string) => {
@@ -166,8 +150,8 @@ export function buildIssue(quarter: string, index: Index, investors: Record<stri
     const sold = [...b.now.values()].filter((p) => p.activity === "sold").length;
     guards.push(
       kind === "partial"
-        ? `${b.person}'s filing shows the book at ${formatMoney(b.total)} from ${formatMoney(b.totalBefore)} with ${sold} of ${b.now.size} positions marked sold; that reads as an incomplete filing, not trades, and it is excluded above.`
-        : `${b.person}'s filing shows every position cut by the same amount and the book at ${formatMoney(b.total)} from ${formatMoney(b.totalBefore)}; that reads as a reporting change, not trades, and it is excluded above.`,
+        ? `${b.person}'s filing marks ${sold} of ${b.now.size} positions sold and the book at ${formatMoney(b.total)} from ${formatMoney(b.totalBefore)}, which reads as an incomplete filing; excluded.`
+        : `${b.person}'s filing cuts every position by the same amount (${formatMoney(b.totalBefore)} to ${formatMoney(b.total)}), read as a reporting change and left out.`,
     );
   }
   const clean = books.filter((b) => !artifacts.has(b.code));
@@ -184,7 +168,6 @@ export function buildIssue(quarter: string, index: Index, investors: Record<stri
     const parent = parents.find((k) => hs.every((h) => h.before.has(k)));
     if (parent) spinoffs.set(t, parent);
   }
-  for (const [t, parent] of spinoffs) guards.push(`${t}'s ${plural(newHolders.get(t)!.length, "new holder")} all held ${parent} last quarter; it is a spin-off, not a buy.`);
 
   // Moves with impact in points of the prior book.
   const moves: Move[] = [];
@@ -227,24 +210,10 @@ export function buildIssue(quarter: string, index: Index, investors: Record<stri
     holdersBefore: holders(t, "before"),
     priceMove: priceMove(t),
   }));
-  const agreedBuys = cons.filter((c) => c.buyers.length >= 3 && c.sellers.length === 0).sort((a, b) => b.buyers.length - a.buyers.length).slice(0, 5);
-  const agreedSells = cons.filter((c) => c.sellers.length >= 3 && c.buyers.length === 0).sort((a, b) => b.sellers.length - a.sellers.length).slice(0, 5);
-  const contested = cons.filter((c) => c.buyers.length >= 3 && c.sellers.length >= 3).sort((a, b) => b.buyers.length + b.sellers.length - a.buyers.length - a.sellers.length).slice(0, 3);
-
-  // Crowd: holder-count deltas.
-  const allTickers = new Set<string>();
-  for (const b of clean) for (const t of b.now.keys()) allTickers.add(t);
-  for (const b of clean) for (const t of b.before.keys()) allTickers.add(t);
-  const crowd = [...allTickers].map((t) => ({ ticker: t, before: holders(t, "before"), now: holders(t, "now") })).filter((c) => Math.abs(c.now - c.before) >= 3).sort((a, b) => Math.abs(b.now - b.before) - Math.abs(a.now - a.before)).slice(0, 12);
-
-  // Turnover.
-  const turnover = clean.map((b) => {
-    const moved = moves.filter((m) => m.code === b.code).reduce((s, m) => s + m.dollars, 0);
-    const trades = [...b.now.values()].filter((p) => effectiveActivity(p.activity, p.change) !== "hold").length;
-    return { b, turnover: Math.max(b.total, b.totalBefore) > 0 ? (moved / Math.max(b.total, b.totalBefore)) * 100 : 0, trades, positions: [...b.now.values()].filter((p) => p.activity !== "sold").length };
-  });
-  const quiet = turnover.filter((t) => t.trades <= 2 || t.turnover < 2).sort((a, b) => a.turnover - b.turnover).slice(0, 5).map((t) => (t.trades === 0 ? `${t.b.person} moved nothing across ${plural(t.positions, "position")}.` : `${t.b.person} touched ${t.trades} of ${t.positions} positions (${pctText(t.turnover)} turnover).`));
-  const loud = turnover.filter((t) => t.turnover >= 30).sort((a, b) => b.turnover - a.turnover).slice(0, 5).map((t) => `${t.b.person} ${pctText(t.turnover)} turnover across ${plural(t.positions, "position")}.`);
+  const agreed = cons
+    .filter((c) => (c.buyers.length >= 3 && c.sellers.length === 0) || (c.sellers.length >= 3 && c.buyers.length === 0))
+    .sort((a, b) => b.buyers.length + b.sellers.length - a.buyers.length - a.sellers.length)
+    .slice(0, 3);
 
   // Lead story: the largest single move in dollars, told against the crowd.
   const byDollars = [...moves].sort((a, b) => b.dollars - a.dollars);
@@ -258,57 +227,32 @@ export function buildIssue(quarter: string, index: Index, investors: Record<stri
       })()
     : null;
 
-  const verb = (a: Activity) => (a === "new" ? "opened" : a === "sold" ? "closed" : a === "add" ? "added to" : "trimmed");
+  const verb = (a: Activity, dollars: number, name: string) =>
+    a === "new" ? `opened a ${formatMoney(dollars)} position in ${name}` : a === "sold" ? `closed a ${formatMoney(dollars)} position in ${name}` : `${a === "add" ? "added" : "sold"} ${formatMoney(dollars)} of ${name}`;
+  const who = (m: Move) => (lastName(m.person) === "Buffett" ? "Berkshire" : m.person);
   const headline = lead
-    ? `${lastName(lead.person) === "Buffett" ? "Berkshire" : lead.person} ${lead.dollars >= 1e9 ? `put ${formatMoney(lead.dollars)} into` : verb(top!.activity)} ${shortName(lead.name)}.${lead.sellers.length >= 3 ? ` ${lead.sellers.length === 1 ? "One other" : oxford([String(lead.sellers.length)]) + " others"} sold it.` : lead.buyers.length >= 3 ? ` ${lead.buyers.length} others bought too.` : ""}`
+    ? `${who(top!)} ${lead.dollars >= 1e9 && top!.activity !== "sold" ? `put ${formatMoney(lead.dollars)} into ${shortName(lead.name)}` : verb(top!.activity, lead.dollars, shortName(lead.name))}.${lead.sellers.length >= 3 ? ` ${lead.sellers.length} others sold it.` : lead.buyers.length >= 3 ? ` ${lead.buyers.length} others bought too.` : ""}`
     : `${filed} of ${active} filed for ${quarter}.`;
-  const standfirst: string[] = [];
-  if (lead) {
-    standfirst.push(`${lead.person} ${verb(top!.activity)} ${lead.ticker}, ${formatMoney(lead.dollars)} at ${quarter.replace(" ", " ")} quarter-end prices${lead.rank ? `. It is now ${pctText(lead.pctNow)} of the book, position ${lead.rank}` : ""}.`);
-    if (lead.sellers.length) standfirst.push(`${lead.sellers.length} ${lead.sellers.length === 1 ? "investor" : "investors"} sold a meaningful amount${lead.priceMove !== null ? ` into the same ${signed(lead.priceMove).replace("+", "")} ${lead.priceMove >= 0 ? "rally" : "drop"}` : ""}: ${lead.sellers.length > 5 ? `${lead.sellers.slice(0, 5).join(", ")} and ${lead.sellers.length - 5} more` : oxford(lead.sellers)}. Distinct holders went from ${lead.holdersBefore} to ${lead.holdersNow}.`);
-    if (lead.buyers.length) standfirst.push(`${lead.buyers.length === 1 ? "One" : lead.buyers.length} bought alongside: ${oxford(lead.buyers.slice(0, 4))}.`);
-  }
-
-  // Roll call: always-show list plus the highest-impact investors, one paragraph each.
-  const impactByCode = new Map<string, number>();
-  for (const m of moves) impactByCode.set(m.code, (impactByCode.get(m.code) ?? 0) + m.impact);
-  const order = [...clean].sort((a, b) => (impactByCode.get(b.code) ?? 0) - (impactByCode.get(a.code) ?? 0));
-  const chosen = [...new Set([...ALWAYS.filter((c) => clean.some((b) => b.code === c)), ...order.map((b) => b.code)])].slice(0, 12);
-  const rollCall: RollCallEntry[] = chosen.map((code) => {
-    const b = clean.find((x) => x.code === code)!;
-    const mine = moves.filter((m) => m.code === code).sort((x, y) => y.dollars - x.dollars);
-    const news = mine.filter((m) => m.activity === "new");
-    const adds = mine.filter((m) => m.activity === "add" && (m.change ?? 0) >= 20);
-    const trims = mine.filter((m) => m.activity === "reduce" && (m.change ?? 0) <= -20);
-    const exits = mine.filter((m) => m.activity === "sold");
-    const s: string[] = [];
-    const item = (m: Move) => `${m.ticker} (${formatMoney(m.activity === "sold" ? m.dollars : m.value)}${m.activity === "sold" ? "" : `, ${pctText(m.pct)}`})`;
-    if (news.length) s.push(`Opened ${plural(news.length, "position")} for ${formatMoney(news.reduce((x, m) => x + m.dollars, 0))}: ${news.slice(0, 4).map(item).join(", ")}.`);
-    if (adds.length) s.push(`Added ${adds.slice(0, 3).map((m) => `${signed(m.change ?? 0)} ${m.ticker}${m.pct >= 5 ? ` (now ${pctText(m.pct)})` : ""}`).join(", ")}.`);
-    if (trims.length) s.push(`Trimmed ${trims.slice(0, 3).map((m) => `${m.ticker} ${signed(m.change ?? 0)}${m.pct >= 5 ? ` (still ${pctText(m.pct)})` : ""}`).join(", ")}.`);
-    if (exits.length) s.push(`Sold ${exits.slice(0, 3).map(item).join(", ")}.`);
-    const top5 = (map: Map<string, Position>) => [...map.values()].filter((p) => p.activity !== "sold").sort((x, y) => y.pct - x.pct).slice(0, 5).reduce((x, p) => x + p.pct, 0);
-    const c0 = top5(b.before);
-    const c1 = top5(b.now);
-    if (c0 && Math.abs(c1 - c0) >= 10) s.push(`Top five went from ${pctText(c0)} of the book to ${pctText(c1)}.`);
-    if (!s.length) {
-      const t = turnover.find((x) => x.b.code === code)!;
-      s.push(t.trades === 0 ? `Moved nothing across ${plural(t.positions, "position")}.` : `Small changes only: ${t.trades} of ${t.positions} positions, ${pctText(t.turnover)} turnover.`);
-    }
-    return { code, person: b.person, slug: b.slug, sentences: s, impact: impactByCode.get(code) ?? 0 };
-  });
+  const standfirst = lead
+    ? [
+        top!.activity === "sold" ? "" : `${shortName(lead.name)} is now ${pctText(lead.pctNow)} of the book${lead.rank >= 1 && lead.rank <= 5 ? ` and its ${ORDINAL[lead.rank]} position` : ""}.`,
+        lead.sellers.length ? `${lead.sellers.length === 1 ? "One investor" : `${lead.sellers.length} investors`} sold${lead.priceMove !== null && Math.abs(lead.priceMove) >= 5 ? ` into a ${Math.abs(Math.round(lead.priceMove))}% ${lead.priceMove > 0 ? "rally" : "drop"}` : ""}${lead.sellers.length > 3 ? `, among them ${oxford(lead.sellers.slice(0, 3))}` : `: ${oxford(lead.sellers)}`}.` : "",
+        lead.buyers.length ? `${oxford(lead.buyers.slice(0, 3))} bought${lead.buyers.length > 3 ? ` as did ${lead.buyers.length - 3} more` : ""}.` : "",
+      ]
+        .filter(Boolean)
+        .join(" ")
+    : `${filed} of ${active} investors have filed. The rest are due by ${deadlineFor(quarter).toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "UTC" })}.`;
 
   // Bets: top impact, one per investor, floor $25M.
   const seen = new Set<string>();
-  const bets = [...meaningful].sort((a, b) => b.impact - a.impact).filter((m) => m.dollars >= 25e6 && !seen.has(m.code) && seen.add(m.code)).slice(0, 8);
+  const bets = [...meaningful].sort((a, b) => b.impact - a.impact).filter((m) => m.dollars >= 25e6 && !seen.has(m.code) && seen.add(m.code)).slice(0, 5);
 
   const aggregate = clean.reduce((s, b) => s + b.total, 0);
   const aggregateBefore = clean.reduce((s, b) => s + b.totalBefore, 0);
   const nextQ = quarter.endsWith("Q4") ? `${Number(quarter.slice(0, 4)) + 1} Q1` : `${quarter.slice(0, 4)} Q${Number(quarter.slice(-1)) + 1}`;
   const nextDeadline = deadlineFor(nextQ).toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "UTC" });
   const subject = `${quarter}: ${headline}`.slice(0, 78);
-  const second = rollCall.filter((r) => r.code !== lead?.code).slice(0, 2);
-  const preview = second.map((r) => `${lastName(r.person)}: ${r.sentences[0].replace(/\.$/, "")}`).join(". ").slice(0, 140);
+  const preview = standfirst.slice(0, 140);
 
-  return { quarter, filed, active, absentees, guards, aggregate, aggregateBefore, lead, subject, preview, headline, standfirst, rollCall, bets, agreedBuys, agreedSells, contested, crowd, quiet, loud, nextDeadline };
+  return { quarter, filed, active, absentees, guards, aggregate, aggregateBefore, lead, subject, preview, headline, standfirst, bets, agreed, nextDeadline };
 }

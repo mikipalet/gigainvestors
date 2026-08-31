@@ -36,7 +36,7 @@ describe("buildIssue", () => {
     expect(issue.filed).toBe(2);
     expect(issue.lead?.ticker).toBe("NVDA");
     expect(issue.bets[0]).toMatchObject({ code: "A", ticker: "NVDA" });
-    expect(issue.rollCall.find((r) => r.code === "A")?.sentences.join(" ")).toContain("Opened 1 position");
+    expect(issue.standfirst).toBe("Nvidia is now 50% of the book and its largest position. Bob bought.");
     expect(canonical("GOOG")).toBe("GOOGL");
     expect(canonical("CTRA-OLD")).toBe("CTRA");
   });

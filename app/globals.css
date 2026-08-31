@@ -1,14 +1,5 @@
 @import "tailwindcss";
 
-@view-transition {
-  navigation: auto;
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 0.12s;
-}
-
 :root {
   --ink: #111111;
   --paper: #f4f2ec;

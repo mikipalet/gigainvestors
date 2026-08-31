@@ -44,7 +44,7 @@ export function Home({ index }: { index: Index }) {
 
   return (
     <>
-      <Treemap frames={frames} q={q} label={(d) => `${d.person} · ${d.money}`} className="locks-scroll h-[calc(100dvh-48px)] w-screen" render={(d, tier, rect) => <InvestorTile d={d} tier={tier} rect={rect} q={q} />} />
+      <Treemap frames={frames} q={q} label={(d) => `${d.person} · ${d.money}`} className="locks-scroll h-[calc(100dvh-84px)] sm:h-[calc(100dvh-48px)] w-screen" render={(d, tier, rect) => <InvestorTile d={d} tier={tier} rect={rect} q={q} />} />
       <QuarterSlider quarters={index.quarters} q={q} onChange={setQ} />
     </>
   );

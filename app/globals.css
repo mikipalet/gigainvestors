@@ -85,6 +85,16 @@ a.tile-edge:hover {
   background: color-mix(in oklab, var(--buy) 14%, var(--paper));
 }
 
+.sell-tint-1 {
+  background: color-mix(in oklab, var(--sell) 7%, var(--paper));
+}
+.sell-tint-2 {
+  background: color-mix(in oklab, var(--sell) 13%, var(--paper));
+}
+.sell-tint-3 {
+  background: color-mix(in oklab, var(--sell) 20%, var(--paper));
+}
+
 .buy-solid {
   background: var(--buy);
   color: var(--paper);

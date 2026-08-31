@@ -79,7 +79,7 @@ export function Search() {
 
   return (
     <>
-      <div className="fixed bottom-[2px] right-2 z-50 flex items-center gap-1 sm:bottom-[9px] sm:right-[76px] sm:gap-2">
+      <div className="fixed bottom-[6px] right-2 z-50 flex items-center gap-1 sm:bottom-[9px] sm:right-[76px] sm:gap-2">
         <a
           href="mailto:hello@gigainvestors.com"
           className="hidden rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 sm:block"

@@ -31,7 +31,7 @@ export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier
       onPointerEnter={() => {
         if (d.sketch) new Image().src = `/faces/v3/${d.slug}-1200.avif`;
       }}
-      className={`tile-edge relative block h-full w-full overflow-hidden bg-paper ${surfaceFor(d.activity, d.change)}`}
+      className={`tile-edge relative block h-full w-full overflow-hidden bg-paper ${surfaceFor(d.activity, d.change, false, true)}`}
       style={{ fontSize: fs }}
     >
       {d.sketch && rect.w > 14 && (

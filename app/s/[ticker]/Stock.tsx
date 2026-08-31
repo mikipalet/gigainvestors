@@ -75,7 +75,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
 
   return (
     <>
-      <div className="locks-scroll flex h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
+      <div className="locks-scroll flex h-[calc(100dvh-84px)] sm:h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
         <aside className="flex shrink-0 flex-col p-4 md:w-[28%] md:min-w-[240px] md:max-w-[420px] md:p-6 md:pr-4">
           <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
             GigaInvestors

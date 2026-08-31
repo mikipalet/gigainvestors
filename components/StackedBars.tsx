@@ -157,6 +157,7 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
             );
           });
         })}
+        <g className="hidden sm:block">
         {(() => {
           const last = columns[columns.length - 1];
           let acc = 0;
@@ -172,6 +173,13 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
               );
             });
         })()}
+        </g>
+        {index < columns.length - 1 && (
+          <>
+            <rect x={(index + 1) * band} y="0" width={W - (index + 1) * band} height={H} fill="var(--paper)" opacity="0.72" />
+            <line x1={(index + 1) * band} y1="0" x2={(index + 1) * band} y2={H} stroke="var(--ink)" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.35" />
+          </>
+        )}
         {pricePath && (
           <>
             <path d={pricePath} fill="none" stroke="var(--paper)" strokeWidth="8" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />

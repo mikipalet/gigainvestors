@@ -46,6 +46,7 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
           .slice(0, 3)
           .map((p) => p.ticker),
       );
+      const firstOnRecord = quarter.q === data.quarters[0].q;
       out[quarter.q] = quarter.positions.map((p) => ({
         id: p.ticker,
         value: p.value,
@@ -54,9 +55,9 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
           name: p.name,
           pct: formatPct(p.pct),
           money: formatMoney(p.value),
-          activity: effectiveActivity(p.activity, p.change),
-          change: p.change,
-          strongNew: topNew.has(p.ticker),
+          activity: firstOnRecord ? "hold" : effectiveActivity(p.activity, p.change),
+          change: firstOnRecord ? null : p.change,
+          strongNew: !firstOnRecord && topNew.has(p.ticker),
           since: p.activity === "sold" ? undefined : since[p.ticker],
           holders: holders[p.ticker],
         },
@@ -65,23 +66,24 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
     return out;
   }, [data, holders]);
 
+  const firstOnRecord = current.q === data.quarters[0].q;
   const live = current.positions.filter((p) => p.activity !== "sold");
   const counts = current.positions.reduce(
-    (a, p) => ((a[effectiveActivity(p.activity, p.change)] += 1), a),
+    (a, p) => ((a[firstOnRecord ? "hold" : effectiveActivity(p.activity, p.change)] += 1), a),
     { new: 0, add: 0, reduce: 0, sold: 0, hold: 0 } as Record<string, number>,
   );
   const delta = formatDelta(current.total, before?.total);
   const totals = useMemo(() => data.quarters.map((x) => x.total), [data]);
   const topN = Math.min(10, live.length);
   const topShare = Math.round([...live].sort((a, b) => b.pct - a.pct).slice(0, topN).reduce((s, p) => s + p.pct, 0));
-  const bought = current.positions.reduce((s, p) => s + addedDollars({ ...p, activity: effectiveActivity(p.activity, p.change) }), 0);
-  const sold = current.positions.reduce((s, p) => s + removedDollars({ ...p, activity: effectiveActivity(p.activity, p.change) }), 0);
+  const bought = firstOnRecord ? 0 : current.positions.reduce((s, p) => s + addedDollars({ ...p, activity: effectiveActivity(p.activity, p.change) }), 0);
+  const sold = firstOnRecord ? 0 : current.positions.reduce((s, p) => s + removedDollars({ ...p, activity: effectiveActivity(p.activity, p.change) }), 0);
   const flowMax = Math.max(bought, sold, 1);
   const qIndex = quarters.indexOf(current.q);
 
   return (
     <>
-      <div className="locks-scroll flex h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
+      <div className="locks-scroll flex h-[calc(100dvh-84px)] sm:h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
         <aside className="flex shrink-0 flex-col p-4 md:w-[28%] md:min-w-[240px] md:max-w-[420px] md:p-6 md:pr-4">
           <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
             GigaInvestors
@@ -99,6 +101,7 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
             <div className="opacity-55">
               {plural(live.length, "position")}{live.length > 1 ? ` · top ${topN} = ${topShare}%` : ""} · {current.q}
             </div>
+            {firstOnRecord && <div className="mt-1.5 text-[12px] opacity-55">First filing on record. What changed that quarter is not knowable from here.</div>}
             <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px]">
               {counts.new > 0 && (
                 <span className="inline-flex items-center gap-1.5 text-buy"><span className="buy-solid inline-block h-[10px] w-[14px] rounded-[1px]" />{counts.new} new</span>

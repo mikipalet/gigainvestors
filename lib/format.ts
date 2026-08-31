@@ -15,7 +15,12 @@ export function formatDelta(now: number, before: number | undefined): string | n
   return `${d >= 0 ? "+" : "−"}${s}%`;
 }
 
-export const formatPct = (p: number) => { const r = Math.round(p * 10) / 10; return `${r.toFixed(r < 10 ? 1 : 0)}%`; };
+// A real position that rounds to 0.0% reads as an error, so say it is small instead.
+export const formatPct = (p: number) => {
+  if (p > 0 && p < 0.05) return "<0.1%";
+  const r = Math.round(p * 10) / 10;
+  return `${r.toFixed(r < 10 ? 1 : 0)}%`;
+};
 
 export function formatChange(change: number | null | undefined): string | null {
   if (change === null || change === undefined || !Number.isFinite(change)) return null;

@@ -20,17 +20,30 @@ export async function renderHero(facts: Facts, outFile: string): Promise<boolean
   const lead = facts.lead;
   if (!lead || lead.book.length === 0) return false;
   const pad = 3;
+  const TOP = 12;
+  const ranked = [...lead.book].sort((a, b) => b.value - a.value);
+  const head = ranked.slice(0, TOP);
+  const tail = ranked.slice(TOP);
+  const tailValue = tail.reduce((s, p) => s + p.value, 0);
+  const shown = tailValue > 0 ? [...head, { ticker: "__rest", value: tailValue, activity: "hold" as const, change: null }] : head;
   const rects = layout(
-    lead.book.map((p) => ({ id: p.ticker, value: p.value })),
+    shown.map((p) => ({ id: p.ticker, value: p.value })),
     W - 2 * pad,
     H - 2 * pad,
     pad,
   );
-  const byTicker = new Map(lead.book.map((p) => [p.ticker, p]));
+  const byTicker = new Map(shown.map((p) => [p.ticker, p]));
   const bookTotal = lead.book.reduce((s, b) => s + b.value, 0);
   const parts: string[] = [];
   for (const r of rects) {
     const p = byTicker.get(r.id)!;
+    if (r.id === "__rest") {
+      parts.push(`<rect x="${r.x + pad}" y="${r.y + pad}" width="${r.w}" height="${r.h}" fill="${PAPER}"/>`);
+      parts.push(`<rect x="${r.x + pad + 0.5}" y="${r.y + pad + 0.5}" width="${r.w - 1}" height="${r.h - 1}" fill="none" stroke="${INK}" stroke-opacity="0.18"/>`);
+      const fs = Math.max(13, Math.min(24, Math.sqrt(r.w * r.h) / 8));
+      parts.push(`<text x="${r.x + pad + fs * 0.5}" y="${r.y + pad + fs * 1.4}" font-family="Inter" font-size="${fs}" fill="${INK}" fill-opacity="0.55">${tail.length} smaller</text>`);
+      continue;
+    }
     const isLead = p.ticker === lead.ticker;
     const buy = p.activity === "new" || p.activity === "add";
     const sell = p.activity === "reduce";
@@ -41,13 +54,13 @@ export async function renderHero(facts: Facts, outFile: string): Promise<boolean
     const y = r.y + pad;
     parts.push(`<rect x="${x}" y="${y}" width="${r.w}" height="${r.h}" fill="${fill}" fill-opacity="${opacity}"/>`);
     if (!isLead) parts.push(`<rect x="${x + 0.5}" y="${y + 0.5}" width="${r.w - 1}" height="${r.h - 1}" fill="none" stroke="${INK}" stroke-opacity="0.18"/>`);
-    const fs = Math.max(11, Math.min(30, Math.sqrt(r.w * r.h) / 7));
+    const fs = Math.max(15, Math.min(34, Math.sqrt(r.w * r.h) / 6.5));
     const ink = isLead ? PAPER : INK;
     if (r.w > fs * (p.ticker.length * 0.7 + 1) && r.h > fs * 1.6) {
       parts.push(`<text x="${x + fs * 0.5}" y="${y + fs * 1.25}" font-family="Inter" font-weight="600" font-size="${fs}" fill="${ink}">${escape(p.ticker)}</text>`);
       const pct = `${Math.round((p.value / bookTotal) * 1000) / 10}%`;
       if (r.h > fs * 3.2 && p.value / bookTotal >= 0.001) parts.push(`<text x="${x + fs * 0.5}" y="${y + r.h - fs * 0.6}" font-family="Inter" font-weight="600" font-size="${fs * 1.1}" fill="${ink}" fill-opacity="${isLead ? 1 : 0.85}">${pct}</text>`);
-      if (isLead && r.h > fs * 5 && r.w > fs * 9) {
+      if (isLead && r.h > fs * 4 && r.w > fs * 6) {
         const label = `${lead.activity === "sold" || lead.activity === "reduce" ? "−" : "+"}${formatMoney(lead.dollars)} this quarter`;
         parts.push(`<text x="${x + fs * 0.5}" y="${y + fs * 2.5}" font-family="Inter" font-size="${fs * 0.75}" fill="${ink}" fill-opacity="0.9">${escape(label)}</text>`);
       }

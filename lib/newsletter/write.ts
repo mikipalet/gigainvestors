@@ -15,6 +15,10 @@ Choose. Do not cover everything. Pick the 4 to 6 threads a sharp friend would te
 
 Shape: a headline of at most nine words stating one specific fact (two short sentences are fine), then 5 to 7 paragraphs of 2 to 4 sentences, 350 to 500 words in total. The first paragraph is the lead story and must stand alone. Each later paragraph is one thread. The last paragraph says who has not filed, anything left out and why, and when the next filings are due.
 
+Vary the shape. Do not end more than one paragraph on a top-five concentration figure, and let at least one paragraph stop on a plain fact with no closing statistic at all. No two paragraphs should follow the same template.
+
+Never write in the first person, singular or plural. There is no "we", no "our filers", no "the investors we track": say "the 83 investors" or name them. Numerals for numbers in the headline too.
+
 Voice: plain words, short sentences, active voice, specific. Numerals for all numbers. Money as $17B, $786M, $34M. Percentages as whole numbers. Company names without Inc., Corp., Ltd or share-class suffixes, with the ticker in parentheses on first mention only; the investor's last name after the first mention. Quarter-end prices, so you may say "at quarter-end prices". No bullet points, no headings, no em dashes, no exclamation marks, no rhetorical questions, no "not X but Y" contrasts, no adjectives that grade importance (huge, notable, remarkable, significant), no closing aphorism, no summary. End on a fact.
 
 Output JSON only: {"headline": string, "paragraphs": string[]}`;
@@ -97,7 +101,7 @@ async function ask(messages: { role: "user" | "assistant"; content: string }[]):
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json" },
-    body: JSON.stringify({ model: process.env.NEWSLETTER_MODEL ?? "claude-fable-5", max_tokens: 6000, system: STYLE, messages }),
+    body: JSON.stringify({ model: process.env.NEWSLETTER_MODEL ?? "claude-fable-5", max_tokens: 12000, system: STYLE, messages }),
   });
   if (!res.ok) throw new Error(`anthropic ${res.status}: ${(await res.text()).slice(0, 300)}`);
   const data = (await res.json()) as { stop_reason: string; content: { type: string; text?: string }[] };

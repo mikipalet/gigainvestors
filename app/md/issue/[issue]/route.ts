@@ -1,4 +1,5 @@
 import { md } from "@/lib/agent-content";
+import { formatMoney } from "@/lib/format";
 import { listIssues, readIssue } from "@/lib/newsletter/store";
 
 export const dynamic = "force-static";
@@ -20,7 +21,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ issue: string 
     [
       `# ${manifest.quarter}: ${headline}`,
       "",
-      stats ? `${stats.filed} of ${stats.active} investors filed, holding ${Math.round(stats.aggregate / 1e9)}B dollars between them.` : "",
+      stats ? `${stats.filed} of ${stats.active} investors filed, holding ${formatMoney(stats.aggregate)} between them.` : "",
       manifest.sentAt ? `Sent ${manifest.sentAt.slice(0, 10)}.` : "Not sent yet.",
       "",
       ...paragraphs.flatMap((p) => [p, ""]),

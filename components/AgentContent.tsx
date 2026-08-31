@@ -58,9 +58,9 @@ export function InvestorContent({ data }: { data: InvestorData }) {
           </li>
         ))}
       </ul>
-      <h2>Portfolio value by quarter</h2>
+      <h2>Portfolio value, recent quarters</h2>
       <ul>
-        {data.quarters.map((qq) => (
+        {data.quarters.slice(-12).map((qq) => (
           <li key={qq.q}>
             {qq.q}: {formatMoney(qq.total)}
           </li>

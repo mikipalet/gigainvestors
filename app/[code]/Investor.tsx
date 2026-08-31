@@ -10,11 +10,11 @@ import { Sparkline } from "@/components/Sparkline";
 import { Treemap, type Frame } from "@/components/Treemap";
 import { formatDelta, formatMoney, formatPct } from "@/lib/format";
 import { prevQ } from "@/lib/quarters";
-import type { InvestorData } from "@/lib/types";
+import { fromWire, type InvestorWire } from "@/lib/wire";
 import { useQuarter } from "@/lib/use-quarter";
 
 interface Props {
-  data: InvestorData;
+  wire: InvestorWire;
   slug: string;
   sketch: boolean;
   holders: Record<string, number>;
@@ -25,7 +25,8 @@ const addedDollars = (p: { value: number; change: number | null; activity: strin
 const removedDollars = (p: { value: number; change: number | null; activity: string }) =>
   p.activity === "sold" ? p.value : p.activity === "reduce" && p.change ? p.value / (1 + p.change / 100) - p.value : 0;
 
-export function Investor({ data, slug, sketch, holders }: Props) {
+export function Investor({ wire, slug, sketch, holders }: Props) {
+  const data = useMemo(() => fromWire(wire), [wire]);
   const quarters = useMemo(() => data.quarters.map((x) => x.q), [data]);
   const [q, setQ] = useQuarter(quarters);
   const current = data.quarters.find((x) => x.q === q) ?? data.quarters[data.quarters.length - 1];

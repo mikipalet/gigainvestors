@@ -9,10 +9,10 @@ import { StackedBars } from "@/components/StackedBars";
 import { Treemap, type Frame } from "@/components/Treemap";
 import { formatDelta, formatMoney, formatPct } from "@/lib/format";
 import { prevQ } from "@/lib/quarters";
-import type { SeriesPoint, StockData } from "@/lib/types";
+import type { StockData } from "@/lib/types";
 import { useQuarter } from "@/lib/use-quarter";
 
-type Meta = Record<string, { slug: string; person: string; sketch: boolean; series: SeriesPoint[] }>;
+type Meta = Record<string, { slug: string; person: string; sketch: boolean }>;
 
 export function Stock({ stock, investors }: { stock: StockData; investors: Meta }) {
   const quarters = useMemo(() => stock.quarters.map((x) => x.q), [stock]);

@@ -3,6 +3,7 @@ import { getHolderCounts, getIndex, getInvestor } from "@/lib/data";
 import { InvestorContent } from "@/components/AgentContent";
 import { NoHoldings } from "./NoHoldings";
 import { Investor } from "./Investor";
+import { toWire } from "@/lib/wire";
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -32,7 +33,7 @@ export default async function Page(props: { params: Promise<{ code: string }> })
   return (
     <>
       <InvestorContent data={data} />
-      <Investor data={data} slug={meta.slug} sketch={meta.sketch} holders={holders ?? {}} />
+      <Investor wire={toWire(data)} slug={meta.slug} sketch={meta.sketch} holders={holders ?? {}} />
     </>
   );
 }

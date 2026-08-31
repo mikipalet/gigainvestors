@@ -68,7 +68,7 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
       <section className="text-[13px]">
         <div className="flex items-baseline justify-between border-b border-ink/15 pb-1">
           <span className="text-[11px] uppercase tracking-wide opacity-50">open stats</span>
-          <span className="opacity-60">{stats?.subscribers !== null && stats?.subscribers !== undefined ? `${stats.subscribers} subscribers` : ""}</span>
+          <span className="opacity-60">{stats?.subscribers !== null && stats?.subscribers !== undefined ? `${stats.subscribers} ${stats.subscribers === 1 ? "subscriber" : "subscribers"}` : ""}</span>
         </div>
         {(stats?.subscriberSeries?.length ?? 0) > 1 && (
           <div className="mt-3">

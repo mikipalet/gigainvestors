@@ -34,11 +34,12 @@ export async function POST(req: NextRequest) {
   const secret = process.env.CRON_SECRET;
   if (!audienceId || !secret) return ok();
 
-  try {
-    await resend.contacts.create({ audienceId, email, unsubscribed: true });
-  } catch {
-    // Existing contact: fall through and resend the confirmation.
-  }
+  // contacts.create UPSERTS, so creating over a confirmed contact would silently unsubscribe them:
+  // anyone could unsubscribe a subscriber by typing their address into the form. Only create when
+  // the address is new; either way the same confirmation goes out, so the form never reveals who
+  // is already subscribed.
+  const existing = await resend.contacts.get({ audienceId, email }).catch(() => null);
+  if (!existing?.data) await resend.contacts.create({ audienceId, email, unsubscribed: true }).catch(() => null);
   const token = signToken(email, secret);
   const confirmUrl = `https://gigainvestors.com/api/confirm?t=${encodeURIComponent(token)}`;
   await resend.emails

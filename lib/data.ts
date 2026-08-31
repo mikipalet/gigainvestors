@@ -20,5 +20,5 @@ export async function getAllStockTickers(): Promise<string[]> {
 
 export async function getStock(ticker: string): Promise<StockData | null> {
   const shard = await readJson<StockShard>(`stocks/${shardOf(ticker)}.json`);
-  return shard?.[ticker] ?? null;
+  return shard?.[ticker] ?? shard?.[`${ticker}-OLD`] ?? null;
 }

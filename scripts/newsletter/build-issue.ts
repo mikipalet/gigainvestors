@@ -47,6 +47,7 @@ async function main() {
       headline: prose.headline,
       subject: `${quarter}: ${prose.headline}`.slice(0, 78),
       prose,
+      stats: { filed: facts.filed, active: facts.active, aggregate: facts.aggregate },
       builtAt: new Date().toISOString(),
       ...(existing?.sentAt ? { sentAt: existing.sentAt, broadcastId: existing.broadcastId, recipients: existing.recipients } : {}),
     },

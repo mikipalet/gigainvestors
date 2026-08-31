@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { firstSentences } from "@/lib/format";
+import { firstSentences, formatMoney } from "@/lib/format";
+import { getIndex } from "@/lib/data";
+import { mentionedIn } from "@/lib/newsletter/mentions";
 import { issueHero, listIssues, readIssue } from "@/lib/newsletter/store";
 
 export const dynamic = "force-static";
@@ -53,7 +55,10 @@ export default async function Page(props: { params: Promise<{ issue: string }> }
     );
   }
 
+  const index = await getIndex();
+  const people = (index?.investors ?? []).map((i) => ({ name: i.person.split(" ").pop() ?? i.person, slug: i.slug, code: i.code }));
   const [lead, ...rest] = prose.paragraphs;
+  const stats = manifest.stats;
   return (
     <main className="mx-auto flex min-h-[100dvh] max-w-[680px] flex-col gap-6 px-6 pb-28 pt-12 text-[16px] leading-relaxed">
       <div className="flex items-baseline justify-between text-[12px]">
@@ -64,7 +69,10 @@ export default async function Page(props: { params: Promise<{ issue: string }> }
       </div>
 
       <div>
-        <p className="text-[11px] uppercase tracking-[1.5px] opacity-50">{manifest.quarter}</p>
+        <p className="text-[11px] uppercase tracking-[1.5px] opacity-50">
+          {manifest.quarter}
+          {stats ? ` · ${stats.filed} of ${stats.active} filed · ${formatMoney(stats.aggregate)}` : ""}
+        </p>
         <h1 className="mt-2 text-[30px] font-semibold leading-[1.15] tracking-[-0.4px] sm:text-[34px]">{prose.headline}</h1>
       </div>
 
@@ -73,13 +81,27 @@ export default async function Page(props: { params: Promise<{ issue: string }> }
       {hero && (
         <figure className="m-0">
           <img src={hero} width={1200} height={640} alt={`The lead investor's book at the end of ${manifest.quarter}, buys in green and sells in red`} className="h-auto w-full border border-ink/12" />
-          <figcaption className="mt-2 text-[12px] opacity-50">Green bought, red sold, sized by position.</figcaption>
+          <figcaption className="mt-2 text-[12px] opacity-50">The book behind the lead story at the end of {manifest.quarter}. Green bought, red sold, sized by position.</figcaption>
         </figure>
       )}
 
-      {rest.map((p) => (
-        <p key={p.slice(0, 40)}>{p}</p>
-      ))}
+      {rest.map((p) => {
+        const faces = mentionedIn(p, people);
+        return (
+          <div key={p.slice(0, 40)}>
+            {faces.length > 0 && (
+              <div className="mb-2 flex gap-1.5">
+                {faces.map((f) => (
+                  <Link key={f.slug} href={`/${f.code}?q=${encodeURIComponent(manifest.quarter)}`} title={f.name} className="transition-opacity hover:opacity-60">
+                    <img src={`/faces/png/${f.slug}.png`} width={38} height={47} alt={f.name} className="block" />
+                  </Link>
+                ))}
+              </div>
+            )}
+            <p>{p}</p>
+          </div>
+        );
+      })}
 
       <div className="mt-4 border-t border-ink/15 pt-6">
         <p className="text-[15px] opacity-70">One letter a quarter, when the filings are in.</p>

@@ -2,6 +2,7 @@ import { Body, Container, Head, Html, Img, Link, Preview, Section, Text } from "
 import type { Facts } from "@/lib/newsletter/issue";
 import type { Prose } from "@/lib/newsletter/write";
 import { formatMoney } from "@/lib/format";
+import { mentionedIn, type Person } from "@/lib/newsletter/mentions";
 
 const SITE = "https://gigainvestors.com";
 const ink = "#111111";
@@ -16,17 +17,8 @@ export interface IssueProps {
   facts: Facts;
   prose: Prose;
   heroUrl?: string;
-  people: { name: string; slug: string; code: string }[];
+  people: Person[];
 }
-
-// The people a paragraph names, in the order it names them, for the faces beside it.
-const mentioned = (text: string, people: IssueProps["people"]) =>
-  people
-    .map((p) => ({ p, at: text.search(new RegExp(`\\b${p.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`)) }))
-    .filter((x) => x.at >= 0)
-    .sort((a, b) => a.at - b.at)
-    .map((x) => x.p)
-    .slice(0, 5);
 
 export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps) {
   const q = facts.quarter;
@@ -59,7 +51,7 @@ export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps
           )}
 
           {rest.map((para, i) => {
-            const faces = mentioned(para, people);
+            const faces = mentionedIn(para, people);
             return (
               <Section key={i} style={{ marginTop: 32 }}>
                 {faces.length > 0 && (

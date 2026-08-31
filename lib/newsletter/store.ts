@@ -9,6 +9,7 @@ export interface IssueManifest {
   headline: string;
   subject: string;
   prose?: Prose;
+  stats?: { filed: number; active: number; aggregate: number };
   builtAt: string;
   sentAt?: string;
   broadcastId?: string;

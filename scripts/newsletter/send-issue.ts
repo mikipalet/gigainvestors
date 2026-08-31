@@ -25,6 +25,9 @@ async function main() {
   const audienceId = process.env.RESEND_AUDIENCE_ID!;
   const contacts = (await resend.contacts.list({ audienceId })).data?.data?.filter((c) => !c.unsubscribed) ?? [];
   const recipients = contacts.length;
+  // Sending to an empty audience would mark the issue sent and it would never reach a later
+  // subscriber. Leave it unsent and try again tomorrow.
+  if (recipients === 0) return console.log(`${slug}: no confirmed subscribers, not sending`);
 
   const created = await resend.broadcasts.create({ audienceId, from, replyTo: "hello@gigainvestors.com", subject: manifest.subject, html, name: manifest.subject });
   if (!created.data) throw new Error(`broadcast create failed: ${JSON.stringify(created.error)}`);

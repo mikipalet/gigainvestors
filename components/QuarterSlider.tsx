@@ -6,11 +6,12 @@ interface Props {
   quarters: string[];
   q: string;
   onChange: (q: string) => void;
+  note?: string;
 }
 
 // Timeline along the bottom. The quarter pill IS the thumb; drag it, click the track,
 // use the ‹ › buttons or arrow keys.
-export function QuarterSlider({ quarters, q, onChange }: Props) {
+export function QuarterSlider({ quarters, q, onChange, note }: Props) {
   const idx = Math.max(0, quarters.indexOf(q));
   const idxRef = useRef(idx);
   idxRef.current = idx;
@@ -43,14 +44,13 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 h-[84px] select-none bg-paper sm:h-12">
-      <a
-        href="https://www.dataroma.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute bottom-[3px] left-5 z-10 hidden text-[9px] leading-none opacity-35 transition-opacity hover:opacity-80 md:block"
-      >
-        quarterly 13F filings · dataroma.com
-      </a>
+      <div className="absolute bottom-[6px] left-[104px] z-10 text-[10px] leading-none opacity-55 sm:bottom-[3px] sm:left-5 sm:text-[9px] sm:opacity-40">
+        {note && <span>{note} · </span>}
+        <span className="hidden sm:inline">quarterly 13F filings · </span>
+        <a href="https://www.dataroma.com" target="_blank" rel="noopener noreferrer" className="underline-offset-2 transition-opacity hover:opacity-100 hover:underline">
+          dataroma.com
+        </a>
+      </div>
       <div className="absolute bottom-1 left-1 flex items-center sm:bottom-2 sm:left-auto sm:right-2 sm:top-2">
         <div className="flex items-center">
           <button
@@ -85,13 +85,16 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
           className="slider absolute inset-x-0 top-1 z-10 m-0 h-10 w-full cursor-ew-resize appearance-none bg-transparent"
         />
         <div className="pointer-events-none absolute top-[24px] h-px w-full bg-ink/30" />
-        {years.map((y) => (
+        {years.map((y) => {
+          const near = Math.abs((y.i / Math.max(1, quarters.length - 1)) * 100 - pct) < 4;
+          return (
           <div key={y.y} className="pointer-events-none absolute top-[21px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / (quarters.length - 1)) * 100}%` }}>
-            {quarters.length < 60 || Number(y.y) % 2 === 0 ? (
+            {!near && (quarters.length < 60 || Number(y.y) % 2 === 0) ? (
               <span className={`absolute -top-[13px] -translate-x-1/2 text-[10px] leading-none opacity-45 ${Number(y.y) % 4 === 0 ? "inline" : "hidden"} sm:inline`}>{y.y}</span>
             ) : null}
           </div>
-        ))}
+          );
+        })}
         <div
           className="pointer-events-none absolute top-[24px] z-20 -translate-y-1/2 whitespace-nowrap rounded-[3px] bg-ink px-[7px] py-[4px] text-[10px] font-semibold leading-none text-paper shadow-[0_0_0_2px_var(--paper)]"
           style={{ left: `clamp(28px, ${pct}%, calc(100% - 28px))`, transform: "translate(-50%, -50%)" }}

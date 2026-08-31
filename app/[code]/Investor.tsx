@@ -58,7 +58,7 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
           activity: firstOnRecord ? "hold" : effectiveActivity(p.activity, p.change),
           change: firstOnRecord ? null : p.change,
           strongNew: !firstOnRecord && topNew.has(p.ticker),
-          since: p.activity === "sold" ? undefined : since[p.ticker],
+          since: p.activity === "sold" ? undefined : since[p.ticker] === data.quarters[0].q.slice(0, 4) ? `${since[p.ticker]} or earlier` : since[p.ticker],
           holders: holders[p.ticker],
         },
       }));
@@ -116,6 +116,7 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
                 <span className="inline-flex items-center gap-1.5 text-sell"><span className="inline-block h-[10px] w-[14px] rounded-[1px] border border-dashed border-sell" />{counts.sold} sold</span>
               )}
             </div>
+            <div className="mt-1.5 text-[11px] opacity-45">Percentages are the change in shares held, not a return.</div>
             {(bought > 0 || sold > 0) && (
               <div className="mt-2 flex items-center gap-2 text-[11px]">
                 <span className="w-[4.5em] shrink-0 text-right text-buy">{bought > 0 ? `+${formatMoney(bought)}` : ""}</span>

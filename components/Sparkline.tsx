@@ -75,10 +75,10 @@ export function Sparkline({ values, labels, index, caption, format, onSeek, log,
           className="pointer-events-none absolute h-[7px] w-[7px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink"
           style={{ left: `${dotLeft}%`, top: `${dotTop}%` }}
         />
-        <div className="pointer-events-none absolute right-0 top-0 text-[9px] leading-none opacity-35">{format(max)}</div>
-        <div className="pointer-events-none absolute bottom-0 right-0 text-[9px] leading-none opacity-35">{format(min)}</div>
+        <div className="pointer-events-none absolute right-[14px] top-0 bg-paper px-1 text-[10px] leading-none opacity-50">{format(max)}</div>
+        <div className="pointer-events-none absolute bottom-0 right-[14px] bg-paper px-1 text-[10px] leading-none opacity-50">{format(min)}</div>
       </div>
-      <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[9px] leading-none opacity-40">
+      <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[10px] leading-none opacity-55">
         <span>{labels[0]?.slice(0, 4)}</span>
         <span>{labels[labels.length - 1]?.slice(0, 4)}</span>
       </div>

@@ -7,6 +7,7 @@ import { parseHoldings, type HoldingsPage } from "../dataroma/parse-holdings";
 import { parseManagers, type ManagerRow } from "../dataroma/parse-managers";
 import { compareQ, nextQ } from "../quarters";
 import type { Index, IndexInvestor, InvestorData, SearchIndex, StockShard } from "../types";
+import { slugOf } from "../slug";
 import { diffManagers, fingerprint, type SyncState } from "./fingerprint";
 import { buildInvestorData } from "./reconstruct";
 import { adjustedPriceSeries, type PriceRow } from "../stock-price";
@@ -19,7 +20,6 @@ interface RosterEntry {
 }
 
 const ROSTER = (roster as RosterEntry[]).reduce<Record<string, RosterEntry>>((a, r) => ((a[r.dataromaCode] = r), a), {});
-const slugOf = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const investorKey = (code: string) => `investors/${code}.json`;
 const STATE_KEY = "sync/state.json";
 const INDEX_KEY = "index.json";

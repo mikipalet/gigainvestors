@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PageFooter } from "@/components/PageFooter";
 import { PAGES } from "@/lib/pages";
 
 const page = PAGES.about;
@@ -16,12 +17,7 @@ export default function Page() {
           {p}
         </p>
       ))}
-      <nav className="mt-6 flex gap-4 text-[12px] opacity-50">
-        <Link href="/about">about</Link>
-        <Link href="/privacy">privacy</Link>
-        <Link href="/newsletter">newsletter</Link>
-        <a href="/llms.txt">llms.txt</a>
-      </nav>
+      <PageFooter />
     </main>
   );
 }

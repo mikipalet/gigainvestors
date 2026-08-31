@@ -17,7 +17,8 @@ const nextConfig: NextConfig = {
       beforeFiles: [
         { source: "/", has: wantsMarkdown, destination: "/md/home" },
         { source: "/s/:ticker", has: wantsMarkdown, destination: "/md/s/:ticker" },
-        { source: "/:slug(about|contact|privacy)", has: wantsMarkdown, destination: "/md/page/:slug" },
+        { source: "/:slug(about|privacy)", has: wantsMarkdown, destination: "/md/page/:slug" },
+        { source: "/newsletter/:issue", has: wantsMarkdown, destination: "/md/issue/:issue" },
         { source: "/:code([A-Za-z]{1,8})", has: wantsMarkdown, destination: "/md/i/:code" },
       ],
       afterFiles: [],

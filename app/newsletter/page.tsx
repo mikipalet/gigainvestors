@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PageFooter } from "@/components/PageFooter";
 import { NewsletterClient } from "./NewsletterClient";
 import { issueHero, listIssues } from "@/lib/newsletter/store";
 
@@ -34,10 +35,7 @@ export default function Page() {
         <p className="mt-2 opacity-60">What 83 famous investors bought and sold last quarter, sent once the quarter&apos;s 13F filings are in. Four emails a year.</p>
       </div>
       <NewsletterClient issues={issues.map((i) => ({ quarter: i.quarter, slug: i.slug, headline: i.headline, sentAt: i.sentAt ?? null }))} />
-      <nav className="mt-6 flex gap-4 text-[12px] opacity-50">
-        <Link href="/about">about</Link>
-        <Link href="/privacy">privacy</Link>
-      </nav>
+      <PageFooter />
     </main>
   );
 }

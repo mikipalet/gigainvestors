@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PageFooter } from "@/components/PageFooter";
 import { UnsubscribeClient } from "./UnsubscribeClient";
 
 export const dynamic = "force-static";
@@ -15,6 +16,7 @@ export default function Page() {
         GigaInvestors
       </Link>
       <UnsubscribeClient />
+      <PageFooter />
     </main>
   );
 }

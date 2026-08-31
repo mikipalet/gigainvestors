@@ -137,12 +137,12 @@ export function Treemap<T>({ frames, q, render, label, floor, className }: Props
         })}
       {hoverText && hover && (
         <div
-          className="pointer-events-none fixed z-40 max-w-[280px] truncate bg-ink px-2 py-1 text-[11px] font-medium leading-none text-paper"
+          className="pointer-events-none fixed z-[60] max-w-[min(90vw,320px)] bg-ink px-2 py-1 text-[11px] font-medium leading-tight text-paper"
           style={{
             ...(hover.x > (typeof window !== "undefined" ? window.innerWidth : 9999) - 300
               ? { right: (typeof window !== "undefined" ? window.innerWidth : 0) - hover.x + 12 }
               : { left: hover.x + 12 }),
-            ...(hover.y > (typeof window !== "undefined" ? window.innerHeight : 9999) - 60
+            ...(hover.y > (typeof window !== "undefined" ? window.innerHeight : 9999) - 110
               ? { bottom: (typeof window !== "undefined" ? window.innerHeight : 0) - hover.y + 10 }
               : { top: hover.y + 14 }),
           }}

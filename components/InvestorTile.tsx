@@ -37,7 +37,7 @@ export function InvestorTile({ d, tier, rect, q }: { d: InvestorTileData; tier: 
         </div>
       )}
       {tier === "face" && (
-        <div className="absolute inset-x-0 bottom-0 truncate px-[5px] pb-[3px] text-left font-medium" style={{ fontSize: Math.max(9, fs * 0.78) }}>
+        <div className="absolute inset-x-0 bottom-0 truncate bg-[color-mix(in_oklab,var(--paper)_82%,transparent)] px-[5px] pb-[3px] pt-[2px] text-left font-medium" style={{ fontSize: Math.max(9, fs * 0.78) }}>
           {d.person}
         </div>
       )}

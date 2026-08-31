@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { firstSentences, formatMoney } from "@/lib/format";
 import { getIndex } from "@/lib/data";
 import { mentionedIn } from "@/lib/newsletter/mentions";
+import { PageFooter } from "@/components/PageFooter";
 import { issueHero, listIssues, readIssue } from "@/lib/newsletter/store";
 
 export const dynamic = "force-static";
@@ -120,6 +121,7 @@ export default async function Page(props: { params: Promise<{ issue: string }> }
           </a>
           .
         </p>
+        <PageFooter />
       </div>
     </main>
   );

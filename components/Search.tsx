@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { SearchIndex } from "@/lib/types";
 import { plural } from "@/lib/format";
+import { slugOf } from "@/lib/slug";
 
 type Hit =
   | { kind: "investor"; code: string; title: string; sub: string }
@@ -31,7 +32,7 @@ function rank(index: SearchIndex, query: string): Hit[] {
   }
   for (const st of index.stocks) {
     const s = Math.max(score(st.t) * 1.1, score(st.n));
-    if (s) hits.push({ h: { kind: "stock", ticker: st.t, title: st.t, sub: st.n, holders: st.h }, s: s + Math.min(st.h, 20) / 400 });
+    if (s) hits.push({ h: { kind: "stock", ticker: st.t, title: st.t, sub: st.n, holders: st.h }, s: s + Math.min(st.h, 40) / 200 });
   }
   return hits.sort((a, b) => b.s - a.s).slice(0, 12).map((x) => x.h);
 }
@@ -125,6 +126,11 @@ export function Search() {
               spellCheck={false}
               autoComplete="off"
             />
+            {!query.trim() && (
+              <div className="border-t border-ink/15 px-4 py-3 text-[12px] leading-relaxed opacity-45">
+                Try an investor (Buffett, Ackman), a firm (Baupost), or a ticker (AAPL, GOOGL).
+              </div>
+            )}
             {hits.length === 0 && query.trim().length > 1 && index && (
               <div className="border-t border-ink/15 px-4 py-3 text-[13px] opacity-40">nothing filed under that</div>
             )}
@@ -135,8 +141,9 @@ export function Search() {
                     key={h.kind === "munger" ? "munger" : h.kind === "investor" ? `i${h.code}` : `s${h.ticker}`}
                     onMouseEnter={() => setSel(i)}
                     onClick={() => go(h)}
-                    className={`flex cursor-pointer items-baseline gap-3 px-4 py-2 text-[13px] ${i === sel ? "bg-ink text-paper" : ""}`}
+                    className={`flex cursor-pointer items-center gap-3 px-4 py-2 text-[13px] ${i === sel ? "bg-ink text-paper" : ""}`}
                   >
+                    {h.kind === "investor" && <img src={`/faces/png/${slugOf(h.title)}.png`} width={26} height={32} alt="" className="-my-1 block shrink-0" />}
                     <span className="shrink-0 whitespace-nowrap font-semibold">{h.kind === "munger" ? "Charlie Munger" : h.title}</span>
                     <span className="truncate opacity-60">{h.kind === "munger" ? "1924 – 2023" : h.sub}</span>
                     {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{plural(h.holders, "holder")}</span>}

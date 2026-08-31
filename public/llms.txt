@@ -13,7 +13,7 @@ Do not use it for: real-time prices, short positions, non-US holdings, cash leve
 
 ## How to read it programmatically
 
-- Every page returns Markdown when requested with `Accept: text/markdown` at the same URL (canonical HTML otherwise; responses vary on Accept).
+- The home page, every investor page, every stock page, /about, /privacy and every quarterly letter return Markdown when requested with `Accept: text/markdown` at the same URL (canonical HTML otherwise; responses vary on Accept). Other paths return a short markdown pointer.
 - Home `/` lists all investors with portfolio value and position count, and links to each page.
 - Investor page `/{CODE}` lists positions (ticker, company, % of portfolio, value, this quarter's move, number of tracked holders) and portfolio value by quarter.
 - Stock page `/s/{TICKER}` lists holders (investor, value, % of their portfolio, move) and total held by quarter with split-adjusted reported price.

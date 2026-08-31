@@ -110,8 +110,8 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
   return (
     <div className="flex h-full min-h-0 flex-col pb-2">
       <div className="mb-1 flex items-baseline justify-between gap-2 text-[11px] leading-none">
-        <span className="shrink-0 opacity-45">{unit === "shares" ? "shares held · price" : caption}</span>
-        <span className={`truncate ${hover ? "font-semibold" : "opacity-45"}`}>{readout}</span>
+        <span className="shrink-0 opacity-60">{unit === "shares" ? "shares held · price" : caption}</span>
+        <span className={`truncate ${hover ? "font-semibold" : "opacity-60"}`}>{readout}</span>
       </div>
       <div className="relative min-h-0 flex-1">
       <svg
@@ -198,7 +198,7 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
         </div>
       )}
       </div>
-      <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[9px] leading-none opacity-40">
+      <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[10px] leading-none opacity-55">
         <span>{labels[0]?.slice(0, 4)} · peak {fmt(max)}</span>
         <span>{priceMax > 0 ? `price up to $${Math.round(priceMax)}` : ""} · {labels[labels.length - 1]?.slice(0, 4)}</span>
       </div>

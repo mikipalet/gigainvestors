@@ -71,6 +71,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
   const normalized = current.holders.map((h) => ({ ...h, activity: effectiveActivity(h.activity, h.change) }));
   const buying = normalized.filter((h) => h.activity === "new" || h.activity === "add").length;
   const selling = normalized.filter((h) => h.activity === "reduce" || h.activity === "sold").length;
+  const unchanged = live.length - normalized.filter((h) => h.activity !== "hold" && h.activity !== "sold").length;
   const qIndex = quarters.indexOf(current.q);
 
   return (
@@ -111,7 +112,14 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
                 <span className="hatch-light inline-block h-[10px] w-[14px] rounded-[1px] shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--sell)_45%,transparent)]" />
                 <span className="font-semibold">{selling}</span> selling
               </span>
+              {unchanged > 0 && (
+                <span className="inline-flex items-center gap-1.5 opacity-55">
+                  <span className="inline-block h-[10px] w-[14px] rounded-[1px] shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_25%,transparent)]" />
+                  <span className="font-semibold">{unchanged}</span> unchanged
+                </span>
+              )}
             </div>
+            <div className="mt-1.5 text-[11px] opacity-45">Percentages are the change in shares held, not a return.</div>
           </div>
           <div className="mt-5 h-24 md:h-auto md:min-h-0 md:flex-1 md:pb-2">
             <StackedBars

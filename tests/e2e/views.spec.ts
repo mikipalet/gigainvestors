@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 test("homepage renders investors and scrubs", async ({ page }) => {
   await page.goto("/");
-  const tiles = page.locator("a[href^='/']");
+  const tiles = page.locator("a.tile-edge");
   await expect(tiles.first()).toBeVisible();
   const latest = await tiles.count();
   expect(latest).toBeGreaterThan(50);
@@ -17,7 +17,7 @@ test("homepage renders investors and scrubs", async ({ page }) => {
 
 test("investor page renders and scrubs", async ({ page }) => {
   await page.goto("/BRK");
-  await expect(page.getByText("Warren Buffett")).toBeVisible();
+  await expect(page.locator("aside").getByText("Warren Buffett")).toBeVisible();
   const aapl = page.locator(".tile", { hasText: "AAPL" }).first();
   await expect(aapl).toBeVisible();
   const before = await aapl.getAttribute("style");
@@ -33,6 +33,6 @@ test("investor page renders and scrubs", async ({ page }) => {
 
 test("tile navigates to investor", async ({ page }) => {
   await page.goto("/");
-  await page.locator("a[href^='/BRK']").first().click();
+  await page.locator("a.tile-edge[href^='/BRK']").first().click();
   await expect(page).toHaveURL(/\/BRK/);
 });

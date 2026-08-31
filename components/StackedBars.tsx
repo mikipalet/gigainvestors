@@ -64,11 +64,11 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
   };
 
   const priceMax = Math.max(...prices.filter((p): p is number => p !== null), 0);
+  const known0 = prices.filter((p): p is number => p !== null && p > 0);
+  const priceMin = known0.length ? Math.min(...known0, priceMax) : 1;
+  const span = Math.log(Math.max(priceMax / Math.max(priceMin, 0.01), 1.05));
   const { pricePath, gapPath } = (() => {
     if (priceMax <= 0) return { pricePath: null, gapPath: null };
-    const known0 = prices.filter((p): p is number => p !== null && p > 0);
-    const priceMin = Math.min(...known0, priceMax);
-    const span = Math.log(Math.max(priceMax / Math.max(priceMin, 0.01), 1.05));
     const pt = (i: number, p: number) => `${((i + 0.5) * (W / prices.length)).toFixed(2)},${(4 + (1 - Math.log(Math.max(p, priceMin) / priceMin) / span) * (H - 12)).toFixed(2)}`;
     const known = prices.map((p, i) => ({ p, i })).filter((x): x is { p: number; i: number } => x.p !== null);
     let solid = "";
@@ -89,11 +89,20 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
     return { pricePath: solid || null, gapPath: dashed || null };
   })();
 
+  const lastKnown = (() => {
+    for (let i = prices.length - 1; i >= 0; i--) if (prices[i] !== null) return i;
+    return -1;
+  })();
+  const endPct =
+    lastKnown >= 0 && priceMax > 0
+      ? { left: ((lastKnown + 0.5) / prices.length) * 100, top: ((4 + (1 - Math.log(Math.max(prices[lastKnown]!, priceMin) / priceMin) / span) * (H - 12)) / H) * 100 }
+      : null;
+
   const shown = hover?.qi ?? index;
   const hoverSeg = hover?.code ? columns[hover.qi].segs.find((s) => s.code === hover.code) : null;
   const priceAt = prices[shown];
-  const priceText = priceAt !== null && priceAt !== undefined ? ` · price $${priceAt >= 100 ? Math.round(priceAt) : priceAt.toFixed(1)}` : "";
-  const fmtShares = (n: number) => (n >= 1e9 ? `${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}K` : `${Math.round(n)}`) + " sh";
+  const priceText = priceAt !== null && priceAt !== undefined ? ` · $${priceAt >= 100 ? Math.round(priceAt) : priceAt.toFixed(1)}` : "";
+  const fmtShares = (n: number) => (n >= 1e9 ? `${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}K` : `${Math.round(n)}`) + " shares";
   const fmt = unit === "shares" ? fmtShares : format;
   const segName = hover?.code === "__others" ? "others" : hover?.code ? people[hover.code] ?? hover.code : null;
   const readout = (hoverSeg && segName ? `${segName} · ${fmt(hoverSeg.value)} · ${labels[shown]}` : `${fmt(columns[shown]?.total ?? 0)} · ${labels[shown]}`) + priceText;
@@ -101,16 +110,17 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
   return (
     <div className="flex h-full min-h-0 flex-col pb-2">
       <div className="mb-1 flex items-baseline justify-between gap-2 text-[11px] leading-none">
-        <span className="shrink-0 opacity-45">{caption}</span>
+        <span className="shrink-0 opacity-45">{unit === "shares" ? "shares held · price" : caption}</span>
         <span className={`truncate ${hover ? "font-semibold" : "opacity-45"}`}>{readout}</span>
       </div>
+      <div className="relative min-h-0 flex-1">
       <svg
         ref={ref}
         viewBox={`0 0 ${W} ${H}`}
         preserveAspectRatio="none"
         role="slider"
         aria-label={caption}
-        className="min-h-0 w-full flex-1 cursor-ew-resize touch-none select-none"
+        className="h-full w-full cursor-ew-resize touch-none select-none"
         onPointerDown={(e) => {
           e.currentTarget.setPointerCapture(e.pointerId);
           onSeek(locate(e.clientX, e.clientY).qi);
@@ -164,16 +174,25 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
         })()}
         {pricePath && (
           <>
-            <path d={pricePath} fill="none" stroke="var(--paper)" strokeWidth="3.5" strokeLinejoin="round" vectorEffect="non-scaling-stroke" />
-            {gapPath && <path d={gapPath} fill="none" stroke="var(--paper)" strokeWidth="3.5" vectorEffect="non-scaling-stroke" />}
-            {gapPath && <path d={gapPath} fill="none" stroke="var(--ink)" strokeWidth="1.1" strokeDasharray="3 3" vectorEffect="non-scaling-stroke" opacity="0.5" />}
-            <path d={pricePath} fill="none" stroke="var(--ink)" strokeWidth="1.3" strokeLinejoin="round" vectorEffect="non-scaling-stroke" opacity="0.8" />
+            <path d={pricePath} fill="none" stroke="var(--paper)" strokeWidth="6" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" opacity="0.9" />
+            {gapPath && <path d={gapPath} fill="none" stroke="var(--paper)" strokeWidth="6" vectorEffect="non-scaling-stroke" opacity="0.9" />}
+            {gapPath && <path d={gapPath} fill="none" stroke="var(--ink)" strokeWidth="1.4" strokeDasharray="3 3" vectorEffect="non-scaling-stroke" opacity="0.6" />}
+            <path d={pricePath} fill="none" stroke="var(--ink)" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
           </>
         )}
       </svg>
+      {endPct && lastKnown >= 0 && (
+        <div className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `${endPct.left}%`, top: `${endPct.top}%` }}>
+          <div className="h-[7px] w-[7px] rounded-full bg-ink shadow-[0_0_0_2px_var(--paper)]" />
+          <div className="absolute right-[10px] top-1/2 -translate-y-1/2 whitespace-nowrap bg-paper px-1 text-[10px] font-semibold leading-none">
+            ${prices[lastKnown]! >= 100 ? Math.round(prices[lastKnown]!) : prices[lastKnown]!.toFixed(1)}
+          </div>
+        </div>
+      )}
+      </div>
       <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[9px] leading-none opacity-40">
-        <span>{labels[0]?.slice(0, 4)} · {fmt(max)} peak</span>
-        <span>{priceMax > 0 ? `price to $${Math.round(priceMax)}` : ""} · {labels[labels.length - 1]?.slice(0, 4)}</span>
+        <span>{labels[0]?.slice(0, 4)} · peak {fmt(max)}</span>
+        <span>{priceMax > 0 ? `price up to $${Math.round(priceMax)}` : ""} · {labels[labels.length - 1]?.slice(0, 4)}</span>
       </div>
     </div>
   );

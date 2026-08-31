@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import type { Activity } from "@/lib/types";
 import type { Rect } from "@/lib/treemap/layout";
 import type { Tier } from "@/lib/treemap/tier";
@@ -22,16 +20,13 @@ export interface PositionTileData {
 }
 
 export function PositionTile({ d, tier, rect, q }: { d: PositionTileData; tier: Tier; rect: Rect; q: string }) {
-  const router = useRouter();
   const fs = scaleFor(rect.w, rect.h);
   const pad = Math.round(fs * 0.55);
   const ghost = d.activity === "sold";
   const href = `/s/${encodeURIComponent(d.ticker)}?q=${encodeURIComponent(q)}`;
   return (
-    <Link
+    <a
       href={href}
-      prefetch={false}
-      onPointerEnter={() => router.prefetch(href)}
       className={`tile-edge relative block h-full w-full overflow-hidden bg-paper ${surfaceFor(d.activity, d.change, d.strongNew)}`}
       style={{ fontSize: fs }}
     >
@@ -60,6 +55,6 @@ export function PositionTile({ d, tier, rect, q }: { d: PositionTileData; tier: 
           )}
         </div>
       )}
-    </Link>
+    </a>
   );
 }

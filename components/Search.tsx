@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { SearchIndex } from "@/lib/types";
 
@@ -38,7 +37,6 @@ function rank(index: SearchIndex, query: string): Hit[] {
 
 // Press "/" anywhere. Investors, firms, tickers and company names.
 export function Search() {
-  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [index, setIndex] = useState<SearchIndex | null>(null);
@@ -75,7 +73,7 @@ export function Search() {
 
   const go = (h: Hit) => {
     setOpen(false);
-    router.push(h.kind === "munger" ? "/munger" : h.kind === "investor" ? `/${h.code}` : `/s/${encodeURIComponent(h.ticker)}`);
+    window.location.assign(h.kind === "munger" ? "/munger" : h.kind === "investor" ? `/${h.code}` : `/s/${encodeURIComponent(h.ticker)}`);
   };
 
   return (

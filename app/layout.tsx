@@ -59,6 +59,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={inter.variable}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prerender: [{ where: { and: [{ href_matches: "/*" }, { not: { href_matches: "/md/*" } }, { not: { href_matches: "/api/*" } }, { not: { href_matches: "/*.xml" } }, { not: { href_matches: "/*.txt" } }] }, eagerness: "moderate" }],
+              prefetch: [{ where: { and: [{ href_matches: "/*" }, { not: { href_matches: "/md/*" } }, { not: { href_matches: "/api/*" } }] }, eagerness: "moderate" }],
+            }),
+          }}
+        />
         {children}
         <Search />
       </body>

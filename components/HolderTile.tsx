@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import type { Activity } from "@/lib/types";
 import type { Rect } from "@/lib/treemap/layout";
 import type { Tier } from "@/lib/treemap/tier";
@@ -23,17 +21,14 @@ export interface HolderTileData {
 }
 
 export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier; rect: Rect; q: string }) {
-  const router = useRouter();
   const fs = scaleFor(rect.w, rect.h);
   const pad = Math.round(fs * 0.6);
   const textBlock = tier === "full" ? fs * 2.6 + pad : tier === "name" ? fs * 1.4 + pad : 0;
   const href = `/${d.code}?q=${encodeURIComponent(q)}`;
   return (
-    <Link
+    <a
       href={href}
-      prefetch={false}
       onPointerEnter={() => {
-        router.prefetch(href);
         if (d.sketch) new Image().src = `/faces/v3/${d.slug}-1200.avif`;
       }}
       className={`tile-edge relative block h-full w-full overflow-hidden bg-paper ${surfaceFor(d.activity, d.change)}`}
@@ -67,6 +62,6 @@ export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier
           </div>
         </div>
       )}
-    </Link>
+    </a>
   );
 }

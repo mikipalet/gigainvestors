@@ -60,9 +60,11 @@ export async function renderHero(facts: Facts, outFile: string): Promise<boolean
       parts.push(`<text x="${x + fs * 0.5}" y="${y + fs * 1.25}" font-family="Inter" font-weight="600" font-size="${fs}" fill="${ink}">${escape(p.ticker)}</text>`);
       const pct = `${Math.round((p.value / bookTotal) * 1000) / 10}%`;
       if (r.h > fs * 3.2 && p.value / bookTotal >= 0.001) parts.push(`<text x="${x + fs * 0.5}" y="${y + r.h - fs * 0.6}" font-family="Inter" font-weight="600" font-size="${fs * 1.1}" fill="${ink}" fill-opacity="${isLead ? 1 : 0.85}">${pct}</text>`);
-      if (isLead && r.h > fs * 4 && r.w > fs * 6) {
+      if (isLead && r.h > fs * 4) {
         const label = `${lead.activity === "sold" || lead.activity === "reduce" ? "−" : "+"}${formatMoney(lead.dollars)} this quarter`;
-        parts.push(`<text x="${x + fs * 0.5}" y="${y + fs * 2.5}" font-family="Inter" font-size="${fs * 0.75}" fill="${ink}" fill-opacity="0.9">${escape(label)}</text>`);
+        // Fit the label to the tile rather than to the ticker's size, or it runs off the edge.
+        const labelFs = Math.min(fs * 0.75, (r.w - fs) / (label.length * 0.52));
+        if (labelFs >= 10) parts.push(`<text x="${x + fs * 0.5}" y="${y + fs * 1.25 + labelFs * 1.35}" font-family="Inter" font-size="${labelFs}" fill="${ink}" fill-opacity="0.9">${escape(label)}</text>`);
       }
     }
   }

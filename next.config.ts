@@ -8,15 +8,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       { source: "/faces/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
-      { source: "/:path*", headers: [{ key: "Vary", value: "Accept" }] },
-    ];
-  },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [{ key: "Vary", value: "Accept, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding" }],
-      },
+      { source: "/:path*", headers: [{ key: "Vary", value: "Accept, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding" }] },
     ];
   },
   async rewrites() {

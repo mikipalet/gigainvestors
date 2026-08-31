@@ -24,6 +24,7 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
   const [message, setMessage] = useState("");
   const [stats, setStats] = useState<Stats | null>(null);
   const [day, setDay] = useState<number | null>(null);
+  const sent = issues.some((i) => i.sentAt);
 
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
@@ -70,13 +71,12 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
       )}
       {state === "error" && <p className="text-[13px] text-sell">{message}</p>}
 
-      {issues.some((i) => i.sentAt) && (
       <section className="text-[13px]">
         <div className="flex items-baseline justify-between border-b border-ink/15 pb-1">
-          <span className="text-[11px] uppercase tracking-wide opacity-50">open stats</span>
-          <span className="opacity-60">{stats?.subscribers !== null && stats?.subscribers !== undefined ? `${stats.subscribers} ${stats.subscribers === 1 ? "subscriber" : "subscribers"}` : ""}</span>
+          <span className="text-[11px] uppercase tracking-wide opacity-50">{sent ? "open stats" : "the archive"}</span>
+          <span className="opacity-60">{sent && stats?.subscribers ? `${stats.subscribers} ${stats.subscribers === 1 ? "subscriber" : "subscribers"}` : ""}</span>
         </div>
-        {(stats?.subscriberSeries?.length ?? 0) > 1 && (
+        {sent && (stats?.subscriberSeries?.length ?? 0) > 1 && (
           <div className="mt-3">
             <Sparkline
               values={stats!.subscriberSeries.map((s) => s.n)}
@@ -124,7 +124,6 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
           );
         })}
       </section>
-      )}
     </>
   );
 }

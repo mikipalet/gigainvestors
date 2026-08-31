@@ -10,15 +10,17 @@ export function formatDelta(now: number, before: number | undefined): string | n
   if (!before || before <= 0) return null;
   const d = ((now - before) / before) * 100;
   if (Math.abs(d) < 0.05) return null;
-  const s = d.toFixed(Math.abs(d) < 10 ? 1 : 0);
-  return `${d >= 0 ? "+" : "−"}${s.replace("-", "")}%`;
+  const r = Math.round(d * 10) / 10;
+  const s = Math.abs(r).toFixed(Math.abs(r) < 10 ? 1 : 0);
+  return `${d >= 0 ? "+" : "−"}${s}%`;
 }
 
-export const formatPct = (p: number) => `${p.toFixed(p < 10 ? 1 : 0)}%`;
+export const formatPct = (p: number) => { const r = Math.round(p * 10) / 10; return `${r.toFixed(r < 10 ? 1 : 0)}%`; };
 
 export function formatChange(change: number | null | undefined): string | null {
   if (change === null || change === undefined || !Number.isFinite(change)) return null;
-  const s = Math.abs(change).toFixed(Math.abs(change) < 10 ? 1 : 0);
+  const r = Math.round(Math.abs(change) * 10) / 10;
+  const s = r.toFixed(r < 10 ? 1 : 0);
   return `${change >= 0 ? "+" : "−"}${s}%`;
 }
 

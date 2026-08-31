@@ -24,8 +24,7 @@ export function InvestorTile({ d, tier, rect, q }: { d: InvestorTileData; tier: 
   const href = `/${d.code}?q=${encodeURIComponent(q)}`;
   const fs = scaleFor(rect.w, rect.h);
   const pad = Math.round(fs * 0.6);
-  const textBlock = tier === "full" ? fs * 2.6 + pad : tier === "name" ? fs * 1.4 + pad : 0;
-  const negative = d.delta?.startsWith("−");
+  const textBlock = tier === "full" ? fs * 2.5 + pad : tier === "name" ? fs * 1.4 + pad : 0;
   return (
     <Link
       href={href}
@@ -48,18 +47,13 @@ export function InvestorTile({ d, tier, rect, q }: { d: InvestorTileData; tier: 
         </div>
       )}
       {tier !== "blank" && tier !== "face" && (
-        <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-[1em] leading-[1.15]" style={{ padding: pad }}>
-          <div className="min-w-0">
-            <div className="truncate font-semibold">{d.person}</div>
-            {tier === "full" && <div className="truncate opacity-55" style={{ fontSize: "0.8em" }}>{d.firm}</div>}
-          </div>
+        <div className="absolute inset-x-0 top-0 leading-[1.2]" style={{ padding: pad }}>
+          <div className="truncate font-semibold">{d.person}</div>
           {tier === "full" && (
-            <div className="shrink-0 text-right">
-              <div className="font-semibold">{d.money}</div>
-              <div style={{ fontSize: "0.8em" }} className={negative ? "opacity-55" : "opacity-55"}>
-                {d.delta ?? " "}
-                <span className="ml-[0.6em]">{d.positions} positions</span>
-              </div>
+            <div className="flex items-baseline gap-[0.7em] opacity-55" style={{ fontSize: "0.82em" }}>
+              <span className="shrink-0 font-semibold">{d.money}</span>
+              {rect.w > fs * 15 && d.delta && <span className="shrink-0">{d.delta}</span>}
+              {rect.w > fs * 21 && <span className="truncate">{d.firm}</span>}
             </div>
           )}
         </div>

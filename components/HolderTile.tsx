@@ -7,6 +7,7 @@ import type { Rect } from "@/lib/treemap/layout";
 import type { Tier } from "@/lib/treemap/tier";
 import { scaleFor } from "@/lib/format";
 import { ChangeBadge } from "./ChangeBadge";
+import { surfaceFor } from "@/lib/surface";
 import { Face } from "./Face";
 
 export interface HolderTileData {
@@ -18,9 +19,8 @@ export interface HolderTileData {
   pct: string;
   activity: Activity;
   change: number | null;
+  since?: string;
 }
-
-const surface: Record<Activity, string> = { new: "add-strong", add: "add", reduce: "hatch-light", sold: "ghost", hold: "" };
 
 export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier; rect: Rect; q: string }) {
   const router = useRouter();
@@ -36,7 +36,7 @@ export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier
         router.prefetch(href);
         if (d.sketch) new Image().src = `/faces/v3/${d.slug}-1200.avif`;
       }}
-      className={`tile-edge relative block h-full w-full overflow-hidden bg-paper ${surface[d.activity]}`}
+      className={`tile-edge relative block h-full w-full overflow-hidden bg-paper ${surfaceFor(d.activity, d.change)}`}
       style={{ fontSize: fs }}
     >
       {d.sketch && rect.w > 14 && (
@@ -60,7 +60,8 @@ export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier
             <div className="truncate font-semibold">{d.person}</div>
             {tier === "full" && (
               <div className="truncate opacity-60" style={{ fontSize: "0.8em" }}>
-                {d.money} · {d.pct} of portfolio
+                <span className="font-semibold text-ink">{d.pct}</span> of portfolio · {d.money}
+                {rect.w > fs * 24 && d.since && <span> · since {d.since}</span>}
               </div>
             )}
           </div>

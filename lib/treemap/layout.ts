@@ -15,10 +15,10 @@ export interface Rect {
 
 // Tiny positions get a floor (0.35% of the pane) so the tail stays visible and
 // sold ghosts read as markers instead of specks. Giants still dominate honestly.
-export function layout(items: Item[], width: number, height: number, pad = 2): Rect[] {
+export function layout(items: Item[], width: number, height: number, pad = 2, floor = 0.0035): Rect[] {
   const positive = items.filter((i) => i.value > 0);
   const sum = positive.reduce((s, i) => s + i.value, 0);
-  const children = positive.map((i) => ({ ...i, value: Math.max(i.value, sum * 0.0035) }));
+  const children = positive.map((i) => ({ ...i, value: Math.max(i.value, sum * floor) }));
   if (!children.length || width <= 0 || height <= 0) return [];
   const root = hierarchy<{ children?: Item[]; value?: number; id?: string }>({ children })
     .sum((d) => (d.children ? 0 : d.value ?? 0))

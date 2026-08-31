@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 
-export function useQuarter(quarters: string[]) {
-  const [q, setQ] = useState(quarters[quarters.length - 1]);
+export function useQuarter(quarters: string[], fallback?: string) {
+  const [q, setQ] = useState(fallback ?? quarters[quarters.length - 1]);
 
   useEffect(() => {
     const fromUrl = new URLSearchParams(window.location.search).get("q");

@@ -68,6 +68,15 @@ a.tile-edge:hover {
   background: transparent;
 }
 
+.add-1 {
+  background: color-mix(in oklab, var(--buy) 9%, var(--paper));
+}
+.add-2 {
+  background: color-mix(in oklab, var(--buy) 18%, var(--paper));
+}
+.add-3 {
+  background: color-mix(in oklab, var(--buy) 30%, var(--paper));
+}
 .add {
   background: color-mix(in oklab, var(--buy) 14%, var(--paper));
 }
@@ -75,6 +84,16 @@ a.tile-edge:hover {
 .buy-solid {
   background: var(--buy);
   color: var(--paper);
+}
+
+.hatch-1 {
+  background-image: repeating-linear-gradient(-45deg, transparent 0 9px, color-mix(in oklab, var(--sell) 30%, transparent) 9px 10px);
+}
+.hatch-2 {
+  background-image: repeating-linear-gradient(-45deg, transparent 0 6px, color-mix(in oklab, var(--sell) 45%, transparent) 6px 7px);
+}
+.hatch-3 {
+  background-image: repeating-linear-gradient(-45deg, transparent 0 4px, color-mix(in oklab, var(--sell) 60%, transparent) 4px 5.5px);
 }
 
 .hatch-light {

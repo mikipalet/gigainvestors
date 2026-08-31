@@ -16,13 +16,23 @@ type Meta = Record<string, { slug: string; person: string; sketch: boolean; seri
 
 export function Stock({ stock, investors }: { stock: StockData; investors: Meta }) {
   const quarters = useMemo(() => stock.quarters.map((x) => x.q), [stock]);
-  const [q, setQ] = useQuarter(quarters);
+  const lastHeld = useMemo(() => {
+    for (let i = stock.quarters.length - 1; i >= 0; i--) {
+      if (stock.quarters[i].holders.some((h) => h.activity !== "sold")) return stock.quarters[i].q;
+    }
+    return quarters[quarters.length - 1];
+  }, [stock, quarters]);
+  const [q, setQ] = useQuarter(quarters, lastHeld);
   const current = stock.quarters.find((x) => x.q === q) ?? stock.quarters[stock.quarters.length - 1];
   const before = stock.quarters.find((x) => x.q === prevQ(current.q));
 
   const frames = useMemo(() => {
     const out: Record<string, Frame<HolderTileData>[]> = {};
+    const since: Record<string, string> = {};
     for (const quarter of stock.quarters) {
+      const liveNow = new Set(quarter.holders.filter((h) => h.activity !== "sold").map((h) => h.code));
+      for (const c of Object.keys(since)) if (!liveNow.has(c)) delete since[c];
+      for (const c of liveNow) since[c] ??= quarter.q.slice(0, 4);
       out[quarter.q] = quarter.holders
         .filter((h) => investors[h.code])
         .map((h) => {
@@ -30,7 +40,17 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
           return {
             id: h.code,
             value: h.value,
-            data: { code: h.code, slug: m.slug, person: m.person, sketch: m.sketch, money: formatMoney(h.value), pct: formatPct(h.pct), activity: effectiveActivity(h.activity, h.change), change: h.change },
+            data: {
+              code: h.code,
+              slug: m.slug,
+              person: m.person,
+              sketch: m.sketch,
+              money: formatMoney(h.value),
+              pct: formatPct(h.pct),
+              activity: effectiveActivity(h.activity, h.change),
+              change: h.change,
+              since: h.activity === "sold" ? undefined : since[h.code],
+            },
           };
         });
     }
@@ -40,6 +60,14 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
   const live = current.holders.filter((h) => h.activity !== "sold");
   const total = live.reduce((s, h) => s + h.value, 0);
   const totalBefore = before?.holders.filter((h) => h.activity !== "sold").reduce((s, h) => s + h.value, 0);
+  // Dollars held move with price; shares held is the accumulation signal.
+  const sharesOf = (qq: typeof current | undefined) =>
+    qq && qq.price ? qq.holders.filter((h) => h.activity !== "sold").reduce((s, h) => s + h.value, 0) / qq.price : null;
+  const sharesNow = sharesOf(current);
+  const sharesBefore = sharesOf(before);
+  const sharesDelta = sharesNow !== null && sharesBefore !== null ? formatDelta(sharesNow, sharesBefore) : null;
+  const priceDelta = current.price && before?.price ? formatDelta(current.price, before.price) : null;
+  const priceText = current.price ? `$${current.price >= 100 ? Math.round(current.price) : current.price.toFixed(1)}` : null;
   const normalized = current.holders.map((h) => ({ ...h, activity: effectiveActivity(h.activity, h.change) }));
   const buying = normalized.filter((h) => h.activity === "new" || h.activity === "add").length;
   const selling = normalized.filter((h) => h.activity === "reduce" || h.activity === "sold").length;
@@ -57,9 +85,23 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
             <div className="mt-1 opacity-55">{stock.name}</div>
             <div className="mt-5 flex items-baseline gap-2">
               <span className="text-[22px] font-semibold">{formatMoney(total)}</span>
-              {formatDelta(total, totalBefore) && <span className="opacity-55">{formatDelta(total, totalBefore)}</span>}
+              {sharesDelta ? (
+                <span className="opacity-55">
+                  shares held {sharesDelta}
+                </span>
+              ) : (
+                formatDelta(total, totalBefore) && <span className="opacity-55">value {formatDelta(total, totalBefore)}</span>
+              )}
             </div>
-            <div className="opacity-55">held by {live.length} gigainvestors · {current.q}</div>
+            <div className="opacity-55">
+              held by {live.length} gigainvestors · {current.q}
+              {priceText && (
+                <span>
+                  {" "}· price {priceText}
+                  {priceDelta && <span> {priceDelta}</span>}
+                </span>
+              )}
+            </div>
             <div className="mt-2 flex items-center gap-4">
               <span className="inline-flex items-center gap-1.5 text-buy">
                 <span className="add-strong inline-block h-[10px] w-[14px] rounded-[1px]" />
@@ -84,7 +126,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
             />
           </div>
         </aside>
-        <Treemap frames={frames} q={current.q} label={(d) => `${d.person} · ${d.money}`} className="min-h-0 w-full flex-1" render={(d, tier, rect) => <HolderTile d={d} tier={tier} rect={rect} q={q} />} />
+        <Treemap frames={frames} q={current.q} label={(d) => `${d.person} · ${d.money} · ${d.pct} of portfolio${d.since ? ` · since ${d.since}` : ""}`} floor={0.015} className="min-h-0 w-full flex-1" render={(d, tier, rect) => <HolderTile d={d} tier={tier} rect={rect} q={q} />} />
       </div>
       <QuarterSlider quarters={quarters} q={current.q} onChange={setQ} />
     </>

@@ -84,7 +84,7 @@ export function Search() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Search"
-        className="fixed bottom-[9px] right-[76px] z-40 rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
+        className="fixed right-3 top-3 z-40 rounded-[3px] sm:bottom-[9px] sm:right-[76px] sm:top-auto px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
       >
         search <span className="ml-1 opacity-60">/</span>
       </button>
@@ -108,6 +108,9 @@ export function Search() {
               spellCheck={false}
               autoComplete="off"
             />
+            {hits.length === 0 && query.trim().length > 1 && index && (
+              <div className="border-t border-ink/15 px-4 py-3 text-[13px] opacity-40">nothing filed under that</div>
+            )}
             {hits.length > 0 && (
               <ul className="max-h-[50vh] overflow-y-auto border-t border-ink/15 py-1">
                 {hits.map((h, i) => (

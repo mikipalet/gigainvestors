@@ -4,6 +4,7 @@ import type { Index, InvestorData, SearchIndex, StockData, StockShard } from "./
 export const getIndex = () => readJson<Index>("index.json");
 export const getInvestor = (code: string) => readJson<InvestorData>(`investors/${code}.json`);
 export const getSearchIndex = () => readJson<SearchIndex>("search.json");
+export const getHolderCounts = () => readJson<Record<string, number>>("holders.json");
 
 const shardOf = (ticker: string) => {
   const c = ticker[0]?.toUpperCase() ?? "0";

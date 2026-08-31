@@ -51,7 +51,7 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
       >
         quarterly 13F filings · dataroma.com
       </a>
-      <div className="absolute bottom-2 right-2 top-2 flex items-center gap-2">
+      <div className="absolute bottom-2 right-2 top-2 hidden items-center gap-2 sm:flex">
         <div className="flex items-center">
           <button
             type="button"
@@ -73,7 +73,7 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
           </button>
         </div>
       </div>
-      <div className="relative ml-5 mr-[240px] h-full">
+      <div className="relative ml-5 mr-5 h-full sm:mr-[240px]">
         <input
           type="range"
           min={0}
@@ -88,7 +88,7 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
         {years.map((y) => (
           <div key={y.y} className="pointer-events-none absolute top-[21px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / (quarters.length - 1)) * 100}%` }}>
             {quarters.length < 60 || Number(y.y) % 2 === 0 ? (
-              <span className={`absolute -top-[13px] -translate-x-1/2 text-[10px] leading-none opacity-40 ${Number(y.y) % 4 === 0 ? "" : "hidden sm:inline"}`}>{y.y}</span>
+              <span className={`absolute -top-[13px] -translate-x-1/2 text-[10px] leading-none opacity-40 hidden sm:inline`}>{y.y}</span>
             ) : null}
           </div>
         ))}

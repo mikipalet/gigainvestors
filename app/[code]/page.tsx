@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getIndex, getInvestor } from "@/lib/data";
+import { getHolderCounts, getIndex, getInvestor } from "@/lib/data";
 import { Investor } from "./Investor";
 
 export const dynamic = "force-static";
@@ -12,8 +12,8 @@ export async function generateStaticParams() {
 
 export default async function Page(props: { params: Promise<{ code: string }> }) {
   const params = await props.params;
-  const [index, data] = await Promise.all([getIndex(), getInvestor(params.code)]);
+  const [index, data, holders] = await Promise.all([getIndex(), getInvestor(params.code), getHolderCounts()]);
   const meta = index?.investors.find((i) => i.code === params.code);
   if (!index || !data || !meta || data.quarters.length === 0) notFound();
-  return <Investor data={data} slug={meta.slug} sketch={meta.sketch} />;
+  return <Investor data={data} slug={meta.slug} sketch={meta.sketch} holders={holders ?? {}} />;
 }

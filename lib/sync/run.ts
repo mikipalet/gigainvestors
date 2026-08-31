@@ -197,9 +197,11 @@ async function writeStocks(all: InvestorData[]) {
     const quarters = sorted.map(([q, holders], i) => ({ q, holders: holders.sort((a, b) => b.value - a.value), price: prices[i] }));
     (shards[shardOf(ticker)] ??= {})[ticker] = { ticker, name: st.name, quarters };
     const latest = quarters[quarters.length - 1];
-    search.push({ t: ticker, n: st.name, h: latest.holders.filter((h) => h.activity !== "sold").length });
+    const liveHolders = latest.holders.filter((h) => h.activity !== "sold").length;
+    if (liveHolders > 0) search.push({ t: ticker, n: st.name, h: liveHolders });
   }
   for (const [shard, data] of Object.entries(shards)) await writeJson(`stocks/${shard}.json`, data);
+  await writeJson("holders.json", Object.fromEntries(search.map((s) => [s.t, s.h])));
   const searchIndex: SearchIndex = {
     investors: all.map((d) => ({ code: d.code, person: ROSTER[d.code]?.person ?? d.person, firm: d.firm })).sort((a, b) => a.person.localeCompare(b.person)),
     stocks: search.sort((a, b) => b.h - a.h),

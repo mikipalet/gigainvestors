@@ -17,9 +17,15 @@ interface Props {
   data: InvestorData;
   slug: string;
   sketch: boolean;
+  holders: Record<string, number>;
 }
 
-export function Investor({ data, slug, sketch }: Props) {
+const addedDollars = (p: { value: number; change: number | null; activity: string }) =>
+  p.activity === "new" ? p.value : p.activity === "add" && p.change ? p.value - p.value / (1 + p.change / 100) : 0;
+const removedDollars = (p: { value: number; change: number | null; activity: string }) =>
+  p.activity === "sold" ? p.value : p.activity === "reduce" && p.change ? p.value / (1 + p.change / 100) - p.value : 0;
+
+export function Investor({ data, slug, sketch, holders }: Props) {
   const quarters = useMemo(() => data.quarters.map((x) => x.q), [data]);
   const [q, setQ] = useQuarter(quarters);
   const current = data.quarters.find((x) => x.q === q) ?? data.quarters[data.quarters.length - 1];
@@ -27,7 +33,18 @@ export function Investor({ data, slug, sketch }: Props) {
 
   const frames = useMemo(() => {
     const out: Record<string, Frame<PositionTileData>[]> = {};
+    const since: Record<string, string> = {};
     for (const quarter of data.quarters) {
+      const liveNow = new Set(quarter.positions.filter((p) => p.activity !== "sold").map((p) => p.ticker));
+      for (const t of Object.keys(since)) if (!liveNow.has(t)) delete since[t];
+      for (const t of liveNow) since[t] ??= quarter.q.slice(0, 4);
+      const topNew = new Set(
+        quarter.positions
+          .filter((p) => p.activity === "new")
+          .sort((a, b) => b.value - a.value)
+          .slice(0, 3)
+          .map((p) => p.ticker),
+      );
       out[quarter.q] = quarter.positions.map((p) => ({
         id: p.ticker,
         value: p.value,
@@ -38,11 +55,14 @@ export function Investor({ data, slug, sketch }: Props) {
           money: formatMoney(p.value),
           activity: effectiveActivity(p.activity, p.change),
           change: p.change,
+          strongNew: topNew.has(p.ticker),
+          since: p.activity === "sold" ? undefined : since[p.ticker],
+          holders: holders[p.ticker],
         },
       }));
     }
     return out;
-  }, [data]);
+  }, [data, holders]);
 
   const live = current.positions.filter((p) => p.activity !== "sold");
   const counts = current.positions.reduce(
@@ -51,6 +71,10 @@ export function Investor({ data, slug, sketch }: Props) {
   );
   const delta = formatDelta(current.total, before?.total);
   const totals = useMemo(() => data.quarters.map((x) => x.total), [data]);
+  const top10 = Math.round([...live].sort((a, b) => b.pct - a.pct).slice(0, 10).reduce((s, p) => s + p.pct, 0));
+  const bought = current.positions.reduce((s, p) => s + addedDollars({ ...p, activity: effectiveActivity(p.activity, p.change) }), 0);
+  const sold = current.positions.reduce((s, p) => s + removedDollars({ ...p, activity: effectiveActivity(p.activity, p.change) }), 0);
+  const flowMax = Math.max(bought, sold, 1);
   const qIndex = quarters.indexOf(current.q);
 
   return (
@@ -71,7 +95,7 @@ export function Investor({ data, slug, sketch }: Props) {
               {delta && <span className="opacity-55">{delta}</span>}
             </div>
             <div className="opacity-55">
-              {live.length} positions · {current.q}
+              {live.length} positions · top 10 = {top10}% · {current.q}
             </div>
             <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px]">
               {counts.new > 0 && (
@@ -87,14 +111,29 @@ export function Investor({ data, slug, sketch }: Props) {
                 <span className="inline-flex items-center gap-1.5 text-sell"><span className="inline-block h-[10px] w-[14px] rounded-[1px] border border-dashed border-sell" />{counts.sold} sold</span>
               )}
             </div>
+            {(bought > 0 || sold > 0) && (
+              <div className="mt-2 flex items-center gap-2 text-[11px]">
+                <span className="w-[4.5em] shrink-0 text-right text-buy">{bought > 0 ? `+${formatMoney(bought)}` : ""}</span>
+                <div className="flex h-[6px] flex-1 items-stretch">
+                  <div className="flex flex-1 justify-end">
+                    <div className="bg-buy" style={{ width: `${(bought / flowMax) * 100}%` }} />
+                  </div>
+                  <div className="w-px bg-ink/40" />
+                  <div className="flex flex-1">
+                    <div className="bg-sell" style={{ width: `${(sold / flowMax) * 100}%` }} />
+                  </div>
+                </div>
+                <span className="w-[4.5em] shrink-0 text-sell">{sold > 0 ? `−${formatMoney(sold)}` : ""}</span>
+              </div>
+            )}
             </div>
           </div>
           <div className="mt-3 md:mt-4">
-            <Sparkline values={totals} labels={quarters} index={qIndex} caption="portfolio value" format={formatMoney} onSeek={(i) => setQ(quarters[i])} />
+            <Sparkline values={totals} labels={quarters} index={qIndex} caption="portfolio value" format={formatMoney} onSeek={(i) => setQ(quarters[i])} log height="h-28" />
 
           </div>
         </aside>
-        <Treemap frames={frames} q={current.q} label={(d) => `${d.ticker} · ${d.name} · ${d.money}`} className="min-h-0 w-full flex-1" render={(d, tier, rect) => <PositionTile d={d} tier={tier} rect={rect} q={q} />} />
+        <Treemap frames={frames} q={current.q} label={(d) => `${d.ticker} · ${d.name} · ${d.money} · ${d.pct}${d.since ? ` · since ${d.since}` : ""}`} className="min-h-0 w-full flex-1" render={(d, tier, rect) => <PositionTile d={d} tier={tier} rect={rect} q={q} />} />
       </div>
       <QuarterSlider quarters={quarters} q={current.q} onChange={setQ} />
     </>

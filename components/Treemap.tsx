@@ -15,10 +15,11 @@ interface Props<T> {
   q: string;
   render: (item: T, tier: Tier, rect: Rect) => ReactNode;
   label?: (item: T) => string;
+  floor?: number;
   className?: string;
 }
 
-export function Treemap<T>({ frames, q, render, label, className }: Props<T>) {
+export function Treemap<T>({ frames, q, render, label, floor, className }: Props<T>) {
   const ref = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
   const [hover, setHover] = useState<{ id: string; x: number; y: number } | null>(null);
@@ -43,13 +44,14 @@ export function Treemap<T>({ frames, q, render, label, className }: Props<T>) {
     const key = `${q}|${size.w}|${size.h}`;
     let m = cache.current.get(key);
     if (!m) {
-      m = new Map(layout(frames[q] ?? [], size.w, size.h, 3).map((r) => [r.id, r]));
+      m = new Map(layout(frames[q] ?? [], size.w, size.h, 3, floor).map((r) => [r.id, r]));
       cache.current.set(key, m);
     }
     return m;
-  }, [frames, q, size]);
+  }, [frames, q, size, floor]);
 
   const current = useMemo(() => new Map((frames[q] ?? []).map((f) => [f.id, f.data])), [frames, q]);
+  const tapped = useRef<string | null>(null);
 
   const hoverText = hover
     ? (() => {
@@ -84,6 +86,18 @@ export function Treemap<T>({ frames, q, render, label, className }: Props<T>) {
               className="tile overflow-hidden"
               style={{ transform: `translate(${r.x}px,${r.y}px)`, width: r.w, height: r.h }}
               onPointerEnter={label ? (e) => setHover({ id, x: e.clientX, y: e.clientY }) : undefined}
+              onClickCapture={
+                label && tier !== "full" && tier !== "name"
+                  ? (e) => {
+                      if (!window.matchMedia("(pointer: coarse)").matches) return;
+                      if (tapped.current === id) return;
+                      e.preventDefault();
+                      e.stopPropagation();
+                      tapped.current = id;
+                      setHover({ id, x: e.clientX, y: e.clientY });
+                    }
+                  : undefined
+              }
             >
               {render(data, tier, r)}
             </div>
@@ -91,7 +105,7 @@ export function Treemap<T>({ frames, q, render, label, className }: Props<T>) {
         })}
       {hoverText && hover && (
         <div
-          className="pointer-events-none fixed z-40 hidden max-w-[280px] truncate bg-ink px-2 py-1 text-[11px] font-medium leading-none text-paper [@media(hover:hover)]:block"
+          className="pointer-events-none fixed z-40 max-w-[280px] truncate bg-ink px-2 py-1 text-[11px] font-medium leading-none text-paper"
           style={{
             ...(hover.x > (typeof window !== "undefined" ? window.innerWidth : 9999) - 300
               ? { right: (typeof window !== "undefined" ? window.innerWidth : 0) - hover.x + 12 }

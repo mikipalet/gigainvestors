@@ -7,7 +7,11 @@ export const dynamic = "force-static";
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  return (await getAllStockTickers()).map((ticker) => ({ ticker }));
+  const tickers = await getAllStockTickers();
+  // A renamed ticker is stored under its -OLD key; serve the plain name too, since that is
+  // what a reader types and what the newsletter links to.
+  const all = new Set(tickers.flatMap((t) => (t.endsWith("-OLD") ? [t, t.replace(/-OLD$/, "")] : [t])));
+  return [...all].map((ticker) => ({ ticker }));
 }
 
 export async function generateMetadata(props: { params: Promise<{ ticker: string }> }) {

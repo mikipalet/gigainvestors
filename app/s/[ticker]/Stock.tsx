@@ -7,7 +7,7 @@ import { HolderTile, type HolderTileData } from "@/components/HolderTile";
 import { QuarterSlider } from "@/components/QuarterSlider";
 import { StackedBars } from "@/components/StackedBars";
 import { Treemap, type Frame } from "@/components/Treemap";
-import { formatDelta, formatMoney, formatPct } from "@/lib/format";
+import { formatDelta, formatMoney, formatPct, plural } from "@/lib/format";
 import { prevQ } from "@/lib/quarters";
 import type { StockData } from "@/lib/types";
 import { useQuarter } from "@/lib/use-quarter";
@@ -75,7 +75,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
 
   return (
     <>
-      <div className="flex h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
+      <div className="locks-scroll flex h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
         <aside className="flex shrink-0 flex-col p-4 md:w-[28%] md:min-w-[240px] md:max-w-[420px] md:p-6 md:pr-4">
           <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
             GigaInvestors
@@ -94,7 +94,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
               )}
             </div>
             <div className="opacity-55">
-              held by {live.length} gigainvestors · {current.q}
+              held by {plural(live.length, "investor")} · {current.q}
               {priceText && (
                 <span>
                   {" "}· price {priceText}
@@ -119,7 +119,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
               prices={stock.quarters.map((x) => x.price ?? null)}
               labels={quarters}
               index={qIndex}
-              caption="held by gigainvestors"
+              caption="investors holding"
               format={formatMoney}
               people={Object.fromEntries(Object.entries(investors).map(([c, m]) => [c, m.person]))}
               onSeek={(i) => setQ(quarters[i])}

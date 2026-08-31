@@ -26,7 +26,7 @@ const mentioned = (text: string, people: IssueProps["people"]) =>
     .filter((x) => x.at >= 0)
     .sort((a, b) => a.at - b.at)
     .map((x) => x.p)
-    .slice(0, 6);
+    .slice(0, 5);
 
 export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps) {
   const q = facts.quarter;
@@ -34,8 +34,11 @@ export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps
   const [leadPara, ...rest] = text.paragraphs;
   return (
     <Html lang="en">
-      <Head />
-      <Preview>{leadPara}</Preview>
+      <Head>
+        <meta name="color-scheme" content="light only" />
+        <meta name="supported-color-schemes" content="light" />
+      </Head>
+      <Preview>{`${facts.quarter}, in ${text.paragraphs.length} paragraphs: ${facts.filed} filings, ${formatMoney(facts.aggregate)} between them.`}</Preview>
       <Body style={{ margin: 0, background: paper, color: ink, fontFamily: font }}>
         <Container style={{ maxWidth: 600, margin: "0 auto", padding: "48px 24px 40px" }}>
           <Text style={{ ...kicker, marginBottom: 14 }}>
@@ -65,7 +68,7 @@ export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps
                       {faces.map((p) => (
                         <td key={p.slug} style={{ paddingRight: 6 }}>
                           <Link href={link(`/${p.code}`)}>
-                            <Img src={`${SITE}/faces/png/${p.slug}.png`} width={30} height={37} alt={p.name} style={{ display: "block" }} />
+                            <Img src={`${SITE}/faces/png/${p.slug}.png`} width={48} height={60} alt={p.name} style={{ display: "block" }} />
                           </Link>
                         </td>
                       ))}
@@ -84,13 +87,13 @@ export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps
           </Section>
 
           <Section style={{ marginTop: 40, paddingTop: 16, borderTop: hairline }}>
-            <Text style={{ ...prose, fontSize: 11, lineHeight: "17px", opacity: 0.45 }}>
+            <Text style={{ ...prose, fontSize: 12, lineHeight: "18px", opacity: 0.6 }}>
               13F filings via dataroma.com, positions as reported at quarter end. Not advice.{" "}
-              <Link href={`${SITE}/newsletter`} style={{ color: ink }}>
+              <Link href={`${SITE}/newsletter`} style={{ color: ink, textDecoration: "underline" }}>
                 Archive
               </Link>{" "}
               ·{" "}
-              <Link href="https://gigainvestors.com/unsubscribe?e={{{contact.email}}}" style={{ color: ink }}>
+              <Link href="https://gigainvestors.com/unsubscribe?e={{{contact.email}}}" style={{ color: ink, textDecoration: "underline" }}>
                 Unsubscribe
               </Link>
             </Text>

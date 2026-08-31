@@ -32,7 +32,7 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
       setMessage("Confirmed. The next issue goes out when the quarter\u2019s filings are in.");
     } else if (p.get("error")) {
       setState("error");
-      setMessage("That link expired. Subscribe again below.");
+      setMessage(p.get("error") === "config" ? "Something is broken on our side. Write to hello@gigainvestors.com and it gets fixed." : "That link expired. Subscribe again above.");
     }
     fetch("/api/newsletter-stats").then((r) => r.json()).then(setStats).catch(() => null);
   }, []);
@@ -49,6 +49,9 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
 
   return (
     <>
+      {state === "sent" ? (
+        <p className="text-[15px] text-buy">{message}</p>
+      ) : (
       <form onSubmit={submit} className="flex items-center gap-2">
         <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
         <input
@@ -56,15 +59,18 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          autoComplete="email"
           placeholder="you@example.com"
-          className="min-w-0 flex-1 rounded-[3px] bg-paper px-3 py-2 text-[15px] shadow-[inset_0_0_0_1.5px_var(--ink)] outline-none placeholder:opacity-40"
+          className="min-w-0 flex-1 rounded-[3px] bg-paper px-3 py-2.5 text-[16px] shadow-[inset_0_0_0_1.5px_var(--ink)] outline-none placeholder:opacity-40"
         />
         <button type="submit" disabled={state === "busy"} className="shrink-0 rounded-[3px] bg-ink px-4 py-2 text-[15px] font-semibold text-paper transition-opacity hover:opacity-80 disabled:opacity-50">
           subscribe
         </button>
       </form>
-      {message && <p className={`text-[13px] ${state === "error" ? "text-sell" : "text-buy"}`}>{message}</p>}
+      )}
+      {state === "error" && <p className="text-[13px] text-sell">{message}</p>}
 
+      {issues.some((i) => i.sentAt) && (
       <section className="text-[13px]">
         <div className="flex items-baseline justify-between border-b border-ink/15 pb-1">
           <span className="text-[11px] uppercase tracking-wide opacity-50">open stats</span>
@@ -118,6 +124,7 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
           );
         })}
       </section>
+      )}
     </>
   );
 }

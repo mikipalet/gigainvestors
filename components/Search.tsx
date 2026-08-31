@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { SearchIndex } from "@/lib/types";
+import { plural } from "@/lib/format";
 
 type Hit =
   | { kind: "investor"; code: string; title: string; sub: string }
@@ -78,7 +79,7 @@ export function Search() {
 
   return (
     <>
-      <div className="fixed bottom-[8px] right-2 z-40 flex items-center gap-1 sm:bottom-[9px] sm:right-[76px] sm:gap-2">
+      <div className="fixed bottom-[56px] right-2 z-50 flex items-center gap-2 sm:bottom-[9px] sm:right-[76px]">
         <a
           href="mailto:hello@gigainvestors.com"
           className="hidden rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 sm:block"
@@ -87,7 +88,7 @@ export function Search() {
         </a>
         <a
           href="/newsletter"
-          className="rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
+          className="flex h-11 w-11 items-center justify-center rounded-[3px] bg-paper text-[17px] leading-none opacity-75 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 sm:h-auto sm:w-auto sm:px-2 sm:py-1 sm:text-[12px] sm:opacity-50"
         >
           <span className="sm:hidden">✉</span>
           <span className="hidden sm:inline">newsletter</span>
@@ -96,7 +97,7 @@ export function Search() {
           type="button"
           onClick={() => setOpen(true)}
           aria-label="Search"
-          className="rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
+          className="flex h-11 w-11 items-center justify-center rounded-[3px] bg-paper text-[17px] leading-none opacity-75 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 sm:h-auto sm:w-auto sm:px-2 sm:py-1 sm:text-[12px] sm:opacity-50"
         >
           <span className="sm:hidden">⌕</span>
           <span className="hidden sm:inline">
@@ -138,7 +139,7 @@ export function Search() {
                   >
                     <span className="shrink-0 whitespace-nowrap font-semibold">{h.kind === "munger" ? "Charlie Munger" : h.title}</span>
                     <span className="truncate opacity-60">{h.kind === "munger" ? "1924 – 2023" : h.sub}</span>
-                    {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{h.holders} holders</span>}
+                    {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{plural(h.holders, "holder")}</span>}
                     {h.kind === "investor" && <span className="ml-auto shrink-0 opacity-60">investor</span>}
                     {h.kind === "munger" && <span className="ml-auto shrink-0 opacity-60">the waiting</span>}
                   </li>

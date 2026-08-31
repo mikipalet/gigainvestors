@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getIndex, getSearchIndex, getStock } from "@/lib/data";
+import { getAllStockTickers, getIndex, getStock } from "@/lib/data";
 import { StockContent } from "@/components/AgentContent";
 import { Stock } from "./Stock";
 
@@ -7,8 +7,7 @@ export const dynamic = "force-static";
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  const search = await getSearchIndex();
-  return (search?.stocks ?? []).map((s) => ({ ticker: s.t }));
+  return (await getAllStockTickers()).map((ticker) => ({ ticker }));
 }
 
 export async function generateMetadata(props: { params: Promise<{ ticker: string }> }) {

@@ -37,3 +37,5 @@ export function firstSentences(text: string, limit: number): string {
   if (sentence > limit * 0.5) return cut.slice(0, sentence + 1);
   return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
 }
+
+export const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;

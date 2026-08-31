@@ -8,7 +8,7 @@ const looksLikeEmail = (s: string) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(s);
 export function UnsubscribeClient() {
   const [email, setEmail] = useState("");
   const [known, setKnown] = useState(false);
-  const [state, setState] = useState<"idle" | "busy" | "done">("idle");
+  const [state, setState] = useState<"idle" | "busy" | "done" | "error">("idle");
 
   // The address arrives from the email's own link. If the merge tag did not resolve, ask for it.
   useEffect(() => {
@@ -22,8 +22,8 @@ export function UnsubscribeClient() {
   const submit = async (ev: React.FormEvent) => {
     ev.preventDefault();
     setState("busy");
-    await fetch("/api/unsubscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email }) }).catch(() => null);
-    setState("done");
+    const r = await fetch("/api/unsubscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email }) }).catch(() => null);
+    setState(r?.ok ? "done" : "error");
   };
 
   if (state === "done") {
@@ -51,7 +51,7 @@ export function UnsubscribeClient() {
       <p className="opacity-60">
         {known ? (
           <>
-            You are subscribed as <span className="font-semibold opacity-100">{email}</span>. One click and the letters stop. Nothing else about you is stored, so there is nothing else to delete.
+            You are subscribed as <span className="font-semibold opacity-100">{email}</span>. One click and the letters stop, and your address is deleted from the list along with whether you opened anything.
           </>
         ) : (
           "Type the address you subscribed with and the letters stop."
@@ -64,8 +64,9 @@ export function UnsubscribeClient() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            autoComplete="email"
             placeholder="you@example.com"
-            className="min-w-0 flex-1 rounded-[3px] bg-paper px-3 py-2 text-[15px] shadow-[inset_0_0_0_1.5px_var(--ink)] outline-none placeholder:opacity-40"
+            className="min-w-0 flex-1 rounded-[3px] bg-paper px-3 py-2.5 text-[16px] shadow-[inset_0_0_0_1.5px_var(--ink)] outline-none placeholder:opacity-40"
           />
         )}
         <button
@@ -76,6 +77,11 @@ export function UnsubscribeClient() {
           unsubscribe
         </button>
       </form>
+      {state === "error" && (
+        <p className="text-[13px] text-sell">
+          That did not go through. Try again, or write to hello@gigainvestors.com and the address comes off the list by hand.
+        </p>
+      )}
       <p className="text-[13px] opacity-45">
         Landed here by mistake? <Link href="/newsletter" className="underline">Keep the subscription</Link> and nothing changes.
       </p>

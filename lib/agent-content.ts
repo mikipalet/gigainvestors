@@ -1,4 +1,4 @@
-import { formatMoney, formatPct } from "./format";
+import { formatMoney, formatPct, plural } from "./format";
 import type { Index, InvestorData, StockData } from "./types";
 
 // Markdown representations served on Accept: text/markdown (acceptmarkdown.com).
@@ -62,7 +62,7 @@ export function stockMarkdown(s: StockData, people: Record<string, string>): str
   return [
     `# ${s.ticker} — ${s.name}`,
     ``,
-    `Held by ${live.length} gigainvestors · ${formatMoney(total)} total · ${cur.q}${cur.price ? ` · reported price $${cur.price.toFixed(2)} (split-adjusted)` : ""}.`,
+    `Held by ${plural(live.length, "investor")} · ${formatMoney(total)} total · ${cur.q}${cur.price ? ` · reported price $${cur.price.toFixed(2)} (split-adjusted)` : ""}.`,
     `Page: ${SITE}/s/${s.ticker}`,
     ``,
     `## Holders (${cur.q})`,
@@ -73,7 +73,7 @@ export function stockMarkdown(s: StockData, people: Record<string, string>): str
     ``,
     `## Total held by quarter`,
     ``,
-    ...s.quarters.map((qq) => `- ${qq.q}: ${formatMoney(qq.holders.filter((h) => h.activity !== "sold").reduce((a, h) => a + h.value, 0))} · ${qq.holders.filter((h) => h.activity !== "sold").length} holders${qq.price ? ` · $${qq.price.toFixed(2)}` : ""}`),
+    ...s.quarters.map((qq) => `- ${qq.q}: ${formatMoney(qq.holders.filter((h) => h.activity !== "sold").reduce((a, h) => a + h.value, 0))} · ${plural(qq.holders.filter((h) => h.activity !== "sold").length, "holder")}${qq.price ? ` · $${qq.price.toFixed(2)}` : ""}`),
   ].join("\n");
 }
 

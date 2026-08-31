@@ -177,7 +177,7 @@ export function buildFacts(quarter: string, index: Index, investors: Record<stri
     books.push({ code: meta.code, person: meta.person, firm: meta.firm, slug: meta.slug, now: history[history.length - 1].positions, before: qb?.positions ?? new Map(), total: qn.total, totalBefore: qb?.total ?? 0, history });
   }
   const filed = books.length;
-  const active = filed + absentees.filter((a) => a.lastFiled === q0).length;
+  const active = index.investors.length;
 
   const guards: string[] = [];
   const artifacts = new Set<string>();

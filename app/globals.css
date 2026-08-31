@@ -23,6 +23,10 @@ body {
   color: var(--ink);
   font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
+}
+
+/* Only the full-viewport treemap pages lock scrolling; text pages must scroll on a phone. */
+body:has(.locks-scroll) {
   overflow: hidden;
 }
 

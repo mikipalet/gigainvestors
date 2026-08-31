@@ -13,10 +13,11 @@ export const PAGES: Record<string, { title: string; paragraphs: string[] }> = {
   privacy: {
     title: "Privacy",
     paragraphs: [
-      "GigaInvestors does not collect personal data. There are no accounts, no sign-ups, no forms that store what you type, no analytics scripts, no advertising networks, and no cookies set by the site. Search runs entirely in your browser against a public index file. The only thing your browser remembers is what it remembers for any website: nothing is written to local storage on your behalf beyond standard HTTP caching of public files.",
+      "GigaInvestors does not collect personal data. There are no accounts, no analytics scripts, no advertising networks, and no cookies set by the site. Search runs entirely in your browser against a public index file. The only thing your browser remembers is what it remembers for any website: nothing is written to local storage on your behalf beyond standard HTTP caching of public files.",
       "The site is hosted on Vercel, whose edge network handles requests and may log IP addresses and request metadata for operational and security purposes under Vercel's own privacy policy; GigaInvestors does not access, export, or analyse those logs for tracking. Face images and data files are served as static assets with long cache lifetimes so repeat visits do not re-download them.",
       "The people shown on the site are public figures, and the information about them is drawn from public regulatory filings (SEC Form 13F) and public photographs used only as references for hand-style sketches. If you are one of the investors shown and would like a portrait changed or removed, write to hello@gigainvestors.com and it will be handled promptly.",
-      "If data collection ever changes, this page changes first.",
+      "One exception: the quarterly letter. If you subscribe, your address is stored by Resend, who send the mail and record whether you opened it and whether you clicked. That is the only personal data on file. Unsubscribing deletes it, the aggregate open and click rates are published on the newsletter page, and the subscribe form briefly counts requests per IP address to stop it being abused.",
+      "This page changes when what it describes changes. Last revised 31 August 2026.",
     ],
   },
 };

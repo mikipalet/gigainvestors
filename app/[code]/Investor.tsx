@@ -8,7 +8,7 @@ import { PositionTile, type PositionTileData } from "@/components/PositionTile";
 import { QuarterSlider } from "@/components/QuarterSlider";
 import { Sparkline } from "@/components/Sparkline";
 import { Treemap, type Frame } from "@/components/Treemap";
-import { formatDelta, formatMoney, formatPct } from "@/lib/format";
+import { formatDelta, formatMoney, formatPct, plural } from "@/lib/format";
 import { prevQ } from "@/lib/quarters";
 import { fromWire, type InvestorWire } from "@/lib/wire";
 import { useQuarter } from "@/lib/use-quarter";
@@ -72,7 +72,8 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
   );
   const delta = formatDelta(current.total, before?.total);
   const totals = useMemo(() => data.quarters.map((x) => x.total), [data]);
-  const top10 = Math.round([...live].sort((a, b) => b.pct - a.pct).slice(0, 10).reduce((s, p) => s + p.pct, 0));
+  const topN = Math.min(10, live.length);
+  const topShare = Math.round([...live].sort((a, b) => b.pct - a.pct).slice(0, topN).reduce((s, p) => s + p.pct, 0));
   const bought = current.positions.reduce((s, p) => s + addedDollars({ ...p, activity: effectiveActivity(p.activity, p.change) }), 0);
   const sold = current.positions.reduce((s, p) => s + removedDollars({ ...p, activity: effectiveActivity(p.activity, p.change) }), 0);
   const flowMax = Math.max(bought, sold, 1);
@@ -80,7 +81,7 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
 
   return (
     <>
-      <div className="flex h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
+      <div className="locks-scroll flex h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
         <aside className="flex shrink-0 flex-col p-4 md:w-[28%] md:min-w-[240px] md:max-w-[420px] md:p-6 md:pr-4">
           <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
             GigaInvestors
@@ -96,7 +97,7 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
               {delta && <span className="opacity-55">{delta}</span>}
             </div>
             <div className="opacity-55">
-              {live.length} positions · top 10 = {top10}% · {current.q}
+              {plural(live.length, "position")}{live.length > 1 ? ` · top ${topN} = ${topShare}%` : ""} · {current.q}
             </div>
             <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px]">
               {counts.new > 0 && (

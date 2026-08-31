@@ -11,6 +11,13 @@ const shardOf = (ticker: string) => {
   return /[A-Z]/.test(c) ? c : "0";
 };
 
+const SHARDS = ["0", ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+
+export async function getAllStockTickers(): Promise<string[]> {
+  const shards = await Promise.all(SHARDS.map((s) => readJson<StockShard>(`stocks/${s}.json`)));
+  return shards.flatMap((shard) => Object.keys(shard ?? {}));
+}
+
 export async function getStock(ticker: string): Promise<StockData | null> {
   const shard = await readJson<StockShard>(`stocks/${shardOf(ticker)}.json`);
   return shard?.[ticker] ?? null;

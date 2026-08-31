@@ -39,7 +39,7 @@ export function writeIssue(manifest: IssueManifest, html: string): void {
   mkdirSync(DIR, { recursive: true });
   mkdirSync(HTML_DIR, { recursive: true });
   writeFileSync(path.join(DIR, `${manifest.slug}.json`), JSON.stringify(manifest, null, 2));
-  writeFileSync(path.join(HTML_DIR, `${manifest.slug}.html`), html);
+  writeFileSync(path.join(HTML_DIR, `${manifest.slug}.html`), html.replaceAll("?e={{{contact.email}}}", ""));
 }
 
 // The issue's treemap hero, rendered at 1200x640 by the build, which doubles as its social card.

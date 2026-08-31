@@ -1,8 +1,11 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { render } from "@react-email/render";
+import React from "react";
 import { Resend } from "resend";
 import { z } from "zod";
 import { redis } from "@/lib/newsletter/redis";
 import { signToken } from "@/lib/newsletter/token";
+import { ConfirmEmail } from "@/emails/ConfirmEmail";
 
 export const dynamic = "force-dynamic";
 
@@ -43,9 +46,9 @@ export async function POST(req: NextRequest) {
       from: "GigaInvestors <letters@gigainvestors.com>",
       replyTo: "hello@gigainvestors.com",
       to: email,
-      subject: "Confirm: the quarter, by email",
-      text: `One click to confirm your subscription to GigaInvestors, one email per quarter:\n\n${confirmUrl}\n\nIf you didn't ask for this, ignore it.`,
-      html: `<div style="font-family:Inter,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#f4f2ec;color:#111;padding:40px 24px"><p style="font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.5;margin:0 0 12px">GigaInvestors</p><p style="font-size:18px;font-weight:600;margin:0 0 16px">One email per quarter: what 83 famous investors bought and sold.</p><p><a href="${confirmUrl}" style="display:inline-block;background:#111;color:#f4f2ec;padding:10px 16px;border-radius:3px;font-weight:600;text-decoration:none">Confirm subscription</a></p><p style="font-size:12px;opacity:.5;margin-top:24px">If you didn't ask for this, ignore it. The link works for 48 hours.</p></div>`,
+      subject: "Confirm your GigaInvestors subscription",
+      text: `One click to confirm, then one letter a quarter on what 83 of the most followed investors bought and sold.\n\n${confirmUrl}\n\nThe link works for 48 hours. If you did not ask for this, ignore it.`,
+      html: await render(React.createElement(ConfirmEmail, { confirmUrl })),
     })
     .catch(() => null);
   return ok();

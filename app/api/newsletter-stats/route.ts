@@ -40,6 +40,6 @@ export async function GET() {
   }
   return NextResponse.json(
     { subscribers, subscriberSeries, issues: issues.map((i) => ({ quarter: i.quarter, sentAt: i.sentAt ?? null, recipients: i.recipients ?? null, headline: i.headline, stats: perIssue[i.quarter] ?? null })) },
-    { headers: { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=3600" } },
+    { headers: { "Cache-Control": "public, s-maxage=60, stale-while-revalidate=120" } },
   );
 }

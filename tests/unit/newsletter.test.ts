@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { deadlineFor, deriveIssue, shouldSend } from "@/lib/newsletter/derive";
+import { buildIssue, canonical, deadlineFor, shouldSend } from "@/lib/newsletter/issue";
 import { signToken, verifyToken } from "@/lib/newsletter/token";
 import type { Index, InvestorData } from "@/lib/types";
 
@@ -16,26 +16,29 @@ const inv = (code: string, positions: InvestorData["quarters"][number]["position
   code,
   person: code,
   firm: code,
-  quarters: [{ q: "2026 Q2", total: 1000, positions }],
+  quarters: [{ q: "2026 Q2", total: 1e9, positions }],
 });
 
-describe("deriveIssue", () => {
-  it("ranks moves by dollars and builds consensus", () => {
-    const data = {
-      A: inv("A", [
-        { ticker: "NVDA", name: "Nvidia", shares: 1, pct: 10, value: 5e8, activity: "new", change: null },
-        { ticker: "AAPL", name: "Apple", shares: 1, pct: 10, value: 4e8, activity: "reduce", change: -50 },
-      ]),
-      B: inv("B", [{ ticker: "NVDA", name: "Nvidia", shares: 1, pct: 10, value: 2e8, activity: "add", change: 25 }]),
+describe("buildIssue", () => {
+  it("ranks bets by impact and builds directional consensus", () => {
+    const prev = (code: string, positions: InvestorData["quarters"][number]["positions"]) => ({ q: "2026 Q1", total: 1e9, positions });
+    const data: Record<string, InvestorData> = {
+      A: { ...inv("A", [
+        { ticker: "NVDA", name: "Nvidia", shares: 10, pct: 50, value: 500e6, activity: "new", change: null },
+        { ticker: "AAPL", name: "Apple", shares: 5, pct: 40, value: 400e6, activity: "reduce", change: -50 },
+      ]), quarters: [prev("A", [{ ticker: "AAPL", name: "Apple", shares: 10, pct: 80, value: 800e6, activity: "hold", change: null }]), inv("A", [
+        { ticker: "NVDA", name: "Nvidia", shares: 10, pct: 50, value: 500e6, activity: "new", change: null },
+        { ticker: "AAPL", name: "Apple", shares: 5, pct: 40, value: 400e6, activity: "reduce", change: -50 },
+      ]).quarters[0]] },
+      B: inv("B", [{ ticker: "NVDA", name: "Nvidia", shares: 4, pct: 20, value: 200e6, activity: "add", change: 25 }]),
     };
-    const issue = deriveIssue("2026 Q2", index, data);
+    const issue = buildIssue("2026 Q2", index, data, {});
     expect(issue.filed).toBe(2);
-    expect(issue.total).toBe(3);
-    expect(issue.moves[0]).toMatchObject({ ticker: "NVDA", code: "A", dollars: 5e8 });
-    expect(issue.bought[0]).toMatchObject({ ticker: "NVDA", count: 2 });
-    expect(issue.sold[0]).toMatchObject({ ticker: "AAPL", count: 1 });
-    expect(issue.entrants[0].ticker).toBe("NVDA");
-    expect(issue.headline).toContain("Ann opened NVDA");
+    expect(issue.lead?.ticker).toBe("NVDA");
+    expect(issue.bets[0]).toMatchObject({ code: "A", ticker: "NVDA" });
+    expect(issue.rollCall.find((r) => r.code === "A")?.sentences.join(" ")).toContain("Opened 1 position");
+    expect(canonical("GOOG")).toBe("GOOGL");
+    expect(canonical("CTRA-OLD")).toBe("CTRA");
   });
 });
 

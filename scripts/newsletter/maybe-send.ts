@@ -7,7 +7,7 @@ config({ path: [".env.local", ".env"] });
 
 // Daily gate: build and send the newest quarter's issue once it is essentially complete.
 async function main() {
-  const { shouldSend } = await import("../../lib/newsletter/derive");
+  const { shouldSend } = await import("../../lib/newsletter/issue");
   const { issueSlug, readIssue } = await import("../../lib/newsletter/store");
   const index = JSON.parse(readFileSync(path.join(process.cwd(), "data", "store", "index.json"), "utf8"));
   const quarter: string = index.quarters[index.quarters.length - 1];

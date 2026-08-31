@@ -34,12 +34,6 @@ body:has(.locks-scroll) {
   transition: none;
 }
 
-@media (max-width: 640px) {
-  .tile {
-    transition: none;
-  }
-}
-
 .tile {
   position: absolute;
   left: 0;
@@ -54,13 +48,13 @@ body:has(.locks-scroll) {
   transition: none;
 }
 
-@media (max-width: 640px) {
-  .tile {
+.tile {
     transition: none;
   }
 }
 
-.tile {
+@media (max-width: 640px) {
+  .tile {
     transition: none;
   }
 }

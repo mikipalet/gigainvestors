@@ -11,15 +11,26 @@ const bodySchema = z.union([
   z.object({ email: z.string().trim().toLowerCase().email().max(200) }),
 ]);
 
-// Only ever fetched to complete a one-click the reader started, and only on Resend's own host.
-const isResendUrl = (raw: string) => {
+// Resend's one-click link carries a signed token whose payload names the contact and the
+// audience. The contact id is an opaque UUID that only reaches the person who got the letter,
+// so holding it is the proof of identity; we finish the unsubscribe ourselves rather than
+// handing the reader to another site. Resend's own page is a POST form, so it cannot be
+// completed server-side.
+function contactFromUnsubscribeUrl(raw: string): string | null {
   try {
-    const u = new URL(raw);
-    return u.protocol === "https:" && (u.hostname === "resend.com" || u.hostname.endsWith(".resend.com"));
+    const url = new URL(raw);
+    if (url.protocol !== "https:" || !(url.hostname === "resend.com" || url.hostname.endsWith(".resend.com"))) return null;
+    const token = url.searchParams.get("token");
+    const body = token?.split(".")[1];
+    if (!body) return null;
+    const payload = JSON.parse(Buffer.from(body, "base64url").toString()) as { contactId?: string; audienceId?: string; exp?: number };
+    if (payload.audienceId !== process.env.RESEND_AUDIENCE_ID) return null;
+    if (payload.exp && payload.exp * 1000 < Date.now()) return null;
+    return /^[0-9a-f-]{36}$/i.test(payload.contactId ?? "") ? payload.contactId! : null;
   } catch {
-    return false;
+    return null;
   }
-};
+}
 
 // Knowing an address must not be enough to unsubscribe it, so this only ever sends a signed
 // confirmation link. The one-click path lives in the email itself, where Resend's own token
@@ -31,9 +42,11 @@ export async function POST(req: NextRequest) {
   // One click from the letter: Resend's token already identifies the reader, so complete it
   // here and let them stay on our page.
   if ("url" in parsed.data) {
-    if (!isResendUrl(parsed.data.url)) return NextResponse.json({ ok: false }, { status: 400 });
-    const res = await fetch(parsed.data.url, { redirect: "follow", cache: "no-store" }).catch(() => null);
-    return NextResponse.json({ ok: Boolean(res?.ok) }, { status: res?.ok ? 200 : 502 });
+    const id = contactFromUnsubscribeUrl(parsed.data.url);
+    const audienceId = process.env.RESEND_AUDIENCE_ID;
+    if (!id || !audienceId) return NextResponse.json({ ok: false }, { status: 400 });
+    const res = await new Resend(process.env.RESEND_API_KEY).contacts.update({ audienceId, id, unsubscribed: true }).catch(() => null);
+    return NextResponse.json({ ok: Boolean(res?.data) }, { status: res?.data ? 200 : 502 });
   }
   const { email } = parsed.data;
 

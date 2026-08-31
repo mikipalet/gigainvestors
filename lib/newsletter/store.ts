@@ -29,9 +29,12 @@ export function listIssues(): IssueManifest[] {
     .sort((a, b) => compareQ(b.quarter, a.quarter));
 }
 
+// Two copies on purpose: the sending copy keeps Resend's unsubscribe placeholder, and the
+// public copy has a real URL so the archive's "read it as the email" link is not broken.
 export function readIssue(slug: string): { manifest: IssueManifest; html: string } | null {
   const file = path.join(DIR, `${slug}.json`);
-  const html = path.join(HTML_DIR, `${slug}.html`);
+  const sending = path.join(DIR, `${slug}.html`);
+  const html = existsSync(sending) ? sending : path.join(HTML_DIR, `${slug}.html`);
   if (!existsSync(file) || !existsSync(html)) return null;
   return { manifest: JSON.parse(readFileSync(file, "utf8")), html: readFileSync(html, "utf8") };
 }
@@ -40,6 +43,7 @@ export function writeIssue(manifest: IssueManifest, html: string): void {
   mkdirSync(DIR, { recursive: true });
   mkdirSync(HTML_DIR, { recursive: true });
   writeFileSync(path.join(DIR, `${manifest.slug}.json`), JSON.stringify(manifest, null, 2));
+  writeFileSync(path.join(DIR, `${manifest.slug}.html`), html);
   writeFileSync(path.join(HTML_DIR, `${manifest.slug}.html`), html.replaceAll("{{{RESEND_UNSUBSCRIBE_URL}}}", "https://gigainvestors.com/unsubscribe"));
 }
 

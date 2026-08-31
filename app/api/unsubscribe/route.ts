@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
-import { redis } from "@/lib/newsletter/redis";
+import { mailBuckets, withinLimit } from "@/lib/newsletter/limit";
 import { signToken } from "@/lib/newsletter/token";
 
 export const dynamic = "force-dynamic";
@@ -50,16 +50,8 @@ export async function POST(req: NextRequest) {
   }
   const { email } = parsed.data;
 
-  try {
-    const r = await redis();
-    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-    const key = `rl:unsubscribe:${ip}`;
-    const n = await r.incr(key);
-    if (n === 1) await r.expire(key, 3600);
-    if (n > 10) return NextResponse.json({ ok: true });
-  } catch {
-    // Rate limiting is best effort; never block someone from leaving.
-  }
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  if (!(await withinLimit(mailBuckets("unsubscribe", ip, email)))) return NextResponse.json({ ok: true });
 
   const secret = process.env.CRON_SECRET;
   if (secret) {

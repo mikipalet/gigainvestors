@@ -3,7 +3,7 @@ import { render } from "@react-email/render";
 import React from "react";
 import { Resend } from "resend";
 import { z } from "zod";
-import { redis } from "@/lib/newsletter/redis";
+import { mailBuckets, withinLimit } from "@/lib/newsletter/limit";
 import { signToken } from "@/lib/newsletter/token";
 import { ConfirmEmail } from "@/emails/ConfirmEmail";
 
@@ -18,16 +18,8 @@ export async function POST(req: NextRequest) {
   if (!parsed.success) return NextResponse.json({ ok: false, message: "That doesn't look like an email." }, { status: 400 });
   const { email } = parsed.data;
 
-  try {
-    const r = await redis();
-    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-    const key = `rl:subscribe:${ip}`;
-    const n = await r.incr(key);
-    if (n === 1) await r.expire(key, 3600);
-    if (n > 5) return NextResponse.json({ ok: false, message: "Too many attempts, try again later." }, { status: 429 });
-  } catch {
-    // Rate limiting is best effort; never block a subscriber because Redis blinked.
-  }
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  if (!(await withinLimit(mailBuckets("subscribe", ip, email)))) return ok();
 
   const resend = new Resend(process.env.RESEND_API_KEY);
   const audienceId = process.env.RESEND_AUDIENCE_ID;

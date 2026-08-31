@@ -5,3 +5,5 @@ node_modules
 .vercel
 assets/
 test-results
+scripts/newsletter/fonts/fonts.conf
+data/newsletter/*.facts.json

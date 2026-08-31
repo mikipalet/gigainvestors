@@ -16,7 +16,7 @@ async function main() {
   const slug = issueSlug(quarter);
   if (readIssue(slug)?.manifest.sentAt) return console.log(`${slug}: already sent`);
   if (!shouldSend(quarter, filed, total)) return console.log(`${slug}: not yet (${filed}/${total} filed)`);
-  if (!process.env.RESEND_API_KEY || !process.env.RESEND_AUDIENCE_ID) return console.log(`${slug}: ready, but Resend secrets are not configured`);
+  if (!process.env.RESEND_API_KEY || !process.env.RESEND_AUDIENCE_ID || !process.env.ANTHROPIC_API_KEY) return console.log(`${slug}: ready, but secrets are not configured`);
   execSync(`npx tsx scripts/newsletter/build-issue.ts "${quarter}"`, { stdio: "inherit" });
   execSync(`npx tsx scripts/newsletter/send-issue.ts ${slug}`, { stdio: "inherit" });
 }

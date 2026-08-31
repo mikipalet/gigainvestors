@@ -1,12 +1,14 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { compareQ } from "../quarters";
+import type { Prose } from "./write";
 
 export interface IssueManifest {
   quarter: string;
   slug: string;
   headline: string;
   subject: string;
+  prose?: Prose;
   builtAt: string;
   sentAt?: string;
   broadcastId?: string;
@@ -21,7 +23,7 @@ export const issueSlug = (quarter: string) => quarter.toLowerCase().replace(" ",
 export function listIssues(): IssueManifest[] {
   if (!existsSync(DIR)) return [];
   return readdirSync(DIR)
-    .filter((f) => f.endsWith(".json"))
+    .filter((f) => f.endsWith(".json") && !f.endsWith(".facts.json"))
     .map((f) => JSON.parse(readFileSync(path.join(DIR, f), "utf8")) as IssueManifest)
     .sort((a, b) => compareQ(b.quarter, a.quarter));
 }

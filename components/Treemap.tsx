@@ -26,6 +26,17 @@ export function Treemap<T>({ frames, q, render, label, floor, className }: Props
   const [size, setSize] = useState({ w: 0, h: 0 });
   const [hover, setHover] = useState<{ id: string; x: number; y: number } | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const [scrubbing, setScrubbing] = useState(false);
+  const lastChange = useRef(0);
+  useEffect(() => {
+    const now = performance.now();
+    const fast = now - lastChange.current < 250;
+    lastChange.current = now;
+    if (!fast) return;
+    setScrubbing(true);
+    const t = setTimeout(() => setScrubbing(false), 300);
+    return () => clearTimeout(t);
+  }, [q]);
 
   useLayoutEffect(() => {
     const el = ref.current!;
@@ -36,11 +47,13 @@ export function Treemap<T>({ frames, q, render, label, floor, className }: Props
     return () => ro.disconnect();
   }, []);
 
+  const prevIds = useRef<string[]>([]);
   const ids = useMemo(() => {
-    const s = new Set<string>();
-    Object.values(frames).forEach((f) => f.forEach((i) => s.add(i.id)));
-    return [...s];
-  }, [frames]);
+    const here = (frames[q] ?? []).map((f) => f.id);
+    const merged = [...new Set([...here, ...prevIds.current])];
+    prevIds.current = here;
+    return merged;
+  }, [frames, q]);
 
   // A phone cannot label 81 tiles, so it shows the ones it can read and folds the tail into
   // one tile that opens the rest. REST_ID is not a real item; it is the door to the full view.
@@ -85,7 +98,7 @@ export function Treemap<T>({ frames, q, render, label, floor, className }: Props
   return (
     <div
       ref={ref}
-      className={`relative overflow-hidden ${className ?? ""}`}
+      className={`relative overflow-hidden ${scrubbing ? "scrubbing" : ""} ${className ?? ""}`}
       onPointerMove={label ? (e) => setHover((h) => (h ? { ...h, x: e.clientX, y: e.clientY } : h)) : undefined}
       onPointerLeave={label ? () => setHover(null) : undefined}
     >

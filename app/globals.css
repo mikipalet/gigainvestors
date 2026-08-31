@@ -30,6 +30,10 @@ body:has(.locks-scroll) {
   overflow: hidden;
 }
 
+.scrubbing .tile {
+  transition: none;
+}
+
 .tile {
   position: absolute;
   left: 0;
@@ -40,7 +44,11 @@ body:has(.locks-scroll) {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .tile {
+  .scrubbing .tile {
+  transition: none;
+}
+
+.tile {
     transition: none;
   }
 }

@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
       { source: "/:path*", headers: [{ key: "Vary", value: "Accept" }] },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [{ key: "Vary", value: "Accept, RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding" }],
+      },
+    ];
+  },
   async rewrites() {
     return {
       // Accept: text/markdown gets the markdown twin at the same URL (acceptmarkdown.com).

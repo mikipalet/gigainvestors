@@ -90,7 +90,7 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
           </Link>
           <div className="relative mt-3 hidden min-h-0 flex-1 md:block">{sketch && <Face slug={slug} size={1200} priority className="[&_img]:object-left-bottom" />}</div>
           <div className="flex items-start gap-4 md:mt-4 md:block">
-            {sketch && <div className="relative h-24 w-20 shrink-0 md:hidden"><Face slug={slug} size={320} priority /></div>}
+            {sketch && <div className="relative h-16 w-14 shrink-0 md:hidden"><Face slug={slug} size={320} priority /></div>}
             <div className="text-[13px] leading-snug">
             <div className="text-[17px] font-semibold">{data.person}</div>
             <div className="opacity-55">{data.firm}</div>
@@ -116,9 +116,9 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
                 <span className="inline-flex items-center gap-1.5 text-sell"><span className="inline-block h-[10px] w-[14px] rounded-[1px] border border-dashed border-sell" />{counts.sold} sold</span>
               )}
             </div>
-            <div className="mt-1.5 text-[11px] opacity-45">Percentages are the change in shares held, not a return.</div>
+            <div className="mt-1.5 hidden text-[11px] opacity-45 md:block">Percentages are the change in shares held, not a return.</div>
             {(bought > 0 || sold > 0) && (
-              <div className="mt-2 flex items-center gap-2 text-[11px]">
+              <div className="mt-2 hidden items-center gap-2 text-[11px] md:flex">
                 <span className="w-[4.5em] shrink-0 text-right text-buy">{bought > 0 ? `+${formatMoney(bought)}` : ""}</span>
                 <div className="flex h-[6px] flex-1 items-stretch">
                   <div className="flex flex-1 justify-end">
@@ -135,7 +135,7 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
             </div>
           </div>
           <div className="mt-3 md:mt-4">
-            <Sparkline values={totals} labels={quarters} index={qIndex} caption="portfolio value" format={formatMoney} onSeek={(i) => setQ(quarters[i])} log height="h-28" />
+            <Sparkline values={totals} labels={quarters} index={qIndex} caption="portfolio value" format={formatMoney} onSeek={(i) => setQ(quarters[i])} log height="h-16 sm:h-28" />
 
           </div>
         </aside>

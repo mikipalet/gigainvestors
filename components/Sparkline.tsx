@@ -41,7 +41,7 @@ export function Sparkline({ values, labels, index, caption, format, onSeek, log,
   return (
     <div className="pb-2">
       <div className="mb-1 flex items-baseline justify-between text-[11px] leading-none">
-        <span className="opacity-45">{caption}</span>
+        <span className="opacity-55">{caption}<span className="sm:hidden"> · drag to travel</span></span>
         <span className={hoverIdx !== null ? "font-semibold" : "opacity-45"}>
           {format(values[shown])} · {labels[shown]}
         </span>

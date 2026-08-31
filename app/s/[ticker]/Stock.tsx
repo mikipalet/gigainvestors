@@ -119,7 +119,7 @@ export function Stock({ stock, investors }: { stock: StockData; investors: Meta 
                 </span>
               )}
             </div>
-            <div className="mt-1.5 text-[11px] opacity-45">Percentages are the change in shares held, not a return.</div>
+            <div className="mt-1.5 hidden text-[11px] opacity-45 md:block">Percentages are the change in shares held, not a return.</div>
           </div>
           <div className="mt-5 h-24 md:h-auto md:min-h-0 md:flex-1 md:pb-2">
             <StackedBars

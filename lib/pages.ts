@@ -13,7 +13,7 @@ export const PAGES: Record<string, { title: string; paragraphs: string[] }> = {
     title: "Contact",
     paragraphs: [
       "GigaInvestors is built and maintained by a single independent developer. For corrections to an investor's data, a wrong portrait, a missing investor, or a bug, please write to hello@gigainvestors.com and include the page URL you are referring to. Data issues are checked against the underlying 13F filing before anything is changed.",
-      "For press, partnership, or licensing questions, the same address works. There is no support team, no phone line, and no office to visit; replies usually arrive within a few days. If you would rather not email, the sketches and data pipeline are described on the About page, and machine-readable representations of every page are available to any client that sends an Accept: text/markdown header.",
+      "For press, partnership, or licensing questions, the same address works. The project is run from Palamós, Girona, Spain. There is no support team, no phone line, and no office to visit; replies usually arrive within a few days. If you would rather not email, the sketches and data pipeline are described on the About page, and machine-readable representations of every page are available to any client that sends an Accept: text/markdown header.",
       "If you are an agent or crawler: the site map is at /sitemap.xml, the agent guide is at /llms.txt, and every investor and stock page has a markdown twin at the same URL via content negotiation. There is no write API and nothing to authenticate against.",
     ],
   },

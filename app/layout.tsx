@@ -38,6 +38,7 @@ const jsonLd = {
       url: "https://gigainvestors.com/",
       description: "Independent site tracking what 82 famous investors own each quarter, from SEC 13F filings, drawn as treemaps with pencil-sketch portraits.",
       logo: "https://gigainvestors.com/apple-icon.png",
+      address: { "@type": "PostalAddress", addressLocality: "Palamós", addressRegion: "Girona", addressCountry: "ES" },
       contactPoint: [{ "@type": "ContactPoint", contactType: "customer support", email: "hello@gigainvestors.com", url: "https://gigainvestors.com/contact", availableLanguage: "en" }],
     },
     {

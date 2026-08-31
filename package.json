@@ -1,6 +1,12 @@
 {
   "name": "superinvestors",
   "version": "0.1.0",
+  "description": "What 83 famous investors own, quarter by quarter from their 13F filings, drawn as treemaps with pencil-sketch portraits.",
+  "homepage": "https://gigainvestors.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikipalet/gigainvestors.git"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",

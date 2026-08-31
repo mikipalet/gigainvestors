@@ -78,12 +78,13 @@ export function Search() {
 
   return (
     <>
-      <div className="fixed right-3 top-3 z-40 flex items-center gap-2 sm:bottom-[9px] sm:right-[76px] sm:top-auto">
+      <div className="fixed bottom-[8px] right-2 z-40 flex items-center gap-1 sm:bottom-[9px] sm:right-[76px] sm:gap-2">
         <a
           href="/newsletter"
           className="rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
         >
-          newsletter
+          <span className="sm:hidden">✉</span>
+          <span className="hidden sm:inline">newsletter</span>
         </a>
         <button
           type="button"
@@ -91,7 +92,10 @@ export function Search() {
           aria-label="Search"
           className="rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
         >
-          search <span className="ml-1 opacity-60">/</span>
+          <span className="sm:hidden">⌕</span>
+          <span className="hidden sm:inline">
+            search <span className="ml-1 opacity-60">/</span>
+          </span>
         </button>
       </div>
       {open && (

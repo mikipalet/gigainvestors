@@ -73,7 +73,7 @@ export function QuarterSlider({ quarters, q, onChange }: Props) {
           </button>
         </div>
       </div>
-      <div className="relative ml-5 mr-5 h-full sm:mr-[320px]">
+      <div className="relative ml-5 mr-[84px] h-full sm:mr-[320px]">
         <input
           type="range"
           min={0}

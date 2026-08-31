@@ -1,32 +1,14 @@
-import { createHmac, timingSafeEqual } from "node:crypto";
 import { NextResponse, type NextRequest } from "next/server";
 import { redis } from "@/lib/newsletter/redis";
+import { verifySvix } from "@/lib/newsletter/webhook";
 
 export const dynamic = "force-dynamic";
 
 const COUNTED = new Set(["email.delivered", "email.opened", "email.clicked", "email.bounced", "email.complained", "contact.updated"]);
 
-// Resend signs webhooks the Svix way: HMAC-SHA256 over `${id}.${timestamp}.${body}`.
-function verify(req: NextRequest, body: string): boolean {
-  const secret = process.env.RESEND_WEBHOOK_SECRET;
-  const id = req.headers.get("svix-id");
-  const ts = req.headers.get("svix-timestamp");
-  const sigs = req.headers.get("svix-signature");
-  if (!secret || !id || !ts || !sigs) return false;
-  if (Math.abs(Date.now() / 1000 - Number(ts)) > 300) return false;
-  const key = Buffer.from(secret.replace(/^whsec_/, ""), "base64");
-  const expected = createHmac("sha256", key).update(`${id}.${ts}.${body}`).digest();
-  return sigs.split(" ").some((s) => {
-    const [, v] = s.split(",");
-    if (!v) return false;
-    const given = Buffer.from(v, "base64");
-    return given.length === expected.length && timingSafeEqual(given, expected);
-  });
-}
-
 export async function POST(req: NextRequest) {
   const body = await req.text();
-  if (!verify(req, body)) return NextResponse.json({ error: "bad signature" }, { status: 401 });
+  if (!verifySvix(req.headers, body, process.env.RESEND_WEBHOOK_SECRET)) return NextResponse.json({ error: "bad signature" }, { status: 401 });
   const event = JSON.parse(body) as { type: string; data: { broadcast_id?: string; email_id?: string; to?: string[]; unsubscribed?: boolean; tags?: Record<string, string> } };
   if (!COUNTED.has(event.type)) return NextResponse.json({ ok: true });
   try {

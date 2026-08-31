@@ -80,6 +80,12 @@ export function Search() {
     <>
       <div className="fixed bottom-[8px] right-2 z-40 flex items-center gap-1 sm:bottom-[9px] sm:right-[76px] sm:gap-2">
         <a
+          href="/contact"
+          className="hidden rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 sm:block"
+        >
+          contact
+        </a>
+        <a
           href="/newsletter"
           className="rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
         >

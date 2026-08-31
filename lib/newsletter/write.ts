@@ -97,7 +97,7 @@ async function ask(messages: { role: "user" | "assistant"; content: string }[]):
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json" },
-    body: JSON.stringify({ model: process.env.NEWSLETTER_MODEL ?? "claude-opus-5", max_tokens: 6000, system: STYLE, messages }),
+    body: JSON.stringify({ model: process.env.NEWSLETTER_MODEL ?? "claude-fable-5", max_tokens: 6000, system: STYLE, messages }),
   });
   if (!res.ok) throw new Error(`anthropic ${res.status}: ${(await res.text()).slice(0, 300)}`);
   const data = (await res.json()) as { stop_reason: string; content: { type: string; text?: string }[] };

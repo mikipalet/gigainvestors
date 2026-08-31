@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Sparkline } from "@/components/Sparkline";
 
 interface IssueRow {
   quarter: string;
@@ -11,6 +12,7 @@ interface IssueRow {
 }
 interface Stats {
   subscribers: number | null;
+  subscriberSeries: { day: string; n: number }[];
   issues: { quarter: string; sentAt: string | null; recipients: number | null; headline: string; stats: Record<string, number> | null }[];
 }
 
@@ -21,6 +23,7 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
   const [state, setState] = useState<"idle" | "busy" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
   const [stats, setStats] = useState<Stats | null>(null);
+  const [day, setDay] = useState<number | null>(null);
 
   useEffect(() => {
     const p = new URLSearchParams(window.location.search);
@@ -67,6 +70,19 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
           <span className="text-[11px] uppercase tracking-wide opacity-50">open stats</span>
           <span className="opacity-60">{stats?.subscribers !== null && stats?.subscribers !== undefined ? `${stats.subscribers} subscribers` : ""}</span>
         </div>
+        {(stats?.subscriberSeries?.length ?? 0) > 1 && (
+          <div className="mt-3">
+            <Sparkline
+              values={stats!.subscriberSeries.map((s) => s.n)}
+              labels={stats!.subscriberSeries.map((s) => new Date(s.day).toLocaleDateString("en-GB", { day: "numeric", month: "short" }))}
+              index={day ?? stats!.subscriberSeries.length - 1}
+              caption="subscribers"
+              format={(v) => String(Math.round(v))}
+              onSeek={setDay}
+              height="h-12"
+            />
+          </div>
+        )}
         {issues.length === 0 && <p className="mt-3 opacity-50">No issue yet. The first goes out when the current quarter&apos;s filings are in.</p>}
         {issues.map((i) => {
           const s = stats?.issues.find((x) => x.quarter === i.quarter);

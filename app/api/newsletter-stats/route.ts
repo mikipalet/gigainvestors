@@ -19,8 +19,17 @@ export async function GET() {
     subscribers = null;
   }
   const perIssue: Record<string, Record<string, number>> = {};
+  let subscriberSeries: { day: string; n: number }[] = [];
   try {
     const r = await redis();
+    if (subscribers !== null) {
+      await r.hSet("newsletter:subs", new Date().toISOString().slice(0, 10), String(subscribers));
+      const all = await r.hGetAll("newsletter:subs");
+      subscriberSeries = Object.entries(all)
+        .map(([day, n]) => ({ day, n: Number(n) }))
+        .sort((a, b) => a.day.localeCompare(b.day))
+        .slice(-90);
+    }
     for (const i of issues) {
       if (!i.broadcastId) continue;
       const h = await r.hGetAll(`issue:${i.broadcastId}`);
@@ -30,7 +39,7 @@ export async function GET() {
     // Stats degrade to "not yet" rather than failing the page.
   }
   return NextResponse.json(
-    { subscribers, issues: issues.map((i) => ({ quarter: i.quarter, sentAt: i.sentAt ?? null, recipients: i.recipients ?? null, headline: i.headline, stats: perIssue[i.quarter] ?? null })) },
+    { subscribers, subscriberSeries, issues: issues.map((i) => ({ quarter: i.quarter, sentAt: i.sentAt ?? null, recipients: i.recipients ?? null, headline: i.headline, stats: perIssue[i.quarter] ?? null })) },
     { headers: { "Cache-Control": "public, s-maxage=300, stale-while-revalidate=3600" } },
   );
 }

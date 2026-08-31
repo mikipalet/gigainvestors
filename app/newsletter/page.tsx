@@ -23,6 +23,7 @@ export default function Page() {
       <NewsletterClient issues={issues.map((i) => ({ quarter: i.quarter, slug: i.slug, headline: i.headline, sentAt: i.sentAt ?? null }))} />
       <nav className="mt-6 flex gap-4 text-[12px] opacity-50">
         <Link href="/about">about</Link>
+        <Link href="/contact">contact</Link>
         <Link href="/privacy">privacy</Link>
       </nav>
     </main>

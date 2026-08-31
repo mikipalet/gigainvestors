@@ -16,6 +16,12 @@ export default function Page() {
           {p}
         </p>
       ))}
+      <a
+        href="mailto:hello@gigainvestors.com"
+        className="mt-2 inline-block self-start rounded-[3px] bg-ink px-4 py-2 text-[15px] font-semibold text-paper transition-opacity hover:opacity-80"
+      >
+        hello@gigainvestors.com
+      </a>
       <nav className="mt-6 flex gap-4 text-[12px] opacity-50">
         <Link href="/about">about</Link>
         <Link href="/contact">contact</Link>

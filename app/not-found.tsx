@@ -21,6 +21,7 @@ export default function NotFound() {
         <a href="/sitemap.xml">sitemap</a>
         <a href="/llms.txt">llms.txt</a>
         <Link href="/about">about</Link>
+        <Link href="/newsletter">newsletter</Link>
       </nav>
     </div>
   );

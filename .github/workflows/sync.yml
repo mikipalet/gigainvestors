@@ -1,0 +1,33 @@
+name: sync
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Sync from dataroma (change-driven)
+        run: npm run sync
+      - name: Newsletter gate
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+        run: npx tsx scripts/newsletter/maybe-send.ts
+      - name: Commit data if changed
+        run: |
+          git config user.name "gigainvestors-bot"
+          git config user.email "bot@gigainvestors.com"
+          git add data public/newsletter
+          git diff --cached --quiet || git commit -m "data: daily sync $(date -u +%F)"
+          git push

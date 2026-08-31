@@ -8,13 +8,20 @@
     "start": "next start",
     "test": "vitest run",
     "faces": "tsx scripts/build-faces.ts",
-    "sync": "tsx scripts/sync-local.ts"
+    "sync": "tsx scripts/sync-local.ts",
+    "newsletter:build": "tsx scripts/newsletter/build-issue.ts",
+    "newsletter:send": "tsx scripts/newsletter/send-issue.ts"
   },
   "dependencies": {
+    "@react-email/components": "^1.0.12",
+    "@react-email/render": "^2.1.0",
     "d3-hierarchy": "^3.1.2",
     "next": "16.3.3",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "redis": "^6.2.1",
+    "resend": "^6.25.0",
+    "zod": "^4.5.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0",

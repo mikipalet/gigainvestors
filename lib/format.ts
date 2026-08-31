@@ -19,6 +19,8 @@ export const formatPct = (p: number) => { const r = Math.round(p * 10) / 10; ret
 
 export function formatChange(change: number | null | undefined): string | null {
   if (change === null || change === undefined || !Number.isFinite(change)) return null;
+  // dataroma reports a microscopic position ballooning as "+630555%": show it as a multiplier.
+  if (change >= 1000) return `×${Math.round(1 + change / 100).toLocaleString("en-US")}`;
   const r = Math.round(Math.abs(change) * 10) / 10;
   const s = r.toFixed(r < 10 ? 1 : 0);
   return `${change >= 0 ? "+" : "−"}${s}%`;

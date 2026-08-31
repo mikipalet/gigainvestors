@@ -20,6 +20,7 @@ export default function Page() {
         <Link href="/about">about</Link>
         <Link href="/contact">contact</Link>
         <Link href="/privacy">privacy</Link>
+        <Link href="/newsletter">newsletter</Link>
         <a href="/llms.txt">llms.txt</a>
       </nav>
     </main>

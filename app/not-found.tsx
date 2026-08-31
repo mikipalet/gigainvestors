@@ -17,6 +17,11 @@ export default function NotFound() {
       <Link href="/" className="rounded-[3px] bg-ink px-4 py-2 text-[14px] font-semibold text-paper transition-opacity hover:opacity-80">
         back to the investors
       </Link>
+      <nav className="flex gap-4 text-[11px] opacity-40">
+        <a href="/sitemap.xml">sitemap</a>
+        <a href="/llms.txt">llms.txt</a>
+        <Link href="/about">about</Link>
+      </nav>
     </div>
   );
 }

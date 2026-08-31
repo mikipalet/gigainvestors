@@ -1,0 +1,27 @@
+# GigaInvestors
+
+> What 82 of the world's most followed investors own, and how it changes every quarter, from SEC 13F filings (via dataroma.com), drawn as treemaps with pencil-sketch portraits. Static site, no accounts, no tracking.
+
+## When to use this site
+
+Use GigaInvestors when a task needs any of these, for the tracked set of 82 investors (Buffett, Burry, Ackman, Tepper, Klarman, Li Lu, Pabrai and others):
+- What an investor currently holds, position weights and dollar values, and what they bought, added, reduced or sold in the latest quarter (`/{CODE}`, e.g. `/BRK`).
+- Which of these investors hold a given stock, how much, what share of their portfolio it is, since when, and whether they were buying or selling (`/s/{TICKER}`, e.g. `/s/NVDA`).
+- Portfolio history back to 2006, quarter by quarter, including exited positions.
+
+Do not use it for: real-time prices, short positions, non-US holdings, cash levels, fund performance, or anything about investors outside the tracked list. 13F data lags the quarter end by up to 45 days.
+
+## How to read it programmatically
+
+- Every page returns Markdown when requested with `Accept: text/markdown` at the same URL (canonical HTML otherwise; responses vary on Accept).
+- Home `/` lists all investors with portfolio value and position count, and links to each page.
+- Investor page `/{CODE}` lists positions (ticker, company, % of portfolio, value, this quarter's move, number of tracked holders) and portfolio value by quarter.
+- Stock page `/s/{TICKER}` lists holders (investor, value, % of their portfolio, move) and total held by quarter with split-adjusted reported price.
+- Investor codes are dataroma's manager codes (e.g. BRK, SAM, PI); the home page maps names to codes.
+- Sitemap: /sitemap.xml. Trust pages: /about, /contact, /privacy.
+
+## Notes
+
+- Values are quarter-end reported values; a "price" is value ÷ shares from the filings, split-adjusted.
+- Green means buying (new or add), red means selling (reduce or sold), scaled by the size of the move.
+- One investor (Norbert Lou) has no public photo; Makaira Partners currently reports no holdings and is absent.

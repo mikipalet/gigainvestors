@@ -159,7 +159,7 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
         })}
         <g className="hidden sm:block">
         {(() => {
-          const last = columns[columns.length - 1];
+          const last = columns[index] ?? columns[columns.length - 1];
           let acc = 0;
           return last.segs
             .filter((seg) => seg.code !== "__others" && seg.value / max > 0.06)
@@ -167,19 +167,13 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
               const yMid = (acc + seg.value / 2) / max;
               acc += seg.value;
               return (
-                <text key={seg.code} x={W - 0.6} y={H - yMid * (H - 1) + 1} fontSize="3.2" textAnchor="end" fill="var(--paper)" stroke="var(--ink)" strokeWidth="0.9" paintOrder="stroke" style={{ fontFamily: "inherit" }}>
+                <text key={seg.code} x={Math.min(W - 0.6, (index + 1) * band - 0.6)} y={H - yMid * (H - 1) + 1} fontSize="3.2" textAnchor="end" fill="var(--paper)" stroke="var(--ink)" strokeWidth="0.9" paintOrder="stroke" style={{ fontFamily: "inherit" }}>
                   {(people[seg.code] ?? seg.code).split(" ").pop()}
                 </text>
               );
             });
         })()}
         </g>
-        {index < columns.length - 1 && (
-          <>
-            <rect x={(index + 1) * band} y="0" width={W - (index + 1) * band} height={H} fill="var(--paper)" opacity="0.72" />
-            <line x1={(index + 1) * band} y1="0" x2={(index + 1) * band} y2={H} stroke="var(--ink)" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.35" />
-          </>
-        )}
         {pricePath && (
           <>
             <path d={pricePath} fill="none" stroke="var(--paper)" strokeWidth="8" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
@@ -188,8 +182,14 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
             <path d={pricePath} fill="none" stroke="var(--ink)" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
           </>
         )}
+        {index < columns.length - 1 && (
+          <>
+            <rect x={(index + 1) * band} y="0" width={W - (index + 1) * band} height={H} fill="var(--paper)" opacity="0.72" />
+            <line x1={(index + 1) * band} y1="0" x2={(index + 1) * band} y2={H} stroke="var(--ink)" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.35" />
+          </>
+        )}
       </svg>
-      {endPct && lastKnown >= 0 && (
+      {endPct && lastKnown >= 0 && index >= columns.length - 1 && (
         <div className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `${endPct.left}%`, top: `${endPct.top}%` }}>
           <div className="h-[7px] w-[7px] rounded-full bg-ink shadow-[0_0_0_2px_var(--paper)]" />
           <div className="absolute right-[10px] top-1/2 -translate-y-1/2 whitespace-nowrap bg-paper px-1 text-[10px] font-semibold leading-none">

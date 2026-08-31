@@ -14,8 +14,8 @@ interface Props {
   onSeek: (i: number) => void;
 }
 
-const SHADES = [0.9, 0.62, 0.42, 0.28];
-const OTHERS = 0.14;
+const SHADES = [0.5, 0.36, 0.25, 0.16];
+const OTHERS = 0.09;
 
 // Dollars held per quarter, stacked by investor. Hover names the segment, drag travels.
 export function StackedBars({ quarters, prices, labels, index, caption, format, people, onSeek }: Props) {
@@ -137,7 +137,7 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
         )}
         {columns.map((col, qi) => {
           const x = qi * band + (band - bw) / 2;
-          const dim = qi === index ? 1 : qi === hover?.qi ? 0.85 : 0.55;
+          const dim = qi === index ? 1.25 : qi === hover?.qi ? 1 : 0.7;
           let acc = 0;
           return col.segs.map((seg) => {
             const y0 = (acc / max) * (H - 1);
@@ -174,10 +174,10 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
         })()}
         {pricePath && (
           <>
-            <path d={pricePath} fill="none" stroke="var(--paper)" strokeWidth="6" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" opacity="0.9" />
-            {gapPath && <path d={gapPath} fill="none" stroke="var(--paper)" strokeWidth="6" vectorEffect="non-scaling-stroke" opacity="0.9" />}
+            <path d={pricePath} fill="none" stroke="var(--paper)" strokeWidth="8" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+            {gapPath && <path d={gapPath} fill="none" stroke="var(--paper)" strokeWidth="8" vectorEffect="non-scaling-stroke" />}
             {gapPath && <path d={gapPath} fill="none" stroke="var(--ink)" strokeWidth="1.4" strokeDasharray="3 3" vectorEffect="non-scaling-stroke" opacity="0.6" />}
-            <path d={pricePath} fill="none" stroke="var(--ink)" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+            <path d={pricePath} fill="none" stroke="var(--ink)" strokeWidth="2.6" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
           </>
         )}
       </svg>

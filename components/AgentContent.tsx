@@ -21,7 +21,7 @@ export function HomeContent({ index }: { index: Index }) {
         {rows.map(({ i, pt }) => (
           <li key={i.code}>
             <Link href={`/${i.code}`}>
-              {i.person}, {i.firm}: {formatMoney(pt?.total ?? 0)} across {pt?.positions ?? 0} positions
+              {i.person}, {i.firm}: {pt ? `${formatMoney(pt.total)} across ${pt.positions} positions` : "no 13F holdings on file this quarter"}
             </Link>
           </li>
         ))}

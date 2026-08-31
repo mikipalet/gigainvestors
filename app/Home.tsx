@@ -44,9 +44,6 @@ export function Home({ index }: { index: Index }) {
 
   return (
     <>
-      <div className="pointer-events-none fixed left-3 top-3 z-30 rounded-[2px] bg-paper px-2 py-1.5 text-[12px] font-semibold leading-none tracking-wide shadow-[0_0_0_1px_color-mix(in_oklab,var(--ink)_25%,transparent)]">
-        GigaInvestors
-      </div>
       <Treemap frames={frames} q={q} label={(d) => `${d.person} · ${d.money}`} className="h-[calc(100dvh-48px)] w-screen" render={(d, tier, rect) => <InvestorTile d={d} tier={tier} rect={rect} q={q} />} />
       <QuarterSlider quarters={index.quarters} q={q} onChange={setQ} />
     </>

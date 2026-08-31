@@ -19,7 +19,7 @@ export function homeMarkdown(index: Index): string {
     ``,
     `| Investor | Firm | Portfolio | Positions | Page |`,
     `|---|---|---:|---:|---|`,
-    ...rows.map(({ i, pt }) => `| ${i.person} | ${i.firm} | ${formatMoney(pt?.total ?? 0)} | ${pt?.positions ?? 0} | ${SITE}/${i.code} |`),
+    ...rows.map(({ i, pt }) => `| ${i.person} | ${i.firm} | ${pt ? formatMoney(pt.total) : "no holdings on file"} | ${pt?.positions ?? 0} | ${SITE}/${i.code} |`),
     ``,
     `## More`,
     `- Stock pages: ${SITE}/s/{TICKER} (who holds it, quarter by quarter)`,

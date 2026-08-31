@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getHolderCounts, getIndex, getInvestor } from "@/lib/data";
 import { InvestorContent } from "@/components/AgentContent";
+import { NoHoldings } from "./NoHoldings";
 import { Investor } from "./Investor";
 
 export const dynamic = "force-static";
@@ -26,7 +27,8 @@ export default async function Page(props: { params: Promise<{ code: string }> })
   const params = await props.params;
   const [index, data, holders] = await Promise.all([getIndex(), getInvestor(params.code), getHolderCounts()]);
   const meta = index?.investors.find((i) => i.code === params.code);
-  if (!index || !data || !meta || data.quarters.length === 0) notFound();
+  if (!index || !meta) notFound();
+  if (!data || data.quarters.length === 0) return <NoHoldings meta={meta} />;
   return (
     <>
       <InvestorContent data={data} />

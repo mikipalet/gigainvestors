@@ -134,7 +134,13 @@ async function rebuildIndex(managers: ManagerRow[]): Promise<Index> {
   const all: InvestorData[] = [];
   for (const m of managers) {
     const d = await readJson<InvestorData>(investorKey(m.code));
-    if (!d || !managers.some((m) => m.code === d.code)) continue;
+    if (!d) {
+      // Tracked by dataroma but no 13F holdings on file right now (e.g. Makaira): keep the seat, empty.
+      const entry = ROSTER[m.code];
+      const person = entry?.person ?? m.label;
+      investors.push({ code: m.code, slug: slugOf(person), person, firm: entry?.firm ?? m.label, sketch: Boolean(entry?.file), series: [] });
+      continue;
+    }
     all.push(d);
     const entry = ROSTER[d.code];
     const person = entry?.person ?? d.person;
@@ -149,7 +155,7 @@ async function rebuildIndex(managers: ManagerRow[]): Promise<Index> {
     });
   }
   investors.sort((a, b) => a.person.localeCompare(b.person));
-  await writeStocks(all);
+  await writeStocks(all, investors.filter((i) => i.series.length === 0).map((i) => ({ code: i.code, person: i.person, firm: i.firm })));
   const index: Index = { generatedAt: new Date().toISOString(), quarters: [...quarterSet].sort(compareQ), investors };
   await writeJson(INDEX_KEY, index);
   return index;
@@ -168,7 +174,7 @@ const shardOf = (ticker: string) => {
   return /[A-Z]/.test(c) ? c : "0";
 };
 
-async function writeStocks(all: InvestorData[]) {
+async function writeStocks(all: InvestorData[], missing: { code: string; person: string; firm: string }[] = []) {
   const stocks = new Map<string, { name: string; quarters: Map<string, StockShard[string]["quarters"][number]["holders"]>; rows: Map<string, PriceRow[]> }>();
   for (const inv of all) {
     for (const q of inv.quarters) {
@@ -203,7 +209,7 @@ async function writeStocks(all: InvestorData[]) {
   for (const [shard, data] of Object.entries(shards)) await writeJson(`stocks/${shard}.json`, data);
   await writeJson("holders.json", Object.fromEntries(search.map((s) => [s.t, s.h])));
   const searchIndex: SearchIndex = {
-    investors: all.map((d) => ({ code: d.code, person: ROSTER[d.code]?.person ?? d.person, firm: d.firm })).sort((a, b) => a.person.localeCompare(b.person)),
+    investors: [...all.map((d) => ({ code: d.code, person: ROSTER[d.code]?.person ?? d.person, firm: d.firm })), ...missing].sort((a, b) => a.person.localeCompare(b.person)),
     stocks: search.sort((a, b) => b.h - a.h),
   };
   await writeJson("search.json", searchIndex);

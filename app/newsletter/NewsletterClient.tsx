@@ -26,7 +26,7 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
     const p = new URLSearchParams(window.location.search);
     if (p.get("confirmed")) {
       setState("sent");
-      setMessage("Confirmed. See you next quarter.");
+      setMessage("Confirmed. The next issue goes out when the quarter\u2019s filings are in.");
     } else if (p.get("error")) {
       setState("error");
       setMessage("That link expired. Subscribe again below.");
@@ -67,7 +67,7 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
           <span className="text-[11px] uppercase tracking-wide opacity-50">open stats</span>
           <span className="opacity-60">{stats?.subscribers !== null && stats?.subscribers !== undefined ? `${stats.subscribers} subscribers` : ""}</span>
         </div>
-        {issues.length === 0 && <p className="mt-3 opacity-50">No issue yet. The first one goes out when the current quarter&apos;s filings are in.</p>}
+        {issues.length === 0 && <p className="mt-3 opacity-50">No issue yet. The first goes out when the current quarter&apos;s filings are in.</p>}
         {issues.map((i) => {
           const s = stats?.issues.find((x) => x.quarter === i.quarter);
           const recipients = s?.recipients ?? null;

@@ -1,6 +1,6 @@
 # GigaInvestors
 
-What 83 of the world's most followed investors own, and how it changes every quarter — drawn as treemaps with pencil-sketch portraits.
+What 83 widely followed investors own, quarter by quarter from their 13F filings, drawn as treemaps with pencil-sketch portraits.
 
 **https://gigainvestors.com**
 

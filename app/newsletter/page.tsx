@@ -18,7 +18,7 @@ export default function Page() {
       </Link>
       <div>
         <h1 className="text-[26px] font-semibold leading-tight">The quarter, by email.</h1>
-        <p className="mt-2 opacity-60">What 83 famous investors just bought and sold, the moment the quarter&apos;s 13F filings are in. Four emails a year. Nothing else.</p>
+        <p className="mt-2 opacity-60">What 83 famous investors bought and sold last quarter, sent once the quarter&apos;s 13F filings are in. Four emails a year.</p>
       </div>
       <NewsletterClient issues={issues.map((i) => ({ quarter: i.quarter, slug: i.slug, headline: i.headline, sentAt: i.sentAt ?? null }))} />
       <nav className="mt-6 flex gap-4 text-[12px] opacity-50">

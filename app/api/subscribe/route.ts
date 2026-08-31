@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
       to: email,
       subject: "Confirm: the quarter, by email",
       text: `One click to confirm your subscription to GigaInvestors, one email per quarter:\n\n${confirmUrl}\n\nIf you didn't ask for this, ignore it.`,
-      html: `<div style="font-family:Inter,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#f4f2ec;color:#111;padding:40px 24px"><p style="font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.5;margin:0 0 12px">GigaInvestors</p><p style="font-size:18px;font-weight:600;margin:0 0 16px">One email per quarter: what 83 famous investors just did.</p><p><a href="${confirmUrl}" style="display:inline-block;background:#111;color:#f4f2ec;padding:10px 16px;border-radius:3px;font-weight:600;text-decoration:none">Confirm subscription</a></p><p style="font-size:12px;opacity:.5;margin-top:24px">If you didn't ask for this, ignore it. The link expires in 48 hours.</p></div>`,
+      html: `<div style="font-family:Inter,-apple-system,Segoe UI,Helvetica,Arial,sans-serif;background:#f4f2ec;color:#111;padding:40px 24px"><p style="font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.5;margin:0 0 12px">GigaInvestors</p><p style="font-size:18px;font-weight:600;margin:0 0 16px">One email per quarter: what 83 famous investors bought and sold.</p><p><a href="${confirmUrl}" style="display:inline-block;background:#111;color:#f4f2ec;padding:10px 16px;border-radius:3px;font-weight:600;text-decoration:none">Confirm subscription</a></p><p style="font-size:12px;opacity:.5;margin-top:24px">If you didn't ask for this, ignore it. The link works for 48 hours.</p></div>`,
     })
     .catch(() => null);
   return ok();

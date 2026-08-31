@@ -78,14 +78,22 @@ export function Search() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        aria-label="Search"
-        className="fixed right-3 top-3 z-40 rounded-[3px] sm:bottom-[9px] sm:right-[76px] sm:top-auto px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
-      >
-        search <span className="ml-1 opacity-60">/</span>
-      </button>
+      <div className="fixed right-3 top-3 z-40 flex items-center gap-2 sm:bottom-[9px] sm:right-[76px] sm:top-auto">
+        <a
+          href="/newsletter"
+          className="rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
+        >
+          newsletter
+        </a>
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-label="Search"
+          className="rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100"
+        >
+          search <span className="ml-1 opacity-60">/</span>
+        </button>
+      </div>
       {open && (
         <div className="fixed inset-0 z-50 flex items-start justify-center bg-paper/85 pt-[18vh] backdrop-blur-[2px]" onMouseDown={() => setOpen(false)}>
           <div className="w-[min(560px,92vw)] bg-paper shadow-[0_0_0_1px_var(--ink)]" onMouseDown={(e) => e.stopPropagation()}>

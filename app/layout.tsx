@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-int
 export const metadata: Metadata = {
   metadataBase: new URL("https://gigainvestors.com"),
   title: "GigaInvestors",
-  description: "83 gigainvestors, every quarterly move since 2006. Portfolios, positions and who holds what, drawn in pencil.",
+  description: "What 83 famous investors own, every quarter since 2006, from their 13F filings. Portfolios, positions and who holds what, drawn in pencil.",
   openGraph: {
     title: "GigaInvestors",
     description: "83 gigainvestors, every quarterly move since 2006.",
@@ -27,7 +27,7 @@ const jsonLd = {
       "@id": "https://gigainvestors.com/#website",
       url: "https://gigainvestors.com/",
       name: "GigaInvestors",
-      description: "What 83 of the world's most followed investors own, and how it changes every quarter, from SEC 13F filings.",
+      description: "What 83 famous investors own each quarter, from SEC 13F filings.",
       inLanguage: "en",
       publisher: { "@id": "https://gigainvestors.com/#org" },
     },

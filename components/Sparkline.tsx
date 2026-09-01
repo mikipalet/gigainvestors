@@ -17,7 +17,7 @@ interface Props {
 export function Sparkline({ values, labels, index, caption, format, onSeek, log, height = "h-16" }: Props) {
   const ref = useRef<SVGSVGElement>(null);
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
-  if (values.length < 2) return null;
+  if (values.length < 2 || Math.min(...values) === Math.max(...values)) return null;
   const W = 100;
   const H = 34;
   const max = Math.max(...values);
@@ -79,8 +79,8 @@ export function Sparkline({ values, labels, index, caption, format, onSeek, log,
         <div className="pointer-events-none absolute bottom-0 right-[14px] bg-paper px-1 text-[10px] leading-none opacity-50">{format(min)}</div>
       </div>
       <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[10px] leading-none opacity-55">
-        <span>{labels[0]?.slice(0, 4)}</span>
-        <span>{labels[labels.length - 1]?.slice(0, 4)}</span>
+        <span>{labels[0]}</span>
+        <span>{labels[labels.length - 1]}</span>
       </div>
     </div>
   );

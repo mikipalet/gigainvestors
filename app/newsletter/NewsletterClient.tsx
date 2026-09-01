@@ -76,7 +76,7 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
           <span className="text-[11px] uppercase tracking-wide opacity-50">{sent ? "open stats" : "the archive"}</span>
           <span className="opacity-60">{sent && stats?.subscribers ? `${stats.subscribers} ${stats.subscribers === 1 ? "subscriber" : "subscribers"}` : ""}</span>
         </div>
-        {sent && (stats?.subscriberSeries?.length ?? 0) > 1 && (
+        {sent && (stats?.subscriberSeries?.length ?? 0) > 2 && (
           <div className="mt-3">
             <Sparkline
               values={stats!.subscriberSeries.map((s) => s.n)}
@@ -104,7 +104,12 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
                 <span className="text-[11px] opacity-50">{i.sentAt ? new Date(i.sentAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "not sent"}</span>
               </div>
               <div className="truncate opacity-60">{i.headline}</div>
-              {recipients !== null && (
+              {recipients !== null && (opened ?? 0) === 0 && (clicked ?? 0) === 0 && (
+                <div className="mt-2 text-[11px] opacity-55">
+                  Delivered to {recipients}. No opens counted yet; an open is only counted when images load, so this always undercounts.
+                </div>
+              )}
+              {recipients !== null && ((opened ?? 0) > 0 || (clicked ?? 0) > 0) && (
                 <div className="mt-2 grid grid-cols-[4.5em_1fr_3em] items-center gap-2 text-[11px]">
                   <span className="opacity-50">opened</span>
                   <div className="h-[6px] bg-ink/10">

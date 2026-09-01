@@ -105,9 +105,7 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
               </div>
               <div className="truncate opacity-60">{i.headline}</div>
               {recipients !== null && (opened ?? 0) === 0 && (clicked ?? 0) === 0 && (
-                <div className="mt-2 text-[11px] opacity-55">
-                  Delivered to {recipients}. No opens counted yet; an open is only counted when images load, so this always undercounts.
-                </div>
+                <div className="mt-2 text-[11px] opacity-50">sent to {recipients}</div>
               )}
               {recipients !== null && ((opened ?? 0) > 0 || (clicked ?? 0) > 0) && (
                 <div className="mt-2 grid grid-cols-[4.5em_1fr_3em] items-center gap-2 text-[11px]">

@@ -18,9 +18,15 @@ export interface IssueProps {
   prose: Prose;
   heroUrl?: string;
   people: Person[];
+  // "card" sets the letter on a darker ground so the paper reads as a deliberate sheet rather
+  // than as the client's own background. The faces and the treemap are drawn on paper, so the
+  // letter itself cannot go white without regenerating every asset.
+  surface?: "flat" | "card";
 }
 
-export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps) {
+export function QuarterIssue({ facts, prose: text, heroUrl, people, surface = "flat" }: IssueProps) {
+  const card = surface === "card";
+  const ground = card ? "#e6e3da" : paper;
   const q = facts.quarter;
   const link = (path: string) => `${SITE}${path}?q=${encodeURIComponent(q)}`;
   const [leadPara, ...rest] = text.paragraphs;
@@ -31,8 +37,8 @@ export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps
         <meta name="supported-color-schemes" content="light" />
       </Head>
       <Preview>{`${facts.quarter}, in ${text.paragraphs.length} paragraphs: ${facts.filed} filings, ${formatMoney(facts.aggregate)} between them.`}</Preview>
-      <Body style={{ margin: 0, background: paper, color: ink, fontFamily: font }}>
-        <Container style={{ maxWidth: 600, margin: "0 auto", padding: "48px 24px 40px" }}>
+      <Body style={{ margin: 0, background: ground, color: ink, fontFamily: font }}>
+        <Container style={card ? { maxWidth: 600, margin: "24px auto", padding: "40px 28px 36px", background: paper, border: "1px solid rgba(17,17,17,0.10)" } : { maxWidth: 600, margin: "0 auto", padding: "48px 24px 40px" }}>
           <Text style={{ ...kicker, marginBottom: 14 }}>
             {q} · {facts.filed} of {facts.active} filed · {formatMoney(facts.aggregate)}
           </Text>

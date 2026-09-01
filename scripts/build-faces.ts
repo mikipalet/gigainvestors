@@ -9,7 +9,7 @@ const OUT = "public/faces/v3";
 const WIDTHS = [320, 1200] as const;
 const INK = { r: 17, g: 17, b: 17 };
 mkdirSync(OUT, { recursive: true });
-mkdirSync("public/faces/png", { recursive: true });
+mkdirSync("public/faces/png/v2", { recursive: true });
 
 function percentile(data: Uint8Array, p: number) {
   const hist = new Uint32Array(256);
@@ -78,7 +78,7 @@ async function build(file: string) {
   }
   const cropped = await base.extract(crop).png().toBuffer();
   // Email-safe flat PNG on paper (AVIF/WebP with alpha are not reliable in mail clients).
-  await sharp(cropped).resize({ width: 160 }).png({ compressionLevel: 9 }).toFile(`public/faces/png/${slug}.png`);
+  await sharp(cropped).resize({ width: 160 }).png({ compressionLevel: 9 }).toFile(`public/faces/png/v2/${slug}.png`);
   let bytes = 0;
   for (const width of WIDTHS) {
     const img = sharp(cropped).resize({ width });

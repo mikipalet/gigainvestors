@@ -39,7 +39,7 @@ async function main() {
   const heroFile = path.join(process.cwd(), "public", "newsletter", `${slug}.png`);
   const hero = await renderHero(facts, heroFile);
   const people = index.investors.map((i: { person: string; slug: string; code: string }) => ({ name: lastName(i.person), slug: i.slug, code: i.code }));
-  const html = await render(React.createElement(QuarterIssue, { facts, prose, people, heroUrl: hero ? `https://gigainvestors.com/newsletter/${slug}.png` : undefined }));
+  const html = await render(React.createElement(QuarterIssue, { facts, prose, people, heroUrl: hero ? `https://gigainvestors.com/newsletter/${slug}.png?v=${Date.now().toString(36)}` : undefined }));
   writeIssue(
     {
       quarter,

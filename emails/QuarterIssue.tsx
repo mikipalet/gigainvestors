@@ -60,7 +60,7 @@ export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps
                       {faces.map((p) => (
                         <td key={p.slug} style={{ paddingRight: 6 }}>
                           <Link href={link(`/${p.code}`)}>
-                            <Img src={`${SITE}/faces/png/${p.slug}.png`} width={48} height={60} alt={p.name} style={{ display: "block" }} />
+                            <Img src={`${SITE}/faces/png/v2/${p.slug}.png`} width={48} height={60} alt={p.name} style={{ display: "block" }} />
                           </Link>
                         </td>
                       ))}

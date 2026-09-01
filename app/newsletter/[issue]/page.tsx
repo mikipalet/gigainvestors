@@ -94,7 +94,7 @@ export default async function Page(props: { params: Promise<{ issue: string }> }
               <div className="mb-2 flex gap-1.5">
                 {faces.map((f) => (
                   <Link key={f.slug} href={`/${f.code}?q=${encodeURIComponent(manifest.quarter)}`} title={f.name} className="transition-opacity hover:opacity-60">
-                    <img src={`/faces/png/${f.slug}.png`} width={38} height={47} alt={f.name} className="block" />
+                    <img src={`/faces/png/v2/${f.slug}.png`} width={38} height={47} alt={f.name} className="block" />
                   </Link>
                 ))}
               </div>

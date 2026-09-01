@@ -21,7 +21,7 @@ export function ConfirmEmail({ confirmUrl }: { confirmUrl: string }) {
             <tr>
               {FACES.map((slug) => (
                 <td key={slug} align="center" style={{ paddingRight: 4 }}>
-                  <Img src={`${SITE}/faces/png/${slug}.png`} width={56} height={70} alt="" style={{ display: "block" }} />
+                  <Img src={`${SITE}/faces/png/v2/${slug}.png`} width={56} height={70} alt="" style={{ display: "block" }} />
                 </td>
               ))}
             </tr>

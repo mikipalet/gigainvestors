@@ -143,7 +143,7 @@ export function Search() {
                     onClick={() => go(h)}
                     className={`flex cursor-pointer items-center gap-3 px-4 py-2 text-[13px] ${i === sel ? "bg-ink text-paper" : ""}`}
                   >
-                    {h.kind === "investor" && <img src={`/faces/png/${slugOf(h.title)}.png`} width={26} height={32} alt="" className="-my-1 block shrink-0" />}
+                    {h.kind === "investor" && <img src={`/faces/png/v2/${slugOf(h.title)}.png`} width={26} height={32} alt="" className="-my-1 block shrink-0" />}
                     <span className="shrink-0 whitespace-nowrap font-semibold">{h.kind === "munger" ? "Charlie Munger" : h.title}</span>
                     <span className="truncate opacity-60">{h.kind === "munger" ? "1924 – 2023" : h.sub}</span>
                     {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{plural(h.holders, "holder")}</span>}

@@ -2,7 +2,7 @@ import { Body, Container, Head, Html, Img, Link, Preview, Section, Text } from "
 
 const SITE = "https://gigainvestors.com";
 const ink = "#111111";
-const paper = "#f4f2ec";
+const sheet = "#ffffff";
 const font = "Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif";
 const hairline = "1px solid rgba(17,17,17,0.12)";
 
@@ -13,7 +13,7 @@ export function ConfirmEmail({ confirmUrl }: { confirmUrl: string }) {
     <Html lang="en">
       <Head />
       <Preview>One click to confirm, then one email a quarter.</Preview>
-      <Body style={{ margin: 0, background: paper, color: ink, fontFamily: font }}>
+      <Body style={{ margin: 0, background: sheet, color: ink, fontFamily: font }}>
         <Container style={{ maxWidth: 520, margin: "0 auto", padding: "48px 24px 40px" }}>
           <Text style={{ fontSize: 11, letterSpacing: 1.5, textTransform: "uppercase", opacity: 0.5, margin: "0 0 20px", fontFamily: font }}>GigaInvestors</Text>
 
@@ -32,7 +32,7 @@ export function ConfirmEmail({ confirmUrl }: { confirmUrl: string }) {
             Once a quarter, when the 13F filings are in, you get one letter on what 83 of the most followed investors bought and sold. Four a year, nothing in between.
           </Text>
 
-          <Link href={confirmUrl} style={{ display: "inline-block", background: ink, color: paper, padding: "12px 20px", borderRadius: 3, fontWeight: 600, fontSize: 15, textDecoration: "none", fontFamily: font }}>
+          <Link href={confirmUrl} style={{ display: "inline-block", background: ink, color: sheet, padding: "12px 20px", borderRadius: 3, fontWeight: 600, fontSize: 15, textDecoration: "none", fontFamily: font }}>
             Confirm subscription
           </Link>
 

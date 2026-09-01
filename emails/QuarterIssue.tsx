@@ -6,7 +6,7 @@ import { mentionedIn, type Person } from "@/lib/newsletter/mentions";
 
 const SITE = "https://gigainvestors.com";
 const ink = "#111111";
-const paper = "#f4f2ec";
+const sheet = "#ffffff";
 const font = "Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif";
 const hairline = "1px solid rgba(17,17,17,0.12)";
 
@@ -18,15 +18,9 @@ export interface IssueProps {
   prose: Prose;
   heroUrl?: string;
   people: Person[];
-  // "card" sets the letter on a darker ground so the paper reads as a deliberate sheet rather
-  // than as the client's own background. The faces and the treemap are drawn on paper, so the
-  // letter itself cannot go white without regenerating every asset.
-  surface?: "flat" | "card";
 }
 
-export function QuarterIssue({ facts, prose: text, heroUrl, people, surface = "flat" }: IssueProps) {
-  const card = surface === "card";
-  const ground = card ? "#e6e3da" : paper;
+export function QuarterIssue({ facts, prose: text, heroUrl, people }: IssueProps) {
   const q = facts.quarter;
   const link = (path: string) => `${SITE}${path}?q=${encodeURIComponent(q)}`;
   const [leadPara, ...rest] = text.paragraphs;
@@ -37,8 +31,8 @@ export function QuarterIssue({ facts, prose: text, heroUrl, people, surface = "f
         <meta name="supported-color-schemes" content="light" />
       </Head>
       <Preview>{`${facts.quarter}, in ${text.paragraphs.length} paragraphs: ${facts.filed} filings, ${formatMoney(facts.aggregate)} between them.`}</Preview>
-      <Body style={{ margin: 0, background: ground, color: ink, fontFamily: font }}>
-        <Container style={card ? { maxWidth: 600, margin: "24px auto", padding: "40px 28px 36px", background: paper, border: "1px solid rgba(17,17,17,0.10)" } : { maxWidth: 600, margin: "0 auto", padding: "48px 24px 40px" }}>
+      <Body style={{ margin: 0, background: sheet, color: ink, fontFamily: font }}>
+        <Container style={{ maxWidth: 600, margin: "0 auto", padding: "48px 24px 40px" }}>
           <Text style={{ ...kicker, marginBottom: 14 }}>
             {q} · {facts.filed} of {facts.active} filed · {formatMoney(facts.aggregate)}
           </Text>
@@ -79,7 +73,7 @@ export function QuarterIssue({ facts, prose: text, heroUrl, people, surface = "f
           })}
 
           <Section style={{ marginTop: 40 }}>
-            <Link href={link("/")} style={{ display: "inline-block", background: ink, color: paper, padding: "12px 18px", borderRadius: 3, fontWeight: 600, fontSize: 14, textDecoration: "none", fontFamily: font }}>
+            <Link href={link("/")} style={{ display: "inline-block", background: ink, color: sheet, padding: "12px 18px", borderRadius: 3, fontWeight: 600, fontSize: 14, textDecoration: "none", fontFamily: font }}>
               Open {q} on gigainvestors.com
             </Link>
           </Section>

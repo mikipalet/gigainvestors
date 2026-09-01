@@ -78,7 +78,7 @@ async function build(file: string) {
   }
   const cropped = await base.extract(crop).png().toBuffer();
   // Email-safe flat PNG on paper (AVIF/WebP with alpha are not reliable in mail clients).
-  await sharp(cropped).resize({ width: 160 }).flatten({ background: "#f4f2ec" }).png({ compressionLevel: 9 }).toFile(`public/faces/png/${slug}.png`);
+  await sharp(cropped).resize({ width: 160 }).png({ compressionLevel: 9 }).toFile(`public/faces/png/${slug}.png`);
   let bytes = 0;
   for (const width of WIDTHS) {
     const img = sharp(cropped).resize({ width });

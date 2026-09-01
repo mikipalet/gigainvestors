@@ -5,7 +5,7 @@ import { layout } from "../treemap/layout";
 import { formatMoney } from "../format";
 import type { Facts } from "./issue";
 
-const PAPER = "#f4f2ec";
+const GROUND = "#ffffff";
 const INK = "#111111";
 const BUY = "#257a4a";
 const SELL = "#bf3b2b";
@@ -38,7 +38,7 @@ export async function renderHero(facts: Facts, outFile: string): Promise<boolean
   for (const r of rects) {
     const p = byTicker.get(r.id)!;
     if (r.id === "__rest") {
-      parts.push(`<rect x="${r.x + pad}" y="${r.y + pad}" width="${r.w}" height="${r.h}" fill="${PAPER}"/>`);
+      parts.push(`<rect x="${r.x + pad}" y="${r.y + pad}" width="${r.w}" height="${r.h}" fill="${GROUND}"/>`);
       parts.push(`<rect x="${r.x + pad + 0.5}" y="${r.y + pad + 0.5}" width="${r.w - 1}" height="${r.h - 1}" fill="none" stroke="${INK}" stroke-opacity="0.18"/>`);
       const fs = Math.max(13, Math.min(24, Math.sqrt(r.w * r.h) / 8));
       parts.push(`<text x="${r.x + pad + fs * 0.5}" y="${r.y + pad + fs * 1.4}" font-family="Inter" font-size="${fs}" fill="${INK}" fill-opacity="0.55">${tail.length} smaller</text>`);
@@ -48,14 +48,14 @@ export async function renderHero(facts: Facts, outFile: string): Promise<boolean
     const buy = p.activity === "new" || p.activity === "add";
     const sell = p.activity === "reduce";
     const strength = Math.min(1, Math.abs(p.change ?? (p.activity === "new" ? 100 : 0)) / 50);
-    const fill = isLead ? (lead.activity === "sold" || lead.activity === "reduce" ? SELL : BUY) : buy ? BUY : sell ? SELL : PAPER;
+    const fill = isLead ? (lead.activity === "sold" || lead.activity === "reduce" ? SELL : BUY) : buy ? BUY : sell ? SELL : GROUND;
     const opacity = isLead ? 1 : buy || sell ? 0.18 + 0.32 * strength : 1;
     const x = r.x + pad;
     const y = r.y + pad;
     parts.push(`<rect x="${x}" y="${y}" width="${r.w}" height="${r.h}" fill="${fill}" fill-opacity="${opacity}"/>`);
     if (!isLead) parts.push(`<rect x="${x + 0.5}" y="${y + 0.5}" width="${r.w - 1}" height="${r.h - 1}" fill="none" stroke="${INK}" stroke-opacity="0.18"/>`);
     const fs = Math.max(15, Math.min(34, Math.sqrt(r.w * r.h) / 6.5));
-    const ink = isLead ? PAPER : INK;
+    const ink = isLead ? GROUND : INK;
     if (r.w > fs * (p.ticker.length * 0.7 + 1) && r.h > fs * 1.6) {
       parts.push(`<text x="${x + fs * 0.5}" y="${y + fs * 1.25}" font-family="Inter" font-weight="600" font-size="${fs}" fill="${ink}">${escape(p.ticker)}</text>`);
       const pct = `${Math.round((p.value / bookTotal) * 1000) / 10}%`;
@@ -68,7 +68,7 @@ export async function renderHero(facts: Facts, outFile: string): Promise<boolean
       }
     }
   }
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="${PAPER}"/>${parts.join("")}</svg>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="${GROUND}"/>${parts.join("")}</svg>`;
   const fontsDir = path.join(process.cwd(), "scripts", "newsletter", "fonts");
   const conf = path.join(fontsDir, "fonts.conf");
   writeFileSync(conf, `<?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "fonts.dtd"><fontconfig><dir>${fontsDir}</dir><cachedir>/tmp/fc-cache</cachedir></fontconfig>`);

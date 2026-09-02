@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { Resend } from "resend";
 import { verifySvix } from "@/lib/newsletter/webhook";
+import { isColdOutreach } from "@/lib/inbound/is-cold-outreach";
 
 export const dynamic = "force-dynamic";
 
@@ -29,6 +30,9 @@ export async function POST(req: NextRequest) {
 
   const sender = mail.from || "unknown";
   const sentTo = mail.to.join(", ");
+  if (await isColdOutreach({ from: sender, subject: mail.subject, text: mail.text ?? mail.html ?? "" })) {
+    return NextResponse.json({ ok: true, forwarded: false, reason: "cold-outreach" });
+  }
   const header = `From: ${sender}\nTo: ${sentTo}\n\n`;
 
   await resend.emails.send({

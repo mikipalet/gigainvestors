@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { Resend } from "resend";
 import { verifySvix } from "@/lib/newsletter/webhook";
 import { isColdOutreach } from "@/lib/inbound/is-cold-outreach";
+import { fetchAttachments } from "@/lib/inbound/fetch-attachments";
 
 export const dynamic = "force-dynamic";
 
@@ -33,7 +34,9 @@ export async function POST(req: NextRequest) {
   if (await isColdOutreach({ from: sender, subject: mail.subject, text: mail.text ?? mail.html ?? "" })) {
     return NextResponse.json({ ok: true, forwarded: false, reason: "cold-outreach" });
   }
-  const header = `From: ${sender}\nTo: ${sentTo}\n\n`;
+  const { forwarded, skipped } = await fetchAttachments({ resend, emailId: mail.id, attachments: mail.attachments });
+  const skippedNote = skipped.length ? `Not forwarded (too large or unavailable, see Resend): ${skipped.join(", ")}\n` : "";
+  const header = `From: ${sender}\nTo: ${sentTo}\n${skippedNote}\n`;
 
   await resend.emails.send({
     from: "GigaInvestors <hello@gigainvestors.com>",
@@ -41,7 +44,8 @@ export async function POST(req: NextRequest) {
     ...(bare(sender).includes("@") ? { replyTo: bare(sender) } : {}),
     subject: mail.subject ? `[gigainvestors] ${mail.subject}` : "[gigainvestors] (no subject)",
     text: header + (mail.text ?? "(no text part)"),
-    ...(mail.html ? { html: `<p style="font:13px/1.5 system-ui;color:#666">From: ${sender}<br>To: ${sentTo}</p><hr>${mail.html}` } : {}),
+    ...(mail.html ? { html: `<p style="font:13px/1.5 system-ui;color:#666">From: ${sender}<br>To: ${sentTo}${skippedNote ? `<br>${skippedNote}` : ""}</p><hr>${mail.html}` } : {}),
+    ...(forwarded.length ? { attachments: forwarded } : {}),
   });
   return NextResponse.json({ ok: true, forwarded: true });
 }

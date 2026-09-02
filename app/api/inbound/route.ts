@@ -4,15 +4,11 @@ import { verifySvix } from "@/lib/newsletter/webhook";
 
 export const dynamic = "force-dynamic";
 
-interface InboundEmail {
-  from?: string | { address?: string; name?: string };
-  to?: string[] | string;
-  subject?: string;
-  text?: string;
-  html?: string;
+interface ReceivedEvent {
+  type: string;
+  data: { email_id: string };
 }
 
-const address = (from: InboundEmail["from"]): string => (typeof from === "string" ? from : (from?.address ?? ""));
 const bare = (from: string) => from.match(/<([^>]+)>/)?.[1] ?? from.trim();
 
 // Mail sent to any address on the domain lands here and is forwarded on, so hello@gigainvestors.com
@@ -23,14 +19,19 @@ export async function POST(req: NextRequest) {
   const to = process.env.CONTACT_FORWARD_TO;
   if (!to) return NextResponse.json({ ok: true, forwarded: false });
 
-  const event = JSON.parse(body) as { type: string; data: InboundEmail };
+  const event = JSON.parse(body) as ReceivedEvent;
   if (event.type !== "email.received") return NextResponse.json({ ok: true });
-  const mail = event.data;
-  const sender = address(mail.from);
-  const sentTo = (Array.isArray(mail.to) ? mail.to.join(", ") : mail.to) ?? "";
-  const header = `From: ${sender || "unknown"}\nTo: ${sentTo}\n\n`;
 
-  await new Resend(process.env.RESEND_API_KEY).emails.send({
+  // The event carries only metadata; the body lives behind the Receiving API.
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  const { data: mail, error } = await resend.emails.receiving.get(event.data.email_id);
+  if (error || !mail) return NextResponse.json({ error: error?.message ?? "email not found" }, { status: 502 });
+
+  const sender = mail.from || "unknown";
+  const sentTo = mail.to.join(", ");
+  const header = `From: ${sender}\nTo: ${sentTo}\n\n`;
+
+  await resend.emails.send({
     from: "GigaInvestors <hello@gigainvestors.com>",
     to,
     ...(bare(sender).includes("@") ? { replyTo: bare(sender) } : {}),

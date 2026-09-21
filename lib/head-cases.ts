@@ -23,8 +23,8 @@ export interface Pose {
 }
 
 export const REST: Pose = { yaw: 0, pitch: 0, roll: 0, lift: 0, scale: 1 };
-export const MAX_YAW = 30;
-export const MAX_PITCH = 18;
+export const MAX_YAW = 55;
+export const MAX_PITCH = 28;
 const DEPTH = 520;
 const DEG = 180 / Math.PI;
 
@@ -80,12 +80,6 @@ export function gesturePose(kind: Gesture, t: number, dir = 1): GestureFrame {
     case "gossip":
       return { peer: true, roll: 7 * Math.sin(Math.PI * u) * dir, lift: -2 * Math.sin(Math.PI * u) };
   }
-}
-
-// A fixed perspective turns a full-tile head into a wild trapezoid, so the camera backs off
-// in proportion to the head's width.
-export function transformOf(p: Pose, width = 300) {
-  return `perspective(${Math.max(600, Math.round(width * 2))}px) translateY(${p.lift.toFixed(2)}px) rotateX(${p.pitch.toFixed(2)}deg) rotateY(${p.yaw.toFixed(2)}deg) rotateZ(${p.roll.toFixed(2)}deg) scale(${p.scale.toFixed(3)})`;
 }
 
 export const FLY_MS = 9000;

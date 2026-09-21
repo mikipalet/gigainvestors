@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { aimAt, FLY_MS, flyAt, GESTURE_MS, gesturePose, HEAD_CASES_KEY, REST, resolveHeadCases, SNEEZE_AT, transformOf, type Gesture, type Pose, type Pt } from "@/lib/head-cases";
+import { aimAt, FLY_MS, flyAt, GESTURE_MS, gesturePose, HEAD_CASES_KEY, REST, resolveHeadCases, SNEEZE_AT, type Gesture, type Pose, type Pt } from "@/lib/head-cases";
+import { headGeometry, type HeadGeometry } from "@/lib/head-geometry";
+import { HeadRenderer, type Box, type HeadDraw } from "@/lib/head-renderer";
 
 interface Head {
   pose: Pose;
@@ -9,6 +11,14 @@ interface Head {
   phase: number;
   gesture: { kind: Gesture; start: number; dir: number; peer: HTMLElement | null; fired: boolean } | null;
   held: { yaw: number; pitch: number; released: number | null } | null;
+}
+
+interface Asset {
+  tex: WebGLTexture | null;
+  geom: HeadGeometry | null;
+  aspect: number;
+  size: 320 | 1200;
+  loading: 320 | 1200 | null;
 }
 
 interface Drag {
@@ -39,20 +49,20 @@ function headOf(target: EventTarget | null) {
   return a && el ? { a, el } : null;
 }
 
-// The sketch sits object-contain at the bottom of its box, so the drawn height is the
-// smaller of the box and the width scaled by the image's own aspect; the mouth is ~38% up.
-function mouthOf(el: HTMLElement, r: DOMRect, side: number) {
-  const img = el.querySelector("img");
-  const aspect = img?.naturalWidth ? img.naturalHeight / img.naturalWidth : 1;
-  const drawn = Math.min(r.height, r.width * aspect);
-  return { x: r.x + r.width / 2 + side * drawn * 0.1, y: r.bottom - drawn * 0.38 };
+const box = (r: DOMRect): Box => ({ x: r.x, y: r.y, w: r.width, h: r.height });
+
+// The sketch sits object-contain at the bottom of its box.
+function drawnRect(r: DOMRect, aspect: number): Box {
+  const h = Math.min(r.height, r.width * aspect);
+  const w = h / aspect;
+  return { x: r.x + (r.width - w) / 2, y: r.bottom - h, w, h };
 }
 
-function spawnSpatter(overlay: HTMLElement, el: HTMLElement, r: DOMRect, dir: number) {
-  const scale = Math.min(1, Math.max(0.3, r.width / 160));
+function spawnSpatter(overlay: HTMLElement, box: Box, geom: HeadGeometry, dir: number) {
+  const scale = Math.min(1, Math.max(0.3, box.w / 160));
   const n = 3 + Math.floor(rand(4) + 4 * scale);
   const side = dir === 0 ? (rand() < 0.5 ? -1 : 1) : Math.sign(dir);
-  const mouth = mouthOf(el, r, side);
+  const mouth = { x: box.x + (geom.cx + side * geom.rx * 0.3) * box.w, y: box.y + (geom.cy + geom.ry * 0.55) * box.h };
   for (let i = 0; i < n; i++) {
     const angle = (side > 0 ? 0.35 : Math.PI - 0.35) + (rand() - 0.5) * 1.1;
     const dist = (14 + rand(44)) * scale;
@@ -64,18 +74,78 @@ function spawnSpatter(overlay: HTMLElement, el: HTMLElement, r: DOMRect, dir: nu
   }
 }
 
-function run({ overlay, onNewFaces }: { overlay: HTMLElement; onNewFaces: () => void }) {
+function geometryOf(img: HTMLImageElement) {
+  const c = document.createElement("canvas");
+  c.width = 160;
+  c.height = 200;
+  const ctx = c.getContext("2d", { willReadFrequently: true })!;
+  ctx.drawImage(img, 0, 0, c.width, c.height);
+  const { data } = ctx.getImageData(0, 0, c.width, c.height);
+  const alpha = new Uint8Array(c.width * c.height);
+  for (let p = 0; p < alpha.length; p++) alpha[p] = data[p * 4 + 3];
+  return headGeometry({ alpha, w: c.width, h: c.height });
+}
+
+function run({ overlay, canvas, onNewFaces }: { overlay: HTMLElement; canvas: HTMLCanvasElement; onNewFaces: () => void }) {
+  let renderer: HeadRenderer;
+  try {
+    renderer = new HeadRenderer(canvas, getComputedStyle(document.documentElement).getPropertyValue("--ink"));
+  } catch (e) {
+    console.warn("head cases: no WebGL", e);
+    return () => {};
+  }
+  let lost = false;
+  const onLost = (e: Event) => {
+    e.preventDefault();
+    lost = true;
+    showPictures();
+  };
+  canvas.addEventListener("webglcontextlost", onLost);
+
   const heads = new WeakMap<HTMLElement, Head>();
   const state = (el: HTMLElement) => {
     let h = heads.get(el);
-    if (!h) {
-      h = newHead();
-      heads.set(el, h);
-      el.style.transformOrigin = "50% 85%";
-      el.style.willChange = "transform";
-    }
+    if (!h) heads.set(el, (h = newHead()));
     return h;
   };
+
+  const assets = new Map<string, Asset>();
+  const load = (slug: string, size: 320 | 1200) => {
+    const asset = assets.get(slug) ?? { tex: null, geom: null, aspect: 1.25, size: 320, loading: null };
+    assets.set(slug, asset);
+    if (asset.loading) return asset;
+    asset.loading = size;
+    const img = new Image();
+    img.onload = () => {
+      if (lost) return;
+      asset.geom ??= geometryOf(img);
+      asset.aspect = img.naturalHeight / img.naturalWidth;
+      asset.tex = renderer.texture(img);
+      asset.size = size;
+      asset.loading = null;
+    };
+    img.onerror = () => (asset.loading = null);
+    img.src = `/faces/v3/${slug}-${size}.webp`;
+    return asset;
+  };
+
+  const hidden = new Set<HTMLElement>();
+  const hidePicture = (el: HTMLElement) => {
+    if (hidden.has(el)) return;
+    const pic = el.querySelector<HTMLElement>("picture");
+    if (pic) pic.style.visibility = "hidden";
+    hidden.add(el);
+  };
+  const showPictures = () => {
+    for (const el of hidden) {
+      const pic = el.querySelector<HTMLElement>("picture");
+      if (pic) pic.style.visibility = "";
+    }
+    hidden.clear();
+  };
+
+  const fit = () => renderer.resize(window.innerWidth, window.innerHeight, Math.min(2, window.devicePixelRatio || 1));
+  fit();
 
   let pointer: Pt = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
   let fly: { el: HTMLElement; born: number; seed: number; pos: Pt } | null = null;
@@ -124,6 +194,7 @@ function run({ overlay, onNewFaces }: { overlay: HTMLElement; onNewFaces: () => 
   };
 
   const frame = (now: number) => {
+    raf = requestAnimationFrame(frame);
     const dt = Math.min(64, now - last);
     last = now;
     const k = 1 - Math.exp(-dt / 90);
@@ -144,10 +215,13 @@ function run({ overlay, onNewFaces }: { overlay: HTMLElement; onNewFaces: () => 
 
     const all = visible();
     const rects = new Map(all.map(({ el, r }) => [el, r]));
+    const draws: HeadDraw[] = [];
     for (const { el, r } of all) {
       const h = state(el);
       const c = centre(r);
       let g: ReturnType<typeof gesturePose> = {};
+      const slug = el.dataset.head ?? "";
+      const asset = assets.get(slug) ?? load(slug, 320);
       if (h.gesture) {
         const t = (now - h.gesture.start) / GESTURE_MS[h.gesture.kind];
         if (t >= 1) h.gesture = null;
@@ -155,7 +229,7 @@ function run({ overlay, onNewFaces }: { overlay: HTMLElement; onNewFaces: () => 
           g = gesturePose(h.gesture.kind, t, h.gesture.dir);
           if (h.gesture.kind === "sneeze" && !h.gesture.fired && t >= SNEEZE_AT) {
             h.gesture.fired = true;
-            spawnSpatter(overlay, el, r, h.pose.yaw);
+            spawnSpatter(overlay, drawnRect(r, asset.aspect), asset.geom ?? { cx: 0.5, cy: 0.33, rx: 0.3, ry: 0.39 }, h.pose.yaw);
           }
         }
       }
@@ -173,12 +247,23 @@ function run({ overlay, onNewFaces }: { overlay: HTMLElement; onNewFaces: () => 
       }
       h.pose.yaw += (yaw - h.pose.yaw) * k;
       h.pose.pitch += (pitch - h.pose.pitch) * k;
-      el.style.transform = transformOf(
-        { yaw: h.pose.yaw + (g.yaw ?? 0), pitch: h.pose.pitch + (g.pitch ?? 0), roll: g.roll ?? 0, lift: g.lift ?? 0, scale: g.scale ?? 1 },
-        r.width,
-      );
+
+      if (lost || !asset.tex || !asset.geom) continue;
+      hidePicture(el);
+      const rect = drawnRect(r, asset.aspect);
+      if (rect.w > 340 && asset.size === 320) load(slug, 1200);
+      const finalYaw = h.pose.yaw + (g.yaw ?? 0);
+      const turned = Math.abs(((finalYaw % 360) + 540) % 360 - 180);
+      draws.push({
+        tex: asset.tex,
+        geom: asset.geom,
+        rect,
+        clip: box((el.closest("a") ?? el).getBoundingClientRect()),
+        pose: { yaw: finalYaw, pitch: h.pose.pitch + (g.pitch ?? 0), roll: g.roll ?? 0, lift: g.lift ?? 0, scale: g.scale ?? 1 },
+        outline: Math.min(1, Math.max(0, (turned - 20) / 30)),
+      });
     }
-    raf = requestAnimationFrame(frame);
+    if (!lost) renderer.draw(draws);
   };
 
   const onMove = (e: PointerEvent) => {
@@ -188,7 +273,7 @@ function run({ overlay, onNewFaces }: { overlay: HTMLElement; onNewFaces: () => 
     const dy = e.clientY - drag.y;
     if (!drag.moved && Math.hypot(dx, dy) < 4) return;
     drag.moved = true;
-    state(drag.el).held = { yaw: drag.yaw + dx * 0.35, pitch: drag.pitch - dy * 0.25, released: null };
+    state(drag.el).held = { yaw: drag.yaw + dx * 0.5, pitch: drag.pitch - dy * 0.3, released: null };
   };
   const onDown = (e: PointerEvent) => {
     if (e.button !== 0) return;
@@ -242,6 +327,7 @@ function run({ overlay, onNewFaces }: { overlay: HTMLElement; onNewFaces: () => 
     }
   };
 
+  window.addEventListener("resize", fit);
   window.addEventListener("pointermove", onMove);
   window.addEventListener("pointerdown", onDown, true);
   window.addEventListener("pointerup", onUp, true);
@@ -254,6 +340,7 @@ function run({ overlay, onNewFaces }: { overlay: HTMLElement; onNewFaces: () => 
   return () => {
     cancelAnimationFrame(raf);
     if (pendingNav) clearTimeout(pendingNav);
+    window.removeEventListener("resize", fit);
     window.removeEventListener("pointermove", onMove);
     window.removeEventListener("pointerdown", onDown, true);
     window.removeEventListener("pointerup", onUp, true);
@@ -261,12 +348,10 @@ function run({ overlay, onNewFaces }: { overlay: HTMLElement; onNewFaces: () => 
     window.removeEventListener("click", onClick, true);
     window.removeEventListener("dragstart", onDragStart, true);
     window.removeEventListener("keydown", onKey);
+    canvas.removeEventListener("webglcontextlost", onLost);
     overlay.replaceChildren();
-    for (const el of document.querySelectorAll<HTMLElement>("[data-head]")) {
-      el.style.transform = "";
-      el.style.transformOrigin = "";
-      el.style.willChange = "";
-    }
+    showPictures();
+    renderer.dispose();
   };
 }
 
@@ -280,11 +365,12 @@ const KEYS: [string, string][] = [
   ["N", "new faces"],
 ];
 
-// The portraits on the home treemap turn to follow the cursor, spin on click and react to
-// the keys below. Off by default: see resolveHeadCases for how it is switched on.
+// The portraits on the home treemap become 3D heads that turn to follow the cursor, spin
+// on click and react to the keys below. Off by default: see resolveHeadCases.
 export function HeadCases({ onNewFaces }: { onNewFaces: () => void }) {
   const [active, setActive] = useState(false);
   const overlay = useRef<HTMLDivElement>(null);
+  const canvas = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const flag = resolveHeadCases({ search: window.location.search, stored: safeStorage("get"), env: process.env.NEXT_PUBLIC_HEAD_CASES });
@@ -294,13 +380,14 @@ export function HeadCases({ onNewFaces }: { onNewFaces: () => void }) {
   }, []);
 
   useEffect(() => {
-    if (!active || !overlay.current) return;
-    return run({ overlay: overlay.current, onNewFaces });
+    if (!active || !overlay.current || !canvas.current) return;
+    return run({ overlay: overlay.current, canvas: canvas.current, onNewFaces });
   }, [active, onNewFaces]);
 
   if (!active) return null;
   return (
     <>
+      <canvas ref={canvas} className="pointer-events-none fixed inset-0 z-[35] h-full w-full" />
       <div ref={overlay} className="pointer-events-none fixed inset-0 z-50" />
       <div className="pointer-events-none fixed bottom-[2px] left-5 z-[41] hidden items-center gap-3 bg-paper pr-3 text-[9px] leading-none opacity-70 sm:flex">
         <span className="font-semibold tracking-[0.18em]">HEAD CASES</span>

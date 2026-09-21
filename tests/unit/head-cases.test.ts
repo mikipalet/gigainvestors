@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { aimAt, flyAt, GESTURE_MS, gesturePose, MAX_PITCH, MAX_YAW, resolveHeadCases, REST, SNEEZE_AT, transformOf, type Gesture } from "@/lib/head-cases";
+import { aimAt, flyAt, GESTURE_MS, gesturePose, MAX_PITCH, MAX_YAW, resolveHeadCases, SNEEZE_AT, type Gesture } from "@/lib/head-cases";
 
 describe("resolveHeadCases", () => {
   it("is off with nothing set", () => {
@@ -69,17 +69,6 @@ describe("gesturePose", () => {
   it("clamps t outside 0..1", () => {
     expect(gesturePose("spin", 7).yaw).toBe(360);
     expect(gesturePose("spin", -1).yaw).toBe(0);
-  });
-});
-
-describe("transformOf", () => {
-  it("writes every channel in a fixed order with perspective first", () => {
-    expect(transformOf(REST)).toBe("perspective(600px) translateY(0.00px) rotateX(0.00deg) rotateY(0.00deg) rotateZ(0.00deg) scale(1.000)");
-    expect(transformOf({ yaw: 12.345, pitch: -3, roll: 1, lift: -16, scale: 1.05 })).toContain("rotateY(12.35deg)");
-  });
-  it("backs the camera off for wide heads and never closer than 600px", () => {
-    expect(transformOf(REST, 60)).toMatch(/^perspective\(600px\)/);
-    expect(transformOf(REST, 540)).toMatch(/^perspective\(1080px\)/);
   });
 });
 

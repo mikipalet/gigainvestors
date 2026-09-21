@@ -32,7 +32,7 @@ export function InvestorTile({ d, tier, rect, q }: { d: InvestorTileData; tier: 
       style={{ fontSize: fs }}
     >
       {d.sketch && rect.w > 14 && (
-        <div className="absolute inset-x-0 bottom-0" style={{ top: textBlock, padding: `0 ${pad * 0.5}px` }}>
+        <div data-head={d.slug} className="absolute inset-x-0 bottom-0" style={{ top: textBlock, padding: `0 ${pad * 0.5}px` }}>
           <Face slug={d.slug} size={320} sizes={`${Math.round(rect.w)}px`} priority={d.priority} />
         </div>
       )}

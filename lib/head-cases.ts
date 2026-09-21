@@ -23,8 +23,8 @@ export interface Pose {
 }
 
 export const REST: Pose = { yaw: 0, pitch: 0, roll: 0, lift: 0, scale: 1 };
-export const MAX_YAW = 55;
-export const MAX_PITCH = 28;
+export const MAX_YAW = 75;
+export const MAX_PITCH = 35;
 const DEPTH = 520;
 const DEG = 180 / Math.PI;
 

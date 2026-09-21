@@ -2,8 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { aimAt, FLY_MS, flyAt, GESTURE_MS, gesturePose, HEAD_CASES_KEY, REST, resolveHeadCases, SNEEZE_AT, type Gesture, type Pose, type Pt } from "@/lib/head-cases";
-import { headGeometry, type HeadGeometry } from "@/lib/head-geometry";
-import { HeadRenderer, type Box, type HeadDraw } from "@/lib/head-renderer";
+import { headGeometry } from "@/lib/head-geometry";
+import { drawHead, NEUTRAL, rotation, type Expression } from "@/lib/heads/draw";
+import { buildHead, type Detail, type HeadModel } from "@/lib/heads/model";
+import { hashSeed, sketchHair, traitsFor, type SketchHair } from "@/lib/heads/traits";
 
 interface Head {
   pose: Pose;
@@ -11,14 +13,7 @@ interface Head {
   phase: number;
   gesture: { kind: Gesture; start: number; dir: number; peer: HTMLElement | null; fired: boolean } | null;
   held: { yaw: number; pitch: number; released: number | null } | null;
-}
-
-interface Asset {
-  tex: WebGLTexture | null;
-  geom: HeadGeometry | null;
-  aspect: number;
-  size: 320 | 1200;
-  loading: 320 | 1200 | null;
+  nextBlink: number;
 }
 
 interface Drag {
@@ -31,7 +26,7 @@ interface Drag {
 }
 
 const rand = (n = 1) => Math.random() * n;
-const newHead = (): Head => ({ pose: { ...REST }, rest: { yaw: rand(12) - 6, pitch: rand(6) - 3 }, phase: rand(Math.PI * 2), gesture: null, held: null });
+const newHead = (now: number): Head => ({ pose: { ...REST }, rest: { yaw: rand(12) - 6, pitch: rand(6) - 3 }, phase: rand(Math.PI * 2), gesture: null, held: null, nextBlink: now + 1000 + rand(5000) });
 
 const FLY_SVG = `<svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="var(--ink)" stroke-width="1.2"><ellipse cx="8" cy="7" rx="4" ry="2.4" fill="var(--ink)"/><path d="M6 5.5 C3 1, 0 2, 4 6" /><path d="M10 5.5 C13 1, 16 2, 12 6" /><circle cx="12.5" cy="6.5" r="1.4" fill="var(--ink)"/></svg>`;
 
@@ -49,32 +44,22 @@ function headOf(target: EventTarget | null) {
   return a && el ? { a, el } : null;
 }
 
-const box = (r: DOMRect): Box => ({ x: r.x, y: r.y, w: r.width, h: r.height });
-
-// The sketch sits object-contain at the bottom of its box.
-function drawnRect(r: DOMRect, aspect: number): Box {
-  const h = Math.min(r.height, r.width * aspect);
-  const w = h / aspect;
-  return { x: r.x + (r.width - w) / 2, y: r.bottom - h, w, h };
-}
-
-function spawnSpatter(overlay: HTMLElement, box: Box, geom: HeadGeometry, dir: number) {
-  const scale = Math.min(1, Math.max(0.3, box.w / 160));
+function spawnSpatter(overlay: HTMLElement, mouth: Pt, size: number, dir: number) {
+  const scale = Math.min(1, Math.max(0.3, size / 60));
   const n = 3 + Math.floor(rand(4) + 4 * scale);
   const side = dir === 0 ? (rand() < 0.5 ? -1 : 1) : Math.sign(dir);
-  const mouth = { x: box.x + (geom.cx + side * geom.rx * 0.3) * box.w, y: box.y + (geom.cy + geom.ry * 0.55) * box.h };
   for (let i = 0; i < n; i++) {
     const angle = (side > 0 ? 0.35 : Math.PI - 0.35) + (rand() - 0.5) * 1.1;
     const dist = (14 + rand(44)) * scale;
-    const size = (1.5 + rand(3)) * (0.5 + scale / 2);
+    const dot = (1.5 + rand(3)) * (0.5 + scale / 2);
     const d = document.createElement("div");
-    d.style.cssText = `position:absolute;left:${mouth.x}px;top:${mouth.y}px;width:${size}px;height:${size}px;border-radius:50%;background:var(--sell);animation:head-spatter ${1.1 + rand(0.5)}s ease-out forwards;--dx:${Math.cos(angle) * dist}px;--dy:${Math.sin(angle) * dist + 10}px`;
+    d.style.cssText = `position:absolute;left:${mouth.x}px;top:${mouth.y}px;width:${dot}px;height:${dot}px;border-radius:50%;background:var(--sell);animation:head-spatter ${1.1 + rand(0.5)}s ease-out forwards;--dx:${Math.cos(angle) * dist}px;--dy:${Math.sin(angle) * dist + 10}px`;
     overlay.append(d);
     setTimeout(() => d.remove(), 1700);
   }
 }
 
-function geometryOf(img: HTMLImageElement) {
+function hairOf(img: HTMLImageElement): SketchHair {
   const c = document.createElement("canvas");
   c.width = 160;
   c.height = 200;
@@ -83,50 +68,87 @@ function geometryOf(img: HTMLImageElement) {
   const { data } = ctx.getImageData(0, 0, c.width, c.height);
   const alpha = new Uint8Array(c.width * c.height);
   for (let p = 0; p < alpha.length; p++) alpha[p] = data[p * 4 + 3];
-  return headGeometry({ alpha, w: c.width, h: c.height });
+  return sketchHair({ alpha, w: c.width, h: c.height, head: headGeometry({ alpha, w: c.width, h: c.height }) });
 }
 
-function run({ overlay, canvas, onNewFaces }: { overlay: HTMLElement; canvas: HTMLCanvasElement; onNewFaces: () => void }) {
-  let renderer: HeadRenderer;
-  try {
-    renderer = new HeadRenderer(canvas, getComputedStyle(document.documentElement).getPropertyValue("--ink"));
-  } catch (e) {
-    console.warn("head cases: no WebGL", e);
-    return () => {};
+function hatchPattern(ctx: CanvasRenderingContext2D, ink: string, dpr: number) {
+  const c = document.createElement("canvas");
+  c.width = c.height = Math.round(6 * dpr);
+  const g = c.getContext("2d")!;
+  g.strokeStyle = ink;
+  g.lineWidth = dpr * 0.9;
+  g.beginPath();
+  g.moveTo(0, c.height);
+  g.lineTo(c.width, 0);
+  g.stroke();
+  const p = ctx.createPattern(c, "repeat");
+  p?.setTransform(new DOMMatrix().scale(1 / dpr));
+  return p;
+}
+
+// What a gesture does to the face while it runs.
+function expressionOf(kind: Gesture | null, t: number): Expression {
+  if (!kind || t < 0) return NEUTRAL;
+  switch (kind) {
+    case "sneeze":
+      return t < SNEEZE_AT ? { mouthOpen: 0.8 * (t / SNEEZE_AT), smile: 0, eyesClosed: t > 0.25 ? 1 : 0, browRaise: 0.6 } : { mouthOpen: 0, smile: 0, eyesClosed: t < 0.8 ? 1 : 0, browRaise: -0.4 };
+    case "yawn": {
+      const b = Math.sin(Math.PI * t);
+      return { mouthOpen: b, smile: 0, eyesClosed: b > 0.4 ? 1 : 0, browRaise: 0.3 };
+    }
+    case "cheese":
+      return { mouthOpen: 0, smile: 1, eyesClosed: 0, browRaise: 0.5 };
+    case "gossip":
+      return { mouthOpen: 0.35 * Math.abs(Math.sin(t * 22)), smile: 0.4, eyesClosed: 0, browRaise: 0.3 };
+    case "wave":
+      return { mouthOpen: 0, smile: 0.7, eyesClosed: 0, browRaise: 0.3 };
+    case "spin":
+      return { mouthOpen: 0.3, smile: 0, eyesClosed: 1, browRaise: 0 };
   }
-  let lost = false;
-  const onLost = (e: Event) => {
-    e.preventDefault();
-    lost = true;
-    showPictures();
+}
+
+function run({ overlay, canvas, onNewFaces }: { overlay: HTMLElement; canvas: HTMLCanvasElement; onNewFaces?: () => void }) {
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return () => {};
+  const css = getComputedStyle(document.documentElement);
+  const ink = css.getPropertyValue("--ink").trim() || "#111";
+  const red = css.getPropertyValue("--sell").trim() || "#bf3b2b";
+  let dpr = 1;
+  let hatch: CanvasPattern | null = null;
+  const fit = () => {
+    dpr = Math.min(2, window.devicePixelRatio || 1);
+    canvas.width = Math.round(window.innerWidth * dpr);
+    canvas.height = Math.round(window.innerHeight * dpr);
+    hatch = hatchPattern(ctx, ink, dpr);
   };
-  canvas.addEventListener("webglcontextlost", onLost);
+  fit();
 
   const heads = new WeakMap<HTMLElement, Head>();
   const state = (el: HTMLElement) => {
     let h = heads.get(el);
-    if (!h) heads.set(el, (h = newHead()));
+    if (!h) heads.set(el, (h = newHead(performance.now())));
     return h;
   };
 
-  const assets = new Map<string, Asset>();
-  const load = (slug: string, size: 320 | 1200) => {
-    const asset = assets.get(slug) ?? { tex: null, geom: null, aspect: 1.25, size: 320, loading: null };
-    assets.set(slug, asset);
-    if (asset.loading) return asset;
-    asset.loading = size;
-    const img = new Image();
-    img.onload = () => {
-      if (lost) return;
-      asset.geom ??= geometryOf(img);
-      asset.aspect = img.naturalHeight / img.naturalWidth;
-      asset.tex = renderer.texture(img);
-      asset.size = size;
-      asset.loading = null;
-    };
-    img.onerror = () => (asset.loading = null);
-    img.src = `/faces/v3/${slug}-${size}.webp`;
-    return asset;
+  let generation = 0;
+  const sketches = new Map<string, SketchHair | null>();
+  const models = new Map<string, HeadModel>();
+  const modelFor = (slug: string, detail: Detail) => {
+    const key = `${slug}|${generation}|${detail}`;
+    let m = models.get(key);
+    if (m) return m;
+    if (!sketches.has(slug)) {
+      sketches.set(slug, null);
+      const img = new Image();
+      img.onload = () => {
+        sketches.set(slug, hairOf(img));
+        for (const k of models.keys()) if (k.startsWith(`${slug}|`)) models.delete(k);
+      };
+      img.src = `/faces/v3/${slug}-320.webp`;
+    }
+    m = buildHead(traitsFor(hashSeed(slug) + generation * 7919, sketches.get(slug) ?? undefined), detail);
+    models.set(key, m);
+    return m;
   };
 
   const hidden = new Set<HTMLElement>();
@@ -136,16 +158,6 @@ function run({ overlay, canvas, onNewFaces }: { overlay: HTMLElement; canvas: HT
     if (pic) pic.style.visibility = "hidden";
     hidden.add(el);
   };
-  const showPictures = () => {
-    for (const el of hidden) {
-      const pic = el.querySelector<HTMLElement>("picture");
-      if (pic) pic.style.visibility = "";
-    }
-    hidden.clear();
-  };
-
-  const fit = () => renderer.resize(window.innerWidth, window.innerHeight, Math.min(2, window.devicePixelRatio || 1));
-  fit();
 
   let pointer: Pt = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
   let fly: { el: HTMLElement; born: number; seed: number; pos: Pt } | null = null;
@@ -156,7 +168,11 @@ function run({ overlay, canvas, onNewFaces }: { overlay: HTMLElement; canvas: HT
   let last = performance.now();
 
   const visible = () => [...document.querySelectorAll<HTMLElement>("[data-head]")].map((el) => ({ el, r: el.getBoundingClientRect() }));
-  const centre = (r: DOMRect): Pt => ({ x: r.x + r.width / 2, y: r.y + r.height * 0.55 });
+  const place = (r: DOMRect) => {
+    const scale = Math.min(r.width * 0.26, r.height / 3.4);
+    return { scale, center: { x: r.x + r.width / 2, y: r.y + scale * 1.35 } };
+  };
+  const centre = (r: DOMRect): Pt => place(r).center;
 
   const startGesture = (kind: Gesture, stagger: (r: DOMRect) => number, peer = false) => {
     const all = visible();
@@ -213,28 +229,37 @@ function run({ overlay, canvas, onNewFaces }: { overlay: HTMLElement; canvas: HT
     }
     const target = fly ? fly.pos : pointer;
 
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     const all = visible();
     const rects = new Map(all.map(({ el, r }) => [el, r]));
-    const draws: HeadDraw[] = [];
     for (const { el, r } of all) {
+      if (r.width < 14) continue;
       const h = state(el);
-      const c = centre(r);
-      let g: ReturnType<typeof gesturePose> = {};
+      const { scale, center } = place(r);
       const slug = el.dataset.head ?? "";
-      const asset = assets.get(slug) ?? load(slug, 320);
+      const model = modelFor(slug, scale > 60 ? "fine" : scale > 30 ? "mid" : "coarse");
+      let g: ReturnType<typeof gesturePose> = {};
+      let expression = NEUTRAL;
+      let mouthDir = 0;
       if (h.gesture) {
         const t = (now - h.gesture.start) / GESTURE_MS[h.gesture.kind];
         if (t >= 1) h.gesture = null;
         else if (t >= 0) {
           g = gesturePose(h.gesture.kind, t, h.gesture.dir);
+          expression = expressionOf(h.gesture.kind, t);
           if (h.gesture.kind === "sneeze" && !h.gesture.fired && t >= SNEEZE_AT) {
             h.gesture.fired = true;
-            spawnSpatter(overlay, drawnRect(r, asset.aspect), asset.geom ?? { cx: 0.5, cy: 0.33, rx: 0.3, ry: 0.39 }, h.pose.yaw);
+            mouthDir = Math.sign(h.pose.yaw);
           }
         }
       }
+      if (!h.gesture && now > h.nextBlink) {
+        if (now > h.nextBlink + 130) h.nextBlink = now + 2000 + rand(5000);
+        else expression = { ...NEUTRAL, eyesClosed: 1 };
+      }
       const peerRect = g.peer && h.gesture?.peer ? rects.get(h.gesture.peer) : undefined;
-      const aim = aimAt({ from: c, to: peerRect ? centre(peerRect) : target });
+      const aim = aimAt({ from: center, to: peerRect ? centre(peerRect) : target });
       let yaw = g.front ? 0 : aim.yaw + h.rest.yaw + 2.5 * Math.sin(now / 1400 + h.phase);
       let pitch = g.front ? 0 : aim.pitch + h.rest.pitch + 1.5 * Math.sin(now / 1900 + h.phase * 1.7);
       if (h.held) {
@@ -247,23 +272,26 @@ function run({ overlay, canvas, onNewFaces }: { overlay: HTMLElement; canvas: HT
       }
       h.pose.yaw += (yaw - h.pose.yaw) * k;
       h.pose.pitch += (pitch - h.pose.pitch) * k;
+      const look = { x: Math.max(-1, Math.min(1, (aim.yaw - h.pose.yaw) / 25)), y: Math.max(-1, Math.min(1, (aim.pitch - h.pose.pitch) / 20)) };
+      const pose: Pose = { yaw: h.pose.yaw + (g.yaw ?? 0), pitch: h.pose.pitch + (g.pitch ?? 0), roll: g.roll ?? 0, lift: g.lift ?? 0, scale: g.scale ?? 1 };
 
-      if (lost || !asset.tex || !asset.geom) continue;
       hidePicture(el);
-      const rect = drawnRect(r, asset.aspect);
-      if (rect.w > 340 && asset.size === 320) load(slug, 1200);
-      const finalYaw = h.pose.yaw + (g.yaw ?? 0);
-      const turned = Math.abs(((finalYaw % 360) + 540) % 360 - 180);
-      draws.push({
-        tex: asset.tex,
-        geom: asset.geom,
-        rect,
-        clip: box((el.closest("a") ?? el).getBoundingClientRect()),
-        pose: { yaw: finalYaw, pitch: h.pose.pitch + (g.pitch ?? 0), roll: g.roll ?? 0, lift: g.lift ?? 0, scale: g.scale ?? 1 },
-        outline: Math.min(1, Math.max(0, (turned - 20) / 30)),
-      });
+      const clip = (el.closest("a") ?? el).getBoundingClientRect();
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(clip.x, clip.y, clip.width, clip.height);
+      ctx.clip();
+      drawHead({ ctx, model, center, scale, pose, expression, look, ink, red, hatch });
+      ctx.restore();
+
+      if (mouthDir !== 0 || (h.gesture?.fired && h.gesture.kind === "sneeze" && mouthDir !== 0)) {
+        const m = rotation(pose);
+        const p = model.mouth.p;
+        const x = center.x + (m[0] * p[0] + m[1] * p[1] + m[2] * p[2]) * scale;
+        const y = center.y + pose.lift - (m[3] * p[0] + m[4] * p[1] + m[5] * p[2]) * scale;
+        spawnSpatter(overlay, { x, y }, scale, mouthDir);
+      }
     }
-    if (!lost) renderer.draw(draws);
   };
 
   const onMove = (e: PointerEvent) => {
@@ -273,7 +301,7 @@ function run({ overlay, canvas, onNewFaces }: { overlay: HTMLElement; canvas: HT
     const dy = e.clientY - drag.y;
     if (!drag.moved && Math.hypot(dx, dy) < 4) return;
     drag.moved = true;
-    state(drag.el).held = { yaw: drag.yaw + dx * 0.5, pitch: drag.pitch - dy * 0.3, released: null };
+    state(drag.el).held = { yaw: drag.yaw + dx * 0.6, pitch: drag.pitch - dy * 0.35, released: null };
   };
   const onDown = (e: PointerEvent) => {
     if (e.button !== 0) return;
@@ -323,7 +351,10 @@ function run({ overlay, canvas, onNewFaces }: { overlay: HTMLElement; canvas: HT
         e.preventDefault();
         return startGesture("cheese", () => rand(120));
       case "n":
-        return onNewFaces();
+        generation++;
+        models.clear();
+        onNewFaces?.();
+        return;
     }
   };
 
@@ -348,10 +379,12 @@ function run({ overlay, canvas, onNewFaces }: { overlay: HTMLElement; canvas: HT
     window.removeEventListener("click", onClick, true);
     window.removeEventListener("dragstart", onDragStart, true);
     window.removeEventListener("keydown", onKey);
-    canvas.removeEventListener("webglcontextlost", onLost);
     overlay.replaceChildren();
-    showPictures();
-    renderer.dispose();
+    for (const el of hidden) {
+      const pic = el.querySelector<HTMLElement>("picture");
+      if (pic) pic.style.visibility = "";
+    }
+    hidden.clear();
   };
 }
 
@@ -365,9 +398,9 @@ const KEYS: [string, string][] = [
   ["N", "new faces"],
 ];
 
-// The portraits on the home treemap become 3D heads that turn to follow the cursor, spin
-// on click and react to the keys below. Off by default: see resolveHeadCases.
-export function HeadCases({ onNewFaces }: { onNewFaces: () => void }) {
+// The portraits on the home treemap become line-drawn 3D heads that turn to follow the
+// cursor, spin on click and react to the keys below. Off by default: see resolveHeadCases.
+export function HeadCases({ onNewFaces }: { onNewFaces?: () => void }) {
   const [active, setActive] = useState(false);
   const overlay = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
@@ -391,7 +424,7 @@ export function HeadCases({ onNewFaces }: { onNewFaces: () => void }) {
       <div ref={overlay} className="pointer-events-none fixed inset-0 z-50" />
       <div className="pointer-events-none fixed bottom-[2px] left-5 z-[41] hidden items-center gap-3 bg-paper pr-3 text-[9px] leading-none opacity-70 sm:flex">
         <span className="font-semibold tracking-[0.18em]">HEAD CASES</span>
-        <span className="italic">move, click to spin, drag to turn a head</span>
+        <span className="italic">every line is code · move, click to spin, drag to turn a head</span>
         {KEYS.map(([k, what]) => (
           <span key={k} className="flex items-center gap-1 italic">
             <kbd className="rounded-[2px] px-[3px] py-[1px] font-sans not-italic shadow-[0_0_0_1px_var(--ink)]">{k}</kbd>

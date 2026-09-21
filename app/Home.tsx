@@ -1,7 +1,6 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
-import { HeadCases } from "@/components/HeadCases";
+import { useMemo } from "react";
 import { InvestorTile, type InvestorTileData } from "@/components/InvestorTile";
 import { QuarterSlider } from "@/components/QuarterSlider";
 import { Treemap, type Frame } from "@/components/Treemap";
@@ -43,11 +42,8 @@ export function Home({ index }: { index: Index }) {
     return out;
   }, [index]);
 
-  const newFaces = useCallback(() => setQ(index.quarters[Math.floor(Math.random() * index.quarters.length)]), [index, setQ]);
-
   return (
     <>
-      <HeadCases onNewFaces={newFaces} />
       <Treemap frames={frames} q={q} label={(d) => `${d.person} · ${d.money}`} className="locks-scroll h-[calc(100dvh-84px)] sm:h-[calc(100dvh-48px)] w-screen" render={(d, tier, rect) => <InvestorTile d={d} tier={tier} rect={rect} q={q} />} />
       <QuarterSlider quarters={index.quarters} q={q} onChange={setQ} note={`${(frames[q] ?? []).length} of ${index.investors.length} filed`} />
     </>

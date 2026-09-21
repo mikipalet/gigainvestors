@@ -38,6 +38,6 @@ npm run dev
 npm test                 # unit tests; `npx playwright test` for e2e against `npm start`
 ```
 
-Head Cases, the portraits as 3D heads turning to follow the cursor (click spins, drag turns, W/F/S/Y/G/space/N do things; each sketch is mapped onto a skull-and-shoulders relief in one WebGL canvas), is off by default: open `/?heads=1` to switch it on in one browser (`/?heads=0` off again), or set `NEXT_PUBLIC_HEAD_CASES=1` to turn it on for everyone.
+Head Cases, every portrait redrawn as a line-art 3D head that turns to follow the cursor (click spins, drag turns, W/F/S/Y/G/space/N do things; every line is code, seeded per investor with the hair read off their sketch), is off by default: open `/?heads=1` to switch it on in one browser (`/?heads=0` off again), or set `NEXT_PUBLIC_HEAD_CASES=1` to turn it on for everyone.
 
 Portraits are pencil sketches generated from public photographs in a single house style. Norbert Lou has no public photograph anywhere, so he is drawn as a mystery man.

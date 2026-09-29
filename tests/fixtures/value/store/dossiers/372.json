@@ -1,0 +1,368 @@
+{
+  "DAL.US": {
+    "id": "DAL.US",
+    "company": {
+      "id": "DAL.US",
+      "name": "Delta Air Lines",
+      "code": "DAL",
+      "exchange": "US",
+      "country": "US",
+      "currency": "USD",
+      "isin": null,
+      "cik": null,
+      "lei": null,
+      "edinetCode": null,
+      "sector": "Industrials",
+      "industry": null,
+      "kind": "operating",
+      "listings": [
+        "DAL.US"
+      ],
+      "marketCapUsd": 30000000000.0,
+      "description": "Fixture company",
+      "source": "eodhd"
+    },
+    "asOf": "2026-09-29",
+    "status": "scored",
+    "report": {
+      "id": "DAL.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/",
+      "filed": "2026-02-20",
+      "period": "2025-12-31",
+      "sections": [
+        "business"
+      ]
+    },
+    "tests": {
+      "understandable": {
+        "key": "understandable",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Fixture analysis"
+        ],
+        "metrics": {
+          "median": 0.2
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.15
+            ],
+            [
+              2017,
+              0.16
+            ],
+            [
+              2018,
+              0.16999999999999998
+            ],
+            [
+              2019,
+              0.18
+            ],
+            [
+              2020,
+              0.19
+            ],
+            [
+              2021,
+              0.2
+            ],
+            [
+              2022,
+              0.21
+            ],
+            [
+              2023,
+              0.22
+            ],
+            [
+              2024,
+              0.22999999999999998
+            ],
+            [
+              2025,
+              0.24
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "moat": {
+        "key": "moat",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [
+          "Fixture analysis"
+        ],
+        "metrics": {
+          "median": 0.2
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.15
+            ],
+            [
+              2017,
+              0.16
+            ],
+            [
+              2018,
+              0.16999999999999998
+            ],
+            [
+              2019,
+              0.18
+            ],
+            [
+              2020,
+              0.19
+            ],
+            [
+              2021,
+              0.2
+            ],
+            [
+              2022,
+              0.21
+            ],
+            [
+              2023,
+              0.22
+            ],
+            [
+              2024,
+              0.22999999999999998
+            ],
+            [
+              2025,
+              0.24
+            ]
+          ]
+        },
+        "jev": [
+          {
+            "q": "brand",
+            "label": "Describes a brand advantage",
+            "kind": "noul",
+            "value": 0.9,
+            "probability": 0.9,
+            "section": "business",
+            "evidence": "Our brands encourage repeat purchases.",
+            "trusted": true
+          }
+        ]
+      },
+      "economics": {
+        "key": "economics",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Fixture analysis"
+        ],
+        "metrics": {
+          "median": 0.2
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.15
+            ],
+            [
+              2017,
+              0.16
+            ],
+            [
+              2018,
+              0.16999999999999998
+            ],
+            [
+              2019,
+              0.18
+            ],
+            [
+              2020,
+              0.19
+            ],
+            [
+              2021,
+              0.2
+            ],
+            [
+              2022,
+              0.21
+            ],
+            [
+              2023,
+              0.22
+            ],
+            [
+              2024,
+              0.22999999999999998
+            ],
+            [
+              2025,
+              0.24
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "management": {
+        "key": "management",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Fixture analysis"
+        ],
+        "metrics": {
+          "median": 0.2
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.15
+            ],
+            [
+              2017,
+              0.16
+            ],
+            [
+              2018,
+              0.16999999999999998
+            ],
+            [
+              2019,
+              0.18
+            ],
+            [
+              2020,
+              0.19
+            ],
+            [
+              2021,
+              0.2
+            ],
+            [
+              2022,
+              0.21
+            ],
+            [
+              2023,
+              0.22
+            ],
+            [
+              2024,
+              0.22999999999999998
+            ],
+            [
+              2025,
+              0.24
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "accounting": {
+        "key": "accounting",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Fixture analysis"
+        ],
+        "metrics": {
+          "median": 0.2
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.15
+            ],
+            [
+              2017,
+              0.16
+            ],
+            [
+              2018,
+              0.16999999999999998
+            ],
+            [
+              2019,
+              0.18
+            ],
+            [
+              2020,
+              0.19
+            ],
+            [
+              2021,
+              0.2
+            ],
+            [
+              2022,
+              0.21
+            ],
+            [
+              2023,
+              0.22
+            ],
+            [
+              2024,
+              0.22999999999999998
+            ],
+            [
+              2025,
+              0.24
+            ]
+          ]
+        },
+        "jev": []
+      }
+    },
+    "valuation": {
+      "method": "owner_earnings",
+      "currency": "USD",
+      "normalized": 10000000000.0,
+      "growth": 0.05,
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.04,
+      "netCash": -10000000000.0,
+      "shares": 4000000000.0,
+      "perShare": {
+        "low": 30,
+        "mid": 40,
+        "high": 50
+      },
+      "equityBondYield": 0.05,
+      "bridge": [
+        {
+          "label": "Present value of owner earnings",
+          "value": 410000000000.0
+        },
+        {
+          "label": "Net cash",
+          "value": -10000000000.0
+        }
+      ],
+      "assumptions": [
+        "Growth fades to terminal growth over years 6 to 10."
+      ]
+    },
+    "valuationReason": null,
+    "versions": {
+      "pipeline": "1",
+      "questions": "1"
+    },
+    "holders": [],
+    "series": {}
+  }
+}

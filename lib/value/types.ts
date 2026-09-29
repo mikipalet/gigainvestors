@@ -171,3 +171,10 @@ export type RawAnswer =
   | { type: "noul"; noul: number }
   | { type: "choice"; choice: string; probabilities: Record<string, number>; confidence: number }
   | { type: "score"; score: number; probabilities: Record<string, number>; legend: Record<string, string>; confidence: number };
+
+export interface StoreMeta {
+  asOf: string;
+  counts: { universe: number; scored: number; insufficient: number };
+  versions: { pipeline: string; questions: string };
+  tags: Record<string, string>;
+}

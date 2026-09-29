@@ -6,5 +6,5 @@ export default defineConfig({
   use: { baseURL: process.env.BASE_URL ?? "http://localhost:3000", viewport: { width: 1400, height: 900 } },
   webServer: process.env.BASE_URL
     ? undefined
-    : { command: "npm run start", port: 3000, reuseExistingServer: true, timeout: 60000 },
+    : { command: "npm run start", port: 3000, reuseExistingServer: false, timeout: 60000, env: { VALUE_STORE_DIR: "tests/fixtures/value/store" } },
 });

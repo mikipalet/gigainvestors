@@ -1,0 +1,54 @@
+[
+  {
+    "id": "KO.US",
+    "n": "Coca-Cola",
+    "c": "US",
+    "s": "Consumer Defensive",
+    "k": "operating",
+    "mc": 300000000000.0,
+    "v": [
+      80,
+      100,
+      120
+    ],
+    "cur": "USD",
+    "t": "PPPPP",
+    "g": [
+      "brand"
+    ],
+    "h": 1,
+    "st": "s"
+  },
+  {
+    "id": "DAL.US",
+    "n": "Delta Air Lines",
+    "c": "US",
+    "s": "Industrials",
+    "k": "operating",
+    "mc": 30000000000.0,
+    "v": [
+      30,
+      40,
+      50
+    ],
+    "cur": "USD",
+    "t": "PFPPP",
+    "g": [],
+    "h": 0,
+    "st": "s"
+  },
+  {
+    "id": "SPARSE.US",
+    "n": "Sparse Company",
+    "c": "US",
+    "s": "Industrials",
+    "k": "operating",
+    "mc": 1000000.0,
+    "v": null,
+    "cur": "USD",
+    "t": "UUUUU",
+    "g": [],
+    "h": 0,
+    "st": "i"
+  }
+]

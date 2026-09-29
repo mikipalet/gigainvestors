@@ -40,9 +40,9 @@ describe("value search shards", () => {
     const shards = buildSearchShards([company("C&G.BK", "Example", null)], new Set());
     expect(searchShard(shards["c&"], "c&g")[0][0]).toBe("C&G.BK");
   });
-  it("puts single-character tokens in underscore shards without longer-token rows", () => {
+  it("puts all matching companies in single-character heads", () => {
     const shards = buildSearchShards([company("F.US", "Ford Motor", null), company("FO.US", "Forest", null)], new Set());
-    expect(searchShard(shards.f_, "f").map(row => row[0])).toEqual(["F.US"]);
+    expect(searchShard(shards.f_, "f").map(row => row[0])).toEqual(["F.US", "FO.US"]);
     expect(shards.fo.rows.map(row => row[0])).toEqual(["F.US", "FO.US"]);
     expect(shards.f).toBeUndefined();
   });
@@ -51,7 +51,38 @@ describe("value search shards", () => {
     expect(shards.co.rows.find(row => row[0] === "KO.US")).toEqual(["KO.US", "The Coca-Cola Company", "US", "a", 380000000000]);
     expect(shards.te.rows.find(row => row[0] === "0700.HK")?.slice(3)).toEqual(["p", null]);
     expect(shards.as.rows.filter(row => row[0] === "ASML.AS")).toHaveLength(1);
-    expect(Object.keys(shards)).toHaveLength(36 * 37);
+    expect(Object.keys(shards)).toHaveLength(36 * 40);
     expect(buildSearchShards([...companies].reverse(), new Set(["KO.US"]))).toEqual(shards);
   });
+});
+
+describe('adaptive shards', () => {
+  it('splits recursively, keeps bounded market-cap heads and remaps aliases', async () => {
+    const { buildAdaptiveSearchShards } = await import('@/lib/value/search');
+    const { shardKeyFor } = await import('@/lib/value/search-shard');
+    const rows = Array.from({ length: 1600 }, (_, i) => company(`XY${String(i).padStart(4, '0')}.US`, `Écho international ${i}`, i));
+    const { shards, manifest } = buildAdaptiveSearchShards(rows, new Set());
+    expect(manifest.split).toEqual(expect.arrayContaining(['xy', 'xy0']));
+    expect(manifest.maxPrefix).toBeGreaterThanOrEqual(4);
+    expect(shards.xy.rows).toHaveLength(300);
+    expect(shards.xy.rows[0][0]).toBe('XY1599.US');
+    expect(shards.xy.rows.at(-1)?.[0]).toBe('XY1300.US');
+    expect(shards.e_.rows[0][0]).toBe('XY1599.US');
+    expect(shards.echo.rows).toHaveLength(300);
+    expect(shards.echo.rows[0][0]).toBe('XY1599.US');
+    expect(manifest.maxPrefix).toBeLessThan(20);
+    for (const shard of Object.values(shards)) expect(Buffer.byteLength(JSON.stringify(shard) + '\n')).toBeLessThanOrEqual(60000);
+    for (const i of [0, 799, 1599]) {
+      const query = `xy${String(i).padStart(4, '0')}`;
+      expect(searchShard(shards[shardKeyFor(query, manifest)], query)[0][0]).toBe(`${query.toUpperCase()}.US`);
+    }
+    expect(shards[shardKeyFor('xy9', manifest)].rows).toEqual([]);
+    expect(buildAdaptiveSearchShards([...rows].reverse(), new Set())).toEqual({ shards, manifest });
+  });
+});
+
+it('refuses a head that cannot satisfy both top-300 and the raw byte budget', async () => {
+  const { buildAdaptiveSearchShards } = await import('@/lib/value/search');
+  const rows = Array.from({ length: 301 }, (_, i) => company(`XY${i}.US`, 'É'.repeat(200), i));
+  expect(() => buildAdaptiveSearchShards(rows, new Set())).toThrow(/head .* exceeds 60000 bytes/);
 });

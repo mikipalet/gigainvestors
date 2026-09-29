@@ -1,4 +1,4 @@
-import { buildSearchShards } from "../../../lib/value/search";
+import { buildAdaptiveSearchShards } from "../../../lib/value/search";
 import { mergeSeedFiles, readPrices } from "../../../lib/value/price-files";
 import { validCompanyId } from "../../../lib/value/companies";
 import { execFileSync } from "node:child_process";
@@ -124,7 +124,7 @@ export function loadHolders(store: string): { holdersByTicker: Record<string, st
 }
 
 export function writeOutput({ repo, files }: { repo: string; files: Record<string, unknown> }): void {
-  const allowed = /^(?:index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/[a-z0-9][a-z0-9_&-]|meta|top)\.json$/;
+  const allowed = /^(?:index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|meta|top)\.json$/;
   for (const file of Object.keys(files)) if (!allowed.test(file)) throw new Error("Invalid publish output path");
   for (const directory of ["index", "dossiers", "search"]) rmSync(path.join(repo, directory), { recursive: true, force: true });
   for (const [file, data] of Object.entries(files)) {
@@ -189,7 +189,9 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   mergeSeedFiles(repo);
   const { files } = buildOutput({ priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx: {}, prices: readPrices(path.join(repo, "prices")) });
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
-  for (const [key, shard] of Object.entries(buildSearchShards(universe, new Set(rows.map(row => row.id))))) {
+  const { shards, manifest } = buildAdaptiveSearchShards(universe, new Set(rows.map(row => row.id)));
+  files["search/manifest.json"] = manifest;
+  for (const [key, shard] of Object.entries(shards)) {
     files[`search/${key}.json`] = shard;
   }
   writeOutput({ repo, files });

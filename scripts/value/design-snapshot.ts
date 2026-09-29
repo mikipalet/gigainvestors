@@ -1,4 +1,6 @@
 /** Rebuild a local design-QA snapshot from the live corpus without provider calls or publishing. */
+import { currentShareInputs, leaseInputs, trailingInputs } from '../../lib/value/valuation-inputs';
+import { checkIntegrity } from '../../lib/value/integrity';
 import { normalizeEodhd } from '../../lib/value/normalize-eodhd';
 import { mergeCompany, withEnglishName } from '../../lib/value/companies';
 import { cpSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -33,12 +35,18 @@ async function main(){
   if(raw){const normalized=normalizeEodhd(raw,old.id);const cap=normalized.marketCap;const rate=cap.currency?usdRate(cap.currency):null;old.company=mergeCompany(old.company,{...normalized.patch,...(cap.value!==null&&rate!==null?{marketCapUsd:cap.value*rate}:{})});}
   old.company=withEnglishName(old.company);
   const fundamentals=readCorpusJson<Fundamentals>(`fundamentals/${old.id}.json`);
+  if(raw&&fundamentals){
+   const normalized=normalizeEodhd(raw,old.id).fundamentals,mapped=new Map(normalized.years.map(y=>[y.end,y]));
+   fundamentals.years=fundamentals.years.map(year=>{const fresh=mapped.get(year.end);return {...year,...leaseInputs(raw,year.end,old.company.country),...(fresh?{currency:fresh.currency,cash:fresh.cash,totalDebt:fresh.totalDebt,clientAssets:fresh.clientAssets}:{})};});
+   if(normalized.integrity.notes?.some(note=>note.startsWith('reporting currency changed')))fundamentals.years=fundamentals.years.filter(y=>mapped.has(y.end));
+   fundamentals.integrity=checkIntegrity(fundamentals,{source:old.company.source});fundamentals.ttm=trailingInputs(raw,fundamentals.years.at(-1));
+  }
   const history=readPriceHistory(old.id);
   if(history)histories[old.id]=history;else if(old.priceHistory)histories[old.id]=old.priceHistory;
   for(const holder of old.holders){investorNames[holder.code]=holder.name;for(const id of old.company.listings.filter(id=>id.endsWith('.US'))){const ticker=id.slice(0,-3).replaceAll('-','.');(holdersByTicker[ticker]??=[]).push(holder.code);}}
   if(!fundamentals){missing.push(old.id);analyses.push(old);continue;}
   const attempts=readCorpusJson<{failures?:number}>(`prices-history/meta/${old.id}.json`);
-  const next=await analyzeCompany({company:old.company,fundamentals,sections:{},report:old.report,priceHistory:history,priceHistoryPending:history===null&&(attempts?.failures??0)<3,
+  const next=await analyzeCompany({company:old.company,fundamentals,...currentShareInputs(raw,prices[old.id]?.[0]??null,old.company.currency),sections:{},report:old.report,priceHistory:history,priceHistoryPending:history===null&&(attempts?.failures??0)<3,
    bondYield:old.valuation?.bondYield??bonds[old.company.country]?.yield??null,getBondYield:async()=>bonds.US?.yield??null,usdRate:async currency=>usdRate(currency),ask:async()=>Object.values(old.tests).flatMap(t=>t.jev)});
   analyses.push(next);
  }

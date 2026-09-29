@@ -4,8 +4,8 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 const [base,out]=process.argv.slice(2);
 mkdirSync(out,{recursive:true});
 const browser=await chromium.launch();const report=[];
-for(const width of [390,1440]){
- const page=await browser.newPage({viewport:{width,height:width===390?844:900}});
+for(const [width,height] of (process.env.QA_VIEWPORTS??'390x844,768x1024,1280x800,1440x900,1920x1080').split(',').map(v=>v.split('x').map(Number))){
+ const page=await browser.newPage({viewport:{width,height}});
  for(const id of ['ko.us','aapl.us','cb.us','dal.us','pool.us','azn.lse','7203.jp']){
   await page.goto(`${base}/${id}`,{waitUntil:'networkidle'});
   for(const [i,key] of ['understandable','moat','economics','management','accounting','price','valuation'].entries()){
@@ -28,11 +28,30 @@ for(const width of [390,1440]){
      for(let a=0;a<labels.length;a++)for(let b=a+1;b<labels.length;b++){const x=labels[a].b,y=labels[b].b;if(x.left<y.right-1&&y.left<x.right-1&&x.top<y.bottom-1&&y.top<x.bottom-1)errors.push(`Labels overlap: ${labels[a].text} / ${labels[b].text}`);}
      for(const t of labels)if(t.b.right>bounds.right+1||t.b.left<bounds.left-1)errors.push(`Outside panel: ${t.text}`);
     }
-    return errors;
+    // Audit visible HTML and SVG text within the dialog. Its internal scroll
+    // viewport intentionally contains additional evidence below the current view.
+    const leaves=[];const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+    while(walker.nextNode()){
+     const n=walker.currentNode,parent=n.parentElement;
+     if(!parent||!n.textContent.trim()||parent.closest('.sr-only')||!parent.checkVisibility({visibilityProperty:true,opacityProperty:true}))continue;
+     const range=document.createRange();range.selectNodeContents(n);
+     for(const b of range.getClientRects()){
+      if(b.width<2||b.height<2||b.bottom<bounds.top||b.top>bounds.bottom)continue;
+      const scroll=parent.closest('.panel-content'),clip=scroll?.getBoundingClientRect();
+      if(clip&&(b.top<clip.top||b.bottom>clip.bottom))continue;
+      leaves.push({text:n.textContent.trim().slice(0,45),b,parent});
+      if(b.left<bounds.left-1||b.right>bounds.right+1)errors.push(`Text outside panel: ${n.textContent.trim()}`);
+     }
+    }
+    for(let a=0;a<leaves.length;a++)for(let b=a+1;b<leaves.length;b++){
+     const x=leaves[a],y=leaves[b];if(x.parent===y.parent)continue;
+     if(x.b.left<y.b.right-2&&y.b.left<x.b.right-2&&x.b.top<y.b.bottom-2&&y.b.top<x.b.bottom-2)errors.push(`Text overlap: ${x.text} / ${y.text}`);
+    }
+    return [...new Set(errors)];
    });
    if(dimensions.height!==dimensions.viewport||dimensions.width!==width)throw new Error(`Viewport overflow: ${id} ${key}`);
    report.push({id,width,panel:key,...dimensions,internalScroll:max,issues});
-   await page.keyboard.press('Escape');
+   await page.keyboard.press('Escape');await dialog.waitFor({state:'detached'});
   }
  }
  await page.close();

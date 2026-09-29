@@ -119,9 +119,9 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
       if(sort==='mos'&&!!a.row.dataQualityFlags?.length!==!!b.row.dataQualityFlags?.length)return a.row.dataQualityFlags?.length?1:-1;
       if ((a.row.t==='PPPPP')!==(b.row.t==='PPPPP')) return (a.row.t==='PPPPP'?-1:1)*(filter.near==='1'?-1:1);
       if (a.row.st !== b.row.st) return a.row.st === "i" ? 1 : -1;
-      const av = sort === "name" ? a.row.n : sort === "country" ? a.row.c : sort === "cap" ? a.row.mc : sort === "holders" ? a.row.h : sort === "return" ? a.row.returnInfo?.sort : a.mos;
-      const bv = sort === "name" ? b.row.n : sort === "country" ? b.row.c : sort === "cap" ? b.row.mc : sort === "holders" ? b.row.h : sort === "return" ? b.row.returnInfo?.sort : b.mos;
-      if (av == null || bv == null) return av == null && bv == null ? a.row.id.localeCompare(b.row.id) : av == null ? 1 : -1;
+      const av = sort === "name" ? a.row.n : sort === "country" ? a.row.c : sort === "cap" ? a.row.mc : sort === "holders" ? a.row.h : sort === "return" ? a.row.returnInfo?.sort : sort === "flags" ? Number(a.seed) : a.mos;
+      const bv = sort === "name" ? b.row.n : sort === "country" ? b.row.c : sort === "cap" ? b.row.mc : sort === "holders" ? b.row.h : sort === "return" ? b.row.returnInfo?.sort : sort === "flags" ? Number(b.seed) : b.mos;
+      if (av == null || bv == null) return av == null && bv == null ? (b.row.t.match(/P/g)?.length??0)-(a.row.t.match(/P/g)?.length??0)||a.row.id.localeCompare(b.row.id) : av == null ? 1 : -1;
       return (typeof av === "string" && typeof bv === "string" ? av.localeCompare(bv) : Number(av) - Number(bv)) * direction || a.row.id.localeCompare(b.row.id);
     });
   }, [allEntries, filter, sort, direction, country, gate]);
@@ -134,9 +134,9 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
   return <div className="one-index locks-scroll" data-quality-count={counts[5]} data-buy-count={counts[6]} data-analysed-count={counts[0]}>
     <div className="map-toolbar"><div className="desktop-filters">{filterBar}</div><button className="mobile-filter-button" onClick={()=>setFiltersOpen(true)}>Filters{Object.keys(filter).length?' ●':''}</button><span className="map-count">{displayed.length} companies</span><button className="table-toggle" onClick={()=>setTable(true)}>Table ↗</button>{filter.q&&<button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
     {(countryError||priceError)&&<p role="status" className="map-error">{countryError||priceError}</p>}
-    <div className="map-stage" aria-busy={loading}><CompanyMap entries={displayed} onTable={()=>setTable(true)}/></div>
+    <div className="map-stage" aria-busy={loading}><CompanyMap country={country} entries={displayed} onTable={()=>setTable(true)}/></div>
     <BuffettFunnel gates={population?.gates} analysed={analysed} counts={counts} onlyFailures={onlyFailures} date={population?.asOf} selected={gate} onSelect={gate=>setFilter(current=>({...current,gate:String(gate)}))}/>
-    {table&&<SidePanel title={`${displayed.length} companies`} wide onClose={()=>setTable(false)}><p className="source-line">Prices {dateLabel(dates.at(-1))} · {allEntries.some(e=>e.seed)?'Includes prices derived from market cap / shares':'Latest closes'}. Unverified ratios are held for review.</p><ResultsTable entries={displayed} sort={sort} direction={direction} sortBy={sortBy}/></SidePanel>}
-    {filtersOpen&&<SidePanel title="Filter companies" onClose={()=>setFiltersOpen(false)}><div className="panel-filters">{filterBar}</div></SidePanel>}
+    {table&&<SidePanel title={`${displayed.length} companies`} wide onClose={()=>setTable(false)}><p className="source-line">{dates.length?`Prices ${dateLabel(dates.at(-1))}`:'Comparable prices unavailable'} · {allEntries.some(e=>e.seed)?'est. = derived from market cap / shares':dates.length?'Latest closes':'Ordered by quality passes when prices are missing'}. Unverified ratios are held for review.</p><ResultsTable entries={displayed} sort={sort} direction={direction} sortBy={sortBy}/></SidePanel>}
+    {filtersOpen&&<SidePanel title="Filter companies" onClose={()=>setFiltersOpen(false)}><div className="panel-filters">{filterBar}</div><button className="filter-apply" onClick={()=>setFiltersOpen(false)}>Show {displayed.length} companies →</button></SidePanel>}
   </div>;
 }

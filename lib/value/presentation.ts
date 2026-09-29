@@ -32,7 +32,7 @@ export function returnDisplay({value, years, unlimited = false, financial = fals
   if (value > 1 && !financial) return {label:'> 100% †', note:`Exact return ${(value*100).toFixed(1)}%; a small tangible-capital denominator makes this percentage sensitive`, sort:value};
   return {label:`${financial ? 'ROE ' : ''}${(value*100).toFixed(1)}%`,note:financial ? 'Return on tangible equity, the denominator used by the published model' : 'Median annual return on tangible invested capital',sort:value};
 }
-export const displayName = (name: string) => name.replace(/^The (.+) (?:Company|Co\.?)$/i, "$1").replace(/\s+S\.A\.B\. de C\.V\.?$/i, "").replace(/[\u2010-\u2015\u2212]/g, '-').replace(/Moodys/g, "Moody’s").replace(/ Natl /g, ' National ').replace(/\s+(Company|Co\.?|Inc\.?|Incorporated|Corporation|Corp\.?|Limited|Ltd\.?|plc|S\.?\s?A\.?|AB \(publ\))(?=\s*$| Class [A-Z])/gi, '').replace(/ Class [A-Z]$/,'').replace(/\s+(?:Co\.?|Ltd\.?|Inc\.?)$/i,'');
+export const displayName = (name: string) => name.normalize("NFKC").replace(/^The (.+) (?:Company|Co\.?)$/i, "$1").replace(/\s+S\.A\.B\. de C\.V\.?$/i, "").replace(/[\u2010-\u2015\u2212]/g, '-').replace(/Moodys/g, "Moody’s").replace(/ Natl /g, ' National ').replace(/\s+(Company|Co\.?|Inc\.?|Incorporated|Corporation|Corp\.?|Limited|Ltd\.?|plc|S\.?\s?A\.?|AB \(publ\))(?=\s*$| Class [A-Z])/gi, '').replace(/ Class [A-Z]$/,'').replace(/\s+(?:Co\.?|Ltd\.?|Inc\.?)$/i,'').replace(/[,\s]+$/, '');
 export function testReturn(test: import('./types').TestOutcome, kind: import('./types').Kind) {
  const financial=kind!=='operating', key=financial?'roe':'roic';
  const series=test.series[key]??[];

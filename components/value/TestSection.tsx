@@ -1,3 +1,4 @@
+import { tileMetric, tileReason } from '@/lib/value/tile-metric';
 import { PassingDisclosure } from './PassingDisclosure';
 import { metricLabels, formatMetric } from '@/lib/value/metric-labels';
 import { T } from '@/lib/value/config';
@@ -36,8 +37,10 @@ export function TestSection({ test, currency = '', domain, netIncome, kind = 'op
   if(test.key==='economics'&&kind==='operating'&&test.metrics.oeToNi!=null) summaries.economics=`Five-year cash conversion: ${metric('oeToNi','x')} net income (at least ${T.economics.oeToNi.toFixed(2)}×). Annual observations are shown below`;
   if(test.key==='management'&&lastFiscalYear&&test.metrics.shareCagr!=null) summaries.management=`Diluted shares changed ${metric('shareCagr')} a year, FY${lastFiscalYear-10}–FY${lastFiscalYear}`;
   if(test.key==='management'&&test.result==='pass'&&(test.metrics.shareCagr??0)>T.management.maxShareCagr&&test.metrics.shareCagr5!=null) summaries.management=`The five-year dilution test passes: shares changed ${metric('shareCagr5')} a year${lastFiscalYear?`, FY${lastFiscalYear-5}–FY${lastFiscalYear}`:''}. The ten-year measure is ${metric('shareCagr')}`;
-  const headline = test.pending ? 'We are fetching 10 years of monthly prices; this test updates automatically' : summaries[test.key];
-  return <section id={`test-${test.key}`} data-test={test.key} className="test-section" aria-labelledby={`heading-${test.key}`}>
+  const fixedMetric=tileMetric(test,kind,netIncome);
+  const metricSummary=`${fixedMetric.label}: ${formatMetric({value:fixedMetric.value,format:fixedMetric.format})}; pass ${fixedMetric.better==='higher'?'≥':'≤'} ${formatMetric({value:fixedMetric.threshold,format:fixedMetric.format})}`;
+  const headline = test.pending ? 'We are fetching 10 years of monthly prices; this test updates automatically' : `${metricSummary}. ${tileReason(test)}${test.key==='management'?` ${summaries.management}`:''}`;
+  return <section id={`test-${test.key}`} data-test={test.key} data-metric={fixedMetric.id} className="test-section" aria-labelledby={`heading-${test.key}`}>
     <header><h2 id={`heading-${test.key}`}><StatusGlyph result={test.pending?'checking':test.result} label={`${testLabels[test.key]}: ${verdict}`} />{testLabels[test.key]}</h2><p>{verdict}.{headline ? ` ${humanLabel(headline).replace(/\.$/, '')}.` : ' Review the figures and filing evidence below.'}</p></header>
     {kind !== 'operating' && test.key === 'economics' && <p className="source-line">Book value and ROE drive this valuation. Combined ratio and insurance float history are not reported in this dataset.</p>}
     <PassingDisclosure passing={test.result==='pass'} summary={`${metrics.length} measures · charts & filing evidence`}>

@@ -12,6 +12,6 @@ export default async function ValueLayout({ children }: { children: React.ReactN
   return <main className="value-viz value-page">
     <nav className="value-header"><ValueLink href="/" className="value-brand">GigaInvestors <span>· Value</span></ValueLink><SearchTrigger /><div><a href="https://gigainvestors.com">Portfolios ↗</a><ValueLink href="/method">Method</ValueLink></div></nav>
     {children}
-    <footer className="value-bottom"><span>Independent tests. No blended score.</span><span>Estimates, not guarantees · <ValueLink href="/method">Method & sources</ValueLink></span></footer>
+    <footer className="value-bottom"><span>Six independent tests</span><span>Estimates, not guarantees · <ValueLink href="/method">Method & sources</ValueLink></span></footer>
   </main>;
 }

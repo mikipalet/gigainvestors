@@ -62,7 +62,7 @@ export function formatMetric({ value, format, currency = '' }: { value: number |
   if (format === 'yesno') return value > 0 ? 'Yes' : 'No';
   if (format === 'pct') return `${(value * 100).toFixed(1)}%`;
   if (format === 'pp') return `${(value * 100).toFixed(1)} pp`;
-  if (format === 'x') return `${value.toFixed(2)}×`;
+  if (format === 'x') return `${value.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}×`;
   if (format === 'count' && Math.abs(value)<1000) return value.toLocaleString('en-US',{maximumFractionDigits:0});
   if (format === 'years') return `${value} years`;
   const number = compactMoney(value);

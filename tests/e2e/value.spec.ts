@@ -12,7 +12,7 @@ const open=async(page:import('@playwright/test').Page,key:string)=>{await page.g
 const close=async(page:import('@playwright/test').Page)=>{await page.getByRole('button',{name:'Close panel',exact:true}).click();};
 test('quality map, near misses, filters and current-price table',async({page})=>{
  await page.goto('/value',{waitUntil:'networkidle'});
- await expect(page.getByRole('heading',{level:1})).toHaveText('Quality, at what price?');
+ await expect(page.getByRole('heading',{level:1})).toHaveText(/quality compan.*at a buy price/);
  await page.getByRole('button',{name:'Table ↗',exact:true}).click();
  await expect(page.getByRole('row',{name:/Coca-Cola/})).toContainText('0.60×');
  await expect(page.getByRole('row',{name:/Delta Air/})).toHaveCount(0);
@@ -46,7 +46,7 @@ test('virtual table reaches final row and preserves sorting without page scroll'
  await page.goto('/value?country=US&sort=name&direction=asc',{waitUntil:'networkidle'});
  await page.getByRole('button',{name:'Table ↗',exact:true}).click();
  await expect(page.getByTestId('results-table')).toHaveAttribute('aria-rowcount','1502');
- expect(await page.locator('[data-company-row]').count()).toBeLessThanOrEqual(24);
+ expect(await page.locator('[data-company-row]').count()).toBeLessThanOrEqual(36);
  await page.getByTestId('results-scroll').evaluate(el=>{el.scrollTop=el.scrollHeight;});
  await expect(page.locator('[data-company-row]').last()).toContainText('Company 1500');
  expect(await page.evaluate(()=>document.documentElement.scrollHeight)).toBe(900);

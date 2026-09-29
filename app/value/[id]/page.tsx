@@ -35,7 +35,7 @@ export default async function DossierPage({ params }: Props) {
   const { company } = dossier;
   const investors = dossier.holders.length ? await getIndex() : null;
   return <DossierContent dossier={dossier}>
-    <section className="holders"><h2>Held by {dossier.holders.length} superinvestors</h2>
+    {dossier.holders.length>0&&<section className="holders"><h2>Held by {dossier.holders.length} superinvestors</h2>
       {dossier.holders.length ? <ul className="holder-stack">{dossier.holders.slice(0,5).map((holder) => {
         const investor = investors?.investors.find((item) => item.code === holder.code);
         return <li key={holder.code}><a className="flex items-center gap-3" href={`https://gigainvestors.com/s/${encodeURIComponent(company.code)}`}>
@@ -43,6 +43,6 @@ export default async function DossierPage({ params }: Props) {
         </a></li>;
       })}</ul> : <p className="text-sm text-ink/60">No tracked holders.</p>}
       {dossier.holders.length > 0 && <p>Including {dossier.holders[0].name}</p>}
-    </section>
+    </section>}
   </DossierContent>;
 }

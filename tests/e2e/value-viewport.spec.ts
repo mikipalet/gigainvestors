@@ -5,7 +5,7 @@ test.beforeEach(async({page})=>{await page.route('https://raw.githubusercontent.
  const file=new URL(route.request().url()).pathname.split('/main/')[1];
  try{await route.fulfill({contentType:'application/json',body:await readFile(path.resolve('tests/fixtures/value/store',file),'utf8')});}catch{await route.fulfill({status:404,body:'{}'});}
 });});
-for (const [width,height] of [[390,844],[1280,800],[1440,900],[1920,1080]]) {
+for (const [width,height] of [[390,844],[768,1024],[1280,800],[1440,900],[1920,1080]]) {
  test(`one screen and evidence panels at ${width}`,async({page})=>{
   await page.setViewportSize({width,height});
   for(const path of ['/value','/value/ko.us','/value/nope.us']){

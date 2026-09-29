@@ -218,3 +218,11 @@ export interface StoreMeta {
   versions: { pipeline: string; questions: string };
   tags: Record<string, string>;
 }
+
+/** Search covers the full universe, including companies without an analysis. */
+export type SearchRow = [id: Id, name: string, country: string, status: "a" | "p", marketCapUsd: number | null];
+export interface SearchShard {
+  rows: SearchRow[];
+  /** Normalized listing codes and ISINs mapped to local row offsets. */
+  aliases: Record<string, number[]>;
+}

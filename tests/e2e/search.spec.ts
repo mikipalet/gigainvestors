@@ -1,0 +1,30 @@
+import { expect, test } from "@playwright/test";
+
+test("main search retains shortcuts, ranked results and keyboard navigation", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: "Search", exact: true }).click();
+  const input = page.getByPlaceholder("investor, firm, ticker, company");
+  await expect(input).toBeFocused();
+  await page.keyboard.press("Escape");
+  await page.keyboard.press("/");
+  await expect(input).toBeVisible();
+  await input.fill("AAPL");
+  const hits = input.locator("..").locator("li");
+  await expect(hits.first()).toContainText("AAPL");
+  await input.press("Enter");
+  await expect(page).toHaveURL(/\/s\/AAPL$/);
+  await page.keyboard.press("Meta+k");
+  await expect(input).toBeVisible();
+  await input.fill("berkshire");
+  await expect(hits).toHaveCount(3);
+  await input.press("ArrowDown");
+  await expect(hits.nth(1)).toHaveClass(/bg-ink/);
+  await input.press("ArrowUp");
+  await expect(hits.first()).toHaveClass(/bg-ink/);
+  await input.press("ArrowDown");
+  await input.press("ArrowDown");
+  await expect(hits.nth(2)).toContainText("Warren Buffett");
+  await expect(hits.nth(2)).toHaveClass(/bg-ink/);
+  await input.press("Enter");
+  await expect(page).toHaveURL(/\/BRK$/);
+});

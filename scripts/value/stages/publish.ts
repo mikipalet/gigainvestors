@@ -1,3 +1,4 @@
+import { buildSearchShards } from "../../../lib/value/search";
 import { mergeSeedFiles, readPrices } from "../../../lib/value/price-files";
 import { validCompanyId } from "../../../lib/value/companies";
 import { execFileSync } from "node:child_process";
@@ -123,9 +124,9 @@ export function loadHolders(store: string): { holdersByTicker: Record<string, st
 }
 
 export function writeOutput({ repo, files }: { repo: string; files: Record<string, unknown> }): void {
-  const allowed = /^(?:index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|meta|top)\.json$/;
+  const allowed = /^(?:index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/[a-z0-9]|meta|top)\.json$/;
   for (const file of Object.keys(files)) if (!allowed.test(file)) throw new Error("Invalid publish output path");
-  for (const directory of ["index", "dossiers"]) rmSync(path.join(repo, directory), { recursive: true, force: true });
+  for (const directory of ["index", "dossiers", "search"]) rmSync(path.join(repo, directory), { recursive: true, force: true });
   for (const [file, data] of Object.entries(files)) {
     const destination = path.join(repo, file);
     if (file.startsWith("prices/") && existsSync(destination)) continue;
@@ -144,10 +145,10 @@ export function commitOutput({ repo, asOf }: { repo: string; asOf: string }): bo
   return true;
 }
 
-export function publishSnapshot({ repo, analyses, universeIds, partial, force = false, holdersByTicker, investorNames }: {
+export function publishSnapshot({ repo, analyses, universe, partial, force = false, holdersByTicker, investorNames }: {
   repo: string;
   analyses: Analysis[];
-  universeIds: string[];
+  universe: Company[];
   partial: boolean;
   force?: boolean;
   holdersByTicker: Record<string, string[]>;
@@ -162,7 +163,7 @@ export function publishSnapshot({ repo, analyses, universeIds, partial, force = 
   const merged = new Map<string, Analysis>();
   const directory = path.join(repo, "dossiers");
   if (partial && existsSync(directory)) {
-    const ids = new Set(universeIds);
+    const ids = new Set(universe.map(company => company.id));
     for (const file of readdirSync(directory).filter((file) => /^\d{3}\.json$/.test(file)).sort()) {
       const dossiers: Record<string, Dossier> = JSON.parse(readFileSync(path.join(directory, file), "utf8"));
       for (const dossier of Object.values(dossiers)) if (ids.has(dossier.id)) {
@@ -186,8 +187,11 @@ export function publishSnapshot({ repo, analyses, universeIds, partial, force = 
     }
   }
   mergeSeedFiles(repo);
-  const { files } = buildOutput({ priceHistories, analyses: rows, universe: universeIds.length, holdersByTicker, investorNames, fx: {}, prices: readPrices(path.join(repo, "prices")) });
+  const { files } = buildOutput({ priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx: {}, prices: readPrices(path.join(repo, "prices")) });
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
+  for (const [key, shard] of Object.entries(buildSearchShards(universe, new Set(rows.map(row => row.id))))) {
+    files[`search/${key}.json`] = shard;
+  }
   writeOutput({ repo, files });
   const changed = commitOutput({ repo, asOf });
   return { count: rows.length, changed };
@@ -259,7 +263,7 @@ export default async function publish(options: { only?: string[]; limit?: number
   const holders = loadHolders(path.resolve(__dirname, "../../../data/store"));
   runCalibration();
   await withPublishRepository(async (repo) => {
-    const { count, changed } = publishSnapshot({ repo, analyses, universeIds: companies.map((company) => company.id), partial: Boolean(options.only || options.limit), force: options.force, ...holders });
+    const { count, changed } = publishSnapshot({ repo, analyses, universe: companies, partial: Boolean(options.only || options.limit), force: options.force, ...holders });
     pushRepository(repo, true);
     console.log(`publish: ${count} companies, ${changed ? "replaced data snapshot" : "unchanged snapshot"}`);
   });

@@ -158,9 +158,13 @@ describe("publish repository", () => {
     mkdirSync(path.join(corpusDir(), "prices"), { recursive: true });
     writeFileSync(path.join(corpusDir(), "prices/US.json"), JSON.stringify({ "AXP.US": [50, "2026-09-29", "seed"] }));
     const updated = analysis(); updated.tests.moat.result = "fail";
-    publishSnapshot({ repo, analyses: [updated], universeIds: ["KO.US", "AXP.US"], partial: true, force: true, holdersByTicker: {}, investorNames: {} });
+    publishSnapshot({ repo, analyses: [updated], universe: ["KO.US", "AXP.US", "PENDING.US"].map(id => analysis(id).company), partial: true, force: true, holdersByTicker: {}, investorNames: {} });
     const rows = JSON.parse(readFileSync(path.join(repo, "index/default.json"), "utf8")) as IndexRow[];
     expect(rows.map((row) => [row.id, row.t])).toEqual([["AXP.US", "PPPPP"], ["KO.US", "PFPPP"]]);
+    const search = (key: string) => JSON.parse(readFileSync(path.join(repo, `search/${key}.json`), "utf8"));
+    expect(search("a").rows).toContainEqual(["AXP.US", "AXP.US", "US", "a", 100]);
+    expect(search("p").rows).toContainEqual(["PENDING.US", "PENDING.US", "US", "p", 100]);
+    expect(search("d").rows).toEqual([]);
     const funnel = (JSON.parse(readFileSync(path.join(repo, "meta.json"), "utf8")) as StoreMeta).funnel!;
     expect(funnel.analysed).toBe(2);
     expect(funnel.gates.map(g => g.passing)).toEqual([2, 1, 1, 1, 1, 1]);
@@ -267,7 +271,7 @@ describe("publish rollout safeguards", () => {
     expect(log).toHaveBeenCalledTimes(1);
     expect(log).toHaveBeenCalledWith(expect.stringContaining("BAD.US"));
     const repo = repository();
-    publishSnapshot({ repo, analyses, universeIds: companies.map(row => row.id), partial: false, holdersByTicker: {}, investorNames: {} });
+    publishSnapshot({ repo, analyses, universe: companies, partial: false, holdersByTicker: {}, investorNames: {} });
     expect(JSON.parse(readFileSync(path.join(repo, "meta.json"), "utf8")).counts).toEqual({ universe: 3, analysed: 1, scored: 1, insufficient: 0 });
   });
   it("reports the modal version pair and the count on other versions", () => {
@@ -279,7 +283,7 @@ describe("publish rollout safeguards", () => {
     const previous = Array.from({ length: 10 }, (_, i) => analysis(`${i}.US`));
     writeOutput({ repo, files: output(previous) }); commitOutput({ repo, asOf: "2026-09-29" });
     const before = git(repo, ["rev-parse", "HEAD"]);
-    expect(() => publishSnapshot({ repo, analyses: previous.slice(0, count), universeIds: previous.map(row => row.id), partial: false, holdersByTicker: {}, investorNames: {} })).toThrow(/--force/);
+    expect(() => publishSnapshot({ repo, analyses: previous.slice(0, count), universe: previous.map(row => row.company), partial: false, holdersByTicker: {}, investorNames: {} })).toThrow(/--force/);
     expect(git(repo, ["rev-parse", "HEAD"])).toBe(before);
     expect(git(repo, ["status", "--porcelain"])).toBe("");
   });
@@ -288,13 +292,13 @@ describe("publish rollout safeguards", () => {
     writeOutput({ repo, files: { ...output([analysis()]), "meta.json": { counts: { universe: 60000, analysed: 10, scored: 10, insufficient: 0 } } } });
     commitOutput({ repo, asOf: "2026-09-29" });
     const analyses = Array.from({ length: 8 }, (_, i) => analysis(`${i}.US`));
-    expect(publishSnapshot({ repo, analyses, universeIds: analyses.map(row => row.id), partial: false, holdersByTicker: {}, investorNames: {} }).count).toBe(8);
+    expect(publishSnapshot({ repo, analyses, universe: analyses.map(row => row.company), partial: false, holdersByTicker: {}, investorNames: {} }).count).toBe(8);
   });
   it("guards legacy metadata and allows an explicit forced empty snapshot", () => {
     const repo = repository();
     writeOutput({ repo, files: { ...output([analysis()]), "meta.json": { counts: { universe: 10, scored: 8, insufficient: 2 } } } });
     commitOutput({ repo, asOf: "2026-09-29" });
-    const args = { repo, analyses: [], universeIds: [], partial: false, holdersByTicker: {}, investorNames: {} };
+    const args = { repo, analyses: [], universe: [], partial: false, holdersByTicker: {}, investorNames: {} };
     expect(() => publishSnapshot(args)).toThrow(/--force/);
     expect(publishSnapshot({ ...args, force: true }).count).toBe(0);
     expect(JSON.parse(readFileSync(path.join(repo, "meta.json"), "utf8")).counts.analysed).toBe(0);
@@ -303,13 +307,13 @@ describe("publish rollout safeguards", () => {
     const repo = repository();
     writeOutput({ repo, files: { ...output([analysis()]), "meta.json": { counts: { universe: 10, scored: 8, insufficient: 2 } } } });
     commitOutput({ repo, asOf: "2026-09-29" });
-    const args = { repo, analyses: [analysis()], universeIds: ["KO.US"], partial: false, holdersByTicker: {}, investorNames: {} };
+    const args = { repo, analyses: [analysis()], universe: [analysis().company], partial: false, holdersByTicker: {}, investorNames: {} };
     expect(() => publishSnapshot(args)).toThrow(/--force/);
     expect(publishSnapshot({ ...args, force: true }).count).toBe(1);
   });
   it("rejects an empty first publish", () => {
     const repo = repository();
-    expect(() => publishSnapshot({ repo, analyses: [], universeIds: ["KO.US"], partial: false, holdersByTicker: {}, investorNames: {} })).toThrow(/--force/);
+    expect(() => publishSnapshot({ repo, analyses: [], universe: [analysis().company], partial: false, holdersByTicker: {}, investorNames: {} })).toThrow(/--force/);
     expect(git(repo, ["status", "--porcelain"])).toBe("");
   });
   it("does not release a replacement owner's lock", () => {
@@ -394,7 +398,7 @@ it("joins the corpus monthly history at publish time and preserves it on partial
   const { writeCorpusJson } = await import('@/lib/value/corpus');
   writeCorpusJson('prices-history/KO.US.json',[['2025-01',70]]);
   const repo = repository();
-  const args = {repo,universeIds:['KO.US','AXP.US'],holdersByTicker:{},investorNames:{}};
+  const args = {repo,universe:['KO.US','AXP.US'].map(id => analysis(id).company),holdersByTicker:{},investorNames:{}};
   const row = analysis(); row.series={revenuePerShare:[[2025,10]]};
   publishSnapshot({...args,analyses:[row,analysis('AXP.US')],partial:false});
   const read = () => JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(row.id)}.json`),'utf8'))[row.id];

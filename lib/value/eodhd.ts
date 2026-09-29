@@ -1,4 +1,4 @@
-import { reserveEodhd, syncBudget } from "./budget";
+import { EodhdBudgetError, reserveEodhd, syncBudget } from "./budget";
 import { T } from "./config";
 import { createLimiter, fetchWithRetry } from "./http";
 
@@ -44,7 +44,8 @@ export async function eodhd<T>(path: string, params: Record<string, string> = {}
     let response: Response;
     try {
       response = await fetchWithRetry(url.toString(), { signal: AbortSignal.timeout(T.eodhd.timeoutMs), beforeAttempt: () => reserveEodhd({ endpoint: path.replace(/^\//, ""), monthly: params.period === "m" }) });
-    } catch {
+    } catch (error) {
+      if (error instanceof EodhdBudgetError) throw error;
       throw new Error("EODHD request failed");
     }
     if (!response.ok) throw new Error(`EODHD HTTP ${response.status}`);

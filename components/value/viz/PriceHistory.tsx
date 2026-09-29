@@ -42,7 +42,7 @@ export function PriceHistory({ dossier, domain, date }: { dossier: Dossier; doma
     </ChartInteraction>
     <p className="text-xs text-ink/60">Buy line: {requiredMos * 100}% below each fiscal-year midpoint. The shaded range reflects that year's assumptions.</p>
     <EventNotes events={dossier.events}/><AsOf date={date ?? latest[0]} fy={values.at(-1)?.[0]}/>
-    <DataTable caption="Fiscal-year value ranges" headers={['FY', 'Low', 'Mid', 'High', 'Buy below']} rows={values.map(([fy, low, mid, high]) => [fy, money(low), money(mid), money(high), money(mid*(1-requiredMos))])}/>
-    <DataTable caption="Monthly closing prices" headers={['Month', dossier.company.currency]} rows={prices.map(([month, close]) => [month, close.toFixed(2)])}/>
+    <DataTable summary="Show value data" caption="Fiscal-year value ranges" headers={['FY', 'Low', 'Mid', 'High', 'Buy below']} rows={values.map(([fy, low, mid, high]) => [fy, money(low), money(mid), money(high), money(mid*(1-requiredMos))])}/>
+    <DataTable summary="Show price data" caption="Monthly closing prices" headers={['Month', dossier.company.currency]} rows={prices.map(([month, close]) => [month, close.toFixed(2)])}/>
   </figure>;
 }

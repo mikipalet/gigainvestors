@@ -188,7 +188,7 @@
         ],
         "metrics": {
           "roeMedian": 0.15,
-          "roeWorst3": 0.11,
+          "roeSecondLowest": 0.11,
           "grossMarginDrop": null,
           "capexToRevenue": null
         },

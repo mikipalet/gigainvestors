@@ -1,5 +1,5 @@
 import { loadCompanies } from "../../../lib/value/companies";
-import { mkdirSync, renameSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
 import { T } from "../../../lib/value/config";
@@ -57,6 +57,12 @@ export default async function dedupe(options: { only?: string[]; limit?: number 
   companies.push(...input.filter(company => !grouped.has(company.id)));
   if (!companies.length) throw new Error("Run the universe stage before dedupe");
   writeCorpusJson(`dedupe/universe-${new Date().toISOString().replace(/:/g, '-')}.json`, input);
+  for (const file of readdirSync(corpusPath("dedupe"), { withFileTypes: true })) {
+    const match = /^universe-(\d{4}-\d{2}-\d{2})T(\d{2})-(\d{2})-(\d{2}\.\d{3}Z)\.json$/.exec(file.name);
+    if (!file.isFile() || !match) continue;
+    const timestamp = Date.parse(`${match[1]}T${match[2]}:${match[3]}:${match[4]}`);
+    if (Date.now() - timestamp > T.dedupe.backupRetentionMs) rmSync(corpusPath("dedupe", file.name));
+  }
   companies.sort((a, b) => (b.marketCapUsd ?? -Infinity) - (a.marketCapUsd ?? -Infinity) || a.id.localeCompare(b.id));
   const homes = new Map<string, Company[]>();
   for (const company of companies) {

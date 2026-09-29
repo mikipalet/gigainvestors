@@ -98,20 +98,20 @@ describe("live calibration round 1", () => {
     const result = run(years).moat;
     expect(result.numeric).toBe("pass");
     expect(result.metrics.roicMedian).toBeNull();
-    expect(result.metrics.roicWorst3).toBeNull();
+    expect(result.metrics.roicSecondLowest).toBeNull();
     expect(result.reasons).toContain("tangible capital is negative: returns effectively unlimited");
     expect(result.series.roic.every(([, v]) => v === null)).toBe(true);
   });
   it.each([0, -10])("R7 nonpositive NOPAT %s with negative capital counts as a bad year", operatingIncome => {
     const result = run(makeYears({ overrides: (_, i) => ({ equity: -100, operatingIncome: i >= 9 ? operatingIncome : 125 }) })).moat;
     expect(result.numeric).toBe("fail");
-    expect(result.metrics.roicWorst3).toBe(0);
+    expect(result.metrics.roicSecondLowest).toBe(0);
   });
   it("R7 includes unlimited years in mixed-return order statistics", () => {
     const result = run(makeYears({ n: 10, overrides: (_, i) => ({ equity: i < 6 ? -100 : 500, operatingIncome: i === 9 ? -10 : 125 }) })).moat;
     expect(result.numeric).toBe("pass");
     expect(result.metrics.roicMedian).toBeNull();
-    expect(result.metrics.roicWorst3).toBeCloseTo(0.2);
+    expect(result.metrics.roicSecondLowest).toBeCloseTo(0.2);
   });
   it.each([
     { gp2019: 380, gp2020: 400, gp2023: 367, drop: 0.023, want: "pass" },

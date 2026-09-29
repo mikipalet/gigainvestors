@@ -1,15 +1,7 @@
 import { T } from './config';
 import { readCorpusJson, writeCorpusJson } from './corpus';
 
-/** The extra 500 calls are reserved for FX and operational overhead. */
-export function dailyBudgetSplit({ exchanges, used, historyUsed = 0 }: { exchanges: number; used: number; historyUsed?: number }) {
-  let remaining = Math.max(0, T.budget.dailyCalls - used);
-  const prices = Math.min(exchanges, Math.floor(remaining / T.budget.bulkExchangeCost)) * T.budget.bulkExchangeCost;
-  remaining -= prices;
-  const history = Math.min(remaining, Math.max(0, T.budget.priceHistoryCalls - historyUsed));
-  remaining -= history;
-  return { prices, history, fundamentals: Math.floor(remaining / T.budget.fundamentalsCost) * T.budget.fundamentalsCost };
-}
+export class EodhdBudgetError extends Error {}
 
 export interface Usage { date: string; used: number; history: number; providerUsed?: number; checkedAt?: string }
 export function budgetUsage(): Usage {
@@ -32,10 +24,11 @@ export function reserveEodhd({ endpoint, monthly = false }: { endpoint: string; 
   if (endpoint === 'user') return;
   const usage = budgetUsage();
   const cost = endpoint.startsWith('fundamentals/') ? T.budget.fundamentalsCost
+    : endpoint === 'screener' ? T.budget.screenerCost
     : endpoint.startsWith('eod-bulk-last-day/') ? T.budget.bulkExchangeCost : T.budget.historyCost;
   const ceiling = T.budget.dailyCalls + (endpoint.includes('.FOREX') ? T.budget.extraCalls : 0);
-  if (usage.used + cost > ceiling) throw new Error('Daily EODHD budget reached');
-  if (monthly && usage.history + cost > T.budget.priceHistoryCalls) throw new Error('Daily price-history budget reached');
+  if (usage.used + cost > ceiling) throw new EodhdBudgetError('daily EODHD budget reached; resume after 00:00 UTC');
+  if (monthly && usage.history + cost > T.budget.priceHistoryCalls) throw new EodhdBudgetError('daily price-history budget reached; resume after 00:00 UTC');
   usage.used += cost;
   if (monthly) usage.history += cost;
   writeCorpusJson(`usage/eodhd-${usage.date}.json`, usage);

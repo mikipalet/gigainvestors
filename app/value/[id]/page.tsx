@@ -36,7 +36,7 @@ export default async function DossierPage({ params }: Props) {
   const priceResult = priceTest({ valuation: comparable, price: quote?.[0] ?? null, requiredMos: dossier.requiredMos ?? T.price.requiredMos.stable });
   const price: TestOutcome = {
     key: "price", result: priceResult.result, numeric: priceResult.result,
-    reasons: [quote ? mismatch ?? (valuation ? "Margin of safety compares the latest close with estimated per-share value." : dossier.valuationReason ?? "Not valued") : "No price yet"],
+    reasons: [quote ? mismatch ?? (valuation ? `Margin of safety compares ${quote[2] === "seed" ? "the derived price" : "the latest close"} with estimated per-share value.` : dossier.valuationReason ?? "Not valued") : "No price yet"],
     metrics: quote && comparable ? { marginOfSafety: priceResult.mos } : {}, series: {}, jev: [],
   };
   const tests: TestOutcome[] = [...QUALITY_TESTS.flatMap((key) => key === "price" ? [] : [dossier.tests[key]]), price];

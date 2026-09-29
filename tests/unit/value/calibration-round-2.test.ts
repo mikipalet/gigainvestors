@@ -15,7 +15,7 @@ it.each(["bank", "insurer"] as const)("C2 uses tangible equity for %s returns an
   const result = moat({ years, kind });
   expect(result.numeric).toBe("pass");
   expect(result.metrics.roeMedian).toBeCloseTo(0.19);
-  expect(result.metrics.roeWorst3).toBeCloseTo(0.19);
+  expect(result.metrics.roeSecondLowest).toBeCloseTo(0.19);
   const valuation = valueCompany({ years, kind, bondYield: 0.04, cyclical: false }).valuation!;
   expect(valuation.normalized).toBe(50);
   expect(valuation.perShare.mid).toBeCloseTo(95);

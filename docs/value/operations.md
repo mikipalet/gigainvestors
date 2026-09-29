@@ -17,16 +17,16 @@ bash scripts/value/run-daily.sh --once
 The runner loads `.env.local` with dotenv, respecting existing environment variables.
 `VALUE_CORPUS_DIR` defaults to `~/value-corpus`. Stage logs append to
 `logs/YYYY-MM-DD-STAGE.log`. A corpus-level `daily-runner.lock` prevents duplicate
-runners. After an unclean shutdown, check the saved PID before removing a stale
-lock. Do not run competing paid stages against the same corpus concurrently.
+runners. After an unclean shutdown, the runner reclaims a lock only when its saved PID
+is dead; live or unverifiable owners are left in place. Do not run competing paid stages against the same corpus concurrently.
 
 Order: prices, price-history, fundamentals, renormalize, dedupe, price-seed,
 reports, analyze, publish, status. Failures are logged and subsequent stages still
 run. Publish is skipped when analyze exits unsuccessfully; its own calibration
 and count-drop checks also remain in force. Dedupe uses the existing universe
-issuer rules, keeps an input backup under `dedupe/`, and never deletes cached data.
+issuer rules, keeps input backups under `dedupe/` for seven days, and never deletes cached company data.
 
-`T.budget` allocates 100,000 calls: bulk quotes cost 100 per exchange; monthly
+`T.budget` allocates 100,000 calls: bulk quotes cost 100 per exchange and screener requests cost 5; monthly
 history is capped at 15,000 calls per UTC day and only covers companies with
 fundamentals, never-fetched first. Fundamentals use the actual remaining budget
 at 10 calls each, never-fetched then oldest-fetched. The extra 500 calls are

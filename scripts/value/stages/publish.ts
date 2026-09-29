@@ -1,4 +1,4 @@
-import { mergeSeedFiles } from "../../../lib/value/price-files";
+import { mergeSeedFiles, readPrices } from "../../../lib/value/price-files";
 import { validCompanyId } from "../../../lib/value/companies";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from "node:fs";
@@ -7,7 +7,7 @@ import { randomUUID } from "node:crypto";
 import { T } from "../../../lib/value/config";
 import { buildOutput } from "../../../lib/value/build-output";
 import { corpusPath, readCorpusJson, readJsonl } from "../../../lib/value/corpus";
-import type { Analysis, Company, Dossier, PriceMap, PriceHistory } from "../../../lib/value/types";
+import type { Analysis, Company, Dossier, PriceHistory } from "../../../lib/value/types";
 import { readPriceHistory } from "../../../lib/value/price-history";
 import type { Index, StockShard } from "../../../lib/types";
 
@@ -129,13 +129,6 @@ export function commitOutput({ repo, asOf }: { repo: string; asOf: string }): bo
   return true;
 }
 
-export function readPriceFiles(repo: string): PriceMap {
-  const directory = path.join(repo, "prices");
-  if (!existsSync(directory)) return {};
-  return Object.assign({}, ...readdirSync(directory).filter((file) => /^[A-Z]{2}\.json$/.test(file)).sort()
-    .map((file) => JSON.parse(readFileSync(path.join(directory, file), "utf8")) as PriceMap));
-}
-
 export function publishSnapshot({ repo, analyses, universeIds, partial, force = false, holdersByTicker, investorNames }: {
   repo: string;
   analyses: Analysis[];
@@ -178,7 +171,7 @@ export function publishSnapshot({ repo, analyses, universeIds, partial, force = 
     }
   }
   mergeSeedFiles(repo);
-  const { files } = buildOutput({ priceHistories, analyses: rows, universe: universeIds.length, holdersByTicker, investorNames, fx: {}, prices: readPriceFiles(repo) });
+  const { files } = buildOutput({ priceHistories, analyses: rows, universe: universeIds.length, holdersByTicker, investorNames, fx: {}, prices: readPrices(path.join(repo, "prices")) });
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
   writeOutput({ repo, files });
   const changed = commitOutput({ repo, asOf });

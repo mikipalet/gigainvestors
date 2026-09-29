@@ -1,5 +1,5 @@
 import { mkdirSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
-import { homedir } from "node:os";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { beforeEach, afterEach, expect, it, vi } from "vitest";
 import { appendJsonl, corpusPath, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
@@ -8,8 +8,7 @@ import type { Company } from "../../../lib/value/types";
 
 let directory: string;
 beforeEach(() => {
-  mkdirSync(join(homedir(), "value-corpus"), { recursive: true });
-  directory = mkdtempSync(join(homedir(), "value-corpus/dedupe-test-"));
+  directory = mkdtempSync(join(tmpdir(), "dedupe-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", directory);
   vi.stubGlobal("fetch", () => { throw new Error("dedupe must stay offline"); });
   vi.spyOn(console, "log").mockImplementation(() => {});
@@ -88,4 +87,15 @@ it("recognizes a genuine Swiss home despite the venue's secondary-listing policy
   appendJsonl("universe.jsonl", company("EX.SW", "Example", "CH0000000001"));
   for (const id of ["EX.US", "EX.SW"]) financials(id);
   await stage(); expect(readJsonl<Company>("universe.jsonl").map(row => row.id)).toEqual(["EX.SW"]);
+});
+it('prunes only dedupe backups older than seven days and keeps the current backup', async () => {
+  pair();
+  const { readdirSync } = await import('node:fs');
+  const now = new Date('2026-09-29T12:00:00Z');
+  vi.useFakeTimers(); vi.setSystemTime(now);
+  try {
+    for (const name of ['universe-2026-09-22T11-59-59.000Z.json', 'universe-2026-09-22T12-00-00.000Z.json', 'universe-2026-09-28T12-00-00.000Z.json', 'keep.json']) writeCorpusJson(`dedupe/${name}`, []);
+    await stage();
+    expect(readdirSync(corpusPath('dedupe')).sort()).toEqual(['keep.json', 'universe-2026-09-22T12-00-00.000Z.json', 'universe-2026-09-28T12-00-00.000Z.json', 'universe-2026-09-29T12-00-00.000Z.json']);
+  } finally { vi.useRealTimers(); }
 });

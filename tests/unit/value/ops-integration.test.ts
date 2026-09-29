@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, utimesSync, writeFileSync } from 'node:fs';
-import { homedir } from 'node:os';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { appendJsonl, corpusPath, readCorpusJson, writeCorpusJson } from '@/lib/value/corpus';
@@ -17,7 +17,7 @@ import type { Company } from '@/lib/value/types';
 let root: string;
 const company = (id: string): Company => ({ id, code: id.split('.')[0], exchange: id.split('.')[1], name: id, country: 'US', currency: 'USD', listings: [id], kind: 'operating', source: 'eodhd', isin: null, cik: null, lei: null, edinetCode: null, sector: null, industry: null, marketCapUsd: null, description: null });
 beforeEach(() => {
-  const base = path.join(homedir(), 'value-corpus'); mkdirSync(base, { recursive: true });
+  const base = tmpdir();
   root = mkdtempSync(path.join(base, 'ops-test-'));
   vi.stubEnv('VALUE_CORPUS_DIR', root); vi.stubEnv('EODHD_API_KEY', 'fixture');
   vi.stubGlobal('fetch', () => { throw new Error('Unexpected network'); });
@@ -107,4 +107,29 @@ it('fetches never-seen history before stale history and observes persisted daily
   const second = history({ force: true }); await Promise.all([second, vi.runAllTimersAsync()]);
   expect(requests).toEqual(['/api/eod/NEW.US']);
   expect(readCorpusJson('prices-history/OLD.US.json')).toEqual({ fetchedAt: '2020-01-01', prices: [['2019-01', 1]] });
+});
+it('charges five calls for each screener attempt', () => {
+  reserveEodhd({ endpoint: 'screener' });
+  expect(budgetUsage().used).toBe(5);
+});
+it('preserves a clear budget error without attempting a request', async () => {
+  syncBudget(100000);
+  const fetch = vi.fn(); vi.stubGlobal('fetch', fetch);
+  await expect(eodhd('fundamentals/KO.US')).rejects.toThrow('daily EODHD budget reached');
+  expect(fetch).not.toHaveBeenCalled();
+});
+it.each(['live', 'dead'])('runner checks %s owner PID before acquiring the lock', owner => {
+  const lock = path.join(root, 'daily-runner.lock'); mkdirSync(lock);
+  const deadPid = execFileSync('bash', ['-c', 'echo $$'], { encoding: 'utf8' }).trim();
+  writeFileSync(path.join(lock, 'pid'), owner === 'live' ? String(process.pid) : deadPid);
+  const bin = path.join(root, 'bin'); mkdirSync(bin);
+  writeFileSync(path.join(bin, 'node'), `#!/usr/bin/env bash\nif [[ "$1" == "-e" ]]; then echo "$VALUE_CORPUS_DIR"; exit 0; fi\necho "$4" >> "$VALUE_CORPUS_DIR/stages"\n`, { mode: 0o755 });
+  const run = () => execFileSync('bash', ['scripts/value/run-daily.sh', '--once'], { env: { ...process.env, PATH: `${bin}:${process.env.PATH}` }, stdio: 'pipe' });
+  if (owner === 'live') {
+    expect(run).toThrow();
+    expect(readFileSync(path.join(lock, 'pid'), 'utf8')).toBe(String(process.pid));
+  } else {
+    run();
+    expect(readFileSync(path.join(root, 'stages'), 'utf8')).toContain('status');
+  }
 });

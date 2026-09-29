@@ -9,11 +9,26 @@ export VALUE_CORPUS_DIR
 mkdir -p "$VALUE_CORPUS_DIR/logs" || exit 1
 lock="$VALUE_CORPUS_DIR/daily-runner.lock"
 if ! mkdir "$lock" 2>/dev/null; then
-  echo "Daily runner lock exists: $lock (check its pid before removing a stale lock)" >&2
-  exit 1
+  owner=$(cat "$lock/pid" 2>/dev/null || true)
+  if [[ ! "$owner" =~ ^[1-9][0-9]*$ ]] || kill -0 "$owner" 2>/dev/null || ps -p "$owner" >/dev/null 2>&1; then
+    echo "Daily runner lock exists: $lock (owner $owner is live or cannot be verified)" >&2
+    exit 1
+  fi
+  # One reaper at a time; never recursively delete a lock another runner acquired.
+  if ! mkdir "$lock/reaping" 2>/dev/null; then
+    echo "Daily runner lock is being recovered: $lock" >&2
+    exit 1
+  fi
+  if [[ "$(cat "$lock/pid" 2>/dev/null)" != "$owner" ]]; then
+    rmdir "$lock/reaping"
+    exit 1
+  fi
+  rm -f "$lock/pid"
+  rmdir "$lock/reaping" && rmdir "$lock" && mkdir "$lock" || exit 1
+  echo "Recovered daily runner lock from dead PID $owner"
 fi
 echo "$$" > "$lock/pid"
-trap 'rm -f "$lock/pid"; rmdir "$lock"' EXIT
+trap 'if [[ "$(cat "$lock/pid" 2>/dev/null)" == "$$" ]]; then rm -f "$lock/pid"; rmdir "$lock"; fi' EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
 run_stage() {

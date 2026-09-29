@@ -38,3 +38,9 @@ it('does not label newer monthly prices as a new fiscal year', async () => {
   expect(html).toContain('last fiscal year FY2025');
   expect(html).not.toContain('last fiscal year FY2026');
 });
+
+it('labels a seeded price with its market-cap derivation and date', async () => {
+  vi.mocked(getPrice).mockResolvedValue([6, '2026-09-28', 'seed']);
+  const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
+  expect(html).toContain('price derived from market cap on 2026-09-28');
+});

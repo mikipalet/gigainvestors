@@ -263,3 +263,19 @@ test('large indexes use canvas and retain navigable links with virtual rows', as
   await expect(page.getByRole('group', { name: 'Quality companies by margin of safety', exact: true }).getByRole('link')).toHaveCount(1501);
   await expect(page.locator('[data-company-row]')).toHaveCount(50);
 });
+
+test('seeded index prices and current moat rules have explicit labels', async ({ page }) => {
+  const prices = JSON.parse(await readFile(path.join(root, 'prices/US.json'), 'utf8'));
+  prices['KO.US'] = [prices['KO.US'][0], '2026-09-28', 'seed'];
+  await page.route('**/main/prices/US.json', route => route.fulfill({ json: prices }));
+  await page.goto('/value');
+  await expect(page.getByRole('row', { name: /Coca-Cola/ })).toContainText('price derived from market cap on 2026-09-28');
+  await page.goto('/value/ko.us');
+  await expect(page.locator('[data-test="moat"]')).toContainText('Gross margin decline, FY2023 vs mean(FY2019, FY2020)');
+  await expect(page.locator('[data-test="moat"]')).toContainText('At most 4.0 pp');
+  const history = page.getByTestId('price-history');
+  await history.getByText('Show value data', { exact: true }).click();
+  await expect(history.getByRole('table', { name: 'Fiscal-year value ranges' })).toBeVisible();
+  await history.getByText('Show price data', { exact: true }).click();
+  await expect(history.getByRole('table', { name: 'Monthly closing prices' })).toBeVisible();
+});

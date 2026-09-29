@@ -6,7 +6,7 @@ import type { PriceMap } from './types';
 
 export function readPrices(directory: string): PriceMap {
   if (!existsSync(directory)) return {};
-  return Object.assign({}, ...readdirSync(directory).filter(file => /^[A-Z]{2}\.json$/.test(file))
+  return Object.assign({}, ...readdirSync(directory).filter(file => /^[A-Z]{2}\.json$/.test(file)).sort()
     .map(file => JSON.parse(readFileSync(path.join(directory, file), 'utf8')) as PriceMap));
 }
 /** Bring local seeds into the fetched data repo without replacing any real close. */

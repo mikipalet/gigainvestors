@@ -198,7 +198,7 @@ export type RawAnswer =
 
 export interface StoreMeta {
   asOf: string;
-  counts: { universe: number; scored: number; insufficient: number };
+  counts: { universe: number; analysed?: number; scored: number; insufficient: number };
   versions: { pipeline: string; questions: string };
   tags: Record<string, string>;
 }

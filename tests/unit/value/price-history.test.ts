@@ -1,5 +1,5 @@
 import { mkdirSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
-import { homedir } from "node:os";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import eod from "../../fixtures/value/history/eodhd-KO.json";
@@ -12,7 +12,7 @@ import priceHistory from "@/scripts/value/stages/price-history";
 let root: string;
 const company = (id: string): Company => ({ id, code: id.split('.')[0], name: id, listings: [id], exchange: id.split('.')[1], country: 'US', currency: 'USD', kind: 'operating', source: 'eodhd', cik: null, isin: null, lei: null, edinetCode: null, sector: null, industry: null, marketCapUsd: null, description: null });
 beforeEach(() => {
-  const base = join(homedir(), 'value-corpus'); mkdirSync(base, { recursive: true });
+  const base = tmpdir();
   root = mkdtempSync(join(base, 'history-test-')); vi.stubEnv('VALUE_CORPUS_DIR', root); vi.stubEnv('EODHD_API_KEY', 'fixture');
   vi.useFakeTimers(); vi.setSystemTime(new Date('2026-09-29T12:00:00Z'));
   vi.stubGlobal('fetch', () => { throw Error('Unexpected network'); });

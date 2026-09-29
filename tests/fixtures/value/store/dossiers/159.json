@@ -189,7 +189,7 @@
         ],
         "metrics": {
           "roicMedian": 0.245,
-          "roicWorst3": 0.21,
+          "roicSecondLowest": 0.21,
           "grossMarginDrop": 0.012,
           "capexToRevenue": 0.041
         },

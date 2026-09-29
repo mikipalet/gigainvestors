@@ -1,3 +1,4 @@
+import { CompanyFailures } from "../company-failures";
 import { T } from "../../../lib/value/config";
 import { pool } from "../../../lib/value/http";
 import { createHash, randomUUID } from "node:crypto";
@@ -15,7 +16,9 @@ const esefCountries = new Set("AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV L
 export default async function reports({ only, limit, force = false }: {
   only?: string[]; limit?: number; force?: boolean;
 }): Promise<void> {
-  const companies = loadCompanies({ only, limit });
+  const failures = new CompanyFailures();
+  const loadErrors = new Map<string, unknown>();
+  const companies = loadCompanies({ only, limit, onError: (company, error) => loadErrors.set(company.id, error) });
   const esefById = new Map<string, Awaited<ReturnType<typeof latestEsef>>>();
   const candidates = companies.filter(company => company.lei && esefCountries.has(company.country));
   const candidateIds = new Set(candidates.map(company => company.id));
@@ -49,36 +52,58 @@ export default async function reports({ only, limit, force = false }: {
     } else if (company.description) {
       sections.business = truncateTokens(company.description, SECTION_TOKENS.business);
     }
-    const keys = Object.keys(sections) as SectionKey[];
-    mkdirSync(corpusPath(directory), { recursive: true });
-    for (const key of keys) {
-      const destination = corpusPath(directory, `${key}.txt`);
-      const temporary = `${destination}.${randomUUID()}.tmp`;
+    saveReport({
+      id: company.id, kind: esef ? "ESEF" : annual?.form ?? "description", url: esef?.url ?? annual?.url ?? null,
+      filed: esef?.filed ?? annual?.filed ?? null, period: esef?.period ?? annual?.period ?? null,
+    }, sections, prior);
+    writeCorpusJson(`${directory}/fingerprint.json`, fingerprint);
+  }
+  async function safely(company: typeof companies[number], run: () => Promise<void>): Promise<void> {
+    try {
+      if (loadErrors.has(company.id)) throw loadErrors.get(company.id);
+      await run();
+    } catch (error) {
+      failures.record(company.id, error);
       try {
-        writeFileSync(temporary, sections[key]!, { flag: "wx" });
-        renameSync(temporary, destination);
-      } finally {
-        rmSync(temporary, { force: true });
+        // Never cache a failure: the next run must retry the filing.
+        rmSync(corpusPath(`reports/${company.id}/fingerprint.json`), { force: true });
+        const sections = company.description
+          ? { business: truncateTokens(company.description, SECTION_TOKENS.business) } : {};
+        saveReport({ id: company.id, kind: "description", url: null, filed: null, period: null }, sections);
+      } catch (fallbackError) {
+        failures.record(company.id, fallbackError);
       }
     }
-    for (const key of prior?.sections ?? []) {
-      if (!keys.includes(key)) rmSync(corpusPath(directory, `${key}.txt`), { force: true });
-    }
-    const meta: ReportMeta = {
-      id: company.id, kind: esef ? "ESEF" : annual?.form ?? "description", url: esef?.url ?? annual?.url ?? null,
-      filed: esef?.filed ?? annual?.filed ?? null, period: esef?.period ?? annual?.period ?? null, sections: keys,
-    };
-    writeCorpusJson(`${directory}/meta.json`, meta);
-    writeCorpusJson(`${directory}/fingerprint.json`, fingerprint);
   }
   // ESEF lookups and reports share three workers; SEC fallbacks join its six-worker pool.
   await Promise.all([
-    pool({ items: companies.filter(company => !candidateIds.has(company.id)), concurrency: T.reports.secConcurrency, run: processCompany }),
-    pool({ items: candidates, concurrency: T.reports.esefConcurrency, run: async company => {
+    pool({ items: companies.filter(company => !candidateIds.has(company.id)), concurrency: T.reports.secConcurrency, run: company => safely(company, () => processCompany(company)) }),
+    pool({ items: candidates, concurrency: T.reports.esefConcurrency, run: company => safely(company, async () => {
       const esef = await latestEsef(company.lei!);
       if (esef) { esefById.set(company.id, esef); await processCompany(company); }
       else fallback.push(company);
-    } }),
+    }) }),
   ]);
-  await pool({ items: fallback, concurrency: T.reports.secConcurrency, run: processCompany });
+  await pool({ items: fallback, concurrency: T.reports.secConcurrency, run: company => safely(company, () => processCompany(company)) });
+  failures.finish("reports", companies.length);
+}
+
+function saveReport(meta: Omit<ReportMeta, "sections">, sections: Partial<Record<SectionKey, string>>, prior?: ReportMeta | null): void {
+  const directory = `reports/${meta.id}`;
+  const keys = Object.keys(sections) as SectionKey[];
+  mkdirSync(corpusPath(directory), { recursive: true });
+  for (const key of keys) {
+    const destination = corpusPath(directory, `${key}.txt`);
+    const temporary = `${destination}.${randomUUID()}.tmp`;
+    try {
+      writeFileSync(temporary, sections[key]!, { flag: "wx" });
+      renameSync(temporary, destination);
+    } finally {
+      rmSync(temporary, { force: true });
+    }
+  }
+  for (const key of prior?.sections ?? ["letter", "business", "risk", "mdna", "compensation", "notes", "auditor"]) {
+    if (!keys.includes(key)) rmSync(corpusPath(directory, `${key}.txt`), { force: true });
+  }
+  writeCorpusJson(`${directory}/meta.json`, { ...meta, sections: keys });
 }

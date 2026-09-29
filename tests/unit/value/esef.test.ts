@@ -241,3 +241,53 @@ it("spaces metadata and report fetches through the same three-per-second limiter
     vi.useRealTimers();
   }
 });
+
+it.each([5, 4])('isolates incomplete ESEF metadata and applies the failure threshold across %i companies', async (count) => {
+  const rows = [company, ...Array.from({ length: count - 1 }, (_, i) => ({ ...company,
+    id: `GOOD${i}.HK`, listings: [`GOOD${i}.HK`], country: 'HK', cik: null, lei: null }))];
+  const root = setupCorpus(rows);
+  const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+  const log = vi.spyOn(console, 'log').mockImplementation(() => {});
+  vi.stubGlobal('fetch', async () => Response.json({ data: [{ attributes: { report_url: '/broken.xhtml' } }] }));
+  try {
+    const work = reports({});
+    if (count === 5) await expect(work).resolves.toBeUndefined();
+    else await expect(work).rejects.toThrow(/more than 20%/);
+    for (const row of rows) {
+      expect(JSON.parse(readFileSync(path.join(root, `reports/${row.id}/meta.json`), 'utf8'))).toMatchObject({ kind: 'description', sections: ['business'] });
+      expect(readFileSync(path.join(root, `reports/${row.id}/business.txt`), 'utf8')).toBe('Lithography systems.');
+    }
+    expect(error).toHaveBeenCalledWith('ASML.AS: Incomplete ESEF filing metadata');
+    expect(log).toHaveBeenCalledWith(expect.stringContaining(`1/${count} companies failed`));
+    expect(existsSync(path.join(root, 'reports/ASML.AS/fingerprint.json'))).toBe(false);
+    // A transient failure must remain retryable, even when a prior fingerprint exists.
+    vi.stubGlobal('fetch', async (input: string) => input.includes('/api/filings?')
+      ? Response.json(filing) : new Response(section('Our business', body('Recovered filing. '))));
+    await reports({});
+    expect(JSON.parse(readFileSync(path.join(root, 'reports/ASML.AS/meta.json'), 'utf8')).kind).toBe('ESEF');
+  } finally { error.mockRestore(); log.mockRestore(); }
+});
+
+it.each(['SEC metadata', 'SEC report', 'ESEF report', 'cached metadata'])('falls back and clears stale sections after a %s failure', async (failure) => {
+  const { writeCorpusJson, corpusPath } = await import('@/lib/value/corpus');
+  const row = { ...company, lei: failure === 'ESEF report' ? company.lei : null };
+  const root = setupCorpus([row]);
+  writeCorpusJson('reports/ASML.AS/meta.json', { sections: ['risk'] });
+  writeCorpusJson('reports/ASML.AS/fingerprint.json', 'old fingerprint');
+  writeFileSync(corpusPath('reports/ASML.AS/risk.txt'), 'stale risk');
+  if (failure === 'cached metadata') writeFileSync(corpusPath('reports/ASML.AS/meta.json'), '{broken');
+  const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+  vi.stubGlobal('fetch', async (input: string) => {
+    if (input.includes('/api/filings?')) return Response.json(filing);
+    if (input.includes('/submissions/')) return failure === 'SEC metadata' ? new Response('{broken')
+      : Response.json({ filings: { recent: { form: ['10-K'], accessionNumber: ['001-1'], primaryDocument: ['annual.htm'], filingDate: ['2026-01-01'], reportDate: ['2025-12-31'] } } });
+    return new Response('', { status: 403 });
+  });
+  try {
+    await expect(reports({})).rejects.toThrow(/more than 20%/);
+    expect(JSON.parse(readFileSync(path.join(root, 'reports/ASML.AS/meta.json'), 'utf8'))).toMatchObject({ kind: 'description', sections: ['business'] });
+    expect(readFileSync(path.join(root, 'reports/ASML.AS/business.txt'), 'utf8')).toBe(company.description);
+    expect(existsSync(corpusPath('reports/ASML.AS/risk.txt'))).toBe(false);
+    expect(existsSync(corpusPath('reports/ASML.AS/fingerprint.json'))).toBe(false);
+  } finally { error.mockRestore(); }
+});

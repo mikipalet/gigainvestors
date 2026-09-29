@@ -8,14 +8,22 @@ export function validCompanyId(id: unknown, stage: string): id is string {
   return false;
 }
 
-export function loadCompanies({ only, limit }: { only?: string[]; limit?: number }): Company[] {
+export function loadCompanies({ only, limit, onError }: {
+  only?: string[]; limit?: number; onError?: (company: Company, error: unknown) => void;
+}): Company[] {
   return readJsonl<Company>("universe.jsonl")
     .filter((company) => !only || only.includes(company.id))
     .filter(company => validCompanyId(company.id, "companies")).slice(0, limit)
     .map((company) => {
-      const enriched = readCorpusJson<Partial<Company>>(`companies/${company.id}.json`);
-      // Missing and null enrichment must not erase known universe values.
-      const overlay = Object.fromEntries(Object.entries(enriched ?? {}).filter(([, value]) => value != null));
-      return { ...company, ...overlay, id: company.id };
+      try {
+        const enriched = readCorpusJson<Partial<Company>>(`companies/${company.id}.json`);
+        // Missing and null enrichment must not erase known universe values.
+        const overlay = Object.fromEntries(Object.entries(enriched ?? {}).filter(([, value]) => value != null));
+        return { ...company, ...overlay, id: company.id };
+      } catch (error) {
+        if (!onError) throw error;
+        onError(company, error);
+        return company;
+      }
     });
 }

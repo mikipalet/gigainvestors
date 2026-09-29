@@ -1,0 +1,11 @@
+{
+  "recordedAt": "2026-09-29T11:17:40.411Z",
+  "eodhd": {
+    "url": "https://eodhd.com/api/eod-bulk-last-day/US?fmt=json&symbols=KO,BRK-B",
+    "status": 200
+  },
+  "stooq": {
+    "url": "https://stooq.com/q/d/l/?s=8058.jp&i=d&d1=20260925&d2=20260929",
+    "status": 403
+  }
+}

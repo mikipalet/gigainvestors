@@ -89,7 +89,7 @@ Budget: ~60k companies × ~15k tokens ≈ 1B tokens ≈ $42 per full run (input 
 - `/` index: default view = passes all five quality tests, sorted by margin of safety. Sortable table; filters for country, sector, held by superinvestors, per-test pass/fail, Jev tags; toggle "near misses" (fail exactly one test). Client-side over the sharded index.
 - `/[id]` dossier: verdict line (value range vs price, margin of safety, six test chips); the six tests each with result, 10-20 year sparklines (ROIC, gross margin across 2020-2023, share count, owner earnings, $1 test) and Jev answers with probability and evidence; the owner-earnings bridge with assumptions; superinvestor holders linking to `gigainvestors.com/{ticker}`.
 - Rendering: the top ~2,000 by market cap prerendered via `generateStaticParams`; the rest render on first request and are cached with `"use cache"` + `cacheLife("days")`, tagged `value:{id}` and `value:index`; `POST /api/value/revalidate` (secret) is called by publish.
-- House style follows the existing site (paper, Inter, ink bars); both light and dark.
+- Same design system as the main site: tokens from `app/globals.css` (paper, ink, buy, sell, Inter tabular numbers), paper only like the rest of the site (no dark mode), reuse `Sparkline`, `StackedBars`, `Search`, `PageFooter`, `Face`. New pieces (sortable table, filter chips, test chips, valuation bridge) are built from the same tokens and hairlines; pass = buy green, fail = sell red, unclear = low-contrast ink.
 
 ## Testing
 

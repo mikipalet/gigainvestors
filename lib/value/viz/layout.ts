@@ -18,7 +18,7 @@ export function niceTicks([lo, hi]: [number, number], count = 4): number[] {
   const start = Math.floor(lo / step), end = Math.ceil(hi / step);
   return Array.from({ length: end - start + 1 }, (_, i) => Number(((start + i) * step).toPrecision(12)));
 }
-export const compactMoney = (value: number, currency = '') => `${currency} ${new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 }).format(value)}`.trim();
+export { compactMoney } from '@/lib/format';
 export function seriesPath({ series, x, y }: { series: Series; x: (v: number) => number; y: (v: number) => number }) {
   let previous: number | null = null;
   return series.map(([fy, value]) => {

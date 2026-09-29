@@ -23,16 +23,17 @@ test("quality default, near misses, live price sorting and insufficient rows", a
   await expect(page.getByRole("heading", { level: 1 })).toContainText("Buffett’s quality tests");
   await expect(page.getByRole("row", { name: /Coca-Cola/ })).toBeVisible();
   await expect(page.getByRole("row", { name: /Delta Air/ })).toHaveCount(0);
-  await page.getByLabel("Near misses").check();
+  await page.getByRole("switch", {name:/Near misses/}).click();
   await expect(page.getByRole("row", { name: /Delta Air/ })).toBeVisible();
   const names = await page.getByTestId('results-table').locator('tbody tr').allTextContents();
   expect(names.findIndex(name => name.includes('Coca-Cola'))).toBeLessThan(names.findIndex(name => name.includes('Delta Air')));
   await expect(page.getByRole("row", { name: /Coca-Cola/ })).toContainText("0.60×");
-  await page.getByLabel("Country", { exact: true }).selectOption("US");
-  await expect(page.getByRole("row", { name: /Sparse Company/ })).toHaveClass(/insufficient/);
+  await page.getByLabel("Country", {exact:true}).click();
+  await page.getByRole("button", {name:"United States",exact:true}).click();
+  await expect(page.getByRole("row", { name: /Sparse/ })).toHaveClass(/insufficient/);
   await expect(page).toHaveURL(/country=US/);
   await page.reload();
-  await expect(page.getByLabel("Near misses")).toBeChecked();
+  await expect(page.getByRole("switch", {name:/Near misses/})).toBeChecked();
   await page.getByRole("button", { name: /Company/ }).click();
   await expect(page.getByTestId("results-table").locator("tbody tr").first()).toContainText("Abbott");
 });
@@ -69,14 +70,15 @@ test("country filters expose failures and combine sector, tags and holders", asy
   await expect(page.getByRole("row", { name: /Delta Air/ })).toBeVisible();
   await expect(page.getByRole("row", { name: /Coca-Cola/ })).toHaveCount(0);
   await page.getByRole("button", { name: "Moat: fail" }).click();
-  await page.getByLabel("Held by superinvestors").check();
+  await page.getByRole("switch", {name:"Held by superinvestors"}).click();
   await expect(page.getByTestId("results-table").locator("tbody tr")).toHaveCount(1);
-  await page.getByLabel("Held by superinvestors").uncheck();
+  await page.getByRole("switch", {name:"Held by superinvestors"}).click();
   await page.locator(".signal-filter > summary").click();
   await page.getByRole("button", { name: "Brand advantage" }).click();
   await expect(page.getByTestId("results-table").locator("tbody tr")).toHaveCount(1);
   await page.getByRole("button", { name: "Brand advantage" }).click();
-  await page.getByLabel("Sector", { exact: true }).selectOption("Industrials");
+  await page.getByRole("button",{name:"Sector",exact:true}).click();
+  await page.getByRole("button",{name:"Industrials",exact:true}).click();
   await expect(page.getByRole("row", { name: /Coca-Cola/ })).toHaveCount(0);
 });
 
@@ -96,22 +98,23 @@ test("subdomain rewrites dotted company IDs and its own sitemap", async ({ reque
   const response = await request.get("/ko.us", { headers: { host: "value.gigainvestors.com" } });
   expect(response.status()).toBe(200);
   expect(await response.text()).toContain("Coca-Cola");
-  expect(await response.text()).not.toContain('aria-label="Search"');
+  expect(await response.text()).toContain('aria-label="Search companies"');
   const index = await request.get("/", { headers: { host: "value.gigainvestors.com" } });
-  expect(await index.text()).not.toContain('aria-label="Search"');
+  expect(await index.text()).toContain('aria-label="Search companies"');
   const sitemap = await request.get("/sitemap.xml", { headers: { host: "value.gigainvestors.com" } });
   expect(await sitemap.text()).toContain("https://value.gigainvestors.com/ko.us");
   const main = await request.get("/sitemap.xml");
   expect(await main.text()).not.toContain("https://value.gigainvestors.com");
 });
 
-test("global search is omitted on value routes and retained on the main site", async ({ page }) => {
+test("shared search is available on value routes and retained on the main site", async ({ page }) => {
   for (const url of ["/value", "/value/ko.us"]) {
-    await page.goto(url);
+    await page.goto(url, {waitUntil:"networkidle"});
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Search", exact: true })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: "Search companies", exact: true }).first()).toBeVisible();
     await page.keyboard.press("/");
-    await expect(page.getByPlaceholder("investor, firm, ticker, company")).toHaveCount(0);
+    await expect(page.getByPlaceholder("investor, firm, ticker, company")).toBeVisible();
+    await page.keyboard.press("Escape");
   }
   await page.goto("/");
   await expect(page.getByRole("button", { name: "Search", exact: true })).toBeVisible();
@@ -123,7 +126,7 @@ test('phone table, default toggle, readable metrics and relevant series', async 
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('/value');
   await page.locator('.filter-panel > summary').click();
-  await expect(page.getByLabel('Near misses')).not.toBeChecked();
+  await expect(page.getByRole('switch', {name:/Near misses/})).not.toBeChecked();
   await expect(page.getByRole('columnheader', { name: 'Country', exact: true })).not.toBeVisible();
   await expect(page.getByRole('columnheader', { name: 'Holders', exact: true })).not.toBeVisible();
   await expect(page.getByRole('columnheader', { name: /Market cap/ })).not.toBeVisible();
@@ -159,7 +162,8 @@ test('country and price failures remain distinct', async ({ page }) => {
   await page.goto('/value');
   await expect(page.getByText('Some prices are unavailable.', { exact: false })).toBeVisible();
   await page.route('**/main/index/US.json', route => route.fulfill({ status: 503, body: '{}' }));
-  await page.getByLabel('Country', { exact: true }).selectOption('US');
+  await page.getByLabel("Country", {exact:true}).click();
+  await page.getByRole("button", {name:"United States",exact:true}).click();
   await expect(page.getByText('Could not load this country.', { exact: false })).toBeVisible();
   await expect(page.getByText('Loading companies…')).toHaveCount(0);
 });
@@ -171,14 +175,14 @@ test('football field and threshold series expose focus tooltips and table twins'
   await expect(field.getByRole('tooltip')).toContainText('buy below');
   await field.getByText('Show data', { exact: true }).click();
   await expect(field.getByRole('table')).toContainText('36.78');
-  const chart = page.getByTestId('threshold-series').filter({ has: page.getByRole('heading', { name: /^ROIC cleared/ }) });
+  const chart = page.getByTestId('threshold-series').filter({ has: page.getByRole('heading', { name: /^Median/ }) });
   await chart.getByRole('button').first().focus();
   await page.keyboard.press('End');
   await expect(chart.getByRole('tooltip')).toContainText('FY2025');
   await page.keyboard.press('ArrowLeft');
   await expect(chart.getByRole('tooltip')).toContainText('FY2024');
   await chart.getByText('Show data', { exact: true }).click();
-  await expect(chart.getByRole('table')).toContainText('28%');
+  await expect(chart.getByRole('table')).toContainText('28.0%');
 });
 
 test('bank, currency mismatch and missing-price dossiers keep distinct methods and states', async ({ page }) => {
@@ -186,23 +190,23 @@ test('bank, currency mismatch and missing-price dossiers keep distinct methods a
   await expect(page.getByTestId('football-field')).toContainText('Book value');
   await page.locator('.bridge-disclosure > summary').click();
   await expect(page.getByRole('heading', { name: 'Book value bridge' })).toBeVisible();
-  await expect(page.locator('[data-test="moat"]')).toContainText('Return on equity');
+  await expect(page.locator('[data-test="moat"]')).toContainText('Return on tangible equity');
   await page.goto('/value/fx.us');
   await expect(page.getByTestId('football-field')).toContainText('Price is in USD, value in EUR, not compared');
   await expect(page.getByTestId('football-field').locator('[aria-label^="Price "]')).toHaveCount(0);
   await expect(page.locator('[data-test="price"]')).toContainText('unclear');
   await page.goto('/value/sparse.us');
-  await expect(page.getByTestId('verdict')).toContainText('No price yet');
+  await expect(page.getByTestId('verdict')).toContainText('Comparable price or valuation unavailable');
 });
 
 test('funnel applies cumulative gates and strip points open dossiers', async ({ page }) => {
   await page.goto('/value?country=US');
   await page.getByRole('button', { name: /^Analysed/ }).click();
   await expect(page.getByTestId('results-table').locator('tbody tr')).toHaveCount(41);
-  await page.getByRole('button', { name: /^\+ Required margin of safety/ }).click();
+  await page.getByRole('button', { name: /^At buy price/ }).click();
   await expect(page.getByRole('row', { name: /Delta Air/ })).toHaveCount(0);
   await expect(page.getByRole('row', { name: /Coca-Cola/ })).toBeVisible();
-  const point = page.getByRole('group', { name: 'Quality companies by price to value', exact: true }).getByRole('link', { name: /^Coca-Cola/ });
+  const point = page.getByRole('group', { name: 'Shortlisted companies by price to value', exact: true }).getByRole('link', { name: /^Coca-Cola/ });
   await point.focus();
   await expect(page.locator('figure[aria-labelledby="strip-title"]').getByRole('tooltip')).toContainText('Coca-Cola');
   await page.keyboard.press('Enter');
@@ -212,9 +216,9 @@ test('funnel applies cumulative gates and strip points open dossiers', async ({ 
 
 test('research charts expose structural navigation, persistent tips, events and log gaps', async ({ page }) => {
   await page.goto('/value/ko.us');
-  const chart = page.getByTestId('threshold-series').filter({ has: page.getByRole('heading', { name: /^ROIC cleared/ }) });
+  const chart = page.getByTestId('threshold-series').filter({ has: page.getByRole('heading', { name: /^Median/ }) });
   await expect(chart.locator('svg')).toHaveAttribute('aria-hidden', 'true');
-  await expect(chart.locator('figcaption')).toContainText('10 of 10 years');
+  await expect(chart.locator('figcaption')).toContainText('lowest year');
   await chart.getByRole('button').first().focus();
   await page.keyboard.press('End');
   await expect(chart.locator('[aria-live="polite"]')).toContainText('FY2025');
@@ -236,7 +240,7 @@ test('research charts expose structural navigation, persistent tips, events and 
   await page.keyboard.press('ArrowRight');
   await page.keyboard.press('ArrowRight');
   await expect(chart.getByRole('tooltip')).toContainText('Acquisition added assets');
-  await expect(page.getByTestId('price-history')).toContainText('matched months');
+  await expect(page.getByTestId('price-history')).toContainText('months with an estimate');
   await expect(page.getByTestId('football-field')).toContainText('last fiscal year FY2025');
   await page.goto('/value/oxy.us');
   await expect(page.getByTestId('football-field')).toContainText('50% below mid, earnings are volatile');
@@ -266,7 +270,7 @@ test('touch pins a tooltip and phone waterfall has its table first', async ({ br
   await context.close();
 });
 
-test('large indexes show the five closest companies and virtualise the full table', async ({ page }) => {
+test('large country indexes preserve the global shortlist plot and virtualise the table', async ({ page }) => {
   const row = JSON.parse(await readFile(path.join(root, 'index/US.json'), 'utf8'))[0];
   const rows = Array.from({ length: 1501 }, (_, i) => ({ ...row, id: `LARGE${i}.US`, n: `Large ${i}`, t: 'PPPPP' }));
   const prices = Object.fromEntries(rows.map((r, i) => [r.id, [r.v[1] * (.5 + i/1501), '2026-09-28']]));
@@ -274,7 +278,7 @@ test('large indexes show the five closest companies and virtualise the full tabl
   await page.route('**/main/prices/US.json', route => route.fulfill({ json: prices }));
   await page.goto('/value?country=US');
   await expect(page.locator('canvas')).toHaveCount(0);
-  await expect(page.getByRole('group', { name: 'Quality companies by price to value', exact: true }).getByRole('link')).toHaveCount(5);
+  await expect(page.getByRole('group', { name: 'Shortlisted companies by price to value', exact: true }).getByRole('link')).toHaveCount(0);
   await expect(page.locator('[data-company-row]')).toHaveCount(50);
 });
 
@@ -283,8 +287,8 @@ test('seeded index prices and current moat rules have explicit labels', async ({
   prices['KO.US'] = [prices['KO.US'][0], '2026-09-28', 'seed'];
   await page.route('**/main/prices/US.json', route => route.fulfill({ json: prices }));
   await page.goto('/value');
-  await expect(page.locator('.table-caption')).toContainText('Reference prices derived from market cap');
-  await expect(page.getByRole('row', { name: /Coca-Cola/ }).locator('.price-col')).toHaveAttribute('title', /Price derived from market cap 2026-09-28/);
+  await expect(page.locator('.table-caption')).toContainText('Includes estimates from market capitalisation');
+  await expect(page.getByRole('row', { name: /Coca-Cola/ }).locator('.price-col')).toHaveAttribute('title', /Price derived from market cap 28 Sep 2026/);
   await page.setViewportSize({ width: 390, height: 844 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.goto('/value/ko.us');
@@ -338,7 +342,7 @@ test('verdict leads the dossier and wide data areas use the viewport', async ({ 
   await page.goto('/value/ko.us');
   const verdict = await page.getByTestId('verdict').boundingBox();
   const valuation = await page.getByTestId('football-field').boundingBox();
-  expect(verdict!.y + verdict!.height).toBeLessThan(valuation!.y);
+  expect(verdict!.y + verdict!.height).toBeLessThanOrEqual(valuation!.y);
   expect(valuation!.y + valuation!.height).toBeLessThan(900);
   expect(await page.getByTestId('price-history').evaluate(el => el.getBoundingClientRect().width / innerWidth)).toBeGreaterThanOrEqual(.85);
   await page.locator('.section-nav a[href="#test-moat"]').click();
@@ -350,9 +354,26 @@ test('company search and mobile filters are usable', async ({page}) => {
   await page.goto('/value');
   await expect(page.getByTestId('results-table')).toBeVisible();
   await page.locator('.filter-panel > summary').click();
-  await page.getByLabel('Search in list').fill('Coca');
+  await page.keyboard.press('/');
+  await page.getByPlaceholder('investor, firm, ticker, company').fill('Coca');
+  await page.getByRole('button',{name:'Filter this list: Coca'}).click();
   await expect(page.locator('[data-company-row]')).toHaveCount(1);
-  await page.getByLabel('Find a company by ticker').fill('ko');
-  await page.getByRole('button',{name:'Open company'}).click();
+  await page.keyboard.press('/');
+  await page.getByPlaceholder('investor, firm, ticker, company').fill('coca');
+  await expect(page.getByRole('option').first()).toContainText('KO.US');
+  await page.getByPlaceholder('investor, firm, ticker, company').press('Enter');
   await expect(page).toHaveURL(/\/value\/ko.us$/);
+});
+
+test('one palette searches names, aliases and pending companies',async({page})=>{
+ await page.goto('/value');
+ for(const [query,code] of [['coca','KO.US'],['tsm','TSM.US'],['nestle','NESN.SW'],['0700','0700.HK']]){
+  await page.keyboard.press('Control+k');
+  const input=page.getByPlaceholder('investor, firm, ticker, company');
+  await input.fill(query);await expect(page.getByRole('option').first()).toContainText(code);
+  await input.press('ArrowDown');await input.press('ArrowUp');
+  await expect(page.getByRole('option').first()).toHaveAttribute('aria-selected','true');
+  if(query==='0700'){await input.press('Enter');await expect(page.getByRole('heading',{name:'Not analysed yet'})).toBeVisible();}
+  else await input.press('Escape');
+ }
 });

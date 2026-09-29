@@ -27,7 +27,7 @@ describe('visualization geometry', () => {
   });
   it('formats compact money without losing the currency or negative sign', () => {
     expect(compactMoney(12_500_000_000, 'USD')).toBe('USD 12.5B');
-    expect(compactMoney(-2_100_000, 'EUR')).toBe('EUR -2.1M');
+    expect(compactMoney(-2_100_000, 'EUR')).toBe('EUR -2.10M');
     expect(compactMoney(0, 'USD')).toBe('USD 0');
   });
   it('never connects across a missing fiscal year or null', () => {

@@ -22,7 +22,7 @@ it('renders reporting value, explicit currency mismatch and an unclear price tes
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
   expect(html).toContain('Estimated value 800.00 to 1200.00 JPY');
   expect(html).toContain('Price is in USD, value in JPY, not compared');
-  expect(html).toContain('Price: unclear');
+  expect(html).toContain('Price: Unclear');
   expect(html).not.toContain('margin of safety 99.4%');
   expect(html).not.toContain('aria-label="Price JPY');
 });
@@ -31,7 +31,7 @@ it('uses converted trading values for both the headline and margin', async () =>
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
   expect(html).toContain('Estimated value 8.00 to 12.00 USD');
   expect(html).toContain('40.0% below our mid estimate');
-  expect(html).toContain('Price: pass');
+  expect(html).toContain('Price: Pass');
   expect(html).not.toContain('not compared');
 });
 it('does not label newer monthly prices as a new fiscal year', async () => {
@@ -44,7 +44,7 @@ it('does not label newer monthly prices as a new fiscal year', async () => {
 it('labels a seeded price with its market-cap derivation and date', async () => {
   vi.mocked(useQuote).mockReturnValue([6, '2026-09-28', 'seed']);
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toContain('Price derived from market cap');
+  expect(html).toContain('Price: estimate');
 });
 
 it.each(['javascript:alert(1)', 'http://example.com/report', '//example.com/report', 'https://example.com/report'])('only renders https report links: %s', async url => {

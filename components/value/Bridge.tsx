@@ -20,8 +20,8 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
     ['+ Net cash', money(v.netCash)],
     ['÷ Diluted shares', count(v.shares)],
   ] : [
-    ['Book value per share', perShareMoney(v.normalized, v.currency)],
-    ['Normalized return on equity', formatMetric({ value: component(/normalized return on equity/i), format: 'pct' })],
+    ['Tangible book value per share', perShareMoney(v.normalized, v.currency)],
+    ['Normalised return on tangible equity', formatMetric({ value: component(/normalized return on (tangible )?equity/i), format: 'pct' })],
     ['Justified price / book', formatMetric({ value: component(/justified price to book/i), format: 'x' })],
   ];
   rows.push(['= Per-share value (low / mid / high)', [v.perShare.low, v.perShare.mid, v.perShare.high].map(value => perShareMoney(value, v.currency)).join(' / ')]);

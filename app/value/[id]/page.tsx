@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getDossier, getTopIds } from '@/lib/value/store';
+import { getDossier, getTopIds, getSearchCompany } from '@/lib/value/store';
 import { getIndex } from '@/lib/data';
 import { Face } from '@/components/Face';
+import { SearchTrigger } from '@/components/Search';
+import { ValueLink } from '@/components/value/ValueLink';
 import { DossierContent } from '@/components/value/DossierContent';
 
 export const revalidate = 259200;
@@ -19,7 +21,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 export default async function DossierPage({ params }: Props) {
   const dossier = await getDossier((await params).id.toUpperCase());
-  if (!dossier) notFound();
+  if (!dossier) {
+    const company=await getSearchCompany((await params).id);
+    if (!company) notFound();
+    return <section className="not-found-value"><p className="eyebrow">{company[0]} · {company[2]}</p><h1>{company[1]}</h1><h2>Not analysed yet</h2><p>This business is in our coverage queue. Its Buffett checklist arrives within days as we work through the latest filings.</p><SearchTrigger/><p><ValueLink href="/">← Explore analysed companies</ValueLink></p></section>;
+  }
   const { company } = dossier;
   const investors = dossier.holders.length ? await getIndex() : null;
   return <DossierContent dossier={dossier}>

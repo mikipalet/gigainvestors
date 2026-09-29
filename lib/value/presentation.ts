@@ -1,5 +1,5 @@
 import type { Series } from './types';
-export const dateLabel = (value?: string | null) => value && Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(value)) : 'Unavailable';
+export const dateLabel = (value?: string | null) => value && Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(value)).replace('Sept', 'Sep') : 'Unavailable';
 export const humanLabel = (value: string) => { const copy = value.replaceAll('_', ' '); return copy.charAt(0).toUpperCase() + copy.slice(1); };
 export function priceValue({ price, mid }: { price: number | null; mid: number | null }) {
   return price !== null && mid !== null && price > 0 && mid > 0 && Number.isFinite(price / mid) ? price / mid : null;
@@ -20,3 +20,26 @@ export function validValueRange({ low, mid, high }: { low: number; mid: number; 
 export function earningsYieldAtMid(value: import('./types').Valuation) {
   return value.method === 'owner_earnings' && value.perShare.mid > 0 && value.shares > 0 ? value.normalized / (value.perShare.mid * value.shares) : null;
 }
+
+export function priceState({ price, mid, requiredMos }: { price: number | null; mid: number | null; requiredMos: number }) {
+  const ratio = priceValue({price, mid});
+  const state = ratio === null ? 'unclear' : ratio <= 1-requiredMos ? 'pass' : ratio <= 1 ? 'wait' : 'fail';
+  return { state, label: {pass:'Pass',wait:'Wait',fail:'Fail',unclear:'Unclear'}[state], description: {pass:'At or below the buy line',wait:'Below value, above buy line',fail:'Above mid value',unclear:'Comparable price or valuation unavailable'}[state], ratio } as const;
+}
+export function returnDisplay({value, years, unlimited = false, financial = false}: {value: number | null; years: number; unlimited?: boolean; financial?: boolean}) {
+  if (unlimited) return {label:'Unlimited', note:'Tangible capital is nonpositive: the business runs on customers’ and suppliers’ money', sort:Infinity};
+  if (value === null || !Number.isFinite(value)) return {label:years < 5 ? `${years} yrs` : 'Not reported', note:'Available annual return observations', sort:-Infinity};
+  if (value > 1) return {label:'n/m', note:'The return exceeds 100%; a small tangible-capital denominator makes this percentage uninformative', sort:value};
+  return {label:`${financial ? 'ROE ' : ''}${(value*100).toFixed(1)}%`,note:financial ? 'Return on tangible equity, the denominator used by the published model' : 'Median annual return on tangible invested capital',sort:value};
+}
+export const displayName = (name: string) => name.replace(/[\u2010-\u2015\u2212]/g, '-').replace(/Moodys/g, "Moody’s").replace(/ Natl /g, ' National ').replace(/\s+(Company|Inc\.?|Corporation|Corp\.?|Limited|Ltd\.?|plc|S\.?\s?A\.?|AB \(publ\))(?=\s*$| Class [A-Z])/gi, '').replace(/ Class [A-Z]$/,'');
+export function testReturn(test: import('./types').TestOutcome, kind: import('./types').Kind) {
+ const financial=kind!=='operating', key=financial?'roe':'roic';
+ const series=test.series[key]??[];
+ return returnDisplay({value:test.metrics[`${key}Median`]??null,years:series.filter(p=>p[1]!==null).length,unlimited:(test.metrics[`${key}Median`]==null||series.at(-1)?.[1]==null)&&test.reasons.some(r=>/effectively unlimited/.test(r)),financial});
+}
+export function dossierReturn(dossier: import('./types').Analysis) {
+ return testReturn(dossier.tests.moat,dossier.company.kind);
+}
+
+export const monthLabel = (value:string) => dateLabel(value).replace(/^\d+ /, '');

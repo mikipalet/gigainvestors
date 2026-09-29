@@ -1,21 +1,16 @@
-import { readFile } from "node:fs/promises";
+import { VALUE_DATA_URL, validQuote } from './data-source';
+import { dossierReturn } from './presentation';
+import { readJsonFile } from '@/lib/blob';
 import path from "node:path";
 import { shardOf } from "./shard";
 import type { Dossier, Id, IndexRow, PriceMap, StoreMeta } from "./types";
 
 export async function readStore<T>(file: string, revalidate = 86400): Promise<T | null> {
-  if (!/^[a-zA-Z0-9_/-]+\.json$/.test(file) || file.split("/").includes("..") || file.startsWith("/")) {
+  if (!/^[a-zA-Z0-9_&./-]+\.json$/.test(file) || file.split("/").includes("..") || file.startsWith("/")) {
     throw new Error("Invalid value store path");
   }
-  if (process.env.VALUE_STORE_DIR) {
-    try {
-      return JSON.parse(await readFile(path.join(process.env.VALUE_STORE_DIR, file), "utf8")) as T;
-    } catch (error) {
-      if ((error as NodeJS.ErrnoException).code === "ENOENT") return null;
-      throw error;
-    }
-  }
-  const response = await fetch(`https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/${file}`, {
+  if (process.env.VALUE_STORE_DIR) return readJsonFile<T>(path.join(process.env.VALUE_STORE_DIR,file), {missingOnly:true});
+  const response = await fetch(`${VALUE_DATA_URL}${file}`, {
     next: { revalidate }, signal: AbortSignal.timeout(30_000),
   });
   if (response.status === 404) return null;
@@ -39,11 +34,31 @@ export async function getDossier(id: Id) {
 export async function getPrice(id: Id, country: string): Promise<PriceMap[string] | null> {
   const prices = await readStore<PriceMap>(`prices/${country.toUpperCase()}.json`);
   const quote = prices?.[id.toUpperCase()];
-  if (!Array.isArray(quote) || typeof quote[0] !== 'number' || !Number.isFinite(quote[0]) || quote[0] <= 0 || typeof quote[1] !== 'string') return null;
-  return quote[2] === 'seed' ? [quote[0], quote[1], 'seed'] : [quote[0], quote[1]];
+  return validQuote(quote);
 }
 
 export async function getTopIds(): Promise<Id[]> {
   try { return await readStore<Id[]>("top.json") ?? []; }
   catch { return []; }
+}
+
+/** Older snapshots lack return-state metadata; recover it from the same published dossier. */
+export async function enrichRows(rows: IndexRow[]): Promise<IndexRow[]> {
+  return Promise.all(rows.map(async row => {
+    if (row.returnInfo) return row;
+    const dossier = await getDossier(row.id);
+    if (!dossier) return row;
+    const info = dossierReturn(dossier);
+    return {...row, returnInfo:{...info,sort:Number.isFinite(info.sort)?info.sort:info.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},fy:Math.max(...Object.values(dossier.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0])))};
+  }));
+}
+
+export async function getSearchCompany(id: string) {
+  const { shardKeyFor } = await import('./search-shard');
+  const manifest=await readStore<import('./search-shard').SearchManifest>('search/manifest.json');
+  if (!manifest) return null;
+  const key=shardKeyFor(id,manifest);
+  if (!key) return null;
+  const shard=await readStore<import('./types').SearchShard>(`search/${key}.json`);
+  return shard?.rows.find(row=>row[0].toUpperCase()===id.toUpperCase())??null;
 }

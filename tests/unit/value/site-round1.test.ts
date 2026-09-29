@@ -29,8 +29,8 @@ describe('site currency and metric contracts', () => {
     expect(valueHref('/', '/ko.us')).toBe('/');
   });
   it('formats units and suppresses unknown metrics', () => {
-    expect(formatMetric({ value: 410e9, format: 'money', currency: 'USD' })).toBe('USD 410.0B');
-    expect(formatMetric({ value: 1.2e12, format: 'money', currency: 'JPY' })).toBe('JPY 1.2T');
+    expect(formatMetric({ value: 410e9, format: 'money', currency: 'USD' })).toBe('USD 410B');
+    expect(formatMetric({ value: 1.2e12, format: 'money', currency: 'JPY' })).toBe('JPY 1.20T');
     expect(formatMetric({ value: .03, format: 'pp' })).toBe('3.0 pp');
     const html = renderToStaticMarkup(createElement(TestSection, { test: { key: 'moat', result: 'pass', numeric: 'pass', reasons: [], metrics: { roicMedian: .31, mystery: 7 }, series: {}, jev: [] } }));
     expect(html).toContain('ROIC, 10-year median');

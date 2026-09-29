@@ -1,3 +1,4 @@
+import { compactMoney } from '@/lib/format';
 import { T } from './config';
 export type MetricFormat = 'pct' | 'pp' | 'x' | 'money' | 'count' | 'years' | 'yesno' | 'year' | 'number';
 export const metricLabels: Record<string, { label: string; format: MetricFormat; threshold?: number; better?: 'higher' | 'lower'; strict?: boolean; nonNegative?: boolean }> = {
@@ -22,9 +23,9 @@ export const metricLabels: Record<string, { label: string; format: MetricFormat;
   shareCagr5: { label: 'Diluted shares, 5-year annual growth', format: 'pct' },
   retainedStartFy: { label: '$1 test, starting fiscal year', format: 'year' },
   retainedEndFy: { label: '$1 test, ending fiscal year', format: 'year' },
-  buybackYieldSpearman: { label: 'Buyback yield / earnings yield, rank correlation', format: 'number' },
+  buybackYieldSpearman: { label: 'Buybacks concentrated in cheaper years (correlation)', format: 'number' },
   averageBuybackYield: { label: 'Average buyback yield', format: 'pct' },
-  buybackYears: { label: 'Years of buyback timing evidence', format: 'years' },
+  buybackYears: { label: 'Buyback history', format: 'years' },
   cumulativeNetIncome: { label: 'Cumulative net income, 10 years', format: 'money' },
   roicFirst3Median: { label: 'ROIC, first three-year median', format: 'pct' },
   roicLast3Median: { label: 'ROIC, last three-year median', format: 'pct' },
@@ -61,8 +62,9 @@ export function formatMetric({ value, format, currency = '' }: { value: number |
   if (format === 'pct') return `${(value * 100).toFixed(1)}%`;
   if (format === 'pp') return `${(value * 100).toFixed(1)} pp`;
   if (format === 'x') return `${value.toFixed(2)}×`;
+  if (format === 'count' && Math.abs(value)<1000) return value.toLocaleString('en-US',{maximumFractionDigits:0});
   if (format === 'years') return `${value} years`;
-  const number = new Intl.NumberFormat('en-US', { notation: 'compact', minimumFractionDigits: Math.abs(value) >= 1000 ? 1 : 0, maximumFractionDigits: 1 }).format(value);
+  const number = compactMoney(value);
   return format === 'money' ? `${currency} ${number}`.trim() : number;
 }
 export const perShareMoney = (value: number, currency: string) => `${currency} ${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;

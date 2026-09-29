@@ -3,23 +3,18 @@
 import { useEffect, useMemo, useState } from "react";
 import { BuffettFunnel } from '@/components/value/viz/BuffettFunnel';
 import { MarginStrip } from '@/components/value/viz/MarginStrip';
-import { funnelCounts } from '@/lib/value/viz/layout';
+
 import { T } from '@/lib/value/config';
 import { priceTest } from "@/lib/value/price-test";
 import { QUALITY_TESTS, type IndexRow, type PriceMap, type Valuation, type StoreMeta } from "@/lib/value/types";
 
 import { dateLabel } from '@/lib/value/presentation';
+import { SearchTrigger } from '@/components/Search';
 import { ValueLink } from '@/components/value/ValueLink';
 import { Filters, type FilterState } from './_components/Filters';
 import { ResultsTable, columns, type Sort } from './_components/ResultsTable';
 
-const base = "https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/";
-
-async function fetchRows<T>(file: string, signal: AbortSignal): Promise<T> {
-  const response = await fetch(`${base}${file}`, { signal });
-  if (!response.ok) throw new Error(`Data unavailable (${response.status})`);
-  return response.json() as Promise<T>;
-}
+import { fetchValueData as fetchRows } from '@/lib/value/data-source';
 
 export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: IndexRow[]; initialFilter: FilterState; tags: Record<string, string>; meta: StoreMeta | null }) {
   const [filter, setFilter] = useState(initialFilter);
@@ -62,7 +57,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
     return () => controller.abort();
   }, [country, countryRows]);
 
-  const visibleCountries = [...new Set(source.map((row) => row.c))].sort().join(",");
+  const visibleCountries = [...new Set([...rows,...source].map((row) => row.c))].sort().join(",");
   useEffect(() => {
     const controller = new AbortController();
     setPriceError("");
@@ -78,6 +73,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
     return () => controller.abort();
   }, [visibleCountries]);
 
+  useEffect(()=>{ const onFilter=(event:Event)=>change('q',(event as CustomEvent<string>).detail);window.addEventListener('filter-value-list',onFilter);return ()=>window.removeEventListener('filter-value-list',onFilter);},[]);
   function change(key: string, value: string) {
     setLimit(200);
     setFilter((current) => { const next = { ...current }; delete next.gate; if (value) next[key] = value; else delete next[key]; return next; });
@@ -85,15 +81,18 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
   function sortBy(key: Sort) {
     setFilter((current) => ({ ...current, sort: key, direction: sort === key ? direction === 1 ? "desc" : "asc" : key === "name" || key === "country" ? "asc" : "desc" }));
   }
-  const countries = [...new Set([...rows, ...Object.values(countryRows).flat()].map(row => row.c))].sort();
-  const allEntries = useMemo(() => source.map(row => {
+  const countries = [...new Set([...Object.keys(meta?.funnel?.byCountry ?? {}), ...rows.map(row=>row.c)])].sort();
+  const allEntries = useMemo(() => source.map(sourceRow => {
+    const canonical = rows.find(candidate=>candidate.id===sourceRow.id);
+    const row = {...sourceRow, returnInfo:sourceRow.returnInfo??canonical?.returnInfo, fy:sourceRow.fy??canonical?.fy};
     const quote = prices[row.c]?.[row.id]?.[0] ?? null;
     const result = priceTest({ valuation: row.v ? { perShare: { low: row.v[0], mid: row.v[1], high: row.v[2] } } as Valuation : null, price: quote, requiredMos: row.m ?? T.price.requiredMos.stable });
     return { row, quote, seed: prices[row.c]?.[row.id]?.[2] === "seed", date: prices[row.c]?.[row.id]?.[1], mos: row.st === 'i' ? null : result.mos };
-  }), [source, prices]);
+  }), [source, rows, prices]);
   const gate = filter.gate !== undefined && /^[0-6]$/.test(filter.gate) ? Number(filter.gate) : null;
-  const counts = funnelCounts(allEntries.map(e => ({ tests: e.row.t, mos: e.mos, requiredMos: e.row.m })));
-  const onlyFailures = [0, ...QUALITY_TESTS.map((_, i) => allEntries.filter(e => e.row.t[i] === 'F' && [...e.row.t].every((t, j) => j === i || t === 'P')).length), allEntries.filter(e => e.row.t === 'PPPPP' && e.mos !== null && e.mos < (e.row.m ?? T.price.requiredMos.stable)).length];
+  const population = meta?.funnel;
+  const counts = population ? [population.analysed, ...population.gates.map(g=>g.passing)] : [meta?.counts.analysed ?? rows.length, ...Array(4).fill(0),rows.filter(r=>r.t==='PPPPP').length,0];
+  const onlyFailures = [0,...(population?.gates.map(g=>g.failsOnlyThis) ?? Array(6).fill(0))];
   const dates = allEntries.flatMap(e => e.date ? [e.date] : []).sort();
   const date = dates.length ? dates[0] === dates.at(-1) ? dates[0] : `${dates[0]} to ${dates.at(-1)}` : null;
   const selectedTags = (filter.tags ?? "").split(",").filter(Boolean);
@@ -107,11 +106,11 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
       if (QUALITY_TESTS.some((key, i) => filter[key] && row.t[i] !== (filter[key] === "pass" ? "P" : "F"))) return false;
       if (row.st === "i") return !!country;
       if (QUALITY_TESTS.some((key) => filter[key])) return true;
-      return row.t === "PPPPP" || (filter.near === "1" && [...row.t].filter((result) => result === "F").length === 1);
+      return row.t === "PPPPP" || (filter.near === "1" && /^P*FP*$/.test(row.t));
     }).sort((a, b) => {
       if (a.row.st !== b.row.st) return a.row.st === "i" ? 1 : -1;
-      const av = sort === "name" ? a.row.n : sort === "country" ? a.row.c : sort === "cap" ? a.row.mc : sort === "holders" ? a.row.h : a.mos;
-      const bv = sort === "name" ? b.row.n : sort === "country" ? b.row.c : sort === "cap" ? b.row.mc : sort === "holders" ? b.row.h : b.mos;
+      const av = sort === "name" ? a.row.n : sort === "country" ? a.row.c : sort === "cap" ? a.row.mc : sort === "holders" ? a.row.h : sort === "return" ? a.row.returnInfo?.sort : a.mos;
+      const bv = sort === "name" ? b.row.n : sort === "country" ? b.row.c : sort === "cap" ? b.row.mc : sort === "holders" ? b.row.h : sort === "return" ? b.row.returnInfo?.sort : b.mos;
       if (av == null || bv == null) return av == null && bv == null ? a.row.id.localeCompare(b.row.id) : av == null ? 1 : -1;
       return (typeof av === "string" && typeof bv === "string" ? av.localeCompare(bv) : Number(av) - Number(bv)) * direction || a.row.id.localeCompare(b.row.id);
     });
@@ -119,18 +118,21 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
   const sectors = [...new Set(source.flatMap((row) => row.s ? [row.s] : []))].sort();
 
   const analysed = meta?.counts.analysed ?? (meta ? meta.counts.scored + meta.counts.insufficient : 0);
-  const qualityCount = rows.filter(row => row.t === 'PPPPP').length;
-  return <div>
+  const qualityCount = counts[5];
+  const nearCount = rows.filter(row=>/^P*FP*$/.test(row.t)).length;
+  return <div data-quality-count={counts[5]} data-buy-count={counts[6]} data-analysed-count={counts[0]}>
     <div className="index-hero"><div><p className="eyebrow">The Buffett checklist</p><h1>{qualityCount} of {analysed.toLocaleString('en-US')} companies pass Buffett’s quality tests.<span>{pricesPending ? ' Checking buy prices.' : counts[6] === 0 ? ' None is at its buy price.' : ` ${counts[6]} at their buy price.`}</span></h1><p className="index-dek">Six tests from the filings. Find durable businesses, see what they are worth, and know what would make them a buy. <ValueLink href="/method">Method →</ValueLink></p><p className="source-line">{analysed.toLocaleString('en-US')} analysed of {(meta?.counts.universe ?? 0).toLocaleString('en-US')} listed · SEC filings / EODHD · Updated {dateLabel(meta?.asOf)}</p></div>
-    <MarginStrip date={date} entries={allEntries.flatMap(e => e.row.t === 'PPPPP' && e.mos !== null ? [{ id:e.row.id,name:e.row.n,mos:e.mos,requiredMos:e.row.m ?? T.price.requiredMos.stable,date:e.date }] : [])}/></div>
-    <BuffettFunnel analysed={analysed} counts={counts} onlyFailures={onlyFailures} date={date} selected={gate} onSelect={gate => { setLimit(200); setFilter(current => ({ ...(current.country ? { country:current.country } : {}),gate:String(gate),sort:current.sort ?? 'mos',direction:current.direction ?? 'desc' })); }}/>
-    {gate !== null && <p className="mb-3 text-xs">Cumulative gate {gate} active. <button className="underline" onClick={() => change('gate', '')}>Reset to quality default</button></p>}
-    <Filters filter={filter} countries={countries} sectors={sectors} tags={tags} change={change} />
+    <MarginStrip unpriced={rows.filter(row=>prices[row.c]&&(!row.v||row.v[1]<=0||!prices[row.c][row.id])).map(row=>({id:row.id,name:row.n}))} qualityCount={counts[5]} buyCount={counts[6]} date={date} entries={rows.flatMap(row=>{const quote=prices[row.c]?.[row.id],mid=row.v?.[1];return quote&&mid&&mid>0?[{id:row.id,name:row.n,tests:row.t,mos:1-quote[0]/mid,requiredMos:row.m??T.price.requiredMos.stable,date:quote[1]}]:[];})}/></div>
+    <BuffettFunnel analysed={analysed} counts={counts} onlyFailures={onlyFailures} date={population?.asOf} selected={gate} onSelect={gate => { setLimit(200); setFilter(current => ({ ...current,gate:String(gate) })); }}/>
+    {gate !== null && <p className="gate-explanation" role="status">{counts[gate].toLocaleString('en-US')} companies pass {gate ? `the first ${Math.min(gate,5)} quality tests${gate===6?' and the buy-price test':''}` : 'through analysis'} across all countries. The table shows the published shortlist; choose a country to explore its full coverage. <button className="underline" onClick={() => change('gate', '')}>Reset</button></p>}
+    <div className="table-search"><span>Find a business. Read the evidence.</span><SearchTrigger />{filter.q && <button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}</div>
+    <Filters filter={filter} countries={countries} sectors={sectors} tags={tags} nearCount={nearCount} change={change} />
     {countryError && country && <p role="status" className="my-3 text-sm text-sell">{countryError}</p>}
     {priceError && <p role="status" className="my-3 text-sm text-sell">{priceError}</p>}
     {country && !countryRows[country] && !countryError && <p role="status">Loading companies…</p>}
-    <p className="table-caption"><strong>{displayed.length} companies</strong><span>Prices {dateLabel(dates.at(-1))} · {allEntries.some(e=>e.seed) ? 'Reference prices derived from market cap' : 'Latest closes'} · Buy ticks reflect each company’s required discount</span></p>
-    <div style={{ opacity: loading ? .6 : 1 }} aria-busy={loading}><ResultsTable entries={displayed.slice(0, limit)} sort={sort} direction={direction} sortBy={sortBy} /></div>
+    {filter.near==='1'&&<p className="near-caption">Near misses fail exactly one quality test. Below the buy line is not enough.</p>}
+    <p className="table-caption"><strong>{displayed.length} companies</strong><span>Prices {dates[0]!==dates.at(-1)?`${dateLabel(dates[0])} to ${dateLabel(dates.at(-1))}`:dateLabel(dates.at(-1))} · {allEntries.some(e=>e.seed) ? 'Includes estimates from market capitalisation' : 'Latest closes'} · Buy ticks reflect each company’s required discount</span></p>
+    <div style={{ opacity: loading ? .6 : 1 }} aria-busy={loading}><ResultsTable expanded={filter.near==='1'||QUALITY_TESTS.some(k=>!!filter[k])} entries={displayed.slice(0, limit)} sort={sort} direction={direction} sortBy={sortBy} /></div>
     {!displayed.length && <p className="py-6 text-ink/60">No companies match these filters.</p>}
     {displayed.length > limit && <button type="button" className="mt-4 border border-ink/20 px-4 py-2" onClick={() => setLimit((current) => current + 200)}>Show more</button>}
   </div>;

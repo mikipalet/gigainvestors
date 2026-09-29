@@ -7,13 +7,17 @@ const shiftYear = (s: string) => `${Number(s.slice(0,4))-1}${s.slice(4)}`;
 
 /** Keep H1 flows out of annual history. Reuse the annual mapper with only H1 contexts. */
 export function halfYearsFromEdinet(rows: EdinetRow[], doc: Pick<EdinetDocument, 'periodStart' | 'periodEnd'>): Year[] {
-  if (!date(doc.periodStart) || !date(doc.periodEnd)) return [];
-  const days = (Date.parse(doc.periodEnd) - Date.parse(doc.periodStart)) / 86400000;
+  // EDINET's document listing often describes the entire fiscal year even
+  // for docType 160. The DEI facts supply the actual current/comparative H1.
+  const end = edinetFact(rows, 'CurrentPeriodEndDateDEI') ?? doc.periodEnd;
+  const priorEnd = edinetFact(rows, 'ComparativePeriodEndDateDEI') ?? shiftYear(end);
+  if (!date(doc.periodStart) || !date(end) || !date(priorEnd) || end > doc.periodEnd) return [];
+  const days = (Date.parse(end) - Date.parse(doc.periodStart)) / 86400000;
   if (days < 170 || days > 190) return [];
   const input = rows.filter(r => /^(?:Interim|CurrentInterim|Prior1Interim)(?:Duration|Instant)(?:_|$)/.test(r.context) || r.context.startsWith('FilingDateInstant'))
     .map(r => ({ ...r, context: r.context.replace(/^(?:Current)?Interim/, 'CurrentYear').replace(/^Prior1Interim/, 'Prior1Year'),
-      value: r.element.endsWith(':CurrentFiscalYearEndDateDEI') ? doc.periodEnd
-        : r.element.endsWith(':PreviousFiscalYearEndDateDEI') ? shiftYear(doc.periodEnd) : r.value }));
+      value: r.element.endsWith(':CurrentFiscalYearEndDateDEI') ? end
+        : r.element.endsWith(':PreviousFiscalYearEndDateDEI') ? priorEnd : r.value }));
   return yearsFromEdinet(input);
 }
 
@@ -21,9 +25,13 @@ export function trailingFromEdinet(rows: EdinetRow[], annual: Year, doc: Pick<Ed
   const nextDay = new Date(Date.parse(annual.end) + 86400000).toISOString().slice(0,10);
   if (doc.periodStart !== nextDay || edinetFact(rows,'CurrentFiscalYearStartDateDEI') !== nextDay) return null;
   const halves = halfYearsFromEdinet(rows, doc);
-  const current = halves.find(y => y.end === doc.periodEnd), previous = halves.find(y => y.end === shiftYear(doc.periodEnd));
+  const end = edinetFact(rows, 'CurrentPeriodEndDateDEI') ?? doc.periodEnd;
+  const priorEnd = edinetFact(rows, 'ComparativePeriodEndDateDEI') ?? shiftYear(end);
+  if (edinetFact(rows, 'PreviousFiscalYearStartDateDEI') !== shiftYear(nextDay)
+    || Math.abs(Date.parse(priorEnd) - Date.parse(shiftYear(end))) > 86400000) return null;
+  const current = halves.find(y => y.end === end), previous = halves.find(y => y.end === priorEnd);
   if (!current || !previous) return null;
-  const ttm: Year = { ...annual, end: doc.periodEnd };
+  const ttm: Year = { ...annual, end };
   const keys = ['revenue','netIncome','totalNetIncome','da','capex','sbc','ocf','leaseCash'] as const;
   for (const key of keys) {
     const a=annual[key], c=current[key], p=previous[key];

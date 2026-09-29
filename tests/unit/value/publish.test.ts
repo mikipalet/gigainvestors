@@ -499,3 +499,26 @@ describe("published funnel", () => {
     expect(funnel.gates.map(g => [g.passing, g.failsOnlyThis])).toEqual(Array(6).fill([0, 0]));
   });
 });
+
+it('publishes English names, logos, about and story counts consistently', () => {
+  const a=analysis(); a.company.name='日本語'; a.company.nameEn='English Company'; a.company.nameLocal='日本語';
+  a.company.marketCapUsd=70; a.company.logo='https://eodhd.com/img/logo.png'; a.company.about='Makes widgets.';
+  const {files}=buildOutput({analyses:[a],holdersByTicker:{},investorNames:{},fx:{},prices:{'KO.US':[70,'2026-09-28']}});
+  expect((files['index/default.json'] as IndexRow[])[0]).toMatchObject({n:'English Company',lg:a.company.logo});
+  expect((files[`dossiers/${shardOf(a.id)}.json`] as Record<string,Dossier>)[a.id]).toMatchObject({company:{nameEn:'English Company',nameLocal:'日本語',logo:a.company.logo,about:'Makes widgets.'}});
+  expect(files['meta.json']).toMatchObject({story:{analysed:1,qualityPasses:1,qualityShare:1,atBuy:1,countriesCovered:1}});
+});
+
+it('joins new enrichment and completed numeric history when the controller publishes', async () => {
+  const {writeCorpusJson}=await import('@/lib/value/corpus');
+  const repo=repository(), a=analysis();
+  writeCorpusJson('enrichment-v7/companies/KO.US.json',{nameEn:'English name',nameLocal:'日本語',logo:null,about:'Makes drinks.',nameSource:'eodhd',logoSource:null});
+  writeCorpusJson('enrichment-v7/logos/KO.US.json',{logo:'https://eodhd.com/img/logos/US/ko.png'});
+  writeCorpusJson('history-v7/20260929/2016.json',[['KO.US','PPPPP',.7,true,2]]);
+  writeCorpusJson('history-v7/20260929/index.json',{years:[2016],perYear:{},scope:'universe'});
+  publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,holdersByTicker:{},investorNames:{}});
+  const row=JSON.parse(readFileSync(path.join(repo,'index/default.json'),'utf8'))[0];
+  expect(row).toMatchObject({n:'English name',lg:'https://eodhd.com/img/logos/US/ko.png'});
+  expect(JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(a.id)}.json`),'utf8'))[a.id].company).toMatchObject({nameEn:'English name',nameLocal:'日本語',about:'Makes drinks.'});
+  expect(JSON.parse(readFileSync(path.join(repo,'history/2016.json'),'utf8'))).toEqual([['KO.US','PPPPP',.7,true,2]]);
+});

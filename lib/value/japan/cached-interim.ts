@@ -23,7 +23,7 @@ export function latestInterim(f: Fundamentals, docs: EdinetDocument[], now=new D
   const latest=f.years.at(-1);if(!latest)return null;
   const sixMonths=new Date(`${latest.end}T00:00:00Z`);sixMonths.setUTCMonth(sixMonths.getUTCMonth()+6);
   if(now<=sixMonths)return null;
-  return docs.filter(d=>d.periodEnd>latest.end && d.periodEnd<=now.toISOString().slice(0,10))
+  return docs.filter(d=>d.periodEnd>latest.end && d.periodStart<=now.toISOString().slice(0,10) && d.submitDateTime.slice(0,10)<=now.toISOString().slice(0,10))
     .sort((a,b)=>a.periodEnd.localeCompare(b.periodEnd)||a.submitDateTime.localeCompare(b.submitDateTime)||a.docID.localeCompare(b.docID)).at(-1)??null;
 }
 export function applyEdinetInterim(f: Fundamentals, doc: EdinetDocument, rows: EdinetRow[], prices?: PriceHistory | null): void {

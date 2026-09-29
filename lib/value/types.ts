@@ -266,3 +266,34 @@ export interface SearchShard {
   /** Normalized listing codes and ISINs mapped to local row offsets. */
   aliases: Record<string, number[]>;
 }
+
+/** Code-only annual snapshot; r is a cumulative price-return ratio, not a percent. */
+export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null];
+export interface HistorySummary {
+  analysed: number;
+  qualityPasses: number;
+  atBuy: number;
+  /** Finite-return denominators; cohort totals above also include missing returns. */
+  returnCountAtBuy: number;
+  returnCountQuality: number;
+  returnCountAll: number;
+  medianReturnAtBuy: number | null;
+  medianReturnQuality: number | null;
+  medianReturnAll: number | null;
+  /** Share of finite cohort returns strictly above the unrounded all-universe median. */
+  hitRateAtBuy: number | null;
+  hitRateQuality: number | null;
+  hitRateAll: number | null;
+  /** Secondary arithmetic means, retained for existing consumers. */
+  avgReturnAtBuy: number | null;
+  avgReturnQuality: number | null;
+  avgReturnAll: number | null;
+}
+export interface HistoryIndex {
+  scope?: "universe" | "selection";
+  years: number[];
+  perYear: Record<string, HistorySummary>;
+  asOf?: string;
+  assumptions?: string[];
+  caveats?: string[];
+}

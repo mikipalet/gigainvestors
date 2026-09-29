@@ -18,7 +18,7 @@ it('reuses a recorded H1 ZIP through the fetch stage and offline renormalization
  const annual=yearsFromEdinet(parseEdinetCsv(readFileSync('tests/fixtures/value/edinet/japan-4/S100XUE0.csv','utf8')));
  const f:Fundamentals={id:'7609.JP',currency:'JPY',years:annual,integrity:{ok:true,reasons:[]},fetchedAt:'2026-09-29'};
  appendJsonl('universe.jsonl',{id:f.id,source:'edinet'});writeCorpusJson(`fundamentals/${f.id}.json`,f);writeCorpusJson(`raw/edinet/issuers/${f.id}.json`,{years:annual});
- writeCorpusJson('raw/edinet/days/2026-08-07.json',{metadata:{status:'200'},results:[{docID:'S100YUIN',secCode:'76090',docTypeCode:'160',periodStart:'2026-01-01',periodEnd:'2026-06-30',submitDateTime:'2026-08-07',csvFlag:'1',withdrawalStatus:'0',disclosureStatus:'0'}]});
+ writeCorpusJson('raw/edinet/days/2026-08-07.json',JSON.parse(readFileSync('tests/fixtures/value/edinet/japan-4/documents-h1.json','utf8')));
  mkdirSync(corpusPath('raw/edinet/csv'),{recursive:true});copyFileSync('tests/fixtures/value/edinet/japan-4/S100YUIN.zip',corpusPath('raw/edinet/csv/S100YUIN.zip'));
  await japanInterim({});
  const result=readCorpusJson<Fundamentals>(`fundamentals/${f.id}.json`)!;

@@ -139,6 +139,7 @@ export interface Analysis {
 }
 
 export interface Dossier extends Analysis {
+  tests: Analysis["tests"] & { price?: TestOutcome };
   holders: Array<{ code: string; name: string }>; // superinvestors, from data/store
   series: Record<string, Series>; // revenue, ownerEarnings, roic, grossMargin, shares, bvps
 }

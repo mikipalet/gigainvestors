@@ -13,7 +13,7 @@ it('keeps full statements through later five-year summaries and restates overlap
  expect(mergeYears(old,yearsFromEdinet(read('keyence-2026'))).map(y=>[y.fy,y.da,y.capex])).toEqual([[2024,13767000000,12492000000],[2025,15193000000,14342000000],[2026,17227000000,28371000000]]);
 });
 it('maps Japanese GAAP cash, debt and goodwill without counting goodwill twice in intangibles', () => {
- expect(yearsFromEdinet(read('shinetsu-2025')).at(-1)).toMatchObject({cash:1811678000000,totalDebt:16841000000,goodwill:27431000000,intangibles:9477000000,da:238357000000,capex:439473000000});
+ expect(yearsFromEdinet(read('shinetsu-2025')).at(-1)).toMatchObject({cash:1811678000000,totalDebt:16841000000,goodwill:27431000000,intangibles:9477000000,da:238357000000,capex:442837000000});
 });
 it('maps Toyota IFRS custom revenue, both PPE spending components and financing debt', () => {
  const years=yearsFromEdinet(read('toyota-2025'));
@@ -21,7 +21,7 @@ it('maps Toyota IFRS custom revenue, both PPE spending components and financing 
  expect(years[0]).toMatchObject({fy:2024,capex:4714107000000});
 });
 it('adds IFRS short-term investments without including strategic investments or double-counting debt', () => {
- expect(yearsFromEdinet(read('mitsubishi-2025')).at(-1)).toMatchObject({cash:1611961000000,shortTermInvestments:75337000000,da:470768000000,capex:384292000000,totalDebt:5339302000000});
+ expect(yearsFromEdinet(read('mitsubishi-2025')).at(-1)).toMatchObject({cash:1611961000000,shortTermInvestments:75337000000,da:470768000000,capex:384292000000,totalDebt:4617022000000});
 });
 it('sums a reported debt component even when the issuer has no long-term borrowings', () => {
  const rows=read('shinetsu-2025').filter(r=>!r.element.endsWith(':LongTermLoansPayable'));
@@ -53,7 +53,7 @@ it('preserves actual fiscal ends and full statements when later five-year summar
 });
 it('maps recorded Japanese and IFRS SBC expense tags, and separate IFRS debt maturities', () => {
  expect(yearsFromEdinet(read('S100YJK1')).at(-1)).toMatchObject({sbc:6210000,inventory:2732156000});
- expect(yearsFromEdinet(read('S100VJ7H')).at(-1)).toMatchObject({sbc:239767000,totalDebt:7205879000});
+ expect(yearsFromEdinet(read('S100VJ7H')).at(-1)).toMatchObject({sbc:239767000,totalDebt:6175000000});
  expect(yearsFromEdinet(read('S100PT63')).at(-1)).toMatchObject({da:1325000000});
 });
 it('sums separate merchandise and finished goods only when an inventory aggregate is absent', () => {

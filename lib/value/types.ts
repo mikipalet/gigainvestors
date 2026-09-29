@@ -40,9 +40,13 @@ export interface Year {
   preTaxIncome: number | null;
   taxExpense: number | null;
   netIncome: number | null;
+  totalNetIncome?: number | null; // consolidated profit, before non-controlling interests
+  edinetShares?: { basic: number | null; issued: number | null; filing: number | null; treasury: number | null; splitFiled: boolean; filed: string; reconciled: boolean; reason: string };
   interestExpense: number | null;
   da: number | null;
   leaseLiabilities?: number | null;
+  leaseCashIncomplete?: boolean;
+  leaseCash?: number | null; // reported repayments of capitalized lease obligations
   leaseDepreciationIncluded?: boolean; // IFRS 16 or equivalent ROU depreciation included in D&A
   sbc: number | null;
   sbcIncomplete?: boolean; // one or more TTM quarters omit SBC
@@ -67,6 +71,9 @@ export interface Year {
   shortTermInvestments?: number | null;
   totalDebt: number | null;
   equity: number | null;
+  netAssets?: number | null;
+  subscriptionRights?: number | null;
+  equityFromNetAssets?: boolean;
   goodwill: number | null;
   intangibles: number | null;
   ppe: number | null;
@@ -82,7 +89,7 @@ export interface Year {
 export interface Fundamentals {
   id: Id;
   currency: string; // reporting currency
-  ttm?: Year | null; // latest complete four-quarter flow observation
+  ttm?: Year | null; // four quarters, or annual + current H1 - comparative H1
   years: Year[]; // ascending fy, one per fy
   integrity: { ok: boolean; reasons: string[]; notes?: string[] }; // Optional for older corpus files.
   fetchedAt: string;

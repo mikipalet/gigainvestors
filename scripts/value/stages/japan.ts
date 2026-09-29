@@ -1,3 +1,5 @@
+import { cachedInterimDocuments, latestInterim, applyEdinetInterim } from "../../../lib/value/japan/cached-interim";
+import { reconcileEdinetShares } from "../../../lib/value/japan/shares";
 import { CALIBRATION } from "../../../lib/value/calibration";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
@@ -44,6 +46,7 @@ export default async function japan(options: Options): Promise<void> {
   }
   for (const [id,docs] of groups) groups.set(id,[...new Map(docs.map(doc=>[doc.docID,doc])).values()]
     .sort((a,b)=>a.submitDateTime.localeCompare(b.submitDateTime) || a.docID.localeCompare(b.docID)));
+  const interimDocuments = cachedInterimDocuments();
   const calibration = new Set(CALIBRATION.map(entry => entry.id));
   const selected = [...groups.entries()].sort(([a],[b]) => Number(calibration.has(b)) - Number(calibration.has(a)) || a.localeCompare(b)).slice(0,options.limit);
   console.log(`japan: ${documents.length} annual reports; ${selected.length} issuers selected`);
@@ -66,7 +69,7 @@ export default async function japan(options: Options): Promise<void> {
   let completed = 0;
   await pool({ items:selected, concurrency:T.edinet.concurrency, run:async ([id,docs]) => {
     try {
-      const fingerprint = createHash("sha256").update(JSON.stringify({version:7,docs})).digest("hex");
+      const fingerprint = createHash("sha256").update(JSON.stringify({version:8,docs,interim:interimDocuments.get(id)})).digest("hex");
       const cache = readCorpusJson<{ fingerprint:string; issuer:JapaneseIssuer }>(`raw/edinet/issuers/${id}.json`);
       const meta = readCorpusJson<ReportMeta>(`reports/${id}/meta.json`);
       if (!options.force && cache?.fingerprint === fingerprint && readCorpusJson(`fundamentals/${id}.json`) && meta?.kind === "EDINET"
@@ -78,7 +81,11 @@ export default async function japan(options: Options): Promise<void> {
       }
       if (!years.length) throw new Error("No annual financial facts found");
       const latest = docs.at(-1)!;
+      const prices = readPriceHistory(id);
+      years = years.map(year => reconcileEdinetShares(year, prices));
       const fundamentals: Fundamentals = {id,currency:"JPY",years:years.map(year => ({ ...year })),integrity:{ok:false,reasons:[]},fetchedAt:now.toISOString()};
+      const interim = latestInterim(fundamentals, interimDocuments.get(id) ?? []);
+      if (interim) applyEdinetInterim(fundamentals, interim, (await downloadCsv(interim.docID)).flatMap(parseEdinetCsv), prices);
       fundamentals.integrity = checkIntegrity(fundamentals, { source: "edinet", priceHistory: readPriceHistory(id) });
       writeCorpusJson(`fundamentals/${id}.json`,fundamentals);
       const industryCode = edinetFact(latestRows,"IndustryCodeWhenConsolidatedFinancialStatementsArePreparedInAccordanceWithIndustrySpecificRegulationsDEI");

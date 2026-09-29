@@ -10,7 +10,7 @@ import { runNumericTests } from "./tests";
 import { valueCompany } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory } from "./types";
 
-export const PIPELINE_VERSION = "7";
+export const PIPELINE_VERSION = "8";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -52,6 +52,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
       ? { valuation: null, reason: "Local government and US10Y bond yields unavailable" }
       : valueCompany({ years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, priceHistory, ttm: fundamentals.ttm });
   if (valuation) {
+    if (company.source === "edinet" && !years.at(-1)?.edinetShares) valuation.assumptions.push("Unverified JP share count unreconciled: EDINET share facts unavailable");
     if (bondYield === null) valuation.assumptions.push("Local government bond yield unavailable; using US10Y yield");
     if (rate !== null) valuation.perShareTrading = {
       currency: company.currency, fxRate: rate,

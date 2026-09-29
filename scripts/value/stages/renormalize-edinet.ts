@@ -1,3 +1,5 @@
+import { cachedInterimDocuments, applyCachedEdinetInterim } from "../../../lib/value/japan/cached-interim";
+import { reconcileEdinetShares } from "../../../lib/value/japan/shares";
 import { existsSync, readdirSync } from "node:fs";
 import { annualReportDocuments, csvFilesFromZip, type DocumentDay, type EdinetDocument } from "../../../lib/value/japan/edinet";
 import { mergeYears, parseEdinetCsv, yearsFromEdinet } from "../../../lib/value/japan/xbrl-csv";
@@ -24,6 +26,7 @@ export default async function renormalizeEdinet({ only, limit }: { only?: string
       documents.get(id)!.set(doc.docID, doc);
     }
   }
+  const interimDocuments = cachedInterimDocuments();
   let written = 0;
   let missing = 0;
   const adjusted: string[] = [];
@@ -42,8 +45,11 @@ export default async function renormalizeEdinet({ only, limit }: { only?: string
     if (!docs.length) years = raw?.years ?? [];
     if (!years.length) { missing++; continue; }
     if (docs.length) writeCorpusJson(`raw/edinet/issuers/${company.id}.json`, { ...raw, years });
+    const prices = readPriceHistory(company.id);
+    years = years.map(year => reconcileEdinetShares(year, prices));
     const f: Fundamentals = { ...before, years: years.map(y => ({ ...y })), integrity: { ok: true, reasons: [] } };
-    f.integrity = checkIntegrity(f, { source: company.source, priceHistory: readPriceHistory(company.id) });
+    applyCachedEdinetInterim(f, interimDocuments.get(company.id) ?? [], prices);
+    f.integrity = checkIntegrity(f, { source: company.source, priceHistory: prices });
     writeCorpusJson(`fundamentals/${company.id}.json`, f);
     if (++written % 100 === 0) console.log(`renormalize-edinet: ${written}/${companies.length} issuers`);
     if (f.integrity.notes?.some(note => note.startsWith("split ") && note.endsWith(" adjusted"))) adjusted.push(company.id);

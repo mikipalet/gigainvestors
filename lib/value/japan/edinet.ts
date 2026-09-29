@@ -30,8 +30,10 @@ export async function listDocuments(date: string): Promise<DocumentDay> {
   if (data.metadata?.status !== "200" || !Array.isArray(data.results)) throw new Error(`EDINET documents ${date}: invalid response`);
   return data;
 }
-export function annualReportDocuments(data: Pick<DocumentDay, "results">): EdinetDocument[] {
-  return data.results.filter(d => d.docTypeCode === "120" && d.secCode !== "00000" && /^[0-9A-Z]{4}0$/.test(d.secCode ?? "")
+export function annualReportDocuments(data: Pick<DocumentDay, "results">): EdinetDocument[] { return reportDocuments(data, "120"); }
+export function semiAnnualReportDocuments(data: Pick<DocumentDay, "results">): EdinetDocument[] { return reportDocuments(data, "160"); }
+function reportDocuments(data: Pick<DocumentDay, "results">, type: string): EdinetDocument[] {
+  return data.results.filter(d => d.docTypeCode === type && d.secCode !== "00000" && /^[0-9A-Z]{4}0$/.test(d.secCode ?? "")
     && d.csvFlag === "1" && d.withdrawalStatus === "0" && d.disclosureStatus === "0");
 }
 export async function annualReports({ from, to }: { from: string; to: string }): Promise<EdinetDocument[]> {

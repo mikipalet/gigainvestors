@@ -4,7 +4,7 @@ import { useWidth } from '@/lib/value/viz/use-width';
 export function MiniDollar({retained,created}:{retained:number|null;created:number|null}){
  if(retained===null||created===null||retained<=0)return null;
  const ratio=created/retained,max=Math.max(1,ratio,0);
- return <figure className="mini-dollar"><figcaption>Retained → value created</figcaption><div><span>$1</span><i style={{width:`${1/max*65}%`}}/></div><div><span>{formatMetric({value:ratio,format:'x'})}</span><i style={{width:`${Math.max(0,ratio)/max*65}%`}}/></div></figure>;
+ return <figure className="mini-dollar"><figcaption>Kept → market value created</figcaption><div><span>$1 kept</span><i style={{width:`${1/max*65}%`}}/></div><div><span>{formatMetric({value:ratio,format:'x'})}</span><i style={{width:`${Math.max(0,ratio)/max*65}%`}}/></div></figure>;
 }
 export function MiniPrice({dossier,quote}:{dossier:Dossier;quote:PriceMap[string]|null}){
  const {ref,width}=useWidth();
@@ -20,5 +20,5 @@ export function MiniPrice({dossier,quote}:{dossier:Dossier;quote:PriceMap[string
  const current=dossier.valuation?.perShareTrading??dossier.valuation?.perShare;
  const segments=vs.filter(v=>v[0]+1>=start).map(([fy,low,mid,high])=>({from:Math.max(start,fy),to:Math.min(end,fy+1),low,mid,high}));
  if(current&&end>vs.at(-1)![0]+1)segments.push({from:Math.max(start,vs.at(-1)![0]+1),to:end,...current});
- return <figure ref={ref} className="mini-price"><figcaption><span>Price</span><span>Value range</span><span>Buy line</span></figcaption><svg viewBox={`0 0 ${width} 54`} aria-label="Monthly price against fiscal-year value range and buy line">{segments.map((v,i)=><g key={i}><rect x={x(v.from)} width={Math.max(0,x(v.to)-x(v.from))} y={y(v.high)} height={Math.max(1,y(v.low)-y(v.high))} fill="var(--viz-muted)" opacity=".3"/><path d={`M${x(v.from)} ${y(v.mid)}H${x(v.to)}`} stroke="var(--viz-muted)"/><path d={`M${x(v.from)} ${y(v.mid*(1-mos))}H${x(v.to)}`} stroke="var(--buy)" strokeDasharray="3 2"/></g>)}<path d={ps.map(([t,p],i)=>`${i?'L':'M'}${x(year(t))} ${y(p)}`).join(' ')} stroke="var(--ink)" fill="none" strokeWidth="1.5"/></svg><div>{Math.floor(start)}–{Math.floor(end)} · annual estimates</div></figure>;
+ return <figure ref={ref} className="mini-price"><figcaption><span>Price</span><span>Value range</span><span>Buffett’s bar</span></figcaption><svg viewBox={`0 0 ${width} 54`} aria-label="Monthly price against fiscal-year value range and buy line">{segments.map((v,i)=><g key={i}><rect x={x(v.from)} width={Math.max(0,x(v.to)-x(v.from))} y={y(v.high)} height={Math.max(1,y(v.low)-y(v.high))} fill="var(--viz-muted)" opacity=".3"/><path d={`M${x(v.from)} ${y(v.mid)}H${x(v.to)}`} stroke="var(--viz-muted)"/><path d={`M${x(v.from)} ${y(v.mid*(1-mos))}H${x(v.to)}`} stroke="var(--buy)" strokeDasharray="3 2"/></g>)}<path d={ps.map(([t,p],i)=>`${i?'L':'M'}${x(year(t))} ${y(p)}`).join(' ')} stroke="var(--ink)" fill="none" strokeWidth="1.5"/></svg><div>{Math.floor(start)}–{Math.floor(end)} · annual estimates</div></figure>;
 }

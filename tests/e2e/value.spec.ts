@@ -8,24 +8,24 @@ const open=async(page:import('@playwright/test').Page,key:string)=>{await page.g
 const close=async(page:import('@playwright/test').Page)=>{await page.getByRole('button',{name:'Close panel',exact:true}).click();};
 test('quality map, near misses, filters and current-price table',async({page})=>{
  await page.goto('/value',{waitUntil:'networkidle'});
- await expect(page.getByRole('heading',{level:1})).toHaveText(/companies pass Buffett.*qualify at a buy price/);
- await page.getByRole('button',{name:'Table ↗',exact:true}).click();
- await expect(page.getByRole('row',{name:/Coca-Cola/})).toContainText('0.60×');
+ await expect(page.getByRole('heading',{level:1})).toHaveText(/businesses in the buy zone/);
+ await page.getByRole('button',{name:'All companies ↗',exact:true}).click();
+ await expect(page.getByRole('row',{name:/Coca-Cola/})).toContainText('40% below its estimated value');
  await expect(page.getByRole('row',{name:/Delta Air/})).toHaveCount(0);
  await close(page);await page.getByRole('switch',{name:/Near misses/}).click();
- await page.getByRole('button',{name:'Table ↗',exact:true}).click();
+ await page.getByRole('button',{name:'All companies ↗',exact:true}).click();
  await expect(page.getByRole('row',{name:/Delta Air/})).toBeVisible();
  await close(page);await page.getByRole('combobox',{name:'Country',exact:true}).click();await page.getByRole('option',{name:'United States',exact:true}).click();
  await expect(page).toHaveURL(/country=US/);await page.reload();
  await expect(page.getByRole('switch',{name:/Near misses/})).toBeChecked();
  await page.getByRole('switch',{name:/Held by superinvestors/}).click();
- await page.getByRole('button',{name:'Table ↗',exact:true}).click();
+ await page.getByRole('button',{name:'All companies ↗',exact:true}).click();
  await expect(page.getByTestId('results-table').locator('[data-company-row]')).toHaveCount(1);
 });
 test('six evidence panels, filing evidence, valuation bridge and focus restoration',async({page})=>{
  await page.goto('/value/ko.us',{waitUntil:'networkidle'});
  await expect(page.locator('.test-tile')).toHaveCount(6);
- await open(page,'moat');await expect(page.locator('.test-section h2')).toHaveText('Moat');
+ await open(page,'moat');await expect(page.locator('.test-section h2')).toHaveText('Lasting advantage');
  await page.getByText(/Report evidence \(/).click();
  await expect(page.getByText('Item 1 · Business').first()).toBeVisible();
  await expect(page.getByText('Our brands encourage repeat purchases.')).toHaveCount(0);
@@ -34,13 +34,13 @@ test('six evidence panels, filing evidence, valuation bridge and focus restorati
  await page.getByText('Show as table',{exact:true}).click();
  await expect(page.getByTestId('valuation-bridge').locator('tbody tr').last()).toContainText('36.78');
  await expect(page.getByTestId('football-field')).toContainText('40.0% below our mid estimate');
- await close(page);await expect(page.getByRole('link',{name:/Warren Buffett/})).toHaveAttribute('href','https://gigainvestors.com/s/KO');
+ await close(page);await expect(page.getByRole('link',{name:/Warren Buffett/})).toHaveAttribute('href','https://gigainvestors.com/BRK');
 });
 test('virtual table reaches final row and preserves sorting without page scroll',async({page})=>{
  const row=JSON.parse(await readFile(path.join(root,'index/US.json'),'utf8'))[0];
  await page.route('**/main/index/US.json',r=>r.fulfill({json:Array.from({length:1501},(_,i)=>({...row,id:`FIX${i}.US`,n:`Company ${String(i).padStart(4,'0')}`,nameEn:`Company ${String(i).padStart(4,'0')}`,t:'PPPPP'}))}));
  await page.goto('/value?country=US&sort=name&direction=asc',{waitUntil:'networkidle'});
- await page.getByRole('button',{name:'Table ↗',exact:true}).click();
+ await page.getByRole('button',{name:'All companies ↗',exact:true}).click();
  await expect(page.getByTestId('results-table')).toHaveAttribute('aria-rowcount','1502');
  expect(await page.locator('[data-company-row]').count()).toBeLessThanOrEqual(36);
  await page.getByTestId('results-scroll').evaluate(el=>{el.scrollTop=el.scrollHeight;});
@@ -76,9 +76,9 @@ test('panel chart keyboard controls and accessible data twins',async({page})=>{
 test('latest client quote updates value band, price tile and history together',async({page})=>{
  const prices=JSON.parse(await readFile(path.join(root,'prices/US.json'),'utf8'));
  await page.route('**/main/prices/US.json',r=>r.fulfill({json:prices}));await page.goto('/value/ko.us',{waitUntil:'networkidle'});
- await expect(page.locator('.value-band')).toContainText('0.60×');await expect(page.getByTestId('tile-price')).toContainText('0.60×');
+ await expect(page.locator('.value-band')).toContainText('40% below its estimated value');await expect(page.getByTestId('tile-price')).toContainText('40% below its estimated value');
  prices['KO.US']=[prices['KO.US'][0]/2,'2026-09-29'];await page.reload();
- await expect(page.locator('.value-band')).toContainText('0.30×');await expect(page.getByTestId('tile-price')).toContainText('0.30×');
+ await expect(page.locator('.value-band')).toContainText('70% below its estimated value');await expect(page.getByTestId('tile-price')).toContainText('70% below its estimated value');
  await page.getByTestId('valuation-open').click();await expect(page.getByTestId('football-field')).toContainText('70.0% below our mid estimate');await expect(page.getByTestId('price-history')).toContainText("Buy line uses today's required discount");
 });
 test('country and price failures remain visible and distinct',async({page})=>{
@@ -116,14 +116,14 @@ test('one snapshot has the same funnel price count, published flags and green do
  expect(rows.filter((r: { b?: boolean }) => r.b === true)).toHaveLength(count);
  await page.goto('/value', { waitUntil: 'networkidle' });
  await expect(page.locator('.one-index')).toHaveAttribute('data-buy-count', String(count));
- await expect(page.locator('.company-tile[data-buy="true"]')).toHaveCount(count);
+ await expect(page.locator('.buy-tile[data-buy="true"]')).toHaveCount(count);
  await page.getByRole('switch', { name: /Near misses/ }).click();
- await expect(page.locator('.company-tile[data-buy="true"]')).toHaveCount(count);
+ await expect(page.locator('.buy-tile[data-buy="true"]')).toHaveCount(count);
  // A separately refreshed quote may move a point; only publication can change its verdict.
  const prices = JSON.parse(await readFile(path.join(root, 'prices/US.json'), 'utf8'));
  prices['KO.US'][0] *= 2;
  await page.route('**/main/prices/US.json', r => r.fulfill({ json: prices }));
  await page.reload({ waitUntil: 'networkidle' });
- await expect(page.locator('.company-tile[data-buy="true"]')).toHaveCount(count);
- await expect(page.locator('.company-tile[href$="/ko.us"]')).toHaveAttribute('data-buy', 'true');
+ await expect(page.locator('.buy-tile[data-buy="true"]')).toHaveCount(count);
+ await expect(page.locator('.buy-tile[href$="/ko.us"]')).toHaveAttribute('data-buy', 'true');
 });

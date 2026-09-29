@@ -49,7 +49,10 @@ export const monthLabel = (value:string) => dateLabel(value).replace(/^\d+ /, ''
 /** Optional-safe English identity for old and new publication snapshots. */
 export function companyName(company: {nameEn?: string; name?: string; n?: string; id: string}) {
  const name = company.nameEn || company.name || company.n || '';
- return /[a-zA-Z]{2}/.test(name) ? displayName(name) : `Company ${company.id}`;
+ const clean=displayName(name.replace(/\s+(?:ADR|ADS)$/i,'')).replace(/(?:[\s,]+(?:co|ltd|inc|corporation|corp|limited)\.?)+[,.\s]*$/i,'');
+ const acronyms=new Set(['IBM','IT','AI','ID','JP','JFE','JGC','JSR','JVC','NEC','NTT','TDK','THK','SMC','SMK','SBI','SCSK','NOK','DIC','DNP','DOWA','AGC','ADEKA','EIZO','TSMC','USA','US','UK','LVMH','HDFC','ICICI','HCL','SAP','AT&T','3M','BHP','BP','UBS','ABB','KLA','ASML']);
+ const display=clean===clean.toUpperCase()?clean.replace(/[A-Z][A-Z&0-9-]*/g,word=>acronyms.has(word)||!/[AEIOUY]/.test(word)?word:word[0]+word.slice(1).toLowerCase()):clean;
+ return /[a-zA-Z]{2}/.test(name) ? display : `Company ${company.id}`;
 }
 
 // Single green hue, sequential lightness. Text contrast is validated in round-seven.test.ts.
@@ -58,4 +61,11 @@ export function buyColour(priceToBuy: number | null) {
  if(priceToBuy===null || !Number.isFinite(priceToBuy)) return {background:'#eeede8',color:'#202820',unknown:true};
  const index = priceToBuy <= 1 ? 0 : priceToBuy <= 1.3 ? 1 : priceToBuy <= 1.7 ? 2 : priceToBuy <= 2.4 ? 3 : priceToBuy <= 4 ? 4 : 5;
  return {background:BUY_RAMP[index],color:index<2?'#ffffff':'#14251a',unknown:false};
+}
+
+/** Price/value everywhere; the fall is a percentage of today's price, not value. */
+export function priceFraming(ratio:number|null,discount=.25) {
+ if(ratio===null||!Number.isFinite(ratio)||ratio<=0)return {headline:'Estimated value unavailable',fall:'Buy price unavailable',drop:null};
+ const drop=Math.max(0,Math.round((1-(1-discount)/ratio)*100));
+ return {headline:ratio<1?`${Math.round((1-ratio)*100)}% below its estimated value`:`Costs ${ratio.toFixed(1)}× its estimated value`,fall:ratio<=1-discount?'At or below the buy price':`Needs to fall ${drop||'<1'}% to reach the buy price`,drop};
 }

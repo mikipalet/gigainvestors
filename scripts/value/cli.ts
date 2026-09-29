@@ -1,9 +1,12 @@
 import { readdirSync } from "node:fs";
 import path from "node:path";
+import os from "node:os";
 import { pathToFileURL } from "node:url";
 import dotenv from "dotenv";
 
 dotenv.config({ path: path.resolve(__dirname, "../../.env.local"), quiet: true });
+
+dotenv.config({ path: path.join(process.env.VALUE_CORPUS_DIR ?? path.join(os.homedir(), 'value-corpus'), '.env.local'), quiet: true });
 
 async function main(): Promise<void> {
   const directory = path.join(__dirname, "stages");

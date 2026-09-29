@@ -1,15 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { valueFixtures } from './value-fixtures';
-export const sizes=[[390,844],[430,932],[820,1180],[1280,720],[1366,768],[1440,800],[1470,836],[1512,862],[1536,730],[1680,950],[1728,1000],[1920,960],[2560,1300]];
+export const sizes=[[1728,970],[2056,1180],[390,844],[430,932],[820,1180],[1280,720],[1366,768],[1440,800],[1470,836],[1512,862],[1536,730],[1680,950],[1728,1000],[1920,960],[2560,1300]];
 test.beforeEach(async({page})=>valueFixtures(page));
 for (const [width,height] of sizes) {
  test(`one screen and evidence panels at ${width}x${height}`,async({page})=>{
   await page.setViewportSize({width,height});
   for(const [name,url] of [['index','/value'],['dossier','/value/ko.us'],['missing','/value/nope.us']]){
    await page.goto(url,{waitUntil:'networkidle'});
-   if(name==='dossier')await expect(page.locator('.value-band')).toContainText('0.60×');
+   if(name==='dossier')await expect(page.locator('.value-band')).toContainText('40% below its estimated value');
    if(name==='index')await expect(page.getByTestId('company-tile').first()).toBeVisible();
-   await page.screenshot({path:`/tmp/value-design-7/${name}-${width}x${height}.png`});
+   await page.screenshot({path:`/tmp/value-design-8-fixture/${name}-${width}x${height}.png`});
    expect(await page.evaluate(()=>document.documentElement.scrollHeight)).toBe(height);
    expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
    const cuts=await page.evaluate(()=>Array.from(document.querySelectorAll('.test-tile, .company-tile, .dossier-band, .index-story, .map-toolbar, .treemap-legend')).flatMap(parent=>{

@@ -12,7 +12,7 @@ test('tooltips stay within 24px of three pointers and keyboard focus reveals the
   expect(Math.hypot(dx,dy)).toBeLessThanOrEqual(24);
   expect(t.x).toBeGreaterThanOrEqual(0);expect(t.x+t.width).toBeLessThanOrEqual(1400);
  }
- await page.getByTestId('company-tile').first().focus();await expect(page.getByRole('tooltip')).toContainText('quality');
+ await page.mouse.move(0,0);await page.getByTestId('company-tile').first().focus();await expect(page.getByRole('tooltip')).toContainText('quality');
 });
 test('time travel replaces quality and prices, restores URL state and never shows current rows on missing history',async({page})=>{
  await page.goto('/value',{waitUntil:'networkidle'});
@@ -36,7 +36,7 @@ test('new identity fields render and a broken logo has a readable fallback',asyn
  await page.route('https://icons.duckduckgo.com/ip3/coca-cola.com.ico',r=>r.fulfill({status:404,body:''}));
  await page.goto('/value/ko.us',{waitUntil:'networkidle'});
  await expect(page.locator('.company-about')).toContainText('soft drinks');
- await expect(page.locator('.plain-verdict')).toContainText('quality business');
+ await expect(page.locator('.plain-verdict')).toContainText('Buy zone');
  await expect(page.locator('.company-logo')).toContainText('C');
  await expect(page.locator('.tile-sentence')).toHaveCount(6);
 });
@@ -49,8 +49,8 @@ test('historical quality includes companies absent from today’s default index'
  await page.goto('/value?year=2018',{waitUntil:'networkidle'});
  await expect(page.getByTestId('company-tile')).toHaveCount(1);
  await expect(page.getByTestId('company-tile')).toContainText('Former Quality Business');
- await page.getByRole('button',{name:'Table ↗',exact:true}).click();
- await expect(page.getByRole('row',{name:/Former Quality/})).toContainText('0.50×');
+ await page.getByRole('button',{name:'All companies ↗',exact:true}).click();
+ await expect(page.getByRole('row',{name:/Former Quality/})).toContainText('50% below its estimated value');
  await expect(page.getByRole('row',{name:/Former Quality/})).toContainText('+140%');
 });
 test('rapid timeline changes write the URL once after settling',async({page})=>{
@@ -85,11 +85,11 @@ test('phone Method panel exposes all seven cumulative gates',async({page})=>{
  for(let i=0;i<7;i++)await expect(gates.nth(i)).toBeVisible();
  await expect(page.getByRole('dialog')).toContainText('Today’s gate breakdown');
 });
-test('dense desktop maps fold the tail into the complete table',async({page})=>{
+test('dense desktop maps offer all companies without dead overflow blocks',async({page})=>{
  const fs=await import('node:fs/promises');const row=JSON.parse(await fs.readFile('tests/fixtures/value/store/index/US.json','utf8'))[0];
- await page.route('**/main/index/US.json',r=>r.fulfill({json:Array.from({length:239},(_,i)=>({...row,id:`DENSE${i}.US`,nameEn:`Business ${i}`,mc:1e9}))}));
+ await page.route('**/main/index/US.json',r=>r.fulfill({json:Array.from({length:239},(_,i)=>({...row,id:`DENSE${i}.US`,nameEn:`Business ${i}`,mc:1e9,b:false}))}));
  await page.goto('/value?country=US',{waitUntil:'networkidle'});
  expect(await page.getByTestId('company-tile').count()).toBeLessThan(100);
- await page.getByRole('button',{name:/more open company list/}).click();
+ await page.getByRole('button',{name:/Show all 239/}).click();
  await expect(page.getByTestId('results-table')).toHaveAttribute('aria-rowcount','240');
 });

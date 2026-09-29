@@ -1,3 +1,4 @@
+import { priceFraming } from './presentation';
 import { T } from './config';
 import type { Kind, Series, TestOutcome } from './types';
 import type { MetricFormat } from './metric-labels';
@@ -20,7 +21,7 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
   }
   case 'management':return {...metric('retainedDollar','value created / retained','x',1,'higher',[],'Retained → value created'),value:m.retainedEarnings!=null&&m.retainedEarnings>0&&m.marketCapGain!=null?m.marketCapGain/m.retainedEarnings:null};
   case 'accounting':return metric(financial?'sbcToOcf':'accruals',financial?'SBC / operating cash flow':'Sloan accruals','pct',financial?T.accounting.maxSbcToOcf:T.accounting.maxAccruals,'lower',test.series[financial?'sbcToOcf':'accruals']??[],financial?'SBC / cash flow':'Sloan accruals');
-  case 'price':return metric('priceToMid','price / mid value','x',m.buyRatio??.75,'lower');
+  case 'price':return metric('priceToMid','price / estimated value','x',m.buyRatio??.75,'lower');
  }
 }
 export function tileReason(test:TestOutcome):string {
@@ -43,11 +44,11 @@ export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):str
   case 'understandable':return v<=bar?'Profit margins have stayed steady over time.':'Profit margins vary too much to call this predictable.';
   case 'moat': {
    const years=metric.series.filter(p=>p[1]!==null),passes=years.filter(p=>p[1]!>=bar).length;
-   return `Earns ${pct(v)} on ${kind==='operating'?'capital':'equity'}; ${years.length?`${passes} of ${years.length} years meet`:'compared with'} the ${pct(bar)} bar.`;
+   return `Earns ${pct(v)} on ${kind==='operating'?'invested money':'equity'}; ${years.length?`${passes}/${years.length} years clear the bar.`:`the bar is ${pct(bar)}.`}`;
   }
-  case 'economics':return `Turns $1 of profit into $${num(v)} for owners; $${num(bar)} is the bar.`;
-  case 'management':return `Each $1 kept in the business created $${num(v)} of market value.`;
+  case 'economics':return `Each $1 of profit leaves $${num(v)} for owners.`;
+  case 'management':return `$${num(v)} of market value created per $1 kept.`;
   case 'accounting':return kind==='operating'?(v<0?`Cash exceeds profit by ${pct(-v)} of assets.`:`Profit exceeds cash by ${pct(v)} of assets; ${pct(bar)} is the limit.`):`Stock pay uses ${pct(v)} of operating cash; the limit is ${pct(bar)}.`;
-  case 'price':return `Price is ${Math.round(Math.abs(v/bar-1)*100)}% ${v<=bar?'below':'above'} the buy line.`;
+  case 'price':return priceFraming(v,1-bar).headline;
  }
 }

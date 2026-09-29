@@ -76,12 +76,12 @@ for (const [w, h] of viewports) {
     page.on("pageerror", e => errors.push(String(e).slice(0, 160)));
     const res = await page.goto(base + path, { waitUntil: "networkidle", timeout: 90000 }).catch(e => ({ status: () => String(e).slice(0, 80) }));
     await page.waitForTimeout(600);
-    const name = `${w}${path.replace(/[^a-z0-9]+/gi, "_")}`;
+    const name = `${w}x${h}${path.replace(/[^a-z0-9]+/gi, "_")}`;
     if(process.env.QA_SCREENSHOTS!=='0')await page.screenshot({ path: `${out}/${name}.png`, fullPage: true });
     const a = await page.evaluate(audit);
     // interaction: focus + hover the first interactive chart layer and snapshot the viewport
     const target = page.locator('.company-map svg a, [tabindex="0"]').first();
-    if (await target.count()) {
+    if (process.env.QA_HOVER !== '0' && await target.count()) {
       await target.focus().catch(() => {});
       await page.keyboard.press("ArrowRight").catch(() => {});
       const box = await target.boundingBox().catch(() => null);

@@ -21,7 +21,7 @@ beforeEach(() => {
 });
 it('renders reporting value, explicit currency mismatch and an unclear price test', async () => {
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toContain('Comparable valuation unavailable');
+  expect(html).toContain('Estimated value unavailable');
   expect(html).toContain('Price is in USD, value in JPY, not compared');
   expect(html).toContain('Price: unclear');
   expect(html).not.toContain('margin of safety 99.4%');
@@ -31,8 +31,8 @@ it('uses converted trading values for both the headline and margin', async () =>
   dossier.b = true; // Published converted-currency verdict.
   dossier.valuation!.perShareTrading = { currency: 'USD', fxRate: .01, low: 8, mid: 10, high: 12 };
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toContain('USD 10.00');
-  expect(html).toContain('0.60×');
+  expect(html).toContain('40% below its estimated value');
+  expect(html).not.toContain('99% below');
   expect(html).toContain('Price: pass');
   expect(html).not.toContain('not compared');
 });

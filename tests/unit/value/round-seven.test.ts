@@ -12,7 +12,7 @@ test('price colour gets lighter as price rises, with readable text throughout', 
   const {background,color}=presentation.buyColour(ratio);
   const l=luminance(background.slice(1)),t=luminance(color.slice(1));
   expect(l).toBeGreaterThanOrEqual(previous);previous=l;
-  expect((Math.max(l,t)+.05)/(Math.min(l,t)+.05)).toBeGreaterThanOrEqual(3);
+  expect((Math.max(l,t)+.05)/(Math.min(l,t)+.05)).toBeGreaterThanOrEqual(4.5);
  }
  expect(presentation.buyColour(null).unknown).toBe(true);
 });

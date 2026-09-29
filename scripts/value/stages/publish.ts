@@ -14,6 +14,8 @@ import type { Analysis, Company, Dossier, PriceHistory } from "../../../lib/valu
 import { readPriceHistory } from "../../../lib/value/price-history";
 import type { Index, StockShard } from "../../../lib/types";
 
+import { revalidatePublishedValue } from '../revalidate';
+
 const REMOTE = "https://github.com/mikipalet/gigainvestors-value-data.git";
 
 export function git(repo: string, args: string[]): string {
@@ -270,6 +272,7 @@ export default async function publish(options: { only?: string[]; limit?: number
   await withPublishRepository(async (repo) => {
     const { count, changed } = publishSnapshot({ repo, analyses, universe: companies, partial: Boolean(options.only || options.limit), force: options.force, ...holders });
     pushRepository(repo, true);
+    await revalidatePublishedValue();
     console.log(`publish: ${count} companies, ${changed ? "replaced data snapshot" : "unchanged snapshot"}`);
   });
 }

@@ -2,8 +2,8 @@ import { StatusGlyph } from './viz/StatusGlyph';
 import type { Result, TestKey } from "@/lib/value/types";
 
 export const testLabels: Record<TestKey, string> = {
-  understandable: "Understandable", moat: "Moat", economics: "Economics",
-  management: "Management", accounting: "Accounting", price: "Price",
+  understandable: "Predictable profits", moat: "Lasting advantage", economics: "Cash for owners",
+  management: "Money well spent", accounting: "Honest profits", price: "Price",
 };
 export function TestChips({ tests }: { tests: Array<{ key: TestKey; result: Result }> }) {
   return <div className="flex flex-wrap gap-2">{tests.map((test) => (

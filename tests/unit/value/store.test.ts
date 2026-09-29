@@ -27,6 +27,13 @@ describe("value store", () => {
     vi.stubGlobal("fetch", async () => new Response(null, { status: 503 }));
     await expect(readStore("meta.json")).rejects.toThrow("503");
   });
+  it("tags remote value reads for the authenticated publication hook", async () => {
+    vi.stubEnv("VALUE_STORE_DIR", "");
+    const fetch = vi.fn(async () => new Response('{}'));
+    vi.stubGlobal("fetch", fetch);
+    await readStore("meta.json");
+    expect(fetch).toHaveBeenCalledWith(expect.any(String), expect.objectContaining({next:{revalidate:86400,tags:['value-data']}}));
+  });
   it("rejects paths outside the store", async () => {
     vi.stubEnv("VALUE_STORE_DIR", "tests/fixtures/value/store");
     await expect(readStore("../meta.json")).rejects.toThrow();

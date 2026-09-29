@@ -1,4 +1,4 @@
-import { VALUE_DATA_URL, validQuote } from './data-source';
+import { VALUE_DATA_TAG, VALUE_DATA_URL, validQuote } from './data-source';
 import { dossierReturn } from './presentation';
 import { readJsonFile } from '@/lib/blob';
 import path from "node:path";
@@ -11,7 +11,7 @@ export async function readStore<T>(file: string, revalidate = 86400): Promise<T 
   }
   if (process.env.VALUE_STORE_DIR) return readJsonFile<T>(path.join(process.env.VALUE_STORE_DIR,file), {missingOnly:true});
   const response = await fetch(`${VALUE_DATA_URL}${file}`, {
-    next: { revalidate }, signal: AbortSignal.timeout(30_000),
+    next: { revalidate, tags:[VALUE_DATA_TAG] }, signal: AbortSignal.timeout(30_000),
   });
   if (response.status === 404) return null;
   if (!response.ok) throw new Error(`Value store returned ${response.status}`);

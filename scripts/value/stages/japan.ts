@@ -66,7 +66,7 @@ export default async function japan(options: Options): Promise<void> {
   let completed = 0;
   await pool({ items:selected, concurrency:T.edinet.concurrency, run:async ([id,docs]) => {
     try {
-      const fingerprint = createHash("sha256").update(JSON.stringify({version:6,docs})).digest("hex");
+      const fingerprint = createHash("sha256").update(JSON.stringify({version:7,docs})).digest("hex");
       const cache = readCorpusJson<{ fingerprint:string; issuer:JapaneseIssuer }>(`raw/edinet/issuers/${id}.json`);
       const meta = readCorpusJson<ReportMeta>(`reports/${id}/meta.json`);
       if (!options.force && cache?.fingerprint === fingerprint && readCorpusJson(`fundamentals/${id}.json`) && meta?.kind === "EDINET"

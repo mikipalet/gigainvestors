@@ -134,3 +134,22 @@ it.each(["renormalize", "renormalize-edinet"])("%s applies only price-corroborat
   await stage({});
   expect(readCorpusJson("fundamentals/YES.JP.json")).toEqual(yes);
 });
+
+it('reparses every cached filing in submission order instead of reusing stale issuer mappings', async () => {
+  const { copyFileSync, mkdirSync } = await import('node:fs');
+  const dir=mkdtempSync(join(tmpdir(),'edinet-reparse-')); directories.push(dir);vi.stubEnv('VALUE_CORPUS_DIR',dir);
+  vi.stubGlobal('fetch',()=>{throw new Error('offline only')});
+  appendJsonl('universe.jsonl',{id:'6861.JP',source:'edinet'});
+  writeCorpusJson('fundamentals/6861.JP.json',{id:'6861.JP',currency:'JPY',years:[],integrity:{ok:false,reasons:[]},fetchedAt:'2026-09-01'});
+  writeCorpusJson('raw/edinet/issuers/6861.JP.json',{years:[],fingerprint:'obsolete'});
+  mkdirSync(corpusPath('raw/edinet/csv'),{recursive:true});
+  for (const [docID,year] of [['S100OLD',2025],['S100NEW',2026]] as const) {
+    copyFileSync(`tests/fixtures/value/edinet/full-statements/keyence-${year}.zip`,corpusPath(`raw/edinet/csv/${docID}.zip`));
+    writeCorpusJson(`raw/edinet/days/${year}-06-01.json`,{metadata:{status:'200'},results:[{docID,secCode:'68610',docTypeCode:'120',csvFlag:'1',withdrawalStatus:'0',disclosureStatus:'0',submitDateTime:`${year}-06-01`}]});
+  }
+  const { default: stage }=await import('../../../scripts/value/stages/renormalize-edinet');await stage({});
+  const f=readCorpusJson<Fundamentals>('fundamentals/6861.JP.json')!;
+  expect(f.years.map(y=>[y.fy,y.da,y.cash])).toEqual([[2024,13767000000,1132776000000],[2025,15193000000,1219234000000],[2026,17227000000,1493889000000]]);
+  expect(f.fetchedAt).toBe('2026-09-01');
+  expect(readCorpusJson<{years:unknown}>('raw/edinet/issuers/6861.JP.json')?.years).toEqual(f.years);
+});

@@ -29,10 +29,12 @@ export interface Company {
 export interface Year {
   fy: number;
   end: string; // ISO date
+  fiscalEndInferred?: boolean; // EDINET summary dates extrapolated beyond the explicit current/prior end
   currency?: string | null;
   minorityInterest?: number | null;
   revenue: number | null;
   grossProfit: number | null;
+  costOfSales?: number | null;
   operatingIncome: number | null;
   preTaxIncome: number | null;
   taxExpense: number | null;
@@ -57,7 +59,11 @@ export interface Year {
   loans?: number | null; // loan assets when supplied separately by the provider
   inventory: number | null;
   payables: number | null;
+  /** Cash/deposits plus separately reported short-term investments; excludes strategic holdings. */
   cash: number | null;
+  cashAndDeposits?: number | null;
+  cashAndCashEquivalents?: number | null;
+  shortTermInvestments?: number | null;
   totalDebt: number | null;
   equity: number | null;
   goodwill: number | null;

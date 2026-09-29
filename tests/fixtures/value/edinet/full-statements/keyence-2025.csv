@@ -1,0 +1,371 @@
+要素ID	項目名	コンテキストID	相対年度	連結・個別	期間・時点	ユニットID	単位	値
+jpcrp_cor:AuditFirm1Consolidated	監査法人１、連結	FilingDateInstant	提出日時点	その他	時点	－	－	有限責任監査法人　トーマツ
+jpcrp_cor:CPA1AuditFirm1Consolidated	公認会計士１、監査法人１、連結	FilingDateInstant	提出日時点	その他	時点	－	－	髙　見　勝　文
+jpcrp_cor:CPA2AuditFirm1Consolidated	公認会計士２、監査法人１、連結	FilingDateInstant	提出日時点	その他	時点	－	－	片　岡　洋　貴
+jpcrp_cor:AuditFirm1NonConsolidated	監査法人１、個別	FilingDateInstant	提出日時点	その他	時点	－	－	有限責任監査法人　トーマツ
+jpcrp_cor:CPA1AuditFirm1NonConsolidated	公認会計士１、監査法人１、個別	FilingDateInstant	提出日時点	その他	時点	－	－	髙　見　勝　文
+jpcrp_cor:CPA2AuditFirm1NonConsolidated	公認会計士２、監査法人１、個別	FilingDateInstant	提出日時点	その他	時点	－	－	片　岡　洋　貴
+jpdei_cor:NumberOfSubmissionDEI	提出回数、DEI	FilingDateInstant	提出日時点	その他	時点	pure		1
+jpcrp_cor:NetSalesSummaryOfBusinessResults	売上高、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	967288000000
+jpcrp_cor:NetSalesSummaryOfBusinessResults	売上高、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	1059145000000
+jpcrp_cor:OrdinaryIncomeLossSummaryOfBusinessResults	経常利益又は経常損失（△）、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	519295000000
+jpcrp_cor:OrdinaryIncomeLossSummaryOfBusinessResults	経常利益又は経常損失（△）、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	561010000000
+jpcrp_cor:ProfitLossAttributableToOwnersOfParentSummaryOfBusinessResults	親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	369642000000
+jpcrp_cor:ProfitLossAttributableToOwnersOfParentSummaryOfBusinessResults	親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	398656000000
+jpcrp_cor:ComprehensiveIncomeSummaryOfBusinessResults	包括利益、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	387339000000
+jpcrp_cor:ComprehensiveIncomeSummaryOfBusinessResults	包括利益、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	381199000000
+jpcrp_cor:NetAssetsSummaryOfBusinessResults	純資産額、経営指標等	Prior1YearInstant	前期末	その他	時点	JPY	円	2806193000000
+jpcrp_cor:NetAssetsSummaryOfBusinessResults	純資産額、経営指標等	CurrentYearInstant	当期末	その他	時点	JPY	円	3108552000000
+jpcrp_cor:TotalAssetsSummaryOfBusinessResults	総資産額、経営指標等	Prior1YearInstant	前期末	その他	時点	JPY	円	2964792000000
+jpcrp_cor:TotalAssetsSummaryOfBusinessResults	総資産額、経営指標等	CurrentYearInstant	当期末	その他	時点	JPY	円	3289224000000
+jpcrp_cor:NetAssetsPerShareSummaryOfBusinessResults	１株当たり純資産額、経営指標等	Prior1YearInstant	前期末	その他	時点	JPYPerShares		11570.71
+jpcrp_cor:NetAssetsPerShareSummaryOfBusinessResults	１株当たり純資産額、経営指標等	CurrentYearInstant	当期末	その他	時点	JPYPerShares		12817.43
+jpcrp_cor:BasicEarningsLossPerShareSummaryOfBusinessResults	１株当たり当期純利益又は当期純損失（△）、経営指標等	Prior1YearDuration	前期	その他	期間	JPYPerShares		1524.14
+jpcrp_cor:BasicEarningsLossPerShareSummaryOfBusinessResults	１株当たり当期純利益又は当期純損失（△）、経営指標等	CurrentYearDuration	当期	その他	期間	JPYPerShares		1643.77
+jpcrp_cor:DilutedEarningsPerShareSummaryOfBusinessResults	潜在株式調整後１株当たり当期純利益、経営指標等	Prior1YearDuration	前期	その他	期間	JPYPerShares		－
+jpcrp_cor:DilutedEarningsPerShareSummaryOfBusinessResults	潜在株式調整後１株当たり当期純利益、経営指標等	CurrentYearDuration	当期	その他	期間	JPYPerShares		－
+jpcrp_cor:EquityToAssetRatioSummaryOfBusinessResults	自己資本比率、経営指標等	Prior1YearInstant	前期末	その他	時点	pure		0.947
+jpcrp_cor:EquityToAssetRatioSummaryOfBusinessResults	自己資本比率、経営指標等	CurrentYearInstant	当期末	その他	時点	pure		0.945
+jpcrp_cor:RateOfReturnOnEquitySummaryOfBusinessResults	自己資本利益率、経営指標等	Prior1YearDuration	前期	その他	期間	pure		0.1395
+jpcrp_cor:RateOfReturnOnEquitySummaryOfBusinessResults	自己資本利益率、経営指標等	CurrentYearDuration	当期	その他	期間	pure		0.1348
+jpcrp_cor:PriceEarningsRatioSummaryOfBusinessResults	株価収益率、経営指標等	Prior1YearDuration	前期	その他	期間	pure		46.77
+jpcrp_cor:PriceEarningsRatioSummaryOfBusinessResults	株価収益率、経営指標等	CurrentYearDuration	当期	その他	期間	pure		37.07
+jpcrp_cor:NetCashProvidedByUsedInOperatingActivitiesSummaryOfBusinessResults	営業活動によるキャッシュ・フロー、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	387916000000
+jpcrp_cor:NetCashProvidedByUsedInOperatingActivitiesSummaryOfBusinessResults	営業活動によるキャッシュ・フロー、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	409522000000
+jpcrp_cor:NetCashProvidedByUsedInInvestingActivitiesSummaryOfBusinessResults	投資活動によるキャッシュ・フロー、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	-242792000000
+jpcrp_cor:NetCashProvidedByUsedInInvestingActivitiesSummaryOfBusinessResults	投資活動によるキャッシュ・フロー、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	-280612000000
+jpcrp_cor:NetCashProvidedByUsedInFinancingActivitiesSummaryOfBusinessResults	財務活動によるキャッシュ・フロー、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	-76306000000
+jpcrp_cor:NetCashProvidedByUsedInFinancingActivitiesSummaryOfBusinessResults	財務活動によるキャッシュ・フロー、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	-83430000000
+jpcrp_cor:CashAndCashEquivalentsSummaryOfBusinessResults	現金及び現金同等物の残高、経営指標等	Prior1YearInstant	前期末	その他	時点	JPY	円	406065000000
+jpcrp_cor:CashAndCashEquivalentsSummaryOfBusinessResults	現金及び現金同等物の残高、経営指標等	CurrentYearInstant	当期末	その他	時点	JPY	円	451715000000
+jpcrp_cor:NumberOfEmployees	従業員数	Prior1YearInstant	前期末	その他	時点	pure		12286
+jpcrp_cor:NumberOfEmployees	従業員数	CurrentYearInstant	当期末	その他	時点	pure		12261
+jpcrp_cor:NumberOfEmployees	従業員数	CurrentYearInstant	当期末	その他	時点	pure		12261
+jpcrp_cor:ResearchAndDevelopmentExpensesResearchAndDevelopmentActivities	研究開発費、研究開発活動	CurrentYearDuration	当期	その他	期間	JPY	円	28856000000
+jpcrp_cor:CapitalExpendituresOverviewOfCapitalExpendituresEtc	設備投資額、設備投資等の概要	CurrentYearDuration	当期	その他	期間	JPY	円	14342000000
+jpcrp_cor:NumberOfIssuedSharesAsOfFiscalYearEndIssuedSharesTotalNumberOfSharesEtc	事業年度末現在発行数（株）、発行済株式、株式の総数等	FilingDateInstant	提出日時点	その他	時点	shares		243207684
+jpcrp_cor:NumberOfIssuedSharesAsOfFilingDateIssuedSharesTotalNumberOfSharesEtc	提出日現在発行数（株）、発行済株式、株式の総数等	FilingDateInstant	提出日時点	その他	時点	shares		243207684
+jpcrp_cor:NumberOfSharesHeld	所有株式数	CurrentYearInstant	当期末	その他	時点	shares		131565000
+jpcrp_cor:ShareholdingRatio	発行済株式（自己株式を除く。）の総数に対する所有株式数の割合	CurrentYearInstant	当期末	その他	時点	pure		0.5424
+jpcrp_cor:NumberOfSharesIssuedSharesVotingRights	株式数（株）、発行済株式、議決権の状況	CurrentYearInstant	当期末	その他	時点	shares		243207684
+jpcrp_cor:NumberOfVotingRightsIssuedSharesVotingRights	議決権の数（個）、発行済株式、議決権の状況	CurrentYearInstant	当期末	その他	時点	pure		2423464
+jpcrp_cor:NumberOfSharesHeldInOwnNameTreasurySharesEtc	自己名義所有株式数（株）、自己株式等	CurrentYearInstant	当期末	その他	時点	shares		682300
+jpcrp_cor:NumberOfSharesHeldInOthersNamesTreasurySharesEtc	他人名義所有株式数（株）、自己株式等	CurrentYearInstant	当期末	その他	時点	shares		－
+jpcrp_cor:TotalNumberOfSharesHeldTreasurySharesEtc	所有株式数の合計（株）、自己株式等	CurrentYearInstant	当期末	その他	時点	shares		682300
+jpcrp_cor:ShareholdingRatioTreasurySharesEtc	発行済株式総数に対する所有株式数の割合（％）、自己株式等	CurrentYearInstant	当期末	その他	時点	pure		0.0028
+jpcrp_cor:NumberOfMaleDirectorsAndOtherOfficers	役員のうち男性の人数	FilingDateInstant	提出日時点	その他	時点	pure		11
+jpcrp_cor:NumberOfFemaleDirectorsAndOtherOfficers	役員のうち女性の人数	FilingDateInstant	提出日時点	その他	時点	pure		1
+jpcrp_cor:RatioOfFemaleDirectorsAndOtherOfficers	役員のうち女性の比率	FilingDateInstant	提出日時点	その他	時点	pure		0.08
+jpcrp_cor:NumberOfSharesHeldOrdinarySharesInformationAboutDirectorsAndCorporateAuditors	所有株式数（普通株式）、役員の状況（取締役（及び監査役））	FilingDateInstant	提出日時点	その他	時点	shares		7654972
+jpcrp_cor:AuditFeesReportingCompany	監査証明業務に基づく報酬－提出会社、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	32000000
+jpcrp_cor:NonAuditFeesReportingCompany	非監査業務に基づく報酬－提出会社、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	－
+jpcrp_cor:AuditFeesReportingCompany	監査証明業務に基づく報酬－提出会社、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	34000000
+jpcrp_cor:NonAuditFeesReportingCompany	非監査業務に基づく報酬－提出会社、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	－
+jpcrp_cor:AuditFeesConsolidatedSubsidiaries	監査証明業務に基づく報酬－連結子会社、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	－
+jpcrp_cor:NonAuditFeesConsolidatedSubsidiaries	非監査業務に基づく報酬－連結子会社、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	－
+jpcrp_cor:AuditFeesConsolidatedSubsidiaries	監査証明業務に基づく報酬－連結子会社、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	－
+jpcrp_cor:NonAuditFeesConsolidatedSubsidiaries	非監査業務に基づく報酬－連結子会社、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	－
+jpcrp_cor:AuditFeesTotal	監査証明業務に基づく報酬－計、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	32000000
+jpcrp_cor:NonAuditFeesTotal	非監査業務に基づく報酬－計、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	－
+jpcrp_cor:AuditFeesTotal	監査証明業務に基づく報酬－計、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	34000000
+jpcrp_cor:NonAuditFeesTotal	非監査業務に基づく報酬－計、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	－
+jpcrp_cor:AuditFeesReportingCompanyNetworkFirms	監査証明業務に基づく報酬－提出会社、ネットワークファーム	Prior1YearDuration	前期	その他	期間	JPY	円	－
+jpcrp_cor:NonAuditFeesReportingCompanyNetworkFirms	非監査業務に基づく報酬－提出会社、ネットワークファーム	Prior1YearDuration	前期	その他	期間	JPY	円	17000000
+jpcrp_cor:AuditFeesReportingCompanyNetworkFirms	監査証明業務に基づく報酬－提出会社、ネットワークファーム	CurrentYearDuration	当期	その他	期間	JPY	円	－
+jpcrp_cor:NonAuditFeesReportingCompanyNetworkFirms	非監査業務に基づく報酬－提出会社、ネットワークファーム	CurrentYearDuration	当期	その他	期間	JPY	円	17000000
+jpcrp_cor:AuditFeesConsolidatedSubsidiariesNetworkFirms	監査証明業務に基づく報酬－連結子会社、ネットワークファーム	Prior1YearDuration	前期	その他	期間	JPY	円	7000000
+jpcrp_cor:NonAuditFeesConsolidatedSubsidiariesNetworkFirms	非監査業務に基づく報酬－連結子会社、ネットワークファーム	Prior1YearDuration	前期	その他	期間	JPY	円	129000000
+jpcrp_cor:AuditFeesConsolidatedSubsidiariesNetworkFirms	監査証明業務に基づく報酬－連結子会社、ネットワークファーム	CurrentYearDuration	当期	その他	期間	JPY	円	11000000
+jpcrp_cor:NonAuditFeesConsolidatedSubsidiariesNetworkFirms	非監査業務に基づく報酬－連結子会社、ネットワークファーム	CurrentYearDuration	当期	その他	期間	JPY	円	115000000
+jpcrp_cor:AuditFeesTotalNetworkFirms	監査証明業務に基づく報酬－計、ネットワークファーム	Prior1YearDuration	前期	その他	期間	JPY	円	7000000
+jpcrp_cor:NonAuditFeesTotalNetworkFirms	非監査業務に基づく報酬－計、ネットワークファーム	Prior1YearDuration	前期	その他	期間	JPY	円	147000000
+jpcrp_cor:AuditFeesTotalNetworkFirms	監査証明業務に基づく報酬－計、ネットワークファーム	CurrentYearDuration	当期	その他	期間	JPY	円	11000000
+jpcrp_cor:NonAuditFeesTotalNetworkFirms	非監査業務に基づく報酬－計、ネットワークファーム	CurrentYearDuration	当期	その他	期間	JPY	円	132000000
+jpcrp_cor:NumberOfIssuesSharesNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	銘柄数、非上場株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearInstant	当期末	その他	時点	pure		3
+jpcrp_cor:CarryingAmountSharesNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	貸借対照表計上額、非上場株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearInstant	当期末	その他	時点	JPY	円	753000000
+jpcrp_cor:NumberOfIssuesSharesOtherThanThoseNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	銘柄数、非上場株式以外の株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearInstant	当期末	その他	時点	pure		7
+jpcrp_cor:CarryingAmountSharesOtherThanThoseNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	貸借対照表計上額、非上場株式以外の株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearInstant	当期末	その他	時点	JPY	円	5704000000
+jpcrp_cor:NumberOfIssuesWhoseNumberOfSharesIncreasedSharesNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	株式数が増加した銘柄数、非上場株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearDuration	当期	その他	期間	pure		－
+jpcrp_cor:TotalAcquisitionCostForIncreasedSharesSharesNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	株式数の増加に係る取得価額の合計額、非上場株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearDuration	当期	その他	期間	JPY	円	－
+jpcrp_cor:NumberOfIssuesWhoseNumberOfSharesIncreasedSharesOtherThanThoseNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	株式数が増加した銘柄数、非上場株式以外の株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearDuration	当期	その他	期間	pure		－
+jpcrp_cor:TotalAcquisitionCostForIncreasedSharesSharesOtherThanThoseNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	株式数の増加に係る取得価額の合計額、非上場株式以外の株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearDuration	当期	その他	期間	JPY	円	－
+jpcrp_cor:NumberOfIssuesWhoseNumberOfSharesDecreasedSharesNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	株式数が減少した銘柄数、非上場株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearDuration	当期	その他	期間	pure		－
+jpcrp_cor:TotalSaleAmountForDecreasedSharesSharesNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	株式数の減少に係る売却価額の合計額、非上場株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearDuration	当期	その他	期間	JPY	円	－
+jpcrp_cor:NumberOfIssuesWhoseNumberOfSharesDecreasedSharesOtherThanThoseNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	株式数が減少した銘柄数、非上場株式以外の株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearDuration	当期	その他	期間	pure		－
+jpcrp_cor:TotalSaleAmountForDecreasedSharesSharesOtherThanThoseNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	株式数の減少に係る売却価額の合計額、非上場株式以外の株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearDuration	当期	その他	期間	JPY	円	－
+jppfs_cor:CashAndDeposits	現金及び預金	Prior1YearInstant	前期末	連結	時点	JPY	円	520356000000
+jppfs_cor:CashAndDeposits	現金及び預金	CurrentYearInstant	当期末	連結	時点	JPY	円	579051000000
+jppfs_cor:NotesAndAccountsReceivableTrade	受取手形及び売掛金	Prior1YearInstant	前期末	連結	時点	JPY	円	307526000000
+jppfs_cor:NotesAndAccountsReceivableTrade	受取手形及び売掛金	CurrentYearInstant	当期末	連結	時点	JPY	円	320312000000
+jppfs_cor:ShortTermInvestmentSecurities	有価証券	Prior1YearInstant	前期末	連結	時点	JPY	円	612420000000
+jppfs_cor:ShortTermInvestmentSecurities	有価証券	CurrentYearInstant	当期末	連結	時点	JPY	円	640183000000
+jppfs_cor:Inventories	棚卸資産	Prior1YearInstant	前期末	連結	時点	JPY	円	77613000000
+jppfs_cor:Inventories	棚卸資産	CurrentYearInstant	当期末	連結	時点	JPY	円	77892000000
+jppfs_cor:OtherCA	その他、流動資産	Prior1YearInstant	前期末	連結	時点	JPY	円	15294000000
+jppfs_cor:OtherCA	その他、流動資産	CurrentYearInstant	当期末	連結	時点	JPY	円	16574000000
+jppfs_cor:AllowanceForDoubtfulAccountsCA	貸倒引当金、流動資産、一括控除	Prior1YearInstant	前期末	連結	時点	JPY	円	-1383000000
+jppfs_cor:AllowanceForDoubtfulAccountsCA	貸倒引当金、流動資産、一括控除	CurrentYearInstant	当期末	連結	時点	JPY	円	-1426000000
+jppfs_cor:CurrentAssets	流動資産	Prior1YearInstant	前期末	連結	時点	JPY	円	1531827000000
+jppfs_cor:CurrentAssets	流動資産	CurrentYearInstant	当期末	連結	時点	JPY	円	1632589000000
+jppfs_cor:BuildingsAndStructures	建物及び構築物	Prior1YearInstant	前期末	連結	時点	JPY	円	29991000000
+jppfs_cor:BuildingsAndStructures	建物及び構築物	CurrentYearInstant	当期末	連結	時点	JPY	円	29934000000
+jppfs_cor:AccumulatedDepreciationBuildingsAndStructures	減価償却累計額、建物及び構築物	Prior1YearInstant	前期末	連結	時点	JPY	円	-20675000000
+jppfs_cor:AccumulatedDepreciationBuildingsAndStructures	減価償却累計額、建物及び構築物	CurrentYearInstant	当期末	連結	時点	JPY	円	-20271000000
+jppfs_cor:BuildingsAndStructuresNet	建物及び構築物（純額）	Prior1YearInstant	前期末	連結	時点	JPY	円	9315000000
+jppfs_cor:BuildingsAndStructuresNet	建物及び構築物（純額）	CurrentYearInstant	当期末	連結	時点	JPY	円	9662000000
+jppfs_cor:ToolsFurnitureAndFixtures	工具、器具及び備品	Prior1YearInstant	前期末	連結	時点	JPY	円	61765000000
+jppfs_cor:ToolsFurnitureAndFixtures	工具、器具及び備品	CurrentYearInstant	当期末	連結	時点	JPY	円	66183000000
+jppfs_cor:AccumulatedDepreciationToolsFurnitureAndFixtures	減価償却累計額、工具、器具及び備品	Prior1YearInstant	前期末	連結	時点	JPY	円	-50028000000
+jppfs_cor:AccumulatedDepreciationToolsFurnitureAndFixtures	減価償却累計額、工具、器具及び備品	CurrentYearInstant	当期末	連結	時点	JPY	円	-53793000000
+jppfs_cor:ToolsFurnitureAndFixturesNet	工具、器具及び備品（純額）	Prior1YearInstant	前期末	連結	時点	JPY	円	11736000000
+jppfs_cor:ToolsFurnitureAndFixturesNet	工具、器具及び備品（純額）	CurrentYearInstant	当期末	連結	時点	JPY	円	12390000000
+jppfs_cor:Land	土地	Prior1YearInstant	前期末	連結	時点	JPY	円	35662000000
+jppfs_cor:Land	土地	CurrentYearInstant	当期末	連結	時点	JPY	円	32971000000
+jppfs_cor:OtherPPE	その他、有形固定資産	Prior1YearInstant	前期末	連結	時点	JPY	円	33256000000
+jppfs_cor:OtherPPE	その他、有形固定資産	CurrentYearInstant	当期末	連結	時点	JPY	円	35601000000
+jppfs_cor:AccumulatedDepreciationOtherPPE	減価償却累計額、その他、有形固定資産	Prior1YearInstant	前期末	連結	時点	JPY	円	-14100000000
+jppfs_cor:AccumulatedDepreciationOtherPPE	減価償却累計額、その他、有形固定資産	CurrentYearInstant	当期末	連結	時点	JPY	円	-13702000000
+jppfs_cor:OtherNetPPE	その他（純額）、有形固定資産	Prior1YearInstant	前期末	連結	時点	JPY	円	19156000000
+jppfs_cor:OtherNetPPE	その他（純額）、有形固定資産	CurrentYearInstant	当期末	連結	時点	JPY	円	21899000000
+jppfs_cor:PropertyPlantAndEquipment	有形固定資産	Prior1YearInstant	前期末	連結	時点	JPY	円	75870000000
+jppfs_cor:PropertyPlantAndEquipment	有形固定資産	CurrentYearInstant	当期末	連結	時点	JPY	円	76924000000
+jppfs_cor:OtherIA	その他、無形固定資産	Prior1YearInstant	前期末	連結	時点	JPY	円	4792000000
+jppfs_cor:OtherIA	その他、無形固定資産	CurrentYearInstant	当期末	連結	時点	JPY	円	6338000000
+jppfs_cor:IntangibleAssets	無形固定資産	Prior1YearInstant	前期末	連結	時点	JPY	円	4792000000
+jppfs_cor:IntangibleAssets	無形固定資産	CurrentYearInstant	当期末	連結	時点	JPY	円	6338000000
+jppfs_cor:InvestmentSecurities	投資有価証券	Prior1YearInstant	前期末	連結	時点	JPY	円	1314220000000
+jppfs_cor:InvestmentSecurities	投資有価証券	CurrentYearInstant	当期末	連結	時点	JPY	円	1527669000000
+jpcrp030000-asr_E01967-000:LongTermTimeDepositsIOA		Prior1YearInstant	前期末	その他	時点	JPY	円	17957000000
+jpcrp030000-asr_E01967-000:LongTermTimeDepositsIOA		CurrentYearInstant	当期末	その他	時点	JPY	円	17116000000
+jppfs_cor:DeferredTaxAssets	繰延税金資産	Prior1YearInstant	前期末	連結	時点	JPY	円	9480000000
+jppfs_cor:DeferredTaxAssets	繰延税金資産	CurrentYearInstant	当期末	連結	時点	JPY	円	17898000000
+jppfs_cor:OtherIOA	その他、投資その他の資産	Prior1YearInstant	前期末	連結	時点	JPY	円	10704000000
+jppfs_cor:OtherIOA	その他、投資その他の資産	CurrentYearInstant	当期末	連結	時点	JPY	円	10748000000
+jppfs_cor:AllowanceForDoubtfulAccountsIOAByGroup	貸倒引当金、投資その他の資産、一括控除	Prior1YearInstant	前期末	連結	時点	JPY	円	-60000000
+jppfs_cor:AllowanceForDoubtfulAccountsIOAByGroup	貸倒引当金、投資その他の資産、一括控除	CurrentYearInstant	当期末	連結	時点	JPY	円	-60000000
+jppfs_cor:InvestmentsAndOtherAssets	投資その他の資産	Prior1YearInstant	前期末	連結	時点	JPY	円	1352302000000
+jppfs_cor:InvestmentsAndOtherAssets	投資その他の資産	CurrentYearInstant	当期末	連結	時点	JPY	円	1573372000000
+jppfs_cor:NoncurrentAssets	固定資産	Prior1YearInstant	前期末	連結	時点	JPY	円	1432965000000
+jppfs_cor:NoncurrentAssets	固定資産	CurrentYearInstant	当期末	連結	時点	JPY	円	1656634000000
+jppfs_cor:Assets	資産	Prior1YearInstant	前期末	連結	時点	JPY	円	2964792000000
+jppfs_cor:Assets	資産	CurrentYearInstant	当期末	連結	時点	JPY	円	3289224000000
+jppfs_cor:NotesAndAccountsPayableTrade	支払手形及び買掛金	Prior1YearInstant	前期末	連結	時点	JPY	円	13725000000
+jppfs_cor:NotesAndAccountsPayableTrade	支払手形及び買掛金	CurrentYearInstant	当期末	連結	時点	JPY	円	14890000000
+jppfs_cor:IncomeTaxesPayable	未払法人税等	Prior1YearInstant	前期末	連結	時点	JPY	円	71229000000
+jppfs_cor:IncomeTaxesPayable	未払法人税等	CurrentYearInstant	当期末	連結	時点	JPY	円	91482000000
+jppfs_cor:ProvisionForBonuses	賞与引当金	Prior1YearInstant	前期末	連結	時点	JPY	円	16841000000
+jppfs_cor:ProvisionForBonuses	賞与引当金	CurrentYearInstant	当期末	連結	時点	JPY	円	18134000000
+jppfs_cor:OtherCL	その他、流動負債	Prior1YearInstant	前期末	連結	時点	JPY	円	43566000000
+jppfs_cor:OtherCL	その他、流動負債	CurrentYearInstant	当期末	連結	時点	JPY	円	43532000000
+jppfs_cor:CurrentLiabilities	流動負債	Prior1YearInstant	前期末	連結	時点	JPY	円	145362000000
+jppfs_cor:CurrentLiabilities	流動負債	CurrentYearInstant	当期末	連結	時点	JPY	円	168040000000
+jppfs_cor:OtherNCL	その他、固定負債	Prior1YearInstant	前期末	連結	時点	JPY	円	13236000000
+jppfs_cor:OtherNCL	その他、固定負債	CurrentYearInstant	当期末	連結	時点	JPY	円	12631000000
+jppfs_cor:NoncurrentLiabilities	固定負債	Prior1YearInstant	前期末	連結	時点	JPY	円	13236000000
+jppfs_cor:NoncurrentLiabilities	固定負債	CurrentYearInstant	当期末	連結	時点	JPY	円	12631000000
+jppfs_cor:Liabilities	負債	Prior1YearInstant	前期末	連結	時点	JPY	円	158599000000
+jppfs_cor:Liabilities	負債	CurrentYearInstant	当期末	連結	時点	JPY	円	180672000000
+jppfs_cor:CapitalStock	資本金	Prior1YearInstant	前期末	連結	時点	JPY	円	30637000000
+jppfs_cor:CapitalStock	資本金	CurrentYearInstant	当期末	連結	時点	JPY	円	30637000000
+jppfs_cor:CapitalSurplus	資本剰余金	Prior1YearInstant	前期末	連結	時点	JPY	円	30541000000
+jppfs_cor:CapitalSurplus	資本剰余金	CurrentYearInstant	当期末	連結	時点	JPY	円	30541000000
+jppfs_cor:RetainedEarnings	利益剰余金	Prior1YearInstant	前期末	連結	時点	JPY	円	2700699000000
+jppfs_cor:RetainedEarnings	利益剰余金	CurrentYearInstant	当期末	連結	時点	JPY	円	3020535000000
+jppfs_cor:TreasuryStock	自己株式	Prior1YearInstant	前期末	連結	時点	JPY	円	-3819000000
+jppfs_cor:TreasuryStock	自己株式	CurrentYearInstant	当期末	連結	時点	JPY	円	-3838000000
+jppfs_cor:ShareholdersEquity	株主資本	Prior1YearInstant	前期末	連結	時点	JPY	円	2758058000000
+jppfs_cor:ShareholdersEquity	株主資本	CurrentYearInstant	当期末	連結	時点	JPY	円	3077874000000
+jppfs_cor:ValuationDifferenceOnAvailableForSaleSecurities	その他有価証券評価差額金	Prior1YearInstant	前期末	連結	時点	JPY	円	261000000
+jppfs_cor:ValuationDifferenceOnAvailableForSaleSecurities	その他有価証券評価差額金	CurrentYearInstant	当期末	連結	時点	JPY	円	-8103000000
+jppfs_cor:ForeignCurrencyTranslationAdjustment	為替換算調整勘定	Prior1YearInstant	前期末	連結	時点	JPY	円	47876000000
+jppfs_cor:ForeignCurrencyTranslationAdjustment	為替換算調整勘定	CurrentYearInstant	当期末	連結	時点	JPY	円	38781000000
+jppfs_cor:RemeasurementsOfDefinedBenefitPlans	退職給付に係る調整累計額	Prior1YearInstant	前期末	連結	時点	JPY	円	-2000000
+jppfs_cor:RemeasurementsOfDefinedBenefitPlans	退職給付に係る調整累計額	CurrentYearInstant	当期末	連結	時点	JPY	円	-1000000
+jppfs_cor:ValuationAndTranslationAdjustments	評価・換算差額等	Prior1YearInstant	前期末	連結	時点	JPY	円	48135000000
+jppfs_cor:ValuationAndTranslationAdjustments	評価・換算差額等	CurrentYearInstant	当期末	連結	時点	JPY	円	30677000000
+jppfs_cor:NetAssets	純資産	Prior1YearInstant	前期末	連結	時点	JPY	円	2806193000000
+jppfs_cor:NetAssets	純資産	CurrentYearInstant	当期末	連結	時点	JPY	円	3108552000000
+jppfs_cor:LiabilitiesAndNetAssets	負債純資産	Prior1YearInstant	前期末	連結	時点	JPY	円	2964792000000
+jppfs_cor:LiabilitiesAndNetAssets	負債純資産	CurrentYearInstant	当期末	連結	時点	JPY	円	3289224000000
+jppfs_cor:NetSales	売上高	Prior1YearDuration	前期	連結	期間	JPY	円	967288000000
+jppfs_cor:NetSales	売上高	CurrentYearDuration	当期	連結	期間	JPY	円	1059145000000
+jppfs_cor:CostOfSales	売上原価	Prior1YearDuration	前期	連結	期間	JPY	円	164782000000
+jppfs_cor:CostOfSales	売上原価	CurrentYearDuration	当期	連結	期間	JPY	円	171444000000
+jppfs_cor:GrossProfit	売上総利益又は売上総損失（△）	Prior1YearDuration	前期	連結	期間	JPY	円	802505000000
+jppfs_cor:GrossProfit	売上総利益又は売上総損失（△）	CurrentYearDuration	当期	連結	期間	JPY	円	887700000000
+jppfs_cor:SellingGeneralAndAdministrativeExpenses	販売費及び一般管理費	Prior1YearDuration	前期	連結	期間	JPY	円	307491000000
+jppfs_cor:SellingGeneralAndAdministrativeExpenses	販売費及び一般管理費	CurrentYearDuration	当期	連結	期間	JPY	円	337925000000
+jppfs_cor:OperatingIncome	営業利益又は営業損失（△）	Prior1YearDuration	前期	連結	期間	JPY	円	495014000000
+jppfs_cor:OperatingIncome	営業利益又は営業損失（△）	CurrentYearDuration	当期	連結	期間	JPY	円	549775000000
+jppfs_cor:InterestIncomeNOI	受取利息、営業外収益	Prior1YearDuration	前期	連結	期間	JPY	円	5358000000
+jppfs_cor:InterestIncomeNOI	受取利息、営業外収益	CurrentYearDuration	当期	連結	期間	JPY	円	8968000000
+jppfs_cor:EquityInEarningsOfAffiliatesNOI	持分法による投資利益、営業外収益	Prior1YearDuration	前期	連結	期間	JPY	円	5371000000
+jppfs_cor:EquityInEarningsOfAffiliatesNOI	持分法による投資利益、営業外収益	CurrentYearDuration	当期	連結	期間	JPY	円	5309000000
+jppfs_cor:ForeignExchangeGainsNOI	為替差益、営業外収益	Prior1YearDuration	前期	連結	期間	JPY	円	12833000000
+jppfs_cor:ForeignExchangeGainsNOI	為替差益、営業外収益	CurrentYearDuration	当期	連結	期間	JPY	円	－
+jppfs_cor:MiscellaneousIncomeNOI	雑収入、営業外収益	Prior1YearDuration	前期	連結	期間	JPY	円	1405000000
+jppfs_cor:MiscellaneousIncomeNOI	雑収入、営業外収益	CurrentYearDuration	当期	連結	期間	JPY	円	2042000000
+jppfs_cor:NonOperatingIncome	営業外収益	Prior1YearDuration	前期	連結	期間	JPY	円	24969000000
+jppfs_cor:NonOperatingIncome	営業外収益	CurrentYearDuration	当期	連結	期間	JPY	円	16320000000
+jppfs_cor:ForeignExchangeLossesNOE	為替差損、営業外費用	Prior1YearDuration	前期	連結	期間	JPY	円	－
+jppfs_cor:ForeignExchangeLossesNOE	為替差損、営業外費用	CurrentYearDuration	当期	連結	期間	JPY	円	4221000000
+jppfs_cor:MiscellaneousLossNOE	雑損失、営業外費用	Prior1YearDuration	前期	連結	期間	JPY	円	688000000
+jppfs_cor:MiscellaneousLossNOE	雑損失、営業外費用	CurrentYearDuration	当期	連結	期間	JPY	円	864000000
+jppfs_cor:NonOperatingExpenses	営業外費用	Prior1YearDuration	前期	連結	期間	JPY	円	688000000
+jppfs_cor:NonOperatingExpenses	営業外費用	CurrentYearDuration	当期	連結	期間	JPY	円	5085000000
+jppfs_cor:OrdinaryIncome	経常利益又は経常損失（△）	Prior1YearDuration	前期	連結	期間	JPY	円	519295000000
+jppfs_cor:OrdinaryIncome	経常利益又は経常損失（△）	CurrentYearDuration	当期	連結	期間	JPY	円	561010000000
+jppfs_cor:IncomeBeforeIncomeTaxes	税引前当期純利益又は税引前当期純損失（△）	Prior1YearDuration	前期	連結	期間	JPY	円	519295000000
+jppfs_cor:IncomeBeforeIncomeTaxes	税引前当期純利益又は税引前当期純損失（△）	CurrentYearDuration	当期	連結	期間	JPY	円	561010000000
+jppfs_cor:IncomeTaxesCurrent	法人税、住民税及び事業税	Prior1YearDuration	前期	連結	期間	JPY	円	145455000000
+jppfs_cor:IncomeTaxesCurrent	法人税、住民税及び事業税	CurrentYearDuration	当期	連結	期間	JPY	円	167315000000
+jppfs_cor:IncomeTaxesDeferred	法人税等調整額	Prior1YearDuration	前期	連結	期間	JPY	円	4197000000
+jppfs_cor:IncomeTaxesDeferred	法人税等調整額	CurrentYearDuration	当期	連結	期間	JPY	円	-4962000000
+jppfs_cor:IncomeTaxes	法人税等	Prior1YearDuration	前期	連結	期間	JPY	円	149653000000
+jppfs_cor:IncomeTaxes	法人税等	CurrentYearDuration	当期	連結	期間	JPY	円	162353000000
+jppfs_cor:ProfitLoss	当期純利益又は当期純損失（△）（平成26年3月28日財規等改正後）	Prior1YearDuration	前期	連結	期間	JPY	円	369642000000
+jppfs_cor:ProfitLoss	当期純利益又は当期純損失（△）（平成26年3月28日財規等改正後）	CurrentYearDuration	当期	連結	期間	JPY	円	398656000000
+jppfs_cor:ProfitLossAttributableToOwnersOfParent	親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）	Prior1YearDuration	前期	連結	期間	JPY	円	369642000000
+jppfs_cor:ProfitLossAttributableToOwnersOfParent	親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）	CurrentYearDuration	当期	連結	期間	JPY	円	398656000000
+jppfs_cor:ProfitLoss	当期純利益又は当期純損失（△）（平成26年3月28日財規等改正後）	Prior1YearDuration	前期	連結	期間	JPY	円	369642000000
+jppfs_cor:ProfitLoss	当期純利益又は当期純損失（△）（平成26年3月28日財規等改正後）	CurrentYearDuration	当期	連結	期間	JPY	円	398656000000
+jppfs_cor:ValuationDifferenceOnAvailableForSaleSecuritiesNetOfTaxOCI	その他有価証券評価差額金（税引後）、その他の包括利益	Prior1YearDuration	前期	連結	期間	JPY	円	-2018000000
+jppfs_cor:ValuationDifferenceOnAvailableForSaleSecuritiesNetOfTaxOCI	その他有価証券評価差額金（税引後）、その他の包括利益	CurrentYearDuration	当期	連結	期間	JPY	円	-8359000000
+jppfs_cor:ForeignCurrencyTranslationAdjustmentNetOfTaxOCI	為替換算調整勘定（税引後）、その他の包括利益	Prior1YearDuration	前期	連結	期間	JPY	円	19751000000
+jppfs_cor:ForeignCurrencyTranslationAdjustmentNetOfTaxOCI	為替換算調整勘定（税引後）、その他の包括利益	CurrentYearDuration	当期	連結	期間	JPY	円	-9171000000
+jppfs_cor:ShareOfOtherComprehensiveIncomeOfAssociatesAccountedForUsingEquityMethodOCI	持分法適用会社に対する持分相当額、その他の包括利益	Prior1YearDuration	前期	連結	期間	JPY	円	-35000000
+jppfs_cor:ShareOfOtherComprehensiveIncomeOfAssociatesAccountedForUsingEquityMethodOCI	持分法適用会社に対する持分相当額、その他の包括利益	CurrentYearDuration	当期	連結	期間	JPY	円	73000000
+jppfs_cor:OtherComprehensiveIncome	その他の包括利益	Prior1YearDuration	前期	連結	期間	JPY	円	17697000000
+jppfs_cor:OtherComprehensiveIncome	その他の包括利益	CurrentYearDuration	当期	連結	期間	JPY	円	-17457000000
+jppfs_cor:ComprehensiveIncome	包括利益	Prior1YearDuration	前期	連結	期間	JPY	円	387339000000
+jppfs_cor:ComprehensiveIncome	包括利益	CurrentYearDuration	当期	連結	期間	JPY	円	381199000000
+jppfs_cor:ComprehensiveIncomeAttributableToOwnersOfTheParent	親会社株主に係る包括利益、包括利益	Prior1YearDuration	前期	連結	期間	JPY	円	387339000000
+jppfs_cor:ComprehensiveIncomeAttributableToOwnersOfTheParent	親会社株主に係る包括利益、包括利益	CurrentYearDuration	当期	連結	期間	JPY	円	381199000000
+jppfs_cor:DividendsFromSurplus	剰余金の配当	Prior1YearDuration	前期	連結	期間	JPY	円	-72757000000
+jppfs_cor:ProfitLossAttributableToOwnersOfParent	親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）	Prior1YearDuration	前期	連結	期間	JPY	円	369642000000
+jppfs_cor:PurchaseOfTreasuryStock	自己株式の取得	Prior1YearDuration	前期	連結	期間	JPY	円	-23000000
+jppfs_cor:NetChangesOfItemsOtherThanShareholdersEquity	株主資本以外の項目の当期変動額（純額）	Prior1YearDuration	前期	連結	期間	JPY	円	17697000000
+jppfs_cor:TotalChangesOfItemsDuringThePeriod	当期変動額合計	Prior1YearDuration	前期	連結	期間	JPY	円	314558000000
+jppfs_cor:NetAssets	純資産	Prior1YearInstant	前期末	連結	時点	JPY	円	2806193000000
+jppfs_cor:NetAssets	純資産	Prior1YearInstant	前期末	連結	時点	JPY	円	2806193000000
+jppfs_cor:DividendsFromSurplus	剰余金の配当	CurrentYearDuration	当期	連結	期間	JPY	円	-78820000000
+jppfs_cor:ProfitLossAttributableToOwnersOfParent	親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）	CurrentYearDuration	当期	連結	期間	JPY	円	398656000000
+jppfs_cor:PurchaseOfTreasuryStock	自己株式の取得	CurrentYearDuration	当期	連結	期間	JPY	円	-19000000
+jppfs_cor:NetChangesOfItemsOtherThanShareholdersEquity	株主資本以外の項目の当期変動額（純額）	CurrentYearDuration	当期	連結	期間	JPY	円	-17457000000
+jppfs_cor:TotalChangesOfItemsDuringThePeriod	当期変動額合計	CurrentYearDuration	当期	連結	期間	JPY	円	302358000000
+jppfs_cor:NetAssets	純資産	CurrentYearInstant	当期末	連結	時点	JPY	円	3108552000000
+jppfs_cor:IncomeBeforeIncomeTaxes	税引前当期純利益又は税引前当期純損失（△）	Prior1YearDuration	前期	連結	期間	JPY	円	519295000000
+jppfs_cor:IncomeBeforeIncomeTaxes	税引前当期純利益又は税引前当期純損失（△）	CurrentYearDuration	当期	連結	期間	JPY	円	561010000000
+jppfs_cor:DepreciationAndAmortizationOpeCF	減価償却費、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	13767000000
+jppfs_cor:DepreciationAndAmortizationOpeCF	減価償却費、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	15193000000
+jppfs_cor:InterestAndDividendsIncomeOpeCF	受取利息及び受取配当金、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-5459000000
+jppfs_cor:InterestAndDividendsIncomeOpeCF	受取利息及び受取配当金、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-9083000000
+jppfs_cor:ForeignExchangeLossesGainsOpeCF	為替差損益（△は益）、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-462000000
+jppfs_cor:ForeignExchangeLossesGainsOpeCF	為替差損益（△は益）、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	88000000
+jppfs_cor:EquityInEarningsLossesOfAffiliatesOpeCF	持分法による投資損益（△は益）、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-5371000000
+jppfs_cor:EquityInEarningsLossesOfAffiliatesOpeCF	持分法による投資損益（△は益）、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-5309000000
+jppfs_cor:DecreaseIncreaseInNotesAndAccountsReceivableTradeOpeCF	売上債権の増減額（△は増加）、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	4709000000
+jppfs_cor:DecreaseIncreaseInNotesAndAccountsReceivableTradeOpeCF	売上債権の増減額（△は増加）、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-18571000000
+jppfs_cor:DecreaseIncreaseInInventoriesOpeCF	棚卸資産の増減額（△は増加）、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	11280000000
+jppfs_cor:DecreaseIncreaseInInventoriesOpeCF	棚卸資産の増減額（△は増加）、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-756000000
+jppfs_cor:IncreaseDecreaseInNotesAndAccountsPayableTradeOpeCF	仕入債務の増減額（△は減少）、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-4643000000
+jppfs_cor:IncreaseDecreaseInNotesAndAccountsPayableTradeOpeCF	仕入債務の増減額（△は減少）、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	1160000000
+jppfs_cor:IncreaseDecreaseInProvisionForBonusesOpeCF	賞与引当金の増減額（△は減少）、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	485000000
+jppfs_cor:IncreaseDecreaseInProvisionForBonusesOpeCF	賞与引当金の増減額（△は減少）、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	1540000000
+jppfs_cor:OtherNetOpeCF	その他、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	4508000000
+jppfs_cor:OtherNetOpeCF	その他、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	4478000000
+jppfs_cor:SubtotalOpeCF	小計、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	538108000000
+jppfs_cor:SubtotalOpeCF	小計、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	549750000000
+jppfs_cor:InterestAndDividendsIncomeReceivedOpeCFInvCF	利息及び配当金の受取額、営業活動によるキャッシュ・フロー又は投資活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	5606000000
+jppfs_cor:InterestAndDividendsIncomeReceivedOpeCFInvCF	利息及び配当金の受取額、営業活動によるキャッシュ・フロー又は投資活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	8472000000
+jppfs_cor:IncomeTaxesPaidOpeCF	法人税等の支払額、営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-155798000000
+jppfs_cor:IncomeTaxesPaidOpeCF	法人税等の支払額、営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-148699000000
+jppfs_cor:NetCashProvidedByUsedInOperatingActivities	営業活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	387916000000
+jppfs_cor:NetCashProvidedByUsedInOperatingActivities	営業活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	409522000000
+jppfs_cor:DecreaseIncreaseInTimeDepositsInvCF	定期預金の増減額（△は増加）、投資活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-16099000000
+jppfs_cor:DecreaseIncreaseInTimeDepositsInvCF	定期預金の増減額（△は増加）、投資活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-14758000000
+jppfs_cor:DecreaseIncreaseInShortTermInvestmentSecuritiesInvCF	有価証券の増減額（△は増加）、投資活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-211264000000
+jppfs_cor:DecreaseIncreaseInShortTermInvestmentSecuritiesInvCF	有価証券の増減額（△は増加）、投資活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-248539000000
+jppfs_cor:PurchaseOfPropertyPlantAndEquipmentInvCF	有形固定資産の取得による支出、投資活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-12492000000
+jppfs_cor:PurchaseOfPropertyPlantAndEquipmentInvCF	有形固定資産の取得による支出、投資活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-14342000000
+jppfs_cor:OtherNetInvCF	その他、投資活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-2935000000
+jppfs_cor:OtherNetInvCF	その他、投資活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-2971000000
+jppfs_cor:NetCashProvidedByUsedInInvestmentActivities	投資活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-242792000000
+jppfs_cor:NetCashProvidedByUsedInInvestmentActivities	投資活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-280612000000
+jppfs_cor:DecreaseIncreaseInTreasuryStockFinCF	自己株式の増減額（△は増加）、財務活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-23000000
+jppfs_cor:DecreaseIncreaseInTreasuryStockFinCF	自己株式の増減額（△は増加）、財務活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-19000000
+jppfs_cor:CashDividendsPaidFinCF	配当金の支払額、財務活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-72757000000
+jppfs_cor:CashDividendsPaidFinCF	配当金の支払額、財務活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-78820000000
+jppfs_cor:OtherNetFinCF	その他、財務活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-3525000000
+jppfs_cor:OtherNetFinCF	その他、財務活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-4589000000
+jppfs_cor:NetCashProvidedByUsedInFinancingActivities	財務活動によるキャッシュ・フロー	Prior1YearDuration	前期	連結	期間	JPY	円	-76306000000
+jppfs_cor:NetCashProvidedByUsedInFinancingActivities	財務活動によるキャッシュ・フロー	CurrentYearDuration	当期	連結	期間	JPY	円	-83430000000
+jppfs_cor:EffectOfExchangeRateChangeOnCashAndCashEquivalents	現金及び現金同等物に係る換算差額	Prior1YearDuration	前期	連結	期間	JPY	円	-6754000000
+jppfs_cor:EffectOfExchangeRateChangeOnCashAndCashEquivalents	現金及び現金同等物に係る換算差額	CurrentYearDuration	当期	連結	期間	JPY	円	169000000
+jppfs_cor:NetIncreaseDecreaseInCashAndCashEquivalents	現金及び現金同等物の増減額（△は減少）	Prior1YearDuration	前期	連結	期間	JPY	円	62062000000
+jppfs_cor:NetIncreaseDecreaseInCashAndCashEquivalents	現金及び現金同等物の増減額（△は減少）	CurrentYearDuration	当期	連結	期間	JPY	円	45649000000
+jppfs_cor:CashAndCashEquivalents	現金及び現金同等物の残高	Prior1YearInstant	前期末	連結	時点	JPY	円	406065000000
+jppfs_cor:CashAndCashEquivalents	現金及び現金同等物の残高	Prior1YearInstant	前期末	連結	時点	JPY	円	406065000000
+jppfs_cor:CashAndCashEquivalents	現金及び現金同等物の残高	CurrentYearInstant	当期末	連結	時点	JPY	円	451715000000
+jpcrp_cor:NumberOfConsolidatedSubsidiaries	連結子会社の数	CurrentYearInstant	当期末	その他	時点	pure		28
+jpcrp_cor:NumberOfAssociatesAccountedForUsingEquityMethod	持分法を適用した関連会社の数	CurrentYearInstant	当期末	その他	時点	pure		1
+jppfs_cor:MerchandiseAndFinishedGoods	商品及び製品	Prior1YearInstant	前期末	連結	時点	JPY	円	35843000000
+jppfs_cor:MerchandiseAndFinishedGoods	商品及び製品	CurrentYearInstant	当期末	連結	時点	JPY	円	37720000000
+jppfs_cor:WorkInProcess	仕掛品	Prior1YearInstant	前期末	連結	時点	JPY	円	8641000000
+jppfs_cor:WorkInProcess	仕掛品	CurrentYearInstant	当期末	連結	時点	JPY	円	9967000000
+jppfs_cor:RawMaterials	原材料	Prior1YearInstant	前期末	連結	時点	JPY	円	33128000000
+jppfs_cor:RawMaterials	原材料	CurrentYearInstant	当期末	連結	時点	JPY	円	30204000000
+jppfs_cor:NotesReceivableTrade	受取手形	Prior1YearInstant	前期末	連結	時点	JPY	円	60494000000
+jppfs_cor:NotesReceivableTrade	受取手形	CurrentYearInstant	当期末	連結	時点	JPY	円	56938000000
+jppfs_cor:AccountsReceivableTrade	売掛金	Prior1YearInstant	前期末	連結	時点	JPY	円	247031000000
+jppfs_cor:AccountsReceivableTrade	売掛金	CurrentYearInstant	当期末	連結	時点	JPY	円	263374000000
+jpcrp030000-asr_E01967-000:DirectorsCompensationAndEmployeeSalariesAllowancesAndCompensationSGA		Prior1YearDuration	前期	その他	期間	JPY	円	139149000000
+jpcrp030000-asr_E01967-000:DirectorsCompensationAndEmployeeSalariesAllowancesAndCompensationSGA		CurrentYearDuration	当期	その他	期間	JPY	円	152959000000
+jppfs_cor:ProvisionForBonusesSGA	賞与引当金繰入額、販売費及び一般管理費	Prior1YearDuration	前期	連結	期間	JPY	円	15001000000
+jppfs_cor:ProvisionForBonusesSGA	賞与引当金繰入額、販売費及び一般管理費	CurrentYearDuration	当期	連結	期間	JPY	円	16736000000
+jppfs_cor:ResearchAndDevelopmentExpensesSGA	研究開発費、販売費及び一般管理費	Prior1YearDuration	前期	連結	期間	JPY	円	25183000000
+jppfs_cor:ResearchAndDevelopmentExpensesSGA	研究開発費、販売費及び一般管理費	CurrentYearDuration	当期	連結	期間	JPY	円	28856000000
+jppfs_cor:ResearchAndDevelopmentExpensesSGA	研究開発費、販売費及び一般管理費	Prior1YearDuration	前期	連結	期間	JPY	円	25183000000
+jppfs_cor:ResearchAndDevelopmentExpensesSGA	研究開発費、販売費及び一般管理費	CurrentYearDuration	当期	連結	期間	JPY	円	28856000000
+jpcrp_cor:DocumentTitleCoverPage	提出書類、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	有価証券報告書
+jpcrp_cor:ClauseOfStipulationCoverPage	根拠条文、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	金融商品取引法第24条第1項
+jpcrp_cor:PlaceOfFilingCoverPage	提出先、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	関東財務局長
+jpcrp_cor:FilingDateCoverPage	提出日、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	2025-06-16
+jpcrp_cor:FiscalYearCoverPage	事業年度、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	第56期（自 2024年3月21日 至 2025年3月20日）
+jpcrp_cor:CompanyNameCoverPage	会社名、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	株式会社キーエンス
+jpcrp_cor:CompanyNameInEnglishCoverPage	英訳名、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	KEYENCE CORPORATION
+jpcrp_cor:TitleAndNameOfRepresentativeCoverPage	代表者の役職氏名、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	代表取締役社長　　中田　有
+jpcrp_cor:AddressOfRegisteredHeadquarterCoverPage	本店の所在の場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	大阪市東淀川区東中島1丁目3番14号
+jpcrp_cor:TelephoneNumberAddressOfRegisteredHeadquarterCoverPage	電話番号、本店の所在の場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	06(6379)1111（大代表）
+jpcrp_cor:NameOfContactPersonAddressOfRegisteredHeadquarterCoverPage	事務連絡者氏名、本店の所在の場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	取締役経営情報室長　　山本　寛明
+jpcrp_cor:NearestPlaceOfContactCoverPage	最寄りの連絡場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	大阪市東淀川区東中島1丁目3番14号
+jpcrp_cor:TelephoneNumberNearestPlaceOfContactCoverPage	電話番号、最寄りの連絡場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	06(6379)1111（大代表）
+jpcrp_cor:NameOfContactPersonNearestPlaceOfContactCoverPage	事務連絡者氏名、最寄りの連絡場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	取締役経営情報室長　　山本　寛明
+jpdei_cor:EDINETCodeDEI	EDINETコード、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	E01967
+jpdei_cor:FundCodeDEI	ファンドコード、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:SecurityCodeDEI	証券コード、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	68610
+jpdei_cor:FilerNameInJapaneseDEI	提出者名（日本語表記）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	株式会社キーエンス
+jpdei_cor:FilerNameInEnglishDEI	提出者名（英語表記）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	KEYENCE CORPORATION
+jpdei_cor:FundNameInJapaneseDEI	ファンド名称（日本語表記）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:FundNameInEnglishDEI	ファンド名称（英語表記）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:CabinetOfficeOrdinanceDEI	府令、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	企業内容等の開示に関する内閣府令
+jpdei_cor:DocumentTypeDEI	様式、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	第三号様式
+jpdei_cor:AccountingStandardsDEI	会計基準、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	Japan GAAP
+jpdei_cor:WhetherConsolidatedFinancialStatementsArePreparedDEI	連結決算の有無、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	true
+jpdei_cor:IndustryCodeWhenConsolidatedFinancialStatementsArePreparedInAccordanceWithIndustrySpecificRegulationsDEI	別記事業（連結）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	CTE
+jpdei_cor:IndustryCodeWhenFinancialStatementsArePreparedInAccordanceWithIndustrySpecificRegulationsDEI	別記事業（個別）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	CTE
+jpdei_cor:CurrentFiscalYearStartDateDEI	当事業年度開始日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2024-03-21
+jpdei_cor:CurrentPeriodEndDateDEI	当会計期間終了日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2025-03-20
+jpdei_cor:TypeOfCurrentPeriodDEI	当会計期間の種類、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	FY
+jpdei_cor:CurrentFiscalYearEndDateDEI	当事業年度終了日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2025-03-20
+jpdei_cor:PreviousFiscalYearStartDateDEI	前事業年度開始日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2023-03-21
+jpdei_cor:ComparativePeriodEndDateDEI	比較対象会計期間終了日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2024-03-20
+jpdei_cor:PreviousFiscalYearEndDateDEI	前事業年度終了日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2024-03-20
+jpdei_cor:NextFiscalYearStartDateDEI	次の事業年度開始日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:EndDateOfQuarterlyOrSemiAnnualPeriodOfNextFiscalYearDEI	次の中間期の会計期間終了日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:AmendmentFlagDEI	訂正の有無、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	false
+jpdei_cor:IdentificationOfDocumentSubjectToAmendmentDEI	訂正対象書類の書類管理番号、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:ReportAmendmentFlagDEI	記載事項訂正のフラグ、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	false
+jpdei_cor:XBRLAmendmentFlagDEI	XBRL訂正のフラグ、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	false
+jpcrp_cor:ReasonForIncreaseInNumberOfSharesSharesNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	株式数が増加した理由、非上場株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearDuration	当期	その他	期間	－	－	－
+jpcrp_cor:ReasonForIncreaseInNumberOfSharesSharesOtherThanThoseNotListedInvestmentSharesHeldForPurposesOtherThanPureInvestmentReportingCompany	株式数が増加した理由、非上場株式以外の株式、保有目的が純投資目的以外の目的である投資株式、提出会社	CurrentYearDuration	当期	その他	期間	－	－	－

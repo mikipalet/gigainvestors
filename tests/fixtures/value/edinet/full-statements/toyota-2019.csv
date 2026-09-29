@@ -1,0 +1,136 @@
+要素ID	項目名	コンテキストID	相対年度	連結・個別	期間・時点	ユニットID	単位	値
+jpcrp_cor:AuditFirm1Consolidated	監査法人１、連結	FilingDateInstant	提出日時点	その他	時点	－	－	Ｐ ｗ Ｃ あ ら た 有 限 責 任 監 査 法 人
+jpcrp_cor:CPA1AuditFirm1Consolidated	公認会計士１、監査法人１、連結	FilingDateInstant	提出日時点	その他	時点	－	－	中    嶋    康    博
+jpcrp_cor:CPA2AuditFirm1Consolidated	公認会計士２、監査法人１、連結	FilingDateInstant	提出日時点	その他	時点	－	－	手    塚    謙    二
+jpcrp_cor:CPA3AuditFirm1Consolidated	公認会計士３、監査法人１、連結	FilingDateInstant	提出日時点	その他	時点	－	－	山    口    健    志
+jpcrp_cor:CPA4AuditFirm1Consolidated	公認会計士４、監査法人１、連結	FilingDateInstant	提出日時点	その他	時点	－	－	中    谷    聡    子
+jpcrp_cor:AuditFirm1NonConsolidated	監査法人１、個別	FilingDateInstant	提出日時点	その他	時点	－	－	Ｐ ｗ Ｃ あ ら た 有 限 責 任 監 査 法 人
+jpcrp_cor:CPA1AuditFirm1NonConsolidated	公認会計士１、監査法人１、個別	FilingDateInstant	提出日時点	その他	時点	－	－	中    嶋    康    博
+jpcrp_cor:CPA2AuditFirm1NonConsolidated	公認会計士２、監査法人１、個別	FilingDateInstant	提出日時点	その他	時点	－	－	手    塚    謙    二
+jpcrp_cor:CPA3AuditFirm1NonConsolidated	公認会計士３、監査法人１、個別	FilingDateInstant	提出日時点	その他	時点	－	－	山    口    健    志
+jpcrp_cor:CPA4AuditFirm1NonConsolidated	公認会計士４、監査法人１、個別	FilingDateInstant	提出日時点	その他	時点	－	－	中    谷    聡    子
+jpdei_cor:NumberOfSubmissionDEI	提出回数、DEI	FilingDateInstant	提出日時点	その他	時点	pure		1
+jpcrp_cor:RevenuesUSGAAPSummaryOfBusinessResults	売上高（US GAAP）、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	29379510000000
+jpcrp_cor:RevenuesUSGAAPSummaryOfBusinessResults	売上高（US GAAP）、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	30225681000000
+jpcrp_cor:ProfitLossBeforeTaxUSGAAPSummaryOfBusinessResults	税引前利益又は税引前損失（△）（US GAAP）、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	2620429000000
+jpcrp_cor:ProfitLossBeforeTaxUSGAAPSummaryOfBusinessResults	税引前利益又は税引前損失（△）（US GAAP）、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	2285465000000
+jpcrp_cor:NetIncomeLossAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults	当社株主に帰属する純利益又は純損失（△）（US GAAP）、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	2493983000000
+jpcrp_cor:NetIncomeLossAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults	当社株主に帰属する純利益又は純損失（△）（US GAAP）、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	1882873000000
+jpcrp_cor:ComprehensiveIncomeUSGAAPSummaryOfBusinessResults	包括利益（US GAAP）、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	2393256000000
+jpcrp_cor:ComprehensiveIncomeUSGAAPSummaryOfBusinessResults	包括利益（US GAAP）、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	1936602000000
+jpcrp_cor:EquityIncludingPortionAttributableToNonControllingInterestUSGAAPSummaryOfBusinessResults	純資産額（US GAAP）、経営指標等	Prior1YearInstant	前期末	その他	時点	JPY	円	19922076000000
+jpcrp_cor:EquityIncludingPortionAttributableToNonControllingInterestUSGAAPSummaryOfBusinessResults	純資産額（US GAAP）、経営指標等	CurrentYearInstant	当期末	その他	時点	JPY	円	20565210000000
+jpcrp_cor:TotalAssetsUSGAAPSummaryOfBusinessResults	総資産額（US GAAP）、経営指標等	Prior1YearInstant	前期末	その他	時点	JPY	円	50308249000000
+jpcrp_cor:TotalAssetsUSGAAPSummaryOfBusinessResults	総資産額（US GAAP）、経営指標等	CurrentYearInstant	当期末	その他	時点	JPY	円	51936949000000
+jpcrp_cor:EquityAttributableToOwnersOfParentPerShareUSGAAPSummaryOfBusinessResults	１株当たり株主資本（US GAAP）、経営指標等	Prior1YearInstant	前期末	その他	時点	JPYPerShares		6438.65
+jpcrp_cor:EquityAttributableToOwnersOfParentPerShareUSGAAPSummaryOfBusinessResults	１株当たり株主資本（US GAAP）、経営指標等	CurrentYearInstant	当期末	その他	時点	JPYPerShares		6830.92
+jpcrp_cor:BasicEarningsLossPerShareUSGAAPSummaryOfBusinessResults	基本的１株当たり当社株主に帰属する利益又は損失（△）（US GAAP）、経営指標等	Prior1YearDuration	前期	その他	期間	JPYPerShares		842.00
+jpcrp_cor:BasicEarningsLossPerShareUSGAAPSummaryOfBusinessResults	基本的１株当たり当社株主に帰属する利益又は損失（△）（US GAAP）、経営指標等	CurrentYearDuration	当期	その他	期間	JPYPerShares		650.55
+jpcrp_cor:DilutedEarningsLossPerShareUSGAAPSummaryOfBusinessResults	希薄化後１株当たり当社株主に帰属する利益又は損失（△）（US GAAP）、経営指標等	Prior1YearDuration	前期	その他	期間	JPYPerShares		832.78
+jpcrp_cor:DilutedEarningsLossPerShareUSGAAPSummaryOfBusinessResults	希薄化後１株当たり当社株主に帰属する利益又は損失（△）（US GAAP）、経営指標等	CurrentYearDuration	当期	その他	期間	JPYPerShares		645.11
+jpcrp_cor:EquityToAssetRatioUSGAAPSummaryOfBusinessResults	自己資本比率（US GAAP）、経営指標等	Prior1YearInstant	前期末	その他	時点	pure		0.372
+jpcrp_cor:EquityToAssetRatioUSGAAPSummaryOfBusinessResults	自己資本比率（US GAAP）、経営指標等	CurrentYearInstant	当期末	その他	時点	pure		0.373
+jpcrp030000-asr_E02144-000:NetIncomeToSalesBelongingToShareholdersSummaryOfBusinessResults		Prior1YearInstant	前期末	その他	時点	pure		0.137
+jpcrp030000-asr_E02144-000:NetIncomeToSalesBelongingToShareholdersSummaryOfBusinessResults		CurrentYearInstant	当期末	その他	時点	pure		0.098
+jpcrp_cor:PriceEarningsRatioUSGAAPSummaryOfBusinessResults	株価収益率（US GAAP）、経営指標等	Prior1YearDuration	前期	その他	期間	pure		8.1
+jpcrp_cor:PriceEarningsRatioUSGAAPSummaryOfBusinessResults	株価収益率（US GAAP）、経営指標等	CurrentYearDuration	当期	その他	期間	pure		10.0
+jpcrp_cor:CashFlowsFromUsedInOperatingActivitiesUSGAAPSummaryOfBusinessResults	営業活動によるキャッシュ・フロー（US GAAP）、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	4223128000000
+jpcrp_cor:CashFlowsFromUsedInOperatingActivitiesUSGAAPSummaryOfBusinessResults	営業活動によるキャッシュ・フロー（US GAAP）、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	3766597000000
+jpcrp_cor:CashFlowsFromUsedInInvestingActivitiesUSGAAPSummaryOfBusinessResults	投資活動によるキャッシュ・フロー（US GAAP）、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	-3660092000000
+jpcrp_cor:CashFlowsFromUsedInInvestingActivitiesUSGAAPSummaryOfBusinessResults	投資活動によるキャッシュ・フロー（US GAAP）、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	-2697241000000
+jpcrp_cor:CashFlowsFromUsedInFinancingActivitiesUSGAAPSummaryOfBusinessResults	財務活動によるキャッシュ・フロー（US GAAP）、経営指標等	Prior1YearDuration	前期	その他	期間	JPY	円	-449135000000
+jpcrp_cor:CashFlowsFromUsedInFinancingActivitiesUSGAAPSummaryOfBusinessResults	財務活動によるキャッシュ・フロー（US GAAP）、経営指標等	CurrentYearDuration	当期	その他	期間	JPY	円	-540839000000
+jpcrp_cor:CashAndCashEquivalentsUSGAAPSummaryOfBusinessResults	現金及び現金同等物（US GAAP）、経営指標等	Prior1YearInstant	前期末	その他	時点	JPY	円	3219639000000
+jpcrp_cor:CashAndCashEquivalentsUSGAAPSummaryOfBusinessResults	現金及び現金同等物（US GAAP）、経営指標等	CurrentYearInstant	当期末	その他	時点	JPY	円	3706515000000
+jpcrp_cor:NumberOfEmployees	従業員数	Prior1YearInstant	前期末	その他	時点	pure		369124
+jpcrp_cor:NumberOfEmployees	従業員数	CurrentYearInstant	当期末	その他	時点	pure		370870
+jpcrp_cor:AverageNumberOfTemporaryWorkers	平均臨時雇用人員	Prior1YearInstant	前期末	その他	時点	pure		84731
+jpcrp_cor:AverageNumberOfTemporaryWorkers	平均臨時雇用人員	CurrentYearInstant	当期末	その他	時点	pure		87129
+jpcrp_cor:NumberOfEmployees	従業員数	CurrentYearInstant	当期末	その他	時点	pure		370870
+jpcrp_cor:AverageNumberOfTemporaryWorkers	平均臨時雇用人員	CurrentYearInstant	当期末	その他	時点	pure		87129
+jpcrp_cor:ResearchAndDevelopmentExpensesResearchAndDevelopmentActivities	研究開発費、研究開発活動	CurrentYearDuration	当期	その他	期間	JPY	円	1048882000000
+jpcrp_cor:CapitalExpendituresOverviewOfCapitalExpendituresEtc	設備投資額、設備投資等の概要	CurrentYearDuration	当期	その他	期間	JPY	円	1465888000000
+jpcrp_cor:NumberOfIssuedSharesAsOfFiscalYearEndIssuedSharesTotalNumberOfSharesEtc	事業年度末現在発行数（株）、発行済株式、株式の総数等	FilingDateInstant	提出日時点	その他	時点	shares		3310097492
+jpcrp_cor:NumberOfIssuedSharesAsOfFilingDateIssuedSharesTotalNumberOfSharesEtc	提出日現在発行数（株）、発行済株式、株式の総数等	FilingDateInstant	提出日時点	その他	時点	shares		3310097492
+jpcrp_cor:NumberOfSharesHeld	所有株式数	CurrentYearInstant	当期末	その他	時点	shares		1351372000
+jpcrp_cor:ShareholdingRatio	発行済株式（自己株式を除く。）の総数に対する所有株式数の割合	CurrentYearInstant	当期末	その他	時点	pure		0.4693
+jpcrp_cor:NumberOfSharesIssuedSharesVotingRights	株式数（株）、発行済株式、議決権の状況	CurrentYearInstant	当期末	その他	時点	shares		3310097492
+jpcrp_cor:NumberOfVotingRightsIssuedSharesVotingRights	議決権の数（個）、発行済株式、議決権の状況	CurrentYearInstant	当期末	その他	時点	pure		28706545
+jpcrp030000-asr_E02144-000:SharesOfTreasuryStockTreasurySharesEtc		CurrentYearInstant	当期末	その他	時点	shares		436911300
+jpcrp030000-asr_E02144-000:FirstSeriesModelAAClassSharesOfTreasuryStockTreasurySharesEtc		CurrentYearInstant	当期末	その他	時点	shares		13000
+jpcrp_cor:NumberOfSharesHeldInOthersNamesTreasurySharesEtc	他人名義所有株式数（株）、自己株式等	CurrentYearInstant	当期末	その他	時点	shares		－
+jpcrp_cor:TotalNumberOfSharesHeldTreasurySharesEtc	所有株式数の合計（株）、自己株式等	CurrentYearInstant	当期末	その他	時点	shares		436924300
+jpcrp_cor:ShareholdingRatioTreasurySharesEtc	発行済株式総数に対する所有株式数の割合（％）、自己株式等	CurrentYearInstant	当期末	その他	時点	pure		0.1320
+jpcrp_cor:NumberOfMaleDirectorsAndOtherOfficers	役員のうち男性の人数	FilingDateInstant	提出日時点	その他	時点	pure		13
+jpcrp_cor:NumberOfFemaleDirectorsAndOtherOfficers	役員のうち女性の人数	FilingDateInstant	提出日時点	その他	時点	pure		2
+jpcrp_cor:RatioOfFemaleDirectorsAndOtherOfficers	役員のうち女性の比率	FilingDateInstant	提出日時点	その他	時点	pure		0.13
+jpcrp_cor:NumberOfSharesHeldOrdinarySharesInformationAboutDirectorsAndCorporateAuditors	所有株式数（普通株式）、役員の状況（取締役（及び監査役））	FilingDateInstant	提出日時点	その他	時点	shares		5002000
+jpcrp_cor:AuditFeesReportingCompany	監査証明業務に基づく報酬－提出会社、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	602000000
+jpcrp_cor:NonAuditFeesReportingCompany	非監査業務に基づく報酬－提出会社、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	105000000
+jpcrp_cor:AuditFeesReportingCompany	監査証明業務に基づく報酬－提出会社、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	600000000
+jpcrp_cor:NonAuditFeesReportingCompany	非監査業務に基づく報酬－提出会社、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	99000000
+jpcrp_cor:AuditFeesConsolidatedSubsidiaries	監査証明業務に基づく報酬－連結子会社、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	1018000000
+jpcrp_cor:NonAuditFeesConsolidatedSubsidiaries	非監査業務に基づく報酬－連結子会社、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	25000000
+jpcrp_cor:AuditFeesConsolidatedSubsidiaries	監査証明業務に基づく報酬－連結子会社、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	1005000000
+jpcrp_cor:NonAuditFeesConsolidatedSubsidiaries	非監査業務に基づく報酬－連結子会社、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	22000000
+jpcrp_cor:AuditFeesTotal	監査証明業務に基づく報酬－計、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	1620000000
+jpcrp_cor:NonAuditFeesTotal	非監査業務に基づく報酬－計、監査公認会計士等	Prior1YearDuration	前期	その他	期間	JPY	円	131000000
+jpcrp_cor:AuditFeesTotal	監査証明業務に基づく報酬－計、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	1605000000
+jpcrp_cor:NonAuditFeesTotal	非監査業務に基づく報酬－計、監査公認会計士等	CurrentYearDuration	当期	その他	期間	JPY	円	121000000
+jpcrp030000-asr_E02144-000:NumberOfNamesOfSecuritiesEquitySecuritiesNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearInstant	当期末	その他	時点	pure		108
+jpcrp030000-asr_E02144-000:BookValueEquitySecuritiesNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearInstant	当期末	その他	時点	JPY	円	199385000000
+jpcrp030000-asr_E02144-000:NumberOfNamesOfSecuritiesEquitySecuritiesOtherThanThoseNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearInstant	当期末	その他	時点	pure		75
+jpcrp030000-asr_E02144-000:BookValueEquitySecuritiesOtherThanThoseNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearInstant	当期末	その他	時点	JPY	円	2019848000000
+jpcrp030000-asr_E02144-000:NumberOfNamesOfSecuritiesWhoseNumberOfSharesIncreasedEquitySecuritiesNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearInstant	当期末	その他	時点	pure		3
+jpcrp030000-asr_E02144-000:TotalAcquisitionCostForIncreasedSharesEquitySecuritiesNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearDuration	当期	その他	期間	JPY	円	167393000000
+jpcrp030000-asr_E02144-000:NumberOfNamesOfSecuritiesWhoseNumberOfSharesIncreasedEquitySecuritiesOtherThanThoseNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearInstant	当期末	その他	時点	pure		2
+jpcrp030000-asr_E02144-000:TotalAcquisitionCostForIncreasedSharesEquitySecuritiesOtherThanThoseNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearDuration	当期	その他	期間	JPY	円	9358000000
+jpcrp030000-asr_E02144-000:NumberOfNamesOfSecuritiesWhoseNumberOfSharesDecreasedEquitySecuritiesNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearInstant	当期末	その他	時点	pure		4
+jpcrp030000-asr_E02144-000:TotalSalesAmountForDecreasedSharesEquitySecuritiesNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearDuration	当期	その他	期間	JPY	円	1613000000
+jpcrp030000-asr_E02144-000:NumberOfNamesOfSecuritiesWhoseNumberOfSharesDecreasedEquitySecuritiesOtherThanThoseNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearInstant	当期末	その他	時点	pure		6
+jpcrp030000-asr_E02144-000:TotalSalesAmountForDecreasedSharesEquitySecuritiesOtherThanThoseNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearDuration	当期	その他	期間	JPY	円	85021000000
+jpcrp_cor:DocumentTitleCoverPage	提出書類、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	有価証券報告書
+jpcrp_cor:ClauseOfStipulationCoverPage	根拠条文、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	金融商品取引法第24条第１項
+jpcrp_cor:PlaceOfFilingCoverPage	提出先、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	関東財務局長
+jpcrp_cor:FilingDateCoverPage	提出日、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	2019-06-21
+jpcrp_cor:FiscalYearCoverPage	事業年度、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	2019年３月期(自  2018年４月１日  至  2019年３月31日)
+jpcrp_cor:CompanyNameCoverPage	会社名、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	トヨタ自動車株式会社
+jpcrp_cor:CompanyNameInEnglishCoverPage	英訳名、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	TOYOTA MOTOR CORPORATION
+jpcrp_cor:TitleAndNameOfRepresentativeCoverPage	代表者の役職氏名、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	取締役社長    豊  田  章  男
+jpcrp_cor:AddressOfRegisteredHeadquarterCoverPage	本店の所在の場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	愛知県豊田市トヨタ町１番地
+jpcrp_cor:TelephoneNumberAddressOfRegisteredHeadquarterCoverPage	電話番号、本店の所在の場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	28－2121
+jpcrp_cor:NameOfContactPersonAddressOfRegisteredHeadquarterCoverPage	事務連絡者氏名、本店の所在の場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	経理部主計室長    高  野  展  一
+jpcrp_cor:NearestPlaceOfContactCoverPage	最寄りの連絡場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	東京都文京区後楽一丁目４番18号
+jpcrp_cor:TelephoneNumberNearestPlaceOfContactCoverPage	電話番号、最寄りの連絡場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	3817－7111
+jpcrp_cor:NameOfContactPersonNearestPlaceOfContactCoverPage	事務連絡者氏名、最寄りの連絡場所、表紙	FilingDateInstant	提出日時点	その他	時点	－	－	渉外広報部広報室長    酒  井      良
+jpdei_cor:EDINETCodeDEI	EDINETコード、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	E02144
+jpdei_cor:FundCodeDEI	ファンドコード、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:SecurityCodeDEI	証券コード、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	72030
+jpdei_cor:FilerNameInJapaneseDEI	提出者名（日本語表記）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	トヨタ自動車株式会社
+jpdei_cor:FilerNameInEnglishDEI	提出者名（英語表記）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	TOYOTA MOTOR CORPORATION
+jpdei_cor:FundNameInJapaneseDEI	ファンド名称（日本語表記）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:FundNameInEnglishDEI	ファンド名称（英語表記）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:CabinetOfficeOrdinanceDEI	府令、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	企業内容等の開示に関する内閣府令
+jpdei_cor:DocumentTypeDEI	様式、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	第三号様式
+jpdei_cor:AccountingStandardsDEI	会計基準、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	US GAAP
+jpdei_cor:WhetherConsolidatedFinancialStatementsArePreparedDEI	連結決算の有無、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	true
+jpdei_cor:IndustryCodeWhenConsolidatedFinancialStatementsArePreparedInAccordanceWithIndustrySpecificRegulationsDEI	別記事業（連結）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	cte
+jpdei_cor:IndustryCodeWhenFinancialStatementsArePreparedInAccordanceWithIndustrySpecificRegulationsDEI	別記事業（個別）、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	cte
+jpdei_cor:CurrentFiscalYearStartDateDEI	当事業年度開始日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2018-04-01
+jpdei_cor:CurrentPeriodEndDateDEI	当会計期間終了日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2019-03-31
+jpdei_cor:TypeOfCurrentPeriodDEI	当会計期間の種類、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	FY
+jpdei_cor:CurrentFiscalYearEndDateDEI	当事業年度終了日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2019-03-31
+jpdei_cor:PreviousFiscalYearStartDateDEI	前事業年度開始日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2017-04-01
+jpdei_cor:ComparativePeriodEndDateDEI	比較対象会計期間終了日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2018-03-31
+jpdei_cor:PreviousFiscalYearEndDateDEI	前事業年度終了日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	2018-03-31
+jpdei_cor:NextFiscalYearStartDateDEI	次の事業年度開始日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:EndDateOfQuarterlyOrSemiAnnualPeriodOfNextFiscalYearDEI	次の四半期又は中間期の会計期間終了日、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:AmendmentFlagDEI	訂正の有無、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	false
+jpdei_cor:IdentificationOfDocumentSubjectToAmendmentDEI	訂正対象書類の書類管理番号、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	－
+jpdei_cor:ReportAmendmentFlagDEI	記載事項訂正のフラグ、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	false
+jpdei_cor:XBRLAmendmentFlagDEI	XBRL訂正のフラグ、DEI	FilingDateInstant	提出日時点	その他	時点	－	－	false
+jpcrp030000-asr_E02144-000:ReasonForIncreaseInNumberOfSharesEquitySecuritiesNotListedInvestmentEquitySecuritiesHeldForPurposesOtherThanPureInvestmentReportingCompany		CurrentYearInstant	当期末	その他	時点	－	－	中長期的な観点より、企業価値の向上に資すると判断したため
+jpcrp_cor:DescriptionOfFactThatFinancialStatementsHaveBeenPreparedInAccordanceWithSpecialProvisionFinancialInformation	特例財務諸表を作成する場合の記載、経理の状況	CurrentYearDuration	当期	その他	期間	－	－	当社は、特例財務諸表提出会社に該当し、財務諸表等規則第127条の規定により財務諸表を作成しています。
+jpcrp_cor:ConsolidatedBalanceSheetUSGAAPTextBlock	連結貸借対照表 （US GAAP） [テキストブロック]	CurrentYearDuration	当期	その他	期間	－	－	① 【連結貸借対照表】  (単位：百万円) 前連結会計年度(2018年３月31日)当連結会計年度(2019年３月31日)資産の部  流動資産  現金及び現金同等物3,052,2693,574,704定期預金901,2441,126,352有価証券1,768,3601,127,160受取手形及び売掛金＜貸倒引当金控除後＞2,219,5622,372,734貸倒引当金残高:2018年３月31日        25,925百万円2019年３月31日        16,370百万円   金融債権＜純額＞6,348,3066,647,771未収入金489,338568,156たな卸資産2,539,7892,656,396前払費用及びその他833,788805,964流動資産合計18,152,65618,879,237長期金融債権＜純額＞9,481,61810,281,118投資及びその他の資産  有価証券及びその他の投資有価証券7,999,3237,479,926関連会社に対する投資及びその他の資産3,162,9173,313,723従業員に対する長期貸付金22,56221,683その他1,221,5001,275,768投資及びその他の資産合計12,406,30212,091,100有形固定資産  土地1,404,6111,386,308建物4,659,7534,802,175機械装置11,535,38111,857,425賃貸用車両及び器具5,934,3936,139,163建設仮勘定509,851651,713小計24,043,98924,836,784減価償却累計額＜控除＞△ 13,776,316△ 14,151,290有形固定資産合計10,267,67310,685,494資産合計50,308,24951,936,949      　  (単位：百万円) 前連結会計年度(2018年３月31日)当連結会計年度(2019年３月31日)負債の部  流動負債  短期借入債務5,154,9135,344,973１年以内に返済予定の長期借入債務4,186,2774,254,260支払手形及び買掛金2,586,6572,645,984未払金1,048,2161,102,802未払費用3,104,2603,222,446未払法人税等462,327320,998その他1,254,2411,335,475流動負債合計17,796,89118,226,938固定負債  長期借入債務10,006,37410,550,945未払退職・年金費用931,182963,406繰延税金負債1,118,1651,014,851その他533,561615,599固定負債合計12,589,28213,144,801負債合計30,386,17331,371,739         (単位：百万円) 前連結会計年度(2018年３月31日)当連結会計年度(2019年３月31日)純資産の部  中間資本  ＡＡ型種類株式491,974498,073発行可能株式総数：2018年３月31日および2019年３月31日150,000,000株発行済株式総数：2018年３月31日および2019年３月31日  47,100,000株  資本  株主資本  資本金397,050397,050発行可能普通株式総数：2018年３月31日および2019年３月31日    10,000,000,000株発行済普通株式総数：2018年３月31日および2019年３月31日     3,262,997,492株  資本剰余金487,502487,162利益剰余金19,473,46421,987,515その他の包括利益・損失(△)累計額435,699△    916,650自己株式△  2,057,733△  2,606,925自己株式数：2018年３月31日       353,073,500株2019年３月31日       430,558,325株  株主資本合計18,735,98219,348,152非支配持分694,120718,985資本合計19,430,10220,067,137純資産合計19,922,07620,565,210契約債務及び偶発債務  負債純資産合計50,308,24951,936,949    (注)  普通株式とＡＡ型種類株式を併せた発行可能株式総数は、10,000,000,000株です。 
+jpcrp_cor:ConsolidatedStatementOfIncomeUSGAAPTextBlock	連結損益計算書（US GAAP） [テキストブロック]	CurrentYearDuration	当期	その他	期間	－	－	   【連結損益計算書】  (単位：百万円) 前連結会計年度(2018年３月31日に終了した１年間)当連結会計年度(2019年３月31日に終了した１年間)売上高    商品・製品売上高27,420,27628,105,338  金融収益1,959,2342,120,343  売上高合計29,379,51030,225,681売上原価並びに販売費及び一般管理費    売上原価22,600,47423,389,495  金融費用1,288,6791,392,290  販売費及び一般管理費3,090,4952,976,351  売上原価並びに販売費及び  一般管理費合計26,979,64827,758,136営業利益2,399,8622,467,545その他の収益・費用(△)    受取利息及び受取配当金179,541225,495  支払利息△     27,586△     28,078  為替差益＜純額＞22,66412,400  未実現持分証券評価損益―△    341,054  その他＜純額＞45,948△     50,843  その他の収益・費用(△)合計220,567△    182,080税金等調整前当期純利益2,620,4292,285,465法人税等504,406659,944持分法投資損益470,083360,066非支配持分控除前当期純利益2,586,1061,985,587非支配持分帰属損益△     92,123△    102,714当社株主に帰属する当期純利益2,493,9831,882,873    (注)  当連結会計年度および前連結会計年度における当社普通株主に帰属する当期純利益は1,868,085百万円および2,481,692百万円であり、上記「当社株主に帰属する当期純利益」よりＡＡ型種類株式への配当金などそれぞれ14,788百万円および12,291百万円を控除しています。 １株当たり当社普通株主に帰属する当期純利益    基    本842円00銭650円55銭  希薄化後832円78銭645円11銭  
+jpcrp_cor:ConsolidatedStatementOfCashFlowsUSGAAPTextBlock	連結キャッシュ・フロー計算書（US GAAP） [テキストブロック]	CurrentYearDuration	当期	その他	期間	－	－	④ 【連結キャッシュ・フロー計算書】  (単位：百万円) 前連結会計年度(2018年３月31日に終了した１年間)当連結会計年度(2019年３月31日に終了した１年間)営業活動からのキャッシュ・フロー    非支配持分控除前当期純利益2,586,1061,985,587  営業活動から得た現金＜純額＞への  非支配持分控除前当期純利益の調整      減価償却費1,734,0331,792,375    貸倒引当金及び金融損失引当金繰入・戻入(△)額76,06980,065    退職・年金費用＜支払額控除後＞4,28631,645    固定資産処分損35,28935,902    有価証券の未実現評価損益846339,472    繰延税額△    237,961△     86,594    持分法投資損益△    470,083△    360,066    資産及び負債の増減ほか        受取手形及び売掛金の増加△    105,435△    246,845      たな卸資産の増加△    171,148△    166,902      その他の流動資産の増加△    149,463△    102,472      支払手形及び買掛金の増加46,64894,887      未払法人税等の増加・減少(△)238,753△    141,329      その他流動負債の増加211,452351,122      その他423,736159,750  営業活動から得た現金＜純額＞4,223,1283,766,597投資活動からのキャッシュ・フロー    金融債権の増加△ 15,058,516△ 15,884,610  金融債権の回収14,013,20414,834,709  金融債権の売却33,10824,394  有形固定資産の購入＜賃貸資産を除く＞△  1,291,117△  1,452,725  賃貸資産の購入△  2,307,590△  2,286,162  有形固定資産の売却＜賃貸資産を除く＞71,82065,437  賃貸資産の売却1,211,2721,385,074  有価証券及び投資有価証券の購入△  3,052,916△  1,840,355  有価証券及び投資有価証券の売却275,5741,134,127  有価証券及び投資有価証券の満期償還2,247,9641,564,671  関連会社への追加投資支払＜当該関連会社保有現金控除後＞△        5765,010  投資及びその他の資産の増減ほか197,681△    246,811  投資活動に使用した現金＜純額＞△  3,660,092△  2,697,241財務活動からのキャッシュ・フロー    長期借入債務の増加4,793,9395,000,921  長期借入債務の返済△  4,452,338△  4,442,232  短期借入債務の増加347,738164,282  当社種類株主への配当金支払額△      6,194△      8,690  当社普通株主への配当金支払額△    620,698△    636,116  非支配持分への配当金支払額△     63,764△     69,367  自己株式の取得(△)及び処分△    447,818△    549,637  財務活動に使用した現金＜純額＞△    449,135△    540,839為替相場変動の現金及び現金同等物並びに拘束性現金に対する影響額△     43,588△     41,641現金及び現金同等物並びに拘束性現金純増加額70,313486,876現金及び現金同等物並びに拘束性現金期首残高3,149,3263,219,639現金及び現金同等物並びに拘束性現金期末残高3,219,6393,706,515  ( (注)当連結会計年度における「現金及び現金同等物並びに拘束性現金」の期首残高および期末残高には、拘束性現金 (拘束性現金同等物を含む) がそれぞれ167,370百万円および131,811百万円含まれています。また、これらの拘束性現金は、連結貸借対照表上の「前払費用及びその他」に含まれています。  

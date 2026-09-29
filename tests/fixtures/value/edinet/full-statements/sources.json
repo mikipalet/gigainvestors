@@ -1,0 +1,68 @@
+[
+  {
+    "fixture": "keyence-2025.csv",
+    "docID": "S100VWNU",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100VWNU?type=5",
+    "selection": "Unmodified short cells in current/prior consolidated or DEI contexts; UTF-16 TSV decoded to UTF-8. No monetary values changed."
+  },
+  {
+    "fixture": "keyence-2026.csv",
+    "docID": "S100YAHE",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100YAHE?type=5",
+    "selection": "Unmodified short cells in current/prior consolidated or DEI contexts; UTF-16 TSV decoded to UTF-8. No monetary values changed."
+  },
+  {
+    "fixture": "shinetsu-2025.csv",
+    "docID": "S100W0RG",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100W0RG?type=5",
+    "selection": "Unmodified short cells in current/prior consolidated or DEI contexts; UTF-16 TSV decoded to UTF-8. No monetary values changed."
+  },
+  {
+    "fixture": "mitsubishi-2025.csv",
+    "docID": "S100VYM1",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100VYM1?type=5",
+    "selection": "Unmodified short cells in current/prior consolidated or DEI contexts; UTF-16 TSV decoded to UTF-8. No monetary values changed."
+  },
+  {
+    "fixture": "toyota-2025.csv",
+    "docID": "S100VWVY",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100VWVY?type=5",
+    "selection": "Unmodified short cells in current/prior consolidated or DEI contexts; UTF-16 TSV decoded to UTF-8. No monetary values changed."
+  },
+  {
+    "fixture": "toyota-2019.csv",
+    "docID": "S100G1ZO",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100G1ZO?type=5",
+    "selection": "Unmodified short cells in current/prior consolidated or DEI contexts; UTF-16 TSV decoded to UTF-8. No monetary values changed. Includes unmodified consolidated US GAAP balance sheet, income and cash-flow text blocks."
+  },
+  {
+    "fixture": "keyence-2017.csv",
+    "docID": "S100AEP9",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100AEP9?type=5",
+    "selection": "Unmodified short numeric/DEI cells in consolidated annual contexts, decoded from UTF-16 to UTF-8."
+  },
+  {
+    "fixture": "keyence-2019.csv",
+    "docID": "S100FZM4",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100FZM4?type=5",
+    "selection": "Unmodified short numeric/DEI cells in consolidated annual contexts, decoded from UTF-16 to UTF-8."
+  },
+  {
+    "fixture": "S100YJK1.csv",
+    "docID": "S100YJK1",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100YJK1?type=5",
+    "selection": "Unmodified short numeric/DEI cells in consolidated annual contexts, decoded from UTF-16 to UTF-8."
+  },
+  {
+    "fixture": "S100VJ7H.csv",
+    "docID": "S100VJ7H",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100VJ7H?type=5",
+    "selection": "Unmodified short numeric/DEI cells in consolidated annual contexts, decoded from UTF-16 to UTF-8."
+  },
+  {
+    "fixture": "S100PT63.csv",
+    "docID": "S100PT63",
+    "source": "https://api.edinet-fsa.go.jp/api/v2/documents/S100PT63?type=5",
+    "selection": "Unmodified short numeric/DEI cells in consolidated annual contexts, decoded from UTF-16 to UTF-8."
+  }
+]

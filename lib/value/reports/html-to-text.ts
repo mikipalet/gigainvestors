@@ -7,7 +7,7 @@ const entities: Record<string, string> = {
   Eacute: "É", Auml: "Ä", Ouml: "Ö", Uuml: "Ü", szlig: "ß", ccedil: "ç", icirc: "î", ocirc: "ô", ucirc: "û",
 };
 
-function decode(text: string): string {
+export function decodeHtmlEntities(text: string): string {
   return text.replace(/&(#x[\da-f]+|#\d+|[a-z][a-z\d]+);/gi, (entity, name: string) => {
     if (!name.startsWith("#")) return entities[name] ?? entity;
     const point = name[1].toLowerCase() === "x" ? parseInt(name.slice(2), 16) : Number(name.slice(1));
@@ -24,7 +24,7 @@ export function htmlToText(html: string): string {
   const stack: string[] = [];
   for (const token of tokens) {
     if (!token.startsWith("<")) {
-      if (!stack.length) output.push(decode(token));
+      if (!stack.length) output.push(decodeHtmlEntities(token));
       continue;
     }
     const tag = /^<\s*(\/?)\s*([\w:-]+)/.exec(token);

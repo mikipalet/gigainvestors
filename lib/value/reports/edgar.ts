@@ -29,7 +29,8 @@ export async function latestFilings(cik: string): Promise<Filings> {
   const result: Filings = { annual: null, proxy: null };
   function read(rows: FilingRows) {
     for (let index = 0; index < rows.form.length; index++) {
-      const form = rows.form[index];
+      const rawForm = rows.form[index];
+      const form = rawForm === "10-K405" || rawForm === "10-KT" ? "10-K" : rawForm;
       if (!["10-K", "20-F", "40-F", "DEF 14A"].includes(form)) continue;
       const accession = rows.accessionNumber[index];
       const document = rows.primaryDocument[index];

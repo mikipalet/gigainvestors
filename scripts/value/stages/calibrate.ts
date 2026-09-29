@@ -1,6 +1,6 @@
 import { CALIBRATION } from "../../../lib/value/calibration";
-import { readCorpusJson } from "../../../lib/value/corpus";
-import type { Analysis } from "../../../lib/value/types";
+import { readCorpusJson, readJsonl } from "../../../lib/value/corpus";
+import type { Analysis, Company } from "../../../lib/value/types";
 import analyze, { type Options } from "./analyze";
 
 export function calibrationSummary({ entries, analyses }: { entries: typeof CALIBRATION; analyses: Map<string, Analysis> }) {
@@ -28,10 +28,14 @@ export function calibrationSummary({ entries, analyses }: { entries: typeof CALI
 export default async function calibrate(options: Options): Promise<void> {
   const entries = CALIBRATION.filter(entry => !options.only || options.only.includes(entry.id)).slice(0, options.limit);
   if (!entries.length) throw new Error("No calibration companies selected");
-  await analyze({ ...options, only: entries.map(entry => entry.id), limit: undefined });
+  const companies = readJsonl<Company>("universe.jsonl");
+  const primaryByListing = new Map(companies.flatMap(company => company.listings.map(id => [id, company.id] as const)));
+  for (const company of companies) primaryByListing.set(company.id, company.id);
+  const resolve = (id: string) => primaryByListing.get(id) ?? id;
+  await analyze({ ...options, only: [...new Set(entries.map(entry => resolve(entry.id)))], limit: undefined });
   const analyses = new Map<string, Analysis>();
   for (const { id } of entries) {
-    const analysis = readCorpusJson<Analysis>(`analysis/${id}.json`);
+    const analysis = readCorpusJson<Analysis>(`analysis/${resolve(id)}.json`);
     if (analysis) analyses.set(id, analysis);
   }
   const summary = calibrationSummary({ entries, analyses });

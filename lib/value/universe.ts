@@ -1,10 +1,12 @@
 import type { Id, Kind } from "./types";
 
-import { exchangeCountries, offshoreDomiciles, secondaryVenues, lastResortVenues, offshoreVenueOrder, dualListedIssuers } from "./universe-config";
+import { exchangeCountries, offshoreDomiciles, secondaryVenues, lastResortVenues, offshoreVenueOrder, dualListedIssuers, adrUnderlyingIsins } from "./universe-config";
 export { exchangeCountries } from "./universe-config";
 
-export function isCommonStock(row: { Type: string; Name: string }): boolean {
-  return row.Type === "Common Stock" && !/\b(ETF|FUND|TRUST UNITS|WARRANT|RIGHTS|PREF|PREFERRED|PFD|ACQUISITION CORP|SPAC)\b/i.test(row.Name);
+const isDerivative = (code: string, name: string): boolean => /-(WT|WS|W|R|RT|U|UN)$|\.(WS|W|U)$/i.test(code) || /Warrant/i.test(name);
+
+export function isCommonStock(row: { Type: string; Name: string; Code?: string }): boolean {
+  return row.Type === "Common Stock" && !isDerivative(row.Code ?? "", row.Name) && !/\b(ETF|FUND|TRUST UNITS|WARRANT|RIGHTS|PREF|PREFERRED|PFD|ACQUISITION CORP|SPAC)\b/i.test(row.Name);
 }
 
 interface Listing { code: string; exchange: string; isin: string | null; name: string; country?: string }
@@ -19,7 +21,7 @@ export function normalizedName(name: string): string {
 }
 
 export const isGlobalDepositary = (name: string): boolean => /\b(GDR|GDS|global depositary)/i.test(name);
-const isAdr = (name: string): boolean => /\b(ADR|ADS)\b|American Depositary Shares|Depositary Shares|New York Registry|Sponsored/i.test(name);
+const isAdr = (row: Listing): boolean => /\b(ADR|ADS)\b|Depositary|New York Registry|Sponsored/i.test(row.name) || /^[A-Z]{4}[YF]$/i.test(row.code);
 
 const id = (row: Listing): Id => `${row.code}.${row.exchange}`;
 const isinCountry = (row: Listing): string | undefined => row.isin?.slice(0, 2);
@@ -27,7 +29,12 @@ const listingCountry = (row: Listing): string => exchangeCountries[row.exchange]
 
 function primaryListing(group: Listing[]): Listing {
   // Even a domicile match on a secondary venue loses to a regular listing.
-  const regular = group.filter((row) => !lastResortVenues.has(row.exchange));
+  const regular = group.filter((row) => {
+    if (row.exchange === "SA") return isinCountry(row) === "BR";
+    if (row.exchange === "MC" && row.code.startsWith("X") && group.some((other) =>
+      other !== row && isinCountry(row) === listingCountry(other))) return false;
+    return !lastResortVenues.has(row.exchange);
+  });
   const nonNeo = group.filter((row) => row.exchange !== "NEO");
   const choices = regular.length ? regular : nonNeo.length ? nonNeo : group;
   const rank = (row: Listing): number => {
@@ -51,11 +58,15 @@ function foreignSecondary(row: Listing): boolean {
 
 export function collapseListings(input: Listing[]): Array<{ primary: Id; listings: Id[] }> {
   const byId = new Map(input.map((row) => [id(row), row]));
+  const foreignHomeNames = new Set(input.filter((row) => row.exchange !== "BA" && !isAdr(row)
+    && isinCountry(row) === listingCountry(row)).map((row) => normalizedName(row.name)));
   const eligible = input.filter((row) => {
+    if (isDerivative(row.code, row.name)) return false;
     if (/\b(CDR|BDR|DRN|NVDR|DR|CEDEAR|pref|preferred|pfd)\b|\(CAD Hedged\)/i.test(row.name)) return false;
     if (row.exchange === "SA" && /3[2-9]$/.test(row.code)) return false;
     if (row.exchange === "BK" && /[a-z]\d{2}$/i.test(row.code)) return false;
-    if (row.exchange === "BA" && isinCountry(row) !== "AR") return false;
+    if (row.exchange === "BA" && (isinCountry(row) !== "AR" || /^ARDEUT/i.test(row.isin ?? "")
+      || foreignHomeNames.has(normalizedName(row.name)))) return false;
     if (["KO", "KQ"].includes(row.exchange) && row.code.endsWith("5")) {
       const ordinary = byId.get(`${row.code.slice(0, -1)}0.${row.exchange}`);
       if (ordinary && normalizedName(ordinary.name) === normalizedName(row.name)) return false;
@@ -145,7 +156,7 @@ export function collapseListings(input: Listing[]): Array<{ primary: Id; listing
   const primaries = groups.map(primaryListing);
   const standaloneAdrs = new Map<string, Set<number>>();
   primaries.forEach((primary, i) => {
-    if (primary.exchange !== "US" || isinCountry(primary) !== "US" || !isAdr(primary.name)) return;
+    if (primary.exchange !== "US" || isinCountry(primary) !== "US" || !isAdr(primary)) return;
     const name = normalizedName(primary.name);
     const matches = standaloneAdrs.get(name) ?? new Set<number>();
     matches.add(i);
@@ -156,11 +167,19 @@ export function collapseListings(input: Listing[]): Array<{ primary: Id; listing
     // A real home cannot be displaced by a foreign listing with the same name.
     if ([...homes.get(normalizedName(primary.name)) ?? []].includes(i)) return;
     const matches = new Set<number>();
+    const ordinaryUs = group.some(row => row.exchange === "US" && isinCountry(row) === "US" && !isAdr(row));
     for (const row of group) {
+      const underlying = row.exchange === "US" && row.isin ? adrUnderlyingIsins[row.isin] : undefined;
+      if (underlying) {
+        groups.forEach((candidate, index) => {
+          if (candidate.some(home => home.isin === underlying && listingCountry(home) === isinCountry(home))) matches.add(index);
+        });
+      }
+      if (ordinaryUs) continue;
       const country = isinCountry(row);
       // Missing identifiers and US-ISIN receipts also occur on non-US venues
       // (e.g. Samsung's LSE receipts and unlabelled Canadian receipts).
-      if (country === "US" || (!country && row.exchange !== "US")) {
+      if ((country === "US" && (row.exchange !== "US" || isAdr(row))) || (!country && row.exchange !== "US")) {
         for (const home of homes.get(normalizedName(row.name)) ?? []) matches.add(home);
       }
       // Without a home venue (Japan), keep an existing US ADR as primary.

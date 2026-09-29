@@ -40,7 +40,7 @@ describe("venue, receipt and ADR collapse", () => {
     expect(collapseListings([row("ABC.SW", "Offshore", "KY0000000001"), row("ABC.AU", "Offshore", "KY0000000001")])[0].primary).toBe("ABC.AU");
     expect(collapseListings([row("SHOP.US", "Shopify", "CA82509L1076"), row("SHOP.TO", "Shopify", "CA82509L1076")])[0].primary).toBe("SHOP.TO");
   });
-  it.each(["Taiwan Semiconductor Manufacturing", "Taiwan Semiconductor Manufacturing Sponsored ADR", "Taiwan Semiconductor Manufacturing New York Registry Shares"])("merges US receipt %s into its home listing", (name) => {
+  it.each(["Taiwan Semiconductor Manufacturing ADR", "Taiwan Semiconductor Manufacturing Sponsored ADR", "Taiwan Semiconductor Manufacturing New York Registry Shares"])("merges US receipt %s into its home listing", (name) => {
     const groups = collapseListings([row("TSM.US", name, "US8740391003"), row("2330.TW", "Taiwan Semiconductor Manufacturing Co. Ltd.", "TW0002330008")]);
     expect(groups).toEqual([{ primary: "2330.TW", listings: ["TSM.US", "2330.TW"] }]);
   });
@@ -81,8 +81,8 @@ it("normalizes legal suffixes and class labels without erasing the issuer", () =
   }
 });
 
-it("never promotes a last-resort venue above another retained venue", () => {
-  expect(collapseListings([row("ABC.SA", "Example", "BR0000000001"), row("ABC.AU", "Example", "BR0000000001")])[0].primary).toBe("ABC.AU");
+it("recognizes Brazil as home instead of a last-resort venue", () => {
+  expect(collapseListings([row("ABC.SA", "Example", "BR0000000001"), row("ABC.AU", "Example", "BR0000000001")])[0].primary).toBe("ABC.SA");
 });
 
 it("uses offshore venue priority independently of input order", () => {
@@ -118,4 +118,59 @@ it("NEO defers to the home even when both a US receipt and home exist", () => {
 it.each(["American Depositary Shares", "ADS", "Depositary Shares"])("keeps standalone %s primary without a home venue", (suffix) => {
   expect(collapseListings([row("TYT.LSE", "Toyota Motor Corp", "JP3633400001"), row("TM.US", `Toyota Motor Corporation ${suffix}`, "US8923313071")]))
     .toEqual([{ primary: "TM.US", listings: ["TYT.LSE", "TM.US"] }]);
+});
+
+it("keeps Vale on its Brazilian home and drops the Argentine CEDEAR", () => {
+  expect(collapseListings([
+    row("XVALO.MC", "Vale SA", "BRVALEACNOR0"), row("VALE3.SA", "Vale SA", "BRVALEACNOR0"),
+    row("VALE.BA", "Vale SA", "ARDEUT113925"), row("VALE.US", "Vale SA ADR", "US91912E1055"),
+  ])).toEqual([{ primary: "VALE3.SA", listings: ["XVALO.MC", "VALE3.SA", "VALE.US"] }]);
+  expect(collapseListings([row("VALE.BA", "Vale SA", "ARDEUT113925")])).toEqual([]);
+});
+it("retains standalone Latibex and genuine Argentine homes", () => {
+  expect(collapseListings([row("XVALO.MC", "Vale SA", "BRVALEACNOR0")])[0].primary).toBe("XVALO.MC");
+  expect(collapseListings([row("GGAL.BA", "Grupo Galicia", "ARP495251018"), row("GGAL.US", "Grupo Galicia ADR", "US3999091008")]))
+    .toEqual([{ primary: "GGAL.BA", listings: ["GGAL.BA", "GGAL.US"] }]);
+});
+it.each(["-WT", "-WS", "-W", "-R", "-RT", "-U", "-UN", ".WS", ".W", ".U"])("drops coded OXY derivative %s before grouping", suffix => {
+  expect(collapseListings([row(`OXY${suffix}.US`, "Occidental Petroleum Corporation"), row("OXY.US", "Occidental Petroleum Corporation")]))
+    .toEqual([{ primary: "OXY.US", listings: ["OXY.US"] }]);
+});
+it("drops named warrants before grouping", () => {
+  expect(collapseListings([row("OXY1.US", "Occidental Petroleum Warrants"), row("OXY.US", "Occidental Petroleum")]))
+    .toEqual([{ primary: "OXY.US", listings: ["OXY.US"] }]);
+});
+it("keeps Domino's US ordinary stock separate from its UK namesake", () => {
+  expect(collapseListings([row("DPZ.US", "Domino's Pizza Inc", "US25754A2015"), row("DOM.LSE", "Domino's Pizza Group plc", "GB00BYN59130")]))
+    .toEqual([{ primary: "DPZ.US", listings: ["DPZ.US"] }, { primary: "DOM.LSE", listings: ["DOM.LSE"] }]);
+});
+it.each(["ABCDEY", "ABCY", "ABCDE"])("does not treat %s as a five-letter OTC receipt", code => {
+  expect(collapseListings([row(`${code}.US`, "Example", "US0000000001"), row("EX.LSE", "Example", "GB0000000001")])).toHaveLength(2);
+});
+it.each(["ABCDY", "ABCDF"])("merges OTC receipt %s by name", code => {
+  expect(collapseListings([row(`${code}.US`, "Example", "US0000000001"), row("EX.LSE", "Example", "GB0000000001")]))
+    .toEqual([{ primary: "EX.LSE", listings: [`${code}.US`, "EX.LSE"] }]);
+});
+
+it.each([
+  ["TSM.US", "Taiwan Semiconductor Manufacturing", "US8740391003", "2330.TW", "Taiwan Semiconductor Manufacturing Co. Ltd.", "TW0002330008"],
+  ["BHP.US", "BHP Group Limited", "US0886061086", "BHP.AU", "BHP Group Ltd", "AU000000BHP4"],
+  ["NVO.US", "Novo Nordisk A/S", "US6701002056", "NOVO-B.CO", "Novo Nordisk A/S", "DK0062498333"],
+])("maps verified unlabelled receipt %s by exact ISIN, never name alone", (us, name, isin, home, homeName, homeIsin) => {
+  expect(collapseListings([row(us, name, isin), row(home, homeName, homeIsin)]))
+    .toEqual([{ primary: home, listings: [us, home] }]);
+  expect(collapseListings([row(us, name, "US0000000001"), row(home, homeName, homeIsin)])).toHaveLength(2);
+  expect(collapseListings([row(us, name, isin)])[0]).toEqual({ primary: us, listings: [us] });
+});
+
+it("does not route a US ordinary stock into a namesake home via a foreign cross-listing", () => {
+  const groups = collapseListings([
+    row("DPZ.US", "Domino's Pizza Inc", "US25754A2015"),
+    row("DPZ.MC", "Domino's Pizza Inc", "US25754A2015"),
+    row("DOM.LSE", "Domino's Pizza Group plc", "GB00BYN59130"),
+  ]);
+  expect(groups).toEqual([
+    { primary: "DPZ.US", listings: ["DPZ.US", "DPZ.MC"] },
+    { primary: "DOM.LSE", listings: ["DOM.LSE"] },
+  ]);
 });

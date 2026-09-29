@@ -13,7 +13,7 @@ export const exchangeCountries: Record<string, string> = {
 
 export const offshoreDomiciles = new Set(["KY", "BM", "VG", "JE", "GG", "IM", "CW", "PA", "MH", "LR", "BS", "GI", "MU", "CY", "LU", "IE", "NL"]);
 export const secondaryVenues = new Set(["F", "STU", "MU", "HA", "DU", "HM", "BE", "XETRA", "SW", "NEO", "MX", "SN", "LIM", "BA", "BK", "VI", "LU", "LSE"]);
-export const lastResortVenues = new Set(["F", "STU", "MU", "HA", "DU", "HM", "BE", "SW", "NEO", "MX", "SA", "BA", "BK"]);
+export const lastResortVenues = new Set(["F", "STU", "MU", "HA", "DU", "HM", "BE", "SW", "NEO", "MX", "BA", "BK"]);
 export const offshoreVenueOrder = ["HK", "US", "SHG", "SHE", "TW", "KO", "KQ", "AU", "LSE", "TO", "V"];
 // The exchange-list response can omit HK even though its symbol endpoint works.
 export const additionalExchanges = [{ Code: "HK", Name: "Hong Kong", Country: "Hong Kong", CountryISO2: "HK", Currency: "HKD" }];
@@ -23,4 +23,15 @@ export const universeChecks = { topCount: 300, minHkCompanies: 2000, maxUsCapMul
 // Keep this explicit: equal names alone must not combine unrelated home issuers.
 export const dualListedIssuers: Record<string, string> = {
   AU000000RIO1: "rio-tinto", GB0007188757: "rio-tinto",
+};
+
+// Verified receipts whose EODHD symbol names omit ADR/ADS. Match identifiers,
+// never names: ordinary US stocks must not inherit these exceptions.
+// TSM: https://www.adr.com/drprofile/874039100
+// BHP: https://depositaryreceipts.citi.com/adr/guides/pgm_d.aspx?cusip=088606108&pageId=16&subpageID=104&typeDisplay=A
+// NVO: https://api.markitdigital.com/jpmadr-public/v1/cms/document?cmsId=b8e6af19336b45cc8b7fdf8538d778e5&sequenceNo=10
+export const adrUnderlyingIsins: Record<string, string> = {
+  US8740391003: "TW0002330008",
+  US0886061086: "AU000000BHP4",
+  US6701002056: "DK0062498333",
 };

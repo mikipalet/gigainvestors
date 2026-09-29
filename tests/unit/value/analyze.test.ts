@@ -13,7 +13,7 @@ import { QUESTIONS } from "../../../lib/value/jev/questions";
 import { appendJsonl, corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import type { Analysis, Company, JevAnswer, ReportMeta } from "../../../lib/value/types";
 import analyze from "../../../scripts/value/stages/analyze";
-import { calibrationSummary } from "../../../scripts/value/stages/calibrate";
+import calibrate, { calibrationSummary } from "../../../scripts/value/stages/calibrate";
 import sample from "../../../scripts/value/stages/jev-sample";
 
 vi.mock("../../../lib/value/jev/client", () => ({ askJev: vi.fn() }));
@@ -298,4 +298,18 @@ it.each([
   const result = await analyzeCompany({ ...args, ask: askCompany, sections: { business: "business", risk: "risktext" } });
   expect(result.tests.understandable.jev.find(a => a.q === "commodity")?.value).toBeCloseTo(mean);
   expect(result.valuation!.assumptions).toContain(`owner earnings normalized over ${window} years`);
+});
+
+it("calibrates BHC.US through the BHC.TO primary analysis", async () => {
+  const args = input("BHC.TO");
+  args.company.listings = ["BHC.TO", "BHC.US"];
+  appendJsonl("universe.jsonl", args.company);
+  writeCorpusJson("fundamentals/BHC.TO.json", args.fundamentals);
+  const table = vi.spyOn(console, "table").mockImplementation(() => {});
+  const previous = process.exitCode;
+  try {
+    await calibrate({ only: ["BHC.US"], ask: args.ask, getBondYield: async () => 0.04, evidence: async () => null });
+    expect(readCorpusJson<Analysis>("analysis/BHC.TO.json")?.id).toBe("BHC.TO");
+    expect(table.mock.calls[0][0]).toEqual([expect.objectContaining({ id: "BHC.US", verdict: expect.stringMatching(/^correct:/) })]);
+  } finally { process.exitCode = previous; }
 });

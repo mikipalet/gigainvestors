@@ -11,7 +11,7 @@ Do the work Buffett does on one company (read the reports, test the business, ju
 - No blended score. Six tests, each pass / fail / unclear with evidence. A failed moat is not offset by a cheap price.
 - Surface: same repo and Next app, route group `app/(value)/`, served on `value.gigainvestors.com` via a host rewrite in `proxy.ts`. Existing pages untouched.
 - Storage: raw corpus on this box (`$VALUE_CORPUS_DIR`, default `~/value-corpus`, never `/tmp`); published data in the public GitHub repo `mikipalet/gigainvestors-value-data` (free, no new account; chosen over R2 on 2026-09-29), one orphan commit force-pushed per publish so history never grows, read by the site from `raw.githubusercontent.com` and cached by ISR for a day. One reader module (`lib/value/store.ts`) so the backend can change later.
-- Refresh: prices daily (bulk EOD per exchange, recompute margin of safety only); fundamentals, reports and Jev quarterly.
+- Refresh: prices daily (bulk EOD per exchange); fundamentals ROLLING, the daily EODHD budget left after new companies re-pulls the oldest-fetched first (~5-day full cycle); reports and Jev re-run only when a new filing's text hash differs.
 
 ## Pipeline (`scripts/value/`, `lib/value/`)
 

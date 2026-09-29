@@ -65,6 +65,7 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
       totalDebt: number(balance.shortLongTermDebtTotal) ?? (shortDebt !== null && longDebt !== null ? shortDebt + longDebt : null),
       equity: number(balance.totalStockholderEquity), goodwill: number(balance.goodWill), intangibles: number(balance.intangibleAssets),
       ppe: number(balance.propertyPlantAndEquipmentNet), totalAssets: number(balance.totalAssets), totalLiabilities: number(balance.totalLiab),
+      liabilitiesAndStockholdersEquity: number(balance.liabilitiesAndStockholdersEquity),
       currentAssets: number(balance.totalCurrentAssets), currentLiabilities: number(balance.totalCurrentLiabilities),
       dilutedShares: shares.get(fy) ?? number(balance.commonStockSharesOutstanding), marketCap: null,
     });

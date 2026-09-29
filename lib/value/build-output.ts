@@ -26,12 +26,13 @@ function tradingValuation(analysis: Analysis, fx: Record<string, number>): Valua
   return { ...valuation, currency, perShare: { low: range.low, mid: range.mid, high: range.high } };
 }
 
-export function buildOutput({ analyses, holdersByTicker, investorNames, fx, prices = {} }: {
+export function buildOutput({ analyses, holdersByTicker, investorNames, fx, prices = {}, universe = analyses.length }: {
   analyses: Analysis[];
   holdersByTicker: Record<string, string[]>;
   investorNames: Record<string, string>;
   fx: Record<string, number>;
   prices?: PriceMap;
+  universe?: number;
 }): { files: Record<string, unknown> } {
   const files: Record<string, unknown> = {};
   const countries: Record<string, IndexRow[]> = {};
@@ -79,10 +80,19 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   for (const [shard, dossiers] of Object.entries(shards)) files[`dossiers/${shard}.json`] = dossiers;
   files["index/default.json"] = rows.filter((row) => row.st === "s" && (row.t === "PPPPP" || /^P*FP*$/.test(row.t)));
   files["top.json"] = rows.slice(0, 2000).map((row) => row.id);
+  const versionCounts = new Map<string, { versions: Analysis["versions"]; count: number }>();
+  for (const { versions } of analyses) {
+    const key = JSON.stringify([versions.pipeline, versions.questions]);
+    const entry = versionCounts.get(key) ?? { versions, count: 0 };
+    entry.count++;
+    versionCounts.set(key, entry);
+  }
+  // Stable tie-breaking makes identical corpora independent of input order.
+  const common = [...versionCounts.entries()].sort(([a, av], [b, bv]) => bv.count - av.count || a.localeCompare(b))[0]?.[1];
   files["meta.json"] = {
     asOf: analyses.map((analysis) => analysis.asOf).sort().at(-1) ?? null,
-    counts: { universe: rows.length, scored: rows.filter((row) => row.st === "s").length, insufficient: rows.filter((row) => row.st === "i").length },
-    versions: analyses[0]?.versions ?? null, tags,
+    counts: { universe, analysed: rows.length, scored: rows.filter((row) => row.st === "s").length, insufficient: rows.filter((row) => row.st === "i").length },
+    versions: common ? { ...common.versions, other: analyses.length - common.count } : null, tags,
   };
   return { files };
 }

@@ -7,5 +7,11 @@
   "stooq": {
     "url": "https://stooq.com/q/d/l/?s=8058.jp&i=d&d1=20260925&d2=20260929",
     "status": 403
+  },
+  "yahoo": {
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/8058.T?range=5d&interval=1d",
+    "status": 200,
+    "userAgent": "Mozilla/5.0",
+    "recordedAt": "2026-09-29T11:35:53.703548+00:00"
   }
 }

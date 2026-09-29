@@ -1,5 +1,6 @@
 export const T = {
   minYears: 7,
+  publish: { maxCountDrop: 0.20, lockMaxAgeMs: 6 * 60 * 60 * 1000 },
   understandable: { years: 10, maxRevenueDeclines: 3, maxLossYears: 2, maxOpMarginCv: 0.35 },
   moat: { badYearsAllowed: 1, roicMedian: 0.15, roicWorst3: 0.10, gmDropPp: 0.02, roeMedianFin: 0.12, roeWorst3Fin: 0.08 },
   economics: { oeToNi: 0.8, roiic: 0.12 },

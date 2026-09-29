@@ -2,7 +2,7 @@ import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "
 import path from "node:path";
 import { readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
 import { bulkLastDay } from "../../../lib/value/eodhd";
-import { createLimiter, fetchWithRetry } from "../../../lib/value/http";
+import { yahooPrice } from "../../../lib/value/prices-yahoo";
 import type { Company, PriceMap } from "../../../lib/value/types";
 import { git, pushRepository, withPublishRepository } from "./publish";
 
@@ -23,48 +23,30 @@ export function parseBulkPrices({ rows, companies }: { rows: unknown; companies:
   return prices;
 }
 
-export function parseStooqPrice(csv: string): [number, string] {
-  const lines = csv.trim().split(/\r?\n/);
-  const header = lines.shift()?.split(",");
-  const dateColumn = header?.indexOf("Date") ?? -1;
-  const closeColumn = header?.indexOf("Close") ?? -1;
-  if (dateColumn < 0 || closeColumn < 0) throw new Error("Invalid Stooq daily CSV response");
-  let latest: [number, string] | null = null;
-  for (const line of lines) {
-    const cells = line.split(",");
-    const close = Number(cells[closeColumn]);
-    const date = cells[dateColumn];
-    if (validPrice(close, date) && (!latest || date > latest[1])) latest = [close, date];
-  }
-  if (!latest) throw new Error("Stooq returned no valid daily prices");
-  return latest;
-}
-
-const stooqLimit = createLimiter({ perSecond: 2 });
-async function stooqPrice(company: Company): Promise<[number, string]> {
-  const url = new URL("https://stooq.com/q/d/l/");
-  const end = new Date();
-  const start = new Date(end); start.setUTCDate(start.getUTCDate() - 14);
-  url.search = new URLSearchParams({ s: `${company.code.toLowerCase()}.jp`, i: "d", d1: start.toISOString().slice(0, 10).replaceAll("-", ""), d2: end.toISOString().slice(0, 10).replaceAll("-", "") }).toString();
-  return stooqLimit(async () => {
-    const response = await fetchWithRetry(url.toString(), { signal: AbortSignal.timeout(60_000) });
-    if (!response.ok) throw new Error(`Stooq HTTP ${response.status} for ${company.id}`);
-    return parseStooqPrice(await response.text());
-  });
-}
-
-export async function refreshPrices({ repo, companies, bulk = bulkLastDay, stooq = stooqPrice }: {
+export async function refreshPrices({ repo, companies, bulk = bulkLastDay, yahoo = yahooPrice }: {
   repo: string;
   companies: Company[];
   bulk?: (exchange: string) => Promise<unknown>;
-  stooq?: (company: Company) => Promise<[number, string]>;
+  yahoo?: (company: Company) => Promise<[number, string]>;
 }): Promise<void> {
   const updates: PriceMap = {};
   const exchanges = [...new Set(companies.filter((company) => !company.id.endsWith(".JP")).map((company) => company.exchange))].sort();
   for (const exchange of exchanges) {
     Object.assign(updates, parseBulkPrices({ rows: await bulk(exchange), companies: companies.filter((company) => company.exchange === exchange) }));
   }
-  for (const company of companies.filter((company) => company.id.endsWith(".JP"))) updates[company.id] = await stooq(company);
+  const japanese = companies.filter((company) => company.id.endsWith(".JP"));
+  let succeeded = 0;
+  for (const company of japanese) {
+    try {
+      const quote = await yahoo(company);
+      if (!validPrice(quote[0], quote[1])) throw new Error("Invalid Yahoo quote");
+      updates[company.id] = quote;
+      succeeded++;
+    } catch (error) {
+      console.warn(`prices: skipped ${company.id}: ${error instanceof Error ? error.message : "Yahoo quote failed"}`);
+    }
+  }
+  if (japanese.length && !succeeded) throw new Error("All Japanese quotes failed; prices aborted");
   const byCountry = new Map<string, PriceMap>();
   for (const company of companies) {
     const update = updates[company.id];
@@ -107,7 +89,7 @@ export default async function prices(options: { only?: string[]; limit?: number;
   await withPublishRepository(async (repo) => {
     await refreshPrices({ repo, companies,
       bulk: (exchange) => cached(`eodhd-${encodeURIComponent(exchange)}`, () => bulkLastDay(exchange)),
-      stooq: (company) => cached(`stooq-${encodeURIComponent(company.id)}`, () => stooqPrice(company)),
+      yahoo: (company) => cached(`yahoo-${encodeURIComponent(company.id)}`, () => yahooPrice(company)),
     });
     const changed = commitPrices({ repo, asOf: today });
     pushRepository(repo, false);

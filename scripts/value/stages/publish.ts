@@ -1,6 +1,8 @@
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { randomUUID } from "node:crypto";
+import { T } from "../../../lib/value/config";
 import { buildOutput } from "../../../lib/value/build-output";
 import { corpusPath, readCorpusJson, readJsonl } from "../../../lib/value/corpus";
 import type { Analysis, Company, Dossier, PriceMap } from "../../../lib/value/types";
@@ -16,6 +18,11 @@ export function git(repo: string, args: string[]): string {
   }
 }
 
+export function resetRepository(repo: string): void {
+  git(repo, ["reset", "--hard"]);
+  git(repo, ["clean", "-fd"]);
+}
+
 export function prepareRepository(): string {
   const repo = corpusPath("publish-repo");
   mkdirSync(corpusPath(), { recursive: true });
@@ -23,7 +30,7 @@ export function prepareRepository(): string {
     git(corpusPath(), ["-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential", "clone", REMOTE, repo]);
   } else {
     if (git(repo, ["remote", "get-url", "origin"]) !== REMOTE) throw new Error("Unexpected data repository origin");
-    if (git(repo, ["status", "--porcelain"])) throw new Error("Data repository has uncommitted changes");
+    resetRepository(repo);
     git(repo, ["-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential", "fetch", "origin"]);
     if (git(repo, ["branch", "-r", "--list", "origin/main"])) {
       git(repo, ["checkout", "-B", "main", "origin/main"]);
@@ -32,14 +39,48 @@ export function prepareRepository(): string {
   return repo;
 }
 
-export async function withPublishRepository(run: (repo: string) => Promise<void>): Promise<void> {
-  const lock = corpusPath("publish.lock");
-  mkdirSync(corpusPath(), { recursive: true });
-  try { mkdirSync(lock); } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "EEXIST") throw new Error("Another publish or prices stage holds publish.lock");
-    throw error;
+export function acquirePublishLock(lock: string): () => void {
+  const ownerFile = path.join(lock, "owner.json");
+  const owner = { pid: process.pid, timestamp: Date.now(), token: randomUUID() };
+  for (;;) {
+    try { mkdirSync(lock); break; } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "EEXIST") throw error;
+      let timestamp: number;
+      let dead = false;
+      try {
+        timestamp = statSync(lock).mtimeMs;
+        if (existsSync(ownerFile)) {
+          const previous = JSON.parse(readFileSync(ownerFile, "utf8"));
+          if (Number.isFinite(previous.timestamp)) timestamp = previous.timestamp;
+          if (Number.isInteger(previous.pid) && previous.pid > 0) {
+            try { process.kill(previous.pid, 0); } catch (error) {
+              dead = (error as NodeJS.ErrnoException).code === "ESRCH";
+            }
+          }
+        }
+      } catch (error) {
+        if ((error as NodeJS.ErrnoException).code === "ENOENT") continue;
+        // A malformed/legacy lock still expires based on its directory age.
+        timestamp = statSync(lock).mtimeMs;
+      }
+      if (!dead && Date.now() - timestamp <= T.publish.lockMaxAgeMs) {
+        throw new Error(`Another publish or prices stage holds ${lock}`);
+      }
+      rmSync(lock, { recursive: true, force: true });
+    }
   }
-  try { await run(prepareRepository()); } finally { rmSync(lock, { recursive: true, force: true }); }
+  writeFileSync(ownerFile, JSON.stringify(owner));
+  return () => {
+    if (existsSync(ownerFile) && JSON.parse(readFileSync(ownerFile, "utf8")).token === owner.token) {
+      rmSync(lock, { recursive: true, force: true });
+    }
+  };
+}
+
+export async function withPublishRepository(run: (repo: string) => Promise<void>): Promise<void> {
+  mkdirSync(corpusPath(), { recursive: true });
+  const release = acquirePublishLock(corpusPath("publish.lock"));
+  try { await run(prepareRepository()); } finally { release(); }
 }
 
 export function pushRepository(repo: string, force: boolean): void {
@@ -92,14 +133,21 @@ export function readPriceFiles(repo: string): PriceMap {
     .map((file) => JSON.parse(readFileSync(path.join(directory, file), "utf8")) as PriceMap));
 }
 
-export function publishSnapshot({ repo, analyses, universeIds, partial, holdersByTicker, investorNames }: {
+export function publishSnapshot({ repo, analyses, universeIds, partial, force = false, holdersByTicker, investorNames }: {
   repo: string;
   analyses: Analysis[];
   universeIds: string[];
   partial: boolean;
+  force?: boolean;
   holdersByTicker: Record<string, string[]>;
   investorNames: Record<string, string>;
 }): { count: number; changed: boolean } {
+  // Read the fetched snapshot before replacing meta.json or creating an orphan commit.
+  const metaFile = path.join(repo, "meta.json");
+  const previous = existsSync(metaFile) ? JSON.parse(readFileSync(metaFile, "utf8")) : null;
+  const previousCount = previous?.counts?.analysed
+    ?? (previous?.counts ? previous.counts.scored + previous.counts.insufficient : 0);
+  if (!Number.isInteger(previousCount) || previousCount < 0) throw new Error(`Invalid published count in ${metaFile}`);
   const merged = new Map<string, Analysis>();
   const directory = path.join(repo, "dossiers");
   if (partial && existsSync(directory)) {
@@ -114,8 +162,11 @@ export function publishSnapshot({ repo, analyses, universeIds, partial, holdersB
   }
   for (const analysis of analyses) merged.set(analysis.id, analysis);
   const rows = [...merged.values()];
-  const { files } = buildOutput({ analyses: rows, holdersByTicker, investorNames, fx: {}, prices: readPriceFiles(repo) });
-  const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1)!;
+  if (!force && (rows.length === 0 || rows.length < previousCount * (1 - T.publish.maxCountDrop))) {
+    throw new Error(`Publish aborted: ${rows.length} companies versus ${previousCount} previously published; use --force to override`);
+  }
+  const { files } = buildOutput({ analyses: rows, universe: universeIds.length, holdersByTicker, investorNames, fx: {}, prices: readPriceFiles(repo) });
+  const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
   writeOutput({ repo, files });
   const changed = commitOutput({ repo, asOf });
   return { count: rows.length, changed };
@@ -129,21 +180,34 @@ export function runCalibration(cli = path.resolve(__dirname, "../cli.ts")): void
   }
 }
 
+export function loadAnalyses(companies: Company[]): Analysis[] {
+  const analyses: Analysis[] = [];
+  for (const company of companies) {
+    if (/[\\/]/.test(company.id)) throw new Error("Invalid company ID");
+    try {
+      const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
+      if (!analysis) continue; // The rolling download has not analysed this company yet.
+      if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");
+      // Validate the consumer contract here so one malformed document cannot stop the rollout.
+      buildOutput({ analyses: [analysis], holdersByTicker: {}, investorNames: {}, fx: {} });
+      analyses.push(analysis);
+    } catch (error) {
+      console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);
+    }
+  }
+  return analyses;
+}
+
 export default async function publish(options: { only?: string[]; limit?: number; force?: boolean }): Promise<void> {
   const companies = readJsonl<Company>("universe.jsonl");
   if (!companies.length) throw new Error("Run the universe stage before publish");
   const selected = companies.filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
   if (!selected.length) throw new Error("No companies selected for publish");
-  const analyses = selected.map((company) => {
-    if (/[\\/]/.test(company.id)) throw new Error("Invalid company ID");
-    const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
-    if (!analysis || analysis.id !== company.id) throw new Error(`Missing analysis for ${company.id}`);
-    return analysis;
-  });
+  const analyses = loadAnalyses(selected);
   const holders = loadHolders(path.resolve(__dirname, "../../../data/store"));
   runCalibration();
   await withPublishRepository(async (repo) => {
-    const { count, changed } = publishSnapshot({ repo, analyses, universeIds: companies.map((company) => company.id), partial: Boolean(options.only || options.limit), ...holders });
+    const { count, changed } = publishSnapshot({ repo, analyses, universeIds: companies.map((company) => company.id), partial: Boolean(options.only || options.limit), force: options.force, ...holders });
     pushRepository(repo, true);
     console.log(`publish: ${count} companies, ${changed ? "replaced data snapshot" : "unchanged snapshot"}`);
   });

@@ -270,6 +270,8 @@ test('seeded index prices and current moat rules have explicit labels', async ({
   await page.route('**/main/prices/US.json', route => route.fulfill({ json: prices }));
   await page.goto('/value');
   await expect(page.getByRole('row', { name: /Coca-Cola/ })).toContainText('price derived from market cap on 2026-09-28');
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.goto('/value/ko.us');
   await expect(page.locator('[data-test="moat"]')).toContainText('Gross margin decline, FY2023 vs mean(FY2019, FY2020)');
   await expect(page.locator('[data-test="moat"]')).toContainText('At most 4.0 pp');

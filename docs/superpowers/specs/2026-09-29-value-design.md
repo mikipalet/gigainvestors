@@ -4,7 +4,7 @@ Do the work Buffett does on one company (read the reports, test the business, ju
 
 ## Decisions (approved 2026-09-29)
 
-- Fundamentals: EODHD ALL-IN-ONE ($99.99/mo, worldwide statements 30y, bulk EOD prices, 100k calls/day). Key in 1Password as `eodhd api key`.
+- Fundamentals: EODHD ALL-IN-ONE ($99.99/mo, worldwide statements 30y, bulk EOD prices, 100k calls/day). Key in Vercel env `EODHD_API_KEY` (all environments; `vercel env pull` for local runs).
 - Report text: SEC EDGAR (10-K, 20-F, 40-F, DEF 14A), filings.xbrl.org (EU/UK ESEF annual reports), EDINET (Japan). Every other market gets the numeric work plus Jev on the EODHD description, flagged "report not read".
 - Qualitative reading: TypeSafe Jev (`jev-latest`, `POST /v1/systemone`), key in 1Password as `typesafe ai (jev) key`. Jev runs over the WHOLE universe, not only companies that pass the numbers.
 - Rule: every number, date and ratio is computed in code. Jev only reads prose and answers typed questions (choice / score / noul). Jev's own docs: "not a calculator", reads dates as text, weak numeric calibration, degrades with irrelevant context.

@@ -160,7 +160,7 @@ export interface Dossier extends Analysis {
   priceHistory?: PriceHistory;
   tests: Analysis["tests"] & { price?: TestOutcome };
   holders: Array<{ code: string; name: string }>; // superinvestors, from data/store
-  series: Record<string, Series>; // revenue, ownerEarnings, roic, grossMargin, shares, bvps
+  series: Record<string, Series>; // Includes revenuePerShare, ownerEarningsPerShare and bookValuePerShare when available
 }
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F U N.
@@ -195,3 +195,10 @@ export type RawAnswer =
   | { type: "noul"; noul: number }
   | { type: "choice"; choice: string; probabilities: Record<string, number>; confidence: number }
   | { type: "score"; score: number; probabilities: Record<string, number>; legend: Record<string, string>; confidence: number };
+
+export interface StoreMeta {
+  asOf: string;
+  counts: { universe: number; scored: number; insufficient: number };
+  versions: { pipeline: string; questions: string };
+  tags: Record<string, string>;
+}

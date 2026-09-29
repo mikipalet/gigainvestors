@@ -1,0 +1,396 @@
+{
+  "KHC.US": {
+    "id": "KHC.US",
+    "company": {
+      "id": "KHC.US",
+      "name": "Kraft Heinz",
+      "code": "KHC",
+      "exchange": "US",
+      "country": "US",
+      "currency": "USD",
+      "isin": null,
+      "cik": null,
+      "lei": null,
+      "edinetCode": null,
+      "sector": "Consumer Defensive",
+      "industry": null,
+      "kind": "operating",
+      "listings": [
+        "KHC.US"
+      ],
+      "marketCapUsd": 665000000000.0,
+      "description": "Synthetic company fixture for testing the visualization.",
+      "source": "eodhd"
+    },
+    "asOf": "2026-09-29",
+    "status": "scored",
+    "report": {
+      "id": "KHC.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/",
+      "filed": "2026-02-20",
+      "period": "2025-12-31",
+      "sections": [
+        "business"
+      ]
+    },
+    "tests": {
+      "understandable": {
+        "key": "understandable",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [
+          "Illustrative threshold failure for the index funnel."
+        ],
+        "metrics": {},
+        "series": {},
+        "jev": []
+      },
+      "moat": {
+        "key": "moat",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "The illustrative return history clears the median and bad-year standards.",
+          "Gross margin declined 1.2 percentage points through the inflation test."
+        ],
+        "metrics": {
+          "roicMedian": 0.245,
+          "roicWorst3": 0.21,
+          "grossMarginDrop": 0.012,
+          "capexToRevenue": 0.041
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.2
+            ],
+            [
+              2017,
+              0.21
+            ],
+            [
+              2018,
+              0.23
+            ],
+            [
+              2019,
+              0.24
+            ],
+            [
+              2020,
+              0.22
+            ],
+            [
+              2021,
+              0.25
+            ],
+            [
+              2022,
+              0.26
+            ],
+            [
+              2023,
+              0.27
+            ],
+            [
+              2024,
+              0.28
+            ],
+            [
+              2025,
+              0.29
+            ]
+          ],
+          "grossMargin": [
+            [
+              2016,
+              0.607
+            ],
+            [
+              2017,
+              0.624
+            ],
+            [
+              2018,
+              0.619
+            ],
+            [
+              2019,
+              0.607
+            ],
+            [
+              2020,
+              0.593
+            ],
+            [
+              2021,
+              0.603
+            ],
+            [
+              2022,
+              0.581
+            ],
+            [
+              2023,
+              0.581
+            ],
+            [
+              2024,
+              0.591
+            ],
+            [
+              2025,
+              0.601
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "economics": {
+        "key": "economics",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Illustrative owner earnings converted 94% of net income into cash."
+        ],
+        "metrics": {
+          "oeToNi": 0.94,
+          "roiic": 0.24,
+          "nwcToRevenueTrend": -0.002
+        },
+        "series": {
+          "ownerEarnings": [
+            [
+              2016,
+              6700000000.0
+            ],
+            [
+              2017,
+              7000000000.0
+            ],
+            [
+              2018,
+              7400000000.0
+            ],
+            [
+              2019,
+              8000000000.0
+            ],
+            [
+              2020,
+              7300000000.0
+            ],
+            [
+              2021,
+              9100000000.0
+            ],
+            [
+              2022,
+              9600000000.0
+            ],
+            [
+              2023,
+              10000000000.0
+            ],
+            [
+              2024,
+              10500000000.0
+            ],
+            [
+              2025,
+              11200000000.0
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "management": {
+        "key": "management",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Market value created exceeded retained earnings in this illustrative history.",
+          "The share count declined over the period."
+        ],
+        "metrics": {
+          "marketCapGain": 115000000000.0,
+          "retainedEarnings": 42000000000.0,
+          "shareCagr": -0.004,
+          "buybackYieldCovariance": 2100000.0,
+          "debtFundedBuybacks": 0,
+          "acquisitionSpend": 12000000000.0,
+          "roicTrend": 0.009
+        },
+        "series": {
+          "shares": [
+            [
+              2016,
+              564016541.1476028
+            ],
+            [
+              2017,
+              560144574.045903
+            ],
+            [
+              2018,
+              554981951.2436365
+            ],
+            [
+              2019,
+              552400639.8425034
+            ],
+            [
+              2020,
+              552400639.8425034
+            ],
+            [
+              2021,
+              551109984.1419368
+            ],
+            [
+              2022,
+              548528672.7408036
+            ],
+            [
+              2023,
+              545947361.3396705
+            ],
+            [
+              2024,
+              543366049.9385372
+            ],
+            [
+              2025,
+              542075394.2379706
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "accounting": {
+        "key": "accounting",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Illustrative accruals and stock compensation remain below their thresholds."
+        ],
+        "metrics": {
+          "accruals": -0.018,
+          "receivablesGrowthGap": 0.02,
+          "restructuringYears": 1,
+          "sbcToOcf": 0.025,
+          "goodwillIntangiblesToEquity": 1.1
+        },
+        "series": {
+          "accruals": [
+            [
+              2016,
+              -0.03
+            ],
+            [
+              2017,
+              -0.025
+            ],
+            [
+              2018,
+              -0.021
+            ],
+            [
+              2019,
+              -0.028
+            ],
+            [
+              2020,
+              -0.012
+            ],
+            [
+              2021,
+              -0.022
+            ],
+            [
+              2022,
+              -0.019
+            ],
+            [
+              2023,
+              -0.023
+            ],
+            [
+              2024,
+              -0.02
+            ],
+            [
+              2025,
+              -0.018
+            ]
+          ]
+        },
+        "jev": []
+      }
+    },
+    "valuation": {
+      "method": "owner_earnings",
+      "currency": "USD",
+      "normalized": 10000000000.0,
+      "growth": 0.05,
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.04,
+      "netCash": -10000000000.0,
+      "shares": 542075394.2379706,
+      "perShare": {
+        "low": 213.75,
+        "mid": 285,
+        "high": 342.0
+      },
+      "equityBondYield": 0.03333333333333333,
+      "bridge": [
+        {
+          "label": "net income",
+          "value": 10800000000.0
+        },
+        {
+          "label": "+ D&A",
+          "value": 1600000000.0
+        },
+        {
+          "label": "\u2212 maintenance capex",
+          "value": -2100000000.0
+        },
+        {
+          "label": "\u2212 stock compensation",
+          "value": -300000000.0
+        },
+        {
+          "label": "= owner earnings",
+          "value": 10000000000.0
+        },
+        {
+          "label": "\u00d7 PV factor",
+          "value": 16.449148735782163
+        },
+        {
+          "label": "+ net cash",
+          "value": -10000000000.0
+        },
+        {
+          "label": "\u00f7 shares",
+          "value": 542075394.2379706
+        }
+      ],
+      "assumptions": [
+        "Growth fades to terminal growth over years 6 to 10.",
+        "Synthetic index-exploration fixture, not actual company financials."
+      ]
+    },
+    "valuationReason": null,
+    "versions": {
+      "pipeline": "1",
+      "questions": "1"
+    },
+    "holders": [],
+    "series": {}
+  }
+}

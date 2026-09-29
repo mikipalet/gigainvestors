@@ -1,0 +1,339 @@
+{
+  "SPARSE.US": {
+    "id": "SPARSE.US",
+    "company": {
+      "id": "SPARSE.US",
+      "name": "Sparse Company",
+      "code": "SPARSE",
+      "exchange": "US",
+      "country": "US",
+      "currency": "USD",
+      "isin": null,
+      "cik": null,
+      "lei": null,
+      "edinetCode": null,
+      "sector": "Industrials",
+      "industry": null,
+      "kind": "operating",
+      "listings": [
+        "SPARSE.US"
+      ],
+      "marketCapUsd": 1000000.0,
+      "description": "Fixture company",
+      "source": "eodhd"
+    },
+    "asOf": "2026-09-29",
+    "status": "insufficient_data",
+    "report": {
+      "id": "SPARSE.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/",
+      "filed": "2026-02-20",
+      "period": "2025-12-31",
+      "sections": [
+        "business"
+      ]
+    },
+    "tests": {
+      "understandable": {
+        "key": "understandable",
+        "result": "unclear",
+        "numeric": "unclear",
+        "reasons": [
+          "Fixture analysis"
+        ],
+        "metrics": {
+          "median": 0.2
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.15
+            ],
+            [
+              2017,
+              0.16
+            ],
+            [
+              2018,
+              0.16999999999999998
+            ],
+            [
+              2019,
+              0.18
+            ],
+            [
+              2020,
+              0.19
+            ],
+            [
+              2021,
+              0.2
+            ],
+            [
+              2022,
+              0.21
+            ],
+            [
+              2023,
+              0.22
+            ],
+            [
+              2024,
+              0.22999999999999998
+            ],
+            [
+              2025,
+              0.24
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "moat": {
+        "key": "moat",
+        "result": "unclear",
+        "numeric": "unclear",
+        "reasons": [
+          "Fixture analysis"
+        ],
+        "metrics": {
+          "median": 0.2
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.15
+            ],
+            [
+              2017,
+              0.16
+            ],
+            [
+              2018,
+              0.16999999999999998
+            ],
+            [
+              2019,
+              0.18
+            ],
+            [
+              2020,
+              0.19
+            ],
+            [
+              2021,
+              0.2
+            ],
+            [
+              2022,
+              0.21
+            ],
+            [
+              2023,
+              0.22
+            ],
+            [
+              2024,
+              0.22999999999999998
+            ],
+            [
+              2025,
+              0.24
+            ]
+          ]
+        },
+        "jev": [
+          {
+            "q": "brand",
+            "label": "Describes a brand advantage",
+            "kind": "noul",
+            "value": 0.9,
+            "probability": 0.9,
+            "section": "business",
+            "evidence": "Our brands encourage repeat purchases.",
+            "trusted": true
+          }
+        ]
+      },
+      "economics": {
+        "key": "economics",
+        "result": "unclear",
+        "numeric": "unclear",
+        "reasons": [
+          "Fixture analysis"
+        ],
+        "metrics": {
+          "median": 0.2
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.15
+            ],
+            [
+              2017,
+              0.16
+            ],
+            [
+              2018,
+              0.16999999999999998
+            ],
+            [
+              2019,
+              0.18
+            ],
+            [
+              2020,
+              0.19
+            ],
+            [
+              2021,
+              0.2
+            ],
+            [
+              2022,
+              0.21
+            ],
+            [
+              2023,
+              0.22
+            ],
+            [
+              2024,
+              0.22999999999999998
+            ],
+            [
+              2025,
+              0.24
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "management": {
+        "key": "management",
+        "result": "unclear",
+        "numeric": "unclear",
+        "reasons": [
+          "Fixture analysis"
+        ],
+        "metrics": {
+          "median": 0.2
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.15
+            ],
+            [
+              2017,
+              0.16
+            ],
+            [
+              2018,
+              0.16999999999999998
+            ],
+            [
+              2019,
+              0.18
+            ],
+            [
+              2020,
+              0.19
+            ],
+            [
+              2021,
+              0.2
+            ],
+            [
+              2022,
+              0.21
+            ],
+            [
+              2023,
+              0.22
+            ],
+            [
+              2024,
+              0.22999999999999998
+            ],
+            [
+              2025,
+              0.24
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "accounting": {
+        "key": "accounting",
+        "result": "unclear",
+        "numeric": "unclear",
+        "reasons": [
+          "Fixture analysis"
+        ],
+        "metrics": {
+          "median": 0.2
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.15
+            ],
+            [
+              2017,
+              0.16
+            ],
+            [
+              2018,
+              0.16999999999999998
+            ],
+            [
+              2019,
+              0.18
+            ],
+            [
+              2020,
+              0.19
+            ],
+            [
+              2021,
+              0.2
+            ],
+            [
+              2022,
+              0.21
+            ],
+            [
+              2023,
+              0.22
+            ],
+            [
+              2024,
+              0.22999999999999998
+            ],
+            [
+              2025,
+              0.24
+            ]
+          ]
+        },
+        "jev": []
+      }
+    },
+    "valuation": null,
+    "valuationReason": "Too few years",
+    "versions": {
+      "pipeline": "1",
+      "questions": "1"
+    },
+    "holders": [],
+    "series": {}
+  }
+}

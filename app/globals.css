@@ -135,3 +135,28 @@ a.tile-edge:hover {
 .slider:focus-visible {
   outline: none;
 }
+
+/* Value charts share the paper-and-ink palette; meaning also uses shape and text. */
+.value-viz {
+  --viz-ink: var(--ink);
+  --viz-muted: color-mix(in oklab, var(--ink) 55%, var(--paper));
+  --viz-grid: color-mix(in oklab, var(--ink) 12%, var(--paper));
+  --viz-buy: var(--buy);
+  --viz-sell: var(--sell);
+  --viz-buy-tint: color-mix(in oklab, var(--buy) 14%, var(--paper));
+  --viz-sell-tint: color-mix(in oklab, var(--sell) 14%, var(--paper));
+  font-variant-numeric: normal;
+}
+.value-viz svg text { fill: var(--viz-ink); font-family: inherit; font-size: 11px; }
+.value-viz svg .viz-tick { fill: var(--viz-muted); font-variant-numeric: tabular-nums; font-size: 10px; }
+.value-viz :focus-visible { outline: 2px solid var(--viz-muted); outline-offset: 3px; }
+.value-viz svg { overflow: visible; }
+.value-viz .viz-tooltip { min-height: 22px; font-size: 11px; color: var(--viz-muted); }
+@media (prefers-reduced-motion: reduce) { .value-viz * { transition: none !important; animation: none !important; } }
+.value-viz .tabular-nums, .value-viz.tabular-nums { font-variant-numeric: tabular-nums; }
+
+.value-viz .viz-point { width: 18px; height: 24px; transform: translate(-50%, -50%); border: 0; background: transparent; cursor: crosshair; }
+.value-viz .viz-point:focus-visible { outline: 1px solid var(--viz-ink); outline-offset: 2px; }
+.value-viz .viz-tooltip { min-height: 2.5em; }
+.value-virtual tr[data-company-row] { height: 124px; }
+.value-virtual tr[data-company-row] td:first-child > a { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }

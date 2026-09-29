@@ -1,0 +1,481 @@
+{
+  "MRK.US": {
+    "id": "MRK.US",
+    "company": {
+      "id": "MRK.US",
+      "name": "Merck",
+      "code": "MRK",
+      "exchange": "US",
+      "country": "US",
+      "currency": "USD",
+      "isin": null,
+      "cik": null,
+      "lei": null,
+      "edinetCode": null,
+      "sector": "Consumer Defensive",
+      "industry": null,
+      "kind": "operating",
+      "listings": [
+        "MRK.US"
+      ],
+      "marketCapUsd": 529000000000.0,
+      "description": "Synthetic company fixture for testing the visualization.",
+      "source": "eodhd"
+    },
+    "asOf": "2026-09-29",
+    "status": "scored",
+    "report": {
+      "id": "MRK.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/",
+      "filed": "2026-02-20",
+      "period": "2025-12-31",
+      "sections": [
+        "business"
+      ]
+    },
+    "tests": {
+      "understandable": {
+        "key": "understandable",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Ten illustrative years of revenue and operating margins show the business history."
+        ],
+        "metrics": {
+          "historyYears": 10,
+          "revenueDeclines": 3,
+          "lossYears": 0,
+          "opMarginCv": 0.12
+        },
+        "series": {
+          "revenue": [
+            [
+              2016,
+              41900000000.0
+            ],
+            [
+              2017,
+              35400000000.0
+            ],
+            [
+              2018,
+              31900000000.0
+            ],
+            [
+              2019,
+              37300000000.0
+            ],
+            [
+              2020,
+              33000000000.0
+            ],
+            [
+              2021,
+              38700000000.0
+            ],
+            [
+              2022,
+              43000000000.0
+            ],
+            [
+              2023,
+              45800000000.0
+            ],
+            [
+              2024,
+              47100000000.0
+            ],
+            [
+              2025,
+              48400000000.0
+            ]
+          ],
+          "operatingMargin": [
+            [
+              2016,
+              0.237
+            ],
+            [
+              2017,
+              0.267
+            ],
+            [
+              2018,
+              0.286
+            ],
+            [
+              2019,
+              0.271
+            ],
+            [
+              2020,
+              0.273
+            ],
+            [
+              2021,
+              0.287
+            ],
+            [
+              2022,
+              0.291
+            ],
+            [
+              2023,
+              0.297
+            ],
+            [
+              2024,
+              0.301
+            ],
+            [
+              2025,
+              0.305
+            ]
+          ],
+          "netIncome": [
+            [
+              2016,
+              7127659574
+            ],
+            [
+              2017,
+              7446808511
+            ],
+            [
+              2018,
+              7872340426
+            ],
+            [
+              2019,
+              8510638298
+            ],
+            [
+              2020,
+              7765957447
+            ],
+            [
+              2021,
+              9680851064
+            ],
+            [
+              2022,
+              10212765957
+            ],
+            [
+              2023,
+              10638297872
+            ],
+            [
+              2024,
+              11170212766
+            ],
+            [
+              2025,
+              11914893617
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "moat": {
+        "key": "moat",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "The illustrative return history clears the median and bad-year standards.",
+          "Gross margin declined 1.2 percentage points through the inflation test."
+        ],
+        "metrics": {
+          "roicMedian": 0.245,
+          "roicWorst3": 0.21,
+          "grossMarginDrop": 0.012,
+          "capexToRevenue": 0.041
+        },
+        "series": {
+          "roic": [
+            [
+              2016,
+              0.2
+            ],
+            [
+              2017,
+              0.21
+            ],
+            [
+              2018,
+              0.23
+            ],
+            [
+              2019,
+              0.24
+            ],
+            [
+              2020,
+              0.22
+            ],
+            [
+              2021,
+              0.25
+            ],
+            [
+              2022,
+              0.26
+            ],
+            [
+              2023,
+              0.27
+            ],
+            [
+              2024,
+              0.28
+            ],
+            [
+              2025,
+              0.29
+            ]
+          ],
+          "grossMargin": [
+            [
+              2016,
+              0.607
+            ],
+            [
+              2017,
+              0.624
+            ],
+            [
+              2018,
+              0.619
+            ],
+            [
+              2019,
+              0.607
+            ],
+            [
+              2020,
+              0.593
+            ],
+            [
+              2021,
+              0.603
+            ],
+            [
+              2022,
+              0.581
+            ],
+            [
+              2023,
+              0.581
+            ],
+            [
+              2024,
+              0.591
+            ],
+            [
+              2025,
+              0.601
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "economics": {
+        "key": "economics",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [
+          "Illustrative threshold failure for the index funnel."
+        ],
+        "metrics": {},
+        "series": {},
+        "jev": []
+      },
+      "management": {
+        "key": "management",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Market value created exceeded retained earnings in this illustrative history.",
+          "The share count declined over the period."
+        ],
+        "metrics": {
+          "marketCapGain": 115000000000.0,
+          "retainedEarnings": 42000000000.0,
+          "shareCagr": -0.004,
+          "buybackYieldCovariance": 2100000.0,
+          "debtFundedBuybacks": 0,
+          "acquisitionSpend": 12000000000.0,
+          "roicTrend": 0.009
+        },
+        "series": {
+          "shares": [
+            [
+              2016,
+              701941983.5243092
+            ],
+            [
+              2017,
+              697123159.8387876
+            ],
+            [
+              2018,
+              690698061.5914254
+            ],
+            [
+              2019,
+              687485512.4677445
+            ],
+            [
+              2020,
+              687485512.4677445
+            ],
+            [
+              2021,
+              685879237.9059038
+            ],
+            [
+              2022,
+              682666688.7822227
+            ],
+            [
+              2023,
+              679454139.6585419
+            ],
+            [
+              2024,
+              676241590.5348607
+            ],
+            [
+              2025,
+              674635315.9730202
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "accounting": {
+        "key": "accounting",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Illustrative accruals and stock compensation remain below their thresholds."
+        ],
+        "metrics": {
+          "accruals": -0.018,
+          "receivablesGrowthGap": 0.02,
+          "restructuringYears": 1,
+          "sbcToOcf": 0.025,
+          "goodwillIntangiblesToEquity": 1.1
+        },
+        "series": {
+          "accruals": [
+            [
+              2016,
+              -0.03
+            ],
+            [
+              2017,
+              -0.025
+            ],
+            [
+              2018,
+              -0.021
+            ],
+            [
+              2019,
+              -0.028
+            ],
+            [
+              2020,
+              -0.012
+            ],
+            [
+              2021,
+              -0.022
+            ],
+            [
+              2022,
+              -0.019
+            ],
+            [
+              2023,
+              -0.023
+            ],
+            [
+              2024,
+              -0.02
+            ],
+            [
+              2025,
+              -0.018
+            ]
+          ]
+        },
+        "jev": []
+      }
+    },
+    "valuation": {
+      "method": "owner_earnings",
+      "currency": "USD",
+      "normalized": 10000000000.0,
+      "growth": 0.05,
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.04,
+      "netCash": -10000000000.0,
+      "shares": 674635315.9730202,
+      "perShare": {
+        "low": 171.75,
+        "mid": 229,
+        "high": 274.8
+      },
+      "equityBondYield": 0.03333333333333333,
+      "bridge": [
+        {
+          "label": "net income",
+          "value": 10800000000.0
+        },
+        {
+          "label": "+ D&A",
+          "value": 1600000000.0
+        },
+        {
+          "label": "\u2212 maintenance capex",
+          "value": -2100000000.0
+        },
+        {
+          "label": "\u2212 stock compensation",
+          "value": -300000000.0
+        },
+        {
+          "label": "= owner earnings",
+          "value": 10000000000.0
+        },
+        {
+          "label": "\u00d7 PV factor",
+          "value": 16.449148735782163
+        },
+        {
+          "label": "+ net cash",
+          "value": -10000000000.0
+        },
+        {
+          "label": "\u00f7 shares",
+          "value": 674635315.9730202
+        }
+      ],
+      "assumptions": [
+        "Growth fades to terminal growth over years 6 to 10.",
+        "Synthetic index-exploration fixture, not actual company financials."
+      ]
+    },
+    "valuationReason": null,
+    "versions": {
+      "pipeline": "1",
+      "questions": "1"
+    },
+    "holders": [],
+    "series": {}
+  }
+}

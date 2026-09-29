@@ -357,3 +357,51 @@ describe("Yahoo rate limiting", () => {
     expect(starts[2] - starts[1]).toBeGreaterThanOrEqual(500);
   });
 });
+
+it("publishes volatility discount, compact ROIC and the added dossier data", () => {
+  const row = analysis(); row.requiredMos = 0.5; row.volatility = 'volatile';
+  row.valueHistory = [[2025,80,100,120]];
+  row.series = { revenuePerShare: [[2025,10]] };
+  row.events = [{ fy:2025, kind:'acquisition', note:'Acquisition spending exceeded 10% of assets' }];
+  row.tests.moat.series.roic = Array.from({length:12}, (_, i) => [2014+i, i === 10 ? null : 0.123456]);
+  const { files } = buildOutput({ analyses:[row], holdersByTicker:{}, investorNames:{}, fx:{}, prices:{'KO.US':[70,'2026-09-29']}, priceHistories:{'KO.US':[['2025-01',70]]} });
+  expect((files['index/US.json'] as IndexRow[])[0]).toMatchObject({m:0.5,r:[0.123,0.123,0.123,0.123,0.123,0.123,0.123,0.123,null,0.123]});
+  const dossier = (files[`dossiers/${shardOf(row.id)}.json`] as Record<string,Dossier>)[row.id];
+  expect(dossier).toMatchObject({valueHistory:row.valueHistory,priceHistory:[['2025-01',70]],events:row.events,series:row.series,tests:{price:{result:'unclear'}}});
+});
+
+it("loads analysis with a cheap shape check without building output", async () => {
+  const root = directory(); vi.stubEnv('VALUE_CORPUS_DIR',root);
+  const { writeCorpusJson } = await import('@/lib/value/corpus');
+  const module = await import('@/lib/value/build-output');
+  const build = vi.spyOn(module,'buildOutput').mockImplementation(() => { throw Error('Must not build during validation'); });
+  writeCorpusJson('analysis/KO.US.json',analysis());
+  writeCorpusJson('analysis/BAD.US.json',{ ...analysis('BAD.US'),tests:{moat:null} });
+  writeCorpusJson('analysis/BADCOUNTRY.US.json',{ ...analysis('BADCOUNTRY.US'),company:{ ...analysis().company,country:'../../bad'} });
+  vi.spyOn(console,'warn').mockImplementation(() => {});
+  expect(loadAnalyses([analysis().company,analysis('BAD.US').company,analysis('BADCOUNTRY.US').company]).map(row => row.id)).toEqual(['KO.US']);
+  expect(build).not.toHaveBeenCalled();
+});
+
+it("joins the corpus monthly history at publish time and preserves it on partial publish", async () => {
+  const root = directory(); vi.stubEnv('VALUE_CORPUS_DIR',root);
+  const { writeCorpusJson } = await import('@/lib/value/corpus');
+  writeCorpusJson('prices-history/KO.US.json',{fetchedAt:'2026-09-29',prices:[['2025-01',70]]});
+  const repo = repository();
+  const args = {repo,universeIds:['KO.US','AXP.US'],holdersByTicker:{},investorNames:{}};
+  const row = analysis(); row.series={revenuePerShare:[[2025,10]]};
+  publishSnapshot({...args,analyses:[row,analysis('AXP.US')],partial:false});
+  const read = () => JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(row.id)}.json`),'utf8'))[row.id];
+  expect(read().priceHistory).toEqual([['2025-01',70]]);
+  rmSync(path.join(root,'prices-history'),{recursive:true});
+  publishSnapshot({...args,analyses:[analysis('AXP.US')],partial:true});
+  expect(read().priceHistory).toEqual([['2025-01',70]]);
+  expect(read().series.revenuePerShare).toEqual([[2025,10]]);
+});
+
+it('pads unavailable ROIC years with nulls without substituting financial-company ROE', () => {
+  const row = analysis(); row.tests.moat.series.roic = [[2024,0.15678],[2025,null]];
+  expect((output([row])['index/US.json'] as IndexRow[])[0].r).toEqual([null,null,null,null,null,null,null,null,0.157,null]);
+  delete row.tests.moat.series.roic; row.tests.moat.series.roe = [[2025,0.2]]; row.company.kind = 'bank';
+  expect((output([row])['index/US.json'] as IndexRow[])[0].r).toEqual(Array(10).fill(null));
+});

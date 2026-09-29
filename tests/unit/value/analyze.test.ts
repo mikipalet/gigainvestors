@@ -299,3 +299,58 @@ it.each([
   expect(result.tests.understandable.jev.find(a => a.q === "commodity")?.value).toBeCloseTo(mean);
   expect(result.valuation!.assumptions).toContain(`owner earnings normalized over ${window} years`);
 });
+
+it.each([
+  { amplitude: 0, volatility: "stable", requiredMos: 0.25 },
+  { amplitude: 0.2, volatility: "stable", requiredMos: 0.25 },
+  { amplitude: 0.3, volatility: "moderate", requiredMos: 0.35 },
+  { amplitude: 0.35, volatility: "moderate", requiredMos: 0.35 },
+  { amplitude: 0.36, volatility: "volatile", requiredMos: 0.5 },
+])("scales the required discount for margin variation $amplitude", async ({ amplitude, volatility, requiredMos }) => {
+  const { makeYears } = await import("./synthetic");
+  const args = input();
+  args.fundamentals.years = makeYears({ overrides: (_, i) => ({ operatingIncome: 100 * (1 + (i % 2 ? amplitude : -amplitude)) }) });
+  expect(await analyzeCompany(args)).toMatchObject({ volatility, requiredMos });
+});
+
+it("requires the volatile discount for commodity exposure and missing CV", async () => {
+  const { makeYears } = await import("./synthetic");
+  const args = input(); args.fundamentals.years = makeYears();
+  args.ask = async () => answers().map(a => a.q === "commodity" ? { ...a, value: 0.8 } : a);
+  expect(await analyzeCompany(args)).toMatchObject({ volatility: "volatile", requiredMos: 0.5 });
+  args.ask = async () => answers();
+  args.fundamentals.years = makeYears({ overrides: { operatingIncome: null } });
+  expect(await analyzeCompany(args)).toMatchObject({ volatility: "volatile", requiredMos: 0.5 });
+});
+
+it("values only each fiscal prefix with today's bond yield and FX, retaining ten years", async () => {
+  const { makeYears } = await import("./synthetic");
+  const args = input();
+  args.fundamentals.years = makeYears({ n: 20, from: 2006 });
+  args.company.currency = "GBX";
+  const result = await analyzeCompany({ ...args, usdRate: async currency => currency === "USD" ? 1 : 0.0125 });
+  expect(result.valueHistory).toHaveLength(10);
+  expect(result.valueHistory?.map(row => row[0])).toEqual([2016,2017,2018,2019,2020,2021,2022,2023,2024,2025]);
+  expect(result.valueHistory?.at(-1)?.[2]).toBeCloseTo(result.valuation!.perShareTrading!.mid);
+  expect(result.historyAssumptions?.join(" ")).toMatch(/today.*bond yield/i);
+  expect(result.historyAssumptions?.join(" ")).toMatch(/today.*FX/i);
+  args.fundamentals.years.at(-1)!.netIncome = 999999;
+  args.fundamentals.years.at(-1)!.operatingIncome = 999999;
+  const revised = await analyzeCompany({ ...args, usdRate: async currency => currency === "USD" ? 1 : 0.0125 });
+  expect(revised.valueHistory?.slice(0, -1)).toEqual(result.valueHistory?.slice(0, -1));
+});
+
+it("derives per-share series and dated integrity, acquisition and impairment events", async () => {
+  const { makeYears } = await import("./synthetic");
+  const args = input();
+  args.fundamentals.years = makeYears({ overrides: (_, i) => ({ goodwill: i < 10 ? 100 : 60, intangibles: 0, acquisitions: i === 9 ? 101 : 100 }) });
+  args.fundamentals.integrity.notes = ["share count jumped 8x in 2015; history retained from 2015", "reporting currency changed in 2016; history retained from 2016"];
+  const result = await analyzeCompany(args);
+  expect(result.series?.revenuePerShare.at(-1)).toEqual([2023, 100]);
+  expect(result.series?.ownerEarningsPerShare.at(-1)).toEqual([2023, 10]);
+  expect(result.series?.bookValuePerShare.at(-1)).toEqual([2023, 50]);
+  expect(result.events?.map(({fy, kind}) => [fy, kind])).toEqual([[2015,"share_change"],[2016,"currency_change"],[2022,"acquisition"],[2023,"impairment"]]);
+  args.fundamentals.years.at(-1)!.dilutedShares = 0;
+  const missing = await analyzeCompany(args);
+  expect(missing.series?.revenuePerShare.at(-1)).toEqual([2023, null]);
+});

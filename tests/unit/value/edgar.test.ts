@@ -158,6 +158,7 @@ it("writes filing sections, skips unchanged downloads, and repairs missing outpu
 
 it("falls back to description, applies filters, and updates changed descriptions", async () => {
   const fallback = { ...company, cik: null };
+  vi.stubGlobal("fetch", async () => Response.json({ fields: ["cik", "ticker"], data: [] }));
   const root = setupCorpus([fallback, { ...fallback, id: "OTHER.US" }]);
   await reports({ only: ["KO.US"] });
   expect(JSON.parse(readFileSync(path.join(root, "reports/KO.US/meta.json"), "utf8"))).toMatchObject({ kind: "description", sections: ["business"], url: null });
@@ -216,4 +217,39 @@ it.each(["Beverage business.", null])("fills missing filing business using descr
     expect(business).not.toMatch(/Cover|Table of contents|12|20/);
     expect(business.length).toBeLessThanOrEqual(32000);
   }
+});
+
+it("resolves SAP's US listing to SEC CIK and caches the ticker map daily", async () => {
+  const { resolveCik } = await import("@/lib/value/reports/edgar");
+  setupCorpus([]);
+  const tickers = JSON.parse(readFileSync('tests/fixtures/value/history/sec-tickers.json','utf8'));
+  vi.stubEnv('SEC_USER_AGENT','Value test contact@example.com');
+  vi.stubGlobal('fetch', async (url: string, init?: RequestInit) => {
+    expect(url).toBe('https://www.sec.gov/files/company_tickers_exchange.json');
+    expect(new Headers(init?.headers).get('User-Agent')).toBe('Value test contact@example.com');
+    return Response.json(tickers);
+  });
+  const sap = { ...company, id:'SAP.XETRA', code:'SAP', cik:null, country:'DE', listings:['SAP.XETRA','SAP.US'] };
+  expect(await resolveCik(sap)).toBe('1000184');
+  vi.stubGlobal('fetch', () => { throw Error('Must use daily cache'); });
+  expect(await resolveCik(sap)).toBe('1000184');
+  expect(await resolveCik({ ...sap, listings:['SAP.XETRA'] })).toBeNull();
+  const { writeCorpusJson } = await import('@/lib/value/corpus');
+  writeCorpusJson('sec/company-tickers-exchange.json', { date:'2000-01-01', data:tickers });
+  vi.stubGlobal('fetch', async () => Response.json({ ...tickers, data:[] }));
+  expect(await resolveCik(sap)).toBeNull();
+});
+
+it("falls back from an empty EU ESEF search to SAP's EDGAR 20-F via its US listing", async () => {
+  const sap = { ...company, id:'SAP.XETRA', code:'SAP', cik:null, country:'DE', lei:'SAP-LEI', listings:['SAP.XETRA','SAP.US'] };
+  const root = setupCorpus([sap]);
+  vi.stubGlobal('fetch', async (url: string) => {
+    if (url.includes('filings.xbrl.org')) return Response.json({ data:[] });
+    if (url.endsWith('company_tickers_exchange.json')) return new Response(readFileSync('tests/fixtures/value/history/sec-tickers.json','utf8'));
+    if (url.endsWith('CIK0001000184.json')) return new Response(readFileSync('tests/fixtures/value/history/sec-SAP-submissions.json','utf8'));
+    if (url.includes('/Archives/edgar/data/1000184/')) return new Response(fixture('tsm-20f.htm'));
+    throw Error('Unexpected request');
+  });
+  await reports({});
+  expect(JSON.parse(readFileSync(path.join(root,'reports/SAP.XETRA/meta.json'),'utf8'))).toMatchObject({ kind:'20-F', url:expect.stringContaining('/1000184/') });
 });

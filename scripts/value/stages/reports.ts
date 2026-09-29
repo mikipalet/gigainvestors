@@ -3,7 +3,7 @@ import { existsSync, mkdirSync, renameSync, rmSync, writeFileSync } from "node:f
 import { corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { loadCompanies } from "../../../lib/value/companies";
 import { cutSections, filingBusinessFallback, SECTION_TOKENS, truncateTokens } from "../../../lib/value/reports/cut-sections";
-import { fetchEdgar, latestFilings } from "../../../lib/value/reports/edgar";
+import { fetchEdgar, latestFilings, resolveCik } from "../../../lib/value/reports/edgar";
 import { cutEsefSections, fetchEsef, latestEsef } from "../../../lib/value/reports/esef";
 import { htmlToText } from "../../../lib/value/reports/html-to-text";
 import type { ReportMeta, SectionKey } from "../../../lib/value/types";
@@ -17,8 +17,9 @@ export default async function reports({ only, limit, force = false }: {
   for (const company of companies) {
     if (!/^[\w.-]+$/.test(company.id)) throw new Error("Invalid company ID");
     const esef = company.lei && esefCountries.has(company.country) ? await latestEsef(company.lei) : null;
-    const filings = !esef && company.cik ? await latestFilings(company.cik) : null;
-    const fingerprint = createHash("sha256").update(JSON.stringify({ version: 4, company, filings, esef })).digest("hex");
+    const cik = !esef ? await resolveCik(company) : null;
+    const filings = cik ? await latestFilings(cik) : null;
+    const fingerprint = createHash("sha256").update(JSON.stringify({ version: 5, company, filings, esef })).digest("hex");
     const directory = `reports/${company.id}`;
     const prior = readCorpusJson<ReportMeta>(`${directory}/meta.json`);
     if (!force && readCorpusJson<string>(`${directory}/fingerprint.json`) === fingerprint && prior

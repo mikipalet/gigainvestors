@@ -99,15 +99,22 @@ describe("price test", () => {
     equityBondYield: 0.05, bridge: [], assumptions: [],
   };
   it.each([[70, "pass", 0.30], [75, "pass", 0.25], [90, "unclear", 0.10], [100, "unclear", 0], [120, "fail", -0.20]] as const)("classifies price %s", (price, result, mos) => {
-    const actual = priceTest(valuation, price);
+    const actual = priceTest({ valuation, price, requiredMos: 0.25 });
     expect(actual.result).toBe(result);
     expect(actual.mos).toBeCloseTo(mos);
   });
   it("keeps missing inputs unclear", () => {
-    expect(priceTest(valuation, null)).toEqual({ result: "unclear", mos: null });
-    expect(priceTest(null, 70)).toEqual({ result: "unclear", mos: null });
+    expect(priceTest({ valuation, price: null, requiredMos: 0.25 })).toEqual({ result: "unclear", mos: null });
+    expect(priceTest({ valuation: null, price: 70, requiredMos: 0.25 })).toEqual({ result: "unclear", mos: null });
   });
   it("fails a positive price against nonpositive equity value", () => {
-    expect(priceTest({ ...valuation, perShare: { low: -20, mid: -10, high: 0 } }, 10)).toEqual({ result: "fail", mos: null });
+    expect(priceTest({ valuation: { ...valuation, perShare: { low: -20, mid: -10, high: 0 } }, price: 10, requiredMos: 0.25 })).toEqual({ result: "fail", mos: null });
   });
+});
+
+it.each([0.25, 0.35, 0.5])("uses the supplied %s margin at the exact boundary", requiredMos => {
+  const valuation = valueCompany({ years: makeYears(), kind: "operating", bondYield: 0.04, cyclical: false }).valuation!;
+  valuation.perShare.mid = 100;
+  expect(priceTest({ valuation, price: 100 * (1 - requiredMos), requiredMos }).result).toBe("pass");
+  expect(priceTest({ valuation, price: 100 * (1 - requiredMos) + 0.01, requiredMos }).result).toBe("unclear");
 });

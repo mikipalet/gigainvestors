@@ -1,3 +1,5 @@
+import { readCorpusJson, writeCorpusJson } from "../corpus";
+import type { Company } from "../types";
 import { createLimiter, fetchWithRetry } from "../http";
 
 type AnnualForm = "10-K" | "20-F" | "40-F";
@@ -51,4 +53,32 @@ export async function latestFilings(cik: string): Promise<Filings> {
     read(await older.json() as FilingRows);
   }
   return result;
+}
+
+interface TickerMap { fields: string[]; data: unknown[][] }
+
+/** Resolve only explicit US listings, never a coincidentally identical foreign ticker. */
+export async function resolveCik(company: Company): Promise<string | null> {
+  if (company.cik) return company.cik;
+  const tickers = new Set([company.id, ...company.listings].filter(id => id.endsWith(".US"))
+    .map(id => id.slice(0, -3).replaceAll(".", "-").toUpperCase()));
+  if (!tickers.size) return null;
+  const file = "sec/company-tickers-exchange.json";
+  const date = new Date().toISOString().slice(0, 10);
+  let cached = readCorpusJson<{ date: string; data: TickerMap }>(file);
+  if (cached?.date !== date) {
+    const data = await (await fetchEdgar("https://www.sec.gov/files/company_tickers_exchange.json")).json() as TickerMap;
+    if (!Array.isArray(data.fields) || !Array.isArray(data.data) || !data.fields.includes("cik") || !data.fields.includes("ticker")) {
+      throw new Error("Invalid SEC ticker map");
+    }
+    cached = { date, data };
+    writeCorpusJson(file, cached);
+  }
+  const tickerIndex = cached.data.fields.indexOf("ticker"), cikIndex = cached.data.fields.indexOf("cik");
+  for (const row of cached.data.data) {
+    if (!Array.isArray(row) || !tickers.has(String(row[tickerIndex]).toUpperCase())) continue;
+    const cik = String(row[cikIndex]);
+    if (/^\d{1,10}$/.test(cik)) return String(Number(cik));
+  }
+  return null;
 }

@@ -5,7 +5,8 @@ import { randomUUID } from "node:crypto";
 import { T } from "../../../lib/value/config";
 import { buildOutput } from "../../../lib/value/build-output";
 import { corpusPath, readCorpusJson, readJsonl } from "../../../lib/value/corpus";
-import type { Analysis, Company, Dossier, PriceMap } from "../../../lib/value/types";
+import type { Analysis, Company, Dossier, PriceMap, PriceHistory } from "../../../lib/value/types";
+import type { CachedPriceHistory } from "../../../lib/value/price-history";
 import type { Index, StockShard } from "../../../lib/types";
 
 const REMOTE = "https://github.com/mikipalet/gigainvestors-value-data.git";
@@ -155,7 +156,7 @@ export function publishSnapshot({ repo, analyses, universeIds, partial, force = 
     for (const file of readdirSync(directory).filter((file) => /^\d{3}\.json$/.test(file)).sort()) {
       const dossiers: Record<string, Dossier> = JSON.parse(readFileSync(path.join(directory, file), "utf8"));
       for (const dossier of Object.values(dossiers)) if (ids.has(dossier.id)) {
-        const { holders: _holders, series: _series, ...analysis } = dossier;
+        const { holders: _holders, ...analysis } = dossier;
         merged.set(analysis.id, analysis);
       }
     }
@@ -165,7 +166,16 @@ export function publishSnapshot({ repo, analyses, universeIds, partial, force = 
   if (!force && (rows.length === 0 || rows.length < previousCount * (1 - T.publish.maxCountDrop))) {
     throw new Error(`Publish aborted: ${rows.length} companies versus ${previousCount} previously published; use --force to override`);
   }
-  const { files } = buildOutput({ analyses: rows, universe: universeIds.length, holdersByTicker, investorNames, fx: {}, prices: readPriceFiles(repo) });
+  const priceHistories: Record<string, PriceHistory> = {};
+  for (const row of rows) {
+    try {
+      const cached = readCorpusJson<CachedPriceHistory>(`prices-history/${row.id}.json`);
+      if (cached && Array.isArray(cached.prices)) priceHistories[row.id] = cached.prices;
+    } catch (error) {
+      console.warn(`publish: skipped price history for ${row.id}: ${error instanceof Error ? error.message : "unreadable history"}`);
+    }
+  }
+  const { files } = buildOutput({ priceHistories, analyses: rows, universe: universeIds.length, holdersByTicker, investorNames, fx: {}, prices: readPriceFiles(repo) });
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
   writeOutput({ repo, files });
   const changed = commitOutput({ repo, asOf });
@@ -180,6 +190,37 @@ export function runCalibration(cli = path.resolve(__dirname, "../cli.ts")): void
   }
 }
 
+/** Validate the consumed shape without allocating dossiers, tags, indexes or FX loaders. */
+export function isAnalysis(value: unknown): value is Analysis {
+  const record = (v: unknown): v is Record<string, unknown> => typeof v === "object" && v !== null && !Array.isArray(v);
+  const numberOrNull = (v: unknown) => v === null || typeof v === "number" && Number.isFinite(v);
+  const series = (v: unknown) => record(v) && Object.values(v).every(rows => Array.isArray(rows)
+    && rows.every(row => Array.isArray(row) && row.length === 2 && typeof row[0] === "number" && numberOrNull(row[1])));
+  if (!record(value) || typeof value.id !== "string" || !record(value.company) || !record(value.tests)
+    || !record(value.versions) || typeof value.versions.pipeline !== "string" || typeof value.versions.questions !== "string"
+    || typeof value.asOf !== "string" || !["scored", "insufficient_data"].includes(String(value.status))) return false;
+  const company = value.company;
+  if (company.id !== value.id || typeof company.country !== "string" || !/^[A-Z]{2}$/.test(company.country)
+    || typeof company.name !== "string" || typeof company.currency !== "string" || !numberOrNull(company.marketCapUsd)
+    || !Array.isArray(company.listings) || !company.listings.every(id => typeof id === "string")) return false;
+  for (const key of ["understandable", "moat", "economics", "management", "accounting"]) {
+    const test = value.tests[key];
+    if (!record(test) || !["pass", "fail", "unclear", "na"].includes(String(test.result))
+      || !Array.isArray(test.jev) || !test.jev.every(answer => record(answer) && typeof answer.q === "string")
+      || !series(test.series) || !record(test.metrics) || !Array.isArray(test.reasons)) return false;
+  }
+  if (value.series !== undefined && !series(value.series)) return false;
+  if (value.requiredMos !== undefined && (typeof value.requiredMos !== "number" || !Number.isFinite(value.requiredMos) || value.requiredMos < 0 || value.requiredMos > 1)) return false;
+  if (value.valuation !== null) {
+    const valuation = value.valuation;
+    if (!record(valuation) || typeof valuation.currency !== "string" || !record(valuation.perShare)
+      || ![valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high].every(v => typeof v === "number" && Number.isFinite(v))) return false;
+    if (valuation.perShareTrading !== undefined && (!record(valuation.perShareTrading)
+      || typeof valuation.perShareTrading.currency !== "string" || ![valuation.perShareTrading.low, valuation.perShareTrading.mid, valuation.perShareTrading.high].every(v => typeof v === "number" && Number.isFinite(v)))) return false;
+  }
+  return true;
+}
+
 export function loadAnalyses(companies: Company[]): Analysis[] {
   const analyses: Analysis[] = [];
   for (const company of companies) {
@@ -189,7 +230,7 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       if (!analysis) continue; // The rolling download has not analysed this company yet.
       if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");
       // Validate the consumer contract here so one malformed document cannot stop the rollout.
-      buildOutput({ analyses: [analysis], holdersByTicker: {}, investorNames: {}, fx: {} });
+      if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");
       analyses.push(analysis);
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);

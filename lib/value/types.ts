@@ -161,3 +161,13 @@ export type PriceMap = Record<Id, [number, string]>; // close, ISO date, in trad
 
 export type NumericOutcome = Omit<TestOutcome, "jev" | "result">;
 export interface NumericInput { years: Year[]; kind: Kind }
+
+export type JevQuestion =
+  | { type: "noul"; instructions: string; criteria?: { true: string; false: string } }
+  | { type: "choice"; instructions: string; criteria: Record<string, string> }
+  | { type: "score"; instructions: string; criteria: string[] };
+
+export type RawAnswer =
+  | { type: "noul"; noul: number }
+  | { type: "choice"; choice: string; probabilities: Record<string, number>; confidence: number }
+  | { type: "score"; score: number; probabilities: Record<string, number>; legend: Record<string, string>; confidence: number };

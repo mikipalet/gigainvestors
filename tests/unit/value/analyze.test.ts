@@ -524,3 +524,28 @@ it("reanalyzes explicitly selected cached companies outside the universe without
   expect(readCorpusJson<Analysis>(`analysis/${args.company.id}.json`)?.status).toBe("scored");
   expect(readCorpusJson("universe.jsonl")).toBeNull();
 });
+
+it('V3/V4 reads raw valuation inputs for old corpus files and invalidates their fingerprint', async () => {
+  const { makeYears } = await import('./synthetic');
+  const args = input();
+  args.company.country = 'AU';
+  args.company.industry = null;
+  args.fundamentals.years = makeYears({ from: 2015, overrides: { dilutedShares: 100, netIncome: 489.9e6, da: 273.8e6, capex: 87.5e6 } });
+  appendJsonl('universe.jsonl', args.company);
+  writeCorpusJson('fundamentals/KO.US.json', args.fundamentals);
+  const raw = { General: { CountryISO: 'AU', CurrencyCode: 'USD' }, SharesStats: { SharesOutstanding: 1000 }, Highlights: { MarketCapitalization: 10000 }, Financials: { Balance_Sheet: { yearly: Object.fromEntries(args.fundamentals.years.map(y => [y.end, { capitalLeaseObligations: '705000000' }])) } } };
+  writeCorpusJson('raw/eodhd/KO.US.json', raw);
+  writeCorpusJson('prices/AU.json', { 'KO.US': [10, '2026-09-29'] });
+  const options = { ask: args.ask, getBondYield: async () => 0.04, evidence: async () => null };
+  await analyze(options);
+  const result = readCorpusJson<Analysis>('analysis/KO.US.json')!;
+  expect(result.valuation?.shares).toBe(1000);
+  expect(result.valuation?.normalized).toBeCloseTo(535.2e6);
+  expect(result.series?.ownerEarningsPerShare.at(-1)?.[1]).toBeCloseTo(5.352e6);
+  expect(result.tests.economics.series.ownerEarnings.at(-1)?.[1]).toBeCloseTo(535.2e6);
+  raw.SharesStats.SharesOutstanding = 2000;
+  raw.Highlights.MarketCapitalization = 20000;
+  writeCorpusJson('raw/eodhd/KO.US.json', raw);
+  await analyze(options);
+  expect(readCorpusJson<Analysis>('analysis/KO.US.json')!.valuation?.shares).toBe(2000);
+});

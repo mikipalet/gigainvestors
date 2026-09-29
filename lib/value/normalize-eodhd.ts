@@ -1,3 +1,4 @@
+import { leaseInputs } from "./valuation-inputs";
 import type { Company, Fundamentals, Id, Year } from "./types";
 import { goodwillAndIntangibles } from "./metrics";
 import { T } from "./config";
@@ -74,6 +75,7 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
     const acquisitions = currentIntangibles === null || previousIntangibles === null
       ? null : Math.max(0, currentIntangibles - previousIntangibles);
     byYear.set(fy, {
+      ...leaseInputs(raw, end),
       fy, end, currency: text(income.currency_symbol),
       minorityInterest: number(balance.noncontrollingInterestInConsolidatedEntity ?? balance.minorityInterest),
       revenue: number(income.totalRevenue), grossProfit: number(income.grossProfit),

@@ -1,3 +1,5 @@
+import { currentShareInputs, leaseInputs } from "../../../lib/value/valuation-inputs";
+import { readPrices } from "../../../lib/value/price-files";
 import { validCompanyId } from "../../../lib/value/companies";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -44,14 +46,20 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
     return fundamentals ? [{ company, fundamentals }] : [];
   }).slice(0, limit);
   const usdRate = createUsdRate({ force });
+  const prices = { ...readPrices(corpusPath("prices")), ...readPrices(corpusPath("publish-repo/prices")) };
   let cursor = 0;
   let written = 0;
   let skipped = 0;
   const failures: string[] = [];
   await Promise.all(Array.from({ length: Math.min(T.analyze.concurrency, jobs.length) }, async () => {
     while (cursor < jobs.length) {
-      const { company, fundamentals } = jobs[cursor++];
+      const { company, fundamentals: cachedFundamentals } = jobs[cursor++];
       try {
+        const raw = readCorpusJson<unknown>(`raw/eodhd/${company.id}.json`);
+        const fundamentals = raw ? { ...cachedFundamentals, years: cachedFundamentals.years.map(year => ({
+          ...year, ...leaseInputs(raw, year.end, company.country),
+        })) } : cachedFundamentals;
+        const shareInputs = currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);
         const report = readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`) ?? {
           id: company.id, kind: "description", url: null, filed: null, period: null, sections: [],
         } satisfies ReportMeta;
@@ -61,12 +69,12 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           company: {
             id: company.id, kind: company.kind, currency: company.currency, country: company.country,
             description: company.description, sector: company.sector, industry: company.industry,
-          }, fundamentals, report, sections, priceHistory,
+          }, fundamentals, report, sections, priceHistory, shareInputs,
           questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
-        const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory,
+        const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, ...shareInputs,
           bondYield: fundamentals.integrity.ok ? await getBondYield(company.country) : null, ask, getBondYield, usdRate });
         if (result.status === "scored" && Object.values(result.tests).every(test => test.numeric !== "fail")) {
           const eligible = Object.values(result.tests).flatMap(test => test.jev).filter(answer => {

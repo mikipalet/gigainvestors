@@ -25,6 +25,6 @@ export function run({ years, kind }: NumericInput) {
       { pass: typical === null ? null : typical >= (financial ? T.moat.roeMedianFin : T.moat.roicMedian), data: `${label} median`, reason: `${label} median below threshold` },
       { pass: worst === null ? null : worst >= (financial ? T.moat.roeSecondLowestFin : T.moat.roicSecondLowest), data: `${label} worst years`, reason: `${label} worst years below threshold (more than ${T.moat.badYearsAllowed} bad year allowed)` },
       ...(!financial ? [{ pass: drop === null ? null : drop <= T.moat.gmDropPp + Number.EPSILON, data: "FY2019, FY2020 and FY2023 gross margins", reason: `FY2023 gross margin fell ${((drop ?? 0) * 100).toFixed(1)}pp versus the FY2019/FY2020 mean (limit ${T.moat.gmDropPp * 100}pp)` }] : []),
-    ], reasons: returns.includes(Infinity) ? [financial ? "tangible equity is nonpositive: returns effectively unlimited" : "tangible capital is negative: returns effectively unlimited"] : [],
+    ], reasons: returns.includes(Infinity) ? [financial ? "tangible equity is nonpositive: returns effectively unlimited" : "invested capital is nonpositive: returns effectively unlimited"] : [],
   });
 }

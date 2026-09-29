@@ -9,10 +9,11 @@ export function ownerEarningsBridge(years: Year[]) {
     const delta = prev && prev.fy === year.fy - 1 && prev.revenue !== null && year.revenue !== null
       ? year.revenue - prev.revenue : null;
     const growthCapex = delta === null || delta <= 0 ? 0 : ratios.length ? Math.max(0, ratios.reduce((a, b) => a + b, 0) / ratios.length * delta) : null;
-    const maintenanceCapex = year.capex === null || growthCapex === null ? null : Math.max(0, year.capex - growthCapex);
+    const maintenanceCapex = year.capex === null || year.da === null || growthCapex === null ? null : Math.max(year.capex - growthCapex, Math.min(year.capex, year.da));
+    const leaseCashCost = year.leaseDepreciationIncluded && (year.leaseLiabilities ?? 0) > 0 ? 0.2 * year.leaseLiabilities! : 0;
     const value = year.netIncome === null || year.da === null || maintenanceCapex === null
-      ? null : year.netIncome + year.da - maintenanceCapex - (year.sbc ?? 0);
-    return { year, growthCapex, maintenanceCapex, value };
+      ? null : year.netIncome + year.da - maintenanceCapex - (year.sbc ?? 0) - leaseCashCost;
+    return { year, growthCapex, maintenanceCapex, leaseCashCost, value };
   });
 }
 

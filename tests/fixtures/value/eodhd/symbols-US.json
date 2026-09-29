@@ -1,0 +1,362 @@
+[
+  {
+    "Code": "ASML",
+    "Name": "ASML Holding N.V. New York Registry Shares",
+    "Country": "USA",
+    "Exchange": "NASDAQ",
+    "Currency": "USD",
+    "Type": "Common Stock",
+    "Isin": "USN070592100"
+  },
+  {
+    "Code": "BRK-A",
+    "Name": "Berkshire Hathaway Inc",
+    "Country": "USA",
+    "Exchange": "NYSE",
+    "Currency": "USD",
+    "Type": "Common Stock",
+    "Isin": "US0846701086"
+  },
+  {
+    "Code": "BRK-B",
+    "Name": "Berkshire Hathaway Inc",
+    "Country": "USA",
+    "Exchange": "NYSE",
+    "Currency": "USD",
+    "Type": "Common Stock",
+    "Isin": "US0846707026"
+  },
+  {
+    "Code": "DAL",
+    "Name": "Delta Air Lines Inc",
+    "Country": "USA",
+    "Exchange": "NYSE",
+    "Currency": "USD",
+    "Type": "Common Stock",
+    "Isin": "US2473617023"
+  },
+  {
+    "Code": "GOOG",
+    "Name": "Alphabet Inc Class C",
+    "Country": "USA",
+    "Exchange": "NASDAQ",
+    "Currency": "USD",
+    "Type": "Common Stock",
+    "Isin": "US02079K1079"
+  },
+  {
+    "Code": "GOOGL",
+    "Name": "Alphabet Inc Class A",
+    "Country": "USA",
+    "Exchange": "NASDAQ",
+    "Currency": "USD",
+    "Type": "Common Stock",
+    "Isin": "US02079K3059"
+  },
+  {
+    "Code": "JPM",
+    "Name": "JPMorgan Chase & Co",
+    "Country": "USA",
+    "Exchange": "NYSE",
+    "Currency": "USD",
+    "Type": "Common Stock",
+    "Isin": "US46625H1005"
+  },
+  {
+    "Code": "KO",
+    "Name": "The Coca-Cola Company",
+    "Country": "USA",
+    "Exchange": "NYSE",
+    "Currency": "USD",
+    "Type": "Common Stock",
+    "Isin": "US1912161007"
+  },
+  {
+    "Code": "SPY",
+    "Name": "State Street® SPDR® S&P 500® ETF Trust",
+    "Country": "USA",
+    "Exchange": "NYSE ARCA",
+    "Currency": "USD",
+    "Type": "ETF",
+    "Isin": "US78462F1030"
+  },
+  {
+    "Code": "ABR-P-D",
+    "Name": "Arbor Realty Trust Inc | 6.375% Series D Cumulative",
+    "Country": "USA",
+    "Exchange": "NYSE",
+    "Currency": "USD",
+    "Type": "Preferred Stock",
+    "Isin": "US0389238769"
+  },
+  {
+    "Code": "AACOW",
+    "Name": "Abony Acquisition Corp. I Warrants",
+    "Country": "USA",
+    "Exchange": "NASDAQ",
+    "Currency": "USD",
+    "Type": "Warrant",
+    "Isin": "KYG005821171"
+  },
+  {
+    "Code": "0P00000M7O",
+    "Name": "AB American Growth A USD",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "^MGTN",
+    "Name": "CBOE MAGNIFICENT 10 INDEX",
+    "Country": "USA",
+    "Exchange": "US",
+    "Currency": "USD",
+    "Type": "INDEX",
+    "Isin": null
+  },
+  {
+    "Code": "^TNX",
+    "Name": "CBOE Interest Rate 10 Year T No",
+    "Country": "USA",
+    "Exchange": "US",
+    "Currency": "USD",
+    "Type": "INDEX",
+    "Isin": null
+  },
+  {
+    "Code": "^W5000",
+    "Name": "Wilshire 5000 Total Market Index",
+    "Country": "USA",
+    "Exchange": "US",
+    "Currency": "USD",
+    "Type": "INDEX",
+    "Isin": null
+  },
+  {
+    "Code": "0P000027E5",
+    "Name": "Pictet CH Enhanced Liquidity USD I dy",
+    "Country": "USA",
+    "Exchange": "US",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P00006G0C",
+    "Name": "Schroder Asian Growth USD A Dis",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P000070L2",
+    "Name": "RBC $U.S. Money Market Fund A",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0000A2WI",
+    "Name": "Fidelity American High Yield Sr B",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0000A412",
+    "Name": "Franklin U.S. Opportunities Fund A",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0000CNNR",
+    "Name": "Vanguard Target Retire 2045 Trust I",
+    "Country": "USA",
+    "Exchange": "NMFQS",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": "US92202V5425"
+  },
+  {
+    "Code": "0P0000GFS8",
+    "Name": "State Street U.S. Total Market Index Securities Lending Series Fund Class I",
+    "Country": "USA",
+    "Exchange": "NMFQS",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0000NCNO",
+    "Name": "Mackenzie GQE Global Equity Fund F",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0000O6WE",
+    "Name": "Nh Unique College Investing Plan Fidelity 500 Index Portfolio",
+    "Country": "USA",
+    "Exchange": "NMFQS",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0000O753",
+    "Name": "Oh Collegeadvantage 529 Vanguard Wellington Option",
+    "Country": "USA",
+    "Exchange": "NMFQS",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0000OOF7",
+    "Name": "Pictet CH PM Fd -Physical Gold P dy USD",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0000OQRG",
+    "Name": "Pictet CH Precious Metals Fund - Physical Gold I dy USD",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0000RX5G",
+    "Name": "Franklin Floating Rate Fund PLC W USD Dis",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0000V6X7",
+    "Name": "Target Retirement 2055 Trust Plus",
+    "Country": "USA",
+    "Exchange": "NMFQS",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": "US92202V3446"
+  },
+  {
+    "Code": "0P0000VT8E",
+    "Name": "Itau AAA - Growth share 2",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P00015SK3",
+    "Name": "Mfs Large Cap Value Cit Cl 3",
+    "Country": "USA",
+    "Exchange": "NMFQS",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P00017MHK",
+    "Name": "Lord Abbett Innovation Growth A USD",
+    "Country": "USA",
+    "Exchange": "NYSE",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": "IE00BYZRLD33"
+  },
+  {
+    "Code": "0P0001EHB3",
+    "Name": "UBS Gold Index Fund USD I-A acc",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0001FGC2",
+    "Name": "AXAWF US Credit Short Dur IG U Cap USD",
+    "Country": "USA",
+    "Exchange": "US",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0001GXZ7",
+    "Name": "Oaktree (Lux.) III - Oaktree Global Credit Fund P USD acc",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": "LU1876555878"
+  },
+  {
+    "Code": "0P0001I3FN",
+    "Name": "AGF American Growth F",
+    "Country": "USA",
+    "Exchange": "OTCPK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0001MVBP",
+    "Name": "UBAM - Strategic Income AD USD",
+    "Country": "USA",
+    "Exchange": "NYSE",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0001N4II",
+    "Name": "JPM Global Income A (icdiv) USDH",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0001NGF5",
+    "Name": "Liontrust GF Sust Fut MA Glbl B8 Acc USD",
+    "Country": "USA",
+    "Exchange": "PINK",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": null
+  },
+  {
+    "Code": "0P0001O70F",
+    "Name": "Lord Abbett Crdt Opps Offsh Access A$Dis",
+    "Country": "USA",
+    "Exchange": "NYSE",
+    "Currency": "USD",
+    "Type": "FUND",
+    "Isin": "KYG5649R1175"
+  }
+]

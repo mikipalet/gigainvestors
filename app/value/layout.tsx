@@ -1,17 +1,17 @@
-import { ValueLink } from "@/components/value/ValueLink";
-import type { Metadata } from "next";
-
+import './value.css';
+import { getDefaultIndex } from '@/lib/value/store';
+import { ValueLink } from '@/components/value/ValueLink';
+import { CompanySearch } from '@/components/value/CompanySearch';
+import type { Metadata } from 'next';
 export const metadata: Metadata = {
-  metadataBase: new URL("https://value.gigainvestors.com"),
-  title: "Buffett checklist | GigaInvestors",
-  description: "Six independent tests of business quality and price, with financial history and report evidence.",
-  openGraph: { title: "Buffett checklist", url: "https://value.gigainvestors.com", siteName: "GigaInvestors Value" },
+  metadataBase: new URL('https://value.gigainvestors.com'), title: 'Buffett checklist | GigaInvestors',
+  description: 'Six independent tests of business quality and price, with financial history and report evidence.',
 };
-
-export default function ValueLayout({ children }: { children: React.ReactNode }) {
-  return <main className="value-viz mx-auto max-w-6xl px-5 py-8 sm:px-10">
-    <nav className="mb-10 flex justify-between gap-4 text-sm"><ValueLink href="/">GigaInvestors · Value</ValueLink><a href="https://gigainvestors.com">Superinvestor portfolios ↗</a></nav>
+export default async function ValueLayout({ children }: { children: React.ReactNode }) {
+  const companies = (await getDefaultIndex()).map(({id,n})=>({id,n}));
+  return <main className="value-viz value-page">
+    <nav className="value-header"><ValueLink href="/" className="value-brand">GigaInvestors <span>· Value</span></ValueLink><CompanySearch companies={companies} /><div><a href="https://gigainvestors.com">Portfolios ↗</a><ValueLink href="/method">Method</ValueLink></div></nav>
     {children}
-    <footer className="mt-10 border-t border-ink/20 pt-4 text-xs text-ink/60"><a href="https://gigainvestors.com/about">About GigaInvestors</a> · <a href="mailto:hello@gigainvestors.com">Contact</a></footer>
+    <footer className="value-footer"><span>GigaInvestors · Independent tests. No blended score.</span><span>Estimates depend on assumptions; they are not guarantees or investment advice. <ValueLink href="/method">Method & sources</ValueLink> · <a href="mailto:hello@gigainvestors.com">Contact</a></span></footer>
   </main>;
 }

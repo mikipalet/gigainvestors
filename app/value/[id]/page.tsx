@@ -23,13 +23,14 @@ export default async function DossierPage({ params }: Props) {
   const { company } = dossier;
   const investors = dossier.holders.length ? await getIndex() : null;
   return <DossierContent dossier={dossier}>
-    <section className="border-t border-ink/20 py-6"><h2 className="mb-4 text-xl font-semibold">Superinvestor holders</h2>
-      {dossier.holders.length ? <ul className="flex flex-wrap gap-6">{dossier.holders.map((holder) => {
+    <section className="holders"><h2>Held by {dossier.holders.length} superinvestors</h2>
+      {dossier.holders.length ? <ul className="holder-stack">{dossier.holders.slice(0,5).map((holder) => {
         const investor = investors?.investors.find((item) => item.code === holder.code);
         return <li key={holder.code}><a className="flex items-center gap-3" href={`https://gigainvestors.com/s/${encodeURIComponent(company.code)}`}>
-          {investor?.sketch && <span className="h-16 w-16"><Face slug={investor.slug} size={320} sizes="64px" /></span>}{holder.name}
+          {investor?.sketch && <span className="holder-face"><Face slug={investor.slug} size={320} sizes="32px" /></span>}<span className="sr-only">{holder.name}</span>
         </a></li>;
       })}</ul> : <p className="text-sm text-ink/60">No tracked holders.</p>}
+      {dossier.holders.length > 0 && <p>Including {dossier.holders[0].name}</p>}
     </section>
   </DossierContent>;
 }

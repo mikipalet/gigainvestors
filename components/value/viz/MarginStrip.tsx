@@ -1,47 +1,19 @@
 'use client';
-import { useEffect, useMemo, useRef } from 'react';
-import { beeswarm, scale } from '@/lib/value/viz/layout';
 import { useWidth } from '@/lib/value/viz/use-width';
 import { valueHref } from '@/lib/value/href';
 import { usePathname } from 'next/navigation';
-import { DataTable } from './DataTable';
 import { ChartInteraction } from './ChartInteraction';
-import { AsOf } from './Events';
 type Entry = { id: string; name: string; mos: number; requiredMos: number; date?: string };
-export function MarginStrip({ entries, date }: { entries: Entry[]; date?: string | null }) {
-  const { ref, width } = useWidth();
-  const pathname = usePathname();
-  const canvas = useRef<HTMLCanvasElement>(null);
-  const useCanvas = entries.length > 1500;
-  const layout = useMemo(() => beeswarm({ points: entries.map(e => ({ id: e.id, value: e.mos })), width: width - 40, gap: useCanvas ? 5 : 10 }), [entries, width, useCanvas]);
-  const byId = new Map(entries.map(e => [e.id, e]));
-  const radius = Math.max(27, ...layout.map(p => Math.abs(p.y) + 8)), height = radius * 2 + 76;
-  const x = scale({ domain: [-1, 1], range: [20, width - 20] });
-  useEffect(() => {
-    if (!useCanvas || !canvas.current) return;
-    const node = canvas.current, ratio = window.devicePixelRatio || 1;
-    node.width = width * ratio; node.height = height * ratio;
-    const ctx = node.getContext('2d'); if (!ctx) return;
-    ctx.scale(ratio, ratio);
-    const style = getComputedStyle(node);
-    ctx.fillStyle = style.getPropertyValue('--ink').trim();
-    ctx.strokeStyle = style.getPropertyValue('--paper').trim(); ctx.lineWidth = 1;
-    for (const p of layout) { ctx.beginPath(); ctx.arc(p.x + 20, p.y + radius + 32, 2.5, 0, Math.PI * 2); ctx.fill(); ctx.stroke(); }
-  }, [layout, width, height, radius, useCanvas]);
-  const minimumDiscount = Math.min(1, ...entries.map(e => e.requiredMos));
+export function MarginStrip({ entries }: { entries: Entry[]; date?: string | null }) {
+  const { ref, width } = useWidth(), pathname = usePathname();
+  const closest = [...entries].sort((a,b) => (1-a.mos)/(1-a.requiredMos) - (1-b.mos)/(1-b.requiredMos)).slice(0,5);
+  const maximum = Math.max(4, ...closest.map(e => 2 ** Math.ceil(Math.log2(1-e.mos))));
+  const minimum = Math.min(.25,...closest.map(e=>2**Math.floor(Math.log2(1-e.mos))));
+  const x = (v: number) => 70 + (Math.log2(Math.max(minimum,v))-Math.log2(minimum))/(Math.log2(maximum)-Math.log2(minimum))*(width-140);
   const buys = entries.filter(e => e.mos >= e.requiredMos).length;
-  return <figure ref={ref} className="value-viz hidden min-w-0 sm:block" aria-labelledby="strip-title"><figcaption><h2 id="strip-title" className="text-lg font-semibold">{buys} quality companies meet their buy discount</h2><p className="mt-1 text-xs text-ink/55">Margin of safety, %. {entries.length} companies pass all five tests and have a price. Required discounts vary by company.</p></figcaption>
-    <ChartInteraction label="Quality companies by margin of safety" width={width} height={height} points={layout.map(p => { const e = byId.get(p.id)!; return { x: p.x+20, y: p.y+radius+32, text: `${e.name}, ${(e.mos*100).toFixed(1)}% margin of safety; required ${e.requiredMos*100}%; as of ${e.date ?? 'unknown'}, last fiscal year: see dossier`, href: valueHref(`/${e.id.toLowerCase()}`, pathname) }; })}>
-      <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} aria-hidden="true">
-        <rect x={x(minimumDiscount)} y="27" width={x(1)-x(minimumDiscount)} height={radius*2+10} fill="var(--viz-buy-tint)"/><line x1={x(minimumDiscount)} x2={x(minimumDiscount)} y1="27" y2={height-32} stroke="var(--viz-ink)"/><text x={x(minimumDiscount)+4} y="19">minimum buy discount</text>
-        <line x1={x(0)} x2={x(0)} y1="27" y2={height-32} stroke="var(--viz-muted)"/>
-        <line x1={20} x2={width-20} y1={height-32} y2={height-32} stroke="var(--viz-grid)"/>
-        {[-1, -.5, 0, .5, 1].map(t => <text key={t} className="viz-tick" textAnchor="middle" x={x(t)} y={height-14}>{t*100}%</text>)}
-        {!useCanvas && layout.map(p => <circle key={p.id} cx={p.x+20} cy={p.y+radius+32} r="4" fill="var(--viz-ink)" stroke="var(--paper)" strokeWidth="2"/>)}
-      </svg>
-      {useCanvas && <canvas ref={canvas} aria-hidden="true" className="absolute inset-0" style={{ width, height }}/>}
-    </ChartInteraction>
-    <p className="text-[10px] text-ink/55">Positions capped at ±100%. Tooltips retain the actual margin.</p><AsOf date={date}/>
-    <DataTable caption="Quality companies by margin of safety" headers={['Company', 'Margin', 'Required']} rows={entries.map(e => [<a key={e.id} href={valueHref(`/${e.id.toLowerCase()}`, pathname)}>{e.name}</a>, `${(e.mos*100).toFixed(1)}%`, `${e.requiredMos*100}%`])}/>
-  </figure>;
+  return <figure ref={ref} className="closest-chart" aria-labelledby="strip-title"><figcaption><h2 id="strip-title">Closest to their buy line</h2><p>{buys ? `${buys} quality companies meet the buy discount.` : `None at its buy price.${closest.length ? ` ${closest.slice(0,2).map(e=>e.id.split('.')[0]).join(' and ')} are closest.` : ''}`}</p></figcaption><ChartInteraction label="Quality companies by price to value" width={width} height={150} points={closest.map((e,i)=>({x:x(1-e.mos),y:20+i*24,text:`${e.name}, ${(1-e.mos).toFixed(2)}× mid value; needs ${(e.requiredMos*100).toFixed(0)}% discount, ${e.mos > 0 ? `has ${(e.mos*100).toFixed(0)}%` : 'trades above value'}`,href:valueHref(`/${e.id.toLowerCase()}`,pathname)}))}>
+    <svg aria-hidden="true" width="100%" height="150" viewBox={`0 0 ${width} 150`}>
+      {closest.map((e,i)=><g key={e.id}><text x="0" y={24+i*24}>{e.id.split('.')[0]}</text><line x1={70} x2={width-70} y1={20+i*24} y2={20+i*24} stroke="var(--viz-grid)"/><line x1={x(1-e.requiredMos)} x2={x(1-e.requiredMos)} y1={12+i*24} y2={28+i*24} stroke="var(--buy)" strokeWidth="2"/><circle cx={x(1-e.mos)} cy={20+i*24} r="4" fill="var(--ink)"/><text x={width-2} textAnchor="end" y={24+i*24}>{(1-e.mos).toFixed(2)}×</text></g>)}
+      {[minimum,1,maximum].map(t=><text key={t} x={x(t)} y="145" textAnchor="middle" className="viz-tick">{t}×</text>)}
+    </svg></ChartInteraction><p className="source-line">Price / mid value · log scale · green tick = required buy line</p></figure>;
 }

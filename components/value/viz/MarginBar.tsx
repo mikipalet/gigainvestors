@@ -1,5 +1,6 @@
-import { marginExtent } from '@/lib/value/viz/research';
-export function MarginBar({ value }: { value: number }) {
-  const extent = marginExtent(value);
-  return <span className="value-viz inline-flex flex-col items-end gap-1 tabular-nums"><span>{(value * 100).toFixed(1)}%</span><span aria-hidden="true" className="relative block h-2 w-12 bg-ink/5"><span className="absolute inset-y-0 left-1/2 border-l border-ink/55"/><span className="absolute inset-y-0" style={{ width: extent, left: value < 0 ? 24 - extent : 24, background: value < 0 ? 'var(--viz-sell)' : 'var(--viz-buy)' }}/></span></span>;
+import { T } from '@/lib/value/config';
+export function MarginBar({ value, requiredMos = T.price.requiredMos.stable, maximum = 4, minimum = .25 }: { value: number; requiredMos?: number; maximum?: number; minimum?: number }) {
+  const ratio = 1 - value;
+  const position = (v: number) => (Math.log2(Math.max(minimum, v)) - Math.log2(minimum)) / (Math.log2(maximum) - Math.log2(minimum)) * 100;
+  return <span className="ratio-cell"><span className="ratio-track" aria-hidden="true"><i className="ratio-buy" style={{width:`${position(1-requiredMos)}%`}}/><i className="ratio-tick" style={{left:`${position(1-requiredMos)}%`}}/><i className="ratio-dot" style={{left:`${position(ratio)}%`}}/></span><strong className={value >= requiredMos ? 'text-buy' : ''}>{ratio.toFixed(2)}×</strong></span>;
 }

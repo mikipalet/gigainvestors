@@ -1,4 +1,7 @@
-import { ValueLink } from "@/components/value/ValueLink";
-export default function NotFound() {
-  return <><h1 className="text-3xl font-semibold">Company not found</h1><p className="mt-4"><ValueLink href="/" className="underline">Return to the checklist</ValueLink></p></>;
+import { getDefaultIndex, getMeta } from '@/lib/value/store';
+import { NotFoundRecovery } from '@/components/value/NotFoundRecovery';
+
+export default async function NotFound() {
+  const [rows, meta] = await Promise.all([getDefaultIndex(), getMeta()]);
+  return <NotFoundRecovery companies={rows.map(({id,n})=>({id,n}))} analysed={meta?.counts.analysed ?? (meta ? meta.counts.scored + meta.counts.insufficient : 0)} universe={meta?.counts.universe ?? 0} />;
 }

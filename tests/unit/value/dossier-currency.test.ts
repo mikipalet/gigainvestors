@@ -20,7 +20,7 @@ beforeEach(() => {
 });
 it('renders reporting value, explicit currency mismatch and an unclear price test', async () => {
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toContain('Estimated value JPY 800.00 to JPY 1,200.00');
+  expect(html).toContain('Estimated value 800.00 to 1200.00 JPY');
   expect(html).toContain('Price is in USD, value in JPY, not compared');
   expect(html).toContain('Price: unclear');
   expect(html).not.toContain('margin of safety 99.4%');
@@ -29,8 +29,8 @@ it('renders reporting value, explicit currency mismatch and an unclear price tes
 it('uses converted trading values for both the headline and margin', async () => {
   dossier.valuation!.perShareTrading = { currency: 'USD', fxRate: .01, low: 8, mid: 10, high: 12 };
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toContain('Estimated value USD 8.00 to USD 12.00');
-  expect(html).toContain('40.0% margin of safety');
+  expect(html).toContain('Estimated value 8.00 to 12.00 USD');
+  expect(html).toContain('40.0% below our mid estimate');
   expect(html).toContain('Price: pass');
   expect(html).not.toContain('not compared');
 });
@@ -44,7 +44,7 @@ it('does not label newer monthly prices as a new fiscal year', async () => {
 it('labels a seeded price with its market-cap derivation and date', async () => {
   vi.mocked(useQuote).mockReturnValue([6, '2026-09-28', 'seed']);
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toContain('cached reference price on 2026-09-28');
+  expect(html).toContain('Price derived from market cap');
 });
 
 it.each(['javascript:alert(1)', 'http://example.com/report', '//example.com/report', 'https://example.com/report'])('only renders https report links: %s', async url => {

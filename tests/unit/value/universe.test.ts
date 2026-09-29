@@ -16,9 +16,9 @@ describe("universe", () => {
     }
     expect(isCommonStock({ Type: "Common Stock", Name: "Example Acquisition Corp" })).toBe(false);
   });
-  it("collapses Alphabet and Berkshire share classes with the voting A class primary", () => {
+  it("collapses Alphabet and Berkshire share classes with code-order fallback", () => {
     const groups = collapseListings(listings);
-    expect(groups.find((g) => g.listings.includes("GOOG.US"))).toEqual({ primary: "GOOGL.US", listings: ["GOOG.US", "GOOGL.US"] });
+    expect(groups.find((g) => g.listings.includes("GOOG.US"))).toEqual({ primary: "GOOG.US", listings: ["GOOG.US", "GOOGL.US"] });
     expect(groups.find((g) => g.listings.includes("BRK-A.US"))).toEqual({ primary: "BRK-A.US", listings: ["BRK-A.US", "BRK-B.US"] });
   });
   it("prefers the Dutch home exchange regardless of input order", () => {
@@ -137,4 +137,36 @@ it("nulls standalone GDR caps and caps above 1.3x the largest US company before 
     ]);
     expect(warnings.some((message) => message.includes("BAD.LSE") && message.includes("131") && message.includes("130"))).toBe(true);
   } finally { warn.mockRestore(); rmSync(directory, { recursive: true, force: true }); }
+});
+
+it("passes cached class volumes and ADR metadata into collapse and admits Brazilian PN", async () => {
+  const { mkdtempSync, rmSync } = await import("node:fs");
+  const { homedir } = await import("node:os");
+  const { join } = await import("node:path");
+  const { writeCorpusJson, readJsonl } = await import("../../../lib/value/corpus");
+  const { default: stage } = await import("../../../scripts/value/stages/universe");
+  const directory = mkdtempSync(join(homedir(), "value-corpus/universe-test-"));
+  vi.stubEnv("VALUE_CORPUS_DIR", directory);
+  vi.stubGlobal("fetch", () => { throw new Error("Cached run must stay offline"); });
+  const cache = (key: string, data: unknown) => writeCorpusJson(`raw/eodhd/universe/${key}.json`, { date: new Date().toISOString().slice(0, 10), data });
+  cache("exchanges", ["US", "ST", "SA", "MC"].map(Code => ({ Code, CountryISO2: { US: "US", ST: "SE", SA: "BR", MC: "ES" }[Code] })));
+  const symbol = (Code: string, Name: string, Isin: string, Type = "Common Stock") => ({ Code, Name, Isin, Type, Currency: "USD" });
+  const data = {
+    US: [symbol("EX", "Example", "US0000000001", "ADR")],
+    ST: [symbol("ATCO-A", "Atlas Copco Series A", "SE0017486889"), symbol("ATCO-B", "Atlas Copco Series B", "SE0017486897")],
+    SA: [symbol("ITUB3", "Itau ON", "BRITUBACNOR4"), symbol("ITUB4", "Itau PN", "BRITUBACNPR1", "Preferred Stock"), symbol("ONLY4", "Independent PN", "BR0000000001", "Preferred Stock")],
+    MC: [symbol("EX", "Example SA", "ES0000000001")], HK: [],
+  };
+  for (const [exchange, rows] of Object.entries(data)) {
+    cache(`symbols-${exchange}`, rows.map(row => ({ ...row, Exchange: exchange === "US" ? "NYSE" : exchange })));
+    cache(`screener-${exchange}-0`, rows.map(row => ({ code: row.Code, exchange, market_capitalization: 100, avgvol_200d: row.Code === "ATCO-A" ? 1000 : 10 })));
+    cache(`screener-${exchange}-100`, []);
+  }
+  try {
+    await stage({});
+    const companies = readJsonl<{ id: string; listings: string[] }>("universe.jsonl");
+    expect(companies.map(row => row.id)).toEqual(["ATCO-A.ST", "EX.MC", "ITUB3.SA", "ONLY4.SA"]);
+    expect(companies.find(row => row.id === "ITUB3.SA")?.listings).toEqual(["ITUB3.SA", "ITUB4.SA"]);
+    expect(companies.find(row => row.id === "EX.MC")?.listings).toEqual(["EX.US", "EX.MC"]);
+  } finally { rmSync(directory, { recursive: true, force: true }); }
 });

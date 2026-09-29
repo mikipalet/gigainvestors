@@ -25,6 +25,8 @@ export interface ScreenerRow {
   market_capitalization: number | null;
   sector: string | null;
   industry: string | null;
+  avgvol_200d?: number | null;
+  avgvol_1d?: number | null;
 }
 
 const limit = createLimiter({ perSecond: T.eodhd.perSecond });

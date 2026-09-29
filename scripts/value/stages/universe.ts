@@ -30,7 +30,7 @@ export default async function universe(options: Options): Promise<void> {
     if (options.only && !options.only.some((id) => id.endsWith(`.${exchange.Code}`))) continue;
     const symbols = await cached(`symbols-${exchange.Code}`, () => listSymbols(exchange.Code));
     for (const row of symbols) {
-      if (!isCommonStock(row)) continue;
+      if (!isCommonStock({ ...row, Exchange: exchange.Code })) continue;
       const otc = /OTC|PINK|GREY|OTCQ|OTCBB/i.test(row.Exchange + " " + exchange.Code);
       if (otc && !(row.Isin?.startsWith("JP") && /\bADR\b|depositary|depository/i.test(row.Name))) continue;
       rows.push({ ...row, exchange: exchange.Code, country: exchange.CountryISO2 });
@@ -44,7 +44,8 @@ export default async function universe(options: Options): Promise<void> {
     if (options.limit && !options.only && rows.length >= options.limit) break;
   }
   const byId = new Map(rows.map((row) => [`${row.Code}.${row.exchange}`, row]));
-  const groups = collapseListings(rows.map((row) => ({ code: row.Code, exchange: row.exchange, isin: row.Isin, name: row.Name, country: row.country })));
+  const groups = collapseListings(rows.map((row) => ({ code: row.Code, exchange: row.exchange, isin: row.Isin, name: row.Name, country: row.country, type: row.Type, listingExchange: row.Exchange,
+    volume: caps.get(`${row.Code}.${row.exchange}`)?.avgvol_200d ?? caps.get(`${row.Code}.${row.exchange}`)?.avgvol_1d })));
   const usdRate = createUsdRate(options);
   const companies: Company[] = [];
   for (const group of groups) {

@@ -1,6 +1,7 @@
 export const T = {
   minYears: 7,
   numeric: { minAvailableFraction: 2 / 3 },
+  dedupe: { revenueTolerance: 0.02 },
   integrity: { maxShareRatio: 5, minShareRatio: 0.2, balanceTolerance: 0.10, balanceYears: 5, balanceMinFailures: 2 },
   fundamentals: { maxYears: 30, dailyBudgetStop: 99_000, requestCost: 10, usageSyncCompanies: 200 },
   eodhd: { perSecond: 5, timeoutMs: 180_000, screenerPageSize: 100, screenerMaxOffset: 999 },

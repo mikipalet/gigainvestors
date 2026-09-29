@@ -104,7 +104,7 @@ describe("round 1 controller rulings", () => {
   it.each([false, true])("limits missing SBC assumptions to the normalization window (cyclical %s)", cyclical => {
     const years = makeYears({ overrides: (_, i) => ({ sbc: i === 0 ? null : 0 }) });
     expect(value(years, cyclical).valuation?.assumptions).not.toContain("stock compensation not reported");
-    years[cyclical ? 4 : 6].sbc = null;
+    years[6].sbc = null;
     expect(value(years, cyclical).valuation?.assumptions).toContain("stock compensation not reported");
   });
   it.each([0, -1])("keeps nonpositive price %s unclear", price => {

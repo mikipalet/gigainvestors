@@ -6,7 +6,7 @@ import { T } from "../../../lib/value/config";
 import { loadCompanies } from "../../../lib/value/companies";
 import { readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { callsUsedToday } from "../../../lib/value/eodhd";
-import { fetchPriceHistory, type CachedPriceHistory } from "../../../lib/value/price-history";
+import { PriceHistoryUnavailableError, fetchPriceHistory, type CachedPriceHistory } from "../../../lib/value/price-history";
 
 export default async function priceHistory({ only, limit, force = false }: { only?: string[]; limit?: number; force?: boolean }): Promise<void> {
   const now = new Date();
@@ -60,6 +60,12 @@ export default async function priceHistory({ only, limit, force = false }: { onl
       writeCorpusJson(`prices-history/meta/${company.id}.json`, { fetchedAt: now.toISOString(), failures: 0 });
       written++;
     } catch (error) {
+      if (error instanceof PriceHistoryUnavailableError) {
+        // Preserve older prices and cache confirmed misses without stopping later symbols.
+        writeCorpusJson(`prices-history/meta/${company.id}.json`, { fetchedAt: now.toISOString(), status: "unavailable" });
+        console.warn(`${company.id}: Yahoo history unavailable`);
+        continue;
+      }
       let previous: { failures?: number } | null = null;
       try { previous = readCorpusJson<{ failures?: number }>(`prices-history/meta/${company.id}.json`); } catch { /* Malformed metadata is already recorded as this attempt’s failure. */ }
       writeCorpusJson(`prices-history/meta/${company.id}.json`, { failures: (previous?.failures ?? 0) + 1, attemptedAt: now.toISOString() });

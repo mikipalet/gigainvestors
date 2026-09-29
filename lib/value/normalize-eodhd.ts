@@ -1,5 +1,5 @@
 import { marketCapCurrency } from "./currency";
-import { leaseInputs } from "./valuation-inputs";
+import { balanceInputs, leaseInputs, trailingInputs } from "./valuation-inputs";
 import type { Company, Fundamentals, Id, Year } from "./types";
 import { goodwillAndIntangibles } from "./metrics";
 import { T } from "./config";
@@ -68,15 +68,14 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
     const income = record(incomes[end]);
     const balance = record(balances[end]);
     const cash = record(cashFlows[end]);
-    const shortDebt = number(balance.shortTermDebt);
-    const longDebt = number(balance.longTermDebt);
+    const leases = leaseInputs(raw, end);
     const stockFlow = number(cash.salePurchaseOfStock);
     const currentIntangibles = goodwillAndIntangibles({ goodwill: number(balance.goodWill), intangibles: number(balance.intangibleAssets) });
     const previousIntangibles = balanceIntangibles.get(fy - 1) ?? null;
     const acquisitions = currentIntangibles === null || previousIntangibles === null
       ? null : Math.max(0, currentIntangibles - previousIntangibles);
     byYear.set(fy, {
-      ...leaseInputs(raw, end),
+      ...leases,
       fy, end, currency: text(income.currency_symbol),
       minorityInterest: number(balance.noncontrollingInterestInConsolidatedEntity ?? balance.minorityInterest),
       revenue: number(income.totalRevenue), grossProfit: number(income.grossProfit),
@@ -89,8 +88,7 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
       dividendsPaid: absolute(cash.dividendsPaid), buybacks: stockFlow === null ? null : Math.max(0, -stockFlow),
       issuance: number(cash.issuanceOfCapitalStock), acquisitions, acquisitionsProxy: true,
       receivables: number(balance.netReceivables), loans: loanAssets(balance), inventory: number(balance.inventory), payables: number(balance.accountsPayable),
-      cash: number(balance.cashAndShortTermInvestments ?? balance.cash),
-      totalDebt: number(balance.shortLongTermDebtTotal) ?? (shortDebt !== null && longDebt !== null ? shortDebt + longDebt : null),
+      ...balanceInputs(balance, !!leases.leaseDepreciationIncluded),
       equity: number(balance.totalStockholderEquity), goodwill: number(balance.goodWill), intangibles: number(balance.intangibleAssets),
       ppe: number(balance.propertyPlantAndEquipmentNet), totalAssets: number(balance.totalAssets), totalLiabilities: number(balance.totalLiab),
       liabilitiesAndStockholdersEquity: number(balance.liabilitiesAndStockholdersEquity),
@@ -109,6 +107,7 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
     splits: date && Number.isFinite(factor) && factor > 0 ? [{ date, factor }] : [],
   };
   fundamentals.integrity = checkIntegrity(fundamentals, { source: "eodhd" });
+  fundamentals.ttm = trailingInputs(raw, fundamentals.years.at(-1));
   const sector = text(general.Sector);
   const industry = text(general.Industry);
   const latestBalance = record(balances[Object.keys(balances).filter(end => /^\d{4}-\d{2}-\d{2}$/.test(end)).sort().at(-1) ?? ""]);
@@ -118,7 +117,7 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
     patch: {
       description: text(general.Description), sector, industry,
       isin: text(general.ISIN), cik: text(general.CIK), lei: text(general.LEI),
-      ...(sector !== null || industry !== null ? { kind: kindFor({ id, sector, industry, lending: { receivables: number(latestBalance.netReceivables), loans: loanAssets(latestBalance), totalAssets: number(latestBalance.totalAssets) } }) } : {}),
+      ...(sector !== null || industry !== null ? { kind: kindFor({ id, sector, industry, lending: { receivables: number(latestBalance.netReceivables), loans: loanAssets(latestBalance), ...balanceInputs(latestBalance, false), equity: number(latestBalance.totalStockholderEquity), totalAssets: number(latestBalance.totalAssets) } }) } : {}),
     },
   };
 }

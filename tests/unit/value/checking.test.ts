@@ -39,9 +39,9 @@ it('carries pending provenance from analysis to publish and settles it when pric
  const settled=await analyzeCompany({...args,priceHistory:fundamentals.years.map((y,i)=>[y.end.slice(0,7),100+i*10])} as Parameters<typeof analyzeCompany>[0]);
  expect(settled.tests.management.result).toBe('pass');expect(settled.tests.management.pending).not.toBe(true);
 });
-it('classifies brokers and exchanges for ROE without turning payment networks into banks',async()=>{
+it('keeps asset-light brokers and exchanges operating under W6',async()=>{
  const {kindFor}=await import('@/lib/value/universe');
- for(const industry of ['Capital Markets','Financial Data & Stock Exchanges','Securities Brokerage']) expect(kindFor({sector:'Financial Services',industry})).toBe('financial');
+ for(const industry of ['Capital Markets','Financial Data & Stock Exchanges','Securities Brokerage']) expect(kindFor({sector:'Financial Services',industry})).toBe('operating');
  expect(kindFor({sector:'Financial Services',industry:'Credit Services',id:'MA.US'})).toBe('operating');
 });
 it('formats axis ticks independently of data precision',async()=>{

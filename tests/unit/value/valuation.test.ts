@@ -35,11 +35,11 @@ describe("discounted owner earnings", () => {
   it("requires five owner earnings observations", () => {
     expect(value(makeYears({ n: 4 })).valuation).toBeNull();
   });
-  it("normalizes cyclicals over seven years", () => {
+  it("normalizes cyclicals over five years under W1", () => {
     const result = valueCompany({ years: makeYears({ overrides: (_, i) => ({ netIncome: i < 7 ? 50 : 100 }) }), kind: "operating", bondYield: null, cyclical: true });
     expect(result.valuation!.normalized).toBe(100);
     const different = valueCompany({ years: makeYears({ overrides: (_, i) => ({ netIncome: i < 8 ? 50 : 100 }) }), kind: "operating", bondYield: null, cyclical: true });
-    expect(different.valuation!.normalized).toBe(50);
+    expect(different.valuation!.normalized).toBe(100);
   });
   it("records the missing SBC and bond yield assumptions", () => {
     const result = valueCompany({ years: makeYears({ overrides: { sbc: null } }), kind: "operating", bondYield: null, cyclical: false });
@@ -55,9 +55,9 @@ describe("discounted owner earnings", () => {
   it("adds net cash after discounting and before dividing by shares", () => {
     expect(value(makeYears({ overrides: { cash: 200 } })).valuation!.perShare.mid).toBeCloseTo(134.3729, 4);
   });
-  it("caps positive growth at twelve percent", () => {
+  it("caps positive growth at eight percent", () => {
     const years = makeYears({ overrides: (_, i) => ({ revenue: 1000 * 1.2 ** i, netIncome: 100 * 1.2 ** i, operatingIncome: 125 * 1.2 ** i, preTaxIncome: 125 * 1.2 ** i, taxExpense: 25 * 1.2 ** i, capex: 60 * 1.2 ** i, da: 0, ppe: 0 }) });
-    expect(value(years).valuation!.growth).toBe(0.12);
+    expect(value(years).valuation!.growth).toBe(0.08);
   });
   it("floors shrinking growth at zero", () => {
     expect(value(makeYears({ overrides: (_, i) => ({ netIncome: 100 * 0.95 ** i }) })).valuation!.growth).toBe(0);

@@ -63,12 +63,15 @@ export function yahooSymbol(company: Pick<Company, "code" | "exchange">): string
   return `${code}${suffix}`;
 }
 
+export class PriceHistoryUnavailableError extends Error {}
+
 const yahooLimit = createLimiter({ perSecond: T.yahoo.perSecond });
 export async function fetchPriceHistory({ company, from, useYahoo = false }: { company: Company; from: string; useYahoo?: boolean }): Promise<PriceHistory> {
   if (!useYahoo && !company.id.endsWith(".JP")) return parseEodHistory(await eodhd(`eod/${encodeURIComponent(company.id)}`, { period: "m", from }));
   return yahooLimit(async () => {
     const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSymbol(company))}?range=10y&interval=1mo`;
     const response = await fetchWithRetry(url, { headers: { "User-Agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(60_000), retries: 0 });
+    if (response.status === 404 && company.id.endsWith(".JP")) throw new PriceHistoryUnavailableError("Yahoo has no history for this Japanese symbol");
     if (!response.ok) throw new Error(`Yahoo price history HTTP ${response.status}`);
     return parseYahooHistory(await response.json());
   });

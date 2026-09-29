@@ -14,7 +14,7 @@ it('keeps only fiscal years with sufficient prior earnings and never invents mis
   expect(history.map(row => row[0])).toEqual([2017,2018]);
   // ROE 20% / discount 10% times book/share 50 times FX 2 = 200.
   expect(valueHistory({...args,kind:"bank"})[0][2]).toBeCloseTo(200);
-  expect(valueHistory({...args,commodity:true})).toEqual([]);
+  expect(valueHistory({...args,commodity:true})).toEqual(history);
   expect(valueHistory({...args,fxRate:null})).toEqual([]);
   expect(valueHistory({...args,bondYield:null})).toEqual([]);
   f.integrity.ok = false;

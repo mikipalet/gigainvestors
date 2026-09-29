@@ -80,6 +80,15 @@ function foreignSecondary(row: Listing): boolean {
 }
 
 export function collapseListings(input: Listing[]): Array<{ primary: Id; listings: Id[] }> {
+  const japanese = input.filter(row => row.exchange === "JP");
+  if (japanese.length) {
+    // EDINET owns these identities and ADR aliases. The global heuristics strip
+    // Japanese characters and can mistake a home for an unrelated foreign acronym.
+    const order = new Map(input.map((row, index) => [id(row), index]));
+    return [...collapseListings(input.filter(row => row.exchange !== "JP")),
+      ...japanese.map(row => ({ primary: id(row), listings: [id(row)] }))]
+      .sort((a, b) => order.get(a.primary)! - order.get(b.primary)!);
+  }
   const byId = new Map(input.map((row) => [id(row), row]));
   const foreignHomeNames = new Set(input.filter((row) => row.exchange !== "BA" && !isAdr(row)
     && isinCountry(row) === listingCountry(row)).map((row) => normalizedName(row.name, row)));
@@ -243,14 +252,17 @@ export function collapseListings(input: Listing[]): Array<{ primary: Id; listing
 
 export function kindFor({ id, industry, lending }: {
   id?: string; sector: string | null; industry: string | null;
-  lending?: { receivables: number | null; loans?: number | null; totalAssets: number | null };
+  lending?: { receivables: number | null; loans?: number | null; clientAssets?: number | null; cash?: number | null; equity?: number | null; totalAssets: number | null };
 }): Kind {
-  if (/capital markets|financial data|stock exchanges|broker|securities/i.test(industry ?? "")) return "financial";
   if (/bank/i.test(industry ?? "")) return "bank";
   if (/^credit services$/i.test(industry ?? "") && id && T.kind.missingLoanBankIds.includes(id)
     && lending?.loans == null) return "bank";
-  if (/^credit services$/i.test(industry ?? "") && lending?.totalAssets != null && lending.totalAssets > 0
-    && ((lending.receivables ?? 0) + (lending.loans ?? 0)) / lending.totalAssets > T.kind.lendingAssetsRatio) return "bank";
+  // Brokers may report client cash among cash/investments rather than loan assets.
+  // Only infer that cash as client assets when it exceeds three times equity.
+  const clientAssets = lending?.clientAssets ?? (/^capital markets$/i.test(industry ?? "")
+    && (lending?.equity ?? 0) > 0 && (lending?.cash ?? 0) > 3 * lending!.equity! ? lending!.cash! : 0);
+  if (/^(credit services|capital markets)$/i.test(industry ?? "") && lending?.totalAssets != null && lending.totalAssets > 0
+    && ((lending.receivables ?? 0) + (lending.loans ?? 0) + clientAssets) / lending.totalAssets > T.kind.lendingAssetsRatio) return "bank";
   if (/insurance/i.test(industry ?? "")) return "insurer";
   return "operating";
 }

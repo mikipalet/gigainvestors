@@ -43,6 +43,7 @@ export interface Year {
   leaseLiabilities?: number | null;
   leaseDepreciationIncluded?: boolean; // IFRS 16 or equivalent ROU depreciation included in D&A
   sbc: number | null;
+  sbcIncomplete?: boolean; // one or more TTM quarters omit SBC
   nonRecurring: number | null;
   ocf: number | null;
   capex: number | null;
@@ -53,6 +54,7 @@ export interface Year {
   /** Positive annual growth in goodwill plus intangibles, not reported cash spending. */
   acquisitionsProxy?: boolean;
   receivables: number | null;
+  clientAssets?: number | null;
   loans?: number | null; // loan assets when supplied separately by the provider
   inventory: number | null;
   payables: number | null;
@@ -74,6 +76,7 @@ export interface Year {
 export interface Fundamentals {
   id: Id;
   currency: string; // reporting currency
+  ttm?: Year | null; // latest complete four-quarter flow observation
   years: Year[]; // ascending fy, one per fy
   integrity: { ok: boolean; reasons: string[]; notes?: string[] }; // Optional for older corpus files.
   fetchedAt: string;

@@ -1,7 +1,7 @@
 import { T } from "./config";
 import { financialBvps, tangibleEquity, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roiic, sum, withZeroDefaults } from "./metrics";
 import { ownerEarningsBridge } from "./owner-earnings";
-import type { Kind, Valuation, Year } from "./types";
+import type { Kind, Valuation, Year, PriceHistory } from "./types";
 
 export { ownerEarningsSeries } from "./owner-earnings";
 
@@ -14,6 +14,29 @@ export function presentValue({ oe, g, r, terminal }: { oe: number; g: number; r:
     pv += earnings / (1 + r) ** t;
   }
   return pv + earnings * (1 + terminal) / (r - terminal) / (1 + r) ** 10;
+}
+
+/** Fraction of positive asset additions represented by the acquisition proxy. */
+function organicRevenueGrowth(years: Year[], revenueGrowth: number | null): number | null {
+  const ys = last(years, 11);
+  if (revenueGrowth === null || ys.length !== 11) return null;
+  let acquired = 0, added = 0;
+  for (let i = 1; i < ys.length; i++) {
+    if (ys[i].acquisitions === null || ys[i].totalAssets === null || ys[i - 1].totalAssets === null) return null;
+    acquired += Math.max(0, ys[i].acquisitions!);
+    added += Math.max(0, ys[i].totalAssets! - ys[i - 1].totalAssets!);
+  }
+  const share = added > 0 ? Math.min(1, acquired / added) : acquired > 0 ? 1 : 0;
+  return revenueGrowth * (1 - share);
+}
+
+function postYearSplit(prices: PriceHistory | null, end: string, shareRatio: number): boolean {
+  const rows = [...(prices ?? [])].filter(([month, close]) => /^\d{4}-\d{2}$/.test(month) && close > 0 && Number.isFinite(close)).sort(([a], [b]) => a.localeCompare(b));
+  const monthIndex = (s: string) => Number(s.slice(0, 4)) * 12 + Number(s.slice(5, 7));
+  return rows.some(([month, close], i) => i > 0 && month > end.slice(0, 7)
+    && monthIndex(month) - monthIndex(rows[i - 1][0]) === 1
+    && (shareRatio > 1 ? close < rows[i - 1][1] : close > rows[i - 1][1])
+    && Math.abs(close / rows[i - 1][1] * shareRatio - 1) <= T.integrity.splitPriceTolerance);
 }
 
 function decadeCagr(series: Array<[number, number | null]>): number | null {
@@ -30,19 +53,29 @@ function reinvestmentRate(years: Year[]): number | null {
   return investments.some(x => x === null) || profits.some(x => x === null) ? null : ratio(sum(present(investments)), sum(present(profits)));
 }
 
-export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, shareAssumptions = [] }: {
-  years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; shareAssumptions?: string[];
+export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], ttm = null, priceHistory = null }: {
+  years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; ttm?: Year | null; priceHistory?: PriceHistory | null;
 }): { valuation: Valuation | null; reason: string | null } {
   const ys = withZeroDefaults(years).sort((a, b) => a.fy - b.fy), latest = ys.at(-1);
   if (!latest || latest.dilutedShares === null || latest.dilutedShares <= 0) return { valuation: null, reason: "no share count" };
+  const postSplit = reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
+    && Math.abs(currentShares / latest.dilutedShares - 1) > 0.1
+    && postYearSplit(priceHistory, latest.end, currentShares / latest.dilutedShares);
   const corrected = currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
-    && Math.max(currentShares / latest.dilutedShares, latest.dilutedShares / currentShares) > 1.5;
+    && Math.max(currentShares / latest.dilutedShares, latest.dilutedShares / currentShares) > 1.5 || postSplit;
   const shares = corrected ? currentShares : latest.dilutedShares;
   const discountRate = Math.max(T.valuation.minDiscount, (bondYield ?? 0.04) + T.valuation.bondSpread);
   const assumptions: string[] = [...shareAssumptions];
+  if (postSplit) assumptions.push('share count adjusted for post-year split/bonus');
   if (corrected) assumptions.push(`share count corrected to current ${shares}`);
   const priorRevenue = ys.find(y => y.fy === latest.fy - 3)?.revenue;
-  const decliningRevenue = latest.revenue !== null && priorRevenue != null && latest.revenue < priorRevenue;
+  const trailing = ttm && ttm.end > latest.end && (!ttm.currency || !currency || ttm.currency === currency) ? ttm : null;
+  if (trailing?.sbc === null) assumptions.push('TTM stock compensation not reported; assumed zero');
+  else if (trailing?.sbcIncomplete) assumptions.push('TTM stock compensation missing quarters assumed zero; reported quarters retained');
+  const currentRevenue = trailing?.revenue ?? latest.revenue;
+  const decliningRevenue = currentRevenue !== null && priorRevenue != null && currentRevenue < priorRevenue;
+  assumptions.push(trailing ? `TTM ending ${trailing.end}; ${trailing.revenue === null ? "quarterly revenue incomplete; zero-growth rule uses latest annual revenue" : `zero-growth rule compares TTM revenue with FY${latest.fy - 3} revenue`}`
+    : 'complete newer TTM unavailable; zero-growth rule uses latest annual revenue');
   assumptions.push(decliningRevenue ? "three-year revenue trend is negative; growth set to zero"
     : "growth set to zero when latest revenue is below three years earlier");
   if (bondYield === null) assumptions.push("local government bond yield unavailable; using 4%");
@@ -71,31 +104,36 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
     } };
   }
 
-  const history = ownerEarningsBridge(ys), window = cyclical ? 7 : 5;
+  const history = ownerEarningsBridge(ys), window = 5;
   const recent = history.filter(row => row.year.fy > latest.fy - window).filter((row): row is typeof row & { value: number; maintenanceCapex: number } => row.value !== null && row.maintenanceCapex !== null);
   if (recent.length < window) return { valuation: null, reason: "insufficient owner earnings history" };
   const medianEarnings = median(recent.map(row => row.value))!;
   const latestRow = recent.at(-1)!;
-  const normalized = Math.min(medianEarnings, latestRow.value);
+  // Full trailing capex is conservative and avoids treating a partial fiscal interval as annual growth capex.
+  const ttmRow = trailing ? ownerEarningsBridge([trailing])[0] : null;
+  if (ttmRow && ttmRow.value === null) assumptions.push('TTM owner earnings unavailable: quarterly NI, D&A or capex incomplete; annual normalization retained');
+  const normalized = Math.min(medianEarnings, latestRow.value, ttmRow?.value ?? Infinity);
   if (normalized <= 0) return { valuation: null, reason: "owner earnings not positive" };
   if (latest.cash === null || latest.totalDebt === null) return { valuation: null, reason: "net cash unavailable" };
   const netCash = latest.cash - latest.totalDebt;
   const oeGrowth = decadeCagr(history.map(row => [row.year.fy, ratio(row.value, row.year.dilutedShares)]));
   const revenueGrowth = decadeCagr(ys.map(y => [y.fy, ratio(y.revenue, y.dilutedShares)]));
   const incremental = roiic(ys), reinvestment = reinvestmentRate(ys);
-  const estimates = present([oeGrowth, revenueGrowth, incremental === null || reinvestment === null ? null : incremental * reinvestment]);
+  const organicGrowth = organicRevenueGrowth(ys, revenueGrowth);
+  const estimates = present([oeGrowth, revenueGrowth, organicGrowth, incremental === null || reinvestment === null ? null : incremental * reinvestment]);
   const growth = decliningRevenue ? 0 : clamp({ value: estimates.length ? Math.min(...estimates) : 0, min: 0, max: T.valuation.maxGrowth });
   const pv = (g: number, r: number) => presentValue({ oe: normalized, g, r, terminal: T.valuation.terminal });
   const midPv = pv(growth, discountRate);
   if ((midPv + netCash) / shares <= 0) return { valuation: null, reason: "debt exceeds the value of owner earnings" };
   if (last(years, window).some(y => y.sbc === null)) assumptions.push("stock compensation not reported");
   if (!estimates.length) assumptions.push("growth estimates unavailable; using zero growth");
-  assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", `owner earnings use the ${window}-year median capped at latest-year owner earnings`, "maintenance capex floored at the smaller of capex and D&A",
-    normalized < medianEarnings ? "bridge components use the latest owner earnings observation" : "bridge components use the median owner earnings observation");
+  assumptions.push(organicGrowth === null ? 'organic growth proxy unavailable' : 'revenue CAGR reduced by acquisition proxy share of positive assets added over ten years', 'operating growth capped at 8%');
+  assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", `owner earnings use the ${window}-year median capped at latest-year owner earnings and complete newer TTM owner earnings`, "maintenance capex floored at the smaller of capex and D&A",
+    ttmRow?.value === normalized ? "bridge components use TTM owner earnings; full TTM capex deducted; latest annual lease liabilities used" : normalized < medianEarnings ? "bridge components use the latest owner earnings observation" : "bridge components use the median owner earnings observation");
   if (recent.some(row => row.leaseCashCost > 0)) assumptions.push("lease payments estimated at 20% of lease liabilities");
   const ordered = [...recent].sort((a, b) => a.value - b.value);
   const center = Math.floor(ordered.length / 2);
-  const representative = normalized < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
+  const representative = ttmRow?.value === normalized ? [ttmRow as typeof latestRow] : normalized < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
   return { reason: null, valuation: { ...common, method: "owner_earnings", normalized, growth, netCash,
     perShare: { low: (pv(growth / 2, discountRate + 0.01) + netCash) / shares, mid: (midPv + netCash) / shares, high: (pv(growth, discountRate - 0.01) + netCash) / shares },
     equityBondYield: ratio(normalized, latest.marketCap),

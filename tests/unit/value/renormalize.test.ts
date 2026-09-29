@@ -80,3 +80,57 @@ it("rebuilds EDINET from raw with cached prices, restoring prior false adjustmen
   expect(readCorpusJson("fundamentals/YES.JP.json")).toEqual(yes);
   expect(readCorpusJson("fundamentals/NO.JP.json")).toEqual(no);
 });
+
+it('rebuilds JP integrity from untruncated EDINET years without using EODHD or the network', async()=>{
+  const dir=mkdtempSync(join(tmpdir(),'renormalize-japan-'));directories.push(dir);
+  vi.stubEnv('VALUE_CORPUS_DIR',dir);
+  vi.stubGlobal('fetch',()=>{throw new Error('API forbidden')});
+  const {normalizeEodhd}=await import('../../../lib/value/normalize-eodhd');
+  const base=normalizeEodhd(ko,'8058.JP').fundamentals;
+  const years=base.years.slice(-10).map(y=>({...y,currency:'JPY',dilutedShares:null}));
+  writeCorpusJson('raw/edinet/issuers/8058.JP.json',{years,fetchedAt:'2026-09-29T00:00:00Z'});
+  writeCorpusJson('fundamentals/8058.JP.json',{...base,currency:'JPY',years:years.slice(-3),integrity:{ok:false,reasons:['fewer than 7 annual periods']}});
+  writeCorpusJson('raw/eodhd/8058.JP.json',ko);
+  const old=new Date(Date.now()-60_000);utimesSync(corpusPath('raw/eodhd/8058.JP.json'),old,old);
+  const {default:stage}=await import('../../../scripts/value/stages/renormalize');
+  await stage({only:['8058.JP']});
+  expect(readCorpusJson<Fundamentals>('fundamentals/8058.JP.json')).toMatchObject({currency:'JPY',years,integrity:{ok:true},fetchedAt:'2026-09-29T00:00:00Z'});
+});
+
+it('preserves existing integrity notes when an older JP checkpoint has no raw years',async()=>{
+  const dir=mkdtempSync(join(tmpdir(),'renormalize-japan-notes-'));directories.push(dir);
+  vi.stubEnv('VALUE_CORPUS_DIR',dir);
+  const {normalizeEodhd}=await import('../../../lib/value/normalize-eodhd');
+  const base=normalizeEodhd(ko,'8058.JP').fundamentals;
+  const notes=['share count jumped 10x in 2016; history retained from 2016'];
+  writeCorpusJson('raw/edinet/issuers/8058.JP.json',{issuer:{}});
+  writeCorpusJson('fundamentals/8058.JP.json',{...base,currency:'JPY',years:base.years.slice(-10).map(y=>({...y,currency:'JPY',dilutedShares:null})),integrity:{ok:true,reasons:[],notes}});
+  const {default:stage}=await import('../../../scripts/value/stages/renormalize');
+  await stage({only:['8058.JP']});
+  expect(readCorpusJson<Fundamentals>('fundamentals/8058.JP.json')?.integrity.notes).toEqual(notes);
+});
+
+it.each(["renormalize", "renormalize-edinet"])("%s applies only price-corroborated EDINET splits and preserves raw years", async name => {
+  const dir = mkdtempSync(join(tmpdir(), "edinet-integrity-")); directories.push(dir);
+  vi.stubEnv("VALUE_CORPUS_DIR", dir);
+  vi.stubGlobal("fetch", () => { throw new Error("API forbidden"); });
+  const base = (await import("../../../lib/value/normalize-eodhd")).normalizeEodhd(ko, "YES.JP").fundamentals;
+  const years = base.years.slice(-7).map((y, i) => ({ ...y, fy: 2018 + i, end: `${2018 + i}-03-31`,
+    currency: "JPY", dilutedShares: i < 3 ? 100 : 500, netIncome: 200, equity: 1000 }));
+  for (const id of ["YES.JP", "NO.JP"]) {
+    appendJsonl("universe.jsonl", { id, source: "edinet" });
+    writeCorpusJson(`raw/edinet/issuers/${id}.json`, { years, fetchedAt: base.fetchedAt });
+    writeCorpusJson(`fundamentals/${id}.json`, { ...base, id, currency: "JPY", years });
+  }
+  writeCorpusJson("prices-history/YES.JP.json", [["2020-12", 100], ["2021-01", 20]]);
+  const { default: stage } = await import(`../../../scripts/value/stages/${name}`);
+  await stage({});
+  const yes = readCorpusJson<Fundamentals>("fundamentals/YES.JP.json")!;
+  expect(yes.years).toHaveLength(7);
+  expect(yes.years[0].dilutedShares).toBe(500);
+  expect(yes.integrity.notes).toEqual(["split 5:1 in 2021 adjusted"]);
+  expect(readCorpusJson<Fundamentals>("fundamentals/NO.JP.json")?.years.map(y => y.fy)).toEqual([2021, 2022, 2023, 2024]);
+  expect(readCorpusJson("raw/edinet/issuers/YES.JP.json")).toEqual({ years, fetchedAt: base.fetchedAt });
+  await stage({});
+  expect(readCorpusJson("fundamentals/YES.JP.json")).toEqual(yes);
+});

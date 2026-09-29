@@ -1,9 +1,10 @@
+import { loadCompanies } from "../../../lib/value/companies";
 import { mkdirSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { corpusPath, readCorpusJson, readJsonl } from "../../../lib/value/corpus";
+import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
 import { T } from "../../../lib/value/config";
 import type { Company, Fundamentals } from "../../../lib/value/types";
-import { normalizedName } from "../../../lib/value/universe";
+import { collapseListings, normalizedName } from "../../../lib/value/universe";
 import { exchangeCountries, nonHomeVenues, offshoreDomiciles } from "../../../lib/value/universe-config";
 
 interface Merge {
@@ -45,9 +46,18 @@ function writeJsonl(rel: string, rows: unknown[]): void {
 }
 
 /** Run after fundamentals and before reports/analyze. Uses only local evidence. */
-export default async function dedupe(): Promise<void> {
-  const companies = readJsonl<Company>("universe.jsonl");
+export default async function dedupe(options: { only?: string[]; limit?: number } = {}): Promise<void> {
+  if (options.only || options.limit) throw new Error("dedupe requires the full universe");
+  const input = loadCompanies({});
+  const byId = new Map(input.map(company => [company.id, company]));
+  const companies = collapseListings(input).map(group => ({ ...byId.get(group.primary)!,
+    listings: [...new Set(group.listings.flatMap(id => byId.get(id)!.listings))].sort() }));
+  // Re-collapsing must not discard cached secondary rows without an identity match.
+  const grouped = new Set(companies.flatMap(company => company.listings));
+  companies.push(...input.filter(company => !grouped.has(company.id)));
   if (!companies.length) throw new Error("Run the universe stage before dedupe");
+  writeCorpusJson(`dedupe/universe-${new Date().toISOString().replace(/:/g, '-')}.json`, input);
+  companies.sort((a, b) => (b.marketCapUsd ?? -Infinity) - (a.marketCapUsd ?? -Infinity) || a.id.localeCompare(b.id));
   const homes = new Map<string, Company[]>();
   for (const company of companies) {
     if (company.exchange === "US" || !company.isin || company.isin.startsWith("US") || nonHomeVenues.has(company.exchange)) continue;

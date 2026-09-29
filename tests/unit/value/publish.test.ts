@@ -38,7 +38,7 @@ function directory(): string {
   directories.push(dir);
   return dir;
 }
-beforeEach(() => { vi.stubGlobal("fetch", () => { throw new Error("Tests must not use the network"); }); });
+beforeEach(() => { vi.stubEnv("VALUE_CORPUS_DIR", directory()); vi.stubGlobal("fetch", () => { throw new Error("Tests must not use the network"); }); });
 afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); vi.restoreAllMocks(); vi.useRealTimers(); for (const dir of directories.splice(0)) rmSync(dir, { recursive: true, force: true }); });
 const git = (repo: string, args: string[]) => execFileSync("git", ["-C", repo, ...args], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }).trim();
 function repository(): string {

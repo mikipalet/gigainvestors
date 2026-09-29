@@ -56,6 +56,7 @@ export default async function DossierPage({ params }: Props) {
     <div data-testid="verdict" className="my-6 space-y-4">
       {dossier.status === "insufficient_data" && <p className="text-ink/40">Insufficient data</p>}
       <p className="text-lg">{displayValue ? `Estimated value ${amount(displayValue.perShare.low)} to ${amount(displayValue.perShare.high)}, mid ${amount(displayValue.perShare.mid)}` : dossier.valuationReason ?? "Not valued"} · {quote ? `Price ${company.currency} ${quote[0].toFixed(2)} (${quote[1]})` : "No price yet"}{mos != null && ` · ${(mos * 100).toFixed(1)}% margin of safety`}</p>
+      {quote?.[2] === "seed" && <p className="text-sm text-ink/60">price derived from market cap on {quote[1]}</p>}
       {mismatch && <p className="text-sm">{mismatch}</p>}
       <TestChips tests={tests} />
     </div>

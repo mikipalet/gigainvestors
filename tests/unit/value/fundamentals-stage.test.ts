@@ -57,7 +57,7 @@ it("applies limit after rolling ordering and refetches recent companies", async 
 
 it("counts ten calls locally and stops at the daily budget", async () => {
   for (const id of ["A.US", "B.US", "C.US"]) appendJsonl("universe.jsonl", { id });
-  vi.mocked(callsUsedToday).mockResolvedValue(98_990);
+  vi.mocked(callsUsedToday).mockResolvedValue(99_990);
   await stage({});
   expect(getFundamentals).toHaveBeenCalledTimes(1);
   expect(callsUsedToday).toHaveBeenCalledTimes(1);
@@ -66,7 +66,7 @@ it("counts ten calls locally and stops at the daily budget", async () => {
 
 it("resyncs usage after 200 companies and obeys the updated budget", async () => {
   for (let i = 0; i < 201; i++) appendJsonl("universe.jsonl", { id: `TEST${i}.US` });
-  vi.mocked(callsUsedToday).mockResolvedValueOnce(100).mockResolvedValueOnce(99_000);
+  vi.mocked(callsUsedToday).mockResolvedValueOnce(100).mockResolvedValueOnce(100_000);
   await stage({});
   expect(getFundamentals).toHaveBeenCalledTimes(200);
   expect(callsUsedToday).toHaveBeenCalledTimes(2);

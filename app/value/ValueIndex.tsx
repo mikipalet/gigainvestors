@@ -87,7 +87,7 @@ export default function ValueIndex({ rows, initialFilter, tags }: { rows: IndexR
   const allEntries = useMemo(() => source.map(row => {
     const quote = prices[row.c]?.[row.id]?.[0] ?? null;
     const result = priceTest({ valuation: row.v ? { perShare: { low: row.v[0], mid: row.v[1], high: row.v[2] } } as Valuation : null, price: quote, requiredMos: row.m ?? T.price.requiredMos.stable });
-    return { row, quote, date: prices[row.c]?.[row.id]?.[1], mos: row.st === 'i' ? null : result.mos };
+    return { row, quote, seed: prices[row.c]?.[row.id]?.[2] === "seed", date: prices[row.c]?.[row.id]?.[1], mos: row.st === 'i' ? null : result.mos };
   }), [source, prices]);
   const gate = filter.gate !== undefined && /^[0-6]$/.test(filter.gate) ? Number(filter.gate) : null;
   const counts = funnelCounts(allEntries.map(e => ({ tests: e.row.t, mos: e.mos, requiredMos: e.row.m })));

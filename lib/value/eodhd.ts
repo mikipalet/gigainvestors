@@ -1,3 +1,4 @@
+import { reserveEodhd, syncBudget } from "./budget";
 import { T } from "./config";
 import { createLimiter, fetchWithRetry } from "./http";
 
@@ -42,7 +43,7 @@ export async function eodhd<T>(path: string, params: Record<string, string> = {}
   return limit(async () => {
     let response: Response;
     try {
-      response = await fetchWithRetry(url.toString(), { signal: AbortSignal.timeout(T.eodhd.timeoutMs) });
+      response = await fetchWithRetry(url.toString(), { signal: AbortSignal.timeout(T.eodhd.timeoutMs), beforeAttempt: () => reserveEodhd({ endpoint: path.replace(/^\//, ""), monthly: params.period === "m" }) });
     } catch {
       throw new Error("EODHD request failed");
     }
@@ -72,5 +73,5 @@ export async function screenerPage({ offset, exchange }: { offset: number; excha
 export async function callsUsedToday(): Promise<number> {
   const result = await eodhd<{ apiRequests: number }>("user");
   if (!Number.isFinite(result.apiRequests) || result.apiRequests < 0) throw new Error("Invalid EODHD usage counter");
-  return result.apiRequests;
+  return syncBudget(result.apiRequests);
 }

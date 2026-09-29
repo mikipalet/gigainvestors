@@ -1,4 +1,5 @@
 export const T = {
+  budget: { dailyCalls: 100_000, extraCalls: 500, priceHistoryCalls: 15_000, bulkExchangeCost: 100, fundamentalsCost: 10, historyCost: 1 },
   minYears: 7,
   kind: {
     lendingAssetsRatio: 0.4,
@@ -10,7 +11,7 @@ export const T = {
   numeric: { minAvailableFraction: 2 / 3 },
   dedupe: { revenueTolerance: 0.02 },
   integrity: { maxShareRatio: 5, minShareRatio: 0.2, balanceTolerance: 0.10, balanceYears: 5, balanceMinFailures: 2 },
-  fundamentals: { maxYears: 30, dailyBudgetStop: 99_000, requestCost: 10, usageSyncCompanies: 200 },
+  fundamentals: { maxYears: 30, usageSyncCompanies: 200 },
   eodhd: { perSecond: 5, timeoutMs: 180_000, screenerPageSize: 100, screenerMaxOffset: 999 },
   publish: { maxCountDrop: 0.20, lockMaxAgeMs: 6 * 60 * 60 * 1000 },
   understandable: { years: 10, maxRevenueDeclines: 5, maxLossYears: 2, maxOpMarginCv: 0.35 },

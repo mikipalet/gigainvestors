@@ -1,3 +1,4 @@
+import { retainJapaneseCompanies } from "../../../lib/value/japan/companies";
 import { mkdirSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
@@ -47,7 +48,7 @@ export default async function universe(options: Options): Promise<void> {
   const groups = collapseListings(rows.map((row) => ({ code: row.Code, exchange: row.exchange, isin: row.Isin, name: row.Name, country: row.country, type: row.Type, listingExchange: row.Exchange,
     volume: caps.get(`${row.Code}.${row.exchange}`)?.avgvol_200d ?? caps.get(`${row.Code}.${row.exchange}`)?.avgvol_1d })));
   const usdRate = createUsdRate(options);
-  const companies: Company[] = [];
+  let companies: Company[] = [];
   for (const group of groups) {
     if (options.only && !group.listings.some((id) => options.only!.includes(id))) continue;
     const row = byId.get(group.primary)!;
@@ -64,6 +65,7 @@ export default async function universe(options: Options): Promise<void> {
       description: null, source: "eodhd",
     });
   }
+  companies = retainJapaneseCompanies(companies);
   const largestUsCap = companies.reduce((largest, company) => company.country === "US"
     ? Math.max(largest, company.marketCapUsd ?? 0) : largest, 0);
   if (largestUsCap > 0) {

@@ -80,6 +80,15 @@ function foreignSecondary(row: Listing): boolean {
 }
 
 export function collapseListings(input: Listing[]): Array<{ primary: Id; listings: Id[] }> {
+  const japanese = input.filter(row => row.exchange === "JP");
+  if (japanese.length) {
+    // EDINET owns these identities and ADR aliases. The global heuristics strip
+    // Japanese characters and can mistake a home for an unrelated foreign acronym.
+    const order = new Map(input.map((row, index) => [id(row), index]));
+    return [...collapseListings(input.filter(row => row.exchange !== "JP")),
+      ...japanese.map(row => ({ primary: id(row), listings: [id(row)] }))]
+      .sort((a, b) => order.get(a.primary)! - order.get(b.primary)!);
+  }
   const byId = new Map(input.map((row) => [id(row), row]));
   const foreignHomeNames = new Set(input.filter((row) => row.exchange !== "BA" && !isAdr(row)
     && isinCountry(row) === listingCountry(row)).map((row) => normalizedName(row.name, row)));

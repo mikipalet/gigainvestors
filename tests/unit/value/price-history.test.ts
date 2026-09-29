@@ -151,3 +151,17 @@ it.each([
 it('C7 rejects unknown exchanges instead of requesting a US namesake', () => {
   expect(() => yahooSymbol({code: 'TEST', exchange: 'UNKNOWN'})).toThrow('Unsupported Yahoo exchange');
 });
+it('records unavailable Japanese symbols without starving later history or replacing old prices',async()=>{
+  for(let i=0;i<21;i++) appendJsonl('universe.jsonl',company(`MISSING${i}.JP`));
+  appendJsonl('universe.jsonl',company('8058.JP'));
+  writeCorpusJson('prices-history/MISSING0.JP.json',[['2020-01',42]]);
+  vi.spyOn(console,'error').mockImplementation(()=>{});
+  vi.stubGlobal('fetch',async (url:string)=>url.includes('/8058.T?') ? Response.json(yahoo) : new Response('',{status:404}));
+  await run();
+  expect(readCorpusJson('prices-history/8058.JP.json')).not.toBeNull();
+  expect(readCorpusJson('prices-history/MISSING0.JP.json')).toEqual([['2020-01',42]]);
+  expect(readCorpusJson('prices-history/meta/MISSING1.JP.json')).toMatchObject({status:'unavailable'});
+  vi.stubGlobal('fetch',()=>{throw new Error('fresh unavailability should be cached')});
+  await run();
+  expect(readCorpusJson('prices-history/meta/MISSING1.JP.json')).toMatchObject({status:'unavailable'});
+});

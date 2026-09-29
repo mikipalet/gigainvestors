@@ -5,7 +5,7 @@ import { T } from "../../../lib/value/config";
 import { loadCompanies } from "../../../lib/value/companies";
 import { readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { callsUsedToday } from "../../../lib/value/eodhd";
-import { fetchPriceHistory, type CachedPriceHistory } from "../../../lib/value/price-history";
+import { PriceHistoryUnavailableError, fetchPriceHistory, type CachedPriceHistory } from "../../../lib/value/price-history";
 
 export default async function priceHistory({ only, limit, force = false }: { only?: string[]; limit?: number; force?: boolean }): Promise<void> {
   const now = new Date();
@@ -41,6 +41,14 @@ export default async function priceHistory({ only, limit, force = false }: { onl
       prices = await fetchPriceHistory({ company, from: from.toISOString().slice(0, 10), useYahoo });
       consecutiveFailures = 0;
     } catch (error) {
+      if (error instanceof PriceHistoryUnavailableError) {
+        // Delisted/local-exchange symbols are not a provider outage. Preserve any
+        // older prices, cache the miss, and allow later Tokyo symbols to proceed.
+        writeCorpusJson(`prices-history/meta/${company.id}.json`, { fetchedAt: now.toISOString(), status: "unavailable" });
+        consecutiveFailures = 0;
+        console.warn(`${company.id}: Yahoo history unavailable`);
+        continue;
+      }
       consecutiveFailures++;
       console.error(`${company.id}: price-history request failed, skipping`, error);
     }

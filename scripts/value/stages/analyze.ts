@@ -1,3 +1,5 @@
+import { currentShareInputs, leaseInputs } from "../../../lib/value/valuation-inputs";
+import { readPrices } from "../../../lib/value/price-files";
 import { validCompanyId } from "../../../lib/value/companies";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
@@ -29,6 +31,14 @@ export function loadSections({ company, report }: { company: Company; report: Re
 
 export default async function analyze({ only, limit, force, ask, getBondYield = bondYield, evidence = findEvidence }: Options): Promise<void> {
   const companies = readJsonl<Company>("universe.jsonl").filter(company => !only || only.includes(company.id));
+  // Offline repairs can change cached records that dedupe removed from the universe.
+  // Honor explicit IDs without adding those aliases back to published coverage.
+  const selected = new Set(companies.map(company => company.id));
+  for (const id of only ?? []) {
+    if (selected.has(id) || !validCompanyId(id, "analyze")) continue;
+    const cached = readCorpusJson<Company>(`companies/${id}.json`);
+    if (cached?.id === id) { companies.push(cached); selected.add(id); }
+  }
   const jobs = companies.flatMap(row => {
     if (!validCompanyId(row.id, "analyze")) return [];
     const fundamentals = readCorpusJson<Fundamentals>(`fundamentals/${row.id}.json`);
@@ -36,14 +46,20 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
     return fundamentals ? [{ company, fundamentals }] : [];
   }).slice(0, limit);
   const usdRate = createUsdRate({ force });
+  const prices = { ...readPrices(corpusPath("prices")), ...readPrices(corpusPath("publish-repo/prices")) };
   let cursor = 0;
   let written = 0;
   let skipped = 0;
   const failures: string[] = [];
   await Promise.all(Array.from({ length: Math.min(T.analyze.concurrency, jobs.length) }, async () => {
     while (cursor < jobs.length) {
-      const { company, fundamentals } = jobs[cursor++];
+      const { company, fundamentals: cachedFundamentals } = jobs[cursor++];
       try {
+        const raw = readCorpusJson<unknown>(`raw/eodhd/${company.id}.json`);
+        const fundamentals = raw ? { ...cachedFundamentals, years: cachedFundamentals.years.map(year => ({
+          ...year, ...leaseInputs(raw, year.end, company.country),
+        })) } : cachedFundamentals;
+        const shareInputs = currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);
         const report = readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`) ?? {
           id: company.id, kind: "description", url: null, filed: null, period: null, sections: [],
         } satisfies ReportMeta;
@@ -55,12 +71,12 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           company: {
             id: company.id, kind: company.kind, currency: company.currency, country: company.country,
             description: company.description, sector: company.sector, industry: company.industry,
-          }, fundamentals, report, sections, priceHistory, priceHistoryPending,
+          }, fundamentals, report, sections, priceHistory, priceHistoryPending, shareInputs,
           questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
-        const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, priceHistoryPending,
+        const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, priceHistoryPending, ...shareInputs,
           bondYield: fundamentals.integrity.ok ? await getBondYield(company.country) : null, ask, getBondYield, usdRate });
         if (!priceHistoryPending && priceHistory === null && result.tests.management.result === 'unclear') result.tests.management.reasons.push('Price history unavailable from provider');
         if (result.status === "scored" && Object.values(result.tests).every(test => test.numeric !== "fail")) {

@@ -65,11 +65,11 @@ describe("discounted owner earnings", () => {
   it("defaults growth to zero when all three estimates are unavailable", () => {
     expect(value(makeYears({ n: 5 })).valuation!.growth).toBe(0);
   });
-  it("reconciles bridge components to the median even when separate medians do not add up", () => {
+  it("reconciles bridge components to the latest year when it caps the median", () => {
     const years = makeYears({ n: 5, overrides: (_, i) => ({ netIncome: [100, 200, 100, 300, 100][i], da: [0, 0, 100, 0, 0][i], capex: 0 }) });
     const bridge = value(years).valuation!.bridge;
-    expect(bridge.slice(0, 4).reduce((total, item) => total + item.value, 0)).toBe(200);
-    expect(bridge[4].value).toBe(200);
+    expect(bridge.slice(0, 4).reduce((total, item) => total + item.value, 0)).toBe(100);
+    expect(bridge[4].value).toBe(100);
   });
 });
 

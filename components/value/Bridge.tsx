@@ -15,10 +15,11 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
     ['+ D&A', amount(component(/D&A/i))],
     ['− Maintenance capex', deduction(/maintenance capex/i)],
     ['− Stock compensation', deduction(/stock compensation/i)],
+    ...(component(/estimated lease payments/i) !== null ? [['− Estimated lease payments', deduction(/estimated lease payments/i)]] : []),
     ['= Owner earnings (normalized)', money(v.normalized)],
     ['× Present value of 10 years + terminal', pvFactor === null ? 'Not reported' : `${pvFactor.toFixed(2)}×`],
     ['+ Net cash', money(v.netCash)],
-    ['÷ Diluted shares', count(v.shares)],
+    ['÷ Shares used for valuation', count(v.shares)],
   ] : [
     ['Tangible book value per share', perShareMoney(v.normalized, v.currency)],
     ['Normalised return on tangible equity', formatMetric({ value: component(/normalized return on (tangible )?equity/i), format: 'pct' })],

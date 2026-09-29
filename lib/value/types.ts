@@ -39,6 +39,8 @@ export interface Year {
   netIncome: number | null;
   interestExpense: number | null;
   da: number | null;
+  leaseLiabilities?: number | null;
+  leaseDepreciationIncluded?: boolean; // IFRS 16 or equivalent ROU depreciation included in D&A
   sbc: number | null;
   nonRecurring: number | null;
   ocf: number | null;

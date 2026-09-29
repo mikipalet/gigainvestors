@@ -65,11 +65,11 @@ export function nopat(y: Year): number | null {
   return y.operatingIncome * (1 - clamp({ value: tax ?? 0.21, min: 0, max: 0.35 }));
 }
 export function roic(y: Year): number | null {
-  if ([y.equity, y.totalDebt, y.cash, y.goodwill, y.intangibles].some(x => x === null)) return null;
-  const capital = y.equity! + y.totalDebt! - y.cash! - y.goodwill! - y.intangibles!;
+  if ([y.equity, y.totalDebt, y.cash, y.goodwill].some(x => x === null)) return null;
+  const capital = y.equity! + y.totalDebt! - y.cash! - y.goodwill!;
   const profit = nopat(y);
   if (profit === null) return null;
-  // Zero marks a failed return year; positive earnings need no tangible capital.
+  // Zero marks a failed return year; positive earnings need no invested capital.
   return capital <= 0 ? profit > 0 ? Infinity : 0 : profit / capital;
 }
 export function tangibleEquity(y: Year): number | null {

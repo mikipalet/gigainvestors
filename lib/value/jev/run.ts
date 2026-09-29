@@ -17,7 +17,8 @@ function chunks(text: string): string[] {
   let chunk = "";
   let bytes = 0;
   for (const character of text) {
-    const size = Buffer.byteLength(character);
+    // The transport limits the JSON body, where controls, quotes and slashes expand.
+    const size = Buffer.byteLength(JSON.stringify(character)) - 2;
     if (bytes + size > T.jev.chunkTokens) {
       result.push(chunk);
       chunk = "";

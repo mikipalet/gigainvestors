@@ -18,3 +18,13 @@ For unlabelled US listings, dedupe requires equal normalized names, equal report
 Dedupe rewrites `universe.jsonl`, retaining the home company's identity, price currency, cap and listing aliases. `dedupe.jsonl` records source/target IDs, fiscal year, currency, both revenue values and their relative difference. Rerunning preserves the audit and does not repeat merges. Rerun dedupe after every universe rebuild, since universe rebuilds from raw listing data.
 
 Check-universe requires unique normalized names in the top 1,000 by market cap and checks the known primary, ADR, CDI, fractional-lot and venue regressions.
+
+Offline normalization repairs use `npm run value -- renormalize` for cached EODHD
+raw records and `npm run value -- renormalize-edinet` for cached EDINET issuer
+years. EODHD per-share history is already split-adjusted at source. Only EDINET
+can infer a split: a near-integer share change must also have a consecutive-month
+inverse price move within 20% of the split factor in that fiscal period, read
+from `prices-history/{id}.json`. Missing corroboration keeps the jump/truncation
+rules. Both rebuilds preserve `fetchedAt` and make no API calls. Reanalyze all
+changed IDs before publishing; explicit `analyze --only` IDs also accept cached
+company records outside the current universe, without adding them to publication.

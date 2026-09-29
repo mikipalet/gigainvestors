@@ -92,14 +92,14 @@ describe("live calibration round 1", () => {
     expect(result.numeric).toBe(count > 5 ? "fail" : "pass");
     expect(result.reasons.join(" ")).toContain(`${count} revenue declines`);
   });
-  it.each([0, -100])("R7 profitable nonpositive tangible capital %s passes ROIC without displaying Infinity", equity => {
+  it.each([0, -100])("R7 profitable nonpositive invested capital %s passes ROIC without displaying Infinity", equity => {
     const years = makeYears({ overrides: { equity } });
     expect(roic(years[0])).toBe(Infinity);
     const result = run(years).moat;
     expect(result.numeric).toBe("pass");
     expect(result.metrics.roicMedian).toBeNull();
     expect(result.metrics.roicSecondLowest).toBeNull();
-    expect(result.reasons).toContain("tangible capital is negative: returns effectively unlimited");
+    expect(result.reasons).toContain("invested capital is nonpositive: returns effectively unlimited");
     expect(result.series.roic.every(([, v]) => v === null)).toBe(true);
   });
   it.each([0, -10])("R7 nonpositive NOPAT %s with negative capital counts as a bad year", operatingIncome => {

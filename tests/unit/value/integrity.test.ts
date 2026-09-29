@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import ko from "../../fixtures/value/eodhd/fund-KO.US.json";
 import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
 import { checkIntegrity } from "../../../lib/value/integrity";
-import type { Fundamentals, Year } from "../../../lib/value/types";
+import type { Fundamentals, PriceHistory, Year } from "../../../lib/value/types";
 
 function series(fys: number[]): Fundamentals {
   const blank: Year = {
@@ -94,4 +94,117 @@ it("discards old gaps and uses a later share jump after a currency change", () =
   expect(result.ok).toBe(true);
   expect(result.reasons).toEqual([]);
   expect(f.years.map(y => y.fy)).toEqual([2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]);
+});
+
+it.each([
+  { ratio: 4.99, label: "5:1" },
+  { ratio: 0.1, label: "1:10" },
+])("adjusts all earlier shares for a $label split and is idempotent", ({ ratio, label }) => {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 3 ? 100 : 100 * ratio, netIncome: 200, equity: 1000,
+  }));
+  const evidence = { source: "edinet" as const, priceHistory: [["2021-05", 100], ["2021-06", 100 / ratio]] as PriceHistory };
+  f.integrity = checkIntegrity(f, evidence);
+  expect(f.years).toHaveLength(7);
+  expect(f.years.map(y => y.dilutedShares)).toEqual(Array(7).fill(100 * ratio));
+  expect(f.years[0].netIncome! / f.years[0].dilutedShares!).toBeCloseTo(2 / ratio);
+  expect(f.integrity.notes).toEqual([`split ${label} in 2021 adjusted`]);
+  f.integrity = checkIntegrity(f, evidence);
+  expect(f.years[0].dilutedShares).toBeCloseTo(100 * ratio);
+  expect(f.integrity.notes).toHaveLength(1);
+});
+
+it("truncates genuine 5x dilution when equity follows the shares but income does not", () => {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 3 ? 100 : 500, netIncome: 200, equity: i < 3 ? 1000 : 5000,
+  }));
+  const earlier = f.years[0];
+  const result = checkIntegrity(f, { source: "edinet", priceHistory: [["2021-05", 100], ["2021-06", 20]] });
+  expect(f.years.map(y => y.fy)).toEqual([2021, 2022, 2023, 2024]);
+  expect(earlier.dilutedShares).toBe(100);
+  expect(result.notes).toEqual(["share count jumped 5x in 2021; history retained from 2021"]);
+});
+
+it("does not infer splits from a noninteger share jump", () => {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 3 ? 100 : 550, netIncome: 200, equity: 1000,
+  }));
+  expect(checkIntegrity(f, { source: "edinet", priceHistory: [["2021-05", 100], ["2021-06", 20]] }).notes?.[0]).toContain("share count jumped");
+});
+
+it("rejects a split when income scales even though equity is flat", () => {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 3 ? 100 : 500, netIncome: i < 3 ? 200 : 1000, equity: 1000,
+  }));
+  expect(checkIntegrity(f, { source: "edinet", priceHistory: [["2021-05", 100], ["2021-06", 20]] }).notes).toEqual(["share count jumped 5x in 2021; history retained from 2021"]);
+});
+
+it("compounds successive splits without adjusting already adjusted data twice", () => {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 2 ? 100 : i < 4 ? 200 : 600, netIncome: 200, equity: 1000,
+  }));
+  const evidence = { source: "edinet" as const, priceHistory: [["2020-05", 100], ["2020-06", 50], ["2022-05", 90], ["2022-06", 30]] as PriceHistory };
+  f.integrity = checkIntegrity(f, evidence);
+  expect(f.years.map(y => y.dilutedShares)).toEqual([600, 600, 600, 600, 600, 600, 600]);
+  expect(f.integrity.notes).toEqual(["split 2:1 in 2020 adjusted", "split 3:1 in 2022 adjusted"]);
+  f.integrity = checkIntegrity(f, evidence);
+  expect(f.integrity.notes).toHaveLength(2);
+});
+
+function shareJump(ratio = 5): Fundamentals {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 3 ? 100 : 100 * ratio, netIncome: 200, equity: 1000,
+  }));
+  return f;
+}
+
+it("never adjusts EODHD's already adjusted shares even with matching prices", () => {
+  const f = shareJump(2);
+  const result = checkIntegrity(f, { source: "eodhd", priceHistory: [["2021-05", 100], ["2021-06", 50]] });
+  expect(f.years.map(y => y.dilutedShares)).toEqual([100, 100, 100, 200, 200, 200, 200]);
+  expect(result.notes).toEqual([]);
+});
+
+it("adjusts an EDINET 5x jump corroborated by a single-month 5x price drop", () => {
+  const f = shareJump();
+  checkIntegrity(f, { source: "edinet", priceHistory: [["2021-05", 100], ["2021-06", 20]] });
+  expect(f.years.map(y => y.dilutedShares)).toEqual([500, 500, 500, 500, 500, 500, 500]);
+});
+
+it.each<{ label: string; prices: PriceHistory | null }>([
+  { label: "absent history", prices: null },
+  { label: "flat prices", prices: [["2021-05", 100], ["2021-06", 100]] },
+  { label: "wrong direction", prices: [["2021-05", 100], ["2021-06", 500]] },
+  { label: "outside tolerance", prices: [["2021-05", 100], ["2021-06", 30]] },
+  { label: "missing intervening month", prices: [["2021-04", 100], ["2021-06", 20]] },
+  { label: "drop before fiscal year", prices: [["2020-11", 100], ["2020-12", 20]] },
+  { label: "drop after fiscal year", prices: [["2022-01", 100], ["2022-02", 20]] },
+  { label: "gradual drop", prices: [["2021-04", 100], ["2021-05", 50], ["2021-06", 20]] },
+])("truncates EDINET's uncorroborated 5x jump: $label", ({ prices }) => {
+  const f = shareJump();
+  const before = f.years[0];
+  const result = checkIntegrity(f, { source: "edinet", priceHistory: prices });
+  expect(f.years.map(y => y.fy)).toEqual([2021, 2022, 2023, 2024]);
+  expect(before.dilutedShares).toBe(100);
+  expect(result.notes).toEqual(["share count jumped 5x in 2021; history retained from 2021"]);
+});
+
+it("uses fiscal end dates, accepts year-boundary prices and the 20% factor boundary", () => {
+  const f = shareJump();
+  f.years.forEach(y => { y.end = `${y.fy}-03-31`; });
+  checkIntegrity(f, { source: "edinet", priceHistory: [["2020-12", 100], ["2021-01", 25]] });
+  expect(f.years).toHaveLength(7);
+  expect(f.years[0].dilutedShares).toBe(500);
+});
+
+it("does not infer a split when source is unknown", () => {
+  const f = shareJump();
+  checkIntegrity(f);
+  expect(f.years.map(y => y.fy)).toEqual([2021, 2022, 2023, 2024]);
 });

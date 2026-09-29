@@ -103,6 +103,19 @@ describe("company questions", () => {
     expect(answers.find((a) => a.q === "revenue_model")?.probability).toBeCloseTo(0.6);
   });
 
+  it("fits escaped report text inside the serialized Jev request budget without losing text", async () => {
+    const text = '\n"\\\u0000日本😀'.repeat(5000);
+    ask.mockImplementation(async ({ state, questions }) => {
+      if (Buffer.byteLength(JSON.stringify({ model: "jev-latest", state, questions })) > 32_000) {
+        throw new Error("Jev request exceeds conservative context budget");
+      }
+      return response(questions, 0.8);
+    });
+    const answers = await askCompany({ id: "ESCAPED.US", sections: { business: text } });
+    expect(answers.find(a => a.q === "brand")?.value).toBe(0.8);
+    expect(ask.mock.calls.map(([input]) => input.state).join("")).toBe(text);
+  });
+
   it("preserves Unicode while keeping chunks within a conservative token bound", async () => {
     const text = "日本😀".repeat(5000);
     await askCompany({ id: "8058.JP", sections: { business: text } });

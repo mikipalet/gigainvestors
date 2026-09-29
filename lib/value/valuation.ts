@@ -30,25 +30,32 @@ function reinvestmentRate(years: Year[]): number | null {
   return investments.some(x => x === null) || profits.some(x => x === null) ? null : ratio(sum(present(investments)), sum(present(profits)));
 }
 
-export function valueCompany({ years, kind, bondYield, cyclical, currency = "" }: {
-  years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string;
+export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, shareAssumptions = [] }: {
+  years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; shareAssumptions?: string[];
 }): { valuation: Valuation | null; reason: string | null } {
   const ys = withZeroDefaults(years).sort((a, b) => a.fy - b.fy), latest = ys.at(-1);
   if (!latest || latest.dilutedShares === null || latest.dilutedShares <= 0) return { valuation: null, reason: "no share count" };
-  const shares = latest.dilutedShares;
+  const corrected = currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
+    && Math.max(currentShares / latest.dilutedShares, latest.dilutedShares / currentShares) > 1.5;
+  const shares = corrected ? currentShares : latest.dilutedShares;
   const discountRate = Math.max(T.valuation.minDiscount, (bondYield ?? 0.04) + T.valuation.bondSpread);
-  const assumptions: string[] = [];
+  const assumptions: string[] = [...shareAssumptions];
+  if (corrected) assumptions.push(`share count corrected to current ${shares}`);
+  const priorRevenue = ys.find(y => y.fy === latest.fy - 3)?.revenue;
+  const decliningRevenue = latest.revenue !== null && priorRevenue != null && latest.revenue < priorRevenue;
+  assumptions.push(decliningRevenue ? "three-year revenue trend is negative; growth set to zero"
+    : "growth set to zero when latest revenue is below three years earlier");
   if (bondYield === null) assumptions.push("local government bond yield unavailable; using 4%");
   if (!currency) assumptions.push("reporting currency not supplied");
   const common = { currency, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
 
   if (kind !== "operating") {
-    const book = financialBvps(latest);
+    const book = financialBvps({ ...latest, dilutedShares: shares });
     if (book === null || book <= 0) return { valuation: null, reason: "book value not positive" };
     const returns = last(ys, 10).map(roe).filter((value): value is number => value !== null);
     if (returns.length < 5) return { valuation: null, reason: "insufficient return on tangible equity history" };
     const normalizedRoe = median(returns)!;
-    const growth = clamp({ value: decadeCagr(ys.map(y => [y.fy, financialBvps(y)])) ?? 0, min: 0, max: T.valuation.finMaxGrowth });
+    const growth = decliningRevenue ? 0 : clamp({ value: decadeCagr(ys.map(y => [y.fy, financialBvps(y)])) ?? 0, min: 0, max: T.valuation.finMaxGrowth });
     const multiple = (r: number) => clamp({ value: (normalizedRoe - growth) / (r - growth), min: 0, max: 4 });
     if (multiple(discountRate) * book <= 0) return { valuation: null, reason: "justified price to book is zero" };
     return { reason: null, valuation: { ...common, method: "book_value", normalized: book, growth, netCash: 0,
@@ -67,7 +74,9 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "" }
   const history = ownerEarningsBridge(ys), window = cyclical ? 7 : 5;
   const recent = history.filter(row => row.year.fy > latest.fy - window).filter((row): row is typeof row & { value: number; maintenanceCapex: number } => row.value !== null && row.maintenanceCapex !== null);
   if (recent.length < window) return { valuation: null, reason: "insufficient owner earnings history" };
-  const normalized = median(recent.map(row => row.value))!;
+  const medianEarnings = median(recent.map(row => row.value))!;
+  const latestRow = recent.at(-1)!;
+  const normalized = Math.min(medianEarnings, latestRow.value);
   if (normalized <= 0) return { valuation: null, reason: "owner earnings not positive" };
   if (latest.cash === null || latest.totalDebt === null) return { valuation: null, reason: "net cash unavailable" };
   const netCash = latest.cash - latest.totalDebt;
@@ -75,16 +84,18 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "" }
   const revenueGrowth = decadeCagr(ys.map(y => [y.fy, ratio(y.revenue, y.dilutedShares)]));
   const incremental = roiic(ys), reinvestment = reinvestmentRate(ys);
   const estimates = present([oeGrowth, revenueGrowth, incremental === null || reinvestment === null ? null : incremental * reinvestment]);
-  const growth = clamp({ value: estimates.length ? Math.min(...estimates) : 0, min: 0, max: T.valuation.maxGrowth });
+  const growth = decliningRevenue ? 0 : clamp({ value: estimates.length ? Math.min(...estimates) : 0, min: 0, max: T.valuation.maxGrowth });
   const pv = (g: number, r: number) => presentValue({ oe: normalized, g, r, terminal: T.valuation.terminal });
   const midPv = pv(growth, discountRate);
   if ((midPv + netCash) / shares <= 0) return { valuation: null, reason: "debt exceeds the value of owner earnings" };
   if (last(years, window).some(y => y.sbc === null)) assumptions.push("stock compensation not reported");
   if (!estimates.length) assumptions.push("growth estimates unavailable; using zero growth");
-  assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", "bridge components use the median owner earnings observation");
+  assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", `owner earnings use the ${window}-year median capped at latest-year owner earnings`, "maintenance capex floored at the smaller of capex and D&A",
+    normalized < medianEarnings ? "bridge components use the latest owner earnings observation" : "bridge components use the median owner earnings observation");
+  if (recent.some(row => row.leaseCashCost > 0)) assumptions.push("lease payments estimated at 20% of lease liabilities");
   const ordered = [...recent].sort((a, b) => a.value - b.value);
   const center = Math.floor(ordered.length / 2);
-  const representative = ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
+  const representative = normalized < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
   return { reason: null, valuation: { ...common, method: "owner_earnings", normalized, growth, netCash,
     perShare: { low: (pv(growth / 2, discountRate + 0.01) + netCash) / shares, mid: (midPv + netCash) / shares, high: (pv(growth, discountRate - 0.01) + netCash) / shares },
     equityBondYield: ratio(normalized, latest.marketCap),
@@ -93,6 +104,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "" }
       { label: "+ D&A", value: mean(representative.map(row => row.year.da!))! },
       { label: "− maintenance capex", value: -mean(representative.map(row => row.maintenanceCapex))! },
       { label: "− stock compensation", value: -mean(representative.map(row => row.year.sbc ?? 0))! },
+      ...(representative.some(row => row.leaseCashCost > 0) ? [{ label: "− estimated lease payments", value: -mean(representative.map(row => row.leaseCashCost))! }] : []),
       { label: "= owner earnings", value: normalized },
       { label: "× PV factor", value: midPv / normalized },
       { label: "+ net cash", value: netCash },

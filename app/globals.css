@@ -154,3 +154,9 @@ a.tile-edge:hover {
 .value-viz .viz-tooltip { min-height: 22px; font-size: 11px; color: var(--viz-muted); }
 @media (prefers-reduced-motion: reduce) { .value-viz * { transition: none !important; animation: none !important; } }
 .value-viz .tabular-nums, .value-viz.tabular-nums { font-variant-numeric: tabular-nums; }
+
+.value-viz .viz-point { width: 18px; height: 24px; transform: translate(-50%, -50%); border: 0; background: transparent; cursor: crosshair; }
+.value-viz .viz-point:focus-visible { outline: 1px solid var(--viz-ink); outline-offset: 2px; }
+.value-viz .viz-tooltip { min-height: 2.5em; }
+.value-virtual tr[data-company-row] { height: 124px; }
+.value-virtual tr[data-company-row] td:first-child > a { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }

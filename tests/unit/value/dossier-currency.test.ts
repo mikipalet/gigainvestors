@@ -32,3 +32,9 @@ it('uses converted trading values for both the headline and margin', async () =>
   expect(html).toContain('Price: pass');
   expect(html).not.toContain('not compared');
 });
+it('does not label newer monthly prices as a new fiscal year', async () => {
+  dossier.priceHistory!.push(['2026-09', 6]);
+  const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
+  expect(html).toContain('last fiscal year FY2025');
+  expect(html).not.toContain('last fiscal year FY2026');
+});

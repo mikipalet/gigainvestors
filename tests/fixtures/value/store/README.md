@@ -10,3 +10,11 @@ These are synthetic Task 12 presentation fixtures, not recorded financial data o
 - Dossier filenames use the shared FNV-1a shard function. top.json prerenders KO, DAL, JPM and FX; other fixtures render on demand.
 
 All value data requests in browser tests are intercepted from this directory. No live financial API calls are needed. KO has synthetic 2016–2025 series and an internally consistent owner-earnings bridge. The bank has a separate book-value bridge.
+
+Round 3 adds synthetic annual value ranges, monthly closes, per-share series and
+acquisition/impairment/share-change events for KO, DAL, JPM and OXY. KO uses a 25%
+required discount, JPM 35%, DAL/OXY 50%. DAL/OXY include zero and negative per-share
+earnings to exercise honest gaps on logarithmic plots. These histories and events
+are illustrative, not company facts or reconstructed investment recommendations.
+Index rows include the fixture's ROIC history and required discount; absent fields
+on other dossiers continue to exercise compatibility with earlier publications.

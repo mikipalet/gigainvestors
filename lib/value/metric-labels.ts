@@ -1,10 +1,10 @@
 import { T } from './config';
 export type MetricFormat = 'pct' | 'pp' | 'x' | 'money' | 'count' | 'years' | 'yesno';
-export const metricLabels: Record<string, { label: string; format: MetricFormat; threshold?: number; better?: 'higher' | 'lower'; strict?: boolean }> = {
-  historyYears: { label: 'Financial history', format: 'years', threshold: T.understandable.years, better: 'higher' },
-  revenueDeclines: { label: 'Years with declining revenue', format: 'count', threshold: T.understandable.maxRevenueDeclines, better: 'lower' },
-  lossYears: { label: 'Years with a net loss', format: 'count', threshold: T.understandable.maxLossYears, better: 'lower' },
-  opMarginCv: { label: 'Operating margin variation', format: 'x', threshold: T.understandable.maxOpMarginCv, better: 'lower', strict: true },
+export const metricLabels: Record<string, { label: string; format: MetricFormat; threshold?: number; better?: 'higher' | 'lower'; strict?: boolean; nonNegative?: boolean }> = {
+  historyYears: { nonNegative: true, label: 'Financial history', format: 'years', threshold: T.understandable.years, better: 'higher' },
+  revenueDeclines: { nonNegative: true, label: 'Years with declining revenue', format: 'count', threshold: T.understandable.maxRevenueDeclines, better: 'lower' },
+  lossYears: { nonNegative: true, label: 'Years with a net loss', format: 'count', threshold: T.understandable.maxLossYears, better: 'lower' },
+  opMarginCv: { nonNegative: true, label: 'Operating margin variation', format: 'x', threshold: T.understandable.maxOpMarginCv, better: 'lower', strict: true },
   roicMedian: { label: 'ROIC, 10-year median', format: 'pct', threshold: T.moat.roicMedian, better: 'higher' },
   roicWorst3: { label: 'ROIC, second-lowest year', format: 'pct', threshold: T.moat.roicWorst3, better: 'higher' },
   roeMedian: { label: 'ROE, 10-year median', format: 'pct', threshold: T.moat.roeMedianFin, better: 'higher' },
@@ -23,7 +23,7 @@ export const metricLabels: Record<string, { label: string; format: MetricFormat;
   roicTrend: { label: 'ROIC, annual change', format: 'pp' },
   accruals: { label: 'Sloan accruals', format: 'pct', threshold: T.accounting.maxAccruals, better: 'lower', strict: true },
   receivablesGrowthGap: { label: 'Receivables growth above revenue growth', format: 'pp', threshold: T.accounting.maxRecvGap, better: 'lower', strict: true },
-  restructuringYears: { label: 'Restructuring years, last five', format: 'count', threshold: T.accounting.maxRestructYears, better: 'lower' },
+  restructuringYears: { nonNegative: true, label: 'Restructuring years, last five', format: 'count', threshold: T.accounting.maxRestructYears, better: 'lower' },
   sbcToOcf: { label: 'Stock compensation / operating cash flow', format: 'pct', threshold: T.accounting.maxSbcToOcf, better: 'lower', strict: true },
   goodwillIntangiblesToEquity: { label: 'Goodwill and intangibles / equity', format: 'x' },
   marginOfSafety: { label: 'Margin of safety', format: 'pct', threshold: T.price.passMos, better: 'higher' },

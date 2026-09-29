@@ -5,7 +5,7 @@ import { BuffettFunnel } from '@/components/value/viz/BuffettFunnel';
 import { MarginStrip } from '@/components/value/viz/MarginStrip';
 import { funnelCounts } from '@/lib/value/viz/layout';
 import { T } from '@/lib/value/config';
-import { priceTest } from "@/lib/value/price-test";
+import { priceTest } from "@/lib/value/site-price-test";
 import { QUALITY_TESTS, type IndexRow, type PriceMap, type Valuation } from "@/lib/value/types";
 
 import { Filters, type FilterState } from './_components/Filters';
@@ -86,15 +86,18 @@ export default function ValueIndex({ rows, initialFilter, tags }: { rows: IndexR
   const countries = [...new Set([...rows, ...Object.values(countryRows).flat()].map(row => row.c))].sort();
   const allEntries = useMemo(() => source.map(row => {
     const quote = prices[row.c]?.[row.id]?.[0] ?? null;
-    const result = priceTest(row.v ? { perShare: { low: row.v[0], mid: row.v[1], high: row.v[2] } } as Valuation : null, quote);
-    return { row, quote, mos: row.st === 'i' ? null : result.mos };
+    const result = priceTest({ valuation: row.v ? { perShare: { low: row.v[0], mid: row.v[1], high: row.v[2] } } as Valuation : null, price: quote, requiredMos: row.m });
+    return { row, quote, date: prices[row.c]?.[row.id]?.[1], mos: row.st === 'i' ? null : result.mos };
   }), [source, prices]);
   const gate = filter.gate !== undefined && /^[0-6]$/.test(filter.gate) ? Number(filter.gate) : null;
-  const counts = funnelCounts(allEntries.map(e => ({ tests: e.row.t, mos: e.mos })));
+  const counts = funnelCounts(allEntries.map(e => ({ tests: e.row.t, mos: e.mos, requiredMos: e.row.m })));
+  const onlyFailures = [0, ...QUALITY_TESTS.map((_, i) => allEntries.filter(e => e.row.t[i] === 'F' && [...e.row.t].every((t, j) => j === i || t === 'P')).length), allEntries.filter(e => e.row.t === 'PPPPP' && e.mos !== null && e.mos < (e.row.m ?? T.price.passMos)).length];
+  const dates = allEntries.flatMap(e => e.date ? [e.date] : []).sort();
+  const date = dates.length ? dates[0] === dates.at(-1) ? dates[0] : `${dates[0]} to ${dates.at(-1)}` : null;
   const selectedTags = (filter.tags ?? "").split(",").filter(Boolean);
   const displayed = useMemo(() => {
     return allEntries.filter(({ row, mos }) => {
-      if (gate !== null) return row.t.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || (mos !== null && mos >= T.price.passMos));
+      if (gate !== null) return row.t.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || (mos !== null && mos >= (row.m ?? T.price.passMos)));
       if (filter.sector && row.s !== filter.sector) return false;
       if (filter.held === "1" && !row.h) return false;
       if (selectedTags.some((tag) => !row.g.includes(tag))) return false;
@@ -114,8 +117,8 @@ export default function ValueIndex({ rows, initialFilter, tags }: { rows: IndexR
 
   return <div>
     <div className="mb-8 grid grid-cols-1 gap-8 border-t border-ink/20 pt-6 lg:grid-cols-2" style={{ opacity: loading ? .6 : 1 }} aria-busy={loading}>
-      <BuffettFunnel counts={counts} selected={gate} onSelect={gate => { setLimit(200); setFilter(current => ({ ...(current.country ? { country: current.country } : {}), gate: String(gate), sort: current.sort ?? 'mos', direction: current.direction ?? 'desc' })); }} />
-      <MarginStrip entries={allEntries.flatMap(e => e.row.t === 'PPPPP' && e.mos !== null ? [{ id: e.row.id, name: e.row.n, mos: e.mos }] : [])} />
+      <BuffettFunnel counts={counts} onlyFailures={onlyFailures} date={date} selected={gate} onSelect={gate => { setLimit(200); setFilter(current => ({ ...(current.country ? { country: current.country } : {}), gate: String(gate), sort: current.sort ?? 'mos', direction: current.direction ?? 'desc' })); }} />
+      <MarginStrip date={date} entries={allEntries.flatMap(e => e.row.t === 'PPPPP' && e.mos !== null ? [{ id: e.row.id, name: e.row.n, mos: e.mos, requiredMos: e.row.m ?? T.price.passMos, date: e.date }] : [])} />
       <p className="text-xs text-ink/55 lg:col-span-2">Counts describe this loaded index{country ? ` (${country})` : ', a shortlist of quality companies and near misses'}, not the full global universe.</p>
     </div>
     {gate !== null && <p className="mb-3 text-xs">Cumulative gate {gate} active. <button className="underline" onClick={() => change('gate', '')}>Reset to quality default</button></p>}

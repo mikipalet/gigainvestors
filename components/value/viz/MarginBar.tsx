@@ -1,5 +1,5 @@
-import { clamp } from '@/lib/value/viz/layout';
+import { marginExtent } from '@/lib/value/viz/research';
 export function MarginBar({ value }: { value: number }) {
-  const extent = Math.abs(clamp(value)) * 38;
-  return <span className="value-viz inline-flex flex-col items-end gap-1 tabular-nums"><span>{(value * 100).toFixed(1)}%</span><svg width="80" height="10" role="img" tabIndex={0} aria-label={`${(value * 100).toFixed(1)}% margin of safety`}><title>{`${(value * 100).toFixed(1)}% margin of safety`}</title><rect x={value < 0 ? 40 - extent : 40} y="1" width={extent} height="8" fill={value < 0 ? 'var(--viz-sell-tint)' : 'var(--viz-buy-tint)'} /><line x1="40" x2="40" y1="0" y2="10" stroke="var(--viz-muted)" /></svg></span>;
+  const extent = marginExtent(value);
+  return <span className="value-viz inline-flex flex-col items-end gap-1 tabular-nums"><span>{(value * 100).toFixed(1)}%</span><span aria-hidden="true" className="relative block h-2 w-12 bg-ink/5"><span className="absolute inset-y-0 left-1/2 border-l border-ink/55"/><span className="absolute inset-y-0" style={{ width: extent, left: value < 0 ? 24 - extent : 24, background: value < 0 ? 'var(--viz-sell)' : 'var(--viz-buy)' }}/></span></span>;
 }

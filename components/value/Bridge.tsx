@@ -27,9 +27,9 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
   return <section data-testid="valuation-bridge" className="border-t border-ink/20 py-6">
     <h2 className="mb-4 text-xl font-semibold">{v.method === 'book_value' ? 'Book value bridge' : 'Owner earnings bridge'}</h2>
     <p className="mb-3 text-sm text-ink/60">Values in {v.currency}, except shares and rates.</p>
-    {v.method === 'owner_earnings' && <OwnerEarningsWaterfall valuation={v} />}
-    <details open={v.method === 'book_value'} className="text-sm"><summary className="mb-3 cursor-pointer text-ink/55">Show as table</summary>
-    <table className="w-full table-fixed text-left text-sm"><caption className="sr-only">Valuation bridge in {v.currency}</caption><tbody>{rows.map(([label, value]) => <tr key={label} className="border-t border-ink/15"><th scope="row" className="w-1/2 py-2 pr-4 font-normal">{label}</th><td className="py-2 text-right tabular-nums">{value}</td></tr>)}</tbody></table></details>
+    <div className="flex flex-col"><div className="order-2 sm:order-1">{v.method === 'owner_earnings' && <OwnerEarningsWaterfall valuation={v} />}</div>
+    <details open={v.method === 'book_value'} className="order-1 mb-4 text-sm sm:order-2"><summary className="mb-3 cursor-pointer text-ink/55">Show as table</summary>
+    <table className="w-full table-fixed text-left text-sm"><caption className="sr-only">Valuation bridge in {v.currency}</caption><tbody>{rows.map(([label, value]) => <tr key={label} className="border-t border-ink/15"><th scope="row" className="w-1/2 py-2 pr-4 font-normal">{label}</th><td className="py-2 text-right tabular-nums">{value}</td></tr>)}</tbody></table></details></div>
     <h3 className="mt-5 text-sm font-medium">Assumptions</h3>
     <ul className="mt-2 space-y-1 text-xs text-ink/60">{(['growth', 'discountRate', 'terminalGrowth', 'bondYield', 'equityBondYield'] as const).map(key => <li key={key} className="flex justify-between gap-4"><span>{metricLabels[key].label}</span><span>{formatMetric({ value: v[key], format: 'pct' })}</span></li>)}</ul>
     <ul className="mt-3 space-y-1 text-xs text-ink/60">{v.assumptions.map((assumption, i) => <li key={i}>{assumption}</li>)}</ul>

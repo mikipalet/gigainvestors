@@ -31,7 +31,7 @@ describe("value evidence presentation", () => {
   it("shows source evidence and flags untrusted answers as informational", () => {
     const test = dossier.tests.moat;
     const html = renderToStaticMarkup(createElement(TestSection, { test: { ...test, jev: test.jev.map((answer) => ({ ...answer, trusted: false })) } }));
-    expect(html).toContain("90% probability");
+    expect(html).toContain("9 in 10");
     expect(html).toContain("Our brands encourage repeat purchases.");
     expect(html).toContain("Informational only");
     expect(html).toContain("Source: business");

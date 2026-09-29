@@ -80,10 +80,12 @@ test("limits the table and expands without losing sorting", async ({ page }) => 
   const rows = JSON.parse(await readFile(path.join(root, "index/US.json"), "utf8"));
   await page.route("**/main/index/US.json", (route) => route.fulfill({ contentType: "application/json", body: JSON.stringify(Array.from({ length: 205 }, (_, index) => ({ ...rows[0], id: `FIX${index}.US`, n: `Company ${String(index).padStart(3, "0")}` }))) }));
   await page.goto("/value?country=US&sort=name&direction=asc");
-  await expect(page.getByTestId("results-table").locator("tbody tr")).toHaveCount(200);
+  await expect(page.getByTestId("results-table").locator("[data-company-row]")).toHaveCount(50);
   await page.getByRole("button", { name: "Show more" }).click();
-  await expect(page.getByTestId("results-table").locator("tbody tr")).toHaveCount(205);
-  await expect(page.getByTestId("results-table").locator("tbody tr").last()).toContainText("Company 204");
+  await expect(page.getByTestId("results-table")).toHaveAttribute("aria-rowcount", "206");
+  await page.getByTestId("results-scroll").evaluate(el => { el.scrollTop = el.scrollHeight; });
+  await expect(page.getByTestId("results-table").locator("[data-company-row]")).toHaveCount(50);
+  await expect(page.getByTestId("results-table").locator("[data-company-row]").last()).toContainText("Company 204");
 });
 
 test("subdomain rewrites dotted company IDs and its own sitemap", async ({ request }) => {
@@ -126,8 +128,8 @@ test('phone table, default toggle, readable metrics and relevant series', async 
   await page.goto('/value/ko.us');
   await expect(page.locator('[data-test="moat"]')).toContainText('ROIC, 10-year median');
   await expect(page.locator('[data-test="moat"]')).toContainText('24.5%');
-  await expect(page.locator('[data-test="understandable"] [data-testid="threshold-series"] svg')).toHaveCount(2);
-  await expect(page.locator('[data-test="management"] [data-testid="threshold-series"] svg')).toHaveAttribute('aria-label', /Diluted shares, fiscal years 2016 to 2025/);
+  await expect(page.locator('[data-test="understandable"] [data-testid="threshold-series"] svg')).toHaveCount(3);
+  await expect(page.getByRole('group', { name: 'Diluted shares fiscal years' })).toBeVisible();
   await expect(page.locator('[data-test="price"]')).not.toContainText('Not reported');
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
@@ -161,16 +163,17 @@ test('football field and threshold series expose focus tooltips and table twins'
   await page.goto('/value/ko.us');
   const field = page.getByTestId('football-field');
   await field.locator('[tabindex="0"]').first().focus();
-  await expect(field.getByRole('tooltip')).toContainText('Buy below');
+  await expect(field.getByRole('tooltip')).toContainText('buy below');
   await field.getByText('Show data', { exact: true }).click();
   await expect(field.getByRole('table')).toContainText('36.78');
-  const chart = page.getByTestId('threshold-series').filter({ has: page.getByRole('heading', { name: 'ROIC', exact: true }) });
-  await chart.getByRole('img').focus();
+  const chart = page.getByTestId('threshold-series').filter({ has: page.getByRole('heading', { name: /^ROIC cleared/ }) });
+  await chart.getByRole('button').first().focus();
+  await page.keyboard.press('End');
   await expect(chart.getByRole('tooltip')).toContainText('FY2025');
   await page.keyboard.press('ArrowLeft');
   await expect(chart.getByRole('tooltip')).toContainText('FY2024');
   await chart.getByText('Show data', { exact: true }).click();
-  await expect(chart.getByRole('table')).toContainText('28.0%');
+  await expect(chart.getByRole('table')).toContainText('28%');
 });
 
 test('bank, currency mismatch and missing-price dossiers keep distinct methods and states', async ({ page }) => {
@@ -190,12 +193,73 @@ test('funnel applies cumulative gates and strip points open dossiers', async ({ 
   await page.goto('/value?country=US');
   await page.getByRole('button', { name: /^Analysed/ }).click();
   await expect(page.getByTestId('results-table').locator('tbody tr')).toHaveCount(41);
-  await page.getByRole('button', { name: /^\+ Margin of safety/ }).click();
+  await page.getByRole('button', { name: /^\+ Required margin of safety/ }).click();
   await expect(page.getByRole('row', { name: /Delta Air/ })).toHaveCount(0);
   await expect(page.getByRole('row', { name: /Coca-Cola/ })).toBeVisible();
-  const point = page.locator('svg a').filter({ has: page.locator('title', { hasText: 'Coca-Cola' }) });
+  const point = page.getByRole('group', { name: 'Quality companies by margin of safety', exact: true }).getByRole('link', { name: /^Coca-Cola/ });
   await point.focus();
-  await expect(page.getByRole('tooltip')).toContainText('Coca-Cola');
+  await expect(page.locator('figure[aria-labelledby="strip-title"]').getByRole('tooltip')).toContainText('Coca-Cola');
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/\/value\/ko.us$/);
+});
+
+
+test('research charts expose structural navigation, persistent tips, events and log gaps', async ({ page }) => {
+  await page.goto('/value/ko.us');
+  const chart = page.getByTestId('threshold-series').filter({ has: page.getByRole('heading', { name: /^ROIC cleared/ }) });
+  await expect(chart.locator('svg')).toHaveAttribute('aria-hidden', 'true');
+  await expect(chart.locator('figcaption')).toContainText('10 of 10 years');
+  await chart.getByRole('button').first().focus();
+  await page.keyboard.press('End');
+  await expect(chart.locator('[aria-live="polite"]')).toContainText('FY2025');
+  await page.mouse.move(0, 0);
+  await expect(chart.getByRole('tooltip')).toBeVisible();
+  await page.keyboard.press('Home');
+  await expect(chart.getByRole('tooltip')).toContainText('FY2016');
+  await page.keyboard.press('Escape');
+  await expect(chart.getByRole('tooltip')).toHaveCount(0);
+  await page.mouse.move(0, 0);
+  await chart.getByRole('group', { name: 'ROIC fiscal years' }).hover({ position: { x: 120, y: 60 } });
+  await chart.getByRole('tooltip').hover();
+  await expect(chart.getByRole('tooltip')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(chart.getByRole('tooltip')).toHaveCount(0);
+  await expect(chart).toContainText('Acquisition added assets');
+  await expect(page.getByTestId('price-history')).toContainText('matched months');
+  await expect(page.getByTestId('football-field')).toContainText('last fiscal year FY2025');
+  await page.goto('/value/oxy.us');
+  await expect(page.getByTestId('football-field')).toContainText('50% below mid, earnings are volatile');
+  await expect(page.getByText('Non-positive values are gaps on a log scale', { exact: false })).toBeVisible();
+  await page.goto('/value/fx.us');
+  await expect(page.getByTestId('price-history')).toHaveCount(0);
+});
+
+test('touch pins a tooltip and phone waterfall has its table first', async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+  const page = await context.newPage();
+  await page.goto('/value/ko.us');
+  const field = page.getByTestId('football-field');
+  await field.getByRole('button').first().tap();
+  await page.getByRole('heading', { name: 'Coca-Cola', exact: true }).tap();
+  await expect(field.getByRole('tooltip')).toBeVisible();
+  await field.getByRole('button').first().focus();
+  await page.keyboard.press('Escape');
+  await expect(field.getByRole('tooltip')).toHaveCount(0);
+  const bridge = page.getByTestId('valuation-bridge');
+  const table = await bridge.locator('details').boundingBox(), chart = await bridge.locator('figure').boundingBox();
+  expect(table!.y).toBeLessThan(chart!.y);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(390);
+  await context.close();
+});
+
+test('large indexes use canvas and retain navigable links with virtual rows', async ({ page }) => {
+  const row = JSON.parse(await readFile(path.join(root, 'index/US.json'), 'utf8'))[0];
+  const rows = Array.from({ length: 1501 }, (_, i) => ({ ...row, id: `LARGE${i}.US`, n: `Large ${i}`, t: 'PPPPP' }));
+  const prices = Object.fromEntries(rows.map((r, i) => [r.id, [r.v[1] * (.5 + i/1501), '2026-09-28']]));
+  await page.route('**/main/index/US.json', route => route.fulfill({ json: rows }));
+  await page.route('**/main/prices/US.json', route => route.fulfill({ json: prices }));
+  await page.goto('/value?country=US');
+  await expect(page.locator('canvas')).toBeVisible();
+  await expect(page.getByRole('group', { name: 'Quality companies by margin of safety', exact: true }).getByRole('link')).toHaveCount(1501);
+  await expect(page.locator('[data-company-row]')).toHaveCount(50);
 });

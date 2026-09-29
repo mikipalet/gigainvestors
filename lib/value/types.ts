@@ -126,6 +126,8 @@ export interface ReportMeta {
 }
 
 export interface Analysis {
+  requiredMos?: number;
+  volatility?: "stable" | "moderate" | "volatile";
   id: Id;
   company: Company;
   asOf: string;
@@ -138,12 +140,17 @@ export interface Analysis {
 }
 
 export interface Dossier extends Analysis {
+  valueHistory?: Array<[number, number, number, number]>; // fy, low, mid, high in trading currency
+  priceHistory?: Array<[string, number]>; // ISO month, close in trading currency
+  events?: Array<{ fy: number; kind: "acquisition" | "impairment" | "restatement" | "share_change" | "currency_change"; note: string }>;
   holders: Array<{ code: string; name: string }>; // superinvestors, from data/store
-  series: Record<string, Series>; // revenue, ownerEarnings, roic, grossMargin, shares, bvps
+  series: Record<string, Series | undefined> & { revenuePerShare?: Series; ownerEarningsPerShare?: Series; bookValuePerShare?: Series }; // optional published series
 }
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F U N.
 export interface IndexRow {
+  m?: number; // required margin of safety
+  r?: Array<number | null>; // ten-year ROIC
   id: Id;
   n: string;
   c: string;

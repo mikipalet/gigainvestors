@@ -16,7 +16,8 @@
     "faces": "tsx scripts/build-faces.ts",
     "sync": "tsx scripts/sync-local.ts",
     "newsletter:build": "tsx scripts/newsletter/build-issue.ts",
-    "newsletter:send": "tsx scripts/newsletter/send-issue.ts"
+    "newsletter:send": "tsx scripts/newsletter/send-issue.ts",
+    "value": "tsx scripts/value/cli.ts"
   },
   "dependencies": {
     "@react-email/components": "^1.0.12",

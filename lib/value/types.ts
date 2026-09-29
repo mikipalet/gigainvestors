@@ -107,6 +107,7 @@ export interface Valuation {
   netCash: number;
   shares: number;
   perShare: { low: number; mid: number; high: number };
+  perShareTrading?: { currency: string; fxRate: number; low: number; mid: number; high: number };
   equityBondYield: number | null;
   bridge: Array<{ label: string; value: number }>;
   assumptions: string[];

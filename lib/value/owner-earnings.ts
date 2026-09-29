@@ -3,7 +3,7 @@ import type { Series, Year } from "./types";
 export function ownerEarningsBridge(years: Year[]) {
   const sorted = [...years].sort((a, b) => a.fy - b.fy);
   return sorted.map((year, i) => {
-    const trailing = sorted.slice(Math.max(0, i - 4), i + 1);
+    const trailing = sorted.slice(0, i + 1).filter(y => y.fy > year.fy - 5);
     const ratios = trailing.flatMap(y => y.ppe !== null && y.revenue !== null && y.revenue > 0 ? [y.ppe / y.revenue] : []);
     const prev = sorted[i - 1];
     const delta = prev && prev.fy === year.fy - 1 && prev.revenue !== null && year.revenue !== null

@@ -1,5 +1,5 @@
 import { T } from "./config";
-import { bvps, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roiic, sum } from "./metrics";
+import { bvps, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roiic, sum, withZeroDefaults } from "./metrics";
 import { ownerEarningsBridge } from "./owner-earnings";
 import type { Kind, Valuation, Year } from "./types";
 
@@ -33,7 +33,7 @@ function reinvestmentRate(years: Year[]): number | null {
 export function valueCompany({ years, kind, bondYield, cyclical, currency = "" }: {
   years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string;
 }): { valuation: Valuation | null; reason: string | null } {
-  const ys = last(years, years.length), latest = ys.at(-1);
+  const ys = withZeroDefaults(years).sort((a, b) => a.fy - b.fy), latest = ys.at(-1);
   if (!latest || latest.dilutedShares === null || latest.dilutedShares <= 0) return { valuation: null, reason: "no share count" };
   const shares = latest.dilutedShares;
   const discountRate = Math.max(T.valuation.minDiscount, (bondYield ?? 0.04) + T.valuation.bondSpread);
@@ -59,7 +59,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "" }
   }
 
   const history = ownerEarningsBridge(ys), window = cyclical ? 7 : 5;
-  const recent = history.slice(-window).filter((row): row is typeof row & { value: number; maintenanceCapex: number } => row.value !== null && row.maintenanceCapex !== null);
+  const recent = history.filter(row => row.year.fy > latest.fy - window).filter((row): row is typeof row & { value: number; maintenanceCapex: number } => row.value !== null && row.maintenanceCapex !== null);
   if (recent.length < window) return { valuation: null, reason: "insufficient owner earnings history" };
   const normalized = median(recent.map(row => row.value))!;
   if (normalized <= 0) return { valuation: null, reason: "owner earnings not positive" };
@@ -72,7 +72,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "" }
   const growth = clamp({ value: estimates.length ? Math.min(...estimates) : 0, min: 0, max: T.valuation.maxGrowth });
   const pv = (g: number, r: number) => presentValue({ oe: normalized, g, r, terminal: T.valuation.terminal });
   const midPv = pv(growth, discountRate);
-  if (history.some(row => row.year.sbc === null)) assumptions.push("stock compensation not reported");
+  if (last(years, window).some(y => y.sbc === null)) assumptions.push("stock compensation not reported");
   if (!estimates.length) assumptions.push("growth estimates unavailable; using zero growth");
   assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", "bridge components use the median owner earnings observation");
   const ordered = [...recent].sort((a, b) => a.value - b.value);

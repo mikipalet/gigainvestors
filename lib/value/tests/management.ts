@@ -1,9 +1,10 @@
 import { T } from "../config";
-import { cagr, last, mean, outcome, present, ratio, retainedTest, roic, slope, sum } from "../metrics";
+import { cagr, last, mean, outcome, present, ratio, retainedTest, roic, slope, sum, withZeroDefaults } from "../metrics";
 import type { NumericInput, Series } from "../types";
 
 export function run({ years }: NumericInput) {
-  const history = last(years, 11), ys = history.slice(-10), first = history[0], end = history.at(-1);
+  years = withZeroDefaults(years);
+  const history = last(years, 11), ys = last(history, 10), first = history[0], end = history.at(-1);
   const retained = retainedTest(years);
   const shareCagr = history.length !== 11 || !first || !end || end.fy - first.fy !== 10 || present(history.map(y => y.dilutedShares)).length < 5 ? null
     : cagr({ first: first.dilutedShares, last: end.dilutedShares, years: 10 });

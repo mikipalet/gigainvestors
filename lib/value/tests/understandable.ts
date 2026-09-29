@@ -1,9 +1,10 @@
 import { T } from "../config";
-import { last, mean, opMargin, outcome, present } from "../metrics";
+import { last, mean, opMargin, outcome, present, withZeroDefaults } from "../metrics";
 import type { NumericInput } from "../types";
 
 export function run({ years }: NumericInput) {
-  const history = last(years, T.understandable.years + 1), ys = history.slice(-T.understandable.years);
+  years = withZeroDefaults(years);
+  const history = last(years, T.understandable.years + 1), ys = last(history, T.understandable.years);
   const revenueChanges = history.slice(1).map((y, i) => y.revenue === null || history[i].revenue === null || y.fy !== history[i].fy + 1 ? null : y.revenue - history[i].revenue!);
   const margins = present(ys.map(opMargin)), average = mean(margins);
   const cv = margins.length < 5 || average === null || average <= 0 ? null : Math.sqrt(mean(margins.map(x => (x - average) ** 2))!) / average;
@@ -13,9 +14,10 @@ export function run({ years }: NumericInput) {
   return outcome({ key: "understandable", metrics: { historyYears: ys.length, revenueDeclines: declines, lossYears: losses, opMarginCv: cv },
     series: { revenue: ys.map(y => [y.fy, y.revenue]), operatingMargin: ys.map(y => [y.fy, opMargin(y)]), netIncome: ys.map(y => [y.fy, y.netIncome]) },
     checks: [
-      { pass: ys.length < T.understandable.years ? null : true, reason: "ten years of history required" },
+      { pass: ys.length >= T.understandable.years, reason: `only ${ys.length} years of history` },
       { pass: declines === null ? null : declines <= T.understandable.maxRevenueDeclines, reason: "too many revenue declines" },
       { pass: losses === null ? null : losses <= T.understandable.maxLossYears, reason: "too many net loss years" },
+      { pass: margins.length < 5 || average === null ? null : average >= 0, reason: "negative average operating margin" },
       { pass: cv === null ? null : cv < T.understandable.maxOpMarginCv, reason: "operating margin variation too high" },
     ],
   });

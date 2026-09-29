@@ -1,3 +1,4 @@
+import { storyFromFunnel } from "./story";
 import { existsSync, readFileSync, readdirSync, renameSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { publishedBuyPrice } from './buy-price';
@@ -43,6 +44,7 @@ export function refreshPublishedBuyPrices(repo: string): void {
     updateGate(meta.funnel.byCountry[file.slice(0, 2)], rows);
   }
   updateGate(meta.funnel, all);
+  meta.story = storyFromFunnel(meta.funnel);
   const defaultRows: IndexRow[] = JSON.parse(readFileSync(path.join(index, 'default.json'), 'utf8'));
   const byId = new Map(all.map(row => [row.id, row]));
   files['index/default.json'] = defaultRows.map(row => byId.get(row.id) ?? row);

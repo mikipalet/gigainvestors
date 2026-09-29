@@ -45,3 +45,54 @@ EDINET limiter, using cached filing-day inventories, for annuals older than six
 months. TTM is annual + current H1 - comparative H1 with matching fiscal dates;
 missing required flows stay unavailable. `renormalize-edinet` reuses these cached
 H1 files offline. H1 observations never enter the annual history.
+
+### Round 7 enrichment and fiscal history
+
+Run these independently of the paid/Japan pipeline:
+
+```sh
+VALUE_CORPUS_DIR="$HOME/value-corpus" npx tsx scripts/value/cli.ts enrich
+VALUE_CORPUS_DIR="$HOME/value-corpus" npx tsx scripts/value/cli.ts logos
+VALUE_CORPUS_DIR="$HOME/value-corpus" npx tsx scripts/value/cli.ts history-snapshots
+```
+
+All three stages use atomic **create-only** writes under `enrichment-v7/` and
+`history-v7/`. They never change universe, companies, fundamentals, analysis,
+reports, prices, Jev, or publish-repo files. They are safe beside `japan`.
+`enrich` caches EDINET English filer names and Yahoo quote longName (2 requests/s),
+verifies EODHD PNG logos (10 requests/s, transient HTTP retries), falls back to
+DuckDuckGo website favicons, and derives short descriptions deterministically.
+`logos` retries vendor failures in separate immutable overrides. Missing vendor
+logos remain eligible for a later retry. No LLM is called by these stages.
+
+Publication overlays cached `nameEn`, `nameLocal`, `logo` and `about`, puts `lg` on
+index rows, preserves local-name search aliases, and emits `meta.story`. Existing
+legacy companies remain readable without caches. A missing English name displays
+the listing ID; it does not invent a translation. Null logo/about means no usable
+source was available. EDINET's [official API guide](https://disclosure2dl.edinet-fsa.go.jp/guide/static/disclosure/download/ESE140206.pdf)
+documents the code-list download used here.
+
+Each `history-snapshots` run creates `history-v7/<timestamp>-<id>/`; `index.json` is
+the completion marker. Publication reads the newest complete **universe** run.
+`--only`/`--limit` runs remain inspection caches and cannot replace full history.
+Annual files publish as `history/{Y}.json`, with rows `[id,t5,pm,b,r]`. `pm` is
+price/mid-value; `b` uses that year's five numeric tests, volatility-based margin,
+and the same verification rules as the current buy line. `r` is a cumulative
+price-change ratio (`2` means +200%), not an annualized or dividend-inclusive return.
+The index includes years, cohort counts, means excluding missing returns, and
+explicit methodology assumptions. Missing filing-month prices remain null.
+
+History excludes Jev readings, current TTM, current shares and later fiscal years.
+Integrity is rerun on each cloned fiscal-year prefix. Filing dates come from
+EODHD annual statements, EDINET annual document lists, or report metadata; absent
+dates use fiscal end plus three calendar months. This is a numeric reconstruction,
+not a point-in-time backtest: cached fundamentals are restated, classification/FX/
+bond yields are current, the universe has survivorship bias, and the existing
+cached closes can differ in split adjustment. Latest derived price seeds are not
+used for returns. A real quote is preferred, otherwise the last complete cached
+monthly close is used.
+
+`history-v7/<run>/report.json` records per-year raw/gzip sizes, return coverage and
+input failures. A running upstream job can change inputs between runs; rerunning
+creates a fresh snapshot without replacing the prior one. Publishing remains an
+explicit controller action after merge; none of the three stages publishes.

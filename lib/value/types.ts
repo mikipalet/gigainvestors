@@ -8,6 +8,10 @@ export interface Company {
   id: Id;
   name: string;
   nativeName?: string;
+  nameEn?: string; // Optional for legacy corpus documents.
+  nameLocal?: string;
+  logo?: string | null;
+  about?: string | null;
   code: string;
   exchange: string;
   country: string; // ISO2
@@ -189,6 +193,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  lg?: string | null;
   b?: boolean; // Published all-five-pass, verified at-buy-price decision; absent in legacy snapshots.
   dataQualityFlags?: string[];
   returnInfo?: { label: string; note: string; sort: number };
@@ -244,6 +249,7 @@ export interface PublishedFunnel extends FunnelCounts {
 }
 
 export interface StoreMeta {
+  story?: { analysed: number; qualityPasses: number; qualityShare: number; atBuy: number; countriesCovered: number };
   funnel?: PublishedFunnel;
   asOf: string;
   counts: { universe: number; analysed?: number; scored: number; insufficient: number };
@@ -257,4 +263,22 @@ export interface SearchShard {
   rows: SearchRow[];
   /** Normalized listing codes and ISINs mapped to local row offsets. */
   aliases: Record<string, number[]>;
+}
+
+/** Code-only annual snapshot; r is a cumulative price-return ratio, not a percent. */
+export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null];
+export interface HistorySummary {
+  analysed: number;
+  qualityPasses: number;
+  atBuy: number;
+  avgReturnAtBuy: number | null;
+  avgReturnQuality: number | null;
+  avgReturnAll: number | null;
+}
+export interface HistoryIndex {
+  scope?: "universe" | "selection";
+  years: number[];
+  perYear: Record<string, HistorySummary>;
+  asOf?: string;
+  assumptions?: string[];
 }

@@ -185,3 +185,16 @@
 @media(max-width:767px){.value-page .value-panel svg text.viz-event-number {font-size:12px;}}
 .ratio-reading {display:block;font-size:14px;line-height:1.4;margin-top:6px;}
 @media(max-width:767px){.value-page .value-panel p {font-size:14px;}}
+
+/* Phone overview: all buy-zone companies, four compact rows. */
+.buy-return-compact {display:none;}
+@media(max-width:767px){
+ .one-index .index-story .eyebrow {display:none;}
+ .buy-grid {grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:62px;overflow:visible;flex:none;}
+ .buy-tile {padding:6px 7px;gap:3px;justify-content:center;}
+ .buy-tile strong {font-size:14px;line-height:1.15;}
+ .buy-tile .buy-return-compact {display:block;font-size:12px;line-height:1.2;color:#e4eddf;}
+ .buy-tile .buy-owner-return,.buy-tile .company-logo,.buy-tile .region-badge,.buy-tile .buy-quote {display:none;}
+}
+
+.test-tile .mini-series figcaption {display:block;font-size:11px;line-height:1.2;margin:2px 0 0;}

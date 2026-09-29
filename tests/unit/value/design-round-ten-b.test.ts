@@ -51,7 +51,21 @@ it('uses the same return sentence in dossiers and buy cards', () => {
  expect(html).toContain('About 12.5% a year expected (8.6% cash + 3.9% growth) vs Buffett&#x27;s 10% bar');
 });
 
-it('keeps displayed addition consistent when one decimal would lose a rounding digit', () => {
+it('rounds expected return and each component independently to one decimal', () => {
  const owner=ownerReturn({...valuation,normalized:85.79418,growth:.06951090},'USD',1000,100)!;
- expect(expectedReturnCopy(owner)).toBe("About 15.53% a year expected (8.58% cash + 6.95% growth) vs Buffett's 10% bar");
+ expect(expectedReturnCopy(owner)).toBe("About 15.5% a year expected (8.6% cash + 7.0% growth) vs Buffett's 10% bar");
+});
+
+import { tileMetric, tileReason, tileSentence } from '@/lib/value/tile-metric';
+import type { TestOutcome } from '@/lib/value/types';
+const volatileMargins:TestOutcome={key:'understandable',result:'fail',numeric:'fail',metrics:{opMarginCv:9.36},series:{operatingMargin:[[2016,null],[2017,.1],[2018,.12],[2019,.11],[2020,-.65],[2021,-.03],[2022,.06],[2023,.1],[2024,.11],[2025,.1]]},reasons:['operating margin variation too high'],jev:[]};
+it('plots actual operating margins over available fiscal years, including losses',()=>{
+ const metric=tileMetric(volatileMargins,'operating');
+ expect(metric.series).toEqual(volatileMargins.series.operatingMargin.slice(1));
+ expect(metric.chart).toBe('Operating margin');
+});
+it('caps volatile margin copy and explains the loss years',()=>{
+ const metric=tileMetric(volatileMargins,'operating');
+ expect(tileSentence(volatileMargins,metric,'operating')).toBe('Margin variation >100%.');
+ expect(tileReason(volatileMargins)).toBe('Margins swing wildly, including losses.');
 });

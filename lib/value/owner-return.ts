@@ -23,13 +23,8 @@ export function ownerReturn(v: Valuation | null, trading: string, capUsd: number
  return {cash:v.normalized,capital,currency:v.currency,yield:cashYield,growth:v.growth,expected:cashYield+v.growth};
 }
 export function expectedReturnCopy(owner: NonNullable<ReturnType<typeof ownerReturn>>) {
- // Keep the total rounded from the full calculation. Use extra precision when
- // rounding each component to one decimal would make their displayed sum differ.
- const digits=[1,2,3,4].find(d=>{
-  const scale=100*10**d;
-  return Math.round(owner.yield*scale)+Math.round(owner.growth*scale)===Math.round(owner.expected*scale);
- })??4;
- return `About ${(owner.expected*100).toFixed(digits)}% a year expected (${(owner.yield*100).toFixed(digits)}% cash + ${(owner.growth*100).toFixed(digits)}% growth) vs Buffett's 10% bar`;
+ // Round each displayed percentage independently; retain full precision in calculations.
+ return `About ${(owner.expected*100).toFixed(1)}% a year expected (${(owner.yield*100).toFixed(1)}% cash + ${(owner.growth*100).toFixed(1)}% growth) vs Buffett's 10% bar`;
 }
 const observations=(series:Series=[])=>series.filter((p):p is [number,number]=>p[1]!==null&&Number.isFinite(p[1])).sort((a,b)=>a[0]-b[0]);
 export function referenceMetrics(d:Dossier, price:number|null) {

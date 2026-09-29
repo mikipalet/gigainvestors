@@ -1,3 +1,4 @@
+import { marginVariation } from './metric-labels';
 import { priceFraming } from './presentation';
 import { T } from './config';
 import type { Kind, Series, TestOutcome } from './types';
@@ -10,8 +11,8 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
  switch(test.key){
   case 'understandable': {
    const margins=test.series.operatingMargin??[];
-   const variation:Series=margins.map(([fy],i)=>{const values=margins.slice(Math.max(0,i-9),i+1).flatMap(p=>p[1]===null?[]:[p[1]]);const mean=values.reduce((a,b)=>a+b,0)/values.length;return [fy,values.length<5||mean<=0?null:Math.sqrt(values.reduce((a,b)=>a+(b-mean)**2,0)/values.length)/mean];});
-   return metric('opMarginCv','margin variation','x',T.understandable.maxOpMarginCv,'lower',variation,'Margin variation');
+   const available=margins.filter(p=>p[1]!==null&&Number.isFinite(p[1]));
+   return metric('opMarginCv','margin variation','x',T.understandable.maxOpMarginCv,'lower',available,'Operating margin');
   }
   case 'moat':return metric(financial?'roeMedian':'roicMedian',financial?'ROE · ten-year median':'ROIC · ten-year median','pct',financial?T.moat.roeMedianFin:T.moat.roicMedian,'higher',test.series[financial?'roe':'roic']??[],financial?'ROE':'ROIC');
   case 'economics': {
@@ -25,6 +26,7 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
  }
 }
 export function tileReason(test:TestOutcome):string {
+ if(test.key==='understandable'&&(test.metrics.opMarginCv??0)>1)return test.series.operatingMargin?.some(p=>p[1]!==null&&p[1]<0)?'Margins swing wildly, including losses.':'Margins swing wildly relative to their average.';
  if(test.result==='fail'){
   const reason=test.reasons.find(r=>!/informational|ROIC first|\$1 retained earnings test:/.test(r))??'Filing-evidence rule fails';
   const short:Array<[RegExp,string]>=[[/market cap gain/,'Managers created less value than they kept.'],[/variation/,'Margins are too variable.'],[/net loss/,'Too many loss years.'],[/revenue declines/,'Too many revenue declines.'],[/worst years/,'Returns are too weak in the worst years.'],[/median below/,'Median return below the bar.'],[/incremental/,'New investments earn too little.'],[/cash conversion/,'Cash conversion below the bar.'],[/gross margin/,'Gross margin fell too far.'],[/diluted share/,'Both dilution windows fail.'],[/buybacks/,'Buyback timing fails.'],[/working capital/,'Working capital rose too far.']];
@@ -41,7 +43,7 @@ export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):str
  if(v===null)return test.pending?'The evidence is still being checked.':'There is not enough evidence to judge this test.';
  const pct=(n:number)=>`${Math.round(n*100)}%`,num=(n:number)=>n.toFixed(2);
  switch(test.key){
-  case 'understandable':return `Margins vary by ${pct(v)} of their average.`;
+  case 'understandable':return v>1?`Margin variation ${marginVariation(v)}.`:`Margins vary by ${marginVariation(v)} of their average.`;
   case 'moat': {
    const years=metric.series.filter(p=>p[1]!==null),passes=years.filter(p=>p[1]!>=bar).length;
    return `Earns ${pct(v)} on ${kind==='operating'?'capital':'equity'}; ${years.length?`${passes}/${years.length} years pass.`:`the bar is ${pct(bar)}.`}`;

@@ -51,7 +51,7 @@ test('live buy-card text retains readable contrast across the CSS cascade',async
  await page.setViewportSize({width:390,height:844});await page.goto('/',{waitUntil:'networkidle'});
  const lowContrast=await page.locator('.buy-tile').evaluateAll(tiles=>{
   const light=(color:string)=>{const rgb=color.match(/[\d.]+/g)!.slice(0,3).map(Number).map(n=>n/255).map(c=>c<=.04045?c/12.92:((c+.055)/1.055)**2.4);return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722;};
-  return tiles.flatMap(tile=>{const bg=light(getComputedStyle(tile).backgroundColor);return [...tile.querySelectorAll('strong,.buy-discount,.buy-quote,.buy-listing')].flatMap(el=>{const fg=light(getComputedStyle(el).color),ratio=(Math.max(bg,fg)+.05)/(Math.min(bg,fg)+.05);return ratio<4.5?[`${el.textContent}: ${ratio.toFixed(2)}`]:[];});});
+  return tiles.flatMap(tile=>{const bg=light(getComputedStyle(tile).backgroundColor);return [...tile.querySelectorAll('strong,.buy-discount,.buy-quote,.buy-listing,.buy-return-compact')].flatMap(el=>{const fg=light(getComputedStyle(el).color),ratio=(Math.max(bg,fg)+.05)/(Math.min(bg,fg)+.05);return ratio<4.5?[`${el.textContent}: ${ratio.toFixed(2)}`]:[];});});
  });
  expect(lowContrast).toEqual([]);
 });
@@ -63,7 +63,7 @@ test('round ten market access, equal tiles, method and all buy pages',async({pag
   await expect(tile.locator('.buy-owner-return')).toContainText(/About [\d.]+% a year expected \([\d.]+% cash \+ [\d.]+% growth\) vs Buffett's 10% bar/);
   const [total,cash,growth]=(await tile.locator('.buy-owner-return').innerText()).match(/[\d.]+(?=%)/g)!.map(Number);
   expect(total).toBeGreaterThan(10);
-  expect(total).toBeCloseTo(cash+growth,5);
+  expect(Math.abs(total-cash-growth)).toBeLessThanOrEqual(.100001);
   await expect(tile.locator('.region-badge')).not.toBeEmpty();
  }
  const markets=page.getByRole('combobox',{name:'Markets'});await markets.click();await page.getByRole('option',{name:/Markets: Easy to buy/}).click();
@@ -76,8 +76,9 @@ test('round ten market access, equal tiles, method and all buy pages',async({pag
  expect(rects.length).toBeGreaterThan(1);for(const r of rects){expect(Math.abs(r.w-rects[0].w)).toBeLessThan(1);expect(Math.abs(r.h-rects[0].h)).toBeLessThan(1);}
  const ratios=await page.locator('.equal-company-grid .map-price').allTextContents();const nums=ratios.map(s=>Number(s.match(/[\d.]+/)?.[0]));expect(nums).toEqual([...nums].sort((a,b)=>a-b));
  await page.getByRole('button',{name:'About the method ↗',exact:true}).click();await expect(page.locator('.method-summary li')).toHaveCount(5);await expect(page.locator('.method-summary')).toContainText('simulation');await expect(page.locator('[data-author-slot]')).toBeEmpty();
- await page.keyboard.press('Escape');await page.goto('/',{waitUntil:'networkidle'});await page.setViewportSize({width:390,height:844});await expect(page.locator('.buy-tile')).toHaveCount(2);
- const seen=new Set<string>();for(let i=0;i<4;i++){for(const name of await page.locator('.buy-tile strong').allTextContents())seen.add(name);if(i<3)await page.getByRole('button',{name:'Next buy-zone companies'}).click();}expect(seen.size).toBe(8);
+ await page.keyboard.press('Escape');await page.goto('/',{waitUntil:'networkidle'});await page.setViewportSize({width:390,height:844});await expect(page.locator('.buy-tile')).toHaveCount(8);
+ await expect(page.getByRole('navigation',{name:'Buy-zone pages'})).toHaveCount(0);
+ for(const tile of await page.locator('.buy-tile').all())await expect(tile).toBeInViewport();
 });
 
 test('round ten b shows Visa, Mastercard and P&G multiples and the same Infosys return on its dossier',async({page})=>{

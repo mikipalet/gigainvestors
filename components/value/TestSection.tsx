@@ -1,7 +1,7 @@
 import { MetricHelp } from './MetricHelp';
 import { tileMetric, tileReason } from '@/lib/value/tile-metric';
 import { PassingDisclosure } from './PassingDisclosure';
-import { metricLabels, formatMetric, ratioReading } from '@/lib/value/metric-labels';
+import { marginVariation, metricLabels, formatMetric, ratioReading } from '@/lib/value/metric-labels';
 import { T } from '@/lib/value/config';
 import type { Dossier, Kind, Series, TestOutcome } from '@/lib/value/types';
 import { testLabels } from './TestChips';
@@ -39,7 +39,7 @@ export function TestSection({ test, currency = '', domain, netIncome, kind = 'op
   if(test.key==='management'&&lastFiscalYear&&test.metrics.shareCagr!=null) summaries.management=`Diluted shares changed ${metric('shareCagr')} a year, FY${lastFiscalYear-10}–FY${lastFiscalYear}`;
   if(test.key==='management'&&test.result==='pass'&&(test.metrics.shareCagr??0)>T.management.maxShareCagr&&test.metrics.shareCagr5!=null) summaries.management=`The five-year dilution test passes: shares changed ${metric('shareCagr5')} a year${lastFiscalYear?`, FY${lastFiscalYear-5}–FY${lastFiscalYear}`:''}. The ten-year measure is ${metric('shareCagr')}`;
   const fixedMetric=tileMetric(test,kind,netIncome);
-  const metricSummary=`${ratioReading(fixedMetric.id,fixedMetric.value)} ${fixedMetric.label}: ${formatMetric({value:fixedMetric.value,format:fixedMetric.format})}; pass ${fixedMetric.better==='higher'?'≥':'≤'} ${formatMetric({value:fixedMetric.threshold,format:fixedMetric.format})}`;
+  const metricSummary=`${ratioReading(fixedMetric.id,fixedMetric.value)} ${fixedMetric.label}: ${fixedMetric.id==='opMarginCv'?marginVariation(fixedMetric.value):formatMetric({value:fixedMetric.value,format:fixedMetric.format})}; pass ${fixedMetric.better==='higher'?'≥':'≤'} ${fixedMetric.id==='opMarginCv'?marginVariation(fixedMetric.threshold):formatMetric({value:fixedMetric.threshold,format:fixedMetric.format})}`;
   const headline = test.pending ? 'We are fetching 10 years of monthly prices; this test updates automatically' : `${metricSummary}. ${tileReason(test)}${test.key==='management'?` ${summaries.management}`:''}`;
   return <section id={`test-${test.key}`} data-test={test.key} data-metric={fixedMetric.id} className="test-section" aria-labelledby={`heading-${test.key}`}>
     <header><h2 id={`heading-${test.key}`}><StatusGlyph result={test.pending?'checking':test.result} label={`${testLabels[test.key]}: ${verdict}`} />{testLabels[test.key]}</h2><p>{verdict}.{headline ? ` ${humanLabel(headline).replace(/\.$/, '')}.` : ' Review the figures and filing evidence below.'}</p></header>

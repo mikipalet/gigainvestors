@@ -5,37 +5,10 @@ import type { SearchIndex } from "@/lib/types";
 import { plural } from "@/lib/format";
 import { slugOf } from "@/lib/slug";
 
-type Hit =
-  | { kind: "investor"; code: string; title: string; sub: string }
-  | { kind: "stock"; ticker: string; title: string; sub: string; holders: number }
-  | { kind: "munger" };
+import { rank, type Hit } from "@/lib/search/rank";
 
 let cached: Promise<SearchIndex> | null = null;
 const loadIndex = () => (cached ??= fetch("/api/search").then((r) => r.json() as Promise<SearchIndex>));
-
-function rank(index: SearchIndex, query: string): Hit[] {
-  const qn = query.trim().toLowerCase();
-  if (!qn) return [];
-  const score = (s: string) => {
-    const t = s.toLowerCase();
-    if (t === qn) return 3;
-    if (t.startsWith(qn)) return 2;
-    if (t.split(/\s+/).some((w) => w.startsWith(qn))) return 1.5;
-    if (t.includes(qn)) return 1;
-    return 0;
-  };
-  const hits: { h: Hit; s: number }[] = [];
-  if ("charlie munger".includes(qn) && qn.length >= 3) hits.push({ h: { kind: "munger" }, s: 4 });
-  for (const i of index.investors) {
-    const s = Math.max(score(i.person), score(i.firm) * 0.9, score(i.code) * 0.8);
-    if (s) hits.push({ h: { kind: "investor", code: i.code, title: i.person, sub: i.firm }, s: s + 0.05 });
-  }
-  for (const st of index.stocks) {
-    const s = Math.max(score(st.t) * 1.1, score(st.n));
-    if (s) hits.push({ h: { kind: "stock", ticker: st.t, title: st.t, sub: st.n, holders: st.h }, s: s + Math.min(st.h, 40) / 200 });
-  }
-  return hits.sort((a, b) => b.s - a.s).slice(0, 12).map((x) => x.h);
-}
 
 // Press "/" anywhere. Investors, firms, tickers and company names.
 export function Search() {

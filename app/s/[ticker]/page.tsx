@@ -37,7 +37,7 @@ export default async function Page(props: { params: Promise<{ ticker: string }> 
   const dossier=await getDossier(`${ticker}.US`);
   const quote=dossier?await getPrice(dossier.id,dossier.company.country):null;
   const range=dossier?comparableValuation(dossier.valuation,dossier.company.currency):null;
-  const passing=dossier?Object.values(dossier.tests).filter(t=>t.key!=='price'&&t.result==='pass').length+(priceState({price:quote?.[0]??null,mid:range?.perShare.mid??null,requiredMos:dossier.requiredMos??.25}).state==='pass'?1:0):null;
+  const passing=dossier?Object.values(dossier.tests).filter(t=>t.key!=='price'&&t.result==='pass').length+(priceState({price:quote?.[0]??null,mid:range?.perShare.mid??null,b:dossier.b}).state==='pass'?1:0):null;
   const people = Object.fromEntries(index.investors.map((i) => [i.code, i.person]));
   return (
     <>

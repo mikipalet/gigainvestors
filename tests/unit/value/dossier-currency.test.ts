@@ -13,6 +13,7 @@ beforeEach(() => {
   dossier = structuredClone(fixture);
   dossier.holders = [];
   dossier.company.currency = 'USD';
+  dossier.b = false; // Published mismatch verdict.
   dossier.valuation!.currency = 'JPY';
   dossier.valuation!.perShare = { low: 800, mid: 1000, high: 1200 };
   vi.mocked(getDossier).mockResolvedValue(dossier);
@@ -27,6 +28,7 @@ it('renders reporting value, explicit currency mismatch and an unclear price tes
   expect(html).not.toContain('aria-label="Price JPY');
 });
 it('uses converted trading values for both the headline and margin', async () => {
+  dossier.b = true; // Published converted-currency verdict.
   dossier.valuation!.perShareTrading = { currency: 'USD', fxRate: .01, low: 8, mid: 10, high: 12 };
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
   expect(html).toContain('USD 10.00');

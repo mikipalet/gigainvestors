@@ -21,10 +21,10 @@ export function earningsYieldAtMid(value: import('./types').Valuation) {
   return value.method === 'owner_earnings' && value.perShare.mid > 0 && value.shares > 0 ? value.normalized / (value.perShare.mid * value.shares) : null;
 }
 
-export function priceState({ price, mid, requiredMos }: { price: number | null; mid: number | null; requiredMos: number }) {
+export function priceState({ price, mid, b }: { price: number | null; mid: number | null; b?: boolean }) {
   const ratio = priceValue({price, mid});
-  const state = ratio === null ? 'unclear' : ratio <= 1-requiredMos ? 'pass' : ratio <= 1 ? 'wait' : 'fail';
-  return { state, label: {pass:'Pass',wait:'Wait',fail:'Fail',unclear:'Unclear'}[state], description: {pass:'At or below the buy line',wait:'Below value, above buy line',fail:'Above mid value',unclear:'Comparable price or valuation unavailable'}[state], ratio } as const;
+  const state = b === true ? 'pass' : ratio === null ? 'unclear' : ratio <= 1 ? 'wait' : 'fail';
+  return { state, label: {pass:'Pass',wait:'Wait',fail:'Fail',unclear:'Unclear'}[state], description: {pass:'At or below the buy line',wait:'Not qualified at a buy price in the published snapshot',fail:'Above mid value',unclear:'Comparable price or valuation unavailable'}[state], ratio } as const;
 }
 export function returnDisplay({value, years, unlimited = false, financial = false}: {value: number | null; years: number; unlimited?: boolean; financial?: boolean}) {
   if (unlimited) return {label:'Positive earnings, nonpositive capital', note:financial?'Tangible equity (equity − goodwill − intangibles) is nonpositive with positive net income; ROE has no finite denominator':'Tangible invested capital (equity + debt − cash − goodwill − intangibles) is nonpositive with positive operating earnings; ROIC has no finite denominator', sort:Infinity};

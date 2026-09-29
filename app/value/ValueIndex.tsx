@@ -1,16 +1,13 @@
 "use client";
-import { valuationFlags } from "@/lib/value/data-quality";
 
 import { useEffect, useMemo, useState } from "react";
 import { BuffettFunnel } from '@/components/value/viz/BuffettFunnel';
 import { CompanyMap } from '@/components/value/viz/CompanyMap';
 import { SidePanel } from '@/components/value/SidePanel';
 
-import { T } from '@/lib/value/config';
-import { priceTest } from "@/lib/value/price-test";
-import { QUALITY_TESTS, type IndexRow, type PriceMap, type Valuation, type StoreMeta } from "@/lib/value/types";
+import { QUALITY_TESTS, type IndexRow, type PriceMap, type StoreMeta } from "@/lib/value/types";
 
-import { dateLabel } from '@/lib/value/presentation';
+import { priceValue, dateLabel } from '@/lib/value/presentation';
 import { SearchTrigger } from '@/components/Search';
 import { ValueLink } from '@/components/value/ValueLink';
 import { Filters, type FilterState } from './_components/Filters';
@@ -90,9 +87,8 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
     const canonical = rows.find(candidate=>candidate.id===sourceRow.id);
     const row = {...sourceRow, returnInfo:sourceRow.returnInfo??canonical?.returnInfo, fy:sourceRow.fy??canonical?.fy};
     const quote = prices[row.c]?.[row.id]?.[0] ?? null;
-    row.dataQualityFlags=[...new Set([...(sourceRow.dataQualityFlags??canonical?.dataQualityFlags??[]),...valuationFlags({price:quote,mid:row.v?.[1]??null,assumptions:[]})])];
-    const result = priceTest({ valuation: row.v ? { perShare: { low: row.v[0], mid: row.v[1], high: row.v[2] } } as Valuation : null, price: quote, requiredMos: row.m ?? T.price.requiredMos.stable });
-    return { row, quote, seed: prices[row.c]?.[row.id]?.[2] === "seed", date: prices[row.c]?.[row.id]?.[1], mos: row.st === 'i' ? null : result.mos };
+    const ratio = priceValue({ price: quote, mid: row.v?.[1] ?? null });
+    return { row, quote, seed: prices[row.c]?.[row.id]?.[2] === "seed", date: prices[row.c]?.[row.id]?.[1], mos: row.st === 'i' || ratio === null ? null : 1 - ratio };
   }), [source, rows, prices]);
   const gate = filter.gate !== undefined && /^[0-6]$/.test(filter.gate) ? Number(filter.gate) : null;
   const population = meta?.funnel;
@@ -106,7 +102,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
   const displayed = useMemo(() => {
     return allEntries.filter(({ row, mos }) => {
       if (filter.q && !`${row.n} ${row.id}`.toLowerCase().includes(filter.q.toLowerCase())) return false;
-      if (gate !== null) return row.t.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || (mos !== null && mos >= (row.m ?? T.price.requiredMos.stable)));
+      if (gate !== null) return row.t.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || row.b === true);
       if (filter.sector && row.s !== filter.sector) return false;
       if (filter.held === "1" && !row.h) return false;
       if (selectedTags.some((tag) => !row.g.includes(tag))) return false;

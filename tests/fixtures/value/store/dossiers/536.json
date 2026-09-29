@@ -1,5 +1,6 @@
 {
   "PEP.US": {
+    "b": true,
     "id": "PEP.US",
     "company": {
       "id": "PEP.US",
@@ -526,6 +527,7 @@
     "series": {}
   },
   "DE.US": {
+    "b": false,
     "id": "DE.US",
     "company": {
       "id": "DE.US",

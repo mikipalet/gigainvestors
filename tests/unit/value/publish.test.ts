@@ -153,7 +153,8 @@ describe("publish repository", () => {
   });
   it("retains unselected dossiers in a partial publish and removes delisted companies", () => {
     const repo = repository();
-    writeOutput({ repo, files: output([analysis(), analysis("AXP.US"), analysis("DELISTED.US")]) });
+    const axp = analysis("AXP.US"); axp.valuation!.shares = 2; // cap 100 = quote 50 × shares 2
+    writeOutput({ repo, files: output([analysis(), axp, analysis("DELISTED.US")]) });
     commitOutput({ repo, asOf: "2026-09-29" });
     mkdirSync(path.join(corpusDir(), "prices"), { recursive: true });
     writeFileSync(path.join(corpusDir(), "prices/US.json"), JSON.stringify({ "AXP.US": [50, "2026-09-29", "seed"] }));
@@ -255,7 +256,7 @@ describe("prices", () => {
     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(true);
     expect(git(repo, ["rev-list", "--count", "HEAD"])).toBe("3");
     const paths = git(repo, ["diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"]);
-    expect(paths).toBe("prices/US.json");
+    expect(paths.split("\n")).toEqual(["dossiers/027.json", "meta.json", "prices/US.json"]);
     await refreshPrices({ repo, companies: [analysis().company], bulk: async () => raw });
     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(false);
   });
@@ -475,6 +476,7 @@ describe("published funnel", () => {
     const prices: PriceMap = Object.fromEntries(all.filter(row => row !== missing).map(row => [row.id, [50, "2026-09-29"]]));
     prices[costly.id] = [60, "2026-09-29"];
     prices[seed.id] = [50, "2026-09-29", "seed"];
+    for (const row of all) row.company.marketCapUsd = null; // This fixture tests gates, not cap/share reconciliation.
     const files = buildOutput({ analyses: all, prices, holdersByTicker: {}, investorNames: {}, fx: {} }).files;
     const funnel = (files["meta.json"] as StoreMeta).funnel!;
     expect(funnel).toMatchObject({ asOf: "2026-09-29", analysed: 14 });

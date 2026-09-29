@@ -111,3 +111,23 @@ test('subdomain rewrites, canonical redirects, robots, sitemap and genuine 404',
  const sitemap=await request.get('/sitemap.xml',{headers:{host:'value.gigainvestors.com'}});expect(await sitemap.text()).toContain('https://value.gigainvestors.com/ko.us');
  for(const id of ['nope.us','bad','a'.repeat(25)+'.us'])expect((await request.get(`/value/${id}`)).status()).toBe(404);
 });
+
+test('one snapshot has the same funnel price count, published flags and green dots', async ({ page }) => {
+ const meta = JSON.parse(await readFile(path.join(root, 'meta.json'), 'utf8'));
+ const rows = JSON.parse(await readFile(path.join(root, 'index/default.json'), 'utf8'));
+ const count = meta.funnel.gates.find((g: { key: string }) => g.key === 'price').passing;
+ expect(count).toBe(5);
+ expect(rows.filter((r: { b?: boolean }) => r.b === true)).toHaveLength(count);
+ await page.goto('/value', { waitUntil: 'networkidle' });
+ await expect(page.locator('.one-index')).toHaveAttribute('data-buy-count', String(count));
+ await expect(page.locator('.company-map svg a[data-buy="true"]')).toHaveCount(count);
+ await page.getByRole('switch', { name: /Near misses/ }).click();
+ await expect(page.locator('.company-map svg a[data-buy="true"]')).toHaveCount(count);
+ // A separately refreshed quote may move a point; only publication can change its verdict.
+ const prices = JSON.parse(await readFile(path.join(root, 'prices/US.json'), 'utf8'));
+ prices['KO.US'][0] *= 2;
+ await page.route('**/main/prices/US.json', r => r.fulfill({ json: prices }));
+ await page.reload({ waitUntil: 'networkidle' });
+ await expect(page.locator('.company-map svg a[data-buy="true"]')).toHaveCount(count);
+ await expect(page.locator('.company-map svg a[href$="/ko.us"]')).toHaveAttribute('data-buy', 'true');
+});

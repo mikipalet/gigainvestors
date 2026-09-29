@@ -41,7 +41,7 @@ describe('visualization geometry', () => {
     expect(steps.at(-1)?.start).toBe(0);
   });
   it('counts gates cumulatively and only compares valid prices', () => {
-    expect(funnelCounts([{ tests: 'PPPPP', mos: T.price.requiredMos.stable }, { tests: 'PFPPP', mos: .9 }, { tests: 'PPPPP', mos: null }])).toEqual([3, 3, 2, 2, 2, 2, 1]);
+    expect(funnelCounts([{ tests: 'PPPPP', b: true }, { tests: 'PFPPP', b: false }, { tests: 'PPPPP', b: false }])).toEqual([3, 3, 2, 2, 2, 2, 1]);
   });
 });
 

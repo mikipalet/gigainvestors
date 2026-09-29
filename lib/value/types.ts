@@ -167,6 +167,7 @@ export interface Analysis {
 }
 
 export interface Dossier extends Analysis {
+  b?: boolean; // Published all-five-pass, verified at-buy-price decision.
   priceHistory?: PriceHistory;
   tests: Analysis["tests"] & { price?: TestOutcome };
   holders: Array<{ code: string; name: string }>; // superinvestors, from data/store
@@ -175,6 +176,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  b?: boolean; // Published all-five-pass, verified at-buy-price decision; absent in legacy snapshots.
   dataQualityFlags?: string[];
   returnInfo?: { label: string; note: string; sort: number };
   fy?: number;

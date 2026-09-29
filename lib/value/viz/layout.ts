@@ -1,4 +1,3 @@
-import { T } from '../config';
 import type { Series } from '../types';
 
 export const clamp = (v: number) => Math.max(-1, Math.min(1, v));
@@ -44,8 +43,8 @@ export function waterfallSteps(values: number[]) {
   const steps = values.map((value, i) => { const start = i === 0 ? 0 : balance; balance += value; return { start, end: balance, value }; });
   return [...steps, { start: 0, end: balance, value: balance }];
 }
-export function funnelCounts(entries: { tests: string; mos: number | null; requiredMos?: number }[]) {
-  return Array.from({ length: 7 }, (_, gate) => entries.filter(e => e.tests.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || (e.mos !== null && e.mos >= (e.requiredMos ?? T.price.requiredMos.stable)))).length);
+export function funnelCounts(entries: { tests: string; b?: boolean }[]) {
+  return Array.from({ length: 7 }, (_, gate) => entries.filter(e => e.tests.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || e.b === true)).length);
 }
 
 // Round only the data end; the baseline remains square.

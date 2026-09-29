@@ -9,8 +9,8 @@ describe('one display contract', () => {
   });
   it('uses Sep everywhere', () => expect(dateLabel('2026-09-29')).toBe('29 Sep 2026'));
   it('names a known discount above the buy line Wait', () => {
-    expect(priceState({price:80,mid:100,requiredMos:.25}).state).toBe('wait');
-    expect(priceState({price:null,mid:100,requiredMos:.25}).state).toBe('unclear');
+    expect(priceState({price:80,mid:100,b:false}).state).toBe('wait');
+    expect(priceState({price:null,mid:100,b:false}).state).toBe('unclear');
   });
   it('does not print artefact returns or call negative capital insufficient', () => {
     expect(returnDisplay({value:7.08,years:10}).label).toBe('> 100% †');

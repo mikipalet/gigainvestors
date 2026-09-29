@@ -5,7 +5,7 @@ import { sameCurrency } from "./currency";
 import { createUsdRate } from "./fx";
 import { T } from "./config";
 import { QUESTIONS } from "./jev/questions";
-import { priceTest } from "./price-test";
+import { publishedBuyPrice } from "./buy-price";
 import { shardOf } from "./shard";
 import { QUALITY_TESTS, type FunnelCounts, type PublishedFunnel, type Analysis, type Dossier, type IndexRow, type PriceMap, type PriceHistory, type Valuation } from "./types";
 
@@ -74,11 +74,14 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     }
     const valuation = tradingValuation(analysis, usdRate);
     const requiredMos = analysis.requiredMos ?? T.price.requiredMos.stable;
-    const price = priceTest({ valuation, price: prices[analysis.id]?.[0] ?? null, requiredMos });
-    const passes = [...outcomes.map(test => analysis.status === "scored" && test.result === "pass"), analysis.status === "scored" && price.result === "pass"];
+    const t = analysis.status !== "scored" ? "UUUUU" : outcomes.map(test => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join("");
+    const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:analysis.valuation?.shares, usdRate:usdRate(company.currency)});
+    const price = publishedBuyPrice({ st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos,
+      v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null, dataQualityFlags }, prices[analysis.id]);
+    const passes = [...outcomes.map(test => analysis.status === "scored" && test.result === "pass"), price.b];
     // Price below its required MOS is a failed funnel gate even when priceTest
     // calls a positive but inadequate discount "unclear". Missing data is not a failure.
-    const failures = [...outcomes.map(test => test.result === "fail"), price.result === "fail" || price.mos !== null && price.mos < requiredMos];
+    const failures = [...outcomes.map(test => test.result === "fail"), price.result === "fail" || price.mos !== null && price.result !== "pass"];
     const countryFunnel = funnel.byCountry[company.country] ??= emptyFunnel();
     for (const population of [funnel, countryFunnel]) {
       population.analysed++;
@@ -95,10 +98,8 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
         if (analysis.status === 'scored' && failures[i] && passes.slice(0, 5).every((pass, j) => j === i || pass)) gate.failsOnlyThis++;
       });
     }
-    const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:analysis.valuation?.shares, usdRate:usdRate(company.currency)});
     const dossier: Dossier = {
-      dataQualityFlags,
-      ...analysis, requiredMos, holders,
+      ...analysis, b: price.b, dataQualityFlags: price.dataQualityFlags, requiredMos, holders,
       ...(priceHistories[analysis.id] ? { priceHistory: priceHistories[analysis.id] } : {}),
       series: Object.assign({}, ...outcomes.map((test) => test.series), analysis.series),
       tests: { ...analysis.tests, price: { key: "price", result: price.result, numeric: price.result, reasons: price.mos === null ? ["Valuation or price unavailable in trading currency"] : [], metrics: { mos: price.mos }, series: {}, jev: [] } },
@@ -109,13 +110,13 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
     const returns=dossierReturn(analysis);
     const row: IndexRow = {
-      dataQualityFlags,
+      b: price.b, dataQualityFlags: price.dataQualityFlags,
       returnInfo:{...returns,sort:Number.isFinite(returns.sort)?returns.sort:returns.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},
       fy: Math.max(0,...Object.values(analysis.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]))) || undefined,
       m: requiredMos, r: [...Array<number | null>(T.history.years - roic.length).fill(null), ...roic],
       id: analysis.id, n: company.name, c: company.country, s: company.sector, k: company.kind,
       mc: company.marketCapUsd, v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null,
-      cur: company.currency, t: analysis.status!=="scored" ? "UUUUU" : outcomes.map((test) => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join(""),
+      cur: company.currency, t,
       g: [...g].sort(), h: holders.length, st: analysis.status === "scored" ? "s" : "i",
     };
     rows.push(row);

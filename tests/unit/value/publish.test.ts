@@ -405,3 +405,14 @@ it('pads unavailable ROIC years with nulls without substituting financial-compan
   delete row.tests.moat.series.roic; row.tests.moat.series.roe = [[2025,0.2]]; row.company.kind = 'bank';
   expect((output([row])['index/US.json'] as IndexRow[])[0].r).toEqual(Array(10).fill(null));
 });
+
+it("C4 publish skips invalid IDs and loads ampersand analyses", async () => {
+  const { writeCorpusJson } = await import("@/lib/value/corpus");
+  vi.stubEnv("VALUE_CORPUS_DIR", directory());
+  const ids = ["PE&OLES.MX", "F&D.BK", "L&E.BK", "C&G.XNAI"];
+  const rows = ids.map(id => analysis(id));
+  for (const row of rows) writeCorpusJson(`analysis/${row.id}.json`, row);
+  const log = vi.spyOn(console, "warn").mockImplementation(() => {});
+  expect(loadAnalyses([analysis("../bad").company, ...rows.map(row => row.company)])).toEqual(rows);
+  expect(log.mock.calls.flat().join(" ")).toMatch(/skipp.*bad/i);
+});

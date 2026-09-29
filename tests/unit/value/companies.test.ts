@@ -57,3 +57,24 @@ it("writes enriched descriptions to business.txt for description-only reports", 
   expect(readCorpusJson("reports/2330.TW/meta.json")).toMatchObject({ kind: "description", sections: ["business"] });
   expect(readFileSync(corpusPath("reports/2330.TW/business.txt"), "utf8")).toBe("Makes chips for customers worldwide.");
 });
+
+it("C4 shared company loading and reports skip bad IDs and allow ampersands", async () => {
+  const ids = ["PE&OLES.MX", "F&D.BK", "L&E.BK", "C&G.XNAI"];
+  appendJsonl("universe.jsonl", company("../bad"));
+  for (const id of ids) appendJsonl("universe.jsonl", { ...company(id), description: "Makes chips." });
+  const log = vi.spyOn(console, "warn").mockImplementation(() => {});
+  try {
+    expect(loadCompanies({}).map(row => row.id)).toEqual(ids);
+    await reports({});
+    for (const id of ids) expect(readCorpusJson(`reports/${id}/meta.json`)).toMatchObject({ id, kind: "description" });
+    expect(log.mock.calls.flat().join(" ")).toMatch(/skipp.*bad/i);
+  } finally { log.mockRestore(); }
+});
+
+it.each(["", ".", "..", "bad/id", "bad\\id", "bad id", "bad$id", null])("C4 skips malformed ID %j before reading paths", id => {
+  appendJsonl("universe.jsonl", { ...company("BAD.TW"), id });
+  appendJsonl("universe.jsonl", company("GOOD.TW"));
+  const log = vi.spyOn(console, "warn").mockImplementation(() => {});
+  try { expect(loadCompanies({ limit: 1 }).map(row => row.id)).toEqual(["GOOD.TW"]); }
+  finally { log.mockRestore(); }
+});

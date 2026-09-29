@@ -1,3 +1,4 @@
+import { validCompanyId } from "../../../lib/value/companies";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { analyzeCompany, PIPELINE_VERSION, type Ask, type Sections } from "../../../lib/value/analyze-company";
@@ -29,7 +30,7 @@ export function loadSections({ company, report }: { company: Company; report: Re
 export default async function analyze({ only, limit, force, ask, getBondYield = bondYield, evidence = findEvidence }: Options): Promise<void> {
   const companies = readJsonl<Company>("universe.jsonl").filter(company => !only || only.includes(company.id));
   const jobs = companies.flatMap(row => {
-    if (!/^[\w.-]+$/.test(row.id)) throw new Error("Invalid company ID");
+    if (!validCompanyId(row.id, "analyze")) return [];
     const fundamentals = readCorpusJson<Fundamentals>(`fundamentals/${row.id}.json`);
     const company = { ...row, ...readCorpusJson<Partial<Company>>(`companies/${row.id}.json`), id: row.id };
     return fundamentals ? [{ company, fundamentals }] : [];

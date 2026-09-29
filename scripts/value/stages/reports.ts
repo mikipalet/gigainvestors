@@ -15,7 +15,6 @@ export default async function reports({ only, limit, force = false }: {
 }): Promise<void> {
   const companies = loadCompanies({ only, limit });
   for (const company of companies) {
-    if (!/^[\w.-]+$/.test(company.id)) throw new Error("Invalid company ID");
     const esef = company.lei && esefCountries.has(company.country) ? await latestEsef(company.lei) : null;
     const cik = !esef ? await resolveCik(company) : null;
     const filings = cik ? await latestFilings(cik) : null;

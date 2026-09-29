@@ -1,3 +1,4 @@
+import { validCompanyId } from "../../../lib/value/companies";
 import { randomInt, randomUUID } from "node:crypto";
 import { mkdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { corpusPath, readCorpusJson, readJsonl } from "../../../lib/value/corpus";
@@ -12,7 +13,7 @@ export default async function sample({ only, limit }: Options): Promise<void> {
   const reservoirs = new Map(QUESTIONS.map(question => [question.id, { seen: 0, rows: [] as Sample[] }]));
   const companies = readJsonl<Company>("universe.jsonl").filter(company => !only || only.includes(company.id)).slice(0, limit);
   for (const company of companies) {
-    if (!/^[\w.-]+$/.test(company.id)) throw new Error("Invalid company ID");
+    if (!validCompanyId(company.id, "jev-sample")) continue;
     const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
     if (!analysis) continue;
     const snapshot = readCorpusJson<{ asOf: string; sections: Sections }>(`analysis/inputs/${company.id}.json`);

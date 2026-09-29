@@ -17,13 +17,14 @@ export function run({ years, kind }: NumericInput) {
   const end = gm2023 ? grossMargin(gm2023) : null;
   const drop = start === null || end === null ? null : start - end;
   const name = financial ? "roe" : "roic";
+  const label = financial ? "Return on tangible equity" : "ROIC";
   return outcome({ key: "moat", metrics: { [`${name}Median`]: typical, [`${name}Worst3`]: worst, grossMarginDrop: financial ? null : drop,
     capexToRevenue: median(present(ys.map(y => ratio(y.capex, y.revenue)))) },
     series: { [name]: ys.map((y, i) => [y.fy, returns[i]]), grossMargin: ys.map(y => [y.fy, grossMargin(y)]) },
     checks: [
-      { pass: typical === null ? null : typical >= (financial ? T.moat.roeMedianFin : T.moat.roicMedian), data: `${name.toUpperCase()} median`, reason: `${name.toUpperCase()} median below threshold` },
-      { pass: worst === null ? null : worst >= (financial ? T.moat.roeWorst3Fin : T.moat.roicWorst3), data: `${name.toUpperCase()} worst years`, reason: `${name.toUpperCase()} worst years below threshold (more than ${T.moat.badYearsAllowed} bad year allowed)` },
+      { pass: typical === null ? null : typical >= (financial ? T.moat.roeMedianFin : T.moat.roicMedian), data: `${label} median`, reason: `${label} median below threshold` },
+      { pass: worst === null ? null : worst >= (financial ? T.moat.roeWorst3Fin : T.moat.roicWorst3), data: `${label} worst years`, reason: `${label} worst years below threshold (more than ${T.moat.badYearsAllowed} bad year allowed)` },
       ...(!financial ? [{ pass: drop === null ? null : drop <= T.moat.gmDropPp + Number.EPSILON, data: "FY2019, FY2020 and FY2023 gross margins", reason: `FY2023 gross margin fell ${((drop ?? 0) * 100).toFixed(1)}pp versus the FY2019/FY2020 mean (limit ${T.moat.gmDropPp * 100}pp)` }] : []),
-    ], reasons: !financial && returns.includes(Infinity) ? ["tangible capital is negative: returns effectively unlimited"] : [],
+    ], reasons: returns.includes(Infinity) ? [financial ? "tangible equity is nonpositive: returns effectively unlimited" : "tangible capital is negative: returns effectively unlimited"] : [],
   });
 }

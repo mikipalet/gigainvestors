@@ -52,7 +52,20 @@ export function roic(y: Year): number | null {
   // Zero marks a failed return year; positive earnings need no tangible capital.
   return capital <= 0 ? profit > 0 ? Infinity : 0 : profit / capital;
 }
-export const roe = (y: Year) => ratio(y.netIncome, y.equity);
+export function tangibleEquity(y: Year): number | null {
+  const intangible = goodwillAndIntangibles(y);
+  return y.equity === null || intangible === null ? null : y.equity - intangible;
+}
+export function roe(y: Year): number | null {
+  const capital = tangibleEquity(y);
+  if (capital === null || y.netIncome === null) return null;
+  return capital <= 0 ? y.netIncome > 0 ? Infinity : 0 : y.netIncome / capital;
+}
+/** Financial valuation uses tangible book, with reported book for nonpositive tangible equity. */
+export function financialBvps(y: Year): number | null {
+  const tangible = tangibleEquity(y);
+  return tangible === null ? null : tangible > 0 ? ratio(tangible, y.dilutedShares) : bvps(y);
+}
 export const grossMargin = (y: Year) => ratio(y.grossProfit, y.revenue);
 export const opMargin = (y: Year) => ratio(y.operatingIncome, y.revenue);
 export const bvps = (y: Year) => y.equity !== null && y.equity > 0 ? ratio(y.equity, y.dilutedShares) : null;

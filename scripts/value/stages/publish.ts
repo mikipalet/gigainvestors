@@ -1,3 +1,4 @@
+import { validCompanyId } from "../../../lib/value/companies";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
@@ -224,7 +225,7 @@ export function isAnalysis(value: unknown): value is Analysis {
 export function loadAnalyses(companies: Company[]): Analysis[] {
   const analyses: Analysis[] = [];
   for (const company of companies) {
-    if (/[\\/]/.test(company.id)) throw new Error("Invalid company ID");
+    if (!validCompanyId(company.id, "publish")) continue;
     try {
       const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
       if (!analysis) continue; // The rolling download has not analysed this company yet.

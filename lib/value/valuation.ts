@@ -1,5 +1,5 @@
 import { T } from "./config";
-import { bvps, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roiic, sum, withZeroDefaults } from "./metrics";
+import { financialBvps, tangibleEquity, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roiic, sum, withZeroDefaults } from "./metrics";
 import { ownerEarningsBridge } from "./owner-earnings";
 import type { Kind, Valuation, Year } from "./types";
 
@@ -43,18 +43,23 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "" }
   const common = { currency, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
 
   if (kind !== "operating") {
-    const book = bvps(latest);
+    const book = financialBvps(latest);
     if (book === null || book <= 0) return { valuation: null, reason: "book value not positive" };
-    const returns = present(last(ys, 10).map(roe));
-    if (returns.length < 5) return { valuation: null, reason: "insufficient return on equity history" };
+    const returns = last(ys, 10).map(roe).filter((value): value is number => value !== null);
+    if (returns.length < 5) return { valuation: null, reason: "insufficient return on tangible equity history" };
     const normalizedRoe = median(returns)!;
-    const growth = clamp({ value: decadeCagr(ys.map(y => [y.fy, bvps(y)])) ?? 0, min: 0, max: T.valuation.finMaxGrowth });
+    const growth = clamp({ value: decadeCagr(ys.map(y => [y.fy, financialBvps(y)])) ?? 0, min: 0, max: T.valuation.finMaxGrowth });
     const multiple = (r: number) => clamp({ value: (normalizedRoe - growth) / (r - growth), min: 0, max: 4 });
     return { reason: null, valuation: { ...common, method: "book_value", normalized: book, growth, netCash: 0,
       perShare: { low: multiple(discountRate + 0.01) * book, mid: multiple(discountRate) * book, high: multiple(discountRate - 0.01) * book },
       equityBondYield: ratio(median(present(last(ys, 10).map(y => y.netIncome))), latest.marketCap),
-      bridge: [{ label: "book value per share", value: book }, { label: "normalized return on equity", value: normalizedRoe }, { label: "justified price to book", value: multiple(discountRate) }],
-      assumptions: [...assumptions, "cash and debt are included in book value", "equity bond yield uses median net income"],
+      bridge: [{ label: tangibleEquity(latest)! > 0 ? "tangible book value per share" : "reported book value per share", value: book },
+        ...(Number.isFinite(normalizedRoe) ? [{ label: "normalized return on tangible equity", value: normalizedRoe }] : []),
+        { label: "justified price to book", value: multiple(discountRate) }],
+      assumptions: [...assumptions, "returns use net income divided by tangible equity",
+        tangibleEquity(latest)! > 0 ? "valuation uses tangible book value per share" : "nonpositive tangible equity: valuation uses reported book value per share",
+        ...(!Number.isFinite(normalizedRoe) ? ["tangible equity is nonpositive: returns effectively unlimited; price to book capped at 4"] : []),
+        "cash and debt are included in book value", "equity bond yield uses median net income"],
     } };
   }
 

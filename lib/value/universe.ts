@@ -201,7 +201,7 @@ export function collapseListings(input: Listing[]): Array<{ primary: Id; listing
 }
 
 export function kindFor({ industry }: { sector: string | null; industry: string | null }): Kind {
-  if (/bank/i.test(industry ?? "")) return "bank";
+  if (/bank|^credit services$/i.test(industry ?? "")) return "bank";
   if (/insurance/i.test(industry ?? "")) return "insurer";
   return "operating";
 }

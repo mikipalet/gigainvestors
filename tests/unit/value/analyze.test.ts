@@ -425,3 +425,36 @@ it.each(["missing-month", "missing-shares", "missing-fx"] as const)("R3 keeps ye
   expect(result.tests.management.series.marketCap.at(-1)).toEqual([2023, null]);
   expect(result.tests.management.metrics.marketCapGain).toBeNull();
 });
+
+it("C1 reclassifies cached Credit Services enrichment without downloading fundamentals again", async () => {
+  const args = input();
+  const { makeYears } = await import("./synthetic");
+  args.fundamentals.years = makeYears();
+  args.company.industry = "Credit Services";
+  args.company.kind = "operating";
+  appendJsonl("universe.jsonl", args.company);
+  writeCorpusJson("companies/KO.US.json", { kind: "operating", industry: "Credit Services" });
+  writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);
+  await analyze({ ask: args.ask, getBondYield: async () => 0.04, evidence: async () => null });
+  const result = readCorpusJson<Analysis>("analysis/KO.US.json")!;
+  expect(result.company.kind).toBe("bank");
+  expect(result.tests.moat.metrics.roeMedian).toBeTypeOf("number");
+  expect(result.valuation?.method).toBe("book_value");
+});
+
+it("C4 analyze and jev-sample skip unsafe IDs and process ampersand IDs", async () => {
+  const ids = ["PE&OLES.MX", "F&D.BK", "L&E.BK", "C&G.XNAI"];
+  appendJsonl("universe.jsonl", input("../bad").company);
+  for (const id of ids) {
+    const args = input(id);
+    appendJsonl("universe.jsonl", args.company);
+    writeCorpusJson(`fundamentals/${id}.json`, args.fundamentals);
+  }
+  const log = vi.spyOn(console, "warn").mockImplementation(() => {});
+  await analyze({ ask: async () => answers(), getBondYield: async () => 0.04, evidence: async () => null });
+  for (const id of ids) expect(readCorpusJson<Analysis>(`analysis/${id}.json`)?.id).toBe(id);
+  await sample({});
+  const { readJsonl } = await import("../../../lib/value/corpus");
+  expect(readJsonl<{id:string}>("jev-sample/brand.jsonl").map(row => row.id).sort()).toEqual([...ids].sort());
+  expect(log.mock.calls.flat().join(" ")).toMatch(/skipp.*bad/i);
+});

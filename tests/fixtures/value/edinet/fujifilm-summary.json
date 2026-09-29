@@ -1,0 +1,674 @@
+[
+  {
+    "element": "jpdei_cor:NumberOfSubmissionDEI",
+    "context": "FilingDateInstant",
+    "unit": null,
+    "value": "1"
+  },
+  {
+    "element": "jpcrp_cor:RevenuesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": "円",
+    "value": "2525773000000"
+  },
+  {
+    "element": "jpcrp_cor:RevenuesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": "円",
+    "value": "2859041000000"
+  },
+  {
+    "element": "jpcrp_cor:RevenuesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": "円",
+    "value": "2960916000000"
+  },
+  {
+    "element": "jpcrp_cor:RevenuesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": "円",
+    "value": "3195828000000"
+  },
+  {
+    "element": "jpcrp_cor:RevenuesUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": "円",
+    "value": "3356969000000"
+  },
+  {
+    "element": "jpcrp_cor:ProfitLossBeforeTaxUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": "円",
+    "value": "260446000000"
+  },
+  {
+    "element": "jpcrp_cor:ProfitLossBeforeTaxUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": "円",
+    "value": "282224000000"
+  },
+  {
+    "element": "jpcrp_cor:ProfitLossBeforeTaxUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": "円",
+    "value": "317288000000"
+  },
+  {
+    "element": "jpcrp_cor:ProfitLossBeforeTaxUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": "円",
+    "value": "340594000000"
+  },
+  {
+    "element": "jpcrp_cor:ProfitLossBeforeTaxUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": "円",
+    "value": "366629000000"
+  },
+  {
+    "element": "jpcrp_cor:NetIncomeLossAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": "円",
+    "value": "211180000000"
+  },
+  {
+    "element": "jpcrp_cor:NetIncomeLossAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": "円",
+    "value": "219422000000"
+  },
+  {
+    "element": "jpcrp_cor:NetIncomeLossAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": "円",
+    "value": "243509000000"
+  },
+  {
+    "element": "jpcrp_cor:NetIncomeLossAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": "円",
+    "value": "260951000000"
+  },
+  {
+    "element": "jpcrp_cor:NetIncomeLossAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": "円",
+    "value": "276735000000"
+  },
+  {
+    "element": "jpcrp_cor:ComprehensiveIncomeAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": "円",
+    "value": "340009000000"
+  },
+  {
+    "element": "jpcrp_cor:ComprehensiveIncomeAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": "円",
+    "value": "307249000000"
+  },
+  {
+    "element": "jpcrp_cor:ComprehensiveIncomeAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": "円",
+    "value": "523308000000"
+  },
+  {
+    "element": "jpcrp_cor:ComprehensiveIncomeAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": "円",
+    "value": "250379000000"
+  },
+  {
+    "element": "jpcrp_cor:ComprehensiveIncomeAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": "円",
+    "value": "579855000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearInstant",
+    "unit": "円",
+    "value": "2502657000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearInstant",
+    "unit": "円",
+    "value": "2763145000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearInstant",
+    "unit": "円",
+    "value": "3169247000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearInstant",
+    "unit": "円",
+    "value": "3348480000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearInstant",
+    "unit": "円",
+    "value": "3839550000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityIncludingPortionAttributableToNonControllingInterestUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearInstant",
+    "unit": "円",
+    "value": "2524940000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityIncludingPortionAttributableToNonControllingInterestUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearInstant",
+    "unit": "円",
+    "value": "2787860000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityIncludingPortionAttributableToNonControllingInterestUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearInstant",
+    "unit": "円",
+    "value": "3173315000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityIncludingPortionAttributableToNonControllingInterestUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearInstant",
+    "unit": "円",
+    "value": "3352682000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityIncludingPortionAttributableToNonControllingInterestUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearInstant",
+    "unit": "円",
+    "value": "3844385000000"
+  },
+  {
+    "element": "jpcrp_cor:TotalAssetsUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearInstant",
+    "unit": "円",
+    "value": "3955280000000"
+  },
+  {
+    "element": "jpcrp_cor:TotalAssetsUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearInstant",
+    "unit": "円",
+    "value": "4134311000000"
+  },
+  {
+    "element": "jpcrp_cor:TotalAssetsUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearInstant",
+    "unit": "円",
+    "value": "4783460000000"
+  },
+  {
+    "element": "jpcrp_cor:TotalAssetsUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearInstant",
+    "unit": "円",
+    "value": "5249908000000"
+  },
+  {
+    "element": "jpcrp_cor:TotalAssetsUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearInstant",
+    "unit": "円",
+    "value": "6053776000000"
+  },
+  {
+    "element": "jpcrp_cor:EquityAttributableToOwnersOfParentPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearInstant",
+    "unit": null,
+    "value": "2081.43"
+  },
+  {
+    "element": "jpcrp_cor:EquityAttributableToOwnersOfParentPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearInstant",
+    "unit": null,
+    "value": "2296.32"
+  },
+  {
+    "element": "jpcrp_cor:EquityAttributableToOwnersOfParentPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearInstant",
+    "unit": null,
+    "value": "2632.12"
+  },
+  {
+    "element": "jpcrp_cor:EquityAttributableToOwnersOfParentPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearInstant",
+    "unit": null,
+    "value": "2779.50"
+  },
+  {
+    "element": "jpcrp_cor:EquityAttributableToOwnersOfParentPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearInstant",
+    "unit": null,
+    "value": "3185.79"
+  },
+  {
+    "element": "jpcrp_cor:BasicEarningsLossPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": null,
+    "value": "175.78"
+  },
+  {
+    "element": "jpcrp_cor:BasicEarningsLossPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": null,
+    "value": "182.40"
+  },
+  {
+    "element": "jpcrp_cor:BasicEarningsLossPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": null,
+    "value": "202.29"
+  },
+  {
+    "element": "jpcrp_cor:BasicEarningsLossPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": null,
+    "value": "216.67"
+  },
+  {
+    "element": "jpcrp_cor:BasicEarningsLossPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": null,
+    "value": "229.65"
+  },
+  {
+    "element": "jpcrp_cor:DilutedEarningsLossPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": null,
+    "value": "175.37"
+  },
+  {
+    "element": "jpcrp_cor:DilutedEarningsLossPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": null,
+    "value": "182.14"
+  },
+  {
+    "element": "jpcrp_cor:DilutedEarningsLossPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": null,
+    "value": "202.05"
+  },
+  {
+    "element": "jpcrp_cor:DilutedEarningsLossPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": null,
+    "value": "216.46"
+  },
+  {
+    "element": "jpcrp_cor:DilutedEarningsLossPerShareUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": null,
+    "value": "229.45"
+  },
+  {
+    "element": "jpcrp_cor:EquityToAssetRatioUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearInstant",
+    "unit": null,
+    "value": "0.633"
+  },
+  {
+    "element": "jpcrp_cor:EquityToAssetRatioUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearInstant",
+    "unit": null,
+    "value": "0.668"
+  },
+  {
+    "element": "jpcrp_cor:EquityToAssetRatioUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearInstant",
+    "unit": null,
+    "value": "0.663"
+  },
+  {
+    "element": "jpcrp_cor:EquityToAssetRatioUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearInstant",
+    "unit": null,
+    "value": "0.638"
+  },
+  {
+    "element": "jpcrp_cor:EquityToAssetRatioUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearInstant",
+    "unit": null,
+    "value": "0.634"
+  },
+  {
+    "element": "jpcrp_cor:RateOfReturnOnEquityUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": null,
+    "value": "0.090"
+  },
+  {
+    "element": "jpcrp_cor:RateOfReturnOnEquityUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": null,
+    "value": "0.083"
+  },
+  {
+    "element": "jpcrp_cor:RateOfReturnOnEquityUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": null,
+    "value": "0.082"
+  },
+  {
+    "element": "jpcrp_cor:RateOfReturnOnEquityUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": null,
+    "value": "0.080"
+  },
+  {
+    "element": "jpcrp_cor:RateOfReturnOnEquityUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": null,
+    "value": "0.077"
+  },
+  {
+    "element": "jpcrp_cor:PriceEarningsRatioUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": null,
+    "value": "14.2"
+  },
+  {
+    "element": "jpcrp_cor:PriceEarningsRatioUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": null,
+    "value": "12.2"
+  },
+  {
+    "element": "jpcrp_cor:PriceEarningsRatioUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": null,
+    "value": "16.7"
+  },
+  {
+    "element": "jpcrp_cor:PriceEarningsRatioUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": null,
+    "value": "13.1"
+  },
+  {
+    "element": "jpcrp_cor:PriceEarningsRatioUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": null,
+    "value": "12.9"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInOperatingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": "円",
+    "value": "323934000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInOperatingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": "円",
+    "value": "210452000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInOperatingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": "円",
+    "value": "407941000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInOperatingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": "円",
+    "value": "428162000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInOperatingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": "円",
+    "value": "410555000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInInvestingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": "円",
+    "value": "-153542000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInInvestingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": "円",
+    "value": "-323225000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInInvestingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": "円",
+    "value": "-527416000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInInvestingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": "円",
+    "value": "-541953000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInInvestingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": "円",
+    "value": "-554604000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInFinancingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearDuration",
+    "unit": "円",
+    "value": "-105184000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInFinancingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearDuration",
+    "unit": "円",
+    "value": "-123695000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInFinancingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearDuration",
+    "unit": "円",
+    "value": "-462000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInFinancingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearDuration",
+    "unit": "円",
+    "value": "108883000000"
+  },
+  {
+    "element": "jpcrp_cor:CashFlowsFromUsedInFinancingActivitiesUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearDuration",
+    "unit": "円",
+    "value": "120249000000"
+  },
+  {
+    "element": "jpcrp_cor:CashAndCashEquivalentsUSGAAPSummaryOfBusinessResults",
+    "context": "Prior4YearInstant",
+    "unit": "円",
+    "value": "486328000000"
+  },
+  {
+    "element": "jpcrp_cor:CashAndCashEquivalentsUSGAAPSummaryOfBusinessResults",
+    "context": "Prior3YearInstant",
+    "unit": "円",
+    "value": "268608000000"
+  },
+  {
+    "element": "jpcrp_cor:CashAndCashEquivalentsUSGAAPSummaryOfBusinessResults",
+    "context": "Prior2YearInstant",
+    "unit": "円",
+    "value": "179715000000"
+  },
+  {
+    "element": "jpcrp_cor:CashAndCashEquivalentsUSGAAPSummaryOfBusinessResults",
+    "context": "Prior1YearInstant",
+    "unit": "円",
+    "value": "172111000000"
+  },
+  {
+    "element": "jpcrp_cor:CashAndCashEquivalentsUSGAAPSummaryOfBusinessResults",
+    "context": "CurrentYearInstant",
+    "unit": "円",
+    "value": "170553000000"
+  },
+  {
+    "element": "jpdei_cor:EDINETCodeDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "E00988"
+  },
+  {
+    "element": "jpdei_cor:FundCodeDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "－"
+  },
+  {
+    "element": "jpdei_cor:SecurityCodeDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "49010"
+  },
+  {
+    "element": "jpdei_cor:FilerNameInJapaneseDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "富士フイルムホールディングス株式会社"
+  },
+  {
+    "element": "jpdei_cor:FilerNameInEnglishDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "FUJIFILM Holdings Corporation"
+  },
+  {
+    "element": "jpdei_cor:FundNameInJapaneseDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "－"
+  },
+  {
+    "element": "jpdei_cor:FundNameInEnglishDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "－"
+  },
+  {
+    "element": "jpdei_cor:CabinetOfficeOrdinanceDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "企業内容等の開示に関する内閣府令"
+  },
+  {
+    "element": "jpdei_cor:DocumentTypeDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "第三号様式"
+  },
+  {
+    "element": "jpdei_cor:AccountingStandardsDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "US GAAP"
+  },
+  {
+    "element": "jpdei_cor:WhetherConsolidatedFinancialStatementsArePreparedDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "true"
+  },
+  {
+    "element": "jpdei_cor:IndustryCodeWhenConsolidatedFinancialStatementsArePreparedInAccordanceWithIndustrySpecificRegulationsDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "CTE"
+  },
+  {
+    "element": "jpdei_cor:IndustryCodeWhenFinancialStatementsArePreparedInAccordanceWithIndustrySpecificRegulationsDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "CTE"
+  },
+  {
+    "element": "jpdei_cor:CurrentFiscalYearStartDateDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "2025-04-01"
+  },
+  {
+    "element": "jpdei_cor:CurrentPeriodEndDateDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "2026-03-31"
+  },
+  {
+    "element": "jpdei_cor:TypeOfCurrentPeriodDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "FY"
+  },
+  {
+    "element": "jpdei_cor:CurrentFiscalYearEndDateDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "2026-03-31"
+  },
+  {
+    "element": "jpdei_cor:PreviousFiscalYearStartDateDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "2024-04-01"
+  },
+  {
+    "element": "jpdei_cor:ComparativePeriodEndDateDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "2025-03-31"
+  },
+  {
+    "element": "jpdei_cor:PreviousFiscalYearEndDateDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "2025-03-31"
+  },
+  {
+    "element": "jpdei_cor:NextFiscalYearStartDateDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "－"
+  },
+  {
+    "element": "jpdei_cor:EndDateOfQuarterlyOrSemiAnnualPeriodOfNextFiscalYearDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "－"
+  },
+  {
+    "element": "jpdei_cor:AmendmentFlagDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "false"
+  },
+  {
+    "element": "jpdei_cor:IdentificationOfDocumentSubjectToAmendmentDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "－"
+  },
+  {
+    "element": "jpdei_cor:ReportAmendmentFlagDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "false"
+  },
+  {
+    "element": "jpdei_cor:XBRLAmendmentFlagDEI",
+    "context": "FilingDateInstant",
+    "unit": "－",
+    "value": "false"
+  }
+]

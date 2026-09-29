@@ -1,0 +1,141 @@
+import type { SectionKey, Year } from "../types";
+import { htmlToText } from "../reports/html-to-text";
+import { SECTION_TOKENS, truncateTokens } from "../reports/cut-sections";
+
+export interface EdinetRow { element: string; context: string; unit: string | null; value: string }
+/** EDINET TSV is quoted CSV: cells can contain literal tabs and line breaks. */
+export function parseEdinetCsv(tsv: string): EdinetRow[] {
+  const records: string[][] = []; let record: string[] = []; let cell = ""; let quoted = false;
+  const source = tsv.replace(/^\uFEFF/, "");
+  for (let i = 0; i < source.length; i++) {
+    const c = source[i];
+    if (c === '"') {
+      if (quoted && source[i + 1] === '"') { cell += '"'; i++; }
+      else quoted = !quoted;
+    } else if (!quoted && (c === "\t" || c === "\n")) {
+      record.push(cell.replace(/\r$/, "")); cell = "";
+      if (c === "\n") { records.push(record); record = []; }
+    } else cell += c;
+  }
+  if (cell || record.length) { record.push(cell.replace(/\r$/, "")); records.push(record); }
+  const headers = records.shift() ?? [];
+  const at = (r: string[], name: string) => r[headers.indexOf(name)] ?? "";
+  return records.filter(r => at(r, "要素ID")).map(r => ({ element: at(r,"要素ID"), context: at(r,"コンテキストID"), unit: at(r,"単位") || null, value: at(r,"値") }));
+}
+const local = (r: EdinetRow) => r.element.split(":").at(-1)!;
+export function edinetFact(rows: EdinetRow[], name: string): string | null { return rows.find(r => local(r) === name)?.value ?? null; }
+const fields = {
+  revenue: ["RevenueIFRSSummaryOfBusinessResults", "RevenuesUSGAAPSummaryOfBusinessResults", "NetSalesSummaryOfBusinessResults", "OperatingRevenue1SummaryOfBusinessResults", "Revenue2IFRS", "RevenueIFRS", "NetSales", "OperatingRevenue1"],
+  grossProfit: ["GrossProfitIFRSSummaryOfBusinessResults", "GrossProfitIFRS", "GrossProfit"],
+  operatingIncome: ["OperatingProfitLossIFRS", "OperatingIncome"],
+  // OrdinaryIncomeLoss excludes extraordinary items, so it is not a pretax-profit proxy.
+  preTaxIncome: ["ProfitLossBeforeTaxUSGAAPSummaryOfBusinessResults", "ProfitLossBeforeTaxIFRS", "IncomeBeforeIncomeTaxes"],
+  taxExpense: ["IncomeTaxExpenseIFRS", "IncomeTaxes"],
+  netIncome: ["NetIncomeLossAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults", "ProfitLossAttributableToOwnersOfParentIFRSSummaryOfBusinessResults", "ProfitLossAttributableToOwnersOfParentSummaryOfBusinessResults", "NetIncomeLossSummaryOfBusinessResults", "ProfitLossAttributableToOwnersOfParentIFRS", "ProfitLossAttributableToOwnersOfParent", "NetIncome"],
+  interestExpense: ["InterestExpensesIFRS", "InterestExpenses", "InterestPaidOpeCFIFRS"],
+  da: ["DepreciationAndAmortizationOpeCFIFRS", "DepreciationExpenseOpeCFIFRS", "DepreciationAndAmortizationOpeCF", "DepreciationAndAmortization", "Depreciation"],
+  sbc: ["ShareBasedPaymentExpenseOpeCFIFRS", "ShareBasedPaymentExpensesIFRS"],
+  nonRecurring: [],
+  ocf: ["CashFlowsFromUsedInOperatingActivitiesUSGAAPSummaryOfBusinessResults", "CashFlowsFromUsedInOperatingActivitiesIFRSSummaryOfBusinessResults", "CashFlowsFromUsedInOperatingActivitiesSummaryOfBusinessResults", "CashFlowsFromUsedInOperatingActivitiesIFRS", "NetCashProvidedByUsedInOperatingActivities"],
+  capex: ["PurchaseOfPropertyPlantAndEquipmentInvCFIFRS", "PurchaseOfPropertyPlantAndEquipmentInvCF", "PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCFIFRS", "PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCF", "PurchaseOfNoncurrentAssetsInvCF"],
+  dividendsPaid: ["DividendsPaidFinCFIFRS", "CashDividendsPaidFinCF", "DividendsPaidFinCF"],
+  buybacks: ["PurchaseOfTreasurySharesFinCFIFRS", "PurchaseOfTreasuryStockFinCF"],
+  issuance: ["ProceedsFromIssuanceOfSharesFinCFIFRS", "ProceedsFromIssuanceOfCommonSharesFinCF"],
+  acquisitions: ["PaymentsForAcquisitionOfBusinessesInvCFIFRS", "PurchaseOfSharesOfSubsidiariesResultingInChangeInScopeOfConsolidationInvCF"],
+  receivables: ["TradeAndOtherReceivablesCAIFRS", "NotesAndAccountsReceivableTrade", "NotesAndAccountsReceivableTradeAndContractAssets"],
+  inventory: ["InventoriesCAIFRS", "Inventories"],
+  payables: ["TradeAndOtherPayablesCLIFRS", "NotesAndAccountsPayableTrade"],
+  cash: ["CashAndCashEquivalentsUSGAAPSummaryOfBusinessResults", "CashAndCashEquivalentsIFRSSummaryOfBusinessResults", "CashAndCashEquivalentsSummaryOfBusinessResults", "CashAndCashEquivalentsIFRS", "CashAndDeposits"],
+  totalDebt: ["InterestBearingDebtIFRS"],
+  equity: ["EquityAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults", "EquityAttributableToOwnersOfParentIFRSSummaryOfBusinessResults", "EquityAttributableToOwnersOfParentIFRS"],
+  goodwill: ["GoodwillIFRS", "Goodwill"],
+  intangibles: ["IntangibleAssetsIFRS", "IntangibleAssets"],
+  ppe: ["PropertyPlantAndEquipmentIFRS", "PropertyPlantAndEquipment"],
+  totalAssets: ["TotalAssetsIFRSSummaryOfBusinessResults", "TotalAssetsUSGAAPSummaryOfBusinessResults", "TotalAssetsSummaryOfBusinessResults", "AssetsIFRS", "Assets"],
+  totalLiabilities: ["LiabilitiesIFRS", "Liabilities"],
+  currentAssets: ["CurrentAssetsIFRS", "CurrentAssets"],
+  currentLiabilities: ["TotalCurrentLiabilitiesIFRS", "CurrentLiabilities"],
+  dilutedShares: ["WeightedAverageNumberOfDilutedSharesIFRS", "AverageNumberOfSharesDilutedIFRS"],
+  marketCap: [], minorityInterest: ["NonControllingInterestsIFRS", "NonControllingInterests", "MinorityInterests"],
+  liabilitiesAndStockholdersEquity: ["LiabilitiesAndEquityIFRS", "LiabilitiesAndNetAssets"],
+} satisfies Partial<Record<keyof Year, string[]>>;
+export function yearsFromEdinet(rows: EdinetRow[]): Year[] {
+  const end = edinetFact(rows, "CurrentFiscalYearEndDateDEI");
+  if (!end || !/^\d{4}-\d{2}-\d{2}$/.test(end)) return [];
+  const consolidated = edinetFact(rows, "WhetherConsolidatedFinancialStatementsArePreparedDEI") !== "false";
+  const years: Year[] = [];
+  for (let offset = 4; offset >= 0; offset--) {
+    const prefix = offset ? `Prior${offset}Year` : "CurrentYear";
+    const base = new RegExp(`^${prefix}(?:Duration|Instant)${consolidated ? "" : "(?:_NonConsolidatedMember)?"}$`);
+    const candidates = rows.filter(r => base.test(r.context));
+    const value = (names: string[], input = candidates): number | null => {
+      for (const name of names) {
+        const row = input.find(r => local(r) === name && /^-?\d+(?:\.\d+)?$/.test(r.value));
+        if (row) { const n = Number(row.value); if (Number.isFinite(n)) return n; }
+      }
+      return null;
+    };
+    const previousEnd = edinetFact(rows,"PreviousFiscalYearEndDateDEI");
+    const hasPrevious = previousEnd !== null && /^\d{4}-\d{2}-\d{2}$/.test(previousEnd);
+    const anchor = offset > 0 && hasPrevious ? previousEnd! : end;
+    const distance = offset > 0 && hasPrevious ? offset - 1 : offset;
+    const fy = Number(anchor.slice(0,4)) - distance;
+    const month = Number(anchor.slice(5,7)); const day = Number(anchor.slice(8,10));
+    const isMonthEnd = day === new Date(Date.UTC(Number(anchor.slice(0,4)),month,0)).getUTCDate();
+    const fiscalEnd = new Date(Date.UTC(fy,month - 1,isMonthEnd ? new Date(Date.UTC(fy,month,0)).getUTCDate() : day)).toISOString().slice(0,10);
+    const year = { fy, end: fiscalEnd, currency: "JPY" } as Year;
+    for (const [key,names] of Object.entries(fields)) (year as unknown as Record<string, unknown>)[key] = value(names);
+    // Net assets includes minority interests and subscription rights, unlike parent equity.
+    if (year.equity === null) {
+      const netAssets = value(["NetAssetsSummaryOfBusinessResults", "NetAssets"]);
+      if (netAssets !== null) year.equity = netAssets - (year.minorityInterest ?? 0) - (value(["SubscriptionRightsToShares"]) ?? 0);
+      else year.equity = value(["ShareholdersEquity"]);
+    }
+    if (year.dilutedShares === null && year.netIncome !== null) {
+      const eps = value(["DilutedEarningsLossPerShareUSGAAPSummaryOfBusinessResults", "DilutedEarningsLossPerShareIFRSSummaryOfBusinessResults", "DilutedEarningsPerShareSummaryOfBusinessResults", "DilutedEarningsLossPerShareIFRS"]);
+      if (eps !== null && eps !== 0 && year.netIncome / eps > 0) year.dilutedShares = year.netIncome / eps;
+    }
+    if (year.dilutedShares === null) year.dilutedShares = value(["NumberOfIssuedSharesSummaryOfBusinessResults", "TotalNumberOfIssuedSharesSummaryOfBusinessResults"], rows.filter(r => new RegExp(`^${prefix}(?:Duration|Instant)(?:_NonConsolidatedMember)?$`).test(r.context)));
+    if (year.totalDebt === null) {
+      const components = [value(["BondsAndBorrowingsCLIFRS", "ShortTermLoansPayable"]),value(["BondsAndBorrowingsNCLIFRS", "LongTermLoansPayable"]),value(["LeaseLiabilitiesCLIFRS"]),value(["LeaseLiabilitiesNCLIFRS"])];
+      if (components[0] !== null && components[1] !== null) {
+        year.totalDebt = components.reduce<number>((sum,n) => sum + (n ?? 0),0);
+        if (value(["BondsAndBorrowingsNCLIFRS"]) === null) year.totalDebt += (value(["BondsPayable"]) ?? 0) + (value(["CurrentPortionOfLongTermLoansPayable"]) ?? 0) + (value(["CurrentPortionOfBonds"]) ?? 0);
+      }
+    }
+    if (year.buybacks === null) {
+      const netTreasury = value(["NetDecreaseIncreaseInTreasurySharesFinCFIFRS"]);
+      if (netTreasury !== null) year.buybacks = Math.max(0, -netTreasury);
+    }
+    for (const key of ["capex","dividendsPaid","buybacks","acquisitions","interestExpense"] as const) if (year[key] !== null) year[key] = Math.abs(year[key]);
+    if (year.revenue !== null || year.netIncome !== null || year.totalAssets !== null) years.push(year);
+  }
+  // A short transition period can end in the same calendar year as its predecessor.
+  // The shared Year contract retains the later annual period for that year.
+  return mergeYears([], years);
+}
+export function mergeYears(earlier: Year[], later: Year[]): Year[] {
+  const years = new Map(earlier.map(y => [y.fy,y]));
+  for (const year of later) {
+    const prior = years.get(year.fy);
+    years.set(year.fy, prior && prior.end !== year.end ? { ...year }
+      : { ...(prior ?? year), ...Object.fromEntries(Object.entries(year).filter(([,v]) => v !== null)) } as Year);
+  }
+  return [...years.values()].sort((a,b) => a.fy-b.fy);
+}
+export function sectionsFromEdinet(rows: EdinetRow[]): Partial<Record<SectionKey,string>> {
+  const map: Record<string,SectionKey> = {
+    DescriptionOfBusinessTextBlock:"business", BusinessPolicyBusinessEnvironmentIssuesToAddressEtcTextBlock:"business",
+    BusinessRisksTextBlock:"risk", ManagementAnalysisOfFinancialPositionOperatingResultsAndCashFlowsTextBlock:"mdna",
+    RemunerationForDirectorsAndOtherOfficersTextBlock:"compensation", ShareholdingsTextBlock:"capital",
+  };
+  const sections: Partial<Record<SectionKey,string>> = {};
+  for (const row of rows) {
+    const key = map[local(row)];
+    if (!key || !/^(?:CurrentYearDuration|FilingDateInstant)$/.test(row.context)) continue;
+    const text = htmlToText(row.value);
+    if (text) sections[key] = [sections[key],text].filter(Boolean).join("\n\n");
+  }
+  for (const key of Object.keys(sections) as SectionKey[]) sections[key] = truncateTokens(sections[key]!, SECTION_TOKENS[key]);
+  return sections;
+}

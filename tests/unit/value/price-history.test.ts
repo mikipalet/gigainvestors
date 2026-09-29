@@ -108,7 +108,7 @@ it('counts failed EODHD attempts against the daily budget', async () => {
 it('skips a failed Yahoo request and writes the next company', async () => {
   for (const id of ['BAD.JP','8058.JP']) appendJsonl('universe.jsonl', company(id));
   vi.spyOn(console, 'error').mockImplementation(() => {});
-  vi.stubGlobal('fetch', async (url: string) => url.includes('BAD.T') ? new Response('', {status:404}) : Response.json(yahoo));
+  vi.stubGlobal('fetch', async (url: string) => url.includes('BAD.T') ? Response.json({error:'provider failure'}) : Response.json(yahoo));
   await expect(run()).rejects.toThrow(/more than 20%/);
   expect(readCorpusJson('prices-history/BAD.JP.json')).toBeNull();
   expect(readCorpusJson('prices-history/8058.JP.json')).not.toBeNull();
@@ -157,7 +157,7 @@ it('succeeds at exactly 20% failures and does not count fresh skipped companies 
   writeCorpusJson('prices-history/meta/FRESH.JP.json', { fetchedAt: new Date().toISOString() });
   vi.spyOn(console, 'error').mockImplementation(() => {});
   const log = vi.spyOn(console, 'log').mockImplementation(() => {});
-  vi.stubGlobal('fetch', async (url: string) => url.includes('BAD.T') ? new Response('', { status: 404 }) : Response.json(yahoo));
+  vi.stubGlobal('fetch', async (url: string) => url.includes('BAD.T') ? Response.json({error:'provider failure'}) : Response.json(yahoo));
   await run();
   expect(log).toHaveBeenCalledWith('price-history: 1/5 companies failed');
   expect(readCorpusJson('prices-history/D.JP.json')).not.toBeNull();
@@ -173,4 +173,19 @@ it('continues after malformed cached history metadata', async () => {
   await run();
   expect(readCorpusJson('prices-history/D.JP.json')).not.toBeNull();
   expect(readCorpusJson('prices-history/BAD.JP.json')).toBeNull();
+});
+
+it('records unavailable Japanese symbols without starving later history or replacing old prices',async()=>{
+  for(let i=0;i<21;i++) appendJsonl('universe.jsonl',company(`MISSING${i}.JP`));
+  appendJsonl('universe.jsonl',company('8058.JP'));
+  writeCorpusJson('prices-history/MISSING0.JP.json',[['2020-01',42]]);
+  vi.spyOn(console,'error').mockImplementation(()=>{});
+  vi.stubGlobal('fetch',async (url:string)=>url.includes('/8058.T?') ? Response.json(yahoo) : new Response('',{status:404}));
+  await run();
+  expect(readCorpusJson('prices-history/8058.JP.json')).not.toBeNull();
+  expect(readCorpusJson('prices-history/MISSING0.JP.json')).toEqual([['2020-01',42]]);
+  expect(readCorpusJson('prices-history/meta/MISSING1.JP.json')).toMatchObject({status:'unavailable'});
+  vi.stubGlobal('fetch',()=>{throw new Error('fresh unavailability should be cached')});
+  await run();
+  expect(readCorpusJson('prices-history/meta/MISSING1.JP.json')).toMatchObject({status:'unavailable'});
 });

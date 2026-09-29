@@ -9,6 +9,7 @@ export const T = {
     // Explicit calibration requirement: retain bank treatment only while that loan field is absent.
     missingLoanBankIds: ["AXP.US"] as readonly string[],
   },
+  edinet: { checkpointCompanies: 100, perSecond: 3, concurrency: 6, timeoutMs: 180_000, maxCsvBytes: 128 * 1024 * 1024, filingYears: 2 },
   yahoo: { perSecond: 2 },
   numeric: { minAvailableFraction: 2 / 3 },
   dedupe: { revenueTolerance: 0.02, backupRetentionMs: 7 * 24 * 60 * 60 * 1000 },

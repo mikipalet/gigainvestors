@@ -24,6 +24,12 @@ export default async function reports({ only, limit, force = false }: {
   const candidateIds = new Set(candidates.map(company => company.id));
   const fallback: typeof companies = [];
   async function processCompany(company: typeof companies[number]): Promise<void> {
+    if (company.source === "edinet") {
+      const meta = readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`);
+      if (meta?.kind === "EDINET" && meta.sections.every(key => existsSync(corpusPath(`reports/${company.id}/${key}.txt`)))) return;
+      console.warn(`reports: ${company.id} EDINET report missing; run japan to restore it`);
+      return;
+    }
     const esef = esefById.get(company.id) ?? null;
     const cik = !esef ? await resolveCik(company) : null;
     const filings = cik ? await latestFilings(cik) : null;

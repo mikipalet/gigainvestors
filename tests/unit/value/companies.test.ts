@@ -78,3 +78,17 @@ it.each(["", ".", "..", "bad/id", "bad\\id", "bad id", "bad$id", null])("C4 skip
   try { expect(loadCompanies({ limit: 1 }).map(row => row.id)).toEqual(["GOOD.TW"]); }
   finally { log.mockRestore(); }
 });
+
+it('reports continues with the universe description when company enrichment is malformed', async () => {
+  const { writeFileSync } = await import('node:fs');
+  for (const id of ['BAD.TW', 'A.TW', 'B.TW', 'C.TW', 'D.TW']) appendJsonl('universe.jsonl', { ...company(id), description: 'Makes chips.' });
+  writeCorpusJson('companies/BAD.TW.json', {});
+  writeFileSync(corpusPath('companies/BAD.TW.json'), '{broken');
+  const error = vi.spyOn(console, 'error').mockImplementation(() => {});
+  try {
+    await reports({});
+    expect(readFileSync(corpusPath('reports/BAD.TW/business.txt'), 'utf8')).toBe('Makes chips.');
+    expect(readCorpusJson('reports/D.TW/meta.json')).toMatchObject({ kind: 'description' });
+    expect(error).toHaveBeenCalledWith(expect.stringMatching(/^BAD.TW: /));
+  } finally { error.mockRestore(); }
+});

@@ -1,19 +1,19 @@
 import { createHash, randomUUID } from "node:crypto";
 import { existsSync, mkdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
-import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
+import { corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
+import { loadCompanies } from "../../../lib/value/companies";
 import { cutSections, filingBusinessFallback, SECTION_TOKENS, truncateTokens } from "../../../lib/value/reports/cut-sections";
 import { fetchEdgar, latestFilings } from "../../../lib/value/reports/edgar";
 import { cutEsefSections, fetchEsef, latestEsef } from "../../../lib/value/reports/esef";
 import { htmlToText } from "../../../lib/value/reports/html-to-text";
-import type { Company, ReportMeta, SectionKey } from "../../../lib/value/types";
+import type { ReportMeta, SectionKey } from "../../../lib/value/types";
 
 const esefCountries = new Set("AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE GB".split(" "));
 
 export default async function reports({ only, limit, force = false }: {
   only?: string[]; limit?: number; force?: boolean;
 }): Promise<void> {
-  const companies = readJsonl<Company>("universe.jsonl")
-    .filter((company) => !only || only.includes(company.id)).slice(0, limit);
+  const companies = loadCompanies({ only, limit });
   for (const company of companies) {
     if (!/^[\w.-]+$/.test(company.id)) throw new Error("Invalid company ID");
     const esef = company.lei && esefCountries.has(company.country) ? await latestEsef(company.lei) : null;

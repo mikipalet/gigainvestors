@@ -6,7 +6,8 @@ type Node = { tag: string; start: number; end: number; text: string; style: Styl
 type Rule = { selector: string; declarations: string; specificity: number; order: number };
 
 function declarations(source: string): Record<string, string> {
-  return Object.fromEntries([...source.matchAll(/([\w-]+)\s*:\s*([^;{}]+)/g)].map(m => [m[1].toLowerCase(), m[2].trim().toLowerCase()]));
+  // Anchor at declaration boundaries to avoid rescanning base64 image suffixes.
+  return Object.fromEntries([...source.matchAll(/(?:^|;)\s*([\w-]+)\s*:\s*([^;{}]+)/g)].map(m => [m[1].toLowerCase(), m[2].trim().toLowerCase()]));
 }
 
 function styled(parent: Style, source: string): Style {

@@ -22,20 +22,26 @@ export function searchTokens(company: Company): string[] {
   return [...new Set([...nameWords(company.name), ...aliases(company)])];
 }
 
-/** Each company appears once in each matching first-character shard. */
+/** Shared by the publisher and UI: single-character queries use the underscore shard. */
+export function searchShardKey(query: string): string {
+  const token = normalizeSearch(query.trim());
+  return token.length === 1 ? `${token}_` : token.slice(0, 2);
+}
+
+/** Each company appears once in each matching two-character token-prefix shard. */
 export function buildSearchShards(companies: Company[], analysed: ReadonlySet<string>): Record<string, SearchShard> {
-  const shards = Object.fromEntries([...SEARCH_KEYS].map(key => [key, { rows: [], aliases: {} } as SearchShard]));
+  const shards = Object.fromEntries([...SEARCH_KEYS].flatMap(first => [...SEARCH_KEYS, "_"].map(second => [first + second, { rows: [], aliases: {} } as SearchShard])));
   for (const company of [...companies].sort((a, b) => a.id.localeCompare(b.id))) {
     const codes = aliases(company);
-    const keys = new Set(searchTokens(company).map(token => token[0]).filter(key => SEARCH_KEYS.includes(key)));
+    const keys = new Set(searchTokens(company).map(searchShardKey).filter(key => SEARCH_KEYS.includes(key[0])));
     const cap = company.marketCapUsd;
     const row: SearchRow = [company.id, company.name, company.country, analysed.has(company.id) ? "a" : "p",
       cap != null && Number.isFinite(cap) ? Number(cap.toPrecision(2)) : null];
     for (const key of keys) {
-      const shard = shards[key];
+      const shard = shards[key] ??= { rows: [], aliases: {} };
       const offset = shard.rows.length;
       shard.rows.push(row);
-      for (const code of codes.filter(code => code[0] === key)) (shard.aliases[code] ??= []).push(offset);
+      for (const code of codes.filter(code => searchShardKey(code) === key)) (shard.aliases[code] ??= []).push(offset);
     }
   }
   return shards;

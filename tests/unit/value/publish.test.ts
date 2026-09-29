@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { buildOutput } from "@/lib/value/build-output";
@@ -157,14 +157,17 @@ describe("publish repository", () => {
     commitOutput({ repo, asOf: "2026-09-29" });
     mkdirSync(path.join(corpusDir(), "prices"), { recursive: true });
     writeFileSync(path.join(corpusDir(), "prices/US.json"), JSON.stringify({ "AXP.US": [50, "2026-09-29", "seed"] }));
+    mkdirSync(path.join(repo, "search"), { recursive: true });
+    writeFileSync(path.join(repo, "search/a.json"), "{}");
     const updated = analysis(); updated.tests.moat.result = "fail";
     publishSnapshot({ repo, analyses: [updated], universe: ["KO.US", "AXP.US", "PENDING.US"].map(id => analysis(id).company), partial: true, force: true, holdersByTicker: {}, investorNames: {} });
     const rows = JSON.parse(readFileSync(path.join(repo, "index/default.json"), "utf8")) as IndexRow[];
     expect(rows.map((row) => [row.id, row.t])).toEqual([["AXP.US", "PPPPP"], ["KO.US", "PFPPP"]]);
     const search = (key: string) => JSON.parse(readFileSync(path.join(repo, `search/${key}.json`), "utf8"));
-    expect(search("a").rows).toContainEqual(["AXP.US", "AXP.US", "US", "a", 100]);
-    expect(search("p").rows).toContainEqual(["PENDING.US", "PENDING.US", "US", "p", 100]);
-    expect(search("d").rows).toEqual([]);
+    expect(search("ax").rows).toContainEqual(["AXP.US", "AXP.US", "US", "a", 100]);
+    expect(search("pe").rows).toContainEqual(["PENDING.US", "PENDING.US", "US", "p", 100]);
+    expect(search("de").rows).toEqual([]);
+    expect(existsSync(path.join(repo, "search/a.json"))).toBe(false);
     const funnel = (JSON.parse(readFileSync(path.join(repo, "meta.json"), "utf8")) as StoreMeta).funnel!;
     expect(funnel.analysed).toBe(2);
     expect(funnel.gates.map(g => g.passing)).toEqual([2, 1, 1, 1, 1, 1]);

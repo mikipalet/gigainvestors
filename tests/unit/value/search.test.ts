@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildSearchShards, searchShard, searchTokens } from "@/lib/value/search";
+import { buildSearchShards, searchShard, searchShardKey, searchTokens } from "@/lib/value/search";
 import type { Company } from "@/lib/value/types";
 
 const company = (id: string, name: string, cap: number | null, listings = [id]): Company => ({
@@ -22,7 +22,7 @@ const companies = [
 describe("value search shards", () => {
   it.each([["tsm", "2330.TW"], ["coca", "KO.US"], ["nestle", "NESN.SW"], ["0700", "0700.HK"], ["asml", "ASML.AS"]])("%s finds %s first", (query, id) => {
     const shards = buildSearchShards(companies, new Set(["KO.US"]));
-    expect(searchShard(shards[query[0]], query)[0][0]).toBe(id);
+    expect(searchShard(shards[query.slice(0, 2)], query)[0][0]).toBe(id);
   });
   it("indexes every listing and ISIN, strips accents and corporate stop words", () => {
     const c = { ...companies[4], isin: "CH0038863350" };
@@ -30,15 +30,28 @@ describe("value search shards", () => {
     expect(searchTokens(c)).not.toEqual(expect.arrayContaining(["sa"]));
     expect(searchTokens(company("X.US", "Élan Inc Ltd PLC SA AG Corp Holdings", null))).toEqual(["elan", "x"]);
     const shards = buildSearchShards([c], new Set());
-    expect(searchShard(shards.c, "CH0038863350")[0][0]).toBe("NESN.SW");
-    expect(searchShard(shards.n, "NESTLÉ")[0][0]).toBe("NESN.SW");
+    expect(searchShard(shards.ch, "CH0038863350")[0][0]).toBe("NESN.SW");
+    expect(searchShard(shards.ne, "NESTLÉ")[0][0]).toBe("NESN.SW");
+  });
+  it.each([[" NÉSTLÉ ", "ne"], ["F", "f_"], ["0700", "07"], ["C&G", "c&"], ["Q-CON", "q-"], [" ", ""]])("maps query %s to shard %s", (query, key) => {
+    expect(searchShardKey(query)).toBe(key);
+  });
+  it("preserves punctuation in listing prefixes and their alias postings", () => {
+    const shards = buildSearchShards([company("C&G.BK", "Example", null)], new Set());
+    expect(searchShard(shards["c&"], "c&g")[0][0]).toBe("C&G.BK");
+  });
+  it("puts single-character tokens in underscore shards without longer-token rows", () => {
+    const shards = buildSearchShards([company("F.US", "Ford Motor", null), company("FO.US", "Forest", null)], new Set());
+    expect(searchShard(shards.f_, "f").map(row => row[0])).toEqual(["F.US"]);
+    expect(shards.fo.rows.map(row => row[0])).toEqual(["F.US", "FO.US"]);
+    expect(shards.f).toBeUndefined();
   });
   it("includes pending companies, rounds caps and deduplicates rows per shard", () => {
     const shards = buildSearchShards(companies, new Set(["KO.US"]));
-    expect(shards.c.rows.find(row => row[0] === "KO.US")).toEqual(["KO.US", "The Coca-Cola Company", "US", "a", 380000000000]);
-    expect(shards.t.rows.find(row => row[0] === "0700.HK")?.slice(3)).toEqual(["p", null]);
-    expect(shards.a.rows.filter(row => row[0] === "ASML.AS")).toHaveLength(1);
-    expect(Object.keys(shards)).toHaveLength(36);
+    expect(shards.co.rows.find(row => row[0] === "KO.US")).toEqual(["KO.US", "The Coca-Cola Company", "US", "a", 380000000000]);
+    expect(shards.te.rows.find(row => row[0] === "0700.HK")?.slice(3)).toEqual(["p", null]);
+    expect(shards.as.rows.filter(row => row[0] === "ASML.AS")).toHaveLength(1);
+    expect(Object.keys(shards)).toHaveLength(36 * 37);
     expect(buildSearchShards([...companies].reverse(), new Set(["KO.US"]))).toEqual(shards);
   });
 });

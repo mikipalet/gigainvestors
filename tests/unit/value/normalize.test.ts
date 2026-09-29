@@ -16,7 +16,7 @@ describe("EODHD annual normalization", () => {
     expect(Math.abs(year.revenue! / 47.06e9 - 1)).toBeLessThan(0.01);
     expect(year).toMatchObject({ capex: 2064000000, buybacks: 1795000000, dividendsPaid: 8359000000, dilutedShares: 4320000000, sbc: 286000000, da: 1075000000, acquisitions: null, marketCap: null });
     expect(f.currency).toBe("USD");
-    expect(f.integrity).toEqual({ ok: true, reasons: [] });
+    expect(f.integrity).toEqual({ ok: true, reasons: [], notes: [] });
     expect(patch).toMatchObject({ cik: "0000021344", lei: "UWJKFUJFZ02DKWI3RY53", kind: "operating", isin: "US1912161007" });
   });
   it("classifies JPM as a bank without requiring gross profit", () => {
@@ -45,11 +45,11 @@ describe("EODHD annual normalization", () => {
   });
 });
 
-it("persists raw data, merges company metadata and resumes unless forced or stale", async () => {
-  const { mkdirSync, mkdtempSync, rmSync, utimesSync } = await import("node:fs");
+it("persists raw data, merges company metadata and refreshes on every rolling pass, including when forced", async () => {
+  const { mkdirSync, mkdtempSync, rmSync } = await import("node:fs");
   const { homedir } = await import("node:os");
   const { join } = await import("node:path");
-  const { appendJsonl, corpusPath, readCorpusJson, writeCorpusJson } = await import("../../../lib/value/corpus");
+  const { appendJsonl, readCorpusJson, writeCorpusJson } = await import("../../../lib/value/corpus");
   const { default: stage } = await import("../../../scripts/value/stages/fundamentals");
   const root = join(homedir(), "value-corpus");
   mkdirSync(root, { recursive: true });
@@ -71,16 +71,14 @@ it("persists raw data, merges company metadata and resumes unless forced or stal
     writeCorpusJson("companies/KO.US.json", { edinetCode: "preserve" });
     await stage({ only: ["KO.US"] });
     expect(readCorpusJson("raw/eodhd/KO.US.json")).toEqual(ko);
-    expect(readCorpusJson("companies/KO.US.json")).toMatchObject({ id: "KO.US", name: "Coca Cola", edinetCode: "preserve", kind: "operating" });
+    expect(readCorpusJson("companies/KO.US.json")).toMatchObject({ id: "KO.US", name: "Coca Cola", edinetCode: "preserve", kind: "operating", marketCapUsd: ko.Highlights.MarketCapitalization });
     expect(readCorpusJson("fundamentals/KO.US.json")).toMatchObject({ id: "KO.US", integrity: { ok: true } });
     requested.length = 0;
-    await stage({ limit: 1 });
-    expect(requested).toEqual([]);
+    await stage({ only: ["KO.US"], limit: 1 });
+    expect(requested).toContain("/api/fundamentals/KO.US");
     await stage({ only: ["KO.US"], force: true });
     expect(requested).toContain("/api/fundamentals/KO.US");
     requested.length = 0;
-    const stale = new Date(Date.now() - 81 * 86400000);
-    utimesSync(corpusPath("fundamentals/KO.US.json"), stale, stale);
     await stage({ only: ["KO.US"] });
     expect(requested).toContain("/api/fundamentals/KO.US");
     requested.length = 0;
@@ -88,4 +86,18 @@ it("persists raw data, merges company metadata and resumes unless forced or stal
     await stage({ only: ["KO.US"], force: true });
     expect(requested).toEqual(["/api/user"]);
   } finally { rmSync(directory, { recursive: true, force: true }); }
+});
+
+it("does not reset classification when the response has no sector or industry", () => {
+  expect(normalizeEodhd({ General: { Sector: null, Industry: null } }, "BANK.US").patch.kind).toBeUndefined();
+});
+
+it("maps the reported balance identity and normalizes zero share sources to null", () => {
+  for (const annual of [undefined, { "0": { date: "2023", shares: "0" } }]) {
+    const raw = { outstandingShares: { annual }, Financials: {
+      Income_Statement: { yearly: { "2023-12-31": { currency_symbol: "EUR" } } },
+      Balance_Sheet: { yearly: { "2023-12-31": { commonStockSharesOutstanding: "0", totalAssets: "11267000000", totalLiab: "5956000000", totalStockholderEquity: "3931000000", minorityInterest: "380000000", liabilitiesAndStockholdersEquity: "11267000000" } } },
+    } };
+    expect(normalizeEodhd(raw, "AC.PA").fundamentals.years[0]).toMatchObject({ dilutedShares: null, liabilitiesAndStockholdersEquity: 11.267e9 });
+  }
 });

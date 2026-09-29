@@ -1,5 +1,8 @@
 export const T = {
   minYears: 7,
+  integrity: { maxShareRatio: 5, minShareRatio: 0.2, balanceTolerance: 0.10, balanceYears: 5, balanceMinFailures: 2 },
+  fundamentals: { maxYears: 30, dailyBudgetStop: 99_000, requestCost: 10, usageSyncCompanies: 200 },
+  eodhd: { perSecond: 5, timeoutMs: 180_000, screenerPageSize: 100, screenerMaxOffset: 999 },
   understandable: { years: 10, maxRevenueDeclines: 3, maxLossYears: 2, maxOpMarginCv: 0.35 },
   moat: { badYearsAllowed: 1, roicMedian: 0.15, roicWorst3: 0.10, gmDropPp: 0.02, roeMedianFin: 0.12, roeWorst3Fin: 0.08 },
   economics: { oeToNi: 0.8, roiic: 0.12 },

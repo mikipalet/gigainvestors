@@ -1,4 +1,5 @@
 import type { Company, Fundamentals, Id, Year } from "./types";
+import { T } from "./config";
 import { checkIntegrity } from "./integrity";
 import { kindFor } from "./universe";
 
@@ -23,7 +24,7 @@ function absolute(value: unknown): number | null {
   return parsed === null ? null : Math.abs(parsed);
 }
 
-export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamentals; patch: Partial<Company> } {
+export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamentals; patch: Partial<Company>; marketCap: { value: number | null; currency: string | null } } {
   const data = record(raw);
   const general = record(data.General);
   const financials = record(data.Financials);
@@ -64,11 +65,12 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
       totalDebt: number(balance.shortLongTermDebtTotal) ?? (shortDebt !== null && longDebt !== null ? shortDebt + longDebt : null),
       equity: number(balance.totalStockholderEquity), goodwill: number(balance.goodWill), intangibles: number(balance.intangibleAssets),
       ppe: number(balance.propertyPlantAndEquipmentNet), totalAssets: number(balance.totalAssets), totalLiabilities: number(balance.totalLiab),
+      liabilitiesAndStockholdersEquity: number(balance.liabilitiesAndStockholdersEquity),
       currentAssets: number(balance.totalCurrentAssets), currentLiabilities: number(balance.totalCurrentLiabilities),
       dilutedShares: shares.get(fy) ?? number(balance.commonStockSharesOutstanding), marketCap: null,
     });
   }
-  const years = [...byYear.values()].sort((a, b) => a.fy - b.fy).slice(-30);
+  const years = [...byYear.values()].sort((a, b) => a.fy - b.fy).slice(-T.fundamentals.maxYears);
   const split = record(data.SplitsDividends);
   const parts = text(split.LastSplitFactor)?.split(":" ).map(Number);
   const date = text(split.LastSplitDate);
@@ -83,9 +85,11 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
   const industry = text(general.Industry);
   return {
     fundamentals,
+    marketCap: { value: number(record(data.Highlights).MarketCapitalization), currency: text(general.CurrencyCode) },
     patch: {
       description: text(general.Description), sector, industry,
-      isin: text(general.ISIN), cik: text(general.CIK), lei: text(general.LEI), kind: kindFor({ sector, industry }),
+      isin: text(general.ISIN), cik: text(general.CIK), lei: text(general.LEI),
+      ...(sector !== null || industry !== null ? { kind: kindFor({ sector, industry }) } : {}),
     },
   };
 }

@@ -1,3 +1,4 @@
+import { T } from "./config";
 import { createLimiter, fetchWithRetry } from "./http";
 
 export interface Exchange {
@@ -26,7 +27,7 @@ export interface ScreenerRow {
   industry: string | null;
 }
 
-const limit = createLimiter({ perSecond: 5 });
+const limit = createLimiter({ perSecond: T.eodhd.perSecond });
 
 export async function eodhd<T>(path: string, params: Record<string, string> = {}): Promise<T> {
   const key = process.env.EODHD_API_KEY;
@@ -39,7 +40,7 @@ export async function eodhd<T>(path: string, params: Record<string, string> = {}
   return limit(async () => {
     let response: Response;
     try {
-      response = await fetchWithRetry(url.toString(), { signal: AbortSignal.timeout(180_000) });
+      response = await fetchWithRetry(url.toString(), { signal: AbortSignal.timeout(T.eodhd.timeoutMs) });
     } catch {
       throw new Error("EODHD request failed");
     }
@@ -59,7 +60,7 @@ export const bulkLastDay = (exchange: string): Promise<unknown> => eodhd(`eod-bu
 
 export async function screenerPage({ offset, exchange }: { offset: number; exchange?: string }): Promise<ScreenerRow[]> {
   const result = await eodhd<{ data: ScreenerRow[] }>("screener", {
-    sort: "market_capitalization.desc", limit: "100", offset: String(offset),
+    sort: "market_capitalization.desc", limit: String(T.eodhd.screenerPageSize), offset: String(offset),
     ...(exchange ? { filters: JSON.stringify([["exchange", "=", exchange]]) } : {}),
   });
   if (!Array.isArray(result.data)) throw new Error("Invalid EODHD screener response");

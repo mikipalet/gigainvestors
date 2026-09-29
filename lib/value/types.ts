@@ -58,6 +58,7 @@ export interface Year {
   ppe: number | null;
   totalAssets: number | null;
   totalLiabilities: number | null;
+  liabilitiesAndStockholdersEquity?: number | null;
   currentAssets: number | null;
   currentLiabilities: number | null;
   dilutedShares: number | null;
@@ -68,7 +69,7 @@ export interface Fundamentals {
   id: Id;
   currency: string; // reporting currency
   years: Year[]; // ascending fy, one per fy
-  integrity: { ok: boolean; reasons: string[] };
+  integrity: { ok: boolean; reasons: string[]; notes?: string[] }; // Optional for older corpus files.
   fetchedAt: string;
   splits?: Array<{ date: string; factor: number }>;
 }

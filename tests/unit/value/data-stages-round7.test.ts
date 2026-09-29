@@ -29,6 +29,11 @@ it('runs both stages without changing any preexisting corpus bytes and publishes
   expect((await enrich()).namesFixed).toBe(1); // cached runs report the original baseline
   const first=await history();
   expect(first.index.years).toEqual([2016]);
+  expect(first.index.caveats).toEqual([
+    'numbers-only checklist (no report reading)', 'restated financials',
+    'survivorship: delisted companies missing', 'price returns without dividends',
+  ]);
+  expect(first.index.perYear[2016]).toMatchObject({medianReturnAll:2, returnCountAll:1, hitRateAll:0});
   const rows=latestHistoryFiles()['history/2016.json'] as SnapshotRow[];
   expect(rows[0][4]).toBe(2);
   const patched=loadCompanies({})[0];
@@ -39,6 +44,7 @@ it('runs both stages without changing any preexisting corpus bytes and publishes
   expect(Object.keys(after).filter(f=>!(f in before)).every(f=>/^(enrichment-v7|history-v7)\//.test(f))).toBe(true);
   const repo=path.join(dir,'output'); writeOutput({repo,files:latestHistoryFiles()});
   expect(JSON.parse(readFileSync(path.join(repo,'history/2016.json'),'utf8'))).toEqual(rows);
+  expect(JSON.parse(readFileSync(path.join(repo,'history/index.json'),'utf8'))).toEqual(second.index);
   expect(()=>writeOutput({repo,files:{'history/../meta.json':{}}})).toThrow('Invalid publish output path');
 });
 it('uses annual filing dates by period and chooses the earliest valid filing',()=>{

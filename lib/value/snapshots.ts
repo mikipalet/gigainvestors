@@ -7,13 +7,20 @@ import { publishedBuyPrice } from './buy-price';
 import { valuationFlags } from './data-quality';
 import { QUALITY_TESTS, type Company, type Fundamentals, type PriceHistory, type SnapshotRow, type HistorySummary } from './types';
 
+export const HISTORY_CAVEATS = [
+  'numbers-only checklist (no report reading)',
+  'restated financials',
+  'survivorship: delisted companies missing',
+  'price returns without dividends',
+];
 export const HISTORY_ASSUMPTIONS = [
   'Code-only numeric quality tests and valuation; Jev-based readings are not part of history.',
   'Each fiscal snapshot uses only annual fiscal years up to that year; no current TTM or current share-count override.',
   'Uses current restated fundamentals and current issuer classification, bond yields and FX, not a point-in-time backtest.',
   'Price is the cached close for the annual filing month, or fiscal end plus three months when the filing date is unknown. Missing months are not interpolated.',
   'Returns are cumulative price changes to the latest real quote, not annualized and excluding dividends. Cached close series may have differing split adjustments.',
-  'The population is the surviving current universe; missing and delisted companies are not reconstructed. Cohort means exclude missing returns.',
+  'Hit rates are the share of finite cohort returns strictly above the unrounded median return of all analysed companies for that fiscal year; ties are not hits. Empty return cohorts have null statistics.',
+  'The population is the surviving current universe; missing and delisted companies are not reconstructed. Cohort medians, means and hit rates exclude missing or nonfinite returns; returnCount fields give their denominators.',
 ];
 const validDate = (date: string | undefined): date is string => !!date && /^\d{4}-\d{2}-\d{2}$/.test(date)
   && Number.isFinite(Date.parse(date)) && new Date(date).toISOString().slice(0,10) === date;
@@ -64,10 +71,21 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
 
 export function summarizeSnapshots(rows: SnapshotRow[]): HistorySummary {
   const quality = rows.filter(r => r[1] === 'PPPPP'), buy = rows.filter(r => r[3]);
-  const average = (items: SnapshotRow[]) => {
-    const values = items.map(r => r[4]).filter((r): r is number => r !== null && Number.isFinite(r));
-    return values.length ? compact(values.reduce((a,b)=>a+b,0)/values.length) : null;
+  const returns = (items: SnapshotRow[]) => items.map(r => r[4])
+    .filter((r): r is number => r !== null && Number.isFinite(r)).sort((a,b) => a-b);
+  const median = (values: number[]): number | null => {
+    if (!values.length) return null;
+    const middle = Math.floor(values.length/2);
+    return values.length % 2 ? values[middle] : (values[middle-1]+values[middle])/2;
   };
+  const allReturns = returns(rows), qualityReturns = returns(quality), buyReturns = returns(buy);
+  const benchmark = median(allReturns);
+  const hitRate = (values: number[]) => values.length && benchmark !== null
+    ? compact(values.filter(value => value > benchmark).length/values.length) : null;
+  const average = (values: number[]) => values.length ? compact(values.reduce((a,b)=>a+b,0)/values.length) : null;
   return { analysed:rows.length, qualityPasses:quality.length, atBuy:buy.length,
-    avgReturnAtBuy:average(buy), avgReturnQuality:average(quality), avgReturnAll:average(rows) };
+    returnCountAtBuy:buyReturns.length, returnCountQuality:qualityReturns.length, returnCountAll:allReturns.length,
+    medianReturnAtBuy:compact(median(buyReturns)), medianReturnQuality:compact(median(qualityReturns)), medianReturnAll:compact(benchmark),
+    hitRateAtBuy:hitRate(buyReturns), hitRateQuality:hitRate(qualityReturns), hitRateAll:hitRate(allReturns),
+    avgReturnAtBuy:average(buyReturns), avgReturnQuality:average(qualityReturns), avgReturnAll:average(allReturns) };
 }

@@ -79,8 +79,17 @@ Annual files publish as `history/{Y}.json`, with rows `[id,t5,pm,b,r]`. `pm` is
 price/mid-value; `b` uses that year's five numeric tests, volatility-based margin,
 and the same verification rules as the current buy line. `r` is a cumulative
 price-change ratio (`2` means +200%), not an annualized or dividend-inclusive return.
-The index includes years, cohort counts, means excluding missing returns, and
-explicit methodology assumptions. Missing filing-month prices remain null.
+The index includes years and per-year medians (`medianReturnAtBuy`,
+`medianReturnQuality`, `medianReturnAll`), with arithmetic means retained in
+`avgReturn*` as secondary fields. Cohort totals are `atBuy`, `qualityPasses`, and
+`analysed`; `returnCount*` gives each finite-return denominator. `hitRate*` is the
+share of those finite returns strictly above the **unrounded whole-universe
+median for that year**, with ties excluded. Statistics are null for empty return
+cohorts; missing/nonfinite returns are excluded from all statistics. Returns and
+hit rates are ratios rounded to four decimal places. The global `caveats` array
+lists the numbers-only checklist, restated financials, missing delisted companies,
+and exclusion of dividends; `assumptions` gives the full methodology.
+Missing filing-month prices remain null.
 
 History excludes Jev readings, current TTM, current shares and later fiscal years.
 Integrity is rerun on each cloned fiscal-year prefix. Filing dates come from

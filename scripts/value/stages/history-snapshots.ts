@@ -8,7 +8,7 @@ import { sameCurrency } from '../../../lib/value/currency';
 import { readPrices } from '../../../lib/value/price-files';
 import { readPriceHistory } from '../../../lib/value/price-history';
 import { annualReportDocuments, type DocumentDay } from '../../../lib/value/japan/edinet';
-import { snapshotForYear, summarizeSnapshots, HISTORY_ASSUMPTIONS } from '../../../lib/value/snapshots';
+import { snapshotForYear, summarizeSnapshots, HISTORY_ASSUMPTIONS, HISTORY_CAVEATS } from '../../../lib/value/snapshots';
 import { writeNewJson } from '../../../lib/value/enrichment';
 import type { Fundamentals, HistoryIndex, SnapshotRow, ReportMeta, PriceMap } from '../../../lib/value/types';
 
@@ -103,7 +103,7 @@ export default async function historySnapshots(options: { only?:string[]; limit?
       console.warn(`history: skipped ${company.id}: ${error instanceof Error ? error.message : 'unreadable input'}`);
     } finally { if (++processed % 2000 === 0) console.log(`history: ${processed}/${companies.length}`); }
   }
-  const index: HistoryIndex = {scope:options.only || options.limit ? 'selection' : 'universe',years:Object.keys(years).map(Number).sort((a,b)=>a-b),perYear:{},asOf,assumptions:HISTORY_ASSUMPTIONS};
+  const index: HistoryIndex = {scope:options.only || options.limit ? 'selection' : 'universe',years:Object.keys(years).map(Number).sort((a,b)=>a-b),perYear:{},asOf,assumptions:HISTORY_ASSUMPTIONS,caveats:HISTORY_CAVEATS};
   const sizes: Record<number,{bytes:number;gzipBytes:number;returns:number}> = {};
   for (const year of index.years) {
     const rows=years[year].sort((a,b)=>a[0].localeCompare(b[0]));

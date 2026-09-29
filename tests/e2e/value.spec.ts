@@ -269,7 +269,7 @@ test('seeded index prices and current moat rules have explicit labels', async ({
   prices['KO.US'] = [prices['KO.US'][0], '2026-09-28', 'seed'];
   await page.route('**/main/prices/US.json', route => route.fulfill({ json: prices }));
   await page.goto('/value');
-  await expect(page.getByRole('row', { name: /Coca-Cola/ })).toContainText('price derived from market cap on 2026-09-28');
+  await expect(page.getByRole('row', { name: /Coca-Cola/ })).toContainText('cached reference price on 2026-09-28');
   await page.setViewportSize({ width: 390, height: 844 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.goto('/value/ko.us');
@@ -280,4 +280,39 @@ test('seeded index prices and current moat rules have explicit labels', async ({
   await expect(history.getByRole('table', { name: 'Fiscal-year value ranges' })).toBeVisible();
   await history.getByText('Show price data', { exact: true }).click();
   await expect(history.getByRole('table', { name: 'Monthly closing prices' })).toBeVisible();
+});
+
+test('dossier reload uses the latest client quote without rebuilding', async ({ page }) => {
+  const prices = JSON.parse(await readFile(path.join(root, 'prices/US.json'), 'utf8'));
+  const original = prices['KO.US'][0];
+  await page.route('**/main/prices/US.json', route => route.fulfill({ json: prices }));
+  await page.goto('/value/ko.us');
+  await expect(page.getByTestId('verdict')).toContainText('40.0% margin of safety');
+  prices['KO.US'] = [original / 2, '2026-09-29'];
+  await page.reload();
+  await expect(page.getByTestId('verdict')).toContainText('70.0% margin of safety');
+  await expect(page.getByTestId('price-history')).toContainText("Buy line uses today's required discount for every year.");
+});
+
+test('zero index midpoints do not produce infinite margins', async ({ page }) => {
+  const rows = JSON.parse(await readFile(path.join(root, 'index/US.json'), 'utf8'));
+  for (const row of rows) if (row.id === 'KO.US') row.v = [0, 0, 0];
+  await page.route('**/main/index/US.json', route => route.fulfill({ json: rows }));
+  await page.goto('/value?country=US');
+  await expect(page.getByRole('row', { name: /Coca-Cola/ })).toContainText('Not valued');
+  await expect(page.locator('body')).not.toContainText('Infinity');
+});
+
+test('robots and value sitemap respect the value host', async ({ request }) => {
+  for (const host of ['value.gigainvestors.com', 'gigainvestors.com']) {
+    const robots = await request.get('/robots.txt', { headers: { host } });
+    expect(robots.status()).toBe(200);
+    expect(await robots.text()).toContain(`Sitemap: https://${host}/sitemap.xml`);
+  }
+  const sitemap = await request.get('/sitemap.xml', { headers: { host: 'value.gigainvestors.com' } });
+  expect(sitemap.status()).toBe(200);
+  expect(await sitemap.text()).toContain('https://value.gigainvestors.com/ko.us');
+  for (const id of ['bad', 'a'.repeat(25) + '.us']) {
+    expect((await request.get(`/value/${id}`)).status()).toBe(404);
+  }
 });

@@ -50,6 +50,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "" }
     const normalizedRoe = median(returns)!;
     const growth = clamp({ value: decadeCagr(ys.map(y => [y.fy, financialBvps(y)])) ?? 0, min: 0, max: T.valuation.finMaxGrowth });
     const multiple = (r: number) => clamp({ value: (normalizedRoe - growth) / (r - growth), min: 0, max: 4 });
+    if (multiple(discountRate) * book <= 0) return { valuation: null, reason: "justified price to book is zero" };
     return { reason: null, valuation: { ...common, method: "book_value", normalized: book, growth, netCash: 0,
       perShare: { low: multiple(discountRate + 0.01) * book, mid: multiple(discountRate) * book, high: multiple(discountRate - 0.01) * book },
       equityBondYield: ratio(median(present(last(ys, 10).map(y => y.netIncome))), latest.marketCap),

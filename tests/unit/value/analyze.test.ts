@@ -1,3 +1,4 @@
+import trust from "@/lib/value/jev-trust.json";
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
@@ -133,12 +134,15 @@ it("runs paragraph evidence only when no numeric quality test fails", async () =
   appendJsonl("universe.jsonl", args.company);
   writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);
   let evidenceCalls = 0;
-  const options = { ask: args.ask, getBondYield: async () => 0.04, evidence: async () => { evidenceCalls++; return "Supporting paragraph"; } };
+  const evidenceIds: string[] = [];
+  const options = { ask: args.ask, getBondYield: async () => 0.04, evidence: async ({ questions }: { questions: Record<string, unknown> }) => { evidenceCalls++; evidenceIds.push(...Object.keys(questions)); return Object.fromEntries(Object.keys(questions).map(q => [q, "Supporting paragraph"])); } };
   await analyze(options);
   const good = readCorpusJson<Analysis>("analysis/KO.US.json")!;
   expect(Object.values(good.tests).every(t => t.numeric !== "fail")).toBe(true);
   expect(good.tests.moat.jev.find(a => a.q === "brand")?.evidence).toBe("Supporting paragraph");
-  expect(evidenceCalls).toBeGreaterThan(0);
+  expect(evidenceCalls).toBe(1);
+  expect(evidenceIds).toEqual(QUESTIONS.filter(q => q.q.type === 'noul' && q.contradicts !== 'yes'
+    && trust.trusted.includes(q.id) && (trust.versions as Record<string, string>)[q.id] === q.version).map(q => q.id));
   evidenceCalls = 0;
   args.fundamentals.years = args.fundamentals.years.map(y => ({ ...y, sbc: y.ocf, nonRecurring: 1 }));
   writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);

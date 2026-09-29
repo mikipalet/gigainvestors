@@ -1,3 +1,4 @@
+import { sameCurrency } from "./currency";
 import { createUsdRate } from "./fx";
 import { T } from "./config";
 import { QUESTIONS } from "./jev/questions";
@@ -9,11 +10,11 @@ function tradingValuation(analysis: Analysis, usdRate: (currency: string) => num
   const valuation = analysis.status === "scored" ? analysis.valuation : null;
   if (!valuation) return null;
   const currency = analysis.company.currency;
-  let range = valuation.perShareTrading?.currency === currency ? valuation.perShareTrading : null;
+  let range = valuation.perShareTrading && sameCurrency(valuation.perShareTrading.currency, currency) ? valuation.perShareTrading : null;
   if (!range) {
     const from = usdRate(valuation.currency);
     const to = usdRate(currency);
-    const rate = valuation.currency === currency ? 1 : from !== null && to !== null ? from / to : null;
+    const rate = sameCurrency(valuation.currency, currency) ? 1 : from !== null && to !== null ? from / to : null;
     if (rate === null) return null;
     range = { currency, fxRate: rate, low: valuation.perShare.low * rate, mid: valuation.perShare.mid * rate, high: valuation.perShare.high * rate };
   }

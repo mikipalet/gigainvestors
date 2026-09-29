@@ -3,6 +3,8 @@ import { readFileSync } from 'node:fs';
 import { renderToStaticMarkup } from 'react-dom/server';
 import type { Dossier } from '@/lib/value/types';
 import DossierPage from '@/app/value/[id]/page';
+import { useQuote } from '@/components/value/use-quote';
+vi.mock('@/components/value/use-quote', () => ({ useQuote: vi.fn() }));
 import { getDossier, getPrice } from '@/lib/value/store';
 vi.mock('@/lib/value/store', () => ({ getDossier: vi.fn(), getPrice: vi.fn(), getTopIds: vi.fn() }));
 const fixture: Dossier = JSON.parse(readFileSync('tests/fixtures/value/store/dossiers/027.json', 'utf8'))['KO.US'];
@@ -14,7 +16,7 @@ beforeEach(() => {
   dossier.valuation!.currency = 'JPY';
   dossier.valuation!.perShare = { low: 800, mid: 1000, high: 1200 };
   vi.mocked(getDossier).mockResolvedValue(dossier);
-  vi.mocked(getPrice).mockResolvedValue([6, '2026-09-28']);
+  vi.mocked(useQuote).mockReturnValue([6, '2026-09-28']);
 });
 it('renders reporting value, explicit currency mismatch and an unclear price test', async () => {
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
@@ -40,7 +42,18 @@ it('does not label newer monthly prices as a new fiscal year', async () => {
 });
 
 it('labels a seeded price with its market-cap derivation and date', async () => {
-  vi.mocked(getPrice).mockResolvedValue([6, '2026-09-28', 'seed']);
+  vi.mocked(useQuote).mockReturnValue([6, '2026-09-28', 'seed']);
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toContain('price derived from market cap on 2026-09-28');
+  expect(html).toContain('cached reference price on 2026-09-28');
+});
+
+it.each(['javascript:alert(1)', 'http://example.com/report', '//example.com/report', 'https://example.com/report'])('only renders https report links: %s', async url => {
+  dossier.report.url = url;
+  const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
+  expect(html.includes(`href="${url}"`)).toBe(url.startsWith('https://'));
+});
+it('does not fetch the changing quote during server rendering', async () => {
+  vi.mocked(getPrice).mockClear();
+  await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) });
+  expect(getPrice).not.toHaveBeenCalled();
 });

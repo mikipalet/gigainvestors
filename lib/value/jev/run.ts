@@ -95,18 +95,39 @@ export async function askCompany({ id, sections }: {
   return answers;
 }
 
-export async function findEvidence({ section, question }: {
-  section: string;
-  question: JevQuestion;
-}): Promise<string | null> {
-  if (question.type !== "noul") throw new Error("Evidence questions must be noul");
-  const paragraphs = section.split(/\r?\n\s*\r?\n/).map((paragraph) => paragraph.trim())
-    .filter((paragraph) => paragraph.length >= T.jev.minParagraphChars);
-  const scored = await Promise.all(paragraphs.map(async (paragraph) => {
-    const results = await Promise.all(chunks(paragraph).map((state) => askJev({ state, questions: { evidence: question } })));
-    const probability = Math.max(...results.map(({ answers }) => answers.evidence.type === "noul" ? answers.evidence.noul : 0));
-    return { paragraph, probability };
+export function findEvidence(args: { section: string; question: JevQuestion }): Promise<string | null>;
+export function findEvidence(args: { section: string; questions: Record<string, JevQuestion> }): Promise<Record<string, string | null>>;
+export async function findEvidence({ section, question, questions }: {
+  section: string; question?: JevQuestion; questions?: Record<string, JevQuestion>;
+}): Promise<string | null | Record<string, string | null>> {
+  const batch = questions ?? { evidence: question! };
+  if (Object.values(batch).some(q => q.type !== "noul")) throw new Error("Evidence questions must be noul");
+  if (!Object.keys(batch).length) return {};
+  const paragraphs = section.split(/\r?\n\s*\r?\n/).map(paragraph => paragraph.trim())
+    .filter(paragraph => paragraph.length >= T.jev.minParagraphChars)
+    .sort((a, b) => b.length - a.length).slice(0, 40);
+  // One bounded request per paragraph, including every eligible question.
+  const budget = Math.min(T.jev.chunkTokens, 31_000 - Buffer.byteLength(JSON.stringify(batch)));
+  if (budget <= 0) throw new Error("Evidence questions exceed context budget");
+  const scored = await Promise.all(paragraphs.map(async paragraph => {
+    let state = '', bytes = 0;
+    for (const character of paragraph) {
+      bytes += Buffer.byteLength(JSON.stringify(character)) - 2;
+      if (bytes > budget) break;
+      state += character;
+    }
+    return { paragraph: state, ...(await askJev({ state, questions: batch })) };
   }));
-  const best = scored.sort((a, b) => b.probability - a.probability)[0];
-  return best && best.probability >= T.jev.evidence ? best.paragraph : null;
+  const result = Object.fromEntries(Object.keys(batch).map(id => {
+    let best: string | null = null;
+    let probability: number = T.jev.evidence;
+    for (const row of scored) {
+      const answer = row.answers[id];
+      if (answer?.type === 'noul' && answer.noul >= probability && (best === null || answer.noul > probability)) {
+        best = row.paragraph; probability = answer.noul;
+      }
+    }
+    return [id, best];
+  }));
+  return question ? result.evidence : result;
 }

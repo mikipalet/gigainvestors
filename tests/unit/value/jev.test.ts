@@ -174,6 +174,16 @@ describe("HTTP client", () => {
     expect(usage[1].cumulative_input_tokens).toBe(fixture.response.usage.input_tokens * 2);
     expect(JSON.stringify(usage)).not.toContain("test-secret");
   });
+  it.each([520, 502, 503, 504])('retries Cloudflare origin error %s', async status => {
+    const fixture = JSON.parse(readFileSync(path.resolve("tests/fixtures/value/jev/ko-business.json"), "utf8"));
+    vi.stubEnv('JEV_API_KEY', 'fixture');
+    const fetcher = vi.fn().mockResolvedValueOnce(new Response(null, { status, headers: { 'Retry-After': '0' } }))
+      .mockImplementation(async () => Response.json(fixture.response));
+    vi.stubGlobal('fetch', fetcher);
+    const { askJev: realAsk } = await client();
+    expect(await realAsk(fixture.request)).toMatchObject({ answers: fixture.response.answers });
+    expect(fetcher).toHaveBeenCalledTimes(2);
+  });
   it("fails without a key and never exposes API error bodies", async () => {
     const { askJev: realAsk } = await client();
     const input = { state: "Hello", questions: { q: { type: "noul" as const, instructions: "Is this a greeting?" } } };
@@ -195,4 +205,13 @@ it("C8 considers founder ownership stated in any report section", async () => {
   ask.mockImplementation(async ({ questions, state }) => response(questions, state.includes("founder") ? 0.95 : 0.1));
   const answers = await askCompany({ id: "TEST.US", sections: { business: "Widgets", notes: "The founder chairs the board and is a major shareholder." } });
   expect(answers.find(answer => answer.q === "founder_led")).toMatchObject({ value: 0.95, section: "notes", trusted: false });
+});
+
+it('batches all evidence questions into at most forty longest paragraph requests', async () => {
+  const question: JevQuestion = { type: 'noul', instructions: 'Evidence?' };
+  const paragraphs = Array.from({ length: 100 }, (_, i) => `${i}:` + 'A'.repeat(200 + i));
+  const result = await findEvidence({ section: paragraphs.join('\n\n'), questions: { brand: question, network: question } });
+  expect(ask).toHaveBeenCalledTimes(40);
+  expect(ask.mock.calls.every(([args]) => Object.keys(args.questions).length === 2 && Number(args.state.split(':')[0]) >= 60)).toBe(true);
+  expect(result).toEqual({ brand: paragraphs[99], network: paragraphs[99] });
 });

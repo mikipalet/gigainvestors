@@ -3,7 +3,7 @@ import path from "node:path";
 import { shardOf } from "./shard";
 import type { Dossier, Id, IndexRow, PriceMap, StoreMeta } from "./types";
 
-export async function readStore<T>(file: string): Promise<T | null> {
+export async function readStore<T>(file: string, revalidate = 86400): Promise<T | null> {
   if (!/^[a-zA-Z0-9_/-]+\.json$/.test(file) || file.split("/").includes("..") || file.startsWith("/")) {
     throw new Error("Invalid value store path");
   }
@@ -16,7 +16,7 @@ export async function readStore<T>(file: string): Promise<T | null> {
     }
   }
   const response = await fetch(`https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/${file}`, {
-    next: { revalidate: 86400 }, signal: AbortSignal.timeout(30_000),
+    next: { revalidate }, signal: AbortSignal.timeout(30_000),
   });
   if (response.status === 404) return null;
   if (!response.ok) throw new Error(`Value store returned ${response.status}`);
@@ -28,8 +28,10 @@ export const getDefaultIndex = async () => await readStore<IndexRow[]>("index/de
 export const getCountryIndex = async (cc: string) => await readStore<IndexRow[]>(`index/${cc.toUpperCase()}.json`) ?? [];
 export async function getDossier(id: Id) {
   const key = id.toUpperCase();
-  const shard = await readStore<Record<Id, Dossier>>(`dossiers/${shardOf(key)}.json`);
-  return shard?.[key] ?? null;
+  try {
+    const shard = await readStore<Record<Id, Dossier>>(`dossiers/${shardOf(key)}.json`, 259200);
+    return shard?.[key] ?? null;
+  } catch { return null; }
 }
 // PriceMap quotes and IndexRow.v/cur are in the listing trading currency by contract.
 // There is no currency metadata in price files; consumers trust this publishing invariant.

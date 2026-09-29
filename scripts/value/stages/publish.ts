@@ -33,13 +33,28 @@ export function prepareRepository(): string {
     git(corpusPath(), ["-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential", "clone", REMOTE, repo]);
   } else {
     if (git(repo, ["remote", "get-url", "origin"]) !== REMOTE) throw new Error("Unexpected data repository origin");
-    resetRepository(repo);
-    git(repo, ["-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential", "fetch", "origin"]);
-    if (git(repo, ["branch", "-r", "--list", "origin/main"])) {
-      git(repo, ["checkout", "-B", "main", "origin/main"]);
-    }
+    syncRepository(repo);
   }
   return repo;
+}
+
+/** Preserve commits left by a failed price push instead of resetting to origin. */
+export function syncRepository(repo: string): void {
+  resetRepository(repo);
+  const previous = git(repo, ["branch", "-r", "--list", "origin/main"])
+    ? git(repo, ["rev-parse", "origin/main"]) : null;
+  git(repo, ["-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential", "fetch", "origin"]);
+  if (git(repo, ["branch", "-r", "--list", "origin/main"])) {
+    git(repo, ["checkout", "main"]);
+    try {
+      // Publish replaces history with an orphan snapshot. Replay only commits
+      // made locally since the old remote tip, including any failed price push.
+      git(repo, previous ? ["rebase", "--onto", "origin/main", previous, "main"] : ["rebase", "origin/main"]);
+    } catch (error) {
+      git(repo, ["rebase", "--abort"]);
+      throw error;
+    }
+  }
 }
 
 export function acquirePublishLock(lock: string): () => void {

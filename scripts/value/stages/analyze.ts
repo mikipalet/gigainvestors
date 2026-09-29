@@ -10,11 +10,11 @@ import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from "../../..
 import { findEvidence } from "../../../lib/value/jev/run";
 import { QUESTIONS, QUESTIONS_VERSION } from "../../../lib/value/jev/questions";
 import trust from "../../../lib/value/jev-trust.json";
-import type { Analysis, Company, Fundamentals, ReportMeta } from "../../../lib/value/types";
+import type { Analysis, Company, Fundamentals, ReportMeta, JevQuestion } from "../../../lib/value/types";
 
 export interface Options {
   only?: string[]; limit?: number; force?: boolean;
-  ask?: Ask; getBondYield?: typeof bondYield; evidence?: typeof findEvidence;
+  ask?: Ask; getBondYield?: typeof bondYield; evidence?: (args: { section: string; questions: Record<string, JevQuestion> }) => Promise<Record<string, string | null> | null>;
 }
 
 export function loadSections({ company, report }: { company: Company; report: ReportMeta }): Sections {
@@ -61,14 +61,17 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory,
           bondYield: fundamentals.integrity.ok ? await getBondYield(company.country) : null, ask, getBondYield, usdRate });
         if (result.status === "scored" && Object.values(result.tests).every(test => test.numeric !== "fail")) {
-          for (const test of Object.values(result.tests)) {
-            for (const answer of test.jev) {
-              const question = QUESTIONS.find(q => q.id === answer.q);
-              const text = sections[answer.section];
-              if (answer.value !== null && question?.q.type === "noul" && text) {
-                answer.evidence = await evidence({ section: text, question: question.q });
-              }
-            }
+          const eligible = Object.values(result.tests).flatMap(test => test.jev).filter(answer => {
+            const question = QUESTIONS.find(q => q.id === answer.q);
+            return question?.q.type === 'noul' && trust.trusted.includes(question.id)
+              && (trust.versions as Record<string, string>)[question.id] === question.version
+              && typeof answer.value === 'number' && answer.value >= 0.7 && sections[answer.section];
+          });
+          for (const section of new Set(eligible.map(answer => answer.section))) {
+            const answers = eligible.filter(answer => answer.section === section);
+            const questions = Object.fromEntries(answers.map(answer => [answer.q, QUESTIONS.find(q => q.id === answer.q)!.q]));
+            const found = await evidence({ section: sections[section]!, questions });
+            for (const answer of answers) answer.evidence = found?.[answer.q] ?? null;
           }
         }
         writeCorpusJson(`analysis/inputs/${company.id}.json`, { asOf: result.asOf, sections });

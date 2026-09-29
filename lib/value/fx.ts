@@ -1,3 +1,4 @@
+import { currencyCode } from "./currency";
 import { readCorpusJson, writeCorpusJson } from "./corpus";
 import { eodhd } from "./eodhd";
 
@@ -5,8 +6,9 @@ type Rates = Readonly<Record<string, number>>;
 type UsdRate = (currency: string) => Promise<number | null>;
 
 function denomination(currency: string) {
-  const major = currency === "GBX" || currency === "GBp" ? "GBP" : currency === "ZAc" ? "ZAR" : currency;
-  return { major, divisor: major === currency ? 1 : 100 };
+  const code = currencyCode(currency);
+  const major = code === "GBX" ? "GBP" : code === "ZAC" ? "ZAR" : code;
+  return { major, divisor: major === code ? 1 : 100 };
 }
 
 function convert(currency: string, rate: number | null): number | null {

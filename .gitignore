@@ -7,3 +7,5 @@ assets/
 test-results
 scripts/newsletter/fonts/fonts.conf
 data/newsletter/*.facts.json
+
+.superpowers/

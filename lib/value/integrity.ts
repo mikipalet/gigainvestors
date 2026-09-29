@@ -1,3 +1,4 @@
+import { sameCurrency } from "./currency";
 import { T } from "./config";
 import type { Fundamentals } from "./types";
 
@@ -12,7 +13,7 @@ export function checkIntegrity(f: Fundamentals): { ok: boolean; reasons: string[
     const year = years[i];
     if (year.dilutedShares === 0) year.dilutedShares = null;
     if (year.currency) {
-      if (currency && currency !== year.currency) {
+      if (currency && !sameCurrency(currency, year.currency)) {
         start = i;
         notes.push(`reporting currency changed in ${year.fy}; history retained from ${year.fy}`);
       }

@@ -7,7 +7,7 @@ import { corpusDir } from "@/lib/value/corpus";
 import { parseYahooPrice, yahooPrice } from "@/lib/value/prices-yahoo";
 import { shardOf } from "@/lib/value/shard";
 import type { Analysis, Dossier, IndexRow, JevAnswer } from "@/lib/value/types";
-import { acquirePublishLock, resetRepository, loadAnalyses, commitOutput, loadHolders, publishSnapshot, runCalibration, writeOutput } from "@/scripts/value/stages/publish";
+import { syncRepository, acquirePublishLock, resetRepository, loadAnalyses, commitOutput, loadHolders, publishSnapshot, runCalibration, writeOutput } from "@/scripts/value/stages/publish";
 import { parseBulkPrices, refreshPrices, commitPrices } from "@/scripts/value/stages/prices";
 
 function analysis(id = "KO.US"): Analysis {
@@ -415,4 +415,26 @@ it("C4 publish skips invalid IDs and loads ampersand analyses", async () => {
   const log = vi.spyOn(console, "warn").mockImplementation(() => {});
   expect(loadAnalyses([analysis("../bad").company, ...rows.map(row => row.company)])).toEqual(rows);
   expect(log.mock.calls.flat().join(" ")).toMatch(/skipp.*bad/i);
+});
+
+it('preserves an unpushed prices commit when preparing the next publish', () => {
+  const remote = directory(); git(remote, ['init', '--bare', '-b', 'main']);
+  const repo = directory();
+  git(repo, ["init", "-b", "main"]); git(repo, ["config", "user.name", "Value Test"]); git(repo, ["config", "user.email", "value-test@example.com"]);
+  git(repo, ['remote', 'add', 'origin', remote]);
+  writeFileSync(path.join(repo, 'meta.json'), '{}');
+  git(repo, ['add', '.']); git(repo, ['commit', '-m', 'initial']); git(repo, ['push', 'origin', 'main']);
+  mkdirSync(path.join(repo, 'prices')); writeFileSync(path.join(repo, 'prices/US.json'), '{"KO.US":[60,"2026-09-29"]}');
+  commitPrices({ repo, asOf: '2026-09-29' });
+  const writer = directory();
+  git(writer, ['clone', remote, '.']);
+  git(writer, ['config', 'user.name', 'Value Test']); git(writer, ['config', 'user.email', 'value-test@example.com']);
+  git(writer, ['checkout', '--orphan', 'snapshot']);
+  writeFileSync(path.join(writer, 'meta.json'), '{"newSnapshot":true}');
+  git(writer, ['add', '.']); git(writer, ['commit', '-m', 'new snapshot']);
+  git(writer, ['push', '-f', 'origin', 'HEAD:main']);
+  syncRepository(repo);
+  expect(JSON.parse(readFileSync(path.join(repo, 'meta.json'), 'utf8'))).toEqual({ newSnapshot: true });
+  expect(JSON.parse(readFileSync(path.join(repo, 'prices/US.json'), 'utf8'))['KO.US'][0]).toBe(60);
+  expect(git(repo, ['rev-list', '--count', 'origin/main..HEAD'])).toBe('1');
 });

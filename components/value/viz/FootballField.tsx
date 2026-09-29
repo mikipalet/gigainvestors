@@ -13,12 +13,12 @@ export function FootballField({ valuation: v, price, mismatch, requiredMos = T.p
   const { ref, width } = useWidth();
   const gradient = useId();
   const { low, mid, high } = v.perShare;
-  const comparedPrice = mismatch ? null : price;
+  const comparedPrice = mismatch || !Number.isFinite(mid) || mid <= 0 ? null : price;
   const buyBelow = mid * (1 - requiredMos);
   const ticks = niceTicks([Math.min(0, low, buyBelow), Math.max(high, comparedPrice ?? 0)], 4);
   const x = scale({ domain: [ticks[0], ticks.at(-1)!], range: [22, width - 22] });
   const money = (n: number) => perShareMoney(n, v.currency);
-  const summary = `Estimated value ${low.toFixed(2)} to ${high.toFixed(2)} ${v.currency}, mid ${mid.toFixed(2)}; ${mismatch ?? (price === null ? 'No price yet' : `price ${price.toFixed(2)}; margin of safety ${(mid > 0 ? (1 - price / mid) * 100 : 0).toFixed(1)}%`)}`;
+  const summary = `Estimated value ${low.toFixed(2)} to ${high.toFixed(2)} ${v.currency}, mid ${mid.toFixed(2)}; ${mismatch ?? (comparedPrice === null ? 'Comparable price and positive value required' : `price ${comparedPrice.toFixed(2)}; margin of safety ${((1 - comparedPrice / mid) * 100).toFixed(1)}%`)}`;
   const conclusion = comparedPrice === null ? 'A value range awaits a comparable price' : `${((1 - comparedPrice / mid) * 100).toFixed(1)}% margin of safety at the latest price`;
   const buyLabel = `buy below ${money(buyBelow)} (${requiredMos * 100}% below mid${volatility ? `, earnings are ${volatility === 'moderate' ? 'moderately volatile' : volatility}` : ''})`;
   const marks = [{ x: x(buyBelow), y: 48, text: buyLabel }, { x: x(low), y: 103, text: `Low estimate ${money(low)}` }, { x: x(mid), y: 80, text: `Midpoint ${money(mid)}` }, { x: x(high), y: 103, text: `High estimate ${money(high)}` }, ...(comparedPrice === null ? [] : [{ x: x(comparedPrice), y: 64, text: `Price ${money(comparedPrice)}` }])];

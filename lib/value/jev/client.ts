@@ -30,7 +30,7 @@ export async function askJev({ state, questions }: {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body,
-    retryOn: [429, 529],
+    retryOn: [429, 529, 520, 502, 503, 504],
     signal: AbortSignal.timeout(120_000),
   })));
   if (!response.ok) throw new Error(`Jev HTTP ${response.status}`);

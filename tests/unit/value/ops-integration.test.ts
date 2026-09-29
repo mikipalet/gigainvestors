@@ -57,6 +57,7 @@ it('writes fetched-date seeds, merges safely for publish, and reads both tuple f
     writeCorpusJson(`raw/eodhd/${id}.json`, { Highlights: { MarketCapitalization: 500 }, SharesStats: { SharesOutstanding: 20 } });
     utimesSync(corpusPath(`raw/eodhd/${id}.json`), new Date('2026-09-20'), new Date('2026-09-20'));
   }
+  writeCorpusJson('raw/eodhd/universe/screener-US-0.json', { date: '2026-09-20', data: ['KO', 'NEW'].map(code => ({ code, exchange: 'US', adjusted_close: 25 })) });
   await seed({});
   expect(readCorpusJson('prices/US.json')).toEqual({ 'KO.US': [25, '2026-09-20', 'seed'], 'NEW.US': [25, '2026-09-20', 'seed'] });
   writeCorpusJson('publish-repo/prices/US.json', { 'KO.US': [24, '2026-09-19'] });
@@ -132,4 +133,14 @@ it.each(['live', 'dead'])('runner checks %s owner PID before acquiring the lock'
     run();
     expect(readFileSync(path.join(root, 'stages'), 'utf8')).toContain('status');
   }
+});
+
+it('removes rejected legacy seeds locally and on the next publish, retaining actual closes', async () => {
+  for (const id of ['BAD.US', 'REAL.US']) appendJsonl('universe.jsonl', company(id));
+  writeCorpusJson('prices/US.json', { 'BAD.US': [100, '2026-09-29', 'seed'] });
+  writeCorpusJson('publish-repo/prices/US.json', { 'BAD.US': [100, '2026-09-29', 'seed'], 'REAL.US': [50, '2026-09-29'] });
+  await seed({});
+  expect(readCorpusJson('prices/US.json')).toEqual({});
+  mergeSeedFiles(corpusPath('publish-repo'));
+  expect(readCorpusJson('publish-repo/prices/US.json')).toEqual({ 'REAL.US': [50, '2026-09-29'] });
 });

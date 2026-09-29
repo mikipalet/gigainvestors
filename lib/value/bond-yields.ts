@@ -1,3 +1,4 @@
+import { sameCurrency } from "./currency";
 import { readCorpusJson, writeCorpusJson } from "./corpus";
 import { eodhd } from "./eodhd";
 import { createUsdRate } from "./fx";
@@ -32,7 +33,7 @@ export async function bondYield(country: string): Promise<number | null> {
 }
 
 export async function tradingRate({ reporting, trading, usdRate = createUsdRate() }: { reporting: string; trading: string; usdRate?: ReturnType<typeof createUsdRate> }): Promise<number | null> {
-  if (reporting === trading) return 1;
+  if (sameCurrency(reporting, trading)) return 1;
   const [from, to] = await Promise.all([usdRate(reporting), usdRate(trading)]);
   return from === null || to === null ? null : from / to;
 }

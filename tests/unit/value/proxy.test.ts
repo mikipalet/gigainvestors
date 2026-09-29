@@ -28,8 +28,19 @@ describe("value host routing", () => {
 });
 
  it.each(["/ko.us", "/value/ko.us", "/sitemap.xml"])("routes %s through the proxy matcher", (url) => {
-  expect(unstable_doesMiddlewareMatch({ config, nextConfig: {}, url })).toBe(true);
+  expect(unstable_doesMiddlewareMatch({ config, nextConfig: {}, url: `https://value.gigainvestors.com${url}`, headers: { host: "value.gigainvestors.com" } })).toBe(true);
 });
 it.each(["/_next/static/a.js", "/_next/image", "/faces/v3/buffett.webp", "/favicon.ico", "/newsletter/2026-q2.html"])("excludes asset %s from the matcher", (url) => {
   expect(unstable_doesMiddlewareMatch({ config, nextConfig: {}, url })).toBe(false);
+});
+
+it.each(['bad', 'a'.repeat(25) + '.us', 'ko.toolong', 'ko.us/extra', '%3Cscript%3E.us'])("rejects malformed dossier %s before fetching", id => {
+  expect(proxy(new NextRequest(`https://value.gigainvestors.com/${id}`)).status).toBe(404);
+  expect(proxy(new NextRequest(`http://localhost/value/${id}`)).status).toBe(404);
+});
+it('accepts ampersands in listing identifiers', () => {
+  expect(proxy(new NextRequest('https://value.gigainvestors.com/m&m.nse')).headers.get('x-middleware-rewrite')).toContain('/value/m&m.nse');
+});
+it.each(['/s/KO', '/', '/investors', '/robots.txt', '/sitemap.xml'])('does not invoke proxy for main-site %s', url => {
+  expect(unstable_doesMiddlewareMatch({ config, nextConfig: {}, url: `https://gigainvestors.com${url}`, headers: { host: 'gigainvestors.com' } })).toBe(false);
 });

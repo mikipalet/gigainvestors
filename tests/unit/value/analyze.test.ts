@@ -412,6 +412,26 @@ it("R3 uses the inverse valuation FX for historical market caps, including pence
   expect(result.valuation!.perShareTrading!.fxRate).toBe(100);
 });
 
+it("M1 runs the $1 test through the stage with the real KO corpus and 120 monthly closes", async () => {
+  const { default: fundamentals } = await import("../../fixtures/value/calibration-4/KO.US-fundamentals.json");
+  const { default: prices } = await import("../../fixtures/value/calibration-4/KO.US-prices.json");
+  expect(prices).toHaveLength(120);
+  const args = input();
+  appendJsonl("universe.jsonl", args.company);
+  writeCorpusJson("fundamentals/KO.US.json", fundamentals);
+  writeCorpusJson("prices-history/KO.US.json", prices);
+  await analyze({ ask: args.ask, getBondYield: async () => 0.04, evidence: async () => null });
+  const result = readCorpusJson<Analysis>("analysis/KO.US.json")!.tests.management;
+  expect(result.series.marketCap[0]).toEqual([2015, null]);
+  expect(result.metrics.marketCapGain).toBeCloseTo(121378149772.64404, 2);
+  expect(result.metrics.retainedStartFy).toBe(2016);
+  expect(result.metrics.retainedEndFy).toBe(2025);
+  const retained = fundamentals.years.filter(y => y.fy > 2016 && y.fy <= 2025)
+    .reduce((total, y) => total + y.netIncome! - y.dividendsPaid!, 0);
+  expect(result.metrics.retainedEarnings).toBe(retained);
+  expect(result.reasons).not.toContain("not enough data for the $1 retained earnings test");
+});
+
 it.each(["missing-month", "missing-shares", "missing-fx"] as const)("R3 keeps year-end market cap unavailable with %s", async missing => {
   const { makeYears } = await import("./synthetic");
   const args = input();

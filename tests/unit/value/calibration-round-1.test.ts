@@ -29,7 +29,7 @@ describe("live calibration round 1", () => {
   it("R3 absent prices keep buyback timing unavailable even with zero buybacks", () => {
     const result = run(makeYears({ overrides: { marketCap: null, buybacks: 0 } })).management;
     expect(result.numeric).toBe("unclear");
-    expect(result.metrics.buybackYieldCovariance).toBeNull();
+    expect(result.metrics.buybackYieldSpearman).toBeNull();
   });
   it("R2 debt-funded buybacks alone are informational", () => {
     const result = run(makeYears({ overrides: (_, i) => ({ buybacks: 200, totalDebt: 100 + i * 200 }) })).management;

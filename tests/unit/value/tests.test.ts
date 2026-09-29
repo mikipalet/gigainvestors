@@ -48,8 +48,8 @@ describe("numeric quality tests", () => {
   it("fails buybacks concentrated at lower earnings yields", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ buybacks: i * 5 }) })).management.numeric).toBe("fail");
   });
-  it("flags acquisition spending alongside falling ROIC", () => {
-    expect(run(makeYears({ overrides: (_, i) => ({ acquisitions: 50, operatingIncome: 125 - i * 5 }) })).management.numeric).toBe("fail");
+  it("does not fail acquisition spending at exactly half of earnings", () => {
+    expect(run(makeYears({ overrides: (_, i) => ({ acquisitions: 50, operatingIncome: 125 - i * 5 }) })).management.numeric).toBe("pass");
   });
   it("reports fifteen percent accruals as a single flag", () => {
     expect(run(makeYears({ overrides: { netIncome: 250, ocf: 100 } })).accounting.numeric).toBe("pass");
@@ -121,7 +121,7 @@ describe("metric arithmetic", () => {
     expect(roiic(makeYears({ overrides: (_, i) => ({ operatingIncome: 125 + i * 25, capex: 30, receivables: 100 + i * 10 }) }))).toBeCloseTo(1);
   });
   it("matches the ten-year market gain to retained earnings after the base year", () => {
-    expect(retainedTest(makeYears())).toEqual({ gain: 1000, retained: 800 });
+    expect(retainedTest(makeYears())).toEqual({ gain: 1000, retained: 800, startFy: 2013, endFy: 2023 });
   });
 });
 

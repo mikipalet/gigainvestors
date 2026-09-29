@@ -83,7 +83,8 @@ it.each([5, 10])("C3 passes when the %i-year CAGR is exactly 1%", window => {
 it("C3 can clear dilution on an available shrinking five-year window", () => {
   const years = makeYears({ n: 6, overrides: (_, i) => ({ dilutedShares: 20 - i }) });
   const result = management({ years, kind: "operating" });
-  expect(result.numeric).toBe("pass");
+  // Dilution clears, but M3 now requires ten years of acquisition/earnings data.
+  expect(result.numeric).toBe("unclear");
   expect(result.metrics.shareCagr).toBeNull();
   expect(result.reasons.join(" ")).not.toMatch(/not enough data for diluted share growth/);
 });

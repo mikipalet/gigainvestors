@@ -16,7 +16,12 @@ export const T = {
   understandable: { years: 10, maxRevenueDeclines: 5, maxLossYears: 2, maxOpMarginCv: 0.35 },
   moat: { badYearsAllowed: 1, roicMedian: 0.15, roicWorst3: 0.10, gmDropPp: 0.04, roeMedianFin: 0.12, roeWorst3Fin: 0.08 },
   economics: { oeToNi: 0.8, roiic: 0.12, maxNwcRise: 0.10 },
-  management: { maxShareCagr: 0.01 },
+  management: {
+    maxShareCagr: 0.01,
+    retainedMinYears: 7, retainedMaxYears: 10,
+    buybackMinYears: 6, buybackFailRho: -0.5, buybackMinYield: 0.01,
+    acquisitionYears: 10, acquisitionToNetIncome: 0.5, roicEndpointYears: 3, roicRetention: 2 / 3,
+  },
   accounting: { maxAccruals: 0.10, maxDsri: 1.465, minRedFlags: 2, maxRestructYears: 2, maxSbcToOcf: 0.15 },
   price: { requiredMos: { stable: 0.25, moderate: 0.35, volatile: 0.50 }, cvStable: 0.20 },
   history: { years: 10, refreshMs: 7 * 24 * 60 * 60 * 1000, acquisitionToAssets: 0.10, impairmentDrop: 0.20 },

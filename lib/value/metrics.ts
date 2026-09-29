@@ -36,6 +36,26 @@ export function median(xs: number[]): number | null {
   const mid = Math.floor(sorted.length / 2);
   return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
 }
+/** Pearson correlation of average ranks (Spearman rho), including tied observations. */
+export function spearman(pairs: Array<[number, number]>): number | null {
+  if (pairs.length < 2) return null;
+  const ranks = (values: number[]) => {
+    const ordered = values.map((value, index) => ({ value, index })).sort((a, b) => a.value - b.value);
+    const result = new Array<number>(values.length);
+    for (let start = 0; start < ordered.length;) {
+      let end = start + 1;
+      while (end < ordered.length && ordered[end].value === ordered[start].value) end++;
+      for (let i = start; i < end; i++) result[ordered[i].index] = (start + end - 1) / 2;
+      start = end;
+    }
+    return result;
+  };
+  const x = ranks(pairs.map(p => p[0])), y = ranks(pairs.map(p => p[1]));
+  const center = (pairs.length - 1) / 2;
+  const covariance = sum(x.map((rank, i) => (rank - center) * (y[i] - center)));
+  const variance = Math.sqrt(sum(x.map(rank => (rank - center) ** 2)) * sum(y.map(rank => (rank - center) ** 2)));
+  return variance === 0 ? null : covariance / variance;
+}
 export function cagr({ first, last, years }: { first: number | null; last: number | null; years: number }): number | null {
   return first === null || last === null || first <= 0 || last <= 0 || years <= 0 ? null : (last / first) ** (1 / years) - 1;
 }
@@ -84,12 +104,18 @@ export function roiic(years: Year[]): number | null {
   const invested = ys.slice(1).map((y, i) => investment(y, ys[i]));
   return first === null || end === null || invested.some(x => x === null) ? null : ratio(end - first, sum(present(invested)));
 }
-export function retainedTest(years: Year[]): { gain: number | null; retained: number | null } {
-  const ys = last(years, 11);
-  if (ys.length !== 11 || ys.some((y, i) => i > 0 && y.fy !== ys[i - 1].fy + 1)) return { gain: null, retained: null };
-  const first = ys[0].marketCap, end = ys[10].marketCap;
+export function retainedTest(years: Year[]): { gain: number | null; retained: number | null; startFy: number | null; endFy: number | null } {
+  const history = last(years, T.management.retainedMaxYears + 1);
+  // A rolling 120-month cache rarely contains the baseline needed for ten full fiscal years.
+  // Use the earliest priced baseline, without moving the latest endpoint or skipping earnings.
+  const start = history.findIndex(y => y.marketCap !== null && Number.isFinite(y.marketCap) && y.marketCap > 0);
+  const ys = start < 0 ? [] : history.slice(start);
+  const unavailable = { gain: null, retained: null, startFy: null, endFy: null };
+  if (ys.length < T.management.retainedMinYears + 1 || ys.some((y, i) => i > 0 && y.fy !== ys[i - 1].fy + 1)) return unavailable;
+  const first = ys[0].marketCap, end = ys.at(-1)!.marketCap;
+  if (end === null || !Number.isFinite(end) || end <= 0) return unavailable;
   const retained = ys.slice(1).map(y => y.netIncome === null || y.dividendsPaid === null ? null : y.netIncome - y.dividendsPaid);
-  return { gain: first === null || end === null ? null : end - first, retained: retained.some(x => x === null) ? null : sum(present(retained)) };
+  return { gain: end - first!, retained: retained.some(x => x === null) ? null : sum(present(retained)), startFy: ys[0].fy, endFy: ys.at(-1)!.fy };
 }
 export function slope(series: Series): number | null {
   const points = series.filter((p): p is [number, number] => p[1] !== null && Number.isFinite(p[1]));

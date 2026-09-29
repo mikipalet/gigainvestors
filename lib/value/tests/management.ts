@@ -1,5 +1,5 @@
 import { T } from "../config";
-import { cagr, last, mean, outcome, present, ratio, retainedTest, roic, slope, sum, withZeroDefaults } from "../metrics";
+import { cagr, last, mean, median, outcome, present, ratio, retainedTest, roic, spearman, sum, withZeroDefaults } from "../metrics";
 import type { NumericInput, Series } from "../types";
 
 export function run({ years }: NumericInput) {
@@ -13,15 +13,16 @@ export function run({ years }: NumericInput) {
     : cagr({ first: fiveStart.dilutedShares, last: end.dilutedShares, years: 5 });
   const dilutionPass = [shareCagr, shareCagr5].some(value => value !== null && value <= T.management.maxShareCagr + Number.EPSILON)
     ? true : shareCagr === null || shareCagr5 === null ? null : false;
-  const buybacks = present(ys.map(y => y.buybacks));
-  const spending = buybacks.length < 5 ? null : sum(buybacks);
   const paired = ys.flatMap(y => {
     const earningsYield = ratio(y.netIncome, y.marketCap);
-    return y.buybacks === null || earningsYield === null ? [] : [{ amount: y.buybacks, earningsYield }];
+    const buybackYield = ratio(y.buybacks, y.marketCap);
+    return buybackYield === null || buybackYield <= 0 || earningsYield === null ? [] : [{ buybackYield, earningsYield }];
   });
-  const meanSpend = mean(paired.map(p => p.amount)), meanYield = mean(paired.map(p => p.earningsYield));
-  const discipline = paired.length < 5 ? null : spending === 0 ? 0
-    : mean(paired.map(p => (p.amount - meanSpend!) * (p.earningsYield - meanYield!)));
+  const averageBuybackYield = mean(paired.map(p => p.buybackYield));
+  const discipline = spearman(paired.map(p => [p.buybackYield, p.earningsYield]));
+  const priceBlind = paired.length >= T.management.buybackMinYears && discipline !== null
+    && discipline < T.management.buybackFailRho && averageBuybackYield! > T.management.buybackMinYield;
+  const timingAvailable = paired.length > 0 || ys.some(y => y.buybacks === 0 && ratio(y.netIncome, y.marketCap) !== null);
   const debtFlags = history.slice(1).map((y, i) => {
     const prev = history[i];
     if (y.buybacks === 0) return false;
@@ -30,19 +31,38 @@ export function run({ years }: NumericInput) {
   });
   const debtFunded = debtFlags.includes(true) ? true : debtFlags.filter(x => x !== null).length < 5 ? null : false;
   const acquisitions = present(ys.map(y => y.acquisitions));
-  const acquisitionSpend = acquisitions.length < 5 ? null : sum(acquisitions);
+  const acquisitionSpend = acquisitions.length !== T.management.acquisitionYears ? null : sum(acquisitions);
+  const income = present(ys.map(y => y.netIncome));
+  const cumulativeNetIncome = income.length !== T.management.acquisitionYears ? null : sum(income);
   const roicSeries: Series = ys.map(y => [y.fy, roic(y)]);
-  const trend = slope(roicSeries);
+  const endpointMedian = (points: Series) => points.length !== T.management.roicEndpointYears || points.some(([, value]) => value === null)
+    ? null : median(points.map(([, value]) => value!));
+  const roicFirst3Median = endpointMedian(roicSeries.slice(0, T.management.roicEndpointYears));
+  const roicLast3Median = endpointMedian(roicSeries.slice(-T.management.roicEndpointYears));
+  const acquisitionPass = acquisitionSpend === null || cumulativeNetIncome === null ? null
+    : acquisitionSpend <= T.management.acquisitionToNetIncome * cumulativeNetIncome ? true
+    : roicFirst3Median === null || roicLast3Median === null ? null
+    : !(roicLast3Median < T.moat.roicMedian && roicLast3Median < T.management.roicRetention * roicFirst3Median);
+  const acquisitionLabel = ys.some(y => y.acquisitionsProxy) ? "acquired goodwill and intangibles (proxy)" : "acquisition spending";
+  const displayReturn = (value: number | null) => value === null ? "unavailable" : value === Infinity ? "unlimited" : `${(value * 100).toFixed(1)}%`;
   return outcome({ key: "management", metrics: { marketCapGain: retained.gain, retainedEarnings: retained.retained, shareCagr, shareCagr5,
-    buybackYieldCovariance: discipline, debtFundedBuybacks: debtFunded === null ? null : Number(debtFunded), acquisitionSpend, roicTrend: trend },
+    retainedStartFy: retained.startFy, retainedEndFy: retained.endFy,
+    buybackYieldSpearman: discipline, averageBuybackYield, buybackYears: paired.length,
+    debtFundedBuybacks: debtFunded === null ? null : Number(debtFunded), acquisitionSpend, cumulativeNetIncome, roicFirst3Median, roicLast3Median },
     series: { shares: ys.map(y => [y.fy, y.dilutedShares]), buybacks: ys.map(y => [y.fy, y.buybacks]), acquisitions: ys.map(y => [y.fy, y.acquisitions]), roic: roicSeries,
       marketCap: history.map(y => [y.fy, y.marketCap]), retainedEarnings: ys.map(y => [y.fy, y.netIncome === null || y.dividendsPaid === null ? null : y.netIncome - y.dividendsPaid]) },
-    reasons: debtFunded ? ["potential debt-funded buybacks (informational)"] : [],
+    reasons: [
+      ...(retained.startFy !== null && retained.endFy !== null ? [`$1 retained earnings test: ${retained.startFy} to ${retained.endFy} (${retained.endFy - retained.startFy} years)`] : []),
+      ...(debtFunded ? ["potential debt-funded buybacks (informational)"] : []),
+      ...(timingAvailable && !priceBlind ? [discipline !== null && discipline > 0
+        ? "buybacks leaned toward cheaper years (informational)" : "buybacks unrelated to price (informational)"] : []),
+      `ROIC first 3 years vs last 3 years: ${displayReturn(roicFirst3Median)} vs ${displayReturn(roicLast3Median)}`,
+    ],
     checks: [
       { pass: retained.gain === null || retained.retained === null ? null : retained.gain >= retained.retained, data: "the $1 retained earnings test", reason: "market cap gain below cumulative retained earnings" },
       { pass: dilutionPass, data: "diluted share growth over five and ten years", reason: "five-year and ten-year diluted share growth both above threshold" },
-      { pass: discipline === null ? null : discipline >= 0, data: "buyback timing", reason: "buybacks concentrated at lower earnings yields" },
-      { pass: acquisitionSpend === null ? null : acquisitionSpend === 0 ? true : trend === null ? null : trend >= 0, data: `${ys.some(y => y.acquisitionsProxy) ? "acquired goodwill and intangibles (proxy)" : "acquisition spending"} and ROIC stability`, reason: `${ys.some(y => y.acquisitionsProxy) ? "acquired goodwill and intangibles (proxy)" : "acquisition spending"} alongside declining ROIC` },
+      { pass: timingAvailable ? !priceBlind : null, data: "buyback timing", reason: "material buybacks concentrated at lower earnings yields (Spearman rho below threshold)" },
+      { pass: acquisitionPass, data: `${acquisitionLabel} and ROIC stability`, reason: `${acquisitionLabel} exceeds half of ten-year net income with low and deteriorating ROIC` },
     ],
   });
 }

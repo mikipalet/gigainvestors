@@ -30,10 +30,29 @@ export function checkIntegrity(f: Fundamentals): { ok: boolean; reasons: string[
     }
     if (previous.dilutedShares === null || current.dilutedShares === null || previous.dilutedShares <= 0) continue;
     const ratio = current.dilutedShares / previous.dilutedShares;
+    const n = Math.round(ratio >= 1 ? ratio : 1 / ratio);
+    const candidate = ratio >= 1 ? n : 1 / n;
+    // Require observed financial evidence: missing values cannot establish a split.
+    const financialsUnscaled = (["netIncome", "equity"] as const).every(key => {
+      const before = previous[key];
+      const after = current[key];
+      return before !== null && after !== null && Number.isFinite(before) && Number.isFinite(after)
+        && before !== 0 && Math.abs(after / before / candidate - 1) > T.integrity.splitTolerance;
+    });
+    if (current.fy === previous.fy + 1 && Number.isFinite(ratio) && ratio > 0 && n >= 2
+      && Math.abs(ratio / candidate - 1) <= T.integrity.splitTolerance && financialsUnscaled
+      && (!previous.currency || !current.currency || sameCurrency(previous.currency, current.currency))) {
+      // Year stores totals only. Per-share series are derived after this adjustment.
+      for (const earlier of years.slice(0, i)) {
+        if (earlier.dilutedShares !== null) earlier.dilutedShares *= ratio;
+      }
+      notes.push(`split ${ratio >= 1 ? `${n}:1` : `1:${n}`} in ${current.fy} adjusted`);
+      continue;
+    }
     const splitFactor = (f.splits ?? []).filter((split) => split.date > previous.end && split.date <= current.end && Number.isFinite(split.factor) && split.factor > 0)
       .reduce((factor, split) => factor * split.factor, 1);
     const adjusted = ratio / splitFactor;
-    if ((ratio > T.integrity.maxShareRatio || ratio < T.integrity.minShareRatio) && (adjusted > T.integrity.maxShareRatio || adjusted < T.integrity.minShareRatio)) {
+    if ((ratio >= T.integrity.maxShareRatio || ratio <= T.integrity.minShareRatio) && (adjusted >= T.integrity.maxShareRatio || adjusted <= T.integrity.minShareRatio)) {
       start = Math.max(start, i);
       notes.push(`share count jumped ${Number(ratio.toFixed(2))}x in ${current.fy}; history retained from ${current.fy}`);
     }

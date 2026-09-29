@@ -18,6 +18,7 @@ export default async function renormalize(options: Options): Promise<void> {
   let written = 0;
   let skipped = 0;
   let failed = 0;
+  const splitAdjusted: string[] = [];
   const breakdown: Record<string, number> = {};
   for (const id of ids) {
     const rawPath = corpusPath(`raw/eodhd/${id}.json`);
@@ -33,6 +34,7 @@ export default async function renormalize(options: Options): Promise<void> {
     }
     writeCorpusJson(`fundamentals/${id}.json`, fundamentals);
     written++;
+    if (fundamentals.integrity.notes?.some(note => note.startsWith("split ") && note.endsWith(" adjusted"))) splitAdjusted.push(id);
     if (!fundamentals.integrity.ok) failed++;
     // Count companies per reason family, not individual bad years.
     const reasons = new Set(fundamentals.integrity.reasons.map(reason =>
@@ -41,4 +43,5 @@ export default async function renormalize(options: Options): Promise<void> {
   }
   console.log(`renormalize: ${written} written, ${skipped} skipped (recent or changed raw); ${failed} failed (${written ? (failed / written * 100).toFixed(2) : "0.00"}%)`);
   console.log(`integrity failure breakdown (companies; reasons may overlap): ${JSON.stringify(breakdown)}`);
+  console.log(`split-adjusted: ${splitAdjusted.length} companies ${JSON.stringify(splitAdjusted)}`);
 }

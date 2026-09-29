@@ -95,3 +95,61 @@ it("discards old gaps and uses a later share jump after a currency change", () =
   expect(result.reasons).toEqual([]);
   expect(f.years.map(y => y.fy)).toEqual([2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]);
 });
+
+it.each([
+  { ratio: 4.99, label: "5:1" },
+  { ratio: 0.1, label: "1:10" },
+])("adjusts all earlier shares for a $label split and is idempotent", ({ ratio, label }) => {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 3 ? 100 : 100 * ratio, netIncome: 200, equity: 1000,
+  }));
+  f.integrity = checkIntegrity(f);
+  expect(f.years).toHaveLength(7);
+  expect(f.years.map(y => y.dilutedShares)).toEqual(Array(7).fill(100 * ratio));
+  expect(f.years[0].netIncome! / f.years[0].dilutedShares!).toBeCloseTo(2 / ratio);
+  expect(f.integrity.notes).toEqual([`split ${label} in 2021 adjusted`]);
+  f.integrity = checkIntegrity(f);
+  expect(f.years[0].dilutedShares).toBeCloseTo(100 * ratio);
+  expect(f.integrity.notes).toHaveLength(1);
+});
+
+it("truncates genuine 5x dilution when equity follows the shares but income does not", () => {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 3 ? 100 : 500, netIncome: 200, equity: i < 3 ? 1000 : 5000,
+  }));
+  const earlier = f.years[0];
+  const result = checkIntegrity(f);
+  expect(f.years.map(y => y.fy)).toEqual([2021, 2022, 2023, 2024]);
+  expect(earlier.dilutedShares).toBe(100);
+  expect(result.notes).toEqual(["share count jumped 5x in 2021; history retained from 2021"]);
+});
+
+it("does not infer splits from a noninteger share jump", () => {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 3 ? 100 : 550, netIncome: 200, equity: 1000,
+  }));
+  expect(checkIntegrity(f).notes?.[0]).toContain("share count jumped");
+});
+
+it("rejects a split when income scales even though equity is flat", () => {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 3 ? 100 : 500, netIncome: i < 3 ? 200 : 1000, equity: 1000,
+  }));
+  expect(checkIntegrity(f).notes).toEqual(["share count jumped 5x in 2021; history retained from 2021"]);
+});
+
+it("compounds successive splits without adjusting already adjusted data twice", () => {
+  const f = series(years);
+  f.years.forEach((y, i) => Object.assign(y, {
+    dilutedShares: i < 2 ? 100 : i < 4 ? 200 : 600, netIncome: 200, equity: 1000,
+  }));
+  f.integrity = checkIntegrity(f);
+  expect(f.years.map(y => y.dilutedShares)).toEqual([600, 600, 600, 600, 600, 600, 600]);
+  expect(f.integrity.notes).toEqual(["split 2:1 in 2020 adjusted", "split 3:1 in 2022 adjusted"]);
+  f.integrity = checkIntegrity(f);
+  expect(f.integrity.notes).toHaveLength(2);
+});

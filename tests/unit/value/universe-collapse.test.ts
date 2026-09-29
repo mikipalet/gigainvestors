@@ -50,12 +50,12 @@ describe("venue, receipt and ADR collapse", () => {
   });
 });
 
-it("attaches missing-ISIN listings and foreign US-ISIN receipts to a unique known home", () => {
+it("drops missing-ISIN listings and foreign receipts when a unique home exists", () => {
   expect(collapseListings([
     row("BC94.LSE", "Samsung Electronics Co. Ltd", null),
     row("SMSN.LSE", "Samsung Electronics Co. Ltd", "US7960508882"),
     row("005930.KO", "Samsung Electronics Co Ltd", "KR7005930003"),
-  ])).toEqual([{ primary: "005930.KO", listings: ["BC94.LSE", "SMSN.LSE", "005930.KO"] }]);
+  ])).toEqual([{ primary: "005930.KO", listings: ["005930.KO"] }]);
   expect(collapseListings([row("ITX.WAR", "Inditex", null), row("ITX.MC", "Inditex SA", "ES0148396007")])[0].primary).toBe("ITX.MC");
 });
 
@@ -124,7 +124,7 @@ it("keeps Vale on its Brazilian home and drops the Argentine CEDEAR", () => {
   expect(collapseListings([
     row("XVALO.MC", "Vale SA", "BRVALEACNOR0"), row("VALE3.SA", "Vale SA", "BRVALEACNOR0"),
     row("VALE.BA", "Vale SA", "ARDEUT113925"), row("VALE.US", "Vale SA ADR", "US91912E1055"),
-  ])).toEqual([{ primary: "VALE3.SA", listings: ["XVALO.MC", "VALE3.SA", "VALE.US"] }]);
+  ])).toEqual([{ primary: "VALE3.SA", listings: ["VALE3.SA", "VALE.US"] }]);
   expect(collapseListings([row("VALE.BA", "Vale SA", "ARDEUT113925")])).toEqual([]);
 });
 it("retains standalone Latibex and genuine Argentine homes", () => {
@@ -170,7 +170,7 @@ it("does not route a US ordinary stock into a namesake home via a foreign cross-
     row("DOM.LSE", "Domino's Pizza Group plc", "GB00BYN59130"),
   ]);
   expect(groups).toEqual([
-    { primary: "DPZ.US", listings: ["DPZ.US", "DPZ.MC"] },
+    { primary: "DPZ.US", listings: ["DPZ.US"] },
     { primary: "DOM.LSE", listings: ["DOM.LSE"] },
   ]);
 });

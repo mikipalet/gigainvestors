@@ -1,7 +1,7 @@
 import { readJsonl } from "../../lib/value/corpus";
 import type { Company } from "../../lib/value/types";
 import { normalizedName, isGlobalDepositary } from "../../lib/value/universe";
-import { exchangeCountries, universeChecks } from "../../lib/value/universe-config";
+import { exchangeCountries, nonHomeVenues, offshoreDomiciles, universeChecks } from "../../lib/value/universe-config";
 
 interface Check { label: string; ok: boolean; detail: string }
 
@@ -11,7 +11,7 @@ export function checkUniverse(companies: Company[]): Check[] {
     || a.id.localeCompare(b.id)).slice(0, universeChecks.topCount);
   const names = new Map<string, string[]>();
   for (const company of top) {
-    const name = normalizedName(company.name);
+    const name = normalizedName(company.name, company);
     names.set(name, [...(names.get(name) ?? []), company.id]);
   }
   const duplicates = [...names].filter(([, ids]) => ids.length > 1);
@@ -21,6 +21,7 @@ export function checkUniverse(companies: Company[]): Check[] {
     detail: `${duplicates.length} duplicate groups (${top.length} rows checked)${duplicates.length ? `: ${duplicates.map(([name, ids]) => `${name}=${ids.join(",")}`).join("; ")}` : ""}`,
   }];
   for (const [id, country] of [
+    ["INVE-B.ST", "SE"], ["ATCO-A.ST", "SE"], ["ITUB3.SA", "BR"], ["BBVA.MC", "ES"], ["NEM.US", "US"], ["AIR.PA", "FR"], ["BAYN.XETRA", "DE"],
     ["VALE3.SA", "BR"], ["OXY.US", "US"], ["DPZ.US", "US"], ["LLY.US", "US"], ["NVDA.US", "US"], ["AAPL.US", "US"], ["2330.TW", "TW"], ["0700.HK", "HK"], ["ASML.AS", "NL"],
     ["NESN.SW", "CH"], ["SHOP.TO", "CA"], ["005930.KO", "KR"], ["HSBA.LSE", "GB"],
   ]) {
@@ -28,6 +29,18 @@ export function checkUniverse(companies: Company[]): Check[] {
     checks.push({ label: `${id} primary / ${country}`, ok: company?.country === country && company.listings.includes(id),
       detail: company ? `country=${company.country}; listings=${company.listings.join(",")}` : "missing" });
   }
+  for (const [alias, home] of [
+    ["INVE-A.ST", "INVE-B.ST"], ["ATCO-B.ST", "ATCO-A.ST"], ["ITUB.US", "ITUB3.SA"],
+    ["BBVA.US", "BBVA.MC"], ["NEM.AU", "NEM.US"],
+  ]) {
+    const company = byId.get(home);
+    checks.push({ label: `${alias} merged under ${home}`, ok: !!company?.listings.includes(alias) && !byId.has(alias),
+      detail: company?.listings.join(",") ?? "missing" });
+  }
+  const forbidden = companies.flatMap(company => [...new Set([company.id, ...company.listings])])
+    .filter(id => /\dF\.SA$/i.test(id) || ["BAYER.BUD", "0KVV.LSE"].includes(id));
+  checks.push({ label: "No fractional lots or known foreign venue listings", ok: forbidden.length === 0,
+    detail: `${forbidden.length} violations${forbidden.length ? `: ${forbidden.join(",")}` : ""}` });
   const dpz = byId.get("DPZ.US");
   const dom = byId.get("DOM.LSE");
   checks.push({ label: "DPZ.US separate from DOM.LSE", ok: !!dpz && !!dom
@@ -37,11 +50,10 @@ export function checkUniverse(companies: Company[]): Check[] {
   for (const company of companies) {
     if (company.isin) listingsByIsin.set(company.isin, [...(listingsByIsin.get(company.isin) ?? []), ...company.listings]);
   }
-  const secondary = new Set(["BA", "SW", "MU", "F", "NEO", "MX"]);
-  const nonHomeVenues = new Set(["F", "STU", "MU", "HA", "DU", "HM", "BE", "NEO"]);
   const displacedHomes = companies.filter(company => {
-    if (!secondary.has(company.exchange) || !company.isin) return false;
+    if (company.exchange === "US" || !company.isin) return false;
     const country = company.isin.slice(0, 2);
+    if (offshoreDomiciles.has(country)) return false;
     if (exchangeCountries[company.exchange] === country && !nonHomeVenues.has(company.exchange)) return false;
     return (listingsByIsin.get(company.isin) ?? company.listings).some(id => {
       const exchange = id.slice(id.lastIndexOf(".") + 1);
@@ -51,7 +63,7 @@ export function checkUniverse(companies: Company[]): Check[] {
   checks.push({ label: "No secondary primaries when a home listing exists", ok: displacedHomes.length === 0,
     detail: `${displacedHomes.length} violations${displacedHomes.length ? `: ${displacedHomes.map(company => company.id).join(",")}` : ""}` });
   const gdrs = top.filter((company) => isGlobalDepositary(company.name));
-  checks.push({ label: "No GDR primaries in top 300", ok: gdrs.length === 0, detail: `${gdrs.length} GDR primaries` });
+  checks.push({ label: `No GDR primaries in top ${universeChecks.topCount}`, ok: gdrs.length === 0, detail: `${gdrs.length} GDR primaries` });
   const sk = byId.get("000660.KO");
   checks.push({ label: "SKHY.US merged under 000660.KO", ok: !!sk?.listings.includes("SKHY.US") && !byId.has("SKHY.US"), detail: sk?.listings.join(",") ?? "missing" });
   const tsm = byId.get("2330.TW");

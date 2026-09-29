@@ -25,6 +25,18 @@ function absolute(value: unknown): number | null {
   return parsed === null ? null : Math.abs(parsed);
 }
 
+/** Loan asset fields vary by template. Prefer a net/total aggregate to overlapping components. */
+function loanAssets(balance: RecordValue): number | null {
+  for (const field of ["netLoans", "loansNet", "loansAndLeasesNet", "totalLoans", "grossLoans", "loans"]) {
+    const value = number(balance[field]);
+    if (value !== null) return value;
+  }
+  const components = Object.entries(balance)
+    .filter(([field]) => /loan/i.test(field) && !/loss|allowance|provision|reserve|payable|debt|liabilit/i.test(field))
+    .map(([, value]) => number(value)).filter((value): value is number => value !== null);
+  return components.length ? components.reduce((sum, value) => sum + value, 0) : null;
+}
+
 export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamentals; patch: Partial<Company>; marketCap: { value: number | null; currency: string | null } } {
   const data = record(raw);
   const general = record(data.General);
@@ -73,7 +85,7 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
       ocf: number(cash.totalCashFromOperatingActivities), capex: absolute(cash.capitalExpenditures),
       dividendsPaid: absolute(cash.dividendsPaid), buybacks: stockFlow === null ? null : Math.max(0, -stockFlow),
       issuance: number(cash.issuanceOfCapitalStock), acquisitions, acquisitionsProxy: true,
-      receivables: number(balance.netReceivables), inventory: number(balance.inventory), payables: number(balance.accountsPayable),
+      receivables: number(balance.netReceivables), loans: loanAssets(balance), inventory: number(balance.inventory), payables: number(balance.accountsPayable),
       cash: number(balance.cashAndShortTermInvestments ?? balance.cash),
       totalDebt: number(balance.shortLongTermDebtTotal) ?? (shortDebt !== null && longDebt !== null ? shortDebt + longDebt : null),
       equity: number(balance.totalStockholderEquity), goodwill: number(balance.goodWill), intangibles: number(balance.intangibleAssets),
@@ -96,13 +108,14 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
   fundamentals.integrity = checkIntegrity(fundamentals);
   const sector = text(general.Sector);
   const industry = text(general.Industry);
+  const latestBalance = record(balances[Object.keys(balances).filter(end => /^\d{4}-\d{2}-\d{2}$/.test(end)).sort().at(-1) ?? ""]);
   return {
     fundamentals,
     marketCap: { value: number(record(data.Highlights).MarketCapitalization), currency: text(general.CurrencyCode) },
     patch: {
       description: text(general.Description), sector, industry,
       isin: text(general.ISIN), cik: text(general.CIK), lei: text(general.LEI),
-      ...(sector !== null || industry !== null ? { kind: kindFor({ sector, industry }) } : {}),
+      ...(sector !== null || industry !== null ? { kind: kindFor({ id, sector, industry, lending: { receivables: number(latestBalance.netReceivables), loans: loanAssets(latestBalance), totalAssets: number(latestBalance.totalAssets) } }) } : {}),
     },
   };
 }

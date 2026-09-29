@@ -44,7 +44,7 @@ it('sorts monthly history, chooses the last date per month and drops invalid dat
     {date:'2025-02-01',close:20},{date:'2025-01-01',close:10},{date:'2025-01-31',close:12},
     {date:'2025-02-30',close:99},{date:'2025-03-01',close:null},{date:'2025-04-01',close:0},null,
   ])).toEqual([['2025-01',12],['2025-02',20]]);
-  expect(parseYahooHistory({chart:{result:[{timestamp:[1735657200,1738335600],indicators:{quote:[{close:[10,null]}]}}],error:null}})).toEqual([['2025-01',10]]);
+  expect(parseYahooHistory({chart:{result:[{meta:{exchangeTimezoneName:"Asia/Tokyo"},timestamp:[1735657200,1738335600],indicators:{quote:[{close:[10,null]}]}}],error:null}})).toEqual([['2025-01',10]]);
   expect(()=>parseYahooHistory({chart:{result:null,error:{code:'Not Found'}}})).toThrow(/Yahoo price history/);
 });
 

@@ -22,6 +22,11 @@ export function checkIntegrity(f: Fundamentals): { ok: boolean; reasons: string[
   for (let i = 1; i < years.length; i++) {
     const previous = years[i - 1];
     const current = years[i];
+    if (current.fy > previous.fy + 1) {
+      start = Math.max(start, i);
+      const missing = Array.from({ length: current.fy - previous.fy - 1 }, (_, j) => previous.fy + j + 1);
+      notes.push(`gap year${missing.length > 1 ? "s" : ""} ${missing.join(", ")}; history retained from ${current.fy}`);
+    }
     if (previous.dilutedShares === null || current.dilutedShares === null || previous.dilutedShares <= 0) continue;
     const ratio = current.dilutedShares / previous.dilutedShares;
     const splitFactor = (f.splits ?? []).filter((split) => split.date > previous.end && split.date <= current.end && Number.isFinite(split.factor) && split.factor > 0)
@@ -36,9 +41,6 @@ export function checkIntegrity(f: Fundamentals): { ok: boolean; reasons: string[
   f.years = years;
   if (currency) f.currency = currency;
   if (new Set(years.map(year => year.fy)).size < T.minYears) reasons.push(`fewer than ${T.minYears} annual periods`);
-  for (let i = 1; i < years.length; i++) {
-    for (let fy = years[i - 1].fy + 1; fy < years[i].fy; fy++) reasons.push(`gap year ${fy}`);
-  }
   const balanceReasons: string[] = [];
   for (const year of years.slice(-T.integrity.balanceYears)) {
     const { totalAssets: assets, totalLiabilities: liabilities, equity, minorityInterest: minority } = year;

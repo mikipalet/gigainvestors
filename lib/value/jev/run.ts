@@ -9,7 +9,8 @@ import { QUESTIONS, QUESTIONS_VERSION } from "./questions";
 type Section = SectionKey | "description";
 type Sample = { raw: RawAnswer; weight: number; section: Section };
 type Cached = { version: string; hash: string; answers: JevAnswer[] };
-const trusted = () => new Set<string>(trust.trusted);
+const trusted = () => new Set(QUESTIONS.filter(question => trust.trusted.includes(question.id)
+  && (trust.versions as Record<string, string>)[question.id] === question.version).map(question => question.id));
 
 function chunks(text: string): string[] {
   const result: string[] = [];

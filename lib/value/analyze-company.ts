@@ -10,7 +10,7 @@ import { runNumericTests } from "./tests";
 import { valueCompany } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory } from "./types";
 
-export const PIPELINE_VERSION = "3";
+export const PIPELINE_VERSION = "4";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -18,9 +18,8 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   company: Company; fundamentals: Fundamentals; sections: Sections; report: ReportMeta;
   bondYield: number | null; priceHistory?: PriceHistory | null; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
 }): Promise<Analysis> {
-  // Refresh recognized financial kinds in old corpus enrichment without a fundamentals pull.
-  const financialKind = kindFor(company);
-  if (financialKind !== "operating") company = { ...company, kind: financialKind };
+  // Reclassify old corpus enrichment, including payment networks previously marked as banks.
+  if (company.industry) company = { ...company, kind: kindFor({ ...company, lending: fundamentals.years.at(-1) }) };
   // One reporting-to-trading FX rate serves both valuation and historical caps.
   const rate = fundamentals.integrity.ok
     ? await tradingRate({ reporting: fundamentals.currency, trading: company.currency, usdRate }) : null;

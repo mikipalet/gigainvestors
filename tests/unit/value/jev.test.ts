@@ -78,12 +78,13 @@ describe("company questions", () => {
   it("invalidates old question versions and refreshes trust on cache hits", async () => {
     const input = { id: "KO.US", sections: { business: "Drinks" } };
     const answers = await askCompany(input);
-    expect(answers.every((answer) => !answer.trusted)).toBe(true);
+    expect(answers.filter(answer => answer.trusted).map(answer => answer.q).sort()).toEqual(["brand", "capex_purpose", "compensation_basis", "revenue_model", "same_10y"]);
+    expect(answers.find(answer => answer.q === "commodity_product")?.trusted).toBe(false);
     const file = path.join(directory, "jev/KO.US.json");
     const cache = JSON.parse(readFileSync(file, "utf8"));
     cache.answers.forEach((answer: JevAnswer) => { answer.trusted = true; });
     writeFileSync(file, JSON.stringify(cache));
-    expect((await askCompany(input)).every((answer) => !answer.trusted)).toBe(true);
+    expect((await askCompany(input)).map(answer => answer.trusted)).toEqual(answers.map(answer => answer.trusted));
     expect(ask).toHaveBeenCalledTimes(1);
     cache.version = "old";
     writeFileSync(file, JSON.stringify(cache));
@@ -188,4 +189,10 @@ describe("HTTP client", () => {
     vi.stubGlobal("fetch", vi.fn(async () => Response.json({ answers: { q: { type: "noul", noul: 2 } }, usage: { input_tokens: 1 } })));
     await expect(realAsk({ state: "Hello", questions: { q: { type: "noul", instructions: "Greeting?" } } })).rejects.toThrow("Invalid Jev response");
   });
+});
+
+it("C8 considers founder ownership stated in any report section", async () => {
+  ask.mockImplementation(async ({ questions, state }) => response(questions, state.includes("founder") ? 0.95 : 0.1));
+  const answers = await askCompany({ id: "TEST.US", sections: { business: "Widgets", notes: "The founder chairs the board and is a major shareholder." } });
+  expect(answers.find(answer => answer.q === "founder_led")).toMatchObject({ value: 0.95, section: "notes", trusted: false });
 });

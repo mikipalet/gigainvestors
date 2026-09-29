@@ -1,5 +1,12 @@
 export const T = {
   minYears: 7,
+  kind: {
+    lendingAssetsRatio: 0.4,
+    // AXP's EODHD template omits card-member loans; netReceivables alone is only 20.61% (FY2025).
+    // Explicit calibration requirement: retain bank treatment only while that loan field is absent.
+    missingLoanBankIds: ["AXP.US"] as readonly string[],
+  },
+  yahoo: { perSecond: 2 },
   numeric: { minAvailableFraction: 2 / 3 },
   dedupe: { revenueTolerance: 0.02 },
   integrity: { maxShareRatio: 5, minShareRatio: 0.2, balanceTolerance: 0.10, balanceYears: 5, balanceMinFailures: 2 },
@@ -16,3 +23,12 @@ export const T = {
   valuation: { minDiscount: 0.10, bondSpread: 0.04, maxGrowth: 0.12, terminal: 0.03, finMaxGrowth: 0.06 },
   jev: { contradict: 0.7, trustAgreement: 0.85, evidence: 0.6, commodityCyclical: 0.6, chunkTokens: 24_000, minParagraphChars: 200 },
 } as const;
+
+// MI and NZ are compatibility codes; neither is currently returned by EODHD's exchanges-list.
+export const YAHOO_SUFFIXES: Readonly<Record<string, string>> = {
+  US: "", LSE: ".L", PA: ".PA", AS: ".AS", XETRA: ".DE", SW: ".SW", MC: ".MC", MI: ".MI",
+  ST: ".ST", CO: ".CO", OL: ".OL", HE: ".HE", BR: ".BR", LS: ".LS", VI: ".VI", WAR: ".WA",
+  TO: ".TO", V: ".V", AU: ".AX", HK: ".HK", TW: ".TW", TWO: ".TWO", KO: ".KS", KQ: ".KQ",
+  SHG: ".SS", SHE: ".SZ", SA: ".SA", MX: ".MX", JK: ".JK", KLSE: ".KL", BK: ".BK", JSE: ".JO",
+  NZ: ".NZ", SN: ".SN", IR: ".IR", AT: ".AT", JP: ".T",
+};

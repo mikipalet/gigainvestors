@@ -50,6 +50,7 @@ export interface Year {
   /** Positive annual growth in goodwill plus intangibles, not reported cash spending. */
   acquisitionsProxy?: boolean;
   receivables: number | null;
+  loans?: number | null; // loan assets when supplied separately by the provider
   inventory: number | null;
   payables: number | null;
   cash: number | null;

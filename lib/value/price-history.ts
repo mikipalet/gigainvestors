@@ -1,3 +1,4 @@
+import { T, YAHOO_SUFFIXES } from "./config";
 import { readCorpusJson } from "./corpus";
 import { eodhd } from "./eodhd";
 import { createLimiter, fetchWithRetry } from "./http";
@@ -31,23 +32,42 @@ export function parseEodHistory(raw: unknown): PriceHistory {
 
 export function parseYahooHistory(raw: unknown): PriceHistory {
   const chart = (raw as { chart?: { error?: unknown; result?: Array<{
+    meta?: { exchangeTimezoneName?: string; gmtoffset?: number };
     timestamp?: number[]; indicators?: { quote?: Array<{ close?: Array<number | null> }> };
   }> } } | null)?.chart;
   const result = chart?.result?.[0];
   const closes = result?.indicators?.quote?.[0]?.close;
   if (chart?.error || !Array.isArray(result?.timestamp) || !Array.isArray(closes)) throw new Error("Invalid Yahoo price history");
+  const zone = result.meta?.exchangeTimezoneName;
+  const formatter = zone ? new Intl.DateTimeFormat("en-CA", { timeZone: zone, year: "numeric", month: "2-digit", day: "2-digit" }) : null;
   return monthlyCloses(result.timestamp.map((time, i) => {
-    // Tokyo's midnight month boundary is still the previous day in UTC.
-    const date = typeof time === "number" && Number.isFinite(time) ? new Date(time * 1000 + 9 * 3600 * 1000) : null;
-    return { date: date && Number.isFinite(date.getTime()) ? date.toISOString().slice(0, 10) : null, close: closes[i] };
+    const date = typeof time === "number" && Number.isFinite(time) ? new Date(time * 1000) : null;
+    let local: string | null = null;
+    if (date && Number.isFinite(date.getTime())) {
+      if (formatter) {
+        const parts = Object.fromEntries(formatter.formatToParts(date).map(part => [part.type, part.value]));
+        local = `${parts.year}-${parts.month}-${parts.day}`;
+      } else {
+        local = new Date(date.getTime() + (result.meta?.gmtoffset ?? 0) * 1000).toISOString().slice(0, 10);
+      }
+    }
+    return { date: local, close: closes[i] };
   }));
 }
 
-const yahooLimit = createLimiter({ perSecond: 2 });
-export async function fetchPriceHistory({ company, from }: { company: Company; from: string }): Promise<PriceHistory> {
-  if (!company.id.endsWith(".JP")) return parseEodHistory(await eodhd(`eod/${encodeURIComponent(company.id)}`, { period: "m", from }));
+export function yahooSymbol(company: Pick<Company, "code" | "exchange">): string {
+  const suffix = YAHOO_SUFFIXES[company.exchange];
+  if (suffix === undefined) throw new Error(`Unsupported Yahoo exchange: ${company.exchange}`);
+  const code = company.exchange === "HK" ? company.code.padStart(4, "0")
+    : company.exchange === "US" ? company.code.replace(/\./g, "-") : company.code;
+  return `${code}${suffix}`;
+}
+
+const yahooLimit = createLimiter({ perSecond: T.yahoo.perSecond });
+export async function fetchPriceHistory({ company, from, useYahoo = false }: { company: Company; from: string; useYahoo?: boolean }): Promise<PriceHistory> {
+  if (!useYahoo && !company.id.endsWith(".JP")) return parseEodHistory(await eodhd(`eod/${encodeURIComponent(company.id)}`, { period: "m", from }));
   return yahooLimit(async () => {
-    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(company.code)}.T?range=10y&interval=1mo`;
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSymbol(company))}?range=10y&interval=1mo`;
     const response = await fetchWithRetry(url, { headers: { "User-Agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(60_000), retries: 0 });
     if (!response.ok) throw new Error(`Yahoo price history HTTP ${response.status}`);
     return parseYahooHistory(await response.json());

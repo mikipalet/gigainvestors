@@ -5,8 +5,8 @@ import { run as management } from "@/lib/value/tests/management";
 import { valueCompany } from "@/lib/value/valuation";
 import { makeYears } from "./synthetic";
 
-it("C1 classifies card issuers and consumer lenders as banks", () => {
-  expect(kindFor({ industry: "Credit Services", sector: "Financial Services" })).toBe("bank");
+it("C1 classifies credit services as banks when lending assets dominate", () => {
+  expect(kindFor({ industry: "Credit Services", sector: "Financial Services", lending: { receivables: 50, totalAssets: 100 } })).toBe("bank");
   expect(kindFor({ industry: "Software", sector: "Technology" })).toBe("operating");
 });
 

@@ -22,7 +22,7 @@ describe("integrity gate", () => {
     expect(checkIntegrity(series(years.slice(1))).reasons).toEqual(["fewer than 7 annual periods"]);
   });
   it("identifies missing years in retained history", () => {
-    expect(checkIntegrity(series([2015, 2017])).reasons).toContain("gap year 2016");
+    expect(checkIntegrity(series([2015, 2017])).notes).toContain("gap year 2016; history retained from 2017");
   });
   it.each([9e6, 1e5])("truncates at an unexplained share jump to %s before minYears", (shares) => {
     const f = series(years);

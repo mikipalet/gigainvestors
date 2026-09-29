@@ -1,3 +1,4 @@
+import { T } from "./config";
 import type { Id, Kind } from "./types";
 
 import { exchangeCountries, offshoreDomiciles, secondaryVenues, nonHomeVenues, lastResortVenues, offshoreVenueOrder, dualListedIssuers, adrUnderlyingIsins, cdiUnderlyingIsins, issuerNameAliases } from "./universe-config";
@@ -240,8 +241,15 @@ export function collapseListings(input: Listing[]): Array<{ primary: Id; listing
   }]);
 }
 
-export function kindFor({ industry }: { sector: string | null; industry: string | null }): Kind {
-  if (/bank|^credit services$/i.test(industry ?? "")) return "bank";
+export function kindFor({ id, industry, lending }: {
+  id?: string; sector: string | null; industry: string | null;
+  lending?: { receivables: number | null; loans?: number | null; totalAssets: number | null };
+}): Kind {
+  if (/bank/i.test(industry ?? "")) return "bank";
+  if (/^credit services$/i.test(industry ?? "") && id && T.kind.missingLoanBankIds.includes(id)
+    && lending?.loans == null) return "bank";
+  if (/^credit services$/i.test(industry ?? "") && lending?.totalAssets != null && lending.totalAssets > 0
+    && ((lending.receivables ?? 0) + (lending.loans ?? 0)) / lending.totalAssets > T.kind.lendingAssetsRatio) return "bank";
   if (/insurance/i.test(industry ?? "")) return "insurer";
   return "operating";
 }

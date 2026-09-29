@@ -3,7 +3,7 @@ import { last, mean, nwc, outcome, present, ratio, roiic, slope, sum, withZeroDe
 import { ownerEarningsSeries } from "../owner-earnings";
 import type { NumericInput, Series } from "../types";
 
-export function run({ years }: NumericInput) {
+export function run({ years, kind }: NumericInput) {
   years = withZeroDefaults(years);
   const ys = last(years, 10), five = last(ys, 5), oe = ownerEarningsSeries(years);
   const recent = oe.filter(([fy]) => five.some(y => y.fy === fy)).map(p => p[1]), incomes = five.map(y => y.netIncome);
@@ -20,7 +20,7 @@ export function run({ years }: NumericInput) {
     series: { ownerEarnings: oe, nwcToRevenue: working }, checks: [
       { pass: conversion === null ? null : conversion >= T.economics.oeToNi, data: "owner earnings cash conversion", reason: "owner earnings cash conversion below threshold" },
       { pass: incremental === null ? null : incremental >= T.economics.roiic, data: "incremental invested capital return", reason: "incremental invested capital return below threshold" },
-      { pass: change === null || end === null ? null : end <= 0 || change <= T.economics.maxNwcRise + Number.EPSILON, data: "three-year working capital averages at both ends of ten years", reason: `working capital as a share of revenue rose more than ${T.economics.maxNwcRise * 100}pp and ends positive` },
+      ...(kind === "operating" ? [{ pass: change === null || end === null ? null : end <= 0 || change <= T.economics.maxNwcRise + Number.EPSILON, data: "three-year working capital averages at both ends of ten years", reason: `working capital as a share of revenue rose more than ${T.economics.maxNwcRise * 100}pp and ends positive` }] : []),
     ],
   });
 }

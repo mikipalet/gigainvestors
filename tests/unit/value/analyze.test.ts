@@ -426,10 +426,10 @@ it.each(["missing-month", "missing-shares", "missing-fx"] as const)("R3 keeps ye
   expect(result.tests.management.metrics.marketCapGain).toBeNull();
 });
 
-it("C1 reclassifies cached Credit Services enrichment without downloading fundamentals again", async () => {
+it("C5 reclassifies cached Credit Services enrichment with lending assets", async () => {
   const args = input();
   const { makeYears } = await import("./synthetic");
-  args.fundamentals.years = makeYears();
+  args.fundamentals.years = makeYears({ overrides: { receivables: 500 } });
   args.company.industry = "Credit Services";
   args.company.kind = "operating";
   appendJsonl("universe.jsonl", args.company);
@@ -457,4 +457,19 @@ it("C4 analyze and jev-sample skip unsafe IDs and process ampersand IDs", async 
   const { readJsonl } = await import("../../../lib/value/corpus");
   expect(readJsonl<{id:string}>("jev-sample/brand.jsonl").map(row => row.id).sort()).toEqual([...ids].sort());
   expect(log.mock.calls.flat().join(" ")).toMatch(/skipp.*bad/i);
+});
+
+it("C5 clears the stale bank kind of a payment network in saved analysis", async () => {
+  const args = input();
+  const { makeYears } = await import("./synthetic");
+  args.fundamentals.years = makeYears({ overrides: { receivables: 80 } });
+  args.company.industry = "Credit Services";
+  args.company.kind = "bank";
+  appendJsonl("universe.jsonl", args.company);
+  writeCorpusJson("companies/KO.US.json", { kind: "bank", industry: "Credit Services" });
+  writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);
+  await analyze({ ask: args.ask, getBondYield: async () => 0.04, evidence: async () => null });
+  const result = readCorpusJson<Analysis>("analysis/KO.US.json")!;
+  expect(result.company.kind).toBe("operating");
+  expect(result.valuation?.method).toBe("owner_earnings");
 });

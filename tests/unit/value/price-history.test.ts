@@ -1,4 +1,4 @@
-import { mkdirSync, mkdtempSync, rmSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
@@ -6,6 +6,7 @@ import eod from "../../fixtures/value/history/eodhd-KO.json";
 import yahoo from "../../fixtures/value/history/yahoo-8058.json";
 import { appendJsonl, readCorpusJson, writeCorpusJson } from "@/lib/value/corpus";
 import type { Company, PriceHistory } from "@/lib/value/types";
+import { parseYahooHistory, yahooSymbol } from "@/lib/value/price-history";
 import priceHistory from "@/scripts/value/stages/price-history";
 
 let root: string;
@@ -38,17 +39,18 @@ it('records monthly closes in order with the requested ten-year URL and skips fr
   await run({ force: true }); expect(urls.filter(url => url.pathname.includes('/eod/'))).toHaveLength(1);
 });
 
-it('refreshes expired rows, filters before limit, and stops at the shared daily budget', async () => {
+it('refreshes expired rows, filters before limit, and switches to Yahoo at the shared daily budget', async () => {
   for (const id of ['OLD.US','KO.US','NEXT.US']) appendJsonl('universe.jsonl', company(id));
   writeCorpusJson('prices-history/KO.US.json',{ fetchedAt: '2026-09-22T11:59:59Z', prices: [['2020-01',1]] });
   writeCorpusJson('prices-history/NEXT.US.json',{ fetchedAt: '2026-09-22T11:59:59Z', prices: [['2020-01',2]] });
   vi.stubGlobal('fetch', async (url: string) => {
     if (new URL(url).pathname.endsWith('/user')) return Response.json({ apiRequests: 98999 });
-    expect(new URL(url).pathname).toBe('/api/eod/KO.US'); return Response.json(eod);
+    if (new URL(url).pathname === '/api/eod/KO.US') return Response.json(eod);
+    expect(new URL(url).pathname).toBe('/v8/finance/chart/NEXT'); return Response.json(yahoo);
   });
   await run({ only: ['KO.US','NEXT.US'], limit: 2 });
   expect(readCorpusJson<PriceHistory>('prices-history/KO.US.json')?.[0][1]).toBe(42.32);
-  expect(readCorpusJson<{prices:PriceHistory}>('prices-history/NEXT.US.json')?.prices).toEqual([['2020-01',2]]); expect(readCorpusJson('prices-history/OLD.US.json')).toBeNull();
+  expect(readCorpusJson<PriceHistory>('prices-history/NEXT.US.json')?.[0]).toEqual(['2016-10',763.6666870117188]); expect(readCorpusJson('prices-history/OLD.US.json')).toBeNull();
 });
 
 it('uses Japanese local month and Yahoo ten-year monthly closes without EODHD budget calls', async () => {
@@ -98,7 +100,7 @@ it('counts failed EODHD attempts against the daily budget', async () => {
     requested.push(path); return Response.json({error:'unavailable'});
   });
   await run();
-  expect(requested).toEqual(['/api/eod/BAD.US']);
+  expect(requested).toEqual(['/api/eod/BAD.US', '/v8/finance/chart/NEXT']);
 });
 
 it('skips a failed Yahoo request and writes the next company', async () => {
@@ -108,4 +110,42 @@ it('skips a failed Yahoo request and writes the next company', async () => {
   await run();
   expect(readCorpusJson('prices-history/BAD.JP.json')).toBeNull();
   expect(readCorpusJson('prices-history/8058.JP.json')).not.toBeNull();
+});
+
+it('C7 falls back immediately on an exhausted budget and uses padded HK symbols', async () => {
+  appendJsonl('universe.jsonl', company('700.HK'));
+  vi.stubGlobal('fetch', async (url: string, options: RequestInit) => {
+    if (new URL(url).pathname.endsWith('/user')) return Response.json({apiRequests: 100001});
+    expect(url).toBe('https://query1.finance.yahoo.com/v8/finance/chart/0700.HK?range=10y&interval=1mo');
+    expect(options.headers).toMatchObject({'User-Agent': expect.stringContaining('Mozilla')});
+    return Response.json(yahoo);
+  });
+  await run();
+  expect(readCorpusJson<PriceHistory>('prices-history/700.HK.json')?.length).toBeGreaterThan(100);
+});
+
+it.each([
+  ["KO.US", "KO", 42.400001525878906, 87.18000030517578],
+  ["NESN.SW", "NESN.SW", 71.75, 76.91999816894531],
+  ["0700.HK", "0700.HK", 189.7180633544922, 432],
+  ["2330.TW", "2330.TW", 188.5, 2475],
+  ["VALE3.SA", "VALE3.SA", 22.079999923706055, 71.16000366210938],
+])('C7 parses recorded live %s history with exchange-local month boundaries', (id, symbol, first, last) => {
+  expect(yahooSymbol(company(String(id)))).toBe(symbol);
+  const raw = JSON.parse(readFileSync(join(process.cwd(), `tests/fixtures/value/history/yahoo-${id}.json`), 'utf8'));
+  const prices = parseYahooHistory(raw);
+  expect(prices).toHaveLength(120);
+  expect(prices[0]).toEqual(['2016-10', first]);
+  expect(prices.at(-1)).toEqual(['2026-09', last]);
+});
+
+it.each([
+  ['BRK.B', 'US', 'BRK-B'], ['ENI', 'MI', 'ENI.MI'], ['AIR', 'NZ', 'AIR.NZ'],
+  ['7203', 'JP', '7203.T'], ['BHP', 'AU', 'BHP.AX'], ['005930', 'KO', '005930.KS'],
+])('C7 maps %s on %s to Yahoo %s', (code, exchange, want) => {
+  expect(yahooSymbol({code, exchange})).toBe(want);
+});
+
+it('C7 rejects unknown exchanges instead of requesting a US namesake', () => {
+  expect(() => yahooSymbol({code: 'TEST', exchange: 'UNKNOWN'})).toThrow('Unsupported Yahoo exchange');
 });

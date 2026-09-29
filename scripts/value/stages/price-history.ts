@@ -28,21 +28,18 @@ export default async function priceHistory({ only, limit, force = false }: { onl
     const isJapan = company.id.endsWith(".JP");
     if (!isJapan) {
       used ??= await callsUsedToday();
-      if (used >= T.fundamentals.dailyBudgetStop) {
-        console.log("daily EODHD budget reached, resume tomorrow");
-        break;
-      }
     }
+    const useYahoo = isJapan || used! >= T.fundamentals.dailyBudgetStop;
     let prices: PriceHistory | undefined;
     try {
-      prices = await fetchPriceHistory({ company, from: from.toISOString().slice(0, 10) });
+      prices = await fetchPriceHistory({ company, from: from.toISOString().slice(0, 10), useYahoo });
       consecutiveFailures = 0;
     } catch (error) {
       consecutiveFailures++;
       console.error(`${company.id}: price-history request failed, skipping`, error);
     }
     // Failed requests can still consume the shared provider budget.
-    if (!isJapan) {
+    if (!useYahoo) {
       used!++;
       if (++eodRequests % T.fundamentals.usageSyncCompanies === 0) used = Math.max(used!, await callsUsedToday());
     }

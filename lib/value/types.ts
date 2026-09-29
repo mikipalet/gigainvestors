@@ -29,6 +29,8 @@ export interface Company {
 export interface Year {
   fy: number;
   end: string; // ISO date
+  currency?: string | null;
+  minorityInterest?: number | null;
   revenue: number | null;
   grossProfit: number | null;
   operatingIncome: number | null;
@@ -68,6 +70,7 @@ export interface Fundamentals {
   years: Year[]; // ascending fy, one per fy
   integrity: { ok: boolean; reasons: string[] };
   fetchedAt: string;
+  splits?: Array<{ date: string; factor: number }>;
 }
 
 export type Series = Array<[number, number | null]>; // [fy, value]

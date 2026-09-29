@@ -3,7 +3,7 @@ import { T } from "./config";
 import { QUESTIONS } from "./jev/questions";
 import { priceTest } from "./price-test";
 import { shardOf } from "./shard";
-import { QUALITY_TESTS, type Analysis, type Dossier, type IndexRow, type PriceMap, type Valuation } from "./types";
+import { QUALITY_TESTS, type Analysis, type Dossier, type IndexRow, type PriceMap, type PriceHistory, type Valuation } from "./types";
 
 function tradingValuation(analysis: Analysis, usdRate: (currency: string) => number | null): Valuation | null {
   const valuation = analysis.status === "scored" ? analysis.valuation : null;
@@ -21,12 +21,13 @@ function tradingValuation(analysis: Analysis, usdRate: (currency: string) => num
   return { ...valuation, currency, perShare: { low: range.low, mid: range.mid, high: range.high } };
 }
 
-export function buildOutput({ analyses, holdersByTicker, investorNames, fx, prices = {}, universe = analyses.length }: {
+export function buildOutput({ analyses, holdersByTicker, investorNames, fx, prices = {}, priceHistories = {}, universe = analyses.length }: {
   analyses: Analysis[];
   holdersByTicker: Record<string, string[]>;
   investorNames: Record<string, string>;
   fx: Record<string, number>;
   prices?: PriceMap;
+  priceHistories?: Record<string, PriceHistory>;
   universe?: number;
 }): { files: Record<string, unknown> } {
   const usdRate = createUsdRate({ rates: fx });
@@ -53,14 +54,20 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       if (applies) { g.add(question.tag); tags[question.tag] = question.id === "revenue_model" ? "Recurring revenue" : question.label; }
     }
     const valuation = tradingValuation(analysis, usdRate);
-    const price = priceTest(valuation, prices[analysis.id]?.[0] ?? null);
+    const requiredMos = analysis.requiredMos ?? T.price.requiredMos.stable;
+    const price = priceTest({ valuation, price: prices[analysis.id]?.[0] ?? null, requiredMos });
     const dossier: Dossier = {
-      ...analysis, holders, series: Object.assign({}, ...outcomes.map((test) => test.series)),
+      ...analysis, requiredMos, holders,
+      ...(priceHistories[analysis.id] ? { priceHistory: priceHistories[analysis.id] } : {}),
+      series: Object.assign({}, ...outcomes.map((test) => test.series), analysis.series),
       tests: { ...analysis.tests, price: { key: "price", result: price.result, numeric: price.result, reasons: price.mos === null ? ["Valuation or price unavailable in trading currency"] : [], metrics: { mos: price.mos }, series: {}, jev: [] } },
     };
     const shard = shardOf(analysis.id);
     (shards[shard] ??= {})[analysis.id] = dossier;
+    const roic = (analysis.tests.moat.series.roic ?? []).slice(-T.history.years)
+      .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
     const row: IndexRow = {
+      m: requiredMos, r: [...Array<number | null>(T.history.years - roic.length).fill(null), ...roic],
       id: analysis.id, n: company.name, c: company.country, s: company.sector, k: company.kind,
       mc: company.marketCapUsd, v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null,
       cur: company.currency, t: outcomes.map((test) => test.result[0].toUpperCase()).join(""),

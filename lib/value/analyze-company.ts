@@ -1,3 +1,4 @@
+import { companyEvents, earningsVolatility, perShareSeries, valueHistory } from "./history";
 import { createUsdRate } from "./fx";
 import { T } from "./config";
 import { bondYield as fetchBondYield, tradingRate } from "./bond-yields";
@@ -8,7 +9,7 @@ import { runNumericTests } from "./tests";
 import { valueCompany } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey } from "./types";
 
-export const PIPELINE_VERSION = "1";
+export const PIPELINE_VERSION = "2";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -27,24 +28,36 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   }
   // askCompany returns one aggregated answer per question (commodity uses a weighted mean).
   const commodity = answers.find(answer => answer.q === "commodity")?.value;
-  const cyclical = (numeric.understandable.metrics.opMarginCv ?? 0) > T.understandable.maxOpMarginCv
-    || typeof commodity === "number" && commodity >= T.jev.commodityCyclical;
+  const isCommodity = typeof commodity === "number" && commodity >= T.jev.commodityCyclical;
+  const volatility = earningsVolatility({ opMarginCv: numeric.understandable.metrics.opMarginCv, commodity: isCommodity });
+  const requiredMos = T.price.requiredMos[volatility];
+  const cyclical = isCommodity || numeric.understandable.metrics.opMarginCv !== null && volatility === "volatile";
   const resolvedBondYield = fundamentals.integrity.ok && bondYield === null ? await getBondYield("US") : bondYield;
   const { valuation, reason } = !fundamentals.integrity.ok
     ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
     : resolvedBondYield === null
       ? { valuation: null, reason: "Local government and US10Y bond yields unavailable" }
       : valueCompany({ years: fundamentals.years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical });
+  let fxRate: number | null = null;
   if (valuation) {
     if (bondYield === null) valuation.assumptions.push("Local government bond yield unavailable; using US10Y yield");
     const rate = await tradingRate({ reporting: fundamentals.currency, trading: company.currency, usdRate });
+    fxRate = rate;
     if (rate !== null) valuation.perShareTrading = {
       currency: company.currency, fxRate: rate,
       low: valuation.perShare.low * rate, mid: valuation.perShare.mid * rate, high: valuation.perShare.high * rate,
     };
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
-  return { id: company.id, company, asOf: new Date().toISOString(),
+  // Historical prefixes can still be valued when today's earnings are not positive.
+  if (!valuation && fundamentals.integrity.ok && resolvedBondYield !== null) {
+    fxRate = await tradingRate({ reporting: fundamentals.currency, trading: company.currency, usdRate });
+  }
+  return { requiredMos, volatility,
+    valueHistory: valueHistory({ fundamentals, kind: company.kind, bondYield: resolvedBondYield, fxRate, commodity: isCommodity }),
+    historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"],
+    events: companyEvents(fundamentals), series: perShareSeries(fundamentals),
+    id: company.id, company, asOf: new Date().toISOString(),
     status: fundamentals.integrity.ok ? "scored" : "insufficient_data", report, tests,
     valuation, valuationReason: reason, versions: { pipeline: PIPELINE_VERSION, questions: QUESTIONS_VERSION } };
 }

@@ -6,6 +6,10 @@ export const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
 export const mean = (xs: number[]): number | null => xs.length ? sum(xs) / xs.length : null;
 export const clamp = (input: { value: number; min: number; max: number }) => Math.max(input.min, Math.min(input.max, input.value));
 export const ratio = (a: number | null, b: number | null): number | null => a === null || b === null || b <= 0 ? null : a / b;
+/** A single missing component is zero; two missing components remain unknown. */
+export function goodwillAndIntangibles(y: Pick<Year, "goodwill" | "intangibles">): number | null {
+  return y.goodwill === null && y.intangibles === null ? null : (y.goodwill ?? 0) + (y.intangibles ?? 0);
+}
 // Only infer zero for optional line items when the containing statement exists.
 export function withZeroDefaults(years: Year[]): Year[] {
   return years.map(y => ({
@@ -16,7 +20,7 @@ export function withZeroDefaults(years: Year[]): Year[] {
     } : {}),
     ...(y.ocf !== null ? {
       dividendsPaid: y.dividendsPaid ?? 0, buybacks: y.buybacks ?? 0,
-      acquisitions: y.acquisitions ?? 0, sbc: y.sbc ?? 0,
+      acquisitions: y.acquisitionsProxy ? y.acquisitions : y.acquisitions ?? 0, sbc: y.sbc ?? 0,
     } : {}),
   }));
 }

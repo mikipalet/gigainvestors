@@ -106,6 +106,6 @@ describe("round 1 controller rulings", () => {
     expect(value(years, cyclical).valuation?.assumptions).toContain("stock compensation not reported");
   });
   it.each([0, -1])("keeps nonpositive price %s unclear", price => {
-    expect(priceTest(value(makeYears()).valuation, price)).toEqual({ result: "unclear", mos: null });
+    expect(priceTest({ valuation: value(makeYears()).valuation, price, requiredMos: 0.25 })).toEqual({ result: "unclear", mos: null });
   });
 });

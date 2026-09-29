@@ -1,0 +1,28 @@
+{
+  "fields": [
+    "cik",
+    "name",
+    "ticker",
+    "exchange"
+  ],
+  "data": [
+    [
+      937966,
+      "ASML HOLDING NV",
+      "ASML",
+      "Nasdaq"
+    ],
+    [
+      21344,
+      "COCA COLA CO",
+      "KO",
+      "NYSE"
+    ],
+    [
+      1000184,
+      "SAP SE",
+      "SAP",
+      "NYSE"
+    ]
+  ]
+}

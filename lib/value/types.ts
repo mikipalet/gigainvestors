@@ -47,6 +47,8 @@ export interface Year {
   buybacks: number | null;
   issuance: number | null;
   acquisitions: number | null;
+  /** Positive annual growth in goodwill plus intangibles, not reported cash spending. */
+  acquisitionsProxy?: boolean;
   receivables: number | null;
   inventory: number | null;
   payables: number | null;
@@ -126,7 +128,22 @@ export interface ReportMeta {
   sections: SectionKey[];
 }
 
+export type Volatility = "stable" | "moderate" | "volatile";
+export type ValueHistory = Array<[fy: number, low: number, mid: number, high: number]>;
+export type PriceHistory = Array<[isoMonth: string, close: number]>;
+export interface CompanyEvent {
+  fy: number;
+  kind: "acquisition" | "impairment" | "restatement" | "share_change" | "currency_change";
+  note: string;
+}
+
 export interface Analysis {
+  requiredMos?: number; // Optional only for pre-history corpus compatibility.
+  volatility?: Volatility;
+  valueHistory?: ValueHistory; // Trading currency, using today's bond yield and FX.
+  historyAssumptions?: string[];
+  events?: CompanyEvent[];
+  series?: Record<string, Series>;
   id: Id;
   company: Company;
   asOf: string;
@@ -139,6 +156,7 @@ export interface Analysis {
 }
 
 export interface Dossier extends Analysis {
+  priceHistory?: PriceHistory;
   tests: Analysis["tests"] & { price?: TestOutcome };
   holders: Array<{ code: string; name: string }>; // superinvestors, from data/store
   series: Record<string, Series>; // revenue, ownerEarnings, roic, grossMargin, shares, bvps
@@ -146,6 +164,8 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F U N.
 export interface IndexRow {
+  m?: number; // Required margin of safety; absent only in legacy snapshots.
+  r?: Array<number | null>; // Last ten annual ROIC observations, three significant digits.
   id: Id;
   n: string;
   c: string;

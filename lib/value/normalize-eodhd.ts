@@ -1,4 +1,5 @@
 import type { Company, Fundamentals, Id, Year } from "./types";
+import { goodwillAndIntangibles } from "./metrics";
 import { T } from "./config";
 import { checkIntegrity } from "./integrity";
 import { kindFor } from "./universe";
@@ -38,6 +39,14 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
     const count = number(row.shares);
     if (Number.isInteger(fy) && count !== null) shares.set(fy, count);
   }
+  const balanceIntangibles = new Map<number, number | null>();
+  for (const end of Object.keys(balances).sort()) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(end)) continue;
+    const balance = record(balances[end]);
+    balanceIntangibles.set(Number(end.slice(0, 4)), goodwillAndIntangibles({
+      goodwill: number(balance.goodWill), intangibles: number(balance.intangibleAssets),
+    }));
+  }
   const byYear = new Map<number, Year>();
   for (const end of Object.keys(incomes).sort()) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(end)) continue;
@@ -48,6 +57,10 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
     const shortDebt = number(balance.shortTermDebt);
     const longDebt = number(balance.longTermDebt);
     const stockFlow = number(cash.salePurchaseOfStock);
+    const currentIntangibles = goodwillAndIntangibles({ goodwill: number(balance.goodWill), intangibles: number(balance.intangibleAssets) });
+    const previousIntangibles = balanceIntangibles.get(fy - 1) ?? null;
+    const acquisitions = currentIntangibles === null || previousIntangibles === null
+      ? null : Math.max(0, currentIntangibles - previousIntangibles);
     byYear.set(fy, {
       fy, end, currency: text(income.currency_symbol),
       minorityInterest: number(balance.noncontrollingInterestInConsolidatedEntity ?? balance.minorityInterest),
@@ -59,7 +72,7 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
       sbc: number(cash.stockBasedCompensation), nonRecurring: number(income.nonRecurring),
       ocf: number(cash.totalCashFromOperatingActivities), capex: absolute(cash.capitalExpenditures),
       dividendsPaid: absolute(cash.dividendsPaid), buybacks: stockFlow === null ? null : Math.max(0, -stockFlow),
-      issuance: number(cash.issuanceOfCapitalStock), acquisitions: null,
+      issuance: number(cash.issuanceOfCapitalStock), acquisitions, acquisitionsProxy: true,
       receivables: number(balance.netReceivables), inventory: number(balance.inventory), payables: number(balance.accountsPayable),
       cash: number(balance.cashAndShortTermInvestments ?? balance.cash),
       totalDebt: number(balance.shortLongTermDebtTotal) ?? (shortDebt !== null && longDebt !== null ? shortDebt + longDebt : null),

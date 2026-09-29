@@ -37,7 +37,7 @@ export function run({ years }: NumericInput) {
       { pass: shareCagr === null ? null : shareCagr <= T.management.maxShareCagr, reason: "diluted share growth above threshold" },
       { pass: discipline === null ? null : discipline >= 0, reason: "buybacks concentrated at lower earnings yields" },
       { pass: debtFunded === null ? null : !debtFunded, reason: "potential debt-funded buybacks" },
-      { pass: acquisitionSpend === null ? null : acquisitionSpend === 0 ? true : trend === null ? null : trend >= 0, reason: "acquisition spending alongside declining ROIC" },
+      { pass: acquisitionSpend === null ? null : acquisitionSpend === 0 ? true : trend === null ? null : trend >= 0, reason: `${ys.some(y => y.acquisitionsProxy) ? "acquired goodwill and intangibles (proxy)" : "acquisition spending"} alongside declining ROIC` },
     ],
   });
 }

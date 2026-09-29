@@ -38,3 +38,45 @@ it('retains EDINET companies and ADR aliases through a later EODHD universe refr
   const refreshed={...home,id:'MSBHF.US',code:'MSBHF',exchange:'US',currency:'USD',name:'Mitsubishi Corporation',listings:['MSBHF.US'],source:'eodhd'} as Company;
   expect(retainJapaneseCompanies([refreshed])).toEqual([home]);
 });
+
+function summaryCsv(end: string, revenue: number): string {
+  const rows = [
+    ['j:CurrentFiscalYearEndDateDEI', 'FilingDateInstant', '', end],
+    ['j:DescriptionOfBusinessTextBlock', 'CurrentYearDuration', '', `Business ${end}`],
+    ...[0,1,2,3,4].map(offset => ['j:NetSalesSummaryOfBusinessResults', offset ? `Prior${offset}YearDuration` : 'CurrentYearDuration', 'JPY', String(revenue + offset)]),
+  ];
+  return ['要素ID\tコンテキストID\t単位\t値', ...rows.map(row => row.join('\t'))].join('\n');
+}
+it('backfills an inclusive range from daily caches, retaining newer facts and report sections on overlap and replay', async()=>{
+  const older = {...doc, docID:'S100OLD', submitDateTime:'2022-06-30 09:00', periodEnd:'2022-03-31'};
+  const excluded = {...doc, docID:'S100NO', docTypeCode:'130'};
+  writeCorpusJson('raw/edinet/days/2022-06-29.json',{metadata:{status:'200'},results:[]});
+  writeCorpusJson('raw/edinet/days/2022-06-30.json',{metadata:{status:'200'},results:[older,excluded]});
+  writeCorpusJson('raw/edinet/days/2025-06-18.json',{metadata:{status:'200'},results:[doc]});
+  vi.spyOn(edinet,'downloadCsv').mockImplementation(async id => {
+    if (id === older.docID) return [summaryCsv('2022-03-31',200)];
+    if (id === doc.docID) return [summaryCsv('2025-03-31',100)];
+    throw new Error('Unexpected document');
+  });
+  await japan({from:'2022-06-29',to:'2022-06-30'});
+  const fundamentals=readCorpusJson<Fundamentals>('fundamentals/8058.JP.json')!;
+  expect(fundamentals.years.map(y=>y.fy)).toEqual([2018,2019,2020,2021,2022,2023,2024,2025]);
+  expect(fundamentals.years.find(y=>y.fy===2021)?.revenue).toBe(104);
+  expect(fundamentals.integrity.ok).toBe(true);
+  expect(readCorpusJson<ReportMeta>('reports/8058.JP/meta.json')?.filed).toBe('2025-06-18');
+  expect(readFileSync(path.join(dir,'reports/8058.JP/business.txt'),'utf8')).toBe('Business 2025-03-31');
+  expect(readCorpusJson('raw/edinet/summary.json')).toMatchObject({from:'2022-06-29',to:'2022-06-30',annualReports:1});
+  await japan({from:'2025-06-18',to:'2025-06-18',force:true});
+  expect(readCorpusJson<Fundamentals>('fundamentals/8058.JP.json')?.years).toEqual(fundamentals.years);
+  vi.spyOn(edinet,'downloadCsv').mockRejectedValue(new Error('Replay must use issuer checkpoint'));
+  await japan({from:'2022-06-29',to:'2022-06-30'});
+  expect(readCorpusJson<Fundamentals>('fundamentals/8058.JP.json')?.years).toEqual(fundamentals.years);
+});
+it.each([
+  {from:'2022-02-30',to:'2022-06-30'},
+  {from:'2022-07-01',to:'2022-06-30'},
+  {from:'2022-01-01'},
+  {to:'2022-06-30'},
+])('rejects invalid or incomplete filing ranges before network access: %j',async options=>{
+  await expect(japan(options)).rejects.toThrow(/range|date/i);
+});

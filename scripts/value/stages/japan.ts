@@ -1,27 +1,48 @@
 import { CALIBRATION } from "../../../lib/value/calibration";
 import { createHash } from "node:crypto";
-import { existsSync, mkdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { T } from "../../../lib/value/config";
 import { loadCompanies } from "../../../lib/value/companies";
 import { corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { checkIntegrity } from "../../../lib/value/integrity";
 import { pool } from "../../../lib/value/http";
-import { annualReports, downloadCsv, type EdinetDocument } from "../../../lib/value/japan/edinet";
+import { annualReports, annualReportDocuments, downloadCsv, type DocumentDay, type EdinetDocument } from "../../../lib/value/japan/edinet";
 import { mergeJapaneseCompanies, type JapaneseIssuer } from "../../../lib/value/japan/companies";
 import { edinetFact, mergeYears, parseEdinetCsv, sectionsFromEdinet, yearsFromEdinet } from "../../../lib/value/japan/xbrl-csv";
 import type { Company, Fundamentals, ReportMeta, SectionKey, Year } from "../../../lib/value/types";
 
-interface Options { only?: string[]; limit?: number; force?: boolean }
+interface Options { only?: string[]; limit?: number; force?: boolean; from?: string; to?: string }
 export default async function japan(options: Options): Promise<void> {
+  const now = new Date(); const start = new Date(now); start.setUTCFullYear(start.getUTCFullYear() - T.edinet.filingYears);
+  if ((options.from === undefined) !== (options.to === undefined)) throw new Error("Japan date range requires both --from and --to");
+  const from = options.from ?? start.toISOString().slice(0,10);
+  const to = options.to ?? now.toISOString().slice(0,10);
+  for (const date of [from,to]) {
+    const parsed = new Date(`${date}T00:00:00Z`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(parsed.getTime()) || parsed.toISOString().slice(0,10) !== date)
+      throw new Error(`Invalid Japan filing date: ${date}`);
+  }
+  if (from > to) throw new Error("Japan date range must have --from <= --to");
   if (!process.env.EDINET_API_KEY) { console.log("EDINET_API_KEY missing, Japan skipped"); return; }
-  const now = new Date(); const from = new Date(now); from.setUTCFullYear(from.getUTCFullYear() - T.edinet.filingYears);
-  const documents = await annualReports({from:from.toISOString().slice(0,10),to:now.toISOString().slice(0,10)});
+  const documents = await annualReports({from,to});
   const groups = new Map<string, EdinetDocument[]>();
   for (const doc of documents) {
     const id = `${doc.secCode.slice(0,4)}.JP`;
     if (options.only && !options.only.includes(id)) continue;
     groups.set(id,[...groups.get(id) ?? [],doc]);
   }
+  // Include all previously recorded filings for selected issuers. Replaying the
+  // complete chronology preserves later restatements regardless of run order,
+  // and recovers years that an earlier integrity check may have truncated.
+  const days = corpusPath("raw/edinet/days");
+  for (const file of existsSync(days) ? readdirSync(days).sort() : []) {
+    if (!/^\d{4}-\d{2}-\d{2}\.json$/.test(file) || (file.slice(0,10) >= from && file.slice(0,10) <= to)) continue;
+    const day = readCorpusJson<DocumentDay>(`raw/edinet/days/${file}`);
+    if (day?.metadata.status !== "200" || !Array.isArray(day.results)) continue;
+    for (const doc of annualReportDocuments(day)) groups.get(`${doc.secCode.slice(0,4)}.JP`)?.push(doc);
+  }
+  for (const [id,docs] of groups) groups.set(id,[...new Map(docs.map(doc=>[doc.docID,doc])).values()]
+    .sort((a,b)=>a.submitDateTime.localeCompare(b.submitDateTime) || a.docID.localeCompare(b.docID)));
   const calibration = new Set(CALIBRATION.map(entry => entry.id));
   const selected = [...groups.entries()].sort(([a],[b]) => Number(calibration.has(b)) - Number(calibration.has(a)) || a.localeCompare(b)).slice(0,options.limit);
   console.log(`japan: ${documents.length} annual reports; ${selected.length} issuers selected`);
@@ -44,7 +65,7 @@ export default async function japan(options: Options): Promise<void> {
   let completed = 0;
   await pool({ items:selected, concurrency:T.edinet.concurrency, run:async ([id,docs]) => {
     try {
-      const fingerprint = createHash("sha256").update(JSON.stringify({version:4,docs})).digest("hex");
+      const fingerprint = createHash("sha256").update(JSON.stringify({version:5,docs})).digest("hex");
       const cache = readCorpusJson<{ fingerprint:string; issuer:JapaneseIssuer }>(`raw/edinet/issuers/${id}.json`);
       const meta = readCorpusJson<ReportMeta>(`reports/${id}/meta.json`);
       if (!options.force && cache?.fingerprint === fingerprint && readCorpusJson(`fundamentals/${id}.json`) && meta?.kind === "EDINET"
@@ -70,7 +91,7 @@ export default async function japan(options: Options): Promise<void> {
       for (const key of meta?.sections ?? []) if (!keys.includes(key)) rmSync(`${directory}/${key}.txt`,{force:true});
       writeCorpusJson(`reports/${id}/meta.json`,{id,kind:"EDINET",url:`https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/${latest.docID}.pdf`,filed:latest.submitDateTime.slice(0,10),period:latest.periodEnd,sections:keys} satisfies ReportMeta);
       const issuer: JapaneseIssuer = {company,englishName:edinetFact(latestRows,"FilerNameInEnglishDEI") ?? edinetFact(latestRows,"CompanyNameInEnglishCoverPage")};
-      incoming.push(issuer);writeCorpusJson(`raw/edinet/issuers/${id}.json`,{fingerprint,issuer});
+      incoming.push(issuer);writeCorpusJson(`raw/edinet/issuers/${id}.json`,{fingerprint,issuer,years,fetchedAt:fundamentals.fetchedAt});
     } catch(error) { const message=error instanceof Error ? error.message : "Import failed"; errors.push({id,error:message});console.error(`japan: ${id}: ${message}`); }
     finally {if (++completed % T.edinet.checkpointCompanies === 0) { checkpoint(); console.log(`japan: ${completed}/${selected.length} issuers`); }}
   } });
@@ -78,7 +99,7 @@ export default async function japan(options: Options): Promise<void> {
   const created = incoming.filter(i=>!initialIds.has(i.company.id)).length;
   const merged = readCorpusJson<Array<{from:string;to:string}>>("raw/edinet/merged-listings.json") ?? [];
   const ok = incoming.filter(i=>readCorpusJson<Fundamentals>(`fundamentals/${i.company.id}.json`)?.integrity.ok).length;
-  const summary = {from:from.toISOString().slice(0,10),to:now.toISOString().slice(0,10),annualReports:documents.length,companies:incoming.length,created,integrityOk:ok,integrityOkPercent:incoming.length ? 100*ok/incoming.length : 0,mergedListings:merged.length,errors};
+  const summary = {from,to,annualReports:documents.length,companies:incoming.length,created,integrityOk:ok,integrityOkPercent:incoming.length ? 100*ok/incoming.length : 0,mergedListings:merged.length,errors};
   writeCorpusJson("raw/edinet/summary.json",summary);console.log(`japan: ${JSON.stringify(summary)}`);
   if (errors.length) throw new Error(`japan: ${errors.length} issuers failed; rerun to resume`);
 }

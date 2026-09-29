@@ -25,8 +25,18 @@ async function main(): Promise<void> {
   let only: string[] | undefined;
   let limit: number | undefined;
   let force = false;
-  for (const arg of args) {
+  let from: string | undefined;
+  let to: string | undefined;
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i];
     if (arg === "--force") force = true;
+    else if (stage === "japan" && (arg.startsWith("--from=") || arg.startsWith("--to=") || arg === "--from" || arg === "--to")) {
+      const [flag, inline] = arg.split("=");
+      const value = inline ?? args[++i];
+      if (!value || value.startsWith("--")) throw new Error(`${flag} requires a date`);
+      if (flag === "--from") from = value;
+      else to = value;
+    }
     else if (arg.startsWith("--only=")) {
       only = arg.slice(7).split(",").map((id) => id.trim()).filter(Boolean);
       if (!only.length) throw new Error("--only requires at least one ID");
@@ -34,12 +44,12 @@ async function main(): Promise<void> {
       limit = Number(arg.slice(8));
       if (!Number.isSafeInteger(limit) || limit <= 0) throw new Error("--limit must be a positive integer");
     } else {
-      throw new Error("Expected --only=ID,ID, --limit=N, or --force");
+      throw new Error("Expected --only=ID,ID, --limit=N, --force, or japan --from=YYYY-MM-DD --to=YYYY-MM-DD");
     }
   }
 
   const module = await import(pathToFileURL(path.join(directory, `${stage}.ts`)).href);
-  await module.default({ only, limit, force });
+  await module.default({ only, limit, force, from, to });
 }
 
 main().catch((error: unknown) => {

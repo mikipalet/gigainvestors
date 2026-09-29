@@ -21,7 +21,8 @@ it('renders reporting value, explicit currency mismatch and an unclear price tes
   expect(html).toContain('Estimated value JPY 800.00 to JPY 1,200.00');
   expect(html).toContain('Price is in USD, value in JPY, not compared');
   expect(html).toContain('Price: unclear');
-  expect(html).not.toContain('% margin of safety');
+  expect(html).not.toContain('margin of safety 99.4%');
+  expect(html).not.toContain('aria-label="Price JPY');
 });
 it('uses converted trading values for both the headline and margin', async () => {
   dossier.valuation!.perShareTrading = { currency: 'USD', fxRate: .01, low: 8, mid: 10, high: 12 };

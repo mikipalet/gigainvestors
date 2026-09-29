@@ -1,32 +1,33 @@
-export type MetricFormat = 'pct' | 'pp' | 'x' | 'money' | 'count' | 'years';
-export const metricLabels: Record<string, { label: string; format: MetricFormat }> = {
-  historyYears: { label: 'Financial history', format: 'years' },
-  revenueDeclines: { label: 'Years with declining revenue', format: 'count' },
-  lossYears: { label: 'Years with a net loss', format: 'count' },
-  opMarginCv: { label: 'Operating margin variation', format: 'x' },
-  roicMedian: { label: 'ROIC, 10-year median', format: 'pct' },
-  roicWorst3: { label: 'ROIC, second-lowest year', format: 'pct' },
-  roeMedian: { label: 'ROE, 10-year median', format: 'pct' },
-  roeWorst3: { label: 'ROE, second-lowest year', format: 'pct' },
-  grossMarginDrop: { label: 'Gross margin decline, 2020 to 2023', format: 'pp' },
+import { T } from './config';
+export type MetricFormat = 'pct' | 'pp' | 'x' | 'money' | 'count' | 'years' | 'yesno';
+export const metricLabels: Record<string, { label: string; format: MetricFormat; threshold?: number; better?: 'higher' | 'lower'; strict?: boolean }> = {
+  historyYears: { label: 'Financial history', format: 'years', threshold: T.understandable.years, better: 'higher' },
+  revenueDeclines: { label: 'Years with declining revenue', format: 'count', threshold: T.understandable.maxRevenueDeclines, better: 'lower' },
+  lossYears: { label: 'Years with a net loss', format: 'count', threshold: T.understandable.maxLossYears, better: 'lower' },
+  opMarginCv: { label: 'Operating margin variation', format: 'x', threshold: T.understandable.maxOpMarginCv, better: 'lower', strict: true },
+  roicMedian: { label: 'ROIC, 10-year median', format: 'pct', threshold: T.moat.roicMedian, better: 'higher' },
+  roicWorst3: { label: 'ROIC, second-lowest year', format: 'pct', threshold: T.moat.roicWorst3, better: 'higher' },
+  roeMedian: { label: 'ROE, 10-year median', format: 'pct', threshold: T.moat.roeMedianFin, better: 'higher' },
+  roeWorst3: { label: 'ROE, second-lowest year', format: 'pct', threshold: T.moat.roeWorst3Fin, better: 'higher' },
+  grossMarginDrop: { label: 'Gross margin decline, 2020 to 2023', format: 'pp', threshold: T.moat.gmDropPp, better: 'lower' },
   capexToRevenue: { label: 'Capital spending / revenue', format: 'pct' },
-  oeToNi: { label: 'Owner earnings / net income', format: 'x' },
-  roiic: { label: 'Return on incremental invested capital', format: 'pct' },
+  oeToNi: { label: 'Owner earnings / net income', format: 'x', threshold: T.economics.oeToNi, better: 'higher' },
+  roiic: { label: 'Return on incremental invested capital', format: 'pct', threshold: T.economics.roiic, better: 'higher' },
   nwcToRevenueTrend: { label: 'Working capital / revenue, annual change', format: 'pp' },
   marketCapGain: { label: 'Market cap gain', format: 'money' },
   retainedEarnings: { label: 'Cumulative retained earnings', format: 'money' },
-  shareCagr: { label: 'Diluted shares, 10-year annual growth', format: 'pct' },
-  buybackYieldCovariance: { label: 'Buyback spending / earnings yield covariance', format: 'money' },
-  debtFundedBuybacks: { label: 'Debt-funded buybacks flag (1 = yes)', format: 'count' },
+  shareCagr: { label: 'Diluted shares, 10-year annual growth', format: 'pct', threshold: T.management.maxShareCagr, better: 'lower' },
+  buybackYieldCovariance: { label: 'Buybacks larger when the stock was cheap', format: 'yesno' },
+  debtFundedBuybacks: { label: 'Debt-funded buybacks', format: 'yesno' },
   acquisitionSpend: { label: 'Acquisition spending', format: 'money' },
   roicTrend: { label: 'ROIC, annual change', format: 'pp' },
-  accruals: { label: 'Sloan accruals', format: 'pct' },
-  receivablesGrowthGap: { label: 'Receivables growth above revenue growth', format: 'pp' },
-  restructuringYears: { label: 'Restructuring years, last five', format: 'count' },
-  sbcToOcf: { label: 'Stock compensation / operating cash flow', format: 'pct' },
+  accruals: { label: 'Sloan accruals', format: 'pct', threshold: T.accounting.maxAccruals, better: 'lower', strict: true },
+  receivablesGrowthGap: { label: 'Receivables growth above revenue growth', format: 'pp', threshold: T.accounting.maxRecvGap, better: 'lower', strict: true },
+  restructuringYears: { label: 'Restructuring years, last five', format: 'count', threshold: T.accounting.maxRestructYears, better: 'lower' },
+  sbcToOcf: { label: 'Stock compensation / operating cash flow', format: 'pct', threshold: T.accounting.maxSbcToOcf, better: 'lower', strict: true },
   goodwillIntangiblesToEquity: { label: 'Goodwill and intangibles / equity', format: 'x' },
-  marginOfSafety: { label: 'Margin of safety', format: 'pct' },
-  mos: { label: 'Margin of safety', format: 'pct' },
+  marginOfSafety: { label: 'Margin of safety', format: 'pct', threshold: T.price.passMos, better: 'higher' },
+  mos: { label: 'Margin of safety', format: 'pct', threshold: T.price.passMos, better: 'higher' },
   normalized: { label: 'Normalized owner earnings', format: 'money' },
   growth: { label: 'Growth', format: 'pct' },
   discountRate: { label: 'Discount rate', format: 'pct' },
@@ -41,6 +42,7 @@ export const metricLabels: Record<string, { label: string; format: MetricFormat 
 };
 export function formatMetric({ value, format, currency = '' }: { value: number | null; format: MetricFormat; currency?: string }) {
   if (value === null) return 'Not reported';
+  if (format === 'yesno') return value > 0 ? 'Yes' : 'No';
   if (format === 'pct') return `${(value * 100).toFixed(1)}%`;
   if (format === 'pp') return `${(value * 100).toFixed(1)} pp`;
   if (format === 'x') return `${value.toFixed(2)}×`;

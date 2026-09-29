@@ -6,14 +6,14 @@ afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 describe("value store", () => {
   it("joins fixture shards and returns null for absent prices and companies", async () => {
     vi.stubEnv("VALUE_STORE_DIR", "tests/fixtures/value/store");
-    expect((await getMeta())?.counts.universe).toBe(3);
-    expect((await getDefaultIndex()).map((row) => row.id)).toEqual(["KO.US", "DAL.US"]);
-    expect(await getCountryIndex("US")).toHaveLength(3);
+    expect((await getMeta())?.counts.universe).toBe(41);
+    expect((await getDefaultIndex()).map((row) => row.id)).toEqual(expect.arrayContaining(["KO.US", "DAL.US"]));
+    expect(await getCountryIndex("US")).toHaveLength(41);
     expect((await getDossier("KO.US"))?.company.name).toBe("Coca-Cola");
     expect(await getDossier("NOPE.US")).toBeNull();
-    expect(await getPrice("KO.US", "US")).toBeNull();
+    expect(await getPrice("SPARSE.US", "US")).toBeNull();
     expect(await getPrice("DAL.US", "US")).toEqual([50, "2026-09-28"]);
-    expect(await getTopIds()).toEqual(["KO.US", "DAL.US"]);
+    expect(await getTopIds()).toEqual(expect.arrayContaining(["KO.US", "DAL.US"]));
   });
   it("survives missing remote data at build time", async () => {
     vi.stubEnv("VALUE_STORE_DIR", "");

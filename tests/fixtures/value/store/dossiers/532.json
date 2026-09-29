@@ -1,0 +1,377 @@
+{
+  "JPM.US": {
+    "id": "JPM.US",
+    "company": {
+      "id": "JPM.US",
+      "name": "JPMorgan Chase",
+      "code": "JPM",
+      "exchange": "US",
+      "country": "US",
+      "currency": "USD",
+      "isin": null,
+      "cik": null,
+      "lei": null,
+      "edinetCode": null,
+      "sector": "Financial Services",
+      "industry": null,
+      "kind": "bank",
+      "listings": [
+        "JPM.US"
+      ],
+      "marketCapUsd": 720000000000.0,
+      "description": "A diversified bank providing deposits, lending and financial services.",
+      "source": "eodhd"
+    },
+    "asOf": "2026-09-29",
+    "status": "scored",
+    "report": {
+      "id": "JPM.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/",
+      "filed": "2026-02-20",
+      "period": "2025-12-31",
+      "sections": [
+        "business"
+      ]
+    },
+    "tests": {
+      "understandable": {
+        "key": "understandable",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "A diversified deposit and lending franchise with ten years of profitable operations."
+        ],
+        "metrics": {
+          "historyYears": 10,
+          "revenueDeclines": 3,
+          "lossYears": 0,
+          "opMarginCv": 0.12
+        },
+        "series": {
+          "revenue": [
+            [
+              2016,
+              95000000000.0
+            ],
+            [
+              2017,
+              99000000000.0
+            ],
+            [
+              2018,
+              109000000000.0
+            ],
+            [
+              2019,
+              115000000000.0
+            ],
+            [
+              2020,
+              120000000000.0
+            ],
+            [
+              2021,
+              122000000000.0
+            ],
+            [
+              2022,
+              129000000000.0
+            ],
+            [
+              2023,
+              158000000000.0
+            ],
+            [
+              2024,
+              177000000000.0
+            ],
+            [
+              2025,
+              183000000000.0
+            ]
+          ],
+          "operatingMargin": [
+            [
+              2016,
+              0.237
+            ],
+            [
+              2017,
+              0.267
+            ],
+            [
+              2018,
+              0.286
+            ],
+            [
+              2019,
+              0.271
+            ],
+            [
+              2020,
+              0.273
+            ],
+            [
+              2021,
+              0.287
+            ],
+            [
+              2022,
+              0.291
+            ],
+            [
+              2023,
+              0.297
+            ],
+            [
+              2024,
+              0.301
+            ],
+            [
+              2025,
+              0.305
+            ]
+          ],
+          "netIncome": [
+            [
+              2016,
+              7127659574
+            ],
+            [
+              2017,
+              7446808511
+            ],
+            [
+              2018,
+              7872340426
+            ],
+            [
+              2019,
+              8510638298
+            ],
+            [
+              2020,
+              7765957447
+            ],
+            [
+              2021,
+              9680851064
+            ],
+            [
+              2022,
+              10212765957
+            ],
+            [
+              2023,
+              10638297872
+            ],
+            [
+              2024,
+              11170212766
+            ],
+            [
+              2025,
+              11914893617
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "moat": {
+        "key": "moat",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Median return on equity clears the financial-company threshold.",
+          "Book value is the valuation anchor for banks."
+        ],
+        "metrics": {
+          "roeMedian": 0.15,
+          "roeWorst3": 0.11,
+          "grossMarginDrop": null,
+          "capexToRevenue": null
+        },
+        "series": {
+          "roe": [
+            [
+              2016,
+              0.11
+            ],
+            [
+              2017,
+              0.12
+            ],
+            [
+              2018,
+              0.13
+            ],
+            [
+              2019,
+              0.15
+            ],
+            [
+              2020,
+              0.09
+            ],
+            [
+              2021,
+              0.18
+            ],
+            [
+              2022,
+              0.14
+            ],
+            [
+              2023,
+              0.17
+            ],
+            [
+              2024,
+              0.18
+            ],
+            [
+              2025,
+              0.19
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "economics": {
+        "key": "economics",
+        "result": "na",
+        "numeric": "na",
+        "reasons": [
+          "Owner earnings and incremental operating capital are not used for this bank."
+        ],
+        "metrics": {},
+        "series": {},
+        "jev": []
+      },
+      "management": {
+        "key": "management",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "The share count declined gradually, and market value gained more than cumulative retained earnings.",
+          "Buybacks were not flagged as debt funded; acquisition spending coincided with improving returns."
+        ],
+        "metrics": {
+          "marketCapGain": 115000000000.0,
+          "retainedEarnings": 42000000000.0,
+          "shareCagr": -0.004,
+          "buybackYieldCovariance": 2100000.0,
+          "debtFundedBuybacks": 0,
+          "acquisitionSpend": 12000000000.0,
+          "roicTrend": 0.009
+        },
+        "series": {
+          "shares": [
+            [
+              2016,
+              4370000000.0
+            ],
+            [
+              2017,
+              4340000000.0
+            ],
+            [
+              2018,
+              4300000000.0
+            ],
+            [
+              2019,
+              4280000000.0000005
+            ],
+            [
+              2020,
+              4280000000.0000005
+            ],
+            [
+              2021,
+              4269999999.9999995
+            ],
+            [
+              2022,
+              4250000000.0
+            ],
+            [
+              2023,
+              4230000000.0000005
+            ],
+            [
+              2024,
+              4210000000.0
+            ],
+            [
+              2025,
+              4200000000.0
+            ]
+          ]
+        },
+        "jev": []
+      },
+      "accounting": {
+        "key": "accounting",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [
+          "Operating accruals and receivables tests do not apply to banks.",
+          "Stock compensation remains within the cash-flow threshold."
+        ],
+        "metrics": {
+          "accruals": null,
+          "receivablesGrowthGap": null,
+          "restructuringYears": 1,
+          "sbcToOcf": 0.025,
+          "goodwillIntangiblesToEquity": 1.1
+        },
+        "series": {},
+        "jev": []
+      }
+    },
+    "valuation": {
+      "method": "book_value",
+      "currency": "USD",
+      "normalized": 120,
+      "growth": 0.04,
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.04,
+      "netCash": 0,
+      "shares": 2800000000.0,
+      "perShare": {
+        "low": 156,
+        "mid": 192,
+        "high": 228
+      },
+      "equityBondYield": null,
+      "bridge": [
+        {
+          "label": "Book value per share",
+          "value": 120
+        },
+        {
+          "label": "Normalized return on equity",
+          "value": 0.136
+        },
+        {
+          "label": "Justified price to book",
+          "value": 1.6
+        }
+      ],
+      "assumptions": [
+        "Book value per share multiplied by a justified price-to-book ratio.",
+        "Illustrative financial-company fixture, not investment research."
+      ]
+    },
+    "valuationReason": null,
+    "versions": {
+      "pipeline": "1",
+      "questions": "1"
+    },
+    "holders": [],
+    "series": {}
+  }
+}

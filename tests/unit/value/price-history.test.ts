@@ -16,7 +16,7 @@ beforeEach(() => {
   vi.useFakeTimers(); vi.setSystemTime(new Date('2026-09-29T12:00:00Z'));
   vi.stubGlobal('fetch', () => { throw Error('Unexpected network'); });
 });
-afterEach(() => { vi.useRealTimers(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); rmSync(root, { recursive: true, force: true }); });
+afterEach(() => { vi.restoreAllMocks(); vi.useRealTimers(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); rmSync(root, { recursive: true, force: true }); });
 async function run(options = {}) { const work = priceHistory(options); await Promise.all([work, vi.runAllTimersAsync()]); }
 
 it('records monthly closes in order with the requested ten-year URL and skips fresh history', async () => {
@@ -61,12 +61,51 @@ it('uses Japanese local month and Yahoo ten-year monthly closes without EODHD bu
   expect(readCorpusJson<{prices: PriceHistory}>('prices-history/8058.JP.json')?.prices[0]).toEqual(['2016-10',763.6666870117188]);
 });
 
-it('rejects bad provider responses without replacing a cached file', async () => {
+it('skips bad provider responses without replacing a cached file', async () => {
   appendJsonl('universe.jsonl', company('KO.US'));
   const previous = { fetchedAt:'2000-01-01', prices:[['2020-01',42]] };
   writeCorpusJson('prices-history/KO.US.json',previous);
   vi.stubGlobal('fetch', async (url: string) => Response.json(url.includes('/user?') ? { apiRequests: 0 } : { error: 'bad response' }));
-  const work = priceHistory({}); const assertion = expect(work).rejects.toThrow(/price history/i);
-  await vi.runAllTimersAsync(); await assertion;
+  const log = vi.spyOn(console, 'error').mockImplementation(() => {});
+  await run();
+  expect(log).toHaveBeenCalledWith(expect.stringContaining('KO.US'), expect.anything());
   expect(readCorpusJson('prices-history/KO.US.json')).toEqual(previous);
+});
+
+it('continues after failures, resets the streak on success, and stops at 20 consecutive failures', async () => {
+  for (let i=0; i<42; i++) appendJsonl('universe.jsonl', company(`C${i}.US`));
+  vi.spyOn(console, 'error').mockImplementation(() => {});
+  const requested: string[] = [];
+  vi.stubGlobal('fetch', async (url: string) => {
+    const path = new URL(url).pathname;
+    if (path.endsWith('/user')) return Response.json({apiRequests:0});
+    requested.push(path);
+    return Response.json(path.endsWith('/C19.US') ? eod : {error:'unavailable'});
+  });
+  await run();
+  expect(readCorpusJson('prices-history/C19.US.json')).not.toBeNull();
+  expect(readCorpusJson('prices-history/C0.US.json')).toBeNull();
+  expect(requested).toHaveLength(40);
+  expect(requested.at(-1)).toBe('/api/eod/C39.US');
+});
+it('counts failed EODHD attempts against the daily budget', async () => {
+  for (const id of ['BAD.US','NEXT.US']) appendJsonl('universe.jsonl', company(id));
+  vi.spyOn(console, 'error').mockImplementation(() => {});
+  const requested: string[] = [];
+  vi.stubGlobal('fetch', async (url: string) => {
+    const path = new URL(url).pathname;
+    if (path.endsWith('/user')) return Response.json({apiRequests:98999});
+    requested.push(path); return Response.json({error:'unavailable'});
+  });
+  await run();
+  expect(requested).toEqual(['/api/eod/BAD.US']);
+});
+
+it('skips a failed Yahoo request and writes the next company', async () => {
+  for (const id of ['BAD.JP','8058.JP']) appendJsonl('universe.jsonl', company(id));
+  vi.spyOn(console, 'error').mockImplementation(() => {});
+  vi.stubGlobal('fetch', async (url: string) => url.includes('BAD.T') ? new Response('', {status:404}) : Response.json(yahoo));
+  await run();
+  expect(readCorpusJson('prices-history/BAD.JP.json')).toBeNull();
+  expect(readCorpusJson('prices-history/8058.JP.json')).not.toBeNull();
 });

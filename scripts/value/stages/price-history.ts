@@ -1,3 +1,5 @@
+import { orderFundamentals } from "./fundamentals";
+import type { PriceHistory } from "../../../lib/value/types";
 import { T } from "../../../lib/value/config";
 import { loadCompanies } from "../../../lib/value/companies";
 import { readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
@@ -8,16 +10,19 @@ export default async function priceHistory({ only, limit, force = false }: { onl
   const now = new Date();
   const from = new Date(now);
   from.setUTCFullYear(from.getUTCFullYear() - T.history.years);
-  const companies = loadCompanies({ only }).map(company => {
+  const fetchedAt = new Map<string, string>();
+  const eligible = loadCompanies({ only }).filter(company => {
     const cached = readCorpusJson<CachedPriceHistory>(`prices-history/${company.id}.json`);
-    return { company, fetched: Date.parse(cached?.fetchedAt ?? "") };
-  }).filter(({ fetched }) => force || !Number.isFinite(fetched) || now.getTime() - fetched > T.history.refreshMs)
-    .sort((a, b) => (Number.isFinite(a.fetched) ? a.fetched : -Infinity) - (Number.isFinite(b.fetched) ? b.fetched : -Infinity))
-    .slice(0, limit);
+    if (cached?.fetchedAt) fetchedAt.set(company.id, cached.fetchedAt);
+    const fetched = Date.parse(cached?.fetchedAt ?? "");
+    return force || !Number.isFinite(fetched) || now.getTime() - fetched > T.history.refreshMs;
+  });
+  const companies = orderFundamentals(eligible, fetchedAt).slice(0, limit);
   let used: number | undefined;
   let eodRequests = 0;
   let written = 0;
-  for (const { company } of companies) {
+  let consecutiveFailures = 0;
+  for (const company of companies) {
     const isJapan = company.id.endsWith(".JP");
     if (!isJapan) {
       used ??= await callsUsedToday();
@@ -26,13 +31,26 @@ export default async function priceHistory({ only, limit, force = false }: { onl
         break;
       }
     }
-    const prices = await fetchPriceHistory({ company, from: from.toISOString().slice(0, 10) });
-    writeCorpusJson(`prices-history/${company.id}.json`, { fetchedAt: now.toISOString(), prices } satisfies CachedPriceHistory);
-    written++;
+    let prices: PriceHistory | undefined;
+    try {
+      prices = await fetchPriceHistory({ company, from: from.toISOString().slice(0, 10) });
+      consecutiveFailures = 0;
+    } catch (error) {
+      consecutiveFailures++;
+      console.error(`${company.id}: price-history request failed, skipping`, error);
+    }
+    // Failed requests can still consume the shared provider budget.
     if (!isJapan) {
       used!++;
-      if (++eodRequests % T.fundamentals.usageSyncCompanies === 0) used = await callsUsedToday();
+      if (++eodRequests % T.fundamentals.usageSyncCompanies === 0) used = Math.max(used!, await callsUsedToday());
     }
+    if (consecutiveFailures >= 20) {
+      console.error("price-history: stopping after 20 consecutive provider failures");
+      break;
+    }
+    if (prices === undefined) continue;
+    writeCorpusJson(`prices-history/${company.id}.json`, { fetchedAt: now.toISOString(), prices } satisfies CachedPriceHistory);
+    written++;
   }
   console.log(`price-history: ${written} written`);
 }

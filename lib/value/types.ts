@@ -47,6 +47,8 @@ export interface Year {
   buybacks: number | null;
   issuance: number | null;
   acquisitions: number | null;
+  /** Positive annual growth in goodwill plus intangibles, not reported cash spending. */
+  acquisitionsProxy?: boolean;
   receivables: number | null;
   inventory: number | null;
   payables: number | null;

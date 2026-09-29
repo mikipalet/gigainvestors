@@ -1,5 +1,5 @@
 import { T } from "./config";
-import { bvps, ratio } from "./metrics";
+import { bvps, goodwillAndIntangibles, ratio } from "./metrics";
 import { ownerEarningsSeries } from "./owner-earnings";
 import { run as understandable } from "./tests/understandable";
 import { valueCompany } from "./valuation";
@@ -52,12 +52,13 @@ export function companyEvents(fundamentals: Fundamentals): CompanyEvent[] {
   for (const [i, year] of years.entries()) {
     if (year.acquisitions !== null && year.totalAssets !== null && year.totalAssets > 0
       && year.acquisitions / year.totalAssets > T.history.acquisitionToAssets) {
-      events.push({ fy: year.fy, kind: "acquisition", note: `Acquisition spending was ${(100 * year.acquisitions / year.totalAssets).toFixed(1)}% of total assets` });
+      events.push({ fy: year.fy, kind: "acquisition", note: `${year.acquisitionsProxy ? "acquired goodwill and intangibles (proxy)" : "Acquisition spending"} was ${(100 * year.acquisitions / year.totalAssets).toFixed(1)}% of total assets` });
     }
     const previous = years[i - 1];
-    if (!previous || previous.fy !== year.fy - 1 || previous.goodwill === null || previous.intangibles === null || year.goodwill === null || year.intangibles === null) continue;
-    const before = previous.goodwill + previous.intangibles;
-    const after = year.goodwill + year.intangibles;
+    if (!previous || previous.fy !== year.fy - 1) continue;
+    const before = goodwillAndIntangibles(previous);
+    const after = goodwillAndIntangibles(year);
+    if (before === null || after === null) continue;
     if (before > 0 && (before - after) / before > T.history.impairmentDrop) {
       events.push({ fy: year.fy, kind: "impairment", note: `Goodwill and intangibles fell ${(100 * (before - after) / before).toFixed(1)}%; possible impairment or disposal` });
     }

@@ -14,7 +14,7 @@ describe("EODHD annual normalization", () => {
     expect(f.years.every((y, i) => i === 0 || y.fy > f.years[i - 1].fy)).toBe(true);
     const year = f.years.find((y) => y.fy === 2024)!;
     expect(Math.abs(year.revenue! / 47.06e9 - 1)).toBeLessThan(0.01);
-    expect(year).toMatchObject({ capex: 2064000000, buybacks: 1795000000, dividendsPaid: 8359000000, dilutedShares: 4320000000, sbc: 286000000, da: 1075000000, acquisitions: null, marketCap: null });
+    expect(year).toMatchObject({ capex: 2064000000, buybacks: 1795000000, dividendsPaid: 8359000000, dilutedShares: 4320000000, sbc: 286000000, da: 1075000000, acquisitions: 0, acquisitionsProxy: true, marketCap: null });
     expect(f.currency).toBe("USD");
     expect(f.integrity).toEqual({ ok: true, reasons: [], notes: [] });
     expect(patch).toMatchObject({ cik: "0000021344", lei: "UWJKFUJFZ02DKWI3RY53", kind: "operating", isin: "US1912161007" });

@@ -20,13 +20,16 @@ it('keeps only fiscal years with sufficient prior earnings and never invents mis
   f.integrity.ok = false;
   expect(valueHistory(args)).toEqual([]);
 });
-it('does not flag exact event boundaries, missing components, or nonconsecutive years', () => {
+it('handles event boundaries, a missing component, and nonconsecutive years', () => {
   const f = fundamentals(); f.years = makeYears({n:2,overrides:(_,i)=>({goodwill:i ? 80:100,intangibles:0,acquisitions:100})});
   expect(companyEvents(f)).toEqual([]);
   f.years[1].goodwill = 79;
   expect(companyEvents(f)).toMatchObject([{fy:2014,kind:'impairment'}]);
   f.years[1].intangibles = null;
+  expect(companyEvents(f)).toMatchObject([{fy:2014,kind:'impairment'}]);
+  f.years[1].goodwill = null;
   expect(companyEvents(f)).toEqual([]);
+  f.years[1].goodwill = 79;
   f.years[1].intangibles = 0; f.years[1].fy = 2015;
   expect(companyEvents(f)).toEqual([]);
 });
@@ -44,3 +47,30 @@ it('sorts monthly history, chooses the last date per month and drops invalid dat
   expect(parseYahooHistory({chart:{result:[{timestamp:[1735657200,1738335600],indicators:{quote:[{close:[10,null]}]}}],error:null}})).toEqual([['2025-01',10]]);
   expect(()=>parseYahooHistory({chart:{result:null,error:{code:'Not Found'}}})).toThrow(/Yahoo price history/);
 });
+
+ it('derives acquisition events and management spend from normalized balance-sheet growth', async () => {
+  const { normalizeEodhd } = await import('@/lib/value/normalize-eodhd');
+  const { run } = await import('@/lib/value/tests/management');
+  const Income_Statement = { yearly: Object.fromEntries(Array.from({length: 6}, (_, i) => [`${2020+i}-12-31`, {currency_symbol:'USD'}])) };
+  const Balance_Sheet = { yearly: Object.fromEntries(Array.from({length: 6}, (_, i) => [`${2020+i}-12-31`, {goodWill: 2e9 + i * 1.2e9, intangibleAssets: 0.5e9, totalAssets: 10e9}])) };
+  const f = normalizeEodhd({Financials:{Income_Statement,Balance_Sheet}}, 'TEST.US').fundamentals;
+  expect(f.years.map(y => y.acquisitions)).toEqual([null,1.2e9,1.2e9,1.2e9,1.2e9,1.2e9]);
+  expect(f.years.slice(1).every(y => y.acquisitionsProxy === true)).toBe(true);
+  expect(companyEvents(f).filter(e => e.kind === 'acquisition')).toHaveLength(5);
+  expect(companyEvents(f)[0].note).toContain('acquired goodwill and intangibles (proxy)');
+  const result = run({years:f.years,kind:'operating'});
+  expect(result.metrics.acquisitionSpend).toBe(6e9);
+  expect(result.reasons).toContain('insufficient data: acquired goodwill and intangibles (proxy) alongside declining ROIC');
+  const unknown = f.years.map(y => ({...y, acquisitions:null, ocf:1e9}));
+  expect(run({years:unknown,kind:'operating'}).metrics.acquisitionSpend).toBeNull();
+ });
+ it('requires adjacent known balances for the proxy and tolerates one missing component', async () => {
+  const { normalizeEodhd } = await import('@/lib/value/normalize-eodhd');
+  const balances = [ {goodWill:2e9}, {intangibleAssets:3e9}, {goodWill:2e9}, {}, undefined, {goodWill:4e9} ];
+  const yearly = Object.fromEntries(balances.map((_,i) => [`${2020+i}-12-31`, {}]));
+  const f = normalizeEodhd({Financials:{Income_Statement:{yearly},Balance_Sheet:{yearly:Object.fromEntries(balances.map((b,i)=>[`${2020+i}-12-31`,b]))}}},'TEST.US').fundamentals;
+  expect(f.years.map(y=>y.acquisitions)).toEqual([null,1e9,0,null,null,null]);
+  delete yearly['2021-12-31'];
+  const gap = normalizeEodhd({Financials:{Income_Statement:{yearly},Balance_Sheet:{yearly:{'2020-12-31':{goodWill:2e9},'2022-12-31':{goodWill:5e9}}}}},'TEST.US').fundamentals;
+  expect(gap.years[1].acquisitions).toBeNull();
+ });

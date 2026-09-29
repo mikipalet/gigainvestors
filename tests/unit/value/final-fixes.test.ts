@@ -13,7 +13,7 @@ const raw = { Highlights: { MarketCapitalization: 124920 }, SharesStats: { Share
 const fetchedAt = '2026-09-29';
 afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 it('prefers the screener trading-unit close over cap/shares', () => {
-  expect(seedPrice({ raw, fetchedAt, screener: { adjusted_close: 12492, last_day_data_date: '2026-09-28' } })).toEqual([12492, '2026-09-28', 'seed']);
+  expect(seedPrice({ raw, fetchedAt, screener: { adjusted_close: 12492, last_day_data_date: '2026-09-28' } })).toEqual([12492, '2026-09-28']);
 });
 it('requires a corroborating reference for derived seeds', () => {
   expect(seedPrice({ raw, fetchedAt })).toBeNull();

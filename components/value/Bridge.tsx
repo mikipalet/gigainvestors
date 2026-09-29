@@ -1,3 +1,4 @@
+import { earningsYieldAtMid } from '@/lib/value/presentation';
 import { OwnerEarningsWaterfall } from './viz/OwnerEarningsWaterfall';
 import type { Valuation } from "@/lib/value/types";
 import { formatMetric, metricLabels, perShareMoney } from "@/lib/value/metric-labels";
@@ -20,8 +21,8 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
     ['+ Net cash', money(v.netCash)],
     ['÷ Shares used for valuation', count(v.shares)],
   ] : [
-    ['Book value per share', perShareMoney(v.normalized, v.currency)],
-    ['Normalized return on equity', formatMetric({ value: component(/normalized return on equity/i), format: 'pct' })],
+    ['Tangible book value per share', perShareMoney(v.normalized, v.currency)],
+    ['Normalised return on tangible equity', formatMetric({ value: component(/normalized return on (tangible )?equity/i), format: 'pct' })],
     ['Justified price / book', formatMetric({ value: component(/justified price to book/i), format: 'x' })],
   ];
   rows.push(['= Per-share value (low / mid / high)', [v.perShare.low, v.perShare.mid, v.perShare.high].map(value => perShareMoney(value, v.currency)).join(' / ')]);
@@ -32,7 +33,7 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
     <details open={v.method === 'book_value'} className="order-1 mb-4 text-sm sm:order-2"><summary className="mb-3 cursor-pointer text-ink/55">Show as table</summary>
     <table className="w-full table-fixed text-left text-sm"><caption className="sr-only">Valuation bridge in {v.currency}</caption><tbody>{rows.map(([label, value]) => <tr key={label} className="border-t border-ink/15"><th scope="row" className="w-1/2 py-2 pr-4 font-normal">{label}</th><td className="py-2 text-right tabular-nums">{value}</td></tr>)}</tbody></table></details></div>
     <h3 className="mt-5 text-sm font-medium">Assumptions</h3>
-    <ul className="mt-2 space-y-1 text-xs text-ink/60">{(['growth', 'discountRate', 'terminalGrowth', 'bondYield', 'equityBondYield'] as const).map(key => <li key={key} className="flex justify-between gap-4"><span>{metricLabels[key].label}</span><span>{formatMetric({ value: v[key], format: 'pct' })}</span></li>)}</ul>
+    <ul className="mt-2 space-y-1 text-xs text-ink/60">{(['growth', 'discountRate', 'terminalGrowth', 'bondYield', 'equityBondYield'] as const).map(key => <li key={key} className="flex justify-between gap-4"><span>{key === 'equityBondYield' ? v.method === 'owner_earnings' ? 'Earnings yield at mid value' : 'Earnings / market cap' : metricLabels[key].label}</span><span>{formatMetric({ value: key === 'equityBondYield' && v.method === 'owner_earnings' ? earningsYieldAtMid(v) : v[key], format: 'pct' })}</span></li>)}</ul>
     <ul className="mt-3 space-y-1 text-xs text-ink/60">{v.assumptions.map((assumption, i) => <li key={i}>{assumption}</li>)}</ul>
   </section>;
 }

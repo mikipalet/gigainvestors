@@ -14,9 +14,9 @@ export const PIPELINE_VERSION = "7";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
-export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, priceHistory = null, currentShares = null, reportedShares = true, shareAssumptions = [], ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate() }: {
+export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, priceHistory = null, priceHistoryPending = priceHistory === null, currentShares = null, reportedShares = true, shareAssumptions = [], ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate() }: {
   company: Company; fundamentals: Fundamentals; sections: Sections; report: ReportMeta;
-  bondYield: number | null; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; priceHistory?: PriceHistory | null; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
+  bondYield: number | null; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; priceHistory?: PriceHistory | null; priceHistoryPending?: boolean; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
 }): Promise<Analysis> {
   // Reclassify old corpus enrichment, including payment networks previously marked as banks.
   if (company.industry) company = { ...company, kind: kindFor({ ...company, lending: fundamentals.years.at(-1) }) };
@@ -30,7 +30,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
       && year.dilutedShares !== null && year.dilutedShares > 0 ? close * year.dilutedShares / rate : null;
     return { ...year, marketCap };
   });
-  const numeric = runNumericTests({ years, kind: company.kind });
+  const numeric = runNumericTests({ years, kind: company.kind, priceHistoryPending: priceHistoryPending && rate !== null });
   const tests = {} as Analysis["tests"];
   const answers = fundamentals.integrity.ok ? await ask({ id: company.id, sections }) : [];
   for (const key of Object.keys(numeric) as Array<keyof typeof numeric>) {
@@ -59,7 +59,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     };
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
-  return { requiredMos, volatility,
+  return { requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
     valueHistory: valueHistory({ fundamentals, kind: company.kind, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"],
     events: companyEvents(fundamentals), series: perShareSeries(fundamentals),

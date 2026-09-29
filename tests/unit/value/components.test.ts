@@ -1,7 +1,7 @@
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { MiniSeries } from "@/components/value/MiniSeries";
+import { seriesPath, scale } from '@/lib/value/viz/layout';
 import { Bridge } from "@/components/value/Bridge";
 import { TestSection } from "@/components/value/TestSection";
 import type { Dossier } from "@/lib/value/types";
@@ -11,15 +11,9 @@ const dossier: Dossier = JSON.parse(readFileSync("tests/fixtures/value/store/dos
 
 describe("value evidence presentation", () => {
   it("preserves gaps and avoids invalid coordinates in constant series", () => {
-    const html = renderToStaticMarkup(createElement(MiniSeries, { label: "ROIC", series: [[2020, 0.2], [2021, 0.2], [2022, null], [2023, 0.2]] }));
-    expect(html.match(/<polyline/g)).toHaveLength(2);
-    expect(html).not.toMatch(/NaN|Infinity/);
-    expect(html).toContain("2020 to 2023");
-  });
-  it("shows missing data without drawing a zero-valued trend", () => {
-    const html = renderToStaticMarkup(createElement(MiniSeries, { label: "ROIC", series: [[2020, null]] }));
-    expect(html).toContain("no data");
-    expect(html).not.toContain("<polyline");
+    const path=seriesPath({series:[[2020,.2],[2021,.2],[2022,null],[2023,.2]],x:scale({domain:[2020,2023],range:[0,100]}),y:scale({domain:[.2,.2],range:[0,30]})});
+    expect(path.match(/M/g)).toHaveLength(2);
+    expect(path).not.toMatch(/NaN|Infinity/);
   });
   it("shows the per-share result, assumptions and equity bond comparison", () => {
     if (!dossier.valuation) throw new Error("Fixture valuation missing");
@@ -32,8 +26,8 @@ describe("value evidence presentation", () => {
     const test = dossier.tests.moat;
     const html = renderToStaticMarkup(createElement(TestSection, { test: { ...test, jev: test.jev.map((answer) => ({ ...answer, trusted: false })) } }));
     expect(html).toContain("9 in 10");
-    expect(html).toContain("Our brands encourage repeat purchases.");
+    expect(html).not.toContain("Our brands encourage repeat purchases.");
     expect(html).toContain("Informational only");
-    expect(html).toContain("Source: business");
+    expect(html).toContain("Item 1 · Business");
   });
 });

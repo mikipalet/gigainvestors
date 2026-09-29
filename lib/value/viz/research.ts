@@ -8,7 +8,7 @@ export function cagr(series: Series) {
 export const marginExtent = (value: number) => value === 0 ? 0 : Math.max(2, Math.min(1, Math.abs(value)) * 24);
 export const growthLabel = (value: number) => `${value >= 0 ? '+' : ''}${(value * 100).toFixed(1)}%/yr`;
 
-export function logTicks([min, max]: [number, number]) {
+export function logTicks([min, max]: [number, number], height = 166) {
   if (min === max) { min /= 2; max *= 2; }
   const candidates: number[] = [];
   for (let power = Math.floor(Math.log10(min)) - 1; power <= Math.ceil(Math.log10(max)); power++) {
@@ -16,5 +16,10 @@ export function logTicks([min, max]: [number, number]) {
   }
   const lower = candidates.findLastIndex(n => n <= min), upper = candidates.findIndex(n => n >= max);
   const enclosing = candidates.slice(lower, upper + 1);
-  return enclosing.length <= 4 ? enclosing : Array.from({ length: 4 }, (_, i) => enclosing[Math.round(i * (enclosing.length - 1) / 3)]);
+  const span=Math.log(enclosing.at(-1)!/enclosing[0]);
+  const spaced:number[]=[];
+  for(const tick of enclosing) if(!spaced.length || Math.log(tick/spaced.at(-1)!)/span*height>=18) spaced.push(tick);
+  const end=enclosing.at(-1)!;
+  if(spaced.at(-1)!==end){if(Math.log(end/spaced.at(-1)!)/span*height<18)spaced.pop();spaced.push(end);}
+  return spaced;
 }

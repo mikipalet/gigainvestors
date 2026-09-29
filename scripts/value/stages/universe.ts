@@ -1,3 +1,4 @@
+import { marketCapCurrency } from "../../../lib/value/currency";
 import { retainJapaneseCompanies } from "../../../lib/value/japan/companies";
 import { mkdirSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
@@ -54,7 +55,7 @@ export default async function universe(options: Options): Promise<void> {
     const row = byId.get(group.primary)!;
     const screen = caps.get(group.primary);
     const cap = isGlobalDepositary(row.Name) ? null : screen?.market_capitalization;
-    const rate = cap != null ? await usdRate(row.Currency) : null;
+    const rate = cap != null ? await usdRate(marketCapCurrency(row.Currency)) : null;
     const sector = screen?.sector ?? null;
     const industry = screen?.industry ?? null;
     companies.push({

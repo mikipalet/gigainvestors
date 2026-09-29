@@ -61,11 +61,11 @@ describe("buildOutput", () => {
     expect(files["meta.json"]).toMatchObject({ asOf: "2026-09-29", counts: { universe: 3, scored: 2, insufficient: 1 }, versions: pass.versions });
     expect(files["prices/US.json"]).toEqual({});
   });
-  it("excludes unclear, na and multiple failures from the default", () => {
+  it("includes unresolved quality rows for the awaiting view; excludes na and multiple failures", () => {
     const rows = [analysis("U.US"), analysis("N.US"), analysis("F.US")];
     rows[0].tests.moat.result = "unclear"; rows[1].tests.moat.result = "na";
     rows[2].tests.moat.result = "fail"; rows[2].tests.economics.result = "fail";
-    expect(output(rows)["index/default.json"]).toEqual([]);
+    expect((output(rows)["index/default.json"] as IndexRow[]).map(r=>r.id)).toEqual(["U.US"]);
   });
   it("only emits trusted confident configured tags and applies the recurring choice rule", () => {
     const row = analysis();
@@ -153,7 +153,8 @@ describe("publish repository", () => {
   });
   it("retains unselected dossiers in a partial publish and removes delisted companies", () => {
     const repo = repository();
-    writeOutput({ repo, files: output([analysis(), analysis("AXP.US"), analysis("DELISTED.US")]) });
+    const axp = analysis("AXP.US"); axp.valuation!.shares = 2; // cap 100 = quote 50 × shares 2
+    writeOutput({ repo, files: output([analysis(), axp, analysis("DELISTED.US")]) });
     commitOutput({ repo, asOf: "2026-09-29" });
     mkdirSync(path.join(corpusDir(), "prices"), { recursive: true });
     writeFileSync(path.join(corpusDir(), "prices/US.json"), JSON.stringify({ "AXP.US": [50, "2026-09-29", "seed"] }));
@@ -255,7 +256,7 @@ describe("prices", () => {
     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(true);
     expect(git(repo, ["rev-list", "--count", "HEAD"])).toBe("3");
     const paths = git(repo, ["diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"]);
-    expect(paths).toBe("prices/US.json");
+    expect(paths.split("\n")).toEqual(["dossiers/027.json", "meta.json", "prices/US.json"]);
     await refreshPrices({ repo, companies: [analysis().company], bulk: async () => raw });
     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(false);
   });
@@ -455,7 +456,7 @@ it('preserves an unpushed prices commit when preparing the next publish', () => 
 
 
 describe("published funnel", () => {
-  it("counts all analyses cumulatively and isolates failures across all six gates by country", () => {
+  it("counts all analyses cumulatively and isolates quality failures independently of price by country", () => {
     const keys = ["understandable", "moat", "economics", "management", "accounting"] as const;
     const rows = keys.map((key, i) => {
       const row = analysis(`FAIL${i}.US`);
@@ -475,16 +476,17 @@ describe("published funnel", () => {
     const prices: PriceMap = Object.fromEntries(all.filter(row => row !== missing).map(row => [row.id, [50, "2026-09-29"]]));
     prices[costly.id] = [60, "2026-09-29"];
     prices[seed.id] = [50, "2026-09-29", "seed"];
+    for (const row of all) row.company.marketCapUsd = null; // This fixture tests gates, not cap/share reconciliation.
     const files = buildOutput({ analyses: all, prices, holdersByTicker: {}, investorNames: {}, fx: {} }).files;
     const funnel = (files["meta.json"] as StoreMeta).funnel!;
     expect(funnel).toMatchObject({ asOf: "2026-09-29", analysed: 14 });
     expect(funnel.gates.map(g => [g.key, g.passing, g.failsOnlyThis])).toEqual([
-      ["understandable", 12, 1], ["moat", 10, 1], ["economics", 8, 1],
-      ["management", 7, 1], ["accounting", 6, 1], ["price", 2, 1],
+      ["understandable", 11, 1], ["moat", 9, 1], ["economics", 7, 1],
+      ["management", 6, 1], ["accounting", 5, 1], ["price", 2, 1],
     ]);
     expect(funnel.gates.every(g => g.label.length > 0)).toBe(true);
     expect(funnel.byCountry.US).toMatchObject({ asOf: "2026-09-29", analysed: 10 });
-    expect(funnel.byCountry.US.gates.map(g => g.passing)).toEqual([8, 6, 4, 3, 2, 1]);
+    expect(funnel.byCountry.US.gates.map(g => g.passing)).toEqual([7, 5, 3, 2, 1, 1]);
     expect(funnel.byCountry.JP).toMatchObject({ asOf: "2026-09-29", analysed: 4 });
     expect(funnel.byCountry.JP.gates.map(g => [g.passing, g.failsOnlyThis])).toEqual([[4,0],[4,0],[4,0],[4,0],[4,0],[1,1]]);
     expect((files["index/default.json"] as IndexRow[]).length).toBeLessThan(funnel.analysed);

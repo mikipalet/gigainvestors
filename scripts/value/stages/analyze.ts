@@ -2,7 +2,7 @@ import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
 import { checkIntegrity } from "../../../lib/value/integrity";
 import { currentShareInputs, leaseInputs, trailingInputs } from "../../../lib/value/valuation-inputs";
 import { readPrices } from "../../../lib/value/price-files";
-import { validCompanyId } from "../../../lib/value/companies";
+import { validCompanyId, mergeCompany } from "../../../lib/value/companies";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { analyzeCompany, PIPELINE_VERSION, type Ask, type Sections } from "../../../lib/value/analyze-company";
@@ -44,7 +44,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
   const jobs = companies.flatMap(row => {
     if (!validCompanyId(row.id, "analyze")) return [];
     const fundamentals = readCorpusJson<Fundamentals>(`fundamentals/${row.id}.json`);
-    const company = { ...row, ...readCorpusJson<Partial<Company>>(`companies/${row.id}.json`), id: row.id };
+    const company = mergeCompany(row, readCorpusJson<Partial<Company>>(`companies/${row.id}.json`) ?? {});
     return fundamentals ? [{ company, fundamentals }] : [];
   }).slice(0, limit);
   const usdRate = createUsdRate({ force });
@@ -80,17 +80,20 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         } satisfies ReportMeta;
         const sections = loadSections({ company, report });
         const priceHistory = readPriceHistory(company.id);
+        const historyAttempts = readCorpusJson<{ failures?: number }>(`prices-history/meta/${company.id}.json`);
+        const priceHistoryPending = priceHistory === null && (historyAttempts?.failures ?? 0) < 3;
         const fingerprint = createHash("sha256").update(JSON.stringify({
           company: {
             id: company.id, kind: company.kind, currency: company.currency, country: company.country,
             description: company.description, sector: company.sector, industry: company.industry,
-          }, fundamentals, report, sections, priceHistory, shareInputs,
+          }, fundamentals, report, sections, priceHistory, priceHistoryPending, shareInputs,
           questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
-        const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, ...shareInputs,
+        const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, priceHistoryPending, ...shareInputs,
           bondYield: fundamentals.integrity.ok ? await getBondYield(company.country) : null, ask, getBondYield, usdRate });
+        if (!priceHistoryPending && priceHistory === null && result.tests.management.result === 'unclear') result.tests.management.reasons.push('Price history unavailable from provider');
         if (result.status === "scored" && Object.values(result.tests).every(test => test.numeric !== "fail")) {
           const eligible = Object.values(result.tests).flatMap(test => test.jev).filter(answer => {
             const question = QUESTIONS.find(q => q.id === answer.q);

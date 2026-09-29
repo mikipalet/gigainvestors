@@ -1,8 +1,12 @@
+import { displayName } from '@/lib/value/presentation';
+import { compactMoney } from '@/lib/format';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getDossier, getTopIds } from '@/lib/value/store';
+import { getDossier, getTopIds, getSearchCompany } from '@/lib/value/store';
 import { getIndex } from '@/lib/data';
 import { Face } from '@/components/Face';
+import { SearchInput } from '@/components/Search';
+import { ValueLink } from '@/components/value/ValueLink';
 import { DossierContent } from '@/components/value/DossierContent';
 
 export const revalidate = 259200;
@@ -19,17 +23,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 export default async function DossierPage({ params }: Props) {
   const dossier = await getDossier((await params).id.toUpperCase());
-  if (!dossier) notFound();
+  if (!dossier) {
+    const company=await getSearchCompany((await params).id);
+    if (!company) notFound();
+    return <section className="not-found-value locks-scroll"><p className="eyebrow">{company[0]} · {company[2]}</p><h1>{displayName(company[1])}</h1><h2>Not analysed yet</h2><p>This business is in our coverage queue. Its Buffett checklist arrives within days as we work through the latest filings.</p><p className="source-line">{company[4]!==null?`Market capitalisation: ${compactMoney(company[4],'USD')}. `:''}Listed in {company[2]}.</p><SearchInput/><p><ValueLink href="/">← Explore analysed companies</ValueLink></p></section>;
+  }
+  if (/[^\x00-\x7F]/.test(dossier.company.name)) {
+    const listing=await getSearchCompany(dossier.id);
+    if(listing&&/^[\x00-\x7F]+$/.test(listing[1])) dossier.company={...dossier.company,nativeName:dossier.company.name,name:listing[1]};
+  }
   const { company } = dossier;
   const investors = dossier.holders.length ? await getIndex() : null;
   return <DossierContent dossier={dossier}>
-    <section className="border-t border-ink/20 py-6"><h2 className="mb-4 text-xl font-semibold">Superinvestor holders</h2>
-      {dossier.holders.length ? <ul className="flex flex-wrap gap-6">{dossier.holders.map((holder) => {
+    {dossier.holders.length>0&&<section className="holders"><h2>Held by {dossier.holders.length} superinvestors</h2>
+      {dossier.holders.length ? <ul className="holder-stack">{dossier.holders.slice(0,5).map((holder) => {
         const investor = investors?.investors.find((item) => item.code === holder.code);
         return <li key={holder.code}><a className="flex items-center gap-3" href={`https://gigainvestors.com/s/${encodeURIComponent(company.code)}`}>
-          {investor?.sketch && <span className="h-16 w-16"><Face slug={investor.slug} size={320} sizes="64px" /></span>}{holder.name}
+          {investor?.sketch && <span className="holder-face"><Face slug={investor.slug} size={320} sizes="32px" /></span>}<span className="sr-only">{holder.name}</span>
         </a></li>;
       })}</ul> : <p className="text-sm text-ink/60">No tracked holders.</p>}
-    </section>
+      {dossier.holders.length > 0 && <p>Including {dossier.holders[0].name}</p>}
+    </section>}
   </DossierContent>;
 }

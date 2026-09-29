@@ -4,3 +4,9 @@ export function currencyCode(currency: string): string {
   return currency.toUpperCase();
 }
 export const sameCurrency = (a: string, b: string) => currencyCode(a) === currencyCode(b);
+
+/** Provider aggregate capitalisation is always in major currency units. */
+export function marketCapCurrency(currency: string): string {
+  const code = currencyCode(currency);
+  return ({GBX:'GBP', ZAC:'ZAR', ILA:'ILS'} as Record<string,string>)[code] ?? code;
+}

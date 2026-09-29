@@ -6,7 +6,7 @@ export function useWidth() {
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
-    const observer = new ResizeObserver(([entry]) => setWidth(Math.max(200, entry.contentRect.width)));
+    const observer = new ResizeObserver(([entry]) => setWidth(Math.max(120, entry.contentRect.width)));
     observer.observe(element);
     return () => observer.disconnect();
   }, []);

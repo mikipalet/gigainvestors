@@ -1,47 +1,28 @@
 'use client';
-import { useEffect, useMemo, useRef } from 'react';
-import { beeswarm, scale } from '@/lib/value/viz/layout';
+import { useState } from 'react';
 import { useWidth } from '@/lib/value/viz/use-width';
 import { valueHref } from '@/lib/value/href';
 import { usePathname } from 'next/navigation';
-import { DataTable } from './DataTable';
 import { ChartInteraction } from './ChartInteraction';
-import { AsOf } from './Events';
-type Entry = { id: string; name: string; mos: number; requiredMos: number; date?: string };
-export function MarginStrip({ entries, date }: { entries: Entry[]; date?: string | null }) {
-  const { ref, width } = useWidth();
-  const pathname = usePathname();
-  const canvas = useRef<HTMLCanvasElement>(null);
-  const useCanvas = entries.length > 1500;
-  const layout = useMemo(() => beeswarm({ points: entries.map(e => ({ id: e.id, value: e.mos })), width: width - 40, gap: useCanvas ? 5 : 10 }), [entries, width, useCanvas]);
-  const byId = new Map(entries.map(e => [e.id, e]));
-  const radius = Math.max(27, ...layout.map(p => Math.abs(p.y) + 8)), height = radius * 2 + 76;
-  const x = scale({ domain: [-1, 1], range: [20, width - 20] });
-  useEffect(() => {
-    if (!useCanvas || !canvas.current) return;
-    const node = canvas.current, ratio = window.devicePixelRatio || 1;
-    node.width = width * ratio; node.height = height * ratio;
-    const ctx = node.getContext('2d'); if (!ctx) return;
-    ctx.scale(ratio, ratio);
-    const style = getComputedStyle(node);
-    ctx.fillStyle = style.getPropertyValue('--ink').trim();
-    ctx.strokeStyle = style.getPropertyValue('--paper').trim(); ctx.lineWidth = 1;
-    for (const p of layout) { ctx.beginPath(); ctx.arc(p.x + 20, p.y + radius + 32, 2.5, 0, Math.PI * 2); ctx.fill(); ctx.stroke(); }
-  }, [layout, width, height, radius, useCanvas]);
-  const minimumDiscount = Math.min(1, ...entries.map(e => e.requiredMos));
-  const buys = entries.filter(e => e.mos >= e.requiredMos).length;
-  return <figure ref={ref} className="value-viz hidden min-w-0 sm:block" aria-labelledby="strip-title"><figcaption><h2 id="strip-title" className="text-lg font-semibold">{buys} quality companies meet their buy discount</h2><p className="mt-1 text-xs text-ink/55">Margin of safety, %. {entries.length} companies pass all five tests and have a price. Required discounts vary by company.</p></figcaption>
-    <ChartInteraction label="Quality companies by margin of safety" width={width} height={height} points={layout.map(p => { const e = byId.get(p.id)!; return { x: p.x+20, y: p.y+radius+32, text: `${e.name}, ${(e.mos*100).toFixed(1)}% margin of safety; required ${e.requiredMos*100}%; as of ${e.date ?? 'unknown'}, last fiscal year: see dossier`, href: valueHref(`/${e.id.toLowerCase()}`, pathname) }; })}>
-      <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} aria-hidden="true">
-        <rect x={x(minimumDiscount)} y="27" width={x(1)-x(minimumDiscount)} height={radius*2+10} fill="var(--viz-buy-tint)"/><line x1={x(minimumDiscount)} x2={x(minimumDiscount)} y1="27" y2={height-32} stroke="var(--viz-ink)"/><text x={x(minimumDiscount)+4} y="19">minimum buy discount</text>
-        <line x1={x(0)} x2={x(0)} y1="27" y2={height-32} stroke="var(--viz-muted)"/>
-        <line x1={20} x2={width-20} y1={height-32} y2={height-32} stroke="var(--viz-grid)"/>
-        {[-1, -.5, 0, .5, 1].map(t => <text key={t} className="viz-tick" textAnchor="middle" x={x(t)} y={height-14}>{t*100}%</text>)}
-        {!useCanvas && layout.map(p => <circle key={p.id} cx={p.x+20} cy={p.y+radius+32} r="4" fill="var(--viz-ink)" stroke="var(--paper)" strokeWidth="2"/>)}
-      </svg>
-      {useCanvas && <canvas ref={canvas} aria-hidden="true" className="absolute inset-0" style={{ width, height }}/>}
-    </ChartInteraction>
-    <p className="text-[10px] text-ink/55">Positions capped at ±100%. Tooltips retain the actual margin.</p><AsOf date={date}/>
-    <DataTable caption="Quality companies by margin of safety" headers={['Company', 'Margin', 'Required']} rows={entries.map(e => [<a key={e.id} href={valueHref(`/${e.id.toLowerCase()}`, pathname)}>{e.name}</a>, `${(e.mos*100).toFixed(1)}%`, `${e.requiredMos*100}%`])}/>
-  </figure>;
+import { scale } from '@/lib/value/viz/layout';
+import { dateLabel, displayName } from '@/lib/value/presentation';
+type Entry = { id: string; name: string; tests:string; b?:boolean; mos: number; requiredMos: number; date?: string };
+export function MarginStrip({ entries, qualityCount, buyCount, unpriced = [], checking = 0 }: { checking?:number; unpriced?: Array<{id:string;name:string}>; qualityCount:number; buyCount:number; entries: Entry[]; date?: string | null }) {
+  const { ref, width } = useWidth(), pathname = usePathname();
+  const [active,setActive]=useState<number|null>(null);
+  const quality=entries.filter(e=>e.tests==='PPPPP').sort((a,b)=>Math.abs(Math.log((1-a.mos)/(1-a.requiredMos)))-Math.abs(Math.log((1-b.mos)/(1-b.requiredMos)))).slice(0,8).sort((a,b)=>b.mos-a.mos), near=entries.filter(e=>/^P*FP*$/.test(e.tests));
+  const shown=[...quality,...(width<480?[]:near)];
+  const maximum=Math.max(4,...shown.map(e=>2**Math.ceil(Math.log2(1-e.mos))));
+  const minimum=Math.min(.5,...shown.map(e=>2**Math.floor(Math.log2(Math.min(1-e.mos,1-e.requiredMos)))));
+  const left=65,right=width-45, bottom=quality.length*24+40, height=bottom+(width<480?25:65);
+  const project=scale({domain:[Math.log2(minimum),Math.log2(maximum)],range:[left,right]});
+  const x=(v:number)=>project(Math.log2(v));
+  const dots=shown.map((entry,i)=>({entry,x:x(1-entry.mos),y:i<quality.length?20+i*24:bottom+30}));
+  return <figure ref={ref} className="closest-chart" aria-labelledby="strip-title"><figcaption><h2 id="strip-title">Quality has a price</h2><p>{qualityCount} quality passes{checking?' so far':''}; {buyCount===0?'none':buyCount} at their buy line. {qualityCount>8&&'Showing the eight nearest their buy line.'}</p></figcaption>
+    <ChartInteraction above onActive={setActive} label="Shortlisted companies by price to value" width={width} height={height} points={dots.map(({x,y,entry:e})=>({x,y,text:`${displayName(e.name)}. ${e.tests==='PPPPP'?'Passes all quality tests':'One quality test fails'}. Needs ${(1-e.requiredMos).toFixed(2)}×, is ${(1-e.mos).toFixed(2)}×: ${e.b===true?'published at a buy price':'not qualified at a buy price in the published snapshot'}. Price ${dateLabel(e.date)}.`,href:valueHref(`/${e.id.toLowerCase()}`,pathname)}))}>
+    <svg aria-hidden="true" width="100%" height={height} viewBox={`0 0 ${width} ${height}`}>
+      {[.25,.5,1,2,4,8,16,32,64].filter(t=>t>=minimum&&t<=maximum).map(t=><g key={t}><line x1={x(t)} x2={x(t)} y1="8" y2={bottom-20} stroke="var(--viz-grid)"/><text x={x(t)} y={bottom} textAnchor="middle" className="viz-tick">{t}×</text></g>)}
+      {dots.map(({x:cx,y,entry:e},i)=><g key={e.id} opacity={i<quality.length?1:.4}>{i<quality.length?<><text x="0" y={y+4} className="viz-tick">{e.id.split('.')[0]}</text><line x1={x(1-e.requiredMos)} x2={cx} y1={y} y2={y} stroke="var(--ink)" opacity=".2"/><line x1={x(1-e.requiredMos)} x2={x(1-e.requiredMos)} y1={y-5} y2={y+5} stroke="var(--buy)" strokeWidth="2"/><circle cx={cx} cy={y} r="4" fill="var(--ink)"/><text x={cx+9} y={y+4} className="viz-tick">{(1-e.mos).toFixed(2)}×</text></>:<line x1={cx} x2={cx} y1={y-3} y2={y+3} stroke="var(--ink)"/>}{active===i&&<circle cx={cx} cy={y} r="8" fill="none" stroke="var(--ink)"/>}</g>)}
+      {width>=480&&<text x="0" y={bottom+50} className="viz-tick">{near.length} priced near misses · one confirmed quality failure</text>}
+    </svg></ChartInteraction><p className="source-line">Price / mid value · log scale · green ticks mark each company’s buy line.</p>{unpriced.length>0&&<details className="source-line"><summary>{unpriced.length} companies without a comparable value</summary><p>{unpriced.map((e,i)=><span key={e.id}>{i>0?', ':''}<a className="underline" href={valueHref(`/${e.id.toLowerCase()}`,pathname)}>{displayName(e.name)}</a></span>)}.</p></details>}</figure>;
 }

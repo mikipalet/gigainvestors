@@ -1,5 +1,6 @@
 {
   "INTU.US": {
+    "b": false,
     "id": "INTU.US",
     "company": {
       "id": "INTU.US",
@@ -526,6 +527,7 @@
     "series": {}
   },
   "JNJ.US": {
+    "b": false,
     "id": "JNJ.US",
     "company": {
       "id": "JNJ.US",

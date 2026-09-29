@@ -1,5 +1,6 @@
 [
   {
+    "b": true,
     "id": "KO.US",
     "n": "Coca-Cola",
     "c": "US",
@@ -33,6 +34,7 @@
     ]
   },
   {
+    "b": false,
     "id": "DAL.US",
     "n": "Delta Air Lines",
     "c": "US",
@@ -64,6 +66,7 @@
     ]
   },
   {
+    "b": false,
     "id": "JPM.US",
     "n": "JPMorgan Chase",
     "c": "US",
@@ -83,6 +86,7 @@
     "m": 0.35
   },
   {
+    "b": false,
     "id": "FX.US",
     "n": "Global Consumer ADR",
     "c": "US",
@@ -110,6 +114,7 @@
     ]
   },
   {
+    "b": false,
     "id": "AAPL.US",
     "n": "Apple",
     "c": "US",
@@ -141,6 +146,7 @@
     ]
   },
   {
+    "b": false,
     "id": "MSFT.US",
     "n": "Microsoft",
     "c": "US",
@@ -172,6 +178,7 @@
     ]
   },
   {
+    "b": false,
     "id": "MCO.US",
     "n": "Moody\u2019s",
     "c": "US",
@@ -203,6 +210,7 @@
     ]
   },
   {
+    "b": false,
     "id": "V.US",
     "n": "Visa",
     "c": "US",
@@ -234,6 +242,7 @@
     ]
   },
   {
+    "b": false,
     "id": "MA.US",
     "n": "Mastercard",
     "c": "US",
@@ -265,6 +274,7 @@
     ]
   },
   {
+    "b": false,
     "id": "COST.US",
     "n": "Costco",
     "c": "US",
@@ -296,6 +306,7 @@
     ]
   },
   {
+    "b": false,
     "id": "PG.US",
     "n": "Procter & Gamble",
     "c": "US",
@@ -327,6 +338,7 @@
     ]
   },
   {
+    "b": true,
     "id": "PEP.US",
     "n": "PepsiCo",
     "c": "US",
@@ -358,6 +370,7 @@
     ]
   },
   {
+    "b": false,
     "id": "CL.US",
     "n": "Colgate-Palmolive",
     "c": "US",
@@ -389,6 +402,7 @@
     ]
   },
   {
+    "b": false,
     "id": "ADP.US",
     "n": "Automatic Data Processing",
     "c": "US",
@@ -420,6 +434,7 @@
     ]
   },
   {
+    "b": false,
     "id": "SPGI.US",
     "n": "S&P Global",
     "c": "US",
@@ -451,6 +466,7 @@
     ]
   },
   {
+    "b": true,
     "id": "VRSN.US",
     "n": "Verisign",
     "c": "US",
@@ -482,6 +498,7 @@
     ]
   },
   {
+    "b": false,
     "id": "ORCL.US",
     "n": "Oracle",
     "c": "US",
@@ -513,6 +530,7 @@
     ]
   },
   {
+    "b": false,
     "id": "INTU.US",
     "n": "Intuit",
     "c": "US",
@@ -544,6 +562,7 @@
     ]
   },
   {
+    "b": false,
     "id": "TXN.US",
     "n": "Texas Instruments",
     "c": "US",
@@ -575,6 +594,7 @@
     ]
   },
   {
+    "b": false,
     "id": "NKE.US",
     "n": "Nike",
     "c": "US",
@@ -606,6 +626,7 @@
     ]
   },
   {
+    "b": false,
     "id": "UNP.US",
     "n": "Union Pacific",
     "c": "US",
@@ -637,6 +658,7 @@
     ]
   },
   {
+    "b": false,
     "id": "WM.US",
     "n": "Waste Management",
     "c": "US",
@@ -668,6 +690,7 @@
     ]
   },
   {
+    "b": true,
     "id": "RSG.US",
     "n": "Republic Services",
     "c": "US",
@@ -699,6 +722,7 @@
     ]
   },
   {
+    "b": false,
     "id": "LIN.US",
     "n": "Linde",
     "c": "US",
@@ -730,6 +754,7 @@
     ]
   },
   {
+    "b": false,
     "id": "HD.US",
     "n": "Home Depot",
     "c": "US",
@@ -761,6 +786,7 @@
     ]
   },
   {
+    "b": false,
     "id": "LOW.US",
     "n": "Lowe\u2019s",
     "c": "US",
@@ -792,6 +818,7 @@
     ]
   },
   {
+    "b": true,
     "id": "MCD.US",
     "n": "McDonald\u2019s",
     "c": "US",
@@ -823,6 +850,7 @@
     ]
   },
   {
+    "b": false,
     "id": "SBUX.US",
     "n": "Starbucks",
     "c": "US",
@@ -854,6 +882,7 @@
     ]
   },
   {
+    "b": false,
     "id": "DIS.US",
     "n": "Walt Disney",
     "c": "US",
@@ -885,6 +914,7 @@
     ]
   },
   {
+    "b": false,
     "id": "ABT.US",
     "n": "Abbott",
     "c": "US",
@@ -916,6 +946,7 @@
     ]
   },
   {
+    "b": false,
     "id": "JNJ.US",
     "n": "Johnson & Johnson",
     "c": "US",
@@ -935,6 +966,7 @@
     "m": 0.25
   },
   {
+    "b": false,
     "id": "MRK.US",
     "n": "Merck",
     "c": "US",
@@ -966,6 +998,7 @@
     ]
   },
   {
+    "b": false,
     "id": "PFE.US",
     "n": "Pfizer",
     "c": "US",
@@ -997,6 +1030,7 @@
     ]
   },
   {
+    "b": false,
     "id": "CAT.US",
     "n": "Caterpillar",
     "c": "US",
@@ -1028,6 +1062,7 @@
     ]
   },
   {
+    "b": false,
     "id": "DE.US",
     "n": "Deere",
     "c": "US",
@@ -1059,6 +1094,7 @@
     ]
   },
   {
+    "b": false,
     "id": "UPS.US",
     "n": "United Parcel Service",
     "c": "US",
@@ -1078,6 +1114,7 @@
     "m": 0.25
   },
   {
+    "b": false,
     "id": "FDX.US",
     "n": "FedEx",
     "c": "US",
@@ -1109,6 +1146,7 @@
     ]
   },
   {
+    "b": false,
     "id": "CVX.US",
     "n": "Chevron",
     "c": "US",
@@ -1140,6 +1178,7 @@
     ]
   },
   {
+    "b": false,
     "id": "OXY.US",
     "n": "Occidental Petroleum",
     "c": "US",
@@ -1171,6 +1210,7 @@
     ]
   },
   {
+    "b": false,
     "id": "KHC.US",
     "n": "Kraft Heinz",
     "c": "US",
@@ -1202,6 +1242,7 @@
     ]
   },
   {
+    "b": false,
     "id": "SPARSE.US",
     "n": "Sparse Company",
     "c": "US",

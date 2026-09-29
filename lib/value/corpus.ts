@@ -1,3 +1,4 @@
+import { readJsonFile } from '../blob';
 import { randomUUID } from "node:crypto";
 import { appendFileSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
@@ -21,8 +22,7 @@ function readText(rel: string): string | null {
 }
 
 export function readCorpusJson<T>(rel: string): T | null {
-  const text = readText(rel);
-  return text === null ? null : JSON.parse(text);
+  return readJsonFile<T>(corpusPath(rel), {missingOnly:true});
 }
 
 export function writeCorpusJson(rel: string, data: unknown): void {

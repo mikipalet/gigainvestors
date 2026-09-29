@@ -128,6 +128,7 @@ export interface Check {
   reason: string;
   data: string;
   decisive?: boolean;
+  pending?: boolean;
 }
 
 export function outcome({ key, metrics, series, checks, reasons = [], minFailures = 1 }: {
@@ -145,6 +146,7 @@ export function outcome({ key, metrics, series, checks, reasons = [], minFailure
   // Infinity participates in return statistics, but is never a display value.
   const display = (value: number | null) => value !== null && Number.isFinite(value) ? value : null;
   return { key, numeric,
+    ...(numeric === "unclear" && checks.some(c => c.pass === null) && checks.filter(c => c.pass === null).every(c => c.pending) ? { pending: true } : {}),
     metrics: Object.fromEntries(Object.entries(metrics).map(([name, value]) => [name, display(value)])),
     series: Object.fromEntries(Object.entries(series).map(([name, points]) => [name, points.map(([fy, value]) => [fy, display(value)])])),
     reasons: [...reasons, ...checks.filter(c => c.pass !== true).map(c => c.pass === null ? `not enough data for ${c.data}` : c.reason)] };

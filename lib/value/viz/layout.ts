@@ -1,4 +1,3 @@
-import { T } from '../config';
 import type { Series } from '../types';
 
 export const clamp = (v: number) => Math.max(-1, Math.min(1, v));
@@ -18,7 +17,7 @@ export function niceTicks([lo, hi]: [number, number], count = 4): number[] {
   const start = Math.floor(lo / step), end = Math.ceil(hi / step);
   return Array.from({ length: end - start + 1 }, (_, i) => Number(((start + i) * step).toPrecision(12)));
 }
-export const compactMoney = (value: number, currency = '') => `${currency} ${new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 }).format(value)}`.trim();
+export { compactMoney } from '@/lib/format';
 export function seriesPath({ series, x, y }: { series: Series; x: (v: number) => number; y: (v: number) => number }) {
   let previous: number | null = null;
   return series.map(([fy, value]) => {
@@ -44,8 +43,8 @@ export function waterfallSteps(values: number[]) {
   const steps = values.map((value, i) => { const start = i === 0 ? 0 : balance; balance += value; return { start, end: balance, value }; });
   return [...steps, { start: 0, end: balance, value: balance }];
 }
-export function funnelCounts(entries: { tests: string; mos: number | null; requiredMos?: number }[]) {
-  return Array.from({ length: 7 }, (_, gate) => entries.filter(e => e.tests.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || (e.mos !== null && e.mos >= (e.requiredMos ?? T.price.requiredMos.stable)))).length);
+export function funnelCounts(entries: { tests: string; b?: boolean }[]) {
+  return Array.from({ length: 7 }, (_, gate) => entries.filter(e => e.tests.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || e.b === true)).length);
 }
 
 // Round only the data end; the baseline remains square.
@@ -55,4 +54,11 @@ export function dataBarPath({ x, y, width, height, direction }: { x: number; y: 
   if (direction === 'left') return `M${right},${y}H${x+r}Q${x},${y} ${x},${y+r}V${bottom-r}Q${x},${bottom} ${x+r},${bottom}H${right}Z`;
   if (direction === 'up') return `M${x},${bottom}V${y+r}Q${x},${y} ${x+r},${y}H${right-r}Q${right},${y} ${right},${y+r}V${bottom}Z`;
   return `M${x},${y}V${bottom-r}Q${x},${bottom} ${x+r},${bottom}H${right-r}Q${right},${bottom} ${right},${bottom-r}V${y}Z`;
+}
+
+/** Axis labels use only the precision needed by the tick, independently of data cells. */
+export function axisTick(value: number) {
+  const magnitude=Math.abs(value);
+  const [unit,suffix]=magnitude>=1e12?[1e12,'T']:magnitude>=1e9?[1e9,'B']:magnitude>=1e6?[1e6,'M']:magnitude>=1e3?[1e3,'K']:[1,''];
+  return `${Number((value/Number(unit)).toPrecision(10))}${suffix}`;
 }

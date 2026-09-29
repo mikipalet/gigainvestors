@@ -51,7 +51,7 @@ it('does not request history for companies without fundamentals', async () => {
   await history({});
   expect(fetch).not.toHaveBeenCalled();
 });
-it('writes fetched-date seeds, merges safely for publish, and reads both tuple formats', async () => {
+it('preserves actual screener closes when publishing and rejects older quotes', async () => {
   for (const id of ['KO.US', 'NEW.US']) {
     appendJsonl('universe.jsonl', company(id));
     writeCorpusJson(`raw/eodhd/${id}.json`, { Highlights: { MarketCapitalization: 500 }, SharesStats: { SharesOutstanding: 20 } });
@@ -59,16 +59,16 @@ it('writes fetched-date seeds, merges safely for publish, and reads both tuple f
   }
   writeCorpusJson('raw/eodhd/universe/screener-US-0.json', { date: '2026-09-20', data: ['KO', 'NEW'].map(code => ({ code, exchange: 'US', adjusted_close: 25 })) });
   await seed({});
-  expect(readCorpusJson('prices/US.json')).toEqual({ 'KO.US': [25, '2026-09-20', 'seed'], 'NEW.US': [25, '2026-09-20', 'seed'] });
+  expect(readCorpusJson('prices/US.json')).toEqual({ 'KO.US': [25, '2026-09-20'], 'NEW.US': [25, '2026-09-20'] });
   writeCorpusJson('publish-repo/prices/US.json', { 'KO.US': [24, '2026-09-19'] });
   mergeSeedFiles(corpusPath('publish-repo'));
   vi.stubEnv('VALUE_STORE_DIR', corpusPath('publish-repo'));
   expect(await getPrice('KO.US', 'US')).toEqual([24, '2026-09-19']);
-  expect(await getPrice('NEW.US', 'US')).toEqual([25, '2026-09-20', 'seed']);
+  expect(await getPrice('NEW.US', 'US')).toEqual([25, '2026-09-20']);
   await refreshPrices({ repo: corpusPath('publish-repo'), companies: [company('NEW.US')], bulk: async () => [{ code: 'NEW', close: 23, date: '2026-09-19' }] });
-  expect(await getPrice('NEW.US', 'US')).toEqual([23, '2026-09-19']);
+  expect(await getPrice('NEW.US', 'US')).toEqual([25, '2026-09-20']);
   mergeSeedFiles(corpusPath('publish-repo'));
-  expect(await getPrice('NEW.US', 'US')).toEqual([23, '2026-09-19']);
+  expect(await getPrice('NEW.US', 'US')).toEqual([25, '2026-09-20']);
 });
 it('counts only universe members and only todays Jev usage', () => {
   vi.useFakeTimers(); vi.setSystemTime(new Date('2026-09-29T12:00:00Z'));

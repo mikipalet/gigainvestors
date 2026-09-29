@@ -44,3 +44,12 @@ export function firstSentences(text: string, limit: number): string {
 }
 
 export const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+
+/** Financial compact amounts: three significant figures, with an explicit currency. */
+export function compactMoney(value: number, currency = ''): string {
+  if (!Number.isFinite(value)) return 'Not reported';
+  const unit = Math.abs(value) >= 1e12 ? [1e12, 'T'] as const : Math.abs(value) >= 1e9 ? [1e9, 'B'] as const : Math.abs(value) >= 1e6 ? [1e6, 'M'] as const : Math.abs(value) >= 1e3 ? [1e3, 'K'] as const : [1, ''] as const;
+  const scaled = value / unit[0];
+  const number = scaled === 0 ? '0' : new Intl.NumberFormat('en-US', { minimumSignificantDigits: 3, maximumSignificantDigits: 3 }).format(scaled);
+  return `${currency} ${number}${unit[1]}`.trim();
+}

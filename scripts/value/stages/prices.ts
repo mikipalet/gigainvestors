@@ -1,3 +1,4 @@
+import { refreshPublishedBuyPrices } from '../../../lib/value/refresh-buy-prices';
 import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
@@ -67,11 +68,12 @@ export async function refreshPrices({ repo, companies, bulk = bulkLastDay, yahoo
     mkdirSync(path.dirname(file), { recursive: true });
     writeFileSync(`${file}.tmp`, serialized); renameSync(`${file}.tmp`, file);
   }
+  refreshPublishedBuyPrices(repo);
 }
 
 export function commitPrices({ repo, asOf }: { repo: string; asOf: string }): boolean {
-  if (!git(repo, ["status", "--porcelain", "--", "prices/"])) return false;
-  git(repo, ["add", "--", "prices/"]);
+  if (!git(repo, ["status", "--porcelain", "--", "prices/", "index/", "meta.json", "dossiers/"])) return false;
+  git(repo, ["add", "--", ...["prices/", "index/", "meta.json", "dossiers/"].filter(file => existsSync(path.join(repo, file)))]);
   git(repo, ["commit", "-m", `prices ${asOf}`]);
   return true;
 }

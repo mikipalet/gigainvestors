@@ -1,13 +1,14 @@
 'use client';
-import { useState } from 'react';
-import { ResultRow, type ResultEntry } from './ResultRow';
-import { QualityLegend } from './QualityDots';
-export type Sort = 'name' | 'country' | 'cap' | 'mos' | 'holders';
-export const columns: Array<[Sort, string]> = [['name', 'Name'], ['country', 'Country'], ['cap', 'Market cap (USD)'], ['mos', 'Margin of safety'], ['holders', 'Holders']];
-export function ResultsTable({ entries, sort, direction, sortBy }: { entries: ResultEntry[]; sort: Sort; direction: number; sortBy: (key: Sort) => void }) {
-  const [scroll, setScroll] = useState(0);
-  const virtual = entries.length > 60, rowHeight = 124;
-  const start = virtual ? Math.min(Math.max(0, entries.length - 50), Math.max(0, Math.floor(scroll / rowHeight) - 10)) : 0;
-  const visible = virtual ? entries.slice(start, start + 50) : entries;
-  return <><QualityLegend /><p className="mb-2 text-[10px] text-ink/55">Margins use each company's latest close; each margin carries its price date. Last fiscal year is available in the dossier.</p><div data-testid="results-scroll" style={virtual ? { maxHeight: 650, overflowY: 'auto' } : undefined} onScroll={e => setScroll(e.currentTarget.scrollTop)}><table aria-rowcount={entries.length + 1} data-testid="results-table" className={`${virtual ? "value-virtual " : ""}w-full table-fixed text-left text-xs sm:table-auto sm:text-sm`}><thead><tr>{columns.map(([key, label]) => <th key={key} aria-sort={sort === key ? direction === 1 ? 'ascending' : 'descending' : 'none'} className={`border-b border-ink/20 px-1 py-3 sm:p-3 ${key === 'country' || key === 'holders' ? 'hidden sm:table-cell' : key === 'name' ? 'w-[44%] sm:w-auto' : ''}`}><button type="button" onClick={() => sortBy(key)}>{label}<span aria-hidden="true" className="ml-1 text-ink/55">{sort === key ? direction === 1 ? "↑" : "↓" : "↕"}</span></button></th>)}<th className="hidden border-b border-ink/20 p-3 sm:table-cell">Quality tests</th></tr></thead><tbody>{start > 0 && <tr aria-hidden="true"><td colSpan={6} style={{ height: start * rowHeight }}/></tr>}{visible.map((entry, i) => <ResultRow rowIndex={start + i + 2} key={entry.row.id} {...entry} />)}{virtual && start + visible.length < entries.length && <tr aria-hidden="true"><td colSpan={6} style={{ height: (entries.length - start - visible.length) * rowHeight }}/></tr>}</tbody></table></div></>;
+import { useEffect, useRef, useState } from 'react';
+import type { ResultEntry } from './ResultRow';
+import { ValueLink } from '@/components/value/ValueLink';
+import { displayName } from '@/lib/value/presentation';
+import { compactMoney } from '@/lib/value/viz/layout';
+export type Sort = 'name' | 'country' | 'cap' | 'mos' | 'holders' | 'return' | 'flags';
+export const columns: Array<[Sort,string]> = [['name','Company'],['cap','Market cap'],['mos','Price / value'],['flags','Flags'],['return','Return']];
+export function ResultsTable({ entries, sort, direction, sortBy }: { expanded?:boolean; entries:ResultEntry[]; sort:Sort;direction:number;sortBy:(key:Sort)=>void }) {
+ const [scroll,setScroll]=useState(0),ref=useRef<HTMLDivElement>(null);
+ useEffect(()=>{if(ref.current)ref.current.scrollTop=0;setScroll(0);},[entries]);
+ const rowHeight=36,start=Math.max(0,Math.floor(scroll/rowHeight)-4),end=Math.min(entries.length,start+36);
+ return <div ref={ref} className="virtual-results" data-testid="results-scroll" onScroll={e=>setScroll(e.currentTarget.scrollTop)}><table data-testid="results-table" aria-rowcount={entries.length+1}><thead><tr>{columns.map(([key,label])=><th key={key} aria-sort={sort===key?(direction===1?'ascending':'descending'):'none'}><button onClick={()=>sortBy(key)}>{label} {sort===key?(direction===1?'↑':'↓'):'↕'}</button></th>)}</tr></thead><tbody>{start>0&&<tr aria-hidden="true"><td colSpan={5} style={{height:start*rowHeight,padding:0}}/></tr>}{entries.slice(start,end).map(({row,quote,seed},i)=><tr key={row.id} data-company-row aria-rowindex={start+i+2}><th scope="row"><ValueLink href={`/${row.id.toLowerCase()}`}>{displayName(row.n)}</ValueLink><span className="table-ticker">{row.id}</span></th><td>{row.mc==null?'Not reported':compactMoney(row.mc,'USD')}</td><td>{row.dataQualityFlags?.length?'Unverified':quote!==null&&row.v&&row.v[1]>0?`${(quote/row.v[1]).toFixed(2)}×${seed?' est.':''}`:'Not compared'}</td><td title={seed?'Price derived from market cap / shares':'Latest close'}>{seed?'est. · ':''}≤ {(1-(row.m??.25)).toFixed(2)}×</td><td>{row.returnInfo?`${row.k==='operating'?'ROIC':'ROE'} ${row.returnInfo.label.replace(/^ROE /,'')}`:'Not reported'}</td></tr>)}{end<entries.length&&<tr aria-hidden="true"><td colSpan={5} style={{height:(entries.length-end)*rowHeight,padding:0}}/></tr>}</tbody></table>{!entries.length&&<p>No companies match these filters.</p>}</div>;
 }

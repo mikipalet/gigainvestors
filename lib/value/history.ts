@@ -1,5 +1,5 @@
 import { T } from "./config";
-import { bvps, goodwillAndIntangibles, ratio } from "./metrics";
+import { bvps, tangibleEquity, goodwillAndIntangibles, ratio } from "./metrics";
 import { ownerEarningsSeries } from "./owner-earnings";
 import { run as understandable } from "./tests/understandable";
 import { valueCompany } from "./valuation";
@@ -37,6 +37,7 @@ export function perShareSeries(fundamentals: Fundamentals): Record<string, Serie
   return {
     revenuePerShare: years.map(y => [y.fy, perShare(y.revenue, y.dilutedShares)]),
     ownerEarningsPerShare: years.map(y => [y.fy, perShare(earnings.get(y.fy) ?? null, y.dilutedShares)]),
+    tangibleBookValuePerShare: years.map(y => [y.fy, perShare(tangibleEquity(y), y.dilutedShares)]),
     bookValuePerShare: years.map(y => [y.fy, y.dilutedShares !== null && y.dilutedShares > 0 ? bvps(y) : null]),
   };
 }

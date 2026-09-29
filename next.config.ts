@@ -4,6 +4,7 @@ const wantsMarkdown = [{ type: "header" as const, key: "accept", value: "(.*text
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  distDir: process.env.NEXT_DIST_DIR ?? '.next',
   poweredByHeader: false,
   async headers() {
     return [

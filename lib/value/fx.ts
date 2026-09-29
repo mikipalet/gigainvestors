@@ -7,7 +7,7 @@ type UsdRate = (currency: string) => Promise<number | null>;
 
 function denomination(currency: string) {
   const code = currencyCode(currency);
-  const major = code === "GBX" ? "GBP" : code === "ZAC" ? "ZAR" : code;
+  const major = code === "GBX" ? "GBP" : code === "ZAC" ? "ZAR" : code === "ILA" ? "ILS" : code;
   return { major, divisor: major === code ? 1 : 100 };
 }
 

@@ -49,17 +49,20 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         } satisfies ReportMeta;
         const sections = loadSections({ company, report });
         const priceHistory = readPriceHistory(company.id);
+        const historyAttempts = readCorpusJson<{ failures?: number }>(`prices-history/meta/${company.id}.json`);
+        const priceHistoryPending = priceHistory === null && (historyAttempts?.failures ?? 0) < 3;
         const fingerprint = createHash("sha256").update(JSON.stringify({
           company: {
             id: company.id, kind: company.kind, currency: company.currency, country: company.country,
             description: company.description, sector: company.sector, industry: company.industry,
-          }, fundamentals, report, sections, priceHistory,
+          }, fundamentals, report, sections, priceHistory, priceHistoryPending,
           questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
-        const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory,
+        const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, priceHistoryPending,
           bondYield: fundamentals.integrity.ok ? await getBondYield(company.country) : null, ask, getBondYield, usdRate });
+        if (!priceHistoryPending && priceHistory === null && result.tests.management.result === 'unclear') result.tests.management.reasons.push('Price history unavailable from provider');
         if (result.status === "scored" && Object.values(result.tests).every(test => test.numeric !== "fail")) {
           const eligible = Object.values(result.tests).flatMap(test => test.jev).filter(answer => {
             const question = QUESTIONS.find(q => q.id === answer.q);

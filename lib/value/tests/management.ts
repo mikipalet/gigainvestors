@@ -2,10 +2,15 @@ import { T } from "../config";
 import { cagr, last, mean, median, outcome, present, ratio, retainedTest, roic, spearman, sum, withZeroDefaults } from "../metrics";
 import type { NumericInput, Series } from "../types";
 
-export function run({ years }: NumericInput) {
+export function run({ years, priceHistoryPending = false }: NumericInput) {
   years = withZeroDefaults(years);
   const history = last(years, 11), ys = last(history, 10), first = history[0], end = history.at(-1);
   const retained = retainedTest(years);
+  // Probe availability only: a placeholder cap cannot determine a result. It tells
+  // us whether prices alone can settle the check, without hiding missing filings.
+  const withPrices = retainedTest(years.map(y => ({ ...y, marketCap: y.dilutedShares !== null && y.dilutedShares > 0 ? 1 : null })));
+  const retainedPending = priceHistoryPending && withPrices.gain !== null && withPrices.retained !== null;
+
   const shareCagr = history.length !== 11 || !first || !end || end.fy - first.fy !== 10 || present(history.map(y => y.dilutedShares)).length < 5 ? null
     : cagr({ first: first.dilutedShares, last: end.dilutedShares, years: 10 });
   const fiveStart = end ? history.find(y => y.fy === end.fy - 5) : undefined;
@@ -59,9 +64,9 @@ export function run({ years }: NumericInput) {
       `ROIC first 3 years vs last 3 years: ${displayReturn(roicFirst3Median)} vs ${displayReturn(roicLast3Median)}`,
     ],
     checks: [
-      { pass: retained.gain === null || retained.retained === null ? null : retained.gain >= retained.retained, data: "the $1 retained earnings test", reason: "market cap gain below cumulative retained earnings" },
+      { pass: retained.gain === null || retained.retained === null ? null : retained.gain >= retained.retained, pending: retainedPending, data: "the $1 retained earnings test", reason: "market cap gain below cumulative retained earnings" },
       { pass: dilutionPass, data: "diluted share growth over five and ten years", reason: "five-year and ten-year diluted share growth both above threshold" },
-      { pass: timingAvailable ? !priceBlind : null, data: "buyback timing", reason: "material buybacks concentrated at lower earnings yields (Spearman rho below threshold)" },
+      { pass: timingAvailable ? !priceBlind : null, pending: priceHistoryPending && ys.some(y => y.netIncome !== null && y.buybacks !== null && y.dilutedShares !== null && y.dilutedShares > 0), data: "buyback timing", reason: "material buybacks concentrated at lower earnings yields (Spearman rho below threshold)" },
       { pass: acquisitionPass, data: `${acquisitionLabel} and ROIC stability`, reason: `${acquisitionLabel} exceeds half of ten-year net income with low and deteriorating ROIC` },
     ],
   });

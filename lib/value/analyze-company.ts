@@ -10,13 +10,13 @@ import { runNumericTests } from "./tests";
 import { valueCompany } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory } from "./types";
 
-export const PIPELINE_VERSION = "5";
+export const PIPELINE_VERSION = "6";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
-export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, priceHistory = null, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate() }: {
+export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, priceHistory = null, priceHistoryPending = priceHistory === null, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate() }: {
   company: Company; fundamentals: Fundamentals; sections: Sections; report: ReportMeta;
-  bondYield: number | null; priceHistory?: PriceHistory | null; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
+  bondYield: number | null; priceHistory?: PriceHistory | null; priceHistoryPending?: boolean; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
 }): Promise<Analysis> {
   // Reclassify old corpus enrichment, including payment networks previously marked as banks.
   if (company.industry) company = { ...company, kind: kindFor({ ...company, lending: fundamentals.years.at(-1) }) };
@@ -30,7 +30,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
       && year.dilutedShares !== null && year.dilutedShares > 0 ? close * year.dilutedShares / rate : null;
     return { ...year, marketCap };
   });
-  const numeric = runNumericTests({ years, kind: company.kind });
+  const numeric = runNumericTests({ years, kind: company.kind, priceHistoryPending: priceHistoryPending && rate !== null });
   const tests = {} as Analysis["tests"];
   const answers = fundamentals.integrity.ok ? await ask({ id: company.id, sections }) : [];
   for (const key of Object.keys(numeric) as Array<keyof typeof numeric>) {

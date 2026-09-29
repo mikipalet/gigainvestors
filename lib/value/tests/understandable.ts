@@ -13,7 +13,7 @@ export function run({ years }: NumericInput) {
   const losses = incomes.length < 5 ? null : incomes.filter(x => x < 0).length;
   return outcome({ key: "understandable", metrics: { historyYears: ys.length, revenueDeclines: declines, lossYears: losses, opMarginCv: cv },
     series: { revenue: ys.map(y => [y.fy, y.revenue]), operatingMargin: ys.map(y => [y.fy, opMargin(y)]), netIncome: ys.map(y => [y.fy, y.netIncome]) },
-    reasons: declines === null ? [] : [`${declines} revenue declines in the last ${T.understandable.years} years${declines <= T.understandable.maxRevenueDeclines ? " (informational)" : ""}`],
+    reasons: declines === null ? [] : [`${declines} revenue decline${declines === 1 ? '' : 's'} in the last ${T.understandable.years} years${declines <= T.understandable.maxRevenueDeclines ? " (informational)" : ""}`],
     checks: [
       { pass: ys.length >= T.understandable.years, data: "history length", reason: `only ${ys.length} years of history` },
       { pass: declines === null ? null : declines <= T.understandable.maxRevenueDeclines, data: "revenue declines", reason: `more than ${T.understandable.maxRevenueDeclines} revenue declines in ten years` },

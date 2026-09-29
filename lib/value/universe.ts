@@ -245,6 +245,7 @@ export function kindFor({ id, industry, lending }: {
   id?: string; sector: string | null; industry: string | null;
   lending?: { receivables: number | null; loans?: number | null; totalAssets: number | null };
 }): Kind {
+  if (/capital markets|financial data|stock exchanges|broker|securities/i.test(industry ?? "")) return "financial";
   if (/bank/i.test(industry ?? "")) return "bank";
   if (/^credit services$/i.test(industry ?? "") && id && T.kind.missingLoanBankIds.includes(id)
     && lending?.loans == null) return "bank";

@@ -4,7 +4,7 @@ import { useId } from 'react';
 import type { Valuation } from '@/lib/value/types';
 import { T } from '@/lib/value/config';
 import { perShareMoney } from '@/lib/value/metric-labels';
-import { compactMoney, niceTicks, scale } from '@/lib/value/viz/layout';
+import { axisTick, compactMoney, niceTicks, scale } from '@/lib/value/viz/layout';
 import { useWidth } from '@/lib/value/viz/use-width';
 import { DataTable } from './DataTable';
 import { ChartInteraction } from './ChartInteraction';
@@ -17,7 +17,7 @@ export function FootballField({ valuation: v, price, mismatch, requiredMos = T.p
   if (!validValueRange(v.perShare)) return <figure ref={ref}><figcaption><h2>Valuation unavailable</h2><p>The published scenarios are inconsistent. Price is not compared.</p></figcaption></figure>;
   const comparedPrice = mismatch || !Number.isFinite(mid) || mid <= 0 ? null : price;
   const buyBelow = mid * (1 - requiredMos);
-  const ticks = niceTicks([Math.min(0, low, buyBelow), Math.max(high, comparedPrice ?? 0) * 1.1], 4);
+  const ticks = niceTicks([Math.min(low,buyBelow,comparedPrice??low)*.8, Math.max(high, comparedPrice ?? 0)*1.15], width<480?3:5);
   const x = scale({ domain: [ticks[0], ticks.at(-1)!], range: [40, width - 40] });
   const money = (n: number) => perShareMoney(n, v.currency);
   const summary = `Estimated value ${low.toFixed(2)} to ${high.toFixed(2)} ${v.currency}, mid ${mid.toFixed(2)}; ${mismatch ?? (comparedPrice === null ? 'Comparable price and positive value required' : `price ${comparedPrice.toFixed(2)}; ${(comparedPrice / mid).toFixed(2)} times mid value`)}`;
@@ -36,13 +36,13 @@ export function FootballField({ valuation: v, price, mismatch, requiredMos = T.p
       <g><rect x={x(low)} y="64" width={Math.max(1, x(high) - x(low))} height="16"  fill={`url(#${gradient})`} /></g>
       <g><line x1={x(mid)} x2={x(mid)} y1="60" y2="84" stroke="var(--viz-ink)" strokeWidth="2" /></g>
       {comparedPrice !== null && <g><line x1={x(comparedPrice)} x2={x(comparedPrice)} y1="62" y2="94" stroke="var(--viz-ink)" strokeWidth="2" /><text x={Math.max(22, Math.min(width - 22, x(comparedPrice)))} textAnchor={x(comparedPrice) > width * .7 ? 'end' : x(comparedPrice) < width * .3 ? 'start' : 'middle'} y="14">Price {money(comparedPrice)}</text></g>}
-      {[{value:low,label:`Low ${low.toFixed(2)}`,y:34},{value:high,label:`${mid===high?'Mid / high':'High'} ${high.toFixed(2)}`,y:50},...(mid===high?[]:[{value:mid,label:`Mid ${mid.toFixed(2)}`,y:108}]),{value:buyBelow,label:`Buy ${buyBelow.toFixed(2)}`,y:132}].map(mark=>{
+      {[{value:low,label:`Low ${low.toFixed(2)}`,y:110},{value:high,label:`${mid===high?'Mid / high':'High'} ${high.toFixed(2)}`,y:50},...(mid===high?[]:[{value:mid,label:`Mid ${mid.toFixed(2)}`,y:34}]),{value:buyBelow,label:`Buy ${buyBelow.toFixed(2)}`,y:132}].map(mark=>{
         const tx=Math.max(60,Math.min(width-65,x(mark.value)));
         return <g key={mark.label}><line x1={x(mark.value)} x2={tx} y1={mark.y<60?64:84} y2={mark.y<60?mark.y+4:mark.y-10} stroke="var(--viz-muted)"/><text x={tx} y={mark.y} textAnchor="middle">{mark.label}</text></g>;
       })}
       {comparedPrice!==null&&<g><path d={`M${x(mid)},152v6H${x(comparedPrice)}v-6`} stroke="var(--ink)" fill="none"/><text x={Math.max(60,Math.min(width-60,(x(mid)+x(comparedPrice))/2))} y="174" textAnchor="middle">{(comparedPrice/mid).toFixed(2)}× mid</text></g>}
-      <line x1="22" x2={width - 22} y1="184" y2="184" stroke="var(--viz-grid)" />
-      {ticks.map(t => <g key={t}><line x1={x(t)} x2={x(t)} y1="184" y2="188" stroke="var(--viz-grid)" /><text className="viz-tick" x={x(t)} y="205" textAnchor="middle">{compactMoney(t)}</text></g>)}
+      {ticks[0]>0&&<text x="4" y="180" className="viz-tick">0 ⫽</text>}<line x1="22" x2={width - 22} y1="184" y2="184" stroke="var(--viz-grid)" />
+      {ticks.map(t => <g key={t}><line x1={x(t)} x2={x(t)} y1="184" y2="188" stroke="var(--viz-grid)" /><text className="viz-tick" x={x(t)} y="205" textAnchor="middle">{axisTick(t)}</text></g>)}
     </svg></ChartInteraction>
     <p className="source-line">Range from our assumptions, not a guarantee.</p>
     <AsOf date={date} fy={fy} />

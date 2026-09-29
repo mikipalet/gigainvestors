@@ -5,6 +5,9 @@ import { useSelectedLayoutSegment, usePathname } from 'next/navigation';
 import { valueHits, valueHitDetails, type ValueHit } from '@/lib/search/value-source';
 import { valueHref } from '@/lib/value/href';
 import type { SearchIndex } from "@/lib/types";
+import { Fragment } from 'react';
+import { displayName } from '@/lib/value/presentation';
+import { StatusGlyph } from '@/components/value/viz/StatusGlyph';
 import { plural } from "@/lib/format";
 import { slugOf } from "@/lib/slug";
 
@@ -14,8 +17,8 @@ let cached: Promise<SearchIndex> | null = null;
 const loadIndex = () => (cached ??= fetch("/api/search").then((r) => r.json() as Promise<SearchIndex>));
 
 // Press "/" anywhere. Investors, firms, tickers and company names.
-export function SearchTrigger({query = '', className = ''}: {query?:string;className?:string}) {
- return <button type="button" aria-label="Search companies" onClick={()=>window.dispatchEvent(new CustomEvent('open-search',{detail:query}))} className={`rounded-[3px] bg-paper px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 ${className}`}>search <span className="ml-1 opacity-60">/</span></button>;
+export function SearchTrigger({query = '', className = '', label = 'search'}: {query?:string;className?:string;label?:string}) {
+ return <button type="button" aria-label="Search companies" onClick={()=>window.dispatchEvent(new CustomEvent('open-search',{detail:query}))} className={`rounded-[3px] bg-paper px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 ${className}`}>{label} <span className="ml-1 opacity-60">/</span></button>;
 }
 export function Search() {
   const segment = useSelectedLayoutSegment(), pathname = usePathname();
@@ -72,7 +75,7 @@ export function Search() {
     return ()=>{current=false;clearTimeout(timer);};
   },[query,open,isValue]);
   const mainHits=useMemo(()=>(index?rank(index,query):[]),[index,query]);
-  const hits: Array<Hit|ValueHit> = isValue ? [...values,...mainHits] : mainHits;
+  const hits: Array<Hit|ValueHit> = isValue ? [...values,...mainHits.filter(h=>h.kind!=='stock'||!values.some(v=>(v.row[0]===`${h.ticker}.US`||v.listings?.includes(`${h.ticker}.US`))))] : mainHits;
 
 
   useEffect(()=>{document.getElementById(`search-hit-${sel}`)?.scrollIntoView({block:'nearest'});},[sel]);
@@ -147,22 +150,22 @@ export function Search() {
             {hits.length > 0 && (
               <ul id="search-results" role="listbox" className="max-h-[50vh] overflow-y-auto border-t border-ink/15 py-1">
                 {hits.map((h, i) => (
-                  <li
+                  <Fragment key={h.kind==='value'?h.row[0]:h.kind==='munger'?'munger':h.title}>{isValue&&(i===0||hits[i-1].kind==='value'&&h.kind!=='value')&&<li role="presentation" className="search-group">{h.kind==='value'?'Buffett checklist':'Superinvestor holdings'}</li>}<li
                     id={`search-hit-${i}`} role="option" aria-selected={i===sel}
                     key={h.kind === "value" ? h.row[0] : h.kind === "munger" ? "munger" : h.kind === "investor" ? `i${h.code}` : `s${h.ticker}`}
                     onMouseEnter={() => setSel(i)}
                     onClick={() => go(h)}
-                    className={`flex cursor-pointer items-center gap-3 px-4 py-2 text-[13px] ${i === sel ? "bg-ink text-paper" : ""}`}
+                    className={`${isValue&&h.kind==='value'?'value-search-row ':''}flex cursor-pointer items-center gap-3 px-4 py-2 text-[13px] ${i === sel ? "bg-ink text-paper" : ""}`}
                   >
                     {h.kind === "investor" && <img src={`/faces/png/v2/${slugOf(h.title)}.png`} width={26} height={32} alt="" className="-my-1 block shrink-0" />}
                     <span className="shrink-0 whitespace-nowrap font-semibold">{h.kind === "munger" ? "Charlie Munger" : h.title}</span>
-                    <span className="truncate opacity-60">{h.kind === "munger" ? "1924 – 2023" : h.kind==='value'?h.row[1]:h.sub}</span>
+                    <span className="truncate opacity-60" title={h.kind==='value'?displayName(h.row[1]):h.kind==='stock'?h.sub:undefined}>{h.kind === "munger" ? "1924 – 2023" : h.kind==='value'?displayName(h.row[1]):isValue?displayName(h.sub):h.sub}</span>
                     {h.kind==='value'&&<span className="shrink-0 opacity-60">{h.row[2]}</span>}
                     {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{plural(h.holders, "holder")}{!isValue && values.some(v=>v.row[0]===`${h.ticker}.US`&&v.row[3]==='a') && <a className="ml-2 underline" href={`https://value.gigainvestors.com/${h.ticker.toLowerCase()}.us`} onClick={e=>e.stopPropagation()}>Buffett checklist</a>}</span>}
-                    {h.kind === 'value' && <span className="ml-auto shrink-0 opacity-60" aria-label={h.tests?[...h.tests].map((t,i)=>`${['Understandable','Moat','Economics','Management','Accounting'][i]}: ${{P:'pass',F:'fail',U:'unclear',N:'not applicable'}[t]}`).join(', '):undefined} title={h.tests ? 'Understandable · Moat · Economics · Management · Accounting' : undefined}>{h.row[3]==='p' ? 'analysis pending' : h.tests ? [...h.tests].map(t=>({P:'●',F:'×',U:'○',N:'–'}[t])).join(' ') : 'analysed'}{h.ratio!=null && ` · ${h.ratio.toFixed(2)}×`}</span>}
+                    {h.kind === 'value' && <span className="value-search-status ml-auto shrink-0 opacity-60">{h.row[3]==='p'?'analysis pending':h.tests?.includes('C')?`checking ${[...h.tests].filter(t=>t==='C').length} test${[...h.tests].filter(t=>t==='C').length===1?'':'s'}`:h.tests?.includes('U')?'unclear':h.tests?<span className="inline-flex gap-1">{[...h.tests].map((t,j)=><StatusGlyph key={j} result={({P:'pass',F:'fail',C:'checking',U:'unclear',N:'na'} as const)[t as 'P']??'unclear'} label={`${['Understandable','Moat','Economics','Management','Accounting'][j]}: ${{P:'pass',F:'fail',C:'checking',U:'unclear',N:'not applicable'}[t]}`}/>)}</span>:'analysed'}{h.ratio!=null&&` · ${h.ratio.toFixed(2)}×`}{!!h.holders&&` · ${h.holders} holders`}</span>}
                     {h.kind === "investor" && <span className="ml-auto shrink-0 opacity-60">investor</span>}
                     {h.kind === "munger" && <span className="ml-auto shrink-0 opacity-60">the waiting</span>}
-                  </li>
+                  </li></Fragment>
                 ))}
               </ul>
             )}
@@ -171,4 +174,8 @@ export function Search() {
       )}
     </>
   );
+}
+
+export function SearchInput({query=''}:{query?:string}) {
+ return <input className="recovery-search" aria-label="Search companies" placeholder="Search company or ticker…" defaultValue={query} onFocus={e=>window.dispatchEvent(new CustomEvent('open-search',{detail:e.currentTarget.value}))}/>;
 }

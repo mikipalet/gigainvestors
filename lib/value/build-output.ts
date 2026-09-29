@@ -1,3 +1,5 @@
+import { assertIndexConsistency } from "./consistency";
+import { dossierReturn } from "./presentation";
 import { sameCurrency } from "./currency";
 import { createUsdRate } from "./fx";
 import { T } from "./config";
@@ -32,7 +34,7 @@ function emptyFunnel(): FunnelCounts {
       { key: "management", label: "Management" },
       { key: "accounting", label: "Accounting" },
       { key: "price", label: "Required margin of safety" },
-    ] satisfies Array<Pick<FunnelCounts["gates"][number], "key" | "label">>).map(gate => ({ ...gate, passing: 0, failsOnlyThis: 0 })),
+    ] satisfies Array<Pick<FunnelCounts["gates"][number], "key" | "label">>).map(gate => ({ ...gate, passing: 0, pass: 0, fail: 0, checking: 0, unclear: 0, failsOnlyThis: 0 })),
   };
 }
 
@@ -72,7 +74,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const valuation = tradingValuation(analysis, usdRate);
     const requiredMos = analysis.requiredMos ?? T.price.requiredMos.stable;
     const price = priceTest({ valuation, price: prices[analysis.id]?.[0] ?? null, requiredMos });
-    const passes = [...outcomes.map(test => test.result === "pass"), price.result === "pass"];
+    const passes = [...outcomes.map(test => analysis.status === "scored" && test.result === "pass"), analysis.status === "scored" && price.result === "pass"];
     // Price below its required MOS is a failed funnel gate even when priceTest
     // calls a positive but inadequate discount "unclear". Missing data is not a failure.
     const failures = [...outcomes.map(test => test.result === "fail"), price.result === "fail" || price.mos !== null && price.mos < requiredMos];
@@ -82,9 +84,14 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       if (population.asOf === null || analysis.asOf > population.asOf) population.asOf = analysis.asOf;
       let cumulative = true;
       population.gates.forEach((gate, i) => {
+        if (cumulative) {
+          if (passes[i]) { gate.passing++; gate.pass!++; }
+          else if (failures[i]) gate.fail!++;
+          else if (outcomes[i]?.pending && outcomes[i]?.result === 'unclear') gate.checking!++;
+          else gate.unclear!++;
+        }
         cumulative = cumulative && passes[i];
-        if (cumulative) gate.passing++;
-        if (failures[i] && passes.every((pass, j) => j === i || pass)) gate.failsOnlyThis++;
+        if (analysis.status === 'scored' && failures[i] && passes.slice(0, 5).every((pass, j) => j === i || pass)) gate.failsOnlyThis++;
       });
     }
     const dossier: Dossier = {
@@ -97,11 +104,14 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     (shards[shard] ??= {})[analysis.id] = dossier;
     const roic = (analysis.tests.moat.series.roic ?? []).slice(-T.history.years)
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
+    const returns=dossierReturn(analysis);
     const row: IndexRow = {
+      returnInfo:{...returns,sort:Number.isFinite(returns.sort)?returns.sort:returns.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},
+      fy: Math.max(0,...Object.values(analysis.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]))) || undefined,
       m: requiredMos, r: [...Array<number | null>(T.history.years - roic.length).fill(null), ...roic],
       id: analysis.id, n: company.name, c: company.country, s: company.sector, k: company.kind,
       mc: company.marketCapUsd, v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null,
-      cur: company.currency, t: outcomes.map((test) => test.result[0].toUpperCase()).join(""),
+      cur: company.currency, t: analysis.status!=="scored" ? "UUUUU" : outcomes.map((test) => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join(""),
       g: [...g].sort(), h: holders.length, st: analysis.status === "scored" ? "s" : "i",
     };
     rows.push(row);
@@ -112,7 +122,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     files[`prices/${country}.json`] = Object.fromEntries(countryRows.filter((row) => prices[row.id]).map((row) => [row.id, prices[row.id]]));
   }
   for (const [shard, dossiers] of Object.entries(shards)) files[`dossiers/${shard}.json`] = dossiers;
-  files["index/default.json"] = rows.filter((row) => row.st === "s" && (row.t === "PPPPP" || /^P*FP*$/.test(row.t)));
+  files["index/default.json"] = rows.filter((row) => row.st === "s" && (row.t === "PPPPP" || /^P*FP*$/.test(row.t) || /^[PCU]+$/.test(row.t)));
   files["top.json"] = rows.slice(0, 2000).map((row) => row.id);
   const versionCounts = new Map<string, { versions: Analysis["versions"]; count: number }>();
   for (const { versions } of analyses) {
@@ -129,5 +139,6 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     counts: { universe, analysed: rows.length, scored: rows.filter((row) => row.st === "s").length, insufficient: rows.filter((row) => row.st === "i").length },
     versions: common ? { ...common.versions, other: analyses.length - common.count } : null, tags,
   };
+  assertIndexConsistency({ meta: files["meta.json"] as import("./types").StoreMeta, rows: files["index/default.json"] as IndexRow[] });
   return { files };
 }

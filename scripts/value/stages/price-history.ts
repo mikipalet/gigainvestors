@@ -57,9 +57,12 @@ export default async function priceHistory({ only, limit, force = false }: { onl
         }
       }
       writeCorpusJson(`prices-history/${company.id}.json`, prices);
-      writeCorpusJson(`prices-history/meta/${company.id}.json`, { fetchedAt: now.toISOString() });
+      writeCorpusJson(`prices-history/meta/${company.id}.json`, { fetchedAt: now.toISOString(), failures: 0 });
       written++;
     } catch (error) {
+      let previous: { failures?: number } | null = null;
+      try { previous = readCorpusJson<{ failures?: number }>(`prices-history/meta/${company.id}.json`); } catch { /* Malformed metadata is already recorded as this attempt’s failure. */ }
+      writeCorpusJson(`prices-history/meta/${company.id}.json`, { failures: (previous?.failures ?? 0) + 1, attemptedAt: now.toISOString() });
       failures.record(company.id, error);
     }
   }

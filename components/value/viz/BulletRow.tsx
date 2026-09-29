@@ -3,7 +3,7 @@ import { formatMetric, type MetricFormat } from '@/lib/value/metric-labels';
 import { dataBarPath, scale } from '@/lib/value/viz/layout';
 import { ValueLink } from '../ValueLink';
 import { StatusGlyph } from './StatusGlyph';
-export function BulletRow({ label, value, threshold, better, strict, format, currency, resultOverride, nonNegative = false }: { label: string; value: number | null; threshold: number; better: 'higher' | 'lower'; strict?: boolean; format: MetricFormat; currency: string; resultOverride?: Result; nonNegative?: boolean }) {
+export function BulletRow({ label, value, threshold, better, strict, format, currency, resultOverride, nonNegative = false }: { label: string; value: number | null; threshold: number; better: 'higher' | 'lower'; strict?: boolean; format: MetricFormat; currency: string; resultOverride?: Result | 'checking'; nonNegative?: boolean }) {
   const result = resultOverride ?? (value === null ? 'unclear' : (better === 'higher' ? strict ? value > threshold : value >= threshold : strict ? value < threshold : value <= threshold) ? 'pass' : 'fail');
   const lo = Math.min(0, value ?? 0, threshold), hi = Math.max(0, value ?? 0, threshold);
   const pad = (hi - lo) * .15 || 1;

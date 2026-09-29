@@ -56,3 +56,10 @@ export function dataBarPath({ x, y, width, height, direction }: { x: number; y: 
   if (direction === 'up') return `M${x},${bottom}V${y+r}Q${x},${y} ${x+r},${y}H${right-r}Q${right},${y} ${right},${y+r}V${bottom}Z`;
   return `M${x},${y}V${bottom-r}Q${x},${bottom} ${x+r},${bottom}H${right-r}Q${right},${bottom} ${right},${bottom-r}V${y}Z`;
 }
+
+/** Axis labels use only the precision needed by the tick, independently of data cells. */
+export function axisTick(value: number) {
+  const magnitude=Math.abs(value);
+  const [unit,suffix]=magnitude>=1e12?[1e12,'T']:magnitude>=1e9?[1e9,'B']:magnitude>=1e6?[1e6,'M']:magnitude>=1e3?[1e3,'K']:[1,''];
+  return `${Number((value/Number(unit)).toPrecision(10))}${suffix}`;
+}

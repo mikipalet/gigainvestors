@@ -19,6 +19,7 @@ export function run({ years, kind }: NumericInput) {
   const name = financial ? "roe" : "roic";
   const label = financial ? "Return on tangible equity" : "ROIC";
   return outcome({ key: "moat", metrics: { [`${name}Median`]: typical, [`${name}SecondLowest`]: worst, grossMarginDrop: financial ? null : drop,
+    unlimitedYears: returns.filter(v=>v===Infinity).length,
     capexToRevenue: median(present(ys.map(y => ratio(y.capex, y.revenue)))) },
     series: { [name]: ys.map((y, i) => [y.fy, returns[i]]), grossMargin: ys.map(y => [y.fy, grossMargin(y)]) },
     checks: [

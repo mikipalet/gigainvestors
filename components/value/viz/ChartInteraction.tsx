@@ -3,7 +3,7 @@ import { useEffect, useId, useRef, useState, type ReactNode, type PointerEvent }
 
 export type ChartPoint = { x: number; y?: number; text: string; href?: string };
 /** A separate HTML focus layer keeps SVG decorative without hiding controls. */
-export function ChartInteraction({ points, width, height, label, children, onActive, fallback = '' }: { points: ChartPoint[]; width: number; height: number; label: string; children: ReactNode; onActive?: (index: number | null) => void; fallback?: string }) {
+export function ChartInteraction({ points, width, height, label, children, onActive, fallback = '', above = false }: { points: ChartPoint[]; width: number; height: number; label: string; children: ReactNode; onActive?: (index: number | null) => void; fallback?: string; above?: boolean }) {
   const [active, setActive] = useState<number | null>(null);
   const [roving, setRoving] = useState(0);
   const [pinned, setPinned] = useState(false);
@@ -45,8 +45,8 @@ export function ChartInteraction({ points, width, height, label, children, onAct
         })}</ul>
       </div>
     </div>
-    {active !== null && <svg className="chart-crosshair" aria-hidden="true" viewBox={`0 0 ${width} ${height}`} style={{height}}><line x1={points[active]?.x} x2={points[active]?.x} y1="8" y2={height-20} stroke="var(--viz-muted)"/>{points[active]?.y !== undefined && <circle cx={points[active].x} cy={points[active].y} r="4" fill="var(--ink)" stroke="var(--paper)" strokeWidth="2"/>}</svg>}
-    <p id={tipId} className={active === null ? 'chart-fallback' : 'viz-tooltip'} style={active === null ? undefined : {left: `${Math.max(0, Math.min(width-260,(points[active]?.x ?? 0)>width/2?(points[active]?.x ?? 0)-270:(points[active]?.x ?? 0)+12))}px`, top: Math.max(0, (points[active]?.y ?? height / 2) - 62)}} role={active === null ? undefined : 'tooltip'}>{active === null ? fallback : points[active]?.text}{active !== null && points[active]?.href && <> <a className="underline" href={points[active].href}>Open dossier</a></>}</p>
+    {active !== null && <svg className="chart-crosshair" aria-hidden="true" viewBox={`0 0 ${width} ${height}`} style={{height}}><line x1={points[active]?.x} x2={points[active]?.x} y1={above?-8:8} y2={height-20} stroke="var(--viz-muted)"/>{points[active]?.y !== undefined && <circle cx={points[active].x} cy={points[active].y} r="7" fill="none" stroke="var(--ink)" strokeWidth="2"/>}</svg>}
+    <p id={tipId} className={active === null ? 'chart-fallback' : 'viz-tooltip'} style={active === null ? undefined : {left: `${Math.max(0, Math.min(width-260,(points[active]?.x ?? 0)>width/2?(points[active]?.x ?? 0)-270:(points[active]?.x ?? 0)+12))}px`, top: above ? -105 : Math.max(0, (points[active]?.y ?? height / 2) - 62)}} role={active === null ? undefined : 'tooltip'}>{active === null ? fallback : points[active]?.text}{active !== null && points[active]?.href && <> <a className="underline" href={points[active].href}>Open dossier</a></>}</p>
     <span className="sr-only" aria-live="polite" aria-atomic="true">{active === null ? '' : points[active]?.text}</span>
   </div>;
 }

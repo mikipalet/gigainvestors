@@ -1,3 +1,6 @@
+import { getDossier, getPrice } from "@/lib/value/store";
+import { comparableValuation } from "@/lib/value/site-valuation";
+import { priceState } from "@/lib/value/presentation";
 import { notFound } from "next/navigation";
 import { getAllStockTickers, getIndex, getStock } from "@/lib/data";
 import { StockContent } from "@/components/AgentContent";
@@ -31,11 +34,15 @@ export default async function Page(props: { params: Promise<{ ticker: string }> 
   const [index, stock] = await Promise.all([getIndex(), getStock(ticker)]);
   if (!index || !stock || stock.quarters.length === 0) notFound();
   const investors = Object.fromEntries(index.investors.map((i) => [i.code, { slug: i.slug, person: i.person, sketch: i.sketch }]));
+  const dossier=await getDossier(`${ticker}.US`);
+  const quote=dossier?await getPrice(dossier.id,dossier.company.country):null;
+  const range=dossier?comparableValuation(dossier.valuation,dossier.company.currency):null;
+  const passing=dossier?Object.values(dossier.tests).filter(t=>t.key!=='price'&&t.result==='pass').length+(priceState({price:quote?.[0]??null,mid:range?.perShare.mid??null,requiredMos:dossier.requiredMos??.25}).state==='pass'?1:0):null;
   const people = Object.fromEntries(index.investors.map((i) => [i.code, i.person]));
   return (
     <>
       <StockContent stock={stock} people={people} />
-      <Stock stock={stock} investors={investors} />
+      <Stock stock={stock} investors={investors} checklist={passing!==null?{id:dossier!.id,passing}:undefined} />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import type { PriceMap } from './types';
-export const VALUE_DATA_URL = 'https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/';
+export const VALUE_DATA_URL = process.env.NEXT_PUBLIC_VALUE_DATA_URL ?? 'https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/';
 export async function fetchValueData<T>(file: string, signal?: AbortSignal): Promise<T> {
   const response = await fetch(`${VALUE_DATA_URL}${file}`, {signal, cache:'no-store'});
   if (!response.ok) throw new Error(`Value data unavailable (${response.status})`);

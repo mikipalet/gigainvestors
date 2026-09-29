@@ -1,5 +1,5 @@
 export type Id = string; // EODHD style "KO.US", "ASML.AS", "0700.HK"; Japan "8058.JP"
-export type Kind = "operating" | "bank" | "insurer";
+export type Kind = "operating" | "bank" | "insurer" | "financial";
 export type Result = "pass" | "fail" | "unclear" | "na";
 export type TestKey = "understandable" | "moat" | "economics" | "management" | "accounting" | "price";
 export const QUALITY_TESTS: TestKey[] = ["understandable", "moat", "economics", "management", "accounting"];
@@ -91,6 +91,8 @@ export interface JevAnswer {
 }
 
 export interface TestOutcome {
+  /** Unclear solely because an input fetch is still pending. */
+  pending?: boolean;
   key: TestKey;
   result: Result;
   numeric: Result;
@@ -163,7 +165,7 @@ export interface Dossier extends Analysis {
   series: Record<string, Series>; // Includes revenuePerShare, ownerEarningsPerShare and bookValuePerShare when available
 }
 
-// Compact index row. t = one char per quality test in QUALITY_TESTS order: P F U N.
+// Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
   returnInfo?: { label: string; note: string; sort: number };
   fy?: number;
@@ -186,7 +188,7 @@ export interface IndexRow {
 export type PriceMap = Record<Id, [number, string, "seed"?]>; // close, fetch/close ISO date, optional derived-price flag; trading currency
 
 export type NumericOutcome = Omit<TestOutcome, "jev" | "result">;
-export interface NumericInput { years: Year[]; kind: Kind }
+export interface NumericInput { years: Year[]; kind: Kind; priceHistoryPending?: boolean }
 
 export type JevQuestion =
   | { type: "noul"; instructions: string; criteria?: { true: string; false: string } }
@@ -204,8 +206,12 @@ export interface FunnelCounts {
   gates: Array<{
     key: TestKey;
     label: string;
+    pass?: number; // Same cumulative survivor count as passing; optional for legacy snapshots.
+    fail?: number;
+    checking?: number;
+    unclear?: number;
     passing: number; // Passes this gate and every preceding gate.
-    failsOnlyThis: number; // Confirmed failure here, passes all five other gates.
+    failsOnlyThis: number; // Confirmed failure here, passes all other QUALITY gates (price independent).
   }>;
 }
 

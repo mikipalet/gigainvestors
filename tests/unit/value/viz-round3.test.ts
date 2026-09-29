@@ -9,11 +9,11 @@ describe('research-driven chart contracts', () => {
     expect(cagr([[2016, 10], [2020, 20]])).toBeCloseTo(2 ** .25 - 1);
     expect(cagr([[2016, -10], [2020, 20]])).toBeNull();
   });
-  it('encloses positive log values with at most four clean ticks', () => {
+  it('encloses positive log values with clean 1–2–5 ticks at least 14px apart', () => {
     expect(logTicks([70, 118.3])).toEqual([50, 100, 200]);
     for (const domain of [[.001, 1000], [2, 3.4], [5, 5]] as [number, number][]) {
       const ticks = logTicks(domain);
-      expect(ticks.length).toBeLessThanOrEqual(4);
+      for(let i=1;i<ticks.length;i++) expect(Math.log(ticks[i]/ticks[i-1])/Math.log(ticks.at(-1)!/ticks[0])*166).toBeGreaterThanOrEqual(14);
       expect(ticks[0]).toBeGreaterThan(0);
       expect(ticks[0]).toBeLessThanOrEqual(domain[0]);
       expect(ticks.at(-1)).toBeGreaterThanOrEqual(domain[1]);

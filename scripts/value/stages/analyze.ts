@@ -1,4 +1,6 @@
-import { currentShareInputs, leaseInputs } from "../../../lib/value/valuation-inputs";
+import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
+import { checkIntegrity } from "../../../lib/value/integrity";
+import { currentShareInputs, leaseInputs, trailingInputs } from "../../../lib/value/valuation-inputs";
 import { readPrices } from "../../../lib/value/price-files";
 import { validCompanyId } from "../../../lib/value/companies";
 import { createHash } from "node:crypto";
@@ -56,9 +58,22 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
       const { company, fundamentals: cachedFundamentals } = jobs[cursor++];
       try {
         const raw = readCorpusJson<unknown>(`raw/eodhd/${company.id}.json`);
-        const fundamentals = raw ? { ...cachedFundamentals, years: cachedFundamentals.years.map(year => ({
-          ...year, ...leaseInputs(raw, year.end, company.country),
-        })) } : cachedFundamentals;
+        const normalized = raw ? normalizeEodhd(raw, company.id).fundamentals : null;
+        const mapped = new Map(normalized?.years.map(year => [year.end, year]));
+        const fundamentals = raw ? { ...cachedFundamentals, years: cachedFundamentals.years.map(year => {
+          const fresh = mapped.get(year.end);
+          return { ...year, ...leaseInputs(raw, year.end, company.country),
+            ...(fresh ? { currency: fresh.currency, cash: fresh.cash, totalDebt: fresh.totalDebt, clientAssets: fresh.clientAssets } : {}) };
+        }) } : cachedFundamentals;
+        if (raw) {
+          // Include a changed-currency suffix even when normalization has already truncated it.
+          if (normalized?.integrity.notes?.some(note => note.startsWith('reporting currency changed'))) {
+            fundamentals.years = fundamentals.years.filter(year => mapped.has(year.end));
+            fundamentals.integrity = { ...fundamentals.integrity, notes: [...new Set([...(fundamentals.integrity.notes ?? []), ...normalized.integrity.notes])] };
+          }
+          fundamentals.integrity = checkIntegrity(fundamentals, { source: company.source });
+          fundamentals.ttm = trailingInputs(raw, fundamentals.years.at(-1));
+        }
         const shareInputs = currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);
         const report = readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`) ?? {
           id: company.id, kind: "description", url: null, filed: null, period: null, sections: [],

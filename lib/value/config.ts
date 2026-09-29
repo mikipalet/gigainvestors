@@ -28,7 +28,7 @@ export const T = {
   accounting: { maxAccruals: 0.10, maxDsri: 1.465, minRedFlags: 2, maxRestructYears: 2, maxSbcToOcf: 0.15 },
   price: { requiredMos: { stable: 0.25, moderate: 0.35, volatile: 0.50 }, cvStable: 0.20 },
   history: { years: 10, refreshMs: 7 * 24 * 60 * 60 * 1000, acquisitionToAssets: 0.10, impairmentDrop: 0.20 },
-  valuation: { minDiscount: 0.10, bondSpread: 0.04, maxGrowth: 0.12, terminal: 0.03, finMaxGrowth: 0.06 },
+  valuation: { minDiscount: 0.10, bondSpread: 0.04, maxGrowth: 0.08, terminal: 0.03, finMaxGrowth: 0.06 },
   jev: { contradict: 0.7, trustAgreement: 0.85, evidence: 0.6, commodityCyclical: 0.6, chunkTokens: 24_000, minParagraphChars: 200 },
 } as const;
 

@@ -243,13 +243,17 @@ export function collapseListings(input: Listing[]): Array<{ primary: Id; listing
 
 export function kindFor({ id, industry, lending }: {
   id?: string; sector: string | null; industry: string | null;
-  lending?: { receivables: number | null; loans?: number | null; totalAssets: number | null };
+  lending?: { receivables: number | null; loans?: number | null; clientAssets?: number | null; cash?: number | null; equity?: number | null; totalAssets: number | null };
 }): Kind {
   if (/bank/i.test(industry ?? "")) return "bank";
   if (/^credit services$/i.test(industry ?? "") && id && T.kind.missingLoanBankIds.includes(id)
     && lending?.loans == null) return "bank";
-  if (/^credit services$/i.test(industry ?? "") && lending?.totalAssets != null && lending.totalAssets > 0
-    && ((lending.receivables ?? 0) + (lending.loans ?? 0)) / lending.totalAssets > T.kind.lendingAssetsRatio) return "bank";
+  // Brokers may report client cash among cash/investments rather than loan assets.
+  // Only infer that cash as client assets when it exceeds three times equity.
+  const clientAssets = lending?.clientAssets ?? (/^capital markets$/i.test(industry ?? "")
+    && (lending?.equity ?? 0) > 0 && (lending?.cash ?? 0) > 3 * lending!.equity! ? lending!.cash! : 0);
+  if (/^(credit services|capital markets)$/i.test(industry ?? "") && lending?.totalAssets != null && lending.totalAssets > 0
+    && ((lending.receivables ?? 0) + (lending.loans ?? 0) + clientAssets) / lending.totalAssets > T.kind.lendingAssetsRatio) return "bank";
   if (/insurance/i.test(industry ?? "")) return "insurer";
   return "operating";
 }

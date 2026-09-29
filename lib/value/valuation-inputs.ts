@@ -1,3 +1,4 @@
+import { sameCurrency } from './currency';
 import type { Year } from './types';
 
 const record = (value: unknown): Record<string, unknown> => value !== null && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {};
@@ -27,7 +28,7 @@ export function leaseInputs(raw: unknown, end: string, country = ''): Pick<Year,
   return { leaseLiabilities, leaseDepreciationIncluded };
 }
 
-export function currentShareInputs(raw: unknown, price: number | null, tradingCurrency: string): { currentShares: number | null; shareAssumptions: string[] } {
+export function currentShareInputs(raw: unknown, price: number | null, tradingCurrency: string): { currentShares: number | null; reportedShares: boolean; shareAssumptions: string[] } {
   const data = record(raw), general = record(data.General);
   const reported = number(record(data.SharesStats).SharesOutstanding);
   const cap = number(record(data.Highlights).MarketCapitalization);
@@ -38,7 +39,51 @@ export function currentShareInputs(raw: unknown, price: number | null, tradingCu
   const implied = compatible && cap !== null && cap > 0 && price !== null && price > 0 ? cap * units / price : null;
   const stats = reported !== null && reported > 0 ? reported : null;
   if (stats !== null && implied !== null && Math.max(stats / implied, implied / stats) > 1.5) {
-    return { currentShares: null, shareAssumptions: ['current share sources disagree by more than 1.5x; share count not corrected'] };
+    return { currentShares: null, reportedShares: false, shareAssumptions: ['current share sources disagree by more than 1.5x; share count not corrected'] };
   }
-  return { currentShares: stats ?? implied, shareAssumptions: [] };
+  return { currentShares: stats ?? implied, reportedShares: stats !== null, shareAssumptions: [] };
+}
+
+/** Totals win; otherwise retain every reported non-overlapping component. */
+export function balanceInputs(balance: Record<string, unknown>, leaseDeducted: boolean): Pick<Year, 'cash' | 'totalDebt' | 'clientAssets'> {
+  const long = number(balance.longTermDebtTotal) ?? number(balance.longTermDebt);
+  const short = number(balance.shortTermDebt) ?? number(balance.shortLongTermDebt);
+  const lease = leaseDeducted ? null : number(balance.capitalLeaseObligations);
+  const parts = [long, short, lease].filter((v): v is number => v !== null);
+  const cash = number(balance.cash) ?? number(balance.cashAndEquivalents);
+  const investments = number(balance.shortTermInvestments);
+  return {
+    cash: number(balance.cashAndShortTermInvestments) ?? (cash === null && investments === null ? null : (cash ?? 0) + (investments ?? 0)),
+    totalDebt: number(balance.shortLongTermDebtTotal) ?? (parts.length ? parts.reduce((a, b) => a + b, 0) : null),
+    clientAssets: number(balance.clientAssets) ?? number(balance.customerAssets) ?? number(balance.cashHeldForClients),
+  };
+}
+
+/** A separate trailing observation, never a synthetic fiscal year in the annual history. */
+export function trailingInputs(raw: unknown, latest: Year | undefined): Year | null {
+  if (!latest) return null;
+  const financials = record(record(raw).Financials);
+  const incomes = record(record(financials.Income_Statement).quarterly);
+  const flows = record(record(financials.Cash_Flow).quarterly);
+  const ends = Object.keys(incomes).filter(end => /^\d{4}-\d{2}-\d{2}$/.test(end)).sort().slice(-4);
+  if (ends.length !== 4 || ends[3] <= latest.end) return null;
+  const month = (end: string) => Number(end.slice(0, 4)) * 12 + Number(end.slice(5, 7));
+  if (ends.some((end, i) => i > 0 && month(end) - month(ends[i - 1]) !== 3)) return null;
+  const quarters = ends.map(end => {
+    const income = record(incomes[end]), cash = record(flows[end]);
+    if (!Object.keys(cash).length || [income, cash].some(row => typeof row.currency_symbol === 'string'
+      && latest.currency && !sameCurrency(row.currency_symbol, latest.currency))) return null;
+    const row = {
+      revenue: number(income.totalRevenue), netIncome: number(income.netIncome),
+      da: number(income.depreciationAndAmortization) ?? number(income.reconciledDepreciation) ?? number(cash.depreciation),
+      capex: number(cash.capitalExpenditures), sbc: number(cash.stockBasedCompensation), ocf: number(cash.totalCashFromOperatingActivities),
+    };
+    return { ...row, capex: row.capex === null ? null : Math.abs(row.capex) };
+  });
+  if (quarters.some(row => row === null)) return null;
+  const totals = Object.fromEntries(['revenue', 'netIncome', 'da', 'capex', 'sbc', 'ocf'].map(key => [key,
+    (key === 'sbc' ? quarters.every(row => row!.sbc === null)
+      : quarters.some(row => row![key as keyof typeof row] === null)) ? null
+      : quarters.reduce((sum, row) => sum + (row![key as keyof typeof row] ?? 0), 0)]));
+  return { ...latest, ...totals, sbcIncomplete: quarters.some(row => row!.sbc === null), end: ends[3] };
 }

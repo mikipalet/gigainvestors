@@ -66,7 +66,7 @@ it("restricts contradictions to their own test and uses commodity answers for cy
   const result = await analyzeCompany(args);
   expect(result.tests.moat.result).toBe("pass");
   expect(result.tests.moat.jev.every(a => QUESTIONS.find(q => q.id === a.q)?.test === "moat")).toBe(true);
-  expect(result.valuation!.assumptions).toContain("owner earnings normalized over 7 years");
+  expect(result.valuation!.assumptions).toContain("owner earnings normalized over 5 years");
 });
 it("caches bond yields per day, preserves concurrent countries, and converts FX minor units", async () => {
   vi.stubGlobal("fetch", async (url: string) => {
@@ -256,7 +256,7 @@ it("marks operating margin CV above 0.35 as cyclical without commodity exposure"
   args.fundamentals.years = makeYears({ overrides: (_, i) => ({ operatingIncome: i % 2 ? 50 : 200 }) });
   const result = await analyzeCompany(args);
   expect(result.tests.understandable.metrics.opMarginCv).toBeGreaterThan(0.35);
-  expect(result.valuation!.assumptions).toContain("owner earnings normalized over 7 years");
+  expect(result.valuation!.assumptions).toContain("owner earnings normalized over 5 years");
 });
 
 it("uses a commodity cutoff independent of the evidence threshold", async () => {
@@ -269,7 +269,7 @@ it("uses a commodity cutoff independent of the evidence threshold", async () => 
     args.fundamentals.years = makeYears();
     args.ask = async () => answers().map(a => a.q === "commodity" ? { ...a, value: 0.6 } : a);
     const result = await analyzeCompany(args);
-    expect(result.valuation!.assumptions).toContain("owner earnings normalized over 7 years");
+    expect(result.valuation!.assumptions).toContain("owner earnings normalized over 5 years");
   } finally { Object.assign(T.jev, { evidence: original }); }
 });
 
@@ -290,7 +290,7 @@ it("logs each failed company's error and still writes successful companies", asy
 
 it.each([
   { risk: 0.1, mean: 0.5, window: 5 },
-  { risk: 0.5, mean: 0.7, window: 7 },
+  { risk: 0.5, mean: 0.7, window: 5 },
 ])("uses aggregated commodity mean $mean across conflicting sections", async ({ risk, mean, window }) => {
   const { makeYears } = await import("./synthetic");
   vi.mocked(askJev).mockImplementation(async ({ state }) => ({
@@ -548,4 +548,29 @@ it('V3/V4 reads raw valuation inputs for old corpus files and invalidates their 
   writeCorpusJson('raw/eodhd/KO.US.json', raw);
   await analyze(options);
   expect(readCorpusJson<Analysis>('analysis/KO.US.json')!.valuation?.shares).toBe(2000);
+});
+
+it('W3/W5 refreshes cached annual currency and balance mappings from raw periods during analysis', async () => {
+  const args = input();
+  const raw = structuredClone(ko) as any;
+  const end = args.fundamentals.years.at(-1)!.end;
+  raw.Financials.Balance_Sheet.yearly[end].cashAndShortTermInvestments = null;
+  raw.Financials.Balance_Sheet.yearly[end].cash = '7000000000';
+  raw.Financials.Balance_Sheet.yearly[end].shortTermInvestments = '2000000000';
+  raw.Financials.Balance_Sheet.yearly[end].shortLongTermDebtTotal = null;
+  raw.Financials.Balance_Sheet.yearly[end].shortTermDebt = null;
+  raw.Financials.Balance_Sheet.yearly[end].shortLongTermDebt = null;
+  raw.Financials.Balance_Sheet.yearly[end].longTermDebtTotal = '1000000000';
+  raw.Financials.Balance_Sheet.yearly[end].capitalLeaseObligations = null;
+  appendJsonl('universe.jsonl', args.company);
+  writeCorpusJson('fundamentals/KO.US.json', args.fundamentals);
+  writeCorpusJson('raw/eodhd/KO.US.json', raw);
+  await analyze({ ask: async () => answers(), getBondYield: async () => .04, evidence: async () => null });
+  expect(readCorpusJson<Analysis>('analysis/KO.US.json')?.valuation?.netCash).toBe(8e9);
+  raw.Financials.Income_Statement.yearly[end].currency_symbol = 'CAD';
+  writeCorpusJson('raw/eodhd/KO.US.json', raw);
+  await analyze({ ask: async () => answers(), getBondYield: async () => .04, evidence: async () => null });
+  const changed = readCorpusJson<Analysis>('analysis/KO.US.json')!;
+  expect(changed.status).toBe('insufficient_data');
+  expect(changed.events?.some(event => event.kind === 'currency_change')).toBe(true);
 });

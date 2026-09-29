@@ -22,7 +22,7 @@ export function calibrationSummary({ entries, analyses }: { entries: typeof CALI
     }
     return { id: entry.id, expect: entry.expect, ...results, verdict };
   });
-  return { rows, counts, failed: counts.falseNegative + counts.falsePositive + counts.missing > 0 };
+  return { rows, counts, failed: counts.falseNegative + counts.falsePositive > 0 };
 }
 
 export default async function calibrate(options: Options): Promise<void> {

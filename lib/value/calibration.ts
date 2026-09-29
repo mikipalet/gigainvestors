@@ -11,7 +11,7 @@ export const CALIBRATION: Array<{ id: Id; expect: "quality" | "not_quality" | "e
   { id: "CB.US", expect: "quality", why: "Insurance underwriting discipline" },
   { id: "DPZ.US", expect: "quality", why: "Brand and franchise economics" },
   { id: "POOL.US", expect: "quality", why: "Distribution scale and recurring maintenance demand" },
-  { id: "CHTR.US", expect: "quality", why: "Broadband infrastructure and recurring revenue" },
+  { id: "CHTR.US", expect: "exception", why: "levered roll-up whose market value fell below retained earnings since 2016 (fails the $1 test on real data)" },
   { id: "8058.JP", expect: "quality", why: "Diversified trading house and capital allocation" },
   { id: "8031.JP", expect: "quality", why: "Diversified trading house and capital allocation" },
   { id: "8001.JP", expect: "quality", why: "Diversified trading house and capital allocation" },

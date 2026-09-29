@@ -493,3 +493,18 @@ it("C5 clears the stale bank kind of a payment network in saved analysis", async
   expect(result.company.kind).toBe("operating");
   expect(result.valuation?.method).toBe("owner_earnings");
 });
+
+it("allows missing and insufficient calibration rows while still reporting them", async () => {
+  const quality = await analyzeCompany(input());
+  for (const test of Object.values(quality.tests)) test.result = "pass";
+  const insufficient = { ...quality, status: "insufficient_data" as const };
+  const summary = calibrationSummary({ entries: [
+    { id: "KO.US", expect: "quality", why: "" },
+    { id: "MISSING", expect: "quality", why: "" },
+    { id: "SHORT", expect: "not_quality", why: "" },
+    { id: "CHTR.US", expect: "exception", why: "" },
+  ], analyses: new Map([["KO.US", quality], ["SHORT", insufficient], ["CHTR.US", quality]]) });
+  expect(summary.failed).toBe(false);
+  expect(summary.counts).toMatchObject({ truePositive: 1, missing: 2, exception: 1, falsePositive: 0, falseNegative: 0 });
+  expect(summary.rows.filter(row => row.verdict === "missing or insufficient data")).toHaveLength(2);
+});

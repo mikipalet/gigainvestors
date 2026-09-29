@@ -1,6 +1,7 @@
 import { mkdirSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
+import { additionalExchanges } from "../../../lib/value/universe-config";
 import { T } from "../../../lib/value/config";
 import { createUsdRate } from "../../../lib/value/fx";
 import { listExchanges, listSymbols, screenerPage, type ScreenerRow, type SymbolRow } from "../../../lib/value/eodhd";
@@ -19,7 +20,8 @@ export default async function universe(options: Options): Promise<void> {
     writeCorpusJson(rel, { date: today, data });
     return data;
   }
-  const exchanges = await cached("exchanges", listExchanges);
+  const discovered = await cached("exchanges", listExchanges);
+  const exchanges = [...discovered, ...additionalExchanges.filter((extra) => !discovered.some((exchange) => exchange.Code === extra.Code))];
   const skip = new Set(["MONEY", "EUFUND", "GBOND", "FOREX", "CC"]);
   const rows: Array<SymbolRow & { exchange: string; country: string }> = [];
   const caps = new Map<string, ScreenerRow>();
@@ -31,7 +33,7 @@ export default async function universe(options: Options): Promise<void> {
       if (!isCommonStock(row)) continue;
       const otc = /OTC|PINK|GREY|OTCQ|OTCBB/i.test(row.Exchange + " " + exchange.Code);
       if (otc && !(row.Isin?.startsWith("JP") && /\bADR\b|depositary|depository/i.test(row.Name))) continue;
-      rows.push({ ...row, exchange: exchange.Code, country: row.Isin?.slice(0, 2) ?? exchange.CountryISO2 });
+      rows.push({ ...row, exchange: exchange.Code, country: exchange.CountryISO2 });
     }
     for (let offset = 0; offset <= T.eodhd.screenerMaxOffset; offset += T.eodhd.screenerPageSize) {
       const page = await cached(`screener-${exchange.Code}-${offset}`, () => screenerPage({ offset, exchange: exchange.Code }));

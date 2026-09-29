@@ -25,7 +25,7 @@ describe("universe", () => {
     expect(collapseListings([
       { code: "ASME", exchange: "XETRA", isin: "NL0010273215", name: "ASML Holding NV" },
       { code: "ASML", exchange: "AS", isin: "NL0010273215", name: "ASML Holding NV" },
-    ])).toEqual([{ primary: "ASML.AS", listings: ["ASME.XETRA", "ASML.AS"] }]);
+    ])).toEqual([{ primary: "ASML.AS", listings: ["ASML.AS"] }]);
   });
   it("does not merge similarly named issuers from different countries", () => {
     expect(collapseListings([
@@ -86,10 +86,11 @@ it("writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs a
       row, { ...row, Code: "OTC", Exchange: "PINK", Isin: "US1234567890" },
       { ...row, Code: "JADR", Name: "Japanese ADR", Exchange: "PINK", Isin: "JP1234567890" },
     ]);
+    if (route === "exchange-symbol-list/HK") return Response.json([{ ...row, Code: "0700", Name: "Tencent Holdings Ltd", Exchange: "HK", Currency: "HKD", Isin: "KYG875721634" }]);
     if (route === "exchange-symbol-list/AS") return Response.json([{ ...row, Code: "ASML", Name: "ASML", Exchange: "AS", Currency: "EUR", Isin: "NL0010273215" }]);
     if (route === "screener") {
       const exchange = JSON.parse(url.searchParams.get("filters")!)[0][2];
-      const data = url.searchParams.get("offset") === "0" ? exchange === "US" ? [{ code: "KO", exchange: "US", market_capitalization: 100 }] : [{ code: "ASML", exchange: "AS", market_capitalization: 200 }] : [];
+      const data = url.searchParams.get("offset") === "0" ? exchange === "HK" ? [] : exchange === "US" ? [{ code: "KO", exchange: "US", market_capitalization: 100 }] : [{ code: "ASML", exchange: "AS", market_capitalization: 200 }] : [];
       return Response.json({ data });
     }
     if (route === "eod/EURUSD.FOREX") return Response.json([{ close: 1.2 }]);
@@ -100,10 +101,11 @@ it("writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs a
     expect(readJsonl("universe.jsonl")).toMatchObject([
       { id: "ASML.AS", marketCapUsd: 240, country: "NL" },
       { id: "KO.US", marketCapUsd: 100, country: "US" },
-      { id: "JADR.US", marketCapUsd: null, country: "JP" },
+      { id: "0700.HK", marketCapUsd: null, country: "HK" },
+      { id: "JADR.US", marketCapUsd: null, country: "US" },
     ]);
     vi.stubGlobal("fetch", () => { throw new Error("Cached run must stay offline"); });
     await stage({});
-    expect(readJsonl("universe.jsonl")).toHaveLength(3);
+    expect(readJsonl("universe.jsonl")).toHaveLength(4);
   } finally { rmSync(directory, { recursive: true, force: true }); }
 });

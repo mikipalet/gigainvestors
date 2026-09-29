@@ -1,0 +1,92 @@
+import { describe, expect, it } from "vitest";
+import { collapseListings, normalizedName } from "../../../lib/value/universe";
+
+const row = (id: string, name: string, isin: string | null = "US0000000001") => {
+  const dot = id.lastIndexOf(".");
+  return { code: id.slice(0, dot), exchange: id.slice(dot + 1), name, isin };
+};
+
+describe("venue, receipt and ADR collapse", () => {
+  it.each(["CDR", "BDR", "DRN", "NVDR", "DR", "CEDEAR", "(CAD Hedged)"])("drops %s receipts", (suffix) => {
+    expect(collapseListings([row("NVDA.TO", `NVIDIA ${suffix}`)])).toEqual([]);
+  });
+  it("drops coded Brazilian/Thai receipts and foreign Argentine listings", () => {
+    const rows = [row("NVDC34.SA", "NVIDIA"), row("ASML01.BK", "ASML"), row("TOYOTA80.BK", "Toyota"), row("TSM.BA", "TSMC")];
+    expect(collapseListings(rows)).toEqual([]);
+    expect(collapseListings([row("PETR4.SA", "Petrobras", "BR0000000001"), row("LOCAL.BA", "Local", "AR0000000001")])).toHaveLength(2);
+  });
+  it.each(["Pref", "Preferred", "Pfd"])("drops %s share classes", (suffix) => {
+    expect(collapseListings([row("005935.KO", `Samsung ${suffix}`, "KR0000000001")])).toEqual([]);
+  });
+  it("drops Korean ...5 only when a same-name ...0 exists", () => {
+    expect(collapseListings([row("005935.KO", "Samsung", "KR0000000002"), row("005930.KO", "Samsung", "KR0000000001")]))
+      .toEqual([{ primary: "005930.KO", listings: ["005930.KO"] }]);
+    expect(collapseListings([row("123455.KQ", "Independent", "KR0000000003")])).toHaveLength(1);
+  });
+  it.each(["F", "STU", "MU", "HA", "DU", "HM", "BE", "XETRA", "SW", "NEO", "MX", "SN", "LIM", "BA", "BK", "VI", "LU"])("drops foreign and unknown ISIN listings on %s", (venue) => {
+    expect(collapseListings([row(`XYZ.${venue}`, "Foreign"), row(`UNK.${venue}`, "Unknown", null)])).toEqual([]);
+  });
+  it("restricts LSE removal to IOB style codes", () => {
+    expect(collapseListings([row("0ABC.LSE", "US one"), row("1234A.LSE", "US two"), row("MAIN.LSE", "US three")]))
+      .toEqual([{ primary: "MAIN.LSE", listings: ["MAIN.LSE"] }]);
+  });
+  it("keeps only the main offshore listing on restricted venues", () => {
+    expect(collapseListings([row("0Z4S.LSE", "Tencent", "KYG875721634"), row("0700.HK", "Tencent", "KYG875721634")]))
+      .toEqual([{ primary: "0700.HK", listings: ["0700.HK"] }]);
+    expect(collapseListings([row("MAIN.SW", "Offshore", "JE0000000001")])).toHaveLength(1);
+  });
+  it("prefers a domicile home venue before offshore priorities and deprioritizes secondary venues", () => {
+    expect(collapseListings([row("ASML.US", "ASML", "NL0010273215"), row("ASML.AS", "ASML", "NL0010273215")])[0].primary).toBe("ASML.AS");
+    expect(collapseListings([row("ABC.SW", "Offshore", "KY0000000001"), row("ABC.AU", "Offshore", "KY0000000001")])[0].primary).toBe("ABC.AU");
+    expect(collapseListings([row("SHOP.US", "Shopify", "CA82509L1076"), row("SHOP.TO", "Shopify", "CA82509L1076")])[0].primary).toBe("SHOP.TO");
+  });
+  it.each(["Taiwan Semiconductor Manufacturing", "Taiwan Semiconductor Manufacturing Sponsored ADR", "Taiwan Semiconductor Manufacturing New York Registry Shares"])("merges US receipt %s into its home listing", (name) => {
+    const groups = collapseListings([row("TSM.US", name, "US8740391003"), row("2330.TW", "Taiwan Semiconductor Manufacturing Co. Ltd.", "TW0002330008")]);
+    expect(groups).toEqual([{ primary: "2330.TW", listings: ["TSM.US", "2330.TW"] }]);
+  });
+  it("normalizes punctuated suffixes and retains standalone ADRs without inventing a home", () => {
+    expect(collapseListings([row("ASML.US", "ASML Holding N.V. New York Registry Shares", "USN070592100"), row("ASML.AS", "ASML Holding N.V.", "NL0010273215")])[0].primary).toBe("ASML.AS");
+    expect(collapseListings([row("TM.US", "Toyota Motor Corporation ADR", "US8923313071")])).toEqual([{ primary: "TM.US", listings: ["TM.US"] }]);
+  });
+});
+
+it("attaches missing-ISIN listings and foreign US-ISIN receipts to a unique known home", () => {
+  expect(collapseListings([
+    row("BC94.LSE", "Samsung Electronics Co. Ltd", null),
+    row("SMSN.LSE", "Samsung Electronics Co. Ltd", "US7960508882"),
+    row("005930.KO", "Samsung Electronics Co Ltd", "KR7005930003"),
+  ])).toEqual([{ primary: "005930.KO", listings: ["BC94.LSE", "SMSN.LSE", "005930.KO"] }]);
+  expect(collapseListings([row("ITX.WAR", "Inditex", null), row("ITX.MC", "Inditex SA", "ES0148396007")])[0].primary).toBe("ITX.MC");
+});
+
+it("keeps the US ADR primary when an exact-name foreign listing has no home venue", () => {
+  expect(collapseListings([row("TYT.LSE", "Toyota Motor Corp", "JP3633400001"), row("TM.US", "Toyota Motor Corporation ADR", "US8923313071")]))
+    .toEqual([{ primary: "TM.US", listings: ["TYT.LSE", "TM.US"] }]);
+});
+
+it("collapses Rio Tinto's dual domicile before matching its ADR", () => {
+  expect(collapseListings([
+    row("RIO.AU", "Rio Tinto Ltd", "AU000000RIO1"), row("RIO.LSE", "Rio Tinto PLC", "GB0007188757"), row("RIO.US", "Rio Tinto ADR", "US7672041008"),
+  ])).toEqual([{ primary: "RIO.AU", listings: ["RIO.AU", "RIO.LSE", "RIO.US"] }]);
+});
+
+it("does not attach an ADR to ambiguous homes with the same normalized name", () => {
+  expect(collapseListings([row("ABC.US", "Example ADR", "US0000000001"), row("ABC.MC", "Example SA", "ES0000000001"), row("ABC.AS", "Example NV", "NL0000000001")])).toHaveLength(3);
+});
+
+
+it("normalizes legal suffixes and class labels without erasing the issuer", () => {
+  for (const suffix of ["Ltd", "Limited", "Co", "Company", "Corp", "Corporation", "Inc", "PLC", "AG", "S.A.", "N.V.", "SE", "SpA", "ASA", "AB", "Oyj", "Holdings", "Holding", "Group", "ADR", "Sponsored", "New York Registry Shares", "Class A", "Class B", "Cl A", "Cl B"]) {
+    expect(normalizedName(`Example ${suffix}`)).toBe("example");
+  }
+});
+
+it("never promotes a last-resort venue above another retained venue", () => {
+  expect(collapseListings([row("ABC.SA", "Example", "BR0000000001"), row("ABC.AU", "Example", "BR0000000001")])[0].primary).toBe("ABC.AU");
+});
+
+it("uses offshore venue priority independently of input order", () => {
+  const rows = [row("ABC.US", "Example", "KY0000000001"), row("ABC.TW", "Example", "KY0000000001"), row("ABC.HK", "Example", "KY0000000001")];
+  expect(collapseListings(rows)[0].primary).toBe("ABC.HK");
+  expect(collapseListings(rows.reverse())[0].primary).toBe("ABC.HK");
+});

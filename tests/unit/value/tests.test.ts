@@ -33,7 +33,7 @@ describe("numeric quality tests", () => {
   it("fails unstable operating margins", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ operatingIncome: i % 2 ? 10 : 200 }) })).understandable.numeric).toBe("fail");
   });
-  it("requires ten years for predictability", () => expect(run(makeYears({ n: 9 })).understandable.numeric).toBe("unclear"));
+  it("requires ten years for predictability", () => expect(run(makeYears({ n: 9 })).understandable.numeric).toBe("fail"));
   it("fails three percent annual dilution", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ dilutedShares: 10 * 1.03 ** i }) })).management.numeric).toBe("fail");
   });

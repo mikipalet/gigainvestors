@@ -6,7 +6,25 @@ export const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
 export const mean = (xs: number[]): number | null => xs.length ? sum(xs) / xs.length : null;
 export const clamp = (input: { value: number; min: number; max: number }) => Math.max(input.min, Math.min(input.max, input.value));
 export const ratio = (a: number | null, b: number | null): number | null => a === null || b === null || b <= 0 ? null : a / b;
-export const last = (years: Year[], n: number) => [...years].sort((a, b) => a.fy - b.fy).slice(-n);
+// Only infer zero for optional line items when the containing statement exists.
+export function withZeroDefaults(years: Year[]): Year[] {
+  return years.map(y => ({
+    ...y,
+    ...(y.totalAssets !== null ? {
+      goodwill: y.goodwill ?? 0, intangibles: y.intangibles ?? 0,
+      inventory: y.inventory ?? 0, totalDebt: y.totalDebt ?? 0,
+    } : {}),
+    ...(y.ocf !== null ? {
+      dividendsPaid: y.dividendsPaid ?? 0, buybacks: y.buybacks ?? 0,
+      acquisitions: y.acquisitions ?? 0, sbc: y.sbc ?? 0,
+    } : {}),
+  }));
+}
+export function last(years: Year[], n: number): Year[] {
+  const sorted = [...years].sort((a, b) => a.fy - b.fy);
+  const latest = sorted.at(-1);
+  return latest ? sorted.filter(y => y.fy > latest.fy - n) : [];
+}
 export function median(xs: number[]): number | null {
   if (!xs.length) return null;
   const sorted = [...xs].sort((a, b) => a - b);

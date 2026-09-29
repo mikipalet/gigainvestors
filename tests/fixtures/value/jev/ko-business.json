@@ -1,0 +1,66 @@
+{
+  "recordedAt": "2026-09-29T10:41:30.058Z",
+  "source": "EODHD KO.US General.Description",
+  "request": {
+    "model": "jev-latest",
+    "state": "The Coca-Cola Company, a beverage company, manufactures and sells various nonalcoholic beverages in the United States and internationally. The company provides Trademark Coca-Cola, sparkling soft drinks and flavors; water, sports, coffee, and tea; juice, value-added dairy, and plant-based beverages; and emerging beverages. It also offers beverage concentrates and syrups, as well as fountain syrups to fountain retailers comprising restaurants and convenience stores. The company sells its products under the Coca-Cola, Diet Coke/Coca-Cola Light, Coca-Cola Zero Sugar, caffeine free Diet Coke, Cherry Coke, Fanta, Sprite, Simply, Fanta Orange, Fanta Zero Orange, Fanta Zero Sugar, Fanta Apple, Sprite Zero Sugar, Simply Orange, Simply Apple, Simply Grapefruit, Fresca, Schweppes, Thums Up, Aquarius, Ayataka, BODYARMOR, Ciel, Costa, Crystal, Dasani, Fuze Tea, Georgia, glacéau smartwater, glacéau vitaminwater, Gold Peak, I LOHAS, Powerade, Topo Chico, Core Power, Del Valle, fairlife, innocent, Maaza, Minute Maid, Minute Maid Pulpy, Santa Clara, and dogadan brands. It operates through a network of independent bottling partners, distributors, wholesalers, and retailers, as well as through bottling and distribution operators. The Coca-Cola Company was founded in 1886 and is headquartered in Atlanta, Georgia.",
+    "questions": {
+      "same_10y": {
+        "type": "noul",
+        "instructions": "Based on the business described, is the core product likely to remain recognisably the same in ten years? Judge product durability, without calculating or comparing dates."
+      },
+      "brand": {
+        "type": "noul",
+        "instructions": "Does the text describe brand recognition or loyalty as a competitive advantage?"
+      },
+      "commodity": {
+        "type": "noul",
+        "instructions": "Does the described revenue model depend on commodity prices?"
+      },
+      "revenue_model": {
+        "type": "choice",
+        "instructions": "Which revenue model best describes the business?",
+        "criteria": {
+          "recurring": "Contractual recurring revenue or subscriptions",
+          "repeat_consumable": "Consumable products bought repeatedly without a subscription",
+          "transactional": "Separate non-recurring transactions",
+          "project": "Bespoke projects or contracts",
+          "commodity": "Commodity production or trading"
+        }
+      }
+    }
+  },
+  "response": {
+    "model": "jev-1.13.0",
+    "answers": {
+      "same_10y": {
+        "type": "noul",
+        "noul": 0.87
+      },
+      "brand": {
+        "type": "noul",
+        "noul": 0.05
+      },
+      "commodity": {
+        "type": "noul",
+        "noul": 0.57
+      },
+      "revenue_model": {
+        "type": "choice",
+        "choice": "repeat_consumable",
+        "confidence": 1,
+        "probabilities": {
+          "transactional": 0,
+          "recurring": 0,
+          "project": 0,
+          "commodity": 0,
+          "repeat_consumable": 1
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 773,
+      "output_tokens": 120
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { storyFromFunnel } from "./story";
 import { valuationFlags } from "./data-quality";
 import { assertIndexConsistency } from "./consistency";
 import { dossierReturn } from "./presentation";
@@ -114,7 +115,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       returnInfo:{...returns,sort:Number.isFinite(returns.sort)?returns.sort:returns.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},
       fy: Math.max(0,...Object.values(analysis.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]))) || undefined,
       m: requiredMos, r: [...Array<number | null>(T.history.years - roic.length).fill(null), ...roic],
-      id: analysis.id, n: company.name, c: company.country, s: company.sector, k: company.kind,
+      id: analysis.id, n: company.nameEn ?? company.name, lg: company.logo ?? null, c: company.country, s: company.sector, k: company.kind,
       mc: company.marketCapUsd, v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null,
       cur: company.currency, t,
       g: [...g].sort(), h: holders.length, st: analysis.status === "scored" ? "s" : "i",
@@ -141,6 +142,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   files["meta.json"] = {
     asOf: analyses.map((analysis) => analysis.asOf).sort().at(-1) ?? null,
     funnel,
+    story: storyFromFunnel(funnel),
     counts: { universe, analysed: rows.length, scored: rows.filter((row) => row.st === "s").length, insufficient: rows.filter((row) => row.st === "i").length },
     versions: common ? { ...common.versions, other: analyses.length - common.count } : null, tags,
   };

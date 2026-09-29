@@ -1,3 +1,4 @@
+import { enrichedCompany } from "./enrichment";
 import { readCorpusJson, readJsonl } from "./corpus";
 import type { Company } from "./types";
 
@@ -19,7 +20,7 @@ export function loadCompanies({ only, limit, onError }: {
         const enriched = readCorpusJson<Partial<Company>>(`companies/${company.id}.json`);
         // Missing and null enrichment must not erase known universe values.
         const overlay = Object.fromEntries(Object.entries(enriched ?? {}).filter(([, value]) => value != null));
-        return withEnglishName(mergeCompany(company, overlay));
+        return enrichedCompany(withEnglishName(mergeCompany(company, overlay)), true);
       } catch (error) {
         if (!onError) throw error;
         onError(company, error);

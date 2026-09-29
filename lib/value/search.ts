@@ -11,12 +11,12 @@ function nameWords(name: string): string[] {
 }
 
 function aliases(company: Company): string[] {
-  return [...new Set([company.code, ...company.listings.map(id => id.slice(0, id.lastIndexOf("."))), company.isin ?? ""]
+  return [...new Set([company.code, ...company.listings.map(id => id.slice(0, id.lastIndexOf("."))), company.isin ?? "", company.nameLocal ?? company.nativeName ?? ""]
     .map(normalizeSearch).filter(Boolean))].sort();
 }
 
 export function searchTokens(company: Company): string[] {
-  return [...new Set([...nameWords(company.name), ...aliases(company)])];
+  return [...new Set([...nameWords(company.nameEn ?? company.name), ...nameWords(company.nameLocal ?? company.nativeName ?? ""), ...aliases(company)])];
 }
 
 /** Legacy base-prefix helper. Clients must use shardKeyFor(query, manifest). */
@@ -52,7 +52,7 @@ export function buildAdaptiveSearchShards(companies: Company[], analysed: Readon
   const entries: Entry[] = [...companies].sort((a, b) => a.id.localeCompare(b.id)).map(company => {
     const cap = company.marketCapUsd;
     return {
-      row: [company.id, company.name, company.country, analysed.has(company.id) ? "a" : "p",
+      row: [company.id, company.nameEn ?? company.name, company.country, analysed.has(company.id) ? "a" : "p",
         cap != null && Number.isFinite(cap) ? Number(cap.toPrecision(2)) : null],
       cap: cap != null && Number.isFinite(cap) ? cap : -Infinity,
       tokens: searchTokens(company), codes: aliases(company),
@@ -93,6 +93,19 @@ export function buildAdaptiveSearchShards(companies: Company[], analysed: Readon
         .map(entry => ({ ...entry, codes: entry.codes.filter(code => code.startsWith(prefix)) })));
     }
   }
+  // Non-Latin aliases use UTF-8-safe filenames and the same 60 KB budget.
+  const local = entries.filter(e => e.codes.some(code => /^\p{L}/u.test(code) && !SEARCH_KEYS.includes(code[0])));
+  const firsts = new Set(local.flatMap(e => e.codes.filter(code => /^\p{L}/u.test(code) && !SEARCH_KEYS.includes(code[0])).map(code => [...code][0])));
+  function visitLocal(prefix: string, matching: Entry[]): void {
+    const key = 'u' + [...prefix].map(c=>c.codePointAt(0)!.toString(16)).join('_');
+    (manifest.localPrefixes ??= {})[prefix] = key;
+    const data = payload(matching);
+    if (rawBytes(data) <= MAX_SHARD_BYTES) { shards[key] = data; return; }
+    head(key, matching);
+    const next = new Set(matching.flatMap(e=>e.codes.filter(c=>c.startsWith(prefix) && c.length>prefix.length).map(c=>[...c.slice(prefix.length)][0])));
+    for (const char of next) visitLocal(prefix+char, matching.filter(e=>e.codes.some(c=>c.startsWith(prefix+char))));
+  }
+  for (const first of firsts) visitLocal(first, local.filter(e=>e.codes.some(c=>c.startsWith(first))));
   manifest.split.sort();
   return { shards, manifest };
 }

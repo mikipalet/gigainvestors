@@ -33,11 +33,18 @@ trap 'exit 130' INT
 trap 'exit 143' TERM
 run_stage() {
   local stage="$1" code
-  echo "$(date -u +%FT%TZ) starting $stage"
-  node --import tsx scripts/value/cli.ts "$stage" >> "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log" 2>&1
+  shift
+  echo "$(date -u +%FT%TZ) starting $stage $*"
+  node --import tsx scripts/value/cli.ts "$stage" "$@" >> "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log" 2>&1
   code=$?
   echo "$(date -u +%FT%TZ) $stage exit=$code" | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log"
   return "$code"
+}
+run_japan() {
+  local from
+  from=$(node --import tsx scripts/value/daily-japan.ts prepare "$cycle_date") || return 1
+  run_stage japan "--from=$from" "--to=$cycle_date" || return $?
+  node --import tsx scripts/value/daily-japan.ts complete "$cycle_date"
 }
 wait_until_next_run() {
   local delay
@@ -49,10 +56,14 @@ if [[ "${1:-}" != "--once" && -n "${1:-}" ]]; then echo 'Usage: run-daily.sh [--
 if [[ "${1:-}" != "--once" ]]; then wait_until_next_run; fi
 while true; do
   cycle_date=$(date -u +%F)
+  # Import JP issuers before both unfiltered quote stages; paid budget order stays intact.
+  run_japan 2>> "$VALUE_CORPUS_DIR/logs/$cycle_date-japan.log" || :
   run_stage prices || :
   run_stage price-history || :
   run_stage fundamentals || :
   run_stage renormalize || :
+  # EDINET reparsing needs the newly fetched Yahoo history for split checks.
+  run_stage renormalize-edinet || :
   run_stage dedupe || :
   run_stage price-seed || :
   run_stage reports || :

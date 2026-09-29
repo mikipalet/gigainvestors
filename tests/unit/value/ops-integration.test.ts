@@ -82,13 +82,68 @@ it('counts only universe members and only todays Jev usage', () => {
   appendJsonl('jev-usage.jsonl', { at: '2026-09-29T00:00:00Z', input_tokens: 10 });
   expect(collectStatus()).toMatchObject({ universe: 3, fundamentals: 1, analysed: 1, reports: { '10-K': 1 }, published: { count: 2 }, prices: { eodhd: 1, yahoo: 1, seed: 1, missing: 0 }, jevTokens: 10 });
 });
+function runner({ analyzeFails = false, japanFails = false, japanSkipped = false } = {}) {
+  const bin = path.join(root, 'bin'); mkdirSync(bin, { recursive: true });
+  // Stub only paid/publishing stage processes; execute runner bookkeeping with real node.
+  writeFileSync(path.join(bin, 'node'), `#!${process.execPath}
+const fs = require('node:fs');
+const { spawnSync } = require('node:child_process');
+const args = process.argv.slice(2);
+if (args[2] !== 'scripts/value/cli.ts') {
+  const result = spawnSync(${JSON.stringify(process.execPath)}, args, { stdio: 'inherit' });
+  process.exit(result.status ?? 1);
+}
+const [stage, ...flags] = args.slice(3);
+fs.appendFileSync(process.env.VALUE_CORPUS_DIR + '/stages', JSON.stringify([stage, ...flags]) + '\\n');
+if (stage === 'japan' && !${japanSkipped}) {
+  const from = flags.find(f => f.startsWith('--from=')).slice(7);
+  const to = flags.find(f => f.startsWith('--to=')).slice(5);
+  fs.mkdirSync(process.env.VALUE_CORPUS_DIR + '/raw/edinet', { recursive: true });
+  fs.writeFileSync(process.env.VALUE_CORPUS_DIR + '/raw/edinet/summary.json', JSON.stringify({ from, to, errors: ${japanFails} ? [{ id: '8058.JP' }] : [] }));
+}
+process.exit(stage === 'prices' || (stage === 'analyze' && ${analyzeFails}) || (stage === 'japan' && ${japanFails}) ? 1 : 0);
+`, { mode: 0o755 });
+  return () => execFileSync('bash', ['scripts/value/run-daily.sh', '--once'], { env: { ...process.env, PATH: `${bin}:${process.env.PATH}` }, stdio: 'pipe' });
+}
+const stageCalls = (): string[][] => readFileSync(path.join(root, 'stages'), 'utf8').trim().split('\n').map(line => JSON.parse(line));
 it.each([true, false])('runner continues after failures and gates publish on analyze: %s', analyzeFails => {
-  const bin = path.join(root, 'bin'); mkdirSync(bin);
-  // Stage process boundary: no paid network or real publish commands in this test.
-  writeFileSync(path.join(bin, 'node'), `#!/usr/bin/env bash\nif [[ "$1" == "-e" ]]; then echo "$VALUE_CORPUS_DIR"; exit 0; fi\necho "$4" >> "$VALUE_CORPUS_DIR/stages"\n[[ "$4" == "prices" ]] && exit 1\n[[ "$4" == "analyze" && "${analyzeFails}" == "true" ]] && exit 1\nexit 0\n`, { mode: 0o755 });
-  execFileSync('bash', ['scripts/value/run-daily.sh', '--once'], { env: { ...process.env, PATH: `${bin}:${process.env.PATH}` }, stdio: 'pipe' });
-  const stages = readFileSync(path.join(root, 'stages'), 'utf8').trim().split('\n');
-  expect(stages).toEqual(['prices', 'price-history', 'fundamentals', 'renormalize', 'dedupe', 'price-seed', 'reports', 'analyze', ...(analyzeFails ? [] : ['publish']), 'status']);
+  runner({ analyzeFails })();
+  const calls = stageCalls();
+  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'analyze', ...(analyzeFails ? [] : ['publish']), 'status']);
+  // No --only or --limit: newly imported JP issuers and all other sources are covered.
+  expect(calls.filter(([stage]) => ['prices', 'price-history', 'reports', 'analyze', 'publish'].includes(stage)).every(call => call.length === 1)).toBe(true);
+});
+it('runner resumes from the last successful filing day, refreshes it, and advances only after success', () => {
+  const today = new Date().toISOString().slice(0, 10);
+  writeCorpusJson('raw/edinet/summary.json', { from: '2024-09-01', to: '2026-09-27', errors: [] });
+  writeCorpusJson('raw/edinet/days/2026-09-27.json', { incomplete: true });
+  runner()();
+  expect(stageCalls()[0]).toEqual(['japan', '--from=2026-09-27', `--to=${today}`]);
+  expect(readCorpusJson('raw/edinet/days/2026-09-27.json')).toBeNull();
+  runner()();
+  expect(stageCalls().filter(([stage]) => stage === 'japan')[1]).toEqual(['japan', `--from=${today}`, `--to=${today}`]);
+});
+it.each(['failure', 'skipped', 'interrupted'])('runner retains the pending filing range after Japan is %s', outcome => {
+  const today = new Date().toISOString().slice(0, 10);
+  writeCorpusJson('raw/edinet/summary.json', { from: '2024-09-01', to: '2026-09-27', errors: [] });
+  if (outcome === 'interrupted') {
+    writeCorpusJson('raw/edinet/daily-range.json', { from: '2026-09-26', to: '2026-09-28' });
+    writeCorpusJson('raw/edinet/days/2026-09-28.json', { incomplete: true });
+  }
+  runner({ japanFails: outcome === 'failure', japanSkipped: outcome !== 'failure' })();
+  const from = outcome === 'interrupted' ? '2026-09-26' : '2026-09-27';
+  runner()();
+  expect(stageCalls().filter(([stage]) => stage === 'japan')).toEqual([
+    ['japan', `--from=${from}`, `--to=${today}`], ['japan', `--from=${from}`, `--to=${today}`],
+  ]);
+  expect(stageCalls().some(([stage]) => stage === 'status')).toBe(true);
+  if (outcome === 'interrupted') expect(readCorpusJson('raw/edinet/days/2026-09-28.json')).toBeNull();
+});
+it('runner retries an existing failed Japan summary from its original start day', () => {
+  const today = new Date().toISOString().slice(0, 10);
+  writeCorpusJson('raw/edinet/summary.json', { from: '2026-09-25', to: '2026-09-27', errors: [{ id: '8058.JP' }] });
+  runner()();
+  expect(stageCalls()[0]).toEqual(['japan', '--from=2026-09-25', `--to=${today}`]);
 });
 it('fetches never-seen history before stale history and observes persisted daily capacity', async () => {
   vi.useFakeTimers(); vi.setSystemTime(new Date('2026-09-29T12:00:00Z'));
@@ -123,9 +178,7 @@ it.each(['live', 'dead'])('runner checks %s owner PID before acquiring the lock'
   const lock = path.join(root, 'daily-runner.lock'); mkdirSync(lock);
   const deadPid = execFileSync('bash', ['-c', 'echo $$'], { encoding: 'utf8' }).trim();
   writeFileSync(path.join(lock, 'pid'), owner === 'live' ? String(process.pid) : deadPid);
-  const bin = path.join(root, 'bin'); mkdirSync(bin);
-  writeFileSync(path.join(bin, 'node'), `#!/usr/bin/env bash\nif [[ "$1" == "-e" ]]; then echo "$VALUE_CORPUS_DIR"; exit 0; fi\necho "$4" >> "$VALUE_CORPUS_DIR/stages"\n`, { mode: 0o755 });
-  const run = () => execFileSync('bash', ['scripts/value/run-daily.sh', '--once'], { env: { ...process.env, PATH: `${bin}:${process.env.PATH}` }, stdio: 'pipe' });
+  const run = runner();
   if (owner === 'live') {
     expect(run).toThrow();
     expect(readFileSync(path.join(lock, 'pid'), 'utf8')).toBe(String(process.pid));

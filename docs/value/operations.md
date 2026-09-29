@@ -20,8 +20,27 @@ The runner loads `.env.local` with dotenv, respecting existing environment varia
 runners. After an unclean shutdown, the runner reclaims a lock only when its saved PID
 is dead; live or unverifiable owners are left in place. Do not run competing paid stages against the same corpus concurrently.
 
-Order: prices, price-history, fundamentals, renormalize, dedupe, price-seed,
-reports, analyze, publish, status. Failures are logged and subsequent stages still
+Order: japan, prices, price-history, fundamentals, renormalize,
+renormalize-edinet, dedupe, price-seed, reports, analyze, publish, status.
+Japan runs first so newly imported `.JP` issuers get Yahoo quotes and history in
+the same cycle. Both price stages run over all sources without `--only` or
+`--limit`; EODHD budget priority remains prices, history, then fundamentals.
+EDINET renormalization runs after history so split checks have Yahoo prices.
+Reports, analyze, and publish also cover all sources, including EDINET reports.
+Publish writes the search index, funnel, and `b` flag as usual.
+
+Japan uses an inclusive `--from=LAST_DAY --to=TODAY` UTC filing range. On first
+use, `raw/edinet/summary.json` supplies the last successful day (or the original
+start day if that import had errors); without a summary it uses the configured
+EDINET filing window, currently two years. `raw/edinet/daily-range.json` records
+the pending range before ingestion and advances only after a successful import
+with a matching error-free summary. Failures, interruptions, and missing-key
+skips retain the start day for the next run. The previous run's last filing-day
+snapshot is refreshed to catch filings added later that day; other historical
+day lists, downloaded CSVs, and completed issuer checkpoints are reused. Japan
+requires `EDINET_API_KEY` in the environment or `.env.local`.
+
+Failures are logged and subsequent stages still
 run. Publish is skipped when analyze exits unsuccessfully; its own calibration
 and count-drop checks also remain in force. Dedupe uses the existing universe
 issuer rules, keeps input backups under `dedupe/` for seven days, and never deletes cached company data.

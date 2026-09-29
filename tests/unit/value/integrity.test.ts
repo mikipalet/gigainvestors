@@ -48,11 +48,19 @@ describe("integrity gate", () => {
     Object.assign(f.years[0], { totalAssets: 100, totalLiabilities: 1, equity: 1, minorityInterest: 0 });
     Object.assign(f.years[5], { totalAssets: 100, totalLiabilities: 60, equity: 30, minorityInterest: 10 });
     Object.assign(f.years[6], { totalAssets: 100, totalLiabilities: 60, equity: 30, minorityInterest: null });
+    expect(checkIntegrity(f).reasons).toEqual(["balance sheet off by 10% in 2024"]);
+    f.years[6].totalLiabilities = null;
     expect(checkIntegrity(f).ok).toBe(true);
+    f.years[6].totalLiabilities = 60;
     f.years[6].minorityInterest = 5;
     expect(checkIntegrity(f).reasons).toEqual(["balance sheet off by 5% in 2024"]);
   });
   it("passes KO's recorded statements", () => {
-    expect(checkIntegrity(normalizeEodhd(ko, "KO.US").fundamentals)).toEqual({ ok: true, reasons: [] });
+    const f = normalizeEodhd(ko, "KO.US").fundamentals;
+    expect(checkIntegrity(f)).toEqual({ ok: true, reasons: [] });
+    const recordedYear = f.years.find((year) => year.fy === 2024)!;
+    expect(recordedYear.totalAssets).toBeGreaterThan(0);
+    recordedYear.equity = recordedYear.equity! + recordedYear.totalAssets!;
+    expect(checkIntegrity(f).reasons).toContain("balance sheet off by 100% in 2024");
   });
 });

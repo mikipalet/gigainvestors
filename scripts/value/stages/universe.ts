@@ -1,7 +1,9 @@
 import { mkdirSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
-import { eodhd, listExchanges, listSymbols, screenerPage, type ScreenerRow, type SymbolRow } from "../../../lib/value/eodhd";
+import { T } from "../../../lib/value/config";
+import { createUsdRate } from "../../../lib/value/fx";
+import { listExchanges, listSymbols, screenerPage, type ScreenerRow, type SymbolRow } from "../../../lib/value/eodhd";
 import { collapseListings, isCommonStock, kindFor } from "../../../lib/value/universe";
 import type { Company } from "../../../lib/value/types";
 
@@ -31,31 +33,17 @@ export default async function universe(options: Options): Promise<void> {
       if (otc && !(row.Isin?.startsWith("JP") && /\bADR\b|depositary|depository/i.test(row.Name))) continue;
       rows.push({ ...row, exchange: exchange.Code, country: row.Isin?.slice(0, 2) ?? exchange.CountryISO2 });
     }
-    for (let offset = 0; offset < 1000; offset += 100) {
+    for (let offset = 0; offset <= T.eodhd.screenerMaxOffset; offset += T.eodhd.screenerPageSize) {
       const page = await cached(`screener-${exchange.Code}-${offset}`, () => screenerPage({ offset, exchange: exchange.Code }));
       if (!page.length) break;
       for (const row of page) caps.set(`${row.code}.${row.exchange.toUpperCase()}`, row);
-      if (offset === 900) console.warn(`${exchange.Code}: screener pagination ceiling reached; unreturned caps remain null`);
+      if (offset + T.eodhd.screenerPageSize > T.eodhd.screenerMaxOffset) console.warn(`${exchange.Code}: screener pagination ceiling reached; unreturned caps remain null`);
     }
     if (options.limit && !options.only && rows.length >= options.limit) break;
   }
   const byId = new Map(rows.map((row) => [`${row.Code}.${row.exchange}`, row]));
   const groups = collapseListings(rows.map((row) => ({ code: row.Code, exchange: row.exchange, isin: row.Isin, name: row.Name, country: row.country })));
-  const rates = new Map<string, number | null>([["USD", 1]]);
-  async function usdRate(currency: string): Promise<number | null> {
-    if (rates.has(currency)) return rates.get(currency)!;
-    const major = currency === "GBX" || currency === "GBp" ? "GBP" : currency === "ZAc" ? "ZAR" : currency;
-    let rate: number | null = null;
-    try {
-      const data = await cached(`fx-${major}`, () => eodhd<Array<{ close: number }>>(`eod/${encodeURIComponent(major)}USD.FOREX`, { order: "d", limit: "1" }));
-      const close = Number(data[0]?.close);
-      if (Number.isFinite(close) && close > 0) rate = close / (major === currency ? 1 : 100);
-    } catch {
-      console.warn(`${currency}: USD conversion unavailable; market caps remain null`);
-    }
-    rates.set(currency, rate);
-    return rate;
-  }
+  const usdRate = createUsdRate(options);
   const companies: Company[] = [];
   for (const group of groups) {
     if (options.only && !group.listings.some((id) => options.only!.includes(id))) continue;

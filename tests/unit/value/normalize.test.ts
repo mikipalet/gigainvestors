@@ -45,11 +45,11 @@ describe("EODHD annual normalization", () => {
   });
 });
 
-it("persists raw data, merges company metadata and resumes unless forced or stale", async () => {
-  const { mkdirSync, mkdtempSync, rmSync, utimesSync } = await import("node:fs");
+it("persists raw data, merges company metadata and refreshes on every rolling pass, including when forced", async () => {
+  const { mkdirSync, mkdtempSync, rmSync } = await import("node:fs");
   const { homedir } = await import("node:os");
   const { join } = await import("node:path");
-  const { appendJsonl, corpusPath, readCorpusJson, writeCorpusJson } = await import("../../../lib/value/corpus");
+  const { appendJsonl, readCorpusJson, writeCorpusJson } = await import("../../../lib/value/corpus");
   const { default: stage } = await import("../../../scripts/value/stages/fundamentals");
   const root = join(homedir(), "value-corpus");
   mkdirSync(root, { recursive: true });
@@ -71,16 +71,14 @@ it("persists raw data, merges company metadata and resumes unless forced or stal
     writeCorpusJson("companies/KO.US.json", { edinetCode: "preserve" });
     await stage({ only: ["KO.US"] });
     expect(readCorpusJson("raw/eodhd/KO.US.json")).toEqual(ko);
-    expect(readCorpusJson("companies/KO.US.json")).toMatchObject({ id: "KO.US", name: "Coca Cola", edinetCode: "preserve", kind: "operating" });
+    expect(readCorpusJson("companies/KO.US.json")).toMatchObject({ id: "KO.US", name: "Coca Cola", edinetCode: "preserve", kind: "operating", marketCapUsd: ko.Highlights.MarketCapitalization });
     expect(readCorpusJson("fundamentals/KO.US.json")).toMatchObject({ id: "KO.US", integrity: { ok: true } });
     requested.length = 0;
-    await stage({ limit: 1 });
-    expect(requested).toEqual([]);
+    await stage({ only: ["KO.US"], limit: 1 });
+    expect(requested).toContain("/api/fundamentals/KO.US");
     await stage({ only: ["KO.US"], force: true });
     expect(requested).toContain("/api/fundamentals/KO.US");
     requested.length = 0;
-    const stale = new Date(Date.now() - 81 * 86400000);
-    utimesSync(corpusPath("fundamentals/KO.US.json"), stale, stale);
     await stage({ only: ["KO.US"] });
     expect(requested).toContain("/api/fundamentals/KO.US");
     requested.length = 0;
@@ -88,4 +86,8 @@ it("persists raw data, merges company metadata and resumes unless forced or stal
     await stage({ only: ["KO.US"], force: true });
     expect(requested).toEqual(["/api/user"]);
   } finally { rmSync(directory, { recursive: true, force: true }); }
+});
+
+it("does not reset classification when the response has no sector or industry", () => {
+  expect(normalizeEodhd({ General: { Sector: null, Industry: null } }, "BANK.US").patch.kind).toBeUndefined();
 });

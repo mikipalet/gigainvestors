@@ -20,15 +20,20 @@ function lastBlock({ text, start, end, minimum = 500, last = true }: {
 }): string | undefined {
   const starts = [...text.matchAll(new RegExp(start.source, "gim"))];
   const ends = [...text.matchAll(new RegExp(end.source, "gim"))].map((match) => match.index);
-  for (const match of last ? starts.reverse() : starts) {
-    const stop = ends.find((index) => index > match.index + match[0].length) ?? text.length;
-    const block = text.slice(match.index, stop).trim();
-    if (block.length >= minimum) return block;
+  const ordered = last ? starts.reverse() : starts;
+  // Prefer a real heading pair before considering an unterminated section.
+  for (const allowEof of [false, true]) {
+    for (const match of ordered) {
+      const stop = ends.find((index) => index > match.index + match[0].length);
+      if (stop === undefined && !allowEof) continue;
+      const block = text.slice(match.index, stop ?? text.length).trim();
+      if (block.length >= minimum) return block;
+    }
   }
 }
 
-const item = (number: string) => new RegExp(`^\\s*Item\\s+${number}(?=[.\\s:])`, "im");
-const anyItem = /^\s*Item\s+\d+[A-Z]?(?=[.\s:])/im;
+const item = (number: string) => new RegExp(`^\\s*Item\\s*${number}(?=[.\\s:])`, "im");
+const anyItem = /^\s*Item\s*\d+[A-Z]?(?=[.\s:])/im;
 
 export function cutSections({ text, form }: {
   text: string; form: "10-K" | "20-F" | "40-F" | "DEF 14A";
@@ -70,8 +75,24 @@ export function cutSections({ text, form }: {
     const notes = lastBlock({ text: financialText, start: /^\s*Notes to (?:the )?(?:Consolidated )?Financial Statements\s*$/im, end: anyItem });
     if (notes) sections.notes = truncateTokens(notes, SECTION_TOKENS.notes);
     const auditor = lastBlock({ text: financialText, start: /^\s*Report of Independent Registered Public Accounting Firm\s*$/im,
-      end: /^(?:\s*Item\s+\d+|\s*(?:Notes to|Consolidated (?:Balance|Statements)))/im });
-    if (auditor) sections.auditor = truncateTokens(auditor.split(/\s+/).slice(0, 3000).join(" "), SECTION_TOKENS.auditor);
+      end: /^(?:\s*Item\s*\d+|\s*(?:Notes to|Consolidated (?:Balance|Statements)))/im });
+    if (auditor) sections.auditor = truncateTokens(auditor.split(/\n\n+/).reduce<string[]>((paragraphs, paragraph) => {
+      const remaining = 3000 - paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
+      if (remaining > 0) paragraphs.push(paragraph.split(/\s+/).slice(0, remaining).join(" "));
+      return paragraphs;
+    }, []).join("\n\n"), SECTION_TOKENS.auditor);
   }
   return sections;
+}
+
+/** Skip cover/contents entries before using filing prose as a business fallback. */
+export function filingBusinessFallback(text: string): string {
+  const headings = [...text.matchAll(/^\s*Item\s*\d+[A-Z]?(?=[.\s:])[^\n]*/gim)];
+  for (let index = 0; index < headings.length; index++) {
+    const heading = headings[index];
+    const start = heading.index + heading[0].length;
+    const body = text.slice(start, headings[index + 1]?.index ?? text.length).trim();
+    if (body.length >= 500) return truncateTokens(text.slice(start).trim(), SECTION_TOKENS.business);
+  }
+  return truncateTokens(text.slice(2000).trim(), SECTION_TOKENS.business);
 }

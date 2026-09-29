@@ -1,5 +1,6 @@
 import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import os from "node:os";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { cutEsefSections, latestEsef } from "@/lib/value/reports/esef";
 import { htmlToText } from "@/lib/value/reports/html-to-text";
@@ -49,11 +50,11 @@ it("extracts substantive ASML business, risk and compensation sections", () => {
   expect(result.compensation!.length).toBeLessThanOrEqual(16000);
 });
 
-it("falls back to only the first 8000 tokens when there are fewer than two distinct sections", () => {
+it("falls back to 8000 tokens after the cover or first recognized heading", () => {
   const text = ("x".repeat(98) + "\n\n").repeat(1000);
-  expect(cutEsefSections(text)).toEqual({ business: text.slice(0, 32000) });
+  expect(cutEsefSections(text)).toEqual({ business: text.slice(2000, 34000) });
   const single = "Risk factors\n\nOnly one section.\n\nRisk factors\n\nContinued.";
-  expect(cutEsefSections(single)).toEqual({ business: single });
+  expect(cutEsefSections(single).business).toBe("Only one section.\n\nRisk factors\n\nContinued.");
 });
 
 it.each([
@@ -84,7 +85,7 @@ const company: Company = {
   marketCapUsd: null, description: "Lithography systems.", source: "eodhd",
 };
 function setupCorpus(rows: Company[]) {
-  directory = mkdtempSync(path.resolve("tests/fixtures/value/reports-test-"));
+  directory = mkdtempSync(path.join(os.tmpdir(), "reports-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", directory);
   writeFileSync(path.join(directory, "universe.jsonl"), rows.map((row) => JSON.stringify(row)).join("\n"));
   return directory;
@@ -133,4 +134,56 @@ it("does not label repeated navigation as compensation or an appendix glossary a
   expect(result.compensation).toMatch(/Remuneration Policy/i);
   expect(result.compensation).not.toContain("Responsible value chain");
   expect(result.mdna ?? "").not.toMatch(/Microchips, such as NAND Flash/);
+});
+
+it("matches extended case-insensitive headings on short individual lines", () => {
+  const text = "Cover\nBUSINESS MODEL AND VALUE CREATION\nWe build tools.\nRisk management and internal control\nSupply risk.\nRemuneration report for 2025\nPay policy.";
+  expect(cutEsefSections(text)).toEqual({
+    business: "BUSINESS MODEL AND VALUE CREATION\nWe build tools.",
+    risk: "Risk management and internal control\nSupply risk.",
+    compensation: "Remuneration report for 2025\nPay policy.",
+  });
+});
+
+it("fills missing business even with multiple other sections and skips contents", () => {
+  const text = "Cover\n\nTable of contents\n\nRisk factors\n\n5\n\nRemuneration report\n\n6\n\nRisk management and internal control\n\nActual risk prose.\n\nRemuneration report\n\nActual pay prose.";
+  const sections = cutEsefSections(text);
+  expect(sections.business).toBe("Actual risk prose.\n\nRemuneration report\n\nActual pay prose.");
+  expect(sections.risk).toContain("Actual risk prose.");
+  expect(sections.compensation).toContain("Actual pay prose.");
+});
+
+it("ignores long lines containing heading phrases", () => {
+  const prose = "Business model and value creation " + "operations ".repeat(20);
+  const sections = cutEsefSections(`Cover\n\n${prose}\n\nRisk factors\n\nActual risk.\n\nRemuneration policy\n\nActual pay.`);
+  expect(sections.business).toBe("Actual risk.\n\nRemuneration policy\n\nActual pay.");
+});
+
+it("skips the first 2000 cover characters when no heading matches", () => {
+  const cover = "C".repeat(2000);
+  const body = "Unlabelled operations. ".repeat(2000);
+  expect(cutEsefSections(cover + body)).toEqual({ business: body.slice(0, 32000) });
+});
+
+it("spaces metadata and report fetches through the same three-per-second limiter", async () => {
+  vi.useFakeTimers();
+  vi.resetModules();
+  try {
+    const { latestEsef: limitedLatest, fetchEsef } = await import("@/lib/value/reports/esef");
+    const starts: number[] = [];
+    vi.stubGlobal("fetch", vi.fn(async (input: string) => {
+      starts.push(Date.now());
+      return input.includes("/api/filings?") ? Response.json(filing) : new Response("Report");
+    }));
+    const requests = Promise.all([limitedLatest("one"), fetchEsef(url), limitedLatest("two"), fetchEsef(url)]);
+    await vi.runAllTimersAsync();
+    await requests;
+    expect(starts).toHaveLength(4);
+    for (let index = 1; index < starts.length; index++) {
+      expect(starts[index] - starts[index - 1]).toBeGreaterThanOrEqual(333);
+    }
+    expect(starts[3] - starts[0]).toBeGreaterThanOrEqual(999);
+  } finally {
+    vi.useRealTimers();
+  }
 });

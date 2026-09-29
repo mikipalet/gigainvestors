@@ -1,10 +1,9 @@
 import { createHash, randomUUID } from "node:crypto";
 import { existsSync, mkdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
-import { cutSections, SECTION_TOKENS, truncateTokens } from "../../../lib/value/reports/cut-sections";
+import { cutSections, filingBusinessFallback, SECTION_TOKENS, truncateTokens } from "../../../lib/value/reports/cut-sections";
 import { fetchEdgar, latestFilings } from "../../../lib/value/reports/edgar";
-import { cutEsefSections, latestEsef } from "../../../lib/value/reports/esef";
-import { fetchWithRetry } from "../../../lib/value/http";
+import { cutEsefSections, fetchEsef, latestEsef } from "../../../lib/value/reports/esef";
 import { htmlToText } from "../../../lib/value/reports/html-to-text";
 import type { Company, ReportMeta, SectionKey } from "../../../lib/value/types";
 
@@ -19,7 +18,7 @@ export default async function reports({ only, limit, force = false }: {
     if (!/^[\w.-]+$/.test(company.id)) throw new Error("Invalid company ID");
     const esef = company.lei && esefCountries.has(company.country) ? await latestEsef(company.lei) : null;
     const filings = !esef && company.cik ? await latestFilings(company.cik) : null;
-    const fingerprint = createHash("sha256").update(JSON.stringify({ version: 2, company, filings, esef })).digest("hex");
+    const fingerprint = createHash("sha256").update(JSON.stringify({ version: 3, company, filings, esef })).digest("hex");
     const directory = `reports/${company.id}`;
     const prior = readCorpusJson<ReportMeta>(`${directory}/meta.json`);
     if (!force && readCorpusJson<string>(`${directory}/fingerprint.json`) === fingerprint && prior
@@ -28,12 +27,15 @@ export default async function reports({ only, limit, force = false }: {
     const annual = filings?.annual;
     let sections: Partial<Record<SectionKey, string>> = {};
     if (esef) {
-      const response = await fetchWithRetry(esef.url);
-      if (!response.ok) throw new Error(`ESEF report request failed (${response.status})`);
+      const response = await fetchEsef(esef.url);
       sections = cutEsefSections(htmlToText(await response.text()));
     } else if (annual) {
       const text = htmlToText(await (await fetchEdgar(annual.url)).text());
       sections = cutSections({ text, form: annual.form });
+      if (!sections.business) {
+        sections.business = company.description?.trim()
+          ? truncateTokens(company.description, SECTION_TOKENS.business) : filingBusinessFallback(text);
+      }
       if (filings?.proxy) {
         const proxy = htmlToText(await (await fetchEdgar(filings.proxy.url)).text());
         Object.assign(sections, cutSections({ text: proxy, form: "DEF 14A" }));

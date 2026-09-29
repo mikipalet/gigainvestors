@@ -1,5 +1,6 @@
 import { mkdtempSync, readFileSync, rmSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
+import os from "node:os";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { htmlToText } from "@/lib/value/reports/html-to-text";
 import { cutSections, truncateTokens } from "@/lib/value/reports/cut-sections";
@@ -126,7 +127,7 @@ const company: Company = {
   kind: "operating", listings: ["KO.US"], marketCapUsd: null, description: "Beverage business.", source: "eodhd",
 };
 function setupCorpus(rows: Company[]) {
-  directory = mkdtempSync(path.resolve("tests/fixtures/value/reports-test-"));
+  directory = mkdtempSync(path.join(os.tmpdir(), "reports-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", directory);
   writeFileSync(path.join(directory, "universe.jsonl"), rows.map((row) => JSON.stringify(row)).join("\n"));
   return directory;
@@ -164,4 +165,55 @@ it("falls back to description, applies filters, and updates changed descriptions
   writeFileSync(path.join(root, "universe.jsonl"), JSON.stringify({ ...fallback, description: "Updated description" }));
   await reports({});
   expect(readFileSync(path.join(root, "reports/KO.US/business.txt"), "utf8")).toBe("Updated description");
+});
+
+it("ignores a trailing cross-reference index without a real end heading", () => {
+  const body = "Actual business operations. ".repeat(50);
+  const text = ["Item 1. Business", body, "Item 1A. Risk Factors", body,
+    "Item 1B. Other", "Cross-reference index", "Item 1. See business", "Index reference. ".repeat(100)].join("\n\n");
+  expect(cutSections({ text, form: "10-K" }).business).toBe(`Item 1. Business\n\n${body.trim()}`);
+});
+
+it("accepts item headings without a space", () => {
+  const body = "Actual business operations. ".repeat(50);
+  expect(cutSections({ text: `Item1. Business\n\n${body}\n\nItem1A. Risk Factors`, form: "10-K" }).business)
+    .toBe(`Item1. Business\n\n${body.trim()}`);
+});
+
+it("preserves auditor paragraph breaks", () => {
+  const opinion = "We have audited the statements. ".repeat(30).trim();
+  const text = `Report of Independent Registered Public Accounting Firm\n\nTo the shareholders\n\n${opinion}`;
+  expect(cutSections({ text, form: "10-K" }).auditor).toBe(text);
+});
+
+it.each(["10-K405", "10-KT"])("selects %s as a 10-K annual report", async (form) => {
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ filings: { recent: {
+    form: [form], accessionNumber: ["000-001"], primaryDocument: ["annual.htm"],
+    filingDate: ["2026-01-01"], reportDate: ["2025-12-31"],
+  } } })));
+  expect((await latestFilings("21344")).annual).toMatchObject({ form: "10-K", period: "2025-12-31" });
+});
+
+it.each(["Beverage business.", null])("fills missing filing business using description or document: %s", async (description) => {
+  const root = setupCorpus([{ ...company, description }]);
+  const body = ("Document operations and financial review. ".repeat(30) + "\n\n").repeat(40);
+  const html = `<p>Cover</p><p>Table of contents</p><p>Item 7. Review</p><p>12</p><p>Item 8. Statements</p><p>20</p><p>Item 7. Review</p><p>${body}</p><p>Item 8. Statements</p>`;
+  vi.stubGlobal("fetch", vi.fn(async (url: string) => {
+    if (url.includes("submissions/")) return Response.json({ filings: { recent: {
+      form: ["10-K"], accessionNumber: ["000-001"], primaryDocument: ["annual.htm"],
+      filingDate: ["2026-01-01"], reportDate: ["2025-12-31"],
+    } } });
+    return new Response(html);
+  }));
+  await reports({});
+  const meta = JSON.parse(readFileSync(path.join(root, "reports/KO.US/meta.json"), "utf8"));
+  expect(meta).toMatchObject({ kind: "10-K" });
+  expect(meta.sections).toContain("business");
+  const business = readFileSync(path.join(root, "reports/KO.US/business.txt"), "utf8");
+  if (description) expect(business).toBe(description);
+  else {
+    expect(business).toContain("Document operations");
+    expect(business).not.toMatch(/Cover|Table of contents|12|20/);
+    expect(business.length).toBeLessThanOrEqual(32000);
+  }
 });

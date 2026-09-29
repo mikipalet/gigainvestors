@@ -10,5 +10,5 @@ export const T = {
   accounting: { maxAccruals: 0.10, maxRecvGap: 0.10, maxRestructYears: 2, maxSbcToOcf: 0.15 },
   price: { passMos: 0.25 },
   valuation: { minDiscount: 0.10, bondSpread: 0.04, maxGrowth: 0.12, terminal: 0.03, finMaxGrowth: 0.06 },
-  jev: { contradict: 0.7, trustAgreement: 0.85, evidence: 0.6, chunkTokens: 24_000, minParagraphChars: 200 },
+  jev: { contradict: 0.7, trustAgreement: 0.85, evidence: 0.6, commodityCyclical: 0.6, chunkTokens: 24_000, minParagraphChars: 200 },
 } as const;

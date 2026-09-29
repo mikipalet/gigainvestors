@@ -512,3 +512,15 @@ it("allows missing and insufficient calibration rows while still reporting them"
   expect(summary.counts).toMatchObject({ truePositive: 1, missing: 2, exception: 1, falsePositive: 0, falseNegative: 0 });
   expect(summary.rows.filter(row => row.verdict === "missing or insufficient data")).toHaveLength(2);
 });
+
+it("reanalyzes explicitly selected cached companies outside the universe without repopulating it", async () => {
+  const args = input();
+  writeCorpusJson(`companies/${args.company.id}.json`, args.company);
+  writeCorpusJson(`fundamentals/${args.company.id}.json`, args.fundamentals);
+  const options = { ask: args.ask, getBondYield: async () => 0.04, evidence: async () => null };
+  await analyze(options);
+  expect(readCorpusJson(`analysis/${args.company.id}.json`)).toBeNull();
+  await analyze({ ...options, only: [args.company.id] });
+  expect(readCorpusJson<Analysis>(`analysis/${args.company.id}.json`)?.status).toBe("scored");
+  expect(readCorpusJson("universe.jsonl")).toBeNull();
+});

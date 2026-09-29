@@ -12,7 +12,7 @@ export const T = {
   yahoo: { perSecond: 2 },
   numeric: { minAvailableFraction: 2 / 3 },
   dedupe: { revenueTolerance: 0.02, backupRetentionMs: 7 * 24 * 60 * 60 * 1000 },
-  integrity: { maxShareRatio: 5, minShareRatio: 0.2, splitTolerance: 0.03, balanceTolerance: 0.10, balanceYears: 5, balanceMinFailures: 2 },
+  integrity: { maxShareRatio: 5, minShareRatio: 0.2, splitTolerance: 0.03, splitPriceTolerance: 0.20, balanceTolerance: 0.10, balanceYears: 5, balanceMinFailures: 2 },
   fundamentals: { maxYears: 30, usageSyncCompanies: 200 },
   eodhd: { perSecond: 5, timeoutMs: 180_000, screenerPageSize: 100, screenerMaxOffset: 999 },
   publish: { maxCountDrop: 0.20, lockMaxAgeMs: 6 * 60 * 60 * 1000 },

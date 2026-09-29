@@ -29,6 +29,14 @@ export function loadSections({ company, report }: { company: Company; report: Re
 
 export default async function analyze({ only, limit, force, ask, getBondYield = bondYield, evidence = findEvidence }: Options): Promise<void> {
   const companies = readJsonl<Company>("universe.jsonl").filter(company => !only || only.includes(company.id));
+  // Offline repairs can change cached records that dedupe removed from the universe.
+  // Honor explicit IDs without adding those aliases back to published coverage.
+  const selected = new Set(companies.map(company => company.id));
+  for (const id of only ?? []) {
+    if (selected.has(id) || !validCompanyId(id, "analyze")) continue;
+    const cached = readCorpusJson<Company>(`companies/${id}.json`);
+    if (cached?.id === id) { companies.push(cached); selected.add(id); }
+  }
   const jobs = companies.flatMap(row => {
     if (!validCompanyId(row.id, "analyze")) return [];
     const fundamentals = readCorpusJson<Fundamentals>(`fundamentals/${row.id}.json`);

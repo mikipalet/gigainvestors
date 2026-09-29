@@ -105,7 +105,7 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
     integrity: { ok: true, reasons: [] }, fetchedAt: new Date().toISOString(),
     splits: date && Number.isFinite(factor) && factor > 0 ? [{ date, factor }] : [],
   };
-  fundamentals.integrity = checkIntegrity(fundamentals);
+  fundamentals.integrity = checkIntegrity(fundamentals, { source: "eodhd" });
   const sector = text(general.Sector);
   const industry = text(general.Industry);
   const latestBalance = record(balances[Object.keys(balances).filter(end => /^\d{4}-\d{2}-\d{2}$/.test(end)).sort().at(-1) ?? ""]);

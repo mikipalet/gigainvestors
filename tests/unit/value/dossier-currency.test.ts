@@ -39,8 +39,8 @@ it('uses converted trading values for both the headline and margin', async () =>
 it('does not label newer monthly prices as a new fiscal year', async () => {
   dossier.priceHistory!.push(['2026-09', 6]);
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toContain('Financials FY2025');
-  expect(html).not.toContain('Financials FY2026');
+  expect(html).toMatch(/class="source-date">Prices [^<]+ · FY2025<\/span>/);
+  expect(html).not.toMatch(/class="source-date">[^<]+FY2026/);
 });
 
 it('labels a seeded price with its market-cap derivation and date', async () => {

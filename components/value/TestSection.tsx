@@ -1,7 +1,7 @@
 import { MetricHelp } from './MetricHelp';
 import { tileMetric, tileReason } from '@/lib/value/tile-metric';
 import { PassingDisclosure } from './PassingDisclosure';
-import { metricLabels, formatMetric } from '@/lib/value/metric-labels';
+import { metricLabels, formatMetric, ratioReading } from '@/lib/value/metric-labels';
 import { T } from '@/lib/value/config';
 import type { Dossier, Kind, Series, TestOutcome } from '@/lib/value/types';
 import { testLabels } from './TestChips';
@@ -39,7 +39,7 @@ export function TestSection({ test, currency = '', domain, netIncome, kind = 'op
   if(test.key==='management'&&lastFiscalYear&&test.metrics.shareCagr!=null) summaries.management=`Diluted shares changed ${metric('shareCagr')} a year, FY${lastFiscalYear-10}–FY${lastFiscalYear}`;
   if(test.key==='management'&&test.result==='pass'&&(test.metrics.shareCagr??0)>T.management.maxShareCagr&&test.metrics.shareCagr5!=null) summaries.management=`The five-year dilution test passes: shares changed ${metric('shareCagr5')} a year${lastFiscalYear?`, FY${lastFiscalYear-5}–FY${lastFiscalYear}`:''}. The ten-year measure is ${metric('shareCagr')}`;
   const fixedMetric=tileMetric(test,kind,netIncome);
-  const metricSummary=`${fixedMetric.label}: ${formatMetric({value:fixedMetric.value,format:fixedMetric.format})}; pass ${fixedMetric.better==='higher'?'≥':'≤'} ${formatMetric({value:fixedMetric.threshold,format:fixedMetric.format})}`;
+  const metricSummary=`${ratioReading(fixedMetric.id,fixedMetric.value)} ${fixedMetric.label}: ${formatMetric({value:fixedMetric.value,format:fixedMetric.format})}; pass ${fixedMetric.better==='higher'?'≥':'≤'} ${formatMetric({value:fixedMetric.threshold,format:fixedMetric.format})}`;
   const headline = test.pending ? 'We are fetching 10 years of monthly prices; this test updates automatically' : `${metricSummary}. ${tileReason(test)}${test.key==='management'?` ${summaries.management}`:''}`;
   return <section id={`test-${test.key}`} data-test={test.key} data-metric={fixedMetric.id} className="test-section" aria-labelledby={`heading-${test.key}`}>
     <header><h2 id={`heading-${test.key}`}><StatusGlyph result={test.pending?'checking':test.result} label={`${testLabels[test.key]}: ${verdict}`} />{testLabels[test.key]}</h2><p>{verdict}.{headline ? ` ${humanLabel(headline).replace(/\.$/, '')}.` : ' Review the figures and filing evidence below.'}</p></header>
@@ -64,7 +64,7 @@ export function TestSection({ test, currency = '', domain, netIncome, kind = 'op
       if (/^roic/.test(key)&&value!==null&&value>1) return <div key={key} className="info-metric"><dt><MetricHelp id={key} technical={metadata.label}/></dt><dd title={returnInfo.note}>&gt; 100% †</dd></div>;
       if (metadata.threshold !== undefined && metadata.better) return <BulletRow key={key} metricId={key} {...metadata} threshold={metadata.threshold} better={metadata.better} value={key === 'grossMarginDrop' && value !== null ? -value : value} currency={currency} resultOverride={test.key === 'price' ? test.result : undefined} />;
       const uncertainCapital = /roic(First|Last)/.test(key) && value !== null && Math.abs(value) >= .8;
-      return <details key={key} className="supporting-metric"><summary><MetricHelp id={key} technical={metadata.label}/></summary><div className="grid grid-cols-[minmax(0,1fr)_auto] gap-4 border-t border-ink/15 py-2"><dt><MetricHelp id={key} technical={metadata.label}/></dt><dd className="flex items-center gap-2 text-right tabular-nums"><span title={uncertainCapital ? 'Sensitive to a small tangible-capital denominator. The published dossier does not include the denominator; inspect the source filing.' : undefined}>{formatMetric({ value, format: metadata.format, currency })}{uncertainCapital && ' †'}</span><small className="info-tag">info</small></dd></div></details>;
+      return <details key={key} className="supporting-metric"><summary><MetricHelp id={key} technical={metadata.label}/></summary><div className="grid grid-cols-[minmax(0,1fr)_auto] gap-4 border-t border-ink/15 py-2"><dt><MetricHelp id={key} technical={metadata.label}/></dt><dd className="flex items-center gap-2 text-right tabular-nums"><span title={uncertainCapital ? 'Sensitive to a small tangible-capital denominator. The published dossier does not include the denominator; inspect the source filing.' : undefined}>{formatMetric({ value, format: metadata.format, currency })}{uncertainCapital && ' †'}{metadata.format==='x'&&<small className="ratio-reading">{ratioReading(key,value)}</small>}</span><small className="info-tag">info</small></dd></div></details>;
     })}</dl></div></div>
     {kind==='operating' && metrics.some(([key,value]) => /roic(First|Last)/.test(key) && value !== null && Math.abs(value) >= .8) && <p className="source-line">† High ROIC is sensitive to a small tangible-capital base. The denominator is not published; verify it in the filing before interpreting this return.</p>}
     <div className="section-details">{test.reasons.length > 0 && <details><summary>Notes ({test.reasons.length})</summary><ul>{test.reasons.filter(r => r !== headline).map((r, i) => <li key={i}>{humanLabel(r)}</li>)}</ul></details>}

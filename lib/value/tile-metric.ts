@@ -41,10 +41,10 @@ export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):str
  if(v===null)return test.pending?'The evidence is still being checked.':'There is not enough evidence to judge this test.';
  const pct=(n:number)=>`${Math.round(n*100)}%`,num=(n:number)=>n.toFixed(2);
  switch(test.key){
-  case 'understandable':return v<=bar?'Profit margins have stayed steady over time.':'Profit margins vary too much to call this predictable.';
+  case 'understandable':return `Margins vary by ${pct(v)} of their average.`;
   case 'moat': {
    const years=metric.series.filter(p=>p[1]!==null),passes=years.filter(p=>p[1]!>=bar).length;
-   return `Earns ${pct(v)} on ${kind==='operating'?'invested money':'equity'}; ${years.length?`${passes}/${years.length} years clear the bar.`:`the bar is ${pct(bar)}.`}`;
+   return `Earns ${pct(v)} on ${kind==='operating'?'capital':'equity'}; ${years.length?`${passes}/${years.length} years pass.`:`the bar is ${pct(bar)}.`}`;
   }
   case 'economics':return `Each $1 of profit leaves $${num(v)} for owners.`;
   case 'management':return `$${num(v)} of market value created per $1 kept.`;

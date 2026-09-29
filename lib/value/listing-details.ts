@@ -12,3 +12,14 @@ export function listingDetails(row: {id:string;c:string;exchange?:string}) {
 export function sharePrice(price:number|null,currency:string) {
  return price===null?'Price unavailable':`${currency} ${new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(price)}`;
 }
+
+const EUROPE=new Set(['AT','BE','CH','CY','CZ','DE','DK','EE','ES','FI','FR','GR','HR','HU','IE','IS','IT','LT','LU','LV','MT','NL','NO','PL','PT','RO','SE','SI','SK']);
+const ASIA=new Set(['CN','HK','JP','IN','ID','KR','MY','PH','SG','TH','TW','VN']);
+export function marketRegion(row:{id:string;c:string}) {
+ if(row.id.endsWith('.US'))return 'US';
+ return row.c==='CA'?'Canada':row.c==='GB'?'UK':row.c==='AU'?'Australia':EUROPE.has(row.c)?'Europe':ASIA.has(row.c)?'Asia':row.c||'Unknown';
+}
+export function matchesMarket(row:{id:string;c:string},market:string) {
+ const region=marketRegion(row);
+ return !market||market==='all'||(market==='easy'?['US','Canada','Europe','UK','Australia'].includes(region):market==='asia'?region==='Asia':true);
+}

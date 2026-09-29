@@ -1,10 +1,10 @@
 import { expect,test } from '@playwright/test';
 test.skip(process.env.VALUE_LIVE_QA!=='1','Run against the production build with VALUE_LIVE_QA=1 and VALUE_SITE_HOST=localhost.');
 test('live home puts every published buy first, explains the track record and exposes all companies',async({page})=>{
- await page.goto('/',{waitUntil:'networkidle'});
+ await page.setViewportSize({width:1728,height:970});await page.goto('/',{waitUntil:'networkidle'});
  const buys=await page.locator('.one-index').getAttribute('data-buy-count');
  await expect(page.locator('.buy-tile')).toHaveCount(Number(buys));
- await expect(page.locator('.buy-tile').first()).toContainText('below value');
+ await expect(page.locator('.buy-tile').first()).toContainText('Owner return');
  await expect(page.locator('.track-record')).toContainText(/median.*vs.*of.*years/);
  await expect(page.getByRole('button',{name:/\+\d+ more/})).toHaveCount(0);
  const show=page.getByRole('button',{name:/^Show all \d+/});
@@ -60,7 +60,7 @@ test('round nine separates five business tests from price and explains the good 
  await expect(page.locator('.price-condition')).toContainText('not a forecast');
 });
 test('round nine buy cards show quote, currency, country and listing access',async({page})=>{
- await page.goto('/',{waitUntil:'networkidle'});
+ await page.setViewportSize({width:1728,height:970});await page.goto('/',{waitUntil:'networkidle'});
  const infy=page.locator('.buy-tile').filter({hasText:'Infosys'});
  await expect(infy.locator('.buy-quote')).toContainText(/USD [\d.]+ · US/);
  await expect(infy.locator('.buy-listing')).toContainText('NYSE');
@@ -70,6 +70,6 @@ test('round nine buy cards show quote, currency, country and listing access',asy
  await expect(page.locator('.index-story .value-definition')).toBeVisible();
  for(const tile of await page.locator('.company-tile').all()){
   await expect(tile.locator('strong')).not.toBeEmpty();
-  await expect(tile.locator('.map-price')).toContainText(/buy price|unavailable/);
+  await expect(tile.locator('.map-price')).toContainText(/buy price|too high|unavailable/);
  }
 });

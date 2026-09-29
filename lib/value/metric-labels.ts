@@ -69,3 +69,17 @@ export function formatMetric({ value, format, currency = '' }: { value: number |
   return format === 'money' ? `${currency} ${number}`.trim() : number;
 }
 export const perShareMoney = (value: number, currency: string) => currency === 'GBX' ? `${value.toLocaleString('en-US', {maximumFractionDigits:0})}p` : `${currency} ${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+/** Plain reading for the ratios used in evidence panels. */
+export function ratioReading(id:string, value:number|null) {
+ if(value===null||!Number.isFinite(value))return '';
+ const dollars=value.toFixed(2),percent=Math.round(value*100);
+ switch(id){
+  case 'opMarginCv':return `Margins vary by ${percent}% of their average.`;
+  case 'retainedDollar':return `$${dollars} of value per $1 kept.`;
+  case 'oeToNi':return `$${dollars} of cash for owners per $1 of profit.`;
+  case 'dsri':return `Receivables relative to sales are ${percent}% of their prior-year level.`;
+  case 'goodwillIntangiblesToEquity':return `$${dollars} of goodwill and intangibles per $1 of equity.`;
+  default:return '';
+ }
+}

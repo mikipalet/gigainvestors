@@ -164,6 +164,7 @@ export interface CompanyEvent {
 }
 
 export interface Analysis {
+  author?: string;
   dataQualityFlags?: string[];
   historyCoverage?: { years: number; first: number | null; last: number | null; source: string };
   requiredMos?: number; // Optional only for pre-history corpus compatibility.
@@ -193,6 +194,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  ownerReturnInputs?: { valuation: Valuation; marketCapUsd: number | null };
   exchange?: string; // Listing venue, enriched from the published dossier when needed.
   nameEn?: string;
   nameLocal?: string;
@@ -252,6 +254,7 @@ export interface PublishedFunnel extends FunnelCounts {
 }
 
 export interface StoreMeta {
+  author?: string;
   story?: { analysed: number; qualityPasses: number; qualityShare: number; atBuy: number; countriesCovered: number };
   funnel?: PublishedFunnel;
   asOf: string;

@@ -30,9 +30,9 @@ it('records monthly closes in order with the requested ten-year URL and skips fr
     return Response.json(eod);
   });
   await run();
-  const history = readCorpusJson<{ fetchedAt: string; prices: PriceHistory }>('prices-history/KO.US.json')!;
-  expect(history.prices).toHaveLength(121);
-  expect(history.prices[0]).toEqual(['2016-09',42.32]); expect(history.prices.at(-1)).toEqual(['2026-09',87.18]);
+  const history = readCorpusJson<PriceHistory>('prices-history/KO.US.json')!;
+  expect(history).toHaveLength(121);
+  expect(history[0]).toEqual(['2016-09',42.32]); expect(history.at(-1)).toEqual(['2026-09',87.18]);
   urls.length = 0;
   await run(); expect(urls).toHaveLength(0);
   await run({ force: true }); expect(urls.filter(url => url.pathname.includes('/eod/'))).toHaveLength(1);
@@ -47,7 +47,7 @@ it('refreshes expired rows, filters before limit, and stops at the shared daily 
     expect(new URL(url).pathname).toBe('/api/eod/KO.US'); return Response.json(eod);
   });
   await run({ only: ['KO.US','NEXT.US'], limit: 2 });
-  expect(readCorpusJson<{prices: PriceHistory}>('prices-history/KO.US.json')?.prices[0][1]).toBe(42.32);
+  expect(readCorpusJson<PriceHistory>('prices-history/KO.US.json')?.[0][1]).toBe(42.32);
   expect(readCorpusJson<{prices:PriceHistory}>('prices-history/NEXT.US.json')?.prices).toEqual([['2020-01',2]]); expect(readCorpusJson('prices-history/OLD.US.json')).toBeNull();
 });
 
@@ -58,7 +58,7 @@ it('uses Japanese local month and Yahoo ten-year monthly closes without EODHD bu
     return Response.json(yahoo);
   });
   await run();
-  expect(readCorpusJson<{prices: PriceHistory}>('prices-history/8058.JP.json')?.prices[0]).toEqual(['2016-10',763.6666870117188]);
+  expect(readCorpusJson<PriceHistory>('prices-history/8058.JP.json')?.[0]).toEqual(['2016-10',763.6666870117188]);
 });
 
 it('skips bad provider responses without replacing a cached file', async () => {

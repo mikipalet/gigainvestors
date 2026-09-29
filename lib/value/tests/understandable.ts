@@ -13,12 +13,13 @@ export function run({ years }: NumericInput) {
   const losses = incomes.length < 5 ? null : incomes.filter(x => x < 0).length;
   return outcome({ key: "understandable", metrics: { historyYears: ys.length, revenueDeclines: declines, lossYears: losses, opMarginCv: cv },
     series: { revenue: ys.map(y => [y.fy, y.revenue]), operatingMargin: ys.map(y => [y.fy, opMargin(y)]), netIncome: ys.map(y => [y.fy, y.netIncome]) },
+    reasons: declines === null ? [] : [`${declines} revenue declines in the last ${T.understandable.years} years${declines <= T.understandable.maxRevenueDeclines ? " (informational)" : ""}`],
     checks: [
-      { pass: ys.length >= T.understandable.years, reason: `only ${ys.length} years of history` },
-      { pass: declines === null ? null : declines <= T.understandable.maxRevenueDeclines, reason: "too many revenue declines" },
-      { pass: losses === null ? null : losses <= T.understandable.maxLossYears, reason: "too many net loss years" },
-      { pass: margins.length < 5 || average === null ? null : average >= 0, reason: "negative average operating margin" },
-      { pass: cv === null ? null : cv < T.understandable.maxOpMarginCv, reason: "operating margin variation too high" },
+      { pass: ys.length >= T.understandable.years, data: "history length", reason: `only ${ys.length} years of history` },
+      { pass: declines === null ? null : declines <= T.understandable.maxRevenueDeclines, data: "revenue declines", reason: `more than ${T.understandable.maxRevenueDeclines} revenue declines in ten years` },
+      { pass: losses === null ? null : losses <= T.understandable.maxLossYears, data: "net loss years", reason: `more than ${T.understandable.maxLossYears} net loss years` },
+      { pass: margins.length < 5 || average === null ? null : average >= 0, data: "average operating margin", reason: "negative average operating margin" },
+      { pass: cv === null ? null : cv <= T.understandable.maxOpMarginCv, data: "operating margin variation", reason: `operating margin variation exceeds ${T.understandable.maxOpMarginCv}` },
     ],
   });
 }

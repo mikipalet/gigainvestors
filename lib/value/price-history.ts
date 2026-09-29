@@ -1,8 +1,17 @@
+import { readCorpusJson } from "./corpus";
 import { eodhd } from "./eodhd";
 import { createLimiter, fetchWithRetry } from "./http";
 import type { Company, PriceHistory } from "./types";
 
 export interface CachedPriceHistory { fetchedAt: string; prices: PriceHistory }
+
+/** Read canonical monthly tuples, accepting the original Task 14 cache envelope. */
+export function readPriceHistory(id: string): PriceHistory | null {
+  const cached = readCorpusJson<PriceHistory | CachedPriceHistory>(`prices-history/${id}.json`);
+  const prices = Array.isArray(cached) ? cached : cached?.prices;
+  return prices ? prices.filter(row => Array.isArray(row) && typeof row[0] === "string"
+    && /^\d{4}-\d{2}$/.test(row[0]) && typeof row[1] === "number" && Number.isFinite(row[1]) && row[1] > 0) : null;
+}
 
 function monthlyCloses(rows: Array<{ date: unknown; close: unknown }>): PriceHistory {
   const months = new Map<string, { date: string; close: number }>();

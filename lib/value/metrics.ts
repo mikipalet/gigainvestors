@@ -1,3 +1,4 @@
+import { T } from "./config";
 import type { NumericOutcome, Series, Year } from "./types";
 export { ownerEarnings } from "./owner-earnings";
 
@@ -46,7 +47,10 @@ export function nopat(y: Year): number | null {
 export function roic(y: Year): number | null {
   if ([y.equity, y.totalDebt, y.cash, y.goodwill, y.intangibles].some(x => x === null)) return null;
   const capital = y.equity! + y.totalDebt! - y.cash! - y.goodwill! - y.intangibles!;
-  return ratio(nopat(y), capital);
+  const profit = nopat(y);
+  if (profit === null) return null;
+  // Zero marks a failed return year; positive earnings need no tangible capital.
+  return capital <= 0 ? profit > 0 ? Infinity : 0 : profit / capital;
 }
 export const roe = (y: Year) => ratio(y.netIncome, y.equity);
 export const grossMargin = (y: Year) => ratio(y.grossProfit, y.revenue);
@@ -80,13 +84,29 @@ export function slope(series: Series): number | null {
   const xMean = mean(points.map(p => p[0]))!, yMean = mean(points.map(p => p[1]))!;
   return ratio(sum(points.map(([x, y]) => (x - xMean) * (y - yMean))), sum(points.map(([x]) => (x - xMean) ** 2)));
 }
-export function outcome({ key, metrics, series, checks, reasons = [] }: {
+export interface Check {
+  pass: boolean | null;
+  reason: string;
+  data: string;
+  decisive?: boolean;
+}
+
+export function outcome({ key, metrics, series, checks, reasons = [], minFailures = 1 }: {
   key: NumericOutcome["key"];
   metrics: NumericOutcome["metrics"];
   series: NumericOutcome["series"];
-  checks: Array<{ pass: boolean | null; reason: string }>;
+  checks: Check[];
   reasons?: string[];
+  minFailures?: number;
 }): NumericOutcome {
-  return { key, metrics, series, numeric: checks.some(c => c.pass === false) ? "fail" : checks.some(c => c.pass === null) ? "unclear" : "pass",
-    reasons: [...reasons, ...checks.filter(c => c.pass !== true).map(c => c.pass === null ? `insufficient data: ${c.reason}` : c.reason)] };
+  const available = checks.filter(c => c.pass !== null);
+  const failed = available.filter(c => c.pass === false);
+  const numeric = failed.some(c => c.decisive) || failed.length >= minFailures ? "fail"
+    : checks.length > 0 && available.length / checks.length >= T.numeric.minAvailableFraction ? "pass" : "unclear";
+  // Infinity participates in return statistics, but is never a display value.
+  const display = (value: number | null) => value !== null && Number.isFinite(value) ? value : null;
+  return { key, numeric,
+    metrics: Object.fromEntries(Object.entries(metrics).map(([name, value]) => [name, display(value)])),
+    series: Object.fromEntries(Object.entries(series).map(([name, points]) => [name, points.map(([fy, value]) => [fy, display(value)])])),
+    reasons: [...reasons, ...checks.filter(c => c.pass !== true).map(c => c.pass === null ? `not enough data for ${c.data}` : c.reason)] };
 }

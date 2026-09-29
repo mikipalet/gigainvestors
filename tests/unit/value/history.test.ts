@@ -60,7 +60,7 @@ it('sorts monthly history, chooses the last date per month and drops invalid dat
   expect(companyEvents(f)[0].note).toContain('acquired goodwill and intangibles (proxy)');
   const result = run({years:f.years,kind:'operating'});
   expect(result.metrics.acquisitionSpend).toBe(6e9);
-  expect(result.reasons).toContain('insufficient data: acquired goodwill and intangibles (proxy) alongside declining ROIC');
+  expect(result.reasons).toContain('not enough data for acquired goodwill and intangibles (proxy) and ROIC stability');
   const unknown = f.years.map(y => ({...y, acquisitions:null, ocf:1e9}));
   expect(run({years:unknown,kind:'operating'}).metrics.acquisitionSpend).toBeNull();
  });

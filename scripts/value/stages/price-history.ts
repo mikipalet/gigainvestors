@@ -14,7 +14,9 @@ export default async function priceHistory({ only, limit, force = false }: { onl
   const eligible = loadCompanies({ only }).filter(company => {
     const cached = readCorpusJson<CachedPriceHistory>(`prices-history/${company.id}.json`);
     if (cached?.fetchedAt) fetchedAt.set(company.id, cached.fetchedAt);
-    const fetched = Date.parse(cached?.fetchedAt ?? "");
+    const timestamp = readCorpusJson<{ fetchedAt: string }>(`prices-history/meta/${company.id}.json`)?.fetchedAt ?? cached?.fetchedAt;
+    if (timestamp) fetchedAt.set(company.id, timestamp);
+    const fetched = Date.parse(timestamp ?? "");
     return force || !Number.isFinite(fetched) || now.getTime() - fetched > T.history.refreshMs;
   });
   const companies = orderFundamentals(eligible, fetchedAt).slice(0, limit);
@@ -49,7 +51,8 @@ export default async function priceHistory({ only, limit, force = false }: { onl
       break;
     }
     if (prices === undefined) continue;
-    writeCorpusJson(`prices-history/${company.id}.json`, { fetchedAt: now.toISOString(), prices } satisfies CachedPriceHistory);
+    writeCorpusJson(`prices-history/${company.id}.json`, prices);
+    writeCorpusJson(`prices-history/meta/${company.id}.json`, { fetchedAt: now.toISOString() });
     written++;
   }
   console.log(`price-history: ${written} written`);

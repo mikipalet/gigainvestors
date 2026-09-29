@@ -386,7 +386,7 @@ it("loads analysis with a cheap shape check without building output", async () =
 it("joins the corpus monthly history at publish time and preserves it on partial publish", async () => {
   const root = directory(); vi.stubEnv('VALUE_CORPUS_DIR',root);
   const { writeCorpusJson } = await import('@/lib/value/corpus');
-  writeCorpusJson('prices-history/KO.US.json',{fetchedAt:'2026-09-29',prices:[['2025-01',70]]});
+  writeCorpusJson('prices-history/KO.US.json',[['2025-01',70]]);
   const repo = repository();
   const args = {repo,universeIds:['KO.US','AXP.US'],holdersByTicker:{},investorNames:{}};
   const row = analysis(); row.series={revenuePerShare:[[2025,10]]};

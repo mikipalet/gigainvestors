@@ -14,18 +14,18 @@ describe("numeric quality tests", () => {
     expect(result.numeric).toBe("fail");
     expect(result.reasons.join(" ")).toContain("worst");
   });
-  it("fails a four-point inflation gross margin drop", () => {
-    const result = run(makeYears({ overrides: y => ({ grossProfit: y.fy === 2023 ? 360 : 400 }) })).moat;
+  it("fails an inflation gross margin drop beyond four points", () => {
+    const result = run(makeYears({ overrides: y => ({ grossProfit: y.fy === 2023 ? 350 : 400 }) })).moat;
     expect(result.numeric).toBe("fail");
-    expect(result.reasons).toContain("gross margin fell 4.0pp through 2021-2023");
+    expect(result.reasons).toContain("FY2023 gross margin fell 5.0pp versus the FY2019/FY2020 mean (limit 4pp)");
   });
   it("skips unavailable inflation margins explicitly", () => {
     const result = run(makeYears({ overrides: { grossProfit: null } })).moat;
     expect(result.numeric).toBe("pass");
-    expect(result.reasons.join(" ")).toContain("skipped");
+    expect(result.reasons.join(" ")).toContain("not enough data for");
   });
-  it("fails four revenue declines in ten years", () => {
-    expect(run(makeYears({ overrides: (_, i) => ({ revenue: i < 5 ? 1000 - i * 10 : 1000 }) })).understandable.numeric).toBe("fail");
+  it("allows four revenue declines in ten years", () => {
+    expect(run(makeYears({ overrides: (_, i) => ({ revenue: i < 5 ? 1000 - i * 10 : 1000 }) })).understandable.numeric).toBe("pass");
   });
   it("fails more than two losses", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ netIncome: i > 7 ? -10 : 100 }) })).understandable.numeric).toBe("fail");
@@ -42,7 +42,7 @@ describe("numeric quality tests", () => {
   });
   it("flags debt-funded repurchases", () => {
     const result = run(makeYears({ overrides: (_, i) => ({ buybacks: 200, totalDebt: 100 + 200 * i }) })).management;
-    expect(result.numeric).toBe("fail");
+    expect(result.numeric).toBe("pass");
     expect(result.reasons.join(" ")).toContain("debt-funded");
   });
   it("fails buybacks concentrated at lower earnings yields", () => {
@@ -51,17 +51,17 @@ describe("numeric quality tests", () => {
   it("flags acquisition spending alongside falling ROIC", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ acquisitions: 50, operatingIncome: 125 - i * 5 }) })).management.numeric).toBe("fail");
   });
-  it("fails fifteen percent accruals", () => {
-    expect(run(makeYears({ overrides: { netIncome: 250, ocf: 100 } })).accounting.numeric).toBe("fail");
+  it("reports fifteen percent accruals as a single flag", () => {
+    expect(run(makeYears({ overrides: { netIncome: 250, ocf: 100 } })).accounting.numeric).toBe("pass");
   });
-  it("fails excess three-year receivables growth", () => {
-    expect(run(makeYears({ overrides: (_, i) => ({ receivables: 100 * 1.2 ** i }) })).accounting.numeric).toBe("fail");
+  it("allows receivables growing twenty percent annually below DSRI limit", () => {
+    expect(run(makeYears({ overrides: (_, i) => ({ receivables: 100 * 1.2 ** i }) })).accounting.numeric).toBe("pass");
   });
-  it("fails recurring one-time charges", () => {
-    expect(run(makeYears({ overrides: (_, i) => ({ nonRecurring: i > 7 ? 1 : 0 }) })).accounting.numeric).toBe("fail");
+  it("reports recurring one-time charges as a single flag", () => {
+    expect(run(makeYears({ overrides: (_, i) => ({ nonRecurring: i > 7 ? 1 : 0 }) })).accounting.numeric).toBe("pass");
   });
-  it("fails excessive stock compensation", () => {
-    expect(run(makeYears({ overrides: { sbc: 20, ocf: 100 } })).accounting.numeric).toBe("fail");
+  it("reports excessive stock compensation as a single flag", () => {
+    expect(run(makeYears({ overrides: { sbc: 20, ocf: 100 } })).accounting.numeric).toBe("pass");
   });
   it.each(["bank", "insurer"] as const)("uses ROE and skips accruals for a %s", kind => {
     const result = run(makeYears({ overrides: { grossProfit: null, netIncome: 70, ocf: null, receivables: null, sbc: 0 } }), kind);
@@ -103,11 +103,11 @@ describe("metric arithmetic", () => {
     expect(cagr({ first: 100, last: 121, years: 2 })).toBeCloseTo(0.1);
     expect(cagr({ first: 0, last: 121, years: 2 })).toBeNull();
   });
-  it("uses tax default and clamp and rejects nonpositive invested capital", () => {
+  it("uses tax default and clamp and recognizes unlimited tangible returns", () => {
     const y = makeYears()[0];
     expect(roic({ ...y, taxExpense: null })).toBeCloseTo(0.1975);
     expect(roic({ ...y, taxExpense: 125 })).toBeCloseTo(0.1625);
-    expect(roic({ ...y, equity: 0 })).toBeNull();
+    expect(roic({ ...y, equity: 0 })).toBe(Infinity);
   });
   it("computes balance sheet and margin ratios", () => {
     const y = makeYears()[0];

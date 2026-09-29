@@ -72,6 +72,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "" }
   const growth = clamp({ value: estimates.length ? Math.min(...estimates) : 0, min: 0, max: T.valuation.maxGrowth });
   const pv = (g: number, r: number) => presentValue({ oe: normalized, g, r, terminal: T.valuation.terminal });
   const midPv = pv(growth, discountRate);
+  if ((midPv + netCash) / shares <= 0) return { valuation: null, reason: "debt exceeds the value of owner earnings" };
   if (last(years, window).some(y => y.sbc === null)) assumptions.push("stock compensation not reported");
   if (!estimates.length) assumptions.push("growth estimates unavailable; using zero growth");
   assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", "bridge components use the median owner earnings observation");

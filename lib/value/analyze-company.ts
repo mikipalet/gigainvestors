@@ -7,17 +7,27 @@ import { combine } from "./jev/combine";
 import { QUESTIONS, QUESTIONS_VERSION } from "./jev/questions";
 import { runNumericTests } from "./tests";
 import { valueCompany } from "./valuation";
-import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey } from "./types";
+import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory } from "./types";
 
 export const PIPELINE_VERSION = "2";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
-export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate() }: {
+export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, priceHistory = null, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate() }: {
   company: Company; fundamentals: Fundamentals; sections: Sections; report: ReportMeta;
-  bondYield: number | null; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
+  bondYield: number | null; priceHistory?: PriceHistory | null; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
 }): Promise<Analysis> {
-  const numeric = runNumericTests({ years: fundamentals.years, kind: company.kind });
+  // One reporting-to-trading FX rate serves both valuation and historical caps.
+  const rate = fundamentals.integrity.ok
+    ? await tradingRate({ reporting: fundamentals.currency, trading: company.currency, usdRate }) : null;
+  const monthly = new Map(priceHistory?.map(([month, close]) => [month.slice(0, 7), close]));
+  const years = fundamentals.years.map(year => {
+    const close = monthly.get(year.end.slice(0, 7));
+    const marketCap = rate !== null && rate > 0 && close !== undefined && Number.isFinite(close) && close > 0
+      && year.dilutedShares !== null && year.dilutedShares > 0 ? close * year.dilutedShares / rate : null;
+    return { ...year, marketCap };
+  });
+  const numeric = runNumericTests({ years, kind: company.kind });
   const tests = {} as Analysis["tests"];
   const answers = fundamentals.integrity.ok ? await ask({ id: company.id, sections }) : [];
   for (const key of Object.keys(numeric) as Array<keyof typeof numeric>) {
@@ -37,24 +47,17 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
     : resolvedBondYield === null
       ? { valuation: null, reason: "Local government and US10Y bond yields unavailable" }
-      : valueCompany({ years: fundamentals.years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical });
-  let fxRate: number | null = null;
+      : valueCompany({ years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical });
   if (valuation) {
     if (bondYield === null) valuation.assumptions.push("Local government bond yield unavailable; using US10Y yield");
-    const rate = await tradingRate({ reporting: fundamentals.currency, trading: company.currency, usdRate });
-    fxRate = rate;
     if (rate !== null) valuation.perShareTrading = {
       currency: company.currency, fxRate: rate,
       low: valuation.perShare.low * rate, mid: valuation.perShare.mid * rate, high: valuation.perShare.high * rate,
     };
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
-  // Historical prefixes can still be valued when today's earnings are not positive.
-  if (!valuation && fundamentals.integrity.ok && resolvedBondYield !== null) {
-    fxRate = await tradingRate({ reporting: fundamentals.currency, trading: company.currency, usdRate });
-  }
   return { requiredMos, volatility,
-    valueHistory: valueHistory({ fundamentals, kind: company.kind, bondYield: resolvedBondYield, fxRate, commodity: isCommodity }),
+    valueHistory: valueHistory({ fundamentals, kind: company.kind, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"],
     events: companyEvents(fundamentals), series: perShareSeries(fundamentals),
     id: company.id, company, asOf: new Date().toISOString(),

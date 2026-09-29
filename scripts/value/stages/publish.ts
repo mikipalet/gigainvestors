@@ -6,7 +6,7 @@ import { T } from "../../../lib/value/config";
 import { buildOutput } from "../../../lib/value/build-output";
 import { corpusPath, readCorpusJson, readJsonl } from "../../../lib/value/corpus";
 import type { Analysis, Company, Dossier, PriceMap, PriceHistory } from "../../../lib/value/types";
-import type { CachedPriceHistory } from "../../../lib/value/price-history";
+import { readPriceHistory } from "../../../lib/value/price-history";
 import type { Index, StockShard } from "../../../lib/types";
 
 const REMOTE = "https://github.com/mikipalet/gigainvestors-value-data.git";
@@ -169,8 +169,8 @@ export function publishSnapshot({ repo, analyses, universeIds, partial, force = 
   const priceHistories: Record<string, PriceHistory> = {};
   for (const row of rows) {
     try {
-      const cached = readCorpusJson<CachedPriceHistory>(`prices-history/${row.id}.json`);
-      if (cached && Array.isArray(cached.prices)) priceHistories[row.id] = cached.prices;
+      const prices = readPriceHistory(row.id);
+      if (prices) priceHistories[row.id] = prices;
     } catch (error) {
       console.warn(`publish: skipped price history for ${row.id}: ${error instanceof Error ? error.message : "unreadable history"}`);
     }

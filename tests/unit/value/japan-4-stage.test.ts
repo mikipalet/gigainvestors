@@ -1,0 +1,30 @@
+import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import { mkdtempSync, mkdirSync, readFileSync, rmSync, copyFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { appendJsonl, corpusPath, readCorpusJson, writeCorpusJson } from '../../../lib/value/corpus';
+import { parseEdinetCsv, yearsFromEdinet } from '../../../lib/value/japan/xbrl-csv';
+import type { Fundamentals } from '../../../lib/value/types';
+import renormalize from '../../../scripts/value/stages/renormalize-edinet';
+import japanInterim from '../../../scripts/value/stages/japan-interim';
+let dir:string;
+beforeEach(()=>{
+ dir=mkdtempSync(path.join(tmpdir(),'jp4-'));
+ vi.stubEnv('VALUE_CORPUS_DIR',dir);vi.stubGlobal('fetch',()=>{throw new Error('No network allowed')});
+ vi.useFakeTimers();vi.setSystemTime(new Date('2026-09-29T00:00:00Z'));
+});
+afterEach(()=>{vi.useRealTimers();vi.unstubAllEnvs();vi.unstubAllGlobals();rmSync(dir,{recursive:true,force:true});});
+it('reuses a recorded H1 ZIP through the fetch stage and offline renormalization, preserving annual history on replay',async()=>{
+ const annual=yearsFromEdinet(parseEdinetCsv(readFileSync('tests/fixtures/value/edinet/japan-4/S100XUE0.csv','utf8')));
+ const f:Fundamentals={id:'7609.JP',currency:'JPY',years:annual,integrity:{ok:true,reasons:[]},fetchedAt:'2026-09-29'};
+ appendJsonl('universe.jsonl',{id:f.id,source:'edinet'});writeCorpusJson(`fundamentals/${f.id}.json`,f);writeCorpusJson(`raw/edinet/issuers/${f.id}.json`,{years:annual});
+ writeCorpusJson('raw/edinet/days/2026-08-07.json',{metadata:{status:'200'},results:[{docID:'S100YUIN',secCode:'76090',docTypeCode:'160',periodStart:'2026-01-01',periodEnd:'2026-06-30',submitDateTime:'2026-08-07',csvFlag:'1',withdrawalStatus:'0',disclosureStatus:'0'}]});
+ mkdirSync(corpusPath('raw/edinet/csv'),{recursive:true});copyFileSync('tests/fixtures/value/edinet/japan-4/S100YUIN.zip',corpusPath('raw/edinet/csv/S100YUIN.zip'));
+ await japanInterim({});
+ const result=readCorpusJson<Fundamentals>(`fundamentals/${f.id}.json`)!;
+ expect(result.ttm).toMatchObject({end:'2026-06-30',revenue:113992476000,netIncome:5924468000});
+ expect(result.years).toEqual(annual);
+ await renormalize({});const first=readCorpusJson<Fundamentals>(`fundamentals/${f.id}.json`)!;
+ await renormalize({});expect(readCorpusJson(`fundamentals/${f.id}.json`)).toEqual(first);
+ expect(first.ttm?.netIncome).toBe(5924468000);
+});

@@ -1,3 +1,4 @@
+import { parentShare } from "./parent-share";
 import { T } from "./config";
 import { financialBvps, tangibleEquity, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roiic, sum, withZeroDefaults } from "./metrics";
 import { ownerEarningsBridge } from "./owner-earnings";
@@ -66,6 +67,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const shares = corrected ? currentShares : latest.dilutedShares;
   const discountRate = Math.max(T.valuation.minDiscount, (bondYield ?? 0.04) + T.valuation.bondSpread);
   const assumptions: string[] = [...shareAssumptions];
+  if (latest.edinetShares) assumptions.push(latest.edinetShares.reason);
   if (postSplit) assumptions.push('share count adjusted for post-year split/bonus');
   if (corrected) assumptions.push(`share count corrected to current ${shares}`);
   const priorRevenue = ys.find(y => y.fy === latest.fy - 3)?.revenue;
@@ -115,7 +117,10 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const normalized = Math.min(medianEarnings, latestRow.value, ttmRow?.value ?? Infinity);
   if (normalized <= 0) return { valuation: null, reason: "owner earnings not positive" };
   if (latest.cash === null || latest.totalDebt === null) return { valuation: null, reason: "net cash unavailable" };
-  const netCash = latest.cash - latest.totalDebt;
+  const allocation = parentShare(latest);
+  if (allocation === null) return { valuation: null, reason: "Parent share of consolidated earnings unavailable with material minority interests" };
+  const netCash = (latest.cash - latest.totalDebt) * allocation;
+  if (allocation !== 1 || recent.some(row => row.allocation !== 1)) assumptions.push("Material minority interests: consolidated cash-flow adjustments and net cash allocated by parent net income / total net income; parent net income is already allocated");
   const oeGrowth = decadeCagr(history.map(row => [row.year.fy, ratio(row.value, row.year.dilutedShares)]));
   const revenueGrowth = decadeCagr(ys.map(y => [y.fy, ratio(y.revenue, y.dilutedShares)]));
   const incremental = roiic(ys), reinvestment = reinvestmentRate(ys);
@@ -130,7 +135,8 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   assumptions.push(organicGrowth === null ? 'organic growth proxy unavailable' : 'revenue CAGR reduced by acquisition proxy share of positive assets added over ten years', 'operating growth capped at 8%');
   assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", `owner earnings use the ${window}-year median capped at latest-year owner earnings and complete newer TTM owner earnings`, "maintenance capex floored at the smaller of capex and D&A",
     ttmRow?.value === normalized ? "bridge components use TTM owner earnings; full TTM capex deducted; latest annual lease liabilities used" : normalized < medianEarnings ? "bridge components use the latest owner earnings observation" : "bridge components use the median owner earnings observation");
-  if (recent.some(row => row.leaseCashCost > 0)) assumptions.push("lease payments estimated at 20% of lease liabilities");
+  if (recent.some(row => row.year.leaseCash != null)) assumptions.push("Reported capitalized lease repayments charged in owner earnings; corresponding lease obligations excluded from debt");
+  if (recent.some(row => row.leaseCashCost > 0 && row.year.leaseCash == null)) assumptions.push("lease payments estimated at 20% of lease liabilities");
   const ordered = [...recent].sort((a, b) => a.value - b.value);
   const center = Math.floor(ordered.length / 2);
   const representative = ttmRow?.value === normalized ? [ttmRow as typeof latestRow] : normalized < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
@@ -139,10 +145,10 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
     equityBondYield: ratio(normalized, latest.marketCap),
     bridge: [
       { label: "net income", value: mean(representative.map(row => row.year.netIncome!))! },
-      { label: "+ D&A", value: mean(representative.map(row => row.year.da!))! },
-      { label: "− maintenance capex", value: -mean(representative.map(row => row.maintenanceCapex))! },
-      { label: "− stock compensation", value: -mean(representative.map(row => row.year.sbc ?? 0))! },
-      ...(representative.some(row => row.leaseCashCost > 0) ? [{ label: "− estimated lease payments", value: -mean(representative.map(row => row.leaseCashCost))! }] : []),
+      { label: "+ D&A", value: mean(representative.map(row => row.year.da! * row.allocation!))! },
+      { label: "− maintenance capex", value: -mean(representative.map(row => row.maintenanceCapex * row.allocation!))! },
+      { label: "− stock compensation", value: -mean(representative.map(row => (row.year.sbc ?? 0) * row.allocation!))! },
+      ...(representative.some(row => row.leaseCashCost > 0) ? [{ label: representative.some(row => row.year.leaseCash != null) ? "− lease payments" : "− estimated lease payments", value: -mean(representative.map(row => row.leaseCashCost * row.allocation!))! }] : []),
       { label: "= owner earnings", value: normalized },
       { label: "× PV factor", value: midPv / normalized },
       { label: "+ net cash", value: netCash },

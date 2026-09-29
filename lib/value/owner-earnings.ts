@@ -1,3 +1,4 @@
+import { parentShare } from "./parent-share";
 import type { Series, Year } from "./types";
 
 export function ownerEarningsBridge(years: Year[]) {
@@ -10,10 +11,11 @@ export function ownerEarningsBridge(years: Year[]) {
       ? year.revenue - prev.revenue : null;
     const growthCapex = delta === null || delta <= 0 ? 0 : ratios.length ? Math.max(0, ratios.reduce((a, b) => a + b, 0) / ratios.length * delta) : null;
     const maintenanceCapex = year.capex === null || year.da === null || growthCapex === null ? null : Math.max(year.capex - growthCapex, Math.min(year.capex, year.da));
-    const leaseCashCost = year.leaseDepreciationIncluded && (year.leaseLiabilities ?? 0) > 0 ? 0.2 * year.leaseLiabilities! : 0;
-    const value = year.netIncome === null || year.da === null || maintenanceCapex === null
-      ? null : year.netIncome + year.da - maintenanceCapex - (year.sbc ?? 0) - leaseCashCost;
-    return { year, growthCapex, maintenanceCapex, leaseCashCost, value };
+    const leaseCashCost = year.leaseCash ?? (year.leaseDepreciationIncluded && (year.leaseLiabilities ?? 0) > 0 ? 0.2 * year.leaseLiabilities! : 0);
+    const allocation = parentShare(year);
+    const value = year.leaseCashIncomplete || allocation === null || year.netIncome === null || year.da === null || maintenanceCapex === null
+      ? null : year.netIncome + (year.da - maintenanceCapex - (year.sbc ?? 0) - leaseCashCost) * allocation!;
+    return { year, growthCapex, maintenanceCapex, leaseCashCost, allocation, value };
   });
 }
 

@@ -28,3 +28,20 @@ from `prices-history/{id}.json`. Missing corroboration keeps the jump/truncation
 rules. Both rebuilds preserve `fetchedAt` and make no API calls. Reanalyze all
 changed IDs before publishing; explicit `analyze --only` IDs also accept cached
 company records outside the current universe, without adding them to publication.
+
+EDINET basic EPS supplies the share denominator; filing-date issued and treasury
+shares cross-check it. Confirmed post-year splits/consolidations correct a stale
+EPS basis, without multiplying already-restated EPS again. Unreconciled JP shares
+produce an unverified price flag and cannot publish `b: true`.
+
+EDINET capex includes software/intangible purchases. Reported repayments of
+capitalized leases are charged in owner earnings, with those lease liabilities
+excluded from net debt. For material minorities (>10% of consolidated equity),
+consolidated cash-flow adjustments and net cash use parent NI / total NI; reported
+parent NI is already allocated.
+
+`npm run value -- japan-interim` fetches docType 160 CSVs sequentially through the
+EDINET limiter, using cached filing-day inventories, for annuals older than six
+months. TTM is annual + current H1 - comparative H1 with matching fiscal dates;
+missing required flows stay unavailable. `renormalize-edinet` reuses these cached
+H1 files offline. H1 observations never enter the annual history.

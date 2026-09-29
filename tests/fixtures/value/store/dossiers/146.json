@@ -19,9 +19,13 @@
       "listings": [
         "PG.US"
       ],
-      "marketCapUsd": 172000000000.0,
+      "marketCapUsd": 380000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Procter & Gamble",
+      "nameLocal": "Procter & Gamble",
+      "logo": "https://icons.duckduckgo.com/ip3/pg.com.ico",
+      "about": "Makes everyday household and personal-care products."
     },
     "asOf": "2026-09-29",
     "status": "scored",

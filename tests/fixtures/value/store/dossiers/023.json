@@ -19,9 +19,13 @@
       "listings": [
         "ORCL.US"
       ],
-      "marketCapUsd": 274000000000.0,
+      "marketCapUsd": 500000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Oracle",
+      "nameLocal": "Oracle",
+      "logo": "https://icons.duckduckgo.com/ip3/oracle.com.ico",
+      "about": "Sells database software, business applications and cloud services."
     },
     "asOf": "2026-09-29",
     "status": "scored",

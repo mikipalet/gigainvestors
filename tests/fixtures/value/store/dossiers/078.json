@@ -21,7 +21,11 @@
       ],
       "marketCapUsd": 631000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Chevron",
+      "nameLocal": "Chevron",
+      "logo": "https://icons.duckduckgo.com/ip3/chevron.com.ico",
+      "about": "Produces oil and natural gas and refines fuels."
     },
     "asOf": "2026-09-29",
     "status": "scored",

@@ -21,7 +21,11 @@
       ],
       "marketCapUsd": 720000000000.0,
       "description": "A diversified bank providing deposits, lending and financial services.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "JPMorgan Chase",
+      "nameLocal": "JPMorgan Chase",
+      "logo": "https://icons.duckduckgo.com/ip3/jpmorganchase.com.ico",
+      "about": "Provides consumer banking, business lending and investment-banking services."
     },
     "asOf": "2026-09-29",
     "status": "scored",

@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
+import { Select as Dropdown } from '@/components/controls/Select';
 import { StatusGlyph } from '@/components/value/viz/StatusGlyph';
 import { QUALITY_TESTS } from '@/lib/value/types';
 import { testLabels } from '@/components/value/TestChips';
 export type FilterState = Record<string, string>;
 const countryNames = new Intl.DisplayNames(['en'], { type: 'region' });
-function Dropdown({label,value,options,onChange}:{label:string;value:string;options:Array<[string,string]>;onChange:(value:string)=>void}) {
- const [open,setOpen]=useState(false);
- return <div className="filter-dropdown" onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget))setOpen(false);}} onKeyDown={e=>{if(e.key==='Escape')setOpen(false);}}><button aria-label={label} aria-expanded={open} onClick={()=>setOpen(!open)}>{options.find(o=>o[0]===value)?.[1]??label}<span>⌄</span></button>{open&&<div className="filter-options" role="group" aria-label={label}>{options.map(([id,text])=><button key={id} aria-pressed={id===value} onClick={()=>{onChange(id);setOpen(false);}}>{text}</button>)}</div>}</div>;
-}
 export function Filters({ filter, countries, sectors, tags, change, nearCount, awaitingCount }: { filter: FilterState; countries: string[]; sectors: string[]; tags: Record<string, string>; change: (key: string, value: string) => void; nearCount:number; awaitingCount:number }) {
   const [open, setOpen] = useState(true);
   useEffect(() => { const media = window.matchMedia('(min-width: 768px)'); const update = () => setOpen(media.matches); update(); media.addEventListener('change', update); return () => media.removeEventListener('change', update); }, []);

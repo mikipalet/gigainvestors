@@ -21,7 +21,11 @@
       ],
       "marketCapUsd": 300000000000.0,
       "description": "A global beverage business selling concentrates, syrups and finished drinks through bottling partners.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Coca-Cola",
+      "nameLocal": "Coca-Cola",
+      "logo": "https://icons.duckduckgo.com/ip3/coca-cola.com.ico",
+      "about": "Makes and sells Coca-Cola and other soft drinks around the world."
     },
     "asOf": "2026-09-29",
     "status": "scored",

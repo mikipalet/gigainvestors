@@ -19,9 +19,13 @@
       "listings": [
         "MA.US"
       ],
-      "marketCapUsd": 138000000000.0,
+      "marketCapUsd": 480000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Mastercard",
+      "nameLocal": "Mastercard",
+      "logo": "https://icons.duckduckgo.com/ip3/mastercard.com.ico",
+      "about": "Connects banks, consumers and merchants through its card payment network."
     },
     "asOf": "2026-09-29",
     "status": "scored",

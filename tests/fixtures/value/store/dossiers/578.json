@@ -19,9 +19,13 @@
       "listings": [
         "ADP.US"
       ],
-      "marketCapUsd": 223000000000.0,
+      "marketCapUsd": 120000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Automatic Data Processing",
+      "nameLocal": "Automatic Data Processing",
+      "logo": "https://icons.duckduckgo.com/ip3/adp.com.ico",
+      "about": "Handles payroll, tax filing and human resources for employers."
     },
     "asOf": "2026-09-29",
     "status": "scored",

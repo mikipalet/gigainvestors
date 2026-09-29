@@ -19,9 +19,13 @@
       "listings": [
         "PEP.US"
       ],
-      "marketCapUsd": 189000000000.0,
+      "marketCapUsd": 200000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "PepsiCo",
+      "nameLocal": "PepsiCo",
+      "logo": "https://icons.duckduckgo.com/ip3/pepsico.com.ico",
+      "about": "Makes snacks and beverages including Pepsi and Lay\u2019s."
     },
     "asOf": "2026-09-29",
     "status": "scored",
@@ -548,7 +552,11 @@
       ],
       "marketCapUsd": 580000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Deere",
+      "nameLocal": "Deere",
+      "logo": "https://icons.duckduckgo.com/ip3/deere.com.ico",
+      "about": "Makes tractors and other equipment for farming and construction."
     },
     "asOf": "2026-09-29",
     "status": "scored",

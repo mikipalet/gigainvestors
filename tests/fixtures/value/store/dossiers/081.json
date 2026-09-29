@@ -19,9 +19,13 @@
       "listings": [
         "V.US"
       ],
-      "marketCapUsd": 121000000000.0,
+      "marketCapUsd": 600000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Visa",
+      "nameLocal": "Visa",
+      "logo": "https://icons.duckduckgo.com/ip3/visa.com.ico",
+      "about": "Runs a global network that processes card payments."
     },
     "asOf": "2026-09-29",
     "status": "scored",

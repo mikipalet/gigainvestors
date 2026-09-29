@@ -19,9 +19,13 @@
       "listings": [
         "DIS.US"
       ],
-      "marketCapUsd": 478000000000.0,
+      "marketCapUsd": 170000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Walt Disney",
+      "nameLocal": "Walt Disney",
+      "logo": "https://icons.duckduckgo.com/ip3/disney.com.ico",
+      "about": "Makes films and television, runs theme parks and sells streaming subscriptions."
     },
     "asOf": "2026-09-29",
     "status": "scored",

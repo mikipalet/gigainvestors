@@ -33,3 +33,21 @@ export function tileReason(test:TestOutcome):string {
  if(test.result==='unclear')return 'Evidence incomplete; no verdict.';
  return '';
 }
+
+/** Lead with the meaning of the selected metric, without claiming that one metric passes the whole test. */
+export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):string {
+ const v=metric.value, bar=metric.threshold;
+ if(v===null)return test.pending?'The evidence is still being checked.':'There is not enough evidence to judge this test.';
+ const pct=(n:number)=>`${Math.round(n*100)}%`,num=(n:number)=>n.toFixed(2);
+ switch(test.key){
+  case 'understandable':return v<=bar?'Profit margins have stayed steady over time.':'Profit margins vary too much to call this predictable.';
+  case 'moat': {
+   const years=metric.series.filter(p=>p[1]!==null),passes=years.filter(p=>p[1]!>=bar).length;
+   return `Earns ${pct(v)} on ${kind==='operating'?'capital':'equity'}; ${years.length?`${passes} of ${years.length} years meet`:'compared with'} the ${pct(bar)} bar.`;
+  }
+  case 'economics':return `Turns $1 of profit into $${num(v)} for owners; $${num(bar)} is the bar.`;
+  case 'management':return `Each $1 kept in the business created $${num(v)} of market value.`;
+  case 'accounting':return kind==='operating'?(v<0?`Cash exceeds profit by ${pct(-v)} of assets.`:`Profit exceeds cash by ${pct(v)} of assets; ${pct(bar)} is the limit.`):`Stock pay uses ${pct(v)} of operating cash; the limit is ${pct(bar)}.`;
+  case 'price':return `Price is ${Math.round(Math.abs(v/bar-1)*100)}% ${v<=bar?'below':'above'} the buy line.`;
+ }
+}

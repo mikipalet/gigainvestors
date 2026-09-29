@@ -19,9 +19,13 @@
       "listings": [
         "MSFT.US"
       ],
-      "marketCapUsd": 87000000000.0,
+      "marketCapUsd": 3100000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Microsoft",
+      "nameLocal": "Microsoft",
+      "logo": "https://icons.duckduckgo.com/ip3/microsoft.com.ico",
+      "about": "Sells business software, cloud computing and the Windows operating system."
     },
     "asOf": "2026-09-29",
     "status": "scored",

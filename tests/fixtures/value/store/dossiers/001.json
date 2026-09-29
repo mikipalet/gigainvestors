@@ -21,7 +21,11 @@
       ],
       "marketCapUsd": 597000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "United Parcel Service",
+      "nameLocal": "United Parcel Service",
+      "logo": "https://icons.duckduckgo.com/ip3/ups.com.ico",
+      "about": "Delivers parcels and provides logistics services around the world."
     },
     "asOf": "2026-09-29",
     "status": "scored",

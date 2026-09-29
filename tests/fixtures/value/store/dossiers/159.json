@@ -21,7 +21,11 @@
       ],
       "marketCapUsd": 300000000000.0,
       "description": "An illustrative US-listed ADR reporting in euros, without an available currency conversion.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Global Consumer ADR",
+      "nameLocal": "Global Consumer ADR",
+      "logo": null,
+      "about": "Sells consumer goods internationally through several regional brands."
     },
     "asOf": "2026-09-29",
     "status": "scored",

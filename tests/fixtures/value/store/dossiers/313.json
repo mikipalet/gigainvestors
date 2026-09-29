@@ -19,9 +19,13 @@
       "listings": [
         "HD.US"
       ],
-      "marketCapUsd": 410000000000.0,
+      "marketCapUsd": 370000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Home Depot",
+      "nameLocal": "Home Depot",
+      "logo": "https://icons.duckduckgo.com/ip3/homedepot.com.ico",
+      "about": "Sells tools, building materials and home-improvement products."
     },
     "asOf": "2026-09-29",
     "status": "scored",

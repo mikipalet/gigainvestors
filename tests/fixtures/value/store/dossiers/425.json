@@ -19,9 +19,13 @@
       "listings": [
         "LOW.US"
       ],
-      "marketCapUsd": 427000000000.0,
+      "marketCapUsd": 145000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Lowe\u2019s",
+      "nameLocal": "Lowe\u2019s",
+      "logo": "https://icons.duckduckgo.com/ip3/lowes.com.ico",
+      "about": "Sells home-improvement supplies, appliances and tools."
     },
     "asOf": "2026-09-29",
     "status": "scored",

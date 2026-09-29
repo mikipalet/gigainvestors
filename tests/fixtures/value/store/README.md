@@ -18,3 +18,5 @@ earnings to exercise honest gaps on logarithmic plots. These histories and event
 are illustrative, not company facts or reconstructed investment recommendations.
 Index rows include the fixture's ROIC history and required discount; absent fields
 on other dossiers continue to exercise compatibility with earlier publications.
+
+Round 7 adds optional English names, company logo URLs and deterministic about sentences to every fixture company, plus meta.story and FY2016–2025 history snapshots. History prices, quality strings and subsequent returns are synthetic test data (not investment results). Logo responses are captured under ../logos and intercepted in Playwright for deterministic screenshots; production uses the published absolute URLs with a monogram fallback.

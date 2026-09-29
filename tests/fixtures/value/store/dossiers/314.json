@@ -19,9 +19,13 @@
       "listings": [
         "COST.US"
       ],
-      "marketCapUsd": 155000000000.0,
+      "marketCapUsd": 420000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Costco",
+      "nameLocal": "Costco",
+      "logo": "https://icons.duckduckgo.com/ip3/costco.com.ico",
+      "about": "Operates membership warehouses selling groceries and household goods."
     },
     "asOf": "2026-09-29",
     "status": "scored",

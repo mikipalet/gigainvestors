@@ -1,29 +1,29 @@
-"use client";
+'use client';
+import { useCallback, useEffect, useState } from 'react';
 
-import { useCallback, useEffect, useRef, useState } from "react";
+/** Both timelines share URL restoration and one debounced write after a drag settles. */
+export function useDebouncedQuery(initial:Record<string,string> = {}) {
+ const [query,setQuery]=useState(initial),[ready,setReady]=useState(false);
+ useEffect(()=>{
+  const restore=()=>{setQuery(Object.fromEntries(new URLSearchParams(window.location.search)));setReady(true);};
+  restore();window.addEventListener('popstate',restore);
+  return()=>window.removeEventListener('popstate',restore);
+ },[]);
+ useEffect(()=>{
+  if(!ready)return;
+  // WebKit rate-limits history writes hard while scrubbing.
+  const timer=setTimeout(()=>{
+   const url=new URL(window.location.href);url.search=new URLSearchParams(query).toString();
+   if(url.href!==window.location.href)window.history.replaceState(null,'',url);
+  },350);
+  return()=>clearTimeout(timer);
+ },[query,ready]);
+ return [query,setQuery] as const;
+}
 
-export function useQuarter(quarters: string[], fallback?: string) {
-  const [q, setQ] = useState(fallback ?? quarters[quarters.length - 1]);
-
-  useEffect(() => {
-    const fromUrl = new URLSearchParams(window.location.search).get("q");
-    if (fromUrl && quarters.includes(fromUrl)) setQ(fromUrl);
-  }, [quarters]);
-
-  // Dragging the timeline changes the quarter many times a second. WebKit rate-limits
-  // history writes hard, so the URL is only rewritten once the drag settles.
-  const pending = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const change = useCallback((next: string) => {
-    setQ(next);
-    if (pending.current) clearTimeout(pending.current);
-    pending.current = setTimeout(() => {
-      const url = new URL(window.location.href);
-      url.searchParams.set("q", next);
-      window.history.replaceState(null, "", url);
-    }, 350);
-  }, []);
-
-  useEffect(() => () => { if (pending.current) clearTimeout(pending.current); }, []);
-
-  return [q, change] as const;
+export function useQuarter(quarters:string[],fallback?:string) {
+ const [query,setQuery]=useDebouncedQuery();
+ const q=query.q&&quarters.includes(query.q)?query.q:fallback??quarters[quarters.length-1];
+ const change=useCallback((next:string)=>setQuery(current=>({...current,q:next})),[setQuery]);
+ return [q,change] as const;
 }

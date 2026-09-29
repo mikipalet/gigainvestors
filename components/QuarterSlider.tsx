@@ -7,11 +7,12 @@ interface Props {
   q: string;
   onChange: (q: string) => void;
   note?: string;
+  period?: "quarter" | "year";
 }
 
 // Timeline along the bottom. The quarter pill IS the thumb; drag it, click the track,
 // use the ‹ › buttons or arrow keys.
-export function QuarterSlider({ quarters, q, onChange, note }: Props) {
+export function QuarterSlider({ quarters, q, onChange, note, period = "quarter" }: Props) {
   const idx = Math.max(0, quarters.indexOf(q));
   const idxRef = useRef(idx);
   idxRef.current = idx;
@@ -24,7 +25,7 @@ export function QuarterSlider({ quarters, q, onChange, note }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const t = e.target as HTMLInputElement;
-      if (t?.tagName === "INPUT" && t.type !== "range") return;
+      if (t?.closest('dialog, [role="combobox"], [role="listbox"], textarea, [contenteditable="true"]') || (t?.tagName === "INPUT" && t.type !== "range")) return;
       if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
         e.preventDefault();
         step(e.key === "ArrowLeft" ? -1 : 1);
@@ -36,19 +37,19 @@ export function QuarterSlider({ quarters, q, onChange, note }: Props) {
   }, [quarters, onChange]);
 
   const pct = quarters.length > 1 ? (idx / (quarters.length - 1)) * 100 : 0;
-  const q1s = quarters.filter((x) => x.endsWith("Q1"));
+  const q1s = quarters.filter((x) => period === "year" || x.endsWith("Q1"));
   const firstQ1Idx = q1s.length ? quarters.indexOf(q1s[0]) : quarters.length;
-  const years = (firstQ1Idx >= 4 ? [quarters[0], ...q1s] : q1s).map((x) => ({ y: x.slice(0, 4), i: quarters.indexOf(x) }));
+  const years = (firstQ1Idx >= 4 ? [quarters[0], ...q1s] : q1s).map((x) => ({ y: period === "year" ? x : x.slice(0, 4), i: quarters.indexOf(x) }));
 
   const btn = "flex h-11 w-11 items-center justify-center text-[20px] leading-none transition-opacity sm:h-8 sm:w-8 sm:text-[15px]";
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 h-[84px] select-none bg-paper sm:h-12">
+    <div className={`timeline fixed inset-x-0 bottom-0 z-40 h-[84px] select-none bg-paper sm:h-12 ${period === "year" ? "year-timeline" : ""}`}>
       <div className="absolute bottom-[6px] left-[104px] z-10 text-[10px] leading-none opacity-55 sm:bottom-[3px] sm:left-5 sm:text-[9px] sm:opacity-40">
         {note && <span>{note} · </span>}
-        <span className="hidden sm:inline">quarterly 13F filings · </span>
-        <a href="https://www.dataroma.com" target="_blank" rel="noopener noreferrer" className="underline-offset-2 transition-opacity hover:opacity-100 hover:underline">
-          dataroma.com
+        <span className="hidden sm:inline">{period === "year" ? "Numerical tests only · " : "quarterly 13F filings · "}</span>
+        <a href={period === "year" ? "https://eodhd.com" : "https://www.dataroma.com"} target="_blank" rel="noopener noreferrer" className="underline-offset-2 transition-opacity hover:opacity-100 hover:underline">
+          {period === "year" ? "EODHD / filings" : "dataroma.com"}
         </a>
       </div>
       <div className="absolute bottom-1 left-1 flex items-center sm:bottom-2 sm:left-auto sm:right-2 sm:top-2">
@@ -57,8 +58,8 @@ export function QuarterSlider({ quarters, q, onChange, note }: Props) {
             type="button"
             className={`${btn} ${idx === 0 ? "pointer-events-none opacity-15" : "opacity-45 hover:opacity-100"}`}
             onClick={() => step(-1)}
-            aria-label="Previous quarter"
-            title="previous quarter (←)"
+            aria-label={`Previous ${period}`} disabled={idx === 0}
+            title={`previous ${period} (←)`}
           >
             ‹
           </button>
@@ -66,8 +67,8 @@ export function QuarterSlider({ quarters, q, onChange, note }: Props) {
             type="button"
             className={`${btn} ${idx === quarters.length - 1 ? "pointer-events-none opacity-15" : "opacity-45 hover:opacity-100"}`}
             onClick={() => step(1)}
-            aria-label="Next quarter"
-            title="next quarter (→)"
+            aria-label={`Next ${period}`} disabled={idx === quarters.length - 1}
+            title={`next ${period} (→)`}
           >
             ›
           </button>
@@ -81,14 +82,14 @@ export function QuarterSlider({ quarters, q, onChange, note }: Props) {
           value={idx}
           onChange={(e) => onChange(quarters[Number(e.target.value)])}
           onPointerUp={(e) => (e.currentTarget as HTMLInputElement).blur()}
-          aria-label="Quarter"
+          aria-label={period === "year" ? "Fiscal year" : "Quarter"} aria-valuetext={q === "Today" ? "Today" : period === "year" ? `Fiscal year ${q}` : q}
           className="slider absolute inset-x-0 top-1 z-10 m-0 h-10 w-full cursor-ew-resize appearance-none bg-transparent"
         />
         <div className="pointer-events-none absolute top-[24px] h-px w-full bg-ink/30" />
         {years.map((y) => {
           const near = Math.abs((y.i / Math.max(1, quarters.length - 1)) * 100 - pct) < 4;
           return (
-          <div key={y.y} className="pointer-events-none absolute top-[21px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / (quarters.length - 1)) * 100}%` }}>
+          <div key={y.y} className="pointer-events-none absolute top-[21px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / Math.max(1, quarters.length - 1)) * 100}%` }}>
             {!near && (quarters.length < 60 || Number(y.y) % 2 === 0) ? (
               <span className={`absolute -top-[13px] -translate-x-1/2 text-[10px] leading-none opacity-45 ${Number(y.y) % 4 === 0 ? "inline" : "hidden"} sm:inline`}>{y.y}</span>
             ) : null}
@@ -99,7 +100,7 @@ export function QuarterSlider({ quarters, q, onChange, note }: Props) {
           className="pointer-events-none absolute top-[24px] z-20 -translate-y-1/2 whitespace-nowrap rounded-[3px] bg-ink px-[7px] py-[4px] text-[10px] font-semibold leading-none text-paper shadow-[0_0_0_2px_var(--paper)]"
           style={{ left: `clamp(28px, ${pct}%, calc(100% - 28px))`, transform: "translate(-50%, -50%)" }}
         >
-          {q}
+          {period === "year" && q !== "Today" ? `FY${q}` : q}
         </div>
       </div>
       <style>{`

@@ -19,9 +19,13 @@
       "listings": [
         "TXN.US"
       ],
-      "marketCapUsd": 308000000000.0,
+      "marketCapUsd": 180000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Texas Instruments",
+      "nameLocal": "Texas Instruments",
+      "logo": "https://icons.duckduckgo.com/ip3/ti.com.ico",
+      "about": "Designs and manufactures analog chips for electronics and industrial equipment."
     },
     "asOf": "2026-09-29",
     "status": "scored",

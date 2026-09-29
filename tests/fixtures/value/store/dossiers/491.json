@@ -21,7 +21,11 @@
       ],
       "marketCapUsd": 529000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Merck",
+      "nameLocal": "Merck",
+      "logo": "https://icons.duckduckgo.com/ip3/merck.com.ico",
+      "about": "Develops prescription medicines and vaccines."
     },
     "asOf": "2026-09-29",
     "status": "scored",

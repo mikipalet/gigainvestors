@@ -21,7 +21,11 @@
       ],
       "marketCapUsd": 546000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Pfizer",
+      "nameLocal": "Pfizer",
+      "logo": "https://icons.duckduckgo.com/ip3/pfizer.com.ico",
+      "about": "Develops and sells prescription medicines and vaccines."
     },
     "asOf": "2026-09-29",
     "status": "scored",

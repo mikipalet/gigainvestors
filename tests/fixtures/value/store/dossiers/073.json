@@ -19,9 +19,13 @@
       "listings": [
         "NKE.US"
       ],
-      "marketCapUsd": 325000000000.0,
+      "marketCapUsd": 115000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Nike",
+      "nameLocal": "Nike",
+      "logo": "https://icons.duckduckgo.com/ip3/nike.com.ico",
+      "about": "Designs and sells athletic shoes, clothing and sports equipment."
     },
     "asOf": "2026-09-29",
     "status": "scored",

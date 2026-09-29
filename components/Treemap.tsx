@@ -18,10 +18,15 @@ interface Props<T> {
   render: (item: T, tier: Tier, rect: Rect) => ReactNode;
   label?: (item: T) => string;
   floor?: number;
+  compactTileArea?: number;
+  tileArea?: number;
+  compactFloor?: number;
+  priority?: (item:T) => boolean;
+  onMore?: () => void;
   className?: string;
 }
 
-export function Treemap<T>({ frames, q, render, label, floor, className }: Props<T>) {
+export function Treemap<T>({ frames, q, render, label, floor, className, compactTileArea = 9000, tileArea, compactFloor, priority, onMore }: Props<T>) {
   const ref = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ w: 0, h: 0 });
   const [hover, setHover] = useState<{ id: string; x: number; y: number } | null>(null);
@@ -57,28 +62,19 @@ export function Treemap<T>({ frames, q, render, label, floor, className }: Props
 
   // A phone cannot label 81 tiles, so it shows the ones it can read and folds the tail into
   // one tile that opens the rest. REST_ID is not a real item; it is the door to the full view.
-  const cap = size.w > 0 && size.w < 640 ? Math.max(10, Math.round((size.w * size.h) / 9000)) : Infinity;
+  const cap = size.w > 0 && (size.w < 640 || tileArea) ? Math.max(10, Math.round((size.w * size.h) / (size.w < 640 ? compactTileArea : tileArea!))) : Infinity;
   const items = frames[q] ?? [];
   const capped = !showAll && items.length > cap + 1;
   const shown = useMemo(() => {
     if (!capped) return items;
-    const sorted = [...items].sort((a, b) => b.value - a.value);
+    const sorted = [...items].sort((a, b) => (priority ? Number(priority(b.data))-Number(priority(a.data)) : 0) || b.value - a.value);
     const head = sorted.slice(0, cap);
     const tail = sorted.slice(cap);
     return [...head, { id: REST_ID, value: tail.reduce((s, i) => s + i.value, 0), data: null as never }];
-  }, [items, capped, cap]);
+  }, [items, capped, cap, priority]);
   const restCount = capped ? items.length - cap : 0;
 
-  const cache = useRef(new Map<string, Map<string, Rect>>());
-  const rects = useMemo(() => {
-    const key = `${q}|${size.w}|${size.h}|${shown.length}`;
-    let m = cache.current.get(key);
-    if (!m) {
-      m = new Map(layout(shown, size.w, size.h, 3, floor).map((r) => [r.id, r]));
-      cache.current.set(key, m);
-    }
-    return m;
-  }, [shown, q, size, floor]);
+  const rects = useMemo(() => new Map(layout(shown, size.w, size.h, 3, size.w < 640 ? compactFloor ?? floor : floor).map(r => [r.id, r])), [shown, size, floor, compactFloor]);
 
   const current = useMemo(() => new Map((frames[q] ?? []).map((f) => [f.id, f.data])), [frames, q]);
   const tapped = useRef<string | null>(null);
@@ -108,12 +104,12 @@ export function Treemap<T>({ frames, q, render, label, floor, className }: Props
         return (
           <button
             type="button"
-            onClick={() => setShowAll(true)}
+            onClick={() => onMore ? onMore() : setShowAll(true)}
             className="tile tile-edge flex flex-col items-center justify-center bg-paper text-center"
             style={{ transform: `translate(${r.x}px,${r.y}px)`, width: r.w, height: r.h }}
           >
             <span className="text-[15px] font-semibold">+{restCount} more</span>
-            <span className="mt-1 text-[11px] opacity-50">tap to show every one</span>
+            <span className="mt-1 text-[11px] opacity-50">{onMore ? "open company list" : "tap to show every one"}</span>
           </button>
         );
       })()}

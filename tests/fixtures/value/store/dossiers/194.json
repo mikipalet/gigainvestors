@@ -19,9 +19,13 @@
       "listings": [
         "VRSN.US"
       ],
-      "marketCapUsd": 257000000000.0,
+      "marketCapUsd": 20000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Verisign",
+      "nameLocal": "Verisign",
+      "logo": "https://icons.duckduckgo.com/ip3/verisign.com.ico",
+      "about": "Runs the internet registries for .com and .net domain names."
     },
     "asOf": "2026-09-29",
     "status": "scored",

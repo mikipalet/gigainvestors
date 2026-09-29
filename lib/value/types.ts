@@ -8,6 +8,10 @@ export interface Company {
   id: Id;
   name: string;
   nativeName?: string;
+  nameEn?: string;
+  nameLocal?: string;
+  logo?: string | null;
+  about?: string | null;
   code: string;
   exchange: string;
   country: string; // ISO2
@@ -189,6 +193,9 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  nameEn?: string;
+  nameLocal?: string;
+  lg?: string | null;
   b?: boolean; // Published all-five-pass, verified at-buy-price decision; absent in legacy snapshots.
   dataQualityFlags?: string[];
   returnInfo?: { label: string; note: string; sort: number };
@@ -244,6 +251,7 @@ export interface PublishedFunnel extends FunnelCounts {
 }
 
 export interface StoreMeta {
+  story?: { analysed: number; qualityPasses: number; qualityShare: number; atBuy: number; countriesCovered: number };
   funnel?: PublishedFunnel;
   asOf: string;
   counts: { universe: number; analysed?: number; scored: number; insufficient: number };

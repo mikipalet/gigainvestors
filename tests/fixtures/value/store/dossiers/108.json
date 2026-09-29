@@ -19,9 +19,13 @@
       "listings": [
         "SPGI.US"
       ],
-      "marketCapUsd": 240000000000.0,
+      "marketCapUsd": 150000000000.0,
       "description": "Synthetic company fixture for testing the visualization.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "S&P Global",
+      "nameLocal": "S&P Global",
+      "logo": "https://icons.duckduckgo.com/ip3/spglobal.com.ico",
+      "about": "Provides credit ratings, financial market data and stock-market indexes."
     },
     "asOf": "2026-09-29",
     "status": "scored",

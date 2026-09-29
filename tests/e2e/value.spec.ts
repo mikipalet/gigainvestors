@@ -1,25 +1,21 @@
 import { expect, test } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
+import { valueFixtures } from './value-fixtures';
 const root=path.resolve('tests/fixtures/value/store');
-test.beforeEach(async({page})=>{
- await page.route('https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/**',async route=>{
-  const file=new URL(route.request().url()).pathname.split('/main/')[1];
-  try{await route.fulfill({contentType:'application/json',body:await readFile(path.join(root,file),'utf8')});}catch{await route.fulfill({status:404,body:'{}'});}
- });
-});
+test.beforeEach(async({page})=>valueFixtures(page));
 const open=async(page:import('@playwright/test').Page,key:string)=>{await page.getByTestId(`tile-${key}`).click();await expect(page.getByRole('dialog')).toBeVisible();};
 const close=async(page:import('@playwright/test').Page)=>{await page.getByRole('button',{name:'Close panel',exact:true}).click();};
 test('quality map, near misses, filters and current-price table',async({page})=>{
  await page.goto('/value',{waitUntil:'networkidle'});
- await expect(page.getByRole('heading',{level:1})).toHaveText(/quality compan.*at a buy price/);
+ await expect(page.getByRole('heading',{level:1})).toHaveText(/companies pass Buffett.*qualify at a buy price/);
  await page.getByRole('button',{name:'Table ↗',exact:true}).click();
  await expect(page.getByRole('row',{name:/Coca-Cola/})).toContainText('0.60×');
  await expect(page.getByRole('row',{name:/Delta Air/})).toHaveCount(0);
  await close(page);await page.getByRole('switch',{name:/Near misses/}).click();
  await page.getByRole('button',{name:'Table ↗',exact:true}).click();
  await expect(page.getByRole('row',{name:/Delta Air/})).toBeVisible();
- await close(page);await page.getByLabel('Country',{exact:true}).selectOption('US');
+ await close(page);await page.getByRole('combobox',{name:'Country',exact:true}).click();await page.getByRole('option',{name:'United States',exact:true}).click();
  await expect(page).toHaveURL(/country=US/);await page.reload();
  await expect(page.getByRole('switch',{name:/Near misses/})).toBeChecked();
  await page.getByRole('switch',{name:/Held by superinvestors/}).click();
@@ -42,7 +38,7 @@ test('six evidence panels, filing evidence, valuation bridge and focus restorati
 });
 test('virtual table reaches final row and preserves sorting without page scroll',async({page})=>{
  const row=JSON.parse(await readFile(path.join(root,'index/US.json'),'utf8'))[0];
- await page.route('**/main/index/US.json',r=>r.fulfill({json:Array.from({length:1501},(_,i)=>({...row,id:`FIX${i}.US`,n:`Company ${String(i).padStart(4,'0')}`,t:'PPPPP'}))}));
+ await page.route('**/main/index/US.json',r=>r.fulfill({json:Array.from({length:1501},(_,i)=>({...row,id:`FIX${i}.US`,n:`Company ${String(i).padStart(4,'0')}`,nameEn:`Company ${String(i).padStart(4,'0')}`,t:'PPPPP'}))}));
  await page.goto('/value?country=US&sort=name&direction=asc',{waitUntil:'networkidle'});
  await page.getByRole('button',{name:'Table ↗',exact:true}).click();
  await expect(page.getByTestId('results-table')).toHaveAttribute('aria-rowcount','1502');
@@ -88,10 +84,10 @@ test('latest client quote updates value band, price tile and history together',a
 test('country and price failures remain visible and distinct',async({page})=>{
  await page.route('**/main/prices/US.json',r=>r.fulfill({status:503,body:'{}'}));await page.goto('/value');
  await expect(page.getByRole('status')).toContainText('Some prices are unavailable');
- await page.route('**/main/index/US.json',r=>r.fulfill({status:503,body:'{}'}));await page.getByLabel('Country',{exact:true}).selectOption('US');await expect(page.getByRole('status')).toContainText('Could not load this country');
+ await page.route('**/main/index/US.json',r=>r.fulfill({status:503,body:'{}'}));await page.getByRole('combobox',{name:'Country',exact:true}).click();await page.getByRole('option',{name:'United States',exact:true}).click();await expect(page.getByRole('status')).toContainText('Could not load this country');
 });
 test('map company names are focusable and navigate to dossiers',async({page})=>{
- await page.goto('/value',{waitUntil:'networkidle'});const point=page.locator('.company-map svg a').first();await expect(point).toBeVisible();const destination=await point.getAttribute('href');await point.focus();await expect(page.getByRole('tooltip')).toBeVisible();await page.keyboard.press('Enter');await expect(page).toHaveURL(new RegExp(destination!.replaceAll('.','\\.')+'$'));
+ await page.goto('/value',{waitUntil:'networkidle'});const point=page.locator('.company-tile').first();await expect(point).toBeVisible();const destination=await point.getAttribute('href');await point.focus();await expect(page.getByRole('tooltip')).toBeVisible();await page.keyboard.press('Enter');await expect(page).toHaveURL(new RegExp(destination!.replaceAll('.','\\.')+'$'));
 });
 test('search aliases, pending company and main-site shortcut',async({page})=>{
  await page.goto('/value',{waitUntil:'networkidle'});
@@ -120,14 +116,14 @@ test('one snapshot has the same funnel price count, published flags and green do
  expect(rows.filter((r: { b?: boolean }) => r.b === true)).toHaveLength(count);
  await page.goto('/value', { waitUntil: 'networkidle' });
  await expect(page.locator('.one-index')).toHaveAttribute('data-buy-count', String(count));
- await expect(page.locator('.company-map svg a[data-buy="true"]')).toHaveCount(count);
+ await expect(page.locator('.company-tile[data-buy="true"]')).toHaveCount(count);
  await page.getByRole('switch', { name: /Near misses/ }).click();
- await expect(page.locator('.company-map svg a[data-buy="true"]')).toHaveCount(count);
+ await expect(page.locator('.company-tile[data-buy="true"]')).toHaveCount(count);
  // A separately refreshed quote may move a point; only publication can change its verdict.
  const prices = JSON.parse(await readFile(path.join(root, 'prices/US.json'), 'utf8'));
  prices['KO.US'][0] *= 2;
  await page.route('**/main/prices/US.json', r => r.fulfill({ json: prices }));
  await page.reload({ waitUntil: 'networkidle' });
- await expect(page.locator('.company-map svg a[data-buy="true"]')).toHaveCount(count);
- await expect(page.locator('.company-map svg a[href$="/ko.us"]')).toHaveAttribute('data-buy', 'true');
+ await expect(page.locator('.company-tile[data-buy="true"]')).toHaveCount(count);
+ await expect(page.locator('.company-tile[href$="/ko.us"]')).toHaveAttribute('data-buy', 'true');
 });

@@ -98,5 +98,12 @@
         ]
       }
     }
+  },
+  "story": {
+    "analysed": 41,
+    "qualityPasses": 28,
+    "qualityShare": 0.6829268292682927,
+    "atBuy": 5,
+    "countriesCovered": 1
   }
 }

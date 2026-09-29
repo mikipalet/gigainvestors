@@ -45,3 +45,17 @@ export function dossierReturn(dossier: import('./types').Analysis) {
 }
 
 export const monthLabel = (value:string) => dateLabel(value).replace(/^\d+ /, '');
+
+/** Optional-safe English identity for old and new publication snapshots. */
+export function companyName(company: {nameEn?: string; name?: string; n?: string; id: string}) {
+ const name = company.nameEn || company.name || company.n || '';
+ return /[a-zA-Z]{2}/.test(name) ? displayName(name) : `Company ${company.id}`;
+}
+
+// Single green hue, sequential lightness. Text contrast is validated in round-seven.test.ts.
+export const BUY_RAMP = ['#24563e','#3d7055','#689779','#a0baa7','#cbd9cf','#e8ede7'];
+export function buyColour(priceToBuy: number | null) {
+ if(priceToBuy===null || !Number.isFinite(priceToBuy)) return {background:'#eeede8',color:'#202820',unknown:true};
+ const index = priceToBuy <= 1 ? 0 : priceToBuy <= 1.3 ? 1 : priceToBuy <= 1.7 ? 2 : priceToBuy <= 2.4 ? 3 : priceToBuy <= 4 ? 4 : 5;
+ return {background:BUY_RAMP[index],color:index<2?'#ffffff':'#14251a',unknown:false};
+}

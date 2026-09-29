@@ -21,7 +21,11 @@
       ],
       "marketCapUsd": 30000000000.0,
       "description": "A passenger airline with a cyclical cost base.",
-      "source": "eodhd"
+      "source": "eodhd",
+      "nameEn": "Delta Air Lines",
+      "nameLocal": "Delta Air Lines",
+      "logo": "https://icons.duckduckgo.com/ip3/delta.com.ico",
+      "about": "Carries passengers and freight on domestic and international flights."
     },
     "asOf": "2026-09-29",
     "status": "scored",

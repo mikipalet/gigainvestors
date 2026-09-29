@@ -17,9 +17,10 @@ interface FilingRows {
 const limit = createLimiter({ perSecond: 8 });
 
 export async function fetchEdgar(url: string): Promise<Response> {
-  const response = await limit(() => fetchWithRetry(url, {
+  const response = await fetchWithRetry(url, {
+    beforeAttempt: () => limit(async () => {}),
     headers: { "User-Agent": process.env.SEC_USER_AGENT ?? "GigaInvestors value hello@gigainvestors.com" },
-  }));
+  });
   if (!response.ok) throw new Error(`SEC request failed (${response.status})`);
   return response;
 }

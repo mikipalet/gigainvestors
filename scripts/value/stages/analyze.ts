@@ -40,7 +40,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
   let written = 0;
   let skipped = 0;
   const failures: string[] = [];
-  await Promise.all(Array.from({ length: Math.min(16, jobs.length) }, async () => {
+  await Promise.all(Array.from({ length: Math.min(T.analyze.concurrency, jobs.length) }, async () => {
     while (cursor < jobs.length) {
       const { company, fundamentals } = jobs[cursor++];
       try {

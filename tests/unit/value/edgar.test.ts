@@ -253,3 +253,26 @@ it("falls back from an empty EU ESEF search to SAP's EDGAR 20-F via its US listi
   await reports({});
   expect(JSON.parse(readFileSync(path.join(root,'reports/SAP.XETRA/meta.json'),'utf8'))).toMatchObject({ kind:'20-F', url:expect.stringContaining('/1000184/') });
 });
+
+it("processes SEC and ESEF reports with independent six and three company pools", async () => {
+  setupCorpus([
+    ...Array.from({ length: 10 }, (_, i) => ({ ...company, id: `SEC${i}.US`, cik: String(1000+i) })),
+    ...Array.from({ length: 6 }, (_, i) => ({ ...company, id: `EU${i}.AS`, country: "NL", lei: `LEI${i}`, cik: null })),
+  ]);
+  const active = { sec: 0, esef: 0 }, peak = { sec: 0, esef: 0 };
+  vi.stubGlobal("fetch", async (url: string) => {
+    const provider = url.includes("filings.xbrl.org") ? "esef" : "sec";
+    active[provider]++; peak[provider] = Math.max(peak[provider], active[provider]);
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    active[provider]--;
+    if (url.includes("/api/filings")) return Response.json({ data: [{ attributes: { report_url: "/report.xhtml", date_added: "2026-01-01", period_end: "2025-12-31" } }] });
+    if (provider === "esef") return new Response("<p>" + "Business. ".repeat(500) + "</p>");
+    return Response.json({ filings: { recent: { form: [] } } });
+  });
+  vi.useFakeTimers();
+  try {
+    const work = reports({});
+    await Promise.all([work, vi.runAllTimersAsync()]);
+    expect(peak).toEqual({ sec: 6, esef: 3 });
+  } finally { vi.useRealTimers(); }
+});

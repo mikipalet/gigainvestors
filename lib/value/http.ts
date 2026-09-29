@@ -18,12 +18,12 @@ function sleep(ms: number, signal?: AbortSignal | null): Promise<void> {
 
 export async function fetchWithRetry(
   url: string,
-  init: RequestInit & { retries?: number; retryOn?: number[]; beforeAttempt?: () => void } = {},
+  init: RequestInit & { retries?: number; retryOn?: number[]; beforeAttempt?: () => void | Promise<void> } = {},
 ): Promise<Response> {
   const { retries = 3, retryOn, beforeAttempt, ...request } = init;
   if (!Number.isInteger(retries) || retries < 0) throw new RangeError("retries must be a nonnegative integer");
   for (let attempt = 0; ; attempt++) {
-    beforeAttempt?.();
+    await beforeAttempt?.();
     const response = await fetch(url, request);
     const retry = retryOn
       ? retryOn.includes(response.status)

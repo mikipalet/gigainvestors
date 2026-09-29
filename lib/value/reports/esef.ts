@@ -6,7 +6,7 @@ import { SECTION_TOKENS, truncateTokens } from "./cut-sections";
 const limit = createLimiter({ perSecond: 3 });
 
 export async function fetchEsef(url: string): Promise<Response> {
-  const response = await limit(() => fetchWithRetry(url));
+  const response = await fetchWithRetry(url, { beforeAttempt: () => limit(async () => {}) });
   if (!response.ok) throw new Error(`ESEF request failed (${response.status})`);
   return response;
 }

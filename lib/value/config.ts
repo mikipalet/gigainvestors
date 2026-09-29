@@ -1,5 +1,7 @@
 export const T = {
   budget: { dailyCalls: 100_000, extraCalls: 500, priceHistoryCalls: 15_000, bulkExchangeCost: 100, fundamentalsCost: 10, historyCost: 1 },
+  analyze: { concurrency: 64 },
+  reports: { secConcurrency: 6, esefConcurrency: 3 },
   minYears: 7,
   kind: {
     lendingAssetsRatio: 0.4,

@@ -1,3 +1,5 @@
+import { T } from "../../../lib/value/config";
+import { pool } from "../../../lib/value/http";
 import { createHash, randomUUID } from "node:crypto";
 import { existsSync, mkdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
@@ -14,15 +16,19 @@ export default async function reports({ only, limit, force = false }: {
   only?: string[]; limit?: number; force?: boolean;
 }): Promise<void> {
   const companies = loadCompanies({ only, limit });
-  for (const company of companies) {
-    const esef = company.lei && esefCountries.has(company.country) ? await latestEsef(company.lei) : null;
+  const esefById = new Map<string, Awaited<ReturnType<typeof latestEsef>>>();
+  const candidates = companies.filter(company => company.lei && esefCountries.has(company.country));
+  const candidateIds = new Set(candidates.map(company => company.id));
+  const fallback: typeof companies = [];
+  async function processCompany(company: typeof companies[number]): Promise<void> {
+    const esef = esefById.get(company.id) ?? null;
     const cik = !esef ? await resolveCik(company) : null;
     const filings = cik ? await latestFilings(cik) : null;
     const fingerprint = createHash("sha256").update(JSON.stringify({ version: 5, company, filings, esef })).digest("hex");
     const directory = `reports/${company.id}`;
     const prior = readCorpusJson<ReportMeta>(`${directory}/meta.json`);
     if (!force && readCorpusJson<string>(`${directory}/fingerprint.json`) === fingerprint && prior
-      && prior.sections.every((key) => existsSync(corpusPath(directory, `${key}.txt`)))) continue;
+      && prior.sections.every((key) => existsSync(corpusPath(directory, `${key}.txt`)))) return;
 
     const annual = filings?.annual;
     let sections: Partial<Record<SectionKey, string>> = {};
@@ -65,4 +71,14 @@ export default async function reports({ only, limit, force = false }: {
     writeCorpusJson(`${directory}/meta.json`, meta);
     writeCorpusJson(`${directory}/fingerprint.json`, fingerprint);
   }
+  // ESEF lookups and reports share three workers; SEC fallbacks join its six-worker pool.
+  await Promise.all([
+    pool({ items: companies.filter(company => !candidateIds.has(company.id)), concurrency: T.reports.secConcurrency, run: processCompany }),
+    pool({ items: candidates, concurrency: T.reports.esefConcurrency, run: async company => {
+      const esef = await latestEsef(company.lei!);
+      if (esef) { esefById.set(company.id, esef); await processCompany(company); }
+      else fallback.push(company);
+    } }),
+  ]);
+  await pool({ items: fallback, concurrency: T.reports.secConcurrency, run: processCompany });
 }

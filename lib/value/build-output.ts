@@ -1,3 +1,4 @@
+import { valuationFlags } from "./data-quality";
 import { assertIndexConsistency } from "./consistency";
 import { dossierReturn } from "./presentation";
 import { sameCurrency } from "./currency";
@@ -94,7 +95,9 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
         if (analysis.status === 'scored' && failures[i] && passes.slice(0, 5).every((pass, j) => j === i || pass)) gate.failsOnlyThis++;
       });
     }
+    const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:analysis.valuation?.shares, usdRate:usdRate(company.currency)});
     const dossier: Dossier = {
+      dataQualityFlags,
       ...analysis, requiredMos, holders,
       ...(priceHistories[analysis.id] ? { priceHistory: priceHistories[analysis.id] } : {}),
       series: Object.assign({}, ...outcomes.map((test) => test.series), analysis.series),
@@ -106,6 +109,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
     const returns=dossierReturn(analysis);
     const row: IndexRow = {
+      dataQualityFlags,
       returnInfo:{...returns,sort:Number.isFinite(returns.sort)?returns.sort:returns.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},
       fy: Math.max(0,...Object.values(analysis.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]))) || undefined,
       m: requiredMos, r: [...Array<number | null>(T.history.years - roic.length).fill(null), ...roic],

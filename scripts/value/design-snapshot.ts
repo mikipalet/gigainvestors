@@ -1,4 +1,6 @@
 /** Rebuild a local design-QA snapshot from the live corpus without provider calls or publishing. */
+import { normalizeEodhd } from '../../lib/value/normalize-eodhd';
+import { mergeCompany, withEnglishName } from '../../lib/value/companies';
 import { cpSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { corpusPath, readCorpusJson, readJsonl } from '../../lib/value/corpus';
@@ -27,6 +29,9 @@ async function main(){
  const analyses:Analysis[]=[], histories:Record<string,NonNullable<Dossier['priceHistory']>>={}, holdersByTicker:Record<string,string[]>={}, investorNames:Record<string,string>={};
  const missing:string[]=[];
  for(const old of originals){
+  const raw=readCorpusJson<unknown>(`raw/eodhd/${old.id}.json`);
+  if(raw){const normalized=normalizeEodhd(raw,old.id);const cap=normalized.marketCap;const rate=cap.currency?usdRate(cap.currency):null;old.company=mergeCompany(old.company,{...normalized.patch,...(cap.value!==null&&rate!==null?{marketCapUsd:cap.value*rate}:{})});}
+  old.company=withEnglishName(old.company);
   const fundamentals=readCorpusJson<Fundamentals>(`fundamentals/${old.id}.json`);
   const history=readPriceHistory(old.id);
   if(history)histories[old.id]=history;else if(old.priceHistory)histories[old.id]=old.priceHistory;

@@ -7,6 +7,7 @@ export const QUALITY_TESTS: TestKey[] = ["understandable", "moat", "economics", 
 export interface Company {
   id: Id;
   name: string;
+  nativeName?: string;
   code: string;
   exchange: string;
   country: string; // ISO2
@@ -143,6 +144,8 @@ export interface CompanyEvent {
 }
 
 export interface Analysis {
+  dataQualityFlags?: string[];
+  historyCoverage?: { years: number; first: number | null; last: number | null; source: string };
   requiredMos?: number; // Optional only for pre-history corpus compatibility.
   volatility?: Volatility;
   valueHistory?: ValueHistory; // Trading currency, using today's bond yield and FX.
@@ -169,6 +172,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  dataQualityFlags?: string[];
   returnInfo?: { label: string; note: string; sort: number };
   fy?: number;
   m?: number; // Required margin of safety; absent only in legacy snapshots.

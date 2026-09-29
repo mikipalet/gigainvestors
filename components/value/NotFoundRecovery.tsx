@@ -7,7 +7,7 @@ import { SearchInput } from '../Search';
 export function NotFoundRecovery({ companies, analysed, universe }: { companies: Array<{id:string;n:string}>; analysed: number; universe: number }) {
   const ticker = usePathname().split('/').at(-1)?.split('.')[0] ?? '';
   const suggestions = companies.filter(c => c.id.toLowerCase().startsWith(ticker.slice(0,2).toLowerCase()) || c.n.toLowerCase().includes(ticker.toLowerCase())).slice(0,3);
-  return <section className="not-found-value">
+  return <section className="not-found-value locks-scroll">
     <p className="eyebrow">Outside the current coverage</p><h1>Company not found</h1>
     <p>Try a ticker and exchange, such as KO.US. We have analysed {analysed.toLocaleString('en-US')} of {universe.toLocaleString('en-US')} listed companies; a missing dossier does not mean a business failed the tests.</p>
     <SearchInput query={usePathname().split('/').at(-1)?.toUpperCase()??ticker} />

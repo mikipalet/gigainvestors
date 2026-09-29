@@ -1,3 +1,4 @@
+import { marketCapCurrency } from "./currency";
 import { leaseInputs } from "./valuation-inputs";
 import type { Company, Fundamentals, Id, Year } from "./types";
 import { goodwillAndIntangibles } from "./metrics";
@@ -113,7 +114,7 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
   const latestBalance = record(balances[Object.keys(balances).filter(end => /^\d{4}-\d{2}-\d{2}$/.test(end)).sort().at(-1) ?? ""]);
   return {
     fundamentals,
-    marketCap: { value: number(record(data.Highlights).MarketCapitalization), currency: text(general.CurrencyCode) },
+    marketCap: { value: number(record(data.Highlights).MarketCapitalization), currency: text(general.CurrencyCode) ? marketCapCurrency(text(general.CurrencyCode)!) : null },
     patch: {
       description: text(general.Description), sector, industry,
       isin: text(general.ISIN), cik: text(general.CIK), lei: text(general.LEI),

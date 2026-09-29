@@ -19,11 +19,31 @@ export function loadCompanies({ only, limit, onError }: {
         const enriched = readCorpusJson<Partial<Company>>(`companies/${company.id}.json`);
         // Missing and null enrichment must not erase known universe values.
         const overlay = Object.fromEntries(Object.entries(enriched ?? {}).filter(([, value]) => value != null));
-        return { ...company, ...overlay, id: company.id };
+        return withEnglishName(mergeCompany(company, overlay));
       } catch (error) {
         if (!onError) throw error;
         onError(company, error);
         return company;
       }
     });
+}
+
+export function mergeCompany(row: Company, patch: Partial<Company>): Company {
+ const merged = {...row, ...Object.fromEntries(Object.entries(patch).filter(([,v])=>v!=null)), id:row.id};
+ if (/[^\x00-\x7F]/.test(merged.name) && /^[\x00-\x7F]+$/.test(row.name)) {
+   merged.nativeName=merged.name; merged.name=row.name;
+ }
+ return merged;
+}
+
+/** Use an explicitly linked listing from the same issuer, preserving the native name. */
+export function withEnglishName(company: Company): Company {
+ if (/^[\x00-\x7F]+$/.test(company.name)) return company;
+ for (const id of company.listings) {
+  if (id === company.id || !validCompanyId(id, 'display-name')) continue;
+  const raw=readCorpusJson<{General?:{Name?:string}}>(`raw/eodhd/${id}.json`);
+  const name=raw?.General?.Name;
+  if(name&&/^[\x00-\x7F]+$/.test(name)) return {...company,nativeName:company.nativeName??company.name,name:name.replace(/\s+(?:ADR|ADS)$/i,'')};
+ }
+ return company;
 }

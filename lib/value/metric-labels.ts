@@ -68,4 +68,4 @@ export function formatMetric({ value, format, currency = '' }: { value: number |
   const number = compactMoney(value);
   return format === 'money' ? `${currency} ${number}`.trim() : number;
 }
-export const perShareMoney = (value: number, currency: string) => `${currency} ${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+export const perShareMoney = (value: number, currency: string) => currency === 'GBX' ? `${value.toLocaleString('en-US', {maximumFractionDigits:0})}p` : `${currency} ${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;

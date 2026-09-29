@@ -1,5 +1,6 @@
 'use client';
 import { logTicks } from '@/lib/value/viz/research';
+import { perShareMoney } from '@/lib/value/metric-labels';
 import { monthLabel } from '@/lib/value/presentation';
 import { useId } from 'react';
 import type { Dossier } from '@/lib/value/types';
@@ -10,14 +11,15 @@ import { ChartInteraction } from './ChartInteraction';
 import { DataTable } from './DataTable';
 import { AsOf } from './Events';
 
-export function PriceHistory({ dossier, domain: suppliedDomain, date }: { dossier: Dossier; domain?: [number, number]; date?: string | null }) {
+export function PriceHistory({ dossier, domain: suppliedDomain, date, quote }: { dossier: Dossier; domain?: [number, number]; date?: string | null; quote?: import('@/lib/value/types').PriceMap[string] | null }) {
   const { ref, width } = useWidth();
   const gradient = useId();
   const values = dossier.valueHistory?.filter(p => p.every(Number.isFinite) && p.slice(1).every(n=>n>0)) ?? [];
-  const prices = dossier.priceHistory?.filter(p => Number.isFinite(p[1]) && p[1]>0 && /^\d{4}-\d{2}/.test(p[0])) ?? [];
+  const historicalPrices = dossier.priceHistory?.filter(p => Number.isFinite(p[1]) && p[1]>0 && /^\d{4}-\d{2}/.test(p[0])) ?? [];
+  const prices = quote ? [...historicalPrices.filter(p=>p[0]<quote[1]), [quote[1],quote[0]] as [string,number]] : historicalPrices;
   if (!values.length || !prices.length) return null;
   const requiredMos = dossier.requiredMos ?? T.price.requiredMos.stable;
-  const money = (n: number) => `${dossier.company.currency} ${n.toFixed(2)}`;
+  const money = (n: number) => perShareMoney(n,dossier.company.currency);
   const monthYear = (month: string) => Number(month.slice(0, 4)) + (Number(month.slice(5, 7)) - 1) / 12;
   const domain: [number, number] = [Math.max(values[0][0], monthYear(prices[0][0])), monthYear(prices.at(-1)![0])];
   const jump=values.reduce((last,v,i)=>i>0&&(v[2]/values[i-1][2]>2||v[2]/values[i-1][2]<.5)?v[0]:last,values[0][0]);
@@ -28,8 +30,8 @@ export function PriceHistory({ dossier, domain: suppliedDomain, date }: { dossie
   const project=scale({domain:[Math.log(ticks[0]),Math.log(ticks.at(-1)!)],range:[190,24]});
   const y=(value:number)=>project(Math.log(value));
   const latest = prices.at(-1)!;
-  const matched = prices.flatMap(([month, price]) => { const value = values.find(p => p[0] === Number(month.slice(0, 4))); return value ? [price <= value[2] * (1 - requiredMos)] : []; });
-  const title = `Price met the buy line in ${matched.filter(Boolean).length} of ${matched.length} months with an estimate`;
+  const matched = prices.filter(p=>monthYear(p[0])>=jump).flatMap(([month, price]) => { const value = values.find(p => p[0] === Number(month.slice(0, 4))); return value ? [price <= value[2] * (1 - requiredMos)] : []; });
+  const title = `Price met the buy line in ${matched.filter(Boolean).length} of ${matched.length} months since FY${jump} with an estimate`;
   const priceY = y(latest[1]);
   const buyY = y(values.at(-1)![2] * (1-requiredMos));
   const buyLabelY = Math.abs(priceY-buyY) < 18 ? buyY + (buyY > priceY ? 18 : -18) : buyY;
@@ -44,14 +46,14 @@ export function PriceHistory({ dossier, domain: suppliedDomain, date }: { dossie
         <defs><linearGradient id={`${gradient}-upper`} x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="var(--paper)"/><stop offset="1" stopColor="var(--viz-muted)"/></linearGradient><linearGradient id={`${gradient}-lower`} x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="var(--viz-muted)"/><stop offset="1" stopColor="var(--paper)"/></linearGradient></defs>
         {ticks.map(t => <g key={t}><line x1="48" x2={right} y1={y(t)} y2={y(t)} stroke="var(--viz-grid)"/><text x="42" y={y(t)+3} textAnchor="end" className="viz-tick">{axisTick(t)}</text></g>)}
         {visibleValues.map(([fy, low, mid, high]) => <g key={fy}><rect x={x(Math.max(domain[0],fy))} y={y(high)} width={Math.max(0,x(Math.min(domain[1],fy+1))-x(Math.max(domain[0],fy)))} height={Math.max(0,y(low)-y(high))} fill="var(--buy)" opacity=".12"/><line x1={x(Math.max(domain[0],fy))} x2={x(Math.min(domain[1],fy+1))} y1={y(mid)} y2={y(mid)} stroke="var(--ink)"/></g>)}
-        {prices.map(([month,price]) => { const fy = monthYear(month), value = values.find(v => v[0] === Math.floor(fy)); return value && fy >= domain[0] && price < value[2]*(1-requiredMos) ? <rect key={month} x={x(fy)} y="24" width={Math.max(1,x(Math.min(domain[1],fy+1/12))-x(fy))} height="166" fill="var(--buy)" opacity=".2"/> : null; })}
+        {prices.map(([month,price]) => { const fy = monthYear(month), value = values.find(v => v[0] === Math.floor(fy)); return value && fy >= Math.max(domain[0],jump) && price < value[2]*(1-requiredMos) ? <rect key={month} x={x(fy)} y="24" width={Math.max(1,x(Math.min(domain[1],fy+1/12))-x(fy))} height="166" fill="var(--buy)" opacity=".2"/> : null; })}
         <path d={visibleValues.map(([fy,,mid],i) => `${i ? 'L' : 'M'}${x(Math.max(domain[0],fy))},${y(mid*(1-requiredMos))}H${x(Math.min(domain[1],fy+1))}`).join('')} fill="none" stroke="var(--buy)" strokeWidth="1.5"/>
         <path d={prices.filter(p => monthYear(p[0]) >= domain[0]).map(([month, close], i) => `${i ? 'L' : 'M'}${x(monthYear(month))},${y(close)}`).join('')} stroke="var(--viz-ink)" strokeWidth="2" fill="none" strokeLinejoin="round" strokeLinecap="round"/>
         {dossier.events?.map((event,i) => { const point=prices.find(p=>Number(p[0].slice(0,4))===event.fy); return point && monthYear(point[0])>=domain[0] ? <g key={i}><title>{event.note}</title><circle cx={x(monthYear(point[0]))} cy={y(point[1])} r="7" fill="var(--paper)" stroke="var(--ink)"/><text className="viz-event-number" x={x(monthYear(point[0]))} y={y(point[1])+3} textAnchor="middle">{i+1}</text></g>:null; })}
         <path d={`M${x(extensionStart)},${midY}H${right}M${x(extensionStart)},${currentBuyY}H${right}`} fill="none" stroke="var(--ink)" strokeDasharray="4 3"/>
-        <text x={mobile?right-4:right+8} textAnchor={mobile?'end':'start'} y={Math.max(15,priceY-8)}>Price {latest[1].toFixed(2)}</text>
+        <text x={mobile?right-4:right+8} textAnchor={mobile?'end':'start'} y={Math.max(15,priceY-8)}>Price {money(latest[1])}</text>
         <text x={mobile?right-4:right+8} textAnchor={mobile?'end':'start'} y={Math.min(193,Math.abs(currentBuyY-priceY)<25?currentBuyY+20:currentBuyY+12)}>Buy line</text>
-        {!mobile&&<g><path d={`M${right+93},${priceY}h6V${midY}h-6`} fill="none" stroke="var(--ink)"/><text x={right+106} y={(priceY+midY)/2+4}>{(latest[1]/currentMid).toFixed(2)}×</text></g>}
+        {!mobile&&<g><path d={`M${right+93},${priceY}h6V${midY}h-6`} fill="none" stroke="var(--ink)"/><text x={right+106} y={Math.abs(priceY-midY)<36?priceY+24:(priceY+midY)/2+4}>{(latest[1]/currentMid).toFixed(2)}×</text></g>}
         <text x={right} y="233" textAnchor="end" className="viz-tick">FY{Math.floor(domain[1])} est. · dashed extension</text>
         <text x="48" y="210" className="viz-tick">FY{Math.floor(domain[0])}</text><text x={right} y="210" className="viz-tick" textAnchor="end">FY{Math.floor(domain[1])}</text>
       </svg>

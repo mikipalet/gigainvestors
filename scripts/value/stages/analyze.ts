@@ -1,6 +1,6 @@
 import { currentShareInputs, leaseInputs } from "../../../lib/value/valuation-inputs";
 import { readPrices } from "../../../lib/value/price-files";
-import { validCompanyId } from "../../../lib/value/companies";
+import { validCompanyId, mergeCompany } from "../../../lib/value/companies";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { analyzeCompany, PIPELINE_VERSION, type Ask, type Sections } from "../../../lib/value/analyze-company";
@@ -42,7 +42,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
   const jobs = companies.flatMap(row => {
     if (!validCompanyId(row.id, "analyze")) return [];
     const fundamentals = readCorpusJson<Fundamentals>(`fundamentals/${row.id}.json`);
-    const company = { ...row, ...readCorpusJson<Partial<Company>>(`companies/${row.id}.json`), id: row.id };
+    const company = mergeCompany(row, readCorpusJson<Partial<Company>>(`companies/${row.id}.json`) ?? {});
     return fundamentals ? [{ company, fundamentals }] : [];
   }).slice(0, limit);
   const usdRate = createUsdRate({ force });

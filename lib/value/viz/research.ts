@@ -18,8 +18,8 @@ export function logTicks([min, max]: [number, number], height = 166) {
   const enclosing = candidates.slice(lower, upper + 1);
   const span=Math.log(enclosing.at(-1)!/enclosing[0]);
   const spaced:number[]=[];
-  for(const tick of enclosing) if(!spaced.length || Math.log(tick/spaced.at(-1)!)/span*height>=14) spaced.push(tick);
+  for(const tick of enclosing) if(!spaced.length || Math.log(tick/spaced.at(-1)!)/span*height>=18) spaced.push(tick);
   const end=enclosing.at(-1)!;
-  if(spaced.at(-1)!==end){if(Math.log(end/spaced.at(-1)!)/span*height<14)spaced.pop();spaced.push(end);}
+  if(spaced.at(-1)!==end){if(Math.log(end/spaced.at(-1)!)/span*height<18)spaced.pop();spaced.push(end);}
   return spaced;
 }

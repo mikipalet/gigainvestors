@@ -18,7 +18,7 @@ export function ThresholdSeries({ label, series: rawSeries, domain: suppliedDoma
   const fmt = (n: number) => format === 'pct' ? `${(n * 100).toFixed(1)}%` : format === 'money' ? compactMoney(n, currency) : n.toFixed(1);
   const values = [...points.map(p => p[1]), ...(comparison?.series.flatMap(p => p[1] === null ? [] : [p[1]]) ?? []), ...(threshold === undefined ? [] : [threshold])];
   const min = format==='index'?Math.min(95,...values):!logarithmic&&format==='money'?Math.min(0,...values):Math.min(...values), max = format==='index'?Math.max(105,...values):Math.max(...values);
-  const ticks = logarithmic && points.length ? logTicks([min, max],87) : niceTicks([min, max], 3);
+  const ticks = logarithmic && points.length ? logTicks([min, max],87) : niceTicks([min, max], 5);
   const left = 48, right = width - (comparison ? 100 : 76), top = 24, bottom = 111;
   const x = scale({ domain, range: [left, right] });
   const linear = scale({ domain: logarithmic ? [Math.log(ticks[0]), Math.log(ticks.at(-1)!)] : [ticks[0], ticks.at(-1)!], range: [bottom, top] });

@@ -26,7 +26,11 @@ export default async function DossierPage({ params }: Props) {
   if (!dossier) {
     const company=await getSearchCompany((await params).id);
     if (!company) notFound();
-    return <section className="not-found-value"><p className="eyebrow">{company[0]} · {company[2]}</p><h1>{displayName(company[1])}</h1><h2>Not analysed yet</h2><p>This business is in our coverage queue. Its Buffett checklist arrives within days as we work through the latest filings.</p><p className="source-line">{company[4]!==null?`Market capitalisation: ${compactMoney(company[4],'USD')}. `:''}Listed in {company[2]}. The financial checklist is queued for analysis.</p><SearchInput/><p><ValueLink href="/">← Explore analysed companies</ValueLink></p></section>;
+    return <section className="not-found-value locks-scroll"><p className="eyebrow">{company[0]} · {company[2]}</p><h1>{displayName(company[1])}</h1><h2>Not analysed yet</h2><p>This business is in our coverage queue. Its Buffett checklist arrives within days as we work through the latest filings.</p><p className="source-line">{company[4]!==null?`Market capitalisation: ${compactMoney(company[4],'USD')}. `:''}Listed in {company[2]}.</p><SearchInput/><p><ValueLink href="/">← Explore analysed companies</ValueLink></p></section>;
+  }
+  if (/[^\x00-\x7F]/.test(dossier.company.name)) {
+    const listing=await getSearchCompany(dossier.id);
+    if(listing&&/^[\x00-\x7F]+$/.test(listing[1])) dossier.company={...dossier.company,nativeName:dossier.company.name,name:listing[1]};
   }
   const { company } = dossier;
   const investors = dossier.holders.length ? await getIndex() : null;

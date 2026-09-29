@@ -27,9 +27,9 @@ export function priceState({ price, mid, requiredMos }: { price: number | null; 
   return { state, label: {pass:'Pass',wait:'Wait',fail:'Fail',unclear:'Unclear'}[state], description: {pass:'At or below the buy line',wait:'Below value, above buy line',fail:'Above mid value',unclear:'Comparable price or valuation unavailable'}[state], ratio } as const;
 }
 export function returnDisplay({value, years, unlimited = false, financial = false}: {value: number | null; years: number; unlimited?: boolean; financial?: boolean}) {
-  if (unlimited) return {label:'Unlimited', note:financial?'Tangible equity (equity − goodwill − intangibles) is nonpositive with positive net income; ROE has no finite denominator':'Tangible invested capital (equity + debt − cash − goodwill − intangibles) is nonpositive with positive operating earnings; ROIC has no finite denominator', sort:Infinity};
-  if (value === null || !Number.isFinite(value)) return {label:years < 5 ? `${years} yrs` : 'Not reported', note:'Available annual return observations', sort:-Infinity};
-  if (value > 1 && !financial) return {label:'n/m', note:'The return exceeds 100%; a small tangible-capital denominator makes this percentage uninformative', sort:value};
+  if (unlimited) return {label:'Positive earnings, nonpositive capital', note:financial?'Tangible equity (equity − goodwill − intangibles) is nonpositive with positive net income; ROE has no finite denominator':'Tangible invested capital (equity + debt − cash − goodwill − intangibles) is nonpositive with positive operating earnings; ROIC has no finite denominator', sort:Infinity};
+  if (value === null || !Number.isFinite(value)) return {label:years < 5 ? years ? `${years} years on file` : 'Data arriving' : 'Not reported', note:'Available annual return observations', sort:-Infinity};
+  if (value > 1 && !financial) return {label:'> 100% †', note:`Exact return ${(value*100).toFixed(1)}%; a small tangible-capital denominator makes this percentage sensitive`, sort:value};
   return {label:`${financial ? 'ROE ' : ''}${(value*100).toFixed(1)}%`,note:financial ? 'Return on tangible equity, the denominator used by the published model' : 'Median annual return on tangible invested capital',sort:value};
 }
 export const displayName = (name: string) => name.replace(/^The (.+) (?:Company|Co\.?)$/i, "$1").replace(/\s+S\.A\.B\. de C\.V\.?$/i, "").replace(/[\u2010-\u2015\u2212]/g, '-').replace(/Moodys/g, "Moody’s").replace(/ Natl /g, ' National ').replace(/\s+(Company|Co\.?|Inc\.?|Incorporated|Corporation|Corp\.?|Limited|Ltd\.?|plc|S\.?\s?A\.?|AB \(publ\))(?=\s*$| Class [A-Z])/gi, '').replace(/ Class [A-Z]$/,'').replace(/\s+(?:Co\.?|Ltd\.?|Inc\.?)$/i,'');
@@ -37,8 +37,8 @@ export function testReturn(test: import('./types').TestOutcome, kind: import('./
  const financial=kind!=='operating', key=financial?'roe':'roic';
  const series=test.series[key]??[];
  const info = returnDisplay({value:test.metrics[`${key}Median`]??null,years:series.filter(p=>p[1]!==null).length,unlimited:test.metrics[`${key}Median`]==null&&test.reasons.some(r=>/effectively unlimited/.test(r)),financial});
- if(info.label==='Unlimited'&&test.metrics.unlimitedYears!=null) return {...info,note:`${info.note}. Nonpositive capital in ${test.metrics.unlimitedYears} of ${series.length} years; this labels the ten-year median, not necessarily the latest year.`};
- return info.label === 'n/m' && test.result === 'pass' ? {...info,label:`ROIC ${((test.metrics[`${key}Median`]??0)*100).toFixed(0)}% †`} : info;
+ if(info.label==='Positive earnings, nonpositive capital'&&test.metrics.unlimitedYears!=null) return {...info,note:`${info.note}. Nonpositive capital in ${test.metrics.unlimitedYears} of ${series.length} years; this labels the ten-year median, not necessarily the latest year.`};
+ return info;
 }
 export function dossierReturn(dossier: import('./types').Analysis) {
  return testReturn(dossier.tests.moat,dossier.company.kind);

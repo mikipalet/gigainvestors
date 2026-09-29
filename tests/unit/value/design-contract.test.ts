@@ -13,9 +13,9 @@ describe('one display contract', () => {
     expect(priceState({price:null,mid:100,requiredMos:.25}).state).toBe('unclear');
   });
   it('does not print artefact returns or call negative capital insufficient', () => {
-    expect(returnDisplay({value:7.08,years:10}).label).toBe('n/m');
-    expect(returnDisplay({value:null,years:10,unlimited:true}).label).toBe('Unlimited');
-    expect(returnDisplay({value:null,years:3}).label).toBe('3 yrs');
+    expect(returnDisplay({value:7.08,years:10}).label).toBe('> 100% †');
+    expect(returnDisplay({value:null,years:10,unlimited:true}).label).toBe('Positive earnings, nonpositive capital');
+    expect(returnDisplay({value:null,years:3}).label).toBe('3 years on file');
   });
 });
 
@@ -29,5 +29,5 @@ it('blocks a published headline/table contradiction',()=>{
 it('keeps the same return state when a negative-capital year is serialized as null',async()=>{
  const {dossierReturn}=await import('@/lib/value/presentation');
  const d={company:{kind:'operating'},tests:{moat:{metrics:{roicMedian:null},series:{roic:[[2025,null]]},reasons:['tangible capital is negative: returns effectively unlimited']}}};
- expect(dossierReturn(d as any).label).toBe('Unlimited');
+ expect(dossierReturn(d as any).label).toBe('Positive earnings, nonpositive capital');
 });

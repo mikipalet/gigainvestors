@@ -8,7 +8,7 @@ export function seedPrice({ raw, fetchedAt, screener, reference }: { raw: unknow
   const date = typeof cached.last_day_data_date === 'string' ? cached.last_day_data_date : fetchedAt;
   const timestamp = Date.parse(date);
   if (!Number.isFinite(timestamp)) return null;
-  if (positive(cached.adjusted_close)) return [cached.adjusted_close, new Date(timestamp).toISOString().slice(0, 10), 'seed'];
+  if (positive(cached.adjusted_close)) return [cached.adjusted_close, new Date(timestamp).toISOString().slice(0, 10)];
   const data = record(raw);
   const cap = record(data.Highlights).MarketCapitalization;
   const shares = record(data.SharesStats).SharesOutstanding;

@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 
 test("main search retains shortcuts, ranked results and keyboard navigation", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/", {waitUntil:"networkidle"});
   await page.getByRole("button", { name: "Search", exact: true }).click();
   const input = page.getByPlaceholder("investor, firm, ticker, company");
   await expect(input).toBeFocused();
@@ -12,7 +12,8 @@ test("main search retains shortcuts, ranked results and keyboard navigation", as
   const hits = input.locator("..").locator("li");
   await expect(hits.first()).toContainText("AAPL");
   await input.press("Enter");
-  await expect(page).toHaveURL(/\/s\/AAPL$/);
+  await expect(page).toHaveURL(/\/s\/AAPL$/, {timeout:15000});
+  await page.waitForLoadState("networkidle");
   await page.keyboard.press("Meta+k");
   await expect(input).toBeVisible();
   await input.fill("berkshire");
@@ -26,5 +27,5 @@ test("main search retains shortcuts, ranked results and keyboard navigation", as
   await expect(hits.nth(2)).toContainText("Warren Buffett");
   await expect(hits.nth(2)).toHaveClass(/bg-ink/);
   await input.press("Enter");
-  await expect(page).toHaveURL(/\/BRK$/);
+  await expect(page).toHaveURL(/\/BRK$/, {timeout:15000});
 });

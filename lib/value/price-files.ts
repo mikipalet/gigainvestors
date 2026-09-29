@@ -20,7 +20,7 @@ export function mergeSeedFiles(repo: string): void {
     const file = path.join(repo, 'prices', name);
     const prices: PriceMap = readJsonFile<PriceMap>(file,{missingOnly:true}) ?? {};
     for (const id of unpriced) if (prices[id]?.[2] === 'seed') delete prices[id];
-    for (const [id, seed] of Object.entries(seeds)) if (seed[2] === 'seed') prices[id] = mergeSeed(prices[id], seed);
+    for (const [id, seed] of Object.entries(seeds)) prices[id] = mergeSeed(prices[id], seed);
     mkdirSync(path.dirname(file), { recursive: true });
     writeFileSync(`${file}.tmp`, JSON.stringify(prices) + '\n');
     renameSync(`${file}.tmp`, file);

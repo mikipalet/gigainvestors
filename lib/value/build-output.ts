@@ -4,7 +4,7 @@ import { T } from "./config";
 import { QUESTIONS } from "./jev/questions";
 import { priceTest } from "./price-test";
 import { shardOf } from "./shard";
-import { QUALITY_TESTS, type Analysis, type Dossier, type IndexRow, type PriceMap, type PriceHistory, type Valuation } from "./types";
+import { QUALITY_TESTS, type FunnelCounts, type PublishedFunnel, type Analysis, type Dossier, type IndexRow, type PriceMap, type PriceHistory, type Valuation } from "./types";
 
 function tradingValuation(analysis: Analysis, usdRate: (currency: string) => number | null): Valuation | null {
   const valuation = analysis.status === "scored" ? analysis.valuation : null;
@@ -20,6 +20,20 @@ function tradingValuation(analysis: Analysis, usdRate: (currency: string) => num
   }
   if (![range.low, range.mid, range.high].every(Number.isFinite)) return null;
   return { ...valuation, currency, perShare: { low: range.low, mid: range.mid, high: range.high } };
+}
+
+function emptyFunnel(): FunnelCounts {
+  return {
+    asOf: null, analysed: 0,
+    gates: ([
+      { key: "understandable", label: "Understandable" },
+      { key: "moat", label: "Moat" },
+      { key: "economics", label: "Economics" },
+      { key: "management", label: "Management" },
+      { key: "accounting", label: "Accounting" },
+      { key: "price", label: "Required margin of safety" },
+    ] satisfies Array<Pick<FunnelCounts["gates"][number], "key" | "label">>).map(gate => ({ ...gate, passing: 0, failsOnlyThis: 0 })),
+  };
 }
 
 export function buildOutput({ analyses, holdersByTicker, investorNames, fx, prices = {}, priceHistories = {}, universe = analyses.length }: {
@@ -38,6 +52,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const tags: Record<string, string> = {};
   const sorted = [...analyses].sort((a, b) => (b.company.marketCapUsd ?? -Infinity) - (a.company.marketCapUsd ?? -Infinity) || a.id.localeCompare(b.id));
   const rows: IndexRow[] = [];
+  const funnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   for (const analysis of sorted) {
     const { company } = analysis;
     if (!/^[A-Z]{2}$/.test(company.country)) throw new Error(`Invalid country for ${analysis.id}`);
@@ -57,6 +72,21 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const valuation = tradingValuation(analysis, usdRate);
     const requiredMos = analysis.requiredMos ?? T.price.requiredMos.stable;
     const price = priceTest({ valuation, price: prices[analysis.id]?.[0] ?? null, requiredMos });
+    const passes = [...outcomes.map(test => test.result === "pass"), price.result === "pass"];
+    // Price below its required MOS is a failed funnel gate even when priceTest
+    // calls a positive but inadequate discount "unclear". Missing data is not a failure.
+    const failures = [...outcomes.map(test => test.result === "fail"), price.result === "fail" || price.mos !== null && price.mos < requiredMos];
+    const countryFunnel = funnel.byCountry[company.country] ??= emptyFunnel();
+    for (const population of [funnel, countryFunnel]) {
+      population.analysed++;
+      if (population.asOf === null || analysis.asOf > population.asOf) population.asOf = analysis.asOf;
+      let cumulative = true;
+      population.gates.forEach((gate, i) => {
+        cumulative = cumulative && passes[i];
+        if (cumulative) gate.passing++;
+        if (failures[i] && passes.every((pass, j) => j === i || pass)) gate.failsOnlyThis++;
+      });
+    }
     const dossier: Dossier = {
       ...analysis, requiredMos, holders,
       ...(priceHistories[analysis.id] ? { priceHistory: priceHistories[analysis.id] } : {}),
@@ -95,6 +125,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const common = [...versionCounts.entries()].sort(([a, av], [b, bv]) => bv.count - av.count || a.localeCompare(b))[0]?.[1];
   files["meta.json"] = {
     asOf: analyses.map((analysis) => analysis.asOf).sort().at(-1) ?? null,
+    funnel,
     counts: { universe, analysed: rows.length, scored: rows.filter((row) => row.st === "s").length, insufficient: rows.filter((row) => row.st === "i").length },
     versions: common ? { ...common.versions, other: analyses.length - common.count } : null, tags,
   };

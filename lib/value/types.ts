@@ -196,7 +196,23 @@ export type RawAnswer =
   | { type: "choice"; choice: string; probabilities: Record<string, number>; confidence: number }
   | { type: "score"; score: number; probabilities: Record<string, number>; legend: Record<string, string>; confidence: number };
 
+export interface FunnelCounts {
+  asOf: string | null; // Latest analysis date in this population.
+  analysed: number;
+  gates: Array<{
+    key: TestKey;
+    label: string;
+    passing: number; // Passes this gate and every preceding gate.
+    failsOnlyThis: number; // Confirmed failure here, passes all five other gates.
+  }>;
+}
+
+export interface PublishedFunnel extends FunnelCounts {
+  byCountry: Record<string, FunnelCounts>;
+}
+
 export interface StoreMeta {
+  funnel?: PublishedFunnel;
   asOf: string;
   counts: { universe: number; analysed?: number; scored: number; insufficient: number };
   versions: { pipeline: string; questions: string };

@@ -6,7 +6,7 @@ import { buildOutput } from "@/lib/value/build-output";
 import { corpusDir } from "@/lib/value/corpus";
 import { parseYahooPrice, yahooPrice } from "@/lib/value/prices-yahoo";
 import { shardOf } from "@/lib/value/shard";
-import type { Analysis, Dossier, IndexRow, JevAnswer } from "@/lib/value/types";
+import type { Analysis, Dossier, IndexRow, JevAnswer, StoreMeta, PriceMap } from "@/lib/value/types";
 import { syncRepository, acquirePublishLock, resetRepository, loadAnalyses, commitOutput, loadHolders, publishSnapshot, runCalibration, writeOutput } from "@/scripts/value/stages/publish";
 import { parseBulkPrices, refreshPrices, commitPrices } from "@/scripts/value/stages/prices";
 
@@ -93,6 +93,7 @@ describe("buildOutput", () => {
     expect((files["index/US.json"] as IndexRow[])[0]).toMatchObject({ cur: "GBX", v: [8000, 10000, 12000] });
     const dossier = (files[`dossiers/${shardOf(row.id)}.json`] as Record<string, Dossier>)[row.id];
     expect(dossier.tests.price?.result).toBe("pass");
+    expect((files["meta.json"] as StoreMeta).funnel!.gates[5].passing).toBe(1);
     expect(dossier.tests.price?.metrics.mos).toBeCloseTo(0.3);
     expect(dossier).not.toHaveProperty("price");
     expect(row.valuation!.perShare.mid).toBe(100);
@@ -154,10 +155,15 @@ describe("publish repository", () => {
     const repo = repository();
     writeOutput({ repo, files: output([analysis(), analysis("AXP.US"), analysis("DELISTED.US")]) });
     commitOutput({ repo, asOf: "2026-09-29" });
+    mkdirSync(path.join(corpusDir(), "prices"), { recursive: true });
+    writeFileSync(path.join(corpusDir(), "prices/US.json"), JSON.stringify({ "AXP.US": [50, "2026-09-29", "seed"] }));
     const updated = analysis(); updated.tests.moat.result = "fail";
     publishSnapshot({ repo, analyses: [updated], universeIds: ["KO.US", "AXP.US"], partial: true, force: true, holdersByTicker: {}, investorNames: {} });
     const rows = JSON.parse(readFileSync(path.join(repo, "index/default.json"), "utf8")) as IndexRow[];
     expect(rows.map((row) => [row.id, row.t])).toEqual([["AXP.US", "PPPPP"], ["KO.US", "PFPPP"]]);
+    const funnel = (JSON.parse(readFileSync(path.join(repo, "meta.json"), "utf8")) as StoreMeta).funnel!;
+    expect(funnel.analysed).toBe(2);
+    expect(funnel.gates.map(g => g.passing)).toEqual([2, 1, 1, 1, 1, 1]);
     expect(git(repo, ["rev-list", "--count", "HEAD"])).toBe("1");
   });
   it("loads only active latest-quarter holders from stock shards and resolves investor names", () => {
@@ -437,4 +443,49 @@ it('preserves an unpushed prices commit when preparing the next publish', () => 
   expect(JSON.parse(readFileSync(path.join(repo, 'meta.json'), 'utf8'))).toEqual({ newSnapshot: true });
   expect(JSON.parse(readFileSync(path.join(repo, 'prices/US.json'), 'utf8'))['KO.US'][0]).toBe(60);
   expect(git(repo, ['rev-list', '--count', 'origin/main..HEAD'])).toBe('1');
+});
+
+
+describe("published funnel", () => {
+  it("counts all analyses cumulatively and isolates failures across all six gates by country", () => {
+    const keys = ["understandable", "moat", "economics", "management", "accounting"] as const;
+    const rows = keys.map((key, i) => {
+      const row = analysis(`FAIL${i}.US`);
+      row.tests[key].result = "fail";
+      return row;
+    });
+    const pass = analysis("PASS.US");
+    const multi = analysis("MULTI.US"); multi.tests.understandable.result = "fail"; multi.tests.moat.result = "fail";
+    const unclear = analysis("UNCLEAR.US"); unclear.tests.moat.result = "unclear";
+    const na = analysis("NA.US"); na.tests.economics.result = "na";
+    const insufficient = analysis("INSUFFICIENT.US"); insufficient.status = "insufficient_data";
+    const costly = analysis("COSTLY.JP"); costly.company.country = "JP"; costly.requiredMos = 0.5;
+    const seed = analysis("SEED.JP"); seed.company.country = "JP"; seed.requiredMos = 0.5;
+    const missing = analysis("MISSING.JP"); missing.company.country = "JP";
+    const noValue = analysis("NOVALUE.JP"); noValue.company.country = "JP"; noValue.valuation = null;
+    const all = [...rows, pass, multi, unclear, na, insufficient, costly, seed, missing, noValue];
+    const prices: PriceMap = Object.fromEntries(all.filter(row => row !== missing).map(row => [row.id, [50, "2026-09-29"]]));
+    prices[costly.id] = [60, "2026-09-29"];
+    prices[seed.id] = [50, "2026-09-29", "seed"];
+    const files = buildOutput({ analyses: all, prices, holdersByTicker: {}, investorNames: {}, fx: {} }).files;
+    const funnel = (files["meta.json"] as StoreMeta).funnel!;
+    expect(funnel).toMatchObject({ asOf: "2026-09-29", analysed: 14 });
+    expect(funnel.gates.map(g => [g.key, g.passing, g.failsOnlyThis])).toEqual([
+      ["understandable", 12, 1], ["moat", 10, 1], ["economics", 8, 1],
+      ["management", 7, 1], ["accounting", 6, 1], ["price", 2, 1],
+    ]);
+    expect(funnel.gates.every(g => g.label.length > 0)).toBe(true);
+    expect(funnel.byCountry.US).toMatchObject({ asOf: "2026-09-29", analysed: 10 });
+    expect(funnel.byCountry.US.gates.map(g => g.passing)).toEqual([8, 6, 4, 3, 2, 1]);
+    expect(funnel.byCountry.JP).toMatchObject({ asOf: "2026-09-29", analysed: 4 });
+    expect(funnel.byCountry.JP.gates.map(g => [g.passing, g.failsOnlyThis])).toEqual([[4,0],[4,0],[4,0],[4,0],[4,0],[1,1]]);
+    expect((files["index/default.json"] as IndexRow[]).length).toBeLessThan(funnel.analysed);
+    expect((buildOutput({ analyses: all.reverse(), prices, holdersByTicker: {}, investorNames: {}, fx: {} }).files["meta.json"] as StoreMeta).funnel).toEqual(funnel);
+  });
+
+  it("publishes zero counts for an empty snapshot", () => {
+    const funnel = (output([])["meta.json"] as StoreMeta).funnel!;
+    expect(funnel).toMatchObject({ asOf: null, analysed: 0, byCountry: {} });
+    expect(funnel.gates.map(g => [g.passing, g.failsOnlyThis])).toEqual(Array(6).fill([0, 0]));
+  });
 });

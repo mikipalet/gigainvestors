@@ -10,7 +10,7 @@ Do the work Buffett does on one company (read the reports, test the business, ju
 - Rule: every number, date and ratio is computed in code. Jev only reads prose and answers typed questions (choice / score / noul). Jev's own docs: "not a calculator", reads dates as text, weak numeric calibration, degrades with irrelevant context.
 - No blended score. Six tests, each pass / fail / unclear with evidence. A failed moat is not offset by a cheap price.
 - Surface: same repo and Next app, route group `app/(value)/`, served on `value.gigainvestors.com` via a host rewrite in `proxy.ts`. Existing pages untouched.
-- Storage: raw corpus on this box (`$VALUE_CORPUS_DIR`, default `~/value-corpus`, never `/tmp`); published dossiers in Cloudflare R2 bucket `gigainvestors-value`.
+- Storage: raw corpus on this box (`$VALUE_CORPUS_DIR`, default `~/value-corpus`, never `/tmp`); published data in the public GitHub repo `mikipalet/gigainvestors-value-data` (free, no new account; chosen over R2 on 2026-09-29), one orphan commit force-pushed per publish so history never grows, read by the site from `raw.githubusercontent.com` and cached by ISR for a day. One reader module (`lib/value/store.ts`) so the backend can change later.
 - Refresh: prices daily (bulk EOD per exchange, recompute margin of safety only); fundamentals, reports and Jev quarterly.
 
 ## Pipeline (`scripts/value/`, `lib/value/`)
@@ -30,7 +30,7 @@ Five stages. Each writes its own output under the corpus dir, is resumable (skip
 ### 3. reports
 - EDGAR: latest 10-K / 20-F / 40-F and the latest DEF 14A, via the submissions API (User-Agent header with contact email, 10 req/s).
 - filings.xbrl.org: latest ESEF annual financial report package per LEI, extract the xhtml text.
-- EDINET: latest 有価証券報告書 via the EDINET API (English summary where present; otherwise Japanese text, Jev reads both).
+- EDINET: latest 有価証券報告書 via the EDINET API v2 (`EDINET_API_KEY`); Japanese text, Jev reads it as is. EODHD has NO Tokyo listings (verified 2026-09-29), so Japan's NUMBERS also come from EDINET: the XBRL/CSV of each annual report (current + prior year, plus the 5-year summary of business results), two reports five years apart give 10 years. Japanese prices from Stooq (`{code}.jp`, free CSV). India is not covered in v1 (not on EODHD).
 - Section cutter: business, risk factors, MD&A, shareholder letter (if any), capital allocation / buybacks, executive compensation, accounting policies and notes, auditor report. Each section trimmed to fit Jev's 32k state+question ceiling; long sections split into chunks and answered per chunk (see stage 4).
 - Match reports to universe rows by CIK / LEI / EDINET code via ISIN; unmatched companies fall back to the EODHD description.
 - Output: `reports/{id}/{section}.txt` plus `reports/{id}/meta.json` (source, filing date, period, url).
@@ -73,9 +73,9 @@ Budget: ~60k companies × ~15k tokens ≈ 1B tokens ≈ $42 per full run (input 
 - Also reported: the "equity bond" (normalised owner-earnings yield vs the local 10-year yield) and the assumptions used, so the dossier can show the bridge.
 
 ### 5. publish
-- `dossiers/{id}.json` to R2: identity, six test results with metrics, series and Jev answers (probability + evidence), valuation bridge and range, report source and date, superinvestor holders (joined from `data/store/holders.json` by ticker), pipeline and question-set versions.
-- `index/` to R2: one compact row per company (id, name, country, sector, market cap USD, margin of safety, test results, Jev tag bits, held-by count), sharded by country, plus `index/default.json` (all companies passing the five quality tests, sorted by margin of safety).
-- Daily price job rewrites only price, margin of safety and the price test in the index and dossiers, then calls a revalidate route.
+- `dossiers/{shard}.json` (about 100 dossiers per shard, shard = stable hash of id) to the data repo: identity, six test results with metrics, series and Jev answers (probability + evidence), valuation bridge and range, report source and date, superinvestor holders (joined from `data/store/holders.json` by ticker), pipeline and question-set versions.
+- `index/` to the data repo: one compact row per company (id, name, country, sector, market cap USD, margin of safety, test results, Jev tag bits, held-by count), sharded by country, plus `index/default.json` (all companies passing the five quality tests, sorted by margin of safety).
+- Prices live only in `prices/{country}.json`, never inside dossiers, so the daily price job commits a handful of small files; pages join price at render and compute margin of safety then. The job calls a revalidate route afterwards.
 
 ## Quality control (runs before any publish)
 
@@ -95,7 +95,7 @@ Budget: ~60k companies × ~15k tokens ≈ 1B tokens ≈ $42 per full run (input 
 
 - Unit (vitest): every numeric test and the valuation on hand-built series with known answers; section cutter on real fixture filings (one 10-K, one ESEF, one EDINET); universe collapse of share classes (GOOG/GOOGL, BRK.A/BRK.B, a dual-listed EU name).
 - Fixture companies end to end with recorded EODHD and filing responses (no network in tests): KO, a Japanese trading house, one EU ESEF filer, one airline.
-- Calibration run as the pipeline gate; Playwright on the index and one dossier against `npm start` with a fixture R2 (local directory adapter).
+- Calibration run as the pipeline gate; Playwright on the index and one dossier against `npm start` with a fixture store (local directory adapter).
 
 ## Build approach
 

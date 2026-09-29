@@ -1,5 +1,5 @@
 import { T } from "./config";
-import { tradingRate } from "./bond-yields";
+import { bondYield as fetchBondYield, tradingRate } from "./bond-yields";
 import { askCompany } from "./jev/run";
 import { combine } from "./jev/combine";
 import { QUESTIONS, QUESTIONS_VERSION } from "./jev/questions";
@@ -11,9 +11,9 @@ export const PIPELINE_VERSION = "1";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
-export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, ask = askCompany }: {
+export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, ask = askCompany, getBondYield = fetchBondYield }: {
   company: Company; fundamentals: Fundamentals; sections: Sections; report: ReportMeta;
-  bondYield: number | null; ask?: Ask;
+  bondYield: number | null; ask?: Ask; getBondYield?: typeof fetchBondYield;
 }): Promise<Analysis> {
   const numeric = runNumericTests({ years: fundamentals.years, kind: company.kind });
   const tests = {} as Analysis["tests"];
@@ -24,12 +24,18 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
       ? { ...numeric[key], result: combine({ numeric: numeric[key].numeric, jev }), jev }
       : { key, numeric: "unclear", result: "unclear", metrics: {}, series: {}, jev: [], reasons: [...fundamentals.integrity.reasons] };
   }
+  // askCompany returns one aggregated answer per question (commodity uses a weighted mean).
+  const commodity = answers.find(answer => answer.q === "commodity")?.value;
   const cyclical = (numeric.understandable.metrics.opMarginCv ?? 0) > T.understandable.maxOpMarginCv
-    || answers.some(answer => answer.q === "commodity" && typeof answer.value === "number" && answer.value >= T.jev.evidence);
-  const { valuation, reason } = fundamentals.integrity.ok
-    ? valueCompany({ years: fundamentals.years, kind: company.kind, currency: fundamentals.currency, bondYield, cyclical })
-    : { valuation: null, reason: fundamentals.integrity.reasons.join("; ") };
+    || typeof commodity === "number" && commodity >= T.jev.commodityCyclical;
+  const resolvedBondYield = fundamentals.integrity.ok && bondYield === null ? await getBondYield("US") : bondYield;
+  const { valuation, reason } = !fundamentals.integrity.ok
+    ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
+    : resolvedBondYield === null
+      ? { valuation: null, reason: "Local government and US10Y bond yields unavailable" }
+      : valueCompany({ years: fundamentals.years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical });
   if (valuation) {
+    if (bondYield === null) valuation.assumptions.push("Local government bond yield unavailable; using US10Y yield");
     const rate = await tradingRate({ reporting: fundamentals.currency, trading: company.currency });
     if (rate !== null) valuation.perShareTrading = {
       currency: company.currency, fxRate: rate,

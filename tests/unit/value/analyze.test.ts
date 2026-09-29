@@ -7,12 +7,16 @@ import dal from "../../fixtures/value/eodhd/fund-DAL.US.json";
 import { analyzeCompany } from "../../../lib/value/analyze-company";
 import { bondYield, tradingRate } from "../../../lib/value/bond-yields";
 import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
+import { askJev } from "../../../lib/value/jev/client";
+import { askCompany } from "../../../lib/value/jev/run";
 import { QUESTIONS } from "../../../lib/value/jev/questions";
 import { appendJsonl, corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import type { Analysis, Company, JevAnswer, ReportMeta } from "../../../lib/value/types";
 import analyze from "../../../scripts/value/stages/analyze";
 import { calibrationSummary } from "../../../scripts/value/stages/calibrate";
 import sample from "../../../scripts/value/stages/jev-sample";
+
+vi.mock("../../../lib/value/jev/client", () => ({ askJev: vi.fn() }));
 
 function input(id = "KO.US") {
   const { fundamentals, patch } = normalizeEodhd(id === "KO.US" ? ko : dal, id);
@@ -174,4 +178,124 @@ it("keeps reporting valuation with an explicit assumption when FX is unavailable
   expect(result.valuation!.perShare.mid).toBeGreaterThan(0);
   expect(result.valuation!.perShareTrading).toBeUndefined();
   expect(result.valuation!.assumptions).toContain("Trading currency conversion unavailable");
+});
+
+it("ignores market cap and unused metadata changes but invalidates analysis inputs", async () => {
+  const args = input();
+  appendJsonl("universe.jsonl", args.company);
+  writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);
+  let calls = 0;
+  const options = { ask: async () => { calls++; return answers(); }, getBondYield: async () => 0.04, evidence: async () => null };
+  await analyze(options);
+  writeCorpusJson("companies/KO.US.json", { marketCapUsd: 999, name: "New display name", listings: ["KO.US", "KO.F"] });
+  await analyze(options);
+  expect(calls).toBe(1);
+  const metadata: Partial<Company> = {};
+  for (const patch of [
+    { kind: "bank" }, { currency: "EUR" }, { country: "GB" },
+    { description: "Changed description" }, { sector: "Changed sector" }, { industry: "Changed industry" },
+  ] satisfies Partial<Company>[]) {
+    Object.assign(metadata, patch);
+    writeCorpusJson("companies/KO.US.json", metadata);
+    await analyze(options);
+  }
+  expect(calls).toBe(7);
+});
+
+it("maps ISO GB to UK10Y while leaving other bond country codes unchanged", async () => {
+  vi.stubGlobal("fetch", async (url: string) => {
+    const path = new URL(url).pathname;
+    if (path.endsWith("/UK10Y.GBOND")) return Response.json([{ close: 4.75 }]);
+    if (path.endsWith("/DE10Y.GBOND")) return Response.json([{ close: 2.5 }]);
+    return new Response("Ticker Not Found", { status: 404 });
+  });
+  expect(await bondYield("GB")).toBe(0.0475);
+  expect(await bondYield("DE")).toBe(0.025);
+});
+
+it.each(["empty", "not-found"] as const)("uses US10Y and records the assumption for a %s local bond series", async mode => {
+  const args = input();
+  args.company.country = "ZZ";
+  appendJsonl("universe.jsonl", args.company);
+  writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);
+  vi.stubGlobal("fetch", async (url: string) => new URL(url).pathname.endsWith("/US10Y.GBOND")
+    ? Response.json([{ close: 7.25 }])
+    : mode === "empty" ? Response.json([]) : new Response("Ticker Not Found", { status: 404 }));
+  await analyze({ ask: args.ask, evidence: async () => null });
+  const result = readCorpusJson<Analysis>("analysis/KO.US.json")!;
+  expect(result.valuation!.bondYield).toBe(0.0725);
+  expect(result.valuation!.discountRate).toBeCloseTo(0.1125);
+  expect(result.valuation!.assumptions).toContain("Local government bond yield unavailable; using US10Y yield");
+});
+
+it("omits valuation when local and US10Y bond yields are unavailable", async () => {
+  const args = input();
+  vi.stubGlobal("fetch", async () => Response.json([]));
+  const result = await analyzeCompany({ ...args, bondYield: null });
+  expect(result.valuation).toBeNull();
+  expect(result.valuationReason).toContain("US10Y");
+});
+
+it("converts GBP reporting units to GBX trading units at 100", async () => {
+  writeCorpusJson("raw/eodhd/universe/fx-GBP.json", { date: new Date().toISOString().slice(0, 10), data: [{ close: 1.25 }] });
+  const args = input();
+  args.fundamentals.currency = "GBP";
+  args.company.currency = "GBX";
+  const result = await analyzeCompany(args);
+  expect(result.valuation!.perShareTrading!.fxRate).toBe(100);
+  expect(result.valuation!.perShareTrading!.mid).toBe(result.valuation!.perShare.mid * 100);
+});
+
+it("marks operating margin CV above 0.35 as cyclical without commodity exposure", async () => {
+  const { makeYears } = await import("./synthetic");
+  const args = input();
+  args.fundamentals.years = makeYears({ overrides: (_, i) => ({ operatingIncome: i % 2 ? 50 : 200 }) });
+  const result = await analyzeCompany(args);
+  expect(result.tests.understandable.metrics.opMarginCv).toBeGreaterThan(0.35);
+  expect(result.valuation!.assumptions).toContain("owner earnings normalized over 7 years");
+});
+
+it("uses a commodity cutoff independent of the evidence threshold", async () => {
+  const { T } = await import("../../../lib/value/config");
+  const { makeYears } = await import("./synthetic");
+  const original = T.jev.evidence;
+  Object.assign(T.jev, { evidence: 0.99 });
+  try {
+    const args = input();
+    args.fundamentals.years = makeYears();
+    args.ask = async () => answers().map(a => a.q === "commodity" ? { ...a, value: 0.6 } : a);
+    const result = await analyzeCompany(args);
+    expect(result.valuation!.assumptions).toContain("owner earnings normalized over 7 years");
+  } finally { Object.assign(T.jev, { evidence: original }); }
+});
+
+it("logs each failed company's error and still writes successful companies", async () => {
+  for (const id of ["KO.US", "DAL.US"]) {
+    const args = input(id);
+    appendJsonl("universe.jsonl", args.company);
+    writeCorpusJson(`fundamentals/${id}.json`, args.fundamentals);
+  }
+  const log = vi.spyOn(console, "error").mockImplementation(() => {});
+  await expect(analyze({ ask: async ({ id }) => {
+    if (id === "KO.US") throw new Error("Jev fixture failure");
+    return answers();
+  }, getBondYield: async () => 0.04, evidence: async () => null })).rejects.toThrow("KO.US");
+  expect(log.mock.calls.flat().join(" ")).toContain("KO.US: Jev fixture failure");
+  expect(readCorpusJson<Analysis>("analysis/DAL.US.json")?.status).toBe("scored");
+});
+
+it.each([
+  { risk: 0.1, mean: 0.5, window: 5 },
+  { risk: 0.5, mean: 0.7, window: 7 },
+])("uses aggregated commodity mean $mean across conflicting sections", async ({ risk, mean, window }) => {
+  const { makeYears } = await import("./synthetic");
+  vi.mocked(askJev).mockImplementation(async ({ state }) => ({
+    answers: { commodity: { type: "noul", noul: state === "business" ? 0.9 : risk } },
+    usage: { input_tokens: 10 },
+  }));
+  const args = input();
+  args.fundamentals.years = makeYears();
+  const result = await analyzeCompany({ ...args, ask: askCompany, sections: { business: "business", risk: "risktext" } });
+  expect(result.tests.understandable.jev.find(a => a.q === "commodity")?.value).toBeCloseTo(mean);
+  expect(result.valuation!.assumptions).toContain(`owner earnings normalized over ${window} years`);
 });

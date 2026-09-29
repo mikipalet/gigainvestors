@@ -44,13 +44,17 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           id: company.id, kind: "description", url: null, filed: null, period: null, sections: [],
         } satisfies ReportMeta;
         const sections = loadSections({ company, report });
-        const fingerprint = createHash("sha256").update(JSON.stringify({ company, fundamentals, report, sections,
+        const fingerprint = createHash("sha256").update(JSON.stringify({
+          company: {
+            id: company.id, kind: company.kind, currency: company.currency, country: company.country,
+            description: company.description, sector: company.sector, industry: company.industry,
+          }, fundamentals, report, sections,
           questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
         const result = await analyzeCompany({ company, fundamentals, sections, report,
-          bondYield: fundamentals.integrity.ok ? await getBondYield(company.country) : null, ask });
+          bondYield: fundamentals.integrity.ok ? await getBondYield(company.country) : null, ask, getBondYield });
         if (result.status === "scored" && Object.values(result.tests).every(test => test.numeric !== "fail")) {
           for (const test of Object.values(result.tests)) {
             for (const answer of test.jev) {
@@ -66,7 +70,8 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         writeCorpusJson(file, result);
         writeCorpusJson(fingerprintFile, fingerprint);
         written++;
-      } catch {
+      } catch (error) {
+        console.error(`analyze: ${company.id}: ${error instanceof Error ? error.message : String(error)}`);
         failures.push(company.id);
       }
     }

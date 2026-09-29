@@ -10,7 +10,7 @@ describe('round eight: plain price and identity',()=>{
  });
  it('uses value as the common denominator, with fall measured from current price',()=>{
   expect(priceFraming(.73,.25)).toEqual({headline:'27% below its estimated value',fall:'At or below the buy price',drop:0});
-  expect(priceFraming(4.24,.25)).toEqual({headline:'Costs 4.2× its estimated value',fall:'Needs to fall 82% to reach the buy price',drop:82});
+  expect(priceFraming(4.24,.25)).toEqual({headline:'Costs 4.2× its estimated value',fall:'Price would need to drop 82% to reach the buy price',drop:82});
   expect(priceFraming(null,.25).headline).toBe('Estimated value unavailable');
  });
  it('uses oldest published cohort medians and counts only comparable years',()=>{

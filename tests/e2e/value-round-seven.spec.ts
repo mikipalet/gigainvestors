@@ -33,7 +33,7 @@ test('custom select supports keyboard and filters do not lose the chosen year',a
  await expect(page.locator('select')).toHaveCount(0);
 });
 test('new identity fields render and a broken logo has a readable fallback',async({page})=>{
- await page.route('https://icons.duckduckgo.com/ip3/coca-cola.com.ico',r=>r.fulfill({status:404,body:''}));
+ await page.route('**/api/value/logo?domain=coca-cola.com',r=>r.fulfill({status:204}));
  await page.goto('/value/ko.us',{waitUntil:'networkidle'});
  await expect(page.locator('.company-about')).toContainText('soft drinks');
  await expect(page.locator('.plain-verdict')).toContainText('Buy zone');

@@ -27,7 +27,7 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
 export function tileReason(test:TestOutcome):string {
  if(test.result==='fail'){
   const reason=test.reasons.find(r=>!/informational|ROIC first|\$1 retained earnings test:/.test(r))??'Filing-evidence rule fails';
-  const short:Array<[RegExp,string]>=[[/market cap gain/,'Fails the $1 retained test.'],[/variation/,'Margins are too variable.'],[/net loss/,'Too many loss years.'],[/revenue declines/,'Too many revenue declines.'],[/worst years/,'Weak returns in bad years.'],[/median below/,'Median return below the bar.'],[/incremental/,'Reinvestment return too low.'],[/cash conversion/,'Cash conversion below the bar.'],[/gross margin/,'Gross margin fell too far.'],[/diluted share/,'Both dilution windows fail.'],[/buybacks/,'Buyback timing fails.'],[/working capital/,'Working capital rose too far.']];
+  const short:Array<[RegExp,string]>=[[/market cap gain/,'Managers created less value than they kept.'],[/variation/,'Margins are too variable.'],[/net loss/,'Too many loss years.'],[/revenue declines/,'Too many revenue declines.'],[/worst years/,'Returns are too weak in the worst years.'],[/median below/,'Median return below the bar.'],[/incremental/,'New investments earn too little.'],[/cash conversion/,'Cash conversion below the bar.'],[/gross margin/,'Gross margin fell too far.'],[/diluted share/,'Both dilution windows fail.'],[/buybacks/,'Buyback timing fails.'],[/working capital/,'Working capital rose too far.']];
   return short.find(([pattern])=>pattern.test(reason))?.[1]??reason;
  }
  if(test.pending)return 'Price history is being checked.';

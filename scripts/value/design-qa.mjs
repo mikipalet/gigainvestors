@@ -55,7 +55,7 @@ const audit = () => {
     if (getComputedStyle(document.body).overflow === "hidden" && b.bottom > innerHeight + 1) issues.push(`text below the fold on a no-scroll page: "${t}"`);
   }
   // Structural rules must not strike through text, even when the document height fits.
-  for (const rule of document.querySelectorAll('.test-tile,.funnel,.dossier-source,.value-bottom')) {
+  for (const rule of document.querySelectorAll('.test-tile,.buy-tile,.funnel,.dossier-source,.value-bottom')) {
     const rect=rule.getBoundingClientRect(),style=getComputedStyle(rule);
     for(const {t,b} of leaves)for(const [edge,border] of [[rect.top,style.borderTopWidth],[rect.bottom,style.borderBottomWidth]]) {
       if(parseFloat(border)>0&&b.left<rect.right&&b.right>rect.left&&b.top<edge-1&&b.bottom>edge+1)issues.push(`text crosses a structural rule: "${t}"`);

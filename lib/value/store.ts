@@ -45,11 +45,11 @@ export async function getTopIds(): Promise<Id[]> {
 /** Older snapshots lack return-state metadata; recover it from the same published dossier. */
 export async function enrichRows(rows: IndexRow[]): Promise<IndexRow[]> {
   return Promise.all(rows.map(async row => {
-    if (row.returnInfo) return row;
+    if (row.returnInfo && (!row.b || row.exchange)) return row;
     const dossier = await getDossier(row.id);
     if (!dossier) return row;
     const info = dossierReturn(dossier);
-    return {...row, returnInfo:{...info,sort:Number.isFinite(info.sort)?info.sort:info.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},fy:Math.max(...Object.values(dossier.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0])))};
+    return {...row, exchange:dossier.company.exchange, returnInfo:{...info,sort:Number.isFinite(info.sort)?info.sort:info.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},fy:Math.max(...Object.values(dossier.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0])))};
   }));
 }
 

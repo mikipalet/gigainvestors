@@ -46,7 +46,7 @@ it('does not label newer monthly prices as a new fiscal year', async () => {
 it('labels a seeded price with its market-cap derivation and date', async () => {
   vi.mocked(useQuote).mockReturnValue([6, '2026-09-28', 'seed']);
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toContain('Price 28 Sep 2026 · derived from market cap / shares');
+  expect(html).toContain('Price estimated from market value on 28 Sep 2026');
 });
 
 it.each(['javascript:alert(1)', 'http://example.com/report', '//example.com/report', 'https://example.com/report'])('only renders https report links: %s', async url => {

@@ -193,6 +193,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  exchange?: string; // Listing venue, enriched from the published dossier when needed.
   nameEn?: string;
   nameLocal?: string;
   lg?: string | null;

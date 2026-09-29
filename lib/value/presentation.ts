@@ -56,10 +56,10 @@ export function companyName(company: {nameEn?: string; name?: string; n?: string
 }
 
 // Single green hue, sequential lightness. Text contrast is validated in round-seven.test.ts.
-export const BUY_RAMP = ['#24563e','#3d7055','#689779','#a0baa7','#cbd9cf','#e8ede7'];
+export const BUY_RAMP = ['#123d2b','#326b4c','#79a88a','#b7d0bf','#dce7df','#f2f4ef'];
 export function buyColour(priceToBuy: number | null) {
  if(priceToBuy===null || !Number.isFinite(priceToBuy)) return {background:'#eeede8',color:'#202820',unknown:true};
- const index = priceToBuy <= 1 ? 0 : priceToBuy <= 1.3 ? 1 : priceToBuy <= 1.7 ? 2 : priceToBuy <= 2.4 ? 3 : priceToBuy <= 4 ? 4 : 5;
+ const index = priceToBuy <= 1 ? 0 : priceToBuy <= 2 ? 1 : priceToBuy <= 3 ? 2 : priceToBuy <= 4 ? 3 : priceToBuy <= 6 ? 4 : 5;
  return {background:BUY_RAMP[index],color:index<2?'#ffffff':'#14251a',unknown:false};
 }
 
@@ -67,5 +67,5 @@ export function buyColour(priceToBuy: number | null) {
 export function priceFraming(ratio:number|null,discount=.25) {
  if(ratio===null||!Number.isFinite(ratio)||ratio<=0)return {headline:'Estimated value unavailable',fall:'Buy price unavailable',drop:null};
  const drop=Math.max(0,Math.round((1-(1-discount)/ratio)*100));
- return {headline:ratio<1?`${Math.round((1-ratio)*100)}% below its estimated value`:`Costs ${ratio.toFixed(1)}× its estimated value`,fall:ratio<=1-discount?'At or below the buy price':`Needs to fall ${drop||'<1'}% to reach the buy price`,drop};
+ return {headline:ratio<1?`${Math.round((1-ratio)*100)}% below its estimated value`:`Costs ${ratio.toFixed(1)}× its estimated value`,fall:ratio<=1-discount?'At or below the buy price':`Price would need to drop ${drop||'<1'}% to reach the buy price`,drop};
 }

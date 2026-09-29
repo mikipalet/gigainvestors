@@ -1,3 +1,4 @@
+import { HolderSummary } from '@/components/value/HolderSummary';
 import { HolderLink } from '@/components/value/HolderLink';
 import { displayName } from '@/lib/value/presentation';
 import { compactMoney } from '@/lib/format';
@@ -36,7 +37,7 @@ export default async function DossierPage({ params }: Props) {
   const { company } = dossier;
   const investors = dossier.holders.length ? await getIndex() : null;
   return <DossierContent dossier={dossier}>
-    {dossier.holders.length>0&&<section className="holders"><h2>Held by {dossier.holders.length} tracked investor{dossier.holders.length===1?'':'s'}</h2>
+    {dossier.holders.length>0&&<section className="holders"><h2><HolderSummary holders={dossier.holders}/></h2>
       {dossier.holders.length ? <ul className="holder-stack">{dossier.holders.slice(0,5).map((holder) => {
         const investor = investors?.investors.find((item) => item.code === holder.code);
         return <li key={holder.code}><HolderLink name={holder.name} code={holder.code}>

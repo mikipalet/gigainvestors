@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
-import { analyzeCompany, PIPELINE_VERSION, type Ask, type Sections } from "../../../lib/value/analyze-company";
+import { analyzeCompany, PIPELINE_VERSION, type Ask, type Sections, type PriceHistory } from "../../../lib/value/analyze-company";
 import { bondYield } from "../../../lib/value/bond-yields";
 import { createUsdRate } from "../../../lib/value/fx";
 import { T } from "../../../lib/value/config";
@@ -46,16 +46,17 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           id: company.id, kind: "description", url: null, filed: null, period: null, sections: [],
         } satisfies ReportMeta;
         const sections = loadSections({ company, report });
+        const priceHistory = readCorpusJson<PriceHistory>(`prices-history/${company.id}.json`);
         const fingerprint = createHash("sha256").update(JSON.stringify({
           company: {
             id: company.id, kind: company.kind, currency: company.currency, country: company.country,
             description: company.description, sector: company.sector, industry: company.industry,
-          }, fundamentals, report, sections,
+          }, fundamentals, report, sections, priceHistory,
           questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
-        const result = await analyzeCompany({ company, fundamentals, sections, report,
+        const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory,
           bondYield: fundamentals.integrity.ok ? await getBondYield(company.country) : null, ask, getBondYield, usdRate });
         if (result.status === "scored" && Object.values(result.tests).every(test => test.numeric !== "fail")) {
           for (const test of Object.values(result.tests)) {

@@ -140,7 +140,7 @@ it("runs paragraph evidence only when no numeric quality test fails", async () =
   expect(good.tests.moat.jev.find(a => a.q === "brand")?.evidence).toBe("Supporting paragraph");
   expect(evidenceCalls).toBeGreaterThan(0);
   evidenceCalls = 0;
-  args.fundamentals.years = args.fundamentals.years.map(y => ({ ...y, sbc: y.ocf }));
+  args.fundamentals.years = args.fundamentals.years.map(y => ({ ...y, sbc: y.ocf, nonRecurring: 1 }));
   writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);
   await analyze(options);
   expect(readCorpusJson<Analysis>("analysis/KO.US.json")!.tests.accounting.numeric).toBe("fail");
@@ -298,4 +298,62 @@ it.each([
   const result = await analyzeCompany({ ...args, ask: askCompany, sections: { business: "business", risk: "risktext" } });
   expect(result.tests.understandable.jev.find(a => a.q === "commodity")?.value).toBeCloseTo(mean);
   expect(result.valuation!.assumptions).toContain(`owner earnings normalized over ${window} years`);
+});
+
+
+it("R3 derives the $1 test from fiscal-end monthly closes through the corpus stage", async () => {
+  const { makeYears } = await import("./synthetic");
+  const { default: history } = await import("../../fixtures/value/prices-history/CALIB.US.json");
+  const args = input();
+  args.fundamentals.years = makeYears({ overrides: y => ({ end: `${y.fy}-09-30`, marketCap: null, buybacks: 10 }) });
+  appendJsonl("universe.jsonl", args.company);
+  writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);
+  writeCorpusJson("prices-history/KO.US.json", history);
+  const options = { ask: args.ask, getBondYield: async () => 0.04, evidence: async () => null };
+  await analyze(options);
+  const result = readCorpusJson<Analysis>("analysis/KO.US.json")!;
+  expect(result.tests.management.metrics.marketCapGain).toBe(1000);
+  expect(result.tests.management.metrics.retainedEarnings).toBe(800);
+  expect(result.tests.management.series.marketCap.at(-1)).toEqual([2023, 2000]);
+  expect(result.tests.management.numeric).toBe("pass");
+  // History is part of the input fingerprint; a new close must change the verdict.
+  writeCorpusJson("prices-history/KO.US.json", history.map(([month, close]) => [month, month === "2023-09" ? 100 : close]));
+  await analyze(options);
+  expect(readCorpusJson<Analysis>("analysis/KO.US.json")!.tests.management.numeric).toBe("fail");
+  rmSync(corpusPath("prices-history/KO.US.json"));
+  await analyze(options);
+  const missing = readCorpusJson<Analysis>("analysis/KO.US.json")!.tests.management;
+  expect(missing.numeric).toBe("unclear");
+  expect(missing.metrics.marketCapGain).toBeNull();
+});
+
+it("R3 uses the inverse valuation FX for historical market caps, including pence", async () => {
+  const { makeYears } = await import("./synthetic");
+  const { default: history } = await import("../../fixtures/value/prices-history/CALIB.US.json");
+  const args = input();
+  args.fundamentals.currency = "GBP";
+  args.company.currency = "GBX";
+  args.fundamentals.years = makeYears({ overrides: y => ({ end: `${y.fy}-09-30`, marketCap: null }) });
+  appendJsonl("universe.jsonl", args.company);
+  writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);
+  writeCorpusJson("prices-history/KO.US.json", history.map(([month, close]) => [month, Number(close) * 100]));
+  writeCorpusJson("raw/eodhd/universe/fx-GBP.json", { date: new Date().toISOString().slice(0, 10), data: [{ close: 1.25 }] });
+  await analyze({ ask: args.ask, getBondYield: async () => 0.04, evidence: async () => null });
+  const result = readCorpusJson<Analysis>("analysis/KO.US.json")!;
+  expect(result.tests.management.metrics.marketCapGain).toBe(1000);
+  expect(result.valuation!.perShareTrading!.fxRate).toBe(100);
+});
+
+it.each(["missing-month", "missing-shares", "missing-fx"] as const)("R3 keeps year-end market cap unavailable with %s", async missing => {
+  const { makeYears } = await import("./synthetic");
+  const args = input();
+  args.fundamentals.years = makeYears({ overrides: y => ({
+    end: `${y.fy}-09-30`, marketCap: 999999, dilutedShares: missing === "missing-shares" ? null : 10,
+  }) });
+  if (missing === "missing-fx") args.company.currency = "EUR";
+  const result = await analyzeCompany({ ...args, usdRate: async () => null,
+    priceHistory: [[missing === "missing-month" ? "2023-12" : "2023-09", 200]],
+  });
+  expect(result.tests.management.series.marketCap.at(-1)).toEqual([2023, null]);
+  expect(result.tests.management.metrics.marketCapGain).toBeNull();
 });

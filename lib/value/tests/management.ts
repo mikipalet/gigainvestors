@@ -15,7 +15,7 @@ export function run({ years }: NumericInput) {
     return y.buybacks === null || earningsYield === null ? [] : [{ amount: y.buybacks, earningsYield }];
   });
   const meanSpend = mean(paired.map(p => p.amount)), meanYield = mean(paired.map(p => p.earningsYield));
-  const discipline = spending === 0 ? 0 : paired.length < 5 ? null
+  const discipline = paired.length < 5 ? null : spending === 0 ? 0
     : mean(paired.map(p => (p.amount - meanSpend!) * (p.earningsYield - meanYield!)));
   const debtFlags = history.slice(1).map((y, i) => {
     const prev = history[i];
@@ -32,12 +32,12 @@ export function run({ years }: NumericInput) {
     buybackYieldCovariance: discipline, debtFundedBuybacks: debtFunded === null ? null : Number(debtFunded), acquisitionSpend, roicTrend: trend },
     series: { shares: ys.map(y => [y.fy, y.dilutedShares]), buybacks: ys.map(y => [y.fy, y.buybacks]), acquisitions: ys.map(y => [y.fy, y.acquisitions]), roic: roicSeries,
       marketCap: history.map(y => [y.fy, y.marketCap]), retainedEarnings: ys.map(y => [y.fy, y.netIncome === null || y.dividendsPaid === null ? null : y.netIncome - y.dividendsPaid]) },
+    reasons: debtFunded ? ["potential debt-funded buybacks (informational)"] : [],
     checks: [
-      { pass: retained.gain === null || retained.retained === null ? null : retained.gain >= retained.retained, reason: "market cap gain below cumulative retained earnings" },
-      { pass: shareCagr === null ? null : shareCagr <= T.management.maxShareCagr, reason: "diluted share growth above threshold" },
-      { pass: discipline === null ? null : discipline >= 0, reason: "buybacks concentrated at lower earnings yields" },
-      { pass: debtFunded === null ? null : !debtFunded, reason: "potential debt-funded buybacks" },
-      { pass: acquisitionSpend === null ? null : acquisitionSpend === 0 ? true : trend === null ? null : trend >= 0, reason: "acquisition spending alongside declining ROIC" },
+      { pass: retained.gain === null || retained.retained === null ? null : retained.gain >= retained.retained, data: "the $1 retained earnings test", reason: "market cap gain below cumulative retained earnings" },
+      { pass: shareCagr === null ? null : shareCagr <= T.management.maxShareCagr, data: "diluted share growth", reason: "diluted share growth above threshold" },
+      { pass: discipline === null ? null : discipline >= 0, data: "buyback timing", reason: "buybacks concentrated at lower earnings yields" },
+      { pass: acquisitionSpend === null ? null : acquisitionSpend === 0 ? true : trend === null ? null : trend >= 0, data: "acquisition spending and ROIC stability", reason: "acquisition spending alongside declining ROIC" },
     ],
   });
 }

@@ -36,11 +36,11 @@ describe("round 1 controller rulings", () => {
     const years = makeYears({ n: 10, overrides: (_, i) => ({ operatingIncome: i === 0 ? -125 : 125 }) });
     expect(run(years).moat.numeric).toBe("pass");
   });
-  it("compares total three-year growth rather than annual rates", () => {
+  it("compares the latest receivables to sales ratios", () => {
     const years = makeYears({ overrides: (_, i) => ({ receivables: i === 10 ? 150 : 100, revenue: i === 10 ? 1300 : 1000 }) });
     const result = run(years).accounting;
-    expect(result.metrics.receivablesGrowthGap).toBeCloseTo(0.20);
-    expect(result.numeric).toBe("fail");
+    expect(result.metrics.dsri).toBeCloseTo(1.5 / 1.3);
+    expect(result.numeric).toBe("pass");
   });
   it("scores and values a company without optional balance sheet and cash flow items", () => {
     const years = makeYears({ overrides: (_, i) => ({
@@ -78,8 +78,10 @@ describe("round 1 controller rulings", () => {
     expect(result.numeric).toBe("fail");
     expect(result.reasons).toContain("earnings not backed by cash");
   });
-  it.each([0, -1])("keeps SBC unclear with OCF %s and nonpositive earnings", ocf => {
-    expect(run(makeYears({ overrides: { ocf, netIncome: -10 } })).accounting.numeric).toBe("unclear");
+  it.each([0, -1])("keeps SBC unavailable but permits accounting coverage with OCF %s and nonpositive earnings", ocf => {
+    const result = run(makeYears({ overrides: { ocf, netIncome: -10 } })).accounting;
+    expect(result.metrics.sbcToOcf).toBeNull();
+    expect(result.numeric).toBe("pass");
   });
   it("excludes older rows from a sparse fiscal window", () => {
     const years = makeYears().filter(y => y.fy !== 2022).reverse();

@@ -1,3 +1,4 @@
+import { esefHeadingText } from "./esef-headings";
 import { createLimiter, fetchWithRetry } from "../http";
 import type { SectionKey } from "../types";
 import { SECTION_TOKENS, truncateTokens } from "./cut-sections";
@@ -35,66 +36,41 @@ const headings: Partial<Record<SectionKey, RegExp>> = {
   auditor: /independent auditor|rapport des commissaires aux comptes|bestätigungsvermerk/i,
 };
 
-function navigationPositions(paragraphs: RegExpMatchArray[]): Set<number> {
-  const groups = new Map<string, number[]>();
-  for (let index = 0; index < paragraphs.length - 2; index++) {
-    const lines = paragraphs.slice(index, index + 3).map((paragraph) => paragraph[0].trim());
-    if (lines.some((line) => line.length > 80 || /[.!?]$/.test(line) || /^\d+$/.test(line))) continue;
-    const key = lines.join("\n");
-    groups.set(key, [...(groups.get(key) ?? []), index]);
-  }
-  const positions = new Set<number>();
-  for (const occurrences of groups.values()) {
-    if (occurrences.length < 3) continue;
-    for (const index of occurrences) {
-      for (let offset = 0; offset < 3; offset++) positions.add(index + offset);
-    }
-  }
-  return positions;
-}
-
-export function cutEsefSections(text: string): Partial<Record<SectionKey, string>> {
-  const paragraphs = [...text.matchAll(/[^\n]+/g)];
-  const navigation = navigationPositions(paragraphs);
-  const matches: { key: SectionKey; index: number; after: number; exact: boolean; navigation: boolean; contents: boolean }[] = [];
+export function cutEsefSections(xhtml: string): Partial<Record<SectionKey, string>> {
+  const { text, marker } = esefHeadingText(xhtml);
+  const clean = (value: string) => value.replace(new RegExp(marker + "[\\d.]+\\|", "g"), "").trim();
+  const matches: { key: SectionKey; index: number; after: number; contents: boolean; exact: boolean; size: number }[] = [];
   let end = text.length;
-  for (let index = 0; index < paragraphs.length; index++) {
-    const paragraph = paragraphs[index];
-    const heading = paragraph[0].trim().replace(/\s+/g, " ")
-      .replace(/^\d+[.)]?\s+/, "").replace(/\s*\(continued\)$/i, "");
-    if (/^(?:definitions|glossary)$/i.test(heading)
-      && /^(?:Name|Term)\s+(?:Description|Definition)$/i.test(paragraphs.slice(index + 1, index + 3).map((part) => part[0].trim()).join(" "))) {
-      end = paragraph.index;
-      break;
-    }
-    if (heading.length > 120 || /[.!?]$/.test(heading)) continue;
+  for (const match of text.matchAll(new RegExp(marker + "([\\d.]+)\\|([^\\n]+)", "g"))) {
+    const heading = match[2].replace(/^\d+[.)]?\s+/, "").replace(/\s*\(continued\)$/i, "");
+    if (/^read more\b/i.test(heading)) continue;
+    if (/^(definitions|glossary)$/i.test(heading)) { end = match.index; break; }
     for (const [key, pattern] of Object.entries(headings)) {
-      const found = pattern.exec(heading);
-      if (found) {
-        matches.push({ key: key as SectionKey, index: paragraph.index, after: paragraph.index + paragraph[0].length, exact: found[0].length === heading.length, navigation: navigation.has(index),
-          contents: /^\d+$/.test(paragraphs[index + 1]?.[0].trim() ?? "") });
-        break;
-      }
+      if (!pattern.test(heading)) continue;
+      const after = match.index + match[0].length;
+      matches.push({ key: key as SectionKey, index: match.index, after,
+        size: Number(match[1]), exact: pattern.exec(heading)?.[0].length === heading.length,
+        contents: /^\s*\d+\s*(?:\n|$)/.test(text.slice(after)) });
+      break;
     }
   }
   const sections: Partial<Record<SectionKey, string>> = {};
-  const exact = new Set<SectionKey>();
+  const selected = new Map<SectionKey, { size: number; exact: boolean }>();
   for (let index = 0; index < matches.length; index++) {
     const match = matches[index];
-    if (match.navigation || match.contents) continue;
-    const block = text.slice(match.index, matches[index + 1]?.index ?? end).trim();
-    const previous = sections[match.key];
-    // Complete heading matches outrank incidental mentions in wrapped prose.
-    if (!previous || (previous.length <= 500 && block.length > previous.length)
-      || (match.exact && !exact.has(match.key) && block.length >= 500)) {
-      sections[match.key] = block;
-      if (match.exact) exact.add(match.key);
-      else exact.delete(match.key);
+    if (match.contents) continue;
+    const until = matches.slice(index + 1).find(next => next.key !== match.key)?.index ?? end;
+    if (clean(text.slice(match.after, until)).length < 1500) continue;
+    const previous = selected.get(match.key);
+    if (!previous || match.size > previous.size || (match.size === previous.size && match.exact && !previous.exact)) {
+      sections[match.key] = clean(text.slice(match.index, until));
+      selected.set(match.key, match);
     }
   }
   if (!sections.business) {
-    const first = matches.find((match) => !match.navigation && !match.contents);
-    sections.business = text.slice(first?.after ?? 2000).trim();
+    const first = matches.find(match => !match.contents);
+    const fallback = clean(text.slice(first?.after ?? 2000, end));
+    if (fallback.length >= 1500) sections.business = fallback;
   }
   for (const key of Object.keys(sections) as SectionKey[]) {
     sections[key] = truncateTokens(sections[key]!, SECTION_TOKENS[key]);

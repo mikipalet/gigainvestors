@@ -18,7 +18,7 @@ export default async function reports({ only, limit, force = false }: {
     if (!/^[\w.-]+$/.test(company.id)) throw new Error("Invalid company ID");
     const esef = company.lei && esefCountries.has(company.country) ? await latestEsef(company.lei) : null;
     const filings = !esef && company.cik ? await latestFilings(company.cik) : null;
-    const fingerprint = createHash("sha256").update(JSON.stringify({ version: 3, company, filings, esef })).digest("hex");
+    const fingerprint = createHash("sha256").update(JSON.stringify({ version: 4, company, filings, esef })).digest("hex");
     const directory = `reports/${company.id}`;
     const prior = readCorpusJson<ReportMeta>(`${directory}/meta.json`);
     if (!force && readCorpusJson<string>(`${directory}/fingerprint.json`) === fingerprint && prior
@@ -28,7 +28,7 @@ export default async function reports({ only, limit, force = false }: {
     let sections: Partial<Record<SectionKey, string>> = {};
     if (esef) {
       const response = await fetchEsef(esef.url);
-      sections = cutEsefSections(htmlToText(await response.text()));
+      sections = cutEsefSections(await response.text());
     } else if (annual) {
       const text = htmlToText(await (await fetchEdgar(annual.url)).text());
       sections = cutSections({ text, form: annual.form });

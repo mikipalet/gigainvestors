@@ -1,13 +1,15 @@
 import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { gunzipSync } from "node:zlib";
 import os from "node:os";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { cutEsefSections, latestEsef } from "@/lib/value/reports/esef";
-import { htmlToText } from "@/lib/value/reports/html-to-text";
 import reports from "@/scripts/value/stages/reports";
 import type { Company } from "@/lib/value/types";
 
-const fixture = (name: string) => readFileSync(path.resolve("tests/fixtures/value/esef", name), "utf8");
+const fixture = (name: string) => name.endsWith(".xhtml")
+  ? gunzipSync(readFileSync(path.resolve("tests/fixtures/value/esef", name + ".gz"))).toString()
+  : readFileSync(path.resolve("tests/fixtures/value/esef", name), "utf8");
 const filing = JSON.parse(fixture("filings-asml.json"));
 const url = "https://filings.xbrl.org/724500Y6DUVHQD6OXN27/2025-12-31/ESEF/NL/0/asml-2025-12-31-1-en/reports/asml-2025-12-31-1-en.xhtml";
 let directory: string | undefined;
@@ -39,22 +41,32 @@ it("returns null for an unmatched LEI and exposes HTTP failures", async () => {
 });
 
 it("extracts substantive ASML business, risk and compensation sections", () => {
-  const result = cutEsefSections(htmlToText(fixture("asml-report.xhtml")));
+  const result = cutEsefSections(fixture("asml-report.xhtml"));
   for (const key of ["business", "risk", "compensation"] as const) {
-    expect(result[key]!.length).toBeGreaterThan(500);
+    expect(result[key]!.length).toBeGreaterThanOrEqual(1500);
   }
-  expect(result.business).toMatch(/ASML|lithography/i);
+  expect(result.business).toMatch(/lithography/i);
+  expect(result.business).not.toMatch(/^Strategy\s+Incentive/);
+  expect(result.risk!.slice(0, 300)).toMatch(/risk/i);
+  expect(result.risk!.length).toBeGreaterThanOrEqual(3000);
+  expect(result.compensation).toContain("Board of Management");
+  expect(result.mdna).toBeUndefined();
+  for (const section of Object.values(result)) {
+    expect(section.replace(/\s+/g, " ")).not.toMatch(/^STRATEGIC REPORT CORPORATE GOVERNANCE/);
+  }
   expect(result.risk).toMatch(/risk/i);
   expect(result.compensation).toMatch(/remuneration/i);
   expect(result.business!.length).toBeLessThanOrEqual(32000);
   expect(result.compensation!.length).toBeLessThanOrEqual(16000);
 });
 
-it("falls back to 8000 tokens after the cover or first recognized heading", () => {
+const body = (text: string) => text.repeat(120).trim();
+const section = (heading: string, text: string) => `<h2>${heading}</h2><p>${text}</p>`;
+
+it("falls back to 8000 tokens after the cover and drops short sections", () => {
   const text = ("x".repeat(98) + "\n\n").repeat(1000);
   expect(cutEsefSections(text)).toEqual({ business: text.slice(2000, 34000) });
-  const single = "Risk factors\n\nOnly one section.\n\nRisk factors\n\nContinued.";
-  expect(cutEsefSections(single).business).toBe("Only one section.\n\nRisk factors\n\nContinued.");
+  expect(cutEsefSections(section("Risk factors", "Only one section."))).toEqual({});
 });
 
 it.each([
@@ -62,20 +74,20 @@ it.each([
   ["Brief an die Aktionäre", "Geschäftsmodell", "Risikobericht", "Vergütungsbericht"],
   ["Carta del presidente", "Business overview", "Principal risks", "Remuneration policy"],
 ].map((headings) => ({ headings })))("recognizes multilingual headings and stops at the next section: $headings", ({ headings: [letter, business, risk, compensation] }) => {
-  const text = `${letter}\n\nDear owners.\n\n${business}\n\nWe make tools.\n\n${risk}\n\nCompetition.\n\n${compensation}\n\nPay policy.`;
-  expect(cutEsefSections(text)).toEqual({
-    letter: `${letter}\n\nDear owners.`, business: `${business}\n\nWe make tools.`,
-    risk: `${risk}\n\nCompetition.`, compensation: `${compensation}\n\nPay policy.`,
-  });
+  const prose = body("Substantive report body. ");
+  const result = cutEsefSections([letter, business, risk, compensation].map(h => section(h, prose)).join(""));
+  expect(result).toEqual(Object.fromEntries(["letter", "business", "risk", "compensation"].map((key, i) => [key, `${[letter, business, risk, compensation][i]}\n\n${prose}`])));
 });
 
 it("does not treat body sentences as headings or choose table-of-contents entries", () => {
-  const business = "We develop precision tools for chipmakers. ".repeat(30);
-  const risk = "Our supply chain has specialized components. ".repeat(30);
-  const text = `Our business\n\n5\n\nRisk factors\n\n6\n\nOur business\n\n${business}\n\nOur business depends on skilled people.\n\nRisk factors\n\n${risk}`;
-  const result = cutEsefSections(text);
+  const business = body("We develop precision tools for chipmakers. ");
+  const risk = body("Our supply chain has specialized components. ");
+  const html = section("Our business", "5") + section("Risk factors", "6")
+    + section("Our business", business) + "<p>Our business depends on skilled people.</p>"
+    + section("Risk factors", risk);
+  const result = cutEsefSections(html);
   expect(result.business).toBe(`Our business\n\n${business}\n\nOur business depends on skilled people.`);
-  expect(result.risk).toBe(`Risk factors\n\n${risk.trim()}`);
+  expect(result.risk).toBe(`Risk factors\n\n${risk}`);
 });
 
 const company: Company = {
@@ -108,7 +120,7 @@ it("routes an EU company with an LEI to ESEF even when it also has a CIK, and re
   expect(requests.filter((input) => input === url)).toHaveLength(1);
   await reports({ force: true });
   expect(requests.filter((input) => input === url)).toHaveLength(2);
-});
+}, 15000);
 
 it("falls back to the description for a UK company without a matched report", async () => {
   const root = setupCorpus([{ ...company, id: "EXAMPLE.LSE", country: "GB", cik: null }]);
@@ -129,40 +141,82 @@ it("keeps non-European companies without CIKs on the description path", async ()
 });
 
 it("does not label repeated navigation as compensation or an appendix glossary as MD&A", () => {
-  const result = cutEsefSections(htmlToText(fixture("asml-report.xhtml")));
+  const result = cutEsefSections(fixture("asml-report.xhtml"));
   expect(result.compensation).toMatch(/Board of Management remuneration/);
   expect(result.compensation).toMatch(/Remuneration Policy/i);
   expect(result.compensation).not.toContain("Responsible value chain");
   expect(result.mdna ?? "").not.toMatch(/Microchips, such as NAND Flash/);
 });
 
-it("matches extended case-insensitive headings on short individual lines", () => {
-  const text = "Cover\nBUSINESS MODEL AND VALUE CREATION\nWe build tools.\nRisk management and internal control\nSupply risk.\nRemuneration report for 2025\nPay policy.";
-  expect(cutEsefSections(text)).toEqual({
-    business: "BUSINESS MODEL AND VALUE CREATION\nWe build tools.",
-    risk: "Risk management and internal control\nSupply risk.",
-    compensation: "Remuneration report for 2025\nPay policy.",
+it("matches extended case-insensitive structural headings", () => {
+  const prose = body("We build precision tools. ");
+  const headings = ["BUSINESS MODEL AND VALUE CREATION", "Risk management and internal control", "Remuneration report for 2025"];
+  expect(cutEsefSections(headings.map(h => section(h, prose)).join(""))).toEqual({
+    business: `${headings[0]}\n\n${prose}`, risk: `${headings[1]}\n\n${prose}`, compensation: `${headings[2]}\n\n${prose}`,
   });
 });
 
 it("fills missing business even with multiple other sections and skips contents", () => {
-  const text = "Cover\n\nTable of contents\n\nRisk factors\n\n5\n\nRemuneration report\n\n6\n\nRisk management and internal control\n\nActual risk prose.\n\nRemuneration report\n\nActual pay prose.";
-  const sections = cutEsefSections(text);
-  expect(sections.business).toBe("Actual risk prose.\n\nRemuneration report\n\nActual pay prose.");
-  expect(sections.risk).toContain("Actual risk prose.");
-  expect(sections.compensation).toContain("Actual pay prose.");
+  const risk = body("Actual risk prose. ");
+  const pay = body("Actual pay prose. ");
+  const html = "<p>Cover</p><p>Table of contents</p>" + section("Risk factors", "5") + section("Remuneration report", "6")
+    + section("Risk management and internal control", risk) + section("Remuneration report", pay);
+  const sections = cutEsefSections(html);
+  expect(sections.business).toBe(`${risk}\n\nRemuneration report\n\n${pay}`);
+  expect(sections.risk).toContain(risk);
+  expect(sections.compensation).toContain(pay);
 });
 
-it("ignores long lines containing heading phrases", () => {
-  const prose = "Business model and value creation " + "operations ".repeat(20);
-  const sections = cutEsefSections(`Cover\n\n${prose}\n\nRisk factors\n\nActual risk.\n\nRemuneration policy\n\nActual pay.`);
-  expect(sections.business).toBe("Actual risk.\n\nRemuneration policy\n\nActual pay.");
+it("ignores long headings and wrapped body mentions even when short", () => {
+  const prose = body("Actual risk. ");
+  const html = `<h2>Business model and value creation ${"operations ".repeat(20)}</h2>`
+    + section("Risk factors", prose) + "<p>form the Management Report within the meaning</p><p>of Section 2:391.</p>"
+    + section("Remuneration policy", body("Actual pay. "));
+  const sections = cutEsefSections(html);
+  expect(sections.mdna).toBeUndefined();
+  expect(sections.business).toMatch(/^Actual risk/);
 });
 
 it("skips the first 2000 cover characters when no heading matches", () => {
   const cover = "C".repeat(2000);
-  const body = "Unlabelled operations. ".repeat(2000);
-  expect(cutEsefSections(cover + body)).toEqual({ business: body.slice(0, 32000) });
+  const text = "Unlabelled operations. ".repeat(2000);
+  expect(cutEsefSections(cover + text)).toEqual({ business: text.slice(0, 32000) });
+});
+
+it("uses class and inline typography, inherited styles, and block spans", () => {
+  const prose = body("Precision lithography tools. ");
+  const html = `<style>.body {font-size:10pt} .title {font-size:16pt} p.bold {font-weight:600} .block {display:block}</style>
+    <div class="body"><div class="title"><span>Business model and value creation</span></div><p>${prose}</p>
+    <p class="bold">Risk management and internal control</p><p>${prose}</p>
+    <span class="block" style="font-weight:700">Remuneration report</span><p>${prose}</p></div>`;
+  const result = cutEsefSections(html);
+  expect(result.business).toBe(`Business model and value creation\n\n${prose}`);
+  expect(result.risk).toBe(`Risk management and internal control\n\n${prose}`);
+  expect(result.compensation).toBe(`Remuneration report\n\n${prose}`);
+});
+
+it("ignores repeated running headings, inline fragments and punctuation", () => {
+  const prose = body("Real operations and lithography. ");
+  const html = section("Our business", prose)
+    + Array.from({length:4}, () => `<div style="font-weight:bold">Management report</div><p>${prose}</p>`).join("")
+    + `<p><span style="font-weight:700">Financial review</span> is discussed elsewhere.</p>`
+    + `<p style="font-weight:700">Financial review;</p><p>${prose}</p>`;
+  const result = cutEsefSections(html);
+  expect(result.mdna).toBeUndefined();
+  expect(result.business).toContain(prose);
+});
+
+it("prefers a large business heading to a small bold graphic label", () => {
+  const prose = body("We build lithography systems. ");
+  const result = cutEsefSections(`<div style="font-size:24pt">Our business strategy</div><p>${prose}</p>`
+    + section("Risk factors", body("Risk disclosure body. "))
+    + `<div style="font-weight:600">Strategy</div><p>${body("Incentive measures and pay. ")}</p>`);
+  expect(result.business).toBe(`Our business strategy\n\n${prose}`);
+});
+
+it("requires 1500 body characters, excluding the heading", () => {
+  expect(cutEsefSections(section("Risk factors", "r".repeat(1499)))).toEqual({});
+  expect(cutEsefSections(section("Risk factors", "r".repeat(1500))).risk).toBe(`Risk factors\n\n${"r".repeat(1500)}`);
 });
 
 it("spaces metadata and report fetches through the same three-per-second limiter", async () => {

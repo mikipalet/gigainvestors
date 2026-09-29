@@ -1,6 +1,6 @@
 import { readJsonl } from "../../lib/value/corpus";
 import type { Company } from "../../lib/value/types";
-import { normalizedName } from "../../lib/value/universe";
+import { normalizedName, isGlobalDepositary } from "../../lib/value/universe";
 import { universeChecks } from "../../lib/value/universe-config";
 
 interface Check { label: string; ok: boolean; detail: string }
@@ -21,13 +21,17 @@ export function checkUniverse(companies: Company[]): Check[] {
     detail: `${duplicates.length} duplicate groups (${top.length} rows checked)${duplicates.length ? `: ${duplicates.map(([name, ids]) => `${name}=${ids.join(",")}`).join("; ")}` : ""}`,
   }];
   for (const [id, country] of [
-    ["NVDA.US", "US"], ["AAPL.US", "US"], ["2330.TW", "TW"], ["0700.HK", "HK"], ["ASML.AS", "NL"],
+    ["LLY.US", "US"], ["NVDA.US", "US"], ["AAPL.US", "US"], ["2330.TW", "TW"], ["0700.HK", "HK"], ["ASML.AS", "NL"],
     ["NESN.SW", "CH"], ["SHOP.TO", "CA"], ["005930.KO", "KR"], ["HSBA.LSE", "GB"],
   ]) {
     const company = byId.get(id);
     checks.push({ label: `${id} primary / ${country}`, ok: company?.country === country && company.listings.includes(id),
       detail: company ? `country=${company.country}; listings=${company.listings.join(",")}` : "missing" });
   }
+  const gdrs = top.filter((company) => isGlobalDepositary(company.name));
+  checks.push({ label: "No GDR primaries in top 300", ok: gdrs.length === 0, detail: `${gdrs.length} GDR primaries` });
+  const sk = byId.get("000660.KO");
+  checks.push({ label: "SKHY.US merged under 000660.KO", ok: !!sk?.listings.includes("SKHY.US") && !byId.has("SKHY.US"), detail: sk?.listings.join(",") ?? "missing" });
   const tsm = byId.get("2330.TW");
   checks.push({ label: "TSM.US merged under 2330.TW", ok: !!tsm?.listings.includes("TSM.US") && !byId.has("TSM.US"), detail: tsm?.listings.join(",") ?? "missing" });
   const preferred = companies.flatMap((company) => company.listings).filter((id) => id === "005935.KO");

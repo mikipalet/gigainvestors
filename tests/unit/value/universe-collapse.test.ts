@@ -90,3 +90,32 @@ it("uses offshore venue priority independently of input order", () => {
   expect(collapseListings(rows)[0].primary).toBe("ABC.HK");
   expect(collapseListings(rows.reverse())[0].primary).toBe("ABC.HK");
 });
+
+it.each(["GDR", "GDS", "Global Depositary Receipts"])("drops %s when another company listing exists", (suffix) => {
+  expect(collapseListings([row("HTSC.LSE", `Huatai Securities Co. Ltd. ${suffix}`, null), row("601688.SHG", "Huatai Securities Co Ltd", "CNE100000LQ8")]))
+    .toEqual([{ primary: "601688.SHG", listings: ["601688.SHG"] }]);
+  expect(collapseListings([row("ONLY.LSE", `Only ${suffix}`, null)]))
+    .toEqual([{ primary: "ONLY.LSE", listings: ["ONLY.LSE"] }]);
+});
+it.each(["American Depositary Shares", "ADS", "Depositary Shares"])("merges %s into the Korean home", (suffix) => {
+  expect(collapseListings([row("SKHY.US", `SK Hynix Inc. ${suffix}`, "US78392B2060"), row("000660.KO", "SK Hynix Inc", "KR7000660001")]))
+    .toEqual([{ primary: "000660.KO", listings: ["SKHY.US", "000660.KO"] }]);
+});
+it.each(["US", "SW"])("NEO Canadian ISIN cannot displace a %s home", (venue) => {
+  const rows = [row("LLY.NEO", "Eli Lilly and Company", "CA28655A1066"), row(`LLY.${venue}`, "Eli Lilly and Company", venue === "US" ? "US5324571083" : "CH0000000001")];
+  for (const input of [rows, [...rows].reverse()]) {
+    const groups = collapseListings(input);
+    expect(groups).toHaveLength(1);
+    expect(groups[0].primary).toBe(`LLY.${venue}`);
+  }
+});
+
+it("NEO defers to the home even when both a US receipt and home exist", () => {
+  expect(collapseListings([
+    row("EX.NEO", "Example", "CA0000000001"), row("EX.US", "Example ADS", "US0000000001"), row("EX.AS", "Example NV", "NL0000000001"),
+  ])).toEqual([{ primary: "EX.AS", listings: ["EX.NEO", "EX.US", "EX.AS"] }]);
+});
+it.each(["American Depositary Shares", "ADS", "Depositary Shares"])("keeps standalone %s primary without a home venue", (suffix) => {
+  expect(collapseListings([row("TYT.LSE", "Toyota Motor Corp", "JP3633400001"), row("TM.US", `Toyota Motor Corporation ${suffix}`, "US8923313071")]))
+    .toEqual([{ primary: "TM.US", listings: ["TYT.LSE", "TM.US"] }]);
+});

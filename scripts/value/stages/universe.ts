@@ -1,11 +1,11 @@
 import { mkdirSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
-import { additionalExchanges } from "../../../lib/value/universe-config";
+import { additionalExchanges, universeChecks } from "../../../lib/value/universe-config";
 import { T } from "../../../lib/value/config";
 import { createUsdRate } from "../../../lib/value/fx";
 import { listExchanges, listSymbols, screenerPage, type ScreenerRow, type SymbolRow } from "../../../lib/value/eodhd";
-import { collapseListings, isCommonStock, kindFor } from "../../../lib/value/universe";
+import { collapseListings, isCommonStock, isGlobalDepositary, kindFor } from "../../../lib/value/universe";
 import type { Company } from "../../../lib/value/types";
 
 interface Options { only?: string[]; limit?: number; force?: boolean }
@@ -51,7 +51,7 @@ export default async function universe(options: Options): Promise<void> {
     if (options.only && !group.listings.some((id) => options.only!.includes(id))) continue;
     const row = byId.get(group.primary)!;
     const screen = caps.get(group.primary);
-    const cap = screen?.market_capitalization;
+    const cap = isGlobalDepositary(row.Name) ? null : screen?.market_capitalization;
     const rate = cap != null ? await usdRate(row.Currency) : null;
     const sector = screen?.sector ?? null;
     const industry = screen?.industry ?? null;
@@ -62,6 +62,17 @@ export default async function universe(options: Options): Promise<void> {
       listings: group.listings, marketCapUsd: cap != null && Number.isFinite(cap) && rate !== null ? cap * rate : null,
       description: null, source: "eodhd",
     });
+  }
+  const largestUsCap = companies.reduce((largest, company) => company.country === "US"
+    ? Math.max(largest, company.marketCapUsd ?? 0) : largest, 0);
+  if (largestUsCap > 0) {
+    const ceiling = largestUsCap * universeChecks.maxUsCapMultiple;
+    for (const company of companies) {
+      if (company.marketCapUsd !== null && company.marketCapUsd > ceiling) {
+        console.warn(`universe: ${company.id} marketCapUsd=${company.marketCapUsd} exceeds ${universeChecks.maxUsCapMultiple}x largest US cap (${ceiling}); data error, set null`);
+        company.marketCapUsd = null;
+      }
+    }
   }
   companies.sort((a, b) => (b.marketCapUsd ?? -Infinity) - (a.marketCapUsd ?? -Infinity) || a.id.localeCompare(b.id));
   const selected = options.limit ? companies.slice(0, options.limit) : companies;

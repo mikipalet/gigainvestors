@@ -13,10 +13,13 @@ export function normalizedName(name: string): string {
   return name.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
     .replace(/\./g, "")
     .replace(/[^a-z0-9]+/g, " ")
-    .replace(/\b(new york registry(?: shares)?|ordinary shares|common stock|class [a-z0-9]+|cl [ab])\b/g, " ")
-    .replace(/\b(ltd|limited|co|company|corp|corporation|inc|plc|ag|sa|nv|se|spa|asa|ab|oyj|holdings|holding|group|adr|sponsored)\b/g, " ")
+    .replace(/\b((?:american |global )?depositary(?: shares| receipts)?|new york registry(?: shares)?|ordinary shares|common stock|class [a-z0-9]+|cl [ab])\b/g, " ")
+    .replace(/\b(ltd|limited|co|company|corp|corporation|inc|plc|ag|sa|nv|se|spa|asa|ab|oyj|holdings|holding|group|adr|ads|gdr|gds|sponsored)\b/g, " ")
     .replace(/\s+/g, "");
 }
+
+export const isGlobalDepositary = (name: string): boolean => /\b(GDR|GDS|global depositary)/i.test(name);
+const isAdr = (name: string): boolean => /\b(ADR|ADS)\b|American Depositary Shares|Depositary Shares|New York Registry|Sponsored/i.test(name);
 
 const id = (row: Listing): Id => `${row.code}.${row.exchange}`;
 const isinCountry = (row: Listing): string | undefined => row.isin?.slice(0, 2);
@@ -25,7 +28,8 @@ const listingCountry = (row: Listing): string => exchangeCountries[row.exchange]
 function primaryListing(group: Listing[]): Listing {
   // Even a domicile match on a secondary venue loses to a regular listing.
   const regular = group.filter((row) => !lastResortVenues.has(row.exchange));
-  const choices = regular.length ? regular : group;
+  const nonNeo = group.filter((row) => row.exchange !== "NEO");
+  const choices = regular.length ? regular : nonNeo.length ? nonNeo : group;
   const rank = (row: Listing): number => {
     if (isinCountry(row) === listingCountry(row)) return -2;
     if (offshoreDomiciles.has(isinCountry(row) ?? "")) {
@@ -47,7 +51,7 @@ function foreignSecondary(row: Listing): boolean {
 
 export function collapseListings(input: Listing[]): Array<{ primary: Id; listings: Id[] }> {
   const byId = new Map(input.map((row) => [id(row), row]));
-  const rows = input.filter((row) => {
+  const eligible = input.filter((row) => {
     if (/\b(CDR|BDR|DRN|NVDR|DR|CEDEAR|pref|preferred|pfd)\b|\(CAD Hedged\)/i.test(row.name)) return false;
     if (row.exchange === "SA" && /3[2-9]$/.test(row.code)) return false;
     if (row.exchange === "BK" && /[a-z]\d{2}$/i.test(row.code)) return false;
@@ -58,6 +62,10 @@ export function collapseListings(input: Listing[]): Array<{ primary: Id; listing
     }
     return true;
   });
+  const ordinaryNames = new Set(eligible.filter((row) => !isGlobalDepositary(row.name)).map((row) => normalizedName(row.name)));
+  const ordinaryIsins = new Set(eligible.filter((row) => !isGlobalDepositary(row.name) && row.isin).map((row) => row.isin));
+  const rows = eligible.filter((row) => !isGlobalDepositary(row.name)
+    || !(ordinaryNames.has(normalizedName(row.name)) || (row.isin && ordinaryIsins.has(row.isin))));
   const parents = rows.map((_, i) => i);
   const root = (i: number): number => {
     while (parents[i] !== i) { parents[i] = parents[parents[i]]; i = parents[i]; }
@@ -87,15 +95,43 @@ export function collapseListings(input: Listing[]): Array<{ primary: Id; listing
   });
   const groups = [...grouped.values()].map((group) => {
     const primary = primaryListing(group);
-    return group.filter((row) => !foreignSecondary(row)
+    return group.filter((row) => !foreignSecondary(row) || isGlobalDepositary(row.name)
       || (row === primary && offshoreDomiciles.has(isinCountry(row) ?? "")));
   }).filter((group) => group.length);
+
+  // Canadian identifiers on NEO receipts must not create a competing home.
+  const neoTargets = new Map<string, Set<number>>();
+  groups.forEach((group, i) => {
+    const primary = primaryListing(group);
+    if (primary.exchange === "NEO" || (primary.exchange !== "US"
+      && isinCountry(primary) !== listingCountry(primary)
+      && !offshoreDomiciles.has(isinCountry(primary) ?? ""))) return;
+    for (const row of group) {
+      const name = normalizedName(row.name);
+      if (!name) continue;
+      const matches = neoTargets.get(name) ?? new Set<number>();
+      matches.add(i);
+      neoTargets.set(name, matches);
+    }
+  });
+  for (const group of groups) {
+    if (primaryListing(group).exchange !== "NEO") continue;
+    const matches = new Set(group.flatMap((row) => [...neoTargets.get(normalizedName(row.name)) ?? []]));
+    const homes = [...matches].filter((i) => primaryListing(groups[i]).exchange !== "US");
+    const targets = homes.length ? homes : [...matches];
+    if (targets.length === 0) continue;
+    // Do not guess between unrelated homes; discard the secondary NEO group.
+    if (targets.length === 1) groups[targets[0]].push(...group);
+    group.length = 0;
+  }
+  const retainedGroups = groups.filter((group) => group.length);
+  groups.splice(0, groups.length, ...retainedGroups);
 
   // Only merge into an actual home listing. Ambiguous names remain separate.
   const homes = new Map<string, Set<number>>();
   groups.forEach((group, i) => {
     const primary = primaryListing(group);
-    if (primary.exchange === "US" || isinCountry(primary) === "US") return;
+    if (primary.exchange === "NEO" || primary.exchange === "US" || isinCountry(primary) === "US") return;
     if (isinCountry(primary) !== listingCountry(primary) && !offshoreDomiciles.has(isinCountry(primary) ?? "")) return;
     for (const row of group) {
       const name = normalizedName(row.name);
@@ -109,7 +145,7 @@ export function collapseListings(input: Listing[]): Array<{ primary: Id; listing
   const primaries = groups.map(primaryListing);
   const standaloneAdrs = new Map<string, Set<number>>();
   primaries.forEach((primary, i) => {
-    if (primary.exchange !== "US" || isinCountry(primary) !== "US" || !/\bADR\b|New York Registry|Sponsored/i.test(primary.name)) return;
+    if (primary.exchange !== "US" || isinCountry(primary) !== "US" || !isAdr(primary.name)) return;
     const name = normalizedName(primary.name);
     const matches = standaloneAdrs.get(name) ?? new Set<number>();
     matches.add(i);

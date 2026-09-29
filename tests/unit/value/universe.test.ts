@@ -90,7 +90,7 @@ it("writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs a
     if (route === "exchange-symbol-list/AS") return Response.json([{ ...row, Code: "ASML", Name: "ASML", Exchange: "AS", Currency: "EUR", Isin: "NL0010273215" }]);
     if (route === "screener") {
       const exchange = JSON.parse(url.searchParams.get("filters")!)[0][2];
-      const data = url.searchParams.get("offset") === "0" ? exchange === "HK" ? [] : exchange === "US" ? [{ code: "KO", exchange: "US", market_capitalization: 100 }] : [{ code: "ASML", exchange: "AS", market_capitalization: 200 }] : [];
+      const data = url.searchParams.get("offset") === "0" ? exchange === "HK" ? [] : exchange === "US" ? [{ code: "KO", exchange: "US", market_capitalization: 300 }] : [{ code: "ASML", exchange: "AS", market_capitalization: 200 }] : [];
       return Response.json({ data });
     }
     if (route === "eod/EURUSD.FOREX") return Response.json([{ close: 1.2 }]);
@@ -99,8 +99,8 @@ it("writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs a
   try {
     await stage({});
     expect(readJsonl("universe.jsonl")).toMatchObject([
+      { id: "KO.US", marketCapUsd: 300, country: "US" },
       { id: "ASML.AS", marketCapUsd: 240, country: "NL" },
-      { id: "KO.US", marketCapUsd: 100, country: "US" },
       { id: "0700.HK", marketCapUsd: null, country: "HK" },
       { id: "JADR.US", marketCapUsd: null, country: "US" },
     ]);
@@ -108,4 +108,33 @@ it("writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs a
     await stage({});
     expect(readJsonl("universe.jsonl")).toHaveLength(4);
   } finally { rmSync(directory, { recursive: true, force: true }); }
+});
+
+it("nulls standalone GDR caps and caps above 1.3x the largest US company before sorting", async () => {
+  const { mkdtempSync, rmSync } = await import("node:fs");
+  const { homedir } = await import("node:os");
+  const { join } = await import("node:path");
+  const { writeCorpusJson, readJsonl } = await import("../../../lib/value/corpus");
+  const { default: stage } = await import("../../../scripts/value/stages/universe");
+  const directory = mkdtempSync(join(homedir(), "value-corpus/universe-test-"));
+  vi.stubEnv("VALUE_CORPUS_DIR", directory);
+  const cache = (key: string, data: unknown) => writeCorpusJson(`raw/eodhd/universe/${key}.json`, { date: new Date().toISOString().slice(0, 10), data });
+  const warnings: string[] = [];
+  const warn = vi.spyOn(console, "warn").mockImplementation((message) => warnings.push(message));
+  vi.stubGlobal("fetch", () => { throw new Error("Cached run must stay offline"); });
+  cache("exchanges", [{ Code: "US", CountryISO2: "US" }, { Code: "LSE", CountryISO2: "GB" }]);
+  for (const venue of ["US", "LSE", "HK"]) {
+    const entries = venue === "US" ? [["BIG", "Largest US", 100]] : venue === "LSE" ? [["BAD", "Data Error", 131], ["EDGE", "Boundary", 130], ["GDR", "Standalone GDR", 50], ["GDS", "Independent GDS", 2000]] : [];
+    cache(`symbols-${venue}`, entries.map(([code, name]) => ({ Code: code, Name: name, Exchange: venue, Type: "Common Stock", Currency: "USD", Isin: null })));
+    cache(`screener-${venue}-0`, entries.map(([code, , cap]) => ({ code, exchange: venue, market_capitalization: cap })));
+    cache(`screener-${venue}-100`, []);
+  }
+  try {
+    await stage({});
+    expect(readJsonl("universe.jsonl")).toMatchObject([
+      { id: "EDGE.LSE", marketCapUsd: 130 }, { id: "BIG.US", marketCapUsd: 100 },
+      { id: "BAD.LSE", marketCapUsd: null }, { id: "GDR.LSE", marketCapUsd: null }, { id: "GDS.LSE", marketCapUsd: null },
+    ]);
+    expect(warnings.some((message) => message.includes("BAD.LSE") && message.includes("131") && message.includes("130"))).toBe(true);
+  } finally { warn.mockRestore(); rmSync(directory, { recursive: true, force: true }); }
 });

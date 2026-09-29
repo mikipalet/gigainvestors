@@ -8,6 +8,7 @@ const company = (id: string, name: string, country: string, listings = [id]): Co
   description: null, source: "eodhd",
 });
 const valid = () => [
+  company("LLY.US", "Eli Lilly and Company", "US"), company("000660.KO", "SK Hynix Inc", "KR", ["000660.KO", "SKHY.US"]),
   company("NVDA.US", "Nvidia", "US"), company("AAPL.US", "Apple", "US"),
   company("2330.TW", "TSMC", "TW", ["TSM.US", "2330.TW"]), company("0700.HK", "Tencent", "HK"),
   company("ASML.AS", "ASML", "NL"), company("NESN.SW", "Nestle", "CH"), company("SHOP.TO", "Shopify", "CA"),
@@ -33,4 +34,12 @@ describe("universe acceptance checks", () => {
     const failures = checkUniverse(rows).filter((check) => !check.ok).map((check) => check.label);
     expect(failures).toEqual(expect.arrayContaining(["ASML.AS primary / NL", "0700.HK primary / HK", "TSM.US merged under 2330.TW", "Samsung preferred excluded", "Toyota TM.US ADR; 7203 absent", "HK company count >= 2000"]));
   });
+});
+
+it("rejects GDR top primaries, standalone SKHY and a NEO Lilly primary", () => {
+  const rows = valid().filter((row) => row.id !== "LLY.US");
+  rows.push(company("LLY.NEO", "Eli Lilly and Company", "CA"), company("SKHY.US", "SK Hynix ADS", "US"),
+    { ...company("HTSC.LSE", "Huatai Securities GDR", "GB"), marketCapUsd: 10000 });
+  const failed = checkUniverse(rows).filter((check) => !check.ok).map((check) => check.label);
+  expect(failed).toEqual(expect.arrayContaining(["No GDR primaries in top 300", "SKHY.US merged under 000660.KO", "LLY.US primary / US"]));
 });

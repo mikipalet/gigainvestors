@@ -17,7 +17,7 @@ export const lastResortVenues = new Set(["F", "STU", "MU", "HA", "DU", "HM", "BE
 export const offshoreVenueOrder = ["HK", "US", "SHG", "SHE", "TW", "KO", "KQ", "AU", "LSE", "TO", "V"];
 // The exchange-list response can omit HK even though its symbol endpoint works.
 export const additionalExchanges = [{ Code: "HK", Name: "Hong Kong", Country: "Hong Kong", CountryISO2: "HK", Currency: "HKD" }];
-export const universeChecks = { topCount: 300, minHkCompanies: 2000 };
+export const universeChecks = { topCount: 300, minHkCompanies: 2000, maxUsCapMultiple: 1.3 };
 
 // Rio Tinto's dual-listed parents share one business but have separate domicile ISINs.
 // Keep this explicit: equal names alone must not combine unrelated home issuers.

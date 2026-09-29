@@ -22,7 +22,7 @@ import { MetricHelp } from './MetricHelp';
 import { priceFraming } from '@/lib/value/presentation';
 import { CompanyLogo } from './CompanyLogo';
 import { AboutMethod } from './AboutMethod';
-import { ownerReturn, referenceMetrics, cashAmount } from '@/lib/value/owner-return';
+import { ownerReturn, expectedReturnCopy, referenceMetrics, cashAmount } from '@/lib/value/owner-return';
 import { sharePrice } from '@/lib/value/listing-details';
 
 export function DossierContent({ dossier, children }: { dossier: Dossier; children?: ReactNode }) {
@@ -53,13 +53,13 @@ export function DossierContent({ dossier, children }: { dossier: Dossier; childr
  const framing=priceFraming(ratio,requiredMos);
  const owner=ownerReturn(valuation,company.currency,company.marketCapUsd,quote?.[0]??null);
  const reference=referenceMetrics(dossier,quote?.[0]??null);
- const ownerCopy=owner?`Produces about ${cashAmount(owner.cash,owner.currency)} a year of cash for owners. At today's price (${cashAmount(owner.capital,owner.currency)}) that is a ${(owner.yield*100).toFixed(1)}% yearly return. Buffett's bar: 10%.`:valuation?.method==='book_value'?'This financial business uses a book-value estimate.':'Owner return unavailable.';
+ const ownerCopy=owner?expectedReturnCopy(owner):valuation?.method==='book_value'?'This financial business uses a book-value estimate.':'Expected return unavailable.';
  const referenceRow=<section className="reference-metrics" aria-label="For reference"><strong>For reference</strong><span title={`Market capitalisation / FY${reference.fy??' latest'} net income`}>P/E <b>{reference.pe===null?'n/a':reference.pe.toFixed(1)}</b></span><span title={`FY${reference.fy??' latest'} dividends (profit minus retained earnings) / market capitalisation`}>Dividend yield <b>{reference.dividendYield===null?'n/a':pct(reference.dividendYield)}</b></span><span title="Valuation net debt / latest fiscal-year net income; negative means net cash">Net debt / earnings <b>{reference.netDebtToEarnings===null?'n/a':reference.netDebtToEarnings.toFixed(1)+' years'}</b></span><span title={`${reference.first??'Unknown'}–${reference.last??'unknown'} revenue CAGR; ten fiscal observations span nine years`}>10-year revenue growth <b>{reference.revenueGrowth===null?'n/a':pct(reference.revenueGrowth)+'/yr'}</b></span></section>;
  const failed=QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='fail');
  const verdict=!qualityPass?'Fails quality':dossier.b?'Buy zone':'Wait for a better price';
  const identity=<div className="one-identity"><ValueLink href="/" className="back-link">← Companies</ValueLink><div className="company-heading"><CompanyLogo src={company.logo} name={name}/><div><h1>{name}</h1><p>{company.code} · {company.exchange}</p></div></div><p className="company-about">{company.about??(company.sector?`A business in ${company.sector.toLowerCase()}.`:'A company description has not been published yet.')}</p>{children}</div>;
 
- const valuationEvidence=<><p className="owner-return">{ownerCopy}</p>{owner&&<p className="owner-growth">plus about {Number((owner.growth*100).toFixed(1))}% growth a year</p>}
+ const valuationEvidence=<><p className="owner-return">{ownerCopy}</p>{owner&&<p className="owner-growth">Cash yield: {cashAmount(owner.cash,owner.currency)} normalized yearly owner cash ÷ {cashAmount(owner.capital,owner.currency)} capitalisation. Growth: the valuation’s capped assumption. Yield plus growth is an estimate, not the discounted cash-flow model’s exact annual return.</p>}
   {(comparable??valuation)?<FootballField valuation={(comparable??valuation)!} price={quote?.[0]??null} mismatch={valuation&&!comparable?`Price is in ${company.currency}, value in ${valuation.currency}, not compared`:null} requiredMos={requiredMos} date={quote?.[1]} fy={lastFiscalYear} volatility={dossier.volatility}/>:<section><h2>Valuation unavailable</h2><p>{dossier.valuationReason?`${humanLabel(dossier.valuationReason)}.`:'Reliable financial history is required to estimate value.'}</p></section>}
   {dossier.dataQualityFlags?.length?<div className="data-quality-note"><h3>Valuation data needs verification</h3><ul>{dossier.dataQualityFlags.map(f=><li key={f}>{f}</li>)}</ul></div>:null}
   {valuation&&<><Bridge valuation={valuation}/><PriceHistory dossier={dossier} quote={quote} date={quote?.[1]}/><section className="assumptions"><h2>Assumptions & sources</h2><p>Stage one reflects the last 10 years, capped; terminal growth is the long-run economy rate. Estimates are sensitive to these assumptions.</p><DataTable caption="Valuation assumptions" headers={['Assumption','Value']} rows={[
@@ -83,7 +83,7 @@ export function DossierContent({ dossier, children }: { dossier: Dossier; childr
    </section>
    <section className="price-section" aria-label="Separate price check"><h2>2. Is the price low enough?</h2><button className={`test-tile price-card ${glyph(price)}`} data-testid="tile-price" data-metric="priceToMid" onClick={()=>setPanel('valuation')}><header><span>Price · separate check</span><span><StatusGlyph result={glyph(price)} label={`Price: ${glyph(price)}`}/>{state.label}</span></header>
     {!qualityPass&&<p className="price-quality-warning">{failed.length?'Quality fails':'Quality not confirmed'} — price alone cannot qualify this company.</p>}
-    <p className="owner-return">{ownerCopy}</p>{owner&&<p className="owner-growth">plus about {Number((owner.growth*100).toFixed(1))}% growth a year</p>}<p className="tile-sentence price-multiple">{framing.headline}</p>
+    <p className="owner-return">{ownerCopy}</p><p className="tile-sentence price-multiple">{framing.headline}</p>
     <dl className="exact-prices"><div><dt>Share price</dt><dd>{sharePrice(quote?.[0]??null,company.currency)}</dd></div><div><dt>Estimated value</dt><dd>{sharePrice(comparable?.perShare.mid??null,company.currency)}</dd></div><div><dt>Buy price</dt><dd>{sharePrice(comparable?comparable.perShare.mid*(1-requiredMos):null,company.currency)}</dd></div></dl>
     <p className="price-condition">{framing.fall}{framing.drop!==null&&framing.drop>0&&<small>A condition for buying, not a forecast.</small>}</p><p className="price-discount">This business needs a {Math.round(requiredMos*100)}% discount to estimated value.</p>
     {verification&&<p className="verification-flag">{quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:verification}</p>}

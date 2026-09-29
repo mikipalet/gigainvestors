@@ -1,0 +1,142 @@
+[
+  {
+    "row": {
+      "b": false,
+      "dataQualityFlags": [
+        "share count corrected to current 1704112694",
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "returnInfo": {
+        "label": "47.4%",
+        "note": "Median annual return on tangible invested capital",
+        "sort": 0.47414441730869666
+      },
+      "fy": 2025,
+      "m": 0.25,
+      "r": [
+        0.219,
+        0.35,
+        0.402,
+        0.44,
+        0.446,
+        0.503,
+        0.714,
+        0.818,
+        0.753,
+        0.938
+      ],
+      "id": "V.US",
+      "n": "Visa Inc. Class A",
+      "lg": "https://eodhd.com/img/logos/US/v.png",
+      "c": "US",
+      "s": "Financial Services",
+      "k": "operating",
+      "mc": 690378637312,
+      "v": [
+        129.3733236820867,
+        184.94757397735094,
+        217.54448166969243
+      ],
+      "cur": "USD",
+      "t": "PPPPP",
+      "g": [
+        "brand"
+      ],
+      "h": 30,
+      "st": "s"
+    },
+    "quote": 367.74
+  },
+  {
+    "row": {
+      "b": false,
+      "dataQualityFlags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "returnInfo": {
+        "label": "> 100% \u2020",
+        "note": "Exact return 206.2%; a small tangible-capital denominator makes this percentage sensitive",
+        "sort": 2.0619063136886417
+      },
+      "fy": 2025,
+      "m": 0.25,
+      "r": [
+        5.36,
+        24.6,
+        13.2,
+        1.92,
+        1.9,
+        1.5,
+        2,
+        2.08,
+        2.04,
+        2.5
+      ],
+      "id": "MA.US",
+      "n": "Mastercard Inc",
+      "lg": "https://eodhd.com/img/logos/US/ma.png",
+      "c": "US",
+      "s": "Financial Services",
+      "k": "operating",
+      "mc": 497801396224,
+      "v": [
+        159.9767710566388,
+        232.39701831465493,
+        274.5674582569283
+      ],
+      "cur": "USD",
+      "t": "PPPPP",
+      "g": [],
+      "h": 22,
+      "st": "s"
+    },
+    "quote": 568.26
+  },
+  {
+    "row": {
+      "b": false,
+      "dataQualityFlags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "returnInfo": {
+        "label": "43.7%",
+        "note": "Median annual return on tangible invested capital",
+        "sort": 0.4371830286798224
+      },
+      "fy": 2026,
+      "m": 0.35,
+      "r": [
+        0.392,
+        0.371,
+        0.134,
+        0.499,
+        0.523,
+        0.458,
+        0.437,
+        0.437,
+        0.449,
+        0.41
+      ],
+      "id": "PG.US",
+      "n": "Procter & Gamble Company",
+      "lg": "https://eodhd.com/img/logos/US/PG.png",
+      "c": "US",
+      "s": "Consumer Defensive",
+      "k": "operating",
+      "mc": 346147848192,
+      "v": [
+        60.22764813445816,
+        77.79569064498378,
+        92.52404787009176
+      ],
+      "cur": "USD",
+      "t": "PPPPP",
+      "g": [
+        "brand"
+      ],
+      "h": 9,
+      "st": "s"
+    },
+    "quote": 149.03
+  }
+]

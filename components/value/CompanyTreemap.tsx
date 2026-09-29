@@ -7,7 +7,7 @@ import { ValueLink } from './ValueLink';
 import { buyColour, companyName, priceFraming } from '@/lib/value/presentation';
 import type { ResultEntry } from '@/app/value/_components/ResultRow';
 
-const distance=(e:ResultEntry)=>e.mos===null||e.row.dataQualityFlags?.length?Infinity:Math.abs((1-e.mos)/(1-(e.row.m??.25))-1);
+const distance=(e:ResultEntry)=>e.mos===null?Infinity:Math.abs((1-e.mos)/(1-(e.row.m??.25))-1);
 const prioritiseBuy=(entry:ResultEntry)=>entry.row.b===true;
 
 export function CompanyTreemap({entries,year,onTable,sort='cap'}:{entries:ResultEntry[];year:string;sort?:'cap'|'closest';onTable:()=>void}) {
@@ -17,7 +17,8 @@ export function CompanyTreemap({entries,year,onTable,sort='cap'}:{entries:Result
  useEffect(()=>{const clear=(e:FocusEvent)=>{if(!(e.target as HTMLElement)?.closest('.company-treemap'))setHover(null);};document.addEventListener('focusin',clear);return()=>document.removeEventListener('focusin',clear);},[]);
  const frames=useMemo(()=>({[year]:[...entries].sort((a,b)=>sort==='closest'?distance(a)-distance(b):(b.row.mc??0)-(a.row.mc??0)).slice(0,sort==='closest'?Math.min(tileLimit,6):tileLimit).map(entry=>({id:entry.row.id,value:sort==='closest'?1:entry.row.mc&&entry.row.mc>0?entry.row.mc:1,data:entry}))}),[entries,year,tileLimit,sort]);
  const renderTile=(entry:ResultEntry,rect:{w:number;h:number})=>{
-  const {row,mos}=entry,name=companyName(row),ratio=mos===null||row.dataQualityFlags?.length?null:(1-mos)/(1-(row.m??.25));
+  // Verification flags affect confidence/colour, not the existence of a value.
+  const {row,mos}=entry,name=companyName(row),ratio=mos===null?null:(1-mos)/(1-(row.m??.25));
   const colours=buyColour(row.dataQualityFlags?.length?null:ratio);
   const compact=rect.w<150||rect.h<130, tiny=rect.w<45||rect.h<32, shallow=rect.h<60&&rect.w>90;
   const labelSize=compact?12:Math.min(22,Math.max(14,rect.w/15));

@@ -9,7 +9,7 @@ export function MethodSummary({author}:{author?:string}) {
   <li>Bring future cash into today’s money using at least a 10% required return, then add net cash.</li>
   <li>Set a buy price 25–50% below that estimate, allowing room for error.</li>
   <li>The track record is a simulation: no dividends, fees or taxes; missing delistings and revised data can flatter results.</li>
- </ol><p>Owner return is cash earnings divided by the price of the whole business. It is not a dividend or a promised investment return. Growth is an assumption. Banks and insurers use a book-value model instead.</p><p className="method-author" data-author-slot>{author?`By ${author}`:null}</p><ValueLink href="/method">Full method & sources ↗</ValueLink></section>;
+ </ol><p>Expected yearly return is owner cash yield plus the valuation’s capped growth assumption, compared with our 10% bar. Cash yield is normalized owner cash divided by market capitalisation in the same currency. This estimate is not a dividend, a guarantee or the discounted cash-flow model’s exact annual return. Banks and insurers use a book-value model instead.</p><p className="method-author" data-author-slot>{author?`By ${author}`:null}</p><ValueLink href="/method">Full method & sources ↗</ValueLink></section>;
 }
 export function AboutMethod({author}:{author?:string}) {
  const [open,setOpen]=useState(false);

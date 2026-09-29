@@ -4,7 +4,7 @@ test('live home puts every published buy first, explains the track record and ex
  await page.setViewportSize({width:1728,height:970});await page.goto('/',{waitUntil:'networkidle'});
  const buys=await page.locator('.one-index').getAttribute('data-buy-count');
  await expect(page.locator('.buy-tile')).toHaveCount(Number(buys));
- await expect(page.locator('.buy-tile').first()).toContainText('Owner return');
+ await expect(page.locator('.buy-tile').first()).toContainText('a year expected');
  await expect(page.locator('.track-record')).toContainText(/median.*vs.*of.*years/);
  await expect(page.getByRole('button',{name:/\+\d+ more/})).toHaveCount(0);
  const show=page.getByRole('button',{name:/^Show all \d+/});

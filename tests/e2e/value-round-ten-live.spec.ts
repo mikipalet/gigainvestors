@@ -60,8 +60,10 @@ test('round ten market access, equal tiles, method and all buy pages',async({pag
  await page.setViewportSize({width:1728,height:970});await page.goto('/',{waitUntil:'networkidle'});
  await expect(page.locator('.buy-tile')).toHaveCount(8);
  for(const tile of await page.locator('.buy-tile').all()){
-  await expect(tile.locator('.buy-owner-return')).toContainText(/Owner return [\d.]+% a year at today's price/);
-  await expect(tile.locator('.buy-growth')).toContainText('growth a year');
+  await expect(tile.locator('.buy-owner-return')).toContainText(/About [\d.]+% a year expected \([\d.]+% cash \+ [\d.]+% growth\) vs Buffett's 10% bar/);
+  const [total,cash,growth]=(await tile.locator('.buy-owner-return').innerText()).match(/[\d.]+(?=%)/g)!.map(Number);
+  expect(total).toBeGreaterThan(10);
+  expect(total).toBeCloseTo(cash+growth,5);
   await expect(tile.locator('.region-badge')).not.toBeEmpty();
  }
  const markets=page.getByRole('combobox',{name:'Markets'});await markets.click();await page.getByRole('option',{name:/Markets: Easy to buy/}).click();
@@ -77,15 +79,31 @@ test('round ten market access, equal tiles, method and all buy pages',async({pag
  await page.keyboard.press('Escape');await page.goto('/',{waitUntil:'networkidle'});await page.setViewportSize({width:390,height:844});await expect(page.locator('.buy-tile')).toHaveCount(2);
  const seen=new Set<string>();for(let i=0;i<4;i++){for(const name of await page.locator('.buy-tile strong').allTextContents())seen.add(name);if(i<3)await page.getByRole('button',{name:'Next buy-zone companies'}).click();}expect(seen.size).toBe(8);
 });
+
+test('round ten b shows Visa, Mastercard and P&G multiples and the same Infosys return on its dossier',async({page})=>{
+ await page.setViewportSize({width:1728,height:970});await page.goto('/',{waitUntil:'networkidle'});
+ for(const [id,multiple] of [['v.us','2.7'],['ma.us','3.3'],['pg.us','2.9']]){
+  const tile=page.locator(`.company-tile[href="/${id}"]`);
+  await expect(tile.locator('.map-price')).toContainText(`${multiple}x`);
+  await expect(tile).not.toContainText('Value unavailable');
+ }
+ const infy=await page.locator('.buy-tile[href="/infy.us"] .buy-owner-return').innerText();
+ await page.goto('/infy.us',{waitUntil:'networkidle'});
+ await expect(page.locator('.price-card .owner-return')).toHaveText(infy);
+ await page.getByTestId('tile-price').click();
+ await expect(page.getByRole('dialog').locator('.owner-return')).toHaveText(infy);
+ await page.goto('/ko.us',{waitUntil:'networkidle'});
+ await expect(page.locator('.price-card .owner-return')).toHaveText("About 2.8% a year expected (2.6% cash + 0.2% growth) vs Buffett's 10% bar");
+});
 test('round ten owner returns, reference metrics, verdict colours and phone type',async({page})=>{
  const colours=[];
  for(const id of ['ko.us','infy.us','dal.us']){
   await page.setViewportSize({width:390,height:844});await page.goto('/'+id,{waitUntil:'networkidle'});
-  await expect(page.locator('.price-card .owner-return')).toContainText(/Produces about .* yearly return. Buffett's bar: 10%/);
+  await expect(page.locator('.price-card .owner-return')).toContainText(/About [\d.]+% a year expected \([\d.]+% cash \+ [\d.]+% growth\) vs Buffett's 10% bar/);
   await expect(page.locator('.reference-metrics')).toContainText('P/E');await expect(page.locator('.reference-metrics')).toContainText('Dividend yield');
   colours.push(await page.locator('.plain-verdict').evaluate(e=>getComputedStyle(e).color));
   for(const el of await page.locator('.price-card .owner-return,.price-card .owner-growth,.quality-section .tile-sentence').all())expect(await el.evaluate(e=>parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(14);
-  await page.getByRole('button',{name:'About the method ↗',exact:true}).click();await expect(page.getByRole('dialog')).toContainText('Owner return is cash earnings');await page.keyboard.press('Escape');
+  await page.getByRole('button',{name:'About the method ↗',exact:true}).click();await expect(page.getByRole('dialog')).toContainText('Expected yearly return is owner cash yield');await page.keyboard.press('Escape');
  }
  expect(new Set(colours).size).toBe(3);
 });

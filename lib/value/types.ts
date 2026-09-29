@@ -158,3 +158,6 @@ export interface IndexRow {
 }
 
 export type PriceMap = Record<Id, [number, string]>; // close, ISO date, in trading currency
+
+export type NumericOutcome = Omit<TestOutcome, "jev" | "result">;
+export interface NumericInput { years: Year[]; kind: Kind }

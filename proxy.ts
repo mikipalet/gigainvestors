@@ -12,6 +12,11 @@ export function proxy(request: NextRequest) {
   }
   const asset = /^\/(?:_next|api|faces)(?:\/|$)/.test(pathname)
     || /\.(?:ico|png|svg|jpe?g|webp|avif|gif|css|js|map|woff2?|txt|html|pdf|json|webmanifest)$/i.test(pathname);
+  const dossierPath = valuePath ? pathname.slice(6) : host.startsWith("value.") ? pathname : "";
+  if (!asset && /^\/[a-z0-9.-]+$/i.test(dossierPath) && dossierPath !== dossierPath.toLowerCase()) {
+    url.pathname = pathname.toLowerCase();
+    return NextResponse.redirect(url, 308);
+  }
   if (host.startsWith("value.") && !valuePath && !asset) {
     url.pathname = `/value${pathname}`;
     return NextResponse.rewrite(url);

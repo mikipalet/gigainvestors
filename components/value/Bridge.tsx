@@ -1,24 +1,34 @@
 import type { Valuation } from "@/lib/value/types";
+import { formatMetric, metricLabels, perShareMoney } from "@/lib/value/metric-labels";
 
-export function Bridge({ valuation }: { valuation: Valuation }) {
-  const number = (value: number) => value.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
-  const percent = (value: number) => `${(value * 100).toFixed(1)}%`;
-  const rows = [
-    ...valuation.bridge.map((row) => ({ label: row.label, value: number(row.value) })),
-    { label: valuation.method === "book_value" ? "Normalized book value per share" : "Normalized owner earnings", value: number(valuation.normalized) },
-    { label: "Growth", value: percent(valuation.growth) },
-    { label: "Discount rate", value: percent(valuation.discountRate) },
-    { label: "Terminal growth", value: percent(valuation.terminalGrowth) },
-    { label: "Equity bond yield", value: valuation.equityBondYield === null ? "Not available" : percent(valuation.equityBondYield) },
-    { label: "Government bond yield", value: valuation.bondYield === null ? "Not available" : percent(valuation.bondYield) },
-    { label: "Net cash", value: number(valuation.netCash) },
-    { label: "Diluted shares", value: number(valuation.shares) },
-    { label: "Per-share value", value: `${valuation.currency} ${number(valuation.perShare.mid)}` },
+export function Bridge({ valuation: v }: { valuation: Valuation }) {
+  const money = (value: number) => formatMetric({ value, format: 'money', currency: v.currency });
+  const count = (value: number) => formatMetric({ value, format: 'count' });
+  const component = (pattern: RegExp) => v.bridge.find(row => pattern.test(row.label))?.value ?? null;
+  const amount = (value: number | null) => value === null ? 'Not reported' : money(value);
+  const deduction = (pattern: RegExp) => { const value = component(pattern); return amount(value === null ? null : Math.abs(value)); };
+  const pvFactor = component(/PV factor/i) ?? (v.normalized ? (v.perShare.mid * v.shares - v.netCash) / v.normalized : null);
+  const rows = v.method === 'owner_earnings' ? [
+    ['Net income', amount(component(/^net income$/i))],
+    ['+ D&A', amount(component(/D&A/i))],
+    ['− Maintenance capex', deduction(/maintenance capex/i)],
+    ['− Stock compensation', deduction(/stock compensation/i)],
+    ['= Owner earnings (normalized)', money(v.normalized)],
+    ['× Present value of 10 years + terminal', pvFactor === null ? 'Not reported' : `${pvFactor.toFixed(2)}×`],
+    ['+ Net cash', money(v.netCash)],
+    ['÷ Diluted shares', count(v.shares)],
+  ] : [
+    ['Book value per share', perShareMoney(v.normalized, v.currency)],
+    ['Normalized return on equity', formatMetric({ value: component(/normalized return on equity/i), format: 'pct' })],
+    ['Justified price / book', formatMetric({ value: component(/justified price to book/i), format: 'x' })],
   ];
+  rows.push(['= Per-share value (low / mid / high)', [v.perShare.low, v.perShare.mid, v.perShare.high].map(value => perShareMoney(value, v.currency)).join(' / ')]);
   return <section data-testid="valuation-bridge" className="border-t border-ink/20 py-6">
-    <h2 className="mb-4 text-xl font-semibold">{valuation.method === "book_value" ? "Book value bridge" : "Owner earnings bridge"}</h2>
-    <p className="mb-3 text-sm text-ink/60">Values in {valuation.currency}, except shares and rates.</p>
-    <dl>{rows.map((row, i) => <div key={`${row.label}-${i}`} className="flex justify-between gap-6 border-t border-ink/15 py-2 text-sm"><dt>{row.label}</dt><dd>{row.value}</dd></div>)}</dl>
-    <ul className="mt-4 space-y-2 text-sm text-ink/60">{valuation.assumptions.map((assumption, i) => <li key={i}>{assumption}</li>)}</ul>
+    <h2 className="mb-4 text-xl font-semibold">{v.method === 'book_value' ? 'Book value bridge' : 'Owner earnings bridge'}</h2>
+    <p className="mb-3 text-sm text-ink/60">Values in {v.currency}, except shares and rates.</p>
+    <dl>{rows.map(([label, value]) => <div key={label} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-4 border-t border-ink/15 py-2 text-sm"><dt>{label}</dt><dd className="text-right">{value}</dd></div>)}</dl>
+    <h3 className="mt-5 text-sm font-medium">Assumptions</h3>
+    <ul className="mt-2 space-y-1 text-xs text-ink/60">{(['growth', 'discountRate', 'terminalGrowth', 'bondYield', 'equityBondYield'] as const).map(key => <li key={key} className="flex justify-between gap-4"><span>{metricLabels[key].label}</span><span>{formatMetric({ value: v[key], format: 'pct' })}</span></li>)}</ul>
+    <ul className="mt-3 space-y-1 text-xs text-ink/60">{v.assumptions.map((assumption, i) => <li key={i}>{assumption}</li>)}</ul>
   </section>;
 }

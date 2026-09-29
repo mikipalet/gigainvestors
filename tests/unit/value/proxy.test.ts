@@ -19,7 +19,7 @@ describe("value host routing", () => {
   it.each([
     "https://gigainvestors.com/s/KO", "https://gigainvestors.com/valuable",
     "https://value.gigainvestors.com/api/search", "https://value.gigainvestors.com/_next/static/a.js",
-    "https://value.gigainvestors.com/faces/v3/buffett.webp", "https://value.gigainvestors.com/favicon.ico",
+    "https://value.gigainvestors.com/faces/v3/buffett.webp", "https://value.gigainvestors.com/favicon.ico", "https://value.gigainvestors.com/LOGO.PNG",
     "https://value.gigainvestors.com/value/ko.us",
     "https://value.gigainvestors.com/newsletter/2026-q2.html",
   ])("leaves %s untouched", (url) => {

@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
     const file = new URL(route.request().url()).pathname.split("/main/")[1];
     try {
       const body = file === "prices/US.json"
-        ? JSON.stringify({ "KO.US": [60, "2026-09-28"], "DAL.US": [50, "2026-09-28"] })
+        ? JSON.stringify({ "KO.US": [22.0702124796888, "2026-09-28"], "DAL.US": [50, "2026-09-28"] })
         : await readFile(path.join(root, file), "utf8");
       await route.fulfill({ contentType: "application/json", body });
     } catch {
@@ -42,8 +42,8 @@ test("dossier sections, evidence, bridge and missing price", async ({ page }) =>
     "Understandable", "Moat", "Economics", "Management", "Accounting", "Price",
   ]);
   await expect(page.getByTestId("valuation-bridge").locator("dl > div").last()).toContainText("Per-share value");
-  await expect(page.getByTestId("valuation-bridge").locator("dl > div").last()).toContainText("100.00");
-  await expect(page.getByTestId("verdict")).toContainText("no price");
+  await expect(page.getByTestId("valuation-bridge").locator("dl > div").last()).toContainText("36.78");
+  await expect(page.getByTestId("verdict")).toContainText("No price yet");
   await expect(page.locator('section[data-test="price"]')).toContainText("unclear");
   await expect(page.getByText("Our brands encourage repeat purchases.")).toBeVisible();
   await expect(page.getByText("Read: 10-K filed 2026-02-20")).toBeVisible();
@@ -109,4 +109,48 @@ test("global search is omitted on value routes and retained on the main site", a
   await expect(page.getByRole("button", { name: "Search", exact: true })).toBeVisible();
   await page.getByRole("button", { name: "Search", exact: true }).click();
   await expect(page.getByPlaceholder("investor, firm, ticker, company")).toBeVisible();
+});
+
+test('phone table, default toggle, readable metrics and relevant series', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/value');
+  await expect(page.getByLabel('Near misses')).not.toBeChecked();
+  await expect(page.getByRole('columnheader', { name: 'Country', exact: true })).not.toBeVisible();
+  await expect(page.getByRole('columnheader', { name: 'Holders', exact: true })).not.toBeVisible();
+  await expect(page.getByRole('columnheader', { name: 'Market cap (USD)' })).toBeVisible();
+  await expect(page.locator('tbody tr').first().locator('[title="Moat: pass"]').first()).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  expect(await page.locator('table').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+  await page.goto('/value/ko.us');
+  await expect(page.locator('[data-test="moat"]')).toContainText('ROIC, 10-year median');
+  await expect(page.locator('[data-test="moat"]')).toContainText('24.5%');
+  await expect(page.locator('[data-test="understandable"] svg')).toHaveCount(2);
+  await expect(page.locator('[data-test="management"] svg')).toHaveAttribute('aria-label', 'Diluted shares, 2016 to 2025');
+  await expect(page.locator('[data-test="price"]')).not.toContainText('Not reported');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('canonical lowercase redirects and clean host links', async ({ request }) => {
+  for (const [url, host, expected] of [
+    ['/value/KO.US?near=1', 'localhost:3000', '/value/ko.us?near=1'],
+    ['/KO.US?near=1', 'value.gigainvestors.com', '/ko.us?near=1'],
+  ]) {
+    const response = await request.get(url, { headers: { host }, maxRedirects: 0 });
+    expect(response.status()).toBe(308);
+    expect(response.headers().location).toContain(expected);
+  }
+  const response = await request.get('/', { headers: { host: 'value.gigainvestors.com' } });
+  const html = await response.text();
+  expect(html).toContain('href="/ko.us"');
+  expect(html).not.toContain('href="/value/ko.us"');
+});
+
+test('country and price failures remain distinct', async ({ page }) => {
+  await page.route('**/main/prices/US.json', route => route.fulfill({ status: 503, body: '{}' }));
+  await page.goto('/value');
+  await expect(page.getByText('Some prices are unavailable.', { exact: false })).toBeVisible();
+  await page.route('**/main/index/US.json', route => route.fulfill({ status: 503, body: '{}' }));
+  await page.getByLabel('Country', { exact: true }).selectOption('US');
+  await expect(page.getByText('Could not load this country.', { exact: false })).toBeVisible();
+  await expect(page.getByText('Loading companies…')).toHaveCount(0);
 });

@@ -6,13 +6,12 @@ import { QUALITY_TESTS, type TestOutcome } from "@/lib/value/types";
 import { getIndex } from "@/lib/data";
 import { Face } from "@/components/Face";
 import { Bridge } from "@/components/value/Bridge";
-import { MiniSeries } from "@/components/value/MiniSeries";
+import { comparableValuation } from "@/lib/value/site-valuation";
 import { TestChips } from "@/components/value/TestChips";
 import { TestSection } from "@/components/value/TestSection";
 
 export const revalidate = 86400;
 export const dynamicParams = true;
-export const dynamic = "force-static";
 type Props = { params: Promise<{ id: string }> };
 
 export async function generateStaticParams() {
@@ -28,14 +27,17 @@ export default async function DossierPage({ params }: Props) {
   if (!dossier) notFound();
   const { company, valuation, report } = dossier;
   const [quote, investors] = await Promise.all([getPrice(company.id, company.country), dossier.holders.length ? getIndex() : Promise.resolve(null)]);
-  const priceResult = priceTest(valuation, quote?.[0] ?? null);
+  const comparable = comparableValuation(valuation, company.currency);
+  const displayValue = comparable ?? valuation;
+  const mismatch = valuation && !comparable ? `Price is in ${company.currency}, value in ${valuation.currency}, not compared` : null;
+  const priceResult = priceTest(comparable, quote?.[0] ?? null);
   const price: TestOutcome = {
     key: "price", result: priceResult.result, numeric: priceResult.result,
-    reasons: [quote ? valuation ? "Margin of safety compares the latest close with estimated per-share value." : dossier.valuationReason ?? "Not valued" : "no price"],
-    metrics: { marginOfSafety: priceResult.mos }, series: {}, jev: [],
+    reasons: [quote ? mismatch ?? (valuation ? "Margin of safety compares the latest close with estimated per-share value." : dossier.valuationReason ?? "Not valued") : "No price yet"],
+    metrics: quote && comparable ? { marginOfSafety: priceResult.mos } : {}, series: {}, jev: [],
   };
   const tests: TestOutcome[] = [...QUALITY_TESTS.flatMap((key) => key === "price" ? [] : [dossier.tests[key]]), price];
-  const amount = (value: number) => `${valuation?.currency ?? company.currency} ${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  const amount = (value: number) => `${displayValue?.currency ?? company.currency} ${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   const mos = price.metrics.marginOfSafety;
   const source = report.kind === "description" ? "Report not read, description only" : `Read: ${report.kind}${report.filed ? ` filed ${report.filed}` : ""}`;
 
@@ -44,12 +46,12 @@ export default async function DossierPage({ params }: Props) {
     <h1 className="text-4xl font-semibold tracking-tight">{company.name}</h1>
     <div data-testid="verdict" className="my-6 space-y-4">
       {dossier.status === "insufficient_data" && <p className="text-ink/40">Insufficient data</p>}
-      <p className="text-lg">{valuation ? `Estimated value ${amount(valuation.perShare.low)} to ${amount(valuation.perShare.high)}` : dossier.valuationReason ?? "Not valued"} · {quote ? `Price ${company.currency} ${quote[0].toFixed(2)} (${quote[1]})` : "no price"}{mos != null && ` · ${(mos * 100).toFixed(1)}% margin of safety`}</p>
+      <p className="text-lg">{displayValue ? `Estimated value ${amount(displayValue.perShare.low)} to ${amount(displayValue.perShare.high)}` : dossier.valuationReason ?? "Not valued"} · {quote ? `Price ${company.currency} ${quote[0].toFixed(2)} (${quote[1]})` : "No price yet"}{mos != null && ` · ${(mos * 100).toFixed(1)}% margin of safety`}</p>
+      {mismatch && <p className="text-sm">{mismatch}</p>}
       <TestChips tests={tests} />
     </div>
     <p className="mb-6 text-sm text-ink/60">{report.url ? <a href={report.url} className="underline">{source}</a> : source} · Analysis {dossier.asOf}</p>
-    <div className="grid gap-4 sm:grid-cols-3">{Object.entries(dossier.series).map(([label, series]) => <MiniSeries key={label} label={label} series={series} />)}</div>
-    {tests.map((test) => <TestSection key={test.key} test={test} />)}
+    {tests.map((test) => <TestSection key={test.key} test={test} currency={valuation?.currency ?? company.currency} />)}
     {valuation && <Bridge valuation={valuation} />}
     <section className="border-t border-ink/20 py-6"><h2 className="mb-4 text-xl font-semibold">Superinvestor holders</h2>
       {dossier.holders.length ? <ul className="flex flex-wrap gap-6">{dossier.holders.map((holder) => {

@@ -24,7 +24,7 @@ describe("value evidence presentation", () => {
   it("shows the per-share result, assumptions and equity bond comparison", () => {
     if (!dossier.valuation) throw new Error("Fixture valuation missing");
     const html = renderToStaticMarkup(createElement(Bridge, { valuation: dossier.valuation }));
-    expect(html).toContain("USD 100.00");
+    expect(html).toContain("USD 36.78");
     expect(html).toContain("Government bond yield");
     expect(html).toContain("Growth fades to terminal growth");
   });

@@ -31,6 +31,8 @@ export async function getDossier(id: Id) {
   const shard = await readStore<Record<Id, Dossier>>(`dossiers/${shardOf(key)}.json`);
   return shard?.[key] ?? null;
 }
+// PriceMap quotes and IndexRow.v/cur are in the listing trading currency by contract.
+// There is no currency metadata in price files; consumers trust this publishing invariant.
 export async function getPrice(id: Id, country: string) {
   const prices = await readStore<PriceMap>(`prices/${country.toUpperCase()}.json`);
   return prices?.[id.toUpperCase()] ?? null;

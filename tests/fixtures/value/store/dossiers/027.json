@@ -19,7 +19,7 @@
         "KO.US"
       ],
       "marketCapUsd": 300000000000.0,
-      "description": "Fixture company",
+      "description": "A global beverage business selling concentrates, syrups and finished drinks through bottling partners.",
       "source": "eodhd"
     },
     "asOf": "2026-09-29",
@@ -40,52 +40,98 @@
         "result": "pass",
         "numeric": "pass",
         "reasons": [
-          "Fixture analysis"
+          "The concentrate and bottling model is straightforward, with recurring demand across a broad beverage portfolio.",
+          "Revenue declined in three years, while the business remained profitable throughout the decade."
         ],
         "metrics": {
-          "median": 0.2
+          "historyYears": 10,
+          "revenueDeclines": 3,
+          "lossYears": 0,
+          "opMarginCv": 0.12
         },
         "series": {
-          "roic": [
+          "revenue": [
             [
               2016,
-              0.15
+              41900000000.0
             ],
             [
               2017,
-              0.16
+              35400000000.0
             ],
             [
               2018,
-              0.16999999999999998
+              31900000000.0
             ],
             [
               2019,
-              0.18
+              37300000000.0
             ],
             [
               2020,
-              0.19
+              33000000000.0
             ],
             [
               2021,
-              0.2
+              38700000000.0
             ],
             [
               2022,
-              0.21
+              43000000000.0
             ],
             [
               2023,
-              0.22
+              45800000000.0
             ],
             [
               2024,
-              0.22999999999999998
+              47100000000.0
             ],
             [
               2025,
-              0.24
+              48400000000.0
+            ]
+          ],
+          "operatingMargin": [
+            [
+              2016,
+              0.237
+            ],
+            [
+              2017,
+              0.267
+            ],
+            [
+              2018,
+              0.286
+            ],
+            [
+              2019,
+              0.271
+            ],
+            [
+              2020,
+              0.273
+            ],
+            [
+              2021,
+              0.287
+            ],
+            [
+              2022,
+              0.291
+            ],
+            [
+              2023,
+              0.297
+            ],
+            [
+              2024,
+              0.301
+            ],
+            [
+              2025,
+              0.305
             ]
           ]
         },
@@ -96,52 +142,98 @@
         "result": "pass",
         "numeric": "pass",
         "reasons": [
-          "Fixture analysis"
+          "ROIC has remained above 20% through the decade, supported by brands and a global distribution network.",
+          "Gross margin fell 1.2 percentage points between 2020 and 2023."
         ],
         "metrics": {
-          "median": 0.2
+          "roicMedian": 0.245,
+          "roicWorst3": 0.21,
+          "grossMarginDrop": 0.012,
+          "capexToRevenue": 0.041
         },
         "series": {
           "roic": [
             [
               2016,
-              0.15
-            ],
-            [
-              2017,
-              0.16
-            ],
-            [
-              2018,
-              0.16999999999999998
-            ],
-            [
-              2019,
-              0.18
-            ],
-            [
-              2020,
-              0.19
-            ],
-            [
-              2021,
               0.2
             ],
             [
-              2022,
+              2017,
               0.21
             ],
             [
-              2023,
+              2018,
+              0.23
+            ],
+            [
+              2019,
+              0.24
+            ],
+            [
+              2020,
               0.22
             ],
             [
+              2021,
+              0.25
+            ],
+            [
+              2022,
+              0.26
+            ],
+            [
+              2023,
+              0.27
+            ],
+            [
               2024,
-              0.22999999999999998
+              0.28
             ],
             [
               2025,
-              0.24
+              0.29
+            ]
+          ],
+          "grossMargin": [
+            [
+              2016,
+              0.607
+            ],
+            [
+              2017,
+              0.624
+            ],
+            [
+              2018,
+              0.619
+            ],
+            [
+              2019,
+              0.607
+            ],
+            [
+              2020,
+              0.593
+            ],
+            [
+              2021,
+              0.603
+            ],
+            [
+              2022,
+              0.581
+            ],
+            [
+              2023,
+              0.581
+            ],
+            [
+              2024,
+              0.591
+            ],
+            [
+              2025,
+              0.601
             ]
           ]
         },
@@ -163,52 +255,55 @@
         "result": "pass",
         "numeric": "pass",
         "reasons": [
-          "Fixture analysis"
+          "Owner earnings converted 94% of net income into distributable cash over the last five years.",
+          "Incremental capital earned 24%, while working capital intensity declined."
         ],
         "metrics": {
-          "median": 0.2
+          "oeToNi": 0.94,
+          "roiic": 0.24,
+          "nwcToRevenueTrend": -0.002
         },
         "series": {
-          "roic": [
+          "ownerEarnings": [
             [
               2016,
-              0.15
+              6700000000.0
             ],
             [
               2017,
-              0.16
+              7000000000.0
             ],
             [
               2018,
-              0.16999999999999998
+              7400000000.0
             ],
             [
               2019,
-              0.18
+              8000000000.0
             ],
             [
               2020,
-              0.19
+              7300000000.0
             ],
             [
               2021,
-              0.2
+              9100000000.0
             ],
             [
               2022,
-              0.21
+              9600000000.0
             ],
             [
               2023,
-              0.22
+              10000000000.0
             ],
             [
               2024,
-              0.22999999999999998
+              10500000000.0
             ],
             [
               2025,
-              0.24
+              11200000000.0
             ]
           ]
         },
@@ -219,52 +314,59 @@
         "result": "pass",
         "numeric": "pass",
         "reasons": [
-          "Fixture analysis"
+          "The share count declined gradually, and market value gained more than cumulative retained earnings.",
+          "Buybacks were not flagged as debt funded; acquisition spending coincided with improving returns."
         ],
         "metrics": {
-          "median": 0.2
+          "marketCapGain": 115000000000.0,
+          "retainedEarnings": 42000000000.0,
+          "shareCagr": -0.004,
+          "buybackYieldCovariance": 2100000.0,
+          "debtFundedBuybacks": 0,
+          "acquisitionSpend": 12000000000.0,
+          "roicTrend": 0.009
         },
         "series": {
-          "roic": [
+          "shares": [
             [
               2016,
-              0.15
+              4370000000.0
             ],
             [
               2017,
-              0.16
+              4340000000.0
             ],
             [
               2018,
-              0.16999999999999998
+              4300000000.0
             ],
             [
               2019,
-              0.18
+              4280000000.0000005
             ],
             [
               2020,
-              0.19
+              4280000000.0000005
             ],
             [
               2021,
-              0.2
+              4269999999.9999995
             ],
             [
               2022,
-              0.21
+              4250000000.0
             ],
             [
               2023,
-              0.22
+              4230000000.0000005
             ],
             [
               2024,
-              0.22999999999999998
+              4210000000.0
             ],
             [
               2025,
-              0.24
+              4200000000.0
             ]
           ]
         },
@@ -275,52 +377,57 @@
         "result": "pass",
         "numeric": "pass",
         "reasons": [
-          "Fixture analysis"
+          "Operating cash flow supports reported earnings, with negative accruals in the latest year.",
+          "Stock compensation used 2.5% of operating cash flow; one of the last five years included restructuring charges."
         ],
         "metrics": {
-          "median": 0.2
+          "accruals": -0.018,
+          "receivablesGrowthGap": 0.02,
+          "restructuringYears": 1,
+          "sbcToOcf": 0.025,
+          "goodwillIntangiblesToEquity": 1.1
         },
         "series": {
-          "roic": [
+          "accruals": [
             [
               2016,
-              0.15
+              -0.03
             ],
             [
               2017,
-              0.16
+              -0.025
             ],
             [
               2018,
-              0.16999999999999998
+              -0.021
             ],
             [
               2019,
-              0.18
+              -0.028
             ],
             [
               2020,
-              0.19
+              -0.012
             ],
             [
               2021,
-              0.2
+              -0.022
             ],
             [
               2022,
-              0.21
+              -0.019
             ],
             [
               2023,
-              0.22
+              -0.023
             ],
             [
               2024,
-              0.22999999999999998
+              -0.02
             ],
             [
               2025,
-              0.24
+              -0.018
             ]
           ]
         },
@@ -336,21 +443,45 @@
       "terminalGrowth": 0.03,
       "bondYield": 0.04,
       "netCash": -10000000000.0,
-      "shares": 4000000000.0,
+      "shares": 4200000000.0,
       "perShare": {
-        "low": 80,
-        "mid": 100,
-        "high": 120
+        "low": 27.449965363167212,
+        "mid": 36.783687466148,
+        "high": 43.44187794368083
       },
-      "equityBondYield": 0.05,
+      "equityBondYield": 0.03333333333333333,
       "bridge": [
         {
-          "label": "Present value of owner earnings",
-          "value": 410000000000.0
+          "label": "net income",
+          "value": 10800000000.0
         },
         {
-          "label": "Net cash",
+          "label": "+ D&A",
+          "value": 1600000000.0
+        },
+        {
+          "label": "\u2212 maintenance capex",
+          "value": -2100000000.0
+        },
+        {
+          "label": "\u2212 stock compensation",
+          "value": -300000000.0
+        },
+        {
+          "label": "= owner earnings",
+          "value": 10000000000.0
+        },
+        {
+          "label": "\u00d7 PV factor",
+          "value": 16.449148735782163
+        },
+        {
+          "label": "+ net cash",
           "value": -10000000000.0
+        },
+        {
+          "label": "\u00f7 shares",
+          "value": 4200000000.0
         }
       ],
       "assumptions": [

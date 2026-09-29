@@ -82,7 +82,7 @@ it("persists raw data, merges company metadata and refreshes on every rolling pa
     await stage({ only: ["KO.US"] });
     expect(requested).toContain("/api/fundamentals/KO.US");
     requested.length = 0;
-    usage = 99001;
+    usage = 99991;
     await stage({ only: ["KO.US"], force: true });
     expect(requested).toEqual(["/api/user"]);
   } finally { rmSync(directory, { recursive: true, force: true }); }

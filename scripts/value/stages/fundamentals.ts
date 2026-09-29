@@ -1,3 +1,4 @@
+import { budgetUsage } from "../../../lib/value/budget";
 import { readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
 import { T } from "../../../lib/value/config";
 import { callsUsedToday, getFundamentals } from "../../../lib/value/eodhd";
@@ -31,12 +32,12 @@ export default async function fundamentals(options: Options): Promise<void> {
   let used = await callsUsedToday();
   let written = 0;
   for (const company of selected) {
-    if (used >= T.fundamentals.dailyBudgetStop) {
+    if (Math.max(used, budgetUsage().used) + T.budget.fundamentalsCost > T.budget.dailyCalls) {
       console.log("daily EODHD budget reached, resume tomorrow");
       break;
     }
     const raw = await getFundamentals(company.id);
-    used += T.fundamentals.requestCost;
+    used += T.budget.fundamentalsCost;
     const { fundamentals: normalized, patch, marketCap } = normalizeEodhd(raw, company.id);
     const existing = readCorpusJson<Partial<Company>>(`companies/${company.id}.json`);
     const currency = marketCap.currency ?? existing?.currency ?? company.currency;
@@ -48,7 +49,7 @@ export default async function fundamentals(options: Options): Promise<void> {
     writeCorpusJson(`fundamentals/${company.id}.json`, normalized);
     written++;
     console.log(`${company.id}: ${normalized.years.length} annual periods, integrity ${normalized.integrity.ok ? "ok" : normalized.integrity.reasons.join("; ")}`);
-    if (written % T.fundamentals.usageSyncCompanies === 0) used = await callsUsedToday();
+    if (written % T.fundamentals.usageSyncCompanies === 0) used = Math.max(used, await callsUsedToday());
   }
   console.log(`fundamentals: ${written} written`);
 }

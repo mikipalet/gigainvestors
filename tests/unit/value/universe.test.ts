@@ -1,10 +1,20 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { mkdirSync, mkdtempSync, rmSync } from "node:fs";
+import { homedir } from "node:os";
+import { join } from "node:path";
+import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
 import symbols from "../../fixtures/value/eodhd/symbols-US.json";
 import { collapseListings, isCommonStock, kindFor } from "../../../lib/value/universe";
 import { eodhd, screenerPage, callsUsedToday } from "../../../lib/value/eodhd";
 
 const listings = symbols.map((r) => ({ code: r.Code, exchange: "US", isin: r.Isin, name: r.Name }));
-afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
+let usageDirectory: string;
+beforeEach(() => {
+  const root = join(homedir(), "value-corpus");
+  mkdirSync(root, { recursive: true });
+  usageDirectory = mkdtempSync(join(root, "universe-usage-test-"));
+  vi.stubEnv("VALUE_CORPUS_DIR", usageDirectory);
+});
+afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); rmSync(usageDirectory, { recursive: true, force: true }); });
 
 describe("universe", () => {
   it("keeps common stock and drops fund, ETF, preferred and warrant fixture rows", () => {

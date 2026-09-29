@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
-import { bulkLastDay } from "../../../lib/value/eodhd";
+import { bulkLastDay, callsUsedToday } from "../../../lib/value/eodhd";
 import { yahooPrice } from "../../../lib/value/prices-yahoo";
 import type { Company, PriceMap } from "../../../lib/value/types";
 import { git, pushRepository, withPublishRepository } from "./publish";
@@ -58,7 +58,7 @@ export async function refreshPrices({ repo, companies, bulk = bulkLastDay, yahoo
       prices = existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) as PriceMap : {};
       byCountry.set(company.country, prices);
     }
-    if (!prices[company.id] || prices[company.id][1] <= update[1]) prices[company.id] = update;
+    if (!prices[company.id] || prices[company.id][2] === "seed" || prices[company.id][1] <= update[1]) prices[company.id] = update;
   }
   for (const [country, prices] of byCountry) {
     const file = path.join(repo, "prices", `${country}.json`);
@@ -86,6 +86,7 @@ export default async function prices(options: { only?: string[]; limit?: number;
     if (!options.force && existing?.date === today) return existing.data;
     const data = await fetcher(); writeCorpusJson(file, { date: today, data }); return data;
   }
+  await callsUsedToday();
   await withPublishRepository(async (repo) => {
     await refreshPrices({ repo, companies,
       bulk: (exchange) => cached(`eodhd-${encodeURIComponent(exchange)}`, () => bulkLastDay(exchange)),

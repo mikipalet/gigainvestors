@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import eod from "../../fixtures/value/history/eodhd-KO.json";
 import yahoo from "../../fixtures/value/history/yahoo-8058.json";
-import { appendJsonl, readCorpusJson, writeCorpusJson } from "@/lib/value/corpus";
+import { appendJsonl, readJsonl, readCorpusJson, writeCorpusJson } from "@/lib/value/corpus";
 import type { Company, PriceHistory } from "@/lib/value/types";
 import priceHistory from "@/scripts/value/stages/price-history";
 
@@ -17,7 +17,9 @@ beforeEach(() => {
   vi.stubGlobal('fetch', () => { throw Error('Unexpected network'); });
 });
 afterEach(() => { vi.restoreAllMocks(); vi.useRealTimers(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); rmSync(root, { recursive: true, force: true }); });
-async function run(options = {}) { const work = priceHistory(options); await Promise.all([work, vi.runAllTimersAsync()]); }
+async function run(options = {}) {
+  for (const c of readJsonl<Company>('universe.jsonl')) writeCorpusJson(`fundamentals/${c.id}.json`, { id: c.id });
+  const work = priceHistory(options); await Promise.all([work, vi.runAllTimersAsync()]); }
 
 it('records monthly closes in order with the requested ten-year URL and skips fresh history', async () => {
   appendJsonl('universe.jsonl', company('KO.US'));
@@ -43,7 +45,7 @@ it('refreshes expired rows, filters before limit, and stops at the shared daily 
   writeCorpusJson('prices-history/KO.US.json',{ fetchedAt: '2026-09-22T11:59:59Z', prices: [['2020-01',1]] });
   writeCorpusJson('prices-history/NEXT.US.json',{ fetchedAt: '2026-09-22T11:59:59Z', prices: [['2020-01',2]] });
   vi.stubGlobal('fetch', async (url: string) => {
-    if (new URL(url).pathname.endsWith('/user')) return Response.json({ apiRequests: 98999 });
+    if (new URL(url).pathname.endsWith('/user')) return Response.json({ apiRequests: 99999 });
     expect(new URL(url).pathname).toBe('/api/eod/KO.US'); return Response.json(eod);
   });
   await run({ only: ['KO.US','NEXT.US'], limit: 2 });
@@ -94,7 +96,7 @@ it('counts failed EODHD attempts against the daily budget', async () => {
   const requested: string[] = [];
   vi.stubGlobal('fetch', async (url: string) => {
     const path = new URL(url).pathname;
-    if (path.endsWith('/user')) return Response.json({apiRequests:98999});
+    if (path.endsWith('/user')) return Response.json({apiRequests:99999});
     requested.push(path); return Response.json({error:'unavailable'});
   });
   await run();

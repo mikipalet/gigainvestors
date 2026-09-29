@@ -1,3 +1,4 @@
+import { budgetUsage } from "../../../lib/value/budget";
 import { orderFundamentals } from "./fundamentals";
 import type { PriceHistory } from "../../../lib/value/types";
 import { T } from "../../../lib/value/config";
@@ -12,6 +13,7 @@ export default async function priceHistory({ only, limit, force = false }: { onl
   from.setUTCFullYear(from.getUTCFullYear() - T.history.years);
   const fetchedAt = new Map<string, string>();
   const eligible = loadCompanies({ only }).filter(company => {
+    if (!readCorpusJson(`fundamentals/${company.id}.json`)) return false;
     const cached = readCorpusJson<CachedPriceHistory>(`prices-history/${company.id}.json`);
     if (cached?.fetchedAt) fetchedAt.set(company.id, cached.fetchedAt);
     const timestamp = readCorpusJson<{ fetchedAt: string }>(`prices-history/meta/${company.id}.json`)?.fetchedAt ?? cached?.fetchedAt;
@@ -28,7 +30,7 @@ export default async function priceHistory({ only, limit, force = false }: { onl
     const isJapan = company.id.endsWith(".JP");
     if (!isJapan) {
       used ??= await callsUsedToday();
-      if (used >= T.fundamentals.dailyBudgetStop) {
+      if (Math.max(used, budgetUsage().used) + T.budget.historyCost > T.budget.dailyCalls || budgetUsage().history >= T.budget.priceHistoryCalls) {
         console.log("daily EODHD budget reached, resume tomorrow");
         break;
       }

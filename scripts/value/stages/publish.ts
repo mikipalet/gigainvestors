@@ -1,3 +1,4 @@
+import { mergeSeedFiles } from "../../../lib/value/price-files";
 import { validCompanyId } from "../../../lib/value/companies";
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from "node:fs";
@@ -176,6 +177,7 @@ export function publishSnapshot({ repo, analyses, universeIds, partial, force = 
       console.warn(`publish: skipped price history for ${row.id}: ${error instanceof Error ? error.message : "unreadable history"}`);
     }
   }
+  mergeSeedFiles(repo);
   const { files } = buildOutput({ priceHistories, analyses: rows, universe: universeIds.length, holdersByTicker, investorNames, fx: {}, prices: readPriceFiles(repo) });
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
   writeOutput({ repo, files });

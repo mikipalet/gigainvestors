@@ -180,7 +180,7 @@ export interface IndexRow {
   st: "s" | "i"; // scored / insufficient
 }
 
-export type PriceMap = Record<Id, [number, string]>; // close, ISO date, in trading currency
+export type PriceMap = Record<Id, [number, string, "seed"?]>; // close, fetch/close ISO date, optional derived-price flag; trading currency
 
 export type NumericOutcome = Omit<TestOutcome, "jev" | "result">;
 export interface NumericInput { years: Year[]; kind: Kind }

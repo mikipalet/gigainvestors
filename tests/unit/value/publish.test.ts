@@ -167,6 +167,7 @@ describe("publish repository", () => {
     expect(search("ax").rows).toContainEqual(["AXP.US", "AXP.US", "US", "a", 100]);
     expect(search("pe").rows).toContainEqual(["PENDING.US", "PENDING.US", "US", "p", 100]);
     expect(search("de").rows).toEqual([]);
+    expect(search("manifest")).toEqual({ version: 1, split: [], maxPrefix: 2 });
     expect(existsSync(path.join(repo, "search/a.json"))).toBe(false);
     const funnel = (JSON.parse(readFileSync(path.join(repo, "meta.json"), "utf8")) as StoreMeta).funnel!;
     expect(funnel.analysed).toBe(2);

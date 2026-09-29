@@ -1,12 +1,9 @@
 import { rankItems } from "../search/rank";
 import type { Company, SearchRow, SearchShard } from "./types";
 
-export const SEARCH_KEYS = "0123456789abcdefghijklmnopqrstuvwxyz";
+import { SEARCH_KEYS, SEARCH_CHARACTERS, normalizeSearch, type SearchManifest } from "./search-shard";
+export { SEARCH_KEYS, normalizeSearch } from "./search-shard";
 const stopWords = new Set("inc incorporated ltd limited plc sa ag corp corporation holdings holding co company nv".split(" "));
-
-export function normalizeSearch(text: string): string {
-  return text.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
-}
 
 function nameWords(name: string): string[] {
   // Remove periods first so S.A. and N.V. are treated as corporate suffixes.
@@ -22,29 +19,86 @@ export function searchTokens(company: Company): string[] {
   return [...new Set([...nameWords(company.name), ...aliases(company)])];
 }
 
-/** Shared by the publisher and UI: single-character queries use the underscore shard. */
+/** Legacy base-prefix helper. Clients must use shardKeyFor(query, manifest). */
 export function searchShardKey(query: string): string {
   const token = normalizeSearch(query.trim());
   return token.length === 1 ? `${token}_` : token.slice(0, 2);
 }
 
-/** Each company appears once in each matching two-character token-prefix shard. */
-export function buildSearchShards(companies: Company[], analysed: ReadonlySet<string>): Record<string, SearchShard> {
-  const shards = Object.fromEntries([...SEARCH_KEYS].flatMap(first => [...SEARCH_KEYS, "_"].map(second => [first + second, { rows: [], aliases: {} } as SearchShard])));
-  for (const company of [...companies].sort((a, b) => a.id.localeCompare(b.id))) {
-    const codes = aliases(company);
-    const keys = new Set(searchTokens(company).map(searchShardKey).filter(key => SEARCH_KEYS.includes(key[0])));
+const MAX_SHARD_BYTES = 60_000;
+const HEAD_ROWS = 300;
+type Entry = { row: SearchRow; tokens: string[]; codes: string[]; cap: number };
+
+function payload(entries: Entry[]): SearchShard {
+  const shard: SearchShard = { rows: [], aliases: {} };
+  for (const entry of entries) {
+    const offset = shard.rows.length;
+    shard.rows.push(entry.row);
+    for (const code of entry.codes) (shard.aliases[code] ??= []).push(offset);
+  }
+  return shard;
+}
+
+function rawBytes(shard: SearchShard): number {
+  return new TextEncoder().encode(JSON.stringify(shard) + "\n").length;
+}
+
+/** Every split retains a top-cap head; all possible children exist, even when empty. */
+export function buildAdaptiveSearchShards(companies: Company[], analysed: ReadonlySet<string>): {
+  shards: Record<string, SearchShard>; manifest: SearchManifest;
+} {
+  const shards: Record<string, SearchShard> = {};
+  const manifest: SearchManifest = { version: 1, split: [], maxPrefix: 2 };
+  const entries: Entry[] = [...companies].sort((a, b) => a.id.localeCompare(b.id)).map(company => {
     const cap = company.marketCapUsd;
-    const row: SearchRow = [company.id, company.name, company.country, analysed.has(company.id) ? "a" : "p",
-      cap != null && Number.isFinite(cap) ? Number(cap.toPrecision(2)) : null];
-    for (const key of keys) {
-      const shard = shards[key] ??= { rows: [], aliases: {} };
-      const offset = shard.rows.length;
-      shard.rows.push(row);
-      for (const code of codes.filter(code => searchShardKey(code) === key)) (shard.aliases[code] ??= []).push(offset);
+    return {
+      row: [company.id, company.name, company.country, analysed.has(company.id) ? "a" : "p",
+        cap != null && Number.isFinite(cap) ? Number(cap.toPrecision(2)) : null],
+      cap: cap != null && Number.isFinite(cap) ? cap : -Infinity,
+      tokens: searchTokens(company), codes: aliases(company),
+    };
+  });
+  function head(key: string, entries: Entry[]): void {
+    const top = [...entries].sort((a, b) => b.cap - a.cap || a.row[0].localeCompare(b.row[0])).slice(0, HEAD_ROWS);
+    const shard = payload(top);
+    // Do not silently violate either the byte budget or the top-300 contract.
+    if (rawBytes(shard) > MAX_SHARD_BYTES) throw new Error(`Search head ${key} exceeds 60000 bytes`);
+    shards[key] = shard;
+  }
+  function visit(prefix: string, entries: Entry[]): void {
+    manifest.maxPrefix = Math.max(manifest.maxPrefix, prefix.length);
+    const shard = payload(entries);
+    if (rawBytes(shard) <= MAX_SHARD_BYTES) {
+      shards[prefix] = shard;
+      return;
+    }
+    manifest.split.push(prefix);
+    head(prefix, entries);
+    // Exact tokens stop here and remain represented by the head. They cannot
+    // be partitioned by a longer prefix. Longer tokens continue recursively.
+    for (const char of SEARCH_CHARACTERS) {
+      const key = prefix + char;
+      const children = entries.filter(entry => entry.tokens.some(token => token.startsWith(key)))
+        .map(entry => ({ ...entry, codes: entry.codes.filter(code => code.startsWith(key)) }));
+      visit(key, children);
     }
   }
-  return shards;
+  for (const first of SEARCH_KEYS) {
+    const matching = entries.filter(entry => entry.tokens.some(token => token.startsWith(first)))
+      .map(entry => ({ ...entry, codes: entry.codes.filter(code => code.startsWith(first)) }));
+    head(`${first}_`, matching);
+    for (const second of SEARCH_CHARACTERS) {
+      const prefix = first + second;
+      visit(prefix, matching.filter(entry => entry.tokens.some(token => token.startsWith(prefix)))
+        .map(entry => ({ ...entry, codes: entry.codes.filter(code => code.startsWith(prefix)) })));
+    }
+  }
+  manifest.split.sort();
+  return { shards, manifest };
+}
+
+export function buildSearchShards(companies: Company[], analysed: ReadonlySet<string>): Record<string, SearchShard> {
+  return buildAdaptiveSearchShards(companies, analysed).shards;
 }
 
 /** Pure adapter for the shared palette ranker; usable by the later UI integration. */

@@ -10,6 +10,8 @@ export const T = {
     missingLoanBankIds: ["AXP.US"] as readonly string[],
   },
   edinet: { checkpointCompanies: 100, perSecond: 3, concurrency: 6, timeoutMs: 180_000, maxCsvBytes: 128 * 1024 * 1024, filingYears: 2 },
+  esef: { checkpointCompanies: 50, minAnnualDays: 330, maxAnnualDays: 400, concurrency: 3 },
+  marketCaps: { refreshMs: 7 * 86400000, maxReportedAgeMs: 120 * 86400000, shareBasisTolerance: 0.15 },
   yahoo: { perSecond: 2 },
   numeric: { minAvailableFraction: 2 / 3 },
   dedupe: { revenueTolerance: 0.02, backupRetentionMs: 7 * 24 * 60 * 60 * 1000 },
@@ -41,3 +43,9 @@ export const YAHOO_SUFFIXES: Readonly<Record<string, string>> = {
   SHG: ".SS", SHE: ".SZ", SA: ".SA", MX: ".MX", JK: ".JK", KLSE: ".KL", BK: ".BK", JSE: ".JO",
   NZ: ".NZ", SN: ".SN", IR: ".IR", AT: ".AT", JP: ".T",
 };
+
+/** Owner-defined venues available through typical Western retail brokers. F = Frankfurt. */
+export const WESTERN_VENUES = [
+  'US', 'TO', 'V', 'NEO', 'LSE', 'XETRA', 'F', 'PA', 'AS', 'BR', 'MC', 'MI',
+  'LS', 'VI', 'IR', 'CO', 'ST', 'HE', 'OL', 'WAR', 'SW', 'AU', 'NZ',
+] as const;

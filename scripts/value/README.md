@@ -136,3 +136,30 @@ A central discount rate at/below perpetual growth has no finite model value and
 is explicitly unavailable. The high scenario reduces its usual 1pp rate shift
 to half the gap above perpetual growth when necessary; the central required
 return never changes. This also applies to bank/insurer perpetual book growth.
+
+### Italy: Milan / Growth Milan from ESEF
+
+```sh
+export VALUE_CORPUS_DIR="$HOME/value-corpus"
+npx tsx scripts/value/cli.ts italy
+# Subsets and retries use the same stage:
+npx tsx scripts/value/cli.ts italy --only=ENI.MI,ISP.MI,ENEL.MI,RACE.MI,MONC.MI
+# Pass the Italian IDs from universe.jsonl to the ordinary analyze stage.
+# Do not run prices or publish for a local-only import: prices publishes.
+```
+
+`italy` reads the official Euronext CSV for MTAA and EXGM, resolves LEIs by ISIN using GLEIF (exact unambiguous name fallback), and pages through **all** filings.xbrl.org annual packages, including issuers domiciled outside Italy such as Ferrari. It consumes each package's extracted XBRL-JSON and caches the associated report XHTML for the existing ESEF section cutter. Companies use `CODE.MI`, `country: IT`, `source: esef`; identity matches retain overseas aliases with Milan primary. EODHD fundamentals skip these issuers, and a universe refresh retains them.
+
+Financial facts use canonical absolute values, exclusive XBRL period ends, annual durations, consolidated contexts, reporting currency and share units. Related-party/segment facts are excluded. Conflicting duplicate values stay null. Newer filings replace reported comparatives without erasing balance facts missing from the newer package. Parent profit/equity take precedence; capex is positive spending, with both tangible and intangible purchases required unless a combined total exists. No issuer-extension guessing or share counts inferred from rounded EPS. Combined D&A plus impairment is not treated as pure D&A. Missing history remains subject to the unchanged seven-year integrity gate.
+
+Yahoo `.MI` supplies current prices and monthly history. `italy` writes these locally to `prices/IT.json`, `prices-history/`, and raw quote caches, without opening a publication repository. It retains listed companies even when filings are absent. `raw/esef/summary.json` records coverage gaps and source failures; failures can be retried without downloading completed packages again. `--force` refreshes listing/LEI/index/quote metadata; immutable filing JSON/XHTML remains cached. Only completed issuer imports get a resume fingerprint.
+
+### Download priority and missing caps
+
+Before fundamentals selection or universe ordering, missing caps are recovered from cached company/fundamentals data or free Yahoo data. Yahoo chart price times verified shares uses proper GBp/GBX, ZAc and ILA scaling. Without known shares, the unauthenticated Yahoo time-series endpoint can supply a recent **reported market cap**. Its ordinary-share counts are used only when consistent with the EPS-denominator share basis, avoiding multiplication of an ADR price by underlying ordinary shares. A cached EODHD bulk close is the fallback when shares are known. Unsupported/missing data stays unknown; positive caps and misses are cached.
+
+```sh
+npx tsx scripts/value/cli.ts market-caps --only=ZM.US,ZTS.US,ENI.MI
+```
+
+This standalone backfill updates corpus company overlays and writes `raw/market-caps/summary.json`; it never publishes. The downloader enriches the entire eligible selection **before** `--limit`. Sorting follows the Western venue allowlist from the Western-access work (including US ADR aliases), then USD cap descending. Unknown caps use venue importance: main exchanges before AIM/Growth/Venture and OTC. Refresh age breaks remaining ties. Venue segment ranking uses reported metadata; it does not guess AIM membership from a ticker. Free estimates are ordering inputs, not replacements for audited fundamentals.

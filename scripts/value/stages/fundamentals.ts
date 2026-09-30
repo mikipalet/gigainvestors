@@ -1,3 +1,4 @@
+import { enrichMissingCaps, compareDownloads } from "../../../lib/value/download-order";
 import { budgetUsage } from "../../../lib/value/budget";
 import { readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
 import { T } from "../../../lib/value/config";
@@ -8,26 +9,26 @@ import type { Company, Fundamentals } from "../../../lib/value/types";
 
 interface Options { only?: string[]; limit?: number; force?: boolean }
 
-/** Stable sort preserves universe (market cap) order for new companies and ties. */
+/** Western access, cap, and unknown venue importance first; refresh age breaks ties. */
 export function orderFundamentals(companies: Company[], fetchedAt: ReadonlyMap<string, string>): Company[] {
   const fetchedTime = (id: string) => {
     const timestamp = Date.parse(fetchedAt.get(id) ?? "");
     return Number.isFinite(timestamp) ? timestamp : -Infinity;
   };
-  return [...companies].sort((a, b) => fetchedTime(a.id) - fetchedTime(b.id));
+  return [...companies].sort((a, b) => compareDownloads(a, b) || fetchedTime(a.id) - fetchedTime(b.id));
 }
 
 export default async function fundamentals(options: Options): Promise<void> {
   const universe = readJsonl<Company>("universe.jsonl");
   if (!universe.length) throw new Error("Run the universe stage before fundamentals");
-  const eligible = universe.filter((company) => (!options.only || options.only.includes(company.id)) && company.source !== "edinet");
+  const eligible = universe.filter((company) => (!options.only || options.only.includes(company.id)) && company.source !== "edinet" && company.source !== "esef");
   const fetchedAt = new Map<string, string>();
   for (const company of eligible) {
     const existing = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
     if (existing?.fetchedAt) fetchedAt.set(company.id, existing.fetchedAt);
   }
   // Rolling refresh always refetches selected companies, including with --force.
-  const selected = orderFundamentals(eligible, fetchedAt).slice(0, options.limit);
+  const selected = orderFundamentals(await enrichMissingCaps(eligible), fetchedAt).slice(0, options.limit);
   const usdRate = createUsdRate(options);
   let used = await callsUsedToday();
   let written = 0;

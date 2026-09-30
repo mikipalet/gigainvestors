@@ -111,8 +111,8 @@ it("writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs a
     expect(readJsonl("universe.jsonl")).toMatchObject([
       { id: "KO.US", marketCapUsd: 300, country: "US" },
       { id: "ASML.AS", marketCapUsd: 240, country: "NL" },
-      { id: "0700.HK", marketCapUsd: null, country: "HK" },
       { id: "JADR.US", marketCapUsd: null, country: "US" },
+      { id: "0700.HK", marketCapUsd: null, country: "HK" },
     ]);
     vi.stubGlobal("fetch", () => { throw new Error("Cached run must stay offline"); });
     await stage({});

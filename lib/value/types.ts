@@ -24,9 +24,10 @@ export interface Company {
   industry: string | null;
   kind: Kind;
   listings: Id[];
+  listingExchange?: string;
   marketCapUsd: number | null;
   description: string | null;
-  source: "eodhd" | "edinet";
+  source: "eodhd" | "edinet" | "esef";
 }
 
 // One fiscal year, reporting currency, absolute units. null = not reported.
@@ -86,6 +87,8 @@ export interface Year {
   liabilitiesAndStockholdersEquity?: number | null;
   currentAssets: number | null;
   currentLiabilities: number | null;
+  basicEps?: number | null;
+  sharesOutstanding?: number | null;
   dilutedShares: number | null;
   marketCap: number | null; // year-end, reporting currency, when derivable
 }

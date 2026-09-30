@@ -1,3 +1,5 @@
+import { retainItalianCompanies } from "../../../lib/value/italy/companies";
+import { enrichMissingCaps, compareDownloads } from "../../../lib/value/download-order";
 import { marketCapCurrency } from "../../../lib/value/currency";
 import { retainJapaneseCompanies } from "../../../lib/value/japan/companies";
 import { mkdirSync, renameSync, writeFileSync } from "node:fs";
@@ -59,14 +61,15 @@ export default async function universe(options: Options): Promise<void> {
     const sector = screen?.sector ?? null;
     const industry = screen?.industry ?? null;
     companies.push({
-      id: group.primary, name: row.Name, code: row.Code, exchange: row.exchange,
+      listingExchange: row.Exchange, id: group.primary, name: row.Name, code: row.Code, exchange: row.exchange,
       country: row.country, currency: row.Currency, isin: row.Isin ?? null,
       cik: null, lei: null, edinetCode: null, sector, industry, kind: kindFor({ sector, industry }),
       listings: group.listings, marketCapUsd: cap != null && Number.isFinite(cap) && rate !== null ? cap * rate : null,
       description: null, source: "eodhd",
     });
   }
-  companies = retainJapaneseCompanies(companies);
+  companies = retainItalianCompanies(retainJapaneseCompanies(companies));
+  companies = await enrichMissingCaps(companies);
   const largestUsCap = companies.reduce((largest, company) => company.country === "US"
     ? Math.max(largest, company.marketCapUsd ?? 0) : largest, 0);
   if (largestUsCap > 0) {
@@ -78,7 +81,7 @@ export default async function universe(options: Options): Promise<void> {
       }
     }
   }
-  companies.sort((a, b) => (b.marketCapUsd ?? -Infinity) - (a.marketCapUsd ?? -Infinity) || a.id.localeCompare(b.id));
+  companies.sort((a, b) => compareDownloads(a, b) || a.id.localeCompare(b.id));
   const selected = options.limit ? companies.slice(0, options.limit) : companies;
   const destination = corpusPath("universe.jsonl");
   mkdirSync(path.dirname(destination), { recursive: true });

@@ -1,3 +1,4 @@
+import { companyExclusion } from '../../../lib/value/fund-exclusion';
 import { applyMembership } from '../../../lib/value/index-membership';
 import {applyShareCheck,type ShareCheck} from '../../../lib/value/share-check';
 import { publishViews } from '../../../lib/value/publish-views';
@@ -283,7 +284,7 @@ export default async function publish(options: { only?: string[]; limit?: number
   if (out && existsSync(out) && readdirSync(out).length) throw new Error("--out requires a new or empty directory");
   const membership = readCorpusJson<{ complete: boolean; memberships: Record<string, string[]>; supplementalCompanies?: Company[] }>("index-membership/latest.json");
   if (!membership || (!membership.complete && !(out && options.force))) throw new Error("Run index-membership and resolve its coverage report before publish (incomplete snapshots may only be inspected with --out --force)");
-  const companies = applyMembership([...new Map([...readJsonl<Company>("universe.jsonl"), ...(membership.supplementalCompanies ?? [])].map(c=>[c.id,c])).values()], membership.memberships).filter(company => company.indexes!.length);
+  const companies = applyMembership([...new Map([...readJsonl<Company>("universe.jsonl"), ...(membership.supplementalCompanies ?? [])].map(c=>[c.id,c])).values()], membership.memberships).filter(company => company.indexes!.length && !companyExclusion(company));
   if (!companies.length) throw new Error("Run the universe stage before publish");
   const selected = companies.filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
   if (!selected.length) throw new Error("No companies selected for publish");

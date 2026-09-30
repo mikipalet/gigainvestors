@@ -34,3 +34,27 @@ it('retains a verified missing listing identity without rewriting the upstream u
  expect(readFileSync(path.join(dir,'universe.jsonl'),'utf8')).toBe(original);
  expect(readCorpusJson('index-membership/latest.json')).toMatchObject({complete:true,memberships:{'DHI.US':['S&P 500']},supplementalCompanies:[{id:'DHI.US',source:'eodhd',marketCapUsd:null}]});
 });
+it('uses all cached exchanges to identify constituents absent from the home exchange cache',async()=>{
+ source('MFT','Mainfreight Limited');
+ writeCorpusJson('raw/eodhd/universe/symbols-F.json',{data:[{Code:'NK7',Name:'Mainfreight Ltd',Currency:'EUR',Exchange:'F',Isin:'NZMFTE0001S9',Type:'Common Stock'}]});
+ await stage({offline:true});
+ expect(readCorpusJson('index-membership/latest.json')).toMatchObject({complete:true,memberships:{'NK7.F':['S&P 500']}});
+});
+it('audits excluded fund rows as resolved while omitting their site memberships',async()=>{
+ source('BNKR','Bankers Investment Trust');
+ writeCorpusJson('raw/eodhd/universe/symbols-US.json',{data:[{Code:'BNKR',Name:'Bankers Investment Trust',Currency:'USD',Exchange:'NYSE',Type:'Common Stock'}]});
+ await stage({offline:true});
+ expect(readCorpusJson('index-membership/latest.json')).toMatchObject({complete:true,memberships:{},indexes:[{unmatched:[],excluded:[{name:'Bankers Investment Trust'}]}]});
+});
+it('does not classify an operating issuer using a colliding vendor ETF ticker',async()=>{
+ source('KOETF','Coca-Cola');
+ writeCorpusJson('raw/eodhd/universe/symbols-US.json',{data:[{Code:'KOETF',Name:'Leveraged Coca-Cola ETF',Type:'ETF',Isin:'DIFFERENT'}]});
+ await stage({offline:true});
+ expect(readCorpusJson('index-membership/latest.json')).toMatchObject({complete:true,memberships:{'KO.US':['S&P 500']},indexes:[{excluded:[]}]});
+});
+it('keeps a missing issuer unmatched when its vendor mnemonic collides with an unrelated ETF',async()=>{
+ source('NEW','New Operating Business');
+ writeCorpusJson('raw/eodhd/universe/symbols-US.json',{data:[{Code:'NEW',Name:'New Energy ETF',Type:'ETF',Isin:'OTHER'}]});
+ await expect(stage({offline:true})).rejects.toThrow('coverage incomplete');
+ expect(readCorpusJson('index-membership/latest.json')).toMatchObject({indexes:[{unmatched:[{name:'New Operating Business'}],excluded:[]}]});
+});

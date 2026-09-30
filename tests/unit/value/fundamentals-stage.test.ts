@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { appendJsonl, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { callsUsedToday, eodhd, getFundamentals } from "../../../lib/value/eodhd";
-import stage, { orderFundamentals } from "../../../scripts/value/stages/fundamentals";
+import stage, { orderFundamentals, needsMemberFundamentals, MEMBER_FRESHNESS_MS } from "../../../scripts/value/stages/fundamentals";
 import type { Company } from "../../../lib/value/types";
 
 vi.mock("../../../lib/value/eodhd", () => ({ callsUsedToday: vi.fn(), getFundamentals: vi.fn(), eodhd: vi.fn() }));
@@ -70,4 +70,36 @@ it("resyncs usage after 200 companies and obeys the updated budget", async () =>
   await stage({});
   expect(getFundamentals).toHaveBeenCalledTimes(200);
   expect(callsUsedToday).toHaveBeenCalledTimes(2);
+});
+
+it('puts overdue index members ahead of fresh members and Western nonmembers, including supplemental identities', async () => {
+  for (const id of ['BIG.US', 'FRESH.US', 'OLD.US']) appendJsonl('universe.jsonl', {id, name:id, code:id.split('.')[0], exchange:'US', listings:[id], marketCapUsd:100});
+  writeCorpusJson('index-membership/latest.json', {memberships:{'NEW.HK':['Hang Seng'],'OLD.US':['S&P 500'],'FRESH.US':['S&P 500']}, supplementalCompanies:[{id:'NEW.HK',name:'New',code:'NEW',exchange:'HK',listings:['NEW.HK'],marketCapUsd:1,source:'eodhd'}]});
+  writeCorpusJson('fundamentals/FRESH.US.json', {fetchedAt:new Date().toISOString(),years:[{}]});
+  writeCorpusJson('fundamentals/OLD.US.json', {fetchedAt:'2020-01-01',years:[{}]});
+  await stage({membersFirst:true,limit:2});
+  expect(vi.mocked(getFundamentals).mock.calls.map(([id])=>id)).toEqual(['NEW.HK','OLD.US']);
+});
+
+it('continues the member backlog after a failed company', async () => {
+  for (const id of ['BAD.US','GOOD.US']) appendJsonl('universe.jsonl', {id});
+  writeCorpusJson('index-membership/latest.json',{memberships:{'BAD.US':['S&P 500'],'GOOD.US':['S&P 500']}});
+  vi.mocked(getFundamentals).mockRejectedValueOnce(new Error('EODHD HTTP 404')).mockResolvedValueOnce({});
+  await stage({membersFirst:true});
+  expect(getFundamentals).toHaveBeenLastCalledWith('GOOD.US');
+});
+it('refreshes missing native-source index members without refreshing fresh native filings',async()=>{
+ for(const id of ['MISSING.MI','FRESH.MI'])appendJsonl('universe.jsonl',{id,source:'esef'});
+ writeCorpusJson('index-membership/latest.json',{memberships:{'MISSING.MI':['FTSE MIB'],'FRESH.MI':['FTSE MIB']}});
+ writeCorpusJson('fundamentals/FRESH.MI.json',{fetchedAt:new Date().toISOString(),years:[{}]});
+ await stage({membersFirst:true});
+ expect(vi.mocked(getFundamentals).mock.calls.map(([id])=>id)).toEqual(['MISSING.MI']);
+});
+it('treats missing dates and empty financials as due and uses a strict 90-day boundary',()=>{
+ const now=Date.now();
+ expect(needsMemberFundamentals(null,now)).toBe(true);
+ expect(needsMemberFundamentals({fetchedAt:'invalid',years:[{}] as never},now)).toBe(true);
+ expect(needsMemberFundamentals({fetchedAt:new Date(now).toISOString(),years:[]},now)).toBe(true);
+ expect(needsMemberFundamentals({fetchedAt:new Date(now-MEMBER_FRESHNESS_MS).toISOString(),years:[{}] as never},now)).toBe(false);
+ expect(needsMemberFundamentals({fetchedAt:new Date(now-MEMBER_FRESHNESS_MS-1).toISOString(),years:[{}] as never},now)).toBe(true);
 });

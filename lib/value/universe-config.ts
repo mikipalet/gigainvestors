@@ -1,5 +1,5 @@
 export const exchangeCountries: Record<string, string> = {
-  US: "US", LSE: "GB", NEO: "CA", V: "CA", TO: "CA", F: "DE", STU: "DE", MU: "DE",
+  US: "US", MI: "IT", NZ: "NZ", NSE: "IN", BSE: "IN", LSE: "GB", NEO: "CA", V: "CA", TO: "CA", F: "DE", STU: "DE", MU: "DE",
   HA: "DE", DU: "DE", HM: "DE", BE: "DE", XETRA: "DE", LU: "LU", VI: "AT", PA: "FR", BR: "BE",
   SW: "CH", MC: "ES", LS: "PT", AS: "NL", CO: "DK", ST: "SE", OL: "NO", HE: "FI",
   IR: "IE", VFEX: "ZW", XZIM: "ZW", PR: "CZ", XBOT: "BW", LUSE: "ZM", EGX: "EG",

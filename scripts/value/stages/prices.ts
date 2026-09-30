@@ -1,7 +1,8 @@
+import { universeCompanies } from '../../../lib/value/companies';
 import { refreshPublishedBuyPrices } from '../../../lib/value/refresh-buy-prices';
 import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
+import { readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { bulkLastDay, callsUsedToday } from "../../../lib/value/eodhd";
 import { yahooPrice } from "../../../lib/value/prices-yahoo";
 import type { Company, PriceMap } from "../../../lib/value/types";
@@ -79,7 +80,7 @@ export function commitPrices({ repo, asOf }: { repo: string; asOf: string }): bo
 }
 
 export default async function prices(options: { only?: string[]; limit?: number; force?: boolean }): Promise<void> {
-  const companies = readJsonl<Company>("universe.jsonl").filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
+  const companies = universeCompanies().filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
   if (!companies.length) throw new Error("No companies selected; run the universe stage before prices");
   const today = new Date().toISOString().slice(0, 10);
   async function cached<T>(key: string, fetcher: () => Promise<T>): Promise<T> {

@@ -65,6 +65,8 @@ while true; do
     wait_until_next_run
     continue
   fi
+  # Reserve the first paid work for every missing or >90-day-old index member.
+  run_stage fundamentals --members-first || :
   run_stage prices || :
   run_stage price-history || :
   run_stage fundamentals || :

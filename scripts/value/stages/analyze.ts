@@ -1,3 +1,4 @@
+import { universeCompanies } from '../../../lib/value/companies';
 import { esefShareInputs } from "../../../lib/value/italy/shares";
 import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
 import { checkIntegrity } from "../../../lib/value/integrity";
@@ -11,7 +12,7 @@ import { readPriceHistory } from "../../../lib/value/price-history";
 import { bondYield, type BondObservation } from "../../../lib/value/bond-yields";
 import { createUsdRate } from "../../../lib/value/fx";
 import { T } from "../../../lib/value/config";
-import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
+import { corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { findEvidence } from "../../../lib/value/jev/run";
 import { QUESTIONS, QUESTIONS_VERSION } from "../../../lib/value/jev/questions";
 import trust from "../../../lib/value/jev-trust.json";
@@ -33,7 +34,7 @@ export function loadSections({ company, report }: { company: Company; report: Re
 }
 
 export default async function analyze({ only, limit, force, ask, getBondYield = bondYield, evidence = findEvidence }: Options): Promise<void> {
-  const companies = readJsonl<Company>("universe.jsonl").filter(company => !only || only.includes(company.id));
+  const companies = universeCompanies().filter(company => !only || only.includes(company.id));
   // Offline repairs can change cached records that dedupe removed from the universe.
   // Honor explicit IDs without adding those aliases back to published coverage.
   const selected = new Set(companies.map(company => company.id));

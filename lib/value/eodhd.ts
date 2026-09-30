@@ -33,6 +33,7 @@ export interface ScreenerRow {
 const limit = createLimiter({ perSecond: T.eodhd.perSecond });
 
 export async function eodhd<T>(path: string, params: Record<string, string> = {}, request: { signal?: AbortSignal; retries?: number } = {}): Promise<T> {
+  if (process.env.VALUE_NO_EODHD === "1") throw new Error("EODHD network disabled for this run");
   const key = process.env.EODHD_API_KEY;
   if (!key) throw new Error("EODHD_API_KEY is required");
   const url = new URL(path.replace(/^\//, ""), "https://eodhd.com/api/");
@@ -59,7 +60,8 @@ export async function eodhd<T>(path: string, params: Record<string, string> = {}
 
 export const listExchanges = () => eodhd<Exchange[]>("exchanges-list");
 export const listSymbols = (exchange: string) => eodhd<SymbolRow[]>(`exchange-symbol-list/${encodeURIComponent(exchange)}`);
-export const getFundamentals = (ticker: string): Promise<unknown> => eodhd(`fundamentals/${encodeURIComponent(ticker)}`);
+// One attempt costs ten calls; retry failed companies on the next daily run.
+export const getFundamentals = (ticker: string): Promise<unknown> => eodhd(`fundamentals/${encodeURIComponent(ticker)}`, {}, { retries: 0 });
 export const bulkLastDay = (exchange: string): Promise<unknown> => eodhd(`eod-bulk-last-day/${encodeURIComponent(exchange)}`);
 
 export async function screenerPage({ offset, exchange }: { offset: number; exchange?: string }): Promise<ScreenerRow[]> {

@@ -1,44 +1,65 @@
+import { statfsSync } from 'node:fs';
+import { universeCompanies } from '../../../lib/value/companies';
+import { companyExclusion } from '../../../lib/value/fund-exclusion';
 import { enrichMissingCaps, compareDownloads } from "../../../lib/value/download-order";
 import { budgetUsage } from "../../../lib/value/budget";
-import { readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
+import { readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { T } from "../../../lib/value/config";
 import { callsUsedToday, getFundamentals } from "../../../lib/value/eodhd";
 import { createUsdRate } from "../../../lib/value/fx";
 import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
 import type { Company, Fundamentals } from "../../../lib/value/types";
 
-interface Options { only?: string[]; limit?: number; force?: boolean }
+interface Options { only?: string[]; limit?: number; force?: boolean; membersFirst?: boolean }
 
-/** Western access, cap, and unknown venue importance first; refresh age breaks ties. */
+export const MEMBER_FRESHNESS_MS = 90 * 86400000;
+export function needsMemberFundamentals(existing: Pick<Fundamentals,'fetchedAt'|'years'>|null, now=Date.now()): boolean {
+ const at=Date.parse(existing?.fetchedAt??'');
+ return !existing?.years?.length || !Number.isFinite(at) || now-at>MEMBER_FRESHNESS_MS;
+}
+/** Index members first, then Western access, cap and refresh age. */
 export function orderFundamentals(companies: Company[], fetchedAt: ReadonlyMap<string, string>): Company[] {
   const fetchedTime = (id: string) => {
     const timestamp = Date.parse(fetchedAt.get(id) ?? "");
     return Number.isFinite(timestamp) ? timestamp : -Infinity;
   };
-  return [...companies].sort((a, b) => compareDownloads(a, b) || fetchedTime(a.id) - fetchedTime(b.id));
+  return [...companies].sort((a, b) => Number(Boolean(b.indexes?.length))-Number(Boolean(a.indexes?.length)) || compareDownloads(a, b) || fetchedTime(a.id) - fetchedTime(b.id));
 }
 
 export default async function fundamentals(options: Options): Promise<void> {
-  const universe = readJsonl<Company>("universe.jsonl");
+  const universe = universeCompanies();
   if (!universe.length) throw new Error("Run the universe stage before fundamentals");
-  const eligible = universe.filter((company) => (!options.only || options.only.includes(company.id)) && company.source !== "edinet" && company.source !== "esef");
+  const eligible = universe.filter((company) => (!options.only || options.only.includes(company.id))
+    && (!options.membersFirst || company.indexes?.length) && !companyExclusion(company));
   const fetchedAt = new Map<string, string>();
+  const overdue = new Set<string>();
   for (const company of eligible) {
     const existing = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
+    if (company.indexes?.length && needsMemberFundamentals(existing)) overdue.add(company.id);
     if (existing?.fetchedAt) fetchedAt.set(company.id, existing.fetchedAt);
   }
   // Rolling refresh always refetches selected companies, including with --force.
-  const selected = orderFundamentals(await enrichMissingCaps(eligible), fetchedAt).slice(0, options.limit);
+  // The member catch-up must not wait for cap enrichment of the entire universe.
+  const candidates = options.membersFirst ? eligible.filter(c=>overdue.has(c.id)) : await enrichMissingCaps(eligible.filter(c=>overdue.has(c.id)||(c.source!=='edinet'&&c.source!=='esef')));
+  const selected = orderFundamentals(candidates, fetchedAt)
+    .sort((a,b)=>Number(overdue.has(b.id))-Number(overdue.has(a.id)) || (overdue.has(a.id)&&overdue.has(b.id) ? Number(fetchedAt.has(a.id))-Number(fetchedAt.has(b.id)) : 0))
+    .slice(0, options.limit);
+  if (!selected.length) { console.log('fundamentals: 0 due'); return; }
   const usdRate = createUsdRate(options);
   let used = await callsUsedToday();
   let written = 0;
+  let attempted = 0;
+  const failures: Array<{id:string;error:string}>=[];
   for (const company of selected) {
+    const disk=statfsSync('/'); if(disk.bavail*disk.bsize<5e9) throw new Error('Disk below 5 GB; stopping');
     if (Math.max(used, budgetUsage().used) + T.budget.fundamentalsCost > T.budget.dailyCalls) {
       console.log("daily EODHD budget reached, resume tomorrow");
       break;
     }
-    const raw = await getFundamentals(company.id);
     used += T.budget.fundamentalsCost;
+    attempted++;
+    try {
+    const raw = await getFundamentals(company.id);
     const { fundamentals: normalized, patch, marketCap } = normalizeEodhd(raw, company.id);
     const existing = readCorpusJson<Partial<Company>>(`companies/${company.id}.json`);
     const currency = marketCap.currency ?? existing?.currency ?? company.currency;
@@ -50,7 +71,12 @@ export default async function fundamentals(options: Options): Promise<void> {
     writeCorpusJson(`fundamentals/${company.id}.json`, normalized);
     written++;
     console.log(`${company.id}: ${normalized.years.length} annual periods, integrity ${normalized.integrity.ok ? "ok" : normalized.integrity.reasons.join("; ")}`);
-    if (written % T.fundamentals.usageSyncCompanies === 0) used = Math.max(used, await callsUsedToday());
+    } catch (error) {
+      failures.push({id:company.id,error:error instanceof Error?error.message:String(error)});
+      console.warn(`fundamentals: ${company.id} failed; continuing backlog`);
+    }
+    if (attempted % T.fundamentals.usageSyncCompanies === 0) used = Math.max(used, await callsUsedToday());
   }
-  console.log(`fundamentals: ${written} written`);
+  writeCorpusJson(`fundamentals-runs/${new Date().toISOString().replaceAll(':','-')}.json`,{written,attempted,failures,selected:selected.length,memberCatchup:Boolean(options.membersFirst)});
+  console.log(`fundamentals: ${written} written; ${failures.length} failed`);
 }

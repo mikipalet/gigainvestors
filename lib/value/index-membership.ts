@@ -1,4 +1,4 @@
-import { normalizedName } from './universe';
+import { constituentName as normalizedName } from './cached-listings';
 import { adrUnderlyingIsins, cdiUnderlyingIsins } from './universe-config';
 import type { Company } from './types';
 export type IndexCompany = Company & { indexes: string[] };
@@ -11,12 +11,14 @@ export function createConstituentMatcher(companies: Company[]) {
  const primaries=new Map(companies.map(c=>[ticker(c.code,c.exchange),c.id]));
  const tickers=new Map<string,Set<string>>(),isins=new Map<string,Set<string>>(),names=new Map<string,Set<string>>();
  const add=(map:Map<string,Set<string>>,key:string,id:string)=>{if(key)map.set(key,new Set([...(map.get(key)??[]),id]));};
- for(const c of companies){
+ const addCompany=(c:Company)=>{
+  byId.set(c.id,c);primaries.set(ticker(c.code,c.exchange),c.id);
   for(const id of new Set([c.id,...c.listings])){const dot=id.lastIndexOf('.');add(tickers,ticker(id.slice(0,dot),id.slice(dot+1)),c.id);}
   if(c.isin)add(isins,underlying(c.isin),c.id);
   for(const n of [c.name,c.nameEn,c.nameLocal,c.nativeName])if(n)add(names,normalizedName(n),c.id);
  }
- return (row:Constituent):Match|null=>{
+ for(const c of companies)addCompany(c);
+ const match=(row:Constituent):Match|null=>{
   const primary=row.code&&row.exchange?primaries.get(ticker(row.code,row.exchange)):undefined;
   if(primary){
    const direct=byId.get(primary)!;
@@ -35,6 +37,7 @@ export function createConstituentMatcher(companies: Company[]) {
   ] as const){if(hits?.size===1)return {id:[...hits][0],via};if(hits && hits.size>1)return null;}
   return null;
  };
+ return Object.assign(match,{addCompany});
 }
 export function applyMembership(companies:Company[],memberships:Record<string,string[]>):IndexCompany[]{
  return companies.map(c=>({...c,indexes:[...new Set(memberships[c.id]??[])]}));

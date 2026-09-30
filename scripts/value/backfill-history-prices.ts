@@ -20,10 +20,11 @@ async function main(){
   const rebuilt=new Map((rebuiltYears[year]??[]).map(r=>[r[0],r]));
   let added=0;const mismatches:string[]=[];
   for(const row of years[year]){
-   if(row[1]!=='PPPPP')continue;
+   // Keep earlier non-passing years for the same quality companies: annual charts
+   // must not invent a continuous line or borrow today's discount.
    const fresh=rebuilt.get(row[0]);
    if(fresh&&fresh[1]===row[1]&&fresh[2]===row[2]&&fresh[3]===row[3]){row[5]=fresh[5];added++;}
-   else mismatches.push(row[0]);
+   else if(row[1]==='PPPPP')mismatches.push(row[0]);
   }
   writeFileSync(path.join(target,`history/${year}.json`),JSON.stringify(years[year])+'\n');
   stats.push({year,added,mismatches});

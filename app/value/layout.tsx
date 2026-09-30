@@ -9,6 +9,7 @@ import './round-twelve.css';
 import './round-thirteen.css';
 import './performance.css';
 import './main-view.css';
+import './viz-lab-three.css';
 import { SearchTrigger } from '@/components/Search';
 import { AboutMethod } from '@/components/value/AboutMethod';
 import { ValueLink } from '@/components/value/ValueLink';

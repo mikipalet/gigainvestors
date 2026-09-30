@@ -22,14 +22,18 @@ const get = vi.fn(async () => ({
 vi.mock("resend", () => ({ Resend: class { emails = { send, receiving: { get, attachments: { get: attachmentGet } } }; } }));
 vi.mock("@/lib/newsletter/webhook", () => ({ verifySvix: () => true }));
 
-let verdict = "person";
+let answers: unknown = { pitch: { type: "noul", noul: 0.02 }, reader: { type: "noul", noul: 0.95 } };
 let classifierStatus = 200;
-const fakeFetch = vi.fn(async (url: string | URL | Request) => {
+let classifierHangs = false;
+const fakeFetch = vi.fn(async (url: string | URL | Request, _init?: RequestInit) => {
   const href = String(url);
   if (href.startsWith("https://files.test/")) return new Response(`bytes-of-${href.split("/").pop()}`);
-  const body = JSON.stringify({ stop_reason: "end_turn", content: [{ type: "text", text: verdict }] });
+  if (classifierHangs) throw new DOMException("The operation was aborted due to timeout", "TimeoutError");
+  const body = JSON.stringify({ model: "jev-1.13.0", answers, usage: { input_tokens: 450 } });
   return new Response(classifierStatus === 200 ? body : "overloaded", { status: classifierStatus });
 });
+const nouls = (pitch: number, reader: number) => ({ pitch: { type: "noul", noul: pitch }, reader: { type: "noul", noul: reader } });
+const classifierCall = () => fakeFetch.mock.calls.find(([url]) => String(url) === "https://api.typesafe.ai/v1/systemone");
 
 const received = {
   type: "email.received",
@@ -45,13 +49,15 @@ describe("POST /api/inbound", () => {
   beforeEach(() => {
     process.env.CONTACT_FORWARD_TO = "me@example.com";
     process.env.RESEND_API_KEY = "re_test";
-    process.env.ANTHROPIC_API_KEY = "sk-test";
+    process.env.JEV_API_KEY = "jev-test";
     send.mockClear();
+    fakeFetch.mockClear();
     get.mockClear();
     attachmentGet.mockClear();
     attachments = [];
-    verdict = "person";
+    answers = nouls(0.02, 0.95);
     classifierStatus = 200;
+    classifierHangs = false;
     vi.stubGlobal("fetch", fakeFetch);
   });
   afterEach(() => vi.unstubAllGlobals());
@@ -71,7 +77,7 @@ describe("POST /api/inbound", () => {
   });
 
   it("drops cold outreach instead of forwarding it, but still answers 200 so Resend does not retry", async () => {
-    verdict = "pitch";
+    answers = nouls(0.94, 0.18);
     const { POST } = await import("@/app/api/inbound/route");
     const res = await POST(post(received));
 
@@ -80,10 +86,59 @@ describe("POST /api/inbound", () => {
     expect(send).not.toHaveBeenCalled();
   });
 
+  it("shows the classifier the sender, the subject and the body, with a deadline so a slow answer cannot hold the webhook", async () => {
+    const { POST } = await import("@/app/api/inbound/route");
+    await POST(post(received));
+
+    const init = classifierCall()?.[1];
+    const sent = JSON.parse(String(init?.body)) as { model: string; state: string; questions: Record<string, { type: string }> };
+    expect(sent.state).toBe("From: Luciana <luc@example.com>\nSubject: Growth for gigainvestors.com\n\nHello there,\n\nthe body");
+    expect(Object.keys(sent.questions)).toEqual(["pitch", "reader"]);
+    expect(new Headers(init?.headers).get("authorization")).toBe("Bearer jev-test");
+    expect(init?.signal).toBeInstanceOf(AbortSignal);
+  });
+
+  it("forwards a likely pitch that falls short of the drop threshold, because unsure means forward", async () => {
+    answers = nouls(0.89, 0.05);
+    const { POST } = await import("@/app/api/inbound/route");
+    await POST(post(received));
+    expect(send).toHaveBeenCalledTimes(1);
+  });
+
+  it("forwards a pitch that also reads as coming from a reader", async () => {
+    answers = nouls(0.95, 0.64);
+    const { POST } = await import("@/app/api/inbound/route");
+    await POST(post(received));
+    expect(send).toHaveBeenCalledTimes(1);
+  });
+
   it("forwards when the classifier is unavailable, because losing a real message is worse than seeing a pitch", async () => {
     classifierStatus = 529;
     const { POST } = await import("@/app/api/inbound/route");
     await POST(post(received));
+    expect(send).toHaveBeenCalledTimes(1);
+  });
+
+  it("forwards when the classifier times out", async () => {
+    classifierHangs = true;
+    const { POST } = await import("@/app/api/inbound/route");
+    await POST(post(received));
+    expect(send).toHaveBeenCalledTimes(1);
+  });
+
+  it("forwards when the classifier answers without both probabilities", async () => {
+    answers = { pitch: { type: "noul", noul: 0.99 } };
+    const { POST } = await import("@/app/api/inbound/route");
+    await POST(post(received));
+    expect(send).toHaveBeenCalledTimes(1);
+  });
+
+  it("forwards without asking the classifier when its key is not configured", async () => {
+    delete process.env.JEV_API_KEY;
+    answers = nouls(0.99, 0.01);
+    const { POST } = await import("@/app/api/inbound/route");
+    await POST(post(received));
+    expect(classifierCall()).toBeUndefined();
     expect(send).toHaveBeenCalledTimes(1);
   });
 

@@ -21,7 +21,6 @@
 .simulation-line {font-size:14px!important;padding:8px 24px 0;}
 .test-tile::after {content:'↗';position:absolute;right:14px;bottom:10px;opacity:0;}
 .test-tile:hover::after,.test-tile:focus-visible::after {opacity:1;}
-.one-verdict .plain-verdict[data-verdict="Share count being checked"] {background:#e8e7df;color:var(--ink);}
 .value-panel {overflow:visible;width:min(760px,100vw);}
 .panel-content {overflow:visible;padding:20px 24px;display:flex;flex-direction:column;gap:16px;}
 .panel-shell > header {height:64px;flex:none;}

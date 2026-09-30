@@ -4,6 +4,7 @@ import { readJsonFile } from '@/lib/blob';
 import path from "node:path";
 import { shardOf } from "./shard";
 import type { Dossier, Id, IndexRow, PriceMap, StoreMeta } from "./types";
+import { publicAnalysis } from './public-analysis';
 
 export async function readStore<T>(file: string, revalidate = 86400): Promise<T | null> {
   if (!/^[a-zA-Z0-9_&./-]+\.json$/.test(file) || file.split("/").includes("..") || file.startsWith("/")) {
@@ -25,7 +26,7 @@ export async function getDossier(id: Id) {
   const key = id.toUpperCase();
   try {
     const shard = await readStore<Record<Id, Dossier>>(`dossiers/${shardOf(key)}.json`, 259200);
-    return shard?.[key] ?? null;
+    return shard?.[key] ? publicAnalysis(shard[key]) : null;
   } catch { return null; }
 }
 // PriceMap quotes and IndexRow.v/cur are in the listing trading currency by contract.

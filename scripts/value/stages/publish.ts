@@ -1,4 +1,6 @@
 import {applyShareCheck,type ShareCheck} from '../../../lib/value/share-check';
+import { publishViews } from '../../../lib/value/publish-views';
+import { writeCorpusJson } from '../../../lib/value/corpus';
 import { enrichedCompany } from "../../../lib/value/enrichment";
 import { latestHistoryFiles } from "./history-snapshots";
 import { buildAdaptiveSearchShards } from "../../../lib/value/search";
@@ -129,7 +131,7 @@ export function loadHolders(store: string): { holdersByTicker: Record<string, st
 }
 
 export function writeOutput({ repo, files }: { repo: string; files: Record<string, unknown> }): void {
-  const allowed = /^(?:index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|meta|top)\.json$/;
+  const allowed = /^(?:views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|meta|top)\.json$/;
   for (const file of Object.keys(files)) if (!allowed.test(file)) throw new Error("Invalid publish output path");
   for (const directory of ["index", "dossiers", "search"]) rmSync(path.join(repo, directory), { recursive: true, force: true });
   for (const [file, data] of Object.entries(files)) {
@@ -200,7 +202,9 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     const rate = readCorpusJson<{ data: Array<{ close: number }> }>(`raw/eodhd/universe/${file}`)?.data?.[0]?.close;
     if (rate && Number.isFinite(rate) && rate > 0) fx[file.slice(3, 6)] = rate;
   }
-  const { files } = buildOutput({ priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx, prices: readPrices(path.join(repo, "prices")) });
+  const { files, unresolved } = buildOutput({ priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx, prices: readPrices(path.join(repo, "prices")) });
+  writeCorpusJson('staging/unresolved-shares.json', {asOf:new Date().toISOString(),companies:unresolved});
+  console.log(`Private share residual: ${unresolved.length}; quality passes: ${unresolved.filter(r=>r.qualityPass).length}`);
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
   const { shards, manifest } = buildAdaptiveSearchShards(universe.map(company => enrichedCompany(company)), new Set(rows.map(row => row.id)));
   files["search/manifest.json"] = manifest;
@@ -208,6 +212,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     files[`search/${key}.json`] = shard;
   }
   Object.assign(files, latestHistoryFiles(universe));
+  publishViews(files);
   writeOutput({ repo, files });
   const changed = commit ? commitOutput({ repo, asOf }) : true;
   return { count: rows.length, changed };

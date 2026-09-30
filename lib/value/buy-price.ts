@@ -6,8 +6,8 @@ import type { IndexRow, PriceMap, Valuation } from './types';
  * Seeds remain eligible (and labeled); unverified comparisons wait for review.
  * b includes all five quality gates, so its count is the final funnel count.
  */
-export function publishedBuyPrice(row: Pick<IndexRow, 'st' | 't' | 'v' | 'm' | 'dataQualityFlags' | 'buyReturnInputs'>, quote: PriceMap[string] | undefined) {
-  const dataQualityFlags = [...new Set([...(row.dataQualityFlags ?? []).filter(flag => !flag.startsWith('Unverified ratio:')), ...valuationFlags({ price: quote?.[0] ?? null, mid: row.v?.[1] ?? null, assumptions: [] })])];
+export function publishedBuyPrice(row: Pick<IndexRow, 'st' | 't' | 'v' | 'm' | 'dataQualityFlags' | 'buyReturnInputs' | 'shareSources'>, quote: PriceMap[string] | undefined) {
+  const dataQualityFlags = [...new Set([...(row.dataQualityFlags ?? []).filter(flag => !flag.startsWith('Unverified ratio:')), ...valuationFlags({ price: quote?.[0] ?? null, mid: row.v?.[1] ?? null, assumptions: [], corroborated:row.shareSources===2 })])];
   const price = priceTest({
     valuation: row.v ? { perShare: { low: row.v[0], mid: row.v[1], high: row.v[2] } } as Valuation : null,
     price: quote?.[0] ?? null,

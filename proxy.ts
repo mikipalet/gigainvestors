@@ -23,7 +23,8 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
   if (valueHost && !valuePath && !asset) {
-    url.pathname = `/value${pathname}`;
+    const year=url.searchParams.get('year');
+    url.pathname = pathname==='/'&&year&&/^\d{4}$/.test(year)?`/value/year/${year}`:`/value${pathname}`;
     return NextResponse.rewrite(url);
   }
   return NextResponse.next();

@@ -26,7 +26,7 @@ body:has(.value-page) :is([class~="text-[9px]"],[class~="text-[10px]"],[class~="
 .dossier-band {grid-template-columns:1.2fr 1fr;min-height:130px;}
 .dossier-band .value-band {display:none;}
 .one-verdict .plain-verdict {display:inline-block;padding:8px 12px;background:#123d2b;color:white;}
-.one-verdict .plain-verdict[data-verdict="Wait for a better price"],.one-verdict .plain-verdict[data-verdict="Wait for a higher return"],.one-verdict .plain-verdict[data-verdict="Verify valuation"] {background:#ece7d8;color:#61461e;}
+.one-verdict .plain-verdict[data-verdict="Wait for a better price"],.one-verdict .plain-verdict[data-verdict="Wait for a higher return"] {background:#ece7d8;color:#61461e;}
 .one-verdict .plain-verdict[data-verdict="Buy zone"] {background:#123d2b;color:white;}
 .one-verdict .plain-verdict[data-verdict="Fails quality"] {background:#963c32;color:white;}
 .one-verdict .verdict-explanation {font-size:15px;}

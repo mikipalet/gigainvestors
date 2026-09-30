@@ -50,6 +50,17 @@ function repository(): string {
 }
 
 describe("buildOutput", () => {
+  it('audits newly analysed companies before the first publication exists',async()=>{
+    const {auditShares}=await import('@/scripts/value/audit-shares');
+    const {writeCorpusJson,readCorpusJson}=await import('@/lib/value/corpus');
+    const today=new Date().toISOString().slice(0,10);
+    writeCorpusJson('analysis/NEW.US.json',analysis('NEW.US'));
+    writeCorpusJson('raw/eodhd/NEW.US.json',{General:{UpdatedAt:today},SharesStats:{SharesOutstanding:100}});
+    vi.stubGlobal('fetch',vi.fn().mockResolvedValue(new Response(JSON.stringify({timeseries:{result:[{timestamp:[Math.floor(Date.now()/1000)],shares_out:[101]}]}}))));
+    await auditShares(undefined,{only:['NEW.US']});
+    expect(readCorpusJson('enrichment-v7/share-checks/NEW.US.json')).toMatchObject({status:'verified',shares:101});
+    expect(readCorpusJson('staging/share-audit.json')).toMatchObject({quality:{flagged:1,resolved:1,residual:0}});
+  });
   it("stages existing analyses and cached closes without running calibration or touching the cached repository", async () => {
     const { default: publish } = await import("@/scripts/value/stages/publish");
     const row = analysis(), out = path.join(corpusDir(), "staging");
@@ -85,7 +96,9 @@ describe("buildOutput", () => {
     publishSnapshot({ repo, analyses: [row], universe: [row.company], partial: false, commit: false, holdersByTicker: {}, investorNames: {} });
     const published = JSON.parse(readFileSync(path.join(repo, "index/default.json"), "utf8"))[0];
     expect(published.b).toBe(false);
-    expect(published.dataQualityFlags).toContain("Market cap and price × shares differ by more than 2%; dates or share basis need verification");
+    expect(published.dataQualityFlags).toBeUndefined();
+    expect(published.v).toBeNull();
+    expect(JSON.parse(readFileSync(path.join(process.env.VALUE_CORPUS_DIR!,"staging/unresolved-shares.json"),"utf8")).companies).toHaveLength(1);
   });
   it("publishes only all-pass and exact one-fail scored rows by market cap, and shards dossiers", () => {
     const pass = analysis();
@@ -419,7 +432,7 @@ it("publishes volatility discount, compact ROIC and the added dossier data", () 
   const { files } = buildOutput({ analyses:[row], holdersByTicker:{}, investorNames:{}, fx:{}, prices:{'KO.US':[70,'2026-09-29']}, priceHistories:{'KO.US':[['2025-01',70]]} });
   expect((files['index/US.json'] as IndexRow[])[0]).toMatchObject({m:0.5,r:[0.123,0.123,0.123,0.123,0.123,0.123,0.123,0.123,null,0.123]});
   const dossier = (files[`dossiers/${shardOf(row.id)}.json`] as Record<string,Dossier>)[row.id];
-  expect(dossier).toMatchObject({valueHistory:row.valueHistory,priceHistory:[['2025-01',70]],events:row.events,series:row.series,tests:{price:{result:'unclear'}}});
+  expect(dossier).toMatchObject({valuation:null,valueHistory:[],priceHistory:[['2025-01',70]],events:row.events,series:row.series,tests:{price:{result:'unclear'}}});
 });
 
 it("loads analysis with a cheap shape check without building output", async () => {
@@ -569,4 +582,15 @@ it('uses current universe listings consistently across dossier, index and search
  expect(dossiers[row.id].w).toBe('TESTY.US');
  const meta=JSON.parse(readFileSync(path.join(repo,'meta.json'),'utf8'));
  expect(meta.western.story.analysed).toBe(1);
+});
+
+
+it('refreshes hashed browser views without dropping quotes outside the analysed index', async () => {
+  const {refreshPublishedBuyPrices}=await import('@/lib/value/refresh-buy-prices');
+  const {publishViews}=await import('@/lib/value/publish-views');
+  const repo=directory(),files=output([analysis()]);
+  files['prices/US.json']={'KO.US':[60,'2026-09-29'],'UNANALYSED.US':[25,'2026-09-29']};
+  publishViews(files);writeOutput({repo,files});
+  refreshPublishedBuyPrices(repo);
+  expect(JSON.parse(readFileSync(path.join(repo,'prices/US.json'),'utf8'))['UNANALYSED.US']).toEqual([25,'2026-09-29']);
 });

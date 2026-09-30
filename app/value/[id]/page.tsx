@@ -5,14 +5,14 @@ import { displayName } from '@/lib/value/presentation';
 import { compactMoney } from '@/lib/format';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getDossier, getTopIds, getSearchCompany } from '@/lib/value/store';
+import { getDossier, getTopIds, getSearchCompany, getPrice } from '@/lib/value/store';
 import { getIndex } from '@/lib/data';
 import { Face } from '@/components/Face';
 import { SearchInput } from '@/components/Search';
 import { ValueLink } from '@/components/value/ValueLink';
 import { DossierContent } from '@/components/value/DossierContent';
 
-export const revalidate = 259200;
+export const revalidate = 86400;
 export const dynamicParams = true;
 type Props = { params: Promise<{ id: string }> };
 
@@ -38,7 +38,8 @@ export default async function DossierPage({ params }: Props) {
   }
   const { company } = dossier;
   const investors = dossier.holders.length ? await getIndex() : null;
-  return <DossierContent dossier={dossier}>
+  const quote=await getPrice(dossier.id,company.country);
+  return <DossierContent dossier={dossier} quote={quote}>
     {dossier.holders.length>0&&<section className="holders"><h2><HolderSummary holders={dossier.holders}/></h2>
       {dossier.holders.length ? <ul className="holder-stack">{dossier.holders.slice(0,5).map((holder) => {
         const investor = investors?.investors.find((item) => item.code === holder.code);

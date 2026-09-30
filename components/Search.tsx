@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, useDeferredValue } from "react";
 import { useSelectedLayoutSegment, usePathname } from 'next/navigation';
-import { valueHits, valueHitDetails, type ValueHit } from '@/lib/search/value-source';
+import { valueHits, cachedValueHits, warmValueSearch, type ValueHit } from '@/lib/search/value-source';
 import { valueHref } from '@/lib/value/href';
 import type { SearchIndex } from "@/lib/types";
 import { Fragment } from 'react';
@@ -14,16 +14,17 @@ import { slugOf } from "@/lib/slug";
 import { rank, type Hit } from "@/lib/search/rank";
 
 let cached: Promise<SearchIndex> | null = null;
-const loadIndex = () => (cached ??= fetch("/api/search").then((r) => r.json() as Promise<SearchIndex>));
+const loadIndex = () => (cached ??= fetch("/api/search").then((r) => r.json() as Promise<SearchIndex>).then(index=>{rank(index,'\0');return index;}).catch(error=>{cached=null;throw error;}));
 
 // Press "/" anywhere. Investors, firms, tickers and company names.
 export function SearchTrigger({query = '', className = '', label = 'search'}: {query?:string;className?:string;label?:string}) {
- return <button type="button" aria-label="Search companies" onClick={()=>window.dispatchEvent(new CustomEvent('open-search',{detail:query}))} className={`rounded-[3px] bg-paper px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 ${className}`}>{label} <span className="ml-1 opacity-60">/</span></button>;
+ return <button type="button" aria-label="Search companies" onPointerEnter={()=>{void warmValueSearch().catch(()=>{});void loadIndex();}} onFocus={()=>{void warmValueSearch().catch(()=>{});void loadIndex();}} onClick={()=>window.dispatchEvent(new CustomEvent('open-search',{detail:query}))} className={`rounded-[3px] bg-paper px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 ${className}`}>{label} <span className="ml-1 opacity-60">/</span></button>;
 }
 export function Search() {
   const segment = useSelectedLayoutSegment(), pathname = usePathname();
   const isValue = segment === 'value' || pathname.startsWith('/value');
-  const [values,setValues]=useState<ValueHit[]>([]);
+  const [storedValues,setValues]=useState<ValueHit[]>([]);
+  const [resultQuery,setResultQuery]=useState('');
   const [loading,setLoading]=useState(false);
   const [error,setError]=useState('');
   const initialQuery=useRef('');
@@ -32,6 +33,7 @@ export function Search() {
   const [index, setIndex] = useState<SearchIndex | null>(null);
   const [sel, setSel] = useState(0);
   const input = useRef<HTMLInputElement>(null);
+  useEffect(()=>{if(!isValue)return;const timer=setTimeout(()=>{void warmValueSearch().catch(()=>{});void loadIndex().catch(()=>{});},2500);return()=>clearTimeout(timer);},[isValue]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -63,18 +65,21 @@ export function Search() {
 
   useEffect(()=>{
     let current=true;
-    setValues([]); setError('');
-    if (!open || !query.trim()) {setLoading(false);return;}
-    setLoading(true);
-    const timer=setTimeout(()=>valueHits(query).then(async results=>{
+    setError('');
+    if (!open || !query.trim()) {setValues([]);setLoading(false);return;}
+    const immediate=cachedValueHits(query);
+    setValues(immediate);setResultQuery(query);
+    setLoading(!immediate.length);
+    valueHits(query).then(results=>{
       if (!current) return;
       setValues(results);setLoading(false);
-      const details=await Promise.all(results.map(hit=>valueHitDetails(hit).catch(()=>hit)));
-      if (current) setValues(details);
-    }).catch(()=>{if(current){setLoading(false);if(isValue)setError('Company search is temporarily unavailable. Try again.');}}),120);
-    return ()=>{current=false;clearTimeout(timer);};
+    }).catch(()=>{if(current){setLoading(false);if(isValue)setError('Company search is temporarily unavailable. Try again.');}});
+    return ()=>{current=false;};
   },[query,open,isValue]);
-  const mainHits=useMemo(()=>(index?rank(index,query):[]),[index,query]);
+  const immediateValues=useMemo(()=>cachedValueHits(query),[query]);
+  const values=resultQuery===query?storedValues:immediateValues;
+  const deferredQuery=useDeferredValue(query);
+  const mainHits=useMemo(()=>(index?rank(index,deferredQuery):[]),[index,deferredQuery]);
   const hits: Array<Hit|ValueHit> = isValue ? [...values,...mainHits.filter(h=>h.kind!=='stock'||!values.some(v=>(v.row[0]===`${h.ticker}.US`||v.listings?.includes(`${h.ticker}.US`))))] : mainHits;
 
 
@@ -115,7 +120,7 @@ export function Search() {
         </button>
       </div>}
       {open && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center bg-paper/85 pt-[18vh] backdrop-blur-[2px]" onMouseDown={() => setOpen(false)}>
+        <div className="fixed inset-0 z-50 flex items-start justify-center bg-paper/85 pt-[18vh]" onMouseDown={() => setOpen(false)}>
           <div className="search-modal w-[min(560px,92vw)] bg-paper shadow-[0_0_0_1px_var(--ink)]" onMouseDown={(e) => e.stopPropagation()}>
             <input
               aria-label="Search investor, firm, ticker, company"
@@ -163,7 +168,7 @@ export function Search() {
                     {h.kind==='value'&&<span className="shrink-0 opacity-60">{h.row[2]}</span>}
                     {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{plural(h.holders, "holder")}{!isValue && values.some(v=>v.row[0]===`${h.ticker}.US`&&v.row[3]==='a') && <a className="ml-2 underline" href={`https://value.gigainvestors.com/${h.ticker.toLowerCase()}.us`} onClick={e=>e.stopPropagation()}>Buffett checklist</a>}</span>}
                     {h.kind==='value'&&h.row[5]===null&&<span className="market-access-status">not easily buyable from Western brokers</span>}
-                    {h.kind === 'value' && <span className="value-search-status ml-auto shrink-0 opacity-60">{h.row[3]==='p'?'analysis pending':h.tests?.includes('C')?`checking ${[...h.tests].filter(t=>t==='C').length} test${[...h.tests].filter(t=>t==='C').length===1?'':'s'}`:h.tests?.includes('U')?'unclear':h.tests?<span className="inline-flex gap-1">{[...h.tests].map((t,j)=><StatusGlyph key={j} result={({P:'pass',F:'fail',C:'checking',U:'unclear',N:'na'} as const)[t as 'P']??'unclear'} label={`${['Understandable','Moat','Economics','Management','Accounting'][j]}: ${{P:'pass',F:'fail',C:'checking',U:'unclear',N:'not applicable'}[t]}`}/>)}</span>:'analysed'}{h.ratio!=null&&` · ${h.ratio.toFixed(2)}×`}{!!h.holders&&` · ${h.holders} holders`}</span>}
+                    {h.kind === 'value' && <span className="value-search-status ml-auto shrink-0 opacity-60">{h.row[3]==='p'?'analysis pending':h.tests?.includes('C')?'unavailable':h.tests?.includes('U')?'unclear':h.tests?<span className="inline-flex gap-1">{[...h.tests].map((t,j)=><StatusGlyph key={j} result={({P:'pass',F:'fail',C:'checking',U:'unclear',N:'na'} as const)[t as 'P']??'unclear'} label={`${['Understandable','Moat','Economics','Management','Accounting'][j]}: ${{P:'pass',F:'fail',C:'unavailable',U:'unclear',N:'not applicable'}[t]}`}/>)}</span>:'analysed'}{h.ratio!=null&&` · ${h.ratio.toFixed(2)}×`}{!!h.holders&&` · ${h.holders} holders`}</span>}
                     {h.kind === "investor" && <span className="ml-auto shrink-0 opacity-60">investor</span>}
                     {h.kind === "munger" && <span className="ml-auto shrink-0 opacity-60">the waiting</span>}
                   </li></Fragment>

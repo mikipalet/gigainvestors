@@ -75,7 +75,10 @@ while true; do
   run_stage price-seed || :
   run_stage reports || :
   if run_stage yields && run_stage analyze; then
+    run_stage share-checks || :
     run_stage publish || :
+    # Residual IDs and evidence are private and must never enter the data repository.
+    node -e 'const fs=require("fs"),path=require("path");const file=path.join(process.env.VALUE_CORPUS_DIR,"staging/unresolved-shares.json");if(fs.existsSync(file)){const d=JSON.parse(fs.readFileSync(file));console.log(JSON.stringify({privateShareResidual:d.companies.length,qualityPassResidual:d.companies.filter(r=>r.qualityPass).length,file}))}' >> "$VALUE_CORPUS_DIR/logs/$cycle_date-share-checks.log"
   else
     echo 'publish skipped: yields or analyze failed' | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-publish.log"
   fi

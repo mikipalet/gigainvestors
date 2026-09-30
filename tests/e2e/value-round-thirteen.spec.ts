@@ -19,7 +19,7 @@ for(const [width,height]of[[1728,970],[2056,1180],[390,844]]){
   for(let i=1;i<h.years.length-1;i++){await slider.press('ArrowRight');await expect(slider).toHaveAttribute('aria-valuetext',`Fiscal year ${h.years[i]}`);}
   await slider.press('End');await expect(slider).toHaveAttribute('aria-valuetext','Today');await expect(page).not.toHaveURL(/year=/);
   for(let i=h.years.length-2;i>=0;i--){await slider.press('ArrowLeft');await expect(slider).toHaveAttribute('aria-valuetext',`Fiscal year ${h.years[i]}`);}await slider.press('End');
-  await expect(page.locator('.simulation-line')).toHaveCount(0);
+  await expect(page.locator('.simulation-line')).toHaveAttribute('aria-hidden','true');
   await expect(page.locator('.annual-tick span').filter({hasText:String(h.years.at(-1))})).toHaveCount(0);
   await expect(page.getByRole('button',{name:'Method',exact:true})).toHaveCount(1);
   const box=(await slider.boundingBox())!;await page.mouse.click(box.x+box.width*.2,box.y+box.height/2);await expect(slider).not.toHaveAttribute('aria-valuetext','Today');
@@ -45,6 +45,6 @@ for(const [width,height]of[[1728,970],[2056,1180],[390,844]]){
   if(width<768)await page.getByRole('button',{name:'Filters',exact:true}).click();
   await page.getByRole('combobox',{name:'Country',exact:true}).click();await page.getByRole('combobox',{name:'Search Country'}).fill('ger');await page.getByRole('option').filter({hasText:'Germany'}).click();
   if(width<768)await page.locator('.filter-apply').click();await expect(page).toHaveURL(/country=DE/);
-  await page.goto('/6176.tw',{waitUntil:'networkidle'});await expect(page.getByTestId('verdict')).toContainText('Share count being checked');await expect(page.locator('body')).not.toContainText('Verify valuation');
+  await page.goto('/6176.tw',{waitUntil:'networkidle'});await expect(page.locator('body')).not.toContainText(/Verify valuation|Share count being checked|needs verification/i);await expect(page.locator('.exact-prices')).not.toContainText('Valuation unavailable');
  });
 }

@@ -1,11 +1,12 @@
 import {createElement} from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {expect,it} from 'vitest';
+import {browserRow} from '@/lib/value/browser-view';
 import {BuyZone} from '@/components/value/BuyZone';
 import {BUY_RAMP,buyColour} from '@/lib/value/presentation';
 import type {IndexRow,Valuation} from '@/lib/value/types';
 import fixtures from '../../fixtures/value/treemap-round-ten.json';
-const entry=(id:string,growth:number)=>({row:{...fixtures[0].row,id,nameEn:id,b:true,ownerReturnInputs:{valuation:{method:'owner_earnings',currency:'USD',normalized:80,shares:10,growth} as Valuation,marketCapUsd:1000}} as IndexRow,quote:100,mos:.4});
+const entry=(id:string,growth:number)=>({row:browserRow({...fixtures[0].row,id,nameEn:id,b:true,w:null,dataQualityFlags:[],ownerReturnInputs:{valuation:{method:'owner_earnings',currency:'USD',normalized:80,shares:10,growth} as Valuation,marketCapUsd:1000}} as unknown as IndexRow,[100,"2026-09-30"]),quote:100,mos:.4});
 it('ranks buy companies by expected return and emphasizes only the first',()=>{
  const html=renderToStaticMarkup(createElement(BuyZone,{entries:[entry('LOW.US',.02),entry('HIGH.US',.08),entry('MID.US',.04)]}));
  expect(html.indexOf('href="/high.us"')).toBeLessThan(html.indexOf('href="/mid.us"'));

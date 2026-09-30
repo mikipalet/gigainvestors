@@ -1,3 +1,4 @@
+import {browserRow} from '@/lib/value/browser-view';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { expect, it } from 'vitest';
@@ -11,7 +12,7 @@ import fixtures from '../../fixtures/value/treemap-round-ten.json';
 
 it.each(fixtures)('shows the published multiple for $row.id despite verification flags and absent owner-return inputs', ({ row, quote }) => {
  const html=renderToStaticMarkup(createElement(CompanyTreemap, {
-  entries:[{row:row as IndexRow,quote,mos:1-quote/row.v[1]}],year:'Today',sort:'closest',onTable:()=>{},
+  entries:[{row:row as unknown as IndexRow,quote,mos:1-quote/row.v[1]}],year:'Today',sort:'closest',onTable:()=>{},
  }));
  const multiple=(quote/(row.v[1]*(1-row.m))).toFixed(1);
  expect(html).toContain(`${multiple}x buy price`);
@@ -21,7 +22,7 @@ it.each(fixtures)('shows the published multiple for $row.id despite verification
 
 it('retains unavailable when there is no comparable valuation', () => {
  const html=renderToStaticMarkup(createElement(CompanyTreemap, {
-  entries:[{row:{...fixtures[0].row,v:null} as IndexRow,quote:367.74,mos:null}],year:'Today',sort:'closest',onTable:()=>{},
+  entries:[{row:{...fixtures[0].row,v:null} as unknown as IndexRow,quote:367.74,mos:null}],year:'Today',sort:'closest',onTable:()=>{},
  }));
  expect(html).toContain('Value unavailable');
 });
@@ -36,8 +37,8 @@ it('adds the valuation growth assumption to cash yield without using historical 
 });
 
 it('compares the combined expected return with the bar in buy cards', () => {
- const row={...fixtures[0].row,c:'US',b:true,ownerReturnInputs:{valuation,marketCapUsd:1000}} as IndexRow;
- const html=renderToStaticMarkup(createElement(BuyZone,{entries:[{row,quote:100,mos:.4}]}));
+ const row={...fixtures[0].row,c:'US',b:true,w:null,dataQualityFlags:[],ownerReturnInputs:{valuation,marketCapUsd:1000}} as unknown as IndexRow;
+ const html=renderToStaticMarkup(createElement(BuyZone,{entries:[{row:browserRow(row,[100,"2026-09-30"]),quote:100,mos:.4}]}));
  expect(html).toContain('About 12.5% a year expected (8.6% cash + 3.9% growth) vs required return 10.0% a year (10% floor; US 10-year bond 5.2% + 4 points)');
  expect(html).not.toContain('Owner return 8.6% a year');
 });

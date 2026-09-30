@@ -33,7 +33,7 @@ export function tileReason(test:TestOutcome):string {
   const short:Array<[RegExp,string]>=[[/market cap gain/,'Managers created less value than they kept.'],[/variation/,'Margins are too variable.'],[/net loss/,'Too many loss years.'],[/revenue declines/,'Too many revenue declines.'],[/worst years/,'Returns are too weak in the worst years.'],[/median below/,'Median return below the bar.'],[/incremental/,'New investments earn too little.'],[/cash conversion/,'Cash conversion below the bar.'],[/gross margin/,'Gross margin fell too far.'],[/diluted share/,'Both dilution windows fail.'],[/buybacks/,'Buyback timing fails.'],[/working capital/,'Working capital rose too far.']];
   return short.find(([pattern])=>pattern.test(reason))?.[1]??reason;
  }
- if(test.pending)return 'Price history is being checked.';
+ if(test.pending)return 'Price history is unavailable.';
  if(test.result==='unclear')return 'Evidence incomplete; no verdict.';
  return '';
 }
@@ -41,7 +41,7 @@ export function tileReason(test:TestOutcome):string {
 /** Lead with the meaning of the selected metric, without claiming that one metric passes the whole test. */
 export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):string {
  const v=metric.value, bar=metric.threshold;
- if(v===null)return test.pending?'The evidence is still being checked.':'There is not enough evidence to judge this test.';
+ if(v===null)return test.pending?'The evidence is unavailable.':'There is not enough evidence to judge this test.';
  const pct=(n:number)=>`${Math.round(n*100)}%`,num=(n:number)=>n.toFixed(2);
  switch(test.key){
   case 'understandable':return v>1?`Margin variation ${marginVariation(v)}.`:`Margins vary by ${marginVariation(v)} of their average.`;

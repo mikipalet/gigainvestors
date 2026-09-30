@@ -9,5 +9,5 @@ export function QualityDots({ tests }: { tests: string }) {
   return <div className="flex gap-2">{QUALITY_TESTS.map((key, i) => { const result = results[tests[i]] ?? 'unclear'; return <Dot key={key} result={result} title={`${testLabels[key]}: ${result}`} />; })}</div>;
 }
 export function QualityLegend() {
-  return <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-ink/60"><span>Quality tests</span>{(['pass', 'fail', 'checking', 'unclear', 'na'] as const).map(result => <span key={result} className="flex items-center gap-1.5"><Dot result={result} title={result} />{result === 'na' ? 'n/a' : result}</span>)}</div>;
+  return <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-ink/60"><span>Quality tests</span>{(['pass', 'fail', 'checking', 'unclear', 'na'] as const).map(result => <span key={result} className="flex items-center gap-1.5"><Dot result={result} title={result} />{result === 'na' ? 'n/a' : result === 'checking' ? 'unavailable' : result}</span>)}</div>;
 }

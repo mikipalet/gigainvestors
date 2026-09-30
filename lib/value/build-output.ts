@@ -1,4 +1,5 @@
 import { withAnalysisHistory } from './test-history';
+import { publicAnalysis } from './public-analysis';
 import { buyReturnInputs } from "./owner-return";
 import { bestWesternListing } from "./western";
 import { storyFromFunnel } from "./story";
@@ -51,9 +52,10 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   prices?: PriceMap;
   priceHistories?: Record<string, PriceHistory>;
   universe?: number;
-}): { files: Record<string, unknown> } {
+}): { files: Record<string, unknown>; unresolved: Array<{id:string;qualityPass:boolean;reasons:string[]}> } {
   const usdRate = createUsdRate({ rates: fx });
   const files: Record<string, unknown> = {};
+  const unresolved: Array<{id:string;qualityPass:boolean;reasons:string[]}> = [];
   const countries: Record<string, IndexRow[]> = {};
   const shards: Record<string, Record<string, Dossier>> = {};
   const tags: Record<string, string> = {};
@@ -83,7 +85,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const t = analysis.status !== "scored" ? "UUUUU" : outcomes.map(test => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join("");
     const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:analysis.valuation?.shares, usdRate:usdRate(company.currency)});
     const returnInputs = buyReturnInputs(analysis.valuation, company.currency);
-    const price = publishedBuyPrice({ st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs,
+    const price = publishedBuyPrice({ st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs, shareSources:analysis.valuation?.shareSources,
       v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null, dataQualityFlags }, prices[analysis.id]);
     const passes = [...outcomes.map(test => analysis.status === "scored" && test.result === "pass"), price.b];
     // Price below its required MOS is a failed funnel gate even when priceTest
@@ -112,19 +114,20 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       tests: { ...analysis.tests, price: { key: "price", result: price.result, numeric: price.result, reasons: price.mos === null ? ["Valuation or price unavailable in trading currency"] : [], metrics: { mos: price.mos }, series: {}, jev: [] } },
     };
     const shard = shardOf(analysis.id);
-    (shards[shard] ??= {})[analysis.id] = dossier;
+    (shards[shard] ??= {})[analysis.id] = publicAnalysis(dossier);
+    if (price.dataQualityFlags.length) unresolved.push({id:analysis.id,qualityPass:t==='PPPPP',reasons:price.dataQualityFlags});
     const roic = (analysis.tests.moat.series.roic ?? []).slice(-T.history.years)
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
     const returns=dossierReturn(analysis);
     const row: IndexRow = {
-      w, exchange: company.exchange, buyReturnInputs: returnInputs,
+      w, exchange: company.exchange, shareSources: analysis.valuation?.shareSources, buyReturnInputs: price.dataQualityFlags.length ? null : returnInputs,
       historyYears: analysis.historyCoverage?.years ?? analysis.tests.understandable.metrics.historyYears ?? undefined,
-      b: price.b, dataQualityFlags: price.dataQualityFlags,
+      b: price.b,
       returnInfo:{...returns,sort:Number.isFinite(returns.sort)?returns.sort:returns.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},
       fy: Math.max(0,...Object.values(analysis.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]))) || undefined,
       m: requiredMos, r: [...Array<number | null>(T.history.years - roic.length).fill(null), ...roic],
       id: analysis.id, n: company.nameEn ?? company.name, lg: company.logo ?? null, c: company.country, s: company.sector, k: company.kind,
-      mc: company.marketCapUsd, v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null,
+      mc: company.marketCapUsd, v: valuation && !price.dataQualityFlags.length ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null,
       cur: company.currency, t,
       g: [...g].sort(), h: holders.length, st: analysis.status === "scored" ? "s" : "i",
     };
@@ -156,5 +159,5 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     versions: common ? { ...common.versions, other: analyses.length - common.count } : null, tags,
   };
   assertIndexConsistency({ meta: files["meta.json"] as import("./types").StoreMeta, rows: files["index/default.json"] as IndexRow[] });
-  return { files };
+  return { files, unresolved };
 }

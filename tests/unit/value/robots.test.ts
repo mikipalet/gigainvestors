@@ -9,8 +9,8 @@ it.each(['gigainvestors.com', 'value.gigainvestors.com'])('uses the sitemap belo
   vi.mocked(headers).mockResolvedValue(new Headers({ host }) as Awaited<ReturnType<typeof headers>>);
   expect(await robots()).toMatchObject({ sitemap: `https://${host}/sitemap.xml`, host: `https://${host}` });
 });
-it('survives upstream failure during static params and caches dossiers for three days', async () => {
+it('survives upstream failure during static params and refreshes dossier quotes daily', async () => {
   vi.mocked(getTopIds).mockRejectedValue(new Error('503'));
   expect(await generateStaticParams()).toEqual([]);
-  expect(revalidate).toBe(3 * 86400);
+  expect(revalidate).toBe(86400);
 });

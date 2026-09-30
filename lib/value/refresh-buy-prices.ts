@@ -1,5 +1,7 @@
 import { storyFromFunnel } from "./story";
-import { existsSync, readFileSync, readdirSync, renameSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from 'node:fs';
+import { publicAnalysis } from './public-analysis';
+import { publishViews } from './publish-views';
 import path from 'node:path';
 import { publishedBuyPrice } from './buy-price';
 import { assertIndexConsistency } from './consistency';
@@ -36,7 +38,8 @@ export function refreshPublishedBuyPrices(repo: string): void {
     for (const row of rows) {
       const decision = publishedBuyPrice(row, prices[row.id]);
       row.b = decision.b;
-      row.dataQualityFlags = decision.dataQualityFlags;
+      delete row.dataQualityFlags;
+      if(decision.dataQualityFlags.length){row.v=null;row.buyReturnInputs=null;}
       decisions.set(row.id, decision);
     }
     all.push(...rows);
@@ -66,13 +69,20 @@ export function refreshPublishedBuyPrices(repo: string): void {
       if (!p) continue;
       dossier.b = p.b;
       dossier.dataQualityFlags = p.dataQualityFlags;
-      dossier.tests.price = { key: 'price', result: p.result, numeric: p.result, reasons: p.mos === null ? ['Comparable verified price or valuation unavailable'] : [], metrics: { mos: p.mos }, series: {}, jev: [] };
+      dossier.tests.price = { key: 'price', result: p.result, numeric: p.result, reasons: p.mos === null ? ['Comparable price or valuation unavailable'] : [], metrics: { mos: p.mos }, series: {}, jev: [] };
+      dossiers[dossier.id]=publicAnalysis(dossier);
     }
     files[file] = dossiers;
   }
+  if(meta.views){
+    const years=meta.views.years;
+    for(const file of readdirSync(path.join(repo,'prices')).filter(f=>/^[A-Z]{2}\.json$/.test(f)))files[`prices/${file}`]=JSON.parse(readFileSync(path.join(repo,'prices',file),'utf8'));
+    publishViews(files).years=years;
+  }
   for (const [file, data] of Object.entries(files)) {
     const destination = path.join(repo, file), text = JSON.stringify(data) + '\n';
-    if (readFileSync(destination, 'utf8') === text) continue;
+    if (existsSync(destination)&&readFileSync(destination, 'utf8') === text) continue;
+    mkdirSync(path.dirname(destination),{recursive:true});
     writeFileSync(`${destination}.tmp`, text);
     renameSync(`${destination}.tmp`, destination);
   }

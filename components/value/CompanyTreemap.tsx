@@ -26,9 +26,8 @@ export function CompanyTreemap({entries,year,onTable,sort='cap'}:{entries:Result
   return {[year]:items};
  },[entries,year,tileLimit,sort,mapSize]);
  const renderTile=(entry:ResultEntry,rect:{w:number;h:number})=>{
-  // Verification flags affect confidence/colour, not the existence of a value.
   const {row,mos}=entry,name=companyName(row),ratio=mos===null?null:(1-mos)/(1-(row.m??.25));
-  const colours=buyColour(row.dataQualityFlags?.length||row.t!=='PPPPP'?null:ratio);
+  const colours=buyColour(row.t!=='PPPPP'?null:ratio);
   const compact=rect.w<150||rect.h<130, tiny=rect.w<45||rect.h<32, shallow=rect.h<60&&rect.w>90;
   const labelSize=compact?14:Math.min(22,Math.max(14,rect.w/15));
   const logoFits=shallow||!tiny&&rect.h>Math.ceil(name.length/(Math.max(20,rect.w-12)/(labelSize*.55)))*labelSize*1.15+42;

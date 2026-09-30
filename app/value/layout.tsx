@@ -7,6 +7,7 @@ import './round-ten.css';
 import './round-eleven.css';
 import './round-twelve.css';
 import './round-thirteen.css';
+import './performance.css';
 import {AboutMethod} from '@/components/value/AboutMethod';
 import { getDefaultIndex } from '@/lib/value/store';
 import { ValueLink } from '@/components/value/ValueLink';

@@ -130,6 +130,7 @@ export interface TestOutcome {
 }
 
 export interface Valuation {
+  shareSources?: 2;
   method: "owner_earnings" | "book_value";
   currency: string;
   normalized: number; // owner earnings (or book value per share for book_value)
@@ -203,6 +204,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  shareSources?: 2;
   historyYears?: number;
   buyReturnInputs?: { cashPerShare: number; growth: number; requiredReturn: number } | null;
   w: string | null; // Best Western trading listing.
@@ -266,6 +268,7 @@ export interface PublishedFunnel extends FunnelCounts {
 }
 
 export interface StoreMeta {
+  views?: import('./browser-view').ViewManifest;
   western?: { story: NonNullable<StoreMeta["story"]>; funnel: PublishedFunnel };
   author?: string;
   story?: { analysed: number; qualityPasses: number; qualityShare: number; atBuy: number; countriesCovered: number };

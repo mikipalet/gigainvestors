@@ -1,5 +1,5 @@
 import { bestWesternListing } from "./western";
-import { rankItems } from "../search/rank";
+import { rankItems, type RankItem } from "../search/rank";
 import type { Company, SearchRow, SearchShard } from "./types";
 
 import { SEARCH_KEYS, SEARCH_CHARACTERS, normalizeSearch, type SearchManifest } from "./search-shard";
@@ -116,15 +116,21 @@ export function buildSearchShards(companies: Company[], analysed: ReadonlySet<st
 }
 
 /** Pure adapter for the shared palette ranker; usable by the later UI integration. */
+const rankedShards=new WeakMap<SearchShard,RankItem<SearchRow>[]>();
 export function searchShard(shard: SearchShard, query: string, limit = 12): SearchRow[] {
+  let items=rankedShards.get(shard);
+  if(!items){
   const rowAliases: string[][] = shard.rows.map(() => []);
   for (const [alias, offsets] of Object.entries(shard.aliases)) {
     for (const offset of offsets) rowAliases[offset].push(alias);
   }
-  return rankItems(shard.rows.map((row, i) => ({
+  items=shard.rows.map((row, i) => ({
     value: row,
     fields: [nameWords(row[1]).join(" "), ...nameWords(row[1])].map(text => ({ text })),
     aliases: rowAliases[i],
     marketCap: row[4],
-  })), query, { normalize: normalizeSearch, marketCapTiebreak: true, limit });
+  }));
+  rankedShards.set(shard,items);
+  }
+  return rankItems(items, query, { normalize: normalizeSearch, marketCapTiebreak: true, limit });
 }

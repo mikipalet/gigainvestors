@@ -8,7 +8,8 @@ export type SelectProps = {label:string;value:string;options:SelectOption[];onCh
 export function SearchableCombobox({label,value,options,onChange}:SelectProps) {
  const [open,setOpen]=useState(false),[query,setQuery]=useState(''),[active,setActive]=useState(0);
  const id=useId(),trigger=useRef<HTMLButtonElement>(null),input=useRef<HTMLInputElement>(null),list=useRef<HTMLDivElement>(null);
- const matches=options.filter(([key,text])=>`${text} ${key}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));
+ const normalized=query.trim().toLocaleLowerCase();
+ const matches=open?options.filter(([key,text])=>`${text} ${key}`.toLocaleLowerCase().includes(normalized)):[];
  const current=Math.min(active,Math.max(0,matches.length-1));
  const page=Math.floor(current/5),visible=matches.slice(page*5,page*5+5);
  useEffect(()=>{if(open)input.current?.focus();},[open]);

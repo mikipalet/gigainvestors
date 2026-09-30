@@ -8,7 +8,7 @@ const root=process.env.WESTERN_QA_STORE;
 const meta=root?JSON.parse(readFileSync(`${root}/meta.json`,'utf8')) as StoreMeta:null;
 const rows=root?JSON.parse(readFileSync(`${root}/index/default.json`,'utf8')) as IndexRow[]:[];
 const history=root?JSON.parse(readFileSync(`${root}/history/index.json`,'utf8')) as HistoryIndex:null;
-const out='/tmp/claude-1000/value-shots/western-1/final';
+const out=process.env.WESTERN_QA_SHOTS??'/tmp/claude-1000/value-shots/western-1/final';
 for(const [width,height] of [[1728,970],[390,844]]) {
  for(const route of ['/','/infy.us','/ko.us','/?markets=all']) {
   test(`${route} at ${width}x${height}`,async({page})=>{
@@ -29,7 +29,7 @@ for(const [width,height] of [[1728,970],[390,844]]) {
     if(record) await expect(page.locator('.track-record')).toContainText(`${Math.round(record.buy*100)}%`);
    } else {
     await expect(page.locator('.company-heading h1')).toBeVisible();
-    if(route==='/infy.us') await expect(page.locator('.trading-listing')).toHaveText('Buy as INFY on NYSE');
+    if(route==='/infy.us') {await page.getByTestId('tile-price').click();await expect(page.getByRole('dialog')).toContainText('Buy as INFY on NYSE');await page.keyboard.press('Escape');}
    }
    expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
    expect(errors).toEqual([]);

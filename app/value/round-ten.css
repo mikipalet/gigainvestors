@@ -14,7 +14,7 @@
 .price-card .exact-prices {margin:14px 0;gap:8px;}
 .price-card .price-condition {font-size:14px;}
 .price-card .mini-price {margin-top:8px;}
-.reference-metrics {display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:9px 24px;border-bottom:1px solid var(--viz-grid);font-size:12px;color:#465344;flex-shrink:0;}
+.reference-metrics {display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;padding:9px 24px;border-bottom:1px solid var(--viz-grid);font-size:13px;color:#465344;flex-shrink:0;}
 .reference-metrics strong {font-weight:500;}.reference-metrics b {font-weight:600;color:var(--ink);margin-left:5px;}
 .metric-reading {font-size:14px;line-height:1.3;margin-top:4px;}.metric-reading:empty {display:none;}
 .quality-section .test-tile:has(.metric-reading:not(:empty)) .tile-number strong {display:none;}
@@ -25,16 +25,16 @@
 .map-toolbar > .design-select {flex-shrink:0;}
 .map-toolbar > .design-select > button {max-width:200px;}
 .map-toolbar > .design-select .design-options {min-width:300px;}
-.region-badge {font-size:12px!important;line-height:1.2;border:1px solid #a8c2ac;border-radius:3px;padding:1px 5px;width:max-content;}
+.region-badge {font-size:13px!important;line-height:1.2;border:1px solid #a8c2ac;border-radius:3px;padding:1px 5px;width:max-content;}
 .buy-tile .buy-owner-return {font-size:14px;line-height:1.3;font-weight:550;}
-.buy-tile .buy-growth {font-size:12px;line-height:1.3;}
-.buy-tile .buy-discount {font-size:12px;line-height:1.25;}
+.buy-tile .buy-growth {font-size:13px;line-height:1.3;}
+.buy-tile .buy-discount {font-size:13px;line-height:1.25;}
 .buy-tile {position:relative;gap:4px 7px;}
 .buy-tile strong {padding-right:44px;}
 .buy-tile .region-badge {position:absolute;right:6px;top:6px;}
 .buy-tile .buy-owner-return,.buy-tile .buy-growth {grid-column:1/-1!important;}
-.market-access {font-size:12px;}
-.buy-pager {display:flex;align-items:center;gap:8px;font-size:12px;}.buy-pager button {padding:4px;font-size:18px;}.buy-pager button:disabled {opacity:.35;}
+.market-access {font-size:13px;}
+.buy-pager {display:flex;align-items:center;gap:8px;font-size:13px;}.buy-pager button {padding:4px;font-size:18px;}.buy-pager button:disabled {opacity:.35;}
 @media(min-width:768px) and (max-height:900px){
  .owner-return {font-size:17px;margin-top:6px;}.owner-growth {font-size:13px;margin:4px 0 6px;}
  .price-card .price-multiple {font-size:14px!important;}.price-card .price-discount {display:none;}
@@ -43,61 +43,61 @@
  .dossier-checks .test-tile .tile-number {margin:5px 0 0;}.dossier-checks .buffett-bar {margin-top:4px;}
  .buy-tile .buy-discount {display:none;}.buy-tile strong {font-size:14px;padding-right:0;}
  .buy-tile .region-badge {position:static;grid-column:2!important;grid-row:auto;}
- .buy-tile .buy-owner-return {font-size:14px;}.buy-tile .buy-growth {font-size:12px;}
- .buy-tile {gap:3px 6px;}.buy-tile .buy-quote,.buy-tile .buy-listing {grid-column:1/-1!important;font-size:12px;}
+ .buy-tile .buy-owner-return {font-size:14px;}.buy-tile .buy-growth {font-size:13px;}
+ .buy-tile {gap:3px 6px;}.buy-tile .buy-quote,.buy-tile .buy-listing {grid-column:1/-1!important;font-size:13px;}
  .map-toolbar .desktop-filters {gap:12px;}.one-index .map-toolbar {gap:14px;}
 }
 @media(max-width:767px){
  .value-page {font-size:14px;}
- .value-page :is(button,p,span,small,dt,dd,a,div,figcaption,text,strong,b,em) {font-size:max(12px,1em);}
+ .value-page :is(button,p,span,small,dt,dd,a,div,figcaption,text,strong,b,em) {font-size:max(13px,1em);}
  .value-header {height:42px;min-height:42px;}
- .one-index .index-story {padding:7px 12px 0;}.one-index .index-story .eyebrow {font-size:12px;letter-spacing:.3px;}
+ .one-index .index-story {padding:7px 12px 0;}.one-index .index-story .eyebrow {font-size:13px;letter-spacing:.3px;}
  .one-index .index-story h1 {font-size:23px;}
  .one-index .index-story > p:not(.eyebrow) {font-size:14px;line-height:1.3;margin:4px 0;}
  .one-index .index-story .value-definition {display:none;}
  .one-index .map-toolbar {padding:3px 12px;gap:8px;flex-wrap:wrap;}
- .one-index .map-toolbar button {font-size:12px;}.map-toolbar > .design-select > button {max-width:175px;min-height:28px;}
+ .one-index .map-toolbar button {font-size:13px;}.map-toolbar > .design-select > button {max-width:175px;min-height:28px;}
  .map-count {display:none!important;}.map-toolbar .desktop-filters {display:none;}
  .answer-stage {padding:2px 12px 4px;gap:6px;}
  .buy-zone > header {gap:8px;margin-bottom:5px;}.buy-zone header > p {display:none;}.buy-zone h2 {font-size:20px;}
  .buy-grid {grid-auto-rows:116px;gap:5px;}
  .buy-tile {padding:6px;gap:3px 5px;grid-template-rows:auto auto auto;align-content:center;}
  .buy-tile strong {font-size:14px;line-height:1.15;padding-right:0;}
- .buy-tile .company-logo {display:flex;font-size:12px;}
+ .buy-tile .company-logo {display:flex;font-size:13px;}
  .buy-tile .region-badge {position:static;grid-column:1/-1!important;justify-self:start;grid-row:auto;}
  .buy-tile .buy-owner-return {font-size:14px;line-height:1.2;}
- .buy-tile .buy-quote {font-size:12px;line-height:1.2;}
+ .buy-tile .buy-quote {font-size:13px;line-height:1.2;}
  .buy-tile .buy-growth,.buy-tile .buy-discount,.buy-tile .buy-listing {display:none;}
- .market-access {font-size:12px;line-height:1.2;margin-top:4px;}
- .waiting-zone {min-height:130px;}.waiting-zone h2 {font-size:14px;max-width:260px;}.waiting-zone header button {font-size:12px;}
- .map-sort {margin:0 0 3px;}.map-sort .design-select > button {min-height:23px;font-size:12px;}
- .waiting-zone .treemap-legend {font-size:12px;padding-bottom:3px;}.waiting-zone .treemap-legend > span:last-child {display:none;}
- .company-tile > span:last-child:not(.company-logo) {font-size:12px;}.company-tile strong {font-size:14px!important;}
- .trust-strip {padding:5px 12px 0;}.trust-strip .track-record {font-size:14px;line-height:1.25;}.trust-strip .history-caveat {font-size:12px;}
- .one-index .time-note {font-size:12px;padding:4px 12px;}.year-timeline * {font-size:12px!important;}
+ .market-access {font-size:13px;line-height:1.2;margin-top:4px;}
+ .waiting-zone {min-height:130px;}.waiting-zone h2 {font-size:14px;max-width:260px;}.waiting-zone header button {font-size:13px;}
+ .map-sort {margin:0 0 3px;}.map-sort .design-select > button {min-height:23px;font-size:13px;}
+ .waiting-zone .treemap-legend {font-size:13px;padding-bottom:3px;}.waiting-zone .treemap-legend > span:last-child {display:none;}
+ .company-tile > span:last-child:not(.company-logo) {font-size:13px;}.company-tile strong {font-size:14px!important;}
+ .trust-strip {padding:5px 12px 0;}.trust-strip .track-record {font-size:14px;line-height:1.25;}.trust-strip .history-caveat {font-size:13px;}
+ .one-index .time-note {font-size:13px;padding:4px 12px;}.year-timeline * {font-size:13px!important;}
  .dossier-band {padding:6px 12px;gap:4px;}.one-identity {padding-right:65px;}
- .company-heading p {font-size:12px;}.one-identity .company-heading h1 {font-size:22px;}.company-heading {margin:3px 0;}
- .one-identity .company-about {display:none;}.one-verdict .plain-verdict {font-size:21px;}.one-verdict .verdict-explanation {font-size:12px;line-height:1.25;}
+ .company-heading p {font-size:13px;}.one-identity .company-heading h1 {font-size:22px;}.company-heading {margin:3px 0;}
+ .one-identity .company-about {display:none;}.one-verdict .plain-verdict {font-size:21px;}.one-verdict .verdict-explanation {font-size:13px;line-height:1.25;}
  .value-band {display:none;}
- .reference-metrics {padding:6px 12px;gap:4px 12px;display:grid;grid-template-columns:1fr 1fr;font-size:12px;}
- .reference-metrics > strong {grid-column:1/-1;font-size:12px;}.reference-metrics span,.reference-metrics b {font-size:12px;}.reference-metrics b {margin-left:3px;}
+ .reference-metrics {padding:6px 12px;gap:4px 12px;display:grid;grid-template-columns:1fr 1fr;font-size:13px;}
+ .reference-metrics > strong {grid-column:1/-1;font-size:13px;}.reference-metrics span,.reference-metrics b {font-size:13px;}.reference-metrics b {margin-left:3px;}
  .dossier-checks {gap:7px;padding:6px 10px;}
  .quality-section > h2,.price-section > h2 {font-size:14px;margin-bottom:5px;}.quality-section > h2 span {display:none;}
  .quality-section .test-tiles {gap:4px;grid-template-rows:repeat(5,minmax(0,1fr));}
  .quality-section .test-tile,.quality-section .test-tile:last-child {display:flex;flex-direction:column;position:relative;padding:5px 7px;gap:2px;}
- .quality-section .test-tile header,.quality-section .test-tile:last-child header {font-size:12px;width:100%;}
+ .quality-section .test-tile header,.quality-section .test-tile:last-child header {font-size:13px;width:100%;}
  .quality-section .test-tile header > span:last-child {font-size:0;}
  .quality-section .test-tile header small {display:none;}
  .quality-section .test-tile .tile-sentence,.quality-section .test-tile:last-child .tile-sentence {font-size:14px;line-height:1.18;margin:0;}
  .quality-section .test-tile .tile-number,.quality-section .test-tile:last-child .tile-number,.quality-section .test-tile .metric-reading,.quality-section .test-tile .buffett-bar,.quality-section .test-tile .mini-series,.quality-section .test-tile .mini-dollar {display:none;}
  .dossier-checks .price-card {padding:7px 9px;}
- .owner-return {font-size:14px;line-height:1.3;margin:0;letter-spacing:0;}.owner-growth {font-size:12px;line-height:1.2;margin:3px 0 5px;}
- .price-card .price-multiple {font-size:12px!important;line-height:1.2!important;}
- .price-card .exact-prices {margin:6px 0;gap:6px;}.exact-prices dt {font-size:12px;}.exact-prices dd {font-size:16px;}
- .price-card .price-condition {display:none;}.price-card .tile-evidence {font-size:12px;margin:4px 0 0;}
- .dossier-source {font-size:12px;min-height:31px;height:31px;}.dossier-source > span {font-size:12px;}
+ .owner-return {font-size:14px;line-height:1.3;margin:0;letter-spacing:0;}.owner-growth {font-size:13px;line-height:1.2;margin:3px 0 5px;}
+ .price-card .price-multiple {font-size:13px!important;line-height:1.2!important;}
+ .price-card .exact-prices {margin:6px 0;gap:6px;}.exact-prices dt {font-size:13px;}.exact-prices dd {font-size:16px;}
+ .price-card .price-condition {display:none;}.price-card .tile-evidence {font-size:13px;margin:4px 0 0;}
+ .dossier-source {font-size:13px;min-height:31px;height:31px;}.dossier-source > span {font-size:13px;}
  .value-bottom {display:none;}
- .panel-content p,.panel-content li {font-size:14px;}.panel-content small {font-size:12px;}
+ .panel-content p,.panel-content li {font-size:14px;}.panel-content small {font-size:13px;}
 }
 .equal-company-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:3px;position:absolute;inset:0;}
 .equal-company-grid > div {min-height:0;min-width:0;}
@@ -115,15 +115,15 @@
 }
 @media(min-width:768px) and (max-height:900px){
  .dossier-checks .price-card .owner-return {font-size:16px;line-height:1.3;margin:5px 0 0;}
- .dossier-checks .price-card .owner-growth {font-size:12px;margin:4px 0 6px;}
+ .dossier-checks .price-card .owner-growth {font-size:13px;margin:4px 0 6px;}
  .price-card .mini-price svg {max-height:80px;}
  .price-card .price-discount,.price-card .verification-flag {display:none;}
  .buy-tile {padding:8px;gap:4px;}.buy-tile strong {font-size:14px;}
 }
 @media(max-width:767px){
  .dossier-checks .price-card .owner-return {font-size:14px;line-height:1.3;margin:0;}
- .dossier-checks .price-card .owner-growth {font-size:12px;line-height:1.2;margin:3px 0 5px;}
- .buy-tile .buy-growth {display:block;font-size:12px;}.buy-grid {grid-auto-rows:132px;}
+ .dossier-checks .price-card .owner-growth {font-size:13px;line-height:1.2;margin:3px 0 5px;}
+ .buy-tile .buy-growth {display:block;font-size:13px;}.buy-grid {grid-auto-rows:132px;}
  .buy-tile .region-badge {position:absolute;top:5px;right:5px;}
  .buy-tile {display:flex;gap:3px;justify-content:center;}.buy-tile .company-logo {display:none;}.buy-tile strong {padding-right:28px;}
 }
@@ -136,17 +136,17 @@
  .buy-tile .buy-owner-return {line-height:1.2;}
  .company-tile strong {overflow-wrap:anywhere;}
  .one-dossier .dossier-source {height:42px;min-height:42px;flex-wrap:wrap;align-content:center;gap:2px;padding:3px 12px;}
- .one-dossier .dossier-source > span {display:block;width:100%;font-size:12px;line-height:1.2;}
+ .one-dossier .dossier-source > span {display:block;width:100%;font-size:13px;line-height:1.2;}
  .one-dossier .dossier-source .source-links {display:flex;justify-content:space-between;}
  .source-keys {display:none;}
- .one-identity .back-link,.one-identity .holders h2 {font-size:12px;}
+ .one-identity .back-link,.one-identity .holders h2 {font-size:13px;}
  .value-page:has(.locks-scroll) .value-header {height:42px;min-height:42px;}
 }
 /* Fixed chart height participates in the panel's natural flow. */
 .dossier-checks .price-card .mini-price {flex:0 0 auto;height:auto;display:block;margin:8px 0 0;}
 .dossier-checks .price-card .mini-price svg {height:110px;max-height:110px;min-height:0;flex:none;}
 .price-card .exact-prices {grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;}
-.price-card .exact-prices > div {display:block;}.price-card .exact-prices dt {font-size:12px;}
+.price-card .exact-prices > div {display:block;}.price-card .exact-prices dt {font-size:13px;}
 .price-card .exact-prices dd {font-size:19px;margin-top:4px;}
 .price-card .exact-prices > div:last-child {border:0;border-left:1px solid #a5b7a1;padding:0 0 0 8px;}
 .price-card .price-discount,.price-card .verification-flag {display:none;}
@@ -162,7 +162,7 @@
  .dossier-checks {grid-template-columns:minmax(0,2.5fr) minmax(310px,1fr);}
  .quality-section .test-tile .metric-reading {display:none;}
  .dossier-checks .price-card .mini-price svg {height:78px;max-height:78px;}
- .dossier-checks .price-card .tile-evidence {padding:0;margin-top:5px;font-size:12px;}
+ .dossier-checks .price-card .tile-evidence {padding:0;margin-top:5px;font-size:13px;}
  .price-card .price-condition small {display:none;}
 }
 @media(max-width:767px){
@@ -182,7 +182,7 @@
  .buy-grid {grid-auto-rows:200px;}
  .buy-tile .buy-growth,.dossier-checks .price-card .owner-growth,.one-verdict .verdict-explanation {font-size:14px;line-height:1.2;}
 }
-@media(max-width:767px){.value-page .value-panel svg text.viz-event-number {font-size:12px;}}
+@media(max-width:767px){.value-page .value-panel svg text.viz-event-number {font-size:13px;}}
 .ratio-reading {display:block;font-size:14px;line-height:1.4;margin-top:6px;}
 @media(max-width:767px){.value-page .value-panel p {font-size:14px;}}
 
@@ -193,25 +193,25 @@
  .buy-grid {grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:62px;overflow:visible;flex:none;}
  .buy-tile {padding:6px 7px;gap:3px;justify-content:center;}
  .buy-tile strong {font-size:14px;line-height:1.15;}
- .buy-tile .buy-return-compact {display:block;font-size:12px;line-height:1.2;color:#e4eddf;}
+ .buy-tile .buy-return-compact {display:block;font-size:13px;line-height:1.2;color:#e4eddf;}
  .buy-tile .buy-owner-return,.buy-tile .company-logo,.buy-tile .region-badge,.buy-tile .buy-quote {display:none;}
 }
 
-.test-tile .mini-series figcaption {display:block;font-size:11px;line-height:1.2;margin:2px 0 0;}
+.test-tile .mini-series figcaption {display:block;font-size:13px;line-height:1.2;margin:2px 0 0;}
 
 /* Market scope stays visible independently of optional country/sector filters. */
-.market-scope {display:flex;align-items:center;gap:12px;flex-shrink:0;font-size:12px;}
+.market-scope {display:flex;align-items:center;gap:12px;flex-shrink:0;font-size:13px;}
 .market-scope>span {font-weight:600;}
-.trading-listing {color:var(--buy);font-size:12px;}
-.market-access-status {font-size:11px;max-width:180px;white-space:normal;}
+.trading-listing {color:var(--buy);font-size:13px;}
+.market-access-status {font-size:13px;max-width:180px;white-space:normal;}
 @media(max-width:767px) {
  .market-scope {width:100%;justify-content:space-between;}
  .value-search-row {flex-wrap:wrap;}
  .market-access-status {max-width:none;flex-basis:100%;}
 }
 .buy-tile .buy-listing {display:block;line-height:1.2;}
-@media(max-width:767px) {.buy-grid {grid-auto-rows:82px;}.buy-tile .buy-listing {font-size:11px;}}
-.company-heading .trading-listing {font-size:12px;}
+@media(max-width:767px) {.buy-grid {grid-auto-rows:82px;}.buy-tile .buy-listing {font-size:13px;}}
+.company-heading .trading-listing {font-size:13px;}
 .empty-buy-zone .buy-grid {display:block;flex:none;}
 .empty-buy-zone .no-buys {padding:8px 0;}
 @media(min-width:768px) {

@@ -56,11 +56,11 @@ export function companyName(company: {nameEn?: string; name?: string; n?: string
 }
 
 // Single green hue, sequential lightness. Text contrast is validated in round-seven.test.ts.
-export const BUY_RAMP = ['#123d2b','#356b48','#8caf91','#c0d2b8','#e0e8d7','#f6f5ec'];
+export const BUY_RAMP = ['#b8d0b8','#c6d8bf','#d3e1cb','#e0e8d7','#ebeee1','#f6f5ec'];
 export function buyColour(priceToBuy: number | null) {
  if(priceToBuy===null || !Number.isFinite(priceToBuy)) return {background:'#eeede8',color:'#202820',unknown:true};
  const index = priceToBuy <= 1 ? 0 : priceToBuy <= 2 ? 1 : priceToBuy <= 3 ? 2 : priceToBuy <= 4 ? 3 : priceToBuy <= 6 ? 4 : 5;
- return {background:BUY_RAMP[index],color:index<2?'#ffffff':'#14251a',unknown:false};
+ return {background:BUY_RAMP[index],color:'#14251a',unknown:false};
 }
 
 /** Price/value everywhere; the fall is a percentage of today's price, not value. */

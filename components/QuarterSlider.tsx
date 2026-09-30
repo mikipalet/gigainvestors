@@ -87,7 +87,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter" 
         />
         <div className="pointer-events-none absolute top-[24px] h-px w-full bg-ink/30" />
         {years.map((y) => {
-          const near = Math.abs((y.i / Math.max(1, quarters.length - 1)) * 100 - pct) < 4;
+          const near = Math.abs((y.i / Math.max(1, quarters.length - 1)) * 100 - pct) < (period === "year" ? 12 : 4);
           return (
           <div key={y.y} className="pointer-events-none absolute top-[21px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / Math.max(1, quarters.length - 1)) * 100}%` }}>
             {!near && (quarters.length < 60 || Number(y.y) % 2 === 0) ? (

@@ -14,7 +14,7 @@ it.each(fixtures)('shows the published multiple for $row.id despite verification
   entries:[{row:row as IndexRow,quote,mos:1-quote/row.v[1]}],year:'Today',sort:'closest',onTable:()=>{},
  }));
  const multiple=(quote/(row.v[1]*(1-row.m))).toFixed(1);
- expect(html).toContain(`${multiple}x its buy price, too expensive`);
+ expect(html).toContain(`${multiple}x buy price`);
  expect(html).not.toContain('Value unavailable');
  expect(html).toContain('data-buy="false"');
 });

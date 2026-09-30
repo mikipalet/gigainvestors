@@ -16,9 +16,9 @@ it('draws the passing region below a lower-is-better threshold and above a highe
  const html=renderToStaticMarkup(createElement(MiniSeries,{series:[[2020,-.2],[2025,.3]],threshold:.1,label:'Cash and profit',better}));
  const rect=html.match(/<rect data-good-side="[^"]+" x="[^"]+" y="([^"]+)" width="[^"]+" height="([^"]+)"/)!;
  expect(rect).not.toBeNull();
- // With domain -.2 to .3 the .1 threshold lies at y=31.2; the chart runs y=8..66.
- expect(Number(rect[1])).toBeCloseTo(better==='higher'?8:31.2);
- expect(Number(rect[2])).toBeCloseTo(better==='higher'?23.2:34.8);
+ // With domain -.2 to .3 the .1 threshold lies at y=24; the chart runs y=12..42 (13px label clearance).
+ expect(Number(rect[1])).toBeCloseTo(better==='higher'?12:24);
+ expect(Number(rect[2])).toBeCloseTo(better==='higher'?12:18);
  expect(html).toContain('2020');expect(html).toContain('2025');
  }
 });

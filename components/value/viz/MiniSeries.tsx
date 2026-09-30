@@ -7,8 +7,8 @@ export function MiniSeries({ series, label, threshold, format='pct', better='hig
  if(points.length<2)return null;
  const values=points.map(p=>p[1]);
  const lo=Math.min(0,...values,threshold??0),hi=Math.max(format==='pct'?.1:1,...values,threshold??0);
- const height=width<220?40:width<320?60:84;
- const top=8,bottom=height-18,left=36,right=width-7;
+ const height=60;
+ const top=12,bottom=height-18,left=44,right=width-7;
  const y=(v:number)=>bottom-(v-lo)/(hi-lo||1)*(bottom-top);
  const first=series[0][0],last=series.at(-1)![0],x=(t:number)=>left+(t-first)/(last-first||1)*(right-left);
  let gap=true;

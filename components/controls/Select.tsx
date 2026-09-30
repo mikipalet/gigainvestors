@@ -1,8 +1,12 @@
 'use client';
 import { useId, useRef, useState } from 'react';
+import {SearchableCombobox,type SelectProps} from './SearchableCombobox';
 
 /** Shared paper-and-ink listbox, usable on either host. Arrow keys, Home/End and Escape. */
-export function Select({label,value,options,onChange}:{label:string;value:string;options:Array<[string,string]>;onChange:(value:string)=>void}) {
+export function Select(props:SelectProps) {
+ return props.options.length>8?<SearchableCombobox {...props}/>:<SimpleSelect {...props}/>;
+}
+function SimpleSelect({label,value,options,onChange}:SelectProps) {
  const [open,setOpen]=useState(false),[active,setActive]=useState(0);
  const id=useId(),trigger=useRef<HTMLButtonElement>(null);
  const choose=(i:number)=>{onChange(options[i][0]);setOpen(false);trigger.current?.focus();};

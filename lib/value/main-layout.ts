@@ -34,8 +34,10 @@ export function distanceLabel(ratio:number|null){
 }
 /** Each desktop row reserves two name lines. Header, axis and more link reserve 88px. */
 export function nextLayout(width:number,height:number,count:number,phone=false,compactBuy=false){
- const columns=phone?1:compactBuy&&width>=960?3:width>=700?2:1;
- const rows=phone?5:Math.min(Math.ceil(count/columns),Math.max(0,Math.floor((height-88)/48)));
- return {columns,rows,capacity:Math.min(count,columns*rows)};
+ const maxColumns=phone?1:compactBuy&&width>=960?3:width>=700?2:1;
+ const fit=phone?5:Math.max(1,Math.floor((height-88)/48));
+ const columns=Math.min(maxColumns,Math.max(1,Math.ceil(Math.min(count,20)/fit)));
+ const rows=phone?Math.min(5,count):Math.min(Math.ceil(Math.min(count,20)/columns),fit);
+ return {columns,rows,capacity:Math.min(count,20,columns*rows)};
 }
 export const returnLabel=(value:number|null)=>value===null?'—':`${value<0?'−':''}${(Math.abs(value)*100).toFixed(1)}%`;

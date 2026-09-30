@@ -22,7 +22,7 @@ for(const [width,height] of [[1728,970],[2056,1180],[390,844]])for(const route o
    const under=page.locator('.main-next-row').filter({hasText:'below'});
    for(const row of await under.all()){const value=Number(await row.getAttribute('data-return'));expect(value).toBeLessThan(.1);expect(value).toBeGreaterThan(0);}
    const buys=Number(await page.locator('.main-view').getAttribute('data-buy-count'));
-   if(width>=1728&&buys>0&&buys<=3)await expect(page.locator('.main-next-column')).toHaveCount(3);
+   if(width>=1728&&buys>0&&buys<=3){const columns=page.locator('.main-next-column');expect(await columns.count()).toBeLessThanOrEqual(3);for(const column of await columns.all())expect(await column.locator('.main-next-row').count()).toBeGreaterThan(0);}
   }
   if(route.includes('year')||route==='earliest')await expect(page.locator('.simulation-line')).toContainText(`FY${route==='earliest'?earliest():2018} simulation`);
  });
@@ -64,5 +64,5 @@ test('failed logos leave no blank slots and release width to Next closest',async
  await expect.poll(()=>page.locator('.main-logo-strip img').count()).toBe(0);
  await expect(page.locator('.main-logo-strip .company-logo-empty')).toHaveCount(0);
  expect((await page.locator('.main-rest').boundingBox())!.width).toBeLessThanOrEqual(190);
- await expect(page.locator('.main-next-column')).toHaveCount(3);
+ expect(await page.locator('.main-next-column').count()).toBeLessThanOrEqual(3);
 });

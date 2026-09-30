@@ -25,13 +25,7 @@ export function cachedValueHits(query:string):ValueHit[] {
 export async function warmValueSearch() {
   const m=await (manifest??=fetchValueData<SearchManifest>('search/manifest.json').catch(e=>{manifest=undefined;throw e;}));
   readyManifest=m;
-  // First-letter heads are bounded to 300 rows. They provide immediate in-memory
-  // matches while the exact prefix leaf fills in less common companies.
-  for(const first of 'abcdefghijklmnopqrstuvwxyz0123456789') {
-    const key=`${first}_`;
-    if(!shards.has(key))shards.set(key,fetchValueData<SearchShard>(`search/${key}.json`).then(data=>{ready.set(key,data);searchShard(data,'\0',8);return data;}).catch(e=>{shards.delete(key);throw e;}));
-    await shards.get(key);
-  }
+
 }
 export async function valueHits(query:string):Promise<ValueHit[]> {
   const m = await (manifest ??= fetchValueData<SearchManifest>('search/manifest.json').catch(e=>{manifest=undefined;throw e;}));

@@ -33,8 +33,9 @@ describe('main zones',()=>{
   expect(mainCompanies([compact])[0].returnValue).toBe(.084);
  });
  it('uses three columns when a narrow buy column frees space',()=>{
-  expect(nextLayout(1100,600,100,false,true).columns).toBe(3);
-  expect(nextLayout(1100,800,21,false,true)).toEqual({columns:3,rows:7,capacity:21});
+  expect(nextLayout(1100,400,100,false,true).columns).toBe(3);
+  expect(nextLayout(1100,800,21,false,true)).toEqual({columns:2,rows:10,capacity:20});
+  expect(nextLayout(1100,800,4,false,true)).toEqual({columns:1,rows:4,capacity:4});
  });
  it('sorts logo bands by company size',()=>{
   const small=entry('small',2),big=entry('big',2);big.row.mc=1000;

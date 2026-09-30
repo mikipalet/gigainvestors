@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
-import { browserRow,historyView,packView,type ViewManifest } from './browser-view';
+import { browserRow,historyView,packView,type BrowserRow,type ViewManifest } from './browser-view';
 import type { Dossier,IndexRow,PriceMap,SnapshotRow,StoreMeta } from './types';
 
 export function publishViews(files: Record<string, unknown>): ViewManifest {
@@ -21,17 +21,28 @@ export function publishViews(files: Record<string, unknown>): ViewManifest {
     const d=dossiers[row.id];
     return browserRow({...row,...(d?.valuation ? {ownerReturnInputs:{valuation:d.valuation,marketCapUsd:d.company.marketCapUsd}} : {})}, prices[row.id]??null);
   });
-  const manifest: ViewManifest = {current:save(packView(rows)),years:{}};
+  const bounded=(rows:BrowserRow[])=>{
+    const payload=packView(rows);
+    if(gzipSync(JSON.stringify(payload)).byteLength>80_000)throw new Error('Automatic browser view exceeds 80KB compressed');
+    return save(payload);
+  };
+  const chunks=(rows:BrowserRow[]):string[]=>{
+    if(!rows.length)return [];
+    const payload=packView(rows);
+    if(gzipSync(JSON.stringify(payload)).byteLength<=75_000)return [save(payload)];
+    if(rows.length===1)throw new Error('Single browser row exceeds 75KB');
+    const mid=Math.ceil(rows.length/2);
+    return [...chunks(rows.slice(0,mid)),...chunks(rows.slice(mid))];
+  };
+  const manifest: ViewManifest = {current:bounded(rows.filter(r=>r.t==='PPPPP')),deferred:chunks(rows.filter(r=>r.t!=='PPPPP')),years:{},yearDeferred:{}};
   const currentById=new Map(source.map(row=>[row.id,row]));
   const identities=((files['history/companies.json'] as IndexRow[] | undefined)??Object.entries(files).filter(([f])=>/^index\/[A-Z]{2}\.json$/.test(f)).flatMap(([,data])=>data as IndexRow[])).map(row=>({...row,lg:currentById.get(row.id)?.lg??row.lg}));
   for (const [file,data] of Object.entries(files)) {
     const year=/^history\/(\d{4})\.json$/.exec(file)?.[1];
     if (!year) continue;
-    const view=packView(historyView(data as SnapshotRow[],identities));
-    const bytes=gzipSync(JSON.stringify(view)).byteLength;
-    // The main view also carries the original price and buy price for tooltips.
-    if(bytes>75_000) throw new Error(`Year ${year} exceeds browser budget: ${bytes} compressed bytes`);
-    manifest.years[year]=save(view);
+    const rows=historyView(data as SnapshotRow[],identities);
+    manifest.years[year]=bounded(rows.filter(r=>r.t==='PPPPP'));
+    manifest.yearDeferred![year]=chunks(rows.filter(r=>r.t!=='PPPPP'));
   }
   (files['meta.json'] as StoreMeta).views=manifest;
   return manifest;

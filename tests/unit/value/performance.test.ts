@@ -1,3 +1,5 @@
+import {gzipSync} from 'node:zlib';
+import {canPrefetch} from '@/lib/value/prefetch';
 import { cachedValueHits,primeValueSearch } from '@/lib/search/value-source';
 import { browserRow,historyView,unpackView,type BrowserPayload } from '@/lib/value/browser-view';
 import { publishedBuyPrice } from '@/lib/value/buy-price';
@@ -18,7 +20,7 @@ describe('browser data contract', () => {
   const missing={...row,id:'NEW.US',st:'i',t:'UUUUU',b:false,v:null};
   const files:Record<string,unknown>={'meta.json':{},'index/default.json':[row],'index/US.json':[row,missing]};
   const manifest=publishViews(files);
-  expect(unpackView(files[manifest.current] as BrowserPayload).map(r=>r.id)).toEqual(['KO.US','NEW.US']);
+  expect([manifest.current,...manifest.deferred!].flatMap(file=>unpackView(files[file] as BrowserPayload)).map(r=>r.id)).toEqual(['KO.US','NEW.US']);
  });
  it('embeds quotes and omits server-only valuation inputs and private flags', () => {
   const compact=browserRow({...row,dataQualityFlags:['needs verification']},[50,'2026-09-30']);
@@ -76,3 +78,18 @@ describe('private share resolution', () => {
   expect(JSON.stringify(result)).not.toMatch(/dataQualityFlags|verification|being checked/i);
  });
 });
+
+describe('bounded browser cohorts',()=>{
+ it('keeps the initial current view small and defers other filter cohorts losslessly',()=>{
+  const rows=Array.from({length:2000},(_,i)=>({...row,id:`C${i}.US`,n:`Company ${i}`,t:i<5?'PPPPP':'PPFPP',b:i<5}));
+  const files:Record<string,unknown>={'meta.json':{},'index/default.json':rows};
+  const manifest=publishViews(files);
+  const first=unpackView(files[manifest.current] as BrowserPayload);
+  expect(first).toHaveLength(5);
+  for(const file of [manifest.current,...manifest.deferred!])expect(gzipSync(JSON.stringify(files[file])).length).toBeLessThanOrEqual(80_000);
+  const deferred=manifest.deferred!.flatMap(file=>unpackView(files[file] as BrowserPayload));
+  expect([...first,...deferred].map(r=>r.id).sort()).toEqual(rows.map(r=>r.id).sort());
+ });
+});
+
+it('never prefetches on Save-Data or slow connections',()=>{for(const effectiveType of ['slow-2g','2g','3g'])expect(canPrefetch({effectiveType})).toBe(false);expect(canPrefetch({saveData:true,effectiveType:'4g'})).toBe(false);expect(canPrefetch({effectiveType:'4g'})).toBe(true);expect(canPrefetch()).toBe(true);});

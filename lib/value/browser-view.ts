@@ -3,7 +3,7 @@ import type { SnapshotRow } from './time-travel';
 import type { IndexRow,PriceMap } from './types';
 
 export type BrowserRow = IndexRow & { quote: PriceMap[string] | null; expected?: number | null; pm?: number | null; gain?: number | null; historicalPrice?: import('./time-travel').HistoricalPrice };
-export type ViewManifest = { current: string; years: Record<string, string> };
+export type ViewManifest = { current: string; years: Record<string, string>; deferred?: string[]; yearDeferred?: Record<string,string[]> };
 export type BrowserPayload = { columns: Array<keyof BrowserRow>; rows: unknown[][] };
 /** Column names occur once; exact numerical values and every identity are retained. */
 export function packView(rows: BrowserRow[]): BrowserPayload {
@@ -15,7 +15,7 @@ export function unpackView(payload: BrowserPayload): BrowserRow[] {
 }
 
 export function browserRow(row: IndexRow, quote: PriceMap[string] | null = null): BrowserRow {
-  const {ownerReturnInputs, dataQualityFlags, shareSources, r, ...rest} = row;
+  const {ownerReturnInputs, dataQualityFlags, shareSources, buyReturnInputs, r, ...rest} = row;
   const unavailable = Boolean(dataQualityFlags?.length);
   const valuation = unavailable ? null : ownerReturnInputs?.valuation ?? null;
   const owner = ownerReturn(valuation, row.cur, ownerReturnInputs?.marketCapUsd ?? null, quote?.[0] ?? null);

@@ -33,7 +33,7 @@ export function Search() {
   const [index, setIndex] = useState<SearchIndex | null>(null);
   const [sel, setSel] = useState(0);
   const input = useRef<HTMLInputElement>(null);
-  useEffect(()=>{if(!isValue)return;const timer=setTimeout(()=>{void warmValueSearch().catch(()=>{});void loadIndex().catch(()=>{});},2500);return()=>clearTimeout(timer);},[isValue]);
+
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {

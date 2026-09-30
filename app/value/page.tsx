@@ -17,6 +17,8 @@ export async function renderValuePage(year?: string) {
     rows=source.map(row=>browserRow(row,quotes[row.id]??null));
   }
   const initialRows=meta?.views&&!year ? rows.filter(row=>row.t==='PPPPP') : rows;
-  return <ValueIndex rows={initialRows} initialFilter={year?{year}:{}} tags={meta?.tags??{}} meta={meta} initialHistory={history} />;
+  const todayPayload=year&&meta?.views?.current?await readStore<BrowserPayload>(meta.views.current):null;
+  const todayRows=todayPayload?unpackView(todayPayload).filter(row=>row.t==='PPPPP'):undefined;
+  return <ValueIndex todayRows={todayRows} rows={initialRows} initialFilter={year?{year}:{}} tags={meta?.tags??{}} meta={meta} initialHistory={history} />;
 }
 export default async function ValuePage() { return renderValuePage(); }

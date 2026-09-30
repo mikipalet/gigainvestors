@@ -1,5 +1,6 @@
 "use client";
 
+import {onValueIdle} from '@/lib/value/prefetch';
 import { Select } from '@/components/controls/Select';
 import { Toggle } from '@/components/controls/Toggle';
 import { MainView } from '@/components/value/MainView';
@@ -27,11 +28,11 @@ const loadTable=()=>import('./_components/ResultsTable');
 const MemoMainView=memo(MainView);
 const LazyResultsTable=dynamic(()=>loadTable().then(m=>m.ResultsTable));
 
-export default function ValueIndex({ rows, initialFilter, tags, meta, initialHistory }: { rows: BrowserRow[]; initialFilter: FilterState; tags: Record<string, string>; meta: StoreMeta | null; initialHistory: HistoryIndex | null }) {
+export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta, initialHistory }: { rows: BrowserRow[]; todayRows?:BrowserRow[]; initialFilter: FilterState; tags: Record<string, string>; meta: StoreMeta | null; initialHistory: HistoryIndex | null }) {
   const history=initialHistory;
-  useEffect(()=>{if(!initialFilter.year)primeValueSearch(rows);},[rows,initialFilter.year]);
+  useEffect(()=>{if(todayRows||!initialFilter.year)primeValueSearch(todayRows??rows);},[rows,todayRows,initialFilter.year]);
   const [filter, setFilter] = useDebouncedQuery(initialFilter);
-  const [views,setViews]=useState<Record<string,BrowserRow[]>>({[initialFilter.year??'Today']:rows});
+  const [views,setViews]=useState<Record<string,BrowserRow[]>>({...(todayRows?{Today:todayRows}:{}),[initialFilter.year??'Today']:rows});
   const memory=useRef(views);
   const loads=useRef(new Map<string,Promise<BrowserRow[]>>());
   const [frame,setFrame]=useState(initialFilter.year??'Today');
@@ -44,12 +45,18 @@ export default function ValueIndex({ rows, initialFilter, tags, meta, initialHis
   const historical=frame!=='Today';
   const country=filter.country??'';
   const loadYear=useCallback(async (key:string)=>{
+    if(memory.current[key])return memory.current[key];
     const file=key==='Today'?meta?.views?.current:meta?.views?.years[key];
     if(!file)return;
     if(!loads.current.has(key))loads.current.set(key,fetchRows<BrowserPayload>(file).then(unpackView).then(data=>{memory.current[key]=data;if(key==='Today')primeValueSearch(data);return data;}).catch(error=>{loads.current.delete(key);throw error;}));
     return loads.current.get(key)!;
   },[meta?.views]);
-  const preload=useCallback((key:string)=>{void loadYear(key).catch(()=>{});},[loadYear]);
+  const prefetchCancel=useRef<(()=>void)|null>(null);
+  const preload=useCallback((key:string)=>{
+    prefetchCancel.current?.();
+    prefetchCancel.current=onValueIdle(()=>{void loadYear(key).catch(()=>{});},150);
+  },[loadYear]);
+  useEffect(()=>()=>prefetchCancel.current?.(),[]);
   useEffect(()=>{
     if(frame===year)return;
     let current=true;
@@ -60,30 +67,33 @@ export default function ValueIndex({ rows, initialFilter, tags, meta, initialHis
     return()=>{current=false;};
   },[year,frame,loadYear]);
   useEffect(()=>{
-    const years=(history?.years??[]).slice(0,-1).map(String);
-    const i=year==='Today'?years.length:years.indexOf(year);
-    const timer=setTimeout(()=>{[years[i-1],years[i+1]].filter(Boolean).forEach(preload);},150);
-    return()=>clearTimeout(timer);
-  },[year,history,preload]);
+    const years=[...(history?.years??[]).slice(0,-1).map(String),'Today'];
+    const i=years.indexOf(year);
+    return onValueIdle(()=>{for(const key of [years[i-1],years[i+1]].filter(Boolean))void loadYear(key).catch(()=>{});},year===(initialFilter.year??'Today')?1200:0);
+  },[year,history,loadYear,initialFilter.year]);
+  const deferredLoads=useRef(new Map<string,Promise<void>>());
+  const [extraLoading,setExtraLoading]=useState(false);
+  const needsDeferred=table||!!country||filter.near==='1'||filter.awaiting==='1'||filter.gate!==undefined||QUALITY_TESTS.some(key=>!!filter[key]);
   useEffect(()=>{
-    let cancelled=false;
-    const timer=setTimeout(async()=>{
-      void loadTable();
-      const current=await loadYear('Today').catch(()=>undefined);
-      if(cancelled)return;
-      if(current)startTransition(()=>setViews(v=>({...v,Today:current})));
-      for(const y of (history?.years??[]).slice(0,-1).reverse()){
-        if(cancelled)break;
-        if(!memory.current[String(y)])await loadYear(String(y)).catch(()=>{});
-      }
-    },1200);
-    return()=>{cancelled=true;clearTimeout(timer);};
-  },[history,loadYear]);
+    if(!needsDeferred)return;
+    let active=true;
+    const files=frame==='Today'?(meta?.views?.deferred??(meta?.views?.current?[meta.views.current]:[])):meta?.views?.yearDeferred?.[frame];
+    if(!files?.length)return;
+    setExtraLoading(true);
+    if(!deferredLoads.current.has(frame))deferredLoads.current.set(frame,Promise.all(files.map(file=>fetchRows<BrowserPayload>(file).then(unpackView))).then(parts=>{
+      const complete=[...new Map([...(memory.current[frame]??[]),...parts.flat()].map(row=>[row.id,row])).values()];
+      memory.current[frame]=complete;
+      if(frame==='Today')primeValueSearch(complete);
+      setViews(v=>({...v,[frame]:complete}));
+    }).catch(error=>{deferredLoads.current.delete(frame);throw error;}));
+    void deferredLoads.current.get(frame)!.catch(()=>{if(active)setHistoryError('Company data is unavailable. Try this filter again.');}).finally(()=>{if(active)setExtraLoading(false);});
+    return()=>{active=false;};
+  },[needsDeferred,frame,meta?.views]);
   const source=useMemo(()=>{
     const current=views[frame]??rows;
     return country?current.filter(row=>row.c===country):current.filter(row=>row.st!=='i');
   },[views,frame,rows,country]);
-  const loading=pending||frame!==year;
+  const loading=pending||frame!==year||(needsDeferred&&extraLoading);
   const sort = columns.some(([key]) => key === filter.sort) ? filter.sort as Sort : "mos";
   const direction = filter.direction === "asc" ? 1 : -1;
 
@@ -147,7 +157,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta, initialHis
   const total=summary?.analysed??story.analysed, quality=summary?.qualityPasses??story.qualityPasses, buys=summary?.atBuy??story.atBuy;
   const ret=(n:number|null|undefined)=>n==null?'not available':`${n>=0?'+':''}${Math.round(n*100)}%`;
   return <div className="one-index locks-scroll" data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
-    <section className="index-story sr-only"><h1>{historical?`FY${frame} · ${total.toLocaleString()} companies`:'Find a good business. Wait for a good price.'}</h1></section>
+    <section className="index-story"><h1>{historical?`In ${frame}: ${buys} businesses were at a fair price.`:`${buys} great businesses at a fair price today.`}</h1></section>
     <div className="map-toolbar"><MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/><div className="desktop-filters">{filterBar}</div><button className="mobile-filter-button" onClick={()=>setFiltersOpen(true)}>Filters</button><button className="table-toggle" onPointerEnter={()=>void loadTable()} onFocus={()=>void loadTable()} onClick={()=>setTable(true)}>All companies ↗</button>{filter.q&&<button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
     {historyError&&<p role="status" className="map-error">{historyError}</p>}
     <MemoMainView entries={displayed} year={frame} loading={loading}/>

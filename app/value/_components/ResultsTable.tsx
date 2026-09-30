@@ -1,12 +1,12 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
-import type { ResultEntry } from './ResultRow';
 import { ValueLink } from '@/components/value/ValueLink';
-import { companyName, priceFraming } from '@/lib/value/presentation';
+import { columns,type Sort } from '@/lib/value/list-sort';
+import { companyName,priceFraming } from '@/lib/value/presentation';
+import type { ResultEntry } from '@/lib/value/result-entry';
 import { compactMoney } from '@/lib/value/viz/layout';
-import { columns, type Sort } from '@/lib/value/list-sort';
-export { columns, type Sort } from '@/lib/value/list-sort';
-export function ResultsTable({ entries, sort, direction, sortBy }: { expanded?:boolean; entries:ResultEntry[]; sort:Sort;direction:number;sortBy:(key:Sort)=>void }) {
+import { useEffect,useState } from 'react';
+export { columns,type Sort } from '@/lib/value/list-sort';
+export function ResultsTable({ entries, sort, direction, sortBy }: { entries:ResultEntry[]; sort:Sort;direction:number;sortBy:(key:Sort)=>void }) {
  const [page,setPage]=useState(0),[size,setSize]=useState(6);
  useEffect(()=>{const update=()=>setSize(window.innerWidth<768?4:Math.max(3,Math.floor((window.innerHeight-210)/95)));update();window.addEventListener('resize',update);return()=>window.removeEventListener('resize',update);},[]);
  useEffect(()=>setPage(0),[entries]);

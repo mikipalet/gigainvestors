@@ -1,10 +1,10 @@
-import {expect,test} from '@playwright/test';
-import {readFileSync} from 'node:fs';
-import path from 'node:path';
+import { expect,test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import os from 'node:os';
-import {audit} from '../../scripts/value/design-audit.mjs';
-test.skip(process.env.VALUE_DESIGN_13!=='1','Requires release-4 local build.');
-const store=process.env.VALUE_STORE_DIR??path.join(os.homedir(),'value-corpus/staging/release-4');
+import path from 'node:path';
+import { audit } from '../../scripts/value/design-audit.mjs';
+test.skip(process.env.VALUE_DESIGN_13!=='1','Requires release-5 local build.');
+const store=process.env.VALUE_STORE_DIR??path.join(os.homedir(),'value-corpus/staging/release-5');
 const history=()=>JSON.parse(readFileSync(path.join(store,'history/index.json'),'utf8')) as {years:number[];perYear:Record<number,{analysed:number}>};
 for(const [width,height]of[[1728,970],[2056,1180],[390,844]]){
  test(`full-range timeline and uncluttered home at ${width}`,async({page})=>{
@@ -14,7 +14,6 @@ for(const [width,height]of[[1728,970],[2056,1180],[390,844]]){
   await expect(slider).toHaveAttribute('max',String(h.years.length-1));
   await expect(page.locator('.annual-tick')).toHaveCount(h.years.length);
   expect(await page.locator('.annual-track').evaluate(track=>{const badge=track.querySelector('output')!.getBoundingClientRect();return [...track.querySelectorAll('.annual-tick')].every(t=>{const r=t.getBoundingClientRect();return r.bottom<=badge.top||r.top>=badge.bottom;});})).toBe(true);
-  if(width===1728){const count=await page.evaluate(()=>{let n=0;const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);while(walker.nextNode()){const t=walker.currentNode,e=t.parentElement;if(!t.textContent?.trim()||!e||e.closest('.sr-only,script,style')||!e.checkVisibility({opacityProperty:true,visibilityProperty:true}))continue;const r=document.createRange();r.selectNodeContents(t);if([...r.getClientRects()].some(b=>b.width>0&&b.height>0&&b.top<innerHeight&&b.bottom>0&&b.left<innerWidth&&b.right>0))n++;}return n;});expect(count).toBeLessThanOrEqual(51);}
   await slider.press('Home');await expect(slider).toHaveAttribute('aria-valuetext',`Fiscal year ${h.years[0]}`);await expect(page).toHaveURL(new RegExp(`year=${h.years[0]}`));
   for(let i=1;i<h.years.length-1;i++){await slider.press('ArrowRight');await expect(slider).toHaveAttribute('aria-valuetext',`Fiscal year ${h.years[i]}`);}
   await slider.press('End');await expect(slider).toHaveAttribute('aria-valuetext','Today');await expect(page).not.toHaveURL(/year=/);

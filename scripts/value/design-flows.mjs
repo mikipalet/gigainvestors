@@ -1,7 +1,7 @@
 import {chromium} from '@playwright/test';
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {audit} from './design-audit.mjs';
-const base=process.argv[2]??'http://localhost:3013',out=process.argv[3]??'/tmp/value-design-13/flows';
+const base=process.argv[2]??'http://localhost:3013',out=process.argv[3]??'./test-results/design-flows';
 mkdirSync(out,{recursive:true});
 const b=await chromium.launch(),report=[];
 const measure=()=>{
@@ -15,12 +15,13 @@ const measure=()=>{
 for(const [w,h]of(process.env.FLOW_VIEWPORTS??'1728x970,2056x1180,390x844').split(',').map(v=>v.split('x').map(Number))){
  const p=await b.newPage({viewport:{width:w,height:h}}),errors=[];
  p.on('pageerror',e=>errors.push(String(e)));
- const shot=async name=>{await p.waitForTimeout(120);const path=`${out}/${w}-${name}.png`;await p.screenshot({path});const item={viewport:`${w}x${h}`,name,path,...await p.evaluate(audit),...await p.evaluate(measure),errors:[...errors]};report.push(item);console.log(`${w} ${name}: ${item.issues.length} overlaps/clips, ${item.scrollers.length} scrollers, ${item.small.length} small, ${item.textNodes} texts`);};
+ const shot=async name=>{await p.waitForTimeout(120);const path=`${out}/${w}-${name}.png`;await p.screenshot({path});const item={viewport:`${w}x${h}`,name,path,focus:await p.evaluate(()=>{const el=document.querySelector('dialog[open],.search-modal');if(!el)return null;const {x,y,width,height}=el.getBoundingClientRect();return {x,y,width,height};}),...await p.evaluate(audit),...await p.evaluate(measure),errors:[...errors]};report.push(item);console.log(`${w} ${name}: ${item.issues.length} overlaps/clips, ${item.scrollers.length} scrollers, ${item.small.length} small, ${item.textNodes} texts`);};
  const go=async path=>{await p.goto(base+path,{waitUntil:'networkidle'});};
  const close=async()=>{const x=p.getByRole('button',{name:'Close panel'});if(await x.count())await x.click();else await p.keyboard.press('Escape');};
  const tabs=async prefix=>{const names=await p.getByRole('tab').allTextContents();for(const name of names){await p.getByRole('tab',{name,exact:true}).click();await shot(prefix+'-'+name.toLowerCase().replaceAll(' ','-'));const next=p.getByRole('button',{name:'Next detail page'});if(await next.count()){await next.click();await shot(prefix+'-'+name.toLowerCase()+'-page2');}const series=p.locator('.data-series select');if(await series.count()&&await series.locator('option').count()>1){await series.selectOption({index:1});await shot(prefix+'-data-series2');}}};
+ for(const route of (process.argv[4]??'/,/?markets=all,/?year=2018').split(',')){await go(route);await shot('route-'+route.replace(/[^a-z0-9]+/gi,'_'));}
  await go('/');await shot('home');
- await p.locator('[data-testid=company-tile]').first().hover();await shot('home-tooltip');await p.locator('.value-map-canvas [data-testid=company-tile]').first().hover();await shot('waiting-tooltip');await p.mouse.move(0,0);
+ await p.locator('[data-testid=company-tile]').first().hover();await shot('home-tooltip');await p.locator('.main-next-row').first().hover();await shot('waiting-tooltip');await p.mouse.move(0,0);
  await p.getByRole('button',{name:'Method',exact:true}).click();await tabs('method');await close();
  if(w<768)await p.getByRole('button',{name:'Filters',exact:true}).click();
  await p.getByRole('combobox',{name:'Country',exact:true}).click();await shot('countries');const countryPages=p.getByRole('navigation',{name:'Country pages'});if(await countryPages.count()){await countryPages.getByRole('button').last().click();await shot('countries-page2');}await p.getByRole('combobox',{name:'Search Country',exact:true}).fill('ger');await shot('countries-search');await p.getByRole('option').filter({hasText:'Germany'}).click();
@@ -29,13 +30,12 @@ for(const [w,h]of(process.env.FLOW_VIEWPORTS??'1728x970,2056x1180,390x844').spli
  await p.getByRole('combobox',{name:'Sector',exact:true}).click();await p.getByRole('combobox',{name:'Search Sector',exact:true}).fill('tech');await shot('sector-search');await p.getByRole('option').first().click();
  if(w<768)await p.locator('.filter-apply').click();await shot('sector-selected');await go('/');
  await p.getByRole('switch').filter({hasText:'Western markets'}).click();await p.waitForTimeout(600);await shot('all-markets');
- let pages=0;while(await p.getByRole('button',{name:'Next buy-zone companies'}).count()&&!await p.getByRole('button',{name:'Next buy-zone companies'}).isDisabled()&&pages<20){await p.getByRole('button',{name:'Next buy-zone companies'}).click();await shot(`buy-page-${++pages+1}`);}
+ const more=p.locator('.main-buys .main-more');if(await more.count()){await more.click();await shot('buy-list');const next=p.getByRole('button',{name:'Next detail page'});while(await next.count()&&!await next.isDisabled()){await next.click();await shot('buy-list-'+(await p.locator('.paged-items nav span').textContent()).replaceAll(' / ','-'));}await close();}
  if(w<768)await p.getByRole('button',{name:'Filters',exact:true}).click();await p.getByRole('switch',{name:'Near misses',exact:true}).click();if(w<768)await p.locator('.filter-apply').click();await shot('near-misses');
  if(w<768)await p.getByRole('button',{name:'Filters',exact:true}).click();await p.getByRole('switch',{name:'Held by superinvestors',exact:true}).click();if(w<768)await p.locator('.filter-apply').click();await shot('held-filter');
- await p.getByRole('combobox',{name:'Sort',exact:true}).click();await p.getByRole('option').filter({hasText:'closest'}).click();await shot('closest-sort');
  await p.getByRole('button',{name:'All companies'}).click();await shot('company-list');await p.getByRole('navigation',{name:'Company pages'}).getByRole('button').last().click();await shot('company-list-page2');await close();
  await go('/');await p.getByRole('button',{name:'Search companies',exact:true}).click();await p.getByRole('combobox',{name:'Search investor, firm, ticker, company'}).fill('coca');await p.locator('#search-results [role=option]').first().waitFor();await shot('search-results');const searchPages=p.getByRole('navigation',{name:'Search pages'});if(await searchPages.count()){await searchPages.getByRole('button').last().click();await shot('search-page2');await searchPages.getByRole('button').first().click();}await p.locator('#search-results [role=option]').filter({hasText:'KO.US'}).first().click();await p.waitForLoadState('networkidle');await shot('search-result-open');
- for(const id of ['ko.us','infy.us','amb.war']){
+ for(const id of ['ko.us','race.mi','amb.war']){
   await go('/'+id);await shot(id);
   for(const key of ['understandable','moat','economics','management','accounting','price']){
    await p.getByTestId('tile-'+key).click();await tabs(id+'-'+key);await close();

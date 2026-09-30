@@ -66,7 +66,7 @@ test('rapid timeline changes write the URL once after settling',async({page})=>{
  await expect(page).toHaveURL(/year=2018/);
  expect(await page.evaluate(()=>(window as typeof window&{timelineWrites:number}).timelineWrites)).toBe(1);
 });
-test('same-size filter changes replace treemap identities',async({page})=>{
+test('same-size filter changes replace main-view identities',async({page})=>{
  await page.goto('/value',{waitUntil:'networkidle'});
  for(const [query,name] of [['Coca','Coca-Cola'],['Pepsi','PepsiCo']]) {
   await page.getByRole('button',{name:'Search companies'}).click();

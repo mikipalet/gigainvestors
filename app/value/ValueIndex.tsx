@@ -1,31 +1,30 @@
 "use client";
 
-import { useEffect, useMemo, useState, useTransition, useCallback, useRef, memo } from "react";
-import { useDebouncedQuery } from "@/lib/use-quarter";
-import { matchesMarket } from '@/lib/value/listing-details';
-import { MarketScopeToggle } from '@/components/value/MarketScopeToggle';
-import { BuyZone } from '@/components/value/BuyZone';
-import { CompanyTreemap } from '@/components/value/CompanyTreemap';
 import { Select } from '@/components/controls/Select';
 import { Toggle } from '@/components/controls/Toggle';
+import { MainView } from '@/components/value/MainView';
+import { MarketScopeToggle } from '@/components/value/MarketScopeToggle';
 import { YearTimeline } from '@/components/value/YearTimeline';
+import { useDebouncedQuery } from "@/lib/use-quarter";
+import { matchesMarket } from '@/lib/value/listing-details';
 import type { HistoryIndex } from '@/lib/value/time-travel';
+import { memo,useCallback,useEffect,useMemo,useRef,useState,useTransition } from "react";
 
 import { SidePanel } from '@/components/value/SidePanel';
 
-import { QUALITY_TESTS, type IndexRow, type PriceMap, type StoreMeta } from "@/lib/value/types";
+import { QUALITY_TESTS,type StoreMeta } from "@/lib/value/types";
 
+import { columns,type Sort } from '@/lib/value/list-sort';
 import { priceValue } from '@/lib/value/presentation';
 import { type FilterState } from './_components/Filters';
-import { columns, type Sort } from '@/lib/value/list-sort';
 
 import { fetchValueData as fetchRows } from '@/lib/value/data-source';
 
-import { unpackView, type BrowserPayload, type BrowserRow } from '@/lib/value/browser-view';
 import { primeValueSearch } from '@/lib/search/value-source';
+import { unpackView,type BrowserPayload,type BrowserRow } from '@/lib/value/browser-view';
 import dynamic from 'next/dynamic';
 const loadTable=()=>import('./_components/ResultsTable');
-const MemoBuyZone=memo(BuyZone), MemoCompanyTreemap=memo(CompanyTreemap);
+const MemoMainView=memo(MainView);
 const LazyResultsTable=dynamic(()=>loadTable().then(m=>m.ResultsTable));
 
 export default function ValueIndex({ rows, initialFilter, tags, meta, initialHistory }: { rows: BrowserRow[]; initialFilter: FilterState; tags: Record<string, string>; meta: StoreMeta | null; initialHistory: HistoryIndex | null }) {
@@ -39,7 +38,6 @@ export default function ValueIndex({ rows, initialFilter, tags, meta, initialHis
   const [historyError,setHistoryError]=useState('');
   const [pending,startTransition]=useTransition();
   const [table,setTable]=useState(false),[filtersOpen,setFiltersOpen]=useState(false);
-  const openTable=useCallback(()=>setTable(true),[]);
   const allMarkets=filter.markets==='all';
   const scopedHistory=history ? {...history,perYear:allMarkets?history.perYear:history.western?.perYear??{}} : null;
   const year=filter.year===String(history?.years.at(-1))?'Today':filter.year??'Today';
@@ -111,7 +109,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta, initialHis
   const allEntries = useMemo(() => source.map(row => {
     const quote=historical?null:row.quote?.[0]??null;
     const ratio=historical?row.pm??null:priceValue({price:quote,mid:row.v?.[1]??null});
-    return {row,quote,historical,historicalReturn:historical?row.gain??null:null,seed:!historical&&row.quote?.[2]==='seed',date:historical?null:row.quote?.[1],mos:row.st==='i'||ratio===null?null:1-ratio};
+    return {row,quote,historical,historicalReturn:historical?row.gain??null:null,historicalPrice:row.historicalPrice,expected:row.expected,seed:!historical&&row.quote?.[2]==='seed',date:historical?null:row.quote?.[1],mos:row.st==='i'||ratio===null?null:1-ratio};
   }),[source,historical]);
   const gate = filter.gate !== undefined && /^[0-6]$/.test(filter.gate) ? Number(filter.gate) : null;
   const population = allMarkets ? meta?.funnel : meta?.western?.funnel;
@@ -148,18 +146,11 @@ export default function ValueIndex({ rows, initialFilter, tags, meta, initialHis
   const story=(allMarkets?meta?.story:meta?.western?.story)??{analysed:counts[0],qualityPasses:counts[5],atBuy:counts[6],qualityShare:counts[0]?counts[5]/counts[0]:0};
   const total=summary?.analysed??story.analysed, quality=summary?.qualityPasses??story.qualityPasses, buys=summary?.atBuy??story.atBuy;
   const ret=(n:number|null|undefined)=>n==null?'not available':`${n>=0?'+':''}${Math.round(n*100)}%`;
-  const buyEntries=useMemo(()=>displayed.filter(e=>e.row.b===true),[displayed]);
-  const waitingEntries=useMemo(()=>displayed.filter(e=>e.row.b!==true),[displayed]);
   return <div className="one-index locks-scroll" data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
     <section className="index-story sr-only"><h1>{historical?`FY${frame} · ${total.toLocaleString()} companies`:'Find a good business. Wait for a good price.'}</h1></section>
     <div className="map-toolbar"><MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/><div className="desktop-filters">{filterBar}</div><button className="mobile-filter-button" onClick={()=>setFiltersOpen(true)}>Filters</button><button className="table-toggle" onPointerEnter={()=>void loadTable()} onFocus={()=>void loadTable()} onClick={()=>setTable(true)}>All companies ↗</button>{filter.q&&<button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
     {historyError&&<p role="status" className="map-error">{historyError}</p>}
-    <div className={`answer-stage${buyEntries.length?'':' empty-buy-zone'}`} aria-busy={loading} data-frame={frame}>
-      <MemoBuyZone entries={buyEntries} allMarkets={allMarkets}/>
-      <section className="waiting-zone"><header><h2>{filter.near==='1'?'Waiting & near misses':'Waiting for a better price'}</h2></header>
-      <div className="map-sort"><Select label="Sort" value={filter.mapSort??'cap'} onChange={value=>change('mapSort',value)} options={[["cap","Sort: market value"],["closest","Sort: closest to buy price"]]}/></div>
-      <div className="map-stage"><MemoCompanyTreemap entries={waitingEntries} year={frame} sort={filter.mapSort==='closest'?'closest':'cap'} onTable={openTable}/></div></section>
-    </div>
+    <MemoMainView entries={displayed} year={frame} loading={loading}/>
     <p className="simulation-line" aria-hidden={!historical}>{historical?`FY${frame} simulation · median gain ${ret(summary?.medianReturnAtBuy)} vs ${ret(summary?.medianReturnAll)} for all analysed companies`:'\u00a0'}</p>
     <YearTimeline onPrefetch={preload} years={history?.years??[]} value={year} onChange={changeYear}/>
     {table&&<SidePanel title={`${displayed.length} companies`} wide onClose={()=>setTable(false)}><LazyResultsTable entries={displayed} sort={sort} direction={direction} sortBy={sortBy}/></SidePanel>}

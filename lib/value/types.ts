@@ -288,7 +288,7 @@ export interface SearchShard {
 }
 
 /** Code-only annual snapshot; r is a cumulative price-return ratio, not a percent. */
-export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null];
+export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: import('./time-travel').HistoricalPrice];
 export interface HistorySummary {
   analysed: number;
   qualityPasses: number;

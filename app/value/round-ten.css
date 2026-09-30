@@ -21,30 +21,17 @@
 .method-summary ol {list-style:decimal;padding-left:22px;}.method-summary li {font-size:16px;line-height:1.5;margin:12px 0;}
 .method-summary p {font-size:14px;line-height:1.5;margin:16px 0;}.method-author:empty {display:none;}
 .about-method {text-decoration:underline;text-underline-offset:3px;}
-.map-sort {margin:0 0 8px;}.map-sort .design-select > button {max-width:none;}
 .map-toolbar > .design-select {flex-shrink:0;}
 .map-toolbar > .design-select > button {max-width:200px;}
 .map-toolbar > .design-select .design-options {min-width:300px;}
 .region-badge {font-size:13px!important;line-height:1.2;border:1px solid #a8c2ac;border-radius:3px;padding:1px 5px;width:max-content;}
-.buy-tile .buy-owner-return {font-size:14px;line-height:1.3;font-weight:550;}
-.buy-tile .buy-growth {font-size:13px;line-height:1.3;}
-.buy-tile .buy-discount {font-size:13px;line-height:1.25;}
-.buy-tile {position:relative;gap:4px 7px;}
-.buy-tile strong {padding-right:44px;}
-.buy-tile .region-badge {position:absolute;right:6px;top:6px;}
-.buy-tile .buy-owner-return,.buy-tile .buy-growth {grid-column:1/-1!important;}
 .market-access {font-size:13px;}
-.buy-pager {display:flex;align-items:center;gap:8px;font-size:13px;}.buy-pager button {padding:4px;font-size:18px;}.buy-pager button:disabled {opacity:.35;}
 @media(min-width:768px) and (max-height:900px){
  .owner-return {font-size:17px;margin-top:6px;}.owner-growth {font-size:13px;margin:4px 0 6px;}
  .price-card .price-multiple {font-size:14px!important;}.price-card .price-discount {display:none;}
  .dossier-checks .mini-series svg {max-height:55px;}.dossier-checks .mini-dollar > div {height:17px;}
  .metric-reading {font-size:13px;}.dossier-checks .test-tile .tile-sentence {margin-top:5px;font-size:13px;}
  .dossier-checks .test-tile .tile-number {margin:5px 0 0;}.dossier-checks .buffett-bar {margin-top:4px;}
- .buy-tile .buy-discount {display:none;}.buy-tile strong {font-size:14px;padding-right:0;}
- .buy-tile .region-badge {position:static;grid-column:2!important;grid-row:auto;}
- .buy-tile .buy-owner-return {font-size:14px;}.buy-tile .buy-growth {font-size:13px;}
- .buy-tile {gap:3px 6px;}.buy-tile .buy-quote,.buy-tile .buy-listing {grid-column:1/-1!important;font-size:13px;}
  .map-toolbar .desktop-filters {gap:12px;}.one-index .map-toolbar {gap:14px;}
 }
 @media(max-width:767px){
@@ -58,21 +45,7 @@
  .one-index .map-toolbar {padding:3px 12px;gap:8px;flex-wrap:wrap;}
  .one-index .map-toolbar button {font-size:13px;}.map-toolbar > .design-select > button {max-width:175px;min-height:28px;}
  .map-count {display:none!important;}.map-toolbar .desktop-filters {display:none;}
- .answer-stage {padding:2px 12px 4px;gap:6px;}
- .buy-zone > header {gap:8px;margin-bottom:5px;}.buy-zone header > p {display:none;}.buy-zone h2 {font-size:20px;}
- .buy-grid {grid-auto-rows:116px;gap:5px;}
- .buy-tile {padding:6px;gap:3px 5px;grid-template-rows:auto auto auto;align-content:center;}
- .buy-tile strong {font-size:14px;line-height:1.15;padding-right:0;}
- .buy-tile .company-logo {display:flex;font-size:13px;}
- .buy-tile .region-badge {position:static;grid-column:1/-1!important;justify-self:start;grid-row:auto;}
- .buy-tile .buy-owner-return {font-size:14px;line-height:1.2;}
- .buy-tile .buy-quote {font-size:13px;line-height:1.2;}
- .buy-tile .buy-growth,.buy-tile .buy-discount,.buy-tile .buy-listing {display:none;}
  .market-access {font-size:13px;line-height:1.2;margin-top:4px;}
- .waiting-zone {min-height:130px;}.waiting-zone h2 {font-size:14px;max-width:260px;}.waiting-zone header button {font-size:13px;}
- .map-sort {margin:0 0 3px;}.map-sort .design-select > button {min-height:23px;font-size:13px;}
- .waiting-zone .treemap-legend {font-size:13px;padding-bottom:3px;}.waiting-zone .treemap-legend > span:last-child {display:none;}
- .company-tile > span:last-child:not(.company-logo) {font-size:13px;}.company-tile strong {font-size:14px!important;}
  .trust-strip {padding:5px 12px 0;}.trust-strip .track-record {font-size:14px;line-height:1.25;}.trust-strip .history-caveat {font-size:13px;}
  .one-index .time-note {font-size:13px;padding:4px 12px;}.year-timeline * {font-size:13px!important;}
  .dossier-band {padding:6px 12px;gap:4px;}.one-identity {padding-right:65px;}
@@ -104,37 +77,17 @@
 @media(max-width:767px){.equal-company-grid {grid-template-columns:repeat(2,minmax(0,1fr));}}
 .dossier-checks .price-card .owner-return {font-size:20px;line-height:1.35;margin:8px 0 0;}
 .dossier-checks .price-card .owner-growth {font-size:14px;line-height:1.3;margin:5px 0 10px;}
-@media(min-width:1100px){
- .answer-stage {grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);gap:20px;}
- .buy-grid {grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);}
- .buy-tile {display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:12px;gap:6px;}
- .buy-tile strong {padding:0;font-size:16px;}.buy-tile .company-logo {width:28px;height:28px;}
- .buy-tile .region-badge {position:absolute;right:8px;top:10px;}
- .buy-tile .buy-discount {display:none;}
- .buy-zone > header {display:flex;align-items:center;justify-content:space-between;}.buy-zone header .eyebrow {display:none;}
-}
 @media(min-width:768px) and (max-height:900px){
  .dossier-checks .price-card .owner-return {font-size:16px;line-height:1.3;margin:5px 0 0;}
  .dossier-checks .price-card .owner-growth {font-size:13px;margin:4px 0 6px;}
  .price-card .mini-price svg {max-height:80px;}
  .price-card .price-discount,.price-card .verification-flag {display:none;}
- .buy-tile {padding:8px;gap:4px;}.buy-tile strong {font-size:14px;}
 }
 @media(max-width:767px){
  .dossier-checks .price-card .owner-return {font-size:14px;line-height:1.3;margin:0;}
  .dossier-checks .price-card .owner-growth {font-size:13px;line-height:1.2;margin:3px 0 5px;}
- .buy-tile .buy-growth {display:block;font-size:13px;}.buy-grid {grid-auto-rows:132px;}
- .buy-tile .region-badge {position:absolute;top:5px;right:5px;}
- .buy-tile {display:flex;gap:3px;justify-content:center;}.buy-tile .company-logo {display:none;}.buy-tile strong {padding-right:28px;}
 }
 @media(max-width:767px){
- .buy-grid {grid-auto-rows:180px;}
- .buy-tile {justify-content:flex-start;padding:8px;gap:5px;}
- .buy-tile .company-logo {display:flex;width:22px;height:22px;}
- .buy-tile strong {padding:0;font-size:14px;}
- .buy-tile .region-badge {top:8px;right:8px;}
- .buy-tile .buy-owner-return {line-height:1.2;}
- .company-tile strong {overflow-wrap:anywhere;}
  .one-dossier .dossier-source {height:42px;min-height:42px;flex-wrap:wrap;align-content:center;gap:2px;padding:3px 12px;}
  .one-dossier .dossier-source > span {display:block;width:100%;font-size:13px;line-height:1.2;}
  .one-dossier .dossier-source .source-links {display:flex;justify-content:space-between;}
@@ -151,12 +104,6 @@
 .price-card .exact-prices > div:last-child {border:0;border-left:1px solid #a5b7a1;padding:0 0 0 8px;}
 .price-card .price-discount,.price-card .verification-flag {display:none;}
 .price-card header {display:none!important;}
-@media(min-width:768px) and (max-width:1099px){
- .answer-stage {grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);}
- .buy-tile {display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:9px;gap:4px;}
- .buy-tile strong {padding:0;font-size:14px;}.buy-tile .buy-discount {display:none;}
- .buy-tile .region-badge {position:absolute;right:6px;top:6px;}
-}
 @media(min-width:768px) and (max-height:900px){
  .dossier-band {min-height:128px;padding-block:8px;}.one-identity .company-about {display:none;}
  .dossier-checks {grid-template-columns:minmax(0,2.5fr) minmax(310px,1fr);}
@@ -169,32 +116,16 @@
  .dossier-checks .price-card .mini-price {display:none;}
  .price-card .exact-prices dd {font-size:16px;}
 }
-.buy-zone > header {display:flex;align-items:center;gap:12px;}
-.buy-zone > header > p {margin-left:auto;}
-.buy-pager {flex-shrink:0;}
-@media(min-width:768px) and (max-width:1099px){.buy-zone > header > p {display:none;}}
 @media(max-width:767px){
- .buy-tile {align-items:flex-start;text-align:left;}
- .buy-tile > * {flex-shrink:0;}
- .buy-zone > header {justify-content:space-between;}
-}
-@media(max-width:767px){
- .buy-grid {grid-auto-rows:200px;}
- .buy-tile .buy-growth,.dossier-checks .price-card .owner-growth,.one-verdict .verdict-explanation {font-size:14px;line-height:1.2;}
+ .dossier-checks .price-card .owner-growth,.one-verdict .verdict-explanation {font-size:14px;line-height:1.2;}
 }
 @media(max-width:767px){.value-page .value-panel svg text.viz-event-number {font-size:13px;}}
 .ratio-reading {display:block;font-size:14px;line-height:1.4;margin-top:6px;}
 @media(max-width:767px){.value-page .value-panel p {font-size:14px;}}
 
 /* Phone overview: all buy-zone companies, four compact rows. */
-.buy-return-compact {display:none;}
 @media(max-width:767px){
  .one-index .index-story .eyebrow {display:none;}
- .buy-grid {grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:62px;overflow:visible;flex:none;}
- .buy-tile {padding:6px 7px;gap:3px;justify-content:center;}
- .buy-tile strong {font-size:14px;line-height:1.15;}
- .buy-tile .buy-return-compact {display:block;font-size:13px;line-height:1.2;color:#e4eddf;}
- .buy-tile .buy-owner-return,.buy-tile .company-logo,.buy-tile .region-badge,.buy-tile .buy-quote {display:none;}
 }
 
 .test-tile .mini-series figcaption {display:block;font-size:13px;line-height:1.2;margin:2px 0 0;}
@@ -209,16 +140,8 @@
  .value-search-row {flex-wrap:wrap;}
  .market-access-status {max-width:none;flex-basis:100%;}
 }
-.buy-tile .buy-listing {display:block;line-height:1.2;}
-@media(max-width:767px) {.buy-grid {grid-auto-rows:82px;}.buy-tile .buy-listing {font-size:13px;}}
 .company-heading .trading-listing {font-size:13px;}
-.empty-buy-zone .buy-grid {display:block;flex:none;}
 .empty-buy-zone .no-buys {padding:8px 0;}
 @media(min-width:768px) {
  .empty-buy-zone {grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:12px;}
- .empty-buy-zone .buy-zone {flex-direction:row;align-items:center;gap:24px;}
- .empty-buy-zone .buy-zone>header {margin:0;}
- .empty-buy-zone .buy-zone>header>p {display:none;}
- .empty-buy-zone .waiting-zone {border-left:0;border-top:1px solid var(--viz-grid);padding:12px 0 0;}
- .empty-buy-zone .waiting-zone h2 {max-width:none;}
 }

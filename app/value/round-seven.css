@@ -16,24 +16,9 @@
 .design-toggle i {width:24px;height:13px;border:1px solid currentColor;border-radius:10px;position:relative;flex-shrink:0;}
 .design-toggle i:after {content:'';position:absolute;width:7px;height:7px;left:2px;top:2px;background:currentColor;border-radius:50%;transition:transform .15s;}
 .design-toggle[aria-checked=true] i:after {transform:translateX(11px);}
-.design-select button:focus-visible,.design-toggle:focus-visible,.company-tile:focus-visible {outline:2px solid currentColor;outline-offset:-3px;}
-.treemap-legend {padding:2px 24px 12px;display:flex;gap:24px;align-items:center;font-size:13px;line-height:1.4;flex-shrink:0;}
-.treemap-legend > span {display:flex;align-items:center;gap:7px;}
-.treemap-legend > span:last-child {margin-left:auto;color:var(--viz-muted);}
-.legend-ramp {display:flex;width:78px;height:11px;}.legend-ramp b {flex:1;}
-.legend-outline {width:16px;height:12px;border:2px solid #24563e;box-shadow:inset 0 0 0 1px var(--paper);background:#24563e;}
-.one-index .map-stage {margin:0 8px;}
-.company-treemap,.value-map-canvas {position:absolute;inset:0;}
-.company-tile {display:flex;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:10px;text-align:center;line-height:1.15;position:relative;}
-.company-tile[data-buy=true] {box-shadow:inset 0 0 0 2px #102f21,inset 0 0 0 4px #f6f5ec;}
-.company-tile strong {font-weight:550;overflow-wrap:anywhere;max-width:100%;}
-.company-tile > span:last-child:not(.company-logo) {font-size:13px;line-height:1.35;}
+.design-select button:focus-visible,.design-toggle:focus-visible {outline:2px solid currentColor;outline-offset:-3px;}
 .company-logo {display:flex;align-items:center;justify-content:center;width:36px;height:36px;flex-shrink:0;background:#fff;border-radius:6px;padding:5px;color:#263c2c;font-size:15px;font-weight:600;}
 .company-logo img {width:100%;height:100%;object-fit:contain;}
-.company-tile.compact {gap:5px;padding:6px;}.company-tile.compact .company-logo {width:25px;height:25px;padding:3px;border-radius:4px;}
-.company-tile.tiny {padding:3px;}
-.company-tile:hover {filter:brightness(1.06);}
-.treemap-empty {position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:13px;}
 .time-note {font-size:13px;line-height:1.4;color:var(--viz-muted);padding:8px 24px;flex-shrink:0;}
 .year-timeline {height:64px!important;border-top:1px solid var(--viz-grid);}
 .year-timeline > div:first-child {left:auto;right:100px;bottom:26px;font-size:13px;}
@@ -72,7 +57,7 @@
  .dossier-band {grid-template-columns:1fr 1fr;}.one-verdict {grid-column:1;grid-row:2;display:block;}
  .value-band {grid-column:2;grid-row:1 / span 2;}.one-verdict .plain-verdict {font-size:15px;}.one-verdict > div {display:none;}
  .test-tiles {grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));}
- .test-tile .tile-sentence {font-size:16px;}.treemap-legend {flex-wrap:wrap;gap:7px 20px;}.treemap-legend > span:last-child {margin-left:0;}
+ .test-tile .tile-sentence {font-size:16px;}
 }
 @media(max-width:767px){
  .one-index {padding-bottom:84px;}
@@ -81,8 +66,6 @@
  .index-story > p:last-of-type {font-size:13px;margin:8px 0 12px;line-height:1.4;}
  .one-index .map-toolbar {padding:6px 14px;min-height:42px;gap:16px;font-size:13px;flex-wrap:wrap;}
  .one-index .map-count {font-size:13px;}.desktop-filters {display:none;}
- .treemap-legend {padding:0 14px 9px;flex-wrap:wrap;gap:6px 12px;font-size:13px;}
- .treemap-legend > span:last-child {margin-left:0;width:100%;font-size:13px;}.legend-ramp {width:48px;}
  .time-note {font-size:13px;padding:7px 14px;}
  .year-timeline {height:84px!important;}.year-timeline > div:first-child {right:14px;bottom:17px;font-size:13px;}.year-timeline > div:nth-child(3) {margin:0 20px;}
  .year-timeline > div:first-child .hidden {display:none;}
@@ -98,10 +81,6 @@
  .test-tile .tile-reason {display:none;}.test-tile .mini-dollar > div {height:12px;font-size:13px;}.tile-evidence {display:none;}
  .dossier-source {height:25px;min-height:25px;font-size:13px;}
 }
-.company-tile.shallow {flex-direction:row;gap:6px;}
-.company-tile.shallow .company-logo {width:22px;height:22px;}
-.company-tile.shallow strong {font-size:13px;}
-.company-tile strong {letter-spacing:0;}
 /* Restore every gate inside Method; the old mobile funnel hid intermediate gates. */
 .one-index .panel-content .funnel {height:auto;min-height:0;}
 .one-index .panel-content .funnel figcaption {display:block;}
@@ -113,5 +92,3 @@
 @media(min-width:768px) and (max-width:1099px){
  .test-tile .tile-sentence {min-height:0;}
 }
-.company-tile > * {flex-shrink:0;}
-.company-tile.shallow strong {max-width:calc(100% - 28px);}

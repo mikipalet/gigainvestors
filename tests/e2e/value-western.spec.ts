@@ -1,7 +1,6 @@
-import { expect, test } from '@playwright/test';
-import { readFileSync, mkdirSync } from 'node:fs';
-import type { HistoryIndex, IndexRow, StoreMeta } from '../../lib/value/types';
-import { trackRecord } from '../../lib/value/time-travel';
+import { expect,test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import type { HistoryIndex,IndexRow,StoreMeta } from '../../lib/value/types';
 
 test.skip(!process.env.WESTERN_QA_STORE,'Run with a locally rebuilt live Western snapshot.');
 const root=process.env.WESTERN_QA_STORE;
@@ -9,35 +8,7 @@ const meta=root?JSON.parse(readFileSync(`${root}/meta.json`,'utf8')) as StoreMet
 const rows=root?JSON.parse(readFileSync(`${root}/index/default.json`,'utf8')) as IndexRow[]:[];
 const history=root?JSON.parse(readFileSync(`${root}/history/index.json`,'utf8')) as HistoryIndex:null;
 const out=process.env.WESTERN_QA_SHOTS??'/tmp/claude-1000/value-shots/western-1/final';
-for(const [width,height] of [[1728,970],[390,844]]) {
- for(const route of ['/','/infy.us','/ko.us','/?markets=all']) {
-  test(`${route} at ${width}x${height}`,async({page})=>{
-   await page.setViewportSize({width,height});
-   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
-   await page.goto(route,{waitUntil:'networkidle'});
-   if(route==='/'||route.startsWith('/?')) {
-    const all=route.includes('all'),story=all?meta!.story!:meta!.western!.story;
-    await expect(page.locator('.one-index')).toHaveAttribute('data-analysed-count',String(story.analysed));
-    await expect(page.locator('.one-index')).toHaveAttribute('data-quality-count',String(story.qualityPasses));
-    await expect(page.locator('.one-index')).toHaveAttribute('data-buy-count',String(story.atBuy));
-    await expect(page.getByRole('switch',{name:'Show all markets'})).toHaveAttribute('aria-checked',String(all));
-    if(!all) await expect(page.locator('.market-access')).toHaveCount(0);
-    const visible=await page.locator('.buy-tile,.company-tile').evaluateAll(tiles=>tiles.map(t=>t.getAttribute('href')??''));
-    const eligible=new Set(rows.filter(r=>all||r.w!==null).map(r=>'/'+r.id.toLowerCase()));
-    expect(visible.every(href=>eligible.has(href.replace('/value/','/')))).toBe(true);
-    const record=trackRecord(all?history:{...history!,perYear:history!.western!.perYear});
-    if(record) await expect(page.locator('.track-record')).toContainText(`${Math.round(record.buy*100)}%`);
-   } else {
-    await expect(page.locator('.company-heading h1')).toBeVisible();
-    if(route==='/infy.us') {await page.getByTestId('tile-price').click();await expect(page.getByRole('dialog')).toContainText('Buy as INFY on NYSE');await page.keyboard.press('Escape');}
-   }
-   expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBe(width);
-   expect(errors).toEqual([]);
-   mkdirSync(out,{recursive:true});
-   await page.screenshot({path:`${out}/${route==='/'?'home':route.includes('?')?'all-markets':route.slice(1)}-${width}x${height}.png`,fullPage:true});
-  });
- }
-}
+
 test('market toggle round-trip restores all aggregate and row populations',async({page})=>{
  await page.goto('/',{waitUntil:'networkidle'});
  const toggle=page.getByRole('switch',{name:'Show all markets'});

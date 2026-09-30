@@ -1,10 +1,10 @@
-import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
 import { buildOutput } from '@/lib/value/build-output';
-import { bestWesternListing, compareWesternPriority } from '@/lib/value/western';
+import { buildSearchShards,searchShard } from '@/lib/value/search';
+import type { Analysis,Company,IndexRow,StoreMeta } from '@/lib/value/types';
+import { bestWesternListing,compareWesternPriority } from '@/lib/value/western';
 import { orderFundamentals } from '@/scripts/value/stages/fundamentals';
-import { buildSearchShards, searchShard } from '@/lib/value/search';
-import type { Analysis, Company, IndexRow, StoreMeta } from '@/lib/value/types';
+import { readFileSync } from 'node:fs';
+import { describe,expect,it } from 'vitest';
 const base=JSON.parse(readFileSync('tests/fixtures/value/store/dossiers/027.json','utf8'))['KO.US'] as Analysis;
 const company=(id:string,listings=[id],cap=100):Company=>({...base.company,id,listings,marketCapUsd:cap});
 describe('Western retail access',()=>{
@@ -41,13 +41,13 @@ describe('Western retail access',()=>{
  });
 });
 
-import { westernHistory } from '@/lib/value/western-history';
+import { MarketScopeToggle } from '@/components/value/MarketScopeToggle';
+import { assertIndexConsistency } from '@/lib/value/consistency';
 import { summarizeSnapshots } from '@/lib/value/snapshots';
 import { trackRecord } from '@/lib/value/time-travel';
+import { westernHistory } from '@/lib/value/western-history';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { MarketScopeToggle } from '@/components/value/MarketScopeToggle';
-import { BuyZone } from '@/components/value/BuyZone';
 it('computes Western historical medians from eligible observations, preserving the global baseline',()=>{
  const rows:import('@/lib/value/types').SnapshotRow[]=[['KO.US','PPPPP',.5,true,.2],['X.JP','PPPPP',.5,true,9],['Y.US','FFFFF',2,false,.1]];
  const global={years:[2020],perYear:{2020:summarizeSnapshots(rows)}};
@@ -60,13 +60,6 @@ it('renders the independent all-markets toggle with an explicit default scope',(
  const html=renderToStaticMarkup(createElement(MarketScopeToggle,{all:false,onChange:()=>{}}));
  expect(html).toContain('Western markets');
 });
-it('labels the alternate trading listing and keeps market-access footnotes out of the default view',()=>{
- const row={id:'INFY.NSE',n:'Infosys',w:'INFY.US',c:'IN',t:'PPPPP',st:'s',cur:'INR',v:null,mc:100,s:null,k:'operating',g:[],h:0,b:true} as IndexRow;
- const html=renderToStaticMarkup(createElement(BuyZone,{entries:[{row,quote:100,mos:.4}]}));
- expect(html).toContain('Buy as INFY on NYSE');expect(html).not.toContain('A-shares trade');
-});
-
-import { assertIndexConsistency } from '@/lib/value/consistency';
 it('rejects Western aggregates that disagree with the eligible default rows',()=>{
  const {files}=buildOutput({analyses:[base],holdersByTicker:{},investorNames:{},fx:{}});
  const meta=files['meta.json'] as StoreMeta;

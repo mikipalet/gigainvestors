@@ -1,31 +1,10 @@
-import {browserRow} from '@/lib/value/browser-view';
+import { DossierContent } from '@/components/value/DossierContent';
+import { expectedReturnCopy,ownerReturn,requiredReturnCopy } from '@/lib/value/owner-return';
+import type { Dossier,Valuation } from '@/lib/value/types';
+import { readFileSync } from 'node:fs';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { expect, it } from 'vitest';
-import { CompanyTreemap } from '@/components/value/CompanyTreemap';
-import { BuyZone } from '@/components/value/BuyZone';
-import { DossierContent } from '@/components/value/DossierContent';
-import { ownerReturn, expectedReturnCopy, requiredReturnCopy } from '@/lib/value/owner-return';
-import type { Dossier, IndexRow, Valuation } from '@/lib/value/types';
-import { readFileSync } from 'node:fs';
-import fixtures from '../../fixtures/value/treemap-round-ten.json';
-
-it.each(fixtures)('shows the published multiple for $row.id despite verification flags and absent owner-return inputs', ({ row, quote }) => {
- const html=renderToStaticMarkup(createElement(CompanyTreemap, {
-  entries:[{row:row as unknown as IndexRow,quote,mos:1-quote/row.v[1]}],year:'Today',sort:'closest',onTable:()=>{},
- }));
- const multiple=(quote/(row.v[1]*(1-row.m))).toFixed(1);
- expect(html).toContain(`${multiple}x buy price`);
- expect(html).not.toContain('Value unavailable');
- expect(html).toContain('data-buy="false"');
-});
-
-it('retains unavailable when there is no comparable valuation', () => {
- const html=renderToStaticMarkup(createElement(CompanyTreemap, {
-  entries:[{row:{...fixtures[0].row,v:null} as unknown as IndexRow,quote:367.74,mos:null}],year:'Today',sort:'closest',onTable:()=>{},
- }));
- expect(html).toContain('Value unavailable');
-});
+import { expect,it } from 'vitest';
 
 const valuation={method:'owner_earnings',currency:'USD',normalized:86,shares:10,growth:.039,netCash:0,discountRate:.1,bondYield:.052} as Valuation;
 it('adds the valuation growth assumption to cash yield without using historical yield or terminal growth', () => {
@@ -34,13 +13,6 @@ it('adds the valuation growth assumption to cash yield without using historical 
  const capped=ownerReturn({...valuation,growth:.08},'USD',1000,100)!;
  expect(capped.growth).toBe(.08);
  expect(capped.expected).toBeCloseTo(.166);
-});
-
-it('compares the combined expected return with the bar in buy cards', () => {
- const row={...fixtures[0].row,c:'US',b:true,w:null,dataQualityFlags:[],ownerReturnInputs:{valuation,marketCapUsd:1000}} as unknown as IndexRow;
- const html=renderToStaticMarkup(createElement(BuyZone,{entries:[{row:browserRow(row,[100,"2026-09-30"]),quote:100,mos:.4}]}));
- expect(html).toContain('About 12.5% a year expected (8.6% cash + 3.9% growth) vs required return 10.0% a year (10% floor; US 10-year bond 5.2% + 4 points)');
- expect(html).not.toContain('Owner return 8.6% a year');
 });
 
 it('uses the same return sentence in dossiers and buy cards', () => {
@@ -61,7 +33,7 @@ it('shows the actual required return above the floor',()=>{
  expect(requiredReturnCopy({...valuation,discountRate:.12,bondYield:.08},'BR')).toBe('required return 12.0% a year (BR 10-year bond 8.0% + 4 points)');
 });
 
-import { tileMetric, tileReason, tileSentence } from '@/lib/value/tile-metric';
+import { tileMetric,tileReason,tileSentence } from '@/lib/value/tile-metric';
 import type { TestOutcome } from '@/lib/value/types';
 const volatileMargins:TestOutcome={key:'understandable',result:'fail',numeric:'fail',metrics:{opMarginCv:9.36},series:{operatingMargin:[[2016,null],[2017,.1],[2018,.12],[2019,.11],[2020,-.65],[2021,-.03],[2022,.06],[2023,.1],[2024,.11],[2025,.1]]},reasons:['operating margin variation too high'],jev:[]};
 it('plots actual operating margins over available fiscal years, including losses',()=>{

@@ -1,4 +1,4 @@
-import {test,expect} from '@playwright/test';
+import { expect,test } from '@playwright/test';
 test.skip(process.env.VALUE_LIVE_QA!=='1','Needs live published data.');
 test('long filters search, count, navigate, escape and recover from no matches',async({page})=>{
  await page.goto('/',{waitUntil:'networkidle'});
@@ -30,20 +30,6 @@ for(const [width,height] of sizes)test(`type floor and one-screen layout at ${wi
   expect(await smallText(page),route).toEqual([]);await expect(page.locator('select')).toHaveCount(0);
  }expect(errors).toEqual([]);
 });
-test('live ranking and colours remain restrained in both market scopes',async({page})=>{
- for(const width of [1728,390]){await page.setViewportSize({width,height:width===390?844:970});
- for(const route of ['/','/?markets=all']){
-  await page.goto(route,{waitUntil:'networkidle'});const tiles=page.locator('.buy-tile'),count=await tiles.count();
-  await expect(page.locator('.buy-tile[data-priority=true]')).toHaveCount(count?1:0);
-  const ranks=await tiles.evaluateAll(es=>es.map(e=>Number(e.getAttribute('data-rank'))));expect(ranks).toEqual(Array.from({length:count},(_,i)=>i+1));
-  const returns=(await tiles.locator('.buy-return-compact b').allTextContents()).map(Number.parseFloat).filter(Number.isFinite);expect(returns).toEqual([...returns].sort((a,b)=>b-a));
-  expect(await smallText(page)).toEqual([]);
-  const contrast=await page.locator('.company-tile,.buy-tile').evaluateAll(es=>{
-   const lum=(c:string)=>{const n=c.match(/[\d.]+/g)!.slice(0,3).map(Number).map(n=>n/255).map(n=>n<=.04045?n/12.92:((n+.055)/1.055)**2.4);return n[0]*.2126+n[1]*.7152+n[2]*.0722;};
-   return es.flatMap(e=>{const bg=lum(getComputedStyle(e).backgroundColor);return [...e.querySelectorAll('strong,.map-price,.map-verdict,.buy-return-compact b,.buy-return-compact span,.buy-verdict')].flatMap(t=>{const fg=lum(getComputedStyle(t).color),ratio=(Math.max(bg,fg)+.05)/(Math.min(bg,fg)+.05);return ratio<4.5?[`${t.textContent}: ${ratio}`]:[];});});
-  });expect(contrast).toEqual([]);
- }}
-});
 test('method, evidence, search and missing-company recovery retain readable type',async({page})=>{
  for(const width of [390,1728]){await page.setViewportSize({width,height:width===390?844:970});
  await page.goto('/method',{waitUntil:'networkidle'});expect(await smallText(page)).toEqual([]);
@@ -57,9 +43,6 @@ test('method, evidence, search and missing-company recovery retain readable type
 test('phone filters support search and escape without dismissing their panel',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.goto('/',{waitUntil:'networkidle'});await page.getByRole('button',{name:/Filter companies/}).click();
  await page.getByRole('combobox',{name:'Country',exact:true}).click();const input=page.getByRole('combobox',{name:'Search Country'});await input.fill('japan');await expect(page.getByRole('option')).toHaveCount(1);await input.press('Escape');await expect(page.getByRole('dialog')).toBeVisible();await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).toHaveCount(0);
-});
-test('short sort menu stays simple and supports keyboard selection',async({page})=>{
- await page.goto('/',{waitUntil:'networkidle'});const sort=page.getByRole('combobox',{name:'Sort',exact:true});await sort.click();await expect(page.locator('.search-options input')).toHaveCount(0);await expect(page.getByRole('option')).toHaveCount(2);await sort.press('End');await sort.press('Enter');await expect(page.locator('.company-treemap')).toHaveAttribute('data-sort','closest');
 });
 test('company list keeps the type floor and exposes names through search',async({page})=>{
  await page.goto('/',{waitUntil:'networkidle'});await page.getByRole('button',{name:/^Show all \d+/}).click();await expect(page.getByTestId('results-table')).toBeVisible();expect(await smallText(page)).toEqual([]);

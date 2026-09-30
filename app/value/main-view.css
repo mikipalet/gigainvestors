@@ -1,0 +1,81 @@
+/* One index: opportunities, distance to buy price, and compact larger companies. */
+.main-view {flex:1;min-height:0;display:grid;grid-template-columns:minmax(300px,1fr) minmax(0,3fr) var(--rest-width,240px);grid-template-rows:minmax(0,1fr);gap:24px;margin:20px 24px 0;font-size:14px;}
+.main-view>section {min-width:0;min-height:0;}
+.main-few-buys {grid-template-columns:fit-content(280px) minmax(0,1fr) var(--rest-width,240px);}
+.main-few-buys .main-buys {min-width:220px;max-width:280px;}
+.main-zone-heading {display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-height:44px;}
+.value-page .main-zone-heading h2 {font-size:20px;letter-spacing:-.4px;font-weight:600;white-space:nowrap;}
+.main-zone-heading h2 span {font-size:14px;font-weight:400;color:var(--viz-muted);margin-left:5px;}
+.main-zone-heading>span {font-size:14px;color:var(--viz-muted);text-align:right;}
+.main-few-buys .main-buys .main-zone-heading {flex-wrap:wrap;gap:0 12px;}
+.main-next,.main-rest {border-left:1px solid var(--viz-grid);padding-left:24px;}
+.main-company {color:var(--ink);text-decoration:none;display:grid;align-items:center;min-width:0;gap:9px;border-bottom:1px solid var(--viz-grid);}
+.value-page .main-company:hover {text-decoration:none;background:#eaeae2;}
+.main-company:focus-visible,.main-band-title:focus-visible {outline:2px solid var(--ink);outline-offset:2px;}
+.main-company .company-logo,.main-logo-item .company-logo {width:26px;height:26px;padding:0;margin:0;flex-shrink:0;background:white;border:0;border-radius:4px;}
+.main-company .company-logo img,.main-logo-item .company-logo img {width:100%;height:100%;object-fit:contain;}
+.main-company .company-logo-empty {width:26px;}
+.main-name {line-height:17px;overflow-wrap:break-word;}
+.main-return {font-size:16px;font-weight:500;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.main-buy-row {grid-template-columns:26px minmax(0,1fr) 58px;min-height:44px;padding:5px 6px;font-size:15px;}
+.main-buy-row[data-priority=true],.value-page .main-buy-row[data-priority=true]:hover {background:#123d2b;color:#fff;border-color:transparent;border-radius:3px;}
+.main-buy-row[data-priority=true] .main-return {font-weight:650;}
+.main-next-columns {display:grid;gap:24px;}
+.main-next-row {grid-template-columns:22px minmax(0,1fr) 70px 54px;gap:6px;grid-template-rows:1fr 5px;height:48px;row-gap:2px;padding:3px 0 4px;}
+.main-next-row .company-logo,.main-next-row .company-logo-empty {width:22px;height:22px;grid-row:1 / 3;}
+.main-next-row .main-name {grid-column:2 / 4;grid-row:1;padding-right:4px;}
+.main-next-row .main-distance-bar {grid-column:2;grid-row:2;}
+.main-next-row .main-distance {grid-column:3 / 5;grid-row:2;font-size:14px;line-height:14px;transform:translateY(-2px);}
+.main-next-row .main-return {grid-column:4;grid-row:1;font-size:14px;}
+.main-distance {font-size:14px;white-space:nowrap;text-align:right;}
+.main-distance-bar {position:relative;display:block;height:5px;background:#e4e4db;}
+.main-distance-bar i {position:absolute;left:40%;top:-2px;bottom:-2px;width:1px;background:#acafa3;}
+.main-distance-bar b {position:absolute;left:0;top:0;height:5px;background:#8e9987;}
+.main-distance-bar em {position:absolute;top:-2px;width:2px;height:9px;background:var(--ink);transform:translateX(-1px);}
+.main-distance-axis {height:24px;position:relative;margin-left:28px;margin-right:136px;font-size:14px;color:var(--viz-muted);}
+.main-distance-axis span {position:absolute;top:0;white-space:nowrap;}
+.main-distance-axis span:first-child {left:0;}
+.main-distance-axis span:last-child {right:0;}
+.main-more {font-size:14px;border-bottom:1px solid var(--ink);margin-top:12px;line-height:20px;}
+.main-rest-band {padding:16px 0 20px;border-bottom:1px solid var(--viz-grid);}
+.main-rest-band:first-of-type {padding-top:0;}
+.main-band-title {width:100%;display:flex;justify-content:space-between;gap:12px;text-align:left;line-height:24px;font-size:14px;}
+.main-band-title strong {font-weight:500;white-space:nowrap;}
+.main-band-title strong span {color:var(--viz-muted);}
+.main-logo-strip {display:flex;flex-wrap:wrap;gap:9px;height:28px;overflow:hidden;margin-top:12px;}
+.main-logo-item {flex:0 0 26px;width:26px;height:26px;}
+.main-logo-item:has(.company-logo-empty) {display:none;}
+.main-no-buys {grid-template-columns:minmax(0,1fr) var(--rest-width,240px);grid-template-rows:24px minmax(0,1fr);row-gap:14px;}
+.main-no-buys .main-buys {grid-column:1 / -1;max-width:none;}
+.main-no-buys .main-next {padding:0;border:0;}
+.main-empty-buy,.main-empty {font-size:14px;margin:0;}
+.main-empty {margin-top:20px;color:var(--viz-muted);}
+.main-list-heading {display:flex;justify-content:space-between;gap:20px;font-size:14px;padding:12px 0;}
+.main-list-row {grid-template-columns:26px minmax(150px,1fr) 100px 120px 65px;min-height:48px;}
+.main-list-row .main-return {font-size:14px;}
+.main-full-list .paged-items,.main-full-list .paged-items>div {gap:0;}
+@media(max-width:767px){
+ .main-view {display:flex;flex-direction:column;gap:16px;margin:10px 14px 0;}
+ .main-view>section {flex-shrink:0;}
+ .main-few-buys .main-buys {min-width:0;max-width:none;}
+ .main-next,.main-rest {border:0;padding:0;}
+ .main-zone-heading {min-height:28px;gap:8px;}
+ .value-page .main-zone-heading h2 {font-size:17px;letter-spacing:-.2px;}
+ .main-buy-row {grid-template-columns:22px minmax(0,1fr) 54px;min-height:32px;padding:4px 5px;gap:6px;font-size:14px;}
+ .main-company .company-logo {width:22px;height:22px;}
+ .main-return {font-size:14px;line-height:17px;}
+ .main-next-row {height:42px;}
+ .main-next-columns {gap:0;}
+ .main-distance-axis {height:22px;}
+ .main-more {margin-top:8px;line-height:18px;}
+ .main-rest {margin-top:auto;}
+ .main-rest-band {padding:4px 0;display:grid;grid-template-columns:190px minmax(0,1fr);gap:12px;align-items:center;}
+ .main-rest-band:first-of-type {padding-top:4px;}
+ .main-band-title {line-height:24px;}
+ .main-logo-strip {height:22px;gap:6px;margin:0;}
+ .main-logo-item {width:22px;height:22px;flex-basis:22px;}
+ .main-logo-item .company-logo {width:22px;height:22px;}
+ .main-list-row {grid-template-columns:22px minmax(0,1fr) 80px 53px;gap:6px;min-height:56px;}
+ .main-list-row .main-distance-bar {display:none;}
+ .main-list-row .main-distance {white-space:normal;}
+}

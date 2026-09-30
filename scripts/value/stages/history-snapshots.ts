@@ -1,19 +1,19 @@
-import { availableHistoryYears } from '../../../lib/value/time-travel';
-import { bestWesternListing } from "../../../lib/value/western";
-import { westernHistory } from "../../../lib/value/western-history";
-import { existsSync, readdirSync } from 'node:fs';
-import { gzipSync } from 'node:zlib';
 import { randomUUID } from 'node:crypto';
-import { corpusPath, readCorpusJson } from '../../../lib/value/corpus';
+import { existsSync,readdirSync } from 'node:fs';
+import { gzipSync } from 'node:zlib';
 import { loadCompanies } from '../../../lib/value/companies';
-import { createUsdRate } from '../../../lib/value/fx';
+import { corpusPath,readCorpusJson } from '../../../lib/value/corpus';
 import { sameCurrency } from '../../../lib/value/currency';
+import { writeNewJson } from '../../../lib/value/enrichment';
+import { createUsdRate } from '../../../lib/value/fx';
+import { annualReportDocuments,type DocumentDay } from '../../../lib/value/japan/edinet';
 import { readPrices } from '../../../lib/value/price-files';
 import { readPriceHistory } from '../../../lib/value/price-history';
-import { annualReportDocuments, type DocumentDay } from '../../../lib/value/japan/edinet';
-import { snapshotForYear, summarizeSnapshots, HISTORY_ASSUMPTIONS, HISTORY_CAVEATS } from '../../../lib/value/snapshots';
-import { writeNewJson } from '../../../lib/value/enrichment';
-import type { Fundamentals, HistoryIndex, SnapshotRow, ReportMeta, PriceMap, IndexRow } from '../../../lib/value/types';
+import { HISTORY_ASSUMPTIONS,HISTORY_CAVEATS,snapshotForYear,summarizeSnapshots } from '../../../lib/value/snapshots';
+import { availableHistoryYears } from '../../../lib/value/time-travel';
+import type { Fundamentals,HistoryIndex,IndexRow,PriceMap,ReportMeta,SnapshotRow } from '../../../lib/value/types';
+import { bestWesternListing } from "../../../lib/value/western";
+import { westernHistory } from "../../../lib/value/western-history";
 
 type RawFilings = { Financials?: Record<string,{ yearly?: Record<string,{ filing_date?: string }> }> };
 export function filingDates(raw: RawFilings | null, report: ReportMeta | null, edinet: Record<string,string> = {}): Record<string,string> {
@@ -63,7 +63,7 @@ export function latestHistoryFiles(companies = loadCompanies({})): Record<string
 }
 
 /** Read-only inputs. Every run gets a NEW directory; index.json marks completion. */
-export default async function historySnapshots(options: { only?:string[]; limit?:number } = {}) {
+export default async function historySnapshots(options: { only?:string[]; limit?:number; memoryOnly?:boolean } = {}) {
   const companies = loadCompanies(options), asOf = new Date().toISOString().slice(0,10);
   const root = `history-v7/${new Date().toISOString().replace(/[^\dT]/g,'')}-${randomUUID().slice(0,8)}`;
   const bonds = readCorpusJson<Record<string,{yield:number|null}>>('bonds.json') ?? {};
@@ -116,12 +116,12 @@ export default async function historySnapshots(options: { only?:string[]; limit?
     index.perYear[year]=summarizeSnapshots(rows);
     const text=JSON.stringify(rows)+'\n';
     sizes[year]={bytes:Buffer.byteLength(text),gzipBytes:gzipSync(text).byteLength,returns:rows.filter(r=>r[4]!==null).length};
-    writeNewJson(`${root}/${year}.json`,rows);
+    if(!options.memoryOnly)writeNewJson(`${root}/${year}.json`,rows);
   }
   const report={root,companies:companies.length,fundamentals:fundamentalsCount,coverage,sizes,candidateCounts:Object.fromEntries(Object.entries(years).map(([y,rows])=>[y,rows.length]))};
-  writeNewJson(`${root}/report.json`,report);
+  if(!options.memoryOnly)writeNewJson(`${root}/report.json`,report);
   index.western = westernHistory(index, years, new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id))).western;
-  writeNewJson(`${root}/index.json`,index);
+  if(!options.memoryOnly)writeNewJson(`${root}/index.json`,index);
   console.log(`history: ${JSON.stringify({ ...report,perYear:index.perYear })}`);
-  return {index,report};
+  return {index,report,years};
 }

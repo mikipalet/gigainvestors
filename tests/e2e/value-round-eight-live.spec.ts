@@ -1,16 +1,5 @@
 import { expect,test } from '@playwright/test';
 test.skip(process.env.VALUE_LIVE_QA!=='1','Run against the production build with VALUE_LIVE_QA=1 and VALUE_SITE_HOST=localhost.');
-test('live home puts every published buy first, explains the track record and exposes all companies',async({page})=>{
- await page.setViewportSize({width:1728,height:970});await page.goto('/',{waitUntil:'networkidle'});
- const buys=await page.locator('.one-index').getAttribute('data-buy-count');
- await expect(page.locator('.buy-tile')).toHaveCount(Number(buys));
- await expect(page.locator('.buy-tile').first()).toContainText('a year expected');
- await expect(page.locator('.track-record')).toContainText(/median.*vs.*of.*years/);
- await expect(page.getByRole('button',{name:/\+\d+ more/})).toHaveCount(0);
- const show=page.getByRole('button',{name:/^Show all \d+/});
- const total=Number((await show.textContent())!.match(/\d+/)![0]);await show.click();
- await expect(page.getByTestId('results-table')).toHaveAttribute('aria-rowcount',String(total+1));
-});
 test('live dossier verdicts distinguish buy, wait and failed quality',async({page})=>{
  for(const [id,verdict] of [['ko.us','Wait for a better price'],['infy.us','Buy zone'],['dal.us','Fails quality']]){
   await page.goto('/'+id,{waitUntil:'networkidle'});await expect(page.locator('.plain-verdict')).toHaveText(verdict);
@@ -58,18 +47,4 @@ test('round nine separates five business tests from price and explains the good 
  await expect(page.locator('.verdict-explanation')).toContainText('A lower price would not fix the business');
  await expect(page.locator('.price-condition')).toContainText('Price would need to drop');
  await expect(page.locator('.price-condition')).toContainText('not a forecast');
-});
-test('round nine buy cards show quote, currency, country and listing access',async({page})=>{
- await page.setViewportSize({width:1728,height:970});await page.goto('/',{waitUntil:'networkidle'});
- const infy=page.locator('.buy-tile').filter({hasText:'Infosys'});
- await expect(infy.locator('.buy-quote')).toContainText(/USD [\d.]+ · US/);
- await expect(infy.locator('.buy-listing')).toContainText('NYSE');
- await expect(page.locator('.buy-listing').filter({hasText:'A-shares'}).first()).toBeVisible();
- await expect(page.locator('.buy-listing').filter({hasText:'Tokyo'}).first()).toBeVisible();
- await expect(page.locator('.time-note')).toContainText('Time travel');
- await expect(page.locator('.index-story .value-definition')).toBeVisible();
- for(const tile of await page.locator('.company-tile').all()){
-  await expect(tile.locator('strong')).not.toBeEmpty();
-  await expect(tile.locator('.map-price')).toContainText(/buy price|too high|unavailable/);
- }
 });

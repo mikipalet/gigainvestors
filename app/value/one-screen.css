@@ -13,19 +13,6 @@
 .mobile-filter-button {display:none;}
 .table-toggle {font-weight:600;}
 .map-error {padding:4px 24px;font-size:13px;color:var(--sell);}
-.map-stage {flex:1;min-height:0;position:relative;}
-.company-map {position:absolute;inset:0;margin:0;}
-.company-map > figcaption {position:absolute;top:18px;left:70px;z-index:1;}
-.company-map h1 {font-size:24px;letter-spacing:-.7px;}
-.company-map figcaption p {font-size:13px;color:var(--viz-muted);margin-top:5px;}
-.company-map svg {overflow:hidden;}
-.company-map > svg {height:100%;box-sizing:border-box;}
-.company-map svg text {font-size:13px;}
-.company-map .map-company-label {paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round;font-size:13px;}
-.company-map .map-zone-label {fill:var(--buy);font-size:13px;}
-.map-key {position:absolute;bottom:4px;left:70px;font-size:13px;color:var(--viz-muted);line-height:1.5;}
-.map-tooltip {position:absolute;bottom:12px;left:70px;z-index:2;background:var(--paper);border:1px solid var(--ink);padding:12px 36px 12px 14px;display:flex;flex-direction:column;gap:4px;box-shadow:0 3px 20px #1111;font-size:13px;}
-.map-tooltip button {position:absolute;right:10px;top:8px;}
 .one-index .funnel {margin:0;border-top:1px solid var(--viz-grid);padding:0 24px;height:90px;min-height:90px;}
 .one-index .funnel figcaption {display:none;}
 .one-index .funnel > div {display:grid;grid-template-columns:repeat(7,minmax(0,1fr));height:100%;gap:0;}
@@ -57,7 +44,6 @@
 .compact-value b {font-weight:500;}
 .compact-track {height:26px;position:relative;margin:8px 0 4px;background:linear-gradient(transparent 12px,var(--viz-grid) 12px,var(--viz-grid) 13px,transparent 13px);}
 .compact-track i {position:absolute;top:0;height:26px;display:block;}
-.compact-track .buy-zone {background:var(--viz-buy-tint);}
 .compact-track .value-range {background:var(--viz-muted);height:10px;top:8px;opacity:.55;}
 .compact-track .mid-mark {width:2px;background:var(--ink);height:18px;top:4px;}
 .compact-track .buy-mark {width:1px;background:var(--buy);}
@@ -127,9 +113,6 @@
  .value-bottom > span:last-child {text-align:right;}
  .map-toolbar {min-height:44px;padding:7px 14px;gap:12px;flex-wrap:wrap;font-size:13px;}
  .desktop-filters {display:none;}.mobile-filter-button {display:block;}
- .company-map > figcaption {left:43px;top:16px;}.company-map h1 {font-size:22px;}
- .company-map svg text {font-size:13px;}.company-map .map-company-label {font-size:13px;}
- .map-tooltip {left:14px;right:14px;bottom:12px;font-size:13px;}.map-key {left:43px;bottom:7px;}
  .one-index .funnel {padding:0 8px;height:110px;min-height:110px;}
  .one-index .funnel button {padding:9px 4px;}.one-index .funnel button > span {font-size:13px;overflow-wrap:anywhere;}.one-index .funnel strong {font-size:15px;}.one-index .funnel-drop small {font-size:13px;}.one-index .funnel-drop {line-height:1.3;gap:2px;}
  .dossier-band {grid-template-columns:1fr;gap:10px;padding:12px 14px;min-height:0;}
@@ -203,10 +186,6 @@
 .tile-evidence {margin-top:6px;flex-shrink:0;}
 .map-toolbar {position:absolute;top:69px;right:24px;z-index:3;min-height:32px;border:0;padding:0;gap:12px;}
 .desktop-filters {gap:12px;}.map-count {display:none;}
-.company-map h1 {font-size:22px;max-width:560px;line-height:1.2;}
-.company-map > figcaption {top:18px;max-width:calc(100% - 110px);}
-.map-key {bottom:12px;font-size:13px;line-height:1.5;}
-.map-tooltip {top:75px;bottom:auto;left:auto;right:24px;font-size:13px;}
 .map-empty {position:absolute;top:42%;left:20%;right:10%;display:flex;flex-direction:column;gap:12px;font-size:14px;z-index:1;background:var(--paper);padding:20px;}
 .one-index .funnel {height:74px;min-height:74px;padding:0;flex-shrink:0;}
 .one-index .funnel > div {grid-template-columns:repeat(7,minmax(0,1fr));grid-template-rows:1fr;}
@@ -227,7 +206,7 @@
 .virtual-results th:nth-child(4) {width:14%;}
 .virtual-results td {white-space:normal;overflow-wrap:anywhere;}
 .virtual-results th:nth-child(5) {width:20%;}
-@media(min-width:1100px) and (max-width:1550px){.company-map h1 {max-width:420px;font-size:21px;}.desktop-filters {gap:10px;}.map-toolbar select {max-width:118px;}.map-toolbar {font-size:13px;gap:10px;}}
+@media(min-width:1100px) and (max-width:1550px){.desktop-filters {gap:10px;}.map-toolbar select {max-width:118px;}.map-toolbar {font-size:13px;gap:10px;}}
 @media(min-width:768px) and (max-width:1099px){
  .desktop-filters {display:none;}.mobile-filter-button {display:block;}
  .dossier-band {grid-template-columns:1fr 1.2fr;gap:8px 22px;}
@@ -258,11 +237,6 @@
  .tile-evidence {display:none;}
  .dossier-source {height:30px;min-height:30px;font-size:13px;}
  .map-toolbar {top:63px;right:14px;padding:0;font-size:13px;gap:12px;}
- .company-map > figcaption {top:58px;max-width:calc(100% - 66px);}.company-map h1 {font-size:21px;max-width:310px;}
- .company-map figcaption p {font-size:13px;}.company-map .map-company-label {font-size:13px;}
- .map-key {left:43px;right:12px;bottom:8px;font-size:13px;}
- .map-tooltip {top:0;left:14px;right:14px;bottom:auto;padding:10px 30px 10px 12px;}
- .one-index:has(.map-tooltip) .map-toolbar,.company-map:has(.map-tooltip) > figcaption {visibility:hidden;}
  .one-index .funnel {height:65px;min-height:65px;}
  .one-index .funnel button {padding:7px 12px;}.one-index .funnel button > span {font-size:13px;}.one-index .funnel strong {font-size:22px;}
  .one-index .funnel > div {grid-template-columns:repeat(3,minmax(0,1fr));}
@@ -273,7 +247,6 @@
  .virtual-results td,.virtual-results th {padding:4px;}.virtual-results .table-ticker {display:none;}
 }
 .one-index .funnel button {min-height:0;}
-.company-map .map-company-label {fill:var(--ink);}.company-map .map-company-label[data-buy=true] {fill:var(--buy);}
 @media(max-width:767px){
  .value-band {grid-template-columns:110px minmax(0,1fr);}.value-band > div strong {white-space:nowrap;font-size:21px;letter-spacing:-.7px;}
  .one-identity .holders h2 {font-size:13px;}
@@ -282,11 +255,9 @@
  .test-tile > p:empty {display:none;}.test-tile > p {font-size:13px;line-height:1.2;margin-top:auto;}
  .mini-dollar figcaption {display:none;}.mini-dollar {margin:5px 0;}.mini-dollar > div {height:14px;}
  .mini-price figcaption {font-size:13px;gap:5px;}.mini-price svg {height:30px;}.mini-price > div {font-size:13px;}
- .company-map > figcaption {top:49px;}.company-map figcaption p {margin-top:7px;}
 }
-@media(max-width:767px){.mini-series svg {height:52px;}.map-key {font-size:13px;}.company-map .map-company-label {font-size:13px;}}
+@media(max-width:767px){.mini-series svg {height:52px;}}
 .one-index .funnel button {flex-wrap:nowrap;align-items:flex-start;}
 .one-index .funnel button > span {margin:0;}
-@media(max-width:767px){.map-key {bottom:5px;line-height:1.3;}.company-map .map-key {max-width:330px;}}
 .mini-dollar > div span {width:66px;flex-shrink:0;}
 @media(max-width:767px){.tile-number strong.long-number {font-size:21px;}.mini-dollar > div span {width:58px;}}

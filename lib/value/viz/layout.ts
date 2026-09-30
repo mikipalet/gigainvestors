@@ -1,6 +1,5 @@
 import type { Series } from '../types';
 
-export const clamp = (v: number) => Math.max(-1, Math.min(1, v));
 export function scale({ domain: [min, max], range: [start, end] }: { domain: [number, number]; range: [number, number] }) {
   return (value: number) => min === max ? (start + end) / 2 : start + (value - min) / (max - min) * (end - start);
 }
@@ -26,27 +25,11 @@ export function seriesPath({ series, x, y }: { series: Series; x: (v: number) =>
     return `${command}${x(fy).toFixed(2)},${y(value).toFixed(2)}`;
   }).join('');
 }
-export function beeswarm({ points, width, gap = 10 }: { points: { id: string; value: number }[]; width: number; gap?: number }) {
-  const placed: { id: string; value: number; x: number; y: number }[] = [];
-  for (const point of [...points].sort((a, b) => a.value - b.value || a.id.localeCompare(b.id))) {
-    const x = (clamp(point.value) + 1) / 2 * width;
-    const neighbors = placed.filter(p => Math.abs(p.x - x) < gap);
-    // Tangency candidates avoid the wasted space of a rectangular packing grid.
-    const candidates = [0, ...neighbors.flatMap(p => { const dy = Math.sqrt(gap ** 2 - (x - p.x) ** 2) + .001; return [p.y + dy, p.y - dy]; })].sort((a, b) => Math.abs(a) - Math.abs(b) || a - b);
-    const y = candidates.find(y => neighbors.every(p => Math.hypot(x - p.x, y - p.y) >= gap))!;
-    placed.push({ ...point, x, y });
-  }
-  return placed;
-}
 export function waterfallSteps(values: number[]) {
   let balance = 0;
   const steps = values.map((value, i) => { const start = i === 0 ? 0 : balance; balance += value; return { start, end: balance, value }; });
   return [...steps, { start: 0, end: balance, value: balance }];
 }
-export function funnelCounts(entries: { tests: string; b?: boolean }[]) {
-  return Array.from({ length: 7 }, (_, gate) => entries.filter(e => e.tests.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || e.b === true)).length);
-}
-
 // Round only the data end; the baseline remains square.
 export function dataBarPath({ x, y, width, height, direction }: { x: number; y: number; width: number; height: number; direction: 'right' | 'left' | 'up' | 'down' }) {
   const r = Math.min(4, width / 2, height / 2), right = x + width, bottom = y + height;

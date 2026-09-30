@@ -1,12 +1,11 @@
-import { describe, expect, it } from 'vitest';
-import { browserRow, historyView } from '@/lib/value/browser-view';
-import { publicAnalysis } from '@/lib/value/public-analysis';
-import { reconcileShares, edinetShareObservation } from '@/lib/value/share-check';
+import { cachedValueHits,primeValueSearch } from '@/lib/search/value-source';
+import { browserRow,historyView,unpackView,type BrowserPayload } from '@/lib/value/browser-view';
 import { publishedBuyPrice } from '@/lib/value/buy-price';
+import { publicAnalysis } from '@/lib/value/public-analysis';
 import { publishViews } from '@/lib/value/publish-views';
-import { unpackView, type BrowserPayload } from '@/lib/value/browser-view';
-import { cachedValueHits, primeValueSearch } from '@/lib/search/value-source';
-import type { Dossier, IndexRow } from '@/lib/value/types';
+import { edinetShareObservation,reconcileShares } from '@/lib/value/share-check';
+import type { Dossier,IndexRow } from '@/lib/value/types';
+import { describe,expect,it } from 'vitest';
 
 const row: IndexRow = {id:'KO.US',n:'Coca-Cola',c:'US',s:'Consumer',k:'operating',mc:100,v:[80,100,120],cur:'USD',t:'PPPPP',g:[],h:2,st:'s',w:'KO.US',b:true,lg:'https://eodhd.com/img/logos/US/KO.png'};
 describe('browser data contract', () => {
@@ -27,6 +26,10 @@ describe('browser data contract', () => {
   expect(compact.v).toBeNull();
   expect(compact.b).toBe(false);
   expect(JSON.stringify(compact)).not.toMatch(/dataQualityFlags|verification|ownerReturnInputs/);
+ });
+ it('retains historical price and discount for the main distance scale',()=>{
+  const price={price:90,buyPrice:50,discount:.5};
+  expect(historyView([['KO.US','PPPPP',.9,false,1,price]],[row])[0].historicalPrice).toEqual(price);
  });
  it('delivers complete historical identities and only the cohorts shown by the view', () => {
   const view=historyView([['KO.US','PPPPP',0.5,true,1],['FAIL.US','FFFFF',2,false,0]], [row]);

@@ -4,9 +4,5 @@
 .company-logo img {max-width:100%;max-height:100%;object-fit:contain;}
 .one-verdict .plain-verdict[data-verdict="Valuation unavailable"] {background:#e8e7df;color:var(--ink);}
 @media(max-width:767px) {
- .buy-grid > .buy-tile:nth-child(n+3) {display:none;}
  .one-index .simulation-line {white-space:normal;height:46px;min-height:46px;}
-}
-@media(min-width:768px) and (max-width:1099px), (min-width:768px) and (max-height:900px) {
- .buy-grid > .buy-tile:nth-child(n+5) {display:none;}
 }

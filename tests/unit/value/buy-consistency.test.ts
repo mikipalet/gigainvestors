@@ -1,13 +1,11 @@
-import { execFileSync } from 'node:child_process';
-import { createElement } from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
-import { readFileSync, readdirSync } from 'node:fs';
-import path from 'node:path';
-import { describe, expect, it } from 'vitest';
 import { buildOutput } from '@/lib/value/build-output';
-import { CompanyMap } from '@/components/value/viz/CompanyMap';
 import { assertIndexConsistency } from '@/lib/value/consistency';
-import type { Analysis, Dossier, IndexRow, PriceMap, StoreMeta } from '@/lib/value/types';
+import { mainCompanies,mainZones } from '@/lib/value/main-layout';
+import type { Analysis,Dossier,IndexRow,PriceMap,StoreMeta } from '@/lib/value/types';
+import { execFileSync } from 'node:child_process';
+import { readFileSync,readdirSync } from 'node:fs';
+import path from 'node:path';
+import { describe,expect,it } from 'vitest';
 
 const root = path.resolve('tests/fixtures/value/store');
 const dossiers = readdirSync(path.join(root, 'dossiers')).flatMap(file => Object.values(JSON.parse(readFileSync(path.join(root, 'dossiers', file), 'utf8')) as Record<string, Dossier>));
@@ -29,28 +27,28 @@ function snapshot() {
   prices['SEED.US'] = [60, '2026-09-29', 'seed'];
   return buildOutput({ analyses: rows, prices, holdersByTicker: {}, investorNames: {}, fx: {} }).files;
 }
-function greenDots(rows: IndexRow[], prices: PriceMap) {
-  return (renderToStaticMarkup(createElement(CompanyMap, { entries: rows.map(row => ({ row, quote: prices[row.id]?.[0] ?? null, mos: null })), onTable: () => {} })).match(/<a\b[^>]*data-buy="true"/g) ?? []).length;
+function buyCount(rows: IndexRow[], prices: PriceMap) {
+ return mainZones(mainCompanies(rows.map(row=>({row,quote:prices[row.id]?.[0]??null,mos:null})))).buy.length;
 }
 describe('published buy-price contract', () => {
-  it('uses own margin, quality, trading currency and review status for the same funnel, rows and green dots', () => {
+  it('uses own margin, quality, trading currency and review status for the same funnel, rows and main view buys', () => {
     const files = snapshot(), rows = files['index/default.json'] as IndexRow[], prices = files['prices/US.json'] as PriceMap;
     const count = (files['meta.json'] as StoreMeta).funnel!.gates[5].passing;
     expect(count).toBe(3);
     expect(rows.filter(r => r.b).map(r => r.id).sort()).toEqual(['BOUNDARY.US', 'BUY.US', 'SEED.US']);
     expect(rows.filter(r => r.b)).toHaveLength(count);
-    expect(greenDots(rows, prices)).toBe(count);
+    expect(buyCount(rows, prices)).toBe(count);
     expect(() => assertIndexConsistency({ meta: files['meta.json'] as StoreMeta, rows: rows.map(r => ({ ...r, b: false })) })).toThrow(/buy|price/i);
   });
   it('renders the published decision even if a newer quote crosses the line', () => {
     const files = snapshot(), rows = files['index/default.json'] as IndexRow[];
     const prices = files['prices/US.json'] as PriceMap;
     prices['BUY.US'] = [110, '2026-09-30'];
-    expect(greenDots(rows, prices)).toBe(3);
+    expect(buyCount(rows, prices)).toBe(3);
   });
   it('never invents buy decisions for legacy rows without b', () => {
     const files = snapshot();
-    expect(greenDots((files['index/default.json'] as IndexRow[]).map(({ b: _b, ...r }) => r), files['prices/US.json'] as PriceMap)).toBe(0);
+    expect(buyCount((files['index/default.json'] as IndexRow[]).map(({ b: _b, ...r }) => r), files['prices/US.json'] as PriceMap)).toBe(0);
   });
 });
 
@@ -76,7 +74,7 @@ it('refreshes the published flags and funnel in the same price snapshot', async 
     expect(meta.western?.story).toMatchObject({analysed:8,qualityPasses:7,atBuy:2});
     expect(meta.western?.funnel.byCountry.US.gates[5].passing).toBe(2);
     expect(rows.filter(r => r.b)).toHaveLength(2);
-    expect(greenDots(rows, prices)).toBe(2);
+    expect(buyCount(rows, prices)).toBe(2);
     expect(meta.funnel!.byCountry.US.gates[5].passing).toBe(2);
     expect(() => assertIndexConsistency({ rows, meta })).not.toThrow();
     expect(commitPrices({ repo, asOf: '2026-09-30' })).toBe(true);

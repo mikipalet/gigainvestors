@@ -1,12 +1,12 @@
-import { buyReturnInputs } from "./owner-return";
-import { T } from './config';
-import { checkIntegrity } from './integrity';
-import { runNumericTests } from './tests';
-import { valueCompany } from './valuation';
-import { earningsVolatility } from './history';
 import { publishedBuyPrice } from './buy-price';
+import { T } from './config';
 import { valuationFlags } from './data-quality';
-import { QUALITY_TESTS, type Company, type Fundamentals, type PriceHistory, type SnapshotRow, type HistorySummary } from './types';
+import { earningsVolatility } from './history';
+import { checkIntegrity } from './integrity';
+import { buyReturnInputs } from "./owner-return";
+import { runNumericTests } from './tests';
+import { QUALITY_TESTS,type Company,type Fundamentals,type HistorySummary,type PriceHistory,type SnapshotRow } from './types';
+import { valueCompany } from './valuation';
 
 export const HISTORY_CAVEATS = [
   'numbers-only checklist (no report reading)',
@@ -71,7 +71,7 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
   const pm = positive(price) && v && positive(v[1]) ? compact(price/v[1]) : null;
   const r = positive(price) && latestPrice && positive(latestPrice[0]) && latestPrice[1].slice(0,7) >= month && latestPrice[1] <= asOf
     ? compact(latestPrice[0]/price-1) : null;
-  return [company.id,t5,pm,buy.b,r];
+  return [company.id,t5,pm,buy.b,r,{discount:T.price.requiredMos[volatility],price,buyPrice:v&&positive(v[1])?v[1]*(1-T.price.requiredMos[volatility]):null}];
 }
 
 export function summarizeSnapshots(rows: SnapshotRow[]): HistorySummary {

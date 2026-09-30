@@ -1,20 +1,7 @@
-import { expect, test } from '@playwright/test';
+import { expect,test } from '@playwright/test';
 
 test.skip(!process.env.ITALY_RELEASE_QA, 'Run against the release-2 staging store.');
 for (const [width,height] of [[1728,970],[2056,1180],[390,844]]) {
-  test(`Italian search and Western access at ${width}x${height}`, async ({page}) => {
-    await page.setViewportSize({width,height});
-    await page.goto('/',{waitUntil:'networkidle'});
-    await expect(page.locator('.buy-tile[href="/amb.war"]')).toBeVisible();
-    await expect(page.locator('.buy-tile[href="/tghn.xetra"]')).toHaveCount(0);
-    for (const [query,id] of [['Ferrari','RACE.MI'],['ENI','ENI.MI']]) {
-      await page.evaluate(id=>window.dispatchEvent(new CustomEvent('open-search',{detail:id})),query);
-      const option=page.getByRole('option').filter({hasText:id});
-      await expect(option).toBeVisible();
-      await expect(option).not.toContainText('not easily buyable');
-      await page.keyboard.press('Escape');
-    }
-  });
   test(`Logwin return hurdle and Italian filing history at ${width}x${height}`,async ({page})=>{
     await page.setViewportSize({width,height});
     await page.goto('/tghn.xetra',{waitUntil:'networkidle'});

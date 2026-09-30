@@ -1,8 +1,8 @@
-import { ownerReturn, expectedReturnCopy, requiredReturnCopy } from './owner-return';
-import type { IndexRow, PriceMap } from './types';
+import { ownerReturn } from './owner-return';
 import type { SnapshotRow } from './time-travel';
+import type { IndexRow,PriceMap } from './types';
 
-export type BrowserRow = IndexRow & { quote: PriceMap[string] | null; expected?: number | null; returnCopy?: string; pm?: number | null; gain?: number | null };
+export type BrowserRow = IndexRow & { quote: PriceMap[string] | null; expected?: number | null; pm?: number | null; gain?: number | null; historicalPrice?: import('./time-travel').HistoricalPrice };
 export type ViewManifest = { current: string; years: Record<string, string> };
 export type BrowserPayload = { columns: Array<keyof BrowserRow>; rows: unknown[][] };
 /** Column names occur once; exact numerical values and every identity are retained. */
@@ -20,20 +20,20 @@ export function browserRow(row: IndexRow, quote: PriceMap[string] | null = null)
   const valuation = unavailable ? null : ownerReturnInputs?.valuation ?? null;
   const owner = ownerReturn(valuation, row.cur, ownerReturnInputs?.marketCapUsd ?? null, quote?.[0] ?? null);
   return {...rest, ...(unavailable ? {v:null,b:false,buyReturnInputs:null} : {}), quote,
-    ...(row.b && !unavailable ? {expected:owner?.expected??null, returnCopy:owner?expectedReturnCopy(owner,valuation,row.c):requiredReturnCopy(valuation,row.c)} : {}),
+    ...(!unavailable ? {expected:owner?.expected??null} : {}),
   };
 }
 
 /** The timeline displays quality passes and near misses, not every failed analysis. */
 export function historyView(snapshots: SnapshotRow[], identities: IndexRow[]): BrowserRow[] {
   const byId = new Map(identities.map(row => [row.id,row]));
-  return snapshots.filter(row => row[1]==='PPPPP' || /^P*FP*$/.test(row[1])).flatMap(([id,t,pm,b,gain]) => {
+  return snapshots.filter(row => row[1]==='PPPPP' || /^P*FP*$/.test(row[1])).flatMap(([id,t,pm,b,gain,historicalPrice]) => {
     const identity = byId.get(id);
     if (!identity) throw new Error(`Historical identity missing: ${id}`);
     const {n,c,s,k,mc,cur,w,lg,exchange,nameEn,nameLocal,h} = identity;
     // Presentation-only ratios: eight significant digits exceed the view's
     // one-decimal precision. Original research snapshots remain lossless.
     const shown=(value:number|null)=>value===null?null:Number(value.toPrecision(8));
-    return [{id,n,c,s,k,mc,cur,w,lg,exchange,...(nameEn&&nameEn!==n?{nameEn}:{}),...(nameLocal?{nameLocal}:{}),h,t,b,v:null,g:[],st:'s' as const,quote:null,pm:shown(pm),gain:shown(gain)}];
+    return [{id,n,c,s,k,mc,cur,w,lg,exchange,...(nameEn&&nameEn!==n?{nameEn}:{}),...(nameLocal?{nameLocal}:{}),h,t,b,v:null,g:[],st:'s' as const,quote:null,pm:shown(pm),gain:shown(gain),...(historicalPrice?{historicalPrice:{discount:historicalPrice.discount,price:shown(historicalPrice.price),buyPrice:shown(historicalPrice.buyPrice)}}:{})}];
   });
 }

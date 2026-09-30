@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect,test } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { valueFixtures } from './value-fixtures';
@@ -86,9 +86,6 @@ test('country and price failures remain visible and distinct',async({page})=>{
  await expect(page.getByRole('status')).toContainText('Some prices are unavailable');
  await page.route('**/main/index/US.json',r=>r.fulfill({status:503,body:'{}'}));await page.getByRole('combobox',{name:'Country',exact:true}).click();await page.getByRole('option',{name:'United States',exact:true}).click();await expect(page.getByRole('status')).toContainText('Could not load this country');
 });
-test('map company names are focusable and navigate to dossiers',async({page})=>{
- await page.goto('/value',{waitUntil:'networkidle'});const point=page.locator('.company-tile').first();await expect(point).toBeVisible();const destination=await point.getAttribute('href');await point.focus();await expect(page.getByRole('tooltip')).toBeVisible();await page.keyboard.press('Enter');await expect(page).toHaveURL(new RegExp(destination!.replaceAll('.','\\.')+'$'));
-});
 test('search aliases, pending company and main-site shortcut',async({page})=>{
  await page.goto('/value',{waitUntil:'networkidle'});
  for(const [query,code] of [['coca','KO.US'],['tsm','TSM.US'],['nestle','NESN.SW'],['0700','0700.HK']]){
@@ -106,24 +103,4 @@ test('subdomain rewrites, canonical redirects, robots, sitemap and genuine 404',
  for(const host of ['value.gigainvestors.com','gigainvestors.com']){const r=await request.get('/robots.txt',{headers:{host}});expect(await r.text()).toContain(`Sitemap: https://${host}/sitemap.xml`);}
  const sitemap=await request.get('/sitemap.xml',{headers:{host:'value.gigainvestors.com'}});expect(await sitemap.text()).toContain('https://value.gigainvestors.com/ko.us');
  for(const id of ['nope.us','bad','a'.repeat(25)+'.us'])expect((await request.get(`/value/${id}`)).status()).toBe(404);
-});
-
-test('one snapshot has the same funnel price count, published flags and green dots', async ({ page }) => {
- const meta = JSON.parse(await readFile(path.join(root, 'meta.json'), 'utf8'));
- const rows = JSON.parse(await readFile(path.join(root, 'index/default.json'), 'utf8'));
- const count = meta.funnel.gates.find((g: { key: string }) => g.key === 'price').passing;
- expect(count).toBe(5);
- expect(rows.filter((r: { b?: boolean }) => r.b === true)).toHaveLength(count);
- await page.goto('/value', { waitUntil: 'networkidle' });
- await expect(page.locator('.one-index')).toHaveAttribute('data-buy-count', String(count));
- await expect(page.locator('.buy-tile[data-buy="true"]')).toHaveCount(count);
- await page.getByRole('switch', { name: /Near misses/ }).click();
- await expect(page.locator('.buy-tile[data-buy="true"]')).toHaveCount(count);
- // A separately refreshed quote may move a point; only publication can change its verdict.
- const prices = JSON.parse(await readFile(path.join(root, 'prices/US.json'), 'utf8'));
- prices['KO.US'][0] *= 2;
- await page.route('**/main/prices/US.json', r => r.fulfill({ json: prices }));
- await page.reload({ waitUntil: 'networkidle' });
- await expect(page.locator('.buy-tile[data-buy="true"]')).toHaveCount(count);
- await expect(page.locator('.buy-tile[href$="/ko.us"]')).toHaveAttribute('data-buy', 'true');
 });

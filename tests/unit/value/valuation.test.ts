@@ -18,10 +18,10 @@ describe("discounted owner earnings", () => {
   it("values a flat 100 owner earnings business", () => {
     const result = value();
     expect(result.reason).toBeNull();
-    expect(result.valuation).toMatchObject({ method: "owner_earnings", normalized: 100, growth: 0, discountRate: 0.08, netCash: 0, shares: 10, equityBondYield: 0.05 });
-    expect(result.valuation!.perShare.low).toBeCloseTo(144.4348, 4);
-    expect(result.valuation!.perShare.mid).toBeCloseTo(172.4806, 4);
-    expect(result.valuation!.perShare.high).toBeCloseTo(214.4947, 4);
+    expect(result.valuation).toMatchObject({ method: "owner_earnings", normalized: 100, growth: 0, discountRate: 0.10, netCash: 0, shares: 10, equityBondYield: 0.05 });
+    expect(result.valuation!.perShare.low).toBeCloseTo(109.3025, 4);
+    expect(result.valuation!.perShare.mid).toBeCloseTo(124.3729, 4);
+    expect(result.valuation!.perShare.high).toBeCloseTo(144.4348, 4);
   });
   it("rejects negative owner earnings", () => {
     expect(value(makeYears({ overrides: { netIncome: -100 } }))).toEqual({ valuation: null, reason: "owner earnings not positive" });
@@ -44,15 +44,15 @@ describe("discounted owner earnings", () => {
   it("records the missing SBC assumption", () => {
     const result = valueCompany({ years: makeYears({ overrides: { sbc: null } }), kind: "operating", bondYield: 0.04, cyclical: false });
     expect(result.valuation!.assumptions).toContain("stock compensation not reported");
-    expect(result.valuation!.discountRate).toBe(0.08);
+    expect(result.valuation!.discountRate).toBe(0.10);
   });
-  it("uses the bond yield plus spread without a discount floor", () => {
+  it("uses the bond yield plus spread when higher than the 10% floor", () => {
     const result = valueCompany({ years: makeYears(), kind: "operating", bondYield: 0.08, cyclical: false, currency: "JPY" });
     expect(result.valuation!.discountRate).toBeCloseTo(0.12);
     expect(result.valuation!.currency).toBe("JPY");
   });
   it("adds net cash after discounting and before dividing by shares", () => {
-    expect(value(makeYears({ overrides: { cash: 200 } })).valuation!.perShare.mid).toBeCloseTo(182.4806, 4);
+    expect(value(makeYears({ overrides: { cash: 200 } })).valuation!.perShare.mid).toBeCloseTo(134.3729, 4);
   });
   it("caps positive growth at eight percent", () => {
     const years = makeYears({ overrides: (_, i) => ({ revenue: 1000 * 1.2 ** i, netIncome: 100 * 1.2 ** i, operatingIncome: 125 * 1.2 ** i, preTaxIncome: 125 * 1.2 ** i, taxExpense: 25 * 1.2 ** i, capex: 60 * 1.2 ** i, da: 0, ppe: 0 }) });
@@ -76,7 +76,9 @@ describe("financial company valuation", () => {
   it.each(["bank", "insurer"] as const)("uses justified book value for %s", kind => {
     const result = valueCompany({ years: makeYears({ overrides: { netIncome: 70 } }), kind, bondYield: 0.04, cyclical: false });
     expect(result.valuation).toMatchObject({ method: "book_value", normalized: 50, growth: 0 });
-    expect(result.valuation!.perShare).toEqual({ low: 77.77777777777779, mid: 87.50000000000001, high: 100 });
+    expect(result.valuation!.perShare.low).toBeCloseTo(63.6363636364);
+    expect(result.valuation!.perShare.mid).toBeCloseTo(70);
+    expect(result.valuation!.perShare.high).toBeCloseTo(77.7777777778);
   });
   it("rejects nonpositive equity", () => {
     expect(valueCompany({ years: makeYears({ overrides: { equity: 0 } }), kind: "bank", bondYield: 0.04, cyclical: false })).toEqual({ valuation: null, reason: "book value not positive" });

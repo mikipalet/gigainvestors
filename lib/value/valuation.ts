@@ -66,7 +66,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
     && Math.max(currentShares / latest.dilutedShares, latest.dilutedShares / currentShares) > 1.5 || postSplit;
   const shares = corrected ? currentShares : latest.dilutedShares;
   if (bondYield === null || !Number.isFinite(bondYield)) return { valuation: null, reason: "local government bond yield unavailable" };
-  const discountRate = bondYield + T.valuation.bondSpread;
+  const discountRate = Math.max(T.valuation.minDiscount, bondYield + T.valuation.bondSpread);
   const assumptions: string[] = [...shareAssumptions];
   if (latest.edinetShares) assumptions.push(latest.edinetShares.reason);
   if (postSplit) assumptions.push('share count adjusted for post-year split/bonus');

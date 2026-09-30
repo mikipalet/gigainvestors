@@ -18,7 +18,7 @@ it.each(["bank", "insurer"] as const)("C2 uses tangible equity for %s returns an
   expect(result.metrics.roeSecondLowest).toBeCloseTo(0.19);
   const valuation = valueCompany({ years, kind, bondYield: 0.04, cyclical: false }).valuation!;
   expect(valuation.normalized).toBe(50);
-  expect(valuation.perShare.mid).toBeCloseTo(118.75);
+  expect(valuation.perShare.mid).toBeCloseTo(95);
   expect(valuation.assumptions.join(" ")).toMatch(/tangible/i);
 });
 

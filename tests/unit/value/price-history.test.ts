@@ -143,6 +143,8 @@ it.each([
 
 it.each([
   ['BRK.B', 'US', 'BRK-B'], ['ENI', 'MI', 'ENI.MI'], ['AIR', 'NZ', 'AIR.NZ'],
+  ['SM', 'PSE', 'SM.PS'], ['TLV', 'RO', 'TLV.RO'], ['OTP', 'BUD', 'OTP.BD'],
+  ['COP', 'HM', 'COP.HM'], ['GGAL', 'BA', 'GGAL.BA'], ['CEZ', 'PR', 'CEZ.PR'], ['TW10', 'F', 'TW10.F'],
   ['7203', 'JP', '7203.T'], ['BHP', 'AU', 'BHP.AX'], ['005930', 'KO', '005930.KS'],
 ])('C7 maps %s on %s to Yahoo %s', (code, exchange, want) => {
   expect(yahooSymbol({code, exchange})).toBe(want);

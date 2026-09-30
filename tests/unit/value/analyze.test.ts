@@ -586,6 +586,7 @@ it('revalues on a 0.1pp yield bucket change, but skips noise in the same bucket'
  rate=.0411;await analyze(options);
  const next=readCorpusJson<Analysis>('analysis/KO.US.json')!.valuation!;
  expect(next.bondYield).toBe(.0411);
- expect(next.perShare.mid).toBeLessThan(first.perShare.mid);
+ expect(next.discountRate).toBe(.1);
+ expect(next.perShare.mid).toBe(first.perShare.mid);
  expect(evidenceCalls).toBe(initialEvidenceCalls);
 });

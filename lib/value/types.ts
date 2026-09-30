@@ -1,3 +1,4 @@
+import type { HistoricalPrice } from './time-travel';
 export type Id = string; // EODHD style "KO.US", "ASML.AS", "0700.HK"; Japan "8058.JP"
 export type Kind = "operating" | "bank" | "insurer" | "financial";
 export type Result = "pass" | "fail" | "unclear" | "na";
@@ -205,6 +206,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  quality?: import('./quality-metric').QualityMetric;
   shareSources?: 2;
   historyYears?: number;
   buyReturnInputs?: { cashPerShare: number; growth: number; requiredReturn: number } | null;
@@ -289,7 +291,7 @@ export interface SearchShard {
 }
 
 /** Code-only annual snapshot; r is a cumulative price-return ratio, not a percent. */
-export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: import('./time-travel').HistoricalPrice];
+export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric];
 export interface HistorySummary {
   analysed: number;
   qualityPasses: number;

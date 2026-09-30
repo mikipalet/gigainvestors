@@ -32,7 +32,7 @@ export function returnDisplay({value, years, unlimited = false, financial = fals
   if (value > 1 && !financial) return {label:'> 100% †', note:`Exact return ${(value*100).toFixed(1)}%; a small tangible-capital denominator makes this percentage sensitive`, sort:value};
   return {label:`${financial ? 'ROE ' : ''}${(value*100).toFixed(1)}%`,note:financial ? 'Return on tangible equity, the denominator used by the published model' : 'Median annual return on tangible invested capital',sort:value};
 }
-export function decodeEntities(value: string) {
+function decodeEntities(value: string) {
  const entities: Record<string,string> = {amp:'&',quot:'"',apos:"'",lt:'<',gt:'>',nbsp:' ',ndash:'–',mdash:'—',rsquo:'’',lsquo:'‘',eacute:'é',uuml:'ü',ouml:'ö',auml:'ä',trade:'™',reg:'®'};
  for(let pass=0;pass<3;pass++){
   const next=value.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi,(match,key:string)=>{
@@ -56,8 +56,6 @@ export function dossierReturn(dossier: import('./types').Analysis) {
  return testReturn(dossier.tests.moat,dossier.company.kind);
 }
 
-export const monthLabel = (value:string) => dateLabel(value).replace(/^\d+ /, '');
-
 /** Optional-safe English identity for old and new publication snapshots. */
 export function companyName(company: {nameEn?: string; name?: string; n?: string; id: string}) {
  const name = company.nameEn || company.name || company.n || '';
@@ -68,7 +66,7 @@ export function companyName(company: {nameEn?: string; name?: string; n?: string
 }
 
 // Single green hue, sequential lightness. Text contrast is validated in round-seven.test.ts.
-export const BUY_RAMP = ['#b8d0b8','#c6d8bf','#d3e1cb','#e0e8d7','#ebeee1','#f6f5ec'];
+const BUY_RAMP = ['#b8d0b8','#c6d8bf','#d3e1cb','#e0e8d7','#ebeee1','#f6f5ec'];
 export function buyColour(priceToBuy: number | null) {
  if(priceToBuy===null || !Number.isFinite(priceToBuy)) return {background:'#eeede8',color:'#202820',unknown:true};
  const index = priceToBuy <= 1 ? 0 : priceToBuy <= 2 ? 1 : priceToBuy <= 3 ? 2 : priceToBuy <= 4 ? 3 : priceToBuy <= 6 ? 4 : 5;

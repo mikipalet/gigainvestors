@@ -1,7 +1,7 @@
 import type { Analysis, Dossier } from './types';
 
 // Operational evidence belongs in the private corpus, never in public JSON or RSC.
-export const privateWording = /verif(?:y|ied|ication)|\bchecking\b|being checked|share sources disagree|share count (?:not )?corrected/i;
+const privateWording = /verif(?:y|ied|ication)|\bchecking\b|being checked|share sources disagree|share count (?:not )?corrected/i;
 export function publicAnalysis<T extends Analysis>(analysis: T): T {
   const { dataQualityFlags, ...rest } = analysis;
   const unavailable = Boolean(dataQualityFlags?.length);

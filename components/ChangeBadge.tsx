@@ -5,7 +5,7 @@ import { formatChange } from "@/lib/format";
 export const effectiveActivity = (activity: Activity, change: number | null): Activity =>
   (activity === "add" || activity === "reduce") && change !== null && Math.abs(change) < 0.05 ? "hold" : activity;
 
-export function changeLabel(activity: Activity, change: number | null): string | null {
+function changeLabel(activity: Activity, change: number | null): string | null {
   if (activity === "new") return "NEW";
   if (activity === "sold") return "SOLD";
   if (activity === "add" || activity === "reduce") return formatChange(change) ?? (activity === "add" ? "+" : "−");

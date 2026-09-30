@@ -6,7 +6,7 @@ import type { Company } from "../types";
 import type { XbrlReport } from "./facts";
 
 const limit = createLimiter({ perSecond: 3 });
-export async function italyFetch(url: string): Promise<Response> {
+async function italyFetch(url: string): Promise<Response> {
   return limit(async () => {
     const response = await fetchWithRetry(url, {
       headers: {

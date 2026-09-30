@@ -3,7 +3,6 @@ import { rankItems, type RankItem } from "../search/rank";
 import type { Company, SearchRow, SearchShard } from "./types";
 
 import { SEARCH_KEYS, SEARCH_CHARACTERS, normalizeSearch, type SearchManifest } from "./search-shard";
-export { SEARCH_KEYS, normalizeSearch } from "./search-shard";
 const stopWords = new Set("inc incorporated ltd limited plc sa ag corp corporation holdings holding co company nv".split(" "));
 
 function nameWords(name: string): string[] {

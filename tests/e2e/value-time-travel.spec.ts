@@ -18,13 +18,11 @@ for(const markets of ['western','all'])for(const year of ['2005','2012','2018','
   if(year!=='2005')expect(summary.atBuy).toBeGreaterThan(0);
   if(year!=='Today'){const gain=summary.medianReturnAtBuy;await expect(page.locator('.simulation-line')).toContainText(gain==null?'median gain not available':`median gain ${gain>=0?'+':''}${Math.round(gain*100)}%`);}
   const rows=unpackView(read(year==='Today'?meta.views.current:meta.views.years[year])).filter(r=>r.t==='PPPPP'&&matchesMarket(r,markets==='all'?'all':''));
-  const distances=rows.filter(r=>!r.b).map(r=>year==='Today'?(r.quote&&r.v?r.quote[0]/(r.v[1]*(1-(r.m??.25))):null):r.historicalPrice?(r.historicalPrice.price&&r.historicalPrice.buyPrice?r.historicalPrice.price/r.historicalPrice.buyPrice:null):r.pm??null).filter((n):n is number=>n!==null);
-  const next=Number(await page.locator('.main-next h2 span').textContent());
-  const rest=await page.locator('.main-band-title strong').allTextContents();
-  expect(next).toBeGreaterThan(0);
-  expect(next).toBe(distances.filter(n=>n<=1.5).length);
-  expect(rest.map(text=>parseInt(text))).toEqual([distances.filter(n=>n>1.5&&n<=3).length,distances.filter(n=>n>3).length]);
-  expect(rest.reduce((sum,text)=>sum+parseInt(text),0)).toBeGreaterThan(0);
-  expect(next+rest.reduce((sum,text)=>sum+parseInt(text),0)+summary.atBuy).toBeLessThanOrEqual(summary.qualityPasses);
+  const expectedNext=rows.filter(r=>!r.b&&(year==='Today'?r.expected!=null:r.gain!=null)&&(year==='Today'?r.quote&&r.v:r.historicalPrice?.price&&r.historicalPrice?.buyPrice));
+  const shown=await page.locator('.main-next-row').count();
+  const rest=Number(await page.locator('.main-rest>span b').textContent());
+  expect(shown).toBeLessThanOrEqual(expectedNext.length);
+  expect(shown+rest+summary.atBuy).toBe(summary.qualityPasses);
+  expect(await page.locator('.main-next-row .main-return').allTextContents()).not.toContain('—');
  });
 }

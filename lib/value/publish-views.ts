@@ -1,3 +1,4 @@
+import { qualityMetric } from './quality-metric';
 import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 import { browserRow,historyView,packView,type BrowserRow,type ViewManifest } from './browser-view';
@@ -19,7 +20,7 @@ export function publishViews(files: Record<string, unknown>): ViewManifest {
   const source=[...new Map([...(files['index/default.json'] as IndexRow[] ?? []),...missing].map(row=>[row.id,row])).values()];
   const rows=source.map(row => {
     const d=dossiers[row.id];
-    return browserRow({...row,...(d?.valuation ? {ownerReturnInputs:{valuation:d.valuation,marketCapUsd:d.company.marketCapUsd}} : {})}, prices[row.id]??null);
+    return browserRow({...row,...(d?{quality:qualityMetric(d.company.kind,d.tests.moat.metrics)}:{}),...(d?.valuation ? {ownerReturnInputs:{valuation:d.valuation,marketCapUsd:d.company.marketCapUsd}} : {})}, prices[row.id]??null);
   });
   const bounded=(rows:BrowserRow[])=>{
     const payload=packView(rows);

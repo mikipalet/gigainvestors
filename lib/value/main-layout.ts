@@ -8,36 +8,21 @@ export function mainCompanies(entries:ResultEntry[]){
   const price=entry.historical?entry.historicalPrice?.price??null:entry.quote;
   const unavailable=!entry.historical&&Boolean(row.dataQualityFlags?.length);
   const buyPrice=unavailable?null:entry.historical?entry.historicalPrice?.buyPrice??null:row.v?.[1]!=null?row.v[1]*(1-(row.m??.25)):null;
-  const basis=entry.historical&&!entry.historicalPrice?'value':'buy price';
-  const ratio=basis==='value'?finite(entry.mos===null?null:1-entry.mos):price!=null&&price>0&&buyPrice!=null&&buyPrice>0?finite(price/buyPrice):null;
+  const ratio=price!=null&&price>0&&buyPrice!=null&&buyPrice>0?finite(price/buyPrice):null;
   const expected=entry.historical||unavailable?null:finite(entry.expected);
-  return {entry,id:row.id,name:companyName(row),price,buyPrice,ratio,basis,expected,returnValue:entry.historical?finite(entry.historicalReturn):expected,buy:!unavailable&&row.b===true&&row.t==='PPPPP'};
+  return {entry,id:row.id,name:companyName(row),price,buyPrice,ratio,expected,returnValue:entry.historical?finite(entry.historicalReturn):expected,buy:!unavailable&&row.b===true&&row.t==='PPPPP'};
  });
 }
 const byReturn=(a:MainCompany,b:MainCompany)=>(b.returnValue??-Infinity)-(a.returnValue??-Infinity)||a.id.localeCompare(b.id);
-const bySize=(a:MainCompany,b:MainCompany)=>(b.entry.row.mc??0)-(a.entry.row.mc??0)||a.id.localeCompare(b.id);
 export function mainZones(companies:MainCompany[]){
+ const next=(c:MainCompany)=>!c.buy&&c.ratio!==null&&c.returnValue!==null;
  return {
   buy:companies.filter(c=>c.buy).sort(byReturn),
-  next:companies.filter(c=>!c.buy&&c.ratio!==null&&c.ratio<=1.5).sort((a,b)=>a.ratio!-b.ratio!||byReturn(a,b)),
-  middle:companies.filter(c=>!c.buy&&c.ratio!==null&&c.ratio>1.5&&c.ratio<=3).sort(bySize),
-  far:companies.filter(c=>!c.buy&&c.ratio!==null&&c.ratio>3).sort(bySize),
-  missing:companies.filter(c=>!c.buy&&c.ratio===null).sort(bySize),
+  next:companies.filter(next).sort((a,b)=>a.ratio!-b.ratio!||byReturn(a,b)),
+  rest:companies.filter(c=>!c.buy&&!next(c)).sort((a,b)=>(b.entry.row.mc??0)-(a.entry.row.mc??0)||a.id.localeCompare(b.id)),
  };
 }
-export function distancePosition(ratio:number){return Math.max(0,Math.min(1,(ratio-1)/.5));}
-export function distanceLabel(ratio:number|null){
- if(ratio===null)return 'Distance unavailable';
- if(Math.abs(ratio-1)<.00005)return 'At buy price';
- const n=Math.abs(ratio-1)*100;
- return `${n<.5?'<1':Math.round(n)}% ${ratio<1?'below':'above'}`;
-}
-/** Each desktop row reserves two name lines. Header, axis and more link reserve 88px. */
-export function nextLayout(width:number,height:number,count:number,phone=false,compactBuy=false){
- const maxColumns=phone?1:compactBuy&&width>=960?3:width>=700?2:1;
- const fit=phone?5:Math.max(1,Math.floor((height-88)/48));
- const columns=Math.min(maxColumns,Math.max(1,Math.ceil(Math.min(count,20)/fit)));
- const rows=phone?Math.min(5,count):Math.min(Math.ceil(Math.min(count,20)/columns),fit);
- return {columns,rows,capacity:Math.min(count,20,columns*rows)};
-}
-export const returnLabel=(value:number|null)=>value===null?'—':`${value<0?'−':''}${(Math.abs(value)*100).toFixed(1)}%`;
+/** Shared premium scale: buy price at zero, +60% at the right edge. */
+export function distancePosition(ratio:number){return Math.max(0,Math.min(1,(ratio-1)/.6));}
+export const dropToBuy=(ratio:number|null)=>ratio===null?'Price unavailable':ratio<=1?'At buy price':`needs −${Math.round((1-1/ratio)*100)}%`;
+export const returnLabel=(value:number|null)=>value===null?'Unavailable':`${value<0?'−':''}${(Math.abs(value)*100).toFixed(1)}%`;

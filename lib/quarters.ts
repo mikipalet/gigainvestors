@@ -1,7 +1,7 @@
 const YQ = /^(\d{4})\s*Q([1-4])$/;
 const QY = /^Q([1-4])\s*(\d{4})$/;
 
-export function parseQuarter(s: string): { y: number; q: number } | null {
+function parseQuarter(s: string): { y: number; q: number } | null {
   const t = s.replace(/\s+/g, " ").trim();
   const a = t.match(YQ);
   if (a) return { y: Number(a[1]), q: Number(a[2]) };
@@ -10,7 +10,7 @@ export function parseQuarter(s: string): { y: number; q: number } | null {
   return null;
 }
 
-export const qKey = (y: number, q: number) => `${y} Q${q}`;
+const qKey = (y: number, q: number) => `${y} Q${q}`;
 
 export function normalizeQuarter(s: string): string | null {
   const p = parseQuarter(s);

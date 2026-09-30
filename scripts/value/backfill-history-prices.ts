@@ -23,7 +23,7 @@ async function main(){
    // Keep earlier non-passing years for the same quality companies: annual charts
    // must not invent a continuous line or borrow today's discount.
    const fresh=rebuilt.get(row[0]);
-   if(fresh&&fresh[1]===row[1]&&fresh[2]===row[2]&&fresh[3]===row[3]){row[5]=fresh[5];added++;}
+   if(fresh&&fresh[1]===row[1]&&fresh[2]===row[2]&&fresh[3]===row[3]){row[5]=fresh[5];row[6]=fresh[6];added++;}
    else if(row[1]==='PPPPP')mismatches.push(row[0]);
   }
   writeFileSync(path.join(target,`history/${year}.json`),JSON.stringify(years[year])+'\n');

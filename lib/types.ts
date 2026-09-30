@@ -23,7 +23,7 @@ export interface InvestorData {
   quarters: Quarter[];
 }
 
-export interface SeriesPoint {
+interface SeriesPoint {
   q: string;
   total: number;
   positions: number;
@@ -44,7 +44,7 @@ export interface Index {
   investors: IndexInvestor[];
 }
 
-export interface Holder {
+interface Holder {
   code: string;
   value: number;
   pct: number;

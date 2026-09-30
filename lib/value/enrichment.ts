@@ -12,7 +12,7 @@ export interface Enrichment { nameEn: string; nameLocal?: string; logo: string |
 export function cleanName(name: string): string {
   return name.normalize('NFKC').replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, ' ').trim();
 }
-export function isLatinName(name: string | null | undefined): name is string {
+function isLatinName(name: string | null | undefined): name is string {
   return !!name && /\p{Script=Latin}/u.test(name) && ![...name].some(c => /\p{L}/u.test(c) && !/\p{Script=Latin}/u.test(c));
 }
 export function englishName(company: Company, general: GeneralInfo, edinet: string | null, yahoo?: string | null): { nameEn: string; nameLocal?: string } {

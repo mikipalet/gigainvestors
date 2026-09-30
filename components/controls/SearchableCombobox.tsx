@@ -1,7 +1,7 @@
 'use client';
 import {useEffect,useId,useRef,useState} from 'react';
 import './select.css';
-export type SelectOption = [value:string,label:string,count?:number];
+type SelectOption = [value:string,label:string,count?:number];
 export type SelectProps = {label:string;value:string;options:SelectOption[];onChange:(value:string)=>void};
 
 /** Focus stays in the search field; the active option follows arrows and stays in view. */

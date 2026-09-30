@@ -11,7 +11,7 @@ import { westernTradingLabel } from '@/lib/value/western';
 const returnFor=(entry:ResultEntry)=>entry.historical?null:ownerReturn(entry.row.ownerReturnInputs?.valuation??null,entry.row.cur,entry.row.ownerReturnInputs?.marketCapUsd??null,entry.quote);
 export function BuyZone({entries}:{entries:ResultEntry[];allMarkets?:boolean}) {
  const [page,setPage]=useState(0),[pageSize,setPageSize]=useState(8);
- useEffect(()=>{const update=()=>setPageSize(window.innerWidth<768?Number.MAX_SAFE_INTEGER:window.innerWidth<1100||window.innerHeight<=900?4:8);update();window.addEventListener('resize',update);return()=>window.removeEventListener('resize',update);},[]);
+ useEffect(()=>{const update=()=>setPageSize(window.innerWidth<768?2:window.innerWidth<1100||window.innerHeight<=900?4:8);update();window.addEventListener('resize',update);return()=>window.removeEventListener('resize',update);},[]);
  // Missing returns come last. Historical cohorts retain historical-return ranking, never today's model.
  const ranked=[...entries].sort((a,b)=>(a.historical&&b.historical?(b.historicalReturn??-Infinity)-(a.historicalReturn??-Infinity):(returnFor(b)?.expected??-Infinity)-(returnFor(a)?.expected??-Infinity))||a.row.id.localeCompare(b.row.id));
  const pages=Math.max(1,Math.ceil(ranked.length/pageSize)),current=Math.min(page,pages-1),visible=ranked.slice(current*pageSize,current*pageSize+pageSize);

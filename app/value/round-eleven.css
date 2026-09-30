@@ -26,7 +26,7 @@ body:has(.value-page) :is([class~="text-[9px]"],[class~="text-[10px]"],[class~="
 .dossier-band {grid-template-columns:1.2fr 1fr;min-height:130px;}
 .dossier-band .value-band {display:none;}
 .one-verdict .plain-verdict {display:inline-block;padding:8px 12px;background:#123d2b;color:white;}
-.one-verdict .plain-verdict[data-verdict="Wait for a better price"] {background:#ece7d8;color:#61461e;}
+.one-verdict .plain-verdict[data-verdict="Wait for a better price"],.one-verdict .plain-verdict[data-verdict="Verify valuation"] {background:#ece7d8;color:#61461e;}
 .one-verdict .plain-verdict[data-verdict="Buy zone"] {background:#123d2b;color:white;}
 .one-verdict .plain-verdict[data-verdict="Fails quality"] {background:#963c32;color:white;}
 .one-verdict .verdict-explanation {font-size:15px;}
@@ -59,10 +59,10 @@ body:has(.value-page) :is([class~="text-[9px]"],[class~="text-[10px]"],[class~="
  .one-index .index-story > p:not(.eyebrow) {font-size:15px;}
  .one-index .index-story .eyebrow {display:none;}
  .one-index .map-toolbar {gap:8px;}
- .buy-grid {grid-auto-rows:84px;max-height:none;gap:5px;}
+ .buy-grid {grid-auto-rows:128px;max-height:none;gap:5px;}
  .buy-tile {display:grid;grid-template-columns:22px minmax(0,1fr);grid-template-rows:auto auto;align-content:center;gap:4px 6px;padding:7px;}
  .buy-tile .company-logo {display:flex;width:22px;height:22px;grid-column:1;grid-row:1;}
- .buy-tile strong {grid-column:2;font-size:13px;line-height:1.15;padding-right:12px;}
+ .buy-tile strong {grid-column:2;font-size:13px;line-height:1.15;padding-right:20px;}
  .buy-tile .buy-rank {font-size:13px;right:5px;top:5px;}
  .buy-tile .buy-return-compact {display:block;grid-column:1/-1!important;font-size:13px;}
  .buy-tile .buy-return-compact b {font-size:16px;}

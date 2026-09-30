@@ -5,6 +5,7 @@ import { PointerTooltip } from '@/components/PointerTooltip';
 import { CompanyLogo } from './CompanyLogo';
 import { ValueLink } from './ValueLink';
 import { buyColour, companyName, priceFraming } from '@/lib/value/presentation';
+import { layout } from '@/lib/treemap/layout';
 import type { ResultEntry } from '@/app/value/_components/ResultRow';
 
 const distance=(e:ResultEntry)=>e.mos===null?Infinity:Math.abs((1-e.mos)/(1-(e.row.m??.25))-1);
@@ -13,10 +14,17 @@ const prioritiseBuy=(entry:ResultEntry)=>entry.row.b===true;
 export function CompanyTreemap({entries,year,onTable,sort='cap'}:{entries:ResultEntry[];year:string;sort?:'cap'|'closest';onTable:()=>void}) {
  const [hover,setHover]=useState<{entry:ResultEntry;x:number;y:number}|null>(null);
  const [tileLimit,setTileLimit]=useState(6);
+ const [mapSize,setMapSize]=useState({width:0,height:0});
  const mapRef=useRef<HTMLDivElement>(null);
- useEffect(()=>{const node=mapRef.current;if(!node)return;const update=()=>{const {width,height}=node.getBoundingClientRect();setTileLimit(window.innerWidth<768?2:Math.max(2,Math.min(window.innerHeight<=900?3:12,Math.floor(width*height/42000))));};const observer=new ResizeObserver(update);observer.observe(node);update();return()=>observer.disconnect();},[]);
+ useEffect(()=>{const node=mapRef.current;if(!node)return;const update=()=>{const {width,height}=node.getBoundingClientRect();setMapSize({width,height});setTileLimit(window.innerWidth<768?2:Math.max(2,Math.min(window.innerHeight<=900?3:12,Math.floor(width*height/42000))));};const observer=new ResizeObserver(update);observer.observe(node);update();return()=>observer.disconnect();},[]);
  useEffect(()=>{const clear=(e:FocusEvent)=>{if(!(e.target as HTMLElement)?.closest('.company-treemap'))setHover(null);};document.addEventListener('focusin',clear);return()=>document.removeEventListener('focusin',clear);},[]);
- const frames=useMemo(()=>({[year]:[...entries].sort((a,b)=>sort==='closest'?distance(a)-distance(b):(b.row.mc??0)-(a.row.mc??0)).slice(0,sort==='closest'?Math.min(tileLimit,6):tileLimit).map(entry=>({id:entry.row.id,value:sort==='closest'?1:entry.row.mc&&entry.row.mc>0?entry.row.mc:1,data:entry}))}),[entries,year,tileLimit,sort]);
+ const frames=useMemo(()=>{
+  const items=[...entries].sort((a,b)=>sort==='closest'?distance(a)-distance(b):(b.row.mc??0)-(a.row.mc??0)).slice(0,sort==='closest'?Math.min(tileLimit,6):tileLimit).map(entry=>({id:entry.row.id,value:sort==='closest'?1:entry.row.mc&&entry.row.mc>0?entry.row.mc:1,data:entry}));
+  // Area alone cannot detect a thin strip at the tail of a real country cohort.
+  // Keep complete names and price labels readable; the full list is one click away.
+  if(sort==='cap'&&mapSize.width>0) while(items.length>2&&layout(items,mapSize.width,mapSize.height,3,mapSize.width<640?(tileLimit===2?.45:.08):.025).some(r=>r.w<120||r.h<140))items.pop();
+  return {[year]:items};
+ },[entries,year,tileLimit,sort,mapSize]);
  const renderTile=(entry:ResultEntry,rect:{w:number;h:number})=>{
   // Verification flags affect confidence/colour, not the existence of a value.
   const {row,mos}=entry,name=companyName(row),ratio=mos===null?null:(1-mos)/(1-(row.m??.25));

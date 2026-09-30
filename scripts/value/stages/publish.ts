@@ -4,7 +4,7 @@ import { buildAdaptiveSearchShards } from "../../../lib/value/search";
 import { mergeSeedFiles, readPrices } from "../../../lib/value/price-files";
 import { validCompanyId } from "../../../lib/value/companies";
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { T } from "../../../lib/value/config";
@@ -149,12 +149,13 @@ export function commitOutput({ repo, asOf }: { repo: string; asOf: string }): bo
   return true;
 }
 
-export function publishSnapshot({ repo, analyses, universe, partial, force = false, holdersByTicker, investorNames }: {
+export function publishSnapshot({ repo, analyses, universe, partial, force = false, commit = true, holdersByTicker, investorNames }: {
   repo: string;
   analyses: Analysis[];
   universe: Company[];
   partial: boolean;
   force?: boolean;
+  commit?: boolean;
   holdersByTicker: Record<string, string[]>;
   investorNames: Record<string, string>;
 }): { count: number; changed: boolean } {
@@ -192,7 +193,13 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     }
   }
   mergeSeedFiles(repo);
-  const { files } = buildOutput({ priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx: {}, prices: readPrices(path.join(repo, "prices")) });
+  const fx: Record<string, number> = {};
+  const fxDir = corpusPath("raw/eodhd/universe");
+  if (existsSync(fxDir)) for (const file of readdirSync(fxDir).filter(file => /^fx-[A-Z]{3}\.json$/.test(file))) {
+    const rate = readCorpusJson<{ data: Array<{ close: number }> }>(`raw/eodhd/universe/${file}`)?.data?.[0]?.close;
+    if (rate && Number.isFinite(rate) && rate > 0) fx[file.slice(3, 6)] = rate;
+  }
+  const { files } = buildOutput({ priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx, prices: readPrices(path.join(repo, "prices")) });
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
   const { shards, manifest } = buildAdaptiveSearchShards(universe.map(company => enrichedCompany(company)), new Set(rows.map(row => row.id)));
   files["search/manifest.json"] = manifest;
@@ -201,7 +208,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   }
   Object.assign(files, latestHistoryFiles(universe));
   writeOutput({ repo, files });
-  const changed = commitOutput({ repo, asOf });
+  const changed = commit ? commitOutput({ repo, asOf }) : true;
   return { count: rows.length, changed };
 }
 
@@ -262,13 +269,24 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
   return analyses;
 }
 
-export default async function publish(options: { only?: string[]; limit?: number; force?: boolean }): Promise<void> {
+export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string }): Promise<void> {
+  const out = options.out === undefined ? undefined : path.resolve(options.out);
+  if (out && existsSync(out) && readdirSync(out).length) throw new Error("--out requires a new or empty directory");
   const companies = readJsonl<Company>("universe.jsonl");
   if (!companies.length) throw new Error("Run the universe stage before publish");
   const selected = companies.filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
   if (!selected.length) throw new Error("No companies selected for publish");
   const analyses = loadAnalyses(selected);
   const holders = loadHolders(path.resolve(__dirname, "../../../data/store"));
+  if (out) {
+    mkdirSync(out, { recursive: true });
+    // Match normal publication's cached closes before merging local seed quotes.
+    const prices = corpusPath("publish-repo", "prices");
+    if (existsSync(prices)) cpSync(prices, path.join(out, "prices"), { recursive: true });
+    const { count } = publishSnapshot({ repo: out, analyses, universe: companies, partial: false, force: options.force, commit: false, ...holders });
+    console.log(`publish: ${count} companies written locally to ${out}; no commit, push or revalidation`);
+    return;
+  }
   runCalibration();
   await withPublishRepository(async (repo) => {
     const { count, changed } = publishSnapshot({ repo, analyses, universe: companies, partial: Boolean(options.only || options.limit), force: options.force, ...holders });

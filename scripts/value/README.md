@@ -159,6 +159,13 @@ imply a one-for-one ADR ratio. Pipeline priority is Western access, then descend
 market cap; refresh age breaks equal-cap ties for fundamentals and price history.
 
 To preview without publishing or interfering with another analysis job:
+`VALUE_CORPUS_DIR=~/value-corpus npm run value -- publish --out=/tmp/value-release`
+writes the current completed analyses to a new or empty local directory. It copies
+cached published closes, merges local seeds, and uses cached FX for verification.
+It does not run analysis/calibration, access Git, push, or revalidate the live site.
+Keep the server and browser pointed at the same directory as described below.
+
+For a preview based on the existing live publication instead of the corpus:
 `npx tsx scripts/value/western-preview.ts /tmp/value-western-preview` rebuilds an
 immutable copy of the current live publication and records its commit provenance.
 Use an empty output directory. It makes no provider calls and does not mutate the

@@ -50,6 +50,43 @@ function repository(): string {
 }
 
 describe("buildOutput", () => {
+  it("stages existing analyses and cached closes without running calibration or touching the cached repository", async () => {
+    const { default: publish } = await import("@/scripts/value/stages/publish");
+    const row = analysis(), out = path.join(corpusDir(), "staging");
+    writeFileSync(path.join(corpusDir(), "universe.jsonl"), JSON.stringify(row.company) + "\n");
+    mkdirSync(path.join(corpusDir(), "analysis"));
+    const source = JSON.stringify(row);
+    writeFileSync(path.join(corpusDir(), "analysis/KO.US.json"), source);
+    mkdirSync(path.join(corpusDir(), "publish-repo/prices"), { recursive: true });
+    const closes = JSON.stringify({ "KO.US": [60, "2026-09-29"] });
+    writeFileSync(path.join(corpusDir(), "publish-repo/prices/US.json"), closes);
+    await publish({ out });
+    expect(readFileSync(path.join(corpusDir(), "analysis/KO.US.json"), "utf8")).toBe(source);
+    expect(readFileSync(path.join(corpusDir(), "publish-repo/prices/US.json"), "utf8")).toBe(closes);
+    expect(JSON.parse(readFileSync(path.join(out, "prices/US.json"), "utf8"))["KO.US"]).toEqual([60, "2026-09-29"]);
+    expect(existsSync(path.join(out, ".git"))).toBe(false);
+    await expect(publish({ out })).rejects.toThrow("new or empty directory");
+  });
+  it("writes a local snapshot without requiring or changing a git repository", () => {
+    const repo = directory(), row = analysis();
+    const result = publishSnapshot({ repo, analyses: [row], universe: [row.company], partial: false, commit: false, holdersByTicker: {}, investorNames: {} });
+    expect(result.count).toBe(1);
+    expect(JSON.parse(readFileSync(path.join(repo, "meta.json"), "utf8")).counts.analysed).toBe(1);
+    expect(existsSync(path.join(repo, ".git"))).toBe(false);
+  });
+  it("uses cached FX to retain non-USD share-basis verification during publication", () => {
+    const repo = directory(), row = analysis("TEST.PA");
+    row.company.currency = row.valuation!.currency = "EUR";
+    row.company.marketCapUsd = 100;
+    mkdirSync(path.join(corpusDir(), "raw/eodhd/universe"), { recursive: true });
+    writeFileSync(path.join(corpusDir(), "raw/eodhd/universe/fx-EUR.json"), JSON.stringify({ date: "2026-09-30", data: [{ close: 1.1 }] }));
+    mkdirSync(path.join(repo, "prices"));
+    writeFileSync(path.join(repo, "prices/US.json"), JSON.stringify({ "TEST.PA": [50, "2026-09-29"] }));
+    publishSnapshot({ repo, analyses: [row], universe: [row.company], partial: false, commit: false, holdersByTicker: {}, investorNames: {} });
+    const published = JSON.parse(readFileSync(path.join(repo, "index/default.json"), "utf8"))[0];
+    expect(published.b).toBe(false);
+    expect(published.dataQualityFlags).toContain("Market cap and price × shares differ by more than 2%; dates or share basis need verification");
+  });
   it("publishes only all-pass and exact one-fail scored rows by market cap, and shards dossiers", () => {
     const pass = analysis();
     const miss = analysis("AXP.US"); miss.tests.moat.result = "fail"; miss.company.marketCapUsd = 200;

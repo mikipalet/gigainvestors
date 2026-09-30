@@ -65,10 +65,10 @@ describe("round 1 controller rulings", () => {
     expect(result.economics.numeric).toBe("unclear");
     expect(value(years).valuation).toBeNull();
   });
-  it("fails fewer than ten years with the history count", () => {
+  it("leaves fewer than ten years unclear with the history count", () => {
     const result = run(makeYears({ n: 9 })).understandable;
-    expect(result.numeric).toBe("fail");
-    expect(result.reasons).toContain("only 9 years of history");
+    expect(result.numeric).toBe("unclear");
+    expect(result.reasons).toContain("Not tested: only 9 years");
   });
   it("fails a negative average operating margin despite positive net income", () => {
     expect(run(makeYears({ overrides: { operatingIncome: -10 } })).understandable.numeric).toBe("fail");

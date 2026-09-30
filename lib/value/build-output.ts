@@ -1,3 +1,4 @@
+import { withAnalysisHistory } from './test-history';
 import { buyReturnInputs } from "./owner-return";
 import { bestWesternListing } from "./western";
 import { storyFromFunnel } from "./story";
@@ -56,7 +57,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const countries: Record<string, IndexRow[]> = {};
   const shards: Record<string, Record<string, Dossier>> = {};
   const tags: Record<string, string> = {};
-  const sorted = [...analyses].sort((a, b) => (b.company.marketCapUsd ?? -Infinity) - (a.company.marketCapUsd ?? -Infinity) || a.id.localeCompare(b.id));
+  const sorted = analyses.map(withAnalysisHistory).sort((a, b) => (b.company.marketCapUsd ?? -Infinity) - (a.company.marketCapUsd ?? -Infinity) || a.id.localeCompare(b.id));
   const rows: IndexRow[] = [];
   const westernFunnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   const funnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
@@ -117,6 +118,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const returns=dossierReturn(analysis);
     const row: IndexRow = {
       w, exchange: company.exchange, buyReturnInputs: returnInputs,
+      historyYears: analysis.historyCoverage?.years ?? analysis.tests.understandable.metrics.historyYears ?? undefined,
       b: price.b, dataQualityFlags: price.dataQualityFlags,
       returnInfo:{...returns,sort:Number.isFinite(returns.sort)?returns.sort:returns.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},
       fy: Math.max(0,...Object.values(analysis.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]))) || undefined,

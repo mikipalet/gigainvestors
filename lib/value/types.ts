@@ -117,6 +117,7 @@ export interface JevAnswer {
 }
 
 export interface TestOutcome {
+  insufficientHistory?: number;
   /** Unclear solely because an input fetch is still pending. */
   pending?: boolean;
   key: TestKey;
@@ -202,6 +203,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  historyYears?: number;
   buyReturnInputs?: { cashPerShare: number; growth: number; requiredReturn: number } | null;
   w: string | null; // Best Western trading listing.
   ownerReturnInputs?: { valuation: Valuation; marketCapUsd: number | null };

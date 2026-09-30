@@ -84,6 +84,36 @@ export async function yahooEnglishName(company: Company): Promise<string | null>
   writeNewJson(file, { name, fetchedAt: new Date().toISOString() });
   return name;
 }
+/** Merge linked listings before falling back to public issuer metadata. */
+export function generalInfoFor(company: Company): GeneralInfo {
+  const generals = [...new Set([company.id, ...company.listings])]
+    .filter(id => /^[\w.&-]+$/.test(id) && id !== '.' && id !== '..')
+    .map(id => readCorpusJson<{General?: GeneralInfo}>(`raw/eodhd/${id}.json`)?.General)
+    .filter((g): g is GeneralInfo => !!g);
+  const general: GeneralInfo = {};
+  for (const key of ['Name', 'Description', 'LogoURL', 'WebURL'] as const) general[key] = generals.find(g => g[key])?.[key];
+  return general;
+}
+
+export async function issuerWebsite(company: Company, request: typeof fetch = fetch): Promise<string | null> {
+  // GLEIF caches are keyed by ISIN. Only use the record matched to this issuer.
+  if (company.isin && /^[A-Z0-9]+$/.test(company.isin)) {
+    const cached = readCorpusJson<{data?: {data?: Array<{id: string; attributes?: {entity?: {website?: string}}}>}}>(`raw/esef/gleif/${company.isin}.json`);
+    const records = cached?.data?.data ?? [];
+    const record = company.lei ? records.find(r => r.id === company.lei) : records.length === 1 ? records[0] : null;
+    if (typeof record?.attributes?.entity?.website === 'string') return record.attributes.entity.website;
+  }
+  try {
+    const response = await request(`https://query1.finance.yahoo.com/v10/finance/quoteSummary/${encodeURIComponent(yahooSymbol(company))}?modules=assetProfile`, {
+      headers: {'User-Agent': 'Mozilla/5.0'}, signal: AbortSignal.timeout(15_000),
+    });
+    if (!response.ok) { await response.body?.cancel(); return null; }
+    const data = await response.json();
+    const website = data?.quoteSummary?.result?.[0]?.assetProfile?.website;
+    return typeof website === 'string' ? website : null;
+  } catch { return null; } // No auth/cookie workaround; initials remain a valid fallback.
+}
+
 const logoLimit = createLimiter({ perSecond: 10 });
 const fetchLogo: typeof fetch = (url, init) => fetchWithRetry(String(url), {
   ...init, signal: AbortSignal.timeout(60_000), retries: 3, beforeAttempt: () => logoLimit(async () => {}),
@@ -116,5 +146,5 @@ export function enrichedCompany(company: Company, cachedOnly = false): Company {
   const logo = readCorpusJson<{logo:string|null}>(`enrichment-v7/logos/${company.id}.json`);
   const about = readCorpusJson<{about:string}>(`enrichment-v7/about/${company.id}.json`);
   return { ...company, nameEn: names.nameEn, ...(names.nameLocal ? { nameLocal: names.nameLocal } : {}),
-    ...(cached ? { logo: logo?.logo ?? cached.logo, about: about?.about ?? cached.about } : {}), name: names.nameEn };
+    logo: logo?.logo ?? cached?.logo ?? company.logo ?? null, about: about?.about ?? cached?.about ?? company.about ?? null, name: names.nameEn };
 }

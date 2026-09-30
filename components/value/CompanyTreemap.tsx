@@ -28,19 +28,19 @@ export function CompanyTreemap({entries,year,onTable,sort='cap'}:{entries:Result
  const renderTile=(entry:ResultEntry,rect:{w:number;h:number})=>{
   // Verification flags affect confidence/colour, not the existence of a value.
   const {row,mos}=entry,name=companyName(row),ratio=mos===null?null:(1-mos)/(1-(row.m??.25));
-  const colours=buyColour(row.dataQualityFlags?.length?null:ratio);
+  const colours=buyColour(row.dataQualityFlags?.length||row.t!=='PPPPP'?null:ratio);
   const compact=rect.w<150||rect.h<130, tiny=rect.w<45||rect.h<32, shallow=rect.h<60&&rect.w>90;
   const labelSize=compact?13:Math.min(22,Math.max(14,rect.w/15));
   const logoFits=shallow||!tiny&&rect.h>Math.ceil(name.length/(Math.max(20,rect.w-12)/(labelSize*.55)))*labelSize*1.15+42;
   return <ValueLink href={`/${row.id.toLowerCase()}`} className={`company-tile ${compact?'compact':''} ${tiny?'tiny':''} ${shallow?'shallow':''}`} data-buy={row.b===true} data-testid="company-tile" style={{background:colours.background,color:colours.color}} onPointerEnter={e=>setHover({entry,x:e.clientX,y:e.clientY})} onPointerMove={e=>setHover({entry,x:e.clientX,y:e.clientY})} onFocus={e=>{const r=e.currentTarget.getBoundingClientRect();setHover({entry,x:r.left+r.width/2,y:r.top+Math.min(r.height/2,30)});}} onBlur={()=>setHover(null)} aria-label={`${name}, ${row.id}. ${priceFraming(mos===null?null:1-mos,row.m).headline}. Open company review.`}>
    {logoFits&&<CompanyLogo src={row.lg} name={name}/>}
    <strong style={{fontSize:labelSize}}>{name}</strong>
-   <span className="map-price">{ratio===null?'Value unavailable':`${ratio.toFixed(1)}x buy price`}</span><span className="map-verdict">{ratio===null?'Unclear':row.b?'Buy':'Wait'}</span>
+   <span className="map-price">{ratio===null?'Value unavailable':`${ratio.toFixed(1)}x buy price`}</span><span className="map-verdict">{row.t.includes('F')?'Fails quality':row.historyYears!==undefined&&row.historyYears<10?'Not enough history yet':row.t!=='PPPPP'||ratio===null?'Unclear':row.b?'Buy':'Wait'}</span>
   </ValueLink>;
  };
  return <div ref={mapRef} className="company-treemap" data-sort={sort} onPointerLeave={()=>setHover(null)}>
  {sort==='closest'?<div className="equal-company-grid">{frames[year].map(frame=><div key={frame.id}>{renderTile(frame.data,{w:180,h:140})}</div>)}</div>:<Treemap frames={frames} q={year} floor={.025} compactTileArea={1} compactFloor={tileLimit===2?.45:.08} priority={prioritiseBuy} onMore={onTable} className="value-map-canvas" render={(entry,_tier,rect)=>renderTile(entry,rect)}/>}
  {!entries.length&&<div className="treemap-empty"><h2>No companies match this view.</h2><p>Try another year, country or include near misses.</p><button onClick={onTable}>Open the company list →</button></div>}
- {hover&&<PointerTooltip x={hover.x} y={hover.y}><strong>{companyName(hover.entry.row)}</strong><div>{hover.entry.row.id} · {hover.entry.row.t==='PPPPP'?'Passes all five quality tests':'Near miss: one quality test fails'}</div><div>{priceFraming(hover.entry.mos===null?null:1-hover.entry.mos,hover.entry.row.m).headline}</div><div>{priceFraming(hover.entry.mos===null?null:1-hover.entry.mos,hover.entry.row.m).fall}</div><small>{year==='Today'?'Click for 5 quality tests + price.':`FY${year} snapshot · click for today’s review.`}</small></PointerTooltip>}
+ {hover&&<PointerTooltip x={hover.x} y={hover.y}><strong>{companyName(hover.entry.row)}</strong><div>{hover.entry.row.id} · {hover.entry.row.t==='PPPPP'?'Passes all five quality tests':hover.entry.row.t.includes('F')?'Fails quality':hover.entry.row.historyYears!==undefined&&hover.entry.row.historyYears<10?'Not enough history yet':'Quality evidence incomplete'}</div><div>{priceFraming(hover.entry.mos===null?null:1-hover.entry.mos,hover.entry.row.m).headline}</div><div>{priceFraming(hover.entry.mos===null?null:1-hover.entry.mos,hover.entry.row.m).fall}</div><small>{year==='Today'?'Click for 5 quality tests + price.':`FY${year} snapshot · click for today’s review.`}</small></PointerTooltip>}
  </div>;
 }

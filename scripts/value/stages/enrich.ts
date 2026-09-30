@@ -2,9 +2,9 @@ import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { loadCompanies, validCompanyId } from '../../../lib/value/companies';
+import { loadCompanies } from '../../../lib/value/companies';
 import { readCorpusJson, readJsonl } from '../../../lib/value/corpus';
-import { cleanName, englishName, aboutSentence, parseEdinetNames, resolveLogo, yahooEnglishName, writeNewJson, type Enrichment, type GeneralInfo } from '../../../lib/value/enrichment';
+import { cleanName, englishName, aboutSentence, parseEdinetNames, resolveLogo, generalInfoFor, yahooEnglishName, writeNewJson, type Enrichment } from '../../../lib/value/enrichment';
 import type { Company } from '../../../lib/value/types';
 import { pool } from '../../../lib/value/http';
 
@@ -23,14 +23,6 @@ async function edinetNames(): Promise<Record<string, string>> {
   } finally { rmSync(temp, { recursive: true, force: true }); }
 }
 
-function generalFor(company: Company): GeneralInfo {
-  const listingIds = [...new Set([company.id, ...company.listings])].filter(id => validCompanyId(id, 'enrich'));
-  const generals = listingIds.map(id => readCorpusJson<{ General?: GeneralInfo }>(`raw/eodhd/${id}.json`)?.General).filter((g): g is GeneralInfo => !!g);
-  const general: GeneralInfo = { ...generals[0] };
-  for (const key of ['Name', 'Description', 'LogoURL', 'WebURL'] as const) general[key] ||= generals.find(g => g[key])?.[key];
-  return general;
-}
-
 /** Only new enrichment-v7 files are written. Existing caches are immutable. */
 export default async function enrich(options: { only?: string[]; limit?: number } = {}) {
   const companies = loadCompanies(options);
@@ -43,7 +35,7 @@ export default async function enrich(options: { only?: string[]; limit?: number 
     let patch = readCorpusJson<Enrichment>(file);
     if (patch) stats.cached++;
     else {
-      const general = generalFor(company);
+      const general = generalInfoFor(company);
       const edinet = company.edinetCode ? names[company.edinetCode] ?? null : null;
       let display = englishName(company, general, edinet);
       let source = display.nameEn === company.id ? 'unresolved' : edinet && display.nameEn === cleanName(edinet) ? 'edinet' : 'eodhd';
@@ -58,10 +50,10 @@ export default async function enrich(options: { only?: string[]; limit?: number 
     }
     const aboutFile = `enrichment-v7/about/${company.id}.json`;
     const about = readCorpusJson<{about:string}>(aboutFile)?.about
-      ?? (!patch.about ? aboutSentence(generalFor(company).Description ?? company.description) : null);
+      ?? (!patch.about ? aboutSentence(generalInfoFor(company).Description ?? company.description) : null);
     if (about) { writeNewJson(aboutFile,{about}); patch = {...patch,about}; }
-    const verified = readCorpusJson<{logo:string|null}>(`enrichment-v7/logos/${company.id}.json`);
-    if (verified?.logo) patch = {...patch,logo:verified.logo,logoSource:"eodhd"};
+    const verified = readCorpusJson<{logo:string|null;source?:string}>(`enrichment-v7/logos/${company.id}.json`);
+    if (verified?.logo) patch = {...patch,logo:verified.logo,logoSource:verified.source??"eodhd"};
     if (patch.nameEn !== originals.get(company.id) && patch.nameEn !== company.id) stats.namesFixed++;
     if (patch.nameSource in stats) stats[patch.nameSource as 'edinet' | 'eodhd' | 'yahoo' | 'unresolved']++;
     if (patch.logo) stats.logos++;

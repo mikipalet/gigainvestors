@@ -26,6 +26,7 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
  }
 }
 export function tileReason(test:TestOutcome):string {
+ if(test.insufficientHistory!==undefined)return `Not tested: only ${test.insufficientHistory} years`;
  if(test.key==='understandable'&&(test.metrics.opMarginCv??0)>1)return test.series.operatingMargin?.some(p=>p[1]!==null&&p[1]<0)?'Margins swing wildly, including losses.':'Margins swing wildly relative to their average.';
  if(test.result==='fail'){
   const reason=test.reasons.find(r=>!/informational|ROIC first|\$1 retained earnings test:/.test(r))??'Filing-evidence rule fails';

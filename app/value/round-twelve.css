@@ -1,0 +1,22 @@
+/* Card dimensions use the eight-pick layout even when a filter leaves one pick. */
+.one-index {container-type:inline-size;}
+@media(min-width:1100px){
+ .answer-stage:not(.empty-buy-zone) {
+  --buy-columns:4;
+  /* 48px outer padding + 20px stage gap; 1.8 / 2.8 share, four cards, three 8px gutters. */
+  --buy-card-width:calc((100cqw - 68px) * 9 / 56 - 6px);
+  grid-template-columns:calc(var(--buy-columns) * var(--buy-card-width) + (var(--buy-columns) - 1) * 8px) minmax(0,1fr);
+ }
+ .answer-stage:has(.buy-zone[data-count="1"]) {--buy-columns:1;}
+ .answer-stage:has(.buy-zone[data-count="2"]) {--buy-columns:2;}
+ .answer-stage:has(.buy-zone[data-count="3"]) {--buy-columns:3;}
+ .answer-stage:not(.empty-buy-zone) .buy-grid {grid-template-columns:repeat(var(--buy-columns),minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));}
+}
+@media(min-width:1100px) and (max-height:900px){
+ .answer-stage:not(.empty-buy-zone) .buy-grid {grid-template-rows:minmax(0,1fr);}
+}
+@media(min-width:768px) and (max-width:1099px){
+ .answer-stage:not(.empty-buy-zone) .buy-grid {grid-template-rows:repeat(2,minmax(0,1fr));}
+}
+.one-verdict .plain-verdict[data-verdict="Not enough history yet"],
+.one-verdict .plain-verdict[data-verdict="Quality evidence incomplete"] {background:#e8e7df;color:var(--ink);}

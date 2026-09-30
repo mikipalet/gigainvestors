@@ -17,7 +17,7 @@ export function BuyZone({entries}:{entries:ResultEntry[];allMarkets?:boolean}) {
  const pages=Math.max(1,Math.ceil(ranked.length/pageSize)),current=Math.min(page,pages-1),visible=ranked.slice(current*pageSize,current*pageSize+pageSize);
  const [hover,setHover]=useState<{entry:ResultEntry;x:number;y:number}|null>(null);
  const hoveredOwner=hover?returnFor(hover.entry):null;
- return <section className="buy-zone" aria-labelledby="buy-zone-title">
+ return <section className="buy-zone" data-count={entries.length} aria-labelledby="buy-zone-title">
   <header><h2 id="buy-zone-title">Buy zone <span>{entries.length}</span></h2>{pages>1&&<nav className="buy-pager" aria-label="Buy-zone pages"><button aria-label="Previous buy-zone companies" disabled={current===0} onClick={()=>setPage(current-1)}>←</button><span>{current+1}/{pages}</span><button aria-label="Next buy-zone companies" disabled={current===pages-1} onClick={()=>setPage(current+1)}>→</button></nav>}</header>
   <div className="buy-grid">{visible.map((entry,i)=>{const {row}=entry,name=companyName(row),owner=returnFor(entry),rank=current*pageSize+i+1;
    const detail=owner?expectedReturnCopy(owner,row.ownerReturnInputs?.valuation??null,row.c):requiredReturnCopy(row.ownerReturnInputs?.valuation??null,row.c);

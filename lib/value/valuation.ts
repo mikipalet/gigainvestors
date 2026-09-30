@@ -65,7 +65,8 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const corrected = currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
     && Math.max(currentShares / latest.dilutedShares, latest.dilutedShares / currentShares) > 1.5 || postSplit;
   const shares = corrected ? currentShares : latest.dilutedShares;
-  const discountRate = Math.max(T.valuation.minDiscount, (bondYield ?? 0.04) + T.valuation.bondSpread);
+  if (bondYield === null || !Number.isFinite(bondYield)) return { valuation: null, reason: "local government bond yield unavailable" };
+  const discountRate = bondYield + T.valuation.bondSpread;
   const assumptions: string[] = [...shareAssumptions];
   if (latest.edinetShares) assumptions.push(latest.edinetShares.reason);
   if (postSplit) assumptions.push('share count adjusted for post-year split/bonus');
@@ -80,7 +81,6 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
     : 'complete newer TTM unavailable; zero-growth rule uses latest annual revenue');
   assumptions.push(decliningRevenue ? "three-year revenue trend is negative; growth set to zero"
     : "growth set to zero when latest revenue is below three years earlier");
-  if (bondYield === null) assumptions.push("local government bond yield unavailable; using 4%");
   if (!currency) assumptions.push("reporting currency not supplied");
   const common = { currency, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
 
@@ -91,10 +91,12 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
     if (returns.length < 5) return { valuation: null, reason: "insufficient return on tangible equity history" };
     const normalizedRoe = median(returns)!;
     const growth = decliningRevenue ? 0 : clamp({ value: decadeCagr(ys.map(y => [y.fy, financialBvps(y)])) ?? 0, min: 0, max: T.valuation.finMaxGrowth });
+    if (discountRate <= growth) return { valuation: null, reason: "required return does not exceed perpetual book-value growth" };
+    const highRate = discountRate - Math.min(.01, (discountRate - growth) / 2);
     const multiple = (r: number) => clamp({ value: (normalizedRoe - growth) / (r - growth), min: 0, max: 4 });
     if (multiple(discountRate) * book <= 0) return { valuation: null, reason: "justified price to book is zero" };
     return { reason: null, valuation: { ...common, method: "book_value", normalized: book, growth, netCash: 0,
-      perShare: { low: multiple(discountRate + 0.01) * book, mid: multiple(discountRate) * book, high: multiple(discountRate - 0.01) * book },
+      perShare: { low: multiple(discountRate + 0.01) * book, mid: multiple(discountRate) * book, high: multiple(highRate) * book },
       equityBondYield: ratio(median(present(last(ys, 10).map(y => y.netIncome))), latest.marketCap),
       bridge: [{ label: tangibleEquity(latest)! > 0 ? "tangible book value per share" : "reported book value per share", value: book },
         ...(Number.isFinite(normalizedRoe) ? [{ label: "normalized return on tangible equity", value: normalizedRoe }] : []),
@@ -127,6 +129,9 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const organicGrowth = organicRevenueGrowth(ys, revenueGrowth);
   const estimates = present([oeGrowth, revenueGrowth, organicGrowth, incremental === null || reinvestment === null ? null : incremental * reinvestment]);
   const growth = decliningRevenue ? 0 : clamp({ value: estimates.length ? Math.min(...estimates) : 0, min: 0, max: T.valuation.maxGrowth });
+  if (discountRate <= T.valuation.terminal) return { valuation: null, reason: "required return does not exceed terminal growth" };
+  // Preserve finite scenarios near the perpetuity boundary without flooring the actual rate.
+  const highRate = discountRate - Math.min(.01, (discountRate - T.valuation.terminal) / 2);
   const pv = (g: number, r: number) => presentValue({ oe: normalized, g, r, terminal: T.valuation.terminal });
   const midPv = pv(growth, discountRate);
   if ((midPv + netCash) / shares <= 0) return { valuation: null, reason: "debt exceeds the value of owner earnings" };
@@ -141,7 +146,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const center = Math.floor(ordered.length / 2);
   const representative = ttmRow?.value === normalized ? [ttmRow as typeof latestRow] : normalized < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
   return { reason: null, valuation: { ...common, method: "owner_earnings", normalized, growth, netCash,
-    perShare: { low: (pv(growth / 2, discountRate + 0.01) + netCash) / shares, mid: (midPv + netCash) / shares, high: (pv(growth, discountRate - 0.01) + netCash) / shares },
+    perShare: { low: (pv(growth / 2, discountRate + 0.01) + netCash) / shares, mid: (midPv + netCash) / shares, high: (pv(growth, highRate) + netCash) / shares },
     equityBondYield: ratio(normalized, latest.marketCap),
     bridge: [
       { label: "net income", value: mean(representative.map(row => row.year.netIncome!))! },

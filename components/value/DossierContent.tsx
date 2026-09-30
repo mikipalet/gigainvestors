@@ -22,7 +22,7 @@ import { MetricHelp } from './MetricHelp';
 import { priceFraming } from '@/lib/value/presentation';
 import { CompanyLogo } from './CompanyLogo';
 import { AboutMethod } from './AboutMethod';
-import { ownerReturn, expectedReturnCopy, referenceMetrics, cashAmount } from '@/lib/value/owner-return';
+import { ownerReturn, expectedReturnCopy, requiredReturnCopy, referenceMetrics, cashAmount } from '@/lib/value/owner-return';
 import { sharePrice } from '@/lib/value/listing-details';
 
 export function DossierContent({ dossier, children }: { dossier: Dossier; children?: ReactNode }) {
@@ -53,7 +53,7 @@ export function DossierContent({ dossier, children }: { dossier: Dossier; childr
  const framing=priceFraming(ratio,requiredMos);
  const owner=ownerReturn(valuation,company.currency,company.marketCapUsd,quote?.[0]??null);
  const reference=referenceMetrics(dossier,quote?.[0]??null);
- const ownerCopy=owner?expectedReturnCopy(owner):valuation?.method==='book_value'?'This financial business uses a book-value estimate.':'Expected return unavailable.';
+ const ownerCopy=owner?expectedReturnCopy(owner,valuation,company.country):valuation?.method==='book_value'?`This financial business uses a book-value estimate; ${requiredReturnCopy(valuation,company.country)}.`:'Expected return unavailable.';
  const referenceRow=<section className="reference-metrics" aria-label="For reference"><strong>For reference</strong><span title={`Market capitalisation / FY${reference.fy??' latest'} net income`}>P/E <b>{reference.pe===null?'n/a':reference.pe.toFixed(1)}</b></span><span title={`FY${reference.fy??' latest'} dividends (profit minus retained earnings) / market capitalisation`}>Dividend yield <b>{reference.dividendYield===null?'n/a':pct(reference.dividendYield)}</b></span><span title="Valuation net debt / latest fiscal-year net income; negative means net cash">Net debt / earnings <b>{reference.netDebtToEarnings===null?'n/a':reference.netDebtToEarnings.toFixed(1)+' years'}</b></span><span title={`${reference.first??'Unknown'}–${reference.last??'unknown'} revenue CAGR; ten fiscal observations span nine years`}>10-year revenue growth <b>{reference.revenueGrowth===null?'n/a':pct(reference.revenueGrowth)+'/yr'}</b></span></section>;
  const failed=QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='fail');
  const verdict=!qualityPass?'Fails quality':dossier.b?'Buy zone':'Wait for a better price';

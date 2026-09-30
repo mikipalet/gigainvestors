@@ -10,7 +10,7 @@ import { runNumericTests } from "./tests";
 import { valueCompany } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory } from "./types";
 
-export const PIPELINE_VERSION = "8";
+export const PIPELINE_VERSION = "9";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -45,15 +45,14 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   const volatility = earningsVolatility({ opMarginCv: numeric.understandable.metrics.opMarginCv, commodity: isCommodity });
   const requiredMos = T.price.requiredMos[volatility];
   const cyclical = isCommodity || numeric.understandable.metrics.opMarginCv !== null && volatility === "volatile";
-  const resolvedBondYield = fundamentals.integrity.ok && bondYield === null ? await getBondYield("US") : bondYield;
+  const resolvedBondYield = bondYield;
   const { valuation, reason } = !fundamentals.integrity.ok
     ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
     : resolvedBondYield === null
-      ? { valuation: null, reason: "Local government and US10Y bond yields unavailable" }
+      ? { valuation: null, reason: "Local government bond yield unavailable" }
       : valueCompany({ years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, priceHistory, ttm: fundamentals.ttm });
   if (valuation) {
     if (company.source === "edinet" && !years.at(-1)?.edinetShares) valuation.assumptions.push("Unverified JP share count unreconciled: EDINET share facts unavailable");
-    if (bondYield === null) valuation.assumptions.push("Local government bond yield unavailable; using US10Y yield");
     if (rate !== null) valuation.perShareTrading = {
       currency: company.currency, fxRate: rate,
       low: valuation.perShare.low * rate, mid: valuation.perShare.mid * rate, high: valuation.perShare.high * rate,

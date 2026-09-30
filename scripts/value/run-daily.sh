@@ -67,10 +67,10 @@ while true; do
   run_stage dedupe || :
   run_stage price-seed || :
   run_stage reports || :
-  if run_stage analyze; then
+  if run_stage yields && run_stage analyze; then
     run_stage publish || :
   else
-    echo 'publish skipped: analyze failed' | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-publish.log"
+    echo 'publish skipped: yields or analyze failed' | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-publish.log"
   fi
   run_stage status || :
   if [[ "${1:-}" == "--once" ]]; then break; fi

@@ -133,6 +133,8 @@ export interface Valuation {
   discountRate: number;
   terminalGrowth: number;
   bondYield: number | null;
+  bondSource?: string;
+  bondFlags?: string[];
   netCash: number;
   shares: number;
   perShare: { low: number; mid: number; high: number };

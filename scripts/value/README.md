@@ -105,3 +105,34 @@ monthly close is used.
 input failures. A running upstream job can change inputs between runs; rerunning
 creates a fresh snapshot without replacing the prior one. Publishing remains an
 explicit controller action after merge; none of the three stages publishes.
+
+### Live local required return (owner decision, 2026-09-30)
+
+Run `npm run value -- yields` before `analyze`. Each country gets one EODHD
+30-calendar-day daily series request, cached for the UTC day in `bonds/CC.json`;
+the stage writes the full auditable table to `bonds.json` and `bonds/tables/DATE.json`.
+ISO GB maps to UK, CH maps to SW, and CL maps to CH (Chile). **CH10Y is not the Swiss series**; EODHD's
+[documented bond symbols](https://eodhd.com/financial-apis-blog/government-bonds-data-in-economic-api)
+name Switzerland SW10Y.
+
+Required return is the selected local yield + 4 percentage points, with no floor,
+for owner earnings and book value alike. Values retain the unrounded yield;
+analysis fingerprints use its nearest 0.1pp bucket. Identical filing text and
+unchanged qualitative answers reuse evidence as well as Jev's text cache.
+
+Validation rejects quotes older than seven days and values outside broad country
+bands. A latest/30-day median difference over max(1pp, 50% of median) uses the
+median if plausible (minimum five distinct dates). The US is also checked against
+Yahoo ^TNX; a discrepancy over 0.5pp uses Yahoo's fresh plausible quote. Yahoo
+unavailability is flagged. Swiss yields must be between -1.5% and 4%; if the whole
+Swiss series is broken, the emergency **policy default is 1%**, dated 2026-09-30,
+based on the owner's approximate Swiss yield and the [SNB reference series](https://data.snb.ch/en).
+It is not represented as live market data. No default is invented for other
+countries and no foreign yield is substituted; missing local data leaves value
+unavailable. Sources, dates, raw yields, medians, cross-checks and flags are saved
+and warnings are logged.
+
+A central discount rate at/below perpetual growth has no finite model value and
+is explicitly unavailable. The high scenario reduces its usual 1pp rate shift
+to half the gap above perpetual growth when necessary; the central required
+return never changes. This also applies to bank/insurer perpetual book growth.

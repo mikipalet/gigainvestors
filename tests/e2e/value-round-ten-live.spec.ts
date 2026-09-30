@@ -60,7 +60,7 @@ test('round ten market access, equal tiles, method and all buy pages',async({pag
  await page.setViewportSize({width:1728,height:970});await page.goto('/',{waitUntil:'networkidle'});
  await expect(page.locator('.buy-tile')).toHaveCount(8);
  for(const tile of await page.locator('.buy-tile').all()){
-  await expect(tile.locator('.buy-owner-return')).toContainText(/About [\d.]+% a year expected \([\d.]+% cash \+ [\d.]+% growth\) vs Buffett's 10% bar/);
+  await expect(tile.locator('.buy-owner-return')).toContainText(/About [\d.]+% a year expected \([\d.]+% cash \+ [\d.]+% growth\) vs required return [\d.]+% a year \([A-Z]{2} 10-year bond [\d.]+% \+ 4 points\)/);
   const [total,cash,growth]=(await tile.locator('.buy-owner-return').innerText()).match(/[\d.]+(?=%)/g)!.map(Number);
   expect(total).toBeGreaterThan(10);
   expect(Math.abs(total-cash-growth)).toBeLessThanOrEqual(.100001);
@@ -94,13 +94,13 @@ test('round ten b shows Visa, Mastercard and P&G multiples and the same Infosys 
  await page.getByTestId('tile-price').click();
  await expect(page.getByRole('dialog').locator('.owner-return')).toHaveText(infy);
  await page.goto('/ko.us',{waitUntil:'networkidle'});
- await expect(page.locator('.price-card .owner-return')).toHaveText("About 2.8% a year expected (2.6% cash + 0.2% growth) vs Buffett's 10% bar");
+ await expect(page.locator('.price-card .owner-return')).toHaveText(/About [\d.]+% a year expected \([\d.]+% cash \+ [\d.]+% growth\) vs required return [\d.]+% a year \(US 10-year bond [\d.]+% \+ 4 points\)/);
 });
 test('round ten owner returns, reference metrics, verdict colours and phone type',async({page})=>{
  const colours=[];
  for(const id of ['ko.us','infy.us','dal.us']){
   await page.setViewportSize({width:390,height:844});await page.goto('/'+id,{waitUntil:'networkidle'});
-  await expect(page.locator('.price-card .owner-return')).toContainText(/About [\d.]+% a year expected \([\d.]+% cash \+ [\d.]+% growth\) vs Buffett's 10% bar/);
+  await expect(page.locator('.price-card .owner-return')).toContainText(/About [\d.]+% a year expected \([\d.]+% cash \+ [\d.]+% growth\) vs required return [\d.]+% a year \([A-Z]{2} 10-year bond [\d.]+% \+ 4 points\)/);
   await expect(page.locator('.reference-metrics')).toContainText('P/E');await expect(page.locator('.reference-metrics')).toContainText('Dividend yield');
   colours.push(await page.locator('.plain-verdict').evaluate(e=>getComputedStyle(e).color));
   for(const el of await page.locator('.price-card .owner-return,.price-card .owner-growth,.quality-section .tile-sentence').all())expect(await el.evaluate(e=>parseFloat(getComputedStyle(e).fontSize))).toBeGreaterThanOrEqual(14);

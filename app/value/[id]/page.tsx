@@ -1,3 +1,4 @@
+import { requiredReturnCopy } from '@/lib/value/owner-return';
 import { HolderSummary } from '@/components/value/HolderSummary';
 import { HolderLink } from '@/components/value/HolderLink';
 import { displayName } from '@/lib/value/presentation';
@@ -21,7 +22,8 @@ export async function generateStaticParams() {
 }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dossier = await getDossier((await params).id.toUpperCase());
-  return { title: dossier ? `${dossier.company.name}: Buffett checklist` : 'Company not found', alternates: { canonical: `/${(await params).id.toLowerCase()}` } };
+  const description = dossier ? `${dossier.company.name}: ${requiredReturnCopy(dossier.valuation, dossier.company.country)}. Five quality tests plus price.` : 'Company not found';
+  return { description, openGraph: { description }, title: dossier ? `${dossier.company.name}: Buffett checklist` : 'Company not found', alternates: { canonical: `/${(await params).id.toLowerCase()}` } };
 }
 export default async function DossierPage({ params }: Props) {
   const dossier = await getDossier((await params).id.toUpperCase());

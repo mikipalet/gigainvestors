@@ -7,6 +7,7 @@ import { MethodRules } from '@/components/value/MethodRules';
 import { MethodSummary } from '@/components/value/AboutMethod';
 import { matchesMarket } from '@/lib/value/listing-details';
 import { MarketScopeToggle } from '@/components/value/MarketScopeToggle';
+import { VizLab, vizOptions } from '@/components/value/VizLab';
 import { BuyZone } from '@/components/value/BuyZone';
 import { trackRecord } from '@/lib/value/time-travel';
 import { CompanyTreemap } from '@/components/value/CompanyTreemap';
@@ -26,7 +27,7 @@ import { ResultsTable, columns, type Sort } from './_components/ResultsTable';
 
 import { fetchValueData as fetchRows } from '@/lib/value/data-source';
 
-export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: IndexRow[]; initialFilter: FilterState; tags: Record<string, string>; meta: StoreMeta | null }) {
+export default function ValueIndex({ rows, initialFilter, tags, meta, expectedReturns }: { expectedReturns: Record<string,number|null>; rows: IndexRow[]; initialFilter: FilterState; tags: Record<string, string>; meta: StoreMeta | null }) {
   const [history,setHistory]=useState<HistoryIndex|null>(null);
   const [snapshots,setSnapshots]=useState<Record<string,SnapshotRow[]>>({});
   const [historyMetadataError,setHistoryMetadataError]=useState('');
@@ -40,6 +41,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
   const [priceError, setPriceError] = useState("");
   const [table, setTable] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const viz = ['a','b','c','d'].includes(filter.viz) ? filter.viz as 'a'|'b'|'c'|'d' : 'z';
   const allMarkets=filter.markets==='all';
   const scopedHistory=history ? {...history,perYear:allMarkets?history.perYear:history.western?.perYear??{}} : null;
   const year=filter.year??'Today';
@@ -139,7 +141,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
       if (filter.held === "1" && !row.h) return false;
       if (selectedTags.some((tag) => !row.g.includes(tag))) return false;
       if (QUALITY_TESTS.some((key, i) => filter[key] && row.t[i] !== (filter[key] === "pass" ? "P" : "F"))) return false;
-      if (row.st === "i") return !!country;
+      if (row.st === "i") return !!country && viz === 'z';
       if (QUALITY_TESTS.some((key) => filter[key])) return true;
       if (filter.awaiting==='1') return /^[PCU]+$/.test(row.t)&&row.t!=='PPPPP';
       return row.t === "PPPPP" || (filter.near === "1" && /^P*FP*$/.test(row.t));
@@ -166,7 +168,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
   const buyEntries=displayed.filter(e=>e.row.b===true);
   const waitingEntries=displayed.filter(e=>e.row.b!==true);
   const timeline=[...(history?.years??[]).map(String),'Today'];
-  return <div className="one-index locks-scroll" data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
+  return <div className={`one-index locks-scroll${viz!=='z'?' viz-index':''}`} data-viz={viz} data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
     <section className="index-story">
       <p className="eyebrow">Buffett-inspired investing · 5 quality tests + price</p>
       <h1>{historical ? `In ${year}: ${buys} ${buys===1?'business':'businesses'} in the buy zone.` : <><em>{buys} {buys===1?'business':'businesses'} in the buy zone.</em>{buys>0&&<span className="start-here"> Start here.</span>}</>}</h1>
@@ -175,12 +177,15 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
     </section>
     <div className="map-toolbar"><MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/><div className="desktop-filters">{filterBar}</div><button className="mobile-filter-button" onClick={()=>setFiltersOpen(true)}>Filter companies{Object.keys(filter).length?' ●':''}</button><span className="map-count">{displayed.length} companies</span><button className="table-toggle" onClick={()=>setTable(true)}>All companies ↗</button><button onClick={()=>setMethod(true)}>About the method ↗</button>{filter.q&&<button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
     {(countryError||historyError||(historical&&historyMetadataError)||(!historical&&priceError))&&<p role="status" className="map-error">{countryError||historyError||(historical?historyMetadataError:priceError)}</p>}
+    <nav className="viz-selector" aria-label="Visualization"><span>View</span>{vizOptions.map(([key,label])=><button key={key} aria-pressed={viz===key} onClick={()=>change('viz',key==='z'?'':key)}><span className="viz-label-wide">{label}</span><span className="viz-label-small">{({z:'Treemap',a:'Price',b:'Bands',c:'List',d:'Return'})[key]}</span></button>)}</nav>
+    {viz!=='z'?<VizLab key={`${viz}-${year}-${filter.country??''}-${filter.sector??''}-${filter.markets??''}-${filter.q??''}-${filter.near??''}-${filter.held??''}`} variant={viz} entries={displayed} expectedReturns={expectedReturns} year={year}/>:<>
     <div className={`answer-stage${buyEntries.length?'':' empty-buy-zone'}`} aria-busy={historical?!snapshots[year]&&!historyError:loading}>
       <BuyZone entries={buyEntries} allMarkets={allMarkets}/>
       <section className="waiting-zone"><header><h2>{filter.near==='1'?'Waiting businesses & near misses':'Quality businesses waiting for a better price'}</h2><button onClick={()=>setTable(true)}>Show all {displayed.length} ↗</button></header>
       <div className="map-sort"><Select label="Sort" value={filter.mapSort??'cap'} onChange={value=>change('mapSort',value)} options={[["cap","Sort: market value"],["closest","Sort: closest to buy price"]]}/></div>
       <div className="map-stage"><CompanyTreemap entries={waitingEntries} year={year} sort={filter.mapSort==='closest'?'closest':'cap'} onTable={()=>setTable(true)}/></div></section>
     </div>
+    </>}
     <div className="trust-strip">
     <p className="track-record">{record?<>Simulation · if you had bought {record.since}’s buy-zone picks: median <strong>{ret(record.buy)}</strong> vs <strong>{ret(record.all)}</strong> for {allMarkets?'all companies':'companies buyable in the West'}; ahead in <strong>{record.wins} of {record.years} years</strong>.</>:'Track record: historical medians not yet available.'}</p>
     <p className="history-caveat">Price gains to today, excluding dividends; past results may not repeat. <button onClick={()=>setMethod(true)}>Caveats ↗</button></p></div>

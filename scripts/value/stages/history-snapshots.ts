@@ -1,3 +1,4 @@
+import { availableHistoryYears } from '../../../lib/value/time-travel';
 import { bestWesternListing } from "../../../lib/value/western";
 import { westernHistory } from "../../../lib/value/western-history";
 import { existsSync, readdirSync } from 'node:fs';
@@ -12,7 +13,7 @@ import { readPriceHistory } from '../../../lib/value/price-history';
 import { annualReportDocuments, type DocumentDay } from '../../../lib/value/japan/edinet';
 import { snapshotForYear, summarizeSnapshots, HISTORY_ASSUMPTIONS, HISTORY_CAVEATS } from '../../../lib/value/snapshots';
 import { writeNewJson } from '../../../lib/value/enrichment';
-import type { Fundamentals, HistoryIndex, SnapshotRow, ReportMeta, PriceMap } from '../../../lib/value/types';
+import type { Fundamentals, HistoryIndex, SnapshotRow, ReportMeta, PriceMap, IndexRow } from '../../../lib/value/types';
 
 type RawFilings = { Financials?: Record<string,{ yearly?: Record<string,{ filing_date?: string }> }> };
 export function filingDates(raw: RawFilings | null, report: ReportMeta | null, edinet: Record<string,string> = {}): Record<string,string> {
@@ -48,12 +49,14 @@ export function latestHistoryFiles(companies = loadCompanies({})): Record<string
     if (!index || index.scope === 'selection') continue; // index is the commit marker, written after every year.
     const files: Record<string,unknown> = {'history/index.json':index};
     for (const year of index.years) {
-      if (!Number.isInteger(year) || year < 2016 || year > 9999) throw new Error('Invalid history year');
+      if (!Number.isInteger(year) || year < 1900 || year > 9999) throw new Error('Invalid history year');
       const rows = readCorpusJson<SnapshotRow[]>(`history-v7/${run}/${year}.json`);
       if (!rows) throw new Error(`Incomplete history run ${run}`);
       files[`history/${year}.json`] = rows;
     }
     files["history/index.json"] = westernHistory(index, Object.fromEntries(index.years.map(year => [year, files[`history/${year}.json`] as SnapshotRow[]])), new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id)));
+    const ids=new Set(index.years.flatMap(year=>(files[`history/${year}.json`] as SnapshotRow[]).map(row=>row[0])));
+    files['history/companies.json']=companies.filter(c=>ids.has(c.id)).map(c=>({id:c.id,n:c.nameEn??c.name,nameEn:c.nameEn,nameLocal:c.nameLocal,c:c.country,s:c.sector,k:c.kind,mc:c.marketCapUsd,cur:c.currency,v:null,t:'UUUUU',g:[],h:0,st:'i',w:bestWesternListing(c),lg:c.logo??undefined,exchange:c.exchange} satisfies IndexRow));
     return files;
   }
   return {};
@@ -83,13 +86,13 @@ export default async function historySnapshots(options: { only?:string[]; limit?
       const f = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
       if (!f?.years?.length) continue;
       fundamentalsCount++;
-      const prices = readPriceHistory(company.id) ?? [];
+      const prices = readCorpusJson<import('../../../lib/value/types').PriceHistory>(`prices-history-long/${company.id}.json`) ?? readPriceHistory(company.id) ?? [];
       const raw = readCorpusJson<RawFilings>(`raw/eodhd/${company.id}.json`);
       const filedByPeriod = filingDates(raw,readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`),company.edinetCode ? filings[company.edinetCode] : undefined);
       const latestMonth = [...prices].filter(([m])=>m<asOf.slice(0,7)).sort(([a],[b])=>a.localeCompare(b)).at(-1);
       const latestPrice: [number,string] | null = quotes[company.id] ? [quotes[company.id][0],quotes[company.id][1]]
         : latestMonth ? [latestMonth[1],new Date(Date.UTC(Number(latestMonth[0].slice(0,4)),Number(latestMonth[0].slice(5,7)),0)).toISOString().slice(0,10)] : null;
-      for (const fy of [...new Set(f.years.map(y=>y.fy))].filter(fy=>fy>=2016 && fy<=Number(asOf.slice(0,4))).sort()) {
+      for (const fy of [...new Set(f.years.map(y=>y.fy))].filter(fy=>fy>=1900 && fy<=Number(asOf.slice(0,4))).sort()) {
         const target = f.years.find(y=>y.fy===fy)!;
         const reporting = target.currency ?? f.currency;
         const from=usdRate(reporting), to=usdRate(company.currency);
@@ -106,7 +109,7 @@ export default async function historySnapshots(options: { only?:string[]; limit?
       console.warn(`history: skipped ${company.id}: ${error instanceof Error ? error.message : 'unreadable input'}`);
     } finally { if (++processed % 2000 === 0) console.log(`history: ${processed}/${companies.length}`); }
   }
-  const index: HistoryIndex = {scope:options.only || options.limit ? 'selection' : 'universe',years:Object.keys(years).map(Number).sort((a,b)=>a-b),perYear:{},asOf,assumptions:HISTORY_ASSUMPTIONS,caveats:HISTORY_CAVEATS};
+  const index: HistoryIndex = {scope:options.only || options.limit ? 'selection' : 'universe',years:availableHistoryYears(Object.fromEntries(Object.entries(years).map(([y,rows])=>[y,rows.length])), options.only || options.limit ? 1 : 300),perYear:{},asOf,assumptions:HISTORY_ASSUMPTIONS,caveats:HISTORY_CAVEATS};
   const sizes: Record<number,{bytes:number;gzipBytes:number;returns:number}> = {};
   for (const year of index.years) {
     const rows=years[year].sort((a,b)=>a[0].localeCompare(b[0]));
@@ -115,7 +118,7 @@ export default async function historySnapshots(options: { only?:string[]; limit?
     sizes[year]={bytes:Buffer.byteLength(text),gzipBytes:gzipSync(text).byteLength,returns:rows.filter(r=>r[4]!==null).length};
     writeNewJson(`${root}/${year}.json`,rows);
   }
-  const report={root,companies:companies.length,fundamentals:fundamentalsCount,coverage,sizes};
+  const report={root,companies:companies.length,fundamentals:fundamentalsCount,coverage,sizes,candidateCounts:Object.fromEntries(Object.entries(years).map(([y,rows])=>[y,rows.length]))};
   writeNewJson(`${root}/report.json`,report);
   index.western = westernHistory(index, years, new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id))).western;
   writeNewJson(`${root}/index.json`,index);

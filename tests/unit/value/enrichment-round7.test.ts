@@ -1,3 +1,4 @@
+import sharp from 'sharp';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import os from 'node:os';
@@ -29,17 +30,17 @@ describe('round 7 enrichment', () => {
     expect(aboutSentence(null)).toBeNull();
     expect(aboutSentence('Acme makes widgets. 会社の詳細です。')).toBe('Acme makes widgets.');
   });
-  it('requires a 200 PNG logo and otherwise uses only a valid website domain', async () => {
-    vi.stubGlobal('fetch', async () => new Response(new Uint8Array([137,80,78,71,13,10,26,10]), { status: 200, headers: { 'content-type': 'image/png' } }));
+  it('requires a decoded 32px image and rejects an unverified favicon', async () => {
+    vi.stubGlobal('fetch', async () => new Response(new Uint8Array(await sharp({create:{width:32,height:32,channels:4,background:'#ffffff'}}).png().toBuffer()), { status: 200, headers: { 'content-type': 'image/png' } }));
     expect(await resolveLogo({ LogoURL: '/img/logos/KO.png', WebURL: 'https://www.coke.com/a' })).toEqual({ logo: 'https://eodhd.com/img/logos/KO.png', source: 'eodhd' });
     vi.stubGlobal('fetch', async () => new Response('not an image', { status: 200, headers: { 'content-type': 'text/html' } }));
-    expect(await resolveLogo({ LogoURL: '/bad', WebURL: 'https://www.coke.com/a' })).toEqual({ logo: 'https://icons.duckduckgo.com/ip3/www.coke.com.ico', source: 'favicon' });
+    expect(await resolveLogo({ LogoURL: '/bad', WebURL: 'https://www.coke.com/a' })).toEqual({logo:null,source:null});
     expect(await resolveLogo({ WebURL: 'javascript:alert(1)' })).toEqual({ logo: null, source: null });
   });
   it('retries transient logo throttling before choosing a favicon', async () => {
     let responses=0;
     vi.stubGlobal('fetch', async () => ++responses===1 ? new Response('',{status:429,headers:{'retry-after':'0'}})
-      : new Response(new Uint8Array([137,80,78,71,13,10,26,10]),{status:200,headers:{'content-type':'image/png'}}));
+      : new Response(new Uint8Array(await sharp({create:{width:32,height:32,channels:4,background:'#ffffff'}}).png().toBuffer()),{status:200,headers:{'content-type':'image/png'}}));
     expect((await resolveLogo({LogoURL:'/img/logos/US/ko.png',WebURL:'https://coke.com'})).source).toBe('eodhd');
   });
   it('caches Yahoo longName and never overwrites an existing cache', async () => {

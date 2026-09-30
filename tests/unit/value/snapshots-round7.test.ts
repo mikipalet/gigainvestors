@@ -29,7 +29,7 @@ describe('code-only fiscal snapshots', () => {
     expect(bad[2]).toBeNull(); expect(bad[3]).toBe(false);
   });
   it('does not borrow a future/adjacent price and excludes unknown fiscal years', () => {
-    expect(snapshotForYear({...base,fy:2016,prices:prices.filter(([m])=>m!=='2017-02')})).toEqual(['TEST.US',expect.any(String),null,false,null]);
+    expect(snapshotForYear({...base,fy:2016,prices:prices.filter(([m])=>m!=='2017-02')})).toBeNull();
     expect(snapshotForYear({...base,fy:2015,fundamentals:{...fundamentals,years:fundamentals.years.filter(y=>y.fy!==2015)}})).toBeNull();
     expect(snapshotForYear({...base,fy:2016,latestPrice:null})?.[4]).toBeNull();
     expect(snapshotForYear({...base,fy:2016,latestPrice:[150,'2016-01-01']})?.[4]).toBeNull();

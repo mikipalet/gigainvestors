@@ -45,10 +45,12 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
   if (validDate(filed) && filed >= target.end && filed > asOf) return null;
   const month = filingMonth(target.end, filed);
   if (month > asOf.slice(0,7)) return null;
+  if (new Set(fundamentals.years.filter(y=>y.fy<=fy).map(y=>y.fy)).size < 10) return null;
   const pastPrices = prices.filter(([m,p]) => m <= month && positive(p));
   const monthly = new Map(pastPrices);
   // A current incomplete month is not a month-end observation yet.
   const price = month < asOf.slice(0,7) ? monthly.get(month) ?? null : null;
+  if (!positive(price)) return null;
   const prefix: Fundamentals = { id: fundamentals.id, currency: target.currency ?? fundamentals.currency,
     years: fundamentals.years.filter(y => y.fy <= fy).map(y => ({ ...y })),
     splits: fundamentals.splits?.filter(s => s.date <= target.end), integrity: {ok:true,reasons:[]}, fetchedAt: fundamentals.fetchedAt };

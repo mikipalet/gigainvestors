@@ -8,14 +8,14 @@ import { useWidth } from '@/lib/value/viz/use-width';
 import { DataTable } from './DataTable';
 import { ChartInteraction } from './ChartInteraction';
 
-type Props = { returnMedian?:string; label: string; series: Series; domain: [number, number]; currency: string; format?: 'pct' | 'money' | 'index'; threshold?: number; better?: 'higher' | 'lower'; inflation?: boolean; allowedBelow?: number; caption?: string; comparison?: { label: string; series: Series }; logarithmic?: boolean; events?: Dossier['events'] };
+type Props = { returnMedian?:string; label: string; series: Series; domain: [number, number]; currency: string; format?: 'pct' | 'money' | 'index' | 'ratio'; threshold?: number; better?: 'higher' | 'lower'; inflation?: boolean; allowedBelow?: number; caption?: string; comparison?: { label: string; series: Series }; logarithmic?: boolean; events?: Dossier['events'] };
 export function ThresholdSeries({ label, series: rawSeries, domain: suppliedDomain, currency, format = 'pct', threshold, better = 'higher', inflation, allowedBelow, caption, comparison, logarithmic, events, returnMedian }: Props) {
   const { ref, width } = useWidth();
   const [active, setActive] = useState<number | null>(null);
   const domain = seriesDomain(rawSeries);
   const series = logarithmic ? logSeries(rawSeries) : rawSeries;
   const points = series.filter((p): p is [number, number] => p[1] !== null && Number.isFinite(p[1]));
-  const fmt = (n: number) => format === 'pct' ? `${(n * 100).toFixed(1)}%` : format === 'money' ? compactMoney(n, currency) : n.toFixed(1);
+  const fmt = (n: number) => format === 'pct' ? `${(n * 100).toFixed(1)}%` : format === 'money' ? compactMoney(n, currency) : format==='ratio'?`${n.toFixed(2)}×`:n.toFixed(1);
   const values = [...points.map(p => p[1]), ...(comparison?.series.flatMap(p => p[1] === null ? [] : [p[1]]) ?? []), ...(threshold === undefined ? [] : [threshold])];
   const min = format==='index'?Math.min(95,...values):!logarithmic&&format==='money'?Math.min(0,...values):Math.min(...values), max = format==='index'?Math.max(105,...values):Math.max(...values);
   const ticks = logarithmic && points.length ? logTicks([min, max],87) : niceTicks([min, max], 5);
@@ -39,7 +39,7 @@ export function ThresholdSeries({ label, series: rawSeries, domain: suppliedDoma
   const rule = threshold === undefined ? '' : allowedBelow !== undefined ? `pass: median ≥ ${fmt(threshold)}; ≥ ${fmt(allowedBelow)} in 9 of 10 years` : `pass: ${better === 'higher' ? '≥' : '<'} ${fmt(threshold)}`;
   const height = 144;
   return <figure ref={ref} className="value-viz min-w-0" data-testid="threshold-series">
-    <figcaption><h3 className="text-sm font-semibold">{conclusion}</h3><p className="mt-1 text-[13px] text-ink/60">{label}, {format === 'pct' ? '%' : format === 'money' ? currency : 'first year = 100'} by fiscal year{logarithmic ? ' · log scale' : ''}. {caption ?? ''}</p></figcaption>
+    <figcaption><h3 className="text-sm font-semibold">{conclusion}</h3><p className="mt-1 text-[13px] text-ink/60">{label}, {format === 'pct' ? '%' : format === 'money' ? currency : format==='ratio'?'×':'first year = 100'} by fiscal year{logarithmic ? ' · log scale' : ''}. {caption ?? ''}</p></figcaption>
 
     {threshold !== undefined && <p className="mt-2 text-[13px] text-ink/65">{rule}</p>}
     {comparison && <p className="mt-1 flex flex-wrap gap-4 text-[13px] text-ink/60"><span><i className="mr-1 inline-block w-4 border-t-2 border-ink align-middle" />{label}</span><span><i className="mr-1 inline-block w-4 border-t-2 border-ink/55 align-middle" />{comparison.label}</span></p>}

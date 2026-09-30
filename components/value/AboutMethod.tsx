@@ -1,17 +1,17 @@
 'use client';
-import { useState } from 'react';
-import { SidePanel } from './SidePanel';
-import { ValueLink } from './ValueLink';
+import {useState} from 'react';
+import {SidePanel} from './SidePanel';
+import {PanelTabs} from './PanelTabs';
+import {ValueLink} from './ValueLink';
 export function MethodSummary({author}:{author?:string}) {
- return <section className="method-summary"><h2>How we estimate value</h2><ol>
-  <li>Start with normalized yearly cash left for owners after maintaining the business.</li>
-  <li>Project ten years of growth, capped at 8%; assume 3% beyond that.</li>
-  <li>Bring future cash into today’s money using a required return 10% a year (or local 10-year bond + 4 points if higher), then add net cash.</li>
-  <li>Set a buy price 25–50% below that estimate, allowing room for error.</li>
-  <li>The track record is a simulation: no dividends, fees or taxes; missing delistings and revised data can flatter results.</li>
- </ol><p>Expected yearly return is owner cash yield plus the valuation’s capped growth assumption, compared with that company’s required return. Cash yield is normalized owner cash divided by market capitalisation in the same currency. This estimate is not a dividend, a guarantee or the discounted cash-flow model’s exact annual return. Banks and insurers use a book-value model with the same required return. Bond yields refresh daily; changes of 0.1 percentage point trigger revaluation. Implausible yields use a validated 30-day median or an explicitly flagged country default.</p><p className="method-author" data-author-slot>{author?`By ${author}`:null}</p><ValueLink href="/method">Full method & sources ↗</ValueLink></section>;
+ return <PanelTabs tabs={[
+  {label:'Quality',content:<><h3>A good business, at a sensible price.</h3><p>Five tests check stability, competitive advantage, cash generation, capital allocation and honest accounting.</p><dl className="panel-numbers"><div><dt>History</dt><dd>10 years</dd></div><div><dt>Quality</dt><dd>5 tests</dd></div><div><dt>Safety discount</dt><dd>25–50%</dd></div></dl><p>All five must pass. The share price must also leave room for error and the expected return must meet the required return.</p></>},
+  {label:'Value',content:<><h3>Future owner cash, in today’s money.</h3><p>We project normalised owner earnings for ten years, discount future cash, add net cash and divide by shares. Banks and insurers use tangible book value and returns on equity.</p><dl className="panel-numbers"><div><dt>Growth cap</dt><dd>8%</dd></div><div><dt>Long-run growth</dt><dd>3%</dd></div><div><dt>Return floor</dt><dd>10%</dd></div></dl><p>Required return is the higher of 10% or the local ten-year government bond yield plus four percentage points. Expected yearly return is cash yield plus capped growth; it is an estimate, not a guarantee.</p></>},
+  {label:'Map',content:<><h3>Size is market value. Tint is price.</h3><p>Larger companies occupy more space. Closer to the buy price means a deeper tint; grey means a comparable value is unavailable.</p><div className="method-scale" aria-label="Closer to buy price to further away">{['#b8d0b8','#c6d8bf','#d3e1cb','#e0e8d7','#ebeee1','#f6f5ec'].map(c=><i key={c} style={{background:c}}/>)}</div><p>Buy cards rank by expected yearly return. In past years they rank by subsequent price gain. Only the first card has a strong green fill.</p><p>Market access, tile sizes and investor holdings use today’s listings.</p></>},
+  {label:'History',content:<><h3>Historical snapshots, with limits.</h3><p>Each company needs ten fiscal years and a price after that year’s filing. Early years cover fewer companies; the timeline starts at 300.</p><p>Returns are cumulative price gains to the latest quote, excluding dividends, fees and taxes. The simulation compares the selected buy cohort’s median with all covered companies that year.</p><p>Restated financials, missing delistings, today’s currencies and required returns can flatter results. History uses numerical tests without AI report readings. It is not an investable backtest.</p></>},
+  {label:'Sources',content:<><h3>Filings and market data.</h3><p>SEC, EDINET and ESEF filings; EODHD fundamentals; Yahoo monthly prices. Logos use verified provider images or official-site icons.</p><p>Share counts are compared across independent sources. Unresolved differences keep companies outside the buy zone.</p><p>These are independent rules inspired by Buffett, not his recommendations. Errors, debt and currency changes can materially change an estimate.</p>{author&&<p>By {author}</p>}<ValueLink href="/method">Full method & sources ↗</ValueLink></>},
+ ]}/>;
 }
-export function AboutMethod({author}:{author?:string}) {
- const [open,setOpen]=useState(false);
- return <><button className="about-method" onClick={()=>setOpen(true)}>About the method ↗</button>{open&&<SidePanel title="About the method" onClose={()=>setOpen(false)}><MethodSummary author={author}/></SidePanel>}</>;
+export function AboutMethod({author}:{author?:string}){
+ const [open,setOpen]=useState(false);return <><button className="about-method" onClick={()=>setOpen(true)}>Method</button>{open&&<SidePanel title="Method" onClose={()=>setOpen(false)}><MethodSummary author={author}/></SidePanel>}</>;
 }

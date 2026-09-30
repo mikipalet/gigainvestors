@@ -58,7 +58,7 @@ it('computes Western historical medians from eligible observations, preserving t
 });
 it('renders the independent all-markets toggle with an explicit default scope',()=>{
  const html=renderToStaticMarkup(createElement(MarketScopeToggle,{all:false,onChange:()=>{}}));
- expect(html).toContain('Show all markets');expect(html).toContain('Buyable in the West');
+ expect(html).toContain('Western markets');
 });
 it('labels the alternate trading listing and keeps market-access footnotes out of the default view',()=>{
  const row={id:'INFY.NSE',n:'Infosys',w:'INFY.US',c:'IN',t:'PPPPP',st:'s',cur:'INR',v:null,mc:100,s:null,k:'operating',g:[],h:0,b:true} as IndexRow;

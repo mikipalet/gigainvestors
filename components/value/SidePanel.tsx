@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, type ReactNode } from 'react';
 
-/** The portfolio sidebar pattern, with native modal focus containment and an internal scroller. */
+/** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted tab content. */
 export function SidePanel({ title, onClose, children, wide = false }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean }) {
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {

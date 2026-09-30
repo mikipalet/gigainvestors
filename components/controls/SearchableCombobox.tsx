@@ -10,6 +10,7 @@ export function SearchableCombobox({label,value,options,onChange}:SelectProps) {
  const id=useId(),trigger=useRef<HTMLButtonElement>(null),input=useRef<HTMLInputElement>(null),list=useRef<HTMLDivElement>(null);
  const matches=options.filter(([key,text])=>`${text} ${key}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase()));
  const current=Math.min(active,Math.max(0,matches.length-1));
+ const page=Math.floor(current/5),visible=matches.slice(page*5,page*5+5);
  useEffect(()=>{if(open)input.current?.focus();},[open]);
  useEffect(()=>{list.current?.querySelector('[data-active="true"]')?.scrollIntoView({block:'nearest'});},[current,query,open]);
  const close=()=>{setOpen(false);trigger.current?.focus();};
@@ -29,7 +30,8 @@ export function SearchableCombobox({label,value,options,onChange}:SelectProps) {
     if(e.key==='Home'||e.key==='End'){e.preventDefault();setActive(e.key==='Home'?0:Math.max(0,matches.length-1));}
     if(e.key==='Enter'){e.preventDefault();choose(current);}
    }}/>
-   <div ref={list} id={`${id}-list`} role="listbox" aria-label={label}>{matches.map(([key,text,count],i)=><div id={`${id}-${i}`} key={key} role="option" aria-selected={key===value} data-active={current===i} onPointerMove={()=>setActive(i)} onMouseDown={e=>e.preventDefault()} onClick={()=>choose(i)}><span>{text}</span>{count!==undefined&&<span className="option-count" aria-label={`${count} companies`}>{count.toLocaleString('en-US')}</span>}{key===value&&<span aria-hidden="true">✓</span>}</div>)}</div>
+   <div ref={list} id={`${id}-list`} role="listbox" aria-label={label}>{visible.map(([key,text,count],offset)=>{const i=page*5+offset;return <div id={`${id}-${i}`} key={key} role="option" aria-selected={key===value} data-active={current===i} onPointerMove={()=>setActive(i)} onMouseDown={e=>e.preventDefault()} onClick={()=>choose(i)}><span>{text}</span>{count!==undefined&&<span className="option-count" aria-label={`${count} companies`}>{count.toLocaleString('en-US')}</span>}{key===value&&<span aria-hidden="true">✓</span>}</div>})}</div>
+   {matches.length>5&&<nav className="select-pages" aria-label={`${label} pages`}><button type="button" disabled={!page} onClick={()=>setActive(Math.max(0,(page-1)*5))}>←</button><span>{page+1} / {Math.ceil(matches.length/5)}</span><button type="button" disabled={(page+1)*5>=matches.length} onClick={()=>setActive((page+1)*5)}>→</button></nav>}
    {!matches.length&&<p role="status">No matches</p>}
   </div>}
  </div>;

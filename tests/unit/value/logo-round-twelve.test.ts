@@ -1,3 +1,4 @@
+import sharp from 'sharp';
 import {mkdtempSync,mkdirSync,writeFileSync,rmSync,readFileSync} from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -11,8 +12,9 @@ it('uses the ADR website chain for an ESEF issuer with no enrichment cache',asyn
  mkdirSync(path.join(temp,'raw/eodhd'),{recursive:true});
  writeFileSync(path.join(temp,'universe.jsonl'),JSON.stringify(company)+'\n');
  writeFileSync(path.join(temp,'raw/eodhd/RACE.US.json'),JSON.stringify({General:{WebURL:'https://www.ferrari.com'}}));
- // The existing favicon fallback needs no vendor image request.
- vi.stubGlobal('fetch',()=>{throw new Error('Unexpected network call');});
+ const icon=await sharp({create:{width:32,height:32,channels:4,background:'#ff0000'}}).png().toBuffer();
+ const fallback=await sharp({create:{width:32,height:32,channels:4,background:'#ffffff'}}).png().toBuffer();
+ vi.stubGlobal('fetch',async(url:string)=>url.includes('wikidata')?Response.json({results:{bindings:[]}}):new Response(new Uint8Array(url.includes('.invalid')?fallback:icon),{headers:{'content-type':'image/png'}}));
  await logos({only:['RACE.MI']});
  const result=JSON.parse(readFileSync(path.join(temp,'enrichment-v7/logos/RACE.MI.json'),'utf8'));
  expect(result.logo).toBe('https://icons.duckduckgo.com/ip3/www.ferrari.com.ico');

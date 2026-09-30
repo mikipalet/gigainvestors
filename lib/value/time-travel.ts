@@ -10,3 +10,10 @@ export function trackRecord(history:HistoryIndex|null) {
  const first=history.perYear[years[0]];
  return {since:years[0],buy:first.medianReturnAtBuy!,all:first.medianReturnAll!,wins:years.filter(y=>history.perYear[y].medianReturnAtBuy!>history.perYear[y].medianReturnAll!).length,years:years.length};
 }
+
+/** Small early cohorts stay unpublished; later cohorts retain their honest counts. */
+export function availableHistoryYears(counts: Record<number,number>, minimum=300): number[] {
+ const years=Object.keys(counts).map(Number).sort((a,b)=>a-b);
+ const first=years.find(y=>counts[y]>=minimum);
+ return first===undefined?[]:years.filter(y=>y>=first);
+}

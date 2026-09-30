@@ -1,3 +1,4 @@
+import {validLogo,iconHash} from './logo-validation';
 import { randomUUID } from 'node:crypto';
 import { linkSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -118,33 +119,33 @@ const logoLimit = createLimiter({ perSecond: 10 });
 const fetchLogo: typeof fetch = (url, init) => fetchWithRetry(String(url), {
   ...init, signal: AbortSignal.timeout(60_000), retries: 3, beforeAttempt: () => logoLimit(async () => {}),
 });
-export async function resolveLogo(general: GeneralInfo, request: typeof fetch = fetchLogo): Promise<{ logo: string | null; source: string | null }> {
-  if (general.LogoURL) {
-    try {
-      const url = new URL(general.LogoURL, 'https://eodhd.com');
-      if (url.origin === 'https://eodhd.com') {
-        const response = await request(url, { signal: AbortSignal.timeout(10_000) });
-        const png = response.status === 200 && response.headers.get('content-type')?.split(';')[0].trim() === 'image/png';
-        const bytes = png ? new Uint8Array(await response.arrayBuffer()) : null;
-        if (!png) await response.body?.cancel();
-        if (bytes && [137,80,78,71,13,10,26,10].every((b, i) => bytes[i] === b)) return { logo: url.href, source: 'eodhd' };
-      }
-    } catch { /* A bad vendor logo falls back to the issuer's website. */ }
-  }
-  try {
-    const url = new URL(general.WebURL?.includes('://') ? general.WebURL : `https://${general.WebURL ?? ''}`);
-    if (['https:', 'http:'].includes(url.protocol) && url.hostname.includes('.') && !url.username && !url.password) {
-      return { logo: `https://icons.duckduckgo.com/ip3/${url.hostname}.ico`, source: 'favicon' };
+export async function resolveLogo(general: GeneralInfo, request: typeof fetch = fetchLogo): Promise<{ logo: string | null; source: string | null;retryable?:boolean }> {
+  let retryable=false;
+  const candidates: Array<{logo:string;source:string}>=[];
+  try { if(general.LogoURL) { const url=new URL(general.LogoURL,'https://eodhd.com');if(url.origin==='https://eodhd.com')candidates.push({logo:url.href,source:'eodhd'}); } } catch {}
+  try { const url=new URL(general.WebURL?.includes('://')?general.WebURL:`https://${general.WebURL??''}`);
+    if(['https:','http:'].includes(url.protocol)&&url.hostname.includes('.')&&!url.username&&!url.password)candidates.push({logo:`https://icons.duckduckgo.com/ip3/${url.hostname}.ico`,source:'favicon'});
+  } catch {}
+  for(const candidate of candidates) try {
+    const response=await request(candidate.logo,{signal:AbortSignal.timeout(10000)});
+    if(!response.ok||!response.headers.get('content-type')?.startsWith('image/')){if(response.status===429||response.status>=500)retryable=true;await response.body?.cancel();continue;}
+    const bytes=new Uint8Array(await response.arrayBuffer());
+    let defaultHash:string|undefined;
+    if(candidate.source==='favicon') {
+      const fallback=await request('https://icons.duckduckgo.com/ip3/value-logo-missing.invalid.ico',{signal:AbortSignal.timeout(10000)});
+      if(fallback.headers.get('content-type')?.startsWith('image/'))defaultHash=iconHash(new Uint8Array(await fallback.arrayBuffer()));
+      else {await fallback.body?.cancel();continue;}
     }
-  } catch { /* No usable website. */ }
-  return { logo: null, source: null };
+    if(await validLogo(bytes,defaultHash))return candidate;
+  } catch {retryable=true;}
+  return {logo:null,source:null,...(retryable?{retryable:true}:{})};
 }
 export function enrichedCompany(company: Company, cachedOnly = false): Company {
   const cached = readCorpusJson<Enrichment>(`enrichment-v7/companies/${company.id}.json`);
   if (!cached && cachedOnly) return company;
   const names = cached ?? englishName(company, {}, null);
-  const logo = readCorpusJson<{logo:string|null}>(`enrichment-v7/logos/${company.id}.json`);
+  const logo = readCorpusJson<{logo:string|null;validated?:boolean}>(`enrichment-v7/logos/${company.id}.json`);
   const about = readCorpusJson<{about:string}>(`enrichment-v7/about/${company.id}.json`);
   return { ...company, nameEn: names.nameEn, ...(names.nameLocal ? { nameLocal: names.nameLocal } : {}),
-    logo: logo?.logo ?? cached?.logo ?? company.logo ?? null, about: about?.about ?? cached?.about ?? company.about ?? null, name: names.nameEn };
+    logo: logo?.validated ? logo.logo : logo?.logo ?? cached?.logo ?? company.logo ?? null, about: about?.about ?? cached?.about ?? company.about ?? null, name: names.nameEn };
 }

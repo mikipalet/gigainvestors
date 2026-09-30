@@ -3,25 +3,20 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { T } from '@/lib/value/config';
 import { QUALITY_TESTS, type Dossier, type TestKey, type TestOutcome } from '@/lib/value/types';
 import { comparableValuation } from '@/lib/value/site-valuation';
-import { dateLabel, priceValue, priceState, companyName, humanLabel, earningsYieldAtMid } from '@/lib/value/presentation';
+import { dateLabel, priceValue, priceState, companyName } from '@/lib/value/presentation';
 import { formatMetric } from '@/lib/value/metric-labels';
 import { testLabels } from './TestChips';
 import { useQuote } from './use-quote';
 import { ValueLink } from './ValueLink';
 import { SidePanel } from './SidePanel';
-import { TestSection } from './TestSection';
-import { Bridge } from './Bridge';
-import { FootballField } from './viz/FootballField';
-import { PriceHistory } from './viz/PriceHistory';
+import { EvidencePanel,ValuationPanel } from './EvidencePanel';
 import { StatusGlyph } from './viz/StatusGlyph';
 import { MiniSeries } from './viz/MiniSeries';
 import { MiniDollar, MiniPrice } from './viz/TileCharts';
 import { tileMetric, tileReason, tileSentence } from '@/lib/value/tile-metric';
-import { DataTable } from './viz/DataTable';
 import { priceFraming } from '@/lib/value/presentation';
 import { CompanyLogo } from './CompanyLogo';
-import { AboutMethod } from './AboutMethod';
-import { ownerReturn, expectedReturnCopy, requiredReturnCopy, referenceMetrics, cashAmount } from '@/lib/value/owner-return';
+import { ownerReturn, expectedReturnCopy, requiredReturnCopy, referenceMetrics } from '@/lib/value/owner-return';
 import { bestWesternListing, westernTradingLabel } from '@/lib/value/western';
 import { sharePrice } from '@/lib/value/listing-details';
 
@@ -46,7 +41,6 @@ export function DossierContent({ dossier, children }: { dossier: Dossier; childr
  const pct=(n:number|null|undefined)=>formatMetric({value:n??null,format:'pct'});
  const m=(key:Exclude<TestKey,'price'>,metric:string)=>dossier.tests[key].metrics[metric]??null;
  const deciding=Object.fromEntries(tests.map(test=>{const metric=tileMetric(test,company.kind,dossier.tests.understandable.series.netIncome??dossier.series.netIncome);if(test.key==='price'){metric.value=ratio;metric.threshold=1-requiredMos;}return [test.key,metric];})) as Record<TestKey,ReturnType<typeof tileMetric>>;
- const verification=dossier.dataQualityFlags?.length?'Verify valuation':quote?.[2]==='seed'?'Estimated price':'';
  const glyph=(test:TestOutcome)=>test.key==='price'?state.state:test.pending?'checking':test.result;
  const name=companyName(company);
  const w=dossier.w===undefined?bestWesternListing(company):dossier.w;
@@ -61,16 +55,9 @@ export function DossierContent({ dossier, children }: { dossier: Dossier; childr
  const needsVerification=Boolean(dossier.dataQualityFlags?.length);
  const shortHistory=dossier.historyCoverage && dossier.historyCoverage.years<10;
  const returnBelow=qualityPass && owner && valuation && owner.expected<valuation.discountRate && ratio!==null && ratio<=1-requiredMos;
- const verdict=failed.length?'Fails quality':shortHistory?'Not enough history yet':!qualityPass?'Quality evidence incomplete':needsVerification?'Verify valuation':dossier.b?'Buy zone':returnBelow?'Wait for a higher return':'Wait for a better price';
+ const verdict=failed.length?'Fails quality':shortHistory?'Not enough history yet':!qualityPass?'Quality evidence incomplete':needsVerification?'Share count being checked':dossier.b?'Buy zone':returnBelow?'Wait for a higher return':'Wait for a better price';
  const identity=<div className="one-identity"><ValueLink href="/" className="back-link">← Companies</ValueLink><div className="company-heading"><CompanyLogo src={company.logo} name={name}/><div><h1>{name}</h1><p title={tradingLabel??'Not easily buyable from Western brokers'}>{company.code} · {company.exchange}</p></div></div>{company.about?.trim()&&<p className="company-about">{company.about}</p>}{children}</div>;
 
- const valuationEvidence=<><p>{tradingLabel??'Not easily buyable from Western brokers'}</p><p className="value-definition">Estimated value is {company.kind==='operating'?'future cash for owners in today’s money, per share':'an asset-based estimate per share for banks and insurers'}. Buy price is 25–50% below that estimate, depending on stability.</p>{verification&&<p>{quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:verification}</p>}<p className="owner-return">{ownerCopy}</p><p>{framing.headline}. {framing.fall} {framing.drop!==null&&framing.drop>0?'A condition for buying, not a forecast.':''}</p>{owner&&<p className="owner-growth">Cash yield: {cashAmount(owner.cash,owner.currency)} normalized yearly owner cash ÷ {cashAmount(owner.capital,owner.currency)} capitalisation. Growth: the valuation’s capped assumption. Yield plus growth is an estimate, not the discounted cash-flow model’s exact annual return.</p>}
-  {(comparable??valuation)?<FootballField valuation={(comparable??valuation)!} price={quote?.[0]??null} mismatch={valuation&&!comparable?`Price is in ${company.currency}, value in ${valuation.currency}, not compared`:null} requiredMos={requiredMos} date={quote?.[1]} fy={lastFiscalYear} volatility={dossier.volatility}/>:<section><h2>Valuation unavailable</h2><p>{dossier.valuationReason?`${humanLabel(dossier.valuationReason)}.`:'Reliable financial history is required to estimate value.'}</p></section>}
-  {dossier.dataQualityFlags?.length?<div className="data-quality-note"><h3>Valuation data needs verification</h3><ul>{dossier.dataQualityFlags.map(f=><li key={f}>{f}</li>)}</ul></div>:null}
-  {valuation&&<><Bridge valuation={valuation}/><PriceHistory dossier={dossier} quote={quote} date={quote?.[1]}/><section className="assumptions"><h2>Assumptions & sources</h2><p>Stage one reflects the last 10 years, capped; terminal growth is the long-run economy rate. Estimates are sensitive to these assumptions.</p><DataTable caption="Valuation assumptions" headers={['Assumption','Value']} rows={[
-   ['Growth',pct(valuation.growth)],['Required return',pct(valuation.discountRate)],['Terminal growth',pct(valuation.terminalGrowth)],['Government bond yield',pct(valuation.bondYield)],['Earnings yield at mid value',pct(earningsYieldAtMid(valuation))],
-  ]}/><ul>{valuation.assumptions.map(a=><li key={a}>{a}</li>)}</ul></section></>}
- </>;
  if(insufficient){
   const coverage=dossier.historyCoverage,count=coverage?.years??new Set(years).size;
   const explanation=count<10?`Only ${count} years of filings; the checklist needs 10.`:'Source figures must reconcile before the checklist can run.';
@@ -78,21 +65,21 @@ export function DossierContent({ dossier, children }: { dossier: Dossier; childr
  }
  return <div className="one-dossier locks-scroll" data-quality={qualityPass?'pass':failed.length?'fail':'unclear'}>
   <section className="dossier-band">{identity}
-   <div className="one-verdict" data-testid="verdict"><p className="plain-verdict" data-verdict={verdict}>{verdict}</p><p className="verdict-explanation">{qualityPass?needsVerification?'Quality passes; valuation data needs checking.':returnBelow?`Close to the buy price, but the expected return is under the ${(valuation!.discountRate*100).toLocaleString('en-US',{maximumFractionDigits:1})}% hurdle.`:'Passes all 5 quality tests.':failed.length?`${failed.length} quality ${failed.length===1?'test fails':'tests fail'}. A lower price would not fix the business.`:shortHistory?`Only ${dossier.historyCoverage!.years} years of filings; the checklist needs 10.`:'Quality evidence is incomplete. A cheap price alone is not enough.'}</p></div>
+   <div className="one-verdict" data-testid="verdict"><p className="plain-verdict" data-verdict={verdict}>{verdict}</p>{!(qualityPass&&needsVerification)&&<p className="verdict-explanation">{qualityPass?needsVerification?'Share count being checked.':returnBelow?`Close to the buy price, but the expected return is under the ${(valuation!.discountRate*100).toLocaleString('en-US',{maximumFractionDigits:1})}% hurdle.`:'Passes all 5 quality tests.':failed.length?`${failed.length} quality ${failed.length===1?'test fails':'tests fail'}. A lower price would not fix the business.`:shortHistory?`Only ${dossier.historyCoverage!.years} years of filings; the checklist needs 10.`:'Quality evidence is incomplete. A cheap price alone is not enough.'}</p>}</div>
 
   </section>
   {referenceRow}
   <div className="dossier-checks">
-   <section className="quality-section" aria-label="Five business quality tests"><h2>1. Is this a good business? <span>Five quality tests</span></h2>
-    <div className="test-tiles">{tests.filter(test=>test.key!=='price').map((test,i)=>{const d=deciding[test.key];return <button key={test.key} className={`test-tile ${glyph(test)}`} data-testid={`tile-${test.key}`} data-metric={d.id} onClick={e=>{e.currentTarget.focus();setPanel(test.key);}}><header><span><small>{i+1}</small> {testLabels[test.key]}</span><span><StatusGlyph result={glyph(test)} label={`${testLabels[test.key]}: ${glyph(test)}`}/>{test.pending?'Checking':test.result}</span></header><p className="tile-sentence">{test.insufficientHistory!==undefined?`Not tested: only ${test.insufficientHistory} years`:test.result==='fail'?tileReason(test):tileSentence(test,d,company.kind)}</p>{test.key==='management'?<MiniDollar retained={m('management','retainedEarnings')} created={m('management','marketCapGain')} first={m('management','retainedStartFy')} last={m('management','retainedEndFy')}/>:<MiniSeries series={d.series} label={d.chart} format={test.key==='understandable'?'pct':d.format} threshold={test.key==='understandable'?undefined:d.threshold} better={d.better}/>}<span className="tile-evidence">Evidence ↗</span></button>;})}</div>
+   <section className="quality-section" aria-label="Five business quality tests"><h2>1. Is this a good business? </h2>
+    <div className="test-tiles">{tests.filter(test=>test.key!=='price').map((test,i)=>{const d=deciding[test.key];return <button key={test.key} className={`test-tile ${glyph(test)}`} data-testid={`tile-${test.key}`} data-metric={d.id} onClick={e=>{e.currentTarget.focus();setPanel(test.key);}}><header><span><small>{i+1}</small> {testLabels[test.key]}</span><span><StatusGlyph result={glyph(test)} label={`${testLabels[test.key]}: ${glyph(test)}`}/>{test.pending?'Checking':test.result}</span></header><p className="tile-sentence">{test.insufficientHistory!==undefined?`Not tested: only ${test.insufficientHistory} years`:test.result==='fail'?tileReason(test):tileSentence(test,d,company.kind)}</p>{test.key==='management'?<MiniDollar retained={m('management','retainedEarnings')} created={m('management','marketCapGain')} first={m('management','retainedStartFy')} last={m('management','retainedEndFy')}/>:<MiniSeries series={d.series} label={d.chart} format={test.key==='understandable'?'pct':d.format} threshold={test.key==='understandable'?undefined:d.threshold} better={d.better}/>}</button>;})}</div>
    </section>
    <section className="price-section" aria-label="Separate price check"><h2>2. Is the price low enough?</h2><button className={`test-tile price-card ${glyph(price)}`} data-testid="tile-price" data-metric="priceToMid" title={[framing.headline,valuation&&!comparable?`Price is in ${company.currency}, value in ${valuation.currency}, not compared`:'',quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:''].filter(Boolean).join(' · ')} onClick={()=>setPanel('valuation')}><header><span>Price · separate check</span><span><StatusGlyph result={glyph(price)} label={`Price: ${glyph(price)}`}/>{state.label}</span></header>
     <p className="owner-return" title={ownerCopy}>{owner?`${(owner.expected*100).toFixed(1)}% expected / year`:'Expected return unavailable'}</p>
     <dl className="exact-prices"><div><dt>Share price</dt><dd>{sharePrice(quote?.[0]??null,company.currency)}</dd></div><div><dt>Estimated value</dt><dd>{sharePrice(comparable?.perShare.mid??null,company.currency)}</dd></div><div><dt>Buy price</dt><dd>{sharePrice(comparable?comparable.perShare.mid*(1-requiredMos):null,company.currency)}</dd></div></dl>
-    {comparable&&<MiniPrice dossier={dossier} quote={quote}/>}<span className="tile-evidence">Valuation & evidence ↗</span>
+    {comparable&&<MiniPrice dossier={dossier} quote={quote}/>}
    </button></section>
   </div>
-  <div className="dossier-source"><span className="source-date">{quote?`Prices ${dateLabel(quote[1])}`:'Quote arriving'}{lastFiscalYear?` · FY${lastFiscalYear}`:''}</span><span className="source-links">{reportUrl&&<a href={reportUrl}>Original filing ↗ · </a>}<span className="source-keys">Keys 1–6 · </span><AboutMethod author={dossier.author}/></span></div>
-  {panel&&<SidePanel title={panel==='valuation'?'Valuation':`${testLabels[panel]} · evidence`} onClose={()=>setPanel(null)}>{panel==='valuation'||panel==='price'?valuationEvidence:<TestSection test={dossier.tests[panel]} kind={company.kind} events={dossier.events} perShare={dossier.series} lastFiscalYear={lastFiscalYear} requiredMos={requiredMos} priceDate={quote?.[1]} netIncome={dossier.tests.understandable.series.netIncome??dossier.series.netIncome} currency={valuation?.currency??company.currency} reportUrl={reportUrl} valuation={valuation}/>}<p className="source-line">Analysed {dateLabel(dossier.asOf)} · {reportUrl&&<a href={reportUrl}>Original filing ↗ · </a>}<ValueLink href="/method">Method & sources →</ValueLink></p></SidePanel>}
+  <div className="dossier-source"><span className="source-date">{quote?`Prices ${dateLabel(quote[1])}`:'Quote arriving'}{lastFiscalYear?` · FY${lastFiscalYear}`:''}</span><span className="source-links">{reportUrl&&<a href={reportUrl}>Original filing ↗ · </a>}</span></div>
+  {panel&&<SidePanel title={panel==='valuation'?'Valuation':`${testLabels[panel]} · evidence`} onClose={()=>setPanel(null)}>{panel==='valuation'||panel==='price'?<ValuationPanel dossier={dossier} quote={quote}/>:<EvidencePanel key={panel} dossier={dossier} test={dossier.tests[panel]}/>}</SidePanel>}
  </div>;
 }

@@ -116,7 +116,7 @@ export function Search() {
       </div>}
       {open && (
         <div className="fixed inset-0 z-50 flex items-start justify-center bg-paper/85 pt-[18vh] backdrop-blur-[2px]" onMouseDown={() => setOpen(false)}>
-          <div className="w-[min(560px,92vw)] bg-paper shadow-[0_0_0_1px_var(--ink)]" onMouseDown={(e) => e.stopPropagation()}>
+          <div className="search-modal w-[min(560px,92vw)] bg-paper shadow-[0_0_0_1px_var(--ink)]" onMouseDown={(e) => e.stopPropagation()}>
             <input
               aria-label="Search investor, firm, ticker, company"
               role="combobox" aria-expanded="true" aria-controls="search-results" aria-activedescendant={hits[sel] ? `search-hit-${sel}` : undefined}
@@ -148,8 +148,8 @@ export function Search() {
             {error && <div role="status" className="border-t border-ink/15 px-4 py-3 text-[13px] opacity-40">{error}</div>}
             {isValue && query.trim() && ['','/'].includes(pathname.replace('/value','')) && <button className="border-t border-ink/15 px-4 py-3 text-[12px] opacity-60" onClick={()=>{window.dispatchEvent(new CustomEvent('filter-value-list',{detail:query}));setOpen(false);}}>Filter this list: {query}</button>}
             {hits.length > 0 && (
-              <ul id="search-results" role="listbox" className="max-h-[50vh] overflow-y-auto border-t border-ink/15 py-1">
-                {hits.map((h, i) => (
+              <ul id="search-results" role="listbox" className={`border-t border-ink/15 py-1 ${isValue?'':'max-h-[50vh] overflow-y-auto'}`}>
+                {hits.slice(isValue?Math.floor(sel/4)*4:0,isValue?Math.floor(sel/4)*4+4:hits.length).map((h, offset) => { const i=(isValue?Math.floor(sel/4)*4:0)+offset; return (
                   <Fragment key={h.kind==='value'?h.row[0]:h.kind==='munger'?'munger':h.title}>{isValue&&(i===0||hits[i-1].kind==='value'&&h.kind!=='value')&&<li role="presentation" className="search-group">{h.kind==='value'?'Buffett checklist':'Superinvestor holdings'}</li>}<li
                     id={`search-hit-${i}`} role="option" aria-selected={i===sel}
                     key={h.kind === "value" ? h.row[0] : h.kind === "munger" ? "munger" : h.kind === "investor" ? `i${h.code}` : `s${h.ticker}`}
@@ -167,9 +167,10 @@ export function Search() {
                     {h.kind === "investor" && <span className="ml-auto shrink-0 opacity-60">investor</span>}
                     {h.kind === "munger" && <span className="ml-auto shrink-0 opacity-60">the waiting</span>}
                   </li></Fragment>
-                ))}
+                );})}
               </ul>
             )}
+            {isValue&&hits.length>4&&<nav className="select-pages" aria-label="Search pages"><button disabled={sel<4} onClick={()=>setSel(Math.max(0,(Math.floor(sel/4)-1)*4))}>←</button><span>{Math.floor(sel/4)+1} / {Math.ceil(hits.length/4)}</span><button disabled={(Math.floor(sel/4)+1)*4>=hits.length} onClick={()=>setSel((Math.floor(sel/4)+1)*4)}>→</button></nav>}
           </div>
         </div>
       )}

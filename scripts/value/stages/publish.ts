@@ -1,3 +1,4 @@
+import {applyShareCheck,type ShareCheck} from '../../../lib/value/share-check';
 import { enrichedCompany } from "../../../lib/value/enrichment";
 import { latestHistoryFiles } from "./history-snapshots";
 import { buildAdaptiveSearchShards } from "../../../lib/value/search";
@@ -128,7 +129,7 @@ export function loadHolders(store: string): { holdersByTicker: Record<string, st
 }
 
 export function writeOutput({ repo, files }: { repo: string; files: Record<string, unknown> }): void {
-  const allowed = /^(?:index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|[0-9]{4})|meta|top)\.json$/;
+  const allowed = /^(?:index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|meta|top)\.json$/;
   for (const file of Object.keys(files)) if (!allowed.test(file)) throw new Error("Invalid publish output path");
   for (const directory of ["index", "dossiers", "search"]) rmSync(path.join(repo, directory), { recursive: true, force: true });
   for (const [file, data] of Object.entries(files)) {
@@ -261,7 +262,7 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");
       // Validate the consumer contract here so one malformed document cannot stop the rollout.
       if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");
-      analyses.push(analysis);
+      analyses.push(applyShareCheck(analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);
     }

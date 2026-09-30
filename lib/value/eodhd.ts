@@ -32,7 +32,7 @@ export interface ScreenerRow {
 
 const limit = createLimiter({ perSecond: T.eodhd.perSecond });
 
-export async function eodhd<T>(path: string, params: Record<string, string> = {}): Promise<T> {
+export async function eodhd<T>(path: string, params: Record<string, string> = {}, request: { signal?: AbortSignal; retries?: number } = {}): Promise<T> {
   const key = process.env.EODHD_API_KEY;
   if (!key) throw new Error("EODHD_API_KEY is required");
   const url = new URL(path.replace(/^\//, ""), "https://eodhd.com/api/");
@@ -43,7 +43,7 @@ export async function eodhd<T>(path: string, params: Record<string, string> = {}
   return limit(async () => {
     let response: Response;
     try {
-      response = await fetchWithRetry(url.toString(), { signal: AbortSignal.timeout(T.eodhd.timeoutMs), beforeAttempt: () => reserveEodhd({ endpoint: path.replace(/^\//, ""), monthly: params.period === "m" }) });
+      response = await fetchWithRetry(url.toString(), { signal: request.signal ?? AbortSignal.timeout(T.eodhd.timeoutMs), retries: request.retries, beforeAttempt: () => reserveEodhd({ endpoint: path.replace(/^\//, ""), monthly: params.period === "m" }) });
     } catch (error) {
       if (error instanceof EodhdBudgetError) throw error;
       throw new Error("EODHD request failed");

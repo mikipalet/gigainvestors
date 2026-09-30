@@ -39,5 +39,6 @@ export const YAHOO_SUFFIXES: Readonly<Record<string, string>> = {
   ST: ".ST", CO: ".CO", OL: ".OL", HE: ".HE", BR: ".BR", LS: ".LS", VI: ".VI", WAR: ".WA",
   TO: ".TO", V: ".V", AU: ".AX", HK: ".HK", TW: ".TW", TWO: ".TWO", KO: ".KS", KQ: ".KQ",
   SHG: ".SS", SHE: ".SZ", SA: ".SA", MX: ".MX", JK: ".JK", KLSE: ".KL", BK: ".BK", JSE: ".JO",
+  PSE: ".PS", RO: ".RO", BUD: ".BD", HM: ".HM", BA: ".BA", PR: ".PR", F: ".F",
   NZ: ".NZ", SN: ".SN", IR: ".IR", AT: ".AT", JP: ".T",
 };

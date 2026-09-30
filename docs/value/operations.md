@@ -7,7 +7,7 @@ From the checked-out pipeline directory:
 npm run value -- price-seed
 npm run value -- status
 
-# Starts at the next 00:05 UTC, then repeats every day:
+# Starts at the next 03:00 UTC, then repeats every day:
 nohup bash scripts/value/run-daily.sh > "$HOME/value-daily.log" 2>&1 &
 
 # Explicit immediate single cycle (consumes provider budgets and publishes):
@@ -20,8 +20,18 @@ The runner loads `.env.local` with dotenv, respecting existing environment varia
 runners. After an unclean shutdown, the runner reclaims a lock only when its saved PID
 is dead; live or unverifiable owners are left in place. Do not run competing paid stages against the same corpus concurrently.
 
-Order: japan, prices, price-history, fundamentals, renormalize,
+Order: japan, wait-eodhd-reset, prices, price-history, fundamentals, renormalize,
 renormalize-edinet, dedupe, price-seed, reports, analyze, publish, status.
+Before any EODHD-consuming stages, `wait-eodhd-reset` polls `GET /user` every
+10 minutes for up to 12 hours. It proceeds only when `apiRequestsDate` equals
+the current UTC date and `apiRequests` is below 5,000. Errors and malformed
+responses keep the gate closed. Each check and the first qualifying observation
+are timestamped in `logs/YYYY-MM-DD-wait-eodhd-reset.log`; the observation time
+bounds the reset schedule to the polling interval, rather than asserting an exact
+provider reset time. A timeout skips the remaining cycle (including analyze's
+paid FX requests), runs status, and waits for the next 03:00 UTC start; `--once`
+exits unsuccessfully. `--once` also obeys the reset gate.
+
 Japan runs first so newly imported `.JP` issuers get Yahoo quotes and history in
 the same cycle. Both price stages run over all sources without `--only` or
 `--limit`; EODHD budget priority remains prices, history, then fundamentals.
@@ -56,6 +66,13 @@ capacity flows to fundamentals. Yahoo requests for `.JP` consume no EODHD budget
 `usage/eodhd-YYYY-MM-DD.json` records paid attempts before sending, including
 retries and failures. Usage checks take the maximum of that conservative local
 counter and the provider counter; midnight switches to a fresh dated ledger.
+The reset gate explicitly replaces that day's local counter with the confirmed
+provider counter, correcting a stale previous-provider-day count imported after
+UTC midnight. It retains history reservations up to the provider total, avoiding
+both a poisoned history cap and a fresh history allowance on repeated starts.
+EODHD's reset need not coincide with UTC midnight: on 2026-09-30 the 00:05 UTC
+run still saw about 99,000 requests for the prior day; by 08:31 UTC `/user`
+reported 25 for 2026-09-30.
 All paid workloads sharing the account should use this runner/corpus. External
 clients are only observed at provider resynchronization, not continuously.
 
@@ -88,3 +105,10 @@ Provider checks (2026-09-29):
   technicals (50-day average 1,489.524, 52-week range 806.8248–1,738.9059).
   This is a currency/scale consistency check, not an independent live-close
   verification. No paid quote requests were made for these checks.
+
+Yahoo history suffixes also cover PSE (`.PS`), RO (`.RO`), BUD (`.BD`),
+HM (`.HM`), BA (`.BA`), PR (`.PR`), and F (`.F`). Live checks on 2026-09-30
+returned history for PSEI.PS, TLV.RO, OTP.BD, COP.HM, GGAL.BA, CEZ.PR, and
+TW10.F. Philippine equity coverage remains limited: SM.PS, ALI.PS, TEL.PS,
+and BDO.PS returned 404; Yahoo [lists `.PS` coverage for indices](https://uk.help.yahoo.com/kb/exchanges-markets-covered-yahoo-finance-sln2310.html).
+Mapping the venue does not supply missing provider history.

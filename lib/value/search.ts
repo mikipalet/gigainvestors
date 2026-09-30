@@ -1,3 +1,4 @@
+import { bestWesternListing } from "./western";
 import { rankItems } from "../search/rank";
 import type { Company, SearchRow, SearchShard } from "./types";
 
@@ -53,7 +54,7 @@ export function buildAdaptiveSearchShards(companies: Company[], analysed: Readon
     const cap = company.marketCapUsd;
     return {
       row: [company.id, company.nameEn ?? company.name, company.country, analysed.has(company.id) ? "a" : "p",
-        cap != null && Number.isFinite(cap) ? Number(cap.toPrecision(2)) : null],
+        cap != null && Number.isFinite(cap) ? Number(cap.toPrecision(2)) : null, bestWesternListing(company)],
       cap: cap != null && Number.isFinite(cap) ? cap : -Infinity,
       tokens: searchTokens(company), codes: aliases(company),
     };

@@ -34,7 +34,8 @@
     ],
     "nameEn": "Coca-Cola",
     "nameLocal": "Coca-Cola",
-    "lg": "https://icons.duckduckgo.com/ip3/coca-cola.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/coca-cola.com.ico",
+    "w": "KO.US"
   },
   {
     "b": false,
@@ -69,7 +70,8 @@
     ],
     "nameEn": "Delta Air Lines",
     "nameLocal": "Delta Air Lines",
-    "lg": "https://icons.duckduckgo.com/ip3/delta.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/delta.com.ico",
+    "w": "DAL.US"
   },
   {
     "b": false,
@@ -100,7 +102,8 @@
     ],
     "nameEn": "Global Consumer ADR",
     "nameLocal": "Global Consumer ADR",
-    "lg": null
+    "lg": null,
+    "w": "FX.US"
   },
   {
     "b": false,
@@ -135,7 +138,8 @@
     ],
     "nameEn": "Apple",
     "nameLocal": "Apple",
-    "lg": "https://icons.duckduckgo.com/ip3/apple.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/apple.com.ico",
+    "w": "AAPL.US"
   },
   {
     "b": false,
@@ -170,12 +174,13 @@
     ],
     "nameEn": "Microsoft",
     "nameLocal": "Microsoft",
-    "lg": "https://icons.duckduckgo.com/ip3/microsoft.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/microsoft.com.ico",
+    "w": "MSFT.US"
   },
   {
     "b": false,
     "id": "MCO.US",
-    "n": "Moody\u2019s",
+    "n": "Moody’s",
     "c": "US",
     "s": "Consumer Defensive",
     "k": "operating",
@@ -203,9 +208,10 @@
       0.28,
       0.29
     ],
-    "nameEn": "Moody\u2019s",
-    "nameLocal": "Moody\u2019s",
-    "lg": "https://icons.duckduckgo.com/ip3/moodys.com.ico"
+    "nameEn": "Moody’s",
+    "nameLocal": "Moody’s",
+    "lg": "https://icons.duckduckgo.com/ip3/moodys.com.ico",
+    "w": "MCO.US"
   },
   {
     "b": false,
@@ -240,7 +246,8 @@
     ],
     "nameEn": "Visa",
     "nameLocal": "Visa",
-    "lg": "https://icons.duckduckgo.com/ip3/visa.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/visa.com.ico",
+    "w": "V.US"
   },
   {
     "b": false,
@@ -275,7 +282,8 @@
     ],
     "nameEn": "Mastercard",
     "nameLocal": "Mastercard",
-    "lg": "https://icons.duckduckgo.com/ip3/mastercard.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/mastercard.com.ico",
+    "w": "MA.US"
   },
   {
     "b": false,
@@ -310,7 +318,8 @@
     ],
     "nameEn": "Costco",
     "nameLocal": "Costco",
-    "lg": "https://icons.duckduckgo.com/ip3/costco.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/costco.com.ico",
+    "w": "COST.US"
   },
   {
     "b": false,
@@ -345,7 +354,8 @@
     ],
     "nameEn": "Procter & Gamble",
     "nameLocal": "Procter & Gamble",
-    "lg": "https://icons.duckduckgo.com/ip3/pg.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/pg.com.ico",
+    "w": "PG.US"
   },
   {
     "b": true,
@@ -380,7 +390,8 @@
     ],
     "nameEn": "PepsiCo",
     "nameLocal": "PepsiCo",
-    "lg": "https://icons.duckduckgo.com/ip3/pepsico.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/pepsico.com.ico",
+    "w": "PEP.US"
   },
   {
     "b": false,
@@ -415,7 +426,8 @@
     ],
     "nameEn": "Colgate-Palmolive",
     "nameLocal": "Colgate-Palmolive",
-    "lg": "https://icons.duckduckgo.com/ip3/colgatepalmolive.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/colgatepalmolive.com.ico",
+    "w": "CL.US"
   },
   {
     "b": false,
@@ -450,7 +462,8 @@
     ],
     "nameEn": "Automatic Data Processing",
     "nameLocal": "Automatic Data Processing",
-    "lg": "https://icons.duckduckgo.com/ip3/adp.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/adp.com.ico",
+    "w": "ADP.US"
   },
   {
     "b": false,
@@ -485,7 +498,8 @@
     ],
     "nameEn": "S&P Global",
     "nameLocal": "S&P Global",
-    "lg": "https://icons.duckduckgo.com/ip3/spglobal.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/spglobal.com.ico",
+    "w": "SPGI.US"
   },
   {
     "b": true,
@@ -520,7 +534,8 @@
     ],
     "nameEn": "Verisign",
     "nameLocal": "Verisign",
-    "lg": "https://icons.duckduckgo.com/ip3/verisign.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/verisign.com.ico",
+    "w": "VRSN.US"
   },
   {
     "b": false,
@@ -555,7 +570,8 @@
     ],
     "nameEn": "Oracle",
     "nameLocal": "Oracle",
-    "lg": "https://icons.duckduckgo.com/ip3/oracle.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/oracle.com.ico",
+    "w": "ORCL.US"
   },
   {
     "b": false,
@@ -590,7 +606,8 @@
     ],
     "nameEn": "Intuit",
     "nameLocal": "Intuit",
-    "lg": "https://icons.duckduckgo.com/ip3/intuit.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/intuit.com.ico",
+    "w": "INTU.US"
   },
   {
     "b": false,
@@ -625,7 +642,8 @@
     ],
     "nameEn": "Texas Instruments",
     "nameLocal": "Texas Instruments",
-    "lg": "https://icons.duckduckgo.com/ip3/ti.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/ti.com.ico",
+    "w": "TXN.US"
   },
   {
     "b": false,
@@ -660,7 +678,8 @@
     ],
     "nameEn": "Nike",
     "nameLocal": "Nike",
-    "lg": "https://icons.duckduckgo.com/ip3/nike.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/nike.com.ico",
+    "w": "NKE.US"
   },
   {
     "b": false,
@@ -695,7 +714,8 @@
     ],
     "nameEn": "Union Pacific",
     "nameLocal": "Union Pacific",
-    "lg": "https://icons.duckduckgo.com/ip3/up.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/up.com.ico",
+    "w": "UNP.US"
   },
   {
     "b": false,
@@ -730,7 +750,8 @@
     ],
     "nameEn": "Waste Management",
     "nameLocal": "Waste Management",
-    "lg": "https://icons.duckduckgo.com/ip3/wm.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/wm.com.ico",
+    "w": "WM.US"
   },
   {
     "b": true,
@@ -765,7 +786,8 @@
     ],
     "nameEn": "Republic Services",
     "nameLocal": "Republic Services",
-    "lg": "https://icons.duckduckgo.com/ip3/republicservices.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/republicservices.com.ico",
+    "w": "RSG.US"
   },
   {
     "b": false,
@@ -800,7 +822,8 @@
     ],
     "nameEn": "Linde",
     "nameLocal": "Linde",
-    "lg": "https://icons.duckduckgo.com/ip3/linde.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/linde.com.ico",
+    "w": "LIN.US"
   },
   {
     "b": false,
@@ -835,12 +858,13 @@
     ],
     "nameEn": "Home Depot",
     "nameLocal": "Home Depot",
-    "lg": "https://icons.duckduckgo.com/ip3/homedepot.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/homedepot.com.ico",
+    "w": "HD.US"
   },
   {
     "b": false,
     "id": "LOW.US",
-    "n": "Lowe\u2019s",
+    "n": "Lowe’s",
     "c": "US",
     "s": "Technology",
     "k": "operating",
@@ -868,14 +892,15 @@
       0.28,
       0.29
     ],
-    "nameEn": "Lowe\u2019s",
-    "nameLocal": "Lowe\u2019s",
-    "lg": "https://icons.duckduckgo.com/ip3/lowes.com.ico"
+    "nameEn": "Lowe’s",
+    "nameLocal": "Lowe’s",
+    "lg": "https://icons.duckduckgo.com/ip3/lowes.com.ico",
+    "w": "LOW.US"
   },
   {
     "b": true,
     "id": "MCD.US",
-    "n": "McDonald\u2019s",
+    "n": "McDonald’s",
     "c": "US",
     "s": "Consumer Defensive",
     "k": "operating",
@@ -903,9 +928,10 @@
       0.28,
       0.29
     ],
-    "nameEn": "McDonald\u2019s",
-    "nameLocal": "McDonald\u2019s",
-    "lg": "https://icons.duckduckgo.com/ip3/mcdonalds.com.ico"
+    "nameEn": "McDonald’s",
+    "nameLocal": "McDonald’s",
+    "lg": "https://icons.duckduckgo.com/ip3/mcdonalds.com.ico",
+    "w": "MCD.US"
   },
   {
     "b": false,
@@ -940,7 +966,8 @@
     ],
     "nameEn": "Starbucks",
     "nameLocal": "Starbucks",
-    "lg": "https://icons.duckduckgo.com/ip3/starbucks.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/starbucks.com.ico",
+    "w": "SBUX.US"
   },
   {
     "b": false,
@@ -975,7 +1002,8 @@
     ],
     "nameEn": "Walt Disney",
     "nameLocal": "Walt Disney",
-    "lg": "https://icons.duckduckgo.com/ip3/disney.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/disney.com.ico",
+    "w": "DIS.US"
   },
   {
     "b": false,
@@ -1010,7 +1038,8 @@
     ],
     "nameEn": "Abbott",
     "nameLocal": "Abbott",
-    "lg": "https://icons.duckduckgo.com/ip3/abbott.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/abbott.com.ico",
+    "w": "ABT.US"
   },
   {
     "b": false,
@@ -1033,7 +1062,8 @@
     "m": 0.25,
     "nameEn": "Johnson & Johnson",
     "nameLocal": "Johnson & Johnson",
-    "lg": "https://icons.duckduckgo.com/ip3/jnj.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/jnj.com.ico",
+    "w": "JNJ.US"
   },
   {
     "b": false,
@@ -1068,7 +1098,8 @@
     ],
     "nameEn": "Merck",
     "nameLocal": "Merck",
-    "lg": "https://icons.duckduckgo.com/ip3/merck.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/merck.com.ico",
+    "w": "MRK.US"
   },
   {
     "b": false,
@@ -1103,7 +1134,8 @@
     ],
     "nameEn": "Pfizer",
     "nameLocal": "Pfizer",
-    "lg": "https://icons.duckduckgo.com/ip3/pfizer.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/pfizer.com.ico",
+    "w": "PFE.US"
   },
   {
     "b": false,
@@ -1138,7 +1170,8 @@
     ],
     "nameEn": "Caterpillar",
     "nameLocal": "Caterpillar",
-    "lg": "https://icons.duckduckgo.com/ip3/cat.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/cat.com.ico",
+    "w": "CAT.US"
   },
   {
     "b": false,
@@ -1173,7 +1206,8 @@
     ],
     "nameEn": "Deere",
     "nameLocal": "Deere",
-    "lg": "https://icons.duckduckgo.com/ip3/deere.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/deere.com.ico",
+    "w": "DE.US"
   },
   {
     "b": false,
@@ -1196,7 +1230,8 @@
     "m": 0.25,
     "nameEn": "United Parcel Service",
     "nameLocal": "United Parcel Service",
-    "lg": "https://icons.duckduckgo.com/ip3/ups.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/ups.com.ico",
+    "w": "UPS.US"
   },
   {
     "b": false,
@@ -1231,7 +1266,8 @@
     ],
     "nameEn": "FedEx",
     "nameLocal": "FedEx",
-    "lg": "https://icons.duckduckgo.com/ip3/fedex.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/fedex.com.ico",
+    "w": "FDX.US"
   },
   {
     "b": false,
@@ -1266,7 +1302,8 @@
     ],
     "nameEn": "Chevron",
     "nameLocal": "Chevron",
-    "lg": "https://icons.duckduckgo.com/ip3/chevron.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/chevron.com.ico",
+    "w": "CVX.US"
   },
   {
     "b": false,
@@ -1301,7 +1338,8 @@
     ],
     "nameEn": "Occidental Petroleum",
     "nameLocal": "Occidental Petroleum",
-    "lg": "https://icons.duckduckgo.com/ip3/oxy.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/oxy.com.ico",
+    "w": "OXY.US"
   },
   {
     "b": false,
@@ -1336,6 +1374,7 @@
     ],
     "nameEn": "Kraft Heinz",
     "nameLocal": "Kraft Heinz",
-    "lg": "https://icons.duckduckgo.com/ip3/kraftheinzcompany.com.ico"
+    "lg": "https://icons.duckduckgo.com/ip3/kraftheinzcompany.com.ico",
+    "w": "KHC.US"
   }
 ]

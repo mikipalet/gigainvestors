@@ -19,7 +19,7 @@ export function marketRegion(row:{id:string;c:string}) {
  if(row.id.endsWith('.US'))return 'US';
  return row.c==='CA'?'Canada':row.c==='GB'?'UK':row.c==='AU'?'Australia':EUROPE.has(row.c)?'Europe':ASIA.has(row.c)?'Asia':row.c||'Unknown';
 }
-export function matchesMarket(row:{id:string;c:string},market:string) {
- const region=marketRegion(row);
- return !market||market==='all'||(market==='easy'?['US','Canada','Europe','UK','Australia'].includes(region):market==='asia'?region==='Asia':true);
+/** The default is Western access; only an explicit all-markets choice widens it. */
+export function matchesMarket(row:{w:string|null},market:string) {
+ return market==='all'||row.w!=null;
 }

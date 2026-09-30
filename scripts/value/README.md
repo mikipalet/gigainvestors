@@ -136,3 +136,31 @@ A central discount rate at/below perpetual growth has no finite model value and
 is explicitly unavailable. The high scenario reduces its usual 1pp rate shift
 to half the gap above perpetual growth when necessary; the central required
 return never changes. This also applies to bank/insurer perpetual book growth.
+
+### Western market scope (owner direction, 2026-09-30)
+
+`WESTERN_VENUES` in `lib/value/config.ts` is the retail-access allowlist; `F` is
+Frankfurt. `bestWesternListing` selects from `Company.listings`: Western home
+listing first, otherwise a US listing (including OTC Y/F codes), otherwise the
+lexically first eligible listing. Company domicile does not determine access.
+Index rows and dossiers publish `w: string | null`; search tuples append `w` as
+field 6 (legacy five-field tuples remain readable).
+
+Global `meta.story`, `meta.funnel` and history `perYear` remain unchanged in shape.
+`meta.western.{story,funnel}` and `history/index.json.western.perYear` contain the
+corresponding Western populations, including their own finite-return medians and
+hit-rate baselines. History eligibility uses today's listings, not historical
+broker availability. Price refreshes update both scopes atomically with buy flags.
+
+The site defaults to Western scope; `?markets=all` restores global scope. Search
+always includes all markets. Alternate-listing labels identify a trading route;
+valuation and quote amounts still belong to the dossier's home listing and do not
+imply a one-for-one ADR ratio. Pipeline priority is Western access, then descending
+market cap; refresh age breaks equal-cap ties for fundamentals and price history.
+
+To preview without publishing or interfering with another analysis job:
+`npx tsx scripts/value/western-preview.ts /tmp/value-western-preview` rebuilds an
+immutable copy of the current live publication and records its commit provenance.
+Use an empty output directory. It makes no provider calls and does not mutate the
+corpus or data repository. Serve that directory to both the server
+(`VALUE_STORE_DIR`) and browser (`NEXT_PUBLIC_VALUE_DATA_URL`) when building QA.

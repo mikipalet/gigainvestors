@@ -187,6 +187,7 @@ export interface Analysis {
 }
 
 export interface Dossier extends Analysis {
+  w: string | null; // Best Western trading listing; null means not easily buyable.
   b?: boolean; // Published all-five-pass, verified at-buy-price decision.
   priceHistory?: PriceHistory;
   tests: Analysis["tests"] & { price?: TestOutcome };
@@ -196,6 +197,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  w: string | null; // Best Western trading listing.
   ownerReturnInputs?: { valuation: Valuation; marketCapUsd: number | null };
   exchange?: string; // Listing venue, enriched from the published dossier when needed.
   nameEn?: string;
@@ -256,6 +258,7 @@ export interface PublishedFunnel extends FunnelCounts {
 }
 
 export interface StoreMeta {
+  western?: { story: NonNullable<StoreMeta["story"]>; funnel: PublishedFunnel };
   author?: string;
   story?: { analysed: number; qualityPasses: number; qualityShare: number; atBuy: number; countriesCovered: number };
   funnel?: PublishedFunnel;
@@ -266,7 +269,7 @@ export interface StoreMeta {
 }
 
 /** Search covers the full universe, including companies without an analysis. */
-export type SearchRow = [id: Id, name: string, country: string, status: "a" | "p", marketCapUsd: number | null];
+export type SearchRow = [id: Id, name: string, country: string, status: "a" | "p", marketCapUsd: number | null, w?: string | null];
 export interface SearchShard {
   rows: SearchRow[];
   /** Normalized listing codes and ISINs mapped to local row offsets. */
@@ -296,6 +299,7 @@ export interface HistorySummary {
   avgReturnAll: number | null;
 }
 export interface HistoryIndex {
+  western?: { perYear: Record<string, HistorySummary> };
   scope?: "universe" | "selection";
   years: number[];
   perYear: Record<string, HistorySummary>;

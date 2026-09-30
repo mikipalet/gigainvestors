@@ -92,3 +92,12 @@ it('reports continues with the universe description when company enrichment is m
     expect(error).toHaveBeenCalledWith(expect.stringMatching(/^BAD.TW: /));
   } finally { error.mockRestore(); }
 });
+
+it('spends a limited report run on Western access first, then market cap',async()=>{
+ writeCorpusJson('sec/company-tickers-exchange.json',{date:new Date().toISOString().slice(0,10),data:{fields:['cik','ticker'],data:[]}});
+ for(const c of [{...company('BIG.TW'),marketCapUsd:1e12},{...company('SMALL.AS'),marketCapUsd:10},{...company('ADR.TW'),listings:['ADR.TW','ADRYY.US'],marketCapUsd:100}]) appendJsonl('universe.jsonl',{...c,description:'Makes chips.'});
+ await reports({limit:1});
+ expect(readCorpusJson('reports/ADR.TW/meta.json')).toMatchObject({id:'ADR.TW'});
+ expect(readCorpusJson('reports/BIG.TW/meta.json')).toBeNull();
+ expect(readCorpusJson('reports/SMALL.AS/meta.json')).toBeNull();
+});

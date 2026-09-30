@@ -1,7 +1,7 @@
 /** Additive round-seven publication contract. History contains numerical tests, never Jev readings. */
 export type SnapshotRow = [id:string,t5:string,pm:number|null,b:boolean,r:number|null];
 export type SnapshotSummary = {analysed:number;qualityPasses:number;atBuy:number;medianReturnAtBuy?:number|null;medianReturnAll?:number|null;returnCountAtBuy?:number;returnCountAll?:number;avgReturnAtBuy:number|null;avgReturnQuality:number|null;avgReturnAll:number|null};
-export type HistoryIndex = {years:number[];assumptions?:string[];caveats?:string[];asOf?:string;perYear:Record<string,SnapshotSummary>};
+export type HistoryIndex = {western?:{perYear:Record<string,SnapshotSummary>};years:number[];assumptions?:string[];caveats?:string[];asOf?:string;perYear:Record<string,SnapshotSummary>};
 
 /** The oldest cohort's median is not a pooled median across overlapping yearly cohorts. */
 export function trackRecord(history:HistoryIndex|null) {

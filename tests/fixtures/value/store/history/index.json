@@ -92,5 +92,89 @@
       "avgReturnQuality": 0.13440625,
       "avgReturnAll": 0.1351315789473684
     }
+  },
+  "western": {
+    "perYear": {
+      "2016": {
+        "analysed": 39,
+        "qualityPasses": 29,
+        "atBuy": 5,
+        "avgReturnAtBuy": 1.558,
+        "avgReturnQuality": 1.3675,
+        "avgReturnAll": 1.3513157894736842
+      },
+      "2017": {
+        "analysed": 39,
+        "qualityPasses": 29,
+        "atBuy": 5,
+        "avgReturnAtBuy": 1.4022000000000001,
+        "avgReturnQuality": 1.23075,
+        "avgReturnAll": 1.2161842105263159
+      },
+      "2018": {
+        "analysed": 39,
+        "qualityPasses": 29,
+        "atBuy": 5,
+        "avgReturnAtBuy": 1.2464,
+        "avgReturnQuality": 1.094,
+        "avgReturnAll": 1.0810526315789473
+      },
+      "2019": {
+        "analysed": 39,
+        "qualityPasses": 31,
+        "atBuy": 6,
+        "avgReturnAtBuy": 1.0465,
+        "avgReturnQuality": 0.9387000000000001,
+        "avgReturnAll": 0.945921052631579
+      },
+      "2020": {
+        "analysed": 39,
+        "qualityPasses": 31,
+        "atBuy": 3,
+        "avgReturnAtBuy": 0.834,
+        "avgReturnQuality": 0.8046000000000001,
+        "avgReturnAll": 0.8107894736842105
+      },
+      "2021": {
+        "analysed": 39,
+        "qualityPasses": 31,
+        "atBuy": 3,
+        "avgReturnAtBuy": 0.695,
+        "avgReturnQuality": 0.6705,
+        "avgReturnAll": 0.6756578947368421
+      },
+      "2022": {
+        "analysed": 39,
+        "qualityPasses": 32,
+        "atBuy": 3,
+        "avgReturnAtBuy": 0.556,
+        "avgReturnQuality": 0.5641290322580645,
+        "avgReturnAll": 0.5405263157894736
+      },
+      "2023": {
+        "analysed": 39,
+        "qualityPasses": 32,
+        "atBuy": 3,
+        "avgReturnAtBuy": 0.417,
+        "avgReturnQuality": 0.42309677419354835,
+        "avgReturnAll": 0.40539473684210525
+      },
+      "2024": {
+        "analysed": 39,
+        "qualityPasses": 32,
+        "atBuy": 3,
+        "avgReturnAtBuy": 0.278,
+        "avgReturnQuality": 0.28206451612903227,
+        "avgReturnAll": 0.2702631578947368
+      },
+      "2025": {
+        "analysed": 39,
+        "qualityPasses": 33,
+        "atBuy": 3,
+        "avgReturnAtBuy": 0.139,
+        "avgReturnQuality": 0.13440625,
+        "avgReturnAll": 0.1351315789473684
+      }
+    }
   }
 }

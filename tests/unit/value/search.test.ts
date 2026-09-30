@@ -48,8 +48,8 @@ describe("value search shards", () => {
   });
   it("includes pending companies, rounds caps and deduplicates rows per shard", () => {
     const shards = buildSearchShards(companies, new Set(["KO.US"]));
-    expect(shards.co.rows.find(row => row[0] === "KO.US")).toEqual(["KO.US", "The Coca-Cola Company", "US", "a", 380000000000]);
-    expect(shards.te.rows.find(row => row[0] === "0700.HK")?.slice(3)).toEqual(["p", null]);
+    expect(shards.co.rows.find(row => row[0] === "KO.US")).toEqual(["KO.US", "The Coca-Cola Company", "US", "a", 380000000000, "KO.US"]);
+    expect(shards.te.rows.find(row => row[0] === "0700.HK")?.slice(3)).toEqual(["p", null, null]);
     expect(shards.as.rows.filter(row => row[0] === "ASML.AS")).toHaveLength(1);
     expect(Object.keys(shards)).toHaveLength(36 * 40);
     expect(buildSearchShards([...companies].reverse(), new Set(["KO.US"]))).toEqual(shards);

@@ -1,3 +1,5 @@
+import { bestWesternListing } from "../../../lib/value/western";
+import { westernHistory } from "../../../lib/value/western-history";
 import { existsSync, readdirSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
 import { randomUUID } from 'node:crypto';
@@ -37,7 +39,7 @@ function edinetFilings(): Record<string,Record<string,string>> {
   }
   return results;
 }
-export function latestHistoryFiles(): Record<string,unknown> {
+export function latestHistoryFiles(companies = loadCompanies({})): Record<string,unknown> {
   const root = corpusPath('history-v7');
   if (!existsSync(root)) return {};
   for (const run of readdirSync(root).sort().reverse()) {
@@ -51,6 +53,7 @@ export function latestHistoryFiles(): Record<string,unknown> {
       if (!rows) throw new Error(`Incomplete history run ${run}`);
       files[`history/${year}.json`] = rows;
     }
+    files["history/index.json"] = westernHistory(index, Object.fromEntries(index.years.map(year => [year, files[`history/${year}.json`] as SnapshotRow[]])), new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id)));
     return files;
   }
   return {};
@@ -114,6 +117,7 @@ export default async function historySnapshots(options: { only?:string[]; limit?
   }
   const report={root,companies:companies.length,fundamentals:fundamentalsCount,coverage,sizes};
   writeNewJson(`${root}/report.json`,report);
+  index.western = westernHistory(index, years, new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id))).western;
   writeNewJson(`${root}/index.json`,index);
   console.log(`history: ${JSON.stringify({ ...report,perYear:index.perYear })}`);
   return {index,report};

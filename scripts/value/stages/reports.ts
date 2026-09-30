@@ -1,3 +1,4 @@
+import { compareWesternPriority } from "../../../lib/value/western";
 import { CompanyFailures } from "../company-failures";
 import { T } from "../../../lib/value/config";
 import { pool } from "../../../lib/value/http";
@@ -18,7 +19,7 @@ export default async function reports({ only, limit, force = false }: {
 }): Promise<void> {
   const failures = new CompanyFailures();
   const loadErrors = new Map<string, unknown>();
-  const companies = loadCompanies({ only, limit, onError: (company, error) => loadErrors.set(company.id, error) });
+  const companies = loadCompanies({ only, onError: (company, error) => loadErrors.set(company.id, error) }).sort(compareWesternPriority).slice(0, limit);
   const esefById = new Map<string, Awaited<ReturnType<typeof latestEsef>>>();
   const candidates = companies.filter(company => company.lei && esefCountries.has(company.country));
   const candidateIds = new Set(candidates.map(company => company.id));
@@ -90,7 +91,7 @@ export default async function reports({ only, limit, force = false }: {
       else fallback.push(company);
     }) }),
   ]);
-  await pool({ items: fallback, concurrency: T.reports.secConcurrency, run: company => safely(company, () => processCompany(company)) });
+  await pool({ items: fallback.sort(compareWesternPriority), concurrency: T.reports.secConcurrency, run: company => safely(company, () => processCompany(company)) });
   failures.finish("reports", companies.length);
 }
 

@@ -6,6 +6,7 @@ import { BuffettFunnel } from '@/components/value/viz/BuffettFunnel';
 import { MethodRules } from '@/components/value/MethodRules';
 import { MethodSummary } from '@/components/value/AboutMethod';
 import { matchesMarket } from '@/lib/value/listing-details';
+import { MarketScopeToggle } from '@/components/value/MarketScopeToggle';
 import { BuyZone } from '@/components/value/BuyZone';
 import { trackRecord } from '@/lib/value/time-travel';
 import { CompanyTreemap } from '@/components/value/CompanyTreemap';
@@ -39,6 +40,8 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
   const [priceError, setPriceError] = useState("");
   const [table, setTable] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const allMarkets=filter.markets==='all';
+  const scopedHistory=history ? {...history,perYear:allMarkets?history.perYear:history.western?.perYear??{}} : null;
   const year=filter.year??'Today';
   const historical=year!=='Today';
   useEffect(()=>{const controller=new AbortController();fetchRows<HistoryIndex>('history/index.json',controller.signal).then(setHistory).catch(()=>{});return()=>controller.abort();},[]);
@@ -68,7 +71,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
     return (snapshots[year]??[]).flatMap(old=>{
       const row=identities.get(old[0]);
       if(country&&row?.c!==country)return [];
-      const identity:IndexRow=row??{id:old[0],n:`Company ${old[0]}`,c:'',s:null,k:'operating',mc:null,v:null,cur:'',t:old[1],g:[],h:0,st:'s'};
+      const identity:IndexRow=row??{w:null,id:old[0],n:`Company ${old[0]}`,c:'',s:null,k:'operating',mc:null,v:null,cur:'',t:old[1],g:[],h:0,st:'s'};
       return [{...identity,t:old[1],b:old[3],g:[],dataQualityFlags:[],st:'s' as const}];
     });
   },[currentSource,historical,snapshots,year,rows,countryRows,country]);
@@ -121,7 +124,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
     return { row, quote, historical, historicalReturn:old?.[4]??null, seed: !historical&&prices[row.c]?.[row.id]?.[2] === "seed", date: historical?null:prices[row.c]?.[row.id]?.[1], mos: row.st === 'i' || ratio === null ? null : 1 - ratio };
   }), [source, canonicalRows, prices, historical, historicalRows]);
   const gate = filter.gate !== undefined && /^[0-6]$/.test(filter.gate) ? Number(filter.gate) : null;
-  const population = meta?.funnel;
+  const population = allMarkets ? meta?.funnel : meta?.western?.funnel;
   const counts = population ? [population.analysed, ...population.gates.map(g=>g.passing)] : [meta?.counts.analysed ?? rows.length, ...Array(4).fill(0),rows.filter(r=>r.t==='PPPPP').length,0];
   const onlyFailures = [0,...(population?.gates.map(g=>g.failsOnlyThis) ?? Array(6).fill(0))];
   const dates = allEntries.flatMap(e => e.date ? [e.date] : []).sort();
@@ -149,40 +152,40 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
       if (av == null || bv == null) return av == null && bv == null ? (b.row.t.match(/P/g)?.length??0)-(a.row.t.match(/P/g)?.length??0)||a.row.id.localeCompare(b.row.id) : av == null ? 1 : -1;
       return (typeof av === "string" && typeof bv === "string" ? av.localeCompare(bv) : Number(av) - Number(bv)) * direction || a.row.id.localeCompare(b.row.id);
     });
-  }, [allEntries, filter, sort, direction, country, gate, historical]);
+  }, [allEntries, filter, sort, direction, country, gate, historical, allMarkets]);
   const sectors = [...new Set(source.flatMap((row) => row.s ? [row.s] : []))].sort();
 
-  const analysed = meta?.counts.analysed ?? (meta ? meta.counts.scored + meta.counts.insufficient : 0);
+  const analysed = population?.analysed ?? 0;
   const filterBar = <><Select label="Country" value={country} onChange={value=>change('country',value)} options={[["","All countries"],...countries.map(c=>[c,new Intl.DisplayNames(['en'],{type:'region'}).of(c)??c] as [string,string])]}/><Select label="Sector" value={filter.sector??''} onChange={value=>change('sector',value)} options={[["","All sectors"],...sectors.map(s=>[s,s] as [string,string])]}/><Toggle label="Near misses" checked={filter.near==='1'} onChange={()=>change('near',filter.near==='1'?'':'1')}/><Toggle label="Held by superinvestors" checked={filter.held==='1'} onChange={()=>change('held',filter.held==='1'?'':'1')}/></>;
-  const summary=historical?history?.perYear[year]:null;
-  const story=meta?.story??{analysed:counts[0],qualityPasses:counts[5],atBuy:counts[6],qualityShare:counts[0]?counts[5]/counts[0]:0};
+  const summary=historical?scopedHistory?.perYear[year]:null;
+  const story=(allMarkets?meta?.story:meta?.western?.story)??{analysed:counts[0],qualityPasses:counts[5],atBuy:counts[6],qualityShare:counts[0]?counts[5]/counts[0]:0};
   const total=summary?.analysed??story.analysed, quality=summary?.qualityPasses??story.qualityPasses, buys=summary?.atBuy??story.atBuy;
   const ret=(n:number|null|undefined)=>n==null?'not available':`${n>=0?'+':''}${Math.round(n*100)}%`;
-  const record=trackRecord(history);
+  const record=trackRecord(scopedHistory);
   const buyEntries=displayed.filter(e=>e.row.b===true);
   const waitingEntries=displayed.filter(e=>e.row.b!==true);
   const timeline=[...(history?.years??[]).map(String),'Today'];
   return <div className="one-index locks-scroll" data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
     <section className="index-story">
       <p className="eyebrow">Buffett-inspired investing · 5 quality tests + price</p>
-      <h1>{historical ? `In ${year}: ${buys} businesses in the buy zone.` : <><em>{buys} businesses in the buy zone.</em><span className="start-here"> Start here.</span></>}</h1>
+      <h1>{historical ? `In ${year}: ${buys} businesses in the buy zone.` : <><em>{buys} businesses in the buy zone.</em>{buys>0&&<span className="start-here"> Start here.</span>}</>}</h1>
       <p>{historical?`See what the checklist found then. ${quality} businesses passed the numerical quality tests.`:`${quality.toLocaleString()} of ${total.toLocaleString()} companies pass the quality checklist. Buy only when the price leaves room for error.`}</p>
       <p className="value-definition"><strong>Estimated value</strong> = future cash for owners, in today’s money, per share (banks: asset-based). <span>Buy price: 25% below for steadier businesses; up to 50% below for less predictable ones.</span></p>
     </section>
-    <div className="map-toolbar"><Select label="Markets" value={filter.markets??''} onChange={value=>change('markets',value)} options={[["","Markets: All"],["easy","Markets: Easy to buy (US, Canada, Europe, UK, Australia)"],["asia","Markets: Asia"]]}/><div className="desktop-filters">{filterBar}</div><button className="mobile-filter-button" onClick={()=>setFiltersOpen(true)}>Filter companies{Object.keys(filter).length?' ●':''}</button><span className="map-count">{displayed.length} companies</span><button className="table-toggle" onClick={()=>setTable(true)}>All companies ↗</button><button onClick={()=>setMethod(true)}>About the method ↗</button>{filter.q&&<button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
+    <div className="map-toolbar"><MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/><div className="desktop-filters">{filterBar}</div><button className="mobile-filter-button" onClick={()=>setFiltersOpen(true)}>Filter companies{Object.keys(filter).length?' ●':''}</button><span className="map-count">{displayed.length} companies</span><button className="table-toggle" onClick={()=>setTable(true)}>All companies ↗</button><button onClick={()=>setMethod(true)}>About the method ↗</button>{filter.q&&<button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
     {(countryError||historyError||(historical&&historyMetadataError)||(!historical&&priceError))&&<p role="status" className="map-error">{countryError||historyError||(historical?historyMetadataError:priceError)}</p>}
-    <div className="answer-stage" aria-busy={historical?!snapshots[year]&&!historyError:loading}>
-      <BuyZone entries={buyEntries}/>
+    <div className={`answer-stage${buyEntries.length?'':' empty-buy-zone'}`} aria-busy={historical?!snapshots[year]&&!historyError:loading}>
+      <BuyZone entries={buyEntries} allMarkets={allMarkets}/>
       <section className="waiting-zone"><header><h2>{filter.near==='1'?'Waiting businesses & near misses':'Quality businesses waiting for a better price'}</h2><button onClick={()=>setTable(true)}>Show all {displayed.length} ↗</button></header>
       <div className="map-sort"><Select label="Sort" value={filter.mapSort??'cap'} onChange={value=>change('mapSort',value)} options={[["cap","Sort: market value"],["closest","Sort: closest to buy price"]]}/></div><div className="treemap-legend"><span><i className="legend-ramp">{BUY_RAMP.map(c=><b key={c} style={{background:c}}/>)}</i>Dark: near buy price · light: far above</span><span>{filter.mapSort==='closest'?'Equal tiles · closest first':'Size = market value of the business'+(historical?' today':'')}</span></div>
       <div className="map-stage"><CompanyTreemap entries={waitingEntries} year={year} sort={filter.mapSort==='closest'?'closest':'cap'} onTable={()=>setTable(true)}/></div></section>
     </div>
     <div className="trust-strip"><p><a href="https://gigainvestors.com">GigaInvestors</a>, an independent site · Open data: SEC, EDINET, ESEF, EODHD. <button onClick={()=>setMethod(true)}>Method & sources ↗</button></p>
-    <p className="track-record">{record?<>Simulation · if you had bought {record.since}’s buy-zone picks: median <strong>{ret(record.buy)}</strong> vs <strong>{ret(record.all)}</strong> for all companies; ahead in <strong>{record.wins} of {record.years} years</strong>.</>:'Track record: historical medians not yet available.'}</p>
+    <p className="track-record">{record?<>Simulation · if you had bought {record.since}’s buy-zone picks: median <strong>{ret(record.buy)}</strong> vs <strong>{ret(record.all)}</strong> for {allMarkets?'all companies':'companies buyable in the West'}; ahead in <strong>{record.wins} of {record.years} years</strong>.</>:'Track record: historical medians not yet available.'}</p>
     <p className="history-caveat">Price gains to today, excluding dividends; past results may not repeat. <button onClick={()=>setMethod(true)}>Caveats ↗</button></p></div>
     <div className="time-note"><strong>Time travel: past years</strong>{historical?` · FY${year}; click a company for today’s review`:''}</div>
     <QuarterSlider quarters={timeline} q={timeline.includes(year)?year:'Today'} onChange={value=>change('year',value==='Today'?'':value)} period="year" note="Past years"/>
-    {method&&<SidePanel title="How the checklist works" onClose={()=>setMethod(false)}><MethodSummary author={meta?.author}/><h2>Find a good business. Wait for a sensible price.</h2><p>Five tests check whether a business is understandable, has a durable advantage, earns cash, uses capital well, and reports honestly. Then price must leave a safety discount: 5 quality tests + price.</p><p>Dark green means closer to or below the buy line; the separate Buy zone contains companies that qualify in the published review. A cheap price alone is not a quality pass. Gray tiles have no verified comparable value. Tile area represents market cap, with a small minimum to keep companies selectable.</p><p>History uses only financial numbers available for each fiscal year, not AI readings of filings. Price returns run from the historical observation to the latest quote, exclude dividends and are not annualised. Historical sizing and holder filters use today’s information; colours use that year’s price/value with today’s required discount. This is an exploration of covered companies, not an investable backtest.</p><h3>How we estimate value</h3><p>We project normalised cash available to owners for ten years, add a continuing value, discount at the local 10-year government bond yield plus 4 percentage points, add net cash and divide by shares. Banks and insurers use tangible book value and returns on equity with the same required return. Bond yields refresh daily, with checks for implausible data. The buy price is 25%, 35% or 50% below the central estimate, depending on earnings stability. These are GigaInvestors’ rules inspired by Buffett, not his recommendations.</p><h3>Track record & limitations</h3><p>The headline uses the oldest available cohort’s median cumulative price return, compared with the median of all covered companies with returns that year. The year count compares each cohort’s median with that year’s median company; it does not count individual winning stocks. Companies can appear in several cohorts.</p>{history?.assumptions?.map(note=><p key={note}>{note}</p>)}<p>Debt, cyclicality, currency moves and errors in the source data can change value materially. A Buy zone label is a checklist result, not a recommendation or guaranteed return.</p><h3>Today’s gate breakdown</h3><BuffettFunnel gates={population?.gates} analysed={analysed} counts={counts} onlyFailures={onlyFailures} date={population?.asOf} selected={gate} onSelect={gate=>{setFilter(current=>({...current,gate:String(gate)}));setMethod(false);}}/><MethodRules/><ValueLink href="/method">Full method & sources →</ValueLink></SidePanel>}
+    {method&&<SidePanel title="How the checklist works" onClose={()=>setMethod(false)}><MethodSummary author={meta?.author}/><h2>Find a good business. Wait for a sensible price.</h2><p>Five tests check whether a business is understandable, has a durable advantage, earns cash, uses capital well, and reports honestly. Then price must leave a safety discount: 5 quality tests + price.</p><p>Dark green means closer to or below the buy line; the separate Buy zone contains companies that qualify in the published review. A cheap price alone is not a quality pass. Gray tiles have no verified comparable value. Tile area represents market cap, with a small minimum to keep companies selectable.</p><p>History uses only financial numbers available for each fiscal year, not AI readings of filings. Price returns run from the historical observation to the latest quote, exclude dividends and are not annualised. Historical sizing and holder filters use today’s information; colours use that year’s price/value with today’s required discount. This is an exploration of covered companies, not an investable backtest.</p><h3>How we estimate value</h3><p>We project normalised cash available to owners for ten years, add a continuing value, discount at the local 10-year government bond yield plus 4 percentage points, add net cash and divide by shares. Banks and insurers use tangible book value and returns on equity with the same required return. Bond yields refresh daily, with checks for implausible data. The buy price is 25%, 35% or 50% below the central estimate, depending on earnings stability. These are GigaInvestors’ rules inspired by Buffett, not his recommendations.</p><h3>Track record & limitations</h3><p>The headline uses the oldest available cohort’s median cumulative price return, compared with the median of {allMarkets?'all covered':'covered Western-market'} companies with returns that year. Western access uses today’s listings. The year count compares each cohort’s median with that year’s median company; it does not count individual winning stocks. Companies can appear in several cohorts.</p>{history?.assumptions?.map(note=><p key={note}>{note}</p>)}<p>Debt, cyclicality, currency moves and errors in the source data can change value materially. A Buy zone label is a checklist result, not a recommendation or guaranteed return.</p><h3>Today’s gate breakdown</h3><BuffettFunnel gates={population?.gates} analysed={analysed} counts={counts} onlyFailures={onlyFailures} date={population?.asOf} selected={gate} onSelect={gate=>{setFilter(current=>({...current,gate:String(gate)}));setMethod(false);}}/><MethodRules/><ValueLink href="/method">Full method & sources →</ValueLink></SidePanel>}
     {table&&<SidePanel title={`${displayed.length} companies`} wide onClose={()=>setTable(false)}><p className="source-line">{historical?`FY${year} observations · price returns since then, excluding dividends`:dates.length?`Prices ${dateLabel(dates.at(-1))}`:'Comparable prices unavailable'} · {allEntries.some(e=>e.seed)?'Some prices are estimated from market value; see company review for dates':dates.length?'Latest closes':'Ordered by quality passes when prices are missing'}. Unverified ratios are held for review.</p><ResultsTable entries={displayed} sort={sort} direction={direction} sortBy={sortBy}/></SidePanel>}
     {filtersOpen&&<SidePanel title="Filter companies" onClose={()=>setFiltersOpen(false)}><div className="panel-filters">{filterBar}</div><button className="filter-apply" onClick={()=>setFiltersOpen(false)}>Show {displayed.length} companies →</button></SidePanel>}
   </div>;

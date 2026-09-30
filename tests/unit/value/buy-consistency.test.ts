@@ -73,6 +73,8 @@ it('refreshes the published flags and funnel in the same price snapshot', async 
     expect(prices['BUY.US'][0]).toBe(110);
     expect(meta.funnel!.gates[5].passing).toBe(2);
     expect(meta.story).toMatchObject({analysed:8,qualityPasses:7,qualityShare:7/8,atBuy:2,countriesCovered:1});
+    expect(meta.western?.story).toMatchObject({analysed:8,qualityPasses:7,atBuy:2});
+    expect(meta.western?.funnel.byCountry.US.gates[5].passing).toBe(2);
     expect(rows.filter(r => r.b)).toHaveLength(2);
     expect(greenDots(rows, prices)).toBe(2);
     expect(meta.funnel!.byCountry.US.gates[5].passing).toBe(2);

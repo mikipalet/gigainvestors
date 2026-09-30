@@ -23,6 +23,7 @@ import { priceFraming } from '@/lib/value/presentation';
 import { CompanyLogo } from './CompanyLogo';
 import { AboutMethod } from './AboutMethod';
 import { ownerReturn, expectedReturnCopy, requiredReturnCopy, referenceMetrics, cashAmount } from '@/lib/value/owner-return';
+import { bestWesternListing, westernTradingLabel } from '@/lib/value/western';
 import { sharePrice } from '@/lib/value/listing-details';
 
 export function DossierContent({ dossier, children }: { dossier: Dossier; children?: ReactNode }) {
@@ -49,6 +50,8 @@ export function DossierContent({ dossier, children }: { dossier: Dossier; childr
  const verification=dossier.dataQualityFlags?.length?'Verify valuation':quote?.[2]==='seed'?'Estimated price':'';
  const glyph=(test:TestOutcome)=>test.key==='price'?state.state:test.pending?'checking':test.result;
  const name=companyName(company);
+ const w=dossier.w===undefined?bestWesternListing(company):dossier.w;
+ const tradingLabel=westernTradingLabel(w,company.id,company.exchange);
  const qualityPass=QUALITY_TESTS.every(key=>dossier.tests[key as keyof typeof dossier.tests]?.result==='pass');
  const framing=priceFraming(ratio,requiredMos);
  const owner=ownerReturn(valuation,company.currency,company.marketCapUsd,quote?.[0]??null);
@@ -57,7 +60,7 @@ export function DossierContent({ dossier, children }: { dossier: Dossier; childr
  const referenceRow=<section className="reference-metrics" aria-label="For reference"><strong>For reference</strong><span title={`Market capitalisation / FY${reference.fy??' latest'} net income`}>P/E <b>{reference.pe===null?'n/a':reference.pe.toFixed(1)}</b></span><span title={`FY${reference.fy??' latest'} dividends (profit minus retained earnings) / market capitalisation`}>Dividend yield <b>{reference.dividendYield===null?'n/a':pct(reference.dividendYield)}</b></span><span title="Valuation net debt / latest fiscal-year net income; negative means net cash">Net debt / earnings <b>{reference.netDebtToEarnings===null?'n/a':reference.netDebtToEarnings.toFixed(1)+' years'}</b></span><span title={`${reference.first??'Unknown'}–${reference.last??'unknown'} revenue CAGR; ten fiscal observations span nine years`}>10-year revenue growth <b>{reference.revenueGrowth===null?'n/a':pct(reference.revenueGrowth)+'/yr'}</b></span></section>;
  const failed=QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='fail');
  const verdict=!qualityPass?'Fails quality':dossier.b?'Buy zone':'Wait for a better price';
- const identity=<div className="one-identity"><ValueLink href="/" className="back-link">← Companies</ValueLink><div className="company-heading"><CompanyLogo src={company.logo} name={name}/><div><h1>{name}</h1><p>{company.code} · {company.exchange}</p></div></div><p className="company-about">{company.about??(company.sector?`A business in ${company.sector.toLowerCase()}.`:'A company description has not been published yet.')}</p>{children}</div>;
+ const identity=<div className="one-identity"><ValueLink href="/" className="back-link">← Companies</ValueLink><div className="company-heading"><CompanyLogo src={company.logo} name={name}/><div><h1>{name}</h1><p>{company.code} · {company.exchange}</p><p className="trading-listing">{tradingLabel??'Not easily buyable from Western brokers'}</p></div></div><p className="company-about">{company.about??(company.sector?`A business in ${company.sector.toLowerCase()}.`:'A company description has not been published yet.')}</p>{children}</div>;
 
  const valuationEvidence=<><p className="owner-return">{ownerCopy}</p>{owner&&<p className="owner-growth">Cash yield: {cashAmount(owner.cash,owner.currency)} normalized yearly owner cash ÷ {cashAmount(owner.capital,owner.currency)} capitalisation. Growth: the valuation’s capped assumption. Yield plus growth is an estimate, not the discounted cash-flow model’s exact annual return.</p>}
   {(comparable??valuation)?<FootballField valuation={(comparable??valuation)!} price={quote?.[0]??null} mismatch={valuation&&!comparable?`Price is in ${company.currency}, value in ${valuation.currency}, not compared`:null} requiredMos={requiredMos} date={quote?.[1]} fy={lastFiscalYear} volatility={dossier.volatility}/>:<section><h2>Valuation unavailable</h2><p>{dossier.valuationReason?`${humanLabel(dossier.valuationReason)}.`:'Reliable financial history is required to estimate value.'}</p></section>}

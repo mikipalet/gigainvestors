@@ -1,3 +1,4 @@
+import { compareWesternPriority } from "../../../lib/value/western";
 import { budgetUsage } from "../../../lib/value/budget";
 import { readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
 import { T } from "../../../lib/value/config";
@@ -8,13 +9,13 @@ import type { Company, Fundamentals } from "../../../lib/value/types";
 
 interface Options { only?: string[]; limit?: number; force?: boolean }
 
-/** Stable sort preserves universe (market cap) order for new companies and ties. */
+/** Western access and cap first; refresh age breaks equal-cap ties. */
 export function orderFundamentals(companies: Company[], fetchedAt: ReadonlyMap<string, string>): Company[] {
   const fetchedTime = (id: string) => {
     const timestamp = Date.parse(fetchedAt.get(id) ?? "");
     return Number.isFinite(timestamp) ? timestamp : -Infinity;
   };
-  return [...companies].sort((a, b) => fetchedTime(a.id) - fetchedTime(b.id));
+  return [...companies].sort((a, b) => compareWesternPriority(a, b) || fetchedTime(a.id) - fetchedTime(b.id));
 }
 
 export default async function fundamentals(options: Options): Promise<void> {

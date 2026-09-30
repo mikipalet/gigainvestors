@@ -1,3 +1,4 @@
+import { bestWesternListing } from '@/lib/value/western';
 import { fetchValueData } from '@/lib/value/data-source';
 import { shardKeyFor, type SearchManifest } from '@/lib/value/search-shard';
 import { searchShard } from '@/lib/value/search';
@@ -25,5 +26,5 @@ export async function valueHitDetails(hit:ValueHit):Promise<ValueHit> {
   const [records,quotes]=await Promise.all([dossiers.get(shard)!,prices.get(country)!]);
   const d=records[hit.row[0]];
   if (!d) return hit;
-  return {...hit,holders:d.holders.length,listings:d.company.listings,tests:['understandable','moat','economics','management','accounting'].map(k=>d.tests[k as 'moat'].pending && d.tests[k as 'moat'].result==='unclear' ? 'C' : d.tests[k as 'moat'].result[0].toUpperCase()).join(''),ratio:priceValue({price:quotes[hit.row[0]]?.[0]??null,mid:comparableValuation(d.valuation,d.company.currency)?.perShare.mid??null})};
+  return {...hit,row:[hit.row[0],hit.row[1],hit.row[2],hit.row[3],hit.row[4],d.w===undefined?bestWesternListing(d.company):d.w],holders:d.holders.length,listings:d.company.listings,tests:['understandable','moat','economics','management','accounting'].map(k=>d.tests[k as 'moat'].pending && d.tests[k as 'moat'].result==='unclear' ? 'C' : d.tests[k as 'moat'].result[0].toUpperCase()).join(''),ratio:priceValue({price:quotes[hit.row[0]]?.[0]??null,mid:comparableValuation(d.valuation,d.company.currency)?.perShare.mid??null})};
 }

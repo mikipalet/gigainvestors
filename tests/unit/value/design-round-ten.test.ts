@@ -18,8 +18,8 @@ it('derives annual reference metrics with aligned dividends and actual year inte
 });
 it('filters listing access, including US ADS independently of company origin',()=>{
  expect(marketRegion({id:'INFY.US',c:'US'})).toBe('US');
- expect(matchesMarket({id:'INFY.US',c:'US'},'easy')).toBe(true);
- expect(matchesMarket({id:'600809.SHG',c:'CN'},'easy')).toBe(false);
- expect(matchesMarket({id:'6378.JP',c:'JP'},'asia')).toBe(true);
- expect(matchesMarket({id:'BELA.AT',c:'GR'},'easy')).toBe(true);
+ expect(matchesMarket({w:'INFY.US'},'')).toBe(true);
+ expect(matchesMarket({w:null},'')).toBe(false);
+ expect(matchesMarket({w:null},'all')).toBe(true);
+ expect(matchesMarket({w:null},'')).toBe(false);
 });

@@ -42,9 +42,15 @@ export function refreshPublishedBuyPrices(repo: string): void {
     all.push(...rows);
     files[`index/${file}`] = rows;
     updateGate(meta.funnel.byCountry[file.slice(0, 2)], rows);
+    const westernCountry = meta.western?.funnel.byCountry[file.slice(0, 2)];
+    if (westernCountry) updateGate(westernCountry, rows.filter(row=>row.w!=null));
   }
   updateGate(meta.funnel, all);
   meta.story = storyFromFunnel(meta.funnel);
+  if (meta.western) {
+    updateGate(meta.western.funnel, all.filter(row=>row.w!=null));
+    meta.western.story = storyFromFunnel(meta.western.funnel);
+  }
   const defaultRows: IndexRow[] = JSON.parse(readFileSync(path.join(index, 'default.json'), 'utf8'));
   const byId = new Map(all.map(row => [row.id, row]));
   files['index/default.json'] = defaultRows.map(row => byId.get(row.id) ?? row);

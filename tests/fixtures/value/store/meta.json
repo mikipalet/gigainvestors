@@ -105,5 +105,100 @@
     "qualityShare": 0.6829268292682927,
     "atBuy": 5,
     "countriesCovered": 1
+  },
+  "western": {
+    "story": {
+      "analysed": 41,
+      "qualityPasses": 28,
+      "qualityShare": 0.6829268292682927,
+      "atBuy": 5,
+      "countriesCovered": 1
+    },
+    "funnel": {
+      "analysed": 41,
+      "asOf": "2026-09-29",
+      "gates": [
+        {
+          "key": "understandable",
+          "label": "Understandable",
+          "passing": 38,
+          "failsOnlyThis": 0
+        },
+        {
+          "key": "moat",
+          "label": "Moat",
+          "passing": 35,
+          "failsOnlyThis": 0
+        },
+        {
+          "key": "economics",
+          "label": "Economics",
+          "passing": 32,
+          "failsOnlyThis": 0
+        },
+        {
+          "key": "management",
+          "label": "Management",
+          "passing": 30,
+          "failsOnlyThis": 0
+        },
+        {
+          "key": "accounting",
+          "label": "Accounting",
+          "passing": 28,
+          "failsOnlyThis": 0
+        },
+        {
+          "key": "price",
+          "label": "At buy price",
+          "passing": 5,
+          "failsOnlyThis": 0
+        }
+      ],
+      "byCountry": {
+        "US": {
+          "analysed": 41,
+          "asOf": "2026-09-29",
+          "gates": [
+            {
+              "key": "understandable",
+              "label": "Understandable",
+              "passing": 38,
+              "failsOnlyThis": 0
+            },
+            {
+              "key": "moat",
+              "label": "Moat",
+              "passing": 35,
+              "failsOnlyThis": 0
+            },
+            {
+              "key": "economics",
+              "label": "Economics",
+              "passing": 32,
+              "failsOnlyThis": 0
+            },
+            {
+              "key": "management",
+              "label": "Management",
+              "passing": 30,
+              "failsOnlyThis": 0
+            },
+            {
+              "key": "accounting",
+              "label": "Accounting",
+              "passing": 28,
+              "failsOnlyThis": 0
+            },
+            {
+              "key": "price",
+              "label": "At buy price",
+              "passing": 5,
+              "failsOnlyThis": 0
+            }
+          ]
+        }
+      }
+    }
   }
 }

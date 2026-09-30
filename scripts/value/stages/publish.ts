@@ -177,7 +177,8 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     }
   }
   for (const analysis of analyses) merged.set(analysis.id, analysis);
-  const rows = [...merged.values()].map(analysis => ({ ...analysis, company: enrichedCompany(analysis.company) }));
+  const identities = new Map(universe.map(company => [company.id, company]));
+  const rows = [...merged.values()].map(analysis => ({ ...analysis, company: enrichedCompany({...analysis.company, listings: identities.get(analysis.id)?.listings ?? analysis.company.listings}) }));
   if (!force && (rows.length === 0 || rows.length < previousCount * (1 - T.publish.maxCountDrop))) {
     throw new Error(`Publish aborted: ${rows.length} companies versus ${previousCount} previously published; use --force to override`);
   }
@@ -198,7 +199,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   for (const [key, shard] of Object.entries(shards)) {
     files[`search/${key}.json`] = shard;
   }
-  Object.assign(files, latestHistoryFiles());
+  Object.assign(files, latestHistoryFiles(universe));
   writeOutput({ repo, files });
   const changed = commitOutput({ repo, asOf });
   return { count: rows.length, changed };

@@ -8,7 +8,7 @@ describe('round 7 local name search',()=>{
     const {shards,manifest}=buildAdaptiveSearchShards([company],new Set([company.id]));
     for (const query of ['三菱','Mitsubishi']) {
       const key=shardKeyFor(query,manifest); expect(key).not.toBe('');
-      expect(searchShard(shards[key],query)[0]).toEqual(['8058.JP','Mitsubishi Corporation','JP','a',10]);
+      expect(searchShard(shards[key],query)[0]).toEqual(['8058.JP','Mitsubishi Corporation','JP','a',10,null]);
     }
   });
   it('keeps common local prefixes under the shard budget without dropping long-name matches',()=>{

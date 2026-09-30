@@ -41,3 +41,9 @@ export const YAHOO_SUFFIXES: Readonly<Record<string, string>> = {
   SHG: ".SS", SHE: ".SZ", SA: ".SA", MX: ".MX", JK: ".JK", KLSE: ".KL", BK: ".BK", JSE: ".JO",
   NZ: ".NZ", SN: ".SN", IR: ".IR", AT: ".AT", JP: ".T",
 };
+
+/** Owner-defined venues available through typical Western retail brokers. F = Frankfurt. */
+export const WESTERN_VENUES = [
+  'US', 'TO', 'V', 'NEO', 'LSE', 'XETRA', 'F', 'PA', 'AS', 'BR', 'MC', 'MI',
+  'LS', 'VI', 'IR', 'CO', 'ST', 'HE', 'OL', 'WAR', 'SW', 'AU', 'NZ',
+] as const;

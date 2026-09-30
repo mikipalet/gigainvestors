@@ -165,8 +165,8 @@ describe("publish repository", () => {
     const rows = JSON.parse(readFileSync(path.join(repo, "index/default.json"), "utf8")) as IndexRow[];
     expect(rows.map((row) => [row.id, row.t])).toEqual([["AXP.US", "PPPPP"], ["KO.US", "PFPPP"]]);
     const search = (key: string) => JSON.parse(readFileSync(path.join(repo, `search/${key}.json`), "utf8"));
-    expect(search("ax").rows).toContainEqual(["AXP.US", "AXP.US", "US", "a", 100]);
-    expect(search("pe").rows).toContainEqual(["PENDING.US", "PENDING.US", "US", "p", 100]);
+    expect(search("ax").rows).toContainEqual(["AXP.US", "AXP.US", "US", "a", 100, "AXP.US"]);
+    expect(search("pe").rows).toContainEqual(["PENDING.US", "PENDING.US", "US", "p", 100, "PENDING.US"]);
     expect(search("de").rows).toEqual([]);
     expect(search("manifest")).toEqual({ version: 1, split: [], maxPrefix: 2 });
     expect(existsSync(path.join(repo, "search/a.json"))).toBe(false);
@@ -521,4 +521,15 @@ it('joins new enrichment and completed numeric history when the controller publi
   expect(row).toMatchObject({n:'English name',lg:'https://eodhd.com/img/logos/US/ko.png'});
   expect(JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(a.id)}.json`),'utf8'))[a.id].company).toMatchObject({nameEn:'English name',nameLocal:'日本語',about:'Makes drinks.'});
   expect(JSON.parse(readFileSync(path.join(repo,'history/2016.json'),'utf8'))).toEqual([['KO.US','PPPPP',.7,true,2]]);
+});
+
+it('uses current universe listings consistently across dossier, index and search on republish',()=>{
+ const repo=repository(), row=analysis('TEST.JP');
+ publishSnapshot({repo,analyses:[row],universe:[{...row.company,listings:['TEST.JP','TESTY.US']}],partial:false,holdersByTicker:{},investorNames:{}});
+ const index=JSON.parse(readFileSync(path.join(repo,'index/default.json'),'utf8'));
+ const dossiers=JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(row.id)}.json`),'utf8'));
+ expect(index[0].w).toBe('TESTY.US');
+ expect(dossiers[row.id].w).toBe('TESTY.US');
+ const meta=JSON.parse(readFileSync(path.join(repo,'meta.json'),'utf8'));
+ expect(meta.western.story.analysed).toBe(1);
 });

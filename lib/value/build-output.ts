@@ -1,3 +1,4 @@
+import { bestWesternListing } from "./western";
 import { storyFromFunnel } from "./story";
 import { valuationFlags } from "./data-quality";
 import { assertIndexConsistency } from "./consistency";
@@ -56,9 +57,11 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const tags: Record<string, string> = {};
   const sorted = [...analyses].sort((a, b) => (b.company.marketCapUsd ?? -Infinity) - (a.company.marketCapUsd ?? -Infinity) || a.id.localeCompare(b.id));
   const rows: IndexRow[] = [];
+  const westernFunnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   const funnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   for (const analysis of sorted) {
     const { company } = analysis;
+    const w = bestWesternListing(company);
     if (!/^[A-Z]{2}$/.test(company.country)) throw new Error(`Invalid country for ${analysis.id}`);
     const listings = analysis.id.endsWith(".US") ? [analysis.id] : company.listings.filter((id) => id.endsWith(".US"));
     const codes = [...new Set(listings.flatMap((id) => holdersByTicker[id.slice(0, -3).replaceAll("-", ".")] ?? []))].sort();
@@ -84,7 +87,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     // calls a positive but inadequate discount "unclear". Missing data is not a failure.
     const failures = [...outcomes.map(test => test.result === "fail"), price.result === "fail" || price.mos !== null && price.result !== "pass"];
     const countryFunnel = funnel.byCountry[company.country] ??= emptyFunnel();
-    for (const population of [funnel, countryFunnel]) {
+    for (const population of [funnel, countryFunnel, ...(w ? [westernFunnel, westernFunnel.byCountry[company.country] ??= emptyFunnel()] : [])]) {
       population.analysed++;
       if (population.asOf === null || analysis.asOf > population.asOf) population.asOf = analysis.asOf;
       let cumulative = true;
@@ -100,7 +103,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       });
     }
     const dossier: Dossier = {
-      ...analysis, b: price.b, dataQualityFlags: price.dataQualityFlags, requiredMos, holders,
+      ...analysis, w, b: price.b, dataQualityFlags: price.dataQualityFlags, requiredMos, holders,
       ...(priceHistories[analysis.id] ? { priceHistory: priceHistories[analysis.id] } : {}),
       series: Object.assign({}, ...outcomes.map((test) => test.series), analysis.series),
       tests: { ...analysis.tests, price: { key: "price", result: price.result, numeric: price.result, reasons: price.mos === null ? ["Valuation or price unavailable in trading currency"] : [], metrics: { mos: price.mos }, series: {}, jev: [] } },
@@ -111,6 +114,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
     const returns=dossierReturn(analysis);
     const row: IndexRow = {
+      w, exchange: company.exchange,
       b: price.b, dataQualityFlags: price.dataQualityFlags,
       returnInfo:{...returns,sort:Number.isFinite(returns.sort)?returns.sort:returns.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},
       fy: Math.max(0,...Object.values(analysis.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]))) || undefined,
@@ -143,6 +147,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     asOf: analyses.map((analysis) => analysis.asOf).sort().at(-1) ?? null,
     funnel,
     story: storyFromFunnel(funnel),
+    western: { story: storyFromFunnel(westernFunnel), funnel: westernFunnel },
     counts: { universe, analysed: rows.length, scored: rows.filter((row) => row.st === "s").length, insufficient: rows.filter((row) => row.st === "i").length },
     versions: common ? { ...common.versions, other: analyses.length - common.count } : null, tags,
   };

@@ -198,3 +198,27 @@
 }
 
 .test-tile .mini-series figcaption {display:block;font-size:11px;line-height:1.2;margin:2px 0 0;}
+
+/* Market scope stays visible independently of optional country/sector filters. */
+.market-scope {display:flex;align-items:center;gap:12px;flex-shrink:0;font-size:12px;}
+.market-scope>span {font-weight:600;}
+.trading-listing {color:var(--buy);font-size:12px;}
+.market-access-status {font-size:11px;max-width:180px;white-space:normal;}
+@media(max-width:767px) {
+ .market-scope {width:100%;justify-content:space-between;}
+ .value-search-row {flex-wrap:wrap;}
+ .market-access-status {max-width:none;flex-basis:100%;}
+}
+.buy-tile .buy-listing {display:block;line-height:1.2;}
+@media(max-width:767px) {.buy-grid {grid-auto-rows:82px;}.buy-tile .buy-listing {font-size:11px;}}
+.company-heading .trading-listing {font-size:12px;}
+.empty-buy-zone .buy-grid {display:block;flex:none;}
+.empty-buy-zone .no-buys {padding:8px 0;}
+@media(min-width:768px) {
+ .empty-buy-zone {grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:12px;}
+ .empty-buy-zone .buy-zone {flex-direction:row;align-items:center;gap:24px;}
+ .empty-buy-zone .buy-zone>header {margin:0;}
+ .empty-buy-zone .buy-zone>header>p {display:none;}
+ .empty-buy-zone .waiting-zone {border-left:0;border-top:1px solid var(--viz-grid);padding:12px 0 0;}
+ .empty-buy-zone .waiting-zone h2 {max-width:none;}
+}

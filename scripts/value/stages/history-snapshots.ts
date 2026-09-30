@@ -47,14 +47,19 @@ export function latestHistoryFiles(companies = loadCompanies({})): Record<string
     if (!/^[\w-]+$/.test(run)) continue;
     const index = readCorpusJson<HistoryIndex>(`history-v7/${run}/index.json`);
     if (!index || index.scope === 'selection') continue; // index is the commit marker, written after every year.
-    const files: Record<string,unknown> = {'history/index.json':index};
+    // Publication supplies only current index members; upstream history remains full-corpus.
+    const idsInUniverse = new Set(companies.map(c=>c.id));
+    const filteredIndex: HistoryIndex = {...index, perYear:{}};
+    const files: Record<string,unknown> = {'history/index.json':filteredIndex};
     for (const year of index.years) {
       if (!Number.isInteger(year) || year < 1900 || year > 9999) throw new Error('Invalid history year');
       const rows = readCorpusJson<SnapshotRow[]>(`history-v7/${run}/${year}.json`);
       if (!rows) throw new Error(`Incomplete history run ${run}`);
-      files[`history/${year}.json`] = rows;
+      const members = rows.filter(row=>idsInUniverse.has(row[0]));
+      files[`history/${year}.json`] = members;
+      filteredIndex.perYear[year] = summarizeSnapshots(members);
     }
-    files["history/index.json"] = westernHistory(index, Object.fromEntries(index.years.map(year => [year, files[`history/${year}.json`] as SnapshotRow[]])), new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id)));
+    files["history/index.json"] = westernHistory(filteredIndex, Object.fromEntries(index.years.map(year => [year, files[`history/${year}.json`] as SnapshotRow[]])), new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id)));
     const ids=new Set(index.years.flatMap(year=>(files[`history/${year}.json`] as SnapshotRow[]).map(row=>row[0])));
     files['history/companies.json']=companies.filter(c=>ids.has(c.id)).map(c=>({id:c.id,n:c.nameEn??c.name,nameEn:c.nameEn,nameLocal:c.nameLocal,c:c.country,s:c.sector,k:c.kind,mc:c.marketCapUsd,cur:c.currency,v:null,t:'UUUUU',g:[],h:0,st:'i',w:bestWesternListing(c),lg:c.logo??undefined,exchange:c.exchange} satisfies IndexRow));
     return files;

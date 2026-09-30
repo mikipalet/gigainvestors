@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # nohup bash scripts/value/run-daily.sh > ~/value-daily.log 2>&1 &
-# First run is at the NEXT 00:05 UTC. --once runs one cycle immediately.
+# First run is at the NEXT 03:00 UTC. --once runs one cycle immediately.
 set -u
 cd "$(dirname "$0")/../.." || exit 1
 # Match the CLI's dotenv/default corpus resolution without sourcing secrets as shell.
@@ -48,8 +48,8 @@ run_japan() {
 }
 wait_until_next_run() {
   local delay
-  delay=$(node -e 'const now=new Date(); const next=new Date(now); next.setUTCHours(0,5,0,0); if(next<=now) next.setUTCDate(next.getUTCDate()+1); console.log(Math.ceil((next-now)/1000));')
-  echo "Waiting $delay seconds until next 00:05 UTC"
+  delay=$(node -e 'const now=new Date(); const next=new Date(now); next.setUTCHours(3,0,0,0); if(next<=now) next.setUTCDate(next.getUTCDate()+1); console.log(Math.ceil((next-now)/1000));')
+  echo "Waiting $delay seconds until next 03:00 UTC"
   sleep "$delay"
 }
 if [[ "${1:-}" != "--once" && -n "${1:-}" ]]; then echo 'Usage: run-daily.sh [--once]' >&2; exit 1; fi
@@ -58,6 +58,13 @@ while true; do
   cycle_date=$(date -u +%F)
   # Import JP issuers before both unfiltered quote stages; paid budget order stays intact.
   run_japan 2>> "$VALUE_CORPUS_DIR/logs/$cycle_date-japan.log" || :
+  if ! run_stage wait-eodhd-reset; then
+    echo 'remaining cycle skipped: EODHD reset not confirmed' | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-wait-eodhd-reset.log"
+    run_stage status || :
+    if [[ "${1:-}" == "--once" ]]; then exit 1; fi
+    wait_until_next_run
+    continue
+  fi
   run_stage prices || :
   run_stage price-history || :
   run_stage fundamentals || :

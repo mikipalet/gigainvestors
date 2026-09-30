@@ -12,8 +12,8 @@ it('keeps only fiscal years with sufficient prior earnings and never invents mis
   const args = {fundamentals:f,kind:'operating' as const,bondYield:0.04,fxRate:2,commodity:false};
   const history = valueHistory(args);
   expect(history.map(row => row[0])).toEqual([2017,2018]);
-  // ROE 20% / discount 8% times book/share 50 times FX 2 = 250.
-  expect(valueHistory({...args,kind:"bank"})[0][2]).toBeCloseTo(250);
+  // ROE 20% / discount 10% times book/share 50 times FX 2 = 200.
+  expect(valueHistory({...args,kind:"bank"})[0][2]).toBeCloseTo(200);
   expect(valueHistory({...args,commodity:true})).toEqual(history);
   expect(valueHistory({...args,fxRate:null})).toEqual([]);
   expect(valueHistory({...args,bondYield:null})).toEqual([]);

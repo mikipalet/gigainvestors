@@ -49,7 +49,7 @@ it.each([[106444000, 1064438260], [200, 100]])('V4 replaces stale shares %s with
   const years = makeYears({ overrides: { dilutedShares: old } });
   const v = value(years, { currentShares: current });
   expect(v.shares).toBe(current);
-  expect(v.perShare.mid * current).toBeCloseTo(1724.8061, 3);
+  expect(v.perShare.mid * current).toBeCloseTo(1243.7290, 3);
   expect(v.assumptions).toContain(`share count corrected to current ${current}`);
 });
 it('V4 keeps counts at the exact 1.5x boundary', () => {
@@ -101,6 +101,6 @@ it('V4 corrects financial per-share book value without rewriting historical shar
   const v = value(years, { kind: 'bank', currentShares: 100 });
   expect(v.shares).toBe(100);
   expect(v.normalized).toBe(5);
-  expect(v.perShare.mid).toBe(12.5);
+  expect(v.perShare.mid).toBe(10);
   expect(years.at(-1)!.dilutedShares).toBe(10);
 });

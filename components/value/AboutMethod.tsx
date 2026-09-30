@@ -6,7 +6,7 @@ export function MethodSummary({author}:{author?:string}) {
  return <section className="method-summary"><h2>How we estimate value</h2><ol>
   <li>Start with normalized yearly cash left for owners after maintaining the business.</li>
   <li>Project ten years of growth, capped at 8%; assume 3% beyond that.</li>
-  <li>Bring future cash into today’s money using the local 10-year government bond yield plus 4 percentage points as the required return, then add net cash.</li>
+  <li>Bring future cash into today’s money using a required return 10% a year (or local 10-year bond + 4 points if higher), then add net cash.</li>
   <li>Set a buy price 25–50% below that estimate, allowing room for error.</li>
   <li>The track record is a simulation: no dividends, fees or taxes; missing delistings and revised data can flatter results.</li>
  </ol><p>Expected yearly return is owner cash yield plus the valuation’s capped growth assumption, compared with that company’s required return. Cash yield is normalized owner cash divided by market capitalisation in the same currency. This estimate is not a dividend, a guarantee or the discounted cash-flow model’s exact annual return. Banks and insurers use a book-value model with the same required return. Bond yields refresh daily; changes of 0.1 percentage point trigger revaluation. Implausible yields use a validated 30-day median or an explicitly flagged country default.</p><p className="method-author" data-author-slot>{author?`By ${author}`:null}</p><ValueLink href="/method">Full method & sources ↗</ValueLink></section>;

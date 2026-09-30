@@ -115,7 +115,7 @@ ISO GB maps to UK, CH maps to SW, and CL maps to CH (Chile). **CH10Y is not the 
 [documented bond symbols](https://eodhd.com/financial-apis-blog/government-bonds-data-in-economic-api)
 name Switzerland SW10Y.
 
-Required return is the selected local yield + 4 percentage points, with no floor,
+Required return is max(10%, selected live local yield + 4 percentage points),
 for owner earnings and book value alike. Values retain the unrounded yield;
 analysis fingerprints use its nearest 0.1pp bucket. Identical filing text and
 unchanged qualitative answers reuse evidence as well as Jev's text cache.

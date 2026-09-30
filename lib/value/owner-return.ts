@@ -1,3 +1,4 @@
+import { T } from './config';
 import { sameCurrency } from './currency';
 import type { Dossier, Series, Valuation } from './types';
 
@@ -26,7 +27,7 @@ export function requiredReturnCopy(v: Valuation | null, country: string) {
  if (!v || !Number.isFinite(v.discountRate)) return 'Required return unavailable';
  const rate = `required return ${(v.discountRate * 100).toFixed(1)}% a year`;
  return v.bondYield === null || !Number.isFinite(v.bondYield) ? rate
-  : `${rate} (${country} 10-year bond ${(v.bondYield * 100).toFixed(1)}% + 4 points)`;
+  : `${rate} (${v.discountRate === T.valuation.minDiscount ? '10% floor; ' : ''}${country} 10-year bond ${(v.bondYield * 100).toFixed(1)}% + 4 points)`;
 }
 export function expectedReturnCopy(owner: NonNullable<ReturnType<typeof ownerReturn>>, valuation: Valuation | null, country: string) {
  // Keep the total rounded from the full calculation. Use extra precision when

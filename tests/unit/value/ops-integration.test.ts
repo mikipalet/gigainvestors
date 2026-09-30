@@ -82,7 +82,7 @@ it('counts only universe members and only todays Jev usage', () => {
   appendJsonl('jev-usage.jsonl', { at: '2026-09-29T00:00:00Z', input_tokens: 10 });
   expect(collectStatus()).toMatchObject({ universe: 3, fundamentals: 1, analysed: 1, reports: { '10-K': 1 }, published: { count: 2 }, prices: { eodhd: 1, yahoo: 1, seed: 1, missing: 0 }, jevTokens: 10 });
 });
-function runner({ analyzeFails = false, yieldsFails = false, japanFails = false, japanSkipped = false } = {}) {
+function runner({ analyzeFails = false, yieldsFails = false, japanFails = false, japanSkipped = false, resetFails = false } = {}) {
   const bin = path.join(root, 'bin'); mkdirSync(bin, { recursive: true });
   // Stub only paid/publishing stage processes; execute runner bookkeeping with real node.
   writeFileSync(path.join(bin, 'node'), `#!${process.execPath}
@@ -101,7 +101,7 @@ if (stage === 'japan' && !${japanSkipped}) {
   fs.mkdirSync(process.env.VALUE_CORPUS_DIR + '/raw/edinet', { recursive: true });
   fs.writeFileSync(process.env.VALUE_CORPUS_DIR + '/raw/edinet/summary.json', JSON.stringify({ from, to, errors: ${japanFails} ? [{ id: '8058.JP' }] : [] }));
 }
-process.exit((stage === 'yields' && ${yieldsFails}) || stage === 'prices' || (stage === 'analyze' && ${analyzeFails}) || (stage === 'japan' && ${japanFails}) ? 1 : 0);
+process.exit((stage === 'wait-eodhd-reset' && ${resetFails}) || (stage === 'yields' && ${yieldsFails}) || stage === 'prices' || (stage === 'analyze' && ${analyzeFails}) || (stage === 'japan' && ${japanFails}) ? 1 : 0);
 `, { mode: 0o755 });
   return () => execFileSync('bash', ['scripts/value/run-daily.sh', '--once'], { env: { ...process.env, PATH: `${bin}:${process.env.PATH}` }, stdio: 'pipe' });
 }
@@ -109,7 +109,7 @@ const stageCalls = (): string[][] => readFileSync(path.join(root, 'stages'), 'ut
 it.each([true, false])('runner continues after failures and gates publish on analyze: %s', analyzeFails => {
   runner({ analyzeFails })();
   const calls = stageCalls();
-  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', ...(analyzeFails ? [] : ['publish']), 'status']);
+  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', ...(analyzeFails ? [] : ['publish']), 'status']);
   // No --only or --limit: newly imported JP issuers and all other sources are covered.
   expect(calls.filter(([stage]) => ['prices', 'price-history', 'reports', 'yields', 'analyze', 'publish'].includes(stage)).every(call => call.length === 1)).toBe(true);
 });
@@ -146,6 +146,8 @@ it('runner retries an existing failed Japan summary from its original start day'
   expect(stageCalls()[0]).toEqual(['japan', '--from=2026-09-25', `--to=${today}`]);
 });
 it('fetches never-seen history before stale history and observes persisted daily capacity', async () => {
+  vi.resetModules();
+  const { default: history } = await import('@/scripts/value/stages/price-history');
   const today = new Date().toISOString().slice(0,10);
   vi.useFakeTimers();
   for (const id of ['OLD.US', 'NEW.US']) {
@@ -203,4 +205,15 @@ it('runner skips analyze and publish when refreshing yields fails',()=>{
  runner({yieldsFails:true})();
  const calls=stageCalls().map(([stage])=>stage);
  expect(calls).toContain('yields');expect(calls).not.toContain('analyze');expect(calls).not.toContain('publish');expect(calls.at(-1)).toBe('status');
+});
+it('runner skips all EODHD-consuming stages when reset waiting fails', () => {
+  expect(runner({ resetFails: true })).toThrow();
+  const stages = stageCalls().map(([stage]) => stage);
+  expect(stages).toContain('wait-eodhd-reset');
+  expect(stages).not.toContain('prices');
+  expect(stages).not.toContain('price-history');
+  expect(stages).not.toContain('fundamentals');
+  expect(stages).not.toContain('analyze'); // Analysis can fetch paid FX rates.
+  expect(stages).not.toContain('publish');
+  expect(stages).toContain('status');
 });

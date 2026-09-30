@@ -10,9 +10,9 @@ let root:string;
 beforeEach(()=>{root=mkdtempSync(join(tmpdir(),'yields-'));vi.stubEnv('VALUE_CORPUS_DIR',root);vi.stubEnv('EODHD_API_KEY','test');});
 afterEach(()=>{vi.useRealTimers();vi.unstubAllEnvs();vi.unstubAllGlobals();rmSync(root,{recursive:true,force:true});});
 const rows=(close:number)=>Array.from({length:20},(_,i)=>({date:new Date(Date.now()-i*86400000).toISOString().slice(0,10),close}));
-it.each(['operating','bank','insurer'] as const)('uses the local bond + 4pp below 10% for %s',kind=>{
+it.each(['operating','bank','insurer'] as const)('floors the local bond + 4pp at 10% for %s',kind=>{
  const v=valueCompany({years:makeYears(),kind,bondYield:.012,cyclical:false}).valuation!;
- expect(v.discountRate).toBeCloseTo(.052);
+ expect(v.discountRate).toBeCloseTo(.10);
  expect(v.perShare.high).toBeGreaterThanOrEqual(v.perShare.mid);
 });
 it('maps Swiss ISO CH to SW, rejecting an implausible close in favour of the median',async()=>{
@@ -45,17 +45,21 @@ it('does not accept stale quotes or invent a local yield for an unsupported coun
 });
 it('keeps low-rate DCF scenarios finite and ordered even at a zero bond yield',()=>{
  const v=valueCompany({years:makeYears(),kind:'operating',bondYield:0,cyclical:false}).valuation!;
- expect(v.discountRate).toBe(.04);
+ expect(v.discountRate).toBe(.10);
  expect(Number.isFinite(v.perShare.high)).toBe(true);
  expect(v.perShare.high).toBeGreaterThan(v.perShare.mid);
 });
 it.each([null, NaN, Infinity])('does not invent a discount rate for invalid yield %s',bondYield=>{
  expect(valueCompany({years:makeYears(),kind:'operating',bondYield,cyclical:false}).valuation).toBeNull();
 });
-it('leaves the central estimate unavailable when required return cannot support perpetual growth',()=>{
- expect(valueCompany({years:makeYears(),kind:'operating',bondYield:-.015,cyclical:false})).toMatchObject({valuation:null,reason:expect.stringContaining('terminal growth')});
- const years=makeYears({overrides:(_,i)=>({equity:500*1.08**i,netIncome:100*1.08**i})});
- expect(valueCompany({years,kind:'bank',bondYield:0,cyclical:false})).toMatchObject({valuation:null,reason:expect.stringContaining('book-value growth')});
+it.each(['operating','bank','insurer'] as const)('uses the live bond + 4pp above the floor for %s',kind=>{
+ const v=valueCompany({years:makeYears(),kind,bondYield:.08,cyclical:false}).valuation!;
+ expect(v.discountRate).toBeCloseTo(.12);
+});
+it.each([-.015,0,.06])('keeps the 10% floor at low yields and the boundary: %s',bondYield=>{
+ const v=valueCompany({years:makeYears(),kind:'operating',bondYield,cyclical:false}).valuation!;
+ expect(v.discountRate).toBeCloseTo(.10);
+ expect(Number.isFinite(v.perShare.high)).toBe(true);
 });
 it('propagates exhausted EODHD budget so the daily runner cannot publish missing yields',async()=>{
  const date=new Date().toISOString().slice(0,10);

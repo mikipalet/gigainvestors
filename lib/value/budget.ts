@@ -8,9 +8,12 @@ export function budgetUsage(): Usage {
   const date = new Date().toISOString().slice(0, 10);
   return readCorpusJson<Usage>(`usage/eodhd-${date}.json`) ?? { date, used: 0, history: 0 };
 }
-export function syncBudget(providerUsed: number): number {
+export function syncBudget(providerUsed: number, { reset = false }: { reset?: boolean } = {}): number {
   const usage = budgetUsage();
-  usage.used = Math.max(usage.used, providerUsed);
+  usage.used = reset ? providerUsed : Math.max(usage.used, providerUsed);
+  // A confirmed provider reset can invalidate a ledger poisoned before the reset.
+  // Retain same-day history reservations, bounded by total provider usage.
+  if (reset) usage.history = Math.min(usage.history, providerUsed);
   usage.providerUsed = providerUsed;
   usage.checkedAt = new Date().toISOString();
   writeCorpusJson(`usage/eodhd-${usage.date}.json`, usage);
@@ -27,8 +30,8 @@ export function reserveEodhd({ endpoint, monthly = false }: { endpoint: string; 
     : endpoint === 'screener' ? T.budget.screenerCost
     : endpoint.startsWith('eod-bulk-last-day/') ? T.budget.bulkExchangeCost : T.budget.historyCost;
   const ceiling = T.budget.dailyCalls + (endpoint.includes('.FOREX') ? T.budget.extraCalls : 0);
-  if (usage.used + cost > ceiling) throw new EodhdBudgetError('daily EODHD budget reached; resume after 00:00 UTC');
-  if (monthly && usage.history + cost > T.budget.priceHistoryCalls) throw new EodhdBudgetError('daily price-history budget reached; resume after 00:00 UTC');
+  if (usage.used + cost > ceiling) throw new EodhdBudgetError('daily EODHD budget reached; resume after EODHD daily reset');
+  if (monthly && usage.history + cost > T.budget.priceHistoryCalls) throw new EodhdBudgetError('daily price-history budget reached; resume after EODHD daily reset');
   usage.used += cost;
   if (monthly) usage.history += cost;
   writeCorpusJson(`usage/eodhd-${usage.date}.json`, usage);

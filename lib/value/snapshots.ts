@@ -6,7 +6,7 @@ import { checkIntegrity } from './integrity';
 import { buyReturnInputs } from "./owner-return";
 import { runNumericTests } from './tests';
 import { QUALITY_TESTS,type Company,type Fundamentals,type HistorySummary,type PriceHistory,type SnapshotRow } from './types';
-import { valueCompany } from './valuation';
+import { valueCompany, valuationMargin } from './valuation';
 
 export const HISTORY_CAVEATS = [
   'numbers-only checklist (no report reading)',
@@ -63,15 +63,16 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
   const volatility = earningsVolatility({ opMarginCv: numeric.understandable.metrics.opMarginCv });
   const valuation = prefix.integrity.ok && bondYield !== null && Number.isFinite(bondYield) && positive(fxRate)
     ? valueCompany({ years: prefix.years, kind:company.kind, currency:prefix.currency, bondYield,
-      cyclical:numeric.understandable.metrics.opMarginCv !== null && volatility === 'volatile', priceHistory:pastPrices }).valuation : null;
+      cyclical:numeric.understandable.metrics.opMarginCv !== null && volatility === 'volatile', priceHistory:pastPrices, qualityPass:t5 === "PPPPP" }).valuation : null;
   const v: [number,number,number] | null = valuation ? [valuation.perShare.low*fxRate!, valuation.perShare.mid*fxRate!, valuation.perShare.high*fxRate!] : null;
   const flags = valuationFlags({ price, mid:v?.[1]??null, assumptions:valuation?.assumptions??[] });
   if (valuation && fxRate) valuation.perShareTrading = {currency:company.currency,fxRate,low:v![0],mid:v![1],high:v![2]};
-  const buy = publishedBuyPrice({buyReturnInputs:buyReturnInputs(valuation,company.currency),st:prefix.integrity.ok?'s':'i', t:t5, v, m:T.price.requiredMos[volatility], dataQualityFlags:flags}, positive(price) ? [price,`${month}-01`] : undefined);
+  const mos = valuationMargin(valuation, volatility);
+  const buy = publishedBuyPrice({buyReturnInputs:buyReturnInputs(valuation,company.currency),st:prefix.integrity.ok?'s':'i', t:t5, v, m:mos, dataQualityFlags:flags}, positive(price) ? [price,`${month}-01`] : undefined);
   const pm = positive(price) && v && positive(v[1]) ? compact(price/v[1]) : null;
   const r = positive(price) && latestPrice && positive(latestPrice[0]) && latestPrice[1].slice(0,7) >= month && latestPrice[1] <= asOf
     ? compact(latestPrice[0]/price-1) : null;
-  return [company.id,t5,pm,buy.b,r,{discount:T.price.requiredMos[volatility],price,buyPrice:v&&positive(v[1])?v[1]*(1-T.price.requiredMos[volatility]):null}];
+  return [company.id,t5,pm,buy.b,r,{discount:mos,price,buyPrice:v&&positive(v[1])?v[1]*(1-mos):null}];
 }
 
 export function summarizeSnapshots(rows: SnapshotRow[]): HistorySummary {

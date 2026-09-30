@@ -7,10 +7,10 @@ import { askCompany } from "./jev/run";
 import { combine } from "./jev/combine";
 import { QUESTIONS, QUESTIONS_VERSION } from "./jev/questions";
 import { runNumericTests } from "./tests";
-import { valueCompany } from "./valuation";
+import { valueCompany, valuationMargin } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory } from "./types";
 
-export const PIPELINE_VERSION = "11";
+export const PIPELINE_VERSION = "12";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -43,14 +43,14 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   const commodity = answers.find(answer => answer.q === "commodity")?.value;
   const isCommodity = typeof commodity === "number" && commodity >= T.jev.commodityCyclical;
   const volatility = earningsVolatility({ opMarginCv: numeric.understandable.metrics.opMarginCv, commodity: isCommodity });
-  const requiredMos = T.price.requiredMos[volatility];
   const cyclical = isCommodity || numeric.understandable.metrics.opMarginCv !== null && volatility === "volatile";
   const resolvedBondYield = bondYield;
   const { valuation, reason } = !fundamentals.integrity.ok
     ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
     : resolvedBondYield === null
       ? { valuation: null, reason: "Local government bond yield unavailable" }
-      : valueCompany({ years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm });
+      : valueCompany({ years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm, qualityPass: Object.values(tests).every(test => test.result === "pass") });
+  const requiredMos = valuationMargin(valuation, volatility);
   if (valuation) {
     if (company.source === "edinet" && !years.at(-1)?.edinetShares) valuation.assumptions.push("Unverified JP share count unreconciled: EDINET share facts unavailable");
     if (rate !== null) valuation.perShareTrading = {

@@ -1,20 +1,38 @@
 import { parentShare } from "./parent-share";
 import { T } from "./config";
-import { financialBvps, tangibleEquity, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roiic, sum, withZeroDefaults } from "./metrics";
+import { financialBvps, tangibleEquity, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roic, roiic, sum, withZeroDefaults } from "./metrics";
 import { ownerEarningsBridge } from "./owner-earnings";
-import type { Kind, Valuation, Year, PriceHistory } from "./types";
+import type { Kind, Valuation, Year, PriceHistory, Volatility } from "./types";
 
 export { ownerEarningsSeries } from "./owner-earnings";
 
-export function presentValue({ oe, g, r, terminal }: { oe: number; g: number; r: number; terminal: number }): number {
+export function presentValue({ oe, g, r, terminal, decadeFade = false }: { oe: number; g: number; r: number; terminal: number; decadeFade?: boolean }): number {
   if (r <= terminal) throw new RangeError("discount rate must exceed terminal growth");
   let earnings = oe, pv = 0;
   for (let t = 1; t <= 10; t++) {
-    const growth = t <= 5 ? g : g + (terminal - g) * (t - 5) / 5;
+    const growth = decadeFade ? g + (terminal - g) * (t - 1) / 9 : t <= 5 ? g : g + (terminal - g) * (t - 5) / 5;
     earnings *= 1 + growth;
     pv += earnings / (1 + r) ** t;
   }
   return pv + earnings * (1 + terminal) / (r - terminal) / (1 + r) ** 10;
+}
+
+/** Winsorise ten annual log returns by replacing the smallest/largest with
+ * the adjacent order statistic (10% of observations in each tail).
+ * Eleven consecutive positive observations supply a full ten-year CAGR. */
+export function compounderGrowth(years: Year[]): number | null {
+  const history = ownerEarningsBridge([...years].sort((a,b) => a.fy-b.fy)).slice(-11);
+  if (history.length !== 11 || history.some((r,i) => r.value === null || r.value <= 0 || !r.year.dilutedShares || r.year.dilutedShares <= 0 || (i > 0 && r.year.fy !== history[i-1].year.fy + 1))) return null;
+  const values = history.map(r => r.value! / r.year.dilutedShares!);
+  const logs = values.slice(1).map((v,i) => Math.log(v / values[i]));
+  const sorted = [...logs].sort((a,b) => a-b);
+  const rate = Math.expm1(mean(logs.map(v => Math.max(sorted[1], Math.min(sorted[8], v))))!);
+  return Number.isFinite(rate) ? clamp({value:rate,min:0,max:T.valuation.compounderMaxGrowth}) : null;
+}
+
+export function valuationMargin(v: Valuation | null, volatility: Volatility): number {
+  const base = v?.tier === 'compounder' ? T.valuation.compounderMos : T.price.requiredMos[volatility];
+  return Math.max(base, v?.leverage === 'volatile' ? T.price.requiredMos.volatile : v?.leverage === 'moderate' ? T.price.requiredMos.moderate : 0);
 }
 
 /** Fraction of positive asset additions represented by the acquisition proxy. */
@@ -54,8 +72,8 @@ function reinvestmentRate(years: Year[]): number | null {
   return investments.some(x => x === null) || profits.some(x => x === null) ? null : ratio(sum(present(investments)), sum(present(profits)));
 }
 
-export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, priceHistory = null }: {
-  years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; priceHistory?: PriceHistory | null;
+export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, priceHistory = null, qualityPass = false, version = T.valuation.version }: {
+  qualityPass?: boolean; version?: 1 | 2; years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; priceHistory?: PriceHistory | null;
 }): { valuation: Valuation | null; reason: string | null } {
   const ys = withZeroDefaults(years).sort((a, b) => a.fy - b.fy), latest = ys.at(-1);
   const fallback = latest && !(latest.dilutedShares && latest.dilutedShares > 0) && shareSource === 'yahoo-shares' && reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0;
@@ -84,26 +102,32 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   assumptions.push(decliningRevenue ? "three-year revenue trend is negative; growth set to zero"
     : "growth set to zero when latest revenue is below three years earlier");
   if (!currency) assumptions.push("reporting currency not supplied");
-  const common = { ...(fallback ? { sharesSource: shareSource } : {}), currency, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
+  const common = { version, ...(fallback ? { sharesSource: shareSource } : {}), currency, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
 
   if (kind !== "operating") {
-    const book = financialBvps({ ...latest, dilutedShares: shares });
+    const book = version === 2 ? ratio(tangibleEquity(latest), shares) : financialBvps({ ...latest, dilutedShares: shares });
     if (book === null || book <= 0) return { valuation: null, reason: "book value not positive" };
-    const returns = last(ys, 10).map(roe).filter((value): value is number => value !== null);
+    const returns = last(ys, 10).map(roe).filter((value): value is number => value !== null && (version === 1 || Number.isFinite(value)));
     if (returns.length < 5) return { valuation: null, reason: "insufficient return on tangible equity history" };
-    const normalizedRoe = median(returns)!;
-    const growth = decliningRevenue ? 0 : clamp({ value: decadeCagr(ys.map(y => [y.fy, financialBvps(y)])) ?? 0, min: 0, max: T.valuation.finMaxGrowth });
+    const normalizedRoe = version === 2 ? clamp({value:median(returns)!,min:0,max:T.valuation.finMaxRoe}) : median(returns)!;
+    if (normalizedRoe <= 0) return {valuation:null,reason:"justified price to book is zero"};
+    // Use original observations: zero defaults must not invent a dividend payout.
+    const retentions = last([...years].sort((a,b)=>a.fy-b.fy),10).flatMap(y => y.netIncome !== null && y.netIncome > 0 && y.dividendsPaid !== null
+      ? [clamp({value:1-y.dividendsPaid/y.netIncome,min:0,max:1})] : []);
+    if (version === 2 && retentions.length < 5) return {valuation:null,reason:'insufficient dividend payout history'};
+    const retention = median(retentions) ?? 0;
+    const growth = version === 2 ? decliningRevenue ? 0 : Math.min(T.valuation.finMaxGrowth, normalizedRoe * retention) : decliningRevenue ? 0 : clamp({ value: decadeCagr(ys.map(y => [y.fy, financialBvps(y)])) ?? 0, min: 0, max: T.valuation.finMaxGrowth });
     if (discountRate <= growth) return { valuation: null, reason: "required return does not exceed perpetual book-value growth" };
     const highRate = discountRate - Math.min(.01, (discountRate - growth) / 2);
     const multiple = (r: number) => clamp({ value: (normalizedRoe - growth) / (r - growth), min: 0, max: 4 });
     if (multiple(discountRate) * book <= 0) return { valuation: null, reason: "justified price to book is zero" };
-    return { reason: null, valuation: { ...common, method: "book_value", normalized: book, growth, netCash: 0,
+    return { reason: null, valuation: { ...common, ...(version === 2 ? {financialReturn:{roe:normalizedRoe,retention,payout:normalizedRoe > 0 ? 1-growth/normalizedRoe : 0,cashPerShare:book*(normalizedRoe-growth)}} : {}), method: "book_value", normalized: book, growth, netCash: 0,
       perShare: { low: multiple(discountRate + 0.01) * book, mid: multiple(discountRate) * book, high: multiple(highRate) * book },
       equityBondYield: ratio(median(present(last(ys, 10).map(y => y.netIncome))), latest.marketCap),
       bridge: [{ label: tangibleEquity(latest)! > 0 ? "tangible book value per share" : "reported book value per share", value: book },
         ...(Number.isFinite(normalizedRoe) ? [{ label: "normalized return on tangible equity", value: normalizedRoe }] : []),
         { label: "justified price to book", value: multiple(discountRate) }],
-      assumptions: [...assumptions, "returns use net income divided by tangible equity",
+      assumptions: [...assumptions, ...(version === 2 ? ['sustainable tangible ROE: ten-year median capped at 25%; at least five finite observations', 'growth = sustainable ROE × median dividend retention, capped at 6%; residual earnings distributable', 'expected return = distributable earnings / price + sustainable growth; retained earnings counted once'] : []), "returns use net income divided by tangible equity",
         tangibleEquity(latest)! > 0 ? "valuation uses tangible book value per share" : "nonpositive tangible equity: valuation uses reported book value per share",
         ...(!Number.isFinite(normalizedRoe) ? ["tangible equity is nonpositive: returns effectively unlimited; price to book capped at 4"] : []),
         "cash and debt are included in book value", "equity bond yield uses median net income"],
@@ -123,23 +147,32 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   if (latest.cash === null || latest.totalDebt === null) return { valuation: null, reason: "net cash unavailable" };
   const allocation = parentShare(latest);
   if (allocation === null) return { valuation: null, reason: "Parent share of consolidated earnings unavailable with material minority interests" };
-  const netCash = (latest.cash - latest.totalDebt) * allocation;
-  if (allocation !== 1 || recent.some(row => row.allocation !== 1)) assumptions.push("Material minority interests: consolidated cash-flow adjustments and net cash allocated by parent net income / total net income; parent net income is already allocated");
+  if (version === 2 && (latest.revenue === null || latest.revenue < 0)) return {valuation:null,reason:'operating cash reserve unavailable'};
+  const netDebt = (latest.totalDebt - latest.cash) * allocation;
+  const netCash = version === 2 ? Math.max(0, latest.cash - T.valuation.operatingCashRatio * latest.revenue!) * allocation : -netDebt;
+  const debtYears = netDebt / normalized;
+  const leverage = version === 1 || debtYears <= T.valuation.leverageModerate ? 'normal' : debtYears > T.valuation.leverageVolatile ? 'volatile' : 'moderate';
+  const riskFlags = leverage === 'normal' ? [] : [leverage === 'volatile' ? 'High leverage: net debt exceeds 5 years of owner earnings' : 'Elevated leverage: net debt exceeds 3 years of owner earnings'];
+  if (version === 2) assumptions.push('equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time', 'only cash above 2% of revenue is added to equity value');
+  if (allocation !== 1 || recent.some(row => row.allocation !== 1)) assumptions.push("Material minority interests: consolidated cash-flow adjustments and cash adjustment allocated by parent net income / total net income; parent net income is already allocated");
   const oeGrowth = decadeCagr(history.map(row => [row.year.fy, ratio(row.value, row.year.dilutedShares)]));
   const revenueGrowth = decadeCagr(ys.map(y => [y.fy, ratio(y.revenue, y.dilutedShares)]));
   const incremental = roiic(ys), reinvestment = reinvestmentRate(ys);
   const organicGrowth = organicRevenueGrowth(ys, revenueGrowth);
   const estimates = present([oeGrowth, revenueGrowth, organicGrowth, incremental === null || reinvestment === null ? null : incremental * reinvestment]);
-  const growth = decliningRevenue ? 0 : clamp({ value: estimates.length ? Math.min(...estimates) : 0, min: 0, max: T.valuation.maxGrowth });
+  const finiteRoic = last(ys,10).map(roic).filter((r): r is number => r !== null && Number.isFinite(r));
+  const ownGrowth = version === 2 && qualityPass && finiteRoic.length >= 8 && median(finiteRoic)! >= T.valuation.compounderMinRoic ? compounderGrowth(ys) : null;
+  const tier = ownGrowth !== null ? 'compounder' : 'standard';
+  const growth = decliningRevenue ? 0 : ownGrowth ?? clamp({ value: estimates.length ? Math.min(...estimates) : 0, min: 0, max: T.valuation.maxGrowth });
   if (discountRate <= T.valuation.terminal) return { valuation: null, reason: "required return does not exceed terminal growth" };
   // Preserve finite scenarios near the perpetuity boundary without flooring the actual rate.
   const highRate = discountRate - Math.min(.01, (discountRate - T.valuation.terminal) / 2);
-  const pv = (g: number, r: number) => presentValue({ oe: normalized, g, r, terminal: T.valuation.terminal });
+  const pv = (g: number, r: number) => presentValue({ oe: normalized, g, r, terminal: T.valuation.terminal, decadeFade: tier === 'compounder' });
   const midPv = pv(growth, discountRate);
   if ((midPv + netCash) / shares <= 0) return { valuation: null, reason: "debt exceeds the value of owner earnings" };
   if (last(years, window).some(y => y.sbc === null)) assumptions.push("stock compensation not reported");
-  if (!estimates.length) assumptions.push("growth estimates unavailable; using zero growth");
-  assumptions.push(organicGrowth === null ? 'organic growth proxy unavailable' : 'revenue CAGR reduced by acquisition proxy share of positive assets added over ten years', 'operating growth capped at 8%');
+  if (!estimates.length && tier !== 'compounder') assumptions.push("growth estimates unavailable; using zero growth");
+  assumptions.push(organicGrowth === null ? 'organic growth proxy unavailable' : 'revenue CAGR reduced by acquisition proxy share of positive assets added over ten years', tier === 'compounder' ? 'durable compounder: winsorised ten-year per-share owner-earnings CAGR capped at 12%, fading to 3% over ten years' : 'operating growth capped at 8%');
   assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", `owner earnings use the ${window}-year median capped at latest-year owner earnings and complete newer TTM owner earnings`, "maintenance capex floored at the smaller of capex and D&A",
     ttmRow?.value === normalized ? "bridge components use TTM owner earnings; full TTM capex deducted; latest annual lease liabilities used" : normalized < medianEarnings ? "bridge components use the latest owner earnings observation" : "bridge components use the median owner earnings observation");
   if (recent.some(row => row.year.leaseCash != null)) assumptions.push("Reported capitalized lease repayments charged in owner earnings; corresponding lease obligations excluded from debt");
@@ -147,7 +180,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const ordered = [...recent].sort((a, b) => a.value - b.value);
   const center = Math.floor(ordered.length / 2);
   const representative = ttmRow?.value === normalized ? [ttmRow as typeof latestRow] : normalized < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
-  return { reason: null, valuation: { ...common, method: "owner_earnings", normalized, growth, netCash,
+  return { reason: null, valuation: { ...common, tier, netDebt, leverage, riskFlags, method: "owner_earnings", normalized, growth, netCash,
     perShare: { low: (pv(growth / 2, discountRate + 0.01) + netCash) / shares, mid: (midPv + netCash) / shares, high: (pv(growth, highRate) + netCash) / shares },
     equityBondYield: ratio(normalized, latest.marketCap),
     bridge: [
@@ -158,7 +191,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
       ...(representative.some(row => row.leaseCashCost > 0) ? [{ label: representative.some(row => row.year.leaseCash != null) ? "− lease payments" : "− estimated lease payments", value: -mean(representative.map(row => row.leaseCashCost * row.allocation!))! }] : []),
       { label: "= owner earnings", value: normalized },
       { label: "× PV factor", value: midPv / normalized },
-      { label: "+ net cash", value: netCash },
+      { label: version === 2 ? "+ excess cash" : "+ net cash", value: netCash },
       { label: "÷ shares", value: shares },
     ],
   } };

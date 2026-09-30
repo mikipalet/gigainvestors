@@ -278,8 +278,15 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
 export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string }): Promise<void> {
   const out = options.out === undefined ? undefined : path.resolve(options.out);
   if (out && existsSync(out) && readdirSync(out).length) throw new Error("--out requires a new or empty directory");
-  const companies = readJsonl<Company>("universe.jsonl");
-  if (!companies.length) throw new Error("Run the universe stage before publish");
+  const universe = readJsonl<Company>("universe.jsonl");
+  if (!universe.length) throw new Error("Run the universe stage before publish");
+  const membership = T.publish.indexMembersOnly
+    ? readCorpusJson<{memberships:Record<string,string[]>}>("index-membership/latest.json") : null;
+  if (T.publish.indexMembersOnly && (!membership?.memberships || !Object.keys(membership.memberships).length)) {
+    throw new Error("Index membership unavailable; run index membership ingestion before publish");
+  }
+  const companies = T.publish.indexMembersOnly ? universe.filter(company =>
+    [company.id,...company.listings].some(id => Array.isArray(membership!.memberships[id]) && membership!.memberships[id].length > 0)) : universe;
   const selected = companies.filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
   if (!selected.length) throw new Error("No companies selected for publish");
   const analyses = loadAnalyses(selected);

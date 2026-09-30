@@ -71,12 +71,28 @@ describe("buildOutput", () => {
     mkdirSync(path.join(corpusDir(), "publish-repo/prices"), { recursive: true });
     const closes = JSON.stringify({ "KO.US": [60, "2026-09-29"] });
     writeFileSync(path.join(corpusDir(), "publish-repo/prices/US.json"), closes);
+    // Publication is restricted to the supplied index membership snapshot.
+    mkdirSync(path.join(corpusDir(), "index-membership"));
+    writeFileSync(path.join(corpusDir(), "index-membership/latest.json"), JSON.stringify({memberships:{"KO.US":["S&P 500"]}}));
     await publish({ out });
     expect(readFileSync(path.join(corpusDir(), "analysis/KO.US.json"), "utf8")).toBe(source);
     expect(readFileSync(path.join(corpusDir(), "publish-repo/prices/US.json"), "utf8")).toBe(closes);
     expect(JSON.parse(readFileSync(path.join(out, "prices/US.json"), "utf8"))["KO.US"]).toEqual([60, "2026-09-29"]);
     expect(existsSync(path.join(out, ".git"))).toBe(false);
     await expect(publish({ out })).rejects.toThrow("new or empty directory");
+  });
+  it("refuses publication without index membership and excludes nonmembers", async () => {
+    const { default: publish } = await import("@/scripts/value/stages/publish");
+    const rows=[analysis(),analysis('OBSCURE.US')], out=path.join(corpusDir(),'scoped');
+    writeFileSync(path.join(corpusDir(),'universe.jsonl'),rows.map(r=>JSON.stringify(r.company)).join('\n'));
+    mkdirSync(path.join(corpusDir(),'analysis'));
+    for(const r of rows)writeFileSync(path.join(corpusDir(),`analysis/${r.id}.json`),JSON.stringify(r));
+    await expect(publish({out})).rejects.toThrow('Index membership unavailable');
+    mkdirSync(path.join(corpusDir(),'index-membership'));
+    writeFileSync(path.join(corpusDir(),'index-membership/latest.json'),JSON.stringify({memberships:{'KO.US':['S&P 500']}}));
+    await publish({out});
+    const index=JSON.parse(readFileSync(path.join(out,'index/US.json'),'utf8'));
+    expect(index.map((r:IndexRow)=>r.id)).toEqual(['KO.US']);
   });
   it("writes a local snapshot without requiring or changing a git repository", () => {
     const repo = directory(), row = analysis();

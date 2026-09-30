@@ -1,4 +1,5 @@
-/** Research-only Buffett calibration. No live defaults or mutable global thresholds. */
+/** Buffett evaluation helpers; legacy proposal retained alongside shared live scoring. */
+import { ownerReturn } from './owner-return';
 import { median, roic } from './metrics';
 import { ownerEarningsBridge } from './owner-earnings';
 import { presentValue } from './valuation';
@@ -38,11 +39,11 @@ export function holdingEvents(quarters: Array<{date:string;holdings:Record<strin
  return results;
 }
 export function scorePurchase(v: Valuation|null, mos:number, price:number|null, t5:string, eligible=true) {
- const fx=v?.perShareTrading?.fxRate??1, mid=v?.perShareTrading?.mid??v?.perShare.mid;
+ const mid=v?.perShareTrading?.mid??v?.perShare.mid;
  const buyPrice=positive(mid)?mid*(1-mos):null;
  const ratio=positive(price)&&positive(buyPrice)?price/buyPrice:null;
- // Exact live owner's yield + capped growth gate; the live gate cannot score financials.
- const expectedReturn=v?.method==='owner_earnings'&&positive(price)&&positive(v.shares)?v.normalized/v.shares*fx/price+v.growth:null;
+ // Share the live publication return calculation, including financials.
+ const expectedReturn=ownerReturn(v,v?.perShareTrading?.currency??v?.currency??'',null,price)?.expected??null;
  const quality=t5==='PPPPP', returnPass=expectedReturn!==null&&v!==null&&expectedReturn>=v.discountRate;
  return {quality,buyPrice,ratio,expectedReturn,returnPass,pricePass:ratio!==null&&ratio<=1,
   buy:eligible&&quality&&ratio!==null&&ratio<=1&&returnPass,

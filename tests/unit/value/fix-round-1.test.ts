@@ -53,7 +53,7 @@ describe("round 1 controller rulings", () => {
     expect(result.economics.numeric).toBe("pass");
     expect(result.management.numeric).toBe("pass");
     expect(result.accounting.numeric).toBe("pass");
-    expect(value(years).valuation?.netCash).toBe(100);
+    expect(value(years).valuation?.netCash).toBe(60);
     expect(value(years).valuation?.assumptions).toContain("stock compensation not reported");
     expect(years[0].totalDebt).toBeNull();
   });

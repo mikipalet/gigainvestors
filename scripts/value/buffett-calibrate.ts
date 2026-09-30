@@ -18,18 +18,21 @@ import { ownerEarningsBridge } from '../../lib/value/owner-earnings';
 import { median } from '../../lib/value/metrics';
 import { readPrices } from '../../lib/value/price-files';
 import { runNumericTests } from '../../lib/value/tests';
-import { valueCompany, presentValue } from '../../lib/value/valuation';
+import { valueCompany, presentValue, valuationMargin } from '../../lib/value/valuation';
 import { bestWesternListing } from '../../lib/value/western';
 import { CALIBRATION } from '../../lib/value/calibration';
 import { calibrationSummary } from './stages/calibrate';
 import { QUALITY_TESTS, type Analysis, type Company, type Fundamentals, type PriceHistory, type Valuation } from '../../lib/value/types';
 
-const ROOT=path.join(os.homedir(),'value-corpus'), OUT=path.join(ROOT,'staging/buffett-1');
+const ROOT=process.env.VALUE_CORPUS_DIR??path.join(os.homedir(),'value-corpus');
+const V2=process.env.VALUE_CHECK_VERSION==='2';
+const SOURCE=path.join(ROOT,'staging/buffett-1'), OUT=path.join(ROOT,V2?'staging/valuation-2':'staging/buffett-1');
 const disk=()=>{const s=statfsSync('/');if(s.bavail*s.bsize<5*1024**3)throw new Error('Disk below 5 GB; stopped');};
 const read=<T>(file:string):T|null=>existsSync(file)?JSON.parse(readFileSync(file,'utf8')):null;
 const corpus=<T>(file:string)=>read<T>(path.join(ROOT,file));
 const write=(name:string,value:unknown)=>{disk();writeFileSync(path.join(OUT,name),JSON.stringify(value,null,2)+'\n');};
 const hash=(value:unknown)=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+disk();mkdirSync(OUT,{recursive:true});
 const companies=readFileSync(path.join(ROOT,'universe.jsonl'),'utf8').trim().split('\n').map(l=>JSON.parse(l) as Company);
 const companyMap=new Map(companies.map(c=>[c.id,c]));
 const alias=new Map(companies.flatMap(c=>c.listings.map(id=>[id,c.id] as const)));
@@ -41,7 +44,7 @@ for(const id of required){const raw=corpus<any>(`raw/eodhd/${id}.json`);if(raw?.
 for(const [c,id] of Object.entries({'H1467J104':'CB.US','740189105':'PCP.US','874039100':'TSM.US','23331A109':'DHI.US','526057302':'LEN-B.US','526057104':'LEN.US','16117M305':'CHTR.US','82968B103':'SIRI.US','G1151C101':'ACN.US','G0408V102':'AON.US','G3223R108':'EG.US','872540109':'TJX.US','G7665A101':'RIG.US','G0176J109':'ALLE.US'}))cusips.set(c,id);
 // Legacy CUSIPs and dual-class listings are explicit; predecessors keep their own IDs.
 for(const [c,id] of Object.entries({'529771107':'LXK.US','902124106':'TYC.US','369604103':'GE.US','67104A101':'OSI.US','80105N105':'SNY.US','12189T104':'BNI.US','G47766101':'IR.US','260561105':'DJ.US','50075N104':'KFT.US','929251106':'WBC.US','G4776G101':'IR.US','37733W105':'GSK.US','92927K102':'WBC.US','278058102':'ETN.US','210371100':'CEG-2008.US','62985Q101':'NLC.US','30231G102':'XOM.US','641069406':'NSRGY.US','94973V107':'ELV.US','064058100':'BK.US','25490A101':'DTV.US','530322106':'LMCA.US','523768109':'LEE.US','92553P201':'VIAB.US','G47791101':'IR.US','637071101':'NOV.US','584404107':'MEG.US','25490A309':'DTV.US','50076Q106':'KRFT.US','167250109':'CBI.US','531229102':'LMCA.US','85571Q102':'STRZA.US','867224107':'SU.US','25470M109':'DISH.US','G5480U104':'LBTYA.US','G5480U120':'LBTYK.US','531229300':'LMCK.US','30219G108':'ESRX.US','58441K100':'MEG.US','76131D103':'QSR.US','90130A101':'FOXA.US','61166W101':'MON.US','862121100':'STOR.US','G9001E102':'LILA.US','G9001E128':'LILAK.US','756577102':'RHT.US','G85158106':'STNE.US','922908363':'VOO.US','78462F103':'SPY.US','067901108':'GOLD.US','G0403H108':'AON.US','G7709Q104':'RPRX.US','00507V109':'ATVI.US','G6693N103':'NU.US','92556H206':'PARA.US','G6683N103':'NU.US','25243Q205':'DEO.US','422806208':'HEI-A.US'}))cusips.set(c,id);
-const quarters=read<any[]>(path.join(OUT,'sec/quarters.json'))!;
+const quarters=read<any[]>(path.join(SOURCE,'sec/quarters.json'))!;
 const quarterMap=new Map(quarters.map(q=>[q.date,q]));
 const events=holdingEvents(quarters.map(q=>({date:q.date,holdings:Object.fromEntries(Object.entries(q.holdings).map(([k,v]:[string,any])=>[k,v.shares]))})))
  .filter(e=>e.date>='2005'&&e.date<'2026').map(e=>({...e,id:cusips.get(e.cusip)??null,name:quarterMap.get(e.date).holdings[e.cusip].name,sources:quarterMap.get(e.date).sources}));
@@ -82,7 +85,7 @@ for(const p of selected) {
 // Monthly local government yields: latest observation preceding quarter start.
 const bondSeries:Record<string,string>={US:'GS10',JP:'IRLTLT01JPM156N',GB:'IRLTLT01GBM156N',CH:'IRLTLT01CHM156N'};
 function historicalBond(country:string,cutoff:string) {
- const series=bondSeries[country],file=path.join(OUT,`macro/${series}.csv`);
+ const series=bondSeries[country],file=path.join(SOURCE,`macro/${series}.csv`);
  if(!series||!existsSync(file))return null;
  const values=readFileSync(file,'utf8').trim().split('\n').slice(1).map(l=>l.split(','));
  const row=values.filter(([d,v])=>d.slice(0,7)<cutoff.slice(0,7)&&v!==''&&v!=='.'&&Number.isFinite(Number(v))).at(-1);
@@ -92,7 +95,7 @@ const cache=new Map<string,any>();
 function load(id:string){
  if(cache.has(id))return cache.get(id);
  const resolved=existsSync(path.join(ROOT,`fundamentals/${id}.json`))?id:alias.get(id)??id;
- const supplemental=read<any>(path.join(OUT,`raw/${id==='LEN-B.US'?'LEN.US':id}.json`));
+ const supplemental=read<any>(path.join(SOURCE,`raw/${id==='LEN-B.US'?'LEN.US':id}.json`));
  const raw=supplemental?.Financials?supplemental:corpus<any>(`raw/eodhd/${resolved}.json`);
  const a=corpus<Analysis>(`analysis/${resolved}.json`),f=corpus<Fundamentals>(`fundamentals/${resolved}.json`)??(raw?.Financials?normalizeEodhd(raw,id).fundamentals:null);
  let c=a?.company??companyMap.get(resolved)??corpus<Company>(`companies/${resolved}.json`);
@@ -100,10 +103,10 @@ function load(id:string){
  if(id==='TSM.US'&&c)c={...c,id,country:'US',currency:'USD'};
  const priceId=id;
  const ph=corpus<any>(`prices-history-long/${priceId}.json`)??corpus<any>(`prices-history/${id}.json`)??[];
- const yahoo=read<any>(path.join(OUT,`prices/${priceId}.yahoo.json`));
+ const yahoo=read<any>(path.join(SOURCE,`prices/${priceId}.yahoo.json`));
  let prices:PriceHistory=yahoo?parseYahooHistory(yahoo):Array.isArray(ph)?ph:ph.prices??[];
 
- if(!prices.length&&id==='PCP.US'){const rows=read<any[]>(path.join(OUT,`prices/${id}.json`));prices=Array.isArray(rows)?rows.map(r=>[r.date.slice(0,7),r.close]):[];}
+ if(!prices.length&&id==='PCP.US'){const rows=read<any[]>(path.join(SOURCE,`prices/${id}.json`));prices=Array.isArray(rows)?rows.map(r=>[r.date.slice(0,7),r.close]):[];}
  const result={a,f,raw,c,prices};cache.set(id,result);return result;
 }
 function evaluate(p:any, lagMissing=false){
@@ -135,7 +138,7 @@ function evaluate(p:any, lagMissing=false){
  if(!years.length&&c.source!=='eodhd')years=full.years.filter((y:any)=>new Date(Date.parse(y.end)+183*86400000).toISOString().slice(0,10)<cutoff).map((y:any)=>({...y}));
  const reporting=years.at(-1)?.currency??full.currency;
  let fx=reporting.toUpperCase()===c.currency.toUpperCase()?1:reporting==='GBP'&&['GBX','GBp'].includes(c.currency)?100:null;
- if(p.id==='TSM.US'&&reporting==='TWD'){const rows=readFileSync(path.join(OUT,'macro/EXTAUS.csv'),'utf8').trim().split('\n').slice(1).map(l=>l.split(','));const rate=rows.filter(([d,v])=>d.slice(0,7)<cutoff.slice(0,7)&&Number(v)>0).at(-1);fx=rate?1/Number(rate[1]):null;}
+ if(p.id==='TSM.US'&&reporting==='TWD'){const rows=readFileSync(path.join(SOURCE,'macro/EXTAUS.csv'),'utf8').trim().split('\n').slice(1).map(l=>l.split(','));const rate=rows.filter(([d,v])=>d.slice(0,7)<cutoff.slice(0,7)&&Number(v)>0).at(-1);fx=rate?1/Number(rate[1]):null;}
  const monthly=new Map(prices.filter(([m]:[string,number])=>m<cutoff.slice(0,7)));
  years=years.map((y:any)=>({...y,marketCap:fx&&y.dilutedShares&&monthly.get(y.end.slice(0,7))?Number(monthly.get(y.end.slice(0,7)))*y.dilutedShares/fx:null}));
  const prefix={...full,years,ttm:null};
@@ -145,14 +148,18 @@ function evaluate(p:any, lagMissing=false){
  const t5=QUALITY_TESTS.map(k=>numeric[k as keyof typeof numeric].numeric[0].toUpperCase()).join('');
  const cv=numeric.understandable.metrics.opMarginCv,vol=earningsVolatility({opMarginCv:cv}),mos=T.price.requiredMos[vol];
  const bond=historicalBond(c.country,cutoff);
- const result=valueCompany({years,kind:c.kind,currency:reporting,bondYield:bond?.yield??null,cyclical:vol==='volatile',priceHistory:[...monthly] as PriceHistory});
+ const result=valueCompany({years,kind:c.kind,currency:reporting,bondYield:bond?.yield??null,cyclical:vol==='volatile',priceHistory:[...monthly] as PriceHistory, version:1});
  const v=result.valuation;
  if(v&&fx)v.perShareTrading={currency:c.currency,fxRate:fx,low:v.perShare.low*fx,mid:v.perShare.mid*fx,high:v.perShare.high*fx};
  const comparisonFlags=valuationFlags({price,mid:v?.perShareTrading?.mid??null,assumptions:v?.assumptions??[]});
  const eligible=integrity.ok&&fx!==null&&comparisonFlags.length===0;
  const before=scorePurchase(fx!==null?v:null,mos,price,t5,eligible);
- const proposal=v?proposeValuation({valuation:v,years,t5,cv,mos}):null;
- const after=scorePurchase(fx!==null?(proposal?.valuation??v):null,proposal?.mos??mos,price,t5,eligible);
+ const revised=V2?valueCompany({years,kind:c.kind,currency:reporting,bondYield:bond?.yield??null,cyclical:vol==='volatile',priceHistory:[...monthly] as PriceHistory,qualityPass:t5==='PPPPP',version:2}):null;
+ if(revised?.valuation&&fx){const a=revised.valuation;a.perShareTrading={currency:c.currency,fxRate:fx,low:a.perShare.low*fx,mid:a.perShare.mid*fx,high:a.perShare.high*fx};}
+ const proposal=V2?{valuation:revised?.valuation??null,mos:valuationMargin(revised?.valuation??null,vol),eligible:revised?.valuation?.tier==='compounder'}:v?proposeValuation({valuation:v,years,t5,cv,mos}):null;
+ const afterValue=V2?proposal?.valuation??null:proposal?.valuation??v;
+ const afterFlags=valuationFlags({price,mid:afterValue?.perShareTrading?.mid??null,assumptions:afterValue?.assumptions??[]});
+ const after=scorePurchase(fx!==null?afterValue:null,proposal?.mos??mos,price,t5,integrity.ok&&fx!==null&&!afterFlags.length);
  const blocked=[...comparisonFlags,...QUALITY_TESTS.filter(k=>numeric[k as keyof typeof numeric].numeric!=='pass').map(k=>`${k}:${numeric[k as keyof typeof numeric].numeric}`),...(!integrity.ok?integrity.reasons:[]),...(fx===null?['historical FX / ADR basis unavailable']:[]),...(price===null?['purchase price unavailable']:[]),...(result.reason?[result.reason]:[]),...(before.ratio!==null&&before.ratio>1?['margin-of-safety price']:[]),...(!before.returnPass?['expected-return gate']:[])];
  const oe=ownerEarningsBridge(years),recent=oe.slice(-5);
  const ablations:Record<string,number|null>={};
@@ -168,36 +175,51 @@ function evaluate(p:any, lagMissing=false){
   ablations.noMaintenanceFloor=noFloor.length===5&&noFloor.every(x=>x!==null)?buy(v.growth,v.discountRate,Math.min(median(noFloor as number[])!,noFloor[4]!)):null;
   ablations.latestOE=end?.value?buy(v.growth,v.discountRate,end.value):null;
  }
- return {...p,price,priceInfo,currency:c.currency,cutoff,knownFilingDates:knownYears,filingAssumption:lagMissing?'183-day fallback for missing filing dates':knownYears?'provider filing dates':'183-day lag (dates unavailable)',fiscalYears:years.map((y:any)=>y.fy),inputHash:hash({years,prices:[...monthly],bond}),priceBasis:p.id==='TSM.US'?'USD per ADR; provider shares are ADR-equivalent; FRED EXTAUS lagged monthly TWD/USD':p.id==='PCP.US'?'EODHD original monthly close; no later listed-period split recorded':'corpus/Yahoo split-adjusted close; provider share series; not independently reconciled',bondBasis:p.id==='TSM.US'?'US listed ADR yield proxy; 10% floor also exceeds Taiwan 2021 annual 0.44% +4pp (CBC)':'local historical monthly government yield',restated:true,t5,tests:numeric,integrity,mos,valuation:v,valuationReason:result.reason,bond,before,after,proposalEligible:proposal?.eligible??false,proposedValuation:proposal?.valuation??null,ablations,blocked};
+ return {...p,price,priceInfo,currency:c.currency,cutoff,knownFilingDates:knownYears,filingAssumption:lagMissing?'183-day fallback for missing filing dates':knownYears?'provider filing dates':'183-day lag (dates unavailable)',fiscalYears:years.map((y:any)=>y.fy),inputHash:hash({years,prices:[...monthly],bond}),priceBasis:p.id==='TSM.US'?'USD per ADR; provider shares are ADR-equivalent; FRED EXTAUS lagged monthly TWD/USD':p.id==='PCP.US'?'EODHD original monthly close; no later listed-period split recorded':'corpus/Yahoo split-adjusted close; provider share series; not independently reconciled',bondBasis:p.id==='TSM.US'?'US listed ADR yield proxy; 10% floor also exceeds Taiwan 2021 annual 0.44% +4pp (CBC)':'local historical monthly government yield',restated:true,financialInputs:c.kind!=='operating'?{years,kind:c.kind,reporting,bondYield:bond?.yield??null}:undefined,t5,tests:numeric,integrity,mos,valuation:v,valuationReason:result.reason,revisedReason:revised?.reason,afterFlags,bond,before,after,proposalEligible:proposal?.eligible??false,proposedValuation:proposal?.valuation??null,ablations,blocked};
 }
-disk();mkdirSync(OUT,{recursive:true});
-const purchases=selected.filter(p=>p.date||!selected.some(other=>other.id===p.id&&other.date)).map(p=>evaluate(p));write('purchases.json',purchases);
+if(V2&&!existsSync(path.join(OUT,'split.json')))write('split.json',{
+ created:new Date().toISOString(),rule:'2005–2025 odd years tune; even years holdout; outside interval supplemental',parameters:T.valuation,
+ records:selected.filter(p=>p.date||!selected.some(other=>other.id===p.id&&other.date)).map(p=>({id:p.id,date:p.date,half:!p.date||Number(p.date.slice(0,4))<2005||Number(p.date.slice(0,4))>2025?'supplemental':Number(p.date.slice(0,4))%2?'tune':'holdout'}))});
+const purchases=selected.filter(p=>p.date||!selected.some(other=>other.id===p.id&&other.date)).filter(p=>process.env.VALUE_CHECK_HALF!=='tune'||(p.date&&Number(p.date.slice(0,4))%2===1)).map(p=>evaluate(p));write('purchases.json',purchases);
 write('filing-lag-sensitivity.json',selected.filter(p=>required.includes(p.id)||p.regretted).filter(p=>p.date).map(p=>evaluate(p,true)));
 const summaries=(rows:any[])=>({total:rows.length,withPrice:rows.filter(r=>r.price!=null).length,withValuation:rows.filter(r=>r.valuation).length,completeTests:rows.filter(r=>!/U|N/.test(r.t5)).length,qualityPass:rows.filter(r=>r.before.quality).length,priceComparable:rows.filter(r=>r.before.ratio!==null).length,qualityAndPrice:rows.filter(r=>r.before.quality&&r.before.ratio!==null).length,before:{buy:rows.filter(r=>r.before.buy).length,within20:rows.filter(r=>r.before.within20).length,priceOnly:rows.filter(r=>r.before.pricePass).length},after:{buy:rows.filter(r=>r.after.buy).length,within20:rows.filter(r=>r.after.within20).length,priceOnly:rows.filter(r=>r.after.pricePass).length},rejectedQuality:rows.filter(r=>r.t5.includes('F')).length,unknownQuality:rows.filter(r=>!r.t5.includes('F')&&r.t5!=='PPPPP').length});
-const summariesAll={all:summaries(purchases),ordinary:summaries(purchases.filter(p=>!p.sensitivity&&!p.special&&p.manager!=='documented manager')),named:summaries(purchases.filter(p=>required.includes(p.id)||['TSCO.LSE','1211.HK','8001.JP','8002.JP','8058.JP','8031.JP','8053.JP'].includes(p.id))),regretted:summaries(purchases.filter(p=>p.regretted)),documentedManager:summaries(purchases.filter(p=>p.manager==='documented manager'))};
+const summariesAll={tune:summaries(purchases.filter(p=>p.date&&Number(p.date.slice(0,4))>=2005&&Number(p.date.slice(0,4))<=2025&&Number(p.date.slice(0,4))%2===1)),holdout:summaries(purchases.filter(p=>p.date&&Number(p.date.slice(0,4))>=2005&&Number(p.date.slice(0,4))<=2025&&Number(p.date.slice(0,4))%2===0)),all:summaries(purchases),ordinary:summaries(purchases.filter(p=>!p.sensitivity&&!p.special&&p.manager!=='documented manager')),named:summaries(purchases.filter(p=>required.includes(p.id)||['TSCO.LSE','1211.HK','8001.JP','8002.JP','8058.JP','8031.JP','8053.JP'].includes(p.id))),regretted:summaries(purchases.filter(p=>p.regretted)),documentedManager:summaries(purchases.filter(p=>p.manager==='documented manager'))};
+if(V2&&process.env.VALUE_CHECK_HALF!=='tune')write('financial-checks.json',[['BAC.US','2011-09-30'],['USB.US','2011-03-31'],['WFC.US','2011-03-31'],['WFC.US','2013-03-31'],['CB.US','2023-09-30'],['AXP.US','2011-03-31'],['AXP.US','2025-03-31']].map(([id,date])=>evaluate({id,date,origin:'financial model verification snapshot; not a claimed purchase'})));
 write('purchase-summary.json',summariesAll);console.log('Purchase summary',JSON.stringify(summariesAll));
-if(process.argv.includes('--purchases-only'))process.exit(0);
+if(process.argv.includes('--purchases-only')||process.env.VALUE_CHECK_HALF==='tune')process.exit(0);
 const quotes={...readPrices(path.join(ROOT,'publish-repo/prices')),...readPrices(path.join(ROOT,'prices'))};
+const membership=new Set<string>();
+if(V2)for(const file of readdirSync(path.join(ROOT,'staging/universe-1/index')).filter(f=>f.endsWith('.json')))for(const row of read<any[]>(path.join(ROOT,'staging/universe-1/index',file))??[])membership.add(row.id);
+const liveMembership=V2?read<{memberships:Record<string,string[]>}>(path.join(ROOT,'index-membership/latest.json')):null;
+const liveMembers=new Set(companies.filter(c=>[c.id,...c.listings].some(id=>liveMembership?.memberships[id]?.length)).map(c=>c.id));
+if(V2)write('membership-manifest.json',{source:'staging/universe-1/index',ids:[...membership].sort(),liveSource:'index-membership/latest.json',liveHash:hash(liveMembership),liveIds:[...liveMembers].sort()});
 const current:any[]=[],calibration=new Map<string,Analysis>();const manifest:any[]=[];
 let count=0;
 for(const file of readdirSync(path.join(ROOT,'analysis')).filter(f=>f.endsWith('.json')).sort()){
  if(++count%1000===0){disk();console.log('Corpus',count);}
  const a=corpus<Analysis>(`analysis/${file}`);if(!a?.company||!a.tests)continue;
  if(CALIBRATION.some(c=>c.id===a.id||alias.get(c.id)===a.id))for(const c of CALIBRATION.filter(c=>c.id===a.id||alias.get(c.id)===a.id))calibration.set(c.id,a);
- const f=corpus<Fundamentals>(`fundamentals/${a.id}.json`),v=a.valuation;
+ const f=corpus<Fundamentals>(`fundamentals/${a.id}.json`);let v=a.valuation;
  const t5=QUALITY_TESTS.map(k=>a.tests[k as keyof typeof a.tests].result[0].toUpperCase()).join('');
  const mos=a.requiredMos??.5,cv=a.tests.understandable.metrics.opMarginCv??null;
- const proposed=v&&f?proposeValuation({valuation:v,years:f.years,t5,cv,mos}):null;
+ const previous=v;
+ const inputs=f?{years:f.years,kind:a.company.kind,currency:f.currency,bondYield:previous?.bondYield??null,cyclical:a.volatility==='volatile',currentShares:previous?.shares??null,shareSource:previous?.sharesSource,ttm:f.ttm,qualityPass:t5==='PPPPP'}:null;
+ const convert=(value:Valuation|null)=>{if(value&&previous?.perShareTrading){const {currency,fxRate}=previous.perShareTrading;value.perShareTrading={currency,fxRate,low:value.perShare.low*fxRate,mid:value.perShare.mid*fxRate,high:value.perShare.high*fxRate};}if(value&&previous?.shareSources)value.shareSources=previous.shareSources;return value;};
+ if(V2)v=inputs&&a.status==='scored'?convert(valueCompany({...inputs,version:1}).valuation):null;
+ const revised=V2&&inputs&&a.status==='scored'?convert(valueCompany({...inputs,version:2}).valuation):null;
+ const proposed=V2?{valuation:revised,mos:valuationMargin(revised,a.volatility??'volatile'),eligible:revised?.tier==='compounder'}:v&&f?proposeValuation({valuation:v,years:f.years,t5,cv,mos}):null;
  const quote=quotes[a.id],price=quote?.[0]??null;
  const publication=(value:Valuation|null,m:number)=>{
   const ps=value?.perShareTrading??(value?.currency.toUpperCase()===a.company.currency.toUpperCase()?value?.perShare:null);
   return publishedBuyPrice({st:a.status==='scored'?'s':'i',t:t5,v:ps?[ps.low,ps.mid,ps.high]:null,m,dataQualityFlags:[...(a.dataQualityFlags??[]),...valuationFlags({price,mid:ps?.mid??null,assumptions:value?.assumptions??[]})],buyReturnInputs:buyReturnInputs(value,a.company.currency),shareSources:value?.shareSources},quote);
  };
- const before=publication(v,mos),after=publication(proposed?.valuation??v,proposed?.mos??mos);
- current.push({id:a.id,name:a.company.name,western:bestWesternListing(a.company),t5,status:a.status,price,quoteDate:quote?.[1]??null,mos,proposalEligible:proposed?.eligible??false,baseline:scorePurchase(v,mos,price,t5),proposed:scorePurchase(proposed?.valuation??v,proposed?.mos??mos,price,t5),before:before.b,after:after.b,flags:after.dataQualityFlags});
+ const afterValue=V2?proposed?.valuation??null:proposed?.valuation??v;
+ const before=publication(v,mos),after=publication(afterValue,proposed?.mos??mos);
+ current.push({id:a.id,name:a.company.name,western:bestWesternListing(a.company),indexMember:membership.has(a.id),liveIndexMember:liveMembers.has(a.id),t5,status:a.status,price,quoteDate:quote?.[1]??null,mos,proposalEligible:proposed?.eligible??false,baseline:scorePurchase(v,mos,price,t5),proposed:scorePurchase(afterValue,proposed?.mos??mos,price,t5),before:before.b,after:after.b,cachedBefore:publication(previous,mos).b,flags:after.dataQualityFlags,afterMos:proposed?.mos??mos,tier:afterValue?.tier,riskFlags:afterValue?.riskFlags,latest:f?.years.at(-1),currency:f?.currency});
  manifest.push({id:a.id,asOf:a.asOf,analysisHash:hash(a),fundamentalsHash:f?hash(f):null});
 }
 write('corpus-results.json',current);write('input-manifest.json',manifest);
 write('calibration-summary.json',calibrationSummary({entries:CALIBRATION,analyses:calibration}));
 const buys={scanned:current.length,quality:current.filter(r=>r.t5==='PPPPP').length,eligible:current.filter(r=>r.proposalEligible).length,before:current.filter(r=>r.before),after:current.filter(r=>r.after),added:current.filter(r=>!r.before&&r.after),removed:current.filter(r=>r.before&&!r.after)};
+if(V2){write('live-index-buy-zone.json',{members:liveMembers.size,before:buys.before.filter(r=>r.liveIndexMember),after:buys.after.filter(r=>r.liveIndexMember),added:buys.added.filter(r=>r.liveIndexMember),removed:buys.removed.filter(r=>r.liveIndexMember)});write('index-buy-zone.json',{members:membership.size,before:buys.before.filter(r=>r.indexMember),after:buys.after.filter(r=>r.indexMember),added:buys.added.filter(r=>r.indexMember),removed:buys.removed.filter(r=>r.indexMember),outsideBefore:buys.before.filter(r=>!r.indexMember).length,outsideAfter:buys.after.filter(r=>!r.indexMember).length});}
 write('buy-zone.json',buys);console.log('Corpus summary',JSON.stringify({scanned:buys.scanned,quality:buys.quality,eligible:buys.eligible,before:buys.before.length,after:buys.after.length,added:buys.added.map(r=>r.id),removed:buys.removed.map(r=>r.id)}));

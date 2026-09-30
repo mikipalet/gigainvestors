@@ -42,7 +42,8 @@ it('J7 allocates consolidated cash-flow adjustments and net cash using recorded 
  // Parent NI + (D&A - full capex - SBC - lease cash) * 9297 / 12540.
  expect(bridge.value).toBeCloseTo(7020940191.38756,0);
  const v=valueCompany({years:makeYears({overrides:(base)=>({...y,fy:base.fy,end:base.end})}),kind:'operating',bondYield:.02,cyclical:false}).valuation!;
- expect(v.netCash).toBeCloseTo(56349902870.8134,0);
+ expect(v.netCash).toBeCloseTo(Math.max(0,y.cash!-.02*y.revenue!)*9297/12540,0);
+ expect(v.netDebt).toBeCloseTo(-56349902870.8134,0);
 });
 
 it('J8 builds recorded Daitron TTM as annual plus H1 less comparative H1, retaining annual history',async()=>{

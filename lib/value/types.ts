@@ -140,7 +140,13 @@ export interface Valuation {
   bondYield: number | null;
   bondSource?: string;
   bondFlags?: string[];
-  netCash: number;
+  netCash: number; // v2: excess operating cash, never cash minus debt
+  version?: 1 | 2;
+  tier?: "standard" | "compounder";
+  netDebt?: number; // Actual debt less cash, for risk/display only
+  leverage?: "normal" | "moderate" | "volatile";
+  riskFlags?: string[];
+  financialReturn?: { roe: number; retention: number; payout: number; cashPerShare: number };
   shares: number;
   sharesSource?: "yahoo-shares";
   perShare: { low: number; mid: number; high: number };

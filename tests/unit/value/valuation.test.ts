@@ -18,10 +18,10 @@ describe("discounted owner earnings", () => {
   it("values a flat 100 owner earnings business", () => {
     const result = value();
     expect(result.reason).toBeNull();
-    expect(result.valuation).toMatchObject({ method: "owner_earnings", normalized: 100, growth: 0, discountRate: 0.10, netCash: 0, shares: 10, equityBondYield: 0.05 });
-    expect(result.valuation!.perShare.low).toBeCloseTo(109.3025, 4);
-    expect(result.valuation!.perShare.mid).toBeCloseTo(124.3729, 4);
-    expect(result.valuation!.perShare.high).toBeCloseTo(144.4348, 4);
+    expect(result.valuation).toMatchObject({ method: "owner_earnings", normalized: 100, growth: 0, discountRate: 0.10, netCash: 80, shares: 10, equityBondYield: 0.05 });
+    expect(result.valuation!.perShare.low).toBeCloseTo(117.3025, 4);
+    expect(result.valuation!.perShare.mid).toBeCloseTo(132.3729, 4);
+    expect(result.valuation!.perShare.high).toBeCloseTo(152.4348, 4);
   });
   it("rejects negative owner earnings", () => {
     expect(value(makeYears({ overrides: { netIncome: -100 } }))).toEqual({ valuation: null, reason: "owner earnings not positive" });
@@ -51,8 +51,8 @@ describe("discounted owner earnings", () => {
     expect(result.valuation!.discountRate).toBeCloseTo(0.12);
     expect(result.valuation!.currency).toBe("JPY");
   });
-  it("adds net cash after discounting and before dividing by shares", () => {
-    expect(value(makeYears({ overrides: { cash: 200 } })).valuation!.perShare.mid).toBeCloseTo(134.3729, 4);
+  it("adds excess cash after discounting and before dividing by shares", () => {
+    expect(value(makeYears({ overrides: { cash: 200 } })).valuation!.perShare.mid).toBeCloseTo(142.3729, 4);
   });
   it("caps positive growth at eight percent", () => {
     const years = makeYears({ overrides: (_, i) => ({ revenue: 1000 * 1.2 ** i, netIncome: 100 * 1.2 ** i, operatingIncome: 125 * 1.2 ** i, preTaxIncome: 125 * 1.2 ** i, taxExpense: 25 * 1.2 ** i, capex: 60 * 1.2 ** i, da: 0, ppe: 0 }) });
@@ -75,17 +75,17 @@ describe("discounted owner earnings", () => {
 describe("financial company valuation", () => {
   it.each(["bank", "insurer"] as const)("uses justified book value for %s", kind => {
     const result = valueCompany({ years: makeYears({ overrides: { netIncome: 70 } }), kind, bondYield: 0.04, cyclical: false });
-    expect(result.valuation).toMatchObject({ method: "book_value", normalized: 50, growth: 0 });
-    expect(result.valuation!.perShare.low).toBeCloseTo(63.6363636364);
-    expect(result.valuation!.perShare.mid).toBeCloseTo(70);
-    expect(result.valuation!.perShare.high).toBeCloseTo(77.7777777778);
+    expect(result.valuation).toMatchObject({ method: "book_value", normalized: 50, growth: 0.06 });
+    expect(result.valuation!.perShare.low).toBeCloseTo(80);
+    expect(result.valuation!.perShare.mid).toBeCloseTo(100);
+    expect(result.valuation!.perShare.high).toBeCloseTo(133.3333333333);
   });
   it("rejects nonpositive equity", () => {
     expect(valueCompany({ years: makeYears({ overrides: { equity: 0 } }), kind: "bank", bondYield: 0.04, cyclical: false })).toEqual({ valuation: null, reason: "book value not positive" });
   });
   it("caps justified P/B at four", () => {
     const result = valueCompany({ years: makeYears({ overrides: { netIncome: 500 } }), kind: "bank", bondYield: 0.04, cyclical: false });
-    expect(result.valuation!.perShare).toEqual({ low: 200, mid: 200, high: 200 });
+    expect(result.valuation!.perShare).toEqual({ low: 190, mid: 200, high: 200 });
   });
   it("requires five ROE observations", () => {
     expect(valueCompany({ years: makeYears({ n: 4 }), kind: "bank", bondYield: 0.04, cyclical: false }).valuation).toBeNull();

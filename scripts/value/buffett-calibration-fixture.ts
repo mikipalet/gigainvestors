@@ -4,7 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { CALIBRATION } from '../../lib/value/calibration';
 import type { Company } from '../../lib/value/types';
-const root=path.join(os.homedir(),'value-corpus'),out=path.join(root,'staging/buffett-1/calibration');
+const root=path.join(os.homedir(),'value-corpus'),out=path.join(root,process.env.VALUE_CHECK_VERSION==='2'?'staging/valuation-2/calibration':'staging/buffett-1/calibration');
 const s=statfsSync('/');if(s.bavail*s.bsize<5*1024**3)throw new Error('Disk below 5 GB');
 const cs=readFileSync(path.join(root,'universe.jsonl'),'utf8').trim().split('\n').map(l=>JSON.parse(l) as Company);
 const wanted=new Set(CALIBRATION.map(c=>c.id));

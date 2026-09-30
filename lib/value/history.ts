@@ -1,7 +1,7 @@
 import { T } from "./config";
 import { bvps, tangibleEquity, goodwillAndIntangibles, ratio } from "./metrics";
 import { ownerEarningsSeries } from "./owner-earnings";
-import { run as understandable } from "./tests/understandable";
+import { runNumericTests } from "./tests";
 import { valueCompany } from "./valuation";
 import type { CompanyEvent, Fundamentals, Kind, Series, ValueHistory, Volatility } from "./types";
 
@@ -20,9 +20,10 @@ export function valueHistory({ fundamentals, kind, bondYield, fxRate, commodity 
   if (latest === undefined) return [];
   return years.filter(year => year.fy > latest - T.history.years).flatMap(year => {
     const prefix = years.filter(y => y.fy <= year.fy);
-    const cv = understandable({ years: prefix, kind }).metrics.opMarginCv;
+    const numeric = runNumericTests({ years: prefix, kind, priceHistoryPending: false });
+    const cv = numeric.understandable.metrics.opMarginCv;
     const { valuation } = valueCompany({ years: prefix, kind, currency: fundamentals.currency, bondYield,
-      cyclical: commodity || cv !== null && earningsVolatility({ opMarginCv: cv }) === "volatile" });
+      qualityPass: Object.values(numeric).every(test => test.numeric === "pass"), cyclical: commodity || cv !== null && earningsVolatility({ opMarginCv: cv }) === "volatile" });
     if (!valuation) return [];
     const { low, mid, high } = valuation.perShare;
     const row: ValueHistory[number] = [year.fy, low * fxRate, mid * fxRate, high * fxRate];

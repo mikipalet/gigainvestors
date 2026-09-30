@@ -263,7 +263,7 @@ describe("prices", () => {
     writeFileSync(path.join(repo, "prices/US.json"), before);
     const japan = analysis("8058.JP"); japan.company.country = "JP";
     const raw = JSON.parse(readFileSync("tests/fixtures/value/prices/eodhd-US.json", "utf8"));
-    await expect(refreshPrices({ repo, companies: [analysis().company, japan.company], bulk: async () => raw, yahoo: async () => { throw new Error("Yahoo HTTP 403"); } })).rejects.toThrow("All Japanese quotes failed");
+    await expect(refreshPrices({ repo, companies: [analysis().company, japan.company], bulk: async () => raw, yahoo: async () => { throw new Error("Yahoo HTTP 403"); } })).rejects.toThrow("All Yahoo quotes failed");
     expect(readFileSync(path.join(repo, "prices/US.json"), "utf8")).toBe(before);
   });
   it("routes Japanese companies to Yahoo and separates same-country exchanges", async () => {

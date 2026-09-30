@@ -1,3 +1,4 @@
+import { esefShareInputs } from "../../../lib/value/italy/shares";
 import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
 import { checkIntegrity } from "../../../lib/value/integrity";
 import { currentShareInputs, leaseInputs, trailingInputs } from "../../../lib/value/valuation-inputs";
@@ -74,7 +75,9 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           fundamentals.integrity = checkIntegrity(fundamentals, { source: company.source });
           fundamentals.ttm = trailingInputs(raw, fundamentals.years.at(-1));
         }
-        const shareInputs = currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);
+        const shareInputs = company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares
+          ? await esefShareInputs(company, usdRate)
+          : currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);
         const report = readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`) ?? {
           id: company.id, kind: "description", url: null, filed: null, period: null, sections: [],
         } satisfies ReportMeta;

@@ -24,9 +24,10 @@ export interface Company {
   industry: string | null;
   kind: Kind;
   listings: Id[];
+  listingExchange?: string;
   marketCapUsd: number | null;
   description: string | null;
-  source: "eodhd" | "edinet";
+  source: "eodhd" | "edinet" | "esef";
 }
 
 // One fiscal year, reporting currency, absolute units. null = not reported.
@@ -86,6 +87,8 @@ export interface Year {
   liabilitiesAndStockholdersEquity?: number | null;
   currentAssets: number | null;
   currentLiabilities: number | null;
+  basicEps?: number | null;
+  sharesOutstanding?: number | null;
   dilutedShares: number | null;
   marketCap: number | null; // year-end, reporting currency, when derivable
 }
@@ -137,6 +140,7 @@ export interface Valuation {
   bondFlags?: string[];
   netCash: number;
   shares: number;
+  sharesSource?: "yahoo-shares";
   perShare: { low: number; mid: number; high: number };
   perShareTrading?: { currency: string; fxRate: number; low: number; mid: number; high: number };
   equityBondYield: number | null;
@@ -168,6 +172,7 @@ export interface CompanyEvent {
 export interface Analysis {
   author?: string;
   dataQualityFlags?: string[];
+  shareCount?: { value: number; source: "yahoo-shares" };
   historyCoverage?: { years: number; first: number | null; last: number | null; source: string };
   requiredMos?: number; // Optional only for pre-history corpus compatibility.
   volatility?: Volatility;
@@ -197,6 +202,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  buyReturnInputs?: { cashPerShare: number; growth: number; requiredReturn: number } | null;
   w: string | null; // Best Western trading listing.
   ownerReturnInputs?: { valuation: Valuation; marketCapUsd: number | null };
   exchange?: string; // Listing venue, enriched from the published dossier when needed.

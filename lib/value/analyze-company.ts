@@ -10,13 +10,13 @@ import { runNumericTests } from "./tests";
 import { valueCompany } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory } from "./types";
 
-export const PIPELINE_VERSION = "9";
+export const PIPELINE_VERSION = "10";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
-export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, priceHistory = null, priceHistoryPending = priceHistory === null, currentShares = null, reportedShares = true, shareAssumptions = [], ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate() }: {
+export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, priceHistory = null, priceHistoryPending = priceHistory === null, currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate() }: {
   company: Company; fundamentals: Fundamentals; sections: Sections; report: ReportMeta;
-  bondYield: number | null; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; priceHistory?: PriceHistory | null; priceHistoryPending?: boolean; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
+  bondYield: number | null; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; priceHistory?: PriceHistory | null; priceHistoryPending?: boolean; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
 }): Promise<Analysis> {
   // Reclassify old corpus enrichment, including payment networks previously marked as banks.
   if (company.industry) company = { ...company, kind: kindFor({ ...company, lending: fundamentals.years.at(-1) }) };
@@ -50,7 +50,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
     : resolvedBondYield === null
       ? { valuation: null, reason: "Local government bond yield unavailable" }
-      : valueCompany({ years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, priceHistory, ttm: fundamentals.ttm });
+      : valueCompany({ years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm });
   if (valuation) {
     if (company.source === "edinet" && !years.at(-1)?.edinetShares) valuation.assumptions.push("Unverified JP share count unreconciled: EDINET share facts unavailable");
     if (rate !== null) valuation.perShareTrading = {
@@ -59,7 +59,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     };
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
-  return { requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
+  return { ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
     valueHistory: valueHistory({ fundamentals, kind: company.kind, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"],
     events: companyEvents(fundamentals), series: perShareSeries(fundamentals),

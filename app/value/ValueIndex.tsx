@@ -169,7 +169,7 @@ export default function ValueIndex({ rows, initialFilter, tags, meta }: { rows: 
   return <div className="one-index locks-scroll" data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
     <section className="index-story">
       <p className="eyebrow">Buffett-inspired investing · 5 quality tests + price</p>
-      <h1>{historical ? `In ${year}: ${buys} businesses in the buy zone.` : <><em>{buys} businesses in the buy zone.</em>{buys>0&&<span className="start-here"> Start here.</span>}</>}</h1>
+      <h1>{historical ? `In ${year}: ${buys} ${buys===1?'business':'businesses'} in the buy zone.` : <><em>{buys} {buys===1?'business':'businesses'} in the buy zone.</em>{buys>0&&<span className="start-here"> Start here.</span>}</>}</h1>
       <p>{historical?`See what the checklist found then. ${quality} businesses passed the numerical quality tests.`:`${quality.toLocaleString()} of ${total.toLocaleString()} companies pass the quality checklist. Buy only when the price leaves room for error.`}</p>
 
     </section>

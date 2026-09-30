@@ -1,3 +1,4 @@
+import { buyReturnInputs } from "./owner-return";
 import { T } from './config';
 import { checkIntegrity } from './integrity';
 import { runNumericTests } from './tests';
@@ -9,6 +10,7 @@ import { QUALITY_TESTS, type Company, type Fundamentals, type PriceHistory, type
 
 export const HISTORY_CAVEATS = [
   'numbers-only checklist (no report reading)',
+  'buy requires both the margin of safety and expected return at least the required return',
   'restated financials',
   'survivorship: delisted companies missing',
   'price returns without dividends',
@@ -62,7 +64,8 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
       cyclical:numeric.understandable.metrics.opMarginCv !== null && volatility === 'volatile', priceHistory:pastPrices }).valuation : null;
   const v: [number,number,number] | null = valuation ? [valuation.perShare.low*fxRate!, valuation.perShare.mid*fxRate!, valuation.perShare.high*fxRate!] : null;
   const flags = valuationFlags({ price, mid:v?.[1]??null, assumptions:valuation?.assumptions??[] });
-  const buy = publishedBuyPrice({st:prefix.integrity.ok?'s':'i', t:t5, v, m:T.price.requiredMos[volatility], dataQualityFlags:flags}, positive(price) ? [price,`${month}-01`] : undefined);
+  if (valuation && fxRate) valuation.perShareTrading = {currency:company.currency,fxRate,low:v![0],mid:v![1],high:v![2]};
+  const buy = publishedBuyPrice({buyReturnInputs:buyReturnInputs(valuation,company.currency),st:prefix.integrity.ok?'s':'i', t:t5, v, m:T.price.requiredMos[volatility], dataQualityFlags:flags}, positive(price) ? [price,`${month}-01`] : undefined);
   const pm = positive(price) && v && positive(v[1]) ? compact(price/v[1]) : null;
   const r = positive(price) && latestPrice && positive(latestPrice[0]) && latestPrice[1].slice(0,7) >= month && latestPrice[1] <= asOf
     ? compact(latestPrice[0]/price-1) : null;

@@ -3,15 +3,15 @@ import { sameCurrency } from './currency';
 import type { Dossier, Series, Valuation } from './types';
 
 /** Aggregate capital in reporting currency. FX is reporting -> listing units.
- * Prefer published USD capitalisation; otherwise reconstruct from price and shares.
+ * Use the current quote and shares; cached USD capitalisation is a fallback when the quote is unavailable.
  * Never divide reporting earnings by a USD cap without a known conversion.
  */
 export function reportingCapital(v: Valuation | null, trading: string, capUsd: number | null, price: number | null) {
  if (!v) return null;
  const fx=sameCurrency(v.currency,trading)?1:v.perShareTrading&&sameCurrency(v.perShareTrading.currency,trading)?v.perShareTrading.fxRate:null;
- const capital=sameCurrency(v.currency,'USD')&&capUsd!=null?capUsd:
-  sameCurrency(trading,'USD')&&capUsd!=null&&fx&&fx>0?capUsd/fx:
-  price!=null&&price>0&&v.shares>0&&fx&&fx>0?price*v.shares/fx:null;
+ const capital=price!=null&&price>0&&v.shares>0&&fx&&fx>0?price*v.shares/fx:
+  sameCurrency(v.currency,'USD')&&capUsd!=null?capUsd:
+  sameCurrency(trading,'USD')&&capUsd!=null&&fx&&fx>0?capUsd/fx:null;
  return capital!=null&&Number.isFinite(capital)&&capital>0?capital:null;
 }
 export function ownerReturn(v: Valuation | null, trading: string, capUsd: number | null, price: number | null) {
@@ -52,4 +52,11 @@ export function referenceMetrics(d:Dossier, price:number|null) {
 }
 export function cashAmount(n:number,currency:string) {
  return `${currency} ${new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:1}).format(n)}`;
+}
+
+/** Quote-sensitive return inputs in listing currency; absent estimates cannot pass the hurdle. */
+export function buyReturnInputs(v: Valuation | null, trading: string) {
+ const owner = ownerReturn(v, trading, null, 1);
+ return owner && v && Number.isFinite(v.discountRate)
+  ? { cashPerShare: owner.yield, growth: owner.growth, requiredReturn: v.discountRate } : null;
 }

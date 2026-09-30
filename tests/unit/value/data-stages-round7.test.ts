@@ -30,7 +30,7 @@ it('runs both stages without changing any preexisting corpus bytes and publishes
   const first=await history();
   expect(first.index.years).toEqual([2016]);
   expect(first.index.caveats).toEqual([
-    'numbers-only checklist (no report reading)', 'restated financials',
+    'numbers-only checklist (no report reading)', 'buy requires both the margin of safety and expected return at least the required return', 'restated financials',
     'survivorship: delisted companies missing', 'price returns without dividends',
   ]);
   expect(first.index.perYear[2016]).toMatchObject({medianReturnAll:2, returnCountAll:1, hitRateAll:0});

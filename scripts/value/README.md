@@ -171,3 +171,47 @@ immutable copy of the current live publication and records its commit provenance
 Use an empty output directory. It makes no provider calls and does not mutate the
 corpus or data repository. Serve that directory to both the server
 (`VALUE_STORE_DIR`) and browser (`NEXT_PUBLIC_VALUE_DATA_URL`) when building QA.
+### Italy: Milan / Growth Milan from ESEF
+
+```sh
+export VALUE_CORPUS_DIR="$HOME/value-corpus"
+npx tsx scripts/value/cli.ts italy
+# Subsets and retries use the same stage:
+npx tsx scripts/value/cli.ts italy --only=ENI.MI,ISP.MI,ENEL.MI,RACE.MI,MONC.MI
+# Pass the Italian IDs from universe.jsonl to the ordinary analyze stage.
+# Do not run prices or publish for a local-only import: prices publishes.
+```
+
+`italy` reads the official Euronext CSV for MTAA and EXGM, resolves LEIs by ISIN using GLEIF (exact unambiguous name fallback), and pages through **all** filings.xbrl.org annual packages, including issuers domiciled outside Italy such as Ferrari. It consumes each package's extracted XBRL-JSON and caches the associated report XHTML for the existing ESEF section cutter. Companies use `CODE.MI`, `country: IT`, `source: esef`; identity matches retain overseas aliases with Milan primary. EODHD fundamentals skip these issuers, and a universe refresh retains them.
+
+Financial facts use canonical absolute values, exclusive XBRL period ends, annual durations, consolidated contexts, reporting currency and share units. Related-party/segment facts are excluded. Conflicting duplicate values stay null. Newer filings replace reported comparatives without erasing balance facts missing from the newer package. Parent profit/equity take precedence; capex is positive spending, with both tangible and intangible purchases required unless a combined total exists. No issuer-extension guessing or share counts inferred from rounded EPS. Combined D&A plus impairment is not treated as pure D&A. Missing history remains subject to the unchanged seven-year integrity gate.
+
+Yahoo `.MI` supplies current prices and monthly history. `italy` writes these locally to `prices/IT.json`, `prices-history/`, and raw quote caches, without opening a publication repository. It retains listed companies even when filings are absent. `raw/esef/summary.json` records coverage gaps and source failures; failures can be retried without downloading completed packages again. `--force` refreshes listing/LEI/index/quote metadata; immutable filing JSON/XHTML remains cached. Only completed issuer imports get a resume fingerprint.
+
+### Download priority and missing caps
+
+Before fundamentals selection or universe ordering, missing caps are recovered from cached company/fundamentals data or free Yahoo data. Yahoo chart price times verified shares uses proper GBp/GBX, ZAc and ILA scaling. Without known shares, the unauthenticated Yahoo time-series endpoint can supply a recent **reported market cap**. Its ordinary-share counts are used only when consistent with the EPS-denominator share basis, avoiding multiplication of an ADR price by underlying ordinary shares. A cached EODHD bulk close is the fallback when shares are known. Unsupported/missing data stays unknown; positive caps and misses are cached.
+
+```sh
+npx tsx scripts/value/cli.ts market-caps --only=ZM.US,ZTS.US,ENI.MI
+```
+
+This standalone backfill updates corpus company overlays and writes `raw/market-caps/summary.json`; it never publishes. The downloader enriches the entire eligible selection **before** `--limit`. Sorting follows the Western venue allowlist from the Western-access work (including US ADR aliases), then USD cap descending. Unknown caps use venue importance: main exchanges before AIM/Growth/Venture and OTC. Refresh age breaks remaining ties. Venue segment ranking uses reported metadata; it does not guess AIM membership from a ticker. Free estimates are ordering inputs, not replacements for audited fundamentals.
+
+### Release-2 share and buy consistency
+
+ESEF analysis with no latest tagged share count reuses the verified Yahoo share
+source used for cap enrichment. It checks reported ordinary shares against Yahoo's
+reported average shares (never profit divided by rounded EPS), then runs the existing
+current-share cap/price sanity check. Analysis records `shareCount.source: yahoo-shares`
+and valuations using the fallback record `sharesSource: yahoo-shares`. Annual filing
+shares stay untouched; current shares are never backfilled into historical snapshots.
+The separate 2% publication cap/price verification gate still applies.
+
+The published `b` flag requires all five quality tests, clear valuation checks,
+price at or below the margin-of-safety buy price, **and** expected return at least
+the stored required return. `publishedBuyPrice` is shared by publication, numeric
+history snapshots, and price refresh. Compact `buyReturnInputs` preserve cash per
+share in trading currency, capped growth and the required return so refreshed
+quotes recompute cash yield plus growth. Missing expected returns cannot pass.
+Dossiers and index cards use the same quote-based expected return calculation.

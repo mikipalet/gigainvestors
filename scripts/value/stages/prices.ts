@@ -31,11 +31,11 @@ export async function refreshPrices({ repo, companies, bulk = bulkLastDay, yahoo
   yahoo?: (company: Company) => Promise<[number, string]>;
 }): Promise<void> {
   const updates: PriceMap = {};
-  const exchanges = [...new Set(companies.filter((company) => !company.id.endsWith(".JP")).map((company) => company.exchange))].sort();
+  const exchanges = [...new Set(companies.filter((company) => !company.id.endsWith(".JP") && company.source !== "esef").map((company) => company.exchange))].sort();
   for (const exchange of exchanges) {
     Object.assign(updates, parseBulkPrices({ rows: await bulk(exchange), companies: companies.filter((company) => company.exchange === exchange) }));
   }
-  const japanese = companies.filter((company) => company.id.endsWith(".JP"));
+  const japanese = companies.filter((company) => company.id.endsWith(".JP") || company.source === "esef");
   let succeeded = 0;
   for (const company of japanese) {
     try {
@@ -47,7 +47,7 @@ export async function refreshPrices({ repo, companies, bulk = bulkLastDay, yahoo
       console.warn(`prices: skipped ${company.id}: ${error instanceof Error ? error.message : "Yahoo quote failed"}`);
     }
   }
-  if (japanese.length && !succeeded) throw new Error("All Japanese quotes failed; prices aborted");
+  if (japanese.length && !succeeded) throw new Error("All Yahoo quotes failed; prices aborted");
   const byCountry = new Map<string, PriceMap>();
   for (const company of companies) {
     const update = updates[company.id];

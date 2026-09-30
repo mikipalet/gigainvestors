@@ -36,7 +36,7 @@ export default async function priceHistory({ only, limit, force = false }: { onl
   const failures = new CompanyFailures();
   let attempted = 0;
   for (const company of companies) {
-    const isJapan = company.id.endsWith(".JP");
+    const isJapan = company.id.endsWith(".JP") || company.source === "esef";
     if (!preparationErrors.has(company.id) && !isJapan && budgetUsage().history >= T.budget.priceHistoryCalls) {
       console.log("daily price-history budget reached, resume tomorrow");
       continue;

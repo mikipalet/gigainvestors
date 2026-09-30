@@ -54,17 +54,19 @@ function reinvestmentRate(years: Year[]): number | null {
   return investments.some(x => x === null) || profits.some(x => x === null) ? null : ratio(sum(present(investments)), sum(present(profits)));
 }
 
-export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], ttm = null, priceHistory = null }: {
-  years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; ttm?: Year | null; priceHistory?: PriceHistory | null;
+export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, priceHistory = null }: {
+  years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; priceHistory?: PriceHistory | null;
 }): { valuation: Valuation | null; reason: string | null } {
   const ys = withZeroDefaults(years).sort((a, b) => a.fy - b.fy), latest = ys.at(-1);
-  if (!latest || latest.dilutedShares === null || latest.dilutedShares <= 0) return { valuation: null, reason: "no share count" };
-  const postSplit = reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
-    && Math.abs(currentShares / latest.dilutedShares - 1) > 0.1
-    && postYearSplit(priceHistory, latest.end, currentShares / latest.dilutedShares);
-  const corrected = currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
-    && Math.max(currentShares / latest.dilutedShares, latest.dilutedShares / currentShares) > 1.5 || postSplit;
-  const shares = corrected ? currentShares : latest.dilutedShares;
+  const fallback = latest && !(latest.dilutedShares && latest.dilutedShares > 0) && shareSource === 'yahoo-shares' && reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0;
+  if (!latest || (!(latest.dilutedShares && latest.dilutedShares > 0) && !fallback)) return { valuation: null, reason: "no share count" };
+  const taggedShares = latest.dilutedShares ?? 0;
+  const postSplit = !fallback && reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
+    && Math.abs(currentShares / taggedShares - 1) > 0.1
+    && postYearSplit(priceHistory, latest.end, currentShares / taggedShares);
+  const corrected = !fallback && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
+    && Math.max(currentShares / taggedShares, taggedShares / currentShares) > 1.5 || postSplit;
+  const shares = (fallback || corrected ? currentShares : latest.dilutedShares)!;
   if (bondYield === null || !Number.isFinite(bondYield)) return { valuation: null, reason: "local government bond yield unavailable" };
   const discountRate = Math.max(T.valuation.minDiscount, bondYield + T.valuation.bondSpread);
   const assumptions: string[] = [...shareAssumptions];
@@ -82,7 +84,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   assumptions.push(decliningRevenue ? "three-year revenue trend is negative; growth set to zero"
     : "growth set to zero when latest revenue is below three years earlier");
   if (!currency) assumptions.push("reporting currency not supplied");
-  const common = { currency, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
+  const common = { ...(fallback ? { sharesSource: shareSource } : {}), currency, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
 
   if (kind !== "operating") {
     const book = financialBvps({ ...latest, dilutedShares: shares });

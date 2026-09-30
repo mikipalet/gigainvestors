@@ -1,3 +1,4 @@
+import { buyReturnInputs } from "./owner-return";
 import { bestWesternListing } from "./western";
 import { storyFromFunnel } from "./story";
 import { valuationFlags } from "./data-quality";
@@ -80,7 +81,8 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const requiredMos = analysis.requiredMos ?? T.price.requiredMos.stable;
     const t = analysis.status !== "scored" ? "UUUUU" : outcomes.map(test => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join("");
     const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:analysis.valuation?.shares, usdRate:usdRate(company.currency)});
-    const price = publishedBuyPrice({ st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos,
+    const returnInputs = buyReturnInputs(analysis.valuation, company.currency);
+    const price = publishedBuyPrice({ st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs,
       v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null, dataQualityFlags }, prices[analysis.id]);
     const passes = [...outcomes.map(test => analysis.status === "scored" && test.result === "pass"), price.b];
     // Price below its required MOS is a failed funnel gate even when priceTest
@@ -114,7 +116,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
     const returns=dossierReturn(analysis);
     const row: IndexRow = {
-      w, exchange: company.exchange,
+      w, exchange: company.exchange, buyReturnInputs: returnInputs,
       b: price.b, dataQualityFlags: price.dataQualityFlags,
       returnInfo:{...returns,sort:Number.isFinite(returns.sort)?returns.sort:returns.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},
       fy: Math.max(0,...Object.values(analysis.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]))) || undefined,

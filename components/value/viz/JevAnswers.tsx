@@ -7,6 +7,6 @@ export function JevAnswers({ answers, source }: { answers: JevAnswer[]; source?:
     const probability = answer.kind === 'score' && typeof answer.value === 'number' ? answer.value : answer.probability;
     // Trust in a question is not a relevance label for its extracted paragraph.
     // Until the publisher supplies an explicit supporting flag, cite the filing only.
-    return <tr key={answer.q}><td>{answer.label}{answer.kind === 'choice' && typeof answer.value === 'string' ? `: ${choices[answer.value] ?? humanLabel(answer.value)}` : ''}{!answer.trusted && <small>Not yet verified · Informational only</small>}</td><td>{probability === null ? 'Unavailable' : `${Math.round(Math.max(0, Math.min(1, probability)) * 10)} in 10`}</td><td>{source ? <a href={source}>{sections[answer.section] ?? humanLabel(answer.section)} ↗</a> : sections[answer.section]}</td></tr>;
+    return <tr key={answer.q}><td>{answer.label}{answer.kind === 'choice' && typeof answer.value === 'string' ? `: ${choices[answer.value] ?? humanLabel(answer.value)}` : ''}{!answer.trusted && <small>Informational only</small>}</td><td>{probability === null ? 'Unavailable' : `${Math.round(Math.max(0, Math.min(1, probability)) * 10)} in 10`}</td><td>{source ? <a href={source}>{sections[answer.section] ?? humanLabel(answer.section)} ↗</a> : sections[answer.section]}</td></tr>;
   })}</tbody></table>;
 }

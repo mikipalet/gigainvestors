@@ -32,7 +32,8 @@ for(const [width,height] of [[1728,970],[2056,1180],[390,844]])test(`all prototy
 
 test('view selection preserves market and year; every list page and missing-price company is reachable',async({page})=>{
  await page.goto('/?viz=a&markets=all&year=2018',{waitUntil:'networkidle'});
- await page.getByRole('navigation',{name:'Visualization'}).getByRole('button',{name:'Ranked list',exact:true}).click();
+ await expect(page.getByRole('navigation',{name:'Visualization'})).toHaveCount(0);
+ await page.goto('/?viz=c&markets=all&year=2018',{waitUntil:'networkidle'});
  await expect(page).toHaveURL(/markets=all/);await expect(page).toHaveURL(/year=2018/);await expect(page.locator('.lab-c')).toBeVisible();
  await page.setViewportSize({width:390,height:844});await page.goto('/?viz=c&markets=all',{waitUntil:'networkidle'});
  const seen=new Set<string>();
@@ -40,7 +41,7 @@ test('view selection preserves market and year; every list page and missing-pric
   const next=page.getByRole('button',{name:'Next ranked pages',exact:true});if(!await next.count()||await next.isDisabled())break;await next.click();
  }
  expect(seen.size).toBe(372);
- await page.goto('/?viz=a',{waitUntil:'networkidle'});await page.getByRole('button',{name:/7 need review/}).click();await expect(page.locator('.lab-missing-grid .lab-company')).toHaveCount(7);
+ await page.goto('/?viz=a',{waitUntil:'networkidle'});await page.getByRole('button',{name:/7 without price/}).click();await expect(page.locator('.lab-missing-grid .lab-company')).toHaveCount(7);
  await page.goto('/?viz=b&markets=all&near=1',{waitUntil:'networkidle'});
  expect(await page.locator('.lab-company').evaluateAll(nodes=>nodes.some(n=>n.getBoundingClientRect().bottom>innerHeight))).toBe(false);
 });

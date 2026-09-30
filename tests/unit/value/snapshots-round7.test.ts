@@ -19,6 +19,8 @@ describe('code-only fiscal snapshots', () => {
     expect(snapshotForYear({...base,fundamentals:changed,fy:2016})).toEqual(baseline);
     expect(baseline?.[1]).toMatch(/^[PFUN]{5}$/);
     expect(baseline?.[2]).toBeGreaterThan(0);
+    expect(baseline?.[5]).toMatchObject({discount:.25,price:50,buyPrice:expect.any(Number)});
+    expect(baseline![5]!.price! / baseline![5]!.buyPrice!).toBeCloseTo(baseline![2]! / .75,3);
     expect(baseline?.[4]).toBe(2); // 150 / February's 50 - 1, not March's 100.
     expect(fundamentals.years[0].marketCap).toBe(1000); // pure, no mutation
   });
@@ -29,7 +31,7 @@ describe('code-only fiscal snapshots', () => {
     expect(bad[2]).toBeNull(); expect(bad[3]).toBe(false);
   });
   it('does not borrow a future/adjacent price and excludes unknown fiscal years', () => {
-    expect(snapshotForYear({...base,fy:2016,prices:prices.filter(([m])=>m!=='2017-02')})).toEqual(['TEST.US',expect.any(String),null,false,null]);
+    expect(snapshotForYear({...base,fy:2016,prices:prices.filter(([m])=>m!=='2017-02')})).toEqual(['TEST.US',expect.any(String),null,false,null,{discount:.25,price:null,buyPrice:expect.any(Number)}]);
     expect(snapshotForYear({...base,fy:2015,fundamentals:{...fundamentals,years:fundamentals.years.filter(y=>y.fy!==2015)}})).toBeNull();
     expect(snapshotForYear({...base,fy:2016,latestPrice:null})?.[4]).toBeNull();
     expect(snapshotForYear({...base,fy:2016,latestPrice:[150,'2016-01-01']})?.[4]).toBeNull();

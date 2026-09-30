@@ -14,7 +14,7 @@ describe('valuation axes',()=>{
  it('uses explicit inclusive band boundaries and never classifies missing data as cheap',()=>{
   expect([.9,1,1.2,1.5,3,3.1,null].map(v=>bandFor(v,true))).toEqual([0,0,1,2,3,4,5]);
   expect(bandFor(.8,false)).toBe(5);
-  expect(bands[5].label).toMatch(/review/i);
+  expect(bands[5].label).toBe('Other companies');
  });
 });
 describe('deterministic swarm packing',()=>{

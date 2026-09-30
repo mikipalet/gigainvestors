@@ -68,7 +68,7 @@ export function TestSection({ test, currency = '', domain, netIncome, kind = 'op
     })}</dl></div></div>
     {kind==='operating' && metrics.some(([key,value]) => /roic(First|Last)/.test(key) && value !== null && Math.abs(value) >= .8) && <p className="source-line">† High ROIC is sensitive to a small tangible-capital base. The denominator is not published; verify it in the filing before interpreting this return.</p>}
     <div className="section-details">{test.reasons.length > 0 && <details><summary>Notes ({test.reasons.length})</summary><ul>{test.reasons.filter(r => r !== headline).map((r, i) => <li key={i}>{humanLabel(r)}</li>)}</ul></details>}
-    {test.jev.length > 0 && <details><summary title="Unverified means quoted from the filing but not yet matched to a line item">Report evidence ({test.jev.length}) · {test.jev.filter(a => a.trusted).length} verified</summary><JevAnswers answers={test.jev} source={reportUrl} /></details>}
+    {test.jev.length > 0 && <details><summary>Report evidence ({test.jev.length})</summary><JevAnswers answers={test.jev} source={reportUrl} /></details>}
     {test.key === 'accounting' && events?.length ? <details><summary>Accounting events ({events.length})</summary><EventNotes events={events} /></details> : null}</div>
 
     </PassingDisclosure>

@@ -7,6 +7,7 @@ import './round-ten.css';
 import './round-eleven.css';
 import './round-twelve.css';
 import './viz-lab.css';
+import './main-view.css';
 import { getDefaultIndex } from '@/lib/value/store';
 import { ValueLink } from '@/components/value/ValueLink';
 import { SearchTrigger } from '@/components/Search';

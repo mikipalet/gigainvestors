@@ -13,7 +13,7 @@ export const pricePosition=(value:number)=>piecewise(value,priceKnots);
 export const returnPosition=(value:number)=>piecewise(value,returnKnots);
 export const priceTicks:AxisTick[]=[{value:.6,label:'0.6×'},{value:1,label:'Buy price'},{value:1.5,label:'1.5×'},{value:3,label:'3×'},{value:10,label:'10×+'}];
 export const returnTicks:AxisTick[]=[{value:0,label:'0%'},{value:.1,label:'10% hurdle'},{value:.2,label:'20%'},{value:1,label:'100%+'}];
-export const bands=[{label:'Buy now'},{label:'Within 20%'},{label:'20–50% above'},{label:'1.5–3×'},{label:'3×+'},{label:'Needs review'}];
+export const bands=[{label:'Buy now'},{label:'Within 20%'},{label:'20–50% above'},{label:'1.5–3×'},{label:'3×+'},{label:'Other companies'}];
 /** Below-price companies without a published buy verdict must not enter Buy now. */
 export function bandFor(ratio:number|null,buy:boolean,historical=false){
  if(historical&&buy)return 0;

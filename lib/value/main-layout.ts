@@ -8,9 +8,10 @@ export function mainCompanies(entries:ResultEntry[]){
   const price=entry.historical?entry.historicalPrice?.price??null:entry.quote;
   const unavailable=!entry.historical&&Boolean(row.dataQualityFlags?.length);
   const buyPrice=unavailable?null:entry.historical?entry.historicalPrice?.buyPrice??null:row.v?.[1]!=null?row.v[1]*(1-(row.m??.25)):null;
-  const ratio=price!=null&&price>0&&buyPrice!=null&&buyPrice>0?finite(price/buyPrice):null;
+  const basis=entry.historical&&!entry.historicalPrice?'value':'buy price';
+  const ratio=basis==='value'?finite(entry.mos===null?null:1-entry.mos):price!=null&&price>0&&buyPrice!=null&&buyPrice>0?finite(price/buyPrice):null;
   const expected=entry.historical||unavailable?null:finite(entry.expected);
-  return {entry,id:row.id,name:companyName(row),price,buyPrice,ratio,expected,returnValue:entry.historical?finite(entry.historicalReturn):expected,buy:!unavailable&&row.b===true&&row.t==='PPPPP'};
+  return {entry,id:row.id,name:companyName(row),price,buyPrice,ratio,basis,expected,returnValue:entry.historical?finite(entry.historicalReturn):expected,buy:!unavailable&&row.b===true&&row.t==='PPPPP'};
  });
 }
 const byReturn=(a:MainCompany,b:MainCompany)=>(b.returnValue??-Infinity)-(a.returnValue??-Infinity)||a.id.localeCompare(b.id);

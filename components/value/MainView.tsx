@@ -14,6 +14,8 @@ const titles:Record<List,string>={buy:'Buy now',next:'Next closest',middle:'1.5�
 export function MainView({entries,year,loading=false}:{entries:ResultEntry[];year:string;loading?:boolean}){
  const historical=year!=='Today';
  const companies=useMemo(()=>mainCompanies(entries),[entries]);
+ const basis=companies.some(c=>c.basis==='value')?'estimated value':'buy price';
+ const bandTitle=(band:List)=>titles[band].replace('buy price',basis);
  const zones=useMemo(()=>mainZones(companies),[companies]);
  const [list,setList]=useState<List|null>(null);
  const [hover,setHover]=useState<{company:MainCompany;x:number;y:number}|null>(null);
@@ -52,20 +54,20 @@ export function MainView({entries,year,loading=false}:{entries:ResultEntry[];yea
    <header className="main-zone-heading"><h2>Next closest <span>{zones.next.length}</span></h2><span>{metric}</span></header>
    <div className="main-next-columns" style={{gridTemplateColumns:`repeat(${layout.columns},minmax(0,1fr))`}}>
     {Array.from({length:layout.columns},(_,column)=><div className="main-next-column" key={column}>
-     <div className="main-distance-axis"><span>buy price</span><span>+50%</span></div>
+     <div className="main-distance-axis"><span>{basis}</span><span>+50%</span></div>
      {shown.slice(column*layout.rows,(column+1)*layout.rows).map(c=>row(c,'next'))}
     </div>)}
    </div>
-   {!zones.next.length&&<p className="main-empty">No companies within 50% of buy price.</p>}
+   {!zones.next.length&&<p className="main-empty">No companies within 50% of {basis}.</p>}
    {zones.next.length>shown.length&&<button className="main-more" onClick={()=>open('next')}>+{zones.next.length-shown.length} more ↗</button>}
   </section>
   <section className="main-rest" aria-label="The rest"><header className="main-zone-heading"><h2>The rest</h2></header>
    {(['middle','far'] as const).map(band=><div className="main-rest-band" key={band} data-band={band}>
-    <button className="main-band-title" onClick={()=>open(band)}><span>{titles[band]}</span><strong>{zones[band].length} <span aria-hidden="true">↗</span></strong></button>
+    <button className="main-band-title" onClick={()=>open(band)}><span>{bandTitle(band)}</span><strong>{zones[band].length} <span aria-hidden="true">↗</span></strong></button>
     <div className="main-logo-strip">{logos(band).map(c=><span key={c.id} className="main-logo-item" {...events(c)}><CompanyLogo src={c.entry.row.lg} name={c.name} fallback="none" onUnavailable={()=>setFailedLogos(previous=>new Set([...previous,c.entry.row.lg!]))}/></span>)}</div>
    </div>)}
   </section>
-  {active&&<SidePanel wide title={`${active==='buy'&&historical?'Buy then':titles[active]} · ${listed.length}`} onClose={()=>{setList(null);setHover(null);}}><div className="main-full-list"><div className="main-list-heading"><span>Company · distance to buy price{historical?` in ${year}`:''}</span><span>{metric}</span></div><PagedItems key={active} size={size.phone?6:Math.max(4,Math.floor((size.height-100)/56))} items={listed.map(c=>row(c,'list'))}/></div></SidePanel>}
-  {hover&&<PointerTooltip x={hover.x} y={hover.y}><strong>{hover.company.name}</strong><div>{historical?`Price in ${year}`:'Price'} · {hover.company.price===null?'Unavailable':sharePrice(hover.company.price,hover.company.entry.row.cur)}</div><div>Buy price · {hover.company.buyPrice===null?'Unavailable':sharePrice(hover.company.buyPrice,hover.company.entry.row.cur)}</div><div>{distanceLabel(hover.company.ratio)}</div><div>{metric} · {returnLabel(hover.company.returnValue)}</div>{historical&&<div>Price gain, excluding dividends.</div>}</PointerTooltip>}
+  {active&&<SidePanel wide title={`${active==='buy'&&historical?'Buy then':bandTitle(active)} · ${listed.length}`} onClose={()=>{setList(null);setHover(null);}}><div className="main-full-list"><div className="main-list-heading"><span>Company · distance to {basis}{historical?` in ${year}`:''}</span><span>{metric}</span></div><PagedItems key={active} size={size.phone?6:Math.max(4,Math.floor((size.height-100)/56))} items={listed.map(c=>row(c,'list'))}/></div></SidePanel>}
+  {hover&&<PointerTooltip x={hover.x} y={hover.y}><strong>{hover.company.name}</strong><div>{historical?`Price in ${year}`:'Price'} · {hover.company.price===null?'Unavailable':sharePrice(hover.company.price,hover.company.entry.row.cur)}</div><div>Buy price · {hover.company.buyPrice===null?'Unavailable':sharePrice(hover.company.buyPrice,hover.company.entry.row.cur)}</div><div>{distanceLabel(hover.company.ratio)} {hover.company.basis==='value'?'estimated value':'buy price'}</div><div>{metric} · {returnLabel(hover.company.returnValue)}</div>{historical&&<div>Price gain, excluding dividends.</div>}</PointerTooltip>}
  </section>;
 }

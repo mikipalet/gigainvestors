@@ -18,7 +18,8 @@ describe('main zones',()=>{
  it('uses the historical discount and gains, never current expected returns or buy discounts',()=>{
   const old={...entry('old',1.2,true,.5),historical:true,historicalReturn:-.2,historicalPrice:{discount:.5,price:90,buyPrice:50}};
   const c=mainCompanies([old])[0];expect(c.ratio).toBe(1.8);expect(c.returnValue).toBe(-.2);expect(c.expected).toBeNull();
-  expect(mainCompanies([{...old,historicalPrice:undefined}])[0].ratio).toBeNull();
+  expect(mainCompanies([{...old,historicalPrice:undefined}])[0].ratio).toBeCloseTo(.9);
+  expect(mainCompanies([{...old,historicalPrice:undefined}])[0].basis).toBe('value');
  });
  it('keeps unresolved valuations out of priced zones while retaining hurdle-only waits',()=>{
   const held=entry('held',.8,false,.15);held.row.dataQualityFlags=['share count unresolved'];

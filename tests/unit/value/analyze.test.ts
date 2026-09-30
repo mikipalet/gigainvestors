@@ -71,7 +71,7 @@ it("restricts contradictions to their own test and uses commodity answers for cy
 it("caches bond yields per day, preserves concurrent countries, and converts FX minor units", async () => {
   vi.stubGlobal("fetch", async (url: string) => {
     const path = new URL(url).pathname;
-    return Response.json([{ close: path.includes("10Y") ? 4.25 : path.includes("GBP") ? 1.25 : 0.05 }]);
+    return Response.json([{ date: new Date().toISOString().slice(0,10), close: path.includes("10Y") ? 4.25 : path.includes("GBP") ? 1.25 : 0.05 }]);
   });
   expect(await Promise.all([bondYield("US"), bondYield("GB")])).toEqual([0.0425, 0.0425]);
   vi.stubGlobal("fetch", () => { throw new Error("Should be cached"); });
@@ -166,10 +166,10 @@ it("samples the exact analyzed text after source reports change", async () => {
 
 it("reads the newest live-recorded bond close as a fraction and refreshes tomorrow", async () => {
   const { default: recorded } = await import("../../fixtures/value/analyze/us-bond.json");
-  vi.stubGlobal("fetch", async () => Response.json(recorded));
+  vi.stubGlobal("fetch", async () => Response.json(recorded.map((row,i)=>({...row,date:new Date(Date.now()-i*86400000).toISOString().slice(0,10)}))));
   expect(await bondYield("US")).toBe(0.05239);
-  writeCorpusJson("bonds.json", { US: { date: "2000-01-01", yield: 0.05239 } });
-  vi.stubGlobal("fetch", async () => Response.json([{ close: 5 }]));
+  writeCorpusJson("bonds/US.json", { date: "2000-01-01", yield: 0.05239 });
+  vi.stubGlobal("fetch", async () => Response.json([{ date: new Date().toISOString().slice(0,10), close: 5 }]));
   expect(await bondYield("US")).toBe(0.05);
 });
 
@@ -209,35 +209,34 @@ it("ignores market cap and unused metadata changes but invalidates analysis inpu
 it("maps ISO GB to UK10Y while leaving other bond country codes unchanged", async () => {
   vi.stubGlobal("fetch", async (url: string) => {
     const path = new URL(url).pathname;
-    if (path.endsWith("/UK10Y.GBOND")) return Response.json([{ close: 4.75 }]);
-    if (path.endsWith("/DE10Y.GBOND")) return Response.json([{ close: 2.5 }]);
+    if (path.endsWith("/UK10Y.GBOND")) return Response.json([{ date: new Date().toISOString().slice(0,10), close: 4.75 }]);
+    if (path.endsWith("/DE10Y.GBOND")) return Response.json([{ date: new Date().toISOString().slice(0,10), close: 2.5 }]);
     return new Response("Ticker Not Found", { status: 404 });
   });
   expect(await bondYield("GB")).toBe(0.0475);
   expect(await bondYield("DE")).toBe(0.025);
 });
 
-it.each(["empty", "not-found"] as const)("uses US10Y and records the assumption for a %s local bond series", async mode => {
+it.each(["empty", "not-found"] as const)("leaves value unavailable for a %s local bond series without substituting a foreign yield", async mode => {
   const args = input();
   args.company.country = "ZZ";
   appendJsonl("universe.jsonl", args.company);
   writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);
   vi.stubGlobal("fetch", async (url: string) => new URL(url).pathname.endsWith("/US10Y.GBOND")
-    ? Response.json([{ close: 7.25 }])
+    ? Response.json([{ date: new Date().toISOString().slice(0,10), close: 7.25 }])
     : mode === "empty" ? Response.json([]) : new Response("Ticker Not Found", { status: 404 }));
   await analyze({ ask: args.ask, evidence: async () => null });
   const result = readCorpusJson<Analysis>("analysis/KO.US.json")!;
-  expect(result.valuation!.bondYield).toBe(0.0725);
-  expect(result.valuation!.discountRate).toBeCloseTo(0.1125);
-  expect(result.valuation!.assumptions).toContain("Local government bond yield unavailable; using US10Y yield");
+  expect(result.valuation).toBeNull();
+  expect(result.valuationReason).toContain("Local government bond yield unavailable");
 });
 
-it("omits valuation when local and US10Y bond yields are unavailable", async () => {
+it("omits valuation when local bond yields are unavailable", async () => {
   const args = input();
   vi.stubGlobal("fetch", async () => Response.json([]));
   const result = await analyzeCompany({ ...args, bondYield: null });
   expect(result.valuation).toBeNull();
-  expect(result.valuationReason).toContain("US10Y");
+  expect(result.valuationReason).toContain("Local government bond");
 });
 
 it("converts GBP reporting units to GBX trading units at 100", async () => {
@@ -573,4 +572,20 @@ it('W3/W5 refreshes cached annual currency and balance mappings from raw periods
   const changed = readCorpusJson<Analysis>('analysis/KO.US.json')!;
   expect(changed.status).toBe('insufficient_data');
   expect(changed.events?.some(event => event.kind === 'currency_change')).toBe(true);
+});
+
+it('revalues on a 0.1pp yield bucket change, but skips noise in the same bucket', async () => {
+ const args=input();appendJsonl('universe.jsonl',args.company);writeCorpusJson('fundamentals/KO.US.json',args.fundamentals);
+ let rate=.0401, evidenceCalls=0;
+ const options={ask:args.ask,getBondYield:async()=>rate,evidence:async()=>{evidenceCalls++;return null;}};
+ await analyze(options);
+ const first=readCorpusJson<Analysis>('analysis/KO.US.json')!.valuation!;
+ const initialEvidenceCalls=evidenceCalls;expect(initialEvidenceCalls).toBeGreaterThan(0);
+ rate=.0402;await analyze(options);
+ expect(readCorpusJson<Analysis>('analysis/KO.US.json')!.valuation!.bondYield).toBe(.0401);
+ rate=.0411;await analyze(options);
+ const next=readCorpusJson<Analysis>('analysis/KO.US.json')!.valuation!;
+ expect(next.bondYield).toBe(.0411);
+ expect(next.perShare.mid).toBeLessThan(first.perShare.mid);
+ expect(evidenceCalls).toBe(initialEvidenceCalls);
 });

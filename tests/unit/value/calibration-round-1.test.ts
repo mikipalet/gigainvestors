@@ -135,7 +135,7 @@ describe("live calibration round 1", () => {
     expect(result.reasons.join(" ")).toContain("not enough data for FY2019");
   });
   it("R9 omits a zero midpoint even when the high valuation is positive", () => {
-    const totalDebt = presentValue({ oe: 100, g: 0, r: 0.10, terminal: 0.03 });
+    const totalDebt = presentValue({ oe: 100, g: 0, r: 0.08, terminal: 0.03 });
     const result = valueCompany({ years: makeYears({ overrides: { cash: 0, totalDebt } }), kind: "operating", bondYield: 0.04, cyclical: false });
     expect(result).toEqual({ valuation: null, reason: "debt exceeds the value of owner earnings" });
   });

@@ -91,7 +91,7 @@ export default async function historySnapshots(options: { only?:string[]; limit?
         const reporting = target.currency ?? f.currency;
         const from=usdRate(reporting), to=usdRate(company.currency);
         const fxRate=sameCurrency(reporting,company.currency)?1:from!==null&&to!==null?from/to:null;
-        const row = snapshotForYear({company,fundamentals:f,fy,prices,latestPrice,filedByPeriod,bondYield:bonds[company.country]?.yield??bonds.US?.yield??null,fxRate,asOf});
+        const row = snapshotForYear({company,fundamentals:f,fy,prices,latestPrice,filedByPeriod,bondYield:bonds[company.country]?.yield??null,fxRate,asOf});
         if (!row) continue;
         (years[fy]??=[]).push(row);
         if (filedByPeriod[target.end]) coverage.filingDates++; else coverage.fallbackDates++;

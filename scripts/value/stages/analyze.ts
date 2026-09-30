@@ -7,7 +7,7 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { analyzeCompany, PIPELINE_VERSION, type Ask, type Sections } from "../../../lib/value/analyze-company";
 import { readPriceHistory } from "../../../lib/value/price-history";
-import { bondYield } from "../../../lib/value/bond-yields";
+import { bondYield, type BondObservation } from "../../../lib/value/bond-yields";
 import { createUsdRate } from "../../../lib/value/fx";
 import { T } from "../../../lib/value/config";
 import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
@@ -82,17 +82,28 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         const priceHistory = readPriceHistory(company.id);
         const historyAttempts = readCorpusJson<{ failures?: number }>(`prices-history/meta/${company.id}.json`);
         const priceHistoryPending = priceHistory === null && (historyAttempts?.failures ?? 0) < 3;
+        const localBondYield = fundamentals.integrity.ok ? await getBondYield(company.country) : null;
         const fingerprint = createHash("sha256").update(JSON.stringify({
           company: {
             id: company.id, kind: company.kind, currency: company.currency, country: company.country,
             description: company.description, sector: company.sector, industry: company.industry,
           }, fundamentals, report, sections, priceHistory, priceHistoryPending, shareInputs,
+          bondYieldBucket: localBondYield === null ? null : Math.round(localBondYield * 1000),
           questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
+        const prior = readCorpusJson<Analysis>(file);
+        const priorInputs = readCorpusJson<{ sections: Sections }>(`analysis/inputs/${company.id}.json`);
         const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, priceHistoryPending, ...shareInputs,
-          bondYield: fundamentals.integrity.ok ? await getBondYield(company.country) : null, ask, getBondYield, usdRate });
+          bondYield: localBondYield, ask, getBondYield, usdRate });
+        const yieldInfo = getBondYield === bondYield ? readCorpusJson<BondObservation>(`bonds/${company.country}.json`) : null;
+        if (result.valuation && yieldInfo) {
+          result.valuation.bondSource = yieldInfo.source;
+          result.valuation.bondFlags = yieldInfo.flags;
+          result.valuation.assumptions.push(`Local 10-year yield: ${yieldInfo.source} (${yieldInfo.symbol}, observed ${yieldInfo.observedAt ?? 'unavailable'}; checked ${yieldInfo.date})`);
+          if (yieldInfo.flags.length) result.valuation.assumptions.push(`Bond yield flags: ${yieldInfo.flags.join(', ')}`);
+        }
         if (!priceHistoryPending && priceHistory === null && result.tests.management.result === 'unclear') result.tests.management.reasons.push('Price history unavailable from provider');
         if (result.status === "scored" && Object.values(result.tests).every(test => test.numeric !== "fail")) {
           const eligible = Object.values(result.tests).flatMap(test => test.jev).filter(answer => {
@@ -103,6 +114,16 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           });
           for (const section of new Set(eligible.map(answer => answer.section))) {
             const answers = eligible.filter(answer => answer.section === section);
+            const previous = Object.values(prior?.tests ?? {}).flatMap(test => test.jev);
+            // A changed yield does not change evidence in identical filing text.
+            const reusable = !force && prior?.versions.questions === QUESTIONS_VERSION
+              && priorInputs?.sections[section] === sections[section]
+              && answers.every(answer => previous.some(old => old.q === answer.q && old.section === section
+                && old.value === answer.value && old.probability === answer.probability && old.trusted === answer.trusted));
+            if (reusable) {
+              for (const answer of answers) answer.evidence = previous.find(old=>old.q === answer.q && old.section === section)!.evidence;
+              continue;
+            }
             const questions = Object.fromEntries(answers.map(answer => [answer.q, QUESTIONS.find(q => q.id === answer.q)!.q]));
             const found = await evidence({ section: sections[section]!, questions });
             for (const answer of answers) answer.evidence = found?.[answer.q] ?? null;

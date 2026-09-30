@@ -10,7 +10,7 @@ import { runNumericTests } from "./tests";
 import { valueCompany, valuationMargin } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory } from "./types";
 
-export const PIPELINE_VERSION = "12";
+export const PIPELINE_VERSION = "13";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -30,20 +30,20 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
       && year.dilutedShares !== null && year.dilutedShares > 0 ? close * year.dilutedShares / rate : null;
     return { ...year, marketCap };
   });
-  const numeric = runNumericTests({ years, kind: company.kind, priceHistoryPending: priceHistoryPending && rate !== null });
+  const numeric = runNumericTests({ years, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
   const tests = {} as Analysis["tests"];
   const answers = fundamentals.integrity.ok ? await ask({ id: company.id, sections }) : [];
   for (const key of Object.keys(numeric) as Array<keyof typeof numeric>) {
     const jev = answers.filter(answer => QUESTIONS.find(q => q.id === answer.q)?.test === key);
     tests[key] = fundamentals.integrity.ok
-      ? { ...numeric[key], result: combine({ numeric: numeric[key].numeric, jev }), jev }
+      ? { ...numeric[key], result: combine({ numeric: numeric[key].numeric, jev, kind: company.kind }), jev }
       : { key, numeric: "unclear", result: "unclear", metrics: {}, series: {}, jev: [], reasons: [...fundamentals.integrity.reasons] };
   }
   // askCompany returns one aggregated answer per question (commodity uses a weighted mean).
   const commodity = answers.find(answer => answer.q === "commodity")?.value;
   const isCommodity = typeof commodity === "number" && commodity >= T.jev.commodityCyclical;
-  const volatility = earningsVolatility({ opMarginCv: numeric.understandable.metrics.opMarginCv, commodity: isCommodity });
-  const cyclical = isCommodity || numeric.understandable.metrics.opMarginCv !== null && volatility === "volatile";
+  const volatility = earningsVolatility({ opMarginCv: (numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null), commodity: isCommodity });
+  const cyclical = isCommodity || (numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null) !== null && volatility === "volatile";
   const resolvedBondYield = bondYield;
   const { valuation, reason } = !fundamentals.integrity.ok
     ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
@@ -60,7 +60,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
   return { ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
-    valueHistory: valueHistory({ fundamentals, kind: company.kind, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
+    valueHistory: valueHistory({ fundamentals, kind: company.kind, industry: company.industry, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"],
     events: companyEvents(fundamentals), series: perShareSeries(fundamentals),
     id: company.id, company, asOf: new Date().toISOString(),

@@ -11,8 +11,8 @@ export function earningsVolatility({ opMarginCv, commodity = false }: { opMargin
   return opMarginCv <= T.understandable.maxOpMarginCv + Number.EPSILON ? "moderate" : "volatile";
 }
 
-export function valueHistory({ fundamentals, kind, bondYield, fxRate, commodity }: {
-  fundamentals: Fundamentals; kind: Kind; bondYield: number | null; fxRate: number | null; commodity: boolean;
+export function valueHistory({ fundamentals, kind, bondYield, fxRate, commodity, industry }: {
+  fundamentals: Fundamentals; kind: Kind; bondYield: number | null; fxRate: number | null; commodity: boolean; industry?: string | null;
 }): ValueHistory {
   if (!fundamentals.integrity.ok || bondYield === null || fxRate === null) return [];
   const years = [...fundamentals.years].sort((a, b) => a.fy - b.fy);
@@ -20,8 +20,8 @@ export function valueHistory({ fundamentals, kind, bondYield, fxRate, commodity 
   if (latest === undefined) return [];
   return years.filter(year => year.fy > latest - T.history.years).flatMap(year => {
     const prefix = years.filter(y => y.fy <= year.fy);
-    const numeric = runNumericTests({ years: prefix, kind, priceHistoryPending: false });
-    const cv = numeric.understandable.metrics.opMarginCv;
+    const numeric = runNumericTests({ years: prefix, kind, industry, priceHistoryPending: false });
+    const cv = (numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null);
     const { valuation } = valueCompany({ years: prefix, kind, currency: fundamentals.currency, bondYield,
       qualityPass: Object.values(numeric).every(test => test.numeric === "pass"), cyclical: commodity || cv !== null && earningsVolatility({ opMarginCv: cv }) === "volatile" });
     if (!valuation) return [];

@@ -1,3 +1,6 @@
+import { checkIntegrity } from '../../../lib/value/integrity';
+import { fetchEdgar } from '../../../lib/value/reports/edgar';
+import { supplementFinancialFacts, type CompanyFacts } from '../../../lib/value/financial-facts';
 import { enrichMissingCaps, compareDownloads } from "../../../lib/value/download-order";
 import { budgetUsage } from "../../../lib/value/budget";
 import { readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
@@ -40,6 +43,15 @@ export default async function fundamentals(options: Options): Promise<void> {
     const raw = await getFundamentals(company.id);
     used += T.budget.fundamentalsCost;
     const { fundamentals: normalized, patch, marketCap } = normalizeEodhd(raw, company.id);
+    if ((patch.kind === 'bank' || patch.kind === 'insurer' || company.kind === 'bank' || /^capital markets$/i.test(patch.industry??'')) && (patch.cik || company.cik)) {
+      const cik = String(patch.cik || company.cik).padStart(10, '0');
+      try {
+        const facts = await (await fetchEdgar(`https://data.sec.gov/api/xbrl/companyfacts/CIK${cik}.json`)).json() as CompanyFacts;
+        writeCorpusJson(`raw/sec-companyfacts/${company.id}.json`, facts);
+        normalized.years = supplementFinancialFacts(normalized.years, facts);
+        normalized.integrity = checkIntegrity(normalized, {source:company.source});
+      } catch (error) { console.warn(`${company.id}: optional SEC financial facts unavailable: ${String(error)}`); }
+    }
     const existing = readCorpusJson<Partial<Company>>(`companies/${company.id}.json`);
     const currency = marketCap.currency ?? existing?.currency ?? company.currency;
     const rate = marketCap.value !== null && currency ? await usdRate(currency) : null;

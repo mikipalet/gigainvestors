@@ -58,12 +58,12 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
   // Rebuild caps from the prefix's own share counts, never retain current/seed caps.
   prefix.years = prefix.years.map(y => ({ ...y, marketCap: positive(fxRate) && positive(y.dilutedShares) && positive(monthly.get(y.end.slice(0,7)))
     ? monthly.get(y.end.slice(0,7))! * y.dilutedShares / fxRate : null }));
-  const numeric = runNumericTests({ years: prefix.years, kind: company.kind, priceHistoryPending: false });
+  const numeric = runNumericTests({ years: prefix.years, kind: company.kind, industry: company.industry, priceHistoryPending: false });
   const t5 = prefix.integrity.ok ? QUALITY_TESTS.map(key => numeric[key as keyof typeof numeric].numeric[0].toUpperCase()).join('') : 'UUUUU';
-  const volatility = earningsVolatility({ opMarginCv: numeric.understandable.metrics.opMarginCv });
+  const volatility = earningsVolatility({ opMarginCv: (numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null) });
   const valuation = prefix.integrity.ok && bondYield !== null && Number.isFinite(bondYield) && positive(fxRate)
     ? valueCompany({ years: prefix.years, kind:company.kind, currency:prefix.currency, bondYield,
-      cyclical:numeric.understandable.metrics.opMarginCv !== null && volatility === 'volatile', priceHistory:pastPrices, qualityPass:t5 === "PPPPP" }).valuation : null;
+      cyclical:(numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null) !== null && volatility === 'volatile', priceHistory:pastPrices, qualityPass:t5 === "PPPPP" }).valuation : null;
   const v: [number,number,number] | null = valuation ? [valuation.perShare.low*fxRate!, valuation.perShare.mid*fxRate!, valuation.perShare.high*fxRate!] : null;
   const flags = valuationFlags({ price, mid:v?.[1]??null, assumptions:valuation?.assumptions??[] });
   if (valuation && fxRate) valuation.perShareTrading = {currency:company.currency,fxRate,low:v![0],mid:v![1],high:v![2]};

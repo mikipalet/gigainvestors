@@ -11,14 +11,14 @@ const value = (years: Year[], cyclical = false) => valueCompany({ years, kind: "
 const run = (years: Year[]) => runNumericTests({ years, kind: "operating" });
 
 describe("round 1 controller rulings", () => {
-  it.each(["operating", "bank", "insurer"] as const)("allows exactly one weak return year for %s", kind => {
+  it.each(["operating", "bank"] as const)("allows exactly one weak return year for %s", kind => {
     const returns = (second: number) => makeYears({ n: 10, overrides: (_, i) => {
       const r = i === 0 ? 0.02 : i === 1 ? second : 0.20;
       return { operatingIncome: r * 625, netIncome: r * 500 };
     } });
     expect(runNumericTests({ years: returns(0.14), kind }).moat.numeric).toBe("pass");
-    expect(runNumericTests({ years: returns(kind === "operating" ? 0.09 : 0.07), kind }).moat.numeric).toBe("fail");
-    expect(runNumericTests({ years: returns(kind === "operating" ? 0.10 : 0.08), kind }).moat.numeric).toBe("pass");
+    expect(runNumericTests({ years: returns(kind === "operating" ? 0.09 : 0.049), kind }).moat.numeric).toBe("fail");
+    expect(runNumericTests({ years: returns(kind === "operating" ? 0.10 : 0.05), kind }).moat.numeric).toBe("pass");
   });
   it("defaults each optional item only within an existing statement", () => {
     const years = makeYears({ n: 2, overrides: (_, i) => ({

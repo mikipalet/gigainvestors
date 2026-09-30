@@ -27,6 +27,10 @@ export function parseEdinetCsv(tsv: string): EdinetRow[] {
 const local = (r: EdinetRow) => r.element.split(":").at(-1)!;
 export function edinetFact(rows: EdinetRow[], name: string): string | null { return rows.find(r => local(r) === name)?.value ?? null; }
 const fields = {
+  deposits: ['DepositsLiabilitiesBNK'],
+  loans: ['LoansAndBillsDiscountedAssetsBNK'],
+  creditLossProvision: ['ProvisionOfAllowanceForLoanLossesOpeCF'],
+  insuranceReserves: ['PolicyReservesINS'],
   revenue: ["RevenueIFRSSummaryOfBusinessResults", "RevenuesUSGAAPSummaryOfBusinessResults", "NetSalesSummaryOfBusinessResults", "OperatingRevenue1SummaryOfBusinessResults", "Revenue2IFRS", "RevenueIFRS", "NetSales", "OperatingRevenue1", "OperatingRevenuesIFRSKeyFinancialData", "TotalNetRevenuesIFRS", "SalesRevenuesIFRS", "RevenuesUSGAAP", "NetSalesUSGAAP"],
   costOfSales: ["CostOfSalesIFRS", "CostOfSales", "CostOfSalesUSGAAP", "CostOfRevenue"],
   grossProfit: ["GrossProfitIFRSSummaryOfBusinessResults", "GrossProfitIFRS", "GrossProfit"],

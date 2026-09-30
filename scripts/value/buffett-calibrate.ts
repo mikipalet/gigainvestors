@@ -144,7 +144,7 @@ function evaluate(p:any, lagMissing=false){
  const prefix={...full,years,ttm:null};
  const integrity=checkIntegrity(prefix,{source:c.source,priceHistory:[...monthly] as PriceHistory});
  years=prefix.years;
- const numeric=runNumericTests({years,kind:c.kind,priceHistoryPending:false});
+ const numeric=runNumericTests({years,kind:c.kind,industry:c.industry,priceHistoryPending:false});
  const t5=QUALITY_TESTS.map(k=>numeric[k as keyof typeof numeric].numeric[0].toUpperCase()).join('');
  const cv=numeric.understandable.metrics.opMarginCv,vol=earningsVolatility({opMarginCv:cv}),mos=T.price.requiredMos[vol];
  const bond=historicalBond(c.country,cutoff);

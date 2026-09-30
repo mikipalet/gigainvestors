@@ -66,8 +66,8 @@ describe("numeric quality tests", () => {
   it.each(["bank", "insurer"] as const)("uses ROE and skips accruals for a %s", kind => {
     const result = run(makeYears({ overrides: { grossProfit: null, netIncome: 70, ocf: null, receivables: null, sbc: 0 } }), kind);
     expect(result.moat.numeric).toBe("pass");
-    expect(result.accounting.reasons.join(" ")).toContain("accruals: na");
-    expect(result.accounting.metrics.accruals).toBeNull();
+    expect(result.accounting.reasons.join(" ")).toContain("Peer credit-loss comparison unavailable");
+    expect(result.accounting.metrics.accruals).toBeUndefined();
   });
   it("does not pass financials with weak worst-three ROE", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ netIncome: i > 7 ? 20 : 70 }) }), "bank").moat.numeric).toBe("fail");

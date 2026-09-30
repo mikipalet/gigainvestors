@@ -1,3 +1,4 @@
+import { financialFields, supplementFinancialFacts, withFinancialPeers, type CompanyFacts } from '../../../lib/value/financial-facts';
 import { esefShareInputs } from "../../../lib/value/italy/shares";
 import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
 import { checkIntegrity } from "../../../lib/value/integrity";
@@ -48,6 +49,12 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
     const company = mergeCompany(row, readCorpusJson<Partial<Company>>(`companies/${row.id}.json`) ?? {});
     return fundamentals ? [{ company, fundamentals }] : [];
   }).slice(0, limit);
+  const peerRows = withFinancialPeers((jobs.some(j=>j.company.kind==='bank')?readJsonl<Company>('universe.jsonl'):[]).filter(c=>c.kind==='bank'&&validCompanyId(c.id,'financial peers')).map(company=>{
+    const f=readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
+    const facts=readCorpusJson<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
+    return {company,years:facts?supplementFinancialFacts(f?.years??[],facts):f?.years??[]};
+  }));
+  const peers = new Map(peerRows.map(r=>[r.company.id,new Map(r.years.map(y=>[y.end,y.peerCreditLossRate]))]));
   const usdRate = createUsdRate({ force });
   const prices = { ...readPrices(corpusPath("prices")), ...readPrices(corpusPath("publish-repo/prices")) };
   let cursor = 0;
@@ -64,7 +71,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         const fundamentals = raw ? { ...cachedFundamentals, years: cachedFundamentals.years.map(year => {
           const fresh = mapped.get(year.end);
           return { ...year, ...leaseInputs(raw, year.end, company.country),
-            ...(fresh ? { currency: fresh.currency, cash: fresh.cash, totalDebt: fresh.totalDebt, clientAssets: fresh.clientAssets } : {}) };
+            ...(fresh ? { ...financialFields(fresh), currency: fresh.currency, cash: fresh.cash, totalDebt: fresh.totalDebt, clientAssets: fresh.clientAssets } : {}) };
         }) } : cachedFundamentals;
         if (raw) {
           // Include a changed-currency suffix even when normalization has already truncated it.
@@ -75,6 +82,12 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           fundamentals.integrity = checkIntegrity(fundamentals, { source: company.source });
           fundamentals.ttm = trailingInputs(raw, fundamentals.years.at(-1));
         }
+        const sectorFacts = readCorpusJson<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
+        if (sectorFacts) {
+          fundamentals.years = supplementFinancialFacts(fundamentals.years, sectorFacts);
+          fundamentals.integrity = checkIntegrity(fundamentals, {source:company.source});
+        }
+        fundamentals.years = fundamentals.years.map(y=>({...y,peerCreditLossRate:peers.get(company.id)?.get(y.end)??y.peerCreditLossRate}));
         const shareInputs = company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares
           ? await esefShareInputs(company, usdRate)
           : currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);

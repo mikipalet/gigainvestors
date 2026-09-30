@@ -1,5 +1,6 @@
 // Jev reads statements literally, so each one is positive and self-contained. The wording and both thresholds
-// were tuned against the mail the address has really received; reword only with a fresh comparison.
+// were tuned against the mail the address has really received on jev-1.13.0, which is why the model is pinned:
+// reword, or move the model, only with a fresh comparison.
 const QUESTIONS = {
   pitch: {
     type: "noul",
@@ -23,7 +24,7 @@ export async function isColdOutreach({ from, subject, text }: { from: string; su
     const res = await fetch("https://api.typesafe.ai/v1/systemone", {
       method: "POST",
       headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ model: "jev-latest", state: `From: ${from}\nSubject: ${subject}\n\n${text.slice(0, 6000)}`, questions: QUESTIONS }),
+      body: JSON.stringify({ model: "jev-1.13.0", state: `From: ${from}\nSubject: ${subject}\n\n${text.slice(0, 6000)}`, questions: QUESTIONS }),
       signal: AbortSignal.timeout(3000),
     });
     if (!res.ok) return false;

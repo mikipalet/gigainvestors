@@ -63,10 +63,11 @@ it('recovers a transient vendor-logo failure in new files without replacing exis
   const patch={nameEn:'Test',nameSource:'eodhd',logo:'https://icons.duckduckgo.com/ip3/test.com.ico',logoSource:'favicon',about:null};
   writeCorpusJson('enrichment-v7/companies/TEST.US.json',patch);
   writeCorpusJson('enrichment-v7/wikidata/websites.json',[]);
-  vi.stubGlobal('fetch',async()=>new Response(new Uint8Array(await sharp({create:{width:32,height:32,channels:4,background:'#ffffff'}}).png().toBuffer()),{status:200,headers:{'content-type':'image/png'}}));
+  vi.stubGlobal('fetch',async(url:string)=>url.includes('wikidata')?Response.json({results:{bindings:[]}}):new Response(new Uint8Array(await sharp({create:{width:64,height:64,channels:4,background:url.includes('.invalid')?'#ffffff':'#112233'}}).png().toBuffer()),{status:200,headers:{'content-type':'image/png'}}));
   await logos();
   expect(readCorpusJson('enrichment-v7/companies/TEST.US.json')).toEqual(patch);
-  expect(loadCompanies({})[0].logo).toBe('https://eodhd.com/img/logos/US/test.png');
+  expect(loadCompanies({})[0].logo).toMatch(/^\/api\/value\/logo\?asset=[a-f0-9]{64}$/);
+  expect(readCorpusJson<{sourceUrl:string}>('enrichment-v7/logos/TEST.US.json')?.sourceUrl).toBe('https://eodhd.com/img/logos/US/test.png');
 });
 
 it('never replaces full-universe history with an incomplete or selected-company run',async()=>{

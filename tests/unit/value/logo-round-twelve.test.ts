@@ -12,13 +12,14 @@ it('uses the ADR website chain for an ESEF issuer with no enrichment cache',asyn
  mkdirSync(path.join(temp,'raw/eodhd'),{recursive:true});
  writeFileSync(path.join(temp,'universe.jsonl'),JSON.stringify(company)+'\n');
  writeFileSync(path.join(temp,'raw/eodhd/RACE.US.json'),JSON.stringify({General:{WebURL:'https://www.ferrari.com'}}));
- const icon=await sharp({create:{width:32,height:32,channels:4,background:'#ff0000'}}).png().toBuffer();
- const fallback=await sharp({create:{width:32,height:32,channels:4,background:'#ffffff'}}).png().toBuffer();
- vi.stubGlobal('fetch',async(url:string)=>url.includes('wikidata')?Response.json({results:{bindings:[]}}):new Response(new Uint8Array(url.includes('.invalid')?fallback:icon),{headers:{'content-type':'image/png'}}));
+ const icon=await sharp({create:{width:64,height:64,channels:4,background:'#ff0000'}}).png().toBuffer();
+ const fallback=await sharp({create:{width:64,height:64,channels:4,background:'#ffffff'}}).png().toBuffer();
+ vi.stubGlobal('fetch',async(url:string)=>url.includes('wikidata')?Response.json({results:{bindings:[]}}):url.includes('eodhd.com')?new Response(null,{status:404}):new Response(new Uint8Array(url.includes('.invalid')?fallback:icon),{headers:{'content-type':'image/png'}}));
  await logos({only:['RACE.MI']});
  const result=JSON.parse(readFileSync(path.join(temp,'enrichment-v7/logos/RACE.MI.json'),'utf8'));
- expect(result.logo).toBe('https://icons.duckduckgo.com/ip3/www.ferrari.com.ico');
- expect(result.source).toBe('favicon');
+ expect(result.logo).toMatch(/^\/api\/value\/logo\?asset=[a-f0-9]{64}$/);
+ expect(result.sourceUrl).toBe('https://www.ferrari.com/apple-touch-icon.png');
+ expect(result.source).toBe('official-icon');
 });
 
 it('uses the unauthenticated Yahoo assetProfile website and stops on an auth response',async()=>{

@@ -1,6 +1,19 @@
+import {readStore} from '@/lib/value/store';
+import {createHash} from 'node:crypto';
 /** A provider can return a valid grey PNG with HTTP 404. Browsers still draw it.
  * Strip that image so CompanyLogo can display its own monogram instead. */
 export async function GET(request:Request) {
+ const asset=new URL(request.url).searchParams.get('asset');
+ if(asset!==null){
+  if(!/^[a-f0-9]{64}$/.test(asset))return new Response(null,{status:400});
+  try{
+   const cached=await readStore<{data:string}>(`logos/${asset}.json`,2592000);
+   if(!cached||typeof cached.data!=='string'||cached.data.length>500000)return new Response(null,{status:404});
+   const bytes=Buffer.from(cached.data,'base64');
+   if(createHash('sha256').update(bytes).digest('hex')!==asset)return new Response(null,{status:404});
+   return new Response(bytes,{headers:{'Content-Type':'image/webp','Cache-Control':'public, max-age=31536000, immutable','X-Content-Type-Options':'nosniff'}});
+  }catch{return new Response(null,{status:204});}
+ }
  const domain=new URL(request.url).searchParams.get('domain')??'';
  const eod=new URL(request.url).searchParams.get('eod')??'';
  const validEod=/^[A-Z0-9-]{1,12}\/[A-Za-z0-9&._-]{1,60}\.(?:png|svg|jpg)$/i.test(eod)&&!eod.includes('..');

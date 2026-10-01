@@ -30,8 +30,8 @@ describe('round 7 enrichment', () => {
     expect(aboutSentence(null)).toBeNull();
     expect(aboutSentence('Acme makes widgets. 会社の詳細です。')).toBe('Acme makes widgets.');
   });
-  it('requires a decoded 32px image and rejects an unverified favicon', async () => {
-    vi.stubGlobal('fetch', async () => new Response(new Uint8Array(await sharp({create:{width:32,height:32,channels:4,background:'#ffffff'}}).png().toBuffer()), { status: 200, headers: { 'content-type': 'image/png' } }));
+  it('requires a decoded 64px image and rejects an unverified favicon', async () => {
+    vi.stubGlobal('fetch', async () => new Response(new Uint8Array(await sharp({create:{width:64,height:64,channels:4,background:'#ffffff'}}).png().toBuffer()), { status: 200, headers: { 'content-type': 'image/png' } }));
     expect(await resolveLogo({ LogoURL: '/img/logos/KO.png', WebURL: 'https://www.coke.com/a' })).toEqual({ logo: 'https://eodhd.com/img/logos/KO.png', source: 'eodhd' });
     vi.stubGlobal('fetch', async () => new Response('not an image', { status: 200, headers: { 'content-type': 'text/html' } }));
     expect(await resolveLogo({ LogoURL: '/bad', WebURL: 'https://www.coke.com/a' })).toEqual({logo:null,source:null});
@@ -40,7 +40,7 @@ describe('round 7 enrichment', () => {
   it('retries transient logo throttling before choosing a favicon', async () => {
     let responses=0;
     vi.stubGlobal('fetch', async () => ++responses===1 ? new Response('',{status:429,headers:{'retry-after':'0'}})
-      : new Response(new Uint8Array(await sharp({create:{width:32,height:32,channels:4,background:'#ffffff'}}).png().toBuffer()),{status:200,headers:{'content-type':'image/png'}}));
+      : new Response(new Uint8Array(await sharp({create:{width:64,height:64,channels:4,background:'#ffffff'}}).png().toBuffer()),{status:200,headers:{'content-type':'image/png'}}));
     expect((await resolveLogo({LogoURL:'/img/logos/US/ko.png',WebURL:'https://coke.com'})).source).toBe('eodhd');
   });
   it('caches Yahoo longName and never overwrites an existing cache', async () => {

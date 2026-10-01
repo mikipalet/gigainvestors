@@ -27,3 +27,20 @@ it('only requests the fixed icon provider and rejects malformed domains',async()
  expect((await GET(new Request('http://localhost/api/value/logo?domain=../secret'))).status).toBe(400);
  expect(fetcher).toHaveBeenCalledTimes(1);
 });
+
+it('serves a validated content-addressed asset from the fixed published store',async()=>{
+ const {createHash}=await import('node:crypto');
+ const bytes=await sharp({create:{width:128,height:128,channels:4,background:'#abcdef'}}).webp().toBuffer();
+ const asset=createHash('sha256').update(bytes).digest('hex');
+ const fetcher=vi.fn().mockResolvedValue(Response.json({data:bytes.toString('base64')}));vi.stubGlobal('fetch',fetcher);
+ const response=await GET(new Request(`http://localhost/api/value/logo?asset=${asset}`));
+ expect(response.status).toBe(200);expect(response.headers.get('content-type')).toBe('image/webp');
+ expect(response.headers.get('cache-control')).toContain('immutable');
+ expect(Buffer.from(await response.arrayBuffer())).toEqual(bytes);
+ expect(fetcher.mock.calls[0][0]).toBe(`https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/logos/${asset}.json`);
+ expect((await GET(new Request('http://localhost/api/value/logo?asset=../../secret'))).status).toBe(400);
+});
+it('rejects cached assets whose bytes do not match their address',async()=>{
+ vi.stubGlobal('fetch',vi.fn().mockResolvedValue(Response.json({data:Buffer.from('wrong').toString('base64')})));
+ expect((await GET(new Request('http://localhost/api/value/logo?asset='+'a'.repeat(64)))).status).toBe(404);
+});

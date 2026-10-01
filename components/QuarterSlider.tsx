@@ -11,11 +11,13 @@ interface Props {
   label?: string;
   onPrefetch?: (q: string) => void;
   period?: "quarter" | "year";
+  /** Arrow keys step the timeline from anywhere on the page (as on gigainvestors.com). */
+  globalKeys?: boolean;
 }
 
 // Timeline along the bottom. The quarter pill IS the thumb; drag it, click the track,
 // use the ‹ › buttons or arrow keys.
-export function QuarterSlider({ quarters, q, onChange, note, period = "quarter", embedded = false, label = "Quarter", onPrefetch }: Props) {
+export function QuarterSlider({ quarters, q, onChange, note, period = "quarter", embedded = false, label = "Quarter", onPrefetch, globalKeys = !embedded }: Props) {
   const idx = Math.max(0, quarters.indexOf(q));
   const idxRef = useRef(idx);
   idxRef.current = idx;
@@ -26,7 +28,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
   };
 
   useEffect(() => {
-    if (embedded) return;
+    if (!globalKeys) return;
     const onKey = (e: KeyboardEvent) => {
       const t = e.target as HTMLInputElement;
       if (t?.closest('dialog, [role="combobox"], [role="listbox"], textarea, [contenteditable="true"]') || (t?.tagName === "INPUT" && t.type !== "range")) return;
@@ -38,7 +40,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [quarters, onChange, embedded]);
+  }, [quarters, onChange, globalKeys]);
 
   const pct = quarters.length > 1 ? (idx / (quarters.length - 1)) * 100 : 0;
   const q1s = quarters.filter((x) => period === "year" || x.endsWith("Q1"));

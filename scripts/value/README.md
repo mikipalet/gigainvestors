@@ -246,3 +246,34 @@ npx tsx scripts/value/buy-audit.ts /absolute/local/snapshot
 
 `--overwrite` requires `--out` and refuses a Git repository. It does not authorize
 remote publication, commits, pushes, or revalidation.
+
+### India: official NSE annual filings
+
+```sh
+npx tsx scripts/value/india-fundamentals.ts --dry-run
+npx tsx scripts/value/india-fundamentals.ts --only=RELIANCE.NSE,TCS.NSE,HDFCBANK.NSE,INFY.US,ITC.NSE
+npx tsx scripts/value/cli.ts india
+```
+
+`india` imports only existing Nifty 50 members. Local ticker aliases resolve to
+the existing canonical company (including `INFY.US`); it does not create duplicate
+companies. It writes fundamentals and a single `raw/india` cache, with immutable
+pre-import backups and per-company candidate/coverage records. Dry runs still
+cache sources but do not write fundamentals. It stops below 5 GiB free on `/`,
+caps each response at 4 MiB, and makes at most three requests/second. `--force`
+refreshes indexes and Yahoo; downloaded official documents remain cached.
+
+NSE's keyless annual list, legacy HTML/detail JSON, quarterly-indexed audited
+annual columns, and integrated financial-results XBRL supply annual consolidated
+facts. Values retain URL/tag provenance. Unknown lines stay null, inconsistent
+profit attribution is quarantined, and the existing integrity rules can trim
+history at gaps or uncorroborated share changes. NSE split/bonus events corroborate
+share changes. Yahoo fills missing recent lines only when overlapping INR revenue
+and parent profit agree within 3%; routine Yahoo refreshes preserve official history.
+
+Older results frequently lack balance sheets and cash flows: ten annual rows do
+not mean ten complete statements. Existing ADR/GDR histories are preserved until
+currency and depositary-share bases are reconciled; their official INR candidates
+remain in the cache. This stage does not change company classification or run
+analysis/publication. See `docs/value/india-1-report.md` for measured coverage and
+unresolved gaps from the initial import.

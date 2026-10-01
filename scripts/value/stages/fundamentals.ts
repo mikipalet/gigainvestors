@@ -1,4 +1,5 @@
 import { fetchYahooFundamentals, normalizeYahooFundamentals } from '../../../lib/value/fundamentals-yahoo';
+import { mergeIndiaYahoo } from '../../../lib/value/india/filings';
 import { statfsSync } from 'node:fs';
 import { universeCompanies } from '../../../lib/value/companies';
 import { companyExclusion } from '../../../lib/value/fund-exclusion';
@@ -81,6 +82,18 @@ export default async function fundamentals(options: Options): Promise<void> {
     const { fundamentals: normalized, patch, marketCap } = yahoo
       ? { fundamentals: normalizeYahooFundamentals(raw, company), patch: {} as Partial<Company>, marketCap: { value: null, currency: null } }
       : normalizeEodhd(raw, company.id);
+    if (india) {
+      const prior = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
+      const official = prior?.years.some(y => Object.values(y.provenance ?? {}).some(p => /^https:\/\/(?:nsearchives|www)\.nseindia\.com\//.test(p.source)));
+      if (official && prior) {
+        const merged = mergeIndiaYahoo(prior.years, normalized.years);
+        normalized.years = merged.years;
+        normalized.currency = prior.currency;
+        normalized.splits = prior.splits;
+        normalized.integrity = { ok: false, reasons: [], notes: [...(prior.integrity?.notes ?? []), ...merged.notes] };
+        normalized.integrity = checkIntegrity(normalized);
+      }
+    }
     if ((patch.kind === 'bank' || patch.kind === 'insurer' || company.kind === 'bank' || /^capital markets$/i.test(patch.industry??'')) && (patch.cik || company.cik)) {
       const cik = String(patch.cik || company.cik).padStart(10, '0');
       try {

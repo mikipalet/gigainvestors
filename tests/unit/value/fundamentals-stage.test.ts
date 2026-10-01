@@ -5,7 +5,7 @@ import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { appendJsonl, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { callsUsedToday, eodhd, getFundamentals } from "../../../lib/value/eodhd";
 import stage, { orderFundamentals, needsMemberFundamentals, MEMBER_FRESHNESS_MS } from "../../../scripts/value/stages/fundamentals";
-import { fetchYahooFundamentals } from "../../../lib/value/fundamentals-yahoo";
+import { fetchYahooFundamentals, normalizeYahooFundamentals } from "../../../lib/value/fundamentals-yahoo";
 import { readFileSync } from "node:fs";
 import type { Company } from "../../../lib/value/types";
 
@@ -126,4 +126,19 @@ it('does not turn provider authentication failures into Yahoo fallback',async()=
  vi.mocked(getFundamentals).mockRejectedValue(new Error('EODHD HTTP 401'));
  await stage({});expect(fetchYahooFundamentals).not.toHaveBeenCalled();
  expect(readCorpusJson('fundamentals/BAD.US.json')).toBeNull();
+});
+it('preserves official India history when a routine Yahoo refresh returns only four years',async()=>{
+ const company={id:'RELIANCE.NSE',code:'RELIANCE',exchange:'NSE',country:'IN',currency:'INR',source:'eodhd',marketCapUsd:100} as Company;
+ appendJsonl('universe.jsonl',company);
+ const raw=JSON.parse(readFileSync('tests/fixtures/value/ops/yahoo-reliance-annual.json','utf8'));
+ const prior=normalizeYahooFundamentals(raw,company);
+ const oldest=prior.years[0];
+ prior.years=[...Array.from({length:oldest.fy-2014},(_,i)=>({...oldest,fy:2014+i,end:`${2014+i}-03-31`})),...prior.years].map(y=>({...y,goodwill:999,provenance:{...y.provenance,revenue:{source:'https://nsearchives.nseindia.com/corporate/xbrl/recorded.xml',field:'RevenueFromOperations',method:'reported' as const}}}));
+ writeCorpusJson('fundamentals/RELIANCE.NSE.json',prior);
+ vi.mocked(fetchYahooFundamentals).mockResolvedValue(raw);
+ await stage({only:['RELIANCE.NSE'],force:true});
+ const saved=readCorpusJson<typeof prior>('fundamentals/RELIANCE.NSE.json')!;
+ expect(saved.years[0].fy).toBe(2014);
+ expect(saved.years.every(y=>y.goodwill===999)).toBe(true);
+ expect(saved.integrity.ok).toBe(true);
 });

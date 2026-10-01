@@ -1,3 +1,4 @@
+import {publicBusiness} from '../../../lib/value/flags/public';
 import {applyAdjustments} from '../../../lib/value/judgement/apply';
 import judgementTrust from '../../../lib/value/judgement/trust.json';
 import { applyThesis } from '../../../lib/value/thesis/apply';
@@ -298,6 +299,7 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
     try {
       const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
       if (!analysis) continue; // The rolling download has not analysed this company yet.
+      analysis.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`))??publicBusiness(analysis.businessDepth);
       if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");
       // Validate the consumer contract here so one malformed document cannot stop the rollout.
       if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");

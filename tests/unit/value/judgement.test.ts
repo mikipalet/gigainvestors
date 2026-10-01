@@ -71,7 +71,7 @@ it('shows a borderline override with its source while retaining the failed numer
 it('does not publish untrusted business answers',()=>{
  const out=attachJudgements({tests:{},company:{}} as Analysis,{id:'X',version:'1',readings:[{...reading,id:'pricing',value:'demonstrated'}]},trust,[]);
  const html=renderToStaticMarkup(createElement(BusinessSection,{analysis:out}));
- expect(html).toContain('The business');expect(html).not.toContain('Pricing power');
+ expect(html).toBe('');expect(html).not.toContain('Pricing power');
 });
 it('never invents a quote when the selector chooses none',async()=>{
  const out=await readBusiness([{...evidence,quote:'',text:evidence.quote,section:'mdna'}],async()=>({answers:{passage:{type:'choice',choice:'none',confidence:1,probabilities:{none:1}}}}));

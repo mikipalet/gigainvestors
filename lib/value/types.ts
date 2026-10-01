@@ -224,6 +224,7 @@ export interface CompanyEvent {
 }
 
 export interface Analysis {
+  businessDepth?: import("./flags/types").PublicBusiness;
   judgement?: import("./judgement/types").PublicJudgement;
   thesis?: import("./thesis/types").PublicThesis;
   reportingCurrency?: string;

@@ -57,6 +57,8 @@ export const audit = () => {
       if(p===scrollParent(el))break;
       const ps = getComputedStyle(p);
       if (/(hidden|clip)/.test(ps.overflow + ps.overflowX + ps.overflowY)) { const pb = p.getBoundingClientRect(); if (b.bottom > pb.bottom + 1 || b.right > pb.right + 1 || b.top < pb.top - 1) { issues.push(`text cut by container: "${t}"`); break; } }
+      // Native modal dialogs paint in the top layer, outside ancestor clipping.
+      if(p===root&&root.matches('dialog[open]'))break;
       p = p.parentElement;
     }
     if (!scrollParent(el) && getComputedStyle(document.body).overflow === "hidden" && b.bottom > innerHeight + 1) issues.push(`text below the fold on a no-scroll page: "${t}"`);

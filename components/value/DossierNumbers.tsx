@@ -29,7 +29,7 @@ export function FinancialHighlights({dossier:d}:{dossier:Dossier}) {
  if(!latest&&key!=='netCash')return null;
  const snapshot=key==='netCash'&&!latest&&d.valuation?.netDebt!=null?-d.valuation.netDebt:null;
  if(!latest&&snapshot===null)return null;
- return <div key={key}><div className="financial-label"><span>{label}</span><b>{formatMetric({value:latest?.[1]??snapshot,format,currency,returnRatio:isCapitalReturn(label)})}</b></div>{series.filter(p=>p[1]!==null).length>1?<MiniSeries series={series} label={label} format={format} height={short?180:64} fluid={short}/>:null}</div>;
+ return <div key={key}><div className="financial-label"><span>{label}</span><b>{formatMetric({value:latest?.[1]??snapshot,format,currency,returnRatio:isCapitalReturn(label)})}</b></div>{series.filter(p=>p[1]!==null).length>1?<MiniSeries series={series} label={label} format={format} height={short?180:48} fluid={short}/>:null}</div>;
  })}</section>;
 }
 

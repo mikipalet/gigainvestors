@@ -1,3 +1,4 @@
+import {publicBusiness} from '../../../lib/value/flags/public';
 import judgementTrust from '../../../lib/value/judgement/trust.json';
 import { completeCachedYears, completeCachedSplits, completeCompanyMetadata } from '../../../lib/value/completeness/cached-years';
 import { isInvestmentHolding } from '../../../lib/value/investment-nav';
@@ -112,7 +113,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
             description: company.description, sector: company.sector, industry: company.industry,
           }, fundamentals, report, sections, priceHistory, priceHistoryPending, shareInputs,
           bondYieldBucket: localBondYield === null ? null : Math.round(localBondYield * 1000),
-          judgementTrust, judgement: readCorpusJson(`judgement/${company.id}.json`), questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
+          flags:readCorpusJson(`flags/${company.id}.json`), judgementTrust, judgement: readCorpusJson(`judgement/${company.id}.json`), questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
@@ -159,6 +160,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           }
         }
         writeCorpusJson(`analysis/inputs/${company.id}.json`, { asOf: result.asOf, sections,reportingCurrency:fundamentals.currency,derivedValues });
+        result.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`));
         writeCorpusJson(file, result);
         writeCorpusJson(fingerprintFile, fingerprint);
         written++;

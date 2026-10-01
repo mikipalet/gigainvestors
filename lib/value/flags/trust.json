@@ -1,0 +1,37 @@
+{
+  "signal": {
+    "version": "6e884b4ec9a12744",
+    "accuracy": 1,
+    "n": 34,
+    "positive": 19,
+    "negative": 15,
+    "classes": {
+      "life_extended": 1,
+      "life_shortened": 1,
+      "residual_guarantee": 1,
+      "credit_backstop": 1,
+      "third_party_guarantee": 1,
+      "vendor_financing": 1,
+      "customer_concentration": 1,
+      "supplier_concentration": 1,
+      "related_party": 1,
+      "material_weakness": 1
+    }
+  },
+  "relationship": {
+    "version": "41b066bfe0633ff8",
+    "accuracy": 1,
+    "n": 31,
+    "positive": 19,
+    "negative": 12,
+    "classes": {
+      "supplier": 1,
+      "customer": 1,
+      "stake": 1,
+      "contract": 1,
+      "guarantee": 1,
+      "licensing": 1,
+      "subsidiary": 1
+    }
+  }
+}

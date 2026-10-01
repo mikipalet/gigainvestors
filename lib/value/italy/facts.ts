@@ -12,6 +12,11 @@ export interface XbrlReport {
   facts: Record<string, XbrlFact>;
 }
 const fields = {
+  deposits: ['DepositsFromCustomers'],
+  loans: ['LoansAndAdvancesToCustomers'],
+  creditLossProvision: ['ImpairmentLossOnFinancialAssets'],
+  preferredEquity: ['PreferenceShares'],
+  insuranceReserves: ['InsuranceContractLiabilities'],
   revenue: ["Revenue", "RevenueFromContractsWithCustomers"],
   grossProfit: ["GrossProfit"],
   costOfSales: ["CostOfSales"],
@@ -70,7 +75,7 @@ const fields = {
   basicEps: ["BasicEarningsLossPerShare"],
   sharesOutstanding: ["NumberOfSharesOutstanding"],
 } as const;
-const instant = new Set([
+const instant = new Set(["deposits", "loans", "preferredEquity", "insuranceReserves",
   "retainedEarnings",
   "shortTermDebt",
   "receivables",

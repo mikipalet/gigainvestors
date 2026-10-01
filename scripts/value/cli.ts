@@ -30,6 +30,7 @@ async function main(): Promise<void> {
   let force = false;
   let membersFirst = false;
   let offline = false;
+  let cachedReadings = false;
   let out: string | undefined;
   let from: string | undefined;
   let to: string | undefined;
@@ -37,6 +38,7 @@ async function main(): Promise<void> {
     const arg = args[i];
     if (arg === "--members-first" && stage === "fundamentals") membersFirst = true;
     else if (arg === "--offline" && stage === "index-membership") offline = true;
+    else if (stage === "calibrate" && arg === "--cached-readings") cachedReadings = true;
     else if (arg === "--force") force = true;
     else if (stage === "publish" && (arg === "--out" || arg.startsWith("--out="))) {
       out = arg === "--out" ? args[++i] : arg.slice(6);
@@ -61,7 +63,7 @@ async function main(): Promise<void> {
   }
 
   const module = await import(pathToFileURL(path.join(directory, `${stage}.ts`)).href);
-  await module.default({ only, limit, force, from, to, out, membersFirst, offline });
+  await module.default({ only, limit, force, from, to, out, membersFirst, offline, cachedReadings });
 }
 
 main().catch((error: unknown) => {

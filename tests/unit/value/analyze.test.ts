@@ -348,7 +348,12 @@ it("values only each fiscal prefix with today's bond yield and FX, retaining ten
   const result = await analyzeCompany({ ...args, usdRate: async currency => currency === "USD" ? 1 : 0.0125 });
   expect(result.valueHistory).toHaveLength(10);
   expect(result.valueHistory?.map(row => row[0])).toEqual([2016,2017,2018,2019,2020,2021,2022,2023,2024,2025]);
-  expect(result.valueHistory?.at(-1)?.[2]).toBeCloseTo(result.valuation!.perShareTrading!.mid);
+  // History uses numeric quality; live quality also includes report judgments.
+  const { valueCompany } = await import('@/lib/value/valuation');
+  const { runNumericTests } = await import('@/lib/value/tests');
+  const numeric = runNumericTests({years:args.fundamentals.years,kind:args.company.kind,priceHistoryPending:false});
+  const expected=valueCompany({years:args.fundamentals.years,kind:args.company.kind,bondYield:.04,cyclical:false,qualityPass:Object.values(numeric).every(t=>t.numeric==='pass')}).valuation!;
+  expect(result.valueHistory?.at(-1)?.[2]).toBeCloseTo(expected.perShare.mid * 80);
   expect(result.historyAssumptions?.join(" ")).toMatch(/today.*bond yield/i);
   expect(result.historyAssumptions?.join(" ")).toMatch(/today.*FX/i);
   args.fundamentals.years.at(-1)!.netIncome = 999999;
@@ -566,7 +571,8 @@ it('W3/W5 refreshes cached annual currency and balance mappings from raw periods
   writeCorpusJson('fundamentals/KO.US.json', args.fundamentals);
   writeCorpusJson('raw/eodhd/KO.US.json', raw);
   await analyze({ ask: async () => answers(), getBondYield: async () => .04, evidence: async () => null });
-  expect(readCorpusJson<Analysis>('analysis/KO.US.json')?.valuation?.netCash).toBe(8e9);
+  expect(readCorpusJson<Analysis>('analysis/KO.US.json')?.valuation?.netCash).toBe(9e9 - .02 * args.fundamentals.years.at(-1)!.revenue!);
+  expect(readCorpusJson<Analysis>('analysis/KO.US.json')?.valuation?.netDebt).toBe(-8e9);
   raw.Financials.Income_Statement.yearly[end].currency_symbol = 'CAD';
   writeCorpusJson('raw/eodhd/KO.US.json', raw);
   await analyze({ ask: async () => answers(), getBondYield: async () => .04, evidence: async () => null });

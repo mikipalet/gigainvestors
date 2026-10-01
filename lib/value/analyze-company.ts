@@ -8,10 +8,10 @@ import { askCompany } from "./jev/run";
 import { combine, trustedContradictions } from "./jev/combine";
 import { QUESTIONS, QUESTIONS_VERSION } from "./jev/questions";
 import { runNumericTests } from "./tests";
-import { valueCompany } from "./valuation";
+import { valueCompany, valuationMargin } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory, Year } from "./types";
 
-export const PIPELINE_VERSION = "16";
+export const PIPELINE_VERSION = "17";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -38,28 +38,28 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     }};
   }));
   onDerivedYears?.(years);
-  const numeric = runNumericTests({ years, kind: company.kind, priceHistoryPending: priceHistoryPending && rate !== null });
+  const numeric = runNumericTests({ years, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
   const tests = {} as Analysis["tests"];
   const answers = fundamentals.integrity.ok ? await ask({ id: company.id, sections }) : [];
   for (const key of Object.keys(numeric) as Array<keyof typeof numeric>) {
     const jev = answers.filter(answer => QUESTIONS.find(q => q.id === answer.q)?.test === key);
     tests[key] = fundamentals.integrity.ok
-      ? { ...numeric[key], result: combine({ numeric: numeric[key].numeric, jev }), jev,
-          reasons: [...(numeric[key].numeric === 'pass' ? trustedContradictions(jev).map(a => `${a.label}: ${a.probability! >= .5 ? 'yes' : 'no'} (filing evidence)`) : []), ...numeric[key].reasons] }
+      ? { ...numeric[key], result: combine({ numeric: numeric[key].numeric, jev, kind: company.kind }), jev,
+          reasons: [...(numeric[key].numeric === 'pass' ? trustedContradictions(jev, company.kind).map(a => `${a.label}: ${a.probability! >= .5 ? 'yes' : 'no'} (filing evidence)`) : []), ...numeric[key].reasons] }
       : { key, numeric: "unclear", result: "unclear", metrics: {}, series: {}, jev: [], reasons: [...fundamentals.integrity.reasons] };
   }
   // askCompany returns one aggregated answer per question (commodity uses a weighted mean).
   const commodity = answers.find(answer => answer.q === "commodity")?.value;
   const isCommodity = typeof commodity === "number" && commodity >= T.jev.commodityCyclical;
-  const volatility = earningsVolatility({ opMarginCv: numeric.understandable.metrics.opMarginCv, commodity: isCommodity });
-  const requiredMos = T.price.requiredMos[volatility];
-  const cyclical = isCommodity || numeric.understandable.metrics.opMarginCv !== null && volatility === "volatile";
+  const volatility = earningsVolatility({ opMarginCv: (numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null), commodity: isCommodity });
+  const cyclical = isCommodity || (numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null) !== null && volatility === "volatile";
   const resolvedBondYield = bondYield;
   const { valuation, reason } = !fundamentals.integrity.ok
     ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
     : resolvedBondYield === null
       ? { valuation: null, reason: "Local government bond yield unavailable" }
-      : valueCompany({ years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm });
+      : valueCompany({ years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm, qualityPass: Object.values(tests).every(test => test.result === "pass") });
+  const requiredMos = valuationMargin(valuation, volatility);
   if (valuation) {
     if (company.source === "edinet" && !years.at(-1)?.edinetShares) valuation.assumptions.push("Unverified JP share count unreconciled: EDINET share facts unavailable");
     if (rate !== null) valuation.perShareTrading = {
@@ -69,7 +69,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
   return { reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
-    valueHistory: valueHistory({ fundamentals, kind: company.kind, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
+    valueHistory: valueHistory({ fundamentals, kind: company.kind, industry: company.industry, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"],
     events: companyEvents(fundamentals), series: perShareSeries(fundamentals),
     id: company.id, company, asOf: new Date().toISOString(),

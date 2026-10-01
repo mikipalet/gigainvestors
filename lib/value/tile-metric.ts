@@ -3,11 +3,19 @@ import { priceFraming } from './presentation';
 import { T } from './config';
 import type { Kind, Series, TestOutcome } from './types';
 import type { MetricFormat } from './metric-labels';
-export type TileMetric = {id:string;value:number|null;label:string;format:MetricFormat;chartFormat?:MetricFormat;chartThreshold?:number|null;threshold:number;better:'higher'|'lower';series:Series;chart:string};
+export type TileMetric = {id:string;value:number|null;label:string;format:MetricFormat;threshold:number;better:'higher'|'lower';series:Series;chart:string;chartFormat?:'money'|'pct'|'ratio'|'index';chartThreshold?:number|null;chartBetter?:'higher'|'lower'};
 /** Stable comparison contract. Other rule failures belong in the reason, never replace this metric. */
 export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileMetric {
  const m=test.metrics, financial=kind!=='operating';
  const metric=(id:string,label:string,format:MetricFormat,threshold:number,better:'higher'|'lower',series:Series=[],chart=label):TileMetric=>({id,value:m[id]??null,label,format,threshold,better,series:series.slice(-10),chart});
+ if ('positiveIncomeYears' in m) return {...metric('positiveIncomeYears','profitable years','count',m.requiredPositiveYears??9,'higher',test.series.netIncome??[],'Net income'),chartFormat:'money',chartThreshold:0};
+ if ('bookReturnCagr' in m) return metric('bookReturnCagr','book + dividends CAGR','pct',.07,'higher',test.series.bookPlusDividendReturn??[],'Annual book + dividend return');
+ if ('retainedBookRatio' in m) return {...metric('shareCagrExCrisis','ordinary share growth','pct',.02,'lower',test.series.shares??[],'Shares'),chartFormat:'index',chartThreshold:null};
+ if ('financialRedFlags' in m) return metric('financialRedFlags','accounting warnings','count',0,'lower');
+ if ('combinedReportedYears' in m) {
+  if (m.combinedProfitableYears!=null) return {...metric('combinedProfitableYears','profitable underwriting years','count',7,'higher',test.series.combinedRatio??[],'Combined ratio'),chartFormat:'pct',chartThreshold:1,chartBetter:'lower'};
+  return metric('roeMedian',m.tangibleReturn?'ROTE · ten-year median':'ROE · ten-year median','pct',m.returnThreshold??.12,'higher',test.series.roe??[],'Return on common equity');
+ }
  switch(test.key){
   case 'understandable': {
    const margins=test.series.operatingMargin??[];
@@ -48,6 +56,11 @@ export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):str
  const v=metric.value, bar=metric.threshold;
  if(v===null)return test.result==='fail'?tileReason(test):'';
  const pct=(n:number)=>n===1.000001?'> 100%':`${Math.round(n*100)}%`,num=(n:number)=>n.toFixed(2);
+ if(metric.id==='positiveIncomeYears')return `Positive earnings in ${v}/10 years; ${bar} required.`;
+ if(metric.id==='bookReturnCagr')return `Book value plus dividends compounded at ${pct(v)} a year.`;
+ if(metric.id==='shareCagrExCrisis')return `Ordinary share count grew ${pct(v)} a year; the limit is ${pct(bar)}.`;
+ if(metric.id==='financialRedFlags')return `${v} accounting warning${v===1?'':'s'} in available financial evidence.`;
+ if(metric.id==='combinedProfitableYears')return `Combined ratio below 100% in ${v}/10 years.`;
  switch(test.key){
   case 'understandable':return metric.id==='lossYears'?`${v} years recorded a net loss.`:v>1?`Margin variation ${marginVariation(v)}.`:`Margins vary by ${marginVariation(v)} of their average.`;
   case 'moat': {

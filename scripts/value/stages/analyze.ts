@@ -1,6 +1,7 @@
 import { fillYears } from '../../../lib/value/completeness/second-sources';
 import { deriveYears } from '../../../lib/value/derive';
 import { universeCompanies } from '../../../lib/value/companies';
+import { supplementFinancialFacts, withFinancialPeers, type CompanyFacts } from '../../../lib/value/financial-facts';
 import { esefShareInputs } from "../../../lib/value/italy/shares";
 import { normalizeEodhd, refreshEodhdBalance } from "../../../lib/value/normalize-eodhd";
 import { checkIntegrity } from "../../../lib/value/integrity";
@@ -14,7 +15,7 @@ import { readPriceHistory } from "../../../lib/value/price-history";
 import { bondYield, type BondObservation } from "../../../lib/value/bond-yields";
 import { createUsdRate } from "../../../lib/value/fx";
 import { T } from "../../../lib/value/config";
-import { corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
+import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
 import { findEvidence } from "../../../lib/value/jev/run";
 import { QUESTIONS, QUESTIONS_VERSION } from "../../../lib/value/jev/questions";
 import trust from "../../../lib/value/jev-trust.json";
@@ -51,6 +52,12 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
     const company = mergeCompany(row, readCorpusJson<Partial<Company>>(`companies/${row.id}.json`) ?? {});
     return fundamentals ? [{ company, fundamentals }] : [];
   }).slice(0, limit);
+  const peerRows = withFinancialPeers((jobs.some(j=>j.company.kind==='bank')?readJsonl<Company>('universe.jsonl'):[]).filter(c=>c.kind==='bank'&&validCompanyId(c.id,'financial peers')).map(company=>{
+    const f=readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
+    const facts=readCorpusJson<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
+    return {company,years:facts?supplementFinancialFacts(f?.years??[],facts):f?.years??[]};
+  }));
+  const peers = new Map(peerRows.map(r=>[r.company.id,new Map(r.years.map(y=>[y.end,y.peerCreditLossRate]))]));
   const usdRate = createUsdRate({ force });
   const prices = { ...readPrices(corpusPath("prices")), ...readPrices(corpusPath("publish-repo/prices")) };
   let cursor = 0;
@@ -76,6 +83,12 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           fundamentals.integrity = checkIntegrity(fundamentals, { source: company.source });
           fundamentals.ttm = trailingInputs(raw, fundamentals.years.at(-1));
         }
+        const sectorFacts = readCorpusJson<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
+        if (sectorFacts) {
+          fundamentals.years = supplementFinancialFacts(fundamentals.years, sectorFacts);
+          fundamentals.integrity = checkIntegrity(fundamentals, {source:company.source});
+        }
+        fundamentals.years = fundamentals.years.map(y=>({...y,peerCreditLossRate:peers.get(company.id)?.get(y.end)??y.peerCreditLossRate}));
         const shareInputs = company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares
           ? await esefShareInputs(company, usdRate)
           : currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);

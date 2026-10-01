@@ -18,7 +18,7 @@ export const T = {
   integrity: { maxShareRatio: 5, minShareRatio: 0.2, splitTolerance: 0.03, splitPriceTolerance: 0.20, balanceTolerance: 0.10, balanceYears: 5, balanceMinFailures: 2 },
   fundamentals: { maxYears: 30, usageSyncCompanies: 200 },
   eodhd: { perSecond: 5, timeoutMs: 180_000, screenerPageSize: 100, screenerMaxOffset: 999 },
-  publish: { maxCountDrop: 0.20, lockMaxAgeMs: 6 * 60 * 60 * 1000 },
+  publish: { indexMembersOnly: true, maxCountDrop: 0.20, lockMaxAgeMs: 6 * 60 * 60 * 1000 },
   understandable: { years: 10, maxRevenueDeclines: 5, maxLossYears: 2, maxOpMarginCv: 0.35 },
   moat: { badYearsAllowed: 1, roicMedian: 0.15, roicSecondLowest: 0.10, gmDropPp: 0.04, roeMedianFin: 0.12, roeSecondLowestFin: 0.08 },
   economics: { oeToNi: 0.8, roiic: 0.12, maxNwcRise: 0.10 },
@@ -31,7 +31,14 @@ export const T = {
   accounting: { maxAccruals: 0.10, maxDsri: 1.465, minRedFlags: 2, maxRestructYears: 2, maxSbcToOcf: 0.15 },
   price: { requiredMos: { stable: 0.25, moderate: 0.35, volatile: 0.50 }, cvStable: 0.20 },
   history: { years: 10, refreshMs: 7 * 24 * 60 * 60 * 1000, acquisitionToAssets: 0.10, impairmentDrop: 0.20 },
-  valuation: { minDiscount: 0.10, bondSpread: 0.04, maxGrowth: 0.08, terminal: 0.03, finMaxGrowth: 0.06 },
+  valuation: {
+    version: 2 as 1 | 2, // v1 retained only for before/after evaluation.
+    operatingCashRatio: 0.02,
+    minDiscount: 0.10, bondSpread: 0.04, maxGrowth: 0.08, terminal: 0.03,
+    finMaxRoe: 0.25, finMaxGrowth: 0.06,
+    compounderMaxGrowth: 0.12, compounderMinRoic: 0.20, compounderMos: 0.15,
+    leverageModerate: 3, leverageVolatile: 5, // Net debt / normalized owner earnings.
+  },
   jev: { contradict: 0.7, trustAgreement: 0.85, evidence: 0.6, commodityCyclical: 0.6, chunkTokens: 24_000, minParagraphChars: 200 },
 } as const;
 

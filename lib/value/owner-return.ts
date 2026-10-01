@@ -16,12 +16,14 @@ export function reportingCapital(v: Valuation | null, trading: string, capUsd: n
 }
 export function ownerReturn(v: Valuation | null, trading: string, capUsd: number | null, price: number | null) {
  const capital=reportingCapital(v,trading,capUsd,price);
- if(!v||v.method!=='owner_earnings'||capital===null||!Number.isFinite(v.normalized)||!Number.isFinite(v.growth))return null;
+ if(!v||capital===null||!Number.isFinite(v.normalized)||!Number.isFinite(v.growth))return null;
+ const cash=v.method==='owner_earnings'?v.normalized:v.financialReturn?v.financialReturn.cashPerShare*v.shares:null;
+ if(cash===null||!Number.isFinite(cash))return null;
  // The published growth is the valuation's capped stage-one assumption, not
  // historical equity-bond yield or terminal growth. This is a yield + growth
  // estimate, not the DCF's IRR (which also reflects net cash and growth fading).
- const cashYield=v.normalized/capital;
- return {cash:v.normalized,capital,currency:v.currency,yield:cashYield,growth:v.growth,expected:cashYield+v.growth};
+ const cashYield=cash/capital;
+ return {cash,capital,currency:v.currency,yield:cashYield,growth:v.growth,expected:cashYield+v.growth};
 }
 export function requiredReturnCopy(v: Valuation | null, country: string) {
  if (!v || !Number.isFinite(v.discountRate)) return '';
@@ -46,7 +48,7 @@ export function referenceMetrics(d:Dossier, price:number|null) {
  const revenue=observations(d.series.revenue).slice(-11),first=revenue[0],last=revenue.at(-1);
  return {pe:capital&&income&&income[1]>0?capital/income[1]:null,
   dividendYield:capital&&dividend!=null&&dividend>=0?dividend/capital:null,
-  netDebtToEarnings:d.valuation&&income&&income[1]>0?-d.valuation.netCash/income[1]:null,
+  netDebtToEarnings:d.valuation&&income&&income[1]>0?(d.valuation.netDebt !== undefined ? d.valuation.netDebt/income[1] : d.valuation.version === 2 ? null : -d.valuation.netCash/income[1]):null,
   revenueGrowth:first&&last&&first[1]>0&&last[1]>0&&last[0]>first[0]?(last[1]/first[1])**(1/(last[0]-first[0]))-1:null,
   first:first?.[0],last:last?.[0],fy:income?.[0]};
 }

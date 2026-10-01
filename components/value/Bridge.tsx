@@ -18,7 +18,7 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
     ...(component(/estimated lease payments/i) !== null ? [['− Estimated lease payments', deduction(/estimated lease payments/i)]] : []),
     ['= Owner earnings (normalized)', money(v.normalized)],
     ['× Present value of 10 years + terminal', pvFactor === null ? '' : `${pvFactor.toFixed(2)}×`],
-    ['+ Net cash', money(v.netCash)],
+    [v.version === 2 ? '+ Excess cash (above operating reserve)' : '+ Net cash', money(v.netCash)],
     ['÷ Shares used for valuation', count(v.shares)],
   ] : [
     ['Tangible book value per share', perShareMoney(v.normalized, v.currency)],
@@ -32,6 +32,7 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
     <div className="flex flex-col"><div className="order-2 sm:order-1">{v.method === 'owner_earnings' && <OwnerEarningsWaterfall valuation={v} />}</div>
     <details open={v.method === 'book_value'} className="order-1 mb-4 text-sm sm:order-2"><summary className="mb-3 cursor-pointer text-ink/55">Show as table</summary>
     <table className="w-full table-fixed text-left text-sm"><caption className="sr-only">Valuation bridge in {v.currency}</caption><tbody>{rows.filter(([,value])=>value!=='').map(([label, value]) => <tr key={label} className="border-t border-ink/15"><th scope="row" className="w-1/2 py-2 pr-4 font-normal">{label}</th><td className="py-2 text-right tabular-nums">{value}</td></tr>)}</tbody></table></details></div>
+    {v.riskFlags?.length ? <ul className="mt-4 text-sm text-ink/70">{v.riskFlags.map(flag => <li key={flag}>{flag}</li>)}</ul> : null}
     <h3 className="mt-5 text-sm font-medium">Assumptions</h3>
     <ul className="mt-2 space-y-1 text-xs text-ink/60">{(['growth', 'discountRate', 'terminalGrowth', 'bondYield', 'equityBondYield'] as const).map(key => <li key={key} className="flex justify-between gap-4"><span>{key === 'equityBondYield' ? v.method === 'owner_earnings' ? 'Earnings yield at mid value' : 'Earnings / market cap' : metricLabels[key].label}</span><span>{formatMetric({ value: key === 'equityBondYield' && v.method === 'owner_earnings' ? earningsYieldAtMid(v) : v[key], format: 'pct' })}</span></li>)}</ul>
     <ul className="mt-3 space-y-1 text-xs text-ink/60">{v.assumptions.map((assumption, i) => <li key={i}>{assumption}</li>)}</ul>

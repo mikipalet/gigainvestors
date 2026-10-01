@@ -18,7 +18,7 @@ it.each(["bank", "insurer"] as const)("C2 uses tangible equity for %s returns an
   expect(result.metrics.roeSecondLowest).toBeCloseTo(0.19);
   const valuation = valueCompany({ years, kind, bondYield: 0.04, cyclical: false }).valuation!;
   expect(valuation.normalized).toBe(50);
-  expect(valuation.perShare.mid).toBeCloseTo(95);
+  expect(valuation.perShare.mid).toBeCloseTo(162.5);
   expect(valuation.assumptions.join(" ")).toMatch(/tangible/i);
 });
 
@@ -30,28 +30,25 @@ it("C2 retains the median and second-lowest rules with tangible returns", () => 
   expect(moat({ years, kind: "bank" }).numeric).toBe("fail");
 });
 
-it.each([500, 600])("C2 treats nonpositive tangible equity as unlimited and falls back to reported book (%i goodwill)", goodwill => {
+it.each([500, 600])("C2 quality diagnostic remains unlimited but v2 refuses nonpositive tangible book (%i goodwill)", goodwill => {
   const years = makeYears({ overrides: { equity: 500, goodwill } });
   const result = moat({ years, kind: "bank" });
   expect(result.numeric).toBe("pass");
   expect(result.metrics.roeMedian).toBeCloseTo(0.2);
   expect(result.series.roe.every(([,v])=>v!==null&&Number.isFinite(v))).toBe(true);
   const valuation = valueCompany({ years, kind: "bank", bondYield: 0.04, cyclical: false }).valuation!;
-  expect(valuation.normalized).toBe(50);
-  expect(valuation.perShare.mid).toBe(100);
-  expect(valuation.bridge.every(row => Number.isFinite(row.value))).toBe(true);
-  expect(valuation.assumptions.join(" ")).toMatch(/reported book/);
+  expect(valuation).toBeNull();
 });
 
 it("C2 does not reward losses with negative tangible equity", () => {
   expect(moat({ years: makeYears({ overrides: { netIncome: -10, equity: 100, goodwill: 200 } }), kind: "insurer" }).numeric).toBe("fail");
 });
 
-it("C2 uses tangible book history to compute financial growth", () => {
+it("C2 uses retained sustainable tangible ROE for financial growth", () => {
   const years = makeYears({ overrides: (_, i) => ({ equity: 1000, goodwill: 700 - i * 20 }) });
   const valuation = valueCompany({ years, kind: "bank", bondYield: 0.04, cyclical: false }).valuation!;
   expect(valuation.normalized).toBe(50);
-  expect(valuation.growth).toBeCloseTo((5 / 3) ** 0.1 - 1);
+  expect(valuation.growth).toBeCloseTo(.06);
 });
 
 it.each([

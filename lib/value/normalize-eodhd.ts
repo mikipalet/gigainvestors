@@ -40,6 +40,11 @@ function text(value: unknown): string | null {
   return typeof value === "string" && value.trim() ? value : null;
 }
 
+function reportedRatio(value: unknown): number | null {
+  const n = number(value);
+  return n === null ? null : n > 10 ? n / 100 : n;
+}
+
 function absolute(value: unknown): number | null {
   const parsed = number(value);
   return parsed === null ? null : Math.abs(parsed);
@@ -93,6 +98,19 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
     const acquisitions = currentIntangibles === null || previousIntangibles === null
       ? null : Math.max(0, currentIntangibles - previousIntangibles);
     byYear.set(fy, {
+      ...(typeof income.restated === 'boolean' ? { restated: income.restated } : {}),
+      commonNetIncome: number(income.netIncomeApplicableToCommonShares),
+      preferredEquity: number(balance.preferredStockTotalEquity),
+      commonDividendsPaid: absolute(cash.commonDividendsPaid),
+      deposits: number(balance.totalDeposits ?? balance.deposits),
+      creditLossProvision: number(income.provisionForLoanLosses ?? income.provisionForCreditLosses),
+      nonInterestExpense: number(income.nonInterestExpense),
+      netRevenue: number(income.netRevenue),
+      efficiencyRatio: reportedRatio(income.efficiencyRatio),
+      combinedRatio: reportedRatio(income.combinedRatio),
+      insuranceFloat: number(balance.insuranceFloat),
+      insuranceReserves: number(balance.insuranceReserves),
+      adverseReserveDevelopment: number(income.adverseReserveDevelopment),
       ...leases,
       statementCoverage: {
         income: ['totalRevenue','incomeBeforeTax','netIncome'].every(k => number(income[k]) !== null) && (number(income.totalOperatingExpenses) !== null || number(income.costOfRevenue) !== null),

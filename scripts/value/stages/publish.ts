@@ -302,6 +302,7 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
 export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string }): Promise<void> {
   const out = options.out === undefined ? undefined : path.resolve(options.out);
   if (out && existsSync(out) && readdirSync(out).length) throw new Error("--out requires a new or empty directory");
+  if (!T.publish.indexMembersOnly) throw new Error("Publication requires indexMembersOnly");
   const membership = readCorpusJson<{ complete: boolean; memberships: Record<string, string[]>; supplementalCompanies?: Company[] }>("index-membership/latest.json");
   if (!membership || (!membership.complete && !(out && options.force))) throw new Error("Run index-membership and resolve its coverage report before publish (incomplete snapshots may only be inspected with --out --force)");
   const companies = applyMembership([...new Map([...readJsonl<Company>("universe.jsonl"), ...(membership.supplementalCompanies ?? [])].map(c=>[c.id,c])).values()], membership.memberships).filter(company => company.indexes!.length && !companyExclusion(company));

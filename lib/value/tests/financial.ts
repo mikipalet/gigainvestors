@@ -3,9 +3,9 @@ import { cagr, last, mean, median, outcome, present, ratio, sum, type Check } fr
 import type { NumericInput, NumericOutcome, Year } from '../types';
 
 // Sector fields are optional. Never interpret their absence as a measured zero.
-export const commonIncome = (y: Year) => y.commonNetIncome ?? y.netIncome;
-export const commonBook = (y: Year) => y.equity === null ? null : y.equity - (y.preferredEquity ?? 0);
-export function tangibleCommonBook(y: Year): number | null {
+const commonIncome = (y: Year) => y.commonNetIncome ?? y.netIncome;
+const commonBook = (y: Year) => y.equity === null ? null : y.equity - (y.preferredEquity ?? 0);
+function tangibleCommonBook(y: Year): number | null {
  const book=commonBook(y);
  return book===null ? null : book-(y.goodwill??0)-(y.intangibles??0);
 }
@@ -92,7 +92,7 @@ export function financialTests({years,kind,industry}:NumericInput):Record<Exclud
  const basis=[`${bank?'Tangible common':'Common'} book per share`,...(missing.length?[`Parent-total proxy for ${missing.join(' and ')}`]:[])];
  const make=(key:NumericOutcome['key'],metrics:NumericOutcome['metrics'],series:NumericOutcome['series'],checks:Check[],reasons:string[]=[])=>outcome({key,metrics,series,checks,reasons});
  return {
- understandable:make('understandable',{historyYears:ys.length,positiveIncomeYears:positive,requiredPositiveYears:requiredPositive,roeCv:cv},{netIncome:ys.map(y=>[y.fy,commonIncome(y)]),roe:ys.map((y,i)=>[y.fy,roes[i]])},[
+ understandable:make('understandable',{historyYears:ys.length,positiveIncomeYears:positive,requiredPositiveYears:requiredPositive,roeCv:cv},{netIncome:ys.map(y=>[y.fy,commonIncome(y)]),commonRoe:ys.map((y,i)=>[y.fy,roes[i]])},[
   {pass:positive>=requiredPositive?true:positive+ys.length-incomes.filter(known).length<requiredPositive?false:null,core:true,data:'annual earnings observations',reason:`positive earnings in fewer than ${requiredPositive} of ${ys.length} years`},
  ],['ROE coefficient of variation is informational; returns use fiscal-end equity, not reported average adjusted capital']),
  moat:make('moat',{roeMedian:typical,returnThreshold:tangibleReturn?.12:.10,tangibleReturn:Number(tangibleReturn),roeSecondLowest:worst,efficiencyMedian,combinedProfitableYears:underwriting,combinedReportedYears:combinedCount,floatGrowth},{roe:ys.map((y,i)=>[y.fy,returns[i]]),combinedRatio:ys.map((y,i)=>[y.fy,combined[i]]),efficiencyRatio:ys.map((y,i)=>[y.fy,efficiency[i]])},[

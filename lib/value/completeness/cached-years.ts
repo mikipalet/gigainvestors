@@ -9,7 +9,7 @@ import type {Fundamentals} from '../types';
 import {issuerPredecessors,issuerSplits,issuerCapitalChanges} from './issuer-events';
 import {translatePresentationCurrency,type CurrencyTranslation} from './presentation-currency';
 
-export interface VerifiedSource {id:string;sourceId:string;isin?:string;fundamentals:Fundamentals;patch:Partial<Company>;currencyTranslations?:CurrencyTranslation[]}
+interface VerifiedSource {id:string;sourceId:string;isin?:string;fundamentals:Fundamentals;patch:Partial<Company>;currencyTranslations?:CurrencyTranslation[]}
 export function completeCachedSplits(id:string,splits:Fundamentals['splits'],read:<T>(path:string)=>T|null):Fundamentals['splits']{
  const incoming=read<VerifiedSource>(`completeness/verified/${id}.json`)?.fundamentals.splits??[];
  return [...new Map([...(splits??[]),...incoming,...(issuerSplits[id]??[])].map(s=>[s.date,s])).values()].sort((a,b)=>a.date.localeCompare(b.date));

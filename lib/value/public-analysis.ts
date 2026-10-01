@@ -2,7 +2,7 @@ import { shortHistory } from './publication-eligibility';
 import type { Analysis, TestOutcome } from './types';
 
 // Operational evidence and unresolved supporting measures stay in the private corpus.
-export const privateWording = /verif(?:y|ied|ication)|\bchecking\b|being checked|share sources disagree|share count (?:not )?corrected/i;
+const privateWording = /verif(?:y|ied|ication)|\bchecking\b|being checked|share sources disagree|share count (?:not )?corrected/i;
 export const gapWording = /not enough (?:evidence|data)|not reported|unavailable|\bunclear\b|not tested|cannot judge|evidence incomplete|not supplied|not available|no data|\bmissing\b|informational only|available (?:financial )?evidence|no (?:filing )?extracts? supplied/i;
 const publicText=(s:string)=>!privateWording.test(s)&&!gapWording.test(s);
 export function publicAnalysis<T extends Analysis>(analysis:T):T {

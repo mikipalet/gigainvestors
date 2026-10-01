@@ -14,7 +14,7 @@ export function ThresholdSeries({ label, series: rawSeries, domain: suppliedDoma
   const domain = seriesDomain(rawSeries);
   const series = logarithmic ? logSeries(rawSeries) : rawSeries;
   const points = series.filter((p): p is [number, number] => p[1] !== null && Number.isFinite(p[1]));
-  const fmt = (n: number) => format === 'pct' ? formatMetric({value:n,format:'pct',returnRatio:isCapitalReturn(label)}) : format === 'money' ? compactMoney(n, currency) : format==='ratio'?`${n.toFixed(2)}×`:n.toFixed(1);
+  const fmt = (n: number) => format === 'pct' ? formatMetric({value:n,format:'pct',returnRatio:isCapitalReturn(label)}) : format === 'money' ? formatMetric({value:n,format:'money',currency}) : format==='ratio'?formatMetric({value:n,format:'x'}):formatMetric({value:n,format:'count'});
   const values = [...points.map(p => p[1]), ...(comparison?.series.flatMap(p => p[1] === null ? [] : [p[1]]) ?? []), ...(threshold === undefined ? [] : [threshold])];
   const min = format==='index'?Math.min(95,...values):!logarithmic&&format==='money'?Math.min(0,...values):Math.min(...values), max = format==='index'?Math.max(105,...values):Math.max(...values);
   const ticks = logarithmic && points.length ? logTicks([min, max],87) : niceTicks([min, max], 5);
@@ -38,7 +38,7 @@ export function ThresholdSeries({ label, series: rawSeries, domain: suppliedDoma
   let endLabelY = last ? y(last[1]) : 0, otherLabelY = otherLast ? y(otherLast[1]) : 0;
   if (last && otherLast && Math.abs(endLabelY - otherLabelY) < 16) { const middle = (endLabelY + otherLabelY) / 2, ownerAbove = last[1] >= otherLast[1]; endLabelY = middle + (ownerAbove ? -8 : 8); otherLabelY = middle + (ownerAbove ? 8 : -8); }
   const rule = threshold === undefined ? '' : allowedBelow !== undefined ? `pass: median ≥ ${fmt(threshold)}; ≥ ${fmt(allowedBelow)} in all but one reported year` : `pass: ${better === 'higher' ? '≥' : '<'} ${fmt(threshold)}`;
-  return <figure ref={ref} className="value-viz min-w-0" data-testid="threshold-series">
+  return <figure ref={ref} className="value-viz min-w-0" data-testid="threshold-series" data-series={JSON.stringify(rawSeries)} data-series-label={label} data-format={format==='ratio'?'x':format==='index'?'count':format} data-currency={currency}>
     <figcaption><h3 className="text-sm font-semibold">{summary??conclusion}</h3><p className="mt-1 text-[13px] text-ink/60">{label}, {format === 'pct' ? '%' : format === 'money' ? currency : format==='ratio'?'×':'first year = 100'} by fiscal year{logarithmic ? ' · log scale' : ''}. {caption ?? ''}</p></figcaption>
 
     {threshold !== undefined && <p className="mt-2 text-[13px] text-ink/65">{rule}</p>}
@@ -61,6 +61,6 @@ export function ThresholdSeries({ label, series: rawSeries, domain: suppliedDoma
       {events?.map((event, i) => { const point = points.find(p => p[0] === event.fy); const previous = events.slice(0,i).map(e=>points.find(p=>p[0]===e.fy)).filter((p):p is [number,number]=>!!p); const numbered = point && !previous.some(p=>Math.abs(x(point[0])-x(p[0]))<18 && Math.abs(y(point[1])-y(p[1]))<18); return point ? <g key={i}><title>{event.note}</title><circle cx={x(point[0])} cy={y(point[1])} r="7" fill="var(--paper)" stroke="var(--ink)"/>{numbered && <text x={x(point[0])} y={y(point[1])+3} textAnchor="middle" className="viz-event-number">{i+1}</text>}</g> : null; })}
     </svg></ChartInteraction> : <p className="py-8 text-xs text-ink/55">No positive reported data for this scale.</p>}
     {logarithmic && rawSeries.some(p => p[1] !== null && p[1] <= 0) && <p className="text-xs text-ink/60">Non-positive values are gaps on a log scale; all values remain in the table.</p>}
-    <DataTable caption={label} headers={['Fiscal year', label, ...(comparison ? [comparison.label] : [])]} rows={rawSeries.filter(([,v])=>v!==null).map(([fy, value]) => [fy, value === null ? '' : format==='pct'?formatMetric({value,format:'pct'}):fmt(value), ...(comparison ? [comparison.series.find(p => p[0] === fy)?.[1] == null ? '' : fmt(comparison.series.find(p => p[0] === fy)![1]!)] : [])])} />
+    <DataTable caption={label} headers={['Fiscal year', label, ...(comparison ? [comparison.label] : [])]} rows={rawSeries.filter(([,v])=>v!==null).map(([fy, value]) => [fy, value === null ? '' : format==='pct'?formatMetric({value,format:'pct',returnRatio:isCapitalReturn(label)}):fmt(value), ...(comparison ? [comparison.series.find(p => p[0] === fy)?.[1] == null ? '' : fmt(comparison.series.find(p => p[0] === fy)![1]!)] : [])])} />
   </figure>;
 }

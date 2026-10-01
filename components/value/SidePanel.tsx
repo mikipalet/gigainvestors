@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
 /** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted evidence. */
-export function SidePanel({ title, onClose, children, wide = false }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean }) {
+export function SidePanel({ title, onClose, children, wide = false, compact = false }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; compact?:boolean }) {
   const [closing,setClosing]=useState(false);
   const timer=useRef<ReturnType<typeof setTimeout>|null>(null);
   const start=useRef<{x:number;y:number}|null>(null);
@@ -15,7 +15,7 @@ export function SidePanel({ title, onClose, children, wide = false }: { title: s
     dialog?.showModal();
     return () => { dialog?.close(); queueMicrotask(() => previous?.focus()); };
   }, []);
-  return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''}`} data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
+  return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.
     if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}
   }} onKeyDown={e=>{

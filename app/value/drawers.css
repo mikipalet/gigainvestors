@@ -9,8 +9,8 @@
 .drawer-chart [data-testid=threshold-series]>figcaption h3,.drawer-chart [data-testid=threshold-series]>p{display:none}
 .value-page .drawer-chart figcaption,.value-page .drawer-chart figcaption p{font-size:14px;line-height:20px;margin:0 0 8px}
 .drawer-chart .mini-price{height:100%}.drawer-chart .mini-price>div:last-child{font-size:13px}
-.drawer-numbers{display:flex;justify-content:space-between;gap:12px;border-block:1px solid var(--viz-grid);padding:10px 0;margin:0;font-variant-numeric:tabular-nums}
-.drawer-numbers>div{min-width:0}.drawer-numbers dt{font-size:13px;color:var(--viz-muted);line-height:1.2}.drawer-numbers dd{font-size:21px;line-height:1.35;white-space:nowrap;margin:4px 0 0}
+.drawer-numbers{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-block:1px solid var(--viz-grid);padding:10px 0;margin:0;font-variant-numeric:tabular-nums}
+.drawer-numbers>div{min-width:max-content;flex-shrink:0}.drawer-numbers dt{font-size:13px;color:var(--viz-muted);line-height:1.2}.drawer-numbers dd{font-size:21px;line-height:1.35;white-space:nowrap;margin:4px 0 0}
 .drawer-bottom{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:24px;align-items:start}
 .value-page .drawer-bottom h3{font-size:18px;margin:0 0 8px;line-height:1.2}
 .drawer-years table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;table-layout:auto}
@@ -51,3 +51,20 @@
 @media(max-width:767px){.investor-directory{grid-auto-rows:minmax(60px,auto)}.investor-panel .panel-answer{color:var(--ink)!important}.holder-portrait{width:48px;height:48px}}
 .main-full-list .paged-items>div,.main-full-list .paged-items>div>div{min-height:0}.main-list-row .list-context{grid-column:1/-1;font-size:13px;line-height:1.3;align-self:start}.main-list-row:has(.list-context){row-gap:3px;grid-template-rows:auto auto}
 .value-page .filing-evidence .quote-context{font-size:13px;color:var(--viz-muted);margin-bottom:3px}
+/* Company lists fit their rows; evidence panels retain their full chart height. */
+.value-page .value-panel.compact-panel{width:min(760px,100vw);height:fit-content;max-height:calc(100dvh - 24px);top:12px;bottom:auto}
+.value-page .compact-panel .panel-shell{height:auto;max-height:inherit}
+.value-page .compact-panel .panel-content{padding:8px 18px 12px;overflow-y:auto;flex:0 1 auto}
+.compact-company-list table{width:100%;border-collapse:collapse;table-layout:fixed;font-variant-numeric:tabular-nums}
+.compact-company-list th,.compact-company-list td{padding:7px 6px;text-align:right;border-bottom:1px solid var(--viz-grid);font-size:14px;line-height:1.2;font-weight:400}
+.compact-company-list th:first-child{width:42%;text-align:left;padding-left:0}
+.compact-company-list th:nth-child(2){width:16%}.compact-company-list th:nth-child(3){width:23%}.compact-company-list th:nth-child(4){width:19%}
+.compact-company-list thead button{font-size:13px;white-space:nowrap;padding:4px 0}
+.compact-company-list tbody th a{display:flex;align-items:center;gap:9px;min-width:0;text-decoration:none}
+.compact-company-list tbody th a>span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.compact-company-list .company-logo{width:28px;height:28px;flex:none}.compact-company-list small{display:block;font-size:13px;color:var(--viz-muted);margin-top:3px}
+.compact-needs{font-size:13px;white-space:nowrap}.compact-distance{display:block;height:4px;background:var(--viz-grid);margin:5px 0 0 auto;width:100px}.compact-distance i{display:block;height:100%;background:var(--buy)}
+.compact-company-list nav{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:13px}.compact-company-list nav button{padding:4px 12px}.compact-company-list nav button:disabled{opacity:.3}
+@media(max-width:767px){.value-page .value-panel.compact-panel{width:100vw;max-height:calc(100dvh - 16px);top:auto;bottom:0}.value-page .compact-panel .panel-content{padding:6px 10px 10px}.compact-company-list th,.compact-company-list td{padding:8px 3px;font-size:13px}.compact-company-list th:first-child{width:38%}.compact-company-list th:nth-child(2){width:15%}.compact-company-list th:nth-child(3){width:25%}.compact-company-list th:nth-child(4){width:22%}.compact-company-list thead button{font-size:13px;white-space:normal}.compact-company-list tbody th a{gap:5px}.compact-company-list tbody th a>span{white-space:normal}.compact-company-list .company-logo{width:22px;height:22px}.compact-needs{font-size:13px}.compact-distance{width:65px}.compact-company-list small{font-size:13px}}
+
+.investor-directory{display:block;min-height:0}.investor-directory>.paged-items{height:100%;display:flex;flex-direction:column;min-height:0}.investor-directory .paged-items>div{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}.investor-directory .paged-items>div>div{min-height:0;display:flex}.investor-directory .investor-row{width:100%;min-width:0}.investor-directory .paged-items nav{flex:none;margin-top:8px}@media(max-width:767px){.investor-directory .paged-items>div{grid-template-columns:1fr}}

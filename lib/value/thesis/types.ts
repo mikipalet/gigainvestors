@@ -1,8 +1,8 @@
 import type { RawAnswer } from '../types';
 export type ThesisQuestionId = 'thesis_structural' | 'thesis_liability' | 'thesis_guidance' | 'thesis_distress';
-export interface ThesisEvidence { quote:string; url:string; filed:string; section:string }
+interface ThesisEvidence { quote:string; url:string; filed:string; section:string }
 export interface ThesisMarket {currency:string;marketValue:number|null;ownerEarnings:number|null;asOf:string;basis:string;usdRates?:Record<string,number>}
-export interface Liability {amount:number;currency:string;basis:'provided'|'estimated'|'claimed';topic:string}
+interface Liability {amount:number;currency:string;basis:'provided'|'estimated'|'claimed';topic:string}
 export interface SizedLiability extends Liability {marketValueRatio:number;ownerEarningsRatio:number|null;evidence:ThesisEvidence}
 export interface ThesisAnswer {
   id:ThesisQuestionId; version:string; value:'yes'|'no'|'unclear'; evidence:ThesisEvidence|null;

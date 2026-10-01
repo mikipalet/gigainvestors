@@ -6,7 +6,7 @@ import {iconHash,logoPixels,validLogo} from './logo-validation';
 export type LogoBinding=Record<string,{value:string}>;
 export const LOGO_USER_AGENT='GigaInvestorsLogoBot/2.0 (https://github.com/mikipalet/gigainvestors; https://gigainvestors.com)';
 const exchanges:Record<string,string[]>={US:['Q13677','Q82059','Q846626'],JP:['Q217475'],TSE:['Q217475'],LSE:['Q171240'],PA:['Q2385849'],AS:['Q478720'],MI:['Q936563','Q107228046'],XETRA:['Q819468','Q151139'],F:['Q151139'],SW:['Q661834'],TO:['Q818723'],AU:['Q732670'],HK:['Q496672'],TW:['Q548621'],KO:['Q495364'],KQ:['Q491503'],NSE:['Q638740'],BSE:['Q638398'],SHG:['Q739514'],SHE:['Q517750'],MC:['Q617426'],ST:['Q1019992'],CO:['Q1019983'],HE:['Q581755'],OL:['Q909158'],VI:['Q698535'],WAR:['Q59551'],JSE:['Q627514'],MX:['Q891559'],BR:['Q1146518'],LS:['Q2415561']};
-export function websiteUrl(value?:string):string|null{
+function websiteUrl(value?:string):string|null{
  try{const u=new URL(value?.includes('://')?value:`https://${value??''}`);if(!/^https?:$/.test(u.protocol)||u.username||u.password||!u.hostname.includes('.')||/^(?:localhost|127\.|10\.|192\.168\.|169\.254\.|0\.)/.test(u.hostname))return null;return u.href;}catch{return null;}
 }
 const domain=(value?:string)=>{const url=websiteUrl(value);return url?new URL(url).hostname.toLowerCase().replace(/^www\./,''):null;};
@@ -32,7 +32,7 @@ export function officialCandidates(html:string,base:string):IconCandidate[]{
  },onclosetag(name){if(name==='a')homeLink=false;}});parser.write(html);parser.end();
  return result.sort((a,b)=>a.rank-b.rank||b.size-a.size);
 }
-export function commonsUrl(value:string):string|null{
+function commonsUrl(value:string):string|null{
  try{const u=new URL(value);if(!['commons.wikimedia.org','commons.wikimedia.org.'].includes(u.hostname))return null;const name=decodeURIComponent(u.pathname.split('Special:FilePath/')[1]??'');if(!name)return null;return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(name)+(/\.svg$/i.test(name)?'':'?width=256');}catch{return null;}
 }
 export type ResolvedLogo={source:string|null;sourceUrl?:string;originalHash?:string;width?:number;height?:number;format?:string;wikidataItem?:string;website?:string;asset?:string;bytes?:Buffer;retryable?:boolean;failures?:string[]};

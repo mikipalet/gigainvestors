@@ -1,6 +1,6 @@
 import { T } from './config';
 import { QUALITY_TESTS, type Analysis } from './types';
-export const historyYears=(a:Analysis)=>a.historyCoverage?.years ?? a.tests.understandable?.metrics.historyYears ?? 0;
+const historyYears=(a:Analysis)=>a.historyCoverage?.years ?? a.tests.understandable?.metrics.historyYears ?? 0;
 // Crossing the seven-year floor must not remove a neutral dossier before its
 // core decade checks have enough observations (growth checks need 11 endpoints).
 export const shortHistory=(a:Analysis)=>historyYears(a)<T.minYears || historyYears(a)<=T.history.years && QUALITY_TESTS.some(k=>{

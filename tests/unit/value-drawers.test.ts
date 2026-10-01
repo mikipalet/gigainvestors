@@ -10,7 +10,7 @@ describe('drawer evidence',()=>{
   expect(retainedWindow(management)).toEqual({start:2016,end:2025,retained:-1.347e9,created:10.258856e9});
  });
  it('keeps missing fiscal observations as gaps rather than a passing mark',()=>{
-  const t={key:'moat',result:'pass',numeric:'pass',metrics:{roicMedian:.2},series:{roic:[[2023,.2],[2024,null],[2025,.1]],grossMargin:[[2023,.4],[2024,.4],[2025,.4]]},jev:[],reasons:[]} as TestOutcome;
+  const t={key:'moat',result:'pass',numeric:'pass',metrics:{roicMedian:.2},series:{totalRoic:[[2023,.2],[2024,null],[2025,.1]],roic:[[2023,.2],[2024,null],[2025,.1]],grossMargin:[[2023,.4],[2024,.4],[2025,.4]]},jev:[],reasons:[]} as TestOutcome;
   const d={company:{kind:'operating'},series:{},tests:{understandable:{series:{}}}} as unknown as Dossier;
   const table=yearTable(d,t);
   expect(table.rows.map(r=>r.year)).toEqual([2023,2024,2025]);

@@ -1,3 +1,4 @@
+import type {ValueProvenance} from './derive';
 import type { HistoricalPrice } from './time-travel';
 export type Id = string; // EODHD style "KO.US", "ASML.AS", "0700.HK"; Japan "8058.JP"
 export type Kind = "operating" | "bank" | "insurer" | "financial";
@@ -38,7 +39,7 @@ export interface Company {
 export interface Year {
   commonCapitalCancelled?: boolean;
   sourceWarnings?: string[]; // Rejected source observations; affected fields stay null.
-  provenance?: Record<string, import('./derive').ValueProvenance>;
+  provenance?: Record<string, ValueProvenance>;
   statementCoverage?: { income?: boolean; balance?: boolean; cashFlow?: boolean };
   navPerShare?: number | null; // Explicit reported investment NAV, never ordinary book equity.
   investmentNav?: number | null;

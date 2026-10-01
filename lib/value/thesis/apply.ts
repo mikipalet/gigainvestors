@@ -3,7 +3,7 @@ import { THESIS_VERSION } from './questions';
 import { guidedValuation, questionTrusted, thesisDecision } from './decision';
 import type { Analysis } from '../types';
 import type { ThesisResult, ThesisTrust } from './types';
-export const thesisTrust=():ThesisTrust=>(trustFile as unknown as {thesis?:ThesisTrust}).thesis??{};
+const thesisTrust=():ThesisTrust=>(trustFile as unknown as {thesis?:ThesisTrust}).thesis??{};
 export function applyThesis(analysis:Analysis,result:ThesisResult|null,trust:ThesisTrust=thesisTrust()):Analysis {
  if(!result||result.id!==analysis.id||result.version!==THESIS_VERSION)return analysis;
  const thesis=thesisDecision(result.answers,trust,result.market);

@@ -3,7 +3,7 @@ import { annualFiscalYear } from '../fiscal-period';
 import type { Year } from '../types';
 
 export const FIELD_TAGS: Record<string,string[]> = {
- revenue:['RevenueFromContractWithCustomerExcludingAssessedTax','Revenues','SalesRevenueNet','Revenue'],
+ revenue:['RevenueFromContractWithCustomerExcludingAssessedTax','Revenues','SalesRevenueNet','Revenue','RevenueFromContractWithCustomerIncludingAssessedTax'],
  costOfSales:['CostOfRevenue','CostOfGoodsAndServicesSold','CostOfSales'],grossProfit:['GrossProfit'],
  operatingIncome:['OperatingIncomeLoss','ProfitLossFromOperatingActivities'], operatingExpenses:['OperatingExpenses'],
  netIncome:['NetIncomeLoss','ProfitLossAttributableToOwnersOfParent','ProfitLoss'],preTaxIncome:['IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest','ProfitLossBeforeTax'],taxExpense:['IncomeTaxExpenseBenefit','IncomeTaxExpenseContinuingOperations'],
@@ -12,10 +12,10 @@ export const FIELD_TAGS: Record<string,string[]> = {
  nonRecurring:['RestructuringAndRelatedCostIncurredCost','RestructuringCharges','RestructuringExpense'],
  ocf:['NetCashProvidedByUsedInOperatingActivities','CashFlowsFromUsedInOperatingActivities'],
  capex:['PaymentsToAcquirePropertyPlantAndEquipment','PurchaseOfPropertyPlantAndEquipment'],
- dividendsPaid:['PaymentsOfDividends','PaymentsOfDividendsCommonStock','DividendsPaid'],buybacks:['PaymentsForRepurchaseOfCommonStock','PaymentsForRepurchaseOfEquity','PurchaseOfTreasuryShares'],issuance:['ProceedsFromStockOptionsExercised','ProceedsFromIssuanceOfCommonStock'],
+ dividendsPaid:['PaymentsOfDividends','PaymentsOfDividendsCommonStock','PaymentsOfOrdinaryDividends','DividendsPaid','DividendsPaidToEquityHoldersOfParentClassifiedAsFinancingActivities'],buybacks:['PaymentsForRepurchaseOfCommonStock','PaymentsForRepurchaseOfEquity','PurchaseOfTreasuryShares'],issuance:['ProceedsFromStockOptionsExercised','ProceedsFromIssuanceOfCommonStock'],
  acquisitions:['PaymentsToAcquireBusinessesNetOfCashAcquired','PurchaseOfSubsidiariesNetOfCashAcquired'],
  receivables:['AccountsReceivableNetCurrent','TradeAndOtherCurrentReceivables'],inventory:['InventoryNet','Inventories'],payables:['AccountsPayableCurrent','TradeAndOtherCurrentPayables'],
- cash:['CashAndCashEquivalentsAtCarryingValue','CashAndCashEquivalents'],shortTermInvestments:['ShortTermInvestments'],
+ cash:['CashAndCashEquivalentsAtCarryingValue','CashAndCashEquivalents'],shortTermInvestments:['ShortTermInvestments','OtherShortTermInvestments','MarketableSecuritiesCurrent'],
  minorityInterest:['MinorityInterest','NoncontrollingInterests'],liabilitiesAndStockholdersEquity:['LiabilitiesAndStockholdersEquity','EquityAndLiabilities'],
  equity:['StockholdersEquity','EquityAttributableToOwnersOfParent','Equity'],totalAssets:['Assets'],totalLiabilities:['Liabilities'],currentAssets:['AssetsCurrent','CurrentAssets'],currentLiabilities:['LiabilitiesCurrent','CurrentLiabilities'],
  totalDebt:['LongTermDebtAndCapitalLeaseObligationsIncludingCurrentMaturities','LongTermDebtCurrentAndNoncurrent','Borrowings'],shortTermDebt:['ShortTermBorrowings','ShortTermDebtCurrent','CurrentBorrowings'],
@@ -133,7 +133,7 @@ export function fillYears(primary:Year[],secondary:Year[]):Year[]{
    const prior=p.provenance?.[key], incoming=s.provenance?.[key];
    const shareRank=(v:NonNullable<Year['provenance']>[string]|undefined)=>v?.method==='reported'?3
     :v?.method==='estimate'&&!v.inputs?.some(input=>/Eps$/.test(input))?2:1;
-   const strongerShareCount=key==='dilutedShares'&&shareRank(incoming)>shareRank(prior);
+   const strongerShareCount=key==='dilutedShares'&&(shareRank(incoming)>shareRank(prior)||incoming?.method==='reported'&&/data\.sec\.gov/.test(incoming.source)&&!/^https:\/\//.test(prior?.source??''));
    // A weighted share count reported in the statement is stronger evidence
    // than NI / rounded EPS, including incorrectly scaled ESEF EPS tags.
    const fallback=prior?.method==='absent-in-complete-statement'||prior?.method==='estimate'

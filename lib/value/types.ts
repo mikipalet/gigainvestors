@@ -352,8 +352,8 @@ export interface SearchShard {
   aliases: Record<string, number[]>;
 }
 
-/** Code-only annual snapshot; r is a cumulative price-return ratio, not a percent. */
-export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric];
+/** Historical snapshot; r is realized cumulative price return, expected is the contemporary model IRR. */
+export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric, basis?: {annual:number;ttm:string;expected:number|null}];
 export interface HistorySummary {
   analysed: number;
   qualityPasses: number;
@@ -375,7 +375,9 @@ export interface HistorySummary {
   avgReturnAll: number | null;
 }
 export interface HistoryIndex {
-  western?: { perYear: Record<string, HistorySummary> };
+  quarters?: string[];
+  perQuarter?: Record<string, HistorySummary>;
+  western?: { perYear: Record<string, HistorySummary>; perQuarter?: Record<string, HistorySummary> };
   scope?: "universe" | "selection";
   years: number[];
   perYear: Record<string, HistorySummary>;

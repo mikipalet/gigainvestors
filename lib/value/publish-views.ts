@@ -22,9 +22,9 @@ export function publishViews(files: Record<string, unknown>): ViewManifest {
     const d=dossiers[row.id];
     return browserRow({...row,...(d?{quality:qualityMetric(d.company.kind,d.tests.moat.metrics)}:{}),...(d?.valuation ? {ownerReturnInputs:{valuation:d.valuation,marketCapUsd:d.company.marketCapUsd}} : {})}, prices[row.id]??null);
   });
-  const bounded=(rows:BrowserRow[])=>{
+  const bounded=(rows:BrowserRow[],limit=80_000)=>{
     const payload=packView(rows);
-    if(gzipSync(JSON.stringify(payload)).byteLength>80_000)throw new Error('Automatic browser view exceeds 80KB compressed');
+    if(gzipSync(JSON.stringify(payload)).byteLength>limit)throw new Error(`Automatic browser view exceeds ${limit} bytes compressed`);
     return save(payload);
   };
   const chunks=(rows:BrowserRow[]):string[]=>{
@@ -35,15 +35,21 @@ export function publishViews(files: Record<string, unknown>): ViewManifest {
     const mid=Math.ceil(rows.length/2);
     return [...chunks(rows.slice(0,mid)),...chunks(rows.slice(mid))];
   };
-  const manifest: ViewManifest = {current:bounded(rows.filter(r=>r.t==='PPPPP')),deferred:chunks(rows.filter(r=>r.t!=='PPPPP')),years:{},yearDeferred:{}};
+  const manifest: ViewManifest = {current:bounded(rows.filter(r=>r.t==='PPPPP')),deferred:chunks(rows.filter(r=>r.t!=='PPPPP')),years:{},yearDeferred:{},quarters:{},quarterDeferred:{}};
   const currentById=new Map(source.map(row=>[row.id,row]));
   const identities=((files['history/companies.json'] as IndexRow[] | undefined)??Object.entries(files).filter(([f])=>/^index\/[A-Z]{2}\.json$/.test(f)).flatMap(([,data])=>data as IndexRow[])).map(row=>({...row,lg:currentById.get(row.id)?.lg??row.lg}));
   for (const [file,data] of Object.entries(files)) {
-    const year=/^history\/(\d{4})\.json$/.exec(file)?.[1];
+    const year=/^history\/(\d{4}(?:Q[1-4])?)\.json$/.exec(file)?.[1];
     if (!year) continue;
     const rows=historyView(data as SnapshotRow[],identities);
-    manifest.years[year]=bounded(rows.filter(r=>r.t==='PPPPP'));
-    manifest.yearDeferred![year]=chunks(rows.filter(r=>r.t!=='PPPPP'));
+    if(year.includes('Q')){
+      manifest.quarters![year]=bounded(rows.filter(r=>r.t==='PPPPP'),60_000);
+      manifest.quarterDeferred![year]=chunks(rows.filter(r=>r.t!=='PPPPP'));
+      if(year.endsWith('Q4')){manifest.years[year.slice(0,4)]=manifest.quarters![year];manifest.yearDeferred![year.slice(0,4)]=manifest.quarterDeferred![year];}
+    }else{
+      manifest.years[year]=bounded(rows.filter(r=>r.t==='PPPPP'));
+      manifest.yearDeferred![year]=chunks(rows.filter(r=>r.t!=='PPPPP'));
+    }
   }
   (files['meta.json'] as StoreMeta).views=manifest;
   return manifest;

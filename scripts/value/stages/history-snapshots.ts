@@ -1,3 +1,9 @@
+import { alignHistoryShares } from '../../../lib/value/history-split-basis';
+import { availableOn,eodInterims,secInterims,secAnnualFilings } from '../../../lib/value/quarterly-inputs';
+import { snapshotForQuarter,QUARTER_ASSUMPTIONS } from '../../../lib/value/quarterly-snapshots';
+import type { CompanyFacts } from '../../../lib/value/completeness/second-sources';
+import type { JudgementRecord } from '../../../lib/value/judgement/types';
+import { statfsSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
 import { existsSync,readdirSync } from 'node:fs';
 import { gzipSync } from 'node:zlib';
@@ -9,8 +15,8 @@ import { createUsdRate } from '../../../lib/value/fx';
 import { annualReportDocuments,type DocumentDay } from '../../../lib/value/japan/edinet';
 import { readPrices } from '../../../lib/value/price-files';
 import { readPriceHistory } from '../../../lib/value/price-history';
-import { HISTORY_ASSUMPTIONS,HISTORY_CAVEATS,snapshotForYear,summarizeSnapshots } from '../../../lib/value/snapshots';
-import { availableHistoryYears } from '../../../lib/value/time-travel';
+import { HISTORY_ASSUMPTIONS,HISTORY_CAVEATS,summarizeSnapshots } from '../../../lib/value/snapshots';
+import { calendarQuarters,quarterEnd } from '../../../lib/value/time-travel';
 import type { Fundamentals,HistoryIndex,IndexRow,PriceMap,ReportMeta,SnapshotRow } from '../../../lib/value/types';
 import { bestWesternListing } from "../../../lib/value/western";
 import { westernHistory } from "../../../lib/value/western-history";
@@ -49,18 +55,18 @@ export function latestHistoryFiles(companies = loadCompanies({})): Record<string
     if (!index || index.scope === 'selection') continue; // index is the commit marker, written after every year.
     // Publication supplies only current index members; upstream history remains full-corpus.
     const idsInUniverse = new Set(companies.map(c=>c.id));
-    const filteredIndex: HistoryIndex = {...index, perYear:{}};
+    const filteredIndex: HistoryIndex = {...index, perYear:{},perQuarter:index.quarters?{}:undefined};
     const files: Record<string,unknown> = {'history/index.json':filteredIndex};
-    for (const year of index.years) {
-      if (!Number.isInteger(year) || year < 1900 || year > 9999) throw new Error('Invalid history year');
+    for (const year of index.quarters??index.years) {
+      if (!/^\d{4}(Q[1-4])?$/.test(String(year))) throw new Error('Invalid history year');
       const rows = readCorpusJson<SnapshotRow[]>(`history-v7/${run}/${year}.json`);
       if (!rows) throw new Error(`Incomplete history run ${run}`);
       const members = rows.filter(row=>idsInUniverse.has(row[0]));
       files[`history/${year}.json`] = members;
-      filteredIndex.perYear[year] = summarizeSnapshots(members);
+      if(String(year).includes('Q')){filteredIndex.perQuarter![year]=summarizeSnapshots(members);if(String(year).endsWith('Q4')){filteredIndex.perYear[String(year).slice(0,4)]=summarizeSnapshots(members);files[`history/${String(year).slice(0,4)}.json`]=members;}}else filteredIndex.perYear[year] = summarizeSnapshots(members);
     }
-    files["history/index.json"] = westernHistory(filteredIndex, Object.fromEntries(index.years.map(year => [year, files[`history/${year}.json`] as SnapshotRow[]])), new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id)));
-    const ids=new Set(index.years.flatMap(year=>(files[`history/${year}.json`] as SnapshotRow[]).map(row=>row[0])));
+    files["history/index.json"] = westernHistory(filteredIndex, Object.fromEntries((index.quarters??index.years).map(year => [year, files[`history/${year}.json`] as SnapshotRow[]])), new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id)));
+    const ids=new Set((index.quarters??index.years).flatMap(year=>(files[`history/${year}.json`] as SnapshotRow[]).map(row=>row[0])));
     files['history/companies.json']=companies.filter(c=>ids.has(c.id)).map(c=>({id:c.id,n:c.nameEn??c.name,nameEn:c.nameEn,nameLocal:c.nameLocal,c:c.country,s:c.sector,k:c.kind,mc:c.marketCapUsd,cur:c.currency,v:null,t:'UUUUU',g:[],h:0,st:'i',w:bestWesternListing(c),lg:c.logo??undefined,exchange:c.exchange} satisfies IndexRow));
     return files;
   }
@@ -68,8 +74,10 @@ export function latestHistoryFiles(companies = loadCompanies({})): Record<string
 }
 
 /** Read-only inputs. Every run gets a NEW directory; index.json marks completion. */
-export default async function historySnapshots(options: { only?:string[]; limit?:number; memoryOnly?:boolean } = {}) {
-  const companies = loadCompanies(options), asOf = new Date().toISOString().slice(0,10);
+export default async function historySnapshots(options: { only?:string[]; limit?:number; memoryOnly?:boolean; asOf?:string } = {}) {
+  const companies = loadCompanies(options).filter(c=>options.only||options.limit||(c.indexes===undefined||c.indexes.length)), asOf = options.asOf??new Date().toISOString().slice(0,10);
+  const quarters=calendarQuarters(asOf);
+  const space=statfsSync('/');if(space.bavail*space.bsize<5e9)throw Error('Disk guard: less than 5GB free');
   const root = `history-v7/${new Date().toISOString().replace(/[^\dT]/g,'')}-${randomUUID().slice(0,8)}`;
   const bonds = readCorpusJson<Record<string,{yield:number|null}>>('bonds.json') ?? {};
   const rates: Record<string,number> = {};
@@ -83,50 +91,66 @@ export default async function historySnapshots(options: { only?:string[]; limit?
   for (const prices of [readPrices(corpusPath('publish-repo/prices')),readPrices(corpusPath('prices'))]) for (const [id,quote] of Object.entries(prices)) {
     if (quote[2] !== 'seed' && quote[0]>0 && Number.isFinite(quote[0]) && quote[1] <= asOf && (!quotes[id] || quote[1] > quotes[id][1])) quotes[id] = quote;
   }
-  const years: Record<number,SnapshotRow[]> = {};
+  const frames: Record<string,SnapshotRow[]> = Object.fromEntries(quarters.map(q=>[q,[]]));
+  const audit:Record<string,unknown>={};
   let processed=0, fundamentalsCount=0;
   const coverage = { filingDates:0, fallbackDates:0, withReturn:0, withValue:0, failed:[] as string[] };
   for (const company of companies) {
     try {
-      const f = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
+      let f = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
       if (!f?.years?.length) continue;
       fundamentalsCount++;
       const prices = readCorpusJson<import('../../../lib/value/types').PriceHistory>(`prices-history-long/${company.id}.json`) ?? readPriceHistory(company.id) ?? [];
+      f=alignHistoryShares(f,prices);
       const raw = readCorpusJson<RawFilings>(`raw/eodhd/${company.id}.json`);
       const filedByPeriod = filingDates(raw,readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`),company.edinetCode ? filings[company.edinetCode] : undefined);
       const latestMonth = [...prices].filter(([m])=>m<asOf.slice(0,7)).sort(([a],[b])=>a.localeCompare(b)).at(-1);
       const latestPrice: [number,string] | null = quotes[company.id] ? [quotes[company.id][0],quotes[company.id][1]]
         : latestMonth ? [latestMonth[1],new Date(Date.UTC(Number(latestMonth[0].slice(0,4)),Number(latestMonth[0].slice(5,7)),0)).toISOString().slice(0,10)] : null;
-      for (const fy of [...new Set(f.years.map(y=>y.fy))].filter(fy=>fy>=1900 && fy<=Number(asOf.slice(0,4))).sort()) {
-        const target = f.years.find(y=>y.fy===fy)!;
-        const reporting = target.currency ?? f.currency;
-        const from=usdRate(reporting), to=usdRate(company.currency);
+      const interims=eodInterims(raw);
+      const sec=readCorpusJson<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
+      if(sec){const dates=secAnnualFilings(sec);for(const year of f.years){
+        if(filedByPeriod[year.end]&&filedByPeriod[year.end]>year.end)continue;
+        const filed=Object.entries(dates).filter(([end])=>end.slice(0,7)===year.end.slice(0,7)).map(([,date])=>date).sort()[0];
+        if(filed)filedByPeriod[year.end]=filed;
+      }}
+      const judgement=readCorpusJson<JudgementRecord>(`judgement/${company.id}.json`);
+      for (const quarter of quarters) {
+        const cutoff=quarterEnd(quarter);
+        const target=f.years.filter(y=>availableOn(y.end,filedByPeriod[y.end])<cutoff).sort((a,b)=>a.end.localeCompare(b.end)).at(-1);
+        if(!target)continue;
+        const reporting=target.currency??f.currency,from=usdRate(reporting),to=usdRate(company.currency);
         const fxRate=sameCurrency(reporting,company.currency)?1:from!==null&&to!==null?from/to:null;
-        const row = snapshotForYear({company,fundamentals:f,fy,prices,latestPrice,filedByPeriod,bondYield:bonds[company.country]?.yield??null,fxRate,asOf});
-        if (!row) continue;
-        (years[fy]??=[]).push(row);
+        const secRows=sec?secInterims(sec,reporting,cutoff):[];
+        const filedInterims=[...new Map([...interims,...secRows].map(p=>[p.end.slice(0,7),p])).values()];
+        const result=snapshotForQuarter({company,fundamentals:f,quarter,prices,latestPrice,filedByPeriod,interims:filedInterims,judgement,bondYield:bonds[company.country]?.yield??null,fxRate,asOf});
+        if (!result) continue;
+        const {row}=result;frames[quarter].push(row);
         if (filedByPeriod[target.end]) coverage.filingDates++; else coverage.fallbackDates++;
         if (row[2]!==null) coverage.withValue++;
         if (row[4]!==null) coverage.withReturn++;
+        if(['KO.US','AAPL.US','GOOGL.US','WKL.AS','7203.JP'].includes(company.id)&&['2008Q4','2016Q1','2020Q1','2022Q4'].includes(quarter))audit[`${company.id}/${quarter}`]={...result,ttm:result.ttm?{end:result.ttm.end,netIncome:result.ttm.netIncome,da:result.ttm.da,capex:result.ttm.capex,sbc:result.ttm.sbc,dilutedShares:result.ttm.dilutedShares}:null};
       }
     } catch (error) {
       coverage.failed.push(company.id);
       console.warn(`history: skipped ${company.id}: ${error instanceof Error ? error.message : 'unreadable input'}`);
-    } finally { if (++processed % 2000 === 0) console.log(`history: ${processed}/${companies.length}`); }
+    } finally { if (++processed % 100 === 0) console.log(`history: ${processed}/${companies.length}`); }
   }
-  const index: HistoryIndex = {scope:options.only || options.limit ? 'selection' : 'universe',years:availableHistoryYears(Object.fromEntries(Object.entries(years).map(([y,rows])=>[y,rows.length])), options.only || options.limit ? 1 : 300),perYear:{},asOf,assumptions:HISTORY_ASSUMPTIONS,caveats:HISTORY_CAVEATS};
-  const sizes: Record<number,{bytes:number;gzipBytes:number;returns:number}> = {};
-  for (const year of index.years) {
-    const rows=years[year].sort((a,b)=>a[0].localeCompare(b[0]));
-    index.perYear[year]=summarizeSnapshots(rows);
+  const index: HistoryIndex = {scope:options.only || options.limit ? 'selection' : 'universe',quarters,years:quarters.filter(q=>q.endsWith('Q4')).map(q=>Number(q.slice(0,4))),perYear:{},perQuarter:{},asOf,assumptions:[...QUARTER_ASSUMPTIONS,...HISTORY_ASSUMPTIONS.slice(-2)],caveats:HISTORY_CAVEATS};
+  const sizes: Record<string,{bytes:number;gzipBytes:number;returns:number}> = {};
+  const years:Record<number,SnapshotRow[]>={};
+  for (const quarter of quarters) {
+    const rows=frames[quarter].sort((a,b)=>a[0].localeCompare(b[0]));
+    index.perQuarter![quarter]=summarizeSnapshots(rows);
+    if(quarter.endsWith('Q4')){const year=Number(quarter.slice(0,4));years[year]=rows;index.perYear[year]=index.perQuarter![quarter];}
     const text=JSON.stringify(rows)+'\n';
-    sizes[year]={bytes:Buffer.byteLength(text),gzipBytes:gzipSync(text).byteLength,returns:rows.filter(r=>r[4]!==null).length};
-    if(!options.memoryOnly)writeNewJson(`${root}/${year}.json`,rows);
+    sizes[quarter]={bytes:Buffer.byteLength(text),gzipBytes:gzipSync(text).byteLength,returns:rows.filter(r=>r[4]!==null).length};
+    if(!options.memoryOnly)writeNewJson(`${root}/${quarter}.json`,rows);
   }
-  const report={root,companies:companies.length,fundamentals:fundamentalsCount,coverage,sizes,candidateCounts:Object.fromEntries(Object.entries(years).map(([y,rows])=>[y,rows.length]))};
+  const report={root,companies:companies.length,fundamentals:fundamentalsCount,coverage,sizes,audit,candidateCounts:Object.fromEntries(Object.entries(frames).map(([q,rows])=>[q,rows.length]))};
   if(!options.memoryOnly)writeNewJson(`${root}/report.json`,report);
-  index.western = westernHistory(index, years, new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id))).western;
+  index.western = westernHistory(index, frames, new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id))).western;
   if(!options.memoryOnly)writeNewJson(`${root}/index.json`,index);
-  console.log(`history: ${JSON.stringify({ ...report,perYear:index.perYear })}`);
-  return {index,report,years};
+  console.log(`history: ${JSON.stringify({root,companies:companies.length,quarters:quarters.length,coverage})}`);
+  return {index,report,years,frames};
 }

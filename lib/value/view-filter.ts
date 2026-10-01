@@ -6,7 +6,8 @@ import { QUALITY_TESTS } from './types';
 export function matchesView(row: BrowserRow, filter: Record<string,string>): boolean {
   if (filter.country ? row.c !== filter.country : row.st === 'i') return false;
   if (!matchesMarket(row,filter.markets??'')) return false;
-  if (filter.q && !`${row.nameEn??row.n} ${row.nameLocal??''} ${row.id}`.toLowerCase().includes(filter.q.toLowerCase())) return false;
+  const search=filter.search??(!/^\d{4}Q[1-4]$/.test(filter.q??'')?filter.q:'');
+  if (search && !`${row.nameEn??row.n} ${row.nameLocal??''} ${row.id}`.toLowerCase().includes(search.toLowerCase())) return false;
   const gate = filter.gate !== undefined && /^[0-6]$/.test(filter.gate) ? Number(filter.gate) : null;
   if (gate !== null) return row.t.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || row.b === true);
   if (filter.sector && row.s !== filter.sector) return false;

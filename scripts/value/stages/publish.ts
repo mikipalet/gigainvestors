@@ -145,7 +145,7 @@ export function loadHolders(store: string): { holdersByTicker: Record<string, st
 }
 
 export function writeOutput({ repo, files }: { repo: string; files: Record<string, unknown> }): void {
-  const allowed = /^(?:logos\/[a-f0-9]{64}|views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|forward\/(?:index|[0-9]{4}-[0-9]{2}-[0-9]{2})|aliases|meta|top)\.json$/;
+  const allowed = /^(?:logos\/[a-f0-9]{64}|views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4}(?:Q[1-4])?)|forward\/(?:index|[0-9]{4}-[0-9]{2}-[0-9]{2})|aliases|meta|top)\.json$/;
   for (const file of Object.keys(files)) if (!allowed.test(file)) throw new Error("Invalid publish output path");
   // Preflight the entire batch before replacing any published output.
   const unchanged = new Set<string>();
@@ -259,6 +259,12 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   if(historyIndex){
     const westernIds=new Set(universe.filter(c=>bestWesternListing(c)).map(c=>c.id));
     historyIndex.perYear={};historyIndex.western={perYear:{}};
+    historyIndex.perQuarter={};historyIndex.western.perQuarter={};
+    for(const q of historyIndex.quarters??[]){
+      const snapshots=history[`history/${q}.json`] as import('../../../lib/value/types').SnapshotRow[];
+      historyIndex.perQuarter[q]=summarizeSnapshots(snapshots);
+      historyIndex.western.perQuarter[q]=summarizeSnapshots(snapshots.filter(r=>westernIds.has(r[0])));
+    }
     for(const year of historyIndex.years){
       const snapshots=history[`history/${year}.json`] as import('../../../lib/value/types').SnapshotRow[];
       historyIndex.perYear[year]=summarizeSnapshots(snapshots);

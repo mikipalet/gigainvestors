@@ -22,7 +22,7 @@ it('runs both stages without changing any preexisting corpus bytes and publishes
   appendJsonl('universe.jsonl',company);
   writeCorpusJson('raw/eodhd/TEST.US.json',{General:{Name:'Test English Co Ltd',Description:'Test makes widgets. Another sentence.',WebURL:'https://test.example.com'},Financials:{Income_Statement:{yearly:{'2016-12-31':{filing_date:'2017-02-20'}}}}});
   writeCorpusJson('fundamentals/TEST.US.json',{id:company.id,currency:'USD',years:makeYears({from:2006,n:11}),integrity:{ok:true,reasons:[]},fetchedAt:'2026-09-29'});
-  writeCorpusJson('prices-history/TEST.US.json',[['2017-02',50],['2026-08',100]]);
+  writeCorpusJson('prices-history/TEST.US.json',[['2017-03',50],['2017-12',50],['2026-08',100]]);
   writeCorpusJson('prices/US.json',{'TEST.US':[150,'2026-09-28']});
   writeCorpusJson('bonds.json',{US:{yield:.04}});
   for(let i=1;i<300;i++) {
@@ -34,13 +34,14 @@ it('runs both stages without changing any preexisting corpus bytes and publishes
   expect((await enrich()).namesFixed).toBe(300);
   expect((await enrich()).namesFixed).toBe(300); // cached runs report the original baseline
   const first=await history();
-  expect(first.index.years).toEqual([2016]);
+  expect(first.index.quarters?.[0]).toBe('2005Q1');
+  expect(first.index.quarters).toContain('2017Q1');
   expect(first.index.caveats).toEqual([
     'numbers-only checklist (no report reading)', 'buy requires both the margin of safety and expected return at least the required return', 'restated financials',
     'survivorship: delisted companies missing', 'price returns without dividends',
   ]);
-  expect(first.index.perYear[2016]).toMatchObject({medianReturnAll:2, returnCountAll:300, hitRateAll:0});
-  const rows=latestHistoryFiles()['history/2016.json'] as SnapshotRow[];
+  expect(first.index.perQuarter!['2017Q1']).toMatchObject({medianReturnAll:2, returnCountAll:300, hitRateAll:0});
+  const rows=latestHistoryFiles()['history/2017Q1.json'] as SnapshotRow[];
   expect(rows[0][4]).toBe(2);
   const patched=loadCompanies({})[0];
   expect(patched).toMatchObject({name:'Test English Co Ltd',nameEn:'Test English Co Ltd',logo:null,about:'Test makes widgets.'});
@@ -49,7 +50,7 @@ it('runs both stages without changing any preexisting corpus bytes and publishes
   for (const [file,bytes] of Object.entries(before)) expect(after[file],file).toBe(bytes);
   expect(Object.keys(after).filter(f=>!(f in before)).every(f=>/^(enrichment-v7|history-v7)\//.test(f))).toBe(true);
   const repo=path.join(dir,'output'); writeOutput({repo,files:latestHistoryFiles()});
-  expect(JSON.parse(readFileSync(path.join(repo,'history/2016.json'),'utf8'))).toEqual(rows);
+  expect(JSON.parse(readFileSync(path.join(repo,'history/2017Q1.json'),'utf8'))).toEqual(rows);
   expect(JSON.parse(readFileSync(path.join(repo,'history/index.json'),'utf8'))).toEqual(second.index);
   expect(()=>writeOutput({repo,files:{'history/../meta.json':{}}})).toThrow('Invalid publish output path');
 },60000);

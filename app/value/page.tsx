@@ -8,7 +8,7 @@ export const revalidate = 86400;
 export async function renderValuePage(year?: string) {
   const [meta, history] = await Promise.all([getMeta(),readStore<HistoryIndex>('history/index.json')]);
   let rows: BrowserRow[];
-  const file=year ? meta?.views?.years[year] : meta?.views?.current;
+  const file=year ? meta?.views?.quarters?.[year]??meta?.views?.quarters?.[`${year}Q4`]??meta?.views?.years[year]??(year.endsWith('Q4')?meta?.views?.years[year.slice(0,4)]:undefined) : meta?.views?.current;
   if (file) { const data=await readStore<BrowserPayload>(file); rows=data?unpackView(data):[]; }
   else {
     const source=await getDefaultIndex().then(enrichRows);
@@ -19,6 +19,11 @@ export async function renderValuePage(year?: string) {
   const initialRows=meta?.views&&!year ? rows.filter(row=>row.t==='PPPPP') : rows;
   const todayPayload=year&&meta?.views?.current?await readStore<BrowserPayload>(meta.views.current):null;
   const todayRows=todayPayload?unpackView(todayPayload).filter(row=>row.t==='PPPPP'):undefined;
-  return <ValueIndex todayRows={todayRows} rows={initialRows} initialFilter={year?{year}:{}} tags={meta?.tags??{}} meta={meta} initialHistory={history} />;
+  return <ValueIndex todayRows={todayRows} rows={initialRows} initialFilter={year?year.includes('Q')?{q:year}:{year}:{}} tags={meta?.tags??{}} meta={meta} initialHistory={history} />;
 }
-export default async function ValuePage() { return renderValuePage(); }
+export default async function ValuePage({searchParams}:{searchParams:Promise<Record<string,string>>}) {
+  const query=await searchParams;
+  const key=/^\d{4}Q[1-4]$/.test(query.q??'')?query.q:/^\d{4}$/.test(query.year??'')?`${query.year}Q4`:undefined;
+  const meta=key?await getMeta():null;
+  return renderValuePage(key&&(meta?.views?.quarters?.[key]||key.endsWith('Q4')&&meta?.views?.years[key.slice(0,4)])?key:undefined);
+}

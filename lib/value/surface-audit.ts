@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {formatMetric,isCapitalReturn} from './metric-labels';
 import {sharePrice} from './listing-details';
-import {primaryTileMetric} from './tile-metric';
+import {primaryTileMetric,tileSentence} from './tile-metric';
 import {yearTable,retainedWindow} from './drawer-data';
 import {seriesSummary} from './density';
 import {comparableValuation} from './site-valuation';
@@ -22,7 +22,7 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
  const where=`${d.id} ${t.key}`;
  const reading=ruleReading(t,d.company.kind);
  same(reading.derived,t.result,`${where} verdict differs from applied rules`);
- contains(tile,reading.sentence,`${where} tile rule sentence`);
+ contains(tile,tileSentence(t,m,d.company.kind),`${where} tile rule sentence`);
  contains(drawer,reading.sentence,`${where} drawer rule sentence`);
  const window=retainedWindow(t);
  same(tile.signals??[],drawer.signals??[],`${where} filing likelihood chart mismatch`);
@@ -31,7 +31,7 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
   same(tile.charts,drawer.charts,`${where} chart metric/years/values/units mismatch`);
   if(m.series.some(p=>p[1]!=null))same(tile.charts[0]?.series,m.series,`${where} published series mismatch`);
  }
- const summary=seriesSummary(m.series,m.chartBetter??(t.key==='understandable'?'higher':m.better));
+ const summary=seriesSummary(m.series,m.chartBetter??(t.key==='understandable'?'higher':m.better),Infinity);
  if(summary&&!window){
   const format=m.chartFormat==='index'?'count':m.chartFormat==='ratio'?'x':m.chartFormat??(t.key==='understandable'&&m.id==='opMarginCv'?'pct':m.format);
   const fmt=(n:number)=>formatMetric({value:n,format,currency,returnRatio:isCapitalReturn(m.chart)});

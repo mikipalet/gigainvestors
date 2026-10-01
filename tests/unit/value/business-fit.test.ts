@@ -5,7 +5,7 @@ it('shows the latest upkeep explanation once instead of yearly adjustments',()=>
  const test={key:'economics',result:'pass',judgement:{reason:'Long explanation',result:'pass',override:true}} as TestOutcome;
  const evidence={quote:'Most spending expands AI infrastructure.',url:'https://example.com',filed:'2026',section:'mdna'};
  const adjustments=[2023,2025,2024].map(fy=>({test:'economics' as const,field:'maintenanceCapex',fy,before:90e9,after:21e9,reason:`FY${fy} upkeep ≈ depreciation USD 21bn.`,evidence}));
- expect(compactJudgement(test,adjustments,'USD')).toBe('Spending builds AI capacity; upkeep ≈ depreciation (USD 21bn, 2025).');
+ expect(compactJudgement(test,adjustments,'USD')).toBe('Judgement: passes — spending builds AI capacity, upkeep ≈ depreciation.');
 });
 import {validShortText,selectShortText} from '../../../lib/value/judgement/short-text';
 it('rejects long prose, multiple sentences and numbers absent from the passage',()=>{

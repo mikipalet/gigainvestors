@@ -1,5 +1,4 @@
-import {ruleReading} from './rule-reading';
-import { formatMetric } from './metric-labels';
+import {plainRuleSentence} from './plain-rule-sentence';
 import { priceFraming } from './presentation';
 import { T } from './config';
 import type { Kind, Series, TestOutcome } from './types';
@@ -12,11 +11,11 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
  if ('positiveIncomeYears' in m) return {...metric('positiveIncomeYears','profitable years','count',m.requiredPositiveYears??9,'higher',test.series.netIncome??[],'Net income'),chartFormat:'money',chartThreshold:0};
  if ('bookReturnCagr' in m) return metric('bookReturnCagr','book + dividends CAGR','pct',.07,'higher',test.series.bookPlusDividendReturn??[],'Annual book + dividend return');
  if ('retainedBookRatio' in m) {
-  const shares=(test.series.shares??[]).slice(-10),base=shares.find(([,value])=>value!==null&&value>0)?.[1];
+  const shares=m.crisisRecapitalizations?[]:(test.series.shares??[]),base=shares.find(([,value])=>value!==null&&value>0)?.[1];
   const indexed:Series=shares.map(([year,value])=>[year,base&&value!==null?value/base*100:null]);
-  return {...metric('shareCagrExCrisis','ordinary share growth','pct',.02,'lower',indexed,'Shares (first year = 100)'),chartFormat:'index',chartThreshold:null};
+  return {...metric('shareCagrExCrisis','ordinary share growth','pct',.02,'lower',indexed,'Shares (first year = 100)'),series:indexed,chartFormat:'index',chartThreshold:null};
  }
- if ('financialRedFlags' in m) return {...metric('financialRedFlags','accounting warnings','count',0,'lower',netIncome,'Earnings context'),chartFormat:'money',chartThreshold:null,chartBetter:'higher'};
+ if ('financialRedFlags' in m) return metric('financialRedFlags','accounting warnings','count',0,'lower');
  if ('combinedReportedYears' in m) {
   if (m.combinedProfitableYears!=null) return {...metric('combinedProfitableYears','profitable underwriting years','count',7,'higher',test.series.combinedRatio??[],'Combined ratio'),chartFormat:'pct',chartThreshold:1,chartBetter:'lower'};
   return metric('roeMedian',m.tangibleReturn?'ROTE · ten-year median':'ROE · ten-year median','pct',m.returnThreshold??.12,'higher',test.series.roe??[],m.tangibleReturn?'Return on tangible common equity':'Return on common equity');
@@ -25,15 +24,17 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
   case 'understandable': {
    const margins=test.series.operatingMargin??[];
    const available=margins.filter(p=>p[1]!==null&&Number.isFinite(p[1]));
-   if(m.opMarginCv==null)return {...metric('lossYears','loss years','count',T.understandable.maxLossYears,'lower',test.series.netIncome??[],'Net income'),chartFormat:'money'};
+   if(m.opMarginCv==null)return {...metric('lossYears','loss years','count',T.understandable.maxLossYears,'lower',test.series.netIncome??[],'Net income'),chartFormat:'money',chartThreshold:0,chartBetter:'higher'};
    return metric('opMarginCv','margin variation','x',T.understandable.maxOpMarginCv,'lower',available,'Operating margin');
   }
-  case 'moat':return metric(financial?'roeMedian':'roicMedian',financial?'ROE · median':'ROIC excluding acquisitions','pct',financial?T.moat.roeMedianFin:T.moat.roicMedian,'higher',test.series[financial?'roe':'roic']??[],financial?'ROE':'ROIC excluding acquisitions');
+  case 'moat':
+   if(!financial&&m.roicMedian==null&&m.returnFloorMedian!=null)return metric('returnFloorMedian','Conservative return floor','pct',T.moat.roicMedian,'higher');
+   return metric(financial?'roeMedian':'roicMedian',financial?'ROE · median':'ROIC excluding acquisitions','pct',financial?T.moat.roeMedianFin:T.moat.roicMedian,'higher',test.series[financial?'roe':'roic']??[],financial?'ROE':'ROIC excluding acquisitions');
   case 'economics': {
    const income=new Map(netIncome),end=Math.max(...netIncome.map(p=>p[0]));
-   const series:Series=(test.series.ownerEarnings??[]).filter(([fy])=>fy>end-10&&income.has(fy)).map(([fy,oe])=>[fy,oe===null||!income.get(fy)?null:oe/income.get(fy)!]);
-   if(m.oeToNi==null && m.ownerEarningsTotal!=null)return {...metric('ownerEarningsTotal','Owner earnings, five-year total','money',0,'higher',test.series.ownerEarnings??[],'Owner earnings'),chartFormat:'money'};
-   return metric('oeToNi','owner earnings / net income','x',T.economics.oeToNi,'higher',series,'Annual OE / net income');
+   const series:Series=(test.series.ownerEarnings??[]).filter(([fy])=>fy>end-5&&income.has(fy)).map(([fy,oe])=>[fy,oe===null||!income.get(fy)?null:oe/income.get(fy)!]);
+   if(m.oeToNi==null && m.ownerEarningsTotal!=null)return {...metric('ownerEarningsTotal','Owner earnings, five-year total','money',0,'higher',m.consolidatedCashConversion?[]:(test.series.ownerEarnings??[]).slice(-5),'Owner earnings · five years'),chartFormat:'money'};
+   return metric('oeToNi',m.consolidatedCashConversion?'consolidated cash / profit':'owner cash / profit','x',T.economics.oeToNi,'higher',m.consolidatedCashConversion?[]:series,'Annual owner cash / profit · five years');
   }
   case 'management':
    if(m.retainedEarnings!=null&&m.marketCapGain!=null&&m.retainedEarnings<=0)return metric('marketCapGain','Market value gained','money',m.retainedEarnings,'higher');
@@ -60,15 +61,10 @@ export function tileReason(test:TestOutcome):string {
 export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):string {
  if(test.insufficientHistory!==undefined)return 'Not enough history yet';
  if(test.key==='price')return priceFraming(metric.value,1-metric.threshold).headline;
- return ruleReading(test,kind).sentence;
+ return plainRuleSentence(test,kind);
 }
 
 /** One primary comparison for the dossier tile, drawer, and annual bar. */
 export function primaryTileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileMetric {
- if(test.key!=='moat'||kind!=='operating'){
-  const selected=tileMetric(test,kind,netIncome);
-  return test.key==='management'&&!selected.series.length&&selected.id!=='retainedDollar'
-   ?{...selected,series:(test.series.shares??[]).slice(-10),chart:'Diluted shares',chartFormat:'index',chartThreshold:null,chartBetter:'lower'}:selected;
- }
- return {id:'totalRoicMedian',value:test.metrics.totalRoicMedian??null,label:'ROIC including acquisitions',format:'pct',threshold:T.valuation.compounderMinTotalReturn,better:'higher',series:(test.series.totalRoic??[]).slice(-10),chart:'ROIC including acquisitions'};
+ return tileMetric(test,kind,netIncome);
 }

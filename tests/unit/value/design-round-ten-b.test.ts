@@ -44,6 +44,6 @@ it('plots actual operating margins over available fiscal years, including losses
 });
 it('caps volatile margin copy and explains the loss years',()=>{
  const metric=tileMetric(volatileMargins,'operating');
- expect(tileSentence(volatileMargins,metric,'operating')).toContain('Margin variation 9.36 > 0.35');
+ expect(tileSentence(volatileMargins,metric,'operating')).toContain('Margins varied 936% around their average (limit 35%)');
  expect(tileReason(volatileMargins)).toBe('Margins swing wildly, including losses.');
 });

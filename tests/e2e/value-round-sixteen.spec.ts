@@ -10,11 +10,11 @@ for(const [width,height] of [[1728,970],[2056,1180],[390,844]])for(const route o
  if(route!=='/'){
   await expect(page.locator('.price-card .exact-prices,.price-card .owner-return')).toHaveCount(0);
   const management=page.getByTestId('tile-management');
-  if(await management.count())expect(await management.locator('.tile-sentence').innerText()).toMatch(/(?:Share growth|Buybacks|Acquisitions|Value per|Value gained|Per-share|Ordinary shares|Book gain|Judgement override|Filing rule|Common shareholder)/);
+  if(await management.count())expect(await management.locator('.tile-sentence').innerText()).not.toMatch(/[≤≥;]|applied checks|Judgement override/);
  }
 });
 
-test('capital return drawer uses including-acquisitions summaries and keeps supporting observations visible',async({page})=>{
+test('capital return drawer uses excluding-acquisitions summaries and keeps supporting observations visible',async({page})=>{
  await page.goto('/wkl.as');const tileValues=await page.getByTestId('tile-moat').locator('.tile-support dd').allTextContents();await page.getByRole('button',{name:'Open Lasting advantage evidence'}).click();
  expect((await page.locator('.drawer-numbers dd').allTextContents()).slice(0,3)).toEqual(tileValues);
  await expect(page.getByRole('tab')).toHaveCount(0);

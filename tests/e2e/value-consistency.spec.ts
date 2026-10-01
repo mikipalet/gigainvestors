@@ -23,11 +23,25 @@ test('Lululemon tile/drawer share ROIC, years, units and visible key numbers',as
  await page.keyboard.press('Escape');await expect(page.locator('[data-financial=netCash] [data-series]')).toBeVisible();
 });
 
+test('Alphabet tiles use the rule basis and show only the actual judgement override',async({page})=>{
+ await page.goto('/googl.us');
+ const moat=page.getByTestId('tile-moat');
+ await expect(moat.locator('[data-series]')).toHaveAttribute('data-series-label','ROIC excluding acquisitions');
+ expect(await moat.locator('.tile-support dd').allTextContents()).toEqual(['42.4%','31.2%','33.4%']);
+ await expect(page.locator('.tile-assessment')).toHaveCount(1);
+ await expect(page.getByTestId('tile-economics').locator('.tile-assessment')).toContainText('Judgement: passes —');
+ for(const sentence of await page.locator('.tile-sentence').allTextContents())expect(sentence).not.toMatch(/[≤≥;]|applied checks|Judgement override/);
+ await moat.locator('.tile-open').click();
+ await expect(page.locator('.how-decided')).toContainText('ROIC ex acquisitions median 42.4% ≥ 15.0%');
+ await expect(page.locator('.drawer-years')).toContainText('ROIC incl. acq.');
+ await expect(page.locator('.drawer-table-note')).toContainText('15% for the compounder tier');
+});
+
 test('return, price verdict and quality-rule text agree on the reviewed pages',async({page})=>{
  for(const id of ['googl.us','ko.us','aapl.us','lulu.us','wkl.as','acn.us']){
   await page.goto('/'+id);await expect(page.locator('.reference-metrics')).toContainText("a year at today's price (needs 10.0%)");
   const math=page.locator('.valuation-math');await expect(math).toContainText('Cash-flow inputs');await expect(math).not.toContainText('cash +');
-  const sentence=await page.getByTestId('tile-moat').locator('.tile-sentence').innerText();expect(sentence).toContain('ROIC ex acquisitions median');expect(sentence).toContain('one bad year allowed');
+  const sentence=await page.getByTestId('tile-moat').locator('.tile-sentence').innerText();expect(sentence).toContain('operating capital excluding acquisitions');expect(sentence).toContain('allowing one bad year');expect(sentence).not.toMatch(/[≥≤;]|applied checks/);
   await page.getByRole('button',{name:'Open Lasting advantage evidence'}).click();await expect(page.locator('.panel-answer')).toHaveText(sentence);await expect(page.locator('.applied-rules')).toContainText('Gross-margin drop');
   await page.keyboard.press('Escape');
  }

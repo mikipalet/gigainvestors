@@ -42,7 +42,7 @@ it('retains goodwill and acquired intangibles in the capital paid, even without 
  const a={company:{kind:'operating'},tests:{moat:{key:'moat',metrics:{roicMedian:1.29},series:{roic:[[2025,1.29]]},reasons:[]}},valuation:null} as unknown as Analysis;
  const inclusive=withCapitalReturns(a,years);
  expect(inclusive.tests.moat.metrics.totalRoicMedian).toBeCloseTo(30/142);
- expect(primaryTileMetric(inclusive.tests.moat,'operating').value).toBeCloseTo(30/142);
+ expect(primaryTileMetric(inclusive.tests.moat,'operating').value).toBe(1.29);
  expect(inclusive.tests.moat.metrics.roicMedian).toBe(1.29);
  expect(inclusive.tests.moat.series.totalRoic).toHaveLength(10);
 });

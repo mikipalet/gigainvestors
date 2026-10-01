@@ -8,7 +8,7 @@ import {MiniSeries} from './viz/MiniSeries';
 
 export function TileNumbers({metric,test,currency}:{metric:TileMetric;test:TestOutcome;currency:string}) {
  const format:MetricFormat=metric.chartFormat==='index'?'count':metric.chartFormat==='ratio'?'x':metric.chartFormat??(test.key==='understandable'&&metric.id==='opMarginCv'?'pct':metric.format);
- const summary=seriesSummary(metric.series,metric.chartBetter??(test.key==='understandable'?'higher':metric.better));
+ const summary=seriesSummary(metric.series,metric.chartBetter??(test.key==='understandable'?'higher':metric.better),Infinity);
  const fmt=(value:number|null,kind:MetricFormat=format)=>formatMetric({value,format:kind,currency,returnRatio:isCapitalReturn(metric.chart)});
  const items=test.key==='management'&&test.metrics.retainedEarnings!=null&&test.metrics.marketCapGain!=null?[
  ['Retained',fmt(test.metrics.retainedEarnings,'money')],['Value created',fmt(test.metrics.marketCapGain??null,'money')],['Shares / yr',fmt(test.metrics.shareCagr??null,'pct')]]:

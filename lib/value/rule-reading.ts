@@ -1,7 +1,7 @@
 import {T} from './config';
 import {trustedContradictions} from './jev/combine';
 import type {Kind,Result,TestOutcome} from './types';
-interface RuleCheck {text:string;pass:boolean|null;core?:boolean;decisive?:boolean}
+export interface RuleCheck {text:string;pass:boolean|null;core?:boolean;decisive?:boolean;key?:string;value?:number|null;bar?:number}
 const pct=(n:number)=>`${(n*100).toFixed(1)}%`;
 const num=(n:number)=>n.toFixed(2);
 /** Reconstruct the applied rules from published measurements, not the chosen chart. */
@@ -12,6 +12,7 @@ export function ruleReading(t:TestOutcome,kind:Kind){
   const v=m[key];
   const fmt=(n:number)=>v!=null&&v!==bar&&format(v)===format(bar)?format===pct?`${Number((n*100).toPrecision(7))}%`:String(Number(n.toPrecision(7))):format(n);
   add(v==null?`${label}: no observation`:`${label} ${fmt(v)} ${high?(v>=bar?'≥':'<'):(v<=bar+Number.EPSILON?'≤':'>')} ${fmt(bar)}`,v==null?null:high?v>=bar:v<=bar+Number.EPSILON,core);
+  Object.assign(checks.at(-1)!,{key,value:v??null,bar});
  };
  let minFailures=1;
  if(m.positiveIncomeYears!=null){compare('positiveIncomeYears','Profitable years',m.requiredPositiveYears??9,true,true,String);}

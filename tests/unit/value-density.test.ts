@@ -8,4 +8,7 @@ describe('seriesSummary',()=>{
   expect(seriesSummary([[2020,-2],[2022,4]],'lower')?.worst).toBe(4);
   expect(seriesSummary([[2020,null]],'higher')).toBeNull();
  });
+ it('includes an opening capital observation when the chart window explicitly includes it',()=>{
+  expect(seriesSummary([[2015,100],[2016,90],[2025,70]],'lower',Infinity)).toEqual({first:2015,last:2025,years:3,median:90,worst:100,latest:70});
+ });
 });

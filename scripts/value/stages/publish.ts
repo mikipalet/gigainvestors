@@ -1,3 +1,6 @@
+import { forwardFiles } from './forward';
+import { METHOD_VERSION } from '../../../lib/value/method-version';
+import { isDeepStrictEqual } from 'node:util';
 import { applyThesis } from '../../../lib/value/thesis/apply';
 import type { ThesisResult } from '../../../lib/value/thesis/types';
 import { withCapitalReturns } from '../../../lib/value/capital-returns';
@@ -15,7 +18,7 @@ import { buildAdaptiveSearchShards } from "../../../lib/value/search";
 import { mergeSeedFiles, readPrices } from "../../../lib/value/price-files";
 import { validCompanyId } from "../../../lib/value/companies";
 import { execFileSync } from "node:child_process";
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, linkSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { T } from "../../../lib/value/config";
@@ -139,15 +142,35 @@ export function loadHolders(store: string): { holdersByTicker: Record<string, st
 }
 
 export function writeOutput({ repo, files }: { repo: string; files: Record<string, unknown> }): void {
-  const allowed = /^(?:logos\/[a-f0-9]{64}|views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|aliases|meta|top)\.json$/;
+  const allowed = /^(?:logos\/[a-f0-9]{64}|views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|forward\/(?:index|[0-9]{4}-[0-9]{2}-[0-9]{2})|aliases|meta|top)\.json$/;
   for (const file of Object.keys(files)) if (!allowed.test(file)) throw new Error("Invalid publish output path");
+  // Preflight the entire batch before replacing any published output.
+  const unchanged = new Set<string>();
+  for (const [file, data] of Object.entries(files)) if (/^forward\/\d{4}-\d{2}-\d{2}\.json$/.test(file)) {
+    const destination = path.join(repo, file);
+    if (existsSync(destination)) {
+      if (!isDeepStrictEqual(JSON.parse(readFileSync(destination, 'utf8')), data)) throw new Error(`Refusing to overwrite ${file}: forward records are immutable`);
+      unchanged.add(file);
+    }
+  }
   for (const directory of ["index", "dossiers", "search", "history", "views"]) rmSync(path.join(repo, directory), { recursive: true, force: true });
   for (const [file, data] of Object.entries(files)) {
     const destination = path.join(repo, file);
+    if (unchanged.has(file)) continue;
     if (file.startsWith("prices/") && existsSync(destination)) continue;
     mkdirSync(path.dirname(destination), { recursive: true });
-    writeFileSync(`${destination}.tmp`, JSON.stringify(data) + "\n");
-    renameSync(`${destination}.tmp`, destination);
+    if (/^forward\/\d{4}-\d{2}-\d{2}\.json$/.test(file)) {
+      // Atomic create-if-absent: a concurrent writer cannot replace this date.
+      const temporary = `${destination}.${randomUUID()}.tmp`;
+      writeFileSync(temporary, JSON.stringify(data) + "\n");
+      try { linkSync(temporary, destination); }
+      catch (error) {
+        if ((error as NodeJS.ErrnoException).code !== 'EEXIST' || !isDeepStrictEqual(JSON.parse(readFileSync(destination, 'utf8')), data)) throw error;
+      } finally { rmSync(temporary, {force:true}); }
+    } else {
+      writeFileSync(`${destination}.tmp`, JSON.stringify(data) + "\n");
+      renameSync(`${destination}.tmp`, destination);
+    }
   }
 }
 
@@ -238,12 +261,14 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
       historyIndex.western.perYear[year]=summarizeSnapshots(snapshots.filter(r=>westernIds.has(r[0])));
     }
   }
+  if (Array.isArray(history['history/companies.json'])) history['history/companies.json'] = (history['history/companies.json'] as import('../../../lib/value/types').IndexRow[]).map(row=>({...row,methodVersion:METHOD_VERSION}));
   Object.assign(files, history);
   for(const row of rows){
     const logo=enrichedCompany(row.company).logo;
     const asset=logo?.match(/^\/api\/value\/logo\?asset=([a-f0-9]{64})$/)?.[1];
     if(asset){const cached=readCorpusJson(`enrichment-v7/logos/assets/${asset}.json`);if(!cached)throw Error(`Missing logo asset ${asset}`);files[`logos/${asset}.json`]=cached;}
   }
+  forwardFiles(repo, files, universe, readPrices(path.join(repo, 'prices')), new Date().toISOString().slice(0,10));
   publishViews(files);
   writeOutput({ repo, files });
   const changed = commit ? commitOutput({ repo, asOf }) : true;

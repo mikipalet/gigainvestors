@@ -1,5 +1,6 @@
 "use client";
 
+import { ForwardLine } from '@/components/value/ForwardLine';
 import {onValueIdle} from '@/lib/value/prefetch';
 import { Select } from '@/components/controls/Select';
 import { Toggle } from '@/components/controls/Toggle';
@@ -160,13 +161,12 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   const summary=historical?scopedHistory?.perYear[frame]:null;
   const story=(allMarkets?meta?.story:meta?.western?.story)??{analysed:counts[0],qualityPasses:counts[5],atBuy:counts[6],qualityShare:counts[0]?counts[5]/counts[0]:0};
   const total=summary?.analysed??story.analysed, quality=summary?.qualityPasses??story.qualityPasses, buys=summary?.atBuy??story.atBuy;
-  const ret=(n:number|null|undefined)=>n==null?'':`${n>=0?'+':''}${Math.round(n*100)}%`;
   return <div className="one-index locks-scroll" data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
     <section className="index-story"><h1>{historical?`${frame}: ${buys} at a fair price.`:`${buys} great ${buys===1?'business':'businesses'} at a fair price.`}</h1></section>
     <div className="map-toolbar">{marketSlot&&createPortal(<MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/>,marketSlot)}<div className="desktop-filters" onFocusCapture={()=>setPrefetchDeferred(true)}>{filterBar}</div><button className="mobile-filter-button" onClick={()=>setFiltersOpen(true)}>Filters</button><button className="table-toggle" onPointerEnter={()=>void loadTable()} onFocus={()=>void loadTable()} onClick={()=>setTable(true)}>All companies ↗</button>{filter.q&&<button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
     {historyError&&<p role="status" className="map-error">{historyError}</p>}
     <MemoMainView entries={displayed} year={frame} fast={fast} loading={loading}/>
-    <p className="simulation-line" aria-hidden={!historical}>{historical?`FY${frame} simulation${summary?.medianReturnAtBuy!=null?` · median gain ${ret(summary.medianReturnAtBuy)}`:''}${summary?.medianReturnAll!=null?`${summary.medianReturnAtBuy!=null?' vs':' · median gain'} ${ret(summary.medianReturnAll)} for all analysed companies`:''}`:'\u00a0'}</p>
+    <ForwardLine record={meta?.forward} scope={allMarkets?'all':'western'}/>
     {timelineSlot&&createPortal(<QuarterSlider embedded period="year" label="Fiscal year" onPrefetch={preload} quarters={[...(history?.years??[]).slice(0,-1).map(String),"Today"]} q={year} onChange={changeYear}/>,timelineSlot)}
     {table&&<SidePanel title={`${displayed.length} companies`} wide onClose={()=>setTable(false)}><LazyResultsTable entries={displayed} sort={sort} direction={direction} sortBy={sortBy}/></SidePanel>}
     {filtersOpen&&<SidePanel title="Filter companies" onClose={()=>setFiltersOpen(false)}><div className="panel-filters" onFocusCapture={()=>setPrefetchDeferred(true)}><Select inline label="Countries" value={country} onChange={value=>change('country',value)} options={countryOptions}/><Select inline searchable={false} label="Sectors" value={filter.sector??''} onChange={value=>change('sector',value)} options={sectorOptions}/><section className="filter-toggles" aria-label="More filters"><h3>More filters</h3>{switches}<MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/></section></div><footer className="filter-footer"><button className="filter-apply" onClick={()=>setFiltersOpen(false)}>Show {displayed.length} companies <span aria-hidden="true">→</span></button></footer></SidePanel>}

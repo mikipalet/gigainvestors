@@ -691,3 +691,60 @@ it('routes a verified NSE symbol to the existing depositary dossier without chan
  const ordinary=analysis('RELIANCE.NSE');ordinary.company.currency='INR';
  expect(output([a,ordinary])['aliases.json']).not.toHaveProperty('RELIANCE.NSE');
 });
+
+it('stamps every published dossier and index row with the live method',()=>{
+ const full=analysis(), short=analysis('SHORT.US');short.historyCoverage!.years=5;
+ const files=output([full,short]);
+ for(const [file,data] of Object.entries(files)){
+  if(file.startsWith('dossiers/'))for(const d of Object.values(data as Record<string,Dossier>))expect(d.methodVersion).toBe('3.0.0');
+  if(file.startsWith('index/'))for(const row of data as IndexRow[])expect(row.methodVersion).toBe('3.0.0');
+ }
+});
+
+it('publishes immutable daily records through orphan commits and reads the forward view from snapshots',async()=>{
+ vi.useFakeTimers();vi.setSystemTime(new Date('2026-10-01T15:00:00Z'));
+ const repo=repository(), pick=analysis(), benchmark=analysis('OTHER.US').company;
+ pick.company.marketCapUsd=null;
+ mkdirSync(path.join(repo,'prices'));
+ const prices=(price:number)=>writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({'KO.US':[price,new Date().toISOString().slice(0,10)],'OTHER.US':[100,new Date().toISOString().slice(0,10)]}));
+ prices(50);
+ const args={repo,analyses:[pick],universe:[pick.company,benchmark],partial:false,holdersByTicker:{},investorNames:{}};
+ publishSnapshot(args);
+ const first=readFileSync(path.join(repo,'forward/2026-10-01.json'),'utf8');
+ expect(JSON.parse(first)).toMatchObject({picks:{all:['KO.US'],western:['KO.US']},universe:{all:['KO.US','OTHER.US']}});
+ publishSnapshot(args);
+ expect(readFileSync(path.join(repo,'forward/2026-10-01.json'),'utf8')).toBe(first);
+ prices(55);
+ expect(()=>publishSnapshot({...args,force:true})).toThrow(/Refusing to overwrite forward/);
+ vi.setSystemTime(new Date('2026-10-31T15:00:00Z'));prices(55);
+ publishSnapshot(args);
+ expect(readFileSync(path.join(repo,'forward/2026-10-01.json'),'utf8')).toBe(first);
+ expect(git(repo,['ls-files','forward'])).toContain('forward/2026-10-01.json');
+ vi.stubEnv('VALUE_STORE_DIR',repo);
+ const {getForwardRecord}=await import('@/lib/value/store');
+ const record=await getForwardRecord();
+ expect(record).toMatchObject({days:30,snapshots:2});
+ expect(record.all.priceReturn).toBeCloseTo(.1);
+ expect(record.all.benchmarkPriceReturn).toBeCloseTo(.05);
+ const {picks:_picks,...summary}=record;
+ expect(summary).toEqual(JSON.parse(readFileSync(path.join(repo,'meta.json'),'utf8')).forward);
+});
+
+it('records optional dividend levels only for matching quote dates and carries split basis across provider truncation',async()=>{
+ const {forwardFiles}=await import('@/scripts/value/stages/forward');
+ const repo=repository(), a=analysis();
+ const run=(date:string,price:number)=>{
+  const files=output([a]);forwardFiles(repo,files,[a.company],{[a.id]:[price,date]},date);writeOutput({repo,files});
+  return files[`forward/${date}.json`] as import('@/lib/value/forward').ForwardSnapshot;
+ };
+ run('2026-10-01',100);
+ writeCorpusJson(`fundamentals/${a.id}.json`,{splits:[{date:'2026-10-02',factor:2}]});
+ expect(run('2026-10-02',50).observations[a.id].splitFactor).toBe(2);
+ writeCorpusJson(`fundamentals/${a.id}.json`,{splits:[{date:'2026-10-03',factor:3}]});
+ writeCorpusJson('forward-total-return/2026-10-03.json',{[a.id]:{value:104,basis:'fixed',currency:'USD',priceDate:'2026-10-02'}});
+ const third=run('2026-10-03',100/6);
+ expect(third.observations[a.id].splitFactor).toBe(6);
+ expect(third.observations[a.id].totalReturn).toBeUndefined();
+ writeCorpusJson('forward-total-return/2026-10-04.json',{[a.id]:{value:105,basis:'fixed',currency:'USD',priceDate:'2026-10-04'}});
+ expect(run('2026-10-04',100/6).observations[a.id].totalReturn).toEqual({value:105,basis:'fixed'});
+});

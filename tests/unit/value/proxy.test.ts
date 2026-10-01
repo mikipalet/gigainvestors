@@ -52,3 +52,9 @@ it.each(['https://value.gigainvestors.com/tsm.us','http://localhost/value/tsm.us
  expect(response.status).toBe(308);
  expect(response.headers.get('location')).toBe(url.replace('tsm.us','2330.tw')+'?year=2020');
 });
+
+it('serves the forward record on both the value host and local value path',async()=>{
+ const live=await proxy(new NextRequest('https://value.gigainvestors.com/forward'));
+ expect(live.headers.get('x-middleware-rewrite')).toBe('https://value.gigainvestors.com/value/forward');
+ expect((await proxy(new NextRequest('http://localhost/value/forward'))).headers.get('x-middleware-next')).toBe('1');
+});

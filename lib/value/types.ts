@@ -240,6 +240,7 @@ export interface Analysis {
 }
 
 export interface Dossier extends Analysis {
+  methodVersion?: string; // Absent only in legacy publications.
   w: string | null; // Best Western trading listing; null means not easily buyable.
   b?: boolean; // Published all-five-pass, verified at-buy-price decision.
   priceHistory?: PriceHistory;
@@ -250,6 +251,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  methodVersion?: string; // Absent only in legacy publications.
   businessChanged?: boolean;
   thesisReason?: string;
   quality?: import('./quality-metric').QualityMetric;
@@ -317,6 +319,8 @@ export interface PublishedFunnel extends FunnelCounts {
 }
 
 export interface StoreMeta {
+  methodVersion?: string;
+  forward?: import('./forward').ForwardSummary;
   views?: import('./browser-view').ViewManifest;
   western?: { story: NonNullable<StoreMeta["story"]>; funnel: PublishedFunnel };
   author?: string;

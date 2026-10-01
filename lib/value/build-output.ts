@@ -1,3 +1,4 @@
+import { METHOD_VERSION } from './method-version';
 import {indiaDepositarySymbols} from './india/symbols';
 import { isDecided, shortHistory, missingInvestmentNav } from './publication-eligibility';
 import { withAnalysisHistory } from './test-history';
@@ -68,7 +69,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   for (const analysis of sorted) {
     if (!isDecided(analysis)) {
       if (shortHistory(analysis) && !missingInvestmentNav(analysis)) {
-        const dossier: Dossier={...analysis,w:null,b:false,holders:[],series:analysis.series??{}};
+        const dossier: Dossier={...analysis,methodVersion:METHOD_VERSION,w:null,b:false,holders:[],series:analysis.series??{}};
         (shards[shardOf(analysis.id)]??={})[analysis.id]=publicAnalysis(dossier);
       }
       continue;
@@ -117,7 +118,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       });
     }
     const dossier: Dossier = {
-      ...analysis, w, b: price.b, dataQualityFlags: price.dataQualityFlags, requiredMos, holders,
+      ...analysis, methodVersion: METHOD_VERSION, w, b: price.b, dataQualityFlags: price.dataQualityFlags, requiredMos, holders,
       ...(priceHistories[analysis.id] ? { priceHistory: priceHistories[analysis.id] } : {}),
       series: Object.assign({}, ...outcomes.map((test) => test.series), analysis.series),
       tests: { ...analysis.tests, price: { key: "price", result: price.result, numeric: price.result, reasons: price.mos === null ? ["Valuation or price unavailable in trading currency"] : [], metrics: { mos: price.mos }, series: {}, jev: [] } },
@@ -129,6 +130,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
     const returns=dossierReturn(analysis);
     const row: IndexRow = {
+      methodVersion: METHOD_VERSION,
       w, exchange: company.exchange, shareSources: analysis.valuation?.shareSources, buyReturnInputs: price.dataQualityFlags.length ? null : returnInputs,
       historyYears: analysis.historyCoverage?.years ?? analysis.tests.understandable.metrics.historyYears ?? undefined,
       b: price.b, businessChanged: analysis.thesis?.changed || undefined,
@@ -171,6 +173,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   // Stable tie-breaking makes identical corpora independent of input order.
   const common = [...versionCounts.entries()].sort(([a, av], [b, bv]) => bv.count - av.count || a.localeCompare(b))[0]?.[1];
   files["meta.json"] = {
+    methodVersion: METHOD_VERSION,
     asOf: analyses.map((analysis) => analysis.asOf).sort().at(-1) ?? null,
     funnel,
     story: storyFromFunnel(funnel),

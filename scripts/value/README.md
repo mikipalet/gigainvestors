@@ -324,3 +324,65 @@ without any browser requests to company sites or Wikimedia. **Run publish only
 through the controller.** `tsx scripts/value/logo-coverage.ts [baseline.json]`
 is a read-only audit of published membership, sources, quality passes, and the
 largest responsive Today home-card set in Western and all-market views.
+
+### Forward record and method versions (2026-10-01)
+
+`lib/value/method-version.ts` is the method changelog. Version 3.0.0 records the live
+index universe, valuation v2, financial tests, completeness requirements and thesis
+check. Add a dated version entry when the rules change; never change rules to
+improve past returns. Publication stamps dossiers, current indexes, historical
+identity rows and browser rows with `methodVersion`. Legacy readers accept an
+absent version without inventing one.
+
+Every publish creates `forward/YYYY-MM-DD.json` using the UTC publication date,
+not the analysis date. It records Western/all buy-zone IDs, the full index universe,
+quote price/date/currency, buy price, expected annual return, method version and
+pricing identities. Old observations remain in later snapshots after a company
+leaves the universe. Price refresh includes the entire current index membership
+and archived forward identities, including companies without a published analysis.
+
+Dated files are append-only, including through the data repo's orphan commits.
+An identical retry leaves the original file untouched; a different same-day record
+aborts, even with `--force` or local `--overwrite`. Finish quotes and analysis
+before the day's publish. Do not delete a date to republish it. There is no historical
+backfill or conversion of time-travel simulations into a forward record.
+`forward/index.json` and the compact `meta.forward` summary are derived outputs.
+The `/forward` page recomputes its detailed record from the dated files.
+
+Calculation conventions:
+
+- Every company enters the picks portfolio when first selected and stays in it.
+  At each snapshot, all picks accumulated in that scope are equally weighted for
+  the next interval. Empty selections remain cash earning zero. New selections do
+  not participate in the interval before their appearance.
+- The benchmark uses the full index membership recorded at the start of each
+  interval, equally weighted and rebalanced at every snapshot. It is not the
+  analysed subset or today's membership projected backward.
+- Interval means are compounded. Individual returns compare the first selection
+  with the latest recorded quote. Returns are cumulative, in listing currencies,
+  before FX conversion, trading costs and taxes. Quote dates can precede the
+  snapshot date. Recorded split factors carry forward; only newly observed splits
+  after the preceding quote are applied.
+- Missing prices, seed prices, changed currencies and incomparable dividend
+  levels make the affected result unavailable. Missing holdings are not removed
+  from the denominator. Incomplete intervals keep the cumulative portfolio result
+  unavailable; later data does not rewrite history.
+- The home line stays absent until the first and last snapshot dates span at least
+  30 days. It follows the Western/all market scope. Historical cohort performance
+  appears in Method as “Hindsight simulation, not a track record,” with the 2026
+  design date, restated accounts and today's index membership disclosed.
+
+Dividend-inclusive results are optional. The current quote feeds provide closes,
+not a fixed-basis total-return index. If a verified dividend-reinvested series is
+available, supply `forward-total-return/YYYY-MM-DD.json` in the private corpus
+before publishing, keyed by company ID:
+
+```json
+{"KO.US":{"value":112.4,"basis":"provider:fixed-series-identifier","priceDate":"2026-10-01","currency":"USD"}}
+```
+
+`basis` must identify a consistent normalization across every observed date;
+rolling adjusted closes are not comparable. The level must be finite and positive
+and match the exact quote date and currency. Missing coverage is shown as
+unavailable, never substituted with annual reported dividends or zero dividends.
+No new provider requests run during publication.

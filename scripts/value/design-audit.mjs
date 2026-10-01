@@ -28,6 +28,7 @@ export const audit = () => {
     if (!el.checkVisibility({ opacityProperty: true, visibilityProperty: true, contentVisibilityAuto: true })) continue;
     if (el.closest(".sr-only") || getComputedStyle(el).clipPath === "inset(50%)") continue;
     { const er = el.getBoundingClientRect(); if (er.width <= 2 || er.height <= 2) continue; }
+    if(parseFloat(getComputedStyle(el).fontSize)<13)issues.push(`text below 13px: "${n.textContent.trim().slice(0,40)}" (${getComputedStyle(el).fontSize})`);
     const range = document.createRange(); range.selectNodeContents(n);
     for (const b of range.getClientRects()) if (b.width > 2 && b.height > 2) leaves.push({ t: n.textContent.trim().slice(0, 30), b, el });
   }

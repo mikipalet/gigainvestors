@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState, type ReactNode } from 'react';
+import { TileNumbers, FinancialHighlights, FilingSignals } from './DossierNumbers';
 import { descriptionSentence } from './description';
 import { T } from '@/lib/value/config';
 import { QUALITY_TESTS, type Dossier, type PriceMap, type TestKey, type TestOutcome } from '@/lib/value/types';
@@ -20,7 +21,7 @@ import { MiniDollar, MiniPrice } from './viz/TileCharts';
 import { primaryTileMetric, tileReason, tileSentence } from '@/lib/value/tile-metric';
 import { priceFraming } from '@/lib/value/presentation';
 import { CompanyLogo } from './CompanyLogo';
-import { ownerReturn, expectedReturnCopy, requiredReturnCopy, referenceMetrics } from '@/lib/value/owner-return';
+import { ownerReturn, expectedReturnCopy, requiredReturnCopy } from '@/lib/value/owner-return';
 import { bestWesternListing, westernTradingLabel } from '@/lib/value/western';
 import { sharePrice } from '@/lib/value/listing-details';
 
@@ -55,13 +56,17 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
  const qualityPass=QUALITY_TESTS.every(key=>dossier.tests[key as keyof typeof dossier.tests]?.result==='pass');
  const framing=priceFraming(ratio,requiredMos);
  const owner=ownerReturn(valuation,company.currency,company.marketCapUsd,quote?.[0]??null);
- const reference=referenceMetrics(dossier,quote?.[0]??null);
  const ownerCopy=owner?expectedReturnCopy(owner,valuation,company.country):valuation?.method==='book_value'?`This financial business uses a book-value estimate; ${requiredReturnCopy(valuation,company.country)}.`:'';
- const referenceRow=<section className="reference-metrics" aria-label="For reference">
-  {reference.pe!==null&&<span title={`Market capitalisation / FY${reference.fy} net income`}>P/E <b>{reference.pe.toFixed(1)}</b></span>}
-  {reference.dividendYield!==null&&<span title="Dividends / market capitalisation">Dividend yield <b>{pct(reference.dividendYield)}</b></span>}
-  {reference.netDebtToEarnings!==null&&<span title="Net debt / latest fiscal-year net income; negative means net cash">Net debt / earnings <b>{reference.netDebtToEarnings.toFixed(1)} years</b></span>}
-  {reference.revenueGrowth!==null&&<span title={`${reference.first}–${reference.last} revenue CAGR`}>Revenue growth <b>{pct(reference.revenueGrowth)}/yr</b></span>}
+ const referenceRow=comparable?<section className="reference-metrics" aria-label="Key numbers">
+  <span>Share price <b>{sharePrice(quote?.[0]??null,company.currency)}</b></span>
+  <span>Estimated value <b>{sharePrice(comparable?.perShare.mid??null,company.currency)}</b></span>
+  <span>Buy below <b>{sharePrice(comparable?comparable.perShare.mid*(1-requiredMos):null,company.currency)}</b></span>
+  <span>Expected / year <b>{owner?pct(owner.expected):'—'}</b></span>
+ </section>:<section className="reference-metrics" aria-label="Key numbers">
+  <span>Share price <b>{sharePrice(quote?.[0]??null,company.currency)}</b></span>
+  <span>Quality tests <b>{QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='pass').length} / 5 pass</b></span>
+  <span>Annual history <b>{dossier.historyCoverage?.years??'—'} years</b></span>
+  <span>Market value <b>{formatMetric({value:company.marketCapUsd,format:'money',currency:'USD'})}</b></span>
  </section>;
  const failed=QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='fail');
 
@@ -73,25 +78,33 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
 
  if(insufficient){
   const count=dossier.historyCoverage?.years??new Set(years).size;
-  return <div className="one-dossier insufficient-dossier locks-scroll"><section className="dossier-band insufficient-band">{identity}<div data-testid="insufficient-data"><h2>Not enough history yet</h2><p>{count} annual periods on record.</p></div></section>{reportUrl&&<div className="dossier-source"><a href={reportUrl}>Original filing ↗</a></div>}</div>;
+  return <div className="one-dossier insufficient-dossier locks-scroll"><section className="dossier-band insufficient-band">{identity}<div data-testid="insufficient-data"><h2>Not enough history yet</h2><p>{count} annual periods on record. Seven are required for the quality checklist.</p></div></section><FinancialHighlights dossier={dossier}/>{reportUrl&&<div className="dossier-source"><a href={reportUrl}>Original filing ↗</a></div>}</div>;
  }
 
  return <div onPointerOver={()=>{if(!panels)void loadEvidence().then(setPanels);}} onFocus={()=>{if(!panels)void loadEvidence().then(setPanels);}} className="one-dossier locks-scroll" data-quality={qualityPass?'pass':failed.length?'fail':'unclear'}>
   <section className="dossier-band">{identity}
    <div className="one-verdict" data-testid="verdict"><p className="plain-verdict" data-verdict={verdict}>{verdict}</p>{<p className="verdict-explanation">{qualityPass?returnBelow?`Close to the buy price, but the expected return is under the ${(valuation!.discountRate*100).toLocaleString('en-US',{maximumFractionDigits:1})}% hurdle.`:'Passes all 5 quality tests.':failed.length?`${failed.length} quality ${failed.length===1?'test fails':'tests fail'}. A lower price would not fix the business.`:shortHistory?`Only ${dossier.historyCoverage!.years} years of filings; the checklist needs 7.`:''}</p>}</div>
 
+   {referenceRow}
   </section>
-  {referenceRow}
   <div className="dossier-checks">
    <section className="quality-section" aria-label="Five business quality tests"><h2>1. Is this a good business? </h2>
-    <div className="test-tiles">{tests.filter(test=>test.key!=='price').map((test,i)=>{const d=deciding[test.key];return <article key={test.key} className={`test-tile ${glyph(test)}`} data-testid={`tile-${test.key}`} data-metric={d.id}><button className="tile-open" aria-label={`Open ${testLabels[test.key]} evidence`} onClick={()=>setPanel(test.key)}><header><span><small>{i+1}</small> {testLabels[test.key]}</span><span><StatusGlyph result={glyph(test)} label={`${testLabels[test.key]}: ${glyph(test)}`}/>{test.result}</span></header></button><p className="tile-sentence">{test.result==='fail'?tileReason(test):tileSentence(test,d,company.kind)}</p>{test.key==='management'&&d.id==='retainedDollar'?<MiniDollar retained={m('management','retainedEarnings')} created={m('management','marketCapGain')} first={m('management','retainedStartFy')} last={m('management','retainedEndFy')}/>:<MiniSeries series={d.series} label={d.chart} format={d.chartFormat==='index'?'count':d.chartFormat==='ratio'?'x':d.chartFormat??(test.key==='understandable'?'pct':d.format)} threshold={d.chartThreshold===null?undefined:d.chartThreshold??(test.key==='understandable'?undefined:d.threshold)} better={d.chartBetter??d.better}/>}</article>;})}</div>
+    <div className="test-tiles">{tests.filter(test=>test.key!=='price').map((test,i)=>{const selected=deciding[test.key];const d=test.key==='management'&&!selected.series.length&&selected.id!=='retainedDollar'?{...selected,series:(test.series.shares??[]).slice(-10),chart:'Shares outstanding',chartFormat:'index' as const,chartThreshold:null,chartBetter:'lower' as const}:selected;return <article key={test.key} className={`test-tile ${glyph(test)}`} data-testid={`tile-${test.key}`} data-metric={d.id}><button className="tile-open" aria-label={`Open ${testLabels[test.key]} evidence`} onClick={()=>setPanel(test.key)}><header><span><small>{i+1}</small> {testLabels[test.key]}</span><span><StatusGlyph result={glyph(test)} label={`${testLabels[test.key]}: ${glyph(test)}`}/>{test.result}</span></header></button><p className="tile-sentence">{test.result==='fail'?tileReason(test):tileSentence(test,d,company.kind)}</p>{test.key==='management'&&d.id==='retainedDollar'?<MiniDollar fluid retained={m('management','retainedEarnings')} created={m('management','marketCapGain')} first={m('management','retainedStartFy')} last={m('management','retainedEndFy')}/>:d.series.filter(p=>p[1]!==null).length<2?<FilingSignals test={test}/>:<MiniSeries fluid height={135} series={d.series} label={d.chart} format={d.chartFormat==='index'?'count':d.chartFormat==='ratio'?'x':d.chartFormat??(test.key==='understandable'?'pct':d.format)} threshold={d.chartThreshold===null?undefined:d.chartThreshold??(test.key==='understandable'?undefined:d.threshold)} better={d.chartBetter??d.better}/>}<TileNumbers metric={d} test={test} currency={dossier.reportingCurrency??valuation?.currency??company.currency}/></article>;})}</div>
    </section>
    {comparable&&quote&&<section className="price-section" aria-label="Separate price check"><h2>2. Is the price low enough?</h2><article className={`test-tile price-card ${glyph(price)}`} data-testid="tile-price" data-metric="priceToMid" title={[framing.headline,valuation&&!comparable?`Price is in ${company.currency}, value in ${valuation.currency}, not compared`:'',quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:''].filter(Boolean).join(' · ')}><button className="tile-open" aria-label="Open valuation" onClick={()=>setPanel('valuation')}><header><span>Price · separate check</span><span><StatusGlyph result={glyph(price)} label={`Price: ${glyph(price)}`}/>{state.label}</span></header></button>
     <p className="owner-return" title={ownerCopy}>{owner?`${(owner.expected*100).toFixed(1)}% expected / year`:''}</p>
     <dl className="exact-prices"><div><dt>Share price</dt><dd>{sharePrice(quote?.[0]??null,company.currency)}</dd></div><div><dt>Estimated value</dt><dd>{sharePrice(comparable?.perShare.mid??null,company.currency)}</dd></div><div><dt>Buy price</dt><dd>{sharePrice(comparable?comparable.perShare.mid*(1-requiredMos):null,company.currency)}</dd></div></dl>
-    {comparable&&<MiniPrice dossier={dossier} quote={quote}/>}
+    {comparable&&<MiniPrice dossier={dossier} quote={quote} fluid height={240}/>}
+    <table className="valuation-math"><caption>Price &amp; return math</caption><tbody>
+     <tr><th>Value range</th><td>{sharePrice(comparable.perShare.low,company.currency)} – {sharePrice(comparable.perShare.high,company.currency)}</td></tr>
+     <tr><th>Buy price</th><td>{sharePrice(comparable.perShare.mid,company.currency)} × (1 − {pct(requiredMos)}) = {sharePrice(comparable.perShare.mid*(1-requiredMos),company.currency)}</td></tr>
+     <tr><th>Discount to value</th><td>1 − {quote[0].toFixed(2)} / {comparable.perShare.mid.toFixed(2)} = {pct(1-quote[0]/comparable.perShare.mid)}</td></tr>
+     {owner&&<tr><th>Return / year</th><td title={ownerCopy}>{pct(owner.yield)} cash + {pct(owner.growth)} growth ≈ {pct(owner.expected)}</td></tr>}
+     {valuation&&<tr><th>Required return</th><td>{pct(valuation.discountRate)} / year</td></tr>}
+    </tbody></table>
    </article></section>}
   </div>
+  <FinancialHighlights dossier={dossier}/>
   <div className="dossier-source"><span className="source-date" title={quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:undefined}>{quote?`Prices ${dateLabel(quote[1])}`:''}{lastFiscalYear?` · FY${lastFiscalYear}`:''}</span><span className="source-links">{reportUrl&&<a href={reportUrl}>Original filing ↗ · </a>}</span></div>
   {panel&&<SidePanel title={panel==='valuation'?'Valuation':`${testLabels[panel]} · evidence`} onClose={()=>setPanel(null)}>{panel==='valuation'||panel==='price'?<Valuation dossier={dossier} quote={quote}/>:<Evidence key={panel} dossier={dossier} test={dossier.tests[panel]}/>}</SidePanel>}
  </div>;

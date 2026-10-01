@@ -277,3 +277,23 @@ currency and depositary-share bases are reconciled; their official INR candidate
 remain in the cache. This stage does not change company classification or run
 analysis/publication. See `docs/value/india-1-report.md` for measured coverage and
 unresolved gaps from the initial import.
+
+### Daily thesis refresh
+
+`thesis` runs after analysis/share checks and before publication. It recomputes
+buy and next-closest eligibility from the current analysis and cached closes,
+then reads only candidates with changed local inputs, a changed thesis question
+version, no result, or a result older than 30 days. The analysis timestamp alone
+does not invalidate a reading. The daily runner selects at most 12 companies;
+`thesis --limit=N` changes that company bound, while every invocation has a hard
+240-call Jev budget. Oldest readings go first, with buys winning ties, so changing
+quotes cannot starve next-closest candidates. Logs include eligible, cached, due,
+selected, deferred and actual Jev call counts; token usage is in
+`thesis/jev-usage.jsonl`. Legacy results without an input fingerprint are refreshed
+once to establish the new cache key.
+
+Publication reads `thesis/<ID>.json` directly. A thesis-stage error blocks that
+cycle's publication. Existing disclosure vetoes remain until a new reading
+replaces them, including while queued for refresh; guidance older than 30 days
+does not cap a newly analysed year's earnings. `publish --out=DIR` consumes the
+same thesis results without making provider calls or changing the remote site.

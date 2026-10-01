@@ -8,10 +8,7 @@ export interface IndiaFiling {
   xbrl: string | null; resultDetailedDataLink: string | null;
   params?:string; industry?:string; reInd?:string; format?:string; oldNewFlag?:string;
 }
-const aliases: Record<string,string> = {
-  'INFY.US':'INFY', 'HDB.US':'HDFCBANK', 'IBN.US':'ICICIBANK',
-  'RIGD.LSE':'RELIANCE', 'LTOD.LSE':'LT', 'MHID.LSE':'M&M', 'TTST.LSE':'TATASTEEL',
-};
+import {indiaDepositarySymbols as aliases} from './symbols';
 // The NSE archive rewrites historical list symbols after renames; the filed
 // documents retain these old symbols. These are explicit issuer aliases only.
 export const historicalIndiaSymbols:Record<string,string[]>={ETERNAL:['ZOMATO'],TMPV:['TATAMOTORS'],TATACONSUM:['TATAGLOBAL','TATATEA'],SHRIRAMFIN:['SRTRANSFIN']};

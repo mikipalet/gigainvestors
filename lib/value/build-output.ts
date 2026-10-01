@@ -1,3 +1,4 @@
+import {indiaDepositarySymbols} from './india/symbols';
 import { isDecided, shortHistory, missingInvestmentNav } from './publication-eligibility';
 import { withAnalysisHistory } from './test-history';
 import { publicAnalysis } from './public-analysis';
@@ -93,12 +94,12 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const t = analysis.status !== "scored" ? "UUUUU" : outcomes.map(test => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join("");
     const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:analysis.valuation?.shares, usdRate:usdRate(company.currency),corroborated:analysis.valuation?.shareSources===2});
     const returnInputs = buyReturnInputs(analysis.valuation, company.currency);
-    const price = publishedBuyPrice({ st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs, shareSources:analysis.valuation?.shareSources,
+    const price = publishedBuyPrice({ businessChanged: analysis.thesis?.changed, st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs, shareSources:analysis.valuation?.shareSources,
       v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null, dataQualityFlags }, prices[analysis.id]);
     const passes = [...outcomes.map(test => analysis.status === "scored" && test.result === "pass"), price.b];
     // Price below its required MOS is a failed funnel gate even when priceTest
     // calls a positive but inadequate discount "unclear". Missing data is not a failure.
-    const failures = [...outcomes.map(test => test.result === "fail"), price.result === "fail" || price.mos !== null && price.result !== "pass"];
+    const failures = [...outcomes.map(test => test.result === "fail"), analysis.thesis?.changed === true || price.result === "fail" || price.mos !== null && price.result !== "pass"];
     const countryFunnel = funnel.byCountry[company.country] ??= emptyFunnel();
     for (const population of [funnel, countryFunnel, ...(w ? [westernFunnel, westernFunnel.byCountry[company.country] ??= emptyFunnel()] : [])]) {
       population.analysed++;
@@ -130,7 +131,8 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const row: IndexRow = {
       w, exchange: company.exchange, shareSources: analysis.valuation?.shareSources, buyReturnInputs: price.dataQualityFlags.length ? null : returnInputs,
       historyYears: analysis.historyCoverage?.years ?? analysis.tests.understandable.metrics.historyYears ?? undefined,
-      b: price.b,
+      b: price.b, businessChanged: analysis.thesis?.changed || undefined,
+      thesisReason: analysis.thesis?.changed ? analysis.thesis.reason : undefined,
       returnInfo:{...returns,sort:Number.isFinite(returns.sort)?returns.sort:returns.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},
       fy: Math.max(0,...Object.values(analysis.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]))) || undefined,
       m: requiredMos, r: [...Array<number | null>(T.history.years - roic.length).fill(null), ...roic],
@@ -145,7 +147,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const published = new Set(Object.values(shards).flatMap(shard=>Object.keys(shard)));
   const aliases:Record<string,string>={};
   const ambiguous=new Set<string>();
-  for(const {id,company} of sorted)if(published.has(id))for(const listing of company.listings){
+  for(const {id,company} of sorted)if(published.has(id))for(const listing of [...company.listings,...(indiaDepositarySymbols[id]?[`${indiaDepositarySymbols[id]}.NSE`]:[])]){
     const alias=listing.toUpperCase();
     if(published.has(alias)||ambiguous.has(alias))continue;
     if(aliases[alias]&&aliases[alias]!==id){delete aliases[alias];ambiguous.add(alias);}

@@ -32,6 +32,7 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
  const previous=useRef(new Map<string,DOMRect>()),previousYear=useRef(year);
  useLayoutEffect(()=>{
   const el=root.current;if(!el)return;
+  if(fast){previous.current.clear();previousYear.current=year;return;}
   const reduced=fast||previousYear.current===year||matchMedia('(prefers-reduced-motion: reduce)').matches;
   const next=new Map<string,DOMRect>();
   const nodes=[...el.querySelectorAll<HTMLElement>('[data-company]')];
@@ -55,23 +56,24 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
   onFocus:(e:React.FocusEvent<HTMLElement>)=>{const r=e.currentTarget.getBoundingClientRect();setHover({c,x:r.left+r.width/2,y:r.bottom});},
   onBlur:()=>setHover(null),onKeyDown:(e:React.KeyboardEvent<HTMLElement>)=>{if(e.key==='Escape')setHover(null);},
  });
+ const status=(c:MainCompany)=>c.entry.row.businessChanged?(c.entry.row.thesisReason??'Wait for disclosure resolution'):c.buy?(historical?'Buy then':'Buy now'):dropToBuy(c.ratio);
  const price=(n:number|null,c:MainCompany)=>n===null?'':sharePrice(n,c.entry.row.cur);
- const card=(c:MainCompany,kind:'buy'|'next'|'list',rank=0)=><ValueLink key={c.id} href={`/${c.id.toLowerCase()}`} className={`main-company main-${kind}-row${kind==='buy'&&rank===0?' shelf-hero':''}`} data-testid="company-tile" data-company={c.id} data-return={c.returnValue??''} data-ratio={c.ratio??''} data-priority={kind==='buy'&&rank===0} aria-label={`${c.name}. ${c.buy?(historical?'Buy then':'Buy now'):dropToBuy(c.ratio)}. ${metric}: ${returnLabel(c.returnValue)}. Open dossier.`} {...events(c)}>
+ const card=(c:MainCompany,kind:'buy'|'next'|'list',rank=0)=><ValueLink key={c.id} href={`/${c.id.toLowerCase()}`} className={`main-company main-${kind}-row${kind==='buy'&&rank===0?' shelf-hero':''}`} data-testid="company-tile" data-company={c.id} data-return={c.returnValue??''} data-ratio={c.ratio??''} data-priority={kind==='buy'&&rank===0} aria-label={`${c.name}. ${status(c)}. ${metric}: ${returnLabel(c.returnValue)}. Open dossier.`} {...events(c)}>
   <div className="shelf-identity"><CompanyLogo src={c.entry.row.lg} name={c.name}/><span className="main-name">{c.name}</span></div>
-  <div className="shelf-answer"><strong className="main-return" data-negative={c.returnValue!==null&&c.returnValue<0}>{returnLabel(c.returnValue)}</strong>{kind!=='buy'&&<span className="shelf-chip">{dropToBuy(c.ratio)}</span>}</div>
+  <div className="shelf-answer"><strong className="main-return" data-negative={c.returnValue!==null&&c.returnValue<0}>{returnLabel(c.returnValue)}</strong>{kind!=='buy'&&<span className="shelf-chip" data-thesis={c.entry.row.businessChanged||undefined}>{status(c)}</span>}</div>
   {kind==='buy'?<span className="shelf-price">Buy below {price(c.buyPrice,c)} · {historical?'Then':'Now'} {price(c.price,c)}</span>:kind==='next'?<>
    <div className="shelf-gauge" role="img" aria-label={`Price ${c.ratio!==null?Math.round((c.ratio-1)*100):0}% above buy price. Shared scale zero to 60 percent${c.ratio!==null&&c.ratio>1.6?', capped at 60 percent':''}.`}><span className="shelf-track"><i/><b style={{width:`${distancePosition(c.ratio!)*100}%`}}/><em style={{left:`${distancePosition(c.ratio!)*100}%`}}/></span><span className="shelf-scale"><span>Buy price</span><span>+60%{c.ratio!>1.6?'+':''}</span></span></div>
    {c.entry.row.quality&&<span className="shelf-quality" title={c.entry.row.quality.basis==='including-acquisitions'?'Owner earnings return on capital including goodwill and acquired intangibles':undefined}>{c.entry.row.quality.label} 10y <b>{c.entry.row.quality.value==='unlimited'||c.entry.row.quality.value>1?'>100%':`${Math.round(c.entry.row.quality.value*100)}%`}</b></span>}
   </>:null}
  </ValueLink>;
  const buyLimit=size.phone?3:size.height>760?5:size.height>600?4:3;
- return <section ref={root} className={`main-view${zones.buy.length?'':' main-no-buys'}`} data-historical={historical} data-frame={year} data-fast={fast} data-total={companies.length} data-buy-count={zones.buy.length} aria-busy={loading} aria-label="Buying opportunities">
+ return <section ref={root} className={`main-view${zones.buy.length?'':' main-no-buys'}`} style={{visibility:size.width?undefined:'hidden'}} data-historical={historical} data-frame={year} data-fast={fast} data-total={companies.length} data-buy-count={zones.buy.length} aria-busy={loading} aria-label="Buying opportunities">
   <div className="shelf-body">
    {zones.buy.length?<section className="main-buys" data-many-buys={zones.buy.length>=4}><header className="main-zone-heading"><h2>{historical?'Buy then':'Buy now'} <span>{zones.buy.length}</span></h2><span>{metric}</span></header><div className="shelf-buy-grid">{zones.buy.slice(0,buyLimit).map((c,i)=>card(c,'buy',i))}</div>{zones.buy.length>buyLimit&&<button className="main-more" onClick={()=>open(zones.buy.slice(buyLimit),historical?'Buy then':'Buy now')}>+{zones.buy.length-buyLimit} more ↗</button>}</section>:<p className="main-empty-buy">{historical?'Buy then':'Buy now'} · No picks in this view.</p>}
    <section className="main-next"><header className="main-zone-heading"><h2>Next closest</h2><span>{metric}</span></header><div ref={grid} className="shelf-near-grid">{near.map(c=>card(c,'next'))}{!near.length&&<p className="main-empty">No priced companies in this view.</p>}</div></section>
   </div>
   <section className="main-rest" aria-label="The rest"><span>The rest <b>{rest.length}</b></span><div className="main-logo-strip">{logos.map(c=><ValueLink key={c.id} href={`/${c.id.toLowerCase()}`} data-company={c.id} className="shelf-logo" aria-label={`${c.name}. Open dossier.`} {...events(c)}><CompanyLogo src={c.entry.row.lg} name={c.name} fallback="none" onUnavailable={()=>setFailedLogos(previous=>new Set([...previous,c.entry.row.lg!]))}/></ValueLink>)}</div>{remaining.length>0&&<button className="main-more" onClick={()=>open(remaining,'The rest')}>+{remaining.length} more ↗</button>}</section>
   {list&&<SidePanel wide title={`${list.title} · ${list.companies.length}`} onClose={()=>{setList(null);setHover(null);}}><div className="main-full-list"><div className="main-list-heading"><span>Company · price drop to buy</span><span>{metric}</span></div><PagedItems size={size.phone?5:size.height>760?10:7} items={list.companies.map(c=>card(c,'list'))}/></div></SidePanel>}
-  {hover&&<PointerTooltip x={hover.x} y={hover.y}><strong>{hover.c.name}</strong><div>{hover.c.buy?(historical?'Buy then':'Buy now'):dropToBuy(hover.c.ratio)}</div><div>{metric} · {returnLabel(hover.c.returnValue)}</div><div>{historical?`Price in ${year}`:'Price'} · {price(hover.c.price,hover.c)}</div><div>Buy below · {price(hover.c.buyPrice,hover.c)}</div>{historical&&<div>Price gain · excluding dividends</div>}</PointerTooltip>}
+  {hover&&<PointerTooltip x={hover.x} y={hover.y}><strong>{hover.c.name}</strong><div>{status(hover.c)}</div><div>{metric} · {returnLabel(hover.c.returnValue)}</div><div>{historical?`Price in ${year}`:'Price'} · {price(hover.c.price,hover.c)}</div>{!hover.c.entry.row.businessChanged&&<div>Buy below · {price(hover.c.buyPrice,hover.c)}</div>}{historical&&<div>Price gain · excluding dividends</div>}</PointerTooltip>}
  </section>;
 }

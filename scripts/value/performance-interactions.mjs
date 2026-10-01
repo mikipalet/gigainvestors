@@ -40,7 +40,7 @@ for(const [device,width,height,cpu] of [['desktop',1728,970,1],['mobile-4x',390,
  await measure('year-step-next',()=>slider.press('ArrowLeft'),()=>{const y=document.querySelector('input[type=range]')?.getAttribute('aria-valuetext')?.replace('Fiscal year ','');return document.querySelector('.main-view')?.getAttribute('data-frame')===y;});
  await measure('year-today',()=>slider.press('End'),frame,'Today');
  const oldTitle=await page.locator('.main-view').getAttribute('data-buy-count');
- await measure('market-toggle',()=>page.locator('.market-scope [role=switch]').click(),old=>document.querySelector('.main-view')?.getAttribute('data-buy-count')!==old&&document.querySelector('.market-scope [role=switch]')?.getAttribute('aria-checked')==='true',oldTitle);
+ await measure('market-toggle',()=>page.locator('.market-scope [role=switch]').click(),old=>document.querySelector('.main-view')?.getAttribute('data-buy-count')!==old&&document.querySelector('.market-scope [role=switch]')?.getAttribute('aria-checked')==='false',oldTitle);
  if(width<768)await page.getByRole('button',{name:'Filters',exact:true}).click();
  await page.getByRole('combobox',{name:'Country',exact:true}).click();
  await page.getByRole('combobox',{name:'Search Country',exact:true}).fill('ger');
@@ -54,7 +54,7 @@ for(const [device,width,height,cpu] of [['desktop',1728,970,1],['mobile-4x',390,
  let query='';for(const char of 'coca'){query+=char;await measure(`search-key-${query}`,()=>search.press(char),q=>document.querySelector('.search-modal input')?.value===q&&!!document.querySelector('#search-results [role=option]'),query);}
  await page.keyboard.press('Escape');
  await go('/ko.us');
- await measure('dossier-drawer-open',()=>page.getByTestId('tile-price').click(),()=>!!document.querySelector('dialog[open] [role=tabpanel]'));
+ await measure('dossier-drawer-open',()=>page.getByRole('button',{name:'Open valuation',exact:true}).click(),()=>!!document.querySelector('dialog[open] [role=tabpanel]'));
  const tabs=page.getByRole('tab');
  for(let i=1;i<await tabs.count();i++){
   const title=await tabs.nth(i).textContent();

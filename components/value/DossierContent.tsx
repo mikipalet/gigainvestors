@@ -1,4 +1,5 @@
 'use client';
+import {ThesisDisclosure} from './ThesisDisclosure';
 import { useEffect, useState, type ReactNode } from 'react';
 import { TileNumbers, FinancialHighlights, FilingSignals } from './DossierNumbers';
 import { descriptionSentence } from './description';
@@ -27,6 +28,7 @@ import { sharePrice } from '@/lib/value/listing-details';
 
 export function DossierContent({ dossier, quote = null, children }: { dossier: Dossier; quote?: PriceMap[string] | null; children?: ReactNode }) {
  const [panel,setPanel]=useState<TestKey|'valuation'|null>(null);
+ const [thesisOpen,setThesisOpen]=useState(false);
  const [panels,setPanels]=useState<typeof import('./EvidencePanel')|null>(null);
  const Evidence=panels?.EvidencePanel??EvidencePanel, Valuation=panels?.ValuationPanel??ValuationPanel;
  const {company,valuation,report}=dossier;
@@ -72,7 +74,7 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
 
  const shortHistory=dossier.historyCoverage && dossier.historyCoverage.years<T.minYears;
  const returnBelow=qualityPass && owner && valuation && owner.expected<valuation.discountRate && ratio!==null && ratio<=1-requiredMos;
- const verdict=failed.length?'Fails quality':shortHistory?'Not enough history yet':!qualityPass?'':!valuation?'Passes quality':dossier.b?'Buy zone':returnBelow?'Wait for a higher return':'Wait for a better price';
+ const verdict=dossier.thesis?.changed?dossier.thesis.reason:failed.length?'Fails quality':shortHistory?'Not enough history yet':!qualityPass?'':!valuation?'Passes quality':dossier.b?'Buy zone':returnBelow?'Wait for a higher return':'Wait for a better price';
  const description=descriptionSentence(company.description,company.about);
  const identity=<div className="one-identity"><ValueLink href="/" className="back-link">← Companies</ValueLink><div className="company-heading"><CompanyLogo src={company.logo} name={name}/><div><h1>{name}</h1><p title={tradingLabel??'Not easily buyable from Western brokers'}>{company.code} · {company.exchange}</p>{Boolean(company.indexes?.length)&&<p className="company-indexes">{company.indexes!.join(" · ")}</p>}</div></div>{description&&<p className="company-about">{description}</p>}{children}</div>;
 
@@ -83,8 +85,11 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
 
  return <div onPointerOver={()=>{if(!panels)void loadEvidence().then(setPanels);}} onFocus={()=>{if(!panels)void loadEvidence().then(setPanels);}} className="one-dossier locks-scroll" data-quality={qualityPass?'pass':failed.length?'fail':'unclear'}>
   <section className="dossier-band">{identity}
-   <div className="one-verdict" data-testid="verdict"><p className="plain-verdict" data-verdict={verdict}>{verdict}</p>{<p className="verdict-explanation">{qualityPass?returnBelow?`Close to the buy price, but the expected return is under the ${(valuation!.discountRate*100).toLocaleString('en-US',{maximumFractionDigits:1})}% hurdle.`:'Passes all 5 quality tests.':failed.length?`${failed.length} quality ${failed.length===1?'test fails':'tests fail'}. A lower price would not fix the business.`:shortHistory?`Only ${dossier.historyCoverage!.years} years of filings; the checklist needs 7.`:''}</p>}</div>
-
+   <div className="one-verdict" data-testid="verdict"><p className="plain-verdict" data-verdict={dossier.thesis?.changed?'Thesis disclosure':verdict}>{verdict}</p>{<p className="verdict-explanation">{dossier.thesis?.changed?'Wait for the disclosed exposure to be resolved.':qualityPass?returnBelow?`Close to the buy price, but the expected return is under the ${(valuation!.discountRate*100).toLocaleString('en-US',{maximumFractionDigits:1})}% hurdle.`:'Passes all 5 quality tests.':failed.length?`${failed.length} quality ${failed.length===1?'test fails':'tests fail'}. A lower price would not fix the business.`:shortHistory?`Only ${dossier.historyCoverage!.years} years of filings; the checklist needs 7.`:''}</p>}
+    {dossier.thesis?.liabilities?.filter(l=>l.marketValueRatio>.1).sort((a,b)=>b.marketValueRatio-a.marketValueRatio).slice(0,1).map((l,i)=><p key={i} className="thesis-guidance">{(l.marketValueRatio*100).toFixed(1)}% of market value{l.ownerEarningsRatio!==null?`; ${l.ownerEarningsRatio.toFixed(1)} years of owner earnings`:''}{l.basis==='claimed'?'. Claimed damages; not an established loss.':''}</p>)}
+    {dossier.thesis?.guidance&&<p className="thesis-guidance">Owner earnings: {dossier.thesis.guidance.before.toLocaleString('en-US',{maximumFractionDigits:0})} → {dossier.thesis.guidance.after.toLocaleString('en-US',{maximumFractionDigits:0})} {valuation?.currency}, reflecting current-year guidance.</p>}
+    {dossier.thesis&&<button className="thesis-source-button" onClick={()=>setThesisOpen(true)}>Read the disclosure ↗</button>}
+   </div>
    {referenceRow}
   </section>
   <div className="dossier-checks">
@@ -104,6 +109,7 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
   </div>
   <FinancialHighlights dossier={dossier}/>
   <div className="dossier-source"><span className="source-date" title={quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:undefined}>{quote?`Prices ${dateLabel(quote[1])}`:''}{lastFiscalYear?` · FY${lastFiscalYear}`:''}</span><span className="source-links">{reportUrl&&<a href={reportUrl}>Original filing ↗ · </a>}</span></div>
+  {thesisOpen&&dossier.thesis&&<SidePanel title={dossier.thesis.changed?'Liability disclosure':'Current-year guidance'} onClose={()=>setThesisOpen(false)}><ThesisDisclosure thesis={dossier.thesis}/></SidePanel>}
   {panel&&<SidePanel title={panel==='valuation'?'Valuation':`${testLabels[panel]} · evidence`} onClose={()=>setPanel(null)}>{panel==='valuation'||panel==='price'?<Valuation dossier={dossier} quote={quote}/>:<Evidence key={panel} dossier={dossier} test={dossier.tests[panel]}/>}</SidePanel>}
  </div>;
 }

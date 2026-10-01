@@ -681,3 +681,13 @@ it('commits regenerated browser views together with refreshed prices',()=>{
  expect(commitPrices({repo,asOf:'2026-10-01'})).toBe(true);
  expect(git(repo,['status','--porcelain'])).toBe('');
 });
+
+it('routes a verified NSE symbol to the existing depositary dossier without changing quote units',()=>{
+ const a=analysis('RIGD.LSE');a.company.indexes=['Nifty 50'];a.company.country='GB';
+ const files=output([a]);
+ expect(files['aliases.json']).toMatchObject({'RELIANCE.NSE':'RIGD.LSE'});
+ const d=(files[`dossiers/${shardOf(a.id)}.json`] as Record<string,Dossier>)[a.id];
+ expect(d.company.currency).toBe('USD');expect(d.company.listings).toEqual(['RIGD.LSE']);
+ const ordinary=analysis('RELIANCE.NSE');ordinary.company.currency='INR';
+ expect(output([a,ordinary])['aliases.json']).not.toHaveProperty('RELIANCE.NSE');
+});

@@ -77,7 +77,8 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   },[year,history,loadYear,initialFilter.year]);
   const deferredLoads=useRef(new Map<string,Promise<void>>());
   const [extraLoading,setExtraLoading]=useState(false);
-  const needsDeferred=table||!!country||filter.near==='1'||filter.awaiting==='1'||filter.gate!==undefined||QUALITY_TESTS.some(key=>!!filter[key]);
+  const [prefetchDeferred,setPrefetchDeferred]=useState(false);
+  const needsDeferred=prefetchDeferred||table||!!country||filter.near==='1'||filter.awaiting==='1'||filter.gate!==undefined||QUALITY_TESTS.some(key=>!!filter[key]);
   useEffect(()=>{
     if(!needsDeferred)return;
     let active=true;
@@ -109,7 +110,7 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   useEffect(()=>()=>{if(scrubTimer.current)clearTimeout(scrubTimer.current);},[]);
   function changeYear(value:string,immediate=false) {
     const now=performance.now();
-    if(now-lastScrub.current<140)setFast(true);
+    if(immediate||now-lastScrub.current<140)setFast(true);
     lastScrub.current=now;
     if(scrubTimer.current)clearTimeout(scrubTimer.current);
     scrubTimer.current=setTimeout(()=>setFast(false),180);
@@ -169,12 +170,12 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   const ret=(n:number|null|undefined)=>n==null?'':`${n>=0?'+':''}${Math.round(n*100)}%`;
   return <div className="one-index locks-scroll" data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
     <section className="index-story"><h1>{historical?`${frame}: ${buys} at a fair price.`:`${buys} great ${buys===1?'business':'businesses'} at a fair price.`}</h1></section>
-    <div className="map-toolbar">{marketSlot&&createPortal(<MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/>,marketSlot)}<div className="desktop-filters">{filterBar}</div><button className="mobile-filter-button" onClick={()=>setFiltersOpen(true)}>Filters</button><button className="table-toggle" onPointerEnter={()=>void loadTable()} onFocus={()=>void loadTable()} onClick={()=>setTable(true)}>All companies ↗</button>{filter.q&&<button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
+    <div className="map-toolbar">{marketSlot&&createPortal(<MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/>,marketSlot)}<div className="desktop-filters" onFocusCapture={()=>setPrefetchDeferred(true)}>{filterBar}</div><button className="mobile-filter-button" onClick={()=>setFiltersOpen(true)}>Filters</button><button className="table-toggle" onPointerEnter={()=>void loadTable()} onFocus={()=>void loadTable()} onClick={()=>setTable(true)}>All companies ↗</button>{filter.q&&<button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
     {historyError&&<p role="status" className="map-error">{historyError}</p>}
     <MemoMainView entries={displayed} year={frame} fast={fast} loading={loading}/>
     <p className="simulation-line" aria-hidden={!historical}>{historical?`FY${frame} simulation${summary?.medianReturnAtBuy!=null?` · median gain ${ret(summary.medianReturnAtBuy)}`:''}${summary?.medianReturnAll!=null?`${summary.medianReturnAtBuy!=null?' vs':' · median gain'} ${ret(summary.medianReturnAll)} for all analysed companies`:''}`:'\u00a0'}</p>
     {timelineSlot&&createPortal(<QuarterSlider embedded period="year" label="Fiscal year" onPrefetch={preload} quarters={[...(history?.years??[]).slice(0,-1).map(String),"Today"]} q={year} onChange={changeYear}/>,timelineSlot)}
     {table&&<SidePanel title={`${displayed.length} companies`} wide onClose={()=>setTable(false)}><LazyResultsTable entries={displayed} sort={sort} direction={direction} sortBy={sortBy}/></SidePanel>}
-    {filtersOpen&&<SidePanel title="Filter companies" onClose={()=>setFiltersOpen(false)}><div className="panel-filters">{filterBar}</div><button className="filter-apply" onClick={()=>setFiltersOpen(false)}>Show {displayed.length} companies →</button></SidePanel>}
+    {filtersOpen&&<SidePanel title="Filter companies" onClose={()=>setFiltersOpen(false)}><div className="panel-filters" onFocusCapture={()=>setPrefetchDeferred(true)}>{filterBar}</div><button className="filter-apply" onClick={()=>setFiltersOpen(false)}>Show {displayed.length} companies →</button></SidePanel>}
   </div>;
 }

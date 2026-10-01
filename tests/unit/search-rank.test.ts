@@ -28,3 +28,13 @@ describe("shared search rank", () => {
     expect(rank({ investors: [], stocks: Array.from({length: 20}, (_, i) => ({t: `A${i}`, n: "A", h: i})) }, "a")).toHaveLength(12);
   });
 });
+
+it('prepares only investors for value search while preserving portfolio stock search',async()=>{
+ const {searchIndexForScope}=await import('@/lib/search/rank');
+ const index:any={investors:[{code:'BRK',person:'Warren Buffett',firm:'Berkshire Hathaway'}],stocks:[{t:'KO',n:'Coca-Cola',h:5}]};
+ const value=searchIndexForScope(index,true);
+ expect(rank(value,'Buffett')[0]).toMatchObject({kind:'investor',code:'BRK'});
+ expect(rank(value,'Coca-Cola')).toEqual([]);
+ expect(rank(searchIndexForScope(index,false),'Coca-Cola')[0]).toMatchObject({kind:'stock',ticker:'KO'});
+ expect(index.stocks).toHaveLength(1);
+});

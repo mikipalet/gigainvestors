@@ -77,3 +77,8 @@ export function rank(index: SearchIndex, query: string): Hit[] {
   const result=rankItems(items,query);
   return "charlie munger".includes(qn)&&qn.length>=3?[{kind:'munger'},...result].slice(0,12) as Hit[]:result;
 }
+
+/** Value companies have their own index; only investor/firm hits use the portfolio index. */
+export function searchIndexForScope(index:SearchIndex,value:boolean):SearchIndex {
+ return value?{investors:index.investors,stocks:[]}:index;
+}

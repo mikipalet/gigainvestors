@@ -82,7 +82,7 @@ it('counts only universe members and only todays Jev usage', () => {
   appendJsonl('jev-usage.jsonl', { at: '2026-09-29T00:00:00Z', input_tokens: 10 });
   expect(collectStatus()).toMatchObject({ universe: 3, fundamentals: 1, analysed: 1, reports: { '10-K': 1 }, published: { count: 2 }, prices: { eodhd: 1, yahoo: 1, seed: 1, missing: 0 }, jevTokens: 10 });
 });
-function runner({ analyzeFails = false, yieldsFails = false, japanFails = false, japanSkipped = false, resetFails = false } = {}) {
+function runner({ analyzeFails = false, yieldsFails = false, japanFails = false, japanSkipped = false, resetFails = false, thesisFails = false } = {}) {
   const bin = path.join(root, 'bin'); mkdirSync(bin, { recursive: true });
   // Stub only paid/publishing stage processes; execute runner bookkeeping with real node.
   writeFileSync(path.join(bin, 'node'), `#!${process.execPath}
@@ -101,7 +101,7 @@ if (stage === 'japan' && !${japanSkipped}) {
   fs.mkdirSync(process.env.VALUE_CORPUS_DIR + '/raw/edinet', { recursive: true });
   fs.writeFileSync(process.env.VALUE_CORPUS_DIR + '/raw/edinet/summary.json', JSON.stringify({ from, to, errors: ${japanFails} ? [{ id: '8058.JP' }] : [] }));
 }
-process.exit((stage === 'wait-eodhd-reset' && ${resetFails}) || (stage === 'yields' && ${yieldsFails}) || stage === 'prices' || (stage === 'analyze' && ${analyzeFails}) || (stage === 'japan' && ${japanFails}) ? 1 : 0);
+process.exit((stage === 'thesis' && ${thesisFails}) || (stage === 'wait-eodhd-reset' && ${resetFails}) || (stage === 'yields' && ${yieldsFails}) || stage === 'prices' || (stage === 'analyze' && ${analyzeFails}) || (stage === 'japan' && ${japanFails}) ? 1 : 0);
 `, { mode: 0o755 });
   return () => execFileSync('bash', ['scripts/value/run-daily.sh', '--once'], { env: { ...process.env, PATH: `${bin}:${process.env.PATH}` }, stdio: 'pipe' });
 }
@@ -109,7 +109,7 @@ const stageCalls = (): string[][] => readFileSync(path.join(root, 'stages'), 'ut
 it.each([true, false])('runner publishes available data after analysis or price failures: %s', analyzeFails => {
   runner({ analyzeFails })();
   const calls = stageCalls();
-  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', 'share-checks', 'publish', 'status']);
+  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', 'share-checks', 'thesis', 'publish', 'status']);
   // No --only or --limit: newly imported JP issuers and all other sources are covered.
   expect(calls.filter(([stage]) => ['prices', 'price-history', 'reports', 'yields', 'analyze', 'publish'].includes(stage)).every(call => call.length === 1)).toBe(true);
 });
@@ -216,4 +216,10 @@ it('runner skips all EODHD-consuming stages when reset waiting fails', () => {
   expect(stages).not.toContain('analyze'); // Analysis can fetch paid FX rates.
   expect(stages).toContain('publish');
   expect(stages).toContain('status');
+});
+
+it('bounds thesis before publication and skips publication on thesis failure', () => {
+ runner({thesisFails:true})();
+ expect(stageCalls()).toContainEqual(['thesis','--limit=12']);
+ expect(stageCalls().map(([stage])=>stage)).not.toContain('publish');
 });

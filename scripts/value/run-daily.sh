@@ -66,7 +66,7 @@ while true; do
   run_japan 2>> "$VALUE_CORPUS_DIR/logs/$cycle_date-japan.log" || :
   if ! run_stage wait-eodhd-reset; then
     echo 'paid stages skipped: EODHD reset not confirmed; publishing available data' | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-wait-eodhd-reset.log"
-    run_stage publish || :
+    if run_stage thesis --limit=12; then run_stage publish || :; else echo "publish skipped: thesis stage failed"; fi
     run_stage status || :
     if [[ "${1:-}" == "--once" ]]; then exit 1; fi
     wait_until_next_run
@@ -89,7 +89,7 @@ while true; do
     echo "$(date -u +%FT%TZ) stage=analyze status=skipped reason=yields-failed; retaining existing analysis"
   fi
   run_stage share-checks || :
-  run_stage publish || :
+  if run_stage thesis --limit=12; then run_stage publish || :; else echo "publish skipped: thesis stage failed"; fi
   # Residual IDs and evidence are private and must never enter the data repository.
   node -e 'const fs=require("fs"),path=require("path");const file=path.join(process.env.VALUE_CORPUS_DIR,"staging/unresolved-shares.json");if(fs.existsSync(file)){const d=JSON.parse(fs.readFileSync(file));console.log(JSON.stringify({privateShareResidual:d.companies.length,qualityPassResidual:d.companies.filter(r=>r.qualityPass).length,file}))}' >> "$VALUE_CORPUS_DIR/logs/$cycle_date-share-checks.log"
   run_stage status || :

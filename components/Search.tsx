@@ -11,14 +11,20 @@ import { StatusGlyph } from '@/components/value/viz/StatusGlyph';
 import { plural } from "@/lib/format";
 import { slugOf } from "@/lib/slug";
 
-import { rank, type Hit } from "@/lib/search/rank";
+import { rank, searchIndexForScope, type Hit } from "@/lib/search/rank";
 
-let cached: Promise<SearchIndex> | null = null;
-const loadIndex = () => (cached ??= fetch("/api/search").then((r) => r.json() as Promise<SearchIndex>).then(index=>{rank(index,'\0');return index;}).catch(error=>{cached=null;throw error;}));
+const cached = new Map<boolean,Promise<SearchIndex>>();
+const loadIndex = (value=false) => {
+ const existing=cached.get(value);if(existing)return existing;
+ const request=fetch('/api/search').then(r=>r.json() as Promise<SearchIndex>).then(data=>{
+  const index=searchIndexForScope(data,value);rank(index,'\0');return index;
+ }).catch(error=>{cached.delete(value);throw error;});
+ cached.set(value,request);return request;
+};
 
 // Press "/" anywhere. Investors, firms, tickers and company names.
-export function SearchTrigger({query = '', className = '', label = 'search'}: {query?:string;className?:string;label?:string}) {
- return <button type="button" aria-label="Search companies" onPointerEnter={()=>{void warmValueSearch().catch(()=>{});void loadIndex();}} onFocus={()=>{void warmValueSearch().catch(()=>{});void loadIndex();}} onClick={()=>window.dispatchEvent(new CustomEvent('open-search',{detail:query}))} className={`rounded-[3px] bg-paper px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 ${className}`}>{label} <span className="ml-1 opacity-60">/</span></button>;
+export function SearchTrigger({query = '', className = '', label = 'search', value = false}: {query?:string;className?:string;label?:string;value?:boolean}) {
+ return <button type="button" aria-label="Search companies" onPointerEnter={()=>{void warmValueSearch().catch(()=>{});void loadIndex(value).catch(()=>{});}} onFocus={()=>{void warmValueSearch().catch(()=>{});void loadIndex(value).catch(()=>{});}} onClick={()=>window.dispatchEvent(new CustomEvent('open-search',{detail:query}))} className={`rounded-[3px] bg-paper px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 ${className}`}>{label} <span className="ml-1 opacity-60">/</span></button>;
 }
 export function Search() {
   const segment = useSelectedLayoutSegment(), pathname = usePathname();
@@ -57,11 +63,11 @@ export function Search() {
 
   useEffect(() => {
     if (!open) return;
-    loadIndex().then(setIndex).catch(()=>setError('Could not load search. Try again.'));
+    loadIndex(isValue).then(setIndex).catch(()=>setError('Could not load search. Try again.'));
     setQuery(initialQuery.current); initialQuery.current='';
     setSel(0);
     requestAnimationFrame(() => input.current?.focus());
-  }, [open]);
+  }, [open,isValue]);
 
   useEffect(()=>{
     let current=true;

@@ -24,6 +24,8 @@ export const audit = () => {
     const a=label.getBoundingClientRect(),b=bar.getBoundingClientRect();
     if(a.left<b.right&&b.left<a.right&&a.top<b.bottom+4&&a.bottom>b.top-4)issues.push(`filing bar overlaps label: "${label.textContent}"`);
   }
+  // Phone sheets intentionally scroll; only text in the scrollport is painted.
+  const scrollParent=el=>{for(let p=el.parentElement;p&&p!==document.body;p=p.parentElement){const cs=getComputedStyle(p);if(/auto|scroll/.test(cs.overflowY)&&p.scrollHeight>p.clientHeight+1)return p;}return null;};
   // HTML text collisions: visible leaf text boxes overlapping each other
   const leaves = [];
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
@@ -35,7 +37,11 @@ export const audit = () => {
     { const er = el.getBoundingClientRect(); if (er.width <= 2 || er.height <= 2) continue; }
     if(parseFloat(getComputedStyle(el).fontSize)<13)issues.push(`text below 13px: "${n.textContent.trim().slice(0,40)}" (${getComputedStyle(el).fontSize})`);
     const range = document.createRange(); range.selectNodeContents(n);
-    for (const b of range.getClientRects()) if (b.width > 2 && b.height > 2) leaves.push({ t: n.textContent.trim().slice(0, 30), b, el });
+    for (const b of range.getClientRects()) if (b.width > 2 && b.height > 2) {
+      const scroller=scrollParent(el),port=scroller?.getBoundingClientRect();
+      if(port&&(b.bottom<=port.top||b.top>=port.bottom))continue;
+      leaves.push({t:n.textContent.trim().slice(0,30),b:port?{left:b.left,right:b.right,top:Math.max(b.top,port.top),bottom:Math.min(b.bottom,port.bottom)}:b,el});
+    }
   }
   for (let i = 0; i < leaves.length && issues.length < 80; i++) for (let j = i + 1; j < leaves.length; j++) {
     const a = leaves[i].b, c = leaves[j].b;
@@ -48,11 +54,12 @@ export const audit = () => {
   for (const { t, b, el } of leaves) {
     let p = el.parentElement;
     while (p && p !== document.body) {
+      if(p===scrollParent(el))break;
       const ps = getComputedStyle(p);
       if (/(hidden|clip)/.test(ps.overflow + ps.overflowX + ps.overflowY)) { const pb = p.getBoundingClientRect(); if (b.bottom > pb.bottom + 1 || b.right > pb.right + 1 || b.top < pb.top - 1) { issues.push(`text cut by container: "${t}"`); break; } }
       p = p.parentElement;
     }
-    if (getComputedStyle(document.body).overflow === "hidden" && b.bottom > innerHeight + 1) issues.push(`text below the fold on a no-scroll page: "${t}"`);
+    if (!scrollParent(el) && getComputedStyle(document.body).overflow === "hidden" && b.bottom > innerHeight + 1) issues.push(`text below the fold on a no-scroll page: "${t}"`);
   }
   const main = document.querySelector("main") ?? document.body;
   const content = [...main.querySelectorAll("table, svg, section, figure")].reduce((m, el) => Math.max(m, el.getBoundingClientRect().width), 0);

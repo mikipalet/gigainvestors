@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
-/** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted tab content. */
+/** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted evidence. */
 export function SidePanel({ title, onClose, children, wide = false }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean }) {
   const [closing,setClosing]=useState(false);
   const timer=useRef<ReturnType<typeof setTimeout>|null>(null);

@@ -33,7 +33,7 @@ export default async function DossierPage({ params }: Props) {
   const investors = dossier.holders.length ? await getIndex() : null;
   const quote=await getPrice(dossier.id,company.country);
   return <DossierContent dossier={dossier} quote={quote}>
-    {dossier.holders.length>0&&<section className="holders"><h2><HolderSummary holders={dossier.holders}/></h2>
+    {dossier.holders.length>0&&<section className="holders"><h2><HolderSummary holders={dossier.holders.map(h=>{const i=investors?.investors.find(i=>i.code===h.code);return {...h,firm:i?.firm,portrait:i?.sketch?i.slug:undefined};})}/></h2>
       {dossier.holders.length ? <ul className="holder-stack">{dossier.holders.slice(0,5).map((holder) => {
         const investor = investors?.investors.find((item) => item.code === holder.code);
         return <li key={holder.code}><HolderLink name={holder.name} code={holder.code}>

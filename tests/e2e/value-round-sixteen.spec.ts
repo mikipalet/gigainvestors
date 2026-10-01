@@ -14,19 +14,12 @@ for(const [width,height] of [[1728,970],[2056,1180],[390,844]])for(const route o
  }
 });
 
-test('capital return drawer caps summaries and keeps exact observations in Data',async({page})=>{
+test('capital return drawer caps summaries and keeps exact annual observations visible',async({page})=>{
  await page.goto('/wkl.as');await page.getByRole('button',{name:'Open Lasting advantage evidence'}).click();
- await page.getByRole('tab',{name:'Measures',exact:true}).click();
- await expect(page.locator('.measure-row').first()).toContainText('>100%');
- await page.getByRole('tab',{name:'Data',exact:true}).click();await page.locator('.data-series select').selectOption('roic');
- const values=await page.locator('.data-pair b').allTextContents();
- expect(values.some(v=>Number(v.replaceAll(',',''))>1)).toBe(true);
+ await expect(page.locator('.drawer-numbers')).toContainText('>100%');
+ await expect(page.getByRole('tab')).toHaveCount(0);
+ const values=await page.locator('.drawer-years tbody td:first-of-type').allTextContents();
+ expect(values.some(v=>parseFloat(v)>100)).toBe(true);
  expect(values.join(' ')).not.toContain('>100%');
-});
-
-test('capital returns in filing notes use the same cap',async({page})=>{
- await page.goto('/wkl.as');await page.getByRole('button',{name:'Open Value created per $1 kept evidence'}).click();
- await page.getByRole('tab',{name:'Filing',exact:true}).click();
- await page.getByRole('button',{name:'Next detail page'}).click();await page.getByRole('button',{name:'Next detail page'}).click();
- await expect(page.locator('.evidence-list')).toContainText('ROIC first 3 years vs last 3 years: >100% vs >100%');
+ await expect(page.locator('.filing-quotes a')).toHaveAttribute('href',/^https:/);
 });

@@ -10,7 +10,7 @@ export function MiniDollar({retained,created,first,last,fluid=false}:{retained:n
  const height=fluid?Math.max(70,availableHeight-24):66,keptY=height*.27,createdY=height*.73,barHeight=fluid?Math.min(36,height*.18):14;
  return <figure ref={ref} className="mini-dollar" style={{visibility:fluid&&!availableHeight?'hidden':undefined}}><figcaption>{period} · kept → created</figcaption><ChartInteraction width={width} height={height} label="Retained dollar" points={[{x:labelWidth+1/max*barWidth,y:keptY,text:`${period} · $1 retained. Passing bar: create at least $1.`},{x:labelWidth+Math.max(0,ratio)/max*barWidth,y:createdY,text:`${period} · $${ratio.toFixed(2)} created per $1 retained. Passing bar: ≥ $1.`}]}><svg viewBox={`0 0 ${width} ${height}`} width="100%" height={height}><text x="0" y={keptY+4}>$1 kept</text><rect x={labelWidth} y={keptY-barHeight/2} width={1/max*barWidth} height={barHeight} fill="var(--viz-muted)"/><text x="0" y={createdY+4}>${ratio.toFixed(2)} created</text><rect x={labelWidth} y={createdY-barHeight/2} width={Math.max(0,ratio)/max*barWidth} height={barHeight} fill="var(--buy)"/></svg></ChartInteraction></figure>;
 }
-export function MiniPrice({dossier,quote,height:chartHeight,fluid=false}:{dossier:Dossier;quote:PriceMap[string]|null;height?:number;fluid?:boolean}){
+export function MiniPrice({dossier,quote,height:chartHeight,fluid=false,minimumHeight=150}:{dossier:Dossier;quote:PriceMap[string]|null;height?:number;fluid?:boolean;minimumHeight?:number}){
  const {ref,width,height:availableHeight}=useWidth();
  const values=dossier.valueHistory?.filter(v=>v.every(Number.isFinite)&&v.slice(1).every(n=>n>0))??[];
  const history=dossier.priceHistory??[];
@@ -20,7 +20,7 @@ export function MiniPrice({dossier,quote,height:chartHeight,fluid=false}:{dossie
  const start=year(prices[0][0]),end=year(prices.at(-1)![0]);
  const visible=values.filter(v=>v[0]+1>=start),vs=visible.length?visible:[values.at(-1)!],ps=prices.filter(p=>year(p[0])>=start);
  const mos=dossier.requiredMos??.25,max=Math.max(...vs.map(v=>v[3]),...ps.map(p=>p[1]))*1.05;
- const height=fluid?Math.max(150,availableHeight-44):chartHeight??(width<500?146:260),left=42,right=width-8,top=12,bottom=height-22;
+ const height=fluid?Math.max(minimumHeight,availableHeight-44):chartHeight??(width<500?146:260),left=42,right=width-8,top=12,bottom=height-22;
  const x=(n:number)=>left+(n-start)/(end-start||1)*(right-left),y=(n:number)=>bottom-n/max*(bottom-top);
  const tick=(n:number)=>new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:0}).format(n);
  const current=dossier.valuation?.perShareTrading??dossier.valuation?.perShare;

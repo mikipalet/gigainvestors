@@ -1,0 +1,53 @@
+/* One viewport: a growing chart above the permanently visible evidence. */
+.value-page .value-panel{width:min(1040px,100vw);height:100dvh;max-height:100dvh}
+.value-page .panel-content{padding:18px 24px;overflow:hidden}
+.evidence-layout{display:grid;grid-template-rows:auto minmax(150px,1fr) auto auto;gap:14px;height:100%;min-height:0}
+.value-page .evidence-layout .panel-answer{margin:0;font-size:clamp(24px,2vw,32px);line-height:1.18;letter-spacing:-.6px;max-width:950px}
+.value-page .drawer-chart{height:100%;min-height:0;overflow:visible}
+.drawer-chart>figure{height:100%;margin:0;display:flex;flex-direction:column;min-height:0}
+.value-page .drawer-chart .chart-interaction{margin:0;flex:1;min-height:0}
+.drawer-chart [data-testid=threshold-series]>figcaption h3,.drawer-chart [data-testid=threshold-series]>p{display:none}
+.value-page .drawer-chart figcaption,.value-page .drawer-chart figcaption p{font-size:14px;line-height:20px;margin:0 0 8px}
+.drawer-chart .mini-price{height:100%}.drawer-chart .mini-price>div:last-child{font-size:13px}
+.drawer-numbers{display:flex;justify-content:space-between;gap:12px;border-block:1px solid var(--viz-grid);padding:10px 0;margin:0;font-variant-numeric:tabular-nums}
+.drawer-numbers>div{min-width:0}.drawer-numbers dt{font-size:13px;color:var(--viz-muted);line-height:1.2}.drawer-numbers dd{font-size:21px;line-height:1.35;white-space:nowrap;margin:4px 0 0}
+.drawer-bottom{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:24px;align-items:start}
+.value-page .drawer-bottom h3{font-size:18px;margin:0 0 8px;line-height:1.2}
+.drawer-years table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;table-layout:auto}
+.drawer-years :is(th,td){font-size:13px;line-height:1.2;padding:5px 4px;text-align:right;border-bottom:1px solid var(--viz-grid);white-space:nowrap;font-weight:400}
+.drawer-years thead th{font-size:13px;color:var(--viz-muted);white-space:normal;vertical-align:bottom}
+.drawer-years th:first-child{padding-left:0;text-align:left}.drawer-years td:last-child{padding-right:0}
+.year-pass{color:var(--buy)}.year-fail{color:var(--viz-sell)}
+.value-page .drawer-bottom .drawer-table-note{font-size:13px;line-height:1.35;color:var(--viz-muted);margin:8px 0 0}
+.filing-evidence{min-width:0}.filing-quotes{display:grid;gap:10px}.filing-quotes blockquote{margin:0;padding-left:12px;border-left:2px solid var(--viz-grid)}
+.value-page .filing-evidence :is(p,li,blockquote){font-size:14px;line-height:1.4;margin:0}.filing-evidence a{font-size:13px;color:var(--viz-muted);text-decoration:underline;text-underline-offset:3px}
+.jev-readings{margin-top:12px}.jev-readings h4{font-size:13px;color:var(--viz-muted);margin:0 0 4px}.jev-readings ul{padding:0;list-style:none;display:grid;gap:4px}.jev-readings li{display:flex;justify-content:space-between;gap:12px}.jev-readings b{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:500}
+.filing-evidence>.filing-source{display:block;margin-top:10px}.filing-evidence>p{margin-top:10px!important}
+.valuation-inputs{margin:8px 0}.valuation-inputs>div{display:flex;justify-content:space-between;gap:12px;font-size:13px;line-height:1.3;padding:3px 0}.valuation-inputs dd{white-space:nowrap;font-variant-numeric:tabular-nums}
+.value-page .panel-content:has(.main-full-list){padding-bottom:18px}.main-full-list{height:100%;display:flex;flex-direction:column;min-height:0}.main-full-list>.paged-items{flex:1;min-height:0;display:flex;flex-direction:column}.main-full-list .paged-items>div{flex:1;display:grid;grid-auto-rows:minmax(0,1fr)}.main-full-list .paged-items>nav{margin-top:10px;flex:none}.value-page .main-full-list .main-list-row{height:100%;min-height:0}
+.investor-panel{height:100%;display:grid;grid-template-rows:auto minmax(100px,1fr) auto;gap:20px}.investor-directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:0 22px}.investor-directory .investor-row{padding:12px 0;border-bottom:1px solid var(--viz-grid)}.investor-panel footer{font-size:14px;border-top:1px solid var(--viz-grid);padding-top:14px}.investor-count{font-size:clamp(60px,13vh,140px);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-6px}.investor-panel .panel-answer{margin:0}
+@media(min-width:768px) and (max-height:850px){.value-page .panel-content{padding:12px 20px}.evidence-layout{gap:10px;grid-template-rows:auto minmax(120px,1fr) auto auto}.value-page .evidence-layout .panel-answer{font-size:25px}.drawer-years :is(th,td){padding-block:4px}.drawer-numbers{padding:7px 0}.drawer-numbers dd{font-size:19px}.drawer-bottom{gap:20px}}
+@media(max-width:767px){
+ body:has(dialog[open]){overflow:hidden!important}
+ .value-page .panel-content{overflow-y:auto;overscroll-behavior:contain;padding:14px 16px}
+ .evidence-layout{height:auto;min-height:100%;grid-template-rows:auto 165px auto auto;gap:12px}
+ .value-page .evidence-layout .panel-answer{font-size:24px;line-height:1.16}
+ .drawer-numbers{flex-wrap:wrap;justify-content:flex-start;gap:8px 16px;padding:8px 0}.drawer-numbers dd{font-size:17px;margin-top:2px}.drawer-numbers dt{font-size:13px}
+ .drawer-bottom{grid-template-columns:1fr;gap:18px}.drawer-years :is(th,td){padding-block:4px}
+ .value-page .drawer-bottom h3{font-size:17px}.value-page .filing-evidence :is(p,li,blockquote){font-size:14px}
+ .investor-directory{grid-template-columns:1fr}.investor-panel{min-height:100%;height:auto;grid-template-rows:auto 1fr auto}
+ .value-page .main-full-list .main-list-row{min-height:74px}.main-full-list{min-height:100%;height:100%}
+}
+.method-sections{height:100%;display:grid;grid-template-columns:1fr 1fr;align-content:space-between;gap:18px 26px}.value-page .method-sections h3{font-size:18px;line-height:1.2;margin:0 0 8px}.method-sections section>h3{color:var(--viz-muted);font-size:13px!important}.value-page .method-sections p{font-size:14px;line-height:1.4;margin:6px 0}.method-sections .panel-numbers{display:flex!important;gap:16px;justify-content:space-between}.method-sections .panel-numbers>div{display:block}.method-sections .panel-numbers dd{font-size:18px;text-align:left}.method-sections .panel-numbers dt{font-size:13px}
+@media(max-width:767px){.method-sections{height:auto;min-height:100%;grid-template-columns:1fr}}
+.value-page .drawer-chart .mini-price>div:last-child{margin:0;line-height:16px;flex:none}
+.value-page .drawer-chart .mini-price>figcaption{flex:none}
+.drawer-years h3 small{font-size:13px;font-weight:400;color:var(--viz-muted);margin-left:8px}
+.thesis-panel{height:100%;display:flex;flex-direction:column;gap:16px}.thesis-panel .paged-items{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between}.value-page .thesis-panel .thesis-evidence{margin:0}.value-page .thesis-panel .thesis-evidence p{font-size:clamp(20px,2.2vh,26px);line-height:1.45}.thesis-panel .paged-items nav{margin-top:16px}
+.value-page .panel-content .paginated-results{flex:1;display:flex;flex-direction:column;min-height:0}.paginated-results>table{flex:1}.paginated-results .select-pages{margin-top:auto;flex:none}
+.value-page .investor-panel>header{display:block;position:static;height:auto;padding:0;border:0}.investor-count{margin-top:14px}
+@media(min-width:768px) and (max-height:850px){.method-sections{gap:12px 24px}.value-page .method-sections p{line-height:1.3}.method-sections .panel-numbers{padding:2px 0}.method-sections .panel-numbers>div{padding:3px 0}}
+.investor-directory{align-content:stretch;grid-auto-rows:minmax(56px,1fr)}.value-page .investor-directory .investor-row{display:flex;align-items:center;gap:16px;padding:6px 0;min-height:0}.investor-row b{font-size:16px;font-weight:500}.investor-row small{display:block;font-size:13px;line-height:1.3;color:var(--viz-muted)}.holder-portrait{width:clamp(48px,7vh,80px);height:clamp(48px,7vh,80px);flex:none}
+@media(max-width:767px){.investor-directory{grid-auto-rows:minmax(60px,auto)}.investor-panel .panel-answer{color:var(--ink)!important}.holder-portrait{width:48px;height:48px}}
+.main-full-list .paged-items>div,.main-full-list .paged-items>div>div{min-height:0}.main-list-row .list-context{grid-column:1/-1;font-size:13px;line-height:1.3;align-self:start}.main-list-row:has(.list-context){row-gap:3px;grid-template-rows:auto auto}
+.value-page .filing-evidence .quote-context{font-size:13px;color:var(--viz-muted);margin-bottom:3px}

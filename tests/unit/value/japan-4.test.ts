@@ -58,7 +58,8 @@ it('J8 rejects mismatched fiscal periods and does not zero-fill missing cash-flo
  expect(trailingFromEdinet(read('S100YUIN'),annual,{periodStart:'2025-01-01',periodEnd:'2025-06-30'})).toBeNull();
  const missing=read('S100YUIN').filter(r=>!r.element.includes('DepreciationAndAmortization'));
  const ttm=trailingFromEdinet(missing,annual,{periodStart:'2026-01-01',periodEnd:'2026-06-30'})!;
- expect(ttm.da).toBeNull();expect(ownerEarningsBridge([ttm])[0].value).toBeNull();
+ expect(ttm.da).toBeNull();expect(ownerEarningsBridge([ttm])[0]).toMatchObject({cashFlowBasis:true,maintenanceCapex:ttm.capex});
+ expect(ownerEarningsBridge([{...ttm,ocf:null}])[0].value).toBeNull();
 });
 
 it('J5 accepts a treasury-share explanation and a matching price move, but flags missing EPS',async()=>{

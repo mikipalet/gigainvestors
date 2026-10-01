@@ -111,3 +111,4 @@ body:has(.value-page) #search-results li,body:has(.value-page) .search-group {fo
 .search-modal .market-access-status {grid-row:3;grid-column:1/-1;max-width:none;}
 .search-modal [role=status] {font-size:14px!important;}
 .value-page .panel-shell > header h2 {order:0;}
+.dossier-checks:not(:has(.price-section)) {grid-template-columns:minmax(0,1fr);}

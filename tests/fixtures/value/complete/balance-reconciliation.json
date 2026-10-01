@@ -1,0 +1,553 @@
+{
+  "id": "6383.JP",
+  "primary": [
+    {
+      "fy": 2022,
+      "end": "2022-03-31",
+      "fiscalEndInferred": false,
+      "currency": "JPY",
+      "revenue": 601922000000,
+      "costOfSales": 417968000000,
+      "grossProfit": 94299000000,
+      "operatingIncome": 50252000000,
+      "preTaxIncome": 50978000000,
+      "taxExpense": 14534000000,
+      "netIncome": 41248000000,
+      "totalNetIncome": 36444000000,
+      "interestExpense": null,
+      "da": 7326000000,
+      "sbc": 0,
+      "nonRecurring": 0,
+      "ocf": 20034000000,
+      "capex": 10461000000,
+      "leaseCash": null,
+      "dividendsPaid": 10720000000,
+      "buybacks": 14000000,
+      "issuance": 38000000,
+      "acquisitions": 705000000,
+      "receivables": 3436000000,
+      "inventory": 29823000000,
+      "payables": 48046000000,
+      "cash": 118769000000,
+      "cashAndDeposits": 118769000000,
+      "cashAndCashEquivalents": 102389000000,
+      "shortTermInvestments": null,
+      "totalDebt": 26356000000,
+      "equity": 331034000000,
+      "goodwill": 3956000000,
+      "intangibles": 6764000000,
+      "ppe": 55215000000,
+      "totalAssets": 551552000000,
+      "totalLiabilities": 191263000000,
+      "currentAssets": 381310000000,
+      "currentLiabilities": 173645000000,
+      "dilutedShares": 378040509.5774906,
+      "marketCap": null,
+      "minorityInterest": 1289000000,
+      "liabilitiesAndStockholdersEquity": 483322000000,
+      "equityFromNetAssets": true,
+      "netAssets": 332323000000,
+      "subscriptionRights": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "provenance": {
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sbc": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "sbc",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "nonRecurring": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "retainedEarnings": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "RetainedEarnings",
+          "method": "reported"
+        },
+        "issuance": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/6383.T",
+          "field": "annualIssuanceOfCapitalStock",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "costOfSales": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CostOfSales",
+          "method": "reported"
+        },
+        "grossProfit": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "GrossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "OperatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "IncomeBeforeIncomeTaxes",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "IncomeTaxes",
+          "method": "reported"
+        },
+        "totalNetIncome": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "ProfitLoss",
+          "method": "reported"
+        },
+        "da": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "DepreciationAndAmortizationOpeCF",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "PurchaseOfNoncurrentAssetsInvCF",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CashDividendsPaidFinCF",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "PurchaseOfTreasuryStockFinCF",
+          "method": "reported"
+        },
+        "cashAndDeposits": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CashAndDeposits",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "Goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "IntangibleAssets",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "PropertyPlantAndEquipment",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "Liabilities",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CurrentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CurrentLiabilities",
+          "method": "reported"
+        },
+        "minorityInterest": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "NonControllingInterests",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "LiabilitiesAndNetAssets",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/6383.T",
+          "field": "annualOperatingExpense",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/6383.T",
+          "field": "annualAccountsPayable",
+          "method": "reported"
+        },
+        "dilutedEps": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/6383.T",
+          "field": "annualDilutedEPS",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/6383.T",
+          "field": "annualCurrentDebt",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/6383.T",
+          "field": "annualCashCashEquivalentsAndShortTermInvestments",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/6383.T",
+          "field": "annualTotalDebt",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "fundamentals/6383.JP.json (edinet)",
+          "field": "revenue",
+          "method": "cached"
+        },
+        "netIncome": {
+          "source": "fundamentals/6383.JP.json (edinet)",
+          "field": "netIncome",
+          "method": "cached"
+        },
+        "ocf": {
+          "source": "fundamentals/6383.JP.json (edinet)",
+          "field": "ocf",
+          "method": "cached"
+        },
+        "receivables": {
+          "source": "fundamentals/6383.JP.json (edinet)",
+          "field": "receivables",
+          "method": "cached"
+        },
+        "inventory": {
+          "source": "fundamentals/6383.JP.json (edinet)",
+          "field": "inventory",
+          "method": "cached"
+        },
+        "cashAndCashEquivalents": {
+          "source": "fundamentals/6383.JP.json (edinet)",
+          "field": "cashAndCashEquivalents",
+          "method": "cached"
+        },
+        "equity": {
+          "source": "fundamentals/6383.JP.json (edinet)",
+          "field": "equity",
+          "method": "cached"
+        },
+        "totalAssets": {
+          "source": "fundamentals/6383.JP.json (edinet)",
+          "field": "totalAssets",
+          "method": "cached"
+        },
+        "dilutedShares": {
+          "source": "fundamentals/6383.JP.json (edinet)",
+          "field": "dilutedShares",
+          "method": "cached"
+        },
+        "netAssets": {
+          "source": "fundamentals/6383.JP.json (edinet)",
+          "field": "netAssets",
+          "method": "cached"
+        }
+      },
+      "retainedEarningsChange": 25232000000,
+      "retainedEarnings": 227609000000,
+      "acquisitionsProxy": true,
+      "edinetShares": {
+        "basic": 126012433.70447123,
+        "issued": 126610077,
+        "filing": 126610077,
+        "treasury": 486300,
+        "splitFiled": false,
+        "filed": "2022-06-27",
+        "reconciled": true,
+        "reason": "EDINET basic EPS shares reconciled to filing-date issued shares"
+      },
+      "shortTermDebt": 22449000000,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "debtIncludesLeases": true,
+      "operatingExpenses": 44045000000,
+      "dilutedEps": 94.9
+    }
+  ],
+  "secondary": [
+    {
+      "fy": 2022,
+      "end": "2022-03-31",
+      "fiscalEndInferred": false,
+      "currency": "JPY",
+      "revenue": 512268000000,
+      "costOfSales": 417968000000,
+      "grossProfit": 94299000000,
+      "operatingIncome": 50252000000,
+      "preTaxIncome": 50978000000,
+      "taxExpense": 14534000000,
+      "netIncome": 35877000000,
+      "totalNetIncome": 36444000000,
+      "interestExpense": null,
+      "da": 7326000000,
+      "sbc": 0,
+      "nonRecurring": 0,
+      "retainedEarnings": 227609000000,
+      "ocf": 56691000000,
+      "capex": 10461000000,
+      "leaseCash": null,
+      "dividendsPaid": 10720000000,
+      "buybacks": 14000000,
+      "issuance": 0,
+      "acquisitions": 705000000,
+      "receivables": 3436000000,
+      "inventory": 29823000000,
+      "payables": null,
+      "cash": 118769000000,
+      "cashAndDeposits": 118769000000,
+      "cashAndCashEquivalents": 118672000000,
+      "shortTermInvestments": null,
+      "totalDebt": 26356000000,
+      "equity": 290770000000,
+      "goodwill": 3956000000,
+      "intangibles": 6764000000,
+      "ppe": 55215000000,
+      "totalAssets": 483322000000,
+      "totalLiabilities": 191263000000,
+      "currentAssets": 381310000000,
+      "currentLiabilities": 173645000000,
+      "dilutedShares": 126012433.70447123,
+      "marketCap": null,
+      "minorityInterest": 1289000000,
+      "liabilitiesAndStockholdersEquity": 483322000000,
+      "equityFromNetAssets": true,
+      "netAssets": 292059000000,
+      "subscriptionRights": null,
+      "edinetShares": {
+        "basic": 126012433.70447123,
+        "issued": 126610077,
+        "filing": 126610077,
+        "treasury": 486300,
+        "splitFiled": false,
+        "filed": "2022-06-27",
+        "reconciled": true,
+        "reason": "EDINET basic EPS shares reconciled to filing-date issued shares"
+      },
+      "shortTermDebt": 22449000000,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "provenance": {
+        "revenue": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "NetSalesSummaryOfBusinessResults",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CostOfSales",
+          "method": "reported"
+        },
+        "grossProfit": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "GrossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "OperatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "IncomeBeforeIncomeTaxes",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "IncomeTaxes",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "ProfitLossAttributableToOwnersOfParentSummaryOfBusinessResults",
+          "method": "reported"
+        },
+        "totalNetIncome": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "ProfitLoss",
+          "method": "reported"
+        },
+        "da": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "DepreciationAndAmortizationOpeCF",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "RetainedEarnings",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "NetCashProvidedByUsedInOperatingActivities",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "PurchaseOfNoncurrentAssetsInvCF",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CashDividendsPaidFinCF",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "PurchaseOfTreasuryStockFinCF",
+          "method": "reported"
+        },
+        "cashAndDeposits": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CashAndDeposits",
+          "method": "reported"
+        },
+        "cashAndCashEquivalents": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CashAndCashEquivalents",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "Goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "IntangibleAssets",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "PropertyPlantAndEquipment",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "TotalAssetsSummaryOfBusinessResults",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "Liabilities",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CurrentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "CurrentLiabilities",
+          "method": "reported"
+        },
+        "dilutedShares": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "dilutedShares",
+          "method": "reported"
+        },
+        "minorityInterest": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "NonControllingInterests",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "LiabilitiesAndNetAssets",
+          "method": "reported"
+        },
+        "nonRecurring": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "sbc": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "sbc",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "issuance": {
+          "source": "https://disclosure2.edinet-fsa.go.jp/WEEK0010.aspx?docId=S100OGHJ",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        }
+      },
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "debtIncludesLeases": true,
+      "retainedEarningsChange": 25232000000,
+      "acquisitionsProxy": true
+    }
+  ]
+}

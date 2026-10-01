@@ -20,7 +20,7 @@ it('uses the same return sentence in dossiers and buy cards', () => {
  dossier.valuation={...dossier.valuation!,...valuation};
  dossier.company.currency='USD';
  dossier.company.marketCapUsd=1000;
- const html=renderToStaticMarkup(createElement(DossierContent,{dossier}));
+ const html=renderToStaticMarkup(createElement(DossierContent,{dossier,quote:[100,"2026-09-30"]}));
  expect(html).toContain('About 12.5% a year expected (8.6% cash + 3.9% growth) vs required return 10.0% a year (10% floor; US 10-year bond 5.2% + 4 points)');
 });
 

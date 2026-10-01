@@ -1,0 +1,524 @@
+{
+  "primary": [
+    {
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": true,
+      "fy": 2025,
+      "end": "2025-02-28",
+      "currency": "CAD",
+      "minorityInterest": null,
+      "revenue": 0,
+      "grossProfit": null,
+      "operatingIncome": -157858,
+      "preTaxIncome": -743568,
+      "taxExpense": null,
+      "netIncome": -743568,
+      "interestExpense": 41336,
+      "da": null,
+      "sbc": 0,
+      "nonRecurring": 0,
+      "ocf": -15027,
+      "capex": 0,
+      "dividendsPaid": null,
+      "buybacks": null,
+      "issuance": 0,
+      "acquisitions": 0,
+      "acquisitionsProxy": true,
+      "receivables": 46514,
+      "loans": null,
+      "inventory": 0,
+      "payables": null,
+      "cash": 0,
+      "totalDebt": 233838,
+      "clientAssets": null,
+      "equity": -3477036,
+      "goodwill": 0,
+      "intangibles": 0,
+      "ppe": 241615,
+      "totalAssets": 288129,
+      "totalLiabilities": 1238697,
+      "liabilitiesAndStockholdersEquity": null,
+      "currentAssets": 46514,
+      "currentLiabilities": 1238697,
+      "dilutedShares": 17651962,
+      "marketCap": null,
+      "provenance": {
+        "operatingExpenses": {
+          "source": "raw/eodhd/AUQ.V.json#2025-02-28",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/AUQ.V.json#2025-02-28",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/AUQ.V.json#2025-02-28",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "inventory": {
+          "source": "statements",
+          "field": "inventory",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete balance sheet"
+          ]
+        },
+        "goodwill": {
+          "source": "statements",
+          "field": "goodwill",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete balance sheet"
+          ]
+        },
+        "intangibles": {
+          "source": "statements",
+          "field": "intangibles",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete balance sheet"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "dilutedEps": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualDilutedEPS",
+          "method": "reported"
+        },
+        "issuance": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualIssuanceOfCapitalStock",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualOperatingIncome",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualNetPPE",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/AUQ.V.json#2025-02-28",
+          "field": "cash",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualTotalRevenue",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualOperatingCashFlow",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/AUQ.V.json#2025-02-28",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualCurrentLiabilities",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualPretaxIncome",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualTotalLiabilitiesNetMinorityInterest",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualCurrentAssets",
+          "method": "reported"
+        },
+        "receivables": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualReceivables",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualTotalAssets",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualNetIncome",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualStockholdersEquity",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualStockBasedCompensation",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "interestExpense": {
+          "source": "fundamentals/AUQ.V.json (eodhd)",
+          "field": "interestExpense",
+          "method": "cached"
+        },
+        "capex": {
+          "source": "fundamentals/AUQ.V.json (eodhd)",
+          "field": "capex",
+          "method": "cached"
+        },
+        "dilutedShares": {
+          "source": "fundamentals/AUQ.V.json (eodhd)",
+          "field": "dilutedShares",
+          "method": "cached"
+        },
+        "fy": {
+          "source": "raw/eodhd/AUQ.V.json#2025-02-28",
+          "field": "fy",
+          "method": "reported"
+        }
+      },
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": false
+      },
+      "operatingExpenses": 157858,
+      "shortTermDebt": 233838,
+      "debtIncludesLeases": false,
+      "retainedEarnings": -23023990,
+      "retainedEarningsChange": -743568,
+      "dilutedEps": -0.04
+    },
+    {
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": true,
+      "fy": 2026,
+      "end": "2026-02-28",
+      "currency": "CAD",
+      "minorityInterest": null,
+      "revenue": 0,
+      "grossProfit": null,
+      "operatingIncome": -469328,
+      "preTaxIncome": -746188,
+      "taxExpense": null,
+      "netIncome": -746188,
+      "interestExpense": 35245,
+      "da": null,
+      "sbc": 155629,
+      "nonRecurring": 0,
+      "ocf": -603919,
+      "capex": 142916,
+      "dividendsPaid": null,
+      "buybacks": null,
+      "issuance": 1000000,
+      "acquisitions": 0,
+      "acquisitionsProxy": true,
+      "receivables": 71792,
+      "loans": null,
+      "inventory": 0,
+      "payables": null,
+      "cash": 134405,
+      "totalDebt": 199893,
+      "clientAssets": null,
+      "equity": -2762981,
+      "goodwill": 0,
+      "intangibles": 0,
+      "ppe": 675370,
+      "totalAssets": 919820,
+      "totalLiabilities": 1000704,
+      "liabilitiesAndStockholdersEquity": null,
+      "currentAssets": 244450,
+      "currentLiabilities": 1000704,
+      "dilutedShares": 22705012,
+      "marketCap": null,
+      "provenance": {
+        "operatingExpenses": {
+          "source": "raw/eodhd/AUQ.V.json#2026-02-28",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/AUQ.V.json#2026-02-28",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/AUQ.V.json#2026-02-28",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "inventory": {
+          "source": "statements",
+          "field": "inventory",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete balance sheet"
+          ]
+        },
+        "goodwill": {
+          "source": "statements",
+          "field": "goodwill",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete balance sheet"
+          ]
+        },
+        "intangibles": {
+          "source": "statements",
+          "field": "intangibles",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete balance sheet"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "dilutedEps": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualDilutedEPS",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualCapitalExpenditure",
+          "method": "reported"
+        },
+        "issuance": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualIssuanceOfCapitalStock",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualOperatingIncome",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualNetPPE",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/AUQ.V.json#2026-02-28",
+          "field": "cash",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualTotalRevenue",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualOperatingCashFlow",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/AUQ.V.json#2026-02-28",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualCurrentLiabilities",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualPretaxIncome",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualTotalLiabilitiesNetMinorityInterest",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualCurrentAssets",
+          "method": "reported"
+        },
+        "receivables": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualReceivables",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualTotalAssets",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualNetIncome",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualStockholdersEquity",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AUQ.V",
+          "field": "annualStockBasedCompensation",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "interestExpense": {
+          "source": "fundamentals/AUQ.V.json (eodhd)",
+          "field": "interestExpense",
+          "method": "cached"
+        },
+        "dilutedShares": {
+          "source": "fundamentals/AUQ.V.json (eodhd)",
+          "field": "dilutedShares",
+          "method": "cached"
+        },
+        "fy": {
+          "source": "raw/eodhd/AUQ.V.json#2026-02-28",
+          "field": "fy",
+          "method": "reported"
+        }
+      },
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": false
+      },
+      "operatingExpenses": 469328,
+      "shortTermDebt": 199893,
+      "debtIncludesLeases": false,
+      "retainedEarnings": -23770178,
+      "retainedEarningsChange": -746188,
+      "dilutedEps": -0.04
+    }
+  ],
+  "secondary": [
+    {
+      "end": "2025-02-28",
+      "fy": 2025,
+      "currency": "CAD",
+      "totalAssets": 288129,
+      "totalLiabilities": 1238697,
+      "equity": -950568,
+      "liabilitiesAndStockholdersEquity": 288129,
+      "provenance": {
+        "totalAssets": {
+          "source": "https://auqgold.com/wp-content/uploads/2025/10/AUQ_FS_2024_Q4.pdf#page=5",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "https://auqgold.com/wp-content/uploads/2025/10/AUQ_FS_2024_Q4.pdf#page=5",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "https://auqgold.com/wp-content/uploads/2025/10/AUQ_FS_2024_Q4.pdf#page=5",
+          "field": "equity",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "https://auqgold.com/wp-content/uploads/2025/10/AUQ_FS_2024_Q4.pdf#page=5",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        }
+      }
+    },
+    {
+      "end": "2026-02-28",
+      "fy": 2026,
+      "currency": "CAD",
+      "totalAssets": 919820,
+      "totalLiabilities": 1000704,
+      "equity": -80884,
+      "liabilitiesAndStockholdersEquity": 919820,
+      "provenance": {
+        "totalAssets": {
+          "source": "https://cdn.financialreports.eu/financialreports/media/filings/43747/2026/RNS/43747_rns_2026-07-30_27e01b76-f976-45ad-826d-3df5972605c4.pdf#page=3",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "https://cdn.financialreports.eu/financialreports/media/filings/43747/2026/RNS/43747_rns_2026-07-30_27e01b76-f976-45ad-826d-3df5972605c4.pdf#page=3",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "https://cdn.financialreports.eu/financialreports/media/filings/43747/2026/RNS/43747_rns_2026-07-30_27e01b76-f976-45ad-826d-3df5972605c4.pdf#page=3",
+          "field": "equity",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "https://cdn.financialreports.eu/financialreports/media/filings/43747/2026/RNS/43747_rns_2026-07-30_27e01b76-f976-45ad-826d-3df5972605c4.pdf#page=3",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        }
+      }
+    }
+  ]
+}

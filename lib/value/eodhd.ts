@@ -33,6 +33,7 @@ export interface ScreenerRow {
 const limit = createLimiter({ perSecond: T.eodhd.perSecond });
 
 export async function eodhd<T>(path: string, params: Record<string, string> = {}, request: { signal?: AbortSignal; retries?: number } = {}): Promise<T> {
+  if (process.env.VALUE_NO_EODHD === '1') throw new Error('EODHD calls disabled for this run');
   const key = process.env.EODHD_API_KEY;
   if (!key) throw new Error("EODHD_API_KEY is required");
   const url = new URL(path.replace(/^\//, ""), "https://eodhd.com/api/");

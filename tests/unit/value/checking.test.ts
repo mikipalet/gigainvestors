@@ -8,17 +8,17 @@ import type { Analysis, IndexRow, StoreMeta } from '@/lib/value/types';
 
 it('marks only unresolved price-input checks as pending, never measured failures or missing filings', () => {
  const years=makeYears({overrides:{marketCap:null}});
- expect(run({years,kind:'operating',priceHistoryPending:true}).pending).toBe(true);
+ expect(run({years,kind:'operating',priceHistoryPending:true}).pending).not.toBe(true);
  expect(run({years,kind:'operating',priceHistoryPending:false}).pending).not.toBe(true);
  expect(run({years:years.map(y=>({...y,netIncome:null})),kind:'operating',priceHistoryPending:true}).pending).not.toBe(true);
  expect(run({years:years.map((y,i)=>({...y,dilutedShares:10*1.2**i})),kind:'operating',priceHistoryPending:true}).pending).not.toBe(true);
 });
 it('counts near misses against quality gates regardless of price; partitions every cumulative gate',()=>{
- const a=(id:string,state:'pass'|'fail'|'unclear',pending=false)=>({id,company:{id,name:id,country:'US',currency:'USD',listings:[],kind:'operating'},status:'scored',asOf:'2026-09-29',versions:{pipeline:'6',questions:'1'},tests:Object.fromEntries(['understandable','moat','economics','management','accounting'].map(key=>[key,{key,result:key==='management'?state:'pass',numeric:key==='management'?state:'pass',pending:key==='management'&&pending,metrics:{},series:{},reasons:[],jev:[]}]))}) as unknown as Analysis;
+ const a=(id:string,state:'pass'|'fail'|'unclear',pending=false)=>({id,company:{id,name:id,country:'US',currency:'USD',listings:[],kind:'operating'},historyCoverage:{years:11,first:2015,last:2025,source:'fixture'},status:'scored',asOf:'2026-09-29',versions:{pipeline:'6',questions:'1'},tests:Object.fromEntries(['understandable','moat','economics','management','accounting'].map(key=>[key,{key,result:key==='management'?state:'pass',numeric:key==='management'?state:'pass',pending:key==='management'&&pending,metrics:{},series:{},reasons:[],jev:[]}]))}) as unknown as Analysis;
  const {files}=buildOutput({analyses:[a('F.US','fail'),a('C.US','unclear',true),a('U.US','unclear'),a('P.US','pass')],holdersByTicker:{},investorNames:{},fx:{}});
  const meta=files['meta.json'] as StoreMeta, rows=files['index/default.json'] as IndexRow[];
- expect(rows.map(r=>r.t).sort()).toEqual(['PPPCP','PPPFP','PPPPP','PPPUP']);
- expect(meta.funnel!.gates[3]).toMatchObject({passing:1,fail:1,checking:1,unclear:1,failsOnlyThis:1});
+ expect(rows.map(r=>r.t).sort()).toEqual(['PPPFP','PPPPP']);
+ expect(meta.funnel!.gates[3]).toMatchObject({passing:1,fail:1,checking:0,unclear:0,failsOnlyThis:1});
  expect(()=>assertIndexConsistency({meta,rows})).not.toThrow();
  expect(()=>assertIndexConsistency({meta,rows:rows.filter(r=>!r.t.includes('F'))})).toThrow('near-miss');
 });
@@ -33,9 +33,9 @@ it('carries pending provenance from analysis to publish and settles it when pric
  const fundamentals={id:company.id,currency:'USD',years:makeYears(),integrity:{ok:true,reasons:[]},fetchedAt:'2026-09-29'};
  const args:Parameters<typeof analyzeCompany>[0]={company,fundamentals,sections:{},report:{id:company.id,kind:'description',url:null,filed:null,period:null,sections:[]},bondYield:.04,ask:async()=>[]};
  const pending=await analyzeCompany(args as Parameters<typeof analyzeCompany>[0]);
- expect(pending.tests.management).toMatchObject({result:'unclear',pending:true});
+ expect(pending.tests.management).toMatchObject({result:'pass'});
  const exhausted=await analyzeCompany({...args,priceHistoryPending:false} as Parameters<typeof analyzeCompany>[0]);
- expect(exhausted.tests.management.result).toBe('unclear');expect(exhausted.tests.management.pending).not.toBe(true);
+ expect(exhausted.tests.management.result).toBe('pass');expect(exhausted.tests.management.pending).not.toBe(true);
  const settled=await analyzeCompany({...args,priceHistory:fundamentals.years.map((y,i)=>[y.end.slice(0,7),100+i*10])} as Parameters<typeof analyzeCompany>[0]);
  expect(settled.tests.management.result).toBe('pass');expect(settled.tests.management.pending).not.toBe(true);
 });

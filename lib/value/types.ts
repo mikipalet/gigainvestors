@@ -33,6 +33,16 @@ export interface Company {
 // One fiscal year, reporting currency, absolute units. null = not reported.
 // Sign convention: capex, buybacks, dividendsPaid, acquisitions are POSITIVE amounts spent.
 export interface Year {
+  provenance?: Record<string, import('./derive').ValueProvenance>;
+  statementCoverage?: { income?: boolean; balance?: boolean; cashFlow?: boolean };
+  shortTermDebt?: number | null;
+  debtIncludesLeases?: boolean;
+  operatingExpenses?: number | null;
+  dilutedEps?: number | null;
+  retainedEarnings?: number | null;
+  retainedEarningsChange?: number | null;
+  retainedEarningsOther?: number | null;
+  averageSharePrice?: number | null;
   fy: number;
   end: string; // ISO date
   fiscalEndInferred?: boolean; // EDINET summary dates extrapolated beyond the explicit current/prior end
@@ -172,6 +182,7 @@ export interface CompanyEvent {
 }
 
 export interface Analysis {
+  reportingCurrency?: string;
   author?: string;
   dataQualityFlags?: string[];
   shareCount?: { value: number; source: "yahoo-shares" };

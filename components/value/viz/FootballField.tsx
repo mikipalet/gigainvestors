@@ -14,7 +14,7 @@ export function FootballField({ valuation: v, price, mismatch, requiredMos = T.p
   const { ref, width } = useWidth();
   const gradient = useId();
   const { low, mid, high } = v.perShare;
-  if (!validValueRange(v.perShare)) return <figure ref={ref}><figcaption><h2>Valuation unavailable</h2><p>The published scenarios are inconsistent. Price is not compared.</p></figcaption></figure>;
+  if (!validValueRange(v.perShare)) return null;
   const comparedPrice = mismatch || !Number.isFinite(mid) || mid <= 0 ? null : price;
   const buyBelow = mid * (1 - requiredMos);
   const maximum=Math.max(high,comparedPrice??0)*1.1;

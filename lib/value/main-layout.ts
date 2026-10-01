@@ -27,7 +27,7 @@ export function mainZones(companies:MainCompany[]){
 }
 export function distancePosition(ratio:number){return Math.max(0,Math.min(1,(ratio-1)/.5));}
 export function distanceLabel(ratio:number|null){
- if(ratio===null)return 'Distance unavailable';
+ if(ratio===null)return '';
  if(Math.abs(ratio-1)<.00005)return 'At buy price';
  const n=Math.abs(ratio-1)*100;
  return `${n<.5?'<1':Math.round(n)}% ${ratio<1?'below':'above'}`;
@@ -40,4 +40,4 @@ export function nextLayout(width:number,height:number,count:number,phone=false,c
  const rows=phone?Math.min(5,count):Math.min(Math.ceil(Math.min(count,20)/columns),fit);
  return {columns,rows,capacity:Math.min(count,20,columns*rows)};
 }
-export const returnLabel=(value:number|null)=>value===null?'—':`${value<0?'−':''}${(Math.abs(value)*100).toFixed(1)}%`;
+export const returnLabel=(value:number|null)=>value===null?'':`${value<0?'−':''}${(Math.abs(value)*100).toFixed(1)}%`;

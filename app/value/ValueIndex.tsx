@@ -63,7 +63,7 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
     setHistoryError('');
     const cached=memory.current[year];
     if(cached){startTransition(()=>{setViews(v=>v[year]===cached?v:{...v,[year]:cached});setFrame(year);});return;}
-    void loadYear(year).then(data=>{if(current&&data)startTransition(()=>{setViews(v=>({...v,[year]:data}));setFrame(year);});}).catch(()=>{if(current)setHistoryError('History is unavailable for this year. Choose another year or Today.');});
+    void loadYear(year).then(data=>{if(current&&data)startTransition(()=>{setViews(v=>({...v,[year]:data}));setFrame(year);});}).catch(()=>{if(current)setHistoryError('Could not load this view. Try again.');});
     return()=>{current=false;};
   },[year,frame,loadYear]);
   useEffect(()=>{
@@ -86,7 +86,7 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
       if(frame==='Today')primeValueSearch(complete);
       setViews(v=>({...v,[frame]:complete}));
     }).catch(error=>{deferredLoads.current.delete(frame);throw error;}));
-    void deferredLoads.current.get(frame)!.catch(()=>{if(active)setHistoryError('Company data is unavailable. Try this filter again.');}).finally(()=>{if(active)setExtraLoading(false);});
+    void deferredLoads.current.get(frame)!.catch(()=>{if(active)setHistoryError('Could not load this view. Try again.');}).finally(()=>{if(active)setExtraLoading(false);});
     return()=>{active=false;};
   },[needsDeferred,frame,meta?.views]);
   const source=useMemo(()=>{

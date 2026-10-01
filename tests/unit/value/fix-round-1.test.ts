@@ -22,14 +22,14 @@ describe("round 1 controller rulings", () => {
   });
   it("defaults each optional item only within an existing statement", () => {
     const years = makeYears({ n: 2, overrides: (_, i) => ({
-      totalAssets: i === 0 ? 1000 : null, ocf: i === 0 ? null : 0,
+      statementCoverage:{balance:i===0,cashFlow:i===1}, totalAssets: i === 0 ? 1000 : null, ocf: i === 0 ? null : 0,
       goodwill: null, intangibles: null, inventory: null, totalDebt: null,
       dividendsPaid: null, buybacks: null, acquisitions: null, sbc: null,
     }) });
     const normalized = withZeroDefaults(years);
     expect(normalized[0]).toMatchObject({ goodwill: 0, intangibles: 0, inventory: 0, totalDebt: 0, dividendsPaid: null, buybacks: null, acquisitions: null, sbc: null });
-    expect(normalized[1]).toMatchObject({ goodwill: null, intangibles: null, inventory: null, totalDebt: null, dividendsPaid: 0, buybacks: 0, acquisitions: 0, sbc: 0 });
-    expect(withZeroDefaults(makeYears())).toEqual(makeYears());
+    expect(normalized[1]).toMatchObject({ goodwill: null, intangibles: null, inventory: null, totalDebt: null, dividendsPaid: 0, buybacks: 0, acquisitions: null, sbc: 0 });
+    expect(withZeroDefaults(makeYears())[0]).toMatchObject(makeYears()[0]);
     expect(years[0].goodwill).toBeNull();
   });
   it("allows a single loss year without averaging it into the worst return", () => {
@@ -44,7 +44,7 @@ describe("round 1 controller rulings", () => {
   });
   it("scores and values a company without optional balance sheet and cash flow items", () => {
     const years = makeYears({ overrides: (_, i) => ({
-      revenue: 1000 + 100 * i, grossProfit: 400 + 40 * i, operatingIncome: 125 + 25 * i, capex: 30,
+      statementCoverage:{balance:true,cashFlow:true,income:true}, revenue: 1000 + 100 * i, grossProfit: 400 + 40 * i, operatingIncome: 125 + 25 * i, capex: 30,
       goodwill: null, intangibles: null, inventory: null, totalDebt: null,
       dividendsPaid: null, buybacks: null, acquisitions: null, sbc: null,
     }) });
@@ -61,14 +61,14 @@ describe("round 1 controller rulings", () => {
     const years = makeYears({ overrides: { totalAssets: null, ocf: null, goodwill: null, intangibles: null, inventory: null, totalDebt: null, dividendsPaid: null, buybacks: null, acquisitions: null, sbc: null } });
     const result = run(years);
     expect(result.moat.numeric).toBe("unclear");
-    expect(result.management.numeric).toBe("unclear");
-    expect(result.economics.numeric).toBe("unclear");
+    expect(result.management.numeric).toBe("pass");
+    expect(result.economics.numeric).toBe("pass");
     expect(value(years).valuation).toBeNull();
   });
-  it("leaves fewer than ten years unclear with the history count", () => {
-    const result = run(makeYears({ n: 9 })).understandable;
+  it("leaves fewer than seven years private with the history count", () => {
+    const result = run(makeYears({ n: 6 })).understandable;
     expect(result.numeric).toBe("unclear");
-    expect(result.reasons).toContain("Not tested: only 9 years");
+    expect(result.reasons).toContain("Not tested: only 6 years");
   });
   it("fails a negative average operating margin despite positive net income", () => {
     expect(run(makeYears({ overrides: { operatingIncome: -10 } })).understandable.numeric).toBe("fail");

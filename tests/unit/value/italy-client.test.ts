@@ -51,6 +51,18 @@ it("follows every filing page, deduplicates filing IDs and orders restatements c
   expect(filings.at(-1)?.attributes.period_end).toBe("2025-12-31");
   expect(count).toBe(2);
 });
+it('resolves an exact recorded legal name when no ISIN is held',async()=>{
+ const recorded=fixture('gleif-eni.json');
+ const company={...parseMilanCsv(readFileSync('tests/fixtures/value/italy/euronext.csv','utf8')).find(c=>c.code==='ENI')!,isin:null,name:recorded.data[0].attributes.entity.legalName.name};
+ const fetch=vi.fn(async(url:string)=>{
+  expect(new URL(url).searchParams.has('filter[isin]')).toBe(false);
+  expect(new URL(url).searchParams.get('filter[entity.legalName]')).toBe(company.name);
+  return Response.json(recorded);
+ });
+ vi.stubGlobal('fetch',fetch);
+ expect(await resolveItalianLei(company)).toBe('BUCRF72VH5RBN7X3VL35');
+ expect(fetch).toHaveBeenCalledTimes(1);
+});
 it("retries an interrupted body without caching a partial response", async () => {
   let count = 0;
   vi.stubGlobal("fetch", async () =>

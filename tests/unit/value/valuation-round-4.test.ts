@@ -75,3 +75,9 @@ it.each(['UG','ZM'])('accepts a plausible high-yield local market %s confirmed b
  vi.stubGlobal('fetch',async()=>Response.json(rows(15.78)));
  expect(await bondYield(country)).toBeCloseTo(.1578);
 });
+it('keeps a valid cached bond observation across midnight when paid requests are disabled',async()=>{
+ vi.stubEnv('VALUE_NO_EODHD','1');
+ writeCorpusJson('bonds/JP.json',{version:2,date:'2026-09-29',yield:.012,source:'EODHD latest',symbol:'JP10Y.GBOND',observedAt:'2026-09-29',rawYield:.012,median:.012,secondSource:null,flags:[]});
+ const network=vi.fn(()=>{throw new Error('No network expected');});vi.stubGlobal('fetch',network);
+ expect(await bondYield('JP')).toBe(.012);expect(network).not.toHaveBeenCalled();
+});

@@ -1,3 +1,4 @@
+import { deriveYears } from '../derive';
 import { T } from "../config";
 import type { Year } from "../types";
 
@@ -13,6 +14,11 @@ export interface XbrlReport {
 const fields = {
   revenue: ["Revenue", "RevenueFromContractsWithCustomers"],
   grossProfit: ["GrossProfit"],
+  costOfSales: ["CostOfSales"],
+  operatingExpenses: ["OperatingExpense"],
+  retainedEarnings: ["RetainedEarnings"],
+  shortTermDebt: ["CurrentBorrowings"],
+  dilutedEps: ["DilutedEarningsLossPerShare"],
   operatingIncome: ["ProfitLossFromOperatingActivities"],
   preTaxIncome: ["ProfitLossBeforeTax"],
   taxExpense: ["IncomeTaxExpenseContinuingOperations"],
@@ -65,6 +71,8 @@ const fields = {
   sharesOutstanding: ["NumberOfSharesOutstanding"],
 } as const;
 const instant = new Set([
+  "retainedEarnings",
+  "shortTermDebt",
   "receivables",
   "inventory",
   "payables",
@@ -231,7 +239,7 @@ export function yearsFromEsef({
           names,
           stock: instant.has(key),
           shares: key === "dilutedShares" || key === "sharesOutstanding",
-          eps: key === "basicEps",
+          eps: key === "basicEps" || key === "dilutedEps",
         });
         if (value !== null && spent.has(key)) value = Math.abs(value);
         Object.assign(y, { [key]: value });
@@ -297,7 +305,9 @@ export function yearsFromEsef({
         y.minorityInterest != null
       )
         y.equity -= y.minorityInterest;
-      return y;
+      y.statementCoverage={income:y.operatingIncome!==null&&y.netIncome!==null&&y.costOfSales!=null,balance:y.totalAssets!==null&&y.totalLiabilities!==null&&y.equity!==null,cashFlow:y.ocf!==null&&duration.some(f=>/InvestingActivities$/.test(f.dimensions.concept))&&duration.some(f=>/FinancingActivities$/.test(f.dimensions.concept))};
+      y.provenance=Object.fromEntries(Object.keys(fields).filter(k=>typeof y[k as keyof Year]==='number').map(k=>[k,{source:`ESEF ${lei}`,field:k,method:'reported' as const}]));
+      return deriveYears([y])[0];
     })
     .filter(
       (y) => y.revenue !== null || y.netIncome !== null || y.ocf !== null,

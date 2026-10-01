@@ -17,11 +17,11 @@ beforeEach(() => {
   vi.mocked(getDossier).mockResolvedValue(dossier);
   vi.mocked(getPrice).mockResolvedValue([6, '2026-09-28']);
 });
-it('renders reporting value, explicit currency mismatch and an unclear price test', async () => {
+it('omits the price check when reporting and trading currencies cannot be compared', async () => {
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toContain('Estimated value unavailable');
-  expect(html).toContain('Price is in USD, value in JPY, not compared');
-  expect(html).toContain('Price: unclear');
+  expect(html).not.toContain('Estimated value unavailable');
+  expect(html).not.toContain('data-testid="tile-price"');
+  expect(html).not.toContain('Price: unclear');
   expect(html).not.toContain('margin of safety 99.4%');
   expect(html).not.toContain('aria-label="Price JPY');
 });
@@ -37,7 +37,7 @@ it('uses converted trading values for both the headline and margin', async () =>
 it('does not label newer monthly prices as a new fiscal year', async () => {
   dossier.priceHistory!.push(['2026-09', 6]);
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ id: 'ko.us' }) }));
-  expect(html).toMatch(/class="source-date">Prices [^<]+ · FY2025<\/span>/);
+  expect(html).toMatch(/class="source-date"[^>]*>Prices [^<]+ · FY2025<\/span>/);
   expect(html).not.toMatch(/class="source-date">[^<]+FY2026/);
 });
 

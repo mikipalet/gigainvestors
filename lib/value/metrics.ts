@@ -1,3 +1,4 @@
+import { deriveYears } from './derive';
 import { T } from "./config";
 import type { NumericOutcome, Series, Year } from "./types";
 export { ownerEarnings } from "./owner-earnings";
@@ -13,17 +14,7 @@ export function goodwillAndIntangibles(y: Pick<Year, "goodwill" | "intangibles">
 }
 // Only infer zero for optional line items when the containing statement exists.
 export function withZeroDefaults(years: Year[]): Year[] {
-  return years.map(y => ({
-    ...y,
-    ...(y.totalAssets !== null ? {
-      goodwill: y.goodwill ?? 0, intangibles: y.intangibles ?? 0,
-      inventory: y.inventory ?? 0, totalDebt: y.totalDebt ?? 0,
-    } : {}),
-    ...(y.ocf !== null ? {
-      dividendsPaid: y.dividendsPaid ?? 0, buybacks: y.buybacks ?? 0,
-      acquisitions: y.acquisitionsProxy ? y.acquisitions : y.acquisitions ?? 0, sbc: y.sbc ?? 0,
-    } : {}),
-  }));
+  return deriveYears(years);
 }
 export function last(years: Year[], n: number): Year[] {
   const sorted = [...years].sort((a, b) => a.fy - b.fy);
@@ -64,13 +55,19 @@ export function nopat(y: Year): number | null {
   const tax = ratio(y.taxExpense, y.preTaxIncome);
   return y.operatingIncome * (1 - clamp({ value: tax ?? 0.21, min: 0, max: 0.35 }));
 }
+export function investedCapital(y: Year): number | null {
+  if ([y.equity,y.totalDebt,y.cash,y.goodwill].some(x=>x==null)) return null;
+  // Keep operating intangibles in capital; exclude acquired goodwill as before.
+  return y.equity!+y.totalDebt!+(y.debtIncludesLeases ? 0 : y.leaseLiabilities ?? 0)-y.cash!-y.goodwill!;
+}
 export function roic(y: Year): number | null {
-  if ([y.equity, y.totalDebt, y.cash, y.goodwill].some(x => x === null)) return null;
-  const capital = y.equity! + y.totalDebt! - y.cash! - y.goodwill!;
+  const capital = investedCapital(y);
+  if (capital === null) return null;
   const profit = nopat(y);
   if (profit === null) return null;
   // Zero marks a failed return year; positive earnings need no invested capital.
-  return capital <= 0 ? profit > 0 ? Infinity : 0 : profit / capital;
+  const fallback = y.equity! + y.totalDebt! + (y.debtIncludesLeases ? 0 : y.leaseLiabilities ?? 0);
+  return capital <= 0 ? fallback > 0 ? profit / fallback : profit > 0 ? 1.000001 : 0 : profit / capital;
 }
 export function tangibleEquity(y: Year): number | null {
   const intangible = goodwillAndIntangibles(y);
@@ -79,7 +76,7 @@ export function tangibleEquity(y: Year): number | null {
 export function roe(y: Year): number | null {
   const capital = tangibleEquity(y);
   if (capital === null || y.netIncome === null) return null;
-  return capital <= 0 ? y.netIncome > 0 ? Infinity : 0 : y.netIncome / capital;
+  return capital <= 0 ? (y.equity ?? 0) > 0 ? y.netIncome / y.equity! : y.netIncome > 0 ? 1.000001 : 0 : y.netIncome / capital;
 }
 /** Financial valuation uses tangible book, with reported book for nonpositive tangible equity. */
 export function financialBvps(y: Year): number | null {
@@ -90,7 +87,11 @@ export const grossMargin = (y: Year) => ratio(y.grossProfit, y.revenue);
 export const opMargin = (y: Year) => ratio(y.operatingIncome, y.revenue);
 export const bvps = (y: Year) => y.equity !== null && y.equity > 0 ? ratio(y.equity, y.dilutedShares) : null;
 export const accruals = (y: Year) => y.netIncome === null || y.ocf === null ? null : ratio(y.netIncome - y.ocf, y.totalAssets);
-export const nwc = (y: Year) => y.receivables === null || y.inventory === null || y.payables === null ? null : y.receivables + y.inventory - y.payables;
+export const nwc = (y: Year): number | null => {
+  if (y.receivables !== null && y.inventory !== null && y.payables !== null) return y.receivables+y.inventory-y.payables;
+  return y.currentAssets == null || y.cash == null || y.currentLiabilities == null || y.shortTermDebt == null ? null
+    : y.currentAssets-y.cash-(y.currentLiabilities-y.shortTermDebt);
+};
 
 export function investment(year: Year, prev: Year): number | null {
   const current = nwc(year), prior = nwc(prev);
@@ -99,10 +100,17 @@ export function investment(year: Year, prev: Year): number | null {
 }
 export function roiic(years: Year[]): number | null {
   const ys = last(years, 11);
-  if (ys.length !== 11 || ys[10].fy - ys[0].fy !== 10) return null;
-  const first = nopat(ys[0]), end = nopat(ys[10]);
+  if (ys.length < 7 || ys.at(-1)!.fy - ys[0].fy !== ys.length - 1) return null;
+  const first = nopat(ys[0]), end = nopat(ys.at(-1)!);
+  if(first===null||end===null)return null;
+  // More earnings while releasing capital passes; declining earnings do not.
+  const incrementalReturn=(capital:number)=>capital===0&&end===first ? null : capital<=0 ? end>first ? 1.000001 : 0 : (end-first)/capital;
   const invested = ys.slice(1).map((y, i) => investment(y, ys[i]));
-  return first === null || end === null || invested.some(x => x === null) ? null : ratio(end - first, sum(present(invested)));
+  if (invested.some(x=>x===null)) {
+    const before=investedCapital(ys[0]), after=investedCapital(ys.at(-1)!);
+    return before===null||after===null ? null : incrementalReturn(after-before);
+  }
+  return incrementalReturn(sum(present(invested)));
 }
 export function retainedTest(years: Year[]): { gain: number | null; retained: number | null; startFy: number | null; endFy: number | null } {
   const history = last(years, T.management.retainedMaxYears + 1);
@@ -114,7 +122,7 @@ export function retainedTest(years: Year[]): { gain: number | null; retained: nu
   if (ys.length < T.management.retainedMinYears + 1 || ys.some((y, i) => i > 0 && y.fy !== ys[i - 1].fy + 1)) return unavailable;
   const first = ys[0].marketCap, end = ys.at(-1)!.marketCap;
   if (end === null || !Number.isFinite(end) || end <= 0) return unavailable;
-  const retained = ys.slice(1).map(y => y.netIncome === null || y.dividendsPaid === null ? null : y.netIncome - y.dividendsPaid);
+  const retained = ys.slice(1).map(y => y.retainedEarningsChange ?? (y.netIncome === null || y.dividendsPaid === null ? null : y.netIncome - y.dividendsPaid));
   return { gain: end - first!, retained: retained.some(x => x === null) ? null : sum(present(retained)), startFy: ys[0].fy, endFy: ys.at(-1)!.fy };
 }
 export function slope(series: Series): number | null {
@@ -128,6 +136,7 @@ export interface Check {
   reason: string;
   data: string;
   decisive?: boolean;
+  core?: boolean;
   pending?: boolean;
 }
 
@@ -141,13 +150,15 @@ export function outcome({ key, metrics, series, checks, reasons = [], minFailure
 }): NumericOutcome {
   const available = checks.filter(c => c.pass !== null);
   const failed = available.filter(c => c.pass === false);
-  const numeric = failed.some(c => c.decisive) || failed.length >= minFailures ? "fail"
-    : checks.length > 0 && available.length / checks.length >= T.numeric.minAvailableFraction ? "pass" : "unclear";
+  const core = checks.filter(c => c.core);
+  const coreMissing = core.some(c => c.pass === null);
+  const numeric = coreMissing ? "unclear" : failed.some(c => c.decisive) || failed.length >= minFailures ? "fail"
+    : core.length ? "pass" : checks.length > 0 && available.length / checks.length >= T.numeric.minAvailableFraction ? "pass" : "unclear";
   // Infinity participates in return statistics, but is never a display value.
   const display = (value: number | null) => value !== null && Number.isFinite(value) ? value : null;
   return { key, numeric,
     ...(numeric === "unclear" && checks.some(c => c.pass === null) && checks.filter(c => c.pass === null).every(c => c.pending) ? { pending: true } : {}),
     metrics: Object.fromEntries(Object.entries(metrics).map(([name, value]) => [name, display(value)])),
     series: Object.fromEntries(Object.entries(series).map(([name, points]) => [name, points.map(([fy, value]) => [fy, display(value)])])),
-    reasons: [...reasons, ...checks.filter(c => c.pass !== true).map(c => c.pass === null ? `not enough data for ${c.data}` : c.reason)] };
+    reasons: [...reasons, ...checks.filter(c => c.pass === false || (c.core || !core.length) && c.pass === null).map(c => c.pass === null ? `not enough data for ${c.data}` : c.reason)] };
 }

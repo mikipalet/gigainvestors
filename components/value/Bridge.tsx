@@ -7,7 +7,7 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
   const money = (value: number) => formatMetric({ value, format: 'money', currency: v.currency });
   const count = (value: number) => formatMetric({ value, format: 'count' });
   const component = (pattern: RegExp) => v.bridge.find(row => pattern.test(row.label))?.value ?? null;
-  const amount = (value: number | null) => value === null ? 'Not reported' : money(value);
+  const amount = (value: number | null) => value === null ? '' : money(value);
   const deduction = (pattern: RegExp) => { const value = component(pattern); return amount(value === null ? null : Math.abs(value)); };
   const pvFactor = component(/PV factor/i) ?? (v.normalized ? (v.perShare.mid * v.shares - v.netCash) / v.normalized : null);
   const rows = v.method === 'owner_earnings' ? [
@@ -17,7 +17,7 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
     ['− Stock compensation', deduction(/stock compensation/i)],
     ...(component(/estimated lease payments/i) !== null ? [['− Estimated lease payments', deduction(/estimated lease payments/i)]] : []),
     ['= Owner earnings (normalized)', money(v.normalized)],
-    ['× Present value of 10 years + terminal', pvFactor === null ? 'Not reported' : `${pvFactor.toFixed(2)}×`],
+    ['× Present value of 10 years + terminal', pvFactor === null ? '' : `${pvFactor.toFixed(2)}×`],
     ['+ Net cash', money(v.netCash)],
     ['÷ Shares used for valuation', count(v.shares)],
   ] : [
@@ -31,7 +31,7 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
     <p className="mb-3 text-sm text-ink/60">Values in {v.currency}, except shares and rates.</p>
     <div className="flex flex-col"><div className="order-2 sm:order-1">{v.method === 'owner_earnings' && <OwnerEarningsWaterfall valuation={v} />}</div>
     <details open={v.method === 'book_value'} className="order-1 mb-4 text-sm sm:order-2"><summary className="mb-3 cursor-pointer text-ink/55">Show as table</summary>
-    <table className="w-full table-fixed text-left text-sm"><caption className="sr-only">Valuation bridge in {v.currency}</caption><tbody>{rows.map(([label, value]) => <tr key={label} className="border-t border-ink/15"><th scope="row" className="w-1/2 py-2 pr-4 font-normal">{label}</th><td className="py-2 text-right tabular-nums">{value}</td></tr>)}</tbody></table></details></div>
+    <table className="w-full table-fixed text-left text-sm"><caption className="sr-only">Valuation bridge in {v.currency}</caption><tbody>{rows.filter(([,value])=>value!=='').map(([label, value]) => <tr key={label} className="border-t border-ink/15"><th scope="row" className="w-1/2 py-2 pr-4 font-normal">{label}</th><td className="py-2 text-right tabular-nums">{value}</td></tr>)}</tbody></table></details></div>
     <h3 className="mt-5 text-sm font-medium">Assumptions</h3>
     <ul className="mt-2 space-y-1 text-xs text-ink/60">{(['growth', 'discountRate', 'terminalGrowth', 'bondYield', 'equityBondYield'] as const).map(key => <li key={key} className="flex justify-between gap-4"><span>{key === 'equityBondYield' ? v.method === 'owner_earnings' ? 'Earnings yield at mid value' : 'Earnings / market cap' : metricLabels[key].label}</span><span>{formatMetric({ value: key === 'equityBondYield' && v.method === 'owner_earnings' ? earningsYieldAtMid(v) : v[key], format: 'pct' })}</span></li>)}</ul>
     <ul className="mt-3 space-y-1 text-xs text-ink/60">{v.assumptions.map((assumption, i) => <li key={i}>{assumption}</li>)}</ul>

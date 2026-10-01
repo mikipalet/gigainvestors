@@ -1,3 +1,4 @@
+import { deriveYears } from '../derive';
 import { filedShareChange, reconcileEdinetShares } from "./shares";
 import { usGaapStatementRows } from "./us-gaap-text";
 import type { SectionKey, Year } from "../types";
@@ -39,7 +40,8 @@ const fields = {
   interestExpense: ["InterestExpensesIFRS", "InterestExpenses", "InterestPaidOpeCFIFRS"],
   da: ["DepreciationAndAmortizationOpeCFIFRS", "DepreciationExpenseOpeCFIFRS", "DepreciationAndAmortizationOpeCF", "DepreciationAndAmortization", "Depreciation", "DepreciationAndAmortizationUSGAAP", "DepreciationAndAmortizationOpeCFUSGAAP", "DepreciationDepletionAndAmortization", "DepreciationAndOtherAmortizationOpeCF", "DepreciationAndAmortizationOfIntangibleAssetsOpeCFIFRS"],
   sbc: ["ShareBasedPaymentExpenseOpeCFIFRS", "ShareBasedPaymentExpensesIFRS", "ShareBasedCompensationOpeCF", "StockBasedCompensation", "ShareBasedCompensation", "ShareBasedCompensationOpeCFUSGAAP", "ShareBasedCompensationExpensesOpeCF", "ShareBasedPaymentExpensesOpeCFIFRS", "EquitySettledShareBasedCompensationOpeCFIFRS"],
-  nonRecurring: [],
+  nonRecurring: ["RestructuringExpenses", "BusinessRestructuringExpenses", "RestructuringCostsIFRS"],
+  retainedEarnings: ["RetainedEarnings", "RetainedEarningsIFRS"],
   ocf: ["CashFlowsFromUsedInOperatingActivitiesUSGAAPSummaryOfBusinessResults", "CashFlowsFromUsedInOperatingActivitiesIFRSSummaryOfBusinessResults", "CashFlowsFromUsedInOperatingActivitiesSummaryOfBusinessResults", "CashFlowsFromUsedInOperatingActivitiesIFRS", "NetCashProvidedByUsedInOperatingActivitiesIFRS", "NetCashProvidedByUsedInOperatingActivities", "NetCashProvidedByUsedInOperatingActivitiesUSGAAP", "NetCashProvidedByUsedInOperatingActivitiesSummaryOfBusinessResults"],
   capex: ["PurchaseOfPropertyPlantAndEquipmentInvCFIFRS", "PurchaseOfPropertyPlantAndEquipmentInvCF", "PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCFIFRS", "PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCF", "PurchaseOfNoncurrentAssetsInvCF", "PurchaseOfPropertyPlantAndEquipmentInvCFUSGAAP", "PurchasesOfPropertyPlantAndEquipment", "PaymentsToAcquirePropertyPlantAndEquipment", "PurchaseOfPropertyPlantEquipmentAndTheIncreaseOfConstructionInProgressInvCF"],
   leaseCash: ["RepaymentsOfLeaseObligationsFinCFIFRS", "RepaymentsOfLeaseObligationsFinCF", "RepaymentsOfLeaseLiabilitiesFinCFIFRS", "RepaymentsOfFinanceLeaseObligationsFinCF"],
@@ -123,11 +125,22 @@ export function yearsFromEdinet(rows: EdinetRow[]): Year[] {
     if (year.dilutedShares === null) year.dilutedShares = value(["NumberOfIssuedSharesSummaryOfBusinessResults", "TotalNumberOfIssuedSharesSummaryOfBusinessResults"], rows.filter(r => new RegExp(`^${prefix}(?:Duration|Instant)(?:_NonConsolidatedMember)?$`).test(r.context)));
     const sumReported = (components: Array<number | null>): number | null => components.every(n => n === null)
       ? null : components.reduce<number>((sum, n) => sum + (n ?? 0), 0);
+    year.shortTermDebt = value(["InterestBearingLiabilitiesCLIFRS", "BondsAndBorrowingsCLIFRS"]) ?? sumReported([
+      value(["ShortTermLoansPayable", "ShortTermBorrowings", "ShortTermDebtUSGAAP", "BorrowingsCLIFRS"]),
+      value(["CurrentPortionOfLongTermLoansPayable", "LongTermDebtCurrent", "CurrentPortionOfLongTermBorrowingsCLIFRS"]), value(["CurrentPortionOfBonds", "CurrentPortionOfBondsPayable"]), value(["CommercialPapersLiabilities", "CommercialPaper"])]);
+    const full=candidates.filter(r=>!local(r).includes('SummaryOfBusinessResults'));
+    year.statementCoverage={
+      income: year.operatingIncome!==null && year.preTaxIncome!==null && year.netIncome!==null && candidates.some(r=>/CostOfSales|SellingGeneral/.test(local(r))),
+      balance: year.totalAssets!==null && year.totalLiabilities!==null && year.equity!==null,
+      cashFlow: year.ocf!==null && full.some(r=>/InvCF|InvestingActivities/.test(local(r))) && full.some(r=>/FinCF|FinancingActivities/.test(local(r))),
+    };
+    year.provenance=Object.fromEntries(Object.keys(fields).filter(k=>typeof year[k as keyof Year]==='number').map(k=>[k,{source:'EDINET XBRL',field:(fields[k as keyof typeof fields] as string[]).find(tag=>value([tag])!==null)??k,method:'reported' as const}]));
     year.leaseLiabilities = sumReported([value(["LeaseLiabilitiesCLIFRS", "LeaseObligationsCL"]), value(["LeaseLiabilitiesNCLIFRS", "LeaseObligationsNCL"])]);
     // A repayment of a lease obligation is financing cash for a capitalized
     // asset; ordinary rent is excluded by the exact tags above.
     year.leaseDepreciationIncluded = year.leaseCash !== null && year.leaseCash !== undefined;
     const chargedLeases = year.leaseDepreciationIncluded;
+    year.debtIncludesLeases = !chargedLeases;
     if (year.totalDebt === null) {
       // Aggregates include bonds/current maturities: never add their children twice.
       const current = value(["InterestBearingLiabilitiesCLIFRS", "BondsAndBorrowingsCLIFRS"]);
@@ -174,7 +187,7 @@ export function yearsFromEdinet(rows: EdinetRow[]): Year[] {
   }
   // A short transition period can end in the same calendar year as its predecessor.
   // The shared Year contract retains the later annual period for that year.
-  return mergeYears([], years);
+  return deriveYears(mergeYears([], years));
 }
 function liquidCash(year: Year): number | null {
   const base = year.cashAndDeposits ?? year.cashAndCashEquivalents;
@@ -187,9 +200,13 @@ export function mergeYears(earlier: Year[], later: Year[]): Year[] {
     const knownEnd = prior && !prior.fiscalEndInferred && year.fiscalEndInferred;
     // Summary dates beyond the prior year are extrapolations. A fiscal year-end
     // change must not make those inferred dates erase the actual older statement.
-    years.set(year.fy, prior && prior.end !== year.end && !knownEnd ? { ...year }
-      : { ...(prior ?? year), ...Object.fromEntries(Object.entries(year).filter(([,v]) => v !== null)),
-        ...(knownEnd ? { end: prior.end, fiscalEndInferred: false } : {}) } as Year);
+    if(prior && prior.end!==year.end && !knownEnd)years.set(year.fy,{...year});
+    else {
+      const updates=Object.fromEntries(Object.entries(year).filter(([key,value])=>value!==null && key!=='provenance' && !(prior?.[key as keyof Year]!=null && year.provenance?.[key]?.method==='absent-in-complete-statement')));
+      const provenance={...prior?.provenance,...Object.fromEntries(Object.entries(year.provenance??{}).filter(([key])=>key in updates))};
+      const statementCoverage=Object.fromEntries(['income','balance','cashFlow'].map(key=>[key,Boolean(prior?.statementCoverage?.[key as keyof NonNullable<Year['statementCoverage']>]||year.statementCoverage?.[key as keyof NonNullable<Year['statementCoverage']>]) ]));
+      years.set(year.fy,{...(prior??year),...updates,provenance,statementCoverage,...(knownEnd?{end:prior.end,fiscalEndInferred:false}:{})} as Year);
+    }
     // A newer comparative EPS can restate a past split. Its new denominator
     // must not be reset from the older filing's reconciliation metadata.
     if (!year.edinetShares && year.dilutedShares !== null) delete years.get(year.fy)!.edinetShares;

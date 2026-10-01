@@ -1,7 +1,9 @@
+import { fillYears } from '../../../lib/value/completeness/second-sources';
+import { deriveYears } from '../../../lib/value/derive';
 import { esefShareInputs } from "../../../lib/value/italy/shares";
-import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
+import { normalizeEodhd, refreshEodhdBalance } from "../../../lib/value/normalize-eodhd";
 import { checkIntegrity } from "../../../lib/value/integrity";
-import { currentShareInputs, leaseInputs, trailingInputs } from "../../../lib/value/valuation-inputs";
+import { currentShareInputs, trailingInputs } from "../../../lib/value/valuation-inputs";
 import { readPrices } from "../../../lib/value/price-files";
 import { validCompanyId, mergeCompany } from "../../../lib/value/companies";
 import { createHash } from "node:crypto";
@@ -15,7 +17,7 @@ import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from "../../..
 import { findEvidence } from "../../../lib/value/jev/run";
 import { QUESTIONS, QUESTIONS_VERSION } from "../../../lib/value/jev/questions";
 import trust from "../../../lib/value/jev-trust.json";
-import type { Analysis, Company, Fundamentals, ReportMeta, JevQuestion } from "../../../lib/value/types";
+import type { Analysis, Company, Fundamentals, ReportMeta, JevQuestion, Year } from "../../../lib/value/types";
 
 export interface Options {
   only?: string[]; limit?: number; force?: boolean;
@@ -54,19 +56,17 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
   let written = 0;
   let skipped = 0;
   const failures: string[] = [];
-  await Promise.all(Array.from({ length: Math.min(T.analyze.concurrency, jobs.length) }, async () => {
+  await Promise.all(Array.from({ length: Math.min(Number(process.env.VALUE_ANALYZE_CONCURRENCY)||T.analyze.concurrency, jobs.length) }, async () => {
     while (cursor < jobs.length) {
       const { company, fundamentals: cachedFundamentals } = jobs[cursor++];
       try {
         const raw = readCorpusJson<unknown>(`raw/eodhd/${company.id}.json`);
         const normalized = raw ? normalizeEodhd(raw, company.id).fundamentals : null;
         const mapped = new Map(normalized?.years.map(year => [year.end, year]));
-        const fundamentals = raw ? { ...cachedFundamentals, years: cachedFundamentals.years.map(year => {
-          const fresh = mapped.get(year.end);
-          return { ...year, ...leaseInputs(raw, year.end, company.country),
-            ...(fresh ? { currency: fresh.currency, cash: fresh.cash, totalDebt: fresh.totalDebt, clientAssets: fresh.clientAssets } : {}) };
-        }) } : cachedFundamentals;
+        const fundamentals = { ...cachedFundamentals, years: deriveYears(normalized
+          ? fillYears(cachedFundamentals.years, normalized.years) : cachedFundamentals.years) };
         if (raw) {
+          fundamentals.years=fundamentals.years.map(year=>refreshEodhdBalance(year,mapped.get(year.end),raw,company.country));
           // Include a changed-currency suffix even when normalization has already truncated it.
           if (normalized?.integrity.notes?.some(note => note.startsWith('reporting currency changed'))) {
             fundamentals.years = fundamentals.years.filter(year => mapped.has(year.end));
@@ -98,8 +98,14 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
         const prior = readCorpusJson<Analysis>(file);
         const priorInputs = readCorpusJson<{ sections: Sections }>(`analysis/inputs/${company.id}.json`);
+        let derivedValues:Array<{fy:number;field:string;value:number;provenance:NonNullable<Year['provenance']>[string]}>=[];
         const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, priceHistoryPending, ...shareInputs,
-          bondYield: localBondYield, ask, getBondYield, usdRate });
+          bondYield: localBondYield, ask, getBondYield, usdRate,onDerivedYears:years=>{
+            derivedValues=years.flatMap(y=>(['marketCap','averageSharePrice','buybacks'] as const).flatMap(field=>{
+              const value=y[field],provenance=y.provenance?.[field];
+              return typeof value==='number'&&Number.isFinite(value)&&provenance&&(field!=='buybacks'||provenance.method==='estimate')?[{fy:y.fy,field,value,provenance}]:[];
+            }));
+          } });
         const yieldInfo = getBondYield === bondYield ? readCorpusJson<BondObservation>(`bonds/${company.country}.json`) : null;
         if (result.valuation && yieldInfo) {
           result.valuation.bondSource = yieldInfo.source;
@@ -132,7 +138,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
             for (const answer of answers) answer.evidence = found?.[answer.q] ?? null;
           }
         }
-        writeCorpusJson(`analysis/inputs/${company.id}.json`, { asOf: result.asOf, sections });
+        writeCorpusJson(`analysis/inputs/${company.id}.json`, { asOf: result.asOf, sections,reportingCurrency:fundamentals.currency,derivedValues });
         writeCorpusJson(file, result);
         writeCorpusJson(fingerprintFile, fingerprint);
         written++;

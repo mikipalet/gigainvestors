@@ -19,16 +19,16 @@ describe("live calibration round 1", () => {
     expect(result.reasons).toContain("not enough data for returns");
     expect(result.reasons.join(" ")).not.toContain("insufficient data:");
   });
-  it("R1 missing market caps leave management unclear without false failure reasons", () => {
+  it("R1 missing market caps use per-share growth without false failure reasons", () => {
     const result = run(makeYears({ overrides: { marketCap: null, buybacks: 10 } })).management;
-    expect(result.numeric).toBe("unclear");
-    expect(result.reasons).toContain("not enough data for the $1 retained earnings test");
-    expect(result.reasons).toContain("not enough data for buyback timing");
+    expect(result.numeric).toBe("pass");
+    expect(result.reasons).not.toContain("not enough data for the $1 retained earnings test");
+    expect(result.reasons).not.toContain("not enough data for buyback timing");
     expect(result.reasons.join(" ")).not.toContain("below cumulative");
   });
-  it("R3 absent prices keep buyback timing unavailable even with zero buybacks", () => {
+  it("R3 absent prices leave optional timing out of the per-share growth decision", () => {
     const result = run(makeYears({ overrides: { marketCap: null, buybacks: 0 } })).management;
-    expect(result.numeric).toBe("unclear");
+    expect(result.numeric).toBe("pass");
     expect(result.metrics.buybackYieldSpearman).toBeNull();
   });
   it("R2 debt-funded buybacks alone are informational", () => {
@@ -94,13 +94,13 @@ describe("live calibration round 1", () => {
   });
   it.each([0, -100])("R7 profitable nonpositive invested capital %s passes ROIC without displaying Infinity", equity => {
     const years = makeYears({ overrides: { equity } });
-    expect(roic(years[0])).toBe(Infinity);
+    expect(roic(years[0])).toBeGreaterThanOrEqual(1);
     const result = run(years).moat;
     expect(result.numeric).toBe("pass");
-    expect(result.metrics.roicMedian).toBeNull();
-    expect(result.metrics.roicSecondLowest).toBeNull();
-    expect(result.reasons).toContain("invested capital is nonpositive: returns effectively unlimited");
-    expect(result.series.roic.every(([, v]) => v === null)).toBe(true);
+    expect(result.metrics.roicMedian).toBeGreaterThanOrEqual(1);
+    expect(result.metrics.roicSecondLowest).toBeGreaterThanOrEqual(1);
+    expect(result.reasons.join(" ")).toContain("nonpositive invested capital");
+    expect(result.series.roic.every(([, v]) => v !== null && Number.isFinite(v))).toBe(true);
   });
   it.each([0, -10])("R7 nonpositive NOPAT %s with negative capital counts as a bad year", operatingIncome => {
     const result = run(makeYears({ overrides: (_, i) => ({ equity: -100, operatingIncome: i >= 9 ? operatingIncome : 125 }) })).moat;
@@ -110,7 +110,7 @@ describe("live calibration round 1", () => {
   it("R7 includes unlimited years in mixed-return order statistics", () => {
     const result = run(makeYears({ n: 10, overrides: (_, i) => ({ equity: i < 6 ? -100 : 500, operatingIncome: i === 9 ? -10 : 125 }) })).moat;
     expect(result.numeric).toBe("pass");
-    expect(result.metrics.roicMedian).toBeNull();
+    expect(result.metrics.roicMedian).toBeGreaterThanOrEqual(1);
     expect(result.metrics.roicSecondLowest).toBeCloseTo(0.2);
   });
   it.each([
@@ -126,13 +126,13 @@ describe("live calibration round 1", () => {
     const result = run(makeYears({ overrides: { netIncome: 250, ocf: 100, sbc: null, totalAssets: 1000, receivables: null, nonRecurring: null } })).accounting;
     // SBC defaults to zero in a present cash-flow statement: three of five checks remain.
     expect(result.metrics.redFlags).toBe(1);
-    expect(result.numeric).toBe("unclear");
+    expect(result.numeric).toBe("pass");
   });
   it("R8 does not substitute FY2020 alone when FY2019 is unavailable", () => {
     const result = run(makeYears({ overrides: y => ({ grossProfit: y.fy === 2019 ? null : y.fy === 2023 ? 300 : 400 }) })).moat;
     expect(result.metrics.grossMarginDrop).toBeNull();
     expect(result.numeric).toBe("pass");
-    expect(result.reasons.join(" ")).toContain("not enough data for FY2019");
+    expect(result.reasons.join(" ")).not.toContain("not enough data for FY2019");
   });
   it("R9 omits a zero midpoint even when the high valuation is positive", () => {
     const totalDebt = presentValue({ oe: 100, g: 0, r: 0.08, terminal: 0.03 });

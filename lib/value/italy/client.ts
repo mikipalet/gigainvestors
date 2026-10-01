@@ -5,7 +5,7 @@ import { normalizedName } from "../universe";
 import type { Company } from "../types";
 import type { XbrlReport } from "./facts";
 
-const limit = createLimiter({ perSecond: 3 });
+const limit = createLimiter({ perSecond: 3 / (Number(process.env.VALUE_SOURCE_WORKERS)||1) });
 export async function italyFetch(url: string): Promise<Response> {
   return limit(async () => {
     const response = await fetchWithRetry(url, {
@@ -78,11 +78,11 @@ export async function resolveItalianLei(
     "filter[isin]": company.isin!,
     "page[size]": "100",
   });
-  const result = await cachedJson<Gleif>({
+  const result = company.isin ? await cachedJson<Gleif>({
     key: `gleif/${company.isin}`,
     refresh,
     url: `https://api.gleif.org/api/v1/lei-records?${query}`,
-  });
+  }) : {data:[]};
   const leis = [...new Set(result.data.map((r) => r.attributes.lei))];
   if (leis.length === 1) return leis[0];
   if (leis.length > 1) return null;

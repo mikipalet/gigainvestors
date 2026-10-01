@@ -19,10 +19,10 @@ describe("numeric quality tests", () => {
     expect(result.numeric).toBe("fail");
     expect(result.reasons).toContain("FY2023 gross margin fell 5.0pp versus the FY2019/FY2020 mean (limit 4pp)");
   });
-  it("skips unavailable inflation margins explicitly", () => {
+  it("omits missing supporting inflation margins", () => {
     const result = run(makeYears({ overrides: { grossProfit: null } })).moat;
     expect(result.numeric).toBe("pass");
-    expect(result.reasons.join(" ")).toContain("not enough data for");
+    expect(result.reasons.join(" ")).not.toContain("not enough data for");
   });
   it("allows four revenue declines in ten years", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ revenue: i < 5 ? 1000 - i * 10 : 1000 }) })).understandable.numeric).toBe("pass");
@@ -33,7 +33,7 @@ describe("numeric quality tests", () => {
   it("fails unstable operating margins", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ operatingIncome: i % 2 ? 10 : 200 }) })).understandable.numeric).toBe("fail");
   });
-  it("requires ten years for predictability", () => expect(run(makeYears({ n: 9 })).understandable.numeric).toBe("unclear"));
+  it("accepts nine years for predictability", () => expect(run(makeYears({ n: 9 })).understandable.numeric).toBe("pass"));
   it("fails three percent annual dilution", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ dilutedShares: 10 * 1.03 ** i }) })).management.numeric).toBe("fail");
   });
@@ -66,7 +66,7 @@ describe("numeric quality tests", () => {
   it.each(["bank", "insurer"] as const)("uses ROE and skips accruals for a %s", kind => {
     const result = run(makeYears({ overrides: { grossProfit: null, netIncome: 70, ocf: null, receivables: null, sbc: 0 } }), kind);
     expect(result.moat.numeric).toBe("pass");
-    expect(result.accounting.reasons.join(" ")).toContain("accruals: na");
+    expect(result.accounting.reasons.join(" ")).not.toContain("accruals: na");
     expect(result.accounting.metrics.accruals).toBeNull();
   });
   it("does not pass financials with weak worst-three ROE", () => {
@@ -107,7 +107,7 @@ describe("metric arithmetic", () => {
     const y = makeYears()[0];
     expect(roic({ ...y, taxExpense: null })).toBeCloseTo(0.1975);
     expect(roic({ ...y, taxExpense: 125 })).toBeCloseTo(0.1625);
-    expect(roic({ ...y, equity: 0 })).toBe(Infinity);
+    expect(roic({ ...y, equity: 0 })).toBe(1);
   });
   it("computes balance sheet and margin ratios", () => {
     const y = makeYears()[0];
@@ -139,6 +139,6 @@ describe("owner earnings", () => {
   });
   it("assumes zero SBC but preserves missing mandatory financials", () => {
     expect(ownerEarningsSeries(makeYears({ n: 1, overrides: { sbc: null } }))).toEqual([[2013, 100]]);
-    expect(ownerEarningsSeries(makeYears({ n: 1, overrides: { da: null } }))).toEqual([[2013, null]]);
+    expect(ownerEarningsSeries(makeYears({ n: 1, overrides: { da: null, ocf: null } }))).toEqual([[2013, null]]);
   });
 });

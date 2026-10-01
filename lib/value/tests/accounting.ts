@@ -14,7 +14,7 @@ export function run({ years, kind }: NumericInput) {
   const goodwill = !end || end.goodwill === null || end.intangibles === null ? null : ratio(end.goodwill + end.intangibles, end.equity);
   const flags: Check[] = [
     ...(!financial ? [
-      { pass: accrued === null ? null : accrued <= T.accounting.maxAccruals, data: "Sloan accruals", reason: `Sloan accruals exceed ${T.accounting.maxAccruals * 100}%` },
+      { core: true, pass: accrued === null ? null : accrued <= T.accounting.maxAccruals, data: "Sloan accruals", reason: `Sloan accruals exceed ${T.accounting.maxAccruals * 100}%` },
       { pass: dsri === null ? null : dsri <= T.accounting.maxDsri, data: "latest-year receivables to sales index (DSRI)", reason: `latest-year receivables to sales index (DSRI) exceeds ${T.accounting.maxDsri}` },
     ] : []),
     { pass: recurring === null ? null : recurring <= T.accounting.maxRestructYears, data: "five years of restructuring charges", reason: "restructuring or one-time charges in at least three of five years" },
@@ -22,10 +22,10 @@ export function run({ years, kind }: NumericInput) {
   ];
   const cashBacked = !end || end.ocf === null || end.netIncome === null ? null : !(end.ocf <= 0 && end.netIncome > 0);
   return outcome({ key: "accounting", metrics: { accruals: accrued, dsri, restructuringYears: recurring, sbcToOcf: compensation,
-    redFlags: flags.filter(flag => flag.pass === false).length, goodwillIntangiblesToEquity: goodwill },
-    series: { accruals: ys.map(y => [y.fy, financial ? null : accruals(y)]), sbcToOcf: ys.map(y => [y.fy, ratio(y.sbc, y.ocf)]), nonRecurring: ys.map(y => [y.fy, y.nonRecurring]) },
-    reasons: financial ? ["accruals: na for banks and insurers", "receivables to sales index: na for banks and insurers"] : [],
+    cashBacked: cashBacked === null ? null : Number(cashBacked), ocfToNi: !end || end.netIncome === null || end.ocf === null ? null : end.netIncome > 0 ? end.ocf/end.netIncome : null, redFlags: flags.filter(flag => flag.pass === false).length, goodwillIntangiblesToEquity: goodwill },
+    series: { ocfToNi: ys.map(y=>[y.fy,ratio(y.ocf,y.netIncome)]), accruals: ys.map(y => [y.fy, financial ? null : accruals(y)]), sbcToOcf: ys.map(y => [y.fy, ratio(y.sbc, y.ocf)]), nonRecurring: ys.map(y => [y.fy, y.nonRecurring]) },
+    reasons: [],
     minFailures: T.accounting.minRedFlags,
-    checks: [...flags, { pass: cashBacked, decisive: true, data: "operating cash flow backing earnings", reason: "earnings not backed by cash" }],
+    checks: [...flags, { core: true, pass: cashBacked, decisive: true, data: "operating cash flow backing earnings", reason: "earnings not backed by cash" }],
   });
 }

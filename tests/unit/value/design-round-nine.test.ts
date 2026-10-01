@@ -5,10 +5,10 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 it('keeps listing venue and currency explicit without guessing a US exchange',()=>{
  expect(listingDetails({id:'INFY.US',c:'US',exchange:'NYSE'})).toMatchObject({country:'US',exchange:'NYSE',note:''});
- expect(listingDetails({id:'UNKNOWN.US',c:'US'}).exchange).toBe('Exchange unavailable');
+ expect(listingDetails({id:'UNKNOWN.US',c:'US'}).exchange).toBe('');
  expect(listingDetails({id:'600809.SHG',c:'CN'})).toMatchObject({exchange:'Shanghai',note:'A-shares · check access'});
  expect(listingDetails({id:'6378.JP',c:'JP'})).toMatchObject({exchange:'Tokyo',note:'check broker access'});
- expect(sharePrice(null,'USD')).toBe('Price unavailable');
+ expect(sharePrice(null,'USD')).toBe('');
  expect(sharePrice(12.56,'USD')).toBe('USD 12.56');
 });
 it('draws the passing region below a lower-is-better threshold and above a higher-is-better threshold',()=>{

@@ -3,7 +3,7 @@ import { priceFraming } from './presentation';
 import { T } from './config';
 import type { Kind, Series, TestOutcome } from './types';
 import type { MetricFormat } from './metric-labels';
-export type TileMetric = {id:string;value:number|null;label:string;format:MetricFormat;threshold:number;better:'higher'|'lower';series:Series;chart:string};
+export type TileMetric = {id:string;value:number|null;label:string;format:MetricFormat;chartFormat?:MetricFormat;chartThreshold?:number|null;threshold:number;better:'higher'|'lower';series:Series;chart:string};
 /** Stable comparison contract. Other rule failures belong in the reason, never replace this metric. */
 export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileMetric {
  const m=test.metrics, financial=kind!=='operating';
@@ -12,46 +12,51 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
   case 'understandable': {
    const margins=test.series.operatingMargin??[];
    const available=margins.filter(p=>p[1]!==null&&Number.isFinite(p[1]));
+   if(m.opMarginCv==null)return {...metric('lossYears','loss years','count',T.understandable.maxLossYears,'lower',test.series.netIncome??[],'Net income'),chartFormat:'money'};
    return metric('opMarginCv','margin variation','x',T.understandable.maxOpMarginCv,'lower',available,'Operating margin');
   }
-  case 'moat':return metric(financial?'roeMedian':'roicMedian',financial?'ROE · ten-year median':'ROIC · ten-year median','pct',financial?T.moat.roeMedianFin:T.moat.roicMedian,'higher',test.series[financial?'roe':'roic']??[],financial?'ROE':'ROIC');
+  case 'moat':return metric(financial?'roeMedian':'roicMedian',financial?'ROE · median':'ROIC · median','pct',financial?T.moat.roeMedianFin:T.moat.roicMedian,'higher',test.series[financial?'roe':'roic']??[],financial?'ROE':'ROIC');
   case 'economics': {
    const income=new Map(netIncome),end=Math.max(...netIncome.map(p=>p[0]));
    const series:Series=(test.series.ownerEarnings??[]).filter(([fy])=>fy>end-10&&income.has(fy)).map(([fy,oe])=>[fy,oe===null||!income.get(fy)?null:oe/income.get(fy)!]);
+   if(m.oeToNi==null && m.ownerEarningsTotal!=null)return {...metric('ownerEarningsTotal','Owner earnings, five-year total','money',0,'higher',test.series.ownerEarnings??[],'Owner earnings'),chartFormat:'money'};
    return metric('oeToNi','owner earnings / net income','x',T.economics.oeToNi,'higher',series,'Annual OE / net income');
   }
-  case 'management':return {...metric('retainedDollar','value created / retained','x',1,'higher',[],'Retained → value created'),value:m.retainedEarnings!=null&&m.retainedEarnings>0&&m.marketCapGain!=null?m.marketCapGain/m.retainedEarnings:null};
-  case 'accounting':return metric(financial?'sbcToOcf':'accruals',financial?'SBC / operating cash flow':'Sloan accruals','pct',financial?T.accounting.maxSbcToOcf:T.accounting.maxAccruals,'lower',test.series[financial?'sbcToOcf':'accruals']??[],financial?'SBC / cash flow':'Sloan accruals');
+  case 'management':
+   if(m.retainedEarnings!=null&&m.marketCapGain!=null&&m.retainedEarnings<=0)return metric('marketCapGain','Market value gained','money',m.retainedEarnings,'higher');
+   if(m.retainedEarnings==null||m.marketCapGain==null) return {...metric(m.perShareValueGrowth!=null?'perShareValueGrowth':'perShareValueChange',m.perShareValueGrowth!=null?'per-share value growth':'per-share value change',m.perShareValueGrowth!=null?'pct':'money',0,'higher',test.series.perShareValue??[],'Per-share earnings / book value'),chartFormat:'money',chartThreshold:null};
+   return {...metric('retainedDollar','value created / retained','x',1,'higher',[],'Retained → value created'),value:m.retainedEarnings!=null&&m.retainedEarnings>0&&m.marketCapGain!=null?m.marketCapGain/m.retainedEarnings:null};
+  case 'accounting':return financial&&m.ocfToNi==null?metric('cashBacked','Earnings backed by cash','yesno',1,'higher'):financial?metric('ocfToNi','operating cash / earnings','x',0,'higher',test.series.ocfToNi??[],'Cash backing'):metric('accruals','Sloan accruals','pct',T.accounting.maxAccruals,'lower',test.series.accruals??[],'Sloan accruals');
   case 'price':return metric('priceToMid','price / estimated value','x',m.buyRatio??.75,'lower');
  }
 }
 export function tileReason(test:TestOutcome):string {
- if(test.insufficientHistory!==undefined)return `Not tested: only ${test.insufficientHistory} years`;
+ if(test.insufficientHistory!==undefined)return 'Not enough history yet';
  if(test.key==='understandable'&&(test.metrics.opMarginCv??0)>1)return test.series.operatingMargin?.some(p=>p[1]!==null&&p[1]<0)?'Margins swing wildly, including losses.':'Margins swing wildly relative to their average.';
  if(test.result==='fail'){
-  const reason=test.reasons.find(r=>!/informational|ROIC first|\$1 retained earnings test:/.test(r))??'Filing-evidence rule fails';
+   const reason=test.reasons.find(r=>!/informational|ROIC first|\$1 retained earnings test:|^Per-share .*three-year endpoint medians|^Years with nonpositive invested capital/.test(r))??'Filing-evidence rule fails';
   const short:Array<[RegExp,string]>=[[/market cap gain/,'Managers created less value than they kept.'],[/variation/,'Margins are too variable.'],[/net loss/,'Too many loss years.'],[/revenue declines/,'Too many revenue declines.'],[/worst years/,'Returns are too weak in the worst years.'],[/median below/,'Median return below the bar.'],[/incremental/,'New investments earn too little.'],[/cash conversion/,'Cash conversion below the bar.'],[/gross margin/,'Gross margin fell too far.'],[/diluted share/,'Both dilution windows fail.'],[/buybacks/,'Buyback timing fails.'],[/working capital/,'Working capital rose too far.']];
   return short.find(([pattern])=>pattern.test(reason))?.[1]??reason;
  }
- if(test.pending)return 'Price history is unavailable.';
- if(test.result==='unclear')return 'Evidence incomplete; no verdict.';
+ if(test.pending)return '';
+ if(test.result==='unclear')return '';
  return '';
 }
 
 /** Lead with the meaning of the selected metric, without claiming that one metric passes the whole test. */
 export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):string {
  const v=metric.value, bar=metric.threshold;
- if(v===null)return test.pending?'The evidence is unavailable.':'There is not enough evidence to judge this test.';
- const pct=(n:number)=>`${Math.round(n*100)}%`,num=(n:number)=>n.toFixed(2);
+ if(v===null)return test.result==='fail'?tileReason(test):'';
+ const pct=(n:number)=>n===1.000001?'> 100%':`${Math.round(n*100)}%`,num=(n:number)=>n.toFixed(2);
  switch(test.key){
-  case 'understandable':return v>1?`Margin variation ${marginVariation(v)}.`:`Margins vary by ${marginVariation(v)} of their average.`;
+  case 'understandable':return metric.id==='lossYears'?`${v} years recorded a net loss.`:v>1?`Margin variation ${marginVariation(v)}.`:`Margins vary by ${marginVariation(v)} of their average.`;
   case 'moat': {
    const years=metric.series.filter(p=>p[1]!==null),passes=years.filter(p=>p[1]!>=bar).length;
-   return `Earns ${pct(v)} on ${kind==='operating'?'capital':'equity'}; ${years.length?`${passes}/${years.length} years pass.`:`the bar is ${pct(bar)}.`}`;
+   return `Earns ${pct(v)} on ${kind==='operating'?'capital':'equity'}; ${years.length?`${passes}/${years.length} years ≥ ${pct(bar)}.`:`the bar is ${pct(bar)}.`}`;
   }
-  case 'economics':return `Each $1 of profit leaves $${num(v)} for owners.`;
-  case 'management':return `$${num(v)} of market value created per $1 kept.`;
-  case 'accounting':return kind==='operating'?(v<0?`Cash exceeds profit by ${pct(-v)} of assets.`:`Profit exceeds cash by ${pct(v)} of assets; ${pct(bar)} is the limit.`):`Stock pay uses ${pct(v)} of operating cash; the limit is ${pct(bar)}.`;
+  case 'economics':return metric.id==='ownerEarningsTotal'?`Five-year owner earnings ${v>0?'are positive':'are nonpositive'}.`:`Each $1 of profit leaves $${num(v)} for owners.`;
+  case 'management':return metric.id==='marketCapGain'?'Market value change compared with cumulative retained earnings.':metric.id==='perShareValueGrowth'?`Per-share value grew ${pct(v)} per year.`:metric.id==='perShareValueChange'?`Per-share value changed by ${num(v)}.`:`$${num(v)} of market value created per $1 kept.`;
+  case 'accounting':return metric.id==='cashBacked'?(v?'Earnings are backed by operating cash.':'Earnings are not backed by operating cash.'):kind==='operating'?(v<0?`Cash exceeds profit by ${pct(-v)} of assets.`:`Profit exceeds cash by ${pct(v)} of assets; ${pct(bar)} is the limit.`):`Operating cash covers ${num(v)}× reported earnings.`;
   case 'price':return priceFraming(v,1-bar).headline;
  }
 }

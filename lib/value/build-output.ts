@@ -1,3 +1,4 @@
+import { isDecided, shortHistory } from './publication-eligibility';
 import { withAnalysisHistory } from './test-history';
 import { publicAnalysis } from './public-analysis';
 import { buyReturnInputs } from "./owner-return";
@@ -64,6 +65,13 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const westernFunnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   const funnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   for (const analysis of sorted) {
+    if (!isDecided(analysis)) {
+      if (shortHistory(analysis)) {
+        const dossier: Dossier={...analysis,w:null,b:false,holders:[],series:analysis.series??{}};
+        (shards[shardOf(analysis.id)]??={})[analysis.id]=publicAnalysis(dossier);
+      }
+      continue;
+    }
     const { company } = analysis;
     const w = bestWesternListing(company);
     if (!/^[A-Z]{2}$/.test(company.country)) throw new Error(`Invalid country for ${analysis.id}`);

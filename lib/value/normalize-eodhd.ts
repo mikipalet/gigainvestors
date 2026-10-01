@@ -1,3 +1,4 @@
+import { deriveYears } from './derive';
 import { marketCapCurrency } from "./currency";
 import { balanceInputs, leaseInputs, trailingInputs } from "./valuation-inputs";
 import type { Company, Fundamentals, Id, Year } from "./types";
@@ -7,6 +8,23 @@ import { checkIntegrity } from "./integrity";
 import { kindFor } from "./universe";
 
 type RecordValue = Record<string, unknown>;
+
+/** Refresh known balance aggregates without erasing an explicit secondary fact. */
+export function refreshEodhdBalance(year:Year,fresh:Year|undefined,raw:unknown,country:string):Year {
+  const leases=leaseInputs(raw,year.end,country);
+  const result={...year,provenance:{...year.provenance},
+    leaseLiabilities:leases.leaseLiabilities??year.leaseLiabilities,
+    leaseDepreciationIncluded:Boolean(year.leaseDepreciationIncluded||leases.leaseDepreciationIncluded),
+    ...(fresh?.currency?{currency:fresh.currency}:{}),
+  };
+  for(const field of ['cash','totalDebt','clientAssets'] as const)if(fresh?.[field]!=null&&fresh.provenance?.[field]?.method!=='absent-in-complete-statement'){
+    result[field]=fresh[field];
+    if(fresh.provenance?.[field])result.provenance[field]=fresh.provenance[field];
+    if(field==='totalDebt')result.debtIncludesLeases=fresh.debtIncludesLeases;
+  }
+  if(leases.leaseLiabilities!=null&&fresh?.provenance?.leaseLiabilities)result.provenance.leaseLiabilities=fresh.provenance.leaseLiabilities;
+  return result;
+}
 
 function record(value: unknown): RecordValue {
   return value !== null && typeof value === "object" && !Array.isArray(value) ? value as RecordValue : {};
@@ -76,16 +94,26 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
       ? null : Math.max(0, currentIntangibles - previousIntangibles);
     byYear.set(fy, {
       ...leases,
+      statementCoverage: {
+        income: ['totalRevenue','incomeBeforeTax','netIncome'].every(k => number(income[k]) !== null) && (number(income.totalOperatingExpenses) !== null || number(income.costOfRevenue) !== null),
+        balance: ['totalAssets','totalLiab','totalStockholderEquity'].every(k => number(balance[k]) !== null),
+        cashFlow: ['totalCashFromOperatingActivities','totalCashflowsFromInvestingActivities','totalCashFromFinancingActivities'].every(k => number(cash[k]) !== null),
+      },
+      costOfSales: number(income.costOfRevenue), operatingExpenses: number(income.totalOperatingExpenses),
+      dilutedEps: number(income.dilutedEPS ?? income.dilutedEps), basicEps: number(income.basicEPS ?? income.eps),
+      shortTermDebt: number(balance.shortTermDebt ?? balance.shortLongTermDebt),
+      debtIncludesLeases: number(balance.shortLongTermDebtTotal) !== null || !leases.leaseDepreciationIncluded,
+      retainedEarnings: number(balance.retainedEarnings),
       fy, end, currency: text(income.currency_symbol),
       minorityInterest: number(balance.noncontrollingInterestInConsolidatedEntity ?? balance.minorityInterest),
       revenue: number(income.totalRevenue), grossProfit: number(income.grossProfit),
       operatingIncome: number(income.operatingIncome), preTaxIncome: number(income.incomeBeforeTax),
       taxExpense: number(income.incomeTaxExpense), netIncome: number(income.netIncome),
       interestExpense: number(income.interestExpense),
-      da: number(income.depreciationAndAmortization ?? income.reconciledDepreciation ?? cash.depreciation),
-      sbc: number(cash.stockBasedCompensation), nonRecurring: number(income.nonRecurring),
+      da: number(income.depreciationAndAmortization) ?? number(income.reconciledDepreciation) ?? number(cash.depreciationAndAmortization) ?? number(cash.depreciation),
+      sbc: number(cash.stockBasedCompensation ?? cash.shareBasedCompensation ?? cash.stockBasedCompensationExpense), nonRecurring: number(income.nonRecurring ?? income.restructuringCharges ?? income.restructuringExpense),
       ocf: number(cash.totalCashFromOperatingActivities), capex: absolute(cash.capitalExpenditures),
-      dividendsPaid: absolute(cash.dividendsPaid), buybacks: stockFlow === null ? null : Math.max(0, -stockFlow),
+      dividendsPaid: absolute(cash.dividendsPaid), buybacks: absolute(cash.repurchaseOfCapitalStock ?? cash.paymentsForRepurchaseOfCommonStock) ?? (stockFlow === null ? null : Math.max(0, -stockFlow)),
       issuance: number(cash.issuanceOfCapitalStock), acquisitions, acquisitionsProxy: true,
       receivables: number(balance.netReceivables), loans: loanAssets(balance), inventory: number(balance.inventory), payables: number(balance.accountsPayable),
       ...balanceInputs(balance, !!leases.leaseDepreciationIncluded),
@@ -93,10 +121,15 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
       ppe: number(balance.propertyPlantAndEquipmentNet), totalAssets: number(balance.totalAssets), totalLiabilities: number(balance.totalLiab),
       liabilitiesAndStockholdersEquity: number(balance.liabilitiesAndStockholdersEquity),
       currentAssets: number(balance.totalCurrentAssets), currentLiabilities: number(balance.totalCurrentLiabilities),
-      dilutedShares: shares.get(fy) ?? number(balance.commonStockSharesOutstanding), marketCap: null,
+      dilutedShares: number(income.weightedAverageShsOutDil ?? income.dilutedAverageShares) ?? shares.get(fy) ?? number(balance.commonStockSharesOutstanding), marketCap: null,
     });
   }
-  const years = [...byYear.values()].sort((a, b) => a.fy - b.fy).slice(-T.fundamentals.maxYears);
+  const years = deriveYears([...byYear.values()].sort((a, b) => a.fy - b.fy).slice(-T.fundamentals.maxYears));
+  for (const y of years) for (const [field,value] of Object.entries(y)) {
+    if (typeof value === 'number' && Number.isFinite(value) && !y.provenance?.[field]) {
+      y.provenance ??= {}; y.provenance[field] = { source: `raw/eodhd/${id}.json#${y.end}`, field, method: 'reported' };
+    }
+  }
   const split = record(data.SplitsDividends);
   const parts = text(split.LastSplitFactor)?.split(":" ).map(Number);
   const date = text(split.LastSplitDate);

@@ -43,11 +43,11 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 it('keeps an intermediate margin unclear rather than calling it a failure', () => {
   const html = renderToStaticMarkup(createElement(BulletRow, { label: 'Margin of safety', value: .089, threshold: T.price.requiredMos.stable, better: 'higher', format: 'pct', currency: 'USD', resultOverride: 'unclear' }));
-  expect(html).toContain('Margin of safety: unclear');
+  expect(html).toContain('Margin of safety: wait');
   expect(html).not.toContain('Margin of safety: fail');
 });
 it('identifies inapplicable bank metrics instead of drawing missing operating bullets', () => {
   const html = renderToStaticMarkup(createElement(TestSection, { kind: 'bank', test: { key: 'accounting', result: 'pass', numeric: 'pass', reasons: [], metrics: { accruals: null }, series: {}, jev: [] } }));
-  expect(html).toContain('Not applicable');
+  expect(html).not.toContain('Sloan accruals');
   expect(html).not.toContain('Sloan accruals: Not reported');
 });

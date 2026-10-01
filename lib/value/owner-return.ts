@@ -24,7 +24,7 @@ export function ownerReturn(v: Valuation | null, trading: string, capUsd: number
  return {cash:v.normalized,capital,currency:v.currency,yield:cashYield,growth:v.growth,expected:cashYield+v.growth};
 }
 export function requiredReturnCopy(v: Valuation | null, country: string) {
- if (!v || !Number.isFinite(v.discountRate)) return 'Required return unavailable';
+ if (!v || !Number.isFinite(v.discountRate)) return '';
  const rate = `required return ${(v.discountRate * 100).toFixed(1)}% a year`;
  return v.bondYield === null || !Number.isFinite(v.bondYield) ? rate
   : `${rate} (${v.discountRate === T.valuation.minDiscount ? '10% floor; ' : ''}${country} 10-year bond ${(v.bondYield * 100).toFixed(1)}% + 4 points)`;

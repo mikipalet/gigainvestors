@@ -34,11 +34,11 @@ it.each([500, 600])("C2 treats nonpositive tangible equity as unlimited and fall
   const years = makeYears({ overrides: { equity: 500, goodwill } });
   const result = moat({ years, kind: "bank" });
   expect(result.numeric).toBe("pass");
-  expect(result.metrics.roeMedian).toBeNull();
-  expect(result.reasons.join(" ")).toMatch(/tangible equity.*unlimited/);
+  expect(result.metrics.roeMedian).toBeCloseTo(0.2);
+  expect(result.series.roe.every(([,v])=>v!==null&&Number.isFinite(v))).toBe(true);
   const valuation = valueCompany({ years, kind: "bank", bondYield: 0.04, cyclical: false }).valuation!;
   expect(valuation.normalized).toBe(50);
-  expect(valuation.perShare.mid).toBe(200);
+  expect(valuation.perShare.mid).toBe(100);
   expect(valuation.bridge.every(row => Number.isFinite(row.value))).toBe(true);
   expect(valuation.assumptions.join(" ")).toMatch(/reported book/);
 });
@@ -71,7 +71,7 @@ it("C3 leaves dilution unavailable if growth exceeds 1% in the sole available wi
   const years = makeYears({ n: 6, overrides: (_, i) => ({ dilutedShares: 10 * 1.05 ** i }) });
   const result = management({ years, kind: "operating" });
   expect(result.numeric).toBe("unclear");
-  expect(result.reasons.join(" ")).toMatch(/not enough data for diluted share growth/);
+  expect(result.reasons.join(" ")).toMatch(/not enough data for the \$1 test or per-share value growth/);
 });
 
 it.each([5, 10])("C3 passes when the %i-year CAGR is exactly 1%", window => {
@@ -83,7 +83,7 @@ it.each([5, 10])("C3 passes when the %i-year CAGR is exactly 1%", window => {
 it("C3 can clear dilution on an available shrinking five-year window", () => {
   const years = makeYears({ n: 6, overrides: (_, i) => ({ dilutedShares: 20 - i }) });
   const result = management({ years, kind: "operating" });
-  // Dilution clears, but M3 now requires ten years of acquisition/earnings data.
+  // Dilution clears, but the core per-share comparison requires seven years.
   expect(result.numeric).toBe("unclear");
   expect(result.metrics.shareCagr).toBeNull();
   expect(result.reasons.join(" ")).not.toMatch(/not enough data for diluted share growth/);

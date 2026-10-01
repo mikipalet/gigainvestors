@@ -40,7 +40,8 @@ export function createUsdRate(options: { force?: boolean; rates?: Rates } = {}):
         try {
           const file = `raw/eodhd/universe/fx-${major}.json`;
           const cached = readCorpusJson<{ date: string; data: Array<{ close: number }> }>(file);
-          let data = !options.force && cached?.date === date ? cached.data : null;
+          let data = process.env.VALUE_NO_EODHD === '1' ? cached?.data ?? null : !options.force && cached?.date === date ? cached.data : null;
+          if(data===null&&process.env.VALUE_NO_EODHD==='1')return null;
           if (data === null) {
             data = await eodhd<Array<{ close: number }>>(`eod/${major}USD.FOREX`, { order: "d", limit: "1" });
             writeCorpusJson(file, { date, data });

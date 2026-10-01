@@ -57,7 +57,7 @@ export function Search() {
 
   useEffect(() => {
     if (!open) return;
-    loadIndex().then(setIndex).catch(()=>setError('Search temporarily unavailable. Try again.'));
+    loadIndex().then(setIndex).catch(()=>setError('Could not load search. Try again.'));
     setQuery(initialQuery.current); initialQuery.current='';
     setSel(0);
     requestAnimationFrame(() => input.current?.focus());
@@ -73,14 +73,14 @@ export function Search() {
     valueHits(query).then(results=>{
       if (!current) return;
       setValues(results);setLoading(false);
-    }).catch(()=>{if(current){setLoading(false);if(isValue)setError('Company search is temporarily unavailable. Try again.');}});
+    }).catch(()=>{if(current){setLoading(false);if(isValue)setError('Could not load company search. Try again.');}});
     return ()=>{current=false;};
   },[query,open,isValue]);
   const immediateValues=useMemo(()=>cachedValueHits(query),[query]);
   const values=resultQuery===query?storedValues:immediateValues;
   const deferredQuery=useDeferredValue(query);
   const mainHits=useMemo(()=>(index?rank(index,deferredQuery):[]),[index,deferredQuery]);
-  const hits: Array<Hit|ValueHit> = isValue ? [...values,...mainHits.filter(h=>h.kind!=='stock'||!values.some(v=>(v.row[0]===`${h.ticker}.US`||v.listings?.includes(`${h.ticker}.US`))))] : mainHits;
+  const hits: Array<Hit|ValueHit> = isValue ? [...values,...mainHits.filter(h=>h.kind!=='stock')] : mainHits;
 
 
   useEffect(()=>{document.getElementById(`search-hit-${sel}`)?.scrollIntoView({block:'nearest'});},[sel]);
@@ -168,7 +168,7 @@ export function Search() {
                     {h.kind==='value'&&<span className="shrink-0 opacity-60">{h.row[2]}</span>}
                     {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{plural(h.holders, "holder")}{!isValue && values.some(v=>v.row[0]===`${h.ticker}.US`&&v.row[3]==='a') && <a className="ml-2 underline" href={`https://value.gigainvestors.com/${h.ticker.toLowerCase()}.us`} onClick={e=>e.stopPropagation()}>Buffett checklist</a>}</span>}
                     {h.kind==='value'&&h.row[5]===null&&<span className="market-access-status">not easily buyable from Western brokers</span>}
-                    {h.kind === 'value' && <span className="value-search-status ml-auto shrink-0 opacity-60">{h.row[3]==='p'?'analysis pending':h.tests?.includes('C')?'unavailable':h.tests?.includes('U')?'unclear':h.tests?<span className="inline-flex gap-1">{[...h.tests].map((t,j)=><StatusGlyph key={j} result={({P:'pass',F:'fail',C:'checking',U:'unclear',N:'na'} as const)[t as 'P']??'unclear'} label={`${['Understandable','Moat','Economics','Management','Accounting'][j]}: ${{P:'pass',F:'fail',C:'unavailable',U:'unclear',N:'not applicable'}[t]}`}/>)}</span>:'analysed'}{h.ratio!=null&&` · ${h.ratio.toFixed(2)}×`}{!!h.holders&&` · ${h.holders} holders`}</span>}
+                    {h.kind === 'value' && <span className="value-search-status ml-auto shrink-0 opacity-60">{h.tests&&/^[PF]{5}$/.test(h.tests)?<span className="inline-flex gap-1">{[...h.tests].map((t,j)=><StatusGlyph key={j} result={({P:'pass',F:'fail',C:'checking',U:'unclear',N:'na'} as const)[t as 'P']??'unclear'} label={`${['Understandable','Moat','Economics','Management','Accounting'][j]}: ${{P:'pass',F:'fail',C:'',U:'',N:'not applicable'}[t]}`}/>)}</span>:'analysed'}{h.ratio!=null&&` · ${h.ratio.toFixed(2)}×`}{!!h.holders&&` · ${h.holders} holders`}</span>}
                     {h.kind === "investor" && <span className="ml-auto shrink-0 opacity-60">investor</span>}
                     {h.kind === "munger" && <span className="ml-auto shrink-0 opacity-60">the waiting</span>}
                   </li></Fragment>

@@ -2,10 +2,18 @@ import { T } from "../config";
 import { cagr, last, mean, median, outcome, present, ratio, retainedTest, roic, spearman, sum, withZeroDefaults } from "../metrics";
 import type { NumericInput, Series } from "../types";
 
-export function run({ years, priceHistoryPending = false }: NumericInput) {
+export function run({ years, kind, priceHistoryPending = false }: NumericInput) {
   years = withZeroDefaults(years);
   const history = last(years, 11), ys = last(history, 10), first = history[0], end = history.at(-1);
   const retained = retainedTest(years);
+  const perShare = history.map(y=>ratio(kind==='operating'?y.netIncome:y.equity,y.dilutedShares));
+  const startValues=perShare.slice(0,3), endValues=perShare.slice(-3);
+  const perShareStart=history.length>=7 && startValues.every(v=>v!==null)?median(startValues as number[]):null;
+  const perShareEnd=history.length>=7 && endValues.every(v=>v!==null)?median(endValues as number[]):null;
+  const perShareValueGrowth=perShareStart===null||perShareEnd===null?null:cagr({first:perShareStart,last:perShareEnd,years:history.length-3});
+  const perShareValueChange=perShareStart===null||perShareEnd===null?null:perShareEnd-perShareStart;
+  const dollarAvailable=retained.gain!==null && retained.retained!==null;
+  const valuePass=dollarAvailable ? retained.gain!>=retained.retained! : perShareValueChange===null ? null : perShareEnd!>0 && perShareValueChange>=0;
   // Probe availability only: a placeholder cap cannot determine a result. It tells
   // us whether prices alone can settle the check, without hiding missing filings.
   const withPrices = retainedTest(years.map(y => ({ ...y, marketCap: y.dilutedShares !== null && y.dilutedShares > 0 ? 1 : null })));
@@ -51,20 +59,21 @@ export function run({ years, priceHistoryPending = false }: NumericInput) {
   const acquisitionLabel = ys.some(y => y.acquisitionsProxy) ? "acquired goodwill and intangibles (proxy)" : "acquisition spending";
   const displayReturn = (value: number | null) => value === null ? "unavailable" : value === Infinity ? "unlimited" : `${(value * 100).toFixed(1)}%`;
   return outcome({ key: "management", metrics: { marketCapGain: retained.gain, retainedEarnings: retained.retained, shareCagr, shareCagr5,
-    retainedStartFy: retained.startFy, retainedEndFy: retained.endFy,
+    retainedStartFy: retained.startFy, retainedEndFy: retained.endFy, perShareValueGrowth, perShareValueChange, perShareStart, perShareEnd,
     buybackYieldSpearman: discipline, averageBuybackYield, buybackYears: paired.length,
     debtFundedBuybacks: debtFunded === null ? null : Number(debtFunded), acquisitionSpend, cumulativeNetIncome, roicFirst3Median, roicLast3Median },
-    series: { shares: ys.map(y => [y.fy, y.dilutedShares]), buybacks: ys.map(y => [y.fy, y.buybacks]), acquisitions: ys.map(y => [y.fy, y.acquisitions]), roic: roicSeries,
+    series: { perShareValue: history.map((y,i)=>[y.fy,perShare[i]]), shares: ys.map(y => [y.fy, y.dilutedShares]), buybacks: ys.map(y => [y.fy, y.buybacks]), acquisitions: ys.map(y => [y.fy, y.acquisitions]), roic: roicSeries,
       marketCap: history.map(y => [y.fy, y.marketCap]), retainedEarnings: ys.map(y => [y.fy, y.netIncome === null || y.dividendsPaid === null ? null : y.netIncome - y.dividendsPaid]) },
     reasons: [
       ...(retained.startFy !== null && retained.endFy !== null ? [`$1 retained earnings test: ${retained.startFy} to ${retained.endFy} (${retained.endFy - retained.startFy} years)`] : []),
       ...(debtFunded ? ["potential debt-funded buybacks (informational)"] : []),
       ...(timingAvailable && !priceBlind ? [discipline !== null && discipline > 0
         ? "buybacks leaned toward cheaper years (informational)" : "buybacks unrelated to price (informational)"] : []),
-      `ROIC first 3 years vs last 3 years: ${displayReturn(roicFirst3Median)} vs ${displayReturn(roicLast3Median)}`,
+      ...(roicFirst3Median!==null&&roicLast3Median!==null?[`ROIC first 3 years vs last 3 years: ${displayReturn(roicFirst3Median)} vs ${displayReturn(roicLast3Median)}`]:[]),
+      ...(!dollarAvailable&&perShareValueChange!==null?[`Per-share ${kind==='operating'?'earnings':'book value'}: ${perShareStart!.toFixed(2)} to ${perShareEnd!.toFixed(2)} (three-year endpoint medians)`]:[]),
     ],
     checks: [
-      { pass: retained.gain === null || retained.retained === null ? null : retained.gain >= retained.retained, pending: retainedPending, data: "the $1 retained earnings test", reason: "market cap gain below cumulative retained earnings" },
+      { core: true, pass: valuePass, pending: retainedPending && perShareValueChange===null, data: "the $1 test or per-share value growth", reason: dollarAvailable ? "market cap gain below cumulative retained earnings" : "per-share value declined or ends nonpositive" },
       { pass: dilutionPass, data: "diluted share growth over five and ten years", reason: "five-year and ten-year diluted share growth both above threshold" },
       { pass: timingAvailable ? !priceBlind : null, pending: priceHistoryPending && ys.some(y => y.netIncome !== null && y.buybacks !== null && y.dilutedShares !== null && y.dilutedShares > 0), data: "buyback timing", reason: "material buybacks concentrated at lower earnings yields (Spearman rho below threshold)" },
       { pass: acquisitionPass, data: `${acquisitionLabel} and ROIC stability`, reason: `${acquisitionLabel} exceeds half of ten-year net income with low and deteriorating ROIC` },

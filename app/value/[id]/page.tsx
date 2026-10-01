@@ -1,15 +1,11 @@
 import { requiredReturnCopy } from '@/lib/value/owner-return';
 import { HolderSummary } from '@/components/value/HolderSummary';
 import { HolderLink } from '@/components/value/HolderLink';
-import { displayName } from '@/lib/value/presentation';
-import { compactMoney } from '@/lib/format';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getDossier, getTopIds, getSearchCompany, getPrice } from '@/lib/value/store';
 import { getIndex } from '@/lib/data';
 import { Face } from '@/components/Face';
-import { SearchInput } from '@/components/Search';
-import { ValueLink } from '@/components/value/ValueLink';
 import { DossierContent } from '@/components/value/DossierContent';
 
 export const revalidate = 86400;
@@ -22,16 +18,13 @@ export async function generateStaticParams() {
 }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dossier = await getDossier((await params).id.toUpperCase());
-  const description = dossier ? `${dossier.company.name}: ${requiredReturnCopy(dossier.valuation, dossier.company.country)}. Five quality tests plus price.` : 'Company not found';
+  const required=dossier?requiredReturnCopy(dossier.valuation,dossier.company.country):'';
+  const description = dossier ? dossier.status==='insufficient_data' ? `${dossier.company.name}: Not enough history yet.` : `${dossier.company.name}: five quality tests.${required?` ${required}.`:''}` : 'Company not found';
   return { description, openGraph: { description }, title: dossier ? `${dossier.company.name}: Buffett checklist` : 'Company not found', alternates: { canonical: `/${(await params).id.toLowerCase()}` } };
 }
 export default async function DossierPage({ params }: Props) {
   const dossier = await getDossier((await params).id.toUpperCase());
-  if (!dossier) {
-    const company=await getSearchCompany((await params).id);
-    if (!company) notFound();
-    return <section className="not-found-value locks-scroll"><p className="eyebrow">{company[0]} · {company[2]}</p><h1>{displayName(company[1])}</h1><h2>Not analysed yet</h2><p>This business is in our coverage queue. Its Buffett checklist arrives within days as we work through the latest filings.</p><p className="source-line">{company[4]!==null?`Market capitalisation: ${compactMoney(company[4],'USD')}. `:''}Listed in {company[2]}.</p><SearchInput/><p><ValueLink href="/">← Explore analysed companies</ValueLink></p></section>;
-  }
+  if (!dossier) notFound();
   if (/[^\x00-\x7F]/.test(dossier.company.name)) {
     const listing=await getSearchCompany(dossier.id);
     if(listing&&/^[\x00-\x7F]+$/.test(listing[1])) dossier.company={...dossier.company,nativeName:dossier.company.name,name:listing[1]};

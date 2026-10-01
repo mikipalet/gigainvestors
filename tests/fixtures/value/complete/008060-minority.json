@@ -1,0 +1,65 @@
+{
+  "timeseries": {
+    "result": [
+      {
+        "meta": {
+          "symbol": [
+            "008060.KS"
+          ],
+          "type": [
+            "annualMinorityInterest"
+          ]
+        },
+        "timestamp": [
+          1672444800,
+          1703980800,
+          1735603200,
+          1767139200
+        ],
+        "annualMinorityInterest": [
+          {
+            "dataId": 23132,
+            "asOfDate": "2022-12-31",
+            "periodType": "12M",
+            "currencyCode": "KRW",
+            "reportedValue": {
+              "raw": 877975280370,
+              "fmt": "877.98B"
+            }
+          },
+          {
+            "dataId": 23132,
+            "asOfDate": "2023-12-31",
+            "periodType": "12M",
+            "currencyCode": "KRW",
+            "reportedValue": {
+              "raw": 887683436760,
+              "fmt": "887.68B"
+            }
+          },
+          {
+            "dataId": 23132,
+            "asOfDate": "2024-12-31",
+            "periodType": "12M",
+            "currencyCode": "KRW",
+            "reportedValue": {
+              "raw": 898960844080,
+              "fmt": "898.96B"
+            }
+          },
+          {
+            "dataId": 23132,
+            "asOfDate": "2025-12-31",
+            "periodType": "12M",
+            "currencyCode": "KRW",
+            "reportedValue": {
+              "raw": 863181533360,
+              "fmt": "863.18B"
+            }
+          }
+        ]
+      }
+    ],
+    "error": null
+  }
+}

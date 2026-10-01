@@ -116,13 +116,13 @@ describe("M3 acquisition materiality and endpoint ROIC", () => {
     expect(result.metrics).not.toHaveProperty("roicTrend");
     expect(result.reasons.join(" ")).toContain("ROIC first 3 years vs last 3 years");
   });
-  it("uses medians, preserving unlimited tangible returns instead of dropping them", () => {
+  it("uses finite capped returns in medians for nonpositive capital", () => {
     const result = management(capitalYears(i => ({ acquisitions: 3e9,
       equity: i >= 8 ? -1e9 : 20e9,
     })));
     expect(result.numeric).toBe("pass");
-    expect(result.metrics.roicLast3Median).toBeNull();
-    expect(result.reasons.join(" ")).toContain("unlimited");
+    expect(result.metrics.roicLast3Median).toBeGreaterThan(1);
+    expect(result.reasons.join(" ")).not.toContain("unavailable");
   });
   it("uses three-year medians rather than single years or means", () => {
     const returns = [0.3, 0.3, 2, 0.4, 0.25, 0.2, 0.18, 0.09, 0.1, 0.8];
@@ -144,10 +144,10 @@ describe("M3 acquisition materiality and endpoint ROIC", () => {
     const result = management(capitalYears(i => ({ acquisitions: 3e9, operatingIncome: i === 10 ? null : 5e9 })));
     expect(result.numeric).not.toBe("fail");
     expect(result.metrics.roicLast3Median).toBeNull();
-    expect(result.reasons.join(" ")).toContain("not enough data for");
+    expect(result.reasons.join(" ")).not.toContain("not enough data for");
   });
   it("does not call partial sums ten-year evidence", () => {
-    const result = management(capitalYears(i => ({ acquisitions: i === 5 ? null : 3e9, acquisitionsProxy: true })));
+    const result = management(capitalYears(i => ({ acquisitions: i === 5 ? null : 3e9, goodwill: i === 5 ? null : 0, intangibles: i === 5 ? null : 0, acquisitionsProxy: true })));
     expect(result.metrics.acquisitionSpend).toBeNull();
     expect(result.numeric).not.toBe("fail");
   });

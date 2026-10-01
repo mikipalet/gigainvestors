@@ -1,10 +1,9 @@
 import { T } from './config';
 import { QUALITY_TESTS, type Analysis, type NumericOutcome, type TestOutcome } from './types';
 
-// Accounting uses five recent years. The other quality tests describe a full
-// ten-year business cycle; a shorter sample cannot settle those tests.
+// Seven annual periods establish history; each core metric also checks its own observations.
 export function withTestHistory<Outcome extends NumericOutcome | TestOutcome>(test: Outcome, years: number): Outcome {
-  const required = test.key === 'accounting' ? 5 : T.understandable.years;
+  const required = T.minYears;
   if (test.key === 'price' || years >= required) return test;
   return { ...test, numeric: 'unclear', ...('result' in test ? { result: 'unclear' } : {}),
     pending: false, insufficientHistory: years, reasons: [`Not tested: only ${years} years`] };

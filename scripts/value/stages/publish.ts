@@ -1,3 +1,6 @@
+import { summarizeSnapshots } from '../../../lib/value/snapshots';
+import { bestWesternListing } from '../../../lib/value/western';
+import { isDecided, undecidedReasons } from '../../../lib/value/publication-eligibility';
 import {applyShareCheck,type ShareCheck} from '../../../lib/value/share-check';
 import { publishViews } from '../../../lib/value/publish-views';
 import { writeCorpusJson } from '../../../lib/value/corpus';
@@ -206,12 +209,29 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   writeCorpusJson('staging/unresolved-shares.json', {asOf:new Date().toISOString(),companies:unresolved});
   console.log(`Private share residual: ${unresolved.length}; quality passes: ${unresolved.filter(r=>r.qualityPass).length}`);
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
-  const { shards, manifest } = buildAdaptiveSearchShards(universe.map(company => enrichedCompany(company)), new Set(rows.map(row => row.id)));
+  const eligible=new Set(rows.filter(isDecided).map(row=>row.id));
+  writeCorpusJson('staging/undecided.json',{asOf:new Date().toISOString(),companies:rows.filter(row=>!isDecided(row)).map(row=>({id:row.id,reasons:undecidedReasons(row)}))});
+  const { shards, manifest } = buildAdaptiveSearchShards(universe.filter(company=>eligible.has(company.id)).map(company => enrichedCompany(company)), eligible);
   files["search/manifest.json"] = manifest;
   for (const [key, shard] of Object.entries(shards)) {
     files[`search/${key}.json`] = shard;
   }
-  Object.assign(files, latestHistoryFiles(universe));
+  const history=latestHistoryFiles(universe.filter(c=>eligible.has(c.id)));
+  for(const [file,data]of Object.entries(history)) {
+    // Published historical rows must also have a decided checklist.
+    if(Array.isArray(data)&&file!=='history/companies.json') history[file]=data.filter((row:any)=>Array.isArray(row)&&eligible.has(row[0])&&typeof row[1]==='string'&&/^[PF]{5}$/.test(row[1]));
+  }
+  const historyIndex=history['history/index.json'] as import('../../../lib/value/time-travel').HistoryIndex|undefined;
+  if(historyIndex){
+    const westernIds=new Set(universe.filter(c=>bestWesternListing(c)).map(c=>c.id));
+    historyIndex.perYear={};historyIndex.western={perYear:{}};
+    for(const year of historyIndex.years){
+      const snapshots=history[`history/${year}.json`] as import('../../../lib/value/types').SnapshotRow[];
+      historyIndex.perYear[year]=summarizeSnapshots(snapshots);
+      historyIndex.western.perYear[year]=summarizeSnapshots(snapshots.filter(r=>westernIds.has(r[0])));
+    }
+  }
+  Object.assign(files, history);
   publishViews(files);
   writeOutput({ repo, files });
   const changed = commit ? commitOutput({ repo, asOf }) : true;

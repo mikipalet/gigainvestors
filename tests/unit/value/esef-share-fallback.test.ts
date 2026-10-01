@@ -3,7 +3,7 @@ import { valueCompany } from '@/lib/value/valuation';
 import { makeYears } from './synthetic';
 
 it('values a missing tagged share count using verified current shares without inventing annual shares', () => {
-  const years = makeYears({overrides:{dilutedShares:null,basicEps:1.23}});
+  const years = makeYears({overrides:{dilutedShares:null,basicEps:null}});
   const result = valueCompany({years,kind:'operating',currency:'EUR',bondYield:.03,cyclical:false,
     currentShares:10,reportedShares:true,shareSource:'yahoo-shares'});
   expect(result.valuation?.shares).toBe(10);

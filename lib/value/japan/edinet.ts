@@ -11,7 +11,7 @@ export interface EdinetDocument {
   csvFlag: string; withdrawalStatus: string; disclosureStatus: string;
 }
 export interface DocumentDay { metadata: { status: string }; results: EdinetDocument[] }
-const limiter = createLimiter({ perSecond: T.edinet.perSecond });
+const limiter = createLimiter({ perSecond: T.edinet.perSecond / (Number(process.env.VALUE_SOURCE_WORKERS)||1) });
 async function request(resource: string, query: Record<string, string>): Promise<Response> {
   const key = process.env.EDINET_API_KEY;
   if (!key) throw new Error("EDINET_API_KEY missing");

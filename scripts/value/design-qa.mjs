@@ -10,6 +10,8 @@ mkdirSync(out, { recursive: true });
 const audit = () => {
   const vw = innerWidth;
   const issues = [];
+  const publicText=document.body.innerText+' '+[...document.querySelectorAll('[title],[aria-label]')].map(e=>(e.getAttribute('title')??'')+' '+(e.getAttribute('aria-label')??'')).join(' ');
+  const gap=publicText.match(/not enough (?:evidence|data)|not reported|unavailable|\bunclear\b|not tested|cannot judge/i);if(gap&&!location.pathname.includes('/method'))issues.push(`Forbidden gap wording: ${gap[0]}`);
   if (document.documentElement.scrollWidth > vw + 1) issues.push(`horizontal overflow: ${document.documentElement.scrollWidth}px > ${vw}px`);
   for (const el of document.querySelectorAll("body *")) {
     const cs = getComputedStyle(el);

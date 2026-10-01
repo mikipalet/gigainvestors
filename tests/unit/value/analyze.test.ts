@@ -394,7 +394,8 @@ it("R3 derives the $1 test from fiscal-end monthly closes through the corpus sta
   rmSync(corpusPath("prices-history/KO.US.json"));
   await analyze(options);
   const missing = readCorpusJson<Analysis>("analysis/KO.US.json")!.tests.management;
-  expect(missing.numeric).toBe("unclear");
+  expect(missing.numeric).toBe("pass");
+  expect(missing.metrics.perShareValueGrowth).not.toBeNull();
   expect(missing.metrics.marketCapGain).toBeNull();
 });
 

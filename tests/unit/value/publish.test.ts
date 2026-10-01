@@ -13,7 +13,7 @@ import { parseBulkPrices, refreshPrices, commitPrices } from "@/scripts/value/st
 function analysis(id = "KO.US"): Analysis {
   return {
     id, company: { id, name: id, code: id.split(".")[0], exchange: id.split(".").at(-1)!, country: "US", currency: "USD", isin: null, cik: null, lei: null, edinetCode: null, sector: "Consumer", industry: null, kind: "operating", listings: [id], marketCapUsd: 100, description: null, source: "eodhd" },
-    asOf: "2026-09-29", status: "scored", report: { id, kind: "description", url: null, filed: null, period: null, sections: [] },
+    historyCoverage: {years:11,first:2015,last:2025,source:"fixture"}, asOf: "2026-09-29", status: "scored", report: { id, kind: "description", url: null, filed: null, period: null, sections: [] },
     tests: {
       understandable: { key: "understandable", result: "pass", numeric: "pass", reasons: [], metrics: {}, series: { revenue: [[2025, 100]] }, jev: [] },
       moat: { key: "moat", result: "pass", numeric: "pass", reasons: [], metrics: {}, series: {}, jev: [] },
@@ -107,15 +107,15 @@ describe("buildOutput", () => {
     const files = output([pass, miss, insufficient]);
     expect((files["index/default.json"] as IndexRow[]).map((row) => row.id)).toEqual(["AXP.US", "KO.US"]);
     expect(files[`dossiers/${shardOf(pass.id)}.json`]).toMatchObject({ "KO.US": { id: "KO.US", series: { revenue: [[2025, 100]] } } });
-    expect((files["index/US.json"] as IndexRow[]).find((row) => row.id === "BAD.US")?.st).toBe("i");
-    expect(files["meta.json"]).toMatchObject({ asOf: "2026-09-29", counts: { universe: 3, scored: 2, insufficient: 1 }, versions: pass.versions });
+    expect((files["index/US.json"] as IndexRow[]).find((row) => row.id === "BAD.US")?.st).toBeUndefined();
+    expect(files["meta.json"]).toMatchObject({ asOf: "2026-09-29", counts: { universe: 3, scored: 2, insufficient: 0 }, versions: pass.versions });
     expect(files["prices/US.json"]).toEqual({});
   });
-  it("includes unresolved quality rows for the awaiting view; excludes na and multiple failures", () => {
+  it("keeps unresolved quality rows private; excludes na and multiple failures from the default view", () => {
     const rows = [analysis("U.US"), analysis("N.US"), analysis("F.US")];
     rows[0].tests.moat.result = "unclear"; rows[1].tests.moat.result = "na";
     rows[2].tests.moat.result = "fail"; rows[2].tests.economics.result = "fail";
-    expect((output(rows)["index/default.json"] as IndexRow[]).map(r=>r.id)).toEqual(["U.US"]);
+    expect((output(rows)["index/default.json"] as IndexRow[]).map(r=>r.id)).toEqual([]);
   });
   it("only emits trusted confident configured tags and applies the recurring choice rule", () => {
     const row = analysis();
@@ -216,7 +216,7 @@ describe("publish repository", () => {
     expect(rows.map((row) => [row.id, row.t])).toEqual([["AXP.US", "PPPPP"], ["KO.US", "PFPPP"]]);
     const search = (key: string) => JSON.parse(readFileSync(path.join(repo, `search/${key}.json`), "utf8"));
     expect(search("ax").rows).toContainEqual(["AXP.US", "AXP.US", "US", "a", 100, "AXP.US"]);
-    expect(search("pe").rows).toContainEqual(["PENDING.US", "PENDING.US", "US", "p", 100, "PENDING.US"]);
+    expect(search("pe").rows).toEqual([]);
     expect(search("de").rows).toEqual([]);
     expect(search("manifest")).toEqual({ version: 1, split: [], maxPrefix: 2 });
     expect(existsSync(path.join(repo, "search/a.json"))).toBe(false);
@@ -306,7 +306,7 @@ describe("prices", () => {
     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(true);
     expect(git(repo, ["rev-list", "--count", "HEAD"])).toBe("3");
     const paths = git(repo, ["diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"]);
-    expect(paths.split("\n")).toEqual(["dossiers/027.json", "meta.json", "prices/US.json"]);
+    expect(paths.split("\n")).toEqual(["meta.json", "prices/US.json"]);
     await refreshPrices({ repo, companies: [analysis().company], bulk: async () => raw });
     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(false);
   });
@@ -344,7 +344,7 @@ describe("publish rollout safeguards", () => {
   });
   it("allows exactly a 20% decline and compares published count rather than universe", () => {
     const repo = repository();
-    writeOutput({ repo, files: { ...output([analysis()]), "meta.json": { counts: { universe: 60000, analysed: 10, scored: 10, insufficient: 0 } } } });
+    writeOutput({ repo, files: { ...output([analysis()]), "meta.json": { counts: { universe: 60000, analysed: 7, scored: 10, insufficient: 0 } } } });
     commitOutput({ repo, asOf: "2026-09-29" });
     const analyses = Array.from({ length: 8 }, (_, i) => analysis(`${i}.US`));
     expect(publishSnapshot({ repo, analyses, universe: analyses.map(row => row.company), partial: false, holdersByTicker: {}, investorNames: {} }).count).toBe(8);
@@ -432,7 +432,7 @@ it("publishes volatility discount, compact ROIC and the added dossier data", () 
   const { files } = buildOutput({ analyses:[row], holdersByTicker:{}, investorNames:{}, fx:{}, prices:{'KO.US':[70,'2026-09-29']}, priceHistories:{'KO.US':[['2025-01',70]]} });
   expect((files['index/US.json'] as IndexRow[])[0]).toMatchObject({m:0.5,r:[0.123,0.123,0.123,0.123,0.123,0.123,0.123,0.123,null,0.123]});
   const dossier = (files[`dossiers/${shardOf(row.id)}.json`] as Record<string,Dossier>)[row.id];
-  expect(dossier).toMatchObject({valuation:null,valueHistory:[],priceHistory:[['2025-01',70]],events:row.events,series:row.series,tests:{price:{result:'unclear'}}});
+  expect(dossier).toMatchObject({valuation:null,valueHistory:[],priceHistory:[['2025-01',70]],events:row.events,series:row.series});
 });
 
 it("loads analysis with a cheap shape check without building output", async () => {
@@ -529,14 +529,14 @@ describe("published funnel", () => {
     for (const row of all) row.company.marketCapUsd = null; // This fixture tests gates, not cap/share reconciliation.
     const files = buildOutput({ analyses: all, prices, holdersByTicker: {}, investorNames: {}, fx: {} }).files;
     const funnel = (files["meta.json"] as StoreMeta).funnel!;
-    expect(funnel).toMatchObject({ asOf: "2026-09-29", analysed: 14 });
+    expect(funnel).toMatchObject({ asOf: "2026-09-29", analysed: 11 });
     expect(funnel.gates.map(g => [g.key, g.passing, g.failsOnlyThis])).toEqual([
-      ["understandable", 11, 1], ["moat", 9, 1], ["economics", 7, 1],
+      ["understandable", 9, 1], ["moat", 8, 1], ["economics", 7, 1],
       ["management", 6, 1], ["accounting", 5, 1], ["price", 2, 1],
     ]);
     expect(funnel.gates.every(g => g.label.length > 0)).toBe(true);
-    expect(funnel.byCountry.US).toMatchObject({ asOf: "2026-09-29", analysed: 10 });
-    expect(funnel.byCountry.US.gates.map(g => g.passing)).toEqual([7, 5, 3, 2, 1, 1]);
+    expect(funnel.byCountry.US).toMatchObject({ asOf: "2026-09-29", analysed: 7 });
+    expect(funnel.byCountry.US.gates.map(g => g.passing)).toEqual([5, 4, 3, 2, 1, 1]);
     expect(funnel.byCountry.JP).toMatchObject({ asOf: "2026-09-29", analysed: 4 });
     expect(funnel.byCountry.JP.gates.map(g => [g.passing, g.failsOnlyThis])).toEqual([[4,0],[4,0],[4,0],[4,0],[4,0],[1,1]]);
     expect((files["index/default.json"] as IndexRow[]).length).toBeLessThan(funnel.analysed);

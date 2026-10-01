@@ -2,14 +2,23 @@ import { compactMoney } from '@/lib/format';
 import { T } from './config';
 export type MetricFormat = 'pct' | 'pp' | 'x' | 'money' | 'count' | 'years' | 'yesno' | 'year' | 'number';
 export const metricLabels: Record<string, { label: string; format: MetricFormat; threshold?: number; better?: 'higher' | 'lower'; strict?: boolean; nonNegative?: boolean }> = {
-  historyYears: { nonNegative: true, label: 'Financial history', format: 'years', threshold: T.understandable.years, better: 'higher' },
+  ownerEarningsTotal: {label:'Owner earnings, five-year total',format:'money'},
+  netIncomeTotal: {label:'Net income, five-year total',format:'money'},
+  capitalFallbackYears: {label:'Years with nonpositive capital',format:'count'},
+  perShareStart: {label:'Per-share value, starting three-year median',format:'money'},
+  perShareEnd: {label:'Per-share value, ending three-year median',format:'money'},
+  perShareValueGrowth: {label:'Per-share value growth',format:'pct',threshold:0,better:'higher'},
+  perShareValueChange: {label:'Per-share value change',format:'money',threshold:0,better:'higher'},
+  ocfToNi: {label:'Operating cash / earnings',format:'x'},
+  cashBacked: {label:'Earnings backed by cash',format:'yesno'},
+  historyYears: { nonNegative: true, label: 'Financial history', format: 'years', threshold: T.minYears, better: 'higher' },
   revenueDeclines: { nonNegative: true, label: 'Years with declining revenue', format: 'count', threshold: T.understandable.maxRevenueDeclines, better: 'lower' },
   lossYears: { nonNegative: true, label: 'Years with a net loss', format: 'count', threshold: T.understandable.maxLossYears, better: 'lower' },
   opMarginCv: { nonNegative: true, label: 'Operating margin variation', format: 'x', threshold: T.understandable.maxOpMarginCv, better: 'lower' },
-  roicMedian: { label: 'ROIC, 10-year median', format: 'pct', threshold: T.moat.roicMedian, better: 'higher' },
-  roicSecondLowest: { label: 'ROIC, 9th-best of 10 years', format: 'pct', threshold: T.moat.roicSecondLowest, better: 'higher' },
-  roeMedian: { label: 'ROE, 10-year median', format: 'pct', threshold: T.moat.roeMedianFin, better: 'higher' },
-  roeSecondLowest: { label: 'ROE, 9th-best of 10 years', format: 'pct', threshold: T.moat.roeSecondLowestFin, better: 'higher' },
+  roicMedian: { label: 'ROIC, median of available years', format: 'pct', threshold: T.moat.roicMedian, better: 'higher' },
+  roicSecondLowest: { label: 'ROIC, second-lowest year', format: 'pct', threshold: T.moat.roicSecondLowest, better: 'higher' },
+  roeMedian: { label: 'ROE, median of available years', format: 'pct', threshold: T.moat.roeMedianFin, better: 'higher' },
+  roeSecondLowest: { label: 'ROE, second-lowest year', format: 'pct', threshold: T.moat.roeSecondLowestFin, better: 'higher' },
   grossMarginDrop: { label: 'Gross margin decline, FY2023 vs mean(FY2019, FY2020)', format: 'pp', threshold: T.moat.gmDropPp, better: 'lower' },
   unlimitedYears: { label: 'Years with nonpositive tangible capital', format: 'count' },
   capexToRevenue: { label: 'Capital spending / revenue', format: 'pct' },
@@ -56,10 +65,11 @@ export const metricLabels: Record<string, { label: string; format: MetricFormat;
   high: { label: 'Value per share, high', format: 'money' },
 };
 export function formatMetric({ value, format, currency = '' }: { value: number | null; format: MetricFormat; currency?: string }) {
-  if (value === null) return 'Not reported';
+  if (value === null) return '';
   if (format === 'year') return `FY${value}`;
   if (format === 'number') return value.toFixed(2);
   if (format === 'yesno') return value > 0 ? 'Yes' : 'No';
+  if (format === 'pct' && value === 1.000001) return '> 100%';
   if (format === 'pct') return `${(value * 100).toFixed(1)}%`;
   if (format === 'pp') return `${(value * 100).toFixed(1)} pp`;
   if (format === 'x') return `${value.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}×`;
@@ -70,7 +80,7 @@ export function formatMetric({ value, format, currency = '' }: { value: number |
 }
 export const perShareMoney = (value: number, currency: string) => currency === 'GBX' ? `${value.toLocaleString('en-US', {maximumFractionDigits:0})}p` : `${currency} ${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
-export const marginVariation = (value:number|null) => value===null?'Not reported':value>1?'>100%':`${Math.round(value*100)}%`;
+export const marginVariation = (value:number|null) => value===null?'':value>1?'>100%':`${Math.round(value*100)}%`;
 
 /** Plain reading for the ratios used in evidence panels. */
 export function ratioReading(id:string, value:number|null) {

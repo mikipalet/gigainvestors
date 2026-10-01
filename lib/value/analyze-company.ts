@@ -1,22 +1,24 @@
+import { deriveYears } from './derive';
 import { companyEvents, earningsVolatility, perShareSeries, valueHistory } from "./history";
 import { createUsdRate } from "./fx";
 import { kindFor } from "./universe";
 import { T } from "./config";
 import { bondYield as fetchBondYield, tradingRate } from "./bond-yields";
 import { askCompany } from "./jev/run";
-import { combine } from "./jev/combine";
+import { combine, trustedContradictions } from "./jev/combine";
 import { QUESTIONS, QUESTIONS_VERSION } from "./jev/questions";
 import { runNumericTests } from "./tests";
 import { valueCompany } from "./valuation";
-import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory } from "./types";
+import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory, Year } from "./types";
 
-export const PIPELINE_VERSION = "11";
+export const PIPELINE_VERSION = "16";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
-export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, priceHistory = null, priceHistoryPending = priceHistory === null, currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate() }: {
+export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, priceHistory = null, priceHistoryPending = priceHistory === null, currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate(), onDerivedYears }: {
   company: Company; fundamentals: Fundamentals; sections: Sections; report: ReportMeta;
   bondYield: number | null; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; priceHistory?: PriceHistory | null; priceHistoryPending?: boolean; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
+  onDerivedYears?: (years:readonly Year[])=>void;
 }): Promise<Analysis> {
   // Reclassify old corpus enrichment, including payment networks previously marked as banks.
   if (company.industry) company = { ...company, kind: kindFor({ ...company, lending: fundamentals.years.at(-1) }) };
@@ -24,19 +26,26 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   const rate = fundamentals.integrity.ok
     ? await tradingRate({ reporting: fundamentals.currency, trading: company.currency, usdRate }) : null;
   const monthly = new Map(priceHistory?.map(([month, close]) => [month.slice(0, 7), close]));
-  const years = fundamentals.years.map(year => {
+  const years = deriveYears(fundamentals.years.map(year => {
     const close = monthly.get(year.end.slice(0, 7));
     const marketCap = rate !== null && rate > 0 && close !== undefined && Number.isFinite(close) && close > 0
       && year.dilutedShares !== null && year.dilutedShares > 0 ? close * year.dilutedShares / rate : null;
-    return { ...year, marketCap };
-  });
+    const prices=(priceHistory??[]).filter(([month])=>month > `${Number(year.end.slice(0,4))-1}${year.end.slice(4,7)}` && month <= year.end.slice(0,7)).map(([,close])=>close);
+    const averageSharePrice=rate!==null&&rate>0&&prices.length>=6 ? prices.reduce((s,n)=>s+n,0)/prices.length/rate : null;
+    return {...year,marketCap,averageSharePrice,provenance:{...year.provenance,
+      ...(averageSharePrice!==null?{averageSharePrice:{source:`prices-history/${company.id}`,field:'mean monthly close converted to reporting currency',method:'estimate' as const,inputs:[`fiscal end: ${year.end}`,`monthly observations: ${prices.length}`,`reporting-to-trading FX: ${rate}`]}}:{}),
+      ...(marketCap!==null?{marketCap:{source:`prices-history/${company.id}`,field:'fiscal-end close × diluted shares / reporting-to-trading FX',method:'derived' as const,inputs:[`close: ${close}`,`dilutedShares: ${year.dilutedShares}`,`FX: ${rate}`]}}:{}),
+    }};
+  }));
+  onDerivedYears?.(years);
   const numeric = runNumericTests({ years, kind: company.kind, priceHistoryPending: priceHistoryPending && rate !== null });
   const tests = {} as Analysis["tests"];
   const answers = fundamentals.integrity.ok ? await ask({ id: company.id, sections }) : [];
   for (const key of Object.keys(numeric) as Array<keyof typeof numeric>) {
     const jev = answers.filter(answer => QUESTIONS.find(q => q.id === answer.q)?.test === key);
     tests[key] = fundamentals.integrity.ok
-      ? { ...numeric[key], result: combine({ numeric: numeric[key].numeric, jev }), jev }
+      ? { ...numeric[key], result: combine({ numeric: numeric[key].numeric, jev }), jev,
+          reasons: [...(numeric[key].numeric === 'pass' ? trustedContradictions(jev).map(a => `${a.label}: ${a.probability! >= .5 ? 'yes' : 'no'} (filing evidence)`) : []), ...numeric[key].reasons] }
       : { key, numeric: "unclear", result: "unclear", metrics: {}, series: {}, jev: [], reasons: [...fundamentals.integrity.reasons] };
   }
   // askCompany returns one aggregated answer per question (commodity uses a weighted mean).
@@ -59,7 +68,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     };
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
-  return { ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
+  return { reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
     valueHistory: valueHistory({ fundamentals, kind: company.kind, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"],
     events: companyEvents(fundamentals), series: perShareSeries(fundamentals),

@@ -144,6 +144,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
     ttmRow?.value === normalized ? "bridge components use TTM owner earnings; full TTM capex deducted; latest annual lease liabilities used" : normalized < medianEarnings ? "bridge components use the latest owner earnings observation" : "bridge components use the median owner earnings observation");
   if (recent.some(row => row.year.leaseCash != null)) assumptions.push("Reported capitalized lease repayments charged in owner earnings; corresponding lease obligations excluded from debt");
   if (recent.some(row => row.leaseCashCost > 0 && row.year.leaseCash == null)) assumptions.push("lease payments estimated at 20% of lease liabilities");
+  if (recent.some(row=>row.cashFlowBasis)) assumptions.push("Cash-flow owner earnings deduct all capital spending");
   const ordered = [...recent].sort((a, b) => a.value - b.value);
   const center = Math.floor(ordered.length / 2);
   const representative = ttmRow?.value === normalized ? [ttmRow as typeof latestRow] : normalized < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
@@ -151,8 +152,10 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
     perShare: { low: (pv(growth / 2, discountRate + 0.01) + netCash) / shares, mid: (midPv + netCash) / shares, high: (pv(growth, highRate) + netCash) / shares },
     equityBondYield: ratio(normalized, latest.marketCap),
     bridge: [
-      { label: "net income", value: mean(representative.map(row => row.year.netIncome!))! },
-      { label: "+ D&A", value: mean(representative.map(row => row.year.da! * row.allocation!))! },
+      ...(representative.some(row=>row.cashFlowBasis) ? [{ label: "cash before maintenance investment", value: mean(representative.map(row=>row.cashFlowBasis ? row.year.ocf! * row.allocation! : row.year.netIncome! + row.year.da! * row.allocation!))! }] : [
+        { label: "net income", value: mean(representative.map(row => row.year.netIncome!))! },
+        { label: "+ D&A", value: mean(representative.map(row => row.year.da! * row.allocation!))! },
+      ]),
       { label: "− maintenance capex", value: -mean(representative.map(row => row.maintenanceCapex * row.allocation!))! },
       { label: "− stock compensation", value: -mean(representative.map(row => (row.year.sbc ?? 0) * row.allocation!))! },
       ...(representative.some(row => row.leaseCashCost > 0) ? [{ label: representative.some(row => row.year.leaseCash != null) ? "− lease payments" : "− estimated lease payments", value: -mean(representative.map(row => row.leaseCashCost * row.allocation!))! }] : []),

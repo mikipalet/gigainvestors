@@ -17,13 +17,14 @@ afterEach(()=>dirs.splice(0).forEach(dir=>rmSync(dir,{recursive:true,force:true}
 
 describe('forward snapshot',()=>{
  it('starts at the live method and records picks, quotes and the complete benchmark',()=>{
-  expect(METHOD_VERSION).toBe('3.0.0');
-  expect(METHOD_CHANGES[0]).toMatchObject({version:'3.0.0',date:'2026-10-01'});
+  expect(METHOD_VERSION).toBe('3.1.0');
+  expect(METHOD_CHANGES[0]).toMatchObject({version:'3.1.0',date:'2026-10-01'});
+  expect(METHOD_CHANGES.at(-1)).toMatchObject({version:'3.0.0',date:'2026-10-01'});
   const s=snapshot('2026-10-01',{'A.US':50,'B.SHG':100},['A.US']);
-  expect(s).toMatchObject({date:'2026-10-01',methodVersion:'3.0.0',picks:{all:['A.US'],western:['A.US']},universe:{all:['A.US','B.SHG'],western:['A.US']}});
-  expect(s.observations['A.US']).toMatchObject({price:50,priceDate:'2026-10-01',buyPrice:75,expectedReturn:.23,methodVersion:'3.0.0'});
+  expect(s).toMatchObject({date:'2026-10-01',methodVersion:'3.1.0',picks:{all:['A.US'],western:['A.US']},universe:{all:['A.US','B.SHG'],western:['A.US']}});
+  expect(s.observations['A.US']).toMatchObject({price:50,priceDate:'2026-10-01',buyPrice:75,expectedReturn:.23,methodVersion:'3.1.0'});
  });
- it('writes once, accepts identical reordered content, and refuses changed content before replacing other files',()=>{
+ it('writes once, accepts identical reordered content, and keeps the first record of a day when later content differs',()=>{
   const repo=mkdtempSync(path.join(tmpdir(),'value-forward-'));dirs.push(repo);
   const s=snapshot('2026-10-01',{'A.US':50},['A.US']);const file='forward/2026-10-01.json';
   writeOutput({repo,files:{[file]:s,'meta.json':{old:true}}});
@@ -33,8 +34,9 @@ describe('forward snapshot',()=>{
   writeOutput({repo,files:{[file]:Object.fromEntries(Object.entries(s).reverse())}});
   expect(readFileSync(path.join(repo,file),'utf8')).toBe(bytes);
   expect(statSync(path.join(repo,file)).mtimeMs).toBe(mtime);
-  expect(()=>writeOutput({repo,files:{'meta.json':{old:false},[file]:{...s,picks:{all:[],western:[]}}}})).toThrow(/forward.*2026-10-01/i);
-  expect(JSON.parse(readFileSync(path.join(repo,'meta.json'),'utf8'))).toEqual({old:true});
+  writeOutput({repo,files:{'meta.json':{old:false},[file]:{...s,picks:{all:[],western:[]}}}});
+  expect(readFileSync(path.join(repo,file),'utf8')).toBe(bytes);
+  expect(JSON.parse(readFileSync(path.join(repo,'meta.json'),'utf8'))).toEqual({old:false});
   writeOutput({repo,files:{'forward/2026-10-02.json':snapshot('2026-10-02',{'A.US':51},[])}});
   expect(readFileSync(path.join(repo,file),'utf8')).toBe(bytes);
   expect(statSync(path.join(repo,file)).mtimeMs).toBe(mtime);

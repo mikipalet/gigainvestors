@@ -696,8 +696,8 @@ it('stamps every published dossier and index row with the live method',()=>{
  const full=analysis(), short=analysis('SHORT.US');short.historyCoverage!.years=5;
  const files=output([full,short]);
  for(const [file,data] of Object.entries(files)){
-  if(file.startsWith('dossiers/'))for(const d of Object.values(data as Record<string,Dossier>))expect(d.methodVersion).toBe('3.0.0');
-  if(file.startsWith('index/'))for(const row of data as IndexRow[])expect(row.methodVersion).toBe('3.0.0');
+  if(file.startsWith('dossiers/'))for(const d of Object.values(data as Record<string,Dossier>))expect(d.methodVersion).toBe('3.1.0');
+  if(file.startsWith('index/'))for(const row of data as IndexRow[])expect(row.methodVersion).toBe('3.1.0');
  }
 });
 
@@ -715,7 +715,8 @@ it('publishes immutable daily records through orphan commits and reads the forwa
  publishSnapshot(args);
  expect(readFileSync(path.join(repo,'forward/2026-10-01.json'),'utf8')).toBe(first);
  prices(55);
- expect(()=>publishSnapshot({...args,force:true})).toThrow(/Refusing to overwrite forward/);
+ publishSnapshot({...args,force:true});
+ expect(readFileSync(path.join(repo,'forward/2026-10-01.json'),'utf8')).toBe(first);
  vi.setSystemTime(new Date('2026-10-31T15:00:00Z'));prices(55);
  publishSnapshot(args);
  expect(readFileSync(path.join(repo,'forward/2026-10-01.json'),'utf8')).toBe(first);

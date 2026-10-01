@@ -152,7 +152,8 @@ export function writeOutput({ repo, files }: { repo: string; files: Record<strin
   for (const [file, data] of Object.entries(files)) if (/^forward\/\d{4}-\d{2}-\d{2}\.json$/.test(file)) {
     const destination = path.join(repo, file);
     if (existsSync(destination)) {
-      if (!isDeepStrictEqual(JSON.parse(readFileSync(destination, 'utf8')), data)) throw new Error(`Refusing to overwrite ${file}: forward records are immutable`);
+      // The first record of a day stands; later publishes that day keep it instead of failing the whole release.
+      if (!isDeepStrictEqual(JSON.parse(readFileSync(destination, 'utf8')), data)) console.warn(`publish: kept existing ${file}; forward records are immutable`);
       unchanged.add(file);
     }
   }

@@ -24,7 +24,3 @@ export function ownerEarningsBridge(years: Year[]) {
 export function ownerEarningsSeries(years: Year[]): Series {
   return ownerEarningsBridge(years).map(({ year, value }) => [year.fy, value]);
 }
-
-export function ownerEarnings(year: Year, prev?: Year): number | null {
-  return ownerEarningsSeries(prev ? [prev, year] : [year]).at(-1)?.[1] ?? null;
-}

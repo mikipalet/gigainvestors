@@ -4,7 +4,6 @@ import { financialBvps, tangibleEquity, cagr, clamp, investment, last, mean, med
 import { ownerEarningsBridge } from "./owner-earnings";
 import type { Kind, Valuation, Year, PriceHistory, Volatility } from "./types";
 
-export { ownerEarningsSeries } from "./owner-earnings";
 
 export function presentValue({ oe, g, r, terminal, decadeFade = false }: { oe: number; g: number; r: number; terminal: number; decadeFade?: boolean }): number {
   if (r <= terminal) throw new RangeError("discount rate must exceed terminal growth");

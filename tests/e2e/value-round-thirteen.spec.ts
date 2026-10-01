@@ -44,6 +44,6 @@ for(const [width,height]of[[1728,970],[2056,1180],[390,844]]){
   if(width<768)await page.getByRole('button',{name:'Filters',exact:true}).click();
   await page.getByRole('combobox',{name:'Country',exact:true}).click();await page.getByRole('combobox',{name:'Search Country'}).fill('ger');await page.getByRole('option').filter({hasText:'Germany'}).click();
   if(width<768)await page.locator('.filter-apply').click();await expect(page).toHaveURL(/country=DE/);
-  await page.goto('/6176.tw',{waitUntil:'networkidle'});await expect(page.locator('body')).not.toContainText(/Verify valuation|Share count being checked|needs verification/i);await expect(page.locator('.exact-prices')).not.toContainText('Valuation unavailable');
+  await page.goto('/2330.tw',{waitUntil:'networkidle'});await expect(page.locator('body')).not.toContainText(/Verify valuation|Share count being checked|needs verification/i);await expect(page.locator('.exact-prices')).not.toContainText('Valuation unavailable');
  });
 }

@@ -6,7 +6,7 @@ import type { Activity, Index, InvestorData, Position, StockData } from "../type
 // The facts an issue may talk about, derived from the data the site draws. The writer
 // (write.ts) may only use what is here, and the verifier holds it to that.
 
-export interface MoveFacts {
+interface MoveFacts {
   ticker: string;
   name: string;
   activity: Activity;
@@ -21,7 +21,7 @@ export interface MoveFacts {
   othersSold: string[];
 }
 
-export interface InvestorFacts {
+interface InvestorFacts {
   code: string;
   slug: string;
   person: string;
@@ -38,7 +38,7 @@ export interface InvestorFacts {
   moves: MoveFacts[];
 }
 
-export interface Consensus {
+interface Consensus {
   ticker: string;
   name: string;
   buyers: string[];

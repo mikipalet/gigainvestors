@@ -2,7 +2,7 @@ import { T } from "./config";
 import type { Id, Kind } from "./types";
 
 import { exchangeCountries, offshoreDomiciles, secondaryVenues, nonHomeVenues, lastResortVenues, offshoreVenueOrder, dualListedIssuers, adrUnderlyingIsins, cdiUnderlyingIsins, issuerNameAliases } from "./universe-config";
-export { exchangeCountries } from "./universe-config";
+;
 
 const isBrazilianClass = (row: { code: string; exchange: string }): boolean => row.exchange === "SA" && /^[A-Z]{4}[34]$/i.test(row.code);
 const isDerivative = (code: string, name: string): boolean => /-(WT|WS|W|R|RT|U|UN)$|\.(WS|W|U)$/i.test(code) || /Warrant/i.test(name);

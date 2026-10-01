@@ -2,9 +2,9 @@ import { normalizeQuarter } from "../quarters";
 import { splitStock } from "./parse-holdings";
 import { parseNumber, parseTables } from "./parse-tables";
 
-export type ActivityKind = "Buy" | "Add" | "Reduce" | "Sell";
+type ActivityKind = "Buy" | "Add" | "Reduce" | "Sell";
 
-export interface ActivityItem {
+interface ActivityItem {
   ticker: string;
   name: string;
   kind: ActivityKind;

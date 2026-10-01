@@ -2,7 +2,7 @@ import { normalizeQuarter } from "../quarters";
 import { parseNumber, parseTables } from "./parse-tables";
 import type { Activity } from "../types";
 
-export interface HoldingRow {
+interface HoldingRow {
   ticker: string;
   name: string;
   pct: number;

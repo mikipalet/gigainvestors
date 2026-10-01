@@ -6,7 +6,7 @@ import type { Dossier, Series, Valuation } from './types';
  * Use the current quote and shares; cached USD capitalisation is a fallback when the quote is unavailable.
  * Never divide reporting earnings by a USD cap without a known conversion.
  */
-export function reportingCapital(v: Valuation | null, trading: string, capUsd: number | null, price: number | null) {
+function reportingCapital(v: Valuation | null, trading: string, capUsd: number | null, price: number | null) {
  if (!v) return null;
  const fx=sameCurrency(v.currency,trading)?1:v.perShareTrading&&sameCurrency(v.perShareTrading.currency,trading)?v.perShareTrading.fxRate:null;
  const capital=price!=null&&price>0&&v.shares>0&&fx&&fx>0?price*v.shares/fx:
@@ -51,9 +51,6 @@ export function referenceMetrics(d:Dossier, price:number|null) {
   netDebtToEarnings:d.valuation&&income&&income[1]>0?(d.valuation.netDebt !== undefined ? d.valuation.netDebt/income[1] : d.valuation.version === 2 ? null : -d.valuation.netCash/income[1]):null,
   revenueGrowth:first&&last&&first[1]>0&&last[1]>0&&last[0]>first[0]?(last[1]/first[1])**(1/(last[0]-first[0]))-1:null,
   first:first?.[0],last:last?.[0],fy:income?.[0]};
-}
-export function cashAmount(n:number,currency:string) {
- return `${currency} ${new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:1}).format(n)}`;
 }
 
 /** Quote-sensitive return inputs in listing currency; absent estimates cannot pass the hurdle. */

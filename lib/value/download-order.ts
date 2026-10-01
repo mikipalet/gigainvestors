@@ -6,12 +6,8 @@ import { createLimiter, fetchWithRetry, pool } from "./http";
 import { yahooSymbol } from "./price-history";
 import type { Company } from "./types";
 
-import { bestWesternListing, compareWesternPriority } from "./western";
-
-export function westernListing(c: Company): boolean {
-  return bestWesternListing(c) !== null;
-}
-export function venueImportance(c: Company): number {
+import { compareWesternPriority } from "./western";
+function venueImportance(c: Company): number {
   const venue = c.listingExchange ?? "";
   if (/OTC|PINK|GREY/i.test(venue)) return 3;
   if (c.exchange === "V" || /AIM|Venture|Growth/i.test(venue)) return 2;

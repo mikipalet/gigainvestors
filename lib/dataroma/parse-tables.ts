@@ -1,10 +1,10 @@
-export interface Cell {
+interface Cell {
   text: string;
   href?: string;
   cls?: string;
 }
 
-export type Row = Cell[];
+type Row = Cell[];
 export type Table = Row[];
 
 const decode = (s: string) =>

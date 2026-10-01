@@ -2,7 +2,7 @@ import { deriveYears } from '../derive';
 import { T } from "../config";
 import type { Year } from "../types";
 
-export interface XbrlFact {
+interface XbrlFact {
   value: string | number | null;
   decimals?: number | string;
   dimensions: Record<string, string>;

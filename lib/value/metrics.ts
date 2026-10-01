@@ -1,7 +1,6 @@
 import { deriveYears } from './derive';
 import { T } from "./config";
 import type { NumericOutcome, Series, Year } from "./types";
-export { ownerEarnings } from "./owner-earnings";
 
 export const present = (xs: Array<number | null>): number[] => xs.filter((x): x is number => x !== null && Number.isFinite(x));
 export const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);

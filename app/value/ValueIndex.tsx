@@ -101,7 +101,14 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   const change=useCallback((key: string, value: string) => {
     setFilter((current) => { const next = { ...current }; delete next.gate; if (value) next[key] = value; else delete next[key]; return next; });
   },[setFilter]);
+  const [fast,setFast]=useState(false),lastScrub=useRef(0),scrubTimer=useRef<ReturnType<typeof setTimeout>|null>(null);
+  useEffect(()=>()=>{if(scrubTimer.current)clearTimeout(scrubTimer.current);},[]);
   function changeYear(value:string,immediate=false) {
+    const now=performance.now();
+    if(now-lastScrub.current<140)setFast(true);
+    lastScrub.current=now;
+    if(scrubTimer.current)clearTimeout(scrubTimer.current);
+    scrubTimer.current=setTimeout(()=>setFast(false),180);
     change('year',value==='Today'?'':value);
     const cached=memory.current[value];
     if(cached){
@@ -157,10 +164,10 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   const total=summary?.analysed??story.analysed, quality=summary?.qualityPasses??story.qualityPasses, buys=summary?.atBuy??story.atBuy;
   const ret=(n:number|null|undefined)=>n==null?'not available':`${n>=0?'+':''}${Math.round(n*100)}%`;
   return <div className="one-index locks-scroll" data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
-    <section className="index-story"><h1>{historical?`In ${frame}: ${buys} businesses were at a fair price.`:`${buys} great businesses at a fair price today.`}</h1></section>
+    <section className="index-story"><h1>{historical?`${frame}: ${buys} at a fair price.`:`${buys} great ${buys===1?'business':'businesses'} at a fair price.`}</h1></section>
     <div className="map-toolbar"><MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/><div className="desktop-filters">{filterBar}</div><button className="mobile-filter-button" onClick={()=>setFiltersOpen(true)}>Filters</button><button className="table-toggle" onPointerEnter={()=>void loadTable()} onFocus={()=>void loadTable()} onClick={()=>setTable(true)}>All companies ↗</button>{filter.q&&<button onClick={()=>change('q','')}>Clear “{filter.q}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
     {historyError&&<p role="status" className="map-error">{historyError}</p>}
-    <MemoMainView entries={displayed} year={frame} loading={loading}/>
+    <MemoMainView entries={displayed} year={frame} fast={fast} loading={loading}/>
     <p className="simulation-line" aria-hidden={!historical}>{historical?`FY${frame} simulation · median gain ${ret(summary?.medianReturnAtBuy)} vs ${ret(summary?.medianReturnAll)} for all analysed companies`:'\u00a0'}</p>
     <YearTimeline onPrefetch={preload} years={history?.years??[]} value={year} onChange={changeYear}/>
     {table&&<SidePanel title={`${displayed.length} companies`} wide onClose={()=>setTable(false)}><LazyResultsTable entries={displayed} sort={sort} direction={direction} sortBy={sortBy}/></SidePanel>}

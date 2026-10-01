@@ -1,3 +1,4 @@
+import { qualityMetric } from './quality-metric';
 import { publishedBuyPrice } from './buy-price';
 import { T } from './config';
 import { valuationFlags } from './data-quality';
@@ -72,7 +73,7 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
   const pm = positive(price) && v && positive(v[1]) ? compact(price/v[1]) : null;
   const r = positive(price) && latestPrice && positive(latestPrice[0]) && latestPrice[1].slice(0,7) >= month && latestPrice[1] <= asOf
     ? compact(latestPrice[0]/price-1) : null;
-  return [company.id,t5,pm,buy.b,r,{discount:mos,price,buyPrice:v&&positive(v[1])?v[1]*(1-mos):null}];
+  return [company.id,t5,pm,buy.b,r,{discount:mos,price,buyPrice:v&&positive(v[1])?v[1]*(1-mos):null},qualityMetric(company.kind,numeric.moat.metrics)];
 }
 
 export function summarizeSnapshots(rows: SnapshotRow[]): HistorySummary {

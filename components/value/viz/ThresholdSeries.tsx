@@ -1,5 +1,5 @@
 'use client';
-import { formatMetric } from '@/lib/value/metric-labels';
+import { formatMetric, isCapitalReturn } from '@/lib/value/metric-labels';
 import { seriesDomain } from '@/lib/value/presentation';
 import type { Dossier, Series } from '@/lib/value/types';
 import { axisTick, compactMoney, niceTicks, scale, seriesPath } from '@/lib/value/viz/layout';
@@ -14,11 +14,11 @@ export function ThresholdSeries({ label, series: rawSeries, domain: suppliedDoma
   const domain = seriesDomain(rawSeries);
   const series = logarithmic ? logSeries(rawSeries) : rawSeries;
   const points = series.filter((p): p is [number, number] => p[1] !== null && Number.isFinite(p[1]));
-  const fmt = (n: number) => format === 'pct' ? formatMetric({value:n,format:'pct'}) : format === 'money' ? compactMoney(n, currency) : format==='ratio'?`${n.toFixed(2)}×`:n.toFixed(1);
+  const fmt = (n: number) => format === 'pct' ? formatMetric({value:n,format:'pct',returnRatio:isCapitalReturn(label)}) : format === 'money' ? compactMoney(n, currency) : format==='ratio'?`${n.toFixed(2)}×`:n.toFixed(1);
   const values = [...points.map(p => p[1]), ...(comparison?.series.flatMap(p => p[1] === null ? [] : [p[1]]) ?? []), ...(threshold === undefined ? [] : [threshold])];
   const min = format==='index'?Math.min(95,...values):!logarithmic&&format==='money'?Math.min(0,...values):Math.min(...values), max = format==='index'?Math.max(105,...values):Math.max(...values);
   const ticks = logarithmic && points.length ? logTicks([min, max],87) : niceTicks([min, max], 5);
-  const tickLabel=(value:number)=>format==='pct'?(Math.abs(value*100)>=10000?`${(value*100).toExponential(1)}%`:`${+(value*100).toFixed(1)}%`):axisTick(value);
+  const tickLabel=(value:number)=>format==='pct'&&isCapitalReturn(label)?fmt(value):format==='pct'?(Math.abs(value*100)>=10000?`${(value*100).toExponential(1)}%`:`${+(value*100).toFixed(1)}%`):axisTick(value);
   const endLabels=[points.at(-1)?.[1],comparison?.series.filter(p=>p[1]!==null).at(-1)?.[1]].filter((v):v is number=>v!=null).map(fmt);
   const endSpace=Math.max(comparison?100:76,...endLabels.map(text=>text.length*8+28));
   const left = Math.max(48,...ticks.map(value=>tickLabel(value).length*10+16)), right = width - endSpace, top = 24, bottom = height-33;
@@ -61,6 +61,6 @@ export function ThresholdSeries({ label, series: rawSeries, domain: suppliedDoma
       {events?.map((event, i) => { const point = points.find(p => p[0] === event.fy); const previous = events.slice(0,i).map(e=>points.find(p=>p[0]===e.fy)).filter((p):p is [number,number]=>!!p); const numbered = point && !previous.some(p=>Math.abs(x(point[0])-x(p[0]))<18 && Math.abs(y(point[1])-y(p[1]))<18); return point ? <g key={i}><title>{event.note}</title><circle cx={x(point[0])} cy={y(point[1])} r="7" fill="var(--paper)" stroke="var(--ink)"/>{numbered && <text x={x(point[0])} y={y(point[1])+3} textAnchor="middle" className="viz-event-number">{i+1}</text>}</g> : null; })}
     </svg></ChartInteraction> : <p className="py-8 text-xs text-ink/55">No positive reported data for this scale.</p>}
     {logarithmic && rawSeries.some(p => p[1] !== null && p[1] <= 0) && <p className="text-xs text-ink/60">Non-positive values are gaps on a log scale; all values remain in the table.</p>}
-    <DataTable caption={label} headers={['Fiscal year', label, ...(comparison ? [comparison.label] : [])]} rows={rawSeries.filter(([,v])=>v!==null).map(([fy, value]) => [fy, value === null ? '' : fmt(value), ...(comparison ? [comparison.series.find(p => p[0] === fy)?.[1] == null ? '' : fmt(comparison.series.find(p => p[0] === fy)![1]!)] : [])])} />
+    <DataTable caption={label} headers={['Fiscal year', label, ...(comparison ? [comparison.label] : [])]} rows={rawSeries.filter(([,v])=>v!==null).map(([fy, value]) => [fy, value === null ? '' : format==='pct'?formatMetric({value,format:'pct'}):fmt(value), ...(comparison ? [comparison.series.find(p => p[0] === fy)?.[1] == null ? '' : fmt(comparison.series.find(p => p[0] === fy)![1]!)] : [])])} />
   </figure>;
 }

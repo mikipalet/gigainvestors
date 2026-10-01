@@ -19,6 +19,11 @@ export const audit = () => {
       if (a.left < c.right - 1 && c.left < a.right - 1 && a.top < c.bottom - 1 && c.top < a.bottom - 1) issues.push(`overlapping chart labels: "${texts[i].t}" / "${texts[j].t}"`);
     }
   }
+  // Filing likelihood bars must never paint over their labels.
+  for(const figure of root.querySelectorAll('.filing-signals'))for(const label of figure.querySelectorAll('svg text'))for(const bar of figure.querySelectorAll('svg path')){
+    const a=label.getBoundingClientRect(),b=bar.getBoundingClientRect();
+    if(a.left<b.right&&b.left<a.right&&a.top<b.bottom+4&&a.bottom>b.top-4)issues.push(`filing bar overlaps label: "${label.textContent}"`);
+  }
   // HTML text collisions: visible leaf text boxes overlapping each other
   const leaves = [];
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);

@@ -39,3 +39,15 @@
 
 .financial-strip-short{flex:1;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));padding:18px 24px;gap:18px}.financial-strip-short>div{display:flex;flex-direction:column;border-bottom:1px solid var(--viz-grid);padding-bottom:10px;min-height:0}.financial-strip-short .mini-series{flex:1;min-height:0}.value-page .financial-strip-short .financial-label{font-size:14px}.financial-strip-short .financial-label b{font-size:22px}
 @media(max-width:767px){.financial-strip-short{padding:12px 14px;grid-template-columns:1fr;grid-template-rows:none}.financial-strip-short>div{height:220px}.value-page .insufficient-band{display:flex}}
+
+/* Each quality tile owns four rows; filing figures cannot intrude into its prose or measures. */
+.value-page .quality-section .test-tile,.value-page .quality-section .test-tile:last-child{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto minmax(80px,1fr) auto;align-content:stretch}
+.value-page .quality-section .test-tile>.tile-open{grid-area:1/1!important;align-self:start}
+.value-page .quality-section .test-tile>.tile-sentence{grid-area:2/1!important}
+.value-page .quality-section .test-tile>:is(.mini-series,.mini-dollar,.filing-signals){grid-area:3/1!important;align-self:stretch;min-height:0}
+.value-page .quality-section .test-tile>.tile-support{grid-area:4/1!important}
+.value-page .filing-signals{justify-content:flex-start;gap:6px}
+.value-page .filing-signals figcaption{margin:0;line-height:18px;flex:none}
+.value-page .dossier-band .reference-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:767px){.value-page .quality-section .test-tile,.value-page .quality-section .test-tile:last-child{grid-template-rows:auto auto 150px auto}.value-page .dossier-band .reference-metrics{grid-template-columns:1fr 1fr}}
+.value-page .quality-section .test-tile:last-child>:is(.mini-series,.mini-dollar,.filing-signals){grid-area:3/1!important}

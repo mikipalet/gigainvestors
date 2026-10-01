@@ -13,9 +13,9 @@ describe('one display contract', () => {
     expect(priceState({price:null,mid:100,b:false}).state).toBe('unclear');
   });
   it('does not print artefact returns or call negative capital insufficient', () => {
-    expect(returnDisplay({value:7.08,years:10}).label).toBe('> 100% †');
+    expect(returnDisplay({value:7.08,years:10}).label).toBe('>100%');
     expect(returnDisplay({value:1.000001,years:10}).note).not.toContain('Exact return');
-    expect(returnDisplay({value:1.000001,years:10,financial:true}).label).toBe('ROE > 100%');
+    expect(returnDisplay({value:1.000001,years:10,financial:true}).label).toBe('ROE >100%');
     expect(returnDisplay({value:null,years:10,unlimited:true}).label).toBe('Positive earnings, nonpositive capital');
     expect(returnDisplay({value:null,years:3}).label).toBe('3 years on file');
   });

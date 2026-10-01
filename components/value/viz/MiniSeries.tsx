@@ -1,6 +1,6 @@
 import { ChartInteraction } from './ChartInteraction';
 import type { Series } from '@/lib/value/types';
-import { formatMetric, type MetricFormat } from '@/lib/value/metric-labels';
+import { formatMetric, isCapitalReturn, type MetricFormat } from '@/lib/value/metric-labels';
 import { useWidth } from '@/lib/value/viz/use-width';
 export function MiniSeries({ series, label, threshold, format='pct', better='higher', height:requestedHeight=60, fluid=false }: { series: Series; label: string; threshold?: number;format?:MetricFormat;better?:'higher'|'lower';height?:number;fluid?:boolean }) {
  const {ref,width,height:availableHeight}=useWidth();
@@ -10,7 +10,7 @@ export function MiniSeries({ series, label, threshold, format='pct', better='hig
  const values=points.map(p=>p[1]);
  const lo=Math.min(0,...values,threshold??0),hi=Math.max(format==='pct'?.1:1,...values,threshold??0);
 
- const fmt=(v:number)=>format==='pct'&&Math.abs(v*100)>=10000?`${(v*100).toExponential(1)}%`:formatMetric({value:v,format});
+ const fmt=(v:number)=>format==='pct'&&!isCapitalReturn(label)&&Math.abs(v*100)>=10000?`${(v*100).toExponential(1)}%`:formatMetric({value:v,format,returnRatio:isCapitalReturn(label)});
  const top=12,bottom=height-18,left=Math.max(44,Math.max(fmt(lo).length,fmt(hi).length)*10+16),right=width-7;
  const y=(v:number)=>bottom-(v-lo)/(hi-lo||1)*(bottom-top);
  const first=series[0][0],last=series.at(-1)![0],x=(t:number)=>left+(t-first)/(last-first||1)*(right-left);

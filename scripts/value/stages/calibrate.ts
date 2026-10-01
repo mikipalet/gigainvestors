@@ -25,7 +25,7 @@ export function calibrationSummary({ entries, analyses }: { entries: typeof CALI
   return { rows, counts, failed: counts.falseNegative + counts.falsePositive > 0 };
 }
 
-export default async function calibrate(options: Options & { cachedReadings?: boolean }): Promise<void> {
+export default async function calibrate(options: Options & { cachedReadings?: boolean; existing?: boolean }): Promise<void> {
   const entries = CALIBRATION.filter(entry => !options.only || options.only.includes(entry.id)).slice(0, options.limit);
   if (!entries.length) throw new Error("No calibration companies selected");
   const companies = readJsonl<Company>("universe.jsonl");
@@ -36,7 +36,7 @@ export default async function calibrate(options: Options & { cachedReadings?: bo
   // offline model comparisons. Missing readings remain absent, never invented.
   const cached = new Map(entries.map(({id}) => [resolve(id), readCorpusJson<Analysis>(`analysis/${resolve(id)}.json`)]));
   if (options.cachedReadings) console.log('calibrate: reusing cached report readings; recomputing numeric tests and valuation');
-  await analyze({ ...options, ...(options.cachedReadings ? {
+  if (!options.existing) await analyze({ ...options, ...(options.cachedReadings ? {
     ask: async ({id}: {id:string}) => Object.values(cached.get(id)?.tests ?? {}).flatMap(test => test.jev),
     evidence: async () => null,
   } : {}), only: [...new Set(entries.map(entry => resolve(entry.id)))], limit: undefined });

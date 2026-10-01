@@ -153,3 +153,13 @@ it('reparses every cached filing in submission order instead of reusing stale is
   expect(f.fetchedAt).toBe('2026-09-01');
   expect(readCorpusJson<{years:unknown}>('raw/edinet/issuers/6861.JP.json')?.years).toEqual(f.years);
 });
+
+it('does not overwrite Yahoo fallback fundamentals with an older EODHD cache', async () => {
+ const dir=mkdtempSync(join(tmpdir(),'renormalize-yahoo-'));directories.push(dir);vi.stubEnv('VALUE_CORPUS_DIR',dir);
+ writeCorpusJson('raw/eodhd/TEST.US.json',ko);
+ const old=new Date(Date.now()-60_000);utimesSync(corpusPath('raw/eodhd/TEST.US.json'),old,old);
+ const fundamentals={id:'TEST.US',years:[{fy:2025,provenance:{revenue:{source:'raw/yahoo-fundamentals/TEST.US.json#2025-12-31'}}}],fetchedAt:new Date().toISOString()};
+ writeCorpusJson('fundamentals/TEST.US.json',fundamentals);
+ const {default:stage}=await import('../../../scripts/value/stages/renormalize');await stage({});
+ expect(readCorpusJson('fundamentals/TEST.US.json')).toEqual(fundamentals);
+});

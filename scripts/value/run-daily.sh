@@ -32,12 +32,18 @@ trap 'if [[ "$(cat "$lock/pid" 2>/dev/null)" == "$$" ]]; then rm -f "$lock/pid";
 trap 'exit 130' INT
 trap 'exit 143' TERM
 run_stage() {
-  local stage="$1" code
+  local stage="$1" code started status detail
+  # The disk guard is a hard stop, including publication.
+  df -Pk / | awk 'NR==2 { exit ($4 < 5*1024*1024) }' || { echo "Disk below 5 GB; stopping" >&2; exit 1; }
+  started=$SECONDS
   shift
   echo "$(date -u +%FT%TZ) starting $stage $*"
   node --import tsx scripts/value/cli.ts "$stage" "$@" >> "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log" 2>&1
   code=$?
-  echo "$(date -u +%FT%TZ) $stage exit=$code" | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log"
+  status=ok
+  if [[ "$code" != 0 ]]; then status=failed; fi
+  detail=$(tail -n 1 "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log")
+  echo "$(date -u +%FT%TZ) stage=$stage status=$status exit=$code duration=$((SECONDS-started))s summary=$detail" | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log"
   return "$code"
 }
 run_japan() {
@@ -59,7 +65,8 @@ while true; do
   # Import JP issuers before both unfiltered quote stages; paid budget order stays intact.
   run_japan 2>> "$VALUE_CORPUS_DIR/logs/$cycle_date-japan.log" || :
   if ! run_stage wait-eodhd-reset; then
-    echo 'remaining cycle skipped: EODHD reset not confirmed' | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-wait-eodhd-reset.log"
+    echo 'paid stages skipped: EODHD reset not confirmed; publishing available data' | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-wait-eodhd-reset.log"
+    run_stage publish || :
     run_stage status || :
     if [[ "${1:-}" == "--once" ]]; then exit 1; fi
     wait_until_next_run
@@ -76,14 +83,15 @@ while true; do
   run_stage dedupe || :
   run_stage price-seed || :
   run_stage reports || :
-  if run_stage yields && run_stage analyze; then
-    run_stage share-checks || :
-    run_stage publish || :
-    # Residual IDs and evidence are private and must never enter the data repository.
-    node -e 'const fs=require("fs"),path=require("path");const file=path.join(process.env.VALUE_CORPUS_DIR,"staging/unresolved-shares.json");if(fs.existsSync(file)){const d=JSON.parse(fs.readFileSync(file));console.log(JSON.stringify({privateShareResidual:d.companies.length,qualityPassResidual:d.companies.filter(r=>r.qualityPass).length,file}))}' >> "$VALUE_CORPUS_DIR/logs/$cycle_date-share-checks.log"
+  if run_stage yields; then
+    run_stage analyze || :
   else
-    echo 'publish skipped: yields or analyze failed' | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-publish.log"
+    echo "$(date -u +%FT%TZ) stage=analyze status=skipped reason=yields-failed; retaining existing analysis"
   fi
+  run_stage share-checks || :
+  run_stage publish || :
+  # Residual IDs and evidence are private and must never enter the data repository.
+  node -e 'const fs=require("fs"),path=require("path");const file=path.join(process.env.VALUE_CORPUS_DIR,"staging/unresolved-shares.json");if(fs.existsSync(file)){const d=JSON.parse(fs.readFileSync(file));console.log(JSON.stringify({privateShareResidual:d.companies.length,qualityPassResidual:d.companies.filter(r=>r.qualityPass).length,file}))}' >> "$VALUE_CORPUS_DIR/logs/$cycle_date-share-checks.log"
   run_stage status || :
   if [[ "${1:-}" == "--once" ]]; then break; fi
   wait_until_next_run

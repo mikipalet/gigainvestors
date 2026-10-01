@@ -190,7 +190,7 @@ describe("publish repository", () => {
   it("requires the calibration command to succeed before publishing", () => {
     const dir = directory();
     const cli = path.join(dir, "calibrate.mjs");
-    writeFileSync(cli, 'process.exit(process.argv[2] === "calibrate" ? 0 : 2);');
+    writeFileSync(cli, 'process.exit(process.argv[2] === "calibrate" && process.argv[3] === "--existing" ? 0 : 2);');
     expect(() => runCalibration(cli)).not.toThrow();
     writeFileSync(cli, 'process.exit(1);');
     expect(() => runCalibration(cli)).toThrow("Calibration failed; publish aborted");
@@ -293,15 +293,15 @@ describe("prices", () => {
     expect(JSON.parse(readFileSync(path.join(repo, "prices/JP.json"), "utf8"))).toEqual({ "8058.JP": [4500, "2026-09-28"], "8031.JP": [3200, "2026-09-29"] });
     expect(log).toHaveBeenCalledWith(expect.stringContaining("8058.JP"));
   });
-  it("does not write fetched US prices when the Japanese provider fails", async () => {
+  it("writes fetched US prices even when every Japanese quote fails", async () => {
     const repo = directory();
     mkdirSync(path.join(repo, "prices"));
     const before = '{"KO.US":[70,"2026-09-25"]}';
     writeFileSync(path.join(repo, "prices/US.json"), before);
     const japan = analysis("8058.JP"); japan.company.country = "JP";
     const raw = JSON.parse(readFileSync("tests/fixtures/value/prices/eodhd-US.json", "utf8"));
-    await expect(refreshPrices({ repo, companies: [analysis().company, japan.company], bulk: async () => raw, yahoo: async () => { throw new Error("Yahoo HTTP 403"); } })).rejects.toThrow("All Yahoo quotes failed");
-    expect(readFileSync(path.join(repo, "prices/US.json"), "utf8")).toBe(before);
+    await refreshPrices({ repo, companies: [analysis().company, japan.company], bulk: async () => raw, yahoo: async () => { throw new Error("Yahoo HTTP 403"); } });
+    expect(JSON.parse(readFileSync(path.join(repo, "prices/US.json"), "utf8"))["KO.US"]).toEqual([87.18, "2026-09-28"]);
   });
   it("routes Japanese companies to Yahoo and separates same-country exchanges", async () => {
     const repo = directory();
@@ -663,4 +663,13 @@ it('retains a neutral dossier when completion crosses seven years but core decad
  const neutral=(files[`dossiers/${shardOf(row.id)}.json`] as Record<string,Dossier>)[row.id];
  expect(neutral.tests.economics.result).toBe('na');
  expect(output([neutral])[`dossiers/${shardOf(row.id)}.json`]).toBeDefined();
+});
+
+it('commits regenerated browser views together with refreshed prices',()=>{
+ const repo=repository();
+ writeOutput({repo,files:output([analysis()])});commitOutput({repo,asOf:'2026-10-01'});
+ mkdirSync(path.join(repo,'views'),{recursive:true});
+ writeFileSync(path.join(repo,'views/aaaaaaaaaaaaaaaaaaaaaaaa.json'),'{}\n');
+ expect(commitPrices({repo,asOf:'2026-10-01'})).toBe(true);
+ expect(git(repo,['status','--porcelain'])).toBe('');
 });

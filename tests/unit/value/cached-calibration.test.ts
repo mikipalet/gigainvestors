@@ -1,0 +1,20 @@
+import { mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { afterEach, expect, it, vi } from 'vitest';
+import { appendJsonl, readCorpusJson, writeCorpusJson } from '@/lib/value/corpus';
+import calibrate from '@/scripts/value/stages/calibrate';
+import analyze from '@/scripts/value/stages/analyze';
+vi.mock('@/scripts/value/stages/analyze',()=>({default:vi.fn(async()=>{throw new Error('Analysis forbidden by publisher')})}));
+let directory:string;
+afterEach(()=>{if(directory)rmSync(directory,{recursive:true,force:true});vi.restoreAllMocks();vi.unstubAllEnvs();process.exitCode=0;});
+it('checks existing calibration verdicts without invoking or writing analysis',async()=>{
+ directory=mkdtempSync(join(tmpdir(),'cached-calibration-'));vi.stubEnv('VALUE_CORPUS_DIR',directory);
+ appendJsonl('universe.jsonl',{id:'KO.US',listings:['KO.US']});
+ const analysis={id:'KO.US',status:'scored',tests:Object.fromEntries(['understandable','moat','economics','management','accounting'].map(k=>[k,{result:'pass'}]))};
+ writeCorpusJson('analysis/KO.US.json',analysis);
+ vi.spyOn(console,'table').mockImplementation(()=>{});vi.spyOn(console,'log').mockImplementation(()=>{});
+ await calibrate({only:['KO.US'],existing:true});
+ expect(analyze).not.toHaveBeenCalled();expect(readCorpusJson('analysis/KO.US.json')).toEqual(analysis);
+ expect(process.exitCode??0).toBe(0);
+});

@@ -44,7 +44,7 @@ export const T = {
 
 // MI and NZ are compatibility codes; neither is currently returned by EODHD's exchanges-list.
 export const YAHOO_SUFFIXES: Readonly<Record<string, string>> = {
-  US: "", LSE: ".L", PA: ".PA", AS: ".AS", XETRA: ".DE", SW: ".SW", MC: ".MC", MI: ".MI",
+  NSE: ".NS", BSE: ".BO", US: "", LSE: ".L", PA: ".PA", AS: ".AS", XETRA: ".DE", SW: ".SW", MC: ".MC", MI: ".MI",
   ST: ".ST", CO: ".CO", OL: ".OL", HE: ".HE", BR: ".BR", LS: ".LS", VI: ".VI", WAR: ".WA",
   TO: ".TO", V: ".V", NEO: ".NE", AU: ".AX", HK: ".HK", TW: ".TW", TWO: ".TWO", KO: ".KS", KQ: ".KQ",
   SHG: ".SS", SHE: ".SZ", SA: ".SA", MX: ".MX", JK: ".JK", KLSE: ".KL", BK: ".BK", JSE: ".JO",

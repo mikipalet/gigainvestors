@@ -31,6 +31,7 @@ async function main(): Promise<void> {
   let membersFirst = false;
   let offline = false;
   let cachedReadings = false;
+  let existing = false;
   let out: string | undefined;
   let overwrite = false;
   let from: string | undefined;
@@ -39,6 +40,7 @@ async function main(): Promise<void> {
     const arg = args[i];
     if (arg === "--members-first" && stage === "fundamentals") membersFirst = true;
     else if (arg === "--offline" && stage === "index-membership") offline = true;
+    else if (stage === "calibrate" && arg === "--existing") existing = true;
     else if (stage === "calibrate" && arg === "--cached-readings") cachedReadings = true;
     else if (stage === "publish" && arg === "--overwrite") overwrite = true;
     else if (arg === "--force") force = true;
@@ -66,7 +68,7 @@ async function main(): Promise<void> {
 
   if (overwrite && !out) throw new Error("--overwrite requires local --out");
   const module = await import(pathToFileURL(path.join(directory, `${stage}.ts`)).href);
-  await module.default({ only, limit, force, from, to, out, overwrite, membersFirst, offline, cachedReadings });
+  await module.default({ only, limit, force, from, to, out, overwrite, membersFirst, offline, cachedReadings, existing });
 }
 
 main().catch((error: unknown) => {

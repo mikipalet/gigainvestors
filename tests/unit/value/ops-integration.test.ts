@@ -106,10 +106,10 @@ process.exit((stage === 'wait-eodhd-reset' && ${resetFails}) || (stage === 'yiel
   return () => execFileSync('bash', ['scripts/value/run-daily.sh', '--once'], { env: { ...process.env, PATH: `${bin}:${process.env.PATH}` }, stdio: 'pipe' });
 }
 const stageCalls = (): string[][] => readFileSync(path.join(root, 'stages'), 'utf8').trim().split('\n').map(line => JSON.parse(line));
-it.each([true, false])('runner continues after failures and gates publish on analyze: %s', analyzeFails => {
+it.each([true, false])('runner publishes available data after analysis or price failures: %s', analyzeFails => {
   runner({ analyzeFails })();
   const calls = stageCalls();
-  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', ...(analyzeFails ? [] : ['share-checks', 'publish']), 'status']);
+  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', 'share-checks', 'publish', 'status']);
   // No --only or --limit: newly imported JP issuers and all other sources are covered.
   expect(calls.filter(([stage]) => ['prices', 'price-history', 'reports', 'yields', 'analyze', 'publish'].includes(stage)).every(call => call.length === 1)).toBe(true);
 });
@@ -201,10 +201,10 @@ it('removes rejected legacy seeds locally and on the next publish, retaining act
   expect(readCorpusJson('publish-repo/prices/US.json')).toEqual({ 'REAL.US': [50, '2026-09-29'] });
 });
 
-it('runner skips analyze and publish when refreshing yields fails',()=>{
+it('runner still publishes when refreshing yields fails',()=>{
  runner({yieldsFails:true})();
  const calls=stageCalls().map(([stage])=>stage);
- expect(calls).toContain('yields');expect(calls).not.toContain('analyze');expect(calls).not.toContain('publish');expect(calls.at(-1)).toBe('status');
+ expect(calls).toContain('yields');expect(calls).not.toContain('analyze');expect(calls).toContain('publish');expect(calls.at(-1)).toBe('status');
 });
 it('runner skips all EODHD-consuming stages when reset waiting fails', () => {
   expect(runner({ resetFails: true })).toThrow();
@@ -214,6 +214,6 @@ it('runner skips all EODHD-consuming stages when reset waiting fails', () => {
   expect(stages).not.toContain('price-history');
   expect(stages).not.toContain('fundamentals');
   expect(stages).not.toContain('analyze'); // Analysis can fetch paid FX rates.
-  expect(stages).not.toContain('publish');
+  expect(stages).toContain('publish');
   expect(stages).toContain('status');
 });

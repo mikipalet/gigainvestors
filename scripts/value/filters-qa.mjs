@@ -2,15 +2,16 @@
 import {chromium} from '@playwright/test';
 import {audit} from './design-audit.mjs';
 import {mkdirSync,writeFileSync,statfsSync,readFileSync} from 'node:fs';
-const [base='http://localhost:3018',out='/tmp/value-design18/filters']=process.argv.slice(2);
+const [base='http://localhost:3018',out='/tmp/value-design18/filters',paths='/']=process.argv.slice(2);
+const sizes=(process.env.QA_VIEWPORTS??'1728x970,1440x800,390x844').split(',').map(s=>s.split('x').map(Number));
 mkdirSync(out,{recursive:true});
 const disk=()=>{const s=statfsSync('/');if(s.bavail*s.bsize<5*1024**3)throw Error('DISK STOP: below 5 GiB');};
 const browser=await chromium.launch(),report=[],timings=[];
-try{for(const [width,height]of[[1728,970],[1440,800],[390,844]]){
+try{for(const [width,height]of sizes)for(const path of paths.split(',')){
  disk();const page=await browser.newPage({viewport:{width,height},hasTouch:width<500});const errors=[];page.on('pageerror',e=>errors.push(String(e)));
  // The browser uses the same local release snapshot as the server.
  if(process.env.VALUE_STORE_DIR)await page.route('https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/**',route=>{const file=new URL(route.request().url()).pathname.split('/main/')[1];try{return route.fulfill({contentType:'application/json',body:readFileSync(`${process.env.VALUE_STORE_DIR}/${file}`)});}catch{return route.fulfill({status:404,body:'{}'});}});
- await page.goto(base+'/',{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);await page.addStyleTag({content:'nextjs-portal{display:none!important}'});
+ await page.goto(base+path,{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);await page.addStyleTag({content:'nextjs-portal{display:none!important}'});
  await page.evaluate(()=>{
   window.filterTimings=[];
   for(const type of ['click','input','keydown'])document.addEventListener(type,e=>{
@@ -31,8 +32,9 @@ try{for(const [width,height]of[[1728,970],[1440,800],[390,844]]){
    });
   },true);
  });
- const snap=async state=>{disk();await page.waitForTimeout(100);const result=await page.evaluate(audit);const file=`${width}-${state}.png`;await page.screenshot({path:`${out}/${file}`});report.push({viewport:`${width}x${height}`,state,file,...result,errors:[...errors]});};
+ const snap=async state=>{disk();await page.waitForTimeout(100);const result=await page.evaluate(audit);const file=`${width}x${height}-${path.replace(/[^a-z0-9]/gi,'_')}-${state}.png`;await page.screenshot({path:`${out}/${file}`});report.push({viewport:`${width}x${height}`,path,state,file,...result,errors:[...errors]});};
  await snap('closed');
+ if(!await page.locator('.main-view').count()){await page.close();continue;}
  if(width<500){await page.getByRole('button',{name:'Filters',exact:true}).click();await page.waitForTimeout(220);await snap('sheet-open');}
  for(const [label,plural,query,selection] of [['Country','Countries','united','United States'],['Sector','Sectors','tech','Technology']]){
   const mobile=width<500,list=page.getByRole('listbox',{name:mobile?plural:label,exact:true});
@@ -60,7 +62,7 @@ try{for(const [width,height]of[[1728,970],[1440,800],[390,844]]){
   const toggle=scope.getByRole('switch',{name:label,exact:true});await toggle.scrollIntoViewIfNeeded();await snap(`${label.replaceAll(' ','-')}-before`);await toggle.click();await page.waitForTimeout(180);await snap(`${label.replaceAll(' ','-')}-after`);await toggle.click();
  }
  if(width<500){await page.getByRole('button',{name:/Show \d+ companies/}).click();await snap('sheet-applied');}
- timings.push({viewport:`${width}x${height}`,samples:await page.evaluate(()=>window.filterTimings)});await page.close();
+ timings.push({path,viewport:`${width}x${height}`,samples:await page.evaluate(()=>window.filterTimings)});await page.close();
 }}finally{await browser.close();writeFileSync(`${out}/report.json`,JSON.stringify(report,null,2));writeFileSync(`${out}/latency.json`,JSON.stringify(timings,null,2));}
 const issues=report.filter(r=>r.issues.length||r.errors.length);console.log(JSON.stringify({states:report.length,issues,timings:timings.map(t=>({viewport:t.viewport,openMax:Math.max(...t.samples.filter(s=>s.kind==='open').map(s=>s.frameMs)),typingMax:Math.max(...t.samples.filter(s=>s.kind==='typing').map(s=>s.frameMs)),commitMax:Math.max(...t.samples.map(s=>s.commitMs))}))},null,2));
 if(issues.length||timings.some(t=>t.samples.some(s=>s.frameMs>=50||!s.ready)))process.exitCode=1;

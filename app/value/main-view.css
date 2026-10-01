@@ -45,6 +45,8 @@
 .main-rest>span b{font-weight:400;margin-left:6px;color:var(--viz-muted)}
 .main-logo-strip{display:flex;gap:7px;flex:1;min-width:0}
 .shelf-logo{flex:0 0 31px}
+/* Pending images load eagerly without reserving a blank identity slot. */
+.shelf-logo:not(:has(img[data-loaded=true])){display:none}
 .main-view .shelf-logo .company-logo{width:31px;height:31px;padding:2px}
 .main-more{font-size:14px;white-space:nowrap;border-bottom:1px solid currentColor;align-self:center;line-height:1.7}
 .main-buys>.main-more{align-self:flex-start;margin-top:6px}

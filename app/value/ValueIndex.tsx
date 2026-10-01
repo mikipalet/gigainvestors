@@ -8,7 +8,7 @@ import { MarketScopeToggle } from '@/components/value/MarketScopeToggle';
 import { QuarterSlider } from '@/components/QuarterSlider';
 import { createPortal } from 'react-dom';
 import { useDebouncedQuery } from "@/lib/use-quarter";
-import { matchesMarket } from '@/lib/value/listing-details';
+import { matchesView } from '@/lib/value/view-filter';
 import type { HistoryIndex } from '@/lib/value/time-travel';
 import { memo,useCallback,useEffect,useMemo,useRef,useState,useTransition } from "react";
 
@@ -78,7 +78,7 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   const deferredLoads=useRef(new Map<string,Promise<void>>());
   const [extraLoading,setExtraLoading]=useState(false);
   const [prefetchDeferred,setPrefetchDeferred]=useState(false);
-  const needsDeferred=prefetchDeferred||table||!!country||filter.near==='1'||filter.awaiting==='1'||filter.gate!==undefined||QUALITY_TESTS.some(key=>!!filter[key]);
+  const needsDeferred=prefetchDeferred||filtersOpen||table||!!country||filter.near==='1'||filter.awaiting==='1'||filter.gate!==undefined||QUALITY_TESTS.some(key=>!!filter[key]);
   useEffect(()=>{
     if(!needsDeferred)return;
     let active=true;
@@ -95,9 +95,8 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
     return()=>{active=false;};
   },[needsDeferred,frame,meta?.views]);
   const source=useMemo(()=>{
-    const current=views[frame]??rows;
-    return country?current.filter(row=>row.c===country):current.filter(row=>row.st!=='i');
-  },[views,frame,rows,country]);
+    return views[frame]??rows;
+  },[views,frame,rows]);
   const loading=pending||frame!==year||(needsDeferred&&extraLoading);
   const sort = columns.some(([key]) => key === filter.sort) ? filter.sort as Sort : "mos";
   const direction = filter.direction === "asc" ? 1 : -1;
@@ -136,21 +135,8 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   const gate = filter.gate !== undefined && /^[0-6]$/.test(filter.gate) ? Number(filter.gate) : null;
   const population = allMarkets ? meta?.funnel : meta?.western?.funnel;
   const counts = population ? [population.analysed, ...population.gates.map(g=>g.passing)] : [meta?.counts.analysed ?? rows.length, ...Array(4).fill(0),rows.filter(r=>r.t==='PPPPP').length,0];
-  const selectedTags = (filter.tags ?? "").split(",").filter(Boolean);
   const displayed = useMemo(() => {
-    return allEntries.filter(({ row, mos }) => {
-      if (!matchesMarket(row,filter.markets??'')) return false;
-      if (filter.q && !`${row.nameEn??row.n} ${row.nameLocal??''} ${row.id}`.toLowerCase().includes(filter.q.toLowerCase())) return false;
-      if (gate !== null) return row.t.slice(0, Math.min(gate, 5)) === 'P'.repeat(Math.min(gate, 5)) && (gate < 6 || row.b === true);
-      if (filter.sector && row.s !== filter.sector) return false;
-      if (filter.held === "1" && !row.h) return false;
-      if (selectedTags.some((tag) => !row.g.includes(tag))) return false;
-      if (QUALITY_TESTS.some((key, i) => filter[key] && row.t[i] !== (filter[key] === "pass" ? "P" : "F"))) return false;
-      if (row.st === "i") return !!country;
-      if (QUALITY_TESTS.some((key) => filter[key])) return true;
-      if (filter.awaiting==='1') return /^[PCU]+$/.test(row.t)&&row.t!=='PPPPP';
-      return row.t === "PPPPP" || (filter.near === "1" && /^P*FP*$/.test(row.t));
-    }).sort((a, b) => {
+    return allEntries.filter(({row})=>matchesView(row,filter)).sort((a, b) => {
       if ((a.row.t==='PPPPP')!==(b.row.t==='PPPPP')) return (a.row.t==='PPPPP'?-1:1)*(filter.near==='1'?-1:1);
       if (a.row.st !== b.row.st) return a.row.st === "i" ? 1 : -1;
       const av = sort === "name" ? a.row.nameEn??a.row.n : sort === "country" ? a.row.c : sort === "cap" ? a.row.mc : sort === "holders" ? a.row.h : sort === "return" ? historical?a.historicalReturn:a.row.returnInfo?.sort : sort === "flags" ? Number(a.seed) : a.mos;
@@ -159,12 +145,15 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
       return (typeof av === "string" && typeof bv === "string" ? av.localeCompare(bv) : Number(av) - Number(bv)) * direction || a.row.id.localeCompare(b.row.id);
     });
   }, [allEntries, filter.q, filter.markets, filter.sector, filter.held, filter.tags, filter.awaiting, filter.near, filter.understandable, filter.moat, filter.economics, filter.management, filter.accounting, sort, direction, country, gate, historical, allMarkets]);
-  const sectorRows=useMemo(()=>source.filter(row=>matchesMarket(row,filter.markets??'')),[source,filter.markets]);
-  const sectorCounts=useMemo(()=>{const counts:Record<string,number>={};for(const row of sectorRows)if(row.s)counts[row.s]=(counts[row.s]??0)+1;return counts;},[sectorRows]);
-  const sectors=Object.keys(sectorCounts).sort();
-
-  const countryOptions=useMemo((): [string,string,number][]=>[["","All countries",population?.analysed??rows.length],...countries.map(c=>[c,countryNames[c],population?.byCountry[c]?.analysed??0] as [string,string,number]).sort((a,b)=>a[1].localeCompare(b[1]))],[population,rows.length,countries,countryNames]);
-  const sectorOptions: [string,string,number][]=[["","All sectors",sectorRows.length],...sectors.map(s=>[s,s,sectorCounts[s]] as [string,string,number])];
+  const countryOptions=useMemo((): [string,string,number][]=>{
+    const count=(country:string)=>source.filter(row=>matchesView(row,{...filter,country,gate:''})).length;
+    return [["","All countries",count('')],...countries.map(c=>[c,countryNames[c],count(c)] as [string,string,number]).sort((a,b)=>a[1].localeCompare(b[1]))];
+  },[source,filter,countries,countryNames]);
+  const sectorOptions=useMemo((): [string,string,number][]=>{
+    const sectors=[...new Set(source.map(row=>row.s).filter((sector):sector is string=>!!sector))].sort();
+    const count=(sector:string)=>source.filter(row=>matchesView(row,{...filter,sector,gate:''})).length;
+    return [["","All sectors",count('')],...sectors.map(s=>[s,s,count(s)] as [string,string,number])];
+  },[source,filter]);
   const switches=<><Toggle label="Near misses" checked={filter.near==='1'} onChange={()=>change('near',filter.near==='1'?'':'1')}/><Toggle label="Held by superinvestors" checked={filter.held==='1'} onChange={()=>change('held',filter.held==='1'?'':'1')}/></>;
   const filterBar=<><Select label="Country" value={country} onChange={value=>change('country',value)} options={countryOptions}/><Select label="Sector" value={filter.sector??''} onChange={value=>change('sector',value)} options={sectorOptions}/>{switches}</>;
 

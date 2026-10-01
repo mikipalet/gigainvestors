@@ -32,7 +32,7 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
  const previous=useRef(new Map<string,DOMRect>()),previousYear=useRef(year);
  useLayoutEffect(()=>{
   const el=root.current;if(!el)return;
-  if(fast){previous.current.clear();previousYear.current=year;return;}
+  if(fast){el.getAnimations({subtree:true}).forEach(a=>a.cancel());previous.current.clear();previousYear.current=year;return;}
   const reduced=fast||previousYear.current===year||matchMedia('(prefers-reduced-motion: reduce)').matches;
   const next=new Map<string,DOMRect>();
   const nodes=[...el.querySelectorAll<HTMLElement>('[data-company]')];

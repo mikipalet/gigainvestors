@@ -1,5 +1,9 @@
 import { expect,test } from '@playwright/test';
+import {readFileSync} from 'node:fs';
+import {packView,unpackView} from '../../lib/value/browser-view';
 import { valueFixtures } from './value-fixtures';
+const meta=JSON.parse(readFileSync('tests/fixtures/value/store/meta.json','utf8'));
+const read=(file:string)=>JSON.parse(readFileSync(`tests/fixtures/value/store/${file}`,'utf8'));
 test.beforeEach(async({page})=>valueFixtures(page));
 test('tooltips stay within 24px of three pointers and keyboard focus reveals the same detail',async({page})=>{
  await page.goto('/value',{waitUntil:'networkidle'});
@@ -12,40 +16,39 @@ test('tooltips stay within 24px of three pointers and keyboard focus reveals the
   expect(Math.hypot(dx,dy)).toBeLessThanOrEqual(24);
   expect(t.x).toBeGreaterThanOrEqual(0);expect(t.x+t.width).toBeLessThanOrEqual(1400);
  }
- await page.mouse.move(0,0);await page.getByTestId('company-tile').first().focus();await expect(page.getByRole('tooltip')).toContainText('quality');
+ await page.mouse.move(0,0);await page.getByTestId('company-tile').first().focus();await expect(page.getByRole('tooltip')).toContainText('Expected return / yr');
 });
 test('time travel replaces quality and prices, restores URL state and never shows current rows on missing history',async({page})=>{
  await page.goto('/value',{waitUntil:'networkidle'});
  await page.getByRole('slider',{name:'Fiscal year'}).focus();await page.keyboard.press('Home');
- await expect(page).toHaveURL(/year=2016/);await expect(page.getByRole('heading',{level:1})).toContainText('In 2016');
+ await expect(page).toHaveURL(/year=2016/);await expect(page.getByRole('heading',{level:1})).toContainText('2016: 5 at a fair price.');
  await expect(page.locator('.one-index')).toHaveAttribute('data-buy-count','5');
  await expect(page.getByTestId('company-tile').filter({hasText:'Coca-Cola'})).toHaveCount(0);
  await page.reload({waitUntil:'networkidle'});await expect(page.getByRole('slider')).toHaveAttribute('aria-valuetext','Fiscal year 2016');
  await page.getByRole('slider').focus();await page.keyboard.press('ArrowRight');await expect(page).toHaveURL(/year=2017/);
  await page.getByRole('slider').focus();await page.keyboard.press('End');await expect(page).not.toHaveURL(/year=/);
- await page.route('**/main/history/2018.json',r=>r.fulfill({status:404,body:'{}'}));await page.goto('/value?year=2018');
- await expect(page.getByRole('status')).toContainText('History is unavailable');await expect(page.getByTestId('company-tile')).toHaveCount(0);
+ await page.route(`**/api/value/data/${meta.views.years['2018']}`,r=>r.fulfill({status:404,body:'{}'}));await page.goto('/value?year=2018');
+ await expect(page.getByRole('status')).toContainText('Could not load this view. Try again.');await expect(page.locator('.main-view')).toHaveAttribute('data-frame','Today');await expect(page.locator('.main-view')).toHaveAttribute('aria-busy','true');
+ await expect(page.locator('.simulation-line')).not.toContainText('FY2018');
 });
 test('custom select supports keyboard and filters do not lose the chosen year',async({page})=>{
  await page.goto('/value?year=2018',{waitUntil:'networkidle'});
- const country=page.getByRole('combobox',{name:'Country'});await country.focus();await country.press('End');await country.press('Enter');
+ const country=page.getByRole('combobox',{name:'Country',exact:true});await country.focus();await country.press('End');await page.getByRole('combobox',{name:'Search Country',exact:true}).press('Enter');
  await expect(page).toHaveURL(/year=2018/);await expect(page).toHaveURL(/country=US/);
  await expect(page.locator('select')).toHaveCount(0);
 });
 test('new identity fields render and a broken logo has a readable fallback',async({page})=>{
  await page.route('**/api/value/logo?domain=coca-cola.com',r=>r.fulfill({status:204}));
  await page.goto('/value/ko.us',{waitUntil:'networkidle'});
- await expect(page.locator('.company-about')).toContainText('soft drinks');
+ await expect(page.locator('.company-about')).toHaveText('A global beverage business selling concentrates, syrups and finished drinks through bottling partners.');
  await expect(page.locator('.plain-verdict')).toContainText('Buy zone');
  await expect(page.locator('.company-logo')).toContainText('C');
- await expect(page.locator('.tile-sentence')).toHaveCount(6);
+ await expect(page.locator('.tile-sentence')).toHaveCount(5);await expect(page.getByTestId('tile-price')).toBeVisible();
 });
 test('historical quality includes companies absent from today’s default index',async({page})=>{
- const fs=await import('node:fs/promises');
- const rows=JSON.parse(await fs.readFile('tests/fixtures/value/store/index/US.json','utf8'));
- const base=rows[0];
- await page.route('**/main/index/US.json',r=>r.fulfill({json:[...rows,{...base,id:'OLD.US',n:'Former Quality Business',nameEn:'Former Quality Business',t:'FFFFF'}]}));
- await page.route('**/main/history/2018.json',r=>r.fulfill({json:[['OLD.US','PPPPP',.5,true,1.4]]}));
+ const base=unpackView(read(meta.views.years['2018']))[0];
+ const former={...base,id:'OLD.US',n:'Former Quality Business',nameEn:'Former Quality Business',t:'PPPPP',pm:.5,b:true,gain:1.4,historicalPrice:{price:50,buyPrice:75,discount:.25}};
+ await page.route(`**/api/value/data/${meta.views.years['2018']}`,r=>r.fulfill({json:packView([former])}));
  await page.goto('/value?year=2018',{waitUntil:'networkidle'});
  await expect(page.getByTestId('company-tile')).toHaveCount(1);
  await expect(page.getByTestId('company-tile')).toContainText('Former Quality Business');
@@ -58,8 +61,8 @@ test('rapid timeline changes write the URL once after settling',async({page})=>{
  await page.evaluate(()=>{
   const win=window as typeof window&{timelineWrites:number};win.timelineWrites=0;
   // Next mirrors a native URL change into its router state; count our app writes, not that internal mirror.
-  const original=window.history.replaceState.bind(window.history);
-  window.history.replaceState=(...args)=>{if(args[0]===null&&String(args[2]).includes('year='))win.timelineWrites++;original(...args);};
+  const original=window.history.pushState.bind(window.history);
+  window.history.pushState=(...args)=>{if(args[0]===null&&String(args[2]).includes('year='))win.timelineWrites++;original(...args);};
  });
  const slider=page.getByRole('slider',{name:'Fiscal year'});await slider.focus();
  await page.keyboard.press('Home');await page.keyboard.press('ArrowRight');await page.keyboard.press('ArrowRight');
@@ -77,19 +80,20 @@ test('same-size filter changes replace main-view identities',async({page})=>{
   await expect(page.getByTestId('company-tile')).toContainText(name);
  }
 });
-test('phone Method panel exposes all seven cumulative gates',async({page})=>{
+test('phone Method panel exposes the five current method sections',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.goto('/value',{waitUntil:'networkidle'});
- await page.getByRole('button',{name:'Method ↗'}).click();
- const gates=page.getByRole('group',{name:'Filter by cumulative gate'}).getByRole('button');
- await expect(gates).toHaveCount(7);
- for(let i=0;i<7;i++)await expect(gates.nth(i)).toBeVisible();
- await expect(page.getByRole('dialog')).toContainText('Today’s gate breakdown');
+ await page.getByRole('button',{name:'Method',exact:true}).click();
+ const dialog=page.getByRole('dialog');
+ for(const name of ['Quality','Value','View','History','Sources']){const heading=dialog.getByRole('heading',{name,exact:true});await heading.scrollIntoViewIfNeeded();await expect(heading).toBeInViewport();}
+ await expect(dialog).toContainText('All five must pass.');
+ await expect(dialog).toContainText('survivorship bias');
 });
 test('dense desktop maps offer all companies without dead overflow blocks',async({page})=>{
- const fs=await import('node:fs/promises');const row=JSON.parse(await fs.readFile('tests/fixtures/value/store/index/US.json','utf8'))[0];
- await page.route('**/main/index/US.json',r=>r.fulfill({json:Array.from({length:239},(_,i)=>({...row,id:`DENSE${i}.US`,nameEn:`Business ${i}`,mc:1e9,b:false}))}));
- await page.goto('/value?country=US',{waitUntil:'networkidle'});
+ const row=unpackView(read(meta.views.current))[0];
+ await page.route(`**/api/value/data/${meta.views.deferred[0]}`,r=>r.fulfill({json:packView(Array.from({length:239},(_,i)=>({...row,id:`DENSE${i}.US`,nameEn:`Business ${i}`,mc:1e9,b:false})))}));
+ await page.goto('/value?country=US&q=Business',{waitUntil:'networkidle'});
+ await expect(page.locator('.main-view')).toHaveAttribute('data-total','239');
  expect(await page.getByTestId('company-tile').count()).toBeLessThan(100);
- await page.getByRole('button',{name:/Show all 239/}).click();
+ await page.getByRole('button',{name:'All companies ↗',exact:true}).click();
  await expect(page.getByTestId('results-table')).toHaveAttribute('aria-rowcount','240');
 });

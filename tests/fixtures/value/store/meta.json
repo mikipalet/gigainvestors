@@ -200,5 +200,55 @@
         }
       }
     }
+  },
+  "views": {
+    "current": "views/6352b6bd25c2845e454ba4ef.json",
+    "deferred": [
+      "views/08c4acb0c4f99517b155f534.json"
+    ],
+    "years": {
+      "2016": "views/17f7ccc12c989c2ad6fbf048.json",
+      "2017": "views/74c03156acc78458fcccf682.json",
+      "2018": "views/c797edaa37b4a6d0904d728c.json",
+      "2019": "views/42a8e1df3cb0f82541f5e8ce.json",
+      "2020": "views/da390cf4dff26bc7bbdd2e27.json",
+      "2021": "views/befa7ad9fc61c2b871aeaddd.json",
+      "2022": "views/df9a5dd5d42c9639db175452.json",
+      "2023": "views/436516fba71e46bb2b5e10de.json",
+      "2024": "views/69d2cc8acac616ee41d2553c.json",
+      "2025": "views/6c7d0c4367f0cf4bddbcd0b4.json"
+    },
+    "yearDeferred": {
+      "2016": [
+        "views/7ae582215c58e365f8cb28f6.json"
+      ],
+      "2017": [
+        "views/9995d29bbe72b61310cdfc08.json"
+      ],
+      "2018": [
+        "views/175707a1fc3d3d8b84d4abc4.json"
+      ],
+      "2019": [
+        "views/49c2c333d05e61438d4c6295.json"
+      ],
+      "2020": [
+        "views/decb0befe8c708874a02204f.json"
+      ],
+      "2021": [
+        "views/cad7c463a519b7ea7aee893f.json"
+      ],
+      "2022": [
+        "views/b780ca9ac0c35ff692b6ad61.json"
+      ],
+      "2023": [
+        "views/3ef90cc37828981c4de88139.json"
+      ],
+      "2024": [
+        "views/72c79ff122e8bffce78963aa.json"
+      ],
+      "2025": [
+        "views/e4bf9a4dd45803c3526ef07e.json"
+      ]
+    }
   }
 }

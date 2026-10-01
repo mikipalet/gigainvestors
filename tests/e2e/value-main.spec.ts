@@ -1,3 +1,6 @@
+import {readFileSync} from 'node:fs';
+import path from 'node:path';
+import {unpackView} from '../../lib/value/browser-view';
 import {expect,test} from '@playwright/test';
 import {audit} from '../../scripts/value/design-audit.mjs';
 test.skip(!process.env.VALUE_STORE_DIR,'Requires the complete local staging data.');
@@ -25,7 +28,18 @@ for(const [width,height] of [[1728,970],[2056,1180],[390,844]])for(const route o
   expect(await page.locator('h1').evaluate(el=>el.getBoundingClientRect().height<=parseFloat(getComputedStyle(el).lineHeight)+1)).toBe(true);
   const small=await view.evaluate(el=>[...el.querySelectorAll('*')].filter(e=>e.checkVisibility()&&e.textContent?.trim()&&parseFloat(getComputedStyle(e).fontSize)<13).map(e=>e.className));expect(small).toEqual([]);
   const negative=await page.locator('.main-return[data-negative=true]').evaluateAll(nodes=>nodes.every(n=>getComputedStyle(n).color===getComputedStyle(document.querySelector('.main-view')!).color));expect(negative).toBe(true);
-  if(width>767){await expect(page.locator('.main-next-row .shelf-quality')).toHaveCount(ratios.length);await expect(page.locator('.main-next-row .shelf-quality').first()).toContainText(/RO(IC|TE|E) 10y/);}
+  const read=(file:string)=>JSON.parse(readFileSync(path.join(process.env.VALUE_STORE_DIR!,file),'utf8'));
+  const meta=read('meta.json'),year=new URL(route,'http://localhost').searchParams.get('year');
+  const rows=new Map(unpackView(read(year?meta.views.years[year]:meta.views.current)).map(row=>[row.id,row]));
+  for(const card of await page.locator('.main-next-row').all()){
+   const row=rows.get((await card.getAttribute('data-company'))!)!;expect(row).toBeDefined();
+   const quality=row.quality,metric=card.locator('.shelf-quality');
+   await expect(metric).toHaveCount(quality?1:0);
+   if(quality){
+    await expect(metric).toHaveText(`${quality.label} 10y ${quality.value==='unlimited'||quality.value>1?'>100%':`${Math.round(quality.value*100)}%`}`);
+    if(width>767)await expect(metric).toBeVisible();
+   }
+  }
  });
 }
 test('pointer tooltip, keyboard dossier, lists and filters',async({page})=>{
@@ -37,7 +51,7 @@ test('pointer tooltip, keyboard dossier, lists and filters',async({page})=>{
  await page.getByRole('button',{name:'All companies'}).click();await expect(page.getByTestId('results-table')).toBeVisible();await page.keyboard.press('Escape');
  await page.goto('/?q=Microsoft',{waitUntil:'networkidle'});await expect(page.locator('.main-no-buys')).toBeVisible();
 });
-test('historical glide, rapid scrubbing, playback and URL restoration',async({page})=>{
+test('historical glide, rapid scrubbing, year buttons and URL restoration',async({page})=>{
  await page.goto('/?year=2018',{waitUntil:'networkidle'});const view=page.locator('.main-view');await expect(view).toHaveAttribute('data-frame','2018');
  await page.locator('.main-next-row').first().focus();await expect(page.getByRole('tooltip')).toContainText('Gain since then');await page.keyboard.press('Escape');
  const slider=page.getByRole('slider',{name:'Fiscal year'});await slider.press('ArrowRight');await expect(view).toHaveAttribute('data-frame','2019');
@@ -48,13 +62,15 @@ test('historical glide, rapid scrubbing, playback and URL restoration',async({pa
   await new Promise<void>(resolve=>requestAnimationFrame(()=>resolve()));const root=document.querySelector('.main-view') as HTMLElement;
   return {fast:root.dataset.fast,animations:root.getAnimations({subtree:true}).length};
  });expect(rapid).toEqual({fast:'true',animations:0});await expect(view).toHaveAttribute('data-fast','false');
- await page.getByRole('button',{name:'Play time travel',exact:true}).click();await expect(view).not.toHaveAttribute('data-frame','2019');await page.getByRole('button',{name:'Pause time travel'}).click();
- await slider.press('End');await expect(view).toHaveAttribute('data-frame','Today');
+ await page.getByRole('button',{name:'Next year',exact:true}).click();await expect(view).toHaveAttribute('data-frame','2020');
+ await expect(page).toHaveURL(/year=2020/);await page.reload({waitUntil:'networkidle'});await expect(view).toHaveAttribute('data-frame','2020');
+ await page.getByRole('button',{name:'Previous year',exact:true}).click();await expect(view).toHaveAttribute('data-frame','2019');
+ await slider.press('End');await expect(view).toHaveAttribute('data-frame','Today');await expect(page.getByRole('button',{name:'Next year',exact:true})).toBeDisabled();
 });
 test('phone tap opens the dossier and controls do not intersect the slider',async({browser})=>{
  const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true});const page=await context.newPage();await page.goto(process.env.BASE_URL!+'/',{waitUntil:'networkidle'});
- const slider=(await page.getByRole('slider',{name:'Fiscal year'}).boundingBox())!,controls=(await page.locator('.timeline-buttons').boundingBox())!;
- expect(controls.y).toBeGreaterThanOrEqual(slider.y+slider.height);
+ const slider=(await page.getByRole('slider',{name:'Fiscal year'}).boundingBox())!,controls=(await page.locator('.dock-tools').boundingBox())!;
+ expect(controls.x+controls.width<=slider.x||slider.x+slider.width<=controls.x||controls.y+controls.height<=slider.y||slider.y+slider.height<=controls.y).toBe(true);
  await page.locator('.shelf-hero').tap();await expect(page.locator('.one-dossier')).toBeVisible();await context.close();
 });
 test('failed rest logos leave no blank slots',async({page})=>{

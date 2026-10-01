@@ -26,7 +26,7 @@ import { QUALITY_TESTS, type Analysis, type Company, type Fundamentals, type Pri
 
 const ROOT=process.env.VALUE_CORPUS_DIR??path.join(os.homedir(),'value-corpus');
 const V2=process.env.VALUE_CHECK_VERSION==='2';
-const SOURCE=path.join(ROOT,'staging/buffett-1'), OUT=path.join(ROOT,V2?'staging/valuation-2':'staging/buffett-1');
+const SOURCE=process.env.VALUE_BUFFETT_SOURCE??path.join(ROOT,'raw/buffett-check'), OUT=process.env.VALUE_BUFFETT_OUT??path.join(ROOT,'staging/release-8/buffett-check');
 const disk=()=>{const s=statfsSync('/');if(s.bavail*s.bsize<5*1024**3)throw new Error('Disk below 5 GB; stopped');};
 const read=<T>(file:string):T|null=>existsSync(file)?JSON.parse(readFileSync(file,'utf8')):null;
 const corpus=<T>(file:string)=>read<T>(path.join(ROOT,file));
@@ -189,10 +189,10 @@ write('purchase-summary.json',summariesAll);console.log('Purchase summary',JSON.
 if(process.argv.includes('--purchases-only')||process.env.VALUE_CHECK_HALF==='tune')process.exit(0);
 const quotes={...readPrices(path.join(ROOT,'publish-repo/prices')),...readPrices(path.join(ROOT,'prices'))};
 const membership=new Set<string>();
-if(V2)for(const file of readdirSync(path.join(ROOT,'staging/universe-1/index')).filter(f=>f.endsWith('.json')))for(const row of read<any[]>(path.join(ROOT,'staging/universe-1/index',file))??[])membership.add(row.id);
+if(V2)for(const file of readdirSync((process.env.VALUE_CHECK_INDEX??path.join(ROOT,'staging/release-8/index'))).filter(f=>f.endsWith('.json')))for(const row of read<any[]>(path.join(process.env.VALUE_CHECK_INDEX??path.join(ROOT,'staging/release-8/index'),file))??[])membership.add(row.id);
 const liveMembership=V2?read<{memberships:Record<string,string[]>}>(path.join(ROOT,'index-membership/latest.json')):null;
 const liveMembers=new Set(companies.filter(c=>[c.id,...c.listings].some(id=>liveMembership?.memberships[id]?.length)).map(c=>c.id));
-if(V2)write('membership-manifest.json',{source:'staging/universe-1/index',ids:[...membership].sort(),liveSource:'index-membership/latest.json',liveHash:hash(liveMembership),liveIds:[...liveMembers].sort()});
+if(V2)write('membership-manifest.json',{source:process.env.VALUE_CHECK_INDEX??'staging/release-8/index',ids:[...membership].sort(),liveSource:'index-membership/latest.json',liveHash:hash(liveMembership),liveIds:[...liveMembers].sort()});
 const current:any[]=[],calibration=new Map<string,Analysis>();const manifest:any[]=[];
 let count=0;
 for(const file of readdirSync(path.join(ROOT,'analysis')).filter(f=>f.endsWith('.json')).sort()){

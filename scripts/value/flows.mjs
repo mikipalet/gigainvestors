@@ -35,7 +35,7 @@ await Promise.all((process.env.FLOW_VIEWPORTS??'1728x970,2056x1180,390x844').spl
  if(w<768)await p.getByRole('button',{name:'Filters',exact:true}).click();await p.getByRole('switch',{name:'Held by superinvestors',exact:true}).click();if(w<768)await p.locator('.filter-apply').click();await shot('held-filter');
  await p.getByRole('button',{name:'All companies'}).click();await shot('company-list');await p.getByRole('navigation',{name:'Company pages'}).getByRole('button').last().click();await shot('company-list-page2');await close();
  await go('/');await p.getByRole('button',{name:'Search companies',exact:true}).click();await p.getByRole('combobox',{name:'Search investor, firm, ticker, company'}).fill('coca');await p.locator('#search-results [role=option]').first().waitFor();await shot('search-results');const searchPages=p.getByRole('navigation',{name:'Search pages'});if(await searchPages.count()){await searchPages.getByRole('button').last().click();await shot('search-page2');await searchPages.getByRole('button').first().click();}await p.locator('#search-results [role=option]').filter({hasText:'KO.US'}).first().click();await p.waitForLoadState('networkidle');await shot('search-result-open');
- for(const id of ['ko.us','race.mi','cdr.war']){
+ for(const id of (process.env.FLOW_DOSSIERS??'ko.us,race.mi,cdr.war').split(',')){
   await go('/'+id);await shot(id);
   for(const key of ['understandable','moat','economics','management','accounting','price']){
    if(key==='price'&&!await p.getByTestId('tile-price').count())continue;

@@ -160,7 +160,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const organicGrowth = organicRevenueGrowth(ys, revenueGrowth);
   const estimates = present([oeGrowth, revenueGrowth, organicGrowth, incremental === null || reinvestment === null ? null : incremental * reinvestment]);
   const finiteRoic = last(ys,10).map(roic).filter((r): r is number => r !== null && Number.isFinite(r));
-  const ownGrowth = version === 2 && qualityPass && finiteRoic.length >= 8 && median(finiteRoic)! >= T.valuation.compounderMinRoic ? compounderGrowth(ys) : null;
+  const ownGrowth = version === 2 && qualityPass && !cyclical && finiteRoic.length >= 8 && median(finiteRoic)! >= T.valuation.compounderMinRoic ? compounderGrowth(ys) : null;
   const tier = ownGrowth !== null ? 'compounder' : 'standard';
   const growth = decliningRevenue ? 0 : ownGrowth ?? clamp({ value: estimates.length ? Math.min(...estimates) : 0, min: 0, max: T.valuation.maxGrowth });
   if (discountRate <= T.valuation.terminal) return { valuation: null, reason: "required return does not exceed terminal growth" };

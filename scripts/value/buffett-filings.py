@@ -1,8 +1,8 @@
 """Download Berkshire's SEC 13Fs; write only to the designated staging directory.
 No third-party packages. SEC rate < 5 requests/sec. Raw evidence retained once.
 """
-import json, pathlib, re, shutil, time, urllib.request, xml.etree.ElementTree as ET
-ROOT = pathlib.Path.home() / 'value-corpus/staging/buffett-1/sec'
+import os, json, pathlib, re, shutil, time, urllib.request, xml.etree.ElementTree as ET
+ROOT = pathlib.Path(os.environ.get('VALUE_BUFFETT_SOURCE', str(pathlib.Path.home() / 'value-corpus/raw/buffett-check'))) / 'sec'
 ROOT.mkdir(parents=True, exist_ok=True)
 HEADERS = {'User-Agent': 'GigaInvestors calibration hello@gigainvestors.com'}
 

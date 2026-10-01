@@ -109,7 +109,7 @@ const stageCalls = (): string[][] => readFileSync(path.join(root, 'stages'), 'ut
 it.each([true, false])('runner continues after failures and gates publish on analyze: %s', analyzeFails => {
   runner({ analyzeFails })();
   const calls = stageCalls();
-  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', ...(analyzeFails ? [] : ['share-checks', 'publish']), 'status']);
+  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', ...(analyzeFails ? [] : ['share-checks', 'publish']), 'status']);
   // No --only or --limit: newly imported JP issuers and all other sources are covered.
   expect(calls.filter(([stage]) => ['prices', 'price-history', 'reports', 'yields', 'analyze', 'publish'].includes(stage)).every(call => call.length === 1)).toBe(true);
 });

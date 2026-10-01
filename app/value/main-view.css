@@ -128,3 +128,32 @@
 }
 
 .main-company[data-return=""] .main-return{font-size:13px;letter-spacing:0;font-weight:400;white-space:normal}
+
+/* Reserve the final grid before hydration. JS only fills the available cells. */
+.main-next{container:shelf / size}
+.shelf-near-grid{--shelf-columns:2;--shelf-rows:1;grid-template-columns:repeat(var(--shelf-columns),minmax(0,1fr));grid-template-rows:repeat(var(--shelf-rows),minmax(0,1fr))}
+.main-rest>span{min-width:100px;font-variant-numeric:tabular-nums}
+.main-rest>.main-more{min-width:90px;text-align:right;font-variant-numeric:tabular-nums}
+@media(min-width:768px){
+ @container shelf (min-width:682px){.shelf-near-grid{--shelf-columns:3}}
+ @container shelf (min-width:912px){.shelf-near-grid{--shelf-columns:4}}
+ @container shelf (min-width:1142px){.shelf-near-grid{--shelf-columns:5}}
+ @container shelf (min-width:1372px){.shelf-near-grid{--shelf-columns:6}}
+ @container shelf (min-width:1602px){.shelf-near-grid{--shelf-columns:7}}
+ @container shelf (min-width:1832px){.shelf-near-grid{--shelf-columns:8}}
+ @container shelf (min-height:412px){.shelf-near-grid{--shelf-rows:2}}
+ @container shelf (min-height:604px){.shelf-near-grid{--shelf-rows:3}}
+ @container shelf (min-height:796px){.shelf-near-grid{--shelf-rows:4}}
+ @container shelf (min-height:988px){.shelf-near-grid{--shelf-rows:5}}
+}
+@media(max-width:767px){
+ .main-buy-row:nth-child(n+4){display:none}
+ .main-rest>span{min-width:88px}
+ @container shelf (min-height:239px){.shelf-near-grid{--shelf-rows:2}}
+ @container shelf (min-height:350px){.shelf-near-grid{--shelf-rows:3}}
+ @container shelf (min-height:461px){.shelf-near-grid{--shelf-rows:4}}
+ .main-view[data-historical=true] .shelf-near-grid{--shelf-rows:1}
+ @container shelf (min-height:281px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:2}}
+ @container shelf (min-height:413px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:3}}
+ @container shelf (min-height:545px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:4}}
+}

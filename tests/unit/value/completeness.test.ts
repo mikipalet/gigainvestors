@@ -149,11 +149,11 @@ it('published supporting measures omit nulls and private gap wording',()=>{
  const p=publicAnalysis(a);expect('grossMarginDrop' in p.tests.moat.metrics).toBe(false);expect(gapWording.test(JSON.stringify(p))).toBe(false);
 });
 
-import { ownerEarnings } from '@/lib/value/owner-earnings';
+import { ownerEarningsBridge } from '@/lib/value/owner-earnings';
 it('uses conservative cash-flow owner earnings when depreciation detail is missing',()=>{
  const y={...adobe.fundamentals.years.at(-1),da:null,sbc:100,ocf:1000,capex:200,leaseCash:0,minorityInterest:0,totalNetIncome:null} as Year;
- expect(ownerEarnings(y)).toBe(700);
- expect(ownerEarnings({...y,ocf:null})).toBeNull();
+ expect(ownerEarningsBridge([y])[0].value).toBe(700);
+ expect(ownerEarningsBridge([{...y,ocf:null}])[0].value).toBeNull();
 });
 it('uses recorded share-count change and average price only as a last-resort repurchase estimate',()=>{
  const ys=(adobe.fundamentals.years.slice(-2) as Year[]).map(y=>({...y,buybacks:null,statementCoverage:{cashFlow:false},averageSharePrice:100}));

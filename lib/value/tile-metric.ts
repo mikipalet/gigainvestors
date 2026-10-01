@@ -10,7 +10,11 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
  const metric=(id:string,label:string,format:MetricFormat,threshold:number,better:'higher'|'lower',series:Series=[],chart=label):TileMetric=>({id,value:m[id]??null,label,format,threshold,better,series:series.slice(-10),chart});
  if ('positiveIncomeYears' in m) return {...metric('positiveIncomeYears','profitable years','count',m.requiredPositiveYears??9,'higher',test.series.netIncome??[],'Net income'),chartFormat:'money',chartThreshold:0};
  if ('bookReturnCagr' in m) return metric('bookReturnCagr','book + dividends CAGR','pct',.07,'higher',test.series.bookPlusDividendReturn??[],'Annual book + dividend return');
- if ('retainedBookRatio' in m) return {...metric('shareCagrExCrisis','ordinary share growth','pct',.02,'lower',test.series.shares??[],'Shares'),chartFormat:'index',chartThreshold:null};
+ if ('retainedBookRatio' in m) {
+  const shares=(test.series.shares??[]).slice(-10),base=shares.find(([,value])=>value!==null&&value>0)?.[1];
+  const indexed:Series=shares.map(([year,value])=>[year,base&&value!==null?value/base*100:null]);
+  return {...metric('shareCagrExCrisis','ordinary share growth','pct',.02,'lower',indexed,'Shares (first year = 100)'),chartFormat:'index',chartThreshold:null};
+ }
  if ('financialRedFlags' in m) return metric('financialRedFlags','accounting warnings','count',0,'lower');
  if ('combinedReportedYears' in m) {
   if (m.combinedProfitableYears!=null) return {...metric('combinedProfitableYears','profitable underwriting years','count',7,'higher',test.series.combinedRatio??[],'Combined ratio'),chartFormat:'pct',chartThreshold:1,chartBetter:'lower'};

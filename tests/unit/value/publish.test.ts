@@ -73,9 +73,6 @@ describe("buildOutput", () => {
     mkdirSync(path.join(corpusDir(), "publish-repo/prices"), { recursive: true });
     const closes = JSON.stringify({ "KO.US": [60, "2026-09-29"] });
     writeFileSync(path.join(corpusDir(), "publish-repo/prices/US.json"), closes);
-    // Publication is restricted to the supplied index membership snapshot.
-    mkdirSync(path.join(corpusDir(), "index-membership"));
-    writeFileSync(path.join(corpusDir(), "index-membership/latest.json"), JSON.stringify({memberships:{"KO.US":["S&P 500"]}}));
     await publish({ out });
     expect(readFileSync(path.join(corpusDir(), "analysis/KO.US.json"), "utf8")).toBe(source);
     expect(readFileSync(path.join(corpusDir(), "publish-repo/prices/US.json"), "utf8")).toBe(closes);
@@ -89,9 +86,9 @@ describe("buildOutput", () => {
     writeFileSync(path.join(corpusDir(),'universe.jsonl'),rows.map(r=>JSON.stringify(r.company)).join('\n'));
     mkdirSync(path.join(corpusDir(),'analysis'));
     for(const r of rows)writeFileSync(path.join(corpusDir(),`analysis/${r.id}.json`),JSON.stringify(r));
-    await expect(publish({out})).rejects.toThrow('Index membership unavailable');
+    await expect(publish({out})).rejects.toThrow('Run index-membership');
     mkdirSync(path.join(corpusDir(),'index-membership'));
-    writeFileSync(path.join(corpusDir(),'index-membership/latest.json'),JSON.stringify({memberships:{'KO.US':['S&P 500']}}));
+    writeFileSync(path.join(corpusDir(),'index-membership/latest.json'),JSON.stringify({complete:true,memberships:{'KO.US':['S&P 500']}}));
     await publish({out});
     const index=JSON.parse(readFileSync(path.join(out,'index/US.json'),'utf8'));
     expect(index.map((r:IndexRow)=>r.id)).toEqual(['KO.US']);

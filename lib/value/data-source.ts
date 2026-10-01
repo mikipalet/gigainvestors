@@ -3,7 +3,7 @@ export const VALUE_DATA_TAG = 'value-data';
 export const VALUE_DATA_URL = process.env.NEXT_PUBLIC_VALUE_DATA_URL ?? 'https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/';
 const requests = new Map<string,Promise<unknown>>();
 export async function fetchValueData<T>(file: string, signal?: AbortSignal): Promise<T> {
-  if (!requests.has(file)) requests.set(file, fetch(`/api/value/data/${file}`).then(response=>{
+  if (!requests.has(file)) requests.set(file, fetch(`/api/value/data/${file}`, {priority:'high'}).then(response=>{
     if (!response.ok) throw new Error(`Value data unavailable (${response.status})`);
     return response.json();
   }).catch(error=>{requests.delete(file);throw error;}));

@@ -1,5 +1,5 @@
 'use client';
-import { useEffect,useLayoutEffect,useMemo,useRef,useState,type CSSProperties } from 'react';
+import { useEffect,useLayoutEffect,useMemo,useRef,useState } from 'react';
 import { PointerTooltip } from '@/components/PointerTooltip';
 import { sharePrice } from '@/lib/value/listing-details';
 import { distancePosition,dropToBuy,mainCompanies,mainZones,returnLabel,type MainCompany } from '@/lib/value/main-layout';
@@ -14,7 +14,7 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
  const companies=useMemo(()=>mainCompanies(entries),[entries]);
  const zones=useMemo(()=>mainZones(companies),[companies]);
  const root=useRef<HTMLElement>(null),grid=useRef<HTMLDivElement>(null);
- const [size,setSize]=useState({columns:4,rows:3,phone:false,width:1200});
+ const [size,setSize]=useState({columns:2,rows:1,phone:false,width:0});
  const [list,setList]=useState<{companies:MainCompany[];title:string}|null>(null);
  const [hover,setHover]=useState<{c:MainCompany;x:number;y:number}|null>(null);
  const [failedLogos,setFailedLogos]=useState<Set<string>>(()=>new Set());
@@ -22,8 +22,9 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
   const node=grid.current;if(!node)return;
   const observer=new ResizeObserver(([e])=>{
    const phone=window.innerWidth<768;
-   const columns=phone?2:Math.max(2,Math.floor((e.contentRect.width+8)/230));
-   const rows=Math.max(1,Math.floor((e.contentRect.height+8)/(phone?(historical?132:111):192)));
+   const style=getComputedStyle(node);
+   const columns=Number(style.getPropertyValue('--shelf-columns'))||2;
+   const rows=Number(style.getPropertyValue('--shelf-rows'))||1;
    setSize({columns,rows,phone,width:root.current?.clientWidth??1200});
   });observer.observe(node);return()=>observer.disconnect();
  },[historical]);
@@ -33,14 +34,17 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
   const el=root.current;if(!el)return;
   const reduced=fast||previousYear.current===year||matchMedia('(prefers-reduced-motion: reduce)').matches;
   const next=new Map<string,DOMRect>();
-  el.querySelectorAll<HTMLElement>('[data-company]').forEach(node=>{
-   node.getAnimations().forEach(a=>a.cancel());
-   const now=node.getBoundingClientRect(),key=node.dataset.company!,old=previous.current.get(key);next.set(key,now);
+  const nodes=[...el.querySelectorAll<HTMLElement>('[data-company]')];
+  nodes.forEach(node=>node.getAnimations().forEach(a=>a.cancel()));
+  // Read all positions before starting animations, avoiding a layout per card.
+  const positions=nodes.map(node=>({node,key:node.dataset.company!,now:node.getBoundingClientRect()}));
+  positions.forEach(({node,key,now})=>{
+   const old=previous.current.get(key);next.set(key,now);
    if(old&&!reduced&&(old.x!==now.x||old.y!==now.y))node.animate([{transform:`translate(${old.x-now.x}px, ${old.y-now.y}px)`},{transform:'translate(0, 0)'}],{duration:350,easing:'cubic-bezier(.2,.7,.2,1)'});
   });previous.current=next;previousYear.current=year;
  },[companies,size,fast,year]);
  const near=zones.next.slice(0,size.columns*size.rows),rest=[...zones.next.slice(near.length),...zones.rest];
- const logoCap=size.phone?4:Math.max(1,Math.floor((size.width-270)/38));
+ const logoCap=!size.width?0:size.phone?4:Math.min(8,Math.max(1,Math.floor((size.width-270)/38)));
  const logos=rest.filter(c=>c.entry.row.lg&&!failedLogos.has(c.entry.row.lg)).slice(0,logoCap);
  const remaining=rest.filter(c=>!logos.some(l=>l.id===c.id));
  const open=(items:MainCompany[],title:string)=>{setHover(null);setList({companies:items,title});};
@@ -61,10 +65,10 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
   </>:null}
  </ValueLink>;
  const buyLimit=size.phone?3:5;
- return <section ref={root} className={`main-view${zones.buy.length?'':' main-no-buys'}`} data-frame={year} data-fast={fast} data-total={companies.length} data-buy-count={zones.buy.length} aria-busy={loading} aria-label="Buying opportunities">
+ return <section ref={root} className={`main-view${zones.buy.length?'':' main-no-buys'}`} data-historical={historical} data-frame={year} data-fast={fast} data-total={companies.length} data-buy-count={zones.buy.length} aria-busy={loading} aria-label="Buying opportunities">
   <div className="shelf-body">
    {zones.buy.length?<section className="main-buys" data-many-buys={zones.buy.length>=4}><header className="main-zone-heading"><h2>{historical?'Buy then':'Buy now'} <span>{zones.buy.length}</span></h2><span>{metric}</span></header><div className="shelf-buy-grid">{zones.buy.slice(0,buyLimit).map((c,i)=>card(c,'buy',i))}</div>{zones.buy.length>buyLimit&&<button className="main-more" onClick={()=>open(zones.buy.slice(buyLimit),historical?'Buy then':'Buy now')}>+{zones.buy.length-buyLimit} more ↗</button>}</section>:<p className="main-empty-buy">{historical?'Buy then':'Buy now'} · No picks in this view.</p>}
-   <section className="main-next"><header className="main-zone-heading"><h2>Next closest</h2><span>{metric}</span></header><div ref={grid} className="shelf-near-grid" style={{gridTemplateColumns:`repeat(${size.columns},minmax(0,1fr))`,gridTemplateRows:`repeat(${Math.min(size.rows,Math.ceil(near.length/size.columns))||1},minmax(0,1fr))`} as CSSProperties}>{near.map(c=>card(c,'next'))}{!near.length&&<p className="main-empty">No priced companies in this view.</p>}</div></section>
+   <section className="main-next"><header className="main-zone-heading"><h2>Next closest</h2><span>{metric}</span></header><div ref={grid} className="shelf-near-grid">{near.map(c=>card(c,'next'))}{!near.length&&<p className="main-empty">No priced companies in this view.</p>}</div></section>
   </div>
   <section className="main-rest" aria-label="The rest"><span>The rest <b>{rest.length}</b></span><div className="main-logo-strip">{logos.map(c=><ValueLink key={c.id} href={`/${c.id.toLowerCase()}`} data-company={c.id} className="shelf-logo" aria-label={`${c.name}. Open dossier.`} {...events(c)}><CompanyLogo src={c.entry.row.lg} name={c.name} fallback="none" onUnavailable={()=>setFailedLogos(previous=>new Set([...previous,c.entry.row.lg!]))}/></ValueLink>)}</div>{remaining.length>0&&<button className="main-more" onClick={()=>open(remaining,'The rest')}>+{remaining.length} more ↗</button>}</section>
   {list&&<SidePanel wide title={`${list.title} · ${list.companies.length}`} onClose={()=>{setList(null);setHover(null);}}><div className="main-full-list"><div className="main-list-heading"><span>Company · price drop to buy</span><span>{metric}</span></div><PagedItems size={size.phone?6:10} items={list.companies.map(c=>card(c,'list'))}/></div></SidePanel>}

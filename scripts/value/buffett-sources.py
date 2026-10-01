@@ -1,13 +1,14 @@
 """Small research-only cache: FRED rates and missing named-company inputs.
-All files stay under staging/buffett-1. Secrets never appear in logs.
+Source evidence stays in raw/buffett-check unless VALUE_BUFFETT_SOURCE is set. Secrets never appear in logs.
 """
 import json, os, pathlib, re, shutil, time, urllib.request, urllib.parse
-ROOT=pathlib.Path.home()/'value-corpus'; OUT=ROOT/'staging/buffett-1'
+ROOT=pathlib.Path.home()/'value-corpus'; OUT=pathlib.Path(os.environ.get('VALUE_BUFFETT_SOURCE', str(ROOT/'raw/buffett-check')))
 def get(url):
     if shutil.disk_usage('/').free<5*1024**3:raise RuntimeError('Disk under 5 GB')
     time.sleep(.25 if 'eodhd.com' in url else .55 if 'yahoo.com' in url else 0)
     with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'GigaInvestors research hello@gigainvestors.com'}),timeout=30) as r:return r.read()
 def main():
+    OUT.mkdir(parents=True,exist_ok=True)
     (OUT/'macro').mkdir(exist_ok=True);(OUT/'raw').mkdir(exist_ok=True);(OUT/'prices').mkdir(exist_ok=True)
     for k in ['GS10','IRLTLT01JPM156N','IRLTLT01GBM156N','IRLTLT01CHM156N','EXTAUS']:
         file=OUT/'macro'/f'{k}.csv'

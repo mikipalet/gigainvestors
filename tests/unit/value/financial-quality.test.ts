@@ -73,12 +73,13 @@ it('exposes financial evidence with correct chart units while retaining the ques
  const m=tileMetric(outcome,'bank');expect(m.id).toBe('bookReturnCagr');expect(m.series[0][1]).toBeCloseTo(.166);
  expect(tileSentence(outcome,m,'bank')).toContain('Book value plus dividends');
  expect(tileMetric({...ts.understandable,result:'pass',jev:[]},'bank').chartFormat).toBe('money');
- expect(tileMetric({...ts.management,result:'pass',jev:[]},'bank').chartFormat).toBe('index');
+ const shares=tileMetric({...ts.management,result:'pass',jev:[]},'bank');
+ expect(shares.chartFormat).toBe('index');expect(shares.series[0][1]).toBe(100);
 });
 it('does not treat a normal banking charter as contradicting understandable earnings',async()=>{
  const {combine}=await import('@/lib/value/jev/combine');
  const jev=[{q:'government_dependence',kind:'noul' as const,value:1,probability:1,trusted:true,label:'Licence',section:'description' as const,evidence:null}];
- expect(combine({numeric:'pass',jev,kind:'bank'})).toBe('pass');expect(combine({numeric:'pass',jev,kind:'operating'})).toBe('unclear');
+ expect(combine({numeric:'pass',jev,kind:'bank'})).toBe('pass');expect(combine({numeric:'pass',jev,kind:'operating'})).toBe('fail');
 });
 
 import historical from '../../fixtures/value/financial-quality.json';
@@ -86,4 +87,23 @@ it.each(historical)('replays real restated statement prefixes: $id $date',r=>{
  const input=r.financialInputs;
  const tests=runNumericTests({years:input.years as Year[],kind:input.kind as 'bank'|'insurer',industry:input.industry});
  expect(Object.values(tests).map(t=>t.numeric[0].toUpperCase()).join('')).toBe(r.t5);
+});
+
+it('requires both management core metrics even when dilution is measurable',()=>{
+ const ys=years();ys[2].dividendsPaid=null;expect(run(ys).management.numeric).toBe('unclear');
+});
+it('requires financial capital even with all optional accounting checks clear',()=>{
+ const ys=years();ys[10].equity=null;expect(run(ys).accounting.numeric).toBe('unclear');
+});
+
+it('shows the financial worst-year bar used by the decision, without imposing it on insurers',async()=>{
+ const {createElement}=await import('react');
+ const {renderToStaticMarkup}=await import('react-dom/server');
+ const {EvidencePanel}=await import('@/components/value/EvidencePanel');
+ const render=(kind:'bank'|'insurer')=>{
+  const numeric=run(years(),kind),tests=Object.fromEntries(Object.entries(numeric).map(([k,t])=>[k,{...t,result:t.numeric,jev:[]}]));
+  return renderToStaticMarkup(createElement(EvidencePanel,{dossier:{company:{kind,currency:'USD'},tests,series:{},report:{}} as any,test:tests.moat as any}));
+ };
+ expect(render('bank')).toContain('≥ 5.0% in all but one reported year');
+ expect(render('insurer')).not.toContain('in all but one reported year');
 });

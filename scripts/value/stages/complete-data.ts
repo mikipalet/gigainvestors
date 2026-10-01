@@ -1,7 +1,7 @@
-import { validCompanyId } from '../../../lib/value/companies';
+import { universeCompanies, validCompanyId } from '../../../lib/value/companies';
 import { completionYears } from '../../../lib/value/completeness/needs';
 import { existsSync, readdirSync } from 'node:fs';
-import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from '../../../lib/value/corpus';
+import { corpusPath, readCorpusJson, writeCorpusJson } from '../../../lib/value/corpus';
 import { normalizeEodhd } from '../../../lib/value/normalize-eodhd';
 import { deriveYears, cachedProvenance } from '../../../lib/value/derive';
 import { checkIntegrity } from '../../../lib/value/integrity';
@@ -22,7 +22,7 @@ const missing=(f:Fundamentals,c:Company)=>inconsistent(f)||f.years.length<7||com
 type Attempt={source:string;status:string;added:number};
 const count=(ys:Year[])=>ys.reduce((s,y)=>s+Object.keys(FIELD_TAGS).filter(k=>typeof y[k as keyof Year]==='number').length,0);
 export default async function completeData({only,limit,force}:{only?:string[];limit?:number;force?:boolean}){
- const companies=readJsonl<Company>('universe.jsonl').filter(c=>!only||only.includes(c.id)).filter(c=>validCompanyId(c.id,'complete-data')).slice(0,limit);
+ const companies=universeCompanies().filter(c=>!only||only.includes(c.id)).filter(c=>validCompanyId(c.id,'complete-data')).slice(0,limit);
  // Phase one is corpus-wide and offline. Fresh source normalization fills cached holes.
  let derived=0;
  const checkpoint=readCorpusJson<{values:number}>('completeness/derived.json');

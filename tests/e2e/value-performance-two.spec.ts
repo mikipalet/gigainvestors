@@ -39,3 +39,9 @@ test('mobile reserves row geometry before hydration',async({page})=>{
  const next=await page.locator('.main-next').boundingBox(),rest=await page.locator('.main-rest').boundingBox();
  expect(rest!.y-next!.y-next!.height).toBeLessThanOrEqual(20);
 });
+for(const [width,height] of [[1728,970],[2056,1180],[390,844]])test(`Shelf+ reserves geometry at ${width}x${height}`,async({page})=>{
+ await page.setViewportSize({width,height});
+ await page.addInitScript(()=>{(window as any).shifts=[];new PerformanceObserver(l=>(window as any).shifts.push(...l.getEntries().filter((e:any)=>!e.hadRecentInput).map((e:any)=>e.value))).observe({type:'layout-shift',buffered:true});});
+ await page.goto('/',{waitUntil:'networkidle'});
+ expect(await page.evaluate(()=>(window as any).shifts.reduce((a:number,b:number)=>a+b,0))).toBe(0);
+});

@@ -4,7 +4,7 @@ import {validLogo,iconHash} from '@/lib/value/logo-validation';
 import {wikidataWebsite} from '@/lib/value/wikidata-websites';
 import type {Company} from '@/lib/value/types';
 it('rejects undersized, corrupt and default images',async()=>{
- const png=await sharp({create:{width:32,height:32,channels:4,background:'#fff'}}).png().toBuffer();
+ const png=await sharp({create:{width:64,height:64,channels:4,background:'#fff'}}).png().toBuffer();
  expect(await validLogo(png)).toBe(true);
  expect(await validLogo(png,iconHash(png))).toBe(false);
  expect(await validLogo(await sharp(png).resize(16,16).toBuffer())).toBe(false);

@@ -139,7 +139,7 @@ export function loadHolders(store: string): { holdersByTicker: Record<string, st
 }
 
 export function writeOutput({ repo, files }: { repo: string; files: Record<string, unknown> }): void {
-  const allowed = /^(?:views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|aliases|meta|top)\.json$/;
+  const allowed = /^(?:logos\/[a-f0-9]{64}|views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|aliases|meta|top)\.json$/;
   for (const file of Object.keys(files)) if (!allowed.test(file)) throw new Error("Invalid publish output path");
   for (const directory of ["index", "dossiers", "search", "history", "views"]) rmSync(path.join(repo, directory), { recursive: true, force: true });
   for (const [file, data] of Object.entries(files)) {
@@ -239,6 +239,11 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     }
   }
   Object.assign(files, history);
+  for(const row of rows){
+    const logo=enrichedCompany(row.company).logo;
+    const asset=logo?.match(/^\/api\/value\/logo\?asset=([a-f0-9]{64})$/)?.[1];
+    if(asset){const cached=readCorpusJson(`enrichment-v7/logos/assets/${asset}.json`);if(!cached)throw Error(`Missing logo asset ${asset}`);files[`logos/${asset}.json`]=cached;}
+  }
   publishViews(files);
   writeOutput({ repo, files });
   const changed = commit ? commitOutput({ repo, asOf }) : true;

@@ -56,14 +56,15 @@ VALUE_CORPUS_DIR="$HOME/value-corpus" npx tsx scripts/value/cli.ts logos
 VALUE_CORPUS_DIR="$HOME/value-corpus" npx tsx scripts/value/cli.ts history-snapshots
 ```
 
-All three stages use atomic **create-only** writes under `enrichment-v7/` and
-`history-v7/`. They never change universe, companies, fundamentals, analysis,
+`enrich` and `history-snapshots` use atomic **create-only** writes under
+`enrichment-v7/` and `history-v7/`; `logos` updates its own resumable cache.
+They never change universe, companies, fundamentals, analysis,
 reports, prices, Jev, or publish-repo files. They are safe beside `japan`.
 `enrich` caches EDINET English filer names and Yahoo quote longName (2 requests/s),
 verifies EODHD PNG logos (10 requests/s, transient HTTP retries), falls back to
 DuckDuckGo website favicons, and derives short descriptions deterministically.
-`logos` retries vendor failures in separate immutable overrides. Missing vendor
-logos remain eligible for a later retry. No LLM is called by these stages.
+`logos` validates vendor images and tries the additional sources described below.
+Missing logos remain eligible for a later retry. No LLM is called by these stages.
 
 Publication overlays cached `nameEn`, `nameLocal`, `logo` and `about`, puts `lg` on
 index rows, preserves local-name search aliases, and emits `meta.story`. Existing
@@ -297,3 +298,29 @@ cycle's publication. Existing disclosure vetoes remain until a new reading
 replaces them, including while queued for refresh; guidance older than 30 days
 does not cap a newly analysed year's earnings. `publish --out=DIR` consumes the
 same thesis results without making provider calls or changing the remote site.
+
+Logo enrichment v2 (`logos`, with `logos-official` as a compatibility alias) processes
+published index identities, buy/next-closest/quality first. It tries dedicated
+EODHD logos, identity-matched Wikidata P154, official apple/icon/manifest and
+explicit home-linked brand marks, square social images, then Google's 128px
+favicon endpoint. Matching uses exact ISIN/LEI, ticker plus a verified exchange,
+or an unambiguous official domain; names alone never match. Raster icons must
+fully decode at >=64px in both dimensions. Explicit transparent brand wordmarks
+may be >=64px on the longer edge and >=32px on the shorter edge (aspect <=8);
+these must actually contain transparency and have low image entropy. Safe SVG
+wordmarks remain scalable. Raster assets are never enlarged in the output cache.
+Known default hashes, tiny images, wide banners and photographic social cards
+are rejected. Wikimedia downloads identify the bot, start at most once per
+second (two in flight), and honor Retry-After cooldowns.
+
+Only `enrichment-v7/logos/` is written: per-company provenance, content-addressed
+128px WebP assets, discovery caches, and run snapshots. Successful v2 assets
+resume without downloading again; `--force` retries misses. With `--only`, it also
+revalidates the selected successful assets (for example after a denylist update). Negative results
+expire after seven days, and transient failures remain retryable. The stage stops
+below 5 GB free. The publisher copies referenced assets to `logos/<sha256>.json`;
+`/api/value/logo?asset=<sha256>` serves these immutable assets from the same origin,
+without any browser requests to company sites or Wikimedia. **Run publish only
+through the controller.** `tsx scripts/value/logo-coverage.ts [baseline.json]`
+is a read-only audit of published membership, sources, quality passes, and the
+largest responsive Today home-card set in Western and all-market views.

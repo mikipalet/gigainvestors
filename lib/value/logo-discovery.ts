@@ -71,7 +71,7 @@ export function robotsRequest(request:typeof fetch,attempts:LogoAttempt[]):typeo
   }throw Error('Too many logo redirects');
  };
 }
-export function relatedPages(html:string,base:string):string[]{
+function relatedPages(html:string,base:string):string[]{
  const result:string[]=[];const p=new Parser({onopentag(tag,a){if(tag!=='a'||!a.href||!/(?:english|日本語|中文|한국어|investor|\/ir\b|\/en\b|\/eng\b|\/ja\b|\/cn\b|\/zh\b|\/ko\b|home|index\.)/i.test(a.href+' '+(a.hreflang??'')+' '+(a.title??'')))return;try{const u=new URL(a.href,base);if(u.hostname.replace(/^www\./,'')===new URL(base).hostname.replace(/^www\./,'')&&!/\.(?:pdf|zip|jpg|png)$/i.test(u.pathname)){u.hash='';result.push(u.href);}}catch{}}});p.write(html);p.end();return [...new Set(result)].filter(u=>u!==base).slice(0,5);
 }
 export async function* officialBrands(company:Company,sites:string[],request:typeof fetch,attempts:LogoAttempt[]):AsyncGenerator<BrandCandidate>{
@@ -121,7 +121,7 @@ export function cssBrandCandidates(css:string,base:string,page:string):BrandCand
 }
 
 /** Search is discovery only: require an exact identifier, exchange ticker, or official host. */
-export async function discoverWikiIdentity(company:Company,site:string|undefined,request:typeof fetch,attempts:LogoAttempt[]):Promise<LogoBinding[]>{
+async function discoverWikiIdentity(company:Company,site:string|undefined,request:typeof fetch,attempts:LogoAttempt[]):Promise<LogoBinding[]>{
  try{
   const query=company.name.replace(/\b(?:Co\.?|Ltd\.?|Inc\.?|Corporation|Corp\.?)\b/gi,'').replace(/[, .]+$/,'').trim();
   const search=await request('https://www.wikidata.org/w/api.php?action=wbsearchentities&language=en&format=json&limit=5&search='+encodeURIComponent(query));

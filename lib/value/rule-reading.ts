@@ -1,5 +1,4 @@
 import {T} from './config';
-import {trustedContradictions} from './jev/combine';
 import type {Kind,Result,TestOutcome} from './types';
 export interface RuleCheck {text:string;pass:boolean|null;core?:boolean;decisive?:boolean;key?:string;value?:number|null;bar?:number}
 const pct=(n:number)=>`${(n*100).toFixed(1)}%`;
@@ -75,14 +74,12 @@ export function ruleReading(t:TestOutcome,kind:Kind){
  }
  const failed=checks.filter(c=>c.pass===false),known=checks.filter(c=>c.pass!==null),core=checks.filter(c=>c.core);
  const numeric:Result=failed.some(c=>c.decisive)||failed.length>=minFailures?'fail':core.some(c=>c.pass===null)?'unclear':core.length||known.length/checks.length>=T.numeric.minAvailableFraction?'pass':'unclear';
- const contradictions=trustedContradictions(t.jev,kind);
- const override=t.judgement?.override&&t.judgement.evidence&&t.result!==t.numeric?t.judgement:null;
- const derived:Result=override?override.result:numeric==='pass'&&contradictions.length?'fail':numeric;
+ const derived:Result=numeric;
  const applicable=known.length;
  const selected=failed.length>=minFailures||failed.some(c=>c.decisive)?failed:known;
  // Primary rule plus an explicit count/allowance keeps all five tiles readable.
  const lead=t.key==='moat'?selected.slice(0,2).map(c=>c.text).join('; '):t.key==='understandable'&&numeric==='pass'&&m.opMarginCv!=null?selected.filter(c=>/^Margin variation|^Loss years/.test(c.text)).map(c=>c.text).join('; '):selected[0]?.text??'';
  const allowance=minFailures===2?`; ${failed.length} warnings (2 fail; cash backing required)`:`; ${known.filter(c=>c.pass).length}/${applicable} applied checks met`;
- const sentence=override?`${override.reason} Judgement override: ${override.result}.`:contradictions.length&&numeric==='pass'?`Filing rule fails: ${contradictions.map(c=>c.label).join('; ')} (confidence ≥70%).`:`${lead}${allowance}.`;
+ const sentence=`${lead}${allowance}.`;
  return {checks,numeric,derived,sentence};
 }

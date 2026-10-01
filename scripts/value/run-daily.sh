@@ -34,7 +34,7 @@ trap 'exit 143' TERM
 run_stage() {
   local stage="$1" code started status detail
   # The disk guard is a hard stop, including publication.
-  df -Pk / | awk 'NR==2 { exit ($4 < 5*1024*1024) }' || { echo "Disk below 5 GB; stopping" >&2; exit 1; }
+  df -Pk / | awk 'NR==2 { exit ($4 < 6*1024*1024) }' || { echo "Disk below 6 GiB; stopping" >&2; exit 1; }
   started=$SECONDS
   shift
   echo "$(date -u +%FT%TZ) starting $stage $*"
@@ -85,6 +85,7 @@ while true; do
   run_stage reports || :
   if run_stage yields; then
     run_stage analyze || :
+    run_stage business-backfill --limit=100 || :
   else
     echo "$(date -u +%FT%TZ) stage=analyze status=skipped reason=yields-failed; retaining existing analysis"
   fi

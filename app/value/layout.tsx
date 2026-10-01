@@ -14,6 +14,7 @@ import './round-fifteen.css';
 import './drawers.css';
 import './filters.css';
 import './judgement.css';
+import './side-panel.css';
 import { BottomBar } from '@/components/value/BottomBar';
 import type { Metadata } from 'next';
 export const metadata: Metadata = {

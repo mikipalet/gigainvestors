@@ -12,7 +12,8 @@ export function trustedContradictions(jev: JevAnswer[], kind?: Kind): JevAnswer[
   });
 }
 
-export function combine({ numeric, jev, kind }: { numeric: Result; jev: JevAnswer[]; kind?: Kind }): Result {
-  if (numeric !== "pass") return numeric;
-  return trustedContradictions(jev, kind).length ? "fail" : numeric;
+export function combine({ numeric }: { numeric: Result; jev: JevAnswer[]; kind?: Kind }): Result {
+  // Filing readings may explain risks or evidence a corrected input. They do
+  // not replace the verdict produced by applying the bar to those inputs.
+  return numeric;
 }

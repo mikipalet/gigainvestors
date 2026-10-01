@@ -5,9 +5,8 @@ import type {Analysis} from '../types';
 import type {Evidence} from '../judgement/types';
 import type {Relationship} from './types';
 import {validEvidence} from './trust';
-export const readingCopy:Record<string,string>={brand:'Customers recognise and trust the brand.',network:'The network becomes more useful as it grows.',switching:'Changing providers would disrupt customers’ work.',cost:'Lower costs give it room to compete.',regulation:'Permission to operate limits new competitors.',scale:'Its reach gives it an advantage over smaller rivals.',demonstrated:'Higher prices have held up alongside demand.',pressured:'Higher prices have cost it demand.',concentrated:'A small group of customers or suppliers matters.',diversified:'Sales are spread across customers.',admission:'Management acknowledges a shortcoming.',buybacks:'Management is returning cash through buybacks.',dividends:'Management is returning cash through dividends.',acquisitions:'Management is buying other businesses.',reinvestment:'Management is putting money back into the business.',mixed:'Management splits cash between several uses.'};
 export interface BusinessLine {answer?:ShortTextAnswer;id:string;text:string;priority:number;why:string;tone?:'red'|'green'|'neutral';evidence?:Evidence;kind:'reading'|'flag'|'relationship'|'description'}
-export function relationLabel(r:Relationship,owner:string):string{
+function relationLabel(r:Relationship,owner:string):string {
  if(r.type==='customer')return r.from===owner?'customer':'supplier';
  if(r.type==='stake')return r.from===owner?'investment':'investor';
  if(r.type==='guarantee')return r.from===owner?'guarantee':'guarantor';

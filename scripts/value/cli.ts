@@ -39,7 +39,7 @@ async function main(): Promise<void> {
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
     if (arg === "--members-first" && stage === "fundamentals") membersFirst = true;
-    else if (arg === "--offline" && stage === "index-membership") offline = true;
+    else if (arg === "--offline" && ["index-membership","business-backfill"].includes(stage)) offline = true;
     else if (stage === "calibrate" && arg === "--existing") existing = true;
     else if (stage === "calibrate" && arg === "--cached-readings") cachedReadings = true;
     else if (stage === "publish" && arg === "--overwrite") overwrite = true;

@@ -2,7 +2,6 @@ import {ownerEarningsBridge} from '../owner-earnings';
 import { QUALITY_TESTS, type Analysis, type Year, type TestOutcome } from '../types';
 import type { Adjustment, JudgementRecord, Reading, Trust } from './types';
 import { BUSINESS_TOPICS, questionVersion } from './questions';
-import { T } from '../config';
 export function trustedReading(r:Reading,trust:Trust):boolean {
  const g=trust[r.id];
  return !!g&&g.version===r.version&&r.version===questionVersion(r.id)&&g.accuracy>=.9&&g.n>=10&&g.positive>=3&&g.negative>=3
@@ -15,7 +14,7 @@ export function applyAdjustments(years:Year[],record:JudgementRecord|null|undefi
  const adjusted=years.map(original=>{
   const y={...original,provenance:{...original.provenance}};
   for(const field of ['disclosedMaintenanceCapex','nonRecurring','acquisitionSharesIssued'] as const){
-   const facts=(record?.numericFacts??[]).filter(f=>f.fy===y.fy&&f.field===field);
+   const facts=(record?.numericFacts??[]).filter(f=>f.fy===y.fy&&f.field===field&&Number.isFinite(f.value)&&f.value>=0&&!!f.evidence?.quote.trim()&&/^https:\/\//.test(f.evidence.url));
    // Conflicting issuer figures require review rather than an arbitrary winner.
    if(facts.length&&new Set(facts.map(f=>f.value)).size===1){
     y[field]=facts[0].value;
@@ -67,19 +66,11 @@ export function attachJudgements(analysis:Analysis,record:JudgementRecord|null|u
  const tests={...analysis.tests};
  for(const key of Object.keys(tests) as Array<keyof typeof tests>){
   const test:TestOutcome={...tests[key]};
+  test.result=test.numeric;
   const related=adjustments.filter(a=>a.test===key);
   let evidence=related.at(-1)?.evidence;
   const moatReading=readings.find(r=>r.id==='moat');
   const allocationReading=readings.find(r=>r.id==='allocation');
-  const growth=readings.find(r=>r.id==='capex'&&r.value==='growth');
-  // A strong explanation may resolve a small cash-conversion shortfall, never negative earnings,
-  // working-capital deterioration, missing data or another failed quality check.
-  if(key==='economics'&&test.result==='fail'&&test.numeric==='fail'&&growth&&related.length&&test.metrics.consolidatedCashConversion!==1
-   &&test.metrics.oeToNi!==null&&test.metrics.oeToNi>=T.economics.oeToNi*.9
-   &&test.reasons.includes('owner earnings cash conversion below threshold')
-   &&test.reasons.every(r=>r==='owner earnings cash conversion below threshold'||/\(informational\)/.test(r))){
-   test.result='pass';
-  }
   const before=raw?.[key];
   if(before){test.rawNumeric=before.numeric;test.rawMetrics=before.metrics;}
   const changed=test.result!==(before?.numeric??test.numeric);
@@ -93,7 +84,7 @@ export function attachJudgements(analysis:Analysis,record:JudgementRecord|null|u
    reason=`${uses[allocationReading.value]??'Management is allocating capital'}; ${test.result==='pass'?'per-share results support those choices.':'the per-share record still falls short.'}`;evidence=allocationReading.evidence!;
   }
   if(test.result==='unclear'||test.result==='na')reason='The record does not yet support a firm judgement.';
-  if(related.length)reason=related.at(-1)!.reason+(test.numeric==='fail'&&test.result==='pass'?' Cash conversion is close enough to the threshold; stock compensation remains a cost.':'');
+  if(related.length)reason=related.at(-1)!.reason;
   if(key==='management'&&readings.some(r=>r.id==='issuance'&&r.value==='acquisition')&&!related.length)reason+=' Some shares financed acquisitions; the actual share count still governs per-share results.';
   test.judgement={result:test.result,reason,evidence,override:changed};
   tests[key]=test;

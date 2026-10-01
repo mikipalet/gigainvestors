@@ -60,13 +60,13 @@ it('keeps a sizeable shortfall, missing cash flow and other failed checks from b
  const t={key:'economics',numeric:'fail',result:'fail',metrics:{oeToNi:.75},reasons:['working capital as a share of revenue rose more than 10pp and ends positive'],series:{},jev:[]} as TestOutcome;
  expect(attachJudgements({tests:{economics:t}} as Analysis,record,trust,adjustments).tests.economics.result).toBe('fail');
 });
-it('shows a borderline override with its source while retaining the failed numeric reading',()=>{
+it('never waives even a small shortfall after evidenced input adjustments',()=>{
  const record={id:'X',version:'1',readings:[reading]};
  const t={key:'economics',numeric:'fail',result:'fail',metrics:{oeToNi:.75},reasons:['owner earnings cash conversion below threshold'],series:{},jev:[]} as TestOutcome;
  const out=attachJudgements({tests:{economics:t}} as Analysis,record,trust,applyAdjustments([year],record,trust,'USD').adjustments);
- expect(out.tests.economics.numeric).toBe('fail');expect(out.tests.economics.result).toBe('pass');
+ expect(out.tests.economics.numeric).toBe('fail');expect(out.tests.economics.result).toBe('fail');
  const html=renderToStaticMarkup(createElement(JudgementLine,{test:out.tests.economics}));
- expect(html).toContain('Judgement: passes');expect(html).toContain(evidence.quote);expect(html).toContain(evidence.url);
+ expect(html).not.toContain('Judgement: passes');
 });
 it('does not publish untrusted business answers',()=>{
  const out=attachJudgements({tests:{},company:{}} as Analysis,{id:'X',version:'1',readings:[{...reading,id:'pricing',value:'demonstrated'}]},trust,[]);
@@ -120,14 +120,14 @@ it('replays Alphabet fundamentals and Jev reading through the complete numeric a
  const before=await analyzeCompany(input);
  const after=await analyzeCompany({...input,judgement:googl.judgement});
  expect(before.tests.economics.result).toBe('fail');
- expect(after.tests.economics.result).toBe('pass');
+ expect(after.tests.economics.result).toBe('fail');
  expect(after.tests.economics.numeric).toBe('fail');
  expect(after.tests.economics.metrics.oeToNi).toBeGreaterThan(before.tests.economics.metrics.oeToNi!);
  expect(after.tests.economics.rawMetrics!.oeToNi).toBe(before.tests.economics.metrics.oeToNi);
  expect(after.judgement!.adjustments.at(-1)).toMatchObject({fy:2025,after:21136000000});
- // The five-year median is still FY2021; the quality judgement changes the applicable valuation tier.
+ // An input correction cannot award a higher quality tier while cash conversion still fails.
  expect(after.valuation!.normalized).toBe(before.valuation!.normalized);
- expect(after.valuation!.perShare.mid).toBeGreaterThan(before.valuation!.perShare.mid);
+ expect(after.valuation!.perShare.mid).toBe(before.valuation!.perShare.mid);
  const renamed=await analyzeCompany({...input,company:{...input.company,id:'SAME-DATA.US'},judgement:{...googl.judgement,id:'SAME-DATA.US'}});
  expect(renamed.tests.economics.result).toBe(after.tests.economics.result);
 });

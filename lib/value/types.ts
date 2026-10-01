@@ -1,3 +1,4 @@
+import type {HumanTest,PublicJudgement} from './judgement/types';
 import type {ValueProvenance} from './derive';
 import type { HistoricalPrice } from './time-travel';
 export type Id = string; // EODHD style "KO.US", "ASML.AS", "0700.HK"; Japan "8058.JP"
@@ -159,7 +160,7 @@ export interface JevAnswer {
 }
 
 export interface TestOutcome {
-  judgement?: import("./judgement/types").HumanTest;
+  judgement?: HumanTest;
   rawNumeric?: Result;
   rawMetrics?: Record<string, number | null>;
   insufficientHistory?: number;
@@ -225,9 +226,10 @@ export interface CompanyEvent {
 }
 
 export interface Analysis {
+  ownerMemo?: import("./owner-memo").OwnerMemo;
   businessOverview?: import("./flags/presentation").BusinessLine[];
   businessDepth?: import("./flags/types").PublicBusiness;
-  judgement?: import("./judgement/types").PublicJudgement;
+  judgement?: PublicJudgement;
   thesis?: import("./thesis/types").PublicThesis;
   reportingCurrency?: string;
   author?: string;

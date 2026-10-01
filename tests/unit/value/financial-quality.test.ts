@@ -80,7 +80,7 @@ it('exposes financial evidence with correct chart units while retaining the ques
 it('does not treat a normal banking charter as contradicting understandable earnings',async()=>{
  const {combine}=await import('@/lib/value/jev/combine');
  const jev=[{q:'government_dependence',kind:'noul' as const,value:1,probability:1,trusted:true,label:'Licence',section:'description' as const,evidence:null}];
- expect(combine({numeric:'pass',jev,kind:'bank'})).toBe('pass');expect(combine({numeric:'pass',jev,kind:'operating'})).toBe('fail');
+ expect(combine({numeric:'pass',jev,kind:'bank'})).toBe('pass');expect(combine({numeric:'pass',jev,kind:'operating'})).toBe('pass');
 });
 
 import historical from '../../fixtures/value/financial-quality.json';

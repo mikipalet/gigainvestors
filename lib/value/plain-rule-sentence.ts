@@ -18,7 +18,7 @@ export function plainRuleSentence(t:TestOutcome,kind:Kind):string {
    case 'revenueDeclines':return `sales fell in ${n(v)} years (limit ${n(bar)})`;
    case 'lossYears':return `${v===0?'no loss years':`${n(v)} loss years`} were recorded (limit ${n(bar)})`;
    case 'opMarginCv':return `margins varied ${p(v)} around their average (limit ${p(bar)})`;
-   case 'roicMedian':return `earned a median ${p(v)} on operating capital excluding acquisitions (minimum ${p(bar)})`;
+   case 'roicMedian':return `earned a median ${v!=null&&v>1?'>100%':p(v)} on operating capital excluding acquisitions (minimum ${p(bar)})`;
    case 'returnFloorMedian':return `the conservative return floor was ${p(v)} (minimum ${p(bar)})`;
    case 'roicSecondLowest':case 'returnFloorSecondLowest':case 'roeSecondLowest':return `the second-worst year earned ${p(v)} (minimum ${p(bar)}, allowing one bad year)`;
    case 'roeMedian':return `earned a median ${p(v)} on ${m.tangibleReturn?'tangible ':''}equity (minimum ${p(bar)})`;
@@ -36,7 +36,7 @@ export function plainRuleSentence(t:TestOutcome,kind:Kind):string {
    case 'sbcToOcf':return `stock pay took ${p(v)} of cash flow (limit ${p(bar)})`;
   }
   if(c.text.startsWith('Value per $1'))return `each $1 kept became $${n(m.marketCapGain!/m.retainedEarnings!,2)} of market value (minimum $1)`;
-  if(c.text.startsWith('Value gained'))return `market value ${m.marketCapGain!<0?'fell':'rose'} by ${money(Math.abs(m.marketCapGain!))} while ${money(Math.abs(m.retainedEarnings!))} more than profits was returned to owners (value loss cannot exceed that return)`;
+  if(c.text.startsWith('Value gained'))return `market value ${m.marketCapGain!<0?'fell':'rose'} by ${money(Math.abs(m.marketCapGain!))} while ${money(Math.abs(m.retainedEarnings!))} more than profits was returned to owners (any market-value decline must be smaller than the cash returned above profits)`;
   if(c.text.startsWith('Per-share value'))return m.perShareStart==null||m.perShareEnd==null?'per-share value history is missing':`per-share value ${m.perShareEnd<m.perShareStart?'fell':'rose'} from ${n(m.perShareStart,2)} to ${n(m.perShareEnd,2)} (must rise and stay positive)`;
   if(c.text.startsWith('Share growth'))return `share growth was ${pct(m.nonAcquisitionShareCagr??m.shareCagr)} over ten years and ${pct(m.nonAcquisitionShareCagr5??m.shareCagr5)} over five (either must be at most 1% a year)`;
   if(c.text.startsWith('Book gain'))return `book value gained ${n(m.retainedBookGain,2)} per share against ${n(Math.max(0,m.retainedPerShare??0),2)} kept (must cover the amount kept)`;
@@ -63,7 +63,7 @@ export function plainRuleSentence(t:TestOutcome,kind:Kind):string {
  if(reading.numeric==='unclear')clauses=['the required financial history is incomplete',...clauses.slice(0,1)];
  if(t.key==='accounting'&&m.accruals!=null&&reading.numeric==='pass'&&m.accruals>.1)clauses.push('cash still backed profits and only one warning appeared (two cause a failure)');
  const contradictions=trustedContradictions(t.jev,kind);
- if(reading.numeric==='pass'&&contradictions.length&&!t.judgement?.override)clauses.push(`filings contradict the result: ${contradictions.map(c=>c.label.toLowerCase().replace(/[.;]$/,'')).join(' and ')} (at least 70% confidence)`);
+ if(reading.numeric==='pass'&&contradictions.length)clauses.push(`filing risk: ${contradictions.map(c=>c.label.toLowerCase().replace(/[.;]$/,'')).join(' and ')}`);
  const sentence=clauses.join(', and ')||'the required financial history is incomplete';
  return sentence[0].toUpperCase()+sentence.slice(1)+'.';
 }

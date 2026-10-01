@@ -130,8 +130,8 @@ function answer(overrides: Partial<JevAnswer> = {}): JevAnswer {
 }
 
 describe("combine", () => {
-  it("decides a trusted contradiction as a failure", () => {
-    expect(combine({ numeric: "pass", jev: [answer()] })).toBe("fail");
+  it("keeps a trusted filing warning from replacing the numeric verdict", () => {
+    expect(combine({ numeric: "pass", jev: [answer()] })).toBe("pass");
   });
   it("ignores untrusted contradictions", () => {
     expect(combine({ numeric: "pass", jev: [answer({ value: 0.9, probability: 0.9, trusted: false })] })).toBe("pass");
@@ -139,9 +139,9 @@ describe("combine", () => {
   it.each(["fail", "unclear", "na"] as const)("preserves numeric %s", (numeric) => {
     expect(combine({ numeric, jev: [answer()] })).toBe(numeric);
   });
-  it("inverts a no contradiction and uses the inclusive threshold", () => {
-    expect(combine({ numeric: "pass", jev: [answer({ q: "same_10y", value: 0.2, probability: 0.2 })] })).toBe("fail");
-    expect(combine({ numeric: "pass", jev: [answer({ value: 0.7, probability: 0.7 })] })).toBe("fail");
+  it("preserves the verdict at either contradiction threshold", () => {
+    expect(combine({ numeric: "pass", jev: [answer({ q: "same_10y", value: 0.2, probability: 0.2 })] })).toBe("pass");
+    expect(combine({ numeric: "pass", jev: [answer({ value: 0.7, probability: 0.7 })] })).toBe("pass");
     expect(combine({ numeric: "pass", jev: [answer({ value: 0.69, probability: 0.69 })] })).toBe("pass");
   });
   it("does not treat supportive, unknown or missing answers as contradictions", () => {

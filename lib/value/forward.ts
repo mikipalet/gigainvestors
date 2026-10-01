@@ -6,7 +6,7 @@ import type { Company, IndexRow, PriceMap } from './types';
 export type ForwardScope = 'western' | 'all';
 /** A dividend-reinvested index in a fixed, documented basis, never a rolling adjusted close. */
 export interface TotalReturnLevel { value: number; basis: string }
-export interface ForwardObservation {
+interface ForwardObservation {
   name: string;
   currency: string;
   quoteIdentity: Pick<Company, 'code' | 'exchange' | 'country' | 'source'>;
@@ -27,14 +27,14 @@ export interface ForwardSnapshot {
   universe: Record<ForwardScope, string[]>;
   observations: Record<string, ForwardObservation>;
 }
-export interface ForwardPortfolio {
+interface ForwardPortfolio {
   priceReturn: number | null;
   dividendReturn: number | null;
   benchmarkPriceReturn: number | null;
   benchmarkDividendReturn: number | null;
   missingIds: string[];
 }
-export interface ForwardPick {
+interface ForwardPick {
   id: string;
   name: string;
   firstDate: string;

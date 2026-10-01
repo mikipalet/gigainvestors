@@ -5,7 +5,7 @@ import { TOPICS, questionVersion } from './questions';
 import type { Evidence, Reading } from './types';
 export interface Source extends Evidence { text:string; period?:string|null }
 export interface Recording { state:string; questions:Record<string,JevQuestion>; answers:Record<string,RawAnswer> }
-export function candidates(sources:Source[],id:string):Array<Evidence & {period?:string|null}>{
+function candidates(sources:Source[],id:string):Array<Evidence & {period?:string|null}>{
  const topic=TOPICS[id];
  const japanese:Record<string,RegExp>={business:/事業|製品|サービス|顧客/,moat:/競争優位|強み|ブランド|ネットワーク/,pricing:/価格|販売数量/,concentration:/主要顧客|仕入先|特定の取引/,competitors:/競合|競争相手/,candor:/減少|減益|損失/,allocation:/配当|自己株式|買収|投資/,risk:/リスク|影響/,capex:/設備投資|設備の新設/,oneoff:/一過性|一時的/,issuance:/株式交換|新株|株式交付/};
  const rows=sources.filter(s=>topic.sections.includes(s.section)).flatMap(s=>{

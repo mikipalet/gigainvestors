@@ -1,6 +1,6 @@
 import type {Evidence,Grade} from '../judgement/types';
 import type {Series} from '../types';
-export const THEMES=['Capital cycle','Obligations off the balance sheet','Who it depends on','Accounting choices','Owners and management','Balance sheet'] as const;
+const THEMES=['Capital cycle','Obligations off the balance sheet','Who it depends on','Accounting choices','Owners and management','Balance sheet'] as const;
 export type Theme=typeof THEMES[number];
 /** Amounts are absolute reporting-currency units; ratios are fractions. */
 export interface Observation {metric:string;value:number;fy:number;currency:string;evidence:Evidence}

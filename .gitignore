@@ -16,3 +16,6 @@ data/newsletter/*.facts.json
 
 # Integration artifacts (one staging root)
 .integrate/
+
+# Business review: one local staging store
+.business-3/

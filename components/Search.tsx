@@ -6,6 +6,7 @@ import { valueHits, cachedValueHits, warmValueSearch, type ValueHit } from '@/li
 import { valueHref } from '@/lib/value/href';
 import type { SearchIndex } from "@/lib/types";
 import { Fragment } from 'react';
+import { ValueSearchPanel } from './value/ValueSearchPanel';
 import { displayName } from '@/lib/value/presentation';
 import { StatusGlyph } from '@/components/value/viz/StatusGlyph';
 import { plural } from "@/lib/format";
@@ -125,8 +126,8 @@ export function Search() {
           </span>
         </button>
       </div>}
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center bg-paper/85 pt-[18vh]" onMouseDown={() => setOpen(false)}>
+      {open && (isValue ? <ValueSearchPanel close={()=>setOpen(false)} initialQuery={query}/> :
+        <div className="fixed inset-0 z-50 flex items-start justify-center bg-paper/85 pt-[18vh]" onMouseDown={()=>setOpen(false)}>
           <div className="search-modal w-[min(560px,92vw)] bg-paper shadow-[0_0_0_1px_var(--ink)]" onMouseDown={(e) => e.stopPropagation()}>
             <input
               aria-label="Search investor, firm, ticker, company"

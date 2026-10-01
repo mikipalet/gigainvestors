@@ -6,6 +6,12 @@ import {GET} from '@/app/api/value/data/[...path]/route';
 const call=(file:string,encoding='gzip')=>GET(new Request('http://localhost/api/value/data/'+file,{headers:{'accept-encoding':encoding}}),{params:Promise.resolve({path:file.split('/')})});
 describe('same-origin published browser data',()=>{
  beforeEach(()=>vi.mocked(readStore).mockReset());
+ it('serves the public directory used by the empty search drawer',async()=>{
+  const rows=[{id:'ADBE.US',n:'Adobe'}];vi.mocked(readStore).mockResolvedValue(rows);
+  const response=await call('index/default.json','identity');
+  expect(response.status).toBe(200);expect(await response.json()).toEqual(rows);
+  expect((await call('index/private.json')).status).toBe(404);
+ });
  it('preserves punctuation in published search shard names',async()=>{
   vi.mocked(readStore).mockResolvedValue({rows:[],aliases:{}});
   for(const file of ['search/a&.json','search/b-.json','search/c..json'])expect((await call(file)).status).toBe(200);

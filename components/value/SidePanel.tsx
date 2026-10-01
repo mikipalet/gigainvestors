@@ -15,7 +15,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     dialog?.showModal();
     return () => { dialog?.close(); queueMicrotask(() => previous?.focus()); };
   }, []);
-  return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
+  return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.
     if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}
   }} onKeyDown={e=>{

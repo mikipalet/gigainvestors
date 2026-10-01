@@ -1,9 +1,9 @@
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { buildOutput } from "@/lib/value/build-output";
-import { corpusDir } from "@/lib/value/corpus";
+import { corpusDir, writeCorpusJson } from "@/lib/value/corpus";
 import { parseYahooPrice, yahooPrice } from "@/lib/value/prices-yahoo";
 import { shardOf } from "@/lib/value/shard";
 import type { Analysis, Dossier, IndexRow, JevAnswer, StoreMeta, PriceMap } from "@/lib/value/types";
@@ -12,7 +12,7 @@ import { parseBulkPrices, refreshPrices, commitPrices } from "@/scripts/value/st
 
 function analysis(id = "KO.US"): Analysis {
   return {
-    id, company: { id, name: id, code: id.split(".")[0], exchange: id.split(".").at(-1)!, country: "US", currency: "USD", isin: null, cik: null, lei: null, edinetCode: null, sector: "Consumer", industry: null, kind: "operating", listings: [id], marketCapUsd: 100, description: null, source: "eodhd" },
+    id, company: { id, indexes: ["S&P 500"], name: id, code: id.split(".")[0], exchange: id.split(".").at(-1)!, country: "US", currency: "USD", isin: null, cik: null, lei: null, edinetCode: null, sector: "Consumer", industry: null, kind: "operating", listings: [id], marketCapUsd: 100, description: null, source: "eodhd" },
     historyCoverage: {years:11,first:2015,last:2025,source:"fixture"}, asOf: "2026-09-29", status: "scored", report: { id, kind: "description", url: null, filed: null, period: null, sections: [] },
     tests: {
       understandable: { key: "understandable", result: "pass", numeric: "pass", reasons: [], metrics: {}, series: { revenue: [[2025, 100]] }, jev: [] },
@@ -66,6 +66,8 @@ describe("buildOutput", () => {
     const row = analysis(), out = path.join(corpusDir(), "staging");
     writeFileSync(path.join(corpusDir(), "universe.jsonl"), JSON.stringify(row.company) + "\n");
     mkdirSync(path.join(corpusDir(), "analysis"));
+    mkdirSync(path.join(corpusDir(), "index-membership"), {recursive:true});
+    writeFileSync(path.join(corpusDir(), "index-membership/latest.json"), JSON.stringify({complete:true,memberships:{[row.id]:["S&P 500"]}}));
     const source = JSON.stringify(row);
     writeFileSync(path.join(corpusDir(), "analysis/KO.US.json"), source);
     mkdirSync(path.join(corpusDir(), "publish-repo/prices"), { recursive: true });
@@ -593,4 +595,22 @@ it('refreshes hashed browser views without dropping quotes outside the analysed 
   publishViews(files);writeOutput({repo,files});
   refreshPublishedBuyPrices(repo);
   expect(JSON.parse(readFileSync(path.join(repo,'prices/US.json'),'utf8'))['UNANALYSED.US']).toEqual([25,'2026-09-29']);
+});
+
+it('excludes nonmembers from dossiers, search, counts and history including partial republish',()=>{
+ const repo=repository(), member=analysis('KO.US'), excluded=analysis('NOISE.US');
+ excluded.company.indexes=[];
+ writeCorpusJson('history-v7/index-universe/2020.json',[[member.id,'PPPPP',.5,true,1],[excluded.id,'PPPPP',.2,true,99]]);
+ writeCorpusJson('history-v7/index-universe/index.json',{scope:'universe',years:[2020],perYear:{2020:{analysed:2}}});
+ publishSnapshot({repo,analyses:[member,excluded],universe:[member.company,excluded.company],partial:false,holdersByTicker:{},investorNames:{}});
+ publishSnapshot({repo,analyses:[excluded],universe:[member.company,excluded.company],partial:true,holdersByTicker:{},investorNames:{}});
+ const read=(file:string)=>JSON.parse(readFileSync(path.join(repo,file),'utf8'));
+ expect(read('meta.json').counts.universe).toBe(1);
+ expect(read('meta.json').counts.analysed).toBe(1);
+ expect(read('history/2020.json')).toEqual([[member.id,'PPPPP',.5,true,1]]);
+ expect(read('history/index.json').perYear['2020']).toMatchObject({analysed:1,qualityPasses:1,medianReturnAll:1});
+ expect(read('history/index.json').western.perYear['2020'].analysed).toBe(1);
+ expect(read(`dossiers/${shardOf(member.id)}.json`)[member.id].company.indexes).toEqual(['S&P 500']);
+ const search=readdirSync(path.join(repo,'search')).map(f=>readFileSync(path.join(repo,'search',f),'utf8')).join('');
+ expect(search).not.toContain('NOISE.US');
 });

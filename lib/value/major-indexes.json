@@ -1,0 +1,261 @@
+[
+  [
+    "S&P 500",
+    "List of S&P 500 companies",
+    "US",
+    500,
+    "GSPC"
+  ],
+  [
+    "Nasdaq-100",
+    "List of NASDAQ-100 companies",
+    "US",
+    100,
+    "NDX"
+  ],
+  [
+    "Dow 30",
+    "List of Dow Jones Industrial Average companies",
+    "US",
+    30,
+    "DJI"
+  ],
+  [
+    "S&P/TSX 60",
+    "S&P/TSX 60",
+    "TO",
+    60,
+    "GSPTSE60"
+  ],
+  [
+    "FTSE 100",
+    "FTSE 100 Index",
+    "LSE",
+    100,
+    "FTSE"
+  ],
+  [
+    "FTSE 250",
+    "FTSE 250 Index",
+    "LSE",
+    250,
+    "FTMC"
+  ],
+  [
+    "Euro Stoxx 50",
+    "EURO STOXX 50",
+    "",
+    50,
+    "STOXX50E"
+  ],
+  [
+    "STOXX Europe 600",
+    "STOXX Europe 600",
+    "",
+    600,
+    "STOXX"
+  ],
+  [
+    "DAX 40",
+    "DAX",
+    "XETRA",
+    40,
+    "GDAXI"
+  ],
+  [
+    "MDAX",
+    "MDAX",
+    "XETRA",
+    50,
+    "MDAXI"
+  ],
+  [
+    "CAC 40",
+    "CAC 40",
+    "PA",
+    40,
+    "FCHI"
+  ],
+  [
+    "SBF 120",
+    "https://fr.wikipedia.org/wiki/SBF_120?action=render",
+    "PA",
+    120,
+    "SBF120"
+  ],
+  [
+    "IBEX 35",
+    "IBEX 35",
+    "MC",
+    35,
+    "IBEX"
+  ],
+  [
+    "FTSE MIB",
+    "FTSE MIB",
+    "MI",
+    40,
+    "FTSEMIB"
+  ],
+  [
+    "AEX",
+    "AEX index",
+    "AS",
+    30,
+    "AEX"
+  ],
+  [
+    "SMI",
+    "Swiss Market Index",
+    "SW",
+    20,
+    "SSMI"
+  ],
+  [
+    "OMXS30",
+    "OMX Stockholm 30",
+    "ST",
+    30,
+    "OMX"
+  ],
+  [
+    "OMXC25",
+    "OMX Copenhagen 25",
+    "CO",
+    25,
+    "OMXC25"
+  ],
+  [
+    "OMXH25",
+    "OMX Helsinki 25",
+    "HE",
+    25,
+    "OMXH25"
+  ],
+  [
+    "OBX",
+    "OBX Index",
+    "OL",
+    25,
+    "OBX"
+  ],
+  [
+    "BEL 20",
+    "BEL 20",
+    "BR",
+    20,
+    "BFX"
+  ],
+  [
+    "PSI",
+    "PSI-20",
+    "LS",
+    15,
+    "PSI20"
+  ],
+  [
+    "ATX",
+    "Austrian Traded Index",
+    "VI",
+    20,
+    "ATX"
+  ],
+  [
+    "ISEQ 20",
+    "ISEQ 20",
+    "IR",
+    20,
+    "ISEQ20"
+  ],
+  [
+    "S&P/ASX 200",
+    "S&P/ASX 200",
+    "AU",
+    200,
+    "AXJO"
+  ],
+  [
+    "NZX 50",
+    "S&P/NZX 50 Index",
+    "NZ",
+    50,
+    "NZ50"
+  ],
+  [
+    "Nikkei 225",
+    "https://indexes.nikkei.co.jp/en/nkave/index/component?idx=nk225",
+    "JP",
+    225,
+    "N225"
+  ],
+  [
+    "TOPIX Core30",
+    "https://ja.wikipedia.org/wiki/TOPIX_Core30?action=render",
+    "JP",
+    30,
+    "TOPIXCORE30"
+  ],
+  [
+    "TOPIX Large70",
+    "https://ja.wikipedia.org/wiki/TOPIX_Large70?action=render",
+    "JP",
+    70,
+    "TOPIXLARGE70"
+  ],
+  [
+    "Hang Seng",
+    "Hang Seng Index",
+    "HK",
+    80,
+    "HSI"
+  ],
+  [
+    "FTSE TWSE Taiwan 50",
+    "https://zh.wikipedia.org/wiki/%E8%87%BA%E7%81%A350%E6%8C%87%E6%95%B8?action=render",
+    "TW",
+    50,
+    "TW50"
+  ],
+  [
+    "KOSPI 200",
+    "KOSPI 200",
+    "KO",
+    200,
+    "KS200"
+  ],
+  [
+    "Nifty 50",
+    "NIFTY 50",
+    "NSE",
+    50,
+    "NSEI"
+  ],
+  [
+    "CSI 300",
+    "CSI 300",
+    "",
+    300,
+    "CSI300"
+  ],
+  [
+    "STI",
+    "Straits Times Index",
+    "SG",
+    30,
+    "STI"
+  ],
+  [
+    "Ibovespa",
+    "List of companies listed on Ibovespa",
+    "SA",
+    80,
+    "BVSP"
+  ],
+  [
+    "IPC",
+    "Indice de Precios y Cotizaciones",
+    "MX",
+    35,
+    "MXX"
+  ]
+]

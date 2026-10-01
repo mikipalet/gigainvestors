@@ -2,6 +2,13 @@ import { enrichedCompany } from "./enrichment";
 import { readCorpusJson, readJsonl } from "./corpus";
 import type { Company } from "./types";
 
+/** Supplemental index identities participate in every downstream data stage. */
+export function universeCompanies(): Company[] {
+ const snapshot=readCorpusJson<{memberships?:Record<string,string[]>;supplementalCompanies?:Company[]}>('index-membership/latest.json');
+ return [...new Map([...(snapshot?.supplementalCompanies??[]),...readJsonl<Company>('universe.jsonl')].map(c=>[c.id,c])).values()]
+   .map(c=>snapshot?{...c,indexes:snapshot.memberships?.[c.id]??[]}:c);
+}
+
 /** Reject unsafe paths without stopping a whole stage. */
 export function validCompanyId(id: unknown, stage: string): id is string {
   if (typeof id === "string" && /^[\w.&-]+$/.test(id) && id !== "." && id !== "..") return true;
@@ -12,7 +19,7 @@ export function validCompanyId(id: unknown, stage: string): id is string {
 export function loadCompanies({ only, limit, onError }: {
   only?: string[]; limit?: number; onError?: (company: Company, error: unknown) => void;
 }): Company[] {
-  return readJsonl<Company>("universe.jsonl")
+  return universeCompanies()
     .filter((company) => !only || only.includes(company.id))
     .filter(company => validCompanyId(company.id, "companies")).slice(0, limit)
     .map((company) => {
@@ -20,7 +27,7 @@ export function loadCompanies({ only, limit, onError }: {
         const enriched = readCorpusJson<Partial<Company>>(`companies/${company.id}.json`);
         // Missing and null enrichment must not erase known universe values.
         const overlay = Object.fromEntries(Object.entries(enriched ?? {}).filter(([, value]) => value != null));
-        return enrichedCompany(withEnglishName(mergeCompany(company, overlay)), true);
+        return enrichedCompany(withEnglishName(mergeCompany(company, {...overlay,...(company.indexes?{indexes:company.indexes}:{})})), true);
       } catch (error) {
         if (!onError) throw error;
         onError(company, error);

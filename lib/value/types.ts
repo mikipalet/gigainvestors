@@ -5,6 +5,7 @@ export type TestKey = "understandable" | "moat" | "economics" | "management" | "
 export const QUALITY_TESTS: TestKey[] = ["understandable", "moat", "economics", "management", "accounting"];
 
 export interface Company {
+  indexes?: string[]; // Populated by the dated index-membership stage; absent in legacy corpus.
   id: Id;
   name: string;
   nativeName?: string;

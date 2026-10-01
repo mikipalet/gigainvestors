@@ -49,6 +49,12 @@ it("keeps universe order, includes unenriched rows, and filters before limiting"
 it("returns no companies when the universe is missing", () => {
   expect(loadCompanies({})).toEqual([]);
 });
+it('loads supplemental members and keeps current membership over stale enrichment',()=>{
+ appendJsonl('universe.jsonl',company('A.TW'));
+ writeCorpusJson('index-membership/latest.json',{memberships:{'A.TW':['Current'],'B.TW':['New']},supplementalCompanies:[company('B.TW')]});
+ writeCorpusJson('companies/B.TW.json',{indexes:['Old'],name:'Enriched B'});
+ expect(loadCompanies({only:['B.TW']})).toMatchObject([{id:'B.TW',name:'Enriched B',indexes:['New']}]);
+});
 
 it("writes enriched descriptions to business.txt for description-only reports", async () => {
   appendJsonl("universe.jsonl", company("2330.TW"));

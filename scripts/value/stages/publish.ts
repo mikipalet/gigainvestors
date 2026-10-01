@@ -1,6 +1,8 @@
 import { summarizeSnapshots } from '../../../lib/value/snapshots';
 import { bestWesternListing } from '../../../lib/value/western';
 import { isDecided, undecidedReasons } from '../../../lib/value/publication-eligibility';
+import { companyExclusion } from '../../../lib/value/fund-exclusion';
+import { applyMembership } from '../../../lib/value/index-membership';
 import {applyShareCheck,type ShareCheck} from '../../../lib/value/share-check';
 import { publishViews } from '../../../lib/value/publish-views';
 import { writeCorpusJson } from '../../../lib/value/corpus';
@@ -136,7 +138,7 @@ export function loadHolders(store: string): { holdersByTicker: Record<string, st
 export function writeOutput({ repo, files }: { repo: string; files: Record<string, unknown> }): void {
   const allowed = /^(?:views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|meta|top)\.json$/;
   for (const file of Object.keys(files)) if (!allowed.test(file)) throw new Error("Invalid publish output path");
-  for (const directory of ["index", "dossiers", "search"]) rmSync(path.join(repo, directory), { recursive: true, force: true });
+  for (const directory of ["index", "dossiers", "search", "history", "views"]) rmSync(path.join(repo, directory), { recursive: true, force: true });
   for (const [file, data] of Object.entries(files)) {
     const destination = path.join(repo, file);
     if (file.startsWith("prices/") && existsSync(destination)) continue;
@@ -171,6 +173,8 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   const previousCount = previous?.counts?.analysed
     ?? (previous?.counts ? previous.counts.scored + previous.counts.insufficient : 0);
   if (!Number.isInteger(previousCount) || previousCount < 0) throw new Error(`Invalid published count in ${metaFile}`);
+  universe = universe.filter(company => company.indexes?.length);
+  const allowedIds = new Set(universe.map(company => company.id));
   const merged = new Map<string, Analysis>();
   const directory = path.join(repo, "dossiers");
   if (partial && existsSync(directory)) {
@@ -183,9 +187,9 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
       }
     }
   }
-  for (const analysis of analyses) merged.set(analysis.id, analysis);
+  for (const analysis of analyses) if (allowedIds.has(analysis.id)) merged.set(analysis.id, analysis);
   const identities = new Map(universe.map(company => [company.id, company]));
-  const rows = [...merged.values()].map(analysis => ({ ...analysis, company: enrichedCompany({...analysis.company, listings: identities.get(analysis.id)?.listings ?? analysis.company.listings}) }));
+  const rows = [...merged.values()].map(analysis => ({ ...analysis, company: enrichedCompany({...analysis.company, indexes: identities.get(analysis.id)?.indexes ?? [], listings: identities.get(analysis.id)?.listings ?? analysis.company.listings}) }));
   if (!force && (rows.length === 0 || rows.length < previousCount * (1 - T.publish.maxCountDrop))) {
     throw new Error(`Publish aborted: ${rows.length} companies versus ${previousCount} previously published; use --force to override`);
   }
@@ -298,7 +302,9 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
 export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string }): Promise<void> {
   const out = options.out === undefined ? undefined : path.resolve(options.out);
   if (out && existsSync(out) && readdirSync(out).length) throw new Error("--out requires a new or empty directory");
-  const companies = readJsonl<Company>("universe.jsonl");
+  const membership = readCorpusJson<{ complete: boolean; memberships: Record<string, string[]>; supplementalCompanies?: Company[] }>("index-membership/latest.json");
+  if (!membership || (!membership.complete && !(out && options.force))) throw new Error("Run index-membership and resolve its coverage report before publish (incomplete snapshots may only be inspected with --out --force)");
+  const companies = applyMembership([...new Map([...readJsonl<Company>("universe.jsonl"), ...(membership.supplementalCompanies ?? [])].map(c=>[c.id,c])).values()], membership.memberships).filter(company => company.indexes!.length && !companyExclusion(company));
   if (!companies.length) throw new Error("Run the universe stage before publish");
   const selected = companies.filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
   if (!selected.length) throw new Error("No companies selected for publish");

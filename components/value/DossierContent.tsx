@@ -67,7 +67,7 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
  const shortHistory=dossier.historyCoverage && dossier.historyCoverage.years<T.minYears;
  const returnBelow=qualityPass && owner && valuation && owner.expected<valuation.discountRate && ratio!==null && ratio<=1-requiredMos;
  const verdict=failed.length?'Fails quality':shortHistory?'Not enough history yet':!qualityPass?'':!valuation?'Passes quality':dossier.b?'Buy zone':returnBelow?'Wait for a higher return':'Wait for a better price';
- const identity=<div className="one-identity"><ValueLink href="/" className="back-link">← Companies</ValueLink><div className="company-heading"><CompanyLogo src={company.logo} name={name}/><div><h1>{name}</h1><p title={tradingLabel??'Not easily buyable from Western brokers'}>{company.code} · {company.exchange}</p></div></div>{company.about?.trim()&&<p className="company-about">{company.about}</p>}{children}</div>;
+ const identity=<div className="one-identity"><ValueLink href="/" className="back-link">← Companies</ValueLink><div className="company-heading"><CompanyLogo src={company.logo} name={name}/><div><h1>{name}</h1><p title={tradingLabel??'Not easily buyable from Western brokers'}>{company.code} · {company.exchange}</p>{Boolean(company.indexes?.length)&&<p className="company-indexes">{company.indexes!.join(" · ")}</p>}</div></div>{company.about?.trim()&&<p className="company-about">{company.about}</p>}{children}</div>;
 
  if(insufficient){
   const count=dossier.historyCoverage?.years??new Set(years).size;

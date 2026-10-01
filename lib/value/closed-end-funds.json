@@ -1,0 +1,1342 @@
+{
+  "source": "https://www.theaic.co.uk/about-us/our-members",
+  "asOf": "29/09/2026",
+  "description": "AIC defines its members as closed-ended funds. Direct property REIT sectors are not excluded by this directory alone.",
+  "funds": [
+    {
+      "name": "3i Infrastructure",
+      "sector": "Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/3i-infrastructure"
+    },
+    {
+      "name": "Aberdeen Asia Focus",
+      "sector": "Asia Pacific Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/aberdeen-asia-focus"
+    },
+    {
+      "name": "Aberdeen Asian Income Fund",
+      "sector": "Asia Pacific Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/aberdeen-asian-income-fund"
+    },
+    {
+      "name": "Aberdeen Equity Income Trust",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/aberdeen-equity-income-trust"
+    },
+    {
+      "name": "Aberdeen New India Investment Trust",
+      "sector": "India / Indian Subcontinent",
+      "url": "https://www.theaic.co.uk/companydata/aberdeen-new-india-investment-trust"
+    },
+    {
+      "name": "Aberdeen UK Smaller Companies Growth",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/aberdeen-uk-smaller-companies-growth"
+    },
+    {
+      "name": "Aberforth Geared Value & Income Trust",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/aberforth-geared-value-income-trust"
+    },
+    {
+      "name": "Aberforth Smaller Companies",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/aberforth-smaller-companies"
+    },
+    {
+      "name": "abrdn European Logistics Income",
+      "sector": "Property - Europe",
+      "url": "https://www.theaic.co.uk/companydata/abrdn-european-logistics-income"
+    },
+    {
+      "name": "Achilles Investment Company",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/achilles-investment-company"
+    },
+    {
+      "name": "AEW UK REIT",
+      "sector": "Property - UK Commercial",
+      "url": "https://www.theaic.co.uk/companydata/aew-uk-reit"
+    },
+    {
+      "name": "Albion Crown VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/albion-crown-vct"
+    },
+    {
+      "name": "Albion Crown VCT C shares",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/albion-crown-vct-c-shares"
+    },
+    {
+      "name": "Albion Enterprise VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/albion-enterprise-vct"
+    },
+    {
+      "name": "Albion Technology & General VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/albion-technology-general-vct"
+    },
+    {
+      "name": "Alliance Witan",
+      "sector": "Global",
+      "url": "https://www.theaic.co.uk/companydata/alliance-witan"
+    },
+    {
+      "name": "Allianz Technology Trust",
+      "sector": "Technology & Technology Innovation",
+      "url": "https://www.theaic.co.uk/companydata/allianz-technology-trust"
+    },
+    {
+      "name": "Alternative Liquidity Fund",
+      "sector": "Hedge Funds",
+      "url": "https://www.theaic.co.uk/companydata/alternative-liquidity-fund"
+    },
+    {
+      "name": "Artemis UK Future Leaders",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/artemis-uk-future-leaders"
+    },
+    {
+      "name": "Ashoka India Equity",
+      "sector": "India / Indian Subcontinent",
+      "url": "https://www.theaic.co.uk/companydata/ashoka-india-equity"
+    },
+    {
+      "name": "Ashoka WhiteOak Emerging Markets",
+      "sector": "Global Emerging Markets",
+      "url": "https://www.theaic.co.uk/companydata/ashoka-whiteoak-emerging-markets"
+    },
+    {
+      "name": "Athelney Trust",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/athelney-trust"
+    },
+    {
+      "name": "Aurora UK Alpha",
+      "sector": "UK All Companies",
+      "url": "https://www.theaic.co.uk/companydata/aurora-uk-alpha"
+    },
+    {
+      "name": "AVI Global Trust",
+      "sector": "Global",
+      "url": "https://www.theaic.co.uk/companydata/avi-global-trust"
+    },
+    {
+      "name": "AVI Japan Opportunity Trust",
+      "sector": "Japanese Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/avi-japan-opportunity-trust"
+    },
+    {
+      "name": "Baillie Gifford China Growth",
+      "sector": "China / Greater China",
+      "url": "https://www.theaic.co.uk/companydata/baillie-gifford-china-growth"
+    },
+    {
+      "name": "Baillie Gifford European Growth",
+      "sector": "Europe",
+      "url": "https://www.theaic.co.uk/companydata/baillie-gifford-european-growth"
+    },
+    {
+      "name": "Baillie Gifford Japan Trust",
+      "sector": "Japan",
+      "url": "https://www.theaic.co.uk/companydata/baillie-gifford-japan-trust"
+    },
+    {
+      "name": "Baillie Gifford Shin Nippon",
+      "sector": "Japanese Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/baillie-gifford-shin-nippon"
+    },
+    {
+      "name": "Baillie Gifford UK Growth",
+      "sector": "UK All Companies",
+      "url": "https://www.theaic.co.uk/companydata/baillie-gifford-uk-growth"
+    },
+    {
+      "name": "Baillie Gifford US Growth",
+      "sector": "North America",
+      "url": "https://www.theaic.co.uk/companydata/baillie-gifford-us-growth"
+    },
+    {
+      "name": "Baker Steel Resources Trust",
+      "sector": "Commodities & Natural Resources",
+      "url": "https://www.theaic.co.uk/companydata/baker-steel-resources-trust"
+    },
+    {
+      "name": "Bankers Investment Trust",
+      "sector": "Global",
+      "url": "https://www.theaic.co.uk/companydata/bankers"
+    },
+    {
+      "name": "Barings Emerging EMEA Opportunities",
+      "sector": "Global Emerging Markets",
+      "url": "https://www.theaic.co.uk/companydata/barings-emerging-emea-opportunities"
+    },
+    {
+      "name": "Baronsmead Second Venture Trust",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/baronsmead-second-venture-trust"
+    },
+    {
+      "name": "Baronsmead Venture Trust",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/baronsmead-venture-trust"
+    },
+    {
+      "name": "BH Macro",
+      "sector": "Hedge Funds",
+      "url": "https://www.theaic.co.uk/companydata/bh-macro-gbx"
+    },
+    {
+      "name": "BioPharma Credit",
+      "sector": "Debt - Direct Lending",
+      "url": "https://www.theaic.co.uk/companydata/biopharma-credit"
+    },
+    {
+      "name": "Biotech Growth Trust",
+      "sector": "Healthcare & Biotechnology",
+      "url": "https://www.theaic.co.uk/companydata/biotech-growth-trust"
+    },
+    {
+      "name": "Blackfinch Spring VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/blackfinch-spring-vct"
+    },
+    {
+      "name": "BlackRock American Income",
+      "sector": "North America",
+      "url": "https://www.theaic.co.uk/companydata/blackrock-american-income"
+    },
+    {
+      "name": "BlackRock Energy and Resources Income",
+      "sector": "Commodities & Natural Resources",
+      "url": "https://www.theaic.co.uk/companydata/blackrock-energy-and-resources-income"
+    },
+    {
+      "name": "BlackRock Frontiers",
+      "sector": "Global Emerging Markets",
+      "url": "https://www.theaic.co.uk/companydata/blackrock-frontiers"
+    },
+    {
+      "name": "BlackRock Greater Europe",
+      "sector": "Europe",
+      "url": "https://www.theaic.co.uk/companydata/blackrock-greater-europe"
+    },
+    {
+      "name": "BlackRock Income & Growth",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/blackrock-income-growth"
+    },
+    {
+      "name": "BlackRock Smaller Companies",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/blackrock-smaller-companies"
+    },
+    {
+      "name": "BlackRock World Mining",
+      "sector": "Commodities & Natural Resources",
+      "url": "https://www.theaic.co.uk/companydata/blackrock-world-mining"
+    },
+    {
+      "name": "British & American",
+      "sector": "Global Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/british-american"
+    },
+    {
+      "name": "British Smaller Companies VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/british-smaller-companies-vct"
+    },
+    {
+      "name": "British Smaller Companies VCT 2",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/british-smaller-companies-vct-2"
+    },
+    {
+      "name": "Brown Advisory US Smaller Companies",
+      "sector": "North American Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/brown-advisory-us-smaller-companies"
+    },
+    {
+      "name": "Brunner Investment Trust",
+      "sector": "Global",
+      "url": "https://www.theaic.co.uk/companydata/brunner"
+    },
+    {
+      "name": "Calculus VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/calculus-vct"
+    },
+    {
+      "name": "Caledonia Investments",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/caledonia-investments"
+    },
+    {
+      "name": "Canadian General Investments",
+      "sector": "North America",
+      "url": "https://www.theaic.co.uk/companydata/canadian-general-investments"
+    },
+    {
+      "name": "Capital Gearing Trust",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/capital-gearing-trust"
+    },
+    {
+      "name": "Castelnau Group",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/castelnau-group"
+    },
+    {
+      "name": "CC Japan Income & Growth Trust",
+      "sector": "Japan",
+      "url": "https://www.theaic.co.uk/companydata/cc-japan-income-growth-trust"
+    },
+    {
+      "name": "Channel Islands Property",
+      "sector": "Property - UK Commercial",
+      "url": "https://www.theaic.co.uk/companydata/channel-islands-property"
+    },
+    {
+      "name": "Chelverton UK Dividend Trust",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/chelverton-uk-dividend-trust"
+    },
+    {
+      "name": "Chenavari Toro Income Fund",
+      "sector": "Debt - Structured Finance",
+      "url": "https://www.theaic.co.uk/companydata/chenavari-toro-income-fund"
+    },
+    {
+      "name": "City Natural Resources Growth & Income",
+      "sector": "Commodities & Natural Resources",
+      "url": "https://www.theaic.co.uk/companydata/city-natural-resources-growth-income"
+    },
+    {
+      "name": "City of London Investment Trust",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/city-of-london-investment-trust"
+    },
+    {
+      "name": "Cordiant Digital Infrastructure",
+      "sector": "Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/cordiant-digital-infrastructure"
+    },
+    {
+      "name": "CQS New City High Yield Fund",
+      "sector": "Debt - Loans & Bonds",
+      "url": "https://www.theaic.co.uk/companydata/cqs-new-city-high-yield-fund"
+    },
+    {
+      "name": "Crystal Amber Fund",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/crystal-amber-fund"
+    },
+    {
+      "name": "CT Global Managed Portfolio Growth",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/ct-global-managed-portfolio-growth"
+    },
+    {
+      "name": "CT Global Managed Portfolio Income",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/ct-global-managed-portfolio-income"
+    },
+    {
+      "name": "CT Healthcare Trust",
+      "sector": "Healthcare & Biotechnology",
+      "url": "https://www.theaic.co.uk/companydata/ct-healthcare-trust"
+    },
+    {
+      "name": "CT Private Equity Trust",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/ct-private-equity-trust"
+    },
+    {
+      "name": "CT UK Capital and Income",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/ct-uk-capital-income"
+    },
+    {
+      "name": "CT UK High Income Trust",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/ct-uk-high-income-trust-b-class-b-ordinary"
+    },
+    {
+      "name": "Custodian Property Income REIT",
+      "sector": "Property - UK Commercial",
+      "url": "https://www.theaic.co.uk/companydata/custodian-property-income-reit"
+    },
+    {
+      "name": "CVC Income & Growth",
+      "sector": "Debt - Loans & Bonds",
+      "url": "https://www.theaic.co.uk/companydata/cvc-income-growth-gbx"
+    },
+    {
+      "name": "Develop North",
+      "sector": "Property - Debt",
+      "url": "https://www.theaic.co.uk/companydata/develop-north"
+    },
+    {
+      "name": "Digital 9 Infrastructure",
+      "sector": "Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/digital-9-infrastructure"
+    },
+    {
+      "name": "DP Aircraft I",
+      "sector": "Leasing",
+      "url": "https://www.theaic.co.uk/companydata/dp-aircraft-i"
+    },
+    {
+      "name": "Dunedin Income Growth",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/dunedin-income-growth"
+    },
+    {
+      "name": "Ecofin Global Utilities and Infrastructure",
+      "sector": "Infrastructure Securities",
+      "url": "https://www.theaic.co.uk/companydata/ecofin-global-utilities-and-infrastructure"
+    },
+    {
+      "name": "Edinburgh Investment Trust",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/edinburgh-investment-trust"
+    },
+    {
+      "name": "Edinburgh Worldwide",
+      "sector": "Global Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/edinburgh-worldwide"
+    },
+    {
+      "name": "EJF Investments",
+      "sector": "Debt - Structured Finance",
+      "url": "https://www.theaic.co.uk/companydata/ejf-investments"
+    },
+    {
+      "name": "F&C Investment Trust",
+      "sector": "Global",
+      "url": "https://www.theaic.co.uk/companydata/fc-investment-trust"
+    },
+    {
+      "name": "Fair Oaks Income",
+      "sector": "Debt - Structured Finance",
+      "url": "https://www.theaic.co.uk/companydata/fair-oaks-income"
+    },
+    {
+      "name": "Fidelity Asian Values",
+      "sector": "Asia Pacific Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/fidelity-asian-values"
+    },
+    {
+      "name": "Fidelity China Special Situations",
+      "sector": "China / Greater China",
+      "url": "https://www.theaic.co.uk/companydata/fidelity-china-special-situations"
+    },
+    {
+      "name": "Fidelity Emerging Markets",
+      "sector": "Global Emerging Markets",
+      "url": "https://www.theaic.co.uk/companydata/fidelity-emerging-markets"
+    },
+    {
+      "name": "Fidelity European Trust",
+      "sector": "Europe",
+      "url": "https://www.theaic.co.uk/companydata/fidelity-european"
+    },
+    {
+      "name": "Fidelity Special Values",
+      "sector": "UK All Companies",
+      "url": "https://www.theaic.co.uk/companydata/fidelity-special-values"
+    },
+    {
+      "name": "Finsbury Growth & Income Trust",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/finsbury-growth-income-trust"
+    },
+    {
+      "name": "Foresight Enterprise VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/foresight-enterprise-vct"
+    },
+    {
+      "name": "Foresight Environmental Infrastructure",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/foresight-environmental-infrastructure"
+    },
+    {
+      "name": "Foresight Solar Fund",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/foresight-solar-fund"
+    },
+    {
+      "name": "Foresight VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/foresight-vct"
+    },
+    {
+      "name": "Foresight Ventures VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/foresight-ventures-vct"
+    },
+    {
+      "name": "Gabelli Merchant Partners",
+      "sector": "Hedge Funds",
+      "url": "https://www.theaic.co.uk/companydata/gabelli-merchant-partners"
+    },
+    {
+      "name": "GCP Asset Backed Income",
+      "sector": "Debt - Direct Lending",
+      "url": "https://www.theaic.co.uk/companydata/gcp-asset-backed-income"
+    },
+    {
+      "name": "GCP Infrastructure Investments",
+      "sector": "Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/gcp-infrastructure-investments"
+    },
+    {
+      "name": "Geiger Counter",
+      "sector": "Commodities & Natural Resources",
+      "url": "https://www.theaic.co.uk/companydata/geiger-counter"
+    },
+    {
+      "name": "Global Opportunities Trust",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/global-opportunities-trust"
+    },
+    {
+      "name": "Golden Prospect Precious Metals",
+      "sector": "Commodities & Natural Resources",
+      "url": "https://www.theaic.co.uk/companydata/golden-prospect-precious-metals"
+    },
+    {
+      "name": "Gore Street Energy Storage",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/gore-street-energy-storage"
+    },
+    {
+      "name": "Greencoat Renewables",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/greencoat-renewables"
+    },
+    {
+      "name": "Greencoat UK Wind",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/greencoat-uk-wind"
+    },
+    {
+      "name": "Gresham House Energy Storage",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/gresham-house-energy-storage"
+    },
+    {
+      "name": "Gresham House Income & Growth 2 VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/gresham-house-income-growth-2-vct"
+    },
+    {
+      "name": "Gresham House Income & Growth VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/gresham-house-income-growth-vct"
+    },
+    {
+      "name": "Hansa Investment Company",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/hansa-investment-company-ord-ordinary-share"
+    },
+    {
+      "name": "HarbourVest Global Private Equity",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/harbourvest-global-private-equity"
+    },
+    {
+      "name": "Hargreave Hale AIM VCT",
+      "sector": "VCT AIM Quoted",
+      "url": "https://www.theaic.co.uk/companydata/hargreave-hale-aim-vct"
+    },
+    {
+      "name": "Henderson Far East Income",
+      "sector": "Asia Pacific Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/henderson-far-east-income"
+    },
+    {
+      "name": "Henderson High Income Trust",
+      "sector": "UK Equity & Bond Income",
+      "url": "https://www.theaic.co.uk/companydata/henderson-high-income"
+    },
+    {
+      "name": "Henderson Smaller Companies",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/henderson-smaller-companies"
+    },
+    {
+      "name": "Herald Investment Trust",
+      "sector": "Global Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/herald-investment-trust"
+    },
+    {
+      "name": "HgCapital Trust",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/hgcapital-trust"
+    },
+    {
+      "name": "HICL Infrastructure",
+      "sector": "Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/hicl-infrastructure"
+    },
+    {
+      "name": "ICG Enterprise Trust",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/icg-enterprise-trust"
+    },
+    {
+      "name": "ICG-Longbow Senior Secured UK Property Debt Invest",
+      "sector": "Property - Debt",
+      "url": "https://www.theaic.co.uk/companydata/icg-longbow-senior-secured-uk-property-debt-investments"
+    },
+    {
+      "name": "Impax Environmental Markets",
+      "sector": "Environmental",
+      "url": "https://www.theaic.co.uk/companydata/impax-environmental-markets"
+    },
+    {
+      "name": "India Capital Growth Fund",
+      "sector": "India / Indian Subcontinent",
+      "url": "https://www.theaic.co.uk/companydata/india-capital-growth-fund"
+    },
+    {
+      "name": "International Biotechnology",
+      "sector": "Healthcare & Biotechnology",
+      "url": "https://www.theaic.co.uk/companydata/international-biotechnology"
+    },
+    {
+      "name": "International Public Partnerships",
+      "sector": "Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/international-public-partnerships"
+    },
+    {
+      "name": "Invesco Asia Dragon Trust",
+      "sector": "Asia Pacific Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/invesco-asia-dragon-trust"
+    },
+    {
+      "name": "Invesco Bond Income Plus",
+      "sector": "Debt - Loans & Bonds",
+      "url": "https://www.theaic.co.uk/companydata/invesco-bond-income-plus"
+    },
+    {
+      "name": "Invesco Global Equity Income Trust",
+      "sector": "Global Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/invesco-global-equity-income-trust"
+    },
+    {
+      "name": "JPEL Private Equity",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/jpel-private-equity"
+    },
+    {
+      "name": "JPMorgan American",
+      "sector": "North America",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-american"
+    },
+    {
+      "name": "JPMorgan Asia Growth & Income",
+      "sector": "Asia Pacific Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-asia-growth-income"
+    },
+    {
+      "name": "JPMorgan China Growth & Income",
+      "sector": "China / Greater China",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-china-growth-income"
+    },
+    {
+      "name": "JPMorgan Claverhouse",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-claverhouse"
+    },
+    {
+      "name": "JPMorgan Emerging Europe, Middle East & Africa",
+      "sector": "Global Emerging Markets",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-emerging-europe-middle-east-africa-securities"
+    },
+    {
+      "name": "JPMorgan Emerging Markets Dividend Income",
+      "sector": "Global Emerging Markets",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-emerging-markets-dividend-income"
+    },
+    {
+      "name": "JPMorgan Emerging Markets Growth & Income",
+      "sector": "Global Emerging Markets",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-emerging-markets-growth-income"
+    },
+    {
+      "name": "JPMorgan European Discovery",
+      "sector": "European Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-european-discovery"
+    },
+    {
+      "name": "JPMorgan European Growth & Income",
+      "sector": "Europe",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-european-growth-income"
+    },
+    {
+      "name": "JPMorgan Global Growth & Income",
+      "sector": "Global Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-global-growth-income"
+    },
+    {
+      "name": "JPMorgan India Growth & Income",
+      "sector": "India / Indian Subcontinent",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-india-growth-income"
+    },
+    {
+      "name": "JPMorgan Japanese",
+      "sector": "Japan",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-japanese"
+    },
+    {
+      "name": "JPMorgan UK Small Cap Growth & Income",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-uk-small-cap-growth-income"
+    },
+    {
+      "name": "JPMorgan US Smaller Companies",
+      "sector": "North American Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/jpmorgan-us-smaller-companies"
+    },
+    {
+      "name": "Law Debenture Corporation",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/law-debenture-corporation"
+    },
+    {
+      "name": "Lindsell Train Investment Trust",
+      "sector": "Global",
+      "url": "https://www.theaic.co.uk/companydata/lindsell-train"
+    },
+    {
+      "name": "Literacy Capital",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/literacy-capital"
+    },
+    {
+      "name": "Living REIT",
+      "sector": "Property - UK Residential",
+      "url": "https://www.theaic.co.uk/companydata/living-reit"
+    },
+    {
+      "name": "LMS Capital",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/lms-capital"
+    },
+    {
+      "name": "Lowland Investment Company",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/lowland"
+    },
+    {
+      "name": "M&G Credit Income",
+      "sector": "Debt - Loans & Bonds",
+      "url": "https://www.theaic.co.uk/companydata/mg-credit-income"
+    },
+    {
+      "name": "Majedie Investments",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/majedie-investments"
+    },
+    {
+      "name": "Marwyn Value Investors",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/marwyn-value-investors"
+    },
+    {
+      "name": "Maven Income and Growth VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/maven-income-and-growth-vct"
+    },
+    {
+      "name": "Maven Income and Growth VCT 3",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/maven-income-and-growth-vct-3"
+    },
+    {
+      "name": "Maven Income and Growth VCT 4",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/maven-income-and-growth-vct-4"
+    },
+    {
+      "name": "Maven Income and Growth VCT 5",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/maven-income-and-growth-vct-5"
+    },
+    {
+      "name": "Maven Renovar VCT",
+      "sector": "VCT AIM Quoted",
+      "url": "https://www.theaic.co.uk/companydata/maven-renovar-vct"
+    },
+    {
+      "name": "Mercantile Investment Trust",
+      "sector": "UK All Companies",
+      "url": "https://www.theaic.co.uk/companydata/mercantile-investment-trust"
+    },
+    {
+      "name": "Merchants Trust",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/merchants-trust"
+    },
+    {
+      "name": "Mid Wynd International",
+      "sector": "Global",
+      "url": "https://www.theaic.co.uk/companydata/mid-wynd-international"
+    },
+    {
+      "name": "MIGO Opportunities Trust",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/migo-opportunities-trust"
+    },
+    {
+      "name": "Mobius Investment Trust",
+      "sector": "Global Emerging Markets",
+      "url": "https://www.theaic.co.uk/companydata/mobius-investment-trust"
+    },
+    {
+      "name": "Molten Ventures",
+      "sector": "Growth Capital",
+      "url": "https://www.theaic.co.uk/companydata/molten-ventures"
+    },
+    {
+      "name": "Molten Ventures VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/molten-ventures-vct"
+    },
+    {
+      "name": "Monks Investment Trust",
+      "sector": "Global",
+      "url": "https://www.theaic.co.uk/companydata/monks"
+    },
+    {
+      "name": "Montanaro European Smaller Companies",
+      "sector": "European Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/montanaro-european-smaller-companies"
+    },
+    {
+      "name": "Montanaro UK Smaller Companies",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/montanaro-uk-smaller-companies"
+    },
+    {
+      "name": "Murray Income Trust",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/murray-income"
+    },
+    {
+      "name": "Murray International Trust",
+      "sector": "Global Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/murray-international"
+    },
+    {
+      "name": "Neuberger Private Equity Partners",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/neuberger-private-equity-partners"
+    },
+    {
+      "name": "NextEnergy Solar Fund",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/nextenergy-solar-fund"
+    },
+    {
+      "name": "Nippon Active Value Fund",
+      "sector": "Japanese Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/nippon-active-value-fund"
+    },
+    {
+      "name": "North American Income Trust",
+      "sector": "North America",
+      "url": "https://www.theaic.co.uk/companydata/north-american-income-trust"
+    },
+    {
+      "name": "Northern 2 VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/northern-2-vct"
+    },
+    {
+      "name": "Northern 3 VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/northern-3-vct"
+    },
+    {
+      "name": "Northern Venture Trust",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/northern-venture-trust"
+    },
+    {
+      "name": "Oakley Capital Investments",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/oakley-capital-investments"
+    },
+    {
+      "name": "Octopus AIM VCT",
+      "sector": "VCT AIM Quoted",
+      "url": "https://www.theaic.co.uk/companydata/octopus-aim-vct"
+    },
+    {
+      "name": "Octopus AIM VCT 2",
+      "sector": "VCT AIM Quoted",
+      "url": "https://www.theaic.co.uk/companydata/octopus-aim-vct-2"
+    },
+    {
+      "name": "Octopus Apollo VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/octopus-apollo-vct"
+    },
+    {
+      "name": "Octopus Future Generations VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/octopus-future-generations-vct"
+    },
+    {
+      "name": "Octopus Renewables Infrastructure Trust",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/octopus-renewables-infrastructure"
+    },
+    {
+      "name": "Octopus Titan VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/octopus-titan-vct"
+    },
+    {
+      "name": "Odyssean Investment Trust",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/odyssean-investment-trust"
+    },
+    {
+      "name": "Onward Opportunities",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/onward-opportunities"
+    },
+    {
+      "name": "Oxford Technology 2 VCT - OT1 shares",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/oxford-technology-2-vct-ot1-shares"
+    },
+    {
+      "name": "Oxford Technology 2 VCT - OT2 shares",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/oxford-technology-2-vct-ot2-shares"
+    },
+    {
+      "name": "Oxford Technology 2 VCT - OT3 shares",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/oxford-technology-2-vct-ot3-shares"
+    },
+    {
+      "name": "Oxford Technology 2 VCT - OT4 shares",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/oxford-technology-2-vct-ot4-shares"
+    },
+    {
+      "name": "Pacific Horizon Investment Trust",
+      "sector": "Asia Pacific",
+      "url": "https://www.theaic.co.uk/companydata/pacific-horizon-investment-trust"
+    },
+    {
+      "name": "Pantheon Infrastructure",
+      "sector": "Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/pantheon-infrastructure"
+    },
+    {
+      "name": "Pantheon International",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/pantheon-international"
+    },
+    {
+      "name": "Partners Group Private Equity",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/partners-group-private-equity"
+    },
+    {
+      "name": "Parvus Energy Efficiency Trust",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/parvus-energy-efficiency-trust"
+    },
+    {
+      "name": "Patria Private Equity",
+      "sector": "Private Equity",
+      "url": "https://www.theaic.co.uk/companydata/patria-private-equity-trust"
+    },
+    {
+      "name": "Pembroke VCT B shares",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/pembroke-vct-b-shares"
+    },
+    {
+      "name": "Pershing Square Holdings",
+      "sector": "North America",
+      "url": "https://www.theaic.co.uk/companydata/pershing-square-holdings"
+    },
+    {
+      "name": "Personal Assets Trust",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/personal-assets-trust"
+    },
+    {
+      "name": "Phoenix Spree Deutschland",
+      "sector": "Property - Europe",
+      "url": "https://www.theaic.co.uk/companydata/phoenix-spree-deutschland"
+    },
+    {
+      "name": "Polar Capital Global Financials",
+      "sector": "Financials & Financial Innovation",
+      "url": "https://www.theaic.co.uk/companydata/polar-capital-global-financials"
+    },
+    {
+      "name": "Polar Capital Global Healthcare",
+      "sector": "Healthcare & Biotechnology",
+      "url": "https://www.theaic.co.uk/companydata/polar-capital-global-healthcare"
+    },
+    {
+      "name": "Polar Capital Technology",
+      "sector": "Technology & Technology Innovation",
+      "url": "https://www.theaic.co.uk/companydata/polar-capital-technology"
+    },
+    {
+      "name": "ProVen Growth and Income VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/proven-growth-and-income-vct"
+    },
+    {
+      "name": "ProVen VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/proven-vct"
+    },
+    {
+      "name": "Puma AIM VCT",
+      "sector": "VCT AIM Quoted",
+      "url": "https://www.theaic.co.uk/companydata/puma-aim-vct"
+    },
+    {
+      "name": "Puma Alpha VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/puma-alpha-vct"
+    },
+    {
+      "name": "Puma VCT 13",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/puma-vct-13"
+    },
+    {
+      "name": "PXN Growth VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/pxn-growth-vct"
+    },
+    {
+      "name": "Real Estate Credit Investments",
+      "sector": "Property - Debt",
+      "url": "https://www.theaic.co.uk/companydata/real-estate-credit-investments"
+    },
+    {
+      "name": "Regional REIT",
+      "sector": "Property - UK Commercial",
+      "url": "https://www.theaic.co.uk/companydata/regional-reit"
+    },
+    {
+      "name": "Renewables Infrastructure Group",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/renewables-infrastructure-group"
+    },
+    {
+      "name": "Residential Secure Income REIT",
+      "sector": "Property - UK Residential",
+      "url": "https://www.theaic.co.uk/companydata/residential-secure-income-reit"
+    },
+    {
+      "name": "Rights & Issues Investment Trust",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/rights-issues-investment-trust"
+    },
+    {
+      "name": "RIT Capital Partners",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/rit-capital-partners"
+    },
+    {
+      "name": "River UK Micro Cap",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/river-uk-micro-cap"
+    },
+    {
+      "name": "Riverstone Credit Opportunities Income",
+      "sector": "Debt - Direct Lending",
+      "url": "https://www.theaic.co.uk/companydata/riverstone-credit-opportunities-income"
+    },
+    {
+      "name": "Riverstone Energy",
+      "sector": "Commodities & Natural Resources",
+      "url": "https://www.theaic.co.uk/companydata/riverstone-energy"
+    },
+    {
+      "name": "Rockwood Strategic",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/rockwood-strategic"
+    },
+    {
+      "name": "RTW Biotech Opportunities",
+      "sector": "Healthcare & Biotechnology",
+      "url": "https://www.theaic.co.uk/companydata/rtw-biotech-opportunities"
+    },
+    {
+      "name": "Ruffer Investment Company",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/ruffer-investment-company"
+    },
+    {
+      "name": "Schiehallion Fund",
+      "sector": "Growth Capital",
+      "url": "https://www.theaic.co.uk/companydata/schiehallion-fund"
+    },
+    {
+      "name": "Schroder Asian Total Return",
+      "sector": "Asia Pacific",
+      "url": "https://www.theaic.co.uk/companydata/schroder-asian-total-return"
+    },
+    {
+      "name": "Schroder AsiaPacific Fund",
+      "sector": "Asia Pacific",
+      "url": "https://www.theaic.co.uk/companydata/schroder-asiapacific-fund"
+    },
+    {
+      "name": "Schroder British Opportunities",
+      "sector": "Growth Capital",
+      "url": "https://www.theaic.co.uk/companydata/schroder-british-opportunities"
+    },
+    {
+      "name": "Schroder BSC Social Impact",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/schroder-bsc-social-impact"
+    },
+    {
+      "name": "Schroder European Real Estate",
+      "sector": "Property - Europe",
+      "url": "https://www.theaic.co.uk/companydata/schroder-european-real-estate"
+    },
+    {
+      "name": "Schroder Income Growth Fund",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/schroder-income-growth-fund"
+    },
+    {
+      "name": "Schroder Japan Trust",
+      "sector": "Japan",
+      "url": "https://www.theaic.co.uk/companydata/schroder-japan-trust"
+    },
+    {
+      "name": "Schroder Oriental Income",
+      "sector": "Asia Pacific Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/schroder-oriental-income"
+    },
+    {
+      "name": "Schroder Real Estate",
+      "sector": "Property - UK Commercial",
+      "url": "https://www.theaic.co.uk/companydata/schroder-real-estate"
+    },
+    {
+      "name": "Schroder UK Mid Cap Fund",
+      "sector": "UK All Companies",
+      "url": "https://www.theaic.co.uk/companydata/schroder-uk-mid-cap-fund"
+    },
+    {
+      "name": "Schroders Capital Global Innovation Trust",
+      "sector": "Growth Capital",
+      "url": "https://www.theaic.co.uk/companydata/schroders-capital-global-innovation-trust"
+    },
+    {
+      "name": "Scottish American",
+      "sector": "Global Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/scottish-american"
+    },
+    {
+      "name": "Scottish Mortgage Investment Trust",
+      "sector": "Global",
+      "url": "https://www.theaic.co.uk/companydata/scottish-mortgage"
+    },
+    {
+      "name": "Scottish Oriental Smaller Companies",
+      "sector": "Asia Pacific Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/scottish-oriental-smaller-companies"
+    },
+    {
+      "name": "SDCL Efficiency Income",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/sdcl-efficiency-income"
+    },
+    {
+      "name": "Seneca Growth Capital VCT",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/seneca-growth-capital-vct"
+    },
+    {
+      "name": "Seneca Growth Capital VCT B shares",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/seneca-growth-capital-vct-b-shares"
+    },
+    {
+      "name": "Sequoia Economic Infrastructure Income",
+      "sector": "Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/sequoia-economic-infrastructure-income"
+    },
+    {
+      "name": "Seraphim Space Investment Trust",
+      "sector": "Growth Capital",
+      "url": "https://www.theaic.co.uk/companydata/seraphim-space-investment-trust"
+    },
+    {
+      "name": "Seraphim Space Investment Trust C shares",
+      "sector": "Growth Capital",
+      "url": "https://www.theaic.co.uk/companydata/seraphim-space-investment-trust-c-shares"
+    },
+    {
+      "name": "Strategic Equity Capital",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/strategic-equity-capital"
+    },
+    {
+      "name": "STS Global Income & Growth Trust",
+      "sector": "Global Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/sts-global-income-growth-trust"
+    },
+    {
+      "name": "Syncona",
+      "sector": "Healthcare & Biotechnology",
+      "url": "https://www.theaic.co.uk/companydata/syncona"
+    },
+    {
+      "name": "Target Healthcare REIT",
+      "sector": "Property - UK Healthcare",
+      "url": "https://www.theaic.co.uk/companydata/target-healthcare-reit"
+    },
+    {
+      "name": "Temple Bar Investment Trust",
+      "sector": "UK Equity Income",
+      "url": "https://www.theaic.co.uk/companydata/temple-bar-investment-trust"
+    },
+    {
+      "name": "Templeton Emerging Markets",
+      "sector": "Global Emerging Markets",
+      "url": "https://www.theaic.co.uk/companydata/templeton-emerging-markets"
+    },
+    {
+      "name": "Tetragon Financial Group",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/tetragon-financial-group"
+    },
+    {
+      "name": "The European Smaller Companies Trust",
+      "sector": "European Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/the-european-smaller-companies-trust"
+    },
+    {
+      "name": "The Global Smaller Companies Trust",
+      "sector": "Global Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/the-global-smaller-companies-trust"
+    },
+    {
+      "name": "The Investment Company",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/the-investment-company"
+    },
+    {
+      "name": "TR Property Investment Trust",
+      "sector": "Property Securities",
+      "url": "https://www.theaic.co.uk/companydata/tr-property"
+    },
+    {
+      "name": "Triple Point Venture VCT Venture shares",
+      "sector": "VCT",
+      "url": "https://www.theaic.co.uk/companydata/triple-point-venture-vct-venture-shares"
+    },
+    {
+      "name": "Tritax Big Box REIT",
+      "sector": "Property - UK Logistics",
+      "url": "https://www.theaic.co.uk/companydata/tritax-big-box-reit"
+    },
+    {
+      "name": "Tufton Assets",
+      "sector": "Leasing",
+      "url": "https://www.theaic.co.uk/companydata/tufton-assets"
+    },
+    {
+      "name": "TwentyFour Income Fund",
+      "sector": "Debt - Structured Finance",
+      "url": "https://www.theaic.co.uk/companydata/twentyfour-income-fund"
+    },
+    {
+      "name": "TwentyFour Select Monthly Income",
+      "sector": "Debt - Loans & Bonds",
+      "url": "https://www.theaic.co.uk/companydata/twentyfour-select-monthly-income"
+    },
+    {
+      "name": "UIL",
+      "sector": "Flexible Investment",
+      "url": "https://www.theaic.co.uk/companydata/uil"
+    },
+    {
+      "name": "Unicorn AIM VCT",
+      "sector": "VCT AIM Quoted",
+      "url": "https://www.theaic.co.uk/companydata/unicorn-aim-vct"
+    },
+    {
+      "name": "US Solar Fund",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/us-solar-fund"
+    },
+    {
+      "name": "Utilico Emerging Markets Trust",
+      "sector": "Global Emerging Markets",
+      "url": "https://www.theaic.co.uk/companydata/utilico-emerging-markets-trust"
+    },
+    {
+      "name": "Value and Indexed Property Income Trust",
+      "sector": "Property - UK Commercial",
+      "url": "https://www.theaic.co.uk/companydata/value-and-indexed-property-income-trust"
+    },
+    {
+      "name": "VH Global Energy Infrastructure",
+      "sector": "Renewable Energy Infrastructure",
+      "url": "https://www.theaic.co.uk/companydata/vh-global-energy-infrastructure"
+    },
+    {
+      "name": "Vietnam Enterprise Investments",
+      "sector": "Country Specialist",
+      "url": "https://www.theaic.co.uk/companydata/vietnam-enterprise-investments"
+    },
+    {
+      "name": "VietNam Holding",
+      "sector": "Country Specialist",
+      "url": "https://www.theaic.co.uk/companydata/vietnam-holding"
+    },
+    {
+      "name": "VinaCapital Vietnam Opportunity",
+      "sector": "Country Specialist",
+      "url": "https://www.theaic.co.uk/companydata/vinacapital-vietnam-opportunity"
+    },
+    {
+      "name": "Volta Finance",
+      "sector": "Debt - Structured Finance",
+      "url": "https://www.theaic.co.uk/companydata/volta-finance"
+    },
+    {
+      "name": "VPC Specialty Lending Investments",
+      "sector": "Debt - Direct Lending",
+      "url": "https://www.theaic.co.uk/companydata/vpc-specialty-lending-investments"
+    },
+    {
+      "name": "Worldwide Healthcare Trust",
+      "sector": "Healthcare & Biotechnology",
+      "url": "https://www.theaic.co.uk/companydata/worldwide-healthcare-trust"
+    },
+    {
+      "name": "Worsley Investors",
+      "sector": "UK Smaller Companies",
+      "url": "https://www.theaic.co.uk/companydata/worsley-investors"
+    }
+  ]
+}

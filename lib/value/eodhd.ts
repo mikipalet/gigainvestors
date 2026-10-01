@@ -60,7 +60,8 @@ export async function eodhd<T>(path: string, params: Record<string, string> = {}
 
 export const listExchanges = () => eodhd<Exchange[]>("exchanges-list");
 export const listSymbols = (exchange: string) => eodhd<SymbolRow[]>(`exchange-symbol-list/${encodeURIComponent(exchange)}`);
-export const getFundamentals = (ticker: string): Promise<unknown> => eodhd(`fundamentals/${encodeURIComponent(ticker)}`);
+// One attempt costs ten calls; retry failed companies on the next daily run.
+export const getFundamentals = (ticker: string): Promise<unknown> => eodhd(`fundamentals/${encodeURIComponent(ticker)}`, {}, { retries: 0 });
 export const bulkLastDay = (exchange: string): Promise<unknown> => eodhd(`eod-bulk-last-day/${encodeURIComponent(exchange)}`);
 
 export async function screenerPage({ offset, exchange }: { offset: number; exchange?: string }): Promise<ScreenerRow[]> {

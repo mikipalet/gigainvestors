@@ -10,7 +10,7 @@ const columns:Array<[Column,string]>=[['name','Company'],['return','Return / yr'
 /** Every list surface uses the same rows and quality definition as the home shelf. */
 export function CompanyList({entries}:{entries:ResultEntry[]}) {
  const [sort,setSort]=useState<Column>('return'),[direction,setDirection]=useState(-1),[page,setPage]=useState(0),[size,setSize]=useState(10);
- useEffect(()=>{const resize=()=>setSize(Math.max(3,Math.floor((window.innerHeight-174)/(window.innerWidth<768?68:48))));resize();window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize);},[]);
+ useEffect(()=>{const resize=()=>setSize(Math.max(3,Math.floor((window.innerHeight-210)/(window.innerWidth<768?70:52))));resize();window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize);},[]);
  const companies=useMemo(()=>mainCompanies(entries).sort((a,b)=>{
   if(sort==='name')return direction*a.name.localeCompare(b.name);
   const quality=(c:typeof a)=>c.entry.row.quality?.value==='unlimited'?Infinity:c.entry.row.quality?.value??null;

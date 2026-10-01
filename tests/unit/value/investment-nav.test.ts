@@ -31,13 +31,13 @@ describe('NAV valuation',()=>{
   expect(v.method).toBe('nav');expect(v.tier).toBe('nav');
   expect(v.perShare.mid).toBeCloseTo(100*1.08**10);
   expect(v.discountRate).toBe(.1);expect(valuationMargin(v,'volatile')).toBe(.15);
-  expect(ownerReturn(v,'GBP',null,v.perShare.mid*.8)?.expected).toBeCloseTo(.125);
+  expect(ownerReturn(v,'GBP',null,v.perShare.mid*.8)?.expected).toBeCloseTo(1.1*(1/.8)**.1-1);
   const inputs=buyReturnInputs(v,'GBP');
   const row={st:'s' as const,t:'PPPPP',v:[v.perShare.mid,v.perShare.mid,v.perShare.mid] as [number,number,number],m:.15,buyReturnInputs:inputs};
   expect(publishedBuyPrice(row,[v.perShare.mid*.85,'2026-09-30']).b).toBe(true);
   expect(publishedBuyPrice(row,[v.perShare.mid*.9,'2026-09-30']).b).toBe(false);
   const low=value(years().map((y,i)=>({...y,navPerShare:100*1.04**i,dividendsPerShare:0}))).valuation!;
-  expect(publishedBuyPrice({...row,v:[low.perShare.mid,low.perShare.mid,low.perShare.mid],buyReturnInputs:buyReturnInputs(low,'GBP')},[low.perShare.mid*.85,'2026-09-30']).b).toBe(false);
+  expect(publishedBuyPrice({...row,v:[low.perShare.mid,low.perShare.mid,low.perShare.mid],buyReturnInputs:buyReturnInputs(low,'GBP')},[low.perShare.mid*.85,'2026-09-30']).b).toBe(true);
  });
  it('caps the NAV total-return CAGR at 12% before adjusting by price/NAV, preserving losses',()=>{
   expect(navHistory(years().map((y,i)=>({...y,navPerShare:100*1.2**i})))?.cagr).toBe(.12);
@@ -67,7 +67,7 @@ it('keeps reported NAV/share and quote-sensitive returns consistent after share 
  const v=value().valuation!;v.perShareTrading={currency:'GBX',fxRate:100,low:v.normalized*100,mid:v.normalized*100,high:v.normalized*100};
  const checked=applyShareCheck({valuation:v} as Analysis,{status:'verified',shares:v.shares*2,observations:[],reason:''}).valuation!;
  expect(checked.perShare.mid).toBe(v.perShare.mid);
- expect(ownerReturn(checked,'GBX',null,checked.perShareTrading!.mid*.8)?.expected).toBeCloseTo(.125);
+ expect(ownerReturn(checked,'GBX',null,checked.perShareTrading!.mid*.8)?.expected).toBeCloseTo(1.1*(1/.8)**.1-1);
 });
 
 

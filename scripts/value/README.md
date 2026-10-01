@@ -212,9 +212,10 @@ The separate 2% publication cap/price verification gate still applies.
 The published `b` flag requires all five quality tests, clear valuation checks,
 price at or below the margin-of-safety buy price, **and** expected return at least
 the stored required return. `publishedBuyPrice` is shared by publication, numeric
-history snapshots, and price refresh. Compact `buyReturnInputs` preserve cash per
-share in trading currency, capped growth and the required return so refreshed
-quotes recompute cash yield plus growth. Missing expected returns cannot pass.
+history snapshots, and price refresh. Compact `buyReturnInputs` preserve all annual and terminal cash flows, immediate
+excess cash, and the required return in trading currency. Refreshed quotes solve
+the IRR of those same flows. If immediate excess cash covers price, the hurdle
+is met but no finite annual IRR exists; missing models cannot pass.
 Dossiers and index cards use the same quote-based expected return calculation.
 
 

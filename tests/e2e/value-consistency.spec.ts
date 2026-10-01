@@ -22,3 +22,25 @@ test('Lululemon tile/drawer share ROIC, years, units and visible key numbers',as
  await tile.locator('.tile-open').click();const drawer=page.locator('dialog');await expect(drawer.locator('[data-series]')).toHaveAttribute('data-series',series!);await expect(drawer.locator('[data-series]')).toHaveAttribute('data-currency',currency!);expect((await drawer.locator('.drawer-numbers dd').allTextContents()).slice(0,3)).toEqual(values);
  await page.keyboard.press('Escape');await expect(page.locator('[data-financial=netCash] [data-series]')).toBeVisible();
 });
+
+test('return, price verdict and quality-rule text agree on the reviewed pages',async({page})=>{
+ for(const id of ['googl.us','ko.us','aapl.us','lulu.us','wkl.as','acn.us']){
+  await page.goto('/'+id);await expect(page.locator('.reference-metrics')).toContainText("a year at today's price (needs 10.0%)");
+  const math=page.locator('.valuation-math');await expect(math).toContainText('Cash-flow inputs');await expect(math).not.toContainText('cash +');
+  const sentence=await page.getByTestId('tile-moat').locator('.tile-sentence').innerText();expect(sentence).toContain('ROIC ex acquisitions median');expect(sentence).toContain('one bad year allowed');
+  await page.getByRole('button',{name:'Open Lasting advantage evidence'}).click();await expect(page.locator('.panel-answer')).toHaveText(sentence);await expect(page.locator('.applied-rules')).toContainText('Gross-margin drop');
+  await page.keyboard.press('Escape');
+ }
+ await page.goto('/ko.us');await expect(page.locator('.business-lines')).not.toContainText('Has paid dividends');
+});
+
+test('cash-covered prices explain why no finite annual IRR exists',async({page})=>{
+ await page.goto('/apo.us');await expect(page.locator('.reference-metrics')).toContainText('Excess cash covers price · no finite IRR');
+ await expect(page.locator('.valuation-math')).toContainText('The return hurdle is met.');
+ await page.getByRole('button',{name:'Open valuation'}).click();await expect(page.locator('.drawer-numbers')).toContainText('Cash covers price');await expect(page.locator('dialog')).toContainText('no finite annual IRR');
+});
+
+test('method explains return using the valuation cash flows',async({page})=>{
+ await page.goto('/');await page.getByRole('button',{name:'Method',exact:true}).click();
+ await expect(page.locator('dialog')).toContainText('discounts the same future cash flows');await expect(page.locator('dialog')).not.toContainText('cash yield plus capped growth');
+});

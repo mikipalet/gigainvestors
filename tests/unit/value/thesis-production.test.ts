@@ -27,7 +27,7 @@ describe('controller audit production recordings',()=>{
   const r=records.find(r=>r.id==='RMV.LSE')!;
   const a=JSON.parse(readFileSync('tests/fixtures/value/store/dossiers/027.json','utf8'))['KO.US'];
   a.id=r.id;a.asOf=r.result.asOf;a.company={...a.company,id:a.id,country:'GB',currency:'GBP',marketCapUsd:null};
-  a.valuation={...a.valuation,currency:'GBP',normalized:1000,shares:100,growth:0,discountRate:.1,perShare:{low:80,mid:100,high:120},perShareTrading:undefined,assumptions:[]};
+  a.valuation={...a.valuation,currency:'GBP',normalized:1000,shares:100,netCash:0,terminalGrowth:0,growth:0,discountRate:.1,perShare:{low:80,mid:100,high:120},perShareTrading:undefined,assumptions:[]};
   const result={...r.result,answers:r.after} as unknown as ThesisResult;
   const changed=applyThesis(a,result);
   expect(changed.valuation).toBe(a.valuation);expect(changed.tests).toBe(a.tests);

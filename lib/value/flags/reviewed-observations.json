@@ -73,6 +73,30 @@
         "filed": "2026-03-11",
         "section": "Consolidated balance sheet · EUR millions"
       }
+    },
+    {
+      "metric": "total-assets",
+      "value": 9584000000,
+      "fy": 2025,
+      "currency": "EUR",
+      "evidence": {
+        "url": "https://assets.contenthub.wolterskluwer.com/api/public/content/3210406-wolters-kluwer-2025-annual-report-pdf-8bb01b4e47?v=ddef685b",
+        "filed": "2026-03-11",
+        "section": "Consolidated balance sheet; 2025 / 2024; EUR million",
+        "quote": "03 82 Deferred tax liabilities Note 22 328 324 Cash and cash equivalents Note 26/28 932 954 Employee beneﬁts Note 30 62 67 2,633 2,657 Provisions Note 31 5 5 Non-current deferred income Note 24 140 110 4,728 4,169 2,054 Total current assets Total assets 9,584 9,498 Total non-current liabilities Current liabilities Deferred income Note 24 "
+      }
+    },
+    {
+      "metric": "total-assets",
+      "value": 9498000000,
+      "fy": 2024,
+      "currency": "EUR",
+      "evidence": {
+        "url": "https://assets.contenthub.wolterskluwer.com/api/public/content/3210406-wolters-kluwer-2025-annual-report-pdf-8bb01b4e47?v=ddef685b",
+        "filed": "2026-03-11",
+        "section": "Consolidated balance sheet; 2025 / 2024; EUR million",
+        "quote": "03 82 Deferred tax liabilities Note 22 328 324 Cash and cash equivalents Note 26/28 932 954 Employee beneﬁts Note 30 62 67 2,633 2,657 Provisions Note 31 5 5 Non-current deferred income Note 24 140 110 4,728 4,169 2,054 Total current assets Total assets 9,584 9,498 Total non-current liabilities Current liabilities Deferred income Note 24 "
+      }
     }
   ],
   "CBG.LSE": [

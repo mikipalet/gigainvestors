@@ -6,13 +6,14 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { expect,it } from 'vitest';
 
-const valuation={method:'owner_earnings',currency:'USD',normalized:86,shares:10,growth:.039,netCash:0,discountRate:.1,bondYield:.052} as Valuation;
-it('adds the valuation growth assumption to cash yield without using historical yield or terminal growth', () => {
+const valuation={method:'owner_earnings',currency:'USD',normalized:86,shares:10,growth:.039,terminalGrowth:.03,netCash:0,discountRate:.1,bondYield:.052} as Valuation;
+it('solves the valuation cash flows with fading growth rather than adding growth to yield', () => {
  const result=ownerReturn({...valuation,equityBondYield:.5,terminalGrowth:.03},'USD',1000,100);
- expect(result).toMatchObject({yield:.086,growth:.039,expected:.125});
+ expect(result).toMatchObject({yield:.086,growth:.039});
  const capped=ownerReturn({...valuation,growth:.08},'USD',1000,100)!;
  expect(capped.growth).toBe(.08);
- expect(capped.expected).toBeCloseTo(.166);
+ expect(capped.expected).toBeLessThan(.166);
+ expect(result!.expected).toBeCloseTo(.12288549285229078,12);
 });
 
 it('uses the same return sentence in dossiers and buy cards', () => {
@@ -21,12 +22,12 @@ it('uses the same return sentence in dossiers and buy cards', () => {
  dossier.company.currency='USD';
  dossier.company.marketCapUsd=1000;
  const html=renderToStaticMarkup(createElement(DossierContent,{dossier,quote:[100,"2026-09-30"]}));
- expect(html).toContain('About 12.5% a year expected (8.6% cash + 3.9% growth) vs required return 10.0% a year (10% floor; US 10-year bond 5.2% + 4 points)');
+ expect(html).toContain("About 12.3% a year at today&#x27;s price (needs 10.0%)");
 });
 
-it('rounds expected return and each component independently to one decimal', () => {
+it('rounds the solved IRR once without presenting an additive shortcut', () => {
  const owner=ownerReturn({...valuation,normalized:85.79418,growth:.06951090},'USD',1000,100)!;
- expect(expectedReturnCopy(owner,valuation,'US')).toBe("About 15.53% a year expected (8.58% cash + 6.95% growth) vs required return 10.0% a year (10% floor; US 10-year bond 5.2% + 4 points)");
+ expect(expectedReturnCopy(owner,valuation,'US')).toBe(`About ${(owner.expected*100).toFixed(1)}% a year at today's price (needs 10.0%)`);
 });
 
 it('shows the actual required return above the floor',()=>{
@@ -43,6 +44,6 @@ it('plots actual operating margins over available fiscal years, including losses
 });
 it('caps volatile margin copy and explains the loss years',()=>{
  const metric=tileMetric(volatileMargins,'operating');
- expect(tileSentence(volatileMargins,metric,'operating')).toBe('Margin variation >100%.');
+ expect(tileSentence(volatileMargins,metric,'operating')).toContain('Margin variation 9.36 > 0.35');
  expect(tileReason(volatileMargins)).toBe('Margins swing wildly, including losses.');
 });

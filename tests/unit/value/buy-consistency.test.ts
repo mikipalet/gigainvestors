@@ -14,7 +14,7 @@ function company(id: string, requiredMos = .25): Analysis {
   const a = structuredClone(base);
   a.id = id; a.company = { ...a.company, id, country: 'US', currency: 'USD', marketCapUsd: null };
   a.requiredMos = requiredMos;
-  a.valuation = { ...a.valuation!, currency: 'USD', normalized: 1000, shares: 100, growth: 0, discountRate: .1, perShare: { low: 80, mid: 100, high: 120 }, perShareTrading: undefined, assumptions: [] };
+  a.valuation = { ...a.valuation!, currency: 'USD', normalized: 1000, shares: 100, netCash: 0, terminalGrowth: 0, growth: 0, discountRate: .1, perShare: { low: 80, mid: 100, high: 120 }, perShareTrading: undefined, assumptions: [] };
   return a;
 }
 function snapshot() {
@@ -89,19 +89,20 @@ it('holds a newly implausible quote for review during a price refresh', async ()
   expect(publishedBuyPrice(row, [10, '2026-09-30']).b).toBe(false);
 });
 
-it('requires the return hurdle as well as the buy price across publication and refresh', async () => {
+it('uses the same cash flows for the return hurdle and buy price across publication and refresh', async () => {
   const { publishedBuyPrice } = await import('@/lib/value/buy-price');
   const a = company('TGHN.XETRA');
   a.company.currency = 'EUR';
   a.valuation = { ...a.valuation!, currency: 'EUR', shares: 100, normalized: 2622,
-    growth: 0, discountRate: .1, perShare: {low:350,mid:438.4448,high:500} };
+    growth: 0, discountRate: .1, netCash:17624.48, perShare: {low:350,mid:438.4448,high:500} };
   a.requiredMos = .35;
   const files = buildOutput({analyses:[a],prices:{[a.id]:[276,'2026-09-29']},holdersByTicker:{},investorNames:{},fx:{EUR:1.17}}).files;
   const row = (files['index/default.json'] as IndexRow[])[0];
-  expect(row.b).toBe(false); // 9.5% < 10%, despite 276 <= 284.98912.
-  expect((files['meta.json'] as StoreMeta).story?.atBuy).toBe(0);
-  expect(publishedBuyPrice(row,[262.2,'2026-09-30']).b).toBe(true); // exact 10% boundary
-  expect(publishedBuyPrice(row,[280,'2026-09-30']).b).toBe(false);
+  expect(row.b).toBe(true); // The old 9.5% shortcut omitted excess cash; IRR clears 10%.
+  expect((files['meta.json'] as StoreMeta).story?.atBuy).toBe(1);
+  expect(publishedBuyPrice(row,[262.2,'2026-09-30']).b).toBe(true); // Surplus cash is included in the same cash flows
+  expect(publishedBuyPrice(row,[280,'2026-09-30']).b).toBe(true);
+  expect(publishedBuyPrice(row,[300,'2026-09-30']).b).toBe(false);
 });
 
 it('fails closed when expected return is missing or nonfinite', async () => {

@@ -3,28 +3,39 @@ import {validEvidence} from './trust';
 const pct=(v:number)=>`${Math.round(v*100)}%`;
 const money=(v:number,c:string)=>`${c} ${(v/(Math.abs(v)>=1e9?1e9:1e6)).toFixed(1).replace(/\.0$/,'')}${Math.abs(v)>=1e9?'bn':'m'}`;
 /** Deliberately consumes evidenced observations, not vendor estimates or inferred zeroes. */
-export function computeFlags(input:Observation[]):BusinessFlag[]{
+export function computeFlags(input:Observation[], ownerEarnings?:{series:import('../types').Series;currency:string}):BusinessFlag[]{
  const rows=input.filter(o=>Number.isFinite(o.value)&&validEvidence(o.evidence));
  const flags:BusinessFlag[]=[];
  const latest=Math.max(...rows.map(o=>o.fy));
  const get=(metric:string,fy=latest)=>rows.find(o=>o.metric===metric&&o.fy===fy);
  const same=(...o:Array<Observation|undefined>):boolean=>o.every(Boolean)&&new Set(o.map(v=>v!.currency)).size===1;
- function add(kind:string,theme:Theme,tone:'red'|'green',severity:number,label:string,why:string,question:string,observations:Observation[],series:BusinessFlag['series'],unit:BusinessFlag['unit']){
-  flags.push({id:kind,kind,theme,tone,severity,label,why,question,evidence:[...new Map(observations.map(o=>[o.evidence.url+o.evidence.quote,o.evidence])).values()],series,unit,currency:observations[0].currency,basis:'computed'});
+ function add(kind:string,theme:Theme,tone:'red'|'green'|'neutral',severity:number,label:string,why:string,question:string,observations:Observation[],series:BusinessFlag['series'],unit:BusinessFlag['unit']){
+  flags.push({ruleVersion:2,id:kind,kind,theme,tone,severity,label,why,question,evidence:[...new Map(observations.map(o=>[o.evidence.url+o.evidence.quote,o.evidence])).values()],series,unit,currency:observations[0].currency,basis:'computed'});
  }
  function ratios(a:string,b:string){return [...new Set(rows.map(o=>o.fy))].sort().flatMap(fy=>{const x=get(a,fy),y=get(b,fy);return same(x,y)&&y!.value>0?[[fy,x!.value/y!.value] as [number,number]]:[];});}
  const cap=get('capex'),da=get('depreciation')??get('da');
  if(same(cap,da)&&cap!.value>=0&&da!.value>0){
-  const ratio=cap!.value/da!.value,series=ratios('capex',da!.metric),previous=series.find(([fy])=>fy===latest-1)?.[1];
-  if(ratio>=1.5)add('capital-intensity','Capital cycle','red',ratio>=3?85:65,`Capex ${ratio.toFixed(1)}× ${da!.metric==='da'?'D&A':'depreciation'}${previous!=null&&ratio>previous*1.1?', rising':''}`,'Investment is consuming more cash than the accounting charge; growth spending may not earn its cost.','What return will the next dollar of capital spending earn?',rows.filter(o=>['capex',da!.metric].includes(o.metric)),series,'ratio');
+  const ratio=cap!.value/da!.value,series=ratios('capex',da!.metric);
+  const window=[latest-2,latest-1,latest].map(fy=>series.find(p=>p[0]===fy)?.[1]);
+  const rising=window.every(v=>v!=null)&&window[0]!<window[1]!&&window[1]!<window[2]!;
+  const oldCap=get('capex',latest-2),oldOe=get('owner-earnings',latest-2),oe=get('owner-earnings');
+  const oeNow=oe?.currency===cap!.currency?oe.value:ownerEarnings?.currency===cap!.currency?ownerEarnings.series.find(p=>p[0]===latest)?.[1]:null;
+  const oeThen=oldOe?.currency===cap!.currency?oldOe.value:ownerEarnings?.currency===cap!.currency?ownerEarnings.series.find(p=>p[0]===latest-2)?.[1]:null;
+  const comparable=same(cap,oldCap)&&oldCap!.value>0&&oeThen!=null&&oeThen>0&&oeNow!=null;
+  const capGrowth=comparable?cap!.value/oldCap!.value-1:null,oeGrowth=comparable?oeNow!/oeThen!-1:null;
+  const lagging=capGrowth!==null&&capGrowth>0&&oeGrowth!<capGrowth;
+  const red=ratio>2&&rising&&lagging;
+  if(ratio>1)add('capital-intensity','Capital cycle',red?'red':'neutral',red?85:20,`Capex ${ratio.toFixed(1)}× ${da!.metric==='da'?'D&A':'depreciation'}${rising?', rising over 3 years':''}`,
+   `Red only above 2×, rising in three consecutive years, with owner earnings growing slower than spending. ${comparable?`Over those years: capex ${pct(capGrowth!)}, owner earnings ${pct(oeGrowth!)}.`:'A comparable three-year owner-earnings growth comparison is not established.'}${red?'':' Context only; growth spending can earn its cost.'}`,
+   'What return will the next dollar of capital spending earn?',rows.filter(o=>['capex',da!.metric,'owner-earnings'].includes(o.metric)),series,'ratio');
  }
  const cash=get('cash'),debt=get('debt');
  if(same(cash,debt)&&cash!.value>debt!.value&&debt!.value>=0){
   const series=rows.filter(o=>o.metric==='cash').flatMap(o=>{const d=get('debt',o.fy);return same(o,d)?[[o.fy,o.value-d!.value] as [number,number]]:[];}).sort((a,b)=>a[0]-b[0]);
   add('net-cash','Balance sheet','green',55,`Net cash ${money(cash!.value-debt!.value,cash!.currency)}`,'Cash and liquid investments exceed disclosed debt; this gives the business financial room.','How much of this cash is truly surplus to running the business?',rows.filter(o=>['cash','debt'].includes(o.metric)),series,'money');
  }
- const goodwill=get('goodwill'),equity=get('equity');
- if(same(goodwill,equity)&&goodwill!.value>0&&(equity!.value<=0||goodwill!.value/equity!.value>.5))add('goodwill-equity','Accounting choices','red',70,equity!.value>0?`Goodwill ${pct(goodwill!.value/equity!.value)} of equity`:`Goodwill ${money(goodwill!.value,goodwill!.currency)}, equity ≤ 0`,'Acquisition premiums make up a large part of the balance sheet and may be impaired.','Have the acquisitions earned their purchase prices?',[goodwill!,equity!],ratios('goodwill','equity'),'ratio');
+ const goodwill=get('goodwill'),assets=get('total-assets');
+ if(same(goodwill,assets)&&goodwill!.value>0&&assets!.value>0&&goodwill!.value/assets!.value>.5)add('goodwill-assets','Accounting choices','red',70,`Goodwill ${pct(goodwill!.value/assets!.value)} of total assets`,'Acquisition premiums exceed half of total assets and may be impaired.','Have the acquisitions earned their purchase prices?',[goodwill!,assets!],ratios('goodwill','total-assets'),'ratio');
  for(const metric of ['receivables','inventory','shares']){
   const now=get(metric),prev=get(metric,latest-1),sales=get('revenue'),oldSales=get('revenue',latest-1);
   if(!same(now,prev)||prev!.value<=0)continue;

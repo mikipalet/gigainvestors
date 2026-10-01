@@ -158,3 +158,5 @@
 .business-depth[data-columns="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
 .value-page .value-panel:has(.business-depth[data-columns="1"]){width:min(900px,100vw)}
 @media(max-width:767px){.business-depth[data-columns]{display:block}}
+
+.flag-dot.neutral{background:var(--viz-muted)}

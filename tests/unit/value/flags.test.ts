@@ -8,7 +8,7 @@ const obs=(metric:string,value:number,fy=2025):Observation=>({metric,value,fy,cu
 describe('evidence-backed business flags',()=>{
  it('computes capex intensity and rising trend from consecutive comparable periods',()=>{
   const flags=computeFlags([obs('capex',240),obs('depreciation',100),obs('capex',150,2024),obs('depreciation',100,2024)]);
-  expect(flags.find(f=>f.kind==='capital-intensity')).toMatchObject({tone:'red',label:'Capex 2.4× depreciation, rising',series:[[2024,1.5],[2025,2.4]]});
+  expect(flags.find(f=>f.kind==='capital-intensity')).toMatchObject({tone:'neutral',label:'Capex 2.4× depreciation',series:[[2024,1.5],[2025,2.4]]});
  });
  it('refuses zero denominators and evidence-free inputs',()=>{
   expect(computeFlags([obs('capex',240),obs('depreciation',0)])).toEqual([]);

@@ -1,3 +1,4 @@
+import {modelReturn} from '../../lib/value/return-model';
 /** Audit a local index-universe publication and write its review report. No network. */
 import assert from 'node:assert/strict';
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
@@ -93,7 +94,7 @@ const lines=[
 for(const r of rows.filter(r=>r.b).sort((a,b)=>a.id.localeCompare(b.id))){
  assert.equal(publishedBuyPrice(r,prices[r.id]).b,true);
  const q=prices[r.id], inputs=r.buyReturnInputs;
- const expected=inputs&&q?inputs.cashPerShare/q[0]+inputs.growth:null;
+ const expected=inputs?.model&&q?modelReturn(inputs.model,q[0]):null;
  lines.push(`| ${r.id} / ${esc(r.n)} | ${r.w??'—'} | ${membership.memberships[r.id].join(' · ')} | ${r.cur} | ${num(q?.[0])} (${q?.[1]??'—'}${q?.[2]?' · seed':''}) | ${r.v?.map(num).join(' / ')} | ${num(r.v&&r.m!=null?r.v[1]*(1-r.m):null)} | ${pct(r.m)} | ${pct(expected)} / ${pct(inputs?.requiredReturn)} | ${r.historyYears??'—'} |`);
 }
 lines.push('', '## Supplemental verified identities', '', ...membership.supplementalCompanies.map(c=>`- ${c.id} — ${esc(c.name)}; ${membership.memberships[c.id].join(' · ')}. Cached source: raw/eodhd/universe/symbols-${c.exchange}.json.`));

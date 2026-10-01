@@ -7,7 +7,7 @@ import {primaryTileMetric} from '@/lib/value/tile-metric';
 import {perShareSeries} from '@/lib/value/history';
 import {emptyYear} from '@/lib/value/completeness/second-sources';
 import type {Dossier,Fundamentals,TestOutcome} from '@/lib/value/types';
-const test:TestOutcome={key:'moat',numeric:'pass',result:'pass',metrics:{roicMedian:.47,totalRoicMedian:.365},series:{roic:[[2023,.45],[2024,.47],[2025,.33]],totalRoic:[[2023,.35],[2024,.38],[2025,.365]]},reasons:[],jev:[]};
+const test:TestOutcome={key:'moat',numeric:'pass',result:'pass',metrics:{roicMedian:.47,roicSecondLowest:.33,grossMarginDrop:0,totalRoicMedian:.365},series:{roic:[[2023,.45],[2024,.47],[2025,.33]],totalRoic:[[2023,.35],[2024,.38],[2025,.365]]},reasons:[],jev:[]};
 const dossier={company:{kind:'operating',currency:'USD'},report:{},series:{},tests:{understandable:{series:{}},moat:test}} as unknown as Dossier;
 describe('cross-surface regression',()=>{
  it('renders the same including-acquisitions ROIC in the tile and drawer',()=>{
@@ -26,7 +26,7 @@ describe('cross-surface regression',()=>{
 
 import {auditTestSurfaces,type SurfaceSnapshot} from '@/lib/value/surface-audit';
 describe('audit detects drift',()=>{
- const snapshot:SurfaceSnapshot={text:'',numbers:[],charts:[{label:'ROIC including acquisitions',series:test.series.totalRoic,format:'pct',currency:'USD'}],stats:[['Median','36.5%'],['Worst','35.0%'],['Latest','36.5%']],table:[],windows:[],priceCharts:[]};
+ const snapshot:SurfaceSnapshot={text:'ROIC ex acquisitions median 47.0% ≥ 15.0%; Second-lowest return (one bad year allowed) 33.0% ≥ 10.0%; 3/3 applied checks met.',numbers:[],charts:[{label:'ROIC including acquisitions',series:test.series.totalRoic,format:'pct',currency:'USD'}],stats:[['Median','36.5%'],['Worst','35.0%'],['Latest','36.5%']],table:[],windows:[],priceCharts:[]};
  const drawer={...snapshot,stats:[...snapshot.stats,['Passing bar','≥ 15.0%'],['Years','3']] as Array<[string,string]>,table:[['2023','35.0%','45.0%','✓'],['2024','38.0%','47.0%','✓'],['2025','36.5%','33.0%','✓']]};
  it('accepts matching captured surfaces',()=>expect(()=>auditTestSurfaces(dossier,test,snapshot,drawer)).not.toThrow());
  it.each(['series','currency','format','rounding','year','threshold','count'])('rejects %s drift',field=>{
@@ -69,6 +69,6 @@ it('uses the filing likelihood chart in a drawer when no financial series exists
  expect(html).toContain('data-signals=');expect(html).toContain('10%');expect(html).not.toContain('class="window-chart"');
 });
 it('calls a negative per-share change a decline',()=>{
- const t={key:'management',metrics:{perShareValueGrowth:-.08},series:{},reasons:[],jev:[],result:'pass',numeric:'pass'} as TestOutcome;
- expect(tileSentence(t,primaryTileMetric(t,'operating'),'operating')).toBe('Per-share value fell 8% a year.');
+ const t={key:'management',metrics:{perShareValueGrowth:-.08,perShareStart:10,perShareEnd:9.2,perShareValueChange:-.8},series:{},reasons:[],jev:[],result:'pass',numeric:'pass'} as TestOutcome;
+ expect(tileSentence(t,primaryTileMetric(t,'operating'),'operating')).toContain('Per-share value 10.00 → 9.20; must rise and end positive');
 });

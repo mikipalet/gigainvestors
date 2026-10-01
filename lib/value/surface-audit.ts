@@ -5,7 +5,8 @@ import {primaryTileMetric} from './tile-metric';
 import {yearTable,retainedWindow} from './drawer-data';
 import {seriesSummary} from './density';
 import {comparableValuation} from './site-valuation';
-import {ownerReturn} from './owner-return';
+import {ownerReturn,returnModelCopy,cashCoveredReturnCopy} from './owner-return';
+import {ruleReading} from './rule-reading';
 import type {Dossier,IndexRow,Series,PriceMap,TestOutcome} from './types';
 type ChartSnapshot={label:string;series:Series;format:string;currency:string};
 export type SurfaceSnapshot={signals?:unknown[];text:string;numbers:string[];charts:ChartSnapshot[];stats:Array<[string,string]>;table:string[][];windows:unknown[];priceCharts:unknown[]};
@@ -19,6 +20,10 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
  const currency=d.reportingCurrency??d.valuation?.currency??d.company.currency;
  const m=primaryTileMetric(t,d.company.kind,d.tests.understandable.series.netIncome??d.series.netIncome);
  const where=`${d.id} ${t.key}`;
+ const reading=ruleReading(t,d.company.kind);
+ same(reading.derived,t.result,`${where} verdict differs from applied rules`);
+ contains(tile,reading.sentence,`${where} tile rule sentence`);
+ contains(drawer,reading.sentence,`${where} drawer rule sentence`);
  const window=retainedWindow(t);
  same(tile.signals??[],drawer.signals??[],`${where} filing likelihood chart mismatch`);
  if(window){same(tile.windows,drawer.windows,`${where} cumulative chart mismatch`);assert.equal(tile.windows.length,1,`${where} missing cumulative chart`);same(tile.stats.slice(0,3),drawer.stats.slice(0,3),`${where} cumulative key numbers mismatch`);}
@@ -62,8 +67,8 @@ export function auditPriceSurfaces(d:Dossier,row:IndexRow|undefined,quote:PriceM
  for(const value of [v.perShare.low,v.perShare.mid,v.perShare.high])contains(price,sharePrice(value,currency),`${d.id} value range / midpoint`);
  contains(price,formatMetric({value:d.requiredMos??.25,format:'pct'}),`${d.id} safety margin`);
  contains(price,formatMetric({value:1-quote[0]/v.perShare.mid,format:'pct'}),`${d.id} discount`);
- if(owner)for(const value of [owner.yield,Math.abs(owner.growth),owner.expected])contains(price,formatMetric({value,format:'pct'}),`${d.id} return inputs`);
- same(drawer.stats.slice(0,5),[['Share price',sharePrice(quote[0],currency)],['Estimated value',sharePrice(v.perShare.mid,currency)],['Buy price',sharePrice(buy,currency)],['Expected / yr',owner?`${(owner.expected*100).toFixed(1)}%`:'—'],['Required',`${(d.valuation!.discountRate*100).toFixed(1)}%`]],`${d.id} valuation key numbers`);
+ if(owner){contains(price,formatMetric({value:owner.expected,format:'pct'}),`${d.id} IRR`);for(const surface of [price,drawer])contains(surface,returnModelCopy(d.valuation!,currency),`${d.id} shared IRR inputs`);}
+ same(drawer.stats.slice(0,5),[['Share price',sharePrice(quote[0],currency)],['Estimated value',sharePrice(v.perShare.mid,currency)],['Buy price',sharePrice(buy,currency)],['Expected / yr',owner?`${(owner.expected*100).toFixed(1)}%`:cashCoveredReturnCopy(d.valuation,currency,quote[0])?'Cash covers price':'—'],['Required',`${(d.valuation!.discountRate*100).toFixed(1)}%`]],`${d.id} valuation key numbers`);
  const years=(d.valueHistory??[]).map(([fy,,mid])=>{const p=(d.priceHistory??[]).filter(p=>Number(p[0].slice(0,4))===fy).at(-1)?.[1];const buy=mid*(1-(d.requiredMos??.25));return [String(fy),sharePrice(p??null,currency),sharePrice(mid,currency),sharePrice(buy,currency),p==null?'·':p<=buy?'✓':'×'];});
  same(drawer.table,years,`${d.id} valuation annual table`);
  for(const r of d.valuation!.bridge.slice(0,5))contains(drawer,formatMetric({value:r.value,format:/shares/i.test(r.label)?'count':/return|CAGR/i.test(r.label)?'pct':/factor|price to book/i.test(r.label)?'x':'money',currency:d.valuation!.currency}),`${d.id} valuation input ${r.label}`);

@@ -1,3 +1,4 @@
+import {valuationReturnModel,modelReturn,cashCoversPrice} from './return-model';
 import { T } from './config';
 import { sameCurrency } from './currency';
 import type { Dossier, Series, Valuation } from './types';
@@ -17,19 +18,13 @@ function reportingCapital(v: Valuation | null, trading: string, capUsd: number |
 export function ownerReturn(v: Valuation | null, trading: string, capUsd: number | null, price: number | null) {
  const capital=reportingCapital(v,trading,capUsd,price);
  if(!v||capital===null||!Number.isFinite(v.normalized)||!Number.isFinite(v.growth))return null;
- if (v.method === 'nav') {
-  if (!v.navReturn || !Number.isFinite(v.navReturn.cagr)) return null;
-  const cash = v.normalized * v.shares * v.navReturn.cagr;
-  return {cash,capital,currency:v.currency,yield:cash/capital,growth:0,expected:cash/capital};
- }
- const cash=v.method==='owner_earnings'?v.normalized:v.financialReturn?v.financialReturn.cashPerShare*v.shares:null;
- if(cash===null||!Number.isFinite(cash))return null;
- // The published growth is the valuation's capped stage-one assumption, not
- // historical equity-bond yield or terminal growth. This is a yield + growth
- // estimate, not the DCF's IRR (which also reflects net cash and growth fading).
- const cashYield=cash/capital;
- return {cash,capital,currency:v.currency,yield:cashYield,growth:v.growth,expected:cashYield+v.growth};
+ const model=valuationReturnModel(v);
+ const expected=model&&modelReturn(model,capital/v.shares);
+ if(expected===null||expected===undefined)return null;
+ const cash=v.method==='owner_earnings'?v.normalized:v.method==='book_value'?model!.terminalCash*v.shares:0;
+ return {cash,capital,currency:v.currency,yield:cash/capital,growth:v.growth,expected};
 }
+
 export function requiredReturnCopy(v: Valuation | null, country: string) {
  if (!v || !Number.isFinite(v.discountRate)) return '';
  if (v.method === 'nav') return 'required return 10.0% a year';
@@ -37,16 +32,10 @@ export function requiredReturnCopy(v: Valuation | null, country: string) {
  return v.bondYield === null || !Number.isFinite(v.bondYield) ? rate
   : `${rate} (${v.discountRate === T.valuation.minDiscount ? '10% floor; ' : ''}${country} 10-year bond ${(v.bondYield * 100).toFixed(1)}% + 4 points)`;
 }
-export function expectedReturnCopy(owner: NonNullable<ReturnType<typeof ownerReturn>>, valuation: Valuation | null, country: string) {
- if (valuation?.method === 'nav') return `About ${(owner.expected*100).toFixed(1)}% a year expected (NAV and dividend compounding adjusted for price / NAV) vs required return 10.0% a year`;
- // Keep the total rounded from the full calculation. Use extra precision when
- // rounding each component to one decimal would make their displayed sum differ.
- const digits=[1,2,3,4].find(d=>{
-  const scale=100*10**d;
-  return Math.round(owner.yield*scale)+Math.round(owner.growth*scale)===Math.round(owner.expected*scale);
- })??4;
- return `About ${(owner.expected*100).toFixed(digits)}% a year expected (${(owner.yield*100).toFixed(digits)}% cash ${owner.growth<0?'−':'+'} ${(Math.abs(owner.growth)*100).toFixed(digits)}% ${owner.growth<0?'annual decline':'growth'}) vs ${requiredReturnCopy(valuation, country)}`;
+export function expectedReturnCopy(owner: NonNullable<ReturnType<typeof ownerReturn>>, valuation: Valuation | null, _country: string) {
+ return `About ${(owner.expected*100).toFixed(1)}% a year at today's price (needs ${((valuation?.discountRate??.1)*100).toFixed(1)}%)`;
 }
+
 const observations=(series:Series=[])=>series.filter((p):p is [number,number]=>p[1]!==null&&Number.isFinite(p[1])).sort((a,b)=>a[0]-b[0]);
 export function referenceMetrics(d:Dossier, price:number|null) {
  const capital=reportingCapital(d.valuation,d.company.currency,d.company.marketCapUsd,price);
@@ -62,7 +51,26 @@ export function referenceMetrics(d:Dossier, price:number|null) {
 
 /** Quote-sensitive return inputs in listing currency; absent estimates cannot pass the hurdle. */
 export function buyReturnInputs(v: Valuation | null, trading: string) {
- const owner = ownerReturn(v, trading, null, 1);
- return owner && v && Number.isFinite(v.discountRate)
-  ? { cashPerShare: owner.yield, growth: owner.growth, requiredReturn: v.discountRate } : null;
+ if(!v)return null;
+ const fx=sameCurrency(v.currency,trading)?1:v.perShareTrading&&sameCurrency(v.perShareTrading.currency,trading)?v.perShareTrading.fxRate:null;
+ const model=valuationReturnModel(v);
+ if(!model||!fx||fx<=0)return null;
+ return {cashPerShare:model.terminalCash*fx,growth:v.growth,requiredReturn:v.discountRate,
+  model:{...model,cashNow:model.cashNow*fx,annual:model.annual.map(c=>c*fx),terminalCash:model.terminalCash*fx}};
+}
+
+/** The exact model parameters, shared by the price card and valuation drawer. */
+export function returnModelCopy(v:Valuation,trading:string):string {
+ const inputs=buyReturnInputs(v,trading),model=inputs?.model;
+ if(!model)return '';
+ const money=(n:number)=>`${trading} ${n.toFixed(2)}`;
+ const pct=(n:number)=>`${(n*100).toFixed(1)}%`;
+ if(v.method==='nav')return `NAV ${money(v.normalized*(v.perShareTrading?.fxRate??1))}/share; ${pct(v.growth)} total return reinvested for 10 years → ${money(model.annual[9])}/share at year 10.`;
+ if(v.method==='book_value')return `Book ${money(v.normalized*(v.perShareTrading?.fxRate??1))}/share; ROE ${pct(v.financialReturn!.roe)}; first payout ${money(model.terminalCash)}/share, growing ${pct(v.growth)} perpetually (4× book payout cap applied).`;
+ return `Owner cash ${money(v.normalized/v.shares*(v.perShareTrading?.fxRate??1))}/share; ${pct(v.growth)} growth ${v.tier==='compounder'?'fades over 10 years':'for 5 years, then fades'} to ${pct(v.terminalGrowth)}; excess cash ${money(model.cashNow)}/share today.`;
+}
+
+export function cashCoveredReturnCopy(v:Valuation|null,trading:string,price:number|null):string{
+ const model=buyReturnInputs(v,trading)?.model;
+ return model&&price!==null&&cashCoversPrice(model,price)?"Modelled excess cash covers today’s price; no finite annual IRR. The return hurdle is met.":"";
 }

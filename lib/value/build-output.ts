@@ -1,3 +1,5 @@
+import {consistentValuation} from './return-model';
+import {valuationMargin} from './valuation';
 import { METHOD_VERSION } from './method-version';
 import {indiaDepositarySymbols} from './india/symbols';
 import { isDecided, shortHistory, missingInvestmentNav } from './publication-eligibility';
@@ -62,7 +64,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const countries: Record<string, IndexRow[]> = {};
   const shards: Record<string, Record<string, Dossier>> = {};
   const tags: Record<string, string> = {};
-  const sorted = analyses.map(withAnalysisHistory).sort((a, b) => (b.company.marketCapUsd ?? -Infinity) - (a.company.marketCapUsd ?? -Infinity) || a.id.localeCompare(b.id));
+  const sorted = analyses.map(a=>({...a,valuation:consistentValuation(a.valuation)})).map(withAnalysisHistory).sort((a, b) => (b.company.marketCapUsd ?? -Infinity) - (a.company.marketCapUsd ?? -Infinity) || a.id.localeCompare(b.id));
   const rows: IndexRow[] = [];
   const westernFunnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   const funnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
@@ -91,7 +93,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       if (applies) { g.add(question.tag); tags[question.tag] = question.id === "revenue_model" ? "Recurring revenue" : question.label; }
     }
     const valuation = tradingValuation(analysis, usdRate);
-    const requiredMos = analysis.requiredMos ?? T.price.requiredMos.stable;
+    const requiredMos = analysis.valuation?.method === 'nav' ? valuationMargin(analysis.valuation,'stable') : analysis.requiredMos ?? T.price.requiredMos.stable;
     const t = analysis.status !== "scored" ? "UUUUU" : outcomes.map(test => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join("");
     const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:analysis.valuation?.shares, usdRate:usdRate(company.currency),corroborated:analysis.valuation?.shareSources===2});
     const returnInputs = buyReturnInputs(analysis.valuation, company.currency);

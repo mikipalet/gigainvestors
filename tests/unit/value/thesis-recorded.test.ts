@@ -51,7 +51,7 @@ it('preserves the veto through index, browser payload, dossier and funnel public
  const {DossierContent}=await import('@/components/value/DossierContent');
  const a=JSON.parse(readFileSync('tests/fixtures/value/store/dossiers/027.json','utf8'))['KO.US'];
  a.asOf='2025-09-30T09:06:22.368Z';a.id='CBG.LSE';a.company={...a.company,id:a.id,country:'GB',currency:'GBP',marketCapUsd:null};
- a.valuation={...a.valuation,currency:'GBP',normalized:1000,shares:100,growth:0,discountRate:.1,perShare:{low:80,mid:100,high:120},perShareTrading:undefined,assumptions:[]};
+ a.valuation={...a.valuation,currency:'GBP',normalized:1000,shares:100,netCash:0,terminalGrowth:0,growth:0,discountRate:.1,perShare:{low:80,mid:100,high:120},perShareTrading:undefined,assumptions:[]};
  const result:any={...recorded.find(r=>r.id==='CBG-2025'),id:a.id,asOf:a.asOf.slice(0,10),version:'5',market:{currency:'GBP',marketValue:800000000,ownerEarnings:100000000,asOf:'2025-09-30',basis:'test market value'}};
  const changed=applyThesis(a,result);
  const args={prices:{[a.id]:[60,'2025-09-30'] as [number,string]},holdersByTicker:{},investorNames:{},fx:{GBP:1.3}};

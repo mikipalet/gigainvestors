@@ -8,7 +8,7 @@ import { METHOD_VERSION, METHOD_CHANGES } from '@/lib/value/method-version';
 import type { Company, IndexRow } from '@/lib/value/types';
 
 const company = (id: string, western = true) => ({id,name:id,currency:'USD',listings:[id],exchange:western?'US':'SHG',country:western?'US':'CN'} as Company);
-const row = (id: string) => ({id,n:id,b:true,cur:'USD',v:[80,100,120],m:.25,buyReturnInputs:{cashPerShare:10,growth:.03,requiredReturn:.1}} as IndexRow);
+const row = (id: string) => ({id,n:id,b:true,cur:'USD',v:[80,100,120],m:.25,buyReturnInputs:{cashPerShare:10,growth:.03,requiredReturn:.1,model:{cashNow:0,annual:[],terminalCash:7,terminalGrowth:.03}}} as unknown as IndexRow);
 function snapshot(date: string, prices: Record<string,number>, picks: string[], western = ['A.US']): ForwardSnapshot {
  return buildForwardSnapshot({date, universe:Object.keys(prices).map(id=>company(id,western.includes(id))), rows:picks.map(row), prices:Object.fromEntries(Object.entries(prices).map(([id,p])=>[id,[p,date]]))});
 }
@@ -17,12 +17,13 @@ afterEach(()=>dirs.splice(0).forEach(dir=>rmSync(dir,{recursive:true,force:true}
 
 describe('forward snapshot',()=>{
  it('starts at the live method and records picks, quotes and the complete benchmark',()=>{
-  expect(METHOD_VERSION).toBe('3.1.0');
-  expect(METHOD_CHANGES[0]).toMatchObject({version:'3.1.0',date:'2026-10-01'});
+  expect(METHOD_VERSION).toBe('3.2.0');
+  expect(METHOD_CHANGES[0]).toMatchObject({version:'3.2.0',date:'2026-10-01'});
   expect(METHOD_CHANGES.at(-1)).toMatchObject({version:'3.0.0',date:'2026-10-01'});
   const s=snapshot('2026-10-01',{'A.US':50,'B.SHG':100},['A.US']);
-  expect(s).toMatchObject({date:'2026-10-01',methodVersion:'3.1.0',picks:{all:['A.US'],western:['A.US']},universe:{all:['A.US','B.SHG'],western:['A.US']}});
-  expect(s.observations['A.US']).toMatchObject({price:50,priceDate:'2026-10-01',buyPrice:75,expectedReturn:.23,methodVersion:'3.1.0'});
+  expect(s).toMatchObject({date:'2026-10-01',methodVersion:'3.2.0',picks:{all:['A.US'],western:['A.US']},universe:{all:['A.US','B.SHG'],western:['A.US']}});
+  expect(s.observations['A.US']).toMatchObject({price:50,priceDate:'2026-10-01',buyPrice:75,methodVersion:'3.2.0'});
+  expect(s.observations['A.US'].expectedReturn).toBeCloseTo(.17,12);
  });
  it('writes once, accepts identical reordered content, and keeps the first record of a day when later content differs',()=>{
   const repo=mkdtempSync(path.join(tmpdir(),'value-forward-'));dirs.push(repo);

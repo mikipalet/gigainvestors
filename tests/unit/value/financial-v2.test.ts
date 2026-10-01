@@ -12,9 +12,10 @@ it.each(snapshots)('$id $date produces a finite financial return with the same p
  expect(v.method).toBe('book_value');
  const owner=ownerReturn(v,'USD',null,row.price)!;
  expect(Number.isFinite(owner.expected)).toBe(true);
- expect(owner.expected).toBeCloseTo(row.after.expectedReturn!,10);
- // On one tangible book, distributed earnings + retained growth = sustainable ROE.
- expect(ownerReturn(v,'USD',null,v.normalized)!.expected).toBeCloseTo(v.financialReturn!.roe,10);
+ const payout=Math.min(v.financialReturn!.cashPerShare,4*v.normalized*(v.discountRate-v.growth));
+ expect(owner.expected).toBeCloseTo(payout/row.price+v.growth,10);
+ // At fair value, the same (possibly capped) payouts earn the required return.
+ expect(ownerReturn(v,'USD',null,v.perShare.mid)!.expected).toBeCloseTo(v.discountRate,10);
  const p=publishedBuyPrice({st:'s',t:row.t5,v:[v.perShare.low,v.perShare.mid,v.perShare.high],m:.25,buyReturnInputs:buyReturnInputs(v,'USD')},[row.price,'2026-09-30']);
  expect(p.b).toBe(false); // Existing quality failures remain effective.
 });

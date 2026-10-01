@@ -2,7 +2,7 @@ import { expect, it } from 'vitest';
 import { ownerReturn, referenceMetrics } from '@/lib/value/owner-return';
 import { marketRegion, matchesMarket } from '@/lib/value/listing-details';
 import type { Dossier, Valuation } from '@/lib/value/types';
-const valuation={method:'owner_earnings',currency:'USD',normalized:10.2e9,shares:5e9,growth:.01,netCash:-20e9} as Valuation;
+const valuation={method:'owner_earnings',currency:'USD',normalized:10.2e9,shares:5e9,growth:.01,terminalGrowth:.03,discountRate:.1,netCash:-20e9} as Valuation;
 it('uses normalized cash over current capitalisation, never the historical equityBondYield',()=>{
  expect(ownerReturn(valuation,'USD',375e9,75)).toMatchObject({cash:10.2e9,capital:375e9,yield:10.2/375,growth:.01});
  const foreign={...valuation,currency:'EUR',perShareTrading:{currency:'USD',fxRate:2,low:1,mid:2,high:3}};

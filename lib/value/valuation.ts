@@ -1,3 +1,4 @@
+import {earningsPath,modelValue} from './return-model';
 import { valueInvestmentHolding } from './investment-nav';
 import { parentShare } from "./parent-share";
 import { T } from "./config";
@@ -8,13 +9,8 @@ import type { Kind, Valuation, Year, PriceHistory, Volatility } from "./types";
 
 export function presentValue({ oe, g, r, terminal, decadeFade = false }: { oe: number; g: number; r: number; terminal: number; decadeFade?: boolean }): number {
   if (r <= terminal) throw new RangeError("discount rate must exceed terminal growth");
-  let earnings = oe, pv = 0;
-  for (let t = 1; t <= 10; t++) {
-    const growth = decadeFade ? g + (terminal - g) * (t - 1) / 9 : t <= 5 ? g : g + (terminal - g) * (t - 5) / 5;
-    earnings *= 1 + growth;
-    pv += earnings / (1 + r) ** t;
-  }
-  return pv + earnings * (1 + terminal) / (r - terminal) / (1 + r) ** 10;
+  const annual=earningsPath(oe,g,terminal,decadeFade);
+  return modelValue({cashNow:0,annual,terminalCash:annual[9]*(1+terminal),terminalGrowth:terminal},r);
 }
 
 /** Winsorise ten annual log returns by replacing the smallest/largest with
@@ -31,7 +27,7 @@ export function compounderGrowth(years: Year[]): number | null {
 }
 
 export function valuationMargin(v: Valuation | null, volatility: Volatility): number {
-  if (v?.method === 'nav') return .15;
+  if (v?.method === 'nav') return v.perShare.mid <= v.normalized * (1 + 1e-12) ? .15 : 1 - .85 * v.normalized / v.perShare.mid;
   const base = v?.tier === 'compounder' ? T.valuation.compounderMos : T.price.requiredMos[volatility];
   return Math.max(base, v?.leverage === 'volatile' ? T.price.requiredMos.volatile : v?.leverage === 'moderate' ? T.price.requiredMos.moderate : 0);
 }
@@ -121,7 +117,8 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
     const growth = version === 2 ? decliningRevenue ? 0 : Math.min(T.valuation.finMaxGrowth, normalizedRoe * retention) : decliningRevenue ? 0 : clamp({ value: decadeCagr(ys.map(y => [y.fy, financialBvps(y)])) ?? 0, min: 0, max: T.valuation.finMaxGrowth });
     if (discountRate <= growth) return { valuation: null, reason: "required return does not exceed perpetual book-value growth" };
     const highRate = discountRate - Math.min(.01, (discountRate - growth) / 2);
-    const multiple = (r: number) => clamp({ value: (normalizedRoe - growth) / (r - growth), min: 0, max: 4 });
+    const payoutReturn = Math.min(normalizedRoe - growth, 4 * (discountRate - growth));
+    const multiple = (r: number) => version === 1 ? clamp({value:(normalizedRoe-growth)/(r-growth),min:0,max:4}) : Math.max(0, payoutReturn / (r - growth));
     if (multiple(discountRate) * book <= 0) return { valuation: null, reason: "justified price to book is zero" };
     return { reason: null, valuation: { ...common, ...(version === 2 ? {financialReturn:{roe:normalizedRoe,retention,payout:normalizedRoe > 0 ? 1-growth/normalizedRoe : 0,cashPerShare:book*(normalizedRoe-growth)}} : {}), method: "book_value", normalized: book, growth, netCash: 0,
       perShare: { low: multiple(discountRate + 0.01) * book, mid: multiple(discountRate) * book, high: multiple(highRate) * book },
@@ -129,7 +126,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
       bridge: [{ label: tangibleEquity(latest)! > 0 ? "tangible book value per share" : "reported book value per share", value: book },
         ...(Number.isFinite(normalizedRoe) ? [{ label: "normalized return on tangible equity", value: normalizedRoe }] : []),
         { label: "justified price to book", value: multiple(discountRate) }],
-      assumptions: [...assumptions, ...(version === 2 ? ['sustainable tangible ROE: ten-year median capped at 25%; at least five finite observations', 'growth = sustainable ROE × median dividend retention, capped at 6%; residual earnings distributable', 'expected return = distributable earnings / price + sustainable growth; retained earnings counted once'] : []), "returns use net income divided by tangible equity",
+      assumptions: [...assumptions, ...(version === 2 ? ['sustainable tangible ROE: ten-year median capped at 25%; at least five finite observations', 'growth = sustainable ROE × median dividend retention, capped at 6%; residual earnings distributable', 'expected return is the IRR of the same perpetual distributable earnings; the 4x book cap at the required rate is a fixed payout haircut'] : []), "returns use net income divided by tangible equity",
         tangibleEquity(latest)! > 0 ? "valuation uses tangible book value per share" : "nonpositive tangible equity: valuation uses reported book value per share",
         ...(!Number.isFinite(normalizedRoe) ? ["tangible equity is nonpositive: returns effectively unlimited; price to book capped at 4"] : []),
         "cash and debt are included in book value", "equity bond yield uses median net income"],

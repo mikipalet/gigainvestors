@@ -1,3 +1,7 @@
+import {ruleReading} from './rule-reading';
+import {ownerReturn,buyReturnInputs} from './owner-return';
+import {valuationReturnModel,modelValue,cashCoversPrice} from './return-model';
+import type {Dossier,PriceMap} from './types';
 import type { IndexRow, StoreMeta } from './types';
 /** Runs while rendering/building the index. A published contradiction must not ship. */
 export function assertIndexConsistency({meta,rows}:{meta:StoreMeta|null;rows:IndexRow[]}) {
@@ -17,4 +21,29 @@ export function assertIndexConsistency({meta,rows}:{meta:StoreMeta|null;rows:Ind
   if (rows.some(r=>r.b !== undefined) && f.gates.find(g=>g.key==='price')?.passing !== rows.filter(r=>r.b === true).length) throw new Error('Value consistency: price gate and published buy flags disagree');
   if (rows.some(r=>r.b === true && (r.t !== 'PPPPP' || r.st !== 's' || r.dataQualityFlags?.length))) throw new Error('Value consistency: invalid published buy flag');
   if (f.gates.find(g=>g.key==='accounting')?.passing!==rows.filter(r=>r.t==='PPPPP').length) throw new Error('Value consistency: headline, Accounting gate and default rows disagree');
+}
+
+/** Independently derive verdicts and reprice each model at its solved IRR. */
+export function assertDossierConsistency(d:Dossier,quote:PriceMap[string]|undefined){
+ let rules=0;
+ for(const t of Object.values(d.tests))if(t.key!=='price'&&['pass','fail'].includes(t.result)){
+  const r=ruleReading(t,d.company.kind);
+  if(r.derived!==t.result)throw Error(`${d.id} ${t.key}: ${r.sentence} implies ${r.derived}, published ${t.result}`);
+  rules++;
+ }
+ const v=d.valuation,model=v&&valuationReturnModel(v);
+ if(!v||!model||!quote)return {rules,returnChecked:false};
+ const close=(a:number,b:number)=>Math.abs(a-b)<=1e-8*Math.max(1,Math.abs(a),Math.abs(b));
+ if(!close(modelValue(model,v.discountRate),v.perShare.mid))throw Error(`${d.id}: value differs from return cash flows at the required rate`);
+ const owner=ownerReturn(v,d.company.currency,d.company.marketCapUsd,quote[0]);
+ if(!owner){
+  const listing=buyReturnInputs(v,d.company.currency)?.model;
+  const covered=!!listing&&cashCoversPrice(listing,quote[0]);
+  if(covered&&quote[0]>modelValue(listing!,v.discountRate))throw Error(`${d.id}: cash-covered price exceeds value`);
+  return {rules,returnChecked:false,cashCovered:covered};
+ }
+ const price=owner.capital/v.shares;
+ if(!close(modelValue(model,owner.expected),price))throw Error(`${d.id}: IRR does not reproduce today's price`);
+ if(!close(price,v.perShare.mid)&&(owner.expected>=v.discountRate)!==(price<=v.perShare.mid))throw Error(`${d.id}: return hurdle contradicts price/value`);
+ return {rules,returnChecked:true};
 }

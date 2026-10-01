@@ -269,7 +269,7 @@ export interface IndexRow {
   quality?: import('./quality-metric').QualityMetric;
   shareSources?: 2;
   historyYears?: number;
-  buyReturnInputs?: { cashPerShare: number; growth: number; requiredReturn: number } | null;
+  buyReturnInputs?: { cashPerShare: number; growth: number; requiredReturn: number; model?: import("./return-model").ReturnModel } | null;
   w: string | null; // Best Western trading listing.
   ownerReturnInputs?: { valuation: Valuation; marketCapUsd: number | null };
   exchange?: string; // Listing venue, enriched from the published dossier when needed.

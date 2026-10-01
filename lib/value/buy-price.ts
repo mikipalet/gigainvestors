@@ -1,3 +1,4 @@
+import {modelReturn,cashCoversPrice} from './return-model';
 import { valuationFlags } from './data-quality';
 import { priceTest } from './price-test';
 import type { IndexRow, PriceMap, Valuation } from './types';
@@ -15,9 +16,12 @@ export function publishedBuyPrice(row: Pick<IndexRow, 'businessChanged' | 'st' |
   });
   const eligible = row.st === 's' && !dataQualityFlags.length && row.m !== undefined && Number.isFinite(row.m) && row.m >= 0 && row.m <= 1;
   const inputs = row.buyReturnInputs;
-  const expectedReturn = inputs && quote && quote[0] > 0 ? inputs.cashPerShare / quote[0] + inputs.growth : null;
-  const returnKnown = expectedReturn !== null && Number.isFinite(expectedReturn) && inputs && Number.isFinite(inputs.requiredReturn);
-  const returnPass = !!returnKnown && expectedReturn! >= inputs!.requiredReturn;
+  const expectedReturn = inputs?.model && quote && quote[0] > 0 ? modelReturn(inputs.model, quote[0]) : null;
+  const covered = !!(inputs?.model && Number.isFinite(inputs.requiredReturn) && quote && cashCoversPrice(inputs.model,quote[0]));
+  const legacyKnown = inputs && !inputs.model && [inputs.cashPerShare, inputs.growth, inputs.requiredReturn].every(Number.isFinite) && row.v && quote;
+  const returnKnown = covered || expectedReturn !== null && Number.isFinite(expectedReturn) && inputs && Number.isFinite(inputs.requiredReturn) || legacyKnown;
+  // Legacy snapshots lack cash flows; their value at the required rate still establishes this inequality.
+  const returnPass = !!returnKnown && (covered || (legacyKnown ? quote![0] <= row.v![1] : expectedReturn! >= inputs!.requiredReturn - 1e-12));
   const result = !eligible ? { result: 'unclear' as const, mos: null }
     : price.result === 'pass' && !returnPass ? { ...price, result: returnKnown ? 'fail' as const : 'unclear' as const } : price;
   return { ...result, dataQualityFlags, b: !row.businessChanged && row.t === 'PPPPP' && result.result === 'pass' };

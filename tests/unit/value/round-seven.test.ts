@@ -20,6 +20,6 @@ test('price colour gets lighter as price rises, with readable text throughout', 
 import { tileSentence } from '../../../lib/value/tile-metric';
 import type { TestOutcome } from '../../../lib/value/types';
 test('negative accruals describe cash exceeding profit, not a failed absolute-value threshold', () => {
- const test={key:'accounting',result:'pass'} as TestOutcome;
- expect(tileSentence(test,{id:'accruals',value:-.3,label:'Accruals',format:'pct',threshold:.1,better:'lower',series:[],chart:''},'operating')).toBe('Cash exceeds profit by 30% of assets.');
+ const test={key:'accounting',result:'pass',numeric:'pass',metrics:{accruals:-.3,cashBacked:1},series:{},reasons:[],jev:[]} as TestOutcome;
+ expect(tileSentence(test,{id:'accruals',value:-.3,label:'Accruals',format:'pct',threshold:.1,better:'lower',series:[],chart:''},'operating')).toContain('Accruals / assets -30.0% ≤ 10.0%');
 });

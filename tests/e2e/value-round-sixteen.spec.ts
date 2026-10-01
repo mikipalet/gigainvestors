@@ -10,16 +10,16 @@ for(const [width,height] of [[1728,970],[2056,1180],[390,844]])for(const route o
  if(route!=='/'){
   await expect(page.locator('.price-card .exact-prices,.price-card .owner-return')).toHaveCount(0);
   const management=page.getByTestId('tile-management');
-  if(await management.count())expect(await management.locator('.tile-sentence').innerText()).toMatch(/^\$?-?\d/);
+  if(await management.count())expect(await management.locator('.tile-sentence').innerText()).toMatch(/(?:Share growth|Buybacks|Acquisitions|Value per|Value gained|Per-share|Ordinary shares|Book gain|Judgement override|Filing rule|Common shareholder)/);
  }
 });
 
-test('capital return drawer caps summaries and keeps exact annual observations visible',async({page})=>{
- await page.goto('/wkl.as');await page.getByRole('button',{name:'Open Lasting advantage evidence'}).click();
- await expect(page.locator('.drawer-numbers')).toContainText('>100%');
+test('capital return drawer uses including-acquisitions summaries and keeps supporting observations visible',async({page})=>{
+ await page.goto('/wkl.as');const tileValues=await page.getByTestId('tile-moat').locator('.tile-support dd').allTextContents();await page.getByRole('button',{name:'Open Lasting advantage evidence'}).click();
+ expect((await page.locator('.drawer-numbers dd').allTextContents()).slice(0,3)).toEqual(tileValues);
  await expect(page.getByRole('tab')).toHaveCount(0);
- const values=await page.locator('.drawer-years tbody td:first-of-type').allTextContents();
- expect(values.some(v=>parseFloat(v)>100)).toBe(true);
- expect(values.join(' ')).not.toContain('>100%');
+ const values=await page.locator('.drawer-years tbody td:nth-of-type(2)').allTextContents();
+ expect(values).toContain('>100%');
+ await expect(page.locator('.drawer-years thead')).toContainText('ROIC ex. acq.');
  await expect(page.locator('.filing-quotes a')).toHaveAttribute('href',/^https:/);
 });

@@ -1,3 +1,4 @@
+import {modelReturn} from './return-model';
 import { METHOD_VERSION } from './method-version';
 import { bestWesternListing } from './western';
 import type { Company, IndexRow, PriceMap } from './types';
@@ -76,7 +77,7 @@ export function buildForwardSnapshot({date, universe, rows, prices, previous = [
     const valid = quote && positive(quote[0]) && validForwardDate(quote[1]) && quote[1] <= date;
     const price = valid ? quote[0] : null;
     const input = row?.buyReturnInputs;
-    const expected = input && price ? input.cashPerShare / price + input.growth : null;
+    const expected = input?.model && price ? modelReturn(input.model,price) : null;
     const buyPrice = row?.v && row.m !== undefined ? row.v[1] * (1-row.m) : null;
     const totalReturn = totalReturns[id];
     observations[id] = {

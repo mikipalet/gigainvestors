@@ -91,10 +91,10 @@ describe('history cohort medians and hit rates', () => {
   });
 });
 
-it('holds a cash-rich historical company below its buy price when owner return misses the hurdle', () => {
+it('includes a cash-rich historical company when the same cash flows clear the price and return hurdles', () => {
   const rich = {...fundamentals,years:fundamentals.years.map(y=>({...y,cash:10000,totalAssets:10900,totalLiabilities:500,equity:10400}))};
   const row = snapshotForYear({...base,fundamentals:rich,fy:2016,prices:[...prices.filter(([m])=>m!=='2017-02'),['2017-02',900]]})!;
-  // Net cash raises DCF value, but does not raise the cash-yield + growth estimate.
+  // The excess-cash adjustment belongs to both value and the return gate.
   expect(row[2]).toBeLessThan(.75);
-  expect(row[3]).toBe(false);
+  expect(row[3]).toBe(true);
 });

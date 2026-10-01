@@ -72,7 +72,7 @@ it('exposes financial evidence with correct chart units while retaining the ques
  const {tileMetric,tileSentence}=await import('@/lib/value/tile-metric');
  const ts=run();const outcome={...ts.economics,result:ts.economics.numeric,jev:[]};
  const m=tileMetric(outcome,'bank');expect(m.id).toBe('bookReturnCagr');expect(m.series[0][1]).toBeCloseTo(.166);
- expect(tileSentence(outcome,m,'bank')).toContain('Book value plus dividends');
+ expect(tileSentence(outcome,m,'bank')).toContain('Book + dividends / year');
  expect(tileMetric({...ts.understandable,result:'pass',jev:[]},'bank').chartFormat).toBe('money');
  const shares=tileMetric({...ts.management,result:'pass',jev:[]},'bank');
  expect(shares.chartFormat).toBe('index');expect(shares.series[0][1]).toBe(100);

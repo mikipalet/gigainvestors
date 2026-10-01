@@ -85,7 +85,9 @@ describe("financial company valuation", () => {
   });
   it("caps justified P/B at four", () => {
     const result = valueCompany({ years: makeYears({ overrides: { netIncome: 500 } }), kind: "bank", bondYield: 0.04, cyclical: false });
-    expect(result.valuation!.perShare).toEqual({ low: 190, mid: 200, high: 200 });
+    expect(result.valuation!.perShare.mid).toBe(200);
+    expect(result.valuation!.perShare.low).toBeCloseTo(160);
+    expect(result.valuation!.perShare.high).toBeCloseTo(800/3);
   });
   it("requires five ROE observations", () => {
     expect(valueCompany({ years: makeYears({ n: 4 }), kind: "bank", bondYield: 0.04, cyclical: false }).valuation).toBeNull();

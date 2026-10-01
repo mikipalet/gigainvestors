@@ -14,7 +14,7 @@ const tags:Record<string,string[]>={
  'debt-current':['LongTermDebtAndFinanceLeaseObligationsCurrent','LongTermDebtCurrent','LongTermDebtAndCapitalLeaseObligationsCurrent'],
  'debt-long':['LongTermDebtAndFinanceLeaseObligationsNoncurrent','LongTermDebtNoncurrent','LongTermDebtAndCapitalLeaseObligations'],
  'short-borrowings':['ShortTermBorrowings','ShortTermDebtCurrent','CommercialPaper'],
- goodwill:['Goodwill'],equity:['StockholdersEquity'],receivables:['AccountsReceivableNetCurrent','AccountsNotesAndOtherReceivablesNetCurrent'],inventory:['InventoryNet'],shares:['WeightedAverageNumberOfDilutedSharesOutstanding'],
+ 'total-assets':['Assets'],goodwill:['Goodwill'],equity:['StockholdersEquity'],receivables:['AccountsReceivableNetCurrent','AccountsNotesAndOtherReceivablesNetCurrent'],inventory:['InventoryNet'],shares:['WeightedAverageNumberOfDilutedSharesOutstanding'],
  'reported-profit':['NetIncomeLoss'],'gross-profit':['GrossProfit'],ocf:['NetCashProvidedByUsedInOperatingActivities'],buybacks:['PaymentsForRepurchaseOfCommonStock'],
 };
 const wanted=new Set(Object.values(tags).flat());

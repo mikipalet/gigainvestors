@@ -50,15 +50,16 @@ export function valueInvestmentHolding(years: Year[], currency: string): { valua
   return { reason: null, valuation: {
     version: 2, method: 'nav', tier: 'nav', currency, shares,
     normalized: history.nav, growth: history.cagr, discountRate: .1, terminalGrowth: 0, bondYield: null, netCash: 0,
-    perShare: { low: history.nav, mid: history.nav, high: history.nav }, equityBondYield: null,
+    perShare: { low: history.nav*((1+history.cagr)/1.1)**10, mid: history.nav*((1+history.cagr)/1.1)**10, high: history.nav*((1+history.cagr)/1.1)**10 }, equityBondYield: null,
     navReturn: { cagr: history.cagr, uncappedCagr: history.uncappedCagr, years:history.years },
     bridge: [{ label: 'Reported NAV per share', value: history.nav }, { label: `${history.years}-year NAV and dividend return`, value: history.cagr }],
     assumptions: [
       'Investment holding: portfolio fair-value gains are not owner earnings',
       `${history.years}-year total return compounds each annual (NAV per share + dividend per share) / prior NAV per share; dividends reinvested at year-end NAV`,
       'NAV and dividends must use a consistent currency and split-adjusted per-share basis',
-      'Expected return = annualized NAV total-return CAGR (capped at 12%) divided by price / NAV',
-      'Buy requires price at or below 85% of NAV and expected return of at least 10%',
+      'Value discounts ten-year NAV realization at 10%; NAV compounds at the historical total-return CAGR capped at 12%, with dividends reinvested',
+      'Expected return is the IRR of that same ten-year NAV realization at today’s price',
+      'Buy requires price at or below 85% of both reported NAV and discounted NAV realization value',
       'Reported NAV includes portfolio liabilities; cash and debt are not added or deducted again',
     ],
   } };

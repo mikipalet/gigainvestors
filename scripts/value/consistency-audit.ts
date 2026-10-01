@@ -1,3 +1,4 @@
+import {assertDossierConsistency} from '../../lib/value/consistency';
 import {chromium,type Locator} from '@playwright/test';
 import {readFileSync,readdirSync,writeFileSync,mkdirSync,statfsSync} from 'node:fs';
 import path from 'node:path';
@@ -16,6 +17,9 @@ const rows:IndexRow[]=readdirSync(path.join(stage,'store/index')).filter(f=>/^[A
 const manifest=read('store/meta.json').views;
 const browserRows=[manifest.current,...manifest.deferred].flatMap(f=>unpackView(read(`store/${f}`)));
 const cohort=idArg?idArg.split(',').map(id=>({id})):read('cohort.json');
+if(!idArg)for(const d of Object.values(ds))if(d.b&&!cohort.some((r:{id:string})=>r.id===d.id))cohort.push({id:d.id});
+const checks=Object.values(ds).map(d=>assertDossierConsistency(d,prices[d.id]));
+console.log(JSON.stringify({publishedDossiers:checks.length,qualityRules:checks.reduce((n,r)=>n+r.rules,0),irrChecks:checks.filter(r=>r.returnChecked).length,cashCovered:checks.filter(r=>r.cashCovered).length}));
 async function capture(root:Locator):Promise<SurfaceSnapshot>{return root.evaluate(el=>({
  signals:[...el.querySelectorAll<HTMLElement>('[data-signals]')].map(e=>JSON.parse(e.dataset.signals!)),
  text:(el as HTMLElement).innerText,numbers:((el as HTMLElement).innerText.match(/[-−+]?\d[\d,.]*(?:%|×|bn|[KMBT])?/g)??[]),

@@ -4,7 +4,8 @@ import { formatMetric, isCapitalReturn, type MetricFormat } from '@/lib/value/me
 import { useWidth } from '@/lib/value/viz/use-width';
 export function MiniSeries({ series, label, threshold, format='pct', currency='', better='higher', height:requestedHeight=60, fluid=false }: { series: Series; label: string; threshold?: number;currency?:string;format?:MetricFormat;better?:'higher'|'lower';height?:number;fluid?:boolean }) {
  const {ref,width,height:availableHeight}=useWidth();
- const height=fluid?Math.max(70,availableHeight-(threshold===undefined?22:0)):requestedHeight;
+ const caption=threshold===undefined||label==='ROIC including acquisitions';
+ const height=fluid?Math.max(70,availableHeight-(caption?22:0)):requestedHeight;
  const points=series.filter((p):p is [number,number]=>p[1]!==null&&Number.isFinite(p[1]));
  if(!points.length)return null;
  const values=points.map(p=>p[1]);
@@ -24,5 +25,5 @@ export function MiniSeries({ series, label, threshold, format='pct', currency=''
  {series.every(([,v])=>v!==null&&Number.isFinite(v))&&<path d={`${path} L${x(last)},${y(0)} L${x(first)},${y(0)} Z`} fill="var(--buy)" opacity=".16"/>}
  {points.length===1&&<circle cx={x(points[0][0])} cy={y(points[0][1])} r={3} fill="currentColor"/>}<path d={path} fill="none" stroke="currentColor" strokeWidth="1.8"/>
  <text x={left} y={height-2}>{first}</text><text x={right} y={height-2} textAnchor="end">{last}</text>
- </svg></ChartInteraction>{threshold===undefined&&<figcaption>{label}</figcaption>}</figure>;
+ </svg></ChartInteraction>{caption&&<figcaption>{label}</figcaption>}</figure>;
 }

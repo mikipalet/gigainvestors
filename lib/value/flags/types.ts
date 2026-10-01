@@ -5,7 +5,7 @@ export type Theme=typeof THEMES[number];
 /** Amounts are absolute reporting-currency units; ratios are fractions. */
 export interface Observation {metric:string;value:number;fy:number;currency:string;evidence:Evidence}
 export interface BusinessFlag {
- id:string;kind:string;theme:Theme;tone:'red'|'green';severity:number;label:string;why:string;question:string;
+ ruleVersion?:2;id:string;kind:string;theme:Theme;tone:'red'|'green'|'neutral';severity:number;label:string;why:string;question:string;
  series:Series;unit:'ratio'|'percent'|'money'|'years'|'count';currency?:string;evidence:Evidence[];
  basis:'computed'|'filing';extraction?:'signal'|'relationship'|'judgement';version?:string;confidence?:number;reviewed?:boolean;
 }

@@ -21,11 +21,11 @@ it('filing likelihoods omit absence and informational wording',()=>{
  const html=renderToStaticMarkup(createElement(FilingSignals,{test}));
  expect(html).toContain('10%');expect(html).not.toMatch(/informational only|no .*supplied/i);
  const financial={...test,metrics:{financialRedFlags:0}};
- expect(tileSentence(financial,tileMetric(financial,'bank'),'bank')).toBe('0 accounting warnings.');
+ expect(tileSentence(financial,tileMetric(financial,'bank'),'bank')).toContain('0 accounting warnings; none allowed');
 });
 it('financial management leads with book value per dollar retained',()=>{
  const test={...d.tests.management,metrics:{retainedBookRatio:2.33,shareCagrExCrisis:-.02}};
- expect(tileSentence(test,tileMetric(test,'bank'),'bank')).toBe('$2.33 of book value per $1 kept.');
+ expect(tileSentence(test,tileMetric(test,'bank'),'bank')).toContain('Ordinary shares / year -2.0% ≤ 2.0%');
 });
 
 it('caps named capital returns in drawer prose without changing other percentages',()=>{

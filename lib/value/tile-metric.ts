@@ -1,4 +1,5 @@
-import { marginVariation, formatMetric } from './metric-labels';
+import {ruleReading} from './rule-reading';
+import { formatMetric } from './metric-labels';
 import { priceFraming } from './presentation';
 import { T } from './config';
 import type { Kind, Series, TestOutcome } from './types';
@@ -57,26 +58,9 @@ export function tileReason(test:TestOutcome):string {
 
 /** Lead with the meaning of the selected metric, without claiming that one metric passes the whole test. */
 export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):string {
- const v=metric.value, bar=metric.threshold;
- if(test.key==='management'&&test.metrics.retainedBookRatio!=null)return `$${test.metrics.retainedBookRatio.toFixed(2)} of book value per $1 kept.`;
- if(v===null)return test.result==='fail'?tileReason(test):'';
- const pct=(n:number)=>n>1&&test.key==='moat'?'>100%':`${Math.round(n*100)}%`,num=(n:number)=>n.toFixed(2);
- if(metric.id==='positiveIncomeYears')return `Positive earnings in ${v}/10 years; ${bar} required.`;
- if(metric.id==='bookReturnCagr')return `Book value plus dividends compounded at ${pct(v)} a year.`;
- if(metric.id==='shareCagrExCrisis')return `Ordinary share count ${v<0?'fell':'grew'} ${pct(Math.abs(v))} a year; the limit is ${pct(bar)}.`;
- if(metric.id==='financialRedFlags')return `${v} accounting warning${v===1?'':'s'}.`;
- if(metric.id==='combinedProfitableYears')return `Combined ratio below 100% in ${v}/10 years.`;
- switch(test.key){
-  case 'understandable':return metric.id==='lossYears'?`${v} years recorded a net loss.`:v>1?`Margin variation ${marginVariation(v)}.`:`Margins vary by ${marginVariation(v)} of their average.`;
-  case 'moat': {
-   const years=metric.series.filter(p=>p[1]!==null),passes=years.filter(p=>p[1]!>=bar).length;
-   return `Earns ${pct(v)} on ${kind==='operating'?(metric.id==='totalRoicMedian'?'capital including acquisitions':'capital excluding acquisitions'):'equity'}; ${years.length?`${passes}/${years.length} years ≥ ${pct(bar)}.`:`the bar is ${pct(bar)}.`}`;
-  }
-  case 'economics':return metric.id==='ownerEarningsTotal'?`Five-year owner earnings ${v>0?'are positive':'are nonpositive'}.`:`Each $1 of profit leaves $${num(v)} for owners.`;
-  case 'management':return metric.id==='marketCapGain'?`${formatMetric({value:v,format:'money'})} of market value gained; net capital returned to owners.`:metric.id==='perShareValueGrowth'?(v<0?`Per-share value fell ${pct(-v)} a year.`:`${pct(v)} yearly growth in per-share value.`):metric.id==='perShareValueChange'?`${num(v)} change in per-share value.`:`$${num(v)} of market value per $1 kept.`;
-  case 'accounting':return metric.id==='cashBacked'?(v?'Earnings are backed by operating cash.':'Earnings are not backed by operating cash.'):kind==='operating'?(v<0?`Cash exceeds profit by ${pct(-v)} of assets.`:`Profit exceeds cash by ${pct(v)} of assets; ${pct(bar)} is the limit.`):`Operating cash covers ${num(v)}× reported earnings.`;
-  case 'price':return priceFraming(v,1-bar).headline;
- }
+ if(test.insufficientHistory!==undefined)return 'Not enough history yet';
+ if(test.key==='price')return priceFraming(metric.value,1-metric.threshold).headline;
+ return ruleReading(test,kind).sentence;
 }
 
 /** One primary comparison for the dossier tile, drawer, and annual bar. */

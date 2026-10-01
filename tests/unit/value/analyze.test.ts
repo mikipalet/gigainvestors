@@ -130,7 +130,7 @@ it("exports up to thirty distinct answers per question with source text", async 
 it("runs paragraph evidence only when no numeric quality test fails", async () => {
   const { makeYears } = await import("./synthetic");
   const args = input();
-  args.fundamentals.years = makeYears({ overrides: (year, i) => ({ revenue: 1000 + i * 100, operatingIncome: 200 + i * 20, preTaxIncome: 200 + i * 20, netIncome: 150 + i * 15, taxExpense: 50 + i * 5, equity: 400 + i * 30, grossProfit: 400 + i * 40, ocf: 170 + i * 15, marketCap: 1000 + i * 300 }) });
+  args.fundamentals.years = makeYears({ overrides: (year, i) => ({ revenue: 1000 + i * 100, operatingIncome: 200 + i * 20, preTaxIncome: 200 + i * 20, netIncome: 150 + i * 15, taxExpense: 50 + i * 5, equity: 400 + i * 30, totalAssets:900+i*30, grossProfit: 400 + i * 40, ocf: 170 + i * 15, marketCap: 1000 + i * 300 }) });
   appendJsonl("universe.jsonl", args.company);
   writeCorpusJson("fundamentals/KO.US.json", args.fundamentals);
   let evidenceCalls = 0;
@@ -341,7 +341,7 @@ it("requires the volatile discount for commodity exposure and missing CV", async
   args.ask = async () => answers().map(a => a.q === "commodity" ? { ...a, value: 0.8 } : a);
   expect(await analyzeCompany(args)).toMatchObject({ volatility: "volatile", requiredMos: 0.5 });
   args.ask = async () => answers();
-  args.fundamentals.years = makeYears({ overrides: { operatingIncome: null } });
+  args.fundamentals.years = makeYears({ overrides: { operatingIncome: null,preTaxIncome:null,interestExpense:null } });
   expect(await analyzeCompany(args)).toMatchObject({ volatility: "volatile", requiredMos: 0.5 });
 });
 

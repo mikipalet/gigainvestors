@@ -91,7 +91,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const valuation = tradingValuation(analysis, usdRate);
     const requiredMos = analysis.requiredMos ?? T.price.requiredMos.stable;
     const t = analysis.status !== "scored" ? "UUUUU" : outcomes.map(test => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join("");
-    const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:analysis.valuation?.shares, usdRate:usdRate(company.currency)});
+    const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:analysis.valuation?.shares, usdRate:usdRate(company.currency),corroborated:analysis.valuation?.shareSources===2});
     const returnInputs = buyReturnInputs(analysis.valuation, company.currency);
     const price = publishedBuyPrice({ st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs, shareSources:analysis.valuation?.shareSources,
       v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null, dataQualityFlags }, prices[analysis.id]);

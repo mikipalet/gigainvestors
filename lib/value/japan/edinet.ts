@@ -9,6 +9,7 @@ export interface EdinetDocument {
   docID: string; edinetCode: string; secCode: string; filerName: string;
   docTypeCode: string; periodStart: string; periodEnd: string; submitDateTime: string;
   csvFlag: string; withdrawalStatus: string; disclosureStatus: string;
+  fundCode?: string|null; ordinanceCode?: string; formCode?: string;
 }
 export interface DocumentDay { metadata: { status: string }; results: EdinetDocument[] }
 const limiter = createLimiter({ perSecond: T.edinet.perSecond / (Number(process.env.VALUE_SOURCE_WORKERS)||1) });
@@ -34,6 +35,7 @@ export function annualReportDocuments(data: Pick<DocumentDay, "results">): Edine
 export function semiAnnualReportDocuments(data: Pick<DocumentDay, "results">): EdinetDocument[] { return reportDocuments(data, "160"); }
 function reportDocuments(data: Pick<DocumentDay, "results">, type: string): EdinetDocument[] {
   return data.results.filter(d => d.docTypeCode === type && d.secCode !== "00000" && /^[0-9A-Z]{4}0$/.test(d.secCode ?? "")
+    && !d.fundCode && (!d.ordinanceCode || d.ordinanceCode === '010')
     && d.csvFlag === "1" && d.withdrawalStatus === "0" && d.disclosureStatus === "0");
 }
 export async function annualReports({ from, to }: { from: string; to: string }): Promise<EdinetDocument[]> {

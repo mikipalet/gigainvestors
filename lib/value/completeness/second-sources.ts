@@ -1,4 +1,5 @@
 import { deriveYears } from '../derive';
+import { annualFiscalYear } from '../fiscal-period';
 import type { Year } from '../types';
 
 export const FIELD_TAGS: Record<string,string[]> = {
@@ -25,22 +26,24 @@ export const FIELD_TAGS: Record<string,string[]> = {
 const INSTANT = new Set('minorityInterest liabilitiesAndStockholdersEquity receivables inventory payables cash shortTermInvestments equity totalAssets totalLiabilities currentAssets currentLiabilities totalDebt shortTermDebt goodwill intangibles ppe retainedEarnings leaseLiabilities'.split(' '));
 const SPENT = new Set('capex dividendsPaid buybacks acquisitions'.split(' '));
 export function emptyYear(end:string,currency:string):Year {
- return { ...Object.fromEntries([...Object.keys(FIELD_TAGS),'marketCap'].map(k=>[k,null])),fy:Number(end.slice(0,4)),end,currency } as unknown as Year;
+ return { ...Object.fromEntries([...Object.keys(FIELD_TAGS),'marketCap'].map(k=>[k,null])),fy:annualFiscalYear(end),end,currency } as unknown as Year;
 }
-type Fact = {val:number;start?:string;end:string;filed?:string;form?:string;accn?:string};
+type Fact = {val:number;start?:string;end:string;filed?:string;form?:string;fp?:string;accn?:string};
+const annualFiling=(f:Fact)=>['10-K','10-K/A','20-F','20-F/A','40-F','40-F/A'].includes(f.form??'')
+ || ['6-K','6-K/A'].includes(f.form??'')&&f.fp==='FY';
 export type CompanyFacts = {facts:Record<string,Record<string,{units:Record<string,Fact[]>}>>};
 /** Match annual duration and currency, never sum duplicate comparative or quarterly facts. */
 export function yearsFromCompanyFacts(raw:CompanyFacts,currency:string,source:string):Year[] {
  const namespaces=Object.values(raw.facts??{}), byEnd=new Map<string,Year>();
  if(!currency){
-  const units=namespaces.flatMap(ns=>[...FIELD_TAGS.netIncome,...FIELD_TAGS.revenue].flatMap(tag=>Object.entries(ns[tag]?.units??{}).filter(([u])=>/^[A-Z]{3}$/.test(u)).flatMap(([unit,fs])=>fs.filter(f=>f.start&&['10-K','10-K/A','20-F','20-F/A','40-F','40-F/A'].includes(f.form??'')).map(f=>({unit,end:f.end}))))).sort((a,b)=>b.end.localeCompare(a.end));
+  const units=namespaces.flatMap(ns=>[...FIELD_TAGS.netIncome,...FIELD_TAGS.revenue].flatMap(tag=>Object.entries(ns[tag]?.units??{}).filter(([u])=>/^[A-Z]{3}$/.test(u)).flatMap(([unit,fs])=>fs.filter(f=>f.start&&annualFiling(f)).map(f=>({unit,end:f.end}))))).sort((a,b)=>b.end.localeCompare(a.end));
   currency=units[0]?.unit??'';
   if(!currency)return [];
  }
  const pick=(tags:string[],stock:boolean,unit:string)=>{
   const selected=new Map<string,{fact:Fact;tag:string}>();
   for(const tag of tags) for(const ns of namespaces) for(const f of ns[tag]?.units[unit]??[]) {
-   if(!/^\d{4}-\d{2}-\d{2}$/.test(f.end)||!Number.isFinite(f.val)||!['10-K','10-K/A','20-F','20-F/A','40-F','40-F/A'].includes(f.form??''))continue;
+   if(!/^\d{4}-\d{2}-\d{2}$/.test(f.end)||!Number.isFinite(f.val)||!annualFiling(f))continue;
    const days=f.start?(Date.parse(f.end)-Date.parse(f.start))/86400000:0;
    if(stock ? !!f.start : days<330||days>400)continue;
    const prior=selected.get(f.end);
@@ -99,12 +102,16 @@ export function yearsFromYahoo(raw:any,currency:string,source:string):Year[]{
 }
 /** Match date/currency; explicit facts outrank absence zeroes and fallback estimates. */
 export function fillYears(primary:Year[],secondary:Year[]):Year[]{
- const byEnd=new Map<string,Year>(primary.map(y=>[y.end,{...y,provenance:{...y.provenance}}]));
+ const byEnd=new Map<string,Year>();
  const currency=primary.at(-1)?.currency;
- for(const s of secondary){
+ for(const [index,s] of [...primary,...secondary].entries()){
   if(currency&&s.currency&&currency!==s.currency)continue;
-  const p=byEnd.get(s.end);
-  if(!p){if(![...byEnd.values()].some(y=>y.fy===s.fy))byEnd.set(s.end,s);continue;}
+  // Providers round week-based year ends to month end. Require a unique nearby
+  // period and matching reported earnings before combining their statements.
+  const nearby=[...byEnd.values()].filter(y=>Math.abs(Date.parse(y.end)-Date.parse(s.end))<=7*86400000
+   && y.netIncome!=null&&s.netIncome!=null&&Math.abs(y.netIncome-s.netIncome)<=Math.max(1,Math.abs(y.netIncome))*.005);
+  const p=byEnd.get(s.end) ?? (nearby.length===1?nearby[0]:undefined);
+  if(!p){if(index<primary.length || ![...byEnd.values()].some(y=>y.fy===s.fy))byEnd.set(s.end,{...s,provenance:{...s.provenance}});continue;}
   const discrepancy=(y:Year)=>{
    if(y.totalAssets==null||y.totalAssets<=0||y.totalLiabilities==null||y.equity==null)return null;
    const totals=[y.totalLiabilities+y.equity+(y.minorityInterest??0),...(y.liabilitiesAndStockholdersEquity!=null?[y.liabilitiesAndStockholdersEquity]:[])];
@@ -121,12 +128,20 @@ export function fillYears(primary:Year[],secondary:Year[]):Year[]{
    }
   }
   for(const [key,value]of Object.entries(s)){
+   if(['fy','end','currency','provenance','statementCoverage'].includes(key))continue;
    if(rejectInconsistentBalance&&(balanceFields as readonly string[]).includes(key))continue;
    const prior=p.provenance?.[key], incoming=s.provenance?.[key];
-   const fallback=prior?.method==='absent-in-complete-statement'||prior?.method==='estimate'||key==='acquisitions'&&p.acquisitionsProxy;
-   const explicit=incoming&&(incoming.method==='reported'||incoming.method==='derived'&&incoming.source!=='statements');
+   const shareRank=(v:NonNullable<Year['provenance']>[string]|undefined)=>v?.method==='reported'?3
+    :v?.method==='estimate'&&!v.inputs?.some(input=>/Eps$/.test(input))?2:1;
+   const strongerShareCount=key==='dilutedShares'&&shareRank(incoming)>shareRank(prior);
+   // A weighted share count reported in the statement is stronger evidence
+   // than NI / rounded EPS, including incorrectly scaled ESEF EPS tags.
+   const fallback=prior?.method==='absent-in-complete-statement'||prior?.method==='estimate'
+    ||key==='dilutedShares'&&prior?.method==='derived'&&incoming?.method==='reported'
+    ||key==='acquisitions'&&p.acquisitionsProxy;
+   const explicit=incoming&&(incoming.method==='reported'||key!=='dilutedShares'&&incoming.method==='derived'&&incoming.source!=='statements');
    const filingCorrection=prior?.method==='cached'&&incoming?.method==='reported'&&/disclosure2\.edinet|filings\.xbrl\.org|data\.sec\.gov/.test(incoming.source);
-   if(value!=null&&(p[key as keyof Year]==null||fallback&&explicit||filingCorrection)){
+   if(value!=null&&(p[key as keyof Year]==null||fallback&&explicit||filingCorrection||strongerShareCount)){
     Object.assign(p,{[key]:value});if(incoming)p.provenance![key]=incoming;
     if(key==='acquisitions')p.acquisitionsProxy=Boolean(s.acquisitionsProxy);
     if(key==='totalDebt'&&typeof s.debtIncludesLeases==='boolean')p.debtIncludesLeases=s.debtIncludesLeases;

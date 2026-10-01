@@ -2,16 +2,40 @@ import { T, YAHOO_SUFFIXES } from "./config";
 import { readCorpusJson } from "./corpus";
 import { eodhd } from "./eodhd";
 import { createLimiter, fetchWithRetry } from "./http";
-import type { Company, PriceHistory } from "./types";
+import type { Company, Fundamentals, PriceHistory } from "./types";
 
 export interface CachedPriceHistory { fetchedAt: string; prices: PriceHistory }
+
+/** Align original monthly closes with restated shares only when a declared
+ * action, adjacent closes and consecutive annual share observations agree.
+ * Already adjusted Yahoo closes and actual shareholder dilution stay intact. */
+export function reconcilePriceSplits(prices:PriceHistory,fundamentals:Pick<Fundamentals,'years'|'splits'>):PriceHistory {
+  let result=prices;
+  const years=[...(fundamentals.years??[])].sort((a,b)=>a.end.localeCompare(b.end));
+  const monthNumber=(month:string)=>Number(month.slice(0,4))*12+Number(month.slice(5,7));
+  for(const split of [...(fundamentals.splits??[])].sort((a,b)=>b.date.localeCompare(a.date))){
+    if(!Number.isFinite(split.factor)||split.factor<=0||Math.max(split.factor,1/split.factor)<1.5)continue;
+    const before=years.filter(y=>y.end<split.date).at(-1),after=years.find(y=>y.end>=split.date);
+    if(!before?.dilutedShares||!after?.dilutedShares||before.dilutedShares<=0||after.dilutedShares<=0)continue;
+    const days=(Date.parse(after.end)-Date.parse(before.end))/86400000;
+    if(days<300||days>400||Math.abs(after.dilutedShares/before.dilutedShares-1)>.25)continue;
+    const month=split.date.slice(0,7),i=result.findIndex(([m])=>m===month);
+    if(i<1||monthNumber(result[i][0])-monthNumber(result[i-1][0])!==1)continue;
+    if(Math.abs(result[i][1]/result[i-1][1]*split.factor-1)>.2)continue;
+    result=result.map(([m,close])=>[m,m<month?close/split.factor:close]);
+  }
+  return result;
+}
 
 /** Read canonical monthly tuples, accepting the original Task 14 cache envelope. */
 export function readPriceHistory(id: string): PriceHistory | null {
   const cached = readCorpusJson<PriceHistory | CachedPriceHistory>(`prices-history/${id}.json`);
   const prices = Array.isArray(cached) ? cached : cached?.prices;
-  return prices ? prices.filter(row => Array.isArray(row) && typeof row[0] === "string"
-    && /^\d{4}-\d{2}$/.test(row[0]) && typeof row[1] === "number" && Number.isFinite(row[1]) && row[1] > 0) : null;
+  if(!prices)return null;
+  const valid=prices.filter(row => Array.isArray(row) && typeof row[0] === "string"
+    && /^\d{4}-\d{2}$/.test(row[0]) && typeof row[1] === "number" && Number.isFinite(row[1]) && row[1] > 0);
+  const fundamentals=readCorpusJson<Fundamentals>(`fundamentals/${id}.json`);
+  return fundamentals?reconcilePriceSplits(valid,fundamentals):valid;
 }
 
 function monthlyCloses(rows: Array<{ date: unknown; close: unknown }>): PriceHistory {
@@ -67,11 +91,11 @@ export class PriceHistoryUnavailableError extends Error {}
 
 const yahooLimit = createLimiter({ perSecond: T.yahoo.perSecond });
 export async function fetchPriceHistory({ company, from, useYahoo = false }: { company: Company; from: string; useYahoo?: boolean }): Promise<PriceHistory> {
-  if (!useYahoo && !company.id.endsWith(".JP") && company.source !== "esef") return parseEodHistory(await eodhd(`eod/${encodeURIComponent(company.id)}`, { period: "m", from }));
+  if (!useYahoo && !company.id.endsWith(".JP") && company.source !== "esef" && company.exchange !== "NSE") return parseEodHistory(await eodhd(`eod/${encodeURIComponent(company.id)}`, { period: "m", from }));
   return yahooLimit(async () => {
     const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSymbol(company))}?range=10y&interval=1mo`;
     const response = await fetchWithRetry(url, { headers: { "User-Agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(60_000), retries: 0 });
-    if (response.status === 404 && (company.id.endsWith(".JP") || company.source === "esef")) throw new PriceHistoryUnavailableError("Yahoo has no history for this symbol");
+    if (response.status === 404 && (company.id.endsWith(".JP") || company.source === "esef" || company.exchange === "NSE")) throw new PriceHistoryUnavailableError("Yahoo has no history for this symbol");
     if (!response.ok) throw new Error(`Yahoo price history HTTP ${response.status}`);
     return parseYahooHistory(await response.json());
   });

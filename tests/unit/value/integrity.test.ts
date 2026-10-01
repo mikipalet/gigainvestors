@@ -107,11 +107,12 @@ it.each([
   const evidence = { source: "edinet" as const, priceHistory: [["2021-05", 100], ["2021-06", 100 / ratio]] as PriceHistory };
   f.integrity = checkIntegrity(f, evidence);
   expect(f.years).toHaveLength(7);
-  expect(f.years.map(y => y.dilutedShares)).toEqual(Array(7).fill(100 * ratio));
-  expect(f.years[0].netIncome! / f.years[0].dilutedShares!).toBeCloseTo(2 / ratio);
+  const split=ratio>=1?Math.round(ratio):1/Math.round(1/ratio);
+  expect(f.years.map(y => y.dilutedShares)).toEqual([...Array(3).fill(100*split),...Array(4).fill(100*ratio)]);
+  expect(f.years[0].netIncome! / f.years[0].dilutedShares!).toBeCloseTo(2 / split);
   expect(f.integrity.notes).toEqual([`split ${label} in 2021 adjusted`]);
   f.integrity = checkIntegrity(f, evidence);
-  expect(f.years[0].dilutedShares).toBeCloseTo(100 * ratio);
+  expect(f.years[0].dilutedShares).toBeCloseTo(100 * split);
   expect(f.integrity.notes).toHaveLength(1);
 });
 

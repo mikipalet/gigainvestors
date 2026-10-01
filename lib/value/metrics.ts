@@ -161,7 +161,7 @@ export function outcome({ key, metrics, series, checks, reasons = [], minFailure
   const failed = available.filter(c => c.pass === false);
   const core = checks.filter(c => c.core);
   const coreMissing = core.some(c => c.pass === null);
-  const numeric = coreMissing ? "unclear" : failed.some(c => c.decisive) || failed.length >= minFailures ? "fail"
+  const numeric = failed.some(c => c.decisive) || failed.length >= minFailures ? "fail" : coreMissing ? "unclear"
     : core.length ? "pass" : checks.length > 0 && available.length / checks.length >= T.numeric.minAvailableFraction ? "pass" : "unclear";
   // Infinity participates in return statistics, but is never a display value.
   const display = (value: number | null) => value !== null && Number.isFinite(value) ? value : null;

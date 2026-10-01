@@ -1,3 +1,5 @@
+import { completeCachedYears,completeCachedSplits } from '../../../lib/value/completeness/cached-years';
+import { readPriceHistory } from '../../../lib/value/price-history';
 import { universeCompanies, validCompanyId } from '../../../lib/value/companies';
 import { completionYears } from '../../../lib/value/completeness/needs';
 import { existsSync, readdirSync } from 'node:fs';
@@ -105,7 +107,8 @@ export default async function completeData({only,limit,force}:{only?:string[];li
    const stillNeeded=missing(f,c)&&(prior.source!=='Yahoo annual timeseries'||inconsistent(f)||!f.years.length||[...completionYears(f,c.kind)].some(fy=>fy>=new Date().getUTCFullYear()-5));
    if(!stillNeeded&&!attempts.some(a=>a.source===prior.source))attempts.push({source:prior.source,status:'not required after derivations',added:0});
   }
-  f.years=cachedProvenance(deriveYears(f.years),`fundamentals/${c.id}.json (${c.source})`);f.integrity=checkIntegrity(f);writeCorpusJson(`fundamentals/${c.id}.json`,f);
+  f.splits=completeCachedSplits(c.id,f.splits,readCorpusJson);
+  f.years=cachedProvenance(completeCachedYears(c,f.years,readCorpusJson),`fundamentals/${c.id}.json (${c.source})`);f.integrity=checkIntegrity(f,{source:c.source,priceHistory:readPriceHistory(c.id)});writeCorpusJson(`fundamentals/${c.id}.json`,f);
   writeCorpusJson(auditFile,{id:c.id,asOf:new Date().toISOString(),attempts:[...(force?previous?.attempts??[]:[]),...attempts],remainingFields:[...new Set(f.years.slice(-10).flatMap(y=>Object.keys(FIELD_TAGS).filter(k=>y[k as keyof Year]==null)))]});
   if(++finished%100===0)console.log(`complete-data: ${finished}/${jobs.length}; second-source values ${fills}`);
  }});

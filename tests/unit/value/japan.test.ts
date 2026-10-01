@@ -19,6 +19,12 @@ it("selects available annual filings, including Mitsubishi's actual June 18 fili
 it("parses quoted tabs, newlines, escaped quotes and missing units", () => {
   expect(parseEdinetCsv('要素ID\tコンテキストID\t単位\t値\n"x"\t"ctx"\t""\t"a\tb\n""c"""')).toEqual([{element:"x",context:"ctx",unit:null,value:'a\tb\n"c"'}]);
 });
+it('excludes trust and fund reports filed under a listed sponsor’s security code',()=>{
+ const data=JSON.parse(readFileSync(path.join(fixture,'documents-2025-06-18.json'),'utf8'));
+ const doc=annualReportDocuments(data)[0];
+ expect(annualReportDocuments({results:[{...doc,fundCode:'G15497',ordinanceCode:'030',formCode:'09A000'}]})).toEqual([]);
+ expect(annualReportDocuments({results:[{...doc,fundCode:null,ordinanceCode:'010',formCode:'030000'}]})).toHaveLength(1);
+});
 it("normalizes real IFRS summary and statements in absolute JPY, without parent/segment contamination", () => {
   const years = yearsFromEdinet(rows());
   expect(years.map(y => y.fy)).toEqual([2021,2022,2023,2024,2025]);

@@ -1,3 +1,4 @@
+import { completeCachedYears, completeCachedSplits, completeCompanyMetadata } from '../../../lib/value/completeness/cached-years';
 import { isInvestmentHolding } from '../../../lib/value/investment-nav';
 import { fillYears } from '../../../lib/value/completeness/second-sources';
 import { deriveYears } from '../../../lib/value/derive';
@@ -50,7 +51,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
   const jobs = companies.flatMap(row => {
     if (!validCompanyId(row.id, "analyze")) return [];
     const fundamentals = readCorpusJson<Fundamentals>(`fundamentals/${row.id}.json`);
-    const company = mergeCompany(row, readCorpusJson<Partial<Company>>(`companies/${row.id}.json`) ?? {});
+    const company = completeCompanyMetadata(mergeCompany(row, readCorpusJson<Partial<Company>>(`companies/${row.id}.json`) ?? {}),readCorpusJson);
     return fundamentals ? [{ company, fundamentals }] : [];
   }).slice(0, limit);
   const peerRows = withFinancialPeers((jobs.some(j=>j.company.kind==='bank')?readJsonl<Company>('universe.jsonl'):[]).filter(c=>c.kind==='bank'&&validCompanyId(c.id,'financial peers')).map(company=>{
@@ -69,6 +70,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
     while (cursor < jobs.length) {
       const { company, fundamentals: cachedFundamentals } = jobs[cursor++];
       try {
+        const priceHistory = readPriceHistory(company.id);
         const raw = readCorpusJson<unknown>(`raw/eodhd/${company.id}.json`);
         const normalized = raw ? normalizeEodhd(raw, company.id).fundamentals : null;
         const mapped = new Map(normalized?.years.map(year => [year.end, year]));
@@ -81,14 +83,17 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
             fundamentals.years = fundamentals.years.filter(year => mapped.has(year.end));
             fundamentals.integrity = { ...fundamentals.integrity, notes: [...new Set([...(fundamentals.integrity.notes ?? []), ...normalized.integrity.notes])] };
           }
-          fundamentals.integrity = checkIntegrity(fundamentals, { source: company.source });
+          fundamentals.integrity = checkIntegrity(fundamentals, { source: company.source, priceHistory });
           fundamentals.ttm = trailingInputs(raw, fundamentals.years.at(-1));
         }
         const sectorFacts = readCorpusJson<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
         if (sectorFacts) {
           fundamentals.years = supplementFinancialFacts(fundamentals.years, sectorFacts);
-          fundamentals.integrity = checkIntegrity(fundamentals, {source:company.source});
+          fundamentals.integrity = checkIntegrity(fundamentals, {source:company.source,priceHistory});
         }
+        fundamentals.splits = completeCachedSplits(company.id,fundamentals.splits,readCorpusJson);
+        fundamentals.years = completeCachedYears(company,fundamentals.years,readCorpusJson);
+        fundamentals.integrity = checkIntegrity(fundamentals,{source:company.source,priceHistory});
         fundamentals.years = fundamentals.years.map(y=>({...y,peerCreditLossRate:peers.get(company.id)?.get(y.end)??y.peerCreditLossRate}));
         const shareInputs = company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares
           ? await esefShareInputs(company, usdRate)
@@ -97,7 +102,6 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           id: company.id, kind: "description", url: null, filed: null, period: null, sections: [],
         } satisfies ReportMeta;
         const sections = loadSections({ company, report });
-        const priceHistory = readPriceHistory(company.id);
         const historyAttempts = readCorpusJson<{ failures?: number }>(`prices-history/meta/${company.id}.json`);
         const priceHistoryPending = priceHistory === null && (historyAttempts?.failures ?? 0) < 3;
         const localBondYield = fundamentals.integrity.ok ? await getBondYield(company.country) : null;

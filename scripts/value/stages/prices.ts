@@ -32,11 +32,11 @@ export async function refreshPrices({ repo, companies, bulk = bulkLastDay, yahoo
   yahoo?: (company: Company) => Promise<[number, string]>;
 }): Promise<void> {
   const updates: PriceMap = {};
-  const exchanges = [...new Set(companies.filter((company) => !company.id.endsWith(".JP") && company.source !== "esef").map((company) => company.exchange))].sort();
+  const exchanges = [...new Set(companies.filter((company) => !company.id.endsWith(".JP") && company.source !== "esef" && company.exchange !== "NSE").map((company) => company.exchange))].sort();
   for (const exchange of exchanges) {
     Object.assign(updates, parseBulkPrices({ rows: await bulk(exchange), companies: companies.filter((company) => company.exchange === exchange) }));
   }
-  const japanese = companies.filter((company) => company.id.endsWith(".JP") || company.source === "esef");
+  const japanese = companies.filter((company) => company.id.endsWith(".JP") || company.source === "esef" || company.exchange === "NSE");
   let succeeded = 0;
   for (const company of japanese) {
     try {

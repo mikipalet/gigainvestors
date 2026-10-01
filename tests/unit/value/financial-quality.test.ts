@@ -16,8 +16,9 @@ it('allows one weak return year but rejects two',()=>{
 it('rejects destroyed tangible capital instead of calling its return unlimited',()=>{
  const ys=years();ys[10].goodwill=10000;expect(run(ys).moat.numeric).toBe('fail');
 });
-it('does not manufacture ten-year growth from a nine-year interval or missing dividends',()=>{
- expect(run(years().slice(1)).economics.numeric).toBe('unclear');
+it('labels a nine-year interval accurately and never fills missing dividends',()=>{
+ expect(run(years().slice(1)).economics.numeric).toBe('pass');
+ expect(run(years().slice(1)).economics.metrics.bookReturnYears).toBe(9);
  const ys=years();ys[2].dividendsPaid=null;expect(run(ys).economics.numeric).toBe('unclear');
 });
 it('rejects ordinary dilution and reports crisis recapitalisations separately',()=>{
@@ -53,7 +54,7 @@ it('uses the life-insurer ROE bar and does not impose the bank worst-year bar',(
 it('uses P&C tangible-return fallback until incomplete underwriting data can decide the question',()=>{
  const ys=years().map((y,i)=>({...y,combinedRatio:i<7?.95:i===7?1.01:null}));
  const t=runNumericTests({years:ys,kind:'insurer',industry:'Insurance - Property & Casualty'});
- expect(t.moat.numeric).toBe('pass');expect(t.moat.reasons.join(' ')).toContain('core fallback');
+ expect(t.moat.numeric).toBe('pass');expect(t.moat.reasons.join(' ')).toContain('return on tangible common equity');
 });
 it('excludes the issuer from same-country same-industry peer medians',async()=>{
  const {withFinancialPeers}=await import('@/lib/value/financial-facts');
@@ -94,6 +95,15 @@ it('requires both management core metrics even when dilution is measurable',()=>
 });
 it('requires financial capital even with all optional accounting checks clear',()=>{
  const ys=years();ys[10].equity=null;expect(run(ys).accounting.numeric).toBe('unclear');
+});
+it('uses reported common dividends per share when the aggregate payment is unavailable',()=>{
+ const ys:Year[]=years().map(y=>({...y,dividendsPerShare:y.dividendsPaid!/y.dilutedShares!,dividendsPaid:null}));
+ const expected=run(),actual=run(ys);
+ expect(actual.economics.numeric).toBe(expected.economics.numeric);
+ expect(actual.economics.metrics.bookReturnCagr).toBeCloseTo(expected.economics.metrics.bookReturnCagr!);
+ expect(actual.management.metrics.retainedPerShare).toBeCloseTo(expected.management.metrics.retainedPerShare!);
+ ys[3].dividendsPerShare=null;
+ expect(run(ys).economics.numeric).toBe('unclear');
 });
 
 it('shows the financial worst-year bar used by the decision, without imposing it on insurers',async()=>{

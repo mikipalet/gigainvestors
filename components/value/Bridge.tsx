@@ -22,7 +22,7 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
     ['÷ Shares used for valuation', count(v.shares)],
   ] : v.method === 'nav' ? [
     ['Reported NAV per share', perShareMoney(v.normalized, v.currency)],
-    ['Ten-year NAV and dividend return', formatMetric({value:v.navReturn?.cagr??null,format:'pct'})],
+    [`${v.navReturn?.years??10}-year NAV and dividend return`, formatMetric({value:v.navReturn?.cagr??null,format:'pct'})],
   ] : [
     ['Tangible book value per share', perShareMoney(v.normalized, v.currency)],
     ['Normalised return on tangible equity', formatMetric({ value: component(/normalized return on (tangible )?equity/i), format: 'pct' })],

@@ -50,6 +50,14 @@ function repository(): string {
 }
 
 describe("buildOutput", () => {
+  it('retains reported NAV when independent share counts reconcile despite a stale market cap',()=>{
+    const row=analysis();row.company.investmentHolding=true;
+    row.valuation={...row.valuation!,method:'nav',shareSources:2};
+    row.company.marketCapUsd=999;
+    const result=buildOutput({analyses:[row],holdersByTicker:{},investorNames:{},fx:{},prices:{'KO.US':[80,'2026-10-01']}});
+    expect(result.unresolved).toEqual([]);
+    expect((result.files['index/US.json'] as IndexRow[])[0].v).toEqual([80,100,120]);
+  });
   it('audits newly analysed companies before the first publication exists',async()=>{
     const {auditShares}=await import('@/scripts/value/audit-shares');
     const {writeCorpusJson,readCorpusJson}=await import('@/lib/value/corpus');

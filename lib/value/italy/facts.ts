@@ -139,7 +139,23 @@ export function yearsFromEsef({
       )
       .map(([p]) => p),
   );
-  const facts = Object.values(raw.facts).filter(
+  const prefix=[...prefixes][0];
+  const equivalents:XbrlFact[]=Object.values(raw.facts).flatMap((f):XbrlFact[]=>{
+    const dimensions={...f.dimensions},local=dimensions.concept?.split(':').at(-1);
+    const axis=Object.keys(dimensions).find(k=>k.endsWith(':ComponentsOfEquityAxis'));
+    const member=axis?dimensions[axis].split(':').at(-1):null;
+    let concept:string|undefined;
+    if(prefixes.has(dimensions.concept?.split(':')[0])&&axis){
+      if(member==='EquityAttributableToOwnersOfParentMember'&&local==='Equity')concept='EquityAttributableToOwnersOfParent';
+      if(member==='EquityAttributableToOwnersOfParentMember'&&local==='ProfitLoss')concept='ProfitLossAttributableToOwnersOfParent';
+      if(member==='NoncontrollingInterestsMember'&&local==='Equity')concept='NoncontrollingInterests';
+      if(concept)delete dimensions[axis];
+    }else if(!prefixes.has(dimensions.concept?.split(':')[0])){
+      concept=({TotalEquity:'Equity',TotalEquityAttributableToOwnersOfParent:'EquityAttributableToOwnersOfParent',OfWhichGoodwill:'Goodwill'} as Record<string,string>)[local??''];
+    }
+    return concept&&prefix?[{...f,dimensions:{...dimensions,concept:`${prefix}:${concept}`}}]:[];
+  });
+  const facts = [...Object.values(raw.facts),...equivalents].filter(
     (f) =>
       consolidated(f) &&
       f.dimensions.entity?.split(":").at(-1) === lei &&
@@ -312,6 +328,12 @@ export function yearsFromEsef({
         y.equity -= y.minorityInterest;
       y.statementCoverage={income:y.operatingIncome!==null&&y.netIncome!==null&&y.costOfSales!=null,balance:y.totalAssets!==null&&y.totalLiabilities!==null&&y.equity!==null,cashFlow:y.ocf!==null&&duration.some(f=>/InvestingActivities$/.test(f.dimensions.concept))&&duration.some(f=>/FinancingActivities$/.test(f.dimensions.concept))};
       y.provenance=Object.fromEntries(Object.keys(fields).filter(k=>typeof y[k as keyof Year]==='number').map(k=>[k,{source:`ESEF ${lei}`,field:k,method:'reported' as const}]));
+      if(pick({names:['ProfitLossAttributableToOwnersOfParent']})===null){
+        const total=pick({names:['ProfitLoss']}),continuing=pick({names:['ProfitLossFromContinuingOperations']});
+        const minority=pick({names:['ProfitLossAttributableToNoncontrollingInterests']})
+          ?? (total!==null&&total===continuing?pick({names:['ProfitLossFromContinuingOperationsAttributableToNoncontrollingInterests']}):null);
+        if(total!==null&&minority!==null){y.netIncome=total-minority;y.provenance.netIncome={source:`ESEF ${lei}`,field:'netIncome',method:'derived',inputs:['consolidated profit less reported non-controlling profit']};}
+      }
       return deriveYears([y])[0];
     })
     .filter(

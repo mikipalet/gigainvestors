@@ -200,3 +200,10 @@ it('limits price-history requests after ranking Western access then market cap',
  expect(urls.filter(p=>p.includes('/eod/'))).toEqual(['/api/eod/ADR.TW']);
  expect(readCorpusJson('prices-history/BIG.TW.json')).toBeNull();
 });
+it('routes NSE symbols to Yahoo .NS without requesting unsupported EODHD symbols',async()=>{
+ const urls:string[]=[];vi.stubGlobal('fetch',async(url:string)=>{urls.push(url);return Response.json(yahoo);});
+ const {fetchPriceHistory}=await import('@/lib/value/price-history');
+ const task=fetchPriceHistory({company:company('TCS.NSE'),from:'2016-01-01'});
+ await Promise.all([task,vi.runAllTimersAsync()]);
+ expect(urls).toHaveLength(1);expect(urls[0]).toContain('/chart/TCS.NS?');
+});

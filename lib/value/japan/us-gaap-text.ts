@@ -5,6 +5,28 @@ import type { EdinetRow } from './xbrl-csv';
  * remain missing. Never read parent-only statements or the free-form notes. */
 export function usGaapStatementRows(rows: EdinetRow[]): EdinetRow[] {
   const result: EdinetRow[] = [];
+  // Preserve whitespace and percentage columns for the alternative EDINET
+  // layout. Do not infer cell boundaries from a run of ungrouped digits.
+  for(const row of rows.filter(r=>r.context==='CurrentYearDuration')){
+    const name=row.element.split(':').at(-1)!;
+    const table=row.value.replace(/[（）]/g,c=>c==='（'?'(':')');
+    const twoYears=table.includes('前連結会計年度')&&table.includes('当連結会計年度')
+      || new Set([...table.matchAll(/第([0-9０-９]+)期/g)].map(m=>m[1])).size===2;
+    if(!twoYears||table.includes('前々連結会計年度')||!table.includes('金額(百万円)'))continue;
+    const mappings=name==='ConsolidatedStatementOfCashFlowsUSGAAPTextBlock'
+      ? [['NetIncomeLossUSGAAP','当期純利益'],['DepreciationAndAmortization','減価償却費'],['PurchaseOfPropertyPlantAndEquipmentInvCFUSGAAP','資本的支出'],['PurchaseOfPropertyPlantAndEquipmentInvCFUSGAAP','有形固定資産の取得'],['StockBasedCompensation','株式報酬費用']]
+      : name==='ConsolidatedStatementOfIncomeUSGAAPTextBlock'
+        ? [['OperatingIncome','営業利益'],['IncomeBeforeIncomeTaxes','税引前当期純利益']]:[];
+    const number='[△▲-]?(?:[0-9]{1,3}(?:,[0-9]{3})+|[0-9]+)|[―－]';
+    const percentages=name==='ConsolidatedStatementOfIncomeUSGAAPTextBlock'&&table.includes('百分比');
+    for(const [element,label] of mappings){
+      const tail=table.split(label)[1];if(!tail)continue;
+      const pattern=percentages?new RegExp(`^\\s*(${number})[△▲-]?[0-9]+\\.[0-9]+\\s+(${number})[△▲-]?[0-9]+\\.[0-9]+`)
+        :new RegExp(`^\\s*(${number})\\s+(${number})(?![0-9,.])`);
+      const match=tail.match(pattern);if(!match)continue;
+      [match[1],match[2]].forEach((cell,i)=>result.push({element:`edinet_text:${element}`,context:i?'CurrentYearInstant':'Prior1YearInstant',unit:'円',value:String(/[―－]/.test(cell)?0:Number(cell.replace(/[△▲]/,'-').replaceAll(',',''))*1e6)}));
+    }
+  }
   const tables = new Map(rows.filter(r => r.context === 'CurrentYearDuration')
     .map(r => [r.element.split(':').at(-1)!, r.value.replace(/\s/g, '').replace(/[＜＞：（）]/g, c => ({'＜':'<','＞':'>','：':':','（':'(','）':')'}[c]!))]));
   const specs: Record<string, Array<[string, string[]]>> = {

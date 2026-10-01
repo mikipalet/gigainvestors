@@ -36,6 +36,7 @@ export interface Company {
 // One fiscal year, reporting currency, absolute units. null = not reported.
 // Sign convention: capex, buybacks, dividendsPaid, acquisitions are POSITIVE amounts spent.
 export interface Year {
+  commonCapitalCancelled?: boolean;
   provenance?: Record<string, import('./derive').ValueProvenance>;
   statementCoverage?: { income?: boolean; balance?: boolean; cashFlow?: boolean };
   navPerShare?: number | null; // Explicit reported investment NAV, never ordinary book equity.
@@ -176,7 +177,7 @@ export interface Valuation {
   netCash: number; // v2: excess operating cash, never cash minus debt
   version?: 1 | 2;
   tier?: "standard" | "compounder" | "nav";
-  navReturn?: { cagr: number; uncappedCagr: number };
+  navReturn?: { cagr: number; uncappedCagr: number; years?: number };
   netDebt?: number; // Actual debt less cash, for risk/display only
   leverage?: "normal" | "moderate" | "volatile";
   riskFlags?: string[];

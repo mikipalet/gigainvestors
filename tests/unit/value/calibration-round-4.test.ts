@@ -141,7 +141,7 @@ describe("M3 acquisition materiality and endpoint ROIC", () => {
     expect(result.reasons.join(" ")).not.toContain("exceeds half of ten-year");
   });
   it("does not turn missing endpoint ROIC into a decline", () => {
-    const result = management(capitalYears(i => ({ acquisitions: 3e9, operatingIncome: i === 10 ? null : 5e9 })));
+    const result = management(capitalYears(i => ({ acquisitions: 3e9, preTaxIncome:null,interestExpense:null,operatingIncome: i === 10 ? null : 5e9 })));
     expect(result.numeric).not.toBe("fail");
     expect(result.metrics.roicLast3Median).toBeNull();
     expect(result.reasons.join(" ")).not.toContain("not enough data for");

@@ -110,6 +110,7 @@ export function yearsFromEdinet(rows: EdinetRow[]): Year[] {
       else year.equity = value(["ShareholdersEquity"]);
     }
     const eps = value(["BasicEarningsLossPerShareIFRSSummaryOfBusinessResults", "BasicEarningsLossPerShareUSGAAPSummaryOfBusinessResults", "BasicEarningsLossPerShareSummaryOfBusinessResults", "BasicEarningsLossPerShareIFRS", "EarningsPerShare"]);
+    year.basicEps = eps;
     const basic = eps && year.netIncome !== null && year.netIncome / eps > 0 ? year.netIncome / eps : null;
     if (basic !== null) year.dilutedShares = basic;
     if (offset === 0) {
@@ -124,6 +125,7 @@ export function yearsFromEdinet(rows: EdinetRow[]): Year[] {
     }
     if (year.dilutedShares === null && year.netIncome !== null) {
       const eps = value(["DilutedEarningsLossPerShareUSGAAPSummaryOfBusinessResults", "DilutedEarningsLossPerShareIFRSSummaryOfBusinessResults", "DilutedEarningsPerShareSummaryOfBusinessResults", "DilutedEarningsLossPerShareIFRS"]);
+      year.dilutedEps = eps;
       if (eps !== null && eps !== 0 && year.netIncome / eps > 0) year.dilutedShares = year.netIncome / eps;
     }
     if (year.dilutedShares === null) year.dilutedShares = value(["NumberOfIssuedSharesSummaryOfBusinessResults", "TotalNumberOfIssuedSharesSummaryOfBusinessResults"], rows.filter(r => new RegExp(`^${prefix}(?:Duration|Instant)(?:_NonConsolidatedMember)?$`).test(r.context)));

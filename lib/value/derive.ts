@@ -9,13 +9,21 @@ export function deriveYears(years: Year[]): Year[] {
     const y: Year = { ...original, provenance: { ...original.provenance } };
     const put = (key: keyof Year, value: number | null | undefined, inputs: string[], method: ValueProvenance['method'] = 'derived') => {
       const existing=y.provenance?.[key];
-      const recompute=method!=='absent-in-complete-statement'&&(existing?.method==='derived'||existing?.method==='estimate');
+      const shareCountProxy=key==='dilutedShares'&&existing
+        &&existing.source!=='statements'&&!existing.inputs?.includes('basicEps')&&!existing.inputs?.includes('dilutedEps');
+      // Recompute our own formulas when their inputs change. An external
+      // derived observation can instead be a reviewed unit/FX conversion;
+      // rebuilding it from vendor inputs would discard the issuer correction.
+      const recompute=!shareCountProxy&&existing&&(key==='retainedEarningsChange'||!/^https:\/\//.test(existing.source))&&method!=='absent-in-complete-statement'&&(existing.method==='derived'||existing.method==='estimate');
       if (y[key] != null && !recompute || !finite(value)) return;
       Object.assign(y, { [key]: value });
       y.provenance![key] = { source: 'statements', field: String(key), method, inputs };
     };
     if (finite(y.revenue) && finite(y.costOfSales)) put('grossProfit', y.revenue-y.costOfSales, ['revenue','costOfSales']);
     if (finite(y.grossProfit) && finite(y.operatingExpenses)) put('operatingIncome', y.grossProfit-y.operatingExpenses, ['grossProfit','operatingExpenses']);
+    // EBIT is an explicit fallback, not an assumption that ancillary income is zero.
+    if (y.operatingIncome == null && finite(y.preTaxIncome) && finite(y.interestExpense))
+      put('operatingIncome', y.preTaxIncome+y.interestExpense, ['preTaxIncome','interestExpense','EBIT proxy']);
     if (finite(y.dilutedEps) && y.dilutedEps !== 0 && finite(y.netIncome) && y.netIncome/y.dilutedEps > 0)
       put('dilutedShares',y.netIncome/y.dilutedEps,['netIncome','dilutedEps']);
     if ((y.dilutedShares==null || y.provenance?.dilutedShares?.inputs?.includes('basicEps')) && finite(y.basicEps) && y.basicEps !== 0 && finite(y.netIncome) && y.netIncome/y.basicEps > 0)

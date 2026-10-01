@@ -45,15 +45,16 @@ describe('NAV valuation',()=>{
  });
  it('does not substitute owner earnings or book equity for missing NAV or dividends',()=>{
   expect(value(makeYears()).valuation).toBeNull();
-  expect(value(years().slice(1)).valuation).toBeNull();
+  expect(value(years().slice(1)).valuation?.navReturn?.years).toBe(9);
+  expect(value(years().slice(-6)).valuation).toBeNull();
   const ys=years();ys[5].dividendsPerShare=null;ys[5].dividendsPaid=null;
   expect(value(ys).valuation).toBeNull();
  });
  it('maps only explicit reported NAV, dividends and fair-value gain fields',()=>{
   const raw={General:{Industry:'Asset Management',Name:'3i Group PLC'},Financials:{Income_Statement:{yearly:{'2025-12-31':{totalRevenue:'100',fairValueGains:'70',totalIncome:'100',dividendsPerShare:'2'}}},Balance_Sheet:{yearly:{'2025-12-31':{netAssetValuePerShare:'123',totalStockholderEquity:'900'}}}}};
-  const f=normalizeEodhd(raw,'III.LSE').fundamentals;
+  const f=normalizeEodhd(raw,'NAV-TEST.LSE').fundamentals;
   expect(f.years[0]).toMatchObject({navPerShare:123,dividendsPerShare:2,fairValueGains:70,totalIncome:100});
-  expect(f.years[0].provenance?.navPerShare?.source).toContain('raw/eodhd/III.LSE');
+  expect(f.years[0].provenance?.navPerShare?.source).toContain('raw/eodhd/NAV-TEST.LSE');
  });
  it('keeps a missing NAV history private even with five decided quality tests',()=>{
   const a={company:{investmentHolding:true},status:'scored',historyCoverage:{years:11},valuation:null,valuationReason:'Ten-year NAV history unavailable',tests:Object.fromEntries(['understandable','moat','economics','management','accounting'].map(k=>[k,{result:'pass',reasons:[]}]))} as unknown as Analysis;

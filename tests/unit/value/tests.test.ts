@@ -73,7 +73,7 @@ describe("numeric quality tests", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ netIncome: i > 7 ? 20 : 70 }) }), "bank").moat.numeric).toBe("fail");
   });
   it("requires five non-null ROIC observations", () => {
-    expect(run(makeYears({ overrides: (_, i) => ({ operatingIncome: i < 7 ? null : 125 }) })).moat.numeric).toBe("unclear");
+    expect(run(makeYears({ overrides: (_, i) => ({ preTaxIncome:null,interestExpense:null,operatingIncome: i < 7 ? null : 125 }) })).moat.numeric).toBe("unclear");
   });
   it("fails poor owner earnings conversion", () => {
     expect(run(makeYears({ overrides: { capex: 80 } })).economics.numeric).toBe("fail");
@@ -86,7 +86,7 @@ describe("numeric quality tests", () => {
     expect(run(years).economics.numeric).toBe("pass");
   });
   it("does not treat missing inputs as zero", () => {
-    const result = run(makeYears({ overrides: { netIncome: null, ocf: null, buybacks: null, operatingIncome: null } }));
+    const result = run(makeYears({ overrides: { preTaxIncome:null,interestExpense:null,netIncome: null, ocf: null, buybacks: null, operatingIncome: null } }));
     expect(Object.values(result).every(outcome => outcome.numeric === "unclear")).toBe(true);
   });
 });

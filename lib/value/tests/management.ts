@@ -7,10 +7,15 @@ export function run({ years, kind, priceHistoryPending = false }: NumericInput) 
   const history = last(years, 11), ys = last(history, 10), first = history[0], end = history.at(-1);
   const retained = retainedTest(years);
   const perShare = history.map(y=>ratio(kind==='operating'?y.netIncome:y.equity,y.dilutedShares));
-  const startValues=perShare.slice(0,3), endValues=perShare.slice(-3);
-  const perShareStart=history.length>=7 && startValues.every(v=>v!==null)?median(startValues as number[]):null;
-  const perShareEnd=history.length>=7 && endValues.every(v=>v!==null)?median(endValues as number[]):null;
-  const perShareValueGrowth=perShareStart===null||perShareEnd===null?null:cagr({first:perShareStart,last:perShareEnd,years:history.length-3});
+  // Income-only pre-listing rows must not mask a later complete history. Keep
+  // every intervening observation and the latest endpoint; never cherry-pick.
+  let start=history.length;
+  while(start>0 && perShare[start-1]!==null && (start===history.length || history[start].fy===history[start-1].fy+1))start--;
+  const perShareWindow=perShare.slice(start);
+  const startValues=perShareWindow.slice(0,3), endValues=perShareWindow.slice(-3);
+  const perShareStart=perShareWindow.length>=7?median(startValues as number[]):null;
+  const perShareEnd=perShareWindow.length>=7?median(endValues as number[]):null;
+  const perShareValueGrowth=perShareStart===null||perShareEnd===null?null:cagr({first:perShareStart,last:perShareEnd,years:perShareWindow.length-3});
   const perShareValueChange=perShareStart===null||perShareEnd===null?null:perShareEnd-perShareStart;
   const dollarAvailable=retained.gain!==null && retained.retained!==null;
   const valuePass=dollarAvailable ? retained.gain!>=retained.retained! : perShareValueChange===null ? null : perShareEnd!>0 && perShareValueChange>=0;
@@ -73,6 +78,7 @@ export function run({ years, kind, priceHistoryPending = false }: NumericInput) 
       ...(!dollarAvailable&&perShareValueChange!==null?[`Per-share ${kind==='operating'?'earnings':'book value'}: ${perShareStart!.toFixed(2)} to ${perShareEnd!.toFixed(2)} (three-year endpoint medians)`]:[]),
     ],
     checks: [
+      ...(ys.some(y=>y.commonCapitalCancelled)?[{core:true,decisive:true,pass:false,data:'preservation of common shareholder capital',reason:'Common shareholder capital was cancelled in a financial restructuring within the assessment period'}]:[]),
       { core: true, pass: valuePass, pending: retainedPending && perShareValueChange===null, data: "the $1 test or per-share value growth", reason: dollarAvailable ? "market cap gain below cumulative retained earnings" : "per-share value declined or ends nonpositive" },
       { pass: dilutionPass, data: "diluted share growth over five and ten years", reason: "five-year and ten-year diluted share growth both above threshold" },
       { pass: timingAvailable ? !priceBlind : null, pending: priceHistoryPending && ys.some(y => y.netIncome !== null && y.buybacks !== null && y.dilutedShares !== null && y.dilutedShares > 0), data: "buyback timing", reason: "material buybacks concentrated at lower earnings yields (Spearman rho below threshold)" },

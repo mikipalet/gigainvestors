@@ -1,6 +1,9 @@
 import { forwardFiles } from './forward';
 import { METHOD_VERSION } from '../../../lib/value/method-version';
 import { isDeepStrictEqual } from 'node:util';
+import {publicBusiness} from '../../../lib/value/flags/public';
+import {applyAdjustments} from '../../../lib/value/judgement/apply';
+import judgementTrust from '../../../lib/value/judgement/trust.json';
 import { applyThesis } from '../../../lib/value/thesis/apply';
 import type { ThesisResult } from '../../../lib/value/thesis/types';
 import { withCapitalReturns } from '../../../lib/value/capital-returns';
@@ -321,11 +324,13 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
     try {
       const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
       if (!analysis) continue; // The rolling download has not analysed this company yet.
+      analysis.businessOverview=readCorpusJson<Analysis["businessOverview"]>(`business-fit/overview/${company.id}.json`)??analysis.businessOverview;
+      analysis.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`))??publicBusiness(analysis.businessDepth);
       if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");
       // Validate the consumer contract here so one malformed document cannot stop the rollout.
       if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");
       const years=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`)?.years;
-      analyses.push(applyThesis(applyShareCheck(years?withCapitalReturns(analysis,years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
+      analyses.push(applyThesis(applyShareCheck(years?withCapitalReturns(analysis,applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);
     }

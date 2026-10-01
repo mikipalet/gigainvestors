@@ -1,0 +1,79 @@
+{
+  "business": {
+    "version": "1",
+    "accuracy": 1,
+    "n": 10,
+    "positive": 3,
+    "negative": 7
+  },
+  "moat": {
+    "version": "1",
+    "accuracy": 1,
+    "n": 13,
+    "positive": 3,
+    "negative": 10
+  },
+  "pricing": {
+    "version": "2",
+    "accuracy": 1,
+    "n": 12,
+    "positive": 3,
+    "negative": 9
+  },
+  "concentration": {
+    "version": "1",
+    "accuracy": 0.9,
+    "n": 10,
+    "positive": 3,
+    "negative": 7
+  },
+  "competitors": {
+    "version": "1",
+    "accuracy": 1,
+    "n": 10,
+    "positive": 3,
+    "negative": 7
+  },
+  "candor": {
+    "version": "1",
+    "accuracy": 1,
+    "n": 10,
+    "positive": 3,
+    "negative": 7
+  },
+  "allocation": {
+    "version": "1",
+    "accuracy": 1,
+    "n": 10,
+    "positive": 3,
+    "negative": 7
+  },
+  "risk": {
+    "version": "1",
+    "accuracy": 0.9,
+    "n": 10,
+    "positive": 3,
+    "negative": 7
+  },
+  "capex": {
+    "version": "1",
+    "accuracy": 1,
+    "n": 10,
+    "positive": 3,
+    "negative": 7
+  },
+  "oneoff": {
+    "version": "1",
+    "accuracy": 0.9090909090909091,
+    "n": 11,
+    "positive": 4,
+    "negative": 7
+  },
+  "issuance": {
+    "version": "1",
+    "accuracy": 0.9,
+    "n": 10,
+    "positive": 3,
+    "negative": 7
+  }
+}

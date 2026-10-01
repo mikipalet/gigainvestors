@@ -1,3 +1,4 @@
+import {JudgementLine} from './BusinessSection';
 import { MetricHelp } from './MetricHelp';
 import { tileMetric, tileReason } from '@/lib/value/tile-metric';
 import { PassingDisclosure } from './PassingDisclosure';
@@ -45,6 +46,7 @@ export function TestSection({ test, currency = '', domain, netIncome, kind = 'op
   return <section id={`test-${test.key}`} data-test={test.key} data-metric={fixedMetric.id} className="test-section" aria-labelledby={`heading-${test.key}`}>
     <header><h2 id={`heading-${test.key}`}><StatusGlyph result={test.pending?'checking':test.result} label={`${testLabels[test.key]}: ${verdict}`} />{testLabels[test.key]}</h2><p>{verdict}.{headline ? ` ${humanLabel(headline).replace(/\.$/, '')}.` : ' Review the figures and filing evidence below.'}</p></header>
     {kind !== 'operating' && test.key === 'economics' && <p className="source-line">Book value and ROE drive this valuation. </p>}
+    <JudgementLine test={test}/>
     <PassingDisclosure passing={test.result==='pass'} summary={`${metrics.length} measures · charts & filing evidence`}>
     <div className="test-content">
     <div className="test-charts">{seriesKeys[test.key].filter(key => !(key==='roic'&&['Positive earnings, nonpositive capital','n/m'].includes(returnInfo.label))).filter(key => test.series[key]?.some(p => p[1] !== null)).map(key => {

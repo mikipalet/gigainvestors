@@ -1,0 +1,91 @@
+[
+  {
+    "id": "extended-0",
+    "company": "ORCL.US",
+    "topic": "relationship",
+    "expected": "contract",
+    "counterparty": "PNC Capital Markets LLC",
+    "evidence": {
+      "quote": "Item 1.01 Entry into a Material Definitive Agreement\n\nEquity Distribution Agreement\n\nOn February 2, 2026, Oracle Corporation, a Delaware corporation (\u201cOracle\u201d) entered into an equity distribution agreement (the \u201cEquity Distribution Agreement\u201d) with BofA Securities, Inc., Citigroup Global Markets Inc., Deutsche Bank Securities Inc., Goldman Sachs & Co. LLC and J.P. Morgan Securities LLC, as sales agents, to sell shares of common stock, par value $0.01 per share, of Oracle (the \u201cCommon Stock\u201d) having aggregate sales proceeds of up to $20.0 billion (the \u201cShares\u201d), from time to time, through an \u201cat-the-market\u201d offering program (the \u201cATM Offering\u201d). On February 3, 2026, HSBC Securities (USA) Inc., BNP Paribas Securities Corp., PNC Capital Markets LLC, SMBC Nikko Securities America, Inc., Santander US Capital Markets LLC, TD Securities (USA) LLC, BNY Mellon Capital Markets, LLC, Credit Agricole Securities (USA) Inc., ING Financial Markets LLC and Wells Fargo Securities, LLC executed a joinder agreement to the Equity Distribution Agreement, pursuant to which each became a sales agent thereunder (each, together with BofA Securities, Inc., Citigroup Global Markets Inc., Deutsche Bank Securities Inc., Goldman Sachs & Co. LLC and J.P. Morgan Securities LLC, a \u201cSales Agent\u201d and collectively, the \u201cSales Agents\u201d).",
+      "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526037840/d23732d8k.htm",
+      "filed": "2026-02-04",
+      "period": "2026-02-02",
+      "section": "Annual filing",
+      "disclosedBy": "ORCL.US"
+    }
+  },
+  {
+    "id": "extended-1",
+    "company": "NVDA.US",
+    "topic": "relationship",
+    "expected": "guarantee",
+    "counterparty": "OpenAI",
+    "evidence": {
+      "quote": "On August 17, 2026, NVIDIA entered into multiple residual value guaranties (collectively, the \u201cAgreements\u201d) with SB Energy (the \u201cLessor\u201d) relating to leases for approximately 4.25 gigawatts of IT load in the aggregate at the Portsmouth Site. An Agreement generally will become effective upon commencement of the applicable lease. NVIDIA also can provide credit support to secure approximately an additional 3.8 gigawatts at the Portsmouth Site, exercisable in its sole discretion.\n\nPursuant to the Agreements, OpenAI is the tenant; however, in the event of (i) OpenAI\u2019s insolvency resulting in a default under a lease, or (ii) OpenAI\u2019s failure to make payments under a lease (each a \u201cTrigger Event\u201d), NVIDIA will pay an amount generally equal to any shortfall between the guaranteed minimum value of a lease (as set forth in the Agreements) and amounts recovered through a replacement lease or sale.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm",
+      "filed": "2026-08-17",
+      "period": "2026-08-17",
+      "section": "Annual filing",
+      "disclosedBy": "NVDA.US"
+    }
+  },
+  {
+    "id": "extended-2",
+    "company": "QCOM.US",
+    "topic": "relationship",
+    "expected": "licensing",
+    "counterparty": "Arm",
+    "evidence": {
+      "quote": "Arm Ltd. v. QUALCOMM Incorporated: On August 31, 2022, Arm Ltd. (Arm) filed a complaint against us in the United States District Court for the District of Delaware. Our subsidiaries Qualcomm Technologies, Inc. and NuVia, Inc. (Nuvia) are also named in the complaint. The complaint alleges that following our acquisition of Nuvia, we and Nuvia breached Nuvia\u2019s Architecture License Agreement with Arm (the Nuvia ALA) by failing to comply with the termination obligations under the Nuvia ALA. Arm is seeking specific performance, including that we cease all use of and destroy any technology that was developed under the Nuvia ALA, including processor core technology (which Arm alleges includes our custom Qualcomm Oryon CPU cores). On September 30, 2022, we filed our Answer and Counterclaim in response to Arm\u2019s complaint denying Arm\u2019s claims. Our counterclaim seeks a declaratory judgment that we did not breach the Nuvia ALA or the Technology License Agreement between Nuvia and Arm, and that, following the acquisition of Nuvia, our architected cores (including all further developments, iterations or instantiations of the technology we acquired from Nuvia) and System-on-Chip (SoC) products incorporating such cores are fully licensed under our existing Architecture License Agreement with Arm (the Qualcomm ALA) and Technology License Agreement with Arm (the Qualcomm TLA). A trial was held beginning on December 16, 2024, and on December 20, 2024, the jury found that (i) Qualcomm did not breach the Nuvia ALA and (ii) Qualcomm CPUs that include designs acquired in the Nuvia acquisition are licensed under the Qualcomm ALA. The jury was unable to reach a verdict with respect to Arm\u2019s claim as to whether Nuvia breached the Nuvia ALA. The parties filed various post-trial motions, including motions for judgment as a matter of law. On September 30, 2025, the court entered a final judgment upholding the jury\u2019s verdict in favor of Qualcomm, granting judgment to Nuvia, and dismissing Arm\u2019s remaining claims. On October 1, 2025, Arm filed a notice of appeal to the United States Court of Appeals for the Third Circuit. We intend to continue to vigorously defend ourselves against Arm\u2019s claims in this matter.",
+      "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432825000085/qcom-20250928.htm",
+      "filed": "2025-11-05",
+      "period": "2025-09-28",
+      "section": "Annual filing",
+      "disclosedBy": "QCOM.US"
+    }
+  },
+  {
+    "id": "extended-3",
+    "company": "CBG.LSE",
+    "topic": "relationship",
+    "expected": "subsidiary",
+    "counterparty": "Close Brothers Holdings Limited",
+    "evidence": {
+      "quote": "The assets under management of unconsolidated structured entities managed by the group were \u00a3nil at 31 July 2025 (31 July\n2024: \u00a35,434.0 million). There is no management fee income from unconsolidated structured entities managed by the group\n(2024: \u00a3nil) within the revenue of continuing operations in the consolidated income statement.\n\nThe investment in subsidiary of \u00a3487.0 million (31 July 2024: \u00a3487.0 million) in the company balance sheet relates to a 100%\nshareholding in Close Brothers Holdings Limited of \u00a3287.0 million (31 July 2024: \u00a3287.0 million) and an investment in the AT1\nsecurities of Close Brothers Limited of \u00a3200.0 million (31 July 2024: \u00a3200.0 million). The company issued AT1 securities of\n\u00a3200.0 million on 29 November 2023 as described in Note 20 and simultaneously entered into a back-to-back transaction with\nits subsidiary Close Brothers Limited.",
+      "url": "https://www.closebrothers.com/system/files/rrp/reports/CBGAnnualReport2025.pdf",
+      "filed": "2025-10-03",
+      "period": "2025-07-31",
+      "section": "Annual filing",
+      "disclosedBy": "CBG.LSE"
+    }
+  },
+  {
+    "id": "extended-4",
+    "company": "WKL.AS",
+    "topic": "relationship",
+    "expected": "subsidiary",
+    "counterparty": "Wolters Kluwer U.S. Corporation",
+    "evidence": {
+      "quote": "208\n\nNotes to the consolidated financial statements continued\n\nNote 38 \u2013 Overview of significant subsidiaries continued\nUnited Kingdom\n\u2022 Wolters Kluwer Holdings (UK) Ltd. (Tax & Accounting)\n\u2022 Wolters Kluwer (UK) Limited (Tax & Accounting)\nUnited States\n\u2022 CCH Incorporated (Tax & Accounting, Legal & Regulatory, and Corporate Performance & ESG)\n\u2022 C T Corporation System (Financial & Corporate Compliance)\n\u2022 Enablon North America Corp. (Corporate Performance & ESG)\n\u2022 eOriginal, Inc. (Financial & Corporate Compliance)\n\u2022 Health Language, Inc. (Health)\n\u2022 National Registered Agents, Inc. (Financial & Corporate Compliance)\n\u2022 Ovid Technologies, Inc. (Health)\n\u2022 RASI Entity Staffing, LLC (Financial & Corporate Compliance)\n\u2022 Universal Tax Systems, Inc. (Tax & Accounting)\n\u2022 UpToDate, Inc. (Health)\n\u2022 Wolters Kluwer DXG U.S., Inc. (Digital eXperience Group)\n\u2022 Wolters Kluwer ELM Solutions, Inc. (Legal & Regulatory)\n\u2022 Wolters Kluwer Financial Services, Inc. (Financial & Corporate Compliance and Corporate\nPerformance & ESG)\n\u2022 Wolters Kluwer Health, Inc. (Health)\n\u2022 Wolters Kluwer North America, Inc. (Corporate Office)\n\u2022 Wolters Kluwer R&D U.S. LP (Digital eXperience Group)\n\u2022 Wolters Kluwer United States Inc. (Global Business Services and Corporate Office)\n\u2022 Wolters Kluwer U.S. Corporation (Corporate Office)\nA subsidiary is categorized as significant depending on its revenues, operating profit, net profit,\nand/or total assets.\nIn addition to these significant subsidiaries, the group has other consolidated entities in the\ncountries listed, and also in the following countries: Austria, Brazil, China, the Czech Republic,\nDenmark, Hong Kong, Hungary, India, Indonesia, Japan, Malaysia, Mexico, New Zealand, Norway, the\nPhilippines, Portugal, Romania, Saudi Arabia, Singapore, Slovakia, South Africa, South Korea,\nSweden, Switzerland, Taiwan, and Ukraine.",
+      "url": "https://assets.contenthub.wolterskluwer.com/api/public/content/3210406-wolters-kluwer-2025-annual-report-pdf-8bb01b4e47?v=ddef685b",
+      "filed": "2026-03-11",
+      "period": "2025-12-31",
+      "section": "Annual filing",
+      "disclosedBy": "WKL.AS"
+    }
+  },
+  {
+    "id": "disposed-investment",
+    "company": "ORCL.US",
+    "topic": "relationship",
+    "expected": "none",
+    "counterparty": "Ampere Computing Holdings LLC",
+    "evidence": {
+      "quote": "Our non-operating income, net increased by $3.5 billion in reported currency in fiscal 2026 relative to fiscal 2025 primarily due to a $2.7 billion gain from the sale of our investment in Ampere Computing Holdings LLC (Ampere), a $380 million gain from other investments, net, a $205 million increase in gains from our investment portfolio related to our deferred compensation plan included in other income, net and a $202 million increase in interest income. Refer to Note 1 of Notes to Consolidated Financial Statements included elsewhere in this Annual Report for additional information on the Ampere transaction.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm",
+      "filed": "2026-06-22",
+      "period": "2026-05-31",
+      "section": "Annual filing"
+    }
+  }
+]

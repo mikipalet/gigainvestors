@@ -63,3 +63,16 @@ export async function getSearchCompany(id: string) {
   const shard=await readStore<import('./types').SearchShard>(`search/${key}.json`);
   return shard?.rows.find(row=>row[0].toUpperCase()===id.toUpperCase())??null;
 }
+
+/** Recompute from the immutable observations, never from today's membership or quotes. */
+export async function getForwardRecord() {
+  const { computeForwardRecord, validForwardDate } = await import('./forward');
+  const manifest = await readStore<{dates:string[]}>('forward/index.json');
+  const snapshots = await Promise.all((manifest?.dates??[]).map(async date => {
+    if (!validForwardDate(date)) throw new Error('Invalid forward record date');
+    const snapshot = await readStore<import('./forward').ForwardSnapshot>(`forward/${date}.json`);
+    if (!snapshot || snapshot.date !== date) throw new Error(`Missing or mismatched forward record ${date}`);
+    return snapshot;
+  }));
+  return computeForwardRecord(snapshots);
+}

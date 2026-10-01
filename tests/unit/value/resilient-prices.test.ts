@@ -43,3 +43,19 @@ it('uses the last completed daily Yahoo close while the current session is tradi
  expect(parseYahooPrice(raw,(regular.start+3600)*1000)).toEqual([4818,'2026-09-28']);
  expect(parseYahooPrice(raw,regular.end*1000)).toEqual([4637,'2026-09-29']);
 });
+
+it('refreshes the full member benchmark before its first snapshot, including unanalysed members',()=>{
+ const repo=root();mkdirSync(path.join(repo,'index'));mkdirSync(path.join(repo,'dossiers'));
+ writeFileSync(path.join(repo,'index/US.json'),'[]');
+ expect(publishedPriceCompanies(repo,[{...company('MEMBER.US'),indexes:['S&P 500']},company('OUTSIDE.US')]).map(c=>c.id)).toEqual(['MEMBER.US']);
+});
+it('keeps refreshing archived identities after they leave the current index universe',async()=>{
+ const {buildForwardSnapshot}=await import('@/lib/value/forward');
+ const repo=root();mkdirSync(path.join(repo,'index'));mkdirSync(path.join(repo,'forward'));
+ writeFileSync(path.join(repo,'index/US.json'),'[]');
+ const c={...company('OLD.US'),name:'Former member',currency:'USD',listings:['OLD.US']};
+ const snapshot=buildForwardSnapshot({date:'2026-10-01',universe:[c],rows:[],prices:{'OLD.US':[10,'2026-10-01']}});
+ writeFileSync(path.join(repo,'forward/index.json'),JSON.stringify({dates:['2026-10-01']}));
+ writeFileSync(path.join(repo,'forward/2026-10-01.json'),JSON.stringify(snapshot));
+ expect(publishedPriceCompanies(repo,[])).toMatchObject([{id:'OLD.US',code:'OLD',exchange:'US',country:'US',currency:'USD'}]);
+});

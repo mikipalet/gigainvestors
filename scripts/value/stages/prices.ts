@@ -1,3 +1,5 @@
+import { validForwardDate, type ForwardSnapshot } from '../../../lib/value/forward';
+import { companyExclusion } from '../../../lib/value/fund-exclusion';
 import { universeCompanies } from '../../../lib/value/companies';
 import { refreshPublishedBuyPrices } from '../../../lib/value/refresh-buy-prices';
 import { existsSync, mkdirSync, readFileSync, readdirSync, statfsSync, renameSync, writeFileSync } from "node:fs";
@@ -44,14 +46,30 @@ function checkDisk(): void {
   if (disk.bavail * disk.bsize < 5 * 1024 ** 3) throw new Error('Disk below 5 GB; stopping');
 }
 
-/** Country indexes define the published population; default.json is only a subset. */
+/** Refresh published analyses, the full index benchmark and archived forward identities. */
 export function publishedPriceCompanies(repo: string, universe: Company[]): Company[] {
-  const ids = new Set<string>();
+  const ids = new Set(universe.filter(c=>c.indexes?.length && !companyExclusion(c)).map(c=>c.id));
   for (const file of readdirSync(path.join(repo, 'index')).filter(f => /^[A-Z]{2}\.json$/.test(f))) {
     const rows = JSON.parse(readFileSync(path.join(repo, 'index', file), 'utf8')) as Array<{ id: string }>;
     for (const row of rows) ids.add(row.id);
   }
-  const companies = new Map(universe.filter(c => ids.has(c.id)).map(c => [c.id, c]));
+  const archived = new Map<string, Company>();
+  const forwardIndex = path.join(repo,'forward/index.json');
+  if (existsSync(forwardIndex)) {
+    const dates = JSON.parse(readFileSync(forwardIndex,'utf8')).dates as string[];
+    const date = [...dates].sort().at(-1);
+    if (date) {
+      if (!validForwardDate(date)) throw new Error('Invalid forward price identity date');
+      const snapshot=JSON.parse(readFileSync(path.join(repo,`forward/${date}.json`),'utf8')) as ForwardSnapshot;
+      for (const [id, observation] of Object.entries(snapshot.observations)) {
+        ids.add(id);
+        // Pricing needs listing identity only; these defaults never enter analysis.
+        archived.set(id,{...observation.quoteIdentity,id,name:observation.name,currency:observation.currency,listings:[id],
+          isin:null,cik:null,lei:null,edinetCode:null,sector:null,industry:null,kind:'operating',marketCapUsd:null,description:null});
+      }
+    }
+  }
+  const companies = new Map([...archived,...universe.filter(c => ids.has(c.id)).map(c => [c.id, c] as const)]);
   if (companies.size < ids.size) {
     for (const file of readdirSync(path.join(repo, 'dossiers')).filter(f => /^\d{3}\.json$/.test(f))) {
       const rows = JSON.parse(readFileSync(path.join(repo, 'dossiers', file), 'utf8')) as Record<string, { company: Company }>;

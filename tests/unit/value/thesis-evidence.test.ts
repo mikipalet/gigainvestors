@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { evidenceBatches, readBatch, combineAnswers, verifyAnswers } from '@/lib/value/thesis/evidence';
+import { evidenceBatches, readBatch, combineAnswers, verifyAnswers, readThesis } from '@/lib/value/thesis/evidence';
 import { THESIS_QUESTIONS } from '@/lib/value/thesis/questions';
+it('retains a separate claimed exposure when an earlier passage only states defence costs',async()=>{
+ const source={url:'https://example.com/interim',filed:'2026-07-31',period:'2026-06-30',section:'notes'};
+ const sources=[{...source,text:'We expect legal defence costs of £7 million.'},{...source,text:'A collective proceedings claim seeks damages of £1.56 billion.'}];
+ const result=await readThesis(sources,'2026-10-01','',async({questions})=>({answers:Object.fromEntries(Object.keys(questions).map(id=>[id,choice(id.endsWith('_evidence')?'p1':id==='thesis_liability'?'yes':'no')]))}));
+ expect(result.answers.filter(a=>a.id==='thesis_liability'&&a.value==='yes').map(a=>a.evidence?.quote)).toEqual(sources.map(s=>s.text));
+});
 import { disclosureWindows } from '@/lib/value/thesis/sources';
 import type { RawAnswer } from '@/lib/value/types';
 const source={url:'https://example.com/report',filed:'2026-09-01',period:'2026-06-30',section:'interim',text:'We have suspended the ordinary dividend. Equity is £100 million. The redress provision is £30 million.'};
@@ -22,6 +28,13 @@ describe('source-bound thesis extraction',()=>{
  it('finds disclosures beyond the reports stage note truncation',()=>{
   const text='ordinary accounting policy. '.repeat(5000)+'The motor finance redress provision is £300 million.';
   expect(disclosureWindows(text)).toContain('The motor finance redress provision is £300 million.');
+ });
+ it('keeps the preceding insurance-reserve qualification when a later amount is selected',()=>{
+  const text='Routine insurance disputes are included in technical insurance reserves. '+('Ordinary claims. '.repeat(90))+'Total disputed liabilities PLN 12,718 million.';
+  const batch=evidenceBatches([{...source,text}],'2026-10-01','')[0];
+  const raw=Object.fromEntries(Object.keys(THESIS_QUESTIONS).flatMap(id=>[[id,choice('yes')],[`${id}_evidence`,choice('p2')]]));
+  const evidence=readBatch(batch,raw).find(a=>a.id==='thesis_liability')!.evidence!;
+  expect(evidence.quote).toContain('technical insurance reserves');expect(evidence.quote).toContain('12,718 million');expect(text.includes(evidence.quote)).toBe(true);
  });
 });
 

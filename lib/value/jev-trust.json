@@ -40,7 +40,7 @@
     "thesis_structural": 0.8,
     "thesis_liability": 1,
     "thesis_guidance": 1,
-    "thesis_distress": 0.7
+    "thesis_distress": 0.9
   },
   "versions": {
     "auditor_changed": "1",
@@ -68,44 +68,46 @@
     "government_dependence": "1",
     "pricing_power": "1",
     "scale": "1",
-    "thesis_structural": "2",
-    "thesis_liability": "2",
-    "thesis_guidance": "2",
-    "thesis_distress": "2"
+    "thesis_structural": "5",
+    "thesis_liability": "5",
+    "thesis_guidance": "5",
+    "thesis_distress": "5"
   },
   "thesis": {
     "thesis_structural": {
-      "version": "2",
+      "version": "5",
       "accuracy": 0.8,
       "n": 10,
       "positives": 2,
-      "negatives": 8
+      "negatives": 8,
+      "enabled": false
     },
     "thesis_liability": {
-      "version": "2",
+      "version": "5",
       "accuracy": 1,
-      "n": 10,
-      "positives": 3,
-      "negatives": 7
+      "n": 20,
+      "positives": 9,
+      "negatives": 11
     },
     "thesis_guidance": {
-      "version": "2",
+      "version": "5",
       "accuracy": 1,
       "n": 10,
       "positives": 1,
       "negatives": 9
     },
     "thesis_distress": {
-      "version": "2",
-      "accuracy": 0.7,
+      "version": "5",
+      "accuracy": 0.9,
       "n": 10,
       "positives": 4,
-      "negatives": 6
+      "negatives": 6,
+      "enabled": false
     }
   },
   "thesis_calibration": {
-    "graded_at": "2026-10-01T10:47:42.822Z",
-    "fixture_sha256": "016748ee4d7f53f631c6c01a8dc09ac23b5e6b48ef11b7197de1c1f7fd4f0c8f",
+    "graded_at": "2026-10-01T11:17:12.489Z",
+    "fixture_sha256": "ac2dfb61c219bd9b417f56b88c5b91aaf1d9c857eded732ce927ba9e00dbc150",
     "method": "Official filing excerpt labels; accuracy >=0.90, with both positive and negative labels; yes requires an exact selected filing passage and a second affirmative on that passage alone; positive evidence must be dated within 18 months. No trust granted to all-negative question sets."
   }
 }

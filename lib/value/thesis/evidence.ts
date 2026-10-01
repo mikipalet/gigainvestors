@@ -32,7 +32,12 @@ export function readBatch(batch:EvidenceBatch,raw:Record<string,RawAnswer>):Thes
  return (Object.keys(THESIS_QUESTIONS) as ThesisQuestionId[]).map(id=>{
   const answer=raw[id],quote=raw[`${id}_evidence`];
   if(answer?.type!=='choice'||!['yes','no','unclear'].includes(answer.choice))throw new Error(`Invalid thesis answer: ${id}`);
-  const text=quote?.type==='choice'?batch.passages[quote.choice]:undefined;
+  const selected=quote?.type==='choice'?batch.passages[quote.choice]:undefined;
+  // A cropped amount can lose the qualification that it is a routine reserve.
+  // Expand within its contiguous source only, then confirm on this exact text.
+  const fragment=selected?batch.source.text.split('\n\n[Noncontiguous filing excerpt]\n\n').find(t=>t.includes(selected)):undefined;
+  const start=selected&&fragment?fragment.indexOf(selected):0;
+  const text=selected&&fragment?fragment.slice(Math.max(0,start-1500),start+selected.length+500):selected;
   return {id,version:THESIS_VERSION,value:answer.choice as ThesisAnswer['value'],evidence:text?{quote:text,url:batch.source.url,filed:batch.source.filed,section:batch.source.section}:null};
  });
 }
@@ -69,6 +74,13 @@ export async function readThesis(sources:ThesisSource[],asOf:string,context:stri
   recordings.push({stateHash:createHash('sha256').update(batch.state).digest('hex'),questions:batch.questions,answers:result.answers});
  }
  const answers=combineAnswers(rows);
+ // One affirmative may concern only defence costs. Retain other quantified
+ // exposures from the report so a larger asserted claim cannot be hidden.
+ const seen=new Set(answers.filter(a=>a.id==='thesis_liability'&&a.value==='yes').map(a=>JSON.stringify(a.evidence)));
+ for(const answer of rows.flat().filter(a=>a.id==='thesis_liability'&&a.value==='yes'&&a.evidence)){
+  const key=JSON.stringify(answer.evidence);
+  if(!seen.has(key)){answers.push(answer);seen.add(key);}
+ }
  recordings.push(...await verifyAnswers(answers,asOf,context,ask));
  return {answers,recordings};
 }

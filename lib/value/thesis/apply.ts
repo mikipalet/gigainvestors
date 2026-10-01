@@ -6,7 +6,7 @@ import type { ThesisResult, ThesisTrust } from './types';
 export const thesisTrust=():ThesisTrust=>(trustFile as unknown as {thesis?:ThesisTrust}).thesis??{};
 export function applyThesis(analysis:Analysis,result:ThesisResult|null,trust:ThesisTrust=thesisTrust()):Analysis {
  if(!result||result.id!==analysis.id||result.version!==THESIS_VERSION||result.asOf.slice(0,10)<analysis.asOf.slice(0,10))return analysis;
- const thesis=thesisDecision(result.answers,trust);
+ const thesis=thesisDecision(result.answers,trust,result.market);
  let valuation=analysis.valuation;
  for(const answer of result.answers){
   const g=answer.guidance;

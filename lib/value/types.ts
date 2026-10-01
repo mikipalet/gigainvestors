@@ -251,6 +251,7 @@ export interface Dossier extends Analysis {
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
   businessChanged?: boolean;
+  thesisReason?: string;
   quality?: import('./quality-metric').QualityMetric;
   shareSources?: 2;
   historyYears?: number;

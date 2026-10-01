@@ -9,6 +9,12 @@ import { mainCompanies, mainZones } from '@/lib/value/main-layout';
 import type { RawAnswer } from '@/lib/value/types';
 
 describe('recorded Jev calibration responses',()=>{
+ it('meets 90% across independently labelled scope controls, including the controller audit cases',()=>{
+  const grades=recorded.flatMap(r=>r.graded).filter(g=>g.id==='thesis_liability');
+  expect(grades.filter(g=>g.correct).length/grades.length).toBeGreaterThanOrEqual(.9);
+  for(const id of ['USB.US','JPM-guarantees','WFC-guarantees','ZTS.US','MSFT.US'])expect(recorded.find(r=>r.id===id)!.graded.find(g=>g.id==='thesis_liability')).toMatchObject({expected:'no',actual:'no',correct:true});
+  for(const id of ['CBG-2025','RMV.LSE','Bayer-glyphosate','3M-earplugs','3M-PFAS','JNJ-talc'])expect(recorded.find(r=>r.id===id)!.graded.find(g=>g.id==='thesis_liability')).toMatchObject({expected:'yes',actual:'yes',correct:true});
+ });
  for(const fixture of labels.cases)it(`replays exact source-bound answers for ${fixture.id}`,async()=>{
   const record=recorded.find(r=>r.id===fixture.id)!;
   const result=await readThesis(fixture.sources,fixture.asOf,fixture.context,async({state,questions})=>{
@@ -17,12 +23,12 @@ describe('recorded Jev calibration responses',()=>{
    expect(response).toBeDefined();expect(response!.questions).toEqual(questions);
    return {answers:response!.answers as Record<string,RawAnswer>};
   });
-  expect(result.answers).toEqual(record.answers);
+  expect(result.answers).toEqual(record.amounts.before);
  });
- it('turns the recorded Close Brothers disclosures into a separate business-changed decision',()=>{
+ it('turns the recorded Close Brothers disclosures into a specific liability decision',()=>{
   const record=recorded.find(r=>r.id==='CBG-2025')!;
   const a:any={id:'CBG.LSE',asOf:'2025-09-30',valuation:null,tests:{}};
-  const result:any={...record,id:a.id,asOf:a.asOf,version:'2'};
+  const result:any={...record,id:a.id,asOf:a.asOf,version:'5',market:{currency:'GBP',marketValue:800000000,ownerEarnings:100000000,asOf:'2025-09-30',basis:'test market value'}};
   const changed=applyThesis(a,result);
   expect(changed.thesis?.changed).toBe(true);
   expect(changed.tests).toBe(a.tests);
@@ -46,7 +52,7 @@ it('preserves the veto through index, browser payload, dossier and funnel public
  const a=JSON.parse(readFileSync('tests/fixtures/value/store/dossiers/027.json','utf8'))['KO.US'];
  a.asOf='2025-09-30T09:06:22.368Z';a.id='CBG.LSE';a.company={...a.company,id:a.id,country:'GB',currency:'GBP',marketCapUsd:null};
  a.valuation={...a.valuation,currency:'GBP',normalized:1000,shares:100,growth:0,discountRate:.1,perShare:{low:80,mid:100,high:120},perShareTrading:undefined,assumptions:[]};
- const result:any={...recorded.find(r=>r.id==='CBG-2025'),id:a.id,asOf:a.asOf.slice(0,10),version:'2'};
+ const result:any={...recorded.find(r=>r.id==='CBG-2025'),id:a.id,asOf:a.asOf.slice(0,10),version:'5',market:{currency:'GBP',marketValue:800000000,ownerEarnings:100000000,asOf:'2025-09-30',basis:'test market value'}};
  const changed=applyThesis(a,result);
  const args={prices:{[a.id]:[60,'2025-09-30'] as [number,string]},holdersByTicker:{},investorNames:{},fx:{GBP:1.3}};
  const baseline=buildOutput({...args,analyses:[a]}).files,files=buildOutput({...args,analyses:[changed]}).files;
@@ -57,5 +63,5 @@ it('preserves the veto through index, browser payload, dossier and funnel public
  const dossier=Object.entries(files).filter(([k])=>k.startsWith('dossiers/')).flatMap(([,v])=>Object.values(v as object))[0] as any;
  expect(dossier.thesis.evidence).toEqual(changed.thesis!.evidence);
  const html=renderToStaticMarkup(createElement(DossierContent,{dossier,quote:[60,'2025-09-30']}));
- expect(html).toContain('data-verdict="Business changed"');expect(html).toContain('Read the disclosure');expect(html).not.toContain('data-verdict="Buy zone"');
+ expect(html).toContain('data-verdict="Thesis disclosure"');expect(html).toContain('Read the disclosure');expect(html).toContain('£165m provided');expect(dossier.valuation).not.toBeNull();expect(rows[0].thesisReason).toContain('£165m provided');expect(html).not.toContain('data-verdict="Buy zone"');
 });

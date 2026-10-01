@@ -131,6 +131,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       w, exchange: company.exchange, shareSources: analysis.valuation?.shareSources, buyReturnInputs: price.dataQualityFlags.length ? null : returnInputs,
       historyYears: analysis.historyCoverage?.years ?? analysis.tests.understandable.metrics.historyYears ?? undefined,
       b: price.b, businessChanged: analysis.thesis?.changed || undefined,
+      thesisReason: analysis.thesis?.changed ? analysis.thesis.reason : undefined,
       returnInfo:{...returns,sort:Number.isFinite(returns.sort)?returns.sort:returns.sort>0?Number.MAX_VALUE:-Number.MAX_VALUE},
       fy: Math.max(0,...Object.values(analysis.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]))) || undefined,
       m: requiredMos, r: [...Array<number | null>(T.history.years - roic.length).fill(null), ...roic],

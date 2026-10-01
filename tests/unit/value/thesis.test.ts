@@ -24,8 +24,8 @@ describe('filing-grounded thesis decisions',()=>{
  it('selects strict drawdown/provision thresholds independently of a buy decision',()=>{
   expect(thesisTriggers({buy:false,next:false,quality:true,drawdown:0.41,financial:false,charges:[]})).toEqual(['drawdown']);
   expect(thesisTriggers({buy:false,next:false,quality:true,drawdown:0.4,financial:false,charges:[]})).toEqual([]);
-  expect(thesisTriggers({buy:false,next:false,quality:false,drawdown:null,financial:true,charges:[{amount:11,equity:100}]})).toEqual(['financial_charges']);
-  expect(thesisTriggers({buy:false,next:false,quality:false,drawdown:null,financial:true,charges:[{amount:10,equity:100}]})).toEqual([]);
+  expect(thesisTriggers({buy:false,next:false,quality:false,drawdown:null,financial:true,charges:[{amount:11,marketValue:100}]})).toEqual(['financial_charges']);
+  expect(thesisTriggers({buy:false,next:false,quality:false,drawdown:null,financial:true,charges:[{amount:10,marketValue:100}]})).toEqual([]);
  });
  it('lowers owner earnings and all scenarios without scaling away excess cash',()=>{
   const v:any={method:'owner_earnings',normalized:100,netCash:200,shares:10,perShare:{low:80,mid:100,high:120},perShareTrading:{currency:'GBX',fxRate:100,low:8000,mid:10000,high:12000},equityBondYield:.1,bridge:[{label:'= owner earnings',value:100}],assumptions:[]};

@@ -1,0 +1,11 @@
+/* Filter sheet: options scroll in one sheet, with the result action always visible. */
+.value-page .value-panel:has(.panel-filters) {width:min(460px,100vw);}
+.value-page .panel-content:has(.panel-filters) {display:flex;flex-direction:column;gap:0;padding:0;overflow:hidden;}
+.value-page .panel-filters {flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:20px 18px;gap:24px;}
+.panel-filters .filter-toggles {border-top:1px solid var(--viz-grid);padding-top:18px;}
+.panel-filters .filter-toggles h3 {font-size:16px;font-weight:500;margin:0 0 8px;}
+.panel-filters .design-toggle {min-height:44px;width:100%;justify-content:space-between;flex-direction:row-reverse;}
+.panel-filters .market-scope {width:100%;}
+.value-page .filter-footer {flex:none;background:var(--paper);border-top:1px solid var(--viz-grid);padding:12px 18px max(12px,env(safe-area-inset-bottom));}
+.value-page .filter-apply {display:flex;align-items:center;justify-content:space-between;width:100%;min-height:46px;padding:12px 14px;margin:0;border:0;border-radius:3px;background:var(--buy);color:var(--paper);font-size:15px;font-weight:500;}
+.value-page .filter-apply:focus-visible {outline:1px solid var(--ink);outline-offset:3px;}

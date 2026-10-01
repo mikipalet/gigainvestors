@@ -69,8 +69,6 @@
  .simulation-line {padding:6px 14px 0;font-size:14px!important;}
  .reference-metrics {font-size:14px;}
 }
-.value-page .search-options [role=listbox] {max-height:none;overflow:visible;}
-.value-page .design-options {overflow:visible;max-height:none;}
 .select-pages {display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px;font-size:14px;}
 .select-pages button {width:44px;height:44px;border:1px solid var(--viz-grid);}
 .select-pages button:disabled {opacity:.3;}
@@ -84,8 +82,6 @@ body:has(.value-page) #search-results {font-size:14px;}
  .paginated-results th:first-child {width:58%;}
  .paginated-results table {font-size:14px;}
  .panel-filters {gap:16px;}
- .panel-filters .design-options {position:relative;top:auto;max-width:100%;box-shadow:none;width:100%;}
- .panel-filters:has(.search-options) > :not(:has(.search-options)) {display:none;}
 }
 .one-index {padding-bottom:0;}
 @media(max-width:767px){

@@ -178,5 +178,155 @@
     "sha256": "355110585ffdf06c4532571ac38e67d8521c9341be10c83dcdc1d2c530b45502",
     "sourceUrl": "https://eodhd.com/img/logos/US/GEN.png",
     "reason": "Wrong issuer: Genesis Healthcare rather than Gen Digital"
+  },
+  {
+    "id": "026960.KO",
+    "sha256": "2bc4c01d800eb4c3234bc37be2499da6c3a2592890df48c68a8388d305dda437",
+    "sourceUrl": "https://www.dongsuh.com/kor/images/common/brandDepth2Bg.jpg",
+    "reason": "Product-brand montage"
+  },
+  {
+    "id": "2002.JP",
+    "sha256": "534a3df5a522e2bda38b4b988c43447eaf574710f06a742880907b8cb56b62ec",
+    "sourceUrl": "https://www.nisshin.com/english/img/bnr_main02.jpg",
+    "reason": "Product promotional banner"
+  },
+  {
+    "id": "2887.TW",
+    "sha256": "9acdde3592e2fec5d7a095e6776df1b81ba532bcb161bfad1549444c409328b1",
+    "sourceUrl": "https://www.tsholdings.com.tw/tsh/system/modules/com.taishinbank.TSH/Content/imgs/Common/investor.jpg",
+    "reason": "Photograph"
+  },
+  {
+    "id": "300957.SHE",
+    "sha256": "b5550fea02cb9793efe04647d2b4a36707f157e29cc5683b544ff72436bc32a1",
+    "sourceUrl": "https://www.botanee.com.cn/images/revision3.0/index/axmoed.svg",
+    "reason": "AOXMED product brand instead of Botanee issuer"
+  },
+  {
+    "id": "600048.SHG",
+    "sha256": "db8879c6346ed91d0290d5aa0434135bd5bb158fb59b039f42718b146d0d81ac",
+    "sourceUrl": "https://img.gzpoly.com/image/20260723/7780381d-082f-4b09-9789-50d382a3ca2b.png",
+    "reason": "Wrong issuer / download-site logo on stale domain"
+  },
+  {
+    "id": "600886.SHG",
+    "sha256": "731e03b7d4b65d733bfbcce4ae38f1aed35d771a6192b5fbd2a8e74f1d3fab01",
+    "sourceUrl": "https://www.sdicpower.com/gtdln/lib/template/scheme/images/brand_item.png",
+    "reason": "Decorative brand tile"
+  },
+  {
+    "id": "601009.SHG",
+    "sha256": "7db7bbd85cf389dbf5b1f985123cc6028c09e0cf7bdd8f9a58c068bb3c186cc2",
+    "sourceUrl": "https://www.njcb.com.cn/njcb/imageDir/2026/01/img_pc_site/2026010509160921495.jpg",
+    "reason": "Anniversary banner"
+  },
+  {
+    "id": "601398.SHG",
+    "sha256": "18eaac1249df0bbad838ba77d6a31c353e719586f8eb8d672eadf8f20f228fac",
+    "sourceUrl": "https://v.icbc.com.cn/userfiles/Resources/ICBC/yingwen/images/2016new/navIcon03.png",
+    "reason": "Navigation icon"
+  },
+  {
+    "id": "601607.SHG",
+    "sha256": "798e701bd19584c79a1652b4747807747d46a5eae45e4ab34222b0c9021f15fe",
+    "sourceUrl": "https://www.sphchina.com/images/index/sph-home-logo.jpg",
+    "reason": "Subsidiary brand collage"
+  },
+  {
+    "id": "605117.SHG",
+    "sha256": "9cb0ef5149353614195c5489a10b1cb8c3a3d3807cf3f93ac951972be1d7f4b1",
+    "sourceUrl": "https://www.deye.com.cn/bocstatic/web/img/bocweb-logo.png?v=v1",
+    "reason": "Website design agency mark"
+  },
+  {
+    "id": "6113.JP",
+    "sha256": "694f57a8a23dc27d1152ad48efe680919044e670e563160f477eb5042a6db096",
+    "sourceUrl": "https://www.amada.co.jp/en/#inline-logo-1",
+    "reason": "Back-to-top arrow"
+  },
+  {
+    "id": "688187.SHG",
+    "sha256": "9314432768122f94956761dc6b8d9d80a7405f9437e9f859852ec57a4dfd25aa",
+    "sourceUrl": "http://www.tec.crrczic.cc/portals/0/images/bottom-weixin.jpg",
+    "reason": "QR code"
+  },
+  {
+    "id": "8252.JP",
+    "sha256": "ea49b7f7588cc2bdad4f0b23f22465e1faf1784d02d7b99f767b88235823271a",
+    "sourceUrl": "https://www.0101maruigroup.co.jp/_astro/impact_figure.BA-vj7fc_Z2j8Hko.webp",
+    "reason": "Decorative illustration"
+  },
+  {
+    "id": "8331.JP",
+    "sha256": "02b657165f90b4313faa7f314b15b5916c8f81bd56931e29962ea49bb2235fc0",
+    "sourceUrl": "https://www.chibabank.co.jp/en#inline-logo-0",
+    "reason": "Navigation icon"
+  },
+  {
+    "id": "ACP.WAR",
+    "sha256": "01834d68b68c8a7e510fa0986e891eea1e34b69b2c477b4514aff84f956204f5",
+    "sourceUrl": "https://cdn.prod.website-files.com/65e84ad4e5df00eecdec0013/66718fc66540c279f129321f_youtube-icon.svg",
+    "reason": "YouTube icon"
+  },
+  {
+    "id": "NCC.LSE",
+    "sha256": "f171cff38eacaf76cc40328e1cdd478e9e4d5267186084df3038ebefa8d23896",
+    "sourceUrl": "https://www.nccgroup.com/static-a/img/icons/icon-social-LinkedIn.svg",
+    "reason": "LinkedIn icon"
+  },
+  {
+    "id": "SCT.LSE",
+    "sha256": "3791684b4d40b9647ed2ed5ba1511b7034b8b8d69e46bc09575db2abed3e8ffa",
+    "sourceUrl": "https://www.softcat.com/application/themes/rawnet/app/images/flags/gb.svg",
+    "reason": "Language flag"
+  },
+  {
+    "id": "002601.SHE",
+    "sha256": "91e43a5b368c11388f0c0585fe96fa53ad5b9e17050f6c9ab61fbb32926e9417",
+    "sourceUrl": "https://static.ruituoyun.com/images/drag/PC/LOGO_nn.png",
+    "reason": "Generic LOGO placeholder"
+  },
+  {
+    "id": "103140.KO",
+    "sha256": "fac5aa25382645cbb121bda380aec1765b3a6c04dcdc71d80ece1567c3de3063",
+    "sourceUrl": "https://www.poongsan.co.kr/en/company/poongsan#inline-logo-0",
+    "reason": "Loading animation"
+  },
+  {
+    "id": "272210.KO",
+    "sha256": "486ac7b77325af17c559d2cfdbb6ff1276047ecfd28ebbb894e86c7da9f7e950",
+    "sourceUrl": "https://www.hanwhasystems.com/resources/img/mobile/com/img_logo.png",
+    "reason": "Contact/corporate text tile instead of logo"
+  },
+  {
+    "id": "2887.TW",
+    "sha256": "369749a446f2bd6d5a0db7e2a49308ac16da0deba56dd8fcf9b8aecd04dfb88d",
+    "sourceUrl": "https://www.tsholdings.com.tw/tsh/system/modules/com.taishinbank.TSH/Content/imgs/Common/governance.jpg",
+    "reason": "Photograph"
+  },
+  {
+    "id": "600176.SHG",
+    "sha256": "2a86b756b04de82b7c49617b0d115f0dcd719c892fbe11401f8236fd27bb3b27",
+    "sourceUrl": "https://www.jushi.com/#inline-logo-2",
+    "reason": "Close button"
+  },
+  {
+    "id": "SCT.LSE",
+    "sha256": "528fa83000666d3c5d1d44680f01404e9bab9473aa65fa44e027ce0eb3b9d7de",
+    "sourceUrl": "https://www.softcat.com/440x100/7416/0700/7206/RE2qVsJ.png?fit=1",
+    "reason": "Microsoft partner logo"
+  },
+  {
+    "id": "272210.KO",
+    "sha256": "0553bddb48126f507c872729773d8356a3e31f8a2073ec225aded67a1d1ca088",
+    "sourceUrl": "https://www.hanwhasystems.com/resources/img/mobile/business/defense/m-icons.png",
+    "reason": "Whole sprite sheet contains UI icons and repeated wordmarks; use reviewed brand-only crop"
+  },
+  {
+    "id": "IVG.MI",
+    "sha256": "b5de1bbb27d568169ef2f9dbfd15ccceaef073e836bce2c5afa5cb742da76125",
+    "sourceUrl": "https://www.google.com/s2/favicons?domain=www.ivecogroup.com&sz=128",
+    "reason": "Featureless blue circle; insufficient issuer identity, replace with company wordmark"
   }
 ]

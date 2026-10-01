@@ -17,3 +17,14 @@ it('matches ticker plus exchange, never a similarly named issuer',()=>{
  expect(wikidataWebsite({...c,exchange:'TW',country:'TW'},rows)).toBeNull();
  expect(wikidataWebsite(c,[...rows,{...rows[0],item:{value:'Q2'}}])).toBeNull();
 });
+
+it('accepts a decoded opaque header wordmark with a 64px long edge for paper padding',async()=>{
+ const mark=await sharp(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="214" height="24"><rect width="214" height="24" fill="white"/><text x="2" y="20" font-size="20" fill="red">Company</text></svg>')).removeAlpha().png().toBuffer();
+ expect(await validLogo(mark,undefined,false,true)).toBe(true);
+ expect(await validLogo(mark)).toBe(false);
+});
+
+it('accepts long vector issuer wordmarks for proportional square padding',async()=>{
+ const svg=Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="760" height="46" viewBox="0 0 760 46"><text y="40" font-size="40">ISSUER GROUP</text></svg>');
+ expect(await validLogo(svg)).toBe(true);
+});

@@ -35,7 +35,7 @@ export function officialCandidates(html:string,base:string):IconCandidate[]{
 export function commonsUrl(value:string):string|null{
  try{const u=new URL(value);if(!['commons.wikimedia.org','commons.wikimedia.org.'].includes(u.hostname))return null;const name=decodeURIComponent(u.pathname.split('Special:FilePath/')[1]??'');if(!name)return null;return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(name)+(/\.svg$/i.test(name)?'':'?width=256');}catch{return null;}
 }
-export type ResolvedLogo={source:string|null;sourceUrl?:string;originalHash?:string;width?:number;height?:number;format?:string;wikidataItem?:string;website?:string;asset?:string;bytes?:Buffer;retryable?:boolean;failures?:string[]};
+export type ResolvedLogo={source:string|null;sourceUrl?:string;originalHash?:string;width?:number;height?:number;format?:string;wikidataItem?:string;website?:string;asset?:string;bytes?:Buffer;originalBytes?:Buffer;retryable?:boolean;failures?:string[]};
 export async function resolveCompanyLogo(company:Company,general:GeneralInfo,rows:LogoBinding[],request:typeof fetch,hashes:Set<string>):Promise<ResolvedLogo>{
  let retryable=false;const failures:string[]=[];
  const attempt=async(url:string,source:string):Promise<ResolvedLogo|null>=>{

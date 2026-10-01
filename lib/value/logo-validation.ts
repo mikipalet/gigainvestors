@@ -55,14 +55,14 @@ export async function validLogo(bytes:Uint8Array,defaultHash?:string|Set<string>
  try{
   const decoded=await logoPixels(bytes),input=sharp(decoded,{limitInputPixels:16_000_000});
   const m=await input.metadata(),w=m.width??0,h=m.height??0,ratio=w/h;
-  const wordmark=brandMark&&!svg&&m.hasAlpha&&Math.max(w,h)>=64&&Math.min(w,h)>=32&&ratio>=1/8&&ratio<=8;
-  if(!w||!h||(!svg&&!wordmark&&(w<64||h<64))||ratio>(svg?12:wordmark?8:4)||ratio<(svg?1/12:wordmark?1/8:.25)||(squareOnly&&(ratio<.8||ratio>1.25)))return false;
+  const wordmark=brandMark&&!svg&&Math.max(w,h)>=64&&Math.min(w,h)>=16&&ratio>=1/12&&ratio<=12;
+  if(!w||!h||(!svg&&!wordmark&&(w<64||h<64))||ratio>(svg?24:wordmark?12:4)||ratio<(svg?1/24:wordmark?1/12:.25)||(squareOnly&&(ratio<.8||ratio>1.25)))return false;
   // Metadata alone accepts truncated files. A full bounded decode is mandatory.
   await input.resize(128,128,{fit:'inside'}).raw().toBuffer();
   const stats=await input.stats();
   if(m.hasAlpha&&stats.channels.at(-1)?.max===0)return false;
   if(!svg&&stats.entropy>7)return false;
-  if(wordmark&&(w<64||h<64)&&(stats.isOpaque||stats.entropy>6.8))return false;
+  if(wordmark&&(w<64||h<64)&&stats.entropy>6.8)return false;
   // Social cards are untrusted: avoid photographic JPEGs and high-entropy photos.
   if(squareOnly&&(m.format==='jpeg'||stats.entropy>7))return false;
   return true;

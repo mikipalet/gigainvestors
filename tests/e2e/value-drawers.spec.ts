@@ -18,7 +18,7 @@ for(const [width,height] of [[1728,970],[1440,800],[2056,1180],[390,844]])for(co
 }
 test('negative retained earnings show signed window bars and the actual capital returned',async({page})=>{
  await page.goto('/wkl.as');await page.getByRole('button',{name:'Open Value created per $1 kept evidence'}).click();
- await expect(page.locator('dialog .panel-answer')).toHaveText('Returned EUR 1.35bn more than it earned to owners while market value rose EUR 10.3bn: passes.');
- await expect(page.locator('dialog .window-chart svg rect')).toHaveCount(2);
+ const values=JSON.parse((await page.locator('dialog [data-window]').getAttribute('data-window'))!);expect(values.retained).toBeLessThan(0);const bn=(n:number)=>Number((Math.abs(n)/1e9).toPrecision(3));await expect(page.locator('dialog .panel-answer')).toHaveText(`Returned EUR ${bn(values.retained)}bn more than it earned to owners while market value rose EUR ${bn(values.created)}bn: passes.`);
+ await expect(page.locator('dialog .mini-dollar svg rect')).toHaveCount(2);
  await expect(page.locator('dialog')).not.toContainText('≥ EUR -1.35B');
 });

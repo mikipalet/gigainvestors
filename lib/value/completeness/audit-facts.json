@@ -1,0 +1,424 @@
+{
+  "LULU.US": [
+    {
+      "end": "2024-01-28",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+      "quote": "Cash and cash equivalents, consolidated cash flow statement; amounts in thousands.",
+      "values": {
+        "cash": 2243971000,
+        "cashAndCashEquivalents": 2243971000,
+        "shortTermInvestments": 0
+      },
+      "correction": true
+    },
+    {
+      "end": "2025-02-02",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+      "quote": "Cash and cash equivalents, consolidated cash flow statement; amounts in thousands.",
+      "values": {
+        "cash": 1984336000,
+        "cashAndCashEquivalents": 1984336000,
+        "shortTermInvestments": 0
+      },
+      "correction": true
+    },
+    {
+      "end": "2026-02-01",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+      "quote": "Cash and cash equivalents, consolidated cash flow statement; amounts in thousands.",
+      "values": {
+        "cash": 1807202000,
+        "cashAndCashEquivalents": 1807202000,
+        "shortTermInvestments": 0
+      },
+      "correction": true
+    }
+  ],
+  "ACN.US": [
+    {
+      "end": "2025-08-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001467373.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-08-31",
+      "values": {
+        "dilutedShares": 632435108
+      },
+      "correction": true
+    }
+  ],
+  "GOOGL.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 12230000000
+      },
+      "correction": true
+    },
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+      "quote": "Borrowing carrying amounts: current 1,996m plus noncurrent 46,547m; finance leases 2,500m; operating leases 15,954m. Total includes leases, not debt face value.",
+      "calculation": "Borrowing carrying amounts: current 1,996m plus noncurrent 46,547m; finance leases 2,500m; operating leases 15,954m. Total includes leases, not debt face value.",
+      "values": {
+        "totalDebt": 66997000000.0
+      },
+      "correction": true
+    }
+  ],
+  "JPM.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000019617.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 2781500000
+      },
+      "correction": true
+    },
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm",
+      "quote": "Total net revenue 182,447m; cash and deposits 343,338m less restricted cash 29,000m. Available-for-sale bond portfolio is not short-term investments.",
+      "calculation": "Total net revenue 182,447m; cash and deposits 343,338m less restricted cash 29,000m. Available-for-sale bond portfolio is not short-term investments.",
+      "values": {
+        "revenue": 182447000000.0,
+        "netRevenue": 182447000000.0,
+        "cash": 314338000000.0,
+        "cashAndCashEquivalents": 314338000000.0,
+        "shortTermInvestments": 0
+      },
+      "correction": true
+    }
+  ],
+  "AAPL.US": [
+    {
+      "end": "2025-09-30",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-09-27",
+      "values": {
+        "dilutedShares": 15004697000
+      },
+      "correction": true
+    }
+  ],
+  "NVDA.US": [
+    {
+      "end": "2026-01-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding, CashAndCashEquivalents + short-term investments; period ended 2026-01-25",
+      "values": {
+        "dilutedShares": 24514000000
+      },
+      "correction": true
+    }
+  ],
+  "AMZN.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 10827000000
+      },
+      "correction": true
+    },
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+      "quote": "Debt carrying amounts: 65,648m noncurrent plus 2,748m current plus 455m short-term borrowings; lease liabilities 101,538m. Total includes leases.",
+      "calculation": "Debt carrying amounts: 65,648m noncurrent plus 2,748m current plus 455m short-term borrowings; lease liabilities 101,538m. Total includes leases.",
+      "values": {
+        "totalDebt": 170389000000.0
+      },
+      "correction": true
+    }
+  ],
+  "AVGO.US": [
+    {
+      "end": "2025-10-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001730168.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-11-02",
+      "values": {
+        "dilutedShares": 4853000000
+      },
+      "correction": true
+    }
+  ],
+  "TSLA.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 3528000000
+      },
+      "correction": true
+    }
+  ],
+  "AXP.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000004962.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 696000000
+      },
+      "correction": true
+    },
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/4962/000000496226000080/axp-20251231.htm",
+      "quote": "Total revenues net of interest expense 72,229m. Cash including restricted 47,792m less restricted cash 169m, plus short-term investments 742m.",
+      "calculation": "Total revenues net of interest expense 72,229m. Cash including restricted 47,792m less restricted cash 169m, plus short-term investments 742m.",
+      "values": {
+        "revenue": 72229000000.0,
+        "netRevenue": 72229000000.0,
+        "cash": 48365000000.0,
+        "cashAndCashEquivalents": 47623000000.0,
+        "shortTermInvestments": 742000000.0
+      },
+      "correction": true
+    }
+  ],
+  "BAC.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000070858.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 7680900000
+      },
+      "correction": true
+    },
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000157/bac-20251231.htm",
+      "quote": "Cash and cash equivalents 231,845m less restricted cash 6,500m; separate time deposits placed and other short-term investments 7,474m. Excludes long-term securities.",
+      "calculation": "Cash and cash equivalents 231,845m less restricted cash 6,500m; separate time deposits placed and other short-term investments 7,474m. Excludes long-term securities.",
+      "values": {
+        "cash": 232819000000.0,
+        "cashAndCashEquivalents": 225345000000.0,
+        "shortTermInvestments": 7474000000.0
+      },
+      "correction": true
+    }
+  ],
+  "CVX.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000093410.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 1856000000
+      },
+      "correction": true
+    }
+  ],
+  "OXY.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000797468.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding, CashAndCashEquivalents + short-term investments; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 1000100000,
+        "cash": 1968000000,
+        "cashAndCashEquivalents": 1968000000,
+        "shortTermInvestments": 0
+      },
+      "correction": true
+    },
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+      "quote": "Debt and finance leases 22,396m plus operating lease liabilities 955m. Do not add the 605m noncurrent operating lease component twice.",
+      "calculation": "Debt and finance leases 22,396m plus operating lease liabilities 955m. Do not add the 605m noncurrent operating lease component twice.",
+      "values": {
+        "totalDebt": 23351000000.0
+      },
+      "correction": true
+    }
+  ],
+  "CB.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 401513338
+      },
+      "correction": true
+    },
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm",
+      "quote": "Total revenues 59,402m; cash 2,470m less restricted cash 198m plus short-term investments 4,840m; excludes fixed maturities and other long-term investments.",
+      "calculation": "Total revenues 59,402m; cash 2,470m less restricted cash 198m plus short-term investments 4,840m; excludes fixed maturities and other long-term investments.",
+      "values": {
+        "revenue": 59402000000.0,
+        "cash": 7112000000.0,
+        "cashAndCashEquivalents": 2272000000.0,
+        "shortTermInvestments": 4840000000.0
+      },
+      "correction": true
+    }
+  ],
+  "MCO.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001059556.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 179900000
+      },
+      "correction": true
+    }
+  ],
+  "DVA.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json",
+      "quote": "Annual consolidated WeightedAverageNumberOfDilutedSharesOutstanding, CashAndCashEquivalents + short-term investments; period ended 2025-12-31",
+      "values": {
+        "dilutedShares": 75885000,
+        "cash": 700741000,
+        "cashAndCashEquivalents": 676438000,
+        "shortTermInvestments": 24303000
+      },
+      "correction": true
+    }
+  ],
+  "WKL.AS": [
+    {
+      "end": "2025-12-31",
+      "currency": "EUR",
+      "source": "https://assets.contenthub.wolterskluwer.com/api/public/content/3210406-wolters-kluwer-2025-annual-report-pdf-8bb01b4e47?v=ddef685b",
+      "quote": "Note 7: diluted weighted-average ordinary shares 231.8 million. Note 28 gross debt 4,972 million euros, including leases.",
+      "values": {
+        "dilutedShares": 231800000,
+        "totalDebt": 4972000000
+      },
+      "correction": true
+    }
+  ],
+  "7203.JP": [
+    {
+      "end": "2026-03-31",
+      "currency": "JPY",
+      "source": "https://global.toyota/pages/global_toyota/ir/financial-results/2026_4q_summary_en.pdf",
+      "quote": "FY2026 cash flow: dividends to common shareholders 1,238,974 million yen.",
+      "values": {
+        "dividendsPaid": 1238974000000,
+        "commonDividendsPaid": 1238974000000,
+        "dividendsPerShare": 95,
+        "dilutedShares": 13033273748
+      },
+      "correction": true
+    }
+  ],
+  "KHC.US": [
+    {
+      "end": "2025-12-27",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/1637459/000163745926000009/khc-20251227.htm",
+      "quote": "Net sales 24,942m: RevenueFromContractWithCustomerIncludingAssessedTax, annual duration ending 2025-12-27.",
+      "calculation": "Net sales 24,942m: RevenueFromContractWithCustomerIncludingAssessedTax, annual duration ending 2025-12-27.",
+      "values": {
+        "revenue": 24942000000.0
+      },
+      "correction": true
+    }
+  ],
+  "CBG.LSE": [
+    {
+      "end": "2025-07-31",
+      "currency": "GBP",
+      "source": "https://webcasts.closebrothers.com/results/2025preliminaryresults/files/CBG-2025-Preliminary-Results-Announcement.pdf",
+      "quote": "Consolidated income statement: operating income 659.5 million pounds (net interest and fee income). Gross interest income is not total bank revenue. Cash-flow note: cash equivalents 2,101.8m excluding restricted accounts; summary balance sheet borrowings 2,188.3m (debt securities, bank loans, subordinated capital).",
+      "values": {
+        "revenue": 659500000,
+        "netRevenue": 659500000,
+        "cash": 2101800000,
+        "cashAndCashEquivalents": 2101800000,
+        "shortTermInvestments": 0,
+        "totalDebt": 2188300000
+      },
+      "correction": true
+    }
+  ],
+  "ADANIENT.NSE": [
+    {
+      "end": "2026-03-31",
+      "currency": "INR",
+      "source": "https://www.adanienterprises.com/-/media/Project/Enterprises/Investors/Investor-Downloads/Financial/Q4-FY26.pdf",
+      "quote": "Cash equivalents 6,266.67 crore plus current investments 2,506.65 crore; excludes other bank balances 5,542.75 crore.",
+      "calculation": "(6266.67 + 2506.65) * 10000000",
+      "values": {
+        "cash": 87733200000
+      },
+      "correction": true
+    },
+    {
+      "end": "2026-03-31",
+      "currency": "INR",
+      "source": "https://nsearchives.nseindia.com/annual_reports/AR_29299_ADANIENT_2025_2026_A_17942605_29052026223750.pdf",
+      "quote": "Annual report 2025-26, p.688, note 55: diluted weighted-average equity shares 1,25,43,78,122. Parent net income 9,339.47 crore less perpetual-security distribution 108.73 crore; therefore NI / rounded EPS is not the reported share count.",
+      "values": {
+        "dilutedShares": 1254378122,
+        "commonNetIncome": 92307400000
+      },
+      "correction": true
+    }
+  ],
+  "MSFT.US": [
+    {
+      "end": "2026-06-30",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "quote": "Borrowings 40,294m + finance leases 66,594m + operating leases 21,925m = 128,813m.",
+      "calculation": "Borrowings 40,294m + finance leases 66,594m + operating leases 21,925m = 128,813m.",
+      "values": {
+        "totalDebt": 128813000000
+      },
+      "correction": true
+    }
+  ],
+  "META.US": [
+    {
+      "end": "2025-12-31",
+      "currency": "USD",
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+      "quote": "Long-term borrowing carrying value 58,744m + operating leases 25,153m + finance leases 1,184m = 85,081m; both lease classes included.",
+      "calculation": "Long-term borrowing carrying value 58,744m + operating leases 25,153m + finance leases 1,184m = 85,081m; both lease classes included.",
+      "values": {
+        "totalDebt": 85081000000
+      },
+      "correction": true
+    }
+  ]
+}

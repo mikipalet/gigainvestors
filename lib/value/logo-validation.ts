@@ -3,7 +3,7 @@ import sharp from 'sharp';
 import reviewedRejections from './logo-rejections.json';
 export const iconHash=(bytes:Uint8Array)=>createHash('sha256').update(bytes).digest('hex');
 export const LOGO_VALIDATION_VERSION=2;
-export const REJECTED_LOGO_HASHES=new Set<string>([
+const REJECTED_LOGO_HASHES=new Set<string>([
  ...reviewedRejections.map(r=>r.sha256),
  // Google default globe (128 request) and DuckDuckGo default, captured 2026-10-01.
  '59bfe9bc385ad69f50793ce4a53397316d7a875a7148a63c16df9b674c6cda64',

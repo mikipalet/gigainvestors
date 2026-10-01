@@ -24,7 +24,7 @@ export async function fetchDocument(url:string, depth=0):Promise<string>{
  if(embedded)return fetchDocument(new URL(embedded,url).href,depth+1);
  return raw;
 }
-export const disclosurePattern=/provision|contingen|litigat|redress|covenant|going concern|suspend.{0,40}dividend|dividend.{0,40}suspend|guidance|outlook|exclusiv|patent|market share|regulator.{0,40}(ban|restrict)|loss of.{0,40}(customer|licen)/ig;
+const disclosurePattern=/provision|contingen|litigat|redress|covenant|going concern|suspend.{0,40}dividend|dividend.{0,40}suspend|guidance|outlook|exclusiv|patent|market share|regulator.{0,40}(ban|restrict)|loss of.{0,40}(customer|licen)/ig;
 /** Supplement truncated cached notes with complete, overlapping disclosure windows. */
 export function disclosureWindows(text:string):string {
  const windows:Array<[number,number]>=[];

@@ -1,4 +1,5 @@
 {
   "$schema": "https://unpkg.com/knip@6/schema.json",
-  "entry": ["scripts/**/*.{ts,mjs}", "tests/**/*.ts", "emails/**/*.tsx"]
+  "entry": ["scripts/**/*.{ts,tsx,mjs}", "tests/**/*.ts", "emails/**/*.tsx"],
+  "ignoreBinaries": ["pdftotext"]
 }

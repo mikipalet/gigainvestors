@@ -15,10 +15,10 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
   const indexed:Series=shares.map(([year,value])=>[year,base&&value!==null?value/base*100:null]);
   return {...metric('shareCagrExCrisis','ordinary share growth','pct',.02,'lower',indexed,'Shares (first year = 100)'),chartFormat:'index',chartThreshold:null};
  }
- if ('financialRedFlags' in m) return metric('financialRedFlags','accounting warnings','count',0,'lower');
+ if ('financialRedFlags' in m) return {...metric('financialRedFlags','accounting warnings','count',0,'lower',netIncome,'Earnings context · warnings assessed over the window'),chartFormat:'money',chartThreshold:null,chartBetter:'higher'};
  if ('combinedReportedYears' in m) {
   if (m.combinedProfitableYears!=null) return {...metric('combinedProfitableYears','profitable underwriting years','count',7,'higher',test.series.combinedRatio??[],'Combined ratio'),chartFormat:'pct',chartThreshold:1,chartBetter:'lower'};
-  return metric('roeMedian',m.tangibleReturn?'ROTE · ten-year median':'ROE · ten-year median','pct',m.returnThreshold??.12,'higher',test.series.roe??[],'Return on common equity');
+  return metric('roeMedian',m.tangibleReturn?'ROTE · ten-year median':'ROE · ten-year median','pct',m.returnThreshold??.12,'higher',test.series.roe??[],m.tangibleReturn?'Return on tangible common equity':'Return on common equity');
  }
  switch(test.key){
   case 'understandable': {
@@ -63,7 +63,7 @@ export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):str
  const pct=(n:number)=>n>1&&test.key==='moat'?'>100%':`${Math.round(n*100)}%`,num=(n:number)=>n.toFixed(2);
  if(metric.id==='positiveIncomeYears')return `Positive earnings in ${v}/10 years; ${bar} required.`;
  if(metric.id==='bookReturnCagr')return `Book value plus dividends compounded at ${pct(v)} a year.`;
- if(metric.id==='shareCagrExCrisis')return `Ordinary share count grew ${pct(v)} a year; the limit is ${pct(bar)}.`;
+ if(metric.id==='shareCagrExCrisis')return `Ordinary share count ${v<0?'fell':'grew'} ${pct(Math.abs(v))} a year; the limit is ${pct(bar)}.`;
  if(metric.id==='financialRedFlags')return `${v} accounting warning${v===1?'':'s'}.`;
  if(metric.id==='combinedProfitableYears')return `Combined ratio below 100% in ${v}/10 years.`;
  switch(test.key){
@@ -73,14 +73,18 @@ export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):str
    return `Earns ${pct(v)} on ${kind==='operating'?(metric.id==='totalRoicMedian'?'capital including acquisitions':'capital excluding acquisitions'):'equity'}; ${years.length?`${passes}/${years.length} years ≥ ${pct(bar)}.`:`the bar is ${pct(bar)}.`}`;
   }
   case 'economics':return metric.id==='ownerEarningsTotal'?`Five-year owner earnings ${v>0?'are positive':'are nonpositive'}.`:`Each $1 of profit leaves $${num(v)} for owners.`;
-  case 'management':return metric.id==='marketCapGain'?`${formatMetric({value:v,format:'money'})} of market value gained; net capital returned to owners.`:metric.id==='perShareValueGrowth'?`${pct(v)} yearly growth in per-share value.`:metric.id==='perShareValueChange'?`${num(v)} change in per-share value.`:`$${num(v)} of market value per $1 kept.`;
+  case 'management':return metric.id==='marketCapGain'?`${formatMetric({value:v,format:'money'})} of market value gained; net capital returned to owners.`:metric.id==='perShareValueGrowth'?(v<0?`Per-share value fell ${pct(-v)} a year.`:`${pct(v)} yearly growth in per-share value.`):metric.id==='perShareValueChange'?`${num(v)} change in per-share value.`:`$${num(v)} of market value per $1 kept.`;
   case 'accounting':return metric.id==='cashBacked'?(v?'Earnings are backed by operating cash.':'Earnings are not backed by operating cash.'):kind==='operating'?(v<0?`Cash exceeds profit by ${pct(-v)} of assets.`:`Profit exceeds cash by ${pct(v)} of assets; ${pct(bar)} is the limit.`):`Operating cash covers ${num(v)}× reported earnings.`;
   case 'price':return priceFraming(v,1-bar).headline;
  }
 }
 
-/** Main dossier metric includes the price paid for acquisitions; legacy moat evidence stays in its drawer. */
+/** One primary comparison for the dossier tile, drawer, and annual bar. */
 export function primaryTileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileMetric {
- if(test.key!=='moat'||kind!=='operating')return tileMetric(test,kind,netIncome);
- return {id:'totalRoicMedian',value:test.metrics.totalRoicMedian??null,label:'ROIC including acquisitions',format:'pct',threshold:T.valuation.compounderMinTotalReturn,better:'higher',series:test.series.totalRoic??[],chart:'ROIC including acquisitions'};
+ if(test.key!=='moat'||kind!=='operating'){
+  const selected=tileMetric(test,kind,netIncome);
+  return test.key==='management'&&!selected.series.length&&selected.id!=='retainedDollar'
+   ?{...selected,series:(test.series.shares??[]).slice(-10),chart:'Diluted shares',chartFormat:'index',chartThreshold:null,chartBetter:'lower'}:selected;
+ }
+ return {id:'totalRoicMedian',value:test.metrics.totalRoicMedian??null,label:'ROIC including acquisitions',format:'pct',threshold:T.valuation.compounderMinTotalReturn,better:'higher',series:(test.series.totalRoic??[]).slice(-10),chart:'ROIC including acquisitions'};
 }

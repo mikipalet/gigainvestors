@@ -191,7 +191,7 @@ export function parseIndiaXbrl(xml: string, filing: IndiaFiling): Year[] {
   if(y.cashAndCashEquivalents!=null){
     const bank=pick(['BankBalanceOtherThanCashAndCashEquivalents'],true);
     put('cashAndDeposits',y.cashAndCashEquivalents+(bank?.value??0),['cashAndCashEquivalents',...(bank?[bank.tag]:[])],true);
-    put('cash',y.cashAndCashEquivalents+(bank?.value??0)+(y.shortTermInvestments??0),['cashAndCashEquivalents',...(bank?[bank.tag]:[]),...(y.shortTermInvestments!=null?['shortTermInvestments']:[])],true);
+    put('cash',y.cashAndCashEquivalents+(y.shortTermInvestments??0),['cashAndCashEquivalents',...(y.shortTermInvestments!=null?['shortTermInvestments']:[])],true);
   }
   const tangible=pick(['PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities','PurchaseOfTangibleAssetsClassifiedAsInvestingActivities']);
   const intangible=pick(['PurchaseOfIntangibleAssetsClassifiedAsInvestingActivities']);

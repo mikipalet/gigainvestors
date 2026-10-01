@@ -117,3 +117,9 @@ it('shows the financial worst-year bar used by the decision, without imposing it
  expect(render('bank')).toContain('≥ 5.0% in all but one reported year');
  expect(render('insurer')).not.toContain('in all but one reported year');
 });
+it('keeps common-equity ROE distinct from tangible-equity return when merging surfaces',()=>{
+ const t=run(years().map(y=>({...y,goodwill:20})));
+ expect(t.understandable.series.commonRoe).toBeDefined();
+ expect(t.understandable.series.roe).toBeUndefined();
+ expect(t.understandable.series.commonRoe).not.toEqual(t.moat.series.roe);
+});

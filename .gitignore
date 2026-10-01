@@ -10,3 +10,6 @@ scripts/newsletter/fonts/fonts.conf
 data/newsletter/*.facts.json
 
 .superpowers/
+
+# Local audit evidence and the single publication staging directory
+.audit/

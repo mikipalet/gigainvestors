@@ -18,7 +18,8 @@ export function applyShareCheck<T extends import('./types').Analysis>(analysis:T
  const v=analysis.valuation,factor=v.shares/check.shares;
  const range=(r:{low:number;mid:number;high:number})=>({...r,low:r.low*factor,mid:r.mid*factor,high:r.high*factor});
  return {...analysis,valuation:{...v,shareSources:2,shares:check.shares,perShare:range(v.perShare),...(v.perShareTrading?{perShareTrading:range(v.perShareTrading)}:{}),
-  bridge:v.bridge.map(row=>/^÷ shares$/.test(row.label)?{...row,value:check.shares}:/per share/i.test(row.label)?{...row,value:row.value*factor}:row),
+  ...(v.method==='book_value'?{normalized:v.normalized*factor,...(v.financialReturn?{financialReturn:{...v.financialReturn,cashPerShare:v.financialReturn.cashPerShare*factor}}:{})}:{}),
+  bridge:v.bridge.map(row=>/^÷ (?:current )?shares$/.test(row.label)?{...row,label:'÷ current shares',value:check.shares}:/per share/i.test(row.label)?{...row,value:row.value*factor}:row),
   assumptions:[...v.assumptions.filter(note=>!/share count corrected|share sources disagree|share count not corrected|unverified|share count verified/i.test(note)),`Share count verified within 2%: ${check.observations.map(o=>`${o.source} ${o.shares} (${o.date??'current'})`).join('; ')}`]}};
 }
 

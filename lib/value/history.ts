@@ -1,3 +1,4 @@
+import { netCashSeries } from './net-cash';
 import { T } from "./config";
 import { bvps, tangibleEquity, goodwillAndIntangibles, ratio } from "./metrics";
 import { ownerEarningsSeries } from "./owner-earnings";
@@ -36,6 +37,7 @@ export function perShareSeries(fundamentals: Fundamentals): Record<string, Serie
   const earnings = new Map(ownerEarningsSeries(years));
   const perShare = (value: number | null, shares: number | null) => shares !== null && shares > 0 ? ratio(value, shares) : null;
   return {
+    netCash: netCashSeries(years),
     revenuePerShare: years.map(y => [y.fy, perShare(y.revenue, y.dilutedShares)]),
     ownerEarningsPerShare: years.map(y => [y.fy, perShare(earnings.get(y.fy) ?? null, y.dilutedShares)]),
     tangibleBookValuePerShare: years.map(y => [y.fy, perShare(tangibleEquity(y), y.dilutedShares)]),

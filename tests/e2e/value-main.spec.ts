@@ -36,7 +36,7 @@ for(const [width,height] of [[1728,970],[2056,1180],[390,844]])for(const route o
    const quality=row.quality,metric=card.locator('.shelf-quality');
    await expect(metric).toHaveCount(quality?1:0);
    if(quality){
-    await expect(metric).toHaveText(`${quality.label} 10y ${quality.value==='unlimited'||quality.value>1?'>100%':`${Math.round(quality.value*100)}%`}`);
+    await expect(metric).toHaveText(`${quality.label} 10y ${quality.value==='unlimited'||quality.value>1?'>100%':`${(quality.value*100).toFixed(1)}%`}`);
     if(width>767)await expect(metric).toBeVisible();
    }
   }
@@ -47,7 +47,7 @@ test('pointer tooltip, keyboard dossier, lists and filters',async({page})=>{
  const card=page.locator('.main-next-row').first();await card.hover();await expect(page.getByRole('tooltip')).toContainText('Buy below');
  const box=(await card.boundingBox())!;await page.mouse.move(box.x+15,box.y+15);const tip=(await page.getByRole('tooltip').boundingBox())!;expect(Math.abs(tip.x-(box.x+15))).toBeLessThan(350);
  await card.focus();await page.keyboard.press('Escape');await expect(page.getByRole('tooltip')).toHaveCount(0);await page.keyboard.press('Enter');await expect(page.locator('.one-dossier')).toBeVisible();
- await page.goto('/',{waitUntil:'networkidle'});await page.locator('.main-rest .main-more').click();await expect(page.getByRole('dialog')).toBeVisible();await page.locator('dialog .main-list-row').first().focus();await expect(page.getByRole('dialog').getByRole('tooltip')).toBeVisible();await page.keyboard.press('Escape');await page.keyboard.press('Escape');
+ await page.goto('/',{waitUntil:'networkidle'});await page.locator('.main-rest .main-more').click();await expect(page.getByRole('dialog')).toBeVisible();await page.locator('dialog .compact-company-list tbody a').first().focus();await expect(page.locator('dialog .compact-needs').first()).toBeVisible();await page.keyboard.press('Escape');
  await page.getByRole('button',{name:'All companies'}).click();await expect(page.getByTestId('results-table')).toBeVisible();await page.keyboard.press('Escape');
  await page.goto('/?q=Microsoft',{waitUntil:'networkidle'});await expect(page.locator('.main-no-buys')).toBeVisible();
 });

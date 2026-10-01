@@ -1,6 +1,6 @@
 import type { Year } from './types';
 
-export const FINANCIAL_FIELDS = ['commonNetIncome','preferredEquity','commonDividendsPaid','deposits','loans','creditLossProvision','nonInterestExpense','netRevenue','efficiencyRatio','combinedRatio','insuranceFloat','insuranceReserves','adverseReserveDevelopment','restated'] as const;
+const FINANCIAL_FIELDS = ['commonNetIncome','preferredEquity','commonDividendsPaid','deposits','loans','creditLossProvision','nonInterestExpense','netRevenue','efficiencyRatio','combinedRatio','insuranceFloat','insuranceReserves','adverseReserveDevelopment','restated'] as const;
 export function financialFields(year:Year):Partial<Year> {
  return Object.fromEntries(FINANCIAL_FIELDS.filter(k=>year[k]!=null).map(k=>[k,year[k]]));
 }

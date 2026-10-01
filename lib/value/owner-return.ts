@@ -45,7 +45,7 @@ export function expectedReturnCopy(owner: NonNullable<ReturnType<typeof ownerRet
   const scale=100*10**d;
   return Math.round(owner.yield*scale)+Math.round(owner.growth*scale)===Math.round(owner.expected*scale);
  })??4;
- return `About ${(owner.expected*100).toFixed(digits)}% a year expected (${(owner.yield*100).toFixed(digits)}% cash + ${(owner.growth*100).toFixed(digits)}% growth) vs ${requiredReturnCopy(valuation, country)}`;
+ return `About ${(owner.expected*100).toFixed(digits)}% a year expected (${(owner.yield*100).toFixed(digits)}% cash ${owner.growth<0?'−':'+'} ${(Math.abs(owner.growth)*100).toFixed(digits)}% ${owner.growth<0?'annual decline':'growth'}) vs ${requiredReturnCopy(valuation, country)}`;
 }
 const observations=(series:Series=[])=>series.filter((p):p is [number,number]=>p[1]!==null&&Number.isFinite(p[1])).sort((a,b)=>a[0]-b[0]);
 export function referenceMetrics(d:Dossier, price:number|null) {

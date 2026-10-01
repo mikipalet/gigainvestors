@@ -1,6 +1,7 @@
 import {emptyYear} from './second-sources';
 import type {Year} from '../types';
 import issuerFacts from './issuer-facts.json';
+import auditFacts from './audit-facts.json';
 export interface ReportedFacts {
  end:string; currency:string; source:string; quote:string;
  values:Partial<Record<keyof Year,number>>;
@@ -9,7 +10,7 @@ export interface ReportedFacts {
  correction?:boolean;
  absenceInCompleteStatement?:boolean;
 }
-export const withReportedFacts=(id:string,years:Year[])=>applyReportedFacts(years,(issuerFacts as Record<string,ReportedFacts[]>)[id]??[]);
+export const withReportedFacts=(id:string,years:Year[])=>applyReportedFacts(years,[...((issuerFacts as Record<string,ReportedFacts[]>)[id]??[]),...((auditFacts as Record<string,ReportedFacts[]>)[id]??[])]);
 /** Reviewed issuer observations supplement provider statements without replacing
  * their reported totals. Per-share history must declare its split basis. */
 export function applyReportedFacts(years:Year[],facts:ReportedFacts[]):Year[]{

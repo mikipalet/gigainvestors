@@ -1,0 +1,32 @@
+// All-state design audit: node design-qa.mjs <base> <out> [paths]
+import {chromium} from '@playwright/test';
+import {audit} from './design-audit.mjs';
+import {mkdirSync,writeFileSync,statfsSync} from 'node:fs';
+const [base,out,pathArg]=process.argv.slice(2),paths=(pathArg??'/,/?year=2011,/wkl.as,/acn.us,/jpm.us').split(',');
+const viewports=(process.env.QA_VIEWPORTS??'1728x970,2056x1180,1440x800,390x844').split(',').map(v=>v.split('x').map(Number));
+mkdirSync(out,{recursive:true});const browser=await chromium.launch();const report=[];
+function disk(){const s=statfsSync('/');if(s.bavail*s.bsize<5*1024**3)throw Error('DISK STOP: below 5 GiB');}
+try{for(const [width,height]of viewports){for(const path of paths){disk();const page=await browser.newPage({viewport:{width,height},hasTouch:width<500});const errors=[];page.on('pageerror',e=>errors.push(String(e)));await page.goto(base+path,{waitUntil:'networkidle',timeout:90000});await page.addStyleTag({content:'nextjs-portal{display:none!important}'});let seq=0;const prefix=`${width}x${height}${path.replace(/[^a-z0-9]/gi,'_')}`;
+ const snap=async state=>{disk();await page.waitForTimeout(240);const result=await page.evaluate(audit);const file=`${prefix}-${String(seq++).padStart(2,'0')}-${state.replace(/[^a-z0-9]/gi,'_')}.png`;await page.screenshot({path:`${out}/${file}`,fullPage:true});report.push({viewport:`${width}x${height}`,path,state,file,...result,errors:[...errors]});writeFileSync(`${out}/report.json`,JSON.stringify(report,null,1));};
+ const charts=async()=>{const groups=page.locator('dialog[open]').count().then(n=>n?page.locator('dialog[open] .chart-hit-area'):page.locator('.chart-hit-area'));const targets=await (await groups).all();for(let i=0;i<targets.length;i++){await targets[i].scrollIntoViewIfNeeded();if(width<500)await targets[i].tap();else await targets[i].hover();await snap(`chart_${i}_${width<500?'tap':'hover'}`);await targets[i].focus();await targets[i].press('End');await snap(`chart_${i}_keyboard`);await page.mouse.move(0,0);await targets[i].evaluate(el=>el.blur());}};
+ const pages=async name=>{
+  const next=page.getByRole('button',{name:'Next detail page',exact:true}).or(page.getByRole('navigation',{name:'Company pages',exact:true}).getByRole('button',{name:'→',exact:true}));let n=1;
+  while(await next.count()&&await next.isEnabled()){await next.click();await snap(`${name}_page_${++n}`);}
+ };
+ const panel=async name=>{await page.locator('dialog[open]').waitFor();await snap(name);const tabs=(await page.getByRole('tab').allTextContents()).filter(tab=>process.env.QA_CHARTS_ONLY!=='1'||['Answer','Valuation','Owner cash'].includes(tab));for(const tab of tabs){await page.getByRole('tab',{name:tab,exact:true}).click();await snap(`${name}_${tab}`);await charts();if(process.env.QA_CHARTS_ONLY!=='1')await pages(`${name}_${tab}`);
+   const series=page.locator('.data-series select');
+   if(await series.count())for(const value of await series.locator('option').evaluateAll(options=>options.map(o=>o.value))){await series.selectOption(value);const prev=page.getByRole('button',{name:'Previous detail page',exact:true});while(await prev.count()&&await prev.isEnabled())await prev.click();await snap(`${name}_series_${value}`);await pages(`${name}_series_${value}`);}
+  }if(!tabs.length){await charts();await pages(name);}await page.getByRole('button',{name:'Close panel'}).click();await page.locator('dialog').waitFor({state:'detached'});};
+ await snap('page');if(process.env.QA_TABLE_ONLY==='1'){await page.getByRole('button',{name:'All companies',exact:false}).click();await panel('all_companies');await page.close();continue;}if(process.env.QA_BASE==='1'){await page.close();continue;}await charts();
+ if(path.startsWith('/?')||path==='/'){
+  const tiles=page.locator('.main-company');for(let i=0;i<Math.min(3,await tiles.count());i++){await tiles.nth(i).hover();await snap(`tile_${i}_hover`);}await page.mouse.move(0,0);
+  for(const button of await page.locator('.main-more').all()){await button.click();await panel('full_list');}
+  await page.getByRole('button',{name:'All companies',exact:false}).click();await panel('all_companies');
+  if(width<768){await page.getByRole('button',{name:'Filters',exact:true}).click();await snap('filters');}
+  for(const label of ['Country','Sector']){const combo=page.getByRole('combobox',{name:label,exact:true});await combo.click();await snap(`filter_${label}`);if(width<768)await combo.click();else await page.keyboard.press('Escape');}
+  if(width<768){await page.getByRole('button',{name:'Close panel'}).click();await page.locator('dialog').waitFor({state:'detached'});}
+  const slider=page.getByRole('slider',{name:'Fiscal year'});await slider.press('Home');await page.locator('.main-view[aria-busy=false]').waitFor();await snap('timeline_start');await slider.press('ArrowRight');await page.locator('.main-view[aria-busy=false]').waitFor();await snap('timeline_step');await slider.press('End');await page.locator('.main-view[data-frame=Today]').waitFor();await snap('today');
+ }else{for(const button of await page.locator('.tile-open').all()){await button.click();await panel(await button.getAttribute('aria-label'));}if(await page.locator('.holder-summary').count()){await page.locator('.holder-summary').click();await panel('investors');}}
+ if(process.env.QA_CHARTS_ONLY==='1'){await page.close();continue;}await page.getByRole('button',{name:'Method',exact:true}).click();await panel('method');
+ await page.getByRole('button',{name:'Search companies',exact:true}).click();await page.locator('.search-modal input').first().fill('Wolters');await page.waitForTimeout(500);await snap('search');await page.keyboard.press('Escape');await page.close();console.log(prefix,report.filter(r=>r.viewport===`${width}x${height}`&&r.path===path).reduce((n,r)=>n+r.issues.length,0),'issues');
+}}}finally{await browser.close();writeFileSync(`${out}/report.json`,JSON.stringify(report,null,1));}

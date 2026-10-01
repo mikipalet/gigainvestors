@@ -34,7 +34,7 @@ export const audit = () => {
   for (let i = 0; i < leaves.length && issues.length < 80; i++) for (let j = i + 1; j < leaves.length; j++) {
     const a = leaves[i].b, c = leaves[j].b;
     if (leaves[i].el === leaves[j].el) continue;
-    const overlayA=leaves[i].el.closest('.design-options,[role="tooltip"]'),overlayB=leaves[j].el.closest('.design-options,[role="tooltip"]');
+    const overlayA=leaves[i].el.closest('.design-options,[role="tooltip"],.value-dock'),overlayB=leaves[j].el.closest('.design-options,[role="tooltip"],.value-dock');
     if(overlayA!==overlayB&&(overlayA||overlayB))continue; // Opaque overlays intentionally cover the page behind them.
     if (a.left < c.right - 2 && c.left < a.right - 2 && a.top < c.bottom - 2 && c.top < a.bottom - 2) issues.push(`overlapping text: "${leaves[i].t}" / "${leaves[j].t}"`);
   }

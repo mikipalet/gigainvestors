@@ -1,3 +1,4 @@
+import { ChartInteraction } from './ChartInteraction';
 import type { Series } from '@/lib/value/types';
 import { formatMetric, type MetricFormat } from '@/lib/value/metric-labels';
 import { useWidth } from '@/lib/value/viz/use-width';
@@ -14,11 +15,11 @@ export function MiniSeries({ series, label, threshold, format='pct', better='hig
  const first=series[0][0],last=series.at(-1)![0],x=(t:number)=>left+(t-first)/(last-first||1)*(right-left);
  let gap=true;
  const path=series.map(([t,v])=>{if(v===null||!Number.isFinite(v)){gap=true;return '';}const part=`${gap?'M':'L'}${x(t)},${y(v)}`;gap=false;return part;}).join(' ');
- return <figure ref={ref} className="mini-series" aria-label={`${label}, ${first} to ${last}; ${threshold===undefined?'Annual observations.':`${better} is better. Shading marks the passing side.`}`}><svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${label} by fiscal year`}>
+ return <figure ref={ref} className="mini-series" aria-label={`${label}, ${first} to ${last}; ${threshold===undefined?'Annual observations.':`${better} is better. Shading marks the passing side.`}`}><ChartInteraction width={width} height={height} label={label} points={points.map(([fy,v])=>({x:x(fy),y:y(v),text:`FY${fy} · ${label}: ${fmt(v)}${threshold===undefined?'':` · Passing bar ${better==='higher'?'≥':'≤'} ${fmt(threshold)}`}`}))}><svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${label} by fiscal year`}>
  {threshold!==undefined&&<><rect data-good-side={better} x={left} y={better==='higher'?top:y(threshold)} width={right-left} height={better==='higher'?y(threshold)-top:bottom-y(threshold)} fill="var(--buy)" opacity=".12"/><path d={`M${left} ${y(threshold)}H${right}`} stroke="var(--buy)" strokeDasharray="3 3"/></>}
  <path d={`M${left} ${top}V${bottom}H${right}`} fill="none" stroke="var(--viz-grid)"/>
  <text x={left-5} y={top+4} textAnchor="end">{fmt(hi)}</text><text x={left-5} y={bottom+3} textAnchor="end">{fmt(lo)}</text>
  <path d={path} fill="none" stroke="currentColor" strokeWidth="1.8"/>
  <text x={left} y={height-2}>{first}</text><text x={right} y={height-2} textAnchor="end">{last}</text>
- </svg>{threshold===undefined&&<figcaption>{label}</figcaption>}</figure>;
+ </svg></ChartInteraction>{threshold===undefined&&<figcaption>{label}</figcaption>}</figure>;
 }

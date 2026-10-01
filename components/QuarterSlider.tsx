@@ -7,12 +7,15 @@ interface Props {
   q: string;
   onChange: (q: string) => void;
   note?: string;
+  embedded?: boolean;
+  label?: string;
+  onPrefetch?: (q: string) => void;
   period?: "quarter" | "year";
 }
 
 // Timeline along the bottom. The quarter pill IS the thumb; drag it, click the track,
 // use the ‹ › buttons or arrow keys.
-export function QuarterSlider({ quarters, q, onChange, note, period = "quarter" }: Props) {
+export function QuarterSlider({ quarters, q, onChange, note, period = "quarter", embedded = false, label = "Quarter", onPrefetch }: Props) {
   const idx = Math.max(0, quarters.indexOf(q));
   const idxRef = useRef(idx);
   idxRef.current = idx;
@@ -23,6 +26,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter" 
   };
 
   useEffect(() => {
+    if (embedded) return;
     const onKey = (e: KeyboardEvent) => {
       const t = e.target as HTMLInputElement;
       if (t?.closest('dialog, [role="combobox"], [role="listbox"], textarea, [contenteditable="true"]') || (t?.tagName === "INPUT" && t.type !== "range")) return;
@@ -34,25 +38,41 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter" 
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [quarters, onChange]);
+  }, [quarters, onChange, embedded]);
 
   const pct = quarters.length > 1 ? (idx / (quarters.length - 1)) * 100 : 0;
   const q1s = quarters.filter((x) => period === "year" || x.endsWith("Q1"));
   const firstQ1Idx = q1s.length ? quarters.indexOf(q1s[0]) : quarters.length;
   const years = (firstQ1Idx >= 4 ? [quarters[0], ...q1s] : q1s).map((x) => ({ y: period === "year" ? x : x.slice(0, 4), i: quarters.indexOf(x) }));
 
+  const track = useRef<HTMLDivElement>(null);
+  const lastEmit = useRef(0), timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const latest = useRef(q), dragging = useRef(false);
+  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
+  const emit = (value: string, immediate = false) => {
+    latest.current = value;
+    onPrefetch?.(value);
+    if (timer.current) clearTimeout(timer.current);
+    const delay = immediate ? 0 : Math.max(0, 80 - (performance.now() - lastEmit.current));
+    const commit = () => { lastEmit.current = performance.now(); onChange(latest.current); };
+    if (delay) timer.current = setTimeout(commit, delay); else commit();
+  };
+  const pointerValue = (clientX: number) => {
+    const rect = track.current!.getBoundingClientRect();
+    return quarters[Math.max(0, Math.min(quarters.length - 1, Math.round((clientX - rect.left) / rect.width * (quarters.length - 1))))];
+  };
   const btn = "flex h-11 w-11 items-center justify-center text-[20px] leading-none transition-opacity sm:h-8 sm:w-8 sm:text-[15px]";
 
   return (
-    <div className={`timeline fixed inset-x-0 bottom-0 z-40 h-[84px] select-none bg-paper sm:h-12 ${period === "year" ? "year-timeline" : ""}`}>
-      <div className="absolute bottom-[6px] left-[104px] z-10 text-[10px] leading-none opacity-55 sm:bottom-[3px] sm:left-5 sm:text-[9px] sm:opacity-40">
+    <div className={embedded ? "house-timeline" : `timeline fixed inset-x-0 bottom-0 z-40 h-[84px] select-none bg-paper sm:h-12 ${period === "year" ? "year-timeline" : ""}`}>
+      {!embedded && <div className="absolute bottom-[6px] left-[104px] z-10 text-[10px] leading-none opacity-55 sm:bottom-[3px] sm:left-5 sm:text-[9px] sm:opacity-40">
         {note && <span>{note} · </span>}
         <span className="hidden sm:inline">{period === "year" ? "Numerical tests only · " : "quarterly 13F filings · "}</span>
         <a href={period === "year" ? "https://eodhd.com" : "https://www.dataroma.com"} target="_blank" rel="noopener noreferrer" className="underline-offset-2 transition-opacity hover:opacity-100 hover:underline">
           {period === "year" ? "EODHD / filings" : "dataroma.com"}
         </a>
-      </div>
-      <div className="absolute bottom-1 left-1 flex items-center sm:bottom-2 sm:left-auto sm:right-2 sm:top-2">
+      </div>}
+      <div className={embedded ? "house-steps" : "absolute bottom-1 left-1 flex items-center sm:bottom-2 sm:left-auto sm:right-2 sm:top-2"}>
         <div className="flex items-center">
           <button
             type="button"
@@ -74,24 +94,28 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter" 
           </button>
         </div>
       </div>
-      <div className="relative ml-4 mr-4 h-12 sm:mr-[398px] sm:h-full">
+      <div ref={track} className={embedded ? "house-track" : "relative ml-4 mr-4 h-12 sm:mr-[398px] sm:h-full"}>
         <input
           type="range"
           min={0}
           max={quarters.length - 1}
           value={idx}
-          onChange={(e) => onChange(quarters[Number(e.target.value)])}
-          onPointerUp={(e) => (e.currentTarget as HTMLInputElement).blur()}
+          onChange={(e) => { if (!embedded || !dragging.current) emit(quarters[Number(e.target.value)], true); }}
+          onPointerDown={e => { if (!embedded) return; e.preventDefault(); dragging.current = true; e.currentTarget.focus(); e.currentTarget.setPointerCapture(e.pointerId); emit(pointerValue(e.clientX), true); }}
+          onPointerMove={e => { if (embedded && dragging.current) emit(pointerValue(e.clientX)); }}
+          onPointerCancel={() => { dragging.current = false; emit(latest.current, true); }}
+          onPointerUp={e => { if (embedded) { dragging.current = false; emit(pointerValue(e.clientX), true); } else e.currentTarget.blur(); }}
           aria-label={period === "year" ? "Fiscal year" : "Quarter"} aria-valuetext={q === "Today" ? "Today" : period === "year" ? `Fiscal year ${q}` : q}
+          style={embedded ? {touchAction:"none"} : undefined}
           className="slider absolute inset-x-0 top-1 z-10 m-0 h-10 w-full cursor-ew-resize appearance-none bg-transparent"
         />
         <div className="pointer-events-none absolute top-[24px] h-px w-full bg-ink/30" />
-        {years.map((y) => {
+        {(embedded ? quarters.map((y,i)=>({y,i})).filter(({y,i})=>y !== "Today" && (i % 5 === 0 || Number(y) % 5 === 0)) : years).map((y) => {
           const near = Math.abs((y.i / Math.max(1, quarters.length - 1)) * 100 - pct) < (period === "year" ? 12 : 4);
           return (
           <div key={y.y} className="pointer-events-none absolute top-[21px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / Math.max(1, quarters.length - 1)) * 100}%` }}>
             {!near && (quarters.length < 60 || Number(y.y) % 2 === 0) ? (
-              <span className={`absolute -top-[13px] -translate-x-1/2 text-[10px] leading-none opacity-45 ${Number(y.y) % 4 === 0 ? "inline" : "hidden"} sm:inline`}>{y.y}</span>
+              <span className={`absolute -top-[13px] -translate-x-1/2 text-[10px] leading-none opacity-45 ${embedded || Number(y.y) % 4 === 0 ? "inline" : "hidden"} sm:inline`}>{y.y}</span>
             ) : null}
           </div>
           );
@@ -108,7 +132,8 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter" 
         .slider::-moz-range-thumb{width:56px;height:40px;background:transparent;border:0}
         .slider::-webkit-slider-runnable-track{background:transparent}
         .slider::-moz-range-track{background:transparent}
-        .slider:focus-visible{outline:none}
+        .slider:focus-visible{outline:none!important}
+        .slider:focus-visible ~ div:last-child{outline:2px solid var(--ink);outline-offset:3px}
       `}</style>
     </div>
   );

@@ -5,36 +5,42 @@
     "capex_purpose",
     "same_10y",
     "commodity_product",
-    "brand"
+    "brand",
+    "thesis_liability",
+    "thesis_guidance"
   ],
   "graded_at": "2026-09-29",
   "method": "30 random answers per question from the top-400 analysis graded by independent Claude graders against report excerpts + company knowledge; trust = agreement>=0.85, n>=30, >=3 yes cases for yes/no questions",
   "agreement": {
-    "auditor_changed": 1.0,
+    "auditor_changed": 1,
     "commodity_product": 0.933,
     "low_cost": 0.967,
     "regulatory_moat": 0.967,
-    "switching_costs": 1.0,
+    "switching_costs": 1,
     "brand": 0.867,
-    "compensation_basis": 1.0,
-    "material_weakness": 1.0,
+    "compensation_basis": 1,
+    "material_weakness": 1,
     "related_party": 0.933,
     "technology_change": 0.833,
     "acquisition_led": 0.933,
     "buyback_below_value": 0.967,
     "founder_led": 0.8,
-    "network": 1.0,
+    "network": 1,
     "revenue_model": 0.967,
-    "adjusted_metrics": 1.0,
-    "going_concern": 1.0,
-    "no_moat": 1.0,
+    "adjusted_metrics": 1,
+    "going_concern": 1,
+    "no_moat": 1,
     "capex_purpose": 0.9666666666666667,
     "same_10y": 0.9333333333333333,
-    "admits_mistakes": 1.0,
+    "admits_mistakes": 1,
     "commodity": 0.8333333333333334,
     "government_dependence": 0.8333333333333334,
-    "pricing_power": 1.0,
-    "scale": 0.7666666666666667
+    "pricing_power": 1,
+    "scale": 0.7666666666666667,
+    "thesis_structural": 0.8,
+    "thesis_liability": 1,
+    "thesis_guidance": 1,
+    "thesis_distress": 0.7
   },
   "versions": {
     "auditor_changed": "1",
@@ -61,6 +67,45 @@
     "commodity": "1",
     "government_dependence": "1",
     "pricing_power": "1",
-    "scale": "1"
+    "scale": "1",
+    "thesis_structural": "2",
+    "thesis_liability": "2",
+    "thesis_guidance": "2",
+    "thesis_distress": "2"
+  },
+  "thesis": {
+    "thesis_structural": {
+      "version": "2",
+      "accuracy": 0.8,
+      "n": 10,
+      "positives": 2,
+      "negatives": 8
+    },
+    "thesis_liability": {
+      "version": "2",
+      "accuracy": 1,
+      "n": 10,
+      "positives": 3,
+      "negatives": 7
+    },
+    "thesis_guidance": {
+      "version": "2",
+      "accuracy": 1,
+      "n": 10,
+      "positives": 1,
+      "negatives": 9
+    },
+    "thesis_distress": {
+      "version": "2",
+      "accuracy": 0.7,
+      "n": 10,
+      "positives": 4,
+      "negatives": 6
+    }
+  },
+  "thesis_calibration": {
+    "graded_at": "2026-10-01T10:47:42.822Z",
+    "fixture_sha256": "016748ee4d7f53f631c6c01a8dc09ac23b5e6b48ef11b7197de1c1f7fd4f0c8f",
+    "method": "Official filing excerpt labels; accuracy >=0.90, with both positive and negative labels; yes requires an exact selected filing passage and a second affirmative on that passage alone; positive evidence must be dated within 18 months. No trust granted to all-negative question sets."
   }
 }

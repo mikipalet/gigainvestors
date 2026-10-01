@@ -1,0 +1,368 @@
+[
+  {
+    "id": "BRBY-2024",
+    "before": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "adjusted operating profit for the financial year ended 30 March 2024 to be in the range of £410m to £460m,\nbelow previous guidance.",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/images/old/Burberry%20Trading%20Update%2012th%20January%202024.pdf.downloadasset.pdf",
+          "filed": "2024-01-12",
+          "section": "OUTLOOK, page 1; retrieved using web PDF reader after direct HTTP 403"
+        }
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "adjusted operating profit for the financial year ended 30 March 2024 to be in the range of £410m to £460m,\nbelow previous guidance.",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/images/old/Burberry%20Trading%20Update%2012th%20January%202024.pdf.downloadasset.pdf",
+          "filed": "2024-01-12",
+          "section": "OUTLOOK, page 1; retrieved using web PDF reader after direct HTTP 403"
+        }
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "adjusted operating profit for the financial year ended 30 March 2024 to be in the range of £410m to £460m,\nbelow previous guidance.",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/images/old/Burberry%20Trading%20Update%2012th%20January%202024.pdf.downloadasset.pdf",
+          "filed": "2024-01-12",
+          "section": "OUTLOOK, page 1; retrieved using web PDF reader after direct HTTP 403"
+        }
+      }
+    ],
+    "latest": {
+      "revenue": 3094000000,
+      "operatingIncome": 634000000
+    },
+    "currency": "GBP",
+    "after": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "adjusted operating profit for the financial year ended 30 March 2024 to be in the range of £410m to £460m,\nbelow previous guidance.",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/images/old/Burberry%20Trading%20Update%2012th%20January%202024.pdf.downloadasset.pdf",
+          "filed": "2024-01-12",
+          "section": "OUTLOOK, page 1; retrieved using web PDF reader after direct HTTP 403"
+        }
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "adjusted operating profit for the financial year ended 30 March 2024 to be in the range of £410m to £460m,\nbelow previous guidance.",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/images/old/Burberry%20Trading%20Update%2012th%20January%202024.pdf.downloadasset.pdf",
+          "filed": "2024-01-12",
+          "section": "OUTLOOK, page 1; retrieved using web PDF reader after direct HTTP 403"
+        },
+        "amount": "£410m",
+        "guidance": {
+          "metric": "operating_profit",
+          "currency": "GBP",
+          "prior": 634000000,
+          "guided": 410000000
+        }
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "adjusted operating profit for the financial year ended 30 March 2024 to be in the range of £410m to £460m,\nbelow previous guidance.",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/images/old/Burberry%20Trading%20Update%2012th%20January%202024.pdf.downloadasset.pdf",
+          "filed": "2024-01-12",
+          "section": "OUTLOOK, page 1; retrieved using web PDF reader after direct HTTP 403"
+        }
+      }
+    ],
+    "calls": [
+      {
+        "stateHash": "aa268cd72067fc3574f45c0d833de1cc8135e22a04b25918b787fb12178d601b",
+        "questions": {
+          "amount": {
+            "type": "choice",
+            "instructions": "Select the current FULL YEAR guided revenue or operating profit, or the guided percentage decline, supporting a decline greater than 20%. For a range select its lower absolute earnings/revenue endpoint (or larger percentage decline). Do not select a past result, quarter, EPS or cost-cutting target. Select none if there is no explicitly quantified qualifying guidance.",
+            "criteria": {
+              "none": "No supported amount",
+              "n0": "£410m",
+              "n1": "£460m"
+            }
+          },
+          "metric": {
+            "type": "choice",
+            "instructions": "Which financial metric does the selected current full-year guidance describe?",
+            "criteria": {
+              "revenue": "Revenue",
+              "operating_profit": "Operating profit (not EPS, EBITDA or pre-tax profit)",
+              "none": "Neither"
+            }
+          }
+        },
+        "answers": {
+          "amount": {
+            "type": "choice",
+            "choice": "n0",
+            "probabilities": {
+              "n1": 0,
+              "n0": 0.73,
+              "none": 0.27
+            },
+            "confidence": 0.59
+          },
+          "metric": {
+            "type": "choice",
+            "choice": "operating_profit",
+            "probabilities": {
+              "none": 0,
+              "operating_profit": 1,
+              "revenue": 0
+            },
+            "confidence": 0.99
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "USB.US",
+    "before": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "ected to close in the second quarter of 2026, subject to regulatory approvals and satisfaction of applicable closing conditions.\n\nBusiness Segments\n\nThe Company’s major business segments are Wealth, Corporate, Commercial and Institutional Banking, Consumer and Business Banking, Payment Services, and Treasury and Corporate Support.\n\nWealth, Corporate, Commercial and Institutional Banking provides core banking, specialized lending, transaction and payment processing, capital markets, asset management, and brokerage and investment related services to wealth, middle market, large corporate, commercial real estate, government and institutional clients.\n\nConsumer and Business Banking comprises consumer banking, small business banking and consumer lending. Products and services are delivered through banking offices, telephone servicing and sales, online services, direct mail, ATMs, mobile\n\n2\n\ndevices, distributed mortgage loan officers, and intermediary relationships including auto dealerships, mortgage banks, and strategic business partners.\n\nPayment Services includes consumer and business credit cards, stored-value cards, debit cards, corporate, government and purchasing card services and merchant processing.\n\nTreasury and Corporate Support includes the Company’s investment portfolios, funding, capital management, interest rate risk management, income taxes not allocated to the business segments, including most investments in tax-advantaged projects, and the residual aggregate of ",
+          "url": "https://www.sec.gov/Archives/edgar/data/36104/000003610426000011/usb-20251231.htm",
+          "filed": "2026-02-23",
+          "section": "business"
+        }
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "red with $8.5 billion and $4.8 billion at December 31, 2025, respectively.\n\nOther Guarantees and Contingent Liabilities\n\nThe following table is a summary of other guarantees and contingent liabilities of the Company at June 30, 2026:\n\n(Dollars in Millions)\n\nCollateral Held\n\nCarrying Amount\n\nMaximum\n\nPotential\n\nFuture\n\nPayments\n\nStandby letters of credit $ — $ 26 $ 12,300\n\nSecurities lending indemnifications 10,106 — 9,926\n\nAsset sales — 128 17,656\n\n(a)\n\nMerchant processing 456 51 156,990\n\nOther — 20 2,955\n\n(a)The maximum potential future payments do not include loan sales where the Company provides standard representation and warranties to the buyer against losses related to loan underwriting documentation defects that may have existed at the time of sale that generally are identified after the occurrence of a triggering event such as delinquency. For these types of loan sales, the maximum potential future payments is generally the unpaid principal balance of loans sold measured at the end of the current reporting period. Actual losses will be significantly less than the maximum exposure, as only a fraction of loans sold will have a representation and warranty breach, and any losses on repurchase would generally be mitigated by any collateral held against the loans.\n\nMerchant Processing The Company, through its subsidiaries, provides merchant processing services. Under the rules of credit card associations, a merchant processor retains a contingent liability for credit card t",
+          "url": "https://www.sec.gov/Archives/edgar/data/36104/000003610426000044/usb-20260630.htm",
+          "filed": "2026-08-06",
+          "section": "10-Q"
+        },
+        "amount": "156,990 (Dollars in Millions)"
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      }
+    ],
+    "currency": "USD",
+    "after": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "ected to close in the second quarter of 2026, subject to regulatory approvals and satisfaction of applicable closing conditions.\n\nBusiness Segments\n\nThe Company’s major business segments are Wealth, Corporate, Commercial and Institutional Banking, Consumer and Business Banking, Payment Services, and Treasury and Corporate Support.\n\nWealth, Corporate, Commercial and Institutional Banking provides core banking, specialized lending, transaction and payment processing, capital markets, asset management, and brokerage and investment related services to wealth, middle market, large corporate, commercial real estate, government and institutional clients.\n\nConsumer and Business Banking comprises consumer banking, small business banking and consumer lending. Products and services are delivered through banking offices, telephone servicing and sales, online services, direct mail, ATMs, mobile\n\n2\n\ndevices, distributed mortgage loan officers, and intermediary relationships including auto dealerships, mortgage banks, and strategic business partners.\n\nPayment Services includes consumer and business credit cards, stored-value cards, debit cards, corporate, government and purchasing card services and merchant processing.\n\nTreasury and Corporate Support includes the Company’s investment portfolios, funding, capital management, interest rate risk management, income taxes not allocated to the business segments, including most investments in tax-advantaged projects, and the residual aggregate of ",
+          "url": "https://www.sec.gov/Archives/edgar/data/36104/000003610426000011/usb-20251231.htm",
+          "filed": "2026-02-23",
+          "section": "business"
+        }
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "red with $8.5 billion and $4.8 billion at December 31, 2025, respectively.\n\nOther Guarantees and Contingent Liabilities\n\nThe following table is a summary of other guarantees and contingent liabilities of the Company at June 30, 2026:\n\n(Dollars in Millions)\n\nCollateral Held\n\nCarrying Amount\n\nMaximum\n\nPotential\n\nFuture\n\nPayments\n\nStandby letters of credit $ — $ 26 $ 12,300\n\nSecurities lending indemnifications 10,106 — 9,926\n\nAsset sales — 128 17,656\n\n(a)\n\nMerchant processing 456 51 156,990\n\nOther — 20 2,955\n\n(a)The maximum potential future payments do not include loan sales where the Company provides standard representation and warranties to the buyer against losses related to loan underwriting documentation defects that may have existed at the time of sale that generally are identified after the occurrence of a triggering event such as delinquency. For these types of loan sales, the maximum potential future payments is generally the unpaid principal balance of loans sold measured at the end of the current reporting period. Actual losses will be significantly less than the maximum exposure, as only a fraction of loans sold will have a representation and warranty breach, and any losses on repurchase would generally be mitigated by any collateral held against the loans.\n\nMerchant Processing The Company, through its subsidiaries, provides merchant processing services. Under the rules of credit card associations, a merchant processor retains a contingent liability for credit card t",
+          "url": "https://www.sec.gov/Archives/edgar/data/36104/000003610426000044/usb-20260630.htm",
+          "filed": "2026-08-06",
+          "section": "10-Q"
+        },
+        "amount": "156,990 (Dollars in Millions)"
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      }
+    ],
+    "calls": [
+      {
+        "stateHash": "27ca6287746ffa2de26470460c09d99e428ea5c1b934ef78f9cb954d8a2b7c0d",
+        "questions": {
+          "amount": {
+            "type": "choice",
+            "instructions": "Select the main disclosed provision, contingent liability or redress amount supporting the affirmative liability answer. Select none if no actual exposure amount is stated.",
+            "criteria": {
+              "none": "No supported amount",
+              "n0": "$8.5 billion",
+              "n1": "$4.8 billion",
+              "n2": "12,300 (Dollars in Millions)",
+              "n3": "10,106 (Dollars in Millions)",
+              "n4": "9,926 (Dollars in Millions)",
+              "n5": "17,656 (Dollars in Millions)",
+              "n6": "156,990 (Dollars in Millions)",
+              "n7": "2,955 (Dollars in Millions)"
+            }
+          }
+        },
+        "answers": {
+          "amount": {
+            "type": "choice",
+            "choice": "n6",
+            "probabilities": {
+              "none": 0.14,
+              "n7": 0.01,
+              "n0": 0.05,
+              "n1": 0.05,
+              "n3": 0.02,
+              "n6": 0.63,
+              "n2": 0.06,
+              "n5": 0.03,
+              "n4": 0.01
+            },
+            "confidence": 0.6
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ZTS.US",
+    "before": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "port) refer to Zoetis Inc., a Delaware corporation, and its subsidiaries. In addition, unless the context requires otherwise, references to “Pfizer” in this 2025 Annual Report refer to Pfizer Inc., a Delaware corporation, and its subsidiaries.\n\nOperating Segments\n\nThe animal health medicines, vaccines and diagnostics market is characterized by meaningful differences in customer needs across different regions. This is due to a variety of factors, including:\n\n•economic differences, such as standards of living in developed markets as compared to emerging markets;\n\n•cultural differences, such as dietary preferences for different animal proteins, pet ownership preferences and pet care standards;\n\n•epidemiological differences, such as the prevalence of certain bacterial and viral strains and disease dynamics;\n\n•treatment differences, such as utilization of different types of medicines and vaccines, as well as the pace of adoption of new technologies;\n\n•environmental differences, such as seasonality, climate and the availability of arable land and fresh water; and\n\n•regulatory differences, such as standards for product approval and manufacturing.\n\nAs a result of these differences, among other things, we organize and operate our business in two segments:\n\n•United States (U.S.) with revenue of $5,097 million, or 54% of total revenue for the year ended December 31, 2025; and\n\n•International with revenue of $4,254 million, or 45% of total revenue for the year ended December 31, 2025.\n\nW",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555280/000155528026000011/zts-20251231.htm",
+          "filed": "2026-02-12",
+          "section": "business"
+        }
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "y not be representative of actual outcomes, and any variation from such estimates could materially affect our financial statements in the period of settlement or when the statutes of limitations expire, as we treat these events as discrete items in the period of resolution. Finalizing audits with the relevant taxing authorities can include formal\n\n12 |\n\nTable of Contents\n\nadministrative and legal proceedings, and as a result, it is difficult to estimate the timing and range of possible changes related to our uncertain tax positions, and such changes could be significant.\n\nStatus of Tax Audits and Potential Impact on Accrual for Uncertain Tax Positions\n\nWe are currently under income tax audit by the U.S. Internal Revenue Service (IRS) for tax years 2017 and 2018. In July 2024, the IRS issued Notices of Proposed Adjustment (NOPA) related to the one-time mandatory deemed repatriation tax incurred on the 2018 U.S. Federal Income Tax return. In September 2024, the IRS issued a Revenue Agent Report (RAR) for the adjustments identified in the NOPA and a protest was filed with the IRS on November 15, 2024. As of June 30, 2026, the additional tax liability, based on the income adjustment proposed by the IRS under the RAR, is approximately $450 million, excluding interest and penalties. This matter is currently under appeal with the IRS.\n\nBased on current facts and circumstances, we disagree with the IRS’ position and will defend our position taken on the 2018 U.S. Federal Income Tax r",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555280/000155528026000040/zts-20260630.htm",
+          "filed": "2026-08-06",
+          "section": "10-Q"
+        },
+        "amount": "$450 million"
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      }
+    ],
+    "currency": "USD",
+    "after": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "port) refer to Zoetis Inc., a Delaware corporation, and its subsidiaries. In addition, unless the context requires otherwise, references to “Pfizer” in this 2025 Annual Report refer to Pfizer Inc., a Delaware corporation, and its subsidiaries.\n\nOperating Segments\n\nThe animal health medicines, vaccines and diagnostics market is characterized by meaningful differences in customer needs across different regions. This is due to a variety of factors, including:\n\n•economic differences, such as standards of living in developed markets as compared to emerging markets;\n\n•cultural differences, such as dietary preferences for different animal proteins, pet ownership preferences and pet care standards;\n\n•epidemiological differences, such as the prevalence of certain bacterial and viral strains and disease dynamics;\n\n•treatment differences, such as utilization of different types of medicines and vaccines, as well as the pace of adoption of new technologies;\n\n•environmental differences, such as seasonality, climate and the availability of arable land and fresh water; and\n\n•regulatory differences, such as standards for product approval and manufacturing.\n\nAs a result of these differences, among other things, we organize and operate our business in two segments:\n\n•United States (U.S.) with revenue of $5,097 million, or 54% of total revenue for the year ended December 31, 2025; and\n\n•International with revenue of $4,254 million, or 45% of total revenue for the year ended December 31, 2025.\n\nW",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555280/000155528026000011/zts-20251231.htm",
+          "filed": "2026-02-12",
+          "section": "business"
+        }
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "y not be representative of actual outcomes, and any variation from such estimates could materially affect our financial statements in the period of settlement or when the statutes of limitations expire, as we treat these events as discrete items in the period of resolution. Finalizing audits with the relevant taxing authorities can include formal\n\n12 |\n\nTable of Contents\n\nadministrative and legal proceedings, and as a result, it is difficult to estimate the timing and range of possible changes related to our uncertain tax positions, and such changes could be significant.\n\nStatus of Tax Audits and Potential Impact on Accrual for Uncertain Tax Positions\n\nWe are currently under income tax audit by the U.S. Internal Revenue Service (IRS) for tax years 2017 and 2018. In July 2024, the IRS issued Notices of Proposed Adjustment (NOPA) related to the one-time mandatory deemed repatriation tax incurred on the 2018 U.S. Federal Income Tax return. In September 2024, the IRS issued a Revenue Agent Report (RAR) for the adjustments identified in the NOPA and a protest was filed with the IRS on November 15, 2024. As of June 30, 2026, the additional tax liability, based on the income adjustment proposed by the IRS under the RAR, is approximately $450 million, excluding interest and penalties. This matter is currently under appeal with the IRS.\n\nBased on current facts and circumstances, we disagree with the IRS’ position and will defend our position taken on the 2018 U.S. Federal Income Tax r",
+          "url": "https://www.sec.gov/Archives/edgar/data/1555280/000155528026000040/zts-20260630.htm",
+          "filed": "2026-08-06",
+          "section": "10-Q"
+        },
+        "amount": "$450 million"
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      }
+    ],
+    "calls": [
+      {
+        "stateHash": "e0abf52160bcd3b2e8118aabd2a1e1ecd6694745cf5516766d1ba5098c80af31",
+        "questions": {
+          "amount": {
+            "type": "choice",
+            "instructions": "Select the main disclosed provision, contingent liability or redress amount supporting the affirmative liability answer. Select none if no actual exposure amount is stated.",
+            "criteria": {
+              "none": "No supported amount",
+              "n0": "$450 million"
+            }
+          }
+        },
+        "answers": {
+          "amount": {
+            "type": "choice",
+            "choice": "n0",
+            "probabilities": {
+              "none": 0.01,
+              "n0": 0.99
+            },
+            "confidence": 0.97
+          }
+        }
+      }
+    ]
+  }
+]

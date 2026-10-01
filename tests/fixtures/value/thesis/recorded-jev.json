@@ -1,0 +1,3859 @@
+[
+  {
+    "id": "CBG-2025",
+    "answers": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "g opportunities to optimise\nmillion) from continuing operations, primarily driven by          capital, funding and liquidity once the uncertainty around\nadjusting items relating to motor finance commissions,            motor commissions is resolved.\nincluding the \u00a3165.0 million provision charge and \u00a318.7\nmillion associated with complaints handling and other             We are confident in the enduring growth opportunity across\noperational and legal costs. We also recognised a \u00a333.0           our core markets, focusing on areas that offer attractive risk-\nmillion provision for the proactive customer remediation          adjusted returns. In the earlier part of the year, to preserve\nprogramme in Motor Finance in relation to early settlement of     capital, we had to turn away attractive new business that met\nloans and an operating loss before tax of \u00a347.5 million for       our credit and pricing requirements, as reflected in our loan\n\n\n\n\n                                                                                                                                         Governance report\nour rentals businesses, including the \u00a330.0 million write-        book growth performance. This, however, demonstrates the\ndown of assets in the Vehicle Hire business.                      continuing demand we believe exists in our markets.\nOn an adjusted basis, excluding the impact of these items         Accordingly, we are taking steps to capture this growth\nwhich do not reflect the underly",
+          "url": "https://www.closebrothers.com/system/files/rrp/reports/CBGAnnualReport2025.pdf",
+          "filed": "2025-09-30",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "unclear",
+        "evidence": {
+          "quote": "g opportunities to optimise\nmillion) from continuing operations, primarily driven by          capital, funding and liquidity once the uncertainty around\nadjusting items relating to motor finance commissions,            motor commissions is resolved.\nincluding the \u00a3165.0 million provision charge and \u00a318.7\nmillion associated with complaints handling and other             We are confident in the enduring growth opportunity across\noperational and legal costs. We also recognised a \u00a333.0           our core markets, focusing on areas that offer attractive risk-\nmillion provision for the proactive customer remediation          adjusted returns. In the earlier part of the year, to preserve\nprogramme in Motor Finance in relation to early settlement of     capital, we had to turn away attractive new business that met\nloans and an operating loss before tax of \u00a347.5 million for       our credit and pricing requirements, as reflected in our loan\n\n\n\n\n                                                                                                                                         Governance report\nour rentals businesses, including the \u00a330.0 million write-        book growth performance. This, however, demonstrates the\ndown of assets in the Vehicle Hire business.                      continuing demand we believe exists in our markets.\nOn an adjusted basis, excluding the impact of these items         Accordingly, we are taking steps to capture this growth\nwhich do not reflect the underly",
+          "url": "https://www.closebrothers.com/system/files/rrp/reports/CBGAnnualReport2025.pdf",
+          "filed": "2025-09-30",
+          "section": "labelled annual-report excerpts"
+        }
+      }
+    ],
+    "recordings": [
+      {
+        "stateHash": "85307bae75d427012e18b1a1b243c98d08cffe133f26374bbace00c1b4421ba1",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 0.97,
+              "unclear": 0.03,
+              "yes": 0
+            },
+            "confidence": 0.95
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "no": 0.36,
+              "yes": 0.64
+            },
+            "confidence": 0.28
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "no": 0.01,
+              "yes": 0.99
+            },
+            "confidence": 0.98
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p2": 0.08,
+              "p3": 0.11,
+              "p1": 0.24,
+              "p4": 0.02,
+              "none": 0.55
+            },
+            "confidence": 0.44
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p1",
+            "probabilities": {
+              "p2": 0,
+              "p3": 0.01,
+              "p1": 0.7,
+              "p4": 0,
+              "none": 0.29
+            },
+            "confidence": 0.62
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p2": 0.08,
+              "p3": 0.03,
+              "p1": 0.23,
+              "p4": 0.01,
+              "none": 0.65
+            },
+            "confidence": 0.56
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "p1",
+            "probabilities": {
+              "p2": 0.03,
+              "p1": 0.72,
+              "p3": 0,
+              "p4": 0,
+              "none": 0.25
+            },
+            "confidence": 0.64
+          }
+        }
+      },
+      {
+        "stateHash": "ff41c650a5bed24d57ea9abd3438afd211b29d503a198744f22726641b558e88",
+        "questions": {
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          }
+        },
+        "answers": {
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "no": 0.29,
+              "yes": 0.71
+            },
+            "confidence": 0.42
+          }
+        }
+      },
+      {
+        "stateHash": "ff41c650a5bed24d57ea9abd3438afd211b29d503a198744f22726641b558e88",
+        "questions": {
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          }
+        },
+        "answers": {
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          }
+        }
+      }
+    ],
+    "graded": [
+      {
+        "id": "thesis_structural",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_liability",
+        "expected": "yes",
+        "actual": "yes",
+        "correct": true
+      },
+      {
+        "id": "thesis_guidance",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_distress",
+        "expected": "yes",
+        "actual": "unclear",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "INTC-2024",
+    "answers": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "e focus on the critical investments needed to execute our business strategy and create long-term value.\n\nMD&A\n\n28\n\nTable of Contents\n\nDuring 2024, we issued a total of $2.6 billion aggregate principal amount of senior notes and remarketed $438 million aggregate principal amount of other bonds for general corporate purposes, including, but not limited to, refinancing of outstanding debt and funding for working capital and capital expenditures. During 2024, we also expanded both our 5-year $5.0 billion revolving credit facility agreement and our 364-day $5.0 billion credit facility agreement, to $7.0 billion and $8.0 billion, respectively, and the maturity dates were extended to February 2029 and January 2025, respectively. In January 2025, we amended our 364-day $8.0 billion credit facility agreement to $5.0 billion, and the maturity date was extended by one year to January 2026. We have other potential sources of liquidity, including our commercial paper program and our automatic shelf registration statement on file with the SEC, pursuant to which we may offer an unspecified amount of debt, equity, and other securities. Under our commercial paper program, we have an ongoing authorization from our Board of Directors to borrow up to $10.0 billion. As of December 28, 2024, we had no commercial paper obligations outstanding and no outstanding borrowings on the revolving credit facilities. See \"Note 13: ",
+          "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086325000009/intc-20241228.htm",
+          "filed": "2025-01-31",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "e focus on the critical investments needed to execute our business strategy and create long-term value.\n\nMD&A\n\n28\n\nTable of Contents\n\nDuring 2024, we issued a total of $2.6 billion aggregate principal amount of senior notes and remarketed $438 million aggregate principal amount of other bonds for general corporate purposes, including, but not limited to, refinancing of outstanding debt and funding for working capital and capital expenditures. During 2024, we also expanded both our 5-year $5.0 billion revolving credit facility agreement and our 364-day $5.0 billion credit facility agreement, to $7.0 billion and $8.0 billion, respectively, and the maturity dates were extended to February 2029 and January 2025, respectively. In January 2025, we amended our 364-day $8.0 billion credit facility agreement to $5.0 billion, and the maturity date was extended by one year to January 2026. We have other potential sources of liquidity, including our commercial paper program and our automatic shelf registration statement on file with the SEC, pursuant to which we may offer an unspecified amount of debt, equity, and other securities. Under our commercial paper program, we have an ongoing authorization from our Board of Directors to borrow up to $10.0 billion. As of December 28, 2024, we had no commercial paper obligations outstanding and no outstanding borrowings on the revolving credit facilities. See \"Note 13: ",
+          "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086325000009/intc-20241228.htm",
+          "filed": "2025-01-31",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "manufacturing technology; advances in manufacturing processes in areas such as performance, performance per watt, and density; multi-chip packaging; system integration; manufacturing capacity; price; margin; ease of use; quality; yields; customer satisfaction; and ecosystem support. Building and maintaining a competitive foundry business requires significant\n\nRisk Factors and Other Key Information\n\n31\n\nTable of Contents\n\nongoing investments to maintain leading-edge process technology and manufacturing capacity, which investments in many instances must be made ahead of customer commitments and may not be recouped. As we have reassessed demand and our \"shell ahead\" sta\n\n[Separate filing passage]\n\nand short-term investments as follows:\n\n(In Millions) Dec 28, 2024 Dec 30, 2023\n\nCash and cash equivalents $ 8,249 $ 7,079\n\nShort-term investments 13,813 17,955\n\nTotal cash and short-term investments\n\n$ 22,062 $ 25,034\n\nTotal debt $ 50,011 $ 49,266\n\nWe suspended the declaration of quarterly dividends starting with Q4 2024. We are prohibited under our commercial CHIPS Act agreement from paying dividends for the next two years and are subject to limitations on the payment of dividends for the three years thereafter. Further, we do not expect to pay dividends until our cash flows improve as we focus on the critical investments needed to execute our business strategy and create long-term value.\n\nMD&A\n\n28\n\nTable of Contents\n\nDuring 2024, we issued a total of $2.6 billion aggregate principal",
+          "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086325000009/intc-20241228.htm",
+          "filed": "2025-01-31",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "manufacturing technology; advances in manufacturing processes in areas such as performance, performance per watt, and density; multi-chip packaging; system integration; manufacturing capacity; price; margin; ease of use; quality; yields; customer satisfaction; and ecosystem support. Building and maintaining a competitive foundry business requires significant\n\nRisk Factors and Other Key Information\n\n31\n\nTable of Contents\n\nongoing investments to maintain leading-edge process technology and manufacturing capacity, which investments in many instances must be made ahead of customer commitments and may not be recouped. As we have reassessed demand and our \"shell ahead\" sta\n\n[Separate filing passage]\n\nand short-term investments as follows:\n\n(In Millions) Dec 28, 2024 Dec 30, 2023\n\nCash and cash equivalents $ 8,249 $ 7,079\n\nShort-term investments 13,813 17,955\n\nTotal cash and short-term investments\n\n$ 22,062 $ 25,034\n\nTotal debt $ 50,011 $ 49,266\n\nWe suspended the declaration of quarterly dividends starting with Q4 2024. We are prohibited under our commercial CHIPS Act agreement from paying dividends for the next two years and are subject to limitations on the payment of dividends for the three years thereafter. Further, we do not expect to pay dividends until our cash flows improve as we focus on the critical investments needed to execute our business strategy and create long-term value.\n\nMD&A\n\n28\n\nTable of Contents\n\nDuring 2024, we issued a total of $2.6 billion aggregate principal",
+          "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086325000009/intc-20241228.htm",
+          "filed": "2025-01-31",
+          "section": "labelled annual-report excerpts"
+        }
+      }
+    ],
+    "recordings": [
+      {
+        "stateHash": "1186a6ab5f9b06d0a3ee362fb05f3c323406094c46acc42283dd1aeb34ed8331",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 0.83,
+              "unclear": 0.04,
+              "yes": 0.13
+            },
+            "confidence": 0.75
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "no": 0,
+              "yes": 1
+            },
+            "confidence": 1
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "p3",
+            "probabilities": {
+              "p2": 0.16,
+              "p4": 0.01,
+              "none": 0.34,
+              "p3": 0.38,
+              "p1": 0.11
+            },
+            "confidence": 0.22
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p3",
+            "probabilities": {
+              "p2": 0.1,
+              "p4": 0,
+              "none": 0.17,
+              "p3": 0.73,
+              "p1": 0
+            },
+            "confidence": 0.65
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "p2",
+            "probabilities": {
+              "p2": 0.38,
+              "p4": 0,
+              "none": 0.34,
+              "p3": 0.18,
+              "p1": 0.1
+            },
+            "confidence": 0.22
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "p2",
+            "probabilities": {
+              "p2": 0.62,
+              "p4": 0,
+              "none": 0.24,
+              "p3": 0.12,
+              "p1": 0.02
+            },
+            "confidence": 0.52
+          }
+        }
+      },
+      {
+        "stateHash": "552758fcc950fae467ab5380dc2458891b31bc97317fc0db38799b95a35be2a3",
+        "questions": {
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          }
+        },
+        "answers": {
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "no": 0,
+              "yes": 1
+            },
+            "confidence": 1
+          }
+        }
+      }
+    ],
+    "graded": [
+      {
+        "id": "thesis_structural",
+        "expected": "yes",
+        "actual": "no",
+        "correct": false
+      },
+      {
+        "id": "thesis_liability",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_guidance",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_distress",
+        "expected": "yes",
+        "actual": "yes",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "BA-2024",
+    "answers": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "ated the $0.8 billion 364-day revolving credit agreement that was scheduled to expire in August 2024, and the $3.2 billio\n\n[Separate filing passage]\n\nS. District Court for the Northern District of Texas (the\n\n113\n\nTable of Contents\n\nCourt) to resolve the Investigation. Under the terms of the proposed agreement, Boeing agreed that it would plead guilty to the charge that was the basis for the DPA; pay an additional fine of $244; commit to invest at least $455 in compliance, quality and safety programs over a three-year period; and agree to the appointment of an independent compliance monitor for three years. On December 5, 2024, the Court rejected the proposed plea agreement, citing the proposed agreement\u2019s provisions governing the monitor\u2019s selection and supervision. In light of the Court\u2019s ruling, Boeing and the Department are currently engaged in discussions regarding potential resolution of this matter.\n\nMultiple legal actions were initiated as a result of the January 5, 2024, Alaska Airlines Flight 1282 accident. We are also subject to multiple governmental and regulatory investigations and inquiries relating to the Alaska Airlines Flight 1282 accident and our commercial airplanes business.\n\nWe cannot reasonably estimate a range of loss, if any, not covered by available insurance and in excess of any accrued amounts that may result given the current status of pending lawsuits, investigations and inquiries arising from the 2018 and 2019 737 MAX accidents and the Alaska Air",
+          "url": "https://www.sec.gov/Archives/edgar/data/12927/000001292725000015/ba-20241231.htm",
+          "filed": "2025-02-03",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "unclear",
+        "evidence": {
+          "quote": " 13 for future operating lease payments.\n\n(Dollars in millions) Current Long-term Total\n\nLong-term debt (including current portion) $1,268 $53,101 $54,369\n\nInterest on debt 2,594 38,386 40,980\n\nPension and other postretirement 470 7,761 8,231\n\nPurchase obligations 67,034 79,141 146,175\n\n43\n\nTable of Contents\n\nDuring 2024, net cash used by operating activities was $12.1 billion. The cash outflow was primarily driven by our commercial airplanes business. Commercial airplanes cash outflows reflect slowed production and lower deliveries following the Alaska Airlines accident, supply chain constraints and the IAM 751 work stoppage.\n\nOn June 30, 2024, we entered into an agreement to acquire Spirit in an all-stock transaction at an equity value of approximately $4.7 billion, or $37.25 per share of Spirit Class A Common Stock. The transaction will include the assumption of Spirit's net debt at closing. See Note 2 to our Consolidated Financial Statements.\n\nAt December 31, 2024, we had $13.8 billion of cash, $12.5 billion of short-term investments, and $10.0 billion of unused borrowing capacity on revolving credit line agreements. In the second quarter of 2024, we entered into a $4.0 billion five-year revolving credit agreement expiring in May 2029. In the second quarter of 2024, we terminated the $0.8 billion 364-day revolving credit agreement that was scheduled to expire in August 2024, and the $3.2 billio\n\n[Separate filing passage]\n\nS. District Court for the Northern District of Tex",
+          "url": "https://www.sec.gov/Archives/edgar/data/12927/000001292725000015/ba-20241231.htm",
+          "filed": "2025-02-03",
+          "section": "labelled annual-report excerpts"
+        }
+      }
+    ],
+    "recordings": [
+      {
+        "stateHash": "35949165412d80345a2171fe21b260f1bbb6de300725889a99a55c3c0e595118",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "unclear": 0.01,
+              "no": 0.99,
+              "yes": 0
+            },
+            "confidence": 0.98
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "no": 0.33,
+              "yes": 0.67
+            },
+            "confidence": 0.35
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "no": 0.06,
+              "yes": 0.94
+            },
+            "confidence": 0.88
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p2": 0.06,
+              "none": 0.45,
+              "p3": 0.25,
+              "p1": 0.15,
+              "p5": 0.06,
+              "p4": 0.03
+            },
+            "confidence": 0.34
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p4",
+            "probabilities": {
+              "p4": 0.5,
+              "none": 0.07,
+              "p5": 0.41,
+              "p1": 0.01,
+              "p3": 0.01,
+              "p2": 0
+            },
+            "confidence": 0.4
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p4": 0.07,
+              "none": 0.43,
+              "p5": 0.22,
+              "p1": 0.1,
+              "p3": 0.11,
+              "p2": 0.07
+            },
+            "confidence": 0.33
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "p3",
+            "probabilities": {
+              "p4": 0.01,
+              "none": 0.23,
+              "p3": 0.67,
+              "p1": 0.03,
+              "p5": 0.01,
+              "p2": 0.05
+            },
+            "confidence": 0.61
+          }
+        }
+      },
+      {
+        "stateHash": "43528a088f823883eff52528cb15aa5f1fc80bb2315672a2102b673bd8ae7d5d",
+        "questions": {
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          }
+        },
+        "answers": {
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "yes": 0.59,
+              "no": 0.41
+            },
+            "confidence": 0.17
+          }
+        }
+      },
+      {
+        "stateHash": "3f1a2a96810138028eb8a7701f78d3f893d2bbbf0e07a66359dcf2aebc3b670f",
+        "questions": {
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          }
+        },
+        "answers": {
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          }
+        }
+      }
+    ],
+    "graded": [
+      {
+        "id": "thesis_structural",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_liability",
+        "expected": "yes",
+        "actual": "yes",
+        "correct": true
+      },
+      {
+        "id": "thesis_guidance",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_distress",
+        "expected": "yes",
+        "actual": "unclear",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "CS-2022",
+    "answers": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": " considerations for our determination that performing procedures relating to the litigation provisions is a critical audit matter are the significant judgment by management when assessing the likelihood of a loss being incurred and when determining whether a reasonable estimate of the loss or ranges of loss for each claim can be made, which in turn led to a high degree of auditor judgment, subjectivity, and effort in evaluating management\u2019s assessment of the litigation provisions and related disclosures. Addressing the matter involved performing procedures and evaluating audit evidence in connection with forming our overall opinion on the consolidated financial statements. These procedures included testing the effectiveness of controls relating to management\u2019s estimation of the litigation provisions, including controls over determining whether a loss is probable and whether the amount of loss can be reasonably estimated, as well as controls over the related financial statement disclosures. These procedures also included, among others, obtaining and evaluating the letters of audit inquiry with internal and external legal counsel, targeted inquiries with external counsel, evaluating the reasonableness of management\u2019s assessment regarding whether an unfavorable outcome is reasonably possible or probable and reasonably estimable, and evaluating the sufficiency of the Group\u2019s litigation provisions and related disclosures. Goodwill Impairment As",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159510/000137036823000026/cs-20221231.htm",
+          "filed": "2023-03-14",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "they mature or to fund new loans, investments and businesses.\n\nSignificant negative consequences of liquidity issues and outflows in assets under management in the fourth quarter of 2022\n\nAs previously disclosed, early in the fourth quarter of 2022, Credit Suisse began experiencing significantly higher withdrawals of cash deposits, non-renewal of maturing time deposits and net asset outflows at levels that substantially exceeded the rates incurred in the third quarter of 2022. These outflows stabilized to much lower levels but had not yet reversed as of the date of this report. These outflows led us to partially utilize liquidity buffers at the Group and legal entity level, and we fell below certain legal entity-level regulatory requirements.\n\nThese circumstances have exacerbated and may continue to exacerbate the risks described above in this section. In addition, this reduction in assets under management is expected to lead to reduced net interest income and recurring commissions and fees for the Group, which in turn could affect our ability to achieve our capital position objectives. A failure to reverse these outflows and to restore our assets under management and deposits could have a material adverse effect on our results of operations and financial condition.\n\n> Refer to \u201cLiquidity issues in the fourth quarter of 2022\u201d and \u201cOutflows in assets under management in the fourth quarter of 2022\u201d in II \u2013 Operating and financial review \u2013 Credit Suisse \u2013 Other information for f",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159510/000137036823000026/cs-20221231.htm",
+          "filed": "2023-03-14",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "they mature or to fund new loans, investments and businesses.\n\nSignificant negative consequences of liquidity issues and outflows in assets under management in the fourth quarter of 2022\n\nAs previously disclosed, early in the fourth quarter of 2022, Credit Suisse began experiencing significantly higher withdrawals of cash deposits, non-renewal of maturing time deposits and net asset outflows at levels that substantially exceeded the rates incurred in the third quarter of 2022. These outflows stabilized to much lower levels but had not yet reversed as of the date of this report. These outflows led us to partially utilize liquidity buffers at the Group and legal entity level, and we fell below certain legal entity-level regulatory requirements.\n\nThese circumstances have exacerbated and may continue to exacerbate the risks described above in this section. In addition, this reduction in assets under management is expected to lead to reduced net interest income and recurring commissions and fees for the Group, which in turn could affect our ability to achieve our capital position objectives. A failure to reverse these outflows and to restore our assets under management and deposits could have a material adverse effect on our results of operations and financial condition.\n\n> Refer to \u201cLiquidity issues in the fourth quarter of 2022\u201d and \u201cOutflows in assets under management in the fourth quarter of 2022\u201d in II \u2013 Operating and financial review \u2013 Credit Suisse \u2013 Other information for f",
+          "url": "https://www.sec.gov/Archives/edgar/data/1159510/000137036823000026/cs-20221231.htm",
+          "filed": "2023-03-14",
+          "section": "labelled annual-report excerpts"
+        }
+      }
+    ],
+    "recordings": [
+      {
+        "stateHash": "7e092781039407b8d79263df74fb0bac060bde8d1b7ffcf488d66941dc54c0df",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4"
+            }
+          }
+        },
+        "answers": {
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "p1",
+            "probabilities": {
+              "p3": 0,
+              "none": 0.01,
+              "p4": 0,
+              "p1": 0.99,
+              "p2": 0
+            },
+            "confidence": 0.98
+          },
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0.01,
+              "no": 0.92,
+              "unclear": 0.07
+            },
+            "confidence": 0.88
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0.01,
+              "no": 0.99
+            },
+            "confidence": 0.99
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0.05,
+              "no": 0.95
+            },
+            "confidence": 0.91
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p3": 0.23,
+              "none": 0.37,
+              "p4": 0.01,
+              "p1": 0.37,
+              "p2": 0.02
+            },
+            "confidence": 0.22
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p3",
+            "probabilities": {
+              "p3": 0.73,
+              "none": 0.1,
+              "p4": 0.01,
+              "p1": 0,
+              "p2": 0.16
+            },
+            "confidence": 0.66
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "p1",
+            "probabilities": {
+              "p3": 0.23,
+              "none": 0.29,
+              "p4": 0,
+              "p1": 0.46,
+              "p2": 0.02
+            },
+            "confidence": 0.33
+          }
+        }
+      }
+    ],
+    "graded": [
+      {
+        "id": "thesis_structural",
+        "expected": "yes",
+        "actual": "no",
+        "correct": false
+      },
+      {
+        "id": "thesis_liability",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_guidance",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_distress",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "KO.US",
+    "answers": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "ments that address operating performance, events or developments that we expect or anticipate will occur in the future are forward-looking statements. Management believes that these forward-looking statements are reasonable as and when made. However, caution should be taken not to place undue reliance on any such forward-looking statements because such statements speak only as of the date when made. Our Company undertakes no obligation to publicly update or revise any forward-looking statements, whether as a result of new information, future events or otherwise, except as required by law. In addition, forward-looking statements are subject to certain risks and uncertainties that could cause our Company\u2019s actual results to differ materially from historical experience and our present expectations or projections. These risks and uncertainties include, but are not limited to, the possibility that the assumptions used to calculate our estimated aggregate incremental tax and interest liability related to the potential unfavorable outcome of the ongoing tax dispute with the United States Internal Revenue Service could significantly change; those described in Part I, \u201cItem 1A. Risk Factors\u201d and elsewhere in this report; and those described from time to time in our future reports filed with the Securities and Exchange Commission.\n\nPart I\n\nITEM 1. BUSINESS\n\nIn this rep\n\n[Separate filing passage]\n\nd in the Tax Court from March through May 2018, and final post-trial briefs were filed and",
+          "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+          "filed": "2026-02-20",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "uld include taxes and interest accrued through December 31, 2025. The calculations incorporated the estimated impact of correlative adjustments to the previously accrued transition tax payable under the Tax Reform Act. The Company estimates that the potential aggregate remaining incremental tax and interest liability for the tax years 2010 through 2025 could be approximately $14 billion as of December 31, 2025. Additional income tax and interest on any unpaid potential liabilities for the 2010 through 2025 tax years would continue to accrue until the time any such potential liability, or portion thereof, were to be paid. We currently project the continued application of the Tax Court Methodology in 2026, assuming similar facts and circumstances as of December 31, 2025, would result in an incremental annual tax liability that would increase the Company\u2019s effective tax rate by approximately 3.5%.\n\nEnvironmental Matters\n\nOn June 20, 2024, the Mayor and City Council of Baltimore filed a lawsuit against the Company and several unrelated parties in the Circuit Court for Baltimore City, Maryland, concerning the environmental impacts of plastic packaging on the city\u2019s lands and waterways. The complaint asserts claims for (a) violations of various state statutes and local ordinances that prohibit littering or improper dumping of waste on public or private property; (b) unfair, abusive or deceptive trade practices; (c) trespass upon city property; (d) design defects; (e) public nuisanc",
+          "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+          "filed": "2026-02-20",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "uld include taxes and interest accrued through December 31, 2025. The calculations incorporated the estimated impact of correlative adjustments to the previously accrued transition tax payable under the Tax Reform Act. The Company estimates that the potential aggregate remaining incremental tax and interest liability for the tax years 2010 through 2025 could be approximately $14 billion as of December 31, 2025. Additional income tax and interest on any unpaid potential liabilities for the 2010 through 2025 tax years would continue to accrue until the time any such potential liability, or portion thereof, were to be paid. We currently project the continued application of the Tax Court Methodology in 2026, assuming similar facts and circumstances as of December 31, 2025, would result in an incremental annual tax liability that would increase the Company\u2019s effective tax rate by approximately 3.5%.\n\nEnvironmental Matters\n\nOn June 20, 2024, the Mayor and City Council of Baltimore filed a lawsuit against the Company and several unrelated parties in the Circuit Court for Baltimore City, Maryland, concerning the environmental impacts of plastic packaging on the city\u2019s lands and waterways. The complaint asserts claims for (a) violations of various state statutes and local ordinances that prohibit littering or improper dumping of waste on public or private property; (b) unfair, abusive or deceptive trade practices; (c) trespass upon city property; (d) design defects; (e) public nuisanc",
+          "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+          "filed": "2026-02-20",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      }
+    ],
+    "recordings": [
+      {
+        "stateHash": "38479af74cf36c9e5d45a16c33535c2ddb1d90a57be685890aa14e4426dc2daf",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "unclear": 0,
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "no": 0.11,
+              "yes": 0.89
+            },
+            "confidence": 0.77
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "p3",
+            "probabilities": {
+              "p1": 0.27,
+              "p4": 0.01,
+              "none": 0.3,
+              "p2": 0.01,
+              "p3": 0.31,
+              "p5": 0.1
+            },
+            "confidence": 0.18
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p1",
+            "probabilities": {
+              "none": 0.04,
+              "p4": 0,
+              "p3": 0,
+              "p2": 0,
+              "p1": 0.96,
+              "p5": 0
+            },
+            "confidence": 0.94
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "p1",
+            "probabilities": {
+              "p3": 0.17,
+              "p4": 0.01,
+              "p1": 0.33,
+              "p2": 0.01,
+              "none": 0.23,
+              "p5": 0.25
+            },
+            "confidence": 0.21
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "none": 0.53,
+              "p4": 0,
+              "p3": 0.02,
+              "p2": 0,
+              "p1": 0.44,
+              "p5": 0.01
+            },
+            "confidence": 0.44
+          }
+        }
+      },
+      {
+        "stateHash": "bc8e83af8afae7ee5538c7f56b36f3ee81104805f37a5a4f1a7291b46cfc2936",
+        "questions": {
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          }
+        },
+        "answers": {
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "no": 0.1,
+              "yes": 0.9
+            },
+            "confidence": 0.81
+          }
+        }
+      }
+    ],
+    "graded": [
+      {
+        "id": "thesis_structural",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_liability",
+        "expected": "yes",
+        "actual": "yes",
+        "correct": true
+      },
+      {
+        "id": "thesis_guidance",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_distress",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "V.US",
+    "answers": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "lance. See further discussion below under U.S. Covered Litigation and Note 5\u2014U.S. and Europe Retrospective Responsibility Plans.\n\nThe following table summarizes the accrual activity related to U.S. covered litigation:\n\nFor the Years Ended\n\nSeptember 30,\n\n2025 2024\n\n(in millions)\n\nBalance as of beginning of period $ 1,537 $ 1,621\n\nProvision for interchange multidistrict litigation 2,210 140\n\nPayments for U.S. covered litigation (1,049) (224)\n\nBalance as of end of period $ 2,698 $ 1,537\n\nDuring fiscal 2025, the Company recorded additional accruals of $2.2 billion and deposited $875 million into the U.S. litigation escrow account to address claims associated with the interchange multidistrict litigation. The accr\n\n[Separate filing passage]\n\nItem 1A, Item 7 and elsewhere in this report. Except as required by law, we do not intend to update or revise any forward-looking statements as a result of new information, future events or otherwise.\n\n3\n\nTable of Contents\n\nPART I\n\nITEM 1. Business\n\nOVERVIEW\n\nVisa is one of the world\u2019s leaders in digital payments. Our purpose is to uplift everyone, everywhere by being the best way to pay and be paid. Since Visa\u2019s early days in 1958, we have been in the business of facilitating secure, reliable and efficient global commerce and money movement. We provide transaction processing services (primarily authorization, clearing and settlement) among consumers, issuing and acquiring financial institutions and sellers in a structure we call the \u201cfour-pa",
+          "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+          "filed": "2025-11-06",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      }
+    ],
+    "recordings": [
+      {
+        "stateHash": "a2af45b88438b908c35855f8eded3a9a2bf1ee87b58e9eb3761c6089112768cc",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "unclear": 0,
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0.14,
+              "no": 0.86
+            },
+            "confidence": 0.73
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "none": 0.43,
+              "p3": 0.41,
+              "p2": 0.06,
+              "p1": 0.06,
+              "p4": 0.03,
+              "p5": 0.01
+            },
+            "confidence": 0.33
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p2",
+            "probabilities": {
+              "none": 0.08,
+              "p3": 0,
+              "p2": 0.53,
+              "p1": 0.39,
+              "p4": 0,
+              "p5": 0
+            },
+            "confidence": 0.42
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "none": 0.51,
+              "p3": 0.04,
+              "p2": 0.24,
+              "p1": 0.1,
+              "p4": 0.1,
+              "p5": 0.01
+            },
+            "confidence": 0.4
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "none": 0.67,
+              "p3": 0.01,
+              "p2": 0.23,
+              "p1": 0.05,
+              "p4": 0.03,
+              "p5": 0.01
+            },
+            "confidence": 0.61
+          }
+        }
+      }
+    ],
+    "graded": [
+      {
+        "id": "thesis_structural",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_liability",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_guidance",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_distress",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "COST.US",
+    "answers": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      }
+    ],
+    "recordings": [
+      {
+        "stateHash": "0c7301b74da597da37cbac2ca039bcfe3b942b9b94c31e985edbaa88a6c2367d",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "unclear": 0,
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p3": 0.16,
+              "p2": 0.07,
+              "p5": 0.03,
+              "p4": 0.02,
+              "p1": 0.21,
+              "none": 0.51
+            },
+            "confidence": 0.41
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p3": 0.06,
+              "p4": 0.01,
+              "p2": 0.01,
+              "p5": 0,
+              "p1": 0.02,
+              "none": 0.9
+            },
+            "confidence": 0.88
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p3": 0.13,
+              "p2": 0.01,
+              "p5": 0.09,
+              "p4": 0.08,
+              "p1": 0.07,
+              "none": 0.62
+            },
+            "confidence": 0.53
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p3": 0,
+              "p2": 0,
+              "p5": 0.01,
+              "none": 0.93,
+              "p1": 0.04,
+              "p4": 0.01
+            },
+            "confidence": 0.92
+          }
+        }
+      }
+    ],
+    "graded": [
+      {
+        "id": "thesis_structural",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_liability",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_guidance",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_distress",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "MSFT.US",
+    "answers": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "ignificantly change the measurement of the uncertain tax pos\n\n[Separate filing passage]\n\nect to inherent uncertainties and management\u2019s view of these matters may change in the future.\n\nAs of June 30, 2026, we accrued aggregate legal liabilities of $553 million. While we intend to defend these matters vigorously, adverse outcomes that we estimate could reach approximately $400 million in aggregate beyond recorded amounts are reasonably possible. Were unfavorable final outcomes to occur, there exists the possibility of a material adverse impact in our consolidated financial statements for the period in which the effects become reasonably estimable.\n\nNOTE 15 \u2014 STOCKHOLDERS\u2019 EQUITY\n\nShares Outstanding\n\nShares of common stock outstanding were as follows:\n\n(In millions)\n\nYear Ended June 30,\n\n2026\n\n2025\n\n2024\n\nBalance, beginning of year\n\n7,434\n\n7,434\n\n7,432\n\nIssued\n\n29\n\n31\n\n34\n\nRepurchased\n\n(36\n\n)\n\n(31\n\n)\n\n(32\n\n)\n\nBalance, end of year\n\n7,427\n\n7,434\n\n7,434\n\nShare Repurchases\n\nOn September 14, 2021, our Board of Directors approved a share repurchase program authorizing up to $60.0 billion in share repurchases. This share repurchase program commenced in November 2021 and was completed in April 2025.\n\nOn September 16, 2024, our Board of Directors approved a share repurchase program authorizing up to $60.0 billion in share repurchases. This share repurchase program commenced in April 2025, following completion of the program approved on September 14, 2021, has no expiration date, and may",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+          "filed": "2026-07-29",
+          "section": "labelled annual-report excerpts"
+        }
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      }
+    ],
+    "recordings": [
+      {
+        "stateHash": "2ef1e3041882806c94bdc190c3aef9a078f9e3632150dc722381b8591bf57187",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          }
+        },
+        "answers": {
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p3": 0.11,
+              "p5": 0.15,
+              "p1": 0.22,
+              "p2": 0.04,
+              "none": 0.39999999999999997,
+              "p4": 0.08
+            },
+            "confidence": 0.29
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p4",
+            "probabilities": {
+              "p5": 0,
+              "p3": 0.08,
+              "none": 0.03,
+              "p1": 0,
+              "p2": 0.04,
+              "p4": 0.85
+            },
+            "confidence": 0.82
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p3": 0.09,
+              "p5": 0.13,
+              "none": 0.35000000000000003,
+              "p1": 0.17,
+              "p2": 0.01,
+              "p4": 0.25
+            },
+            "confidence": 0.21
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p5": 0.01,
+              "p3": 0.13,
+              "none": 0.6,
+              "p1": 0.01,
+              "p2": 0.01,
+              "p4": 0.24
+            },
+            "confidence": 0.53
+          },
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "unclear": 0,
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          }
+        }
+      }
+    ],
+    "graded": [
+      {
+        "id": "thesis_structural",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_liability",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_guidance",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_distress",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "BRBY-2024",
+    "answers": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "adjusted operating profit for the financial year ended 30 March 2024 to be in the range of \u00a3410m to \u00a3460m,\nbelow previous guidance.",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/images/old/Burberry%20Trading%20Update%2012th%20January%202024.pdf.downloadasset.pdf",
+          "filed": "2024-01-12",
+          "section": "OUTLOOK, page 1; retrieved using web PDF reader after direct HTTP 403"
+        }
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "yes",
+        "evidence": {
+          "quote": "adjusted operating profit for the financial year ended 30 March 2024 to be in the range of \u00a3410m to \u00a3460m,\nbelow previous guidance.",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/images/old/Burberry%20Trading%20Update%2012th%20January%202024.pdf.downloadasset.pdf",
+          "filed": "2024-01-12",
+          "section": "OUTLOOK, page 1; retrieved using web PDF reader after direct HTTP 403"
+        }
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": {
+          "quote": "adjusted operating profit for the financial year ended 30 March 2024 to be in the range of \u00a3410m to \u00a3460m,\nbelow previous guidance.",
+          "url": "https://www.burberryplc.com/content/dam/burberryplc/corporate/images/old/Burberry%20Trading%20Update%2012th%20January%202024.pdf.downloadasset.pdf",
+          "filed": "2024-01-12",
+          "section": "OUTLOOK, page 1; retrieved using web PDF reader after direct HTTP 403"
+        }
+      }
+    ],
+    "recordings": [
+      {
+        "stateHash": "46b3775c34a88aa01c4248172003043770b098e0c17998bb867bd71613a6db72",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1"
+            }
+          }
+        },
+        "answers": {
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p1": 0.3,
+              "none": 0.7
+            },
+            "confidence": 0.41
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "p1",
+            "probabilities": {
+              "p1": 0.87,
+              "none": 0.13
+            },
+            "confidence": 0.74
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "p1",
+            "probabilities": {
+              "p1": 0.83,
+              "none": 0.17
+            },
+            "confidence": 0.67
+          },
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "unclear": 0.01,
+              "yes": 0,
+              "no": 0.99
+            },
+            "confidence": 0.99
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "yes": 0.93,
+              "no": 0.07
+            },
+            "confidence": 0.87
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "p1",
+            "probabilities": {
+              "p1": 0.72,
+              "none": 0.28
+            },
+            "confidence": 0.44
+          }
+        }
+      },
+      {
+        "stateHash": "7327f88f0d6a304d068fc995eb36d487fe09404baaea6b3f41b4b974b9eb68bc",
+        "questions": {
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          }
+        },
+        "answers": {
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "yes",
+            "probabilities": {
+              "no": 0.08,
+              "yes": 0.92
+            },
+            "confidence": 0.85
+          }
+        }
+      }
+    ],
+    "graded": [
+      {
+        "id": "thesis_structural",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_liability",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_guidance",
+        "expected": "yes",
+        "actual": "yes",
+        "correct": true
+      },
+      {
+        "id": "thesis_distress",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "GAMA-2026",
+    "answers": [
+      {
+        "id": "thesis_structural",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_liability",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_guidance",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      },
+      {
+        "id": "thesis_distress",
+        "version": "2",
+        "value": "no",
+        "evidence": null
+      }
+    ],
+    "recordings": [
+      {
+        "stateHash": "0968c03c25b1aeffa43939c720d89127b5540431844cf29a7ff51719806b7570",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "unclear": 0,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 0.66,
+              "yes": 0.34
+            },
+            "confidence": 0.32
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p10": 0.05,
+              "p6": 0.03,
+              "none": 0.27999999999999997,
+              "p2": 0.08,
+              "p8": 0.04,
+              "p1": 0.03,
+              "p5": 0.12,
+              "p4": 0.19,
+              "p3": 0.02,
+              "p7": 0.12,
+              "p9": 0.04
+            },
+            "confidence": 0.22
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p9": 0,
+              "p2": 0.01,
+              "none": 0.7,
+              "p7": 0.11,
+              "p8": 0,
+              "p1": 0,
+              "p5": 0.08,
+              "p4": 0.09,
+              "p3": 0.01,
+              "p6": 0,
+              "p10": 0
+            },
+            "confidence": 0.66
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p9": 0.01,
+              "p2": 0.02,
+              "none": 0.3,
+              "p7": 0.17,
+              "p8": 0.01,
+              "p1": 0.01,
+              "p5": 0.28,
+              "p4": 0.19,
+              "p3": 0.01,
+              "p6": 0,
+              "p10": 0
+            },
+            "confidence": 0.22
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p10": 0,
+              "p4": 0.21,
+              "none": 0.48,
+              "p2": 0.06,
+              "p8": 0.05,
+              "p1": 0.01,
+              "p5": 0.17,
+              "p6": 0,
+              "p3": 0.01,
+              "p7": 0,
+              "p9": 0.01
+            },
+            "confidence": 0.42
+          }
+        }
+      },
+      {
+        "stateHash": "b4944f415e5c0bcc9eb078d5690340d578907d52cc290d4721f2d1a533d5cbd6",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10",
+              "p11": "Passage p11"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10",
+              "p11": "Passage p11"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10",
+              "p11": "Passage p11"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10",
+              "p11": "Passage p11"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 0.99,
+              "unclear": 0.01
+            },
+            "confidence": 0.98
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "p1",
+            "probabilities": {
+              "p7": 0.01,
+              "p3": 0.01,
+              "p9": 0.01,
+              "p1": 0.45,
+              "p2": 0.17,
+              "p5": 0.02,
+              "p4": 0.02,
+              "p6": 0.01,
+              "p8": 0.04,
+              "p11": 0.01,
+              "p10": 0.01,
+              "none": 0.24
+            },
+            "confidence": 0.41
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p7": 0.01,
+              "p1": 0,
+              "p9": 0.03,
+              "p3": 0,
+              "p2": 0.01,
+              "p5": 0.01,
+              "p4": 0.07,
+              "p6": 0.01,
+              "p8": 0.07,
+              "p11": 0.07,
+              "p10": 0.28,
+              "none": 0.44
+            },
+            "confidence": 0.39
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "p4",
+            "probabilities": {
+              "p1": 0.01,
+              "p3": 0.01,
+              "p9": 0.01,
+              "p7": 0.02,
+              "p2": 0.01,
+              "p5": 0.3,
+              "p4": 0.32,
+              "p6": 0,
+              "p8": 0.01,
+              "p11": 0.02,
+              "p10": 0.01,
+              "none": 0.28
+            },
+            "confidence": 0.27
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p3": 0,
+              "p7": 0,
+              "p9": 0,
+              "p1": 0,
+              "p2": 0,
+              "p5": 0.12,
+              "p4": 0.18,
+              "p6": 0,
+              "p8": 0.01,
+              "p11": 0.03,
+              "p10": 0.04,
+              "none": 0.62
+            },
+            "confidence": 0.57
+          }
+        }
+      },
+      {
+        "stateHash": "3792ddd007e90b51210140a87f952fcf69f226f0f1dc52d0ab3987cf916bb7ee",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          }
+        },
+        "answers": {
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p6": 0,
+              "none": 0.55,
+              "p1": 0.01,
+              "p2": 0.01,
+              "p7": 0,
+              "p4": 0.31,
+              "p5": 0.05,
+              "p10": 0,
+              "p3": 0.01,
+              "p9": 0.05,
+              "p8": 0.01
+            },
+            "confidence": 0.5
+          },
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1,
+              "unclear": 0
+            },
+            "confidence": 0.99
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0.31,
+              "no": 0.69
+            },
+            "confidence": 0.38
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "p3",
+            "probabilities": {
+              "p6": 0.01,
+              "none": 0.29,
+              "p1": 0.02,
+              "p2": 0.01,
+              "p7": 0.06,
+              "p9": 0.02,
+              "p5": 0.03,
+              "p10": 0,
+              "p3": 0.47000000000000003,
+              "p4": 0.08,
+              "p8": 0.01
+            },
+            "confidence": 0.41
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p2",
+            "probabilities": {
+              "p6": 0,
+              "none": 0.13,
+              "p1": 0.05,
+              "p2": 0.61,
+              "p7": 0,
+              "p4": 0.01,
+              "p5": 0.01,
+              "p10": 0,
+              "p9": 0,
+              "p3": 0.19,
+              "p8": 0
+            },
+            "confidence": 0.56
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "p3",
+            "probabilities": {
+              "p6": 0,
+              "none": 0.23,
+              "p1": 0.02,
+              "p2": 0.03,
+              "p3": 0.53,
+              "p9": 0.03,
+              "p5": 0.05,
+              "p10": 0,
+              "p7": 0.01,
+              "p4": 0.09,
+              "p8": 0.01
+            },
+            "confidence": 0.48
+          }
+        }
+      },
+      {
+        "stateHash": "fe3e97de4afa67eb7b084d9ba177945b1b571855bdd5c75179dc04901a30ea64",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "unclear": 0,
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0.02,
+              "no": 0.98
+            },
+            "confidence": 0.96
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p2": 0.03,
+              "p1": 0.01,
+              "p6": 0.01,
+              "p4": 0.01,
+              "p5": 0.01,
+              "p9": 0.34,
+              "p8": 0.07,
+              "p3": 0,
+              "p7": 0.05,
+              "p10": 0,
+              "none": 0.46
+            },
+            "confidence": 0.41
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p2",
+            "probabilities": {
+              "p2": 0.68,
+              "p1": 0,
+              "p6": 0,
+              "p4": 0.05,
+              "p5": 0.13,
+              "p7": 0,
+              "p8": 0,
+              "p3": 0.01,
+              "p9": 0,
+              "p10": 0,
+              "none": 0.13
+            },
+            "confidence": 0.65
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p2": 0.01,
+              "p1": 0.03,
+              "p6": 0.02,
+              "p4": 0.01,
+              "p3": 0,
+              "p7": 0.14,
+              "p8": 0.04,
+              "p5": 0.02,
+              "p9": 0.06,
+              "p10": 0,
+              "none": 0.67
+            },
+            "confidence": 0.63
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p2": 0.06,
+              "p1": 0.03,
+              "p6": 0,
+              "p4": 0.12,
+              "p3": 0.01,
+              "p7": 0.01,
+              "p8": 0,
+              "p5": 0.02,
+              "p9": 0,
+              "p10": 0,
+              "none": 0.75
+            },
+            "confidence": 0.72
+          }
+        }
+      },
+      {
+        "stateHash": "e8199b4c945a224ed1de1689f910730b58a53ad99c34c448eb46c000ac3f15c8",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1,
+              "unclear": 0
+            },
+            "confidence": 1
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0.01,
+              "no": 0.99
+            },
+            "confidence": 0.99
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0.18,
+              "no": 0.82
+            },
+            "confidence": 0.64
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p8": 0.03,
+              "p6": 0.02,
+              "p7": 0,
+              "p3": 0.02,
+              "p5": 0.02,
+              "p1": 0.32,
+              "p2": 0.01,
+              "p10": 0.14,
+              "p4": 0.01,
+              "none": 0.39,
+              "p9": 0.04
+            },
+            "confidence": 0.32
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p8",
+            "probabilities": {
+              "p8": 0.78,
+              "p6": 0,
+              "p10": 0.01,
+              "p3": 0,
+              "p7": 0,
+              "none": 0.08,
+              "p2": 0,
+              "p5": 0,
+              "p4": 0,
+              "p9": 0.13,
+              "p1": 0
+            },
+            "confidence": 0.75
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p8": 0.03,
+              "p6": 0.01,
+              "p10": 0.33,
+              "p3": 0.01,
+              "p7": 0,
+              "none": 0.46,
+              "p2": 0.01,
+              "p9": 0.05,
+              "p4": 0.02,
+              "p1": 0.03,
+              "p5": 0.05
+            },
+            "confidence": 0.41
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p8": 0.04,
+              "p7": 0,
+              "p5": 0.03,
+              "p3": 0,
+              "p6": 0,
+              "none": 0.49,
+              "p2": 0,
+              "p10": 0.35,
+              "p4": 0.01,
+              "p9": 0.03,
+              "p1": 0.05
+            },
+            "confidence": 0.44
+          }
+        }
+      },
+      {
+        "stateHash": "28ec0e8a63ea647ad263055f0e3496c50c327a6f6a7e9a897aaafce052f6bb66",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5",
+              "p6": "Passage p6",
+              "p7": "Passage p7",
+              "p8": "Passage p8",
+              "p9": "Passage p9",
+              "p10": "Passage p10"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "unclear": 0,
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0.02,
+              "no": 0.98
+            },
+            "confidence": 0.96
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "yes": 0,
+              "no": 1
+            },
+            "confidence": 0.99
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p10": 0.02,
+              "p2": 0.1,
+              "none": 0.32,
+              "p3": 0.01,
+              "p5": 0.25,
+              "p7": 0.02,
+              "p1": 0.08,
+              "p8": 0.01,
+              "p9": 0.09,
+              "p4": 0.06,
+              "p6": 0.04
+            },
+            "confidence": 0.27
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "p2",
+            "probabilities": {
+              "p10": 0,
+              "p2": 0.52,
+              "none": 0.06,
+              "p3": 0.01,
+              "p5": 0.02,
+              "p7": 0,
+              "p1": 0.29,
+              "p8": 0,
+              "p9": 0.09,
+              "p4": 0.01,
+              "p6": 0
+            },
+            "confidence": 0.46
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p2": 0.03,
+              "p10": 0.02,
+              "none": 0.43,
+              "p3": 0.01,
+              "p5": 0.33,
+              "p7": 0.03,
+              "p1": 0.04,
+              "p8": 0,
+              "p9": 0.03,
+              "p4": 0.06,
+              "p6": 0.02
+            },
+            "confidence": 0.36
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "p5",
+            "probabilities": {
+              "p2": 0.01,
+              "p10": 0,
+              "none": 0.38,
+              "p3": 0.01,
+              "p5": 0.45,
+              "p7": 0,
+              "p1": 0.01,
+              "p8": 0,
+              "p9": 0.03,
+              "p4": 0.11,
+              "p6": 0
+            },
+            "confidence": 0.4
+          }
+        }
+      },
+      {
+        "stateHash": "508b4b1336ad0a13d3e05ce5e4882dad680512e2b1736c6fb7f74002eb909bf4",
+        "questions": {
+          "thesis_structural": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has the company disclosed a structural decline in its core business in the last 18 months (loss of key product exclusivity/patent, permanent loss of market share, a major customer or license, regulatory ban), not a cyclical dip? Temporary production interruptions, cyclical demand and prospective competition alone are not structural decline.",
+            "criteria": {
+              "yes": "Actual structural decline disclosed within 18 months",
+              "no": "No such structural decline disclosed",
+              "unclear": "A disclosed change cannot be distinguished from a cyclical or temporary dip"
+            }
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Does the company disclose a provision, contingent liability or regulatory redress programme that could exceed 10% of shareholders\u2019 equity? Compare stated amounts with same-currency equity supplied in the state or filing. Require a disclosed monetary exposure or explicit statement that supports this threshold; an unquantified routine litigation risk alone is NO. Negative equity with positive disclosed charges exceeds the threshold.",
+            "criteria": {
+              "yes": "Disclosed exposure could exceed 10% of equity",
+              "no": "No disclosed exposure supporting that threshold"
+            }
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Has management guided to a fall in revenue or operating profit of MORE THAN 20% for the current full financial year? Require forward guidance, not a completed-year result, quarterly guidance, EPS guidance or a hypothetical scenario. Exactly 20% does not qualify.",
+            "criteria": {
+              "yes": "Current full-year revenue or operating-profit guidance implies a fall greater than 20%",
+              "no": "No qualifying current full-year guidance"
+            }
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "instructions": "Use only actual company disclosures in the supplied filing passages, never outside knowledge or hypothetical risk factors. Dates are relative to the AS OF date in the state. A risk that might happen is not an event that has happened. Is there a going-concern, covenant breach or dividend suspension disclosure? Going concern means material uncertainty or substantial doubt, NOT the standard going-concern basis or a positive viability assessment. Require an actual covenant breach or a suspended/cancelled ordinary dividend, not a general risk of breach or a routine statement that dividends are discretionary. An ongoing suspension qualifies; a explicitly resolved historical event does not.",
+            "criteria": {
+              "yes": "Actual going-concern doubt, covenant breach or ongoing dividend suspension disclosed",
+              "no": "No such disclosure"
+            }
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_structural. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_liability. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_guidance. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "instructions": "Select the passage that directly supports your answer to thesis_distress. For YES select the actual disclosure; hypothetical risks do not support YES. Select none if no passage supports the answer.",
+            "criteria": {
+              "none": "No supporting passage",
+              "p1": "Passage p1",
+              "p2": "Passage p2",
+              "p3": "Passage p3",
+              "p4": "Passage p4",
+              "p5": "Passage p5"
+            }
+          }
+        },
+        "answers": {
+          "thesis_structural": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "unclear": 0,
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_liability": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_guidance": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_distress": {
+            "type": "choice",
+            "choice": "no",
+            "probabilities": {
+              "no": 1,
+              "yes": 0
+            },
+            "confidence": 1
+          },
+          "thesis_structural_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p1": 0.39,
+              "none": 0.49,
+              "p5": 0.02,
+              "p3": 0.01,
+              "p4": 0.04,
+              "p2": 0.05
+            },
+            "confidence": 0.39
+          },
+          "thesis_liability_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p1": 0.01,
+              "p3": 0.15,
+              "p5": 0,
+              "p4": 0.16,
+              "p2": 0.02,
+              "none": 0.66
+            },
+            "confidence": 0.6
+          },
+          "thesis_guidance_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p1": 0.05,
+              "p3": 0.02,
+              "p4": 0.16,
+              "p2": 0.01,
+              "none": 0.71,
+              "p5": 0.05
+            },
+            "confidence": 0.65
+          },
+          "thesis_distress_evidence": {
+            "type": "choice",
+            "choice": "none",
+            "probabilities": {
+              "p1": 0.01,
+              "p2": 0,
+              "p5": 0.01,
+              "none": 0.88,
+              "p3": 0.03,
+              "p4": 0.07
+            },
+            "confidence": 0.86
+          }
+        }
+      }
+    ],
+    "graded": [
+      {
+        "id": "thesis_structural",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_liability",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_guidance",
+        "expected": "no",
+        "actual": "no",
+        "correct": true
+      },
+      {
+        "id": "thesis_distress",
+        "expected": "yes",
+        "actual": "no",
+        "correct": false
+      }
+    ]
+  }
+]

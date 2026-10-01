@@ -18,8 +18,9 @@ const responseSchema = z.object({
 });
 const totals = new Map<string, number>();
 
-export async function askJev({ state, questions }: {
+export async function askJev({ state, questions, usageFile = "jev-usage.jsonl" }: {
   state: string;
+  usageFile?: string;
   questions: Record<string, JevQuestion>;
 }): Promise<{ answers: Record<string, RawAnswer>; usage: { input_tokens: number } }> {
   const key = process.env.JEV_API_KEY;
@@ -48,10 +49,11 @@ export async function askJev({ state, questions }: {
     )) throw new Error("Invalid Jev response");
   }
   const root = corpusDir();
-  const previous = totals.get(root) ?? readJsonl<{ input_tokens: number }>("jev-usage.jsonl")
+  const totalKey = `${root}/${usageFile}`;
+  const previous = totals.get(totalKey) ?? readJsonl<{ input_tokens: number }>(usageFile)
     .reduce((sum, row) => sum + row.input_tokens, 0);
   const cumulative = previous + result.usage.input_tokens;
-  appendJsonl("jev-usage.jsonl", { at: new Date().toISOString(), input_tokens: result.usage.input_tokens, cumulative_input_tokens: cumulative });
-  totals.set(root, cumulative);
+  appendJsonl(usageFile, { at: new Date().toISOString(), input_tokens: result.usage.input_tokens, cumulative_input_tokens: cumulative });
+  totals.set(totalKey, cumulative);
   return result;
 }

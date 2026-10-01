@@ -1,3 +1,5 @@
+import { applyThesis } from '../../../lib/value/thesis/apply';
+import type { ThesisResult } from '../../../lib/value/thesis/types';
 import { withCapitalReturns } from '../../../lib/value/capital-returns';
 import { summarizeSnapshots } from '../../../lib/value/snapshots';
 import { bestWesternListing } from '../../../lib/value/western';
@@ -293,7 +295,7 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       // Validate the consumer contract here so one malformed document cannot stop the rollout.
       if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");
       const years=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`)?.years;
-      analyses.push(applyShareCheck(years?withCapitalReturns(analysis,years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)));
+      analyses.push(applyThesis(applyShareCheck(years?withCapitalReturns(analysis,years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);
     }

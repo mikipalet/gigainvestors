@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 /** Both timelines share URL restoration and one debounced write after a drag settles. */
-export function useDebouncedQuery(initial:Record<string,string> = {}) {
+export function useDebouncedQuery(initial:Record<string,string> = {}, historyMode: "replace" | "push" = "replace") {
  const [query,setQuery]=useState(initial),[ready,setReady]=useState(false);
  useEffect(()=>{
   const restore=()=>{setQuery(Object.fromEntries(new URLSearchParams(window.location.search)));setReady(true);};
@@ -14,10 +14,10 @@ export function useDebouncedQuery(initial:Record<string,string> = {}) {
   // WebKit rate-limits history writes hard while scrubbing.
   const timer=setTimeout(()=>{
    const url=new URL(window.location.href);url.search=new URLSearchParams(query).toString();
-   if(url.href!==window.location.href)window.history.replaceState(null,'',url);
+   if(url.href!==window.location.href)window.history[historyMode === 'push' ? 'pushState' : 'replaceState'](null,'',url);
   },350);
   return()=>clearTimeout(timer);
- },[query,ready]);
+ },[query,ready,historyMode]);
  return [query,setQuery] as const;
 }
 

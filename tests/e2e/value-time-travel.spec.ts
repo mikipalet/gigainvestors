@@ -16,7 +16,7 @@ for(const markets of ['western','all'])for(const year of ['2005','2012','2018','
   await expect(main).toHaveAttribute('data-total',String(summary.qualityPasses));
   // 2005 legitimately has no buys in the source; do not invent picks.
   if(year!=='2005')expect(summary.atBuy).toBeGreaterThan(0);
-  if(year!=='Today'){const gain=summary.medianReturnAtBuy;await expect(page.locator('.simulation-line')).toContainText(gain==null?'median gain not available':`median gain ${gain>=0?'+':''}${Math.round(gain*100)}%`);}
+  if(year!=='Today'){const gain=summary.medianReturnAtBuy;if(gain!=null)await expect(page.locator('.simulation-line')).toContainText(`median gain ${gain>=0?'+':''}${Math.round(gain*100)}%`);await expect(page.locator('.simulation-line')).not.toContainText('not available');}
   const rows=unpackView(read(year==='Today'?meta.views.current:meta.views.years[year])).filter(r=>r.t==='PPPPP'&&matchesMarket(r,markets==='all'?'all':''));
   const expectedNext=rows.filter(r=>!r.b&&(year==='Today'?r.expected!=null:r.gain!=null)&&(year==='Today'?r.quote&&r.v:r.historicalPrice?.price&&r.historicalPrice?.buyPrice));
   const shown=await page.locator('.main-next-row').count();

@@ -34,7 +34,7 @@ it('hides the about line when a dossier has no real description',async()=>{
  const {renderToStaticMarkup}=await import('react-dom/server');
  const {DossierContent}=await import('@/components/value/DossierContent');
  const dossier=structuredClone(Object.values(fixture)[0]) as unknown as Dossier;
- dossier.company.about=null;dossier.company.sector='Consumer Cyclical';
+ dossier.company.about=null;dossier.company.description=null;dossier.company.sector='Consumer Cyclical';
  const html=renderToStaticMarkup(createElement(DossierContent,{dossier}));
  expect(html).not.toContain('A business in');expect(html).not.toContain('company-about');
 });

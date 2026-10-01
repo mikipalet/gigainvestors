@@ -29,8 +29,7 @@ export function priceState({ price, mid, b }: { price: number | null; mid: numbe
 export function returnDisplay({value, years, unlimited = false, financial = false}: {value: number | null; years: number; unlimited?: boolean; financial?: boolean}) {
   if (unlimited) return {label:'Positive earnings, nonpositive capital', note:financial?'Tangible equity (equity − goodwill − intangibles) is nonpositive with positive net income; ROE has no finite denominator':'Invested capital (equity + debt + leases − cash − goodwill) is nonpositive with positive operating earnings; ROIC has no finite denominator', sort:Infinity};
   if (value === null || !Number.isFinite(value)) return {label:years < 5 ? years ? `${years} years on file` : '' : '', note:'Available annual return observations', sort:-Infinity};
-  if (value === 1.000001) return {label:financial?'ROE > 100%':'> 100%',note:'Positive earnings with no positive capital denominator; the return rule passes',sort:value};
-  if (value > 1 && !financial) return {label:'> 100% †', note:`Exact return ${(value*100).toFixed(1)}%; a small capital denominator makes this percentage sensitive`, sort:value};
+  if (value > 1) return {label:financial?'ROE >100%':'>100%',note:'High returns are sensitive to a small capital denominator',sort:value};
   return {label:`${financial ? 'ROE ' : ''}${(value*100).toFixed(1)}%`,note:financial ? 'Return on tangible equity, the denominator used by the published model' : 'Median annual return on invested capital',sort:value};
 }
 export function decodeEntities(value: string) {

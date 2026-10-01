@@ -92,12 +92,12 @@ export const metricLabels: Record<string, { label: string; format: MetricFormat;
   mid: { label: 'Value per share, middle', format: 'money' },
   high: { label: 'Value per share, high', format: 'money' },
 };
-export function formatMetric({ value, format, currency = '' }: { value: number | null; format: MetricFormat; currency?: string }) {
+export function formatMetric({ value, format, currency = '', returnRatio = false }: { value: number | null; format: MetricFormat; currency?: string; returnRatio?: boolean }) {
   if (value === null) return '';
   if (format === 'year') return `FY${value}`;
   if (format === 'number') return value.toFixed(2);
   if (format === 'yesno') return value > 0 ? 'Yes' : 'No';
-  if (format === 'pct' && value === 1.000001) return '> 100%';
+  if (format === 'pct' && (returnRatio && value > 1 || value === 1.000001)) return '>100%';
   if (format === 'pct') return `${(value * 100).toFixed(1)}%`;
   if (format === 'pp') return `${(value * 100).toFixed(1)} pp`;
   if (format === 'x') return `${value.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}×`;
@@ -122,4 +122,12 @@ export function ratioReading(id:string, value:number|null) {
   case 'goodwillIntangiblesToEquity':return `$${dollars} of goodwill and intangibles per $1 of equity.`;
   default:return '';
  }
+}
+
+/** Capital-return percentages are capped in presentation, never in the underlying data. */
+export const isCapitalReturn = (label:string) => /roic|roe|rote|return on.*(?:capital|equity)/i.test(label);
+
+/** Published return notes use the same cap as numerical summaries. */
+export function displayReturnText(text:string) {
+ return text.replace(/(?:\bROIC\b|\bROE\b|\bROTE\b|return on [\w -]*(?:capital|equity))[^;\n]*/gi,clause=>clause.replace(/-?\d+(?:\.\d+)?%/g,value=>parseFloat(value)>100?'>100%':value));
 }

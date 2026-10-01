@@ -1,0 +1,3 @@
+// Operating businesses, banks, insurers, short history, NAV holding, India, Japan and China.
+export const dossierPaths = ['/wkl.as','/acn.us','/jpm.us','/cb.us','/tsla.us','/abnb.us','/arm.us','/inve-b.st','/brk-b.us','/asianpaint.nse','/tcs.nse','/8306.jp','/7203.jp','/600519.shg','/601398.shg','/nvda.us','/ma.us','/aapl.us'];
+export const gapPhrases = /history not supplied|no (?:filing )?extracts? supplied|in available financial evidence|not supplied|not available|no data|\bmissing\b|informational only|available (?:financial )?evidence|not enough (?:evidence|data)|not reported|unavailable|\bunclear\b|not tested|cannot judge|evidence incomplete/i;

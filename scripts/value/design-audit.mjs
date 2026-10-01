@@ -19,6 +19,11 @@ export const audit = () => {
       if (a.left < c.right - 1 && c.left < a.right - 1 && a.top < c.bottom - 1 && c.top < a.bottom - 1) issues.push(`overlapping chart labels: "${texts[i].t}" / "${texts[j].t}"`);
     }
   }
+  // Filing likelihood bars must never paint over their labels.
+  for(const figure of root.querySelectorAll('.filing-signals'))for(const label of figure.querySelectorAll('svg text'))for(const bar of figure.querySelectorAll('svg path')){
+    const a=label.getBoundingClientRect(),b=bar.getBoundingClientRect();
+    if(a.left<b.right&&b.left<a.right&&a.top<b.bottom+4&&a.bottom>b.top-4)issues.push(`filing bar overlaps label: "${label.textContent}"`);
+  }
   // HTML text collisions: visible leaf text boxes overlapping each other
   const leaves = [];
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
@@ -28,13 +33,14 @@ export const audit = () => {
     if (!el.checkVisibility({ opacityProperty: true, visibilityProperty: true, contentVisibilityAuto: true })) continue;
     if (el.closest(".sr-only") || getComputedStyle(el).clipPath === "inset(50%)") continue;
     { const er = el.getBoundingClientRect(); if (er.width <= 2 || er.height <= 2) continue; }
+    if(parseFloat(getComputedStyle(el).fontSize)<13)issues.push(`text below 13px: "${n.textContent.trim().slice(0,40)}" (${getComputedStyle(el).fontSize})`);
     const range = document.createRange(); range.selectNodeContents(n);
     for (const b of range.getClientRects()) if (b.width > 2 && b.height > 2) leaves.push({ t: n.textContent.trim().slice(0, 30), b, el });
   }
   for (let i = 0; i < leaves.length && issues.length < 80; i++) for (let j = i + 1; j < leaves.length; j++) {
     const a = leaves[i].b, c = leaves[j].b;
     if (leaves[i].el === leaves[j].el) continue;
-    const overlayA=leaves[i].el.closest('.design-options,[role="tooltip"]'),overlayB=leaves[j].el.closest('.design-options,[role="tooltip"]');
+    const overlayA=leaves[i].el.closest('.design-options,[role="tooltip"],.value-dock'),overlayB=leaves[j].el.closest('.design-options,[role="tooltip"],.value-dock');
     if(overlayA!==overlayB&&(overlayA||overlayB))continue; // Opaque overlays intentionally cover the page behind them.
     if (a.left < c.right - 2 && c.left < a.right - 2 && a.top < c.bottom - 2 && c.top < a.bottom - 2) issues.push(`overlapping text: "${leaves[i].t}" / "${leaves[j].t}"`);
   }

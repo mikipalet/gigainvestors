@@ -22,12 +22,12 @@ describe("value evidence presentation", () => {
     expect(html).toContain("Government bond yield");
     expect(html).toContain("Growth fades to terminal growth");
   });
-  it("shows source evidence and flags untrusted answers as informational", () => {
+  it("shows source likelihoods without gap wording", () => {
     const test = dossier.tests.moat;
     const html = renderToStaticMarkup(createElement(TestSection, { test: { ...test, jev: test.jev.map((answer) => ({ ...answer, trusted: false })) } }));
     expect(html).toContain("9 in 10");
     expect(html).not.toContain("Our brands encourage repeat purchases.");
-    expect(html).toContain("Informational only");
+    expect(html).not.toContain("Informational only");
     expect(html).toContain("Item 1 · Business");
   });
 });

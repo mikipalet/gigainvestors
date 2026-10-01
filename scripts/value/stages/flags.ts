@@ -1,3 +1,4 @@
+import {dividendStrength,pricingStrength} from '../../../lib/value/flags/strengths';
 import {readFileSync} from 'node:fs';
 import {universeCompanies} from '../../../lib/value/companies';
 import {createHash} from 'node:crypto';
@@ -34,7 +35,7 @@ export default async function flags({only=FLAG_COMPANIES}:{only?:string[]}){
   const reviewed=(JSON.parse(readFileSync('lib/value/flags/reviewed-observations.json','utf8')) as Record<string,Observation[]>)[id]??[];
   const verified=reviewed.filter(o=>sources.some(s=>s.url===o.evidence.url&&s.filed===o.evidence.filed&&s.text.replace(/\s+/g,' ').includes(o.evidence.quote.replace(/\s+/g,' '))));
   const observations=[...observed.filter(o=>!verified.some(r=>r.metric===o.metric&&r.fy===o.fy)),...verified];
-  const record:FlagRecord={id,asOf:sources.map(s=>s.filed).sort().at(-1)!,flags:computeFlags(observations),relationships:[],observations,gaps:supplements?.gaps??[],inputHash:createHash('sha256').update(sources.map(s=>s.hash).join('|')).digest('hex')};
+  const record:FlagRecord={id,asOf:sources.map(s=>s.filed).sort().at(-1)!,flags:[...computeFlags(observations),...dividendStrength({...source,quote:'',section:'Annual filing'}),...pricingStrength(readCorpusJson<Analysis>(`analysis/${id}.json`)??{judgement:undefined} as Analysis)],relationships:[],observations,gaps:[...supplements?.gaps??[],...(source.partial?['Only cached annual filing sections were available; not a full-report scan']:[])],inputHash:createHash('sha256').update(sources.map(s=>s.hash).join('|')).digest('hex')};
   const jobs:Array<{topic:'signal'|'relationship';p:Passage;name?:string}>=[];
   const candidates=sources.flatMap(s=>passages(s,'signal')).filter(p=>quantities(p.quote).length||/material weakness|auditor.{0,40}(?:resign|dismiss|replac)/i.test(p.quote)).sort((a,b)=>score(b)-score(a)).slice(0,32);
   jobs.push(...candidates.map(p=>({topic:'signal' as const,p})));

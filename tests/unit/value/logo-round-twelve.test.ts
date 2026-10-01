@@ -17,10 +17,11 @@ it('uses the ADR website chain for an ESEF issuer with no enrichment cache',asyn
  vi.stubGlobal('fetch',async(url:string)=>url.includes('wikidata')?Response.json({results:{bindings:[]}}):url.includes('eodhd.com')?new Response(null,{status:404}):new Response(new Uint8Array(url.includes('.invalid')?fallback:icon),{headers:{'content-type':'image/png'}}));
  await logos({only:['RACE.MI']});
  const result=JSON.parse(readFileSync(path.join(temp,'enrichment-v7/logos/RACE.MI.json'),'utf8'));
- expect(result.logo).toMatch(/^\/api\/value\/logo\?asset=[a-f0-9]{64}$/);
+ expect(result.logo).toBeNull();
+ expect(result.pendingLogo).toMatch(/^\/api\/value\/logo\?asset=[a-f0-9]{64}$/);
  expect(result.sourceUrl).toBe('https://www.ferrari.com/apple-touch-icon.png');
  expect(result.source).toBe('official-icon');
-});
+},20000);
 
 it('uses the unauthenticated Yahoo assetProfile website and stops on an auth response',async()=>{
  const {issuerWebsite}=await import('@/lib/value/enrichment');

@@ -1,0 +1,6 @@
+import sharp from 'sharp';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {readCorpusJson} from '../../lib/value/corpus';
+import {iconHash,LOGO_VALIDATION_VERSION,REJECTED_LOGO_HASHES} from '../../lib/value/logo-validation';
+import {diskGuard} from '../../lib/value/thesis/sources';
+async function main(){const ids=readFileSync('.integrate/staging/published-ids.txt','utf8').trim().split(','),failures:Array<{id:string;reason:string}>=[];for(const id of ids){diskGuard();const r=readCorpusJson<any>(`enrichment-v7/logos/${id}.json`),asset=r?.asset?readCorpusJson<{data:string}>(`enrichment-v7/logos/assets/${r.asset}.json`):null;const bytes=asset?Buffer.from(asset.data,'base64'):null;if(!r?.logo||r.validationVersion!==LOGO_VALIDATION_VERSION||r.identityReview==='pending'||REJECTED_LOGO_HASHES.has(r.originalHash)||!bytes||iconHash(bytes)!==r.asset||!(await sharp(bytes,{limitInputPixels:16000000}).raw().toBuffer()).length)failures.push({id,reason:'Missing, rejected, unapproved, wrong hash or undecodable asset'});}const report={total:ids.length,validated:ids.length-failures.length,failures};writeFileSync('.integrate/staging/logo-validation.json',JSON.stringify(report,null,2));console.log(report);if(failures.length)process.exitCode=1;}main();

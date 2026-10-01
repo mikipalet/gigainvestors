@@ -62,11 +62,12 @@ export async function classify(id:string,evidence:Evidence,ask:Ask):Promise<{rea
  if(raw?.type!=='choice')throw new Error(`Invalid judgement response: ${id}`);
  return {reading:{id,version:questionVersion(id),value:raw.choice,confidence:raw.probabilities[raw.choice]??raw.confidence,evidence},recording:{state,questions,answers:response.answers}};
 }
-export async function readBusiness(sources:Source[],ask:Ask){
+export async function readBusiness(sources:Source[],ask:Ask,topics=Object.keys(TOPICS)){
  const readings:Reading[]=[],recordings:Recording[]=[];
  // Keep each topic under the transport budget. Selection is typed; quotes are copied from source.
- for(const id of Object.keys(TOPICS)){
-  const rows=candidates(sources,id);
+ for(const id of topics){
+  let bytes=0;
+  const rows=candidates(sources,id).filter(r=>{const size=Buffer.byteLength(r.quote,'utf8');if(bytes+size>21000)return false;bytes+=size;return true;});
   if(!rows.length)continue;
   if(id==='business'&&rows[0].quote.includes('[…]')){
    const result=await classify(id,rows[0],ask);readings.push({...result.reading,period:rows[0].period});recordings.push(result.recording);continue;

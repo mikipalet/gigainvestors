@@ -160,7 +160,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           }
         }
         writeCorpusJson(`analysis/inputs/${company.id}.json`, { asOf: result.asOf, sections,reportingCurrency:fundamentals.currency,derivedValues });
-        result.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`));
+        result.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`),result);
         writeCorpusJson(file, result);
         writeCorpusJson(fingerprintFile, fingerprint);
         written++;

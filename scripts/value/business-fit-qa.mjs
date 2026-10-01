@@ -9,6 +9,7 @@ try{for(const [width,height] of sizes)for(const id of paths){
  const disk=statfsSync('/');if(disk.bavail*disk.bsize<5*1024**3)throw Error('DISK STOP: below 5 GiB');
  const page=await browser.newPage({viewport:{width,height}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  const response=await page.goto(`${base}/${id}`,{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);
+ let drawerGeometry=null;
  const geometry=await page.evaluate(()=>{
   const rect=e=>{const r=e.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,height:r.height}};
   const tiles=[...document.querySelectorAll('.quality-section .test-tile')];
@@ -27,9 +28,24 @@ try{for(const [width,height] of sizes)for(const id of paths){
   await lines.first().click();await page.getByRole('dialog',{name:'The business, in depth'}).waitFor();await page.waitForTimeout(300);
   issues.push(...(await page.evaluate(audit)).issues.map(i=>`drawer: ${i}`));
   await page.screenshot({path:`${out}/${id}-${width}x${height}-drawer.png`});
+  drawerGeometry=await page.locator('.business-depth').evaluate(el=>{
+   const bounds=e=>{const r=e.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,height:r.height}};
+   const columns=[...el.querySelectorAll('.business-column')].map(c=>{
+    const original=c.scrollTop,box=bounds(c),full=c.scrollHeight,viewport=c.clientHeight;
+    const details=[...c.querySelectorAll('details')],open=details.map(d=>d.open);details.forEach(d=>d.open=true);
+    c.scrollTop=c.scrollHeight;
+    const leaves=[...c.querySelectorAll('*')].filter(n=>!n.children.length&&n.checkVisibility()&&n.getBoundingClientRect().height>2&&n.getBoundingClientRect().width>2&&!n.classList.contains('sr-only'));
+    const lastBottom=Math.max(0,...leaves.map(n=>n.getBoundingClientRect().bottom));
+    const expandedHeight=c.scrollHeight,reachable=lastBottom<=box.bottom+2;
+    details.forEach((d,i)=>d.open=open[i]);c.scrollTop=original;
+    return {label:c.getAttribute('aria-label'),box,full,viewport,expandedHeight,reachable,lastBottom,overflow:getComputedStyle(c).overflowY};
+   });
+   return {box:bounds(el),columns};
+  });
+  if(drawerGeometry.columns.some(c=>c.box.bottom>height+1||c.box.right>width+1||!c.reachable))issues.push('business drawer clips content');
  }
 
- report.push({id,width,height,...geometry,errors,issues});await page.close();
+ report.push({id,width,height,...geometry,drawerGeometry,errors,issues});await page.close();
 } }finally{await browser.close();writeFileSync(`${out}/geometry.json`,JSON.stringify(report,null,2));}
 console.log(JSON.stringify(report.map(({id,width,height,issues,errors})=>({id,width,height,issues,errors})),null,2));
 if(report.some(r=>r.issues.length||r.errors.length))process.exitCode=1;

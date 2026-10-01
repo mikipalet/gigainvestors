@@ -7,7 +7,7 @@ export interface Observation {metric:string;value:number;fy:number;currency:stri
 export interface BusinessFlag {
  id:string;kind:string;theme:Theme;tone:'red'|'green';severity:number;label:string;why:string;question:string;
  series:Series;unit:'ratio'|'percent'|'money'|'years'|'count';currency?:string;evidence:Evidence[];
- basis:'computed'|'filing';extraction?:'signal'|'relationship';version?:string;confidence?:number;reviewed?:boolean;
+ basis:'computed'|'filing';extraction?:'signal'|'relationship'|'judgement';version?:string;confidence?:number;reviewed?:boolean;
 }
 export interface Counterparty {id:string;name:string;aliases?:string[];logo?:string|null;wikidata?:string}
 /** Direction: from supplies/services/guarantees/invests in to. Customer is the recipient. */
@@ -18,5 +18,5 @@ export interface Relationship {
  counterparty?:Counterparty;version?:string;confidence?:number;reviewed?:boolean;
 }
 export interface FlagRecord {id:string;asOf:string;flags:BusinessFlag[];relationships:Relationship[];observations:Observation[];gaps:string[];inputHash:string}
-export interface PublicBusiness {flags:BusinessFlag[];relationships:Relationship[];asOf:string}
+export interface PublicBusiness {usdRates?:Record<string,number>;flags:BusinessFlag[];relationships:Relationship[];asOf:string}
 export type FlagTrust=Record<string,Grade>;

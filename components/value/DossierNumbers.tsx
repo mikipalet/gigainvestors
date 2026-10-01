@@ -11,7 +11,7 @@ export function TileNumbers({metric,test,currency}:{metric:TileMetric;test:TestO
  const summary=seriesSummary(metric.series,metric.chartBetter??(test.key==='understandable'?'higher':metric.better));
  const fmt=(value:number|null,kind:MetricFormat=format)=>formatMetric({value,format:kind,currency,returnRatio:isCapitalReturn(metric.chart)});
  const items=test.key==='management'&&test.metrics.retainedEarnings!=null&&test.metrics.marketCapGain!=null?[
- ['Retained',fmt(test.metrics.retainedEarnings,'money')],['Value created',fmt(test.metrics.marketCapGain??null,'money')],['Share growth / yr',fmt(test.metrics.shareCagr??null,'pct')]]:
+ ['Retained',fmt(test.metrics.retainedEarnings,'money')],['Value created',fmt(test.metrics.marketCapGain??null,'money')],['Shares / yr',fmt(test.metrics.shareCagr??null,'pct')]]:
  summary?[[`${summary.years}y median`,fmt(summary.median)],['Worst year',fmt(summary.worst)],[`Latest · ${summary.last}`,fmt(summary.latest)]]:
  [[metric.label,fmt(metric.value,metric.format)],['Passing bar',`${metric.better==='higher'?'≥':'≤'} ${fmt(metric.threshold,metric.format)}`]];
  return <dl className="tile-support">{items.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>;

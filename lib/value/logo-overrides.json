@@ -1,0 +1,1640 @@
+{
+  "1721.JP": {
+    "websites": [
+      "https://www.comsys-hd.co.jp/english/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review"
+  },
+  "2002.JP": {
+    "websites": [
+      "https://www.nisshin.com/english/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.nisshin.com/english/",
+      "https://www.nisshin.com/english/company/",
+      "https://www.nisshin.com/english/company/group/",
+      "https://www.nisshin.com/english/company/group/enterprise.html",
+      "https://www.nisshin.com/english/shareholders/integrated.html"
+    ]
+  },
+  "4578.JP": {
+    "websites": [
+      "https://www.otsuka.com/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.otsuka.com/en/",
+      "https://www.otsuka.com/en/ir/stock/",
+      "https://www.otsuka.com/en/company/overview/",
+      "https://www.otsuka.com/en/sustainability/governance/"
+    ]
+  },
+  "5201.JP": {
+    "websites": [
+      "https://www.agc.com/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.agc.com/en/",
+      "https://www.agc.com/en/company/profile/index.html",
+      "https://www.agc.com/en/sitepolicy/about/index.html"
+    ]
+  },
+  "5214.JP": {
+    "websites": [
+      "https://www.neg.co.jp/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.neg.co.jp/en/",
+      "https://www.neg.co.jp/en/company/",
+      "https://www.neg.co.jp/en/company/outline/",
+      "https://www.neg.co.jp/en/company/about-neg/",
+      "https://www.neg.co.jp/en/company/locations/index.html"
+    ]
+  },
+  "5631.JP": {
+    "websites": [
+      "https://www.jsw.co.jp/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.jsw.co.jp/en/",
+      "https://www.jsw.co.jp/en/guide/outline.html"
+    ]
+  },
+  "5831.JP": {
+    "websites": [
+      "https://www.shizuoka-fg.co.jp/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.shizuoka-fg.co.jp/english/ir/",
+      "https://www.shizuoka-fg.co.jp/english/company/",
+      "https://www.shizuoka-fg.co.jp/english/company/corporate-data.html",
+      "https://www.shizuoka-fg.co.jp/",
+      "https://www.shizuoka-fg.co.jp/company/gaiyo-history.html"
+    ]
+  },
+  "6113.JP": {
+    "websites": [
+      "https://www.amada.co.jp/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "http://www.amada.co.jp/) (japanisch, englisch), insbesondere die Unterseite History (https://www.amada.co.jp/en/corporate/history/",
+      "https://www.amada.co.jp/ja/corporate/philosophy/corporate_identity/",
+      "https://www.amada.co.jp/en/corporate/profile/",
+      "https://www.amada.co.jp/ja/corporate/profile/"
+    ]
+  },
+  "6472.JP": {
+    "websites": [
+      "https://www.ntn.co.jp/english/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.ntn.co.jp/japan/corporate/index.html",
+      "https://www.ntn.co.jp/japan/corporate/outline/index.html",
+      "https://www.ntn.co.jp/japan/corporate/history/story.html"
+    ]
+  },
+  "6770.JP": {
+    "websites": [
+      "https://www.alpsalpine.com/e/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.alpsalpine.com/e/ir/info/memo/",
+      "https://www.alpsalpine.com/j/company/profile/"
+    ]
+  },
+  "6920.JP": {
+    "websites": [
+      "https://www.lasertec.co.jp/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review"
+  },
+  "7741.JP": {
+    "websites": [
+      "https://www.hoya.com/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review"
+  },
+  "8252.JP": {
+    "websites": [
+      "https://www.0101maruigroup.co.jp/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": []
+  },
+  "8253.JP": {
+    "websites": [
+      "https://corporate.saisoncard.co.jp/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://corporate.saisoncard.co.jp/en/company/brand/",
+      "https://corporate.saisoncard.co.jp/en/company/about_cs/",
+      "https://corporate.saisoncard.co.jp/company/about_cs/",
+      "https://corporate.saisoncard.co.jp/en/",
+      "https://corporate.saisoncard.co.jp/en/company/"
+    ]
+  },
+  "8331.JP": {
+    "websites": [
+      "https://www.chibabank.co.jp/english/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "http://www.chibabank.co.jp",
+      "https://www.chibabank.co.jp/s/lp/portal/",
+      "https://www.chibabank.co.jp/) (japanisch und englisch",
+      "https://www.chibabank.co.jp/f/integrated_report_2025_an_whole",
+      "https://www.chibabank.co.jp/f/integrated_report_2021_an_21_whole"
+    ]
+  },
+  "8354.JP": {
+    "websites": [
+      "https://www.fukuoka-fg.com/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.fukuoka-fg.com/en/",
+      "https://www.fukuoka-fg.com/en/group/brand.html",
+      "https://www.fukuoka-fg.com/company/outline.html"
+    ],
+    "reportUrl": "https://www.fukuoka-fg.com/en/investorimg/pdf/annualreport2025.pdf"
+  },
+  "8750.JP": {
+    "websites": [
+      "https://www.dai-ichi-life-hd.com/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": []
+  },
+  "8795.JP": {
+    "websites": [
+      "https://www.td-holdings.co.jp/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.td-holdings.co.jp/en/",
+      "https://www.td-holdings.co.jp/en/company/profile.php"
+    ]
+  },
+  "9843.JP": {
+    "websites": [
+      "https://www.nitorihd.co.jp/en/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.nitorihd.co.jp/en/"
+    ]
+  },
+  "ADANIENT.NSE": {
+    "websites": [
+      "https://www.adanienterprises.com/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.adanienterprises.com/en/investors/investor-downloads",
+      "https://www.adanienterprises.com/investors/"
+    ]
+  },
+  "EICHERMOT.NSE": {
+    "websites": [
+      "https://www.eicher.in/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.eicher.in/"
+    ]
+  },
+  "MAXHEALTH.NSE": {
+    "websites": [
+      "https://www.maxhealthcare.in/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.maxhealthcare.in/about-us",
+      "https://www.maxhealthcare.in/terms-and-conditions",
+      "https://education.maxhealthcare.in/Certificate_Landscape.aspx"
+    ],
+    "wikipediaTitle": "Max Healthcare"
+  },
+  "SHRIRAMFIN.NSE": {
+    "websites": [
+      "https://www.shriramfinance.in/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.shriramfinance.in/investors/financials",
+      "https://www.shriramfinance.in/press-release?mainchatbot=y",
+      "https://www.shriramfinance.in/investors/governance"
+    ]
+  },
+  "HLG.NZ": {
+    "websites": [
+      "https://www.hallensteinglasson.co.nz/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review"
+  },
+  "NPH.NZ": {
+    "websites": [
+      "https://www.napierport.co.nz/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": []
+  },
+  "IPL.NZ": {
+    "websites": [
+      "https://www.investoreproperty.co.nz/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://investoreproperty.co.nz/investor-centre/"
+    ]
+  },
+  "DP4A.STU": {
+    "websites": [
+      "https://www.maersk.com/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.maersk.com/zh-cn/brand-protection",
+      "https://www.maersk.com/",
+      "https://www.maersk.com/news/articles/2022/12/22/a-star-is-born",
+      "https://investor.maersk.com/static-files/bf15d8f8-0a20-4e46-ab67-01b3d65f285b",
+      "https://www.maersk.com/press"
+    ],
+    "parent": "MAERSK-B.CO",
+    "relationship": "Same issuer: A.P. Moller Maersk listing in Stuttgart and Copenhagen"
+  },
+  "1T5.MU": {
+    "websites": [
+      "https://www.tauron.pl/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://media.tauron.pl/en/presskit",
+      "https://media.tauron.pl/teczka-prasowa/logotypy"
+    ]
+  },
+  "M2L.F": {
+    "websites": [
+      "https://investor.mapletreeindustrialtrust.com/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.mapletreeindustrialtrust.com/",
+      "https://investor.mapletreeindustrialtrust.com/",
+      "https://www.mapletreeindustrialtrust.com/about-us/",
+      "https://www.mapletreeindustrialtrust.com/contact-us/",
+      "https://investor.mapletreeindustrialtrust.com/investor-resources.html"
+    ]
+  },
+  "BI0.F": {
+    "websites": [
+      "https://investor.mapletreepact.com/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://investor.mapletreepact.com/investor-resources.html"
+    ],
+    "reportUrl": "https://links.sgx.com/FileOpen/20260630-MPACT_Annual%20Report%202025_26.ashx?App=Announcement&FileID=894759",
+    "reportCrop": {
+      "url": "https://links.sgx.com/FileOpen/20260630-MPACT_Annual%20Report%202025_26.ashx?App=Announcement&FileID=894759",
+      "left": 68,
+      "top": 64,
+      "width": 351,
+      "height": 96,
+      "review": "2025/26 annual report first-page Mapletree Pan Asia Commercial logo visually checked"
+    }
+  },
+  "MGM.US": {
+    "websites": [
+      "https://www.mgmresorts.com/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.mgmresorts.com/en/faq.html",
+      "https://www.mgmresorts.com/en/company/sis/supplier-information.html",
+      "https://www.mgmresorts.com/en/company/travel-elite-access/destinations.html",
+      "https://www.mgmresorts.com/en/destinations.html?msockid=3bb536d4f2ea618e36a82036f3f6608b",
+      "https://www.mgmresorts.com/en/company/contact-us.html?msockid=127d5702d23161a73f6941b1d3866011"
+    ]
+  },
+  "NI.US": {
+    "websites": [
+      "https://www.nisource.com/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review",
+    "targetedPages": [
+      "https://www.nisource.com/",
+      "https://www.nisource.com/terms-of-use",
+      "https://www.nisource.com/sustainability/reports-and-policies"
+    ]
+  },
+  "TECH.US": {
+    "websites": [
+      "https://www.bio-techne.com/"
+    ],
+    "evidence": "Official issuer home page; header identity requires review"
+  },
+  "Q.MX": {
+    "targetedPages": [],
+    "websites": [
+      "https://qinversionistas.qualitas.com.mx/ES/reportes-anuales"
+    ]
+  },
+  "SCT.LSE": {
+    "targetedPages": [
+      "http://www.softcat.com",
+      "https://www.softcat.com/",
+      "https://www.softcat.com/about-us",
+      "https://www.softcat.com/about-us/contact-details",
+      "https://www.softcat.com/download_file/view/5266/292"
+    ]
+  },
+  "VAU.AU": {
+    "targetedPages": [
+      "https://vaultminerals.com/",
+      "https://vaultminerals.com/about",
+      "https://vaultminerals.com/sitemap",
+      "https://vaultminerals.com/contact-us",
+      "https://www.vaultminerals.com/investors/presentations"
+    ],
+    "wikipediaTitle": "Vault Minerals"
+  },
+  "000596.SHE": {
+    "targetedPages": [],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-29/12258308.PDF",
+    "reportCrop": {
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-29/12258308.PDF",
+      "left": 317,
+      "top": 352,
+      "width": 521,
+      "height": 320,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved"
+    }
+  },
+  "000617.SHE": {
+    "targetedPages": [],
+    "wikipediaTitle": "zh:中油资本",
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-27/12204489.PDF",
+    "reportCrop": {
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-27/12204489.PDF",
+      "left": 778,
+      "top": 109,
+      "width": 131,
+      "height": 144,
+      "review": "Visually verified issuer mark on 2025 annual report cover"
+    }
+  },
+  "000661.SHE": {
+    "targetedPages": [
+      "https://ccht.jl.cn/newsList/35/1.html"
+    ]
+  },
+  "000670.KO": {
+    "targetedPages": [
+      "https://www.ypzinc.co.kr/site/en/home",
+      "https://www.ypzinc.co.kr/site/en/content/intro_CI",
+      "https://www.ypzinc.co.kr/site/en/content/intro_YP",
+      "https://www.ypzinc.co.kr/site/en/content/intro_ceo",
+      "https://www.ypzinc.co.kr/site/en/content/network_YP"
+    ],
+    "wikipediaTitle": "ko:영풍"
+  },
+  "272210.KO": {
+    "targetedPages": [
+      "https://www.hanwhasystems.com/m/en/prcenter/pr.do",
+      "https://www.hanwhasystems.com/en/investment/directors.do",
+      "https://www.hanwhasystems.com/kr/prcenter/pr.do",
+      "https://www.hanwhasystems.com/kr/investment/governance.do"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.hanwhasystems.com/resources/img/mobile/business/defense/m-icons.png",
+        "page": "https://www.hanwhasystems.com/",
+        "source": "official-reviewed-crop",
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 173,
+          "height": 35
+        }
+      }
+    ]
+  },
+  "2880.TW": {
+    "targetedPages": []
+  },
+  "2887.TW": {
+    "targetedPages": [
+      "https://www.tsholdings.com.tw/tsh/about/member/?__locale=en",
+      "https://www.tsholdings.com.tw/tsh/about/intro/story/?__locale=en",
+      "https://www.tsholdings.com.tw/tsh/news/latest/1743426000000/?__locale=en",
+      "https://www.tsholdings.com.tw/tsh/relations/major/1754383560000/?__locale=en"
+    ]
+  },
+  "2892.TW": {
+    "targetedPages": [
+      "https://www.firstholding.com.tw/sites/firstholding/en/Home",
+      "https://www.firstholding.com.tw/sites/firstholding/en/about/overview",
+      "https://www.firstholding.com.tw/sites/firstholding/en/home",
+      "https://www.firstholding.com.tw/sites/firstholding/Home",
+      "https://www.firstholding.com.tw/sites/firstholding/governance/dir"
+    ]
+  },
+  "2383.TW": {
+    "targetedPages": [
+      "https://www.emctw.com/en-global/annual_reports/index",
+      "https://www.emctw.com/en-global/presentation_materials/index"
+    ]
+  },
+  "241560.KO": {
+    "targetedPages": [
+      "https://www.doosanbobcat.com/en/about/ci",
+      "https://www.doosanbobcat.com/kr/about/ci",
+      "https://www.doosanbobcat.com/kr/about/brand",
+      "https://www.doosanbobcat.com/en/contact/legal",
+      "https://www.doosanbobcat.com/en/about/history"
+    ]
+  },
+  "267260.KO": {
+    "targetedPages": [],
+    "websites": [
+      "https://www.hd-hyundaielectric.com/elect/ko/index.jsp",
+      "https://www.hd-hyundaielectric.com/elec/ko/index.jsp"
+    ]
+  },
+  "268280.KO": {
+    "targetedPages": [
+      "https://www.miwonsc.com/eng/Company/company.html?go_link=page"
+    ],
+    "websites": [
+      "https://www.miwonsc.com/eng/Company/company.html"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.miwonsc.com/img/mi_1.png",
+        "page": "https://www.miwonsc.com/eng/",
+        "source": "official-press-kit"
+      }
+    ]
+  },
+  "600219.SHG": {
+    "targetedPages": [],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-27/12021274.PDF",
+    "reportCrop": {
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-27/12021274.PDF",
+      "left": 51,
+      "top": 96,
+      "width": 323,
+      "height": 144,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved"
+    }
+  },
+  "600346.SHG": {
+    "targetedPages": [
+      "https://www.hengli.com/global/article/65",
+      "https://www.hengli.com/global/article/43",
+      "https://www.hengli.com/global/article/63",
+      "https://www.hengli.com/global/article/448",
+      "https://epaper.hengli.com/hlb/20260618/html/content_20260618004004.htm"
+    ],
+    "wikipediaTitle": "Hengli Petrochemical",
+    "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-05-12/1225290663.PDF",
+    "reportCrop": {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-05-12/1225290663.PDF",
+      "left": 736,
+      "top": 1376,
+      "width": 340,
+      "height": 65,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved"
+    }
+  },
+  "600372.SHG": {
+    "targetedPages": [],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-28/12027374.PDF",
+    "wikipediaTitle": "zh:中航机载"
+  },
+  "600426.SHG": {
+    "targetedPages": [
+      "https://en.hl-hengsheng.com/GSXX/index.html",
+      "https://en.hl-hengsheng.com/HOME/index.html",
+      "https://www.hl-hengsheng.com/HS_QYJJ/index.html",
+      "https://www.hl-hengsheng.com/YSAQ/index.html",
+      "https://www.hl-hengsheng.com/HOME/index.html"
+    ],
+    "reportUrl": "https://www.hl-hengsheng.com/GSGG/2025-04-14/bfca8ef3-87a6-483c-abaa-25ef924dcbdb.pdf",
+    "websites": [
+      "https://en.hl-hengsheng.com/GSXX/index.html"
+    ]
+  },
+  "0288.HK": {
+    "targetedPages": [
+      "http://www.wh-group.com/en/global/home.php) (englisch"
+    ],
+    "wikipediaTitle": "WH Group"
+  },
+  "039490.KO": {
+    "targetedPages": [
+      "https://www.kiwoom.com/h/ir/en/main",
+      "https://www.kiwoom.com/m/ir/main",
+      "https://www.kiwoom.com/h/consumer/main",
+      "https://www.kiwoom.com/h/main?dummyVal=0",
+      "https://www.kiwoom.com/inv/common/notice/noticeDtl?seqNo="
+    ]
+  },
+  "069260.KO": {
+    "targetedPages": [],
+    "wikipediaTitle": "ko:TKG휴켐스"
+  },
+  "0881.HK": {
+    "targetedPages": [
+      "https://www.zs-group.com.cn/c/en/"
+    ]
+  },
+  "600436.SHG": {
+    "targetedPages": [
+      "https://www.zzpzh.com/index_en.aspx",
+      "https://www.zzpzh.com/index.aspx",
+      "https://www.zzpzh.com/bzfwjq/index_90.aspx",
+      "https://www.zzpzh.com/gsgg/info_52.aspx?itemid=19558",
+      "https://www.zzpzh.com/gsdt/info_139.aspx?itemid=15049"
+    ],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-30/12284050.PDF",
+    "reportCrop": {
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-30/12284050.PDF",
+      "left": 226,
+      "top": 480,
+      "width": 724,
+      "height": 432,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved"
+    }
+  },
+  "600438.SHG": {
+    "targetedPages": [],
+    "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-06-17/1225372847.PDF",
+    "wikipediaTitle": "zh:通威股份"
+  },
+  "600489.SHG": {
+    "targetedPages": []
+  },
+  "600547.SHG": {
+    "targetedPages": [
+      "https://www.sdhjgf.com.cn/",
+      "https://www.sdhjgf.com.cn/column/84/",
+      "https://www.sdhjgf.com.cn/column/97/",
+      "https://www.sdhjgf.com.cn/cmscontent/517.html",
+      "https://www.sdhjgf.com.cn/cmscontent/3625.html"
+    ],
+    "wikipediaTitle": "Shandong Gold Mining"
+  },
+  "600893.SHG": {
+    "targetedPages": [
+      "https://hfdl.aecc.cn/aecc/",
+      "https://hfdl.aecc.cn/aecc/zycp/rqlj/index.html",
+      "https://hfdl.aecc.cn/aecc/index/2024111823291290742/index.html",
+      "https://hfdl.aecc.cn/aecc/zycp/myhkdl/2024120219151662893/index.html"
+    ]
+  },
+  "600919.SHG": {
+    "targetedPages": []
+  },
+  "600926.SHG": {
+    "targetedPages": []
+  },
+  "600941.SHG": {
+    "targetedPages": [
+      "https://www.chinamobileltd.com/en/ir/webcasts.php?year=2012",
+      "https://www.chinamobileltd.com/en/about/milestones.php?year=2011",
+      "https://www.chinamobileltd.com/en/global/search.php?q=og%E7%9C%9F%E4%BA%BA",
+      "https://www.chinamobileltd.com/en/about/awards.php?scroll2title=1&year=2019",
+      "https://www.chinamobileltd.com/en/about/overview.php/esg/global/file/ir/sc/ir/global/about/chairman.php"
+    ],
+    "parent": "0941.HK",
+    "relationship": "Same issuer: China Mobile Shanghai A shares and Hong Kong shares"
+  },
+  "301269.SHE": {
+    "targetedPages": [
+      "https://www.empyrean.com.cn/media-center/resources/intellectual-property-rights.html",
+      "https://www.empyrean.com.cn/company/contact-us.html"
+    ]
+  },
+  "3017.TW": {
+    "targetedPages": [
+      "http://www.avc.co/en-us/",
+      "https://www.avc.co/en-us/",
+      "https://www.avc.co/",
+      "https://www.avc.co/ja-jp/Terms"
+    ],
+    "wikipediaTitle": "zh:奇鋐科技"
+  },
+  "3034.TW": {
+    "targetedPages": [
+      "https://www.novatek.com.tw/en-global/Home/index",
+      "https://www.novatek.com.tw/en-global/News/news_activity",
+      "https://www.novatek.com.tw/en-global/Product/product/Overview",
+      "https://www.novatek.com.tw/zh-CN/Html/Index/Footer/terms_of_use",
+      "https://www.novatek.com.tw/en-global/Html/Index/Footer/terms_of_use"
+    ]
+  },
+  "361610.KO": {
+    "targetedPages": [
+      "https://eng.skietechnology.com/company/overview.asp"
+    ],
+    "websites": [
+      "https://eng.skietechnology.com/company/overview.asp"
+    ],
+    "wikipediaTitle": "ko:SK아이이테크놀로지",
+    "candidates": [
+      {
+        "url": "https://www.skinnovation.co.kr/resources/css/style.css?v=20260703#svg_itc_brand_en",
+        "page": "https://www.skinnovation.co.kr/company/brand02",
+        "source": "official-parent-press-kit",
+        "inline": "<svg width='296' height='90' viewBox='0 0 296 90' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M15.4226 60.0205C12.5371 58.6721 10.164 57.5755 10.164 55.3732C10.164 53.6833 11.5124 52.4608 14.1731 52.4608C15.1529 52.4608 15.9529 52.5776 16.7799 52.7304C17.2114 52.8024 17.6788 52.8653 18.0563 52.8653C20.3844 52.8653 21.6968 51.481 22.5687 48.8472L22.9283 47.7686C22.5597 47.6158 18.7575 45.9438 13.7956 45.9438C5.90329 45.9438 1.7414 50.9956 1.75039 56.2451C1.75039 58.8969 2.57737 60.8115 3.88076 62.3216C5.5527 64.2632 7.93475 65.5397 10.164 66.6273C13.409 68.2184 16.3484 69.4049 16.3484 71.769C16.3484 73.8634 14.1821 75.0589 11.2876 75.0589C7.31452 75.0589 3.85378 72.7937 3.41332 72.5151L0.150391 78.6275C0.725682 78.9511 4.92351 81.6208 11.836 81.6208C19.1979 81.6208 24.771 77.396 24.771 70.906C24.771 64.416 19.6114 62.052 15.4226 60.0295V60.0205Z' fill='#DB162D'/><path d='M44.205 63.0407L57.5536 46.6719H48.0433L37.4004 60.7935H37.2386V46.6719H29.4003V81.3422H29.8678C33.2566 81.3422 37.2926 79.7691 37.2926 74.1151V66.1509H37.4454L48.304 80.9107H58.2817L44.205 63.0318V63.0407Z' fill='#DB162D'/><path d='M58.0031 9.52969C55.2435 10.0511 51.1535 12.55 51.1625 16.9815C51.1715 21.0086 54.4614 23.4445 54.4704 28.721C54.4884 32.6852 52.3041 35.3549 49.94 36.838C50.8928 36.7571 51.9445 36.6942 53.0951 36.6942C55.5131 36.6942 56.9694 36.9189 57.0592 36.9369L69.446 21.7456C66.0122 16.595 61.9942 12.6039 58.0121 9.53868L58.0031 9.52969Z' fill='#DB162D'/><path d='M68.4122 50.5641C69.9763 48.1371 70.1651 44.2719 70.2999 40.3347C70.4437 36.6583 71.2168 33.8987 76.1247 33.8807C77.2124 33.8807 78.2551 34.0245 80.1338 34.0245C87.3339 33.9885 92.0351 31.5166 94.9565 29.8896C88.9789 26.0783 80.2596 22.1951 69.437 21.7546C68.7358 23.7412 63.2436 38.9864 62.8391 40.2179C62.902 40.2898 63.8638 41.3684 65.0594 43.4719C66.8302 46.3483 67.783 48.7933 68.4122 50.5821V50.5641Z' fill='#DB162D'/><path d='M42.2545 38.1055C41.6252 38.1055 41.3106 37.692 41.2297 36.9729C41.1488 36.2538 38.0566 7.92068 37.5892 3.63296C37.5263 3.00374 37.3645 1.86214 37.3645 1.44865C37.3645 0.783469 37.7959 0.441895 38.2993 0.441895C39.7645 0.441895 47.7647 2.31159 56.2502 8.26225C53.8052 8.9544 49.3827 11.4983 49.4007 16.7568C49.4187 21.4131 52.7535 23.9839 52.7715 28.6581C52.7985 36.2627 44.0612 38.1055 42.2455 38.1055H42.2545Z' fill='#EE771D'/><path d='M69.1134 52.5866C69.2482 52.9372 69.374 53.2338 69.4999 53.4496C69.6976 53.7822 69.9494 53.935 70.264 53.926C70.4617 53.926 70.7044 53.8631 70.9741 53.7372C71.6303 53.4406 97.4914 41.4044 101.384 39.5976C101.95 39.328 103.02 38.8516 103.379 38.6448C103.748 38.4381 103.91 38.1324 103.91 37.8178C103.91 37.6381 103.856 37.4673 103.766 37.3055C103.28 36.5144 100.772 33.8627 96.5925 30.9593C93.2666 32.784 88.08 35.6155 80.3675 35.6515C78.4798 35.6515 78.0484 35.5257 76.763 35.5346C72.9966 35.5436 72.0527 37.1527 71.9179 40.4606C71.8909 41.0808 71.8819 41.9258 71.846 42.8426C71.7291 45.791 71.3786 49.863 69.1224 52.5866H69.1134Z' fill='#EE771D'/><path d='M82.1922 56.8384C82.1922 58.3935 80.8979 59.6519 79.2888 59.6519C77.6798 59.6519 76.3854 58.3935 76.3854 56.8384C76.3854 55.2833 77.6888 54.0159 79.2888 54.0159C80.8889 54.0159 82.1922 55.2833 82.1922 56.8384Z' fill='#EE771D'/><path d='M81.6349 62.5104H76.9607V80.9197H81.6349V62.5104Z' fill='#EE771D'/><path d='M89.5902 69.306C89.5902 67.2116 91.0643 65.261 93.1228 65.261C95.433 65.261 96.7004 67.2655 96.7363 69.306H89.5902ZM93.1947 61.7553C88.7182 61.7553 84.9518 65.3958 84.9518 71.3465C84.9518 77.2972 88.6104 80.9107 94.0756 80.9107C98.4263 80.9107 100.682 79.0141 100.952 78.8343C100.952 78.8343 100.53 78.1421 100.413 77.9534C99.8016 76.9466 99.1004 76.623 98.3364 76.623C96.7993 76.623 96.5925 77.2612 94.5161 77.2612C90.9385 77.2612 89.698 74.4657 89.6081 72.6049H101.59V71.2207C101.59 65.5037 98.3004 61.7374 93.2037 61.7374' fill='#EE771D'/><path d='M129.447 69.306C129.447 67.2116 130.921 65.27 132.98 65.27C135.29 65.27 136.557 67.2745 136.593 69.306H129.447ZM133.052 61.7553C128.575 61.7553 124.8 65.3958 124.8 71.3465C124.8 77.2972 128.458 80.9107 133.923 80.9107C138.274 80.9107 140.53 79.0051 140.8 78.8343C140.8 78.8343 140.378 78.1421 140.261 77.9444C139.649 76.9466 138.957 76.623 138.184 76.623C136.647 76.623 136.449 77.2612 134.364 77.2612C130.786 77.2612 129.537 74.4657 129.456 72.6049H141.438V71.2207C141.438 65.5037 138.148 61.7463 133.052 61.7463' fill='#EE771D'/><path d='M118.202 74.6904V65.6026H122.112L123.478 62.0879H118.211V56.5957C118.211 56.5957 117.788 56.5957 117.779 56.5957C115.694 56.5957 113.537 57.4766 113.537 62.043V62.0879H110.085V65.6026H113.537V76.2994C113.537 79.3287 115.334 80.9017 117.869 80.9017C119.928 80.9017 122.57 80.2725 122.57 76.2095C122.409 76.3084 121.411 76.9466 120.323 76.9466C118.804 76.9466 118.202 76.0207 118.202 74.6814V74.6904Z' fill='#EE771D'/><path d='M212.927 77.3151C215.795 77.3151 217.449 74.8522 217.449 71.3375C217.449 67.8228 215.84 65.3419 212.927 65.3419C210.015 65.3419 208.424 67.7779 208.424 71.3375C208.424 74.8971 210.033 77.3151 212.927 77.3151ZM212.927 80.9107C207.219 80.9107 203.776 77.1354 203.776 71.3375C203.776 65.5397 207.174 61.7463 212.927 61.7463C218.68 61.7463 222.096 65.5576 222.096 71.3375C222.096 76.7938 218.968 80.9107 212.927 80.9107Z' fill='#EE771D'/><path d='M243.903 77.3151C246.77 77.3151 248.424 74.8522 248.424 71.3375C248.424 67.8228 246.815 65.3419 243.903 65.3419C240.991 65.3419 239.4 67.7779 239.4 71.3375C239.4 74.8971 241.009 77.3151 243.903 77.3151ZM243.903 80.9107C238.195 80.9107 234.752 77.1354 234.752 71.3375C234.752 65.5397 238.15 61.7463 243.903 61.7463C249.656 61.7463 253.072 65.5576 253.072 71.3375C253.072 76.7938 249.944 80.9107 243.903 80.9107Z' fill='#EE771D'/><path d='M183.686 68.4701V80.9107H188.36V67.9846C188.612 67.7509 190.275 66.1599 192.118 66.1599C194.518 66.1599 195.767 67.9038 195.767 70.169V80.9107H200.424V69.0004C200.424 63.3464 196.073 62.0969 193.646 62.0969C190.733 62.0969 188.648 63.9217 188.028 64.5509C187.839 63.7958 186.94 62.5104 184.909 62.5104C184.19 62.5104 183.246 62.7171 183.156 62.7441C183.309 63.4542 183.686 65.1172 183.686 68.479V68.4701Z' fill='#EE771D'/><path d='M230.096 56.2361C230.096 54.0788 228.658 52.4158 226.419 52.4158H225.422V77.2163C225.422 79.4995 226.833 80.9197 229.296 80.9197C232.325 80.9197 233.233 78.7624 233.233 76.7309C233.107 76.8028 232.469 77.0635 231.822 77.0635C230.743 77.0635 230.096 76.4342 230.096 75.3466V56.2361Z' fill='#EE771D'/><path d='M288.794 81.1085C286.016 88.5873 282.456 89.5581 279.4 89.5581C277.234 89.5581 275.652 88.785 275.49 88.7041L276.641 85.1984C276.739 85.2524 277.899 85.8726 279.202 85.8726C281.629 85.8726 283.14 84.5243 284.497 80.2995C284.497 80.2995 276.245 62.3216 276.137 62.0969C276.29 62.052 277.279 61.7463 278.411 61.7463C281.081 61.7463 281.674 63.4093 282.358 65.0902C282.942 66.4835 286.753 75.6612 286.753 75.6612H286.87L291.284 62.0969H295.85L288.794 81.1085Z' fill='#EE771D'/><path d='M273.468 62.9688C273.135 62.843 269.449 61.7463 265.755 61.7463C260.299 61.7463 255.705 65.1172 255.705 71.3195C255.705 77.5219 260.038 80.9107 265.755 80.9107C266.933 80.9107 268.64 80.7489 268.802 80.7219V81.8995C268.802 83.958 266.969 86.0434 264.173 86.0434C262.043 86.0434 261.153 85.2793 260.065 85.2793C258.878 85.2793 258.528 86.3041 258.132 86.9693C257.998 87.203 257.674 87.8052 257.674 87.8052C257.989 87.976 260.622 89.5131 264.092 89.5131C269.593 89.5131 273.468 85.8097 273.468 80.659V62.9688ZM268.802 76.8208C268.667 76.8567 267.211 77.0724 266.052 77.0724C262.762 77.0724 260.353 74.9151 260.353 71.3195C260.353 67.9936 262.483 65.5846 266.052 65.5846C267.058 65.5846 268.667 65.7914 268.802 65.8273V76.8208Z' fill='#EE771D'/><path d='M167.551 64.5868C167.866 64.3262 170.176 62.1868 173.367 62.1868C176.873 62.1868 179.47 64.0116 179.47 68.4701V80.9197H174.787V69.7555C174.787 67.7869 173.699 66.2588 171.641 66.2588C169.583 66.2588 168.018 67.8049 167.551 68.1914V80.9197H162.904V53.5215H163.893C166.122 53.5215 167.551 55.1754 167.551 57.3328V64.5868Z' fill='#EE771D'/><path d='M158.05 75.832C157.69 76.0657 156.027 77.1354 153.699 77.1354C150.526 77.1354 148.261 74.6275 148.261 71.3555C148.261 67.706 150.832 65.5397 153.69 65.5397C155.236 65.5397 155.883 66.0071 156.908 66.0071C157.996 66.0071 158.58 65.4767 159.119 64.425C159.416 63.8408 159.596 63.5082 159.596 63.5082C159.362 63.3554 156.998 61.7553 152.989 61.7553C147.11 61.7553 143.587 65.9621 143.587 71.3465C143.587 77.2163 147.605 80.9017 152.989 80.9017C156.89 80.9017 159.254 79.3107 159.668 79.0141L158.041 75.823L158.05 75.832Z' fill='#EE771D'/></svg>\n"
+      }
+    ]
+  },
+  "600795.SHG": {
+    "targetedPages": []
+  },
+  "600803.SHG": {
+    "targetedPages": [
+      "https://www.enn-ng.com/en/investor-relations/shareholder-engagement.html"
+    ],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-28/12027615.PDF",
+    "wikipediaTitle": "zh:新奥股份"
+  },
+  "600845.SHG": {
+    "targetedPages": [
+      "https://www.baosight.com/",
+      "https://www.baosight.com/about",
+      "https://www.baosight.com/xin3plat",
+      "https://www.baosight.com/files/3930",
+      "https://www.baosight.com/major/3898"
+    ],
+    "wikipediaTitle": "Baosight Software"
+  },
+  "600886.SHG": {
+    "targetedPages": [
+      "https://www.sdicpower.com/gtdlen/index.htm",
+      "https://www.sdicpower.com/gtdlen/gywm/gsjs/A710101index_1.htm",
+      "https://www.sdicpower.com/gtdlen/gri/A710506index_1.htm",
+      "https://www.sdicpower.com/gtdlen/gri/webinfo/2024/07/1736110087404075.htm"
+    ],
+    "websites": [
+      "https://www.sdicpower.com/gtdlen/index.htm"
+    ]
+  },
+  "601699.SHG": {
+    "targetedPages": [],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-27/12200493.PDF",
+    "wikipediaTitle": "zh:潞安环能"
+  },
+  "601766.SHG": {
+    "targetedPages": [
+      "https://www.crrcgc.cc/en/73_5130/73_5141/index.html",
+      "https://www.crrcgc.cc/en/2025-03/03/article_2025030316035178739.html",
+      "https://www.crrcgc.cc/en/2024-04/25/article_14C0BFD20FE14D7D875ECB9414ABD734.html",
+      "https://www.crrcgc.cc/sjz/",
+      "https://www.crrcgc.cc/sjzen/"
+    ]
+  },
+  "601788.SHG": {
+    "targetedPages": []
+  },
+  "601799.SHG": {
+    "targetedPages": [
+      "https://www.xyl.cn/",
+      "https://www.xyl.cn/about.html",
+      "https://www.xyl.cn/product.html",
+      "https://www.xyl.cn/News_dt/70.html",
+      "https://www.xyl.cn/technology/2.html"
+    ]
+  },
+  "103140.KO": {
+    "targetedPages": [
+      "https://www.poongsan.co.kr/company/about/ci",
+      "https://www.poongsan.co.kr/en/company/poongsan"
+    ],
+    "wikipediaTitle": "Poongsan"
+  },
+  "1209.HK": {
+    "targetedPages": []
+  },
+  "1216.TW": {
+    "targetedPages": []
+  },
+  "128940.KO": {
+    "targetedPages": [
+      "https://www.hanmipharm.com/about/investor-relations/press/list.hm",
+      "https://www.hanmipharm.com/about/investor-relations/press/detail-4324.hm",
+      "https://www.hanmipharm.com/about/investor-relations/press/detail-4423.hm",
+      "https://www.hanmipharm.com/about/investor-relations/press/detail-3622.hm",
+      "https://www.hanmipharm.com/about/investor-relations/press/detail-1282.hm"
+    ]
+  },
+  "600989.SHG": {
+    "targetedPages": [
+      "https://www.baofengenergy.com/",
+      "https://www.baofengenergy.com/news_view.asp?id=701",
+      "https://www.baofengenergy.com/news_view.asp?id=850",
+      "https://www.baofengenergy.com/lxpro.asp?classid=109",
+      "https://www.baofengenergy.com/xwnews_view.asp?id=854"
+    ],
+    "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-03-13/1225006946.PDF",
+    "wikipediaTitle": "zh:宝丰能源"
+  },
+  "600999.SHG": {
+    "targetedPages": []
+  },
+  "601006.SHG": {
+    "targetedPages": []
+  },
+  "601009.SHG": {
+    "targetedPages": [
+      "https://www.njcb.com.cn/njcb/index/307598/index.html",
+      "https://www.njcb.com.cn/njcb/2016-06/08/article_2023081811273239763.html"
+    ]
+  },
+  "601800.SHG": {
+    "targetedPages": [
+      "https://en.ccccltd.cn/",
+      "https://ar.ccccltd.cn/yfychx/",
+      "https://en.ccccltd.cn/gyjj/ggjj/gsjs/",
+      "https://en.ccccltd.cn/xwzx/index.html",
+      "https://en.ccccltd.cn/tzzgx/dxbg/index.html"
+    ]
+  },
+  "601816.SHG": {
+    "targetedPages": [
+      "https://www.cr-jh.cn/newsCenter/goArticlePage/19/2/12/1320"
+    ],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-21/12124321.PDF",
+    "wikipediaTitle": "zh:京沪高速铁路公司"
+  },
+  "601818.SHG": {
+    "targetedPages": [
+      "https://www.cebbank.com/eportal/ui?pageId=478844",
+      "https://www.cebbank.com/eportal/ui?pageId=478955"
+    ]
+  },
+  "601838.SHG": {
+    "targetedPages": [
+      "https://www.bocd.com.cn/Englishjs.html"
+    ]
+  },
+  "601985.SHG": {
+    "targetedPages": [],
+    "wikipediaTitle": "zh:中国核电"
+  },
+  "603369.SHG": {
+    "targetedPages": [],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-29/12262593.PDF",
+    "wikipediaTitle": "zh:今世缘"
+  },
+  "603392.SHG": {
+    "targetedPages": []
+  },
+  "603799.SHG": {
+    "targetedPages": [
+      "https://www.huayou.com/en/development",
+      "https://www.huayou.com/en",
+      "https://www.huayou.com/en/privacy",
+      "https://www.huayou.com/en/news/corporate-news/61",
+      "https://www.huayou.com/en/about/leadership-speech"
+    ],
+    "wikipediaTitle": "zh:华友钴业",
+    "reportUrl": "https://www.huayou.com/Public/Uploads/uploadfile2/files/20260407/2025AnnualReportofHuayouCobalt.pdf",
+    "reportCrop": {
+      "url": "https://www.huayou.com/Public/Uploads/uploadfile2/files/20260407/2025AnnualReportofHuayouCobalt.pdf",
+      "left": 430,
+      "top": 632,
+      "width": 317,
+      "height": 304,
+      "review": "Visually verified issuer mark on 2025 annual report cover"
+    }
+  },
+  "002709.SHE": {
+    "targetedPages": [
+      "https://tinci.com/",
+      "https://tinci.com/yfcx-en/",
+      "https://www.tinci.com/qyjs/",
+      "https://www.tinci.com/list_131/",
+      "https://www.tinci.com/rczp/"
+    ],
+    "wikipediaTitle": "Tinci Materials"
+  },
+  "002840.KO": {
+    "targetedPages": [],
+    "wikipediaTitle": "ko:미원상사"
+  },
+  "002916.SHE": {
+    "targetedPages": [
+      "https://www.scc.com.cn/scc/en/index.html",
+      "https://www.scc.com.cn/scc/en/gysn/index.html",
+      "https://www.scc.com.cn/scc/en/xwdt/782287856969187328.html",
+      "https://www.scc.com.cn/scc/en/gysn/gsxx/782311291065729024.html",
+      "https://www.scc.com.cn/scc/gysn/gsxx/782298711379148800.html"
+    ]
+  },
+  "003090.KO": {
+    "targetedPages": [],
+    "wikipediaTitle": "ko:대웅"
+  },
+  "007340.KO": {
+    "targetedPages": [
+      "https://www.dnautomotive.com/en/sub/about/ci.asp"
+    ],
+    "wikipediaTitle": "ko:DN오토모티브"
+  },
+  "007660.KO": {
+    "targetedPages": []
+  },
+  "008770.KO": {
+    "targetedPages": [
+      "https://www.hotelshilla.net/navigate.do?HPPageId=AVCyrrO4AAICZlp5&HPSiteCd=",
+      "https://www.hotelshilla.net/navigate.do?HPPageId=AVeTdfUIjmsCAoSd&HPSiteCd=H",
+      "https://www.hotelshilla.net/navigate.do?HPPageId=AVETeFnoAEICZlq7&HPSiteCd=H",
+      "https://www.hotelshilla.net/navigate.do?HPPageId=AVETOGJYACQCZlq7&HPSiteCd=H",
+      "https://www.hotelshilla.net/navigate.do?HPPageId=AVEZyHp4AAQCZlps&HPSiteCd=H"
+    ]
+  },
+  "008930.KO": {
+    "targetedPages": [],
+    "wikipediaTitle": "ko:한미사이언스"
+  },
+  "000708.SHE": {
+    "targetedPages": [
+      "https://www.citicsteel.com/en/",
+      "https://www.citicsteel.com/en/index.php?a=lists&c=index&catid=15&m=content",
+      "https://www.citicsteel.com/en/index.php?a=lists&c=index&catid=14&m=content",
+      "https://www.citicsteel.com/en/index.php?a=lists&c=index&catid=12&m=content",
+      "https://www.citicsteel.com/en/index.php?a=lists&c=index&catid=33&m=content"
+    ],
+    "websites": [
+      "https://www.citicsteel.com/en/"
+    ],
+    "wikipediaTitle": "zh:中信泰富特钢"
+  },
+  "000768.SHE": {
+    "targetedPages": []
+  },
+  "000786.SHE": {
+    "targetedPages": [],
+    "wikipediaTitle": "zh:北新建材",
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-3/2026-03-26/12019028.PDF",
+    "websites": [
+      "https://www.bnbm.com/",
+      "https://www.bnbm.com/category/branding.html"
+    ]
+  },
+  "000800.SHE": {
+    "targetedPages": [],
+    "wikipediaTitle": "FAW Jiefang"
+  },
+  "1303.TW": {
+    "targetedPages": [
+      "https://www.npc.com.tw/j2npc/enus/home",
+      "https://www.npc.com.tw/",
+      "https://www.npc.com.tw/j2npc/zhcn/proddoc/%E4%BB%BF%E6%A3%89%E4%B8%9D%E7%BB%87%E5%B8%83%E7%A7%8D/Primcotton?docid=F000000860&pdid=F00000086"
+    ]
+  },
+  "138040.KO": {
+    "targetedPages": [
+      "https://www.meritzgroup.com/web/en/esg/esg1_2.do",
+      "https://www.meritzgroup.com/web/ko/pr/pr4_1.do"
+    ]
+  },
+  "139130.KO": {
+    "targetedPages": []
+  },
+  "185750.KO": {
+    "targetedPages": [
+      "https://www.ckdpharm.com/en/home",
+      "https://www.ckdpharm.com/company/ci.do",
+      "https://www.ckdpharm.com/en/company/ceo.do",
+      "https://www.ckdpharm.com/en/etc/contact.do",
+      "https://www.ckdpharm.com/en/company/summary_ckd.do"
+    ]
+  },
+  "WPR.AU": {
+    "targetedPages": [
+      "https://www.waypointreit.com.au/",
+      "https://waypointreit.com.au/investors/",
+      "https://waypointreit.com.au/investors/?page=FAQ",
+      "https://waypointreit.com.au/investors/?page=Values",
+      "https://waypointreit.com.au/investors/?page=management"
+    ]
+  },
+  "5876.TW": {
+    "targetedPages": [
+      "https://www.scsb.com.tw/content/detailPage/4042",
+      "https://www.scsb.com.tw/content/econtent/about.html"
+    ]
+  },
+  "600023.SHG": {
+    "targetedPages": []
+  },
+  "600025.SHG": {
+    "targetedPages": [],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-29/12247222.PDF",
+    "wikipediaTitle": "zh:华能澜沧江水电"
+  },
+  "601615.SHG": {
+    "targetedPages": [
+      "https://en.myse.com.cn/en/AboutUs/",
+      "https://en.myse.com.cn/index.aspx"
+    ],
+    "websites": [
+      "https://en.myse.com.cn/index.aspx"
+    ],
+    "wikipediaTitle": "Ming Yang Smart Energy"
+  },
+  "601618.SHG": {
+    "targetedPages": [
+      "https://www.mcc.com.cn/mcc_en/",
+      "https://www.mcc.com.cn/mcc_en/aboutmcc/aboutus/",
+      "https://www.mccchina.com/dczy_7509/qywh/",
+      "https://www.mccchina.com/mcc_en/diversifiedmcc/enterpriseculture/"
+    ],
+    "websites": [
+      "https://www.mcc.com.cn/mcc_en/aboutmcc/aboutus/"
+    ]
+  },
+  "601658.SHG": {
+    "targetedPages": [
+      "https://www.psbc.com/en/",
+      "https://www.psbc.com/en/contactusen/",
+      "https://www.psbc.com/en/investor_relations/ir_service/faqs/",
+      "https://www.psbc.com/en/investor_relations/announcement/index_69.html",
+      "https://www.psbc.com/en/about_psbc/about_psbc_new/202010/t20201015_12864.html"
+    ]
+  },
+  "601698.SHG": {
+    "targetedPages": []
+  },
+  "603806.SHG": {
+    "targetedPages": [
+      "https://www.firstpvm.com/en/aboutUs?type=base",
+      "https://www.firstpvm.com/en/aboutUs?type=speech",
+      "https://www.firstpvm.com/en",
+      "https://www.firstpvm.com/zh/contactUs?type=contact"
+    ],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-09/12067922.PDF",
+    "reportCrop": {
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-09/12067922.PDF",
+      "left": 430,
+      "top": 784,
+      "width": 340,
+      "height": 128,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved"
+    }
+  },
+  "603833.SHG": {
+    "targetedPages": [
+      "https://www.oppeinhome.com/",
+      "https://www.oppeinhome.com/FAQ",
+      "https://www.oppeinhome.com/about",
+      "https://www.oppeinhome.com/?s=project%2Fusa%2F",
+      "https://www.oppeinhome.com/oppein-global-branding-efforts-in-2025"
+    ]
+  },
+  "605117.SHG": {
+    "targetedPages": [],
+    "wikipediaTitle": "Deye",
+    "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-04-10/1225089135.PDF",
+    "reportCrop": {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-10/1225089135.PDF",
+      "left": 374,
+      "top": 480,
+      "width": 408,
+      "height": 144,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved"
+    }
+  },
+  "009420.KO": {
+    "targetedPages": [
+      "https://www.hanall.com/",
+      "https://www.hanall.co.kr/main",
+      "https://www.hanall.com/m15.php?tab=2",
+      "https://www.hanall.co.kr/",
+      "https://www.hanall.co.kr/product/view/85"
+    ],
+    "websites": [
+      "https://www.hanall.com/"
+    ]
+  },
+  "011780.KO": {
+    "targetedPages": [
+      "https://kkpc.com/eng/company/ci/ci/",
+      "https://kkpc.com/"
+    ],
+    "websites": [
+      "https://kkpc.com/eng/company/ci/ci/"
+    ]
+  },
+  "014680.KO": {
+    "targetedPages": []
+  },
+  "028670.KO": {
+    "targetedPages": [
+      "https://www.panocean.com/eng/Main",
+      "https://www.panocean.com/eng/Overview",
+      "https://www.panocean.com/kor/Overview",
+      "https://www.panocean.com/eng/Esgreport"
+    ]
+  },
+  "600570.SHG": {
+    "targetedPages": [
+      "https://en.hundsun.com/",
+      "https://www.hundsun.com/"
+    ],
+    "websites": [
+      "https://en.hundsun.com/"
+    ],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-28/12032877.PDF",
+    "wikipediaTitle": "zh:恒生电子"
+  },
+  "600741.SHG": {
+    "targetedPages": [],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-31/12037204.PDF"
+  },
+  "600754.SHG": {
+    "targetedPages": [
+      "https://www.jinjianghotels.sh.cn/htmls/Home/index.html",
+      "https://www.jinjianghotels.sh.cn/htmls/About%20Us/index.html",
+      "https://www.jinjianghotels.sh.cn/file/downloadFile?id=5f98b3018f6e437789272a9775fa68b1",
+      "https://www.jinjianghotels.sh.cn/file/downloadFile?id=86e733d373c042d191de75501b653f97",
+      "https://www.jinjianghotels.sh.cn/"
+    ],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-28/12031019.PDF",
+    "wikipediaTitle": "zh:锦江酒店"
+  },
+  "600760.SHG": {
+    "targetedPages": [],
+    "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225055033.PDF",
+    "reportCrop": {
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225055033.PDF",
+      "left": 453,
+      "top": 608,
+      "width": 249,
+      "height": 320,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved; group brand printed on listed subsidiary annual cover"
+    }
+  },
+  "688187.SHG": {
+    "targetedPages": [],
+    "wikipediaTitle": "Zhuzhou CRRC Times Electric",
+    "reportUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300364.pdf",
+    "reportCrop": {
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300364.pdf",
+      "left": 57,
+      "top": 64,
+      "width": 385,
+      "height": 160,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved; group brand printed on listed subsidiary annual cover"
+    }
+  },
+  "002311.SHE": {
+    "targetedPages": [
+      "https://www.haid.cn/en/LearnAboutHaida/index.aspx"
+    ],
+    "websites": [
+      "https://www.haid.cn/en/LearnAboutHaida/index.aspx"
+    ],
+    "wikipediaTitle": "zh:海大集团",
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-28/12218563.PDF",
+    "reportCrop": {
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-28/12218563.PDF",
+      "left": 340,
+      "top": 344,
+      "width": 441,
+      "height": 144,
+      "review": "Visually verified issuer mark on 2025 annual report cover"
+    }
+  },
+  "002493.SHE": {
+    "targetedPages": [
+      "https://www.cnrspc.com/",
+      "https://www.cnrspc.com/gyrs",
+      "https://www.cnrspc.com/newsinfo/4702589.html",
+      "https://www.cnrspc.com/newsinfo/5712514.html",
+      "https://www.cnrspc.com/newsinfo/8191303.html"
+    ],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2025/2025-9/2025-09-05/11434116.PDF",
+    "wikipediaTitle": "zh:荣盛石化"
+  },
+  "002601.SHE": {
+    "targetedPages": [
+      "https://www.lomonbillions.com/mnewsinfo/10911/32379"
+    ],
+    "websites": [
+      "https://www.lomonbillions.global/"
+    ],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-28/12221267.PDF",
+    "reportCrop": {
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-28/12221267.PDF",
+      "left": 385,
+      "top": 632,
+      "width": 385,
+      "height": 328,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved"
+    }
+  },
+  "002648.SHE": {
+    "targetedPages": [
+      "https://www.stl-chem.com/?md=1",
+      "https://www.stl-chem.com/index.php/about.html",
+      "https://www.stl-chem.com/index.php/news/details/189.html",
+      "https://www.stl-chem.com/index.php/news/details/255.html",
+      "https://www.stl-chem.com/index.php/social/details/211.html"
+    ],
+    "wikipediaTitle": "Satellite Chemical",
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-3/2026-03-24/12012638.PDF",
+    "reportCrop": {
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-3/2026-03-24/12012638.PDF",
+      "left": 249,
+      "top": 768,
+      "width": 588,
+      "height": 560,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved"
+    }
+  },
+  "600048.SHG": {
+    "targetedPages": [
+      "https://www.polycn.com/news_d29402.html",
+      "https://www.polycn.com/news_d29418.html",
+      "https://www.polycn.com/mobile/index.html"
+    ],
+    "websites": [
+      "https://www.polycn.com/"
+    ]
+  },
+  "600050.SHG": {
+    "targetedPages": []
+  },
+  "600061.SHG": {
+    "targetedPages": []
+  },
+  "600085.SHG": {
+    "targetedPages": [
+      "https://gf.tongrentang.com/",
+      "https://gf.tongrentang.com/menu_1241.html",
+      "https://gf.tongrentang.com/article_1204.html",
+      "https://gf.tongrentang.com/article_1132.html",
+      "https://gf.tongrentang.com/newsInfo_12524.html"
+    ]
+  },
+  "600115.SHG": {
+    "targetedPages": [
+      "https://www.ceair.com/global/",
+      "https://www.ceair.com/global/en_static/Announcement/AnnouncementMessage/202506/t20250606_28274.html"
+    ]
+  },
+  "600132.SHG": {
+    "targetedPages": [
+      "https://www.carlsbergchina.com.cn/zh/"
+    ]
+  },
+  "600150.SHG": {
+    "targetedPages": [],
+    "wikipediaTitle": "zh:中国船舶工业股份"
+  },
+  "600176.SHG": {
+    "targetedPages": [
+      "https://www.jushi.com/en/about",
+      "https://www.jushi.com/en/product",
+      "https://www.jushi.com/en/investor",
+      "https://www.jushi.com/en/headquarters",
+      "https://www.jushi.com/en/business/group"
+    ],
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-20/12004212.PDF",
+    "wikipediaTitle": "zh:中国巨石"
+  },
+  "192080.KO": {
+    "targetedPages": [
+      "https://play.doubleugames.com/"
+    ]
+  },
+  "1997.HK": {
+    "targetedPages": [],
+    "wikipediaTitle": "zh:九龍倉置業"
+  },
+  "2382.HK": {
+    "targetedPages": [
+      "https://www.sunnyoptical.com/en/11687.html",
+      "https://www.sunnyoptical.com/en/default.html",
+      "https://www.sunnyoptical.com/en/pro/009020/index.html",
+      "https://www.sunnyoptical.com/en/nlist/007003/index.html",
+      "https://www.sunnyoptical.com/sunnyoptical/en/investor.html"
+    ]
+  },
+  "ISAE3.SA": {
+    "targetedPages": [
+      "https://www.isaenergiabrasil.com.br/en/media-center/media-kit/",
+      "https://www.isaenergiabrasil.com.br/?trk=test",
+      "https://www.isaenergiabrasil.com.br/evolucaodamarca/",
+      "https://www.isaenergiabrasil.com.br/centro-de-midia/midia-kit/",
+      "https://www.isaenergiabrasil.com.br/es/centro-de-prensa/kit-de-prensa/"
+    ],
+    "websites": [
+      "https://www.isaenergiabrasil.com.br/en/media-center/media-kit/"
+    ]
+  },
+  "LACOMERUBC.MX": {
+    "targetedPages": []
+  },
+  "LATO-B.ST": {
+    "targetedPages": [
+      "http://www.latour.se",
+      "https://www.latour.se/sv",
+      "https://www.latour.se/en/about",
+      "https://www.latour.se/en/sitemap",
+      "https://www.latour.se/en"
+    ],
+    "websites": [
+      "https://www.latour.se/en"
+    ]
+  },
+  "LMP.LSE": {
+    "targetedPages": [
+      "https://www.londonmetric.com/",
+      "https://www.londonmetric.com/partners",
+      "https://www.londonmetric.com/about-us/governance",
+      "https://www.londonmetric.com/site-services/terms-and-conditions"
+    ],
+    "reportUrl": "https://www.londonmetric.com/pdf-viewer.aspx?gid=364072326&src=%2F~%2Fmedia%2FFiles%2FL%2Flondonmetric%2Fresults-and-presentations%2Fpresentation%2Fannual-report-and-accounts-2026.pdf"
+  },
+  "CHG.LSE": {
+    "targetedPages": [
+      "https://www.chemring.com/media",
+      "https://www.chemring.com/media/press-kit",
+      "https://www.chemring.com/media/press-releases/2026/20-02-2026",
+      "https://www.chemring.com/media/press-releases/2025/26-02-2025",
+      "https://www.chemring.com/media/press-releases/2026/30-07-2026"
+    ]
+  },
+  "CHI.AU": {
+    "targetedPages": [
+      "https://channelnz.com/who-we-are/",
+      "https://channelnz.com/investor-centre/reports-presentations/"
+    ]
+  },
+  "CSN.LSE": {
+    "targetedPages": []
+  },
+  "FSG.LSE": {
+    "targetedPages": []
+  },
+  "601100.SHG": {
+    "targetedPages": [
+      "https://www.henglihydraulics.com/en/col486/1461",
+      "https://www.henglihydraulics.com/",
+      "https://www.henglihydraulics.com/en",
+      "https://www.henglihydraulics.com/col438/1371",
+      "https://www.henglihydraulics.com/col185/4302"
+    ]
+  },
+  "601155.SHG": {
+    "targetedPages": []
+  },
+  "601186.SHG": {
+    "targetedPages": []
+  },
+  "601225.SHG": {
+    "targetedPages": [],
+    "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225177985.PDF",
+    "wikipediaTitle": "zh:陕西煤业"
+  },
+  "ACP.WAR": {
+    "targetedPages": [
+      "https://pl.asseco.com/biuro-prasowe?20b50cfb_page=20"
+    ]
+  },
+  "ALOS3.SA": {
+    "targetedPages": [
+      "https://allos.co/en/media/",
+      "https://allos.co/news/empodera-ela-allos-reforca-protagonismo-feminino-e-celebra-o-mes-da-mulher/"
+    ],
+    "websites": [
+      "https://allos.com.br/"
+    ]
+  },
+  "BOWL.LSE": {
+    "targetedPages": [
+      "https://www.hollywoodbowlgroup.com/about-us/",
+      "https://www.hollywoodbowlgroup.com/investors/",
+      "https://www.hollywoodbowlgroup.com/accessibility/",
+      "https://www.hollywoodbowlgroup.com/privacy-policy/",
+      "https://www.hollywoodbowlgroup.com/investors/shareholder-information/agm/"
+    ]
+  },
+  "BWP.AU": {
+    "targetedPages": [
+      "https://www.bwptrust.com.au/site/content/default.aspx",
+      "https://www.bwptrust.com.au/site/showlistitems.aspx?CategoryID=8"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.bwptrust.com.au/site/media/62/logo-bwp.png",
+        "page": "https://www.bwptrust.com.au/site/content/default.aspx",
+        "source": "official-press-kit"
+      }
+    ]
+  },
+  "601229.SHG": {
+    "targetedPages": []
+  },
+  "601377.SHG": {
+    "targetedPages": [
+      "https://www.xyzq.com.cn/xysec/aboutus/11324",
+      "https://www.xyzq.com.cn/xysec/info/article/0accb03f7f7343f7b8b7e7b05858c180"
+    ]
+  },
+  "601398.SHG": {
+    "targetedPages": [
+      "https://www.icbc.com.cn/ICBCLtd/en/",
+      "https://icbc.com.cn/icbcltd/Investor%20Relations/Download%20Center/",
+      "https://www.icbc-ltd.com/en/page/721852670121115663.html",
+      "https://www.icbc-ltd.com/en/page/721852430823489548.html",
+      "https://www.icbc-ltd.com/ICBCLtd/en"
+    ],
+    "websites": [
+      "https://www.icbc.com.cn/ICBCLtd/en/"
+    ]
+  },
+  "601607.SHG": {
+    "targetedPages": [
+      "http://www.sphchina.com",
+      "https://www.sphchina.com/about_us/sph_overview.html",
+      "https://www.sphchina.com/corporate_culture/core_brand.html",
+      "https://www.sphchina.com/index/",
+      "https://www.sphchina.com/news_center/news_detail.html?id=371"
+    ],
+    "wikipediaTitle": "Shanghai Pharmaceuticals"
+  },
+  "003240.KO": {
+    "targetedPages": []
+  },
+  "003816.SHE": {
+    "targetedPages": [
+      "https://www.cgnp.com.cn/cgnp/c100766/lm_tt_wz.shtml"
+    ],
+    "wikipediaTitle": "zh:中国广核电力"
+  },
+  "006040.KO": {
+    "targetedPages": [
+      "https://www.dongwon.com/en/company/data-room",
+      "https://www.dongwon.com/en"
+    ],
+    "websites": [
+      "https://www.dongwon.com/en"
+    ]
+  },
+  "006650.KO": {
+    "targetedPages": [
+      "https://www.kpic.co.kr/hp/en/kpic/ceo.asp",
+      "https://www.kpic.co.kr/hp/en/kpic/intro.asp",
+      "https://www.kpic.co.kr/hp/cn/kpic/intro.asp",
+      "https://www.kpic.co.kr/hp/en/index.asp",
+      "https://www.kpic.co.kr/hp/en/kpic/ci.asp"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.kpic.co.kr/images/logo/kpic_mark_type2_500px.png",
+        "page": "https://www.kpic.co.kr/hp/en/kpic/ci.asp",
+        "source": "official-press-kit"
+      }
+    ]
+  },
+  "298050.KO": {
+    "targetedPages": [
+      "https://www.hshyosungadvancedmaterials.com/en"
+    ],
+    "websites": [
+      "https://www.hshyosungadvancedmaterials.com/en"
+    ]
+  },
+  "300122.SHE": {
+    "targetedPages": [
+      "https://en.zhifeishengwu.com/",
+      "https://www.zhifeishengwu.com/",
+      "https://www.zhifeishengwu.com/zh_CN/privacy.html",
+      "https://www.zhifeishengwu.com/zh_CN/news/38/327.html",
+      "https://www.zhifeishengwu.com/zh_CN/pro/65.html?did=74"
+    ],
+    "websites": [
+      "https://en.zhifeishengwu.com/"
+    ]
+  },
+  "300124.SHE": {
+    "targetedPages": [
+      "https://www.inovance.com/",
+      "https://www.inovance.com/global/support/download-documentation.html"
+    ]
+  },
+  "300142.SHE": {
+    "targetedPages": [
+      "https://www.walvax.com/studying_goods/",
+      "https://www.walvax.com/public_information/?id=0",
+      "https://www.walvax.com/subfirms_detail/9223.html"
+    ]
+  },
+  "6618.HK": {
+    "targetedPages": []
+  },
+  "688126.SHG": {
+    "targetedPages": [
+      "https://nsig.com/en",
+      "https://www.nsig.com/",
+      "https://www.nsig.com/en/contact"
+    ],
+    "wikipediaTitle": "National Silicon Industry Group"
+  },
+  "000069.SHE": {
+    "targetedPages": []
+  },
+  "000301.SHE": {
+    "targetedPages": [],
+    "wikipediaTitle": "Eastern Shenghong",
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-29/12266560.PDF",
+    "reportCrop": {
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-4/2026-04-29/12266560.PDF",
+      "left": 105,
+      "top": 314,
+      "width": 597,
+      "height": 88,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved"
+    }
+  },
+  "000810.KO": {
+    "targetedPages": [],
+    "parent": "005930.KO",
+    "relationship": "Listed Samsung affiliate using the Samsung group brand",
+    "evidence": "Official issuer brand and Samsung affiliate identity"
+  },
+  "000877.SHE": {
+    "targetedPages": [],
+    "wikipediaTitle": "Tianshan Material",
+    "reportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-3/2026-03-31/12048625.PDF",
+    "reportCrop": {
+      "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2026/2026-3/2026-03-31/12048625.PDF",
+      "left": 317,
+      "top": 752,
+      "width": 521,
+      "height": 144,
+      "review": "2025 annual report first-page issuer logo visually checked; aspect ratio preserved"
+    }
+  },
+  "000963.SHE": {
+    "targetedPages": [
+      "https://en.huadongmedicine.com/"
+    ],
+    "websites": [
+      "https://en.huadongmedicine.com/"
+    ]
+  },
+  "002179.SHE": {
+    "targetedPages": [],
+    "wikipediaTitle": "AVIC Jonhon Optronic Technology"
+  },
+  "601868.SHG": {
+    "targetedPages": [
+      "https://www.ceec.net.cn/col/col52635/index.html",
+      "https://www.ceec.net.cn/col/col52637/index.html",
+      "https://www.ceec.net.cn/art/2022/7/7/art_11018_2522635.html"
+    ]
+  },
+  "601872.SHG": {
+    "targetedPages": [
+      "http://www.cmenergyshipping.com/",
+      "https://www.cmenergyshipping.com/index.php?command=setlang&lang=en",
+      "https://www.cmenergyshipping.com/page.php?command=setlang&lang=en&p=chairman",
+      "https://www.cmenergyshipping.com/page.php?command=setlang&lang=en&p=busoverview",
+      "https://www.cmenergyshipping.com/page.php?command=setlang&lang=en&p=inc"
+    ],
+    "reportUrl": "https://www.cmenergyshipping.com/uploads/files/20260429.pdf"
+  },
+  "601881.SHG": {
+    "targetedPages": [
+      "https://www.chinastock.com.cn/en/index.jsp",
+      "https://www.chinastock.com.cn/newsiteEn/join-us.html",
+      "https://www.chinastock.com.cn/newsiteEn/cgs-services/cgsCGSI.html",
+      "https://www.chinastock.com.cn/newsiteEn/cgs-services/internationalBusiness.html"
+    ]
+  },
+  "601901.SHG": {
+    "targetedPages": [
+      "https://www.foundersc.com/invRelaServiceContact/index.jhtml"
+    ]
+  },
+  "LSEG.LSE": {
+    "targetedPages": [
+      "https://www.lseg.com/en/media-centre",
+      "https://www.lseg.com/en/investor-relations",
+      "https://www.lseg.com/en/policies/website-terms-of-use"
+    ]
+  },
+  "NCC.LSE": {
+    "targetedPages": [
+      "http://www.nccgroup.com",
+      "https://www.nccgroupplc.com/newsroom/"
+    ]
+  },
+  "NCK.AU": {
+    "targetedPages": [
+      "https://www.nickscali.com.au/"
+    ]
+  },
+  "300498.SHE": {
+    "targetedPages": [
+      "https://www.wens.com.cn/",
+      "https://www.wens.com.cn/ContactUs/index.aspx",
+      "https://www.wens.com.cn/GroupEvents/index.aspx?lcid=66",
+      "https://www.wens.com.cn/BrandsProducts/index.aspx?lcid=36"
+    ],
+    "reportUrl": "https://www.wens.com.cn/uploadfiles/2025/08/20250828091505994.pdf",
+    "wikipediaTitle": "Wens Foodstuff Group"
+  },
+  "3008.TW": {
+    "targetedPages": [
+      "https://www.largan.com.tw/en/investor",
+      "https://www.largan.com.tw/en",
+      "https://www.largan.com.tw/cn/product",
+      "https://www.largan.com.tw/tw/tool-download/esg_1_files/file/21/ISO%209001_2015%20%28%E6%9C%89%E6%95%88%E6%9C%9F%EF%BC%9A2024_06_06%20%E2%80%93%202027_06_05%29?note="
+    ]
+  },
+  "300919.SHE": {
+    "targetedPages": [
+      "https://www.cngrgf.com.cn/en-US",
+      "https://www.cngrgf.com.cn/en-US/gsgg.html",
+      "https://www.cngrgf.com.cn/en-US/gsjs.html"
+    ],
+    "reportUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042803377.pdf",
+    "wikipediaTitle": "zh:中伟股份",
+    "reportCrop": {
+      "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0428/2026042803377.pdf",
+      "left": 100,
+      "top": 94,
+      "width": 354,
+      "height": 118,
+      "review": "CNGR wordmark visually verified on 2025 annual report cover"
+    }
+  },
+  "300957.SHE": {
+    "targetedPages": [
+      "https://en.botanee.com.cn/",
+      "https://en.botanee.com.cn/comp-profile.html",
+      "https://www.botanee.com.cn/",
+      "https://www.botanee.com.cn/social-responsibility.html"
+    ],
+    "websites": [
+      "https://en.botanee.com.cn/"
+    ]
+  },
+  "010140.KO": {
+    "parent": "005930.KO",
+    "relationship": "Listed Samsung affiliate using the Samsung group brand",
+    "evidence": "Official issuer brand and Samsung affiliate identity"
+  },
+  "016360.KO": {
+    "parent": "005930.KO",
+    "relationship": "Listed Samsung affiliate using the Samsung group brand",
+    "evidence": "Official issuer brand and Samsung affiliate identity"
+  },
+  "028050.KO": {
+    "parent": "005930.KO",
+    "relationship": "Listed Samsung affiliate using the Samsung group brand",
+    "evidence": "Official issuer brand and Samsung affiliate identity"
+  },
+  "026960.KO": {
+    "websites": [
+      "https://www.dongsuh.com/eng/index.asp"
+    ],
+    "targetedPages": [
+      "https://www.dongsuh.com/eng/index.asp",
+      "https://www.dongsuh.com/kor/ir/connect.asp"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.dongsuh.com/eng/images/common/headerLogo.png",
+        "page": "https://www.dongsuh.com/eng/index.asp",
+        "source": "official-css-logo"
+      }
+    ]
+  },
+  "IVG.MI": {
+    "wikipediaTitle": "Iveco Group",
+    "targetedPages": [
+      "https://www.ivecogroup.com/media",
+      "https://www.ivecogroup.com/group/beyond/press_kit"
+    ]
+  }
+}

@@ -13,3 +13,6 @@ data/newsletter/*.facts.json
 
 # Local audit evidence and the single publication staging directory
 .audit/
+
+# Integration artifacts (one staging root)
+.integrate/

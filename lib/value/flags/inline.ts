@@ -2,8 +2,8 @@ import {parseDocument} from 'htmlparser2';
 import type {Observation} from './types';
 // Use structural typing to avoid adding a dependency merely for DOM traversal.
 type Node={type:string;name?:string;data?:string;attribs?:Record<string,string>;children?:Node[];parent?:Node|null};
-function descendants(node:Node):Node[]{return (node.children??[]).flatMap(c=>[c,...descendants(c)]);}
-const content=(node:Node):string=>node.type==='text'?node.data??'':(node.children??[]).map(content).join(' ');
+function descendants(node:Node):Node[]{const output:Node[]=[],stack:Node[]=[node];while(stack.length){const current=stack.pop()!;if(current!==node)output.push(current);for(let i=(current.children?.length??0)-1;i>=0;i--)stack.push(current.children![i]);}return output;}
+const content=(node:Node):string=>node.type==='text'?node.data??'':descendants(node).filter(n=>n.type==='text').map(n=>n.data??'').join(' ');
 const clean=(s:string)=>s.replace(/\s+/g,' ').trim();
 const tags:Record<string,string[]>={
  capex:['PaymentsToAcquirePropertyPlantAndEquipment','PaymentsToAcquireProductiveAssets'],

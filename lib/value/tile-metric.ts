@@ -15,7 +15,7 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
   const indexed:Series=shares.map(([year,value])=>[year,base&&value!==null?value/base*100:null]);
   return {...metric('shareCagrExCrisis','ordinary share growth','pct',.02,'lower',indexed,'Shares (first year = 100)'),chartFormat:'index',chartThreshold:null};
  }
- if ('financialRedFlags' in m) return {...metric('financialRedFlags','accounting warnings','count',0,'lower',netIncome,'Earnings context · warnings assessed over the window'),chartFormat:'money',chartThreshold:null,chartBetter:'higher'};
+ if ('financialRedFlags' in m) return {...metric('financialRedFlags','accounting warnings','count',0,'lower',netIncome,'Earnings context'),chartFormat:'money',chartThreshold:null,chartBetter:'higher'};
  if ('combinedReportedYears' in m) {
   if (m.combinedProfitableYears!=null) return {...metric('combinedProfitableYears','profitable underwriting years','count',7,'higher',test.series.combinedRatio??[],'Combined ratio'),chartFormat:'pct',chartThreshold:1,chartBetter:'lower'};
   return metric('roeMedian',m.tangibleReturn?'ROTE · ten-year median':'ROE · ten-year median','pct',m.returnThreshold??.12,'higher',test.series.roe??[],m.tangibleReturn?'Return on tangible common equity':'Return on common equity');

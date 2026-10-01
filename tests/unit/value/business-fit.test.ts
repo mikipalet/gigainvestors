@@ -22,9 +22,15 @@ it('suppresses a selected sentence when the independent support check rejects it
 });
 
 import {businessLines} from '../../../lib/value/flags/presentation';
+import {sourceSentences} from '../../../lib/value/judgement/source-sentences';
 import type {Analysis} from '../../../lib/value/types';
 it('never falls back to a raw company description or filing passage',()=>{
  expect(businessLines({company:{description:'Long raw filing passage.'}} as Analysis)).toEqual([]);
+});
+it('offers a concise sourced predicate when a long legal name prevents a fifteen-word sentence',()=>{
+ const quote='Kimberly-Clark de México, together with its subsidiaries, manufactures, distributes, and sells disposable products in Mexico.';
+ expect(sourceSentences(quote)).toContain('The company manufactures, distributes, and sells disposable products in Mexico.');
+ expect(sourceSentences(quote.replace('Kimberly-Clark de México','Kimberly-Clark de México, S. A. B. de C. V.')).some(s=>/^V\.,/.test(s))).toBe(false);
 });
 import calibration from '../../fixtures/value/judgement/short-text-calibration.json';
 it('replays recorded sentence selection and support validation, including adversarial claims',async()=>{

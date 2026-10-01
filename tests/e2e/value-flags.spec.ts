@@ -9,7 +9,10 @@ for(const [width,height]of [[1728,970],[390,844]])for(const id of ['orcl.us','go
   await expect(page.getByRole('heading',{name:'Flags',exact:true})).toHaveCount(0);
   const flag=section.locator('.business-line[data-tone]').first();const hasSummary=await flag.count()>0;const opener=hasSummary?flag:section.locator('.business-open');await expect(opener).toBeVisible();if(hasSummary){await flag.focus();await expect(section.getByRole('tooltip').filter({visible:true})).toHaveCount(1);}
   await opener.click();const dialog=page.getByRole('dialog',{name:'The business, in depth'});await expect(dialog).toBeVisible();await expect(dialog.getByRole('tab')).toHaveCount(0);
-  await expect(dialog.getByRole('region',{name:'Flags by theme'})).toBeAttached();await expect(dialog.getByRole('heading',{name:'Relationships disclosed in filings'})).toBeAttached();
+  await expect(dialog.getByRole('region',{name:'Flags by theme'})).toBeAttached();
+  const connections=dialog.getByRole('list',{name:'Disclosed relationships list'});
+  await expect(dialog.getByRole('heading',{name:'Relationships disclosed in filings'})).toHaveCount(await connections.count()?1:0);
+  if(id==='googl.us'&&await connections.count())await expect(connections).not.toContainText(/Google Ireland Holdings|Google Fiber|Calico|\bGV\b/);
   const selected=hasSummary?dialog.locator('.flag-detail[data-selected=true]'):dialog.locator('.flag-detail').first();if(hasSummary)await expect(selected).toBeInViewport();await expect(selected.locator('blockquote').first()).not.toBeEmpty();await expect(selected.getByRole('link').first()).toHaveAttribute('href',/^https:\/\//);
   const links=dialog.getByRole('list',{name:'Disclosed relationships list'}).getByRole('button');if(await links.count()){await links.first().click();await expect(dialog.locator('.relationship-evidence blockquote,.relationship-evidence p').first()).not.toBeEmpty();}
   await dialog.locator('.panel-shell').evaluate(async el=>{await Promise.all(el.getAnimations().map(a=>a.finished.catch(()=>{})));});

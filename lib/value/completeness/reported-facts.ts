@@ -1,4 +1,5 @@
 import {emptyYear} from './second-sources';
+import {annualFiscalYear} from '../fiscal-period';
 import type {Year} from '../types';
 import issuerFacts from './issuer-facts.json';
 import auditFacts from './audit-facts.json';
@@ -18,11 +19,19 @@ export function applyReportedFacts(years:Year[],facts:ReportedFacts[]):Year[]{
  for(const f of facts){
   if(!f.quote.trim()||!/^https:\/\//.test(f.source)||!/^\d{4}-\d{2}-\d{2}$/.test(f.end))throw Error('Reported fact requires dated source evidence');
   const split=f.splitFactor??1;if(!Number.isFinite(split)||split<=0)throw Error('Invalid split factor');
-  const existing=result.find(y=>y.end===f.end);
+  // A reviewed annual total can identify a provider's rounded month-end row.
+  // Date proximity alone is insufficient: require a unique same-currency total.
+  const nearby=result.filter(y=>y.currency===f.currency&&Math.abs(Date.parse(y.end)-Date.parse(f.end))<=7*86400000
+   &&(['revenue','netIncome','totalAssets'] as const).some(k=>f.values[k]!=null&&f.values[k]!==0&&y[k]===f.values[k]));
+  const existing=result.find(y=>y.end===f.end)??(nearby.length===1?nearby[0]:undefined);
   if(existing?.currency&&existing.currency!==f.currency&&!f.correction)throw Error('Reported fact currency mismatch');
   const y=existing??emptyYear(f.end,f.currency);
   if(!existing)result.push(y);
   y.provenance??={};
+  if(existing&&y.end!==f.end){
+   y.provenance.end={source:f.source,field:'annual reporting period',method:'reported',inputs:[`Provider date: ${y.end}`,f.quote]};
+   y.end=f.end;y.fy=annualFiscalYear(f.end);
+  }
   if(f.correction && y.currency!==f.currency){
    y.provenance.currency={source:f.source,field:'reporting currency',method:'reported',inputs:[f.quote]};
    y.currency=f.currency;

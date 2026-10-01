@@ -1,10 +1,16 @@
-import {existsSync,readdirSync} from 'node:fs';
+import {resolveManualLogo,type ManualLogo} from '../../../lib/value/logo-manual';
+import {existsSync,readdirSync,mkdirSync,writeFileSync} from 'node:fs';
+import reviewedOverrides from '../../../lib/value/logo-overrides.json';
+import {closeLogoBrowser} from '../../../lib/value/logo-browser';
+import {robotsRequest} from '../../../lib/value/logo-discovery';
+import {reportCover,reviewedReportLogo} from '../../../lib/value/logo-report';
+import {resolveDeepLogo,stageBrand,type LogoOverride} from '../../../lib/value/logo-deep';
 import {loadCompanies} from '../../../lib/value/companies';
 import {corpusPath,readCorpusJson,writeCorpusJson} from '../../../lib/value/corpus';
 import {generalInfoFor,type Enrichment} from '../../../lib/value/enrichment';
 import {wikidataWebsite} from '../../../lib/value/wikidata-websites';
 import {pool} from '../../../lib/value/http';
-import {iconHash,LOGO_VALIDATION_VERSION} from '../../../lib/value/logo-validation';
+import {iconHash,LOGO_VALIDATION_VERSION,REJECTED_LOGO_HASHES} from '../../../lib/value/logo-validation';
 import {resolveCompanyLogo,type LogoBinding} from '../../../lib/value/logo-sources';
 import {checkLogoDisk,logoRequest} from '../../../lib/value/logo-fetch';
 import {unpackView,type BrowserPayload} from '../../../lib/value/browser-view';
@@ -54,31 +60,46 @@ export default async function logos(options:{only?:string[];limit?:number;force?
  const companies=loadCompanies({only:options.only??(published.length?published.map(r=>r.id):undefined)}).sort((a,b)=>{
   const rank=(id:string)=>{const r=byId.get(id);return r?.b?0:nextIds.has(id)?1:r?.t==='PPPPP'?2:3;};return rank(a.id)-rank(b.id)||a.id.localeCompare(b.id);
  }).slice(0,options.limit);
+ const manual={...readCorpusJson<Record<string,ManualLogo>>('logo-manual/agent-overrides.json'),...readCorpusJson<Record<string,ManualLogo>>('logo-manual/manual.json')};
  const before=companies.map(c=>({id:c.id,name:c.name,logo:byId.get(c.id)?.lg??null,cache:readCorpusJson(`enrichment-v7/logos/${c.id}.json`)}));
  const runId=Date.now();writeCorpusJson(`enrichment-v7/logos/runs/${runId}-before.json`,before);
- let rows:LogoBinding[]=[];try{rows=await logoIndex(request,companies.filter(c=>!c.logo).flatMap(c=>{const site=generalInfoFor(c).WebURL;return site?[site]:[];}));}catch(e){console.warn(String(e));}
+ let rows:LogoBinding[]=[];try{if(!companies.every(c=>manual[c.id]))rows=await logoIndex(request,companies.filter(c=>!c.logo).flatMap(c=>{const site=generalInfoFor(c).WebURL;return site?[site]:[];}));}catch(e){console.warn(String(e));}
  const websites=readCorpusJson<LogoBinding[]>('enrichment-v7/wikidata/websites.json')??[];
+ const localOverrides=readCorpusJson<Record<string,LogoOverride>>('enrichment-v7/logos/_overrides.json')??{};
+ const overrides:Record<string,LogoOverride>={...reviewedOverrides,...Object.fromEntries(Object.entries(localOverrides).map(([id,value])=>[id,{...(reviewedOverrides as Record<string,LogoOverride>)[id],...value}]))};
  const hashes=new Set<string>();
  // Both live default hashes and the versioned blocklist are checked by the validator.
  for(const url of ['https://www.google.com/s2/favicons?domain=value-logo-missing.invalid&sz=128','https://icons.duckduckgo.com/ip3/value-logo-missing.invalid.ico'])try{const r=await request(url);if(r.headers.get('content-type')?.startsWith('image/'))hashes.add(iconHash(new Uint8Array(await r.arrayBuffer())));}catch{}
  writeCorpusJson('enrichment-v7/logos/_default-hashes.json',[...hashes]);
  const stats={total:companies.length,checked:0,cached:0,recovered:0,unavailable:0,sources:{} as Record<string,number>};
- await pool({items:companies,concurrency:6,run:async company=>{
+ try{await pool({items:companies,concurrency:6,run:async company=>{
   checkLogoDisk();const file=`enrichment-v7/logos/${company.id}.json`;
-  const previous=readCorpusJson<{logo?:string;validationVersion?:number;source?:string;matcherVersion?:number;retryable?:boolean;verifiedAt?:string}>(file);
-  if(!(options.force&&options.only)&&previous?.validationVersion===LOGO_VALIDATION_VERSION&&(previous.source!=='wikidata-p154'||previous.matcherVersion===2)&&(previous.logo||(!options.force&&!previous.retryable&&Date.now()-Date.parse(previous.verifiedAt??'')<7*86400000))){stats.cached++;return;}
+  const previous=readCorpusJson<{logo?:string;validationVersion?:number;source?:string;matcherVersion?:number;retryable?:boolean;verifiedAt?:string;identityReview?:string;originalHash?:string;attempts?:unknown[]}>(file);
+  if(!(options.force&&options.only)&&!REJECTED_LOGO_HASHES.has(previous?.originalHash??'')&&previous?.validationVersion===LOGO_VALIDATION_VERSION&&(previous.source!=='wikidata-p154'||previous.matcherVersion===2)&&(previous.logo||previous.identityReview==='pending'||(!options.force&&!previous.retryable&&Date.now()-Date.parse(previous.verifiedAt??'')<7*86400000))){stats.cached++;return;}
   const general=generalInfoFor(company),patch=readCorpusJson<Enrichment>(`enrichment-v7/companies/${company.id}.json`);
   const existing=patch?.logo??company.logo;
   if(!general.LogoURL&&existing?.startsWith('https://eodhd.com/'))general.LogoURL=existing;
   if(!general.LogoURL&&/^[A-Z0-9-]{1,12}$/.test(company.exchange)&&/^[A-Za-z0-9&._-]{1,60}$/.test(company.code))general.LogoURL=`https://eodhd.com/img/logos/${company.exchange==='JP'?'TSE':company.exchange}/${company.code}.png`;
   if(!general.WebURL&&existing?.startsWith('https://icons.duckduckgo.com/ip3/'))general.WebURL='https://'+existing.split('/').at(-1)!.replace(/\.ico$/,'');
   if(!general.WebURL)general.WebURL=wikidataWebsite(company,websites)??undefined;
-  const {bytes,...result}=await resolveCompanyLogo(company,general,rows,request,hashes);
+  let resolved=await (manual[company.id]?resolveManualLogo(manual[company.id],request,hashes):Promise.resolve(null))??await resolveDeepLogo(company,general,[...rows,...websites],request,hashes,overrides[company.id],async attempts=>{
+   const cover=await reportCover(company.id,request,attempts,overrides[company.id]?.reportUrl);
+   if(cover){const crop=overrides[company.id]?.reportCrop;const bytes=await reviewedReportLogo(company.id,cover,crop);if(bytes&&crop){const logo=await stageBrand({url:crop.url+'#page=1',page:crop.url,source:'annual-report',bytes},request,hashes,attempts);if(logo)return {...logo,identityReview:'pending',crop};}else attempts.push({source:'annual-report',url:cover,outcome:'no unambiguous approved logo region on first page'});}
+   const related=[...(overrides[company.id]?.parent?[overrides[company.id].parent!]:[]),...company.listings.filter(id=>id!==company.id)];
+   for(const id of related){const cached=readCorpusJson<any>(`enrichment-v7/logos/${id}.json`);if(cached?.logo&&cached.asset&&cached.identityReview!=='pending'&&!REJECTED_LOGO_HASHES.has(cached.originalHash??'')&&cached.validationVersion===LOGO_VALIDATION_VERSION){const asset=readCorpusJson<{data:string}>(`enrichment-v7/logos/assets/${cached.asset}.json`);if(asset){attempts.push({source:'issuer-family',url:id,outcome:overrides[company.id]?.relationship??'same issuer listing'});return {...cached,source:overrides[company.id]?.parent===id&&!overrides[company.id]?.relationship?.startsWith('Same issuer')?'group-brand':'same-issuer',relatedIssuer:id,relationship:overrides[company.id]?.relationship??'same issuer listing',bytes:Buffer.from(asset.data,'base64')};}}}
+   for(const id of company.listings.filter(id=>id!==company.id)){const [code,exchange]=id.split('.');if(!code||!exchange)continue;const result=await stageBrand({url:`https://eodhd.com/img/logos/${exchange}/${code}.png`,page:id,source:'same-issuer'},request,hashes,attempts);if(result)return {...result,relatedIssuer:id,identityReview:'pending'};}
+   attempts.push({source:'issuer-family',outcome:related.length?'no validated related asset':'no verified related listing or shared parent brand'});return null;
+  });
+  if(!resolved.asset){const guarded=robotsRequest(request,resolved.attempts);const legacyRequest:typeof fetch=async(input,init)=>{const url=String(input);try{const response=await (/(?:^|\.)(?:eodhd\.com|wikimedia\.org|google\.com|duckduckgo\.com)$/.test(new URL(url).hostname)?request(input,init):guarded(input,init));resolved.attempts.push({source:'legacy-fetch',url,outcome:'HTTP '+response.status+' '+(response.headers.get('content-type')??'')});return response;}catch(error){resolved.attempts.push({source:'legacy-fetch',url,outcome:String(error)});throw error;}};const legacy=await resolveCompanyLogo(company,general,rows,legacyRequest,hashes);if(legacy.asset)resolved={...legacy,attempts:[...resolved.attempts,{source:'legacy-retry',url:legacy.sourceUrl,outcome:'validated image; identity review required'}],identityReview:'pending'};}
+  const {bytes,originalBytes,...result}=resolved;
   checkLogoDisk();
+  const latest=readCorpusJson<any>(file);
+  if(latest?.verifiedAt!==previous?.verifiedAt&&(latest?.logo||latest?.identityReview==='pending')&&!REJECTED_LOGO_HASHES.has(latest.originalHash??'')){writeCorpusJson(file,{...latest,attempts:[...(latest.attempts??[]),...result.attempts]});stats.cached++;return;}
+  if(originalBytes&&result.originalHash){const dir=corpusPath('enrichment-v7/logos/originals');mkdirSync(dir,{recursive:true});writeFileSync(`${dir}/${result.originalHash}.${result.format??'bin'}`,originalBytes);}
   if(bytes&&result.asset)writeCorpusJson(`enrichment-v7/logos/assets/${result.asset}.json`,{data:bytes.toString('base64')});
-  writeCorpusJson(file,{...result,logo:result.asset?`/api/value/logo?asset=${result.asset}`:null,validated:true,validationVersion:LOGO_VALIDATION_VERSION,matcherVersion:2,verifiedAt:new Date().toISOString()});
+  writeCorpusJson(file,{...result,attempts:[...(previous?.attempts??[]),...result.attempts],logo:result.asset&&result.identityReview!=='pending'?`/api/value/logo?asset=${result.asset}`:null,pendingLogo:result.asset&&result.identityReview==='pending'?`/api/value/logo?asset=${result.asset}`:undefined,validated:true,validationVersion:LOGO_VALIDATION_VERSION,matcherVersion:2,verifiedAt:new Date().toISOString()});
   stats.checked++;if(result.asset){stats.recovered++;stats.sources[result.source!]=(stats.sources[result.source!]??0)+1;}else stats.unavailable++;
   if(stats.checked%25===0)console.log(JSON.stringify(stats));
- }});
+ }});}finally{await closeLogoBrowser();}
  writeCorpusJson(`enrichment-v7/logos/runs/${runId}-after.json`,stats);console.log(stats);return stats;
 }

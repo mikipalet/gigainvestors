@@ -38,7 +38,7 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
  const fmt=(value:number|null,format:Parameters<typeof formatMetric>[0]['format']=m.chartFormat==='index'?'count':m.chartFormat==='ratio'?'x':m.chartFormat??(m.id==='opMarginCv'?'pct':m.format))=>formatMetric({value,format,currency,returnRatio:isCapitalReturn(m.chart)});
  if(window){
   same(tile.windows,[{values:{first:window.start,last:window.end,retained:window.retained,created:window.created},currency}],`${where} published retained window`);
-  same(drawer.stats,[['Retained',fmt(window.retained,'money')],['Value created',fmt(window.created,'money')],['Share growth / yr',fmt(t.metrics.shareCagr??null,'pct')],['$1 test',window.created>=window.retained?'Pass':'Fail'],['Window',`${window.start}–${window.end}`]],`${where} all window numbers`);
+  same(drawer.stats,[['Retained',fmt(window.retained,'money')],['Value created',fmt(window.created,'money')],['Shares / yr',fmt(t.metrics.shareCagr??null,'pct')],['$1 test',window.created>=window.retained?'Pass':'Fail'],['Window',`${window.start}–${window.end}`]],`${where} all window numbers`);
  }else if(summary){
   const bar=m.id==='opMarginCv'?`CV ≤ ${fmt(m.threshold,'x')}`:m.chartThreshold===null?'Over the window':`${(m.chartBetter??m.better)==='higher'?'≥':'<'} ${fmt(m.chartThreshold??m.threshold)}`;
   same(drawer.stats.slice(3),[['Passing bar',bar],['Years',String(m.series.filter(p=>p[1]!=null&&Number.isFinite(p[1])).length)]],`${where} threshold and observation count`);

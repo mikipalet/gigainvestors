@@ -36,3 +36,12 @@ it('preserves a sourced unit conversion through repeated derivation',async()=>{
  expect(deriveYears(deriveYears(corrected))[0].operatingIncome).toBe(61000);
  expect(deriveYears(corrected)[0].provenance?.operatingIncome?.source).toBe(facts[0].source);
 });
+it('joins a reviewed annual total to its uniquely matching week-based provider year',()=>{
+ const y={...emptyYear('2025-12-31','USD'),revenue:24942e6,netIncome:-5846e6,dilutedShares:1187e6};
+ const fact={end:'2025-12-27',currency:'USD',source:'https://issuer.example/annual',quote:'Net sales 24,942 million, year ended December 27, 2025.',values:{revenue:24942e6},correction:true};
+ const result=applyReportedFacts([y],[fact]);
+ expect(result).toHaveLength(1);expect(result[0]).toMatchObject({end:'2025-12-27',netIncome:-5846e6,dilutedShares:1187e6});
+ expect(applyReportedFacts(result,[fact])).toEqual(result);
+ expect(applyReportedFacts([{...y,revenue:1}],[fact])).toHaveLength(2);
+ expect(applyReportedFacts([y,{...y,end:'2025-12-30'}],[fact])).toHaveLength(3);
+});

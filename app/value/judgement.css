@@ -133,3 +133,28 @@
  .value-page .price-card .mini-price{min-height:150px}
  .value-page .valuation-math :is(th,td){padding-block:3px}
 }
+
+/* Every passage remains reachable; compact previews fit the initial drawer. */
+.business-depth[data-connections=false]{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.value-page .business-column>h3{margin-bottom:10px;font-size:19px}
+.business-column article{margin-bottom:12px}
+.business-readings>article,.flag-detail{padding-bottom:10px}
+.business-quote{margin:5px 0 8px}
+.business-quote blockquote{margin:4px 0}
+.value-page .business-column :is(p,blockquote,summary,a,td,th,small){line-height:1.4}
+.value-page .flag-group>h4{margin:12px 0 8px}
+.value-page .flag-detail h5{font-size:14px;margin-bottom:5px}
+.flag-full>summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px;color:var(--viz-muted)}
+.radial-network{max-width:290px;margin:8px auto;aspect-ratio:360/320}
+.value-page .business-depth .network-partner{font-size:13px;max-width:92px}
+.business-depth .relationship-list{margin-top:8px}
+.business-depth .relationship-list button{padding:6px 3px}
+.business-column:focus-visible{outline:1px solid var(--ink);outline-offset:-2px}
+@media(max-width:767px){.business-depth[data-connections=false]{display:block}}
+
+.business-quote-compact{margin:4px 0 0}.business-quote-compact>summary{cursor:pointer;color:var(--viz-muted)}
+
+.business-depth[data-columns="1"]{grid-template-columns:minmax(0,1fr)}
+.business-depth[data-columns="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.value-page .value-panel:has(.business-depth[data-columns="1"]){width:min(900px,100vw)}
+@media(max-width:767px){.business-depth[data-columns]{display:block}}

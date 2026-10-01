@@ -1,3 +1,4 @@
+import {publicBusiness} from './public';
 import {validShortText} from '../judgement/short-text';
 import type {ShortTextAnswer} from '../judgement/short-text';
 import type {Analysis} from '../types';
@@ -20,5 +21,11 @@ export function relationAmount(r:Relationship,owner?:string):string {
 }
 /** Only independently supported short answers reach the page; quotes stay in the drawer. */
 export function businessLines(a:Analysis):BusinessLine[]{
- return (a.businessOverview??[]).filter(l=>l.answer?.producer==='jev-choice'&&validEvidence(l.answer.evidence)&&l.answer.support>=.8&&l.text===l.answer.text&&validShortText(l.text,l.answer.evidence.quote)).slice(0,6);
+ const depth=publicBusiness(a.businessDepth,a);
+ const readings=(a.businessOverview??[]).filter(l=>l.kind!=='flag'&&l.kind!=='relationship'&&!/^(?:Repurchases its own shares|Pays dividends to shareholders|Sells apps (?:and digital content )?through Google Play)\./.test(l.text)).filter(l=>l.answer?.producer==='jev-choice'&&validEvidence(l.answer.evidence)&&l.answer.support>=.8&&l.text===l.answer.text&&validShortText(l.text,l.answer.evidence.quote));
+ const flags:BusinessLine[]=(depth?.flags??[]).map(f=>({id:f.id,text:f.label,priority:f.severity,why:f.why,tone:f.tone,evidence:f.evidence[0],kind:'flag'}));
+ const relation=[...(depth?.relationships??[])].sort((x,y)=>(y.percent??0)-(x.percent??0)||(y.amount??0)-(x.amount??0))[0];
+ const links:BusinessLine[]=relation?[{id:'relationships',text:`${relation.name} · ${relationLabel(relation,a.company.id)}${relationAmount(relation,a.company.id)?` · ${relationAmount(relation,a.company.id)}`:''}`,priority:relation.amount!=null||relation.percent!=null?82:55,why:relation.evidence[0].quote,evidence:relation.evidence[0],kind:'relationship'}]:[];
+ const candidates=[...readings.map(l=>({...l,priority:l.id==='reading-business'?100:/\d/.test(l.text)?80:Math.min(l.priority,45)})),...flags,...links];
+ return candidates.sort((x,y)=>y.priority-x.priority||x.id.localeCompare(y.id)).filter((l,i,all)=>all.findIndex(x=>x.text===l.text)===i).slice(0,6);
 }

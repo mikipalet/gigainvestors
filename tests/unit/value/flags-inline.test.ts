@@ -16,3 +16,7 @@ it('reconciles a rounded narrative duplicate with a precise table fact',()=>{
  const html=`<html>${context('annual')}<xbrli:unit id="usd"><xbrli:measure>iso4217:USD</xbrli:measure></xbrli:unit>${[['2.4',9,-8],['2440',6,-6]].map(([n,scale,decimals])=>`<tr><td>Depreciation <ix:nonFraction name="us-gaap:Depreciation" contextRef="annual" unitRef="usd" scale="${scale}" decimals="${decimals}">${n}</ix:nonFraction></td></tr>`).join('')}</html>`;
  expect(inlineObservations(html,meta).find(o=>o.metric==='depreciation')?.value).toBe(2440e6);
 });
+it('walks deeply nested annual HTML without exhausting the JavaScript stack',()=>{
+ const html='<html>'+ '<div>'.repeat(5000)+'<span>annual report</span>'+'</div>'.repeat(5000)+'</html>';
+ expect(()=>inlineObservations(html,{url:'https://example.com/annual',filed:'2026-02-01',period:'2025-12-31'})).not.toThrow();
+});

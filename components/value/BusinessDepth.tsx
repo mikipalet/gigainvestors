@@ -1,4 +1,5 @@
 'use client';
+import {publicBusiness} from '@/lib/value/flags/public';
 import {useEffect} from 'react';
 import type {Analysis} from '@/lib/value/types';
 import {BusinessQuote} from './BusinessQuote';
@@ -20,20 +21,21 @@ function FlagChart({flag}:{flag:BusinessFlag}){
  </figure>;
 }
 export function BusinessDepth({analysis,selected}:{analysis:Analysis;selected:string}){
- const j=analysis.judgement,flags=analysis.businessDepth?.flags??[],relationships=analysis.businessDepth?.relationships??[];
- useEffect(()=>{if(selected==='overview')return;const frame=requestAnimationFrame(()=>document.getElementById(`business-detail-${selected}`)?.scrollIntoView({block:'start'}));return()=>cancelAnimationFrame(frame);},[selected]);
- return <div className="business-depth">
-  <section className="business-column business-readings" aria-label="Business evidence"><h3>Customers, choices &amp; risks</h3>
-   {j?.business.map(r=>{const line=analysis.businessOverview?.find(l=>l.id===`reading-${r.id}`);return <article key={r.id} id={`business-detail-reading-${r.id}`}><h4>{TOPICS[r.id]?.label??r.id}</h4>{(line?.text??readingCopy[r.value])&&<p>{line?.text??readingCopy[r.value]}</p>}{line?.answer&&line.answer.evidence.quote!==r.evidence?.quote&&<BusinessQuote evidence={line.answer.evidence}/ >}{r.evidence&&r.evidence.section!=='wiki'&&<BusinessQuote evidence={r.evidence}/>}</article>;})}
-   {analysis.businessOverview?.filter(l=>!j?.business.some(r=>l.id===`reading-${r.id}`)&&l.kind!=='flag').map(l=><article key={l.id} id={`business-detail-${l.id}`}><h4>{l.text}</h4>{l.answer&&<BusinessQuote evidence={l.answer.evidence}/>}</article>)}
+ const j=analysis.judgement,depth=publicBusiness(analysis.businessDepth,analysis),flags=depth?.flags??[],relationships=depth?.relationships??[];
+ const hasBusiness=Boolean(j?.business.length||analysis.businessOverview?.some(l=>l.kind!=='flag'&&l.kind!=='relationship'));
+ useEffect(()=>{if(selected==='overview')return;const frame=requestAnimationFrame(()=>{const target=document.getElementById(`business-detail-${selected}`);const details=target?.querySelector<HTMLDetailsElement>('.flag-full');if(details)details.open=true;target?.scrollIntoView({block:'start'});});return()=>cancelAnimationFrame(frame);},[selected]);
+ return <div className="business-depth" data-connections={relationships.length>0} data-columns={Number(hasBusiness)+Number(flags.length>0)+Number(relationships.length>0)}>
+  {hasBusiness&&<section className="business-column business-readings" tabIndex={0} aria-label="Business evidence"><h3>Customers, choices &amp; risks</h3>
+   {j?.business.map(r=>{const line=analysis.businessOverview?.find(l=>l.id===`reading-${r.id}`);return <article key={r.id} id={`business-detail-reading-${r.id}`}><h4>{TOPICS[r.id]?.label??r.id}</h4>{(line?.text??readingCopy[r.value])&&<p>{line?.text??readingCopy[r.value]}</p>}{line?.answer&&line.answer.evidence.quote!==r.evidence?.quote&&<BusinessQuote compact evidence={line.answer.evidence}/ >}{r.evidence&&r.evidence.section!=='wiki'&&<BusinessQuote compact={r.id!=='business'} evidence={r.evidence}/>}</article>;})}
+   {analysis.businessOverview?.filter(l=>!j?.business.some(r=>l.id===`reading-${r.id}`)&&l.kind!=='flag').map(l=><article key={l.id} id={`business-detail-${l.id}`}><h4>{l.text}</h4>{l.answer&&<BusinessQuote compact evidence={l.answer.evidence}/>}</article>)}
 
    {j?.facts.filter(f=>!j.business.some(r=>r.evidence?.url===f.url)).slice(0,1).map((f,i)=><p key={i}><a href={f.url} target="_blank" rel="noreferrer">{f.text.startsWith('Official website:')?'Official website details':'Company background'} ↗</a></p>)}
-  </section>
-  <section className="business-column business-flags" aria-label="Flags by theme"><h3>Flags to understand <span>{flags.length}</span></h3>
+  </section>}
+  {flags.length>0&&<section className="business-column business-flags" tabIndex={0} aria-label="Flags by theme"><h3>Flags to understand <span>{flags.length}</span></h3>
    {THEMES.map(theme=>{const group=flags.filter(f=>f.theme===theme);return group.length?<section key={theme} className="flag-group"><h4>{theme}</h4>{group.map(f=><article key={f.id} className="flag-detail" id={`business-detail-${f.id}`} data-selected={selected===f.id}>
-    <h5><i className={`flag-dot ${f.tone}`} aria-hidden="true"/><span className="sr-only">{f.tone==='red'?'Risk: ':'Strength: '}</span>{f.label}</h5><p>{f.why}</p><FlagChart flag={f}/>{f.evidence.map((e,i)=><BusinessQuote key={i} evidence={e}/>)}<p className="buffett-question"><strong>What Buffett would ask</strong>{f.question}</p>
+    <h5><i className={`flag-dot ${f.tone}`} aria-hidden="true"/><span className="sr-only">{f.tone==='red'?'Risk: ':'Strength: '}</span>{f.label}</h5><p>{f.why}</p><details className="flag-full"><summary>Evidence &amp; annual observations</summary><FlagChart flag={f}/>{f.evidence.map((e,i)=><BusinessQuote key={i} evidence={e}/>)}<p className="buffett-question"><strong>What Buffett would ask</strong>{f.question}</p></details>
    </article>)}</section>:null;})}
-  </section>
-  <section className="business-column business-connections" id="business-detail-relationships" aria-label="Relationships disclosed in filings"><h3>Relationships disclosed in filings</h3><p className="relationships-scope">Disclosed counterparties, with ownership links from Wikidata labelled separately. This does not cover the full bond, project-finance or asset-backed financing network.</p><RelationshipsMap owner={analysis.company} relationships={relationships}/></section>
+  </section>}
+  {relationships.length>0&&<section className="business-column business-connections" tabIndex={0} id="business-detail-relationships" aria-label="Relationships disclosed in filings"><h3>Relationships disclosed in filings</h3><p className="relationships-scope">Economic dependencies and investments disclosed in filings. The map covers only the named links below.</p><RelationshipsMap owner={analysis.company} relationships={relationships}/></section>}
  </div>;
 }

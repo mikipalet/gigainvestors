@@ -22,7 +22,7 @@ it('rejects 32px, truncated rasters, banners, unsafe SVG, and accepts scalable m
  expect(await validLogo(png)).toBe(true);
  expect(await validLogo(await sharp(png).resize(32,32).toBuffer())).toBe(false);
  expect(await validLogo(png.subarray(0,50))).toBe(false);
- expect(await validLogo(await sharp(png).resize(900,100).toBuffer())).toBe(false);
+ expect(await validLogo(await sharp(png).resize(1600,100).toBuffer())).toBe(false);
  expect(await validLogo(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 0h16v16H0z"/></svg>'))).toBe(true);
  expect(await validLogo(Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><script>alert(1)</script></svg>'))).toBe(false);
 });
@@ -93,7 +93,7 @@ it('allows a transparent 200px brand wordmark, but never promotes a 32px favicon
  expect(await validLogo(mark,undefined,false,true)).toBe(true);
  expect(await validLogo(mark)).toBe(false);
  expect(await validLogo(await sharp(mark).resize(32,32).toBuffer(),undefined,false,true)).toBe(false);
- expect(await validLogo(await sharp(mark).resize(900,100).toBuffer(),undefined,false,true)).toBe(false);
+ expect(await validLogo(await sharp(mark).resize(1600,100).toBuffer(),undefined,false,true)).toBe(false);
 });
 it('recognizes a brand link to a localized index page on the same official host',()=>{
  expect(officialCandidates('<a href="/en/index.html"><img src="/logo.svg"></a>','https://issuer.test/').map(c=>c.url)).toEqual(['https://issuer.test/logo.svg']);

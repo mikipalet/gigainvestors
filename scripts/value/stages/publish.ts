@@ -299,9 +299,14 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
   return analyses;
 }
 
-export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string }): Promise<void> {
+export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string; overwrite?: boolean }): Promise<void> {
   const out = options.out === undefined ? undefined : path.resolve(options.out);
-  if (out && existsSync(out) && readdirSync(out).length) throw new Error("--out requires a new or empty directory");
+  if (options.overwrite && !out) throw new Error('--overwrite requires local --out');
+  if (out && existsSync(out) && readdirSync(out).length) {
+    if (!options.overwrite) throw new Error('--out requires a new or empty directory, or --overwrite for an existing snapshot');
+    if (!existsSync(path.join(out, 'meta.json')) || !existsSync(path.join(out, 'index'))) throw new Error('--overwrite requires an existing local snapshot');
+    if (existsSync(path.join(out, '.git'))) throw new Error('--overwrite cannot target a git repository');
+  }
   if (!T.publish.indexMembersOnly) throw new Error("Publication requires indexMembersOnly");
   const membership = readCorpusJson<{ complete: boolean; memberships: Record<string, string[]>; supplementalCompanies?: Company[] }>("index-membership/latest.json");
   if (!membership || (!membership.complete && !(out && options.force))) throw new Error("Run index-membership and resolve its coverage report before publish (incomplete snapshots may only be inspected with --out --force)");

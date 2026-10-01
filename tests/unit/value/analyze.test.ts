@@ -204,6 +204,11 @@ it("ignores market cap and unused metadata changes but invalidates analysis inpu
     await analyze(options);
   }
   expect(calls).toBe(7);
+  writeCorpusJson('companies/KO.US.json', {...metadata,name:'3i Group PLC'});
+  await analyze(options);
+  expect(calls).toBe(8);
+  expect(readCorpusJson<Analysis>('analysis/KO.US.json')?.company.investmentHolding).toBe(true);
+  expect(readCorpusJson<Analysis>('analysis/KO.US.json')?.valuation).toBeNull();
 });
 
 it("maps ISO GB to UK10Y while leaving other bond country codes unchanged", async () => {

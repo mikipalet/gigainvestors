@@ -1,3 +1,4 @@
+import { isInvestmentHolding } from './investment-nav';
 import { qualityMetric } from './quality-metric';
 import { publishedBuyPrice } from './buy-price';
 import { T } from './config';
@@ -62,9 +63,11 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
   const numeric = runNumericTests({ years: prefix.years, kind: company.kind, industry: company.industry, priceHistoryPending: false });
   const t5 = prefix.integrity.ok ? QUALITY_TESTS.map(key => numeric[key as keyof typeof numeric].numeric[0].toUpperCase()).join('') : 'UUUUU';
   const volatility = earningsVolatility({ opMarginCv: (numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null) });
-  const valuation = prefix.integrity.ok && bondYield !== null && Number.isFinite(bondYield) && positive(fxRate)
-    ? valueCompany({ years: prefix.years, kind:company.kind, currency:prefix.currency, bondYield,
+  const investmentHolding = isInvestmentHolding(company, prefix.years);
+  const valuation = prefix.integrity.ok && (investmentHolding || bondYield !== null && Number.isFinite(bondYield)) && positive(fxRate)
+    ? valueCompany({ investmentHolding, years: prefix.years, kind:company.kind, currency:prefix.currency, bondYield,
       cyclical:(numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null) !== null && volatility === 'volatile', priceHistory:pastPrices, qualityPass:t5 === "PPPPP" }).valuation : null;
+  if (investmentHolding && !valuation) return null;
   const v: [number,number,number] | null = valuation ? [valuation.perShare.low*fxRate!, valuation.perShare.mid*fxRate!, valuation.perShare.high*fxRate!] : null;
   const flags = valuationFlags({ price, mid:v?.[1]??null, assumptions:valuation?.assumptions??[] });
   if (valuation && fxRate) valuation.perShareTrading = {currency:company.currency,fxRate,low:v![0],mid:v![1],high:v![2]};

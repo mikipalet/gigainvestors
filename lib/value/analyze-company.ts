@@ -1,3 +1,4 @@
+import { isInvestmentHolding, navPerShare } from './investment-nav';
 import { deriveYears } from './derive';
 import { companyEvents, earningsVolatility, perShareSeries, valueHistory } from "./history";
 import { createUsdRate } from "./fx";
@@ -11,7 +12,7 @@ import { runNumericTests } from "./tests";
 import { valueCompany, valuationMargin } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory, Year } from "./types";
 
-export const PIPELINE_VERSION = "17";
+export const PIPELINE_VERSION = "18";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -37,6 +38,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
       ...(marketCap!==null?{marketCap:{source:`prices-history/${company.id}`,field:'fiscal-end close × diluted shares / reporting-to-trading FX',method:'derived' as const,inputs:[`close: ${close}`,`dilutedShares: ${year.dilutedShares}`,`FX: ${rate}`]}}:{}),
     }};
   }));
+  company = { ...company, investmentHolding: isInvestmentHolding(company, years) };
   onDerivedYears?.(years);
   const numeric = runNumericTests({ years, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
   const tests = {} as Analysis["tests"];
@@ -56,9 +58,9 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   const resolvedBondYield = bondYield;
   const { valuation, reason } = !fundamentals.integrity.ok
     ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
-    : resolvedBondYield === null
+    : resolvedBondYield === null && !company.investmentHolding
       ? { valuation: null, reason: "Local government bond yield unavailable" }
-      : valueCompany({ years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm, qualityPass: Object.values(tests).every(test => test.result === "pass") });
+      : valueCompany({ investmentHolding: company.investmentHolding, years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm, qualityPass: Object.values(tests).every(test => test.result === "pass") });
   const requiredMos = valuationMargin(valuation, volatility);
   if (valuation) {
     if (company.source === "edinet" && !years.at(-1)?.edinetShares) valuation.assumptions.push("Unverified JP share count unreconciled: EDINET share facts unavailable");
@@ -69,9 +71,9 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
   return { reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
-    valueHistory: valueHistory({ fundamentals, kind: company.kind, industry: company.industry, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
+    valueHistory: valueHistory({ investmentHolding: company.investmentHolding, fundamentals, kind: company.kind, industry: company.industry, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"],
-    events: companyEvents(fundamentals), series: perShareSeries(fundamentals),
+    events: companyEvents(fundamentals), series: company.investmentHolding ? { navPerShare: years.map(y => [y.fy, navPerShare(y)]) } : perShareSeries(fundamentals),
     id: company.id, company, asOf: new Date().toISOString(),
     status: fundamentals.integrity.ok ? "scored" : "insufficient_data", report, tests,
     valuation, valuationReason: reason, versions: { pipeline: PIPELINE_VERSION, questions: QUESTIONS_VERSION } };

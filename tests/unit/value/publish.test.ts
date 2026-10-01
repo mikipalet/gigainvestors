@@ -79,6 +79,15 @@ describe("buildOutput", () => {
     expect(JSON.parse(readFileSync(path.join(out, "prices/US.json"), "utf8"))["KO.US"]).toEqual([60, "2026-09-29"]);
     expect(existsSync(path.join(out, ".git"))).toBe(false);
     await expect(publish({ out })).rejects.toThrow("new or empty directory");
+    writeFileSync(path.join(out, 'audit-note.txt'), 'retain local review evidence');
+    writeFileSync(path.join(out, 'dossiers/999.json'), JSON.stringify({'OLD.US':{id:'OLD.US'}}));
+    await publish({ out, overwrite: true });
+    expect(existsSync(path.join(out, 'dossiers/999.json'))).toBe(false);
+    expect(readFileSync(path.join(out, 'audit-note.txt'), 'utf8')).toBe('retain local review evidence');
+    expect(JSON.parse(readFileSync(path.join(out,'prices/US.json'),'utf8'))['KO.US']).toEqual([60,'2026-09-29']);
+    await expect(publish({ overwrite: true })).rejects.toThrow('requires local --out');
+    mkdirSync(path.join(out,'.git'));
+    await expect(publish({ out, overwrite: true })).rejects.toThrow('cannot target a git repository');
   });
   it("refuses publication without index membership and excludes nonmembers", async () => {
     const { default: publish } = await import("@/scripts/value/stages/publish");
@@ -626,4 +635,14 @@ it('excludes nonmembers from dossiers, search, counts and history including part
  expect(read(`dossiers/${shardOf(member.id)}.json`)[member.id].company.indexes).toEqual(['S&P 500']);
  const search=readdirSync(path.join(repo,'search')).map(f=>readFileSync(path.join(repo,'search',f),'utf8')).join('');
  expect(search).not.toContain('NOISE.US');
+});
+
+it('withholds investment holdings without NAV from indexes and dossiers, including short history',()=>{
+ for(const years of [5,11]){
+  const row=analysis('III.LSE');row.company.investmentHolding=true;row.valuation=null;
+  row.historyCoverage!.years=years;
+  const files=output([row]);
+  expect(Object.entries(files).filter(([key])=>key.startsWith('dossiers/')).flatMap(([,v])=>Object.keys(v as object))).not.toContain(row.id);
+  expect((files['index/default.json'] as IndexRow[]).map(r=>r.id)).not.toContain(row.id);
+ }
 });

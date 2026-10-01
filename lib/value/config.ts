@@ -36,7 +36,7 @@ export const T = {
     operatingCashRatio: 0.02,
     minDiscount: 0.10, bondSpread: 0.04, maxGrowth: 0.08, terminal: 0.03,
     finMaxRoe: 0.25, finMaxGrowth: 0.06,
-    compounderMaxGrowth: 0.12, compounderMinRoic: 0.20, compounderMos: 0.15,
+    compounderReturnBasis: 'owner_earnings' as const, compounderMinReturnYears: 8, compounderMinTotalReturn: 0.15, compounderMaxGrowth: 0.12, compounderMinRoic: 0.20, compounderMos: 0.15,
     leverageModerate: 3, leverageVolatile: 5, // Net debt / normalized owner earnings.
   },
   jev: { contradict: 0.7, trustAgreement: 0.85, evidence: 0.6, commodityCyclical: 0.6, chunkTokens: 24_000, minParagraphChars: 200 },

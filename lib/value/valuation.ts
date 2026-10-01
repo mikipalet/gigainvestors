@@ -1,6 +1,7 @@
+import { valueInvestmentHolding } from './investment-nav';
 import { parentShare } from "./parent-share";
 import { T } from "./config";
-import { financialBvps, tangibleEquity, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roic, roiic, sum, withZeroDefaults } from "./metrics";
+import { financialBvps, tangibleEquity, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roic, returnOnTotalCapital, roiic, sum, withZeroDefaults } from "./metrics";
 import { ownerEarningsBridge } from "./owner-earnings";
 import type { Kind, Valuation, Year, PriceHistory, Volatility } from "./types";
 
@@ -30,6 +31,7 @@ export function compounderGrowth(years: Year[]): number | null {
 }
 
 export function valuationMargin(v: Valuation | null, volatility: Volatility): number {
+  if (v?.method === 'nav') return .15;
   const base = v?.tier === 'compounder' ? T.valuation.compounderMos : T.price.requiredMos[volatility];
   return Math.max(base, v?.leverage === 'volatile' ? T.price.requiredMos.volatile : v?.leverage === 'moderate' ? T.price.requiredMos.moderate : 0);
 }
@@ -71,9 +73,10 @@ function reinvestmentRate(years: Year[]): number | null {
   return investments.some(x => x === null) || profits.some(x => x === null) ? null : ratio(sum(present(investments)), sum(present(profits)));
 }
 
-export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, priceHistory = null, qualityPass = false, version = T.valuation.version }: {
-  qualityPass?: boolean; version?: 1 | 2; years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; priceHistory?: PriceHistory | null;
+export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, priceHistory = null, qualityPass = false, investmentHolding = false, version = T.valuation.version }: {
+  investmentHolding?: boolean; qualityPass?: boolean; version?: 1 | 2; years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; priceHistory?: PriceHistory | null;
 }): { valuation: Valuation | null; reason: string | null } {
+  if (investmentHolding) return valueInvestmentHolding(years, currency);
   const ys = withZeroDefaults(years).sort((a, b) => a.fy - b.fy), latest = ys.at(-1);
   const fallback = latest && !(latest.dilutedShares && latest.dilutedShares > 0) && shareSource === 'yahoo-shares' && reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0;
   if (!latest || (!(latest.dilutedShares && latest.dilutedShares > 0) && !fallback)) return { valuation: null, reason: "no share count" };
@@ -160,7 +163,13 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const organicGrowth = organicRevenueGrowth(ys, revenueGrowth);
   const estimates = present([oeGrowth, revenueGrowth, organicGrowth, incremental === null || reinvestment === null ? null : incremental * reinvestment]);
   const finiteRoic = last(ys,10).map(roic).filter((r): r is number => r !== null && Number.isFinite(r));
-  const ownGrowth = version === 2 && qualityPass && !cyclical && finiteRoic.length >= 8 && median(finiteRoic)! >= T.valuation.compounderMinRoic ? compounderGrowth(ys) : null;
+  // Use the same annual owner-earnings numerator for every company, retaining
+  // maintenance investment and lease cash charges rather than selecting a more
+  // favourable numerator case by case.
+  const totalReturns = history.filter(row => row.year.fy > latest.fy - 10).map(row => returnOnTotalCapital(row.year, row.value)).filter((r): r is number => r !== null && Number.isFinite(r));
+  const capitalReturns = { excludingGoodwill: median(finiteRoic), includingAcquisitions: median(totalReturns), observations: totalReturns.length, basis: T.valuation.compounderReturnBasis };
+  const totalReturnPass = totalReturns.length >= T.valuation.compounderMinReturnYears && capitalReturns.includingAcquisitions! + Number.EPSILON >= T.valuation.compounderMinTotalReturn;
+  const ownGrowth = version === 2 && qualityPass && !cyclical && totalReturnPass && finiteRoic.length >= 8 && median(finiteRoic)! >= T.valuation.compounderMinRoic ? compounderGrowth(ys) : null;
   const tier = ownGrowth !== null ? 'compounder' : 'standard';
   const growth = decliningRevenue ? 0 : ownGrowth ?? clamp({ value: estimates.length ? Math.min(...estimates) : 0, min: 0, max: T.valuation.maxGrowth });
   if (discountRate <= T.valuation.terminal) return { valuation: null, reason: "required return does not exceed terminal growth" };
@@ -172,6 +181,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   if (last(years, window).some(y => y.sbc === null)) assumptions.push("stock compensation not reported");
   if (!estimates.length && tier !== 'compounder') assumptions.push("growth estimates unavailable; using zero growth");
   assumptions.push(organicGrowth === null ? 'organic growth proxy unavailable' : 'revenue CAGR reduced by acquisition proxy share of positive assets added over ten years', tier === 'compounder' ? 'durable compounder: winsorised ten-year per-share owner-earnings CAGR capped at 12%, fading to 3% over ten years' : 'operating growth capped at 8%');
+  assumptions.push('Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt − excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged');
   assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", `owner earnings use the ${window}-year median capped at latest-year owner earnings and complete newer TTM owner earnings`, "maintenance capex floored at the smaller of capex and D&A",
     ttmRow?.value === normalized ? "bridge components use TTM owner earnings; full TTM capex deducted; latest annual lease liabilities used" : normalized < medianEarnings ? "bridge components use the latest owner earnings observation" : "bridge components use the median owner earnings observation");
   if (recent.some(row => row.year.leaseCash != null)) assumptions.push("Reported capitalized lease repayments charged in owner earnings; corresponding lease obligations excluded from debt");
@@ -180,7 +190,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const ordered = [...recent].sort((a, b) => a.value - b.value);
   const center = Math.floor(ordered.length / 2);
   const representative = ttmRow?.value === normalized ? [ttmRow as typeof latestRow] : normalized < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
-  return { reason: null, valuation: { ...common, tier, netDebt, leverage, riskFlags, method: "owner_earnings", normalized, growth, netCash,
+  return { reason: null, valuation: { ...common, tier, capitalReturns, netDebt, leverage, riskFlags, method: "owner_earnings", normalized, growth, netCash,
     perShare: { low: (pv(growth / 2, discountRate + 0.01) + netCash) / shares, mid: (midPv + netCash) / shares, high: (pv(growth, highRate) + netCash) / shares },
     equityBondYield: ratio(normalized, latest.marketCap),
     bridge: [

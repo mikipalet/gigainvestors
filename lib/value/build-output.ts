@@ -1,4 +1,4 @@
-import { isDecided, shortHistory } from './publication-eligibility';
+import { isDecided, shortHistory, missingInvestmentNav } from './publication-eligibility';
 import { withAnalysisHistory } from './test-history';
 import { publicAnalysis } from './public-analysis';
 import { buyReturnInputs } from "./owner-return";
@@ -66,7 +66,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const funnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   for (const analysis of sorted) {
     if (!isDecided(analysis)) {
-      if (shortHistory(analysis)) {
+      if (shortHistory(analysis) && !missingInvestmentNav(analysis)) {
         const dossier: Dossier={...analysis,w:null,b:false,holders:[],series:analysis.series??{}};
         (shards[shardOf(analysis.id)]??={})[analysis.id]=publicAnalysis(dossier);
       }

@@ -12,6 +12,9 @@ export function reconcileShares(observations:ShareObservation[]):ShareCheck {
 export function applyShareCheck<T extends import('./types').Analysis>(analysis:T,check:ShareCheck|null):T {
  if(!analysis.valuation||!check)return analysis;
  if(check.status!=='verified'||!check.shares||check.checkedAt&&Date.now()-Date.parse(check.checkedAt)>7*86400_000)return {...analysis,valuation:{...analysis.valuation,assumptions:[...analysis.valuation.assumptions,'Unverified share count: independent sources do not yet reconcile']}};
+ // Reported NAV/share is already a per-share observation. Current share-count
+ // corroboration must not re-denominate it as though it were aggregate earnings.
+ if(analysis.valuation.method==='nav')return {...analysis,valuation:{...analysis.valuation,shareSources:2,shares:check.shares}};
  const v=analysis.valuation,factor=v.shares/check.shares;
  const range=(r:{low:number;mid:number;high:number})=>({...r,low:r.low*factor,mid:r.mid*factor,high:r.high*factor});
  return {...analysis,valuation:{...v,shareSources:2,shares:check.shares,perShare:range(v.perShare),...(v.perShareTrading?{perShareTrading:range(v.perShareTrading)}:{}),

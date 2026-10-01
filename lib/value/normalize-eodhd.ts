@@ -99,6 +99,12 @@ export function normalizeEodhd(raw: unknown, id: Id): { fundamentals: Fundamenta
       ? null : Math.max(0, currentIntangibles - previousIntangibles);
     byYear.set(fy, {
       ...(typeof income.restated === 'boolean' ? { restated: income.restated } : {}),
+      navPerShare: number(balance.netAssetValuePerShare ?? balance.navPerShare),
+      investmentNav: number(balance.netAssetValue ?? balance.investmentNAV),
+      sharesOutstanding: number(balance.commonStockSharesOutstanding),
+      dividendsPerShare: number(income.dividendsPerShare ?? cash.dividendsPerShare),
+      fairValueGains: number(income.fairValueGains ?? income.netGainsOnInvestmentsAtFairValue),
+      totalIncome: number(income.totalIncome ?? income.totalRevenue),
       commonNetIncome: number(income.netIncomeApplicableToCommonShares),
       preferredEquity: number(balance.preferredStockTotalEquity),
       commonDividendsPaid: absolute(cash.commonDividendsPaid),

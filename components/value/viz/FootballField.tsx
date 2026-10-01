@@ -26,7 +26,7 @@ export function FootballField({ valuation: v, price, mismatch, requiredMos = T.p
   const buyLabel = `buy below ${money(buyBelow)} (${requiredMos * 100}% below mid${volatility ? `, earnings are ${volatility === 'moderate' ? 'moderately volatile' : volatility}` : ''})`;
   const marks = [{ x: x(buyBelow), y: 48, text: buyLabel }, { x: x(low), y: 103, text: `Low estimate ${money(low)}` }, { x: x(mid), y: 80, text: `Midpoint ${money(mid)}` }, { x: x(high), y: 103, text: `High estimate ${money(high)}` }, ...(comparedPrice === null ? [] : [{ x: x(comparedPrice), y: 64, text: `Price must ${comparedPrice>buyBelow ? `fall ${((1-buyBelow/comparedPrice)*100).toFixed(0)}% to reach` : `rise ${((buyBelow/comparedPrice-1)*100).toFixed(0)}% to leave`} the buy line at ${money(buyBelow)}` }])];
   return <figure ref={ref} className="value-viz mt-5" data-testid="football-field">
-    <figcaption><h2 className="text-lg font-semibold">{uncertainty ?? conclusion}</h2><p className="mt-1 text-xs text-ink/60">{v.method === 'book_value' ? 'Book value' : 'Owner earnings'} · value per share, {v.currency}.</p><p className="sr-only">{summary}</p></figcaption>
+    <figcaption><h2 className="text-lg font-semibold">{uncertainty ?? conclusion}</h2><p className="mt-1 text-xs text-ink/60">{v.method === 'nav' ? 'NAV' : v.method === 'book_value' ? 'Book value' : 'Owner earnings'} · value per share, {v.currency}.</p><p className="sr-only">{summary}</p></figcaption>
     <p className="mt-3 text-xs">{buyLabel}</p>
     <ChartInteraction points={marks} width={width} height={212} label="Valuation and price marks" fallback={mismatch ?? (price === null ? 'No price yet' : undefined)}>
     <svg aria-hidden="true" width="100%" height="212" viewBox={`0 0 ${width} 212`}>

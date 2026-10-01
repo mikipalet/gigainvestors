@@ -1,3 +1,4 @@
+import { isInvestmentHolding } from '../../../lib/value/investment-nav';
 import { fillYears } from '../../../lib/value/completeness/second-sources';
 import { deriveYears } from '../../../lib/value/derive';
 import { universeCompanies } from '../../../lib/value/companies';
@@ -102,7 +103,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         const localBondYield = fundamentals.integrity.ok ? await getBondYield(company.country) : null;
         const fingerprint = createHash("sha256").update(JSON.stringify({
           company: {
-            id: company.id, kind: company.kind, currency: company.currency, country: company.country,
+            id: company.id, investmentHolding: isInvestmentHolding(company, fundamentals.years), kind: company.kind, currency: company.currency, country: company.country,
             description: company.description, sector: company.sector, industry: company.industry,
           }, fundamentals, report, sections, priceHistory, priceHistoryPending, shareInputs,
           bondYieldBucket: localBondYield === null ? null : Math.round(localBondYield * 1000),

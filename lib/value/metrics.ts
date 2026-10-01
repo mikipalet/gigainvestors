@@ -68,6 +68,16 @@ export function roic(y: Year): number | null {
   const fallback = y.equity! + y.totalDebt! + (y.debtIncludesLeases ? 0 : y.leaseLiabilities ?? 0);
   return capital <= 0 ? fallback > 0 ? profit / fallback : profit > 0 ? 1.000001 : 0 : profit / capital;
 }
+/** Earnings on all capital paid, including goodwill and acquired intangibles.
+ * Retain the operating cash reserve; avoid counting leases already in debt twice.
+ * Nonpositive or missing capital cannot establish the compounder return hurdle. */
+export function returnOnTotalCapital(y: Year, profit: number | null = nopat(y)): number | null {
+  if ([y.equity, y.totalDebt, y.cash, y.revenue].some(x => x == null || !Number.isFinite(x))) return null;
+  const excessCash = Math.max(0, y.cash! - T.valuation.operatingCashRatio * y.revenue!);
+  const capital = y.equity! + y.totalDebt! + (y.debtIncludesLeases ? 0 : y.leaseLiabilities ?? 0) - excessCash;
+  return capital > 0 && profit !== null && Number.isFinite(profit) ? profit / capital : null;
+}
+
 export function tangibleEquity(y: Year): number | null {
   const intangible = goodwillAndIntangibles(y);
   return y.equity === null || intangible === null ? null : y.equity - intangible;

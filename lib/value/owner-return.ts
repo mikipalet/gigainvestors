@@ -17,6 +17,11 @@ function reportingCapital(v: Valuation | null, trading: string, capUsd: number |
 export function ownerReturn(v: Valuation | null, trading: string, capUsd: number | null, price: number | null) {
  const capital=reportingCapital(v,trading,capUsd,price);
  if(!v||capital===null||!Number.isFinite(v.normalized)||!Number.isFinite(v.growth))return null;
+ if (v.method === 'nav') {
+  if (!v.navReturn || !Number.isFinite(v.navReturn.cagr)) return null;
+  const cash = v.normalized * v.shares * v.navReturn.cagr;
+  return {cash,capital,currency:v.currency,yield:cash/capital,growth:0,expected:cash/capital};
+ }
  const cash=v.method==='owner_earnings'?v.normalized:v.financialReturn?v.financialReturn.cashPerShare*v.shares:null;
  if(cash===null||!Number.isFinite(cash))return null;
  // The published growth is the valuation's capped stage-one assumption, not
@@ -27,11 +32,13 @@ export function ownerReturn(v: Valuation | null, trading: string, capUsd: number
 }
 export function requiredReturnCopy(v: Valuation | null, country: string) {
  if (!v || !Number.isFinite(v.discountRate)) return '';
+ if (v.method === 'nav') return 'required return 10.0% a year';
  const rate = `required return ${(v.discountRate * 100).toFixed(1)}% a year`;
  return v.bondYield === null || !Number.isFinite(v.bondYield) ? rate
   : `${rate} (${v.discountRate === T.valuation.minDiscount ? '10% floor; ' : ''}${country} 10-year bond ${(v.bondYield * 100).toFixed(1)}% + 4 points)`;
 }
 export function expectedReturnCopy(owner: NonNullable<ReturnType<typeof ownerReturn>>, valuation: Valuation | null, country: string) {
+ if (valuation?.method === 'nav') return `About ${(owner.expected*100).toFixed(1)}% a year expected (NAV and dividend compounding adjusted for price / NAV) vs required return 10.0% a year`;
  // Keep the total rounded from the full calculation. Use extra precision when
  // rounding each component to one decimal would make their displayed sum differ.
  const digits=[1,2,3,4].find(d=>{

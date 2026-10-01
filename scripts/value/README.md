@@ -215,3 +215,34 @@ history snapshots, and price refresh. Compact `buyReturnInputs` preserve cash pe
 share in trading currency, capped growth and the required return so refreshed
 quotes recompute cash yield plus growth. Missing expected returns cannot pass.
 Dossiers and index cards use the same quote-based expected return calculation.
+
+
+### Acquisition capital and investment NAV
+
+Compounder valuation additionally requires a median annual owner-earnings return
+of at least 15% on equity + debt + leases not already in debt − excess cash.
+Goodwill and acquired intangibles stay in that capital base. Excess cash is cash
+above the existing 2%-of-revenue operating reserve. Both return medians use the
+last ten fiscal years and at least eight valid observations; the existing quality
+tests are unchanged. A failed or unsupported total-capital hurdle selects standard
+valuation, without changing the quality result.
+
+Named investment holdings (excluding Berkshire) use NAV valuation. Other Asset
+Management / Capital Markets companies require five complete years with aggregate
+fair-value gains above 50% of aggregate total income. Missing gains are unknown,
+not zero. NAV must be explicitly reported (`navPerShare` or `investmentNav`), never
+substituted from consolidated operating book equity. Eleven annual NAV points and
+ten annual dividends produce a ten-year reinvested total-return CAGR, capped at
+12%. Expected return is that rate divided by price/NAV; the buy checks require
+price ≤ 85% of NAV and expected return ≥ 10%. Without the NAV history, holdings
+remain in the private undecided list and are absent from public views.
+
+To replace an existing local snapshot while retaining its audit/QA files:
+
+```sh
+npm run value -- publish --out /absolute/local/snapshot --overwrite
+npx tsx scripts/value/buy-audit.ts /absolute/local/snapshot
+```
+
+`--overwrite` requires `--out` and refuses a Git repository. It does not authorize
+remote publication, commits, pushes, or revalidation.

@@ -1,3 +1,4 @@
+import { isInvestmentHolding } from '../../lib/value/investment-nav';
 /** Offline analysis. Run: npx tsx scripts/value/buffett-calibrate.ts
  * Sources fetched separately by buffett-filings.py. No writes to live corpus.
  */
@@ -154,7 +155,7 @@ function evaluate(p:any, lagMissing=false){
  const comparisonFlags=valuationFlags({price,mid:v?.perShareTrading?.mid??null,assumptions:v?.assumptions??[]});
  const eligible=integrity.ok&&fx!==null&&comparisonFlags.length===0;
  const before=scorePurchase(fx!==null?v:null,mos,price,t5,eligible);
- const revised=V2?valueCompany({years,kind:c.kind,currency:reporting,bondYield:bond?.yield??null,cyclical:vol==='volatile',priceHistory:[...monthly] as PriceHistory,qualityPass:t5==='PPPPP',version:2}):null;
+ const revised=V2?valueCompany({investmentHolding:isInvestmentHolding(c,years),years,kind:c.kind,currency:reporting,bondYield:bond?.yield??null,cyclical:vol==='volatile',priceHistory:[...monthly] as PriceHistory,qualityPass:t5==='PPPPP',version:2}):null;
  if(revised?.valuation&&fx){const a=revised.valuation;a.perShareTrading={currency:c.currency,fxRate:fx,low:a.perShare.low*fx,mid:a.perShare.mid*fx,high:a.perShare.high*fx};}
  const proposal=V2?{valuation:revised?.valuation??null,mos:valuationMargin(revised?.valuation??null,vol),eligible:revised?.valuation?.tier==='compounder'}:v?proposeValuation({valuation:v,years,t5,cv,mos}):null;
  const afterValue=V2?proposal?.valuation??null:proposal?.valuation??v;
@@ -206,7 +207,7 @@ for(const file of readdirSync(path.join(ROOT,'analysis')).filter(f=>f.endsWith('
  const inputs=f?{years:f.years,kind:a.company.kind,currency:f.currency,bondYield:previous?.bondYield??null,cyclical:a.volatility==='volatile',currentShares:previous?.shares??null,shareSource:previous?.sharesSource,ttm:f.ttm,qualityPass:t5==='PPPPP'}:null;
  const convert=(value:Valuation|null)=>{if(value&&previous?.perShareTrading){const {currency,fxRate}=previous.perShareTrading;value.perShareTrading={currency,fxRate,low:value.perShare.low*fxRate,mid:value.perShare.mid*fxRate,high:value.perShare.high*fxRate};}if(value&&previous?.shareSources)value.shareSources=previous.shareSources;return value;};
  if(V2)v=inputs&&a.status==='scored'?convert(valueCompany({...inputs,version:1}).valuation):null;
- const revised=V2&&inputs&&a.status==='scored'?convert(valueCompany({...inputs,version:2}).valuation):null;
+ const revised=V2&&inputs&&a.status==='scored'?convert(valueCompany({...inputs,investmentHolding:isInvestmentHolding(a.company,inputs.years),version:2}).valuation):null;
  const proposed=V2?{valuation:revised,mos:valuationMargin(revised,a.volatility??'volatile'),eligible:revised?.tier==='compounder'}:v&&f?proposeValuation({valuation:v,years:f.years,t5,cv,mos}):null;
  const quote=quotes[a.id],price=quote?.[0]??null;
  const publication=(value:Valuation|null,m:number)=>{

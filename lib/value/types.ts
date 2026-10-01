@@ -6,6 +6,7 @@ export type TestKey = "understandable" | "moat" | "economics" | "management" | "
 export const QUALITY_TESTS: TestKey[] = ["understandable", "moat", "economics", "management", "accounting"];
 
 export interface Company {
+  investmentHolding?: boolean; // NAV valuation; operating earnings are not a suitable basis.
   indexes?: string[]; // Populated by the dated index-membership stage; absent in legacy corpus.
   id: Id;
   name: string;
@@ -37,6 +38,11 @@ export interface Company {
 export interface Year {
   provenance?: Record<string, import('./derive').ValueProvenance>;
   statementCoverage?: { income?: boolean; balance?: boolean; cashFlow?: boolean };
+  navPerShare?: number | null; // Explicit reported investment NAV, never ordinary book equity.
+  investmentNav?: number | null;
+  dividendsPerShare?: number | null;
+  fairValueGains?: number | null;
+  totalIncome?: number | null;
   shortTermDebt?: number | null;
   debtIncludesLeases?: boolean;
   operatingExpenses?: number | null;
@@ -156,8 +162,9 @@ export interface TestOutcome {
 }
 
 export interface Valuation {
+  capitalReturns?: { excludingGoodwill: number | null; includingAcquisitions: number | null; observations: number; basis: "owner_earnings" };
   shareSources?: 2;
-  method: "owner_earnings" | "book_value";
+  method: "owner_earnings" | "book_value" | "nav";
   currency: string;
   normalized: number; // owner earnings (or book value per share for book_value)
   growth: number;
@@ -168,7 +175,8 @@ export interface Valuation {
   bondFlags?: string[];
   netCash: number; // v2: excess operating cash, never cash minus debt
   version?: 1 | 2;
-  tier?: "standard" | "compounder";
+  tier?: "standard" | "compounder" | "nav";
+  navReturn?: { cagr: number; uncappedCagr: number };
   netDebt?: number; // Actual debt less cash, for risk/display only
   leverage?: "normal" | "moderate" | "volatile";
   riskFlags?: string[];

@@ -224,6 +224,7 @@ export interface CompanyEvent {
 }
 
 export interface Analysis {
+  businessOverview?: import("./flags/presentation").BusinessLine[];
   businessDepth?: import("./flags/types").PublicBusiness;
   judgement?: import("./judgement/types").PublicJudgement;
   thesis?: import("./thesis/types").PublicThesis;

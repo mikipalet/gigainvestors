@@ -24,10 +24,10 @@ export function BusinessDepth({analysis,selected}:{analysis:Analysis;selected:st
  useEffect(()=>{if(selected==='overview')return;const frame=requestAnimationFrame(()=>document.getElementById(`business-detail-${selected}`)?.scrollIntoView({block:'start'}));return()=>cancelAnimationFrame(frame);},[selected]);
  return <div className="business-depth">
   <section className="business-column business-readings" aria-label="Business evidence"><h3>Customers, choices &amp; risks</h3>
-   {j?.business.map(r=><article key={r.id} id={`business-detail-reading-${r.id}`}><h4>{TOPICS[r.id]?.label??r.id}</h4>{readingCopy[r.value]&&<p>{readingCopy[r.value]}</p>}{r.evidence&&<BusinessQuote evidence={r.evidence}/>}</article>)}
-   {!j?.business.length&&analysis.company.description&&<p>{analysis.company.description}</p>}
-   {j?.adjustments.length?<article><h4>What changes our reading</h4>{j.adjustments.map((a,i)=><div key={i}><p>{a.reason}</p><BusinessQuote evidence={a.amountEvidence??a.evidence}/></div>)}</article>:null}
-   {j?.facts.filter(f=>!j.business.some(r=>r.evidence?.url===f.url)).map((f,i)=><p key={i}>{f.text} <a href={f.url} target="_blank" rel="noreferrer">Source ↗</a></p>)}
+   {j?.business.map(r=>{const line=analysis.businessOverview?.find(l=>l.id===`reading-${r.id}`);return <article key={r.id} id={`business-detail-reading-${r.id}`}><h4>{TOPICS[r.id]?.label??r.id}</h4>{(line?.text??readingCopy[r.value])&&<p>{line?.text??readingCopy[r.value]}</p>}{line?.answer&&line.answer.evidence.quote!==r.evidence?.quote&&<BusinessQuote evidence={line.answer.evidence}/ >}{r.evidence&&r.evidence.section!=='wiki'&&<BusinessQuote evidence={r.evidence}/>}</article>;})}
+   {analysis.businessOverview?.filter(l=>!j?.business.some(r=>l.id===`reading-${r.id}`)&&l.kind!=='flag').map(l=><article key={l.id} id={`business-detail-${l.id}`}><h4>{l.text}</h4>{l.answer&&<BusinessQuote evidence={l.answer.evidence}/>}</article>)}
+
+   {j?.facts.filter(f=>!j.business.some(r=>r.evidence?.url===f.url)).slice(0,1).map((f,i)=><p key={i}><a href={f.url} target="_blank" rel="noreferrer">{f.text.startsWith('Official website:')?'Official website details':'Company background'} ↗</a></p>)}
   </section>
   <section className="business-column business-flags" aria-label="Flags by theme"><h3>Flags to understand <span>{flags.length}</span></h3>
    {THEMES.map(theme=>{const group=flags.filter(f=>f.theme===theme);return group.length?<section key={theme} className="flag-group"><h4>{theme}</h4>{group.map(f=><article key={f.id} className="flag-detail" id={`business-detail-${f.id}`} data-selected={selected===f.id}>

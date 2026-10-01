@@ -15,13 +15,13 @@ import {OwnerEarningsWaterfall} from './viz/OwnerEarningsWaterfall';
 function Numbers({items}:{items:Array<[string,string]>}){return <dl className="panel-numbers">{items.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}
 function SeriesData({test}:{test:TestOutcome}){
  const keys=Object.keys(test.series).filter(k=>test.series[k].some(p=>p[1]!==null)),[key,setKey]=useState(keys[0]??'');const series=test.series[key]??[];
- return <><label className="data-series">Series <select value={key} onChange={e=>setKey(e.target.value)}>{keys.map(k=><option key={k}>{k}</option>)}</select></label><PagedItems size={6} items={series.filter(([,n])=>n!==null).map(([fy,n])=><div className="data-pair"><span>FY{fy}</span><b>{['roic','roe'].includes(key)&&n===1.000001?'> 100%':Number(n!.toPrecision(6)).toLocaleString('en-US')}</b></div>)}/></>;
+ return <><label className="data-series">Series <select value={key} onChange={e=>setKey(e.target.value)}>{keys.map(k=><option key={k} value={k}>{k==='roic'?'ROIC excluding acquisitions':k==='totalRoic'?'ROIC including acquisitions':k}</option>)}</select></label><PagedItems size={6} items={series.filter(([,n])=>n!==null).map(([fy,n])=><div className="data-pair"><span>FY{fy}</span><b>{['roic','roe'].includes(key)&&n===1.000001?'> 100%':Number(n!.toPrecision(6)).toLocaleString('en-US')}</b></div>)}/></>;
 }
 export function EvidencePanel({dossier,test}:{dossier:Dossier;test:TestOutcome}){
  const metric=tileMetric(test,dossier.company.kind,dossier.tests.understandable.series.netIncome??dossier.series.netIncome);
  const currency=dossier.reportingCurrency??dossier.valuation?.currency??dossier.company.currency;
  const metrics=Object.entries(test.metrics).filter(([k,v])=>metricLabels[k]&&v!==null);
- const metadata=(key:string)=>({...metricLabels[key],
+ const metadata=(key:string)=>({...metricLabels[key],...(/^roic/.test(key)?{label:`${metricLabels[key].label} · excluding acquisitions`}:{}),
   ...(key==='roeMedian'&&test.metrics.returnThreshold!=null?{threshold:test.metrics.returnThreshold,label:test.metrics.tangibleReturn?'Return on tangible common equity, median':'Return on common equity, median'}:{}),
   ...(key==='roeSecondLowest'&&'returnThreshold' in test.metrics?{threshold:dossier.company.kind==='bank'?.05:undefined}:{}),
   ...(key==='shareCagr'&&'retainedBookRatio' in test.metrics?{threshold:.02}:{}),
@@ -46,9 +46,9 @@ export function ValuationPanel({dossier,quote}:{dossier:Dossier;quote:PriceMap[s
  const pct=(n:number)=>`${(n*100).toFixed(1)}%`,money=(n:number|null)=>sharePrice(n,dossier.company.currency);
  return <PanelTabs tabs={[
   {label:'Valuation',content:<><p className="panel-answer">{dossier.b?'The price clears the safety discount and required return.':'Wait for a price that clears the safety discount and required return.'}</p><Numbers items={[["Share price",money(quote?.[0]??null)],["Estimated value",money(comparable?.perShare.mid??null)],["Buy price",money(comparable?comparable.perShare.mid*(1-mos):null)]]}/>{v.capitalReturns && <><Numbers items={[
-   ['Return on capital excl. goodwill',formatMetric({value:v.capitalReturns.excludingGoodwill,format:'pct'})],
-   ['Return on capital incl. acquisitions',formatMetric({value:v.capitalReturns.includingAcquisitions,format:'pct'})],
-  ]}/><p>Ten-year medians: NOPAT excluding goodwill; owner earnings including acquisitions. Compounder valuation requires at least 15% including goodwill and acquired intangibles, with at least eight annual observations in the ten-year window.</p></>}
+   ['ROIC excluding acquisitions',formatMetric({value:v.capitalReturns.excludingGoodwill,format:'pct'})],
+   ['ROIC including acquisitions',formatMetric({value:v.capitalReturns.includingAcquisitions,format:'pct'})],
+  ]}/><p>Ten-year medians: NOPAT excluding acquisitions; owner earnings including goodwill and acquired intangibles. The compounder hurdle is 15%, with at least eight annual observations.</p></>}
   <div className="panel-chart"><MiniPrice dossier={dossier} quote={quote}/></div><p>{owner?`${pct(owner.expected)} expected yearly return · ${pct(v.discountRate)} required`:`${pct(v.discountRate)} required yearly return`}</p></>},
   {label:v.method==='nav'?'NAV return':'Owner cash',content:<><p className="panel-answer">{v.method==='nav'?'NAV per share plus reinvested dividends, compounded over ten years and capped at 12%. Expected return divides that rate by price / NAV.':'Cash left for owners after maintaining the business.'}</p><Numbers items={[[v.method==='nav'?"NAV total-return CAGR":"Growth",pct(v.growth)],["Required return",pct(v.discountRate)],...(v.method==='nav'?[]:[["Long-run growth",pct(v.terminalGrowth)] as [string,string]])]}/><OwnerEarningsWaterfall valuation={v}/></>},
   {label:'Data',content:<PagedItems size={5} items={v.bridge.map(r=><div className="measure-row"><span>{r.label}</span><b>{formatMetric({value:r.value,format:/shares/i.test(r.label)?'count':/return|CAGR/i.test(r.label)?'pct':/factor|price to book/i.test(r.label)?'x':'money',currency:v.currency})}</b></div>)}/>},

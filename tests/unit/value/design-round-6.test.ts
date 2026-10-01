@@ -25,14 +25,14 @@ import { TestSection } from '@/components/value/TestSection';
 import { MiniPrice } from '@/components/value/viz/TileCharts';
 import type { Dossier } from '@/lib/value/types';
 const fixture:Dossier=JSON.parse(readFileSync('tests/fixtures/value/store/dossiers/027.json','utf8'))['KO.US'];
-it.each(['operating','bank','insurer'] as Kind[])('tile and evidence identify the same fixed metric for %s, including alternate failures',kind=>{
+it.each(['operating','bank','insurer'] as Kind[])('tile uses inclusive operating capital while evidence retains its quality metric for %s, including alternate failures',kind=>{
  const dossier=structuredClone(fixture);dossier.company.kind=kind;
  for(const key of ['understandable','moat','economics','management','accounting'] as const){
   dossier.tests[key]=test(key,'fail');
   const expected=tileMetric(dossier.tests[key],kind).id;
   const tile=renderToStaticMarkup(createElement(DossierContent,{dossier}));
   const panel=renderToStaticMarkup(createElement(TestSection,{test:dossier.tests[key],kind}));
-  expect(tile).toContain(`data-testid="tile-${key}" data-metric="${expected}"`);
+  expect(tile).toContain(`data-testid="tile-${key}" data-metric="${key==='moat'&&kind==='operating'?'totalRoicMedian':expected}"`);
   expect(panel).toContain(`data-test="${key}" data-metric="${expected}"`);
  }
 });

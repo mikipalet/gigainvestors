@@ -42,7 +42,7 @@ it('shows the acquisition-inclusive return in the valuation evidence',async()=>{
  const v=value(fixture(.707,.1));
  const dossier={valuation:v,company:{currency:'EUR',marketCapUsd:null},requiredMos:.25,tests:{},report:{url:null},series:{},asOf:'2026-10-01'} as unknown as import('@/lib/value/types').Dossier;
  const html=renderToStaticMarkup(createElement(ValuationPanel,{dossier,quote:[10,'2026-09-30']}));
- expect(html).toContain('Return on capital incl. acquisitions');expect(html).toContain('10.0%');expect(html).toContain('70.7%');
+ expect(html).toContain('ROIC including acquisitions');expect(html).toContain('10.0%');expect(html).toContain('70.7%');
 });
 
  it('uses owner earnings consistently when NOPAT would admit an acquisition-built company',()=>{

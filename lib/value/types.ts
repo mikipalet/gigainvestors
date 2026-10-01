@@ -260,7 +260,7 @@ export interface IndexRow {
   returnInfo?: { label: string; note: string; sort: number };
   fy?: number;
   m?: number; // Required margin of safety; absent only in legacy snapshots.
-  r?: Array<number | null>; // Last ten annual ROIC observations, three significant digits.
+  r?: Array<number | null>; // Last ten annual owner-earnings returns on capital including acquisitions, three significant digits.
   id: Id;
   n: string;
   c: string;

@@ -6,7 +6,7 @@ import type { Company, Valuation, Year } from './types';
 export function isInvestmentHolding(company: Pick<Company, 'name' | 'industry'>, years: Year[]): boolean {
   const name = company.name.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   if (/\bberkshire\b/.test(name)) return false;
-  if (/\b(?:3i(?: group)?|investor ab|industrivarden|kinnevik|exor|sofina|groupe bruxelles lambert|gbl|hal trust|wendel|eurazeo)\b/.test(name)) return true;
+  if (/\b(?:softbank group|3i(?: group)?|investor ab|industrivarden|kinnevik|exor|sofina|groupe bruxelles lambert|gbl|hal trust|wendel|eurazeo)\b/.test(name)) return true;
   if (!/^(asset management|capital markets)$/i.test(company.industry ?? '')) return false;
   const history = last(years, 5);
   if (history.length !== 5 || history.some((y, i) => !Number.isFinite(y.fairValueGains) || !Number.isFinite(y.totalIncome) || i > 0 && y.fy !== history[i - 1].fy + 1)) return false;

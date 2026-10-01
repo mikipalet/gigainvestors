@@ -61,7 +61,7 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
   <div className="shelf-answer"><strong className="main-return" data-negative={c.returnValue!==null&&c.returnValue<0}>{returnLabel(c.returnValue)}</strong>{kind!=='buy'&&<span className="shelf-chip">{dropToBuy(c.ratio)}</span>}</div>
   {kind==='buy'?<span className="shelf-price">Buy below {price(c.buyPrice,c)} · {historical?'Then':'Now'} {price(c.price,c)}</span>:kind==='next'?<>
    <div className="shelf-gauge" role="img" aria-label={`Price ${c.ratio!==null?Math.round((c.ratio-1)*100):0}% above buy price. Shared scale zero to 60 percent${c.ratio!==null&&c.ratio>1.6?', capped at 60 percent':''}.`}><span className="shelf-track"><i/><b style={{width:`${distancePosition(c.ratio!)*100}%`}}/><em style={{left:`${distancePosition(c.ratio!)*100}%`}}/></span><span className="shelf-scale"><span>Buy price</span><span>+60%{c.ratio!>1.6?'+':''}</span></span></div>
-   {c.entry.row.quality&&<span className="shelf-quality">{c.entry.row.quality.label} 10y <b>{c.entry.row.quality.value==='unlimited'?'∞':`${Math.round(c.entry.row.quality.value*100)}%`}</b></span>}
+   {c.entry.row.quality&&<span className="shelf-quality" title={c.entry.row.quality.basis==='including-acquisitions'?'Owner earnings return on capital including goodwill and acquired intangibles':undefined}>{c.entry.row.quality.label} 10y <b>{c.entry.row.quality.value==='unlimited'?'∞':`${Math.round(c.entry.row.quality.value*100)}%`}</b></span>}
   </>:null}
  </ValueLink>;
  const buyLimit=size.phone?3:5;

@@ -124,7 +124,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const shard = shardOf(analysis.id);
     (shards[shard] ??= {})[analysis.id] = publicAnalysis(dossier);
     if (price.dataQualityFlags.length) unresolved.push({id:analysis.id,qualityPass:t==='PPPPP',reasons:price.dataQualityFlags});
-    const roic = (analysis.tests.moat.series.roic ?? []).slice(-T.history.years)
+    const roic = (analysis.tests.moat.series.totalRoic ?? []).slice(-T.history.years)
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
     const returns=dossierReturn(analysis);
     const row: IndexRow = {
@@ -142,6 +142,16 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     rows.push(row);
     (countries[company.country] ??= []).push(row);
   }
+  const published = new Set(Object.values(shards).flatMap(shard=>Object.keys(shard)));
+  const aliases:Record<string,string>={};
+  const ambiguous=new Set<string>();
+  for(const {id,company} of sorted)if(published.has(id))for(const listing of company.listings){
+    const alias=listing.toUpperCase();
+    if(published.has(alias)||ambiguous.has(alias))continue;
+    if(aliases[alias]&&aliases[alias]!==id){delete aliases[alias];ambiguous.add(alias);}
+    else aliases[alias]=id;
+  }
+  files['aliases.json']=aliases;
   for (const [country, countryRows] of Object.entries(countries)) {
     files[`index/${country}.json`] = countryRows;
     files[`prices/${country}.json`] = Object.fromEntries(countryRows.filter((row) => prices[row.id]).map((row) => [row.id, prices[row.id]]));

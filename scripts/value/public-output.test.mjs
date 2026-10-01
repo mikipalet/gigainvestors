@@ -6,6 +6,9 @@ import { chromium } from '@playwright/test';
 
 const root=process.env.VALUE_STAGING_DIR;
 const base=process.env.BASE_URL;
+// A reused staging directory can also hold private calibration/QA artifacts.
+// Scan precisely the publisher's output contract; verify private paths are not served below.
+const published=/^(?:views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|aliases|meta|top)\.json$/;
 // Do not confuse a bank's “checking accounts” or a chipmaker's verification
 // products with operational work assigned to the reader.
 const forbidden=/verify valuation|share count[^.\n]{0,100}(?:check|verif)|needs? verification|not yet verified|\bunverified\b|being checked|dataQualityFlags|^checking$/i;
@@ -16,7 +19,7 @@ test('published staging JSON contains no private share-review language',()=>{
     for(const entry of readdirSync(directory,{withFileTypes:true})){
       const file=path.join(directory,entry.name);
       if(entry.isDirectory())scan(file);
-      else if(entry.name.endsWith('.json')){
+      else if(published.test(path.relative(root,file))){
         const inspect=value=>{
           if(typeof value==='string'&&forbidden.test(value))failures.push(`${path.relative(root,file)}: ${value}`);
           else if(value&&typeof value==='object')for(const [key,child] of Object.entries(value)){
@@ -33,6 +36,7 @@ test('published staging JSON contains no private share-review language',()=>{
 });
 test('rendered home, historical view, dossiers and every drawer tab contain no private language',async()=>{
   assert.ok(base,'Set BASE_URL to a local production server');
+  for(const file of ['buffett-check/purchases.json','buy-audit.json'])assert.equal((await fetch(base+'/api/value/data/'+file)).status,404);
   const browser=await chromium.launch();
   try {
     for(const width of [390,1728]){

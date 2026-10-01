@@ -1,3 +1,4 @@
+import { withCapitalReturns } from '../../../lib/value/capital-returns';
 import { summarizeSnapshots } from '../../../lib/value/snapshots';
 import { bestWesternListing } from '../../../lib/value/western';
 import { isDecided, undecidedReasons } from '../../../lib/value/publication-eligibility';
@@ -136,7 +137,7 @@ export function loadHolders(store: string): { holdersByTicker: Record<string, st
 }
 
 export function writeOutput({ repo, files }: { repo: string; files: Record<string, unknown> }): void {
-  const allowed = /^(?:views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|meta|top)\.json$/;
+  const allowed = /^(?:views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4})|aliases|meta|top)\.json$/;
   for (const file of Object.keys(files)) if (!allowed.test(file)) throw new Error("Invalid publish output path");
   for (const directory of ["index", "dossiers", "search", "history", "views"]) rmSync(path.join(repo, directory), { recursive: true, force: true });
   for (const [file, data] of Object.entries(files)) {
@@ -291,7 +292,8 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");
       // Validate the consumer contract here so one malformed document cannot stop the rollout.
       if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");
-      analyses.push(applyShareCheck(analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)));
+      const years=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`)?.years;
+      analyses.push(applyShareCheck(years?withCapitalReturns(analysis,years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);
     }

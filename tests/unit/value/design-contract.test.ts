@@ -28,8 +28,8 @@ it('blocks a published headline/table contradiction',()=>{
  expect(()=>assertIndexConsistency({meta,rows:[{t:'PPPPP'}] as IndexRow[]})).toThrow('headline');
  expect(()=>assertIndexConsistency({meta,rows:[{t:'PPPPP'},{t:'PPPPP'}] as IndexRow[]})).not.toThrow();
 });
-it('keeps the same return state when a negative-capital year is serialized as null',async()=>{
+it('does not expose legacy ex-goodwill unlimited returns as inclusive ROIC',async()=>{
  const {dossierReturn}=await import('@/lib/value/presentation');
  const d={company:{kind:'operating'},tests:{moat:{metrics:{roicMedian:null},series:{roic:[[2025,null]]},reasons:['tangible capital is negative: returns effectively unlimited']}}};
- expect(dossierReturn(d as any).label).toBe('Positive earnings, nonpositive capital');
+ expect(dossierReturn(d as any).label).toBe('');
 });

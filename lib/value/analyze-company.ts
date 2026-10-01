@@ -1,3 +1,4 @@
+import { withCapitalReturns } from './capital-returns';
 import { isInvestmentHolding, navPerShare } from './investment-nav';
 import { deriveYears } from './derive';
 import { companyEvents, earningsVolatility, perShareSeries, valueHistory } from "./history";
@@ -70,11 +71,11 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     };
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
-  return { reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
+  return withCapitalReturns({ reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
     valueHistory: valueHistory({ investmentHolding: company.investmentHolding, fundamentals, kind: company.kind, industry: company.industry, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"],
     events: companyEvents(fundamentals), series: company.investmentHolding ? { navPerShare: years.map(y => [y.fy, navPerShare(y)]) } : perShareSeries(fundamentals),
     id: company.id, company, asOf: new Date().toISOString(),
     status: fundamentals.integrity.ok ? "scored" : "insufficient_data", report, tests,
-    valuation, valuationReason: reason, versions: { pipeline: PIPELINE_VERSION, questions: QUESTIONS_VERSION } };
+    valuation, valuationReason: reason, versions: { pipeline: PIPELINE_VERSION, questions: QUESTIONS_VERSION } }, years);
 }

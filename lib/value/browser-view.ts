@@ -35,6 +35,6 @@ export function historyView(snapshots: SnapshotRow[], identities: IndexRow[]): B
     // Presentation-only ratios: eight significant digits exceed the view's
     // one-decimal precision. Original research snapshots remain lossless.
     const shown=(value:number|null)=>value===null?null:Number(value.toPrecision(8));
-    return [{id,n,c,s,k,mc,cur,w,lg,exchange,...(quality?{quality}:{}),...(nameEn&&nameEn!==n?{nameEn}:{}),...(nameLocal?{nameLocal}:{}),h,t,b,v:null,g:[],st:'s' as const,quote:null,pm:shown(pm),gain:shown(gain),...(historicalPrice?{historicalPrice:{discount:historicalPrice.discount,price:shown(historicalPrice.price),buyPrice:shown(historicalPrice.buyPrice)}}:{})}];
+    return [{id,n,c,s,k,mc,cur,w,lg,exchange,...(quality&&(quality.label!=='ROIC'||quality.basis==='including-acquisitions')?{quality}:{}),...(nameEn&&nameEn!==n?{nameEn}:{}),...(nameLocal?{nameLocal}:{}),h,t,b,v:null,g:[],st:'s' as const,quote:null,pm:shown(pm),gain:shown(gain),...(historicalPrice?{historicalPrice:{discount:historicalPrice.discount,price:shown(historicalPrice.price),buyPrice:shown(historicalPrice.buyPrice)}}:{})}];
   });
 }

@@ -27,7 +27,7 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
    if(m.opMarginCv==null)return {...metric('lossYears','loss years','count',T.understandable.maxLossYears,'lower',test.series.netIncome??[],'Net income'),chartFormat:'money'};
    return metric('opMarginCv','margin variation','x',T.understandable.maxOpMarginCv,'lower',available,'Operating margin');
   }
-  case 'moat':return metric(financial?'roeMedian':'roicMedian',financial?'ROE · median':'ROIC · median','pct',financial?T.moat.roeMedianFin:T.moat.roicMedian,'higher',test.series[financial?'roe':'roic']??[],financial?'ROE':'ROIC');
+  case 'moat':return metric(financial?'roeMedian':'roicMedian',financial?'ROE · median':'ROIC excluding acquisitions','pct',financial?T.moat.roeMedianFin:T.moat.roicMedian,'higher',test.series[financial?'roe':'roic']??[],financial?'ROE':'ROIC excluding acquisitions');
   case 'economics': {
    const income=new Map(netIncome),end=Math.max(...netIncome.map(p=>p[0]));
    const series:Series=(test.series.ownerEarnings??[]).filter(([fy])=>fy>end-10&&income.has(fy)).map(([fy,oe])=>[fy,oe===null||!income.get(fy)?null:oe/income.get(fy)!]);
@@ -69,11 +69,17 @@ export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):str
   case 'understandable':return metric.id==='lossYears'?`${v} years recorded a net loss.`:v>1?`Margin variation ${marginVariation(v)}.`:`Margins vary by ${marginVariation(v)} of their average.`;
   case 'moat': {
    const years=metric.series.filter(p=>p[1]!==null),passes=years.filter(p=>p[1]!>=bar).length;
-   return `Earns ${pct(v)} on ${kind==='operating'?'capital':'equity'}; ${years.length?`${passes}/${years.length} years ≥ ${pct(bar)}.`:`the bar is ${pct(bar)}.`}`;
+   return `Earns ${pct(v)} on ${kind==='operating'?(metric.id==='totalRoicMedian'?'capital including acquisitions':'capital excluding acquisitions'):'equity'}; ${years.length?`${passes}/${years.length} years ≥ ${pct(bar)}.`:`the bar is ${pct(bar)}.`}`;
   }
   case 'economics':return metric.id==='ownerEarningsTotal'?`Five-year owner earnings ${v>0?'are positive':'are nonpositive'}.`:`Each $1 of profit leaves $${num(v)} for owners.`;
   case 'management':return metric.id==='marketCapGain'?'Market value change compared with cumulative retained earnings.':metric.id==='perShareValueGrowth'?`Per-share value grew ${pct(v)} per year.`:metric.id==='perShareValueChange'?`Per-share value changed by ${num(v)}.`:`$${num(v)} of market value created per $1 kept.`;
   case 'accounting':return metric.id==='cashBacked'?(v?'Earnings are backed by operating cash.':'Earnings are not backed by operating cash.'):kind==='operating'?(v<0?`Cash exceeds profit by ${pct(-v)} of assets.`:`Profit exceeds cash by ${pct(v)} of assets; ${pct(bar)} is the limit.`):`Operating cash covers ${num(v)}× reported earnings.`;
   case 'price':return priceFraming(v,1-bar).headline;
  }
+}
+
+/** Main dossier metric includes the price paid for acquisitions; legacy moat evidence stays in its drawer. */
+export function primaryTileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileMetric {
+ if(test.key!=='moat'||kind!=='operating')return tileMetric(test,kind,netIncome);
+ return {id:'totalRoicMedian',value:test.metrics.totalRoicMedian??null,label:'ROIC including acquisitions',format:'pct',threshold:T.valuation.compounderMinTotalReturn,better:'higher',series:test.series.totalRoic??[],chart:'ROIC including acquisitions'};
 }

@@ -33,7 +33,7 @@ export function returnDisplay({value, years, unlimited = false, financial = fals
   if (value > 1 && !financial) return {label:'> 100% †', note:`Exact return ${(value*100).toFixed(1)}%; a small capital denominator makes this percentage sensitive`, sort:value};
   return {label:`${financial ? 'ROE ' : ''}${(value*100).toFixed(1)}%`,note:financial ? 'Return on tangible equity, the denominator used by the published model' : 'Median annual return on invested capital',sort:value};
 }
-function decodeEntities(value: string) {
+export function decodeEntities(value: string) {
  const entities: Record<string,string> = {amp:'&',quot:'"',apos:"'",lt:'<',gt:'>',nbsp:' ',ndash:'–',mdash:'—',rsquo:'’',lsquo:'‘',eacute:'é',uuml:'ü',ouml:'ö',auml:'ä',trade:'™',reg:'®'};
  for(let pass=0;pass<3;pass++){
   const next=value.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi,(match,key:string)=>{
@@ -45,7 +45,19 @@ function decodeEntities(value: string) {
  }
  return value;
 }
-export const displayName = (name: string) => decodeEntities(name).normalize("NFKC").replace(/^The (.+) (?:Company|Co\.?)$/i, "$1").replace(/\s+S\.A\.B\. de C\.V\.?$/i, "").replace(/[\u2010-\u2015\u2212]/g, '-').replace(/Moodys/g, "Moody’s").replace(/ Natl /g, ' National ').replace(/\s+(Company|Co\.?|Inc\.?|Incorporated|Corporation|Corp\.?|Limited|Ltd\.?|plc|S\.?\s?A\.?|AB \(publ\))(?=\s*$| Class [A-Z])/gi, '').replace(/ Class [A-Z]$/,'').replace(/\s+(?:Co\.?|Ltd\.?|Inc\.?)$/i,'').replace(/[,\s]+$/, '');
+/** Strip legal suffixes without leaving a conjunction dangling (e.g. Chase & Co.). */
+function stripSuffix(name:string,pattern:RegExp):string {
+ const stripped=name.replace(pattern,'');
+ return /&\s*$/.test(stripped)?name:stripped;
+}
+export function displayName(name:string):string {
+ const normalized=decodeEntities(name).normalize('NFKC').replace(/\s+/g,' ').trim()
+  .replace(/&\s+Co\.?$/i,'& Co.').replace(/[\u2010-\u2015\u2212]/g,'-')
+  .replace(/Moodys/g,'Moody’s').replace(/ Natl /g,' National ')
+  .replace(/^The (.+) (?:Company|Co\.?)$/i,'$1').replace(/\s+S\.A\.B\. de C\.V\.?$/i,'');
+ const short=stripSuffix(normalized,/\s+(Company|Co\.?|Inc\.?|Incorporated|Corporation|Corp\.?|Limited|Ltd\.?|plc|S\.?\s?A\.?|AB \(publ\))(?=\s*$| Class [A-Z])/gi).replace(/ Class [A-Z]$/,'');
+ return stripSuffix(short,/\s+(?:Co\.?|Ltd\.?|Inc\.?)$/i).replace(/[,\s]+$/,'');
+}
 export function testReturn(test: import('./types').TestOutcome, kind: import('./types').Kind) {
  const financial=kind!=='operating', key=financial?'roe':'roic';
  const series=test.series[key]??[];
@@ -55,13 +67,17 @@ export function testReturn(test: import('./types').TestOutcome, kind: import('./
  return info;
 }
 export function dossierReturn(dossier: import('./types').Analysis) {
- return testReturn(dossier.tests.moat,dossier.company.kind);
+ if(dossier.company.kind!=='operating')return testReturn(dossier.tests.moat,dossier.company.kind);
+ const returns=dossier.valuation?.capitalReturns;
+ const value=dossier.tests.moat.metrics.totalRoicMedian??returns?.includingAcquisitions??null;
+ const info=returnDisplay({value,years:returns?.observations??0});
+ return {...info,note:'Ten-year median owner earnings / total capital including goodwill and acquired intangibles'};
 }
 
 /** Optional-safe English identity for old and new publication snapshots. */
 export function companyName(company: {nameEn?: string; name?: string; n?: string; id: string}) {
  const name = company.nameEn || company.name || company.n || '';
- const clean=displayName(name.replace(/\s+(?:ADR|ADS)$/i,'')).replace(/(?:[\s,]+(?:co|ltd|inc|corporation|corp|limited)\.?)+[,.\s]*$/i,'');
+ const clean=stripSuffix(displayName(name.replace(/\s+(?:ADR|ADS)$/i,'')),/(?:[\s,]+(?:co|ltd|inc|corporation|corp|limited)\.?)+[,.\s]*$/i);
  const acronyms=new Set(['IBM','IT','AI','ID','JP','JFE','JGC','JSR','JVC','NEC','NTT','TDK','THK','SMC','SMK','SBI','SCSK','NOK','DIC','DNP','DOWA','AGC','ADEKA','EIZO','TSMC','USA','US','UK','LVMH','HDFC','ICICI','HCL','SAP','AT&T','3M','BHP','BP','UBS','ABB','KLA','ASML']);
  const display=clean===clean.toUpperCase()?clean.replace(/[A-Z][A-Z&0-9-]*/g,word=>acronyms.has(word)||word.includes('&')||!/[AEIOUY]/.test(word)?word:word[0]+word.slice(1).toLowerCase()):clean;
  return /[a-zA-Z]{2}/.test(name) ? display : `Company ${company.id}`;

@@ -1,6 +1,7 @@
+import { readStore } from './lib/value/store';
 import { NextRequest, NextResponse } from "next/server";
 
-export function proxy(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   const host = (request.headers.get("host") ?? url.host).split(":")[0].toLowerCase();
   const pathname = url.pathname;
@@ -21,6 +22,14 @@ export function proxy(request: NextRequest) {
   if (!asset && !special && dossierPath !== dossierPath.toLowerCase()) {
     url.pathname = pathname.toLowerCase();
     return NextResponse.redirect(url, 308);
+  }
+  if ((valueHost || valuePath) && !asset && !special) {
+    const aliases=await readStore<Record<string,string>>('aliases.json');
+    const home=aliases?.[dossierPath.slice(1).toUpperCase()];
+    if(home&&home.toLowerCase()!==dossierPath.slice(1).toLowerCase()){
+      url.pathname=`${valuePath?'/value':''}/${home.toLowerCase()}`;
+      return NextResponse.redirect(url,308);
+    }
   }
   if (valueHost && !valuePath && !asset) {
     const year=url.searchParams.get('year');

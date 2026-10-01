@@ -1,3 +1,4 @@
+import { decodeEntities } from './presentation';
 import {validLogo,iconHash} from './logo-validation';
 import { randomUUID } from 'node:crypto';
 import { linkSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
@@ -10,7 +11,7 @@ import type { Company } from './types';
 export interface GeneralInfo { Name?: string; Description?: string; LogoURL?: string; WebURL?: string }
 export interface Enrichment { nameEn: string; nameLocal?: string; logo: string | null; about: string | null; nameSource: string; logoSource: string | null }
 export function cleanName(name: string): string {
-  return name.normalize('NFKC').replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, ' ').trim();
+  return decodeEntities(name).replace(/&\s+Co\.?$/i, '& Co.').normalize('NFKC').replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, ' ').trim();
 }
 function isLatinName(name: string | null | undefined): name is string {
   return !!name && /\p{Script=Latin}/u.test(name) && ![...name].some(c => /\p{L}/u.test(c) && !/\p{Script=Latin}/u.test(c));
@@ -146,6 +147,6 @@ export function enrichedCompany(company: Company, cachedOnly = false): Company {
   const names = cached ?? englishName(company, {}, null);
   const logo = readCorpusJson<{logo:string|null;validated?:boolean}>(`enrichment-v7/logos/${company.id}.json`);
   const about = readCorpusJson<{about:string}>(`enrichment-v7/about/${company.id}.json`);
-  return { ...company, nameEn: names.nameEn, ...(names.nameLocal ? { nameLocal: names.nameLocal } : {}),
-    logo: logo?.validated ? logo.logo : logo?.logo ?? cached?.logo ?? company.logo ?? null, about: about?.about ?? cached?.about ?? company.about ?? null, name: names.nameEn };
+  return { ...company, nameEn: cleanName(names.nameEn), ...(names.nameLocal ? { nameLocal: names.nameLocal } : {}),
+    logo: logo?.validated ? logo.logo : logo?.logo ?? cached?.logo ?? company.logo ?? null, about: about?.about ?? cached?.about ?? company.about ?? null, name: cleanName(names.nameEn) };
 }

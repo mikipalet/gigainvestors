@@ -16,7 +16,7 @@ import { SidePanel } from './SidePanel';
 import { StatusGlyph } from './viz/StatusGlyph';
 import { MiniSeries } from './viz/MiniSeries';
 import { MiniDollar, MiniPrice } from './viz/TileCharts';
-import { tileMetric, tileReason, tileSentence } from '@/lib/value/tile-metric';
+import { primaryTileMetric, tileReason, tileSentence } from '@/lib/value/tile-metric';
 import { priceFraming } from '@/lib/value/presentation';
 import { CompanyLogo } from './CompanyLogo';
 import { ownerReturn, expectedReturnCopy, requiredReturnCopy, referenceMetrics } from '@/lib/value/owner-return';
@@ -46,7 +46,7 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
  };window.addEventListener('keydown',onKey);return()=>window.removeEventListener('keydown',onKey);},[insufficient,canShowPrice]);
  const pct=(n:number|null|undefined)=>formatMetric({value:n??null,format:'pct'});
  const m=(key:Exclude<TestKey,'price'>,metric:string)=>dossier.tests[key].metrics[metric]??null;
- const deciding=Object.fromEntries(tests.map(test=>{const metric=tileMetric(test,company.kind,dossier.tests.understandable.series.netIncome??dossier.series.netIncome);if(test.key==='price'){metric.value=ratio;metric.threshold=1-requiredMos;}return [test.key,metric];})) as Record<TestKey,ReturnType<typeof tileMetric>>;
+ const deciding=Object.fromEntries(tests.map(test=>{const metric=primaryTileMetric(test,company.kind,dossier.tests.understandable.series.netIncome??dossier.series.netIncome);if(test.key==='price'){metric.value=ratio;metric.threshold=1-requiredMos;}return [test.key,metric];})) as Record<TestKey,ReturnType<typeof primaryTileMetric>>;
  const glyph=(test:TestOutcome)=>test.key==='price'?state.state:test.result;
  const name=companyName(company);
  const w=dossier.w===undefined?bestWesternListing(company):dossier.w;

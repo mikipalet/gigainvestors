@@ -452,7 +452,7 @@ it("publishes volatility discount, compact ROIC and the added dossier data", () 
   row.valueHistory = [[2025,80,100,120]];
   row.series = { revenuePerShare: [[2025,10]] };
   row.events = [{ fy:2025, kind:'acquisition', note:'Acquisition spending exceeded 10% of assets' }];
-  row.tests.moat.series.roic = Array.from({length:12}, (_, i) => [2014+i, i === 10 ? null : 0.123456]);
+  row.tests.moat.series.totalRoic = Array.from({length:12}, (_, i) => [2014+i, i === 10 ? null : 0.123456]);
   const { files } = buildOutput({ analyses:[row], holdersByTicker:{}, investorNames:{}, fx:{}, prices:{'KO.US':[70,'2026-09-29']}, priceHistories:{'KO.US':[['2025-01',70]]} });
   expect((files['index/US.json'] as IndexRow[])[0]).toMatchObject({m:0.5,r:[0.123,0.123,0.123,0.123,0.123,0.123,0.123,0.123,null,0.123]});
   const dossier = (files[`dossiers/${shardOf(row.id)}.json`] as Record<string,Dossier>)[row.id];
@@ -489,9 +489,9 @@ it("joins the corpus monthly history at publish time and preserves it on partial
 });
 
 it('pads unavailable ROIC years with nulls without substituting financial-company ROE', () => {
-  const row = analysis(); row.tests.moat.series.roic = [[2024,0.15678],[2025,null]];
+  const row = analysis(); row.tests.moat.series.totalRoic = [[2024,0.15678],[2025,null]];
   expect((output([row])['index/US.json'] as IndexRow[])[0].r).toEqual([null,null,null,null,null,null,null,null,0.157,null]);
-  delete row.tests.moat.series.roic; row.tests.moat.series.roe = [[2025,0.2]]; row.company.kind = 'bank';
+  delete row.tests.moat.series.totalRoic; row.tests.moat.series.roe = [[2025,0.2]]; row.company.kind = 'bank';
   expect((output([row])['index/US.json'] as IndexRow[])[0].r).toEqual(Array(10).fill(null));
 });
 
@@ -645,4 +645,22 @@ it('withholds investment holdings without NAV from indexes and dossiers, includi
   expect(Object.entries(files).filter(([key])=>key.startsWith('dossiers/')).flatMap(([,v])=>Object.keys(v as object))).not.toContain(row.id);
   expect((files['index/default.json'] as IndexRow[]).map(r=>r.id)).not.toContain(row.id);
  }
+});
+
+it('publishes every alias of decided companies without shadowing a home dossier',()=>{
+ const tsm=analysis('2330.TW'),asml=analysis('ASML.AS'),hidden=analysis('PRIVATE.US');
+ tsm.company.listings=['2330.TW','TSM.US','ASML.AS'];asml.company.listings=['ASML.AS','ASML.US'];
+ hidden.company.listings=['PRIVATE.US','HIDDEN.US'];hidden.tests.moat.result='unclear';
+ expect(output([tsm,asml,hidden])['aliases.json']).toEqual({'TSM.US':'2330.TW','ASML.US':'ASML.AS'});
+});
+it('retains a neutral dossier when completion crosses seven years but core decade checks remain unresolved',()=>{
+ const row=analysis('8411.JP');row.historyCoverage={years:8,first:2019,last:2026,source:'edinet'};
+ row.tests.economics.result='unclear';row.tests.economics.numeric='unclear';
+ row.tests.economics.reasons=['not enough data for eleven consecutive book observations and ten dividend observations'];
+ const files=output([row]);
+ expect((files[`dossiers/${shardOf(row.id)}.json`] as Record<string,Dossier>)?.[row.id]).toMatchObject({status:'insufficient_data',valuation:null,b:false});
+ expect(files['index/default.json']).toEqual([]);
+ const neutral=(files[`dossiers/${shardOf(row.id)}.json`] as Record<string,Dossier>)[row.id];
+ expect(neutral.tests.economics.result).toBe('na');
+ expect(output([neutral])[`dossiers/${shardOf(row.id)}.json`]).toBeDefined();
 });

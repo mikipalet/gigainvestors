@@ -1,3 +1,6 @@
+import { applyAdjustments, attachJudgements } from "./judgement/apply";
+import judgementTrust from "./judgement/trust.json";
+import type { JudgementRecord } from "./judgement/types";
 import { withCapitalReturns } from './capital-returns';
 import { isInvestmentHolding, navPerShare } from './investment-nav';
 import { deriveYears } from './derive';
@@ -13,11 +16,12 @@ import { runNumericTests } from "./tests";
 import { valueCompany, valuationMargin } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory, Year } from "./types";
 
-export const PIPELINE_VERSION = "19";
+export const PIPELINE_VERSION = "20";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
-export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, priceHistory = null, priceHistoryPending = priceHistory === null, currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate(), onDerivedYears }: {
+export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, judgement, priceHistory = null, priceHistoryPending = priceHistory === null, currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate(), onDerivedYears }: {
+  judgement?: JudgementRecord | null;
   company: Company; fundamentals: Fundamentals; sections: Sections; report: ReportMeta;
   bondYield: number | null; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; priceHistory?: PriceHistory | null; priceHistoryPending?: boolean; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
   onDerivedYears?: (years:readonly Year[])=>void;
@@ -28,7 +32,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   const rate = fundamentals.integrity.ok
     ? await tradingRate({ reporting: fundamentals.currency, trading: company.currency, usdRate }) : null;
   const monthly = new Map(priceHistory?.map(([month, close]) => [month.slice(0, 7), close]));
-  const years = deriveYears(fundamentals.years.map(year => {
+  let years = deriveYears(fundamentals.years.map(year => {
     const close = monthly.get(year.end.slice(0, 7));
     const marketCap = rate !== null && rate > 0 && close !== undefined && Number.isFinite(close) && close > 0
       && year.dilutedShares !== null && year.dilutedShares > 0 ? close * year.dilutedShares / rate : null;
@@ -41,8 +45,11 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   }));
   company = { ...company, investmentHolding: isInvestmentHolding(company, years) };
   onDerivedYears?.(years);
+  const rawNumeric = runNumericTests({ years, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
+  const adjusted = applyAdjustments(years, fundamentals.integrity.ok && company.kind==='operating' ? judgement : null, judgementTrust, fundamentals.currency);
+  years = adjusted.years;
   const numeric = runNumericTests({ years, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
-  const tests = {} as Analysis["tests"];
+  let tests = {} as Analysis["tests"];
   const answers = fundamentals.integrity.ok ? await ask({ id: company.id, sections }) : [];
   for (const key of Object.keys(numeric) as Array<keyof typeof numeric>) {
     const jev = answers.filter(answer => QUESTIONS.find(q => q.id === answer.q)?.test === key);
@@ -51,6 +58,8 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
           reasons: [...(numeric[key].numeric === 'pass' ? trustedContradictions(jev, company.kind).map(a => `${a.label}: ${a.probability! >= .5 ? 'yes' : 'no'} (filing evidence)`) : []), ...numeric[key].reasons] }
       : { key, numeric: "unclear", result: "unclear", metrics: {}, series: {}, jev: [], reasons: [...fundamentals.integrity.reasons] };
   }
+  const human = attachJudgements({tests} as Analysis, fundamentals.integrity.ok ? judgement : null, judgementTrust, adjusted.adjustments, rawNumeric as Analysis["tests"]);
+  tests = human.tests;
   // askCompany returns one aggregated answer per question (commodity uses a weighted mean).
   const commodity = answers.find(answer => answer.q === "commodity")?.value;
   const isCommodity = typeof commodity === "number" && commodity >= T.jev.commodityCyclical;
@@ -64,6 +73,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
       : valueCompany({ investmentHolding: company.investmentHolding, years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm, qualityPass: Object.values(tests).every(test => test.result === "pass") });
   const requiredMos = valuationMargin(valuation, volatility);
   if (valuation) {
+    if(adjusted.adjustments.length) valuation.assumptions.push(...adjusted.adjustments.map(a=>a.reason));
     if (company.source === "edinet" && !years.at(-1)?.edinetShares) valuation.assumptions.push("Unverified JP share count unreconciled: EDINET share facts unavailable");
     if (rate !== null) valuation.perShareTrading = {
       currency: company.currency, fxRate: rate,
@@ -71,10 +81,10 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     };
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
-  return withCapitalReturns({ reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
+  return withCapitalReturns({ judgement: human.judgement, reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
     valueHistory: valueHistory({ investmentHolding: company.investmentHolding, fundamentals, kind: company.kind, industry: company.industry, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
-    historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"],
-    events: companyEvents(fundamentals), series: company.investmentHolding ? { navPerShare: years.map(y => [y.fy, navPerShare(y)]) } : perShareSeries(fundamentals),
+    historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates", ...(adjusted.adjustments.length?["Historical value ranges retain the original capex calculation; the current filing judgement is not backfilled into historical valuations"]:[])],
+    events: companyEvents(fundamentals), series: company.investmentHolding ? { navPerShare: years.map(y => [y.fy, navPerShare(y)]) } : perShareSeries(adjusted.adjustments.length ? {...fundamentals,years} : fundamentals),
     id: company.id, company, asOf: new Date().toISOString(),
     status: fundamentals.integrity.ok ? "scored" : "insufficient_data", report, tests,
     valuation, valuationReason: reason, versions: { pipeline: PIPELINE_VERSION, questions: QUESTIONS_VERSION } }, years);

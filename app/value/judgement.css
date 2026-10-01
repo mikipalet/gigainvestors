@@ -1,0 +1,39 @@
+.value-page .human-judgement {font-size:12px;line-height:1.5;color:var(--ink,#292820);border-top:1px solid #dedbd1;padding-top:8px;margin-top:8px;overflow-wrap:anywhere}
+.value-page .human-judgement p {margin:0}
+.value-page .human-judgement strong {font-weight:650}
+.value-page .human-judgement summary {cursor:pointer;margin-top:5px;text-decoration:underline;text-underline-offset:3px;color:#666356}
+.value-page .human-judgement blockquote {margin:8px 0;font-style:italic}
+.value-page .business-section {padding:22px 0;border-top:1px solid #cec9bc;margin-top:20px;}
+.value-page .business-section header h2 {font-family:Georgia,serif;font-size:25px;margin:0 0 6px}
+.value-page .business-section header p {font-size:13px;color:#716d61;margin:0 0 18px}
+.value-page .business-readings {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 28px}
+.value-page .business-readings article {min-width:0}
+.value-page .business-readings h3 {font-size:12px;text-transform:uppercase;letter-spacing:.07em;margin:0 0 7px;color:#696454}
+.value-page .business-readings p {font-size:14px;line-height:1.5;margin:0 0 6px}
+.value-page .business-readings blockquote {font-size:13px;line-height:1.6;margin:0 0 8px;border-left:2px solid #c8c0aa;padding-left:12px;overflow-wrap:anywhere}
+.value-page .business-section a,.value-page .human-judgement a {font-size:11px;text-decoration:underline;text-underline-offset:3px;color:#746843}
+.value-page .business-facts {font-size:12px;color:#716d61;line-height:1.6;margin-top:20px}
+.value-page .business-facts span {display:block}
+.value-page .numeric-reading {font-size:11px;color:#777266;margin:6px 0 0}
+.value-page .one-dossier.locks-scroll {height:auto;overflow:visible;min-height:0}
+@media(max-width:700px){.value-page .business-readings {grid-template-columns:1fr;gap:22px}.value-page .business-section {padding:20px 4px}.value-page .human-judgement {font-size:12px}}
+/* Evidence makes the dossier a document; let its sections size to their contents. */
+body:has(.one-dossier){overflow:auto!important}
+.value-page:has(.one-dossier.locks-scroll){height:auto;min-height:100dvh;overflow:visible}
+.value-page .one-dossier.locks-scroll{flex:none}
+.value-page .one-dossier .dossier-checks{flex:none;min-height:0;align-items:start}
+.value-page .one-dossier .quality-section .test-tiles{flex:none;grid-template-rows:auto auto;align-items:stretch}
+.value-page .one-dossier .quality-section .test-tile,.value-page .one-dossier .quality-section .test-tile:last-child{height:auto;min-height:300px;grid-template-rows:auto auto 110px auto auto auto;align-content:start}
+.value-page .one-dossier .quality-section .test-tile .human-judgement{grid-column:1;grid-row:6}
+.value-page .one-dossier .quality-section .test-tile .numeric-reading{grid-column:1;grid-row:5}
+.value-page .one-dossier .quality-section .test-tile .mini-series,.value-page .one-dossier .quality-section .test-tile .mini-dollar{height:110px;min-height:0;flex:none}
+.value-page .one-dossier .business-section{flex:none;margin:20px 24px 0}
+.value-page .one-dossier .price-section{align-self:start}
+.value-page .business-adjustments{margin-top:24px;border-top:1px solid #cec9bc;padding-top:16px;font-size:13px;line-height:1.6}
+.value-page .business-adjustments h3{font-weight:600;margin:0 0 8px}
+.value-page .business-adjustments p{margin:5px 0}
+.value-page .business-adjustments blockquote{border-left:2px solid #c8c0aa;padding-left:12px;margin:12px 0;max-width:100ch}
+@media(max-width:767px){.value-page .one-dossier .business-section{margin:12px 14px 0}.value-page .one-dossier .quality-section .test-tiles{display:flex}.value-page .one-dossier .quality-section .test-tile,.value-page .one-dossier .quality-section .test-tile:last-child{min-height:0;display:flex}.value-page .one-dossier .quality-section .test-tile .mini-series{height:140px}}
+.value-page .full-business-quote{font-size:12px;line-height:1.5;margin:4px 0 8px;color:#716d61}
+.value-page .full-business-quote summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.value-page .business-readings{align-items:start}

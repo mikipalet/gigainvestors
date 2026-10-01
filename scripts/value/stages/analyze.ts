@@ -1,3 +1,4 @@
+import judgementTrust from '../../../lib/value/judgement/trust.json';
 import { completeCachedYears, completeCachedSplits, completeCompanyMetadata } from '../../../lib/value/completeness/cached-years';
 import { isInvestmentHolding } from '../../../lib/value/investment-nav';
 import { fillYears } from '../../../lib/value/completeness/second-sources';
@@ -111,7 +112,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
             description: company.description, sector: company.sector, industry: company.industry,
           }, fundamentals, report, sections, priceHistory, priceHistoryPending, shareInputs,
           bondYieldBucket: localBondYield === null ? null : Math.round(localBondYield * 1000),
-          questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
+          judgementTrust, judgement: readCorpusJson(`judgement/${company.id}.json`), questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
@@ -119,7 +120,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         const priorInputs = readCorpusJson<{ sections: Sections }>(`analysis/inputs/${company.id}.json`);
         let derivedValues:Array<{fy:number;field:string;value:number;provenance:NonNullable<Year['provenance']>[string]}>=[];
         const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, priceHistoryPending, ...shareInputs,
-          bondYield: localBondYield, ask, getBondYield, usdRate,onDerivedYears:years=>{
+          judgement: readCorpusJson(`judgement/${company.id}.json`), bondYield: localBondYield, ask, getBondYield, usdRate,onDerivedYears:years=>{
             derivedValues=years.flatMap(y=>(['marketCap','averageSharePrice','buybacks'] as const).flatMap(field=>{
               const value=y[field],provenance=y.provenance?.[field];
               return typeof value==='number'&&Number.isFinite(value)&&provenance&&(field!=='buybacks'||provenance.method==='estimate')?[{fy:y.fy,field,value,provenance}]:[];

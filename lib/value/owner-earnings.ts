@@ -11,7 +11,7 @@ export function ownerEarningsBridge(years: Year[]) {
       ? year.revenue - prev.revenue : null;
     const growthCapex = delta === null || delta <= 0 ? 0 : ratios.length ? Math.max(0, ratios.reduce((a, b) => a + b, 0) / ratios.length * delta) : null;
     const cashFlowBasis = (year.da === null || growthCapex === null) && year.ocf !== null && year.capex !== null;
-    const maintenanceCapex = cashFlowBasis ? year.capex : year.capex === null || year.da === null || growthCapex === null ? null : Math.max(year.capex - growthCapex, Math.min(year.capex, year.da));
+    const maintenanceCapex = year.maintenanceCapexJudgement ?? (cashFlowBasis ? year.capex : year.capex === null || year.da === null || growthCapex === null ? null : Math.max(year.capex - growthCapex, Math.min(year.capex, year.da)));
     const leaseCashCost = year.leaseCash ?? (year.leaseDepreciationIncluded && (year.leaseLiabilities ?? 0) > 0 ? 0.2 * year.leaseLiabilities! : 0);
     const allocation = parentShare(year);
     const value = year.leaseCashIncomplete || allocation === null || maintenanceCapex === null ? null

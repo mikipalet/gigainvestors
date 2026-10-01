@@ -24,12 +24,20 @@ export function run({ years, kind, priceHistoryPending = false }: NumericInput) 
   const withPrices = retainedTest(years.map(y => ({ ...y, marketCap: y.dilutedShares !== null && y.dilutedShares > 0 ? 1 : null })));
   const retainedPending = priceHistoryPending && withPrices.gain !== null && withPrices.retained !== null;
 
+  // Separate reported acquisition consideration from ordinary issuance only for dilution.
+  // Actual shares remain the denominator for every per-share value and valuation calculation.
+  const dilutionShares=(window:typeof history)=>{
+    const issued=window.slice(1).reduce((sum,y)=>sum+(y.acquisitionIssuanceJudgement??0),0);
+    return window.at(-1)?.dilutedShares==null?null:Math.max(0,window.at(-1)!.dilutedShares!-issued);
+  };
   const shareCagr = history.length !== 11 || !first || !end || end.fy - first.fy !== 10 || present(history.map(y => y.dilutedShares)).length < 5 ? null
     : cagr({ first: first.dilutedShares, last: end.dilutedShares, years: 10 });
   const fiveStart = end ? history.find(y => y.fy === end.fy - 5) : undefined;
   const shareCagr5 = !fiveStart || !end ? null
     : cagr({ first: fiveStart.dilutedShares, last: end.dilutedShares, years: 5 });
-  const dilutionPass = [shareCagr, shareCagr5].some(value => value !== null && value <= T.management.maxShareCagr + Number.EPSILON)
+  const nonAcquisitionShareCagr=shareCagr===null?null:cagr({first:first.dilutedShares,last:dilutionShares(history),years:10});
+  const nonAcquisitionShareCagr5=shareCagr5===null?null:cagr({first:fiveStart!.dilutedShares,last:dilutionShares(history.filter(y=>y.fy>=fiveStart!.fy)),years:5});
+  const dilutionPass = [nonAcquisitionShareCagr, nonAcquisitionShareCagr5].some(value => value !== null && value <= T.management.maxShareCagr + Number.EPSILON)
     ? true : shareCagr === null || shareCagr5 === null ? null : false;
   const paired = ys.flatMap(y => {
     const earningsYield = ratio(y.netIncome, y.marketCap);
@@ -63,7 +71,7 @@ export function run({ years, kind, priceHistoryPending = false }: NumericInput) 
     : !(roicLast3Median < T.moat.roicMedian && roicLast3Median < T.management.roicRetention * roicFirst3Median);
   const acquisitionLabel = ys.some(y => y.acquisitionsProxy) ? "acquired goodwill and intangibles (proxy)" : "acquisition spending";
   const displayReturn = (value: number | null) => value === null ? "unavailable" : value === Infinity ? "unlimited" : `${(value * 100).toFixed(1)}%`;
-  return outcome({ key: "management", metrics: { marketCapGain: retained.gain, retainedEarnings: retained.retained, shareCagr, shareCagr5,
+  return outcome({ key: "management", metrics: { nonAcquisitionShareCagr, nonAcquisitionShareCagr5, marketCapGain: retained.gain, retainedEarnings: retained.retained, shareCagr, shareCagr5,
     retainedStartFy: retained.startFy, retainedEndFy: retained.endFy, perShareValueGrowth, perShareValueChange, perShareStart, perShareEnd,
     buybackYieldSpearman: discipline, averageBuybackYield, buybackYears: paired.length,
     debtFundedBuybacks: debtFunded === null ? null : Number(debtFunded), acquisitionSpend, cumulativeNetIncome, roicFirst3Median, roicLast3Median },

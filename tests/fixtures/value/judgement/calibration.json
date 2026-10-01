@@ -1,0 +1,1397 @@
+{
+  "method": "Manually labelled verbatim annual-report passages, with unrelated filing controls. No company holding status used as a label.",
+  "cases": [
+    {
+      "id": "business-GOOGL.US-0",
+      "topic": "business",
+      "company": "GOOGL.US",
+      "expected": "identified",
+      "evidence": {
+        "quote": "We have built world-class advertising technologies for advertisers, agencies, and publishers to power their digital marketing businesses.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "business-AXP.US-1",
+      "topic": "business",
+      "company": "AXP.US",
+      "expected": "identified",
+      "evidence": {
+        "quote": "Founded in 1850 and headquartered in New York, American Express\u2019 card-issuing, merchant-acquiring and card network businesses offer products and services to a broad range of customers, including consumers, small businesses, mid-sized companies and large corporations around the world.",
+        "url": "https://www.sec.gov/Archives/edgar/data/4962/000000496226000080/axp-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-06"
+      }
+    },
+    {
+      "id": "business-AAPL.US-2",
+      "topic": "business",
+      "company": "AAPL.US",
+      "expected": "identified",
+      "evidence": {
+        "quote": "The Company operates various platforms, including the App Store\u00ae, that allow customers to discover and download applications and digital content, such as books, music, video, games and podcasts.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "business",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "moat-KO.US-3",
+      "topic": "moat",
+      "company": "KO.US",
+      "expected": "brand",
+      "evidence": {
+        "quote": "Our competitive strengths include leading brands with high levels of consumer recognition and loyalty; a worldwide network of bottlers and distributors of Company products; sophisticated marketing capabilities; and a talented group of dedicated employees.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "moat-AXP.US-4",
+      "topic": "moat",
+      "company": "AXP.US",
+      "expected": "brand",
+      "evidence": {
+        "quote": "We believe the many benefits that come with American Express Membership build a strong, emotional connection with our brand across generations and geographies.",
+        "url": "https://www.sec.gov/Archives/edgar/data/4962/000000496226000080/axp-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-06"
+      }
+    },
+    {
+      "id": "moat-LULU.US-5",
+      "topic": "moat",
+      "company": "LULU.US",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We develop proprietary fabrics and collaborate with leading fabric and trims suppliers to manufacture fabrics and trims that we generally seek to protect through agreements, trademarks, and as trade-secrets.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+        "section": "business",
+        "filed": "2026-03-17"
+      }
+    },
+    {
+      "id": "moat-AAPL.US-6",
+      "topic": "moat",
+      "company": "AAPL.US",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Principal competitive factors important to the Company include price, product and service features (including security features), relative price and performance, product and service quality and reliability, design and technology innovation, a strong third-party software and accessories ecosystem, marketing and distribution capability, service and support, corporate reputation, and the ability to effectively protect and enforce the Company\u2019s intellectual property rights.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "business",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "moat-AXP.US-7",
+      "topic": "moat",
+      "company": "AXP.US",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We maintain direct relationships with Card Members (as a card issuer) and merchants (as an acquirer), which provides us with access to information at both ends of the card transaction, distinguishing our integrated payments platform from the bankcard networks.",
+        "url": "https://www.sec.gov/Archives/edgar/data/4962/000000496226000080/axp-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-06"
+      }
+    },
+    {
+      "id": "concentration-LULU.US-8",
+      "topic": "concentration",
+      "company": "LULU.US",
+      "expected": "concentrated",
+      "evidence": {
+        "quote": "We obtain our fabrics and produce our products through a limited number of suppliers.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+        "section": "business",
+        "filed": "2026-03-17"
+      }
+    },
+    {
+      "id": "concentration-AAPL.US-9",
+      "topic": "concentration",
+      "company": "AAPL.US",
+      "expected": "concentrated",
+      "evidence": {
+        "quote": "Although most components essential to the Company\u2019s business are generally available from multiple sources, certain components are currently obtained from single or limited sources.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "business",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "competitors-KO.US-10",
+      "topic": "competitors",
+      "company": "KO.US",
+      "expected": "named",
+      "evidence": {
+        "quote": "Other significant competitors include, but are not limited to, Nestl\u00e9 S.A., Keurig Dr Pepper Inc., Danone S.A., Suntory Beverage & Food Limited, Anheuser-Busch InBev, Kirin Holdings, Heineken N.V., Diageo plc and Red Bull GmbH.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "candor-LULU.US-11",
+      "topic": "candor",
+      "company": "LULU.US",
+      "expected": "admission",
+      "evidence": {
+        "quote": "The decline in Americas comparable sales also contributed to a decline in global sales per square foot.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+        "section": "mdna",
+        "filed": "2026-03-17"
+      }
+    },
+    {
+      "id": "candor-PLUG.US-12",
+      "topic": "candor",
+      "company": "PLUG.US",
+      "expected": "admission",
+      "evidence": {
+        "quote": "The Company has continued to experience negative cash flows from operations and net losses.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1093691/000110465926022286/plug-20251231x10k.htm",
+        "section": "mdna",
+        "filed": "2026-03-02"
+      }
+    },
+    {
+      "id": "candor-KHC.US-13",
+      "topic": "candor",
+      "company": "KHC.US",
+      "expected": "admission",
+      "evidence": {
+        "quote": "Organic Net Sales decreased 3.4% to $24.9 billion in 2025 compared to $25.8 billion in 2024, primarily due to the unfavorable volume/mix (4.1 pp), which more than offset higher pricing (0.7 pp).",
+        "url": "https://www.sec.gov/Archives/edgar/data/1637459/000163745926000009/khc-20251227.htm",
+        "section": "mdna",
+        "filed": "2026-02-12"
+      }
+    },
+    {
+      "id": "allocation-GOOGL.US-14",
+      "topic": "allocation",
+      "company": "GOOGL.US",
+      "expected": "buybacks",
+      "evidence": {
+        "quote": "\u2022Repurchases of Class A and Class C shares were $6.5 billion and $38.9 billion, respectively, totaling $45.4 billion for the year ended December 31, 2025.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "mdna",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "allocation-AAPL.US-15",
+      "topic": "allocation",
+      "company": "AAPL.US",
+      "expected": "dividends",
+      "evidence": {
+        "quote": "As of September 27, 2025, the Company\u2019s quarterly cash dividend was $0.26 per share.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "mdna",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "allocation-MCO.US-16",
+      "topic": "allocation",
+      "company": "MCO.US",
+      "expected": "buybacks",
+      "evidence": {
+        "quote": "On October 21, 2025, the Board authorized $4 billion in share repurchase authority.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "capital",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "risk-AAPL.US-17",
+      "topic": "risk",
+      "company": "AAPL.US",
+      "expected": "concrete",
+      "evidence": {
+        "quote": "Many of the Company\u2019s operations, retail stores and facilities, as well as critical business operations of the Company\u2019s suppliers and contract manufacturers, are in locations that are prone to earthquakes and other natural disasters.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "risk",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "risk-LULU.US-18",
+      "topic": "risk",
+      "company": "LULU.US",
+      "expected": "concrete",
+      "evidence": {
+        "quote": "Our brand and reputation could be adversely affected by negative publicity, if we fail to deliver innovative and high-quality products acceptable to our guests, or if we face or mishandle a product recall, which could be amplified by social media.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+        "section": "risk",
+        "filed": "2026-03-17"
+      }
+    },
+    {
+      "id": "risk-GOOGL.US-19",
+      "topic": "risk",
+      "company": "GOOGL.US",
+      "expected": "concrete",
+      "evidence": {
+        "quote": "These investment areas face intense competition from large, experienced, and well-funded competitors, and our offerings, many of which involve the development of new and emerging technologies, may not be successful, or be able to compete effectively or operate at sufficient levels of profitability.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "risk",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "capex-GOOGL.US-20",
+      "topic": "capex",
+      "company": "GOOGL.US",
+      "expected": "growth",
+      "evidence": {
+        "quote": "Increased Investment in Technical Infrastructure: We continue to invest in capital expenditures as we scale our technical infrastructure, in particular for AI, to meet the demand of our users and enterprise customers and to support research internally.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "mdna",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "issuance-MCO.US-21",
+      "topic": "issuance",
+      "company": "MCO.US",
+      "expected": "compensation",
+      "evidence": {
+        "quote": "During the fourth quarter of 2025, Moody\u2019s issued a net 48 thousand shares under employee stock-based compensation plans.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "capital",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "issuance-AMC.US-22",
+      "topic": "issuance",
+      "company": "AMC.US",
+      "expected": "financing",
+      "evidence": {
+        "quote": "Additionally, during the year ended December 31, 2025, we issued shares of Common Stock through an \u201cat-the-market\u201d offering.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1411579/000141157926000016/amc-20251231x10k.htm",
+        "section": "mdna",
+        "filed": "2026-02-23"
+      }
+    },
+    {
+      "id": "issuance-V.US-23",
+      "topic": "issuance",
+      "company": "V.US",
+      "expected": "acquisition",
+      "evidence": {
+        "quote": "In August 2025, we released $1.4 billion of the as-converted value from our series B and C preferred stock and issued 40,080 shares of series A preferred stock in connection with the ninth anniversary of the Visa Europe acquisition.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+        "section": "mdna",
+        "filed": "2025-11-06"
+      }
+    },
+    {
+      "id": "oneoff-V.US-24",
+      "topic": "oneoff",
+      "company": "V.US",
+      "expected": "nonrecurring",
+      "evidence": {
+        "quote": "Acquisition-related costs consist primarily of one-time transaction and integration costs associated with our business combinations.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+        "section": "mdna",
+        "filed": "2025-11-06"
+      }
+    },
+    {
+      "id": "pricing-KHC.US-25",
+      "topic": "pricing",
+      "company": "KHC.US",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Organic Net Sales increased 4.6% to $2.8 billion in 2025 compared to $2.7 billion in 2024, primarily driven by higher pricing (4.0 pp) and favorable volume/mix (0.6 pp).",
+        "url": "https://www.sec.gov/Archives/edgar/data/1637459/000163745926000009/khc-20251227.htm",
+        "section": "mdna",
+        "filed": "2026-02-12"
+      }
+    },
+    {
+      "id": "pricing-LULU.US-26",
+      "topic": "pricing",
+      "company": "LULU.US",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We have taken mitigating actions, including selective price increases and vendor negotiations; however, we do not expect these actions to fully offset these incremental costs, and we believe tariffs and de minimis changes will continue to adversely affect gross margin and income from operations in 2026.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+        "section": "mdna",
+        "filed": "2026-03-17"
+      }
+    },
+    {
+      "id": "capex-AMZN.US-27",
+      "topic": "capex",
+      "company": "AMZN.US",
+      "expected": "growth",
+      "evidence": {
+        "quote": "Cash capital expenditures were $77.7 billion, and $128.3 billion in 2024 and 2025, which primarily reflect investments in technology infrastructure (the majority of which is to support AWS business growth) and in additional capacity to support our fulfillment network, both of which we expect to increase in 2026.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+        "section": "mdna",
+        "filed": "2026-02-06"
+      }
+    },
+    {
+      "id": "capex-T.US-28",
+      "topic": "capex",
+      "company": "T.US",
+      "expected": "mixed",
+      "evidence": {
+        "quote": "Depreciation expense increased in 2025, primarily due to ongoing capital spending for network upgrades and expansion, partially offset by lower depreciation impacts from our network modernization efforts.",
+        "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm",
+        "section": "mdna",
+        "filed": "2026-02-09"
+      }
+    },
+    {
+      "id": "competitors-AXP.US-29",
+      "topic": "competitors",
+      "company": "AXP.US",
+      "expected": "named",
+      "evidence": {
+        "quote": "Our global card network competes in the global payments industry with other card networks, including, among others, Visa, China UnionPay, Mastercard, JCB, Discover and Diners Club International (the last two of which are owned by Capital One).",
+        "url": "https://www.sec.gov/Archives/edgar/data/4962/000000496226000080/axp-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-06"
+      }
+    },
+    {
+      "id": "competitors-AXP.US-30",
+      "topic": "competitors",
+      "company": "AXP.US",
+      "expected": "named",
+      "evidence": {
+        "quote": "We are the fourth largest general-purpose card network globally based on purchase volume, behind Visa, China UnionPay and Mastercard.",
+        "url": "https://www.sec.gov/Archives/edgar/data/4962/000000496226000080/axp-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-06"
+      }
+    },
+    {
+      "id": "concentration-LULU.US-31",
+      "topic": "concentration",
+      "company": "LULU.US",
+      "expected": "concentrated",
+      "evidence": {
+        "quote": "In 2025, 48% of our fabrics were produced by our top five fabric suppliers, with the largest manufacturer producing 20%.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+        "section": "business",
+        "filed": "2026-03-17"
+      }
+    },
+    {
+      "id": "moat-PG.US-32",
+      "topic": "moat",
+      "company": "PG.US",
+      "expected": "brand",
+      "evidence": {
+        "quote": "We leverage marketing strategies including advertising, promotions and endorsements to drive brand awareness and loyalty among consumers.",
+        "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000103/pg-20260630.htm",
+        "section": "business",
+        "filed": "2026-08-04"
+      }
+    },
+    {
+      "id": "pricing-WTS.US-33",
+      "topic": "pricing",
+      "company": "WTS.US",
+      "expected": "demonstrated",
+      "evidence": {
+        "quote": "Organic net sales increased $133.7 million, or 8.0%, primarily due to favorable price realization and increased volume.",
+        "url": "https://www.sec.gov/Archives/edgar/data/795403/000110465926018541/wts-20251231x10k.htm",
+        "section": "mdna",
+        "filed": "2026-02-23"
+      }
+    },
+    {
+      "id": "pricing-UNP.US-34",
+      "topic": "pricing",
+      "company": "UNP.US",
+      "expected": "demonstrated",
+      "evidence": {
+        "quote": "Freight revenues from industrial shipments increased in 2025 versus 2024 due to core pricing gains and higher volumes, partially offset by a negative mix of traffic, from increased rock and lower lumber shipments, and lower fuel surcharge revenues.",
+        "url": "https://www.sec.gov/Archives/edgar/data/100885/000010088526000037/unp-20251231.htm",
+        "section": "mdna",
+        "filed": "2026-02-06"
+      }
+    },
+    {
+      "id": "pricing-IFF.US-35",
+      "topic": "pricing",
+      "company": "IFF.US",
+      "expected": "demonstrated",
+      "evidence": {
+        "quote": "On a comparable currency neutral basis, Pharma Solutions sales increased 12% in 2025 compared to the 2024 period driven by volume and price increases.",
+        "url": "https://www.sec.gov/Archives/edgar/data/51253/000005125326000006/iff-20251231.htm",
+        "section": "mdna",
+        "filed": "2026-02-27"
+      }
+    },
+    {
+      "id": "oneoff-SWBI.US-36",
+      "topic": "oneoff",
+      "company": "SWBI.US",
+      "expected": "nonrecurring",
+      "evidence": {
+        "quote": "Selling, marketing, and distribution expenses increased $284,000, primarily as a result of higher profit-related compensation expenses and one-time costs related to the grand opening event for the Academy, partially offset by lower promotional costs.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1092796/000119312526274254/swbi-20260430.htm",
+        "section": "mdna",
+        "filed": "2026-06-17"
+      }
+    },
+    {
+      "id": "oneoff-TWI.US-37",
+      "topic": "oneoff",
+      "company": "TWI.US",
+      "expected": "nonrecurring",
+      "evidence": {
+        "quote": "Acquisition-related expenses for the year ended December 31, 2025 and 2024 was $0.0 million and $6.2 million, respectively, reflecting one-time transaction costs for Titan Specialty.",
+        "url": "https://www.sec.gov/Archives/edgar/data/899751/000089975126000007/twi-20251231.htm",
+        "section": "mdna",
+        "filed": "2026-02-26"
+      }
+    },
+    {
+      "id": "oneoff-ENVX.US-38",
+      "topic": "oneoff",
+      "company": "ENVX.US",
+      "expected": "nonrecurring",
+      "evidence": {
+        "quote": "These increases were partially offset by the absence of a $1.9 million non-recurring inventory step-up amortization recorded in fiscal year 2024 related to the Routejade acquisition.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1828318/000182831826000006/envx-20251228.htm",
+        "section": "mdna",
+        "filed": "2026-02-25"
+      }
+    },
+    {
+      "id": "business-negative-0",
+      "topic": "business",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "business-negative-1",
+      "topic": "business",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "business-negative-2",
+      "topic": "business",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "business-negative-3",
+      "topic": "business",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "business-negative-4",
+      "topic": "business",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "business-negative-5",
+      "topic": "business",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "business-negative-6",
+      "topic": "business",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "moat-negative-0",
+      "topic": "moat",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "moat-negative-1",
+      "topic": "moat",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "moat-negative-2",
+      "topic": "moat",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "moat-negative-3",
+      "topic": "moat",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "moat-negative-4",
+      "topic": "moat",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "moat-negative-5",
+      "topic": "moat",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "moat-negative-6",
+      "topic": "moat",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "pricing-negative-0",
+      "topic": "pricing",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "pricing-negative-1",
+      "topic": "pricing",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "pricing-negative-2",
+      "topic": "pricing",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "pricing-negative-3",
+      "topic": "pricing",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "pricing-negative-4",
+      "topic": "pricing",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "pricing-negative-5",
+      "topic": "pricing",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "pricing-negative-6",
+      "topic": "pricing",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "concentration-negative-0",
+      "topic": "concentration",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "concentration-negative-1",
+      "topic": "concentration",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "concentration-negative-2",
+      "topic": "concentration",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "concentration-negative-3",
+      "topic": "concentration",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "concentration-negative-4",
+      "topic": "concentration",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "concentration-negative-5",
+      "topic": "concentration",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "concentration-negative-6",
+      "topic": "concentration",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "competitors-negative-0",
+      "topic": "competitors",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "competitors-negative-1",
+      "topic": "competitors",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "competitors-negative-2",
+      "topic": "competitors",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "competitors-negative-3",
+      "topic": "competitors",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "competitors-negative-4",
+      "topic": "competitors",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "competitors-negative-5",
+      "topic": "competitors",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "competitors-negative-6",
+      "topic": "competitors",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "candor-negative-0",
+      "topic": "candor",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "candor-negative-1",
+      "topic": "candor",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "candor-negative-2",
+      "topic": "candor",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "candor-negative-3",
+      "topic": "candor",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "candor-negative-4",
+      "topic": "candor",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "candor-negative-5",
+      "topic": "candor",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "candor-negative-6",
+      "topic": "candor",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "allocation-negative-0",
+      "topic": "allocation",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "allocation-negative-1",
+      "topic": "allocation",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "allocation-negative-2",
+      "topic": "allocation",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "allocation-negative-3",
+      "topic": "allocation",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "allocation-negative-4",
+      "topic": "allocation",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "allocation-negative-5",
+      "topic": "allocation",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "allocation-negative-6",
+      "topic": "allocation",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "risk-negative-0",
+      "topic": "risk",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "risk-negative-1",
+      "topic": "risk",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "risk-negative-2",
+      "topic": "risk",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "risk-negative-3",
+      "topic": "risk",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "risk-negative-4",
+      "topic": "risk",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "risk-negative-5",
+      "topic": "risk",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "risk-negative-6",
+      "topic": "risk",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "capex-negative-0",
+      "topic": "capex",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "capex-negative-1",
+      "topic": "capex",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "capex-negative-2",
+      "topic": "capex",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "capex-negative-3",
+      "topic": "capex",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "capex-negative-4",
+      "topic": "capex",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "capex-negative-5",
+      "topic": "capex",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "capex-negative-6",
+      "topic": "capex",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "oneoff-negative-0",
+      "topic": "oneoff",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "oneoff-negative-1",
+      "topic": "oneoff",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "oneoff-negative-2",
+      "topic": "oneoff",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "oneoff-negative-3",
+      "topic": "oneoff",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "oneoff-negative-4",
+      "topic": "oneoff",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "oneoff-negative-5",
+      "topic": "oneoff",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "oneoff-negative-6",
+      "topic": "oneoff",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "issuance-negative-0",
+      "topic": "issuance",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Preferred stock, at $1.00 per share par value, issued shares: 2025 \u2014 84,897 and 2024 \u2014 84,897",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "notes",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "issuance-negative-1",
+      "topic": "issuance",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "The Coca-Cola Company was incorporated in September 1919 under the laws of the State of Delaware and succeeded to the business of a Georgia corporation with the same name that had been organized in 1892.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-20"
+      }
+    },
+    {
+      "id": "issuance-negative-2",
+      "topic": "issuance",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Financial information and operating results of these segments, including revenue, expenses and Adjusted Operating Income, are included in Part II, Item 8. Financial Statements of this annual report and are herein incorporated by reference.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1059556/000162828026009136/mco-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "issuance-negative-3",
+      "topic": "issuance",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "Information contained on the Company\u2019s website is not part of or incorporated into this Form 10-K or any other filings with the SEC.",
+        "url": "https://www.sec.gov/Archives/edgar/data/797468/000162828026009059/oxy-20251231.htm",
+        "section": "business",
+        "filed": "2026-02-18"
+      }
+    },
+    {
+      "id": "issuance-negative-4",
+      "topic": "issuance",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-05"
+      }
+    },
+    {
+      "id": "issuance-negative-5",
+      "topic": "issuance",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "section": "auditor",
+        "filed": "2025-10-31"
+      }
+    },
+    {
+      "id": "issuance-negative-6",
+      "topic": "issuance",
+      "company": "filing negative control",
+      "expected": "unclear",
+      "evidence": {
+        "quote": "We are a public accounting firm registered with the PCAOB and are required to be independent with respect to the Company in accordance with the U.S. federal securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB.",
+        "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+        "section": "auditor",
+        "filed": "2026-02-20"
+      }
+    }
+  ]
+}

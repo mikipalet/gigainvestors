@@ -3,7 +3,7 @@ import { last, mean, opMargin, outcome, present, withZeroDefaults } from "../met
 import type { NumericInput } from "../types";
 
 export function run({ years }: NumericInput) {
-  years = withZeroDefaults(years);
+  years = withZeroDefaults(years).map(y=>({...y,operatingIncome:y.marginOperatingIncomeJudgement??y.operatingIncome}));
   const history = last(years, T.understandable.years + 1), ys = last(history, T.understandable.years);
   const revenueChanges = history.slice(1).map((y, i) => y.revenue === null || history[i].revenue === null || y.fy !== history[i].fy + 1 ? null : y.revenue - history[i].revenue!);
   const margins = present(ys.map(opMargin)), average = mean(margins);

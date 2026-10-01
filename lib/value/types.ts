@@ -36,6 +36,11 @@ export interface Company {
 // One fiscal year, reporting currency, absolute units. null = not reported.
 // Sign convention: capex, buybacks, dividendsPaid, acquisitions are POSITIVE amounts spent.
 export interface Year {
+  maintenanceCapexJudgement?: number;
+  disclosedMaintenanceCapex?: number;
+  marginOperatingIncomeJudgement?: number;
+  acquisitionSharesIssued?: number;
+  acquisitionIssuanceJudgement?: number;
   commonCapitalCancelled?: boolean;
   sourceWarnings?: string[]; // Rejected source observations; affected fields stay null.
   provenance?: Record<string, import('./derive').ValueProvenance>;
@@ -153,6 +158,9 @@ export interface JevAnswer {
 }
 
 export interface TestOutcome {
+  judgement?: import("./judgement/types").HumanTest;
+  rawNumeric?: Result;
+  rawMetrics?: Record<string, number | null>;
   insufficientHistory?: number;
   /** Unclear solely because an input fetch is still pending. */
   pending?: boolean;
@@ -216,6 +224,7 @@ export interface CompanyEvent {
 }
 
 export interface Analysis {
+  judgement?: import("./judgement/types").PublicJudgement;
   thesis?: import("./thesis/types").PublicThesis;
   reportingCurrency?: string;
   author?: string;

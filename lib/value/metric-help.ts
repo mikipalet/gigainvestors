@@ -20,6 +20,8 @@ const labels:Record<string,[string,string]> = {
  retainedEarnings:['Profits kept in the business','Retaining profit makes sense only if managers can invest it well.'],
  retainedDollar:['Market value created per $1 kept in the business','Managers should create at least a dollar of value for every dollar they keep.'],
  shareCagr:['Yearly change in the number of shares, 10 years','Issuing shares dilutes each owner’s stake; a negative change means fewer shares, often from buybacks.'],
+ nonAcquisitionShareCagr:['Ordinary dilution over 10 years','Excludes only a disclosed acquisition contribution measured on the same weighted-average share basis. Actual shares still determine value per share.'],
+ nonAcquisitionShareCagr5:['Ordinary dilution over 5 years','Separates evidenced acquisition issuance from other dilution; per-share earnings still use all shares.'],
  shareCagr5:['Yearly change in the number of shares, 5 years','Fewer shares can increase each owner’s claim on future cash. Negative can be good.'],
  retainedStartFy:['First year in the retained-profit test','A multi-year view gives retained profits time to create value.'],
  retainedEndFy:['Last year in the retained-profit test','Matched endpoints keep the comparison consistent.'],

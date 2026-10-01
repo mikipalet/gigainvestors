@@ -51,6 +51,10 @@ export default async function renormalize(options: Options): Promise<void> {
     if (Date.now() - before.mtimeMs < 10_000) { skipped++; continue; }
     const raw = readCorpusJson<unknown>(`raw/eodhd/${id}.json`);
     const existing = readCorpusJson<Fundamentals>(`fundamentals/${id}.json`);
+    // A 404 fallback is newer source evidence, not an invitation to replay old EODHD data.
+    if (existing?.years?.some(year => Object.values(year.provenance ?? {}).some(p => p.source.startsWith('raw/yahoo-fundamentals/')))) {
+      skipped++; continue;
+    }
     const { fundamentals } = normalizeEodhd(raw, id);
     fundamentals.fetchedAt = existing?.fetchedAt ?? before.mtime.toISOString();
     const after = statSync(rawPath);

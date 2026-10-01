@@ -1,3 +1,5 @@
+import { fetchYahooFundamentals, normalizeYahooFundamentals } from '../../../lib/value/fundamentals-yahoo';
+import { mergeIndiaYahoo } from '../../../lib/value/india/filings';
 import { statfsSync } from 'node:fs';
 import { universeCompanies } from '../../../lib/value/companies';
 import { companyExclusion } from '../../../lib/value/fund-exclusion';
@@ -48,22 +50,50 @@ export default async function fundamentals(options: Options): Promise<void> {
     .sort((a,b)=>Number(overdue.has(b.id))-Number(overdue.has(a.id)) || (overdue.has(a.id)&&overdue.has(b.id) ? Number(fetchedAt.has(a.id))-Number(fetchedAt.has(b.id)) : 0))
     .slice(0, options.limit);
   if (!selected.length) { console.log('fundamentals: 0 due'); return; }
+  console.log(`fundamentals selection: eligible=${eligible.length}; dueMembers=${overdue.size}; selected=${selected.length}; membersFirst=${Boolean(options.membersFirst)}`);
   const usdRate = createUsdRate(options);
-  let used = await callsUsedToday();
+  let used = selected.some(c => c.exchange !== 'NSE' && c.exchange !== 'BSE') ? await callsUsedToday() : 0;
   let written = 0;
   let attempted = 0;
+  let paidAttempts = 0;
+  let yahooWritten = 0;
   const failures: Array<{id:string;error:string}>=[];
   for (const company of selected) {
-    const disk=statfsSync('/'); if(disk.bavail*disk.bsize<5e9) throw new Error('Disk below 5 GB; stopping');
-    if (Math.max(used, budgetUsage().used) + T.budget.fundamentalsCost > T.budget.dailyCalls) {
+    const disk=statfsSync('/'); if(disk.bavail*disk.bsize<5*1024**3) throw new Error('Disk below 5 GB; stopping');
+    const india = company.exchange === 'NSE' || company.exchange === 'BSE';
+    if (!india && Math.max(used, budgetUsage().used) + T.budget.fundamentalsCost > T.budget.dailyCalls) {
       console.log("daily EODHD budget reached, resume tomorrow");
-      break;
+      continue;
     }
-    used += T.budget.fundamentalsCost;
+    if (!india) { used += T.budget.fundamentalsCost; paidAttempts++; }
     attempted++;
     try {
-    const raw = await getFundamentals(company.id);
-    const { fundamentals: normalized, patch, marketCap } = normalizeEodhd(raw, company.id);
+    let raw: unknown;
+    let yahoo = india;
+    if (!yahoo) {
+      try { raw = await getFundamentals(company.id); }
+      catch (error) {
+        if (!(error instanceof Error) || error.message !== 'EODHD HTTP 404') throw error;
+        yahoo = true;
+        console.warn(`fundamentals: ${company.id} EODHD 404; falling back to Yahoo annual statements`);
+      }
+    }
+    if (yahoo) raw = await fetchYahooFundamentals(company);
+    const { fundamentals: normalized, patch, marketCap } = yahoo
+      ? { fundamentals: normalizeYahooFundamentals(raw, company), patch: {} as Partial<Company>, marketCap: { value: null, currency: null } }
+      : normalizeEodhd(raw, company.id);
+    if (india) {
+      const prior = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
+      const official = prior?.years.some(y => Object.values(y.provenance ?? {}).some(p => /^https:\/\/(?:nsearchives|www)\.nseindia\.com\//.test(p.source)));
+      if (official && prior) {
+        const merged = mergeIndiaYahoo(prior.years, normalized.years);
+        normalized.years = merged.years;
+        normalized.currency = prior.currency;
+        normalized.splits = prior.splits;
+        normalized.integrity = { ok: false, reasons: [], notes: [...(prior.integrity?.notes ?? []), ...merged.notes] };
+        normalized.integrity = checkIntegrity(normalized);
+      }
+    }
     if ((patch.kind === 'bank' || patch.kind === 'insurer' || company.kind === 'bank' || /^capital markets$/i.test(patch.industry??'')) && (patch.cik || company.cik)) {
       const cik = String(patch.cik || company.cik).padStart(10, '0');
       try {
@@ -78,17 +108,18 @@ export default async function fundamentals(options: Options): Promise<void> {
     const rate = marketCap.value !== null && currency ? await usdRate(currency) : null;
     patch.marketCapUsd = marketCap.value !== null && rate !== null ? marketCap.value * rate : null;
     const knownPatch = Object.fromEntries(Object.entries(patch).filter(([, value]) => value != null));
-    writeCorpusJson(`raw/eodhd/${company.id}.json`, raw);
+    writeCorpusJson(`raw/${yahoo ? "yahoo-fundamentals" : "eodhd"}/${company.id}.json`, raw);
     writeCorpusJson(`companies/${company.id}.json`, { ...company, ...existing, ...knownPatch });
     writeCorpusJson(`fundamentals/${company.id}.json`, normalized);
     written++;
+    if (yahoo) yahooWritten++;
     console.log(`${company.id}: ${normalized.years.length} annual periods, integrity ${normalized.integrity.ok ? "ok" : normalized.integrity.reasons.join("; ")}`);
     } catch (error) {
       failures.push({id:company.id,error:error instanceof Error?error.message:String(error)});
       console.warn(`fundamentals: ${company.id} failed; continuing backlog`);
     }
-    if (attempted % T.fundamentals.usageSyncCompanies === 0) used = Math.max(used, await callsUsedToday());
+    if (!india && paidAttempts % T.fundamentals.usageSyncCompanies === 0) used = Math.max(used, await callsUsedToday());
   }
-  writeCorpusJson(`fundamentals-runs/${new Date().toISOString().replaceAll(':','-')}.json`,{written,attempted,failures,selected:selected.length,memberCatchup:Boolean(options.membersFirst)});
-  console.log(`fundamentals: ${written} written; ${failures.length} failed`);
+  writeCorpusJson(`fundamentals-runs/${new Date().toISOString().replaceAll(':','-')}.json`,{written,attempted,yahooWritten,failures,selected:selected.length,memberCatchup:Boolean(options.membersFirst)});
+  console.log(`fundamentals summary: selected=${selected.length}; attempted=${attempted}; written=${written}; yahoo=${yahooWritten}; failed=${failures.length}; deferred=${selected.length-attempted}`);
 }

@@ -37,6 +37,7 @@ export interface Company {
 // Sign convention: capex, buybacks, dividendsPaid, acquisitions are POSITIVE amounts spent.
 export interface Year {
   commonCapitalCancelled?: boolean;
+  sourceWarnings?: string[]; // Rejected source observations; affected fields stay null.
   provenance?: Record<string, import('./derive').ValueProvenance>;
   statementCoverage?: { income?: boolean; balance?: boolean; cashFlow?: boolean };
   navPerShare?: number | null; // Explicit reported investment NAV, never ordinary book equity.
@@ -89,6 +90,8 @@ export interface Year {
   preferredEquity?: number | null;
   commonDividendsPaid?: number | null;
   deposits?: number | null;
+  interestIncome?: number | null;
+  tangibleEquity?: number | null; // Parent equity less explicitly reported goodwill and other intangibles.
   creditLossProvision?: number | null;
   peerCreditLossRate?: number | null;
   nonInterestExpense?: number | null;

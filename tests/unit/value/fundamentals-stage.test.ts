@@ -5,9 +5,12 @@ import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { appendJsonl, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { callsUsedToday, eodhd, getFundamentals } from "../../../lib/value/eodhd";
 import stage, { orderFundamentals, needsMemberFundamentals, MEMBER_FRESHNESS_MS } from "../../../scripts/value/stages/fundamentals";
+import { fetchYahooFundamentals, normalizeYahooFundamentals } from "../../../lib/value/fundamentals-yahoo";
+import { readFileSync } from "node:fs";
 import type { Company } from "../../../lib/value/types";
 
 vi.mock("../../../lib/value/eodhd", () => ({ callsUsedToday: vi.fn(), getFundamentals: vi.fn(), eodhd: vi.fn() }));
+vi.mock("../../../lib/value/fundamentals-yahoo", async importOriginal => ({...await importOriginal<typeof import("../../../lib/value/fundamentals-yahoo")>(), fetchYahooFundamentals: vi.fn()}));
 let directory: string;
 beforeEach(() => {
   const root = join(homedir(), "value-corpus");
@@ -102,4 +105,40 @@ it('treats missing dates and empty financials as due and uses a strict 90-day bo
  expect(needsMemberFundamentals({fetchedAt:new Date(now).toISOString(),years:[]},now)).toBe(true);
  expect(needsMemberFundamentals({fetchedAt:new Date(now-MEMBER_FRESHNESS_MS).toISOString(),years:[{}] as never},now)).toBe(false);
  expect(needsMemberFundamentals({fetchedAt:new Date(now-MEMBER_FRESHNESS_MS-1).toISOString(),years:[{}] as never},now)).toBe(true);
+});
+
+it.each(['RELIANCE.NSE','RELIANCE.NZ'])('stores Yahoo annual fallback for %s with source evidence',async id=>{
+ const company={id,code:'RELIANCE',exchange:id.split('.')[1],country:'IN',currency:'INR',source:'eodhd',marketCapUsd:100};
+ appendJsonl('universe.jsonl',company);
+ vi.mocked(getFundamentals).mockRejectedValue(new Error('EODHD HTTP 404'));
+ const raw=JSON.parse(readFileSync('tests/fixtures/value/ops/yahoo-reliance-annual.json','utf8'));
+ for(const s of raw.timeseries.result)s.meta.symbol=[id.endsWith('.NSE')?'RELIANCE.NS':id];
+ vi.mocked(fetchYahooFundamentals).mockResolvedValue(raw);
+ await stage({});
+ expect(readCorpusJson(`fundamentals/${id}.json`)).toMatchObject({id,currency:'INR',integrity:{ok:false}});
+ expect(readCorpusJson(`raw/yahoo-fundamentals/${id}.json`)).toEqual(raw);
+ expect(readCorpusJson(`raw/eodhd/${id}.json`)).toBeNull();
+ expect(readCorpusJson(`companies/${id}.json`)).toMatchObject({marketCapUsd:100});
+ if(id.endsWith('.NSE'))expect(getFundamentals).not.toHaveBeenCalled();
+});
+it('does not turn provider authentication failures into Yahoo fallback',async()=>{
+ appendJsonl('universe.jsonl',{id:'BAD.US'});
+ vi.mocked(getFundamentals).mockRejectedValue(new Error('EODHD HTTP 401'));
+ await stage({});expect(fetchYahooFundamentals).not.toHaveBeenCalled();
+ expect(readCorpusJson('fundamentals/BAD.US.json')).toBeNull();
+});
+it('preserves official India history when a routine Yahoo refresh returns only four years',async()=>{
+ const company={id:'RELIANCE.NSE',code:'RELIANCE',exchange:'NSE',country:'IN',currency:'INR',source:'eodhd',marketCapUsd:100} as Company;
+ appendJsonl('universe.jsonl',company);
+ const raw=JSON.parse(readFileSync('tests/fixtures/value/ops/yahoo-reliance-annual.json','utf8'));
+ const prior=normalizeYahooFundamentals(raw,company);
+ const oldest=prior.years[0];
+ prior.years=[...Array.from({length:oldest.fy-2014},(_,i)=>({...oldest,fy:2014+i,end:`${2014+i}-03-31`})),...prior.years].map(y=>({...y,goodwill:999,provenance:{...y.provenance,revenue:{source:'https://nsearchives.nseindia.com/corporate/xbrl/recorded.xml',field:'RevenueFromOperations',method:'reported' as const}}}));
+ writeCorpusJson('fundamentals/RELIANCE.NSE.json',prior);
+ vi.mocked(fetchYahooFundamentals).mockResolvedValue(raw);
+ await stage({only:['RELIANCE.NSE'],force:true});
+ const saved=readCorpusJson<typeof prior>('fundamentals/RELIANCE.NSE.json')!;
+ expect(saved.years[0].fy).toBe(2014);
+ expect(saved.years.every(y=>y.goodwill===999)).toBe(true);
+ expect(saved.integrity.ok).toBe(true);
 });

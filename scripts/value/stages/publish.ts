@@ -245,7 +245,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
 
 export function runCalibration(cli = path.resolve(__dirname, "../cli.ts")): void {
   try {
-    execFileSync(process.execPath, ["--import", "tsx", cli, "calibrate"], { stdio: "inherit" });
+    execFileSync(process.execPath, ["--import", "tsx", cli, "calibrate", "--existing"], { stdio: "inherit" });
   } catch {
     throw new Error("Calibration failed; publish aborted");
   }

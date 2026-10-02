@@ -17,29 +17,10 @@ test('Alphabet cannot pass cash conversion below 0.8',async({page})=>{
  await page.goto('/googl.us');await expect(page.getByTestId('tile-economics')).toContainText('fail');
  await expect(page.getByTestId('tile-economics')).not.toContainText('Judgement: passes');
 });
-test('empty search offers a directory and a company preview',async({page})=>{
+test('search is the shared gigainvestors modal, not a drawer',async({page})=>{
  await page.goto('/');await page.getByRole('button',{name:'Search companies',exact:true}).click();
- const results=page.getByRole('navigation',{name:'Company results'}).getByRole('button');
- await expect(results.first()).toBeVisible();
- await expect(results.last()).toBeInViewport();
- await expect(page.locator('.search-preview')).toBeVisible();
- await page.getByRole('textbox',{name:'Search company or ticker'}).fill('Wolters');
- await expect(page.locator('.search-preview>header')).toContainText('Wolters');
+ await expect(page.locator('.search-modal')).toBeVisible();
+ await expect(page.locator('dialog[open]')).toHaveCount(0);
+ await page.locator('.search-modal input').fill('Wolters');
+ await expect(page.locator('.search-modal')).toContainText('Wolters');
 });
-
-for(const [width,height] of [[1728,970],[2056,1180],[1440,800]]){
- test(`search fits after memo summaries load at ${width}`,async({page})=>{
-  await page.setViewportSize({width,height});
-  await page.goto('/lulu.us',{waitUntil:'networkidle'});
-  await page.getByRole('button',{name:'Search companies',exact:true}).click();
-  const panel=page.getByRole('dialog');
-  await expect(panel.locator('.search-result-summary').first()).toBeVisible();
-  await panel.evaluate(async el=>{await document.fonts.ready;await Promise.all(el.getAnimations({subtree:true}).map(animation=>animation.finished));});
-  for(const query of ['', 'Wolters']){
-   await panel.getByRole('textbox',{name:'Search company or ticker'}).fill(query);
-   await page.waitForLoadState('networkidle');
-   await expect(panel.getByRole('navigation',{name:'Company results'}).getByRole('button').last()).toBeInViewport();
-   expect((await page.evaluate(audit)).issues).toEqual([]);
-  }
- });
-}

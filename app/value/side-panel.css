@@ -17,9 +17,6 @@
 .value-page .method-sections {display:block;height:auto;columns:1;column-gap:22px}
 .value-page .method-sections>section {break-inside:avoid;margin:0 0 16px}
 .value-page .method-sections .panel-numbers {flex-wrap:wrap;gap:8px}
-.value-page dialog[data-side-panel]:has(.search-modal) {width:min(620px,100vw)}
-.value-page dialog[data-side-panel] .search-modal {width:100%;box-shadow:none;min-height:0}
-.value-page .search-modal :is(input,button,li,div) {font-size:14px}
 @media(max-width:767px) {
  .value-page dialog[data-side-panel],.value-page dialog[data-side-panel].compact-panel {inset:0;width:100vw;max-width:100vw;border:0}
  .value-page dialog[data-side-panel] .panel-shell>header {padding:0 16px}

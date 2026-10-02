@@ -1,3 +1,4 @@
+import {memoAtPrice} from './owner-memo';
 import {consistentValuation} from './return-model';
 import {valuationMargin} from './valuation';
 import { METHOD_VERSION } from './method-version';
@@ -72,7 +73,8 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     if (!isDecided(analysis)) {
       if (shortHistory(analysis) && !missingInvestmentNav(analysis)) {
         const dossier: Dossier={...analysis,methodVersion:METHOD_VERSION,w:null,b:false,holders:[],series:analysis.series??{}};
-        (shards[shardOf(analysis.id)]??={})[analysis.id]=publicAnalysis(dossier);
+        const visible=publicAnalysis(dossier);visible.ownerMemo=memoAtPrice(visible,prices[analysis.id]);
+        (shards[shardOf(analysis.id)]??={})[analysis.id]=visible;
       }
       continue;
     }
@@ -126,7 +128,8 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       tests: { ...analysis.tests, price: { key: "price", result: price.result, numeric: price.result, reasons: price.mos === null ? ["Valuation or price unavailable in trading currency"] : [], metrics: { mos: price.mos }, series: {}, jev: [] } },
     };
     const shard = shardOf(analysis.id);
-    (shards[shard] ??= {})[analysis.id] = publicAnalysis(dossier);
+    const visible=publicAnalysis(dossier);visible.ownerMemo=memoAtPrice(visible,prices[analysis.id]);
+    (shards[shard] ??= {})[analysis.id] = visible;
     if (price.dataQualityFlags.length) unresolved.push({id:analysis.id,qualityPass:t==='PPPPP',reasons:price.dataQualityFlags});
     const roic = (analysis.tests.moat.series.totalRoic ?? []).slice(-T.history.years)
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));

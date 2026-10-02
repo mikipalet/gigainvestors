@@ -19,3 +19,9 @@ data/newsletter/*.facts.json
 
 # Business review: one local staging store
 .business-3/
+
+# Owner memo local publication snapshot
+.memo-1/
+
+# Owner memo round-two local publication
+.memo-2/

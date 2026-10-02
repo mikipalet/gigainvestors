@@ -10,7 +10,7 @@ export function diskGuard():void {
  const disk=statfsSync('/');
  if(disk.bavail*disk.bsize<5*1024**3)throw new Error('DISK STOP: less than 5 GiB free on /');
 }
-export async function fetchDocument(url:string, depth=0):Promise<string>{
+export async function fetchDocument(url:string, depth=0, pdfLayout=true):Promise<string>{
  diskGuard();
  if(depth>2)throw new Error("Too many embedded filing redirects");
  const response=await fetch(url,{headers:{'User-Agent':process.env.SEC_USER_AGENT??'GigaInvestors value hello@gigainvestors.com'},signal:AbortSignal.timeout(45000)});
@@ -18,10 +18,10 @@ export async function fetchDocument(url:string, depth=0):Promise<string>{
  const reader=response.body!.getReader(),parts:Uint8Array[]=[];let size=0;
  while(true){const {done,value}=await reader.read();if(done)break;size+=value.length;if(size>64_000_000){await reader.cancel();throw new Error('Filing exceeds 64 MB memory limit');}parts.push(value);}
  const bytes=Buffer.concat(parts);
- if(bytes.subarray(0,4).toString()==='%PDF')return execFileSync('pdftotext',['-layout','-','-'],{input:bytes,maxBuffer:16_000_000}).toString().replace(/[^\S\n]+/g,' ');
+ if(bytes.subarray(0,4).toString()==='%PDF')return execFileSync('pdftotext',[...(pdfLayout?['-layout']:[]),'-','-'],{input:bytes,maxBuffer:16_000_000}).toString().replace(/[^\S\n]+/g,' ');
  const raw=bytes.toString('utf8');
  const embedded=raw.match(/<embed[^>]+src=["']([^"']+)["']/i)?.[1];
- if(embedded)return fetchDocument(new URL(embedded,url).href,depth+1);
+ if(embedded)return fetchDocument(new URL(embedded,url).href,depth+1,pdfLayout);
  return raw;
 }
 const disclosurePattern=/provision|contingen|litigat|redress|covenant|going concern|suspend.{0,40}dividend|dividend.{0,40}suspend|guidance|outlook|exclusiv|patent|market share|regulator.{0,40}(ban|restrict)|loss of.{0,40}(customer|licen)/ig;

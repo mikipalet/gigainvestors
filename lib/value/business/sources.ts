@@ -1,4 +1,4 @@
-import {readFileSync,existsSync,mkdirSync,writeFileSync,renameSync} from 'node:fs';
+import {readFileSync,existsSync,mkdirSync,writeFileSync,renameSync,statSync} from 'node:fs';
 import {gzipSync,gunzipSync} from 'node:zlib';
 import {corpusPath,readCorpusJson} from '../corpus';
 import {htmlToText} from '../reports/html-to-text';
@@ -7,17 +7,56 @@ import {cutSections} from '../reports/cut-sections';
 import {fetchDocument} from '../thesis/sources';
 import {createLimiter} from '../http';
 const filingLimit=createLimiter({perSecond:2});
-const documentText=(url:string)=>filingLimit(()=>fetchDocument(url));
+const documentText=(url:string)=>filingLimit(()=>fetchDocument(url,0,false));
 import {latestFilings,resolveCik} from '../reports/edgar';
 import {generalInfoFor} from '../enrichment';
 import {businessDiskGuard} from './disk';
 import type {Analysis} from '../types';
 import type {Source} from '../judgement/read';
+const textCache=new Map<string,{stamp:number;present:boolean}>();
+function compressedSources(file:string):Source[]{
+ return existsSync(file)?JSON.parse(gunzipSync(readFileSync(file)).toString()).filter((s:Source)=>!!s.text?.trim()):[];
+}
+export function hasBusinessText(a:Analysis):boolean {
+ const cached=['memo-sources','sections-v2','sections-v4'].some(dir=>{
+  const file=corpusPath(`business-backfill/${dir}/${a.id}.json.gz`);if(!existsSync(file))return false;
+  const stamp=statSync(file).mtimeMs,old=textCache.get(file);if(old?.stamp===stamp)return old.present;
+  const present=compressedSources(file).length>0;textCache.set(file,{stamp,present});return present;
+ });
+ if(cached)return true;
+ const flags=readCorpusJson<{text?:string}>(`flags/sources/${a.id}.json`);
+ return !!flags?.text?.trim()||(a.report.kind!=='description'&&a.report.sections.some(section=>existsSync(corpusPath(`reports/${a.id}/${section}.txt`))));
+}
+/** Bound retained text to topical sections and contiguous windows, compressed.
+ * Never persist new PDFs, HTML documents or full annual-report text. */
+export function topicalSources(documents:Source[]):Source[]{
+ return documents.flatMap(source=>{
+  const text=source.text,windows:Array<[number,number]>=[];
+  const pattern=/pric(?:e|es|ing)|volume|margin|compet|depend|regulat|tariff|litigat|risk/ig;
+  for(const m of text.matchAll(pattern)){
+   const start=Math.max(0,m.index-500),end=Math.min(text.length,m.index+1600),last=windows.at(-1);
+   if(last&&start<=last[1])last[1]=end;else windows.push([start,end]);
+   if(windows.reduce((sum,[a,b])=>sum+b-a,0)>180000)break;
+  }
+  if(!windows.length)return [{...source,text:source.text.slice(0,180000)}];
+  return windows.map(([a,b])=>({...source,text:text.slice(a,b),section:/risk|mdna/i.test(source.section)?source.section:'MD&A and risk excerpts'}));
+ });
+}
 export async function businessSources(a:Analysis):Promise<{sources:Source[];status:string}>{
- businessDiskGuard();const id=a.id,file=corpusPath(`business-backfill/sections-v2/${id}.json.gz`);
- if(existsSync(file))return {sources:JSON.parse(gunzipSync(readFileSync(file)).toString()),status:'cached-sections'};
+ businessDiskGuard();const id=a.id;
+ const compact=corpusPath(`business-backfill/sections-v4/${id}.json.gz`);
+ const compactSources=compressedSources(compact);if(compactSources.length)return {sources:compactSources,status:'cached-topical-sections'};
+ const full=corpusPath(`business-backfill/memo-sources/${id}.json.gz`);
+ if(existsSync(full)){
+  const documents:import('../judgement/read').Source[]=JSON.parse(gunzipSync(readFileSync(full)).toString());
+  const sources=documents.flatMap(source=>{const sections={...cutEsefSections(source.text),...cutSections({text:source.text,form:'10-K'})};const focused=['mdna','risk'].flatMap(section=>{const text=sections[section as keyof typeof sections];return text?[{...source,section,text}]:[];});return [...focused,...topicalSources([source])];});
+  businessDiskGuard();mkdirSync(corpusPath('business-backfill/sections-v4'),{recursive:true});writeFileSync(compact,gzipSync(JSON.stringify(sources)));
+  return {sources,status:'reused-compressed-filing'};
+ }
+ const file=corpusPath(`business-backfill/sections-v2/${id}.json.gz`);
+ const priorSections=compressedSources(file);if(priorSections.length)return {sources:topicalSources(priorSections),status:'cached-sections'};
  const sources:Source[]=[];
- const save=(status:string)=>{if(sources.length){businessDiskGuard();mkdirSync(corpusPath('business-backfill/sections-v2'),{recursive:true});writeFileSync(file+'.tmp',gzipSync(JSON.stringify(sources)));renameSync(file+'.tmp',file);}return {sources,status};};
+ const save=(status:string)=>{if(sources.length){businessDiskGuard();mkdirSync(corpusPath('business-backfill/sections-v2'),{recursive:true});writeFileSync(file+'.tmp',gzipSync(JSON.stringify(topicalSources(sources))));renameSync(file+'.tmp',file);}return {sources,status};};
  const add=(text:string,url:string,filed:string,period:string|null)=>{
   const plain=/<(?:html|body|div|p)[ >]/i.test(text)?htmlToText(text):text;
   let sections=cutSections({text:plain,form:'10-K'});

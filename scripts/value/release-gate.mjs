@@ -146,9 +146,13 @@ try {
         if (await combo.isVisible()) { await combo.click(); await record(`Filter ${label}`); await page.keyboard.press('Escape'); }
       }
       await page.getByRole('button', { name: 'Search companies', exact: true }).click();
-      await record('Search', '.search-modal,dialog[open]');
-      await page.locator('.search-modal input,.company-search input,dialog[open] input').first().fill('Wolters');
-      await record('Search results', '.search-modal,dialog[open]');
+      // Search is gigainvestors.com's shared modal: audit it as page chrome, never as a drawer.
+      const searchIsSharedModal = async state => {
+        if (!await page.locator('.search-modal').isVisible() || await page.locator('dialog[open]').count()) report.push({ width, height, path, state, issues: ['search must be the shared gigainvestors modal, not a drawer'] });
+      };
+      await record('Search');await searchIsSharedModal('Search');
+      await page.locator('.search-modal input').fill('Wolters');
+      await record('Search results');await searchIsSharedModal('Search results');
     } catch (e) {
       report.push({ width, height, path, state: 'interaction failure', issues: [e.message] });
       if (e.message.startsWith('DISK STOP')) throw e;

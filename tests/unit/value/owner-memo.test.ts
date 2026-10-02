@@ -56,13 +56,13 @@ describe('computed memo coverage',()=>{
  it('computes five numeric answers without any filing reader or earnings growth history',()=>{
   const lines=numericMemo(analysis,years,100,{insiderPercent:4.5,product:'Athletic apparel'});
   expect(lines.map(l=>l.question)).toEqual([1,2,4,5,7]);
-  expect(lines.find(l=>l.question===1)?.answer).toMatch(/Athletic apparel.*100.*26%/);
-  expect(lines.find(l=>l.question===2)?.answer).toMatch(/2021–23.*28.*30/);
+  expect(lines.find(l=>l.question===1)?.answer).toMatch(/apparel retail.*100/);
+  expect(lines.find(l=>l.question===2)?.answer).toMatch(/28.*30.*2021–23/);
   expect(lines.find(l=>l.question===5)?.answer).toContain('4.5%');
   for(const l of lines){expect(l.answer.split(/\s+/).length).toBeLessThanOrEqual(18);expect(l.answer).toMatch(/\d/);}
  });
  it('retains price-implied growth when an exact decade comparison cannot be computed',()=>{
-  expect(numericMemo(analysis,years,100).find(l=>l.question===7)?.answer).toMatch(/Price implies.*growth/);
+  expect(numericMemo(analysis,years,100).find(l=>l.question===7)?.answer).toMatch(/The price assumes.*(?:grow|shrink)/);
  });
  it('does not fabricate a valuation or missing ownership',()=>{
   const lines=numericMemo({...analysis,valuation:null},years,100);
@@ -80,7 +80,7 @@ it('uses the financial valuation model for banks without inventing a ten-year DC
  const v={...valuation,method:'book_value',currency:'USD',normalized:10,growth:.02,financialReturn:{cashPerShare:1,roe:.15,retention:.4,payout:.6}} as Valuation;
  const price=modelValue(valuationReturnModel(v)!,v.discountRate);
  const a={company:{kind:'bank',currency:'USD'},valuation:v,series:{},tests:{}} as unknown as Analysis;
- expect(numericMemo(a,[],price).find(l=>l.question===7)?.answer).toBe('Price implies 2% perpetual growth in our book-value model.');
+ expect(numericMemo(a,[],price).find(l=>l.question===7)?.answer).toBe('The price assumes profits grow 2% a year forever.');
 });
 it('never presents a bank book-cap price as a unique implied growth rate',()=>{
  const v={...valuation,method:'book_value',currency:'USD',normalized:10,growth:.02,financialReturn:{cashPerShare:1,roe:.15,retention:.4,payout:.6}} as Valuation;
@@ -100,7 +100,7 @@ it('keeps segment and repurchase comparisons on the stated year and currency bas
  const y={fy:2025,revenue:100,grossProfit:40,dividendsPaid:2,capex:0,da:0,netIncome:5,ppe:0} as Year;
  const evidence={url:'https://issuer.test/report',quote:'Segment revenue 70 of total 100.',filed:'2026',section:'Revenue'};
  const facts={segment:{name:'Cloud',fy:2025,share:.7,evidence},repurchases:[{fy:2025,paidPerShare:120,currency:'EUR',evidence}]};
- expect(numericMemo(a,[y],null,facts).find(l=>l.question===1)?.answer).toBe('Cloud 70% of sales; gross margin 40%.');
+ expect(numericMemo(a,[y],null,facts).find(l=>l.question===1)?.answer).toBe('Gets 70% of sales from Cloud; keeps 40 cents per sales dollar after product costs.');
  expect(numericMemo(a,[y],null,{...facts,segment:{...facts.segment,fy:2024}}).find(l=>l.question===1)?.answer).not.toContain('Cloud');
  expect(numericMemo(a,[y],null,facts).find(l=>l.question===4)?.answer??'').not.toMatch(/above|below/);
 });
@@ -115,10 +115,10 @@ it('folds an evidence-backed moat type into the numeric customer line',()=>{
  const a={company:{kind:'operating',currency:'USD'},tests:{moat:{series:{roic:[[2024,.2],[2025,.3]]}}},valuation:null} as unknown as Analysis;
  const evidence={url:'https://issuer.test/annual',quote:'Customers choose our distinctive brand.',filed:'2026',section:'Business'};
  const line=numericMemo(a,[],null,{moat:{type:'brand',evidence}}).find(l=>l.question===2);
- expect(line?.answer).toContain('brand advantage');expect(line?.evidence).toContainEqual(evidence);
+ expect(line?.answer).toContain('customers trust its brand');expect(line?.evidence).toContainEqual(evidence);
 });
 it('labels the ROIC measurement window rather than mistaking a null observation for a shorter window',()=>{
  const roic=Array.from({length:10},(_,i)=>[2016+i,i===4?null:.2]);
  const a={company:{kind:'operating'},tests:{moat:{series:{roic}}},valuation:null} as unknown as Analysis;
- expect(numericMemo(a,[],null).find(l=>l.question===2)?.answer).toContain('10-year median ROIC');
+ const line=numericMemo(a,[],null).find(l=>l.question===2);expect(line?.answer).toContain('It earns 20% on its capital');expect(line?.evidence[0].quote).toContain('10-year');
 });

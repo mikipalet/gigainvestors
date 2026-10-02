@@ -22,3 +22,6 @@ data/newsletter/*.facts.json
 
 # Owner memo local publication snapshot
 .memo-1/
+
+# Owner memo round-two local publication
+.memo-2/

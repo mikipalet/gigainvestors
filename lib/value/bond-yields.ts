@@ -7,7 +7,7 @@ import { createUsdRate } from "./fx";
 // EODHD's GBOND symbols are not all ISO2: CH10Y is NOT the Swiss series.
 // https://eodhd.com/financial-apis-blog/government-bonds-data-in-economic-api
 const EODHD_BOND_CODES: Readonly<Record<string, string>> = { GB: "UK", CH: "SW", CL: "CH" };
-const VERSION = 2;
+const VERSION = 3;
 export interface BondObservation {
   version: number; date: string; yield: number | null; source: string; symbol: string;
   observedAt: string | null; rawYield: number | null; median: number | null;
@@ -49,12 +49,34 @@ async function yahooTreasury(today: string): Promise<number | null> {
   } catch { return null; }
 }
 
+/** ECB monthly ten-year convergence series. Never substitute another country's
+ * rate; accept only the latest completed month within a two-month release lag. */
+export function parseEcbYield(csv:string,country:string,today:string):{yield:number;observedAt:string}|null {
+ const rows=csv.trim().split(/\r?\n/).map(line=>line.match(/(?:"[^"]*(?:""[^"]*)*"|[^,]+|(?<=,)(?=,))/g)?.map(s=>s.replace(/^"|"$/g,''))??[]);
+ const header=rows.shift()??[],at=(r:string[],key:string)=>r[header.indexOf(key)];
+ const candidates=rows.flatMap(r=>{
+  if(at(r,'KEY')!==`IRS.M.${country}.L.L40.CI.0000.EUR.N.Z`||at(r,'FREQ')!=='M'||at(r,'REF_AREA')!==country||at(r,'MATURITY_CAT')!=='CI'||at(r,'CURRENCY_TRANS')!=='EUR'||at(r,'UNIT')!=='PC'||at(r,'UNIT_MULT')!=='0')return [];
+  const period=at(r,'TIME_PERIOD');if(!/^\d{4}-(?:0[1-9]|1[0-2])$/.test(period))return [];
+  const end=new Date(Date.UTC(Number(period.slice(0,4)),Number(period.slice(5,7)),0)).toISOString().slice(0,10);
+  const value=Number(at(r,'OBS_VALUE'))/100;
+  return age(end,today)>=0&&age(end,today)<=62&&plausible(value,country)?[{yield:value,observedAt:end}]:[];
+ });
+ return candidates.sort((a,b)=>b.observedAt.localeCompare(a.observedAt))[0]??null;
+}
+async function ecbYield(country:string,today:string){
+ if(country!=='IE')return null;
+ try{
+  const r=await fetch(`https://data-api.ecb.europa.eu/service/data/IRS/M.${country}.L.L40.CI.0000.EUR.N.Z?lastNObservations=3&format=csvdata`,{signal:AbortSignal.timeout(15000)});
+  return r.ok?parseEcbYield(await r.text(),country,today):null;
+ }catch{return null;}
+}
+
 /** Daily per-country files avoid read/modify/write races between analysis workers. */
 export async function bondObservation(country: string): Promise<BondObservation> {
   if (!/^[A-Z]{2}$/.test(country)) throw new Error('Invalid bond country');
   const date = day(), file = `bonds/${country}.json`;
   const cached = readCorpusJson<BondObservation>(file);
-  if (cached?.version === VERSION && (cached.date === date || process.env.VALUE_NO_EODHD === '1' && cached.yield !== null && plausible(cached.yield,country))) return cached;
+  if (cached && ((cached.version===VERSION&&cached.date===date) || process.env.VALUE_NO_EODHD==='1'&&cached.version>=2&&cached.yield!==null&&plausible(cached.yield,country))) return cached;
   const key = `${process.env.VALUE_CORPUS_DIR ?? ''}:${date}:${country}`;
   const existing = pending.get(key);
   if (existing) return existing;
@@ -94,12 +116,14 @@ export async function bondObservation(country: string): Promise<BondObservation>
         flags.push('second-source-disagreement'); value = secondSource; source = 'Yahoo ^TNX';
       } else flags.push('second-source-confirmed');
     }
+    const official=value===null?await ecbYield(country,date):null;
+    if(official){value=official.yield;source='ECB monthly 10-year convergence yield';flags.push('official-monthly-fallback');}
     if (value === null && DEFAULTS[country] !== undefined) {
       value = DEFAULTS[country]; source = 'country default (2026-09-30)'; flags.push('country-default');
     }
     if (value === null) { source = 'unavailable'; flags.push('no-local-yield'); }
     const result: BondObservation = { version: VERSION, date, yield: value, source, symbol,
-      observedAt: source === 'EODHD latest' || source === 'EODHD 30-day median' ? latest?.date ?? null : null,
+      observedAt: source === 'EODHD latest' || source === 'EODHD 30-day median' ? latest?.date ?? null : official?.observedAt ?? null,
       rawYield, median, secondSource, flags };
     writeCorpusJson(file, result);
     if (flags.some(f=>!f.startsWith('symbol-map:') && f !== 'second-source-confirmed')) console.warn(`yields: ${country} ${JSON.stringify(result)}`);

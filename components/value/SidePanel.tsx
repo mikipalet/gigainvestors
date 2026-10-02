@@ -8,6 +8,7 @@ const EVIDENCE_WIDTHS:Record<'short'|'mid'|'tall',Record<string,number>>={
   tall:{understandable:320,moat:340,economics:380,management:360,accounting:340,price:300},
 };
 const evidenceWidth=(test:string)=>EVIDENCE_WIDTHS[innerHeight<850?'short':innerHeight<1050?'mid':'tall'][test]??400;
+const lowestText=(root:Element)=>Math.max(0,...[...root.querySelectorAll('p,li,td,th,h3,h4,a,small,figcaption,blockquote')].map(el=>el.getBoundingClientRect().bottom));
 const panelWidth=(share:number,min:number,max:number)=>Math.min(innerWidth,Math.round(Math.min(max,Math.max(min,innerWidth*share))/20)*20);
 function largestFont(dialog:HTMLElement,property:string,fits:()=>boolean,max:number):number{
   let low=13,high=max;
@@ -100,11 +101,15 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       const width=Math.min(innerWidth,evidenceWidth(article.dataset.test??(article.dataset.valuation!==undefined?'price':'')));
       dialog.style.width=`${width}px`;
       const clipping=[...article.querySelectorAll<HTMLElement>('*')].filter(el=>!el.closest('svg')&&getComputedStyle(el).overflowY!=='visible');
-      const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1)&&clipping.every(el=>el.scrollHeight<=el.clientHeight+1);
-      // The width is fixed; the inner layout follows the content: two reading columns only when one does not fit.
-      dialog.dataset.readingColumns='1';
-      largestFont(dialog,'--reading-font',fits,20);
-      if(!fits()&&width>=480){dialog.dataset.readingColumns='2';largestFont(dialog,'--reading-font',fits,20);}
+      const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1)&&clipping.every(el=>el.scrollHeight<=el.clientHeight+1)&&content.scrollHeight<=content.clientHeight+1&&lowestText(article)<=content.getBoundingClientRect().bottom-8;
+      // The width is fixed; the inner layout takes whichever column count allows the larger type (two only on wide drawers).
+      let best={columns:'1',font:0};
+      for(const columns of width>=480?['1','2']:['1']){
+        dialog.dataset.readingColumns=columns;
+        const font=largestFont(dialog,'--reading-font',fits,20);
+        if(fits()&&font>best.font+.5)best={columns,font};
+      }
+      dialog.dataset.readingColumns=best.columns;dialog.style.setProperty('--reading-font',`${best.font||13}px`);
     };
     let active=true,settling=false,again=false;
     let observed:Element|null=null;

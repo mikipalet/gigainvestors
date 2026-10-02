@@ -1,3 +1,5 @@
+import {completeCachedSplits} from '../../../lib/value/completeness/cached-years';
+import {reconcilePriceSplits} from '../../../lib/value/price-history';
 import { alignHistoryShares } from '../../../lib/value/history-split-basis';
 import { availableOn,eodInterims,secInterims,secAnnualFilings } from '../../../lib/value/quarterly-inputs';
 import { snapshotForQuarter,QUARTER_ASSUMPTIONS } from '../../../lib/value/quarterly-snapshots';
@@ -102,8 +104,10 @@ export default async function historySnapshots(options: { only?:string[]; limit?
       let f = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
       if (!f?.years?.length) continue;
       fundamentalsCount++;
-      const prices = readCorpusJson<import('../../../lib/value/types').PriceHistory>(`prices-history-long/${company.id}.json`) ?? readPriceHistory(company.id) ?? [];
+      let prices = readCorpusJson<import('../../../lib/value/types').PriceHistory>(`prices-history-long/${company.id}.json`) ?? readPriceHistory(company.id) ?? [];
+      f.splits=completeCachedSplits(company.id,f.splits,readCorpusJson);
       f=alignHistoryShares(f,prices);
+      prices=reconcilePriceSplits(prices,f);
       const raw = readCorpusJson<RawFilings>(`raw/eodhd/${company.id}.json`);
       const filedByPeriod = filingDates(raw,readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`),company.edinetCode ? filings[company.edinetCode] : undefined);
       const latestMonth = [...prices].filter(([m])=>m<asOf.slice(0,7)).sort(([a],[b])=>a.localeCompare(b)).at(-1);

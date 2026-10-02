@@ -75,7 +75,7 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
  const failed=QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='fail');
 
  const shortHistory=dossier.historyCoverage && dossier.historyCoverage.years<T.minYears;
- const verdict=shortHistory?'Not enough history yet':humanVerdict(dossier,Boolean(dossier.b),canShowPrice);
+ const verdict=shortHistory?'Not enough history yet':humanVerdict(dossier,Boolean(dossier.b),canShowPrice,ratio);
  const identity=<div className="one-identity"><ValueLink href="/" className="back-link">← Companies</ValueLink><div className="company-heading"><CompanyLogo src={company.logo} name={name}/><div><h1>{name}</h1><p title={tradingLabel??'Not easily buyable from Western brokers'}>{company.code} · {company.exchange}</p>{Boolean(company.indexes?.length)&&<p className="company-indexes">{company.indexes!.join(" · ")}</p>}</div></div>{children}</div>;
 
  if(insufficient){

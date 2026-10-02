@@ -1,3 +1,6 @@
+import {numericMemo} from '../../../lib/value/owner-memo';
+import {alignHistoryShares} from '../../../lib/value/history-split-basis';
+import {completeCachedSplits} from '../../../lib/value/completeness/cached-years';
 import { forwardFiles } from './forward';
 import { METHOD_VERSION } from '../../../lib/value/method-version';
 import { isDeepStrictEqual } from 'node:util';
@@ -341,7 +344,13 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");
       // Validate the consumer contract here so one malformed document cannot stop the rollout.
       if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");
-      const years=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`)?.years;
+      const f=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`);
+      if(f)f.splits=completeCachedSplits(company.id,f.splits,readCorpusJson);
+      const years=f?alignHistoryShares(f,readPriceHistory(company.id)??[]).years:undefined;
+      if(years&&analysis.ownerMemo?.lines.some(l=>l.question===2&&l.basis==='computed')){
+        const customer=numericMemo(analysis,years,null).find(l=>l.question===2);
+        analysis.ownerMemo={...analysis.ownerMemo,lines:analysis.ownerMemo.lines.flatMap(l=>l.question===2&&l.basis==='computed'?customer?[customer]:[]:[l])};
+      }
       analyses.push(applyThesis(applyShareCheck(years?withCapitalReturns(analysis,applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);

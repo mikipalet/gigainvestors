@@ -60,24 +60,30 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
         const available=business.parentElement!.clientHeight-16;
         const fits=()=>business.scrollHeight<=available&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1);
         let best:{width:number;font:number;used:number;columns:number;leading:number}|undefined;
-        for(const leading of innerHeight<850?[1.35,1.2]:[1.35]){
+        const annualBars=innerHeight>=1050;
+        const compactWidth=innerHeight<850||annualBars;
+        for(const leading of innerHeight<850||annualBars?[1.35,1.2]:[1.35]){
           dialog.style.setProperty('--memo-leading',String(leading));
           for(const columns of [1,2,3]){
             if(columns===1&&business.dataset.profile==='true')continue;
             business.style.columnCount=String(columns);
-            for(let width=columns===1?280:columns*210;width<=Math.min(innerWidth,1400);width+=20){
-              if(best&&best.used>=available*.94&&width>best.width*1.08)break;
+            for(let width=columns===1?280:columns*200;width<=Math.min(innerWidth,1400);width+=20){
+              if(best&&best.used>=available*.94&&width>best.width*(compactWidth?1.08:1.3))break;
               dialog.style.width=`${width}px`;dialog.style.setProperty('--memo-font','13px');
               if(!fits())continue;
               let low=13,high=24;
               for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty('--memo-font',`${mid}px`);if(fits())low=mid;else high=mid;}
               dialog.style.setProperty('--memo-font',`${low}px`);
-              // Compact leading is reserved for the smaller table type.
-              if(leading===1.2&&low>=15)continue;
+              // Tall-screen annual bars already add vertical space to each row.
+              if(!annualBars&&leading===1.2&&low>=15)continue;
               const candidate={width,font:low,used:business.scrollHeight,columns,leading};
               if(leading===1.2&&best&&candidate.width>best.width*.95&&candidate.font<=best.font)continue;
               const full=candidate.used>=available*.94,previousFull=best&&best.used>=available*.94;
-              if(!best||full&&!previousFull||full===!!previousFull&&(full?(candidate.width<best.width||candidate.width<=best.width*1.08&&candidate.font>best.font+1):candidate.used>best.used))best=candidate;
+              // Text-only tables need enough type per column width; choosing
+              // width alone can strand small numbers in very wide columns.
+              const denser=best&&candidate.font*candidate.columns/candidate.width>best.font*best.columns/best.width;
+              const preferred=best&&(compactWidth?(candidate.width<best.width||candidate.width<=best.width*1.08&&candidate.font>best.font+1):denser);
+              if(!best||full&&!previousFull||full===!!previousFull&&(full?preferred:candidate.used>best.used))best=candidate;
               if(candidate.used>=available*.94)break;
             }
           }

@@ -1,29 +1,70 @@
-import type {Fundamentals,PriceHistory} from './types';
-// Issuer-confirmed action absent from the EDINET cache. This is a unit conversion,
-// not a forecast or an extra observation in historical quality/valuation.
-const confirmed:Record<string,Array<{date:string;factor:number;source:string}>>={
- '7203.JP':[{date:'2021-10-01',factor:5,source:'https://global.toyota/pages/global_toyota/ir/stock/share/commonstocksplit_20210512_01_en.pdf'}],
-};
-/** Reconcile only an explicit action supported by both shares and adjusted prices.
- * Stable shares already match adjusted prices; original-price series stay untouched. */
-export function alignHistoryShares(f:Fundamentals,prices:PriceHistory):Fundamentals {
- let years=f.years;
- const actions=[...new Map([...(f.splits??[]),...(confirmed[f.id]??[])].map(s=>[s.date,s])).values()].sort((a,b)=>a.date.localeCompare(b.date));
- for(const split of actions){
-  if(!Number.isFinite(split.factor)||split.factor<=0||Math.max(split.factor,1/split.factor)<1.5)continue;
-  const before=[...years].filter(y=>y.end<split.date).sort((a,b)=>a.end.localeCompare(b.end)).at(-1),after=[...years].filter(y=>y.end>=split.date).sort((a,b)=>a.end.localeCompare(b.end))[0];
-  if(!before?.dilutedShares||!after?.dilutedShares||Math.abs(after.dilutedShares/before.dilutedShares/split.factor-1)>.25)continue;
-  const month=split.date.slice(0,7),i=prices.findIndex(([m])=>m===month);
-  if(i<1||Math.abs(prices[i][1]/prices[i-1][1]-1)>.3)continue;
-  years=years.map(y=>{
-   if(y.end>=split.date||!y.dilutedShares)return y;
-   const copy={...y,dilutedShares:y.dilutedShares*split.factor};
-   // Some filings already restate EPS while retaining the issued share count.
-   for(const key of ['basicEps','dilutedEps'] as const)if(y[key]&&y.netIncome&&Math.abs(y[key]!*y.dilutedShares/y.netIncome-1)<.15)copy[key]=y[key]!/split.factor;
-   if(y.dividendsPerShare&&y.dividendsPaid&&Math.abs(y.dividendsPerShare*y.dilutedShares/y.dividendsPaid-1)<.15)copy.dividendsPerShare=y.dividendsPerShare/split.factor;
-   if(y.edinetShares)copy.edinetShares={...y.edinetShares,...Object.fromEntries(['basic','issued','filing','treasury'].map(k=>[k,y.edinetShares![k as 'basic']===null?null:y.edinetShares![k as 'basic']!*split.factor]))};
-   return copy;
-  });
+import {issuerSplits,issuerCapitalChanges} from './completeness/issuer-events';
+import type {Fundamentals,PriceHistory,Year} from './types';
+/** Convert each field only when its own basis agrees with the old denominator.
+ * Comparative EPS and issued shares can already be restated independently. */
+export function adjustShareUnits(year:Year,factor:number):void {
+ const shares=year.dilutedShares;
+ if(!shares||shares<=0)return;
+ for(const key of ['basicEps','dilutedEps'] as const){
+  const eps=year[key];
+  if(eps!=null&&year.netIncome&&Math.abs(eps*shares/year.netIncome-1)<.15)year[key]=eps/factor;
  }
- return years===f.years?f:{...f,years};
+ if(year.dividendsPerShare!=null&&year.dividendsPaid&&Math.abs(year.dividendsPerShare*shares/year.dividendsPaid-1)<.15)year.dividendsPerShare/=factor;
+ for(const key of ['sharesOutstanding'] as const)if(year[key]&&Math.abs(year[key]!/shares-1)<.15)year[key]!*=factor;
+ if(year.edinetShares){
+  year.edinetShares={...year.edinetShares};
+  const basis=year.edinetShares.issued;
+  if(basis&&Math.abs(basis/shares-1)<.15)for(const key of ['basic','issued','treasury'] as const)if(year.edinetShares[key]!=null)year.edinetShares[key]!*=factor;
+ }
+ if(year.navPerShare!=null&&year.investmentNav&&Math.abs(year.navPerShare*shares/year.investmentNav-1)<.15)year.navPerShare/=factor;
+ year.dilutedShares=shares*factor;
+ year.provenance={...year.provenance,dilutedShares:{source:year.provenance?.dilutedShares?.source??'reported corporate action',field:'split-adjusted diluted shares',method:'derived',inputs:[`original shares: ${shares}`,`split factor: ${factor}`]}};
+}
+
+/** Normalize mixed comparative share bases backwards from the latest annual
+ * denominator. A temporary restated block may introduce both a split-sized
+ * jump and its inverse: date-only scaling would adjust that block twice.
+ * Historical EPS plus an explicit action corroborate early comparative jumps;
+ * share issuance without this evidence remains real dilution. */
+export function alignHistoryShares(f:Fundamentals,_prices:PriceHistory):Fundamentals {
+ const actions=[...new Map([...(f.splits??[]),...(issuerSplits[f.id]??[])].map(s=>[s.date,s])).values()];
+ const years=f.years.map(y=>({...y})).sort((a,b)=>a.end.localeCompare(b.end));
+ if(years.length<2)return f;
+ // A bounded island has a second independent anchor even when EPS is absent.
+ // Restore that island to its surrounding basis before walking the full series.
+ for(let first=1;first<years.length-1;first++){
+  const before=years[first-1],current=years[first];
+  if(!before.dilutedShares||!current.dilutedShares)continue;
+  const action=actions.flatMap(s=>[s,{...s,factor:1/s.factor}]).find(s=>s.factor>0&&Math.max(s.factor,1/s.factor)>=1.5&&s.date>before.end
+   &&s.date<=(f.fetchedAt?.slice(0,10)||years.at(-1)!.end)&&Math.abs(current.dilutedShares!/before.dilutedShares!/s.factor-1)<.1);
+  if(!action)continue;
+  let last=first;
+  while(last+1<years.length&&years[last+1].dilutedShares&&Math.abs(years[last+1].dilutedShares!/current.dilutedShares-1)<.1)last++;
+  const after=years[last+1];
+  if(!after?.dilutedShares||Math.abs(after.dilutedShares/before.dilutedShares-1)>.1)continue;
+  if(!years.slice(first-1,last+2).every((y,j,ys)=>!j||y.fy===ys[j-1].fy+1))continue;
+  if(!years.slice(first-1,last+2).every(y=>!y.currency||!before.currency||y.currency===before.currency))continue;
+  if(issuerCapitalChanges[f.id]?.some(e=>e.fy>=before.fy&&e.fy<=after.fy))continue;
+  for(const y of years.slice(first,last+1))adjustShareUnits(y,1/action.factor);
+  first=last;
+ }
+ const factors=Array(years.length).fill(1);
+ for(let i=years.length-2;i>=0;i--){
+  factors[i]=factors[i+1];
+  const before=years[i],after=years[i+1];
+  if(!before.dilutedShares||!after.dilutedShares||after.fy!==before.fy+1||before.currency&&after.currency&&before.currency!==after.currency)continue;
+  if(issuerCapitalChanges[f.id]?.some(e=>after.fy>=e.fy&&after.fy<=(e.throughFy??e.fy)))continue;
+  const ratio=after.dilutedShares/before.dilutedShares;
+  const action=actions.flatMap(s=>[s,{...s,factor:1/s.factor}]).filter(s=>s.factor>0&&Math.max(s.factor,1/s.factor)>=1.5
+   &&s.date>before.end&&s.date<=(years.at(-1)!.edinetShares?.filed??years.at(-1)!.end)
+   &&Date.parse(s.date)-Date.parse(before.end)<=6*366*86400000
+   &&(s.date<=after.end||(before.basicEps||before.dilutedEps||after.basicEps||after.dilutedEps))
+   &&Math.abs(ratio/s.factor-1)<.12).sort((a,b)=>Math.abs(ratio/a.factor-1)-Math.abs(ratio/b.factor-1))[0];
+  if(!action)continue;
+  const totals=(['netIncome','equity','totalAssets','revenue'] as const).filter(key=>before[key]!=null&&after[key]!=null&&before[key]!==0);
+  if(totals.length<2||totals.some(key=>Math.abs(after[key]!/before[key]!/action.factor-1)<.12))continue;
+  factors[i]*=action.factor;
+ }
+ if(factors.every(n=>Math.abs(n-1)<1e-8)&&years.every((y,i)=>y.dilutedShares===f.years[i].dilutedShares))return f;
+ return {...f,splits:actions,years:years.map((year,i)=>{if(Math.abs(factors[i]-1)<1e-8)return year;const copy={...year};adjustShareUnits(copy,factors[i]);return copy;})};
 }

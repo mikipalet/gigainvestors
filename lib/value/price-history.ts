@@ -1,3 +1,5 @@
+import {alignHistoryShares} from './history-split-basis';
+import {completeCachedSplits} from './completeness/cached-years';
 import { T, YAHOO_SUFFIXES } from "./config";
 import { readCorpusJson } from "./corpus";
 import { eodhd } from "./eodhd";
@@ -19,10 +21,17 @@ export function reconcilePriceSplits(prices:PriceHistory,fundamentals:Pick<Funda
     if(!before?.dilutedShares||!after?.dilutedShares||before.dilutedShares<=0||after.dilutedShares<=0)continue;
     const days=(Date.parse(after.end)-Date.parse(before.end))/86400000;
     if(days<300||days>400||Math.abs(after.dilutedShares/before.dilutedShares-1)>.25)continue;
-    const month=split.date.slice(0,7),i=result.findIndex(([m])=>m===month);
-    if(i<1||monthNumber(result[i][0])-monthNumber(result[i-1][0])!==1)continue;
-    if(Math.abs(result[i][1]/result[i-1][1]*split.factor-1)>.2)continue;
-    result=result.map(([m,close])=>[m,m<month?close/split.factor:close]);
+    const month=split.date.slice(0,7);
+    // Legal first-of-month effectiveness can follow the exchange ex-date in
+    // the preceding month (Toyota: 1 October / 29 September 2021).
+    const prior=new Date(Date.UTC(Number(month.slice(0,4)),Number(month.slice(5,7))-2,1)).toISOString().slice(0,7);
+    const candidates=split.date.endsWith('-01')?[month,prior]:[month];
+    const matched=candidates.find(candidate=>{
+      const i=result.findIndex(([m])=>m===candidate);
+      return i>=1&&monthNumber(result[i][0])-monthNumber(result[i-1][0])===1
+        &&Math.abs(result[i][1]/result[i-1][1]*split.factor-1)<=.2;
+    });
+    if(matched)result=result.map(([m,close])=>[m,m<matched?close/split.factor:close]);
   }
   return result;
 }
@@ -35,7 +44,9 @@ export function readPriceHistory(id: string): PriceHistory | null {
   const valid=prices.filter(row => Array.isArray(row) && typeof row[0] === "string"
     && /^\d{4}-\d{2}$/.test(row[0]) && typeof row[1] === "number" && Number.isFinite(row[1]) && row[1] > 0);
   const fundamentals=readCorpusJson<Fundamentals>(`fundamentals/${id}.json`);
-  return fundamentals?reconcilePriceSplits(valid,fundamentals):valid;
+  if(!fundamentals)return valid;
+  fundamentals.splits=completeCachedSplits(id,fundamentals.splits,readCorpusJson);
+  return reconcilePriceSplits(valid,alignHistoryShares(fundamentals,valid));
 }
 
 function monthlyCloses(rows: Array<{ date: unknown; close: unknown }>): PriceHistory {

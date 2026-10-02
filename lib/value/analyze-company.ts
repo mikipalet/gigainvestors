@@ -23,11 +23,12 @@ export const PIPELINE_VERSION = "23";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
-export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, judgement, priceHistory = null, priceHistoryPending = priceHistory === null, currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate(), onDerivedYears }: {
+export async function analyzeCompany({ company, fundamentals, sections, report, bondYield, judgement, priceHistory = null, priceHistoryPending = priceHistory === null, currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ask = askCompany, getBondYield = fetchBondYield, usdRate = createUsdRate(), onDerivedYears, onMemoYears }: {
   judgement?: JudgementRecord | null;
   company: Company; fundamentals: Fundamentals; sections: Sections; report: ReportMeta;
   bondYield: number | null; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; priceHistory?: PriceHistory | null; priceHistoryPending?: boolean; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
   onDerivedYears?: (years:readonly Year[])=>void;
+  onMemoYears?: (years:readonly Year[])=>void;
 }): Promise<Analysis> {
   fundamentals=alignHistoryShares(fundamentals,priceHistory??[]);
   if(priceHistory)priceHistory=reconcilePriceSplits(priceHistory,fundamentals);
@@ -53,6 +54,9 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   const rawNumeric = runNumericTests({ years, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
   const adjusted = applyAdjustments(years, fundamentals.integrity.ok && company.kind==='operating' ? judgement : null, judgementTrust, fundamentals.currency);
   years = adjusted.years;
+  // Persist precisely the split-normalized, price-derived and judgement-adjusted
+  // rows used by the tests. Publication must not rebuild a different statement.
+  onMemoYears?.(years);
   const numeric = runNumericTests({ years, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
   let tests = {} as Analysis["tests"];
   const answers = fundamentals.integrity.ok ? await ask({ id: company.id, sections }) : [];

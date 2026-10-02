@@ -1,4 +1,5 @@
 import {numericMemo} from '../../../lib/value/owner-memo';
+import {memoStatementYears} from '../../../lib/value/memo-inputs';
 import {alignHistoryShares} from '../../../lib/value/history-split-basis';
 import {completeCachedSplits} from '../../../lib/value/completeness/cached-years';
 import { forwardFiles } from './forward';
@@ -345,13 +346,14 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       // Validate the consumer contract here so one malformed document cannot stop the rollout.
       if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");
       const f=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`);
+      const memoYears=memoStatementYears(analysis,readCorpusJson(`analysis/inputs/${company.id}.json`));
       if(f)f.splits=completeCachedSplits(company.id,f.splits,readCorpusJson);
-      const years=f?alignHistoryShares(f,readPriceHistory(company.id)??[]).years:undefined;
+      const years=memoYears??(f?alignHistoryShares(f,readPriceHistory(company.id)??[]).years:undefined);
       if(years&&analysis.ownerMemo?.lines.some(l=>l.question===2&&l.basis==='computed')){
         const customer=numericMemo(analysis,years,null).find(l=>l.question===2);
         analysis.ownerMemo={...analysis.ownerMemo,lines:analysis.ownerMemo.lines.flatMap(l=>l.question===2&&l.basis==='computed'?customer?[customer]:[]:[l])};
       }
-      analyses.push(applyThesis(applyShareCheck(years?withCapitalReturns(analysis,applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
+      analyses.push(applyThesis(applyShareCheck(years&&!memoYears?withCapitalReturns(analysis,applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);
     }

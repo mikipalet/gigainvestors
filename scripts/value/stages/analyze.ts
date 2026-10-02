@@ -1,4 +1,5 @@
 import {publicBusiness} from '../../../lib/value/flags/public';
+import {numericMemo} from '../../../lib/value/owner-memo';
 import judgementTrust from '../../../lib/value/judgement/trust.json';
 import { completeCachedYears, completeCachedSplits, completeCompanyMetadata } from '../../../lib/value/completeness/cached-years';
 import { isInvestmentHolding } from '../../../lib/value/investment-nav';
@@ -113,14 +114,16 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
             description: company.description, sector: company.sector, industry: company.industry,
           }, fundamentals, report, sections, priceHistory, priceHistoryPending, shareInputs,
           bondYieldBucket: localBondYield === null ? null : Math.round(localBondYield * 1000),
-          flags:readCorpusJson(`flags/${company.id}.json`), judgementTrust, judgement: readCorpusJson(`judgement/${company.id}.json`), questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
+          memoInputs: 1, flags:readCorpusJson(`flags/${company.id}.json`), judgementTrust, judgement: readCorpusJson(`judgement/${company.id}.json`), questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
         const prior = readCorpusJson<Analysis>(file);
         const priorInputs = readCorpusJson<{ sections: Sections }>(`analysis/inputs/${company.id}.json`);
         let derivedValues:Array<{fy:number;field:string;value:number;provenance:NonNullable<Year['provenance']>[string]}>=[];
+        let memoYears: Year[] = [];
         const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, priceHistoryPending, ...shareInputs,
+          onMemoYears: years => { memoYears = [...years]; },
           judgement: readCorpusJson(`judgement/${company.id}.json`), bondYield: localBondYield, ask, getBondYield, usdRate,onDerivedYears:years=>{
             derivedValues=years.flatMap(y=>(['marketCap','averageSharePrice','buybacks'] as const).flatMap(field=>{
               const value=y[field],provenance=y.provenance?.[field];
@@ -159,7 +162,11 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
             for (const answer of answers) answer.evidence = found?.[answer.q] ?? null;
           }
         }
-        writeCorpusJson(`analysis/inputs/${company.id}.json`, { asOf: result.asOf, sections,reportingCurrency:fundamentals.currency,derivedValues });
+        result.ownerMemo = {version:1,asOf:result.asOf,inputHash:fingerprint,lines:numericMemo(result,memoYears,null)};
+        // Only index members are published; avoid duplicating the full private
+        // universe's statements just to compose the published memos.
+        writeCorpusJson(`analysis/inputs/${company.id}.json`, { asOf: result.asOf, sections,reportingCurrency:fundamentals.currency,derivedValues,
+          ...(company.indexes?.length ? {memoYears} : {}) });
         result.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`),result);
         writeCorpusJson(file, result);
         writeCorpusJson(fingerprintFile, fingerprint);

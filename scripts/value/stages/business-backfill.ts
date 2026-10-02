@@ -1,4 +1,5 @@
 import {createUsdRate} from '../../../lib/value/fx';
+import {memoInputHash,memoStatementYears} from '../../../lib/value/memo-inputs';
 import {tradingRate} from '../../../lib/value/bond-yields';
 import {validMemoLine,consistentMemoLines} from '../../../lib/value/business/memo-validation';
 import {readPricingRisk,PRICING_RISK_VERSION} from '../../../lib/value/business/pricing-risk';
@@ -53,7 +54,7 @@ export default async function businessBackfill({only,limit=100,force=false,offli
  };
  const compose=(id:string,proposed:MemoLine[])=>{
   const a=getAnalysis(id),f=readCorpusJson<Fundamentals>(`fundamentals/${id}.json`);
-  const years=applyAdjustments(f?.years??[],readCorpusJson(`judgement/${id}.json`),trust,f?.currency??a.company.currency).years;
+  const years=memoStatementYears(a,readCorpusJson(`analysis/inputs/${id}.json`))??applyAdjustments(f?.years??[],readCorpusJson(`judgement/${id}.json`),trust,f?.currency??a.company.currency).years;
   const computed=numericMemo({...a,ownerMemo:{version:1,asOf:now,inputHash:'',lines:[],priceFx:fxRates.get(id),priceReference:factsFor(getAnalysis(id)).priceReference,priceQuote:factsFor(getAnalysis(id)).priceQuote}},years,prices[id]?.[0]??null,factsFor(a));
   const lines=new Map(computed.map(l=>[l.question,l]));
   for(const line of consistentMemoLines(a,proposed).filter(l=>[3,6].includes(l.question)))if(!lines.has(line.question))lines.set(line.question,line);
@@ -62,7 +63,7 @@ export default async function businessBackfill({only,limit=100,force=false,offli
   if(claimsTrusted&&approved?.calibrated&&approved.readerVersion===MEMO_CLAIM_VERSION&&review[id]?.fy===years.at(-1)?.fy&&approved.inputHash===createHash('sha256').update(JSON.stringify(claims)).digest('hex'))for(const line of approved.lines)if(claims.some(c=>validMemoClaim(c)&&c.question===line.question&&c.answer===line.answer&&JSON.stringify([c.source])===JSON.stringify(line.evidence)))lines.set(line.question,line);
   return consistentMemoLines(a,[...lines.values()]).sort((x,y)=>x.question-y.question);
  };
- const fingerprint=(id:string)=>createHash('sha256').update(JSON.stringify({v:'plain-2:'+PRICING_RISK_VERSION,analysis:getAnalysis(id),fundamentals:readCorpusJson(`fundamentals/${id}.json`),facts:factsFor(getAnalysis(id)),review:readCorpusJson(`business-backfill/reviewed/${id}.json`),price:prices[id],claimGrade})).digest('hex');
+ const fingerprint=(id:string)=>memoInputHash({v:'analysis-basis-1:'+PRICING_RISK_VERSION,analysis:getAnalysis(id),years:memoStatementYears(getAnalysis(id),readCorpusJson(`analysis/inputs/${id}.json`))??readCorpusJson(`fundamentals/${id}.json`),facts:factsFor(getAnalysis(id)),review:readCorpusJson(`business-backfill/reviewed/${id}.json`),price:prices[id],claimGrade});
  // Compute for all published IDs immediately; expensive research remains in a durable queue.
  for(const id of order){
   businessDiskGuard();

@@ -1,0 +1,228 @@
+{
+  "decision": "KEEP HOLD",
+  "completed": false,
+  "stoppedAt": "2026-10-02T14:53:18.109878+00:00",
+  "fullAnalyze": {
+    "stage": "analyze",
+    "args": [],
+    "exit": -15,
+    "peakPrivateBytes": 18505728,
+    "freeBytes": 6379278336,
+    "stop": "DISK/BUDGET STOP"
+  },
+  "targetedComparison": {
+    "7203.JP": {
+      "pipeline": "23",
+      "tests": {
+        "understandable": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "moat": {
+          "live": "fail",
+          "staged": "fail",
+          "metricsChanged": [
+            "totalRoicMedian",
+            "roicMedian",
+            "roicSecondLowest"
+          ]
+        },
+        "economics": {
+          "live": "fail",
+          "staged": "fail",
+          "metricsChanged": []
+        },
+        "management": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": [
+            "perShareValueGrowth",
+            "perShareStart",
+            "perShareEnd",
+            "roicLast3Median",
+            "shareCagr",
+            "shareCagr5",
+            "nonAcquisitionShareCagr5",
+            "marketCapGain",
+            "nonAcquisitionShareCagr",
+            "perShareValueChange"
+          ]
+        },
+        "accounting": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        }
+      },
+      "snapshot": true
+    },
+    "8630.JP": {
+      "pipeline": "23",
+      "tests": {
+        "understandable": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "moat": {
+          "live": "fail",
+          "staged": "fail",
+          "metricsChanged": []
+        },
+        "economics": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "management": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": [
+            "retainedPerShare",
+            "retainedBookRatio"
+          ]
+        },
+        "accounting": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        }
+      },
+      "snapshot": true
+    },
+    "8001.JP": {
+      "pipeline": "23",
+      "tests": {
+        "understandable": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "moat": {
+          "live": "fail",
+          "staged": "fail",
+          "metricsChanged": [
+            "totalRoicMedian"
+          ]
+        },
+        "economics": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "management": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "accounting": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        }
+      },
+      "snapshot": true
+    },
+    "8031.JP": {
+      "pipeline": "23",
+      "tests": {
+        "understandable": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "moat": {
+          "live": "fail",
+          "staged": "fail",
+          "metricsChanged": [
+            "totalRoicMedian",
+            "roicMedian"
+          ]
+        },
+        "economics": {
+          "live": "fail",
+          "staged": "fail",
+          "metricsChanged": []
+        },
+        "management": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "accounting": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        }
+      },
+      "snapshot": true
+    },
+    "8058.JP": {
+      "pipeline": "23",
+      "tests": {
+        "understandable": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "moat": {
+          "live": "fail",
+          "staged": "fail",
+          "metricsChanged": [
+            "totalRoicMedian"
+          ]
+        },
+        "economics": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "management": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        },
+        "accounting": {
+          "live": "pass",
+          "staged": "pass",
+          "metricsChanged": []
+        }
+      },
+      "snapshot": true
+    }
+  },
+  "privateAnalyses": [
+    {
+      "id": "7203.JP",
+      "pipeline": "23",
+      "asOf": "2026-10-02T14:49:57.371Z"
+    },
+    {
+      "id": "8058.JP",
+      "pipeline": "23",
+      "asOf": "2026-10-02T14:49:57.494Z"
+    },
+    {
+      "id": "8001.JP",
+      "pipeline": "23",
+      "asOf": "2026-10-02T14:49:57.385Z"
+    },
+    {
+      "id": "8630.JP",
+      "pipeline": "23",
+      "asOf": "2026-10-02T14:49:57.540Z"
+    },
+    {
+      "id": "8031.JP",
+      "pipeline": "23",
+      "asOf": "2026-10-02T14:49:57.471Z"
+    }
+  ],
+  "networkRequestsByHost": {},
+  "tests": {
+    "files": 5,
+    "passed": 120
+  },
+  "holdSha256": "a5defda8067e82dee447d696da4a00975a7e05fe1b5a785a8f1059ccf7a6de0e"
+}

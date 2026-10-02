@@ -101,6 +101,18 @@ it("writes analysis and resumes, invalidating on text changes and force", async 
   await analyze({ ...options, force: true });
   expect(calls).toBe(3);
 });
+it('persists the final split-adjusted statement basis for indexed-company memos', async () => {
+  const args = input();
+  args.company.indexes = ['S&P 500'];
+  appendJsonl('universe.jsonl', args.company);
+  writeCorpusJson('fundamentals/KO.US.json', args.fundamentals);
+  await analyze({ask: args.ask, getBondYield: async () => .04, evidence: async () => null});
+  const saved = readCorpusJson<{memoYears: import('../../../lib/value/types').Year[]}>('analysis/inputs/KO.US.json');
+  expect(saved?.memoYears?.length).toBe(args.fundamentals.years.length);
+  const result = readCorpusJson<Analysis>('analysis/KO.US.json')!;
+  expect(result.ownerMemo?.lines.find(l => l.question === 4)).toBeDefined();
+  expect(saved!.memoYears.map(y => [y.fy,y.dilutedShares]).slice(-10)).toEqual(result.tests.management.series.shares.slice(-10));
+});
 it("reports calibration failures, false positives and missing data distinctly", async () => {
   const result = await analyzeCompany(input());
   const quality = structuredClone(result);

@@ -3,7 +3,7 @@ import path from 'node:path';
 import {humanVerdict} from '../../lib/value/judgement/apply';
 import {assertDossierConsistency} from '../../lib/value/consistency';
 import type {Dossier,PriceMap} from '../../lib/value/types';
-const [stage='.fix5',before='/Users/miki/value-corpus/staging/integrate-4/store']=process.argv.slice(2);
+const [stage='.fix5',before='/Users/miki/value-corpus/publish-repo']=process.argv.slice(2);
 const shard=(dir:string):Record<string,any>=>Object.assign({},...readdirSync(dir).filter(f=>f.endsWith('.json')).map(f=>JSON.parse(readFileSync(path.join(dir,f),'utf8'))));
 const ds=shard(stage+'/store/dossiers') as Record<string,Dossier>,old=shard(before+'/dossiers') as Record<string,Dossier>;
 const prices=shard(stage+'/store/prices') as PriceMap,oldPrices=shard(before+'/prices') as PriceMap;

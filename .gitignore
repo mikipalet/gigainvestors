@@ -28,3 +28,6 @@ data/newsletter/*.facts.json
 
 # Fix 5 local replay, build logs and visual evidence
 .fix5/
+
+# Fix 5c local audit artifacts
+.fix5c/

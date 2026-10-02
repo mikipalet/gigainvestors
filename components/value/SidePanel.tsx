@@ -62,13 +62,16 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
         let best:{width:number;font:number;used:number;columns:number;leading:number}|undefined;
         const annualBars=innerHeight>=1050;
         const compactWidth=innerHeight<850||annualBars;
+        const fillTarget=available*(compactWidth?.94:.98);
         for(const leading of innerHeight<850||annualBars?[1.35,1.2]:[1.35]){
           dialog.style.setProperty('--memo-leading',String(leading));
           for(const columns of [1,2,3]){
             if(columns===1&&business.dataset.profile==='true')continue;
             business.style.columnCount=String(columns);
             for(let width=columns===1?280:columns*200;width<=Math.min(innerWidth,1400);width+=20){
-              if(best&&best.used>=available*.94&&width>best.width*(compactWidth?1.08:1.3))break;
+              // Keep a compact, readable fit. Try another column count when
+              // the existing fit is pinned near the minimum font size.
+              if(best&&best.used>=fillTarget&&(compactWidth||columns===best.columns||best.font>=13.5)&&width>best.width*(compactWidth?1.08:1.3))break;
               dialog.style.width=`${width}px`;dialog.style.setProperty('--memo-font','13px');
               if(!fits())continue;
               let low=13,high=24;
@@ -78,13 +81,13 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
               if(!annualBars&&leading===1.2&&low>=15)continue;
               const candidate={width,font:low,used:business.scrollHeight,columns,leading};
               if(leading===1.2&&best&&candidate.width>best.width*.95&&candidate.font<=best.font)continue;
-              const full=candidate.used>=available*.94,previousFull=best&&best.used>=available*.94;
+              const full=candidate.used>=fillTarget,previousFull=best&&best.used>=fillTarget;
               // Text-only tables need enough type per column width; choosing
               // width alone can strand small numbers in very wide columns.
               const denser=best&&candidate.font*candidate.columns/candidate.width>best.font*best.columns/best.width;
               const preferred=best&&(compactWidth?(candidate.width<best.width||candidate.width<=best.width*1.08&&candidate.font>best.font+1):denser);
               if(!best||full&&!previousFull||full===!!previousFull&&(full?preferred:candidate.used>best.used))best=candidate;
-              if(candidate.used>=available*.94)break;
+              if(candidate.used>=fillTarget)break;
             }
           }
         }

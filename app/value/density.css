@@ -961,3 +961,13 @@
 @media(min-width:768px) and (min-height:1050px){
  .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years :is(th,td){padding:3px 2px}
 }
+
+/* Short valuation histories read as labelled rows at every panel width. */
+.value-page .evidence-layout[data-valuation][data-sparse-history=true] .drawer-years :is(table,tbody,tr){display:block}
+.value-page .evidence-layout[data-valuation][data-sparse-history=true] .drawer-years thead{display:none}
+.value-page .evidence-layout[data-valuation][data-sparse-history=true] .drawer-years tr{border-bottom:1px solid var(--viz-grid);padding:3px 0}
+.value-page dialog .evidence-layout[data-valuation][data-sparse-history=true] .drawer-years tbody :is(th,td){display:inline;border:0;padding:0;width:auto!important;font-size:var(--reading-font,18px);line-height:1.3}
+.value-page .evidence-layout[data-valuation][data-sparse-history=true] .drawer-years tbody th::after{content:': '}
+.value-page .evidence-layout[data-valuation][data-sparse-history=true] .drawer-years .annual-field{display:inline;font-size:inherit}
+.value-page .evidence-layout[data-valuation][data-sparse-history=true] .drawer-years td:not(:last-child)::after{content:' · '}
+.value-page .evidence-layout[data-valuation][data-sparse-history=true] .drawer-years :is(.annual-bar,.annual-comparison){display:none!important}

@@ -360,6 +360,8 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
 }
 
 export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string; overwrite?: boolean }): Promise<void> {
+  // Workaround: the nightly path does not yet reproduce release-script corrections (fix-5); a hold file keeps live data until it does.
+  if (!options.out && existsSync(corpusPath("publish.hold"))) { console.log(`publish held: ${readFileSync(corpusPath("publish.hold"), "utf8").trim()}`); return; }
   const out = options.out === undefined ? undefined : path.resolve(options.out);
   if (options.overwrite && !out) throw new Error('--overwrite requires local --out');
   if (out && existsSync(out) && readdirSync(out).length) {

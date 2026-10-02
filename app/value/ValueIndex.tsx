@@ -1,5 +1,6 @@
 "use client";
 
+import {historyHeadline} from '@/lib/value/since-return';
 import { ForwardLine } from '@/components/value/ForwardLine';
 import {onValueIdle} from '@/lib/value/prefetch';
 import { Select } from '@/components/controls/Select';
@@ -134,7 +135,7 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   const allEntries = useMemo(() => source.map(row => {
     const quote=historical?null:row.quote?.[0]??null;
     const ratio=historical?row.pm??null:priceValue({price:quote,mid:row.v?.[1]??null});
-    return {row,quote,historical,basis:row.basis,historicalReturn:historical?row.gain??null:null,historicalPrice:row.historicalPrice,expected:row.expected,seed:!historical&&row.quote?.[2]==='seed',date:historical?null:row.quote?.[1],mos:row.st==='i'||ratio===null?null:1-ratio};
+    return {row,quote,historical,outcome:row.outcome,basis:row.basis,historicalReturn:historical?row.gain??null:null,historicalPrice:row.historicalPrice,expected:row.expected,seed:!historical&&row.quote?.[2]==='seed',date:historical?null:row.quote?.[1],mos:row.st==='i'||ratio===null?null:1-ratio};
   }),[source,historical]);
   const gate = filter.gate !== undefined && /^[0-6]$/.test(filter.gate) ? Number(filter.gate) : null;
   const population = allMarkets ? meta?.funnel : meta?.western?.funnel;
@@ -172,7 +173,7 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   const story=(allMarkets?meta?.story:meta?.western?.story)??{analysed:counts[0],qualityPasses:counts[5],atBuy:counts[6],qualityShare:counts[0]?counts[5]/counts[0]:0};
   const total=summary?.analysed??story.analysed, quality=summary?.qualityPasses??story.qualityPasses, buys=summary?.atBuy??story.atBuy;
   return <div className="one-index locks-scroll" data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
-    <section className="index-story"><h1>{historical?`${frame}: ${buys} at a fair price.`:`${buys} great ${buys===1?'business':'businesses'} at a fair price.`}</h1></section>
+    <section className="index-story"><h1 data-historical={historical}>{historical?historyHeadline(frame,summary??{atBuy:buys,avgReturnAtBuy:null,avgReturnAll:null}):`${buys} great ${buys===1?'business':'businesses'} at a fair price.`}</h1></section>
     <div className="map-toolbar">{marketSlot&&createPortal(<MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/>,marketSlot)}<div className="desktop-filters" onFocusCapture={()=>setPrefetchDeferred(true)}>{filterBar}</div><button className="mobile-filter-button shared-filter-button" onClick={()=>setFiltersOpen(true)}>Filters</button><button className="table-toggle" onPointerEnter={()=>void loadTable()} onFocus={()=>void loadTable()} onClick={()=>setTable(true)}>All companies ↗</button>{search&&<button onClick={()=>{change('search','');if(filter.q===search)change('q','');}}>Clear “{search}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
 
     {historyError&&<p role="status" className="map-error">{historyError}</p>}

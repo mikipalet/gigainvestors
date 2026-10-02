@@ -1,3 +1,4 @@
+import {refreshReturn,type ReturnPrices} from '../../../lib/value/since-return';
 import { alignHistoryShares } from '../../../lib/value/history-split-basis';
 import { availableOn,eodInterims,secInterims,secAnnualFilings } from '../../../lib/value/quarterly-inputs';
 import { snapshotForQuarter,QUARTER_ASSUMPTIONS } from '../../../lib/value/quarterly-snapshots';
@@ -53,18 +54,23 @@ export function latestHistoryFiles(companies = loadCompanies({})): Record<string
     if (!/^[\w-]+$/.test(run)) continue;
     const index = readCorpusJson<HistoryIndex>(`history-v7/${run}/index.json`);
     if (!index || index.scope === 'selection') continue; // index is the commit marker, written after every year.
-    // Publication supplies only current index members; upstream history remains full-corpus.
-    const idsInUniverse = new Set(companies.map(c=>c.id));
+    // Retain every historical identity, including companies no longer eligible today.
+    companies=[...new Map([...loadCompanies({}),...companies].map(c=>[c.id,c])).values()];
+    const returnPrices=new Map<string,ReturnPrices|undefined>();
     const filteredIndex: HistoryIndex = {...index, perYear:{},perQuarter:index.quarters?{}:undefined};
     const files: Record<string,unknown> = {'history/index.json':filteredIndex};
     for (const year of index.quarters??index.years) {
       if (!/^\d{4}(Q[1-4])?$/.test(String(year))) throw new Error('Invalid history year');
       const rows = readCorpusJson<SnapshotRow[]>(`history-v7/${run}/${year}.json`);
       if (!rows) throw new Error(`Incomplete history run ${run}`);
-      const members = rows.filter(row=>idsInUniverse.has(row[0]));
+      const members = rows.map(row=>{
+        if(!returnPrices.has(row[0]))returnPrices.set(row[0],readCorpusJson<ReturnPrices>(`history-return-prices/${row[0]}.json`)??undefined);
+        return refreshReturn(row,String(year),returnPrices.get(row[0]));
+      });
       files[`history/${year}.json`] = members;
       if(String(year).includes('Q')){filteredIndex.perQuarter![year]=summarizeSnapshots(members);if(String(year).endsWith('Q4')){filteredIndex.perYear[String(year).slice(0,4)]=summarizeSnapshots(members);files[`history/${String(year).slice(0,4)}.json`]=members;}}else filteredIndex.perYear[year] = summarizeSnapshots(members);
     }
+    filteredIndex.asOf=new Date().toISOString().slice(0,10);
     files["history/index.json"] = westernHistory(filteredIndex, Object.fromEntries((index.quarters??index.years).map(year => [year, files[`history/${year}.json`] as SnapshotRow[]])), new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id)));
     const ids=new Set((index.quarters??index.years).flatMap(year=>(files[`history/${year}.json`] as SnapshotRow[]).map(row=>row[0])));
     files['history/companies.json']=companies.filter(c=>ids.has(c.id)).map(c=>({id:c.id,n:c.nameEn??c.name,nameEn:c.nameEn,nameLocal:c.nameLocal,c:c.country,s:c.sector,k:c.kind,mc:c.marketCapUsd,cur:c.currency,v:null,t:'UUUUU',g:[],h:0,st:'i',w:bestWesternListing(c),lg:c.logo??undefined,exchange:c.exchange} satisfies IndexRow));

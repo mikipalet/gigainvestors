@@ -1,3 +1,4 @@
+import {applyStory,trustedStory,type StoryReading,type StoryGrade} from '../../../lib/value/price-story/publication';
 import { forwardFiles } from './forward';
 import { METHOD_VERSION } from '../../../lib/value/method-version';
 import { isDeepStrictEqual } from 'node:util';
@@ -332,6 +333,8 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
       if (!analysis) continue; // The rolling download has not analysed this company yet.
       analysis.ownerMemo=readCorpusJson<Analysis["ownerMemo"]>(`business-backfill/memos/${company.id}.json`)??analysis.ownerMemo;
+      const story=applyStory({...analysis,series:analysis.series??{},w:null,holders:[]},null,readCorpusJson<StoryReading>(`price-story/readings/${company.id}.json`),{price:trustedStory(readCorpusJson<StoryGrade>('price-story/calibration.json'),'price'),risk:trustedStory(readCorpusJson<StoryGrade>('price-story/calibration.json'),'risk')},new Date().toISOString());
+      analysis.ownerMemo=story.ownerMemo;if(story.priceStory?.line)analysis.priceStory=story.priceStory;
       analysis.businessOverview=readCorpusJson<Analysis["businessOverview"]>(`business-fit/overview/${company.id}.json`)??analysis.businessOverview;
       analysis.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`),analysis)??publicBusiness(analysis.businessDepth,analysis);
       if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");

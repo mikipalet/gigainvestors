@@ -26,7 +26,7 @@ export function syncBudget(providerUsed: number, { reset = false }: { reset?: bo
 export function reserveEodhd({ endpoint, monthly = false }: { endpoint: string; monthly?: boolean }): void {
   if (endpoint === 'user') return;
   const usage = budgetUsage();
-  const cost = endpoint.startsWith('fundamentals/') ? T.budget.fundamentalsCost
+  const cost = endpoint === 'news' ? 5 : endpoint.startsWith('fundamentals/') ? T.budget.fundamentalsCost
     : endpoint === 'screener' ? T.budget.screenerCost
     : endpoint.startsWith('eod-bulk-last-day/') ? T.budget.bulkExchangeCost : T.budget.historyCost;
   const ceiling = T.budget.dailyCalls + (endpoint.includes('.FOREX') ? T.budget.extraCalls : 0);

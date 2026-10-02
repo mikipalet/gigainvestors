@@ -18,6 +18,13 @@ export function validMemoAnswer(answer:string):boolean {
  return true;
 }
 export function validMemoLine(line:MemoLine):boolean {
+ if(line.literal){
+  const {text,source,date}=line.literal;
+  if(![3,6].includes(line.question)||!text||!source||!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(date)||!Number.isFinite(Date.parse(date)))return false;
+  const label=new Date(date.slice(0,7)+'-01T00:00:00Z').toLocaleDateString('en-US',{month:'short',year:'numeric',timeZone:'UTC'});
+  return line.answer===`"${text}" (${source}, ${label})`&&line.answer.split(/\s+/).length<=18&&!/[\r\n]/.test(text)&&line.evidence.some(e=>e.quote===text&&e.filed===date&&/^https:\/\//.test(e.url));
+ }
+
  if(line.question===6&&!/threat|risk|depend|relies|rely|could|may|lawsuit|litigat|fine|provision|claims?|largest customers|major customers|antitrust|restrict|tariffs|set aside|commission|compete|concentrat|accounts? for|represented|brings?/i.test(line.answer))return false;
  if(line.question===6&&(/(?:divestment|sale of).*?(?:completed|expected to complete)|competes? with (?:endpoint|solution|service|other|a range|providers)|debt obligations could adversely affect|Google was found to have violated/i.test(line.answer)))return false;
  return Number.isInteger(line.question)&&line.question>=1&&line.question<=7&&validMemoAnswer(line.answer)
@@ -32,7 +39,7 @@ export function consistentMemoLines(a:import('../types').Analysis,lines:MemoLine
  const midpoint=Math.floor(capital.length/2),typical=capital.length?(capital[midpoint]+capital[Math.floor((capital.length-1)/2)])/2:null;
  const agrees=(shown:number,actual:number)=>Math.abs(shown-100*actual)<=.051;
  const kept=lines.map(line=>{
-  if(line.question!==6)return line;
+  if(line.question!==6||line.literal)return line;
   const answer=line.answer.replace(/^(?:For example|For instance|However|Furthermore|Moreover|In addition|Additionally|Also|Therefore|Nevertheless|Consequently|As a result),?\s+/i,'');
   return {...line,answer:answer.charAt(0).toUpperCase()+answer.slice(1)};
  }).filter(line=>{

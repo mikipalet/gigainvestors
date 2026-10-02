@@ -109,7 +109,8 @@ const stageCalls = (): string[][] => readFileSync(path.join(root, 'stages'), 'ut
 it.each([true, false])('runner publishes available data after analysis or price failures: %s', analyzeFails => {
   runner({ analyzeFails })();
   const calls = stageCalls();
-  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', 'business-backfill', 'share-checks', 'thesis', 'publish', 'status']);
+  expect(calls.find(([stage])=>stage==='price-story')).toEqual(['price-story','--limit=400']);
+  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'price-story', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', 'business-backfill', 'share-checks', 'thesis', 'publish', 'status']);
   // No --only or --limit: newly imported JP issuers and all other sources are covered.
   expect(calls.filter(([stage]) => ['prices', 'price-history', 'reports', 'yields', 'analyze', 'publish'].includes(stage)).every(call => call.length === 1)).toBe(true);
 });
@@ -222,4 +223,12 @@ it('bounds thesis before publication and skips publication on thesis failure', (
  runner({thesisFails:true})();
  expect(stageCalls()).toContainEqual(['thesis','--limit=12']);
  expect(stageCalls().map(([stage])=>stage)).not.toContain('publish');
+});
+it('reserves five calls for news and refuses a request with only four left',()=>{
+ const date=new Date().toISOString().slice(0,10);
+ writeCorpusJson(`usage/eodhd-${date}.json`,{date,used:99990,history:0});
+ reserveEodhd({endpoint:'news'});
+ expect(budgetUsage().used).toBe(99995);
+ writeCorpusJson(`usage/eodhd-${date}.json`,{date,used:99996,history:0});
+ expect(()=>reserveEodhd({endpoint:'news'})).toThrow('daily EODHD budget');
 });

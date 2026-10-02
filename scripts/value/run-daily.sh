@@ -76,6 +76,8 @@ while true; do
   run_stage fundamentals --members-first || :
   run_stage prices || :
   run_stage price-history || :
+  # Refresh stories before residual fundamentals can spend the remaining news quota.
+  run_stage price-story --limit=400 || :
   run_stage fundamentals || :
   run_stage renormalize || :
   # EDINET reparsing needs the newly fetched Yahoo history for split checks.

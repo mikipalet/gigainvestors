@@ -92,7 +92,7 @@ import {memoAtPrice} from '../../../lib/value/owner-memo';
 it('recomputes the published memo price answer and drops it when the published valuation is withheld',()=>{
  const a={company:{kind:'operating',currency:'USD'},valuation:{...valuation,currency:'USD'},series:{},tests:{},ownerMemo:{version:1,asOf:'2026',inputHash:'x',lines:[{question:7,answer:'Stale price 99%.',evidence:[],basis:'computed'}]}} as unknown as Analysis;
  const price=modelValue(valuationReturnModel(a.valuation!)!,.1);
- expect(memoAtPrice(a,[price,'2026-10-02'])?.lines[0].answer).toContain('8%');
+ expect(memoAtPrice(a,[price,'2026-10-02'])?.lines[0].answer).toContain('5.5%');
  expect(memoAtPrice({...a,valuation:null},[price,'2026-10-02'])?.lines).toEqual([]);
 });
 it('keeps segment and repurchase comparisons on the stated year and currency basis',()=>{

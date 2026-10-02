@@ -25,7 +25,8 @@ async function capture(root:Locator):Promise<SurfaceSnapshot>{return root.evalua
  text:(el as HTMLElement).innerText,numbers:((el as HTMLElement).innerText.match(/[-−+]?\d[\d,.]*(?:%|×|bn|[KMBT])?/g)??[]),
  charts:[...el.querySelectorAll<HTMLElement>('[data-series]')].map(e=>({label:e.dataset.seriesLabel!,series:JSON.parse(e.dataset.series!),format:e.dataset.format!,currency:e.dataset.currency!})),
  stats:[...el.querySelectorAll('.tile-support>div,.drawer-numbers>div')].map(e=>[e.querySelector('dt')!.textContent!,e.querySelector('dd')!.textContent!] as [string,string]),
- table:[...el.querySelectorAll('.drawer-years tbody tr')].map(e=>[...e.children].map(c=>c.textContent??'')),
+ table:[...el.querySelectorAll('.drawer-years tbody tr')].map(e=>[...e.children].map(c=>[...c.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE).map(n=>n.textContent).join('').trim())),
+ tableHeaders:[...el.querySelectorAll('.drawer-years thead th')].map(c=>c.textContent??''),
  windows:[...el.querySelectorAll<HTMLElement>('[data-window]')].map(e=>({values:JSON.parse(e.dataset.window!),currency:e.dataset.currency})),
  priceCharts:[...el.querySelectorAll<HTMLElement>('[data-prices]')].map(e=>({prices:JSON.parse(e.dataset.prices!),values:JSON.parse(e.dataset.values!),mos:Number(e.dataset.mos),currency:e.dataset.currency})),
 }));}
@@ -34,7 +35,8 @@ async function main(){
  const out=path.join(stage,'consistency');mkdirSync(out,{recursive:true});
  const home:Record<string,unknown[]>={};
  const collectHome=async()=>{
-  const cards=await page.locator('.main-company,.compact-company-list tbody tr').evaluateAll(els=>els.map((el:HTMLElement|SVGElement)=>({id:el.dataset.company!,value:el.dataset.return,ratio:el.dataset.ratio,text:(el as HTMLElement).innerText,returnText:el.querySelector('.main-return,td')?.textContent,qualityText:el.querySelector('.shelf-quality b,td:last-child')?.textContent,priceText:el.querySelector('.shelf-price')?.textContent})));
+  if(await page.locator('.compact-company-list').count())await page.locator('.compact-company-list[aria-busy=false]').waitFor();
+  const cards=await page.locator('.main-company,.compact-company-list tbody tr').evaluateAll(els=>els.map((el:HTMLElement|SVGElement)=>({id:el.dataset.company!,value:el.dataset.return,ratio:el.dataset.ratio,text:(el as HTMLElement).innerText,returnText:[...(el.querySelector('.main-return,td')?.childNodes??[])].filter(n=>n.nodeType===Node.TEXT_NODE).map(n=>n.textContent).join(''),qualityText:el.querySelector('.shelf-quality b,td:last-child')?.textContent,priceText:el.querySelector('.shelf-price')?.textContent})));
   for(const c of cards){if(!ds[c.id])continue;const d=ds[c.id],q=prices[c.id],v=d.valuation?.perShareTrading??d.valuation?.perShare,owner=ownerReturn(d.valuation,d.company.currency,d.company.marketCapUsd,q?.[0]??null);const wanted=v&&q?q[0]/(v.mid*(1-(d.requiredMos??.25))):null;
    assert.equal(c.value===''?null:Number(c.value),owner?.expected??null,`${c.id} rendered home return`);
    assert.equal(c.ratio===''?null:Number(c.ratio),wanted,`${c.id} rendered home price distance`);
@@ -54,7 +56,7 @@ async function main(){
   await page.keyboard.press('Escape');await page.locator('dialog').waitFor({state:'detached'});
  }
  writeFileSync(path.join(out,'home.json'),JSON.stringify(home,null,2));
- for(const {id,published}of cohort){const disk=statfsSync('/');if(disk.bavail*disk.bsize<5*1024**3)throw Error('DISK STOP below 5 GiB');
+ for(const {id,published}of cohort){const disk=statfsSync('/');if(disk.bavail*disk.bsize<6*1024**3)throw Error('DISK STOP below 6 GiB');
  const d=ds[id],failures:string[]=[],surfaces:Record<string,SurfaceSnapshot>={};
  const check=(fn:()=>void)=>{try{fn();}catch(e){failures.push((e as Error).message);}};
  const response=await page.goto(`${base}/${id.toLowerCase()}`,{waitUntil:'networkidle',timeout:60000});

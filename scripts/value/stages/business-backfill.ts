@@ -56,7 +56,7 @@ export default async function businessBackfill({only,limit=100,force=false,offli
   const years=applyAdjustments(f?.years??[],readCorpusJson(`judgement/${id}.json`),trust,f?.currency??a.company.currency).years;
   const computed=numericMemo({...a,ownerMemo:{version:1,asOf:now,inputHash:'',lines:[],priceFx:fxRates.get(id),priceReference:factsFor(getAnalysis(id)).priceReference,priceQuote:factsFor(getAnalysis(id)).priceQuote}},years,prices[id]?.[0]??null,factsFor(a));
   const lines=new Map(computed.map(l=>[l.question,l]));
-  for(const line of proposed.filter(l=>[3,6].includes(l.question)&&validMemoLine(l)))if(!lines.has(line.question))lines.set(line.question,line);
+  for(const line of consistentMemoLines(a,proposed).filter(l=>[3,6].includes(l.question)))if(!lines.has(line.question))lines.set(line.question,line);
   const claims=review[id]?.claims??[];
   const approved=readCorpusJson<{inputHash:string;lines:MemoLine[];calibrated?:boolean;readerVersion?:string;jevCalls?:number}>(`business-backfill/reviewed/${id}.json`);
   if(claimsTrusted&&approved?.calibrated&&approved.readerVersion===MEMO_CLAIM_VERSION&&review[id]?.fy===years.at(-1)?.fy&&approved.inputHash===createHash('sha256').update(JSON.stringify(claims)).digest('hex'))for(const line of approved.lines)if(claims.some(c=>validMemoClaim(c)&&c.question===line.question&&c.answer===line.answer&&JSON.stringify([c.source])===JSON.stringify(line.evidence)))lines.set(line.question,line);

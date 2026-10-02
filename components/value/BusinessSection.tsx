@@ -19,7 +19,7 @@ export function BusinessSection({analysis,price=null}:{analysis:Analysis;price?:
  const [selected,setSelected]=useState<string|null>(null);
  const lines=analysis.ownerMemo?.lines??[];
  if(!lines.length)return null;
- return <section className="business-section owner-memo" aria-label="The business" data-testid="the-business">
+ return <section className="business-section owner-memo" aria-label="The business" data-testid="the-business" data-compact={lines.length<5}>
   <header><h2>The business</h2><button className="business-open" onClick={()=>setSelected('overview')}><span className="memo-desktop">In depth</span><span className="memo-phone">More</span> <span aria-hidden="true">↗</span></button></header>
   <dl className="memo-lines">{lines.map(line=><div key={line.question} data-question={line.question}>
    <dt>{MEMO_QUESTIONS[line.question-1]}</dt><dd><button onClick={()=>setSelected(String(line.question))}>{line.tone&&<i className={`flag-dot ${line.tone}`} aria-hidden="true"/>}{line.answer}</button></dd>

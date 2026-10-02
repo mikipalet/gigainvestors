@@ -26,8 +26,8 @@ describe('cross-surface regression',()=>{
 
 import {auditTestSurfaces,type SurfaceSnapshot} from '@/lib/value/surface-audit';
 describe('audit detects drift',()=>{
- const snapshot:SurfaceSnapshot={text:'Earned a median 47% on operating capital excluding acquisitions (minimum 15%), and the second-worst year earned 33% (minimum 10%, allowing one bad year). ROIC ex acquisitions median 47.0% ≥ 15.0%; Second-lowest return (one bad year allowed) 33.0% ≥ 10.0%; 3/3 applied checks met.',numbers:[],charts:[{label:'ROIC excluding acquisitions',series:test.series.roic,format:'pct',currency:'USD'}],stats:[['Median','45.0%'],['Worst','33.0%'],['Latest','33.0%']],table:[],windows:[],priceCharts:[]};
- const drawer={...snapshot,stats:[...snapshot.stats,['Passing bar','≥ 15.0%'],['Years','3']] as Array<[string,string]>,table:[['2023','35.0%','45.0%','✓'],['2024','38.0%','47.0%','✓'],['2025','36.5%','33.0%','✓']]};
+ const snapshot:SurfaceSnapshot={text:'Capital return excluding acquisitions: median 47% (minimum 15%), and the second-worst year 33% (minimum 10%). ROIC ex acquisitions median 47.0% ≥ 15.0%; Second-lowest return (one bad year allowed) 33.0% ≥ 10.0%; 3/3 applied checks met.',numbers:[],charts:[{label:'ROIC excluding acquisitions',series:test.series.roic,format:'pct',currency:'USD'}],stats:[['Median','45.0%'],['Worst','33.0%'],['Latest','33.0%']],table:[],windows:[],priceCharts:[]};
+ const drawer={...snapshot,text:snapshot.text+' ✓ History years 10 ≥ 10 ✓ ROIC ex acquisitions median 47.0% ≥ 15.0% ✓ Second-lowest return (one bad year allowed) 33.0% ≥ 10.0% ✓ Gross-margin drop 0.0% ≤ 4.0%',stats:[...snapshot.stats,['Passing bar','≥ 15.0%'],['Window','2023–2025']] as Array<[string,string]>,table:[['2023','35.0%','45.0%','✓'],['2024','38.0%','47.0%','✓'],['2025','36.5%','33.0%','✓']]};
  it('accepts matching captured surfaces',()=>expect(()=>auditTestSurfaces(dossier,test,snapshot,drawer)).not.toThrow());
  it.each(['series','currency','format','rounding','year','threshold','count'])('rejects %s drift',field=>{
   const changed=structuredClone(drawer);
@@ -71,4 +71,36 @@ it('uses the filing likelihood chart in a drawer when no financial series exists
 it('calls a negative per-share change a decline',()=>{
  const t={key:'management',metrics:{perShareValueGrowth:-.08,perShareStart:10,perShareEnd:9.2,perShareValueChange:-.8},series:{},reasons:[],jev:[],result:'pass',numeric:'pass'} as TestOutcome;
  expect(tileSentence(t,primaryTileMetric(t,'operating'),'operating')).toContain('Per-share value fell from 10 to 9.2 (must rise and stay positive)');
+});
+
+it('checks a drawer-only financial context chart against its published book series',()=>{
+ const t={key:'accounting',result:'pass',numeric:'pass',metrics:{financialRedFlags:0},series:{},reasons:[],jev:[]} as TestOutcome;
+ const book:[[number,number]]=[[2025,10]];
+ const d={...dossier,company:{...dossier.company,kind:'bank'},series:{bookPerShare:book,netIncome:[[2025,2]]},tests:{...dossier.tests,economics:{series:{bookPerShare:book}},accounting:t}} as unknown as Dossier;
+ const tile:SurfaceSnapshot={text:'0 accounting warnings were found (none allowed).',numbers:[],charts:[],stats:[['accounting warnings','0'],['Passing bar','≤ 0']],table:[],windows:[],priceCharts:[]};
+ const drawer:SurfaceSnapshot={...tile,text:tile.text+' ✓ 0 accounting warnings; none allowed',charts:[{label:'Tangible common book per share',series:book,format:'money',currency:'USD'}],stats:[['Tangible book / share','USD 10.0'],['Window','2025–2025']],table:[['2025','2.00','·']]};
+ expect(()=>auditTestSurfaces(d,t,tile,drawer)).not.toThrow();
+ for(const field of ['value','currency','label']){
+  const changed=structuredClone(drawer);
+  if(field==='value')changed.charts[0].series[0][1]=11;
+  if(field==='currency')changed.charts[0].currency='JPY';
+  if(field==='label')changed.charts[0].label='Owner earnings per share';
+  expect(()=>auditTestSurfaces(d,t,tile,changed)).toThrow();
+ }
+});
+
+import {auditPriceChartWindows} from '@/lib/value/surface-audit';
+it('allows older drawer value bands while enforcing the shared quote window',()=>{
+ const tile={currency:'USD',mos:.5,prices:[['2026-08',48],['2026-10',49]],values:[{from:2026.58,to:2026.75,low:140,mid:172,high:205}]};
+ const drawer={...tile,values:[{from:2020,to:2021,low:7,mid:8,high:9},{...tile.values[0],from:2026}]};
+ expect(()=>auditPriceChartWindows([tile],[drawer],'sparse history')).not.toThrow();
+ for(const field of ['price','value','currency','margin','missing period']){
+  const changed=structuredClone(drawer);
+  if(field==='price')changed.prices[0][1]=50;
+  if(field==='value')changed.values[1].mid=173;
+  if(field==='currency')changed.currency='INR';
+  if(field==='margin')changed.mos=.25;
+  if(field==='missing period')changed.values[1].to=2026.6;
+  expect(()=>auditPriceChartWindows([tile],[changed],'sparse history')).toThrow();
+ }
 });

@@ -18,6 +18,10 @@ export function factsFromVendor(raw:unknown,id:string,asOf:string):MemoFacts {
   facts.productEvidence={quote:`${id}: ${description}`,url,filed:asOf,section:'Company description'};
  }
  const insiders=number(shares.PercentInsiders);
- if(insiders!==null&&insiders>=0&&insiders<=100){facts.insiderPercent=insiders;facts.insiderEvidence={quote:`${id} SharesStats.PercentInsiders = ${insiders} percentage points; cache date ${asOf}.`,url,filed:asOf,section:'Insider ownership'};}
+ // Institutional blocks close to the provider's insider total need a filing
+ // reconciliation. Never subtract them: overlaps and beneficial control vary.
+ const blockholders=Object.values(record(record(data.Holders).Institutions)).map(record);
+ const conflated=insiders!==null&&blockholders.some(h=>{const stake=number(h.totalShares);return stake!==null&&stake>=5&&insiders>=stake&&insiders-stake<=1;});
+ if(!conflated&&insiders!==null&&insiders>=0&&insiders<=100){facts.insiderPercent=insiders;facts.insiderEvidence={quote:`${id} SharesStats.PercentInsiders = ${insiders} percentage points; cache date ${asOf}.`,url,filed:asOf,section:'Insider ownership'};}
  return facts;
 }

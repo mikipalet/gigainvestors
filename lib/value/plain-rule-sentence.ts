@@ -18,9 +18,9 @@ export function plainRuleSentence(t:TestOutcome,kind:Kind):string {
    case 'revenueDeclines':return `sales fell in ${n(v)} years (limit ${n(bar)})`;
    case 'lossYears':return `${v===0?'no loss years':`${n(v)} loss years`} were recorded (limit ${n(bar)})`;
    case 'opMarginCv':return `margins varied ${p(v)} around their average (limit ${p(bar)})`;
-   case 'roicMedian':return `earned a median ${v!=null&&v>1?'>100%':p(v)} on operating capital excluding acquisitions (minimum ${p(bar)})`;
+   case 'roicMedian':return `capital return excluding acquisitions: median ${v!=null&&v>1?'>100%':p(v)} (minimum ${p(bar)})`;
    case 'returnFloorMedian':return `the conservative return floor was ${p(v)} (minimum ${p(bar)})`;
-   case 'roicSecondLowest':case 'returnFloorSecondLowest':case 'roeSecondLowest':return `the second-worst year earned ${p(v)} (minimum ${p(bar)}, allowing one bad year)`;
+   case 'roicSecondLowest':case 'returnFloorSecondLowest':case 'roeSecondLowest':return `the second-worst year ${p(v)} (minimum ${p(bar)})`;
    case 'roeMedian':return `earned a median ${p(v)} on ${m.tangibleReturn?'tangible ':''}equity (minimum ${p(bar)})`;
    case 'combinedProfitableYears':return `underwriting was profitable in ${n(v)} years (at least ${n(bar)} needed)`;
    case 'grossMarginDrop':return `gross margin fell ${n((v??0)*100)} percentage points (limit ${n((bar??0)*100)})`;
@@ -36,7 +36,7 @@ export function plainRuleSentence(t:TestOutcome,kind:Kind):string {
    case 'sbcToOcf':return `stock pay took ${p(v)} of cash flow (limit ${p(bar)})`;
   }
   if(c.text.startsWith('Value per $1'))return `each $1 kept became $${n(m.marketCapGain!/m.retainedEarnings!,2)} of market value (minimum $1)`;
-  if(c.text.startsWith('Value gained'))return `market value ${m.marketCapGain!<0?'fell':'rose'} by ${money(Math.abs(m.marketCapGain!))} while ${money(Math.abs(m.retainedEarnings!))} more than profits was returned to owners (any market-value decline must be smaller than the cash returned above profits)`;
+  if(c.text.startsWith('Value gained'))return `market value ${m.marketCapGain!<0?'fell':'rose'} ${money(Math.abs(m.marketCapGain!))} after paying owners ${money(Math.abs(m.retainedEarnings!))} above profits (any decline must be smaller than that payment)`;
   if(c.text.startsWith('Per-share value'))return m.perShareStart==null||m.perShareEnd==null?'per-share value history is missing':`per-share value ${m.perShareEnd<m.perShareStart?'fell':'rose'} from ${n(m.perShareStart,2)} to ${n(m.perShareEnd,2)} (must rise and stay positive)`;
   if(c.text.startsWith('Share growth'))return `share growth was ${pct(m.nonAcquisitionShareCagr??m.shareCagr)} over ten years and ${pct(m.nonAcquisitionShareCagr5??m.shareCagr5)} over five (either must be at most 1% a year)`;
   if(c.text.startsWith('Book gain'))return `book value gained ${n(m.retainedBookGain,2)} per share against ${n(Math.max(0,m.retainedPerShare??0),2)} kept (must cover the amount kept)`;

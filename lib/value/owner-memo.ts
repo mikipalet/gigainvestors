@@ -1,3 +1,4 @@
+import {officerOwnership} from './business/ownership';
 import {validMemoAnswer,validMemoLine,consistentMemoLines} from './business/memo-validation';
 import {modelValue,valuationReturnModel} from './return-model';
 import {ownerEarningsBridge} from './owner-earnings';
@@ -39,6 +40,13 @@ export function impliedGrowth(v:Valuation,price:number):number|null {
  if(!finite(at(low))||!finite(at(high))||at(low)>price||at(high)<price)return null;
  for(let i=0;i<100;i++){const mid=(low+high)/2;if(at(mid)>price)high=mid;else low=mid;}
  return (low+high)/2;
+}
+/** Compound average of all ten model years; comparable to observed ten-year CAGR. */
+export function impliedAverageGrowth(v:Valuation,price:number):number|null {
+ const initial=impliedGrowth(v,price);
+ if(initial===null)return null;
+ const model=valuationReturnModel({...v,growth:initial});
+ return model&&v.normalized>0&&v.shares>0?(model.annual[9]/(v.normalized/v.shares))**.1-1:null;
 }
 export function numericMemo(a:Analysis,years:Year[],price:number|null,facts:MemoFacts={}):MemoLine[] {
  const alternate=price===null?a.ownerMemo?.priceQuote:undefined;
@@ -131,7 +139,7 @@ export function numericMemo(a:Analysis,years:Year[],price:number|null,facts:Memo
  const end=oe.at(-1),start=end?oe.find(p=>p[0]===end[0]-10):null;
  if(a.valuation&&price!==null){
   const fx=a.valuation.perShareTrading?.fxRate??(a.valuation.currency===a.company.currency?1:null);
-  const implied=finite(fx)&&fx>0?impliedGrowth(a.valuation,price/fx):null;
+  const implied=finite(fx)&&fx>0?impliedAverageGrowth(a.valuation,price/fx):null;
   if(finite(fx)&&fx>0&&a.valuation.method==='book_value'&&a.valuation.financialReturn&&price>0&&price/fx<4*a.valuation.normalized){
    const v=a.valuation,growth=v.discountRate-v.financialReturn!.cashPerShare/(price/fx);
    const model=valuationReturnModel({...v,growth});
@@ -143,8 +151,8 @@ export function numericMemo(a:Analysis,years:Year[],price:number|null,facts:Memo
   }
   if(implied!==null){
    const actual=start&&end&&start[1]>0&&end[1]>0?(end[1]/start[1])**.1-1:null;
-   const comparison=actual!==null?`; they ${actual<0?'shrank':'grew'} ${returnPct(Math.abs(actual))} yearly over ten years`:'';
-   add(7,`The price assumes cash profits ${implied<0?'shrink':'grow'} ${returnPct(Math.abs(implied))} yearly${comparison}.`,[source(`Price ${price}; FX ${fx}; discount ${a.valuation.discountRate}; same ${a.valuation.tier??'standard'} ten-year fade to terminal ${a.valuation.terminalGrowth}. ${start&&end?`FY${start[0]} owner earnings/share ${start[1]} → FY${end[0]} ${end[1]}.`:''}`)],{label:'Owner earnings per share',unit:'money',points:oe.slice(-11)});
+   const comparison=actual!==null?`; actual ${actual<0?'decline':'growth'} was ${returnPct(Math.abs(actual))}`:'';
+   add(7,`The price assumes cash profits ${implied<0?'shrink':'grow'} ${returnPct(Math.abs(implied))} yearly over ten years${comparison}.`,[source(`Ten-year compound average after fade. Initial solved rate ${impliedGrowth(a.valuation,price/fx!)}. Price ${price}; FX ${fx}; discount ${a.valuation.discountRate}; same ${a.valuation.tier??'standard'} ten-year fade to terminal ${a.valuation.terminalGrowth}. ${start&&end?`FY${start[0]} owner earnings/share ${start[1]} → FY${end[0]} ${end[1]}.`:''}`)],{label:'Owner earnings per share',unit:'money',points:oe.slice(-11)});
   }
  }
  if(!rows.some(l=>l.question===7)&&finite(price)&&price>0){
@@ -169,7 +177,8 @@ export function numericMemo(a:Analysis,years:Year[],price:number|null,facts:Memo
    add(7,`The price is ${pct(Math.abs(change))} ${change>0?'above':'below'} its 52-week high.`,[{...reference.evidence,quote:`${reference.evidence.quote} Closing price ${price}; reference ${reference.value}; change ${change}; reference checked ${reference.asOf}.`}]);
   }
  }
- return rows.sort((x,y)=>x.question-y.question);
+ const ownership=officerOwnership(a.id);
+ return [...rows.filter(l=>!ownership||l.question!==5),...(ownership?[ownership]:[])].sort((x,y)=>x.question-y.question);
 }
 
 /** Publication can change quotes, currency conversion or withhold a valuation.
@@ -177,6 +186,7 @@ export function numericMemo(a:Analysis,years:Year[],price:number|null,facts:Memo
 export function memoAtPrice(a:Analysis,quote?:PriceMap[string]|null):OwnerMemo|undefined {
  if(!a.ownerMemo)return undefined;
  const priceLine=numericMemo(a,[],quote?.[0]??null).find(l=>l.question===7);
+ const ownership=officerOwnership(a.id);
  if(priceLine)priceLine.evidence[0].quote+=` Closing-price date ${quote?.[1]??a.ownerMemo.priceQuote?.quote[1]}.`;
- return {...a.ownerMemo,lines:consistentMemoLines(a,[...a.ownerMemo.lines.filter(l=>l.question!==7),...(priceLine?[priceLine]:[])]).sort((x,y)=>x.question-y.question)};
+ return {...a.ownerMemo,lines:consistentMemoLines(a,[...a.ownerMemo.lines.filter(l=>l.question!==7&&(!ownership||l.question!==5)),...(ownership?[ownership]:[]),...(priceLine?[priceLine]:[])]).sort((x,y)=>x.question-y.question)};
 }

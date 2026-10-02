@@ -5,7 +5,7 @@ import { useWidth } from '@/lib/value/viz/use-width';
 export function MiniSeries({ dense=false, series, label, threshold, format='pct', currency='', better='higher', height:requestedHeight=60, fluid=false }: { dense?:boolean; series: Series; label: string; threshold?: number;currency?:string;format?:MetricFormat;better?:'higher'|'lower';height?:number;fluid?:boolean }) {
  const {ref,width,height:availableHeight}=useWidth();
  const caption=fluid||threshold===undefined||label==='ROIC including acquisitions';
- const height=fluid?Math.max(70,availableHeight-(caption?22:0)):requestedHeight;
+ const height=fluid?Math.max(50,availableHeight-(caption?22:0)):requestedHeight;
  const points=series.filter((p):p is [number,number]=>p[1]!==null&&Number.isFinite(p[1]));
  if(!points.length)return null;
  const values=points.map(p=>p[1]);

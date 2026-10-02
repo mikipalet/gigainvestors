@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 interface Props {
   quarters: string[];
   q: string;
-  onChange: (q: string) => void;
+  onChange: (q: string, immediate?: boolean) => void;
   note?: string;
   embedded?: boolean;
   label?: string;
@@ -24,7 +24,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
 
   const step = (d: number) => {
     const n = idxRef.current + d;
-    if (n >= 0 && n < quarters.length) onChange(quarters[n]);
+    if (n >= 0 && n < quarters.length) onChange(quarters[n], true);
   };
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
     onPrefetch?.(value);
     if (timer.current) clearTimeout(timer.current);
     const delay = immediate ? 0 : Math.max(0, 80 - (performance.now() - lastEmit.current));
-    const commit = () => { lastEmit.current = performance.now(); onChange(latest.current); };
+    const commit = () => { lastEmit.current = performance.now(); onChange(latest.current, immediate); };
     if (delay) timer.current = setTimeout(commit, delay); else commit();
   };
   const pointerValue = (clientX: number) => {
@@ -107,17 +107,19 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
           onPointerMove={e => { if (embedded && dragging.current) emit(pointerValue(e.clientX)); }}
           onPointerCancel={() => { dragging.current = false; emit(latest.current, true); }}
           onPointerUp={e => { if (embedded) { dragging.current = false; emit(pointerValue(e.clientX), true); } else e.currentTarget.blur(); }}
+          title={embedded?note:undefined}
           aria-label={period === "year" ? "Fiscal year" : "Quarter"} aria-valuetext={q === "Today" ? "Today" : period === "year" ? `Fiscal year ${q}` : q}
           style={embedded ? {touchAction:"none"} : undefined}
           className="slider absolute inset-x-0 top-1 z-10 m-0 h-10 w-full cursor-ew-resize appearance-none bg-transparent"
         />
         <div className="pointer-events-none absolute top-[24px] h-px w-full bg-ink/30" />
-        {(embedded ? quarters.map((y,i)=>({y,i})).filter(({y,i})=>y !== "Today" && (i % 5 === 0 || Number(y) % 5 === 0)) : years).map((y) => {
-          const near = Math.abs((y.i / Math.max(1, quarters.length - 1)) * 100 - pct) < (period === "year" ? 12 : 4);
+        {embedded && period === "quarter" && quarters.map((quarter,i)=>quarter==='Today'?null:<i key={quarter} className="pointer-events-none absolute top-[23px] h-[3px] w-px bg-ink/30" style={{left:`${i/Math.max(1,quarters.length-1)*100}%`}}/>)}
+        {(embedded && period === "year" ? quarters.map((y,i)=>({y,i})).filter(({y,i})=>y !== "Today" && (i % 5 === 0 || Number(y) % 5 === 0)) : years).map((y) => {
+          const near = Math.abs((y.i / Math.max(1, quarters.length - 1)) * 100 - pct) < (embedded ? 10 : period === "year" ? 12 : 4);
           return (
           <div key={y.y} className="pointer-events-none absolute top-[21px] h-[7px] w-px bg-ink/40" style={{ left: `${(y.i / Math.max(1, quarters.length - 1)) * 100}%` }}>
-            {!near && (quarters.length < 60 || Number(y.y) % 2 === 0) ? (
-              <span className={`absolute -top-[13px] -translate-x-1/2 text-[10px] leading-none opacity-45 ${embedded || Number(y.y) % 4 === 0 ? "inline" : "hidden"} sm:inline`}>{y.y}</span>
+            {!near && (quarters.length < 60 || Number(y.y) % (embedded ? 5 : 2) === 0) ? (
+              <span className={`absolute -top-[13px] -translate-x-1/2 ${embedded ? "text-[13px]" : "text-[10px]"} leading-none opacity-45 ${embedded || Number(y.y) % 4 === 0 ? "inline" : "hidden"} sm:inline`} style={embedded&&y.i===0?{transform:"none"}:undefined}>{y.y}</span>
             ) : null}
           </div>
           );

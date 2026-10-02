@@ -1,8 +1,7 @@
 export type HistoricalPrice = {discount:number;price:number|null;buyPrice:number|null};
-/** Additive round-seven publication contract. History contains numerical tests, never Jev readings. */
-export type SnapshotRow = [id:string,t5:string,pm:number|null,b:boolean,r:number|null,price?:HistoricalPrice,quality?:import('./quality-metric').QualityMetric];
+export type {SnapshotRow} from './types';
 type SnapshotSummary = {analysed:number;qualityPasses:number;atBuy:number;medianReturnAtBuy?:number|null;medianReturnAll?:number|null;returnCountAtBuy?:number;returnCountAll?:number;avgReturnAtBuy:number|null;avgReturnQuality:number|null;avgReturnAll:number|null};
-export type HistoryIndex = {western?:{perYear:Record<string,SnapshotSummary>};years:number[];assumptions?:string[];caveats?:string[];asOf?:string;perYear:Record<string,SnapshotSummary>};
+export type HistoryIndex = {quarters?:string[];perQuarter?:Record<string,SnapshotSummary>;western?:{perYear:Record<string,SnapshotSummary>;perQuarter?:Record<string,SnapshotSummary>};years:number[];assumptions?:string[];caveats?:string[];asOf?:string;perYear:Record<string,SnapshotSummary>};
 
 /** The oldest cohort's median is not a pooled median across overlapping yearly cohorts. */
 export function trackRecord(history:HistoryIndex|null) {
@@ -17,4 +16,20 @@ export function availableHistoryYears(counts: Record<number,number>, minimum=300
  const years=Object.keys(counts).map(Number).sort((a,b)=>a-b);
  const first=years.find(y=>counts[y]>=minimum);
  return first===undefined?[]:years.filter(y=>y>=first);
+}
+
+export function quarterEnd(q:string):string {
+ if(!/^\d{4}Q[1-4]$/.test(q))throw new Error('Invalid calendar quarter');
+ return new Date(Date.UTC(Number(q.slice(0,4)),Number(q.at(-1))*3,0)).toISOString().slice(0,10);
+}
+export function calendarQuarters(asOf:string,from=2005):string[] {
+ const quarters:string[]=[];
+ for(let year=from;year<=Number(asOf.slice(0,4));year++)for(let q=1;q<=4;q++){
+  const key=`${year}Q${q}`;if(quarterEnd(key)<asOf)quarters.push(key);
+ }
+ return quarters;
+}
+export function historyFrame(query:Record<string,string>,quarters:string[]):string {
+ const key=/^\d{4}Q[1-4]$/.test(query.q??'')?query.q:/^\d{4}$/.test(query.year??'')?`${query.year}Q4`:'';
+ return quarters.includes(key)?key:'Today';
 }

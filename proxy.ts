@@ -32,8 +32,7 @@ export async function proxy(request: NextRequest) {
     }
   }
   if (valueHost && !valuePath && !asset) {
-    const year=url.searchParams.get('year');
-    url.pathname = pathname==='/'&&year&&/^\d{4}$/.test(year)?`/value/year/${year}`:`/value${pathname}`;
+    url.pathname = `/value${pathname}`;
     return NextResponse.rewrite(url);
   }
   return NextResponse.next();

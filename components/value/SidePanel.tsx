@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 
 /** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted evidence. */
 export function SidePanel({ title, onClose, children, wide = false, compact = false }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; compact?:boolean }) {
@@ -9,21 +9,21 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
   const close=()=>{if(closing)return;setClosing(true);timer.current=setTimeout(onClose,matchMedia('(prefers-reduced-motion: reduce)').matches?0:180);};
   useEffect(()=>()=>{if(timer.current)clearTimeout(timer.current);},[]);
   const ref = useRef<HTMLDialogElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
     const dialog = ref.current;
     dialog?.showModal();
     return () => { dialog?.close(); queueMicrotask(() => previous?.focus()); };
   }, []);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const dialog=ref.current;
     if(!dialog)return;
     const fit=()=>{
       if(innerWidth<768){
         dialog.style.width='';delete dialog.dataset.readingColumns;
-        for(const name of ['--reading-font','--memo-font','--preview-font'])dialog.style.removeProperty(name);
+        for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font'])dialog.style.removeProperty(name);
         const method=dialog.querySelector<HTMLElement>('.method-sections'),business=dialog.querySelector<HTMLElement>('.owner-memo-depth');
-        if(method)method.style.columnCount='';if(business)business.style.gridTemplateColumns='';
+        if(method)method.style.columnCount='';if(business){business.style.gridTemplateColumns='';business.style.columnCount='';}
         return;
       }
       const method=dialog.querySelector<HTMLElement>('.method-sections');
@@ -39,15 +39,17 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       }
       const preview=dialog.querySelector<HTMLElement>('.search-preview');
       if(preview){
-        dialog.style.setProperty('--preview-font','14px');
-        for(const width of [400,420,440,460,480,520,560,600,640,680,720]){
+        preview.style.height=`${innerHeight-preview.getBoundingClientRect().top-16}px`;
+        const fits=()=>[...preview.children].every(child=>child.getBoundingClientRect().bottom<=Math.min(innerHeight-8,preview.getBoundingClientRect().bottom)-8);
+        dialog.style.setProperty('--preview-font','13px');
+        for(const width of [408,432,456,480,504,528,552,576,600,624,648,672,696,720]){
           dialog.style.width=`${width}px`;
-          if(preview.scrollHeight<=preview.clientHeight+1)break;
+          if(fits())break;
         }
-        let low=14,high=22;
+        let low=13,high=22;
         for(let i=0;i<5;i++){
           const mid=(low+high)/2;dialog.style.setProperty('--preview-font',`${mid}px`);
-          if(preview.scrollHeight<=preview.clientHeight+1)low=mid;else high=mid;
+          if(fits())low=mid;else high=mid;
         }
         dialog.style.setProperty('--preview-font',`${low}px`);
 
@@ -55,24 +57,32 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       }
       const business=dialog.querySelector<HTMLElement>('.owner-memo-depth');
       if(business){
-        const answers=Number(business.dataset.answers),columns=business.dataset.profile==='true'?2:answers<=2?1:Math.min(3,Math.ceil(answers/2));
-        business.style.gridTemplateColumns=`repeat(${columns},minmax(0,1fr))`;
         const available=business.parentElement!.clientHeight-16;
         const fits=()=>business.scrollHeight<=available&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1);
-        let best={width:columns===1?280:columns*250,font:14,used:0};
-        for(let width=best.width;width<=Math.min(innerWidth,1400);width+=20){
-          dialog.style.width=`${width}px`;
-          dialog.style.setProperty('--memo-font','14px');
-          if(!fits())continue;
-          let low=14,high=24;
-          for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty('--memo-font',`${mid}px`);if(fits())low=mid;else high=mid;}
-          dialog.style.setProperty('--memo-font',`${low}px`);
-          const used=business.scrollHeight;
-          if(used>best.used)best={width,font:low,used};
-          if(used>=available*.94)break;
+        let best:{width:number;font:number;used:number;columns:number;leading:number}|undefined;
+        for(const leading of innerHeight<850?[1.35,1.2]:[1.35]){
+          dialog.style.setProperty('--memo-leading',String(leading));
+          for(const columns of [1,2,3]){
+            if(columns===1&&business.dataset.profile==='true')continue;
+            business.style.columnCount=String(columns);
+            for(let width=columns===1?280:columns*210;width<=Math.min(innerWidth,1400);width+=20){
+              if(best&&best.used>=available*.94&&width>best.width*1.08)break;
+              dialog.style.width=`${width}px`;dialog.style.setProperty('--memo-font','13px');
+              if(!fits())continue;
+              let low=13,high=24;
+              for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty('--memo-font',`${mid}px`);if(fits())low=mid;else high=mid;}
+              dialog.style.setProperty('--memo-font',`${low}px`);
+              // Compact leading is reserved for the smaller table type.
+              if(leading===1.2&&low>=15)continue;
+              const candidate={width,font:low,used:business.scrollHeight,columns,leading};
+              if(leading===1.2&&best&&candidate.width>best.width*.95&&candidate.font<=best.font)continue;
+              const full=candidate.used>=available*.94,previousFull=best&&best.used>=available*.94;
+              if(!best||full&&!previousFull||full===!!previousFull&&(full?(candidate.width<best.width||candidate.width<=best.width*1.08&&candidate.font>best.font+1):candidate.used>best.used))best=candidate;
+              if(candidate.used>=available*.94)break;
+            }
+          }
         }
-        dialog.style.width=`${best.width}px`;
-        dialog.style.setProperty('--memo-font',`${best.font}px`);
+        if(best){dialog.style.width=`${best.width}px`;dialog.style.setProperty('--memo-font',`${best.font}px`);dialog.style.setProperty('--memo-leading',String(best.leading));business.style.columnCount=String(best.columns);}
         return;
       }
       const article=dialog.querySelector<HTMLElement>('.evidence-layout');
@@ -112,14 +122,14 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     const schedule=()=>{if(active&&!frame)frame=requestAnimationFrame(()=>{frame=0;fit();});};
     fit();
     const resize=new ResizeObserver(schedule);
-    const fitted=dialog.querySelector('.evidence-layout,.owner-memo-depth,.search-preview,.method-sections');
+    const fitted=dialog.querySelector('.evidence-layout,.owner-memo-depth,.method-sections');
     if(fitted)resize.observe(fitted);
     document.fonts.ready.then(schedule);
     const observer=new MutationObserver(records=>{if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))schedule();});
     observer.observe(dialog,{childList:true,subtree:true});
     window.addEventListener('resize',schedule);
     return()=>{active=false;observer.disconnect();resize.disconnect();cancelAnimationFrame(frame);window.removeEventListener('resize',schedule);};
-  },[]);
+  },[children]);
   return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.
     if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}

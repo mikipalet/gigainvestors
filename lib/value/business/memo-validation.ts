@@ -3,6 +3,7 @@ import type {MemoLine} from '../owner-memo';
  * support checks; this is deliberately not advertised as a grammar parser. */
 export function validMemoAnswer(answer:string):boolean {
  const s=answer.trim();
+ if(/^(?:For example|For instance|However|Furthermore|Moreover|In addition|Additionally|Also|Therefore|Nevertheless|Consequently|As a result)\b/i.test(s))return false;
  if(!s||s.split(/\s+/).length>18||/[\r\n]/.test(s)||!/[.!?]$/.test(s)||s.split(';').length>2)return false;
  if(/not enough data|not reported|unavailable|unclear|not tested|verify|being checked|not supplied|informational only|available evidence/i.test(s))return false;
  if(/Risk Factors\s+\d|\b(?:organic (?:growth|sales)|cost of risk|equitable relief|redress the alleged|hedged fixed-rate|interdependency|ad valorem|de minimis)\b|growth capex|incremental return|\bROIC\b|\bNAV\b|price by|\b(?:OG|RIG|ARPU|bps|CAGR|EBITDA|OEMs?|RoTE|CET1|GAAP)\b|^\d+\s+[A-Z]|^There are legislative proposals|^\d+(?:\.\d+)?%|\b(?:and|of|for|with|including|despite|the|its)[.!?]$/i.test(s))return false;
@@ -30,7 +31,11 @@ export function consistentMemoLines(a:import('../types').Analysis,lines:MemoLine
  const margins=points('grossMargin'),lastMargin=margins.at(-1),capital=(a.tests?.moat?.series?.[a.company.kind==='operating'?'roic':'roe']??[]).slice(-10).filter((p):p is [number,number]=>typeof p[1]==='number'&&Number.isFinite(p[1])).map(p=>p[1]).sort((a,b)=>a-b);
  const midpoint=Math.floor(capital.length/2),typical=capital.length?(capital[midpoint]+capital[Math.floor((capital.length-1)/2)])/2:null;
  const agrees=(shown:number,actual:number)=>Math.abs(shown-100*actual)<=.051;
- const kept=lines.filter(line=>{
+ const kept=lines.map(line=>{
+  if(line.question!==6)return line;
+  const answer=line.answer.replace(/^(?:For example|For instance|However|Furthermore|Moreover|In addition|Additionally|Also|Therefore|Nevertheless|Consequently|As a result),?\s+/i,'');
+  return {...line,answer:answer.charAt(0).toUpperCase()+answer.slice(1)};
+ }).filter(line=>{
   if(!validMemoLine(line))return false;
   if(line.question===1&&/after product costs/.test(line.answer)&&lastMargin){
    const margin=line.answer.match(/keeps ([\d.]+) cents/i);

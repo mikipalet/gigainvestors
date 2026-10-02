@@ -228,7 +228,7 @@
  .value-page .drawer-years table{table-layout:fixed}
  .value-page .drawer-years th:first-child{width:36px}
  .value-page .drawer-years th:last-child{width:22px}
- .value-page .drawer-years :is(th,td){white-space:normal;overflow-wrap:anywhere}
+ .value-page .drawer-years :is(th,td){white-space:normal;overflow-wrap:normal}
  .value-page .drawer-years td{font-size:13px}
 }
 @media(min-width:768px){
@@ -494,7 +494,7 @@
 .value-page .drawer-numbers :is(dt,dd){display:inline;font-size:inherit;line-height:inherit;margin:0}
 .value-page .drawer-years table{table-layout:fixed}
 .value-page .drawer-years :is(td,th){white-space:normal}
-.value-page .compact-company-list tbody th a>span{white-space:normal;text-overflow:clip;overflow-wrap:anywhere}
+.value-page .compact-company-list tbody th a>span{white-space:normal;text-overflow:clip;overflow-wrap:normal}
 @media(min-width:768px){
 .value-page dialog[data-reading-columns="1"] .drawer-years :is(td,th){font-size:min(18px,var(--reading-font));line-height:1.2}
 .value-page dialog[data-side-panel]:has(.investor-panel){width:480px}
@@ -782,7 +782,7 @@
 @media(max-width:767px){.value-page .evidence-layout:is([data-kind=operating],:not([data-test])) .panel-answer{font-size:20px;line-height:1.2}}
 .value-page .compact-company-list .historical-gain-chart .chart-interaction{display:block;width:100%;height:18px}
 
-.value-page .compact-company-list .historical-gain-chart{display:inline-block;width:150px;vertical-align:middle;margin-left:6px}
+.value-page .compact-company-list .historical-gain-chart{display:inline-block;width:100px;vertical-align:middle;margin-left:6px}
 .value-page .compact-company-list .historical-gain-chart .chart-interaction{max-width:none;margin:0}
 
 .value-page .holding-history-name{display:none}
@@ -824,7 +824,7 @@
 .value-page dialog[data-side-panel] .compact-company-list[data-measuring=true] table{height:auto;flex:none}
 .value-page .compact-company-list[data-measuring=true] tbody,.value-page .compact-company-list[data-measuring=true] tbody tr{flex:none}
 @media(min-width:768px){
-.value-page dialog[data-side-panel]:has(.compact-company-list){width:480px}
+.value-page dialog[data-side-panel]:has(.compact-company-list){width:336px}
 .value-page .compact-company-list[data-historical=true] tbody :is(th,td),.value-page .compact-company-list[data-historical=true] tbody th a{font-size:var(--list-font,16px);line-height:1.2}
 .value-page .owner-memo-depth[data-profile=true]{display:block;columns:2;column-gap:12px}
 .value-page .owner-memo-depth .memo-profile{break-inside:auto}
@@ -881,7 +881,7 @@
 .value-page .evidence-layout[data-valuation] .drawer-years tbody :is(th,td){font-size:20px;line-height:1.2}
 }
 
-@media(max-width:767px){.value-page .company-search-body>nav>button>.search-result-summary,.value-page .company-search-body>nav .search-result-name{font-size:20px;line-height:1.15}}
+@media(max-width:767px){.value-page .company-search-body>nav>button>.search-result-summary,.value-page .company-search-body>nav .search-result-name{font-size:20px;line-height:1.2}}
 
 .value-page .valuation-range{display:none}
 @media(max-width:767px){
@@ -893,4 +893,71 @@
  .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years :is(.annual-field,.valuation-range){display:inline;font-size:18px;line-height:1.2}
  .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years :is(td[data-empty=true],.annual-bar,.annual-sparse-quote),
  .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years tr:has(td[data-empty=true]) td:last-child{display:none}
+}
+
+/* Names wrap at word boundaries; reserve room for the longest name token. */
+.value-page :is(.main-name,.compact-company-list tbody th a>span){overflow-wrap:normal;word-break:normal;hyphens:none;overflow:visible;text-overflow:clip}
+@media(min-width:768px){
+ .value-page dialog[data-side-panel]:has(.compact-company-list[data-historical=false]){width:432px}
+ .value-page .compact-company-list[data-historical=false] :is(thead,tbody) th:first-child{width:40%!important}
+ .value-page .compact-company-list[data-historical=false] th:nth-child(2){width:14%!important}
+ .value-page .compact-company-list[data-historical=false] th:nth-child(3){width:28%!important}
+ .value-page .compact-company-list[data-historical=false] th:nth-child(4){width:18%!important}
+ .value-page .owner-memo[data-compact=true]{align-self:flex-start;width:100%;padding-block:6px}
+ .value-page .owner-memo[data-compact=true] .memo-lines{display:flex;flex-wrap:wrap;gap:4px 24px;justify-content:flex-start}
+ .value-page .owner-memo[data-compact=true] .memo-lines>div{display:block;flex:0 1 auto;max-width:620px}
+ .value-page .owner-memo[data-compact=true] .memo-lines dt{display:inline;margin-right:8px}
+ .value-page .owner-memo[data-compact=true] .memo-lines dd{display:inline}
+}
+
+.value-page .compact-company-list[data-historical=true][data-legacy=false] tbody td:nth-child(2)::before{content:'Return / yr '}
+@media(min-width:768px){
+ .value-page .owner-memo-depth{display:block;columns:2;column-gap:10px;column-fill:balance}
+ .value-page .owner-memo-depth>.memo-evidence{break-inside:auto;margin-bottom:8px}
+ .value-page .memo-evidence :is(h3,p,figure,footer,tr){break-inside:avoid}
+}
+
+@media(min-width:768px){
+ .value-page .quality-section .test-tile .mini-series .chart-interaction{flex:1;min-height:0;height:auto!important}
+ .value-page .quality-section .test-tile .mini-series .chart-interaction svg{height:100%!important}
+}
+
+@media(min-width:768px) and (max-height:850px){.value-page .price-card .mini-price{min-height:100px}}
+
+
+@media(max-height:1049px){
+ .value-page .compact-company-list[data-historical=false] .chart-interaction,.value-page .compact-company-list[data-historical=false] .chart-interaction svg{height:20px}
+}
+@media(max-width:767px){
+ .value-page .compact-company-list[data-historical=false] :is(thead,tbody) th:first-child{width:43%!important}
+ .value-page .compact-company-list[data-historical=false] th:nth-child(2){width:15%!important}
+ .value-page .compact-company-list[data-historical=false] th:nth-child(3){width:27%!important}
+ .value-page .compact-company-list[data-historical=false] th:nth-child(4){width:15%!important}
+}
+
+@media(min-width:768px){
+ .value-page dialog:has(.compact-company-list[data-historical=true]) .panel-content{padding:6px}
+ .value-page dialog:has(.compact-company-list[data-historical=true]) .panel-shell>header h2{font-size:18px;line-height:20px}
+}
+
+@media(min-width:768px) and (max-height:1049px){.value-page .search-preview>section p{padding:2px 0}}
+@media(max-width:767px){.value-page .compact-company-list .compact-needs{white-space:normal}}
+@media(min-width:768px){.value-page .memo-evidence .memo-years :is(th,td){line-height:var(--memo-leading,1.35)}}
+
+/* A bank's annual return and profit fit as a labelled sentence on a phone. */
+@media(max-width:767px){
+ .value-page .evidence-layout[data-test=moat][data-kind=bank] .drawer-years :is(table,tbody,tr){display:block}
+ .value-page .evidence-layout[data-test=moat][data-kind=bank] .drawer-years thead{display:none}
+ .value-page .evidence-layout[data-test=moat][data-kind=bank] .drawer-years tr{border-bottom:1px solid var(--viz-grid);padding:3px 0}
+ .value-page .evidence-layout[data-test=moat][data-kind=bank] .drawer-years tbody :is(th,td){display:inline;border:0;padding:0;width:auto!important;font-size:20px;line-height:1.3}
+ .value-page .evidence-layout[data-test=moat][data-kind=bank] .drawer-years tbody th::after{content:': '}
+ .value-page .evidence-layout[data-test=moat][data-kind=bank] .drawer-years .annual-field{display:inline;font-size:16px}
+ .value-page .evidence-layout[data-test=moat][data-kind=bank] .drawer-years td:not(:last-child)::after{content:' · '}
+ .value-page .evidence-layout[data-test=moat][data-kind=bank] .drawer-years :is(.annual-change,.annual-bar){display:none!important}
+}
+@media(min-width:768px) and (max-height:849px){
+ .value-page dialog[data-reading-columns="2"] .evidence-layout[data-test=moat][data-kind=operating] .drawer-years .annual-change{display:block!important}
+}
+@media(min-width:768px) and (min-height:1050px){
+ .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years :is(th,td){padding:3px 2px}
 }

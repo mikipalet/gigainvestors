@@ -7,7 +7,7 @@ import { audit } from './design-audit.mjs';
 import { gapPhrases } from './design-cases.mjs';
 
 const [base = 'http://localhost:3017', out = '/tmp/claude-1000/value-shots/business-3', pathArg] = process.argv.slice(2);
-const paths = pathArg?.split(',') ?? ['/', '/?year=2011', '/lulu.us', '/wkl.as', '/adbe.us', '/googl.us', '/ko.us', '/jpm.us', '/7203.jp', '/reliance.nse', '/cbg.lse'];
+const paths = pathArg?.split(',') ?? ['/', '/?q=2018Q3', '/?year=2011', '/lulu.us', '/wkl.as', '/adbe.us', '/googl.us', '/ko.us', '/jpm.us', '/7203.jp', '/reliance.nse', '/cbg.lse'];
 const sizes = (process.env.QA_VIEWPORTS ?? '1728x970,2056x1180,1440x800,390x844').split(',').map(s => s.split('x').map(Number));
 const report = [];
 function disk() {
@@ -70,6 +70,20 @@ try {
       await page.waitForTimeout(250);
       const result = await page.evaluate(audit);
       result.issues.push(...errors);
+      const brokenNames=await page.locator('.main-name,.compact-company-list tbody th a>span').evaluateAll(els=>els.flatMap(el=>{
+        if(!el.checkVisibility())return [];
+        const broken=[];
+        for(const node of el.childNodes){
+          if(node.nodeType!==Node.TEXT_NODE)continue;
+          for(const match of (node.textContent??'').matchAll(/[^\s-]+/g)){
+            const tops=new Set();
+            for(let i=0;i<match[0].length;i++){const r=document.createRange();r.setStart(node,match.index+i);r.setEnd(node,match.index+i+1);tops.add(Math.round(r.getBoundingClientRect().top));}
+            if(tops.size>1)broken.push(`name breaks inside word: ${match[0]}`);
+          }
+        }
+        return broken;
+      }));
+      result.issues.push(...brokenNames);
       const panel = panelSelector ? (await page.locator('dialog[open]').count() ? page.locator('dialog[open]').last() : page.locator(panelSelector).last()) : null;
       const root = panel ?? page.locator('body');
       const text = await root.innerText();
@@ -109,7 +123,7 @@ try {
       await page.locator('.one-dossier,.main-view').waitFor();
       await page.evaluate(() => document.fonts.ready);
       await record('page');
-      const selectors = '.main-more,.table-toggle,.about-method,.tile-open,.holder-summary,.thesis-source-button,.business-open';
+      const selectors = process.env.QA_BUTTONS ?? '.main-more,.table-toggle,.about-method,.tile-open,.holder-summary,.thesis-source-button,.business-open';
       const buttons = page.locator(selectors);
       for (let i = 0; i < await buttons.count(); i++) {
         const b = buttons.nth(i);

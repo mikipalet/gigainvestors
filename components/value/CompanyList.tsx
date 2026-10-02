@@ -38,9 +38,6 @@ export function CompanyList({entries}:{entries:ResultEntry[]}) {
     }
     return true;
    });
-   const dialog=root.closest('dialog');
-   // The drawer takes its width once, on open; paging, sorting and hovering never resize it.
-   if(dialog&&!dialog.dataset.listWidth){for(let width=dialog.clientWidth;!textFits()&&width<Math.min(innerWidth,700);width+=10)dialog.style.width=`${width+10}px`;if(root.querySelector('[data-company-row]'))dialog.dataset.listWidth='fixed';}
    // Measure intrinsic rows before distributing spare height across the table.
    root.dataset.measuring='true';
    const available=root.clientHeight-(root.querySelector('thead')?.getBoundingClientRect().height??40)-(root.querySelector('nav')?.getBoundingClientRect().height??0)-8;
@@ -64,7 +61,7 @@ export function CompanyList({entries}:{entries:ResultEntry[]}) {
   return()=>{active=false;scheduleFit.current=()=>{};measureNow.current=()=>{};observer.disconnect();resize.disconnect();cancelAnimationFrame(frame);};
  },[]);
  const [sort,setSort]=useState<Column>('return'),[direction,setDirection]=useState(-1),[page,setPage]=useState(0),[size,setSize]=useState(10);
- useEffect(()=>{const resize=()=>{const dialog=list.current?.closest('dialog');if(dialog){delete dialog.dataset.listWidth;dialog.style.width='';}setReady(false);setSize(Math.max(3,Math.floor((window.innerHeight-120)/(window.innerWidth<768?60:55))));scheduleFit.current();};resize();window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize);},[]);
+ useEffect(()=>{const resize=()=>{setReady(false);setSize(Math.max(3,Math.floor((window.innerHeight-120)/(window.innerWidth<768?60:55))));scheduleFit.current();};resize();window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize);},[]);
  const companies=useMemo(()=>mainCompanies(entries).sort((a,b)=>{
   if(sort==='name')return direction*a.name.localeCompare(b.name);
   const quality=(c:typeof a)=>c.entry.row.quality?.value==='unlimited'?Infinity:c.entry.row.quality?.value??null;

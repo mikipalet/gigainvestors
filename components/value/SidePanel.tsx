@@ -26,6 +26,9 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
         if(method)method.style.columnCount='';if(business){business.style.gridTemplateColumns='';business.style.columnCount='';}
         return;
       }
+      // Every fit starts from the same state, so a refit with unchanged content lands on the same size.
+      dialog.style.width='';delete dialog.dataset.readingColumns;
+      for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font'])dialog.style.removeProperty(name);
       const method=dialog.querySelector<HTMLElement>('.method-sections');
       if(method){
         const columns=innerHeight<850?4:3;
@@ -59,39 +62,28 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       if(business){
         const available=business.parentElement!.clientHeight-16;
         const fits=()=>business.scrollHeight<=available&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1);
-        let best:{width:number;font:number;used:number;columns:number;leading:number}|undefined;
-        const annualBars=innerHeight>=1050;
-        const compactWidth=innerHeight<850||annualBars;
-        const fillTarget=available*(compactWidth?.94:.98);
-        for(const leading of innerHeight<850||annualBars?[1.35,1.2]:[1.35]){
-          dialog.style.setProperty('--memo-leading',String(leading));
-          for(const columns of [1,2,3]){
-            if(columns===1&&business.dataset.profile==='true')continue;
-            business.style.columnCount=String(columns);
-            for(let width=columns===1?280:columns*200;width<=Math.min(innerWidth,1400);width+=20){
-              // Keep a compact, readable fit. Try another column count when
-              // the existing fit is pinned near the minimum font size.
-              if(best&&best.used>=fillTarget&&(compactWidth||columns===best.columns||best.font>=13.5)&&width>best.width*(compactWidth?1.08:1.3))break;
-              dialog.style.width=`${width}px`;dialog.style.setProperty('--memo-font','13px');
-              if(!fits())continue;
-              let low=13,high=24;
-              for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty('--memo-font',`${mid}px`);if(fits())low=mid;else high=mid;}
-              dialog.style.setProperty('--memo-font',`${low}px`);
-              // Tall-screen annual bars already add vertical space to each row.
-              if(!annualBars&&leading===1.2&&low>=15)continue;
-              const candidate={width,font:low,used:business.scrollHeight,columns,leading};
-              if(leading===1.2&&best&&candidate.width>best.width*.95&&candidate.font<=best.font)continue;
-              const full=candidate.used>=fillTarget,previousFull=best&&best.used>=fillTarget;
-              // Text-only tables need enough type per column width; choosing
-              // width alone can strand small numbers in very wide columns.
-              const denser=best&&candidate.font*candidate.columns/candidate.width>best.font*best.columns/best.width;
-              const preferred=best&&(compactWidth?(candidate.width<best.width||candidate.width<=best.width*1.08&&candidate.font>best.font+1):denser);
-              if(!best||full&&!previousFull||full===!!previousFull&&(full?preferred:candidate.used>best.used))best=candidate;
-              if(candidate.used>=fillTarget)break;
-            }
-          }
+        // Direct search, not a sweep: the panel must open within a frame or two.
+        // Width is the narrowest that holds the memo at a readable 16px; type then grows to fill.
+        const columns=Math.max(1,Math.min(3,business.children.length));
+        business.style.columnCount=String(columns);
+        dialog.style.setProperty('--memo-leading',String(innerHeight<850?1.2:1.35));
+        const widths=Array.from({length:Math.floor((Math.min(innerWidth,1400)-columns*200)/40)+1},(_,i)=>columns*200+i*40);
+        const narrowest=(font:number)=>{
+          dialog.style.setProperty('--memo-font',`${font}px`);
+          let low=0,high=widths.length-1,found=-1;
+          while(low<=high){const mid=(low+high)>>1;dialog.style.width=`${widths[mid]}px`;if(fits()){found=mid;high=mid-1;}else low=mid+1;}
+          return found;
+        };
+        let index=narrowest(16);if(index<0)index=narrowest(13);if(index<0)index=widths.length-1;
+        const grow=()=>{let low=13,high=24;for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty('--memo-font',`${mid}px`);if(fits())low=mid;else high=mid;}dialog.style.setProperty('--memo-font',`${low}px`);return low;};
+        dialog.style.width=`${widths[index]}px`;let font=grow();
+        // Balanced columns can leave a band under the shortest column; a narrower panel fills it.
+        for(let step=0;step<3&&index>0&&business.scrollHeight<available*.94;step++){
+          dialog.style.width=`${widths[index-1]}px`;dialog.style.setProperty('--memo-font','13px');
+          if(!fits())break;
+          index--;font=grow();
         }
-        if(best){dialog.style.width=`${best.width}px`;dialog.style.setProperty('--memo-font',`${best.font}px`);dialog.style.setProperty('--memo-leading',String(best.leading));business.style.columnCount=String(best.columns);}
+        dialog.style.width=`${widths[index]}px`;dialog.style.setProperty('--memo-font',`${font}px`);
         return;
       }
       const article=dialog.querySelector<HTMLElement>('.evidence-layout');
@@ -106,7 +98,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       // permitted minimum when that leaves a gap or overflows after chart sizing.
       for(const minimum of preferredMinimum===14?[14,13]:[13]){
         let best={width:280,font:minimum,used:0};
-        for(const width of Array.from({length:49},(_,i)=>280+i*10)){
+        for(const width of Array.from({length:25},(_,i)=>280+i*20)){
           dialog.style.width=`${Math.min(innerWidth,width)}px`;
           dialog.dataset.readingColumns=width>=480?'2':'1';
           dialog.style.setProperty('--reading-font',`${minimum}px`);
@@ -131,13 +123,18 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     const schedule=()=>{if(active&&!frame)frame=requestAnimationFrame(()=>{frame=0;fit();});};
     fit();
     const resize=new ResizeObserver(schedule);
-    const fitted=dialog.querySelector('.evidence-layout,.owner-memo-depth,.method-sections');
-    if(fitted)resize.observe(fitted);
-    document.fonts.ready.then(schedule);
-    const observer=new MutationObserver(records=>{if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))schedule();});
+    let observed:Element|null=null;
+    const watch=()=>{const el=dialog.querySelector('.evidence-layout,.owner-memo-depth,.method-sections');if(el&&el!==observed){if(observed)resize.unobserve(observed);resize.observe(el);observed=el;}return el;};
+    const fitted=watch();
+    // Fitted panels stay hidden until the final fonts are measured; otherwise the panel visibly re-fits after opening.
+    if(fitted)dialog.dataset.fitting='true';
+    const reveal=()=>{if(!active)return;fit();delete dialog.dataset.fitting;};
+    const fallback=setTimeout(reveal,1500);
+    document.fonts.ready.then(()=>{clearTimeout(fallback);reveal();});
+    const observer=new MutationObserver(records=>{watch();if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))schedule();});
     observer.observe(dialog,{childList:true,subtree:true});
     window.addEventListener('resize',schedule);
-    return()=>{active=false;observer.disconnect();resize.disconnect();cancelAnimationFrame(frame);window.removeEventListener('resize',schedule);};
+    return()=>{active=false;clearTimeout(fallback);observer.disconnect();resize.disconnect();cancelAnimationFrame(frame);window.removeEventListener('resize',schedule);};
   },[children]);
   return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.

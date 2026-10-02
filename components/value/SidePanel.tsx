@@ -139,9 +139,16 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     // Fitted panels stay hidden until the final fonts are measured; otherwise the panel visibly re-fits after opening.
     if(fitted)dialog.dataset.fitting='true';else fit();
     // After the panel appears only window resizes and new content refit it; size feedback from charts would make it flip.
-    const reveal=()=>{if(!active)return;fit();delete dialog.dataset.fitting;revealed=true;resize.disconnect();};
-    const fallback=setTimeout(reveal,1500);
-    document.fonts.ready.then(()=>{clearTimeout(fallback);reveal();});
+    // Charts size themselves a frame or two after layout, so re-fit until two quiet frames pass (bounded), then reveal.
+    const frames=()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+    const reveal=async()=>{
+      const size=()=>{const el=observed as HTMLElement|null;return el?`${el.scrollHeight}x${el.scrollWidth}`:'';};
+      for(let round=0;round<6&&active;round++){fit();const before=size();await frames();if(size()===before)break;}
+      if(!active)return;delete dialog.dataset.fitting;revealed=true;resize.disconnect();
+    };
+    let started=false;const start=()=>{if(started)return;started=true;void reveal();};
+    const fallback=setTimeout(start,1500);
+    document.fonts.ready.then(()=>{clearTimeout(fallback);start();});
     const observer=new MutationObserver(records=>{watch();if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))schedule();});
     observer.observe(dialog,{childList:true,subtree:true});
     window.addEventListener('resize',schedule);

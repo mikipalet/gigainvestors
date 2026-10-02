@@ -155,6 +155,13 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
     const count=(sector:string)=>source.filter(row=>matchesView(row,{...filter,sector,gate:''})).length;
     return [["","All sectors",count('')],...sectors.map(s=>[s,s,count(s)] as [string,string,number])];
   },[source,filter]);
+  const optionDetails=useMemo(()=>{
+    const describe=(key:'country'|'sector',values:string[])=>Object.fromEntries(values.filter(Boolean).map(value=>{
+      const selected=source.filter(row=>matchesView(row,{...filter,[key]:value,gate:''}));
+      return [value,`${selected.filter(row=>row.b).length} buy · ${selected.filter(row=>row.h>0).length} held`];
+    }));
+    return {countries:describe('country',countryOptions.map(([key])=>key)),sectors:describe('sector',sectorOptions.map(([key])=>key))};
+  },[source,filter,countryOptions,sectorOptions]);
   const switches=<><Toggle label="Near misses" checked={filter.near==='1'} onChange={()=>change('near',filter.near==='1'?'':'1')}/><Toggle label="Held by superinvestors" checked={filter.held==='1'} onChange={()=>change('held',filter.held==='1'?'':'1')}/></>;
   const filterBar=<><Select label="Country" value={country} onChange={value=>change('country',value)} options={countryOptions}/><Select label="Sector" value={filter.sector??''} onChange={value=>change('sector',value)} options={sectorOptions}/>{switches}</>;
 
@@ -169,6 +176,6 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
     <ForwardLine record={meta?.forward} scope={allMarkets?'all':'western'}/>
     {timelineSlot&&createPortal(<QuarterSlider embedded globalKeys period="year" label="Fiscal year" onPrefetch={preload} quarters={[...(history?.years??[]).slice(0,-1).map(String),"Today"]} q={year} onChange={changeYear}/>,timelineSlot)}
     {table&&<SidePanel title={`${displayed.length} companies`} compact onClose={()=>setTable(false)}><LazyResultsTable entries={displayed} sort={sort} direction={direction} sortBy={sortBy}/></SidePanel>}
-    {filtersOpen&&<SidePanel title="Filter companies" onClose={()=>setFiltersOpen(false)}><div className="panel-filters" onFocusCapture={()=>setPrefetchDeferred(true)}><Select inline label="Countries" value={country} onChange={value=>change('country',value)} options={countryOptions}/><Select inline searchable={false} label="Sectors" value={filter.sector??''} onChange={value=>change('sector',value)} options={sectorOptions}/><section className="filter-toggles" aria-label="More filters"><h3>More filters</h3>{switches}<MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/></section></div><footer className="filter-footer"><button className="filter-apply" onClick={()=>setFiltersOpen(false)}>Show {displayed.length} companies <span aria-hidden="true">→</span></button></footer></SidePanel>}
+    {filtersOpen&&<SidePanel title="Filter companies" onClose={()=>setFiltersOpen(false)}><div className="panel-filters" onFocusCapture={()=>setPrefetchDeferred(true)}><Select inline details={optionDetails.countries} label="Countries" value={country} onChange={value=>change('country',value)} options={countryOptions}/><Select inline details={optionDetails.sectors} searchable={false} label="Sectors" value={filter.sector??''} onChange={value=>change('sector',value)} options={sectorOptions}/><section className="filter-toggles" aria-label="More filters"><h3>More filters</h3>{switches}<MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/></section></div><footer className="filter-footer"><button className="filter-apply" onClick={()=>setFiltersOpen(false)}>Show {displayed.length} companies <span aria-hidden="true">→</span></button></footer></SidePanel>}
   </div>;
 }

@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getMeta } from '@/lib/value/store';
-import { renderValuePage } from '../../page';
+import { renderValuePage } from '../../ValueHome';
 export const revalidate = 86400;
 export async function generateStaticParams() {
   const meta=await getMeta();

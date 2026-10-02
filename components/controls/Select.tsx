@@ -5,11 +5,11 @@ import './select.css';
 type Option = [value:string,label:string,count?:number];
 type SelectProps = {
   label:string; value:string; options:Option[]; onChange:(value:string)=>void;
-  inline?:boolean; searchable?:boolean;
+  inline?:boolean; searchable?:boolean; details?:Record<string,string>;
 };
 
 /** One local option list, presented in a popover or directly in a filter sheet. */
-export function Select({label,value,options,onChange,inline=false,searchable=true}:SelectProps) {
+export function Select({label,value,options,onChange,inline=false,searchable=true,details}:SelectProps) {
   const [open,setOpen]=useState(false),[query,setQuery]=useState(''),[active,setActive]=useState<string|null>(null);
   const [keyboard,setKeyboard]=useState(false);
   const id=useId(),root=useRef<HTMLDivElement>(null),trigger=useRef<HTMLButtonElement>(null),input=useRef<HTMLInputElement>(null),scroll=useRef<HTMLDivElement>(null);
@@ -59,7 +59,7 @@ export function Select({label,value,options,onChange,inline=false,searchable=tru
     }
   };
   const option=([key,text,count]:Option,index:number)=><div key={key} id={`${id}-${index}`} role="option" aria-selected={key===value} data-active={key===active} data-keyboard={keyboard} className={key===''?'filter-option filter-reset':'filter-option'} onPointerMove={()=>{setKeyboard(false);setActive(key);}} onMouseDown={e=>e.preventDefault()} onClick={()=>choose(key)}>
-    <span className="option-check" aria-hidden="true">{key===value?'✓':''}</span><span className="option-name">{text}</span>{count!==undefined&&<span className="option-count" aria-label={`${count} companies`}>{count.toLocaleString('en-US')}</span>}
+    <span className="option-check" aria-hidden="true">{key===value?'✓':''}</span><span className="option-name">{text}</span>{count!==undefined&&<span className="option-count" aria-label={`${count} companies`}>{count.toLocaleString('en-US')}</span>}{inline&&details?.[key]&&<span className="option-detail">{details[key]}</span>}
   </div>;
   return <div ref={root} className={`design-select${inline?' inline-select':''}`} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget)){setOpen(false);setActive(null);}}} onKeyDown={e=>{
     if(e.key==='Escape'&&open&&!inline){e.preventDefault();e.stopPropagation();close();}

@@ -3,13 +3,11 @@
 .value-page .method-sections{height:100%;columns:3;column-gap:24px;column-fill:balance;display:block;min-height:0}
 .value-page .method-sections>section{break-inside:avoid;margin:0 0 14px}
 .value-page .method-sections h4{font-size:14px;margin:8px 0 4px;font-weight:500}
-.value-page .method-sections p{font-size:14px;line-height:1.4;margin:6px 0}
+.value-page .method-sections p{font-size:14px;line-height:1.4}
 .method-sections table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
 .method-sections :is(td,th){font-size:13px;font-weight:400;padding:5px 3px;border-bottom:1px solid var(--viz-grid);text-align:right}
 .method-sections th:first-child{text-align:left}.method-sections thead th{color:var(--viz-muted)}
 .method-calibration{break-inside:auto!important}.method-calibration tr{break-inside:avoid}
-.funnel-stage{display:grid;grid-template-columns:1fr auto;gap:3px;font-size:14px;margin-bottom:6px}
-.funnel-stage .chart-interaction{grid-column:1/-1;margin:0!important}.funnel-stage b{font-weight:500}
 .method-change{border-bottom:1px solid var(--viz-grid);padding:4px 0}
 .value-page dialog[data-side-panel]:has(.owner-memo-depth){width:min(1040px,100vw)}
 .value-page dialog[data-side-panel]:has(.owner-memo-depth[data-answers="1"]){width:min(480px,100vw)}
@@ -22,168 +20,877 @@
 .value-page .memo-evidence footer{margin-top:auto;padding-top:6px}
 .value-page .memo-evidence p{font-size:15px;line-height:1.35;margin:0 0 6px}
 .value-page dialog[data-side-panel]:has(.investor-panel){width:min(940px,100vw)}
-.value-page .investor-panel{display:flex;flex-direction:column;gap:12px}
-.value-page .investor-panel header p{font-size:14px;margin:4px 0}
-.value-page .investor-panel header .panel-answer{font-size:23px}
+.value-page .investor-panel{display:flex;flex-direction:column}
+.value-page .investor-panel header p{font-size:14px}
 .holdings-table{flex:1;min-height:0}.holdings-table table{width:100%;height:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
 .holdings-table :is(th,td){font-size:14px;text-align:right;font-weight:400;border-bottom:1px solid var(--viz-grid);padding:8px}
 .holdings-table th:first-child{text-align:left;width:29%}.holdings-table thead{height:34px}.holdings-table small{display:block;font-size:13px;color:var(--viz-muted)}
 .holdings-table .chart-interaction{max-width:300px;margin-top:8px}.investor-panel nav{display:flex;justify-content:space-between;font-size:14px}
-@media(min-width:768px){
- .value-page dialog[data-side-panel]:has(.evidence-layout){width:min(800px,100vw)}
- .evidence-layout{grid-template-rows:auto minmax(140px,.8fr) auto minmax(0,1fr);gap:12px}
- .drawer-bottom{grid-template-columns:1.1fr 1fr;gap:20px;align-items:stretch}
- .drawer-years{display:flex;flex-direction:column;min-height:0}.drawer-years table{flex:1;height:100%}
- .value-page .drawer-years :is(th,td){padding:4px 3px}
- .value-page .panel-filters{grid-template-columns:2fr 1fr;gap:16px;padding:10px 0}
- .value-page dialog[data-side-panel]:has(.panel-filters){width:min(800px,100vw)}
- .value-page .panel-filters>.design-select:first-child .filter-scroll{grid-template-columns:repeat(2,minmax(0,1fr))}
- .value-page .panel-filters>.design-select{display:flex;flex-direction:column}
- .value-page .panel-filters .filter-options-inline,.value-page .panel-filters [role=listbox]{display:flex;flex-direction:column;flex:1;min-height:0}
- .value-page .panel-filters .filter-scroll{flex:1;display:grid;grid-auto-rows:minmax(26px,1fr)}
- .value-page .panel-filters .filter-option{min-height:26px;padding:2px 4px;font-size:14px}
- .value-page .search-preview>.mini-series{max-height:none;flex:1}
- .value-page dialog[data-side-panel]:has(.company-search){width:min(780px,100vw)}
- .company-search-body{grid-template-columns:240px minmax(0,1fr);gap:18px}
-}
-@media(min-width:768px) and (max-height:850px){
- .value-page dialog[data-side-panel]:has(.method-sections){width:min(1360px,100vw)}
- .value-page .method-sections{columns:4}
- .value-page .method-sections p{font-size:13px;line-height:1.3}
- .value-page .method-sections :is(td,th){padding:3px}
- .value-page .memo-years :is(th,td){padding:1px 0}
- .value-page .panel-filters>.design-select:first-child .filter-scroll{grid-template-columns:repeat(3,minmax(0,1fr))}
- .value-page dialog[data-side-panel]:has(.panel-filters){width:min(1040px,100vw)}
-}
 @media(max-width:767px){
  .value-page dialog[data-side-panel]:has(.method-sections),.value-page dialog[data-side-panel]:has(.investor-panel),.value-page dialog[data-side-panel]:has(.owner-memo-depth){width:100vw}
  .value-page .method-sections{columns:1;height:auto}
- .value-page .owner-memo-depth{display:block;height:auto}
- .value-page .memo-evidence{margin-bottom:16px}.value-page .memo-evidence .mini-series{height:150px;flex:none}
+ .value-page .owner-memo-depth{height:auto}
+ .value-page .memo-evidence{margin-bottom:16px}.value-page .memo-evidence .mini-series{flex:none}
  .value-page .holdings-table table,.value-page .holdings-table tbody{display:block;height:auto}
  .holdings-table thead{display:none}.holdings-table tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:10px 0;border-bottom:1px solid var(--viz-grid)}
  .holdings-table :is(th,td){text-align:left;border:0;padding:4px 0;font-size:14px}
  .holdings-table th:first-child{width:auto;grid-column:1/-1}.holdings-table td:nth-child(2)::before{content:'Weight · '}.holdings-table td:nth-child(3)::before{content:'Shares · '}.holdings-table td:nth-child(4)::before{content:'USD · '}.holdings-table td:nth-child(5)::before{content:'First · '}
  .value-page .investor-panel{height:auto;min-height:100%}.value-page .holdings-table{flex:none}
- .value-page .panel-filters .filter-scroll{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-height:none;overflow:visible}
- .value-page .panel-filters .filter-option{padding:5px 2px;gap:4px;font-size:13px}.value-page .panel-filters .option-name{white-space:normal}
+ .value-page .panel-filters .filter-scroll{display:grid;max-height:none;overflow:visible}.value-page .panel-filters .option-name{white-space:normal}
 }
+/* Narrow reading columns keep figures, annual values and their decision together. */
+.annual-change{display:block;font-size:13px;line-height:17px;color:var(--viz-muted)}
+.holding-history h3{font-size:16px;margin:6px 0}
+.holding-history table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.holding-history :is(th,td){font-weight:400;font-size:14px;text-align:right;border-bottom:1px solid var(--viz-grid);padding:5px}
+.holding-history th:first-child{text-align:left}
 @media(min-width:768px){
- .value-page dialog[data-side-panel]:has(.evidence-layout){width:min(clamp(500px,calc(1080px - 45vh),660px),100vw)}
- .value-page .evidence-layout{grid-template-rows:auto clamp(120px,16vh,190px) auto minmax(0,1fr);gap:10px}
- .value-page .evidence-layout .panel-answer{font-size:24px}
- .value-page .drawer-bottom{display:block}
- .value-page .drawer-years{display:block}
+ .value-page dialog[data-side-panel] .panel-content{padding:10px 16px}
+ .value-page .method-sections{column-fill:balance}
+ .value-page .method-sections>section{break-inside:auto}
+ .value-page .evidence-layout{grid-template-rows:auto 160px auto minmax(0,1fr);gap:8px}
+ .value-page .evidence-layout .panel-answer{font-size:23px;line-height:1.2}
  .value-page .drawer-years table{height:auto}
- .value-page .drawer-years :is(th,td){padding:3px;line-height:18px}
- .value-page .drawer-bottom .filing-evidence{margin-top:12px}
- .value-page .filing-quotes{gap:6px}
- .value-page .filing-evidence :is(p,li,blockquote){font-size:14px;line-height:1.35}
- .value-page .drawer-bottom h3{font-size:16px;margin-bottom:5px}
- .value-page .drawer-table-note{margin-top:5px!important}
- .value-page .drawer-numbers{gap:8px;padding:6px 0}.value-page .drawer-numbers dd{font-size:18px}
- .value-page .applied-rules{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
- .value-page .owner-memo-depth{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;align-content:start}
- .value-page .memo-evidence .mini-series{flex:none;min-height:0}
+ .value-page .drawer-bottom h3{font-size:16px;margin:0 0 5px}
+ .value-page .drawer-numbers{padding:6px 0;gap:6px}
+ .value-page dialog[data-side-panel]:has(.owner-memo-depth){width:640px}
+ .value-page .memo-evidence .mini-series{flex:none;min-height:0;margin:4px 0}
+ .value-page .memo-evidence footer{margin-top:6px;padding:0}
  .value-page .memo-years :is(th,td){padding:2px 0;line-height:18px}
- .value-page .memo-evidence footer{margin-top:4px}
-}
-@media(min-width:768px) and (min-height:1050px){
- .value-page dialog[data-side-panel]:has(.method-sections){width:920px}
- .value-page .method-sections{columns:2}
- .value-page dialog[data-side-panel]:has(.owner-memo-depth){width:760px}
- .value-page .memo-evidence p{font-size:16px}
-}
-@media(min-width:768px){
- .value-page .method-sections{columns:3;column-fill:balance}
- .value-page dialog[data-side-panel]:has(.method-sections){width:min(1120px,100vw)}
- .value-page .method-sections>section{break-inside:auto;margin-bottom:12px}
- .value-page .method-sections p{font-size:14px;line-height:1.35}
- .value-page .method-sections :is(td,th){padding:3px;line-height:19px}
- .value-page .owner-memo-depth{grid-auto-rows:minmax(0,1fr);align-content:stretch;gap:16px 24px}
- .value-page .memo-years :is(th,td){padding:0;line-height:18px}
- .value-page .memo-years{flex:none}
- .value-page .memo-evidence .mini-series{margin:0;flex:none}
- .value-page .memo-evidence p{font-size:14px;line-height:19px;margin-bottom:4px}
- .value-page .memo-evidence h3{margin-bottom:4px}
- .value-page .memo-evidence footer{padding-top:0;margin-top:4px}
  .value-page .investor-panel{gap:8px}
- .holdings-table{flex:1}.holdings-table :is(th,td){padding:4px;font-size:14px;line-height:20px}
- .holding-history{flex:1;min-height:0;display:flex;flex-direction:column}
- .holding-history h3{font-size:16px;margin:4px 0}
- .holding-history table{width:100%;height:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
- .holding-history :is(th,td){font-weight:400;font-size:14px;text-align:right;border-bottom:1px solid var(--viz-grid);padding:3px 5px}
- .holding-history th:first-child{text-align:left}
-}
-@media(min-width:768px) and (min-height:1050px){
- .value-page dialog[data-side-panel]:has(.method-sections){width:1040px}
- .value-page .method-sections{columns:3;font-size:16px}
- .value-page .method-sections p{font-size:16px;line-height:1.45}
- .value-page .method-sections :is(td,th){font-size:14px;line-height:22px;padding:4px}
- .value-page .memo-years :is(th,td){padding:4px 0}
- .value-page .memo-evidence p{font-size:16px;line-height:23px}
-}
-@media(min-width:768px) and (max-height:850px){
- .value-page dialog[data-side-panel]:has(.method-sections){width:min(1360px,100vw)}
- .value-page .method-sections{columns:4}
- .value-page .method-sections p{font-size:13px;line-height:1.3}
-}
-@media(max-width:767px){.holding-history{display:none}}
-.annual-change{display:none}
-@media(min-width:768px){
- .value-page .evidence-layout{grid-template-rows:auto minmax(110px,1fr) auto auto}
- .value-page .drawer-years :is(th,td){padding:2px 3px;line-height:18px}
- .value-page .drawer-bottom .filing-evidence{margin-top:8px}
- .value-page .filing-evidence :is(p,li,blockquote){font-size:13px;line-height:1.3}
- .value-page .drawer-bottom .drawer-table-note{font-size:13px;line-height:1.3}
-}
-@media(min-width:768px) and (min-height:1050px){
- .value-page .annual-change{display:block;font-size:13px;line-height:17px;color:var(--viz-muted)}
- .value-page .filing-evidence :is(p,li,blockquote){font-size:14px;line-height:1.4}
-}
-@media(min-width:768px) and (max-height:850px){
- .value-page dialog[data-side-panel]:has(.evidence-layout){width:940px}
- .value-page .drawer-bottom{display:grid;grid-template-columns:1.1fr 1fr}
-}
-.memo-change{display:none}
-@media(min-width:768px) and (max-height:1049px){
- .value-page dialog[data-side-panel]:has(.owner-memo-depth){width:min(1180px,100vw)}
- .value-page .owner-memo-depth{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:1fr}
- .value-page .owner-memo-depth[data-answers="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
- .value-page .owner-memo-depth[data-answers="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}
- .value-page .memo-evidence .memo-years{flex:1;height:100%}
- .value-page .memo-evidence .memo-change{display:block;font-size:13px;color:var(--viz-muted)}
- .value-page .memo-years thead{height:48px}
- .value-page .memo-years :is(th,td){vertical-align:middle}
- .value-page .memo-years th:last-child{max-width:170px}
- .value-page .memo-evidence footer{flex:none;min-height:36px;padding-top:8px}
-}
-@media(min-width:768px){
- .value-page .holdings-table{flex:0 0 auto}
+ .value-page .holdings-table{flex:none}
  .value-page .holdings-table table{height:auto}
- .value-page .holdings-table :is(td,th){padding:6px 4px;line-height:21px}
- .value-page .holding-history{flex:1}
- .value-page .drawer-chart{max-height:180px}
- .value-page .drawer-bottom .filing-evidence{margin-top:10px}
- .value-page .filing-evidence .applied-rules{margin:6px 0;padding-left:0;list-style:none}
+ .value-page .holdings-table .chart-interaction{display:none}
+ .value-page .holding-history{flex:1;min-height:0;display:flex;flex-direction:column}
+ .value-page .panel-filters{grid-template-columns:2fr 1fr;gap:12px;padding:8px 0}
+ .value-page dialog[data-side-panel]:has(.panel-filters){width:720px}
+ .value-page .panel-filters>.design-select:first-child .filter-scroll{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .value-page .panel-filters .filter-option{min-height:26px;padding:2px;font-size:14px}
+}
+@media(min-width:768px) and (max-height:850px){
+ .value-page .method-sections p{font-size:14px;line-height:1.4}
+ .value-page .evidence-layout{grid-template-rows:auto 170px auto minmax(0,1fr)}
+ .value-page dialog[data-side-panel]:has(.owner-memo-depth){width:960px}
+ .value-page .owner-memo-depth{align-content:stretch;grid-template-rows:1fr}
+ .value-page .memo-evidence .memo-years{flex:1;height:100%}
+ .value-page .panel-filters>.design-select:first-child .filter-scroll{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .value-page dialog[data-side-panel]:has(.panel-filters){width:900px}
+}
+@media(max-width:767px){
+ .value-page .method-sections :is(th,td){padding:3px;font-size:14px;line-height:19px}
+ .value-page .method-sections p{font-size:15px;line-height:1.4}
+ .value-page .memo-evidence .mini-series{height:auto}
+ .value-page .holding-history{display:block}
+}
+@media(min-width:768px){
+ .value-page .evidence-layout{display:block;height:auto}
+ .value-page .evidence-layout>*{margin-bottom:8px}
+ .value-page .evidence-layout .drawer-chart{margin-top:8px}
+ .value-page .drawer-bottom{display:block}
+ .value-page .applied-rules{display:grid;grid-template-columns:1fr 1fr;gap:2px 12px;padding:0;list-style:none;margin:6px 0}
+ .value-page .method-sections .method-funnel .chart-interaction{margin:0}
+ .value-page .owner-memo-depth{grid-template-columns:1fr 1fr}
+ .value-page .memo-evidence{display:block}
+ .value-page .memo-evidence .memo-years{height:auto}
 }
 @media(min-width:768px) and (min-height:1050px){
- .value-page .drawer-chart{max-height:160px}
- .value-page .evidence-layout .panel-answer{font-size:26px}
- .value-page .filing-evidence :is(p,li,blockquote){font-size:16px;line-height:1.4}
- .value-page .drawer-numbers dd{font-size:21px}
- .value-page .drawer-years :is(th,td){font-size:14px;line-height:21px;padding:3px}
+ .value-page .drawer-years .annual-change{display:block}
 }
-/* A long filing sets the lower region's natural height; the chart uses the remainder. */
+@media(min-width:768px) and (max-height:850px){
+ .value-page dialog[data-side-panel]:has(.method-sections){width:1060px}
+ .value-page .method-sections{columns:3}
+ .value-page .owner-memo-depth{grid-template-columns:repeat(4,minmax(0,1fr));height:100%}
+}
+/* Compact shared chrome leaves room for the evidence itself. */
+.value-page dialog[data-side-panel] .panel-content{padding:8px}
+.value-page .panel-content>:is(.method-sections,.evidence-layout,.owner-memo-depth){flex:none}
+.value-page .method-funnel .chart-interaction{margin:0}
+.value-page .method-funnel td{width:25%}
+.value-page .method-sections>section>h3{font-size:15px!important;color:var(--ink)}
 @media(min-width:768px){
- .value-page dialog[data-side-panel]:has(.evidence-layout){width:min(920px,100vw)}
- .value-page .evidence-layout{grid-template-rows:auto minmax(110px,1fr) auto auto}
- .value-page .drawer-chart{max-height:none}
- .value-page .drawer-bottom{display:grid;grid-template-columns:1.1fr 1fr;align-items:start;gap:20px}
+ .value-page dialog[data-side-panel]:has(.method-sections){width:1000px}
+ .value-page .method-sections{columns:3;font-size:15px}
+ .value-page .method-sections p{font-size:15px;line-height:21px}
+ .value-page .method-sections :is(th,td){font-size:14px;padding:2px;line-height:20px}
+ .value-page .owner-memo-depth{gap:10px}
+ .value-page .memo-evidence{min-height:auto}
+ .value-page .memo-evidence .memo-years{font-size:14px}
+ .value-page .drawer-years thead th{white-space:normal;line-height:17px}
+}
+@media(min-width:768px) and (min-height:1050px){
+ .value-page dialog[data-side-panel]:has(.method-sections){width:880px}
+ .value-page .memo-evidence p{font-size:17px;line-height:24px}
+ .value-page .memo-years :is(th,td){font-size:16px;line-height:24px;padding:3px 0}
+}
+@media(min-width:768px){
+ .value-page .shared-filter-button{display:none}
+ .value-page .compact-company-list :is(th,td){padding:4px}
+ .value-page .compact-company-list small{font-size:13px;line-height:17px;margin-top:0;white-space:normal}
+ .value-page .compact-company-list .compact-distance{display:none}
+ .value-page .compact-company-list .chart-interaction{margin:2px 0 0 auto}
+ .value-page .compact-company-list thead button{white-space:normal}
+}
+@media(min-width:768px){
+ .value-page .holdings-table small{font-size:13px;line-height:17px}
+ .value-page .investor-panel footer{padding-top:6px;font-size:14px;line-height:20px}
+}
+@media(min-width:768px){
+ .value-page dialog[data-side-panel]:has(.evidence-layout){width:560px}
+ .value-page .drawer-years .annual-change{display:block;font-size:13px;line-height:16px;white-space:nowrap}
+ .value-page .drawer-years :is(th,td){padding:2px;font-size:14px;line-height:18px}
+ .value-page .filing-evidence .applied-rules{font-size:14px;line-height:19px}
+ .value-page .filing-evidence :is(p,li,blockquote){font-size:14px;line-height:19px}
+ .value-page .drawer-bottom .filing-evidence{margin-top:6px}
+ .value-page .filing-evidence>p{margin-top:6px!important}
+ .value-page .drawer-numbers dd{font-size:17px}
+}
+@media(min-width:768px) and (min-height:1050px){
+ .value-page dialog[data-side-panel]:has(.evidence-layout){width:470px}
+ .value-page .filing-evidence :is(p,li,blockquote){font-size:16px;line-height:23px}
+ .value-page .drawer-years :is(th,td){padding:3px 2px;font-size:15px;line-height:21px}
+}
+@media(min-width:768px) and (max-height:850px){
+ .value-page dialog[data-side-panel]:has(.evidence-layout){width:820px}
+ .value-page .drawer-bottom{display:grid;grid-template-columns:1.1fr 1fr;gap:12px}
+ .value-page .drawer-years .annual-change{display:block}
  .value-page .drawer-bottom .filing-evidence{margin-top:0}
- .value-page .filing-evidence :is(p,li,blockquote){font-size:14px;line-height:1.4}
- .value-page .drawer-years :is(th,td){font-size:13px;line-height:18px;padding:3px}
- .value-page .applied-rules{display:block}
- .value-page .holdings-table .chart-interaction{display:none}
- .value-page .holding-history{flex:1;min-height:220px}
+}
+@media(min-width:768px){
+ .value-page dialog[data-reading-columns] .evidence-layout{display:block;height:auto}
+ .value-page dialog[data-reading-columns] .drawer-bottom{display:block}
+ .value-page dialog[data-reading-columns] .drawer-bottom .filing-evidence{margin-top:6px}
+ .value-page dialog[data-reading-columns="2"] .drawer-bottom .filing-evidence{margin-top:0}
+ .value-page dialog[data-reading-columns] .evidence-layout .panel-answer{letter-spacing:0}
+ .value-page dialog[data-reading-columns] .drawer-years .annual-change{font-size:13px;line-height:17px}
+ .value-page dialog[data-reading-columns] .drawer-numbers dd{font-size:calc(var(--reading-font) + 2px)}
+}
+.memo-comparison{margin:6px 0;font-size:13px;line-height:18px}
+.memo-comparison>div{display:grid;grid-template-columns:1fr auto;gap:0 8px}
+.memo-comparison b{font-weight:400;font-variant-numeric:tabular-nums}
+.memo-comparison .chart-interaction{grid-column:1/-1;margin:2px 0}
+/* Decision rows are a checklist: one criterion per ruled row. */
+.value-page .filing-evidence .applied-rules{padding:0;list-style:none;margin:6px 0}
+.value-page .filing-evidence .applied-rules li{border-bottom:1px solid var(--viz-grid);padding:3px 0}
+.value-page .jev-readings li{border-bottom:1px solid var(--viz-grid);padding:3px 0}
+.value-page .company-search-body>nav>button{gap:6px;padding:4px 0;font-size:14px;line-height:18px}
+.value-page .company-search-body small{font-size:13px;line-height:17px}
+@media(min-width:768px){
+ .value-page .company-search-body{padding-top:8px}
+ .value-page .search-preview h3{font-size:16px;line-height:20px;margin-bottom:6px}
+ .value-page .search-preview dl>div{padding:4px 0}
+ .value-page .search-preview dd{font-size:14px;line-height:19px}
+ .value-page .search-preview>section p{padding:3px 0}
+}
+@media(max-width:767px){
+ .value-page .panel-filters{padding:6px 0}
+ .value-page .panel-filters .filter-option{font-size:14px}
+}
+@media(min-width:768px){
+ .value-page .owner-memo-depth{height:auto;grid-template-rows:none;grid-auto-rows:auto;align-items:start;align-content:start}
+ .value-page .memo-evidence{font-size:14px;line-height:20px}
+}
+@media(min-width:768px){
+ .value-page .holding-history table{height:auto;flex:none}
+ .value-page .holding-history small{display:block;color:var(--viz-muted)}
+ .value-page .holding-history :is(td,th){padding:3px 2px;line-height:20px}
+ .value-page .holdings-table thead th{white-space:normal}
+}
+@media(min-width:768px){
+ .value-page .holding-history :is(td,th){font-size:15px}
+ .value-page .holding-history small{font-size:13px}
+}
+@media(min-width:768px){
+ .value-page dialog[data-reading-columns="2"] .evidence-layout{grid-template-columns:1.1fr 1fr;grid-template-areas:'answer answer' 'numbers numbers' 'chart filing' 'years filing';gap:8px 12px}
+ .value-page dialog[data-reading-columns="2"] .panel-answer{grid-area:answer}
+ .value-page dialog[data-reading-columns="2"] .drawer-numbers{grid-area:numbers}
+ .value-page dialog[data-reading-columns="2"] .drawer-chart{grid-area:chart;margin:0}
+ .value-page dialog[data-reading-columns="2"] .drawer-years{grid-area:years}
+ .value-page dialog[data-reading-columns="2"] .filing-evidence{grid-area:filing}
+}
+.value-page .company-search-body>nav .chart-interaction{max-width:160px;margin:2px 0}
+.value-page .company-search-body>nav .chart-interaction svg{height:26px;display:block;width:100%}
+@media(max-width:767px){
+ .value-page .company-search-body>nav>button{min-height:0}
+ .value-page .company-search-body>nav>button>span{display:grid;grid-template-columns:1fr 160px;width:100%}
+ .value-page .company-search-body>nav>button>span>small{grid-column:1}
+ .value-page .company-search-body>nav .chart-interaction{grid-column:2;grid-row:1/4;align-self:center}
+}
+@media(min-width:768px){
+ .value-page dialog[data-reading-columns="1"] .drawer-years .annual-change{display:none}
+ .value-page dialog[data-reading-columns="2"] .drawer-bottom{grid-template-columns:1.1fr 1fr;gap:12px}
+}
+.value-page .evidence-layout{width:100%;min-width:0}
+@media(min-width:768px){
+ .value-page .drawer-chart .mini-price .chart-interaction{flex:none}
+ .value-page dialog[data-side-panel]:has(.company-search){width:560px}
+}
+@media(max-width:767px){
+ .value-page .drawer-years table{table-layout:fixed}
+ .value-page .drawer-years th:first-child{width:36px}
+ .value-page .drawer-years th:last-child{width:22px}
+ .value-page .drawer-years :is(th,td){white-space:normal;overflow-wrap:anywhere}
+ .value-page .drawer-years td{font-size:13px}
+}
+@media(min-width:768px){
+ .value-page dialog[data-side-panel] .panel-shell>header{height:38px;min-height:38px}
+ .value-page .filing-evidence .applied-rules{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+ .value-page .filing-evidence .applied-rules li:last-child:nth-child(odd){grid-column:1/-1}
+}
+@media(max-width:767px){
+ .value-page .panel-filters .filter-option{display:grid;line-height:20px}
+ .value-page .panel-filters .option-check{width:10px}
+ .value-page .panel-filters .option-count{font-size:14px}
+ .value-page .panel-filters .inline-select>h3{margin:0 0 4px}
+ .value-page .panel-filters .filter-search{height:30px;min-height:30px;padding:2px 0}
+}
+.memo-buybacks{margin:4px 0;font-size:13px;line-height:18px}
+.memo-buybacks figcaption,.memo-buybacks small{font-size:13px;line-height:18px;display:block}
+.memo-buybacks .chart-interaction{margin:0}
+.value-page .memo-record{grid-column:1/-1}
+@media(min-width:768px){
+ .value-page .memo-evidence p{font-size:var(--memo-font,15px);line-height:1.35}
+ .value-page .memo-evidence .memo-years :is(th,td){font-size:var(--memo-font,14px)}
+}
+@media(max-width:767px){
+ .value-page .holdings-table tr{display:block}
+ .value-page .holdings-table th small{margin-left:6px}
+ .value-page .holdings-table td{display:inline;line-height:24px;padding:0}
+ .value-page .holdings-table td::after{content:' · '}
+ .value-page .holdings-table td:last-child::after{content:''}
+ .value-page .holdings-table td small{display:inline;margin-left:4px}
+ .value-page .holdings-table td:nth-child(5)::before{content:'First held '}
+ .value-page .holding-history :is(th,td){padding:3px 2px}
+ .value-page .holding-history small{display:block;font-size:13px;line-height:18px}
+}
+@media(min-width:768px){
+ .value-page dialog[data-reading-columns="2"] :is(.panel-answer,.drawer-numbers,.drawer-chart,.drawer-years,.filing-evidence){grid-area:auto}
+}
+.value-page .drawer-chart:empty{display:none}
+.option-detail{grid-column:2/-1;font-size:13px;line-height:18px;color:var(--viz-muted)}
+@media(max-width:767px){
+ .value-page .panel-filters .filter-scroll{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}
+ .value-page .panel-filters .filter-option{row-gap:0}
+ .value-page .evidence-layout{display:flex;flex-direction:column;height:auto;min-height:100%}
+ .value-page .evidence-layout .drawer-chart{flex:none}
+ .value-page .drawer-chart:empty{display:none}
+}
+
+@media(min-width:768px){
+ .value-page dialog[data-reading-columns] .evidence-layout .panel-answer{font-size:calc(var(--reading-font) + 4px);line-height:1.15}
+ .value-page dialog[data-reading-columns] .drawer-years :is(th,td){padding:1px}
+ .value-page dialog[data-reading-columns] .filing-evidence :is(p,li,blockquote){font-size:var(--reading-font);line-height:1.2}
+ .value-page .filing-evidence .applied-rules li,.value-page .jev-readings li{padding:2px 0}
+ .value-page .valuation-inputs :is(dt,dd){font-size:var(--reading-font);line-height:1.2}
+ .value-page .valuation-inputs>div{padding:3px 0}
+}
+@media(min-width:768px) and (min-height:1050px){.value-page dialog[data-reading-columns="1"] .drawer-years .annual-change{display:block}}
+@media(max-width:767px){
+ .value-page .panel-filters .filter-scroll,.value-page .panel-filters>.design-select:nth-child(2) .filter-scroll{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 6px}
+ .value-page .panel-filters .filter-option{min-height:0}
+ .value-page .drawer-numbers{gap:4px;padding:4px 0}
+ .value-page .drawer-years :is(td,th){padding:2px 0;font-size:14px;line-height:18px}
+ .value-page .compact-company-list :is(td,th){font-size:15px;line-height:18px;padding:3px 2px}
+ .value-page .compact-company-list small{font-size:13px;line-height:17px}
+}
+
+/* Ruled option rows make the country/sector totals easy to scan. */
+.value-page .panel-filters .filter-option{border-bottom:1px solid var(--viz-grid)}
+@media(min-width:768px){
+ .value-page .compact-company-list :is(th,td){font-size:16px;line-height:20px}
+ .value-page .compact-company-list th:first-child{width:33%}
+ .value-page .compact-company-list .chart-interaction{width:100%;max-width:130px}
+}
+
+@media(max-width:767px){
+ .value-page .company-search-body>nav .search-history{align-self:center}
+ .value-page .company-search-body>nav .search-history .chart-interaction{display:block}
+}
+
+@media(min-width:768px){
+ .value-page .evidence-layout .drawer-chart{height:100px}
+ .value-page .evidence-layout .drawer-chart:has(.mini-price){height:135px}
+ .value-page .drawer-table-note{font-size:var(--reading-font,15px);line-height:1.25}
+ .value-page .memo-comparison,.value-page .memo-buybacks{font-size:var(--memo-font,14px);line-height:1.2}
+ .value-page .memo-record{grid-column:auto}
+ .value-page .owner-memo-depth[data-answers="2"] .memo-record{grid-column:auto;grid-row:auto}
+}
+
+@media(min-width:768px){
+ .value-page .memo-evidence .memo-years :is(th,td){line-height:1.2;padding:1px 0}
+ .value-page .company-search-body>nav>button{min-height:min-content}
+ .value-page .company-search-body>nav>p{line-height:20px}
+}
+.value-page .search-history{display:block}
+
+@media(min-width:768px) and (min-height:1050px){
+ .value-page .method-sections p{font-size:19px;line-height:24px}
+ .value-page .method-sections :is(th,td){font-size:16px}
+}
+
+@media(max-width:767px){
+ .value-page .evidence-layout .drawer-chart{height:115px}
+ .value-page .evidence-layout .drawer-chart:has(.mini-price){height:125px}
+ .value-page .panel-filters .filter-option{padding:1px 0}
+}
+
+@media(max-width:767px){
+ .value-page .holdings-table tr{padding:4px 0}
+ .value-page .holdings-table :is(th,td){font-size:15px}
+}
+
+.value-page .memo-record .memo-years th:first-child{white-space:normal;width:42%}
+.value-page .memo-record .memo-years :is(td,th){vertical-align:top}
+
+@media(max-width:767px){
+ .value-page .company-search-body>nav>button{font-size:16px;line-height:20px}
+ .value-page .company-search-body>nav .company-logo{grid-column:1;grid-row:1}
+ .value-page .search-result-name{grid-column:2;grid-row:1}
+ .value-page .company-search-body>nav .search-result-id{grid-column:1/3;grid-row:2}
+ .value-page .company-search-body>nav .search-result-sector{grid-column:1/3;grid-row:3}
+ .value-page .company-search-body>nav .search-history{grid-column:3;grid-row:1/4}
+}
+
+.value-page .company-search-body>nav>button>.search-result-body{display:block}
+.value-page .company-search-body>nav .search-result-body>.company-logo{float:left;margin:0 6px 2px 0}
+.value-page .company-search-body>nav .search-result-name{display:block}
+.value-page .company-search>input{padding:5px 0;line-height:24px}
+@media(min-width:768px){
+ .value-page .company-search-body>nav>button{display:block}
+ .value-page .company-search-body>nav .search-history{clear:both}
+}
+@media(max-width:767px){
+ .value-page .company-search-body{padding-top:6px}
+ .value-page .company-search-body>nav>button{grid-template-columns:minmax(0,1fr) 160px;align-items:start}
+ .value-page .company-search-body>nav>button>.search-result-body{grid-column:1;grid-row:1}
+ .value-page .company-search-body>nav>button>.search-history{grid-column:2;grid-row:1}
+ .value-page .company-search-body>nav .search-result-body>small{font-size:14px;line-height:18px}
+}
+.value-page .company-search-body>nav>button>.search-history{display:block;min-width:0;width:auto}
+
+.value-page .company-search-body>nav>button>.search-result-summary{display:block;font-size:14px;line-height:19px;white-space:normal;margin-top:3px}
+@media(max-width:767px){
+ .value-page .company-search-body>nav>button>.search-result-summary{grid-column:1/-1;grid-row:2}
+}
+@media(max-width:767px){
+ .value-page .panel-filters .filter-option{position:relative;grid-template-columns:minmax(0,1fr) auto;gap:0 2px}
+ .value-page .panel-filters .option-check{position:absolute;left:0;top:2px}
+ .value-page .panel-filters .filter-option:not([aria-selected=true])>.option-check{display:none}
+ .value-page .panel-filters .filter-option[aria-selected=true]{padding-left:16px}
+ .value-page .panel-filters .option-name{grid-column:1}
+ .value-page .panel-filters .option-count{grid-column:2}
+ .value-page .panel-filters .option-detail{grid-column:1/-1}
+}
+
+.value-page .search-preview>section p{grid-template-columns:1fr auto;gap:2px 6px}
+.value-page .search-preview .search-test-reason{grid-column:1/-1;color:var(--ink);font-weight:400}
+@media(min-width:768px){
+ .value-page .search-preview :is(dd,.search-test-reason){font-size:var(--preview-font,14px);line-height:1.3}
+ .value-page .search-preview>section{padding:8px 0}
+}
+@media(min-width:768px){.value-page .search-preview{min-height:0;height:100%}}
+@media(max-width:767px){
+ .value-page .company-search-body>nav .search-history small{font-size:14px;line-height:18px}
+ .value-page .company-search-body>nav>button{padding:2px 0}
+}
+.value-page .search-preview :is(dt,dd){display:inline}
+.value-page .search-preview dt::after{content:': '}
+.value-page .search-preview>section p{display:block;padding:6px 0}
+.value-page .search-preview>section p>span{margin-right:6px}
+.value-page .search-preview .search-test-reason{display:inline}
+.value-page .search-preview>section strong::after{content:'. '}
+@media(min-width:768px){.value-page .search-preview :is(dt,dd,.search-test-reason){font-size:var(--preview-font);line-height:1.3}}
+@media(max-width:767px){
+ .value-page .panel-filters{display:grid;align-items:start}
+ .value-page .panel-filters>.design-select:first-child .filter-scroll{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .value-page .panel-filters>.design-select:nth-child(2) .filter-scroll{grid-template-columns:1fr}
+ .value-page .panel-filters .filter-toggles{grid-column:1/-1}
+ .value-page .panel-filters .option-name{font-size:16px;line-height:18px}
+ .value-page .panel-filters .option-detail{font-size:14px;line-height:18px}
+}
+@media(max-width:767px){
+ .value-page .panel-filters .option-name{overflow-wrap:normal}
+}
+.value-page .compact-company-list tbody th a{display:block}
+.value-page .compact-company-list tbody th a>.company-logo{float:left;margin:0 6px 2px 0}
+.value-page .compact-company-list tbody th a>span{display:inline}
+
+@media(min-width:768px){
+ .value-page .method-sections{column-gap:10px}
+ .value-page .method-sections>section{margin-bottom:6px}
+}
+@media(min-width:768px) and (min-height:1050px){
+ .value-page .method-sections>section>h3{font-size:18px!important}
+ .value-page .method-sections :is(th,td){line-height:21px}
+}
+
+.value-page .method-calibration .calibration-reason td{text-align:left;color:var(--viz-muted);padding-top:0}
+
+.value-page .method-funnel td small{font-size:inherit;white-space:nowrap}
+.value-page .method-calibration tr:has(+.calibration-reason){break-after:avoid}
+@media(max-width:767px){.value-page .compact-company-list :is(th,td){font-size:16px;line-height:20px}}
+
+.value-page .method-calibration :is(td,th),.value-page .method-sources :is(td,th){text-align:left}
+.value-page .method-calibration td:last-child span{display:inline-block;width:1em;text-align:center}
+.value-page .method-sections :is(th,td){white-space:normal}
+.value-page .method-calibration td:last-child{white-space:nowrap}
+.value-page .memo-comparison-basis{display:block;font-size:13px;line-height:18px;margin:4px 0}
+.value-page .method-sections p{margin:4px 0}
+.value-page .method-sections>section>h3{margin-bottom:4px}
+.value-page .valuation-inputs{display:block;margin:6px 0}
+.value-page .valuation-inputs>div{display:inline;padding:0}
+.value-page .valuation-inputs :is(dt,dd){display:inline;margin:0;line-height:1.3}
+.value-page .valuation-inputs dt::after{content:': '}
+.value-page .valuation-inputs dd::after{content:'. '}
+.value-page .drawer-numbers{flex-wrap:wrap;justify-content:space-between}
+.value-page .drawer-numbers>div{flex:1 0 auto}
+@media(min-width:768px){
+.value-page dialog[data-reading-columns="2"] .evidence-layout{display:block;columns:2;column-gap:12px}
+.value-page dialog[data-reading-columns="2"] .drawer-bottom{display:contents}
+.value-page dialog[data-reading-columns="2"] .drawer-numbers{display:flex;flex-wrap:wrap;gap:3px 10px}
+.value-page dialog[data-reading-columns="2"] .drawer-numbers>div{flex:1 0 auto}
+.value-page .evidence-layout>*{break-inside:avoid}
+.value-page .drawer-bottom :is(section,table){break-inside:auto}
+.value-page .drawer-bottom tr{break-inside:avoid}
+.value-page .drawer-bottom h3{break-after:avoid}
+.value-page .drawer-years .annual-change{display:none!important}
+}
+@media(max-width:767px){
+.value-page .investor-panel header .panel-answer{font-size:20px;margin:0}
+.value-page .investor-panel{gap:4px}
+.value-page .investor-panel header p{line-height:18px;margin:2px 0}
+.value-page .holdings-table .chart-interaction{width:130px;height:30px}
+.value-page .holdings-table th small{display:inline;margin:0}
+.value-page .holding-history th{white-space:nowrap}
+.value-page .holding-history :is(th,td){font-size:14px;line-height:18px}
+}
+@media(max-width:767px){
+.value-page .holdings-table th:first-child{grid-template-columns:minmax(0,1fr) 130px;column-gap:8px}
+.value-page .holdings-table th:first-child>a,.value-page .holdings-table th:first-child>small{grid-column:1}
+.value-page .holdings-table .chart-interaction{float:none;grid-column:2;grid-row:1/3;align-self:center;margin:0}
+.value-page .holdings-table small{font-size:14px;line-height:18px}
+}
+.value-page .drawer-chart:has([data-testid=threshold-series]){height:auto!important}
+.value-page .drawer-chart>[data-testid=threshold-series]{height:auto}
+.value-page .drawer-chart [data-testid=threshold-series] .chart-interaction{flex:none}
+.value-page .drawer-chart figcaption,.value-page .drawer-chart figcaption p{line-height:18px;margin:0}
+.value-page .how-decided{font-size:15px;font-weight:500;margin:6px 0 2px}
+.value-page dialog[data-reading-columns] .evidence-layout .panel-answer{font-size:var(--reading-font);line-height:1.2}
+.value-page .filing-evidence .applied-rules{display:block}
+.value-page .drawer-numbers{display:block;padding:4px 0;line-height:22px;font-size:15px}
+.value-page .drawer-numbers>div{display:inline}
+.value-page dialog[data-reading-columns] .drawer-numbers :is(dt,dd){display:inline;font-size:inherit;line-height:inherit;margin:0}
+.value-page .drawer-numbers dt::after{content:' '}
+@media(min-width:768px){
+.value-page dialog[data-reading-columns="2"] .drawer-years :is(td,th){font-size:14px;line-height:19px}
+.value-page dialog[data-reading-columns="2"] .drawer-years table{table-layout:fixed}
+.value-page dialog[data-reading-columns="2"] .drawer-years td{white-space:normal}
+}
+@media(min-width:768px){.value-page .company-search-body{grid-template-columns:180px minmax(0,1fr);gap:8px}}
+@media(min-width:768px){
+.value-page dialog[data-reading-columns] .filing-evidence :is(p,li,blockquote),.value-page dialog[data-reading-columns] .evidence-layout .panel-answer{line-height:1.15}
+.value-page dialog[data-reading-columns] .evidence-layout>*{margin-bottom:4px}
+.value-page dialog[data-reading-columns] .drawer-bottom h3{margin-bottom:3px}
+}
+.value-page .drawer-numbers :is(dt,dd){display:inline;font-size:inherit;line-height:inherit;margin:0}
+.value-page .drawer-years table{table-layout:fixed}
+.value-page .drawer-years :is(td,th){white-space:normal}
+.value-page .compact-company-list tbody th a>span{white-space:normal;text-overflow:clip;overflow-wrap:anywhere}
+@media(min-width:768px){
+.value-page dialog[data-reading-columns="1"] .drawer-years :is(td,th){font-size:min(18px,var(--reading-font));line-height:1.2}
+.value-page dialog[data-side-panel]:has(.investor-panel){width:480px}
+}
+.value-page dialog[data-side-panel] .panel-shell>header{height:auto;min-height:38px;flex-shrink:0}
+.value-page dialog[data-side-panel] .panel-shell>header h2{white-space:normal;overflow:visible;line-height:18px;font-size:16px;min-width:0;flex:1}
+.value-page .drawer-years th:last-child{width:32px}
+.value-page .drawer-years thead th{font-size:13px!important;padding:1px 2px;line-height:17px}
+.value-page .holding-history td{white-space:nowrap}
+.value-page dialog[data-side-panel] .panel-shell>header{box-sizing:border-box}
+.value-page .drawer-years th:first-child{width:52px}
+@media(max-width:767px){
+.value-page .drawer-years .annual-change{display:block;font-size:13px;line-height:16px;white-space:nowrap}
+.value-page .owner-memo-depth{display:block;columns:2;column-gap:10px}
+.value-page .memo-evidence{break-inside:avoid}
+.value-page .memo-years :is(td,th){font-size:13px;line-height:17px}
+}
+.value-page dialog[data-side-panel] .panel-shell>header{padding:0 10px}
+.value-page dialog[data-side-panel] .panel-shell>header>button{height:30px;min-height:30px;padding:4px 0;line-height:18px}
+.value-page .drawer-chart:has(.filing-signals){height:106px!important}
+@media(max-width:767px){
+.value-page dialog[data-side-panel] .panel-shell>header{min-height:44px}
+.value-page dialog[data-side-panel] .panel-shell>header>button{height:44px}
+}
+@media(max-width:767px){
+.value-page .panel-filters{grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:6px}
+.value-page .panel-filters .filter-scroll{column-gap:6px}
+}
+@media(max-width:767px){
+.value-page .drawer-years tbody :is(td,th){font-size:16px;line-height:19px}
+.value-page .evidence-layout .panel-answer{font-size:18px;line-height:21px}
+.value-page .filing-evidence :is(p,li,blockquote){font-size:16px;line-height:20px}
+}
+.value-page .company-context td{text-align:left}
+.value-page .company-context .list-business{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:10px}
+.value-page .company-context .list-business .chart-interaction{width:100%;max-width:none}
+@media(max-width:767px){
+.value-page .owner-memo-depth[data-answers="1"],.value-page .owner-memo-depth[data-answers="2"]{columns:1}
+}
+@media(min-width:768px){
+.value-page .holdings-table table,.value-page .holdings-table tbody{display:block;height:auto}
+.value-page .holdings-table thead{display:none}
+.value-page .holdings-table tr{display:block;border-bottom:1px solid var(--viz-grid)}
+.value-page .holdings-table :is(th,td){border:0;padding:0;text-align:left;font-size:15px}
+.value-page .holdings-table th:first-child{display:block;width:auto}
+.value-page .holdings-table th small{display:inline;margin-left:6px;font-size:13px}
+.value-page .holdings-table td{display:inline;white-space:normal}
+.value-page .holdings-table td::after{content:' · '}
+.value-page .holdings-table td:last-child::after{content:''}
+.value-page .holdings-table td small{display:inline;margin-left:4px}
+.value-page .holdings-table td:nth-child(2)::before{content:'Weight '}
+.value-page .holdings-table td:nth-child(3)::before{content:'Shares '}
+.value-page .holdings-table td:nth-child(4)::before{content:'USD '}
+.value-page .holdings-table td:nth-child(5)::before{content:'First held '}
+}
+@media(max-width:767px){
+.value-page .compact-company-list[data-historical=true] th:first-child{width:32%}
+.value-page .compact-company-list[data-historical=true] th:nth-child(2){width:23%}
+.value-page .compact-company-list[data-historical=true] th:nth-child(3){width:25%}
+.value-page .compact-company-list[data-historical=true] th:nth-child(4){width:20%}
+}
+.value-page .investor-panel{gap:4px}
+.value-page .investor-panel header .panel-answer{font-size:18px;line-height:21px;margin:0;color:var(--ink)}
+.value-page .investor-panel header p{line-height:18px;margin:2px 0}
+@media(min-width:768px){
+.value-page .holdings-table tr{padding:2px 0}
+.value-page .holdings-table :is(th,td){line-height:18px}
+.value-page .holding-history :is(th,td){padding:2px}
+.value-page .holding-history small{line-height:16px}
+}
+.value-page .memo-years caption{text-align:left;font-size:13px;line-height:18px;margin:2px 0}
+
+@media(max-width:767px){
+.value-page .company-search-body>nav>button{display:block}
+.value-page .company-search-body>nav>button>.search-result-body{display:block}
+.value-page .company-search-body>nav>button>.search-history{float:right;width:140px;margin:0 0 2px 6px}
+.value-page .company-search-body>nav>button>.search-result-summary{font-size:18px;line-height:21px;margin-top:0}
+.value-page .company-search-body>nav .search-result-body>small{display:inline;margin-right:4px}
+.value-page .company-search-body>nav .search-result-name{font-size:18px;line-height:21px}
+}
+
+@media(max-width:767px){.value-page .company-search-body>nav .search-result-body>small+small::before{content:" · "}}
+
+.value-page .evidence-layout[data-test="accounting"] .filing-evidence .applied-rules li{display:inline;border:0;padding:0;margin-right:5px}
+.value-page .evidence-layout[data-test="accounting"] .filing-evidence .applied-rules li::after{content:'. '}
+.value-page .evidence-layout[data-test="accounting"] .jev-readings li{display:inline;border:0;padding:0;margin-right:5px}
+.value-page .evidence-layout[data-test="accounting"] .jev-readings li b{margin-left:4px}
+.value-page .evidence-layout[data-test="accounting"] .jev-readings li::after{content:'. '}
+.value-page .evidence-layout[data-test="accounting"] .drawer-rules p{display:inline}
+.value-page .evidence-layout[data-test="accounting"] .drawer-rules p::after{content:' '}
+
+@media(min-width:768px) and (max-height:850px){
+.value-page .filing-evidence .applied-rules li{display:inline;border:0;padding:0;margin-right:5px}
+.value-page .filing-evidence .applied-rules li::after{content:'. '}
+.value-page .jev-readings li{display:inline;border:0;padding:0;margin-right:5px}
+.value-page .jev-readings li b{margin-left:4px}
+.value-page .jev-readings li::after{content:'. '}
+.value-page .drawer-rules p{display:inline}
+.value-page .drawer-rules p::after{content:' '}
+}
+@media(min-width:768px){.value-page dialog[data-reading-columns="2"] .drawer-years th:first-child{width:44px}.value-page dialog[data-reading-columns="2"] .drawer-years th:last-child{width:28px}}
+
+@media(min-width:768px){
+.value-page dialog[data-reading-columns] .drawer-numbers{font-size:var(--reading-font);line-height:1.15}
+.value-page dialog[data-reading-columns] .drawer-table-note{font-size:var(--reading-font);line-height:1.15}
+.value-page dialog[data-reading-columns] .drawer-years :is(th,td){font-size:var(--reading-font);line-height:1.15}
+.value-page dialog[data-reading-columns] .drawer-years th:first-child{width:52px}
+.value-page dialog[data-reading-columns] .drawer-years th:last-child{width:30px}
+}
+
+@media(max-width:767px){.value-page .drawer-bottom .drawer-table-note{font-size:16px;line-height:19px}.value-page .drawer-numbers{font-size:16px;line-height:19px}}
+.value-page .list-quality-tests{font-size:13px}
+.value-page .list-quality-tests span{white-space:nowrap}
+@media(max-width:767px){
+.value-page .filter-footer{padding:4px 0}
+.value-page .panel-filters{padding-top:0}
+}
+
+.value-page .compact-company-list table{display:flex;flex-direction:column}
+.value-page .compact-company-list thead{display:block;flex:none}
+.value-page .compact-company-list thead tr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.value-page .compact-company-list thead th{width:auto!important}
+.value-page .compact-company-list tbody{display:flex;flex-direction:column;flex:1}
+.value-page .compact-company-list tbody tr{display:block;flex:1;padding:3px 0;border-bottom:1px solid var(--viz-grid)}
+.value-page .compact-company-list tbody :is(th,td){display:block;width:auto;border:0;text-align:left;padding:0;font-size:17px;line-height:20px}
+.value-page .compact-company-list tbody th a{font-size:18px;line-height:21px}
+.value-page .compact-company-list tbody th a small{display:inline;margin-left:6px}
+.value-page .compact-company-list tbody td small{display:inline;margin:0 4px;font-size:14px;line-height:18px}
+.value-page .compact-company-list tbody td:nth-child(2)::before{content:'Return / yr ';font-size:14px;color:var(--viz-muted)}
+.value-page .compact-company-list[data-historical=true] tbody td:nth-child(2)::before{content:'Gain since ';}
+.value-page .compact-company-list tbody td:nth-child(4){clear:both}
+.value-page .list-quality-tests{display:block;line-height:18px}
+.value-page .list-quality-tests span{display:inline;margin-right:6px;font-size:14px}
+.value-page .compact-company-list .chart-interaction{display:inline-block;vertical-align:middle;width:100px;height:30px;margin:0 0 0 8px}
+.value-page .compact-company-list tbody th:first-child{width:100%!important}
+.value-page .compact-company-list .compact-distance{display:none}
+
+@media(max-width:767px){
+.value-page .evidence-layout{gap:4px}
+.value-page .drawer-bottom{gap:4px}
+.value-page .drawer-bottom h3{margin:0 0 3px}
+.value-page .filing-evidence>.filing-source{margin-top:2px;font-size:14px}
+.value-page .jev-readings{margin-top:4px}
+.value-page .jev-readings ul{margin:4px 0;gap:2px}
+.value-page .drawer-bottom .drawer-table-note{margin:3px 0 0}
+}
+
+@media(min-width:768px){
+.value-page .compact-company-list tbody :is(th,td){font-size:var(--list-font,17px);line-height:1.12}
+.value-page .compact-company-list tbody th a{font-size:var(--list-font,17px);line-height:1.12}
+.value-page .compact-company-list tbody td small,.value-page .list-quality-tests span{font-size:max(13px,calc(var(--list-font,17px) - 2px))}
+}
+
+.value-page dialog[data-side-panel] .compact-company-list thead{height:auto;min-height:40px}
+
+@media(min-width:768px){
+.value-page .company-search-body>nav>button{font-size:var(--search-font,14px);line-height:1.15;flex:none}
+.value-page .company-search-body>nav>button>.search-result-summary{font-size:var(--search-font,14px);line-height:1.15}
+.value-page .company-search-body>nav .search-result-body>small{display:inline;margin-right:4px}
+.value-page .company-search-body>nav .search-result-body>small+small::before{content:' · '}
+}
+@media(min-width:768px){.value-page .search-summary-detail{display:inline}}
+
+@media(max-width:767px){
+.value-page .holdings-table .chart-interaction{display:none}
+.value-page .holdings-table th:first-child{display:block}
+.value-page .holdings-table th:first-child>a{display:inline;font-size:16px;line-height:19px}
+.value-page .holdings-table th:first-child>small{display:inline;font-size:14px;line-height:18px;margin-left:6px}
+.value-page .holdings-table :is(th,td){line-height:19px}
+}
+
+@media(min-width:768px){.value-page .compact-company-list tbody :is(th,td),.value-page .compact-company-list tbody th a{line-height:1.3}.value-page .compact-company-list tbody td small,.value-page .list-quality-tests span{line-height:1.25}}
+.value-page .annual-bar{display:none}
+@media(max-width:767px){
+.value-page .annual-bar{display:block;position:relative;height:6px;margin:1px 4px}
+.value-page .annual-bar i{position:absolute;top:2px;height:3px;background:var(--viz-muted);opacity:.65}
+.value-page .annual-bar b{position:absolute;top:0;width:1px;height:6px;background:var(--viz-muted)}
+}
+
+@media(min-width:768px){
+.value-page .search-preview>header h3{display:inline;font-size:var(--preview-font);line-height:1.2;margin:0 6px 0 0}
+.value-page .search-preview>header{padding-bottom:4px}
+.value-page .company-search-body>nav small{font-size:14px;line-height:18px}
+}
+
+@media(min-width:768px){
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years{display:block}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years thead{display:none}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years tbody{display:block}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years tr{display:block;border-bottom:1px solid var(--viz-grid);padding:2px 0}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years :is(th,td){display:inline;border:0;padding:0;line-height:1.2}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record th::after{content:': '}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record td:last-child::before{content:' · median '}
+
+.value-page .annual-context{display:none}
+}
+
+@media(min-width:768px) and (min-height:1050px){.value-page dialog[data-reading-columns="1"] .drawer-years .annual-change{display:block!important;font-size:13px;line-height:16px;white-space:nowrap}}
+
+.value-page .memo-years .annual-bar{display:block;position:relative;height:6px;margin:1px 4px}
+.value-page .memo-years .annual-bar i{position:absolute;top:2px;height:3px;background:var(--viz-muted);opacity:.65}
+.value-page .memo-years .annual-bar b{position:absolute;top:0;width:1px;height:6px;background:var(--viz-muted)}
+
+@media(min-width:768px) and (max-height:850px){
+.value-page .company-search-body{grid-template-columns:160px minmax(0,1fr)}
+.value-page .search-result-summary>.search-summary-detail:last-child{display:none}
+}
+@media(min-width:768px) and (max-height:850px){
+.value-page .search-preview dl>div,.value-page .search-preview>section p{padding:2px 0}
+.value-page .search-preview dl{margin:2px 0}
+.value-page .search-preview>section{padding:2px 0}
+}
+
+.value-page .evidence-layout .drawer-chart:has(.mini-price){height:100px}
+.value-page .drawer-chart .mini-price .chart-interaction{flex:none}
+@media(min-width:768px){.value-page .annual-comparison{display:none}}
+@media(min-width:768px) and (max-height:1049px){.value-page .memo-years .annual-bar{display:none}}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-years .annual-bar{display:none}
+
+/* Current snapshots compare companies in aligned numeric columns. */
+.value-page .compact-company-list[data-historical=false] table{display:table;width:100%;table-layout:fixed}
+.value-page .compact-company-list[data-historical=false] thead{display:table-header-group;height:40px}
+.value-page .compact-company-list[data-historical=false] tbody{display:table-row-group}
+.value-page .compact-company-list[data-historical=false] :is(thead,tbody) tr{display:table-row}
+.value-page .compact-company-list[data-historical=false] :is(th,td){display:table-cell;text-align:right;font-size:16px;line-height:20px;padding:3px 2px}
+.value-page .compact-company-list[data-historical=false] :is(thead,tbody) th:first-child{width:33%!important;text-align:left}
+.value-page .compact-company-list[data-historical=false] th:nth-child(2){width:16%!important}
+.value-page .compact-company-list[data-historical=false] th:nth-child(3){width:28%!important}
+.value-page .compact-company-list[data-historical=false] th:nth-child(4){width:23%!important}
+.value-page .compact-company-list[data-historical=false] tbody th a{font-size:16px;line-height:20px}
+.value-page .compact-company-list[data-historical=false] tbody th a small,.value-page .compact-company-list[data-historical=false] tbody td small{display:block;font-size:13px;line-height:17px;margin:0}
+.value-page .compact-company-list[data-historical=false] tbody td:nth-child(2)::before{display:none}
+.value-page .compact-company-list[data-historical=false] .chart-interaction{width:100%;height:30px;margin:0}
+
+@media(min-width:768px){.value-page dialog[data-side-panel]:has(.compact-company-list[data-historical=false]){width:480px}}
+
+@media(min-width:768px){.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years tbody{columns:2;column-gap:12px}.value-page .memo-record .memo-years tr{break-inside:avoid}}
+.value-page .thesis-panel{gap:8px}
+.value-page .thesis-panel>.panel-answer{margin:0;font-size:20px;line-height:1.25}
+.value-page .thesis-pages{position:relative;flex:1;min-height:0;display:flex;flex-direction:column}
+.value-page .thesis-pages .thesis-evidence{padding:0;border:0;flex:1}
+.value-page .thesis-pages .thesis-evidence p,.value-page .thesis-measure{font-size:20px;line-height:1.3;margin:0 0 8px;white-space:normal}
+.value-page .thesis-measure{position:absolute;inset:0 0 auto;visibility:hidden;pointer-events:none}
+.value-page .thesis-pages nav{display:flex;justify-content:space-between;align-items:center;height:38px;flex:none}
+.value-page .thesis-pages nav button{font:inherit;min-width:44px;height:38px}
+@media(min-width:768px){.value-page dialog[data-side-panel]:has(.thesis-panel){width:390px}}
+.value-page .thesis-panel .thesis-pages .thesis-measure{font-size:20px;line-height:1.3}
+
+@media(max-width:767px){
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years{display:block}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years thead{display:none}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years tbody{display:block;columns:2;column-gap:12px}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years tr{display:block;break-inside:avoid;border-bottom:1px solid var(--viz-grid);padding:2px 0}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record .memo-years :is(th,td){display:inline;border:0;padding:0;font-size:16px;line-height:1.25}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record th::after{content:': '}
+.value-page .owner-memo-depth:is([data-answers="1"],[data-answers="2"]) .memo-record td:last-child::before{content:' · median '}
+}
+
+.value-page .thesis-panel .thesis-pages .thesis-evidence p,.value-page .thesis-panel .thesis-pages .thesis-measure{font-size:18px;line-height:1.25}
+.value-page .search-preview .search-test-full{display:none}
+@media(min-width:768px) and (min-height:850px){.value-page .search-preview .search-test-full{display:inline}.value-page .search-preview .search-test-brief{display:none}}
+@media(min-width:768px){.value-page .holding-history :is(th,td){font-size:16px;line-height:1.15}.value-page .holding-history td small{font-size:15px;line-height:1.15}}
+
+.value-page .jev-readings ul{display:block;margin:3px 0}
+.value-page .filing-evidence:has(>.filing-source)>h3{display:inline;margin-right:6px}
+.value-page .filing-evidence>.filing-source{display:inline;margin:0}
+.value-page .filing-evidence:has(>.filing-source)>.filing-quotes:empty{display:none}
+
+@media(max-width:767px){
+.value-page .panel-filters>.design-select:nth-child(2) .option-name{grid-column:1/-1;font-size:16px;line-height:19px}
+.value-page .panel-filters>.design-select:nth-child(2) .option-count{grid-column:1/-1;text-align:left;font-size:14px;line-height:18px}
+.value-page .panel-filters>.design-select:nth-child(2) .option-count::after{content:' companies'}
+}
+
+.value-page .compact-company-list .list-quality-tests{white-space:normal}
+.value-page .compact-company-list .list-quality-tests span{display:inline-block}
+.value-page .compact-company-list[data-historical=false] .list-quality-tests span{font-size:13px;line-height:17px;margin-right:3px}
+@media(min-width:768px){.value-page .owner-memo-depth:not([data-kind="operating"]) .memo-record .memo-years tbody{columns:1}}
+
+@media(min-width:768px){.value-page dialog[data-reading-columns] .filing-evidence,.value-page dialog[data-reading-columns] .filing-evidence :is(ul,li){font-size:var(--reading-font);line-height:1.2}}
+
+@media(min-width:768px) and (max-height:849px){.value-page .search-preview>section p:first-of-type .search-test-full{display:inline}.value-page .search-preview>section p:first-of-type .search-test-brief{display:none}}
+
+.value-page .evidence-layout[data-window-only=true] .drawer-years :is(th,td):last-child{display:none}
+@media(max-width:767px){.value-page .evidence-layout:is([data-kind=operating],:not([data-test])) .panel-answer{font-size:20px;line-height:1.2}}
+.value-page .compact-company-list .historical-gain-chart .chart-interaction{display:block;width:100%;height:18px}
+
+.value-page .compact-company-list .historical-gain-chart{display:inline-block;width:150px;vertical-align:middle;margin-left:6px}
+.value-page .compact-company-list .historical-gain-chart .chart-interaction{max-width:none;margin:0}
+
+.value-page .holding-history-name{display:none}
+@media(max-width:767px){
+.value-page .holding-history :is(table,tbody,tr){display:block}
+.value-page .holding-history thead{display:none}
+.value-page .holding-history tbody tr{padding:4px 0;border-bottom:1px solid var(--viz-grid)}
+.value-page .holding-history tbody :is(th,td){display:inline;border:0;padding:0;font-size:16px;line-height:21px;white-space:normal}
+.value-page .holding-history tbody th::after{content:': '}
+.value-page .holding-history-name{display:inline;font-size:14px}
+.value-page .holding-history tbody td small{display:inline;font-size:14px;line-height:18px;margin-left:3px}
+.value-page .holding-history tbody td small::after{content:' shares · '}
+}
+
+.value-page .annual-field{display:none}
+.value-page .evidence-layout[data-window-only=true] .drawer-years :is(table,tbody,tr){display:block}
+.value-page .evidence-layout[data-window-only=true] .drawer-years thead{display:none}
+.value-page .evidence-layout[data-window-only=true] .drawer-years tr{border-bottom:1px solid var(--viz-grid);padding:3px 0}
+.value-page .evidence-layout[data-window-only=true] .drawer-years tbody :is(th,td){display:inline;border:0;padding:0;width:auto!important;font-size:var(--reading-font,16px);line-height:1.3}
+.value-page .evidence-layout[data-window-only=true] .drawer-years tbody th::after{content:': '}
+.value-page .evidence-layout[data-window-only=true] .annual-field{display:inline;font-size:13px}
+.value-page .evidence-layout[data-window-only=true] .drawer-years tbody td::after{content:' · '}
+.value-page .evidence-layout[data-window-only=true] .drawer-years .annual-change,.value-page .evidence-layout[data-window-only=true] .drawer-years .annual-bar{display:none!important}
+.value-page .evidence-layout[data-window-only=true] .drawer-years tbody td:last-child{display:none}
+
+@media(min-width:768px) and (max-height:849px){.value-page .evidence-layout[data-window-only=true] .drawer-years tbody .annual-secondary{display:none}}
+.value-page dialog[data-reading-columns] .drawer-numbers{display:block;line-height:1.25}
+.value-page .drawer-numbers>div{min-width:0}
+
+.value-page .compact-company-list[data-historical=true] tbody :is(th,td){display:inline;width:auto!important;clear:none}
+.value-page .compact-company-list[data-historical=true] tbody th a{display:inline}
+.value-page .compact-company-list[data-historical=true] tbody td{margin-left:5px}
+.value-page .compact-company-list[data-historical=true] .compact-needs,.value-page .compact-company-list[data-historical=true] .list-quality-tests{display:inline}
+.value-page .compact-company-list[data-historical=true] .list-quality-tests span{font-size:14px;line-height:18px}
+.value-page .compact-company-list[data-historical=true] tbody :is(th,td),.value-page .compact-company-list[data-historical=true] tbody th a{font-size:18px;line-height:1.2}.value-page .compact-company-list[data-historical=true] tbody :is(th,td) small{font-size:14px;line-height:18px}
+.value-page .compact-company-list .historical-context{font-size:14px;line-height:18px}
+
+/* Measure the rows without the panel's height distribution. */
+.value-page dialog[data-side-panel] .compact-company-list[data-measuring=true] table{height:auto;flex:none}
+.value-page .compact-company-list[data-measuring=true] tbody,.value-page .compact-company-list[data-measuring=true] tbody tr{flex:none}
+@media(min-width:768px){
+.value-page dialog[data-side-panel]:has(.compact-company-list){width:480px}
+.value-page .compact-company-list[data-historical=true] tbody :is(th,td),.value-page .compact-company-list[data-historical=true] tbody th a{font-size:var(--list-font,16px);line-height:1.2}
+.value-page .owner-memo-depth[data-profile=true]{display:block;columns:2;column-gap:12px}
+.value-page .owner-memo-depth .memo-profile{break-inside:auto}
+}
+
+/* Keep the retained-capital record legible when it has several money columns. */
+.value-page .evidence-layout[data-test="management"][data-kind="operating"] .drawer-years :is(table,tbody,tr){display:block}
+.value-page .evidence-layout[data-test="management"][data-kind="operating"] .drawer-years thead{display:none}
+.value-page .evidence-layout[data-test="management"][data-kind="operating"] .drawer-years tr{border-bottom:1px solid var(--viz-grid);padding:3px 0}
+.value-page .evidence-layout[data-test="management"][data-kind="operating"] .drawer-years tbody :is(th,td){display:inline;border:0;padding:0;width:auto!important;font-size:var(--reading-font,16px);line-height:1.3}
+.value-page .evidence-layout[data-test="management"][data-kind="operating"] .drawer-years tbody th::after{content:': '}
+.value-page .evidence-layout[data-test="management"][data-kind="operating"] .annual-field{display:inline;font-size:13px}
+.value-page .evidence-layout[data-test="management"][data-kind="operating"] .drawer-years tbody td:not(:last-child)::after{content:' · '}
+.value-page .evidence-layout[data-test="management"][data-kind="operating"] .drawer-years .annual-change,.value-page .evidence-layout[data-test="management"][data-kind="operating"] .drawer-years .annual-bar{display:none!important}
+@media(min-width:768px){.value-page .evidence-layout[data-test="economics"]:not([data-kind="operating"]) .drawer-years .annual-bar{display:block!important;position:relative;height:6px;margin:1px 4px}.value-page .evidence-layout[data-test="economics"]:not([data-kind="operating"]) .drawer-years .annual-bar i{position:absolute;top:2px;height:3px;background:var(--viz-muted);opacity:.65}.value-page .evidence-layout[data-test="economics"]:not([data-kind="operating"]) .drawer-years .annual-bar b{position:absolute;top:0;width:1px;height:6px;background:var(--viz-muted)}}
+@media(max-width:767px){.value-page .evidence-layout[data-window-only=true] .drawer-years tbody :is(th,td),.value-page .evidence-layout[data-window-only=true] .annual-field{font-size:20px;line-height:1.2}}
+
+.value-page .drawer-numbers>div{margin-right:4px}
+.value-page .evidence-layout .drawer-chart:has(.mini-price,.mini-dollar),.value-page .drawer-chart>.mini-price,.value-page .drawer-chart>.mini-dollar{height:auto!important}
+@media(min-width:768px){
+.value-page .evidence-layout:not([data-window-only=true]):not([data-test="management"]):not([data-valuation]) .drawer-years .annual-bar{display:block;position:relative;height:6px;margin:1px 4px}
+.value-page .drawer-years .annual-bar i{position:absolute;top:2px;height:3px;background:var(--viz-muted);opacity:.65}
+.value-page .drawer-years .annual-bar b{position:absolute;top:0;width:1px;height:6px;background:var(--viz-muted)}
+}
+@media(min-width:768px) and (max-height:849px){
+.value-page .evidence-layout[data-window-only=true] .drawer-years tbody :is(th,td),.value-page .evidence-layout[data-window-only=true] .annual-field{font-size:18px;line-height:1.2}
+.value-page .holding-history :is(th,td){font-size:19px;line-height:1.15}
+}
+@media(max-width:767px){
+.value-page .compact-company-list[data-historical=true] tbody :is(th,td) small,.value-page .compact-company-list[data-historical=true] .list-quality-tests span{font-size:17px;line-height:1.2}
+}
+
+.value-page .drawer-chart>.mini-dollar{margin:0}
+.value-page .drawer-chart .mini-dollar figcaption{display:block}
+.value-page .evidence-layout[data-price-history=false] .drawer-years :is(th,td):nth-child(2),.value-page .evidence-layout[data-price-history=false] .drawer-years :is(th,td):last-child,.value-page .evidence-layout[data-price-history=false] .annual-comparison{display:none}
+@media(min-width:768px){
+.value-page .owner-memo-depth[data-answers="3"]{display:block;columns:2;column-gap:10px}
+.value-page .compact-company-list[data-historical=false] tbody :is(th,td),.value-page .compact-company-list[data-historical=false] tbody th a{font-size:var(--list-font,16px);line-height:1.2}
+.value-page .compact-company-list[data-historical=true] tbody :is(th,td) small,.value-page .compact-company-list[data-historical=true] .list-quality-tests span{font-size:max(14px,calc(var(--list-font,18px) - 1px));line-height:1.2}
+.value-page .evidence-layout[data-valuation] .drawer-years .annual-bar{display:block;position:relative;height:6px;margin:1px 4px}
+}
+
+@media(min-width:768px) and (min-height:850px){
+.value-page .compact-company-list[data-historical=true] tbody :is(th,td) small,.value-page .compact-company-list[data-historical=true] .list-quality-tests span{font-size:16px;line-height:1.2}
+}
+@media(min-width:768px) and (max-height:849px){
+.value-page .evidence-layout[data-window-only=true] .drawer-years tbody :is(th,td),.value-page .evidence-layout[data-window-only=true] .annual-field,.value-page .evidence-layout[data-test="management"][data-kind="operating"] .drawer-years tbody :is(th,td),.value-page .evidence-layout[data-test="management"][data-kind="operating"] .annual-field{font-size:14px;line-height:1.2}
+.value-page .holding-history[data-full-shares=true] :is(th,td){font-size:16px}
+}
+@media(max-width:767px){
+.value-page .evidence-layout[data-test="management"][data-kind="operating"] .drawer-years tbody :is(th,td),.value-page .evidence-layout[data-test="management"][data-kind="operating"] .annual-field{font-size:16px;line-height:1.2}
+.value-page .evidence-layout[data-test="understandable"]:not([data-kind="operating"]) .annual-change{font-size:16px;line-height:1.15}
+.value-page .evidence-layout[data-valuation] .annual-comparison{display:none}
+.value-page .evidence-layout[data-valuation] .drawer-years tbody :is(th,td){font-size:20px;line-height:1.2}
+}
+
+@media(max-width:767px){.value-page .company-search-body>nav>button>.search-result-summary,.value-page .company-search-body>nav .search-result-name{font-size:20px;line-height:1.15}}
+
+.value-page .valuation-range{display:none}
+@media(max-width:767px){
+ .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years thead{display:none}
+ .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years tbody tr{display:block;padding:3px 0;border-bottom:1px solid var(--viz-grid)}
+ .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years tbody :is(th,td){display:inline;padding:0;text-align:left;font-size:19px;line-height:1.2;border:0}
+ .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years tbody td{margin-left:5px}
+ .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years tbody th::before{content:'FY'}
+ .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years :is(.annual-field,.valuation-range){display:inline;font-size:18px;line-height:1.2}
+ .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years :is(td[data-empty=true],.annual-bar,.annual-sparse-quote),
+ .value-page .evidence-layout[data-valuation][data-price-history=false] .drawer-years tr:has(td[data-empty=true]) td:last-child{display:none}
 }

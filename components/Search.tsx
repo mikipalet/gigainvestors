@@ -1,8 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, useDeferredValue } from "react";
+import { useEffect, useMemo, useRef, useState, useDeferredValue, useSyncExternalStore } from "react";
 import { useSelectedLayoutSegment, usePathname } from 'next/navigation';
 import { valueHits, cachedValueHits, warmValueSearch, type ValueHit } from '@/lib/search/value-source';
+import {fetchValueData} from '@/lib/value/data-source';
+import {shardOf} from '@/lib/value/shard';
+import type {IndexRow} from '@/lib/value/types';
 import { valueHref } from '@/lib/value/href';
 import type { SearchIndex } from "@/lib/types";
 import { Fragment } from 'react';
@@ -14,6 +17,12 @@ import { slugOf } from "@/lib/slug";
 
 import { rank, searchIndexForScope, type Hit } from "@/lib/search/rank";
 
+const warmPanel=()=>fetchValueData<IndexRow[]>('index/default.json').then(rows=>Promise.all([...new Set(rows.slice(0,8).map(row=>shardOf(row.id)))].map(shard=>fetchValueData(`dossiers/${shard}.json`))));
+let searchReady=false;
+const readinessListeners=new Set<()=>void>();
+const subscribeReadiness=(listener:()=>void)=>{readinessListeners.add(listener);return()=>{readinessListeners.delete(listener);};};
+const readReadiness=()=>searchReady,serverReadiness=()=>false;
+const setSearchReady=(ready:boolean)=>{searchReady=ready;for(const listener of readinessListeners)listener();};
 const cached = new Map<boolean,Promise<SearchIndex>>();
 const loadIndex = (value=false) => {
  const existing=cached.get(value);if(existing)return existing;
@@ -25,11 +34,14 @@ const loadIndex = (value=false) => {
 
 // Press "/" anywhere. Investors, firms, tickers and company names.
 export function SearchTrigger({query = '', className = '', label = 'search', value = false}: {query?:string;className?:string;label?:string;value?:boolean}) {
- return <button type="button" aria-label="Search companies" onPointerEnter={()=>{void warmValueSearch().catch(()=>{});void loadIndex(value).catch(()=>{});}} onFocus={()=>{void warmValueSearch().catch(()=>{});void loadIndex(value).catch(()=>{});}} onClick={()=>window.dispatchEvent(new CustomEvent('open-search',{detail:query}))} className={`rounded-[3px] bg-paper px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 ${className}`}>{label} <span className="ml-1 opacity-60">/</span></button>;
+ const ready=useSyncExternalStore(subscribeReadiness,readReadiness,serverReadiness);
+ return <button type="button" disabled={!ready} aria-label="Search companies" onPointerEnter={()=>{if(value)void warmPanel().catch(()=>{});void warmValueSearch().catch(()=>{});if(!value)void loadIndex(false).catch(()=>{});}} onFocus={()=>{if(value)void warmPanel().catch(()=>{});void warmValueSearch().catch(()=>{});if(!value)void loadIndex(false).catch(()=>{});}} onClick={()=>window.dispatchEvent(new CustomEvent('open-search',{detail:query}))} className={`rounded-[3px] bg-paper px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 ${className}`}>{label} <span className="ml-1 opacity-60">/</span></button>;
 }
 export function Search() {
   const segment = useSelectedLayoutSegment(), pathname = usePathname();
-  const isValue = segment === 'value' || pathname.startsWith('/value');
+  const [valuePage,setValuePage]=useState(false);
+  useEffect(()=>setValuePage(!!document.querySelector('.value-page')),[pathname,segment]);
+  const isValue = valuePage || segment === 'value' || pathname.startsWith('/value');
   const [storedValues,setValues]=useState<ValueHit[]>([]);
   const [resultQuery,setResultQuery]=useState('');
   const [loading,setLoading]=useState(false);
@@ -43,28 +55,30 @@ export function Search() {
 
 
   useEffect(() => {
+    let request=0;
+    const show=(event?:Event)=>{const ticket=++request;initialQuery.current=event?(event as CustomEvent<string>).detail??'':'';setQuery(initialQuery.current);const reveal=()=>{if(ticket===request)setOpen(true);};if(document.querySelector('.value-page'))void warmPanel().then(reveal,reveal);else reveal();};
     const onKey = (e: KeyboardEvent) => {
       const t = e.target as HTMLInputElement;
       const typing = t?.tagName === "INPUT" && t.type !== "range";
       if (e.key === "/" && !typing && !e.metaKey && !e.ctrlKey) {
         e.preventDefault();
-        setOpen(true);
+        show();
       }
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
-        setOpen(true);
+        show();
       }
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") {request++;setOpen(false);}
     };
-    const show = (event:Event) => { initialQuery.current=(event as CustomEvent<string>).detail ?? ''; setQuery(initialQuery.current);setOpen(true); };
     window.addEventListener('open-search',show);
     window.addEventListener("keydown", onKey);
-    return () => { window.removeEventListener("keydown", onKey); window.removeEventListener("open-search",show); };
+    setSearchReady(true);
+    return () => { request++;setSearchReady(false);window.removeEventListener("keydown", onKey); window.removeEventListener("open-search",show); };
   }, []);
 
   useEffect(() => {
-    if (!open) return;
-    loadIndex(isValue).then(setIndex).catch(()=>setError('Could not load search. Try again.'));
+    if (!open || isValue) return;
+    loadIndex(false).then(setIndex).catch(()=>setError('Could not load search. Try again.'));
     setQuery(initialQuery.current); initialQuery.current='';
     setSel(0);
     requestAnimationFrame(() => input.current?.focus());

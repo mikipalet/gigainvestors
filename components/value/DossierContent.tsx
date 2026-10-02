@@ -80,7 +80,7 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
 
  if(insufficient){
   const count=dossier.historyCoverage?.years??new Set(years).size;
-  return <div className="one-dossier insufficient-dossier locks-scroll"><section className="dossier-band insufficient-band">{identity}<div data-testid="insufficient-data"><h2>Not enough history yet</h2><p>{count} annual periods on record. Seven are required for the quality checklist.</p></div></section><BusinessSection analysis={dossier}/><FinancialHighlights dossier={dossier}/>{reportUrl&&<div className="dossier-source"><a href={reportUrl}>Original filing ↗</a></div>}</div>;
+  return <div className="one-dossier insufficient-dossier locks-scroll"><section className="dossier-band insufficient-band">{identity}<div data-testid="insufficient-data"><h2>Not enough history yet</h2><p>{count} annual periods on record. Seven are required for the quality checklist.</p></div></section><BusinessSection analysis={dossier} price={quote?.[0]??null}/><FinancialHighlights dossier={dossier}/>{reportUrl&&<div className="dossier-source"><a href={reportUrl}>Original filing ↗</a></div>}</div>;
  }
 
  return <div onPointerOver={()=>{if(!panels)void loadEvidence().then(setPanels);}} onFocus={()=>{if(!panels)void loadEvidence().then(setPanels);}} className="one-dossier locks-scroll" data-quality={qualityPass?'pass':failed.length?'fail':'unclear'}>
@@ -92,7 +92,7 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
    </div>
    {referenceRow}
   </section>
-  <BusinessSection analysis={dossier}/>
+  <BusinessSection analysis={dossier} price={quote?.[0]??null}/>
   <div className="dossier-checks">
    <section className="quality-section" aria-label="Five business quality tests"><h2>1. Is this a good business? </h2>
     <div className="test-tiles">{tests.filter(test=>test.key!=='price').map((test,i)=>{const d=deciding[test.key];return <article key={test.key} className={`test-tile ${glyph(test)}`} data-testid={`tile-${test.key}`} data-metric={d.id}><button className="tile-open" aria-label={`Open ${testLabels[test.key]} evidence`} onClick={()=>setPanel(test.key)}><header><span><small>{i+1}</small> {testLabels[test.key]}</span><span><StatusGlyph result={glyph(test)} label={`${testLabels[test.key]}: ${glyph(test)}`}/>{test.result}</span></header></button><p className="tile-sentence">{tileSentence(test,d,company.kind)}</p>{test.key==='management'&&m('management','retainedEarnings')!==null&&m('management','marketCapGain')!==null?<MiniDollar currency={dossier.reportingCurrency??valuation?.currency??company.currency} fluid retained={m('management','retainedEarnings')} created={m('management','marketCapGain')} first={m('management','retainedStartFy')} last={m('management','retainedEndFy')}/>:d.series.filter(p=>p[1]!==null).length===0?<FilingSignals test={test}/>:<MiniSeries currency={dossier.reportingCurrency??valuation?.currency??company.currency} fluid height={135} series={d.series} label={d.chart} format={d.chartFormat==='index'?'count':d.chartFormat==='ratio'?'x':d.chartFormat??(test.key==='understandable'?'pct':d.format)} threshold={d.chartThreshold===null?undefined:d.chartThreshold??(test.key==='understandable'?undefined:d.threshold)} better={d.chartBetter??d.better}/>}<TileNumbers metric={d} test={test} currency={dossier.reportingCurrency??valuation?.currency??company.currency}/>{test.judgement?.override&&<div className="tile-assessment"><JudgementLine test={test} adjustments={dossier.judgement?.adjustments} currency={dossier.reportingCurrency??company.currency} onExplain={()=>setPanel(test.key)}/></div>}</article>;})}</div>
@@ -112,6 +112,6 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
   <FinancialHighlights dossier={dossier}/>
   <div className="dossier-source"><span className="source-date" title={quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:undefined}>{quote?`Prices ${dateLabel(quote[1])}`:''}{lastFiscalYear?` · FY${lastFiscalYear}`:''}</span><span className="source-links">{reportUrl&&<a href={reportUrl}>Original filing ↗ · </a>}</span></div>
   {thesisOpen&&dossier.thesis&&<SidePanel title={dossier.thesis.changed?'Liability disclosure':'Current-year guidance'} onClose={()=>setThesisOpen(false)}><ThesisDisclosure thesis={dossier.thesis}/></SidePanel>}
-  {panel&&<SidePanel title={panel==='valuation'?'Valuation':`${testLabels[panel]} · evidence`} onClose={()=>setPanel(null)}>{panel==='valuation'||panel==='price'?<Valuation dossier={dossier} quote={quote}/>:<Evidence key={panel} dossier={dossier} test={dossier.tests[panel]}/>}</SidePanel>}
+  {panel&&<SidePanel title={panel==='valuation'?'Valuation':testLabels[panel]} onClose={()=>setPanel(null)}>{panel==='valuation'||panel==='price'?<Valuation dossier={dossier} quote={quote}/>:<Evidence key={panel} dossier={dossier} test={dossier.tests[panel]}/>}</SidePanel>}
  </div>;
 }

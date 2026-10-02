@@ -15,7 +15,7 @@ export function JudgementLine({test,onExplain,adjustments,currency}:{test:TestOu
  return <div className="human-judgement" data-override={j.override}><p className="numeric-reading">Numbers: {test.rawNumeric??test.numeric}{test.key==='economics'&&test.rawMetrics?.oeToNi!=null&&test.metrics.oeToNi!=null&&test.rawMetrics.oeToNi!==test.metrics.oeToNi?` · ${test.rawMetrics.oeToNi.toFixed(2)}× → ${test.metrics.oeToNi.toFixed(2)}×`:null}</p><p><strong>Judgement: {j.result==='pass'?'passes':j.result==='fail'?'fails':'still open'}</strong> — {j.reason}</p>{j.evidence&&<details><summary>Why we read it this way</summary><blockquote>{j.evidence.quote}</blockquote><a href={j.evidence.url} target="_blank" rel="noreferrer">Filing · {j.evidence.filed} ↗</a></details>}</div>;
 }
 
-export function BusinessSection({analysis}:{analysis:Analysis}){
+export function BusinessSection({analysis,price=null}:{analysis:Analysis;price?:number|null}){
  const [selected,setSelected]=useState<string|null>(null);
  const lines=analysis.ownerMemo?.lines??[];
  if(!lines.length)return null;
@@ -24,6 +24,6 @@ export function BusinessSection({analysis}:{analysis:Analysis}){
   <dl className="memo-lines">{lines.map(line=><div key={line.question} data-question={line.question}>
    <dt>{MEMO_QUESTIONS[line.question-1]}</dt><dd><button onClick={()=>setSelected(String(line.question))}>{line.tone&&<i className={`flag-dot ${line.tone}`} aria-hidden="true"/>}{line.answer}</button></dd>
   </div>)}</dl>
-  {selected&&<SidePanel title="The business, in depth" wide onClose={()=>setSelected(null)}><BusinessDepth analysis={analysis} selected={selected}/></SidePanel>}
+  {selected&&<SidePanel title="The business, in depth" wide onClose={()=>setSelected(null)}><BusinessDepth analysis={analysis} price={price} selected={selected}/></SidePanel>}
  </section>;
 }

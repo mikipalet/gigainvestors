@@ -15,6 +15,111 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     dialog?.showModal();
     return () => { dialog?.close(); queueMicrotask(() => previous?.focus()); };
   }, []);
+  useEffect(() => {
+    const dialog=ref.current;
+    if(!dialog)return;
+    const fit=()=>{
+      if(innerWidth<768){
+        dialog.style.width='';delete dialog.dataset.readingColumns;
+        for(const name of ['--reading-font','--memo-font','--preview-font'])dialog.style.removeProperty(name);
+        const method=dialog.querySelector<HTMLElement>('.method-sections'),business=dialog.querySelector<HTMLElement>('.owner-memo-depth');
+        if(method)method.style.columnCount='';if(business)business.style.gridTemplateColumns='';
+        return;
+      }
+      const method=dialog.querySelector<HTMLElement>('.method-sections');
+      if(method){
+        const columns=innerHeight<850?4:3;
+        method.style.columnCount=String(columns);
+        for(let width=columns*230;width<=Math.min(innerWidth,1400);width+=20){
+          dialog.style.width=`${width}px`;
+          const columnWidth=(method.clientWidth-(columns-1)*parseFloat(getComputedStyle(method).columnGap))/columns;
+          if(method.scrollWidth<=method.clientWidth+1&&[...method.querySelectorAll('table')].every(table=>parseFloat(getComputedStyle(table).width)<=columnWidth+1))break;
+        }
+        return;
+      }
+      const preview=dialog.querySelector<HTMLElement>('.search-preview');
+      if(preview){
+        dialog.style.setProperty('--preview-font','14px');
+        for(const width of [400,420,440,460,480,520,560,600,640,680,720]){
+          dialog.style.width=`${width}px`;
+          if(preview.scrollHeight<=preview.clientHeight+1)break;
+        }
+        let low=14,high=22;
+        for(let i=0;i<5;i++){
+          const mid=(low+high)/2;dialog.style.setProperty('--preview-font',`${mid}px`);
+          if(preview.scrollHeight<=preview.clientHeight+1)low=mid;else high=mid;
+        }
+        dialog.style.setProperty('--preview-font',`${low}px`);
+
+        return;
+      }
+      const business=dialog.querySelector<HTMLElement>('.owner-memo-depth');
+      if(business){
+        const answers=Number(business.dataset.answers),columns=business.dataset.profile==='true'?2:answers<=2?1:Math.min(3,Math.ceil(answers/2));
+        business.style.gridTemplateColumns=`repeat(${columns},minmax(0,1fr))`;
+        const available=business.parentElement!.clientHeight-16;
+        const fits=()=>business.scrollHeight<=available&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1);
+        let best={width:columns===1?280:columns*250,font:14,used:0};
+        for(let width=best.width;width<=Math.min(innerWidth,1400);width+=20){
+          dialog.style.width=`${width}px`;
+          dialog.style.setProperty('--memo-font','14px');
+          if(!fits())continue;
+          let low=14,high=24;
+          for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty('--memo-font',`${mid}px`);if(fits())low=mid;else high=mid;}
+          dialog.style.setProperty('--memo-font',`${low}px`);
+          const used=business.scrollHeight;
+          if(used>best.used)best={width,font:low,used};
+          if(used>=available*.94)break;
+        }
+        dialog.style.width=`${best.width}px`;
+        dialog.style.setProperty('--memo-font',`${best.font}px`);
+        return;
+      }
+      const article=dialog.querySelector<HTMLElement>('.evidence-layout');
+      if(!article)return;
+      const content=article.parentElement!;
+      const available=content.clientHeight-16;
+      // Fit the actual filing and table, then spend spare room on readable type.
+      // Width changes are bounded; charts keep their own responsive SVG geometry.
+      const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1);
+      const preferredMinimum=innerHeight<850&&!['accounting','management'].includes(article.dataset.test??'')?13:14;
+      // A larger starting size can rule out a useful narrow column. Retry the
+      // permitted minimum when that leaves a gap or overflows after chart sizing.
+      for(const minimum of preferredMinimum===14?[14,13]:[13]){
+        let best={width:280,font:minimum,used:0};
+        for(const width of Array.from({length:49},(_,i)=>280+i*10)){
+          dialog.style.width=`${Math.min(innerWidth,width)}px`;
+          dialog.dataset.readingColumns=width>=480?'2':'1';
+          dialog.style.setProperty('--reading-font',`${minimum}px`);
+          if(!fits())continue;
+          let low=minimum,high=24;
+          for(let i=0;i<6;i++){
+            const mid=(low+high)/2;dialog.style.setProperty('--reading-font',`${mid}px`);
+            if(fits())low=mid;else high=mid;
+          }
+          dialog.style.setProperty('--reading-font',`${low}px`);
+          const used=article.scrollHeight;
+          if(used>best.used)best={width,font:low,used};
+          if(used>=available*.99)break;
+        }
+        dialog.style.width=`${best.width}px`;
+        dialog.dataset.readingColumns=best.width>=480?'2':'1';
+        dialog.style.setProperty('--reading-font',`${best.font}px`);
+        if(article.scrollHeight<=available&&article.scrollHeight>=available*.92)break;
+      }
+    };
+    let frame=0,active=true;
+    const schedule=()=>{if(active&&!frame)frame=requestAnimationFrame(()=>{frame=0;fit();});};
+    fit();
+    const resize=new ResizeObserver(schedule);
+    const fitted=dialog.querySelector('.evidence-layout,.owner-memo-depth,.search-preview,.method-sections');
+    if(fitted)resize.observe(fitted);
+    document.fonts.ready.then(schedule);
+    const observer=new MutationObserver(records=>{if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))schedule();});
+    observer.observe(dialog,{childList:true,subtree:true});
+    window.addEventListener('resize',schedule);
+    return()=>{active=false;observer.disconnect();resize.disconnect();cancelAnimationFrame(frame);window.removeEventListener('resize',schedule);};
+  },[]);
   return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.
     if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}

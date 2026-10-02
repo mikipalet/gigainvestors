@@ -1,0 +1,6782 @@
+{
+  "status": "BLOCKED_PAID_CACHE_MISS",
+  "code": "66ae64f",
+  "liveData": "ec02595c",
+  "scope": "publish-only baseline; full analyze stopped before completion",
+  "baselineAudit": {
+    "published": 2708,
+    "baseline": 2708,
+    "checked": 215606,
+    "added": [],
+    "nonShareDifferences": 1665,
+    "affectedCompanies": 742,
+    "differences": [
+      {
+        "id": "2015.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "KNOS.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "KNOS.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "KNOS.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3697.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "3697.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "3697.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9009.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9009.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GEHC.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "GEHC.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GEHC.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "DTE.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "DTE.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MAS.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MAS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MAS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5301.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5301.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5301.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0003.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0003.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0003.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KRZ.IR",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WGX.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7261.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7261.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7261.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7269.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7269.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7269.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "OMC.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "OMC.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "OMC.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4911.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4911.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4911.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300496.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SFR.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SFR.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SFR.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5201.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601615.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6113.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6113.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6113.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MAB.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MAB.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MAB.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MTD.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MTD.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MTD.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SJM.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SJM.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SJM.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KAR.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "KAR.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "KAR.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6971.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6971.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "J.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "J.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MNG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MNG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MNG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8513.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "IBS.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TRST.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TRST.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TRST.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VTRS.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VTRS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VTRS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2020.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "2020.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "2020.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601668.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6702.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6702.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6702.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "EQT.ST",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "EQT.ST",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "EQT.ST",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8630.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VLTO.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VLTO.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VLTO.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "042660.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "BLK.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "BLK.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "329180.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8729.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8729.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SVS.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SVS.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SVS.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CVNA.US",
+        "path": "ownerMemo.question2.chart"
+      },
+      {
+        "id": "PPH.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PPH.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PPH.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1997.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1997.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1997.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KLBN3.SA",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "KLBN3.SA",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "KLBN3.SA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "POLN.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "POLN.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "POLN.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TEP.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TEP.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TEP.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1801.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4502.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4502.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4502.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PTC.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PTC.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PTC.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "S8N0.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9101.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9101.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9101.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SAVE.ST",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SAVE.ST",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SAVE.ST",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4005.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4005.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4005.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0762.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0762.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0762.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1928.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1928.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1928.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4151.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4151.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4151.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "HESAY.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "HESAY.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "HESAY.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4DX.AU",
+        "path": "ownerMemo.question2.chart"
+      },
+      {
+        "id": "TPR.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TPR.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TPR.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300454.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7741.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7741.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "UOB.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "UOB.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "UOB.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601059.SHG",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "603369.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300450.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NXG.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NXG.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IPX.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4661.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4661.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4661.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GGP.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GGP.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4307.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4307.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4307.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9201.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9201.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9201.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "HAUTO.OL",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "HAUTO.OL",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "HAUTO.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IVZ.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "IVZ.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "IVZ.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TPG.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TPG.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TPG.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1802.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CLILF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "CLILF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CLILF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4901.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4901.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4901.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0101.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0101.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0101.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601021.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "035720.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "035720.KO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "035720.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LNZ.VI",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LNZ.VI",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LNZ.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0012.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0012.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0012.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "603799.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TRN.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TRN.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TRN.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600760.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WIE.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7272.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7272.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7272.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PYIYF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PYIYF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PYIYF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ADEN.SW",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ADEN.SW",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ADEN.SW",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MGM.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MGM.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MGM.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "HGH.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SSPG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SSPG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SSPG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5803.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5803.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5803.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "605117.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TROW.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TROW.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TROW.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WST.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WST.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WST.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600584.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300347.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5631.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5631.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5631.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2382.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "2382.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "2382.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0001.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0001.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0001.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "FDS.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "FDS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "FDS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5411.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5411.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5411.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VSVS.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VSVS.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VSVS.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8304.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "278470.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "278470.KO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "278470.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600741.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300720.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9008.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9008.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9008.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9531.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9531.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9531.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LYB.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LYB.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LYB.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600958.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KMAR.OL",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "KMAR.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SBNOR.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MRO.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "HTWS.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "HTWS.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9633.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9633.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9633.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GJF.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WIZZ.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WIZZ.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WIZZ.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WBT.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WBT.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "BCP.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "005940.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "BAKKA.OL",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "BAKKA.OL",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "BAKKA.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600887.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LH.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LH.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LH.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IT.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "IT.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "IT.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3401.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "3401.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "3401.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3086.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "3086.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6841.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6841.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0669.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0669.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0669.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NAS.OL",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NAS.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7202.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7202.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7202.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9502.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9502.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9502.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GFINBURO.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ICG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ICG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ICG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "UQA.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5333.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3457.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "3457.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "3457.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6472.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9064.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9064.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9064.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300433.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PDI.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PDI.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SMWH.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SMWH.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SMWH.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "006400.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "DLTR.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TECH.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TECH.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0H2Z.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0H2Z.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6701.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6701.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6701.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TXT.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TXT.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TXT.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ZBH.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ZBH.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ZBRA.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ZBRA.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ZBRA.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "STR.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1113.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1113.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1113.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "039490.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SKLUY.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SKLUY.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SKLUY.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CPAMF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "CPAMF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CPAMF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "APN.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "APN.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "APN.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1332.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4902.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6302.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6302.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6302.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "HONA.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "HONA.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ELM.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ELM.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ELM.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SAFE.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SAFE.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SAFE.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4324.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4324.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2802.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0941.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0941.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0941.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9202.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9202.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9202.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "STE.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "STE.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "STE.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RTO.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RTO.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "RTO.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "EGL.LS",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "EGL.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VIRI.PA",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VIRI.PA",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VIRI.PA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7012.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7012.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7012.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0066.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0066.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0066.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9022.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9022.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9022.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MGAM.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MGAM.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MGAM.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VRT.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VRT.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VRT.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "OMV.VI",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "OMV.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8766.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6981.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6981.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600886.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "OTIS.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "OTIS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "OTIS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601888.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4519.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "600426.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8802.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "8802.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8802.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "605499.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "INVP.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "INVP.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8354.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4568.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "3289.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "3289.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "3289.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VMRK.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VMRK.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9992.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9992.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9992.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "L.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6504.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6504.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6504.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9888.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9888.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9888.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5713.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5713.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5713.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NDSN.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NDSN.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NDSN.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "QGEN.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "QGEN.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "QGEN.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2688.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "2688.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "2688.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3099.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "THG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "THG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "THG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "052690.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5020.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MAU.PA",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MAU.PA",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MAU.PA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MOS.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MOS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MOS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ELV.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ELV.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ELV.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2432.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KHC.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "KHC.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0836.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0836.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0836.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RDDT.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RDDT.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2503.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SREN.SW",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SREN.SW",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SREN.SW",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "EDPR.LS",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "EDPR.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7013.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7013.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7013.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CPU.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "CPU.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CPU.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "301269.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "029780.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "029780.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2501.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "2501.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "2501.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7951.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7951.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7951.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600489.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "603501.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600085.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TDY.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TDY.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TDY.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1876.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1876.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1876.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ATS.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2269.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "UDR.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "UDR.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "UDR.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "007340.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "007340.KO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "007340.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "S05.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "S05.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "S05.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8253.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8253.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8113.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "8113.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8113.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SEM.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1803.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ATYM.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ATYM.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ATYM.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KIM.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "KIM.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "KIM.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6920.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6920.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6920.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "BMY.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "BMY.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7733.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7733.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7733.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7751.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7751.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7751.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GMEXICOB.MX",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "GMEXICOB.MX",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GMEXICOB.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0981.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0981.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0981.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WRB.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RI.PA",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RI.PA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PE&OLES.MX",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PE&OLES.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601006.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "AMC.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "AMC.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "AMC.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4061.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4061.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4061.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VER.VI",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VER.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ACLN.SW",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ACLN.SW",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ACLN.SW",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NCC.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NCC.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NCC.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7731.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7731.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3692.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "3692.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "3692.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "STT.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "STT.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4004.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4004.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4004.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "THRL.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "THRL.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "THRL.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LVS.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LVS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LVS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6103.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6103.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6103.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8031.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "8031.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8031.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8053.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8053.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "61L0.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "61L0.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CTT.LS",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "CTT.LS",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CTT.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9001.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9001.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9001.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CRH.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "CRH.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CRH.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "323410.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VICI.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VICI.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VICI.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0388.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0388.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0388.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0267.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0267.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0267.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300919.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4578.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4578.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8411.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SWKS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SWKS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9432.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9432.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9432.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PAGE.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PAGE.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PAGE.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7011.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7011.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7011.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601898.SHG",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "601898.SHG",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "601898.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "AJG.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "AJG.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PSA.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PSA.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0992.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0992.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0992.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2801.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "K.TO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "K.TO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "K.TO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PTSB.IR",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PAG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PAG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PAG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0288.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0288.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0288.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IVA.PA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TSN.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TSN.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WDS.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WDS.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WDS.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0968.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0968.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WOSG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WOSG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WOSG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600436.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MEGACPO.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PLX.PA",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PLX.PA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "OXIG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "OXIG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "OXIG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1038.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1038.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1038.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "BWP.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "BWP.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8604.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8604.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GIL.TO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PRU.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PRU.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0868.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0868.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0868.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "AZO.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "AZO.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PKF1.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "603290.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "093370.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "JDW.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "JDW.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "JDW.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ATO.PA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "JBL.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "JBL.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "JBL.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "000776.SHE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7974.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7974.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7974.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601857.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5233.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5233.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5233.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TYL.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TYL.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TYL.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "YSHLF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "YSHLF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "YSHLF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3861.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5108.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5108.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5108.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PNR.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PNR.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PNR.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1177.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1177.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1177.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2313.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "2313.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "2313.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4751.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4751.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4751.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KOFUBL.MX",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "KOFUBL.MX",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "KOFUBL.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600029.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ALQ.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ALQ.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ALQ.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ELS.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ELS.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SHAW.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ROL.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ROL.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ROL.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "XPS.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "XPS.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "XPS.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4507.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4507.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4507.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6098.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6098.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6098.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8001.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8001.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600606.SHG",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "600606.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "FSG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "FSG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "FSG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "EG7.IR",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RENE.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "HLG.NZ",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8697.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "8697.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8697.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0002.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0002.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0002.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0700.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0700.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0700.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2618.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VSL.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VSL.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VRSK.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VRSK.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VRSK.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VTY.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VTY.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VTY.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "Q.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "Q.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "HOOD.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "JBHT.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "JBHT.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "JBHT.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1812.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "UPR.IR",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NWS.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NWS.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300759.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0881.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0881.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0881.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "688041.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SUBC.OL",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SUBC.OL",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SUBC.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TOU.TO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TOU.TO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601877.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LDOS.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LDOS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LDOS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601698.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IWG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "IWG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "IWG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RPI.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RPI.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "RPI.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "FFM.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GAPB.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PAF.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PAF.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PAF.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SWK.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SWK.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SWK.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LACOMERUBC.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PINE.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PINE.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PINE.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "AOTUF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "AOTUF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "AOTUF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MONY.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MONY.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MONY.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600905.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KMD.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "KMD.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NCLH.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NCLH.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NCLH.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PHM.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PHM.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PHM.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SBAC.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SBAC.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SBAC.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "326030.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600795.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6645.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6645.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6645.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0285.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0285.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0285.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4385.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4385.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4385.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "COR.LS",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "COR.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5332.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5332.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5332.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2388.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0823.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0823.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0823.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600048.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601607.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "603806.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5101.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5101.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5101.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GMD.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "GMD.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GMD.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "BX.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "BX.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "002736.SHE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "IOS.DU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "IOS.DU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "IOS.DU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LEN-B.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LEN-B.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LEN-B.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KPDCF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "KPDCF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "KPDCF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600519.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600018.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GALP.LS",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GALP.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2768.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "016360.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "600406.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "603195.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "603486.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1808.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1808.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600233.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1099.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1099.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1099.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PNW.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PNW.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PNW.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "603986.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6988.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6988.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6988.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "AJB.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "AJB.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "AJB.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300274.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3402.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "3402.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "3402.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7270.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7270.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7270.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SDLF.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600115.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RJF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RJF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "RJF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "FDXF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "FDXF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SPK.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SPK.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SPK.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7911.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7911.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7911.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601688.SHG",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TRMB.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TRMB.US",
+        "path": "ownerMemo.question2.chart"
+      },
+      {
+        "id": "TRMB.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TRMB.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4043.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LII.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LII.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LII.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SCRPF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SCRPF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SCRPF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SUPR.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SUPR.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SUPR.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WYNN.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WYNN.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WYNN.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "EDP.LS",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "EDP.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "JMT.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2319.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "2319.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "2319.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CPG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "CPG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CPG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300957.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601360.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VEM.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VEM.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VEM.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RHIM.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RHIM.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "RHIM.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ATG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ATG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ATG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TOM.OL",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TOM.OL",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TOM.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CPI.VI",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CPI.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7267.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7267.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7267.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WY.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WY.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WY.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MAPGF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MAPGF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PPL.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PPL.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PPL.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NRG.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NRG.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NRG.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8002.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8002.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SQN.SW",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SQN.SW",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SQN.SW",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8252.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8252.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8252.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "2871.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "H.TO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "H.TO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1299.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1299.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1299.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TLX.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TLX.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8830.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "8830.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8830.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KEY.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SON.LS",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SON.LS",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SON.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300760.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "STB.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "UHS.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "UHS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "UHS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GMAB.CO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "GMAB.CO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GMAB.CO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RYA.IR",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300316.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1378.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1378.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1378.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "010120.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "010120.KO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "010120.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PHP.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NVG.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "OSB.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "OSB.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "OSB.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "OCBA.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "OCBA.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "OCBA.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WTW.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WTW.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WTW.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PKG.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PKG.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PKG.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "DGE.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "DGE.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "DGE.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7735.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7735.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600023.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "OXB.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "OXB.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "OXB.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "EXE.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "EXE.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "EXE.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CBG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8591.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "8591.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8591.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300751.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MTRO.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0MNC.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8601.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8601.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VAU.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LABB.MX",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LABB.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PFD.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PFD.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PFD.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SOLV.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SOLV.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SOLV.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6479.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6479.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6479.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PINFRA.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7752.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7752.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "360.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "360.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "360.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9501.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "EXO.AS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IGPYF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "IGPYF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "IGPYF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600309.SHG",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "600309.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ANDR.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VIG.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "300763.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "FDX.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "FDX.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600893.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5706.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5706.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5706.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6762.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6762.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6762.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "DBV.PA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "XYL.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "XYL.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "XYL.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ALTR.LS",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ALTR.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NI.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NI.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NI.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0688.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0688.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0688.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600346.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "000877.SHE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "000877.SHE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "000877.SHE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1024.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1024.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1024.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5214.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PFG.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PFG.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PFG.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9983.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9983.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "AMRZ.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "AMRZ.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3405.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "3405.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "3405.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ZIG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ZIG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ZIG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LNT.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LNT.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LNT.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "INPST.AS",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "INPST.AS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4503.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4503.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7201.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MOON.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MOON.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MOON.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "FEMSAUBD.MX",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "FEMSAUBD.MX",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "FEMSAUBD.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6690.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6690.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6690.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SNA.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SNA.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SNA.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1929.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1929.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1929.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SATS.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SRE.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SRE.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SRE.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KIE.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "KIE.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "KIE.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ON.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ON.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9503.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9503.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9503.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "688363.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PPG.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PPG.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PPG.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8015.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8015.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6753.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6753.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6753.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KKR.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "KKR.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IPO.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "IPO.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "APTV.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6758.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6758.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6758.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LOW.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LOW.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5019.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5019.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5019.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9532.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9532.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9532.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CMIN3.SA",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "CMIN3.SA",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CMIN3.SA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4183.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4183.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4183.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "HFG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "HFG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600150.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3690.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "3690.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "3690.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "JCI.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CEN.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GCC.MX",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "GCC.MX",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GCC.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600111.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "AC.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "T6W.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "T6W.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "T6W.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6526.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6526.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6526.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "EXENS.PA",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "EXENS.PA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "XPP.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "XPP.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "XPP.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VGL.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VGL.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NOD.OL",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NOD.OL",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NOD.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "071050.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NBIS.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NBIS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NBIS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0006.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0006.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0006.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6326.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6326.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0883.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0883.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0883.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SPI.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SPI.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SPI.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601985.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WSM.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WSM.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "3407.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9988.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9988.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9988.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2269.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "2269.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "2269.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CHI.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CHI.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6723.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6723.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6723.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CEMEXCPO.MX",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "CEMEXCPO.MX",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CEMEXCPO.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1925.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "688396.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SDZ.SW",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SDZ.SW",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SDZ.SW",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4689.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600025.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PRN.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PRN.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PRN.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "DYL.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "352820.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VLX.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VLX.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VLX.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0291.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0291.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0291.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VETTF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VETTF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "JSG.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "JSG.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "JSG.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SAMPO.HE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "DVP.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "DVP.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "DVP.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "POS.VI",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "POS.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4021.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SMCI.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SMCI.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SMCI.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ASURB.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SJX.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SJX.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SJX.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MAA.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MAA.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MAA.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SIGMAFA.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "603899.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "603833.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MIO.IR",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1209.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1209.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1209.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2331.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "2331.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "2331.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8035.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8035.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "JKHY.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "JKHY.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "JKHY.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LHX.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "601088.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "688981.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ANE.MC",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "HMSO.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "HMSO.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "HMSO.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1109.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1109.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1109.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WKP.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WKP.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WKP.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RTHA.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RTHA.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "RTHA.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9104.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9104.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9104.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ODFL.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ODFL.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601881.SHG",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "601100.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VTHPF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VTHPF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9843.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9843.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9843.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5401.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5401.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5401.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600009.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PTEC.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PTEC.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PTEC.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6503.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6503.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6503.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6532.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6532.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6532.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6361.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6361.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6361.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PDN.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PDN.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PDN.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ZTS.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ZTS.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ZTS.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6506.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6506.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6506.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NSIS-B.CO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NSIS-B.CO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NSIS-B.CO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6752.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6752.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "5801.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "5801.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "5801.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9984.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PSKY.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PSKY.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "138040.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "IRES.IR",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "QSR.TO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "QSR.TO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "QSR.TO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GRUMAB.MX",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "GRUMAB.MX",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GRUMAB.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1963.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IMCD.AS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "028670.KO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "028670.KO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "028670.KO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MU.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MU.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MU.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GALD.SW",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "GALD.SW",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GALD.SW",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1093.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1093.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1093.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600460.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GVR.IR",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600674.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "REG.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "REG.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "REG.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LULU.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LULU.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LULU.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PETS.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PETS.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PETS.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WIX.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WIX.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WIX.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "BI0.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "BI0.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "BNOR.OL",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "BNOR.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600809.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SYF.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SYF.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SYF.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "BGP.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "BGP.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "BGP.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GNZ.NZ",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RNK.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RNK.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "RNK.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9602.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9602.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9602.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9107.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9107.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9107.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "S32.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "S32.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "S32.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9007.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9007.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ULTA.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ULTA.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601800.SHG",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "601800.SHG",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "601800.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RWC.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RWC.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "RWC.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6501.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6501.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6501.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "M2L.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "M2L.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "M2L.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4188.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4188.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4188.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "STZ.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "STZ.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "STZ.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "EVN.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "OCTV-SDB.ST",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "OCTV-SDB.ST",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GEV.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GEV.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9005.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9005.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9005.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RL.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "RL.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SAGA.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SAGA.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SAGA.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TSCO.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TSCO.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TSCO.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0027.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0027.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0027.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ABVX.PA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LOGI.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "LOGI.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "LOGI.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1044.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1044.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1044.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TPL.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TPL.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TPL.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6471.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6471.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7453.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7453.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7453.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601669.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "LRE.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SNR.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SNR.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SNR.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GDWN.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "GDWN.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8804.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "8804.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8804.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "U1O.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "U1O.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "U1O.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ROSE.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ROSE.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "688599.SHG",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "688599.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1721.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600089.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0316.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0316.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0316.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "POST.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9433.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9433.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9433.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8233.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0241.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "8725.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RVTY.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RVTY.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "RVTY.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SDF.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SFZN.SW",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SFZN.SW",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SFZN.SW",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "RAT.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "RAT.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "RAT.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MEGP.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MEGP.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MEGP.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SW.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SW.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SW.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VOE.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SBO.VI",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SBO.VI",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "WSE.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "WSE.US",
+        "path": "ownerMemo.question2.chart"
+      },
+      {
+        "id": "WSE.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "WSE.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PAH3.XETRA",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PAH3.XETRA",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6473.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6473.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6473.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "TPK.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "TPK.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "TPK.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MEZ.AU",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MEZ.AU",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MEZ.AU",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CTVA.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CTVA.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6618.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0960.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0960.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0960.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1605.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "DEVL.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "DEVL.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "DEVL.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9618.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9618.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9618.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "H4W.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "H4W.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "H4W.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "KMR.IR",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "KMR.IR",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ALAB.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ALAB.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0322.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0322.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0322.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6301.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6301.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6301.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1810.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "1810.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "1810.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IR.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "IR.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "IR.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VCT.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VCT.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VCT.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "0175.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "0175.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "0175.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IFCN.SW",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "IFCN.SW",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "IFCN.SW",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2057.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "2057.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "2057.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "600845.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "ITH.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "ITH.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "ITH.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "GENTERA.MX",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "GENTERA.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "601618.SHG",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "601618.SHG",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "601618.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "1928.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NVR.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "NVR.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "NVR.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VESTA.MX",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VESTA.MX",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VESTA.MX",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "NOS.LS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "IR5B.IR",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2914.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9021.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9434.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9434.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9434.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "2502.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7203.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7203.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "CRM.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "CRM.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "BN.TO",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "BN.TO",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "BN.TO",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9999.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9999.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9999.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "FER.AS",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "FER.AS",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "7532.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "7532.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "7532.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "MKC-V.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "MKC-V.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "MKC-V.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4208.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4208.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4208.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "8801.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "8801.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "8801.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "688187.SHG",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "4506.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "4506.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "4506.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "PODD.US",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "PODD.US",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "PODD.US",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "9020.JP",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "9020.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "9020.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "VAR.OL",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "VAR.OL",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "VAR.OL",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "S3Z.F",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "S3Z.F",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "S3Z.F",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6724.JP",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6724.JP",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "SHC.LSE",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "SHC.LSE",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "SHC.LSE",
+        "path": "ownerMemo.question4.capitalAllocation"
+      },
+      {
+        "id": "6862.HK",
+        "path": "ownerMemo.question1.chart"
+      },
+      {
+        "id": "6862.HK",
+        "path": "ownerMemo.question4.chart"
+      },
+      {
+        "id": "6862.HK",
+        "path": "ownerMemo.question4.capitalAllocation"
+      }
+    ]
+  },
+  "testFlips": [
+    {
+      "id": "8630.JP",
+      "test": "economics",
+      "before": "pass",
+      "after": "fail"
+    },
+    {
+      "id": "8630.JP",
+      "test": "management",
+      "before": "pass",
+      "after": "fail"
+    },
+    {
+      "id": "7203.JP",
+      "test": "management",
+      "before": "pass",
+      "after": "fail"
+    }
+  ],
+  "historyFiles": 111,
+  "historyDifferences": [
+    "2026.json",
+    "companies.json"
+  ],
+  "preservation": {
+    "memo": {
+      "changedLines": 5657,
+      "changedAnswers": 834,
+      "addedLines": 81,
+      "removedLines": 3
+    },
+    "removedMemoLines": [
+      {
+        "id": "4DX.AU",
+        "question": 2
+      },
+      {
+        "id": "TRMB.US",
+        "question": 2
+      },
+      {
+        "id": "WSE.US",
+        "question": 2
+      }
+    ],
+    "quarterlyFiles": 87,
+    "quarterlyDifferences": [],
+    "quarterSummariesEqual": true,
+    "analyzedBeforeStop": [
+      "BAJAJ-AUTO.NSE",
+      "ADANIENT.NSE",
+      "CIPLA.NSE",
+      "IPL.NZ",
+      "NPH.NZ",
+      "HLG.NZ",
+      "NZX.NZ",
+      "HDFCLIFE.NSE",
+      "SUNPHARMA.NSE",
+      "POWERGRID.NSE",
+      "MARUTI.NSE",
+      "SHRIRAMFIN.NSE",
+      "GRASIM.NSE",
+      "BAJAJFINSV.NSE",
+      "AXISBANK.NSE",
+      "ITC.NSE",
+      "HINDUNILVR.NSE",
+      "GNZ.NZ",
+      "APOLLOHOSP.NSE",
+      "INDIGO.NSE",
+      "BAJFINANCE.NSE",
+      "ETERNAL.NSE",
+      "SBIN.NSE",
+      "ADANIPORTS.NSE",
+      "MAXHEALTH.NSE",
+      "EICHERMOT.NSE",
+      "TECHM.NSE",
+      "HINDALCO.NSE",
+      "SBILIFE.NSE",
+      "DRREDDY.NSE",
+      "JSWSTEEL.NSE",
+      "HCLTECH.NSE",
+      "KOTAKBANK.NSE",
+      "TCS.NSE",
+      "ONGC.NSE",
+      "NTPC.NSE",
+      "TMPV.NSE",
+      "ASIANPAINT.NSE",
+      "TRENT.NSE",
+      "TITAN.NSE",
+      "BSE.NSE",
+      "JIOFIN.NSE",
+      "COALINDIA.NSE",
+      "BEL.NSE",
+      "BHARTIARTL.NSE",
+      "ULTRACEMCO.NSE",
+      "SPG.NZ",
+      "NESTLEIND.NSE",
+      "TATACONSUM.NSE"
+    ]
+  },
+  "run": {
+    "exit": 86,
+    "peakPrivateBytes": 165347328,
+    "freeBytes": 8785383424
+  }
+}

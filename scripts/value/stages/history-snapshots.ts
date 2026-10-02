@@ -49,10 +49,12 @@ function edinetFilings(): Record<string,Record<string,string>> {
 export function latestHistoryFiles(companies = loadCompanies({})): Record<string,unknown> {
   const root = corpusPath('history-v7');
   if (!existsSync(root)) return {};
-  for (const run of readdirSync(root).sort().reverse()) {
-    if (!/^[\w-]+$/.test(run)) continue;
-    const index = readCorpusJson<HistoryIndex>(`history-v7/${run}/index.json`);
-    if (!index || index.scope === 'selection') continue; // index is the commit marker, written after every year.
+  // Once quarterly history exists, an annual-only run must never downgrade it.
+  const runs = readdirSync(root).sort().reverse().filter(run => /^[\w-]+$/.test(run))
+    .map(run => ({run,index:readCorpusJson<HistoryIndex>(`history-v7/${run}/index.json`)}))
+    .filter((entry): entry is {run:string;index:HistoryIndex} => !!entry.index && entry.index.scope !== 'selection');
+  const quarterly = runs.filter(({index}) => index.quarters?.length);
+  for (const {run,index} of quarterly.length ? quarterly : runs) {
     // Publication supplies only current index members; upstream history remains full-corpus.
     const idsInUniverse = new Set(companies.map(c=>c.id));
     const filteredIndex: HistoryIndex = {...index, perYear:{},perQuarter:index.quarters?{}:undefined};

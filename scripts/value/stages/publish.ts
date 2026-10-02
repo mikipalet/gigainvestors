@@ -331,7 +331,11 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
     try {
       const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
       if (!analysis) continue; // The rolling download has not analysed this company yet.
-      analysis.ownerMemo=readCorpusJson<Analysis["ownerMemo"]>(`business-backfill/memos/${company.id}.json`)??analysis.ownerMemo;
+      const publishedMemo=readCorpusJson<Analysis["ownerMemo"]>(`published-memos/${company.id}.json`);
+      const currentMemo=readCorpusJson<Analysis["ownerMemo"]>(`business-backfill/memos/${company.id}.json`)??analysis.ownerMemo;
+      // Research is incremental: an omitted answer is not a retraction of a live answer.
+      // New answers win; the shared public consistency gate still checks every line.
+      analysis.ownerMemo=currentMemo?{...currentMemo,lines:[...new Map([...(publishedMemo?.lines??[]),...currentMemo.lines].map(line=>[line.question,line])).values()].sort((a,b)=>a.question-b.question)}:publishedMemo??undefined;
       analysis.businessOverview=readCorpusJson<Analysis["businessOverview"]>(`business-fit/overview/${company.id}.json`)??analysis.businessOverview;
       analysis.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`),analysis)??publicBusiness(analysis.businessDepth,analysis);
       if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");

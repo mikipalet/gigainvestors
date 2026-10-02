@@ -69,6 +69,14 @@ describe("buildOutput", () => {
     expect(readCorpusJson('enrichment-v7/share-checks/NEW.US.json')).toMatchObject({status:'verified',shares:101});
     expect(readCorpusJson('staging/share-audit.json')).toMatchObject({quality:{flagged:1,resolved:1,residual:0}});
   });
+  it('keeps published filing memo lines when a new research memo omits them',()=>{
+    const a=analysis();
+    const line={question:6,answer:'European data transfers are highly regulated and litigated.',basis:'filing',evidence:[{quote:'European data transfers are highly regulated and litigated.',url:'https://example.com/report',filed:'2026-01-01',section:'Risk factors'}]};
+    writeCorpusJson(`analysis/${a.id}.json`,a);
+    writeCorpusJson(`published-memos/${a.id}.json`,{version:1,asOf:'2026-01-01',inputHash:'live',lines:[line]});
+    writeCorpusJson(`business-backfill/memos/${a.id}.json`,{version:1,asOf:'2026-10-02',inputHash:'research',lines:[]});
+    expect(loadAnalyses([a.company])[0].ownerMemo?.lines).toEqual([line]);
+  });
   it("stages existing analyses and cached closes without running calibration or touching the cached repository", async () => {
     const { default: publish } = await import("@/scripts/value/stages/publish");
     const row = analysis(), out = path.join(corpusDir(), "staging");

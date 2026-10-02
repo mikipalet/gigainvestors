@@ -14,7 +14,14 @@ import {businessDiskGuard} from './disk';
 import type {Analysis} from '../types';
 import type {Source} from '../judgement/read';
 export async function businessSources(a:Analysis):Promise<{sources:Source[];status:string}>{
- businessDiskGuard();const id=a.id,file=corpusPath(`business-backfill/sections-v2/${id}.json.gz`);
+ businessDiskGuard();const id=a.id;
+ const full=corpusPath(`business-backfill/memo-sources/${id}.json.gz`);
+ if(existsSync(full)){
+  const documents:import('../judgement/read').Source[]=JSON.parse(gunzipSync(readFileSync(full)).toString());
+  const sources=documents.flatMap(source=>{const chunks:typeof documents=[];for(let i=0;i<source.text.length;i+=48000)chunks.push({...source,text:source.text.slice(i, i+50000)});return chunks;});
+  return {sources,status:'cached-full-filing'};
+ }
+ const file=corpusPath(`business-backfill/sections-v2/${id}.json.gz`);
  if(existsSync(file))return {sources:JSON.parse(gunzipSync(readFileSync(file)).toString()),status:'cached-sections'};
  const sources:Source[]=[];
  const save=(status:string)=>{if(sources.length){businessDiskGuard();mkdirSync(corpusPath('business-backfill/sections-v2'),{recursive:true});writeFileSync(file+'.tmp',gzipSync(JSON.stringify(sources)));renameSync(file+'.tmp',file);}return {sources,status};};

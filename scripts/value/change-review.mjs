@@ -22,7 +22,7 @@ const states = [
   ['quarter-step', '/', async page => { await page.keyboard.press('ArrowLeft'); await page.waitForTimeout(900); }],
   ['2018Q3', '/?q=2018Q3', async () => {}],
   ['ko', '/ko.us', async () => {}],
-  ['ko-business', '/ko.us', async page => { await page.getByRole('button', { name: /In depth/ }).first().click(); }],
+  ['ko-business', '/ko.us', async page => { await page.getByRole('button', { name: /In depth|More/ }).first().click(); }],
   ['ko-valuation', '/ko.us', async page => { await page.getByRole('button', { name: /valuation/i }).first().click(); }],
 ];
 

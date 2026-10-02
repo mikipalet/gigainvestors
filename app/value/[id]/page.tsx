@@ -1,10 +1,11 @@
 import { requiredReturnCopy } from '@/lib/value/owner-return';
+import { holderRecord } from '@/components/value/holder-record';
 import { HolderSummary } from '@/components/value/HolderSummary';
 import { HolderLink } from '@/components/value/HolderLink';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getDossier, getTopIds, getSearchCompany, getPrice } from '@/lib/value/store';
-import { getIndex } from '@/lib/data';
+import { getIndex, getInvestor } from '@/lib/data';
 import { Face } from '@/components/Face';
 import { DossierContent } from '@/components/value/DossierContent';
 
@@ -31,9 +32,13 @@ export default async function DossierPage({ params }: Props) {
   }
   const { company } = dossier;
   const investors = dossier.holders.length ? await getIndex() : null;
+  const holderRows=await Promise.all(dossier.holders.map(async h=>{
+    const investor=investors?.investors.find(i=>i.code===h.code),history=await getInvestor(h.code);
+    return {...h,firm:investor?.firm,portrait:investor?.sketch?investor.slug:undefined,position:holderRecord(history,company.code)};
+  }));
   const quote=await getPrice(dossier.id,company.country);
   return <DossierContent dossier={dossier} quote={quote}>
-    {dossier.holders.length>0&&<section className="holders"><h2><HolderSummary holders={dossier.holders.map(h=>{const i=investors?.investors.find(i=>i.code===h.code);return {...h,firm:i?.firm,portrait:i?.sketch?i.slug:undefined};})}/></h2>
+    {dossier.holders.length>0&&<section className="holders"><h2><HolderSummary holders={holderRows}/></h2>
       {dossier.holders.length ? <ul className="holder-stack">{dossier.holders.slice(0,5).map((holder) => {
         const investor = investors?.investors.find((item) => item.code === holder.code);
         return <li key={holder.code}><HolderLink name={holder.name} code={holder.code}>

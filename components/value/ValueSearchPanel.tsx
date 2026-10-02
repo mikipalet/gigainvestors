@@ -27,7 +27,7 @@ export function ValueSearchPanel({close,initialQuery=''}:{close:()=>void;initial
   {dossier&&<article className="search-preview"><header><h3>{displayName(dossier.company.name)}</h3><ValueLink href={`/${dossier.id.toLowerCase()}`} onClick={close}>Open company ↗</ValueLink></header>
    <dl>{dossier.ownerMemo?.lines.map(l=><div key={l.question}><dt>{MEMO_QUESTIONS[l.question-1]}</dt><dd>{l.answer}</dd></div>)}</dl>
    <section><h3>Five quality tests</h3>{Object.values(dossier.tests).filter(t=>t.key!=='price').map(t=><p key={t.key}><span>{testLabels[t.key]}</span><strong>{t.result==='pass'?'Pass':t.result==='fail'?'Fail':''}</strong></p>)}</section>
-   {dossier.series.ownerEarningsPerShare?.length>1&&<MiniSeries series={dossier.series.ownerEarningsPerShare.slice(-10)} label="Owner earnings per share" format="money" currency={dossier.reportingCurrency??dossier.company.currency} height={120}/>}
+   {dossier.series.ownerEarningsPerShare?.length>1&&<MiniSeries series={dossier.series.ownerEarningsPerShare.slice(-10)} label="Owner earnings per share" format="money" currency={dossier.reportingCurrency??dossier.company.currency} height={120} fluid/>}
   </article>}
   </div></div></SidePanel>,host);
 }

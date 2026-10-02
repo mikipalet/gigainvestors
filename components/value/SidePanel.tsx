@@ -3,7 +3,7 @@ import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 're
 
 // Measured per screen height across the reference companies (widest content that fits at 14px); one width per drawer type.
 const EVIDENCE_WIDTHS:Record<'short'|'mid'|'tall',Record<string,number>>={
-  short:{understandable:400,moat:560,economics:520,management:480,accounting:480,price:500},
+  short:{understandable:400,moat:680,economics:600,management:480,accounting:480,price:500},
   mid:{understandable:300,moat:400,economics:340,management:480,accounting:480,price:380},
   tall:{understandable:320,moat:340,economics:380,management:360,accounting:340,price:300},
 };
@@ -95,39 +95,41 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       const article=dialog.querySelector<HTMLElement>('.evidence-layout');
       if(!article)return;
       const content=article.parentElement!;
-      const available=content.clientHeight-16;
+      const available=content.clientHeight-28;
       // One width per drawer type and screen, the same for every company (owner rule), sized for that type's widest content.
       const width=Math.min(innerWidth,evidenceWidth(article.dataset.test??(article.dataset.valuation!==undefined?'price':'')));
       dialog.style.width=`${width}px`;
-      const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1);
+      const clipping=[...article.querySelectorAll<HTMLElement>('*')].filter(el=>!el.closest('svg')&&getComputedStyle(el).overflowY!=='visible');
+      const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1)&&clipping.every(el=>el.scrollHeight<=el.clientHeight+1);
       // The width is fixed; the inner layout follows the content: two reading columns only when one does not fit.
       dialog.dataset.readingColumns='1';
       largestFont(dialog,'--reading-font',fits,20);
       if(!fits()&&width>=480){dialog.dataset.readingColumns='2';largestFont(dialog,'--reading-font',fits,20);}
     };
-    let frame=0,active=true;
-    const schedule=()=>{if(active&&!frame&&!dialog.dataset.fitting)frame=requestAnimationFrame(()=>{frame=0;fit();});};
-    const resize=new ResizeObserver(schedule);
-    let observed:Element|null=null,revealed=false;
-    const watch=()=>{const el=dialog.querySelector('.evidence-layout,.owner-memo-depth,.method-sections');if(!revealed&&el&&el!==observed){if(observed)resize.unobserve(observed);resize.observe(el);observed=el;}return el;};
+    let active=true,settling=false,again=false;
+    let observed:Element|null=null;
+    const watch=()=>{const el=dialog.querySelector('.evidence-layout,.owner-memo-depth,.method-sections');if(el)observed=el;return el;};
     const fitted=watch();
-    // Fitted panels stay hidden until the final fonts are measured; otherwise the panel visibly re-fits after opening.
-    if(fitted)dialog.dataset.fitting='true';else fit();
-    // After the panel appears only window resizes and new content refit it; size feedback from charts would make it flip.
-    // Charts size themselves a frame or two after layout, so re-fit until two quiet frames pass (bounded), then reveal.
+    // Charts redraw a frame or two after a width change, so every fit repeats until the content size holds still (bounded).
+    // Fitted panels stay hidden until the first settled fit; afterwards only window resizes and new content refit them.
     const frames=()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
-    const reveal=async()=>{
-      const size=()=>{const el=observed as HTMLElement|null;return el?`${el.scrollHeight}x${el.scrollWidth}`:'';};
-      for(let round=0;round<6&&active;round++){fit();const before=size();await frames();if(size()===before)break;}
-      if(!active)return;delete dialog.dataset.fitting;revealed=true;resize.disconnect();
+    const size=()=>{const el=observed as HTMLElement|null;return el?`${el.scrollHeight}x${el.scrollWidth}`:'';};
+    const settle=async()=>{
+      if(settling){again=true;return;}
+      settling=true;
+      do{again=false;watch();for(let round=0;round<6&&active;round++){fit();const before=size();await frames();if(size()===before)break;}}while(again&&active);
+      settling=false;
+      if(active)delete dialog.dataset.fitting;
     };
-    let started=false;const start=()=>{if(started)return;started=true;void reveal();};
+    if(fitted)dialog.dataset.fitting='true';else fit();
+    let started=false;const start=()=>{if(started)return;started=true;void settle();};
     const fallback=setTimeout(start,1500);
     document.fonts.ready.then(()=>{clearTimeout(fallback);start();});
-    const observer=new MutationObserver(records=>{watch();if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))schedule();});
+    const schedule=()=>{if(started)void settle();};
+    const observer=new MutationObserver(records=>{if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))schedule();});
     observer.observe(dialog,{childList:true,subtree:true});
     window.addEventListener('resize',schedule);
-    return()=>{active=false;clearTimeout(fallback);observer.disconnect();resize.disconnect();cancelAnimationFrame(frame);window.removeEventListener('resize',schedule);};
+    return()=>{active=false;clearTimeout(fallback);observer.disconnect();window.removeEventListener('resize',schedule);};
   },[children]);
   return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.

@@ -157,7 +157,7 @@ export function Search() {
             )}
             {loading && <div role="status" className="border-t border-ink/15 px-4 py-3 text-[13px] opacity-40">searching…</div>}
             {error && <div role="status" className="border-t border-ink/15 px-4 py-3 text-[13px] opacity-40">{error}</div>}
-            {isValue && query.trim() && ['','/'].includes(pathname.replace('/value','')) && <button className="border-t border-ink/15 px-4 py-3 text-[12px] opacity-60" onClick={()=>{window.dispatchEvent(new CustomEvent('filter-value-list',{detail:query}));setOpen(false);}}>Filter this list: {query}</button>}
+            {isValue && query.trim() && ['','/'].includes(pathname.replace('/value','')) && <button className="block w-full border-t border-ink/15 px-4 py-3 text-left text-[13px] opacity-60" onClick={()=>{window.dispatchEvent(new CustomEvent('filter-value-list',{detail:query}));setOpen(false);}}>Filter this list: {query}</button>}
             {hits.length > 0 && (
               <ul id="search-results" role="listbox" className={`border-t border-ink/15 py-1 ${isValue?'':'max-h-[50vh] overflow-y-auto'}`}>
                 {hits.slice(isValue?Math.floor(sel/4)*4:0,isValue?Math.floor(sel/4)*4+4:hits.length).map((h, offset) => { const i=(isValue?Math.floor(sel/4)*4:0)+offset; return (

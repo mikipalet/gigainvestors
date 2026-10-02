@@ -31,8 +31,8 @@ it('never erases genuine dilution without a corporate action',()=>{
 });
 const a={id:'X.US',company:{kind:'operating',currency:'USD'},report:{},series:{},tests:Object.fromEntries(['understandable','moat','economics','management','accounting'].map(k=>[k,{result:'pass',metrics:{},series:{}}]))} as unknown as Analysis;
 it('distinguishes fair value from expensive across exact boundaries',()=>{
- for(const ratio of [.99,1])expect(humanVerdict(a,false,true,ratio)).toBe('Near fair value; needs a margin of safety');
- expect(humanVerdict(a,false,true,1.01)).toBe('Great business, but the price already assumes a lot');
+ for(const ratio of [.99,1])expect(humanVerdict(a,false,true,ratio)).toBe('A wonderful business, almost at a fair price');
+ expect(humanVerdict(a,false,true,1.01)).toBe('A wonderful business at too high a price');
  expect(humanVerdict(a,true,true,.8)).toBe('A wonderful business at a fair price');
  expect(humanVerdict(a,false,false,null)).not.toContain('assumes');
 });

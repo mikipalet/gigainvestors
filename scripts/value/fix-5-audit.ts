@@ -14,12 +14,12 @@ const verdict=(d:Dossier,q:PriceMap[string]|undefined)=>humanVerdict(d,!!d.b,rat
 for(const d of Object.values(ds)){
  const r=ratio(d,prices[d.id]),v=verdict(d,prices[d.id]);templates[v]=(templates[v]??0)+1;
  try{assertDossierConsistency(d,prices[d.id]);}catch(e){failures.push(`${d.id}: ${(e as Error).message}`);}
- if(v.includes('assumes a lot')&&!(r!==null&&r>1))failures.push(d.id+': expensive wording below value');
- if(v.startsWith('Near fair value')&&!(r!==null&&r<=1&&!d.b))failures.push(d.id+': fair-value wording above value');
+ if(v.endsWith('too high a price')&&!(r!==null&&r>1))failures.push(d.id+': expensive wording below value');
+ if(v.endsWith('almost at a fair price')&&!(r!==null&&r<=1&&!d.b))failures.push(d.id+': fair-value wording above value');
  const customer=d.ownerMemo?.lines.find(l=>l.question===2&&l.basis==='computed');
  const window=customer?.answer.match(/during (\d{4})–(\d{2})/);
  if(window){memoWindowsChecked++;if(Number(window[1].slice(0,2)+window[2])!==d.historyCoverage?.last)failures.push(d.id+': memo fiscal window differs from published analysis');}
- if(v.startsWith('Near fair value')&&v.split(/\s+/).length>9)failures.push(d.id+': verdict too long');
+ if(v.split(/\s+/).length>9)failures.push(d.id+': verdict too long');
  const prior=old[d.id];if(!prior)continue;
  const tests=Object.keys(d.tests).flatMap(k=>{const key=k as keyof Dossier['tests'],test=d.tests[key];return test&&prior.tests[key]?.result!==test.result?[{test:k,before:prior.tests[key]?.result,after:test.result}]:[]});
  const changedTests=Object.keys(d.tests).filter(k=>JSON.stringify(prior.tests[k as keyof Dossier['tests']])!==JSON.stringify(d.tests[k as keyof Dossier['tests']]));

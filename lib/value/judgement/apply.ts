@@ -96,12 +96,10 @@ export function returnRange(value:number):string {
  return `about ${low}–${low+5}% a year`;
 }
 export function humanVerdict(analysis:Analysis,buy:boolean,priceKnown=true,priceToValue:number|null=null):string {
- if(analysis.thesis?.changed)return 'Good numbers, but the business is changing';
+ if(analysis.thesis?.changed)return 'Good past, but the business is changing';
  const tests=QUALITY_TESTS.map(key=>analysis.tests[key as keyof Analysis['tests']]);
- if(tests.some(t=>t.result==='fail'))return 'The business still has something to prove';
- if(!tests.every(t=>t.result==='pass'))return 'Still getting to know this business';
- if(!priceKnown)return 'A strong business; the price needs a closer look';
+ if(!tests.every(t=>t.result==='pass'))return 'Not a wonderful business';
  if(buy)return 'A wonderful business at a fair price';
- if(priceToValue!==null&&priceToValue<=1)return 'Near fair value; needs a margin of safety';
- return priceToValue!==null&&priceToValue>1?'Great business, but the price already assumes a lot':'A strong business; the price needs a closer look';
+ if(!priceKnown||priceToValue===null)return 'A wonderful business';
+ return priceToValue<=1?'A wonderful business, almost at a fair price':'A wonderful business at too high a price';
 }

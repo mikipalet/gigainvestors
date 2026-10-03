@@ -1,0 +1,19 @@
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-zp-nightly
+
+ ✓ tests/unit/value/history-split-basis.test.ts (1 test) 34ms
+ ✓ tests/unit/value/reported-facts.test.ts (8 tests) 27ms
+ ✓ tests/unit/value/refresh-fundamentals.test.ts (7 tests) 43ms
+ ✓ tests/unit/value/verdict-attribution.test.ts (5 tests) 53ms
+ ✓ tests/unit/value/integrity.test.ts (30 tests) 47ms
+ ✓ tests/unit/value/completion-retention.test.ts (13 tests) 51ms
+ ✓ tests/unit/value/complete-2.test.ts (29 tests) 67ms
+ ✓ tests/unit/value/price-history-splits.test.ts (6 tests) 18ms
+ ✓ tests/unit/value/completeness.test.ts (34 tests) 89ms
+ ✓ tests/unit/value/financial-quality.test.ts (28 tests) 604ms
+   ✓ shows the financial worst-year bar used by the decision, without imposing it on insurers  455ms
+
+ Test Files  10 passed (10)
+      Tests  161 passed (161)
+   Start at  15:43:39
+   Duration  1.84s (transform 4.00s, setup 0ms, collect 6.95s, tests 1.03s, environment 2ms, prepare 1.16s)

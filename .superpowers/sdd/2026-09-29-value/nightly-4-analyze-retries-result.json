@@ -1,0 +1,12 @@
+{
+  "startedAt": 1791039761.7429328,
+  "finishedAt": 1791039766.4649956,
+  "stage": "analyze",
+  "args": [
+    "--only=8GW.IR,CDT.AU"
+  ],
+  "exit": 0,
+  "peakPrivateBytes": 1469919232,
+  "freeBytes": 7329169408,
+  "stop": null
+}

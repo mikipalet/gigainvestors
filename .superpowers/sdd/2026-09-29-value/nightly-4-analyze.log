@@ -1,0 +1,14 @@
+analyze: 4 written, 2 unchanged, 0 failed
+analyze: 2 written, 0 unchanged, 0 failed
+analyze: 089230.KQ: The operation was aborted due to timeout
+analyze: 8GW.IR: The operation was aborted due to timeout
+analyze: CDT.AU: fetch failed
+analyze: 38053 written, 0 unchanged, 3 failed
+Analysis failed for: 089230.KQ, 8GW.IR, CDT.AU
+analyze: 089230.KQ: The operation was aborted due to timeout
+Expected --only=ID,ID, --limit=N, --force, fundamentals --members-first, index-membership --offline, publish --out=DIR, or japan --from=YYYY-MM-DD --to=YYYY-MM-DD
+analyze: 4 written, 6 unchanged, 0 failed
+analyze: 1 written, 1 unchanged, 0 failed
+analyze: 1 written, 0 unchanged, 0 failed
+analyze: 2 written, 0 unchanged, 0 failed
+analyze: 1 written, 0 unchanged, 0 failed

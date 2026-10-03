@@ -1,0 +1,12 @@
+{
+  "startedAt": 1791039713.492439,
+  "finishedAt": 1791039718.2752297,
+  "stage": "analyze",
+  "args": [
+    "--only=DVP.AU,SSPG.LSE,PDI.AU,051910.KO,KMD.AU,001440.KO,601618.SHG,EMEIS.PA,IAG.AU,089230.KQ"
+  ],
+  "exit": 0,
+  "peakPrivateBytes": 1469849600,
+  "freeBytes": 7332323328,
+  "stop": null
+}

@@ -1,0 +1,737 @@
+[
+  {
+    "id": "EDPR.LS",
+    "series": "totalRoic",
+    "fy": 2024,
+    "before": -0.1700376517931327,
+    "after": null
+  },
+  {
+    "id": "VOE.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "VOE.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "VOE.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "VOE.VI",
+    "series": "sbcToOcf",
+    "fy": 2026,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "SHC.LSE",
+    "series": "sbcToOcf",
+    "fy": 2021,
+    "before": 3,
+    "after": null
+  },
+  {
+    "id": "HTWS.LSE",
+    "series": "totalRoic",
+    "fy": 2022,
+    "before": -0.1303082036436813,
+    "after": null
+  },
+  {
+    "id": "HTWS.LSE",
+    "series": "totalRoic",
+    "fy": 2024,
+    "before": -0.00883327607035588,
+    "after": null
+  },
+  {
+    "id": "GALP.LS",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "GALP.LS",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "GJF.OL",
+    "series": "ownerEarningsPerShare",
+    "fy": 2024,
+    "before": 6.943465086281046,
+    "after": null
+  },
+  {
+    "id": "EGL.LS",
+    "series": "totalRoic",
+    "fy": 2020,
+    "before": -0.043416205603440144,
+    "after": null
+  },
+  {
+    "id": "SSPG.LSE",
+    "series": "totalRoic",
+    "fy": 2022,
+    "before": -0.04474474643704459,
+    "after": null
+  },
+  {
+    "id": "SSPG.LSE",
+    "series": "totalRoic",
+    "fy": 2025,
+    "before": -0.06676235057841431,
+    "after": null
+  },
+  {
+    "id": "POS.VI",
+    "series": "retainedEarnings",
+    "fy": 2024,
+    "before": 47591000,
+    "after": null
+  },
+  {
+    "id": "POS.VI",
+    "series": "retainedEarnings",
+    "fy": 2025,
+    "before": 65731000,
+    "after": null
+  },
+  {
+    "id": "POS.VI",
+    "series": "ocfToNi",
+    "fy": 2020,
+    "before": 2.537886386432023,
+    "after": null
+  },
+  {
+    "id": "POS.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "POS.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "POS.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "SREN.SW",
+    "series": "totalRoic",
+    "fy": 2025,
+    "before": 0.0991990777050077,
+    "after": null
+  },
+  {
+    "id": "SATS.OL",
+    "series": "retainedEarnings",
+    "fy": 2023,
+    "before": 224000000,
+    "after": null
+  },
+  {
+    "id": "SATS.OL",
+    "series": "retainedEarnings",
+    "fy": 2024,
+    "before": 326000000,
+    "after": null
+  },
+  {
+    "id": "SATS.OL",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "SATS.OL",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "EDP.LS",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "EDP.LS",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "LNZ.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "LNZ.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "LNZ.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "IR5B.IR",
+    "series": "retainedEarnings",
+    "fy": 2020,
+    "before": -19000000,
+    "after": null
+  },
+  {
+    "id": "IR5B.IR",
+    "series": "retainedEarnings",
+    "fy": 2021,
+    "before": -4900000,
+    "after": null
+  },
+  {
+    "id": "ANDR.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "ANDR.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "ANDR.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "KRZ.IR",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "KRZ.IR",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "series": "depositGrowth",
+    "fy": 2020,
+    "before": 0.35721129888328873,
+    "after": null
+  },
+  {
+    "id": "JMT.LS",
+    "series": "sbcToOcf",
+    "fy": 2022,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "CAI.VI",
+    "series": "sbcToOcf",
+    "fy": 2022,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "CAI.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "CAI.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "CAI.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "CPI.VI",
+    "series": "retainedEarnings",
+    "fy": 2022,
+    "before": 142601000,
+    "after": null
+  },
+  {
+    "id": "CPI.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "CPI.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "CPI.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "SON.LS",
+    "series": "totalRoic",
+    "fy": 2020,
+    "before": -0.019156806018821804,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "roic",
+    "fy": 2016,
+    "before": 0.4537042159263888,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "ownerEarnings",
+    "fy": 2016,
+    "before": 26737000,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "nwcToRevenue",
+    "fy": 2016,
+    "before": -0.003013377939967355,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "buybacks",
+    "fy": 2016,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "acquisitions",
+    "fy": 2016,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "retainedEarnings",
+    "fy": 2016,
+    "before": 13590000,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "ocfToNi",
+    "fy": 2016,
+    "before": 1.6797436001460506,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "accruals",
+    "fy": 2016,
+    "before": -0.05833669902371767,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "sbcToOcf",
+    "fy": 2016,
+    "before": 0.045261327407979904,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "ownerEarningsPerShare",
+    "fy": 2016,
+    "before": 0.3607793925164285,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "tangibleBookValuePerShare",
+    "fy": 2016,
+    "before": 1.0781146689335979,
+    "after": null
+  },
+  {
+    "id": "HFG.LSE",
+    "series": "bookValuePerShare",
+    "fy": 2016,
+    "before": 1.1939440553778893,
+    "after": null
+  },
+  {
+    "id": "PFD.LSE",
+    "series": "roic",
+    "fy": 2023,
+    "before": 0.1857136783850208,
+    "after": null
+  },
+  {
+    "id": "PFD.LSE",
+    "series": "nwcToRevenue",
+    "fy": 2023,
+    "before": -0.057432432432432436,
+    "after": null
+  },
+  {
+    "id": "PFD.LSE",
+    "series": "acquisitions",
+    "fy": 2023,
+    "before": 35200000,
+    "after": null
+  },
+  {
+    "id": "PFD.LSE",
+    "series": "acquisitions",
+    "fy": 2024,
+    "before": 17600000,
+    "after": null
+  },
+  {
+    "id": "PFD.LSE",
+    "series": "retainedEarnings",
+    "fy": 2023,
+    "before": 81300000,
+    "after": null
+  },
+  {
+    "id": "PFD.LSE",
+    "series": "ocfToNi",
+    "fy": 2023,
+    "before": 0.9519650655021834,
+    "after": null
+  },
+  {
+    "id": "PFD.LSE",
+    "series": "accruals",
+    "fy": 2023,
+    "before": 0.0018288374412901618,
+    "after": null
+  },
+  {
+    "id": "PFD.LSE",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "PFD.LSE",
+    "series": "tangibleBookValuePerShare",
+    "fy": 2023,
+    "before": 0.48900226757369614,
+    "after": null
+  },
+  {
+    "id": "PFD.LSE",
+    "series": "bookValuePerShare",
+    "fy": 2023,
+    "before": 1.5941043083900226,
+    "after": null
+  },
+  {
+    "id": "POST.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "POST.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "POST.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "GIL.TO",
+    "series": "tangibleBookValuePerShare",
+    "fy": 2014,
+    "before": 6.3962362416547744,
+    "after": null
+  },
+  {
+    "id": "GIL.TO",
+    "series": "bookValuePerShare",
+    "fy": 2014,
+    "before": 8.29820136804291,
+    "after": null
+  },
+  {
+    "id": "VER.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "VER.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "VER.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "IBKR.US",
+    "series": "bookValuePerShare",
+    "fy": 2010,
+    "before": 26.974950801378316,
+    "after": null
+  },
+  {
+    "id": "1299.HK",
+    "series": "totalRoic",
+    "fy": 2025,
+    "before": 0.09214840782937835,
+    "after": null
+  },
+  {
+    "id": "STR.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "STR.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "STR.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "GVR.IR",
+    "series": "retainedEarnings",
+    "fy": 2023,
+    "before": 47108000,
+    "after": null
+  },
+  {
+    "id": "GVR.IR",
+    "series": "retainedEarnings",
+    "fy": 2024,
+    "before": 97755000,
+    "after": null
+  },
+  {
+    "id": "GVR.IR",
+    "series": "retainedEarnings",
+    "fy": 2025,
+    "before": 107612000,
+    "after": null
+  },
+  {
+    "id": "ATS.VI",
+    "series": "retainedEarnings",
+    "fy": 2025,
+    "before": 89695000,
+    "after": null
+  },
+  {
+    "id": "ATS.VI",
+    "series": "retainedEarnings",
+    "fy": 2026,
+    "before": -25590000,
+    "after": null
+  },
+  {
+    "id": "ATS.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "ATS.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "ATS.VI",
+    "series": "sbcToOcf",
+    "fy": 2026,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "SBO.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "SBO.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "SBO.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "EVN.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "EVN.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "OMV.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "OMV.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "OMV.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "INVP.LSE",
+    "series": "sbcToOcf",
+    "fy": 2021,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "INVP.LSE",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0.14852867081219626,
+    "after": null
+  },
+  {
+    "id": "WIE.VI",
+    "series": "sbcToOcf",
+    "fy": 2023,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "WIE.VI",
+    "series": "sbcToOcf",
+    "fy": 2024,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "WIE.VI",
+    "series": "sbcToOcf",
+    "fy": 2025,
+    "before": 0,
+    "after": null
+  },
+  {
+    "id": "PYIYF.US",
+    "series": "tangibleBookValuePerShare",
+    "fy": 2025,
+    "before": 2.835515004513462,
+    "after": null
+  }
+]

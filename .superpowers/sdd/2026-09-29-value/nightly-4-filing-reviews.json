@@ -1,0 +1,304 @@
+[
+  {
+    "id": "WSM.US",
+    "classification": "split/consolidation basis",
+    "finding": "Cached EODHD 2-for-1 action matches issuer July 9 2024 split. Consistent denominators remove false dilution.",
+    "status": "filing-backed (sampled)",
+    "sources": [
+      "https://ir.williams-sonomainc.com/investor-information/news-releases/news-release-details/2024/Williams-Sonoma-Inc.-Announces-Two-for-One-Stock-Split/default.aspx"
+    ],
+    "observations": {
+      "date": "2024-07-09",
+      "factor": 2
+    }
+  },
+  {
+    "id": "086280.KO",
+    "classification": "split/consolidation basis",
+    "finding": "Hyundai Glovis bonus issue doubles ordinary shares from 37.5m to 75m; cached EODHD July 12 ex-date agrees with July 15 allotment. Old market cap combined pre-action prices with adjusted shares.",
+    "status": "filing-backed (sampled)",
+    "sources": [
+      "https://www.glovis.net/upload/asisupload/2025/1/202501080817136090.PDF"
+    ],
+    "observations": {
+      "date": "2024-07-12",
+      "factor": 2
+    }
+  },
+  {
+    "id": "KMD.AU",
+    "classification": "split/consolidation basis",
+    "finding": "NZX confirms completed 25-for-1 consolidation with June 30 2026 ex-date. Annual weighted diluted shares converted by /25; explicit issuer action allows history alignment without absent EPS.",
+    "status": "new inputs wrong; fixed",
+    "sources": [
+      "https://www.nzx.com/announcements/475499",
+      "https://company-announcements.afr.com/asx/kmd/b356e819-98c7-11f0-a9c5-e67b34444083.pdf"
+    ],
+    "observations": {
+      "2024": 28951360.0,
+      "2025": 29215440.0
+    }
+  },
+  {
+    "id": "TSCO.US",
+    "classification": "split/consolidation basis",
+    "finding": "Cached SEC FY2008 diluted shares were 74,927 units instead of 74,927 thousand, and FY2009/10 missed the later 2\u00d75 split basis. Filed EPS-note denominators and compatible EPS restore history without treating real buybacks as split effects. Normalize FY2011\u201321 cached SEC comparative shares \u00d75 and compatible EPS /5. FY2008/09 provider month-end dates corrected to actual fiscal dates before applying inventory-restated comparatives. Replay preserves all 30 unique FY1996\u20132025 periods.",
+    "status": "new inputs wrong; fixed",
+    "sources": [
+      "https://www.sec.gov/Archives/edgar/data/916365/000091636524000117/tsco-20241219.htm",
+      "https://www.sec.gov/Archives/edgar/data/916365/000091636511000013/tractorsuppy10kfeb232011.htm",
+      "https://www.sec.gov/Archives/edgar/data/916365/000091636513000027/a08292013-stocksplit8k.htm"
+    ],
+    "observations": {
+      "filedDilutedSharesThousands": {
+        "2008": 74927,
+        "2009": 73297,
+        "2010": 74686
+      },
+      "subsequentSplitFactor": 10
+    }
+  },
+  {
+    "id": "PDI.AU",
+    "classification": "missing-data regression",
+    "finding": "FY2025 report gives weighted basic/diluted ordinary shares 2,450,879,959 and 2,112,032,411. Issuer timetable and cached EODHD agree on August 26 2026 1-for-5 trading basis. Mixed secondary shares destroyed history; preserve prior and use filed weighted shares /5.",
+    "status": "new inputs wrong; fixed",
+    "sources": [
+      "https://wp-predictivediscovery-2024.s3.eu-west-2.amazonaws.com/media/2025/10/FY25-Annual-Report.pdf",
+      "https://www.globenewswire.com/news-release/2026/08/24/3349505/0/en/name-change-and-consolidation-approved.html"
+    ],
+    "observations": {
+      "2024": 422406482.2,
+      "2025": 490175991.8
+    }
+  },
+  {
+    "id": "601618.SHG",
+    "classification": "missing-data regression",
+    "finding": "MCC EPS note separates perpetual-holder income. Parent profit / ordinary EPS produced 660.884bn shares. Filed FY2023\u201325 weighted denominator is 20,723,619 thousand; FY2025 ordinary profit 46,309 thousand.",
+    "status": "new inputs wrong; fixed",
+    "sources": [
+      "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0417/2026041700852.pdf",
+      "https://www.hkexnews.hk/listedco/listconews/sehk/2025/0422/2025042200817.pdf"
+    ],
+    "observations": {
+      "shares": 20723619000,
+      "2025commonNetIncome": 46309000
+    }
+  },
+  {
+    "id": "051910.KO",
+    "classification": "unit/currency fix",
+    "finding": "LG Chem ordinary vs preferred denominator mismatch. FY2024/25 common weighted shares 70,592,343/70,592,342; 7,682,759 preferred shares must not inflate ordinary market cap.",
+    "status": "new inputs wrong; fixed",
+    "sources": [
+      "https://www.lgchem.com/upload/file/audit-report/LG_Chem_FY2025_4Q_K-IFRS_Eng_Consoliated_Audit_report%5B0%5D.PDF",
+      "https://www.lgchem.com/upload/file/audit-report/LG_Chem_FY2023_Consolidated_Audit_Report_ENG_updated.pdf"
+    ],
+    "observations": {
+      "2022": 70262070,
+      "2023": 70592343,
+      "2024": 70592343,
+      "2025": 70592342
+    }
+  },
+  {
+    "id": "CBG.LSE",
+    "classification": "new fiscal year added",
+    "finding": "FY2026 adds a second consecutive parent loss: GBP63.4m after FY2025 GBP77.9m loss. Understandable and moat failures replace stale passes.",
+    "status": "filing-backed (sampled)",
+    "sources": [
+      "https://www.investegate.co.uk/index.php/announcement/rns/close-brothers-group--cbg/preliminary-results/9795269"
+    ],
+    "observations": null
+  },
+  {
+    "id": "MU.US",
+    "classification": "new fiscal year added",
+    "finding": "FY2026 issuer release agrees with new revenue 133,188m, parent income 84,969m, operating cash 89,675m, capex 30,712m and SBC 1,333m USD. Added fiscal year changes the rolling cash-return window.",
+    "status": "filing-backed (sampled)",
+    "sources": [
+      "https://micron.gcs-web.com/node/50991"
+    ],
+    "observations": {
+      "2026": {
+        "revenue": 133188000000,
+        "netIncome": 84969000000,
+        "ocf": 89675000000,
+        "capex": 30712000000,
+        "sbc": 1333000000
+      }
+    }
+  },
+  {
+    "id": "DVP.AU",
+    "classification": "new fiscal year added",
+    "finding": "FY2026 was added with false absent-statement SBC zero. Filing reports AUD12.521m SBC, 49.952m OCF and 112.725m capital spending including capitalized exploration. Corrections add the SBC red flag; final accounting pass survives because cash backing is positive and the rule permits one flag.",
+    "status": "wrong inputs fixed; corrected pass filing-backed (sampled)",
+    "sources": [
+      "https://www.develop.com.au/",
+      "https://wcsecure.weblink.com.au/pdf/DVP/03140972.pdf"
+    ],
+    "observations": {
+      "2026": {
+        "sbc": 12521000,
+        "ocf": 49952000,
+        "capex": 112725000,
+        "totalNetIncome": 9078000
+      }
+    }
+  },
+  {
+    "id": "SSPG.LSE",
+    "classification": "unit/currency fix",
+    "finding": "Parent/consolidated basis and financing lease payments were missing. Reconciled all FY2021\u201325 consolidated income, operating cash, PPE+intangible purchases, lease principal+interest and SBC. Five-year consolidated income -GBP234.8m; post-capex/lease/SBC cash GBP185.3m. Corrected cash conversion passes, but ROIIC remains zero and economics still fails; prior live ROIIC input basis remains blocked.",
+    "status": "new inputs wrong; fixed",
+    "sources": [
+      "https://www.foodtravelexperts.com/media/sinnxjj2/ssp-annual-report-and-accounts-2022.pdf",
+      "https://www.foodtravelexperts.com/media/pdxhbe3v/ssp-ar_financials_2023.pdf",
+      "https://www.foodtravelexperts.com/media/q11pqu5h/ssp-group-plc_annual-report-and-accounts_2025.pdf"
+    ],
+    "observations": null
+  },
+  {
+    "id": "AXP.US",
+    "classification": "rule-version difference \u2014 financial input coverage",
+    "finding": "New non-interest expenses and net revenues match FY2024/25 issuer statements exactly in USD millions; newly available efficiency checks fail. Historical release did not publish this check. This validates coverage, not a vendor-restatement claim.",
+    "status": "filing-backed (sampled)",
+    "sources": [
+      "https://www.sec.gov/Archives/edgar/data/4962/000000496226000037/q425exhibit992.htm"
+    ],
+    "observations": {
+      "years": [
+        2024,
+        2025
+      ],
+      "expenseMillions": [
+        47869,
+        53178
+      ],
+      "netRevenueMillions": [
+        65949,
+        72229
+      ]
+    }
+  },
+  {
+    "id": "MS.US",
+    "classification": "rule-version difference \u2014 financial input coverage",
+    "finding": "New non-interest expenses and net revenues match FY2024/25 issuer statements exactly in USD millions; newly available efficiency checks fail. Historical release did not publish this check. This validates coverage, not a vendor-restatement claim.",
+    "status": "filing-backed (sampled)",
+    "sources": [
+      "https://www.morganstanley.com/content/dam/msdotcom/en/about-us-ir/shareholder/10k2025/10k1225.pdf"
+    ],
+    "observations": {
+      "years": [
+        2024,
+        2025
+      ],
+      "expenseMillions": [
+        43901,
+        48342
+      ],
+      "netRevenueMillions": [
+        61761,
+        70645
+      ]
+    }
+  },
+  {
+    "id": "WFC.US",
+    "classification": "rule-version difference \u2014 financial input coverage",
+    "finding": "New non-interest expenses and net revenues match FY2024/25 issuer statements exactly in USD millions; newly available efficiency checks fail. Historical release did not publish this check. This validates coverage, not a vendor-restatement claim.",
+    "status": "filing-backed (sampled)",
+    "sources": [
+      "https://www.wellsfargo.com/assets/pdf/about/investor-relations/annual-reports/2025-annual-report.pdf"
+    ],
+    "observations": {
+      "years": [
+        2024,
+        2025
+      ],
+      "expenseMillions": [
+        54598,
+        54842
+      ],
+      "netRevenueMillions": [
+        82296,
+        83699
+      ]
+    }
+  },
+  {
+    "id": "8253.JP",
+    "classification": "rule-version difference",
+    "finding": "Issuer lending operations support financial classification. Full common-book/dividend window remains uncertified.",
+    "status": "classification supported; verdict blocked",
+    "sources": [
+      "https://corporate.saisoncard.co.jp/wr_html/news_data_en/ob97ln0000000bzs-att/20260605_ReleaseE.pdf"
+    ],
+    "observations": null
+  },
+  {
+    "id": "2269.JP",
+    "classification": "split/consolidation basis",
+    "finding": "Issuer securities report confirms 2-for-1 split on 2023-04-01. Five-year share CAGR falls from 13.311953730828208% to -1.3562148514431493%; the live dilution failure is a mixed-unit artifact.",
+    "status": "filing-backed (sampled), carried forward and counterfactual checked",
+    "sources": [
+      "https://www.meiji.com/global/investors/results-presentations/securities-report/pdf/2023/securities-report_2023_r01_en.pdf"
+    ],
+    "eodhd": "not present in preserved Japanese source; primary issuer action available"
+  },
+  {
+    "id": "4507.JP",
+    "classification": "split/consolidation basis",
+    "finding": "Issuer confirms 3-for-1 split effective 2024-10-01. Five-year share CAGR falls from 22.661245951468434% to -1.5341803719342684%; live dilution failure is spurious.",
+    "status": "filing-backed (sampled), carried forward and counterfactual checked",
+    "sources": [
+      "https://www.shionogi.com/global/en/investors/shareholder-information/shareholder-return.html"
+    ],
+    "eodhd": "not present in preserved Japanese source; primary issuer action available"
+  },
+  {
+    "id": "6902.JP",
+    "classification": "split/consolidation basis",
+    "finding": "Integrated report confirms 4-for-1 split of the 2023-09-30 record-date holdings. Five-year share CAGR falls from 28.578264909547646% to -2.5546893610398302%; split must not count as issuance.",
+    "status": "filing-backed (sampled), carried forward and counterfactual checked",
+    "sources": [
+      "https://www.denso.com/global/home/about-us/investors/annual-report/integrated-report-2023/cfo-message/"
+    ],
+    "eodhd": "not present in preserved Japanese source; primary issuer action available"
+  },
+  {
+    "id": "GMD.AU",
+    "classification": "missing-data regression",
+    "finding": "Vendor reused roughly 1.05bn/1.096bn shares in FY2008\u201319 and then switched to consolidated weighted shares in FY2020, truncating history from 19 to seven years. EPS notes across 2009/2010/2012/2014/2016/2017/2018/2020/2022 provide the actual weighted denominators. Converted pre-2022 counts by /10 under the filed January 2022 consolidation, restoring FY2008\u201326 and both original failures; actual issuance remains.",
+    "status": "new inputs wrong; fixed",
+    "sources": [
+      "https://www.annualreports.com/HostedData/AnnualReportArchive/g/ASX_GMD_2009.pdf",
+      "https://www.annualreports.com/HostedData/AnnualReportArchive/g/ASX_GMD_2010.pdf",
+      "https://www.annualreports.com/HostedData/AnnualReportArchive/g/ASX_GMD_2012.pdf",
+      "https://www.annualreports.com/HostedData/AnnualReportArchive/g/ASX_GMD_2014.pdf",
+      "https://www.annualreports.com/HostedData/AnnualReportArchive/g/ASX_GMD_2016.pdf",
+      "https://www.annualreports.com/HostedData/AnnualReportArchive/g/ASX_GMD_2017.pdf",
+      "https://www.asx.com.au/asxpdf/20180918/pdf/43yfmt2527lqjs.pdf",
+      "https://announcements.asx.com.au/asxpdf/20200925/pdf/44n1052jj3zpzn.pdf",
+      "https://www.annualreports.com/HostedData/AnnualReportArchive/g/ASX_GMD_2022.pdf"
+    ]
+  },
+  {
+    "id": "5019.JP",
+    "classification": "split/consolidation basis; missing-data regression",
+    "finding": "FY2013\u201319 retained EDINET income/EPS-derived denominators were pre-2024 split, while later comparatives were post-split. Normalize old shares \u00d75 and EPS /5; preserve the real 2019 Showa Shell share issuance. All 14 fiscal periods survive. Raw denominators remain explicitly derived, not exact filed weighted-share counts.",
+    "status": "mixed-basis regression fixed; full baseline source approval pending",
+    "sources": [
+      "https://www.idemitsu.com/jp/news/2024/240514_4_en.pdf",
+      "https://www.idemitsu.com/jp/ir/library/shell/news/shell_101603_en.pdf"
+    ],
+    "observations": {
+      "splitDate": "2024-01-01",
+      "factor": 5,
+      "realMergerIssuedShares": 105000000
+    }
+  }
+]

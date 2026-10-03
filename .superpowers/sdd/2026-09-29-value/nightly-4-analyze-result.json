@@ -1,0 +1,12 @@
+{
+  "startedAt": 1791041827.852102,
+  "finishedAt": 1791041832.7052913,
+  "stage": "analyze",
+  "args": [
+    "--only=TSCO.US"
+  ],
+  "exit": 0,
+  "peakPrivateBytes": 2065960960,
+  "freeBytes": 6266896384,
+  "stop": null
+}

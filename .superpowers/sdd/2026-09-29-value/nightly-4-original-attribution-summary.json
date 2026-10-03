@@ -1,0 +1,973 @@
+{
+  "records": 139,
+  "remainingFlips": 139,
+  "mechanical": {
+    "counterfactual reproduced": 120,
+    "UNEXPLAINED": 19
+  },
+  "classification": {
+    "missing-data regression": 30,
+    "share/price basis — requires action or issuer validation": 54,
+    "rule-version difference — fiscal window changed": 8,
+    "source selection/restatement — requires issuer validation": 20,
+    "rule-version difference": 4,
+    "UNEXPLAINED": 19,
+    "new fiscal year added": 4
+  },
+  "unreproducedNew": [],
+  "missingDataRegressions": [
+    [
+      "001440.KO",
+      "moat"
+    ],
+    [
+      "001440.KO",
+      "management"
+    ],
+    [
+      "001440.KO",
+      "understandable"
+    ],
+    [
+      "001440.KO",
+      "accounting"
+    ],
+    [
+      "001440.KO",
+      "economics"
+    ],
+    [
+      "601618.SHG",
+      "moat"
+    ],
+    [
+      "601618.SHG",
+      "management"
+    ],
+    [
+      "601618.SHG",
+      "understandable"
+    ],
+    [
+      "601618.SHG",
+      "accounting"
+    ],
+    [
+      "601618.SHG",
+      "economics"
+    ],
+    [
+      "EMEIS.PA",
+      "moat"
+    ],
+    [
+      "EMEIS.PA",
+      "management"
+    ],
+    [
+      "EMEIS.PA",
+      "understandable"
+    ],
+    [
+      "EMEIS.PA",
+      "accounting"
+    ],
+    [
+      "EMEIS.PA",
+      "economics"
+    ],
+    [
+      "IAG.AU",
+      "moat"
+    ],
+    [
+      "IAG.AU",
+      "management"
+    ],
+    [
+      "IAG.AU",
+      "understandable"
+    ],
+    [
+      "IAG.AU",
+      "accounting"
+    ],
+    [
+      "IAG.AU",
+      "economics"
+    ],
+    [
+      "KMD.AU",
+      "moat"
+    ],
+    [
+      "KMD.AU",
+      "management"
+    ],
+    [
+      "KMD.AU",
+      "understandable"
+    ],
+    [
+      "KMD.AU",
+      "accounting"
+    ],
+    [
+      "KMD.AU",
+      "economics"
+    ],
+    [
+      "PDI.AU",
+      "moat"
+    ],
+    [
+      "PDI.AU",
+      "management"
+    ],
+    [
+      "PDI.AU",
+      "understandable"
+    ],
+    [
+      "PDI.AU",
+      "accounting"
+    ],
+    [
+      "PDI.AU",
+      "economics"
+    ]
+  ],
+  "diskFree": 6173773824,
+  "fiscalHistoryLoss": [
+    {
+      "id": "001440.KO",
+      "test": "moat",
+      "lostYears": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "001440.KO",
+      "test": "management",
+      "lostYears": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "001440.KO",
+      "test": "understandable",
+      "lostYears": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "001440.KO",
+      "test": "accounting",
+      "lostYears": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "001440.KO",
+      "test": "economics",
+      "lostYears": [
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "3457.JP",
+      "test": "management",
+      "lostYears": [
+        2013
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "5019.JP",
+      "test": "management",
+      "lostYears": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "601618.SHG",
+      "test": "moat",
+      "lostYears": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "601618.SHG",
+      "test": "management",
+      "lostYears": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "601618.SHG",
+      "test": "understandable",
+      "lostYears": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "601618.SHG",
+      "test": "accounting",
+      "lostYears": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "601618.SHG",
+      "test": "economics",
+      "lostYears": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "CBG.LSE",
+      "test": "moat",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "CBG.LSE",
+      "test": "understandable",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "EMEIS.PA",
+      "test": "moat",
+      "lostYears": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "EMEIS.PA",
+      "test": "management",
+      "lostYears": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "EMEIS.PA",
+      "test": "understandable",
+      "lostYears": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "EMEIS.PA",
+      "test": "accounting",
+      "lostYears": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "EMEIS.PA",
+      "test": "economics",
+      "lostYears": [
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "GMD.AU",
+      "test": "management",
+      "lostYears": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "GMD.AU",
+      "test": "economics",
+      "lostYears": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "IAG.AU",
+      "test": "moat",
+      "lostYears": [
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "IAG.AU",
+      "test": "management",
+      "lostYears": [
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "IAG.AU",
+      "test": "understandable",
+      "lostYears": [
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "IAG.AU",
+      "test": "accounting",
+      "lostYears": [
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "IAG.AU",
+      "test": "economics",
+      "lostYears": [
+        1998,
+        1999,
+        2000,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "KMD.AU",
+      "test": "moat",
+      "lostYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "KMD.AU",
+      "test": "management",
+      "lostYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "KMD.AU",
+      "test": "understandable",
+      "lostYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "KMD.AU",
+      "test": "accounting",
+      "lostYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "KMD.AU",
+      "test": "economics",
+      "lostYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "MU.US",
+      "test": "economics",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "PDI.AU",
+      "test": "moat",
+      "lostYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "PDI.AU",
+      "test": "management",
+      "lostYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "PDI.AU",
+      "test": "understandable",
+      "lostYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "PDI.AU",
+      "test": "accounting",
+      "lostYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "PDI.AU",
+      "test": "economics",
+      "lostYears": [
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "TSCO.US",
+      "test": "management",
+      "lostYears": [
+        2009
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "TSCO.US",
+      "test": "economics",
+      "lostYears": [
+        2009
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    }
+  ]
+}

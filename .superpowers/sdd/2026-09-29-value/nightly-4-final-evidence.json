@@ -1,0 +1,267 @@
+{
+  "recommendation": "KEEP HOLD",
+  "originalFlips": 139,
+  "records": 139,
+  "remainingQualityFlips": 106,
+  "adjudication": {
+    "RESOLVED \u2014 no remaining flip": 33,
+    "UNEXPLAINED": 94,
+    "FILING-BACKED (sampled)": 12
+  },
+  "mechanical": {
+    "missing-data regression fixed": 32,
+    "counterfactual reproduced": 87,
+    "no remaining flip": 1,
+    "UNEXPLAINED": 19
+  },
+  "unreproducedBaselines": 19,
+  "qualityToNaRegressions": [],
+  "cohortFiscalHistoryLoss": [
+    {
+      "id": "3457.JP",
+      "test": "management",
+      "lostYears": [
+        2013
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "CBG.LSE",
+      "test": "moat",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "CBG.LSE",
+      "test": "understandable",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "MU.US",
+      "test": "economics",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    }
+  ],
+  "allPublishedHistoryStartLosses": [
+    {
+      "id": "EVN.AU",
+      "before": {
+        "years": 22,
+        "first": 2005,
+        "last": 2026,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 21,
+        "first": 2006,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "AENA.MC",
+      "before": {
+        "years": 15,
+        "first": 2011,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 12,
+        "first": 2014,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "NTRS.US",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 17,
+        "first": 2009,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "3457.JP",
+      "before": {
+        "years": 14,
+        "first": 2013,
+        "last": 2026,
+        "source": "edinet"
+      },
+      "after": {
+        "years": 13,
+        "first": 2014,
+        "last": 2026,
+        "source": "edinet"
+      }
+    },
+    {
+      "id": "CBG.LSE",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1997,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "HMSO.LSE",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 26,
+        "first": 2000,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "FDS.US",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1997,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "MU.US",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1997,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "4043.JP",
+      "before": {
+        "years": 14,
+        "first": 2013,
+        "last": 2026,
+        "source": "edinet"
+      },
+      "after": {
+        "years": 13,
+        "first": 2014,
+        "last": 2026,
+        "source": "edinet"
+      }
+    },
+    {
+      "id": "JBL.US",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1997,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "EQNR.OL",
+      "before": {
+        "years": 28,
+        "first": 1998,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 26,
+        "first": 2000,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    }
+  ],
+  "sameYearSeriesNulls": 105,
+  "dossiers": {
+    "before": 2708,
+    "after": 2708,
+    "added": [],
+    "removed": []
+  },
+  "coverage": {
+    "jobs": 38056,
+    "versions": {
+      "25": 38056
+    },
+    "missingAnalysis": [],
+    "missingFingerprints": [],
+    "missingOrStaleMemberSnapshots": [],
+    "emptyMemberSnapshots": [
+      {
+        "id": "457190.KO",
+        "status": "insufficient_data"
+      }
+    ]
+  },
+  "sources": {
+    "checked": 26801,
+    "changed": []
+  },
+  "baseline": {
+    "root": ".fix5c/nightly-2/live-current",
+    "checked": 5081,
+    "changed": []
+  },
+  "hold": [
+    {
+      "path": "/Users/miki/value-corpus/publish.hold",
+      "sha256": "a5defda8067e82dee447d696da4a00975a7e05fe1b5a785a8f1059ccf7a6de0e"
+    }
+  ],
+  "networkDispatches": {
+    "api.typesafe.ai": 242
+  },
+  "tests": {
+    "files": 10,
+    "passed": 161
+  },
+  "typecheckExit": 0,
+  "diskFreeBytes": 6173573120,
+  "pipelineVersion": "25"
+}

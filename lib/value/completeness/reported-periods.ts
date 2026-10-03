@@ -4,6 +4,11 @@ import type {Year} from '../types';
  * Require both issuer-reported comparative fingerprints before correcting it;
  * this is not a general fiscal-calendar inference. */
 export function restoreReportedPeriods(id:string,years:Year[]):Year[]{
+ if(id==='TSCO.US')return years.map(y=>{
+  const end=y.end==='2008-12-31'?'2008-12-27':y.end==='2009-12-31'?'2009-12-26':null;
+  if(!end||y.currency!=='USD')return y;
+  return {...y,end,provenance:{...y.provenance,end:{source:'https://www.sec.gov/Archives/edgar/data/916365/000091636511000013/tractorsuppy10kfeb232011.htm',field:'annual reporting period',method:'reported' as const,inputs:[`Provider date: ${y.end}`,'2010 10-K identifies comparative fiscal years ended December 27, 2008 and December 26, 2009. Comparative net income was restated for inventory accounting; unequal totals must not create duplicate annual periods.']}}};
+ });
  if(id==='OCA.AU')return years.map(y=>{
   if(y.fy<2021||!y.end.endsWith('-05-31'))return y;
   return {...y,end:`${y.fy}-03-31`,provenance:{...y.provenance,end:{source:'https://oceaniahealthcare.co.nz/investor-centre/reports-presentations/',field:'annual reporting period',method:'reported' as const,inputs:['From 2021 our balance date is 31 March. Prior to 2021 our balance date was 31 May.']}}};

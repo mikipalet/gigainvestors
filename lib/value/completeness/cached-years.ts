@@ -1,4 +1,5 @@
 import {secondaryListingYears} from './listing-units';
+import {retainCompletionHistory} from './retain-history';
 import {fillYears} from './second-sources';
 import {deriveYears} from '../derive';
 import {annualFiscalYear} from '../fiscal-period';
@@ -25,11 +26,14 @@ export function completeCompanyMetadata(company:Company,read:<T>(path:string)=>T
 /** Restore source observations before integrity checks; never manufacture history. */
 export function completeCachedYears(company:Pick<Company,'id'|'cik'|'source'>,years:Year[],read:<T>(path:string)=>T|null):Year[]{
  const verified=read<VerifiedSource>(`completeness/verified/${company.id}.json`);
+ const cached=read<Fundamentals>(`fundamentals/${company.id}.json`);
+ const context:Fundamentals={id:company.id,currency:cached?.currency??years.at(-1)?.currency??'',fetchedAt:cached?.fetchedAt??'',integrity:{ok:true,reasons:[]},years:[],splits:completeCachedSplits(company.id,cached?.splits,read)};
+ const merge=(primary:Year[],secondary:Year[],prior=primary)=>retainCompletionHistory(prior,fillYears(primary,secondary),context);
  const translate=(ys:Year[])=>translatePresentationCurrency(ys,verified?.id===company.id?verified.currencyTranslations??[]:[]);
  let result=translate(years.map(y=>({...y,fy:annualFiscalYear(y.end)})));
  if(verified?.id===company.id){
   const incoming=translate(verified.fundamentals.years);
-  result=(incoming.at(-1)?.end??'')>=(result.at(-1)?.end??'')?fillYears(incoming,result):fillYears(result,incoming);
+  result=(incoming.at(-1)?.end??'')>=(result.at(-1)?.end??'')?merge(incoming,result,result):merge(result,incoming);
  }
  // A newer secondary listing may repair the latest currency label. Restore
  // the original listing's raw history only after choosing that currency;
@@ -55,7 +59,7 @@ export function completeCachedYears(company:Pick<Company,'id'|'cik'|'source'>,ye
  }
  for(const source of ['yahoo','edinet']){
   const cache=read<Year[]>(`completeness/${source}/${company.id}.json`);
-  if(cache)result=fillYears(result,translate(secondaryListingYears(company.id,cache)));
+  if(cache)result=merge(result,translate(secondaryListingYears(company.id,cache)));
  }
  const predecessor=issuerPredecessors[company.id];
  if(predecessor){

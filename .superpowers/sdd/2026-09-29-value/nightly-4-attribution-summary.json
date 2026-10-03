@@ -1,0 +1,56 @@
+{
+  "records": 139,
+  "remainingFlips": 106,
+  "mechanical": {
+    "missing-data regression fixed": 30,
+    "counterfactual reproduced": 87,
+    "no remaining flip": 3,
+    "UNEXPLAINED": 19
+  },
+  "classification": {
+    "missing-data regression": 30,
+    "share/price basis — requires action or issuer validation": 53,
+    "UNEXPLAINED": 22,
+    "rule-version difference — fiscal window changed": 6,
+    "source selection/restatement — requires issuer validation": 20,
+    "rule-version difference": 4,
+    "new fiscal year added": 4
+  },
+  "unreproducedNew": [],
+  "missingDataRegressions": [],
+  "diskFree": 6167375872,
+  "fiscalHistoryLoss": [
+    {
+      "id": "3457.JP",
+      "test": "management",
+      "lostYears": [
+        2013
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "CBG.LSE",
+      "test": "moat",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "CBG.LSE",
+      "test": "understandable",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "MU.US",
+      "test": "economics",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    }
+  ]
+}

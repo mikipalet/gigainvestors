@@ -61,7 +61,8 @@ export function alignHistoryShares(f:Fundamentals,_prices:PriceHistory):Fundamen
   const action=actions.flatMap(s=>[s,{...s,factor:1/s.factor}]).filter(s=>s.factor>0&&Math.max(s.factor,1/s.factor)>=1.5
    &&s.date>before.end&&s.date<=observedThrough
    &&Date.parse(s.date)-Date.parse(before.end)<=6*366*86400000
-   &&(s.date<=after.end||(before.basicEps||before.dilutedEps||after.basicEps||after.dilutedEps))
+   &&(s.date<=after.end||(before.basicEps||before.dilutedEps||after.basicEps||after.dilutedEps)
+     ||issuerSplits[f.id]?.some(verified=>verified.date===s.date&&verified.factor===s.factor))
    &&Math.abs(ratio/s.factor-1)<.12).sort((a,b)=>Math.abs(ratio/a.factor-1)-Math.abs(ratio/b.factor-1))[0];
   if(!action)continue;
   const totals=(['netIncome','equity','totalAssets','revenue'] as const).filter(key=>before[key]!=null&&after[key]!=null&&before[key]!==0);

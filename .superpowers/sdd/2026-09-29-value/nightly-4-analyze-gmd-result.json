@@ -1,0 +1,12 @@
+{
+  "startedAt": 1791040387.7238722,
+  "finishedAt": 1791040392.6286254,
+  "stage": "analyze",
+  "args": [
+    "--only=GMD.AU"
+  ],
+  "exit": 0,
+  "peakPrivateBytes": 1728430080,
+  "freeBytes": 6799069184,
+  "stop": null
+}

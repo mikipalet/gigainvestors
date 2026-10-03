@@ -170,3 +170,12 @@
  .main-view[data-historical=true] .main-next-row .since-return{margin-left:0}
  .value-page .compact-company-list .since-return{font-size:13px;white-space:normal}
 }
+
+/* Past-quarter outcomes need a second answer line; reserve its height. */
+@media(min-width:768px){
+ .main-view[data-historical=true] .shelf-near-grid{--shelf-rows:1}
+ @container shelf (min-height:476px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:2}}
+ @container shelf (min-height:696px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:3}}
+ @container shelf (min-height:916px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:4}}
+ @container shelf (min-height:1136px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:5}}
+}

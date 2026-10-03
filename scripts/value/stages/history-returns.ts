@@ -20,7 +20,7 @@ export default async function historyReturns(options:{only?:string[];limit?:numb
  const day=new Date().toISOString().slice(0,10),limit=createLimiter({perSecond:5});
  const failed:Array<{id:string;reason:string}>=[];let written=0,cached=0;
  await pool({items:[...ids].filter(id=>!options.only||options.only.includes(id)).slice(0,options.limit),concurrency:5,run:async id=>{
-  const disk=statfsSync('/');if(disk.bavail*disk.bsize<5*1024**3)throw Error('DISK STOP: below 5 GiB');
+  const disk=statfsSync('/');if(disk.bavail*disk.bsize<Number(process.env.VALUE_MIN_FREE_GB??5)*1024**3)throw Error('DISK STOP: below configured free-space floor');
   const old=readCorpusJson<ReturnPrices>(`history-return-prices/${id}.json`);
   if(!options.force&&old?.fetchedAt===day){cached++;return;}
   const delisted=readCorpusJson<{General?:{IsDelisted?:boolean}}>(`raw/eodhd/${id}.json`)?.General?.IsDelisted===true;

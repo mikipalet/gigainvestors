@@ -1,3 +1,4 @@
+import {readVerdictFreeze,applyVerdictFreeze} from '../verdict-freeze';
 import historyReturns from './history-returns';
 import {numericMemo} from '../../../lib/value/owner-memo';
 import {memoStatementYears} from '../../../lib/value/memo-inputs';
@@ -203,6 +204,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   holdersByTicker: Record<string, string[]>;
   investorNames: Record<string, string>;
 }): { count: number; changed: boolean } {
+  const freeze=readVerdictFreeze(previousDossiers ? path.dirname(previousDossiers) : repo);
   // Read the fetched snapshot before replacing meta.json or creating an orphan commit.
   const metaFile = path.join(repo, "meta.json");
   const previous = existsSync(metaFile) ? JSON.parse(readFileSync(metaFile, "utf8")) : null;
@@ -224,6 +226,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     }
   }
   for (const analysis of analyses) if (allowedIds.has(analysis.id)) merged.set(analysis.id, analysis);
+  for(const [id,dossier] of Object.entries(freeze.dossiers)) merged.set(id,dossier);
   const identities = new Map(universe.map(company => [company.id, company]));
   const rows = [...merged.values()].map(analysis => ({ ...analysis, company: enrichedCompany({...analysis.company, indexes: identities.get(analysis.id)?.indexes ?? [], listings: identities.get(analysis.id)?.listings ?? analysis.company.listings}) }));
   if (!force && (rows.length === 0 || rows.length < previousCount * (1 - T.publish.maxCountDrop))) {
@@ -254,7 +257,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     const removed: string[] = [];
     for (const file of readdirSync(previousDirectory).filter(file => /^\d{3}\.json$/.test(file))) {
       const prior = JSON.parse(readFileSync(path.join(previousDirectory,file),'utf8'));
-      for (const id of Object.keys(prior)) if (allowedIds.has(id) && !emitted.has(id)) removed.push(id);
+      for (const id of Object.keys(prior)) if (allowedIds.has(id) && !emitted.has(id) && !freeze.ids.has(id)) removed.push(id);
     }
     if (removed.length) throw new Error(`Publish aborted: previously published members would disappear: ${removed.sort().join(', ')}`);
   }
@@ -296,6 +299,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     const asset=logo?.match(/^\/api\/value\/logo\?asset=([a-f0-9]{64})$/)?.[1];
     if(asset){const cached=readCorpusJson(`enrichment-v7/logos/assets/${asset}.json`);if(!cached)throw Error(`Missing logo asset ${asset}`);files[`logos/${asset}.json`]=cached;}
   }
+  applyVerdictFreeze(files,freeze);
   forwardFiles(repo, files, universe, readPrices(path.join(repo, 'prices')), new Date().toISOString().slice(0,10));
   publishViews(files);
   writeOutput({ repo, files });

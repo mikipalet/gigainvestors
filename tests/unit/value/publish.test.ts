@@ -821,3 +821,46 @@ it('keeps predecessor-backed test verdicts findable when a different test remain
  const meta=read('meta.json'),browse=[meta.views.current,...meta.views.deferred].flatMap(f=>unpackView(read(f)));
  expect(matchesView(browse[0],{gate:'0'})).toBe(true);expect(matchesView(browse[0],{near:'1'})).toBe(false);
 });
+
+it('freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal', async()=>{
+ const {default:publish}=await import('@/scripts/value/stages/publish');
+ const old=analysis(), next=analysis('PEP.US'), live=path.join(corpusDir(),'publish-repo');
+ mkdirSync(live);
+ publishSnapshot({repo:live,analyses:[old,next],universe:[old.company,next.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ mkdirSync(path.join(live,'history'));
+ const historyRow=[old.id,'PPPPP',0.5,true,23];
+ writeFileSync(path.join(live,'history/2025.json'),JSON.stringify([historyRow])+'\n');
+ const snapshot=Object.fromEntries(['dossiers','index','search','history'].flatMap(dir=>readdirSync(path.join(live,dir)).map(f=>[`${dir}/${f}`,readFileSync(path.join(live,dir,f),'utf8')])));
+ writeCorpusJson('verdict-freeze.json',{version:1,ids:[old.id]});
+ old.company.name='Unverified renamed issuer';old.company.country='CA';old.tests.moat.result=old.tests.moat.numeric='fail';
+ next.tests.management.result=next.tests.management.numeric='fail';
+ writeFileSync(path.join(corpusDir(),'universe.jsonl'),[old.company,next.company].map(c=>JSON.stringify(c)).join('\n')+'\n');
+ writeCorpusJson('index-membership/latest.json',{complete:true,memberships:{[old.id]:['S&P 500'],[next.id]:['S&P 500']}});
+ for(const a of [old,next])writeCorpusJson(`analysis/${a.id}.json`,a);
+ // A fresh local --out must take its freeze from publish-repo, never from its empty destination.
+ const out=path.join(corpusDir(),'out');await publish({out});
+ const read=(root:string,file:string)=>JSON.parse(readFileSync(path.join(root,file),'utf8'));
+ const frozen=JSON.parse(snapshot[`dossiers/${shardOf(old.id)}.json`])[old.id];
+ for(const root of [out,live]){
+  if(root===live)publishSnapshot({repo:live,analyses:[old,next],universe:[old.company,next.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+  expect(JSON.stringify(read(root,`dossiers/${shardOf(old.id)}.json`)[old.id])).toBe(JSON.stringify(frozen));
+  for(const [file,text]of Object.entries(snapshot)){
+   const prior=JSON.parse(text);
+   if(file.startsWith('index/')||file==='history/companies.json')expect(read(root,file).filter((r:any)=>r.id===old.id)).toEqual(prior.filter((r:any)=>r.id===old.id));
+   if(file==='history/2025.json')expect(read(root,file).filter((r:any)=>r[0]===old.id)).toEqual([historyRow]);
+   if(file.startsWith('search/')&&file!=='search/manifest.json')expect(read(root,file).rows.filter((r:any)=>r[0]===old.id)).toEqual(prior.rows.filter((r:any)=>r[0]===old.id));
+  }
+  expect(read(root,`dossiers/${shardOf(next.id)}.json`)[next.id].tests.management.result).toBe('fail');
+ }
+ expect(readFileSync(path.join(corpusDir(),'staging/verdict-freeze.jsonl'),'utf8')).toContain('frozen until second-source check');
+ expect(readdirSync(out)).not.toContain('verdict-freeze.jsonl');
+ writeCorpusJson('verdict-freeze.json',{version:1,ids:[]});
+ publishSnapshot({repo:live,analyses:[old,next],universe:[old.company,next.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ expect(read(live,`dossiers/${shardOf(old.id)}.json`)[old.id].tests.moat.result).toBe('fail');
+});
+
+it('rejects a freeze without its previous live dossier before writing output',()=>{
+ const repo=directory(),a=analysis();writeCorpusJson('verdict-freeze.json',{version:1,ids:[a.id]});
+ expect(()=>publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}})).toThrow(/Frozen.*KO.US.*missing/i);
+ expect(readdirSync(repo)).toEqual([]);
+});

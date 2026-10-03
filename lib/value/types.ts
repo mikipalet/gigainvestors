@@ -35,9 +35,14 @@ export interface Company {
   source: "eodhd" | "edinet" | "esef";
 }
 
+export interface PredecessorBasis {
+  parent: string; segment: string; basis: 'segment' | 'combined'; source: string; detail: string;
+}
+
 // One fiscal year, reporting currency, absolute units. null = not reported.
 // Sign convention: capex, buybacks, dividendsPaid, acquisitions are POSITIVE amounts spent.
 export interface Year {
+  predecessor?: PredecessorBasis;
   maintenanceCapexJudgement?: number;
   disclosedMaintenanceCapex?: number;
   marginOperatingIncomeJudgement?: number;
@@ -235,6 +240,7 @@ export interface Analysis {
   author?: string;
   dataQualityFlags?: string[];
   shareCount?: { value: number; source: "yahoo-shares" };
+  predecessorHistory?: Array<PredecessorBasis & {fy:number}>;
   historyCoverage?: { years: number; first: number | null; last: number | null; source: string };
   requiredMos?: number; // Optional only for pre-history corpus compatibility.
   volatility?: Volatility;
@@ -355,7 +361,7 @@ export interface SearchShard {
 }
 
 /** Historical snapshot; r is realized cumulative price return, expected is the contemporary model IRR. */
-export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric, basis?: {annual:number;ttm:string;expected:number|null}];
+export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric, basis?: {annual:number;ttm:string;expected:number|null}, outcome?: {date:string;lastTraded?:boolean}];
 export interface HistorySummary {
   analysed: number;
   qualityPasses: number;
@@ -371,7 +377,7 @@ export interface HistorySummary {
   hitRateAtBuy: number | null;
   hitRateQuality: number | null;
   hitRateAll: number | null;
-  /** Secondary arithmetic means, retained for existing consumers. */
+  /** Equal-weight absolute price returns, precomputed for the historical headline. */
   avgReturnAtBuy: number | null;
   avgReturnQuality: number | null;
   avgReturnAll: number | null;

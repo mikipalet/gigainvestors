@@ -159,3 +159,23 @@
  @container shelf (min-height:413px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:3}}
  @container shelf (min-height:545px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:4}}
 }
+
+/* Historical outcome labels; Today and shared chrome retain their existing rules. */
+.since-return{font-size:clamp(13px,1.1vw,18px);line-height:1.2;font-weight:500;letter-spacing:0;font-variant-numeric:tabular-nums;color:inherit}
+.value-page .index-story h1[data-historical=true]{white-space:normal}
+.main-view[data-historical=true] .shelf-answer .since-return{white-space:nowrap}
+.main-view[data-historical=true] .main-next-row .since-return{margin-left:auto}
+.main-view[data-historical=true] .main-buy-row:not(.shelf-hero) .shelf-answer{flex-direction:column;align-items:flex-end;max-width:100%}
+@media(max-width:767px){
+ .main-view[data-historical=true] .main-next-row .since-return{margin-left:0}
+ .value-page .compact-company-list .since-return{font-size:13px;white-space:normal}
+}
+
+/* Past-quarter outcomes need a second answer line; reserve its height. */
+@media(min-width:768px){
+ .main-view[data-historical=true] .shelf-near-grid{--shelf-rows:1}
+ @container shelf (min-height:476px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:2}}
+ @container shelf (min-height:696px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:3}}
+ @container shelf (min-height:916px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:4}}
+ @container shelf (min-height:1136px){.main-view[data-historical=true] .shelf-near-grid{--shelf-rows:5}}
+}

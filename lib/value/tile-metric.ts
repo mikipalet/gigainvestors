@@ -61,6 +61,7 @@ export function tileReason(test:TestOutcome):string {
 export function tileSentence(test:TestOutcome, metric:TileMetric, kind:Kind):string {
  if(test.insufficientHistory!==undefined)return 'Not enough history yet';
  if(test.key==='price')return priceFraming(metric.value,1-metric.threshold).headline;
+ if(test.result==='unclear'||test.result==='na')return '';
  return plainRuleSentence(test,kind);
 }
 

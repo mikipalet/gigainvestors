@@ -1,0 +1,108 @@
+{
+  "baseline": {
+    "head": "634f80f3cc7c9b3d73759843c6b29cc4d386253f",
+    "files": 5081,
+    "bytes": 155008507
+  },
+  "mergeParent": "829adfad148a230942da9235a866c2ccf8cde81f",
+  "branchParent": "fbbf819",
+  "unit": {
+    "files": 176,
+    "passed": 1833,
+    "skipped": 1,
+    "exit": 0
+  },
+  "typecheckExit": 0,
+  "build": {
+    "exit": 0,
+    "mode": "webpack production compile",
+    "store": "/tmp/value-spinoff-store"
+  },
+  "consistency": {
+    "dossiers": 2708,
+    "qualityRules": 13177,
+    "irrChecks": 1971,
+    "cashCovered": 41,
+    "renderedPassed": 10,
+    "renderedFailed": 0
+  },
+  "scope": {
+    "uniqueIds": 77,
+    "originalShortCohort": 77,
+    "predecessorsWithinCohort": 10,
+    "remainingInsufficient": 67,
+    "dossiersChanged": 77,
+    "unrelatedDossiersChanged": 0
+  },
+  "screenshotChecks": 8,
+  "screenshotGeometryIssues": 0,
+  "releaseGate": {
+    "states": 989,
+    "failedStates": 326,
+    "whitespaceOnlyFailedStates": 326,
+    "nonWhitespaceFailures": [],
+    "cutFailures": 0,
+    "overlapFailures": 0,
+    "rawExit": 1,
+    "byViewport": {
+      "1728x970": 248,
+      "2056x1180": 248,
+      "1440x800": 248,
+      "390x844": 245
+    },
+    "paths": [
+      "/",
+      "/7203.jp",
+      "/?q=2018Q3",
+      "/?year=2011",
+      "/adbe.us",
+      "/arm.us",
+      "/cbg.lse",
+      "/fdxf.us",
+      "/googl.us",
+      "/hona.us",
+      "/jpm.us",
+      "/kalmar.he",
+      "/ko.us",
+      "/lulu.us",
+      "/plx.pa",
+      "/reliance.nse",
+      "/sdz.sw",
+      "/sndk.us",
+      "/solv.us",
+      "/syens.br",
+      "/tkms.xetra",
+      "/vlto.us",
+      "/wkl.as"
+    ],
+    "predecessorStates": 428,
+    "maxRasterEmptyAreaPct": 48.68392271235873,
+    "lulu1440Depth": [
+      {
+        "width": 1440,
+        "height": 800,
+        "path": "/lulu.us",
+        "state": "In depth \u2197",
+        "file": "1440x800-_lulu_us-2-In_depth__.png",
+        "issues": [
+          "raster empty area 15.2% > 15%"
+        ],
+        "widthUse": 1,
+        "screens": 1,
+        "top": 0,
+        "bottom": 800,
+        "left": 880,
+        "right": 1440,
+        "emptyBottomPct": 2.72265625,
+        "scrolling": [],
+        "tabs": 0,
+        "emptyAreaPct": 15.185714285714285,
+        "largestBlockHeight": 24
+      }
+    ]
+  },
+  "disk": {
+    "minimumFreeBytesAtFinalValidation": 10152693760,
+    "freeBytesAtFinalValidation": 10139762688
+  }
+}

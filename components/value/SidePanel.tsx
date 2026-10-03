@@ -1,6 +1,24 @@
 'use client';
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 
+// Measured per screen height across the reference companies (widest content that fits at 14px); one width per drawer type.
+const EVIDENCE_WIDTHS:Record<'short'|'mid'|'tall',Record<string,number>>={
+  short:{understandable:400,moat:680,economics:600,management:480,accounting:480,price:500},
+  mid:{understandable:300,moat:400,economics:340,management:480,accounting:480,price:380},
+  tall:{understandable:320,moat:340,economics:380,management:360,accounting:340,price:300},
+};
+const evidenceWidth=(test:string)=>EVIDENCE_WIDTHS[innerHeight<850?'short':innerHeight<1050?'mid':'tall'][test]??400;
+const lowestText=(root:Element)=>Math.max(0,...[...root.querySelectorAll('p,li,td,th,h3,h4,a,small,figcaption,blockquote')].map(el=>el.getBoundingClientRect().bottom));
+const panelWidth=(share:number,min:number,max:number)=>Math.min(innerWidth,Math.round(Math.min(max,Math.max(min,innerWidth*share))/20)*20);
+function largestFont(dialog:HTMLElement,property:string,fits:()=>boolean,max:number):number{
+  let low=13,high=max;
+  dialog.style.setProperty(property,`${low}px`);
+  if(dialog.style.setProperty(property,`${high}px`),fits())return high;
+  for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty(property,`${mid}px`);if(fits())low=mid;else high=mid;}
+  dialog.style.setProperty(property,`${low}px`);
+  return low;
+}
+
 /** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted evidence. */
 export function SidePanel({ title, onClose, children, wide = false, compact = false }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; compact?:boolean }) {
   const [closing,setClosing]=useState(false);
@@ -60,99 +78,63 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       }
       const business=dialog.querySelector<HTMLElement>('.owner-memo-depth');
       if(business){
+        // One width per screen for every company (owner rule); only columns and type size adapt to the memo.
+        dialog.style.width=`${panelWidth(.35,560,680)}px`;
         const available=business.parentElement!.clientHeight-16;
-        const fits=()=>business.scrollHeight<=available&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1);
-        let best:{width:number;font:number;used:number;columns:number;leading:number}|undefined;
-        const annualBars=innerHeight>=1050;
-        const compactWidth=innerHeight<850||annualBars;
-        const fillTarget=available*(compactWidth?.94:.98);
-        for(const leading of innerHeight<850||annualBars?[1.35,1.2]:[1.35]){
-          dialog.style.setProperty('--memo-leading',String(leading));
-          for(const columns of [1,2,3]){
-            if(columns===1&&business.dataset.profile==='true')continue;
-            business.style.columnCount=String(columns);
-            for(let width=columns===1?280:columns*200;width<=Math.min(innerWidth,1400);width+=20){
-              // Keep a compact, readable fit. Try another column count when
-              // the existing fit is pinned near the minimum font size.
-              if(best&&best.used>=fillTarget&&(compactWidth||columns===best.columns||best.font>=13.5)&&width>best.width*(compactWidth?1.08:1.3))break;
-              dialog.style.width=`${width}px`;dialog.style.setProperty('--memo-font','13px');
-              if(!fits())continue;
-              let low=13,high=24;
-              for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty('--memo-font',`${mid}px`);if(fits())low=mid;else high=mid;}
-              dialog.style.setProperty('--memo-font',`${low}px`);
-              // Tall-screen annual bars already add vertical space to each row.
-              if(!annualBars&&leading===1.2&&low>=15)continue;
-              const candidate={width,font:low,used:business.scrollHeight,columns,leading};
-              if(leading===1.2&&best&&candidate.width>best.width*.95&&candidate.font<=best.font)continue;
-              const full=candidate.used>=fillTarget,previousFull=best&&best.used>=fillTarget;
-              // Text-only tables need enough type per column width; choosing
-              // width alone can strand small numbers in very wide columns.
-              const denser=best&&candidate.font*candidate.columns/candidate.width>best.font*best.columns/best.width;
-              const preferred=best&&(compactWidth?(candidate.width<best.width||candidate.width<=best.width*1.08&&candidate.font>best.font+1):denser);
-              if(!best||full&&!previousFull||full===!!previousFull&&(full?preferred:candidate.used>best.used))best=candidate;
-              if(candidate.used>=fillTarget)break;
-            }
-          }
+        const fits=()=>business.scrollHeight<=available&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1)&&lowestText(business)<=business.parentElement!.getBoundingClientRect().bottom-8;
+        dialog.style.setProperty('--memo-leading',String(innerHeight<850?1.2:1.35));
+        let best={columns:3,font:13,used:0};
+        for(let columns=Math.max(1,Math.min(3,business.children.length));columns>=1;columns--){
+          business.style.columnCount=String(columns);
+          const font=largestFont(dialog,'--memo-font',fits,20),used=business.scrollHeight;
+          if(fits()&&used>best.used)best={columns,font,used};
+          if(used>=available*.92)break;
         }
-        if(best){dialog.style.width=`${best.width}px`;dialog.style.setProperty('--memo-font',`${best.font}px`);dialog.style.setProperty('--memo-leading',String(best.leading));business.style.columnCount=String(best.columns);}
+        business.style.columnCount=String(best.columns);dialog.style.setProperty('--memo-font',`${best.font}px`);
         return;
       }
       const article=dialog.querySelector<HTMLElement>('.evidence-layout');
       if(!article)return;
       const content=article.parentElement!;
-      const available=content.clientHeight-16;
-      // Fit the actual filing and table, then spend spare room on readable type.
-      // Width changes are bounded; charts keep their own responsive SVG geometry.
-      const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1);
-      const preferredMinimum=innerHeight<850&&!['accounting','management'].includes(article.dataset.test??'')?13:14;
-      // A larger starting size can rule out a useful narrow column. Retry the
-      // permitted minimum when that leaves a gap or overflows after chart sizing.
-      for(const minimum of preferredMinimum===14?[14,13]:[13]){
-        let best={width:280,font:minimum,used:0};
-        for(const width of Array.from({length:49},(_,i)=>280+i*10)){
-          dialog.style.width=`${Math.min(innerWidth,width)}px`;
-          dialog.dataset.readingColumns=width>=480?'2':'1';
-          dialog.style.setProperty('--reading-font',`${minimum}px`);
-          if(!fits())continue;
-          let low=minimum,high=24;
-          for(let i=0;i<6;i++){
-            const mid=(low+high)/2;dialog.style.setProperty('--reading-font',`${mid}px`);
-            if(fits())low=mid;else high=mid;
-          }
-          dialog.style.setProperty('--reading-font',`${low}px`);
-          const used=article.scrollHeight;
-          if(used>best.used)best={width,font:low,used};
-          if(used>=available*.99)break;
-        }
-        dialog.style.width=`${best.width}px`;
-        dialog.dataset.readingColumns=best.width>=480?'2':'1';
-        dialog.style.setProperty('--reading-font',`${best.font}px`);
-        if(article.scrollHeight<=available&&article.scrollHeight>=available*.92)break;
+      const available=content.clientHeight-28;
+      // One width per drawer type and screen, the same for every company (owner rule), sized for that type's widest content.
+      const width=Math.min(innerWidth,evidenceWidth(article.dataset.test??(article.dataset.valuation!==undefined?'price':'')));
+      dialog.style.width=`${width}px`;
+      const clipping=[...article.querySelectorAll<HTMLElement>('*')].filter(el=>!el.closest('svg')&&getComputedStyle(el).overflowY!=='visible');
+      const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1)&&clipping.every(el=>el.scrollHeight<=el.clientHeight+1)&&content.scrollHeight<=content.clientHeight+1&&lowestText(article)<=content.getBoundingClientRect().bottom-8;
+      // The width is fixed; the inner layout takes whichever column count allows the larger type (two only on wide drawers).
+      let best={columns:'1',font:0};
+      for(const columns of width>=480?['1','2']:['1']){
+        dialog.dataset.readingColumns=columns;
+        const font=largestFont(dialog,'--reading-font',fits,20);
+        if(fits()&&font>best.font+.5)best={columns,font};
       }
+      dialog.dataset.readingColumns=best.columns;dialog.style.setProperty('--reading-font',`${best.font||13}px`);
     };
-    let frame=0,active=true;
-    const schedule=()=>{if(active&&!frame&&!dialog.dataset.fitting)frame=requestAnimationFrame(()=>{frame=0;fit();});};
-    const resize=new ResizeObserver(schedule);
-    let observed:Element|null=null,revealed=false;
-    const watch=()=>{const el=dialog.querySelector('.evidence-layout,.owner-memo-depth,.method-sections');if(!revealed&&el&&el!==observed){if(observed)resize.unobserve(observed);resize.observe(el);observed=el;}return el;};
+    let active=true,settling=false,again=false;
+    let observed:Element|null=null;
+    const watch=()=>{const el=dialog.querySelector('.evidence-layout,.owner-memo-depth,.method-sections');if(el)observed=el;return el;};
     const fitted=watch();
-    // Fitted panels stay hidden until the final fonts are measured; otherwise the panel visibly re-fits after opening.
-    if(fitted)dialog.dataset.fitting='true';else fit();
-    // After the panel appears only window resizes and new content refit it; size feedback from charts would make it flip.
-    // Charts size themselves a frame or two after layout, so re-fit until two quiet frames pass (bounded), then reveal.
+    // Charts redraw a frame or two after a width change, so every fit repeats until the content size holds still (bounded).
+    // Fitted panels stay hidden until the first settled fit; afterwards only window resizes and new content refit them.
     const frames=()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
-    const reveal=async()=>{
-      const size=()=>{const el=observed as HTMLElement|null;return el?`${el.scrollHeight}x${el.scrollWidth}`:'';};
-      for(let round=0;round<6&&active;round++){fit();const before=size();await frames();if(size()===before)break;}
-      if(!active)return;delete dialog.dataset.fitting;revealed=true;resize.disconnect();
+    const size=()=>{const el=observed as HTMLElement|null;return el?`${el.scrollHeight}x${el.scrollWidth}`:'';};
+    const settle=async()=>{
+      if(settling){again=true;return;}
+      settling=true;
+      do{again=false;watch();for(let round=0;round<6&&active;round++){fit();const before=size();await frames();if(size()===before)break;}}while(again&&active);
+      settling=false;
+      if(active)delete dialog.dataset.fitting;
     };
-    let started=false;const start=()=>{if(started)return;started=true;void reveal();};
+    if(fitted)dialog.dataset.fitting='true';else fit();
+    let started=false;const start=()=>{if(started)return;started=true;void settle();};
     const fallback=setTimeout(start,1500);
     document.fonts.ready.then(()=>{clearTimeout(fallback);start();});
-    const observer=new MutationObserver(records=>{watch();if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))schedule();});
+    const schedule=()=>{if(started)void settle();};
+    const observer=new MutationObserver(records=>{if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))schedule();});
     observer.observe(dialog,{childList:true,subtree:true});
     window.addEventListener('resize',schedule);
-    return()=>{active=false;clearTimeout(fallback);observer.disconnect();resize.disconnect();cancelAnimationFrame(frame);window.removeEventListener('resize',schedule);};
+    return()=>{active=false;clearTimeout(fallback);observer.disconnect();window.removeEventListener('resize',schedule);};
   },[children]);
   return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.

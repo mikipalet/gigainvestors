@@ -1,0 +1,216 @@
+[
+  {
+    "id": "PLX.PA",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "financial"
+    ],
+    "numbers": 433
+  },
+  {
+    "id": "VLTO.US",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "financial"
+    ],
+    "numbers": 443
+  },
+  {
+    "id": "SDZ.SW",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "price",
+      "valuation",
+      "financial"
+    ],
+    "numbers": 511
+  },
+  {
+    "id": "SOLV.US",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "financial"
+    ],
+    "numbers": 446
+  },
+  {
+    "id": "KALMAR.HE",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "financial"
+    ],
+    "numbers": 426
+  },
+  {
+    "id": "TKMS.XETRA",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "financial"
+    ],
+    "numbers": 381
+  },
+  {
+    "id": "SNDK.US",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "financial"
+    ],
+    "numbers": 439
+  },
+  {
+    "id": "FDXF.US",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "financial"
+    ],
+    "numbers": 368
+  },
+  {
+    "id": "SYENS.BR",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "price",
+      "valuation",
+      "financial"
+    ],
+    "numbers": 539
+  },
+  {
+    "id": "HONA.US",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "financial"
+    ],
+    "numbers": 357
+  }
+]

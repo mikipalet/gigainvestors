@@ -1,0 +1,65 @@
+{
+  "states": 989,
+  "failedStates": 326,
+  "whitespaceOnlyFailedStates": 326,
+  "nonWhitespaceFailures": [],
+  "cutFailures": 0,
+  "overlapFailures": 0,
+  "rawExit": 1,
+  "byViewport": {
+    "1728x970": 248,
+    "2056x1180": 248,
+    "1440x800": 248,
+    "390x844": 245
+  },
+  "paths": [
+    "/",
+    "/7203.jp",
+    "/?q=2018Q3",
+    "/?year=2011",
+    "/adbe.us",
+    "/arm.us",
+    "/cbg.lse",
+    "/fdxf.us",
+    "/googl.us",
+    "/hona.us",
+    "/jpm.us",
+    "/kalmar.he",
+    "/ko.us",
+    "/lulu.us",
+    "/plx.pa",
+    "/reliance.nse",
+    "/sdz.sw",
+    "/sndk.us",
+    "/solv.us",
+    "/syens.br",
+    "/tkms.xetra",
+    "/vlto.us",
+    "/wkl.as"
+  ],
+  "predecessorStates": 428,
+  "maxRasterEmptyAreaPct": 48.68392271235873,
+  "lulu1440Depth": [
+    {
+      "width": 1440,
+      "height": 800,
+      "path": "/lulu.us",
+      "state": "In depth \u2197",
+      "file": "1440x800-_lulu_us-2-In_depth__.png",
+      "issues": [
+        "raster empty area 15.2% > 15%"
+      ],
+      "widthUse": 1,
+      "screens": 1,
+      "top": 0,
+      "bottom": 800,
+      "left": 880,
+      "right": 1440,
+      "emptyBottomPct": 2.72265625,
+      "scrolling": [],
+      "tabs": 0,
+      "emptyAreaPct": 15.185714285714285,
+      "largestBlockHeight": 24
+    }
+  ]
+}

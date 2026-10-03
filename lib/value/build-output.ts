@@ -3,7 +3,7 @@ import {consistentValuation} from './return-model';
 import {valuationMargin} from './valuation';
 import { METHOD_VERSION } from './method-version';
 import {indiaDepositarySymbols} from './india/symbols';
-import { isDecided, shortHistory, missingInvestmentNav } from './publication-eligibility';
+import { isDecided, isFindable, shortHistory, missingInvestmentNav } from './publication-eligibility';
 import { withAnalysisHistory } from './test-history';
 import { publicAnalysis } from './public-analysis';
 import { buyReturnInputs } from "./owner-return";
@@ -69,8 +69,9 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const rows: IndexRow[] = [];
   const westernFunnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   const funnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
-  for (const analysis of sorted) {
-    if (!isDecided(analysis)) {
+  for (const original of sorted) {
+    const analysis = isFindable(original) && shortHistory(original) ? {...original,status:"insufficient_data" as const,valuation:null} : original;
+    if (!isFindable(analysis)) {
       if (shortHistory(analysis) && !missingInvestmentNav(analysis)) {
         const dossier: Dossier={...analysis,methodVersion:METHOD_VERSION,w:null,b:false,holders:[],series:analysis.series??{}};
         const visible=publicAnalysis(dossier);visible.ownerMemo=memoAtPrice(visible,prices[analysis.id]);

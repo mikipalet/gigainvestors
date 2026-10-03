@@ -824,7 +824,7 @@
 .value-page dialog[data-side-panel] .compact-company-list[data-measuring=true] table{height:auto;flex:none}
 .value-page .compact-company-list[data-measuring=true] tbody,.value-page .compact-company-list[data-measuring=true] tbody tr{flex:none}
 @media(min-width:768px){
-.value-page dialog[data-side-panel]:has(.compact-company-list){width:336px}
+.value-page dialog[data-side-panel]:has(.compact-company-list){width:min(432px,100vw)}
 .value-page .compact-company-list[data-historical=true] tbody :is(th,td),.value-page .compact-company-list[data-historical=true] tbody th a{font-size:var(--list-font,16px);line-height:1.2}
 .value-page .owner-memo-depth[data-profile=true]{display:block;columns:2;column-gap:12px}
 .value-page .owner-memo-depth .memo-profile{break-inside:auto}

@@ -6,6 +6,7 @@ import * as edinet from "../../../lib/value/japan/edinet";
 import japan from "../../../scripts/value/stages/japan";
 import { appendJsonl, readCorpusJson, readJsonl, writeCorpusJson } from "../../../lib/value/corpus";
 import type { Company, Fundamentals, ReportMeta } from "../../../lib/value/types";
+import {checkIntegrity} from '../../../lib/value/integrity';
 const fixture=path.resolve('tests/fixtures/value/edinet');
 const data=JSON.parse(readFileSync(path.join(fixture,'documents-2025-06-18.json'),'utf8'));
 const doc=edinet.annualReportDocuments(data).find(d=>d.secCode==='80580')!;
@@ -81,7 +82,7 @@ it.each([
   await expect(japan(options)).rejects.toThrow(/range|date/i);
 });
 
-it('corroborates imported splits with prices without adjusting the raw issuer checkpoint', async () => {
+it('corroborates splits on a working copy while retaining unadjusted source years', async () => {
   vi.spyOn(edinet, 'annualReports').mockResolvedValue([doc]);
   const rows = ['要素ID\tコンテキストID\t単位\t値', 'j:CurrentFiscalYearEndDateDEI\tFilingDateInstant\t\t2025-03-31'];
   for (let offset = 0; offset < 5; offset++) {
@@ -94,8 +95,11 @@ it('corroborates imported splits with prices without adjusting the raw issuer ch
   await japan({});
   const f = readCorpusJson<Fundamentals>('fundamentals/8058.JP.json')!;
   expect(f.years).toHaveLength(5);
-  expect(f.years[0].dilutedShares).toBe(500);
+  expect(f.years.map(y => y.dilutedShares)).toEqual([100, 100, 100, 500, 500]);
   expect(f.integrity.notes).toEqual(['split 5:1 in 2024 adjusted']);
+  const working = structuredClone(f);
+  checkIntegrity(working,{source:'edinet',priceHistory:[['2023-12',100],['2024-01',20]]});
+  expect(working.years.map(y => y.dilutedShares)).toEqual([500, 500, 500, 500, 500]);
   const raw = readCorpusJson<{years: Fundamentals['years']}>('raw/edinet/issuers/8058.JP.json')!;
   expect(raw.years.map(y => y.dilutedShares)).toEqual([100, 100, 100, 500, 500]);
   await japan({force:true});

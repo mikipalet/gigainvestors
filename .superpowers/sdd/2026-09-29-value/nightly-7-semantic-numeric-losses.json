@@ -1,0 +1,5300 @@
+{
+  "numericToNull": [
+    {
+      "id": "PLX.PA",
+      "path": "/series/totalRoic/@2025/0",
+      "before": 0.9678057030772265,
+      "after": null
+    },
+    {
+      "id": "PLX.PA",
+      "path": "/series/totalRoic/@2024/0",
+      "before": 2.3503176344037366,
+      "after": null
+    },
+    {
+      "id": "VLTO.US",
+      "path": "/company/marketCapUsd",
+      "before": 23082354688,
+      "after": null
+    }
+  ],
+  "numericToNullOutsideFrozen": [
+    {
+      "id": "PLX.PA",
+      "path": "/series/totalRoic/@2025/0",
+      "before": 0.9678057030772265,
+      "after": null
+    },
+    {
+      "id": "PLX.PA",
+      "path": "/series/totalRoic/@2024/0",
+      "before": 2.3503176344037366,
+      "after": null
+    },
+    {
+      "id": "VLTO.US",
+      "path": "/company/marketCapUsd",
+      "before": 23082354688,
+      "after": null
+    }
+  ],
+  "removedSeriesObservations": [
+    {
+      "id": "ACN.US",
+      "field": "totalRoic",
+      "fy": 2016,
+      "before": 1.0641671419589807
+    },
+    {
+      "id": "FDXF.US",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 7102000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 7833000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 9532000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 10084000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 9424000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 8887000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "revenue",
+      "fy": 2026,
+      "before": 8795000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "operatingMargin",
+      "fy": 2020,
+      "before": 0.0816671360180231
+    },
+    {
+      "id": "FDXF.US",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.12830333205668326
+    },
+    {
+      "id": "FDXF.US",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.1744649601342845
+    },
+    {
+      "id": "FDXF.US",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.1878222927409758
+    },
+    {
+      "id": "FDXF.US",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.1860144312393888
+    },
+    {
+      "id": "FDXF.US",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.1506695172724204
+    },
+    {
+      "id": "FDXF.US",
+      "field": "operatingMargin",
+      "fy": 2026,
+      "before": 0.061398521887436046
+    },
+    {
+      "id": "FDXF.US",
+      "field": "netIncome",
+      "fy": 2023,
+      "before": 1581000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "netIncome",
+      "fy": 2024,
+      "before": 1574000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "netIncome",
+      "fy": 2025,
+      "before": 1079000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "netIncome",
+      "fy": 2026,
+      "before": 655000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.4629184196676348
+    },
+    {
+      "id": "FDXF.US",
+      "field": "roic",
+      "fy": 2025,
+      "before": 0.22397184440945098
+    },
+    {
+      "id": "FDXF.US",
+      "field": "roic",
+      "fy": 2026,
+      "before": 0.07978327461055747
+    },
+    {
+      "id": "FDXF.US",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.3605712019040063
+    },
+    {
+      "id": "FDXF.US",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.3474108658743633
+    },
+    {
+      "id": "FDXF.US",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.3113536626533138
+    },
+    {
+      "id": "FDXF.US",
+      "field": "grossMargin",
+      "fy": 2026,
+      "before": 1
+    },
+    {
+      "id": "FDXF.US",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 1181000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": 1505000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 1048000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "ownerEarnings",
+      "fy": 2026,
+      "before": 712000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 0.002440577249575552
+    },
+    {
+      "id": "FDXF.US",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 0.11736243951839766
+    },
+    {
+      "id": "FDXF.US",
+      "field": "nwcToRevenue",
+      "fy": 2026,
+      "before": 0.12120523024445708
+    },
+    {
+      "id": "FDXF.US",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 10.574879618941537
+    },
+    {
+      "id": "FDXF.US",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": 10.528058520059442
+    },
+    {
+      "id": "FDXF.US",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": 7.217137956254218
+    },
+    {
+      "id": "FDXF.US",
+      "field": "perShareValue",
+      "fy": 2026,
+      "before": 4.381117109681662
+    },
+    {
+      "id": "FDXF.US",
+      "field": "shares",
+      "fy": 2023,
+      "before": 149505248
+    },
+    {
+      "id": "FDXF.US",
+      "field": "shares",
+      "fy": 2024,
+      "before": 149505248
+    },
+    {
+      "id": "FDXF.US",
+      "field": "shares",
+      "fy": 2025,
+      "before": 149505248
+    },
+    {
+      "id": "FDXF.US",
+      "field": "shares",
+      "fy": 2026,
+      "before": 149505248
+    },
+    {
+      "id": "FDXF.US",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "FDXF.US",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "FDXF.US",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "FDXF.US",
+      "field": "buybacks",
+      "fy": 2026,
+      "before": 0
+    },
+    {
+      "id": "FDXF.US",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "FDXF.US",
+      "field": "acquisitions",
+      "fy": 2026,
+      "before": 0
+    },
+    {
+      "id": "FDXF.US",
+      "field": "marketCap",
+      "fy": 2026,
+      "before": 23976156621.760002
+    },
+    {
+      "id": "FDXF.US",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": 1581000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": 1574000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": 1079000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "retainedEarnings",
+      "fy": 2026,
+      "before": 655000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": 1.1081593927893738
+    },
+    {
+      "id": "FDXF.US",
+      "field": "ocfToNi",
+      "fy": 2024,
+      "before": 0.9790343074968234
+    },
+    {
+      "id": "FDXF.US",
+      "field": "ocfToNi",
+      "fy": 2025,
+      "before": 1.4189063948100094
+    },
+    {
+      "id": "FDXF.US",
+      "field": "ocfToNi",
+      "fy": 2026,
+      "before": 0.2549618320610687
+    },
+    {
+      "id": "FDXF.US",
+      "field": "accruals",
+      "fy": 2024,
+      "before": 0.006537242472266244
+    },
+    {
+      "id": "FDXF.US",
+      "field": "accruals",
+      "fy": 2025,
+      "before": -0.07289146911788422
+    },
+    {
+      "id": "FDXF.US",
+      "field": "accruals",
+      "fy": 2026,
+      "before": 0.07088901801278326
+    },
+    {
+      "id": "FDXF.US",
+      "field": "sbcToOcf",
+      "fy": 2023,
+      "before": 0.007420091324200913
+    },
+    {
+      "id": "FDXF.US",
+      "field": "sbcToOcf",
+      "fy": 2024,
+      "before": 0.007787151200519144
+    },
+    {
+      "id": "FDXF.US",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 0.006531678641410843
+    },
+    {
+      "id": "FDXF.US",
+      "field": "sbcToOcf",
+      "fy": 2026,
+      "before": 0.07784431137724551
+    },
+    {
+      "id": "FDXF.US",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "FDXF.US",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "FDXF.US",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "FDXF.US",
+      "field": "nonRecurring",
+      "fy": 2026,
+      "before": 0
+    },
+    {
+      "id": "FDXF.US",
+      "field": "netCash",
+      "fy": 2024,
+      "before": -1345000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "netCash",
+      "fy": 2025,
+      "before": -1327000000
+    },
+    {
+      "id": "FDXF.US",
+      "field": "netCash",
+      "fy": 2026,
+      "before": -6114000000
+    },
+    {
+      "id": "GMD.AU",
+      "field": "totalRoic",
+      "fy": 2017,
+      "before": -8.65445572496694
+    },
+    {
+      "id": "HONA.US",
+      "field": "revenue",
+      "fy": 2019,
+      "before": 14054000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 11544000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 11026000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 11827000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 13790000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 15445000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 17404000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "operatingMargin",
+      "fy": 2019,
+      "before": 0.2566529102035008
+    },
+    {
+      "id": "HONA.US",
+      "field": "operatingMargin",
+      "fy": 2020,
+      "before": 0.2515592515592516
+    },
+    {
+      "id": "HONA.US",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.2767095955015418
+    },
+    {
+      "id": "HONA.US",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.2729348101800964
+    },
+    {
+      "id": "HONA.US",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.25844815083393763
+    },
+    {
+      "id": "HONA.US",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.22719326642926513
+    },
+    {
+      "id": "HONA.US",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.18714088715237875
+    },
+    {
+      "id": "HONA.US",
+      "field": "netIncome",
+      "fy": 2023,
+      "before": 2886000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "netIncome",
+      "fy": 2024,
+      "before": 2817000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "netIncome",
+      "fy": 2025,
+      "before": 1780000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.5206581772335644
+    },
+    {
+      "id": "HONA.US",
+      "field": "roic",
+      "fy": 2025,
+      "before": 0.46191210171254543
+    },
+    {
+      "id": "HONA.US",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.3831036983321247
+    },
+    {
+      "id": "HONA.US",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.35623179022337326
+    },
+    {
+      "id": "HONA.US",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.34836819122040913
+    },
+    {
+      "id": "HONA.US",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 2524000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": 2743000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 1697000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 0.1965037228876659
+    },
+    {
+      "id": "HONA.US",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 0.27005286141116985
+    },
+    {
+      "id": "HONA.US",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 9.109848484848484
+    },
+    {
+      "id": "HONA.US",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": 8.892045454545455
+    },
+    {
+      "id": "HONA.US",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": 5.6186868686868685
+    },
+    {
+      "id": "HONA.US",
+      "field": "shares",
+      "fy": 2023,
+      "before": 316800000
+    },
+    {
+      "id": "HONA.US",
+      "field": "shares",
+      "fy": 2024,
+      "before": 316800000
+    },
+    {
+      "id": "HONA.US",
+      "field": "shares",
+      "fy": 2025,
+      "before": 316800000
+    },
+    {
+      "id": "HONA.US",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "HONA.US",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "HONA.US",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 2130000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "HONA.US",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": 1780000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": 1.0339570339570339
+    },
+    {
+      "id": "HONA.US",
+      "field": "ocfToNi",
+      "fy": 2024,
+      "before": 0.9009584664536742
+    },
+    {
+      "id": "HONA.US",
+      "field": "ocfToNi",
+      "fy": 2025,
+      "before": 2.081460674157303
+    },
+    {
+      "id": "HONA.US",
+      "field": "accruals",
+      "fy": 2024,
+      "before": 0.016562778272484417
+    },
+    {
+      "id": "HONA.US",
+      "field": "accruals",
+      "fy": 2025,
+      "before": -0.10884930732258977
+    },
+    {
+      "id": "HONA.US",
+      "field": "sbcToOcf",
+      "fy": 2023,
+      "before": 0.024463806970509382
+    },
+    {
+      "id": "HONA.US",
+      "field": "sbcToOcf",
+      "fy": 2024,
+      "before": 0.029156816390858944
+    },
+    {
+      "id": "HONA.US",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 0.022402159244264506
+    },
+    {
+      "id": "HONA.US",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "HONA.US",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "HONA.US",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "HONA.US",
+      "field": "netCash",
+      "fy": 2024,
+      "before": 7000000
+    },
+    {
+      "id": "HONA.US",
+      "field": "netCash",
+      "fy": 2025,
+      "before": -58000000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "revenue",
+      "fy": 2019,
+      "before": 1722600000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 1529200000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 1512200000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 1942800000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 2049600000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 1720500000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 1741400000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.04847242428250231
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.07072266831377394
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.1171935987509758
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.1013658820110433
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.1264499827724819
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "netIncome",
+      "fy": 2021,
+      "before": 261500000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "netIncome",
+      "fy": 2022,
+      "before": 92600000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "netIncome",
+      "fy": 2023,
+      "before": 193800000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "netIncome",
+      "fy": 2024,
+      "before": 127900000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "netIncome",
+      "fy": 2025,
+      "before": 163300000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "roic",
+      "fy": 2021,
+      "before": 0.09845527697033608
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "roic",
+      "fy": 2022,
+      "before": 0.1626498983851357
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "roic",
+      "fy": 2023,
+      "before": 0.28890403205386
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.2831991975978721
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "roic",
+      "fy": 2025,
+      "before": 0.3094134910675957
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "grossMargin",
+      "fy": 2021,
+      "before": 0.20427192170347838
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "grossMargin",
+      "fy": 2022,
+      "before": 0.19199094091002677
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.24848750975800157
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.2630049404242953
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.26168599977029977
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "ownerEarnings",
+      "fy": 2021,
+      "before": 286700000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "ownerEarnings",
+      "fy": 2022,
+      "before": 98100000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 179400000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": 131900000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 140411664.66516137
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "nwcToRevenue",
+      "fy": 2021,
+      "before": 0.4989419388969713
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "nwcToRevenue",
+      "fy": 2022,
+      "before": 0.4438954086884908
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "nwcToRevenue",
+      "fy": 2023,
+      "before": 0.41905737704918034
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 0.31508282476024413
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 0.3347881015275066
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "perShareValue",
+      "fy": 2021,
+      "before": 4.089767311476741
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "perShareValue",
+      "fy": 2022,
+      "before": 1.4482311779837331
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 3.0128668068173123
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": 1.9901349059392845
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": 2.5464298523288997
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "shares",
+      "fy": 2021,
+      "before": 63940068
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "shares",
+      "fy": 2022,
+      "before": 63940068
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "shares",
+      "fy": 2023,
+      "before": 64324118
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "shares",
+      "fy": 2024,
+      "before": 64267000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "shares",
+      "fy": 2025,
+      "before": 64129000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "buybacks",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "buybacks",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 8000000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "acquisitions",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "marketCap",
+      "fy": 2024,
+      "before": 2044333235.677719
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "marketCap",
+      "fy": 2025,
+      "before": 2599789718.711853
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "retainedEarnings",
+      "fy": 2021,
+      "before": 243900000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "retainedEarnings",
+      "fy": 2022,
+      "before": 37400000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": 86400000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": 127700000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": 99300000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "ocfToNi",
+      "fy": 2021,
+      "before": 0.27839388145315486
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "ocfToNi",
+      "fy": 2022,
+      "before": 1.7494600431965444
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": 1.1418988648090815
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "ocfToNi",
+      "fy": 2024,
+      "before": 1.377638780297107
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "ocfToNi",
+      "fy": 2025,
+      "before": 1.2816901408450705
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "accruals",
+      "fy": 2021,
+      "before": 0.10723418764562141
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "accruals",
+      "fy": 2022,
+      "before": -0.03644001050144395
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "accruals",
+      "fy": 2023,
+      "before": -0.01489626780781106
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "accruals",
+      "fy": 2024,
+      "before": -0.028480452856890145
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "accruals",
+      "fy": 2025,
+      "before": -0.02630826422647984
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "sbcToOcf",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "sbcToOcf",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "sbcToOcf",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "sbcToOcf",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "nonRecurring",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "nonRecurring",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "netCash",
+      "fy": 2021,
+      "before": -102200000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "netCash",
+      "fy": 2022,
+      "before": -70700000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "netCash",
+      "fy": 2023,
+      "before": -109300000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "netCash",
+      "fy": 2024,
+      "before": -80300000
+    },
+    {
+      "id": "KALMAR.HE",
+      "field": "netCash",
+      "fy": 2025,
+      "before": -89100000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "revenue",
+      "fy": 2019,
+      "before": 892000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 773000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 731000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 842000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 1052000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 1210000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 1287000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "operatingMargin",
+      "fy": 2019,
+      "before": 0.3094170403587444
+    },
+    {
+      "id": "PLX.PA",
+      "field": "operatingMargin",
+      "fy": 2020,
+      "before": 0.2613195342820181
+    },
+    {
+      "id": "PLX.PA",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.19562243502051985
+    },
+    {
+      "id": "PLX.PA",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.22209026128266032
+    },
+    {
+      "id": "PLX.PA",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.12832699619771862
+    },
+    {
+      "id": "PLX.PA",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.2066115702479339
+    },
+    {
+      "id": "PLX.PA",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.2602952602952603
+    },
+    {
+      "id": "PLX.PA",
+      "field": "netIncome",
+      "fy": 2021,
+      "before": 117000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "netIncome",
+      "fy": 2022,
+      "before": 174000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "netIncome",
+      "fy": 2023,
+      "before": 81000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "netIncome",
+      "fy": 2024,
+      "before": 133000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "netIncome",
+      "fy": 2025,
+      "before": 197000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "roic",
+      "fy": 2021,
+      "before": 0.1114407334643091
+    },
+    {
+      "id": "PLX.PA",
+      "field": "roic",
+      "fy": 2022,
+      "before": 0.11444545869465998
+    },
+    {
+      "id": "PLX.PA",
+      "field": "roic",
+      "fy": 2023,
+      "before": 0.065
+    },
+    {
+      "id": "PLX.PA",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.11292564280750521
+    },
+    {
+      "id": "PLX.PA",
+      "field": "roic",
+      "fy": 2025,
+      "before": 0.1384292272756567
+    },
+    {
+      "id": "PLX.PA",
+      "field": "grossMargin",
+      "fy": 2021,
+      "before": 0.3857729138166895
+    },
+    {
+      "id": "PLX.PA",
+      "field": "grossMargin",
+      "fy": 2022,
+      "before": 0.39311163895486934
+    },
+    {
+      "id": "PLX.PA",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.4230038022813688
+    },
+    {
+      "id": "PLX.PA",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.35537190082644626
+    },
+    {
+      "id": "PLX.PA",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.2804972804972805
+    },
+    {
+      "id": "PLX.PA",
+      "field": "ownerEarnings",
+      "fy": 2021,
+      "before": 107100000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "ownerEarnings",
+      "fy": 2022,
+      "before": 156290546.0908332
+    },
+    {
+      "id": "PLX.PA",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 41706456.19048909
+    },
+    {
+      "id": "PLX.PA",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": 99183404.17183769
+    },
+    {
+      "id": "PLX.PA",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 197180733.94495413
+    },
+    {
+      "id": "PLX.PA",
+      "field": "nwcToRevenue",
+      "fy": 2021,
+      "before": 1.5827633378932968
+    },
+    {
+      "id": "PLX.PA",
+      "field": "nwcToRevenue",
+      "fy": 2022,
+      "before": 2.6805225653206652
+    },
+    {
+      "id": "PLX.PA",
+      "field": "nwcToRevenue",
+      "fy": 2023,
+      "before": 1.7053231939163498
+    },
+    {
+      "id": "PLX.PA",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 0.6057851239669422
+    },
+    {
+      "id": "PLX.PA",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 0.7311577311577312
+    },
+    {
+      "id": "PLX.PA",
+      "field": "perShareValue",
+      "fy": 2021,
+      "before": 0.7934629503665188
+    },
+    {
+      "id": "PLX.PA",
+      "field": "perShareValue",
+      "fy": 2022,
+      "before": 1.1822684840407207
+    },
+    {
+      "id": "PLX.PA",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 0.5521007792493535
+    },
+    {
+      "id": "PLX.PA",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": 0.9039985487084954
+    },
+    {
+      "id": "PLX.PA",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": 1.3484937803633568
+    },
+    {
+      "id": "PLX.PA",
+      "field": "shares",
+      "fy": 2021,
+      "before": 147454900
+    },
+    {
+      "id": "PLX.PA",
+      "field": "shares",
+      "fy": 2022,
+      "before": 147174692
+    },
+    {
+      "id": "PLX.PA",
+      "field": "shares",
+      "fy": 2023,
+      "before": 146712345
+    },
+    {
+      "id": "PLX.PA",
+      "field": "shares",
+      "fy": 2024,
+      "before": 147124130
+    },
+    {
+      "id": "PLX.PA",
+      "field": "shares",
+      "fy": 2025,
+      "before": 146088920
+    },
+    {
+      "id": "PLX.PA",
+      "field": "buybacks",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "PLX.PA",
+      "field": "buybacks",
+      "fy": 2022,
+      "before": 13000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "PLX.PA",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 33000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 12000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "acquisitions",
+      "fy": 2022,
+      "before": 71000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 29000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 291000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 175000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "marketCap",
+      "fy": 2024,
+      "before": 3155076922.9512787
+    },
+    {
+      "id": "PLX.PA",
+      "field": "marketCap",
+      "fy": 2025,
+      "before": 2541947152.2714996
+    },
+    {
+      "id": "PLX.PA",
+      "field": "retainedEarnings",
+      "fy": 2021,
+      "before": 72000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "retainedEarnings",
+      "fy": 2022,
+      "before": -21000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": -62000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": 133000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": 146000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "ocfToNi",
+      "fy": 2021,
+      "before": 1.5726495726495726
+    },
+    {
+      "id": "PLX.PA",
+      "field": "ocfToNi",
+      "fy": 2022,
+      "before": 1.2701149425287357
+    },
+    {
+      "id": "PLX.PA",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": 6.901234567901234
+    },
+    {
+      "id": "PLX.PA",
+      "field": "ocfToNi",
+      "fy": 2024,
+      "before": 3.293233082706767
+    },
+    {
+      "id": "PLX.PA",
+      "field": "ocfToNi",
+      "fy": 2025,
+      "before": 2.5786802030456855
+    },
+    {
+      "id": "PLX.PA",
+      "field": "accruals",
+      "fy": 2021,
+      "before": -0.014328485885372113
+    },
+    {
+      "id": "PLX.PA",
+      "field": "accruals",
+      "fy": 2022,
+      "before": -0.008874622356495469
+    },
+    {
+      "id": "PLX.PA",
+      "field": "accruals",
+      "fy": 2023,
+      "before": -0.0842587696104354
+    },
+    {
+      "id": "PLX.PA",
+      "field": "accruals",
+      "fy": 2024,
+      "before": -0.05128636287203632
+    },
+    {
+      "id": "PLX.PA",
+      "field": "accruals",
+      "fy": 2025,
+      "before": -0.04860134395999375
+    },
+    {
+      "id": "PLX.PA",
+      "field": "sbcToOcf",
+      "fy": 2021,
+      "before": 0.01576086956521739
+    },
+    {
+      "id": "PLX.PA",
+      "field": "sbcToOcf",
+      "fy": 2022,
+      "before": 0.026244343891402715
+    },
+    {
+      "id": "PLX.PA",
+      "field": "sbcToOcf",
+      "fy": 2023,
+      "before": 0.004114490161001789
+    },
+    {
+      "id": "PLX.PA",
+      "field": "sbcToOcf",
+      "fy": 2024,
+      "before": 0.0045662100456621
+    },
+    {
+      "id": "PLX.PA",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "PLX.PA",
+      "field": "nonRecurring",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "PLX.PA",
+      "field": "nonRecurring",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "PLX.PA",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "PLX.PA",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "PLX.PA",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "PLX.PA",
+      "field": "netCash",
+      "fy": 2021,
+      "before": 1992000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "netCash",
+      "fy": 2022,
+      "before": 2214000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "netCash",
+      "fy": 2023,
+      "before": 317000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "netCash",
+      "fy": 2024,
+      "before": 240000000
+    },
+    {
+      "id": "PLX.PA",
+      "field": "netCash",
+      "fy": 2025,
+      "before": 191000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "revenue",
+      "fy": 2019,
+      "before": 9731000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 9035097397
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 8794328590
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 8859184018
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 11662271975
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 10384000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 11613420258
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "operatingMargin",
+      "fy": 2019,
+      "before": 0.05662316308704141
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "operatingMargin",
+      "fy": 2020,
+      "before": 0.14834822372197612
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.15687701407572718
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.15060370845544388
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.03757891566407239
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.029564714946070877
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.14793433156063782
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netIncome",
+      "fy": 2020,
+      "before": 433639621
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netIncome",
+      "fy": 2021,
+      "before": 830153899
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netIncome",
+      "fy": 2022,
+      "before": 809895218
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netIncome",
+      "fy": 2023,
+      "before": 89988469
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netIncome",
+      "fy": 2024,
+      "before": 1000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netIncome",
+      "fy": 2025,
+      "before": 957483863
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "roic",
+      "fy": 2020,
+      "before": 0.19725378833638024
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "roic",
+      "fy": 2021,
+      "before": 1.414310888563897
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "roic",
+      "fy": 2022,
+      "before": 0.7114909578865142
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "roic",
+      "fy": 2023,
+      "before": 0.05416666658426928
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.05567722681359045
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "roic",
+      "fy": 2025,
+      "before": 0.244980443899198
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "grossMargin",
+      "fy": 2020,
+      "before": 0.4599002700712115
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "grossMargin",
+      "fy": 2021,
+      "before": 0.4719825345984713
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "grossMargin",
+      "fy": 2022,
+      "before": 0.4687365243303156
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.4573604569018808
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.47438366718027736
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.47023272581891956
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "totalRoic",
+      "fy": 2020,
+      "before": 0.062079688149883
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "totalRoic",
+      "fy": 2021,
+      "before": 0.20353379090748114
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "totalRoic",
+      "fy": 2022,
+      "before": 0.23765028579491934
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "totalRoic",
+      "fy": 2023,
+      "before": 0.004231571081377732
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "totalRoic",
+      "fy": 2024,
+      "before": -0.01504236795127935
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ownerEarnings",
+      "fy": 2020,
+      "before": 714155387
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ownerEarnings",
+      "fy": 2021,
+      "before": 1569832672
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ownerEarnings",
+      "fy": 2022,
+      "before": 1995207655
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 60771434
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": -181000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 832957779
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nwcToRevenue",
+      "fy": 2020,
+      "before": 0.41699229177661956
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nwcToRevenue",
+      "fy": 2021,
+      "before": 0.4321558352187975
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nwcToRevenue",
+      "fy": 2022,
+      "before": 0.47204166788987
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nwcToRevenue",
+      "fy": 2023,
+      "before": 0.41477101917784764
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 0.426328967642527
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 0.3441171649882439
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "perShareValue",
+      "fy": 2020,
+      "before": 1.0061244106728537
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "perShareValue",
+      "fy": 2021,
+      "before": 1.9261111345707658
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "perShareValue",
+      "fy": 2022,
+      "before": 1.8791072343387472
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 0.2086931099257885
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": 0.002304147465437788
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": 2.192041810897436
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "shares",
+      "fy": 2020,
+      "before": 431000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "shares",
+      "fy": 2021,
+      "before": 431000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "shares",
+      "fy": 2022,
+      "before": 431000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "shares",
+      "fy": 2023,
+      "before": 431200000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "shares",
+      "fy": 2024,
+      "before": 434000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "shares",
+      "fy": 2025,
+      "before": 436800000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "buybacks",
+      "fy": 2020,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "buybacks",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "buybacks",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 12000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "acquisitions",
+      "fy": 2021,
+      "before": 77569120
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "acquisitions",
+      "fy": 2022,
+      "before": 39000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 18000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 182000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 260000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "marketCap",
+      "fy": 2023,
+      "before": 14076603062.983397
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "marketCap",
+      "fy": 2024,
+      "before": 19461378433.30078
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "marketCap",
+      "fy": 2025,
+      "before": 30479107357.207027
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "retainedEarnings",
+      "fy": 2020,
+      "before": 433639621
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "retainedEarnings",
+      "fy": 2021,
+      "before": 830153899
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "retainedEarnings",
+      "fy": 2022,
+      "before": 809895218
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": 89988469
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": -214000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": 627497631
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ocfToNi",
+      "fy": 2020,
+      "before": 2.376623378240615
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ocfToNi",
+      "fy": 2021,
+      "before": 1.4911894282387752
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ocfToNi",
+      "fy": 2022,
+      "before": 1.4422169819503738
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": 4.701298751954542
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ocfToNi",
+      "fy": 2024,
+      "before": 656
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "ocfToNi",
+      "fy": 2025,
+      "before": 1.7439824957133507
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "accruals",
+      "fy": 2020,
+      "before": -0.03763125768251956
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "accruals",
+      "fy": 2021,
+      "before": -0.02551165521278889
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "accruals",
+      "fy": 2022,
+      "before": -0.022063009392106196
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "accruals",
+      "fy": 2023,
+      "before": -0.014668039152610411
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "accruals",
+      "fy": 2024,
+      "before": -0.03290299894509469
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "accruals",
+      "fy": 2025,
+      "before": -0.03235379158469571
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "sbcToOcf",
+      "fy": 2020,
+      "before": 0.05841373303340613
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "sbcToOcf",
+      "fy": 2021,
+      "before": -0.5775480059394432
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "sbcToOcf",
+      "fy": 2022,
+      "before": -1.0098119375210144
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "sbcToOcf",
+      "fy": 2023,
+      "before": 0.06906077181561444
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "sbcToOcf",
+      "fy": 2024,
+      "before": 0.13414634146341464
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 0.06108387599664879
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nonRecurring",
+      "fy": 2020,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nonRecurring",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nonRecurring",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netCash",
+      "fy": 2020,
+      "before": -4649701160
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netCash",
+      "fy": 2021,
+      "before": -247832800
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netCash",
+      "fy": 2022,
+      "before": -240597140
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netCash",
+      "fy": 2023,
+      "before": -4024938840
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netCash",
+      "fy": 2024,
+      "before": -3662000000
+    },
+    {
+      "id": "SDZ.SW",
+      "field": "netCash",
+      "fy": 2025,
+      "before": -3941413328
+    },
+    {
+      "id": "SNDK.US",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 7769000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 8706000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 9754000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 6086000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 6663000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 7355000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "revenue",
+      "fy": 2026,
+      "before": 20248000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.12302645068689769
+    },
+    {
+      "id": "SNDK.US",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": -0.33437397305290834
+    },
+    {
+      "id": "SNDK.US",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": -0.07023863124718595
+    },
+    {
+      "id": "SNDK.US",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": -0.18721957851801496
+    },
+    {
+      "id": "SNDK.US",
+      "field": "operatingMargin",
+      "fy": 2026,
+      "before": 0.61186290003951
+    },
+    {
+      "id": "SNDK.US",
+      "field": "netIncome",
+      "fy": 2022,
+      "before": 1064000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "netIncome",
+      "fy": 2023,
+      "before": -2143000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "netIncome",
+      "fy": 2024,
+      "before": -672000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "netIncome",
+      "fy": 2025,
+      "before": -1641000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "netIncome",
+      "fy": 2026,
+      "before": 11433000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "roic",
+      "fy": 2022,
+      "before": 0.18136440922333474
+    },
+    {
+      "id": "SNDK.US",
+      "field": "roic",
+      "fy": 2023,
+      "before": -0.32445005045408676
+    },
+    {
+      "id": "SNDK.US",
+      "field": "roic",
+      "fy": 2024,
+      "before": -0.08157987643424537
+    },
+    {
+      "id": "SNDK.US",
+      "field": "roic",
+      "fy": 2025,
+      "before": -0.2276747593135203
+    },
+    {
+      "id": "SNDK.US",
+      "field": "roic",
+      "fy": 2026,
+      "before": 1.7074249884648547
+    },
+    {
+      "id": "SNDK.US",
+      "field": "grossMargin",
+      "fy": 2022,
+      "before": 0.3325815050235801
+    },
+    {
+      "id": "SNDK.US",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.07065395990798554
+    },
+    {
+      "id": "SNDK.US",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.16088848866876782
+    },
+    {
+      "id": "SNDK.US",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.3007477906186268
+    },
+    {
+      "id": "SNDK.US",
+      "field": "grossMargin",
+      "fy": 2026,
+      "before": 0.7147372580007902
+    },
+    {
+      "id": "SNDK.US",
+      "field": "ownerEarnings",
+      "fy": 2022,
+      "before": 1008000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": -2079000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": -763000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": -1823000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "ownerEarnings",
+      "fy": 2026,
+      "before": 11201000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "nwcToRevenue",
+      "fy": 2022,
+      "before": 0.2555874513020299
+    },
+    {
+      "id": "SNDK.US",
+      "field": "nwcToRevenue",
+      "fy": 2023,
+      "before": 0.3585277686493592
+    },
+    {
+      "id": "SNDK.US",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 0.380159087498124
+    },
+    {
+      "id": "SNDK.US",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 0.3870836165873555
+    },
+    {
+      "id": "SNDK.US",
+      "field": "nwcToRevenue",
+      "fy": 2026,
+      "before": 0.3413670485973923
+    },
+    {
+      "id": "SNDK.US",
+      "field": "perShareValue",
+      "fy": 2022,
+      "before": 7.388888888888889
+    },
+    {
+      "id": "SNDK.US",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": -14.779310344827586
+    },
+    {
+      "id": "SNDK.US",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": -4.63448275862069
+    },
+    {
+      "id": "SNDK.US",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": -11.317241379310344
+    },
+    {
+      "id": "SNDK.US",
+      "field": "perShareValue",
+      "fy": 2026,
+      "before": 73.76129032258065
+    },
+    {
+      "id": "SNDK.US",
+      "field": "shares",
+      "fy": 2022,
+      "before": 144000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "shares",
+      "fy": 2023,
+      "before": 145000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "shares",
+      "fy": 2024,
+      "before": 145000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "shares",
+      "fy": 2025,
+      "before": 145000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "shares",
+      "fy": 2026,
+      "before": 155000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "buybacks",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SNDK.US",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SNDK.US",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SNDK.US",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "SNDK.US",
+      "field": "buybacks",
+      "fy": 2026,
+      "before": 4524000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SNDK.US",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SNDK.US",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "SNDK.US",
+      "field": "acquisitions",
+      "fy": 2026,
+      "before": 0
+    },
+    {
+      "id": "SNDK.US",
+      "field": "marketCap",
+      "fy": 2025,
+      "before": 6575749778.747559
+    },
+    {
+      "id": "SNDK.US",
+      "field": "marketCap",
+      "fy": 2026,
+      "before": 352428146972.65625
+    },
+    {
+      "id": "SNDK.US",
+      "field": "retainedEarnings",
+      "fy": 2022,
+      "before": 1064000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": -2143000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": -672000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": -1641000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "retainedEarnings",
+      "fy": 2026,
+      "before": 11433000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "ocfToNi",
+      "fy": 2022,
+      "before": 1.0817669172932332
+    },
+    {
+      "id": "SNDK.US",
+      "field": "ocfToNi",
+      "fy": 2026,
+      "before": 1.0208169334382926
+    },
+    {
+      "id": "SNDK.US",
+      "field": "accruals",
+      "fy": 2022,
+      "before": -0.005519954317619441
+    },
+    {
+      "id": "SNDK.US",
+      "field": "accruals",
+      "fy": 2023,
+      "before": -0.10347322720694646
+    },
+    {
+      "id": "SNDK.US",
+      "field": "accruals",
+      "fy": 2024,
+      "before": -0.026876943580630832
+    },
+    {
+      "id": "SNDK.US",
+      "field": "accruals",
+      "fy": 2025,
+      "before": -0.13284559106661534
+    },
+    {
+      "id": "SNDK.US",
+      "field": "accruals",
+      "fy": 2026,
+      "before": -0.01057448793708624
+    },
+    {
+      "id": "SNDK.US",
+      "field": "sbcToOcf",
+      "fy": 2022,
+      "before": 0.14856646394439618
+    },
+    {
+      "id": "SNDK.US",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 2.1666666666666665
+    },
+    {
+      "id": "SNDK.US",
+      "field": "sbcToOcf",
+      "fy": 2026,
+      "before": 0.01987833090566361
+    },
+    {
+      "id": "SNDK.US",
+      "field": "nonRecurring",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SNDK.US",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 69000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": -40000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 21000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "nonRecurring",
+      "fy": 2026,
+      "before": -2000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "netCash",
+      "fy": 2022,
+      "before": -615000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "netCash",
+      "fy": 2023,
+      "before": -728000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "netCash",
+      "fy": 2024,
+      "before": -657000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "netCash",
+      "fy": 2025,
+      "before": -561000000
+    },
+    {
+      "id": "SNDK.US",
+      "field": "netCash",
+      "fy": 2026,
+      "before": 4369000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "revenue",
+      "fy": 2019,
+      "before": 7431000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 7281000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 8171000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 8130000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 8197000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 8254000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 8325000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "operatingMargin",
+      "fy": 2019,
+      "before": 0.2500336428475306
+    },
+    {
+      "id": "SOLV.US",
+      "field": "operatingMargin",
+      "fy": 2020,
+      "before": 0.19640159318774894
+    },
+    {
+      "id": "SOLV.US",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.22995961326643005
+    },
+    {
+      "id": "SOLV.US",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.20824108241082412
+    },
+    {
+      "id": "SOLV.US",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.20641698182261803
+    },
+    {
+      "id": "SOLV.US",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.12551490186576206
+    },
+    {
+      "id": "SOLV.US",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.26198198198198197
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netIncome",
+      "fy": 2020,
+      "before": 1138000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netIncome",
+      "fy": 2021,
+      "before": 1460000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netIncome",
+      "fy": 2022,
+      "before": 1343000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netIncome",
+      "fy": 2023,
+      "before": 1346000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netIncome",
+      "fy": 2024,
+      "before": 479000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netIncome",
+      "fy": 2025,
+      "before": 1556000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "roic",
+      "fy": 2021,
+      "before": 0.26924135364409274
+    },
+    {
+      "id": "SOLV.US",
+      "field": "roic",
+      "fy": 2022,
+      "before": 0.25155255245686753
+    },
+    {
+      "id": "SOLV.US",
+      "field": "roic",
+      "fy": 2023,
+      "before": 0.1031862509673292
+    },
+    {
+      "id": "SOLV.US",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.21371426105344926
+    },
+    {
+      "id": "SOLV.US",
+      "field": "roic",
+      "fy": 2025,
+      "before": 0.5657072615998264
+    },
+    {
+      "id": "SOLV.US",
+      "field": "grossMargin",
+      "fy": 2020,
+      "before": 0.5926383738497459
+    },
+    {
+      "id": "SOLV.US",
+      "field": "grossMargin",
+      "fy": 2021,
+      "before": 0.6024966344388691
+    },
+    {
+      "id": "SOLV.US",
+      "field": "grossMargin",
+      "fy": 2022,
+      "before": 0.577490774907749
+    },
+    {
+      "id": "SOLV.US",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.5725265340978407
+    },
+    {
+      "id": "SOLV.US",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.556457475163557
+    },
+    {
+      "id": "SOLV.US",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.5346546546546547
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ownerEarnings",
+      "fy": 2020,
+      "before": 1431000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ownerEarnings",
+      "fy": 2021,
+      "before": 1742000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ownerEarnings",
+      "fy": 2022,
+      "before": 1633000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 1578000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": 542000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 1505000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nwcToRevenue",
+      "fy": 2021,
+      "before": 0.20438134867213315
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nwcToRevenue",
+      "fy": 2022,
+      "before": 0.20861008610086101
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nwcToRevenue",
+      "fy": 2023,
+      "before": 0.20653897767475907
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 0.19093772716258783
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 0.16972972972972972
+    },
+    {
+      "id": "SOLV.US",
+      "field": "perShareValue",
+      "fy": 2020,
+      "before": 6.598401162172106
+    },
+    {
+      "id": "SOLV.US",
+      "field": "perShareValue",
+      "fy": 2021,
+      "before": 8.465435585915005
+    },
+    {
+      "id": "SOLV.US",
+      "field": "perShareValue",
+      "fy": 2022,
+      "before": 7.776491024898668
+    },
+    {
+      "id": "SOLV.US",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 7.7938621887666475
+    },
+    {
+      "id": "SOLV.US",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": 2.7576280944156593
+    },
+    {
+      "id": "SOLV.US",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": 8.87621220764404
+    },
+    {
+      "id": "SOLV.US",
+      "field": "shares",
+      "fy": 2020,
+      "before": 172466022
+    },
+    {
+      "id": "SOLV.US",
+      "field": "shares",
+      "fy": 2021,
+      "before": 172466022
+    },
+    {
+      "id": "SOLV.US",
+      "field": "shares",
+      "fy": 2022,
+      "before": 172700000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "shares",
+      "fy": 2023,
+      "before": 172700000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "shares",
+      "fy": 2024,
+      "before": 173700000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "shares",
+      "fy": 2025,
+      "before": 175300000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "buybacks",
+      "fy": 2020,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "buybacks",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "buybacks",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "acquisitions",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 696000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "marketCap",
+      "fy": 2024,
+      "before": 11474622000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "marketCap",
+      "fy": 2025,
+      "before": 13890772000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "retainedEarnings",
+      "fy": 2020,
+      "before": 1138000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "retainedEarnings",
+      "fy": 2021,
+      "before": 1460000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "retainedEarnings",
+      "fy": 2022,
+      "before": 1343000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": 1346000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": 479000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": 1556000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ocfToNi",
+      "fy": 2020,
+      "before": 1.7803163444639718
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ocfToNi",
+      "fy": 2021,
+      "before": 1.5082191780821919
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ocfToNi",
+      "fy": 2022,
+      "before": 1.2501861504095308
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": 1.4227340267459139
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ocfToNi",
+      "fy": 2024,
+      "before": 2.4739039665970775
+    },
+    {
+      "id": "SOLV.US",
+      "field": "ocfToNi",
+      "fy": 2025,
+      "before": 0.23714652956298202
+    },
+    {
+      "id": "SOLV.US",
+      "field": "accruals",
+      "fy": 2021,
+      "before": -0.05271758436944938
+    },
+    {
+      "id": "SOLV.US",
+      "field": "accruals",
+      "fy": 2022,
+      "before": -0.024716786817713696
+    },
+    {
+      "id": "SOLV.US",
+      "field": "accruals",
+      "fy": 2023,
+      "before": -0.04080900810442516
+    },
+    {
+      "id": "SOLV.US",
+      "field": "accruals",
+      "fy": 2024,
+      "before": -0.04883447464895898
+    },
+    {
+      "id": "SOLV.US",
+      "field": "accruals",
+      "fy": 2025,
+      "before": 0.08304183573527354
+    },
+    {
+      "id": "SOLV.US",
+      "field": "sbcToOcf",
+      "fy": 2020,
+      "before": 0.017275419545903257
+    },
+    {
+      "id": "SOLV.US",
+      "field": "sbcToOcf",
+      "fy": 2021,
+      "before": 0.01725703905540418
+    },
+    {
+      "id": "SOLV.US",
+      "field": "sbcToOcf",
+      "fy": 2022,
+      "before": 0.022036926742108397
+    },
+    {
+      "id": "SOLV.US",
+      "field": "sbcToOcf",
+      "fy": 2023,
+      "before": 0.020365535248041775
+    },
+    {
+      "id": "SOLV.US",
+      "field": "sbcToOcf",
+      "fy": 2024,
+      "before": 0.09451476793248945
+    },
+    {
+      "id": "SOLV.US",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 0.4363143631436314
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nonRecurring",
+      "fy": 2020,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nonRecurring",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nonRecurring",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 62000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netCash",
+      "fy": 2021,
+      "before": -21000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netCash",
+      "fy": 2022,
+      "before": -34000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netCash",
+      "fy": 2023,
+      "before": -8109000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netCash",
+      "fy": 2024,
+      "before": -7248000000
+    },
+    {
+      "id": "SOLV.US",
+      "field": "netCash",
+      "fy": 2025,
+      "before": -4157000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 5381000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 5381000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 6032000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 7065000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 6846000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 6846000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "revenue",
+      "fy": 2026,
+      "before": 5762000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "operatingMargin",
+      "fy": 2020,
+      "before": -0.1730161679985133
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.0838134175803754
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.1221816976127321
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.07742392073602265
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.06879929886064855
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.10385626643295355
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "operatingMargin",
+      "fy": 2026,
+      "before": 0.07393266227004512
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netIncome",
+      "fy": 2020,
+      "before": -1285000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netIncome",
+      "fy": 2021,
+      "before": -1285000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netIncome",
+      "fy": 2022,
+      "before": 444000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netIncome",
+      "fy": 2023,
+      "before": 193000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netIncome",
+      "fy": 2024,
+      "before": -5000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netIncome",
+      "fy": 2025,
+      "before": -5000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netIncome",
+      "fy": 2026,
+      "before": -62000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "roic",
+      "fy": 2021,
+      "before": 0.05860996874485935
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "roic",
+      "fy": 2022,
+      "before": 0.09616765858581659
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "roic",
+      "fy": 2023,
+      "before": 0.057916598794591954
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.04915703275529865
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "roic",
+      "fy": 2025,
+      "before": 0.0751585623678647
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "roic",
+      "fy": 2026,
+      "before": 0.049340698503207416
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "grossMargin",
+      "fy": 2020,
+      "before": 0.28990893885894814
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "grossMargin",
+      "fy": 2021,
+      "before": 0.28990893885894814
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "grossMargin",
+      "fy": 2022,
+      "before": 0.3123342175066313
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.3361641896673744
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.32413087934560325
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.32413087934560325
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "grossMargin",
+      "fy": 2026,
+      "before": 0.28444984380423466
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "ownerEarnings",
+      "fy": 2020,
+      "before": 720000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "ownerEarnings",
+      "fy": 2021,
+      "before": -960000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "ownerEarnings",
+      "fy": 2022,
+      "before": 625000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 193000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": 103000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 57000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "ownerEarnings",
+      "fy": 2026,
+      "before": 160200000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nwcToRevenue",
+      "fy": 2021,
+      "before": 0.43337669578145327
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nwcToRevenue",
+      "fy": 2022,
+      "before": 0.4859084880636605
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nwcToRevenue",
+      "fy": 2023,
+      "before": 0.17452229299363056
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 0.17820625182588373
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 0.22158924919661116
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nwcToRevenue",
+      "fy": 2026,
+      "before": 0.23498785144047205
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "perShareValue",
+      "fy": 2021,
+      "before": -12.136791519871702
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "perShareValue",
+      "fy": 2022,
+      "before": 4.193584948430239
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 1.8153474818694286
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": -0.04742772058068452
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": -0.048986469937003396
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "perShareValue",
+      "fy": 2026,
+      "before": -0.6049718932009941
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "shares",
+      "fy": 2021,
+      "before": 105876417
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "shares",
+      "fy": 2022,
+      "before": 105876000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "shares",
+      "fy": 2023,
+      "before": 106315734
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "shares",
+      "fy": 2024,
+      "before": 105423578
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "shares",
+      "fy": 2025,
+      "before": 102069000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "shares",
+      "fy": 2026,
+      "before": 102484100
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "buybacks",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "buybacks",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 137000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "buybacks",
+      "fy": 2026,
+      "before": 117000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "acquisitions",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "acquisitions",
+      "fy": 2022,
+      "before": 81000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 79000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "acquisitions",
+      "fy": 2026,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "marketCap",
+      "fy": 2024,
+      "before": 7438687406.298218
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "marketCap",
+      "fy": 2025,
+      "before": 6683478462.638855
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "marketCap",
+      "fy": 2026,
+      "before": 6620472703.621674
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "retainedEarnings",
+      "fy": 2021,
+      "before": -1623000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "retainedEarnings",
+      "fy": 2022,
+      "before": 173000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": 193000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": -175000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": -175000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "retainedEarnings",
+      "fy": 2026,
+      "before": -228000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "ocfToNi",
+      "fy": 2022,
+      "before": 1.5225225225225225
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": 6.606217616580311
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "accruals",
+      "fy": 2021,
+      "before": -0.20904054172895964
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "accruals",
+      "fy": 2022,
+      "before": -0.018303747534516766
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "accruals",
+      "fy": 2023,
+      "before": -0.08391499922444548
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "accruals",
+      "fy": 2024,
+      "before": -0.06837468681807161
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "accruals",
+      "fy": 2025,
+      "before": -0.06837468681807161
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "accruals",
+      "fy": 2026,
+      "before": -0.06623783031988874
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "sbcToOcf",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "sbcToOcf",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "sbcToOcf",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "sbcToOcf",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "sbcToOcf",
+      "fy": 2026,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nonRecurring",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nonRecurring",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "nonRecurring",
+      "fy": 2026,
+      "before": 0
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netCash",
+      "fy": 2021,
+      "before": -5478000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netCash",
+      "fy": 2022,
+      "before": -5571000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netCash",
+      "fy": 2023,
+      "before": -1133000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netCash",
+      "fy": 2024,
+      "before": -1455000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netCash",
+      "fy": 2025,
+      "before": -1376000000
+    },
+    {
+      "id": "SYENS.BR",
+      "field": "netCash",
+      "fy": 2026,
+      "before": -2028000000
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "revenue",
+      "fy": 2019,
+      "before": 1800000000
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 1760000000
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 2022000000
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 1695655483
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 1949364867
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 1986765720
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 2171372338
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "operatingMargin",
+      "fy": 2019,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "operatingMargin",
+      "fy": 2020,
+      "before": 0.008522727272727272
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.011869436201780416
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.014559561330419146
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.04646187408690997
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.03948803686828259
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.048773377161812216
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "netIncome",
+      "fy": 2022,
+      "before": 11052927
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "netIncome",
+      "fy": 2023,
+      "before": 56968218
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "netIncome",
+      "fy": 2024,
+      "before": 84486644
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "netIncome",
+      "fy": 2025,
+      "before": 105014161
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "roic",
+      "fy": 2022,
+      "before": 0.02368449651825341
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "roic",
+      "fy": 2023,
+      "before": 0.06543188085930346
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.117566081654004
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "roic",
+      "fy": 2025,
+      "before": 0.0675442787298465
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "grossMargin",
+      "fy": 2022,
+      "before": 0.1406682308944004
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.15797057709053294
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.15757217715634836
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.1764366162796719
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "ownerEarnings",
+      "fy": 2022,
+      "before": -28451243
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 48774310
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": 82753566.30651926
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 86710486.27029018
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "nwcToRevenue",
+      "fy": 2022,
+      "before": 0.39948815239374896
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "nwcToRevenue",
+      "fy": 2023,
+      "before": 0.2568686485925059
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 0.25954631882817064
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 0.22327434844571553
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "perShareValue",
+      "fy": 2022,
+      "before": 0.17399704711538366
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 0.8968033274286031
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": 1.3300040299982998
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": 2.10028322
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "shares",
+      "fy": 2022,
+      "before": 63523647
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "shares",
+      "fy": 2023,
+      "before": 63523647
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "shares",
+      "fy": 2024,
+      "before": 63523600
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "shares",
+      "fy": 2025,
+      "before": 50000000
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "buybacks",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 14749715
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "marketCap",
+      "fy": 2025,
+      "before": 3304999923.7060547
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "retainedEarnings",
+      "fy": 2022,
+      "before": 11052927
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": 56968218
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": 84486644
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": 105014161
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "ocfToNi",
+      "fy": 2022,
+      "before": 36.6015036559999
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": 5.345104405407239
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "ocfToNi",
+      "fy": 2024,
+      "before": 5.415808100982209
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "ocfToNi",
+      "fy": 2025,
+      "before": 9.028148660826801
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "accruals",
+      "fy": 2022,
+      "before": -0.0837182714115115
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "accruals",
+      "fy": 2023,
+      "before": -0.049865504647747146
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "accruals",
+      "fy": 2024,
+      "before": -0.07566047603431365
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "accruals",
+      "fy": 2025,
+      "before": -0.1562386838017678
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "sbcToOcf",
+      "fy": 2022,
+      "before": -0.011280468967500457
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "sbcToOcf",
+      "fy": 2023,
+      "before": 0.02690929105527323
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "sbcToOcf",
+      "fy": 2024,
+      "before": -0.003455630025834384
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 0.01589841262255038
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "nonRecurring",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "netCash",
+      "fy": 2022,
+      "before": 230326653
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "netCash",
+      "fy": 2023,
+      "before": 119213311
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "netCash",
+      "fy": 2024,
+      "before": 89306652
+    },
+    {
+      "id": "TKMS.XETRA",
+      "field": "netCash",
+      "fy": 2025,
+      "before": 1689157598
+    },
+    {
+      "id": "VLTO.US",
+      "field": "revenue",
+      "fy": 2019,
+      "before": 4399000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 4348000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 4700000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 4870000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 5021000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 5193000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 5503000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "operatingMargin",
+      "fy": 2019,
+      "before": 0.23914526028642874
+    },
+    {
+      "id": "VLTO.US",
+      "field": "operatingMargin",
+      "fy": 2020,
+      "before": 0.218721251149954
+    },
+    {
+      "id": "VLTO.US",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.22148936170212766
+    },
+    {
+      "id": "VLTO.US",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.22833675564681724
+    },
+    {
+      "id": "VLTO.US",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.22704640509858595
+    },
+    {
+      "id": "VLTO.US",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.2326208357404198
+    },
+    {
+      "id": "VLTO.US",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.2320552425949482
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netIncome",
+      "fy": 2020,
+      "before": 724000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netIncome",
+      "fy": 2021,
+      "before": 861000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netIncome",
+      "fy": 2022,
+      "before": 845000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netIncome",
+      "fy": 2023,
+      "before": 839000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netIncome",
+      "fy": 2024,
+      "before": 833000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netIncome",
+      "fy": 2025,
+      "before": 940000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "roic",
+      "fy": 2021,
+      "before": 0.8834529438377674
+    },
+    {
+      "id": "VLTO.US",
+      "field": "roic",
+      "fy": 2022,
+      "before": 0.8358819709464208
+    },
+    {
+      "id": "VLTO.US",
+      "field": "roic",
+      "fy": 2023,
+      "before": 1.0088814817940173
+    },
+    {
+      "id": "VLTO.US",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.9164968040322565
+    },
+    {
+      "id": "VLTO.US",
+      "field": "roic",
+      "fy": 2025,
+      "before": 1.1257886231930951
+    },
+    {
+      "id": "VLTO.US",
+      "field": "grossMargin",
+      "fy": 2020,
+      "before": 0.577276908923643
+    },
+    {
+      "id": "VLTO.US",
+      "field": "grossMargin",
+      "fy": 2021,
+      "before": 0.5772340425531914
+    },
+    {
+      "id": "VLTO.US",
+      "field": "grossMargin",
+      "fy": 2022,
+      "before": 0.5685831622176591
+    },
+    {
+      "id": "VLTO.US",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.5777733519219279
+    },
+    {
+      "id": "VLTO.US",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.5979202772963604
+    },
+    {
+      "id": "VLTO.US",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.599491186625477
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ownerEarnings",
+      "fy": 2020,
+      "before": 768000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ownerEarnings",
+      "fy": 2021,
+      "before": 879000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ownerEarnings",
+      "fy": 2022,
+      "before": 860000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 817000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": 791000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 881000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nwcToRevenue",
+      "fy": 2021,
+      "before": 0.13085106382978723
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nwcToRevenue",
+      "fy": 2022,
+      "before": 0.1480492813141684
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nwcToRevenue",
+      "fy": 2023,
+      "before": 0.13782115116510654
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 0.13575967648757944
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 0.14319462111575504
+    },
+    {
+      "id": "VLTO.US",
+      "field": "perShareValue",
+      "fy": 2020,
+      "before": 2.9418935392117027
+    },
+    {
+      "id": "VLTO.US",
+      "field": "perShareValue",
+      "fy": 2021,
+      "before": 3.4957369062119366
+    },
+    {
+      "id": "VLTO.US",
+      "field": "perShareValue",
+      "fy": 2022,
+      "before": 3.4307754770604952
+    },
+    {
+      "id": "VLTO.US",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 3.3995137763371153
+    },
+    {
+      "id": "VLTO.US",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": 3.3373397435897436
+    },
+    {
+      "id": "VLTO.US",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": 3.7554934079105076
+    },
+    {
+      "id": "VLTO.US",
+      "field": "shares",
+      "fy": 2020,
+      "before": 246100000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "shares",
+      "fy": 2021,
+      "before": 246300000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "shares",
+      "fy": 2022,
+      "before": 246300000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "shares",
+      "fy": 2023,
+      "before": 246800000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "shares",
+      "fy": 2024,
+      "before": 249600000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "shares",
+      "fy": 2025,
+      "before": 250300000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "buybacks",
+      "fy": 2020,
+      "before": 844000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "buybacks",
+      "fy": 2021,
+      "before": 800000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "buybacks",
+      "fy": 2022,
+      "before": 781000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 147000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "VLTO.US",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "VLTO.US",
+      "field": "acquisitions",
+      "fy": 2021,
+      "before": 60000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "acquisitions",
+      "fy": 2022,
+      "before": 55000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "VLTO.US",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 363000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "VLTO.US",
+      "field": "marketCap",
+      "fy": 2023,
+      "before": 20301768000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "marketCap",
+      "fy": 2024,
+      "before": 25421760000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "marketCap",
+      "fy": 2025,
+      "before": 24974934000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "retainedEarnings",
+      "fy": 2020,
+      "before": 724000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "retainedEarnings",
+      "fy": 2021,
+      "before": 861000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "retainedEarnings",
+      "fy": 2022,
+      "before": 845000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": 692000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": 744000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": 831000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ocfToNi",
+      "fy": 2020,
+      "before": 1.382596685082873
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ocfToNi",
+      "fy": 2021,
+      "before": 1.0406504065040652
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ocfToNi",
+      "fy": 2022,
+      "before": 1.029585798816568
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": 1.1477949940405245
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ocfToNi",
+      "fy": 2024,
+      "before": 1.050420168067227
+    },
+    {
+      "id": "VLTO.US",
+      "field": "ocfToNi",
+      "fy": 2025,
+      "before": 1.1457446808510638
+    },
+    {
+      "id": "VLTO.US",
+      "field": "accruals",
+      "fy": 2021,
+      "before": -0.007231404958677686
+    },
+    {
+      "id": "VLTO.US",
+      "field": "accruals",
+      "fy": 2022,
+      "before": -0.0051813471502590676
+    },
+    {
+      "id": "VLTO.US",
+      "field": "accruals",
+      "fy": 2023,
+      "before": -0.021781134726857544
+    },
+    {
+      "id": "VLTO.US",
+      "field": "accruals",
+      "fy": 2024,
+      "before": -0.006556353418669997
+    },
+    {
+      "id": "VLTO.US",
+      "field": "accruals",
+      "fy": 2025,
+      "before": -0.017808397244248018
+    },
+    {
+      "id": "VLTO.US",
+      "field": "sbcToOcf",
+      "fy": 2020,
+      "before": 0.029970029970029972
+    },
+    {
+      "id": "VLTO.US",
+      "field": "sbcToOcf",
+      "fy": 2021,
+      "before": 0.03794642857142857
+    },
+    {
+      "id": "VLTO.US",
+      "field": "sbcToOcf",
+      "fy": 2022,
+      "before": 0.047126436781609195
+    },
+    {
+      "id": "VLTO.US",
+      "field": "sbcToOcf",
+      "fy": 2023,
+      "before": 0.05711318795430945
+    },
+    {
+      "id": "VLTO.US",
+      "field": "sbcToOcf",
+      "fy": 2024,
+      "before": 0.07428571428571429
+    },
+    {
+      "id": "VLTO.US",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 0.06870937790157845
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nonRecurring",
+      "fy": 2020,
+      "before": 0
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nonRecurring",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nonRecurring",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "VLTO.US",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netCash",
+      "fy": 2021,
+      "before": -270000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netCash",
+      "fy": 2022,
+      "before": -246000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netCash",
+      "fy": 2023,
+      "before": -2015000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netCash",
+      "fy": 2024,
+      "before": -1666000000
+    },
+    {
+      "id": "VLTO.US",
+      "field": "netCash",
+      "fy": 2025,
+      "before": -642000000
+    }
+  ]
+}

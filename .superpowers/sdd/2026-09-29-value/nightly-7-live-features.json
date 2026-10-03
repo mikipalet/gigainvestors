@@ -1,0 +1,161 @@
+{
+  "historyQuarters": 87,
+  "historyYears": 22,
+  "sinceSummary2018Q3": {
+    "analysed": 1396,
+    "qualityPasses": 259,
+    "atBuy": 17,
+    "returnCountAtBuy": 17,
+    "returnCountQuality": 259,
+    "returnCountAll": 1396,
+    "medianReturnAtBuy": 0.435,
+    "medianReturnQuality": 0.5308,
+    "medianReturnAll": 0.5966,
+    "hitRateAtBuy": 0.3529,
+    "hitRateQuality": 0.471,
+    "hitRateAll": 0.5,
+    "avgReturnAtBuy": 0.5949,
+    "avgReturnQuality": 1.0811,
+    "avgReturnAll": 1.6478
+  },
+  "shortHistoryCompanies": 79,
+  "shortFindableCompanies": 77,
+  "shortMissingSearch": [
+    "278470.KO",
+    "TLC.AU"
+  ],
+  "predecessorCompanies": [],
+  "lostPredecessors": [
+    "FDXF.US",
+    "HONA.US",
+    "KALMAR.HE",
+    "PLX.PA",
+    "SDZ.SW",
+    "SNDK.US",
+    "SOLV.US",
+    "SYENS.BR",
+    "TKMS.XETRA",
+    "VLTO.US"
+  ],
+  "lostPredecessorsSearchable": [
+    "FDXF.US",
+    "HONA.US",
+    "KALMAR.HE",
+    "PLX.PA",
+    "SDZ.SW",
+    "SNDK.US",
+    "SOLV.US",
+    "SYENS.BR",
+    "TKMS.XETRA",
+    "VLTO.US"
+  ],
+  "priceStoryDossiers": 2708,
+  "canonicalFrozenAliasMismatches": [],
+  "requestedHistories": [
+    {
+      "id": "EQNR.OL",
+      "before": {
+        "years": 28,
+        "first": 1998,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 28,
+        "first": 1998,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "4043.JP",
+      "before": {
+        "years": 14,
+        "first": 2013,
+        "last": 2026,
+        "source": "edinet"
+      },
+      "after": {
+        "years": 14,
+        "first": 2013,
+        "last": 2026,
+        "source": "edinet"
+      }
+    },
+    {
+      "id": "3457.JP",
+      "before": {
+        "years": 14,
+        "first": 2013,
+        "last": 2026,
+        "source": "edinet"
+      },
+      "after": {
+        "years": 14,
+        "first": 2013,
+        "last": 2026,
+        "source": "edinet"
+      }
+    },
+    {
+      "id": "EVN.AU",
+      "before": {
+        "years": 22,
+        "first": 2005,
+        "last": 2026,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 22,
+        "first": 2005,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "NTRS.US",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "AENA.MC",
+      "before": {
+        "years": 15,
+        "first": 2011,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 15,
+        "first": 2011,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "HMSO.LSE",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    }
+  ]
+}

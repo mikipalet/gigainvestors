@@ -1,0 +1,1008 @@
+{
+  "quality": [
+    {
+      "id": "7203.JP",
+      "test": "management",
+      "before": "pass",
+      "after": "fail",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "8630.JP",
+      "test": "economics",
+      "before": "pass",
+      "after": "fail",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "8630.JP",
+      "test": "management",
+      "before": "pass",
+      "after": "fail",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "FDXF.US",
+      "test": "understandable",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "FDXF.US",
+      "test": "moat",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "FDXF.US",
+      "test": "economics",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "FDXF.US",
+      "test": "management",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "FDXF.US",
+      "test": "accounting",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "HONA.US",
+      "test": "understandable",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "HONA.US",
+      "test": "moat",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "HONA.US",
+      "test": "economics",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "HONA.US",
+      "test": "management",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "HONA.US",
+      "test": "accounting",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "KALMAR.HE",
+      "test": "understandable",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "KALMAR.HE",
+      "test": "moat",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "KALMAR.HE",
+      "test": "economics",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "KALMAR.HE",
+      "test": "management",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "KALMAR.HE",
+      "test": "accounting",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "PLX.PA",
+      "test": "understandable",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "PLX.PA",
+      "test": "moat",
+      "before": "fail",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "PLX.PA",
+      "test": "economics",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "PLX.PA",
+      "test": "management",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "PLX.PA",
+      "test": "accounting",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SDZ.SW",
+      "test": "understandable",
+      "before": "fail",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SDZ.SW",
+      "test": "moat",
+      "before": "fail",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SDZ.SW",
+      "test": "economics",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SDZ.SW",
+      "test": "management",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SDZ.SW",
+      "test": "accounting",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SNDK.US",
+      "test": "understandable",
+      "before": "fail",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SNDK.US",
+      "test": "moat",
+      "before": "fail",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SNDK.US",
+      "test": "economics",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SNDK.US",
+      "test": "management",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SNDK.US",
+      "test": "accounting",
+      "before": "fail",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SOLV.US",
+      "test": "understandable",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SOLV.US",
+      "test": "moat",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SOLV.US",
+      "test": "economics",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SOLV.US",
+      "test": "management",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SOLV.US",
+      "test": "accounting",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SYENS.BR",
+      "test": "understandable",
+      "before": "fail",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SYENS.BR",
+      "test": "moat",
+      "before": "fail",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SYENS.BR",
+      "test": "economics",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SYENS.BR",
+      "test": "management",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "SYENS.BR",
+      "test": "accounting",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "TKMS.XETRA",
+      "test": "understandable",
+      "before": "fail",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "TKMS.XETRA",
+      "test": "moat",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "TKMS.XETRA",
+      "test": "economics",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "TKMS.XETRA",
+      "test": "management",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "TKMS.XETRA",
+      "test": "accounting",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "VLTO.US",
+      "test": "understandable",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "VLTO.US",
+      "test": "moat",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "VLTO.US",
+      "test": "economics",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "VLTO.US",
+      "test": "management",
+      "before": "unclear",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    },
+    {
+      "id": "VLTO.US",
+      "test": "accounting",
+      "before": "pass",
+      "after": "na",
+      "decision": "UNREVIEWED"
+    }
+  ],
+  "price": [
+    {
+      "id": "000001.SHE",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "0002.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "000720.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "0027.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "003230.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "0066.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "008930.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "017670.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "026960.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "064350.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "0700.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "0968.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "1209.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "192820.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "204320.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "2313.HK",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "2395.TW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "251270.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "4904.TW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "5871.TW",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "6505.TW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "6618.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "8306.JP",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "ABBN.SW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "ALLN.SW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "AMZN.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "ATD.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "AXIA3.SA",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "BC.MI",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "BEN.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "BMED.MI",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "CCO.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "CIP.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "COR.LS",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "CSX.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "CTC-A.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "EBAY.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "EBO.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "FER.AS",
+      "test": "price",
+      "before": null,
+      "after": "fail",
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "FHZN.SW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "FIS.US",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "FLEX.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "GETI-B.ST",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "HEI.XETRA",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "HO.PA",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "HOT.XETRA",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "HRL.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "IEX.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "IG.MI",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "IR.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "ISP.MI",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "K.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "KDP.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "KEP1.F",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "KGH.WAR",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "LIN.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "LVS.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "MB.MI",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "MNST.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "MOS.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "MPWR.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "MTS.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "NEX.PA",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "NXPI.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "ODFL.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "PKF1.F",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "PPL.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "PSSA3.SA",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "QAN.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "QGEN.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "REP.MC",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "RGN.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "SAVE.ST",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "SCG.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "SDZ.SW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "SHL.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "SIA1.F",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "SOBI.ST",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "STLD.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "SUBC.OL",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "SYENS.BR",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "TECK-B.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "TMUS.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "TNE.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "TXN.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "VACN.SW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "VIVT3.SA",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "WALMEX.MX",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    },
+    {
+      "id": "WRT1V.HE",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNREVIEWED_FINANCIAL_MODEL_CHANGE"
+    }
+  ],
+  "counts": {
+    "quality": {
+      "UNREVIEWED": 53
+    },
+    "price": {
+      "UNREVIEWED_FINANCIAL_MODEL_CHANGE": 89
+    }
+  }
+}

@@ -1,0 +1,770 @@
+{
+  "states": 581,
+  "statesWithIssues": 87,
+  "issues": 126,
+  "cutOverlapIssues": [],
+  "otherIssues": [
+    {
+      "viewport": "1728x970",
+      "path": "/?q=2018Q3",
+      "state": "All companies \u2197",
+      "issue": "raster empty area 15.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/lulu.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "bottom empty area 11.0% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/lulu.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 16.9% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/lulu.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "bottom empty area 11.0% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/lulu.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.3% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/lulu.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 18.1% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/wkl.as",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.2% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/wkl.as",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 20.4% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "bottom empty area 11.4% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 17.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "bottom empty area 11.0% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.3% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "bottom empty area 11.4% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 17.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 15.7% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.6% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open valuation",
+      "issue": "bottom empty area 8.9% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open valuation",
+      "issue": "raster empty area 17.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/ko.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "bottom empty area 11.0% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/ko.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 17.3% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/ko.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 20.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/jpm.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/jpm.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 17.1% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/7203.jp",
+      "state": "Open Honest profits evidence",
+      "issue": "bottom empty area 10.3% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/7203.jp",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 22.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/reliance.nse",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 31.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/reliance.nse",
+      "state": "Open Honest profits evidence",
+      "issue": "bottom empty area 10.4% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/reliance.nse",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 24.6% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/reliance.nse",
+      "state": "Open valuation",
+      "issue": "raster empty area 17.9% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/cbg.lse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 17.4% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/cbg.lse",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 16.2% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/cbg.lse",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 18.3% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/cbg.lse",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 18.3% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 28.4% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "In depth \u2197",
+      "issue": "bottom empty area 14.8% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 32.1% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "In depth \u2197",
+      "issue": "empty block 130px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/wkl.as",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 17.7% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/wkl.as",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.0% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/ko.us",
+      "state": "Open Honest profits evidence",
+      "issue": "bottom empty area 8.3% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/ko.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/jpm.us",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 18.7% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/jpm.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 18.1% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/jpm.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.5% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "Open valuation",
+      "issue": "bottom empty area 19.0% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "Open valuation",
+      "issue": "raster empty area 23.5% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "Open valuation",
+      "issue": "empty block 220px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/reliance.nse",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.3% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/reliance.nse",
+      "state": "Open valuation",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 18.6% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 16.3% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 18.9% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "Open valuation",
+      "issue": "bottom empty area 18.8% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "Open valuation",
+      "issue": "raster empty area 27.7% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "Open valuation",
+      "issue": "empty block 220px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 33.8% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 33.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/lulu.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 15.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/lulu.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 12.4% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/lulu.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 22.1% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/lulu.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 16.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open Cash for owners evidence",
+      "issue": "bottom empty area 39.8% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 42.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open Cash for owners evidence",
+      "issue": "empty block 296px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open valuation",
+      "issue": "bottom empty area 20.0% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open valuation",
+      "issue": "raster empty area 28.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open valuation",
+      "issue": "empty block 152px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/adbe.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 15.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/adbe.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 15.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 10.1% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 21.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 17.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open valuation",
+      "issue": "bottom empty area 26.1% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open valuation",
+      "issue": "raster empty area 32.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open valuation",
+      "issue": "empty block 200px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/ko.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 13.1% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/ko.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 22.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/ko.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 16.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/ko.us",
+      "state": "Open valuation",
+      "issue": "bottom empty area 10.3% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/ko.us",
+      "state": "Open valuation",
+      "issue": "raster empty area 21.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 17.9% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 16.2% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 21.3% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 32.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "empty block 200px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "bottom empty area 18.1% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 30.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "empty block 128px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 19.4% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 15.7% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 17.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 8.9% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 19.1% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 16.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 18.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 19.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 17.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 8.9% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 19.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 21.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 21.1% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open valuation",
+      "issue": "raster empty area 18.7% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 17.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 18.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 21.3% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 32.2% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "empty block 200px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Cash for owners evidence",
+      "issue": "bottom empty area 32.1% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 39.7% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Cash for owners evidence",
+      "issue": "empty block 248px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Honest profits evidence",
+      "issue": "bottom empty area 8.4% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 18.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open valuation",
+      "issue": "raster empty area 16.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "In depth \u2197",
+      "issue": "bottom empty area 13.5% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 28.7% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 23.2% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/plx.pa",
+      "state": "More \u2197",
+      "issue": "bottom empty area 11.5% >= 8%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/plx.pa",
+      "state": "More \u2197",
+      "issue": "raster empty area 25.8% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/solv.us",
+      "state": "More \u2197",
+      "issue": "raster empty area 18.8% > 15%"
+    }
+  ],
+  "viewports": {
+    "1728x970": 146,
+    "2056x1180": 146,
+    "1440x800": 146,
+    "390x844": 143
+  }
+}

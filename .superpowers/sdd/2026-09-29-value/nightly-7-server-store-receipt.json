@@ -1,0 +1,26 @@
+[
+  {
+    "file": "index/default.json",
+    "status": 200,
+    "candidateMatch": true,
+    "responseSha256": "75eb8e7ada8584ad86012191ce25d337bc3f3eee60a1dba0fc6217e62d4ddc8f"
+  },
+  {
+    "file": "index/US.json",
+    "status": 200,
+    "candidateMatch": true,
+    "responseSha256": "3fd0079e0cf1eeed3a7277ea5b9399da67b08243c015d7736d5cb855c96d82e6"
+  },
+  {
+    "file": "dossiers/024.json",
+    "status": 200,
+    "candidateMatch": true,
+    "responseSha256": "f797327d38df18196c1d611eb8e2c3ee16049efbf2f7f2141841e634ef7681c9"
+  },
+  {
+    "file": "search/manifest.json",
+    "status": 200,
+    "candidateMatch": true,
+    "responseSha256": "8999d4f3fdbb8ac2d7a41229e7433e619483aac857c708dc6cc6d24ef4dfbdfe"
+  }
+]

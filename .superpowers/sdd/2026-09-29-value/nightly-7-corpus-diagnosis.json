@@ -1,0 +1,150 @@
+[
+  {
+    "id": "PLX.PA",
+    "current": {
+      "sha256": "23972e1144d8088f4c4d9d9c5daff9455c533c3cd0d0bb067e400a7c9046057d",
+      "asOf": "2026-10-01T09:07:00.898Z",
+      "status": "insufficient_data",
+      "versions": {
+        "pipeline": "19",
+        "questions": "2"
+      },
+      "predecessorCount": 0,
+      "verdicts": {
+        "understandable": "unclear",
+        "moat": "unclear",
+        "economics": "unclear",
+        "management": "unclear",
+        "accounting": "unclear"
+      }
+    },
+    "nightly6": {
+      "sha256": "b617a7311b93292883f2d0570e4ec8cf9de1e7af0a7a1f7277f61b6be6d2c2a4",
+      "asOf": "2026-10-03T17:31:17.794Z",
+      "status": "scored",
+      "versions": {
+        "pipeline": "26",
+        "questions": "2"
+      },
+      "predecessorCount": 5,
+      "verdicts": {
+        "understandable": "pass",
+        "moat": "fail",
+        "economics": "pass",
+        "management": "unclear",
+        "accounting": "pass"
+      }
+    }
+  },
+  {
+    "id": "SOLV.US",
+    "current": {
+      "sha256": "0d11f776766c87d32a6ffdb99cb4a7a15c550f1d5633dbe5810833991902b472",
+      "asOf": "2026-10-01T09:07:10.064Z",
+      "status": "insufficient_data",
+      "versions": {
+        "pipeline": "19",
+        "questions": "2"
+      },
+      "predecessorCount": 0,
+      "verdicts": {
+        "understandable": "unclear",
+        "moat": "unclear",
+        "economics": "unclear",
+        "management": "unclear",
+        "accounting": "unclear"
+      }
+    },
+    "nightly6": {
+      "sha256": "330bcdabb6c5e9fe6ec59f99270a07e3eb3000ea69468ec0f50d66b9149ddee1",
+      "asOf": "2026-10-03T17:31:45.409Z",
+      "status": "scored",
+      "versions": {
+        "pipeline": "26",
+        "questions": "2"
+      },
+      "predecessorCount": 1,
+      "verdicts": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "pass",
+        "management": "unclear",
+        "accounting": "pass"
+      }
+    }
+  },
+  {
+    "id": "7203.JP",
+    "current": {
+      "sha256": "1702480db22888e57cb492fc56a6c3825f0e84560e79854b8f83a5e1b27ca640",
+      "asOf": "2026-10-01T19:03:10.287Z",
+      "status": "scored",
+      "versions": {
+        "pipeline": "20",
+        "questions": "2"
+      },
+      "predecessorCount": 0,
+      "verdicts": {
+        "understandable": "pass",
+        "moat": "fail",
+        "economics": "fail",
+        "management": "fail",
+        "accounting": "pass"
+      }
+    },
+    "nightly6": {
+      "sha256": "34e686463df653f9d6c33d7fdeb335e1b2687ff62a9757c202e1edada35bfbd8",
+      "asOf": "2026-10-03T17:29:45.493Z",
+      "status": "scored",
+      "versions": {
+        "pipeline": "26",
+        "questions": "2"
+      },
+      "predecessorCount": 0,
+      "verdicts": {
+        "understandable": "pass",
+        "moat": "fail",
+        "economics": "fail",
+        "management": "pass",
+        "accounting": "pass"
+      }
+    }
+  },
+  {
+    "id": "8630.JP",
+    "current": {
+      "sha256": "403de3f69cd8939f52ffa821be6d2b659674b1eb5f885aa12d4cc193d1eb46ae",
+      "asOf": "2026-10-01T19:04:01.253Z",
+      "status": "scored",
+      "versions": {
+        "pipeline": "20",
+        "questions": "2"
+      },
+      "predecessorCount": 0,
+      "verdicts": {
+        "understandable": "pass",
+        "moat": "fail",
+        "economics": "fail",
+        "management": "fail",
+        "accounting": "pass"
+      }
+    },
+    "nightly6": {
+      "sha256": "561547417654abfb9e8bb4f81bae95d3fa9619bd6235a6a5976489fdba22f0fd",
+      "asOf": "2026-10-03T17:29:46.944Z",
+      "status": "scored",
+      "versions": {
+        "pipeline": "26",
+        "questions": "2"
+      },
+      "predecessorCount": 0,
+      "verdicts": {
+        "understandable": "pass",
+        "moat": "fail",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass"
+      }
+    }
+  }
+]

@@ -182,7 +182,7 @@ it('retains an existing company history when a refresh returns no statements',as
   await stage({only:['EMPTY.US']});
   expect(readCorpusJson<any>('fundamentals/EMPTY.US.json')!.years[0]).toMatchObject(prior.years[0]);
 });
-it('stores retained source history even when a refreshed share jump fails integrity',async()=>{
+it('retains source history and rejects a destructive refreshed share jump',async()=>{
  const id='JUMP.US';appendJsonl('universe.jsonl',{id,currency:'USD',marketCapUsd:100});
  const years=Array.from({length:8},(_,i)=>({fy:2017+i,end:`${2017+i}-12-31`,currency:'USD',netIncome:10,totalAssets:100,equity:50,dilutedShares:10,ocf:20}));
  writeCorpusJson(`fundamentals/${id}.json`,{id,currency:'USD',fetchedAt:'2026-09-01',years,integrity:{ok:true,reasons:[]}});
@@ -190,5 +190,7 @@ it('stores retained source history even when a refreshed share jump fails integr
  await stage({only:[id]});
  const saved=readCorpusJson<any>(`fundamentals/${id}.json`);
  expect(saved.years).toHaveLength(8);expect(saved.years[0].ocf).toBe(20);
- expect(saved.integrity.ok).toBe(false);
+ expect(saved.years.map((y: {dilutedShares:number})=>y.dilutedShares)).toEqual(Array(8).fill(10));
+ expect(saved.years.at(-1).provenance.dilutedShares.retainedFrom.fetchedAt).toBe('2026-09-01');
+ expect(saved.integrity.ok).toBe(true);
 });

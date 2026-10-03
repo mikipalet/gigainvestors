@@ -23,6 +23,7 @@ afterEach(() => {
 function userResponses(responses: unknown[]) {
   const observed: string[] = [];
   vi.stubGlobal('fetch', async (url: string) => {
+    if (new URL(url).pathname === '/api/eod/KO.US') throw new Error('fixture quota still exhausted');
     expect(new URL(url).pathname).toBe('/api/user');
     observed.push(new Date().toISOString());
     const response = responses[Math.min(observed.length - 1, responses.length - 1)];
@@ -43,7 +44,7 @@ it('waits for both current provider date and fewer than 5000 calls, then replace
   const logs: string[] = [];
   const work = waitForEodhdReset({ log: message => logs.push(message) });
   await vi.advanceTimersByTimeAsync(20 * 60_000);
-  expect(budgetUsage().used).toBe(99000);
+  expect(budgetUsage().used).toBe(99001); // The failed reset probe still reserves one call.
   await vi.advanceTimersByTimeAsync(10 * 60_000);
   await work;
   expect(observed).toEqual(['2026-09-30T03:00:00.000Z', '2026-09-30T03:10:00.000Z', '2026-09-30T03:20:00.000Z', '2026-09-30T03:30:00.000Z']);
@@ -59,7 +60,7 @@ it('starts immediately after reset and retains valid same-day history reservatio
   expect(Date.now()).toBe(Date.parse('2026-09-30T03:00:00Z'));
   expect(budgetUsage()).toMatchObject({ used: 4999, history: 20 });
 });
-it('fails closed after 12 hours without changing the ledger', async () => {
+it('fails closed after 12 hours without resetting the ledger, counting hourly probes', async () => {
   syncBudget(99000);
   const observed = userResponses([{ apiRequestsDate: '2026-09-29', apiRequests: 99000 }]);
   const work = expect(waitForEodhdReset({ log: () => {} })).rejects.toThrow('12 hours');
@@ -67,7 +68,27 @@ it('fails closed after 12 hours without changing the ledger', async () => {
   await work;
   expect(observed).toHaveLength(72);
   expect(Date.now()).toBe(Date.parse('2026-09-30T15:00:00Z'));
-  expect(budgetUsage().used).toBe(99000);
+  expect(budgetUsage().used).toBe(99012);
+});
+it('makes a cheap data request to expose the new provider day, then immediately rechecks', async () => {
+  syncBudget(99000);
+  const paths: string[] = [];
+  let poked = false;
+  vi.stubGlobal('fetch', async (url: string) => {
+    const path = new URL(url).pathname;
+    paths.push(path);
+    if (path === '/api/eod/KO.US') { poked = true; return Response.json([]); }
+    expect(path).toBe('/api/user');
+    return Response.json(poked
+      ? { apiRequestsDate: '2026-09-30', apiRequests: 1 }
+      : { apiRequestsDate: '2026-09-29', apiRequests: 99000 });
+  });
+  const work = waitForEodhdReset({ log: () => {} });
+  await vi.advanceTimersByTimeAsync(1000); // Allow the three rate-limited requests.
+  await work;
+  expect(paths).toEqual(['/api/user', '/api/eod/KO.US', '/api/user']);
+  expect(Date.now()).toBeLessThan(Date.parse('2026-09-30T03:10:00Z'));
+  expect(budgetUsage()).toMatchObject({ used: 1, providerUsed: 1 });
 });
 it('retries network failures and malformed counters without accepting them as a reset', async () => {
   const observed = userResponses([

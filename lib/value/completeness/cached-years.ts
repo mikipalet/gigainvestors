@@ -1,3 +1,4 @@
+import {withPredecessorHistory} from './predecessor-history';
 import {fillYears} from './second-sources';
 import {deriveYears} from '../derive';
 import {annualFiscalYear} from '../fiscal-period';
@@ -62,7 +63,7 @@ export function completeCachedYears(company:Pick<Company,'id'|'cik'|'source'>,ye
   const older=(old?.years??[]).filter(y=>y.end<=predecessor.through).map(y=>({...y,provenance:Object.fromEntries(Object.entries(y.provenance??{}).map(([field,p])=>[field,{...p,inputs:[...(p.inputs??[]),`Predecessor ${predecessor.id}; 1:1 holding-company transfer: ${predecessor.source}`,predecessor.quote]}]))}));
   result=fillYears(result,translate(older));
  }
- return deriveYears(withReportedFacts(company.id,fillYears(restoreReportedPeriods(company.id,result),[]))).map(y=>{
+ return deriveYears(withPredecessorHistory(company.id,withReportedFacts(company.id,fillYears(restoreReportedPeriods(company.id,result),[])))).map(y=>{
   const event=issuerCapitalChanges[company.id]?.find(e=>e.fy===y.fy&&e.cancelledCommon);
   return event?{...y,commonCapitalCancelled:true,provenance:{...y.provenance,commonCapitalCancelled:{source:event.source,field:'common shares cancelled',method:'reported' as const,inputs:[event.quote]}}}:y;
  });

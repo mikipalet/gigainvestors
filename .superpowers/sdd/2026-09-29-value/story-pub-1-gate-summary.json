@@ -1,0 +1,46 @@
+{
+  "states": 669,
+  "viewports": [
+    {
+      "viewport": "1728x970",
+      "states": 168,
+      "rawStatesWithFindings": 44,
+      "cutOverlapFailures": 0,
+      "nonWhitespaceFailures": 0,
+      "storyDrawers": 11
+    },
+    {
+      "viewport": "2056x1180",
+      "states": 168,
+      "rawStatesWithFindings": 34,
+      "cutOverlapFailures": 0,
+      "nonWhitespaceFailures": 0,
+      "storyDrawers": 11
+    },
+    {
+      "viewport": "1440x800",
+      "states": 168,
+      "rawStatesWithFindings": 60,
+      "cutOverlapFailures": 0,
+      "nonWhitespaceFailures": 0,
+      "storyDrawers": 11
+    },
+    {
+      "viewport": "390x844",
+      "states": 165,
+      "rawStatesWithFindings": 15,
+      "cutOverlapFailures": 0,
+      "nonWhitespaceFailures": 0,
+      "storyDrawers": 11
+    }
+  ],
+  "cutOverlapFailures": 0,
+  "nonWhitespaceFailures": 0,
+  "rawStatesWithFindings": 153,
+  "rawExitCodes": [
+    1,
+    1,
+    1,
+    1
+  ]
+}

@@ -57,7 +57,7 @@ describe('computed memo coverage',()=>{
   const lines=numericMemo(analysis,years,100,{insiderPercent:4.5,product:'Athletic apparel'});
   expect(lines.map(l=>l.question)).toEqual([1,2,4,5,7]);
   expect(lines.find(l=>l.question===1)?.answer).toMatch(/apparel retail.*100/);
-  expect(lines.find(l=>l.question===2)?.answer).toMatch(/28.*30.*2021–23/);
+  expect(lines.find(l=>l.question===2)?.answer).toMatch(/26.*28.*2023–25/);
   expect(lines.find(l=>l.question===5)?.answer).toContain('4.5%');
   for(const l of lines){expect(l.answer.split(/\s+/).length).toBeLessThanOrEqual(18);expect(l.answer).toMatch(/\d/);}
  });

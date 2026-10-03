@@ -1,3 +1,5 @@
+import {alignHistoryShares} from './history-split-basis';
+import {reconcilePriceSplits} from './price-history';
 import {netCashSeries} from './net-cash';
 import { applyAdjustments, attachJudgements } from "./judgement/apply";
 import judgementTrust from "./judgement/trust.json";
@@ -17,7 +19,7 @@ import { runNumericTests } from "./tests";
 import { valueCompany, valuationMargin } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory, Year } from "./types";
 
-export const PIPELINE_VERSION = "22";
+export const PIPELINE_VERSION = "23";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -27,6 +29,8 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   bondYield: number | null; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; priceHistory?: PriceHistory | null; priceHistoryPending?: boolean; ask?: Ask; getBondYield?: typeof fetchBondYield; usdRate?: ReturnType<typeof createUsdRate>;
   onDerivedYears?: (years:readonly Year[])=>void;
 }): Promise<Analysis> {
+  fundamentals=alignHistoryShares(fundamentals,priceHistory??[]);
+  if(priceHistory)priceHistory=reconcilePriceSplits(priceHistory,fundamentals);
   // Reclassify old corpus enrichment, including payment networks previously marked as banks.
   if (company.industry) company = { ...company, kind: kindFor({ ...company, lending: fundamentals.years.at(-1) }) };
   // One reporting-to-trading FX rate serves both valuation and historical caps.
@@ -82,7 +86,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     };
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
-  return withCapitalReturns({ judgement: human.judgement, reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
+  return withCapitalReturns({ predecessorHistory: fundamentals.years.flatMap(y=>y.predecessor?[{fy:y.fy,...y.predecessor}]:[]), judgement: human.judgement, reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
     valueHistory: valueHistory({ investmentHolding: company.investmentHolding, fundamentals, kind: company.kind, industry: company.industry, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates", ...(adjusted.adjustments.length?["Historical value ranges retain the original capex calculation; the current filing judgement is not backfilled into historical valuations"]:[])],
     events: companyEvents(fundamentals), series: company.investmentHolding ? { netCash: netCashSeries(years), navPerShare: years.map(y => [y.fy, navPerShare(y)]) } : perShareSeries(adjusted.adjustments.length ? {...fundamentals,years} : fundamentals),

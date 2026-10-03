@@ -137,10 +137,10 @@ it('does not publish an unresolved core metric to any index or dossier',()=>{
  expect(Object.keys(files).some(k=>k.startsWith('dossiers/'))).toBe(false);
  expect(files['index/default.json']).toEqual([]);
 });
-it('short history keeps a direct-only neutral dossier without per-test gap strings',()=>{
+it('short history stays findable with a neutral dossier without per-test gap strings',()=>{
  const a=analysisFixture(4);expect(shortHistory(a)).toBe(true);
  const {files}=buildOutput({analyses:[a],holdersByTicker:{},investorNames:{},fx:{}});
- expect(files['index/default.json']).toEqual([]);expect(files['top.json']).toEqual([]);
+ expect(files['index/default.json']).toEqual([]);expect(files['top.json']).toEqual(['TEST.US']);
  const dossiers=Object.entries(files).filter(([k])=>k.startsWith('dossiers/'));
  expect(dossiers).toHaveLength(1);expect(gapWording.test(JSON.stringify(dossiers))).toBe(false);
 });

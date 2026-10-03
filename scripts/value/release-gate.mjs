@@ -12,7 +12,7 @@ const sizes = (process.env.QA_VIEWPORTS ?? '1728x970,2056x1180,1440x800,390x844'
 const report = [];
 function disk() {
   const s = statfsSync('/');
-  if (s.bavail * s.bsize < Number(process.env.STORY_MIN_FREE_GIB ?? 6) * 1024 ** 3) throw Error('DISK STOP: below configured free-space floor');
+  if (s.bavail * s.bsize < Number(process.env.VALUE_MIN_FREE_GB ?? 6) * 1024 ** 3) throw Error('DISK STOP: below configured free-space floor');
 }
 
 // Background colours are sampled from the raster itself. A cell is empty only
@@ -146,9 +146,13 @@ try {
         if (await combo.isVisible()) { await combo.click(); await record(`Filter ${label}`); await page.keyboard.press('Escape'); }
       }
       await page.getByRole('button', { name: 'Search companies', exact: true }).click();
-      await record('Search', '.search-modal,dialog[open]');
-      await page.locator('.search-modal input,.company-search input,dialog[open] input').first().fill('Wolters');
-      await record('Search results', '.search-modal,dialog[open]');
+      // Search is gigainvestors.com's shared modal: audit it as page chrome, never as a drawer.
+      const searchIsSharedModal = async state => {
+        if (!await page.locator('.search-modal').isVisible() || await page.locator('dialog[open]').count()) report.push({ width, height, path, state, issues: ['search must be the shared gigainvestors modal, not a drawer'] });
+      };
+      await record('Search');await searchIsSharedModal('Search');
+      await page.locator('.search-modal input').fill('Wolters');
+      await record('Search results');await searchIsSharedModal('Search results');
     } catch (e) {
       report.push({ width, height, path, state: 'interaction failure', issues: [e.message] });
       if (e.message.startsWith('DISK STOP')) throw e;

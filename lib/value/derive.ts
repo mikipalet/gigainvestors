@@ -20,7 +20,13 @@ export function deriveYears(years: Year[]): Year[] {
       y.provenance![key] = { source: 'statements', field: String(key), method, inputs };
     };
     if (finite(y.revenue) && finite(y.costOfSales)) put('grossProfit', y.revenue-y.costOfSales, ['revenue','costOfSales']);
-    if (finite(y.grossProfit) && finite(y.operatingExpenses)) put('operatingIncome', y.grossProfit-y.operatingExpenses, ['grossProfit','operatingExpenses']);
+    // Refresh an existing EBIT proxy from its own inputs. A secondary listing's
+    // total expenses may include cost of sales; subtracting them from gross
+    // profit would both change the selected basis and count those costs twice.
+    const ebitProxy = y.provenance?.operatingIncome?.inputs?.includes('EBIT proxy');
+    if (ebitProxy && finite(y.preTaxIncome) && finite(y.interestExpense))
+      put('operatingIncome', y.preTaxIncome+y.interestExpense, ['preTaxIncome','interestExpense','EBIT proxy']);
+    if (!ebitProxy && finite(y.grossProfit) && finite(y.operatingExpenses)) put('operatingIncome', y.grossProfit-y.operatingExpenses, ['grossProfit','operatingExpenses']);
     // EBIT is an explicit fallback, not an assumption that ancillary income is zero.
     if (y.operatingIncome == null && finite(y.preTaxIncome) && finite(y.interestExpense))
       put('operatingIncome', y.preTaxIncome+y.interestExpense, ['preTaxIncome','interestExpense','EBIT proxy']);

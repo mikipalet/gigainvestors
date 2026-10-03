@@ -1,4 +1,8 @@
 import {applyStory,trustedStory,type StoryReading,type StoryGrade} from '../../../lib/value/price-story/publication';
+import historyReturns from './history-returns';
+import {numericMemo} from '../../../lib/value/owner-memo';
+import {alignHistoryShares} from '../../../lib/value/history-split-basis';
+import {completeCachedSplits,completeCachedYears} from '../../../lib/value/completeness/cached-years';
 import { forwardFiles } from './forward';
 import { METHOD_VERSION } from '../../../lib/value/method-version';
 import { isDeepStrictEqual } from 'node:util';
@@ -10,7 +14,7 @@ import type { ThesisResult } from '../../../lib/value/thesis/types';
 import { withCapitalReturns } from '../../../lib/value/capital-returns';
 import { summarizeSnapshots } from '../../../lib/value/snapshots';
 import { bestWesternListing } from '../../../lib/value/western';
-import { isDecided, undecidedReasons } from '../../../lib/value/publication-eligibility';
+import { isDecided, isFindable, undecidedReasons } from '../../../lib/value/publication-eligibility';
 import { companyExclusion } from '../../../lib/value/fund-exclusion';
 import { applyMembership } from '../../../lib/value/index-membership';
 import {applyShareCheck,type ShareCheck} from '../../../lib/value/share-check';
@@ -244,7 +248,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   writeCorpusJson('staging/unresolved-shares.json', {asOf:new Date().toISOString(),companies:unresolved});
   console.log(`Private share residual: ${unresolved.length}; quality passes: ${unresolved.filter(r=>r.qualityPass).length}`);
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
-  const eligible=new Set(rows.filter(isDecided).map(row=>row.id));
+  const eligible=new Set(rows.filter(isFindable).map(row=>row.id));
   writeCorpusJson('staging/undecided.json',{asOf:new Date().toISOString(),companies:rows.filter(row=>!isDecided(row)).map(row=>({id:row.id,reasons:undecidedReasons(row)}))});
   const { shards, manifest } = buildAdaptiveSearchShards(universe.filter(company=>eligible.has(company.id)).map(company => enrichedCompany(company)), eligible);
   files["search/manifest.json"] = manifest;
@@ -253,12 +257,12 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   }
   const history=latestHistoryFiles(universe.filter(c=>eligible.has(c.id)));
   for(const [file,data]of Object.entries(history)) {
-    // Published historical rows must also have a decided checklist.
-    if(Array.isArray(data)&&file!=='history/companies.json') history[file]=data.filter((row:any)=>Array.isArray(row)&&eligible.has(row[0])&&typeof row[1]==='string'&&/^[PF]{5}$/.test(row[1]));
+    // Historical eligibility is the decision then, never today’s surviving membership.
+    if(Array.isArray(data)&&file!=='history/companies.json') history[file]=data.filter((row:any)=>Array.isArray(row)&&typeof row[1]==='string'&&/^[PF]{5}$/.test(row[1]));
   }
   const historyIndex=history['history/index.json'] as import('../../../lib/value/time-travel').HistoryIndex|undefined;
   if(historyIndex){
-    const westernIds=new Set(universe.filter(c=>bestWesternListing(c)).map(c=>c.id));
+    const westernIds=new Set((history['history/companies.json'] as import('../../../lib/value/types').IndexRow[]??[]).filter(c=>c.w).map(c=>c.id));
     historyIndex.perYear={};historyIndex.western={perYear:{}};
     historyIndex.perQuarter={};historyIndex.western.perQuarter={};
     for(const q of historyIndex.quarters??[]){
@@ -332,7 +336,11 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
     try {
       const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
       if (!analysis) continue; // The rolling download has not analysed this company yet.
-      analysis.ownerMemo=readCorpusJson<Analysis["ownerMemo"]>(`business-backfill/memos/${company.id}.json`)??analysis.ownerMemo;
+      const publishedMemo=readCorpusJson<Analysis["ownerMemo"]>(`published-memos/${company.id}.json`);
+      const currentMemo=readCorpusJson<Analysis["ownerMemo"]>(`business-backfill/memos/${company.id}.json`)??analysis.ownerMemo;
+      // Research is incremental: an omitted answer is not a retraction of a live answer.
+      // New answers win; the shared public consistency gate still checks every line.
+      analysis.ownerMemo=currentMemo?{...currentMemo,lines:[...new Map([...(publishedMemo?.lines??[]),...currentMemo.lines].map(line=>[line.question,line])).values()].sort((a,b)=>a.question-b.question)}:publishedMemo??undefined;
       const story=applyStory({...analysis,series:analysis.series??{},w:null,holders:[]},null,readCorpusJson<StoryReading>(`price-story/readings/${company.id}.json`),{price:trustedStory(readCorpusJson<StoryGrade>('price-story/calibration.json'),'price'),risk:trustedStory(readCorpusJson<StoryGrade>('price-story/calibration.json'),'risk')},new Date().toISOString());
       analysis.ownerMemo=story.ownerMemo;if(story.priceStory?.line)analysis.priceStory=story.priceStory;
       analysis.businessOverview=readCorpusJson<Analysis["businessOverview"]>(`business-fit/overview/${company.id}.json`)??analysis.businessOverview;
@@ -340,7 +348,14 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");
       // Validate the consumer contract here so one malformed document cannot stop the rollout.
       if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");
-      const years=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`)?.years;
+      const f=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`);
+      if(f)f.splits=completeCachedSplits(company.id,f.splits,readCorpusJson);
+      if(f&&analysis.predecessorHistory?.length)f.years=completeCachedYears(company,f.years,readCorpusJson);
+      const years=f?alignHistoryShares(f,readPriceHistory(company.id)??[]).years:undefined;
+      if(years&&analysis.ownerMemo?.lines.some(l=>l.question===2&&l.basis==='computed')){
+        const customer=numericMemo(analysis,years,null).find(l=>l.question===2);
+        analysis.ownerMemo={...analysis.ownerMemo,lines:analysis.ownerMemo.lines.flatMap(l=>l.question===2&&l.basis==='computed'?customer?[customer]:[]:[l])};
+      }
       analyses.push(applyThesis(applyShareCheck(years?withCapitalReturns(analysis,applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);
@@ -350,6 +365,8 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
 }
 
 export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string; overwrite?: boolean }): Promise<void> {
+  // Workaround: the nightly path does not yet reproduce release-script corrections (fix-5); a hold file keeps live data until it does.
+  if (!options.out && existsSync(corpusPath("publish.hold"))) { console.log(`publish held: ${readFileSync(corpusPath("publish.hold"), "utf8").trim()}`); return; }
   const out = options.out === undefined ? undefined : path.resolve(options.out);
   if (options.overwrite && !out) throw new Error('--overwrite requires local --out');
   if (out && existsSync(out) && readdirSync(out).length) {
@@ -364,6 +381,8 @@ export default async function publish(options: { only?: string[]; limit?: number
   if (!companies.length) throw new Error("Run the universe stage before publish");
   const selected = companies.filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
   if (!selected.length) throw new Error("No companies selected for publish");
+  const returns=await historyReturns({});
+  if(returns.failed.length)throw new Error(`History return refresh failed for ${returns.failed.length} companies; retaining prior publication`);
   const analyses = loadAnalyses(selected);
   const holders = loadHolders(path.resolve(__dirname, "../../../data/store"));
   if (out) {

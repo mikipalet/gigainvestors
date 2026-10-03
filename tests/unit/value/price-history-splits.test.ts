@@ -29,3 +29,7 @@ it('does not infer a split across missing monthly or annual observations',()=>{
  const sparse={...facts(),years:[{end:'2016-12-31',dilutedShares:940},{end:'2018-12-31',dilutedShares:900}]} as Fundamentals;
  expect(reconcilePriceSplits([['2018-07',4871],['2018-08',492.05]],sparse)).toEqual([['2018-07',4871],['2018-08',492.05]]);
 });
+it('matches the exchange ex-date in the prior month for first-of-month legal splits',()=>{
+ const f={...facts(5),splits:[{date:'2021-10-01',factor:5}],years:[{end:'2021-03-31',dilutedShares:15},{end:'2022-03-31',dilutedShares:14.8}]} as Fundamentals;
+ expect(reconcilePriceSplits([['2021-08',10000],['2021-09',2000],['2021-10',2100]],f)).toEqual([['2021-08',2000],['2021-09',2000],['2021-10',2100]]);
+});

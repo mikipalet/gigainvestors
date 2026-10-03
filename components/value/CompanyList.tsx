@@ -33,14 +33,12 @@ export function CompanyList({entries}:{entries:ResultEntry[]}) {
     const bounds=cell.getBoundingClientRect(),walker=document.createTreeWalker(cell,NodeFilter.SHOW_TEXT);
     let node:Node|null;
     while((node=walker.nextNode())){
-     if(!node.textContent?.trim()||node.parentElement?.closest('svg')||!node.parentElement?.checkVisibility())continue;
+     if(!node.textContent?.trim()||node.parentElement?.closest('svg,.chart-interaction')||!node.parentElement?.checkVisibility())continue;
      const range=document.createRange();range.selectNodeContents(node);
      if([...range.getClientRects()].some(r=>r.left<bounds.left-1||r.right>bounds.right+1))return false;
     }
     return true;
    });
-   const dialog=root.closest('dialog');
-   if(dialog)for(let width=dialog.clientWidth;!textFits()&&width<Math.min(innerWidth,700);width+=10)dialog.style.width=`${width+10}px`;
    // Measure intrinsic rows before distributing spare height across the table.
    root.dataset.measuring='true';
    const available=root.clientHeight-(root.querySelector('thead')?.getBoundingClientRect().height??40)-(root.querySelector('nav')?.getBoundingClientRect().height??0)-8;
@@ -58,7 +56,7 @@ export function CompanyList({entries}:{entries:ResultEntry[]}) {
   };
   const fit=()=>{if(frame||!active)return;frame=requestAnimationFrame(()=>{frame=0;measure();});};
   scheduleFit.current=fit;measureNow.current=measure;
-  const observer=new MutationObserver(fit);observer.observe(root,{childList:true,subtree:true});
+  const observer=new MutationObserver(records=>{if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))fit();});observer.observe(root,{childList:true,subtree:true});
   const resize=new ResizeObserver(fit);resize.observe(root);const table=root.querySelector('table');if(table)resize.observe(table);
   document.fonts.ready.then(fit);fit();
   return()=>{active=false;scheduleFit.current=()=>{};measureNow.current=()=>{};observer.disconnect();resize.disconnect();cancelAnimationFrame(frame);};

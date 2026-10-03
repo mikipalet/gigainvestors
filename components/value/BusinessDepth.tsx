@@ -2,7 +2,7 @@
 import {useId,useState,useEffect} from 'react';
 import {PointerTooltip} from '@/components/PointerTooltip';
 import {MEMO_QUESTIONS,impliedAverageGrowth,type MemoLine} from '@/lib/value/owner-memo';
-import {formatMetric} from '@/lib/value/metric-labels';
+import {formatMetric,isCapitalReturn} from '@/lib/value/metric-labels';
 import {sharePrice} from '@/lib/value/listing-details';
 import type {Analysis} from '@/lib/value/types';
 import type {Evidence} from '@/lib/value/judgement/types';
@@ -31,8 +31,9 @@ function Comparison({items}:{items:Array<[string,number]>}){
  return <div className="memo-comparison">{items.map(([label,value])=><div key={label}><span>{label}</span><b>{formatMetric({value,format:'pct',returnRatio:/return on/.test(label)})}</b><ChartInteraction width={240} height={12} label={label} points={[{x:120,y:6,text:`${label}: ${formatMetric({value,format:'pct',returnRatio:/return on/.test(label)})}`}]}><svg viewBox="0 0 240 12" aria-hidden="true"><rect x={Math.min(x(0),x(value))} width={Math.abs(x(value)-x(0))} height="8" fill="var(--viz-ink)" opacity=".5"/></svg></ChartInteraction></div>)}</div>;
 }
 function Answer({line,selected,currency,analysis,price}:{line:MemoLine;selected:string;currency:string;analysis:Analysis;price:number|null}){
- const [tableYears,setTableYears]=useState(8);
- useEffect(()=>{const resize=()=>setTableYears(innerWidth>=768?(innerHeight<850?6:innerHeight>=1050?10:8):8);resize();window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize);},[]);
+ const yearsFor=()=>innerWidth>=768?(innerHeight<850?6:10):8;
+ const [tableYears,setTableYears]=useState(yearsFor);
+ useEffect(()=>{const resize=()=>setTableYears(yearsFor());resize();window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize);},[]);
  const comparisons:Array<[string,number]>=[];
  if(line.question===4&&line.chart?.unit==='percent'){
   const reinvestment=line.chart.points.at(-1)?.[1],roiic=analysis.tests.economics.metrics.roiic;
@@ -50,7 +51,7 @@ function Answer({line,selected,currency,analysis,price}:{line:MemoLine;selected:
   <h3>{MEMO_QUESTIONS[line.question-1]}</h3><p>{line.answer}</p>
   {!!comparisons.length&&<Comparison items={comparisons}/>}{line.question===7&&!!comparisons.length&&<small className="memo-comparison-basis">Current quote and valuation; the source calculation retains its original price.</small>}
   {line.chart&&!comparisons.length&&<MiniSeries dense series={line.chart.points} label={line.chart.label} format={line.chart.unit==='percent'?'pct':line.chart.unit==='ratio'?'x':'money'} currency={currency} height={75}/>}
-  {line.chart&&<table className="memo-years" aria-label={`Recent annual values: ${line.chart.label}`}>{!!comparisons.length&&<caption>{line.chart.label}</caption>}<thead><tr><th>Year</th><th>{line.chart.unit==='percent'?'Percent':line.chart.unit==='ratio'?'Ratio':currency}</th><th title="Change from the previous displayed observation">Change</th></tr></thead><tbody>{line.chart.points.slice(-tableYears).map(([fy,value],i,points)=><tr key={fy}><th>FY{fy}</th><td>{formatMetric({value,format:line.chart!.unit==='percent'?'pct':line.chart!.unit==='ratio'?'x':'money',currency}).replace(`${currency} `,'')}{value!==null&&<AnnualValueBar value={value} values={points.map(p=>p[1])}/>}</td><td>{i>0&&value!==null&&points[i-1][1]?line.chart!.unit==='percent'?`${((value-points[i-1][1]!)*100).toFixed(1)}pp`:`${((value-points[i-1][1]!)/Math.abs(points[i-1][1]!)*100).toFixed(1)}%`:'—'}</td></tr>)}</tbody></table>}
+  {line.chart&&<table className="memo-years" aria-label={`Recent annual values: ${line.chart.label}`}>{!!comparisons.length&&<caption>{line.chart.label}</caption>}<thead><tr><th>Year</th><th>{line.chart.unit==='percent'?'Percent':line.chart.unit==='ratio'?'Ratio':currency}</th><th title="Change from the previous displayed observation">Change</th></tr></thead><tbody>{line.chart.points.slice(-tableYears).map(([fy,value],i,points)=><tr key={fy}><th>FY{fy}</th><td>{formatMetric({value,format:line.chart!.unit==='percent'?'pct':line.chart!.unit==='ratio'?'x':'money',currency,returnRatio:isCapitalReturn(line.chart!.label)}).replace(`${currency} `,'')}{value!==null&&<AnnualValueBar value={value} values={points.map(p=>p[1])}/>}</td><td>{i>0&&value!==null&&points[i-1][1]&&!(isCapitalReturn(line.chart!.label)&&(value>1||points[i-1][1]!>1))?line.chart!.unit==='percent'?`${((value-points[i-1][1]!)*100).toFixed(1)}pp`:`${((value-points[i-1][1]!)/Math.abs(points[i-1][1]!)*100).toFixed(1)}%`:'—'}</td></tr>)}</tbody></table>}
   <footer>{groupedEvidence(line.evidence).map((e,i)=><SourceLink key={i} evidence={e}/>)}</footer>
  </article>;
 }

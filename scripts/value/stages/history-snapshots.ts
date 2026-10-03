@@ -1,4 +1,6 @@
 import {refreshReturn,type ReturnPrices} from '../../../lib/value/since-return';
+import {completeCachedSplits} from '../../../lib/value/completeness/cached-years';
+import {reconcilePriceSplits} from '../../../lib/value/price-history';
 import { alignHistoryShares } from '../../../lib/value/history-split-basis';
 import { availableOn,eodInterims,secInterims,secAnnualFilings } from '../../../lib/value/quarterly-inputs';
 import { snapshotForQuarter,QUARTER_ASSUMPTIONS } from '../../../lib/value/quarterly-snapshots';
@@ -50,11 +52,13 @@ function edinetFilings(): Record<string,Record<string,string>> {
 export function latestHistoryFiles(companies = loadCompanies({})): Record<string,unknown> {
   const root = corpusPath('history-v7');
   if (!existsSync(root)) return {};
-  for (const run of readdirSync(root).sort().reverse()) {
-    if (!/^[\w-]+$/.test(run)) continue;
-    const index = readCorpusJson<HistoryIndex>(`history-v7/${run}/index.json`);
-    if (!index || index.scope === 'selection') continue; // index is the commit marker, written after every year.
-    // Retain every historical identity, including companies no longer eligible today.
+  // Once quarterly history exists, an annual-only run must never downgrade it.
+  const runs = readdirSync(root).sort().reverse().filter(run => /^[\w-]+$/.test(run))
+    .map(run => ({run,index:readCorpusJson<HistoryIndex>(`history-v7/${run}/index.json`)}))
+    .filter((entry): entry is {run:string;index:HistoryIndex} => !!entry.index && entry.index.scope !== 'selection');
+  const quarterly = runs.filter(({index}) => index.quarters?.length);
+  for (const {run,index} of quarterly.length ? quarterly : runs) {
+    // Keep historical identities even when they are no longer eligible today.
     companies=[...new Map([...loadCompanies({}),...companies].map(c=>[c.id,c])).values()];
     const returnPrices=new Map<string,ReturnPrices|undefined>();
     const filteredIndex: HistoryIndex = {...index, perYear:{},perQuarter:index.quarters?{}:undefined};
@@ -106,8 +110,10 @@ export default async function historySnapshots(options: { only?:string[]; limit?
       let f = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
       if (!f?.years?.length) continue;
       fundamentalsCount++;
-      const prices = readCorpusJson<import('../../../lib/value/types').PriceHistory>(`prices-history-long/${company.id}.json`) ?? readPriceHistory(company.id) ?? [];
+      let prices = readCorpusJson<import('../../../lib/value/types').PriceHistory>(`prices-history-long/${company.id}.json`) ?? readPriceHistory(company.id) ?? [];
+      f.splits=completeCachedSplits(company.id,f.splits,readCorpusJson);
       f=alignHistoryShares(f,prices);
+      prices=reconcilePriceSplits(prices,f);
       const raw = readCorpusJson<RawFilings>(`raw/eodhd/${company.id}.json`);
       const filedByPeriod = filingDates(raw,readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`),company.edinetCode ? filings[company.edinetCode] : undefined);
       const latestMonth = [...prices].filter(([m])=>m<asOf.slice(0,7)).sort(([a],[b])=>a.localeCompare(b)).at(-1);

@@ -25,3 +25,9 @@ data/newsletter/*.facts.json
 
 # Owner memo round-two local publication
 .memo-2/
+
+# Fix 5 local replay, build logs and visual evidence
+.fix5/
+
+# Fix 5c local audit artifacts
+.fix5c/

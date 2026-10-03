@@ -110,7 +110,7 @@ it('requires a reported share quantity before separating acquisition issuance',(
 import { humanVerdict } from '../../../lib/value/judgement/apply';
 it('keeps price separate from the five quality tests in the human verdict',()=>{
  const tests=Object.fromEntries(['understandable','moat','economics','management','accounting'].map(k=>[k,{result:'pass'}]));
- expect(humanVerdict({tests:{...tests,price:{result:'fail'}}} as unknown as Analysis,false)).toBe('Great business, but the price already assumes a lot');
+ expect(humanVerdict({tests:{...tests,price:{result:'fail'}}} as unknown as Analysis,false,true,1.1)).toBe('A wonderful business at too high a price');
 });
 
 import { analyzeCompany } from '../../../lib/value/analyze-company';

@@ -147,3 +147,7 @@
  .value-page .memo-column {gap:10px}
  .value-page .memo-evidence {padding-bottom:8px}
 }
+
+.value-page dialog[data-side-panel][data-fitting] .panel-content {visibility:hidden}
+.value-page .owner-memo-depth .memo-evidence>h3 {break-after:avoid-column}
+.value-page .owner-memo-depth .memo-evidence>h3+p {break-before:avoid-column}

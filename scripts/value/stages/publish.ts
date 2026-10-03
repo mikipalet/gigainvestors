@@ -1,4 +1,7 @@
 import historyReturns from './history-returns';
+import {numericMemo} from '../../../lib/value/owner-memo';
+import {alignHistoryShares} from '../../../lib/value/history-split-basis';
+import {completeCachedSplits} from '../../../lib/value/completeness/cached-years';
 import { forwardFiles } from './forward';
 import { METHOD_VERSION } from '../../../lib/value/method-version';
 import { isDeepStrictEqual } from 'node:util';
@@ -332,13 +335,23 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
     try {
       const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
       if (!analysis) continue; // The rolling download has not analysed this company yet.
-      analysis.ownerMemo=readCorpusJson<Analysis["ownerMemo"]>(`business-backfill/memos/${company.id}.json`)??analysis.ownerMemo;
+      const publishedMemo=readCorpusJson<Analysis["ownerMemo"]>(`published-memos/${company.id}.json`);
+      const currentMemo=readCorpusJson<Analysis["ownerMemo"]>(`business-backfill/memos/${company.id}.json`)??analysis.ownerMemo;
+      // Research is incremental: an omitted answer is not a retraction of a live answer.
+      // New answers win; the shared public consistency gate still checks every line.
+      analysis.ownerMemo=currentMemo?{...currentMemo,lines:[...new Map([...(publishedMemo?.lines??[]),...currentMemo.lines].map(line=>[line.question,line])).values()].sort((a,b)=>a.question-b.question)}:publishedMemo??undefined;
       analysis.businessOverview=readCorpusJson<Analysis["businessOverview"]>(`business-fit/overview/${company.id}.json`)??analysis.businessOverview;
       analysis.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`),analysis)??publicBusiness(analysis.businessDepth,analysis);
       if (analysis.id !== company.id) throw new Error("Analysis ID mismatch");
       // Validate the consumer contract here so one malformed document cannot stop the rollout.
       if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");
-      const years=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`)?.years;
+      const f=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`);
+      if(f)f.splits=completeCachedSplits(company.id,f.splits,readCorpusJson);
+      const years=f?alignHistoryShares(f,readPriceHistory(company.id)??[]).years:undefined;
+      if(years&&analysis.ownerMemo?.lines.some(l=>l.question===2&&l.basis==='computed')){
+        const customer=numericMemo(analysis,years,null).find(l=>l.question===2);
+        analysis.ownerMemo={...analysis.ownerMemo,lines:analysis.ownerMemo.lines.flatMap(l=>l.question===2&&l.basis==='computed'?customer?[customer]:[]:[l])};
+      }
       analyses.push(applyThesis(applyShareCheck(years?withCapitalReturns(analysis,applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);
@@ -348,6 +361,8 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
 }
 
 export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string; overwrite?: boolean }): Promise<void> {
+  // Workaround: the nightly path does not yet reproduce release-script corrections (fix-5); a hold file keeps live data until it does.
+  if (!options.out && existsSync(corpusPath("publish.hold"))) { console.log(`publish held: ${readFileSync(corpusPath("publish.hold"), "utf8").trim()}`); return; }
   const out = options.out === undefined ? undefined : path.resolve(options.out);
   if (options.overwrite && !out) throw new Error('--overwrite requires local --out');
   if (out && existsSync(out) && readdirSync(out).length) {

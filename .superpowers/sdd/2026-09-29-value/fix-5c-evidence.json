@@ -1,0 +1,79 @@
+{
+  "status": "disk-stop-checkpoint-not-release-ready",
+  "scope": {
+    "published": 2708,
+    "baseline": 2708,
+    "checked": 215622,
+    "added": [],
+    "nonShareDifferences": 0,
+    "affectedCompanies": 0,
+    "differences": []
+  },
+  "history": {
+    "files": 111,
+    "quarters": 87,
+    "differences": []
+  },
+  "testFlips": [
+    {
+      "id": "8630.JP",
+      "tests": [
+        {
+          "test": "economics",
+          "before": "fail",
+          "after": "pass"
+        },
+        {
+          "test": "management",
+          "before": "fail",
+          "after": "pass"
+        }
+      ]
+    },
+    {
+      "id": "7203.JP",
+      "tests": [
+        {
+          "test": "management",
+          "before": "fail",
+          "after": "pass"
+        }
+      ]
+    }
+  ],
+  "finalGate": [
+    {
+      "viewport": "1728x970",
+      "passedBeforeStop": 102,
+      "failuresObserved": 0,
+      "complete": false,
+      "diskStop": true
+    },
+    {
+      "viewport": "2056x1180",
+      "passedBeforeStop": 94,
+      "failuresObserved": 0,
+      "complete": false,
+      "diskStop": true
+    },
+    {
+      "viewport": "1440x800",
+      "passedBeforeStop": 104,
+      "failuresObserved": 0,
+      "complete": false,
+      "diskStop": true
+    },
+    {
+      "viewport": "390x844",
+      "passedBeforeStop": 143,
+      "failuresObserved": 0,
+      "complete": true,
+      "diskStop": false
+    }
+  ],
+  "finalBrowserConsistencyPassed": 5,
+  "finalBrowserConsistencyRequired": 55,
+  "unitTestsPassed": 1805,
+  "unitTestsSkipped": 1,
+  "buildPassed": true
+}

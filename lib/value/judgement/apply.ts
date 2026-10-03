@@ -95,11 +95,11 @@ export function returnRange(value:number):string {
  const low=Math.floor(value*100/5)*5;
  return `about ${low}–${low+5}% a year`;
 }
-export function humanVerdict(analysis:Analysis,buy:boolean,priceKnown=true):string {
- if(analysis.thesis?.changed)return 'Good numbers, but the business is changing';
+export function humanVerdict(analysis:Analysis,buy:boolean,priceKnown=true,priceToValue:number|null=null):string {
+ if(analysis.thesis?.changed)return 'Good past, but the business is changing';
  const tests=QUALITY_TESTS.map(key=>analysis.tests[key as keyof Analysis['tests']]);
- if(tests.some(t=>t.result==='fail'))return 'The business still has something to prove';
- if(!tests.every(t=>t.result==='pass'))return 'Still getting to know this business';
- if(!priceKnown)return 'A strong business; the price needs a closer look';
- return buy?'A wonderful business at a fair price':'Great business, but the price already assumes a lot';
+ if(!tests.every(t=>t.result==='pass'))return 'Not a wonderful business';
+ if(buy)return 'A wonderful business at a fair price';
+ if(!priceKnown||priceToValue===null)return 'A wonderful business';
+ return priceToValue<=1?'A wonderful business, almost at a fair price':'A wonderful business at too high a price';
 }

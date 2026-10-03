@@ -70,7 +70,8 @@ export function numericMemo(a:Analysis,years:Year[],price:number|null,facts:Memo
   const evidence=[source(`FY${last.fy}: revenue ${last.revenue}${operating&&finite(last[marginField])?`; ${marginField} ${last[marginField]}; margin = ${marginField} / revenue`:''}.`,last,'revenue'),...(segment?[segment.evidence]:facts.productEvidence?[facts.productEvidence]:[])];
   add(1,`${description}${segment&&margin&&`${description}; ${margin}.`.split(/\s+/).length<=18?`; ${margin}`:''}.`,evidence,operating&&margins.length?{label:`${marginName==='gross'?'Gross':'Operating'} margin`,unit:'percent',points:margins.slice(-10)}:undefined);
  }
- const inflation=margins.filter(([fy])=>fy>=2021&&fy<=2023);
+ const lastYear=a.historyCoverage?.last??last?.fy;
+ const inflation=margins.filter(([fy])=>lastYear!==undefined&&fy>=lastYear-2&&fy<=lastYear);
  const capitalKey=operating?'roic':'roe',capitalLabel=operating?'return on capital':'return on tangible equity';
  const capitalWindow=(a.tests?.moat?.series?.[capitalKey]??[]).slice(-10);
  const capitalSeries=capitalWindow.filter((p):p is [number,number]=>finite(p[1]));
@@ -79,7 +80,7 @@ export function numericMemo(a:Analysis,years:Year[],price:number|null,facts:Memo
  const parts:string[]=[],stayEvidence:Evidence[]=[];
  if(operating&&inflation.length===3&&new Set(inflation.map(p=>p[0])).size===3){
   const values=inflation.map(p=>p[1]!);
-  if(values.every(v=>v>=0&&v<=1))parts.push(`Margins ranged from ${pct(Math.min(...values))} to ${pct(Math.max(...values))} during 2021–23`);
+  if(values.every(v=>v>=0&&v<=1))parts.push(`Margins ranged from ${pct(Math.min(...values))} to ${pct(Math.max(...values))} during ${lastYear!-2}–${String(lastYear).slice(-2)}`);
   for(const [fy,m]of inflation)stayEvidence.push(source(`FY${fy}: ${marginField} / revenue = ${pct(m!)}.`,ordered.find(y=>y.fy===fy),marginField));
  }
  if(capital!==null){

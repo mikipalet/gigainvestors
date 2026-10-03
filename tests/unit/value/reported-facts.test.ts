@@ -45,3 +45,12 @@ it('joins a reviewed annual total to its uniquely matching week-based provider y
  expect(applyReportedFacts([{...y,revenue:1}],[fact])).toHaveLength(2);
  expect(applyReportedFacts([y,{...y,end:'2025-12-30'}],[fact])).toHaveLength(3);
 });
+it('rejoins a sparse exact-date correction with a uniquely corroborated vendor period',()=>{
+ const y={...emptyYear('2026-01-31','USD'),netIncome:1579183000,ocf:1602477000,dilutedShares:119068000};
+ const ghost={...emptyYear('2026-02-01','USD'),cash:1807202000};
+ const fact={end:ghost.end,currency:'USD',source:'https://issuer.example/annual',quote:'Annual net income 1,579,183 thousand; cash 1,807,202 thousand.',values:{netIncome:1579183000,cash:1807202000},correction:true};
+ const result=applyReportedFacts([y,ghost],[fact]);
+ expect(result).toHaveLength(1);
+ expect(result[0]).toMatchObject({end:ghost.end,netIncome:y.netIncome,ocf:y.ocf,dilutedShares:y.dilutedShares,cash:ghost.cash});
+ expect(applyReportedFacts(result,[fact])).toEqual(result);
+});

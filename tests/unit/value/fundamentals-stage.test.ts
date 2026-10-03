@@ -142,3 +142,53 @@ it('preserves official India history when a routine Yahoo refresh returns only f
  expect(saved.years.every(y=>y.goodwill===999)).toBe(true);
  expect(saved.integrity.ok).toBe(true);
 });
+
+it.each(['LULU.US','BCP.LS'])('retains same-period prior facts and immutable provenance on a lossy %s refresh', async id => {
+  appendJsonl('universe.jsonl',{id,exchange:id.split('.')[1],currency:'USD',marketCapUsd:100});
+  const prior={id,currency:'USD',fetchedAt:'2026-09-01',integrity:{ok:true,reasons:[]},splits:[{date:'2020-01-01',factor:2}],years:[
+    {fy:2023,end:'2023-12-31',currency:'USD',netIncome:20,ocf:30},
+    {fy:2024,end:'2024-12-31',currency:'USD',netIncome:30,ocf:40,dividendsPaid:5,provenance:{ocf:{source:'https://issuer.example/annual-2024',field:'cash from operations',method:'reported'}}},
+  ]};
+  writeCorpusJson(`fundamentals/${id}.json`,prior);
+  vi.mocked(getFundamentals).mockResolvedValue({Financials:{
+    Income_Statement:{yearly:{'2024-12-31':{currency_symbol:'USD',netIncome:31}}},
+    Cash_Flow:{yearly:{'2024-12-31':{totalCashFromOperatingActivities:null,dividendsPaid:0}}},
+  }});
+  await stage({only:[id]});
+  const saved=readCorpusJson<any>(`fundamentals/${id}.json`)!;
+  expect(saved.years.some((y: any) => y.end === prior.years[0].end)).toBe(true);
+  const y=saved.years.find((y: any) => y.end === prior.years[1].end);
+  expect(y).toMatchObject({netIncome:31,ocf:40,dividendsPaid:0});
+  expect(y.provenance.ocf).toMatchObject({...prior.years[1].provenance!.ocf,retainedFrom:{fetchedAt:prior.fetchedAt}});
+  expect(readCorpusJson(y.provenance.ocf.retainedFrom.snapshot)).toEqual(prior);
+  expect(saved.splits).toEqual(prior.splits);
+});
+
+it('rejects an incompatible reporting currency refresh before replacing source records',async()=>{
+  appendJsonl('universe.jsonl',{id:'FX.US',currency:'USD',marketCapUsd:100});
+  const prior={id:'FX.US',currency:'USD',years:[{fy:2024,end:'2024-12-31',currency:'USD',netIncome:10}],fetchedAt:'2026-09-01'};
+  writeCorpusJson('fundamentals/FX.US.json',prior);
+  writeCorpusJson('raw/eodhd/FX.US.json',{original:true});
+  vi.mocked(getFundamentals).mockResolvedValue({Financials:{Income_Statement:{yearly:{'2024-12-31':{currency_symbol:'EUR',netIncome:9}}}}});
+  await stage({only:['FX.US']});
+  expect(readCorpusJson('fundamentals/FX.US.json')).toEqual(prior);
+  expect(readCorpusJson('raw/eodhd/FX.US.json')).toEqual({original:true});
+});
+
+it('retains an existing company history when a refresh returns no statements',async()=>{
+  appendJsonl('universe.jsonl',{id:'EMPTY.US',currency:'USD',marketCapUsd:100});
+  const prior={id:'EMPTY.US',currency:'USD',years:[{fy:2024,end:'2024-12-31',currency:'USD',netIncome:10}],fetchedAt:'2026-09-01'};
+  writeCorpusJson('fundamentals/EMPTY.US.json',prior);
+  await stage({only:['EMPTY.US']});
+  expect(readCorpusJson<any>('fundamentals/EMPTY.US.json')!.years[0]).toMatchObject(prior.years[0]);
+});
+it('stores retained source history even when a refreshed share jump fails integrity',async()=>{
+ const id='JUMP.US';appendJsonl('universe.jsonl',{id,currency:'USD',marketCapUsd:100});
+ const years=Array.from({length:8},(_,i)=>({fy:2017+i,end:`${2017+i}-12-31`,currency:'USD',netIncome:10,totalAssets:100,equity:50,dilutedShares:10,ocf:20}));
+ writeCorpusJson(`fundamentals/${id}.json`,{id,currency:'USD',fetchedAt:'2026-09-01',years,integrity:{ok:true,reasons:[]}});
+ vi.mocked(getFundamentals).mockResolvedValue({Financials:{Income_Statement:{yearly:{'2024-12-31':{currency_symbol:'USD',netIncome:10,weightedAverageShsOutDil:1000}}}}});
+ await stage({only:[id]});
+ const saved=readCorpusJson<any>(`fundamentals/${id}.json`);
+ expect(saved.years).toHaveLength(8);expect(saved.years[0].ocf).toBe(20);
+ expect(saved.integrity.ok).toBe(false);
+});

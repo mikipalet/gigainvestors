@@ -762,3 +762,14 @@ it('records optional dividend levels only for matching quote dates and carries s
  writeCorpusJson('forward-total-return/2026-10-04.json',{[a.id]:{value:105,basis:'fixed',currency:'USD',priceDate:'2026-10-04'}});
  expect(run('2026-10-04',100/6).observations[a.id].totalReturn).toEqual({value:105,basis:'fixed'});
 });
+
+it('blocks a previously published member disappearing when refreshed analysis becomes undecided',()=>{
+ const repo=directory(), old=analysis();
+ writeOutput({repo,files:output([old])});
+ const before=readFileSync(path.join(repo,`dossiers/${shardOf(old.id)}.json`),'utf8');
+ const refreshed=structuredClone(old);
+ refreshed.tests.accounting.result='unclear';refreshed.tests.accounting.numeric='unclear';
+ refreshed.tests.accounting.reasons=['missing cash flow after refresh'];
+ expect(()=>publishSnapshot({repo,analyses:[refreshed],universe:[old.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}})).toThrow(/previously published.*KO.US/i);
+ expect(readFileSync(path.join(repo,`dossiers/${shardOf(old.id)}.json`),'utf8')).toBe(before);
+});

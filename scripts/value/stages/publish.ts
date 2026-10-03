@@ -191,13 +191,14 @@ export function commitOutput({ repo, asOf }: { repo: string; asOf: string }): bo
   return true;
 }
 
-export function publishSnapshot({ repo, analyses, universe, partial, force = false, commit = true, holdersByTicker, investorNames }: {
+export function publishSnapshot({ repo, analyses, universe, partial, force = false, commit = true, previousDossiers, holdersByTicker, investorNames }: {
   repo: string;
   analyses: Analysis[];
   universe: Company[];
   partial: boolean;
   force?: boolean;
   commit?: boolean;
+  previousDossiers?: string;
   holdersByTicker: Record<string, string[]>;
   investorNames: Record<string, string>;
 }): { count: number; changed: boolean } {
@@ -244,6 +245,18 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     if (rate && Number.isFinite(rate) && rate > 0) fx[file.slice(3, 6)] = rate;
   }
   const { files, unresolved } = buildOutput({ priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx, prices: readPrices(path.join(repo, "prices")) });
+  // A partial vendor response must not silently delete an existing member.
+  // Membership removals are explicit in the universe; missing evidence is not.
+  const previousDirectory = previousDossiers ?? directory;
+  if (existsSync(previousDirectory)) {
+    const emitted = new Set(Object.entries(files).filter(([file]) => file.startsWith('dossiers/')).flatMap(([,rows]) => Object.keys(rows as object)));
+    const removed: string[] = [];
+    for (const file of readdirSync(previousDirectory).filter(file => /^\d{3}\.json$/.test(file))) {
+      const prior = JSON.parse(readFileSync(path.join(previousDirectory,file),'utf8'));
+      for (const id of Object.keys(prior)) if (allowedIds.has(id) && !emitted.has(id)) removed.push(id);
+    }
+    if (removed.length) throw new Error(`Publish aborted: previously published members would disappear: ${removed.sort().join(', ')}`);
+  }
   writeCorpusJson('staging/unresolved-shares.json', {asOf:new Date().toISOString(),companies:unresolved});
   console.log(`Private share residual: ${unresolved.length}; quality passes: ${unresolved.filter(r=>r.qualityPass).length}`);
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
@@ -389,7 +402,7 @@ export default async function publish(options: { only?: string[]; limit?: number
     // Local replay must use that same history before computing today's record.
     const forward = corpusPath("publish-repo", "forward");
     if (existsSync(forward)) cpSync(forward, path.join(out, "forward"), { recursive: true, force: false });
-    const { count } = publishSnapshot({ repo: out, analyses, universe: companies, partial: false, force: options.force, commit: false, ...holders });
+    const { count } = publishSnapshot({ repo: out, previousDossiers: corpusPath("publish-repo", "dossiers"), analyses, universe: companies, partial: false, force: options.force, commit: false, ...holders });
     console.log(`publish: ${count} companies written locally to ${out}; no commit, push or revalidation`);
     return;
   }

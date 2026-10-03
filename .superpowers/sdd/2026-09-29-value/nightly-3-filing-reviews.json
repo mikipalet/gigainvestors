@@ -1,0 +1,96 @@
+{
+  "2269.JP": {
+    "source": "https://www.meiji.com/global/investors/results-presentations/securities-report/pdf/2023/securities-report_2023_r01_en.pdf",
+    "finding": "Issuer securities report confirms 2-for-1 split on 2023-04-01. Five-year share CAGR falls from 13.311953730828208% to -1.3562148514431493%; the live dilution failure is a mixed-unit artifact.",
+    "decision": "live wrong; intended management pass",
+    "tests": [
+      "management"
+    ]
+  },
+  "4507.JP": {
+    "source": "https://www.shionogi.com/global/en/investors/shareholder-information/shareholder-return.html",
+    "finding": "Issuer confirms 3-for-1 split effective 2024-10-01. Five-year share CAGR falls from 22.661245951468434% to -1.5341803719342684%; live dilution failure is spurious.",
+    "decision": "live wrong; intended management pass",
+    "tests": [
+      "management"
+    ]
+  },
+  "6902.JP": {
+    "source": "https://www.denso.com/global/home/about-us/investors/annual-report/integrated-report-2023/cfo-message/",
+    "finding": "Integrated report confirms 4-for-1 split of the 2023-09-30 record-date holdings. Five-year share CAGR falls from 28.578264909547646% to -2.5546893610398302%; split must not count as issuance.",
+    "decision": "live wrong; intended management pass",
+    "tests": [
+      "management"
+    ]
+  },
+  "010120.KO": {
+    "source": "https://www.ls-electric.com/ko/company/invest/stock",
+    "finding": "Issuer records 150,000,000 issued shares and 5-for-1 split on 2026-04-10 (vendor trading ex-date April 13). Completion has post-split 2022-2025 comparatives versus earlier pre-split shares. The old reconciliation cutoff at fiscal end ignored the already-completed action.",
+    "decision": "nightly wrong; fixed post-year-end split cutoff",
+    "tests": [
+      "understandable",
+      "moat",
+      "economics",
+      "management",
+      "accounting"
+    ]
+  },
+  "7012.JP": {
+    "source": "https://global.kawasaki.com/news_260209-5e.pdf",
+    "finding": "Issuer declares 5-for-1 split effective 2026-04-01; restore its historical share basis. FY2021 statement page 1 reports revenue JPY1,488,486m, operating loss JPY5,305m and parent loss JPY19,332m. Both live and the initial replay had false zero revenue/profit. Add exact issuer correction. Other operating margins also differ, so the remaining understandable flip still needs a full-window basis review.",
+    "decision": "nightly history truncation fixed; live and cached FY2021 zeros wrong; full-window understandable verdict not yet certified",
+    "tests": [],
+    "additionalSource": "https://global.kawasaki.com/en/corp/ir/library/pdf/sta_210518-1e.pdf"
+  },
+  "SKLUY.US": {
+    "source": "https://depositaryreceipts.citi.com/adr/guides/pgm_dispabook.aspx?cusip=830573101&pageId=15&subpageID=111",
+    "finding": "Depositary listing states ORD:DR 20:1. Joining ordinary SKL.NZ shares directly to SKLUY ADR history created a false 20-fold jump. Convert only explicitly identified ordinary-listing share/EPS observations, leaving monetary totals unchanged.",
+    "decision": "nightly wrong; fixed listing-unit join",
+    "tests": [
+      "understandable",
+      "moat",
+      "economics",
+      "management",
+      "accounting"
+    ]
+  },
+  "8253.JP": {
+    "source": "https://corporate.saisoncard.co.jp/wr_html/news_data_en/ob97ln0000000bzs-att/20260605_ReleaseE.pdf",
+    "finding": "Corrected issuer IFRS release reports parent profit JPY61,728m, operating cash flow -JPY135,671m and major lending/finance operations. Operating-company cash-backing rules are inappropriate to the lender; financial tests use book returns. Full historical common-equity/dividend inputs still require review.",
+    "decision": "live classification wrong; exact three pass outcomes not yet certified",
+    "tests": []
+  },
+  "PDI.AU": {
+    "source": "https://wp-predictivediscovery-2024.s3.eu-west-2.amazonaws.com/media/2025/10/FY25-Annual-Report.pdf",
+    "finding": "Annual report note 13, printed page 41 (PDF page 76), gives weighted ordinary shares 2,450,879,959 in 2025 and 2,112,032,411 in 2024. Replay mixes split-adjusted vendor history and unadjusted Yahoo weighted shares. Neither a raw jump nor live proxy is enough to certify a coherent historical basis.",
+    "decision": "UNEXPLAINED verdict; mixed basis remains a blocker",
+    "tests": []
+  },
+  "LULU.US": {
+    "source": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+    "finding": "FY ends 2024-01-28, 2025-02-02, 2026-02-01; net income USD1,550,190,000 / 1,814,616,000 / 1,579,183,000; diluted shares 127,060,000 / 123,935,000 / 119,068,000. Use matching profit to join rounded vendor periods and cash-only correction rows, retaining their cash flows and shares.",
+    "decision": "nightly removal wrong; fixed; all five tests pass",
+    "tests": []
+  },
+  "BCP.LS": {
+    "source": "https://ml-eu.globenewswire.com/Resource/Download/b36af017-44ce-432e-a9cb-b7c73ca63fd3",
+    "finding": "2023 annual report consolidated cash-flow statement explicitly shows zero dividends to bank shareholders in 2023, EUR13,603,000 in 2022. These are distinct from AT1 coupons and non-controlling dividends; use common-dividend provenance.",
+    "decision": "nightly removal wrong; fixed missing common dividend",
+    "tests": []
+  },
+  "CBG.LSE": {
+    "source": "https://www.investegate.co.uk/index.php/announcement/rns/close-brothers-group--cbg/preliminary-results/9795269",
+    "finding": "Issuer RNS dated 2026-09-29 reports parent/other-equity loss GBP63.4m for July 2026 and GBP77.9m for 2025; old published model ended July 2025. The two consecutive losses and negative return observations support the new understandable/moat failures. Use issuer release text, not the distributor AI summary.",
+    "decision": "live stale; intended understandable and moat failures",
+    "tests": [
+      "understandable",
+      "moat"
+    ]
+  },
+  "SSPG.LSE": {
+    "source": "https://www.foodtravelexperts.com/media/q11pqu5h/ssp-group-plc_annual-report-and-accounts_2025.pdf",
+    "finding": "Annual report printed pages 164 and 168: FY2025 parent loss GBP74.4m vs consolidated loss GBP24.0m; non-controlling profit GBP50.4m. Operating cash flow GBP742.2m, capitalised lease principal GBP262.5m, lease interest GBP66.5m. Missing totalNetIncome must not silently imply 100% parent allocation in mixed provider/filing histories. Neither the live cash-flow proxy nor the new owner-earnings verdict is certified by these figures alone.",
+    "decision": "UNEXPLAINED verdict: reconcile parent/consolidated allocation and lease cash across the full scoring window",
+    "tests": []
+  }
+}

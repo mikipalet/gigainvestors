@@ -181,3 +181,13 @@ it('restores an interior unadjusted comparative between observations on a docume
  expect(checkIntegrity(f,{source:'eodhd'}).ok).toBe(true);
  expect(f.years).toHaveLength(11);expect(f.years[6].dilutedShares).toBeCloseTo(24.4);
 });
+it('converts secondary ordinary-share observations to the documented depositary unit before joining history',async()=>{
+ const {completeCachedYears}=await import('@/lib/value/completeness/cached-years');
+ const p={...emptyYear('2025-06-30','NZD'),netIncome:60,dilutedShares:10};
+ const s={...p,dilutedShares:200,dilutedEps:.3,provenance:{dilutedShares:{source:'https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/SKL.NZ',field:'annualDilutedAverageShares',method:'reported' as const},dilutedEps:{source:'https://query2.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/SKL.NZ',field:'annualDilutedEPS',method:'reported' as const}}};
+ const read=<T,>(path:string):T|null=>path==='completeness/yahoo/SKLUY.US.json'?[s] as T:null;
+ const result=completeCachedYears({id:'SKLUY.US',source:'eodhd',cik:null},[p],read);
+ expect(result.find(y=>y.end===p.end)).toMatchObject({netIncome:60,dilutedShares:10,dilutedEps:6});
+ expect(result.find(y=>y.end===p.end)?.provenance?.dilutedShares.inputs?.join(' ')).toContain('20 ordinary shares');
+ expect(completeCachedYears({id:'SKLUY.US',source:'eodhd',cik:null},result,read)).toEqual(result);
+});

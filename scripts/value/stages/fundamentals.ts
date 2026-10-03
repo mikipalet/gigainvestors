@@ -1,3 +1,4 @@
+import { retainRefreshFacts } from '../../../lib/value/refresh-fundamentals';
 import { fetchYahooFundamentals, normalizeYahooFundamentals } from '../../../lib/value/fundamentals-yahoo';
 import { mergeIndiaYahoo } from '../../../lib/value/india/filings';
 import { statfsSync } from 'node:fs';
@@ -103,6 +104,11 @@ export default async function fundamentals(options: Options): Promise<void> {
         normalized.integrity = checkIntegrity(normalized, {source:company.source});
       } catch (error) { console.warn(`${company.id}: optional SEC financial facts unavailable: ${String(error)}`); }
     }
+    const retained = retainRefreshFacts(normalized, readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`));
+    Object.assign(normalized, retained.fundamentals);
+    // Validate the usable suffix without deleting retained source observations.
+    normalized.integrity = checkIntegrity(structuredClone(normalized), {source:company.source});
+    if (retained.snapshot) writeCorpusJson(retained.snapshot.path, retained.snapshot.value);
     const existing = readCorpusJson<Partial<Company>>(`companies/${company.id}.json`);
     const currency = marketCap.currency ?? existing?.currency ?? company.currency;
     const rate = marketCap.value !== null && currency ? await usdRate(currency) : null;

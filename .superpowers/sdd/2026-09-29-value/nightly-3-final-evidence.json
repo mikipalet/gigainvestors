@@ -1,0 +1,1814 @@
+{
+  "decision": "KEEP HOLD",
+  "zeroUnexplained": false,
+  "baseline": "634f80f3cc7c9b3d73759843c6b29cc4d386253f",
+  "startingCode": "cb4d598",
+  "pipeline": "24",
+  "firstFullAnalyze": {
+    "startedAt": 1791033842.604399,
+    "finishedAt": 1791034984.4935055,
+    "stage": "analyze",
+    "args": [],
+    "exit": 1,
+    "peakPrivateBytes": 1422385152,
+    "freeBytes": 9151279104,
+    "stop": null
+  },
+  "retry": {
+    "startedAt": 1791035033.0455575,
+    "finishedAt": 1791035037.72596,
+    "stage": "analyze",
+    "args": [
+      "--only=207760.KQ"
+    ],
+    "exit": 0,
+    "peakPrivateBytes": 1423765504,
+    "freeBytes": 9148477440,
+    "stop": null
+  },
+  "finalFullAnalyze": {
+    "startedAt": 1791035123.7727654,
+    "finishedAt": 1791035791.2496068,
+    "stage": "analyze",
+    "args": [],
+    "exit": 0,
+    "peakPrivateBytes": 1423855616,
+    "freeBytes": 9145782272,
+    "stop": null
+  },
+  "coverage": {
+    "jobs": 38056,
+    "versions": {
+      "24": 38056
+    },
+    "missingAnalysis": [],
+    "missingFingerprints": [],
+    "missingOrStaleMemberSnapshots": [],
+    "emptyMemberSnapshots": [
+      {
+        "id": "457190.KO",
+        "status": "insufficient_data"
+      }
+    ]
+  },
+  "businessBackfill": {
+    "startedAt": 1791035865.8819628,
+    "finishedAt": 1791036007.7119915,
+    "stage": "business-backfill",
+    "args": [],
+    "exit": 0,
+    "peakPrivateBytes": 1469227008,
+    "freeBytes": 9097773056,
+    "stop": null
+  },
+  "businessQueue": {
+    "asOf": "2026-10-03T14:00:02.959Z",
+    "published": 2708,
+    "keyCount": 835,
+    "processedThisRun": 100,
+    "textReadThisRun": 100,
+    "pricingThisRun": 2,
+    "riskThisRun": 9,
+    "readerVersion": "4",
+    "textQueueRemaining": 715,
+    "reviewedClaimsCalibrated": true,
+    "coverage": {
+      "fivePlus": 2362,
+      "threeFour": 342,
+      "underThree": 4
+    },
+    "remaining": 2698,
+    "keyRemaining": 828,
+    "statusCounts": {
+      "research-pending": 1505,
+      "complete": 10,
+      "source-retry": 276
+    }
+  },
+  "publish": {
+    "startedAt": 1791036033.2789035,
+    "finishedAt": 1791036080.603881,
+    "stage": "publish",
+    "args": [
+      "--out=/Users/miki/GitHub/superinvestors-wt/value-zp-nightly/.fix5c/nightly-3/after-publish"
+    ],
+    "exit": 0,
+    "peakPrivateBytes": 1637703680,
+    "freeBytes": 8928686080,
+    "stop": null
+  },
+  "adjudication": {
+    "decision": "KEEP HOLD",
+    "zeroUnexplained": false,
+    "qualityFlips": 139,
+    "qualityFlipCompanies": 107,
+    "adjudications": {
+      "UNEXPLAINED": 134,
+      "FILING-BACKED: live wrong or stale": 5
+    },
+    "dossiers": {
+      "before": 2708,
+      "after": 2708,
+      "added": [],
+      "removed": []
+    },
+    "original105": {
+      "UNEXPLAINED": 86,
+      "NO REMAINING FLIP": 14,
+      "FILING-BACKED: live wrong or stale": 5
+    },
+    "sameYearSeriesNulls": 103,
+    "sameYearSeriesNullCompanies": 36
+  },
+  "exact": {
+    "before": ".fix5c/nightly-2/live-current",
+    "after": ".fix5c/nightly-3/after-publish",
+    "pass": false,
+    "filesBefore": 5081,
+    "filesAfter": 5079,
+    "filesIdentical": 4121,
+    "serializationOnly": [],
+    "leafDifferences": 1119797,
+    "priceExcluded": 108029,
+    "residualDifferences": 1011768,
+    "residualByDirectory": {
+      "aliases.json": 7,
+      "dossiers": 237995,
+      "forward": 2,
+      "history": 675802,
+      "index": 82611,
+      "meta.json": 516,
+      "search": 12526,
+      "top.json": 1967,
+      "views": 342
+    },
+    "byDirectory": {
+      "aliases.json": 7,
+      "dossiers": 240878,
+      "forward": 2,
+      "history": 780948,
+      "index": 82611,
+      "meta.json": 516,
+      "search": 12526,
+      "top.json": 1967,
+      "views": 342
+    },
+    "dossierPaths": {
+      "asOf": 2708,
+      "company": 5588,
+      "ownerMemo": 60601,
+      "series": 59476,
+      "tests": 80168,
+      "valueHistory": 14078,
+      "versions": 2708,
+      "events": 1009,
+      "report": 2173,
+      "valuation": 9095,
+      "historyCoverage": 180,
+      "judgement": 33,
+      "requiredMos": 24,
+      "volatility": 18,
+      "businessDepth": 15,
+      "businessOverview": 15,
+      "priceHistory": 71,
+      "status": 6,
+      "w": 8,
+      "holders": 19,
+      "b": 2
+    },
+    "dossiers": {
+      "before": 2708,
+      "after": 2708,
+      "added": [],
+      "removed": []
+    },
+    "memo": {
+      "changedLines": 9883,
+      "evidence": 9792,
+      "answer": 2528,
+      "capitalAllocation": 970,
+      "chart": 1525,
+      "added": 96,
+      "removed": 4
+    },
+    "testFlips": [
+      {
+        "id": "000001.SHE",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "0012.HK",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "001440.KO",
+        "test": "moat",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "001440.KO",
+        "test": "management",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "001440.KO",
+        "test": "understandable",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "001440.KO",
+        "test": "accounting",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "001440.KO",
+        "test": "economics",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "002142.SHE",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "002236.SHE",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "0027.HK",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "002736.SHE",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "002812.SHE",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "002916.SHE",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "008930.KO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "017960.KO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "030200.KO",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "032830.KO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "033780.KO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "035250.KO",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "042660.KO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "051910.KO",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "064350.KO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "0700.HK",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "086280.KO",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "0968.HK",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "1093.HK",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "1209.HK",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "1299.HK",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "138040.KO",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "139130.KO",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "139130.KO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "192820.KO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "2269.HK",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "2269.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "2313.HK",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "2388.HK",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "2413.JP",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "251270.KO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "267270.KO",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "2880.TW",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "2881.TW",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "300124.SHE",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "300433.SHE",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "3034.TW",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "3092.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "329180.KO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "3457.JP",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "3659.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "4208.JP",
+        "test": "understandable",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "4507.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "4751.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "4904.TW",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "5019.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "5713.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "5714.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "600000.SHG",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "600089.SHG",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "600426.SHG",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "600426.SHG",
+        "test": "price",
+        "before": null,
+        "after": "fail"
+      },
+      {
+        "id": "600875.SHG",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "600919.SHG",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "600926.SHG",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "601009.SHG",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "601066.SHG",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "601169.SHG",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "601169.SHG",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "601229.SHG",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "601618.SHG",
+        "test": "moat",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "601618.SHG",
+        "test": "management",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "601618.SHG",
+        "test": "understandable",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "601618.SHG",
+        "test": "accounting",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "601618.SHG",
+        "test": "economics",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "601788.SHG",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "601838.SHG",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "601988.SHG",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "601998.SHG",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "6618.HK",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "6902.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "6963.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "6971.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "6988.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "7012.JP",
+        "test": "understandable",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "7267.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "7269.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "7936.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "7951.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "8015.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "8253.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "8253.JP",
+        "test": "accounting",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "8253.JP",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "8253.JP",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "8306.JP",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "8697.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "9008.JP",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "9009.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "9020.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "9101.JP",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "9202.JP",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "9433.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "9532.JP",
+        "test": "understandable",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "9735.JP",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "9843.JP",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "AIZ.US",
+        "test": "price",
+        "before": null,
+        "after": "fail"
+      },
+      {
+        "id": "AMCR.US",
+        "test": "economics",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "ASRNL.AS",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "AXP.US",
+        "test": "moat",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "BC.MI",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "BGA.AU",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "BMED.MI",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "BX.US",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "CAI.VI",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "CARR.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "CBG.LSE",
+        "test": "moat",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "CBG.LSE",
+        "test": "understandable",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "CBRE.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "CMCSA.US",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "CNR.TO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "COALINDIA.NSE",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "CPI.VI",
+        "test": "price",
+        "before": null,
+        "after": "pass"
+      },
+      {
+        "id": "CTC-A.TO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "DIS.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "DLTR.US",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "DVP.AU",
+        "test": "accounting",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "EBAY.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "EL.PA",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "EMBJ.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "EMEIS.PA",
+        "test": "moat",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "EMEIS.PA",
+        "test": "management",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "EMEIS.PA",
+        "test": "understandable",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "EMEIS.PA",
+        "test": "accounting",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "EMEIS.PA",
+        "test": "economics",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "FER.AS",
+        "test": "price",
+        "before": null,
+        "after": "fail"
+      },
+      {
+        "id": "FRZCF.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "GMD.AU",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "GMD.AU",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "GRUMAB.MX",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "H4W.F",
+        "test": "price",
+        "before": null,
+        "after": "fail"
+      },
+      {
+        "id": "HAUTO.OL",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "HBAN.US",
+        "test": "accounting",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "HDB.US",
+        "test": "accounting",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "HUB.AU",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "IAG.AU",
+        "test": "moat",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "IAG.AU",
+        "test": "management",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "IAG.AU",
+        "test": "understandable",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "IAG.AU",
+        "test": "accounting",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "IAG.AU",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "IAG.AU",
+        "test": "economics",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "IBKR.US",
+        "test": "moat",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "IG.MI",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "INVP.LSE",
+        "test": "understandable",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "IR.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "IR5B.IR",
+        "test": "economics",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "ISP.MI",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "ITC.NSE",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "JKHY.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "K.TO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "KEY.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "KIM.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "KKR.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "KMD.AU",
+        "test": "moat",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "KMD.AU",
+        "test": "management",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "KMD.AU",
+        "test": "understandable",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "KMD.AU",
+        "test": "accounting",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "KMD.AU",
+        "test": "economics",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "KRZ.IR",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "L.TO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "LEN-B.US",
+        "test": "moat",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "LEN-B.US",
+        "test": "price",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "LEN-B.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "LHX.US",
+        "test": "moat",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "LVS.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "MAA.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "MB.MI",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "MBG.XETRA",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "MEGACPO.MX",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "MGM.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "MIO.IR",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "MOS.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "MRU.TO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "MS.US",
+        "test": "moat",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "MTB.US",
+        "test": "accounting",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "MTS.AU",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "MU.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "NBIS.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "NDSN.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "NI.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "NOS.LS",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "OMC.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "OMV.VI",
+        "test": "economics",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "ONGC.NSE",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "PDI.AU",
+        "test": "moat",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "PDI.AU",
+        "test": "management",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "PDI.AU",
+        "test": "understandable",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "PDI.AU",
+        "test": "accounting",
+        "before": "pass",
+        "after": "na"
+      },
+      {
+        "id": "PDI.AU",
+        "test": "economics",
+        "before": "fail",
+        "after": "na"
+      },
+      {
+        "id": "PFD.LSE",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "PINFRA.MX",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "PKF1.F",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "PODD.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "PPG.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "PPG.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "PPL.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "PPT.AU",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "PRU.AU",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "PRU.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "PSSA3.SA",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "PTC.US",
+        "test": "moat",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "QGEN.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "RA.MX",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "REG.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "REP.MC",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "RF.US",
+        "test": "accounting",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "RI.PA",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "SANB3.SA",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "SBMO.AS",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "SCHW.US",
+        "test": "moat",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "SCHW.US",
+        "test": "price",
+        "before": null,
+        "after": "fail"
+      },
+      {
+        "id": "SGM.AU",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "SHC.LSE",
+        "test": "economics",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "SLC.AU",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "SSPG.LSE",
+        "test": "economics",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "STB.OL",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "STE.US",
+        "test": "moat",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "STE.US",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "SUL.AU",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "SWKS.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "TAH.AU",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "TDY.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "TECK-B.TO",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "TEP.LSE",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "TFC.US",
+        "test": "accounting",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "TMPV.NSE",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "TMUS.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "TPL.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "TPR.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "TROW.US",
+        "test": "moat",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "TROW.US",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "TSCO.US",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "TSCO.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "TSCO.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "TXT.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "TYL.US",
+        "test": "moat",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "TYL.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "UDR.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "UHS.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "ULTA.US",
+        "test": "price",
+        "before": null,
+        "after": "fail"
+      },
+      {
+        "id": "UOB.F",
+        "test": "understandable",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "UOB.F",
+        "test": "price",
+        "before": null,
+        "after": "pass"
+      },
+      {
+        "id": "UPR.IR",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "USB.US",
+        "test": "accounting",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "VICI.US",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "VTRS.US",
+        "test": "management",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "VTRS.US",
+        "test": "economics",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "WFC.US",
+        "test": "moat",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "WSE.US",
+        "test": "price",
+        "before": "pass",
+        "after": null
+      },
+      {
+        "id": "WSM.US",
+        "test": "management",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "WSM.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "WST.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "WTW.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "WTW.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "WY.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "WY.US",
+        "test": "economics",
+        "before": "pass",
+        "after": "fail"
+      },
+      {
+        "id": "WYNN.US",
+        "test": "economics",
+        "before": "fail",
+        "after": "pass"
+      },
+      {
+        "id": "XYL.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      },
+      {
+        "id": "ZBRA.US",
+        "test": "price",
+        "before": "fail",
+        "after": null
+      }
+    ],
+    "nonPricePass": false
+  },
+  "protectedScope": {
+    "published": 2708,
+    "baseline": 2708,
+    "checked": 215606,
+    "added": [],
+    "nonShareDifferences": 67233,
+    "affectedCompanies": 2306
+  },
+  "sourceIntegrity": {
+    "checked": 26801,
+    "changed": []
+  },
+  "baselineIntegrity": {
+    "checked": 5081,
+    "changed": []
+  },
+  "network": {
+    "api.typesafe.ai": 291
+  },
+  "tests": {
+    "files": 10,
+    "passed": 228,
+    "typecheckExit": 0,
+    "fullRepositorySuiteClaimed": false
+  },
+  "holdSha256": "a5defda8067e82dee447d696da4a00975a7e05fe1b5a785a8f1059ccf7a6de0e"
+}

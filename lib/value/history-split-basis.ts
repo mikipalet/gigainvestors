@@ -48,6 +48,9 @@ export function alignHistoryShares(f:Fundamentals,_prices:PriceHistory):Fundamen
   for(const y of years.slice(first,last+1))adjustShareUnits(y,1/action.factor);
   first=last;
  }
+ // Refreshed comparative statements may already use a split completed after
+ // fiscal year end. Only actions observed by the cache date qualify.
+ const observedThrough=[f.fetchedAt?.slice(0,10),years.at(-1)!.edinetShares?.filed,years.at(-1)!.end].filter((s):s is string=>!!s).sort().at(-1)!;
  const factors=Array(years.length).fill(1);
  for(let i=years.length-2;i>=0;i--){
   factors[i]=factors[i+1];
@@ -56,7 +59,7 @@ export function alignHistoryShares(f:Fundamentals,_prices:PriceHistory):Fundamen
   if(issuerCapitalChanges[f.id]?.some(e=>after.fy>=e.fy&&after.fy<=(e.throughFy??e.fy)))continue;
   const ratio=after.dilutedShares/before.dilutedShares;
   const action=actions.flatMap(s=>[s,{...s,factor:1/s.factor}]).filter(s=>s.factor>0&&Math.max(s.factor,1/s.factor)>=1.5
-   &&s.date>before.end&&s.date<=(years.at(-1)!.edinetShares?.filed??years.at(-1)!.end)
+   &&s.date>before.end&&s.date<=observedThrough
    &&Date.parse(s.date)-Date.parse(before.end)<=6*366*86400000
    &&(s.date<=after.end||(before.basicEps||before.dilutedEps||after.basicEps||after.dilutedEps))
    &&Math.abs(ratio/s.factor-1)<.12).sort((a,b)=>Math.abs(ratio/a.factor-1)-Math.abs(ratio/b.factor-1))[0];

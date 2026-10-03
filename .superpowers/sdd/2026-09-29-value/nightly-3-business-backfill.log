@@ -1,0 +1,6 @@
+business-backfill: 20/100 processed
+business-backfill: 40/100 processed
+business-backfill: 60/100 processed
+business-backfill: 80/100 processed
+business-backfill: 100/100 processed
+{"asOf":"2026-10-03T14:00:02.959Z","published":2708,"keyCount":835,"processedThisRun":100,"textReadThisRun":100,"pricingThisRun":2,"riskThisRun":9,"readerVersion":"4","textQueueRemaining":715,"reviewedClaimsCalibrated":true,"coverage":{"fivePlus":2362,"threeFour":342,"underThree":4},"remaining":2698,"keyRemaining":828,"statusCounts":{"research-pending":1505,"complete":10,"source-retry":276}}

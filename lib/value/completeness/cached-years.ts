@@ -1,3 +1,4 @@
+import {secondaryListingYears} from './listing-units';
 import {fillYears} from './second-sources';
 import {deriveYears} from '../derive';
 import {annualFiscalYear} from '../fiscal-period';
@@ -54,7 +55,7 @@ export function completeCachedYears(company:Pick<Company,'id'|'cik'|'source'>,ye
  }
  for(const source of ['yahoo','edinet']){
   const cache=read<Year[]>(`completeness/${source}/${company.id}.json`);
-  if(cache)result=fillYears(result,translate(cache));
+  if(cache)result=fillYears(result,translate(secondaryListingYears(company.id,cache)));
  }
  const predecessor=issuerPredecessors[company.id];
  if(predecessor){

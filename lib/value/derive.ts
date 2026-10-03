@@ -1,6 +1,6 @@
 import type { Year } from './types';
 
-export type ValueProvenance = { source: string; field: string; method: 'reported' | 'derived' | 'absent-in-complete-statement' | 'estimate' | 'cached'; inputs?: string[] };
+export type ValueProvenance = { source: string; field: string; method: 'reported' | 'derived' | 'absent-in-complete-statement' | 'estimate' | 'cached'; inputs?: string[]; retainedFrom?: { snapshot: string; fetchedAt: string } };
 const finite = (n: unknown): n is number => typeof n === 'number' && Number.isFinite(n);
 /** Complete statements are explicit source metadata, never inferred from a lone total. */
 export function deriveYears(years: Year[]): Year[] {

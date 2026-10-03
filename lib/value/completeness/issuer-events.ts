@@ -4,6 +4,7 @@ export const issuerPredecessors:Record<string,{id:string;through:string;source:s
  '9147.JP':{id:'9062.JP',through:'2021-12-31',source:'https://www.nipponexpress-holdings.com/en/pdf/ir/event/meetings/115th-ordinary-general-meeting-of-shareholders.pdf',quote:'one share of Holding Company common stock for each share of Company common stock'},
 };
 export const issuerSplits:Record<string,Array<{date:string;factor:number;source:string}>>={
+ '7012.JP':[{date:'2026-04-01',factor:5,source:'https://global.kawasaki.com/news_260209-5e.pdf'}],
  '7203.JP':[{date:'2021-10-01',factor:5,source:'https://global.toyota/pages/global_toyota/ir/stock/share/commonstocksplit_20210512_01_en.pdf'}],
  'PDN.AU':[{date:'2024-04-09',factor:0.1,source:'https://www.aspecthuntley.com.au/asxdata/20240829/pdf/02845775.pdf'}],
  'GGP.AU':[{date:'2025-06-20',factor:0.05,source:'https://announcements.asx.com.au/asxpdf/20250925/pdf/06pnb20dpfjcdb.pdf'}],

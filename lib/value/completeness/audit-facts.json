@@ -4,11 +4,12 @@
       "end": "2024-01-28",
       "currency": "USD",
       "source": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
-      "quote": "Cash and cash equivalents, consolidated cash flow statement; amounts in thousands.",
+      "quote": "Consolidated statements of cash flows: net income and cash and cash equivalents; amounts in thousands. Net income corroborates the dated annual period.",
       "values": {
         "cash": 2243971000,
         "cashAndCashEquivalents": 2243971000,
-        "shortTermInvestments": 0
+        "shortTermInvestments": 0,
+        "netIncome": 1550190000
       },
       "correction": true
     },
@@ -16,11 +17,12 @@
       "end": "2025-02-02",
       "currency": "USD",
       "source": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
-      "quote": "Cash and cash equivalents, consolidated cash flow statement; amounts in thousands.",
+      "quote": "Consolidated statements of cash flows: net income and cash and cash equivalents; amounts in thousands. Net income corroborates the dated annual period.",
       "values": {
         "cash": 1984336000,
         "cashAndCashEquivalents": 1984336000,
-        "shortTermInvestments": 0
+        "shortTermInvestments": 0,
+        "netIncome": 1814616000
       },
       "correction": true
     },
@@ -28,11 +30,12 @@
       "end": "2026-02-01",
       "currency": "USD",
       "source": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
-      "quote": "Cash and cash equivalents, consolidated cash flow statement; amounts in thousands.",
+      "quote": "Consolidated statements of cash flows: net income and cash and cash equivalents; amounts in thousands. Net income corroborates the dated annual period.",
       "values": {
         "cash": 1807202000,
         "cashAndCashEquivalents": 1807202000,
-        "shortTermInvestments": 0
+        "shortTermInvestments": 0,
+        "netIncome": 1579183000
       },
       "correction": true
     }
@@ -417,6 +420,43 @@
       "calculation": "Long-term borrowing carrying value 58,744m + operating leases 25,153m + finance leases 1,184m = 85,081m; both lease classes included.",
       "values": {
         "totalDebt": 85081000000
+      },
+      "correction": true
+    }
+  ],
+  "BCP.LS": [
+    {
+      "end": "2023-12-31",
+      "currency": "EUR",
+      "source": "https://ml-eu.globenewswire.com/Resource/Download/b36af017-44ce-432e-a9cb-b7c73ca63fd3",
+      "quote": "Consolidated cash flows, 2023/2022 (EUR thousands): Dividends paid to Bank's shareholders \u2014 / (13,603).",
+      "values": {
+        "commonDividendsPaid": 0,
+        "dividendsPaid": 0
+      },
+      "correction": true
+    },
+    {
+      "end": "2022-12-31",
+      "currency": "EUR",
+      "source": "https://ml-eu.globenewswire.com/Resource/Download/b36af017-44ce-432e-a9cb-b7c73ca63fd3",
+      "quote": "Consolidated cash flows, 2023/2022 (EUR thousands): Dividends paid to Bank's shareholders \u2014 / (13,603).",
+      "values": {
+        "commonDividendsPaid": 13603000
+      },
+      "correction": true
+    }
+  ],
+  "7012.JP": [
+    {
+      "end": "2021-03-31",
+      "currency": "JPY",
+      "source": "https://global.kawasaki.com/en/corp/ir/library/pdf/sta_210518-1e.pdf",
+      "quote": "Consolidated fiscal 2021 results, millions of yen: net sales 1,488,486; operating loss (5,305); loss attributable to owners of parent (19,332).",
+      "values": {
+        "revenue": 1488486000000,
+        "operatingIncome": -5305000000,
+        "netIncome": -19332000000
       },
       "correction": true
     }

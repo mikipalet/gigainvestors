@@ -23,7 +23,19 @@ export function applyReportedFacts(years:Year[],facts:ReportedFacts[]):Year[]{
   // Date proximity alone is insufficient: require a unique same-currency total.
   const nearby=result.filter(y=>y.currency===f.currency&&Math.abs(Date.parse(y.end)-Date.parse(f.end))<=7*86400000
    &&(['revenue','netIncome','totalAssets'] as const).some(k=>f.values[k]!=null&&f.values[k]!==0&&y[k]===f.values[k]));
-  const existing=result.find(y=>y.end===f.end)??(nearby.length===1?nearby[0]:undefined);
+  const exact=result.find(y=>y.end===f.end);
+  const anchor=nearby.length===1?nearby[0]:undefined;
+  // A prior cash-only correction can have created a sparse exact-date row.
+  // Rejoin it only with a uniquely corroborated annual total; never by date alone.
+  const sparse=exact&&['revenue','netIncome','totalAssets'].every(k=>exact[k as keyof Year]==null);
+  if(sparse&&anchor&&anchor!==exact){
+   for(const [field,value] of Object.entries(exact))if(value!=null&&anchor[field as keyof Year]==null&&field!=='provenance'){
+    Object.assign(anchor,{[field]:value});
+    if(exact.provenance?.[field])anchor.provenance![field]=exact.provenance[field];
+   }
+   result.splice(result.indexOf(exact),1);
+  }
+  const existing=sparse&&anchor?anchor:exact??anchor;
   if(existing?.currency&&existing.currency!==f.currency&&!f.correction)throw Error('Reported fact currency mismatch');
   const y=existing??emptyYear(f.end,f.currency);
   if(!existing)result.push(y);

@@ -2,7 +2,7 @@ import {createHash} from 'node:crypto';
 import type {Source} from '../judgement/read';
 import type {Ask} from '../thesis/evidence';
 import type {JevQuestion} from '../types';
-export const SELECTION_VERSION='literal-3';
+export const SELECTION_VERSION='literal-4';
 export type LineKind='price'|'pricing'|'risk';
 export interface Candidate {id:string;kind:LineKind;text:string;context:string;source:string;date:string;url:string;section:string;offset:number}
 export interface Selection {selected:Candidate|null;proposed?:Candidate;direction?:'yes'|'limited'|'no';scores:Record<string,number>;rejected:Record<string,number>;considered:number}
@@ -29,8 +29,16 @@ export function filingCandidates(sources:Source[],issuer:string):Candidate[]{
    const anchor=[...s.text.matchAll(/^[ \t]*(?:ITEM[ \t]*1A[. :]*[ \t]*Risk Factors[. :]*|Principal risks(?: and uncertainties)?[. :]*|Business risks[. :]*|[０-９0-9２2 　]*[【（(]?事業等のリスク[】）)]?)[ \t]*$/gim)].at(-1);
    if(!anchor)continue;
    const offset=anchor.index;
-   const end=/^[ \t]*(?:ITEM[ \t]*(?:1B|2)[. :]|[４4][ 　]*【|Going concern[ \t]*$|Viability statement[ \t]*$|Governance report[ \t]*$)/im.exec(s.text.slice(offset+anchor[0].length));
+   const end=/^[ \t]*(?:ITEM[ \t]*(?:1B|1C|2)[. :]|[４4][ 　]*【|Going concern[ \t]*$|Viability statement[ \t]*$|Governance report[ \t]*$)/im.exec(s.text.slice(offset+anchor[0].length));
    const body=s.text.slice(offset,end?offset+anchor[0].length+end.index:undefined);
+   if(/事業等のリスク/.test(anchor[0])){
+    const headings=[...body.matchAll(/^[ \t　]*([①-⑳][^\n]+)[ \t]*$/gm)];
+    headings.forEach((heading,i)=>{
+     const text=heading[1].trim(),start=heading.index!+heading[0].indexOf(text);
+     rows.push(add('risk',text,body.slice(start,Math.min(headings[i+1]?.index??body.length,start+1800)),name,s.filed,s.url,s.section,offset+start));
+    });
+    continue;
+   }
    const blocks=[...body.matchAll(/[^\n]+(?:\n(?!\s*\n)[^\n]+)*/g)];
    for(let i=0;i<blocks.length-1;i++){
     const text=blocks[i][0].trim(),next=blocks[i+1][0].trim();
@@ -49,6 +57,7 @@ export function filingCandidates(sources:Source[],issuer:string):Candidate[]{
  return [...new Map(rows.map(c=>[`${c.kind}:${c.text}:${c.url}`,c])).values()];
 }
 export function rejectionReason(c:Candidate):string|null {
+ if(c.kind==='risk'&&/^(?:[a-z]|•[a-z])/.test(c.text))return 'sentence-fragment';
  if(c.kind==='risk'&&/^(?:Principal risk(?:s)?(?: Outlook)?|See page \d+\.?|systems\.|Operational)$/i.test(c.text))return 'generic-risk';
  if(/price target|target price|analyst.{0,25}(?:rating|upgrade|downgrade)|stocks? to buy|top \d+|best \d+|buy rating|strong buy|outperform rating|bullish|bearish/i.test(c.text))return 'targets-ratings-sentiment-listicles';
  if(c.kind==='risk'&&(/Form 10-K|^Table of Contents$|^Legal and Regulatory$|^Strategic Risks$|^[A-Z][a-zA-Z]+ Inc\.$/i.test(c.text)||/^(?:Risks (?:Related|Specific) to|The principal risk factors include)/i.test(c.text)||/^(?:competition|cyber(?:security)? risks?|pandemic|macroeconomic|economic conditions|market risk|operational risk|risk factors)[.!:]?$/i.test(c.text)))return 'generic-risk';
@@ -95,6 +104,11 @@ export async function selectSource(candidates:Candidate[],kind:LineKind,company:
  const scores=Object.fromEntries(dimensions.map(d=>[d,result.answers[d]?.type==='score'?result.answers[d].score:0]));
  const pass=dimensions.every(d=>scores[d]>=1.7);
  if(!pass)reject('score-below-gate');
+ if(!pass&&rows.length>1){
+  const next=await selectSource(rows.filter(c=>c.id!==selected.id),kind,company,ask,context);
+  for(const [k,v]of Object.entries(next.rejected))rejected[k]=(rejected[k]??0)+v;
+  return {...next,rejected,considered:rows.length};
+ }
  const direction=result.answers.direction;
  return {selected:pass?selected:null,proposed:selected,scores,rejected,considered:rows.length,...(direction?.type==='choice'?{direction:direction.choice as Selection['direction']}: {})};
 }

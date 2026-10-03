@@ -65,11 +65,11 @@ import {memoAtPrice} from '../../../lib/value/owner-memo';
 it('publication retains an attributed literal heading through memo recomposition',()=>{
  const c:any={text:'China export restrictions',source:'SEC filing',date:'2026-09-01',url:'https://sec.gov/filing',section:'risk',kind:'risk'};
  const d:any={id:'T.US',company:{kind:'operating',currency:'USD'},report:{filed:'2026-09-01',url:'https://sec.gov/filing'},asOf:'2026-10-02',valuation:null,tests:{moat:{series:{}}},series:{},ownerMemo:{version:1,asOf:'2026-10-02',inputHash:'x',lines:[]}};
- const reading:any={version:'literal-3',asOf:'2026-10-02',risk:{selected:c},price:{selected:null},pricing:{selected:null},events:[]};
+ const reading:any={version:'literal-4',asOf:'2026-10-02',risk:{selected:c},price:{selected:null},pricing:{selected:null},events:[]};
  const output=applyStory(d,null,reading,true,'2026-10-02');
  expect(memoAtPrice(output)?.lines.find(l=>l.question===6)?.answer).toBe('"China export restrictions" (SEC filing, Sep 2026)');
  expect(applyStory(d,null,reading,false,'2026-10-02').ownerMemo?.lines).toHaveLength(0);
- expect(trustedStory({version:'literal-3',price:{n:40,accuracy:.9},risk:{n:39,accuracy:1}})).toBe(false);
+ expect(trustedStory({version:'literal-4',price:{n:40,accuracy:.9},risk:{n:39,accuracy:1}})).toBe(false);
 });
 it('does not treat loosely tagged topical windows or risk category labels as headings',()=>{
  const junk={...source,text:'Supply of Components\n\nWe purchase chips from many suppliers.',section:'risk'};
@@ -95,4 +95,21 @@ it('does not turn a PDF tail into a pricing sentence or an anaphor into a driver
 it('rejects a leading percentage fragment and subjective pricing claims',()=>{
  expect(rejectionReason({kind:'pricing',text:'5.8%, supported by strong pricing and mix benefits in all regions.'} as any)).toBe('sentence-fragment');
  expect(rejectionReason({kind:'pricing',text:'Our transparent and competitive pricing is evident through our latest cross-border take rate.'} as any)).toBe('subjective-pricing-claim');
+});
+it('stops risk headings before Item 1C and rejects lowercase body fragments',()=>{
+ const text=source.text+'\n\nITEM 1C. CYBERSECURITY\n\nCybersecurity Program and Incident Response\n\nThe company maintains controls and processes to monitor and respond to security incidents.';
+ expect(filingCandidates([{...source,text}],'Issuer').some(c=>c.text==='Cybersecurity Program and Incident Response')).toBe(false);
+ const c=filingCandidates([source],'Issuer')[0];
+ expect(rejectionReason({...c,text:'systems. Even if such breach is unrelated to our systems, our business could suffer.'})).toBe('sentence-fragment');
+});
+it('tries another eligible source in a single batch after the first fails scoring',async()=>{
+ const rows=Array.from({length:2},(_,i)=>({id:String(i),kind:'risk' as const,text:`China exposure risk ${i}`,context:`Exposure ${i}`,source:'SEC filing',date:'2026-01-01',url:'https://sec.gov/filing',section:'risk',offset:i}));
+ const result=await selectSource(rows,'risk','Issuer',async input=>({answers:Object.fromEntries(Object.entries(input.questions).map(([key,q]:any)=>[key,q.type==='choice'?{type:'choice',choice:Object.keys(q.criteria).find(k=>k!=='none'),probabilities:{},confidence:1}:{type:'score',score:input.state.includes('Exposure 1')?2:0,probabilities:{},legend:{},confidence:1}]))} as any));
+ expect(result.selected?.id).toBe('1');
+});
+it('extracts numbered Japanese business-risk headings with literal offsets',()=>{
+ const text='３ 【事業等のリスク】\n\n（１）市場および事業に関するリスク\n ①自動車市場の競争激化\n 世界の自動車市場では激しい競争が繰り広げられています。\n トヨタは競争に直面しています。\n\n ②自動車市場の需要変動\n トヨタの販売は世界各国の市場に依存しています。\n\n４ 【経営者による分析】\n';
+ const rows=filingCandidates([{...source,text}],'Toyota').filter(c=>c.kind==='risk');
+ expect(rows.map(c=>c.text)).toEqual(['①自動車市場の競争激化','②自動車市場の需要変動']);
+ for(const c of rows)expect(text.slice(c.offset,c.offset+c.text.length)).toBe(c.text);
 });

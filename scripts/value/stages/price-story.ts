@@ -7,7 +7,7 @@ import {composePriceStory,refreshQueue} from '../../../lib/value/price-story/com
 import {SELECTION_VERSION,selectSource,type Selection,type Candidate} from '../../../lib/value/price-story/selection';
 import type {StoryReading} from '../../../lib/value/price-story/publication';
 const empty=():Selection=>({selected:null,scores:{},rejected:{},considered:0});
-export default async function priceStory({only,limit=400,force=false,offline=false}:{only?:string[];limit?:number;force?:boolean;offline?:boolean}){
+export default async function priceStory({only,limit=400,force=false,offline=false,cachedNews=false}:{only?:string[];limit?:number;force?:boolean;offline?:boolean;cachedNews?:boolean}){
  storyDiskGuard();const now=new Date().toISOString(),dossiers=readDossiers(),prices=readPrices();
  const ids=Object.keys(dossiers).sort(),checked:Record<string,string>={},movers=new Set<string>();
  const snapshot=readCorpusJson<Record<string,Array<[string,number]>>>('price-story/weekly-prices.json')??{};
@@ -22,8 +22,8 @@ export default async function priceStory({only,limit=400,force=false,offline=fal
  writeCorpusJson('price-story/weekly-prices.json',snapshot);
  const queue=only?only.filter(id=>dossiers[id]):force?ids.slice(0,limit):refreshQueue(ids,checked,movers,now,limit);
  let done=0;
- await pool({items:queue,concurrency:2,run:async id=>{
-  storyDiskGuard();const d=dossiers[id],corpus=await candidateCorpus(d,now,offline);
+ await pool({items:queue,concurrency:Number(process.env.STORY_CONCURRENCY??2),run:async id=>{
+  storyDiskGuard();const d=dossiers[id],corpus=await candidateCorpus(d,now,offline||cachedNews);
   const candidates=corpus.candidates;
   writeGzip(corpusPath(`price-story/candidates/${id}.json.gz`),candidates);
   const hash=createHash('sha256').update(JSON.stringify(candidates)).digest('hex');

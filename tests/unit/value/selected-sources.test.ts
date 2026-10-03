@@ -1,8 +1,14 @@
 import {describe,it,expect} from 'vitest';
 import {filingCandidates,newsCandidates,rejectionReason,selectSource} from '../../../lib/value/price-story/selection';
-import {composePriceStory,pricingFallback,refreshQueue} from '../../../lib/value/price-story/compose';
+import {composePriceStory,pricingFallback,refreshQueue,literalHeadingClause} from '../../../lib/value/price-story/compose';
 const source={text:'Item 1A. Risk Factors\n\nExport restrictions on China could reduce our GPU sales.\n\nWe sell GPUs to Chinese data centers. This is a longer explanatory paragraph about the exposure.\n\nCompetition\n\nWe compete globally.',url:'https://issuer.example/annual',filed:'2026-02-01',period:'2025-12-31',section:'risk',quote:''};
 describe('literal source selection',()=>{
+ it('retains a complete literal first clause of a long risk heading',()=>{
+  const heading='We rely on our bottling partners for a significant portion of our business. If we are unable to maintain good relationships with our bottling partners, our business could suffer.';
+  expect(literalHeadingClause(heading,13)).toBe('We rely on our bottling partners for a significant portion of our business.');
+  expect(literalHeadingClause('China export controls restrict our GPU sales; these restrictions may expand.',8)).toBe('China export controls restrict our GPU sales');
+  expect(literalHeadingClause('A very long heading with no complete clause that will fit the permitted space',5)).toBeNull();
+ });
  it('extracts risk headings without manufacturing sentence endings',()=>{
   const rows=filingCandidates([source],'Issuer');
   expect(rows.filter(c=>c.kind==='risk').map(c=>c.text)).toContain('Export restrictions on China could reduce our GPU sales.');
@@ -11,9 +17,10 @@ describe('literal source selection',()=>{
  it('keeps a news title and first paragraph sentences literal',()=>{
   const rows=newsCandidates([{date:'2026-09-01',title:'Adobe falls as AI rivals cut prices',content:'Adobe faces cheaper AI tools. Sales grew.\n\nLater paragraph.',link:'https://news.example/a',source:'Reuters'}]);
   expect(rows.map(c=>c.text)).toEqual(['Adobe falls as AI rivals cut prices','Adobe faces cheaper AI tools.','Sales grew.']);
+  expect(rows[0].context).toContain('Adobe faces cheaper AI tools.');
  });
  it('rejects analyst targets, listicles and generic headings',()=>{
-  for(const text of ['Analyst raises price target to $200','5 stocks to buy now','Competition','Cybersecurity risks'])expect(rejectionReason({kind:'risk',text} as any)).toBeTruthy();
+  for(const text of ['Analyst raises price target to $200','5 stocks to buy now','Competition','Cybersecurity risks','Principal risk Outlook','See page 86.'])expect(rejectionReason({kind:'risk',text} as any)).toBeTruthy();
  });
  it('uses only choice/score questions and never accepts model-authored strings',async()=>{
   const rows=filingCandidates([source],'Issuer');let calls=0;
@@ -24,6 +31,11 @@ describe('literal source selection',()=>{
   });
   expect(calls).toBe(2);expect(result.selected?.text).toBe(rows[0].text);
  });
+});
+it('scores the remaining tournament finalist when the first winner fails the gate',async()=>{
+ const rows=Array.from({length:17},(_,i)=>({id:String(i),kind:'risk' as const,text:`China exposure risk ${i}`,context:`Exposure ${i}`,source:'SEC filing',date:'2026-01-01',url:'https://sec.gov/filing',section:'risk',offset:i}));
+ const result=await selectSource(rows,'risk','Issuer',async input=>({answers:Object.fromEntries(Object.entries(input.questions).map(([key,q]:any)=>[key,q.type==='choice'?{type:'choice',choice:Object.keys(q.criteria).find(k=>k!=='none'),probabilities:{},confidence:1}:{type:'score',score:input.state.includes('Exposure 16')?2:0,probabilities:{},legend:{},confidence:1}]))} as any));
+ expect(result.selected?.id).toBe('16');
 });
 describe('computed composition',()=>{
  const d:any={id:'A.US',company:{kind:'operating',currency:'USD'},asOf:'2026-10-02',report:{url:'https://issuer.example/annual',filed:'2026-02-01'},tests:{moat:{series:{grossMargin:[[2021,.60],[2022,.61],[2023,.60]]}}},series:{revenue:[[2024,100],[2025,110]]},priceHistory:[['2024-02',100],['2026-09',55]],valuation:null};
@@ -53,11 +65,11 @@ import {memoAtPrice} from '../../../lib/value/owner-memo';
 it('publication retains an attributed literal heading through memo recomposition',()=>{
  const c:any={text:'China export restrictions',source:'SEC filing',date:'2026-09-01',url:'https://sec.gov/filing',section:'risk',kind:'risk'};
  const d:any={id:'T.US',company:{kind:'operating',currency:'USD'},report:{filed:'2026-09-01',url:'https://sec.gov/filing'},asOf:'2026-10-02',valuation:null,tests:{moat:{series:{}}},series:{},ownerMemo:{version:1,asOf:'2026-10-02',inputHash:'x',lines:[]}};
- const reading:any={version:'literal-2',asOf:'2026-10-02',risk:{selected:c},price:{selected:null},pricing:{selected:null},events:[]};
+ const reading:any={version:'literal-3',asOf:'2026-10-02',risk:{selected:c},price:{selected:null},pricing:{selected:null},events:[]};
  const output=applyStory(d,null,reading,true,'2026-10-02');
  expect(memoAtPrice(output)?.lines.find(l=>l.question===6)?.answer).toBe('"China export restrictions" (SEC filing, Sep 2026)');
  expect(applyStory(d,null,reading,false,'2026-10-02').ownerMemo?.lines).toHaveLength(0);
- expect(trustedStory({version:'literal-2',price:{n:40,accuracy:.9},risk:{n:39,accuracy:1}})).toBe(false);
+ expect(trustedStory({version:'literal-3',price:{n:40,accuracy:.9},risk:{n:39,accuracy:1}})).toBe(false);
 });
 it('does not treat loosely tagged topical windows or risk category labels as headings',()=>{
  const junk={...source,text:'Supply of Components\n\nWe purchase chips from many suppliers.',section:'risk'};

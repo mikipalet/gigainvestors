@@ -5,6 +5,15 @@ import type {Candidate} from './selection';
 export interface StoryFact {text:string;url:string;date:string;points:Series;label:string;unit:'percent'|'money'}
 export interface PriceStory {version:1;asOf:string;line:string;selected?:Candidate;events:Candidate[];needs:string|null;facts:StoryFact[];priceDate:string|null}
 const words=(s:string)=>s.trim().split(/\s+/).length;
+/** Only grammatical source boundaries, never an arbitrary word-count cut. */
+export function literalHeadingClause(text:string,maxWords=13):string|null {
+ if(words(text)<=maxWords)return text;
+ const first=Array.from(new Intl.Segmenter('en',{granularity:'sentence'}).segment(text))[0]?.segment.trim();
+ if(first&&words(first)<=maxWords)return first;
+ const boundary=/;|, (?:but|which|including|resulting)\b| — | – /.exec(text);
+ const clause=boundary?text.slice(0,boundary.index).trim():null;
+ return clause&&words(clause)>=4&&words(clause)<=maxWords?clause:null;
+}
 const finite=(n:unknown):n is number=>typeof n==='number'&&Number.isFinite(n);
 export const monthLabel=(s:string)=>new Date(s.slice(0,7)+'-01T00:00:00Z').toLocaleDateString('en-US',{month:'short',year:'numeric',timeZone:'UTC'});
 export const sourceQuote=(c:Candidate)=>`"${c.text}" (${c.source}, ${monthLabel(c.date)})`;
@@ -61,6 +70,11 @@ export function pricingFallback(d:Dossier):MemoLine|null {
  return {question:3,answer:`Kept about a ${margin}% gross margin through 2022 cost inflation.`,basis:'computed',evidence:[{quote:`Gross margin observations: ${JSON.stringify(points)}; range within 2 percentage points.`,url:d.report.url??'https://eodhd.com/financial-apis/stock-etfs-fundamental-data-feeds/',filed:d.report.filed??d.asOf,section:'Computed gross margins, 2021–23'}],chart:{label:'Gross margin',unit:'percent',points}};
 }
 export function selectedMemo(c:Candidate,direction?:string):MemoLine|null {
+ if(c.kind==='risk'){
+  const text=literalHeadingClause(c.text,18-words(c.source)-2);
+  if(!text)return null;
+  c={...c,text};
+ }
  const answer=sourceQuote(c);
  if(words(answer)>18)return null;
  return {question:c.kind==='pricing'?3:6,answer,literal:{text:c.text,source:c.source,date:c.date},basis:'filing',evidence:[{quote:c.text,url:c.url,filed:c.date,section:`${c.source} · ${c.section}`}],tone:direction==='no'?'red':undefined};

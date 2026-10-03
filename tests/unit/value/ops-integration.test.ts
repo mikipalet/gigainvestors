@@ -82,8 +82,10 @@ it('counts only universe members and only todays Jev usage', () => {
   appendJsonl('jev-usage.jsonl', { at: '2026-09-29T00:00:00Z', input_tokens: 10 });
   expect(collectStatus()).toMatchObject({ universe: 3, fundamentals: 1, analysed: 1, reports: { '10-K': 1 }, published: { count: 2 }, prices: { eodhd: 1, yahoo: 1, seed: 1, missing: 0 }, jevTokens: 10 });
 });
-function runner({ analyzeFails = false, yieldsFails = false, japanFails = false, japanSkipped = false, resetFails = false, thesisFails = false } = {}) {
+function runner({ analyzeFails = false, yieldsFails = false, japanFails = false, japanSkipped = false, resetFails = false, thesisFails = false, freeKiB = 16*1024*1024 } = {}) {
   const bin = path.join(root, 'bin'); mkdirSync(bin, { recursive: true });
+  // Runner policy tests use a deterministic disk fixture, independent of other jobs.
+  writeFileSync(path.join(bin,'df'),`#!/bin/sh\necho 'Filesystem 1024-blocks Used Available Capacity Mounted'\necho 'fixture 33554432 0 ${freeKiB} 50% /'\n`,{mode:0o755});
   // Stub only paid/publishing stage processes; execute runner bookkeeping with real node.
   writeFileSync(path.join(bin, 'node'), `#!${process.execPath}
 const fs = require('node:fs');
@@ -106,6 +108,10 @@ process.exit((stage === 'thesis' && ${thesisFails}) || (stage === 'wait-eodhd-re
   return () => execFileSync('bash', ['scripts/value/run-daily.sh', '--once'], { env: { ...process.env, PATH: `${bin}:${process.env.PATH}` }, stdio: 'pipe' });
 }
 const stageCalls = (): string[][] => readFileSync(path.join(root, 'stages'), 'utf8').trim().split('\n').map(line => JSON.parse(line));
+it('runner stops before any paid or publishing stage below its disk floor',()=>{
+ expect(runner({freeKiB:5*1024*1024})).toThrow();
+ expect(()=>stageCalls()).toThrow();
+});
 it.each([true, false])('runner publishes available data after analysis or price failures: %s', analyzeFails => {
   runner({ analyzeFails })();
   const calls = stageCalls();

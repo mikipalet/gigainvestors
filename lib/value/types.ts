@@ -231,6 +231,7 @@ export interface CompanyEvent {
 }
 
 export interface Analysis {
+  priceStory?: import("./price-story/compose").PriceStory;
   ownerMemo?: import("./owner-memo").OwnerMemo;
   businessOverview?: import("./flags/presentation").BusinessLine[];
   businessDepth?: import("./flags/types").PublicBusiness;

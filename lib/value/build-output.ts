@@ -1,3 +1,4 @@
+import {composePriceStory} from './price-story/compose';
 import {memoAtPrice} from './owner-memo';
 import {consistentValuation} from './return-model';
 import {valuationMargin} from './valuation';
@@ -75,6 +76,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       if (shortHistory(analysis) && !missingInvestmentNav(analysis)) {
         const dossier: Dossier={...analysis,methodVersion:METHOD_VERSION,w:null,b:false,holders:[],series:analysis.series??{}};
         const visible=publicAnalysis(dossier);visible.ownerMemo=memoAtPrice(visible,prices[analysis.id]);
+    visible.priceStory=composePriceStory(visible,prices[analysis.id]??null,analysis.priceStory?.selected??null,analysis.priceStory?.events??[],analysis.priceStory?.asOf??new Date().toISOString());
         (shards[shardOf(analysis.id)]??={})[analysis.id]=visible;
       }
       continue;
@@ -130,6 +132,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     };
     const shard = shardOf(analysis.id);
     const visible=publicAnalysis(dossier);visible.ownerMemo=memoAtPrice(visible,prices[analysis.id]);
+    visible.priceStory=composePriceStory(visible,prices[analysis.id]??null,analysis.priceStory?.selected??null,analysis.priceStory?.events??[],analysis.priceStory?.asOf??new Date().toISOString());
     (shards[shard] ??= {})[analysis.id] = visible;
     if (price.dataQualityFlags.length) unresolved.push({id:analysis.id,qualityPass:t==='PPPPP',reasons:price.dataQualityFlags});
     const roic = (analysis.tests.moat.series.totalRoic ?? []).slice(-T.history.years)

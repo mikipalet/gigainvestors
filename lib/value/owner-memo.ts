@@ -7,7 +7,7 @@ import type {Analysis,PriceMap,Series,Valuation,Year} from './types';
 import type {Evidence} from './judgement/types';
 export const MEMO_QUESTIONS = ['How it makes money','Why customers stay','Can it raise prices','Where the cash goes','Are managers owners','What could break it','What the price says'] as const;
 export interface MemoCapitalYear {fy:number;currency:string;reinvestmentRate?:number;reinvestmentBasis?:'growth_capex'|'growth_capex_and_cash_acquisitions';incrementalReturn?:number;buybacks?:number;dividendsPaid?:number;repurchase?:{currency:string;paidPerShare:number;valuePerShare:number;premium:number;basis:'historical_value_at_current_rates'}}
-export interface MemoLine {capitalAllocation?:MemoCapitalYear[];question:number;answer:string;evidence:Evidence[];basis:'computed'|'filing';chart?:{label:string;unit:'percent'|'money'|'ratio';points:Series};tone?:'red'|'green'|'neutral'}
+export interface MemoLine {literal?:{text:string;source:string;date:string};capitalAllocation?:MemoCapitalYear[];question:number;answer:string;evidence:Evidence[];basis:'computed'|'filing';chart?:{label:string;unit:'percent'|'money'|'ratio';points:Series};tone?:'red'|'green'|'neutral'}
 export interface OwnerMemo {version:1;asOf:string;lines:MemoLine[];inputHash:string;priceFx?:number;priceReference?:MemoPriceReference;priceQuote?:MemoPriceQuote}
 export interface MemoPriceQuote {quote:PriceMap[string];label:string;evidence:Evidence}
 export interface MemoPriceReference {value:number;currency:string;asOf:string;evidence:Evidence}

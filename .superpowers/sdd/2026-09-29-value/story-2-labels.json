@@ -1,0 +1,896 @@
+[
+  {
+    "id": "ADBE.US",
+    "candidatesHash": "6a68f46c1112bc19e157da718497c54218a4969db536ffcdc15de87ff3da371e",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "AI liability is generic; the heading does not identify a named product exposure or establish the main threat."
+    },
+    "reviewedRisk": {
+      "id": "543ac2afafe60880",
+      "kind": "risk",
+      "text": "Issues relating to the development and use of AI in our solutions may result in reputational harm, liability and adverse business and financial results.",
+      "context": "Issues relating to the development and use of AI in our solutions may result in reputational harm, liability and adverse business and financial results.\n\nSocial, ethical and operational issues relating to the use of AI, including generative AI and agentic AI, in our solutions may result in reputational harm, liability and additional costs. We are increasingly incorporating AI technologies, developed by us and by third parties, into many of our solutions. If our AI development, deployment, content labeling or governance is ineffective or inadequate, it may result in incidents that impair the public acceptance of AI solutions or cause harm to individuals, customers or society, or result in our solutions not working as intended or producing unexpected outcomes.",
+      "source": "SEC filing",
+      "date": "2026-01-15",
+      "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+      "section": "risk",
+      "offset": 43837
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "NVDA.US",
+    "candidatesHash": "5b4548e373043daa2046ce985714814e87bd59b66f5b58a2587345db2ea33d59",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Responsible-use AI liability is generic; no named customer, product constraint or quantified exposure in the proposed heading."
+    },
+    "reviewedRisk": {
+      "id": "a94646fc58a13cef",
+      "kind": "risk",
+      "text": "•Issues relating to the responsible use of our technologies, including AI, may result in reputational or financial harm and liability.",
+      "context": "•Issues relating to the responsible use of our technologies, including AI, may result in reputational or financial harm and liability.\n\n•Adequately protecting our IP rights could be costly, and our ability to compete could be harmed if we are unsuccessful or if we are prohibited from making or selling our products.",
+      "source": "SEC filing",
+      "date": "2026-02-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+      "section": "risk",
+      "offset": 3377
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "KO.US",
+    "candidatesHash": "69b108ac4462511ce02696fd83e3b0ffdf46633b3f6eab2c82e0caae39583c4c",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [
+        "d64c2842121c8884"
+      ],
+      "note": "Accept bottler dependence: the paragraph quantifies one bottler at 10% of revenue and identifies EMEA/Asia Pacific exposure. The literal heading is too long for an 18-word memo."
+    },
+    "reviewedRisk": {
+      "id": "d64c2842121c8884",
+      "kind": "risk",
+      "text": "We rely on our bottling partners for a significant portion of our business. If we are unable to maintain good relationships with our bottling partners, our business could suffer.",
+      "context": "We rely on our bottling partners for a significant portion of our business. If we are unable to maintain good relationships with our bottling partners, our business could suffer.\n\nWe generate a significant portion of our net operating revenues by selling concentrates and syrups to independent bottling partners. For the year ended December 31, 2025, one bottler accounted for 10% of our net operating revenues, which are reflected in our EMEA and Asia Pacific operating segments. As independent companies, our bottling partners, some of which are publicly traded companies, make their own business decisions that may not always align with our interests. In addition, some of our bottling partners have the right to manufacture or distribute their own products or certain products of other beverage companies. If we are unable to maintain operating and strategic alignment or agree on appropriate pricing and marketing and advertising support, or if our bottling partners are not satisfied with our brand innovation and development efforts, they may take actions that, while maximizing their own short-term profits, may be detrimental to our Company or our brands, or they may devote more of their resources to business opportunities or products other than those of the Company. Further, actions by our bottling partners, including related to product quality, safety, marketing pr",
+      "source": "SEC filing",
+      "date": "2026-02-20",
+      "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+      "section": "risk",
+      "offset": 103040
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "LULU.US",
+    "candidatesHash": "ac635347913154d688a9c702377386622e1e5da8c9abfffccb84e0ec117e18f9",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [
+        "231a0dba330c91f8"
+      ],
+      "note": "Accept this heading as a material named US tariff/de minimis exposure; the selection gate abstained, so it earns no success credit."
+    },
+    "reviewedRisk": {
+      "id": "231a0dba330c91f8",
+      "kind": "risk",
+      "text": "Changes to U.S. tariff and customs policy, including the elimination of the de minimis exemption, have and may further materially increase product costs and negatively affect margins.",
+      "context": "Changes to U.S. tariff and customs policy, including the elimination of the de minimis exemption, have and may further materially increase product costs and negatively affect margins.\n\nAs a result of the increased tariffs since April 2025, the cost of inventory in the United States has increased. The United States also eliminated the de minimis duty-free exemption for certain shipments effective May 2, 2025, and an Executive Order extends this elimination globally beginning August 29, 2025, with legislation enacted to repeal the statutory exemption entirely by July 1, 2027. The countries from which we source the majority of our products are now subject to higher tariffs on imports into the United States. Further, the majority of our sales to U.S. e-commerce guests are currently fulfilled from distribution centers in Canada, and historically a significant proportion of these orders qualified for the de minimis exemption. The removal of this exemption increases the cost of fulfilling those orders. As a result, more shipments are now subject to duties, taxes, and customs procedures, which increased product costs during 2025, and which we expect to continue into 2026 and beyond. We are taking steps designed to mitigate some of the financial impact, although we expect the tariff and de minimis changes to adversely affect product costs, gross profit, and income from op",
+      "source": "SEC filing",
+      "date": "2026-03-17",
+      "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+      "section": "risk",
+      "offset": 55083
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "GOOGL.US",
+    "candidatesHash": "1171c370cc84600e43b735b69b2d83bd3d7a88e9f92d7555f9ec5fb69f03787b",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Ownership voting control is a governance risk, not an evidenced main operating threat in this selection."
+    },
+    "reviewedRisk": {
+      "id": "9e700bb91337557d",
+      "kind": "risk",
+      "text": "The concentration of our stock ownership limits our stockholders' ability to influence corporate matters.",
+      "context": "The concentration of our stock ownership limits our stockholders' ability to influence corporate matters.\n\nOur Class B stock has 10 votes per share, our Class A stock has one vote per share, and our Class C stock has no voting rights. As of December 31, 2025, Larry Page and Sergey Brin beneficially owned approximately 89.3% of our",
+      "source": "SEC filing",
+      "date": "2026-02-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+      "section": "risk",
+      "offset": 110251
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "7203.JP",
+    "candidatesHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "No valid risk heading selected from retained Japanese filing text after enforcing risk-section boundaries."
+    },
+    "reviewedRisk": null,
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "JPM.US",
+    "candidatesHash": "81fad5a2b9d923c8465365e3c87a4b7c34341397510f1b48f8f3aa84eb0c253c",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Resolution-plan regulatory requirements are relevant, but the proposed heading does not establish a specific main earnings exposure."
+    },
+    "reviewedRisk": {
+      "id": "ec63d1c6883042eb",
+      "kind": "risk",
+      "text": "Changes in the requirements for the regulatory evaluation of JPMorganChase’s resolution plan could increase its funding or operational costs or require restructuring or curtailment of its businesses.",
+      "context": "Changes in the requirements for the regulatory evaluation of JPMorganChase’s resolution plan could increase its funding or operational costs or require restructuring or curtailment of its businesses.\n\nJPMorganChase must periodically submit a detailed resolution plan to the Federal Reserve and the FDIC for its rapid and orderly resolution in bankruptcy, without extraordinary government support, in the event of material financial distress or failure. The regulatory requirements concerning resolution plans and the evaluation of JPMorganChase’s resolution plan by the banking regulators could change over time.",
+      "source": "SEC filing",
+      "date": "2026-02-13",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm",
+      "section": "risk",
+      "offset": 67914
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "CBG.LSE",
+    "candidatesHash": "482a7e6ac64afdf710b5d5740815ac69f781dec9c5f6b6dedd7d49f3cc209a44",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Principal risk Outlook is a table header, not a company-specific risk heading."
+    },
+    "reviewedRisk": {
+      "id": "2f84a804c52207d2",
+      "kind": "risk",
+      "text": "Principal risk Outlook",
+      "context": " Principal risk Outlook\n\n Business and strategic risk • We continue to focus on supporting our customers, and on maintaining\n underwriting standards and operational resilience, while we invest to support\n The risk of realising lower than\n future income generation, operational efficiency and cost savings.\n anticipated profits or experiencing a\n loss rather than a profit due to failure • The business and strategic risk has stabilised in recent months following the\n to adapt to changing market successful delivery of a number of management actions to strengthen our\n conditions, pursuing an ineffective capital position and ensure the group is well placed to navigate the current\n strategy or ineffective uncertainty. However, business risk may increase in FY 2026 as the group\n implementation of strategy. continues to progress a number of key strategic initiatives and change\n programmes.\n • We are committed to delivering against our three strategic priorities of\n See page 80. Simplify, Optimise, and Grow. By simplifying our diverse portfolio of\n businesses and improving the efficiency of our operations we are building a\n more scalable platform to support future growth and deliver enhanced risk-\n adjusted returns.\n",
+      "source": "CBG filing",
+      "date": "2025-10-03",
+      "url": "https://www.closebrothers.com/system/files/rrp/reports/CBGAnnualReport2025.pdf",
+      "section": "risk",
+      "offset": 288382
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "AAPL.US",
+    "candidatesHash": "db91492ef996cecc1bb9885df6dbfb0eebe2f2e565f4da81e6d14779be4599f1",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Outsourcing dependence is relevant but the proposed heading does not identify a named supplier/country or quantified exposure."
+    },
+    "reviewedRisk": {
+      "id": "c1acb8562725a518",
+      "kind": "risk",
+      "text": "The Company depends on component and product manufacturing and logistical services provided by outsourcing partners, many of which are located outside of the U.S.",
+      "context": "The Company depends on component and product manufacturing and logistical services provided by outsourcing partners, many of which are located outside of the U.S.\n\nA significant majority of the Company’s manufacturing is performed in whole or in part by outsourcing partners located primarily in China mainland, India, Japan, South Korea, Taiwan and Vietnam, in addition to sourcing from partners and facilities located in the U.S. The Company relies on single-source partners in the U.S., Asia and Europe to supply and manufacture many components, and on partners primarily located in Asia, for final assembly of substantially all of the Company’s hardware products. The Company has also outsourced much of its transportation and logistics management. While these arrangements can lower operating costs, they also reduce the Company’s direct control over production and distribution. Such diminished control has from time to time had, and may in the future have, an adverse effect on the cost, quality or quantity of products manufactured or services provided, or adversely affect the Company’s flexibility to respond to changing conditions. Although arrangements with these partners may contain provisions for product defect expense reimbursement, the Company generally remains responsible to the consumer for warranty and out-of-warranty service in the event of",
+      "source": "SEC filing",
+      "date": "2025-10-31",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "section": "risk",
+      "offset": 41531
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "MSFT.US",
+    "candidatesHash": "2061d84655c208403a6a0aac102ef70c4fa19c77fc1695c0cef01d3e5d4547aa",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Truncated heading ends mid-word; cannot accept as literal complete source heading."
+    },
+    "reviewedRisk": {
+      "id": "c79d7cc79005ddea",
+      "kind": "risk",
+      "text": "Our cloud and AI strategy requires substantial investments and depends on evolving customer demand, technological developments, competitive dynamics, and regulatory conditi",
+      "context": "Our cloud and AI strategy requires substantial investments and depends on evolving customer demand, technological developments, competitive dynamics, and regulatory conditi\n\n competitors develop and offer free applications, online services, and content, and make money by selling third-party advertising. Advertising revenue funds development of products and services these competitors provide to users at little or no cost, competing directly with our revenue-generating products",
+      "source": "SEC filing",
+      "date": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "section": "risk",
+      "offset": 51700
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "AMZN.US",
+    "candidatesHash": "dc2e2bdfea83567e466a7c16491a7007857db9ff20b43decde44e8a5a7f8a9c0",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic expansion risk across products and regions; no named exposure."
+    },
+    "reviewedRisk": {
+      "id": "f6754e82f057ad54",
+      "kind": "risk",
+      "text": "Our Expansion into New Products, Services, Technologies, and Geographic Regions Subjects Us to Additional Risks",
+      "context": "Our Expansion into New Products, Services, Technologies, and Geographic Regions Subjects Us to Additional Risks\n\nWe may have limited or no experience in our newer market segments, and our customers may not adopt our product or service offerings. These offerings, which can present new and difficult technology challenges, may subject us to claims if customers of these offerings experience, or are otherwise impacted by, service disruptions, delays, setbacks, or failures or",
+      "source": "SEC filing",
+      "date": "2026-02-06",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+      "section": "risk",
+      "offset": 35144
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "META.US",
+    "candidatesHash": "88870badc8d69ffd2ef04919232578d1ea8e1e28b910686ad5a11b8c69536629",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic user retention/engagement heading; no named or quantified exposure in the proposed heading."
+    },
+    "reviewedRisk": {
+      "id": "a3f19f83883ae40f",
+      "kind": "risk",
+      "text": "If we fail to retain existing users or add new users, or if our users decrease their level of engagement with our products, our revenue, financial results, and business may be significantly harmed.",
+      "context": "If we fail to retain existing users or add new users, or if our users decrease their level of engagement with our products, our revenue, financial results, and business may be significantly harmed.\n\nThe size of our active user base and our users' level of engagement across our products are critical to our success. Our financial performance has been and will continue to be significantly determined by our success i",
+      "source": "SEC filing",
+      "date": "2026-01-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+      "section": "risk",
+      "offset": 55662
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "TSLA.US",
+    "candidatesHash": "569db01f256665e13d5b127930ea438a17b16716078d3150f310ea65a4299a57",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic launch and manufacturing risk without a named product or quantified exposure."
+    },
+    "reviewedRisk": {
+      "id": "87a8c11bf0224d65",
+      "kind": "risk",
+      "text": "We may experience issues or delays in developing, launching and ramping the production of our products, services and features, or we may be unable to control our manufacturing costs.",
+      "context": "We may experience issues or delays in developing, launching and ramping the production of our products, services and features, or we may be unable to control our manufacturing costs.\n\nWe are developing new technologies and services, unique manufacturing processes and design features in our products. There is no guarantee we will be able to successfully develop or timely introduce and scale these new products, services and features, or that there will be widespread consumer adoption. We also have previously experienced and may in the future experience launch and production ramp delays.",
+      "source": "SEC filing",
+      "date": "2026-01-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+      "section": "risk",
+      "offset": 533
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "ORCL.US",
+    "candidatesHash": "f3bdb7012936df1a372adcaf95b5e0f717f1e2efc19af5506eb9af4c465c23e5",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Lowercase bullet is an incomplete sentence/list fragment, not a standalone heading."
+    },
+    "reviewedRisk": {
+      "id": "16362400a64e128a",
+      "kind": "risk",
+      "text": "we fail to adequately integrate, support or enhance acquired product lines or services.",
+      "context": "we fail to adequately integrate, support or enhance acquired product lines or services.\n\nIn addition, our profitability and revenues could be adversely impacted if we lose one or more of our key customers for any reason, including as a result of any of the factors discussed above, or if one or more of our key customers experiences insolvency, bankruptcy or other issues impacting their creditworthiness. Any such loss could also limit or reduce our growth in future periods.",
+      "source": "SEC filing",
+      "date": "2026-06-22",
+      "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm",
+      "section": "risk",
+      "offset": 9879
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "CRM.US",
+    "candidatesHash": "35d13a3e4fc83568e434c7457e938af0eb8f4f3b353f9594dcd00d38c59a2a50",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic sales-organization disruption bullet; no specific main exposure."
+    },
+    "reviewedRisk": {
+      "id": "03768771c28f911f",
+      "kind": "risk",
+      "text": "•Disruptions caused by periodic changes to our sales organization.",
+      "context": "•Disruptions caused by periodic changes to our sales organization.\n\n•Exposure to risks inherent in international operations from sales to customers outside the United States.",
+      "source": "SEC filing",
+      "date": "2026-03-02",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+      "section": "risk",
+      "offset": 2729
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "INTC.US",
+    "candidatesHash": "5afe97869cd3b7032f8e98f128315be67db3a1910854200c854bac6acd03aed2",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "No accepted risk heading selected."
+    },
+    "reviewedRisk": null,
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "AMD.US",
+    "candidatesHash": "75c3dc378ea9f702e8ba562743610fde15e0ba97296f35d1c19577149c5b8a47",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Broad third-party platform dependence; no named counterparty or quantified exposure."
+    },
+    "reviewedRisk": {
+      "id": "b1a673e67931247d",
+      "kind": "risk",
+      "text": "•We depend on third-party companies for the design, manufacture and supply of motherboards, software, memory and other computer platform components to support our business and products.",
+      "context": "•We depend on third-party companies for the design, manufacture and supply of motherboards, software, memory and other computer platform components to support our business and products.\n\n•If we lose Microsoft Corporation’s support for our products or other software vendors do not design and develop software to run on our products, our ability to sell our products could be materially adversely affected.",
+      "source": "SEC filing",
+      "date": "2026-02-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+      "section": "risk",
+      "offset": 2837
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "AVGO.US",
+    "candidatesHash": "f2183957586f4c06728d2f47848e4ceac16189fcf0869f06f337825727a21426",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Tax holiday risk does not identify a country, arrangement or quantified exposure in the proposed heading."
+    },
+    "reviewedRisk": {
+      "id": "9ecf121191b177f1",
+      "kind": "risk",
+      "text": "•If our tax incentives or tax holiday arrangements change or cease to be in effect or applicable, our corporate income taxes could significantly increase.",
+      "context": "•If our tax incentives or tax holiday arrangements change or cease to be in effect or applicable, our corporate income taxes could significantly increase.\n\n•We have potential tax liabilities as a result of VMware’s former controlling ownership by Dell, which could have an adverse effect on our financial condition and operating results.",
+      "source": "SEC filing",
+      "date": "2025-12-18",
+      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/avgo-20251102.htm",
+      "section": "risk",
+      "offset": 5438
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "DIS.US",
+    "candidatesHash": "947c585e21d6c8051e3972ca1172f8224e100be921c8326e49dc322b8c252aff",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic foreign exchange risk; no named exposure."
+    },
+    "reviewedRisk": {
+      "id": "b1018b7b8c83d0f3",
+      "kind": "risk",
+      "text": "Fluctuations in foreign currency exchange rates impact our results of operations, including our revenues and costs.",
+      "context": "Fluctuations in foreign currency exchange rates impact our results of operations, including our revenues and costs.\n\nFluctuations in foreign currency exchange rates against the U.S. dollar impact our results of operations, including by impacting the cost in U.S. dollars of providing our goods and services, our revenues in U.S. dollars generated by our international businesses and the international demand for our domestic products and services. An increase or sustained strength in the value of the U.S. dollar adversely impacts the U.S. dollar value of revenue we receive and expect to receive from other markets and contributes to reduced international demand for our domestic products and services, including international travel to our domestic parks and resorts. A decrease or sustained weakness in the value of the U.S. dollar often increases the cost of labor, goods and services in, or originating from, as applicable, non-U.S. markets. Although we hedge exposure to fluctuations in certain foreign currencies, any such hedging activity may not substantially offset the negative financial impact of exchange rate fluctuations and is not expected to offset all such negative financial impact, particularly in periods of sustained U.S. dollar strength or weakness relative to multiple foreign currencies. Fur",
+      "source": "SEC filing",
+      "date": "2025-11-13",
+      "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448925000155/dis-20250927.htm",
+      "section": "risk",
+      "offset": 2845
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "NKE.US",
+    "candidatesHash": "1480d62466e915bbec09d1440a2b8e7b506ed09af0dd69b0490cfce36d5fa09e",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic financing availability risk; no company-specific main driver."
+    },
+    "reviewedRisk": {
+      "id": "2852869a6ae4efdf",
+      "kind": "risk",
+      "text": "•In the future, we may be unable to access financing in the credit and capital markets at reasonable rates in the event we find it desirable to do so.",
+      "context": "•In the future, we may be unable to access financing in the credit and capital markets at reasonable rates in the event we find it desirable to do so.\n\n•We transact in various currencies, which creates exposure to fluctuations in foreign currency exchange rates relative to the U.S. Dollar. Continued volatility in the markets and exchange rates for foreign currencies and contracts in foreign currencies has had and could continue to have a significant impact on our reported operating results and financial condition.",
+      "source": "SEC filing",
+      "date": "2026-07-15",
+      "url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000088/nke-20260531.htm",
+      "section": "risk",
+      "offset": 7543
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "SBUX.US",
+    "candidatesHash": "70c3275702076800e826e824758bfbbe8f3ef4902338598fdd807e20efeaed50",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic brand value risk without a named exposure."
+    },
+    "reviewedRisk": {
+      "id": "a7ba3851c8058f67",
+      "kind": "risk",
+      "text": "Our success depends substantially on the value of our brand, and failure to preserve its value could have a negative impact on our financial results.",
+      "context": "Our success depends substantially on the value of our brand, and failure to preserve its value could have a negative impact on our financial results.\n\nThe Starbucks brand is recognized throughout most of the world, and we have received high ratings in global brand value studies. To be successful in the future, we believe we must preserve, grow, and leverage the value of our brands across all sales channels.",
+      "source": "SEC filing",
+      "date": "2025-11-14",
+      "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922425000114/sbux-20250928.htm",
+      "section": "risk",
+      "offset": 55295
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "MCD.US",
+    "candidatesHash": "ff975575326b1ee56895f84298a175bafa067cff9c1fd14371aa959f15a1ebef",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "No accepted risk heading selected."
+    },
+    "reviewedRisk": null,
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "PEP.US",
+    "candidatesHash": "486db2fe0aeceffbd0913b156a371a9c106840fb007ac1f5ca148067637b6b61",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic recall/product safety boilerplate; no named exposure."
+    },
+    "reviewedRisk": {
+      "id": "b9cc97e39318507c",
+      "kind": "risk",
+      "text": "Product recalls or other issues or concerns with respect to product quality and safety can adversely affect our business.",
+      "context": "Product recalls or other issues or concerns with respect to product quality and safety can adversely affect our business.\n\nWe have recalled, and could in the future recall, products due to product quality or safety issues, including actual or alleged mislabeling, misbranding, spoilage, undeclared allergens, adulteration or contamination. Joint ventures in which we have an interest have also recalled, and could in the future recall, products for the same or other reasons. These risks could be heightened in light of new or evolving regulations, changes to our portfolio (including increased use of functional or other ingredients), aging infrastructure, and increased pressure on our suppliers from supply chain disruptions. Product recalls have in the past and could in the future adversely affect our business by resulting in losses due to their cost, the destruction of product inventory, customer fines and returns or lost sales due to any unavailability of the product for a period of time. In addition, our manufacturing facilities and products have been and could continue to be subject to increased inspection by federal, state and local authorities. Product quality or safety issues identified by us or governmental authorities have in the past and could in the future also reduce consumer confidence and deman",
+      "source": "SEC filing",
+      "date": "2026-02-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000007/pep-20251227.htm",
+      "section": "risk",
+      "offset": 6706
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "PG.US",
+    "candidatesHash": "1819e7731e5b6a9233cf285d9b37ffbe2747fa89548bce9671ff64d90bfb6c71",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic supply-chain disruption boilerplate; no named exposure."
+    },
+    "reviewedRisk": {
+      "id": "f97dcebca65835c5",
+      "kind": "risk",
+      "text": "Our business results depend on our ability to manage disruptions in our global supply chain.",
+      "context": "Our business results depend on our ability to manage disruptions in our global supply chain.\n\nOur ability to meet our customers’ needs and achieve cost targets depends on our ability to maintain key manufacturing and supply arrangements, including execution of supply chain optimizations and certain sole supplier or sole manufacturing plant arrangements. The loss or disruption of such manufacturing and supply arrangements, including for issues such as labor disputes or controversies, loss or impairment of key manufacturing sites, discontinuity or disruptions in our internal information and data systems or those of our suppliers, cybersecurity incidents including but not limited to ransomware attacks, misuse of artificial intelligence (AI) and machine learning technologies, inability to procure sufficient raw or input materials (including water, recycled materials and materials that meet our labor standards), significant changes in trade policy, natural disasters, increasing severity or frequency of extreme weather events due to climate change or otherwise, acts of war or terrorism, disease outbreaks (including epidemics, pandemics or similar widespread public health concerns)",
+      "source": "SEC filing",
+      "date": "2026-08-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000103/pg-20260630.htm",
+      "section": "risk",
+      "offset": 53483
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "WMT.US",
+    "candidatesHash": "2c316e314bfe4be700c5ffb0ad09514ce650c3d50a07ea441472b80165fd53ce",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Truncated strategy fragment ending in and; not a complete risk heading."
+    },
+    "reviewedRisk": {
+      "id": "dbe8caf38dc3bc02",
+      "kind": "risk",
+      "text": "Our strategy, which includes investments in eCommerce, technology, AI, talent, supply chain automation and",
+      "context": "Our strategy, which includes investments in eCommerce, technology, AI, talent, supply chain automation and\n\ntion and liquidity. Our business operations could also be affected by additional factors that apply to all companies operating in the U.S. and globally. The following risk factors do not identify all risks that we may face. The disclosures below reflect our beliefs and opinions as to risk factors that could materially and adversely affect our business operations and our securities in the future. References to past events are provided by way of example only and are not intended to be a complete listing or a representation as to whether or not such risk factors have occurred in the past or their likelihood of occurring in the future.",
+      "source": "SEC filing",
+      "date": "2026-03-13",
+      "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+      "section": "risk",
+      "offset": 47560
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "COST.US",
+    "candidatesHash": "5ffe00614a780dc08955fdc4f9074c55f51434d3bd336f3f327ef5e4279c649a",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "No accepted risk heading selected."
+    },
+    "reviewedRisk": null,
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "TGT.US",
+    "candidatesHash": "8f16fae819f8d7e0616ab2052e1d7a3677ae3195156f535ad20706409c1060f9",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic reputation/perception risk; naming the issuer alone does not make it a specific exposure."
+    },
+    "reviewedRisk": {
+      "id": "2180fe34bdea61bd",
+      "kind": "risk",
+      "text": "Our continued success is dependent on positive perceptions of Target which, if eroded, could adversely affect our business and our relationships, including with our guests, team members, and vendors.",
+      "context": "Our continued success is dependent on positive perceptions of Target which, if eroded, could adversely affect our business and our relationships, including with our guests, team members, and vendors.\n\nWe believe that one of the reasons our shareholders, guests, team members, vendors and business collaborators choose Target is the positive reputation we have built over many years for serving those constituencies and the communities in which we operate. To be successful in the future, we must continue to preserve Target's reputation. Our reputation is largely based on perceptions. It may be difficult to address negative publicity or sensationalism across media channels, regardless of its accuracy or the reputability of its source, including as a result of fictitious media content (such as content produced by generative artificial intelligence or bad actors). Negative incidents (including those based on differing perspectives or opinions) involving us, our workforce, or others with whom we do business could quickly erode trust and confidence and result in changes in consumer behavior including consumer boycotts, workforce unrest or walkouts, government investigations, and litigation. Negative reputational incidents or negative perceptions of us could adversely affect our business and results of operations, including through lower sales, the termination of existing business relation",
+      "source": "SEC filing",
+      "date": "2026-03-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/27419/000002741926000016/tgt-20260131.htm",
+      "section": "risk",
+      "offset": 5518
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "BA.US",
+    "candidatesHash": "adb65ffabeffee11193d0d8ce595c30e8eace7d693532e08ebed2b8ced76039a",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Industry customer dependence is relevant, but this heading does not name a customer or quantify concentration."
+    },
+    "reviewedRisk": {
+      "id": "c11eefab6a86c961",
+      "kind": "risk",
+      "text": "We depend heavily on commercial airlines, subjecting us to unique risks.",
+      "context": "We depend heavily on commercial airlines, subjecting us to unique risks.\n\nMarket conditions have a significant impact on demand for our commercial aircraft and related services. The commercial aircraft market is predominantly driven by long-term trends in airline passenger and cargo traffic. The principal factors underlying long-term traffic growth are sustained economic growth and political stability in both developed and emerging markets. Demand for our commercial aircraft is further influenced by additional factors including airline profitability, availability of aircraft financing, trade policies, geopolitics, technological advances, price and other competitive factors, fuel prices, inflationary pressures, terrorism, pandemics, epidemics, sustainability-related preferences, environmental regulations, and reputational factors. Historically, the airline industry has been cyclical and very competitive and has experienced significant profit swings and constant challenges to be more cost competitive. Significant deterioration in the global economic environment, the airline industry generally or the financial stability of one or more of our major customers could result in fewer new orders for aircraft or services, or could cause customers to seek to postpo",
+      "source": "SEC filing",
+      "date": "2026-01-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/ba-20251231.htm",
+      "section": "risk",
+      "offset": 759
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "CAT.US",
+    "candidatesHash": "d18b396bf479e02976679be29fd368605e7516f2fc7779d17af61542ca623d92",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "No accepted risk heading selected."
+    },
+    "reviewedRisk": null,
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "DE.US",
+    "candidatesHash": "1858ea1fdd582590c98b41088ad2907803df9eaba432cdf71b529cddd9e6b65d",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "No accepted risk heading selected."
+    },
+    "reviewedRisk": null,
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "XOM.US",
+    "candidatesHash": "925cbe52855b6a091a5bf8426172b6ed6db89680306ba5ce3265fde4378d462b",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Reject Supply and Demand as a generic macro/commodity heading; the paragraph lists broad segments rather than a specific named exposure."
+    },
+    "reviewedRisk": {
+      "id": "8da986aa7258d8df",
+      "kind": "risk",
+      "text": "Supply and Demand",
+      "context": "Supply and Demand\n\nThe oil, gas, and petrochemical businesses are fundamentally commodity businesses. This means ExxonMobil’s operations and earnings may be significantly affected by changes in oil, gas, and petrochemical prices and by changes in margins on refined products. Oil, gas, petrochemical, and product prices and margins in turn depend on local, regional, and global events or conditions that affect supply and demand for the relevant commodity or product. Any material decline in oil or natural gas prices could have a material adverse effect on the Company’s operations, results, financial condition, and proved reserves, especially in the Upstream segment. On the other hand, a material increase in oil or natural gas prices could have a material adverse effect on the Company’s operations and results, especially in the Energy Products, Chemical Products, and Specialty Products segments. Our pursuit of lower-emission and other new business opportunities, including carbon capture and storage, hydrogen and ammonia, lower-emission fuels, ProxximaTM resin systems, carbon materials, low-carbon data centers, and lithium also depends on the growth and development of markets for those products and service",
+      "source": "SEC filing",
+      "date": "2026-02-18",
+      "url": "https://www.sec.gov/Archives/edgar/data/34088/000003408826000045/xom-20251231.htm",
+      "section": "risk",
+      "offset": 435
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "CVX.US",
+    "candidatesHash": "c287ad53031d6e0b90565da80e9a763bf131e790832f37a3b125b1d96df9ee9c",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Chopped opening word; invalid heading fragment."
+    },
+    "reviewedRisk": {
+      "id": "87b679faff26db24",
+      "kind": "risk",
+      "text": "mpany’s business and results of operations.",
+      "context": "mpany’s business and results of operations.\n\nChevron is incorporating artificial intelligence technologies into its processes and these technologies may present business, compliance, and reputational risks The company is increasingly utilizing artificial intelligence (“AI”) technologies in certain of its processes, information systems and various operations, and expects that AI will assume a more critical role in its operations over time. The use of AI technologies introduces certain risks to the company, including potential dependency on biased or incorrect AI outputs, new or enhanced regulatory requirements, litigation, privacy risks, cybersecurity risks, reputational harm, liability or other adverse consequences, any of which could adversely affect its business, financial condition and results of operations. Additionally, other unforeseen risks stemming from either the company’s or third-party service providers’ use and development of AI tools and technologies, or the company’s inability to adopt such technologies at the same pace as its competitors, may arise in the future that could adversely affect its business and results of operations.",
+      "source": "SEC filing",
+      "date": "2026-02-24",
+      "url": "https://www.sec.gov/Archives/edgar/data/93410/000009341026000078/cvx-20251231.htm",
+      "section": "risk",
+      "offset": 53276
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "UNH.US",
+    "candidatesHash": "48c71c72c2529762fc84c4cdd62293dc001005d56a640d8c3d5c4a732fb93ae0",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Lowercase continuation about regulations and information systems is a sentence fragment, not a standalone heading."
+    },
+    "reviewedRisk": {
+      "id": "8e31f42bd7fc967c",
+      "kind": "risk",
+      "text": "regulations and changes in information processing technology. Failure to protect, consolidate and integrate our systems successfully could result in higher than expected costs.",
+      "context": "regulations and changes in information processing technology. Failure to protect, consolidate and integrate our systems successfully could result in higher than expected costs.\n\nSome of our businesses sell and install software products which may contain unexpected design defects or may encounter unexpected complications during installation or when used with other technologies utilized by the customer. A failure of our technology products to operate as intended and in a fully-integrated fashion with other products could materially and adversely affect our results of operations, financial position and cash flows.",
+      "source": "SEC filing",
+      "date": "2026-03-02",
+      "url": "https://www.sec.gov/Archives/edgar/data/731766/000073176626000062/unh-20251231.htm",
+      "section": "risk",
+      "offset": 8985
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "JNJ.US",
+    "candidatesHash": "1dfecaa036a35c4d9eb0896468c5113f8942a19435a7ca8ecd1ae0f3d9d084ce",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic manufacturing interruption risk without a named exposure."
+    },
+    "reviewedRisk": {
+      "id": "d3aa9e861d669341",
+      "kind": "risk",
+      "text": "Interruptions and delays in manufacturing operations could adversely affect the Company’s business, sales and reputation.",
+      "context": "Interruptions and delays in manufacturing operations could adversely affect the Company’s business, sales and reputation.\n\nThe Company’s manufacturing of products requires the timely delivery of sufficient amounts of complex, high-quality components and materials. The Company’s subsidiaries operate 63 manufacturing facilities as well as sourcing from thousands of suppliers around the world. The Company has in the past, and may in the future, face unanticipated interruptions and delays in manufacturing through its internal or external supply chain. Manufacturing disruptions can occur for many reasons including regulatory action, production quality deviations or safety issues, labor disputes, labor shortages, site-specific incidents (such as fires), natural disasters such as hurricanes and other severe weather events, raw material shortages, lack of available inspectors, political unrest, terrorist attacks and epidemics or pandemics. Such delays and difficulties in manufacturing can result in product shortages, declines in sales and reputational impact as well as significant remediation and related costs associated with addressing the shortage.",
+      "source": "SEC filing",
+      "date": "2026-02-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000016/jnj-20251228.htm",
+      "section": "risk",
+      "offset": 3442
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "PFE.US",
+    "candidatesHash": "8abc3ff752571d3931b51efcc60ed18a882bb70025ebed0c4ff5bc337e04c763",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Biosimilar competition is industry-specific but the proposed heading names no drug or quantified exposure."
+    },
+    "reviewedRisk": {
+      "id": "d4e46db8703f62a0",
+      "kind": "risk",
+      "text": "We may become subject to competition from biosimilars referencing our biologic products if competitors are able to obtain marketing approval for such biosimilars.",
+      "context": "We may become subject to competition from biosimilars referencing our biologic products if competitors are able to obtain marketing approval for such biosimilars.\n\nWe also commercialize biosimilar products that compete with products of others, including other biosimilar products. The number of current and forthcoming competing biosimilars, coupled with Medicare’s average sales price-based provider reimbursement methodology, is expected to increase pricing pressures on our biosimilar products. Uptake of our biosimilars may be lower due to various factors, such as access challenges where our product may not receive appropriate coverage/reimbursement access or remains in a disadvantaged position relative to an innovator product.",
+      "source": "SEC filing",
+      "date": "2026-02-26",
+      "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800326000026/pfe-20251231.htm",
+      "section": "risk",
+      "offset": 8694
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "BAC.US",
+    "candidatesHash": "1089efa43383b913b3f461eefbe7e2ce0ff9e0b9aebf1815139fe146aea1b774",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Generic capital-market volatility boilerplate."
+    },
+    "reviewedRisk": {
+      "id": "426875bed203bc87",
+      "kind": "risk",
+      "text": "Increased market volatility and adverse changes in financial or capital market conditions may increase our market risk.",
+      "context": "Increased market volatility and adverse changes in financial or capital market conditions may increase our market risk.\n\nOur liquidity, competitive position, business, results of operations and financial condition are affected by market risks such as changes in interest and currency exchange rates, fluctuations in equity, commodity and futures prices, trading volumes and prices of securitized products, the implied volatility of interest rates and credit spreads, idiosyncratic market events and other economic and business factors. These market risks may adversely affect, among other things, the value of our securities, including our on- and off-balance sheet securities, trading assets and other financial instruments, the cost of debt capital and our access to credit markets, the value of assets under management (AUM), fee income relating to AUM, client allocation of capital among investment alternatives, the volume of client activity in our trading operations, investment banking, underwriting and other capital market fees and the general profitability and risk level of the transactions in which we engage and our competitiveness with respect to deposit pricing. The value of certain of our assets is sensitive to changes in market interest rates and/or spreads. If the Federal Reserve or a non-U.S. centra",
+      "source": "SEC filing",
+      "date": "2026-02-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000157/bac-20251231.htm",
+      "section": "risk",
+      "offset": 8742
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "GS.US",
+    "candidatesHash": "9e518891c96759d3c4ccffa8e881284831d305c1a854909838a40c1510b64adb",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Resolution-strategy security-holder loss is not shown to be the main company operating threat."
+    },
+    "reviewedRisk": {
+      "id": "cd1ffa8900c0c664",
+      "kind": "risk",
+      "text": "•The application of Group Inc.’s proposed resolution strategy could result in greater losses for Group Inc.’s security holders.",
+      "context": "•The application of Group Inc.’s proposed resolution strategy could result in greater losses for Group Inc.’s security holders.\n\n•Our commodities activities, particularly our physical commodities activities, subject us to extensive regulation and involve certain potential risks, including environmental, reputational and other risks that may expose us to significant liabilities and costs.",
+      "source": "SEC filing",
+      "date": "2026-02-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000091/gs-20251231.htm",
+      "section": "risk",
+      "offset": 4785
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "V.US",
+    "candidatesHash": "b4795e1ff52875c256771b48e33e5ad0ef1c24492a86e1423473d79f9e314b33",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Regulatory Risks is a category label, not a specific risk heading."
+    },
+    "reviewedRisk": {
+      "id": "d92248b0cd2169a8",
+      "kind": "risk",
+      "text": "Regulatory Risks",
+      "context": "Regulatory Risks\n\nWe are subject to complex and evolving global regulations that could harm our business and financial results.",
+      "source": "SEC filing",
+      "date": "2025-11-06",
+      "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+      "section": "risk",
+      "offset": 23
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "MA.US",
+    "candidatesHash": "58f03a38a110476a857351581d9b13de7be60c97d21c117f859fbb7c0502143c",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "Named foundation ownership is specific, but the selection does not establish it as the main earnings threat."
+    },
+    "reviewedRisk": {
+      "id": "39421d0e3765e277",
+      "kind": "risk",
+      "text": "Mastercard Foundation’s substantial stock ownership, and restrictions on its sales, may impact corporate actions or acquisition proposals favorable to, or favored by, the other public stockholders.",
+      "context": "Mastercard Foundation’s substantial stock ownership, and restrictions on its sales, may impact corporate actions or acquisition proposals favorable to, or favored by, the other public stockholders.\n\nMastercard Foundation owns shares of our Class A common stock representing greater than 5% of our general voting power. Historically, Mastercard Foundation had been restricted from selling or otherwise transferring its shares of Class A common stock prior to May 1, 2027, except to the extent necessary to satisfy its charitable disbursement requirements, for which purpose earlier sales were permitted and had occurred. In July 2023, pursuant to an application in consultation with Mastercard, Mastercard Foundation received court approval to advance that date to January 1, 2024. As a result, Mastercard Foundation is now permitted to sell all or part of its remaining shares, subject to certain conditions. In March 2024, Mastercard Foundation began selling shares pursuant to an orderly and structured plan to diversify its Mastercard shares over a seven-year period, while committing to remain a long-term Mastercard stockholder and retaining a significant holding of Mastercard shares in its portfolio. The directors of Mastercard Foundation are required to be independent of us and our customers. The ownership of Class A common stock by Mastercard Foundation, together with the seven-year div",
+      "source": "SEC filing",
+      "date": "2026-02-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+      "section": "risk",
+      "offset": 1267
+    },
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  },
+  {
+    "id": "WKL.AS",
+    "candidatesHash": "96248b83268cc67b66290373cbdefabc4da4ca10cf5daa19a031d9797158cee8",
+    "price": {
+      "acceptedIds": [],
+      "note": "No main driver selected. News retrieval was blocked by the exhausted EODHD budget; retained filing candidates did not supply an accepted explanation. This is a failed coverage case, not a correct abstention."
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "No accepted risk heading selected."
+    },
+    "reviewedRisk": null,
+    "reviewMethod": "Manual agent review of literal candidate and retained context; no independent human gold-label validation."
+  }
+]

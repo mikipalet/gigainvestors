@@ -1,0 +1,138 @@
+[
+  {
+    "id": "ADBE.US",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "price",
+      "valuation",
+      "financial"
+    ],
+    "numbers": 681
+  },
+  {
+    "id": "NVDA.US",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "price",
+      "valuation",
+      "financial"
+    ],
+    "numbers": 672
+  },
+  {
+    "id": "KO.US",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "price",
+      "valuation",
+      "financial"
+    ],
+    "numbers": 674
+  },
+  {
+    "id": "LULU.US",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "price",
+      "valuation",
+      "financial"
+    ],
+    "numbers": 669
+  },
+  {
+    "id": "7203.JP",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "price",
+      "valuation",
+      "financial"
+    ],
+    "numbers": 669
+  },
+  {
+    "id": "PLX.PA",
+    "status": "pass",
+    "failures": [],
+    "surfaces": [
+      "dossier",
+      "top",
+      "tile-understandable",
+      "drawer-understandable",
+      "tile-moat",
+      "drawer-moat",
+      "tile-economics",
+      "drawer-economics",
+      "tile-management",
+      "drawer-management",
+      "tile-accounting",
+      "drawer-accounting",
+      "financial"
+    ],
+    "numbers": 436
+  }
+]

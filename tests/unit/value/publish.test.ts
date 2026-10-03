@@ -757,3 +757,23 @@ it('records optional dividend levels only for matching quote dates and carries s
  writeCorpusJson('forward-total-return/2026-10-04.json',{[a.id]:{value:105,basis:'fixed',currency:'USD',priceDate:'2026-10-04'}});
  expect(run('2026-10-04',100/6).observations[a.id].totalReturn).toEqual({value:105,basis:'fixed'});
 });
+
+it('makes short histories searchable and browsable without placing them in investment lists',async()=>{
+ const {matchesView}=await import('@/lib/value/view-filter');
+ const {unpackView}=await import('@/lib/value/browser-view');
+ const row=analysis('PLX.PA');row.historyCoverage={years:5,first:2021,last:2025,source:'fixture'};row.status='insufficient_data';
+ const repo=directory();
+ publishSnapshot({repo,analyses:[row],universe:[row.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ const read=(file:string)=>JSON.parse(readFileSync(path.join(repo,file),'utf8'));
+ const search=readdirSync(path.join(repo,'search')).filter(f=>f!=='manifest.json').flatMap(f=>read(`search/${f}`).rows);
+ expect(search.some((r:any)=>r[0]===row.id)).toBe(true);
+ const index=read('index/US.json')[0];
+ expect(index).toMatchObject({id:row.id,st:'i',t:'UUUUU',b:false,v:null});
+ const meta=read('meta.json');
+ const browse=[meta.views.current,...meta.views.deferred].flatMap(f=>unpackView(read(f)));
+ expect(browse.map(r=>r.id)).toContain(row.id);
+ expect(matchesView(browse[0],{gate:'0'})).toBe(true);
+ expect(matchesView(browse[0],{near:'1'})).toBe(false);
+ expect(matchesView(browse[0],{})).toBe(false);
+ expect(read(`dossiers/${shardOf(row.id)}.json`)[row.id]).toMatchObject({status:'insufficient_data',valuation:null,b:false});
+});

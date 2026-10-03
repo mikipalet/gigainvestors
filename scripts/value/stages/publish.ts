@@ -12,7 +12,7 @@ import type { ThesisResult } from '../../../lib/value/thesis/types';
 import { withCapitalReturns } from '../../../lib/value/capital-returns';
 import { summarizeSnapshots } from '../../../lib/value/snapshots';
 import { bestWesternListing } from '../../../lib/value/western';
-import { isDecided, undecidedReasons } from '../../../lib/value/publication-eligibility';
+import { isDecided, isFindable, undecidedReasons } from '../../../lib/value/publication-eligibility';
 import { companyExclusion } from '../../../lib/value/fund-exclusion';
 import { applyMembership } from '../../../lib/value/index-membership';
 import {applyShareCheck,type ShareCheck} from '../../../lib/value/share-check';
@@ -246,7 +246,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   writeCorpusJson('staging/unresolved-shares.json', {asOf:new Date().toISOString(),companies:unresolved});
   console.log(`Private share residual: ${unresolved.length}; quality passes: ${unresolved.filter(r=>r.qualityPass).length}`);
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
-  const eligible=new Set(rows.filter(isDecided).map(row=>row.id));
+  const eligible=new Set(rows.filter(isFindable).map(row=>row.id));
   writeCorpusJson('staging/undecided.json',{asOf:new Date().toISOString(),companies:rows.filter(row=>!isDecided(row)).map(row=>({id:row.id,reasons:undecidedReasons(row)}))});
   const { shards, manifest } = buildAdaptiveSearchShards(universe.filter(company=>eligible.has(company.id)).map(company => enrichedCompany(company)), eligible);
   files["search/manifest.json"] = manifest;

@@ -13,3 +13,6 @@ export function undecidedReasons(a:Analysis):string[]{
  if(missingInvestmentNav(a))return [a.valuationReason??'Ten-year reported NAV history unavailable'];
  return historyYears(a)<T.minYears?[`Only ${historyYears(a)} annual periods; ${T.minYears} required`]:Object.entries(a.tests).filter(([,t])=>t.result!=='pass'&&t.result!=='fail').flatMap(([k,t])=>t.reasons.length?t.reasons.map(r=>`${k}: ${r}`):[`${k}: unresolved core evidence`]);
 }
+
+/** A short annual record is a neutral public dossier, not an investment candidate. */
+export const isFindable=(a:Analysis)=>isDecided(a)||!missingInvestmentNav(a)&&historyYears(a)<T.minYears;

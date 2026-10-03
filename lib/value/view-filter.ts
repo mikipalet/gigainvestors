@@ -4,7 +4,7 @@ import { QUALITY_TESTS } from './types';
 
 /** Shared by the result list and each prospective country/sector choice. */
 export function matchesView(row: BrowserRow, filter: Record<string,string>): boolean {
-  if (filter.country ? row.c !== filter.country : row.st === 'i') return false;
+  if (filter.country ? row.c !== filter.country : row.st === 'i' && filter.gate !== '0') return false;
   if (!matchesMarket(row,filter.markets??'')) return false;
   const search=filter.search??(!/^\d{4}Q[1-4]$/.test(filter.q??'')?filter.q:'');
   if (search && !`${row.nameEn??row.n} ${row.nameLocal??''} ${row.id}`.toLowerCase().includes(search.toLowerCase())) return false;

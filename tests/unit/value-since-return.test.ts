@@ -25,3 +25,12 @@ it('uses the equal-weight mean of all analysed companies, including failures and
  expect(historyHeadline('2018Q3',summary)).toBe('2018Q3: 2 at a fair price. Up 150% since; all index companies +83%.');
  expect(historyHeadline('2020Q1',{...summary,avgReturnAtBuy:-.48})).toContain('Down 48% since');
 });
+
+it('adjusts terminal EOD closes for splits only and preserves the last traded date',async()=>{
+ const {eodReturnPrices}=await import('@/scripts/value/stages/history-returns');
+ const prices=eodReturnPrices([{date:'2018-09-28',close:100,adjusted_close:20},{date:'2021-04-09',close:52,adjusted_close:51}], [{date:'2020-01-01',split:'2/1'}], 'USD','2026-10-03',true);
+ expect(prices.prices).toEqual([['2018-09',50],['2021-04',52]]);
+ expect(prices.latest).toEqual([52,'2021-04-09']);
+ expect(refreshReturn(row,'2018Q3',prices)[4]).toBe(.04);
+ expect(prices.lastTraded).toBe(true);
+});

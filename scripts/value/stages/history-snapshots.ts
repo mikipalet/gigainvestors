@@ -49,7 +49,7 @@ function edinetFilings(): Record<string,Record<string,string>> {
   }
   return results;
 }
-export function latestHistoryFiles(companies = loadCompanies({})): Record<string,unknown> {
+export function latestHistoryFiles(companies: import('../../../lib/value/types').Company[] = []): Record<string,unknown> {
   const root = corpusPath('history-v7');
   if (!existsSync(root)) return {};
   // Once quarterly history exists, an annual-only run must never downgrade it.
@@ -59,7 +59,6 @@ export function latestHistoryFiles(companies = loadCompanies({})): Record<string
   const quarterly = runs.filter(({index}) => index.quarters?.length);
   for (const {run,index} of quarterly.length ? quarterly : runs) {
     // Keep historical identities even when they are no longer eligible today.
-    companies=[...new Map([...loadCompanies({}),...companies].map(c=>[c.id,c])).values()];
     const returnPrices=new Map<string,ReturnPrices|undefined>();
     const filteredIndex: HistoryIndex = {...index, perYear:{},perQuarter:index.quarters?{}:undefined};
     const files: Record<string,unknown> = {'history/index.json':filteredIndex};
@@ -75,6 +74,8 @@ export function latestHistoryFiles(companies = loadCompanies({})): Record<string
       if(String(year).includes('Q')){filteredIndex.perQuarter![year]=summarizeSnapshots(members);if(String(year).endsWith('Q4')){filteredIndex.perYear[String(year).slice(0,4)]=summarizeSnapshots(members);files[`history/${String(year).slice(0,4)}.json`]=members;}}else filteredIndex.perYear[year] = summarizeSnapshots(members);
     }
     filteredIndex.asOf=new Date().toISOString().slice(0,10);
+    const historyIds=[...new Set((index.quarters??index.years).flatMap(year=>(files[`history/${year}.json`] as SnapshotRow[]).map(row=>row[0])))];
+    companies=[...new Map([...loadCompanies({only:historyIds}),...companies].map(c=>[c.id,c])).values()];
     files["history/index.json"] = westernHistory(filteredIndex, Object.fromEntries((index.quarters??index.years).map(year => [year, files[`history/${year}.json`] as SnapshotRow[]])), new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id)));
     const ids=new Set((index.quarters??index.years).flatMap(year=>(files[`history/${year}.json`] as SnapshotRow[]).map(row=>row[0])));
     files['history/companies.json']=companies.filter(c=>ids.has(c.id)).map(c=>({id:c.id,n:c.nameEn??c.name,nameEn:c.nameEn,nameLocal:c.nameLocal,c:c.country,s:c.sector,k:c.kind,mc:c.marketCapUsd,cur:c.currency,v:null,t:'UUUUU',g:[],h:0,st:'i',w:bestWesternListing(c),lg:c.logo??undefined,exchange:c.exchange} satisfies IndexRow));

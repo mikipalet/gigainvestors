@@ -98,6 +98,7 @@ export function returnRange(value:number):string {
 export function humanVerdict(analysis:Analysis,buy:boolean,priceKnown=true,priceToValue:number|null=null):string {
  if(analysis.thesis?.changed)return 'Good past, but the business is changing';
  const tests=QUALITY_TESTS.map(key=>analysis.tests[key as keyof Analysis['tests']]);
+ if(analysis.predecessorHistory?.length&&!tests.some(t=>t.result==='fail')&&!tests.every(t=>t.result==='pass'))return 'Wait';
  if(!tests.every(t=>t.result==='pass'))return 'Not a wonderful business';
  if(buy)return 'A wonderful business at a fair price';
  if(!priceKnown||priceToValue===null)return 'A wonderful business';

@@ -1,5 +1,5 @@
 import {createElement} from 'react';
-import {expect,it} from 'vitest';
+import {expect,it,vi} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {alignHistoryShares} from '@/lib/value/history-split-basis';
 import {humanVerdict} from '@/lib/value/judgement/apply';
@@ -43,7 +43,9 @@ it('uses latest three fiscal years and never bridges missing fiscal years',()=>{
 });
 it('caps capital returns in memo annual cells and omits meaningless change precision',()=>{
  const analysis={...a,ownerMemo:{version:1,asOf:'2026-10-02',inputHash:'test',lines:[{question:2,answer:'Returns exceed 100%.',evidence:[],basis:'computed',chart:{label:'return on capital',unit:'percent',points:[[2020,3.4224555735],[2021,4.8844488828]]}}]}} as Analysis;
- const html=renderToStaticMarkup(createElement(BusinessDepth,{analysis,selected:'2'}));
+ vi.stubGlobal('innerWidth',1728);vi.stubGlobal('innerHeight',970);
+ let html:string;
+ try {html=renderToStaticMarkup(createElement(BusinessDepth,{analysis,selected:'2'}));} finally {vi.unstubAllGlobals();}
  expect(html).not.toMatch(/342\.2%|488\.4%|146\.2pp/);expect(html).toContain('&gt;100%');
  expect(analysis.ownerMemo!.lines[0].chart!.points[0][1]).toBe(3.4224555735);
 });

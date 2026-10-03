@@ -35,9 +35,14 @@ export interface Company {
   source: "eodhd" | "edinet" | "esef";
 }
 
+export interface PredecessorBasis {
+  parent: string; segment: string; basis: 'segment' | 'combined'; source: string; detail: string;
+}
+
 // One fiscal year, reporting currency, absolute units. null = not reported.
 // Sign convention: capex, buybacks, dividendsPaid, acquisitions are POSITIVE amounts spent.
 export interface Year {
+  predecessor?: PredecessorBasis;
   maintenanceCapexJudgement?: number;
   disclosedMaintenanceCapex?: number;
   marginOperatingIncomeJudgement?: number;
@@ -235,6 +240,7 @@ export interface Analysis {
   author?: string;
   dataQualityFlags?: string[];
   shareCount?: { value: number; source: "yahoo-shares" };
+  predecessorHistory?: Array<PredecessorBasis & {fy:number}>;
   historyCoverage?: { years: number; first: number | null; last: number | null; source: string };
   requiredMos?: number; // Optional only for pre-history corpus compatibility.
   volatility?: Volatility;

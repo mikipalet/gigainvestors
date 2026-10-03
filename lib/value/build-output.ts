@@ -70,7 +70,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const westernFunnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   const funnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   for (const original of sorted) {
-    const analysis = isFindable(original) && !isDecided(original) ? {...original,status:"insufficient_data" as const,valuation:null} : original;
+    const analysis = isFindable(original) && shortHistory(original) ? {...original,status:"insufficient_data" as const,valuation:null} : original;
     if (!isFindable(analysis)) {
       if (shortHistory(analysis) && !missingInvestmentNav(analysis)) {
         const dossier: Dossier={...analysis,methodVersion:METHOD_VERSION,w:null,b:false,holders:[],series:analysis.series??{}};

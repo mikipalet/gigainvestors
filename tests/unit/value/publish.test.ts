@@ -50,6 +50,14 @@ function repository(): string {
 }
 
 describe("buildOutput", () => {
+  it('keeps completed predecessor years when publication refreshes capital-return series',async()=>{
+    const {emptyYear}=await import('@/lib/value/completeness/second-sources');
+    const a=analysis('PLX.PA');
+    a.predecessorHistory=[{fy:2019,parent:'Sodexo',segment:'Benefits & Rewards Services',basis:'segment',source:'https://example.com/segment',detail:'Segment'}];
+    writeCorpusJson(`analysis/${a.id}.json`,a);
+    writeCorpusJson(`fundamentals/${a.id}.json`,{id:a.id,currency:'EUR',years:[emptyYear('2025-08-31','EUR')],integrity:{ok:true,reasons:[]}});
+    expect(loadAnalyses([a.company])[0].tests.moat.series.totalRoic?.map(([fy])=>fy)).toEqual([2019,2020,2021,2022,2023,2024,2025]);
+  });
   it('retains reported NAV when independent share counts reconcile despite a stale market cap',()=>{
     const row=analysis();row.company.investmentHolding=true;
     row.valuation={...row.valuation!,method:'nav',shareSources:2};
@@ -776,4 +784,20 @@ it('makes short histories searchable and browsable without placing them in inves
  expect(matchesView(browse[0],{near:'1'})).toBe(false);
  expect(matchesView(browse[0],{})).toBe(false);
  expect(read(`dossiers/${shardOf(row.id)}.json`)[row.id]).toMatchObject({status:'insufficient_data',valuation:null,b:false});
+});
+
+it('keeps predecessor-backed test verdicts findable when a different test remains undecided',async()=>{
+ const {matchesView}=await import('@/lib/value/view-filter');
+ const {unpackView}=await import('@/lib/value/browser-view');
+ const row=analysis('PLX.PA');row.historyCoverage={years:7,first:2019,last:2025,source:'fixture'};
+ row.predecessorHistory=[{fy:2019,parent:'Sodexo',segment:'Benefits & Rewards Services',basis:'segment',source:'https://example.com/annual.pdf',detail:'Underlying operating profit'}];
+ row.tests.moat.result=row.tests.moat.numeric='fail';
+ row.tests.management.result=row.tests.management.numeric='unclear';
+ const repo=directory();publishSnapshot({repo,analyses:[row],universe:[row.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ const read=(file:string)=>JSON.parse(readFileSync(path.join(repo,file),'utf8'));
+ expect(readdirSync(path.join(repo,'search')).filter(f=>f!=='manifest.json').flatMap(f=>read(`search/${f}`).rows).some((r:any)=>r[0]===row.id)).toBe(true);
+ expect(read(`dossiers/${shardOf(row.id)}.json`)[row.id]).toMatchObject({status:'scored',tests:{moat:{result:'fail'},management:{result:'unclear'}},predecessorHistory:row.predecessorHistory});
+ const index=read('index/US.json')[0];expect(index).toMatchObject({t:'PFPUP',b:false});
+ const meta=read('meta.json'),browse=[meta.views.current,...meta.views.deferred].flatMap(f=>unpackView(read(f)));
+ expect(matchesView(browse[0],{gate:'0'})).toBe(true);expect(matchesView(browse[0],{near:'1'})).toBe(false);
 });

@@ -1,6 +1,6 @@
 import {numericMemo} from '../../../lib/value/owner-memo';
 import {alignHistoryShares} from '../../../lib/value/history-split-basis';
-import {completeCachedSplits} from '../../../lib/value/completeness/cached-years';
+import {completeCachedSplits,completeCachedYears} from '../../../lib/value/completeness/cached-years';
 import { forwardFiles } from './forward';
 import { METHOD_VERSION } from '../../../lib/value/method-version';
 import { isDeepStrictEqual } from 'node:util';
@@ -346,6 +346,7 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       if (!isAnalysis(analysis)) throw new Error("Invalid analysis shape");
       const f=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${company.id}.json`);
       if(f)f.splits=completeCachedSplits(company.id,f.splits,readCorpusJson);
+      if(f&&analysis.predecessorHistory?.length)f.years=completeCachedYears(company,f.years,readCorpusJson);
       const years=f?alignHistoryShares(f,readPriceHistory(company.id)??[]).years:undefined;
       if(years&&analysis.ownerMemo?.lines.some(l=>l.question===2&&l.basis==='computed')){
         const customer=numericMemo(analysis,years,null).find(l=>l.question===2);

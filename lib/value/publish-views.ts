@@ -16,7 +16,7 @@ export function publishViews(files: Record<string, unknown>): ViewManifest {
   // Country filters also show companies with insufficient data. Keep those
   // identities in the deferred current view, without adding them to first paint.
   const missing=Object.entries(files).filter(([f])=>/^index\/[A-Z]{2}\.json$/.test(f))
-    .flatMap(([,data])=>(data as IndexRow[]).filter(row=>row.st==='i'));
+    .flatMap(([,data])=>(data as IndexRow[]).filter(row=>row.st==='i'||dossiers[row.id]?.predecessorHistory?.length));
   const source=[...new Map([...(files['index/default.json'] as IndexRow[] ?? []),...missing].map(row=>[row.id,row])).values()];
   const rows=source.map(row => {
     const d=dossiers[row.id];

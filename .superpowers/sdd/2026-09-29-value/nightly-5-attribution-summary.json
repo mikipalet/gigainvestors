@@ -1,0 +1,48 @@
+{
+  "records": 145,
+  "remainingFlips": 107,
+  "mechanical": {
+    "missing-data regression fixed": 30,
+    "counterfactual reproduced": 84,
+    "no remaining flip": 8,
+    "UNEXPLAINED": 23
+  },
+  "classification": {
+    "missing-data regression": 30,
+    "share/price basis — requires action or issuer validation": 52,
+    "UNEXPLAINED": 31,
+    "rule-version difference — fiscal window changed": 7,
+    "source selection/restatement — requires issuer validation": 17,
+    "rule-version difference": 4,
+    "new fiscal year added": 4
+  },
+  "unreproducedNew": [],
+  "missingDataRegressions": [],
+  "diskFree": 33401118720,
+  "fiscalHistoryLoss": [
+    {
+      "id": "CBG.LSE",
+      "test": "moat",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "CBG.LSE",
+      "test": "understandable",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    },
+    {
+      "id": "MU.US",
+      "test": "economics",
+      "lostYears": [
+        1996
+      ],
+      "basis": "released history coverage interval (not reconstructed baseline)"
+    }
+  ]
+}

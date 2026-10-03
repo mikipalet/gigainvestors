@@ -1,0 +1,238 @@
+[
+  {
+    "id": "8253.JP",
+    "tests": [
+      "management",
+      "accounting",
+      "economics"
+    ],
+    "fields": [
+      "kind",
+      "industry"
+    ],
+    "newValue": {
+      "kind": "bank",
+      "industry": "Credit Services"
+    },
+    "comparison": "Verified EODHD secondary listing QC9.F credit-services metadata agrees with issuer finance, credit-guarantee, real-estate finance and lending businesses. Internal bank rules cover lenders, not solely deposit banks.",
+    "source": "https://corporate.saisoncard.co.jp/en/ir/integrated_report/pdf/Credit_Saison_Integrated_Report_2025_print_all_E.pdf",
+    "location": "Integrated Report 2025, printed p29 (Financial Capital Policy), p35 (Finance Business)",
+    "bodySha256": "528edc5362eeeac435a06ba1f61328f375bf4f65c5ae863988986d72870e91cc",
+    "directIssuerCheck": true,
+    "status": "APPROVED"
+  },
+  {
+    "id": "SCHW.US",
+    "tests": [
+      "moat"
+    ],
+    "fields": [
+      "kind"
+    ],
+    "newValue": "bank",
+    "comparison": "Issuer 2025 Form 10-K identifies CSC as a savings and loan holding company; confirms financial classification rather than generic operating-company rules.",
+    "source": "https://www.sec.gov/Archives/edgar/data/316709/000031670926000009/schw-20251231.htm",
+    "location": "Business; Holding Company and Bank Regulation",
+    "directIssuerCheck": true,
+    "status": "APPROVED"
+  },
+  {
+    "id": "IBKR.US",
+    "tests": [
+      "moat"
+    ],
+    "fields": [
+      "equity"
+    ],
+    "comparison": "EODHD new equity agrees with independent SEC parent StockholdersEquity for every checked FY2015-25 observation (11/11, 1% tolerance).",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001381197.json",
+    "directIssuerCheck": false,
+    "status": "APPROVED"
+  },
+  {
+    "id": "EMEIS.PA",
+    "fields": [
+      "dilutedShares",
+      "basicEps",
+      "dilutedEps"
+    ],
+    "comparison": "2023 URD note 4.11.2 separates recapitalisation-weighted denominators from March 2024 reverse split. FY2022/23 potential diluted shares 68,400,833 and 10,374,827,350 before dividing by 1000; FY2024 159,062,400 on current basis. FY2025 162,789,272 in issuer full-year capital table. Earlier counts remain vendor values, now converted /1000.",
+    "sources": [
+      "https://www.emeis.com/sites/default/files/medias/documents/orpeaurd2023enbd_0.pdf",
+      "https://live.euronext.com/en/products/equities/company-news/2024-03-21-orpea-sa-announces-completion-reverse-share-split-its",
+      "https://www.emeis.com/system/files/medias/documents/premeishyr-2025encorrected.pdf",
+      "https://www.marketscreener.com/news/emeis-financial-document-premeisfyr-2025-ce7e50dadd8af023"
+    ],
+    "location": "URD printed p321; reverse-split release March 21 2024; FY2024 comparative capital table; FY2025 full-year release capital table",
+    "directIssuerCheck": true,
+    "retrieval": "2023 URD web text retrieved; screenshot unavailable; 2024 issuer PDF denied direct fetch, indexed issuer table available; 2025 issuer release syndicated by MarketScreener has OCR errors, capital-table arithmetic checked",
+    "status": "INPUT BASIS FIXED; historical vendor counts not independently certified"
+  },
+  {
+    "id": "AMCR.US",
+    "fields": [
+      "ocf"
+    ],
+    "source": "https://www.sec.gov/Archives/edgar/data/1748790/000174879019000003/amcor-2019form10xkxjune302.htm",
+    "location": "Consolidated statements of cash flows, FY2017/18 comparative",
+    "observations": {
+      "2017": 908900000,
+      "2018": 871400000
+    },
+    "directIssuerCheck": true,
+    "status": "CORRECTION CHECKED"
+  },
+  {
+    "id": "TYL.US",
+    "fields": [
+      "grossProfit"
+    ],
+    "source": "https://s201.q4cdn.com/385562537/files/doc_financials/2019/ar/2019-Annual-Report.pdf",
+    "observations": {
+      "2019": 516900000
+    },
+    "directIssuerCheck": true,
+    "status": "CORRECTION CHECKED"
+  },
+  {
+    "id": "WY.US",
+    "fields": [
+      "operatingIncome"
+    ],
+    "source": "https://www.sec.gov/Archives/edgar/data/106535/000119312526051422/wy-20251231.htm",
+    "observations": {
+      "2025": 731000000
+    },
+    "directIssuerCheck": true,
+    "status": "CORRECTION CHECKED"
+  },
+  {
+    "id": "MU.US",
+    "tests": [
+      "economics"
+    ],
+    "fields": [
+      "end",
+      "revenue",
+      "netIncome",
+      "operatingIncome",
+      "ocf",
+      "capex",
+      "sbc",
+      "ppe",
+      "receivables",
+      "inventory",
+      "payables"
+    ],
+    "comparison": "FY2026 addition is the two-way sufficient counterfactual. New critical economics fields agree with issuer annual statements within 1%; operating income 99,907m vs filed 99,340m differs 0.571%, other numeric observations exact. Provider Aug31 label is three days before Sep3 annual end.",
+    "source": "https://micron.gcs-web.com/node/50991",
+    "location": "FY2026 consolidated annual operations, balance sheet and cash flow tables",
+    "observationsMillions": {
+      "revenue": 133188,
+      "netIncome": 84969,
+      "operatingIncome": 99340,
+      "ocf": 89675,
+      "capex": 30712,
+      "sbc": 1333,
+      "ppe": 63310,
+      "receivables": 36197,
+      "inventory": 10372,
+      "payables": 22605
+    },
+    "directIssuerCheck": true,
+    "status": "APPROVED"
+  },
+  {
+    "id": "CBG.LSE",
+    "tests": [
+      "understandable",
+      "moat"
+    ],
+    "fields": [
+      "end",
+      "netIncome",
+      "equity"
+    ],
+    "comparison": "FY2026 addition is sufficient in both directions. Filed FY2025/26 losses -77.9m/-63.4m agree with new inputs, second negative year causes earnings-consistency failure. FY2026 positive equity 1651.6m agrees and negative returns breach the tangible-return floor; parent-total proxy remains disclosed.",
+    "source": "https://www.investegate.co.uk/index.php/announcement/rns/close-brothers-group--cbg/preliminary-results/9795269",
+    "location": "Issuer 2026 preliminary results: income statement, balance sheet",
+    "observationsMillions": {
+      "netIncome2025": -77.9,
+      "netIncome2026": -63.4,
+      "equity2026": 1651.6
+    },
+    "directIssuerCheck": true,
+    "status": "APPROVED"
+  },
+  {
+    "id": "EVN.AU",
+    "fields": [
+      "dilutedShares"
+    ],
+    "location": "Westonia 2007 annual report notes 15 (p32) and 26 (p39); Catalpa 2010 consolidation disclosure",
+    "source": "https://announcements.asx.com.au/asxpdf/20070928/pdf/314tqwfjcgxjzk.pdf",
+    "actionSource": "https://announcements.asx.com.au/asxpdf/20101025/pdf/31tc06tsrs4ryy.pdf",
+    "observations": {
+      "yearEndShares2005": 220998086,
+      "weightedShares2006": 224558623,
+      "weightedShares2007": 278207244,
+      "splitFactor": 0.09090909090909091
+    },
+    "bodySha256": "17fd55e003cabb38aa595d7be1840d61a43ec392629b2f1f7fd4b8bea533c0d8",
+    "directIssuerCheck": true,
+    "status": "FY2005 availability restored with explicitly estimated year-end-share proxy; exact weighted FY2005 value unverified"
+  },
+  {
+    "id": "HMSO.LSE",
+    "fields": [
+      "dilutedShares"
+    ],
+    "source": "https://find-and-update.company-information.service.gov.uk/company/00360632/filing-history/MTI5MDc5MjM0YWRpcXprY3g/document?format=pdf&download=0",
+    "location": "1997 accounts printed p45 (PDF page46), EPS note 11; scanned filing visually read",
+    "bodySha256": "0a3c56968d60274d46f872cc657c4b42ba313f7eaa25214274cff9bc75ebb052",
+    "observations": {
+      "weightedBasic1996": 283700000,
+      "weightedBasic1997": 284400000,
+      "weightedBasic1998": 287200000,
+      "weightedDiluted1999": 314200000,
+      "currentBasisFactor": 0.32192999999999994
+    },
+    "additionalSources": [
+      "https://www.investegate.co.uk/announcement/rns/hammerson--hmso/final-results-year-ended-31-dec-1999-part-2-/182286",
+      "https://www.investegate.co.uk/announcement/rns/hammerson--hmso/final-results-part-2-/238883",
+      "https://www.annualreports.com/HostedData/AnnualReportArchive/h/LSE_HMSO_2009.pdf",
+      "https://www.investegate.info/announcement/rns/hammerson--hmso/final-results/6177398",
+      "https://www.investegate.co.uk/announcement/rns/hammerson--hmso/final-results/8752552"
+    ],
+    "directIssuerCheck": true,
+    "status": "HISTORY RESTORED; 1996-98 basic-weighted proxies explicitly estimated, rounded filed rights factors"
+  },
+  {
+    "id": "4507.JP",
+    "fields": [
+      "dilutedShares",
+      "basicEps"
+    ],
+    "source": "https://www.shionogi.com/global/en/investors/shareholder-information/shareholder-return.html",
+    "observations": {
+      "actionDate": "2024-10-01",
+      "splitFactor": 3
+    },
+    "directIssuerCheck": true,
+    "status": "CORRECTED older mixed comparative basis; absolute historic weighted counts not independently certified"
+  },
+  {
+    "id": "6902.JP",
+    "fields": [
+      "dilutedShares",
+      "basicEps"
+    ],
+    "source": "https://www.denso.com/-/media/secure-investors/settlement/2024/financial-202310.pdf",
+    "observations": {
+      "actionDate": "2023-10-01",
+      "splitFactor": 4
+    },
+    "directIssuerCheck": true,
+    "status": "CORRECTED older mixed comparative basis; absolute historic weighted counts not independently certified"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "stage": "checkpoint plus disjoint complete replay",
+  "exit": 0,
+  "jobs": 38056,
+  "checkpoint": 12034,
+  "partitions": [
+    6506,
+    6506,
+    6505,
+    6505
+  ],
+  "partExitCodes": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

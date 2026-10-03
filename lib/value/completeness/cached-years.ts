@@ -55,7 +55,7 @@ export function completeCachedYears(company:Pick<Company,'id'|'cik'|'source'>,ye
  const ciks=new Set([company.cik,...years.flatMap(y=>Object.values(y.provenance??{}).map(p=>/CIK(\d+)/.exec(p.source)?.[1]))].filter(Boolean).map(s=>String(Number(s))));
  for(const cik of ciks){
   const cache=read<Year[]>(`completeness/sec/${cik}.json`)??read<Year[]>(`completeness/sec/${cik.padStart(10,'0')}.json`);
-  if(cache)result=fillYears(result,translate(cache.map(y=>({...y,fy:annualFiscalYear(y.end)}))));
+  if(cache)result=merge(result,translate(cache.map(y=>({...y,fy:annualFiscalYear(y.end)}))));
  }
  for(const source of ['yahoo','edinet']){
   const cache=read<Year[]>(`completeness/${source}/${company.id}.json`);

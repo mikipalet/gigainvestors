@@ -1,0 +1,107 @@
+[
+  {
+    "id": "EQNR.OL",
+    "before": {
+      "years": 28,
+      "first": 1998,
+      "last": 2025,
+      "source": "eodhd"
+    },
+    "after": {
+      "years": 28,
+      "first": 1998,
+      "last": 2025,
+      "source": "eodhd"
+    }
+  },
+  {
+    "id": "4043.JP",
+    "before": {
+      "years": 14,
+      "first": 2013,
+      "last": 2026,
+      "source": "edinet"
+    },
+    "after": {
+      "years": 14,
+      "first": 2013,
+      "last": 2026,
+      "source": "edinet"
+    }
+  },
+  {
+    "id": "3457.JP",
+    "before": {
+      "years": 14,
+      "first": 2013,
+      "last": 2026,
+      "source": "edinet"
+    },
+    "after": {
+      "years": 14,
+      "first": 2013,
+      "last": 2026,
+      "source": "edinet"
+    }
+  },
+  {
+    "id": "EVN.AU",
+    "before": {
+      "years": 22,
+      "first": 2005,
+      "last": 2026,
+      "source": "eodhd"
+    },
+    "after": {
+      "years": 22,
+      "first": 2005,
+      "last": 2026,
+      "source": "eodhd"
+    }
+  },
+  {
+    "id": "NTRS.US",
+    "before": {
+      "years": 30,
+      "first": 1996,
+      "last": 2025,
+      "source": "eodhd"
+    },
+    "after": {
+      "years": 30,
+      "first": 1996,
+      "last": 2025,
+      "source": "eodhd"
+    }
+  },
+  {
+    "id": "AENA.MC",
+    "before": {
+      "years": 15,
+      "first": 2011,
+      "last": 2025,
+      "source": "eodhd"
+    },
+    "after": {
+      "years": 15,
+      "first": 2011,
+      "last": 2025,
+      "source": "eodhd"
+    }
+  },
+  {
+    "id": "HMSO.LSE",
+    "before": {
+      "years": 30,
+      "first": 1996,
+      "last": 2025,
+      "source": "eodhd"
+    },
+    "after": {
+      "years": 30,
+      "first": 1996,
+      "last": 2025,
+      "source": "eodhd"
+    }
+  }
+]

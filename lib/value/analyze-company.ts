@@ -19,7 +19,7 @@ import { runNumericTests } from "./tests";
 import { valueCompany, valuationMargin } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory, Year } from "./types";
 
-export const PIPELINE_VERSION = "25";
+export const PIPELINE_VERSION = "26";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 

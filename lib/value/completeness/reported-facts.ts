@@ -6,6 +6,7 @@ import auditFacts from './audit-facts.json';
 export interface ReportedFacts {
  end:string; currency:string; source:string; quote:string;
  values:Partial<Record<keyof Year,number>>;
+ methods?:Partial<Record<keyof Year,NonNullable<Year['provenance']>[string]['method']>>;
  splitFactor?:number;
  calculation?:string;
  correction?:boolean;
@@ -54,7 +55,7 @@ export function applyReportedFacts(years:Year[],facts:ReportedFacts[]):Year[]{
    if(y[field as keyof Year]!=null&&!f.correction)continue;
    const perShare=['navPerShare','dividendsPerShare','dilutedEps','basicEps'].includes(field);
    Object.assign(y,{[field]:perShare?reported/split:reported});
-   y.provenance[field]={source:f.source,field,method:f.absenceInCompleteStatement?'absent-in-complete-statement':f.calculation||perShare&&split!==1?'derived':'reported',inputs:[f.quote,...(f.calculation?[f.calculation]:[]),...(perShare&&split!==1?[`reported per-share value divided by split factor ${split}`]:[])]};
+   y.provenance[field]={source:f.source,field,method:f.methods?.[field as keyof Year]??(f.absenceInCompleteStatement?'absent-in-complete-statement':f.calculation||perShare&&split!==1?'derived':'reported'),inputs:[f.quote,...(f.calculation?[f.calculation]:[]),...(perShare&&split!==1?[`reported per-share value divided by split factor ${split}`]:[])]};
   }
  }
  return result.sort((a,b)=>a.end.localeCompare(b.end));

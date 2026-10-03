@@ -99,3 +99,72 @@ it('repairs Tractor Supply share units and old split bases without dropping the 
  expect(result.find(y=>y.fy===2009)!.dilutedShares).toBe(732970000);
  expect(result.find(y=>y.fy===2010)!.dilutedEps).toBe(.225);
 });
+it('rejects destructive SEC share replacements before they truncate older annual periods',()=>{
+ const prior=years();const bad={...prior[3],dilutedShares:100e6,ocf:50,provenance:{dilutedShares:{source:'https://data.sec.gov/api/xbrl/companyfacts/CIK1.json',field:'WeightedAverageNumberOfDilutedSharesOutstanding',method:'reported' as const}}};
+ const cache:any={'fundamentals/TEST.US.json':f(prior),'completeness/sec/1.json':[bad]};
+ const result=completeCachedYears({id:'TEST.US',source:'eodhd',cik:'1'},prior,<T>(p:string)=>cache[p] as T??null);
+ const checked=f(result);checkIntegrity(checked);expect(checked.years).toHaveLength(11);expect(result[3].ocf).toBe(50);
+});
+it('restores Tokuyama early history on its filed one-for-five basis',()=>{
+ const ys=Array.from({length:14},(_,i)=>({...years()[0],fy:2013+i,end:`${2013+i}-03-31`,currency:'JPY',netIncome:10+i,equity:100+i,dilutedShares:i?70e6:350e6,basicEps:i?1:.2}));
+ const checked={...f(ys),id:'4043.JP',currency:'JPY'};checkIntegrity(checked,{source:'edinet'});
+ expect(checked.years).toHaveLength(14);expect(checked.years[0].dilutedShares).toBe(70e6);
+});
+it('restores Aena pre-split comparatives and Equinor incorrectly multiplied shares',()=>{
+ const a=completeCachedYears({id:'AENA.MC',source:'eodhd',cik:null},[2011,2012,2013].map(fy=>({...emptyYear(`${fy}-12-31`,'EUR'),dilutedShares:150e6})),()=>null);
+ expect(a.map(y=>y.dilutedShares)).toEqual([1500e6,1500e6,1500e6]);
+ const e=completeCachedYears({id:'EQNR.OL',source:'eodhd',cik:null},[{...emptyYear('2000-12-31','USD'),dilutedShares:9879428000}],()=>null);
+ expect(e[0].dilutedShares).toBe(1975885600);
+});
+it('uses filed US statement fields when vendor totals disagree',()=>{
+ const c={source:'eodhd' as const,cik:null};
+ expect(completeCachedYears({...c,id:'TYL.US'},[{...emptyYear('2019-12-31','USD'),grossProfit:495455000}],()=>null).find(y=>y.fy===2019)?.grossProfit).toBe(516900000);
+ expect(completeCachedYears({...c,id:'OMC.US'},[{...emptyYear('2020-12-31','USD'),operatingIncome:1714100000}],()=>null).find(y=>y.fy===2020)?.operatingIncome).toBe(1598800000);
+ expect(completeCachedYears({...c,id:'WY.US'},[{...emptyYear('2025-12-31','USD'),operatingIncome:465000000}],()=>null).find(y=>y.fy===2025)?.operatingIncome).toBe(731000000);
+});
+it('separates Emeis recapitalisation dilution from the subsequent 1-for-1000 reverse split',()=>{
+ const prior=Array.from({length:13},(_,i)=>({...emptyYear(`${2013+i}-12-31`,'EUR'),dilutedShares:64e6,netIncome:1e6,equity:1e7}));
+ const result=completeCachedYears({id:'EMEIS.PA',source:'eodhd',cik:null},prior,()=>null);
+ const checked={...f(result),id:'EMEIS.PA',currency:'EUR',splits:[{date:'2024-03-22',factor:.001}]};
+ checkIntegrity(checked);
+ expect(checked.years).toHaveLength(13);
+ expect(result.find(y=>y.fy===2022)?.dilutedShares).toBe(68400.833);
+ expect(result.find(y=>y.fy===2023)?.dilutedShares).toBe(10374827.35);
+ expect(result.find(y=>y.fy===2024)?.dilutedShares).toBe(159062400);
+ expect(result.find(y=>y.fy===2025)?.dilutedShares).toBe(162789272);
+ expect(checked.years.find(y=>y.fy===2023)!.dilutedShares!/checked.years.find(y=>y.fy===2022)!.dilutedShares!).toBeGreaterThan(150);
+ expect(checked.integrity.notes?.join(' ')??'').not.toContain('split 150');
+});
+it('uses matching SEC annual profit and operating cash totals rather than conflicting vendor totals',()=>{
+ const c={source:'eodhd' as const,cik:null};
+ const a=completeCachedYears({...c,id:'AMCR.US'},[{...emptyYear('2017-06-30','USD'),netIncome:596418000,ocf:596418287}],()=>null).find(y=>y.fy===2017)!;
+ expect(a.netIncome).toBe(564000000);expect(a.ocf).toBe(908900000);
+ const n=completeCachedYears({...c,id:'NDSN.US'},[{...emptyYear('2016-10-31','USD'),ocf:331158000}],()=>null).find(y=>y.fy===2016)!;
+ expect(n.ocf).toBe(334634000);
+});
+it('restores Evolution FY2005 using filed year-end shares as an explicit proxy and subsequent filed weighted shares',()=>{
+ const ys=Array.from({length:25},(_,i)=>({...emptyYear(`${2002+i}-06-30`,'AUD'),dilutedShares:i<4?670299580:50e6,netIncome:-1e6,equity:20e6}));
+ const result=completeCachedYears({id:'EVN.AU',source:'eodhd',cik:null},ys,()=>null);
+ const checked={...f(result),id:'EVN.AU',currency:'AUD',splits:[{date:'2009-11-27',factor:1/11}]};checkIntegrity(checked);
+ expect(checked.years[0].fy).toBe(2005);expect(checked.years).toHaveLength(22);
+ expect(result.find(y=>y.fy===2005)?.dilutedShares).toBeCloseTo(220998086/11,5);
+ expect(result.find(y=>y.fy===2005)?.provenance?.dilutedShares.inputs?.join(' ')).toMatch(/year-end.*proxy/i);
+ expect(result.find(y=>y.fy===2005)?.provenance?.dilutedShares.method).toBe('estimate');
+ expect(result.find(y=>y.fy===2006)?.dilutedShares).toBeCloseTo(224558623/11,5);
+});
+it('retains Hammerson 1996-99 from filed weighted shares with disclosed rights and consolidation factors',()=>{
+ const ys=Array.from({length:30},(_,i)=>({...emptyYear(`${1996+i}-12-31`,'GBP'),dilutedShares:i<4?5402219200:100e6,netIncome:10e6,equity:100e6}));
+ const result=completeCachedYears({id:'HMSO.LSE',source:'eodhd',cik:null},ys,()=>null);
+ const checked={...f(result),id:'HMSO.LSE',currency:'GBP'};checkIntegrity(checked);
+ expect(checked.years).toHaveLength(30);expect(checked.years[0].fy).toBe(1996);
+ expect(result[0].dilutedShares).toBeCloseTo(283700000*1.47*10.95/5/10,5);
+ expect(result.find(y=>y.fy===1999)?.dilutedShares).toBeCloseTo(314200000*1.47*10.95/5/10,5);
+});
+
+it.each([['4507.JP',3],['6902.JP',4]] as const)('aligns older %s comparative shares to its issuer-confirmed split', (id,factor)=>{
+ const ys=Array.from({length:14},(_,i)=>({...emptyYear(`${2013+i}-03-31`,'JPY'),dilutedShares:i<8?100:100*factor,netIncome:1000+i*10,basicEps:(1000+i*10)/(i<8?100:100*factor),equity:5000+i*20,revenue:10000+i*50}));
+ const checked={...f(ys),id,currency:'JPY'};checkIntegrity(checked);
+ expect(checked.years[0].dilutedShares).toBe(100*factor);
+ expect(checked.years.at(-1)?.dilutedShares).toBe(100*factor);
+ expect(checked.years[0].basicEps).toBeCloseTo(10/factor);
+});

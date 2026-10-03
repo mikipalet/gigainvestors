@@ -1,3 +1,4 @@
+import { retainRefreshFacts } from '../../../lib/value/refresh-fundamentals';
 import { cachedInterimDocuments, latestInterim, applyEdinetInterim } from "../../../lib/value/japan/cached-interim";
 import { reconcileEdinetShares } from "../../../lib/value/japan/shares";
 import { CALIBRATION } from "../../../lib/value/calibration";
@@ -86,7 +87,11 @@ export default async function japan(options: Options): Promise<void> {
       const fundamentals: Fundamentals = {id,currency:"JPY",years:years.map(year => ({ ...year })),integrity:{ok:false,reasons:[]},fetchedAt:now.toISOString()};
       const interim = latestInterim(fundamentals, interimDocuments.get(id) ?? []);
       if (interim) applyEdinetInterim(fundamentals, interim, (await downloadCsv(interim.docID)).flatMap(parseEdinetCsv), prices);
-      fundamentals.integrity = checkIntegrity(fundamentals, { source: "edinet", priceHistory: readPriceHistory(id) });
+      const retained = retainRefreshFacts(fundamentals, readCorpusJson<Fundamentals>(`fundamentals/${id}.json`));
+      Object.assign(fundamentals, retained.fundamentals);
+      // Persist source years; integrity validates a working copy's usable suffix.
+      fundamentals.integrity = checkIntegrity(structuredClone(fundamentals), { source: "edinet", priceHistory: readPriceHistory(id) });
+      if (retained.snapshot) writeCorpusJson(retained.snapshot.path, retained.snapshot.value);
       writeCorpusJson(`fundamentals/${id}.json`,fundamentals);
       const industryCode = edinetFact(latestRows,"IndustryCodeWhenConsolidatedFinancialStatementsArePreparedInAccordanceWithIndustrySpecificRegulationsDEI");
       const company: Company = { id,code:id.slice(0,-3),exchange:"JP",country:"JP",currency:"JPY",name:latest.filerName,

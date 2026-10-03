@@ -1,3 +1,4 @@
+import { retainCompletionHistory } from './completeness/retain-history';
 import { createHash } from 'node:crypto';
 import { deriveYears } from './derive';
 import type { Fundamentals, Year } from './types';
@@ -56,8 +57,20 @@ export function retainRefreshFacts(incoming: Fundamentals, prior: Fundamentals |
       }
     }
   }
+  const splits = [...new Map([...(prior.splits ?? []), ...(incoming.splits ?? [])].map(s => [s.date, s])).values()].sort((a,b) => a.date.localeCompare(b.date));
+  const coherent = retainCompletionHistory(prior.years, years, { ...incoming, splits });
+  if (coherent !== years) {
+    retained = true;
+    for (const y of coherent) {
+      const old = prior.years.find(p => p.end === y.end);
+      const fresh = years.find(p => p.end === y.end);
+      if (!old || y.dilutedShares === fresh?.dilutedShares) continue;
+      for (const field of ['dilutedShares', 'dilutedEps', 'basicEps', 'sharesOutstanding', 'edinetShares'] as const)
+        if (old[field] != null) { y.provenance ??= {}; y.provenance[field] = stamp(old, field); }
+    }
+  }
   return { fundamentals: { ...incoming, currency: incoming.currency || prior.currency,
-    years: deriveYears(years),
-    splits: [...new Map([...(prior.splits ?? []), ...(incoming.splits ?? [])].map(s => [s.date, s])).values()].sort((a,b) => a.date.localeCompare(b.date)),
+    years: deriveYears(coherent),
+    splits,
   }, ...(retained ? { snapshot: { path: snapshot, value: prior } } : {}) };
 }

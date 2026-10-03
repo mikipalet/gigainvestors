@@ -1,0 +1,12 @@
+{
+  "startedAt": 1791047356.7010546,
+  "finishedAt": 1791047361.5087554,
+  "stage": "analyze",
+  "args": [
+    "--only=EVN.AU,HMSO.LSE,4507.JP,6902.JP"
+  ],
+  "exit": 0,
+  "peakPrivateBytes": 2156396544,
+  "freeBytes": 33588891648,
+  "stop": null
+}

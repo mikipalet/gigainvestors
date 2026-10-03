@@ -1,0 +1,359 @@
+{
+  "recommendation": "KEEP HOLD",
+  "counts": {
+    "FIXED \u2014 no remaining flip": 38,
+    "RESIDUAL": 98,
+    "APPROVED": 8,
+    "FIXED \u2014 causal inputs corrected": 1
+  },
+  "remainingFlips": 107,
+  "sourceAgreementResiduals": 98,
+  "originalHistoricalCases": [
+    {
+      "id": "AMCR.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "2de772d1d9ae48c1287c101539b4fa28b4792d0b55ed3486d54f0a75a0b2390e"
+    },
+    {
+      "id": "IR5B.IR",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "402270b18a43128e132ffaedda3fbbb10a2d009aca73a3915e96a43f8365e942"
+    },
+    {
+      "id": "KIM.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "6006b214a633a1adda3e4dcb2110f3e9b5a9e0241161bcbeca226b0a4f96cd27"
+    },
+    {
+      "id": "LEN-B.US",
+      "test": "moat",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "2782ee2bebb3cc79c79f84c9e8ac4ff2073cfb659d383e2f6eb00afd96734c4a"
+    },
+    {
+      "id": "LEN-B.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "2782ee2bebb3cc79c79f84c9e8ac4ff2073cfb659d383e2f6eb00afd96734c4a"
+    },
+    {
+      "id": "MGM.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "87c5866d72a0fb47e52a86a2ee727d3931df6d820deb29d5290cb6a228e420b0"
+    },
+    {
+      "id": "NDSN.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "e5c740cad2f724c5ae86020d188a9d81c0fdbb48a59e60a1ca9a29ea27f5f2da"
+    },
+    {
+      "id": "OMV.VI",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "06d8df4638c825e6617f0e85a9db65b4abab0a1a557795687b39d5aa7f65fac2"
+    },
+    {
+      "id": "PFD.LSE",
+      "test": "management",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "19a35651f927f0c34beb6df6c8d8d6fcdf81495f6e07782b95b1651391796c08"
+    },
+    {
+      "id": "PPG.US",
+      "test": "economics",
+      "adjudication": "FIXED \u2014 no remaining flip",
+      "newInputHash": "d43f87b19b581de3a84edaeccc4e90afec2ca7c2187b408cc684d884a11ffe7a"
+    },
+    {
+      "id": "PTC.US",
+      "test": "moat",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "6e8641f79c0ee7c48a8b4c944426897dbb8826bb1e10591538e3693233ae0d72"
+    },
+    {
+      "id": "STE.US",
+      "test": "moat",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "6b8b160bafe57e13f635c971f72512804508ca1d56dbbb0c905eeebd7d150e21"
+    },
+    {
+      "id": "TPL.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "b4459871cba6cc8b6e34536b29c0a458804a2b110be6261a632270d532263375"
+    },
+    {
+      "id": "TROW.US",
+      "test": "moat",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "db3efcfab37931046b313e248f0bb4f901cbba4c3f1e07464aeafef848e828f2"
+    },
+    {
+      "id": "TSCO.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "cc985776da9916b443a6af4d7d7bf5248c278038ee129bbf02c8ae57a4e84f6e"
+    },
+    {
+      "id": "UHS.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "d01d5bd83765ece6e304a047c6c18e8e76c33724a01d7244e05e3f017bc75ef3"
+    },
+    {
+      "id": "VTRS.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "1e7ed07d764e53026ef85b93a78d3825dff5d24b2206215aee86ae9f51632100"
+    },
+    {
+      "id": "WTW.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "67cadc2607d3b86bb8d224013576d97576d16d6b7d26ea02688d710080da26e9"
+    },
+    {
+      "id": "WYNN.US",
+      "test": "economics",
+      "adjudication": "RESIDUAL",
+      "newInputHash": "9c90cb7551b9e39914a334328184642c185d9e30617d866998ce589f440ceaaa"
+    }
+  ],
+  "historicalUnreproducedJudgedOnNewSide": 23,
+  "directIssuerApprovedChecks": [
+    [
+      "8253.JP",
+      "management"
+    ],
+    [
+      "8253.JP",
+      "accounting"
+    ],
+    [
+      "8253.JP",
+      "economics"
+    ],
+    [
+      "CBG.LSE",
+      "moat"
+    ],
+    [
+      "CBG.LSE",
+      "understandable"
+    ],
+    [
+      "MU.US",
+      "economics"
+    ],
+    [
+      "SCHW.US",
+      "moat"
+    ]
+  ],
+  "approvedFlips": 8,
+  "issuerSampleMinimum": 2,
+  "requestedHistory": [
+    {
+      "id": "EQNR.OL",
+      "before": {
+        "years": 28,
+        "first": 1998,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 28,
+        "first": 1998,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "4043.JP",
+      "before": {
+        "years": 14,
+        "first": 2013,
+        "last": 2026,
+        "source": "edinet"
+      },
+      "after": {
+        "years": 14,
+        "first": 2013,
+        "last": 2026,
+        "source": "edinet"
+      }
+    },
+    {
+      "id": "3457.JP",
+      "before": {
+        "years": 14,
+        "first": 2013,
+        "last": 2026,
+        "source": "edinet"
+      },
+      "after": {
+        "years": 14,
+        "first": 2013,
+        "last": 2026,
+        "source": "edinet"
+      }
+    },
+    {
+      "id": "EVN.AU",
+      "before": {
+        "years": 22,
+        "first": 2005,
+        "last": 2026,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 22,
+        "first": 2005,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "NTRS.US",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "AENA.MC",
+      "before": {
+        "years": 15,
+        "first": 2011,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 15,
+        "first": 2011,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "HMSO.LSE",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      }
+    }
+  ],
+  "allHistoryStartLosses": [
+    {
+      "id": "JBL.US",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1997,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "CBG.LSE",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1997,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "FDS.US",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1997,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    },
+    {
+      "id": "MU.US",
+      "before": {
+        "years": 30,
+        "first": 1996,
+        "last": 2025,
+        "source": "eodhd"
+      },
+      "after": {
+        "years": 30,
+        "first": 1997,
+        "last": 2026,
+        "source": "eodhd"
+      }
+    }
+  ],
+  "sameYearSeriesNulls": 105,
+  "sourceVerification": {
+    "checked": 26801,
+    "changed": [],
+    "missing": []
+  },
+  "coverage": {
+    "jobs": 38056,
+    "versions": {
+      "26": 38056
+    },
+    "missingAnalysis": [],
+    "missingFingerprints": [],
+    "missingOrStaleMemberSnapshots": [],
+    "emptyMemberSnapshots": [
+      {
+        "id": "457190.KO",
+        "status": "insufficient_data"
+      }
+    ]
+  },
+  "holdSha256": "a5defda8067e82dee447d696da4a00975a7e05fe1b5a785a8f1059ccf7a6de0e",
+  "diskFreeBytes": 33727393792,
+  "dossiersBefore": 2708,
+  "dossiersAfter": 2708,
+  "dossiersAdded": [],
+  "dossiersRemoved": [],
+  "baselineCommit": "634f80f3",
+  "unreproducedNew": [],
+  "verdictToNaRegressions": []
+}

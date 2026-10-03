@@ -4,6 +4,9 @@ export const issuerPredecessors:Record<string,{id:string;through:string;source:s
  '9147.JP':{id:'9062.JP',through:'2021-12-31',source:'https://www.nipponexpress-holdings.com/en/pdf/ir/event/meetings/115th-ordinary-general-meeting-of-shareholders.pdf',quote:'one share of Holding Company common stock for each share of Company common stock'},
 };
 export const issuerSplits:Record<string,Array<{date:string;factor:number;source:string}>>={
+ '4507.JP':[{date:'2024-10-01',factor:3,source:'https://www.shionogi.com/global/en/investors/shareholder-information/shareholder-return.html'}],
+ '6902.JP':[{date:'2023-10-01',factor:4,source:'https://www.denso.com/-/media/secure-investors/settlement/2024/financial-202310.pdf'}],
+ '4043.JP':[{date:'2017-10-01',factor:0.2,source:'https://www.tokuyama.co.jp/eng/company/pdf/AR2019_e.pdf'}],
  'KMD.AU':[{date:'2026-06-30',factor:0.04,source:'https://www.nzx.com/announcements/475499'}],
  '7012.JP':[{date:'2026-04-01',factor:5,source:'https://global.kawasaki.com/news_260209-5e.pdf'}],
  '7203.JP':[{date:'2021-10-01',factor:5,source:'https://global.toyota/pages/global_toyota/ir/stock/share/commonstocksplit_20210512_01_en.pdf'}],
@@ -15,6 +18,7 @@ export const issuerSplits:Record<string,Array<{date:string;factor:number;source:
 /** Real capital issuance must remain in dilution tests, rather than erasing
  * the earlier operating record as though the share change were a data error. */
 export const issuerCapitalChanges:Record<string,Array<{fy:number;throughFy?:number;source:string;quote:string;cancelledCommon?:boolean}>>={
+ 'EMEIS.PA':[{fy:2023,throughFy:2024,source:'https://www.emeis.com/sites/default/files/medias/documents/orpeaurd2023enbd_0.pdf',quote:'Recapitalisation issued new equity in 2023 and February 2024; the separate March 2024 consolidation exchanges 1000 old shares for one new share.'}],
  'ROSE.LSE':[{fy:2025,source:'https://cdn.yano.digital/media/upqnplx1/8419-rosebank-ar25-web.pdf',quote:'On 3 July 2025, 386,607,653 shares were issued of nil par value for 300 pence each, to finance the acquisition of ECI'}],
  '000877.SHE':[{fy:2021,source:'https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7625061&stockid=000877',quote:'本次发行新增股份上市数量为 7,300,082,968股，上市时间为2021年11月2日。'}],
  'NAS.OL':[{fy:2020,throughFy:2021,source:'https://www.norwegian.no/globalassets/ip/documents/about-us/company/investor-relations/preferential-rights/nas---may-2021-registration-document.pdf',quote:'The recapitalization combines a 100:1 reverse split with creditor debt conversion and new equity; the 2021 annual report records 888,769,130 new shares issued.'}],

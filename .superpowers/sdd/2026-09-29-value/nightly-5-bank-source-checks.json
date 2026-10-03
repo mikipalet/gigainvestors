@@ -1,0 +1,662 @@
+[
+  {
+    "id": "AXP.US",
+    "fy": 2015,
+    "field": "nonInterestExpense",
+    "new": 22892000000,
+    "independent": 22831000000.0,
+    "relativeDifference": 0.0026646863533112005,
+    "source": "raw/eodhd/AXP.US.json#2015-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2015,
+    "field": "netRevenue",
+    "new": 32818000000,
+    "independent": 32757000000.0,
+    "relativeDifference": 0.0018587360594795538,
+    "source": "raw/eodhd/AXP.US.json#2015-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2016,
+    "field": "nonInterestExpense",
+    "new": 25369000000,
+    "independent": 26587000000.0,
+    "relativeDifference": 0.045811862940534846,
+    "source": "raw/eodhd/AXP.US.json#2016-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2016,
+    "field": "netRevenue",
+    "new": 35438000000,
+    "independent": 36656000000.0,
+    "relativeDifference": 0.03322784810126582,
+    "source": "raw/eodhd/AXP.US.json#2016-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2017,
+    "field": "nonInterestExpense",
+    "new": 26693000000,
+    "independent": 26693000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/AXP.US.json#2017-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2017,
+    "field": "netRevenue",
+    "new": 36878000000,
+    "independent": 36878000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/AXP.US.json#2017-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2018,
+    "field": "nonInterestExpense",
+    "new": 28864000000,
+    "independent": 28841000000.0,
+    "relativeDifference": 0.000796840354767184,
+    "source": "raw/eodhd/AXP.US.json#2018-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2018,
+    "field": "netRevenue",
+    "new": 40338000000,
+    "independent": 40315000000.0,
+    "relativeDifference": 0.0005701819624175715,
+    "source": "raw/eodhd/AXP.US.json#2018-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2019,
+    "field": "nonInterestExpense",
+    "new": 31554000000,
+    "independent": 31631000000.0,
+    "relativeDifference": 0.0024343207612784927,
+    "source": "raw/eodhd/AXP.US.json#2019-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2019,
+    "field": "netRevenue",
+    "new": 43556000000,
+    "independent": 43633000000.0,
+    "relativeDifference": 0.0017647193637842916,
+    "source": "raw/eodhd/AXP.US.json#2019-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2020,
+    "field": "nonInterestExpense",
+    "new": 27061000000,
+    "independent": 27213000000.0,
+    "relativeDifference": 0.005585565722265094,
+    "source": "raw/eodhd/AXP.US.json#2020-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2020,
+    "field": "netRevenue",
+    "new": 36087000000,
+    "independent": 36239000000.0,
+    "relativeDifference": 0.004194376224509506,
+    "source": "raw/eodhd/AXP.US.json#2020-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2021,
+    "field": "nonInterestExpense",
+    "new": 33110000000,
+    "independent": 33877000000.0,
+    "relativeDifference": 0.02264072969861558,
+    "source": "raw/eodhd/AXP.US.json#2021-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2021,
+    "field": "netRevenue",
+    "new": 42380000000,
+    "independent": 43147000000.0,
+    "relativeDifference": 0.01777643868635131,
+    "source": "raw/eodhd/AXP.US.json#2021-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2022,
+    "field": "nonInterestExpense",
+    "new": 41095000000,
+    "independent": 41095000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/AXP.US.json#2022-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2022,
+    "field": "netRevenue",
+    "new": 52862000000,
+    "independent": 52862000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/AXP.US.json#2022-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2023,
+    "field": "nonInterestExpense",
+    "new": 45079000000,
+    "independent": 45079000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/AXP.US.json#2023-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2023,
+    "field": "netRevenue",
+    "new": 60515000000,
+    "independent": 60515000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/AXP.US.json#2023-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2024,
+    "field": "nonInterestExpense",
+    "new": 47869000000,
+    "independent": 47869000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/AXP.US.json#2024-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2024,
+    "field": "netRevenue",
+    "new": 65949000000,
+    "independent": 65949000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/AXP.US.json#2024-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2025,
+    "field": "nonInterestExpense",
+    "new": 53178000000,
+    "independent": 53179000000.0,
+    "relativeDifference": 1.880441527670697e-05,
+    "source": "raw/eodhd/AXP.US.json#2025-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "AXP.US",
+    "fy": 2025,
+    "field": "netRevenue",
+    "new": 72229000000,
+    "independent": 72230000000.0,
+    "relativeDifference": 1.3844662882458812e-05,
+    "source": "raw/eodhd/AXP.US.json#2025-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2015,
+    "field": "nonInterestExpense",
+    "new": 26660000000,
+    "independent": 24768000000.0,
+    "relativeDifference": 0.07096774193548387,
+    "source": "raw/eodhd/MS.US.json#2015-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2015,
+    "field": "netRevenue",
+    "new": 35155000000,
+    "independent": 33263000000.0,
+    "relativeDifference": 0.053818802446309204,
+    "source": "raw/eodhd/MS.US.json#2015-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2016,
+    "field": "nonInterestExpense",
+    "new": 25783000000,
+    "independent": 23863000000.0,
+    "relativeDifference": 0.074467672497382,
+    "source": "raw/eodhd/MS.US.json#2016-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2016,
+    "field": "netRevenue",
+    "new": 34631000000,
+    "independent": 32711000000.0,
+    "relativeDifference": 0.05544165631948254,
+    "source": "raw/eodhd/MS.US.json#2016-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2017,
+    "field": "nonInterestExpense",
+    "new": 27542000000,
+    "independent": 25449000000.0,
+    "relativeDifference": 0.07599302882869799,
+    "source": "raw/eodhd/MS.US.json#2017-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2017,
+    "field": "netRevenue",
+    "new": 37945000000,
+    "independent": 35852000000.0,
+    "relativeDifference": 0.05515878244828041,
+    "source": "raw/eodhd/MS.US.json#2017-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2018,
+    "field": "nonInterestExpense",
+    "new": 28870000000,
+    "independent": 26477000000.0,
+    "relativeDifference": 0.0828888119154832,
+    "source": "raw/eodhd/MS.US.json#2018-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2018,
+    "field": "netRevenue",
+    "new": 40107000000,
+    "independent": 37714000000.0,
+    "relativeDifference": 0.05966539506819259,
+    "source": "raw/eodhd/MS.US.json#2018-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2019,
+    "field": "nonInterestExpense",
+    "new": 30076000000,
+    "independent": 27583000000.0,
+    "relativeDifference": 0.08289001196967682,
+    "source": "raw/eodhd/MS.US.json#2019-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2019,
+    "field": "netRevenue",
+    "new": 41538000000,
+    "independent": 39045000000.0,
+    "relativeDifference": 0.060017333525928064,
+    "source": "raw/eodhd/MS.US.json#2019-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2020,
+    "field": "nonInterestExpense",
+    "new": 33578000000,
+    "independent": 30649000000.0,
+    "relativeDifference": 0.08722973375424385,
+    "source": "raw/eodhd/MS.US.json#2020-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2020,
+    "field": "netRevenue",
+    "new": 48757000000,
+    "independent": 45828000000.0,
+    "relativeDifference": 0.060073425354308096,
+    "source": "raw/eodhd/MS.US.json#2020-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2021,
+    "field": "nonInterestExpense",
+    "new": 40083000000,
+    "independent": 36742000000.0,
+    "relativeDifference": 0.08335204450764663,
+    "source": "raw/eodhd/MS.US.json#2021-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2021,
+    "field": "netRevenue",
+    "new": 59755000000,
+    "independent": 56414000000.0,
+    "relativeDifference": 0.05591163919337294,
+    "source": "raw/eodhd/MS.US.json#2021-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2022,
+    "field": "nonInterestExpense",
+    "new": 39299000000,
+    "independent": 35841000000.0,
+    "relativeDifference": 0.08799206086668872,
+    "source": "raw/eodhd/MS.US.json#2022-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2022,
+    "field": "netRevenue",
+    "new": 53668000000,
+    "independent": 50210000000.0,
+    "relativeDifference": 0.06443318178430349,
+    "source": "raw/eodhd/MS.US.json#2022-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2023,
+    "field": "nonInterestExpense",
+    "new": 41798000000,
+    "independent": 38322000000.0,
+    "relativeDifference": 0.08316187377386478,
+    "source": "raw/eodhd/MS.US.json#2023-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2023,
+    "field": "netRevenue",
+    "new": 54143000000,
+    "independent": 50667000000.0,
+    "relativeDifference": 0.06420035831040023,
+    "source": "raw/eodhd/MS.US.json#2023-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2024,
+    "field": "nonInterestExpense",
+    "new": 43901000000,
+    "independent": 39761000000.0,
+    "relativeDifference": 0.09430309104576205,
+    "source": "raw/eodhd/MS.US.json#2024-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2024,
+    "field": "netRevenue",
+    "new": 61761000000,
+    "independent": 57621000000.0,
+    "relativeDifference": 0.06703259338417449,
+    "source": "raw/eodhd/MS.US.json#2024-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2025,
+    "field": "nonInterestExpense",
+    "new": 48342000000,
+    "independent": 43663000000.0,
+    "relativeDifference": 0.09678954118571842,
+    "source": "raw/eodhd/MS.US.json#2025-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "MS.US",
+    "fy": 2025,
+    "field": "netRevenue",
+    "new": 70645000000,
+    "independent": 65966000000.0,
+    "relativeDifference": 0.06623257130724043,
+    "source": "raw/eodhd/MS.US.json#2025-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2015,
+    "field": "nonInterestExpense",
+    "new": 49974000000,
+    "independent": 47744000000.0,
+    "relativeDifference": 0.04462320406611438,
+    "source": "raw/eodhd/WFC.US.json#2015-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2015,
+    "field": "netRevenue",
+    "new": 86057000000,
+    "independent": 83827000000.0,
+    "relativeDifference": 0.02591305762459765,
+    "source": "raw/eodhd/WFC.US.json#2015-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2016,
+    "field": "nonInterestExpense",
+    "new": 52377000000,
+    "independent": 52377000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2016-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2016,
+    "field": "netRevenue",
+    "new": 88267000000,
+    "independent": 88267000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2016-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2017,
+    "field": "nonInterestExpense",
+    "new": 58484000000,
+    "independent": 58484000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2017-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2017,
+    "field": "netRevenue",
+    "new": 88389000000,
+    "independent": 88389000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2017-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2018,
+    "field": "nonInterestExpense",
+    "new": 56126000000,
+    "independent": 56126000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2018-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2018,
+    "field": "netRevenue",
+    "new": 86408000000,
+    "independent": 86408000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2018-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2019,
+    "field": "nonInterestExpense",
+    "new": 58178000000,
+    "independent": 58178000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2019-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2019,
+    "field": "netRevenue",
+    "new": 86832000000,
+    "independent": 86832000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2019-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2020,
+    "field": "nonInterestExpense",
+    "new": 57630000000,
+    "independent": 57630000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2020-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2020,
+    "field": "netRevenue",
+    "new": 74264000000,
+    "independent": 74264000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2020-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2021,
+    "field": "nonInterestExpense",
+    "new": 53758000000,
+    "independent": 53758000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2021-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2021,
+    "field": "netRevenue",
+    "new": 79166000000,
+    "independent": 79166000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2021-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2022,
+    "field": "nonInterestExpense",
+    "new": 57205000000,
+    "independent": 57205000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2022-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2022,
+    "field": "netRevenue",
+    "new": 74368000000,
+    "independent": 74368000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2022-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2023,
+    "field": "nonInterestExpense",
+    "new": 55562000000,
+    "independent": 48530000000.0,
+    "relativeDifference": 0.1265613188870091,
+    "source": "raw/eodhd/WFC.US.json#2023-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2023,
+    "field": "netRevenue",
+    "new": 82597000000,
+    "independent": 44455000000.0,
+    "relativeDifference": 0.46178432630725086,
+    "source": "raw/eodhd/WFC.US.json#2023-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2024,
+    "field": "nonInterestExpense",
+    "new": 54598000000,
+    "independent": 54598000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2024-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2024,
+    "field": "netRevenue",
+    "new": 82296000000,
+    "independent": 82296000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2024-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2025,
+    "field": "nonInterestExpense",
+    "new": 54842000000,
+    "independent": 54842000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2025-12-31",
+    "derivation": "totalOperatingExpenses"
+  },
+  {
+    "id": "WFC.US",
+    "fy": 2025,
+    "field": "netRevenue",
+    "new": 83699000000,
+    "independent": 83699000000.0,
+    "relativeDifference": 0.0,
+    "source": "raw/eodhd/WFC.US.json#2025-12-31",
+    "derivation": "totalRevenue minus interestExpense"
+  }
+]

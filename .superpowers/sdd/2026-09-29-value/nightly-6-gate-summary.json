@@ -1,0 +1,1322 @@
+{
+  "states": 665,
+  "statesWithIssues": 155,
+  "issues": 218,
+  "cutOverlapIssues": [],
+  "otherIssues": [
+    {
+      "viewport": "1728x970",
+      "path": "/?q=2018Q3",
+      "state": "All companies \u2197",
+      "issue": "raster empty area 15.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/lulu.us",
+      "state": "Price story: Down 82% since Dec 2023 \u00b7 \"Lululemon\u2019s (LULU) Brand Problems Force Another Steep Guidance Downgrade\" (finance.yahoo.com, Sep 2026) \u00b7 sales +4.9%",
+      "issue": "raster empty area 29.2% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/lulu.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "bottom empty area 11.0% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/lulu.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.2% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/lulu.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 18.1% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/wkl.as",
+      "state": "Price story: Down 61% since Jan 2025 \u00b7 \"RELX, Wolters Kluwer Shares Plunge on AI Competition Fears\" (finance.yahoo.com, Feb 2026) \u00b7 sales +3.5%",
+      "issue": "raster empty area 38.9% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/wkl.as",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.2% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/wkl.as",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 20.4% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Price story: Down 65% since Nov 2021 \u00b7 \"Adobe beats Q3 targets, but soft Q4 sales guidance triggers dip\" (finance.yahoo.com, Sep 2026) \u00b7 sales +10.5%",
+      "issue": "raster empty area 29.6% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "bottom empty area 11.4% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 17.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "bottom empty area 11.0% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.3% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/adbe.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Price story: Price needs cash profits to grow 22.5% a year for ten years \u00b7 \"Alphabet cloud revenue jumps 82% YoY as AI infrastructure spending doubles\" (finance.yahoo.com, Jul 2026) \u00b7 sales +15.1%",
+      "issue": "raster empty area 29.4% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "bottom empty area 11.4% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 17.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 15.7% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.6% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open valuation",
+      "issue": "bottom empty area 8.9% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/googl.us",
+      "state": "Open valuation",
+      "issue": "raster empty area 17.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/ko.us",
+      "state": "Price story: Price needs cash profits to grow 14.4% a year for ten years \u00b7 \"Coca Cola (KO) Keeps Raising Its Outlook After Consecutive Earnings Beats\" (finance.yahoo.com, Oct 2026) \u00b7 sales +1.9%",
+      "issue": "raster empty area 28.2% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/ko.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 20.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/jpm.us",
+      "state": "Price story: The price assumes profits grow 6.3% a year forever \u00b7 \"JPMorgan Boosts Outlook for Closely Watched Net Interest Income\" (finance.yahoo.com, Jul 2026) \u00b7 net income -2.1%",
+      "issue": "raster empty area 36.3% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/jpm.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/jpm.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 17.1% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/7203.jp",
+      "state": "Price story: Down 25% since Feb 2026 \u00b7 \"Toyota car sales fall for seventh straight month in Aug on China weakness\" (finance.yahoo.com, Sep 2026) \u00b7 sales +5.5%",
+      "issue": "raster empty area 32.0% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/7203.jp",
+      "state": "Open Honest profits evidence",
+      "issue": "bottom empty area 10.3% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/7203.jp",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 22.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/reliance.nse",
+      "state": "Price story: Down 7% since Aug 2026 \u00b7 sales +9.6%",
+      "issue": "raster empty area 38.0% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/reliance.nse",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 31.5% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/reliance.nse",
+      "state": "Open Honest profits evidence",
+      "issue": "bottom empty area 10.4% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/reliance.nse",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 24.6% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/cbg.lse",
+      "state": "Price story: Down 72% since Oct 2021 \u00b7 \"Close Brothers ramps up cost cutting after posting another loss\" (uk.finance.yahoo.com, Sep 2026) \u00b7 net income GBP -63.4M",
+      "issue": "raster empty area 38.3% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/cbg.lse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/cbg.lse",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 16.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/cbg.lse",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 15.3% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "Price story: Down 52% since Apr 2024 \u00b7 sales +6.4%",
+      "issue": "raster empty area 52.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 23.9% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "Open Cash for owners evidence",
+      "issue": "bottom empty area 23.0% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 31.3% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "Open Cash for owners evidence",
+      "issue": "empty block 202px tall spans over half panel"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "bottom empty area 10.6% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 26.7% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "Open Honest profits evidence",
+      "issue": "bottom empty area 18.6% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 34.0% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/plx.pa",
+      "state": "Open Honest profits evidence",
+      "issue": "empty block 178px tall spans over half panel"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "Price story: Up 26% since Mar 2024 \u00b7 \"Solventum outlines HIS separation and raises 2026 EPS guide to $7.10-$7.20\" (seekingalpha.com, Aug 2026) \u00b7 sales +0.9%",
+      "issue": "raster empty area 51.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "Price story: Up 26% since Mar 2024 \u00b7 \"Solventum outlines HIS separation and raises 2026 EPS guide to $7.10-$7.20\" (seekingalpha.com, Aug 2026) \u00b7 sales +0.9%",
+      "issue": "empty block 192px tall spans over half panel"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 19.2% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "bottom empty area 11.2% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 22.4% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "bottom empty area 19.1% >= 8%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 30.9% > 15%"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "empty block 178px tall spans over half panel"
+    },
+    {
+      "viewport": "1728x970",
+      "path": "/solv.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 21.4% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/lulu.us",
+      "state": "Price story: Down 82% since Dec 2023 \u00b7 \"Lululemon\u2019s (LULU) Brand Problems Force Another Steep Guidance Downgrade\" (finance.yahoo.com, Sep 2026) \u00b7 sales +4.9%",
+      "issue": "raster empty area 25.3% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/wkl.as",
+      "state": "Price story: Down 61% since Jan 2025 \u00b7 \"RELX, Wolters Kluwer Shares Plunge on AI Competition Fears\" (finance.yahoo.com, Feb 2026) \u00b7 sales +3.5%",
+      "issue": "raster empty area 45.5% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/wkl.as",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 17.7% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/wkl.as",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.0% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/adbe.us",
+      "state": "Price story: Down 65% since Nov 2021 \u00b7 \"Adobe beats Q3 targets, but soft Q4 sales guidance triggers dip\" (finance.yahoo.com, Sep 2026) \u00b7 sales +10.5%",
+      "issue": "raster empty area 31.3% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/googl.us",
+      "state": "Price story: Price needs cash profits to grow 22.5% a year for ten years \u00b7 \"Alphabet cloud revenue jumps 82% YoY as AI infrastructure spending doubles\" (finance.yahoo.com, Jul 2026) \u00b7 sales +15.1%",
+      "issue": "raster empty area 26.6% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/ko.us",
+      "state": "Price story: Price needs cash profits to grow 14.4% a year for ten years \u00b7 \"Coca Cola (KO) Keeps Raising Its Outlook After Consecutive Earnings Beats\" (finance.yahoo.com, Oct 2026) \u00b7 sales +1.9%",
+      "issue": "raster empty area 25.3% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/ko.us",
+      "state": "Open Honest profits evidence",
+      "issue": "bottom empty area 8.3% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/ko.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/jpm.us",
+      "state": "Price story: The price assumes profits grow 6.3% a year forever \u00b7 \"JPMorgan Boosts Outlook for Closely Watched Net Interest Income\" (finance.yahoo.com, Jul 2026) \u00b7 net income -2.1%",
+      "issue": "raster empty area 36.0% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/jpm.us",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 18.7% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/jpm.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 15.7% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/jpm.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.5% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "Price story: Down 25% since Feb 2026 \u00b7 \"Toyota car sales fall for seventh straight month in Aug on China weakness\" (finance.yahoo.com, Sep 2026) \u00b7 sales +5.5%",
+      "issue": "raster empty area 30.0% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "In depth \u2197",
+      "issue": "bottom empty area 10.4% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 19.0% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "Open valuation",
+      "issue": "bottom empty area 19.0% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "Open valuation",
+      "issue": "raster empty area 23.5% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/7203.jp",
+      "state": "Open valuation",
+      "issue": "empty block 220px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/reliance.nse",
+      "state": "Price story: Down 7% since Aug 2026 \u00b7 sales +9.6%",
+      "issue": "raster empty area 47.5% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/reliance.nse",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.3% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/reliance.nse",
+      "state": "Open valuation",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "Price story: Down 72% since Oct 2021 \u00b7 \"Close Brothers ramps up cost cutting after posting another loss\" (uk.finance.yahoo.com, Sep 2026) \u00b7 net income GBP -63.4M",
+      "issue": "raster empty area 38.5% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 15.9% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 16.0% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "Open valuation",
+      "issue": "bottom empty area 18.8% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "Open valuation",
+      "issue": "raster empty area 27.7% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/cbg.lse",
+      "state": "Open valuation",
+      "issue": "empty block 220px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Price story: Down 52% since Apr 2024 \u00b7 sales +6.4%",
+      "issue": "raster empty area 60.9% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "In depth \u2197",
+      "issue": "bottom empty area 22.5% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 35.8% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "In depth \u2197",
+      "issue": "empty block 244px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 16.9% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 17.7% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Cash for owners evidence",
+      "issue": "bottom empty area 38.5% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 41.6% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Cash for owners evidence",
+      "issue": "empty block 436px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "bottom empty area 14.1% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 27.8% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "empty block 148px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Honest profits evidence",
+      "issue": "bottom empty area 19.2% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 30.0% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/plx.pa",
+      "state": "Open Honest profits evidence",
+      "issue": "empty block 244px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "Price story: Up 26% since Mar 2024 \u00b7 \"Solventum outlines HIS separation and raises 2026 EPS guide to $7.10-$7.20\" (seekingalpha.com, Aug 2026) \u00b7 sales +0.9%",
+      "issue": "raster empty area 54.3% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "Price story: Up 26% since Mar 2024 \u00b7 \"Solventum outlines HIS separation and raises 2026 EPS guide to $7.10-$7.20\" (seekingalpha.com, Aug 2026) \u00b7 sales +0.9%",
+      "issue": "empty block 192px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "In depth \u2197",
+      "issue": "bottom empty area 11.6% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 27.2% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "In depth \u2197",
+      "issue": "empty block 148px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 19.2% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "bottom empty area 19.1% >= 8%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 29.7% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "empty block 220px tall spans over half panel"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 20.4% > 15%"
+    },
+    {
+      "viewport": "2056x1180",
+      "path": "/solv.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/",
+      "state": "All companies \u2197",
+      "issue": "raster empty area 16.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/lulu.us",
+      "state": "Price story: Down 82% since Dec 2023 \u00b7 \"Lululemon\u2019s (LULU) Brand Problems Force Another Steep Guidance Downgrade\" (finance.yahoo.com, Sep 2026) \u00b7 sales +4.9%",
+      "issue": "raster empty area 32.2% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/lulu.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Price story: Down 61% since Jan 2025 \u00b7 \"RELX, Wolters Kluwer Shares Plunge on AI Competition Fears\" (finance.yahoo.com, Feb 2026) \u00b7 sales +3.5%",
+      "issue": "raster empty area 38.2% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 16.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open Cash for owners evidence",
+      "issue": "bottom empty area 39.8% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 42.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open Cash for owners evidence",
+      "issue": "empty block 296px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open valuation",
+      "issue": "bottom empty area 20.0% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open valuation",
+      "issue": "raster empty area 28.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/wkl.as",
+      "state": "Open valuation",
+      "issue": "empty block 152px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/adbe.us",
+      "state": "Price story: Down 65% since Nov 2021 \u00b7 \"Adobe beats Q3 targets, but soft Q4 sales guidance triggers dip\" (finance.yahoo.com, Sep 2026) \u00b7 sales +10.5%",
+      "issue": "raster empty area 33.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/adbe.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 15.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/adbe.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Price story: Price needs cash profits to grow 22.5% a year for ten years \u00b7 \"Alphabet cloud revenue jumps 82% YoY as AI infrastructure spending doubles\" (finance.yahoo.com, Jul 2026) \u00b7 sales +15.1%",
+      "issue": "raster empty area 32.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 15.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 10.1% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 21.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 17.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open valuation",
+      "issue": "bottom empty area 26.1% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open valuation",
+      "issue": "raster empty area 32.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/googl.us",
+      "state": "Open valuation",
+      "issue": "empty block 200px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/ko.us",
+      "state": "Price story: Price needs cash profits to grow 14.4% a year for ten years \u00b7 \"Coca Cola (KO) Keeps Raising Its Outlook After Consecutive Earnings Beats\" (finance.yahoo.com, Oct 2026) \u00b7 sales +1.9%",
+      "issue": "raster empty area 31.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/ko.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 16.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/ko.us",
+      "state": "Open valuation",
+      "issue": "bottom empty area 10.3% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/ko.us",
+      "state": "Open valuation",
+      "issue": "raster empty area 21.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Price story: The price assumes profits grow 6.3% a year forever \u00b7 \"JPMorgan Boosts Outlook for Closely Watched Net Interest Income\" (finance.yahoo.com, Jul 2026) \u00b7 net income -2.1%",
+      "issue": "raster empty area 36.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 17.9% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 16.2% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 21.3% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 31.2% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "empty block 176px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "bottom empty area 18.1% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 30.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "empty block 128px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/jpm.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 19.4% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Price story: Down 25% since Feb 2026 \u00b7 \"Toyota car sales fall for seventh straight month in Aug on China weakness\" (finance.yahoo.com, Sep 2026) \u00b7 sales +5.5%",
+      "issue": "raster empty area 35.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 18.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 17.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 8.9% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 18.9% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 16.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/7203.jp",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 18.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Price story: Down 7% since Aug 2026 \u00b7 sales +9.6%",
+      "issue": "raster empty area 37.8% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 19.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 17.6% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 8.9% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 19.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 21.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 21.1% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/reliance.nse",
+      "state": "Open valuation",
+      "issue": "raster empty area 18.7% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Price story: Down 72% since Oct 2021 \u00b7 \"Close Brothers ramps up cost cutting after posting another loss\" (uk.finance.yahoo.com, Sep 2026) \u00b7 net income GBP -63.4M",
+      "issue": "raster empty area 39.1% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 16.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 16.2% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 21.3% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 32.2% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "empty block 200px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Cash for owners evidence",
+      "issue": "bottom empty area 32.1% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 40.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Cash for owners evidence",
+      "issue": "empty block 248px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 17.4% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/cbg.lse",
+      "state": "Open valuation",
+      "issue": "raster empty area 16.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "Price story: Down 52% since Apr 2024 \u00b7 sales +6.4%",
+      "issue": "raster empty area 46.3% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 23.4% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 18.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 21.9% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 34.5% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "Open Lasting advantage evidence",
+      "issue": "empty block 176px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 27.2% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "bottom empty area 17.4% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 32.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "empty block 128px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/plx.pa",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 17.4% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "Price story: Up 26% since Mar 2024 \u00b7 \"Solventum outlines HIS separation and raises 2026 EPS guide to $7.10-$7.20\" (seekingalpha.com, Aug 2026) \u00b7 sales +0.9%",
+      "issue": "raster empty area 50.4% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "Price story: Up 26% since Mar 2024 \u00b7 \"Solventum outlines HIS separation and raises 2026 EPS guide to $7.10-$7.20\" (seekingalpha.com, Aug 2026) \u00b7 sales +0.9%",
+      "issue": "empty block 192px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "In depth \u2197",
+      "issue": "raster empty area 20.2% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 21.9% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "bottom empty area 16.3% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 26.0% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "Open Lasting advantage evidence",
+      "issue": "empty block 128px tall spans over half panel"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "Open Cash for owners evidence",
+      "issue": "raster empty area 29.4% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "bottom empty area 13.7% >= 8%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 25.4% > 15%"
+    },
+    {
+      "viewport": "1440x800",
+      "path": "/solv.us",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 16.7% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/lulu.us",
+      "state": "Price story: Down 82% since Dec 2023 \u00b7 \"Lululemon\u2019s (LULU) Brand Problems Force Another Steep Guidance Downgrade\" (finance.yahoo.com, Sep 2026) \u00b7 sales +4.9%",
+      "issue": "raster empty area 24.5% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/wkl.as",
+      "state": "Price story: Down 61% since Jan 2025 \u00b7 \"RELX, Wolters Kluwer Shares Plunge on AI Competition Fears\" (finance.yahoo.com, Feb 2026) \u00b7 sales +3.5%",
+      "issue": "raster empty area 29.5% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/adbe.us",
+      "state": "Price story: Down 65% since Nov 2021 \u00b7 \"Adobe beats Q3 targets, but soft Q4 sales guidance triggers dip\" (finance.yahoo.com, Sep 2026) \u00b7 sales +10.5%",
+      "issue": "raster empty area 25.6% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/googl.us",
+      "state": "Price story: Price needs cash profits to grow 22.5% a year for ten years \u00b7 \"Alphabet cloud revenue jumps 82% YoY as AI infrastructure spending doubles\" (finance.yahoo.com, Jul 2026) \u00b7 sales +15.1%",
+      "issue": "raster empty area 26.1% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/ko.us",
+      "state": "Price story: Price needs cash profits to grow 14.4% a year for ten years \u00b7 \"Coca Cola (KO) Keeps Raising Its Outlook After Consecutive Earnings Beats\" (finance.yahoo.com, Oct 2026) \u00b7 sales +1.9%",
+      "issue": "raster empty area 25.6% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/jpm.us",
+      "state": "Price story: The price assumes profits grow 6.3% a year forever \u00b7 \"JPMorgan Boosts Outlook for Closely Watched Net Interest Income\" (finance.yahoo.com, Jul 2026) \u00b7 net income -2.1%",
+      "issue": "raster empty area 28.5% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/7203.jp",
+      "state": "Price story: Down 25% since Feb 2026 \u00b7 \"Toyota car sales fall for seventh straight month in Aug on China weakness\" (finance.yahoo.com, Sep 2026) \u00b7 sales +5.5%",
+      "issue": "raster empty area 29.1% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/reliance.nse",
+      "state": "Price story: Down 7% since Aug 2026 \u00b7 sales +9.6%",
+      "issue": "raster empty area 33.6% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/cbg.lse",
+      "state": "Price story: Down 72% since Oct 2021 \u00b7 \"Close Brothers ramps up cost cutting after posting another loss\" (uk.finance.yahoo.com, Sep 2026) \u00b7 net income GBP -63.4M",
+      "issue": "raster empty area 26.6% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/cbg.lse",
+      "state": "Open Lasting advantage evidence",
+      "issue": "raster empty area 15.8% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/cbg.lse",
+      "state": "Open Honest profits evidence",
+      "issue": "raster empty area 15.6% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/plx.pa",
+      "state": "Price story: Down 52% since Apr 2024 \u00b7 sales +6.4%",
+      "issue": "bottom empty area 14.5% >= 8%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/plx.pa",
+      "state": "Price story: Down 52% since Apr 2024 \u00b7 sales +6.4%",
+      "issue": "raster empty area 45.5% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/plx.pa",
+      "state": "Price story: Down 52% since Apr 2024 \u00b7 sales +6.4%",
+      "issue": "empty block 124px tall spans over half panel"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/plx.pa",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 16.1% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/plx.pa",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.6% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/solv.us",
+      "state": "Price story: Up 26% since Mar 2024 \u00b7 \"Solventum outlines HIS separation and raises 2026 EPS guide to $7.10-$7.20\" (seekingalpha.com, Aug 2026) \u00b7 sales +0.9%",
+      "issue": "raster empty area 32.9% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/solv.us",
+      "state": "Open Predictable profits evidence",
+      "issue": "raster empty area 19.1% > 15%"
+    },
+    {
+      "viewport": "390x844",
+      "path": "/solv.us",
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "raster empty area 16.2% > 15%"
+    }
+  ],
+  "viewports": {
+    "1728x970": 167,
+    "2056x1180": 167,
+    "1440x800": 167,
+    "390x844": 164
+  }
+}

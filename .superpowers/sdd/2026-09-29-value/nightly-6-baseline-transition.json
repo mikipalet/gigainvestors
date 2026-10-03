@@ -1,0 +1,5 @@
+{
+  "initial": "30e4ddb2",
+  "final": "43d5c33f0d69f71eb97d8904e0a0af13830107d7",
+  "reason": "Controller published price-story dossiers while replay ran. Final freeze audit compares current live rows and has zero mismatches."
+}

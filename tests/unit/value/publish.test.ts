@@ -846,6 +846,7 @@ it('freezes the live dossier, every index/history row and search identity in nor
   expect(JSON.stringify(read(root,`dossiers/${shardOf(old.id)}.json`)[old.id])).toBe(JSON.stringify(frozen));
   for(const [file,text]of Object.entries(snapshot)){
    const prior=JSON.parse(text);
+   if(file==='index/US.json')expect(read(root,file).map((r:any)=>r.id)).toEqual(prior.map((r:any)=>r.id));
    if(file.startsWith('index/')||file==='history/companies.json')expect(read(root,file).filter((r:any)=>r.id===old.id)).toEqual(prior.filter((r:any)=>r.id===old.id));
    if(file==='history/2025.json')expect(read(root,file).filter((r:any)=>r[0]===old.id)).toEqual([historyRow]);
    if(file.startsWith('search/')&&file!=='search/manifest.json')expect(read(root,file).rows.filter((r:any)=>r[0]===old.id)).toEqual(prior.rows.filter((r:any)=>r[0]===old.id));

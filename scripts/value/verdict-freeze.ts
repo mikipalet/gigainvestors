@@ -29,6 +29,18 @@ export function readVerdictFreeze(repo: string) {
   return {ids,previous,dossiers};
 }
 
+/** Replace in place; a freeze must not reshuffle every other historical/search row. */
+function restoreRows(current:any[], previous:any[], ids:Set<string>, key:(row:any)=>string):any[] {
+  const old=new Map(previous.filter(row=>ids.has(key(row))).map(row=>[key(row),row]));
+  const seen=new Set<string>();
+  const rows=current.flatMap(row=>{
+    const id=key(row);seen.add(id);
+    return ids.has(id)?old.has(id)?[old.get(id)]:[]:[row];
+  });
+  previous.forEach((row,index)=>{const id=key(row);if(ids.has(id)&&!seen.has(id))rows.splice(Math.min(index,rows.length),0,row);});
+  return rows;
+}
+
 export function applyVerdictFreeze(files: Files, freeze: ReturnType<typeof readVerdictFreeze>): void {
   const {ids,previous,dossiers}=freeze;
   if (!ids.size) return;
@@ -41,15 +53,16 @@ export function applyVerdictFreeze(files: Files, freeze: ReturnType<typeof readV
       for (const id of ids) {delete current[id];if(old?.[id])current[id]=old[id];}
     } else if (/^index\//.test(file) || /^history\/(?:companies|\d{4}(?:Q[1-4])?)\.json$/.test(file)) {
       const key=(row:any)=>Array.isArray(row)?row[0]:row.id;
-      files[file]=[...(files[file]??[]).filter((r:any)=>!ids.has(key(r))),...(old??[]).filter((r:any)=>ids.has(key(r)))];
+      files[file]=restoreRows(files[file]??[],old??[],ids,key);
     } else if (/^search\//.test(file) && file!=='search/manifest.json') {
-      const current=files[file]??{rows:[],aliases:{}}, rows:any[]=[], aliases:Record<string,number[]>={};
+      const current=files[file]??{rows:[],aliases:{}};
+      const rows=restoreRows(current.rows,old?.rows??[],ids,r=>r[0]), aliases:Record<string,number[]>={};
+      const offsets=new Map(rows.map((row,i)=>[row[0],i]));
       for (const [shard,keep] of [[current,false],[old,true]] as const) {
         if (!shard) continue;
-        const offsets=new Map<number,number>();
-        shard.rows.forEach((r:any,i:number)=>{if(ids.has(r[0])===keep){offsets.set(i,rows.length);rows.push(r);}});
         for (const [alias,indices] of Object.entries(shard.aliases) as [string,number[]][]) for (const index of indices) {
-          const offset=offsets.get(index);if(offset!==undefined)(aliases[alias]??=[]).push(offset);
+          const id=shard.rows[index][0],offset=offsets.get(id);
+          if(ids.has(id)===keep&&offset!==undefined)(aliases[alias]??=[]).push(offset);
         }
       }
       files[file]={rows,aliases};

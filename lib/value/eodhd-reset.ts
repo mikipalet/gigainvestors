@@ -9,6 +9,7 @@ const MAX_WAIT_MS = 12 * 60 * 60_000;
 export async function waitForEodhdReset({ log = console.log }: { log?: (message: string) => void } = {}): Promise<void> {
   const startedAt = Date.now();
   const deadline = startedAt + MAX_WAIT_MS;
+  let poked = '';
   while (Date.now() < deadline) {
     const polledAt = Date.now();
     let result: { apiRequestsDate?: unknown; apiRequests?: unknown } | null = null;
@@ -33,6 +34,12 @@ export async function waitForEodhdReset({ log = console.log }: { log?: (message:
         log(`EODHD reset observed at ${observedAt.toISOString()}: apiRequestsDate=${apiRequestsDate} apiRequests=${apiRequests} waitedMs=${observedAt.getTime() - startedAt}`);
         return;
       }
+    }
+    // EODHD's user endpoint keeps reporting yesterday's date and count until a request is made on the new day,
+    // so after midnight UTC one cheap data call is needed for the reset to become visible.
+    if (result && result.apiRequestsDate !== new Date().toISOString().slice(0, 10) && poked !== new Date().toISOString().slice(0, 13)) {
+      poked = new Date().toISOString().slice(0, 13);
+      try { await eodhd('eod/KO.US', { from: new Date(Date.now() - 4 * 86_400_000).toISOString().slice(0, 10) }, { retries: 0, signal: AbortSignal.timeout(T.eodhd.timeoutMs) }); continue; } catch { /* quota still exhausted; keep polling */ }
     }
     const delay = Math.min(polledAt + POLL_MS, deadline) - Date.now();
     if (delay > 0) await new Promise(resolve => setTimeout(resolve, delay));

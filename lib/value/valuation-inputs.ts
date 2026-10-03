@@ -1,4 +1,4 @@
-import { sameCurrency } from './currency';
+import { sameCurrency, currencyCode, marketCapCurrency } from './currency';
 import type { Year } from './types';
 
 const record = (value: unknown): Record<string, unknown> => value !== null && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : {};
@@ -34,8 +34,8 @@ export function currentShareInputs(raw: unknown, price: number | null, tradingCu
   const cap = number(record(data.Highlights).MarketCapitalization);
   const currency = general.CurrencyCode;
   // EODHD market capitalization is in the listing currency's major units.
-  const units = currency === 'GBP' && tradingCurrency === 'GBX' || currency === 'ZAR' && tradingCurrency === 'ZAc' ? 100 : 1;
-  const compatible = !currency || currency === tradingCurrency || units === 100;
+  const units = marketCapCurrency(tradingCurrency) !== currencyCode(tradingCurrency) ? 100 : 1;
+  const compatible = !currency || typeof currency === 'string' && marketCapCurrency(currency) === marketCapCurrency(tradingCurrency);
   const implied = compatible && cap !== null && cap > 0 && price !== null && price > 0 ? cap * units / price : null;
   const stats = reported !== null && reported > 0 ? reported : null;
   if (stats !== null && implied !== null && Math.max(stats / implied, implied / stats) > 1.5) {

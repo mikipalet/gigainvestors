@@ -1,3 +1,6 @@
+import {retainPublishedHistory} from '../retain-published-history';
+import {publicationCapitalization} from '../../../lib/value/publication-capitalization';
+import {createUsdRate} from '../../../lib/value/fx';
 import {readVerdictFreeze,applyVerdictFreeze} from '../verdict-freeze';
 import {PIPELINE_VERSION} from '../../../lib/value/analyze-company';
 import {QUESTIONS_VERSION} from '../../../lib/value/jev/questions';
@@ -232,7 +235,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   for (const analysis of analyses) if (allowedIds.has(analysis.id)) merged.set(analysis.id, analysis);
   for(const [id,dossier] of Object.entries(freeze.dossiers)) merged.set(id,dossier);
   const identities = new Map(universe.map(company => [company.id, company]));
-  const rows = [...merged.values()].map(analysis => ({ ...analysis, company: enrichedCompany({...analysis.company, indexes: identities.get(analysis.id)?.indexes ?? [], listings: identities.get(analysis.id)?.listings ?? analysis.company.listings}) }));
+  let rows = [...merged.values()].map(analysis => ({ ...analysis, company: enrichedCompany({...analysis.company, indexes: identities.get(analysis.id)?.indexes ?? [], listings: identities.get(analysis.id)?.listings ?? analysis.company.listings}) }));
   if (!force && (rows.length === 0 || rows.length < previousCount * (1 - T.publish.maxCountDrop))) {
     throw new Error(`Publish aborted: ${rows.length} companies versus ${previousCount} previously published; use --force to override`);
   }
@@ -252,7 +255,21 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     const rate = readCorpusJson<{ data: Array<{ close: number }> }>(`raw/eodhd/universe/${file}`)?.data?.[0]?.close;
     if (rate && Number.isFinite(rate) && rate > 0) fx[file.slice(3, 6)] = rate;
   }
-  const { files, unresolved } = buildOutput({ priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx, prices: readPrices(path.join(repo, "prices")) });
+  const quotes=readPrices(path.join(repo,'prices')), rate=createUsdRate({rates:fx});
+  const capShares:Record<string,number>={},capitalization:Array<ReturnType<typeof publicationCapitalization>['evidence']>=[];
+  rows=rows.map(a=>{
+    if(freeze.ids.has(a.id))return a;
+    const f=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${a.id}.json`);
+    const result=publicationCapitalization(a,readCorpusJson(`raw/eodhd/${a.id}.json`),quotes[a.id],rate(a.company.currency),f?.splits);
+    capitalization.push(result.evidence);
+    if(result.capShares)capShares[a.id]=result.capShares;
+    return result.analysis;
+  });
+  writeCorpusJson('staging/publication-capitalization.json',capitalization);
+  const priorDossiers:Record<string,Dossier>={};
+  const priorDirectory=previousDossiers??directory;
+  if(existsSync(priorDirectory))for(const file of readdirSync(priorDirectory).filter(f=>/^\d{3}\.json$/.test(f)))Object.assign(priorDossiers,JSON.parse(readFileSync(path.join(priorDirectory,file),'utf8')));
+  const { files, unresolved } = buildOutput({ previousDossiers:priorDossiers, capShares, priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx, prices: readPrices(path.join(repo, "prices")) });
   // A partial vendor response must not silently delete an existing member.
   // Membership removals are explicit in the universe; missing evidence is not.
   const previousDirectory = previousDossiers ?? directory;
@@ -265,6 +282,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     }
     if (removed.length) throw new Error(`Publish aborted: previously published members would disappear: ${removed.sort().join(', ')}`);
   }
+  writeCorpusJson('staging/price-test-freezes.json',Object.values(files).flatMap((value:any)=>value&&!Array.isArray(value)&&typeof value==='object'?Object.values(value).filter((d:any)=>d?.priceTestFreeze&&d?.tests).map((d:any)=>({id:d.id,...d.priceTestFreeze})):[]));
   writeCorpusJson('staging/unresolved-shares.json', {asOf:new Date().toISOString(),companies:unresolved});
   console.log(`Private share residual: ${unresolved.length}; quality passes: ${unresolved.filter(r=>r.qualityPass).length}`);
   const asOf = rows.map((analysis) => analysis.asOf).sort().at(-1) ?? new Date().toISOString().slice(0, 10);
@@ -280,6 +298,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     // Historical eligibility is the decision then, never today’s surviving membership.
     if(Array.isArray(data)&&file!=='history/companies.json') history[file]=data.filter((row:any)=>Array.isArray(row)&&typeof row[1]==='string'&&/^[PF]{5}$/.test(row[1]));
   }
+  writeCorpusJson('staging/retained-published-history.json',retainPublishedHistory(history,previousDossiers?path.dirname(previousDossiers):repo));
   const historyIndex=history['history/index.json'] as import('../../../lib/value/time-travel').HistoryIndex|undefined;
   if(historyIndex){
     const westernIds=new Set((history['history/companies.json'] as import('../../../lib/value/types').IndexRow[]??[]).filter(c=>c.w).map(c=>c.id));

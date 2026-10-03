@@ -1,7 +1,7 @@
 import { readCorpusJson, writeCorpusJson } from '../corpus';
 import { freeCapData, type FreeCapData } from '../download-order';
 import { currentShareInputs } from '../valuation-inputs';
-import { sameCurrency } from '../currency';
+import { sameCurrency, marketCapCurrency, currencyCode } from '../currency';
 import type { Company } from '../types';
 
 type ShareInputs = { currentShares: number | null; reportedShares: boolean; shareSource?: 'yahoo-shares'; shareAssumptions: string[] };
@@ -10,7 +10,7 @@ const missing = (): ShareInputs => ({currentShares:null,reportedShares:false,sha
 /** Reuse the current-share cap/price sanity check; publication retains its stricter 2% verification gate. */
 export function verifiedEsefShares(data: FreeCapData, capUsd: number | null, usdRate: number | null): ShareInputs {
   if (data.source !== 'Yahoo chart × verified shares' || ![data.price,data.shares,capUsd,usdRate].every(n=>typeof n==='number' && Number.isFinite(n) && n>0)) return missing();
-  const checked = currentShareInputs({General:{CurrencyCode:data.currency},SharesStats:{SharesOutstanding:data.shares},Highlights:{MarketCapitalization:capUsd! / usdRate!}},data.price,data.currency);
+  const checked = currentShareInputs({General:{CurrencyCode:data.currency},SharesStats:{SharesOutstanding:data.shares},Highlights:{MarketCapitalization:capUsd! / usdRate! / (marketCapCurrency(data.currency)!==currencyCode(data.currency)?100:1)}},data.price,data.currency);
   return checked.currentShares === null ? {...missing(),shareAssumptions:checked.shareAssumptions}
     : {...checked,shareSource:'yahoo-shares',shareAssumptions:['Share source: yahoo-shares; Yahoo reported shares pass the existing cap/price share-basis sanity check']};
 }

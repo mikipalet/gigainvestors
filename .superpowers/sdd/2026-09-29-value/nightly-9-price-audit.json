@@ -1,0 +1,4259 @@
+{
+  "priceChanges": [],
+  "quoteOnlyChanges": [],
+  "unapprovedPriceChanges": [],
+  "blankedPriceVerdicts": [],
+  "qualityChanges": [],
+  "priceTestFreezes": [
+    {
+      "id": "HAUTO.OL",
+      "asOf": "2026-10-01T09:06:41.038Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.8251703303765039
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "HAUTO.OL",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "002916.SHE",
+      "asOf": "2026-10-01T09:05:46.221Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -12.643734235737575
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "002916.SHE",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      }
+    },
+    {
+      "id": "PRU.US",
+      "asOf": "2026-10-01T19:04:07.945Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -3.5085519200868305
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "PRU.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "JKHY.US",
+      "asOf": "2026-10-01T19:03:55.544Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.25313930249206695
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "JKHY.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "BGA.AU",
+      "asOf": "2026-10-01T09:06:18.649Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -14.860491257621096
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "BGA.AU",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "LVS.US",
+      "asOf": "2026-10-01T09:06:51.134Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.20240759909968764
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "LVS.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "MB.MI",
+      "asOf": "2026-10-01T19:04:05.815Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.4260987698920635
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "MB.MI",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      }
+    },
+    {
+      "id": "2881.TW",
+      "asOf": "2026-10-01T19:03:28.031Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.48105159010387566
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "2881.TW",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "017960.KO",
+      "asOf": "2026-10-01T09:05:48.768Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -2.980450715328867
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "017960.KO",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "ZBRA.US",
+      "asOf": "2026-10-01T09:07:22.305Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.312102289194908
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "ZBRA.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "4904.TW",
+      "asOf": "2026-10-01T09:05:57.804Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.605599793109781
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "4904.TW",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "UDR.US",
+      "asOf": "2026-10-01T09:07:16.675Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.3794236115125085
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "UDR.US",
+        "reason": "Same-date or large capitalization conflict requires review"
+      }
+    },
+    {
+      "id": "EBAY.US",
+      "asOf": "2026-10-01T09:06:31.072Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.5423634287975219
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "EBAY.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "0012.HK",
+      "asOf": "2026-10-01T09:05:44.371Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.060747582493466
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "0012.HK",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "CBRE.US",
+      "asOf": "2026-10-01T19:03:46.577Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.6699322498848084
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "CBRE.US",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      }
+    },
+    {
+      "id": "IG.MI",
+      "asOf": "2026-10-01T09:06:44.029Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.871312423917963
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "IG.MI",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      }
+    },
+    {
+      "id": "KKR.US",
+      "asOf": "2026-10-01T09:06:47.942Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -4.235690580933832
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "KKR.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "FRZCF.US",
+      "asOf": "2026-10-02T00:47:46.198Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.8157990236565238
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "FRZCF.US",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      }
+    },
+    {
+      "id": "NI.US",
+      "asOf": "2026-10-01T09:06:56.482Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -3.3216222915400575
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "NI.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 18909054976,
+        "cap": 18909054743,
+        "currentShares": 479560100,
+        "quote": [
+          39.43,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 481200000,
+        "splitFactor": 1
+      }
+    },
+    {
+      "id": "8306.JP",
+      "asOf": "2026-10-01T19:03:10.292Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -3.947421616482525
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "8306.JP",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      }
+    },
+    {
+      "id": "PRU.AU",
+      "asOf": "2026-10-01T09:07:01.992Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.3110732429852545
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "PRU.AU",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "CTC-A.TO",
+      "asOf": "2026-10-01T09:06:27.144Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.7313472733377036
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "CTC-A.TO",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      }
+    },
+    {
+      "id": "600926.SHG",
+      "asOf": "2026-10-01T19:04:01.211Z",
+      "test": {
+        "key": "price",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [],
+        "metrics": {
+          "mos": 0.27741889046434376
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "600926.SHG",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 18495418516.11136,
+        "cap": 18499139170.885162,
+        "currentShares": 7249002548,
+        "valuationShares": 7581374502,
+        "quote": [
+          17.11,
+          "2026-09-30"
+        ],
+        "usdRate": 0.14915,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 7249002548,
+        "splitFactor": 1
+      }
+    },
+    {
+      "id": "9843.JP",
+      "asOf": "2026-10-01T09:06:08.237Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.16164599099158794
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "9843.JP",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      }
+    },
+    {
+      "id": "300433.SHE",
+      "asOf": "2026-10-01T09:05:55.790Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -2.240233441558643
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "300433.SHE",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "TPR.US",
+      "asOf": "2026-10-01T19:03:56.899Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.0991855727949278
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "TPR.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "PPL.US",
+      "asOf": "2026-10-01T09:07:01.807Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.4188711622715346
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "PPL.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 24683470848,
+        "cap": 24683470784.8,
+        "currentShares": 752544841,
+        "quote": [
+          32.8,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 757225000,
+        "splitFactor": 1
+      }
+    },
+    {
+      "id": "9008.JP",
+      "asOf": "2026-10-01T09:06:07.688Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.08809934468771918
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "9008.JP",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      }
+    },
+    {
+      "id": "RI.PA",
+      "asOf": "2026-10-01T09:07:04.438Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.01935671114304971
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "RI.PA",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 16618284184.9856,
+        "cap": 16618283928.79855,
+        "currentShares": 251813562,
+        "valuationShares": 251813562,
+        "quote": [
+          58.62,
+          "2026-10-02"
+        ],
+        "usdRate": 1.1258,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 253395145,
+        "splitFactor": 1
+      }
+    },
+    {
+      "id": "251270.KO",
+      "asOf": "2026-10-01T09:05:54.460Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.3149112972870589
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "251270.KO",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "MOS.US",
+      "asOf": "2026-10-01T09:06:53.792Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.053405842578252205
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "MOS.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 6698061312,
+        "cap": 6698061261.22,
+        "currentShares": 317895646,
+        "quote": [
+          21.07,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 317900000,
+        "splitFactor": 1
+      }
+    },
+    {
+      "id": "6902.JP",
+      "asOf": "2026-10-01T09:06:06.040Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.07563741444306804
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "6902.JP",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      }
+    },
+    {
+      "id": "SLC.AU",
+      "asOf": "2026-10-01T09:07:09.203Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -2.240899923163105
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "SLC.AU",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "REP.MC",
+      "asOf": "2026-10-01T09:07:04.135Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -3.647983362278678
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "REP.MC",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "TEP.LSE",
+      "asOf": "2026-10-01T19:03:05.941Z",
+      "test": {
+        "key": "price",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [],
+        "metrics": {
+          "mos": 0.34138934757503914
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "TEP.LSE",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "ASRNL.AS",
+      "asOf": "2026-10-01T19:03:19.263Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.18735646609941847
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "ASRNL.AS",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "TAH.AU",
+      "asOf": "2026-10-01T09:07:13.101Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.5580610602209555
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "TAH.AU",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "SBMO.AS",
+      "asOf": "2026-10-01T09:07:07.047Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.1300181084416938
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "SBMO.AS",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "WY.US",
+      "asOf": "2026-10-01T09:07:21.776Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.31650175814692316
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "WY.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 13311993856,
+        "cap": 13311993920,
+        "currentShares": 720736000,
+        "quote": [
+          18.47,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 721901000,
+        "splitFactor": 1
+      }
+    },
+    {
+      "id": "WSE.US",
+      "asOf": "2026-10-01T09:07:21.513Z",
+      "test": {
+        "key": "price",
+        "result": "pass",
+        "numeric": "pass",
+        "reasons": [],
+        "metrics": {
+          "mos": 0.6065604915921265
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "WSE.US",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      }
+    },
+    {
+      "id": "MAA.US",
+      "asOf": "2026-10-01T19:03:52.825Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.8391684557222239
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "MAA.US",
+        "reason": "Same-date or large capitalization conflict requires review"
+      }
+    },
+    {
+      "id": "TYL.US",
+      "asOf": "2026-10-01T19:03:56.966Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -2.4324815106054873
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "TYL.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "NBIS.US",
+      "asOf": "2026-10-01T09:06:55.530Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -14.762301755268505
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "NBIS.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      }
+    },
+    {
+      "id": "ISP.MI",
+      "asOf": "2026-10-01T19:03:08.522Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.3263116985787926
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "ISP.MI",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      }
+    },
+    {
+      "id": "REG.US",
+      "asOf": "2026-10-01T09:07:03.925Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.1957319033179026
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "REG.US",
+        "reason": "Same-date or large capitalization conflict requires review"
+      }
+    },
+    {
+      "id": "TECK-B.TO",
+      "asOf": "2026-10-01T09:07:13.503Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -1.4141205185086143
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "TECK-B.TO",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      }
+    },
+    {
+      "id": "BC.MI",
+      "asOf": "2026-10-01T09:06:17.744Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -12.347279265036494
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "BC.MI",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      }
+    },
+    {
+      "id": "BMED.MI",
+      "asOf": "2026-10-01T19:03:08.515Z",
+      "test": {
+        "key": "price",
+        "result": "fail",
+        "numeric": "fail",
+        "reasons": [],
+        "metrics": {
+          "mos": -0.003280332365894534
+        },
+        "series": {},
+        "jev": []
+      },
+      "inputEvidence": {
+        "id": "BMED.MI",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      }
+    }
+  ],
+  "priceTestFreezeCount": 48,
+  "indexDossierInconsistencies": [],
+  "original114Resolutions": {
+    "live price test retained": 48,
+    "computed from current inputs": 60,
+    "full company freeze": 6
+  },
+  "original114": [
+    {
+      "id": "HAUTO.OL",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "HAUTO.OL",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:41.038Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.8251703303765039
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "TXT.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "TXT.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 13287709696,
+        "cap": 13287709207.42,
+        "currentShares": 171986917,
+        "valuationShares": 180258000,
+        "quote": [
+          77.26,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 171937000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "FER.AS",
+      "live": null,
+      "nightly6": "fail",
+      "nightly8": "fail",
+      "flags": [],
+      "nightly9": null,
+      "resolution": "full company freeze",
+      "inputEvidence": null,
+      "priceTestFreeze": null
+    },
+    {
+      "id": "6618.HK",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "6618.HK",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 14634206497.1776,
+        "cap": 14080253541.929338,
+        "currentShares": 3189531011,
+        "valuationShares": 3196251000,
+        "quote": [
+          34.64,
+          "2026-10-02"
+        ],
+        "usdRate": 0.12744,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 3204362000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "601838.SHG",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "601838.SHG",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 12204604574.9248,
+        "cap": 12207060449.938295,
+        "currentShares": 4238435356,
+        "valuationShares": 4326870358,
+        "quote": [
+          19.31,
+          "2026-09-30"
+        ],
+        "usdRate": 0.14915,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 4238435356,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "WAF.AU",
+      "live": "fail",
+      "nightly6": "fail",
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "WAF.AU",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 2737215386.5983996,
+        "cap": 2791570800.7146487,
+        "currentShares": 1144953884,
+        "valuationShares": 1147424500,
+        "quote": [
+          3.51,
+          "2026-10-02"
+        ],
+        "usdRate": 0.69463,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 1150260885,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "K.TO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "K.TO",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 28588353703.1168,
+        "cap": 28588355565.26844,
+        "currentShares": 1186240789,
+        "valuationShares": 1224607000,
+        "quote": [
+          34.35,
+          "2026-10-02"
+        ],
+        "usdRate": 0.7016,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 1194175000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "002916.SHE",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "002916.SHE",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:05:46.221Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -12.643734235737575
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "002736.SHE",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "002736.SHE",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 14967037257.3184,
+        "cap": 14970048578.5102,
+        "currentShares": 10241743060,
+        "valuationShares": 10963129744,
+        "quote": [
+          9.8,
+          "2026-09-30"
+        ],
+        "usdRate": 0.14915,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 10241743060,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "PRU.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "PRU.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:04:07.945Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -3.5085519200868305
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "JKHY.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "JKHY.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:55.544Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.25313930249206695
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "030200.KO",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "030200.KO",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 9083589519.256702,
+        "cap": 9083589380.49337,
+        "currentShares": 238131808,
+        "valuationShares": 243328367,
+        "quote": [
+          51900,
+          "2026-10-02"
+        ],
+        "usdRate": 0.0007349752704613,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 238631808,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "002812.SHE",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "002812.SHE",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 6659670301.73696,
+        "cap": 6661010028.235948,
+        "currentShares": 981318518,
+        "valuationShares": 950322266,
+        "quote": [
+          45.51,
+          "2026-09-30"
+        ],
+        "usdRate": 0.14915,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 982131897,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "008930.KO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "008930.KO",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 2621347758.3229175,
+        "cap": 2753686348.883678,
+        "currentShares": 67751141,
+        "valuationShares": 67756129,
+        "quote": [
+          55300,
+          "2026-10-02"
+        ],
+        "usdRate": 0.0007349752704613,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 67713706,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "601009.SHG",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "601009.SHG",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 22086986571.44832,
+        "cap": 22091432134.009167,
+        "currentShares": 12363567245,
+        "valuationShares": 12980410119,
+        "quote": [
+          11.98,
+          "2026-09-30"
+        ],
+        "usdRate": 0.14915,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 12363567245,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "BGA.AU",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "BGA.AU",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:18.649Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -14.860491257621096
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "H4W.F",
+      "live": null,
+      "nightly6": "fail",
+      "nightly8": "fail",
+      "flags": [],
+      "nightly9": null,
+      "resolution": "full company freeze",
+      "inputEvidence": null,
+      "priceTestFreeze": null
+    },
+    {
+      "id": "LVS.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "LVS.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:51.134Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.20240759909968764
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "0968.HK",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "0968.HK",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 2269812703.8464003,
+        "cap": 2182340771.80425,
+        "currentShares": 9133043615,
+        "valuationShares": 9094046000,
+        "quote": [
+          1.875,
+          "2026-10-02"
+        ],
+        "usdRate": 0.12744,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 9147044000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "ULTA.US",
+      "live": null,
+      "nightly6": "fail",
+      "nightly8": "fail",
+      "flags": [],
+      "nightly9": null,
+      "resolution": "full company freeze",
+      "inputEvidence": null,
+      "priceTestFreeze": null
+    },
+    {
+      "id": "MB.MI",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "MB.MI",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:04:05.815Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.4260987698920635
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "2313.HK",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "2313.HK",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 6673129500.4672,
+        "cap": 6507897833.171966,
+        "currentShares": 1502835997,
+        "valuationShares": 1503222397,
+        "quote": [
+          33.98,
+          "2026-10-02"
+        ],
+        "usdRate": 0.12744,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 1502933000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "2881.TW",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "2881.TW",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:28.031Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.48105159010387566
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "017960.KO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "017960.KO",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:05:48.768Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -2.980450715328867
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "XYL.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "XYL.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 23766622208,
+        "cap": 23766622593.480003,
+        "currentShares": 233486812,
+        "valuationShares": 243994000,
+        "quote": [
+          101.79,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 236574000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "AIZ.US",
+      "live": null,
+      "nightly6": "fail",
+      "nightly8": "fail",
+      "flags": [],
+      "nightly9": null,
+      "resolution": "full company freeze",
+      "inputEvidence": null,
+      "priceTestFreeze": null
+    },
+    {
+      "id": "QGEN.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "QGEN.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 9240651776,
+        "cap": 9240651250,
+        "currentShares": 206495000,
+        "valuationShares": 218880000,
+        "quote": [
+          44.75,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 207828000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "GRUMAB.MX",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "GRUMAB.MX",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 4299143861.20704,
+        "cap": 4380136079.278936,
+        "currentShares": 335528889,
+        "valuationShares": 352243000,
+        "quote": [
+          237.31,
+          "2026-10-02"
+        ],
+        "usdRate": 0.05501,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 336207985,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "2880.TW",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "2880.TW",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 19932314506.381107,
+        "cap": 19770489214.315506,
+        "currentShares": 14056134650,
+        "valuationShares": 13878140000,
+        "quote": [
+          44.85,
+          "2026-10-02"
+        ],
+        "usdRate": 0.031360939145088,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 14212314000,
+        "splitFactor": 1.01
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "ZBRA.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "ZBRA.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:22.305Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.312102289194908
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "192820.KO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "192820.KO",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 2190700463.8760214,
+        "cap": 2251470869.193373,
+        "currentShares": 11345662,
+        "valuationShares": 11345456,
+        "quote": [
+          270000,
+          "2026-10-02"
+        ],
+        "usdRate": 0.0007349752704613,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 11345662,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "PPG.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "PPG.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 23374845952,
+        "cap": 23374845000,
+        "currentShares": 222300000,
+        "valuationShares": 227100000,
+        "quote": [
+          105.15,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 223900000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "WST.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "WST.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 25685745664,
+        "cap": 25685745614.760002,
+        "currentShares": 70375762,
+        "valuationShares": 72700000,
+        "quote": [
+          364.98,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 71300000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "MIO.IR",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "MIO.IR",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 204217495.66799998,
+        "cap": 204517233.38486698,
+        "currentShares": 212472413,
+        "valuationShares": 219582414,
+        "quote": [
+          0.855,
+          "2026-10-02"
+        ],
+        "usdRate": 1.1258,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 212472413,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "4904.TW",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "4904.TW",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:05:57.804Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.605599793109781
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "UDR.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "UDR.US",
+        "reason": "Same-date or large capitalization conflict requires review"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:16.675Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.3794236115125085
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "EBAY.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "EBAY.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:31.072Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.5423634287975219
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "MRU.TO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "MRU.TO",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 13080347874.0992,
+        "cap": 13080347676.248,
+        "currentShares": 209267000,
+        "valuationShares": 214600000,
+        "quote": [
+          89.09,
+          "2026-10-02"
+        ],
+        "usdRate": 0.7016,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 211900000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "0012.HK",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "0012.HK",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:05:44.371Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.060747582493466
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "SWKS.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "SWKS.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 12789019648,
+        "cap": 12789019033.89,
+        "currentShares": 150405963,
+        "valuationShares": 155100000,
+        "quote": [
+          85.03,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 150800000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "CBRE.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "CBRE.US",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:46.577Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.6699322498848084
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "8253.JP",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [],
+      "nightly9": "pass",
+      "resolution": "full company freeze",
+      "inputEvidence": null,
+      "priceTestFreeze": null
+    },
+    {
+      "id": "IG.MI",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "IG.MI",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:44.029Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.871312423917963
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "KKR.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "KKR.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:47.942Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -4.235690580933832
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "042660.KO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "share count corrected to current 306357807"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "042660.KO",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 17521197178.836052,
+        "cap": 17743034470.151154,
+        "currentShares": 306357807,
+        "valuationShares": 306357807,
+        "quote": [
+          78800,
+          "2026-10-02"
+        ],
+        "usdRate": 0.0007349752704613,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 306397187,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "FRZCF.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "FRZCF.US",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-02T00:47:46.198Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.8157990236565238
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "CARR.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "CARR.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 45436796928,
+        "cap": 45436797141.84,
+        "currentShares": 824325057,
+        "valuationShares": 846700000,
+        "quote": [
+          55.12,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 839600000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "NI.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "NI.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 18909054976,
+        "cap": 18909054743,
+        "currentShares": 479560100,
+        "quote": [
+          39.43,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 481200000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:56.482Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -3.3216222915400575
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "8306.JP",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "8306.JP",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:10.292Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -3.947421616482525
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "PRU.AU",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "PRU.AU",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:01.992Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.3110732429852545
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "CTC-A.TO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "CTC-A.TO",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:27.144Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.7313472733377036
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "600926.SHG",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "600926.SHG",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 18495418516.11136,
+        "cap": 18499139170.885162,
+        "currentShares": 7249002548,
+        "valuationShares": 7581374502,
+        "quote": [
+          17.11,
+          "2026-09-30"
+        ],
+        "usdRate": 0.14915,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 7249002548,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:04:01.211Z",
+        "test": {
+          "key": "price",
+          "result": "pass",
+          "numeric": "pass",
+          "reasons": [],
+          "metrics": {
+            "mos": 0.27741889046434376
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "9843.JP",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "9843.JP",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:08.237Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.16164599099158794
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "L.TO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "L.TO",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 50397453693.7472,
+        "cap": 50397453198.754364,
+        "currentShares": 1155601253,
+        "valuationShares": 1188000000,
+        "quote": [
+          62.16,
+          "2026-10-02"
+        ],
+        "usdRate": 0.7016,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 1169500000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "MBG.XETRA",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "MBG.XETRA",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 42814104974.95039,
+        "cap": 42814108967.8534,
+        "currentShares": 957330201,
+        "valuationShares": 998315000,
+        "quote": [
+          39.725,
+          "2026-10-02"
+        ],
+        "usdRate": 1.1258,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 957330201,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "300433.SHE",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "300433.SHE",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:05:55.790Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -2.240233441558643
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "329180.KO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "share count corrected to current 104932774"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "329180.KO",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 33242170458.810177,
+        "cap": 32854395423.0853,
+        "currentShares": 104932774,
+        "valuationShares": 104932774,
+        "quote": [
+          426000,
+          "2026-10-02"
+        ],
+        "usdRate": 0.0007349752704613,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 104932774,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "NOS.LS",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "NOS.LS",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 3016255967.8719997,
+        "cap": 3098580495.330216,
+        "currentShares": 512539396,
+        "valuationShares": 511735040,
+        "quote": [
+          5.37,
+          "2026-10-02"
+        ],
+        "usdRate": 1.1258,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 512539396,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "TPR.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "TPR.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:56.899Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.0991855727949278
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "CMCSA.US",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "CMCSA.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 76544090112,
+        "cap": 76340375710.86,
+        "currentShares": 3539192198,
+        "valuationShares": 3636000000,
+        "quote": [
+          21.57,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 3570000000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "VICI.US",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "VICI.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 24939405312,
+        "cap": 24939406779.3,
+        "currentShares": 1101077562,
+        "valuationShares": 1062693062,
+        "quote": [
+          22.65,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 1090236611,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "PPL.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "PPL.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 24683470848,
+        "cap": 24683470784.8,
+        "currentShares": 752544841,
+        "quote": [
+          32.8,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 757225000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:01.807Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.4188711622715346
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "SUL.AU",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "SUL.AU",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 1987378116.4671998,
+        "cap": 2025138274.48245,
+        "currentShares": 225826500,
+        "valuationShares": 227136300,
+        "quote": [
+          12.91,
+          "2026-10-02"
+        ],
+        "usdRate": 0.69463,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 227136261,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "STB.OL",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "STB.OL",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 8331772473.50784,
+        "cap": 8331772417.8265505,
+        "currentShares": 416252497,
+        "valuationShares": 429000000,
+        "quote": [
+          192.5,
+          "2026-10-02"
+        ],
+        "usdRate": 0.10398,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 418647469,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "0700.HK",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "0700.HK",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 484428686268.8256,
+        "cap": 483472417198.4142,
+        "currentShares": 9006946367,
+        "valuationShares": 9244000000,
+        "quote": [
+          421.2,
+          "2026-10-02"
+        ],
+        "usdRate": 0.12744,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 9153000000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "9008.JP",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "9008.JP",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:07.688Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.08809934468771918
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "0027.HK",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "0027.HK",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 16476123130.675201,
+        "cap": 16910140221.019585,
+        "currentShares": 4379240712,
+        "valuationShares": 4381333435,
+        "quote": [
+          30.3,
+          "2026-10-02"
+        ],
+        "usdRate": 0.12744,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 4393816000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "PPT.AU",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "PPT.AU",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 1349231347.7888,
+        "cap": 1358127819.050587,
+        "currentShares": 115691221,
+        "valuationShares": 117615400,
+        "quote": [
+          16.9,
+          "2026-10-02"
+        ],
+        "usdRate": 0.69463,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 117615421,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "DIS.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "DIS.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 176450125824,
+        "cap": 176450134515.38,
+        "currentShares": 1726686902,
+        "valuationShares": 1793000000,
+        "quote": [
+          102.19,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 1743000000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "EMBJ.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "EMBJ.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 13384242176,
+        "cap": 13384242614.849998,
+        "currentShares": 177958285,
+        "valuationShares": 183157400,
+        "quote": [
+          75.21,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 177958250,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "RI.PA",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "RI.PA",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 16618284184.9856,
+        "cap": 16618283928.79855,
+        "currentShares": 251813562,
+        "valuationShares": 251813562,
+        "quote": [
+          58.62,
+          "2026-10-02"
+        ],
+        "usdRate": 1.1258,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 253395145,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:04.438Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.01935671114304971
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "EL.PA",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "EL.PA",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 73747158437.888,
+        "cap": 73747153941.44281,
+        "currentShares": 458728595,
+        "valuationShares": 469256000,
+        "quote": [
+          142.8,
+          "2026-10-02"
+        ],
+        "usdRate": 1.1258,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 464428193,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "RWC.AU",
+      "live": "fail",
+      "nightly6": "fail",
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "RWC.AU",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 2451811877.312,
+        "cap": 2462952305.1000137,
+        "currentShares": 748038799,
+        "valuationShares": 760579848,
+        "quote": [
+          4.74,
+          "2026-10-02"
+        ],
+        "usdRate": 0.69463,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 745255470,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "000001.SHE",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "000001.SHE",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 33481386769.77664,
+        "cap": 33488123530.11077,
+        "currentShares": 19405918198,
+        "valuationShares": 20595652174,
+        "quote": [
+          11.57,
+          "2026-09-30"
+        ],
+        "usdRate": 0.14915,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 19405918198,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "SCHW.US",
+      "live": null,
+      "nightly6": "fail",
+      "nightly8": "fail",
+      "flags": [],
+      "nightly9": null,
+      "resolution": "full company freeze",
+      "inputEvidence": null,
+      "priceTestFreeze": null
+    },
+    {
+      "id": "251270.KO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "251270.KO",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:05:54.460Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.3149112972870589
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "PODD.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "PODD.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 9133254656,
+        "cap": 9133254466.31,
+        "currentShares": 69354199,
+        "valuationShares": 71886000,
+        "quote": [
+          131.69,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 69403000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "IR.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "IR.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 29515116544,
+        "cap": 29515116564.03,
+        "currentShares": 387999429,
+        "valuationShares": 401000000,
+        "quote": [
+          76.07,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 392040816,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "033780.KO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "033780.KO",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 13314700319.901098,
+        "cap": 13497137069.832495,
+        "currentShares": 103810456,
+        "valuationShares": 106660665,
+        "quote": [
+          176900,
+          "2026-10-02"
+        ],
+        "usdRate": 0.0007349752704613,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 103810456,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "MOS.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "MOS.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 6698061312,
+        "cap": 6698061261.22,
+        "currentShares": 317895646,
+        "quote": [
+          21.07,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 317900000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:53.792Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.053405842578252205
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "6902.JP",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "6902.JP",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:06.040Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.07563741444306804
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "MTS.AU",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "MTS.AU",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 2148995787.3792,
+        "cap": 2207679035.46267,
+        "currentShares": 1099726157,
+        "valuationShares": 1106045500,
+        "quote": [
+          2.89,
+          "2026-10-02"
+        ],
+        "usdRate": 0.69463,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-04-30",
+        "balanceShares": 1106045495,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "TMUS.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "TMUS.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 175531982848,
+        "cap": 175531982751.31998,
+        "currentShares": 1072671613,
+        "valuationShares": 1117389000,
+        "quote": [
+          163.64,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 1082410000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "2388.HK",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "2388.HK",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 70406920834.2528,
+        "cap": 68312932436.921326,
+        "currentShares": 10572780266,
+        "valuationShares": 10572780266,
+        "quote": [
+          50.7,
+          "2026-10-02"
+        ],
+        "usdRate": 0.12744,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 10572780000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "SLC.AU",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "SLC.AU",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:09.203Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -2.240899923163105
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "REP.MC",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "REP.MC",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:04.135Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -3.647983362278678
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "HUB.AU",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "HUB.AU",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 3591436427.2896,
+        "cap": 3692731741.8253255,
+        "currentShares": 81773777,
+        "valuationShares": 81777900,
+        "quote": [
+          65.01,
+          "2026-10-02"
+        ],
+        "usdRate": 0.69463,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 81777886,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "TEP.LSE",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "current share sources disagree by more than 1.5x; share count not corrected",
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "TEP.LSE",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:05.941Z",
+        "test": {
+          "key": "price",
+          "result": "pass",
+          "numeric": "pass",
+          "reasons": [],
+          "metrics": {
+            "mos": 0.34138934757503914
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "064350.KO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "064350.KO",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 9014528470.09126,
+        "cap": 9345267255.865429,
+        "currentShares": 109142293,
+        "valuationShares": 109135013,
+        "quote": [
+          116500,
+          "2026-10-02"
+        ],
+        "usdRate": 0.0007349752704613,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 109142293,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "ASRNL.AS",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "ASRNL.AS",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:19.263Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.18735646609941847
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "TAH.AU",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "TAH.AU",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:13.101Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.5580610602209555
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "SBMO.AS",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "SBMO.AS",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:07.047Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.1300181084416938
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "PSSA3.SA",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "PSSA3.SA",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 5866228396.032,
+        "cap": 6070858482.391174,
+        "currentShares": 640992323,
+        "valuationShares": 640360000,
+        "quote": [
+          49.47,
+          "2026-10-02"
+        ],
+        "usdRate": 0.19145,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 649539000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "002142.SHE",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "002142.SHE",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 34888894193.33632,
+        "cap": 34895912825.587524,
+        "currentShares": 6603590792,
+        "valuationShares": 6837529138,
+        "quote": [
+          35.43,
+          "2026-09-30"
+        ],
+        "usdRate": 0.14915,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 6603590792,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "WY.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "WY.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 13311993856,
+        "cap": 13311993920,
+        "currentShares": 720736000,
+        "quote": [
+          18.47,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-03",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 721901000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:21.776Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.31650175814692316
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "WSE.US",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "WSE.US",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:21.513Z",
+        "test": {
+          "key": "price",
+          "result": "pass",
+          "numeric": "pass",
+          "reasons": [],
+          "metrics": {
+            "mos": 0.6065604915921265
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "TDY.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "TDY.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 28609329152,
+        "cap": 28609330705.41,
+        "currentShares": 46355673,
+        "valuationShares": 47400000,
+        "quote": [
+          617.17,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 46900000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "MAA.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "MAA.US",
+        "reason": "Same-date or large capitalization conflict requires review"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:52.825Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.8391684557222239
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "TYL.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "TYL.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:56.966Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -2.4324815106054873
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "NBIS.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "NBIS.US",
+        "reason": "Current and dated balance shares do not reconcile within 2%"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:55.530Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -14.762301755268505
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "3034.TW",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "3034.TW",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 10482515653.652473,
+        "cap": 10298366162.129696,
+        "currentShares": 611512000,
+        "valuationShares": 607908000,
+        "quote": [
+          537,
+          "2026-10-02"
+        ],
+        "usdRate": 0.031360939145088,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 608746000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "600919.SHG",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "600919.SHG",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 33878484482.785282,
+        "cap": 33885298540.466854,
+        "currentShares": 18351324463,
+        "valuationShares": 19602843182,
+        "quote": [
+          12.38,
+          "2026-09-30"
+        ],
+        "usdRate": 0.14915,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 18351324463,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "KEY.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "KEY.US",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 21427941376,
+        "cap": 21427941364.32,
+        "currentShares": 1067128554,
+        "valuationShares": 1107994000,
+        "quote": [
+          20.08,
+          "2026-10-02"
+        ],
+        "usdRate": 1,
+        "updated": "2026-10-02",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 1071229000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "1209.HK",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "1209.HK",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 11112557037.9776,
+        "cap": 10814985324,
+        "currentShares": 2282500000,
+        "valuationShares": 2282500000,
+        "quote": [
+          37.18,
+          "2026-10-02"
+        ],
+        "usdRate": 0.12744,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 2282500000,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "ISP.MI",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "ISP.MI",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:08.522Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.3263116985787926
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "REG.US",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "REG.US",
+        "reason": "Same-date or large capitalization conflict requires review"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:03.925Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.1957319033179026
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "UPR.IR",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "UPR.IR",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 1184709849.072,
+        "cap": 1148458966.625412,
+        "currentShares": 259574298,
+        "valuationShares": 261824000,
+        "quote": [
+          3.93,
+          "2026-10-02"
+        ],
+        "usdRate": 1.1258,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 259574298,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "SGM.AU",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "SGM.AU",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 3174787966.2591996,
+        "cap": 3228121652.5468364,
+        "currentShares": 193232991,
+        "valuationShares": 195406100,
+        "quote": [
+          24.05,
+          "2026-10-02"
+        ],
+        "usdRate": 0.69463,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 195406093,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "035250.KO",
+      "live": "pass",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "pass",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "035250.KO",
+        "reason": "Current issuer shares replace annual diluted shares in cap check",
+        "priorCap": 2076402186.4896162,
+        "cap": 2081589213.743764,
+        "currentShares": 198193804,
+        "valuationShares": 202412526,
+        "quote": [
+          14290,
+          "2026-10-02"
+        ],
+        "usdRate": 0.0007349752704613,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 198193804,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "TECK-B.TO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "TECK-B.TO",
+        "reason": "ADR or class-share basis requires explicit reconciliation"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:07:13.503Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -1.4141205185086143
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "BC.MI",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "BC.MI",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T09:06:17.744Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -12.347279265036494
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    },
+    {
+      "id": "PKF1.F",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "PKF1.F",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 3239779435.776,
+        "cap": 3032671465.817136,
+        "currentShares": 680250602,
+        "valuationShares": 681449782,
+        "quote": [
+          3.96,
+          "2026-10-02"
+        ],
+        "usdRate": 1.1258,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 680228994,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "032830.KO",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "computed from current inputs",
+      "inputEvidence": {
+        "id": "032830.KO",
+        "reason": "Dated vendor cap refreshed at current quote",
+        "priorCap": 37310338851.65858,
+        "cap": 38143093289.66686,
+        "currentShares": 179574779,
+        "valuationShares": 179572442,
+        "quote": [
+          289000,
+          "2026-10-02"
+        ],
+        "usdRate": 0.0007349752704613,
+        "updated": "2026-10-01",
+        "balanceDate": "2026-06-30",
+        "balanceShares": 179574779,
+        "splitFactor": 1
+      },
+      "priceTestFreeze": null
+    },
+    {
+      "id": "BMED.MI",
+      "live": "fail",
+      "nightly6": null,
+      "nightly8": null,
+      "flags": [
+        "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+      ],
+      "nightly9": "fail",
+      "resolution": "live price test retained",
+      "inputEvidence": {
+        "id": "BMED.MI",
+        "reason": "Current listing share/quote/FX evidence unavailable"
+      },
+      "priceTestFreeze": {
+        "asOf": "2026-10-01T19:03:08.515Z",
+        "test": {
+          "key": "price",
+          "result": "fail",
+          "numeric": "fail",
+          "reasons": [],
+          "metrics": {
+            "mos": -0.003280332365894534
+          },
+          "series": {},
+          "jev": []
+        }
+      }
+    }
+  ]
+}

@@ -7,11 +7,12 @@ import type { Analysis, TestOutcome } from './types';
 const privateWording = /verif(?:y|ied|ication)|\bchecking\b|being checked|share sources disagree|share count (?:not )?corrected/i;
 export const gapWording = /not enough (?:evidence|data)|not reported|unavailable|\bunclear\b|not tested|cannot judge|evidence incomplete|not supplied|not available|no data|\bmissing\b|informational only|available (?:financial )?evidence|no (?:filing )?extracts? supplied/i;
 const publicText=(s:string)=>!privateWording.test(s)&&!gapWording.test(s);
-export function publicAnalysis<T extends Analysis>(analysis:T):T {
+export function publicAnalysis<T extends Analysis & {b?:boolean}>(analysis:T):T {
  const {dataQualityFlags,...rest}=analysis;
  const researched=researchCoverage(analysis);
  const short=shortHistory(analysis),hideValue=short||Boolean(dataQualityFlags?.length);
  const tests=Object.fromEntries(Object.entries(analysis.tests).flatMap(([key,test]):Array<[string,TestOutcome]>=>{
+  if(key==='price'&&analysis.priceTestFreeze)return [[key,analysis.priceTestFreeze.test]];
   if(key==='price'&&(hideValue||test.result==='unclear'))return [];
   if(short)return [[key,{key:test.key,result:'na',numeric:'na',metrics:{},series:{},reasons:[],jev:[]}]];
   return [[key,{...test,...(!researched?{judgement:undefined}:{}),metrics:Object.fromEntries(Object.entries(test.metrics).filter(([,v])=>v!==null&&Number.isFinite(v))),
@@ -20,7 +21,7 @@ export function publicAnalysis<T extends Analysis>(analysis:T):T {
   }]];
  }));
  return {...rest,judgement:researched?rest.judgement:undefined,businessOverview:researched?rest.businessOverview:undefined,businessDepth:researched?publicBusiness(analysis.businessDepth,analysis):undefined,...(analysis.company?{company:{...analysis.company,description:analysis.company.description&&gapWording.test(analysis.company.description)?null:analysis.company.description,about:analysis.company.about&&gapWording.test(analysis.company.about)?null:analysis.company.about}}:{}),events:analysis.events?.filter(e=>publicText(e.note)),status:short?'insufficient_data':rest.status,tests,
-  ...(hideValue?{valuation:null,valuationReason:null,valueHistory:[],b:false}:{
+  ...(hideValue?{valuation:null,valuationReason:null,valueHistory:[],b:analysis.priceTestFreeze?analysis.b:false}:{
    valuation:analysis.valuation?{...analysis.valuation,assumptions:analysis.valuation.assumptions.filter(publicText),bondFlags:analysis.valuation.bondFlags?.filter(publicText)}:null,
    valuationReason:null,
   }),

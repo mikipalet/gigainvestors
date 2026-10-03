@@ -19,6 +19,7 @@ export function refreshPublishedBuyPrices(repo: string): void {
   if (!meta.funnel) return;
   const prices = readPrices(path.join(repo, 'prices'));
   const files: Record<string, unknown> = {};
+  const priorShards=new Map<string,Record<string,Dossier>>();
   const decisions = new Map<string, ReturnType<typeof publishedBuyPrice>>();
   const updateGate = (population: FunnelCounts, rows: IndexRow[]) => {
     const gate = population.gates.find(g => g.key === 'price');
@@ -36,7 +37,16 @@ export function refreshPublishedBuyPrices(repo: string): void {
   for (const file of readdirSync(index).filter(f => /^[A-Z]{2}\.json$/.test(f))) {
     const rows: IndexRow[] = JSON.parse(readFileSync(path.join(index, file), 'utf8'));
     for (const row of rows) {
-      const decision = publishedBuyPrice(row, prices[row.id]);
+      let decision = publishedBuyPrice(row, prices[row.id]);
+      if(decision.result==='unclear'&&!row.priceTestFreeze){
+        const shard=shardOf(row.id),file=path.join(repo,'dossiers',`${shard}.json`);
+        if(!priorShards.has(shard))priorShards.set(shard,existsSync(file)?JSON.parse(readFileSync(file,'utf8')):{});
+        const prior=priorShards.get(shard)![row.id];
+        if(prior?.tests.price&&['pass','fail'].includes(prior.tests.price.result)){
+          row.priceTestFreeze=prior.priceTestFreeze??{asOf:prior.asOf,test:prior.tests.price};
+          decision={...publishedBuyPrice(row,prices[row.id]),dataQualityFlags:decision.dataQualityFlags};
+        }
+      }
       row.b = decision.b;
       delete row.dataQualityFlags;
       if(decision.dataQualityFlags.length){row.v=null;row.buyReturnInputs=null;}
@@ -67,9 +77,10 @@ export function refreshPublishedBuyPrices(repo: string): void {
     for (const dossier of Object.values(dossiers)) {
       const p = decisions.get(dossier.id);
       if (!p) continue;
+      dossier.priceTestFreeze=byId.get(dossier.id)?.priceTestFreeze;
       dossier.b = p.b;
       dossier.dataQualityFlags = p.dataQualityFlags;
-      dossier.tests.price = { key: 'price', result: p.result, numeric: p.result, reasons: p.mos === null ? ['Comparable price or valuation unavailable'] : [], metrics: { mos: p.mos }, series: {}, jev: [] };
+      dossier.tests.price = dossier.priceTestFreeze?.test ?? { key: 'price', result: p.result, numeric: p.result, reasons: p.mos === null ? ['Comparable price or valuation unavailable'] : [], metrics: { mos: p.mos }, series: {}, jev: [] };
       dossiers[dossier.id]=publicAnalysis(dossier);
     }
     files[file] = dossiers;

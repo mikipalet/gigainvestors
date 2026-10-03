@@ -1,0 +1,4214 @@
+[
+  {
+    "id": "HAUTO.OL",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      191.5,
+      "2026-10-02"
+    ],
+    "currency": "NOK",
+    "cap": 3916264166.44096,
+    "overlayCap": 3916264166.44096,
+    "vendorCap": 37721673728,
+    "vendorCurrency": "NOK",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 199269288,
+    "valuationShares": 191014622,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 190766100,
+      "sharesOutstanding": 190769288,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "TXT.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      77.26,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 13287709696,
+    "overlayCap": 13287709696,
+    "vendorCap": 13287709696,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 171986917,
+    "valuationShares": 180258000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 180258000,
+      "sharesOutstanding": 180258000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2007-08-27",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "FER.AS",
+    "flags": [],
+    "quote": [
+      48.029996274693715,
+      "2026-10-02",
+      "seed"
+    ],
+    "currency": "EUR",
+    "cap": 38967225696.256,
+    "overlayCap": 38967225696.256,
+    "vendorCap": 34612920320,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 720652155,
+    "valuationShares": 718716000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-09-30",
+      "dilutedShares": 720626200,
+      "sharesOutstanding": 720626181,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "6618.HK",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      34.64,
+      "2026-10-02"
+    ],
+    "currency": "HKD",
+    "cap": 14634206497.1776,
+    "overlayCap": 14634206497.1776,
+    "vendorCap": 114823118848,
+    "vendorCurrency": "HKD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 3189531011,
+    "valuationShares": 3196251000,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 3202719000,
+      "sharesOutstanding": 3196251000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "601838.SHG",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      19.31,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "cap": 12204604574.9248,
+    "overlayCap": 12204604574.9248,
+    "vendorCap": 81844183040,
+    "vendorCurrency": "CNY",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 4238435356,
+    "valuationShares": 4326870358,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 4238435000.0000005,
+      "sharesOutstanding": 4238435356,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "WAF.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      3.51,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 2737215386.5983996,
+    "overlayCap": 2737215386.5983996,
+    "vendorCap": 3950090752,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 1144953884,
+    "valuationShares": 1147424500,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 1147424500,
+      "sharesOutstanding": 1147820978,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "K.TO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      34.35,
+      "2026-10-02"
+    ],
+    "currency": "CAD",
+    "cap": 28588353703.1168,
+    "overlayCap": 28588353703.1168,
+    "vendorCap": 40747368448,
+    "vendorCurrency": "CAD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 1186240789,
+    "valuationShares": 1224607000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 1208666700,
+      "sharesOutstanding": 1224607000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2003-02-03",
+        "factor": 0.3333333333333333
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "002916.SHE",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      373.01,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "cap": 37888701560.25856,
+    "overlayCap": 37888701560.25856,
+    "vendorCap": 254081957888,
+    "vendorCurrency": "CNY",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 681166595,
+    "valuationShares": 666740800,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 666740800,
+      "sharesOutstanding": 667156446,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2025-05-29",
+        "factor": 1.3
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "002736.SHE",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      9.8,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "cap": 14967037257.3184,
+    "overlayCap": 14967037257.3184,
+    "vendorCap": 100369080320,
+    "vendorCurrency": "CNY",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 10241743060,
+    "valuationShares": 10963129744,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 10241743000,
+      "sharesOutstanding": 10241743060,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "PRU.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      112.6,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 38847000576,
+    "overlayCap": 38847000576,
+    "vendorCap": 38847000576,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 345000000,
+    "valuationShares": 353700000,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 349921600,
+      "sharesOutstanding": 349922000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "JKHY.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      142.54,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 9993850880,
+    "overlayCap": 9993850880,
+    "vendorCap": 9993850880,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 70112608,
+    "valuationShares": 72043000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 72043000,
+      "sharesOutstanding": 72043000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2001-03-05",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "030200.KO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      51900,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 9083589519.256702,
+    "overlayCap": 9083589519.256702,
+    "vendorCap": 12359041024000,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 238131808,
+    "valuationShares": 243328367,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 241095063,
+      "sharesOutstanding": 241095063,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "002812.SHE",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      45.51,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "cap": 6659670301.73696,
+    "overlayCap": 6659670301.73696,
+    "vendorCap": 44659806208,
+    "vendorCurrency": "CNY",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 981318518,
+    "valuationShares": 950322266,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 966423600,
+      "sharesOutstanding": 982220137,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2019-07-09",
+        "factor": 1.7
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "008930.KO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      55300,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 2621347758.3229175,
+    "overlayCap": 2621347758.3229175,
+    "vendorCap": 3570485166080,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 67751141,
+    "valuationShares": 67756129,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 67713706,
+      "sharesOutstanding": 67713706,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2022-12-28",
+        "factor": 1.02
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "601009.SHG",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      11.98,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "cap": 22086986571.44832,
+    "overlayCap": 22086986571.44832,
+    "vendorCap": 148115521536,
+    "vendorCurrency": "CNY",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 12363567245,
+    "valuationShares": 12980410119,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 12216970000,
+      "sharesOutstanding": 12363567245,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2017-07-18",
+        "factor": 1.4
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "BGA.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      6.27,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 1295890119.008,
+    "overlayCap": 1295890119.008,
+    "vendorCap": 1870106240,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 305572912,
+    "valuationShares": 311968900,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 311968900,
+      "sharesOutstanding": 307307456,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "H4W.F",
+    "flags": [],
+    "quote": [
+      49.94,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 16452305887.8464,
+    "overlayCap": 16452305887.8464,
+    "vendorCap": 14613879808,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 292628776,
+    "valuationShares": 294000000,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 295700092,
+      "sharesOutstanding": 295700092,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "LVS.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      36.23,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 23466213376,
+    "overlayCap": 23466213376,
+    "vendorCap": 23466213376,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 647701184,
+    "valuationShares": 693000000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 678000000,
+      "sharesOutstanding": 693000000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "0968.HK",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      1.875,
+      "2026-10-02"
+    ],
+    "currency": "HKD",
+    "cap": 2269812703.8464003,
+    "overlayCap": 2269812703.8464003,
+    "vendorCap": 17809436672,
+    "vendorCurrency": "HKD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 9133043615,
+    "valuationShares": 9094046000,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 9109645000,
+      "sharesOutstanding": 9094046000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2017-05-05",
+        "factor": 1.0068085106382978
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "ULTA.US",
+    "flags": [],
+    "quote": [
+      543.69,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 23246809088,
+    "overlayCap": 23246809088,
+    "vendorCap": 23246809088,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 42757471,
+    "valuationShares": 44991000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+      "durable compounder: winsorised ten-year per-share owner-earnings CAGR capped at 12%, fading to 3% over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-01-31",
+      "dilutedShares": 43513000,
+      "sharesOutstanding": 44991000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {
+      "status": "verified",
+      "shares": 42757471,
+      "observations": [
+        {
+          "source": "eodhd:current",
+          "shares": 42757471,
+          "date": "2026-10-01",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:annual",
+          "shares": 44895000,
+          "date": "2025-12-31",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:balance-annual",
+          "shares": 44991000,
+          "date": "2026-01-31",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:quarterly",
+          "shares": 43513000,
+          "date": "2026-09-30",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:balance-quarterly",
+          "shares": 43513000,
+          "date": "2026-07-31",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "yahoo",
+          "shares": 42757471,
+          "date": "2026-08-29",
+          "url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/ULTA?type=shares_out&period1=1756364298&period2=1790924298",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "sec",
+          "shares": 42757471,
+          "date": "2026-08-24",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001403568.json",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "sec:balance",
+          "shares": 42805000,
+          "date": "2026-08-01",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001403568.json",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        }
+      ],
+      "reason": "Independent share counts agree within 2%",
+      "checkedAt": "2026-10-02T06:57:44.897Z",
+      "attempts": {
+        "eodhd": "Cached fundamentals: SharesStats, outstandingShares annual/quarterly, balance sheet shares",
+        "yahoo": "HTTP 200",
+        "yahooQuote": "sharesOutstanding/impliedSharesOutstanding: cached enrichment inspected; live quoteSummary requires Yahoo authentication",
+        "edinet": "Not an EDINET issuer",
+        "esef": "No ESEF issuer mapping",
+        "adr": "Not an ADR listing",
+        "sec": "HTTP 200",
+        "cover": "No cached raw cover page",
+        "impliedCap": "Inspected 120 monthly closes; cap/price observation is corroboration only (dates may differ), never an independent vote"
+      }
+    }
+  },
+  {
+    "id": "MB.MI",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      27.41,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 26314717875.82566,
+    "overlayCap": 26314717875.82566,
+    "vendorCap": null,
+    "vendorCurrency": null,
+    "updated": null,
+    "type": null,
+    "stats": null,
+    "valuationShares": 811036585,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-06-30",
+      "dilutedShares": 811036585,
+      "sharesOutstanding": null,
+      "edinetShares": null
+    },
+    "splits": null,
+    "shareCheck": {}
+  },
+  {
+    "id": "2313.HK",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      33.98,
+      "2026-10-02"
+    ],
+    "currency": "HKD",
+    "cap": 6673129500.4672,
+    "overlayCap": 6673129500.4672,
+    "vendorCap": 52358803456,
+    "vendorCurrency": "HKD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 1502835997,
+    "valuationShares": 1503222397,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 1503222400,
+      "sharesOutstanding": 1503222000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "2881.TW",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      150.5,
+      "2026-10-02"
+    ],
+    "currency": "TWD",
+    "cap": 64238748357.27814,
+    "overlayCap": 64238748357.27814,
+    "vendorCap": 2049858338816,
+    "vendorCurrency": "TWD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 13665721905,
+    "valuationShares": 13958224000,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 13958224000,
+      "sharesOutstanding": 14449699000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2025-09-25",
+        "factor": 1.025
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "017960.KO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      20550,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 770169722.6220535,
+    "overlayCap": 770169722.6220535,
+    "vendorCap": 1049032720384,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 51676486,
+    "valuationShares": 49801046,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 50367746,
+      "sharesOutstanding": 50367746,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2001-01-02",
+        "factor": 1.0551948051948052
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "XYL.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      101.79,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 23766622208,
+    "overlayCap": 23766622208,
+    "vendorCap": 23766622208,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 233486812,
+    "valuationShares": 243994000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 244000000,
+      "sharesOutstanding": 244000000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "AIZ.US",
+    "flags": [],
+    "quote": [
+      267.32,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 13185229824,
+    "overlayCap": 13185229824,
+    "vendorCap": 13185229824,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 49323767,
+    "valuationShares": 50197600,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 50197600,
+      "sharesOutstanding": 50197571,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {
+      "status": "verified",
+      "shares": 49323767,
+      "observations": [
+        {
+          "source": "eodhd:current",
+          "shares": 49323767,
+          "date": "2026-10-01",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:annual",
+          "shares": 50197600,
+          "date": "2025-12-31",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:balance-annual",
+          "shares": 50197571,
+          "date": "2025-12-31",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:quarterly",
+          "shares": 49831400,
+          "date": "2026-06-30",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:balance-quarterly",
+          "shares": 49831416,
+          "date": "2026-06-30",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "yahoo",
+          "shares": 49323767,
+          "date": "2026-08-08",
+          "url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/AIZ?type=shares_out&period1=1756364298&period2=1790924298",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "sec",
+          "shares": 49323767,
+          "date": "2026-07-31",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001267238.json",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "sec:balance",
+          "shares": 49382180,
+          "date": "2026-06-30",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001267238.json",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "implied-cap",
+          "shares": 48843943.90736242,
+          "date": "2026-10-02",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": true
+        }
+      ],
+      "reason": "Independent share counts agree within 2%",
+      "checkedAt": "2026-10-02T06:57:44.897Z",
+      "attempts": {
+        "eodhd": "Cached fundamentals: SharesStats, outstandingShares annual/quarterly, balance sheet shares",
+        "yahoo": "HTTP 200",
+        "yahooQuote": "sharesOutstanding/impliedSharesOutstanding: cached enrichment inspected; live quoteSummary requires Yahoo authentication",
+        "edinet": "Not an EDINET issuer",
+        "esef": "No ESEF issuer mapping",
+        "adr": "Not an ADR listing",
+        "sec": "HTTP 200",
+        "cover": "No cached raw cover page",
+        "impliedCap": "Inspected 120 monthly closes; cap/price observation is corroboration only (dates may differ), never an independent vote"
+      }
+    }
+  },
+  {
+    "id": "QGEN.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      44.75,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 9240651776,
+    "overlayCap": 9240651776,
+    "vendorCap": 9240651776,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 206495000,
+    "valuationShares": 218880000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 207761100,
+      "sharesOutstanding": 207935922,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2017-01-25",
+        "factor": 0.962
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "GRUMAB.MX",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      237.31,
+      "2026-10-02"
+    ],
+    "currency": "MXN",
+    "cap": 4299143861.20704,
+    "overlayCap": 4299143861.20704,
+    "vendorCap": 78782185472,
+    "vendorCurrency": "MXN",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 335528889,
+    "valuationShares": 352243000,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 344551885,
+      "sharesOutstanding": 344551885,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "1999-05-17",
+        "factor": 1.0167
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "2880.TW",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      44.85,
+      "2026-10-02"
+    ],
+    "currency": "TWD",
+    "cap": 19932314506.381107,
+    "overlayCap": 19932314506.381107,
+    "vendorCap": 636040118272,
+    "vendorCurrency": "TWD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 14056134650,
+    "valuationShares": 13878140000,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 13878140000,
+      "sharesOutstanding": 13907506000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2026-08-13",
+        "factor": 1.01
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "ZBRA.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      375.86,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 17903486976,
+    "overlayCap": 17903486976,
+    "vendorCap": 17903486976,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 47633392,
+    "valuationShares": 51212395,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 50652200,
+      "sharesOutstanding": 51212395,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2004-08-26",
+        "factor": 1.5
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "192820.KO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      270000,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 2190700463.8760214,
+    "overlayCap": 2190700463.8760214,
+    "vendorCap": 2983909130240,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 11345662,
+    "valuationShares": 11345456,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 11345662,
+      "sharesOutstanding": 11345662,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2021-05-13",
+        "factor": 1.0177370030581039
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "PPG.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      105.15,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 23374845952,
+    "overlayCap": 23374845952,
+    "vendorCap": 23374845952,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 222300000,
+    "valuationShares": 227100000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 225200000,
+      "sharesOutstanding": 227100000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2015-06-15",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "WST.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      364.98,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 25685745664,
+    "overlayCap": 25685745664,
+    "vendorCap": 25685745664,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 70375762,
+    "valuationShares": 72700000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 72700000,
+      "sharesOutstanding": 72700000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2013-09-27",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "MIO.IR",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      0.855,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 204217495.66799998,
+    "overlayCap": 204217495.66799998,
+    "vendorCap": 181663920,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 212472413,
+    "valuationShares": 219582414,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 212472413,
+      "sharesOutstanding": 212472413,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "4904.TW",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      106,
+      "2026-10-02"
+    ],
+    "currency": "TWD",
+    "cap": 11871170382.997217,
+    "overlayCap": 11871170382.997217,
+    "vendorCap": 378809024512,
+    "vendorCurrency": "TWD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 3607705000,
+    "valuationShares": 3658424000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 3658424000,
+      "sharesOutstanding": 3639485000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2008-03-11",
+        "factor": 0.807953
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "UDR.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      33.27,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 12222208000,
+    "overlayCap": 12222208000,
+    "vendorCap": 12222208000,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 321264222,
+    "valuationShares": 331053000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 332632000,
+      "sharesOutstanding": 331053000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "1993-05-06",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "EBAY.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      106.4,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 47347998720,
+    "overlayCap": 47347998720,
+    "vendorCap": 47347998720,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 445000000,
+    "valuationShares": 460000000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 460000000,
+      "sharesOutstanding": 460000000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2015-07-20",
+        "factor": 2.376
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "MRU.TO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      89.09,
+      "2026-10-02"
+    ],
+    "currency": "CAD",
+    "cap": 13080347874.0992,
+    "overlayCap": 13080347874.0992,
+    "vendorCap": 18643597312,
+    "vendorCurrency": "CAD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 209267000,
+    "valuationShares": 214600000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-09-30",
+      "dilutedShares": 214600000,
+      "sharesOutstanding": 219700000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2015-02-12",
+        "factor": 3
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "0012.HK",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      25.98,
+      "2026-10-02"
+    ],
+    "currency": "HKD",
+    "cap": 16499509263.5648,
+    "overlayCap": 16499509263.5648,
+    "vendorCap": 129458683904,
+    "vendorCurrency": "HKD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 4841387003,
+    "valuationShares": 4841000000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 5051000000,
+      "sharesOutstanding": 4946000000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2019-05-30",
+        "factor": 1.1
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "SWKS.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      85.03,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 12789019648,
+    "overlayCap": 12789019648,
+    "vendorCap": 12789019648,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 150405963,
+    "valuationShares": 155100000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-09-30",
+      "dilutedShares": 150500000,
+      "sharesOutstanding": 155100000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2000-04-20",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "CBRE.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      129.58,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 37798264832,
+    "overlayCap": 37798264832,
+    "vendorCap": 37798264832,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 289575298,
+    "valuationShares": 299868900,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 299868900,
+      "sharesOutstanding": 300751541,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2006-06-02",
+        "factor": 3
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "8253.JP",
+    "flags": [],
+    "quote": [
+      4318,
+      "2026-10-02"
+    ],
+    "currency": "JPY",
+    "cap": null,
+    "overlayCap": null,
+    "vendorCap": null,
+    "vendorCurrency": null,
+    "updated": null,
+    "type": null,
+    "stats": null,
+    "valuationShares": 145197939.45381412,
+    "assumptions": [
+      "EDINET basic EPS shares reconciled to filing-date issued shares",
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2026-03-31",
+      "dilutedShares": 145197939.45381412,
+      "sharesOutstanding": null,
+      "edinetShares": {
+        "basic": 145197939.45381412,
+        "issued": 185444772,
+        "filing": 161102570,
+        "treasury": 40452400,
+        "splitFiled": false,
+        "filed": "2026-06-16",
+        "reconciled": true,
+        "reason": "EDINET basic EPS shares reconciled to filing-date issued shares"
+      }
+    },
+    "splits": null,
+    "shareCheck": {}
+  },
+  {
+    "id": "IG.MI",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      8.256,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 9723629264.53326,
+    "overlayCap": 9723629264.53326,
+    "vendorCap": null,
+    "vendorCurrency": null,
+    "updated": null,
+    "type": null,
+    "stats": null,
+    "valuationShares": 1015686402,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 946929577.4647888,
+      "sharesOutstanding": null,
+      "edinetShares": null
+    },
+    "splits": null,
+    "shareCheck": {}
+  },
+  {
+    "id": "KKR.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      90.29,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 84268400640,
+    "overlayCap": 84268400640,
+    "vendorCap": 84268400640,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 897635601,
+    "valuationShares": 955642900,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 955642900,
+      "sharesOutstanding": 955757000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2022-06-01",
+        "factor": 1
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "042660.KO",
+    "flags": [
+      "share count corrected to current 306357807"
+    ],
+    "quote": [
+      78800,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 17521197178.836052,
+    "overlayCap": 17521197178.836052,
+    "vendorCap": 23865270992896,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 306357807,
+    "valuationShares": 306357807,
+    "assumptions": [
+      "share count adjusted for post-year split/bonus",
+      "share count corrected to current 306357807",
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 306397200,
+      "sharesOutstanding": 306397187,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2016-12-23",
+        "factor": 0.1
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "FRZCF.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      1.7300000190734863,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 3527997696,
+    "overlayCap": 3527997696,
+    "vendorCap": 3527997696,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 2039305023,
+    "valuationShares": 1922488000,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-09-30",
+      "dilutedShares": 2040279000,
+      "sharesOutstanding": 1490312697,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "CARR.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      55.12,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 45436796928,
+    "overlayCap": 45436796928,
+    "vendorCap": 45436796928,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 824325057,
+    "valuationShares": 846700000,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 846700000,
+      "sharesOutstanding": 846700000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "NI.US",
+    "flags": [],
+    "quote": [
+      39.43,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 18909054976,
+    "overlayCap": 18909054976,
+    "vendorCap": 18909054976,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 479560100,
+    "valuationShares": null,
+    "assumptions": [],
+    "method": null,
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 474500000,
+      "sharesOutstanding": 474500000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2015-07-02",
+        "factor": 2.545
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "8306.JP",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      3544,
+      "2026-10-02"
+    ],
+    "currency": "JPY",
+    "cap": 263047233536,
+    "overlayCap": 263047233536,
+    "vendorCap": null,
+    "vendorCurrency": null,
+    "updated": null,
+    "type": null,
+    "stats": null,
+    "valuationShares": 11398382000,
+    "assumptions": [
+      "EDINET basic EPS shares reconciled to filing-date issued shares",
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2026-03-31",
+      "dilutedShares": 11386887783.824358,
+      "sharesOutstanding": null,
+      "edinetShares": {
+        "basic": 11386887783.824358,
+        "issued": 11867710920,
+        "filing": 11867710920,
+        "treasury": 571362600,
+        "splitFiled": false,
+        "filed": "2026-06-24",
+        "reconciled": true,
+        "reason": "EDINET basic EPS shares reconciled to filing-date issued shares"
+      }
+    },
+    "splits": null,
+    "shareCheck": {}
+  },
+  {
+    "id": "PRU.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      6.4,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 5899938353.520639,
+    "overlayCap": 5899938353.520639,
+    "vendorCap": 8493641728,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 1327131493,
+    "valuationShares": 1358208056,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 1356683400,
+      "sharesOutstanding": 1358163414,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2009-05-22",
+        "factor": 1.0032
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "CTC-A.TO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      192.59,
+      "2026-10-02"
+    ],
+    "currency": "CAD",
+    "cap": 7046958947.5328,
+    "overlayCap": 7046958947.5328,
+    "vendorCap": 10044126208,
+    "vendorCurrency": "CAD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 48729529,
+    "valuationShares": 53326800,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 53326800,
+      "sharesOutstanding": 54460287,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "600926.SHG",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      17.11,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "cap": 18495418516.11136,
+    "overlayCap": 18495418516.11136,
+    "vendorCap": 124030435328,
+    "vendorCurrency": "CNY",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 7249002548,
+    "valuationShares": 7581374502,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 7249003000,
+      "sharesOutstanding": 7249003000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2018-07-04",
+        "factor": 1.4
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "9843.JP",
+    "flags": [],
+    "quote": [
+      3009,
+      "2026-10-02"
+    ],
+    "currency": "JPY",
+    "cap": null,
+    "overlayCap": null,
+    "vendorCap": null,
+    "vendorCurrency": null,
+    "updated": null,
+    "type": null,
+    "stats": null,
+    "valuationShares": 565071528.0415243,
+    "assumptions": [
+      "EDINET basic EPS shares reconciled to filing-date issued shares",
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-03-31",
+      "dilutedShares": 565071528.0415243,
+      "sharesOutstanding": null,
+      "edinetShares": {
+        "basic": 565071528.0415243,
+        "issued": 572217480,
+        "filing": 572217480,
+        "treasury": 5223400,
+        "splitFiled": false,
+        "filed": "2026-06-24",
+        "reconciled": true,
+        "reason": "EDINET basic EPS shares reconciled to filing-date issued shares"
+      }
+    },
+    "splits": null,
+    "shareCheck": {}
+  },
+  {
+    "id": "L.TO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      62.16,
+      "2026-10-02"
+    ],
+    "currency": "CAD",
+    "cap": 50397453693.7472,
+    "overlayCap": 50397453693.7472,
+    "vendorCap": 71832174592,
+    "vendorCurrency": "CAD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 1155601253,
+    "valuationShares": 1188000000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 1188000000,
+      "sharesOutstanding": 1199400000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2025-08-19",
+        "factor": 4
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "MBG.XETRA",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      39.725,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 42814104974.95039,
+    "overlayCap": 42814104974.95039,
+    "vendorCap": 38029938688,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 957330201,
+    "valuationShares": 998315000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 998315000,
+      "sharesOutstanding": 998315000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "1998-06-12",
+        "factor": 1.0193482688391038
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "300433.SHE",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      32.31,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "cap": 25433329998.2336,
+    "overlayCap": 25433329998.2336,
+    "vendorCap": 170556129280,
+    "vendorCurrency": "CNY",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 4977145670,
+    "valuationShares": 5085857479,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 5159027600,
+      "sharesOutstanding": 5284327591,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2018-07-02",
+        "factor": 1.499945
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "329180.KO",
+    "flags": [
+      "share count corrected to current 104932774"
+    ],
+    "quote": [
+      426000,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 33242170458.810177,
+    "overlayCap": 33242170458.810177,
+    "vendorCap": 45278493147136,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 104932774,
+    "valuationShares": 104932774,
+    "assumptions": [
+      "share count adjusted for post-year split/bonus",
+      "share count corrected to current 104932774"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 104961225,
+      "sharesOutstanding": 104961225,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "NOS.LS",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      5.37,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 3016255967.8719997,
+    "overlayCap": 3016255967.8719997,
+    "vendorCap": 2683143680,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 512539396,
+    "valuationShares": 511735040,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 511704041,
+      "sharesOutstanding": 511704041,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2005-06-14",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "TPR.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      118.12,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 23603986432,
+    "overlayCap": 23603986432,
+    "vendorCap": 23603986432,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 199391678,
+    "valuationShares": 210200000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 210200000,
+      "sharesOutstanding": 210200000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2005-04-05",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "CMCSA.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      21.57,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 76544090112,
+    "overlayCap": 76544090112,
+    "vendorCap": 76544090112,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 3539192198,
+    "valuationShares": 3636000000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 3636000000,
+      "sharesOutstanding": 3636000000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2026-01-05",
+        "factor": 1.067
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "VICI.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      22.65,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 24939405312,
+    "overlayCap": 24939405312,
+    "vendorCap": 24939405312,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 1101077562,
+    "valuationShares": 1062693062,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 1061087700,
+      "sharesOutstanding": 1062693062,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "PPL.US",
+    "flags": [],
+    "quote": [
+      32.8,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 24683470848,
+    "overlayCap": 24683470848,
+    "vendorCap": 24683470848,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 752544841,
+    "valuationShares": null,
+    "assumptions": [],
+    "method": null,
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 745143000,
+      "sharesOutstanding": 743348000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2015-06-02",
+        "factor": 1.0736525660296328
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "SUL.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      12.91,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 1987378116.4671998,
+    "overlayCap": 1987378116.4671998,
+    "vendorCap": 2867996416,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 225826500,
+    "valuationShares": 227136300,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 227136300,
+      "sharesOutstanding": 227215265,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2020-06-16",
+        "factor": 1.010022271714922
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "STB.OL",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      192.5,
+      "2026-10-02"
+    ],
+    "currency": "NOK",
+    "cap": 8331772473.50784,
+    "overlayCap": 8331772473.50784,
+    "vendorCap": 80128606208,
+    "vendorCurrency": "NOK",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 416252497,
+    "valuationShares": 429000000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 424266390,
+      "sharesOutstanding": 424266390,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2007-11-20",
+        "factor": 1.1903133903133902
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "0700.HK",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      421.2,
+      "2026-10-02"
+    ],
+    "currency": "HKD",
+    "cap": 484428686268.8256,
+    "overlayCap": 484428686268.8256,
+    "vendorCap": 3800931237888,
+    "vendorCurrency": "HKD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 9006946367,
+    "valuationShares": 9244000000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 9282939000,
+      "sharesOutstanding": 9244000000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2014-05-15",
+        "factor": 5
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "9008.JP",
+    "flags": [],
+    "quote": [
+      743,
+      "2026-10-02"
+    ],
+    "currency": "JPY",
+    "cap": null,
+    "overlayCap": null,
+    "vendorCap": null,
+    "vendorCurrency": null,
+    "updated": null,
+    "type": null,
+    "stats": null,
+    "valuationShares": 588068493.150685,
+    "assumptions": [
+      "EDINET basic EPS shares reconciled to filing-date issued shares",
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-03-31",
+      "dilutedShares": 588068493.150685,
+      "sharesOutstanding": null,
+      "edinetShares": {
+        "basic": 588068493.150685,
+        "issued": 119701730,
+        "filing": 586018150,
+        "treasury": 3864300,
+        "splitFiled": true,
+        "filed": "2026-06-23",
+        "reconciled": true,
+        "reason": "EDINET basic EPS shares reconciled to filing-date issued shares"
+      }
+    },
+    "splits": null,
+    "shareCheck": {}
+  },
+  {
+    "id": "0027.HK",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      30.3,
+      "2026-10-02"
+    ],
+    "currency": "HKD",
+    "cap": 16476123130.675201,
+    "overlayCap": 16476123130.675201,
+    "vendorCap": 129275191296,
+    "vendorCurrency": "HKD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 4379240712,
+    "valuationShares": 4381333435,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 4381442000,
+      "sharesOutstanding": 4381333000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "1999-01-08",
+        "factor": 1.032258064516129
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "PPT.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      16.9,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 1349231347.7888,
+    "overlayCap": 1349231347.7888,
+    "vendorCap": 1947083264,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 115691221,
+    "valuationShares": 117615400,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 117615400,
+      "sharesOutstanding": 116674625,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "1989-11-06",
+        "factor": 1
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "DIS.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      102.19,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 176450125824,
+    "overlayCap": 176450125824,
+    "vendorCap": 176450125824,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 1726686902,
+    "valuationShares": 1793000000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-09-30",
+      "dilutedShares": 1793000000,
+      "sharesOutstanding": 1811000000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2007-06-13",
+        "factor": 1.0136847440446022
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "EMBJ.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      75.21,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 13384242176,
+    "overlayCap": 13384242176,
+    "vendorCap": 13384242176,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 177958285,
+    "valuationShares": 183157400,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 183157400,
+      "sharesOutstanding": 183284992,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2002-03-01",
+        "factor": 1.142
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "RI.PA",
+    "flags": [],
+    "quote": [
+      58.62,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 16618284184.9856,
+    "overlayCap": 16618284184.9856,
+    "vendorCap": 14761311232,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 251813562,
+    "valuationShares": 253395100,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 253395100,
+      "sharesOutstanding": 252342140,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2008-01-15",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {
+      "status": "verified",
+      "shares": 251813562,
+      "observations": [
+        {
+          "source": "eodhd:current",
+          "shares": 251813562,
+          "date": "2026-09-28",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:annual",
+          "shares": 252097200,
+          "date": "2025-12-31",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:balance-annual",
+          "shares": 252342000,
+          "date": "2026-06-30",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:quarterly",
+          "shares": 252586800,
+          "date": "2026-06-30",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:balance-quarterly",
+          "shares": 252586840,
+          "date": "2026-06-30",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "yahoo",
+          "shares": 251813562,
+          "date": "2026-09-10",
+          "url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/RI.PA?type=shares_out&period1=1756220779&period2=1790780779",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "implied-cap",
+          "shares": 252484159.5507852,
+          "date": "2026-09-28",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": true
+        }
+      ],
+      "reason": "Independent share counts agree within 2%",
+      "checkedAt": "2026-09-30T15:35:59.424Z",
+      "attempts": {
+        "eodhd": "Cached fundamentals: SharesStats, outstandingShares annual/quarterly, balance sheet shares",
+        "yahoo": "Reused today\u2019s Yahoo shares_out response",
+        "yahooQuote": "sharesOutstanding/impliedSharesOutstanding: cached enrichment inspected; live quoteSummary requires Yahoo authentication",
+        "edinet": "Not an EDINET issuer",
+        "esef": "No ESEF issuer mapping",
+        "adr": "Not an ADR listing",
+        "sec": "No CIK or mapped US filing",
+        "cover": "No cached raw cover page",
+        "impliedCap": "Inspected 120 monthly closes; cap/price observation is corroboration only (dates may differ), never an independent vote"
+      }
+    }
+  },
+  {
+    "id": "EL.PA",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      142.8,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 73747158437.888,
+    "overlayCap": 73747158437.888,
+    "vendorCap": 65506447360,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 458728595,
+    "valuationShares": 469256000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 469256000,
+      "sharesOutstanding": 464669477,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2007-07-16",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "RWC.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      4.74,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 2451811877.312,
+    "overlayCap": 2451811877.312,
+    "vendorCap": 3538223360,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 748038799,
+    "valuationShares": 760579848,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 745255500,
+      "sharesOutstanding": 764579848,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "000001.SHE",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      11.57,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "cap": 33481386769.77664,
+    "overlayCap": 33481386769.77664,
+    "vendorCap": 224526467072,
+    "vendorCurrency": "CNY",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 19405918198,
+    "valuationShares": 20595652174,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 19405918000,
+      "sharesOutstanding": 19406000000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2016-06-16",
+        "factor": 1.2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "SCHW.US",
+    "flags": [],
+    "quote": [
+      96.7,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 167226753024,
+    "overlayCap": 167226753024,
+    "vendorCap": 167226753024,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 1729335714,
+    "valuationShares": 1777000000,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 1777000000,
+      "sharesOutstanding": 1777000000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2000-05-31",
+        "factor": 1.5
+      }
+    ],
+    "shareCheck": {
+      "status": "verified",
+      "shares": 1729335714,
+      "observations": [
+        {
+          "source": "eodhd:current",
+          "shares": 1729335714,
+          "date": "2026-09-29",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:annual",
+          "shares": 1777000000,
+          "date": "2025-12-31",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:balance-annual",
+          "shares": 1777000000,
+          "date": "2025-12-31",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:quarterly",
+          "shares": 1739000000,
+          "date": "2026-06-30",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:balance-quarterly",
+          "shares": 1739000000,
+          "date": "2026-06-30",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "yahoo",
+          "shares": 1729335714,
+          "date": "2026-08-11",
+          "url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/SCHW?type=shares_out&period1=1756220927&period2=1790780927",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "sec",
+          "shares": 1729335714,
+          "date": "2026-07-31",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000316709.json",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "implied-cap",
+          "shares": 1729335700.1831129,
+          "date": "2026-09-28",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": true
+        }
+      ],
+      "reason": "Independent share counts agree within 2%",
+      "checkedAt": "2026-09-30T15:35:59.424Z",
+      "attempts": {
+        "eodhd": "Cached fundamentals: SharesStats, outstandingShares annual/quarterly, balance sheet shares",
+        "yahoo": "Reused today\u2019s Yahoo shares_out response",
+        "yahooQuote": "sharesOutstanding/impliedSharesOutstanding: cached enrichment inspected; live quoteSummary requires Yahoo authentication",
+        "edinet": "Not an EDINET issuer",
+        "esef": "No ESEF issuer mapping",
+        "adr": "Not an ADR listing",
+        "sec": "Cached SEC companyfacts",
+        "cover": "No cached raw cover page",
+        "impliedCap": "Inspected 120 monthly closes; cap/price observation is corroboration only (dates may differ), never an independent vote"
+      }
+    }
+  },
+  {
+    "id": "251270.KO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      35350,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 2052843906.283789,
+    "overlayCap": 2052843906.283789,
+    "vendorCap": 2796137480192,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 80118554,
+    "valuationShares": 84440216,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 81934571,
+      "sharesOutstanding": 81934571,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "PODD.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      131.69,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 9133254656,
+    "overlayCap": 9133254656,
+    "vendorCap": 9133254656,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 69354199,
+    "valuationShares": 71886000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 70667000,
+      "sharesOutstanding": 71886000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "IR.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      76.07,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 29515116544,
+    "overlayCap": 29515116544,
+    "vendorCap": 29515116544,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 387999429,
+    "valuationShares": 401000000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 395800000,
+      "sharesOutstanding": 401000000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2005-09-02",
+        "factor": 0.5
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "033780.KO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      176900,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 13314700319.901098,
+    "overlayCap": 13314700319.901098,
+    "vendorCap": 18135686053888,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 103810456,
+    "valuationShares": 106660665,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 105383751,
+      "sharesOutstanding": 105383751,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "MOS.US",
+    "flags": [],
+    "quote": [
+      21.07,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 6698061312,
+    "overlayCap": 6698061312,
+    "vendorCap": 6698061312,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 317895646,
+    "valuationShares": null,
+    "assumptions": [],
+    "method": null,
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 294909100,
+      "sharesOutstanding": 318900000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "1995-12-01",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "6902.JP",
+    "flags": [],
+    "quote": [
+      1808,
+      "2026-10-02"
+    ],
+    "currency": "JPY",
+    "cap": null,
+    "overlayCap": null,
+    "vendorCap": null,
+    "vendorCurrency": null,
+    "updated": null,
+    "type": null,
+    "stats": null,
+    "valuationShares": 2723091556.2101126,
+    "assumptions": [
+      "EDINET basic EPS shares reconciled to filing-date issued shares"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-03-31",
+      "dilutedShares": 2723091556.2101126,
+      "sharesOutstanding": null,
+      "edinetShares": {
+        "basic": 2723091556.2101126,
+        "issued": 2910979691,
+        "filing": 2910979691,
+        "treasury": 219295800,
+        "splitFiled": false,
+        "filed": "2026-06-11",
+        "reconciled": true,
+        "reason": "EDINET basic EPS shares reconciled to filing-date issued shares"
+      }
+    },
+    "splits": null,
+    "shareCheck": {}
+  },
+  {
+    "id": "MTS.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      2.89,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 2148995787.3792,
+    "overlayCap": 2148995787.3792,
+    "vendorCap": 3101227776,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 1099726157,
+    "valuationShares": 1106045500,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-04-30",
+      "dilutedShares": 1106045500,
+      "sharesOutstanding": 1104147087,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "TMUS.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      163.64,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 175531982848,
+    "overlayCap": 175531982848,
+    "vendorCap": 175531982848,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 1072671613,
+    "valuationShares": 1117389000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 1117389000,
+      "sharesOutstanding": 1131076000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2013-05-01",
+        "factor": 0.5
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "2388.HK",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      50.7,
+      "2026-10-02"
+    ],
+    "currency": "HKD",
+    "cap": 70406920834.2528,
+    "overlayCap": 70406920834.2528,
+    "vendorCap": 552427782144,
+    "vendorCurrency": "HKD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 10572780266,
+    "valuationShares": 10572780266,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 10572780000,
+      "sharesOutstanding": 10572780000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "SLC.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      2.54,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 899656474.9887999,
+    "overlayCap": 899656474.9887999,
+    "vendorCap": 1298299264,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 515198103,
+    "valuationShares": 527601800,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 527601800,
+      "sharesOutstanding": 527439036,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "REP.MC",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      29.03,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 34762040987.647995,
+    "overlayCap": 34762040987.647995,
+    "vendorCap": 30877634560,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 1063645722,
+    "valuationShares": 1128125000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 1128125000,
+      "sharesOutstanding": 1172222000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "1999-04-19",
+        "factor": 3.0000031260061832
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "HUB.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      65.01,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 3591436427.2896,
+    "overlayCap": 3591436427.2896,
+    "vendorCap": 5182821888,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 81773777,
+    "valuationShares": 81777900,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 81777900,
+      "sharesOutstanding": 82091079,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2012-12-04",
+        "factor": 0.025
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "TEP.LSE",
+    "flags": [
+      "current share sources disagree by more than 1.5x; share count not corrected",
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      812,
+      "2026-10-02"
+    ],
+    "currency": "GBX",
+    "cap": 811265694.01056,
+    "overlayCap": 811265694.01056,
+    "vendorCap": 611876544,
+    "vendorCurrency": "GBX",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 76772462,
+    "valuationShares": 80740000,
+    "assumptions": [
+      "current share sources disagree by more than 1.5x; share count not corrected",
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-03-31",
+      "dilutedShares": 80785000,
+      "sharesOutstanding": 80740000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2013-11-20",
+        "factor": 1.000590318772137
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "064350.KO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      116500,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 9014528470.09126,
+    "overlayCap": 9014528470.09126,
+    "vendorCap": 12278508290048,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 109142293,
+    "valuationShares": 109135013,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 109142293,
+      "sharesOutstanding": 109142293,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "ASRNL.AS",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      71.48,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 16146525206.323198,
+    "overlayCap": 16146525206.323198,
+    "vendorCap": 14342267904,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 201549565,
+    "valuationShares": 207507000,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 207507000,
+      "sharesOutstanding": 206400000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "TAH.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      0.875,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 1399121707.744,
+    "overlayCap": 1399121707.744,
+    "vendorCap": 2019080320,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 2294409562,
+    "valuationShares": 2360426600,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 2360426600,
+      "sharesOutstanding": 2326500000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2020-08-24",
+        "factor": 1.0096286107290233
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "SBMO.AS",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      34.66,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 6449238354.1248,
+    "overlayCap": 6449238354.1248,
+    "vendorCap": 5728582656,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 165279364,
+    "valuationShares": 175292500,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 175292500,
+      "sharesOutstanding": 175667872,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2006-06-02",
+        "factor": 4
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "PSSA3.SA",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      49.47,
+      "2026-10-02"
+    ],
+    "currency": "BRL",
+    "cap": 5866228396.032,
+    "overlayCap": 5866228396.032,
+    "vendorCap": 30665072640,
+    "vendorCurrency": "BRL",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 640992323,
+    "valuationShares": 640360000,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 640360000,
+      "sharesOutstanding": 648695000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2021-10-21",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "002142.SHE",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      35.43,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "cap": 34888894193.33632,
+    "overlayCap": 34888894193.33632,
+    "vendorCap": 233965223936,
+    "vendorCurrency": "CNY",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 6603590792,
+    "valuationShares": 6837529138,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 6604000000,
+      "sharesOutstanding": 6604000000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2017-07-11",
+        "factor": 1.3
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "WY.US",
+    "flags": [],
+    "quote": [
+      18.47,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 13311993856,
+    "overlayCap": 13311993856,
+    "vendorCap": 13311993856,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 720736000,
+    "valuationShares": null,
+    "assumptions": [],
+    "method": null,
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 721833000,
+      "sharesOutstanding": 721833000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "1988-06-03",
+        "factor": 1.5
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "WSE.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      11.435,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 11248946176,
+    "overlayCap": 11248946176,
+    "vendorCap": 11248946176,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 983729421,
+    "valuationShares": 1029700000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-03-31",
+      "dilutedShares": 778895600,
+      "sharesOutstanding": 778895612,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "TDY.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      617.17,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 28609329152,
+    "overlayCap": 28609329152,
+    "vendorCap": 28609329152,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 46355673,
+    "valuationShares": 47400000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 47200000,
+      "sharesOutstanding": 47400000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "MAA.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      115.27,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 13845005312,
+    "overlayCap": 13845005312,
+    "vendorCap": 13845005312,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 116021957,
+    "valuationShares": 117149000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 117114000,
+      "sharesOutstanding": 117114000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "TYL.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      322.81,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 13219803136,
+    "overlayCap": 13219803136,
+    "vendorCap": 13219803136,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 40952274,
+    "valuationShares": 43812000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 43543000,
+      "sharesOutstanding": 43812000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "1990-05-15",
+        "factor": 3
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "NBIS.US",
+    "flags": [],
+    "quote": [
+      242.81,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 66009169920,
+    "overlayCap": 66009169920,
+    "vendorCap": 66009169920,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-03",
+    "type": "Common Stock",
+    "stats": 238400165,
+    "valuationShares": null,
+    "assumptions": [],
+    "method": null,
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 253017000,
+      "sharesOutstanding": 253048000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {
+      "status": "verified",
+      "shares": 253016971,
+      "observations": [
+        {
+          "source": "eodhd:current",
+          "shares": 238400165,
+          "date": "2026-10-01",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:annual",
+          "shares": 253017000,
+          "date": "2025-12-31",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:balance-annual",
+          "shares": 253048000,
+          "date": "2025-12-31",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:quarterly",
+          "shares": 280381600,
+          "date": "2026-06-30",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "eodhd:balance-quarterly",
+          "shares": 280381615,
+          "date": "2026-06-30",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "yahoo",
+          "shares": 271855218,
+          "date": "2026-08-13",
+          "url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/NBIS?type=shares_out&period1=1756364564&period2=1790924564",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "sec:balance",
+          "shares": 253016971,
+          "date": "2025-12-31",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001513845.json",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": false
+        },
+        {
+          "source": "implied-cap",
+          "shares": 271855236.57063997,
+          "date": "2026-09-28",
+          "basis": "issuer shares in listing units",
+          "corroborationOnly": true
+        }
+      ],
+      "reason": "Independent share counts agree within 2%",
+      "checkedAt": "2026-10-02T06:57:44.897Z",
+      "attempts": {
+        "eodhd": "Cached fundamentals: SharesStats, outstandingShares annual/quarterly, balance sheet shares",
+        "yahoo": "HTTP 200",
+        "yahooQuote": "sharesOutstanding/impliedSharesOutstanding: cached enrichment inspected; live quoteSummary requires Yahoo authentication",
+        "edinet": "Not an EDINET issuer",
+        "esef": "No ESEF issuer mapping",
+        "adr": "Not an ADR listing",
+        "sec": "HTTP 200",
+        "cover": "No cached raw cover page",
+        "impliedCap": "Inspected 23 monthly closes; cap/price observation is corroboration only (dates may differ), never an independent vote"
+      }
+    }
+  },
+  {
+    "id": "3034.TW",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      537,
+      "2026-10-02"
+    ],
+    "currency": "TWD",
+    "cap": 10482515653.652473,
+    "overlayCap": 10482515653.652473,
+    "vendorCap": 334497054720,
+    "vendorCurrency": "TWD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 611512000,
+    "valuationShares": 607908000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 607908000,
+      "sharesOutstanding": 608485000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2009-08-05",
+        "factor": 1.005
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "600919.SHG",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      12.38,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "cap": 33878484482.785282,
+    "overlayCap": 33878484482.785282,
+    "vendorCap": 227189407744,
+    "vendorCurrency": "CNY",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 18351324463,
+    "valuationShares": 19602843182,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 18351324000,
+      "sharesOutstanding": 18351324463,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2020-12-17",
+        "factor": 1.0550161812297734
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "KEY.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      20.08,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 21427941376,
+    "overlayCap": 21427941376,
+    "vendorCap": 21427941376,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 1067128554,
+    "valuationShares": 1107994000,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 1095171000,
+      "sharesOutstanding": 1095171000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "1998-03-09",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "1209.HK",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      37.18,
+      "2026-10-02"
+    ],
+    "currency": "HKD",
+    "cap": 11112557037.9776,
+    "overlayCap": 11112557037.9776,
+    "vendorCap": 87191502848,
+    "vendorCurrency": "HKD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 2282500000,
+    "valuationShares": 2282500000,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 2282500000,
+      "sharesOutstanding": 2282500000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "ISP.MI",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      6.328,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 132069825171.03319,
+    "overlayCap": 132069825171.03319,
+    "vendorCap": null,
+    "vendorCurrency": null,
+    "updated": null,
+    "type": null,
+    "stats": null,
+    "valuationShares": 17387732025,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 17387732025,
+      "sharesOutstanding": null,
+      "edinetShares": null
+    },
+    "splits": null,
+    "shareCheck": {}
+  },
+  {
+    "id": "REG.US",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      71.6,
+      "2026-10-02"
+    ],
+    "currency": "USD",
+    "cap": 13386245120,
+    "overlayCap": 13386245120,
+    "vendorCap": 13386245120,
+    "vendorCurrency": "USD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 183120547,
+    "valuationShares": 182902234,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 183112000,
+      "sharesOutstanding": 182234000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "UPR.IR",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      3.93,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 1184709849.072,
+    "overlayCap": 1184709849.072,
+    "vendorCap": 1053871680,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 259574298,
+    "valuationShares": 261824000,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 259574298,
+      "sharesOutstanding": 259574298,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "SGM.AU",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      24.05,
+      "2026-10-02"
+    ],
+    "currency": "AUD",
+    "cap": 3174787966.2591996,
+    "overlayCap": 3174787966.2591996,
+    "vendorCap": 4581554176,
+    "vendorCurrency": "AUD",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 193232991,
+    "valuationShares": 195406100,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 195406100,
+      "sharesOutstanding": 195737000,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "035250.KO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      14290,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 2076402186.4896162,
+    "overlayCap": 2076402186.4896162,
+    "vendorCap": 2828225740800,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 198193804,
+    "valuationShares": 202412526,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 200405684,
+      "sharesOutstanding": 200405684,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2003-12-29",
+        "factor": 1.07
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "TECK-B.TO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      97.76,
+      "2026-10-02"
+    ],
+    "currency": "CAD",
+    "cap": 31942222443.3152,
+    "overlayCap": 31942222443.3152,
+    "vendorCap": 45527683072,
+    "vendorCurrency": "CAD",
+    "updated": "2026-10-02",
+    "type": "Common Stock",
+    "stats": 483000468,
+    "valuationShares": 489900000,
+    "assumptions": [
+      "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years"
+    ],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 489900000,
+      "sharesOutstanding": 495400000,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2007-05-03",
+        "factor": 2
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "BC.MI",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      80.18,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 6271079625.6,
+    "overlayCap": 6271079625.6,
+    "vendorCap": null,
+    "vendorCurrency": null,
+    "updated": null,
+    "type": null,
+    "stats": null,
+    "valuationShares": 67975837,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 67975837,
+      "sharesOutstanding": null,
+      "edinetShares": null
+    },
+    "splits": null,
+    "shareCheck": {}
+  },
+  {
+    "id": "PKF1.F",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      3.96,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 3239779435.776,
+    "overlayCap": 3239779435.776,
+    "vendorCap": 2881981440,
+    "vendorCurrency": "EUR",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 680250602,
+    "valuationShares": 681449782,
+    "assumptions": [],
+    "method": "owner_earnings",
+    "lastYear": {
+      "end": "2026-06-30",
+      "dilutedShares": 680228994,
+      "sharesOutstanding": 680228994,
+      "edinetShares": null
+    },
+    "splits": [],
+    "shareCheck": {}
+  },
+  {
+    "id": "032830.KO",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      289000,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "cap": 37310338851.65858,
+    "overlayCap": 37310338851.65858,
+    "vendorCap": 50819663659008,
+    "vendorCurrency": "KRW",
+    "updated": "2026-10-01",
+    "type": "Common Stock",
+    "stats": 179574779,
+    "valuationShares": 179572442,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 179574779,
+      "sharesOutstanding": 179574779,
+      "edinetShares": null
+    },
+    "splits": [
+      {
+        "date": "2010-02-22",
+        "factor": 10
+      }
+    ],
+    "shareCheck": {}
+  },
+  {
+    "id": "BMED.MI",
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ],
+    "quote": [
+      23.2,
+      "2026-10-02"
+    ],
+    "currency": "EUR",
+    "cap": 19761130823.977623,
+    "overlayCap": 19761130823.977623,
+    "vendorCap": null,
+    "vendorCurrency": null,
+    "updated": null,
+    "type": null,
+    "stats": null,
+    "valuationShares": 739224387,
+    "assumptions": [
+      "valuation uses tangible book value per share"
+    ],
+    "method": "book_value",
+    "lastYear": {
+      "end": "2025-12-31",
+      "dilutedShares": 739224387,
+      "sharesOutstanding": null,
+      "edinetShares": null
+    },
+    "splits": null,
+    "shareCheck": {}
+  }
+]

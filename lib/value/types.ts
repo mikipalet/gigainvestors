@@ -231,6 +231,7 @@ export interface CompanyEvent {
 }
 
 export interface Analysis {
+  priceTestFreeze?: PriceTestFreeze;
   priceStory?: import("./price-story/compose").PriceStory;
   ownerMemo?: import("./owner-memo").OwnerMemo;
   businessOverview?: import("./flags/presentation").BusinessLine[];
@@ -260,6 +261,8 @@ export interface Analysis {
   versions: { pipeline: string; questions: string };
 }
 
+export interface PriceTestFreeze { asOf: string; test: TestOutcome }
+
 export interface Dossier extends Analysis {
   methodVersion?: string; // Absent only in legacy publications.
   w: string | null; // Best Western trading listing; null means not easily buyable.
@@ -272,6 +275,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  priceTestFreeze?: PriceTestFreeze;
   methodVersion?: string; // Absent only in legacy publications.
   businessChanged?: boolean;
   thesisReason?: string;

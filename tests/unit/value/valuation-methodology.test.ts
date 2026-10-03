@@ -104,3 +104,9 @@ it('V4 corrects financial per-share book value without rewriting historical shar
   expect(v.perShare.mid).toBeCloseTo(17.5);
   expect(years.at(-1)!.dilutedShares).toBe(10);
 });
+
+it('reads EODHD capitalization in major units even when its currency label is pence',async()=>{
+ const {currentShareInputs}=await import('@/lib/value/valuation-inputs');
+ const raw={General:{CurrencyCode:'GBX'},SharesStats:{SharesOutstanding:76772462},Highlights:{MarketCapitalization:611876544}};
+ expect(currentShareInputs(raw,812,'GBX')).toMatchObject({currentShares:76772462,reportedShares:true,shareAssumptions:[]});
+});

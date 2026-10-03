@@ -905,3 +905,78 @@ it('rejects a freeze without its previous live dossier before writing output',()
  expect(()=>publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}})).toThrow(/Frozen.*KO.US.*missing/i);
  expect(readdirSync(repo)).toEqual([]);
 });
+
+it('uses current issuer shares for the cap check instead of last annual diluted shares',()=>{
+ const a=analysis();a.company.marketCapUsd=6000;a.valuation!.shares=110;a.valuation!.normalized=1100;
+ const repo=directory();mkdirSync(path.join(repo,'prices'));writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[60,'2026-10-02']}));
+ writeCorpusJson(`raw/eodhd/${a.id}.json`,{General:{Type:'Common Stock',CurrencyCode:'USD',UpdatedAt:'2026-10-02'},SharesStats:{SharesOutstanding:100},Highlights:{MarketCapitalization:6000},Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{commonStockSharesOutstanding:'101'}}}}});
+ publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ const d=JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(a.id)}.json`),'utf8'))[a.id];
+ expect(d.tests.price?.result).toBe('pass');expect(d.valuation.shares).toBe(110);
+});
+
+it('replaces a dated vendor cap with the current quote times supported issuer shares',()=>{
+ const a=analysis();a.company.marketCapUsd=5700;a.valuation!.shares=100;a.valuation!.normalized=1000;
+ const repo=directory();mkdirSync(path.join(repo,'prices'));writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[60,'2026-10-02']}));
+ writeCorpusJson(`raw/eodhd/${a.id}.json`,{General:{Type:'Common Stock',CurrencyCode:'USD',UpdatedAt:'2026-10-01'},SharesStats:{SharesOutstanding:100},Highlights:{MarketCapitalization:5700},Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{commonStockSharesOutstanding:'100'}}}}});
+ publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ const d=JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(a.id)}.json`),'utf8'))[a.id];
+ expect(d.company.marketCapUsd).toBe(6000);expect(d.tests.price?.result).toBe('pass');
+ expect(JSON.parse(readFileSync(path.join(repo,'index/US.json'),'utf8'))[0].mc).toBe(6000);
+});
+
+it('keeps only the live price test through unresolved shares and later quote refreshes',async()=>{
+ const a=analysis();a.company.marketCapUsd=null;
+ const repo=directory();mkdirSync(path.join(repo,'prices'));writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[50,'2026-10-01']}));
+ const run=()=>publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ const read=()=>JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(a.id)}.json`),'utf8'))[a.id];
+ run();const old=read().tests.price;expect(old.result).toBe('pass');
+ a.valuation!.assumptions=['current share sources disagree by more than 1.5x; share count not corrected'];run();
+ expect(read().b).toBe(true);
+ a.tests.moat.result='fail';run();
+ expect(read().tests.price).toEqual(old);expect(read().tests.moat.result).toBe('fail');expect(read().b).toBe(false);
+ expect(read().priceTestFreeze.asOf).toBe('2026-09-29');
+ const {refreshPublishedBuyPrices}=await import('@/lib/value/refresh-buy-prices');
+ writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[500,'2026-10-02']}));refreshPublishedBuyPrices(repo);
+ expect(read().tests.price).toEqual(old);expect(read().b).toBe(false);
+ // Resolving the evidence resumes calculation; a freeze is not permanent.
+ a.valuation!.assumptions=[];run();expect(read().tests.price.result).toBe('fail');expect(read().priceTestFreeze).toBeUndefined();
+});
+
+it('keeps unresolved ADR or class-share capitalization conflicts guarded',()=>{
+ for(const name of ['Example ADR','Example Class B']){
+  const a=analysis();a.company.name=name;a.company.marketCapUsd=5700;a.valuation!.shares=100;a.valuation!.normalized=1000;
+  const repo=directory();mkdirSync(path.join(repo,'prices'));writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[60,'2026-10-02']}));
+  writeCorpusJson(`raw/eodhd/${a.id}.json`,{General:{Name:name,Type:'Common Stock',CurrencyCode:'USD',UpdatedAt:'2026-10-01'},SharesStats:{SharesOutstanding:100},Highlights:{MarketCapitalization:5700},Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{commonStockSharesOutstanding:'100'}}}}});
+  publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+  const d=JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(a.id)}.json`),'utf8'))[a.id];
+  expect(d.tests.price).toBeUndefined();expect(d.company.marketCapUsd).toBe(5700);
+ }
+});
+
+it('freezes the last live price test when a quote refresh introduces an unresolved ratio',async()=>{
+ const a=analysis();a.company.marketCapUsd=null;
+ const repo=directory();mkdirSync(path.join(repo,'prices'));writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[50,'2026-10-01']}));
+ publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ const read=()=>JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(a.id)}.json`),'utf8'))[a.id];
+ const old=read().tests.price;
+ writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[5000,'2026-10-02']}));
+ const {refreshPublishedBuyPrices}=await import('@/lib/value/refresh-buy-prices');refreshPublishedBuyPrices(repo);
+ expect(read().tests.price).toEqual(old);expect(read().priceTestFreeze.test).toEqual(old);expect(read().b).toBe(true);
+ const row=JSON.parse(readFileSync(path.join(repo,'index/US.json'),'utf8'))[0];
+ expect(row.v).toBeNull();expect(row.priceTestFreeze.test).toEqual(old);expect(row.b).toBe(true);
+});
+
+it('retains released historical rows omitted by a newer quarterly run',()=>{
+ const repo=directory(),a=analysis();
+ const old=['OLD.US','PPPPP',.5,true,.12];
+ mkdirSync(path.join(repo,'history'));writeFileSync(path.join(repo,'history/2026.json'),JSON.stringify([old]));
+ writeFileSync(path.join(repo,'history/companies.json'),JSON.stringify([{id:'OLD.US',n:'Previous member',c:'US',cur:'USD',k:'operating',mc:12,t:'UUUUU',v:null,g:[],h:0,st:'i',w:'OLD.US'}]));
+ writeFileSync(path.join(repo,'history/index.json'),JSON.stringify({years:[2026],quarters:[],perYear:{},perQuarter:{}}));
+ writeCorpusJson('history-v7/latest/index.json',{scope:'universe',years:[],quarters:['2026Q1'],perYear:{},perQuarter:{}});
+ writeCorpusJson('history-v7/latest/2026Q1.json',[[a.id,'PPPPP',.2,false]]);
+ publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ expect(JSON.parse(readFileSync(path.join(repo,'history/2026.json'),'utf8'))).toEqual([old]);
+ expect(JSON.parse(readFileSync(path.join(repo,'history/companies.json'),'utf8')).some((r:any)=>r.id==='OLD.US')).toBe(true);
+ expect(JSON.parse(readFileSync(path.join(repo,'history/index.json'),'utf8')).perYear['2026'].analysed).toBe(1);
+});

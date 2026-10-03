@@ -51,8 +51,10 @@ function emptyFunnel(): FunnelCounts {
   };
 }
 
-export function buildOutput({ analyses, holdersByTicker, investorNames, fx, prices = {}, priceHistories = {}, universe = analyses.length }: {
+export function buildOutput({ analyses, holdersByTicker, investorNames, fx, prices = {}, priceHistories = {}, previousDossiers = {}, capShares = {}, universe = analyses.length }: {
   analyses: Analysis[];
+  previousDossiers?: Record<string,Dossier>;
+  capShares?: Record<string,number>;
   holdersByTicker: Record<string, string[]>;
   investorNames: Record<string, string>;
   fx: Record<string, number>;
@@ -100,10 +102,14 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const valuation = tradingValuation(analysis, usdRate);
     const requiredMos = analysis.valuation?.method === 'nav' ? valuationMargin(analysis.valuation,'stable') : analysis.requiredMos ?? T.price.requiredMos.stable;
     const t = analysis.status !== "scored" ? "UUUUU" : outcomes.map(test => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join("");
-    const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:analysis.valuation?.shares, usdRate:usdRate(company.currency),corroborated:analysis.valuation?.shareSources===2});
+    const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:capShares[analysis.id]??analysis.valuation?.shares, usdRate:usdRate(company.currency),corroborated:analysis.valuation?.shareSources===2});
     const returnInputs = buyReturnInputs(analysis.valuation, company.currency);
-    const price = publishedBuyPrice({ businessChanged: analysis.thesis?.changed, st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs, shareSources:analysis.valuation?.shareSources,
+    let price = publishedBuyPrice({ businessChanged: analysis.thesis?.changed, st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs, shareSources:analysis.valuation?.shareSources,
       v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null, dataQualityFlags }, prices[analysis.id]);
+    const prior=previousDossiers[analysis.id];
+    const priceTestFreeze=price.result==='unclear'&&prior?.tests.price&&['pass','fail'].includes(prior.tests.price.result)
+      ? prior.priceTestFreeze??{asOf:prior.asOf,test:prior.tests.price} : undefined;
+    if(priceTestFreeze)price={...price,...publishedBuyPrice({st:analysis.status==='scored'?'s':'i',t,v:null,priceTestFreeze,businessChanged:analysis.thesis?.changed},prices[analysis.id]),dataQualityFlags:price.dataQualityFlags};
     const passes = [...outcomes.map(test => analysis.status === "scored" && test.result === "pass"), price.b];
     // Price below its required MOS is a failed funnel gate even when priceTest
     // calls a positive but inadequate discount "unclear". Missing data is not a failure.
@@ -125,10 +131,10 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       });
     }
     const dossier: Dossier = {
-      ...analysis, methodVersion: METHOD_VERSION, w, b: price.b, dataQualityFlags: price.dataQualityFlags, requiredMos, holders,
+      ...analysis, priceTestFreeze, methodVersion: METHOD_VERSION, w, b: price.b, dataQualityFlags: price.dataQualityFlags, requiredMos, holders,
       ...(priceHistories[analysis.id] ? { priceHistory: priceHistories[analysis.id] } : {}),
       series: Object.assign({}, ...outcomes.map((test) => test.series), analysis.series),
-      tests: { ...analysis.tests, price: { key: "price", result: price.result, numeric: price.result, reasons: price.mos === null ? ["Valuation or price unavailable in trading currency"] : [], metrics: { mos: price.mos }, series: {}, jev: [] } },
+      tests: { ...analysis.tests, price: priceTestFreeze?.test ?? { key: "price", result: price.result, numeric: price.result, reasons: price.mos === null ? ["Valuation or price unavailable in trading currency"] : [], metrics: { mos: price.mos }, series: {}, jev: [] } },
     };
     const shard = shardOf(analysis.id);
     const visible=publicAnalysis(dossier);visible.ownerMemo=memoAtPrice(visible,prices[analysis.id]);
@@ -139,7 +145,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
     const returns=dossierReturn(analysis);
     const row: IndexRow = {
-      methodVersion: METHOD_VERSION,
+      methodVersion: METHOD_VERSION, priceTestFreeze,
       w, exchange: company.exchange, shareSources: analysis.valuation?.shareSources, buyReturnInputs: price.dataQualityFlags.length ? null : returnInputs,
       historyYears: analysis.historyCoverage?.years ?? analysis.tests.understandable.metrics.historyYears ?? undefined,
       b: price.b, businessChanged: analysis.thesis?.changed || undefined,

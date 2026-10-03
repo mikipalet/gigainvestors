@@ -1,0 +1,32 @@
+{
+  "decision": "LIFT",
+  "checks": {
+    "zeroQualityFlips": true,
+    "zeroUnapprovedPriceChanges": true,
+    "zeroPriceVerdictsBlanked": true,
+    "zeroNumericToNullOutsideFreeze": true,
+    "zeroRemovedNumericSeriesObservations": true,
+    "zeroLostHistoricalMemberships": true,
+    "zeroLostPredecessors": true,
+    "zeroFrozenByteMismatches": true,
+    "zeroFrozenAliasMismatches": true,
+    "zeroDossierIndexPriceInconsistencies": true,
+    "sameDossierMembership": true,
+    "publishRepoUnchanged": true,
+    "holdUnchanged": true
+  },
+  "beforeDossiers": 2708,
+  "afterDossiers": 2708,
+  "fullCompanyFreeze": 141,
+  "fullCompanyFrozenRecords": 6394,
+  "priceTestFreezeCount": 48,
+  "quoteOnlyPriceVerdictChanges": [],
+  "numericToNull": 0,
+  "removedNumericSeriesObservations": 0,
+  "lostHistoricalMemberships": 0,
+  "original114Resolutions": {
+    "live price test retained": 48,
+    "computed from current inputs": 60,
+    "full company freeze": 6
+  }
+}

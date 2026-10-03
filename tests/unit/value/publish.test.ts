@@ -89,7 +89,12 @@ describe("buildOutput", () => {
     mkdirSync(path.join(corpusDir(), "publish-repo/prices"), { recursive: true });
     const closes = JSON.stringify({ "KO.US": [60, "2026-09-29"] });
     writeFileSync(path.join(corpusDir(), "publish-repo/prices/US.json"), closes);
+    const priorRecord = {date:'2026-09-28',methodVersion:'fixture',picks:{all:[],western:[]},universe:{all:[],western:[]},observations:{}};
+    writeCorpusJson('publish-repo/forward/2026-09-28.json', priorRecord);
     await publish({ out });
+    expect(JSON.parse(readFileSync(path.join(out, 'forward/2026-09-28.json'), 'utf8'))).toEqual(priorRecord);
+    expect(JSON.parse(readFileSync(path.join(out, 'forward/index.json'), 'utf8')).dates).toContain('2026-09-28');
+    expect(JSON.parse(readFileSync(path.join(corpusDir(), 'publish-repo/forward/2026-09-28.json'), 'utf8'))).toEqual(priorRecord);
     expect(readFileSync(path.join(corpusDir(), "analysis/KO.US.json"), "utf8")).toBe(source);
     expect(readFileSync(path.join(corpusDir(), "publish-repo/prices/US.json"), "utf8")).toBe(closes);
     expect(JSON.parse(readFileSync(path.join(out, "prices/US.json"), "utf8"))["KO.US"]).toEqual([60, "2026-09-29"]);

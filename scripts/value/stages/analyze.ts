@@ -14,7 +14,8 @@ import { currentShareInputs, trailingInputs } from "../../../lib/value/valuation
 import { readPrices } from "../../../lib/value/price-files";
 import { validCompanyId, mergeCompany } from "../../../lib/value/companies";
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { isDeepStrictEqual } from "node:util";
+import { existsSync, readFileSync } from "node:fs";
 import { analyzeCompany, PIPELINE_VERSION, type Ask, type Sections } from "../../../lib/value/analyze-company";
 import { readPriceHistory } from "../../../lib/value/price-history";
 import { bondYield, type BondObservation } from "../../../lib/value/bond-yields";
@@ -53,9 +54,9 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
   }
   const jobs = companies.flatMap(row => {
     if (!validCompanyId(row.id, "analyze")) return [];
-    const fundamentals = readCorpusJson<Fundamentals>(`fundamentals/${row.id}.json`);
+    if (!existsSync(corpusPath(`fundamentals/${row.id}.json`))) return [];
     const company = completeCompanyMetadata(mergeCompany(row, readCorpusJson<Partial<Company>>(`companies/${row.id}.json`) ?? {}),readCorpusJson);
-    return fundamentals ? [{ company, fundamentals }] : [];
+    return [{ company }];
   }).slice(0, limit);
   const peerRows = withFinancialPeers((jobs.some(j=>j.company.kind==='bank')?readJsonl<Company>('universe.jsonl'):[]).filter(c=>c.kind==='bank'&&validCompanyId(c.id,'financial peers')).map(company=>{
     const f=readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
@@ -71,8 +72,11 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
   const failures: string[] = [];
   await Promise.all(Array.from({ length: Math.min(Number(process.env.VALUE_ANALYZE_CONCURRENCY)||T.analyze.concurrency, jobs.length) }, async () => {
     while (cursor < jobs.length) {
-      const { company, fundamentals: cachedFundamentals } = jobs[cursor++];
+      const { company } = jobs[cursor++];
       try {
+        // Keep statement payloads bounded by worker count, not universe size.
+        const cachedFundamentals = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
+        if (!cachedFundamentals) throw new Error('Selected fundamentals disappeared');
         const priceHistory = readPriceHistory(company.id);
         const raw = readCorpusJson<unknown>(`raw/eodhd/${company.id}.json`);
         const normalized = raw ? normalizeEodhd(raw, company.id).fundamentals : null;
@@ -119,7 +123,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
         const prior = readCorpusJson<Analysis>(file);
-        const priorInputs = readCorpusJson<{ sections: Sections }>(`analysis/inputs/${company.id}.json`);
+        const priorInputs = readCorpusJson<{ asOf?: string; sections: Sections; reportingCurrency?: string; derivedValues?: unknown[]; memoYears?: Year[] }>(`analysis/inputs/${company.id}.json`);
         let derivedValues:Array<{fy:number;field:string;value:number;provenance:NonNullable<Year['provenance']>[string]}>=[];
         let memoYears: Year[] = [];
         const result = await analyzeCompany({ company, fundamentals, sections, report, priceHistory, priceHistoryPending, ...shareInputs,
@@ -165,8 +169,15 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         result.ownerMemo = {version:1,asOf:result.asOf,inputHash:fingerprint,lines:numericMemo(result,memoYears,null)};
         // Only index members are published; avoid duplicating the full private
         // universe's statements just to compose the published memos.
-        writeCorpusJson(`analysis/inputs/${company.id}.json`, { asOf: result.asOf, sections,reportingCurrency:fundamentals.currency,derivedValues,
-          ...(company.indexes?.length ? {memoYears} : {}) });
+        const inputPayload = { sections,reportingCurrency:fundamentals.currency,derivedValues,
+          ...(company.indexes?.length ? {memoYears} : {}) };
+        const { asOf: _priorInputTime, ...priorPayload } = priorInputs ?? {};
+        // Nonmember inputs are an evidence cache, not a published statement
+        // snapshot. Preserve unchanged text (and overlay hardlinks) across runs.
+        // Members still bind memoYears to this exact analysis timestamp.
+        if (company.indexes?.length || !isDeepStrictEqual(priorPayload, inputPayload)) {
+          writeCorpusJson(`analysis/inputs/${company.id}.json`, { asOf: result.asOf, ...inputPayload });
+        }
         result.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`),result);
         writeCorpusJson(file, result);
         writeCorpusJson(fingerprintFile, fingerprint);

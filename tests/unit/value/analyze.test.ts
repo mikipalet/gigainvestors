@@ -1,5 +1,5 @@
 import trust from "@/lib/value/jev-trust.json";
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
@@ -613,4 +613,33 @@ it('revalues on a 0.1pp yield bucket change, but skips noise in the same bucket'
  expect(next.discountRate).toBe(.1);
  expect(next.perShare.mid).toBe(first.perShare.mid);
  expect(evidenceCalls).toBe(initialEvidenceCalls);
+});
+
+it('loads statement payloads only for selected jobs, so later files cannot abort a limited run', async () => {
+  for (const id of ['KO.US', 'DAL.US']) {
+    const args = input(id);
+    appendJsonl('universe.jsonl', args.company);
+    writeCorpusJson(`fundamentals/${id}.json`, args.fundamentals);
+  }
+  writeFileSync(corpusPath('fundamentals/DAL.US.json'), '{invalid unselected statement');
+  await analyze({limit:1, ask:async()=>answers(), getBondYield:async()=>.04, evidence:async()=>null});
+  expect(readCorpusJson<Analysis>('analysis/KO.US.json')?.id).toBe('KO.US');
+  expect(readCorpusJson('analysis/DAL.US.json')).toBeNull();
+});
+
+it('preserves unchanged nonmember evidence inputs when only the analysis clock changes', async () => {
+  const args=input();
+  appendJsonl('universe.jsonl',args.company);
+  writeCorpusJson('fundamentals/KO.US.json',args.fundamentals);
+  vi.useFakeTimers();
+  try {
+    vi.setSystemTime(new Date('2026-10-02T12:00:00Z'));
+    const options={ask:args.ask,getBondYield:async()=>.04,evidence:async()=>null};
+    await analyze(options);
+    const before=readFileSync(corpusPath('analysis/inputs/KO.US.json'),'utf8');
+    vi.setSystemTime(new Date('2026-10-03T12:00:00Z'));
+    await analyze({...options,force:true});
+    expect(readFileSync(corpusPath('analysis/inputs/KO.US.json'),'utf8')).toBe(before);
+    expect(readCorpusJson<Analysis>('analysis/KO.US.json')!.asOf).toMatch(/^2026-10-03/);
+  } finally { vi.useRealTimers(); }
 });

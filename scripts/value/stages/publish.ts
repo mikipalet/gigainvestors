@@ -385,6 +385,10 @@ export default async function publish(options: { only?: string[]; limit?: number
     // Match normal publication's cached closes before merging local seed quotes.
     const prices = corpusPath("publish-repo", "prices");
     if (existsSync(prices)) cpSync(prices, path.join(out, "prices"), { recursive: true });
+    // Normal publication carries dated immutable records across snapshots.
+    // Local replay must use that same history before computing today's record.
+    const forward = corpusPath("publish-repo", "forward");
+    if (existsSync(forward)) cpSync(forward, path.join(out, "forward"), { recursive: true, force: false });
     const { count } = publishSnapshot({ repo: out, analyses, universe: companies, partial: false, force: options.force, commit: false, ...holders });
     console.log(`publish: ${count} companies written locally to ${out}; no commit, push or revalidation`);
     return;

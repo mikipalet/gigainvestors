@@ -19,17 +19,20 @@ export async function esefShareInputs(company: Company, usdRate: (currency:strin
   const file = `raw/esef/shares/${company.id}.json`;
   const today = new Date().toISOString().slice(0,10);
   const cached = readCorpusJson<{date:string; data:FreeCapData}>(file);
+  const offline = process.env.VALUE_NO_EODHD === '1';
   try {
     const cap = readCorpusJson<{version?:number; inputs?:FreeCapData}>(`raw/market-caps/${company.id}.json`);
-    const data = cached?.date === today && cached.data ? cached.data
+    const data = cached?.data && (cached.date === today || offline) ? cached.data
       : cap?.version === 2 && cap.inputs?.source === 'Yahoo chart × verified shares' && cap.inputs.shares ? cap.inputs
-        : await freeCapData(company,null,true);
+        : offline ? null : await freeCapData(company,null,true);
+    if (!data) return missing();
     const result = sameCurrency(data.currency,company.currency)
       ? verifiedEsefShares(data,company.marketCapUsd,await usdRate(company.currency)) : missing();
-    writeCorpusJson(file,{date:today,source:'yahoo-shares',data,capUsd:company.marketCapUsd,accepted:result.currentShares!==null});
+    // Replaying an observation must not relabel it as freshly fetched.
+    if (!offline) writeCorpusJson(file,{date:today,source:'yahoo-shares',data,capUsd:company.marketCapUsd,accepted:result.currentShares!==null});
     return result;
   } catch (error) {
-    writeCorpusJson(file,{date:today,source:'yahoo-shares',error:error instanceof Error?error.message:String(error)});
+    if (!offline) writeCorpusJson(file,{date:today,source:'yahoo-shares',error:error instanceof Error?error.message:String(error)});
     return missing();
   }
 }

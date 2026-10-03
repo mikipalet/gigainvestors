@@ -76,7 +76,7 @@ export async function bondObservation(country: string): Promise<BondObservation>
   if (!/^[A-Z]{2}$/.test(country)) throw new Error('Invalid bond country');
   const date = day(), file = `bonds/${country}.json`;
   const cached = readCorpusJson<BondObservation>(file);
-  if (cached && ((cached.version===VERSION&&cached.date===date) || process.env.VALUE_NO_EODHD==='1'&&cached.version>=2&&cached.yield!==null&&plausible(cached.yield,country))) return cached;
+  if (cached && ((cached.version===VERSION&&cached.date===date) || process.env.VALUE_NO_EODHD==='1'&&cached.version>=2&&(cached.yield===null||plausible(cached.yield,country)))) return cached;
   const key = `${process.env.VALUE_CORPUS_DIR ?? ''}:${date}:${country}`;
   const existing = pending.get(key);
   if (existing) return existing;

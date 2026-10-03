@@ -1,0 +1,26 @@
+[
+  {
+    "id": "WAF.AU",
+    "marketCapUsd": 2737215386.5983996,
+    "quote": [
+      3.51,
+      "2026-10-02"
+    ],
+    "shares": 1147424500,
+    "sixDeviation": 0.01921043116407173,
+    "eightDeviation": 0.021582523465936476,
+    "financialSharesUnchanged": true
+  },
+  {
+    "id": "RWC.AU",
+    "marketCapUsd": 2451811877.312,
+    "quote": [
+      4.74,
+      "2026-10-02"
+    ],
+    "shares": 760579848,
+    "sixDeviation": 0.01856376232495993,
+    "eightDeviation": 0.020937418630178728,
+    "financialSharesUnchanged": true
+  }
+]

@@ -121,8 +121,9 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           memoInputs: 1, flags:readCorpusJson(`flags/${company.id}.json`), judgementTrust, judgement: readCorpusJson(`judgement/${company.id}.json`), questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
-        if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint && readCorpusJson<Analysis>(file)) { skipped++; continue; }
         const prior = readCorpusJson<Analysis>(file);
+        if (!force && readCorpusJson<string>(fingerprintFile) === fingerprint
+          && prior?.versions.pipeline === PIPELINE_VERSION && prior.versions.questions === QUESTIONS_VERSION) { skipped++; continue; }
         const priorInputs = readCorpusJson<{ asOf?: string; sections: Sections; reportingCurrency?: string; derivedValues?: unknown[]; memoYears?: Year[] }>(`analysis/inputs/${company.id}.json`);
         let derivedValues:Array<{fy:number;field:string;value:number;provenance:NonNullable<Year['provenance']>[string]}>=[];
         let memoYears: Year[] = [];

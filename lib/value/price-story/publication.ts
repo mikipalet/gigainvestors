@@ -12,7 +12,10 @@ export function applyStory(d:Dossier,quote:PriceMap[string]|null,reading:StoryRe
  const accepted=priceTrusted&&fresh?reading:null;
  const priceStory=composePriceStory(d,quote,accepted?.price.selected??null,accepted?.events??[],now);
  const risk=riskTrusted&&fresh&&reading?.risk.selected?selectedMemo(reading.risk.selected):null;
- const pricing=(fresh&&reading?.pricing.selected?selectedMemo(reading.pricing.selected,reading.pricing.direction):null)??pricingFallback(d);
+ // Abstention is not a retraction of a released filing answer. Match the
+ // targeted live release: only an accepted source selection can replace it.
+ const pricing=(fresh&&reading?.pricing.selected?selectedMemo(reading.pricing.selected,reading.pricing.direction):null)
+  ??(d.ownerMemo?.lines.some(l=>l.question===3)?null:pricingFallback(d));
  const ownerMemo=d.ownerMemo?{...d.ownerMemo,lines:[...d.ownerMemo.lines.filter(l=>(l.question!==3||!pricing)&&(l.question!==6||!risk)),...(pricing?[pricing]:[]),...(risk?[risk]:[])].sort((a,b)=>a.question-b.question)}:undefined;
  return {...d,priceStory,ownerMemo};
 }

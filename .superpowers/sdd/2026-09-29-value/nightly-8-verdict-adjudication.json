@@ -1,0 +1,855 @@
+{
+  "rows": [
+    {
+      "id": "000001.SHE",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "0012.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "002142.SHE",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "0027.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "002736.SHE",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "002812.SHE",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "002916.SHE",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "008930.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "017960.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "030200.KO",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "032830.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "033780.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "035250.KO",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "042660.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "064350.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "0700.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "0968.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "1209.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "192820.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "2313.HK",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "2388.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "251270.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "2880.TW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "2881.TW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "300433.SHE",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "3034.TW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "329180.KO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "4904.TW",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "600919.SHG",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "600926.SHG",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "601009.SHG",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "601838.SHG",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "6618.HK",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "6902.JP",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "8253.JP",
+      "test": "management",
+      "before": "fail",
+      "after": "pass",
+      "decision": "APPROVED"
+    },
+    {
+      "id": "8253.JP",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "8253.JP",
+      "test": "economics",
+      "before": "fail",
+      "after": "pass",
+      "decision": "APPROVED"
+    },
+    {
+      "id": "8253.JP",
+      "test": "accounting",
+      "before": "fail",
+      "after": "pass",
+      "decision": "APPROVED"
+    },
+    {
+      "id": "8306.JP",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "9008.JP",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "9843.JP",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "AIZ.US",
+      "test": "price",
+      "before": null,
+      "after": "fail",
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "ASRNL.AS",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "BC.MI",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "BGA.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "BMED.MI",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "CARR.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "CBG.LSE",
+      "test": "understandable",
+      "before": "pass",
+      "after": "fail",
+      "decision": "APPROVED"
+    },
+    {
+      "id": "CBG.LSE",
+      "test": "moat",
+      "before": "pass",
+      "after": "fail",
+      "decision": "APPROVED"
+    },
+    {
+      "id": "CBRE.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "CMCSA.US",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "CTC-A.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "DIS.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "EBAY.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "EL.PA",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "EMBJ.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "FER.AS",
+      "test": "price",
+      "before": null,
+      "after": "fail",
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "FRZCF.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "GRUMAB.MX",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "H4W.F",
+      "test": "price",
+      "before": null,
+      "after": "fail",
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "HAUTO.OL",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "HUB.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "IG.MI",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "IR.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "ISP.MI",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "JKHY.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "K.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "KEY.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "KKR.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "L.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "LVS.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "MAA.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "MB.MI",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "MBG.XETRA",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "MIO.IR",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "MOS.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "MRU.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "MTS.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "MU.US",
+      "test": "economics",
+      "before": "fail",
+      "after": "pass",
+      "decision": "APPROVED"
+    },
+    {
+      "id": "NBIS.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "NI.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "NOS.LS",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "PKF1.F",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "PODD.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "PPG.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "PPL.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "PPT.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "PRU.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "PRU.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "PSSA3.SA",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "QGEN.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "REG.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "REP.MC",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "RI.PA",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "RWC.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "SBMO.AS",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "SCHW.US",
+      "test": "price",
+      "before": null,
+      "after": "fail",
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "SCHW.US",
+      "test": "moat",
+      "before": "fail",
+      "after": "pass",
+      "decision": "APPROVED"
+    },
+    {
+      "id": "SGM.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "SLC.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "STB.OL",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "SUL.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "SWKS.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "TAH.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "TDY.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "TECK-B.TO",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "TEP.LSE",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "TMUS.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "TPR.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "TXT.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "TYL.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "UDR.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "ULTA.US",
+      "test": "price",
+      "before": null,
+      "after": "fail",
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "UPR.IR",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "VICI.US",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "WAF.AU",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "WSE.US",
+      "test": "price",
+      "before": "pass",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "WST.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "WY.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "XYL.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    },
+    {
+      "id": "ZBRA.US",
+      "test": "price",
+      "before": "fail",
+      "after": null,
+      "decision": "UNAPPROVED"
+    }
+  ],
+  "counts": {
+    "UNAPPROVED": 114,
+    "APPROVED": 7
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "startedAt": 1791052382.0512438,
+  "finishedAt": 1791052448.7283647,
+  "stage": "publish",
+  "args": [
+    "--out=.fix5c/nightly-8/after-final"
+  ],
+  "exit": 0,
+  "peakPrivateBytes": 973205504,
+  "freeBytes": 31281319936,
+  "stop": null
+}

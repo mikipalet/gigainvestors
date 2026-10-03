@@ -1,0 +1,86 @@
+[
+  {
+    "revision": "50ff8c9",
+    "blobs": {
+      "lib/value/analyze-company.ts": "b6ed3bbe95b9d2586699ff808229cc631cf469ec",
+      "lib/value/completeness/cached-years.ts": "9e1141304bde92a1c4b247793323ec0bf04c0d74",
+      "lib/value/price-story/publication.ts": "50ff8c9:lib/value/price-story/publication.ts",
+      "scripts/value/stages/analyze.ts": "c363ce9c50ea8e6d95794b5ba362fd01bbc5b375",
+      "scripts/value/stages/publish.ts": "60337bd2f51efb10822282b63285acd12ff4c067",
+      "scripts/value/stages/history-snapshots.ts": "a67d41e4ec1813a814864aa6e54f569fccec3e36",
+      "scripts/value/run-daily.sh": "32234be50abd5af90d4d2ee5c3ab70fd1b63786c"
+    }
+  },
+  {
+    "revision": "feb6a34",
+    "blobs": {
+      "lib/value/analyze-company.ts": "e95714f967f30fa3c8faaf618ba732863a565ae4",
+      "lib/value/completeness/cached-years.ts": "86d16c8fb59a0d8c0dae60fabf62e4109f4bd7cd",
+      "lib/value/price-story/publication.ts": "feb6a34:lib/value/price-story/publication.ts",
+      "scripts/value/stages/analyze.ts": "c363ce9c50ea8e6d95794b5ba362fd01bbc5b375",
+      "scripts/value/stages/publish.ts": "9b60e5b82d3eb5a9af04bcbdb525c07df6a45b4a",
+      "scripts/value/stages/history-snapshots.ts": "bd949d245c7ab526efa9d04f4b59d977d2495697",
+      "scripts/value/run-daily.sh": "32234be50abd5af90d4d2ee5c3ab70fd1b63786c"
+    }
+  },
+  {
+    "revision": "b144f78",
+    "blobs": {
+      "lib/value/analyze-company.ts": "e95714f967f30fa3c8faaf618ba732863a565ae4",
+      "lib/value/completeness/cached-years.ts": "86d16c8fb59a0d8c0dae60fabf62e4109f4bd7cd",
+      "lib/value/price-story/publication.ts": "b144f78:lib/value/price-story/publication.ts",
+      "scripts/value/stages/analyze.ts": "c363ce9c50ea8e6d95794b5ba362fd01bbc5b375",
+      "scripts/value/stages/publish.ts": "6a9f0f142880bdbb1841be2dfb7cf3888b8b336a",
+      "scripts/value/stages/history-snapshots.ts": "bd949d245c7ab526efa9d04f4b59d977d2495697",
+      "scripts/value/run-daily.sh": "32234be50abd5af90d4d2ee5c3ab70fd1b63786c"
+    }
+  },
+  {
+    "revision": "0e80126",
+    "blobs": {
+      "lib/value/analyze-company.ts": "e95714f967f30fa3c8faaf618ba732863a565ae4",
+      "lib/value/completeness/cached-years.ts": "86d16c8fb59a0d8c0dae60fabf62e4109f4bd7cd",
+      "lib/value/price-story/publication.ts": "b6f63752723e7ff5d5602d53f02d1cbf547928c4",
+      "scripts/value/stages/analyze.ts": "c363ce9c50ea8e6d95794b5ba362fd01bbc5b375",
+      "scripts/value/stages/publish.ts": "e175b8f687374d6cd0b1dd7b68f3e3c1a8ed857b",
+      "scripts/value/stages/history-snapshots.ts": "bd949d245c7ab526efa9d04f4b59d977d2495697",
+      "scripts/value/run-daily.sh": "025ed06c4f9943fad2f186d434bbd40f427184a3"
+    }
+  },
+  {
+    "revision": "2d4cf5e",
+    "blobs": {
+      "lib/value/analyze-company.ts": "e95714f967f30fa3c8faaf618ba732863a565ae4",
+      "lib/value/completeness/cached-years.ts": "86d16c8fb59a0d8c0dae60fabf62e4109f4bd7cd",
+      "lib/value/price-story/publication.ts": "b6f63752723e7ff5d5602d53f02d1cbf547928c4",
+      "scripts/value/stages/analyze.ts": "c363ce9c50ea8e6d95794b5ba362fd01bbc5b375",
+      "scripts/value/stages/publish.ts": "e175b8f687374d6cd0b1dd7b68f3e3c1a8ed857b",
+      "scripts/value/stages/history-snapshots.ts": "bd949d245c7ab526efa9d04f4b59d977d2495697",
+      "scripts/value/run-daily.sh": "025ed06c4f9943fad2f186d434bbd40f427184a3"
+    }
+  },
+  {
+    "revision": "e95cb22",
+    "blobs": {
+      "lib/value/analyze-company.ts": "e95714f967f30fa3c8faaf618ba732863a565ae4",
+      "lib/value/completeness/cached-years.ts": "86d16c8fb59a0d8c0dae60fabf62e4109f4bd7cd",
+      "lib/value/price-story/publication.ts": "b6f63752723e7ff5d5602d53f02d1cbf547928c4",
+      "scripts/value/stages/analyze.ts": "c363ce9c50ea8e6d95794b5ba362fd01bbc5b375",
+      "scripts/value/stages/publish.ts": "e175b8f687374d6cd0b1dd7b68f3e3c1a8ed857b",
+      "scripts/value/stages/history-snapshots.ts": "bd949d245c7ab526efa9d04f4b59d977d2495697",
+      "scripts/value/run-daily.sh": "025ed06c4f9943fad2f186d434bbd40f427184a3"
+    }
+  },
+  {
+    "revision": "1a9b355",
+    "blobs": {
+      "lib/value/analyze-company.ts": "e95714f967f30fa3c8faaf618ba732863a565ae4",
+      "lib/value/completeness/cached-years.ts": "86d16c8fb59a0d8c0dae60fabf62e4109f4bd7cd",
+      "lib/value/price-story/publication.ts": "b6f63752723e7ff5d5602d53f02d1cbf547928c4",
+      "scripts/value/stages/analyze.ts": "c363ce9c50ea8e6d95794b5ba362fd01bbc5b375",
+      "scripts/value/stages/publish.ts": "e175b8f687374d6cd0b1dd7b68f3e3c1a8ed857b",
+      "scripts/value/stages/history-snapshots.ts": "bd949d245c7ab526efa9d04f4b59d977d2495697",
+      "scripts/value/run-daily.sh": "025ed06c4f9943fad2f186d434bbd40f427184a3"
+    }
+  }
+]

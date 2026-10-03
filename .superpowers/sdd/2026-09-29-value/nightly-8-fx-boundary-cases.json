@@ -1,0 +1,484 @@
+[
+  {
+    "id": "WAF.AU",
+    "sixValuation": {
+      "version": 2,
+      "currency": "AUD",
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.053556999999999994,
+      "shares": 1147424500,
+      "assumptions": [
+        "TTM stock compensation missing quarters assumed zero; reported quarters retained",
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use the median owner earnings observation",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (AU10Y.GBOND, observed 2026-10-02; checked 2026-10-02)"
+      ],
+      "tier": "standard",
+      "capitalReturns": {
+        "excludingGoodwill": 0.1833811845431716,
+        "includingAcquisitions": 0.17466413850487855,
+        "observations": 8,
+        "basis": "owner_earnings"
+      },
+      "netDebt": -138900000,
+      "leverage": "normal",
+      "riskFlags": [],
+      "method": "owner_earnings",
+      "normalized": 143882000,
+      "growth": 0.08,
+      "netCash": 561324000,
+      "perShare": {
+        "low": 2.1939585507316224,
+        "mid": 2.9244880578834356,
+        "high": 3.3498767008916124
+      },
+      "equityBondYield": 0.041798538088272184,
+      "bridge": [
+        {
+          "label": "net income",
+          "value": 146873000
+        },
+        {
+          "label": "+ D&A",
+          "value": 87491000
+        },
+        {
+          "label": "\u2212 maintenance capex",
+          "value": -87491000
+        },
+        {
+          "label": "\u2212 stock compensation",
+          "value": -2597000
+        },
+        {
+          "label": "\u2212 estimated lease payments",
+          "value": -394000
+        },
+        {
+          "label": "= owner earnings",
+          "value": 143882000
+        },
+        {
+          "label": "\u00d7 PV factor",
+          "value": 19.420811828949223
+        },
+        {
+          "label": "+ excess cash",
+          "value": 561324000
+        },
+        {
+          "label": "\u00f7 shares",
+          "value": 1147424500
+        }
+      ],
+      "perShareTrading": {
+        "currency": "AUD",
+        "fxRate": 1,
+        "low": 2.1939585507316224,
+        "mid": 2.9244880578834356,
+        "high": 3.3498767008916124
+      },
+      "bondSource": "EODHD latest",
+      "bondFlags": []
+    },
+    "eightValuation": {
+      "version": 2,
+      "currency": "AUD",
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.053556999999999994,
+      "shares": 1147424500,
+      "assumptions": [
+        "TTM stock compensation missing quarters assumed zero; reported quarters retained",
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use the median owner earnings observation",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (AU10Y.GBOND, observed 2026-10-02; checked 2026-10-02)"
+      ],
+      "tier": "standard",
+      "capitalReturns": {
+        "excludingGoodwill": 0.1833811845431716,
+        "includingAcquisitions": 0.17466413850487855,
+        "observations": 8,
+        "basis": "owner_earnings"
+      },
+      "netDebt": -138900000,
+      "leverage": "normal",
+      "riskFlags": [],
+      "method": "owner_earnings",
+      "normalized": 143882000,
+      "growth": 0.08,
+      "netCash": 561324000,
+      "perShare": {
+        "low": 2.1939585507316224,
+        "mid": 2.9244880578834356,
+        "high": 3.3498767008916124
+      },
+      "equityBondYield": 0.041798538088272184,
+      "bridge": [
+        {
+          "label": "net income",
+          "value": 146873000
+        },
+        {
+          "label": "+ D&A",
+          "value": 87491000
+        },
+        {
+          "label": "\u2212 maintenance capex",
+          "value": -87491000
+        },
+        {
+          "label": "\u2212 stock compensation",
+          "value": -2597000
+        },
+        {
+          "label": "\u2212 estimated lease payments",
+          "value": -394000
+        },
+        {
+          "label": "= owner earnings",
+          "value": 143882000
+        },
+        {
+          "label": "\u00d7 PV factor",
+          "value": 19.420811828949223
+        },
+        {
+          "label": "+ excess cash",
+          "value": 561324000
+        },
+        {
+          "label": "\u00f7 shares",
+          "value": 1147424500
+        }
+      ],
+      "perShareTrading": {
+        "currency": "AUD",
+        "fxRate": 1,
+        "low": 2.1939585507316224,
+        "mid": 2.9244880578834356,
+        "high": 3.3498767008916124
+      },
+      "bondSource": "EODHD latest",
+      "bondFlags": []
+    },
+    "sixCompany": {
+      "id": "WAF.AU",
+      "name": "West African Resources Ltd",
+      "code": "WAF",
+      "exchange": "AU",
+      "country": "AU",
+      "currency": "AUD",
+      "isin": "AU000000WAF6",
+      "cik": null,
+      "lei": "529900XLO8GMJNTUL013",
+      "edinetCode": null,
+      "sector": "Basic Materials",
+      "industry": "Gold",
+      "kind": "operating",
+      "listings": [
+        "WAF.AU"
+      ],
+      "marketCapUsd": 2737215386.5983996,
+      "description": "West African Resources Limited engages in the mining, mineral processing, acquisition, exploration, and project development of gold projects in West Africa. The company has 85% interests in the Sanbrado Gold and Kiaka Gold projects located in Burkina Faso. It also holds interests in the Toega Gold Project located in Burkina Faso. The company was incorporated in 2006 and is based in Subiaco, Australia.",
+      "source": "eodhd",
+      "nameEn": "West African Resources Ltd",
+      "logo": "/api/value/logo?asset=720621609824585d1f4298a57dc5c26b8f4278d65311dad588c058c98f78b82f",
+      "about": "West African Resources Limited engages in the mining, mineral processing, acquisition, exploration, and\u2026",
+      "indexes": [
+        "S&P/ASX 200"
+      ],
+      "listingExchange": "AU",
+      "investmentHolding": false
+    },
+    "eightCompany": {
+      "id": "WAF.AU",
+      "name": "West African Resources Ltd",
+      "code": "WAF",
+      "exchange": "AU",
+      "country": "AU",
+      "currency": "AUD",
+      "isin": "AU000000WAF6",
+      "cik": null,
+      "lei": "529900XLO8GMJNTUL013",
+      "edinetCode": null,
+      "sector": "Basic Materials",
+      "industry": "Gold",
+      "kind": "operating",
+      "listings": [
+        "WAF.AU"
+      ],
+      "marketCapUsd": 2737215386.5983996,
+      "description": "West African Resources Limited engages in the mining, mineral processing, acquisition, exploration, and project development of gold projects in West Africa. The company has 85% interests in the Sanbrado Gold and Kiaka Gold projects located in Burkina Faso. It also holds interests in the Toega Gold Project located in Burkina Faso. The company was incorporated in 2006 and is based in Subiaco, Australia.",
+      "source": "eodhd",
+      "nameEn": "West African Resources Ltd",
+      "logo": "/api/value/logo?asset=720621609824585d1f4298a57dc5c26b8f4278d65311dad588c058c98f78b82f",
+      "about": "West African Resources Limited engages in the mining, mineral processing, acquisition, exploration, and\u2026",
+      "indexes": [
+        "S&P/ASX 200"
+      ],
+      "listingExchange": "AU",
+      "investmentHolding": false
+    }
+  },
+  {
+    "id": "RWC.AU",
+    "sixValuation": {
+      "version": 2,
+      "currency": "USD",
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.053556999999999994,
+      "shares": 760579848,
+      "assumptions": [
+        "complete newer TTM unavailable; zero-growth rule uses latest annual revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use the latest owner earnings observation",
+        "Local 10-year yield: EODHD latest (AU10Y.GBOND, observed 2026-10-02; checked 2026-10-02)"
+      ],
+      "tier": "standard",
+      "capitalReturns": {
+        "excludingGoodwill": 0.12960269344840908,
+        "includingAcquisitions": 0.07908272511134126,
+        "observations": 10,
+        "basis": "owner_earnings"
+      },
+      "netDebt": 349192186,
+      "leverage": "volatile",
+      "riskFlags": [
+        "High leverage: net debt exceeds 5 years of owner earnings"
+      ],
+      "method": "owner_earnings",
+      "normalized": 60801138,
+      "growth": 0.08,
+      "netCash": 1866348.8599999994,
+      "perShare": {
+        "low": 1.0892461437266987,
+        "mid": 1.5549633770259634,
+        "high": 1.8261513577429789
+      },
+      "equityBondYield": 0.0295044978475548,
+      "bridge": [
+        {
+          "label": "net income",
+          "value": 6399045
+        },
+        {
+          "label": "+ D&A",
+          "value": 74382262
+        },
+        {
+          "label": "\u2212 maintenance capex",
+          "value": -19980169
+        },
+        {
+          "label": "\u2212 stock compensation",
+          "value": 0
+        },
+        {
+          "label": "= owner earnings",
+          "value": 60801138
+        },
+        {
+          "label": "\u00d7 PV factor",
+          "value": 19.420811828949223
+        },
+        {
+          "label": "+ excess cash",
+          "value": 1866348.8599999994
+        },
+        {
+          "label": "\u00f7 shares",
+          "value": 760579848
+        }
+      ],
+      "perShareTrading": {
+        "currency": "AUD",
+        "fxRate": 1.443105563171946,
+        "low": 1.5718971696755881,
+        "mid": 2.243976299914804,
+        "high": 2.6353291835528956
+      },
+      "bondSource": "EODHD latest",
+      "bondFlags": []
+    },
+    "eightValuation": {
+      "version": 2,
+      "currency": "USD",
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.053556999999999994,
+      "shares": 760579848,
+      "assumptions": [
+        "complete newer TTM unavailable; zero-growth rule uses latest annual revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use the latest owner earnings observation",
+        "Local 10-year yield: EODHD latest (AU10Y.GBOND, observed 2026-10-02; checked 2026-10-02)"
+      ],
+      "tier": "standard",
+      "capitalReturns": {
+        "excludingGoodwill": 0.12960269344840908,
+        "includingAcquisitions": 0.07908272511134126,
+        "observations": 10,
+        "basis": "owner_earnings"
+      },
+      "netDebt": 349192186,
+      "leverage": "volatile",
+      "riskFlags": [
+        "High leverage: net debt exceeds 5 years of owner earnings"
+      ],
+      "method": "owner_earnings",
+      "normalized": 60801138,
+      "growth": 0.08,
+      "netCash": 1866348.8599999994,
+      "perShare": {
+        "low": 1.0892461437266987,
+        "mid": 1.5549633770259634,
+        "high": 1.8261513577429789
+      },
+      "equityBondYield": 0.029433139633276855,
+      "bridge": [
+        {
+          "label": "net income",
+          "value": 6399045
+        },
+        {
+          "label": "+ D&A",
+          "value": 74382262
+        },
+        {
+          "label": "\u2212 maintenance capex",
+          "value": -19980169
+        },
+        {
+          "label": "\u2212 stock compensation",
+          "value": 0
+        },
+        {
+          "label": "= owner earnings",
+          "value": 60801138
+        },
+        {
+          "label": "\u00d7 PV factor",
+          "value": 19.420811828949223
+        },
+        {
+          "label": "+ excess cash",
+          "value": 1866348.8599999994
+        },
+        {
+          "label": "\u00f7 shares",
+          "value": 760579848
+        }
+      ],
+      "perShareTrading": {
+        "currency": "AUD",
+        "fxRate": 1.4396153347825462,
+        "low": 1.5680954518617087,
+        "mid": 2.238549122591831,
+        "high": 2.6289554982407597
+      },
+      "bondSource": "EODHD latest",
+      "bondFlags": []
+    },
+    "sixCompany": {
+      "id": "RWC.AU",
+      "name": "Reliance Worldwide Corporation Ltd",
+      "code": "RWC",
+      "exchange": "AU",
+      "country": "AU",
+      "currency": "AUD",
+      "isin": "AU000000RWC7",
+      "cik": null,
+      "lei": "52990084PQSDDJ8F5447",
+      "edinetCode": null,
+      "sector": "Industrials",
+      "industry": "Building Products & Equipment",
+      "kind": "operating",
+      "listings": [
+        "RWC.AU"
+      ],
+      "marketCapUsd": 2451811877.312,
+      "description": "Reliance Worldwide Corporation Limited, together with its subsidiaries, engages in the design, manufacture, and supply of water flow, and control and monitoring products and solutions for the plumbing and heating industries. It provides PEX press system that offers push, press, expansion, crimp, and clamp technologies; push to connect fittings, valves, and tubing; brackets; and controls and connection accessories. The company also offers plumbing and heating fittings, valves, pipes, and underfloor heating solutions; equipment support and water heater accessories; drain waste and vent (DWV) products; secondary pipe supports, acoustic noise, and vibration plumbing solutions; sleeving and firestop systems; water pressure, temperature, and thermostatic mixing valves; leak detector control valve; and push-to-connect technologies for drinks dispense, pure water, air and pneumatics, blown fibre, automotive, and OEM solutions. It sells its products under the SharkBite, JG Speedfit, Cash Acme, Reliance Valves, HoldRite, John Guest, and Holman brand names. The company distributes its products through retail, hardware, wholesale, and original equipment manufacturers. It operates in the United States, Canada, Mexico, Australia, New Zealand, Korea, China, the United Kingdom, Germany, Spain, Italy, Poland, France, and the Czech Republic. Reliance Worldwide Corporation Limited was founded in 1949 and is based in Atlanta, Georgia.",
+      "source": "eodhd",
+      "nameEn": "Reliance Worldwide Corporation Ltd",
+      "logo": "/api/value/logo?asset=c6ebf2ea363eedc0bb5e3ed699062a8c76d911d372a4b7a8fa373a60af39584c",
+      "about": "Reliance Worldwide Corporation Limited, together with its subsidiaries, engages in the design, manufacture\u2026",
+      "indexes": [
+        "S&P/ASX 200"
+      ],
+      "listingExchange": "AU",
+      "investmentHolding": false
+    },
+    "eightCompany": {
+      "id": "RWC.AU",
+      "name": "Reliance Worldwide Corporation Ltd",
+      "code": "RWC",
+      "exchange": "AU",
+      "country": "AU",
+      "currency": "AUD",
+      "isin": "AU000000RWC7",
+      "cik": null,
+      "lei": "52990084PQSDDJ8F5447",
+      "edinetCode": null,
+      "sector": "Industrials",
+      "industry": "Building Products & Equipment",
+      "kind": "operating",
+      "listings": [
+        "RWC.AU"
+      ],
+      "marketCapUsd": 2451811877.312,
+      "description": "Reliance Worldwide Corporation Limited, together with its subsidiaries, engages in the design, manufacture, and supply of water flow, and control and monitoring products and solutions for the plumbing and heating industries. It provides PEX press system that offers push, press, expansion, crimp, and clamp technologies; push to connect fittings, valves, and tubing; brackets; and controls and connection accessories. The company also offers plumbing and heating fittings, valves, pipes, and underfloor heating solutions; equipment support and water heater accessories; drain waste and vent (DWV) products; secondary pipe supports, acoustic noise, and vibration plumbing solutions; sleeving and firestop systems; water pressure, temperature, and thermostatic mixing valves; leak detector control valve; and push-to-connect technologies for drinks dispense, pure water, air and pneumatics, blown fibre, automotive, and OEM solutions. It sells its products under the SharkBite, JG Speedfit, Cash Acme, Reliance Valves, HoldRite, John Guest, and Holman brand names. The company distributes its products through retail, hardware, wholesale, and original equipment manufacturers. It operates in the United States, Canada, Mexico, Australia, New Zealand, Korea, China, the United Kingdom, Germany, Spain, Italy, Poland, France, and the Czech Republic. Reliance Worldwide Corporation Limited was founded in 1949 and is based in Atlanta, Georgia.",
+      "source": "eodhd",
+      "nameEn": "Reliance Worldwide Corporation Ltd",
+      "logo": "/api/value/logo?asset=c6ebf2ea363eedc0bb5e3ed699062a8c76d911d372a4b7a8fa373a60af39584c",
+      "about": "Reliance Worldwide Corporation Limited, together with its subsidiaries, engages in the design, manufacture\u2026",
+      "indexes": [
+        "S&P/ASX 200"
+      ],
+      "listingExchange": "AU",
+      "investmentHolding": false
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "removedSupersededStaging": [
+    ".fix5c/nightly-6/after-final",
+    ".fix5c/nightly-7/after-final",
+    ".fix5c/nightly-6/gate",
+    ".fix5c/nightly-7/gate",
+    ".fix5c/nightly-8/bisect-2d4cf5e",
+    ".fix5c/nightly-8/bisect-control",
+    ".fix5c/nightly-8/bisect-source",
+    ".fix5c/nightly-8/bisect-fixture"
+  ],
+  "retainedCandidate": ".fix5c/nightly-8/after-final",
+  "retainedPriorEvidence": ".superpowers/sdd/2026-09-29-value",
+  "freeGiB": 29.831031799316406
+}

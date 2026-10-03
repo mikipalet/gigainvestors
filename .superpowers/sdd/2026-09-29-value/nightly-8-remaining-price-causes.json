@@ -1,0 +1,999 @@
+[
+  {
+    "id": "HAUTO.OL",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "TXT.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "FER.AS",
+    "live": null,
+    "nightly6": "fail",
+    "nightly8": "fail",
+    "flags": []
+  },
+  {
+    "id": "6618.HK",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "601838.SHG",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "WAF.AU",
+    "live": "fail",
+    "nightly6": "fail",
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "K.TO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "002916.SHE",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "002736.SHE",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "PRU.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "JKHY.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "030200.KO",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "002812.SHE",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "008930.KO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "601009.SHG",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "BGA.AU",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "H4W.F",
+    "live": null,
+    "nightly6": "fail",
+    "nightly8": "fail",
+    "flags": []
+  },
+  {
+    "id": "LVS.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "0968.HK",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "ULTA.US",
+    "live": null,
+    "nightly6": "fail",
+    "nightly8": "fail",
+    "flags": []
+  },
+  {
+    "id": "MB.MI",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "2313.HK",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "2881.TW",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "017960.KO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "XYL.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "AIZ.US",
+    "live": null,
+    "nightly6": "fail",
+    "nightly8": "fail",
+    "flags": []
+  },
+  {
+    "id": "QGEN.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "GRUMAB.MX",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "2880.TW",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "ZBRA.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "192820.KO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "PPG.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "WST.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "MIO.IR",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "4904.TW",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "UDR.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "EBAY.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "MRU.TO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "0012.HK",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "SWKS.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "CBRE.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "8253.JP",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": []
+  },
+  {
+    "id": "IG.MI",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "KKR.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "042660.KO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "share count corrected to current 306357807"
+    ]
+  },
+  {
+    "id": "FRZCF.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "CARR.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "NI.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": []
+  },
+  {
+    "id": "8306.JP",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "PRU.AU",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "CTC-A.TO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "600926.SHG",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "9843.JP",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": []
+  },
+  {
+    "id": "L.TO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "MBG.XETRA",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "300433.SHE",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "329180.KO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "share count corrected to current 104932774"
+    ]
+  },
+  {
+    "id": "NOS.LS",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "TPR.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "CMCSA.US",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "VICI.US",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "PPL.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": []
+  },
+  {
+    "id": "SUL.AU",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "STB.OL",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "0700.HK",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "9008.JP",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": []
+  },
+  {
+    "id": "0027.HK",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "PPT.AU",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "DIS.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "EMBJ.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "RI.PA",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": []
+  },
+  {
+    "id": "EL.PA",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "RWC.AU",
+    "live": "fail",
+    "nightly6": "fail",
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "000001.SHE",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "SCHW.US",
+    "live": null,
+    "nightly6": "fail",
+    "nightly8": "fail",
+    "flags": []
+  },
+  {
+    "id": "251270.KO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "PODD.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "IR.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "033780.KO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "MOS.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": []
+  },
+  {
+    "id": "6902.JP",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": []
+  },
+  {
+    "id": "MTS.AU",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "TMUS.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "SLC.AU",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "REP.MC",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "HUB.AU",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "TEP.LSE",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "current share sources disagree by more than 1.5x; share count not corrected",
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "064350.KO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "ASRNL.AS",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "TAH.AU",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "SBMO.AS",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "PSSA3.SA",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "002142.SHE",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "WY.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": []
+  },
+  {
+    "id": "WSE.US",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "TDY.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "MAA.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "TYL.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "NBIS.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": []
+  },
+  {
+    "id": "3034.TW",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "600919.SHG",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "KEY.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "1209.HK",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "ISP.MI",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "REG.US",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "UPR.IR",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "SGM.AU",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "035250.KO",
+    "live": "pass",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "TECK-B.TO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "BC.MI",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "PKF1.F",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "032830.KO",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  },
+  {
+    "id": "BMED.MI",
+    "live": "fail",
+    "nightly6": null,
+    "nightly8": null,
+    "flags": [
+      "Market cap and price \u00d7 shares differ by more than 2%; dates or share basis need verification"
+    ]
+  }
+]

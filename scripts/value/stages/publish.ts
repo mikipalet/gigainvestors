@@ -1,4 +1,7 @@
 import {readVerdictFreeze,applyVerdictFreeze} from '../verdict-freeze';
+import {PIPELINE_VERSION} from '../../../lib/value/analyze-company';
+import {QUESTIONS_VERSION} from '../../../lib/value/jev/questions';
+import {mergeCompany} from '../../../lib/value/companies';
 import {applyStory,trustedStory,type StoryReading,type StoryGrade} from '../../../lib/value/price-story/publication';
 import historyReturns from './history-returns';
 import {numericMemo} from '../../../lib/value/owner-memo';
@@ -396,10 +399,20 @@ export default async function publish(options: { only?: string[]; limit?: number
   if (!T.publish.indexMembersOnly) throw new Error("Publication requires indexMembersOnly");
   const membership = readCorpusJson<{ complete: boolean; memberships: Record<string, string[]>; supplementalCompanies?: Company[] }>("index-membership/latest.json");
   if (!membership || (!membership.complete && !(out && options.force))) throw new Error("Run index-membership and resolve its coverage report before publish (incomplete snapshots may only be inspected with --out --force)");
-  const companies = applyMembership([...new Map([...readJsonl<Company>("universe.jsonl"), ...(membership.supplementalCompanies ?? [])].map(c=>[c.id,c])).values()], membership.memberships).filter(company => company.indexes!.length && !companyExclusion(company));
+  const companies = applyMembership([...new Map([...readJsonl<Company>("universe.jsonl"), ...(membership.supplementalCompanies ?? [])].map(c=>[c.id,c])).values()]
+    .map(company=>mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{})), membership.memberships).filter(company => company.indexes!.length && !companyExclusion(company));
   if (!companies.length) throw new Error("Run the universe stage before publish");
   const selected = companies.filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
   if (!selected.length) throw new Error("No companies selected for publish");
+  // A merge changes the analysis contract, not the cached documents. Never
+  // silently export pre-merge verdicts when the runner skipped/failed analysis.
+  // Frozen companies deliberately keep their exact released records.
+  const freeze=readVerdictFreeze(corpusPath('publish-repo'));
+  const stale=selected.filter(c=>!freeze.ids.has(c.id)).filter(c=>{
+    const a=readCorpusJson<Analysis>(`analysis/${c.id}.json`);
+    return a&&(a.versions?.pipeline!==PIPELINE_VERSION||a.versions?.questions!==QUESTIONS_VERSION);
+  });
+  if(stale.length)throw new Error(`Run analyze before publish; stale analysis versions: ${stale.map(c=>c.id).join(', ')}`);
   const returns=await historyReturns({});
   if(returns.failed.length)throw new Error(`History return refresh failed for ${returns.failed.length} companies; retaining prior publication`);
   const analyses = loadAnalyses(selected);

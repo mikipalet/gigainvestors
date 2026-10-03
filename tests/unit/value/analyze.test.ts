@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import ko from "../../fixtures/value/eodhd/fund-KO.US.json";
 import dal from "../../fixtures/value/eodhd/fund-DAL.US.json";
-import { analyzeCompany } from "../../../lib/value/analyze-company";
+import { analyzeCompany, PIPELINE_VERSION } from "../../../lib/value/analyze-company";
 import { bondYield, tradingRate } from "../../../lib/value/bond-yields";
 import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
 import { askJev } from "../../../lib/value/jev/client";
@@ -112,6 +112,17 @@ it('persists the final split-adjusted statement basis for indexed-company memos'
   const result = readCorpusJson<Analysis>('analysis/KO.US.json')!;
   expect(result.ownerMemo?.lines.find(l => l.question === 4)).toBeDefined();
   expect(saved!.memoYears.map(y => [y.fy,y.dilutedShares]).slice(-10)).toEqual(result.tests.management.series.shares.slice(-10));
+});
+it('rebuilds an obsolete analysis even when a copied fingerprint matches current inputs',async()=>{
+  const args=input();appendJsonl('universe.jsonl',args.company);
+  writeCorpusJson('fundamentals/KO.US.json',args.fundamentals);
+  const options={ask:args.ask,getBondYield:async()=>.04,evidence:async()=>null};
+  await analyze(options);
+  const stale=readCorpusJson<Analysis>('analysis/KO.US.json')!;
+  stale.versions.pipeline='obsolete';stale.tests.moat.result='fail';
+  writeCorpusJson('analysis/KO.US.json',stale);
+  await analyze(options);
+  expect(readCorpusJson<Analysis>('analysis/KO.US.json')).toMatchObject({versions:{pipeline:PIPELINE_VERSION},tests:{moat:{result:'pass'}}});
 });
 it("reports calibration failures, false positives and missing data distinctly", async () => {
   const result = await analyzeCompany(input());

@@ -1,0 +1,2558 @@
+{
+  "numericToNull": [
+    {
+      "id": "000858.SHE",
+      "path": "/tests/management/rawMetrics/averageBuybackYield",
+      "before": 5.611170027813797e-05,
+      "after": null
+    },
+    {
+      "id": "4568.JP",
+      "path": "/tests/management/rawMetrics/averageBuybackYield",
+      "before": 0.02635119264217192,
+      "after": null
+    },
+    {
+      "id": "600183.SHG",
+      "path": "/tests/management/rawMetrics/buybackYieldSpearman",
+      "before": -1,
+      "after": null
+    },
+    {
+      "id": "601088.SHG",
+      "path": "/tests/management/rawMetrics/averageBuybackYield",
+      "before": 5.275170970529573e-05,
+      "after": null
+    },
+    {
+      "id": "688036.SHG",
+      "path": "/tests/management/rawMetrics/buybackYieldSpearman",
+      "before": 1,
+      "after": null
+    }
+  ],
+  "numericToNullOutsideFrozen": [
+    {
+      "id": "000858.SHE",
+      "path": "/tests/management/rawMetrics/averageBuybackYield",
+      "before": 5.611170027813797e-05,
+      "after": null
+    },
+    {
+      "id": "4568.JP",
+      "path": "/tests/management/rawMetrics/averageBuybackYield",
+      "before": 0.02635119264217192,
+      "after": null
+    },
+    {
+      "id": "600183.SHG",
+      "path": "/tests/management/rawMetrics/buybackYieldSpearman",
+      "before": -1,
+      "after": null
+    },
+    {
+      "id": "601088.SHG",
+      "path": "/tests/management/rawMetrics/averageBuybackYield",
+      "before": 5.275170970529573e-05,
+      "after": null
+    },
+    {
+      "id": "688036.SHG",
+      "path": "/tests/management/rawMetrics/buybackYieldSpearman",
+      "before": 1,
+      "after": null
+    }
+  ],
+  "removedSeriesObservations": [
+    {
+      "id": "0267.HK",
+      "field": "totalRoic",
+      "fy": 2023,
+      "before": 0.015136419548444083
+    },
+    {
+      "id": "8253.JP",
+      "field": "revenue",
+      "fy": 2017,
+      "before": 278944000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "revenue",
+      "fy": 2018,
+      "before": 293250000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "revenue",
+      "fy": 2019,
+      "before": 304855000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 311410000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 282625000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 299017000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 322638000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 361604000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 422818000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "revenue",
+      "fy": 2026,
+      "before": 472770000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "operatingMargin",
+      "fy": 2017,
+      "before": 0.111897011586555
+    },
+    {
+      "id": "8253.JP",
+      "field": "operatingMargin",
+      "fy": 2018,
+      "before": 0.20795907928388746
+    },
+    {
+      "id": "8253.JP",
+      "field": "operatingMargin",
+      "fy": 2019,
+      "before": 0.18036115530334093
+    },
+    {
+      "id": "8253.JP",
+      "field": "operatingMargin",
+      "fy": 2020,
+      "before": 0.11965575928839793
+    },
+    {
+      "id": "8253.JP",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.215812472357364
+    },
+    {
+      "id": "8253.JP",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.20187480979342312
+    },
+    {
+      "id": "8253.JP",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.23365505613101992
+    },
+    {
+      "id": "8253.JP",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.3359752657603345
+    },
+    {
+      "id": "8253.JP",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.3080024975284874
+    },
+    {
+      "id": "8253.JP",
+      "field": "operatingMargin",
+      "fy": 2026,
+      "before": 0.2939970810330605
+    },
+    {
+      "id": "8253.JP",
+      "field": "roic",
+      "fy": 2017,
+      "before": 0.00995800171311029
+    },
+    {
+      "id": "8253.JP",
+      "field": "roic",
+      "fy": 2018,
+      "before": 0.10720362969799885
+    },
+    {
+      "id": "8253.JP",
+      "field": "roic",
+      "fy": 2019,
+      "before": 0.08775385431322141
+    },
+    {
+      "id": "8253.JP",
+      "field": "roic",
+      "fy": 2020,
+      "before": 0.08202980338491876
+    },
+    {
+      "id": "8253.JP",
+      "field": "roic",
+      "fy": 2021,
+      "before": 0.10107461272962925
+    },
+    {
+      "id": "8253.JP",
+      "field": "roic",
+      "fy": 2022,
+      "before": 0.09513402551881224
+    },
+    {
+      "id": "8253.JP",
+      "field": "roic",
+      "fy": 2023,
+      "before": 0.12395546504871592
+    },
+    {
+      "id": "8253.JP",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.15285569479540703
+    },
+    {
+      "id": "8253.JP",
+      "field": "roic",
+      "fy": 2025,
+      "before": 0.16728472650315537
+    },
+    {
+      "id": "8253.JP",
+      "field": "roic",
+      "fy": 2026,
+      "before": 0.14925138129812324
+    },
+    {
+      "id": "8253.JP",
+      "field": "grossMargin",
+      "fy": 2017,
+      "before": 0.9603146151198807
+    },
+    {
+      "id": "8253.JP",
+      "field": "grossMargin",
+      "fy": 2018,
+      "before": 0.778073316283035
+    },
+    {
+      "id": "8253.JP",
+      "field": "grossMargin",
+      "fy": 2019,
+      "before": 0.7802660281117253
+    },
+    {
+      "id": "8253.JP",
+      "field": "grossMargin",
+      "fy": 2020,
+      "before": 0.7247936803570855
+    },
+    {
+      "id": "8253.JP",
+      "field": "grossMargin",
+      "fy": 2021,
+      "before": 0.8487218045112782
+    },
+    {
+      "id": "8253.JP",
+      "field": "grossMargin",
+      "fy": 2022,
+      "before": 0.7861760368139604
+    },
+    {
+      "id": "8253.JP",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.8143368109150193
+    },
+    {
+      "id": "8253.JP",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.837631773984801
+    },
+    {
+      "id": "8253.JP",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.8358182480405281
+    },
+    {
+      "id": "8253.JP",
+      "field": "grossMargin",
+      "fy": 2026,
+      "before": 0.8445311673752565
+    },
+    {
+      "id": "8253.JP",
+      "field": "totalRoic",
+      "fy": 2017,
+      "before": 0.0028961613101478306
+    },
+    {
+      "id": "8253.JP",
+      "field": "totalRoic",
+      "fy": 2018,
+      "before": 0.037957742916724685
+    },
+    {
+      "id": "8253.JP",
+      "field": "totalRoic",
+      "fy": 2019,
+      "before": 0.06707495452353222
+    },
+    {
+      "id": "8253.JP",
+      "field": "totalRoic",
+      "fy": 2020,
+      "before": 0.06826413165652684
+    },
+    {
+      "id": "8253.JP",
+      "field": "totalRoic",
+      "fy": 2021,
+      "before": 0.09785307232753129
+    },
+    {
+      "id": "8253.JP",
+      "field": "totalRoic",
+      "fy": 2022,
+      "before": 0.0961194072216439
+    },
+    {
+      "id": "8253.JP",
+      "field": "totalRoic",
+      "fy": 2023,
+      "before": 0.12420836071026431
+    },
+    {
+      "id": "8253.JP",
+      "field": "totalRoic",
+      "fy": 2024,
+      "before": 0.13569438503570466
+    },
+    {
+      "id": "8253.JP",
+      "field": "totalRoic",
+      "fy": 2025,
+      "before": 0.13112121725031847
+    },
+    {
+      "id": "8253.JP",
+      "field": "totalRoic",
+      "fy": 2026,
+      "before": 0.11352559031056943
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2014,
+      "before": -113142000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2015,
+      "before": -116227000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2016,
+      "before": -1737387305.0804138
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2017,
+      "before": 6408900534.880226
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2018,
+      "before": 15947414278.061043
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2019,
+      "before": 27799422834.636955
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2020,
+      "before": 26018000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2021,
+      "before": 42627000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2022,
+      "before": 44157000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 55283000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": 81897000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 75360000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "ownerEarnings",
+      "fy": 2026,
+      "before": 74674000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "nwcToRevenue",
+      "fy": 2017,
+      "before": 6.324498824136744
+    },
+    {
+      "id": "8253.JP",
+      "field": "nwcToRevenue",
+      "fy": 2018,
+      "before": 6.385080988917306
+    },
+    {
+      "id": "8253.JP",
+      "field": "nwcToRevenue",
+      "fy": 2019,
+      "before": 7.445592166767808
+    },
+    {
+      "id": "8253.JP",
+      "field": "nwcToRevenue",
+      "fy": 2020,
+      "before": 7.931222504094281
+    },
+    {
+      "id": "8253.JP",
+      "field": "nwcToRevenue",
+      "fy": 2021,
+      "before": 8.90723042901371
+    },
+    {
+      "id": "8253.JP",
+      "field": "nwcToRevenue",
+      "fy": 2022,
+      "before": 8.95821307818619
+    },
+    {
+      "id": "8253.JP",
+      "field": "nwcToRevenue",
+      "fy": 2023,
+      "before": 8.896772853786597
+    },
+    {
+      "id": "8253.JP",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": 8.781982500193582
+    },
+    {
+      "id": "8253.JP",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": 8.284507755109763
+    },
+    {
+      "id": "8253.JP",
+      "field": "nwcToRevenue",
+      "fy": 2026,
+      "before": 7.912181398988937
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2016,
+      "before": 147.37
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2017,
+      "before": 258.7
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2018,
+      "before": 235.39
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2019,
+      "before": 186.84
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2020,
+      "before": 143.43
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2021,
+      "before": 231.24
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2022,
+      "before": 226.34999999999997
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 278.92
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": 453.08
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": 423.0199999999999
+    },
+    {
+      "id": "8253.JP",
+      "field": "perShareValue",
+      "fy": 2026,
+      "before": 425.13000000000005
+    },
+    {
+      "id": "8253.JP",
+      "field": "buybacks",
+      "fy": 2017,
+      "before": 1000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "buybacks",
+      "fy": 2018,
+      "before": 1000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "buybacks",
+      "fy": 2019,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "buybacks",
+      "fy": 2020,
+      "before": 10000000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "buybacks",
+      "fy": 2021,
+      "before": 1077000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "buybacks",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 1000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 1000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 48489000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "buybacks",
+      "fy": 2026,
+      "before": 21511000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "acquisitions",
+      "fy": 2017,
+      "before": 24873000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "acquisitions",
+      "fy": 2018,
+      "before": 9983000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "acquisitions",
+      "fy": 2019,
+      "before": 10452000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "acquisitions",
+      "fy": 2020,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "acquisitions",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "acquisitions",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 426000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 474000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 34000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "acquisitions",
+      "fy": 2026,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "marketCap",
+      "fy": 2017,
+      "before": 324369764205.6436
+    },
+    {
+      "id": "8253.JP",
+      "field": "marketCap",
+      "fy": 2018,
+      "before": 285335664216.83167
+    },
+    {
+      "id": "8253.JP",
+      "field": "marketCap",
+      "fy": 2019,
+      "before": 238791768357.95334
+    },
+    {
+      "id": "8253.JP",
+      "field": "marketCap",
+      "fy": 2020,
+      "before": 200208659276.30203
+    },
+    {
+      "id": "8253.JP",
+      "field": "marketCap",
+      "fy": 2021,
+      "before": 207504307213.28488
+    },
+    {
+      "id": "8253.JP",
+      "field": "marketCap",
+      "fy": 2022,
+      "before": 203638723216.25803
+    },
+    {
+      "id": "8253.JP",
+      "field": "marketCap",
+      "fy": 2023,
+      "before": 262606912376.3086
+    },
+    {
+      "id": "8253.JP",
+      "field": "marketCap",
+      "fy": 2024,
+      "before": 513879513551.6907
+    },
+    {
+      "id": "8253.JP",
+      "field": "marketCap",
+      "fy": 2025,
+      "before": 553439132901.5177
+    },
+    {
+      "id": "8253.JP",
+      "field": "marketCap",
+      "fy": 2026,
+      "before": 582534133088.7023
+    },
+    {
+      "id": "8253.JP",
+      "field": "retainedEarnings",
+      "fy": 2017,
+      "before": 36534000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "retainedEarnings",
+      "fy": 2018,
+      "before": 32727000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "retainedEarnings",
+      "fy": 2019,
+      "before": 24798000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "retainedEarnings",
+      "fy": 2020,
+      "before": 15510000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "retainedEarnings",
+      "fy": 2021,
+      "before": 29099000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "retainedEarnings",
+      "fy": 2022,
+      "before": 28340000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": 34999000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": 62039000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": 49109000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "retainedEarnings",
+      "fy": 2026,
+      "before": 43666000000
+    },
+    {
+      "id": "8253.JP",
+      "field": "ocfToNi",
+      "fy": 2017,
+      "before": -2.4443234799895865
+    },
+    {
+      "id": "8253.JP",
+      "field": "ocfToNi",
+      "fy": 2018,
+      "before": -1.0410185715028872
+    },
+    {
+      "id": "8253.JP",
+      "field": "ocfToNi",
+      "fy": 2019,
+      "before": -6.305927843497067
+    },
+    {
+      "id": "8253.JP",
+      "field": "ocfToNi",
+      "fy": 2020,
+      "before": -7.429646153173249
+    },
+    {
+      "id": "8253.JP",
+      "field": "ocfToNi",
+      "fy": 2021,
+      "before": -0.1299402191962803
+    },
+    {
+      "id": "8253.JP",
+      "field": "ocfToNi",
+      "fy": 2022,
+      "before": -1.9912650176678446
+    },
+    {
+      "id": "8253.JP",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": -2.9838299043556047
+    },
+    {
+      "id": "8253.JP",
+      "field": "ocfToNi",
+      "fy": 2024,
+      "before": -2.923863153712305
+    },
+    {
+      "id": "8253.JP",
+      "field": "ocfToNi",
+      "fy": 2025,
+      "before": -3.752790035694384
+    },
+    {
+      "id": "8253.JP",
+      "field": "ocfToNi",
+      "fy": 2026,
+      "before": -2.1978842664593055
+    },
+    {
+      "id": "8253.JP",
+      "field": "accruals",
+      "fy": 2017,
+      "before": 0.05300196226678962
+    },
+    {
+      "id": "8253.JP",
+      "field": "accruals",
+      "fy": 2018,
+      "before": 0.026626937832586465
+    },
+    {
+      "id": "8253.JP",
+      "field": "accruals",
+      "fy": 2019,
+      "before": 0.06940309077297341
+    },
+    {
+      "id": "8253.JP",
+      "field": "accruals",
+      "fy": 2020,
+      "before": 0.0574065695250458
+    },
+    {
+      "id": "8253.JP",
+      "field": "accruals",
+      "fy": 2021,
+      "before": 0.011975371687648327
+    },
+    {
+      "id": "8253.JP",
+      "field": "accruals",
+      "fy": 2022,
+      "before": 0.029305595636175914
+    },
+    {
+      "id": "8253.JP",
+      "field": "accruals",
+      "fy": 2023,
+      "before": 0.04458067736880808
+    },
+    {
+      "id": "8253.JP",
+      "field": "accruals",
+      "fy": 2024,
+      "before": 0.06605183940780267
+    },
+    {
+      "id": "8253.JP",
+      "field": "accruals",
+      "fy": 2025,
+      "before": 0.067557554971021
+    },
+    {
+      "id": "8253.JP",
+      "field": "accruals",
+      "fy": 2026,
+      "before": 0.03986102285033604
+    },
+    {
+      "id": "8253.JP",
+      "field": "nonRecurring",
+      "fy": 2017,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "nonRecurring",
+      "fy": 2018,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "nonRecurring",
+      "fy": 2019,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "nonRecurring",
+      "fy": 2020,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "nonRecurring",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "nonRecurring",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "8253.JP",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "ACN.US",
+      "field": "revenue",
+      "fy": 2016,
+      "before": 34797661000
+    },
+    {
+      "id": "ACN.US",
+      "field": "operatingMargin",
+      "fy": 2016,
+      "before": 0.13824046966834927
+    },
+    {
+      "id": "ACN.US",
+      "field": "netIncome",
+      "fy": 2016,
+      "before": 4111892000
+    },
+    {
+      "id": "ACN.US",
+      "field": "roic",
+      "fy": 2016,
+      "before": 0.49244525344832674
+    },
+    {
+      "id": "ACN.US",
+      "field": "grossMargin",
+      "fy": 2016,
+      "before": 0.2953482132031805
+    },
+    {
+      "id": "ACN.US",
+      "field": "totalRoic",
+      "fy": 2016,
+      "before": 1.0641671419589807
+    },
+    {
+      "id": "ACN.US",
+      "field": "nwcToRevenue",
+      "fy": 2016,
+      "before": 0.14200891261053436
+    },
+    {
+      "id": "ACN.US",
+      "field": "perShareValue",
+      "fy": 2015,
+      "before": 4.548752891215516
+    },
+    {
+      "id": "ACN.US",
+      "field": "shares",
+      "fy": 2016,
+      "before": 663752800
+    },
+    {
+      "id": "ACN.US",
+      "field": "buybacks",
+      "fy": 2016,
+      "before": 2604989000
+    },
+    {
+      "id": "ACN.US",
+      "field": "acquisitions",
+      "fy": 2016,
+      "before": 724848000
+    },
+    {
+      "id": "ACN.US",
+      "field": "retainedEarnings",
+      "fy": 2016,
+      "before": 2673754000
+    },
+    {
+      "id": "ACN.US",
+      "field": "ocfToNi",
+      "fy": 2016,
+      "before": 1.1126544666056404
+    },
+    {
+      "id": "ACN.US",
+      "field": "accruals",
+      "fy": 2016,
+      "before": -0.022476729103454003
+    },
+    {
+      "id": "ACN.US",
+      "field": "sbcToOcf",
+      "fy": 2016,
+      "before": 0.16571736448154856
+    },
+    {
+      "id": "ACN.US",
+      "field": "nonRecurring",
+      "fy": 2016,
+      "before": 0
+    },
+    {
+      "id": "ACN.US",
+      "field": "netCash",
+      "fy": 2016,
+      "before": 4881254000
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "netIncome",
+      "fy": 2016,
+      "before": 186500000
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "commonRoe",
+      "fy": 2016,
+      "before": 0.16999361954243003
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "roe",
+      "fy": 2016,
+      "before": 0.19648124736620312
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "bookPlusDividendReturn",
+      "fy": 2016,
+      "before": 0.19014185673998307
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "bookPerShare",
+      "fy": 2015,
+      "before": 5.770666666666667
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "dividendsPerShare",
+      "fy": 2016,
+      "before": 0.5356904603068713
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "shares",
+      "fy": 2015,
+      "before": 150000000
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "netCash",
+      "fy": 2016,
+      "before": -1116100000
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "ownerEarningsPerShare",
+      "fy": 1996,
+      "before": 0.2363235103206543
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "tangibleBookValuePerShare",
+      "fy": 1996,
+      "before": 1.5452594227357306
+    },
+    {
+      "id": "CBG.LSE",
+      "field": "bookValuePerShare",
+      "fy": 1996,
+      "before": 1.5452594227357306
+    },
+    {
+      "id": "FDS.US",
+      "field": "revenue",
+      "fy": 2016,
+      "before": 1127092000
+    },
+    {
+      "id": "FDS.US",
+      "field": "operatingMargin",
+      "fy": 2016,
+      "before": 0.310246191082893
+    },
+    {
+      "id": "FDS.US",
+      "field": "netIncome",
+      "fy": 2016,
+      "before": 338815000
+    },
+    {
+      "id": "FDS.US",
+      "field": "roic",
+      "fy": 2016,
+      "before": 1.7713306458086262
+    },
+    {
+      "id": "FDS.US",
+      "field": "grossMargin",
+      "fy": 2016,
+      "before": 0.5675517171623967
+    },
+    {
+      "id": "FDS.US",
+      "field": "ownerEarnings",
+      "fy": 1996,
+      "before": 3100000
+    },
+    {
+      "id": "FDS.US",
+      "field": "nwcToRevenue",
+      "fy": 2016,
+      "before": 0.04890372746856512
+    },
+    {
+      "id": "FDS.US",
+      "field": "perShareValue",
+      "fy": 2015,
+      "before": 5.73071345362908
+    },
+    {
+      "id": "FDS.US",
+      "field": "shares",
+      "fy": 2016,
+      "before": 40100000
+    },
+    {
+      "id": "FDS.US",
+      "field": "buybacks",
+      "fy": 2016,
+      "before": 356828000
+    },
+    {
+      "id": "FDS.US",
+      "field": "acquisitions",
+      "fy": 2016,
+      "before": 197737000
+    },
+    {
+      "id": "FDS.US",
+      "field": "retainedEarnings",
+      "fy": 2016,
+      "before": 264597000
+    },
+    {
+      "id": "FDS.US",
+      "field": "ocfToNi",
+      "fy": 2016,
+      "before": 0.9773475200330564
+    },
+    {
+      "id": "FDS.US",
+      "field": "accruals",
+      "fy": 2016,
+      "before": 0.00753070417725953
+    },
+    {
+      "id": "FDS.US",
+      "field": "sbcToOcf",
+      "fy": 2016,
+      "before": 0.08997100924080449
+    },
+    {
+      "id": "FDS.US",
+      "field": "nonRecurring",
+      "fy": 2016,
+      "before": 0
+    },
+    {
+      "id": "FDS.US",
+      "field": "netCash",
+      "fy": 2016,
+      "before": -80623000
+    },
+    {
+      "id": "FDS.US",
+      "field": "revenuePerShare",
+      "fy": 1996,
+      "before": 1.0322851250742755
+    },
+    {
+      "id": "FDS.US",
+      "field": "ownerEarningsPerShare",
+      "fy": 1996,
+      "before": 0.07223665660790642
+    },
+    {
+      "id": "FDS.US",
+      "field": "tangibleBookValuePerShare",
+      "fy": 1996,
+      "before": 0.6571205536590197
+    },
+    {
+      "id": "FDS.US",
+      "field": "bookValuePerShare",
+      "fy": 1996,
+      "before": 0.6571205536590197
+    },
+    {
+      "id": "IWG.LSE",
+      "field": "totalRoic",
+      "fy": 2024,
+      "before": 0.03338494812702032
+    },
+    {
+      "id": "IWG.LSE",
+      "field": "totalRoic",
+      "fy": 2025,
+      "before": -0.15795563644840002
+    },
+    {
+      "id": "JBL.US",
+      "field": "revenue",
+      "fy": 2016,
+      "before": 18353086000
+    },
+    {
+      "id": "JBL.US",
+      "field": "operatingMargin",
+      "fy": 2016,
+      "before": 0.028487470717458635
+    },
+    {
+      "id": "JBL.US",
+      "field": "netIncome",
+      "fy": 2016,
+      "before": 254095000
+    },
+    {
+      "id": "JBL.US",
+      "field": "roic",
+      "fy": 2016,
+      "before": 0.11284944452115965
+    },
+    {
+      "id": "JBL.US",
+      "field": "grossMargin",
+      "fy": 2016,
+      "before": 0.0832396252052652
+    },
+    {
+      "id": "JBL.US",
+      "field": "ownerEarnings",
+      "fy": 1996,
+      "before": 15200000
+    },
+    {
+      "id": "JBL.US",
+      "field": "nwcToRevenue",
+      "fy": 2016,
+      "before": 0.012152016287615064
+    },
+    {
+      "id": "JBL.US",
+      "field": "perShareValue",
+      "fy": 2015,
+      "before": 1.4697505213642925
+    },
+    {
+      "id": "JBL.US",
+      "field": "shares",
+      "fy": 2016,
+      "before": 187856000
+    },
+    {
+      "id": "JBL.US",
+      "field": "buybacks",
+      "fy": 2016,
+      "before": 148340000
+    },
+    {
+      "id": "JBL.US",
+      "field": "acquisitions",
+      "fy": 2016,
+      "before": 145809000
+    },
+    {
+      "id": "JBL.US",
+      "field": "retainedEarnings",
+      "fy": 2016,
+      "before": 191659000
+    },
+    {
+      "id": "JBL.US",
+      "field": "ocfToNi",
+      "fy": 2016,
+      "before": 3.60576556012515
+    },
+    {
+      "id": "JBL.US",
+      "field": "accruals",
+      "fy": 2016,
+      "before": -0.06414150127917399
+    },
+    {
+      "id": "JBL.US",
+      "field": "sbcToOcf",
+      "fy": 2016,
+      "before": 0.06439265362521789
+    },
+    {
+      "id": "JBL.US",
+      "field": "nonRecurring",
+      "fy": 2016,
+      "before": 11369000
+    },
+    {
+      "id": "JBL.US",
+      "field": "netCash",
+      "fy": 2016,
+      "before": -1207763000
+    },
+    {
+      "id": "JBL.US",
+      "field": "revenuePerShare",
+      "fy": 1996,
+      "before": 5.696996093337557
+    },
+    {
+      "id": "JBL.US",
+      "field": "ownerEarningsPerShare",
+      "fy": 1996,
+      "before": 0.10030619786717347
+    },
+    {
+      "id": "JBL.US",
+      "field": "tangibleBookValuePerShare",
+      "fy": 1996,
+      "before": 0.8196072220462465
+    },
+    {
+      "id": "JBL.US",
+      "field": "bookValuePerShare",
+      "fy": 1996,
+      "before": 0.8196072220462465
+    },
+    {
+      "id": "MU.US",
+      "field": "revenue",
+      "fy": 2016,
+      "before": 12399000000
+    },
+    {
+      "id": "MU.US",
+      "field": "operatingMargin",
+      "fy": 2016,
+      "before": 0.013549479796757804
+    },
+    {
+      "id": "MU.US",
+      "field": "netIncome",
+      "fy": 2016,
+      "before": -276000000
+    },
+    {
+      "id": "MU.US",
+      "field": "roic",
+      "fy": 2016,
+      "before": 0.007589204025617567
+    },
+    {
+      "id": "MU.US",
+      "field": "grossMargin",
+      "fy": 2016,
+      "before": 0.20203242196951368
+    },
+    {
+      "id": "MU.US",
+      "field": "ownerEarnings",
+      "fy": 1996,
+      "before": -477600000
+    },
+    {
+      "id": "MU.US",
+      "field": "nwcToRevenue",
+      "fy": 2016,
+      "before": 0.2821195257682071
+    },
+    {
+      "id": "MU.US",
+      "field": "perShareValue",
+      "fy": 2015,
+      "before": 2.671889400921659
+    },
+    {
+      "id": "MU.US",
+      "field": "shares",
+      "fy": 2016,
+      "before": 1091000000
+    },
+    {
+      "id": "MU.US",
+      "field": "buybacks",
+      "fy": 2016,
+      "before": 148000000
+    },
+    {
+      "id": "MU.US",
+      "field": "acquisitions",
+      "fy": 2016,
+      "before": 96000000
+    },
+    {
+      "id": "MU.US",
+      "field": "retainedEarnings",
+      "fy": 2016,
+      "before": -369000000
+    },
+    {
+      "id": "MU.US",
+      "field": "accruals",
+      "fy": 2016,
+      "before": -0.12505446623093683
+    },
+    {
+      "id": "MU.US",
+      "field": "sbcToOcf",
+      "fy": 2016,
+      "before": 0.06029040404040404
+    },
+    {
+      "id": "MU.US",
+      "field": "nonRecurring",
+      "fy": 2016,
+      "before": 67000000
+    },
+    {
+      "id": "MU.US",
+      "field": "revenuePerShare",
+      "fy": 1996,
+      "before": 4.434223300970873
+    },
+    {
+      "id": "MU.US",
+      "field": "ownerEarningsPerShare",
+      "fy": 1996,
+      "before": -0.579611650485437
+    },
+    {
+      "id": "MU.US",
+      "field": "tangibleBookValuePerShare",
+      "fy": 1996,
+      "before": 2.983980582524272
+    },
+    {
+      "id": "MU.US",
+      "field": "bookValuePerShare",
+      "fy": 1996,
+      "before": 3.0364077669902914
+    },
+    {
+      "id": "SCHW.US",
+      "field": "revenue",
+      "fy": 2016,
+      "before": 7649000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "revenue",
+      "fy": 2017,
+      "before": 8960000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "revenue",
+      "fy": 2018,
+      "before": 10989000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "revenue",
+      "fy": 2019,
+      "before": 11785000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "revenue",
+      "fy": 2020,
+      "before": 12109000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "revenue",
+      "fy": 2021,
+      "before": 18996000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "revenue",
+      "fy": 2022,
+      "before": 22307000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "revenue",
+      "fy": 2023,
+      "before": 25521000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "revenue",
+      "fy": 2024,
+      "before": 25999000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "revenue",
+      "fy": 2025,
+      "before": 27675000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "operatingMargin",
+      "fy": 2016,
+      "before": 0.3912929794744411
+    },
+    {
+      "id": "SCHW.US",
+      "field": "operatingMargin",
+      "fy": 2017,
+      "before": 0.40736607142857145
+    },
+    {
+      "id": "SCHW.US",
+      "field": "operatingMargin",
+      "fy": 2018,
+      "before": 0.4151424151424151
+    },
+    {
+      "id": "SCHW.US",
+      "field": "operatingMargin",
+      "fy": 2019,
+      "before": 0.4113703860840051
+    },
+    {
+      "id": "SCHW.US",
+      "field": "operatingMargin",
+      "fy": 2020,
+      "before": 0.3551077710793625
+    },
+    {
+      "id": "SCHW.US",
+      "field": "operatingMargin",
+      "fy": 2021,
+      "before": 0.4060328490208465
+    },
+    {
+      "id": "SCHW.US",
+      "field": "operatingMargin",
+      "fy": 2022,
+      "before": 0.4208544403102165
+    },
+    {
+      "id": "SCHW.US",
+      "field": "operatingMargin",
+      "fy": 2023,
+      "before": 0.24991183731045022
+    },
+    {
+      "id": "SCHW.US",
+      "field": "operatingMargin",
+      "fy": 2024,
+      "before": 0.29585753298203776
+    },
+    {
+      "id": "SCHW.US",
+      "field": "operatingMargin",
+      "fy": 2025,
+      "before": 0.4140560072267389
+    },
+    {
+      "id": "SCHW.US",
+      "field": "roic",
+      "fy": 2016,
+      "before": 0.09948606494502685
+    },
+    {
+      "id": "SCHW.US",
+      "field": "roic",
+      "fy": 2017,
+      "before": 0.06198077224515387
+    },
+    {
+      "id": "SCHW.US",
+      "field": "roic",
+      "fy": 2018,
+      "before": 0.1272681085788939
+    },
+    {
+      "id": "SCHW.US",
+      "field": "roic",
+      "fy": 2019,
+      "before": 0.12363976233393417
+    },
+    {
+      "id": "SCHW.US",
+      "field": "roic",
+      "fy": 2020,
+      "before": 0.046026563982365085
+    },
+    {
+      "id": "SCHW.US",
+      "field": "roic",
+      "fy": 2021,
+      "before": 0.07316006497563414
+    },
+    {
+      "id": "SCHW.US",
+      "field": "roic",
+      "fy": 2022,
+      "before": 0.09643422925113444
+    },
+    {
+      "id": "SCHW.US",
+      "field": "roic",
+      "fy": 2023,
+      "before": 0.05065024640390248
+    },
+    {
+      "id": "SCHW.US",
+      "field": "roic",
+      "fy": 2024,
+      "before": 0.06354468553829043
+    },
+    {
+      "id": "SCHW.US",
+      "field": "roic",
+      "fy": 2025,
+      "before": 0.11013237782422614
+    },
+    {
+      "id": "SCHW.US",
+      "field": "grossMargin",
+      "fy": 2016,
+      "before": 0.9776441364884298
+    },
+    {
+      "id": "SCHW.US",
+      "field": "grossMargin",
+      "fy": 2017,
+      "before": 0.9618303571428571
+    },
+    {
+      "id": "SCHW.US",
+      "field": "grossMargin",
+      "fy": 2018,
+      "before": 0.9220129220129221
+    },
+    {
+      "id": "SCHW.US",
+      "field": "grossMargin",
+      "fy": 2019,
+      "before": 0.9097157403478999
+    },
+    {
+      "id": "SCHW.US",
+      "field": "grossMargin",
+      "fy": 2020,
+      "before": 0.965480221322983
+    },
+    {
+      "id": "SCHW.US",
+      "field": "grossMargin",
+      "fy": 2021,
+      "before": 0.9749420930722257
+    },
+    {
+      "id": "SCHW.US",
+      "field": "grossMargin",
+      "fy": 2022,
+      "before": 0.9307392298381674
+    },
+    {
+      "id": "SCHW.US",
+      "field": "grossMargin",
+      "fy": 2023,
+      "before": 0.7380980369107794
+    },
+    {
+      "id": "SCHW.US",
+      "field": "grossMargin",
+      "fy": 2024,
+      "before": 0.7541059271510443
+    },
+    {
+      "id": "SCHW.US",
+      "field": "grossMargin",
+      "fy": 2025,
+      "before": 0.8643541102077688
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 1996,
+      "before": 172300000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 1997,
+      "before": 270300000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 1998,
+      "before": 348500000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 1999,
+      "before": 666000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2000,
+      "before": 586015203.7760875
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2001,
+      "before": 328000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2002,
+      "before": 270000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2003,
+      "before": 603000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2004,
+      "before": 190000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2005,
+      "before": 821000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2006,
+      "before": 1325000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2007,
+      "before": 2407000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2008,
+      "before": 1107000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2009,
+      "before": 731000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2010,
+      "before": 384000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2011,
+      "before": 765000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2012,
+      "before": 871000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2013,
+      "before": 955000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2014,
+      "before": 1094442749.4704068
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2015,
+      "before": 1312000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2016,
+      "before": 1748000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2017,
+      "before": 2201000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2018,
+      "before": 3310000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2019,
+      "before": 3305381124.044066
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2020,
+      "before": 3095000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2021,
+      "before": 5849000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2022,
+      "before": 7094000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2023,
+      "before": 5385000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2024,
+      "before": 6420000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ownerEarnings",
+      "fy": 2025,
+      "before": 9349000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nwcToRevenue",
+      "fy": 2016,
+      "before": 17.436919858805073
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nwcToRevenue",
+      "fy": 2017,
+      "before": 17.971986607142856
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nwcToRevenue",
+      "fy": 2018,
+      "before": -1.0334880334880334
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nwcToRevenue",
+      "fy": 2019,
+      "before": 4.063809927874416
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nwcToRevenue",
+      "fy": 2020,
+      "before": 8.880667272276819
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nwcToRevenue",
+      "fy": 2021,
+      "before": 8.882975363234365
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nwcToRevenue",
+      "fy": 2022,
+      "before": 5.221813780427668
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nwcToRevenue",
+      "fy": 2023,
+      "before": -0.6294424199678696
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nwcToRevenue",
+      "fy": 2024,
+      "before": -0.9315358283010885
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nwcToRevenue",
+      "fy": 2025,
+      "before": -1.2459981933152664
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2015,
+      "before": 1.08796992481203
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2016,
+      "before": 1.4086502609992544
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2017,
+      "before": 1.7334315169366716
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2018,
+      "before": 2.590103397341211
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2019,
+      "before": 2.8646558391337975
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2020,
+      "before": 2.2989547038327527
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2021,
+      "before": 3.0783385909568874
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2022,
+      "before": 3.835024025627336
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2023,
+      "before": 2.7718818380743984
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2024,
+      "before": 3.236383442265795
+    },
+    {
+      "id": "SCHW.US",
+      "field": "perShareValue",
+      "fy": 2025,
+      "before": 4.981429375351716
+    },
+    {
+      "id": "SCHW.US",
+      "field": "buybacks",
+      "fy": 2016,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "buybacks",
+      "fy": 2017,
+      "before": 485000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "buybacks",
+      "fy": 2018,
+      "before": 1000000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "buybacks",
+      "fy": 2019,
+      "before": 2220000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "buybacks",
+      "fy": 2020,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "buybacks",
+      "fy": 2021,
+      "before": 600000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "buybacks",
+      "fy": 2022,
+      "before": 4395000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "buybacks",
+      "fy": 2023,
+      "before": 2842000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "buybacks",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "buybacks",
+      "fy": 2025,
+      "before": 9804000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "acquisitions",
+      "fy": 2016,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "acquisitions",
+      "fy": 2017,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "acquisitions",
+      "fy": 2018,
+      "before": 44000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "acquisitions",
+      "fy": 2019,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "acquisitions",
+      "fy": 2020,
+      "before": 20588000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "acquisitions",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "acquisitions",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "acquisitions",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "acquisitions",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "acquisitions",
+      "fy": 2025,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "marketCap",
+      "fy": 2016,
+      "before": 52929271636.96289
+    },
+    {
+      "id": "SCHW.US",
+      "field": "marketCap",
+      "fy": 2017,
+      "before": 69760458549.49951
+    },
+    {
+      "id": "SCHW.US",
+      "field": "marketCap",
+      "fy": 2018,
+      "before": 56231618347.16797
+    },
+    {
+      "id": "SCHW.US",
+      "field": "marketCap",
+      "fy": 2019,
+      "before": 61495081775.66528
+    },
+    {
+      "id": "SCHW.US",
+      "field": "marketCap",
+      "fy": 2020,
+      "before": 76112401313.78174
+    },
+    {
+      "id": "SCHW.US",
+      "field": "marketCap",
+      "fy": 2021,
+      "before": 159958197097.77832
+    },
+    {
+      "id": "SCHW.US",
+      "field": "marketCap",
+      "fy": 2022,
+      "before": 155945984001.15967
+    },
+    {
+      "id": "SCHW.US",
+      "field": "marketCap",
+      "fy": 2023,
+      "before": 125766405578.61328
+    },
+    {
+      "id": "SCHW.US",
+      "field": "marketCap",
+      "fy": 2024,
+      "before": 135882363922.11914
+    },
+    {
+      "id": "SCHW.US",
+      "field": "marketCap",
+      "fy": 2025,
+      "before": 177540076507.56836
+    },
+    {
+      "id": "SCHW.US",
+      "field": "retainedEarnings",
+      "fy": 2016,
+      "before": 1403000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "retainedEarnings",
+      "fy": 2017,
+      "before": 1762000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "retainedEarnings",
+      "fy": 2018,
+      "before": 2720000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "retainedEarnings",
+      "fy": 2019,
+      "before": 2644000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "retainedEarnings",
+      "fy": 2020,
+      "before": 2019000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "retainedEarnings",
+      "fy": 2021,
+      "before": 4033000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "retainedEarnings",
+      "fy": 2022,
+      "before": 5073000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "retainedEarnings",
+      "fy": 2023,
+      "before": 2791000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "retainedEarnings",
+      "fy": 2024,
+      "before": 3667000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "retainedEarnings",
+      "fy": 2025,
+      "before": 6523000000
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ocfToNi",
+      "fy": 2016,
+      "before": 1.907358390682901
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ocfToNi",
+      "fy": 2017,
+      "before": -0.3564146134239592
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ocfToNi",
+      "fy": 2018,
+      "before": 3.551753635585971
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ocfToNi",
+      "fy": 2019,
+      "before": 2.517548596112311
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ocfToNi",
+      "fy": 2020,
+      "before": 2.0769930281903606
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ocfToNi",
+      "fy": 2021,
+      "before": 0.3617421007685739
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ocfToNi",
+      "fy": 2022,
+      "before": 0.28637059724349156
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ocfToNi",
+      "fy": 2023,
+      "before": 3.865600947306098
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ocfToNi",
+      "fy": 2024,
+      "before": 0.44934365533490406
+    },
+    {
+      "id": "SCHW.US",
+      "field": "ocfToNi",
+      "fy": 2025,
+      "before": 1.0518526886579305
+    },
+    {
+      "id": "SCHW.US",
+      "field": "accruals",
+      "fy": 2016,
+      "before": -0.007672920499769454
+    },
+    {
+      "id": "SCHW.US",
+      "field": "accruals",
+      "fy": 2017,
+      "before": 0.013125118179501303
+    },
+    {
+      "id": "SCHW.US",
+      "field": "accruals",
+      "fy": 2018,
+      "before": -0.03018395720482188
+    },
+    {
+      "id": "SCHW.US",
+      "field": "accruals",
+      "fy": 2019,
+      "before": -0.01911904761904762
+    },
+    {
+      "id": "SCHW.US",
+      "field": "accruals",
+      "fy": 2020,
+      "before": -0.00647166075601675
+    },
+    {
+      "id": "SCHW.US",
+      "field": "accruals",
+      "fy": 2021,
+      "before": 0.005600431609393499
+    },
+    {
+      "id": "SCHW.US",
+      "field": "accruals",
+      "fy": 2022,
+      "before": 0.009290069086506746
+    },
+    {
+      "id": "SCHW.US",
+      "field": "accruals",
+      "fy": 2023,
+      "before": -0.029441702590139868
+    },
+    {
+      "id": "SCHW.US",
+      "field": "accruals",
+      "fy": 2024,
+      "before": 0.006818897014231738
+    },
+    {
+      "id": "SCHW.US",
+      "field": "accruals",
+      "fy": 2025,
+      "before": -0.0009348364036293648
+    },
+    {
+      "id": "SCHW.US",
+      "field": "sbcToOcf",
+      "fy": 2016,
+      "before": 0.03913405495420483
+    },
+    {
+      "id": "SCHW.US",
+      "field": "sbcToOcf",
+      "fy": 2018,
+      "before": 0.01581567116249197
+    },
+    {
+      "id": "SCHW.US",
+      "field": "sbcToOcf",
+      "fy": 2019,
+      "before": 0.019624664879356567
+    },
+    {
+      "id": "SCHW.US",
+      "field": "sbcToOcf",
+      "fy": 2020,
+      "before": 0.0297723292469352
+    },
+    {
+      "id": "SCHW.US",
+      "field": "sbcToOcf",
+      "fy": 2021,
+      "before": 0.11992445703493862
+    },
+    {
+      "id": "SCHW.US",
+      "field": "sbcToOcf",
+      "fy": 2022,
+      "before": 0.17792902284880893
+    },
+    {
+      "id": "SCHW.US",
+      "field": "sbcToOcf",
+      "fy": 2023,
+      "before": 0.016337366620717823
+    },
+    {
+      "id": "SCHW.US",
+      "field": "sbcToOcf",
+      "fy": 2024,
+      "before": 0.12621722846441946
+    },
+    {
+      "id": "SCHW.US",
+      "field": "sbcToOcf",
+      "fy": 2025,
+      "before": 0.03404575233594673
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nonRecurring",
+      "fy": 2016,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nonRecurring",
+      "fy": 2017,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nonRecurring",
+      "fy": 2018,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nonRecurring",
+      "fy": 2019,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nonRecurring",
+      "fy": 2020,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nonRecurring",
+      "fy": 2021,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nonRecurring",
+      "fy": 2022,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nonRecurring",
+      "fy": 2023,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nonRecurring",
+      "fy": 2024,
+      "before": 0
+    },
+    {
+      "id": "SCHW.US",
+      "field": "nonRecurring",
+      "fy": 2025,
+      "before": 0
+    }
+  ]
+}

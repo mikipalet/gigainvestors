@@ -1,0 +1,164 @@
+[
+  {
+    "file": "dossiers/571.json",
+    "id": "600183.SHG",
+    "path": "/600183.SHG/tests/management/rawMetrics/buybackYieldSpearman",
+    "before": -1,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "dossiers/480.json",
+    "id": "601088.SHG",
+    "path": "/601088.SHG/tests/management/rawMetrics/averageBuybackYield",
+    "before": 5.275170970529573e-05,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "dossiers/148.json",
+    "id": "4568.JP",
+    "path": "/4568.JP/tests/management/rawMetrics/averageBuybackYield",
+    "before": 0.02635119264217192,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "dossiers/124.json",
+    "id": "000858.SHE",
+    "path": "/000858.SHE/tests/management/rawMetrics/averageBuybackYield",
+    "before": 5.611170027813797e-05,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "dossiers/344.json",
+    "id": "688036.SHG",
+    "path": "/688036.SHG/tests/management/rawMetrics/buybackYieldSpearman",
+    "before": 1,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/HK.json",
+    "id": "0267.HK",
+    "path": "/@0267.HK/r/7",
+    "before": 0.0151,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/JP.json",
+    "id": "8253.JP",
+    "path": "/@8253.JP/r/0",
+    "before": 0.0029,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/JP.json",
+    "id": "8253.JP",
+    "path": "/@8253.JP/r/1",
+    "before": 0.038,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/JP.json",
+    "id": "8253.JP",
+    "path": "/@8253.JP/r/2",
+    "before": 0.0671,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/JP.json",
+    "id": "8253.JP",
+    "path": "/@8253.JP/r/3",
+    "before": 0.0683,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/JP.json",
+    "id": "8253.JP",
+    "path": "/@8253.JP/r/4",
+    "before": 0.0979,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/JP.json",
+    "id": "8253.JP",
+    "path": "/@8253.JP/r/5",
+    "before": 0.0961,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/JP.json",
+    "id": "8253.JP",
+    "path": "/@8253.JP/r/6",
+    "before": 0.124,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/JP.json",
+    "id": "8253.JP",
+    "path": "/@8253.JP/r/7",
+    "before": 0.136,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/JP.json",
+    "id": "8253.JP",
+    "path": "/@8253.JP/r/8",
+    "before": 0.131,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/JP.json",
+    "id": "8253.JP",
+    "path": "/@8253.JP/r/9",
+    "before": 0.114,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/GB.json",
+    "id": "IWG.LSE",
+    "path": "/@IWG.LSE/r/8",
+    "before": 0.0334,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  },
+  {
+    "file": "index/GB.json",
+    "id": "IWG.LSE",
+    "path": "/@IWG.LSE/r/9",
+    "before": -0.158,
+    "after": null,
+    "frozen": false,
+    "alreadyNullInNightly6": true
+  }
+]

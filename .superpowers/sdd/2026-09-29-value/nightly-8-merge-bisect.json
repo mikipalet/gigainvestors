@@ -1,0 +1,11 @@
+{
+  "nightly6Code": "2d4cf5e",
+  "nightly7Code": "1a9b355",
+  "inputCorpus": "nightly-7 (normal current inputs, no analysis)",
+  "equalIgnoringGenerationTimestamps": 5082,
+  "different": [],
+  "runtimeSourceDiff": {
+    "e95cb22": "lib/value/eodhd-reset.ts: seven lines in reset probe",
+    "1a9b355": "tests and evidence only"
+  }
+}

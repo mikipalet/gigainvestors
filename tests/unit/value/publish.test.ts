@@ -3,6 +3,8 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, 
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { buildOutput } from "@/lib/value/build-output";
+import { PIPELINE_VERSION } from '@/lib/value/analyze-company';
+import { QUESTIONS_VERSION } from '@/lib/value/jev/questions';
 import { corpusDir, writeCorpusJson } from "@/lib/value/corpus";
 import { parseYahooPrice, yahooPrice } from "@/lib/value/prices-yahoo";
 import { shardOf } from "@/lib/value/shard";
@@ -22,7 +24,7 @@ function analysis(id = "KO.US"): Analysis {
       accounting: { key: "accounting", result: "pass", numeric: "pass", reasons: [], metrics: {}, series: {}, jev: [] },
     },
     valuation: { method: "owner_earnings", currency: "USD", normalized: 10, growth: 0.03, discountRate: 0.1, terminalGrowth: 0.03, bondYield: null, netCash: 0, shares: 1, perShare: { low: 80, mid: 100, high: 120 }, equityBondYield: null, bridge: [], assumptions: [] },
-    valuationReason: null, versions: { pipeline: "1", questions: "1" },
+    valuationReason: null, versions: { pipeline: PIPELINE_VERSION, questions: QUESTIONS_VERSION },
   };
 }
 function answer(overrides: Partial<JevAnswer> = {}): JevAnswer {
@@ -50,6 +52,43 @@ function repository(): string {
 }
 
 describe("buildOutput", () => {
+  it('rejects an obsolete analysis before creating a candidate or refreshing returns', async()=>{
+    const {default:publish}=await import('@/scripts/value/stages/publish');
+    const a=analysis();a.versions.pipeline='obsolete';
+    writeCorpusJson('analysis/KO.US.json',a);
+    writeFileSync(path.join(corpusDir(),'universe.jsonl'),JSON.stringify(a.company)+'\n');
+    writeCorpusJson('index-membership/latest.json',{complete:true,memberships:{'KO.US':['S&P 500']}});
+    const out=path.join(corpusDir(),'candidate');
+    await expect(publish({out})).rejects.toThrow(/Run analyze.*KO.US/);
+    expect(existsSync(out)).toBe(false);
+    expect(existsSync(path.join(corpusDir(),'history-return-prices/report.json'))).toBe(false);
+  });
+  it('uses enriched identities for search and historical identities with the same live since refresh', async()=>{
+    const {default:publish}=await import('@/scripts/value/stages/publish');
+    const a=analysis();const universe={...a.company,marketCapUsd:null};
+    writeCorpusJson('analysis/KO.US.json',a);
+    writeFileSync(path.join(corpusDir(),'universe.jsonl'),JSON.stringify(universe)+'\n');
+    writeCorpusJson('companies/KO.US.json',a.company);
+    writeCorpusJson('index-membership/latest.json',{complete:true,memberships:{'KO.US':['S&P 500']}});
+    writeCorpusJson('history-v7/run/index.json',{scope:'universe',years:[],quarters:['2018Q3'],perYear:{},perQuarter:{}});
+    writeCorpusJson('history-v7/run/2018Q3.json',[[a.id,'PPPPP',.8,true,99]]);
+    writeCorpusJson('history-return-prices/KO.US.json',{currency:'USD',fetchedAt:new Date().toISOString().slice(0,10),prices:[['2018-09',10]],latest:[25,'2026-10-02']});
+    const out=path.join(corpusDir(),'candidate');await publish({out});
+    const history=JSON.parse(readFileSync(path.join(out,'history/companies.json'),'utf8'));
+    expect(history[0].mc).toBe(100);
+    const shards=readdirSync(path.join(out,'search')).filter(f=>f!=='manifest.json').flatMap(f=>JSON.parse(readFileSync(path.join(out,'search',f),'utf8')).rows);
+    expect(shards.length).toBeGreaterThan(0);
+    expect(shards.every(r=>r[4]===100)).toBe(true);
+    expect(JSON.parse(readFileSync(path.join(out,'history/2018Q3.json'),'utf8'))).toEqual([[a.id,'PPPPP',.8,true,1.5,null,null,null,{date:'2026-10-02'}]]);
+  });
+  it('does not replace a released filing answer with a computed price-story fallback',()=>{
+    const a=analysis();
+    a.tests.moat.series.grossMargin=[[2021,.4],[2022,.4],[2023,.4]];
+    const line={question:3,answer:'Contract terms allow annual price adjustments.',basis:'filing',evidence:[{quote:'Contract terms allow annual price adjustments.',url:'https://example.com/report',filed:'2026-01-01',section:'Business'}]};
+    writeCorpusJson('analysis/KO.US.json',a);
+    writeCorpusJson('published-memos/KO.US.json',{version:1,asOf:'2026-01-01',inputHash:'live',lines:[line]});
+    expect(loadAnalyses([a.company])[0].ownerMemo?.lines.find(l=>l.question===3)).toEqual(line);
+  });
   it('keeps completed predecessor years when publication refreshes capital-return series',async()=>{
     const {emptyYear}=await import('@/lib/value/completeness/second-sources');
     const a=analysis('PLX.PA');
@@ -384,7 +423,7 @@ describe("publish rollout safeguards", () => {
   });
   it("reports the modal version pair and the count on other versions", () => {
     const old = analysis(); old.versions = { pipeline: "old", questions: "old" };
-    expect(output([old, analysis("A.US"), analysis("B.US")])["meta.json"]).toMatchObject({ versions: { pipeline: "1", questions: "1", other: 1 } });
+    expect(output([old, analysis("A.US"), analysis("B.US")])["meta.json"]).toMatchObject({ versions: { pipeline: PIPELINE_VERSION, questions: QUESTIONS_VERSION, other: 1 } });
   });
   it.each([0, 7])("rejects a published count of %i before changing the prior snapshot", count => {
     const repo = repository();
@@ -832,6 +871,7 @@ it('freezes the live dossier, every index/history row and search identity in nor
  writeFileSync(path.join(live,'history/2025.json'),JSON.stringify([historyRow])+'\n');
  const snapshot=Object.fromEntries(['dossiers','index','search','history'].flatMap(dir=>readdirSync(path.join(live,dir)).map(f=>[`${dir}/${f}`,readFileSync(path.join(live,dir,f),'utf8')])));
  writeCorpusJson('verdict-freeze.json',{version:1,ids:[old.id]});
+ old.versions.pipeline='obsolete'; // The released record, not this cache, owns a frozen company.
  old.company.name='Unverified renamed issuer';old.company.country='CA';old.tests.moat.result=old.tests.moat.numeric='fail';
  next.tests.management.result=next.tests.management.numeric='fail';
  writeFileSync(path.join(corpusDir(),'universe.jsonl'),[old.company,next.company].map(c=>JSON.stringify(c)).join('\n')+'\n');

@@ -31,7 +31,7 @@ function Comparison({items}:{items:Array<[string,number]>}){
  return <div className="memo-comparison">{items.map(([label,value])=><div key={label}><span>{label}</span><b>{formatMetric({value,format:'pct',returnRatio:/return on/.test(label)})}</b><ChartInteraction width={240} height={12} label={label} points={[{x:120,y:6,text:`${label}: ${formatMetric({value,format:'pct',returnRatio:/return on/.test(label)})}`}]}><svg viewBox="0 0 240 12" aria-hidden="true"><rect x={Math.min(x(0),x(value))} width={Math.abs(x(value)-x(0))} height="8" fill="var(--viz-ink)" opacity=".5"/></svg></ChartInteraction></div>)}</div>;
 }
 function Answer({line,selected,currency,analysis,price}:{line:MemoLine;selected:string;currency:string;analysis:Analysis;price:number|null}){
- const yearsFor=()=>typeof window==='undefined'?8:innerWidth>=768?(innerHeight<850?4:10):8;
+ const yearsFor=()=>typeof window==='undefined'?8:innerWidth>=768?(innerHeight<850?6:10):8;
  const [tableYears,setTableYears]=useState(yearsFor);
  useEffect(()=>{const resize=()=>setTableYears(yearsFor());resize();window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize);},[]);
  const comparisons:Array<[string,number]>=[];

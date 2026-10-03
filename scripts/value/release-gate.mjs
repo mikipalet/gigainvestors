@@ -12,7 +12,7 @@ const sizes = (process.env.QA_VIEWPORTS ?? '1728x970,2056x1180,1440x800,390x844'
 const report = [];
 function disk() {
   const s = statfsSync('/');
-  if (s.bavail * s.bsize < 6 * 1024 ** 3) throw Error('DISK STOP: below 6 GiB');
+  if (s.bavail * s.bsize < Number(process.env.VALUE_MIN_FREE_GB ?? 6) * 1024 ** 3) throw Error('DISK STOP: below configured free-space floor');
 }
 
 // Background colours are sampled from the raster itself. A cell is empty only

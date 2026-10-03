@@ -81,7 +81,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
         // One width per screen for every company (owner rule); only columns and type size adapt to the memo.
         dialog.style.width=`${panelWidth(.35,560,680)}px`;
         const available=business.parentElement!.clientHeight-16;
-        const fits=()=>business.scrollHeight<=available&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1);
+        const fits=()=>business.scrollHeight<=available&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1)&&lowestText(business)<=business.parentElement!.getBoundingClientRect().bottom-8;
         dialog.style.setProperty('--memo-leading',String(innerHeight<850?1.2:1.35));
         let best={columns:3,font:13,used:0};
         for(let columns=Math.max(1,Math.min(3,business.children.length));columns>=1;columns--){

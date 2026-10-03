@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import {readFileSync,readdirSync,existsSync,writeFileSync} from 'node:fs';
+import {unpackView} from '../../lib/value/browser-view';
+import {matchesView} from '../../lib/value/view-filter';
+import {shardKeyFor} from '../../lib/value/search-shard';
+import {searchShard} from '../../lib/value/search';
+import type {Dossier} from '../../lib/value/types';
+const root='/tmp/value-spinoff-store',read=(f:string)=>JSON.parse(readFileSync(root+'/'+f,'utf8'));
+const ids:string[]=JSON.parse(readFileSync('.superpowers/sdd/2026-09-29-value/spinoff-pub-1-ids.json','utf8'));
+const ds:Record<string,Dossier>=Object.assign({},...readdirSync(root+'/dossiers').map(f=>read('dossiers/'+f)));
+const meta=read('meta.json'),rows=[meta.views.current,...meta.views.deferred].flatMap(f=>unpackView(read(f)));
+const index=readdirSync(root+'/index').filter(f=>/^[A-Z]{2}\.json$/.test(f)).flatMap(f=>read('index/'+f));
+const manifest=read('search/manifest.json');
+const results=ids.map(id=>{
+ const d=ds[id],row=rows.find(r=>r.id===id),code=d.company.code,key=shardKeyFor(code,manifest),found=searchShard(read('search/'+key+'.json'),code).some(r=>r[0]===id);
+ assert(d&&row&&index.some(r=>r.id===id));assert(found,`Search misses ${id} for ${code}`);
+ assert(matchesView(row,{gate:'0',markets:'all'}),`All companies misses ${id}`);
+ assert(!matchesView(row,{markets:'all'})&&!matchesView(row,{near:'1',markets:'all'}),`Investment list includes ${id}`);
+ const logo=d.company.logo?.match(/asset=([a-f0-9]{64})/)?.[1];if(logo)assert(existsSync(root+'/logos/'+logo+'.json'));
+ return {id,searchQuery:code,search:true,all:true,buy:false,near:false,status:d.status,years:d.historyCoverage?.years,predecessorYears:d.predecessorHistory?.map(p=>p.fy)??[]};
+});
+const report={targets:results.length,shortHistory:results.filter(r=>r.status==='insufficient_data').length,predecessors:results.filter(r=>r.predecessorYears.length).length,results};
+writeFileSync('.audit/spinoff-pub-1/inventory.json',JSON.stringify(report,null,2));console.log(JSON.stringify({targets:report.targets,shortHistory:report.shortHistory,predecessors:report.predecessors,searchAndAll:results.length,investmentListEntries:0}));

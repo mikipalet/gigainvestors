@@ -614,11 +614,12 @@ it('joins new enrichment and completed numeric history when the controller publi
   writeCorpusJson('enrichment-v7/logos/KO.US.json',{logo:'https://eodhd.com/img/logos/US/ko.png'});
   writeCorpusJson('history-v7/20260929/2016.json',[['KO.US','PPPPP',.7,true,2]]);
   writeCorpusJson('history-v7/20260929/index.json',{years:[2016],perYear:{},scope:'universe'});
+  writeCorpusJson('history-return-prices/KO.US.json',{currency:'USD',fetchedAt:'2026-10-03',prices:[['2016-12',20]],latest:[60,'2026-10-02']});
   publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,holdersByTicker:{},investorNames:{}});
   const row=JSON.parse(readFileSync(path.join(repo,'index/default.json'),'utf8'))[0];
   expect(row).toMatchObject({n:'English name',lg:'https://eodhd.com/img/logos/US/ko.png'});
   expect(JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(a.id)}.json`),'utf8'))[a.id].company).toMatchObject({nameEn:'English name',nameLocal:'日本語',about:'Makes drinks.'});
-  expect(JSON.parse(readFileSync(path.join(repo,'history/2016.json'),'utf8'))).toEqual([['KO.US','PPPPP',.7,true,2]]);
+  expect(JSON.parse(readFileSync(path.join(repo,'history/2016.json'),'utf8'))).toEqual([['KO.US','PPPPP',.7,true,2,null,null,null,{date:'2026-10-02'}]]);
 });
 
 it('uses current universe listings consistently across dossier, index and search on republish',()=>{
@@ -643,9 +644,12 @@ it('refreshes hashed browser views without dropping quotes outside the analysed 
   expect(JSON.parse(readFileSync(path.join(repo,'prices/US.json'),'utf8'))['UNANALYSED.US']).toEqual([25,'2026-09-29']);
 });
 
-it('excludes nonmembers from dossiers, search, counts and history including partial republish',()=>{
+it('excludes current nonmembers from current surfaces but retains their historical returns on partial republish',()=>{
  const repo=repository(), member=analysis('KO.US'), excluded=analysis('NOISE.US');
  excluded.company.indexes=[];
+ writeCorpusJson('companies/NOISE.US.json',excluded.company);
+ writeFileSync(path.join(corpusDir(),'universe.jsonl'),JSON.stringify(excluded.company)+'\n');
+ for(const id of [member.id,excluded.id])writeCorpusJson(`history-return-prices/${id}.json`,{currency:'USD',fetchedAt:'2026-10-03',prices:[['2020-12',10]],latest:[20,'2026-10-02']});
  writeCorpusJson('history-v7/index-universe/2020.json',[[member.id,'PPPPP',.5,true,1],[excluded.id,'PPPPP',.2,true,99]]);
  writeCorpusJson('history-v7/index-universe/index.json',{scope:'universe',years:[2020],perYear:{2020:{analysed:2}}});
  publishSnapshot({repo,analyses:[member,excluded],universe:[member.company,excluded.company],partial:false,holdersByTicker:{},investorNames:{}});
@@ -653,9 +657,9 @@ it('excludes nonmembers from dossiers, search, counts and history including part
  const read=(file:string)=>JSON.parse(readFileSync(path.join(repo,file),'utf8'));
  expect(read('meta.json').counts.universe).toBe(1);
  expect(read('meta.json').counts.analysed).toBe(1);
- expect(read('history/2020.json')).toEqual([[member.id,'PPPPP',.5,true,1]]);
- expect(read('history/index.json').perYear['2020']).toMatchObject({analysed:1,qualityPasses:1,medianReturnAll:1});
- expect(read('history/index.json').western.perYear['2020'].analysed).toBe(1);
+ expect(read('history/2020.json').map((r:any)=>[r[0],r[4]])).toEqual([[member.id,1],[excluded.id,1]]);
+ expect(read('history/index.json').perYear['2020']).toMatchObject({analysed:2,qualityPasses:2,medianReturnAll:1,avgReturnAll:1,avgReturnAtBuy:1});
+ expect(read('history/index.json').western.perYear['2020'].analysed).toBe(2);
  expect(read(`dossiers/${shardOf(member.id)}.json`)[member.id].company.indexes).toEqual(['S&P 500']);
  const search=readdirSync(path.join(repo,'search')).map(f=>readFileSync(path.join(repo,'search',f),'utf8')).join('');
  expect(search).not.toContain('NOISE.US');

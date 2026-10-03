@@ -1,0 +1,887 @@
+{
+  "targets": 77,
+  "shortHistory": 67,
+  "predecessors": 10,
+  "results": [
+    {
+      "id": "0126Z0.KO",
+      "searchQuery": "0126Z0",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 1,
+      "predecessorYears": []
+    },
+    {
+      "id": "022100.KO",
+      "searchQuery": "022100",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "0267.HK",
+      "searchQuery": "0267",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 2,
+      "predecessorYears": []
+    },
+    {
+      "id": "034230.KO",
+      "searchQuery": "034230",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "062040.KO",
+      "searchQuery": "062040",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "064400.KO",
+      "searchQuery": "064400",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "360.AU",
+      "searchQuery": "360",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "373220.KO",
+      "searchQuery": "373220",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "375500.KO",
+      "searchQuery": "375500",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "383220.KO",
+      "searchQuery": "383220",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "402340.KO",
+      "searchQuery": "402340",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "443060.KO",
+      "searchQuery": "443060",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "450080.KO",
+      "searchQuery": "450080",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "454910.KO",
+      "searchQuery": "454910",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "457190.KO",
+      "searchQuery": "457190",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 0,
+      "predecessorYears": []
+    },
+    {
+      "id": "483650.KO",
+      "searchQuery": "483650",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 3,
+      "predecessorYears": []
+    },
+    {
+      "id": "543A.JP",
+      "searchQuery": "543A",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 1,
+      "predecessorYears": []
+    },
+    {
+      "id": "600732.SHG",
+      "searchQuery": "600732",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "601059.SHG",
+      "searchQuery": "601059",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "6526.JP",
+      "searchQuery": "6526",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "688271.SHG",
+      "searchQuery": "688271",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "8729.JP",
+      "searchQuery": "8729",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "ALAB.US",
+      "searchQuery": "ALAB",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "AMRZ.US",
+      "searchQuery": "AMRZ",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "AMVIF.US",
+      "searchQuery": "AMVIF",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "APN.LSE",
+      "searchQuery": "APN",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "ARM.US",
+      "searchQuery": "ARM",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "ATG.LSE",
+      "searchQuery": "ATG",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "ATO.PA",
+      "searchQuery": "ATO",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 1,
+      "predecessorYears": []
+    },
+    {
+      "id": "BRAV3.SA",
+      "searchQuery": "BRAV3",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "CRWV.US",
+      "searchQuery": "CRWV",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "CVC.AS",
+      "searchQuery": "CVC",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "DBV.PA",
+      "searchQuery": "DBV",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "ETERNAL.NSE",
+      "searchQuery": "ETERNAL",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "EXENS.PA",
+      "searchQuery": "EXENS",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "FDXF.US",
+      "searchQuery": "FDXF",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "scored",
+      "years": 7,
+      "predecessorYears": [
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "id": "GALD.SW",
+      "searchQuery": "GALD",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "GEV.US",
+      "searchQuery": "GEV",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "GNZ.NZ",
+      "searchQuery": "GNZ",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "HDN.AU",
+      "searchQuery": "HDN",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "HONA.US",
+      "searchQuery": "HONA",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "scored",
+      "years": 7,
+      "predecessorYears": [
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "id": "IOS.DU",
+      "searchQuery": "IOS",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "IWG.LSE",
+      "searchQuery": "IWG",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "JIOFIN.NSE",
+      "searchQuery": "JIOFIN",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "KALMAR.HE",
+      "searchQuery": "KALMAR",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "scored",
+      "years": 7,
+      "predecessorYears": [
+        2019,
+        2020
+      ]
+    },
+    {
+      "id": "KMAR.OL",
+      "searchQuery": "KMAR",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "LTMC.MI",
+      "searchQuery": "LTMC",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "MANTA.HE",
+      "searchQuery": "MANTA",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "MICC.AS",
+      "searchQuery": "MICC",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "MNO.LSE",
+      "searchQuery": "MNO",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "NESTLEIND.NSE",
+      "searchQuery": "NESTLEIND",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 2,
+      "predecessorYears": []
+    },
+    {
+      "id": "OCTV-SDB.ST",
+      "searchQuery": "OCTV-SDB",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 3,
+      "predecessorYears": []
+    },
+    {
+      "id": "PLX.PA",
+      "searchQuery": "PLX",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "scored",
+      "years": 7,
+      "predecessorYears": [
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "id": "PRN.LSE",
+      "searchQuery": "PRN",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "PYIYF.US",
+      "searchQuery": "PYIYF",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 2,
+      "predecessorYears": []
+    },
+    {
+      "id": "Q.US",
+      "searchQuery": "Q",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "R3NK.XETRA",
+      "searchQuery": "R3NK",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "RDDT.US",
+      "searchQuery": "RDDT",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "ROSE.LSE",
+      "searchQuery": "ROSE",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 2,
+      "predecessorYears": []
+    },
+    {
+      "id": "RPI.LSE",
+      "searchQuery": "RPI",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "S3Z.F",
+      "searchQuery": "S3Z",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 6,
+      "predecessorYears": []
+    },
+    {
+      "id": "SDZ.SW",
+      "searchQuery": "SDZ",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "scored",
+      "years": 7,
+      "predecessorYears": [
+        2019
+      ]
+    },
+    {
+      "id": "SIGMAFA.MX",
+      "searchQuery": "SIGMAFA",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "SNDK.US",
+      "searchQuery": "SNDK",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "scored",
+      "years": 7,
+      "predecessorYears": [
+        2020,
+        2021
+      ]
+    },
+    {
+      "id": "SOLV.US",
+      "searchQuery": "SOLV",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "scored",
+      "years": 7,
+      "predecessorYears": [
+        2019
+      ]
+    },
+    {
+      "id": "SPCX.US",
+      "searchQuery": "SPCX",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 3,
+      "predecessorYears": []
+    },
+    {
+      "id": "SUNN.SW",
+      "searchQuery": "SUNN",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "SYENS.BR",
+      "searchQuery": "SYENS",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "scored",
+      "years": 7,
+      "predecessorYears": [
+        2020
+      ]
+    },
+    {
+      "id": "THG.LSE",
+      "searchQuery": "THG",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "TKMS.XETRA",
+      "searchQuery": "TKMS",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "scored",
+      "years": 7,
+      "predecessorYears": [
+        2019,
+        2020,
+        2021
+      ]
+    },
+    {
+      "id": "TLX.AU",
+      "searchQuery": "TLX",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "TPRO.MI",
+      "searchQuery": "TPRO",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "VAR.OL",
+      "searchQuery": "VAR",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "VLTO.US",
+      "searchQuery": "VLTO",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "scored",
+      "years": 7,
+      "predecessorYears": [
+        2019
+      ]
+    },
+    {
+      "id": "VSURE.ST",
+      "searchQuery": "VSURE",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 4,
+      "predecessorYears": []
+    },
+    {
+      "id": "ZAB.WAR",
+      "searchQuery": "ZAB",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 5,
+      "predecessorYears": []
+    },
+    {
+      "id": "ZEG.LSE",
+      "searchQuery": "ZEG",
+      "search": true,
+      "all": true,
+      "buy": false,
+      "near": false,
+      "status": "insufficient_data",
+      "years": 2,
+      "predecessorYears": []
+    }
+  ]
+}

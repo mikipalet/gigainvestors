@@ -42,16 +42,22 @@ it('runs both stages without changing any preexisting corpus bytes and publishes
   ]);
   expect(first.index.perQuarter!['2017Q1']).toMatchObject({medianReturnAll:2, returnCountAll:300, hitRateAll:0});
   const rows=latestHistoryFiles()['history/2017Q1.json'] as SnapshotRow[];
-  expect(rows[0][4]).toBe(2);
+  // Publication now requires the separately dated return-price cache. The
+  // immutable research run above retains its gain; it must not leak as fresh.
+  expect(rows[0][4]).toBeNull();
+  expect(rows[0][8]).toBeUndefined();
+  expect((latestHistoryFiles()['history/index.json'] as typeof first.index).perQuarter!['2017Q1'])
+    .toMatchObject({medianReturnAll:null, returnCountAll:0, hitRateAll:null});
   const patched=loadCompanies({})[0];
   expect(patched).toMatchObject({name:'Test English Co Ltd',nameEn:'Test English Co Ltd',logo:null,about:'Test makes widgets.'});
   const second=await history(); expect(second.report.root).not.toBe(first.report.root);
   const after=allFiles(dir);
   for (const [file,bytes] of Object.entries(before)) expect(after[file],file).toBe(bytes);
   expect(Object.keys(after).filter(f=>!(f in before)).every(f=>/^(enrichment-v7|history-v7)\//.test(f))).toBe(true);
-  const repo=path.join(dir,'output'); writeOutput({repo,files:latestHistoryFiles()});
+  const repo=path.join(dir,'output'),published=latestHistoryFiles(); writeOutput({repo,files:published});
   expect(JSON.parse(readFileSync(path.join(repo,'history/2017Q1.json'),'utf8'))).toEqual(rows);
-  expect(JSON.parse(readFileSync(path.join(repo,'history/index.json'),'utf8'))).toEqual(second.index);
+  expect(JSON.parse(readFileSync(path.join(repo,'history/index.json'),'utf8'))).toEqual(published['history/index.json']);
+  expect(second.index.perQuarter!['2017Q1']).toMatchObject({medianReturnAll:2, returnCountAll:300});
   expect(()=>writeOutput({repo,files:{'history/../meta.json':{}}})).toThrow('Invalid publish output path');
 },60000);
 it('uses annual filing dates by period and chooses the earliest valid filing',()=>{

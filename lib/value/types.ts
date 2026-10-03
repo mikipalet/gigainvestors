@@ -361,7 +361,7 @@ export interface SearchShard {
 }
 
 /** Historical snapshot; r is realized cumulative price return, expected is the contemporary model IRR. */
-export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric, basis?: {annual:number;ttm:string;expected:number|null}];
+export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric, basis?: {annual:number;ttm:string;expected:number|null}, outcome?: {date:string;lastTraded?:boolean}];
 export interface HistorySummary {
   analysed: number;
   qualityPasses: number;
@@ -377,7 +377,7 @@ export interface HistorySummary {
   hitRateAtBuy: number | null;
   hitRateQuality: number | null;
   hitRateAll: number | null;
-  /** Secondary arithmetic means, retained for existing consumers. */
+  /** Equal-weight absolute price returns, precomputed for the historical headline. */
   avgReturnAtBuy: number | null;
   avgReturnQuality: number | null;
   avgReturnAll: number | null;

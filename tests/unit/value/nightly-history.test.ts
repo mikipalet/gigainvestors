@@ -14,3 +14,14 @@ it('never replaces complete quarterly history with a later annual-only run',()=>
  writeCorpusJson('history-v7/20261002/2025.json',[]);
  expect(latestHistoryFiles([])['history/index.json']).toMatchObject({quarters:['2025Q4']});
 });
+
+it('recomputes both market summaries from fresh outcomes without changing predictions',()=>{
+ const company=(id:string,country:string)=>({id,code:id.split('.')[0],exchange:id.split('.')[1],name:id,country,currency:country==='US'?'USD':'JPY',listings:[id],indexes:[],kind:'operating',marketCapUsd:null});
+ const us=company('OLD.US','US'),jp=company('TEST.JP','JP');
+ writeCorpusJson('history-v7/run/index.json',{scope:'universe',years:[],quarters:['2018Q3'],perYear:{},perQuarter:{}});
+ writeCorpusJson('history-v7/run/2018Q3.json',[[us.id,'PPPPP',.8,true,99],[jp.id,'FFFFF',2,false,99]]);
+ for(const [id,latest]of [[us.id,20],[jp.id,5]] as const)writeCorpusJson(`history-return-prices/${id}.json`,{currency:'USD',fetchedAt:'2026-10-03',prices:[['2018-09',10]],latest:[latest,'2026-10-02']});
+ const files=latestHistoryFiles([us,jp] as any);
+ expect(files['history/index.json']).toMatchObject({perQuarter:{'2018Q3':{analysed:2,avgReturnAtBuy:1,avgReturnAll:.25}},western:{perQuarter:{'2018Q3':{analysed:1,avgReturnAll:1}}}});
+ expect((files['history/2018Q3.json'] as any[]).map(r=>r.slice(0,4))).toEqual([[us.id,'PPPPP',.8,true],[jp.id,'FFFFF',2,false]]);
+});

@@ -1,3 +1,4 @@
+import historyReturns from './history-returns';
 import {numericMemo} from '../../../lib/value/owner-memo';
 import {alignHistoryShares} from '../../../lib/value/history-split-basis';
 import {completeCachedSplits,completeCachedYears} from '../../../lib/value/completeness/cached-years';
@@ -255,12 +256,12 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   }
   const history=latestHistoryFiles(universe.filter(c=>eligible.has(c.id)));
   for(const [file,data]of Object.entries(history)) {
-    // Published historical rows must also have a decided checklist.
-    if(Array.isArray(data)&&file!=='history/companies.json') history[file]=data.filter((row:any)=>Array.isArray(row)&&eligible.has(row[0])&&typeof row[1]==='string'&&/^[PF]{5}$/.test(row[1]));
+    // Historical eligibility is the decision then, never today’s surviving membership.
+    if(Array.isArray(data)&&file!=='history/companies.json') history[file]=data.filter((row:any)=>Array.isArray(row)&&typeof row[1]==='string'&&/^[PF]{5}$/.test(row[1]));
   }
   const historyIndex=history['history/index.json'] as import('../../../lib/value/time-travel').HistoryIndex|undefined;
   if(historyIndex){
-    const westernIds=new Set(universe.filter(c=>bestWesternListing(c)).map(c=>c.id));
+    const westernIds=new Set((history['history/companies.json'] as import('../../../lib/value/types').IndexRow[]??[]).filter(c=>c.w).map(c=>c.id));
     historyIndex.perYear={};historyIndex.western={perYear:{}};
     historyIndex.perQuarter={};historyIndex.western.perQuarter={};
     for(const q of historyIndex.quarters??[]){
@@ -377,6 +378,8 @@ export default async function publish(options: { only?: string[]; limit?: number
   if (!companies.length) throw new Error("Run the universe stage before publish");
   const selected = companies.filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
   if (!selected.length) throw new Error("No companies selected for publish");
+  const returns=await historyReturns({});
+  if(returns.failed.length)throw new Error(`History return refresh failed for ${returns.failed.length} companies; retaining prior publication`);
   const analyses = loadAnalyses(selected);
   const holders = loadHolders(path.resolve(__dirname, "../../../data/store"));
   if (out) {

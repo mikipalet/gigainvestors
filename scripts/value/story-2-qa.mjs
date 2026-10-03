@@ -5,7 +5,7 @@ const ids=['ADBE.US','NVDA.US','KO.US','LULU.US','GOOGL.US','7203.JP','JPM.US','
 mkdirSync(out,{recursive:true});
 const browser=await chromium.launch(),results=[];
 try{for(const [width,height]of [[1728,970],[2056,1180]])for(const id of ids){
- const disk=statfsSync('.');if(disk.bavail*disk.bsize<6*1024**3)throw Error('DISK STOP: below 6 GiB');
+ const disk=statfsSync('.');if(disk.bavail*disk.bsize<Number(process.env.STORY_MIN_FREE_GIB??6)*1024**3)throw Error('DISK STOP: below configured free-space floor');
  const page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'}),errors=[];
  page.on('pageerror',e=>errors.push(e.message));
  try{

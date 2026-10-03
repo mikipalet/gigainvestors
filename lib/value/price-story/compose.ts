@@ -10,9 +10,9 @@ export function literalHeadingClause(text:string,maxWords=13):string|null {
  if(words(text)<=maxWords)return text;
  const first=Array.from(new Intl.Segmenter('en',{granularity:'sentence'}).segment(text))[0]?.segment.trim();
  if(first&&words(first)<=maxWords)return first;
- const boundary=/;|, (?:but|which|including|resulting)\b| — | – /.exec(text);
+ const boundary=/;|, (?:(?:and|or),? (?=if\b|when\b|we\b|our\b|the company\b|it\b|they\b|may\b|could\b)|(?:but|which|including|resulting|our|we|the company|it|they)\b)| and (?:we|our|it|they|depends|may|could|will|can|is|are|has|have|requires)\b| that (?:may|can|could|will|are|is|have|has|would)\b| — | – /.exec(text);
  const clause=boundary?text.slice(0,boundary.index).trim():null;
- return clause&&words(clause)>=4&&words(clause)<=maxWords?clause:null;
+ return clause&&words(clause)>=4&&words(clause)<=maxWords&&!/(?:['’]s|\b(?:been|have|has|the|a|an|of|to|and|or))$/i.test(clause)?clause:null;
 }
 const finite=(n:unknown):n is number=>typeof n==='number'&&Number.isFinite(n);
 export const monthLabel=(s:string)=>new Date(s.slice(0,7)+'-01T00:00:00Z').toLocaleDateString('en-US',{month:'short',year:'numeric',timeZone:'UTC'});

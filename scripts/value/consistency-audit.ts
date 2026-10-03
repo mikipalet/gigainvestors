@@ -56,7 +56,7 @@ async function main(){
   await page.keyboard.press('Escape');await page.locator('dialog').waitFor({state:'detached'});
  }
  writeFileSync(path.join(out,'home.json'),JSON.stringify(home,null,2));
- for(const {id,published}of cohort){const disk=statfsSync('/');if(disk.bavail*disk.bsize<6*1024**3)throw Error('DISK STOP below 6 GiB');
+ for(const {id,published}of cohort){const disk=statfsSync('/');if(disk.bavail*disk.bsize<Number(process.env.STORY_MIN_FREE_GIB??6)*1024**3)throw Error('DISK STOP: below configured free-space floor');
  const d=ds[id],failures:string[]=[],surfaces:Record<string,SurfaceSnapshot>={};
  const check=(fn:()=>void)=>{try{fn();}catch(e){failures.push((e as Error).message);}};
  const response=await page.goto(`${base}/${id.toLowerCase()}`,{waitUntil:'networkidle',timeout:60000});

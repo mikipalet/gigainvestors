@@ -1,7 +1,7 @@
 import {composePriceStory,pricingFallback,selectedMemo} from './compose';
 import {SELECTION_VERSION,type Candidate,type Selection} from './selection';
 import type {Dossier,PriceMap} from '../types';
-export interface StoryReading {version:string;asOf:string;newsStatus:string;candidatesHash:string;price:Selection;risk:Selection;pricing:Selection;events:Candidate[]}
+export interface StoryReading {version:string;asOf:string;newsStatus:string;candidatesHash:string;price:Selection;risk:Selection;pricing:Selection;events:Candidate[];kindHashes?:Record<'price'|'risk'|'pricing',string>;kindVersions?:Record<'price'|'risk'|'pricing',string>;eventHash?:string}
 export interface StoryGrade {version:string;price:{n:number;accuracy:number};risk:{n:number;accuracy:number}}
 export function trustedStory(grade:StoryGrade|null,kind?:'price'|'risk'):boolean{return !!grade&&grade.version===SELECTION_VERSION&&(kind?[grade[kind]]:[grade.price,grade.risk]).every(g=>g.n>=40&&g.accuracy>=.9);}
 /** Runs inside publication after financial series and Q7 are finalized. */

@@ -1,0 +1,1579 @@
+[
+  {
+    "id": "ADBE.US",
+    "candidatesHash": "16f0d771ef87bee3b1dc11af8be8c5e5b900321cdff7d450f030320063ea4f5d",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "f780b994f8905809"
+      ],
+      "note": "Soft fourth-quarter revenue guidance is a concrete growth-pressure driver; the source reports a post-results decline despite subscription growth."
+    },
+    "reviewedPrice": {
+      "id": "f780b994f8905809",
+      "kind": "price",
+      "text": "Adobe beats Q3 targets, but soft Q4 sales guidance triggers dip",
+      "context": "Adobe beats Q3 targets, but soft Q4 sales guidance triggers dip\nInvesting.com -- Adobe Inc. (NASDAQ:ADBE) topped Wall Street's third-quarter estimates on robust subscription growth, though shares edged down 2.5% after the software maker delivered a fourth-quarter revenue forecast that fell just short of expectations.",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-10",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/adobe-beats-q3-targets-soft-204352575.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "87528d568786f8d0"
+      ],
+      "note": "Enterprise-wide purchases and generative/agentic AI contracting extend Adobe's sales and collection cycles and raise implementation costs."
+    },
+    "reviewedRisk": {
+      "id": "87528d568786f8d0",
+      "kind": "risk",
+      "text": "Some of our enterprise solutions have extended and complex sales cycles",
+      "context": "Some of our enterprise solutions have extended and complex sales cycles, which may increase our costs and make our sales cycles unpredictable. \n\nAs we continue to target enterprise customers for certain of our solutions, we may face increased costs, longer sales cycles, greater competition and less predictability in completing our sales. For our enterprise customers, the evaluation process may be longer and more involved, and require us to invest more in educating our customers about our solutions, particularly because the decision to use our solutions is often an enterprise-wide decision. We are increasingly offering end-to-end solutions that include generative and agentic AI capabilities, which have in the past, and may in the future, increase the complexity of technical or contractual assurances or requirements that we or our customers require, whether pursuant to regulations or internal policies, as part of the contracting process, leading to extended sales cycles. We may be required to submit more robust proposals, participate in extended proof-of-concept evaluation cycles and engage in more extensive contract negotiations. In addition, our enterprise customers often demand more complex configurations and additional integration services and product features. Adverse macroeconomic and geopolitical events such as trade disputes and tariffs have caused, and may continue to cause, additional spend scrutiny and delays in our enterprise customers’ purchasing decisions, particularly for larger and more complex deals. Due to these factors, we often must devote greater sales support to certain enterprise customers, which increases our costs and time required to complete a sale, without assurance that potential customers will ultimately purchase our solutions. We also may be required to devote more services resources to implementation, which increases our costs, without assurance that customers receiving these services will renew or renew at the same level. Our revenue from enterprise customers may be affected by longer-than-expected sales, contract negotiation and implementation cycles, extended collection cycles, potential deferral of revenue and alternative licensing arrangements. Additionally, our enterprise sales pattern has historically been, and is expected to remain, uneven, where a higher percentage of a quarter’s total sales occur during the final weeks of each quarter, which is common in our industry.\n\n23\n\nTable of Contents\n\n",
+      "source": "SEC filing",
+      "date": "2026-01-15",
+      "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+      "section": "risk",
+      "offset": 109346,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "NVDA.US",
+    "candidatesHash": "e754cc7a3506a17032178147a018056a74ec6d7ce8ac2a5201f400ce3f8b5adf",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "4b5427fc9908e96e"
+      ],
+      "note": "The paragraph identifies hyperscaler AI infrastructure spending and Nvidia's concentrated exposure to those buyers."
+    },
+    "reviewedPrice": {
+      "id": "4b5427fc9908e96e",
+      "kind": "price",
+      "text": "One thing: relentless AI spending.",
+      "context": "Wall Street Can't Ignore This: Nvidia's $6 Trillion Dream Is Back On Track\nNvidia (NASDAQ:NVDA) just did it againback at record highs, and back as the world's most valuable company. After a sharp bounce off its April lows, the stock has surged 67%, pushing its market cap to $3.8 trillion, edging past Microsoft. What's fueling the run? One thing: relentless AI spending. Despite earlier panic over cheaper rivals like China's DeepSeek, Nvidia's biggest customersAmazon (NASDAQ:AMZN), Meta (NASDAQ:META), Alphabet (NASDAQ:GOOG), Microsoft (NASDAQ:MSFT)aren't letting up. Together, they're on track to pour around $350 billion into infrastructure next fiscal year, up from $310 billion. Over 40% of Nvidia's revenue comes from these players, and most of that is flowing into its AI computing systems.",
+      "source": "finance.yahoo.com",
+      "date": "2025-07-09",
+      "url": "https://finance.yahoo.com/news/wall-street-cant-ignore-nvidias-124350378.html",
+      "section": "News first paragraph",
+      "offset": 262
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "The short responsible-use clause is too broad to convey Nvidia's main supply, export or customer-demand vulnerability. The paragraph names EU AI regulation, but that does not make this the best displayed risk."
+    },
+    "reviewedRisk": {
+      "id": "e0652fd97e7da3db",
+      "kind": "risk",
+      "text": "Issues relating to the responsible use of our technologies",
+      "context": "Issues relating to the responsible use of our technologies, including AI in our offerings, may result in reputational or financial harm and liability.\n\nConcerns relating to the responsible use of new and evolving technologies, such as AI, in our products and services may result in reputational or financial harm and liability and may cause us to incur costs to resolve such issues. We are increasingly building AI capabilities and protections into many of our products and services, and we also offer stand-alone AI applications. AI poses emerging legal, social, and ethical issues and presents risks and challenges that could affect its adoption, and therefore our business. If we enable or offer solutions that draw controversy due to their perceived or actual impact on society, such as AI solutions that have unintended consequences, infringe copyright or rights of publicity, or are controversial because of their impact on human rights, privacy, employment or other social, economic or political issues, or if we are unable to implement effective internal policies and frameworks relating to the responsible development and use of AI models and systems offered through our sales channels, we may experience brand or reputational harm, competitive harm or legal liability. Leveraging AI capabilities to potentially improve our internal functions and operations may present further risks, costs, and challenges. Complying with multiple regulations from different jurisdictions related to AI may further increase our cost of doing business, may change the way that we operate in certain jurisdictions, and may impede our ability to offer certain products and services in certain jurisdictions if we are unable to comply with regulations. Compliance with existing and proposed government regulation of AI, including in jurisdictions such as the European Union, may further increase the cost of related research and development, and create additional reporting and/or transparency requirements. For example, regulation adopted in response to the European Union Code of Practice for General Purpose Artificial Intelligence could require us to notify the European Commission regarding details of some of our Trustworthy AI processes related to our risk framework. Furthermore, changes in AI-related regulation could disproportionately impact and disadvantage us and require us to change our business practices, which may negatively impact our financial results. Our failure to adequately address concerns and regulations relating to the responsible use of AI by us or others could undermine public confidence in AI and slow adoption of AI in our products and services or cause reputational or financial harm.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+      "section": "risk",
+      "offset": 153232,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "KO.US",
+    "candidatesHash": "f54cb4fff4deea8ea68f80eae1f743482b5fd157592398b21548b33064d31dc6",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "7b333bceb68448b2"
+      ],
+      "note": "Repeated earnings beats and raised outlook support the premium growth expectations."
+    },
+    "reviewedPrice": {
+      "id": "7b333bceb68448b2",
+      "kind": "price",
+      "text": "Coca Cola (KO) Keeps Raising Its Outlook After Consecutive Earnings Beats",
+      "context": "Coca Cola (KO) Keeps Raising Its Outlook After Consecutive Earnings Beats\nCoca-Cola (NYSE:KO) regained a long term Marriott hotel beverage contract in 2026 after several decades without the agreement. The group is advancing an African bottling refranchising program in 2026, shifting more local production and distribution to regional partners. Management has reported consecutive earnings beats in recent quarters and has raised earnings guidance for the current financial year. The Marriott win, African bottling refranchising and upgraded earnings guidance together frame a broader shift our research has been tracking. Our analysis turns up 2 warning signs for Coca-Cola as well.",
+      "source": "finance.yahoo.com",
+      "date": "2026-10-01",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/coca-cola-ko-keeps-raising-031426556.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "bc96a7cb339fb2b0"
+      ],
+      "note": "Independent bottlers determine distribution and pricing execution; one bottler represents 10% of revenue in the supporting filing."
+    },
+    "reviewedRisk": {
+      "id": "bc96a7cb339fb2b0",
+      "kind": "risk",
+      "text": "We rely on our bottling partners for a significant portion of our business.",
+      "context": "We rely on our bottling partners for a significant portion of our business. If we are unable to maintain good relationships with our bottling partners, our business could suffer.\n\nWe generate a significant portion of our net operating revenues by selling concentrates and syrups to independent bottling partners. For the year ended December 31, 2025, one bottler accounted for 10% of our net operating revenues, which are reflected in our EMEA and Asia Pacific operating segments. As independent companies, our bottling partners, some of which are publicly traded companies, make their own business decisions that may not always align with our interests. In addition, some of our bottling partners have the right to manufacture or distribute their own products or certain products of other beverage companies. If we are unable to maintain operating and strategic alignment or agree on appropriate pricing and marketing and advertising support, or if our bottling partners are not satisfied with our brand innovation and development efforts, they may take actions that, while maximizing their own short-term profits, may be detrimental to our Company or our brands, or they may devote more of their resources to business opportunities or products other than those of the Company. Further, actions by our bottling partners, including related to product quality, safety, marketing practices, labor relations, regulatory compliance, sustainability, or other matters could adversely affect the reputation, consumer perception, or value of our brands, even if we are not directly responsible for such actions. Such actions could, in the long term, have an adverse effect on our profitability.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-20",
+      "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm",
+      "section": "risk",
+      "offset": 103044,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "LULU.US",
+    "candidatesHash": "e1ec3db45efe26b3ece14f2c10a705a3a42451a7bdd2faee707be614b222b5f0",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "e0dee8bfa475ebe0"
+      ],
+      "note": "Brand weakness and another guidance downgrade directly explain current business pressure."
+    },
+    "reviewedPrice": {
+      "id": "e0dee8bfa475ebe0",
+      "kind": "price",
+      "text": "Lululemon’s (LULU) Brand Problems Force Another Steep Guidance Downgrade",
+      "context": "Lululemon’s (LULU) Brand Problems Force Another Steep Guidance Downgrade\nOn September 3, Lululemon Athletica (NASDAQ:LULU) told investors its troubles run deeper than one soft quarter. Revenue fell 4% to $2.4 billion, comparable sales dropped 10% (on a constant dollar basis), and management cut full-year guidance for the second time this year. China Mainland is dealing with a wave of negative social media commentary, North America still can't land a product that resonates, and even the brand's signature leggings business is shrinking. Incoming CEO Heidi O'Neill was set to start the following week, tasked with rethinking a strategy that clearly needs it.Lululemon's (LULU) Brand Problems Force Another Steep Guidance Downgrade",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-12",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/lululemon-lulu-brand-problems-force-161627412.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "e2873d00e4db445d"
+      ],
+      "note": "The filing ties US tariff and customs changes to imported apparel, sourcing costs and the de minimis exemption."
+    },
+    "reviewedRisk": {
+      "id": "e2873d00e4db445d",
+      "kind": "risk",
+      "text": "Changes to U.S. tariff and customs policy",
+      "context": "Changes to U.S. tariff and customs policy, including the elimination of the de minimis exemption, have and may further materially increase product costs and negatively affect margins.\n\nAs a result of the increased tariffs since April 2025, the cost of inventory in the United States has increased. The United States also eliminated the de minimis duty-free exemption for certain shipments effective May 2, 2025, and an Executive Order extends this elimination globally beginning August 29, 2025, with legislation enacted to repeal the statutory exemption entirely by July 1, 2027. The countries from which we source the majority of our products are now subject to higher tariffs on imports into the United States. Further, the majority of our sales to U.S. e-commerce guests are currently fulfilled from distribution centers in Canada, and historically a significant proportion of these orders qualified for the de minimis exemption. The removal of this exemption increases the cost of fulfilling those orders. As a result, more shipments are now subject to duties, taxes, and customs procedures, which increased product costs during 2025, and which we expect to continue into 2026 and beyond. We are taking steps designed to mitigate some of the financial impact, although we expect the tariff and de minimis changes to adversely affect product costs, gross profit, and income from operations. On February 20, 2026, the U.S. Supreme Court invalidated tariffs imposed under the International Emergency Economic Power Act and immediately after, the U.S. Administration initiated new tariffs at different rates under alternative legislative powers, which increases the uncertainty around tariffs.\n\nThere has been significant volatility in U.S. tariff and customs policy recently, with frequent changes in rates, sudden elimination or reinstatement of exemptions, shifts in implementation dates, and reversals of prior actions. In addition, there is uncertainty around how tariff rules will be applied to goods routed through third countries (transshipment) and potential changes to the valuation methodology used to calculate duty, including the first sale declaration program in the United States. Changes in tariff and customs policy and legislation could affect the level of duties imposed and our overall product costs. This volatility makes it more difficult to forecast costs, plan our global supply chain, and provide reliable financial guidance. Policy changes often require rapid operational adjustments that can increase costs and reduce efficiency. Announcements of tariff and custom changes, as well as our disclosures of their potential impacts, have at times contributed to fluctuations in our stock price. We expect such volatility and uncertainty to continue, posing ongoing challenges to our operations, financial planning, and investor communications.\n\n",
+      "source": "SEC filing",
+      "date": "2026-03-17",
+      "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+      "section": "risk",
+      "offset": 55093,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "GOOGL.US",
+    "candidatesHash": "5ed3596ac380beb6ff5c45321ee2db3674b714e6d454d8776496eb1e2ebde191",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "b00c88893d5ccebe"
+      ],
+      "note": "Reported cloud revenue growth and AI infrastructure demand are concrete drivers of growth expectations."
+    },
+    "reviewedPrice": {
+      "id": "b00c88893d5ccebe",
+      "kind": "price",
+      "text": "Alphabet cloud revenue jumps 82% YoY as AI infrastructure spending doubles",
+      "context": "Alphabet cloud revenue jumps 82% YoY as AI infrastructure spending doubles\nAlphabet (NASDAQ: GOOG, GOOGL) reported second-quarter revenue of $119.8 billion on Wednesday, up 24% year over year, as Google Cloud revenue jumped 82% amid demand for AI infrastructure and enterprise AI products.",
+      "source": "finance.yahoo.com",
+      "date": "2026-07-22",
+      "url": "https://finance.yahoo.com/technology/ai/articles/alphabet-cloud-revenue-jumps-82-211800602.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "384d5a65db48948d"
+      ],
+      "note": "Advertising concentration exposes the main revenue engine to advertiser demand, targeting restrictions and competing platforms."
+    },
+    "reviewedRisk": {
+      "id": "384d5a65db48948d",
+      "kind": "risk",
+      "text": "We generate a significant portion of our revenues from advertising.",
+      "context": "We generate a significant portion of our revenues from advertising. Reduced spending by advertisers, a loss of partners, shifts in online advertising, new and evolving advertising formats, or new or existing technologies that block ads online or affect our ability to personalize ads could harm our business.\n\nWe generated more than 70% of total revenues from online advertising in 2025. Many of our advertisers, companies that distribute our products and services, digital publishers, and content providers can terminate their contracts with us at any time. These partners may not continue to do business with us if we do not create more value (such as increased numbers of users or customers, new sales leads, increased brand awareness, or more effective monetization) than their available alternatives.\n\nWe believe AI is quickly reshaping the advertising industry, including how ads are delivered online, and we and our competitors are constantly adjusting to meet this shift and provide new and evolving advertising formats. There is no assurance that we will adapt effectively and competitively to meet this shift, and that such advertising formats, strategies, and offerings will be successful.\n\nChanges to our advertising policies and data privacy practices, as well as changes to other companies' advertising or data privacy practices have in the past, and may in the future, affect the advertising services that we are able to provide. In addition, technologies have been developed that make personalized ads more difficult, or that block the display of ads altogether, and some providers of online services have integrated technologies that could impair the availability and functionality of third-party digital advertising. Failing to provide superior value or deliver advertisements effectively and competitively could harm our business, reputation, financial condition, and operating results.\n\nExpenditures by advertisers tend to correlate with overall economic conditions. Adverse macroeconomic conditions have affected, and may in the future affect, the demand for advertising, resulting in fluctuations in the amounts our advertisers spend on advertising, which could harm our financial condition and operating results.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-05",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+      "section": "risk",
+      "offset": 35358,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "7203.JP",
+    "candidatesHash": "e2aa31bfe4d2ca6621cefdfb83b361c2d379c3410666a1716242b5c69da0ffcf",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "0fbf2a94f793368a"
+      ],
+      "note": "The Toyota article reports recurring vehicle-sales weakness, specifically China, consistent with the depressed-price context."
+    },
+    "reviewedPrice": {
+      "id": "0fbf2a94f793368a",
+      "kind": "price",
+      "text": "Toyota car sales fall for seventh straight month in Aug on China weakness",
+      "context": "Toyota car sales fall for seventh straight month in Aug on China weakness\nInvesting.com-- Toyota Motor's (TYO:7203) global vehicle sales fell for a seventh straight month in August, dragged down by weaker overseas demand, particularly in China, the company said on Tuesday.",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-29",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/toyota-car-sales-fall-seventh-063942340.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "ccf2a63ce99a648a"
+      ],
+      "note": "The numbered Japanese heading identifies dependence on suppliers for parts and raw materials; its original supporting paragraph describes vehicle-production exposure."
+    },
+    "reviewedRisk": {
+      "id": "ccf2a63ce99a648a",
+      "kind": "risk",
+      "text": "⑥仕入先への部品・原材料供給の依存",
+      "context": "⑥仕入先への部品・原材料供給の依存\n トヨタは、部品や原材料などの調達部品を世界中の複数の競合する仕入先から調達する方針を取っています\n が、調達部品によっては他の仕入先への代替が難しいものもあり、特定の仕入先に依存しているものがありま\n す。また、かかる特定の仕入先からの調達ができない場合、当該部品等の調達がより困難となり、生産面への影\n 響を受ける可能性があります。さらに、トヨタが直接の取引先である一次仕入先を分散していたとしても、一次\n 仕入先が部品調達を二次以降の特定の仕入先に依存していた場合、同様に部品の供給を受けられないリスクもあ\n ります。仕入先の数に関わらず、トヨタが調達部品を継続的にタイムリーかつ低コストで調達できるかどうか\n は、多くの要因の影響を受けますが、それら要因にはトヨタがコントロールできないものも含まれています。そ\n れらの要因の中には、仕入先が継続的に調達部品を調達し供給できるか、またトヨタが、仕入先から調達部品を\n 競争力のある価格で供給を受けられるか等が含まれます。このような能力に悪影響を与える可能性のある状況に\n は、地政学的な緊張や、経済制裁などの政府の行動が含まれます。特定の仕入先を失う、またはそれら仕入先か\n ら調達部品をタイムリーもしくは低コストで調達できない場合、トヨタの生産に遅延や休止またはコストの増加\n を引き起こす可能性があり、トヨタの財政状態、経営成績およびキャッシュ・フローに悪影響が及ぶ可能性があ\n ります。\n\n\n",
+      "source": "7203 filing",
+      "date": "2026-06-10",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y8NY.pdf",
+      "section": "risk",
+      "offset": 41213,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "JPM.US",
+    "candidatesHash": "9730ed516e36e49f2854fe4363dcad320d8f016d82fcef23a5073c4aa9e55d19",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "b97ec590dcfd40ed"
+      ],
+      "note": "Higher net-interest-income guidance directly changes the bank's profit expectations."
+    },
+    "reviewedPrice": {
+      "id": "b97ec590dcfd40ed",
+      "kind": "price",
+      "text": "JPMorgan Boosts Outlook for Closely Watched Net Interest Income",
+      "context": "JPMorgan Boosts Outlook for Closely Watched Net Interest Income\nJPMorgan Chase, the largest U.S. bank by assets, raised its net interest income outlook for 2026, saying it now expects full-year net interest income of some $105.5 billion, depending on market conditions, or $96.5 billion excluding the bank’s markets business.  Investors closely track net interest income, or NII, as both a core measure of banks’ profitability in their core function—lending—and as a significant revenue driver.  NII represents the sum that banks generate from interest-earning assets, such as loans and mortgages, less what they pay back out to customers.",
+      "source": "finance.yahoo.com",
+      "date": "2026-07-14",
+      "url": "https://finance.yahoo.com/m/72b5d33e-3450-3a76-8072-3a369955ca43/jpmorgan-boosts-outlook-for.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "5d464e5e53f6941d"
+      ],
+      "note": "Constrained liquidity threatens the bank's ability to fund and operate its businesses; the filing identifies funding and collateral mechanisms."
+    },
+    "reviewedRisk": {
+      "id": "5d464e5e53f6941d",
+      "kind": "risk",
+      "text": "JPMorganChase’s ability to operate its businesses could be impaired if its liquidity is constrained.",
+      "context": "JPMorganChase’s ability to operate its businesses could be impaired if its liquidity is constrained. \n\nJPMorganChase’s liquidity could be impacted by factors such as:\n\n•market-wide illiquidity or disruption\n\n•actions by governmental authorities, including changes in regulatory requirements relating to liquidity or capital\n\n•actions taken by the Federal Reserve to reduce its balance sheet, which could reduce deposits held by JPMorganChase and other financial institutions\n\n•inability to sell assets, or to sell at favorable times or prices\n\n•default by a CCP or other significant market participant\n\n•unanticipated outflows of cash or collateral\n\n•unexpected loss of deposits, including due to deposit pricing or migration to other investment products\n\n•higher than anticipated draws on lending-related commitments, and\n\n•lack of market or customer confidence in JPMorganChase or financial institutions in general.\n\nA reduction in JPMorganChase’s liquidity could be caused by events beyond its control. For example, JPMorganChase’s funding costs could increase and its access to traditional sources of liquidity could be\n\n18\n\nlimited during periods of market stress, low investor confidence or significant market illiquidity.\n\nJPMorganChase may need to raise funding from alternative sources if its access to stable and lower-cost funding, such as deposits and borrowings from Federal Home Loan Banks, is reduced. Alternative funding could be more expensive or limited. JPMorganChase’s funding costs could also be negatively affected by actions that it may take in order to satisfy regulatory requirements, including those relating to:\n\n•liquidity and funding\n\n•its resolution plan, or\n\n•the pre-positioning of liquidity in certain subsidiaries outside the U.S.\n\nMore generally, if JPMorganChase fails to effectively manage its liquidity, this could constrain its ability to fund or invest in its businesses and subsidiaries, and thereby adversely affect its results of operations.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-13",
+      "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm",
+      "section": "risk",
+      "offset": 96227,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "CBG.LSE",
+    "candidatesHash": "4d9866d529ab0dd3b9109977f3d968ab1fda1c2fa74f9de8731b534c7a6313a1",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [],
+      "note": "Cost cutting after another loss is relevant, but it misses the central motor-finance redress and regulatory exposure behind the depressed price."
+    },
+    "reviewedPrice": {
+      "id": "b4f00f89174e6b2d",
+      "kind": "price",
+      "text": "Close Brothers ramps up cost cutting after posting another loss",
+      "context": "Close Brothers ramps up cost cutting after posting another loss\nClose Brothers has revealed plans to strip out more than another £60 million in annual costs amid plans to continue ramping up the use of artificial intelligence (AI).",
+      "source": "uk.finance.yahoo.com",
+      "date": "2026-09-29",
+      "url": "https://uk.finance.yahoo.com/news/close-brothers-ramps-cost-cutting-072357693.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "2b4d1d1d7940bd6d"
+      ],
+      "note": "The principal-risk paragraph identifies FCA motor-finance commission redress and the named court cases, not generic regulation."
+    },
+    "reviewedRisk": {
+      "id": "2b4d1d1d7940bd6d",
+      "kind": "risk",
+      "text": "Legal and regulatory risk",
+      "context": "Legal and regulatory risk • We are operating in an environment of notably elevated legal and regulatory\n risks, including particularly regarding historical motor finance commissions.\n The risk of non-compliance with\n laws and regulations which could • Legal risk with respect to the commissions matter has somewhat reduced\n give rise to fines, litigation, sanctions through the clarity provided by the recent Supreme Court judgment in\n and/or direct claims by customers Johnson, Wrench and Hopcraft. However, a level of legal risk remains,\n and the potential for material arising from possible actions of claims management companies and claimant\n adverse impact upon the group. law firms. Notable regulatory uncertainty will also persist until the scope and\n nature of the FCA’s forthcoming motor commission redress scheme are\n established following the expected consultation period.\n See page 103. • Regulatory risk remains elevated more broadly, including with the possibility\n that further developments from the FCA’s ongoing Premium Finance Market\n Study could impact our premium finance business or the markets in which\n we operate.\n\n\n",
+      "source": "CBG filing",
+      "date": "2025-10-03",
+      "url": "https://www.closebrothers.com/system/files/rrp/reports/CBGAnnualReport2025.pdf",
+      "section": "risk",
+      "offset": 295700,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "AAPL.US",
+    "candidatesHash": "d63cf1bde1a19a1ef3eee13accc2fe278f786fda594ba3b7c7b5910bea5639be",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "abd09bc53b4d1a5e"
+      ],
+      "note": "An AI-driven hardware upgrade cycle is a concrete demand driver for Apple's core product franchise."
+    },
+    "reviewedPrice": {
+      "id": "abd09bc53b4d1a5e",
+      "kind": "price",
+      "text": "Apple's M6 Turns AI Into a Hardware Upgrade Cycle",
+      "context": "Apple's M6 Turns AI Into a Hardware Upgrade Cycle\nThis article first appeared on GuruFocus.",
+      "source": "finance.yahoo.com",
+      "date": "2026-08-27",
+      "url": "https://finance.yahoo.com/technology/ai/articles/apples-m6-turns-ai-hardware-120656116.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "9387164642a23bbd"
+      ],
+      "note": "The filing links minority platform share to developers choosing competing smartphone, computer and tablet ecosystems."
+    },
+    "reviewedRisk": {
+      "id": "9387164642a23bbd",
+      "kind": "risk",
+      "text": "The Company’s future performance depends in part on support from third-party software developers.",
+      "context": "The Company’s future performance depends in part on support from third-party software developers.\n\nThe Company believes decisions by customers to purchase its hardware products depend in part on the availability of third-party software applications and services. Third-party developers may discontinue the development and maintenance of software applications and services for the Company’s products. If third-party software applications and services cease to be developed and maintained for the Company’s products, customers may choose not to buy the Company’s products, adversely impacting the Company’s business, results of operations, financial condition and stock price.\n\nThe Company believes that third-party developer support depends on the perceived benefits of creating software and services for the Company’s products compared to competitors’ platforms, such as Android for smartphones and tablets, Windows for personal computers and tablets, and PlayStation, Nintendo and Xbox for gaming platforms. This analysis may be based on factors such as the market position of the Company and its products, the anticipated revenue that may be generated, expected future growth of product sales, and the costs of developing such applications and services.\n\nThe Company’s minority market share in the global smartphone, personal computer, tablet and wearables markets can make developers less inclined to develop or upgrade software for the Company’s products and more inclined to devote their resources to developing and upgrading software for competitors’ products with larger market share. When developers focus their efforts on these competing platforms, the availability and quality of applications for the Company’s devices can suffer.\n\nThe Company relies on the continued availability and development of compelling and innovative software applications for its products. The Company’s products and operating systems are subject to rapid technological change, and when third-party developers are unable to or choose not to keep up with this pace of change, their applications can fail to take advantage of these changes to deliver improved customer experiences, can operate incorrectly, and can result in dissatisfied customers and lower customer demand for the Company’s products.\n\n",
+      "source": "SEC filing",
+      "date": "2025-10-31",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+      "section": "risk",
+      "offset": 51120,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "MSFT.US",
+    "candidatesHash": "bb64e0f9ece786ff8fdb1047f8d4ca199c554e0a7df52852e97e283aad35201d",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "b124e793d081ebbe"
+      ],
+      "note": "The OpenAI agreement supports long-term Azure demand and growth expectations."
+    },
+    "reviewedPrice": {
+      "id": "b124e793d081ebbe",
+      "kind": "price",
+      "text": "Microsoft’s new OpenAI deal strengthens long-term Azure growth outlook",
+      "context": "Microsoft’s new OpenAI deal strengthens long-term Azure growth outlook\nInvesting.com -- UBS called Microsoft’s revised agreement with OpenAI “a positive,” saying the $250 billion commitment provides stronger visibility into future Azure cloud revenue and reaffirms Microsoft’s central role in the generative AI ecosystem.",
+      "source": "finance.yahoo.com",
+      "date": "2025-10-29",
+      "url": "https://finance.yahoo.com/news/microsoft-openai-deal-strengthens-long-150514965.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "40d064ea1f228c58"
+      ],
+      "note": "The filing identifies the IRS's $28.9 billion proposed transfer-pricing adjustment plus penalties and interest."
+    },
+    "reviewedRisk": {
+      "id": "40d064ea1f228c58",
+      "kind": "risk",
+      "text": "We may have additional tax liabilities.",
+      "context": "We may have additional tax liabilities. We are subject to income taxes in the U.S. and many foreign jurisdictions. Significant judgment is required in determining our worldwide provision for income taxes. In the course of our business, there are many transactions and calculations where the ultimate tax determination is uncertain. We may recognize additional tax expense and be subject to additional tax liabilities due to changes in tax laws, regulations, and administrative practices and principles, including changes to the global tax framework, in various jurisdictions. In recent years, multiple domestic and international tax proposals were proposed to impose greater tax burdens on large multinational enterprises. The Organisation for Economic Co-operation and Development continues to advance proposals or guidance in international taxation, including global minimum tax.\n\nWe are regularly under audit by tax authorities in different jurisdictions. Although we believe that our provision for income taxes and our tax estimates are reasonable, tax authorities may disagree with certain positions we have taken. In addition, economic and political pressures to increase tax revenue in various jurisdictions may make resolving tax disputes favorably more difficult. We are currently under IRS audit for prior tax years and have received Notices of Proposed Adjustment (“NOPAs”) from the IRS for the tax years 2004 to 2013. The primary issues in the NOPAs relate to intercompany transfer pricing. In the NOPAs, the IRS is seeking an additional tax payment of $28.9 billion plus penalties and interest. The final resolution of the proposed adjustments, and other audits or litigation, may differ from the amounts recorded in our consolidated financial statements and adversely affect our results of operations in the period or periods in which that determination is made.\n\nWe earn a significant amount of our operating income outside the U.S. A change in the mix of earnings and losses in countries with differing statutory tax rates, changes in our business or structure, or the expiration of or disputes about certain tax agreements in a particular country may result in higher effective tax rates for the company. In addition, changes in U.S. federal and state or international tax laws applicable to corporate multinationals, other global fundamental law changes currently being considered by many countries, including in the U.S., and changes in taxing jurisdictions’ administrative interpretations, decisions, policies, and positions could adversely affect our financial condition and results of operations.\n\nINTELLECTUAL PROPERTY RISKS\n\n",
+      "source": "SEC filing",
+      "date": "2026-07-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "section": "risk",
+      "offset": 114491,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "AMZN.US",
+    "candidatesHash": "6b92f62c403e19ec974cf8b5347d1984fa0c97d56253433cae2d50f81a3891d0",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "7aa36ef83a2fa9a9"
+      ],
+      "note": "The quoted sentence names AI infrastructure spending and demand; the paragraph reports AWS revenue and profit growth."
+    },
+    "reviewedPrice": {
+      "id": "7aa36ef83a2fa9a9",
+      "kind": "price",
+      "text": "That's strong evidence that the company's massive AI infrastructure spending is generating real demand.",
+      "context": "Amazon's AI Bet Is Paying Off in Revenues: Why Isn't FCF Following?\nAmazon AMZN posted its fastest AWS (Amazon Web Services) growth in 18 quarters in the second quarter of 2026. Revenues jumped 37% year over year to $42.2 billion, with segment operating income surging 64% and margin expanding to 39.4% from 32.9%. That's strong evidence that the company's massive AI infrastructure spending is generating real demand. Yet over the same trailing 12 months (TTM), free cash flow (FCF) swung negative.",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-16",
+      "url": "https://finance.yahoo.com/technology/ai/articles/amazons-ai-bet-paying-off-145400682.html",
+      "section": "News first paragraph",
+      "offset": 247
+    },
+    "risk": {
+      "acceptedIds": [
+        "5339e7d91ec6bdc3"
+      ],
+      "note": "The filing identifies limited suppliers of GPUs and other semiconductor inputs needed to operate Amazon's AI infrastructure."
+    },
+    "reviewedRisk": {
+      "id": "5339e7d91ec6bdc3",
+      "kind": "risk",
+      "text": "Our Supplier Relationships Subject Us to a Number of Risks",
+      "context": "Our Supplier Relationships Subject Us to a Number of Risks\n\nWe have significant suppliers, including content and technology licensors, and in some cases, limited or single-sources of supply, that are important to our sourcing, services, manufacturing, and any related ongoing servicing of merchandise and content. We do not have long-term arrangements with most of our suppliers to guarantee availability of merchandise, content, components, or services, particular payment terms, or the extension of credit limits. Decisions by our current suppliers to limit or stop selling or licensing merchandise, content, components, or services to us on acceptable terms, or delay delivery, including as a result of one or more supplier bankruptcies due to poor economic conditions, natural or human-caused disasters (including public health crises), geopolitical events, labor and trade disputes, or for other reasons, may result in our being unable to procure alternatives from other suppliers in a timely and efficient manner and on acceptable terms, or at all. For example, we rely on a limited group of suppliers for semiconductor products, including products related to artificial intelligence infrastructure such as graphics processing units. Constraints on the availability of these products could adversely affect our ability to develop and operate artificial intelligence technologies, products, or services. In addition, violations by our suppliers or other vendors of applicable laws, regulations, contractual terms, intellectual property rights of others, or our Supply Chain Standards, as well as products or practices regarded as unethical, unsafe, or hazardous, could expose us to claims, damage our reputation, limit our growth, and negatively affect our operating results.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-06",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+      "section": "risk",
+      "offset": 53577,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "META.US",
+    "candidatesHash": "0c071fc85f91f59afe5501fcc3040b2835a3f5a887124463ee27769b091b76be",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "e5057fa3aa91f94f"
+      ],
+      "note": "AI-driven ad engagement, impressions and pricing directly support advertising earnings growth."
+    },
+    "reviewedPrice": {
+      "id": "e5057fa3aa91f94f",
+      "kind": "price",
+      "text": "Meta Platforms Boosts Ad Engagement With AI: More Upside Ahead?",
+      "context": "Meta Platforms Boosts Ad Engagement With AI: More Upside Ahead?\nMeta Platforms META is benefiting from its strategic investments in artificial intelligence, which are driving significant improvements in ad engagement and business performance. The company's focus on integrating AI into its platforms — Facebook, WhatsApp, Instagram, Messenger, and Threads — is driving user as well as advertising engagement. In the second quarter of 2026, Family of Apps ad revenues increased 27% year over year to $59.4 billion. Ad impressions rose 14%, while the average price per ad increased 12%, partly reflecting improved ad performance. \r",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-28",
+      "url": "https://finance.yahoo.com/media-advertising/articles/meta-platforms-boosts-ad-engagement-152100089.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "49f39dcb0cdfc7f2"
+      ],
+      "note": "Substantially all revenue comes from advertisers on Facebook and Instagram, without long-term spending commitments."
+    },
+    "reviewedRisk": {
+      "id": "49f39dcb0cdfc7f2",
+      "kind": "risk",
+      "text": "We generate substantially all of our revenue from advertising.",
+      "context": "We generate substantially all of our revenue from advertising. The loss of marketers, or reduction in spending by marketers, could seriously harm our business.\n\nSubstantially all of our revenue is currently generated from marketers advertising on Facebook and Instagram. As is common in the industry, our marketers do not have long-term advertising commitments with us. Many of our marketers spend only a relatively small portion of their overall advertising budget with us. Marketers will not continue to do business with us, or they will reduce the budgets they are willing to commit to us, if we do not deliver ads in an effective manner, if they do not believe that their investment in advertising with us will generate a competitive return relative to other alternatives, or if they are not satisfied for any other reason. We have implemented, and we will continue to implement, changes to our user data practices. Some of these changes reduce our ability to effectively target ads, which has to some extent adversely affected, and will continue to adversely affect, our advertising business. If we are unable to provide marketers with a suitable return on investment, the demand for our ads may not increase, or may decline, in which case our revenue and financial results may be harmed.\n\nOur advertising revenue can also be adversely affected by a number of other factors, including:\n\n•decreases in user engagement, including time spent on our products;\n\n•our inability to continue to increase user access to and engagement with our products;\n\n•product changes or inventory management decisions we may make that change the size, format, frequency, or relative prominence of ads displayed on our products or of other unpaid content shared by marketers on our products;\n\n•our inability to maintain or increase marketer demand, the pricing of our ads, or both;\n\n•our inability to maintain or increase the quantity or quality of ads shown to users;\n\n•changes to the content or application of third-party policies that limit our ability to deliver, target, or measure the effectiveness of advertising, including changes by mobile operating system and browser providers such as Apple and Google;\n\n•adverse litigation, government actions, or legislative, regulatory, or other legal developments relating to advertising, including developments that may impact certain advertisers' ability to advertise on our platform or our ability to deliver, target, or measure the effectiveness of advertising;\n\n•user behavior or product changes that may reduce traffic to features or products that we monetize at a higher rate, such as our Feed and Stories products, including as a result of increased usage of our Reels or other video or messaging products;\n\n•reductions of advertising due to our efforts to implement or enforce advertising policies that protect the security and integrity of our platform or that we believe are needed to comply with global content, security, or integrity obligations;\n\n15\n\nTable of Contents\n\n•the availability, accuracy, utility, and security of analytics and measurement solutions offered by us or third parties that demonstrate the value of our ads to marketers, or our ability to further improve such tools;\n\n•loss of advertising market share to our competitors, including if prices to purchase our ads increase or if competitors offer lower priced, more integrated, or otherwise more effective products;\n\n•limitations on our ability to offer a number of our most significant products and services, including Facebook and Instagram, in Europe as a result of European courts invalidating the EU-U.S. DPF or regulators, courts, or legislative bodies determining that the legal bases we rely upon to transfer user data from the European Union to the United States are invalid;\n\n•limitations on our ability to deliver ads to users under the age of 18 and, in some cases, to continue to offer certain products or services to certain cohorts of users, whether voluntarily, as a result of new laws, regulations, or government actions in the United States and other jurisdictions, or otherwise;\n\n•changes in our marketing and sales or other operations that we are required to or elect to make as a result of risks related to complying with laws or regulatory requirements or other government actions;\n\n•decisions by marketers to reduce their advertising as a result of announcements by us or adverse media reports or other negative publicity involving us, our user data practices, our advertising metrics or tools, content on our products, our interpretation, implementation, or enforcement of policies relating to content on our products (including as a result of decisions or recommendations from the independent Oversight Board), developers with applications that are integrated with our products, or other companies in our industry;\n\n•reductions of advertising by marketers due to illegal, illicit, or otherwise objectionable content made available on our products by third parties, questions about our user data practices or the security of our platform, concerns about brand safety or potential legal liability, or uncertainty regarding regulatory developments or their own legal and compliance obligations, including with respect to artificial intelligence;\n\n•the effectiveness of our ad targeting or degree to which users consent to, opt out of, or reduce the use of data for ads, including as a result of product changes and controls that we have implemented or may implement in the future in connection with the GDPR, ePrivacy Directive, DMA, DMCC, U.S. state privacy laws, and other laws, regulations, regulatory actions, or litigation, or otherwise, that impact our ability to use data for advertising purposes (for example, in response to regulatory developments in Europe, we began offering our users a \"subscription for no ads\" alternative in the European Union, European Economic Area, and Switzerland, and subsequently in November 2024 provided users in those regio",
+      "source": "SEC filing",
+      "date": "2026-01-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+      "section": "risk",
+      "offset": 56209,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "TSLA.US",
+    "candidatesHash": "c35e21f47827574e47fe952bd573560bba9e1488b0e46700bc3bf3119ef95397",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "e6e97642bbd96e48"
+      ],
+      "note": "The expected vehicle-delivery decline is a concrete operating driver, rather than a stock-price target or rating."
+    },
+    "reviewedPrice": {
+      "id": "e6e97642bbd96e48",
+      "kind": "price",
+      "text": "Wall Street Expects A 7% Drop In Tesla Q3 Deliveries; The Stock Keeps Falling",
+      "context": "Wall Street Expects A 7% Drop In Tesla Q3 Deliveries; The Stock Keeps Falling\nTesla will release third-quarter delivery numbers on Friday, Oct. 2. The stock is down about 5.5% this week in the lead up to the report.",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-30",
+      "url": "https://finance.yahoo.com/m/b16a9006-9b4e-3ac4-ba15-a43d8b3fc0fe/wall-street-expects-a-7%25-drop.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "adc0ffe311afc39f"
+      ],
+      "note": "Access to and growth in battery-cell supply constrain vehicle production and expansion."
+    },
+    "reviewedRisk": {
+      "id": "adc0ffe311afc39f",
+      "kind": "risk",
+      "text": "We will need to maintain and significantly grow our access to battery cells",
+      "context": "We will need to maintain and significantly grow our access to battery cells, including through the development and manufacture of our own cells, and control our related costs.\n\nWe are dependent on the continued supply of lithium-ion battery cells for our vehicles and energy storage products, and we will require substantially more cells to grow our business according to our plans. Currently, we rely on suppliers such as Panasonic and Contemporary Amperex Technology Co. Limited (CATL) for these cells. We have to date fully qualified only a very limited number of such suppliers and have limited flexibility in changing suppliers. Any disruption in the supply of battery cells from our suppliers could limit production of our vehicles and energy storage products. In the long term, we intend to supplement cells from our suppliers with cells manufactured by us, which we believe will be more efficient, manufacturable at greater volumes and more cost-effective than currently available cells. However, our efforts to develop and manufacture such battery cells have required, and may continue to require, significant investments, and there can be no assurance that we will be able to achieve these targets in the timeframes that we have planned or at all. If we are unable to do so, we may have to curtail our planned vehicle and energy storage product production or procure additional cells from suppliers at potentially greater costs, either of which may harm our business and operating results.\n\nIn addition, the cost and mass production of battery cells, whether manufactured by our suppliers or by us, depends in part upon the prices and availability of raw materials such as lithium, nickel and/or other metals. The prices for these materials fluctuate and their available supply may be unstable, depending on market conditions, trade policies, refining capacity and global demand for these materials. For example, as a result of increased global production of electric vehicles and energy storage products, suppliers of these raw materials may be unable to meet our volume needs. Additionally, our suppliers may not be willing or able to reliably meet our timelines or our cost and quality needs, which may require us to replace them with other sources. Any reduced availability of these materials may impact our access to cells and our growth, and any increases in their prices may reduce our profitability if we cannot recoup such costs through increased prices. Moreover, our inability to meet demand and any product price increases may harm our brand, growth, prospects and operating results.\n\n14\n\nTable of Contents\n\n",
+      "source": "SEC filing",
+      "date": "2026-01-29",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+      "section": "risk",
+      "offset": 67122,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "ORCL.US",
+    "candidatesHash": "7de108cbc0c12f7361e6ee740e122db071f84a3722cf9e0970c33cf90a64ae74",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "5a796c6d322acabe"
+      ],
+      "note": "Data-center delivery delays are a direct risk to monetizing contracted AI demand."
+    },
+    "reviewedPrice": {
+      "id": "5a796c6d322acabe",
+      "kind": "price",
+      "text": "Oracle's Stock Falls 3.5% on Data Center Delay Concerns",
+      "context": "Oracle's Stock Falls 3.5% on Data Center Delay Concerns\nOracle Corporation's ORCL shares came under pressure Thursday after the company invoked a \"force majeure\" provision related to a massive data center project in New Mexico. The move raised concerns about potential delays and costs associated with Oracle's aggressive artificial intelligence (AI) infrastructure expansion. Oracle's shares ended the session 3.5% lower, while investors continued to scrutinize the company's substantial AI-related capital spending.",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-25",
+      "url": "https://finance.yahoo.com/technology/ai/articles/oracles-stock-falls-3-5-110800801.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "bf542f9332cff40a"
+      ],
+      "note": "The filing's substantial outstanding debt and future funding obligations threaten financial flexibility and cash availability."
+    },
+    "reviewedRisk": {
+      "id": "bf542f9332cff40a",
+      "kind": "risk",
+      "text": "There are risks associated with our outstanding and future indebtedness.",
+      "context": "There are risks associated with our outstanding and future indebtedness. As of May 31, 2026, we had an aggregate of $129.5 billion of outstanding indebtedness that will mature between calendar year 2026 and calendar year 2066. We may incur additional indebtedness from time to time to finance capital expenditures, future investments or acquisitions, to finance the payment of cash dividends on or repurchases of our common stock, to refinance existing debt or for other purposes. Future financing or funding needs could differ from our projections. Our ability to pay interest and repay the principal for our indebtedness is dependent upon our ability to manage our business operations, generate sufficient cash flows to service such debt and the other factors discussed in this Risk Factors section. There can be no assurance that we will be able to manage any of these risks successfully. The incurrence of additional indebtedness will also result in increased fixed obligations and increased interest expense and could also include covenants or other restrictions that may impede our ability to manage our operations. Some of our indebtedness may bear interest at variable rates, and increases in interest rates could increase our debt service obligations. In addition, changes in interest rates could adversely affect the economics of certain long-term commitments or customer arrangements, particularly where pricing is fixed or committed.\n\nWe have been refinancing portions of our outstanding debt as it matures, and we may continue to do so in the future. There is a risk that we may not be able to refinance existing debt or that the terms of any refinancing may not be as favorable as the terms of our existing debt. Furthermore, if prevailing interest rates or other factors at the time of refinancing result in higher interest rates upon refinancing, then the interest expense relating to that refinanced indebtedness would increase. More broadly, disruptions in credit markets, including reduced liquidity, changes in creditor sentiment or lender concentration limits, could increase our borrowing costs or limit our ability to access debt financing on acceptable terms, or at all.\n\nShould we incur future increases in interest expense, our ability to utilize certain of our foreign tax credits to reduce our U.S. federal income tax could be limited, which could unfavorably affect our provision for income taxes and effective tax rate. In addition, changes to our outlook or credit rating or a withdrawal by any rating agency could negatively affect the value of both our debt and equity securities and increase the interest amounts we pay on certain outstanding or future debt. A downgrade could also reduce our access to, or increase the cost of, commercial paper or other short-term financing, affect the terms or availability of certain long-term commitments (including data center leases), limit eligibility to contract with certain customers, and increase collateral, letter of credit or other credit support requirements under certain contractual arrangements. These risks could adversely affect our financial condition and results of operations.\n\n",
+      "source": "SEC filing",
+      "date": "2026-06-22",
+      "url": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526277521/orcl-20260531.htm",
+      "section": "risk",
+      "offset": 152365,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "CRM.US",
+    "candidatesHash": "d426f86212a1f8b39febf177cc00c644e1cbc5a96a6b3f18fd8b237adb51e24d",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "7c9fab4254ccbfeb"
+      ],
+      "note": "A softer sales outlook after an earnings beat explains pressure on growth expectations."
+    },
+    "reviewedPrice": {
+      "id": "7c9fab4254ccbfeb",
+      "kind": "price",
+      "text": "Salesforce earnings beat, but Q3 sales outlook disappoints",
+      "context": "Salesforce earnings beat, but Q3 sales outlook disappoints\nCloud-based software and AI service developer Salesforce (CRM) is out with second quarter earnings results after Wednesday's market close. The company reported adjusted earnings of $2.91 per share compared to a Bloomberg consensus estimate of $2.78. Revenue was $10.24 billion versus an expected $10.14 billion.",
+      "source": "finance.yahoo.com",
+      "date": "2025-09-03",
+      "url": "https://finance.yahoo.com/video/salesforce-earnings-beat-q3-sales-201625906.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "b7de1b52de9e98b9"
+      ],
+      "note": "Third-party cloud and hosting interruptions can impair Salesforce's subscription delivery and trigger credits, penalties and customer attrition."
+    },
+    "reviewedRisk": {
+      "id": "b7de1b52de9e98b9",
+      "kind": "risk",
+      "text": "Any interruptions or delays in services from third parties",
+      "context": "Any interruptions or delays in services from third parties, including data center hosting facilities, cloud computing platform providers and other hardware and software vendors, as well as Internet infrastructure, or from our inability to adequately plan for and manage service interruptions or infrastructure capacity requirements, could impair the delivery of our services and harm our business.\n\nWe rely on third-party data center hosting facilities and cloud computing platform providers located in the United States and other countries, as well as the many different underlying networks and services that power the Internet, to deliver our products and services and operate critical business systems. We also rely on hardware purchased or leased from, software licensed from, and cloud computing platforms provided by third parties in order to offer our products and services, including database software, hardware and data from multiple vendors. Any disruption, degradation or failure of our systems, or those of the third parties on which we rely, could result in service interruptions and harm our business. We have experienced service interruptions and interruptions may occur in the future. As our reliance on these third-party systems increases, and particularly on third-party cloud computing platforms, our exposure to service interruptions and performance or quality issues may also increase. Service interruptions or other performance or quality issues may cause us to issue credits or pay penalties, cause customers to assert warranty or other claims or terminate their subscriptions, and adversely affect attrition rates and our ability to attract new customers, which could reduce revenue. Our business and reputation would also be harmed if our customers and potential customers perceive our services as unreliable.\n\nFor many of our offerings, our production environment and customer data are replicated at geographically separate facilities. Certain offerings, including those added through acquisitions, may be delivered through alternate facilities or arrangements. We do not control the operation of any of these facilities, and they may be vulnerable to damage or interruption from events outside of our control, such as natural disasters or supply chain disruptions. Despite precautions taken at these facilities, such as disaster recovery and business continuity arrangements, unanticipated events, problems, operational failures\n\n14\n\nTable of Contents\n\nor other disruptions could result in prolonged service interruptions, and there can be no assurance that such interruptions would be remediated without significant cost, in a timely manner or at all.\n\nThe hardware, software, data and cloud computing platforms that we rely on, including, for example, the large language models leveraged in our AI offerings, may not continue to be available at reasonable prices, on commercially reasonable terms or at all. Any loss of the right to use such hardware, software, data or cloud computing platforms could significantly increase our expenses and disrupt or delay the provision of our services until equivalent technology is either developed internally or obtained from third parties and integrated into our systems. There can be no assurance that such replacement technology would be available or implemented in a timely manner or at all.\n\nAs we scale our operations, the volume and nature of data processed by our offerings continue to evolve, including as a result of the deployment of AI technologies, and our infrastructure capacity requirements, including network capacity, computing power and energy requirements, may increase as a result. Additionally, increased energy consumption, including as a result of AI adoption, climate-related events, energy market volatility, and power grid disruptions may increase the operational costs related to inputs across our value chain, including for data centers. If we experience significant strains on our data center capacity, whether due to insufficient infrastructure capacity or for other reasons outside of our control, our customers could experience performance degradation or service outages that may subject us to financial liabilities, result in customer losses, subject us to litigation and harm our reputation and business. As we add data centers and capacity and continue to move to cloud computing platform providers, we move or transfer our data and our customers’ data from time to time. Despite precautions taken during this process, any unsuccessful data transfers may impair the delivery of our services, which may damage our business.\n\n",
+      "source": "SEC filing",
+      "date": "2026-03-02",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+      "section": "risk",
+      "offset": 67710,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "INTC.US",
+    "candidatesHash": "ceaf15b741bea69000a5fc2c705db289b7b57ec0cdf151b0213a207ce886cfb8",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "1c70a2e1130f7bb7"
+      ],
+      "note": "AI-driven quarterly revenue growth is a concrete earnings-recovery driver."
+    },
+    "reviewedPrice": {
+      "id": "1c70a2e1130f7bb7",
+      "kind": "price",
+      "text": "Intel shares surge as AI drives first-quarter revenue jump",
+      "context": "Intel shares surge as AI drives first-quarter revenue jump\nSTORY: :: Intel CorporationIntel shares surged Thursday after the company posted a jump in first quarter revenue on booming demand for its AI server processors.The stock jumped 19% in extended trade, extending its 81% rebound so far this year. First-quarter revenue came in at almost $13.6 billion, beating estimates.The company also forecast second-quarter revenue of up to $14.8 billion, well above Wall Street expectations.After missing out on the early years of the AI boom, a new opportunity has emerged for Intel in the form of advanced central processing units.They're better suited to running AI agents than the graphics processing units that have so far been dominant in developing AI. However, Intel's ability to meet demand still depends on whether it can continue to manufacture processors at scale without bottlenecks and supply issues.Competition in the CPU space also looks set to mount, with rivals Nvidia, AMD and Arm all making plans for that market.",
+      "source": "finance.yahoo.com",
+      "date": "2026-04-24",
+      "url": "https://finance.yahoo.com/video/intel-shares-surge-ai-drives-062123617.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "c6e494d17cbf6c45"
+      ],
+      "note": "The literal conditional clause identifies the need for a significant external Intel 14A foundry customer, a central strategy and capital-allocation exposure."
+    },
+    "reviewedRisk": {
+      "id": "c6e494d17cbf6c45",
+      "kind": "risk",
+      "text": "If we are unable to secure a significant external foundry customer for Intel 14A",
+      "context": "If we are unable to secure a significant external foundry customer for Intel 14A, our next generation semiconductor manufacturing process technology, we may pause or discontinue our pursuit of next generation leading-edge process technologies. \n\nAs an integrated design manufacturer (IDM) with a products business that depends on access to leading-edge semiconductor manufacturing process technologies, or nodes, to produce competitive products, we have historically invested significant capital resources to continually develop new generations of leading-edge nodes and foundry capacity to produce such nodes. However, as described above, the design, development and manufacturing of leading-edge nodes is risky and capital-intensive, and it takes years for capital investments to yield a return. If we are unable to secure a significant external customer for our Intel 14A node, we may pause or discontinue development of Intel 14A and subsequent next generation leading-edge nodes. While we remain focused on continued development of Intel 14A and securing such a significant external customer, we have taken steps to reduce our overall investment and have further slowed down the construction of the new leading-edge fabrication facilities we are building in Ohio. In addition, while we continue to evaluate Intel 14A for use in future Intel products and our plan includes an initial product designed to utilize Intel 14A, at present we are maintaining the option to design future Intel products requiring nodes with performance beyond Intel 18A and Intel 18A-P to be produced internally or by an external foundry. We have been unsuccessful to date in securing any significant external foundry customers for any of our nodes and our prospects for securing a significant external foundry customer for Intel 14A are uncertain.\n\nRisk Factors\n\n39\n\nIf we were to pause or discontinue the design, development and manufacturing of Intel 14A and other next generation leading-edge nodes, we would be subject to a number of significant strategic business, financial, operational and reputational risks and repercussions including, but not limited to:\n\n▪Dependence on Third-Party Foundries. Our products business would, over time, become dependent on third-party foundries, particularly TSMC, as we develop products for nodes beyond Intel 18A and Intel 18A-P. We have no long-term contract with TSMC, and if we are unable to secure and maintain sufficient capacity on favorable pricing terms, we may be unable to manufacture our products in sufficient volume and at a cost that supports the continued success of our products business. Further, most of our competitors have longer and more established relationships with TSMC and other third-party foundries than we do, which may put us at a competitive disadvantage. There are few foundries capable of producing the leading-edge and near-leading-edge nodes needed for our products – currently only TSMC and Samsung. To the extent our competitors are more successful than us in securing capacity with those foundries than we are, our product roadmap, market position and customer relationships would be materially adversely impacted.\n\n▪Losses with Respect to our Investments in R&D and Manufacturing Facilities and Equipment: We had over $100 billion of property, plant and equipment, net on our balance sheet as of December 27, 2025, the substantial majority of which we estimate relate to our foundry business. While the significant majority of this relates to our existing and in-development nodes, including Intel 18A and Intel 18A-P, with each transition to a new node we continue to utilize some R&D and manufacturing assets from prior nodes. If we were to pause or discontinue the design, development and manufacturing of Intel 14A and other next generation leading-edge nodes, we would expect to incur significant material impairments with respect to foundry assets that may impact our results of operations. For example, we would likely discontinue the new leading-edge fabrication facilities we are building in Ohio. We also would expect to incur additional costs and expenses as we wind down other projects and facilities and reduce headcount.\n\n▪Loss of Eligibility for Government Incentives. We have also entered into government incentive arrangements with local, regional and national governments, both U.S. and non-U.S. If we were to pause or discontinue the design, development and manufacturing of Intel 14A, we may lose eligibility for various incentives contemplated by these arrangements, and we may be required to repay amounts already received under these arrangements.\n\n▪Potential Penalty Payments Under our SCIP Agreements. To support our capital investments in recent years, we pursued alternative financing arrangements including our 2022 joint investment with Brookfield in the manufacturing expansion of our Arizona campus and our 2024 joint investment with Apollo related to Fab 34 in Ireland. Our potential pause or discontinuation of the design, development and manufacture of Intel 14A may accelerate our move to third-party foundry services for our products and result in our inability to satisfy construction and/or wafer demand and purchase commitments in those arrangements, potentially requiring substantial additional payments to our SCIP partners.\n\n▪Loss of Talent. Historically, as one of the only companies in the world, and the only company in the U.S., pursuing the design, development and manufacturing of next generation leading-edge nodes, we have benefitted from being in a unique position as an employer to hire and retain scientists, engineers, and other technical talent interested in being on the cutting edge of semiconductor innovation. If we were to pause or discontinue leading-edge node design, development and manufacturing, or any perception that we may do so in the future, may materially adversely impact our ability to hire and retain key talent across our foundry organization and the company mor",
+      "source": "SEC filing",
+      "date": "2026-01-23",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000011/intc-20251227.htm",
+      "section": "risk",
+      "offset": 197355,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "AMD.US",
+    "candidatesHash": "2671d35092dd2d07edf1cf67363a9d8d6d7d41c81194496f1f65dfd38ffb6455",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "815130e280eac15a"
+      ],
+      "note": "The multi-year OpenAI chip-supply agreement supports AI accelerator demand and growth expectations."
+    },
+    "reviewedPrice": {
+      "id": "815130e280eac15a",
+      "kind": "price",
+      "text": "AMD signs multi-year AI chip-supply deal with OpenAI",
+      "context": "AMD signs multi-year AI chip-supply deal with OpenAI\nSTORY: AMD said on Monday it will supply artificial intelligence chips to OpenAI in a multi-year deal.It would bring in tens of billions of dollars in annual revenue and give the ChatGPT creator the option to buy up to roughly 10% of the chipmaker.The deal offers OpenAI an opportunity to take a stake in one of Nvidia's most formidable rivals.And is a powerful endorsement of Advanced Micro Devices' AI chips and software.Shares of AMD jumped more than 33% in premarket trading.It put them on track to open at their highest level since March 2024, if gains hold.The agreement covers the deployment of hundreds of thousands of AMD's AI chips, or graphics processing units over several years.And will begin in the second half of 2026.AMD said OpenAI would build a one-gigawatt facility based on its forthcoming MI450 series of chips beginning next year.Because of the agreement's ripple effect, AMD said it expects to receive more than $100 billion in new revenue over four years from OpenAI and other customers.",
+      "source": "finance.yahoo.com",
+      "date": "2025-10-06",
+      "url": "https://finance.yahoo.com/video/amd-signs-multi-ai-chip-143637472.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "90ccecd765122dc4"
+      ],
+      "note": "Third-party fabrication, including the named foundry dependency in the paragraph, constrains chip manufacturing."
+    },
+    "reviewedRisk": {
+      "id": "90ccecd765122dc4",
+      "kind": "risk",
+      "text": "We rely on third parties to manufacture our products",
+      "context": "We rely on third parties to manufacture our products, and if they are unable to do so on a timely basis in sufficient quantities and using competitive technologies, our business could be materially adversely affected.\n\nWe utilize third-party wafer foundries to fabricate the silicon wafers for all of our products. We rely on Taiwan Semiconductor Manufacturing Company Limited (TSMC) for the production of all wafers for microprocessor and GPU products at 7 nanometer (nm) or smaller nodes, and we rely primarily on GLOBALFOUNDRIES Inc. (GF) for wafers for microprocessor and GPU products manufactured at process nodes larger than 7 nm. We also utilize TSMC, United Microelectronics Corporation (UMC) and Samsung Electronics Co., Ltd. for our integrated circuits (IC) in the form of programmable logic devices. We also rely on third-party manufacturers to assemble, test, mark and pack (ATMP) our products. Our third-party package assembly partners are responsible for packaging technology used to fabricate our products. It is important to have reliable relationships with all of these third-party manufacturing suppliers to ensure adequate product supply to respond to customer demand.\n\nWe cannot guarantee that these manufacturers or our other third-party manufacturing suppliers will be able to meet our near-term or long-term manufacturing requirements. If we experience supply constraints from our third-party manufacturing suppliers, we may be required to allocate the reduced quantities of affected products amongst our customers, which could have a material adverse effect on our relationships with these customers and on our financial condition. In addition, if we are unable to meet customer demand due to fluctuating or late supply from our manufacturing suppliers, it could result in lost sales and have a material adverse effect on our business. For example, if TSMC is not able to manufacture wafers for our microprocessor and GPU products at 7 nm or smaller nodes and our newest IC products in sufficient quantities to meet customer demand, it could have a material adverse effect on our business.\n\n21\n\nTable of Contents\n\nWe do not have long-term commitment contracts with some of our third-party manufacturing suppliers. We obtain many of these manufacturing services on a purchase order basis and these manufacturers are not required to provide us with any specified minimum quantity of product beyond the quantities in an existing purchase order. Accordingly, we depend on these suppliers to allocate to us a portion of their manufacturing capacity sufficient to meet our needs, to produce products of acceptable quality and at acceptable manufacturing yields and to deliver those products to us on a timely basis and at acceptable prices. The manufacturers we use also fabricate wafers and ATMP products for other companies, including certain of our competitors. They could choose to prioritize capacity for other customers, increase the prices that they charge us on short notice, require onerous prepayments, or reduce or eliminate deliveries to us, which could have a material adverse effect on our business. If we overestimate our customer demand or experience a decrease in customer demand, either could result in excess inventory and an increase in our production costs. We are party to a wafer supply agreement with GF where GF will provide a minimum annual capacity allocation to us and set pricing through 2026. If our actual wafer requirements are less than the number of wafers required to meet the applicable annual wafer purchase target, we could have excess inventory or higher inventory unit costs, both of which may adversely impact our gross margin and our results of operations.\n\nOther risks associated with our dependence on third-party manufacturers include limited control over delivery schedules, yield, cycle times, quality assurance, price increases, lack of capacity in periods of excess demand, misappropriation of our intellectual property, dependence on several subcontractors, and limited ability to manage inventory and parts. Moreover, if any of our third-party manufacturers (or their subcontractors) suffer any damage to facilities, lose benefits under material agreements, experience power outages, water shortages, or high heat events, lack sufficient capacity to manufacture our products, encounter financial difficulties, are unable to secure necessary raw materials from their suppliers, suffer any other disruption or reduction in efficiency, or experience uncertain environmental, social, atmospheric or natural, economic or political circumstances or conditions, we may encounter supply delays or disruptions. For example, in the first quarter of 2024, we experienced some inventory loss due to an incident at a contract manufacturer. If we are unable to secure sufficient or reliable supply of products, our ability to meet customer demand may be adversely affected and this could materially affect our business.\n\nIf we transition the production of some of our products to new manufacturers, we may experience delayed product introductions, lower yields or poorer performance of our products. If we experience problems with product quality or are unable to secure sufficient capacity from a particular third-party manufacturer, or if we for other reasons cease utilizing one of those manufacturers, we may be unable to timely secure an alternative supply for any specific product. We could experience significant delays in the shipment of our products if we are required to find alternative third-party manufacturers, which could have a material adverse effect on our business.\n\nWe are party to two ATMP joint ventures (collectively, the ATMP JVs) with affiliates of Tongfu Microelectronics Co., Ltd. The majority of our ATMP services are provided by the ATMP JVs and there is no guarantee that the ATMP JVs will be able to fulfill our long-term ATMP requirements. If we are unable to meet customer demand due to fluctuating or late suppl",
+      "source": "SEC filing",
+      "date": "2026-02-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/amd-20251227.htm",
+      "section": "risk",
+      "offset": 94631,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "AVGO.US",
+    "candidatesHash": "289cbd66a806c869805d0eb919780738ab3ccc32a1f54603c48b263eca01a4c5",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "c2d2a84a4ce93ecc"
+      ],
+      "note": "The AI-related margin warning explains pressure despite revenue growth."
+    },
+    "reviewedPrice": {
+      "id": "c2d2a84a4ce93ecc",
+      "kind": "price",
+      "text": "Broadcom shares fall as margin warning sparks AI payoff worries",
+      "context": "Broadcom shares fall as margin warning sparks AI payoff worries\nSTORY: Shares of Broadcom fell more than 11% Friday after the chipmaker warned that growing sales of lower-margin custom AI processors were squeezing profitability.That sparked worries that the business may be less lucrative.It comes a day after investor jitters over Big Tech's AI returns were already in focus as Oracle fell about 11% due to high capital spending for a debt-funded AI infrastructure buildout.High valuations and circular deals - where firms invest in their own customers - have also fanned fears of an AI bubble.Still, several analysts said the AI potential remains intact, with stocks benefiting from the technology, especially chipmakers, set for big annual gains as the industry spends hundreds of billions of dollars to bring more capacity online.One analyst told Reuters, \"Right now, the spending intentions still seem so big by so many, hitting that panic button is premature.”Despite Broadcom’s decline on Friday, its stock is up nearly 70% for the year.",
+      "source": "finance.yahoo.com",
+      "date": "2025-12-12",
+      "url": "https://finance.yahoo.com/video/broadcom-shares-fall-margin-warning-184254621.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "ed5ff7768e389b5b"
+      ],
+      "note": "Substantial acquisition-related indebtedness constrains cash, refinancing and financial flexibility."
+    },
+    "reviewedRisk": {
+      "id": "ed5ff7768e389b5b",
+      "kind": "risk",
+      "text": "Our substantial indebtedness could adversely affect our financial health",
+      "context": "Our substantial indebtedness could adversely affect our financial health and our ability to execute our business strategy.\n\nFrom time to time, we require significant expenditures to support our growth and respond to business challenges. As of November 2, 2025, the aggregate indebtedness was $67,120 million. Our substantial indebtedness and the instruments governing our indebtedness could have important consequences including:\n\n•increasing our vulnerability to adverse general economic and industry conditions;\n\n•limiting our flexibility in planning for, or reacting to, changes in the economy and the industries in which we operate;\n\n•placing us at a competitive disadvantage compared to our competitors with less indebtedness;\n\n•making it more difficult to borrow additional funds in the future to fund growth, acquisitions, working capital, capital expenditures and other purposes; and\n\n•potentially requiring us to dedicate a substantial portion of our cash flow from operations to payments on our indebtedness, thereby reducing the availability of our cash flow to fund our other business needs.\n\nWe receive debt ratings from the major credit rating agencies in the U.S., and any downgrade in our credit rating or the ratings of our indebtedness, or adverse conditions in the debt capital markets, could materially adversely affect our business, financial condition and results of operations. In addition, the current market volatility may adversely impact our ability to manage our debt, including through borrowing at favorable interest rates or due to reduced cash flows.\n\n",
+      "source": "SEC filing",
+      "date": "2025-12-18",
+      "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/avgo-20251102.htm",
+      "section": "risk",
+      "offset": 139439,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "DIS.US",
+    "candidatesHash": "9110c29ca7d4a9a660ebb0e5c9799f35119556812c6d7f44954b77761cc62857",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "093b1fafc21a15e3"
+      ],
+      "note": "Linear television decline and a weak outlook directly explain earnings pressure."
+    },
+    "reviewedPrice": {
+      "id": "093b1fafc21a15e3",
+      "kind": "price",
+      "text": "Disney stock slides amid sharp decline in linear TV business, tepid outlook",
+      "context": "Disney stock slides amid sharp decline in linear TV business, tepid outlook\nDisney (DIS) reported fiscal third quarter earnings on Wednesday that beat expectations, driven by continued strength in its domestic parks business and a year-over-year swing to profitability in its streaming unit.",
+      "source": "finance.yahoo.com",
+      "date": "2025-08-06",
+      "url": "https://finance.yahoo.com/news/disney-stock-slides-amid-sharp-decline-in-linear-tv-business-tepid-outlook-143015143.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "3ad31f5316001fe8"
+      ],
+      "note": "The filing links labor disputes to production, distribution and park operations, with actual industry strike exposure."
+    },
+    "reviewedRisk": {
+      "id": "3ad31f5316001fe8",
+      "kind": "risk",
+      "text": "Labor disputes disrupt our operations and adversely affect the profitability of our businesses.",
+      "context": "Labor disputes disrupt our operations and adversely affect the profitability of our businesses.\n\nA significant number of employees in various parts of our businesses, including employees of our theme parks, and writers, directors, actors and production personnel for our productions are covered by collective bargaining agreements. In addition, some of our employees outside the U.S. are represented by works councils, trade unions or other employee associations. Further, some employees of licensees who manufacture and retailers who sell our licensed consumer products, and employees of providers of programming content (such as sports leagues) are covered by labor agreements with their employers. From time to time, collective bargaining agreements and other labor agreements expire, requiring renegotiation of their terms. In general, labor disputes and work stoppages involving our employees; persons employed on our productions; athletes or others employed by, or otherwise connected with, sports leagues or organizers; or the employees of our licensees or retailers who sell our licensed consumer products or providers of programming content may disrupt or lead to closure of certain operations and reduce our revenues and the profitability of our businesses. For example, in fiscal 2023, members of the Writers Guild of America (WGA) commenced a work stoppage, which lasted for almost five months, and members of SAG-AFTRA, the union representing television and movie actors, also commenced a work stoppage, which lasted for almost four months. These work stoppages affected our productions and the pipeline for programming and theatrical releases, which resulted in reduced revenue for the impacted businesses. The resulting collective bargaining agreements with these and other entertainment guilds, some of which are scheduled to expire in fiscal 2026, and with certain labor unions at our domestic parks and resorts will increase our costs to create our content and to operate our domestic parks and resorts, respectively. As a general matter, resolution of labor disputes and negotiation of new collective bargaining agreements, including as a result of rate increases and other changes to employee benefits, has in the past increased our costs and may increase our costs in the future.\n\n22\n\n",
+      "source": "SEC filing",
+      "date": "2025-11-13",
+      "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448925000155/dis-20250927.htm",
+      "section": "risk",
+      "offset": 114013,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "NKE.US",
+    "candidatesHash": "302cea300b0da8f3296977ec73c268d5f06bec609ed53592cf04d34bfea1919e",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "c9fe18f55df17541"
+      ],
+      "note": "Reported sales below estimates are an operating-results disappointment, not an analyst rating."
+    },
+    "reviewedPrice": {
+      "id": "c9fe18f55df17541",
+      "kind": "price",
+      "text": "Nike (NYSE:NKE) Reports Sales Below Analyst Estimates In Q3 CY2026 Earnings, Stock Drops",
+      "context": "Nike (NYSE:NKE) Reports Sales Below Analyst Estimates In Q3 CY2026 Earnings, Stock Drops\nAthletic apparel brand Nike (NYSE:NKE) missed Wall Street's revenue expectations in calendar Q3 2026 (fiscal Q1 2027), with sales falling 4.3% year on year to $11.21 billion. Its GAAP profit of $0.48 per share was 9.9% above analysts' consensus estimates.",
+      "source": "finance.yahoo.com",
+      "date": "2026-10-01",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nike-nyse-nke-reports-sales-201926428.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "085489b6b35d631e"
+      ],
+      "note": "Overseas sourcing and manufacturing expose Nike's product supply and financing to specific international disruptions."
+    },
+    "reviewedRisk": {
+      "id": "085489b6b35d631e",
+      "kind": "risk",
+      "text": "Our products are subject to risks associated with overseas sourcing, manufacturing and financing.",
+      "context": "Our products are subject to risks associated with overseas sourcing, manufacturing and financing.\n\nThe principal materials used in our footwear and apparel products, as described under Item 1. Business \"Manufacturing,\" are generally available to manufacturers locally or in the countries where our manufacturing takes place. Both our apparel and footwear products are dependent upon the ability of our contract manufacturers to locate, train, employ and retain adequate personnel. NIKE contract manufacturers and materials suppliers source raw materials and are subject to wage rates and other labor standards that are oftentimes regulated by the governments of the countries in which our products are manufactured.\n\nThere could be a significant disruption in the supply of fabrics or raw materials from current sources or, in the event of a disruption or heightened competition for such materials, our contract manufacturers might not be able to locate alternative suppliers of materials of comparable quality at an acceptable price or at all. Further, our contract manufacturers have experienced and may continue to experience in the future, unexpected closures, unexpected increases in work wages or other changes in labor standards and sustainability-related requirements, whether government mandated or otherwise, and increases in compliance costs due to governmental regulation concerning certain metals, fabrics or raw materials used in the manufacturing of our products. In addition, we cannot be certain that manufacturers that we do not contract and that we refer to as \"unaffiliated manufacturers\" will be able to fill our orders in a manner that is timely and compliant with applicable requirements. If we experience significant increases in demand, or reductions in the availability of materials, or need to replace an existing contract manufacturer or materials supplier, there can be no assurance additional supplies of fabrics or raw materials or additional manufacturing capacity will be available when required on terms acceptable to us, or at all, or that any contract manufacturer, unaffiliated manufacturer, or any materials supplier would allocate sufficient capacity to us in order to meet our requirements. Even if we are able to expand existing or find new manufacturing capacity or sources of materials, we may encounter delays in production and added costs as a result of the time it takes to train suppliers and manufacturers in our methods, products, quality control standards and labor, health and safety standards. In addition, changes we make in managing the supply of our products, such as changes to decrease the supply of certain products, pose the risk that we may not be able to meet demand for, or ramp up production of, certain products timely or without additional cost. Any delays, interruptions or increased costs in labor or wages, in the supply of materials or in the manufacturing of our products could have an adverse effect on our ability to meet retail customer and consumer demand for our products and result in lower revenues and net income both in the short- and long-term.\n\nBecause contract manufacturers make a majority of our products outside of our principal sales markets, our products must be transported by third parties over large distances. Delays in the shipment or delivery of our products due to the availability of\n\n2026 FORM 10-K 18\n\nTable of Contents\n\ntransportation, container shortages, labor shortages, including work stoppages or port strikes, infrastructure and port congestion or other factors, and costs and delays associated with consolidating or transitioning between manufacturers, have adversely impacted, and could in the future adversely impact the availability of our products and, in turn, our financial performance. In addition, delays in the shipment or delivery of our products, manufacturing delays or unexpected demand for our products have required us, and may in the future require us to use faster, but more expensive, transportation methods such as air freight, which could adversely affect our profit margins. The cost of oil is a significant component in manufacturing and transportation costs, so increases in the price of petroleum products can adversely affect our profit margins. Changes in U.S. trade policies, including modifications to import tariffs and existing trade policies and agreements, have also had, and could continue to have a significant impact on our activities in domestic and foreign jurisdictions, and could adversely affect our reputation or results of operations.\n\nIn addition, we are, and expect to continue to be, subject to a number of regulations that require us to develop new policies and procedures for, strive to mitigate, and report, certain supply chain risks related to sourcing internationally. These regulations have resulted and may continue to result in increased operating costs and affect how and where we source materials for our products.\n\n",
+      "source": "SEC filing",
+      "date": "2026-07-15",
+      "url": "https://www.sec.gov/Archives/edgar/data/320187/000032018726000088/nke-20260531.htm",
+      "section": "risk",
+      "offset": 107829,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "SBUX.US",
+    "candidatesHash": "86c812b685fd6821e77072c7960d0a061cc1087a418424fe9b6d56e3f423f306",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "08c13599f713f66c"
+      ],
+      "note": "The quarter's margin recovery, comparable-store-sales improvement and raised guidance support the turnaround expectation."
+    },
+    "reviewedPrice": {
+      "id": "08c13599f713f66c",
+      "kind": "price",
+      "text": "Is Starbucks’ Margin-Driven Q3 Beat And Guidance Hike Reshaping The Turnaround Case For SBUX?",
+      "context": "Is Starbucks’ Margin-Driven Q3 Beat And Guidance Hike Reshaping The Turnaround Case For SBUX?\nIn late July 2026, Starbucks reported fiscal third-quarter revenue of US$9,322.7 million, net income of US$1,045.3 million, and sharply higher earnings per share, while also raising full-year guidance to expect flat to slightly higher consolidated net revenues and diluted GAAP EPS of US$2.14 to US$2.24. Behind the headline numbers, a 7.9% rise in global comparable-store sales, margin expansion and early benefits from store remodels and international licensing moves pointed to the early impact of Brian Niccol's turnaround plan on profitability and operations. With Starbucks lifting full-year earnings guidance after stronger-than-expected margins, we'll now examine how this update reshapes its turnaround investment narrative.",
+      "source": "finance.yahoo.com",
+      "date": "2026-07-31",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/starbucks-margin-driven-q3-beat-080856720.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "ca1d91bb657dedb3"
+      ],
+      "note": "North America accounts for approximately 74% of revenue and supplies cash needed for expansion and shareholder returns."
+    },
+    "reviewedRisk": {
+      "id": "ca1d91bb657dedb3",
+      "kind": "risk",
+      "text": "We are highly dependent on the financial performance of our North America operating segment.",
+      "context": "We are highly dependent on the financial performance of our North America operating segment. \n\nOur financial performance is heavily reliant on our North America operating segment, which accounted for approximately 74% of total net revenues in fiscal year 2025. A slowdown or decline in this segment—particularly in the U.S.—has in the past, and could in the future, materially impact our overall business, as other segments may not offset the shortfall. Given its maturity and role as the primary source of operating cash flow, reduced performance in North America could limit our ability to fund international expansion, strategic initiatives, and shareholder returns.\n\n",
+      "source": "SEC filing",
+      "date": "2025-11-14",
+      "url": "https://www.sec.gov/Archives/edgar/data/829224/000082922425000114/sbux-20250928.htm",
+      "section": "risk",
+      "offset": 67752,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "MCD.US",
+    "candidatesHash": "f10cf05c814ea7f75c08a9c56f099e58cbdb2a37a878d5b9358909b36996c581",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "1008f9d895683317"
+      ],
+      "note": "Weak restaurant traffic and persistent cost inflation directly pressure the operating model."
+    },
+    "reviewedPrice": {
+      "id": "1008f9d895683317",
+      "kind": "price",
+      "text": "McDonald’s CEO says low traffic and high inflation are here to stay",
+      "context": "McDonald’s CEO says low traffic and high inflation are here to stay\nInvesting.com -- McDonald's Corp expects flat customer traffic and higher inflation to remain a permanent feature of the restaurant industry, Chief Executive Chris Kempczinski said on Wednesday.",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-23",
+      "url": "https://finance.yahoo.com/economy/articles/mcdonald-ceo-says-low-traffic-181005730.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "ad0404bf9d4d737a"
+      ],
+      "note": "Food, commodity and restaurant operating costs affect company and franchisee economics; the paragraph identifies restaurant input exposures."
+    },
+    "reviewedRisk": {
+      "id": "ad0404bf9d4d737a",
+      "kind": "risk",
+      "text": "Changes in commodity and other operating costs could adversely affect our results of operations.",
+      "context": "Changes in commodity and other operating costs could adversely affect our results of operations.\n\nThe profitability of our Company-owned and operated restaurants depends in part on our ability to anticipate and react to changes in commodity costs, including food, paper, supplies, fuel and utilities, as well as distribution and other operating costs, including labor. Volatility in certain commodity prices and fluctuations in labor costs have adversely affected and in the future could adversely affect our operating results by impacting restaurant profitability. The commodity markets for some of the ingredients we use, such as beef and chicken, are particularly volatile due to factors such as seasonal shifts, climate conditions, industry demand and other macroeconomic conditions, international commodity markets, food safety concerns, product recalls, government regulation, and acts of war, terrorism or other hostilities, all of which are beyond our control and, in many instances, unpredictable. Our System can only partially address future price risk through hedging and other activities, and therefore increases in commodity costs could have an adverse impact on our profitability.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-24",
+      "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm",
+      "section": "risk",
+      "offset": 132981,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "PEP.US",
+    "candidatesHash": "9ec79ec2bccae1bf0a0f48d6852c02f06d5e405638b6cbfb2ba863396d78a0d7",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "5f6f0c75e2addf24"
+      ],
+      "note": "The reported retreat from snack price cuts identifies the pricing/demand tradeoff behind current pressure."
+    },
+    "reviewedPrice": {
+      "id": "5f6f0c75e2addf24",
+      "kind": "price",
+      "text": "PepsiCo shares slip as Bloomberg reports retreat from snack price cuts",
+      "context": "PepsiCo shares slip as Bloomberg reports retreat from snack price cuts\nInvesting.com -- PepsiCo (NASDAQ:PEP) shares fell 0.5% after Bloomberg reported the company plans to raise prices on some chips, soda and dips following earlier price cuts that failed to boost sales.",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-24",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/pepsico-shares-slip-bloomberg-reports-153432980.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "61fad4f7a3dff8d4"
+      ],
+      "note": "Manufacturing and supply-chain disruptions threaten the production and delivery of PepsiCo's food and beverage products."
+    },
+    "reviewedRisk": {
+      "id": "61fad4f7a3dff8d4",
+      "kind": "risk",
+      "text": "Disruption of our manufacturing operations or supply chain",
+      "context": "Disruption of our manufacturing operations or supply chain, including increased commodity, packaging, transportation, labor and other input costs, can adversely affect our business.\n\nWe have experienced and could continue to experience disruption in our manufacturing operations and supply chain. Many of the raw materials and supplies used in the production of our products are sourced from countries experiencing war or other military conflict, acts of terrorism, civil unrest, political instability or unfavorable economic conditions. Natural disasters and extreme weather conditions also pose physical risks to our facilities and those of our suppliers, which could impair our production capabilities and disrupt our supply chain. Some raw materials and supplies, including packaging materials, are available only from a limited number of suppliers or from a sole supplier or are in short supply when seasonal demand is at its peak. There can be no assurance that we will be able to maintain favorable arrangements and relationships with suppliers or that our contingency plans will be effective to mitigate disruptions that may arise from shortages or discontinuation of any raw materials and other supplies that we use in the manufacture, production and distribution of our products or from operational or financial\n\n14\n\nTable of Contents\n\ninstability of our key suppliers. Any sustained or significant disruption in the future to the manufacturing or sourcing of products or materials could increase our costs and interrupt product supply, which can adversely impact our business.\n\nThe raw materials and other supplies, including agricultural commodities, fuel and packaging materials, such as recycled PET, transportation, labor and other supply chain inputs that we use for the manufacturing, production and distribution of our products are subject to price volatility and fluctuations in availability caused by many factors, including changes in supply and demand, supplier capacity constraints, inflation, weather conditions (including potential effects of climate change), fire, natural disasters, disease or pests (including the impact of greening disease on the citrus industry), agricultural uncertainty, health epidemics or pandemics or other contagious outbreaks, labor shortages or changes in availability of our or our business partners’ workforce, strikes or work stoppages (including by railway workers or other third parties involved in the manufacture, production and distribution of our products), governmental incentives and controls and import/export restrictions, such as new, expanded or retaliatory tariffs, sanctions, quotas or trade barriers, port congestions or delays, transport capacity constraints, cybersecurity incidents or other disruptions, loss or impairment of key manufacturing sites, political uncertainties, geopolitical events and tensions, wars and other military conflicts, acts of terrorism, governmental instability or currency exchange rates. In addition, the imposition of tariffs (including U.S. tariffs imposed or threatened to be imposed on China, the European Union, Canada and Mexico and other countries and any tariffs imposed by such countries) have impacted and could continue to impact our supply chain resulting in increased input costs, including the cost of certain raw materials and packaging. The impact of tariffs will continue to vary, including based on where inputs are sourced from and shipped to. Many of our raw materials and supplies are purchased in the open market and the prices we pay for such items are subject to fluctuation. We continued to experience volatility in our commodity, packaging and transportation costs during 2025, which may continue. When input prices increase unexpectedly or significantly, we may be unwilling or unable to increase our product prices or unable to effectively hedge against price increases to offset these increased costs without suffering reduced volume, revenue, margins and operating results.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-03",
+      "url": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000007/pep-20251227.htm",
+      "section": "risk",
+      "offset": 61584,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "PG.US",
+    "candidatesHash": "bd87281f9e32f075bf5024cdd8aee435a8a93a78e3d94afa00266abb7e3ea58c",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [],
+      "note": "This sentence concerns Greater China skincare volume; it is too narrow to establish the main group-level price driver."
+    },
+    "reviewedPrice": {
+      "id": "a1c4413ba908808d",
+      "kind": "price",
+      "text": "The volume decrease was driven by Greater China (due to competitive activity).",
+      "context": "s driven by positive impacts of favorable product mix (due primarily to the increase of the super-premium SK-II brand, which has higher than category-average selling prices) and favorable foreign exchange, partially offset by a unit volume decrease. The volume decrease was driven by Greater China (due to competitive activity). Organic sales increased low single digits due to a double-digit growth in Asia Pacific and a mid-single-digit growth in Greater China, partially offset by a low single-digit decline in North America. Global market share of the skin care category decreased 0.6 points.\n\nNet earnings decreased 2% to $2.7 billion due to a 140 basis-point decline in ne",
+      "source": "SEC filing",
+      "date": "2026-08-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000103/pg-20260630.htm",
+      "section": "mdna",
+      "offset": 43000
+    },
+    "risk": {
+      "acceptedIds": [
+        "daaa975e64ef830a"
+      ],
+      "note": "The filing identifies potential withdrawal from Russia, sanctions, factory/asset impairments and cross-border operating restrictions."
+    },
+    "reviewedRisk": {
+      "id": "daaa975e64ef830a",
+      "kind": "risk",
+      "text": "Changing political and geopolitical conditions could adversely impact our business and financial results.",
+      "context": "Changing political and geopolitical conditions could adversely impact our business and financial results.\n\nChanges in the political conditions in markets in which we manufacture, sell or distribute our products, as well as changing geopolitical conditions, may be difficult to predict and may adversely affect our business and financial results. Results of elections, referendums, sanctions or other political processes and pressures in certain markets in which our products are manufactured, sold or distributed have created and could create uncertainty regarding how existing governmental policies, laws and regulations may change, including with respect to sanctions, taxes, tariffs, import and export controls and the general movement of goods, materials, services, capital, data and people between countries. The potential implications of such uncertainty, which include, among others, exchange rate fluctuations, variability and unpredictability in trade relations, new or increased tariffs, trade barriers and market contraction, could adversely affect the Company’s results of operations and cash flows.\n\nThe Company operates a global business with sales, manufacturing, distribution and research and development organizations globally that contribute to our overall growth. If geopolitical tensions and trade controls continue to increase or disrupt our business in markets where we have significant sales or operations, including disruptions due to governmental responses to such conflicts (such as the imposition of sanctions, export controls, retaliatory tariffs, restrictions on cross-border data transfers, increased business licensing requirements or limitations on profits), such disruptions could adversely impact our business, financial condition, results of operations and cash flows.\n\nOur business, operations or employees have been and could continue to be adversely affected (including by the need to de-consolidate or even exit certain businesses in particular countries) by geopolitical conflicts, political volatility, trade controls, labor market disruptions, epidemics or other crises or vulnerabilities in individual countries or regions. This could include political instability, upheaval or acts of war and the related responses of governments or other entities (including, but not limited to, boycotts in certain regions), broad economic instability or sovereign risk related to a default by or deterioration in the creditworthiness of local governments, particularly in emerging markets.\n\nFor example, the ongoing war between Russia and Ukraine has negatively impacted, and the situation it generates may continue to negatively impact, our operations. Future impacts to the Company are difficult to predict due to the high level of uncertainty as to how the overall situation will continue to evolve. We may reduce further or discontinue our operations in Russia due to significant and cumulative sanctions and export controls and counter-sanctions, monetary, currency or payment controls, restrictions on data transfers or access to financial institutions and services, supply and transportation challenges or other circumstances and considerations. In addition to operational disruptions, these factors could result in loss of assets or impairments of our manufacturing plants and fixed assets or write-downs of other operating assets and working capital.\n\nThe conflict in the Middle East could also adversely impact our financial results and operations due to, for example, volatility in global energy markets, supply chain disruptions, inflationary pressures or trade restrictions.\n\nMore broadly, there could be additional negative impacts to our net sales, earnings and cash flows should these situations worsen or other geopolitical conflicts arise, including, among other potential impacts, economic recessions in certain neighboring countries or globally due to inflationary pressures, energy and supply chain cost increases or the geographic proximity of the conflicts relative to the rest of other markets.\n\nChanges in geopolitical conditions could also amplify or affect the other risk factors set forth in this Part I, Item 1A, including, but not limited to, foreign exchange volatility, disruptions to the financial and credit markets, energy supply and supply chain disruptions, increased risks of an information security or operational technology incident, cost fluctuations and commodity cost increases and increased costs to ensure compliance with global and local laws and regulations.\n\n",
+      "source": "SEC filing",
+      "date": "2026-08-04",
+      "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000103/pg-20260630.htm",
+      "section": "risk",
+      "offset": 27457,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "WMT.US",
+    "candidatesHash": "ca2090a507201823f22ccb7995f4913795726602cfc014c59524bf7338ffe951",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "2c8561d0368b8253"
+      ],
+      "note": "Ecommerce expansion and profits growing faster than sales are concrete drivers of the premium earnings expectation."
+    },
+    "reviewedPrice": {
+      "id": "2c8561d0368b8253",
+      "kind": "price",
+      "text": "Walmart sharpening focus on ecommerce and growing profits faster than sales",
+      "context": "Walmart sharpening focus on ecommerce and growing profits faster than sales\n[Prince Frederick, Maryland USA]\nAlexander Farnsworth",
+      "source": "seekingalpha.com",
+      "date": "2025-11-20",
+      "url": "https://seekingalpha.com/news/4524516-walmart-sharpening-focus-on-ecommerce-and-growing-profits-faster-than-sales?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "aa868f6361ef4321"
+      ],
+      "note": "Walmart's high-volume global sourcing depends on supplier capacity, financial health and timely cross-border merchandise delivery."
+    },
+    "reviewedRisk": {
+      "id": "aa868f6361ef4321",
+      "kind": "risk",
+      "text": "Risks associated with our suppliers could materially adversely affect our financial performance.",
+      "context": "Risks associated with our suppliers could materially adversely affect our financial performance.\n\nThe products we sell are sourced from a wide variety of domestic and international suppliers. Global sourcing of many of the products we sell is an important factor in our financial performance. We expect our suppliers to comply with applicable laws, including labor, safety, anti-corruption and environmental laws, and to otherwise meet our required supplier standards of conduct. Our ability to find qualified suppliers who uphold our standards and to access products in a timely and efficient manner and in the large volumes we may demand, are significant challenges, especially with respect to suppliers located and goods sourced outside the U.S.\n\nWe are exposed to a number of risks in our relationships with our suppliers, many of which are beyond our control, and which could adversely impact our operations and financial performance. These risks include political and economic instability, as well as other impactful events and circumstances in the countries and regions in which our suppliers are located, goods are manufactured and located, and through which goods are transported; the financial instability of suppliers; suppliers not having the financial ability or capacity to fulfill their indemnification obligations to us if called upon, thereby exposing us to the full cost of risks and claims; suppliers' failure to meet our terms and conditions or our supplier standards (including our responsible sourcing standards); labor problems experienced by our suppliers and their manufacturers; the availability of raw materials to suppliers; extreme weather events impacting the growing, manufacturing, mining and harvesting of commodities and products; merchandise safety and quality issues; disruption or delay in the transportation of merchandise from the suppliers and manufacturers to our stores, clubs and other facilities, including as a result of extreme weather or labor slowdowns; currency exchange rates; transport availability and cost; transport security; and inflation.\n\nIn addition, U.S. and international trade policies, tariffs, trade barriers and other restrictions on the exportation and importation of goods, trade sanctions imposed between certain countries and entities, the limitation on the exportation or importation of certain types of goods or of goods containing certain materials from other countries and other factors relating to foreign trade are beyond our control. These and other factors affecting our suppliers, our access to products and our access to service providers (such as transportation and logistics providers) could adversely affect our operations and financial performance.\n\n",
+      "source": "SEC filing",
+      "date": "2026-03-13",
+      "url": "https://www.sec.gov/Archives/edgar/data/104169/000010416926000055/wmt-20260131.htm",
+      "section": "risk",
+      "offset": 73908,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "COST.US",
+    "candidatesHash": "38b98b9af8c6e65c745548ed132a294ed56b582ea828a13a49781c8a04f322fc",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "c7b5bc0758314a03"
+      ],
+      "note": "Membership renewal and pricing support recurring fee growth; the paragraph reports membership-fee growth of 14%."
+    },
+    "reviewedPrice": {
+      "id": "c7b5bc0758314a03",
+      "kind": "price",
+      "text": "High renewal rates and disciplined pricing continue to differentiate the company from traditional retailers.",
+      "context": "Costco's Membership Model Continues to Deliver Predictable Growth\nCostco Wholesale Corporation’s COST membership-driven business model remains a key competitive advantage, driving reliable revenue growth and strong cash flow. High renewal rates and disciplined pricing continue to differentiate the company from traditional retailers. In the first quarter of fiscal 2026, membership fees increased 14% year over year to $1,329 million, underscoring why membership income is one of the company’s most dependable growth levers.\r",
+      "source": "finance.yahoo.com",
+      "date": "2026-02-03",
+      "url": "https://finance.yahoo.com/news/costcos-membership-model-continues-deliver-145900455.html",
+      "section": "News first paragraph",
+      "offset": 160
+    },
+    "risk": {
+      "acceptedIds": [
+        "1bf9e02747d28baa"
+      ],
+      "note": "The filing quantifies dependence on US and Canadian operations, tying the heading to geographic concentration."
+    },
+    "reviewedRisk": {
+      "id": "1bf9e02747d28baa",
+      "kind": "risk",
+      "text": "We are highly dependent on the financial performance of our U.S. and Canadian operations.",
+      "context": "We are highly dependent on the financial performance of our U.S. and Canadian operations.\n\nOur financial and operational performance is highly dependent on our U.S. and Canadian operations, which comprised 86% and 84% of net sales and operating income in 2025. Within the U.S., we are highly dependent on our California operations, which comprised 26% of U.S. net sales in 2025. Our California market, in general, has a larger percentage of higher volume warehouses as compared to our other domestic markets. Any substantial slowing or sustained decline in these operations could materially adversely affect our business and financial results. Declines in financial performance of our U.S. operations, particularly in California, and our Canadian operations could arise from, among other things: slow growth or declines in comparable warehouse sales (comparable sales); negative trends in operating expenses, including increased labor, healthcare and energy costs; failing to meet targets for warehouse openings; cannibalizing existing locations with new warehouses; shifts in sales mix toward lower gross margin products; changes or uncertainties in economic conditions in our markets, including higher levels of unemployment and depressed home values; and failing to consistently provide high quality and innovative new products.\n\n",
+      "source": "SEC filing",
+      "date": "2025-10-08",
+      "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm",
+      "section": "risk",
+      "offset": 29204,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "TGT.US",
+    "candidatesHash": "2f773cf680b87afdf980adab34d85aa9c45226d7e45f8b45830b5318c458f79d",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "823df227c0c2d0f1"
+      ],
+      "note": "Boycotts, tariff uncertainty and weak discretionary demand explain the operating and price pressure."
+    },
+    "reviewedPrice": {
+      "id": "823df227c0c2d0f1",
+      "kind": "price",
+      "text": "Tariff-related uncertainty, consumer boycotts, and weak demand for discretionary hurt the retailer’s first quarter.",
+      "context": "Target Failed Its Latest Earnings Test. Its Stock Is Paying the Price.\nTariff-related uncertainty, consumer boycotts, and weak demand for discretionary hurt the retailer’s first quarter.",
+      "source": "finance.yahoo.com",
+      "date": "2025-05-21",
+      "url": "https://finance.yahoo.com/m/3f9b6ba4-a7ce-3028-87e3-f5cef41fe0e8/target-failed-its-latest.html",
+      "section": "News first paragraph",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "aca12a7be7ace316"
+      ],
+      "note": "The heading names Roundel; the paragraph identifies dependence on Target vendors, Target Plus sellers and noncontracted advertising demand."
+    },
+    "reviewedRisk": {
+      "id": "aca12a7be7ace316",
+      "kind": "risk",
+      "text": "Our Roundel retail media network may not maintain or grow advertising revenue",
+      "context": "Our Roundel retail media network may not maintain or grow advertising revenue, which could adversely affect our results of operations.\n\nRoundel, our in-house retail media network, offers advertising services on a variety of digital platforms primarily to our merchandise vendors, either directly or via advertising agencies, and Target Plus third-party sellers to promote their products and services. The digital advertising environment is highly competitive, and our advertisers do not have long-term commitments with us.\n\nThe performance of Roundel depends on a number of factors, including the size and composition of our merchandise vendor and seller base, levels of consumer engagement with Target-branded digital platforms, and our ability to maintain effective relationships with key search and social media platforms and third-party technology providers. If our vendor or seller base shrinks, consumer traffic to our digital platforms decreases, or we are unable maintain key relationships, our advertising revenue may fail to meet expectations or may decline.\n\nIn addition, changes in data privacy laws and regulations (as discussed elsewhere in this Item 1A, Risk Factors), as well as new or modified policies of third-party platforms through which Roundel’s offerings are delivered, could negatively affect Roundel’s business model. Increased competition, including from new or enhanced technology offerings such as artificial intelligence-enabled advertising solutions, may further pressure demand for our services. If advertisers reduce or discontinue their use of Roundel’s offerings, our competitive position and results of operations could be adversely affected.\n\n",
+      "source": "SEC filing",
+      "date": "2026-03-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/27419/000002741926000016/tgt-20260131.htm",
+      "section": "risk",
+      "offset": 44187,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "BA.US",
+    "candidatesHash": "c41bb601675c8b87a452e1744042dc01746d20344c22a7b07d3e5ad446a8395b",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "f28a9ca3fee48de5"
+      ],
+      "note": "A further 737 Max 10 certification delay affects deliveries and cash realization."
+    },
+    "reviewedPrice": {
+      "id": "f28a9ca3fee48de5",
+      "kind": "price",
+      "text": "Boeing 737 Max 10 Faces New FAA Certification Delay Amid Glitch",
+      "context": "Boeing 737 Max 10 Faces New FAA Certification Delay Amid Glitch\nThe FAA is delaying certification for Boeing's 737 Max 10 plane further as the Dow Jones plane maker, regulators assess software issue.",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-29",
+      "url": "https://finance.yahoo.com/m/4d2d9237-0b69-3460-b3fc-f79e0c63d073/boeing-737-max-10-faces-new.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "29c64c57d1e30eaf"
+      ],
+      "note": "The filing identifies liquidity and financing constraints in the context of Boeing's production and contractual obligations."
+    },
+    "reviewedRisk": {
+      "id": "29c64c57d1e30eaf",
+      "kind": "risk",
+      "text": "We may be unable to effectively manage our liquidity",
+      "context": "We may be unable to effectively manage our liquidity, which could adversely affect our business, financial position and results of operations.\n\nWe depend, in part, on our ability to successfully access the capital and financial markets to fund our operations and contractual commitments. As of December 31, 2025, our debt totaled $54.1 billion, of which approximately $15.5 billion of principal payments on outstanding debt are scheduled to become due over the next three years, and our airplane financing commitments totaled $15.2 billion. We also expect to require up to $345 million of cash per year for the payment of dividends on the outstanding shares of our 6.00% Series A Mandatory Convertible Preferred Stock (Mandatory convertible preferred stock), through the mandatory conversion date of October 15, 2027. Dividends accumulate at a rate per annum equal to 6.00% on the liquidation preference thereof, which is $1,000.00 per share, payable when, as and if declared by our Board of Directors. The dividends, if declared, can be paid in cash, or subject to certain limitations, in shares of our common stock, or a combination of both. Any unpaid dividends will continue to accumulate. If dividends have not been declared and paid for six or more dividend periods, whether or not for consecutive dividend periods, the holders of such shares of Mandatory convertible preferred stock will be entitled at our next annual or special meeting of shareholders to vote for the election of two additional members of our Board of Directors, subject to certain limitations. If we require additional capital to support our operations, pay off existing debt, address impacts to our business related to market developments, fund dividend payments or outstanding financing commitments or meet other business requirements, we may need to refinance or restructure our debt, reduce or delay capital investments, or issue equity, equity-linked or debt securities, and these activities could have terms that are unfavorable or could be dilutive. If we are unable to access the capital or financial markets at competitive rates, on terms acceptable to us or in sufficient amounts, or if we experience an increase in our borrowing costs or otherwise fail to manage our liquidity effectively, our business, financial position and results of operations would be adversely affected.\n\nWe have in the past experienced and could in the future experience downgrades in our credit ratings. Any such downgrades, as well as other factors including disruptions or declines in the global capital markets, a decline in our financial performance or outlook, a delay in our ability to ramp up production and deliveries, and changes in demand for our products and services, could increase the cost of borrowing, jeopardize our ability to incur debt on terms acceptable to us, and negatively impact our access to the capital and financial markets and our ability to fund our operations and commitments. We cannot be assured that we will be able to maintain an investment grade rating, and any additional actual or anticipated changes or downgrades in our credit ratings, including any announcement that our ratings are under further review for a downgrade, may impact us in a similar manner and have a negative impact on our liquidity, financial position, and access to the capital or financial markets.\n\n17\n\nTable of Contents\n\n",
+      "source": "SEC filing",
+      "date": "2026-01-30",
+      "url": "https://www.sec.gov/Archives/edgar/data/12927/000162828026004357/ba-20251231.htm",
+      "section": "risk",
+      "offset": 72749,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "CAT.US",
+    "candidatesHash": "88d6e5fae2c92520019d98201bad938d303e5bb50892dd2fb13f845054a32486",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "3cc4c406e1db2257"
+      ],
+      "note": "Reduced equipment purchases by end users are a concrete cyclical demand pressure in the filing."
+    },
+    "reviewedPrice": {
+      "id": "3cc4c406e1db2257",
+      "kind": "price",
+      "text": "Lower sales volume was mainly driven by lower sales of equipment to end users.",
+      "context": "tories. Dealer inventory increased during 2025, compared with a decrease in 2024.\n\n•Sales decreased in Asia/Pacific due to unfavorable price realization, lower sales volume and unfavorable currency impacts primarily related to the Australian dollar. Lower sales volume was mainly driven by lower sales of equipment to end users.\n\nConstruction Industries’ profit was $4.675 billion in 2025, a decrease of $1.490 billion, or 24 percent, compared with $6.165 billion in 2024. The decrease was mainly due to unfavorable price realization of $1.136 billion and unfavorable manufacturing costs of $671 million, partially offset by the profit impact of higher sales volume of $315 mill",
+      "source": "SEC filing",
+      "date": "2026-02-13",
+      "url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000008/cat-20251231.htm",
+      "section": "mdna",
+      "offset": 22624
+    },
+    "risk": {
+      "acceptedIds": [
+        "add9cdda9e09e9d2"
+      ],
+      "note": "The paragraph ties interest rates to financing machine purchases, fleet replacement and suppliers' ability to fund component production."
+    },
+    "reviewedRisk": {
+      "id": "add9cdda9e09e9d2",
+      "kind": "risk",
+      "text": "Changes in government monetary or fiscal policies may negatively impact our results",
+      "context": "Changes in government monetary or fiscal policies may negatively impact our results.\n\nMost countries where our products and services are sold have established central banks to regulate monetary systems and influence economic activities, generally by adjusting interest rates. Interest rate changes affect overall economic growth, which affects demand for residential and nonresidential structures, as well as energy and mined products, which in turn affects sales of our products and services that support these activities. Interest rate changes may also affect our customers’ ability to finance machine purchases, can change the optimal time to keep machines in a fleet and can impact the ability of our suppliers to finance the production of parts and components necessary to manufacture and support our products. Increases in interest rates could negatively impact sales and create supply chain inefficiencies.\n\nCentral banks and other policy arms of many countries may take actions to vary the amount of liquidity and credit available in an economy. The impact from a change in liquidity and credit policies could negatively affect the customers and markets we serve or our suppliers, create supply chain inefficiencies and could adversely impact our business, results of operations and financial condition.\n\nChanges in monetary and fiscal policies, along with other factors, may cause currency exchange rates to fluctuate. Actions that lead the currency exchange rate of a country where we manufacture products to increase relative to other currencies could reduce the competitiveness of products made in that country, which could adversely affect our competitive position, results of operations and financial condition.\n\nGovernment policies on taxes and spending also affect our business. Throughout the world, government spending finances a significant portion of infrastructure development, such as highways, rail systems, airports, sewer and water systems, waterways and dams. Tax regulations determine asset depreciation lives and impact the after-tax returns on business activity and investment, both of which influence investment decisions. Unfavorable developments, such as decisions to reduce public spending or to increase taxes, could negatively impact our results.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-13",
+      "url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000008/cat-20251231.htm",
+      "section": "risk",
+      "offset": 54415,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "DE.US",
+    "candidatesHash": "a606275cf3510972ab4c5913c77cbc09cf91f88eccf6a7027001a9a3fb70b4a7",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "5173484a93bd2963"
+      ],
+      "note": "Data-center and energy-infrastructure construction demand is the reported catalyst for renewed quarterly earnings growth."
+    },
+    "reviewedPrice": {
+      "id": "5173484a93bd2963",
+      "kind": "price",
+      "text": "Deere Soars: Data Centers Drive First Earnings Gain In 11 Quarters",
+      "context": "Deere Soars: Data Centers Drive First Earnings Gain In 11 Quarters\nDeere is known for tractors and harvesters. But data centers and energy infrastructure fuel its construction business.",
+      "source": "finance.yahoo.com",
+      "date": "2026-08-20",
+      "url": "https://finance.yahoo.com/m/e8538a60-7b6e-3a26-a1ee-ea2fd2c61aba/deere-soars%3A-data-centers.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "b96dc85cfec06502"
+      ],
+      "note": "The filing names import and retaliatory tariffs, US-export exposure and approximately $600 million of incremental 2025 tariff costs."
+    },
+    "reviewedRisk": {
+      "id": "b96dc85cfec06502",
+      "kind": "risk",
+      "text": "We face risks associated with international, national, and regional trade laws, regulations, and policies",
+      "context": "We face risks associated with international, national, and regional trade laws, regulations, and policies that could materially impair our profitability. \n\nInternational, national, and regional laws, regulations, and policies directly or indirectly related to or restricting the import and export of our products, services, and technology, or those of our customers or suppliers, or for the benefit of favored industries or sectors, have harmed our global business. We are subject to various trade regulatory risks including, but not limited to, the following:\n\n● The imposition of tariffs and retaliatory tariffs has impacted, and we expect will continue to impact, the sourcing of parts and components, the cost and profitability of manufacturing operations, and our ability to ship, import, and export our products. During fiscal year 2025, new tariffs were imposed in the U.S. for imports from a broad range of countries and materials. Several countries also implemented or proposed retaliatory tariffs on imports from the U.S., as well as other barriers to trade. As a net exporter of agriculture and turf equipment from the U.S., these trade policies impact us. Nearly 80% of our domestic sales are assembled in the U.S., with the remaining products imported primarily from Europe, Mexico, India, and Japan. During fiscal year 2025, incremental import tariffs adversely affected the cost of our products and components and may continue to do so in 2026. In addition, retaliatory tariffs by regions outside the U.S., currently in effect or adopted in the future, may impact the prices of our\n\n14\n\nTable of Contents\n\nexported products and the profit realized from these exports. The direct impact of incremental tariffs incurred by us in 2025 was approximately $600, excluding the impact of tariffs on our suppliers and market demand. On November 5, 2025, the United States Supreme Court heard oral arguments on tariffs imposed under the International Emergency Economic Powers Act (IEEPA). The court may provide tariff relief and the potential recovery of amounts previously paid. We are monitoring developments in this case and its impact on our future financial statements and business.\n\n● Changing U.S. export controls and sanctions on various foreign countries and on various parties could affect our ability to manufacture our products in foreign jurisdictions, collect receivables, provide aftermarket warranty support for our equipment and sell products, and could otherwise impact our reputation and business.\n\n● Restricted access to global markets could impair our ability to export goods and services from various manufacturing locations around the world and limit the ability to access raw materials and high-quality parts and components at competitive prices on a timely basis.\n\n● Trade restrictions could impede those in developing countries from achieving a higher standard of living, which could negatively impact our future growth opportunities arising from increasing global demand for food, fuel, and infrastructure.\n\n● Policies impacting exchange rates and commodity prices, or those limiting the export or import of commodities, could have a material adverse effect on the international flow of agricultural and other commodities that may result in a corresponding negative effect on the demand for agricultural and forestry equipment in many areas of the world. Our agricultural equipment sales could be harmed by such policies because farm income influences sales of agricultural equipment around the world.\n\n● If our business partners were to incur regulatory or judicial action, it could impact our ability to operate certain solutions abroad, or our connectivity to rural farmers.\n\n",
+      "source": "SEC filing",
+      "date": "2025-12-18",
+      "url": "https://www.sec.gov/Archives/edgar/data/315189/000110465925122321/de-20251102x10k.htm",
+      "section": "risk",
+      "offset": 63450,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "XOM.US",
+    "candidatesHash": "90a9bdb423209e19ca6f118d35096a1adbf1d6f27d5e63aa2d4eb96136fd0270",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "3fcbfbc53047b1fc"
+      ],
+      "note": "Cost efficiency and production growth in Guyana and the Permian are concrete drivers of earnings and cash-flow expectations."
+    },
+    "reviewedPrice": {
+      "id": "3fcbfbc53047b1fc",
+      "kind": "price",
+      "text": "Cost Savings and Production Growth Strengthen ExxonMobil's Outlook",
+      "context": "Cost Savings and Production Growth Strengthen ExxonMobil's Outlook\nExxonMobil Holdings Corporation XOM remains well-positioned for continued growth in earnings and cash flows, supported by its advantaged assets and focus on cost efficiency. The company's earnings are primarily driven by its Upstream segment, aided by advantaged volume growth in Guyana and the Permian Basin. XOM expects its Permian production to reach 2.5 million oil equivalent barrels per day (Moebd) by the end of this decade, while total production is anticipated to reach 5.5 Moebd.",
+      "source": "finance.yahoo.com",
+      "date": "2026-08-21",
+      "url": "https://finance.yahoo.com/energy/articles/cost-savings-production-growth-strengthen-164000346.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "c9ec578d9b6ff508"
+      ],
+      "note": "The paragraph identifies hydrocarbon-production litigation, permit restrictions and regulatory interventions affecting Exxon's operations."
+    },
+    "reviewedRisk": {
+      "id": "c9ec578d9b6ff508",
+      "kind": "risk",
+      "text": "Regulatory and litigation risks.",
+      "context": "Regulatory and litigation risks. Even in countries with well-developed legal systems where ExxonMobil does business, we remain exposed to changes in law or interpretation or enforcement of settled law, including changes that result from concerted efforts to increase our legal exposure by groups opposed to the products we provide or international treaties and accords or changes by local jurisdictions encroaching on national regulatory frameworks or global issues or changes resulting from imposition of extraterritorial laws and regulations, and changes in government policy or priorities that could adversely affect our results, such as:\n\n•increases or changes in taxes, duties, or government royalty rates, including retroactive claims, punitive taxes on oil, gas and petrochemical operations, windfall profit taxes, or global minimum taxes;\n\n•price controls;\n\n3\n\nTable of Contents\n\nFinancial Table of Contents\n\n•changes in environmental, advertising, insurance or other regulations or laws that penalize us for past or current production of legal and/or permitted products and operations, increase our cost of operation or compliance or reduce or delay available business opportunities, including changes in laws or regulations affecting offshore drilling operations, standards to complete decommissioning, standards for water use or availability, production of our products, emissions, hydraulic fracturing, or production or use of new or recycled plastics, as well as laws and regulations affecting trading, carbon capture and storage, hydrogen and ammonia, lower-emission fuels, ProxximaTM resin systems, carbon materials, low-carbon data centers, or lithium;\n\n•actions by governments, policy-makers, regulators, or other actors to delay or deny necessary licenses and permits, restrict the availability of oil and gas leases, investment opportunities, or the transportation or export of our products, pause, reduce, or retract government incentives for emissions reductions, disrupt or impact reliability as a result of policy decisions on types and pricing of energy available, or otherwise require changes in the Company's business or strategy that could result in reduced returns;\n\n•regulatory interpretations that exclude or disfavor our products under government policies or programs intended to support new or developing markets or technologies, or that otherwise are not technology-neutral;\n\n•adoption of regulations mandating efficiency standards, emission standards, procurement standards, the use of alternative fuels, or uncompetitive fuel components;\n\n•use of regulatory or legal standards by any nation or supranational body as a foreign policy tool;\n\n•unstable policies or shifting regulations impacting new or emerging markets;\n\n•adoption of disclosure regulations that could create competitive disadvantages, require us to incur disproportionate costs, increase legal risk due to a need to rely on uncertain estimates or extrapolations (such as emissions of third parties) and lack of uniform standards across jurisdictions, require us to make statements we disagree with, or require us to disclose competitively sensitive commercial information or to violate the non-disclosure laws of other countries; and\n\n•government actions to cancel contracts, redenominate the official currency, renounce or default on obligations, impose unwarranted penalties, renegotiate terms unilaterally, expropriate assets, or compel a change in production plans.\n\nLegal remedies available to compensate us for expropriation or other takings may be inadequate.\n\nWe also may be adversely affected by the outcome of litigation, including class actions or arbitrations, especially in countries such as the United States that permit large and unpredictable punitive and non-economic damage awards. Other jurisdictions adopting similar models to impose liability schemes on our products or operations may present similar risks. We also may be adversely affected by government investigations or enforcement proceedings alleging non-compliance with applicable laws or regulations, or by state and local government actors as well as private plaintiffs acting in parallel that attempt to use the legal system to promote public policy agendas (including seeking to reduce the production and sale of hydrocarbon products through litigation targeting the Company or other industry participants), gain political notoriety, or obtain monetary awards from the Company. The continued adoption of similar legal practices in the European Union or elsewhere would broaden this risk.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-18",
+      "url": "https://www.sec.gov/Archives/edgar/data/34088/000003408826000045/xom-20251231.htm",
+      "section": "risk",
+      "offset": 23592,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "CVX.US",
+    "candidatesHash": "0c9928f89b9584bd0e885188b692beb382054a04a95955cbe50c86124b492324",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [],
+      "note": "A single long-term gas agreement is a business development, but does not establish the main driver of Chevron's broader commodity-linked cash profits."
+    },
+    "reviewedPrice": {
+      "id": "4e8da60f02d39375",
+      "kind": "price",
+      "text": "Chevron and Microsoft Strike 20-Year Gas Deal for AI Data Centers",
+      "context": "Chevron and Microsoft Strike 20-Year Gas Deal for AI Data Centers\nThe agreement puts the oil giant on track to produce steady cash flows for years, insulating it from the boom-and-bust nature of oil and gas.",
+      "source": "finance.yahoo.com",
+      "date": "2026-06-22",
+      "url": "https://finance.yahoo.com/m/3da28b0d-d6ab-3073-9375-1fea1b79f74f/chevron-and-microsoft-strike.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "99740c96370759af"
+      ],
+      "note": "Commodity-price exposure directly drives Chevron's operating earnings and cash generation."
+    },
+    "reviewedRisk": {
+      "id": "99740c96370759af",
+      "kind": "risk",
+      "text": "Chevron is exposed to the effects of changing commodity prices",
+      "context": "Chevron is exposed to the effects of changing commodity prices Chevron is primarily in a commodities business that has a history of price volatility. The most significant factor that affects the company’s results of operations are the prices of crude oil, natural gas, and natural gas liquids, which can be influenced by general economic conditions and level of economic growth, including low or negative growth; industry production and inventory levels; technology advancements, including those in pursuit of a lower carbon economy; production quotas or other actions that might be imposed by the Organization of Petroleum Exporting Countries or other producers; weather-related damage and disruptions due to other natural or human causes beyond our control; competing fuel prices; geopolitical risks; the pace of energy transition; customer and\n\n21\n\nTable of Contents\n\nconsumer preferences and the use of substitutes; and governmental regulations, policies and other actions regarding the development of oil and gas reserves, as well as greenhouse gas emissions and climate change. Chevron evaluates the risk of changing commodity prices as a core part of its business planning process. An investment in the company carries significant exposure to fluctuations in global prices of crude oil, natural gas, and natural gas liquids.\n\nExtended periods of low prices or demand for crude oil, natural gas, and natural gas liquids have had, and in the future can have, a material adverse impact on the company’s results of operations, financial condition and liquidity. Among other things, the company’s upstream earnings, cash flows, and capital expenditure programs could be negatively affected, as could its production and proved reserves. Upstream assets may also become impaired. Downstream earnings could be negatively affected because they depend upon the supply and demand for refined products and the associated margins on refined product sales. A significant or sustained decline in liquidity could adversely affect the company’s credit ratings, potentially increase financing costs and reduce access to capital markets. The company may be unable to realize anticipated cost savings, expenditure reductions and asset sales that are intended to compensate for such downturns, and such downturns may also slow the pace and scale at which we are able to invest in our business, including our New Energies businesses. In some cases, transferred liabilities, including for decommissioning of previously divested assets, have returned and may continue to return to the company when an acquirer of those assets subsequently defaults on the assumed transferred liabilities (e.g., bankruptcy). In addition, extended periods of low commodity prices can have a material adverse impact on the results of operations, financial condition and liquidity of the company’s suppliers, vendors, partners and equity affiliates upon which the company’s own results of operations and financial condition depend.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-24",
+      "url": "https://www.sec.gov/Archives/edgar/data/93410/000009341026000078/cvx-20251231.htm",
+      "section": "risk",
+      "offset": 90559,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "UNH.US",
+    "candidatesHash": "2c413b130710d6acea04d4e29744d6d69b1d1988f656f8ad10c5e59820896c9f",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "4bd1e3415cc43f82"
+      ],
+      "note": "Higher medical utilization and costs plus regulatory investigations are concrete current earnings pressures."
+    },
+    "reviewedPrice": {
+      "id": "4bd1e3415cc43f82",
+      "kind": "price",
+      "text": "Regulatory investigations, policy uncertainty, elevated healthcare costs and higher utilization continue to create pressure.",
+      "context": "UnitedHealth Stock Jumps 20% YTD: Should Investors Jump in Too?\nShares of UnitedHealth Group Incorporated UNH have gained 20.1% year to date, beating the industry’s 13.8% gain and the S&P 500’s 10.2% rise. The rebound is notable given the challenges hanging over the company. Regulatory investigations, policy uncertainty, elevated healthcare costs and higher utilization continue to create pressure. Yet investors appear increasingly focused on execution rather than headlines. Since Stephen J. Hemsley returned as CEO, the company has worked toward delivering a steadier operating performance, helping restore confidence in the turnaround story.",
+      "source": "finance.yahoo.com",
+      "date": "2026-06-05",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/unitedhealth-stock-jumps-20-ytd-160300930.html",
+      "section": "News first paragraph",
+      "offset": 212
+    },
+    "risk": {
+      "acceptedIds": [
+        "d9ab977efb012d2c"
+      ],
+      "note": "The filing identifies health-benefit claims, antitrust and False Claims Act proceedings and potential substantial penalties."
+    },
+    "reviewedRisk": {
+      "id": "d9ab977efb012d2c",
+      "kind": "risk",
+      "text": "We are routinely subject to private party and governmental legal actions and investigations",
+      "context": "We are routinely subject to private party and governmental legal actions and investigations, which could damage our reputation and, if resolved unfavorably, could result in substantial penalties or monetary damages and materially and adversely affect our results of operations, financial position and cash flows.\n\nWe are routinely made party to a variety of private party and governmental legal actions and investigations related to, among other matters, the design, management and delivery of our product and service offerings. Any failure by us to adhere to the laws and regulations applicable to our businesses could subject us to civil and criminal penalties.\n\nLegal actions to which we are a party have included and in the future could include matters related to health care benefits coverage and payment of claims (including disputes with enrollees, customers and contracted and non-contracted physicians, hospitals and other health care professionals), tort claims (including claims related to the delivery of health care services, such as medical malpractice by personnel at our affiliates’ facilities, or by health care practitioners who are employed by us, have contractual relationships with us, or serve as providers to our managed care networks, including as a result of a failure to adhere to applicable clinical, quality and/or patient safety standards), antitrust claims (including as a result of changes in the enforcement of antitrust laws), whistleblower claims (including claims under the False Claims Act or similar statutes), matters related to our use of or alleged failure to adequately safeguard personal information or other proprietary data, claims related to alleged failure of our technology products to operate properly or fairly, contract and labor disputes, tax claims and claims related to disclosure of certain business practices. In addition, some of our pharmacy services operations are subject to clinical quality, patient safety and other risks inherent in the dispensing, packaging and distribution of drugs, including claims related to purported dispensing and other operational errors. We also have been and in the future may be a party to class action lawsuits, including those brought by health care professional groups, consumers and investors. We operate in jurisdictions where contractual rights, tax positions and applicable regulations may be subject to varying degrees of interpretation or uncertainty, and therefore subject to dispute by customers, government authorities or others.\n\nWe are largely self-insured with regard to legal actions, including claims of medical malpractice against our affiliated physicians and us. Although we record liabilities for our estimates of the probable costs resulting from self-insured matters, it is possible the level of actual losses will significantly exceed the liabilities recorded. Additionally, physicians and other healthcare providers have become subject to an increasing number of legal actions alleging medical malpractice and general professional liabilities. Even in states that have imposed caps on damages for such actions, litigants are seeking recoveries under theories of liability that might not be subject to the caps on damages. These actions involve significant defense costs and could result in substantial monetary damages or damage to our reputation.\n\nWe cannot predict the outcome of significant legal actions in which we are involved. Even in situations where we engage external insurers, our coverage may be disputed or may not be sufficient to cover the entire amount of certain claims. We incur expenses to resolve these matters and current and future legal actions could further increase our cost of doing business, require us to potentially change the way we conduct our business, and materially and adversely affect our results of operations, financial position and cash flows. Moreover, certain legal actions could result in adverse publicity which could damage our reputation and materially and adversely affect our ability to retain our current business or grow our market share in some markets and businesses.\n\n14\n\nTable of Contents\n\n",
+      "source": "SEC filing",
+      "date": "2026-03-02",
+      "url": "https://www.sec.gov/Archives/edgar/data/731766/000073176626000062/unh-20251231.htm",
+      "section": "risk",
+      "offset": 77289,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "JNJ.US",
+    "candidatesHash": "2bfbd80bbafe1c04979b7a772774aeae62655dee315f4ec11858833165584541",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "c758f7a1efec1cf8"
+      ],
+      "note": "An earnings beat and raised sales outlook support growth expectations; the orthopaedics separation is a concrete portfolio event."
+    },
+    "reviewedPrice": {
+      "id": "c758f7a1efec1cf8",
+      "kind": "price",
+      "text": "JNJ Beats on Q3 Earnings, Ups Sales View, to Spin-off Orthopaedics Unit",
+      "context": "JNJ Beats on Q3 Earnings, Ups Sales View, to Spin-off Orthopaedics Unit\nJohnson & Johnson’s JNJ third-quarter 2025 earnings came in at $2.80 per share, which beat the Zacks Consensus Estimate of $2.77. Earnings rose 15.7% from the year-ago period.",
+      "source": "finance.yahoo.com",
+      "date": "2025-10-14",
+      "url": "https://finance.yahoo.com/news/jnj-beats-q3-earnings-ups-160000522.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "d834292160e5ab8f"
+      ],
+      "note": "Generic and biosimilar challenges to patents on key pharmaceutical products threaten protected product revenue."
+    },
+    "reviewedRisk": {
+      "id": "d834292160e5ab8f",
+      "kind": "risk",
+      "text": "The Company faces increased challenges to intellectual property rights central to its business.",
+      "context": "The Company faces increased challenges to intellectual property rights central to its business.\n\nThe Company owns or licenses a significant number of patents and other proprietary rights relating to its products and manufacturing processes. These rights are essential to the Company’s businesses and the inability of the Company to secure and maintain these rights may have a detrimental impact on the Company’s financial results. Public policy, both within and outside the U.S., has become increasingly unfavorable toward intellectual property rights. The Company cannot be certain that it will secure and maintain adequate patent protection for new products and technologies in the United States and other important markets.\n\nCompetitors routinely challenge the validity or extent of the Company’s owned or licensed patents and proprietary rights through litigation, interferences, oppositions and other proceedings, such as inter partes review (IPR) proceedings before the United States Patent & Trademark Office (USPTO). These proceedings absorb resources and can be protracted as well as unpredictable. In addition, others may claim the Company has infringed their intellectual property rights, including copyrights, patents, or trademarks, and/or has misappropriated their trade secrets, any of which could result in an injunction and/or the need to pay past damages and future royalties and adversely affect the competitive position and sales of our products.\n\nThe Company has faced increasing patent challenges from third parties seeking to manufacture and market generic and biosimilar versions of the Company’s key pharmaceutical products prior to expiration of the applicable patents covering those products. In the event the Company is not successful in defending its patents against such challenges, or upon the “at-risk” launch by the generic or biosimilar firm of its product, the Company can lose a major portion of revenues for the referenced product in a very short period of time. Current legal proceedings involving the Company’s patents and other intellectual property rights are described in Note 19 Legal proceedings—Intellectual property under Notes to the Consolidated Financial Statements included in Item 8 of this Report.\n\n12\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000016/jnj-20251228.htm",
+      "section": "risk",
+      "offset": 72050,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "PFE.US",
+    "candidatesHash": "0591b3049671e2c8bbdb13ec1acb446ce64b684ca0c1b057f4ecf6c37ec89e58",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "ba4e33998a1f5858"
+      ],
+      "note": "Normalization of COVID-product revenue is a central cause of the decline from pandemic-era expectations."
+    },
+    "reviewedPrice": {
+      "id": "ba4e33998a1f5858",
+      "kind": "price",
+      "text": "COVID revenues may decline further in future years, depending on infection rates.",
+      "context": "Pfizer to Face Several Headwinds: Can It Successfully Navigate Them?\nPfizer PFE is likely to encounter several headwinds in the next couple of years that can hurt its sales and profits, the first being declining sales of COVID products, Comirnaty and Paxlovid. In 2025, Pfizer’s revenues from Paxlovid and Comirnaty are expected to be similar to 2024. COVID revenues may decline further in future years, depending on infection rates.",
+      "source": "finance.yahoo.com",
+      "date": "2025-06-24",
+      "url": "https://finance.yahoo.com/news/pfizer-face-several-headwinds-successfully-142500398.html",
+      "section": "News first paragraph",
+      "offset": 283
+    },
+    "risk": {
+      "acceptedIds": [
+        "a2daf52f2cf5ba5b"
+      ],
+      "note": "Twelve products supply 65% of revenue, with Eliquis at 13%; the paragraph identifies patent expiries and expected revenue losses."
+    },
+    "reviewedRisk": {
+      "id": "a2daf52f2cf5ba5b",
+      "kind": "risk",
+      "text": "CONCENTRATION",
+      "context": "CONCENTRATION\n\nWe recorded revenues of more than $1 billion for each of 12 products that collectively accounted for 65% of Total revenues in 2025. For example, Eliquis accounted for 13% of Total revenues in 2025. See Notes 1 and 17. If these products or any of our other major products were to, or continue to (if applicable), experience loss of patent protection (if applicable), changes in prescription or vaccination purchasing or growth rates, reduced product demand, material product liability litigation, unexpected side effects or safety concerns, regulatory proceedings or investigations, lower governmental and/or regulatory confidence, negative publicity affecting doctor or patient confidence, pressure from competitive products, changes in recommendations and coverage, changes in labeling, pricing and access pressures, including those related to the IRA and MFN, or supply shortages or if a new, more effective product should be introduced, the adverse impact on our revenues could be significant and our revenue forecasts and expectations could prove to be inaccurate and we may fail to meet these expectations. In particular, certain of our products have experienced patent-based expirations or loss of regulatory exclusivity in certain markets in the last few years, and we expect certain products to face new or increased generic competition over the next few years. We anticipate a significant reduction of revenue from patent-based or regulatory exclusivity expiries in 2026 through 2030 as several of our in-line products experience these expirations. In addition, patents covering a number of our best-selling products are, or have been, the subject of pending legal challenges. For additional information on our patents, see the Item 1. Business—Patents and Other Intellectual Property Rights section. Furthermore, our recent business development initiatives have been concentrated in certain therapeutic areas — for example, our acquisitions of Metsera and Seagen represent significant investments in obesity and oncology, respectively, which are extremely competitive therapeutic areas. In addition, revenues from Comirnaty and Paxlovid have decreased substantially over time and could continue to decrease. For Paxlovid, utilization is expected to follow infection trends, and revenues may fluctuate based on the timing, duration and severity of COVID-19 infections. For information on risks associated with Comirnaty and Paxlovid, see the COVID-19 section below.\n\nIn addition, certain of our customers account for a significant portion of our revenues. If one of our significant customers should encounter financial or other difficulties, it might decrease the amount of business such customer does with us and/or we might be unable to timely collect all the amounts that such customer owes us or at all, which could negatively impact our results of operations. In addition, we expect that consolidation and integration of pharmacy chains and wholesalers will increase competitive and pricing pressures on pharmaceutical manufacturers, including us. See Note 17C for a discussion of our significant customers.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-26",
+      "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800326000026/pfe-20251231.htm",
+      "section": "risk",
+      "offset": 143031,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "BAC.US",
+    "candidatesHash": "848cbe7629d2aa1f4743e3dac085e9d6835d20f295fab2e26506fbb517572e92",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "656d7a238e406ec4"
+      ],
+      "note": "The source reports improved margins and earnings, supporting the bank's profit-growth valuation."
+    },
+    "reviewedPrice": {
+      "id": "656d7a238e406ec4",
+      "kind": "price",
+      "text": "Bank of America (BAC) Margin Surge Reinforces Profitability Narrative Despite Industry-Lagging Growth Outlook",
+      "context": "Bank of America (BAC) Margin Surge Reinforces Profitability Narrative Despite Industry-Lagging Growth Outlook\nBank of America (BAC) posted an average annual earnings growth of 2.7% over the past five years, highlighted by a sharp 28.8% increase in the most recent year. Net profit margins climbed to 27.9%, well above last year’s 23.2%. With an earnings outlook calling for 5.8% growth per year and revenue set to grow at 5.9% per year, forward projections trail the broader US market. However, the recent combination of margin improvement and sustained profits could bolster investor sentiment.",
+      "source": "finance.yahoo.com",
+      "date": "2025-10-16",
+      "url": "https://finance.yahoo.com/news/bank-america-bac-margin-surge-042433436.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "2d9c1cb2556fa639"
+      ],
+      "note": "The filing identifies held-for-investment residential mortgages and home-equity portfolios exposed to weaker US housing values."
+    },
+    "reviewedRisk": {
+      "id": "2d9c1cb2556fa639",
+      "kind": "risk",
+      "text": "We may be adversely affected by weaknesses in the U.S. housing market.",
+      "context": "We may be adversely affected by weaknesses in the U.S. housing market.\n\nDuring 2025, the U.S. housing market continued to be impacted by elevated mortgage rates, including 30-year fixed-rate mortgages that more than doubled from 2021. In addition, while U.S. home prices have experienced meaningful appreciation over the past several years and remained generally stable in 2025, there has been some regional dispersion in\n\nBank of America 12\n\nhousing prices since the beginning of 2025, which we have been closely monitoring. These trends have negatively impacted housing affordability generally, and therefore the demand for some of our products. A downturn in the U.S. housing market could result in significant write-downs of asset values in several asset classes, notably our held-for-investment residential mortgage and home equity portfolio. If the U.S. housing market weakens and real estate values decline, we could experience increased credit losses and delinquent servicing expenses, negatively affecting our allowance for credit losses and representations and warranties exposures, and adversely affecting our results of operations and financial condition.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/70858/000007085826000157/bac-20251231.htm",
+      "section": "risk",
+      "offset": 85268,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "GS.US",
+    "candidatesHash": "c439473587c6b9161f9a116f5ee3f8d1d523c635e8503c5ffe7760bd5d99f1ac",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "741c8386e96fb286"
+      ],
+      "note": "Asset and wealth-management growth is a concrete driver of the firm's revenue and profit-growth expectations."
+    },
+    "reviewedPrice": {
+      "id": "741c8386e96fb286",
+      "kind": "price",
+      "text": "Goldman Sachs Eyes $70B Revenue Base as Asset, Wealth Growth Accelerates",
+      "context": "Goldman Sachs Eyes $70B Revenue Base as Asset, Wealth Growth Accelerates\nKey Points",
+      "source": "finance.yahoo.com",
+      "date": "2026-09-16",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-eyes-70b-revenue-220208845.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "The displayed computer-systems clause is too general and does not identify the main trading, funding or counterparty exposure; the chosen support remains broad cyber language."
+    },
+    "reviewedRisk": {
+      "id": "170a9846dcd7f194",
+      "kind": "risk",
+      "text": "A failure to protect our computer systems, networks and information",
+      "context": "A failure to protect our computer systems, networks and information, and our clients’ information, against cyber attacks and similar threats could impair our ability to conduct our businesses, result in the disclosure, theft or destruction of confidential information, damage our reputation and cause losses.\n\nOur operations rely on the secure processing, storage and transmission of confidential and other information in our computer systems and networks and those of our vendors. There have been a number of highly publicized cases involving financial services companies, consumer-based companies, software and information technology service providers, governmental agencies and other organizations reporting the unauthorized access or disclosure of client, customer or other confidential information in recent years, as well as cyber attacks involving the dissemination, theft and destruction of corporate information or other assets, as a result of inadequate procedures or the failure to follow procedures by employees or contractors or as a result of actions by third parties, including actions by foreign governments. There have also been a number of highly publicized cases where hackers have requested “ransom” payments in exchange for not disclosing customer information or for restoring access to information or systems.\n\nWe are regularly the target of attempted cyber attacks, including denial-of-service attacks, and must continuously monitor and develop our systems to protect the integrity and functionality of our technology infrastructure and access to and the security of our data. We have faced a high volume of cyber attacks as we expand our mobile- and other internet-based products and services, as well as our usage of mobile and cloud technologies, and as we provide these services to individual consumers. Further, the use of AI by cybercriminals may increase the frequency and severity of cybersecurity attacks against us or our third-party vendors and clients. The use of employee-owned devices presents additional risks of cyber attacks, as do hybrid work arrangements. In addition, due to our interconnectivity with third-party vendors (and their respective service providers), agent banks, exchanges, clearinghouses and other financial institutions, we have been, and could in the future be, adversely impacted if any of them is subject to a successful cyber attack or other information security event. These impacts could include the loss of access to information or services from the third party subject to the cyber attack or other information security event or could result in unauthorized access to or disclosure of client, customer or other confidential information, which could, in turn, interrupt certain of our businesses or adversely affect our results of operations and reputation.\n\n44\n\nGoldman Sachs 2025 Form 10-K\n\nTHE GOLDMAN SACHS GROUP, INC. AND SUBSIDIARIES\n\nDespite our efforts to ensure the integrity of our systems and information, we may not be able to anticipate, detect or implement effective preventive measures against all cyber threats, including because the techniques used are increasingly sophisticated, change frequently and are often not recognized until launched. Cyber attacks can originate from a variety of sources, including third parties who are affiliated with or sponsored by foreign governments or are involved with organized crime or terrorist organizations. Third parties may also attempt to place individuals in our offices or induce employees, clients or other users of our systems to disclose sensitive information or provide access to our data or that of our clients, and these types of risks may be difficult to detect or prevent.\n\nAlthough we take protective measures proactively and endeavor to modify them as circumstances warrant, our computer systems, software and networks may be vulnerable to unauthorized access, misuse, phishing or other fraudulent schemes, computer viruses or other malicious code, cyber attacks on our vendors and other events that could have a security impact. Risks relating to cyber attacks on our vendors have been increasing given the greater frequency and severity in recent years of supply chain attacks affecting software and information technology service providers. Due to the complexity and interconnectedness of our systems, the process of enhancing our protective measures can itself create a risk of systems disruptions and security issues. In addition, protective measures that we employ to compartmentalize our data may reduce our visibility into, and adversely affect our ability to respond to, cyber threats and issues with our systems.\n\nIf one or more of these types of events occur, it potentially could jeopardize our, our clients’, our counterparties’ or third parties’ confidential and other information processed, stored in, or transmitted through our computer systems and networks, or otherwise cause interruptions or malfunctions in our operations or those of our clients, counterparties or third parties, which could impact their ability to transact with us or otherwise result in legal or regulatory action, significant losses or reputational damage. In addition, such an event could persist for an extended period of time before being properly detected or escalated, and, following detection or escalation, it could take considerable time for us to obtain full and reliable information about the extent, amount and type of information compromised. During the course of an investigation, we may not know the full impact of the event and how to remediate it, and actions, decisions and mistakes that are taken or made may further increase the negative effects of the event on our business, results of operations and reputation. Moreover, regulations require us to disclose information on a timely basis about material cybersecurity incidents, including those that may not have been resolved or fully investigated at the time of disclosure.\n\nWe have expended, and may c",
+      "source": "SEC filing",
+      "date": "2026-02-25",
+      "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000091/gs-20251231.htm",
+      "section": "risk",
+      "offset": 224721,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "V.US",
+    "candidatesHash": "83f19c65e2f9bfb19ca09f971ed30c25068a30310dc28d5e96a2028c9834bcc7",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "e9ef37b481c1524c"
+      ],
+      "note": "Visa management targets low-double-digit revenue and earnings growth in its earnings-call source. This is a concrete operating outlook, not an analyst stock-price target or rating."
+    },
+    "reviewedPrice": {
+      "id": "e9ef37b481c1524c",
+      "kind": "price",
+      "text": "Visa targets low double-digit net revenue and EPS growth in 2026 as innovation accelerates",
+      "context": "Visa targets low double-digit net revenue and EPS growth in 2026 as innovation accelerates\nEarnings Call Insights: Visa Inc. (V) Q4 2025",
+      "source": "seekingalpha.com",
+      "date": "2025-10-29",
+      "url": "https://seekingalpha.com/news/4509917-visa-targets-low-double-digit-net-revenue-and-eps-growth-in-2026-as-innovation-accelerates?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "86bb019b0f28d310"
+      ],
+      "note": "The filing identifies revenue concentration among the largest clients and loss of client or seller business."
+    },
+    "reviewedRisk": {
+      "id": "86bb019b0f28d310",
+      "kind": "risk",
+      "text": "Our net revenue and profits are dependent on our client and seller base",
+      "context": "Our net revenue and profits are dependent on our client and seller base, which may be costly to win, retain and develop. \n\nOur financial institution clients and sellers can reassess their commitments to us at any time or develop their own competitive services. While we have certain contractual protections, our clients, including some of our largest clients, generally have flexibility to issue non-Visa products. In certain circumstances, our financial institution clients may decide to terminate our contractual relationship on relatively short notice without paying significant early termination fees. Because a significant portion of our net revenue is concentrated among our largest clients, the loss of business from any one of these larger clients could harm our business, results of operations and financial condition. For more information, please see Note 14—Segment Information to our consolidated financial statements included in Item 8 of this report. It may also be difficult or costly for us to acquire or conduct business with financial institutions or sellers that have longstanding exclusive, or nearly exclusive, relationships with our competitors. These financial institutions or sellers may be more successful and may grow more quickly than our existing clients or sellers. If there is a consolidation or acquisition of one or more of our largest clients or co-brand partners by a financial institution client or seller with a strong relationship with one of our competitors, it could result in our business shifting to a competitor, which could put us at a competitive disadvantage and harm our business.\n\n28\n\nTable of Contents\n\nIn addition, we face intense competitive pressure on the prices we charge our financial institution clients. In certain regions, we are increasingly facing competition from RTP networks, other payment facilitators offering lower pricing, and government involvement in domestic and cross-border payments. In order to stay competitive, we may need to adjust our pricing or offer incentives to our clients to grow payments volume, enter new market segments, adapt to regulatory changes, and expand their use and acceptance of Visa products and services. These include up-front cash payments, fee discounts, rebates, credits, performance-based incentives, marketing and other support payments that impact our net revenue and profitability. In addition, we offer incentives to certain sellers and acquirers to encourage them to route transactions to Visa. Pressures on pricing, incentives, fee discounts and rebates could moderate our growth. If we are not able to implement cost containment and productivity initiatives in other areas of our business or grow our volume in other ways to offset or absorb the financial impact of these incentives, fee discounts and rebates, it may harm our net revenue and profits.\n\n",
+      "source": "SEC filing",
+      "date": "2025-11-06",
+      "url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+      "section": "risk",
+      "offset": 126055,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "MA.US",
+    "candidatesHash": "cfd2ecb0a96117e7615f1e0853bd879efb4d150ca950ce1647dc622bc9a09a21",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "1b3c8b058028c0c1"
+      ],
+      "note": "Reported cross-border payment-volume growth and an earnings beat directly support the core payments earnings driver."
+    },
+    "reviewedPrice": {
+      "id": "1b3c8b058028c0c1",
+      "kind": "price",
+      "text": "Mastercard Q3 Earnings Beat on Strong Cross-Border Volume Growth",
+      "context": "Mastercard Q3 Earnings Beat on Strong Cross-Border Volume Growth\nMastercard Incorporated MA reported third-quarter 2025 adjusted earnings of $4.38 per share, which beat the Zacks Consensus Estimate by 1.6%. The bottom line advanced 13% year over year.",
+      "source": "finance.yahoo.com",
+      "date": "2025-10-30",
+      "url": "https://finance.yahoo.com/news/mastercard-q3-earnings-beat-strong-184700848.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [
+        "bf28789e53a63d24"
+      ],
+      "note": "The filing quantifies 71% of revenue from activities outside the US and exposure to non-functional currencies."
+    },
+    "reviewedRisk": {
+      "id": "bf28789e53a63d24",
+      "kind": "risk",
+      "text": "Adverse currency fluctuations and foreign exchange controls could negatively impact our results of operations.",
+      "context": "Adverse currency fluctuations and foreign exchange controls could negatively impact our results of operations.\n\nDuring 2025, approximately 71% of our revenue was generated from activities outside the U.S., which could be transacted in a non-functional currency. Impacts from currency fluctuations are included in our net income. Our risk management activities provide protection with respect to adverse changes in the value of only a limited number of currencies and are based on estimates of exposures to these currencies.\n\nIn addition, the revenue we generate in entities with non-U.S. dollar functional currencies is subject to unpredictable currency fluctuations, including where the values of other currencies change relative to the U.S. dollar. If the U.S. dollar strengthens compared to currencies in which we generate revenue, this revenue may be translated at a materially lower amount than expected.\n\nFurthermore, we may become subject to exchange control regulations that might restrict or prohibit the conversion into U.S. dollars of our other revenue currencies and financial assets.\n\nThe occurrence of currency fluctuations or exchange controls could have a material adverse impact on our results of operations.\n\n",
+      "source": "SEC filing",
+      "date": "2026-02-11",
+      "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+      "section": "risk",
+      "offset": 161854,
+      "headingVerified": true
+    }
+  },
+  {
+    "id": "WKL.AS",
+    "candidatesHash": "d7fd37333dfbc6abfe65bf8dafbf76664b3d905641e2c73a589b6fb3f586e182",
+    "reviewMethod": "Manual agent review of the literal source and its retained paragraph; no text-generation API, no independent human or held-out validation.",
+    "price": {
+      "acceptedIds": [
+        "ae20ce6a88302892"
+      ],
+      "note": "AI competition threatens paid professional information and workflow services, matching the depressed-price context."
+    },
+    "reviewedPrice": {
+      "id": "ae20ce6a88302892",
+      "kind": "price",
+      "text": "RELX, Wolters Kluwer Shares Plunge on AI Competition Fears",
+      "context": "RELX, Wolters Kluwer Shares Plunge on AI Competition Fears\nShares in European legal publishing companies plunged Tuesday as investors reacted to newly released tools from artificial-intelligence provider Anthropic.",
+      "source": "finance.yahoo.com",
+      "date": "2026-02-03",
+      "url": "https://finance.yahoo.com/m/ab7ca147-02c7-3ad9-b14a-2d1e2a081a56/relx%2C-wolters-kluwer-shares.html",
+      "section": "News headline",
+      "offset": 0
+    },
+    "risk": {
+      "acceptedIds": [],
+      "note": "No verified, renderable heading passed the scoring gate; abstention receives no correctness credit."
+    },
+    "reviewedRisk": null
+  }
+]

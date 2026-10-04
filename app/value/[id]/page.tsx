@@ -1,6 +1,7 @@
 import {companyAlternates} from '@/lib/agents/urls';
 import {schemaJson,corporationSchema} from '@/lib/agents/schema';
 import {companyMarkdown} from '@/lib/agents/company';
+import { VALUE_PRODUCT_NAME } from '@/lib/value/brand';
 import { requiredReturnCopy } from '@/lib/value/owner-return';
 import { holderRecord } from '@/components/value/holder-record';
 import { HolderSummary } from '@/components/value/HolderSummary';
@@ -23,8 +24,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dossier = await getDossier((await params).id.toUpperCase());
   const required=dossier?requiredReturnCopy(dossier.valuation,dossier.company.country):'';
-  const description = dossier ? dossier.status==='insufficient_data' ? `${dossier.company.name}: Not enough history yet.` : `${dossier.company.name}: five quality tests.${required?` ${required}.`:''}` : 'Company not found';
-  return { description, openGraph: { description }, title: dossier ? `${dossier.company.name}: Buffett checklist` : 'Company not found', alternates: companyAlternates((await params).id) };
+  const description = dossier ? dossier.status==='insufficient_data' ? `${dossier.company.name} | ${VALUE_PRODUCT_NAME}: Not enough history yet.` : `${dossier.company.name} | ${VALUE_PRODUCT_NAME}: five quality tests plus a price check.${required?` ${required}.`:''}` : 'Company not found';
+  return { description, openGraph: { title: dossier ? `${dossier.company.name}: ${VALUE_PRODUCT_NAME}` : 'Company not found', description, siteName: VALUE_PRODUCT_NAME }, twitter: { title: dossier ? `${dossier.company.name}: ${VALUE_PRODUCT_NAME}` : 'Company not found', description }, title: dossier ? `${dossier.company.name}: ${VALUE_PRODUCT_NAME}` : 'Company not found', alternates: companyAlternates((await params).id) };
 }
 export default async function DossierPage({ params }: Props) {
   const dossier = await getDossier((await params).id.toUpperCase());

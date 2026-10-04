@@ -31,6 +31,13 @@ async function shoot(browser, base, [width, height], [name, path, act]) {
   await page.goto(base + path, { waitUntil: 'networkidle', timeout: 90000 });
   await page.addStyleTag({ content: 'nextjs-portal{display:none!important} *{animation:none!important;transition:none!important;caret-color:transparent!important}' });
   await act(page).catch(error => console.log(`${name}: ${error.message.split('\n')[0]}`));
+  // Drawer data loads after the click; a fixed delay can capture a partial table
+  // on production while the local candidate has already finished fetching.
+  await page.waitForLoadState('networkidle');
+  if (await page.locator('.compact-company-list').count()) {
+    await page.locator('.compact-company-list[aria-busy="false"]').waitFor({ timeout: 90000 });
+  }
+  await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(500);
   const png = await page.screenshot();
   await close(page); await page.close();

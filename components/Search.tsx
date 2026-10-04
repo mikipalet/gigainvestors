@@ -1,4 +1,5 @@
 "use client";
+import { VALUE_PRODUCT_NAME } from '@/lib/value/brand';
 
 import { useEffect, useMemo, useRef, useState, useDeferredValue } from "react";
 import { useSelectedLayoutSegment, usePathname } from 'next/navigation';
@@ -161,7 +162,7 @@ export function Search() {
             {hits.length > 0 && (
               <ul id="search-results" role="listbox" className={`border-t border-ink/15 py-1 ${isValue?'':'max-h-[50vh] overflow-y-auto'}`}>
                 {hits.slice(isValue?Math.floor(sel/4)*4:0,isValue?Math.floor(sel/4)*4+4:hits.length).map((h, offset) => { const i=(isValue?Math.floor(sel/4)*4:0)+offset; return (
-                  <Fragment key={h.kind==='value'?h.row[0]:h.kind==='munger'?'munger':h.title}>{isValue&&(i===0||hits[i-1].kind==='value'&&h.kind!=='value')&&<li role="presentation" className="search-group">{h.kind==='value'?'Buffett checklist':'Superinvestor holdings'}</li>}<li
+                  <Fragment key={h.kind==='value'?h.row[0]:h.kind==='munger'?'munger':h.title}>{isValue&&(i===0||hits[i-1].kind==='value'&&h.kind!=='value')&&<li role="presentation" className="search-group">{h.kind==='value'?VALUE_PRODUCT_NAME:'Superinvestor holdings'}</li>}<li
                     id={`search-hit-${i}`} role="option" aria-selected={i===sel}
                     key={h.kind === "value" ? h.row[0] : h.kind === "munger" ? "munger" : h.kind === "investor" ? `i${h.code}` : `s${h.ticker}`}
                     onMouseEnter={() => setSel(i)}
@@ -172,7 +173,7 @@ export function Search() {
                     <span className="shrink-0 whitespace-nowrap font-semibold">{h.kind === "munger" ? "Charlie Munger" : h.title}</span>
                     <span className="truncate opacity-60" title={h.kind==='value'?displayName(h.row[1]):h.kind==='stock'?h.sub:undefined}>{h.kind === "munger" ? "1924 – 2023" : h.kind==='value'?displayName(h.row[1]):isValue?displayName(h.sub):h.sub}</span>
                     {h.kind==='value'&&<span className="shrink-0 opacity-60">{h.row[2]}</span>}
-                    {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{plural(h.holders, "holder")}{!isValue && values.some(v=>v.row[0]===`${h.ticker}.US`&&v.row[3]==='a') && <a className="ml-2 underline" href={`https://value.gigainvestors.com/${h.ticker.toLowerCase()}.us`} onClick={e=>e.stopPropagation()}>Buffett checklist</a>}</span>}
+                    {h.kind === "stock" && <span className="ml-auto shrink-0 opacity-60">{plural(h.holders, "holder")}{!isValue && values.some(v=>v.row[0]===`${h.ticker}.US`&&v.row[3]==='a') && <a className="ml-2 underline" href={`https://value.gigainvestors.com/${h.ticker.toLowerCase()}.us`} onClick={e=>e.stopPropagation()}>{VALUE_PRODUCT_NAME}</a>}</span>}
                     {h.kind==='value'&&h.row[5]===null&&<span className="market-access-status">not easily buyable from Western brokers</span>}
                     {h.kind === 'value' && <span className="value-search-status ml-auto shrink-0 opacity-60">{h.tests&&/^[PF]{5}$/.test(h.tests)?<span className="inline-flex gap-1">{[...h.tests].map((t,j)=><StatusGlyph key={j} result={({P:'pass',F:'fail',C:'checking',U:'unclear',N:'na'} as const)[t as 'P']??'unclear'} label={`${['Understandable','Moat','Economics','Management','Accounting'][j]}: ${{P:'pass',F:'fail',C:'',U:'',N:'not applicable'}[t]}`}/>)}</span>:'analysed'}{h.ratio!=null&&` · ${h.ratio.toFixed(2)}×`}{!!h.holders&&` · ${h.holders} holders`}</span>}
                     {h.kind === "investor" && <span className="ml-auto shrink-0 opacity-60">investor</span>}

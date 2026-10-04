@@ -1,4 +1,5 @@
 'use client';
+import { VALUE_PRODUCT_NAME } from '@/lib/value/brand';
 import { displayName } from '@/lib/value/presentation';
 import { usePathname } from 'next/navigation';
 import { ValueLink } from './ValueLink';
@@ -13,6 +14,6 @@ export function NotFoundRecovery({ companies, analysed, universe }: { companies:
     <SearchInput query={usePathname().split('/').at(-1)?.toUpperCase()??ticker} />
     {suggestions.length > 0 && <><h2>Did you mean</h2><ul>{suggestions.map(c=><li key={c.id}><ValueLink href={`/${c.id.toLowerCase()}`}>{displayName(c.n)} <span>{c.id.toUpperCase()} →</span></ValueLink></li>)}</ul></>}
     <h2>Explore covered companies</h2><ul>{[['ko.us','Coca-Cola'],['aapl.us','Apple'],['cb.us','Chubb'],['pool.us','Pool'],['dal.us','Delta Air Lines']].map(([id,name])=><li key={id}><ValueLink href={`/${id}`}>{name} <span>{id.toUpperCase()} →</span></ValueLink></li>)}</ul>
-    <ValueLink href="/">← Return to the checklist and current coverage</ValueLink><p><a href={`mailto:hello@gigainvestors.com?subject=${encodeURIComponent(`Value company request: ${ticker.toUpperCase()}`)}`}>Request a company ↗</a></p>
+    <ValueLink href="/">← Return to {VALUE_PRODUCT_NAME} and current coverage</ValueLink><p><a href={`mailto:hello@gigainvestors.com?subject=${encodeURIComponent(`${VALUE_PRODUCT_NAME} company request: ${ticker.toUpperCase()}`)}`}>Request a company ↗</a></p>
   </section>;
 }

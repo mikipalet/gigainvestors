@@ -22,7 +22,7 @@ export async function llmsText(site: Site,full=false) {
  `- [MCP discovery document](${siteUrl(site,'/mcp.json')}): public, read-only, unauthenticated discovery; endpoint ${siteUrl(site,'/mcp')}. Streamable HTTP POST; tools search_companies, search_investors, get_company_summary, get_method. No paid detail tools.`,
  '## API',
  `- [Paid JSON API (x402)](${apiUrl()}): versioned JSON for search, investors and quarterly holdings, company pages, verdicts, memos, price stories, lists, time travel, method and bulk export. Pay per call in USDC with x402 (no keys or accounts): $0.002 basic, $0.01 detail, $0.05 history/export. Derived data only.`,
- `- [OpenAPI 3.1](${apiUrl()}/openapi.json) · [Agent guide](${apiUrl()}/guide) · [Prices](${apiUrl()}/pricing) · [x402 discovery](${siteUrl('main')}/.well-known/x402)`,
+ `- [OpenAPI 3.1](${apiUrl()}/openapi.json) · [Agent guide](${apiUrl()}/guide) · [Prices](${apiUrl()}/pricing) · [x402 discovery](${siteUrl('main','/.well-known/x402')})`,
  '## Contact',
  '- [Contact GigaInvestors](mailto:hello@gigainvestors.com): corrections, provenance and licensing questions.',
  ];

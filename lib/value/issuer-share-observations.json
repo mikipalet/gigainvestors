@@ -1,0 +1,39 @@
+[
+  {
+    "id": "SOLV.US",
+    "source": "issuer:sec",
+    "shares": 170223729,
+    "date": "2026-07-31",
+    "url": "https://www.sec.gov/Archives/edgar/data/1964738/000196473826000047/solv-20260630.htm",
+    "basis": "all-ordinary-outstanding",
+    "note": "June 2026 Form 10-Q cover: common stock outstanding at July 31, 2026. The balance sheet separately reports 170,113,551 outstanding at June 30; neither count is diluted weighted-average shares."
+  },
+  {
+    "id": "KALMAR.HE",
+    "source": "issuer:interim",
+    "shares": 63891508,
+    "date": "2026-06-30",
+    "url": "https://attachment.news.eu.nasdaq.com/ab61e407417b3e846de29d8e52c68ec97",
+    "basis": "all-ordinary-outstanding",
+    "note": "Half-year report page 21: 9,526,089 A + 54,798,029 B issued - 432,610 treasury B = 63,891,508 total outstanding. The vendor's 54,365,419 is only outstanding B; it does not support a whole-company valuation denominator."
+  },
+  {
+    "id": "KALMAR.HE",
+    "source": "issuer:interim",
+    "shares": 54365419,
+    "date": "2026-06-30",
+    "url": "https://attachment.news.eu.nasdaq.com/ab61e407417b3e846de29d8e52c68ec97",
+    "basis": "listed-class",
+    "corroborationOnly": true,
+    "note": "Outstanding B shares only; excludes 9,526,089 unlisted A shares. Never use this as all ordinary outstanding shares."
+  },
+  {
+    "id": "PLX.PA",
+    "source": "issuer:interim",
+    "shares": 140680198,
+    "date": "2026-02-28",
+    "url": "https://www.pluxeegroup.com/sites/g/files/jclxxe221/files/2026-04/PLX_Pluxee_First_Half_Fiscal_2026_Financial_Report.pdf",
+    "basis": "all-ordinary-outstanding",
+    "note": "Note 8.1.1, PDF page 41: 147,174,692 ordinary shares minus 6,494,494 treasury shares. Excludes 63,040,363 special voting shares. This observation is more than 200 days before the current quote and differs from 137,396,054 by over 2%; it cannot clear the guard. May 11 buyback completion and July 29 liquidity releases do not provide a complete same-date outstanding ordinary share count."
+  }
+]

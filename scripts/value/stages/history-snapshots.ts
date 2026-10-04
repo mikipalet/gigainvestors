@@ -1,4 +1,5 @@
 import {refreshReturn,type ReturnPrices} from '../../../lib/value/since-return';
+import {cachedQualityQuarters} from '../../../lib/value/cached-quality-quarters';
 import {completeCachedSplits} from '../../../lib/value/completeness/cached-years';
 import {reconcilePriceSplits} from '../../../lib/value/price-history';
 import { alignHistoryShares } from '../../../lib/value/history-split-basis';
@@ -122,6 +123,7 @@ export default async function historySnapshots(options: { only?:string[]; limit?
       const latestMonth = [...prices].filter(([m])=>m<asOf.slice(0,7)).sort(([a],[b])=>a.localeCompare(b)).at(-1);
       const latestPrice: [number,string] | null = quotes[company.id] ? [quotes[company.id][0],quotes[company.id][1]]
         : latestMonth ? [latestMonth[1],new Date(Date.UTC(Number(latestMonth[0].slice(0,4)),Number(latestMonth[0].slice(5,7)),0)).toISOString().slice(0,10)] : null;
+      f.qualityQuarters=cachedQualityQuarters(company.id,readCorpusJson);
       const interims=eodInterims(raw);
       const sec=readCorpusJson<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
       if(sec){const dates=secAnnualFilings(sec);for(const year of f.years){

@@ -52,6 +52,10 @@ export const audit = () => {
   }
   // text clipped by an ancestor with overflow hidden, or cut by the viewport bottom on no-scroll pages
   for (const { t, b, el } of leaves) {
+    // Cards paint over overflowing neighbours even when overflow is visible.
+    // Check their boundary as well as explicit clipping ancestors.
+    const tile=el.closest('.test-tile');
+    if(tile){const tb=tile.getBoundingClientRect();if(b.bottom>tb.bottom+1||b.top<tb.top-1)issues.push(`text outside card: "${t}"`);}
     let p = el.parentElement;
     while (p && p !== document.body) {
       if(p===scrollParent(el))break;

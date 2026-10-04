@@ -13,15 +13,18 @@ function SourceLink({evidence}:{evidence:Evidence}){
  const computed=evidence.section.startsWith('Calculated');
  const id=useId();
  const [point,setPoint]=useState<{x:number;y:number}|null>(null);
- return <span className="memo-source"><button onPointerMove={e=>setPoint({x:e.clientX,y:e.clientY})} onPointerLeave={()=>setPoint(null)} popoverTarget={id} aria-label={computed?"Read calculation":"Read source quote"}>{computed?"Calculation":"Quote"} ↗</button>{point&&<PointerTooltip {...point}>{evidence.quote}</PointerTooltip>}<span id={id} popover="auto" className="memo-quote">{computed?<p>{evidence.quote}</p>:<blockquote>{evidence.quote}</blockquote>}<a href={evidence.url} target="_blank" rel="noreferrer">{evidence.section} · {evidence.filed.slice(0,10)} ↗</a></span><a href={evidence.url} target="_blank" rel="noreferrer" aria-label="Open original source">Source ↗</a></span>;
+ return <span className="memo-source"><button onPointerMove={e=>setPoint({x:e.clientX,y:e.clientY})} onPointerLeave={()=>setPoint(null)} popoverTarget={id} aria-label={computed?"Read calculation":"Read source quote"}>{computed?"Calculation":"Quote"} ↗</button>{point&&<PointerTooltip {...point}>{evidence.quote.length>600?(computed?'Open the calculations.':'Open the source quote.'):evidence.quote}</PointerTooltip>}<span id={id} popover="auto" className="memo-quote">{computed?<p>{evidence.quote}</p>:<blockquote>{evidence.quote}</blockquote>}<a href={evidence.url} target="_blank" rel="noreferrer">{evidence.section} · {evidence.filed.slice(0,10)} ↗</a></span><a href={evidence.url} target="_blank" rel="noreferrer" aria-label="Open original source">Source ↗</a></span>;
 }
-function groupedEvidence(evidence:Evidence[]):Evidence[]{
+export function groupedEvidence(evidence:Evidence[]):Evidence[]{
  const groups=new Map<string,Evidence>();
  for(const e of evidence){
-  const key=JSON.stringify([e.url,e.filed,e.section.startsWith('Calculated')]);
+  // SEC companyfacts fragments identify rows inside the same JSON resource,
+  // not separate source documents. Keep every calculation in one disclosure.
+  const url=e.section.startsWith('Calculated')&&/^https:\/\/data\.sec\.gov\/api\/xbrl\/companyfacts\/CIK\d+\.json#/.test(e.url)?e.url.split('#')[0]:e.url;
+  const key=JSON.stringify([url,e.filed,e.section.startsWith('Calculated')]);
   const previous=groups.get(key);
   if(previous){if(!previous.quote.includes(e.quote))previous.quote+='\n\n'+e.quote;}
-  else groups.set(key,{...e});
+  else groups.set(key,{...e,url});
  }
  return [...groups.values()];
 }

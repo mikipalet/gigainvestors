@@ -12,7 +12,7 @@ export function TileNumbers({metric,test,currency}:{metric:TileMetric;test:TestO
  const fmt=(value:number|null,kind:MetricFormat=format)=>formatMetric({value,format:kind,currency,returnRatio:isCapitalReturn(metric.chart)});
  const items=test.key==='management'&&test.metrics.retainedEarnings!=null&&test.metrics.marketCapGain!=null?[
  ['Retained',fmt(test.metrics.retainedEarnings,'money')],['Value created',fmt(test.metrics.marketCapGain??null,'money')],['Shares / yr',fmt(test.metrics.shareCagr??null,'pct')]]:
- summary?[[`${summary.years}y median`,fmt(summary.median)],['Worst year',fmt(summary.worst)],[`Latest · ${summary.last}`,fmt(summary.latest)]]:
+ summary?[[`${summary.years}y median`,fmt(summary.median)],['Worst year',fmt(summary.worst)],[test.provisional?.fy===summary.last?'Latest · LTM':`Latest · ${summary.last}`,fmt(summary.latest)]]:
  [[metric.label,fmt(metric.value,metric.format)],['Passing bar',`${metric.better==='higher'?'≥':'≤'} ${fmt(metric.threshold,metric.format)}`]];
  return <dl className="tile-support">{items.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>;
 }

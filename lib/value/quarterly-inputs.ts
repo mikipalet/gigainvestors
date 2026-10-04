@@ -14,7 +14,7 @@ export type Interim = {end:string;filed:string;months:3|6;currency:string;source
 
 /** Provider sometimes pads half-year reporters with synthetic Q1/Q3 averages.
  * Two reported halves matching annual revenue identify those rows; ignore fillers. */
-function halfYearReporter(financials:Record<string,any>):boolean {
+export function halfYearReporter(financials:Record<string,any>):boolean {
  const income=record(financials.Income_Statement),quarterly=record(income.quarterly);
  let matches=0,observations=0;
  for(const [end,annual] of Object.entries(record(income.yearly))){

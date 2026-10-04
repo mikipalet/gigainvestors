@@ -21,11 +21,12 @@ if(!idArg)for(const d of Object.values(ds))if(d.b&&!cohort.some((r:{id:string})=
 const checks=Object.values(ds).map(d=>assertDossierConsistency(d,prices[d.id]));
 console.log(JSON.stringify({publishedDossiers:checks.length,qualityRules:checks.reduce((n,r)=>n+r.rules,0),irrChecks:checks.filter(r=>r.returnChecked).length,cashCovered:checks.filter(r=>r.cashCovered).length}));
 async function capture(root:Locator):Promise<SurfaceSnapshot>{return root.evaluate(el=>({
+ accountingContext:el.querySelector('.accounting-basis')?.textContent??'',
  signals:[...el.querySelectorAll<HTMLElement>('[data-signals]')].map(e=>JSON.parse(e.dataset.signals!)),
  text:(el as HTMLElement).innerText,numbers:((el as HTMLElement).innerText.match(/[-−+]?\d[\d,.]*(?:%|×|bn|[KMBT])?/g)??[]),
  charts:[...el.querySelectorAll<HTMLElement>('[data-series]')].map(e=>({label:e.dataset.seriesLabel!,series:JSON.parse(e.dataset.series!),format:e.dataset.format!,currency:e.dataset.currency!})),
  stats:[...el.querySelectorAll('.tile-support>div,.drawer-numbers>div')].map(e=>[e.querySelector('dt')!.textContent!,e.querySelector('dd')!.textContent!] as [string,string]),
- table:[...el.querySelectorAll('.drawer-years tbody tr')].map(e=>[...e.children].map(c=>[...c.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE).map(n=>n.textContent).join('').trim())),
+ table:[...el.querySelectorAll('.drawer-years tbody tr')].map(e=>[...e.children].map(c=>c.querySelector('.quality-ltm-label')?.textContent??[...c.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE).map(n=>n.textContent).join('').trim())),
  tableHeaders:[...el.querySelectorAll('.drawer-years thead th')].map(c=>c.textContent??''),
  windows:[...el.querySelectorAll<HTMLElement>('[data-window]')].map(e=>({values:JSON.parse(e.dataset.window!),currency:e.dataset.currency})),
  priceCharts:[...el.querySelectorAll<HTMLElement>('[data-prices]')].map(e=>({prices:JSON.parse(e.dataset.prices!),values:JSON.parse(e.dataset.values!),mos:Number(e.dataset.mos),currency:e.dataset.currency})),

@@ -1,13 +1,15 @@
+import {observationLabel} from '@/lib/value/observation-label';
+import type {ProvisionalYear} from '@/lib/value/quality-ltm';
 import {formatMetric} from '@/lib/value/metric-labels';
 import { ChartInteraction } from './ChartInteraction';
 import type { Dossier, PriceMap } from '@/lib/value/types';
 import { useWidth } from '@/lib/value/viz/use-width';
-export function MiniDollar({retained,created,first,last,fluid=false,dense=false,currency=''}:{retained:number|null;created:number|null;first?:number|null;last?:number|null;fluid?:boolean;dense?:boolean;currency?:string}){
+export function MiniDollar({provisional,retained,created,first,last,fluid=false,dense=false,currency=''}:{provisional?:ProvisionalYear;retained:number|null;created:number|null;first?:number|null;last?:number|null;fluid?:boolean;dense?:boolean;currency?:string}){
  const {ref,width,height:available}=useWidth();
  if(retained===null||created===null)return null;
  const height=dense?70:fluid?Math.max(70,available-44):90,left=20,right=width-12,top=22,bottom=height-(dense?22:44);
  const min=Math.min(0,retained,created),max=Math.max(0,retained,created),y=(n:number)=>bottom-(n-min)/(max-min||1)*(bottom-top);
- const period=first&&last?`${first}–${last}`:'Measured period',bars=[{label:'Retained',value:retained},{label:'Value created',value:created}];
+ const period=first&&last?`${first}–${provisional?.fy===last?observationLabel(last,provisional):last}`:'Measured period',bars=[{label:'Retained',value:retained},{label:'Value created',value:created}];
  const fmt=(value:number)=>formatMetric({value,format:'money',currency});
  return <figure ref={ref} className="mini-dollar" data-window={JSON.stringify({first,last,retained,created})} data-currency={currency}><figcaption>{period} · retained → value created</figcaption><ChartInteraction width={width} height={height} label="Retained earnings and value created" points={bars.map((b,i)=>({x:left+(i+.5)*(right-left)/2,y:y(b.value),text:`${period} · ${b.label}: ${fmt(b.value)}`}))}><svg viewBox={`0 0 ${width} ${height}`} width="100%" height={height}><path d={`M${left} ${y(0)}H${right}`} stroke="var(--viz-grid)"/>{bars.map((b,i)=>{const x=left+(i+.5)*(right-left)/2,w=Math.min(80,(right-left)/4);return <g key={b.label}><rect x={x-w/2} y={Math.min(y(0),y(b.value))} width={w} height={Math.max(1,Math.abs(y(0)-y(b.value)))} fill={i?'var(--buy)':'var(--viz-muted)'}/><text x={x} y={dense?14:b.value>=0?y(b.value)-7:y(b.value)+14} textAnchor="middle">{fmt(b.value)}</text><text x={x} y={height-2} textAnchor="middle">{b.label}</text></g>})}</svg></ChartInteraction></figure>;
 }

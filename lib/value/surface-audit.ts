@@ -9,7 +9,7 @@ import {ownerReturn,returnModelCopy,cashCoveredReturnCopy} from './owner-return'
 import {ruleReading} from './rule-reading';
 import type {Dossier,IndexRow,Series,PriceMap,TestOutcome} from './types';
 type ChartSnapshot={label:string;series:Series;format:string;currency:string};
-export type SurfaceSnapshot={signals?:unknown[];text:string;numbers:string[];charts:ChartSnapshot[];stats:Array<[string,string]>;table:string[][];tableHeaders?:string[];windows:unknown[];priceCharts:unknown[]};
+export type SurfaceSnapshot={accountingContext?:string;signals?:unknown[];text:string;numbers:string[];charts:ChartSnapshot[];stats:Array<[string,string]>;table:string[][];tableHeaders?:string[];windows:unknown[];priceCharts:unknown[]};
 const normalizedText=(s:string)=>s.replace(/−/g,'-').replace(/\s+/g,' ').trim();
 const same=(a:unknown,b:unknown,where:string)=>assert.deepEqual(a,b,where);
 const contains=(s:SurfaceSnapshot,value:string,where:string)=>assert.ok(!value||normalizedText(s.text).includes(normalizedText(value)),`${where}: expected ${value}`);
@@ -33,6 +33,8 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
  const currency=d.reportingCurrency??d.valuation?.currency??d.company.currency;
  const m=primaryTileMetric(t,d.company.kind,d.tests.understandable.series.netIncome??d.series.netIncome);
  const where=`${d.id} ${t.key}`;
+ const yearLabel=(fy:number|null|undefined)=>t.provisional?.fy===fy?'LTM':String(fy);
+ if(t.provisional)contains(drawer,t.provisional.label,`${where} provisional period label`);
  const reading=ruleReading(t,d.company.kind);
  same(reading.derived,t.result,`${where} verdict differs from applied rules`);
  contains(tile,tileSentence(t,m,d.company.kind),`${where} tile rule sentence`);
@@ -42,7 +44,7 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
  same(tile.signals??[],drawer.signals??[],`${where} filing likelihood chart mismatch`);
  if(window){same(tile.windows,drawer.windows,`${where} cumulative chart mismatch`);assert.equal(tile.windows.length,1,`${where} missing cumulative chart`);same(tile.stats.slice(0,3),drawer.stats.slice(0,3),`${where} cumulative key numbers mismatch`);}
  else {
-  const book=d.tests.economics?.series.bookPerShare??d.series.bookPerShare??[];
+  const book=(t.series.bookPerShare??d.tests.economics?.series.bookPerShare??d.series.bookPerShare??[]).filter(([fy])=>fy<=(t.provisional?.fy??d.historyCoverage?.last??Infinity));
   const bookContext=t.key==='accounting'&&'financialRedFlags' in t.metrics&&!m.series.some(p=>p[1]!=null)&&!t.jev.some(a=>a.probability!==null&&Number.isFinite(a.probability))&&book.some(p=>p[1]!=null);
   if(bookContext){
    // The drawer adds the positive-book-value prerequisite behind the warning count.
@@ -62,10 +64,10 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
  }
  const table=yearTable(d,t);
  const extraColumns:Record<string,{series:Series;format:'money'|'count'|'pct';key:string}>={
-  'Profit':{series:d.series.netIncome??[],format:'money',key:'netIncome'},
-  'Diluted shares':{series:d.series.shares??[],format:'count',key:'shares'},
-  'Book / share':{series:d.series.bookPerShare??[],format:'money',key:'bookPerShare'},
-  'Common ROE':{series:d.series.commonRoe??[],format:'pct',key:'commonRoe'},
+  'Profit':{series:t.series.netIncome??d.series.netIncome??[],format:'money',key:'netIncome'},
+  'Diluted shares':{series:t.series.shares??d.series.shares??[],format:'count',key:'shares'},
+  'Book / share':{series:t.series.bookPerShare??d.series.bookPerShare??[],format:'money',key:'bookPerShare'},
+  'Common ROE':{series:t.series.commonRoe??d.series.commonRoe??[],format:'pct',key:'commonRoe'},
  };
  for(const header of (drawer.tableHeaders??[]).slice(1+table.columns.length,-1)){
   const extra=extraColumns[header];assert.ok(extra,`${where} unrecognised additional column ${header}`);
@@ -74,25 +76,26 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
  const fmt=(value:number|null,format:Parameters<typeof formatMetric>[0]['format']=m.chartFormat==='index'?'count':m.chartFormat==='ratio'?'x':m.chartFormat??(m.id==='opMarginCv'?'pct':m.format))=>formatMetric({value,format,currency,returnRatio:isCapitalReturn(m.chart)});
  if(window){
   same(tile.windows,[{values:{first:window.start,last:window.end,retained:window.retained,created:window.created},currency}],`${where} published retained window`);
-  same(drawer.stats,[['Retained',fmt(window.retained,'money')],['Value created',fmt(window.created,'money')],['Shares / yr',fmt(t.metrics.shareCagr??null,'pct')],['$1 test',window.created>=window.retained?'Pass':'Fail'],['Window',`${window.start}–${window.end}`]],`${where} all window numbers`);
+  same(drawer.stats,[['Retained',fmt(window.retained,'money')],['Value created',fmt(window.created,'money')],['Shares / yr',fmt(t.metrics.shareCagr??null,'pct')],['$1 test',window.created>=window.retained?'Pass':'Fail'],['Window',`${window.start}–${yearLabel(window.end)}`]],`${where} all window numbers`);
  }else if('financialRedFlags' in t.metrics){
   same(tile.stats,[[m.label,fmt(m.value,m.format)],['Passing bar',`${m.better==='higher'?'≥':'≤'} ${fmt(m.threshold,m.format)}`]],`${where} warning-count tile numbers`);
-  const book=(d.tests.economics?.series.bookPerShare??d.series.bookPerShare??[]).filter((p):p is [number,number]=>p[1]!=null&&Number.isFinite(p[1])&&table.rows.some(r=>r.year===p[0]));
+  const book=(t.series.bookPerShare??d.tests.economics?.series.bookPerShare??d.series.bookPerShare??[]).filter((p):p is [number,number]=>p[1]!=null&&Number.isFinite(p[1])&&table.rows.some(r=>r.year===p[0]));
   const first=book[0],last=book.at(-1);
   if(first&&last){
+   if(drawer.accountingContext!==undefined)same(normalizedText(drawer.accountingContext),normalizedText(`${d.company.kind==='bank'?'Tangible common':'Common'} book per share: ${fmt(last[1],'money')} in ${t.provisional?.fy===last[0]?'LTM':`FY${last[0]}`}; must be positive. ${t.metrics.restatementYears!=null?`Reported restatement flags: ${t.metrics.restatementYears}; none allowed.`:''}`),`${where} accounting rule context basis`);
    const expected:Array<[string,string]>=[[d.company.kind==='bank'?'Tangible book / share':'Book / share',fmt(last[1],'money')]];
    if(first[1]>0&&last[1]>0&&last[0]>first[0])expected.push(['Book only / yr',fmt((last[1]/first[1])**(1/(last[0]-first[0]))-1,'pct')]);
    if(t.metrics.restatementYears!=null)expected.push(['Restatement flags',String(t.metrics.restatementYears)]);
-   expected.push(['Window',`${first[0]}–${last[0]}`]);same(drawer.stats,expected,`${where} financial accounting context`);
+   expected.push(['Window',`${first[0]}–${yearLabel(last[0])}`]);same(drawer.stats,expected,`${where} financial accounting context`);
   }
  }else if(summary){
   const bar=m.id==='opMarginCv'?`CV ≤ ${fmt(m.threshold,'x')}`:m.chartThreshold===null?'Over the window':`${(m.chartBetter??m.better)==='higher'?'≥':'<'} ${fmt(m.chartThreshold??m.threshold)}`;
-  same(drawer.stats.slice(3),[['Passing bar',bar],['Window',`${m.series.filter(p=>p[1]!=null&&Number.isFinite(p[1]))[0]?.[0]}–${m.series.filter(p=>p[1]!=null&&Number.isFinite(p[1])).at(-1)?.[0]}`]],`${where} threshold and observation count`);
+  same(drawer.stats.slice(3),[['Passing bar',bar],['Window',`${m.series.filter(p=>p[1]!=null&&Number.isFinite(p[1]))[0]?.[0]}–${yearLabel(m.series.filter(p=>p[1]!=null&&Number.isFinite(p[1])).at(-1)?.[0])}`]],`${where} threshold and observation count`);
  }else{
   same(drawer.stats,[[m.label,fmt(m.value,m.format)],['Passing bar',fmt(m.threshold,m.format)],['Years',String(table.rows.length)]],`${where} scalar drawer numbers`);
   same(tile.stats,[[m.label,fmt(m.value,m.format)],['Passing bar',`${m.better==='higher'?'≥':'≤'} ${fmt(m.threshold,m.format)}`]],`${where} scalar tile numbers`);
  }
- const expected=table.rows.map(r=>[String(r.year),...r.values.map((value,i)=>value==null?'—':formatMetric({value,format:table.columns[i].format,currency,returnRatio:isCapitalReturn(table.columns[i].key)}).replace(`${currency} `,'')),r.pass==null?'·':r.pass?'✓':'×']);
+ const expected=table.rows.map(r=>[t.provisional?.fy===r.year?t.provisional.label.replace('LTM to ','LTM to'):String(r.year),...r.values.map((value,i)=>value==null?'—':formatMetric({value,format:table.columns[i].format,currency,returnRatio:isCapitalReturn(table.columns[i].key)}).replace(`${currency} `,'')),r.pass==null?'·':r.pass?'✓':'×']);
  same(drawer.table,expected,`${where} year table differs from published observations`);
  // A shared name must never silently change basis between the merged dossier and its tests.
  for(const [key,series]of Object.entries(t.series))if(d.series[key])for(const [year,value]of series){

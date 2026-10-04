@@ -85,7 +85,7 @@ it('V3 renders the lease deduction in both the valuation table and reconciled wa
   const v = value(makeYears({ overrides: { leaseLiabilities: 100, leaseDepreciationIncluded: true } }), { currency: 'USD' });
   const html = renderToStaticMarkup(createElement(Bridge, { valuation: v }));
   expect(html).toContain('Estimated lease payments');
-  expect(html).toContain('Owner earnings total USD 80');
+  expect(html).toContain('Owner earnings total $80.00');
 });
 
 it.each([[797649000, 1160000000], [68191400, 80510294]])('V4 retains %s when the current %s count is below the stated 1.5x threshold', (old, current) => {

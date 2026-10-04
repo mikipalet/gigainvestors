@@ -34,7 +34,7 @@ describe('site currency and metric contracts', () => {
     expect(formatMetric({ value: .03, format: 'pp' })).toBe('3.0 pp');
     const html = renderToStaticMarkup(createElement(TestSection, { test: { key: 'moat', result: 'pass', numeric: 'pass', reasons: [], metrics: { roicMedian: .31, mystery: 7 }, series: {}, jev: [] } }));
     expect(html).toContain('ROIC, median of available years');
-    expect(html).toContain('31%');
+    expect(html).toContain('31.0%');
     expect(html).not.toContain('mystery');
   });
 });

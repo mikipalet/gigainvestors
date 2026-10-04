@@ -65,5 +65,5 @@ export function compactMoney(value: number, currency = ''): string {
   return currencyAmount(number,currency);
 }
 
-/** Input is a fraction; formatPct takes percentage points. */
-export const formatRate = (value: number) => formatPct(value*100);
+/** Financial rates retain tenths for comparisons; portfolio weights use formatPct. */
+export const formatRate = (value: number) => `${(value*100).toFixed(1)}%`;

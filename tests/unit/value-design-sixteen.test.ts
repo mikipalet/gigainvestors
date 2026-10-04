@@ -9,8 +9,8 @@ import type {Dossier} from '@/lib/value/types';
 const d:Dossier=JSON.parse(readFileSync('tests/fixtures/value/store/dossiers/027.json','utf8'))['KO.US'];
 it('caps extreme capital returns while preserving ordinary percentages and exact data',()=>{
  expect(formatMetric({value:13.25,format:'pct',returnRatio:true})).toBe('>100%');
- expect(formatMetric({value:1,format:'pct',returnRatio:true})).toBe('100%');
- expect(formatMetric({value:13.25,format:'pct'})).toBe('1325%');
+ expect(formatMetric({value:1,format:'pct',returnRatio:true})).toBe('100.0%');
+ expect(formatMetric({value:13.25,format:'pct'})).toBe('1325.0%');
 });
 it('shows a latest net cash snapshot without explaining absent history',()=>{
  const html=renderToStaticMarkup(createElement(FinancialHighlights,{dossier:{...d,series:{},valuation:{...d.valuation!,netDebt:-123000000}}}));

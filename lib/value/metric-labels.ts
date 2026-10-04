@@ -45,6 +45,7 @@ export const metricLabels: Record<string, { label: string; format: MetricFormat;
   lossYears: { nonNegative: true, label: 'Years with a net loss', format: 'count', threshold: T.understandable.maxLossYears, better: 'lower' },
   opMarginCv: { nonNegative: true, label: 'Operating margin variation', format: 'x', threshold: T.understandable.maxOpMarginCv, better: 'lower' },
   roicMedian: { label: 'ROIC, median of available years', format: 'pct', threshold: T.moat.roicMedian, better: 'higher' },
+  totalRoicMedian: { label: 'ROIC including acquisitions, ten-year median', format: 'pct' },
   roicSecondLowest: { label: 'ROIC, second-lowest year', format: 'pct', threshold: T.moat.roicSecondLowest, better: 'higher' },
   roeMedian: { label: 'Bank / P&C ROTE, median of available years', format: 'pct', threshold: T.moat.roeMedianFin, better: 'higher' },
   roeSecondLowest: { label: 'Bank ROTE, second-lowest year', format: 'pct', threshold: .05, better: 'higher' },

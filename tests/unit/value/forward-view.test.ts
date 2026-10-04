@@ -14,8 +14,8 @@ it('renders no home line before 30 recorded days and scopes the mature line',()=
  expect(renderToStaticMarkup(createElement(ForwardLine,{record,scope:'all'}))).toBe('');
  record.days=30;record.western.priceReturn=.1;record.all.priceReturn=.2;
  const western=renderToStaticMarkup(createElement(ForwardLine,{record,scope:'western'}));
- expect(western).toContain('Western markets');expect(western).toContain('+10%');expect(western).not.toContain('+20%');
- expect(renderToStaticMarkup(createElement(ForwardLine,{record,scope:'all'}))).toContain('+20%');
+ expect(western).toContain('Western markets');expect(western).toContain('+10.0%');expect(western).not.toContain('+20.0%');
+ expect(renderToStaticMarkup(createElement(ForwardLine,{record,scope:'all'}))).toContain('+20.0%');
 });
 it('states the record has not begun without inventing a start date',()=>{
  const html=renderToStaticMarkup(createElement(ForwardRecord,{record:computeForwardRecord([])}));

@@ -1,3 +1,5 @@
+import {pageAlternates} from '@/lib/agents/urls';
+export const metadata={title:'Forward observation record | GigaInvestors',description:'Immutable published buy observations and subsequent price returns, excluding dividends.',alternates:pageAlternates('value','/forward')};
 import { ForwardRecord } from '@/components/value/ForwardRecord';
 import { ValueLink } from '@/components/value/ValueLink';
 import { getForwardRecord } from '@/lib/value/store';

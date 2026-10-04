@@ -1,8 +1,10 @@
-import { formatMoney, formatPct, plural } from "./format";
+import {siteUrl} from './agents/urls';
+const formatMoney=(n:number)=>`USD ${new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n)}`;
+import { formatPct, plural } from "./format";
 import type { Index, InvestorData, StockData } from "./types";
 
 // Markdown representations served on Accept: text/markdown (acceptmarkdown.com).
-const SITE = "https://gigainvestors.com";
+const SITE = siteUrl('main').replace(/\/$/,'');
 
 export function homeMarkdown(index: Index): string {
   const q = index.quarters[index.quarters.length - 1];
@@ -29,6 +31,7 @@ export function homeMarkdown(index: Index): string {
 
 export function investorMarkdown(d: InvestorData, holders: Record<string, number>): string {
   const cur = d.quarters[d.quarters.length - 1];
+  if(!cur)return `# ${d.person} — ${d.firm}\n\nNo reported holdings. Canonical: ${SITE}/${d.code}`;
   const live = cur.positions.filter((p) => p.activity !== "sold");
   const moves = cur.positions.filter((p) => p.activity !== "hold");
   const label = (p: (typeof cur.positions)[number]) =>
@@ -55,14 +58,15 @@ export function investorMarkdown(d: InvestorData, holders: Record<string, number
   ].join("\n");
 }
 
-export function stockMarkdown(s: StockData, people: Record<string, string>): string {
-  const cur = s.quarters[s.quarters.length - 1];
+export function stockMarkdown(s: StockData, people: Record<string, string>, quarter?: string): string {
+  const cur = s.quarters.find(row=>row.q===quarter) ?? [...s.quarters].reverse().find(row=>row.holders.some(h=>h.activity!=="sold")) ?? s.quarters[s.quarters.length - 1];
+  if(!cur)return `# ${s.ticker} — ${s.name}\n\nNo reported holders. Canonical: ${SITE}/s/${s.ticker}`;
   const live = cur.holders.filter((h) => h.activity !== "sold");
   const total = live.reduce((a, h) => a + h.value, 0);
   return [
     `# ${s.ticker} — ${s.name}`,
     ``,
-    `Held by ${plural(live.length, "investor")} · ${formatMoney(total)} total · ${cur.q}${cur.price ? ` · reported price $${cur.price.toFixed(2)} (split-adjusted)` : ""}.`,
+    `Held by ${plural(live.length, "investor")} · ${formatMoney(total)} total · ${cur.q}${cur.price ? ` · reported price USD ${cur.price.toFixed(2)} (split-adjusted)` : ""}.`,
     `Page: ${SITE}/s/${s.ticker}`,
     ``,
     `## Holders (${cur.q})`,
@@ -73,7 +77,7 @@ export function stockMarkdown(s: StockData, people: Record<string, string>): str
     ``,
     `## Total held by quarter`,
     ``,
-    ...s.quarters.map((qq) => `- ${qq.q}: ${formatMoney(qq.holders.filter((h) => h.activity !== "sold").reduce((a, h) => a + h.value, 0))} · ${plural(qq.holders.filter((h) => h.activity !== "sold").length, "holder")}${qq.price ? ` · $${qq.price.toFixed(2)}` : ""}`),
+    ...s.quarters.map((qq) => `- ${qq.q}: ${formatMoney(qq.holders.filter((h) => h.activity !== "sold").reduce((a, h) => a + h.value, 0))} · ${plural(qq.holders.filter((h) => h.activity !== "sold").length, "holder")}${qq.price ? ` · USD ${qq.price.toFixed(2)}` : ""}`),
   ].join("\n");
 }
 

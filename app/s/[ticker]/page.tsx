@@ -1,9 +1,10 @@
+import {pageAlternates} from '@/lib/agents/urls';
+import {schemaJson} from '@/lib/agents/schema';
 import { getDossier, getPrice } from "@/lib/value/store";
 import { comparableValuation } from "@/lib/value/site-valuation";
 import { priceState } from "@/lib/value/presentation";
 import { notFound } from "next/navigation";
 import { getAllStockTickers, getIndex, getStock } from "@/lib/data";
-import { StockContent } from "@/components/AgentContent";
 import { Stock } from "./Stock";
 
 export const dynamic = "force-static";
@@ -24,7 +25,7 @@ export async function generateMetadata(props: { params: Promise<{ ticker: string
   return {
     title: stock ? `${stock.ticker} holders · GigaInvestors` : "GigaInvestors",
     description: stock ? `Which famous investors hold ${stock.name} (${stock.ticker}), how much, since when, and whether they are buying or selling, quarter by quarter.` : undefined,
-    alternates: { canonical: `https://gigainvestors.com/s/${encodeURIComponent(ticker)}` },
+    alternates: {canonical:pageAlternates('main',`/s/${encodeURIComponent(ticker)}`).canonical},
   };
 }
 
@@ -40,9 +41,9 @@ export default async function Page(props: { params: Promise<{ ticker: string }> 
   const passing=dossier?Object.values(dossier.tests).filter(t=>t.key!=='price'&&t.result==='pass').length+(priceState({price:quote?.[0]??null,mid:range?.perShare.mid??null,b:dossier.b}).state==='pass'?1:0):null;
   const people = Object.fromEntries(index.investors.map((i) => [i.code, i.person]));
   return (
-    <>
-      <StockContent stock={stock} people={people} />
+    <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:schemaJson({"@context":"https://schema.org","@type":"Corporation",name:stock.name,tickerSymbol:stock.ticker})}} />
       <Stock stock={stock} investors={investors} checklist={passing!==null?{id:dossier!.id,passing}:undefined} />
-    </>
+    </main>
   );
 }

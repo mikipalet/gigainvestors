@@ -1,3 +1,5 @@
+import {pageAlternates} from '@/lib/agents/urls';
+export async function generateMetadata({searchParams}:{searchParams:Promise<Record<string,string>>}){const q=await searchParams;const frame=/^\d{4}Q[1-4]$/.test(q.q??'')?q.q:/^\d{4}$/.test(q.year??'')?`${q.year}Q4`:null;return {title:`Buffett checklist${frame?' — '+frame:''} | GigaInvestors`,description:`Five business quality tests, price and expected annual return${frame?' reconstructed for '+frame:''}.`,alternates:{canonical:pageAlternates('value',frame?`/?q=${frame}`:'/').canonical}};}
 import {renderValuePage} from './ValueHome';
 import {getMeta} from '@/lib/value/store';
 export const revalidate = 86400;

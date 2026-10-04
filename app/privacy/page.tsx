@@ -1,9 +1,10 @@
+import {pageAlternates} from '@/lib/agents/urls';
 import Link from "next/link";
 import { PageFooter } from "@/components/PageFooter";
 import { PAGES } from "@/lib/pages";
 
 const page = PAGES.privacy;
-export const metadata = { title: page.title, alternates: { canonical: "https://gigainvestors.com/privacy" } };
+export const metadata = { title: page.title, description:page.paragraphs[0], alternates: pageAlternates('main','/privacy') };
 
 export default function Page() {
   return (

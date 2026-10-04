@@ -1,3 +1,4 @@
+import {pageAlternates} from '@/lib/agents/urls';
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { firstSentences, formatMoney } from "@/lib/format";
@@ -17,7 +18,7 @@ export async function generateMetadata(props: { params: Promise<{ issue: string 
   const { issue } = await props.params;
   const found = readIssue(issue);
   const url = `https://gigainvestors.com/newsletter/${issue}`;
-  if (!found) return { title: "GigaInvestors", alternates: { canonical: url } };
+  if (!found) return { title: "GigaInvestors", alternates: pageAlternates('main',`/newsletter/${issue}`) };
   const { quarter, headline, prose } = found.manifest;
   const description = firstSentences(prose?.paragraphs[0] ?? `The ${quarter} letter from GigaInvestors.`, 200);
   const hero = issueHero(issue);
@@ -25,7 +26,7 @@ export async function generateMetadata(props: { params: Promise<{ issue: string 
   return {
     title: `${quarter}: ${headline}`,
     description,
-    alternates: { canonical: url },
+    alternates: pageAlternates('main',`/newsletter/${issue}`),
     openGraph: { type: "article", url, siteName: "GigaInvestors", title: headline, description, images },
     twitter: { card: "summary_large_image", title: headline, description, images: hero ? [hero] : undefined },
   };

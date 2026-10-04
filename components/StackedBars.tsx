@@ -109,6 +109,7 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
 
   return (
     <div className="flex h-full min-h-0 flex-col pb-2">
+      <ul className="sr-only" aria-label={`${caption}: all observations`}>{columns.map((column,i)=><li key={i}>{labels[i]}: {column.segs.map(segment=>`${people[segment.code]??(segment.code==='__others'?'Other investors':segment.code)} ${segment.value.toLocaleString('en-US',{maximumFractionDigits:2})} ${unit==='$'?'USD':unit}`).join('; ')}{prices[i]!=null?`; share price USD ${prices[i]}`:''}</li>)}</ul>
       <div className="mb-1 flex items-baseline justify-between gap-2 text-[11px] leading-none">
         <span className="shrink-0 opacity-60">{unit === "shares" ? "shares held · price" : caption}</span>
         <span className={`truncate ${hover ? "font-semibold" : "opacity-60"}`}>{readout}</span>

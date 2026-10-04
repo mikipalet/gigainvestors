@@ -1,3 +1,4 @@
+import {websiteSchema,schemaJson} from '@/lib/agents/schema';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Search } from "@/components/Search";
@@ -19,46 +20,14 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "GigaInvestors" },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://gigainvestors.com/#website",
-      url: "https://gigainvestors.com/",
-      name: "GigaInvestors",
-      description: "What 83 famous investors own each quarter, from SEC 13F filings.",
-      inLanguage: "en",
-      publisher: { "@id": "https://gigainvestors.com/#org" },
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://gigainvestors.com/#org",
-      name: "GigaInvestors",
-      url: "https://gigainvestors.com/",
-      description: "Independent site tracking what 83 famous investors own each quarter, from SEC 13F filings, drawn as treemaps with pencil-sketch portraits.",
-      logo: "https://gigainvestors.com/apple-icon.png",
-      address: { "@type": "PostalAddress", addressLocality: "Palamós", addressRegion: "Girona", addressCountry: "ES" },
-      sameAs: ["https://github.com/mikipalet/gigainvestors"],
-      contactPoint: [{ "@type": "ContactPoint", contactType: "customer support", email: "hello@gigainvestors.com", availableLanguage: "en" }],
-    },
-    {
-      "@type": "Dataset",
-      name: "GigaInvestors 13F portfolios",
-      description: "Quarterly portfolio holdings of 83 tracked investors since 2006, derived from SEC Form 13F filings via dataroma.com.",
-      url: "https://gigainvestors.com/",
-      license: "https://gigainvestors.com/about",
-      isAccessibleForFree: true,
-      creator: { "@id": "https://gigainvestors.com/#org" },
-    },
-  ],
-};
+const jsonLd=websiteSchema('main');
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <link rel="describedby" href="/llms.txt"/>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaJson(jsonLd) }} />
         <script
           type="speculationrules"
           dangerouslySetInnerHTML={{

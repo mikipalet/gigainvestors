@@ -9,7 +9,7 @@ describe("value host routing", () => {
   it.each([
     ["https://value.gigainvestors.com/ko.us", "https://value.gigainvestors.com/value/ko.us"],
     ["https://value.gigainvestors.com/", "https://value.gigainvestors.com/value"],
-    ["https://value.gigainvestors.com/sitemap.xml", "https://value.gigainvestors.com/value/sitemap.xml"],
+
   ])("rewrites %s", async (url, target) => {
     expect((await proxy(new NextRequest(url))).headers.get("x-middleware-rewrite")).toBe(target);
   });
@@ -20,6 +20,7 @@ describe("value host routing", () => {
   });
   it.each([
     "https://gigainvestors.com/s/KO", "https://gigainvestors.com/valuable",
+    "https://value.gigainvestors.com/sitemap.xml",
     "https://value.gigainvestors.com/api/search", "https://value.gigainvestors.com/_next/static/a.js",
     "https://value.gigainvestors.com/faces/v3/buffett.webp", "https://value.gigainvestors.com/favicon.ico", "https://value.gigainvestors.com/LOGO.PNG",
     "https://value.gigainvestors.com/value/ko.us",

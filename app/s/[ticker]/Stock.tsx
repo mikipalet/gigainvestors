@@ -1,4 +1,7 @@
 "use client";
+import {AgentQuarterMetadata} from '@/components/AgentQuarterMetadata';
+import {stockUrl} from '@/lib/agents/urls';
+import {StockContent} from "@/components/AgentContent";
 
 import Link from "next/link";
 import { useMemo } from "react";
@@ -76,6 +79,8 @@ export function Stock({ stock, investors, checklist }: { stock: StockData; inves
 
   return (
     <>
+      <AgentQuarterMetadata canonical={stockUrl(stock.ticker)} quarter={q}/>
+      <StockContent stock={stock} people={Object.fromEntries(Object.entries(investors).map(([code,meta])=>[code,meta.person]))} quarter={q}/>
       <div className="locks-scroll flex h-[calc(100dvh-84px)] sm:h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
         <aside className="flex shrink-0 flex-col p-4 md:w-[28%] md:min-w-[240px] md:max-w-[420px] md:p-6 md:pr-4">
           <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">

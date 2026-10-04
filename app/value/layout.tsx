@@ -1,3 +1,4 @@
+import {websiteSchema,schemaJson} from '@/lib/agents/schema';
 import './value.css';
 import './one-screen.css';
 import './round-seven.css';
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
 };
 export default async function ValueLayout({ children }: { children: React.ReactNode }) {
   return <main className="value-viz value-page">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:schemaJson(websiteSchema('value'))}} />
     {children}
     <BottomBar/>
 

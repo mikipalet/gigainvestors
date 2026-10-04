@@ -1,4 +1,7 @@
 "use client";
+import {AgentQuarterMetadata} from '@/components/AgentQuarterMetadata';
+import {siteUrl} from '@/lib/agents/urls';
+import {checklistMarkdown} from "@/lib/agents/checklist-content";
 
 import {historyHeadline} from '@/lib/value/since-return';
 import { ForwardLine } from '@/components/value/ForwardLine';
@@ -173,6 +176,8 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   const story=(allMarkets?meta?.story:meta?.western?.story)??{analysed:counts[0],qualityPasses:counts[5],atBuy:counts[6],qualityShare:counts[0]?counts[5]/counts[0]:0};
   const total=summary?.analysed??story.analysed, quality=summary?.qualityPasses??story.qualityPasses, buys=summary?.atBuy??story.atBuy;
   return <div className="one-index locks-scroll" data-quality-count={quality} data-buy-count={buys} data-analysed-count={total}>
+    <AgentQuarterMetadata canonical={siteUrl("value")} quarter={historical?frame:undefined}/>
+    <section className="sr-only" aria-label="Published checklist data"><pre>{checklistMarkdown(source,meta,historical?frame:undefined,filter)}</pre></section>
     <section className="index-story"><h1 data-historical={historical}>{historical?historyHeadline(frame,summary??{atBuy:buys,avgReturnAtBuy:null,avgReturnAll:null}):`${buys} great ${buys===1?'business':'businesses'} at a fair price.`}</h1></section>
     <div className="map-toolbar">{marketSlot&&createPortal(<MarketScopeToggle all={allMarkets} onChange={all=>change('markets',all?'all':'')}/>,marketSlot)}<div className="desktop-filters" onFocusCapture={()=>setPrefetchDeferred(true)}>{filterBar}</div><button className="mobile-filter-button shared-filter-button" onClick={()=>setFiltersOpen(true)}>Filters</button><button className="table-toggle" onPointerEnter={()=>void loadTable()} onFocus={()=>void loadTable()} onClick={()=>setTable(true)}>All companies ↗</button>{search&&<button onClick={()=>{change('search','');if(filter.q===search)change('q','');}}>Clear “{search}” ×</button>}{gate!==null&&<button onClick={()=>change('gate','')}>Reset gate ×</button>}</div>
 

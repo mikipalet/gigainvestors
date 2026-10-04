@@ -1,3 +1,4 @@
+import { ResearchBudgetError } from '../../../lib/value/budget';
 import { isThesisCandidate, thesisFingerprint, thesisNeedsRefresh, THESIS_DAILY_LIMIT, THESIS_CALL_LIMIT } from '../../../lib/value/thesis/refresh';
 import defaults from '../../../lib/value/thesis/official-sources.json';
 import { gzipSync, gunzipSync } from 'node:zlib';
@@ -34,7 +35,7 @@ export default async function thesis({only,limit,force=false}:{only?:string[];li
  console.log(`thesis: eligible=${eligible.length} cached=${eligible.length-due.length} due=${due.length} selected=${candidates.length} deferred=${due.length-candidates.length} callLimit=${THESIS_CALL_LIMIT}`);
  let calls=0;
  diskGuard();writeCorpusJson('thesis/selection.json',{asOf,companies:all.map(c=>({id:c.company.id,name:c.company.name,triggers:c.triggers,drawdownFromMonthlyCloses:c.drawdown}))});
- const ask=async(input:Parameters<typeof askJev>[0])=>{diskGuard();if(calls>=THESIS_CALL_LIMIT)throw new Error('Thesis Jev call budget exhausted');calls++;return askJev({...input,usageFile:'thesis/jev-usage.jsonl'});};
+ const ask=async(input:Parameters<typeof askJev>[0])=>{diskGuard();if(calls>=THESIS_CALL_LIMIT)throw new ResearchBudgetError('Thesis Jev call budget exhausted');calls++;return askJev({...input,usageFile:'thesis/jev-usage.jsonl'});};
  try { await pool({items:candidates,concurrency:1,run:async({company,analysis,fundamentals:f,triggers,market,inputFingerprint})=>{
   diskGuard();
   const {sources,gaps}=await companySources(company,asOf,overrides[company.id]);

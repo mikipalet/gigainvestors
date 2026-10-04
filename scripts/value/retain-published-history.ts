@@ -14,10 +14,9 @@ export function retainPublishedHistory(files:Record<string,unknown>,previousRepo
  for(const file of periods){
   const key=`history/${file}`,current=(files[key]??[]) as SnapshotRow[],seen=new Set(current.map(row=>row[0]));
   const missing=(read(file) as SnapshotRow[]).filter(row=>!seen.has(row[0]));
-  if(!missing.length)continue;
   files[key]=[...current,...missing];retained.push(...missing.map(row=>({file:key,id:row[0]})));
  }
- if(!retained.length)return retained;
+ if(!periods.length)return retained;
  const indexFile=path.join(directory,'index.json');
  const index=(files['history/index.json']??(existsSync(indexFile)?read('index.json'):{years:[],perYear:{}})) as HistoryIndex;
  index.years=[...new Set([...index.years,...Object.keys(files).flatMap(f=>/^history\/(\d{4})\.json$/.exec(f)?.slice(1).map(Number)??[])])].sort((a,b)=>a-b);

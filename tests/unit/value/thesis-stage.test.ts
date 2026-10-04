@@ -1,3 +1,4 @@
+import { ResearchBudgetError } from '@/lib/value/budget';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { mkdtempSync, rmSync } from 'node:fs';
 import os from 'node:os';
@@ -38,7 +39,7 @@ it('caps default work at twelve companies and reports the actual call count',asy
 
 it('stops at the Jev call budget without saving a partial thesis',async()=>{
  mocks.callsPerReading=241;
- await expect(thesis({})).rejects.toThrow('Thesis Jev call budget exhausted');
+ await expect(thesis({})).rejects.toBeInstanceOf(ResearchBudgetError);
  expect(mocks.ask).toHaveBeenCalledTimes(240);
  expect(readCorpusJson('thesis/TEST.US.json')).toBeNull();
 });

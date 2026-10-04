@@ -8,6 +8,8 @@ import { latestFilings } from "@/lib/value/reports/edgar";
 import reports from "@/scripts/value/stages/reports";
 import type { Company, ReportMeta } from "@/lib/value/types";
 
+vi.mock("@/lib/value/reports/transport",()=>({reportRequest:(url:string,init:RequestInit)=>fetch(url,init)}));
+
 const fixture = (name: string) => readFileSync(path.resolve("tests/fixtures/value/edgar", name), "utf8");
 const submissions = JSON.parse(fixture("submissions-KO.json"));
 const annualUrl = "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm";

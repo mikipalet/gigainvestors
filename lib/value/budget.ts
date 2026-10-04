@@ -1,7 +1,8 @@
 import { T } from './config';
 import { readCorpusJson, writeCorpusJson } from './corpus';
 
-export class EodhdBudgetError extends Error {}
+export class ResearchBudgetError extends Error {}
+export class EodhdBudgetError extends ResearchBudgetError {}
 
 export interface Usage { date: string; used: number; history: number; providerUsed?: number; checkedAt?: string }
 export function budgetUsage(): Usage {

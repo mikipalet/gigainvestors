@@ -1,3 +1,6 @@
+import { assertNoPendingPublication, beginPublication } from '../post-publish';
+import { refreshPublishedBuyPrices } from '../../../lib/value/refresh-buy-prices';
+import { assertPublishInvariants } from '../publish-invariants';
 import {retainPublishedHistory} from '../retain-published-history';
 import {publicationCapitalization} from '../../../lib/value/publication-capitalization';
 import {createUsdRate} from '../../../lib/value/fx';
@@ -67,6 +70,7 @@ export function prepareRepository(): string {
   if (!existsSync(repo)) {
     git(corpusPath(), ["-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential", "clone", REMOTE, repo]);
   } else {
+    assertNoPendingPublication(repo);
     if (git(repo, ["remote", "get-url", "origin"]) !== REMOTE) throw new Error("Unexpected data repository origin");
     syncRepository(repo);
   }
@@ -137,6 +141,7 @@ export async function withPublishRepository(run: (repo: string) => Promise<void>
 }
 
 export function pushRepository(repo: string, force: boolean): void {
+  beginPublication(repo);
   git(repo, ["-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential", "push", ...(force ? ["-f"] : []), "origin", "main"]);
 }
 
@@ -192,6 +197,7 @@ export function writeOutput({ repo, files }: { repo: string; files: Record<strin
 }
 
 export function commitOutput({ repo, asOf }: { repo: string; asOf: string }): boolean {
+  assertPublishInvariants(repo);
   if (!git(repo, ["status", "--porcelain"]) && git(repo, ["rev-list", "--count", "HEAD"]) === "1") return false;
   git(repo, ["checkout", "--orphan", "tmp"]);
   git(repo, ["add", "-A"]);
@@ -405,9 +411,22 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
   return analyses;
 }
 
-export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string; overwrite?: boolean }): Promise<void> {
+export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string; overwrite?: boolean; existingAnalysis?: boolean }): Promise<void> {
   // Workaround: the nightly path does not yet reproduce release-script corrections (fix-5); a hold file keeps live data until it does.
   if (!options.out && existsSync(corpusPath("publish.hold"))) { console.log(`publish held: ${readFileSync(corpusPath("publish.hold"), "utf8").trim()}`); return; }
+  if (options.existingAnalysis) {
+    if (options.out || options.overwrite || options.only || options.limit) throw new Error('--existing-analysis publishes the whole released snapshot only');
+    await withPublishRepository(async repo => {
+      // A budget-limited run cannot apply partial research or new input data to
+      // old verdicts. Keep the released analysis/history and refresh only quotes.
+      refreshPublishedBuyPrices(repo);
+      commitOutput({repo,asOf:new Date().toISOString().slice(0,10)});
+      pushRepository(repo,true);
+      await revalidatePublishedValue();
+      console.log('publish: retained existing released analysis after research budget exhaustion');
+    });
+    return;
+  }
   const out = options.out === undefined ? undefined : path.resolve(options.out);
   if (options.overwrite && !out) throw new Error('--overwrite requires local --out');
   if (out && existsSync(out) && readdirSync(out).length) {

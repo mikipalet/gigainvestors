@@ -1,0 +1,72 @@
+import {execFileSync} from 'node:child_process';
+import {existsSync,readFileSync,readdirSync,statSync} from 'node:fs';
+import path from 'node:path';
+import {isDeepStrictEqual} from 'node:util';
+import {publishedBuyPrice} from '../../lib/value/buy-price';
+import type {IndexRow,PriceMap} from '../../lib/value/types';
+
+type Reader = {files:string[]; read:(file:string)=>any};
+function git(repo:string,args:string[]):string {
+ return execFileSync('git',['-C',repo,...args],{encoding:'utf8',stdio:['ignore','pipe','pipe'],maxBuffer:64*1024*1024}).trim();
+}
+function committed(repo:string,ref:string):Reader|null {
+ try{git(repo,['rev-parse','--verify',ref]);}catch{return null;}
+ const files=git(repo,['ls-tree','-r','--name-only',ref]).split('\n');
+ return {files,read:file=>files.includes(file)?JSON.parse(git(repo,['show',`${ref}:${file}`])):null};
+}
+const fail=(message:string):never=>{throw new Error(`Publish invariant: ${message}`);};
+
+/** Compare the proposed working tree to the released commit, never to mutable meta counts.
+ * Every commit entry point calls this BEFORE staging or creating an orphan branch.
+ */
+export function assertPublishInvariants(repo:string,baseline='HEAD'):void {
+ const prior=committed(repo,baseline);
+ const files=['meta.json',...['index','dossiers','prices','history'].flatMap(dir=>existsSync(path.join(repo,dir))?readdirSync(path.join(repo,dir)).map(f=>`${dir}/${f}`):[])];
+ const current:Reader={files,read:file=>existsSync(path.join(repo,file))?JSON.parse(readFileSync(path.join(repo,file),'utf8')):null};
+ const meta=current.read('meta.json');
+ if(!meta)fail('meta.json missing');
+ const history=current.read('history/index.json');
+ const previousHistory=prior?.read('history/index.json');
+ for(const [kind,deferred]of [['quarters','quarterDeferred'],['years','yearDeferred']] as const){
+  const required=new Set([...(history?.[kind]??[]),...(previousHistory?.[kind]??[]),...Object.keys(prior?.read('meta.json')?.views?.[kind]??{})].map(String));
+  if(Object.keys(meta.views?.[kind]??{}).length<(history?.[kind]?.length??0))fail(`views.${kind} count is below history/index`);
+  for(const period of required){
+   // The builder aliases Q4 into the year picker even for quarter-only stores.
+   // A previously released annual snapshot still must remain in its own right.
+   const annualAlias=kind==='years'&&!previousHistory?.years?.map(String).includes(period)
+    &&!history?.years?.map(String).includes(period)&&history?.quarters?.includes(`${period}Q4`);
+   if(!history?.[kind]?.map(String).includes(period)&&!annualAlias)fail(`history/index lost ${period}`);
+   if(!meta.views?.[kind]?.[period]||!Array.isArray(meta.views?.[deferred]?.[period]))fail(`views lost ${kind}/${period} or its deferred view`);
+   if(!existsSync(path.join(repo,`history/${period}${annualAlias?'Q4':''}.json`)))fail(`history file missing: ${period}`);
+  }
+ }
+ const checkRefs=(value:unknown):void=>{
+  if(typeof value==='string'){
+   if(!/^views\/[a-f0-9]{24}\.json$/.test(value)||!existsSync(path.join(repo,value))||!statSync(path.join(repo,value)).isFile())fail(`view references missing or invalid file: ${value}`);
+   try{JSON.parse(readFileSync(path.join(repo,value),'utf8'));}catch{fail(`unreadable view: ${value}`);}
+  }else if(value&&typeof value==='object')for(const item of Object.values(value))checkRefs(item);
+  else fail('invalid view reference');
+ };
+ if(meta.views)checkRefs(meta.views);
+ const count=(r:Reader)=>r.files.filter(f=>/^dossiers\/\d{3}\.json$/.test(f)).reduce((n,f)=>n+Object.keys(r.read(f)).length,0);
+ const before=prior?count(prior):0,after=count(current);
+ if(after<before*.99)fail(`dossier count dropped more than 1% (${before} -> ${after})`);
+ if(!prior)return;
+ const prices=(r:Reader):PriceMap=>Object.assign({},...r.files.filter(f=>/^prices\/[A-Z]{2}\.json$/.test(f)).map(f=>r.read(f)));
+ const oldPrices=prices(prior),newPrices=prices(current);
+ // Check the default index and every country separately, so offsetting country
+ // losses cannot hide in the global total. Analysis changes need explicit review.
+ const indexes=new Set([...prior.files,...current.files].filter(f=>/^index\/(?:default|[A-Z]{2})\.json$/.test(f)));
+ for(const file of indexes){
+  const oldRows:IndexRow[]=prior.read(file)??[],newRows:IndexRow[]=current.read(file)??[];
+  const oldBuys=oldRows.filter(r=>r.b).length,newBuys=newRows.filter(r=>r.b).length;
+  let increases=0,decreases=0;
+  for(const row of oldRows){
+   if(isDeepStrictEqual(oldPrices[row.id],newPrices[row.id]))continue;
+   const change=Number(publishedBuyPrice(row,newPrices[row.id]).b)-Number(publishedBuyPrice(row,oldPrices[row.id]).b);
+   if(change>0)increases++;if(change<0)decreases++;
+  }
+  const delta=newBuys-oldBuys;
+  if(delta>increases||delta < -decreases)fail(`${file} Buy-now changed ${oldBuys} -> ${newBuys}; prices explain at most +${increases}/-${decreases}`);
+ }
+}

@@ -293,7 +293,7 @@ describe("publish repository", () => {
     expect(commitOutput({ repo, asOf: "2026-09-29" })).toBe(true);
     expect(git(repo, ["rev-list", "--count", "HEAD"])).toBe("1");
   });
-  it("retains unselected dossiers in a partial publish and removes delisted companies", () => {
+  it("stages a partial snapshot but refuses to commit a greater than 1% delisting drop", () => {
     const repo = repository();
     const axp = analysis("AXP.US"); axp.valuation!.shares = 2; // cap 100 = quote 50 × shares 2
     writeOutput({ repo, files: output([analysis(), axp, analysis("DELISTED.US")]) });
@@ -303,7 +303,7 @@ describe("publish repository", () => {
     mkdirSync(path.join(repo, "search"), { recursive: true });
     writeFileSync(path.join(repo, "search/a.json"), "{}");
     const updated = analysis(); updated.tests.moat.result = "fail";
-    publishSnapshot({ repo, analyses: [updated], universe: ["KO.US", "AXP.US", "PENDING.US"].map(id => analysis(id).company), partial: true, force: true, holdersByTicker: {}, investorNames: {} });
+    expect(() => publishSnapshot({ repo, analyses: [updated], universe: ["KO.US", "AXP.US", "PENDING.US"].map(id => analysis(id).company), partial: true, force: true, holdersByTicker: {}, investorNames: {} })).toThrow(/invariant.*dossier count/i);
     const rows = JSON.parse(readFileSync(path.join(repo, "index/default.json"), "utf8")) as IndexRow[];
     expect(rows.map((row) => [row.id, row.t])).toEqual([["AXP.US", "PPPPP"], ["KO.US", "PFPPP"]]);
     const search = (key: string) => JSON.parse(readFileSync(path.join(repo, `search/${key}.json`), "utf8"));
@@ -441,13 +441,13 @@ describe("publish rollout safeguards", () => {
     const analyses = Array.from({ length: 8 }, (_, i) => analysis(`${i}.US`));
     expect(publishSnapshot({ repo, analyses, universe: analyses.map(row => row.company), partial: false, holdersByTicker: {}, investorNames: {} }).count).toBe(8);
   });
-  it("guards legacy metadata and allows an explicit forced empty snapshot", () => {
+  it("guards legacy metadata and rejects even a forced empty commit", () => {
     const repo = repository();
     writeOutput({ repo, files: { ...output([analysis()]), "meta.json": { counts: { universe: 10, scored: 8, insufficient: 2 } } } });
     commitOutput({ repo, asOf: "2026-09-29" });
     const args = { repo, analyses: [], universe: [], partial: false, holdersByTicker: {}, investorNames: {} };
     expect(() => publishSnapshot(args)).toThrow(/--force/);
-    expect(publishSnapshot({ ...args, force: true }).count).toBe(0);
+    expect(() => publishSnapshot({ ...args, force: true })).toThrow(/invariant.*dossier count/i);
     expect(JSON.parse(readFileSync(path.join(repo, "meta.json"), "utf8")).counts.analysed).toBe(0);
   });
   it("guards a legacy nonempty count drop and permits --force", () => {
@@ -979,4 +979,22 @@ it('retains released historical rows omitted by a newer quarterly run',()=>{
  expect(JSON.parse(readFileSync(path.join(repo,'history/2026.json'),'utf8'))).toEqual([old]);
  expect(JSON.parse(readFileSync(path.join(repo,'history/companies.json'),'utf8')).some((r:any)=>r.id==='OLD.US')).toBe(true);
  expect(JSON.parse(readFileSync(path.join(repo,'history/index.json'),'utf8')).perYear['2026'].analysed).toBe(1);
+});
+
+it('prices keeps all 87 quarterly views, deferred views, annual views and history bytes', async () => {
+ const {publishViews}=await import('@/lib/value/publish-views');
+ const repo=directory(), a=analysis(), files=output([a]);
+ const quarters=Array.from({length:87},(_,i)=>`${2005+Math.floor(i/4)}Q${i%4+1}`);
+ files['history/index.json']={years:[2018],quarters,perYear:{},perQuarter:{}};
+ for(const q of quarters)files[`history/${q}.json`]=[[a.id,'PPPPP',.8,true,1]];
+ files['history/2018.json']=[[a.id,'FFFFF',.1,false,1]];
+ const views=structuredClone(publishViews(files));
+ writeOutput({repo,files});
+ const history=readFileSync(path.join(repo,'history/index.json'),'utf8');
+ await refreshPrices({repo,companies:[a.company],now:Date.parse('2026-10-04'),bulk:async()=>[{code:'KO',close:50,date:'2026-10-02'}]});
+ const meta=JSON.parse(readFileSync(path.join(repo,'meta.json'),'utf8'));
+ expect(Object.keys(meta.views.quarters)).toHaveLength(87);
+ for(const key of ['quarters','quarterDeferred','years','yearDeferred'])expect(meta.views[key]).toEqual(views[key as keyof typeof views]);
+ expect(readFileSync(path.join(repo,'history/index.json'),'utf8')).toBe(history);
+ for(const q of quarters)expect(existsSync(path.join(repo,meta.views.quarters[q]))).toBe(true);
 });

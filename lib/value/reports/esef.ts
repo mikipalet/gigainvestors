@@ -1,3 +1,4 @@
+import { reportRequest } from './transport';
 import { esefHeadingText } from "./esef-headings";
 import { createLimiter, fetchWithRetry } from "../http";
 import type { SectionKey } from "../types";
@@ -6,7 +7,7 @@ import { SECTION_TOKENS, truncateTokens } from "./cut-sections";
 const limit = createLimiter({ perSecond: 3 });
 
 export async function fetchEsef(url: string): Promise<Response> {
-  const response = await fetchWithRetry(url, { beforeAttempt: () => limit(async () => {}) });
+  const response = await fetchWithRetry(url, { fetcher: reportRequest as typeof fetch, retryNetworkErrors: true, beforeAttempt: () => limit(async () => {}) });
   if (!response.ok) throw new Error(`ESEF request failed (${response.status})`);
   return response;
 }

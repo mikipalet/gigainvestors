@@ -1,22 +1,13 @@
-import { VALUE_DATA_TAG, VALUE_DATA_URL, validQuote } from './data-source';
+import { validQuote } from './data-source';
 import { dossierReturn } from './presentation';
-import { readJsonFile } from '@/lib/blob';
-import path from "node:path";
+import { readPublishedBytes } from './published-source';
 import { shardOf } from "./shard";
 import type { Dossier, Id, IndexRow, PriceMap, StoreMeta } from "./types";
 import { publicAnalysis } from './public-analysis';
 
-export async function readStore<T>(file: string, revalidate = 86400): Promise<T | null> {
-  if (!/^[a-zA-Z0-9_&./-]+\.json$/.test(file) || file.split("/").includes("..") || file.startsWith("/")) {
-    throw new Error("Invalid value store path");
-  }
-  if (process.env.VALUE_STORE_DIR) return readJsonFile<T>(path.join(process.env.VALUE_STORE_DIR,file), {missingOnly:true});
-  const response = await fetch(`${VALUE_DATA_URL}${file}`, {
-    next: { revalidate, tags:[VALUE_DATA_TAG] }, signal: AbortSignal.timeout(30_000),
-  });
-  if (response.status === 404) return null;
-  if (!response.ok) throw new Error(`Value store returned ${response.status}`);
-  return await response.json() as T;
+export async function readStore<T>(file: string, revalidate = 300): Promise<T | null> {
+  const bytes = await readPublishedBytes(file, revalidate);
+  return bytes === null ? null : JSON.parse(new TextDecoder().decode(bytes)) as T;
 }
 
 export const getMeta = () => readStore<StoreMeta>("meta.json");

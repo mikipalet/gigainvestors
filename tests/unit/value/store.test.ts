@@ -1,5 +1,7 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { getCountryIndex, getDefaultIndex, getDossier, getMeta, getPrice, getTopIds, readStore } from "@/lib/value/store";
+
+beforeEach(()=>vi.stubEnv("VALUE_DATA_PUBLIC_FALLBACK","1"));
 
 afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
@@ -32,7 +34,7 @@ describe("value store", () => {
     const fetch = vi.fn(async () => new Response('{}'));
     vi.stubGlobal("fetch", fetch);
     await readStore("meta.json");
-    expect(fetch).toHaveBeenCalledWith(expect.any(String), expect.objectContaining({next:{revalidate:86400,tags:['value-data']}}));
+    expect(fetch).toHaveBeenCalledWith(expect.any(String), expect.objectContaining({next:{revalidate:300,tags:['value-data']}}));
   });
   it("rejects paths outside the store", async () => {
     vi.stubEnv("VALUE_STORE_DIR", "tests/fixtures/value/store");

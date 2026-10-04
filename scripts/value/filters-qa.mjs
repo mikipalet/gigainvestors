@@ -10,7 +10,7 @@ const browser=await chromium.launch(),report=[],timings=[];
 try{for(const [width,height]of sizes)for(const path of paths.split(',')){
  disk();const page=await browser.newPage({viewport:{width,height},hasTouch:width<500});const errors=[];page.on('pageerror',e=>errors.push(String(e)));
  // The browser uses the same local release snapshot as the server.
- if(process.env.VALUE_STORE_DIR)await page.route('https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/**',route=>{const file=new URL(route.request().url()).pathname.split('/main/')[1];try{return route.fulfill({contentType:'application/json',body:readFileSync(`${process.env.VALUE_STORE_DIR}/${file}`)});}catch{return route.fulfill({status:404,body:'{}'});}});
+ if(process.env.VALUE_STORE_DIR)await page.route('**/data/v/**',route=>{const file=new URL(route.request().url()).pathname.split('/data/v/')[1];try{return route.fulfill({contentType:'application/json',body:readFileSync(`${process.env.VALUE_STORE_DIR}/${file}`)});}catch{return route.fulfill({status:404,body:'{}'});}});
  await page.goto(base+path,{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);await page.addStyleTag({content:'nextjs-portal{display:none!important}'});
  await page.evaluate(()=>{
   window.filterTimings=[];

@@ -171,7 +171,7 @@ For a preview based on the existing live publication instead of the corpus:
 immutable copy of the current live publication and records its commit provenance.
 Use an empty output directory. It makes no provider calls and does not mutate the
 corpus or data repository. Serve that directory to both the server
-(`VALUE_STORE_DIR`) and browser (`NEXT_PUBLIC_VALUE_DATA_URL`) when building QA.
+(`VALUE_STORE_DIR`) and browser (same-origin `/data/v/`) when building QA.
 ### Italy: Milan / Growth Milan from ESEF
 
 ```sh

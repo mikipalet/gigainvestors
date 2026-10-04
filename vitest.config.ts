@@ -5,5 +5,5 @@ export default defineConfig({
   // Runner integration tests launch real Node processes. Keep other test files
   // from competing with them for CPU under the existing five-second deadline.
   test: { environment: "node", include: ["tests/unit/**/*.test.ts"], maxWorkers: 1 },
-  resolve: { alias: { "@": path.resolve(__dirname) } },
+  resolve: { alias: { "@": path.resolve(__dirname), "server-only": path.resolve(__dirname, "node_modules/next/dist/compiled/server-only/empty.js") } },
 });

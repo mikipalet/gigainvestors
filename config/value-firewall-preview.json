@@ -1,0 +1,129 @@
+[
+  {
+    "name": "Value: agent and paid routes (preview)",
+    "active": true,
+    "conditionGroup": [
+      {
+        "conditions": [
+          {
+            "type": "environment",
+            "op": "eq",
+            "value": "preview"
+          },
+          {
+            "type": "path",
+            "op": "re",
+            "value": "^/(?:api/v1(?:/|$)|api/value/revalidate(?:/|$)|\\.well-known/x402(?:/|$)|(?:value/)?(?:llms(?:-full)?\\.txt|robots\\.txt|sitemap\\.xml|sitemaps(?:/|$)|mcp(?:\\.json)?(?:/|$)|md(?:/|$)))|\\.md$"
+          }
+        ]
+      }
+    ],
+    "action": {
+      "mitigate": {
+        "action": "bypass"
+      }
+    }
+  },
+  {
+    "name": "Value: verified bots (preview)",
+    "active": true,
+    "conditionGroup": [
+      {
+        "conditions": [
+          {
+            "type": "environment",
+            "op": "eq",
+            "value": "preview"
+          },
+          {
+            "type": "bot_status",
+            "op": "eq",
+            "value": "verified"
+          }
+        ]
+      }
+    ],
+    "action": {
+      "mitigate": {
+        "action": "bypass"
+      }
+    }
+  },
+  {
+    "name": "Value: bulk requests (preview)",
+    "active": true,
+    "conditionGroup": [
+      {
+        "conditions": [
+          {
+            "type": "environment",
+            "op": "eq",
+            "value": "preview"
+          },
+          {
+            "type": "path",
+            "op": "pre",
+            "value": "/data/"
+          },
+          {
+            "type": "method",
+            "op": "inc",
+            "value": [
+              "GET",
+              "HEAD"
+            ]
+          }
+        ]
+      },
+      {
+        "conditions": [
+          {
+            "type": "environment",
+            "op": "eq",
+            "value": "preview"
+          },
+          {
+            "type": "path",
+            "op": "re",
+            "value": "^/(?:api|_next|faces|data)(?:/|$)",
+            "neg": true
+          },
+          {
+            "type": "path",
+            "op": "re",
+            "value": "^/(?:api/v1(?:/|$)|api/value/revalidate(?:/|$)|\\.well-known/x402(?:/|$)|(?:value/)?(?:llms(?:-full)?\\.txt|robots\\.txt|sitemap\\.xml|sitemaps(?:/|$)|mcp(?:\\.json)?(?:/|$)|md(?:/|$)))|\\.md$",
+            "neg": true
+          },
+          {
+            "type": "path",
+            "op": "re",
+            "value": "\\.(?:css|js|map|png|jpe?g|svg|ico|webp|avif|gif|woff2?|json|txt|xml|pdf|webmanifest)$",
+            "neg": true
+          },
+          {
+            "type": "method",
+            "op": "inc",
+            "value": [
+              "GET",
+              "HEAD"
+            ]
+          }
+        ]
+      }
+    ],
+    "action": {
+      "mitigate": {
+        "action": "rate_limit",
+        "rateLimit": {
+          "algo": "fixed_window",
+          "window": 60,
+          "limit": 120,
+          "keys": [
+            "ip"
+          ],
+          "action": "log"
+        }
+      }
+    }
+  }
+]

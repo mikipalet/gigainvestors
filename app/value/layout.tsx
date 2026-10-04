@@ -1,3 +1,4 @@
+import { VALUE_PRODUCT_NAME, VALUE_PRODUCT_DESCRIPTION } from '@/lib/value/brand';
 import './value.css';
 import './one-screen.css';
 import './round-seven.css';
@@ -19,8 +20,10 @@ import './density.css';
 import { BottomBar } from '@/components/value/BottomBar';
 import type { Metadata } from 'next';
 export const metadata: Metadata = {
-  metadataBase: new URL('https://value.gigainvestors.com'), title: 'Buffett checklist | GigaInvestors',
-  description: '5 quality tests + price of business quality and price, with financial history and report evidence.',
+  metadataBase: new URL('https://value.gigainvestors.com'), title: `${VALUE_PRODUCT_NAME} | GigaInvestors`,
+  description: VALUE_PRODUCT_DESCRIPTION,
+  openGraph: { title: `${VALUE_PRODUCT_NAME} | GigaInvestors`, description: VALUE_PRODUCT_DESCRIPTION, siteName: VALUE_PRODUCT_NAME, url: 'https://value.gigainvestors.com' },
+  twitter: { card: 'summary_large_image', title: VALUE_PRODUCT_NAME, description: VALUE_PRODUCT_DESCRIPTION },
 };
 export default async function ValueLayout({ children }: { children: React.ReactNode }) {
   return <main className="value-viz value-page">

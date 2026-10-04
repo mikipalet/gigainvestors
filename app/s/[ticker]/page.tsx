@@ -1,6 +1,9 @@
+import { humanVerdict } from '@/lib/value/judgement/apply';
+import { QUALITY_TESTS } from '@/lib/value/types';
+import { T } from '@/lib/value/config';
 import { getDossier, getPrice } from "@/lib/value/store";
 import { comparableValuation } from "@/lib/value/site-valuation";
-import { priceState } from "@/lib/value/presentation";
+import { priceState, priceValue } from "@/lib/value/presentation";
 import { notFound } from "next/navigation";
 import { getAllStockTickers, getIndex, getStock } from "@/lib/data";
 import { StockContent } from "@/components/AgentContent";
@@ -37,12 +40,14 @@ export default async function Page(props: { params: Promise<{ ticker: string }> 
   const dossier=await getDossier(`${ticker}.US`);
   const quote=dossier?await getPrice(dossier.id,dossier.company.country):null;
   const range=dossier?comparableValuation(dossier.valuation,dossier.company.currency):null;
-  const passing=dossier?Object.values(dossier.tests).filter(t=>t.key!=='price'&&t.result==='pass').length+(priceState({price:quote?.[0]??null,mid:range?.perShare.mid??null,b:dossier.b}).state==='pass'?1:0):null;
+  const qualityPassing=dossier?QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='pass').length:0;
+  const price=priceState({price:quote?.[0]??null,mid:range?.perShare.mid??null,b:dossier?.b});
+  const verdict=dossier?(dossier.status==='insufficient_data'||dossier.historyCoverage&&dossier.historyCoverage.years<T.minYears?'Not enough history yet':humanVerdict(dossier,Boolean(dossier.b),Boolean(range&&quote),priceValue({price:quote?.[0]??null,mid:range?.perShare.mid??null}))):'';
   const people = Object.fromEntries(index.investors.map((i) => [i.code, i.person]));
   return (
     <>
       <StockContent stock={stock} people={people} />
-      <Stock stock={stock} investors={investors} checklist={passing!==null?{id:dossier!.id,passing}:undefined} />
+      <Stock stock={stock} investors={investors} checklist={dossier?{id:dossier.id,verdict,detail:`${qualityPassing} of ${QUALITY_TESTS.length} quality tests pass; price check: ${price.state==='pass'?'passes':price.state==='unclear'?'unavailable':'does not pass'}.`}:undefined} />
     </>
   );
 }

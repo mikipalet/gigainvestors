@@ -1,4 +1,5 @@
 "use client";
+import { VALUE_PRODUCT_NAME } from '@/lib/value/brand';
 
 import Link from "next/link";
 import { useMemo } from "react";
@@ -14,7 +15,7 @@ import { useQuarter } from "@/lib/use-quarter";
 
 type Meta = Record<string, { slug: string; person: string; sketch: boolean }>;
 
-export function Stock({ stock, investors, checklist }: { stock: StockData; investors: Meta; checklist?: {id:string;passing:number} }) {
+export function Stock({ stock, investors, checklist }: { stock: StockData; investors: Meta; checklist?: {id:string;verdict:string;detail:string} }) {
   const quarters = useMemo(() => stock.quarters.map((x) => x.q), [stock]);
   const lastHeld = useMemo(() => {
     for (let i = stock.quarters.length - 1; i >= 0; i--) {
@@ -103,7 +104,7 @@ export function Stock({ stock, investors, checklist }: { stock: StockData; inves
                 </span>
               )}
             </div>
-            {checklist&&<p className="mt-1 text-[12px] opacity-60"><a href={`https://value.gigainvestors.com/${checklist.id.toLowerCase()}`}>Buffett checklist: passes {checklist.passing} of 6 →</a></p>}
+            {checklist&&<p className="mt-1 text-[12px] opacity-60"><a href={`https://value.gigainvestors.com/${checklist.id.toLowerCase()}`} title={checklist.detail}>{VALUE_PRODUCT_NAME}: {checklist.verdict} →</a></p>}
             <div className="mt-2 flex items-center gap-4">
               <span className="inline-flex items-center gap-1.5 text-buy">
                 <span className="add-strong inline-block h-[10px] w-[14px] rounded-[1px]" />

@@ -72,17 +72,16 @@ const DossierBody=memo(function DossierBody({dossier,quote=null,children,holders
  const owner=ownerReturn(valuation,company.currency,company.marketCapUsd,quote?.[0]??null);
  const coveredCopy=cashCoveredReturnCopy(valuation,company.currency,quote?.[0]??null);
  const ownerCopy=owner?expectedReturnCopy(owner,valuation,company.country):coveredCopy|| (valuation?.method==='book_value'?`This financial business uses a book-value estimate; ${requiredReturnCopy(valuation,company.country)}.`:'');
- const referenceRow=comparable?<section className="reference-metrics" aria-label="Key numbers">
-  {quote&&<span>Share price <b>{sharePrice(quote[0],company.currency)}</b></span>}
-
-  <span>Buy below <b>{sharePrice(comparable?comparable.perShare.mid*(1-requiredMos):null,company.currency)}</b></span>
-  <span title={ownerCopy}>{coveredCopy?<>Excess cash covers price · no finite IRR</>:<>About <b>{owner?pct(owner.expected):'—'}</b> a year at today's price (needs {pct(valuation!.discountRate)})</>}</span>
- </section>:<section className="reference-metrics" aria-label="Key numbers">
-  {quote&&<span>Share price <b>{sharePrice(quote[0],company.currency)}</b></span>}
-  <span>Quality tests <b>{QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='pass').length} / 5 pass</b></span>
-  <span>Annual history <b>{dossier.historyCoverage?.years??'—'} years</b></span>
-  {company.marketCapUsd!=null&&<span>Market value <b>{formatMetric({value:company.marketCapUsd,format:'money',currency:'USD'})}</b></span>}
- </section>;
+ const referenceRow=comparable?<dl className="reference-metrics" aria-label="Key numbers">
+  {quote&&<div><dt>Share price</dt><dd><b>{sharePrice(quote[0],company.currency)}</b></dd></div>}
+  <div><dt>Buy below</dt><dd><b>{sharePrice(comparable.perShare.mid*(1-requiredMos),company.currency)}</b></dd></div>
+  <div title={ownerCopy}><dt>Expected / yr</dt><dd>{coveredCopy?<>Excess cash covers price · no finite IRR</>:<><b>{owner?pct(owner.expected):'—'}</b> at today's price (needs {pct(valuation!.discountRate)})</>}</dd></div>
+ </dl>:<dl className="reference-metrics" aria-label="Key numbers">
+  {quote&&<div><dt>Share price</dt><dd><b>{sharePrice(quote[0],company.currency)}</b></dd></div>}
+  <div><dt>Quality tests</dt><dd><b>{QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='pass').length} / 5 pass</b></dd></div>
+  <div><dt>Annual history</dt><dd><b>{dossier.historyCoverage?.years??'—'} years</b></dd></div>
+  {company.marketCapUsd!=null&&<div><dt>Market value</dt><dd><b>{formatMetric({value:company.marketCapUsd,format:'money',currency:'USD'})}</b></dd></div>}
+ </dl>;
  const failed=QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='fail');
 
  const shortHistory=dossier.historyCoverage && dossier.historyCoverage.years<T.minYears;

@@ -9,7 +9,7 @@ it('keeps listing venue and currency explicit without guessing a US exchange',()
  expect(listingDetails({id:'600809.SHG',c:'CN'})).toMatchObject({exchange:'Shanghai',note:'A-shares · check access'});
  expect(listingDetails({id:'6378.JP',c:'JP'})).toMatchObject({exchange:'Tokyo',note:'check broker access'});
  expect(sharePrice(null,'USD')).toBe('');
- expect(sharePrice(12.56,'USD')).toBe('USD 12.56');
+ expect(sharePrice(12.56,'USD')).toBe('$12.56');
 });
 it('draws the passing region below a lower-is-better threshold and above a higher-is-better threshold',()=>{
  for(const better of ['lower','higher'] as const){

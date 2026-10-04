@@ -7,12 +7,13 @@ import {comparableValuation} from '@/lib/value/site-valuation';
 import {priceValue,companyName} from '@/lib/value/presentation';
 import {ownerReturn,expectedReturnCopy,requiredReturnCopy} from '@/lib/value/owner-return';
 import {primaryTileMetric} from '@/lib/value/tile-metric';
-import {metricLabels,formatMetric} from '@/lib/value/metric-labels';
+import {metricLabels,formatMetric,isCapitalReturn} from '@/lib/value/metric-labels';
+import {sharePrice} from '@/lib/value/listing-details';
 import {T} from '@/lib/value/config';
 import {companyUrl,investorUrl} from './urls';
-import {number,percent} from './format';
+import {percent} from './format';
 export {cell,number,percent} from './format';
-const money = (n: number,currency: string) => `${currency} ${number(n)} per share`;
+const money = (n: number,currency: string) => `${sharePrice(n,currency)} per share`;
 export function companyMarkdown(d: Dossier, quote: PriceMap[string]|null, summary=false): string {
  const range=comparableValuation(d.valuation,d.company.currency), ratio=priceValue({price:quote?.[0]??null,mid:range?.perShare.mid??null});
  const owner=ownerReturn(d.valuation,d.company.currency,d.company.marketCapUsd,quote?.[0]??null);
@@ -27,14 +28,14 @@ export function companyMarkdown(d: Dossier, quote: PriceMap[string]|null, summar
  `## Checklist`,...QUALITY_TESTS.flatMap(k=>{
   const test=d.tests[k]!,metric=primaryTileMetric(test,d.company.kind,d.tests.understandable.series.netIncome??d.series.netIncome);
   return [`### ${k}: ${test.result}`, ...test.reasons.map(r=>`- ${r}`),
-   ...(!summary?Object.entries(test.metrics).flatMap(([id,v])=>{const label=metricLabels[id];return v!==null&&Number.isFinite(v)&&label?[`- ${label.label}: ${formatMetric({value:v,format:label.format,currency:d.reportingCurrency??d.company.currency})}`]:[];}):[]),
-   ...(!summary&&metric.series.length?[`Chart: ${metric.chart}; fiscal year observations.`,...metric.series.flatMap(([fy,v])=>v!==null&&Number.isFinite(v)?[`- ${observationLabel(fy,test.provisional)}: ${formatMetric({value:v,format:metric.chartFormat==='index'?'count':metric.chartFormat==='ratio'?'x':metric.chartFormat??metric.format,currency:d.reportingCurrency??d.company.currency})}`]:[])]:[])];
+   ...(!summary?Object.entries(test.metrics).flatMap(([id,v])=>{const label=metricLabels[id];return v!==null&&Number.isFinite(v)&&label?[`- ${label.label}: ${formatMetric({value:v,format:label.format,currency:d.reportingCurrency??d.company.currency,returnRatio:isCapitalReturn(id)})}`]:[];}):[]),
+   ...(!summary&&metric.series.length?[`Chart: ${metric.chart}; fiscal year observations.`,...metric.series.flatMap(([fy,v])=>v!==null&&Number.isFinite(v)?[`- ${observationLabel(fy,test.provisional)}: ${formatMetric({value:v,format:metric.chartFormat==='index'?'count':metric.chartFormat==='ratio'?'x':metric.chartFormat??metric.format,currency:d.reportingCurrency??d.company.currency,returnRatio:isCapitalReturn(metric.chart)})}`]:[])]:[])];
  }),
  `## Holders`,...d.holders.map(h=>`- [${h.name}](${investorUrl(h.code)}): tracked 13F investor; follow the investor page for holding quarter and amounts.`),
- `## Price story`,...(d.priceStory?[d.priceStory.line,`Story as of ${d.priceStory.asOf}; price observation ${d.priceStory.priceDate??d.priceStory.asOf}.`,...(d.priceStory.needs?[d.priceStory.needs]:[]),...d.priceStory.events.map(e=>`- ${e.date}: ${e.text} ([${e.source}](${e.url}))`),...(!summary?d.priceStory.facts?.flatMap(f=>[`### ${f.label}`,`${f.text}; source ${f.url}; observed ${f.date}.`,...f.points.flatMap(([fy,v])=>v===null?[]:[`- FY${fy}: ${f.unit==='percent'?percent(v):`${d.reportingCurrency??d.company.currency} ${number(v)}`} `])])??[]:[])]:[]),
+ `## Price story`,...(d.priceStory?[d.priceStory.line,`Story as of ${d.priceStory.asOf}; price observation ${d.priceStory.priceDate??d.priceStory.asOf}.`,...(d.priceStory.needs?[d.priceStory.needs]:[]),...d.priceStory.events.map(e=>`- ${e.date}: ${e.text} ([${e.source}](${e.url}))`),...(!summary?d.priceStory.facts?.flatMap(f=>[`### ${f.label}`,`${f.text}; source ${f.url}; observed ${f.date}.`,...f.points.flatMap(([fy,v])=>v===null?[]:[`- FY${fy}: ${formatMetric({value:v,format:f.unit==='percent'?'pct':'money',currency:d.reportingCurrency??d.company.currency})} `])])??[]:[])]:[]),
  `## Owner memo`,...(d.ownerMemo?[`Memo as of ${d.ownerMemo.asOf}.`,...d.ownerMemo.lines.flatMap(l=>[`### ${MEMO_QUESTIONS[l.question-1]}`,l.answer,...(!summary?l.evidence.map(e=>`- Source: ${e.url} (filed ${e.filed}); ${e.quote}`):[])])]:[]),
  ...(!summary?[`## Monthly share-price history (${d.company.currency} per share)`,...(d.priceHistory??[]).map(([date,price])=>`- ${date}: ${money(price,d.company.currency)}`),
- `## Annual estimated value (${d.company.currency} per share)`,...(d.valueHistory??[]).map(([fy,low,mid,high])=>`- FY${fy}: low ${number(low)}, central ${number(mid)}, high ${number(high)} ${d.company.currency} per share`),...(d.historyAssumptions??[])]:[]),
+ `## Annual estimated value (${d.company.currency} per share)`,...(d.valueHistory??[]).map(([fy,low,mid,high])=>`- FY${fy}: low ${money(low,d.company.currency)}, central ${money(mid,d.company.currency)}, high ${money(high,d.company.currency)}`),...(d.historyAssumptions??[])]:[]),
  `## Sources`,...(d.report.url?[`[Original ${d.report.kind} filing](${d.report.url}); period ${d.report.period??'see filing'}, filed ${d.report.filed??'see filing'}.`]:[]),
  'Estimates depend on assumptions and are not guarantees or investment advice. Underlying data remains subject to its source licenses; public reading does not grant bulk redistribution rights.',
  ];

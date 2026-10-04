@@ -1,3 +1,4 @@
+import {formatRate} from '@/lib/format';
 import type { ResultEntry } from '@/lib/value/result-entry';
 import { companyName } from './presentation';
 export type MainCompany = ReturnType<typeof mainCompanies>[number];
@@ -25,4 +26,4 @@ export function mainZones(companies:MainCompany[]){
 /** Shared premium scale: buy price at zero, +60% at the right edge. */
 export function distancePosition(ratio:number){return Math.max(0,Math.min(1,(ratio-1)/.6));}
 export const dropToBuy=(ratio:number|null)=>ratio===null?'':ratio<=1?'At buy price':`needs −${Math.round((1-1/ratio)*100)}%`;
-export const returnLabel=(value:number|null)=>value===null?'':`${value<0?'−':''}${(Math.abs(value)*100).toFixed(1)}%`;
+export const returnLabel=(value:number|null)=>value===null?'':`${value<0?'−':''}${formatRate(Math.abs(value))}`;

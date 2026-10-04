@@ -65,3 +65,12 @@
 @media(max-width:767px){.compact-company-list th,.compact-company-list td{padding:8px 3px;font-size:13px}.compact-company-list th:first-child{width:38%}.compact-company-list th:nth-child(2){width:15%}.compact-company-list th:nth-child(3){width:25%}.compact-company-list th:nth-child(4){width:22%}.compact-company-list thead button{font-size:13px;white-space:normal}.compact-company-list tbody th a{gap:5px}.compact-company-list tbody th a>span{white-space:normal}.compact-company-list .company-logo{width:22px;height:22px}.compact-needs{font-size:13px}.compact-distance{width:65px}.compact-company-list small{font-size:13px}}
 
 .investor-directory{display:block;min-height:0}.investor-directory>.paged-items{height:100%;display:flex;flex-direction:column;min-height:0}.investor-directory .paged-items>div{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}.investor-directory .paged-items>div>div{min-height:0;display:flex}.investor-directory .investor-row{width:100%;min-width:0}.investor-directory .paged-items nav{flex:none;margin-top:8px}@media(max-width:767px){.investor-directory .paged-items>div{grid-template-columns:1fr}}
+
+/* One box per drawer link: an inline fragment union can hit a neighbouring control.
+   Low specificity preserves existing flex/grid links. */
+:where(.value-page dialog) a{display:inline-block}
+/* Wrapped company names fill their table cell. */
+.method-calibration th a{display:block}
+
+/* A filing link must not wrap its hit box around the neighbouring heading. */
+.value-page dialog .filing-evidence>.filing-source{display:inline-block}

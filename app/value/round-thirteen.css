@@ -92,7 +92,7 @@
 .value-page .map-toolbar button,.value-page .map-toolbar span {font-size:14px!important;}
 .value-page .panel-content .panel-chart svg text {font-size:14px!important;}
 .value-page .paginated-results small,.value-page .table-ticker {font-size:14px;}
-body:has(.value-page) .pointer-tooltip,body:has(.value-page) .pointer-tooltip small {font-size:14px!important;}
+body:has(.value-page):not(:has(.legacy-investor)) .pointer-tooltip,body:has(.value-page):not(:has(.legacy-investor)) .pointer-tooltip small {font-size:14px!important;}
 .value-page .company-logo.company-monogram > span {font-size:14px!important;}
 .value-page .one-dossier :is(.back-link,.company-heading p,.company-about,.holder-summary,.reference-metrics b,.mini-series figcaption,.mini-dollar figcaption,.mini-dollar span,.exact-prices dt,.mini-price figcaption),.value-page .one-dossier svg text,.value-page .panel-content .mini-dollar :is(span,figcaption) {font-size:14px!important;}
 .paginated-results th:first-child > a,.paginated-results .table-ticker {display:block;line-height:1.4;}

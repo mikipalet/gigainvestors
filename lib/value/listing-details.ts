@@ -1,3 +1,4 @@
+import {currencyAmount} from '@/lib/format';
 /** Listing country, not company domicile. Never infer a US exchange from a ticker. */
 export function listingDetails(row: {id:string;c:string;exchange?:string}) {
  const suffix=row.id.split('.').at(-1)?.toUpperCase();
@@ -10,7 +11,7 @@ export function listingDetails(row: {id:string;c:string;exchange?:string}) {
  return {country,exchange,note:['SHG','SHE'].includes(suffix??'')?'A-shares · check access':['T','JP'].includes(suffix??'')?'check broker access':''};
 }
 export function sharePrice(price:number|null,currency:string) {
- return price===null?'':`${currency} ${new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(price)}`;
+ return price===null?'':currencyAmount(new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}).format(price),currency);
 }
 
 const EUROPE=new Set(['AT','BE','CH','CY','CZ','DE','DK','EE','ES','FI','FR','GR','HR','HU','IE','IS','IT','LT','LU','LV','MT','NL','NO','PL','PT','RO','SE','SI','SK']);

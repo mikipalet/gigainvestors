@@ -1,0 +1,126 @@
+/* U01–U08: original 9ebf2c7 chrome, shared by every route. Content layouts
+   (especially the legacy investor canvas) do not inherit these control rules. */
+:root {
+ --control-size:12px;
+ --control-border:color-mix(in oklab,var(--ink) 35%,transparent);
+ --control-gap:8px;
+ --page-gutter:24px;
+}
+.house-action,
+nav.site-dock .dock-tools>a,
+nav.site-dock .dock-tools>button {
+ display:inline-flex;align-items:center;justify-content:center;flex:none;
+ width:auto;height:20px;min-height:20px;padding:4px 8px;border:0;border-radius:3px;
+ font-family:var(--font-sans);font-size:var(--control-size);font-weight:400;line-height:12px;
+ color:var(--ink);background:var(--paper);box-shadow:inset 0 0 0 1px var(--control-border);
+ opacity:.5;white-space:nowrap;text-decoration:none;cursor:pointer;
+ transition:opacity 80ms;
+}
+.house-action:hover,nav.site-dock .dock-tools>:is(a,button):hover{opacity:1}
+.house-action:focus-visible,nav.site-dock :is(a,button):focus-visible{
+ outline:2px solid var(--ink);outline-offset:2px;opacity:1;
+}
+.house-action:disabled{opacity:.25;cursor:default}
+.search-key{margin-left:4px;opacity:.6}
+nav.site-dock.value-page {
+ position:fixed;inset:auto 0 0;z-index:40;
+ display:flex;flex-direction:row;align-items:center;justify-content:flex-end;
+ width:100%;max-width:none;height:48px;min-height:48px;
+ margin:0;padding:0 16px;gap:16px;border:0;
+ background:var(--paper);overflow:visible;
+}
+nav.site-dock[data-investor=true]{height:48px;min-height:48px}
+nav.site-dock #value-timeline{flex:1;min-width:0;height:48px}
+nav.site-dock #value-timeline[hidden]{display:none}
+nav.site-dock .dock-tools{display:flex;flex:none;align-items:center;justify-content:flex-end;gap:var(--control-gap);flex-wrap:wrap}
+nav.site-dock :is(a,button),nav.site-dock :is(a,button) *{text-decoration:none!important}
+nav.site-dock .house-timeline{height:48px;gap:8px}
+nav.site-dock .house-track{height:48px}
+nav.site-dock .house-steps{display:flex;order:2}
+nav.site-dock .house-steps button{width:32px;height:32px;font-size:15px}
+nav.site-dock .house-track>div:last-of-type,
+nav.site-dock .house-track>div>span{font-size:10px!important}
+nav.site-dock .timeline-source{position:absolute;left:4px;bottom:1px;font-size:9px;line-height:9px;opacity:.4;white-space:nowrap}
+/* Match each page's existing content reservation. No company/investor layout change. */
+body:not(:has(.legacy-investor)){--chrome-bottom:52px}
+body:has(.legacy-investor){--chrome-bottom:48px}
+@media(max-width:767px){
+ body:not(:has(.legacy-investor)){--chrome-bottom:70px}
+ body:has(.one-index){--chrome-bottom:84px}
+ body:has(.locks-scroll):not(:has(.company-page,.legacy-investor,.one-index)){--chrome-bottom:84px}
+ nav.site-dock.value-page{height:70px;min-height:70px;padding:0 12px 8px;gap:0;justify-content:flex-end;flex-direction:column;align-items:stretch}
+ nav.site-dock[data-timeline=true]{height:84px;min-height:84px;padding-block:0 8px}
+ body:has(.one-index) nav.site-dock{height:84px;min-height:84px}
+ nav.site-dock .dock-tools{justify-content:flex-start;gap:var(--control-gap);align-content:flex-start;min-height:48px}
+ nav.site-dock #value-timeline{flex:1;min-height:28px;height:28px}
+ nav.site-dock .house-timeline,nav.site-dock .house-track{height:28px}
+ nav.site-dock .house-track .slider{height:28px;top:0}
+ nav.site-dock .house-track>div{top:14px}
+ nav.site-dock .house-track>i{top:13px}
+ nav.site-dock .house-steps button{width:24px;height:28px}
+ nav.site-dock .timeline-source{left:0;bottom:0;font-size:8px;line-height:8px}
+ .timeline-source>span{display:none}
+}
+@media(max-width:639px){
+ body:has(.legacy-investor){--chrome-bottom:84px}
+ nav.site-dock[data-investor=true]{height:84px;min-height:84px}
+}
+@media(min-width:640px) and (max-width:767px){
+ nav.site-dock[data-investor=true]{height:48px;min-height:48px;flex-direction:row;gap:8px}
+ nav.site-dock[data-investor=true] .dock-tools{max-width:360px;gap:4px 8px}
+}
+/* Navigation-like actions share the same border, type and focus vocabulary.
+   Card hit targets, primary form submissions, and fitted company content retain
+   their dimensions and hierarchy. */
+:where(.value-page) :is(.main-more,.table-toggle,.mobile-filter-button,.business-open,.panel-shell>header>button,.select-pages button,.compact-company-list>nav button,.company-holders-panel>nav button),
+.supporting-links>a {
+ border:0;border-radius:3px;padding:4px 8px;min-height:20px;font-size:12px;line-height:12px;font-weight:400;
+ color:var(--ink);background:var(--paper);box-shadow:inset 0 0 0 1px var(--control-border);
+ opacity:.5;text-decoration:none;transition:opacity 80ms;
+}
+:where(.value-page) :is(.main-more,.table-toggle,.mobile-filter-button,.business-open,.panel-shell>header>button,.select-pages button,.compact-company-list>nav button,.company-holders-panel>nav button):hover,
+.supporting-links>a:hover{opacity:1}
+:where(.value-page) :is(button,a,input,[role=combobox]):focus-visible,
+.supporting-links>a:focus-visible {outline:2px solid var(--ink);outline-offset:2px}
+.supporting-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.design-toggle,.design-select{font-size:14px}
+.design-toggle i:after,.filter-chevron{transition-duration:80ms}
+.design-select .filter-trigger:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+/* Original editorial page scale; excludes investor and company content. */
+.value-page:has(>.method-page){padding:0}
+.editorial-page,.value-page>.method-page {
+ width:100%;max-width:640px;margin:0 auto;padding:64px var(--page-gutter) calc(var(--chrome-bottom) + 32px);
+ font-size:15px;line-height:1.625;
+}
+.editorial-page h1,.value-page>.method-page h1{font-size:22px;font-weight:600;line-height:1.3}
+.editorial-page h2,.value-page>.method-page h2{font-size:17px;font-weight:600;line-height:1.4}
+.editorial-page h3,.value-page>.method-page h3{font-size:15px;font-weight:600;line-height:1.4}
+@media(prefers-reduced-motion:reduce){.house-action,nav.site-dock *,.design-toggle i:after,.filter-chevron{transition:none}}
+
+/* U07: the drawer's visible response and exit share the control timing. */
+.value-panel .panel-shell{animation-duration:80ms}
+.value-panel[data-closing=true] .panel-shell{animation-duration:80ms}
+.value-panel::backdrop{transition-duration:80ms}
+
+/* Identical switch geometry in toolbars and drawers; a drawer may give the
+   same switch a larger row hit target without resizing its visible parts. */
+.value-page .design-toggle{font-size:14px;gap:8px}
+.value-page .design-toggle i{width:26px;height:16px;border:1px solid var(--viz-muted,#777);background:transparent}
+.value-page .design-toggle i:after{width:8px;height:8px;left:3px;top:3px;background:var(--viz-muted,#777);transition:transform 80ms}
+.value-page .design-toggle[aria-checked=true] i{border-color:var(--buy);background:var(--buy)}
+.value-page .design-toggle[aria-checked=true] i:after{transform:translateX(10px);background:var(--paper)}
+.value-page .business-section .business-open,.value-page .panel-shell>header>button{height:20px;min-height:20px;padding:4px 8px;line-height:12px;font-size:12px}
+
+nav.site-dock .timeline-source a{font:inherit}
+
+/* U11/U16: keep every forward-record field visible on narrow screens. */
+@media(max-width:767px){
+ .forward-table-scroll{overflow:visible}
+ .forward-table-scroll table,.forward-table-scroll tbody,.forward-table-scroll tr{display:block}
+ .forward-table-scroll thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .forward-table-scroll caption{display:block}
+ .forward-table-scroll tr{margin-bottom:20px}
+ .forward-table-scroll th[scope=row]{display:block;padding:8px 0}
+ .forward-table-scroll td{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;padding:8px 0;overflow-wrap:anywhere}
+ .forward-table-scroll td:before{content:attr(data-label);font-weight:500}
+}

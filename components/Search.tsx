@@ -16,10 +16,10 @@ export function loadSearchIndex() {
  }).then(index=>{rank(index,'\0');return index;}).catch(error=>{cached=undefined;throw error;});
 }
 const warm=()=>{void loadSearchIndex().catch(()=>{});};
-export function SearchTrigger({query='',className='',label='search'}:{query?:string;className?:string;label?:string;value?:boolean}) {
+export function SearchTrigger({query='',className='',label='Search'}:{query?:string;className?:string;label?:string;value?:boolean}) {
  return <button type="button" aria-label="Search" onPointerEnter={warm} onFocus={warm} onClick={()=>window.dispatchEvent(new CustomEvent('open-search',{detail:query}))}
-  className={`flex h-11 w-11 items-center justify-center rounded-[3px] bg-paper text-[17px] leading-none opacity-75 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 sm:h-auto sm:w-auto sm:px-2 sm:py-1 sm:text-[12px] sm:opacity-50 ${className}`}>
-  <span className="sm:hidden">⌕</span><span className="hidden sm:inline">{label} <span className="ml-1 opacity-60">/</span></span>
+  className={`house-action ${className}`}>
+  {label} <span className="search-key" aria-hidden="true">/</span>
  </button>;
 }
 

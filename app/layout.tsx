@@ -5,6 +5,7 @@ import { SiteSearch } from "@/components/SiteSearch";
 import "./globals.css";
 import "./value-styles";
 import "./unified.css";
+import "./controls.css";
 import { BottomBar } from "@/components/value/BottomBar";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });

@@ -8,7 +8,7 @@ import {perShareSeries} from '@/lib/value/history';
 import {emptyYear} from '@/lib/value/completeness/second-sources';
 import type {Dossier,Fundamentals,TestOutcome} from '@/lib/value/types';
 const test:TestOutcome={key:'moat',numeric:'pass',result:'pass',metrics:{roicMedian:.47,roicSecondLowest:.33,grossMarginDrop:0,totalRoicMedian:.365},series:{roic:[[2023,.45],[2024,.47],[2025,.33]],totalRoic:[[2023,.35],[2024,.38],[2025,.365]]},reasons:[],jev:[]};
-const dossier={company:{kind:'operating',currency:'USD'},report:{},series:{},tests:{understandable:{series:{}},moat:test}} as unknown as Dossier;
+const dossier={id:'AUDIT.US',company:{kind:'operating',currency:'USD'},report:{},series:{},tests:{understandable:{series:{}},moat:test}} as unknown as Dossier;
 describe('cross-surface regression',()=>{
  it('renders the same excluding-acquisitions ROIC in the tile and drawer',()=>{
   const tile=renderToStaticMarkup(React.createElement(TileNumbers,{metric:primaryTileMetric(test,'operating'),test,currency:'USD'}));
@@ -78,7 +78,7 @@ it('checks a drawer-only financial context chart against its published book seri
  const book:[[number,number]]=[[2025,10]];
  const d={...dossier,company:{...dossier.company,kind:'bank'},series:{bookPerShare:book,netIncome:[[2025,2]]},tests:{...dossier.tests,economics:{series:{bookPerShare:book}},accounting:t}} as unknown as Dossier;
  const tile:SurfaceSnapshot={text:'0 accounting warnings were found (none allowed).',numbers:[],charts:[],stats:[['accounting warnings','0'],['Passing bar','≤ 0']],table:[],windows:[],priceCharts:[]};
- const drawer:SurfaceSnapshot={...tile,text:tile.text+' ✓ 0 accounting warnings; none allowed',charts:[{label:'Tangible common book per share',series:book,format:'money',currency:'USD'}],stats:[['Tangible book / share','USD 10.0'],['Window','2025–2025']],table:[['2025','2.00','·']]};
+ const drawer:SurfaceSnapshot={...tile,text:tile.text+' ✓ 0 accounting warnings; none allowed',charts:[{label:'Tangible common book per share',series:book,format:'money',currency:'USD'}],stats:[['Tangible book / share','$10.00'],['Window','2025–2025']],table:[['2025','$2.00','·']]};
  expect(()=>auditTestSurfaces(d,t,tile,drawer)).not.toThrow();
  for(const field of ['value','currency','label']){
   const changed=structuredClone(drawer);

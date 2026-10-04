@@ -8,13 +8,13 @@ import { useMemo } from "react";
 import { effectiveActivity } from "@/components/investor-legacy/ChangeBadge";
 import { Face } from "@/components/investor-legacy/Face";
 import { PositionTile, type PositionTileData } from "@/components/investor-legacy/PositionTile";
-import { QuarterSlider } from "@/components/investor-legacy/QuarterSlider";
+import { Timeline } from "@/components/Timeline";
 import { Sparkline } from "@/components/investor-legacy/Sparkline";
 import { Treemap, type Frame } from "@/components/investor-legacy/Treemap";
 import { formatDelta, formatMoney, formatPct, plural } from "@/components/investor-legacy/format";
 import { prevQ } from "@/lib/quarters";
 import { fromWire, type InvestorWire } from "@/lib/wire";
-import { useQuarter } from "@/components/investor-legacy/use-quarter";
+import { useQuarter } from "@/lib/use-quarter";
 
 interface Props {
   wire: InvestorWire;
@@ -146,7 +146,7 @@ export function Investor({ wire, slug, sketch, holders }: Props) {
         </aside>
         <Treemap frames={frames} q={current.q} label={(d) => `${d.ticker} · ${d.name} · ${d.money} · ${d.pct}${d.since ? ` · since ${d.since}` : ""}`} className="min-h-0 w-full flex-1" render={(d, tier, rect) => <PositionTile d={d} tier={tier} rect={rect} q={q} />} />
       </div>
-      <QuarterSlider quarters={quarters} q={current.q} onChange={setQ} />
+      <Timeline quarters={quarters} q={current.q} onChange={setQ} source="13f" />
     </>
   );
 }

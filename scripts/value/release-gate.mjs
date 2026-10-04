@@ -145,7 +145,7 @@ try {
         const combo = page.getByRole('combobox', { name: label, exact: true });
         if (await combo.isVisible()) { await combo.click(); await record(`Filter ${label}`); await page.keyboard.press('Escape'); }
       }
-      await page.getByRole('button', { name: /^Search(?: companies)?$/ }).click();
+      await page.getByRole('button', { name: /^Search(?: companies)?$/, exact: true }).click();
       // Search is gigainvestors.com's shared modal: audit it as page chrome, never as a drawer.
       const searchIsSharedModal = async state => {
         if (!await page.locator('.search-modal').isVisible() || await page.locator('dialog[open]').count()) report.push({ width, height, path, state, issues: ['search must be the shared gigainvestors modal, not a drawer'] });

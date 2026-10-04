@@ -1,0 +1,19 @@
+const fs=require('fs');const path=require('path');const sharp=require('sharp');
+const root=process.argv[2]||'/Users/miki/GitHub/superinvestors-wt/value/.superpowers/sdd/2026-09-29-value/unify-1-evidence';
+const dirs=['before','before-extra','states-before','after','states-after'];const pages=['home','ha','brk','empty-investor','value','value-quarter','value-year','missing-company','all-companies','aapl','plx','spy','method','about','newsletter','newsletter-issue','privacy','404','forward','unsubscribe','munger'];
+(async()=>{for(const phase of ['before','after'])for(const width of (phase==='before'?[1728,390]:[1728,2056,1440,390])){
+ const cellW=width<768?800:width+20,cropW=cellW-20;
+ const cards=[];for(const name of pages){let p=path.join(root,phase,`${name}-${width}-bar.png`);if(!fs.existsSync(p)&&phase==='before')p=path.join(root,'before-extra',`${name}-${width}-bar.png`);if(!fs.existsSync(p))continue;const buffer=await sharp(p).resize(cropW,Math.round(140*cropW/width)).png().toBuffer();const meta=await sharp(buffer).metadata();cards.push({name,buffer,h:meta.height});}
+ const cellH=Math.max(0,...cards.map(c=>c.h))+32;const overlays=[];cards.forEach((c,i)=>{const left=i%2*cellW,top=Math.floor(i/2)*cellH;overlays.push({input:Buffer.from(`<svg width="${cropW}" height="28"><rect width="100%" height="100%" fill="#fff"/><text x="8" y="20" font-family="sans-serif" font-size="16">${phase}: ${c.name} (${width}px)</text></svg>`),left,top},{input:c.buffer,left,top:top+28});});if(cards.length)await sharp({create:{width:cellW*2,height:Math.ceil(cards.length/2)*cellH,channels:3,background:'#fff'}}).composite(overlays).png().toFile(path.join(root,`${phase}-bars-${width}.png`));
+ }
+ let html='<meta charset="utf-8"><title>Controls audit evidence</title><style>body{font:14px system-ui;margin:24px;background:#f4f2ec}article{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}img{max-width:100%;border:1px solid #ccc}figure{margin:0}details{margin:24px 0}a{color:inherit}</style><h1>Unified controls: screenshot evidence</h1>';
+ for(const dir of dirs){const d=path.join(root,dir);if(!fs.existsSync(d))continue;html+=`<details open><summary>${dir}</summary><article>`;for(const f of fs.readdirSync(d).filter(x=>x.endsWith('.png')&&!x.endsWith('-bar.png')))html+=`<figure><a href="${dir}/${f}"><img loading="lazy" src="${dir}/${f}"></a><figcaption>${f}</figcaption></figure>`;html+='</article></details>';}
+ fs.writeFileSync(path.join(root,'index.html'),html);
+ let review='<meta charset="utf-8"><title>Mapped visual change review</title><style>body{font:14px system-ui;margin:24px}section{margin:30px 0}article{display:grid;grid-template-columns:1fr 1fr;gap:20px}img{width:100%}figure{margin:0}</style><h1>Live before / candidate after</h1><p>U01–U07: chrome and controls. U08: editorial type and gutters. U09–U11: number and date formats. U12: shipped search. U16: clipping fixes. Prerequisite ui-fix-1 company changes are identified separately in the report.</p>';
+ for(const width of [1728,2056,1440,390])for(const file of fs.readdirSync(path.join(root,'after')).filter(f=>f.endsWith('-'+width+'.png')&&!f.endsWith('-bar.png'))){
+  const before=['before','before-extra','live-wide'].find(dir=>fs.existsSync(path.join(root,dir,file)));if(!before)continue;
+  const editorial=/^(about|newsletter|privacy|method|forward|unsubscribe)/.test(file),company=/^(aapl|plx|spy)/.test(file);
+  review+=`<section><h2>${file} · U01–U07${editorial?', U08, U11':''}${company?', U09–U11, U16':''}</h2><article><figure><img loading="lazy" src="${before}/${file}"><figcaption>Live Phase A</figcaption></figure><figure><img loading="lazy" src="after/${file}"><figcaption>Candidate</figcaption></figure></article></section>`;
+ }
+ fs.writeFileSync(path.join(root,'change-review.html'),review);
+})();

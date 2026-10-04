@@ -19,9 +19,10 @@ describe('visualization geometry', () => {
     expect(niceTicks([0, 43], 4)).toEqual([0, 20, 40, 60]);
   });
   it('formats compact money without losing the currency or negative sign', () => {
-    expect(compactMoney(12_500_000_000, 'USD')).toBe('USD 12.5B');
-    expect(compactMoney(-2_100_000, 'EUR')).toBe('EUR -2.10M');
-    expect(compactMoney(0, 'USD')).toBe('USD 0');
+    expect(compactMoney(12_500_000_000, 'USD')).toBe('$13B');
+    expect(compactMoney(-2_100_000, 'EUR')).toBe('EUR -2.1M');
+    expect(compactMoney(0, 'USD')).toBe('$0');
+    expect(compactMoney(-113_000_000_000, 'USD')).toBe('-$113B');
   });
   it('never connects across a missing fiscal year or null', () => {
     const path = seriesPath({ series: [[2020, 1], [2021, null], [2022, 3], [2024, 4]], x: x => x, y: y => y });

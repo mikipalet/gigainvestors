@@ -45,11 +45,27 @@ export function firstSentences(text: string, limit: number): string {
 
 export const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
 
-/** Financial compact amounts: three significant figures, with an explicit currency. */
+/** Same adaptive compact precision as the original portfolio totals. */
+export function compactNumber(value: number): string {
+  if (!Number.isFinite(value)) return 'Not reported';
+  const magnitude=Math.abs(value);
+  const [scale,suffix]=magnitude>=1e12?[1e12,'T'] as const:magnitude>=1e9?[1e9,'B'] as const:magnitude>=1e6?[1e6,'M'] as const:magnitude>=1e3?[1e3,'K'] as const:[1,''] as const;
+  const scaled=value/scale;
+  const digits=suffix==='T'?2:suffix==='K'?0:suffix?Math.abs(scaled)>=10?0:1:0;
+  return scaled.toLocaleString('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits})+suffix;
+}
+
+export function currencyAmount(number: string, currency = ''): string {
+  const sign=/^[-−]/.test(number)?number[0]:'';
+  if(currency==='USD')return `${sign}$${number.slice(sign.length)}`;
+  return currency?`${currency} ${number}`:number;
+}
+
 export function compactMoney(value: number, currency = ''): string {
   if (!Number.isFinite(value)) return 'Not reported';
-  const unit = Math.abs(value) >= 1e12 ? [1e12, 'T'] as const : Math.abs(value) >= 1e9 ? [1e9, 'B'] as const : Math.abs(value) >= 1e6 ? [1e6, 'M'] as const : Math.abs(value) >= 1e3 ? [1e3, 'K'] as const : [1, ''] as const;
-  const scaled = value / unit[0];
-  const number = scaled === 0 ? '0' : new Intl.NumberFormat('en-US', { minimumSignificantDigits: 3, maximumSignificantDigits: 3 }).format(scaled);
-  return `${currency} ${number}${unit[1]}`.trim();
+  const number=Math.abs(value)<1000?value.toLocaleString('en-US',{minimumFractionDigits:value===0?0:2,maximumFractionDigits:2}):compactNumber(value);
+  return currencyAmount(number,currency);
 }
+
+/** Financial rates retain tenths for comparisons; portfolio weights use formatPct. */
+export const formatRate = (value: number) => `${(value*100).toFixed(1)}%`;

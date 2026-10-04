@@ -3,13 +3,9 @@ import Link from "next/link";
 // One footer for every text page, so they stop drifting apart.
 export function PageFooter() {
   return (
-    <nav className="mt-6 flex flex-wrap gap-4 text-[12px] opacity-60">
-      <Link href="/">the map</Link>
-      <Link href="/about">about</Link>
-      <Link href="/newsletter">newsletter</Link>
-      <a href="/api/v1/guide">agent API</a>
-      <Link href="/privacy">privacy</Link>
-      <a href="mailto:hello@gigainvestors.com">contact</a>
+    <nav className="supporting-links" aria-label="Further reading">
+      <Link href="/about">About</Link>
+      <Link href="/privacy">Privacy</Link>
       <a href="/llms.txt">llms.txt</a>
     </nav>
   );

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {formatRate} from '@/lib/format';
 import {formatMetric,isCapitalReturn} from './metric-labels';
 import {sharePrice} from './listing-details';
 import {primaryTileMetric,tileSentence} from './tile-metric';
@@ -112,8 +113,8 @@ export function auditPriceSurfaces(d:Dossier,row:IndexRow|undefined,quote:PriceM
  contains(price,formatMetric({value:d.requiredMos??.25,format:'pct'}),`${d.id} safety margin`);
  contains(price,formatMetric({value:1-quote[0]/v.perShare.mid,format:'pct'}),`${d.id} discount`);
  if(owner){contains(price,formatMetric({value:owner.expected,format:'pct'}),`${d.id} IRR`);for(const surface of [price,drawer])contains(surface,returnModelCopy(d.valuation!,currency),`${d.id} shared IRR inputs`);}
- same(drawer.stats.slice(0,5),[['Share price',sharePrice(quote[0],currency)],['Estimated value',sharePrice(v.perShare.mid,currency)],['Buy price',sharePrice(buy,currency)],['Expected / yr',owner?`${(owner.expected*100).toFixed(1)}%`:cashCoveredReturnCopy(d.valuation,currency,quote[0])?'Cash covers price':'—'],['Required',`${(d.valuation!.discountRate*100).toFixed(1)}%`]],`${d.id} valuation key numbers`);
- const years=(d.valueHistory??[]).map(([fy,,mid])=>{const p=(d.priceHistory??[]).filter(p=>Number(p[0].slice(0,4))===fy).at(-1)?.[1];const buy=mid*(1-(d.requiredMos??.25));return [String(fy),sharePrice(p??null,currency).replace(`${currency} `,''),sharePrice(mid,currency).replace(`${currency} `,''),sharePrice(buy,currency).replace(`${currency} `,''),p!=null&&mid>0?`${(p/mid*100).toFixed(1)}%`:'—',p==null?'·':p<=buy?'✓':'×'];});
+ same(drawer.stats,[['Share price',sharePrice(quote[0],currency)],['Estimated value',sharePrice(v.perShare.mid,currency)],['Buy price',sharePrice(buy,currency)],['Expected / yr',owner?formatRate(owner.expected):cashCoveredReturnCopy(d.valuation,currency,quote[0])?'Cash covers price':'—'],['Required',formatRate(d.valuation!.discountRate)],['Safety discount',formatRate(d.requiredMos??.25)],['Price / value',formatRate(quote[0]/v.perShare.mid)]],`${d.id} valuation key numbers`);
+ const years=(d.valueHistory??[]).map(([fy,,mid])=>{const p=(d.priceHistory??[]).filter(p=>Number(p[0].slice(0,4))===fy).at(-1)?.[1];const buy=mid*(1-(d.requiredMos??.25));return [String(fy),sharePrice(p??null,currency).replace(`${currency} `,''),sharePrice(mid,currency).replace(`${currency} `,''),sharePrice(buy,currency).replace(`${currency} `,''),p!=null&&mid>0?formatRate(p/mid):'—',p==null?'·':p<=buy?'✓':'×'];});
  same(drawer.table,years,`${d.id} valuation annual table`);
  for(const r of d.valuation!.bridge.slice(0,5))contains(drawer,formatMetric({value:r.value,format:/shares/i.test(r.label)?'count':/return|CAGR/i.test(r.label)?'pct':/factor|price to book/i.test(r.label)?'x':'money',currency:d.valuation!.currency}),`${d.id} valuation input ${r.label}`);
  auditPriceChartWindows(price.priceCharts,drawer.priceCharts,d.id);

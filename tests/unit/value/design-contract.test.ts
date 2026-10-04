@@ -2,10 +2,10 @@ import { describe, it, expect } from 'vitest';
 import { dateLabel, priceState, returnDisplay } from '@/lib/value/presentation';
 import { compactMoney } from '@/lib/format';
 describe('one display contract', () => {
-  it('uses three significant figures for compact money', () => {
-    expect(compactMoney(28e9, 'USD')).toBe('USD 28.0B');
-    expect(compactMoney(483.7e6, 'USD')).toBe('USD 484M');
-    expect(compactMoney(4e9, 'USD')).toBe('USD 4.00B');
+  it('uses original portfolio precision for compact money', () => {
+    expect(compactMoney(28e9, 'USD')).toBe('$28B');
+    expect(compactMoney(483.7e6, 'USD')).toBe('$484M');
+    expect(compactMoney(4e9, 'USD')).toBe('$4.0B');
   });
   it('uses Sep everywhere', () => expect(dateLabel('2026-09-29')).toBe('29 Sep 2026'));
   it('names a known discount above the buy line Wait', () => {

@@ -8,7 +8,7 @@ it('separates quality, price and missing assessments',()=>{
  expect(checklistVerdict({t:'PUUPP'})).toBeUndefined();
 });
 it('round trips US, foreign and share-class company identities',()=>{
- for(const [id,ticker] of [['AAPL.US','AAPL'],['PLX.PA','PLX.PA'],['7203.JP','7203.JP'],['BRK.B.US','BRK.B']]){
+ for(const [id,ticker] of [['AAPL.US','AAPL'],['PLX.PA','PLX.PA'],['7203.JP','7203.JP'],['BRK.B.US','BRK.B'],['DEVL.F','DEVL.F']]){
   expect(companyPath(id)).toBe(`/s/${ticker}`);expect(dossierId(ticker)).toBe(id);
  }
 });

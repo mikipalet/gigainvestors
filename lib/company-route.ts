@@ -5,7 +5,8 @@ export function companyTicker(id: string): string {
 export function companyPath(id: string): string { return `/s/${encodeURIComponent(companyTicker(id))}`; }
 export function dossierId(ticker: string): string {
  const id=ticker.toUpperCase();
- return /\.[A-Z]{2,5}$/.test(id)?id:`${id}.US`;
+ // Frankfurt's .F is an exchange suffix; US share classes such as BRK.B are not.
+ return /\.(?:F|[A-Z]{2,5})$/.test(id)?id:`${id}.US`;
 }
 export function withQuarter(path: string, quarter?: string | null): string {
  quarter=quarter?.replace(/\s/g,'');

@@ -50,20 +50,21 @@ function largestFont(dialog:HTMLElement,property:string,fits:()=>boolean,max:num
 
 /** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted evidence. */
 export function SidePanel({ title, onClose, children, wide = false, compact = false, kind }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; compact?:boolean; kind?:string }) {
-  const [closing,setClosing]=useState(false);
-  // Paint the modal shell before mounting chart or table contents.
-  const [contentReady,setContentReady]=useState(false);
+  // Method fits with CSS alone, so its complete contents can paint immediately.
+  const [contentReady,setContentReady]=useState(kind==='method');
   // Keep modal focus/close responsive while the chart or table body mounts.
   useEffect(()=>{
     let active=true,timer:ReturnType<typeof setTimeout>|undefined;
     const frame=requestAnimationFrame(()=>{timer=setTimeout(()=>{if(active)setContentReady(true);},0);});
     return()=>{active=false;cancelAnimationFrame(frame);clearTimeout(timer);};
   },[]);
-  const timer=useRef<ReturnType<typeof setTimeout>|null>(null);
   const start=useRef<{x:number;y:number}|null>(null);
-  const close=()=>{if(closing)return;setClosing(true);timer.current=setTimeout(onClose,matchMedia('(prefers-reduced-motion: reduce)').matches?0:80);};
-  useEffect(()=>()=>{if(timer.current)clearTimeout(timer.current);},[]);
   const ref = useRef<HTMLDialogElement>(null);
+  const close=()=>{
+    // Release native modal inertness now, before another control receives a tap.
+    ref.current?.close();
+    onClose();
+  };
   useLayoutEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
     const dialog = ref.current;
@@ -186,7 +187,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     window.addEventListener('resize',schedule);
     return()=>{active=false;clearTimeout(fallback);observer.disconnect();resizeObserver.disconnect();window.removeEventListener('resize',schedule);};
   },[children,contentReady,kind]);
-  return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
+  return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.
     if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}
   }} onKeyDown={e=>{

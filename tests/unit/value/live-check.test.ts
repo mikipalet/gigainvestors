@@ -12,7 +12,7 @@ async function check(broken:string){
   const q=new URL(route.request().url()).searchParams.get('q')??'Today';
   const frame=broken==='deep-link'&&q==='2018Q3'?'Today':q;
   const buys=q==='2018Q3'?3:7;
-  return route.fulfill({contentType:'text/html',body:`<div class="one-index" data-buy-count="${buys}"></div><section class="main-view" data-frame="${frame}" aria-busy="false" data-buy-count="${broken==='rows'?0:buys}"></section><input type="range" aria-label="Quarter" aria-valuetext="${frame}" onkeydown="if(event.key==='ArrowLeft'){event.preventDefault();document.querySelector('.main-view').setAttribute('data-frame','${broken==='step'?'Today':'2026Q3'}');this.setAttribute('aria-valuetext','2026Q3');window.history.pushState({},'', '?q=2026Q3');}">`});
+  return route.fulfill({contentType:'text/html',body:`<div class="one-index" data-buy-count="${buys}"></div><section class="main-view" data-frame="${frame}" aria-busy="false" data-buy-count="${broken==='rows'?0:buys}"></section><input type="range" aria-label="Quarter" aria-valuetext="${frame.replace(/^(\d{4})Q(\d)$/,'$1 Q$2')}" onkeydown="if(event.key==='ArrowLeft'){event.preventDefault();document.querySelector('.main-view').setAttribute('data-frame','${broken==='step'?'Today':'2026Q3'}');this.setAttribute('aria-valuetext','2026 Q3');window.history.pushState({},'', '?q=2026Q3');}">`});
  });
  try{await checkTimeTravel(page,history,'https://value.test',500);}finally{await page.close();}
 }

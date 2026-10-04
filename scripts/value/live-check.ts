@@ -3,7 +3,7 @@ import {readFileSync} from 'node:fs';
 import path from 'node:path';
 import type {HistoryIndex} from '../../lib/value/time-travel';
 
-export async function checkTimeTravel(page:Page,history:HistoryIndex,url='https://value.gigainvestors.com',timeout=30_000):Promise<void>{
+export async function checkTimeTravel(page:Page,history:HistoryIndex,url='https://gigainvestors.com/value',timeout=30_000):Promise<void>{
  const latest=history.quarters?.at(-1);
  if(!latest||!history.quarters?.includes('2018Q3'))throw new Error('Live check requires quarterly history including 2018Q3');
  page.setDefaultTimeout(timeout);
@@ -12,7 +12,7 @@ export async function checkTimeTravel(page:Page,history:HistoryIndex,url='https:
  const frame=async(q:string)=>{
   await assert(view).toHaveAttribute('data-frame',q);
   await assert(view).toHaveAttribute('aria-busy','false');
-  await assert(slider).toHaveAttribute('aria-valuetext',q);
+  await assert(slider).toHaveAttribute('aria-valuetext',q.replace(/^(\d{4})Q(\d)$/,'$1 Q$2'));
   if(q!=='Today'){
    const count=history.western?.perQuarter?.[q]?.atBuy;
    if(count===undefined)throw new Error(`Missing Western quarter summary: ${q}`);
@@ -22,7 +22,7 @@ export async function checkTimeTravel(page:Page,history:HistoryIndex,url='https:
   }
  };
  const open=async(suffix:string)=>{
-  const response=await page.goto(`${url}/${suffix}`,{waitUntil:'domcontentloaded',timeout:45_000});
+  const response=await page.goto(`${url}${suffix}`,{waitUntil:'domcontentloaded',timeout:45_000});
   if(!response?.ok())throw new Error('Live page did not return success');
  };
  await open('');await frame('Today');

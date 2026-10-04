@@ -22,6 +22,13 @@ export default async function historyReturns(options:{only?:string[];limit?:numb
  await pool({items:[...ids].filter(id=>!options.only||options.only.includes(id)).slice(0,options.limit),concurrency:5,run:async id=>{
   const disk=statfsSync('/');if(disk.bavail*disk.bsize<Number(process.env.VALUE_MIN_FREE_GB??5)*1024**3)throw Error('DISK STOP: below configured free-space floor');
   const old=readCorpusJson<ReturnPrices>(`history-return-prices/${id}.json`);
+  // Cache-only publication keeps the recorded observation date, even when a
+  // daily refresh is due. A missing cache must still stop publication.
+  if(process.env.VALUE_NO_EODHD==='1'){
+   if(old)cached++;
+   else failed.push({id,reason:'Historical return cache unavailable in cache-only mode'});
+   return;
+  }
   if(!options.force&&old?.fetchedAt===day){cached++;return;}
   const delisted=readCorpusJson<{General?:{IsDelisted?:boolean}}>(`raw/eodhd/${id}.json`)?.General?.IsDelisted===true;
   const company=companies.get(id);

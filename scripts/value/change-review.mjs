@@ -13,7 +13,7 @@ const sizes = (process.env.QA_VIEWPORTS ?? '1728x970,390x844').split(',').map(s 
 const SHARED_CHROME = ['components/Search.tsx', 'components/QuarterSlider.tsx', 'components/value/BottomBar.tsx', 'components/value/SidePanel.tsx', 'app/value/side-panel.css'];
 
 const close = async page => { await page.keyboard.press('Escape'); await page.waitForTimeout(250); };
-const states = [
+const valueStates = [
   ['home', '/', async () => {}],
   ['search', '/', async page => { await page.keyboard.press('/'); await page.waitForTimeout(400); await page.keyboard.type('Wolters'); await page.waitForTimeout(1200); }],
   ['country-filter', '/', async page => { await page.getByRole('combobox', { name: 'Country', exact: true }).first().click().catch(() => {}); }],
@@ -26,9 +26,23 @@ const states = [
   ['ko-valuation', '/ko.us', async page => { await page.getByRole('button', { name: /valuation/i }).first().click(); }],
 ];
 
-async function shoot(browser, base, [width, height], [name, path, act]) {
+const mainStates=[
+ ['home','/',async()=>{}],
+ ['investor','/BRK',async()=>{}],
+ ['company','/s/AAPL',async()=>{}],
+ ['search','/',async page=>{await page.keyboard.press('/');await page.locator('.search-modal input').fill('Apple');await page.waitForTimeout(1200);}],
+ ['2018Q3','/BRK?q=2018Q3',async()=>{}],
+];
+const states=(process.env.QA_FAMILY==='main'?mainStates:valueStates).filter(([name])=>!process.env.QA_STATES||process.env.QA_STATES.split(',').includes(name));
+function mappedPath(path){
+ if(process.env.QA_FAMILY==='main')return path;
+ if(path.startsWith('/ko.us'))return path.replace('/ko.us','/s/KO');
+ return '/value'+(path==='/'?'':path);
+}
+
+async function shoot(browser, base, [width, height], [name, path, act], candidateShot=false) {
   const page = await browser.newPage({ viewport: { width, height }, hasTouch: width < 500 });
-  await page.goto(base + path, { waitUntil: 'networkidle', timeout: 90000 });
+  await page.goto(base + (candidateShot?mappedPath(path):path), { waitUntil: 'networkidle', timeout: 90000 });
   await page.addStyleTag({ content: 'nextjs-portal{display:none!important} *{animation:none!important;transition:none!important;caret-color:transparent!important}' });
   await act(page).catch(error => console.log(`${name}: ${error.message.split('\n')[0]}`));
   // Drawer data loads after the click; a fixed delay can capture a partial table
@@ -66,7 +80,7 @@ const browser = await chromium.launch();
 const report = [];
 try {
   for (const size of sizes) for (const state of states) {
-    const [before, after] = [await shoot(browser, live, size, state), await shoot(browser, candidate, size, state)];
+    const [before, after] = [await shoot(browser, live, size, state), await shoot(browser, candidate, size, state,true)];
     const share = await differingShare(before, after);
     const file = share > 0.002 ? `${out}/${size.join('x')}-${state[0]}.png` : null;
     if (file) await sideBySide(before, after, file);

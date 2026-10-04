@@ -1,0 +1,3915 @@
+[
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 3.5,
+        "delay": 0.5999999046325684,
+        "start": 1876.0999999046326,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/",
+    "name": "search-type",
+    "max": 40,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 40,
+        "processing": 0.5,
+        "delay": 0.39999961853027344,
+        "start": 2506.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 40,
+        "processing": 28.09999990463257,
+        "delay": 1,
+        "start": 2506.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keyup",
+        "duration": 24,
+        "processing": 0.3000001907348633,
+        "delay": 15.899999618530273,
+        "start": 2637.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.2999997138977051,
+        "delay": 0.3000001907348633,
+        "start": 2666.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 16.300000190734863,
+        "delay": 0.5999999046325684,
+        "start": 2666.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 0.20000028610229492,
+        "delay": 0.19999980926513672,
+        "start": 2786.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 32,
+        "processing": 14.5,
+        "delay": 0.40000009536743164,
+        "start": 2786.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.3000001907348633,
+        "delay": 0.2999997138977051,
+        "start": 2905.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 14.900000095367432,
+        "delay": 0.5999999046325684,
+        "start": 2905.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.10000038146972656,
+        "start": 3023.3999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 10.400000095367432,
+        "delay": 0.3000001907348633,
+        "start": 3023.3999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/",
+    "name": "search-close",
+    "max": 48,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 48,
+        "processing": 1.0999999046325684,
+        "delay": 0.19999980926513672,
+        "start": 3656.0999999046326
+      },
+      {
+        "name": "keyup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 20.09999990463257,
+        "start": 3661.699999809265,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/",
+    "name": "quarter",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 2.299999713897705,
+        "delay": 0.40000009536743164,
+        "start": 4215.599999904633,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      },
+      {
+        "name": "keyup",
+        "duration": 24,
+        "processing": 1.5,
+        "delay": 12.800000190734863,
+        "start": 4219.699999809265,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 4270.39999961853,
+        "duration": 52
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 4.300000190734863,
+        "delay": 0.6999998092651367,
+        "start": 2193.4000000953674,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "search-type",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 0.39999961853027344,
+        "delay": 0.20000028610229492,
+        "start": 2745.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 32,
+        "processing": 22.800000190734863,
+        "delay": 0.5999999046325684,
+        "start": 2745.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 0.09999990463256836,
+        "start": 2871.4000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 13,
+        "delay": 0.19999980926513672,
+        "start": 2871.4000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.2999997138977051,
+        "delay": 0.10000038146972656,
+        "start": 2991.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.099999904632568,
+        "delay": 0.40000009536743164,
+        "start": 2991.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.20000028610229492,
+        "start": 3103.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8.200000286102295,
+        "delay": 0.40000009536743164,
+        "start": 3103.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.4000000953674316,
+        "delay": 0.2999997138977051,
+        "start": 3840.800000190735
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 9,
+        "start": 3843.300000190735,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "drawer-open",
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 0.6999998092651367,
+        "delay": 2.5,
+        "start": 4417.200000286102,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0,
+        "delay": 3.8000001907348633,
+        "start": 4417.400000095367,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 26.5,
+        "delay": 3.9000000953674316,
+        "start": 4417.400000095367,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 4543.400000095367,
+        "duration": 57
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 4.100000381469727,
+        "delay": 0.39999961853027344,
+        "start": 1813.4000000953674,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "search-type",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.5,
+        "delay": 0.09999990463256836,
+        "start": 2367,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8.099999904632568,
+        "delay": 0.5999999046325684,
+        "start": 2367,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2480.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.599999904632568,
+        "delay": 0.5,
+        "start": 2480.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.10000038146972656,
+        "delay": 0.2999997138977051,
+        "start": 2594.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8,
+        "delay": 0.40000009536743164,
+        "start": 2594.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "search-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "drawer-open",
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 1,
+        "delay": 3.1999998092651367,
+        "start": 3988.5999999046326,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 5.700000286102295,
+        "start": 3988.699999809265,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 23.800000190734863,
+        "delay": 5.900000095367432,
+        "start": 3988.699999809265,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 4058.9000000953674,
+        "duration": 82
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/PLX.PA",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 4.5,
+        "delay": 0.5,
+        "start": 1764.1999998092651,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/PLX.PA",
+    "name": "search-type",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.5,
+        "delay": 0.5999999046325684,
+        "start": 2324.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 12.700000286102295,
+        "delay": 1.0999999046325684,
+        "start": 2324.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.19999980926513672,
+        "start": 2441.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.5,
+        "delay": 0.39999961853027344,
+        "start": 2441.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.10000038146972656,
+        "start": 2672.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 6.300000190734863,
+        "delay": 0.3000001907348633,
+        "start": 2672.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.10000038146972656,
+        "delay": 0.39999961853027344,
+        "start": 2785.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.799999713897705,
+        "delay": 0.5,
+        "start": 2785.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/PLX.PA",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.3000001907348633,
+        "delay": 0.3000001907348633,
+        "start": 3404.699999809265
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 2.5999999046325684,
+        "start": 3407,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/PLX.PA",
+    "name": "drawer-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.6999998092651367,
+        "delay": 3.0999999046325684,
+        "start": 3957.4000000953674,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 4.699999809265137,
+        "start": 3957.5,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 13.199999809265137,
+        "delay": 4.800000190734863,
+        "start": 3957.5,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 4011.199999809265,
+        "duration": 63
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/PLX.PA",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/PLX.PA",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "search-open",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 8.900000095367432,
+        "delay": 0.40000009536743164,
+        "start": 1773.0999999046326,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "search-type",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.5999999046325684,
+        "delay": 0.10000038146972656,
+        "start": 2332.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.599999904632568,
+        "delay": 0.7000002861022949,
+        "start": 2332.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 0.3000001907348633,
+        "start": 2442.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 10.300000190734863,
+        "delay": 0.40000009536743164,
+        "start": 2442.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.19999980926513672,
+        "start": 2777.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 6.699999809265137,
+        "delay": 0.40000009536743164,
+        "start": 2777.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.6999998092651367,
+        "delay": 0.3000001907348633,
+        "start": 3396.5
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "drawer-open",
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.7999997138977051,
+        "delay": 3.0999999046325684,
+        "start": 3956.300000190735,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 4.599999904632568,
+        "start": 3956.4000000953674,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 17.300000190734863,
+        "delay": 4.799999713897705,
+        "start": 3956.4000000953674,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 4022.800000190735,
+        "duration": 98
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "quarter",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 3,
+        "delay": 0.39999961853027344,
+        "start": 5040.300000190735
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/BRK",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 4.900000095367432,
+        "delay": 0.40000009536743164,
+        "start": 1624.1999998092651,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 16.300000190734863,
+        "start": 1630.2999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/BRK",
+    "name": "search-type",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.5999999046325684,
+        "delay": 0.09999990463256836,
+        "start": 2194.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8.200000286102295,
+        "delay": 0.6999998092651367,
+        "start": 2194.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.20000028610229492,
+        "delay": 0.19999980926513672,
+        "start": 2307.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 14.199999809265137,
+        "delay": 0.40000009536743164,
+        "start": 2307.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.2999997138977051,
+        "delay": 0.09999990463256836,
+        "start": 2424.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 13.300000190734863,
+        "delay": 0.39999961853027344,
+        "start": 2424.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.3000001907348633,
+        "start": 2540.8999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.5,
+        "delay": 0.5,
+        "start": 2540.8999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0,
+        "start": 2654.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.800000190734863,
+        "delay": 0.19999980926513672,
+        "start": 2654.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/BRK",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.299999713897705,
+        "delay": 0.09999990463256836,
+        "start": 3278
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/BRK",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": [
+      {
+        "start": 3827.0999999046326,
+        "duration": 54
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 3.6999998092651367,
+        "delay": 0.5,
+        "start": 1991.6999998092651,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/",
+    "name": "search-type",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.3000001907348633,
+        "delay": 0.2999997138977051,
+        "start": 2560.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 10.199999809265137,
+        "delay": 0.5999999046325684,
+        "start": 2560.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 0.20000028610229492,
+        "start": 2673.3999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 13.599999904632568,
+        "delay": 0.3000001907348633,
+        "start": 2673.3999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.20000028610229492,
+        "delay": 0.2999997138977051,
+        "start": 2789.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 16.40000009536743,
+        "delay": 0.5,
+        "start": 2789.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.2999997138977051,
+        "start": 2912.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 10.800000190734863,
+        "delay": 0.5999999046325684,
+        "start": 2912.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.3000001907348633,
+        "start": 3025.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.300000190734863,
+        "delay": 0.5,
+        "start": 3025.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/",
+    "name": "search-close",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 1.200000286102295,
+        "delay": 0.39999961853027344,
+        "start": 3649.5
+      },
+      {
+        "name": "keyup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 8.099999904632568,
+        "start": 3655,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/",
+    "name": "quarter",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 4.799999713897705,
+        "delay": 0.3000001907348633,
+        "start": 4187.799999713898,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 4225.099999904633,
+        "duration": 74
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 3.5999999046325684,
+        "delay": 0.40000009536743164,
+        "start": 2173.300000190735,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 16.700000286102295,
+        "start": 2178.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "search-type",
+    "max": 40,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 40,
+        "processing": 0.5999999046325684,
+        "delay": 0.3000001907348633,
+        "start": 2750.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 40,
+        "processing": 21.700000286102295,
+        "delay": 0.9000000953674316,
+        "start": 2750.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.2999997138977051,
+        "delay": 0.20000028610229492,
+        "start": 2875.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 19.300000190734863,
+        "delay": 0.5,
+        "start": 2875.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.20000028610229492,
+        "delay": 0.19999980926513672,
+        "start": 2998.300000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 11.699999809265137,
+        "delay": 0.40000009536743164,
+        "start": 2998.300000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.19999980926513672,
+        "start": 3116.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8.299999713897705,
+        "delay": 0.40000009536743164,
+        "start": 3116.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 3227.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.799999713897705,
+        "delay": 0.5,
+        "start": 3227.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.1000003814697266,
+        "delay": 0.2999997138977051,
+        "start": 3848.300000190735
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 8,
+        "start": 3850.2000002861023,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "drawer-open",
+    "max": 72,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 72,
+        "processing": 0.7999997138977051,
+        "delay": 3.4000000953674316,
+        "start": 4416.300000190735,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      },
+      {
+        "name": "pointerup",
+        "duration": 72,
+        "processing": 0.10000038146972656,
+        "delay": 4.799999713897705,
+        "start": 4416.300000190735,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      },
+      {
+        "name": "click",
+        "duration": 72,
+        "processing": 36.39999961853027,
+        "delay": 4.900000095367432,
+        "start": 4416.300000190735,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 4660.700000286102,
+        "duration": 64
+      },
+      {
+        "start": 4770.099999904633,
+        "duration": 52
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 3.5999999046325684,
+        "delay": 0.40000009536743164,
+        "start": 1729.3999996185303,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "search-type",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.5,
+        "delay": 0.3000001907348633,
+        "start": 2281.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.5,
+        "delay": 0.8000001907348633,
+        "start": 2281.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 0.20000028610229492,
+        "start": 2400.2999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8.699999809265137,
+        "delay": 0.3000001907348633,
+        "start": 2400.2999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 0.3000001907348633,
+        "start": 2512.3999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 6.400000095367432,
+        "delay": 0.40000009536743164,
+        "start": 2512.3999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.20000028610229492,
+        "start": 2622.3999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 10.099999904632568,
+        "delay": 0.40000009536743164,
+        "start": 2622.3999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.19999980926513672,
+        "start": 2735.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.5,
+        "delay": 0.39999961853027344,
+        "start": 2735.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "search-close",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 1.4000000953674316,
+        "delay": 0.2999997138977051,
+        "start": 3358
+      },
+      {
+        "name": "keyup",
+        "duration": 24,
+        "processing": 0.20000028610229492,
+        "delay": 3.6999998092651367,
+        "start": 3360.5999999046326,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "drawer-open",
+    "max": 56,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 56,
+        "processing": 1.4000000953674316,
+        "delay": 5.5,
+        "start": 3926.7999997138977,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 56,
+        "processing": 0.10000038146972656,
+        "delay": 8.5,
+        "start": 3926.8999996185303,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 56,
+        "processing": 27.699999809265137,
+        "delay": 8.800000190734863,
+        "start": 3926.8999996185303,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 4026.3999996185303,
+        "duration": 71
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/PLX.PA",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 4.5,
+        "delay": 0.5999999046325684,
+        "start": 1704,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/PLX.PA",
+    "name": "search-type",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.6999998092651367,
+        "delay": 0.40000009536743164,
+        "start": 2262.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 11.5,
+        "delay": 1.0999999046325684,
+        "start": 2262.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2378.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 12.5,
+        "delay": 0.5,
+        "start": 2378.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2494,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 11.099999904632568,
+        "delay": 0.5,
+        "start": 2494,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.2999997138977051,
+        "delay": 0.3000001907348633,
+        "start": 2608.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.200000286102295,
+        "delay": 0.5999999046325684,
+        "start": 2608.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.20000028610229492,
+        "start": 2720.8999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 5.800000190734863,
+        "delay": 0.40000009536743164,
+        "start": 2720.8999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/PLX.PA",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.3000001907348633,
+        "delay": 0.2999997138977051,
+        "start": 3339
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 3.3000001907348633,
+        "start": 3341.2999997138977,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/PLX.PA",
+    "name": "drawer-open",
+    "max": 64,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 64,
+        "processing": 0.7999997138977051,
+        "delay": 3.5,
+        "start": 3904,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 64,
+        "processing": 0.09999990463256836,
+        "delay": 5.5,
+        "start": 3904.0999999046326,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 64,
+        "processing": 27.699999809265137,
+        "delay": 5.599999904632568,
+        "start": 3904.0999999046326,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 4012.5999999046326,
+        "duration": 63
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/PLX.PA",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/PLX.PA",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "search-open",
+    "max": 40,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 40,
+        "processing": 5.199999809265137,
+        "delay": 0.3000001907348633,
+        "start": 1736.5999999046326,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "search-type",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.9000000953674316,
+        "delay": 0.3000001907348633,
+        "start": 2308.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 13.199999809265137,
+        "delay": 1.200000286102295,
+        "start": 2308.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2425.9000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 12.400000095367432,
+        "delay": 0.5,
+        "start": 2425.9000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.2999997138977051,
+        "delay": 0.3000001907348633,
+        "start": 2542.4000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 12.099999904632568,
+        "delay": 0.5999999046325684,
+        "start": 2542.4000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.2999997138977051,
+        "start": 2658.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 6.799999713897705,
+        "delay": 0.5,
+        "start": 2658.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "search-close",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 1.700000286102295,
+        "delay": 0.5,
+        "start": 3386.0999999046326
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 2.9000000953674316,
+        "start": 3391.0999999046326,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "drawer-open",
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1,
+        "delay": 4.5,
+        "start": 3935.5999999046326,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.10000038146972656,
+        "delay": 6.299999713897705,
+        "start": 3935.800000190735,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 22.699999809265137,
+        "delay": 6.5,
+        "start": 3935.800000190735,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 4037.5,
+        "duration": 92
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/BRK",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 5.400000095367432,
+        "delay": 0.5,
+        "start": 1500.3000001907349,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 12.900000095367432,
+        "start": 1507.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/BRK",
+    "name": "search-type",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 0.20000028610229492,
+        "start": 2075.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.599999904632568,
+        "delay": 0.6000003814697266,
+        "start": 2075.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.2999997138977051,
+        "delay": 0.20000028610229492,
+        "start": 2187.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 14.100000381469727,
+        "delay": 0.5,
+        "start": 2187.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.3000001907348633,
+        "delay": 0.09999990463256836,
+        "start": 2303.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 14.300000190734863,
+        "delay": 0.40000009536743164,
+        "start": 2303.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2420.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 11.299999713897705,
+        "delay": 0.5,
+        "start": 2420.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2535.2000002861023,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 11.399999618530273,
+        "delay": 0.5,
+        "start": 2535.2000002861023,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/BRK",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1,
+        "delay": 0.3000001907348633,
+        "start": 3160.5
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.10000038146972656,
+        "delay": 3.5999999046325684,
+        "start": 3162.5,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/BRK",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/",
+    "name": "search-open",
+    "max": 40,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 40,
+        "processing": 4.799999713897705,
+        "delay": 0.5,
+        "start": 1881.3000001907349,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 16.800000190734863,
+        "start": 1888.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/",
+    "name": "search-type",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 0.9000000953674316,
+        "delay": 0.19999980926513672,
+        "start": 2465.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 32,
+        "processing": 20,
+        "delay": 1.0999999046325684,
+        "start": 2465.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2590.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 32,
+        "processing": 21.59999990463257,
+        "delay": 0.5,
+        "start": 2590.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 0.10000038146972656,
+        "start": 2714.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 15.199999809265137,
+        "delay": 0.20000028610229492,
+        "start": 2714.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.40000009536743164,
+        "delay": 0.19999980926513672,
+        "start": 2832.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 14.099999904632568,
+        "delay": 0.5999999046325684,
+        "start": 2832.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.19999980926513672,
+        "delay": 0.3000001907348633,
+        "start": 2950.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 16,
+        "delay": 0.5,
+        "start": 2950.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/",
+    "name": "search-close",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 1.1999998092651367,
+        "delay": 0.20000028610229492,
+        "start": 3579.0999999046326
+      },
+      {
+        "name": "keyup",
+        "duration": 24,
+        "processing": 0.19999980926513672,
+        "delay": 5.800000190734863,
+        "start": 3581.199999809265,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "search-open",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 2.6999998092651367,
+        "delay": 0.3000001907348633,
+        "start": 2006.0999999046326,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "search-type",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.39999961853027344,
+        "delay": 0.20000028610229492,
+        "start": 2581.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 17.300000190734863,
+        "delay": 0.5999999046325684,
+        "start": 2581.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.40000009536743164,
+        "delay": 0.20000028610229492,
+        "start": 2701.2999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 15.299999713897705,
+        "delay": 0.6000003814697266,
+        "start": 2701.2999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2819.9000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 12.199999809265137,
+        "delay": 0.5,
+        "start": 2819.9000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.09999990463256836,
+        "start": 2935.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.199999809265137,
+        "delay": 0.40000009536743164,
+        "start": 2935.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.20000028610229492,
+        "start": 3047.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8.400000095367432,
+        "delay": 0.40000009536743164,
+        "start": 3047.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 2,
+        "delay": 0.3000001907348633,
+        "start": 3669.699999809265
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0,
+        "delay": 4.900000095367432,
+        "start": 3672.5,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "drawer-open",
+    "max": 64,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 64,
+        "processing": 1.0999999046325684,
+        "delay": 5.800000190734863,
+        "start": 4230.299999713898,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      },
+      {
+        "name": "pointerup",
+        "duration": 64,
+        "processing": 0.19999980926513672,
+        "delay": 7.599999904632568,
+        "start": 4230.400000095367,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      },
+      {
+        "name": "click",
+        "duration": 64,
+        "processing": 43,
+        "delay": 7.899999618530273,
+        "start": 4230.400000095367,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 5.799999713897705,
+        "delay": 0.5,
+        "start": 1716.4000000953674,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "search-type",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.6999998092651367,
+        "delay": 0.20000028610229492,
+        "start": 2291.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.700000286102295,
+        "delay": 1,
+        "start": 2291.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 0.40000009536743164,
+        "start": 2402,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 12.900000095367432,
+        "delay": 0.5999999046325684,
+        "start": 2402,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.19999980926513672,
+        "start": 2517.4000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.600000381469727,
+        "delay": 0.39999961853027344,
+        "start": 2517.4000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.09999990463256836,
+        "start": 2628,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.400000095367432,
+        "delay": 0.2999997138977051,
+        "start": 2628,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.2999997138977051,
+        "start": 2738.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8,
+        "delay": 0.5,
+        "start": 2738.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.1999998092651367,
+        "delay": 0.3000001907348633,
+        "start": 3355.2999997138977
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "drawer-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 2.0999999046325684,
+        "start": 3902.0999999046326,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0,
+        "delay": 3.200000286102295,
+        "start": 3902.199999809265,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 15.199999809265137,
+        "delay": 3.200000286102295,
+        "start": 3902.199999809265,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 3952.5999999046326,
+        "duration": 72
+      },
+      {
+        "start": 4029,
+        "duration": 61
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "drawer-close",
+    "max": 24,
+    "events": [
+      {
+        "name": "keyup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 15.700000286102295,
+        "start": 4465.299999713898,
+        "target": "<button class=\"tile-open\" aria-label=\"Open Predictable profits evidence\"><header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex s"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/PLX.PA",
+    "name": "search-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 5.299999713897705,
+        "delay": 0.6000003814697266,
+        "start": 1682.5,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/PLX.PA",
+    "name": "search-type",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.1000003814697266,
+        "delay": 0.19999980926513672,
+        "start": 2256.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 10.5,
+        "delay": 1.3000001907348633,
+        "start": 2256.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2371.7000002861023,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 12.799999713897705,
+        "delay": 0.5,
+        "start": 2371.7000002861023,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.10000038146972656,
+        "delay": 0.09999990463256836,
+        "start": 2594.9000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 6.5,
+        "delay": 0.20000028610229492,
+        "start": 2594.9000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/PLX.PA",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.4000000953674316,
+        "delay": 0.3000001907348633,
+        "start": 3321.5
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/PLX.PA",
+    "name": "drawer-open",
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.5999999046325684,
+        "delay": 3,
+        "start": 3866.800000190735,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0,
+        "delay": 4.200000286102295,
+        "start": 3866.9000000953674,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 25.59999990463257,
+        "delay": 4.300000190734863,
+        "start": 3866.9000000953674,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 3927.5,
+        "duration": 54
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/PLX.PA",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/PLX.PA",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "search-open",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 3.0999999046325684,
+        "delay": 0.40000009536743164,
+        "start": 1723.0999999046326,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "search-type",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.7000002861022949,
+        "delay": 0.19999980926513672,
+        "start": 2291.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 10,
+        "delay": 0.9000000953674316,
+        "start": 2291.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 0.19999980926513672,
+        "start": 2406.2000002861023,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 10.5,
+        "delay": 0.2999997138977051,
+        "start": 2406.2000002861023,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.2999997138977051,
+        "start": 2519.300000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 6.900000095367432,
+        "delay": 0.5,
+        "start": 2519.300000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.09999990463256836,
+        "start": 2628.4000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 6.399999618530273,
+        "delay": 0.3000001907348633,
+        "start": 2628.4000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "search-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "drawer-open",
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.6999998092651367,
+        "delay": 2.700000286102295,
+        "start": 3907.5999999046326,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.19999980926513672,
+        "delay": 4.100000381469727,
+        "start": 3907.5999999046326,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 16.5,
+        "delay": 4.300000190734863,
+        "start": 3907.5999999046326,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": [
+      {
+        "start": 3963.7000002861023,
+        "duration": 74
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/BRK",
+    "name": "search-open",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 3.6999998092651367,
+        "delay": 0.5999999046325684,
+        "start": 1505.5999999046326,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/BRK",
+    "name": "search-type",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.7000002861022949,
+        "delay": 1.799999713897705,
+        "start": 2066,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 13.899999618530273,
+        "delay": 2.5,
+        "start": 2066,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.2999997138977051,
+        "start": 2185,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.099999904632568,
+        "delay": 0.5999999046325684,
+        "start": 2185,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.3000001907348633,
+        "start": 2295.3999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8.900000095367432,
+        "delay": 0.5,
+        "start": 2295.3999996185303,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2407.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 11.099999904632568,
+        "delay": 0.5,
+        "start": 2407.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.19999980926513672,
+        "start": 2521.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.199999809265137,
+        "delay": 0.40000009536743164,
+        "start": 2521.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/BRK",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.8000001907348633,
+        "delay": 0.2999997138977051,
+        "start": 3142
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 8.700000286102295,
+        "start": 3144.8999996185303,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/BRK",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/",
+    "name": "search-open",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 3.5,
+        "delay": 0.5,
+        "start": 1777.1999998092651,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/",
+    "name": "search-type",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.5999999046325684,
+        "delay": 0.3000001907348633,
+        "start": 2351.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 11.800000190734863,
+        "delay": 0.9000000953674316,
+        "start": 2351.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.19999980926513672,
+        "delay": 0.20000028610229492,
+        "start": 2468.2999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 14.599999904632568,
+        "delay": 0.40000009536743164,
+        "start": 2468.2999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 0.19999980926513672,
+        "delay": 0.20000028610229492,
+        "start": 2585.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 24,
+        "processing": 18.100000381469727,
+        "delay": 0.5,
+        "start": 2585.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.2999997138977051,
+        "start": 2707.9000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.199999809265137,
+        "delay": 0.5999999046325684,
+        "start": 2707.9000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.20000028610229492,
+        "start": 2820.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 13.300000190734863,
+        "delay": 0.40000009536743164,
+        "start": 2820.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.5999999046325684,
+        "delay": 0.19999980926513672,
+        "start": 3445.5
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "search-open",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 4.699999809265137,
+        "delay": 0.40000009536743164,
+        "start": 1960.3000001907349,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "search-type",
+    "max": 32,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 32,
+        "processing": 0.39999961853027344,
+        "delay": 0.3000001907348633,
+        "start": 2524.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 32,
+        "processing": 18.5,
+        "delay": 0.6999998092651367,
+        "start": 2524.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.09999990463256836,
+        "start": 2646.7000002861023,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 13,
+        "delay": 0.40000009536743164,
+        "start": 2646.7000002861023,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 0.3000001907348633,
+        "start": 2762.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8.299999713897705,
+        "delay": 0.40000009536743164,
+        "start": 2762.800000190735,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.20000028610229492,
+        "start": 2874.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8,
+        "delay": 0.5,
+        "start": 2874.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.2999997138977051,
+        "start": 2985.6000003814697,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.699999809265137,
+        "delay": 0.5,
+        "start": 2985.6000003814697,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "search-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "drawer-open",
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 0.9000000953674316,
+        "delay": 4.300000190734863,
+        "start": 4168.400000095367,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.10000038146972656,
+        "delay": 6,
+        "start": 4168.5,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 39.69999980926514,
+        "delay": 6.200000286102295,
+        "start": 4168.5,
+        "target": "<button class=\"table-toggle\">All companies ↗</button>"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "search-open",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 5.900000095367432,
+        "delay": 0.5,
+        "start": 1743.2999997138977,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "search-type",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.5,
+        "delay": 0.3000001907348633,
+        "start": 2315.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 7.899999618530273,
+        "delay": 0.8000001907348633,
+        "start": 2315.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.19999980926513672,
+        "start": 2427.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8.599999904632568,
+        "delay": 0.40000009536743164,
+        "start": 2427.5,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 0.3000001907348633,
+        "start": 2539.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.900000095367432,
+        "delay": 0.40000009536743164,
+        "start": 2539.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.3000001907348633,
+        "start": 2762.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 6.899999618530273,
+        "delay": 0.6000003814697266,
+        "start": 2762.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "search-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "drawer-open",
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1.1999998092651367,
+        "delay": 4,
+        "start": 3951.0999999046326,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.09999990463256836,
+        "delay": 6.600000381469727,
+        "start": 3951.2999997138977,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 30.200000286102295,
+        "delay": 6.900000095367432,
+        "start": 3951.2999997138977,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/PLX.PA",
+    "name": "search-open",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 6.399999618530273,
+        "delay": 0.6000003814697266,
+        "start": 1719.7999997138977,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/PLX.PA",
+    "name": "search-type",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.5,
+        "delay": 0.40000009536743164,
+        "start": 2296.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 10.599999904632568,
+        "delay": 0.9000000953674316,
+        "start": 2296.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.2999997138977051,
+        "delay": 0.3000001907348633,
+        "start": 2410.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 11.300000190734863,
+        "delay": 0.5999999046325684,
+        "start": 2410.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.2999997138977051,
+        "delay": 0.20000028610229492,
+        "start": 2524.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 10.300000190734863,
+        "delay": 0.5,
+        "start": 2524.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.19999980926513672,
+        "start": 2637.9000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9,
+        "delay": 0.5,
+        "start": 2637.9000000953674,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.19999980926513672,
+        "start": 2750.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.299999713897705,
+        "delay": 0.40000009536743164,
+        "start": 2750.5999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/PLX.PA",
+    "name": "search-close",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 1.4000000953674316,
+        "delay": 0.19999980926513672,
+        "start": 3371.4000000953674
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/PLX.PA",
+    "name": "drawer-open",
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 1.8999996185302734,
+        "start": 3941.4000000953674,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.10000038146972656,
+        "delay": 2.8999996185302734,
+        "start": 3941.4000000953674,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 10.399999618530273,
+        "delay": 3,
+        "start": 3941.4000000953674,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/PLX.PA",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/PLX.PA",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "search-open",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 5.199999809265137,
+        "delay": 0.5,
+        "start": 1832.5999999046326,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "search-type",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 0.3000001907348633,
+        "start": 2396.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 11.599999904632568,
+        "delay": 0.7000002861022949,
+        "start": 2396.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 0.20000028610229492,
+        "start": 2511.2999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 12.5,
+        "delay": 0.3000001907348633,
+        "start": 2511.2999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.7999997138977051,
+        "start": 2738.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 10.099999904632568,
+        "delay": 1,
+        "start": 2738.0999999046326,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "search-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "drawer-open",
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 1,
+        "delay": 3.8000001907348633,
+        "start": 4027.3999996185303,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.10000038146972656,
+        "delay": 5.899999618530273,
+        "start": 4027.5,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 29.299999713897705,
+        "delay": 6.099999904632568,
+        "start": 4027.5,
+        "target": "<header><span><small>1</small> <!-- -->Predictable profits</span><span><span class=\"value-viz inline-flex shrink-0 align-middle\" title=\"Predictable profits: pass\"><svg width=\"12\" h"
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "drawer-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/BRK",
+    "name": "search-open",
+    "max": 24,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 24,
+        "processing": 5.400000095367432,
+        "delay": 0.40000009536743164,
+        "start": 1480.5999999046326,
+        "target": "<body><div hidden=\"\"><!--$--><!--/$--></div><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://gigainvestors.com/#"
+      },
+      {
+        "name": "keyup",
+        "duration": 16,
+        "processing": 0.5,
+        "delay": 12,
+        "start": 1487.6999998092651,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/BRK",
+    "name": "search-type",
+    "max": 16,
+    "events": [
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.39999961853027344,
+        "delay": 0.10000038146972656,
+        "start": 2052.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 8,
+        "delay": 0.5,
+        "start": 2052.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 0.20000028610229492,
+        "start": 2163.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 9.700000286102295,
+        "delay": 0.40000009536743164,
+        "start": 2163.7999997138977,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 0.2999997138977051,
+        "start": 2276,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 11.5,
+        "delay": 0.5,
+        "start": 2276,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 0.3000001907348633,
+        "start": 2391.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 10.5,
+        "delay": 0.7000002861022949,
+        "start": 2391.699999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keydown",
+        "duration": 16,
+        "processing": 0.2999997138977051,
+        "delay": 0.3000001907348633,
+        "start": 2505.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      },
+      {
+        "name": "keypress",
+        "duration": 16,
+        "processing": 11.100000381469727,
+        "delay": 0.5999999046325684,
+        "start": 2505.199999809265,
+        "target": "<input aria-label=\"Search investor, firm, ticker, company\" role=\"combobox\" aria-expanded=\"true\" aria-controls=\"search-results\" placeholder=\"investor, firm, ticker, company\" class=\""
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/BRK",
+    "name": "search-close",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/BRK",
+    "name": "quarter",
+    "max": 0,
+    "events": [],
+    "tasks": []
+  }
+]

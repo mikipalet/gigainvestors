@@ -1,4 +1,5 @@
 import {alignHistoryShares} from './history-split-basis';
+import {qualityLtmAt,qualityLtmHistoryAt} from './quality-ltm';
 import {reconcilePriceSplits} from './price-history';
 import {netCashSeries} from './net-cash';
 import { applyAdjustments, attachJudgements } from "./judgement/apply";
@@ -19,7 +20,7 @@ import { runNumericTests } from "./tests";
 import { valueCompany, valuationMargin } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory, Year } from "./types";
 
-export const PIPELINE_VERSION = "26";
+export const PIPELINE_VERSION = "27";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -51,13 +52,17 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   }));
   company = { ...company, investmentHolding: isInvestmentHolding(company, years) };
   onDerivedYears?.(years);
-  const rawNumeric = runNumericTests({ years, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
+  const cutoff=new Date().toISOString().slice(0,10);
+  const qualityLtm=qualityLtmAt(fundamentals.qualityQuarters??[],years,cutoff,fundamentals.splits);
+  const qualityLtmHistory=qualityLtmHistoryAt(fundamentals.qualityQuarters??[],years,cutoff,fundamentals.splits,qualityLtm);
+  for(const ltm of qualityLtmHistory)if(rate&&ltm.dilutedShares&&monthly.get(ltm.end.slice(0,7)))ltm.marketCap=monthly.get(ltm.end.slice(0,7))!*ltm.dilutedShares/rate;
+  const rawNumeric = runNumericTests({ years, qualityLtm, qualityLtmHistory, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
   const adjusted = applyAdjustments(years, fundamentals.integrity.ok && company.kind==='operating' ? judgement : null, judgementTrust, fundamentals.currency);
   years = adjusted.years;
   // Persist precisely the split-normalized, price-derived and judgement-adjusted
   // rows used by the tests. Publication must not rebuild a different statement.
   onMemoYears?.(years);
-  const numeric = runNumericTests({ years, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
+  const numeric = runNumericTests({ years, qualityLtm, qualityLtmHistory, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
   let tests = {} as Analysis["tests"];
   const answers = fundamentals.integrity.ok ? await ask({ id: company.id, sections }) : [];
   for (const key of Object.keys(numeric) as Array<keyof typeof numeric>) {

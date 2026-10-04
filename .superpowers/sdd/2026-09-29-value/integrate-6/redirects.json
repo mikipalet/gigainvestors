@@ -1,0 +1,226 @@
+[
+  {
+    "name": "308 /",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/value"
+    }
+  },
+  {
+    "name": "308 /?q=2018Q3",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/value?q=2018Q3"
+    }
+  },
+  {
+    "name": "308 /aapl.us",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/AAPL"
+    }
+  },
+  {
+    "name": "308 /aapl.us?q=2018Q3",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/AAPL?q=2018Q3"
+    }
+  },
+  {
+    "name": "308 /PLX.PA?markets=all",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/PLX.PA?markets=all"
+    }
+  },
+  {
+    "name": "308 /7203.jp",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/7203.JP"
+    }
+  },
+  {
+    "name": "308 /ko.us",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/KO"
+    }
+  },
+  {
+    "name": "308 /googl.us",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/GOOGL"
+    }
+  },
+  {
+    "name": "308 /adbe.us",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/ADBE"
+    }
+  },
+  {
+    "name": "308 /jpm.us",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/JPM"
+    }
+  },
+  {
+    "name": "308 /lulu.us",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/LULU"
+    }
+  },
+  {
+    "name": "308 /wkl.as",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/WKL.AS"
+    }
+  },
+  {
+    "name": "308 /brk-b.us",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/BRK-B"
+    }
+  },
+  {
+    "name": "308 /m%26m.nse",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/MHID.LSE"
+    }
+  },
+  {
+    "name": "308 /method",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/value/method"
+    }
+  },
+  {
+    "name": "308 /forward",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/value/forward"
+    }
+  },
+  {
+    "name": "308 /sitemap.xml",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/sitemap.xml"
+    }
+  },
+  {
+    "name": "308 /robots.txt",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/robots.txt"
+    }
+  },
+  {
+    "name": "308 /value/aapl.us?q=2011Q4&markets=all",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/s/AAPL?q=2011Q4&markets=all"
+    }
+  },
+  {
+    "name": "308 /value?q=2018Q3",
+    "pass": true,
+    "details": {
+      "status": 308,
+      "to": "https://gigainvestors.com/value?q=2018Q3"
+    }
+  },
+  {
+    "name": "Investor restores quarter",
+    "pass": true
+  },
+  {
+    "name": "Historical checklist snapshot served",
+    "pass": true
+  },
+  {
+    "name": "Historical investor verdicts render",
+    "pass": true
+  },
+  {
+    "name": "Holding opens one company with quarter",
+    "pass": true,
+    "details": "http://localhost:3066/s/AAPL?q=2018Q3"
+  },
+  {
+    "name": "Company canonical",
+    "pass": true
+  },
+  {
+    "name": "Historical holder quarter",
+    "pass": true
+  },
+  {
+    "name": "Shared search opens investor with quarter",
+    "pass": true,
+    "details": "http://localhost:3066/BRK?q=2018Q3"
+  },
+  {
+    "name": "Checklist restores quarter",
+    "pass": true
+  },
+  {
+    "name": "Shared arrow steps calendar quarter",
+    "pass": true,
+    "details": "http://localhost:3066/value?q=2018Q2"
+  },
+  {
+    "name": "Company search keeps quarter",
+    "pass": true,
+    "details": "http://localhost:3066/s/AAPL?q=2018Q2"
+  },
+  {
+    "name": "PLX.PA has no holder strip",
+    "pass": true
+  },
+  {
+    "name": "PLX.PA canonical",
+    "pass": true
+  },
+  {
+    "name": "7203.JP has no holder strip",
+    "pass": true
+  },
+  {
+    "name": "7203.JP canonical",
+    "pass": true
+  },
+  {
+    "name": "13F-only layout retained",
+    "pass": true
+  }
+]

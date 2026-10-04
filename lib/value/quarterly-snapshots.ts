@@ -1,4 +1,5 @@
 import { isInvestmentHolding } from './investment-nav';
+import {qualityLtmAt,qualityLtmHistoryAt} from './quality-ltm';
 import { qualityMetric } from './quality-metric';
 import { publishedBuyPrice } from './buy-price';
 import { valuationFlags } from './data-quality';
@@ -18,7 +19,7 @@ type QuarterBasis={priceDate:string;annual:number;annualEnd:string;annualFiled:s
 const positive=(n:number|null|undefined):n is number=>typeof n==='number'&&Number.isFinite(n)&&n>0;
 const compact=(n:number|null)=>n===null||!Number.isFinite(n)?null:Number(n.toFixed(6));
 export const QUARTER_ASSUMPTIONS=[
- 'Calendar-quarter close; annual quality uses reports filed strictly before quarter end, with a 90-day fallback when filing dates are unknown or equal period end.',
+ 'Calendar-quarter close; quality uses annual reports plus a reconciled four-quarter provisional LTM where each test has complete inputs. LTM-only verdict changes need two consecutive quarterly confirmations; annual replacements and missing-field fallback apply immediately. All statements must be filed strictly before quarter end, with a 90-day fallback for unknown filing dates.',
  'Valuation uses the existing annual normalization capped by filed trailing owner earnings: four consecutive quarters, two consecutive halves, otherwise the last annual report. Expected return is the IRR of the same valuation.',
  'Stored judgement is restricted to annual periods and evidence filed before quarter end. Current report readings and current share-count overrides are excluded.',
  'Cached financials may be restated. Current issuer classification, bond yields, FX and surviving universe are retained; this is not a vintage point-in-time backtest.',
@@ -45,7 +46,10 @@ export function snapshotForQuarter({company,fundamentals,quarter,prices,latestPr
  const adjusted=applyAdjustments(clean,record,trust,currency);
  const prefix:Fundamentals={id:fundamentals.id,currency,years:adjusted.years,integrity:{ok:true,reasons:[]},fetchedAt:fundamentals.fetchedAt,splits:fundamentals.splits?.filter(s=>s.date<cutoff)};
  prefix.integrity=checkIntegrity(prefix,{source:company.source,priceHistory:pastPrices});
- const numeric=runNumericTests({years:prefix.years,kind:company.kind,industry:company.industry,priceHistoryPending:false});
+ const qualityLtm=qualityLtmAt(fundamentals.qualityQuarters??[],prefix.years,cutoff,fundamentals.splits);
+ const qualityLtmHistory=qualityLtmHistoryAt(fundamentals.qualityQuarters??[],prefix.years,cutoff,fundamentals.splits,qualityLtm);
+ for(const ltm of qualityLtmHistory)if(positive(fxRate)&&positive(ltm.dilutedShares)&&positive(monthly.get(ltm.end.slice(0,7))))ltm.marketCap=monthly.get(ltm.end.slice(0,7))!*ltm.dilutedShares/fxRate;
+ const numeric=runNumericTests({years:prefix.years,qualityLtm,qualityLtmHistory,kind:company.kind,industry:company.industry,priceHistoryPending:false});
  // Evidence can correct inputs; the verdict must always follow the resulting numbers.
  const t5=prefix.integrity.ok?QUALITY_TESTS.map(key=>numeric[key as keyof typeof numeric].numeric[0].toUpperCase()).join(''):'UUUUU';
  const volatility=earningsVolatility({opMarginCv:numeric.understandable.metrics.roeCv??numeric.understandable.metrics.opMarginCv??null});
@@ -60,6 +64,7 @@ export function snapshotForQuarter({company,fundamentals,quarter,prices,latestPr
  const expected=flags.length?null:ownerReturn(valuation,company.currency,null,price)?.expected??null;
  const gain=latestPrice&&positive(latestPrice[0])&&latestPrice[1]>=cutoff&&latestPrice[1]<=asOf?compact(latestPrice[0]/price-1):null;
  const basis:QuarterBasis={priceDate:cutoff,annual:target.fy,annualEnd:target.end,annualFiled:availableOn(target.end,filedByPeriod[target.end]),ttmEnd:trailing?.year.end??target.end,periods:trailing?.periods.map(({end,filed,source})=>({end,filed,source}))??[]};
- const row:SnapshotRow=[company.id,t5,v&&positive(v[1])?compact(price/v[1]):null,buy.b,gain,{discount:mos,price,buyPrice:v&&positive(v[1])?v[1]*(1-mos):null},qualityMetric(company.kind,numeric.moat.metrics),{annual:basis.annual,ttm:basis.ttmEnd,expected:compact(expected)}];
- return {row,basis,valuation,ttm:trailing?.year??null,integrity:prefix.integrity};
+ const provisional=Object.fromEntries(Object.entries(numeric).flatMap(([key,test])=>test.provisional?[[key,test.provisional]]:[]));
+ const row:SnapshotRow=[company.id,t5,v&&positive(v[1])?compact(price/v[1]):null,buy.b,gain,{discount:mos,price,buyPrice:v&&positive(v[1])?v[1]*(1-mos):null},qualityMetric(company.kind,numeric.moat.metrics),{annual:basis.annual,ttm:basis.ttmEnd,expected:compact(expected),...(Object.keys(provisional).length?{qualityLtm:provisional}:{})}];
+ return {row,basis,valuation,ttm:trailing?.year??null,integrity:prefix.integrity,numeric,qualityLtm};
 }

@@ -1,3 +1,4 @@
+import {observationLabel} from '@/lib/value/observation-label';
 import type {Dossier,PriceMap} from '@/lib/value/types';
 import {QUALITY_TESTS} from '@/lib/value/types';
 import {MEMO_QUESTIONS} from '@/lib/value/owner-memo';
@@ -27,7 +28,7 @@ export function companyMarkdown(d: Dossier, quote: PriceMap[string]|null, summar
   const test=d.tests[k]!,metric=primaryTileMetric(test,d.company.kind,d.tests.understandable.series.netIncome??d.series.netIncome);
   return [`### ${k}: ${test.result}`, ...test.reasons.map(r=>`- ${r}`),
    ...(!summary?Object.entries(test.metrics).flatMap(([id,v])=>{const label=metricLabels[id];return v!==null&&Number.isFinite(v)&&label?[`- ${label.label}: ${formatMetric({value:v,format:label.format,currency:d.reportingCurrency??d.company.currency})}`]:[];}):[]),
-   ...(!summary&&metric.series.length?[`Chart: ${metric.chart}; fiscal year observations.`,...metric.series.flatMap(([fy,v])=>v!==null&&Number.isFinite(v)?[`- FY${fy}: ${formatMetric({value:v,format:metric.chartFormat==='index'?'count':metric.chartFormat==='ratio'?'x':metric.chartFormat??metric.format,currency:d.reportingCurrency??d.company.currency})}`]:[])]:[])];
+   ...(!summary&&metric.series.length?[`Chart: ${metric.chart}; fiscal year observations.`,...metric.series.flatMap(([fy,v])=>v!==null&&Number.isFinite(v)?[`- ${observationLabel(fy,test.provisional)}: ${formatMetric({value:v,format:metric.chartFormat==='index'?'count':metric.chartFormat==='ratio'?'x':metric.chartFormat??metric.format,currency:d.reportingCurrency??d.company.currency})}`]:[])]:[])];
  }),
  `## Holders`,...d.holders.map(h=>`- [${h.name}](${investorUrl(h.code)}): tracked 13F investor; follow the investor page for holding quarter and amounts.`),
  `## Price story`,...(d.priceStory?[d.priceStory.line,`Story as of ${d.priceStory.asOf}; price observation ${d.priceStory.priceDate??d.priceStory.asOf}.`,...(d.priceStory.needs?[d.priceStory.needs]:[]),...d.priceStory.events.map(e=>`- ${e.date}: ${e.text} ([${e.source}](${e.url}))`),...(!summary?d.priceStory.facts?.flatMap(f=>[`### ${f.label}`,`${f.text}; source ${f.url}; observed ${f.date}.`,...f.points.flatMap(([fy,v])=>v===null?[]:[`- FY${fy}: ${f.unit==='percent'?percent(v):`${d.reportingCurrency??d.company.currency} ${number(v)}`} `])])??[]:[])]:[]),

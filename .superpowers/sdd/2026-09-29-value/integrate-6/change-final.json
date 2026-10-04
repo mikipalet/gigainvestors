@@ -1,0 +1,60 @@
+{
+ "live": "https://value.gigainvestors.com",
+ "candidate": "http://localhost:3066",
+ "sharedChromeChanged": [
+  "components/QuarterSlider.tsx",
+  "components/Search.tsx",
+  "components/value/BottomBar.tsx",
+  "components/value/SidePanel.tsx"
+ ],
+ "states": [
+  {
+   "size": "1728x970",
+   "state": "all-companies",
+   "changedPixels": 0.165,
+   "file": ".int6/change-last/1728x970-all-companies.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "method",
+   "changedPixels": 0.1965,
+   "file": ".int6/change-last/1728x970-method.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "all-companies",
+   "changedPixels": 0.1573,
+   "file": ".int6/change-last/2056x1180-all-companies.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "method",
+   "changedPixels": 0.2093,
+   "file": ".int6/change-last/2056x1180-method.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "all-companies",
+   "changedPixels": 0.1966,
+   "file": ".int6/change-last/1440x800-all-companies.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "method",
+   "changedPixels": 0.028,
+   "file": ".int6/change-last/1440x800-method.png"
+  },
+  {
+   "size": "390x844",
+   "state": "all-companies",
+   "changedPixels": 0.2033,
+   "file": ".int6/change-last/390x844-all-companies.png"
+  },
+  {
+   "size": "390x844",
+   "state": "method",
+   "changedPixels": 0.0065,
+   "file": ".int6/change-last/390x844-method.png"
+  }
+ ]
+}

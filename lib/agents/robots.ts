@@ -8,6 +8,6 @@ export function robotsPolicy(site: Site) {
       {userAgent: '*', allow, disallow},
       {userAgent: ['GPTBot','OAI-SearchBot','ChatGPT-User','ClaudeBot','Claude-SearchBot','Claude-User','PerplexityBot','Perplexity-User','Google-Extended','Googlebot','Bingbot','Amazonbot','Applebot-Extended'], allow, disallow},
     ],
-    sitemap: siteUrl(site, '/sitemap.xml'), host: siteUrl(site).replace(/\/$/, ''),
+    sitemap: siteUrl('main', '/sitemap.xml'), host: siteUrl('main').replace(/\/$/, ''),
   };
 }

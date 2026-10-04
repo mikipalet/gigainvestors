@@ -31,7 +31,8 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
    if(!financial&&m.roicMedian==null&&m.returnFloorMedian!=null)return metric('returnFloorMedian','Conservative return floor','pct',T.moat.roicMedian,'higher');
    return metric(financial?'roeMedian':'roicMedian',financial?'ROE · median':'ROIC excluding acquisitions','pct',financial?T.moat.roeMedianFin:T.moat.roicMedian,'higher',test.series[financial?'roe':'roic']??[],financial?'ROE':'ROIC excluding acquisitions');
   case 'economics': {
-   const income=new Map(netIncome),end=Math.max(...netIncome.map(p=>p[0]));
+   netIncome=test.series.netIncome??netIncome;
+   const income=new Map(netIncome),end=Math.max(...(test.series.ownerEarnings??[]).map(p=>p[0]));
    const series:Series=(test.series.ownerEarnings??[]).filter(([fy])=>fy>end-5&&income.has(fy)).map(([fy,oe])=>[fy,oe===null||!income.get(fy)?null:oe/income.get(fy)!]);
    if(m.oeToNi==null && m.ownerEarningsTotal!=null)return {...metric('ownerEarningsTotal','Owner earnings, five-year total','money',0,'higher',m.consolidatedCashConversion?[]:(test.series.ownerEarnings??[]).slice(-5),'Owner earnings · five years'),chartFormat:'money'};
    return metric('oeToNi',m.consolidatedCashConversion?'consolidated cash / profit':'owner cash / profit','x',T.economics.oeToNi,'higher',m.consolidatedCashConversion?[]:series,'Annual owner cash / profit · five years');

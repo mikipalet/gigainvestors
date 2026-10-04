@@ -40,7 +40,7 @@ describe('public read-only MCP',()=>{
   const r=await mcpPost(request({jsonrpc:'2.0',method:'notifications/initialized'}));expect(r.status).toBe(202);expect(await r.text()).toBe('');
  });
  it('documents both origins without pretending to provide the paid API',()=>{
-  expect(mcpDiscovery('value').url).toBe('https://value.gigainvestors.com/mcp');
+  expect(mcpDiscovery('value').url).toBe('https://gigainvestors.com/mcp');
   expect(mcpDiscovery('main').paidApi.status).toContain('placeholder');
  });
 });

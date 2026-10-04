@@ -19,7 +19,7 @@ const definitions=[
  {name:'get_method',description:'Read the published method, numerical cutoffs, glossary, source and history caveats.',schema:emptyInput},
 ];
 export const mcpTools=definitions.map(({schema,...tool})=>({...tool,inputSchema:z.toJSONSchema(schema),annotations}));
-export function mcpDiscovery(site:Site){return {name:info.name,version:info.version,transport:'streamable-http',url:siteUrl(site,'/mcp'),authentication:'none',readOnly:true,protocolVersions:MCP_VERSIONS,tools:mcpTools,instructions,documentation:siteUrl(site,'/llms.txt'),paidApi:{url:apiUrl(),status:'Integration placeholder: api-1 / merge-1 owns paid detail and OpenAPI'}};}
+export function mcpDiscovery(site:Site){return {name:info.name,version:info.version,transport:'streamable-http',url:siteUrl('main','/mcp'),authentication:'none',readOnly:true,protocolVersions:MCP_VERSIONS,tools:mcpTools,instructions,documentation:siteUrl('main','/llms.txt'),paidApi:{url:apiUrl(),status:'Integration placeholder: api-1 / merge-1 owns paid detail and OpenAPI'}};}
 const object=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Array.isArray(v);
 const error=(id:unknown,code:number,message:string,status=400,data?:unknown)=>Response.json({jsonrpc:'2.0',id:id??null,error:{code,message,...(data?{data}:{})}},{status,headers:{'Cache-Control':'no-store'}});
 function validOrigin(request:Request){

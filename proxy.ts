@@ -1,52 +1,34 @@
+import {readStore} from './lib/value/store';
+import {dossierId} from './lib/company-route';
 import {markdownRoute} from './lib/agents/routing';
-import { readStore } from './lib/value/store';
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
+import { companyPath } from './lib/company-route';
 
 export async function proxy(request: NextRequest) {
-  const url = request.nextUrl.clone();
-  const host = (request.headers.get("host") ?? url.host).split(":")[0].toLowerCase();
-  const pathname = url.pathname;
-  const valueHost = host === 'value.gigainvestors.com' || host === process.env.VALUE_SITE_HOST;
-  const markdown = markdownRoute(pathname,valueHost,request.headers.get('accept')??'');
-  if(markdown){ url.pathname=markdown; return NextResponse.rewrite(url); }
-  if(/^\/(?:md|mcp|mcp\.json|llms\.txt|llms-full\.txt|sitemap\.xml|sitemaps|robots\.txt)(?:\/|$)/.test(pathname))return NextResponse.next();
-  const valuePath = pathname === "/value" || pathname.startsWith("/value/");
-  const dossierPath = valuePath ? pathname.slice(6) : valueHost ? pathname : '';
-  const asset = pathname === '/.well-known/x402' || /^\/(?:_next|api|faces)(?:\/|$)/.test(pathname)
-    || /\.(?:ico|png|svg|jpe?g|webp|avif|gif|css|js|map|woff2?|txt|html|pdf|json|webmanifest)$/i.test(pathname);
-  const special = /^\/year\/\d{4}$/.test(dossierPath) || ['', '/', '/method', '/forward', '/sitemap.xml', '/robots.txt'].includes(dossierPath);
-  if ((valuePath || valueHost && !asset) && !special && !/^\/[a-z0-9&.-]{1,24}\.[a-z]{1,5}$/.test(dossierPath.toLowerCase())) {
-    return new NextResponse('Not found', { status: 404 });
-  }
-  if ((host === "gigainvestors.com" || host === "www.gigainvestors.com") && valuePath) {
-    const target = new URL(`https://value.gigainvestors.com${pathname.slice(6).toLowerCase() || "/"}`);
-    target.search = url.search;
-    return NextResponse.redirect(target, 308);
-  }
-  if (!asset && !special && dossierPath !== dossierPath.toLowerCase()) {
-    url.pathname = pathname.toLowerCase();
-    return NextResponse.redirect(url, 308);
-  }
-  if ((valueHost || valuePath) && !asset && !special) {
-    const aliases=await readStore<Record<string,string>>('aliases.json');
-    const home=aliases?.[dossierPath.slice(1).toUpperCase()];
-    if(home&&home.toLowerCase()!==dossierPath.slice(1).toLowerCase()){
-      url.pathname=`${valuePath?'/value':''}/${home.toLowerCase()}`;
-      return NextResponse.redirect(url,308);
-    }
-  }
-  if (valueHost && !valuePath && !asset) {
-    url.pathname = `/value${pathname}`;
-    return NextResponse.rewrite(url);
-  }
-  return NextResponse.next();
+ const url=request.nextUrl.clone();
+ const host=(request.headers.get('host')??url.host).split(':')[0].toLowerCase();
+ const oldHost=host==='value.gigainvestors.com';
+ const path=url.pathname;
+ const markdownSuffix=path.endsWith('.md')?'.md':'';
+ const routePath=markdownSuffix?path.slice(0,-3).replace(/\/index$/,'')||'/':path;
+ const local=routePath==='/value'?'':routePath.startsWith('/value/')?routePath.slice(6):routePath;
+ const legacyYear=/^\/year\/(\d{4})$/.exec(local);
+ const listing=!/\.(?:xml|txt|ico|png|svg|json|html|pdf|js|css)$/i.test(local)&&/^\/[a-z0-9&.%-]{1,40}\.[a-z]{1,5}$/i.test(local);
+ if(oldHost || (path.startsWith('/value/')&&(listing||legacyYear))){
+  const target=oldHost?new URL('https://gigainvestors.com'):new URL(url);
+  target.pathname=listing?companyPath(decodeURIComponent(local.slice(1))):['','/'].includes(local)?'/value':['/method','/forward'].includes(local)?`/value${local}`:local;
+  if(listing){const aliases=await readStore<Record<string,string>>('aliases.json');const id=dossierId(decodeURIComponent(local.slice(1)));if(aliases?.[id])target.pathname=companyPath(aliases[id]);}
+  if(markdownSuffix)target.pathname+=markdownSuffix;
+  target.search=url.search;
+  if(legacyYear){target.pathname='/value'+markdownSuffix;if(!target.searchParams.has('q'))target.searchParams.set('q',`${legacyYear[1]}Q4`);}
+  return NextResponse.redirect(target,308);
+ }
+ const markdown=markdownRoute(path,false,request.headers.get('accept')??'');
+ if(markdown){url.pathname=markdown;return NextResponse.rewrite(url);}
+ if(path.startsWith('/s/')){
+  const normalized=companyPath(decodeURIComponent(path.slice(3)));
+  if(path!==normalized){url.pathname=normalized;return NextResponse.redirect(url,308);}
+ }
+ return NextResponse.next();
 }
-
-export const config = {
-  matcher: [
-    '/value/:path*',
-    '/:path*.md',
-    { source: '/((?!_next/static|_next/image|faces/).*)', has: [{ type: 'host', value: '(value.gigainvestors.com|localhost)' }] },
-    { source: '/((?!_next/static|_next/image|faces/).*)', has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }] },
-  ],
-};
+export const config={matcher:['/((?!_next/static|_next/image).*)']};

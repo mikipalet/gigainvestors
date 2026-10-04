@@ -1,6 +1,7 @@
 "use client";
 
 import type { Activity } from "@/lib/types";
+import {FitText} from "./FitText";
 import type { Rect } from "@/lib/treemap/layout";
 import type { Tier } from "@/lib/treemap/tier";
 import { scaleFor } from "@/lib/format";
@@ -24,7 +25,7 @@ export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier
   const fs = scaleFor(rect.w, rect.h);
   const pad = Math.round(fs * 0.6);
   const textBlock = tier === "full" ? fs * 2.6 + pad : tier === "name" ? fs * 1.4 + pad : 0;
-  const href = `/${d.code}?q=${encodeURIComponent(q)}`;
+  const href = `/${d.code}?q=${encodeURIComponent(q.replace(/\s/g,''))}`;
   return (
     <a
       href={href}
@@ -36,7 +37,7 @@ export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier
     >
       {d.sketch && rect.w > 14 && (
         <div className={`absolute inset-x-0 bottom-0 ${d.activity === "sold" ? "opacity-40" : ""}`} style={{ top: textBlock, padding: `0 ${pad * 0.5}px` }}>
-          <Face slug={d.slug} size={320} sizes={`${Math.round(rect.w)}px`} />
+          <Face slug={d.slug} size={rect.w>320?1200:320} sizes={`${Math.round(rect.w)}px`} />
         </div>
       )}
       {rect.w > fs * 5 && rect.h > fs * 2.5 && (
@@ -45,19 +46,19 @@ export function HolderTile({ d, tier, rect, q }: { d: HolderTileData; tier: Tier
         </div>
       )}
       {tier === "face" && (
-        <div className="absolute inset-x-0 bottom-0 truncate bg-[color-mix(in_oklab,var(--paper)_82%,transparent)] px-[5px] pb-[3px] pt-[2px] text-left font-medium" style={{ fontSize: Math.max(9, fs * 0.78) }}>
+        <FitText className="absolute inset-x-0 bottom-0 bg-[color-mix(in_oklab,var(--paper)_82%,transparent)] px-[5px] pb-[3px] pt-[2px] text-left font-medium" style={{ fontSize: Math.max(13, fs * 0.78) }}>
           {d.person}
-        </div>
+        </FitText>
       )}
       {tier !== "blank" && tier !== "face" && (
         <div className="absolute inset-x-0 top-0 leading-[1.15]" style={{ padding: pad, paddingRight: rect.w > fs * 5 ? fs * 4 : pad }}>
           <div className="min-w-0">
-            <div className="truncate font-semibold">{d.person}</div>
+            <FitText className="font-semibold">{d.person}</FitText>
             {tier === "full" && (
-              <div className="truncate opacity-60" style={{ fontSize: "0.8em" }}>
+              <FitText className="opacity-60" style={{ fontSize: Math.max(13,fs*.8) }}>
                 <span className="font-semibold text-ink">{d.pct}</span> of portfolio · {d.money}
                 {rect.w > fs * 24 && d.since && <span> · since {d.since}</span>}
-              </div>
+              </FitText>
             )}
           </div>
         </div>

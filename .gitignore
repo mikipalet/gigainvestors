@@ -34,3 +34,6 @@ data/newsletter/*.facts.json
 
 # Local agent API journals and usage logs
 .agent-api/
+.ttm-1/
+
+.int6/

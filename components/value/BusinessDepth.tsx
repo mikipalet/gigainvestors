@@ -13,15 +13,24 @@ function SourceLink({evidence}:{evidence:Evidence}){
  const computed=evidence.section.startsWith('Calculated');
  const id=useId();
  const [point,setPoint]=useState<{x:number;y:number}|null>(null);
- return <span className="memo-source"><button onPointerMove={e=>setPoint({x:e.clientX,y:e.clientY})} onPointerLeave={()=>setPoint(null)} popoverTarget={id} aria-label={computed?"Read calculation":"Read source quote"}>{computed?"Calculation":"Quote"} ↗</button>{point&&<PointerTooltip {...point}>{evidence.quote}</PointerTooltip>}<span id={id} popover="auto" className="memo-quote">{computed?<p>{evidence.quote}</p>:<blockquote>{evidence.quote}</blockquote>}<a href={evidence.url} target="_blank" rel="noreferrer">{evidence.section} · {evidence.filed.slice(0,10)} ↗</a></span><a href={evidence.url} target="_blank" rel="noreferrer" aria-label="Open original source">Source ↗</a></span>;
+ return <span className="memo-source"><button onPointerMove={e=>setPoint({x:e.clientX,y:e.clientY})} onPointerLeave={()=>setPoint(null)} popoverTarget={id} aria-label={computed?"Read calculation":"Read source quote"}>{computed?"Calculation":"Quote"} ↗</button>{point&&<PointerTooltip {...point}>{evidence.quote.length>600?(computed?'Open the calculations.':'Open the source quote.'):evidence.quote}</PointerTooltip>}<span id={id} popover="auto" className="memo-quote">{computed?<p>{evidence.quote}</p>:<blockquote>{evidence.quote}</blockquote>}<a href={evidence.url} target="_blank" rel="noreferrer">{evidence.section} · {evidence.filed.slice(0,10)} ↗</a></span><a href={evidence.url} target="_blank" rel="noreferrer" aria-label="Open original source">Source ↗</a></span>;
 }
-function groupedEvidence(evidence:Evidence[]):Evidence[]{
+function Sources({evidence}:{evidence:Evidence[]}){
+ const id=useId();
+ if(evidence.length===1)return <SourceLink evidence={evidence[0]}/>;
+ if(!evidence.length)return null;
+ return <span className="memo-source"><button popoverTarget={id}>Sources ({evidence.length}) ↗</button><span id={id} popover="auto" className="memo-quote">{evidence.map((item,i)=><section key={i}><p>{item.quote}</p><a href={item.url} target="_blank" rel="noreferrer">{item.section} · {item.filed.slice(0,10)} ↗</a></section>)}</span></span>;
+}
+export function groupedEvidence(evidence:Evidence[]):Evidence[]{
  const groups=new Map<string,Evidence>();
  for(const e of evidence){
-  const key=JSON.stringify([e.url,e.filed,e.section.startsWith('Calculated')]);
+  // SEC companyfacts fragments identify rows inside the same JSON resource,
+  // not separate source documents. Keep every calculation in one disclosure.
+  const url=e.section.startsWith('Calculated')&&/^https:\/\/data\.sec\.gov\/api\/xbrl\/companyfacts\/CIK\d+\.json#/.test(e.url)?e.url.split('#')[0]:e.url;
+  const key=JSON.stringify([url,e.filed,e.section.startsWith('Calculated')]);
   const previous=groups.get(key);
   if(previous){if(!previous.quote.includes(e.quote))previous.quote+='\n\n'+e.quote;}
-  else groups.set(key,{...e});
+  else groups.set(key,{...e,url});
  }
  return [...groups.values()];
 }
@@ -52,7 +61,7 @@ function Answer({line,selected,currency,analysis,price}:{line:MemoLine;selected:
   {!!comparisons.length&&<Comparison items={comparisons}/>}{line.question===7&&!!comparisons.length&&<small className="memo-comparison-basis">Current quote and valuation; the source calculation retains its original price.</small>}
   {line.chart&&!comparisons.length&&<MiniSeries dense series={line.chart.points} label={line.chart.label} format={line.chart.unit==='percent'?'pct':line.chart.unit==='ratio'?'x':'money'} currency={currency} height={75}/>}
   {line.chart&&<table className="memo-years" aria-label={`Recent annual values: ${line.chart.label}`}>{!!comparisons.length&&<caption>{line.chart.label}</caption>}<thead><tr><th>Year</th><th>{line.chart.unit==='percent'?'Percent':line.chart.unit==='ratio'?'Ratio':currency}</th><th title="Change from the previous displayed observation">Change</th></tr></thead><tbody>{line.chart.points.slice(-tableYears).map(([fy,value],i,points)=><tr key={fy}><th>FY{fy}</th><td>{formatMetric({value,format:line.chart!.unit==='percent'?'pct':line.chart!.unit==='ratio'?'x':'money',currency,returnRatio:isCapitalReturn(line.chart!.label)}).replace(`${currency} `,'')}{value!==null&&<AnnualValueBar value={value} values={points.map(p=>p[1])}/>}</td><td>{i>0&&value!==null&&points[i-1][1]&&!(isCapitalReturn(line.chart!.label)&&(value>1||points[i-1][1]!>1))?line.chart!.unit==='percent'?`${((value-points[i-1][1]!)*100).toFixed(1)}pp`:`${((value-points[i-1][1]!)/Math.abs(points[i-1][1]!)*100).toFixed(1)}%`:'—'}</td></tr>)}</tbody></table>}
-  <footer>{groupedEvidence(line.evidence).map((e,i)=><SourceLink key={i} evidence={e}/>)}</footer>
+  <footer><Sources evidence={groupedEvidence(line.evidence)}/></footer>
  </article>;
 }
 function AnnualRecord({analysis,currency}:{analysis:Analysis;currency:string}){

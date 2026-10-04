@@ -1,0 +1,449 @@
+{
+  "checks": {
+    "sameUniverseCount": true,
+    "sameMembership": true,
+    "freeze147": true,
+    "frozenDossiers": true,
+    "frozenRawRecords": true,
+    "frozenAliases": true,
+    "zeroUnapprovedFlips": true,
+    "zeroNumericToNull": true,
+    "zeroLostHistory": true,
+    "zeroBlankedPriceVerdicts": true,
+    "zeroPriceVerdictChanges": true
+  },
+  "pass": true,
+  "companies": 2708,
+  "frozen": 147,
+  "frozenRecords": 6647,
+  "changes": [
+    {
+      "id": "002840.KO",
+      "company": "Miwon Commerci",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-09-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "BIIB.US",
+      "company": "Biogen Inc",
+      "test": "understandable",
+      "old": "pass",
+      "new": "fail",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-07-29",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "103140.KO",
+      "company": "Poongsan",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-09-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "SYF.US",
+      "company": "Synchrony Financial",
+      "test": "understandable",
+      "old": "pass",
+      "new": "fail",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-07-23",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "SWKS.US",
+      "company": "Skyworks Solutions Inc",
+      "test": "understandable",
+      "old": "pass",
+      "new": "fail",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-07-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "CSX.US",
+      "company": "CSX Corporation",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-07-22",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "RAIL3.SA",
+      "company": "Rumo S.A",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-09-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "2327.TW",
+      "company": "Yageo Corp",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-09-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "PWR.US",
+      "company": "Quanta Services Inc",
+      "test": "moat",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-07-30",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "2382.TW",
+      "company": "Quanta Computer Inc",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-09-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "VICI.US",
+      "company": "VICI Properties Inc",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-07-29",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "FIX.US",
+      "company": "Comfort Systems USA Inc",
+      "test": "understandable",
+      "old": "pass",
+      "new": "fail",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-07-23",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "CFG-PH.US",
+      "company": "Citizens Financial Group, Inc",
+      "test": "moat",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-08-03",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "BMO.TO",
+      "company": "Bank of Montreal",
+      "test": "economics",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-04-30",
+        "fy": 2026,
+        "label": "LTM to Apr 2026",
+        "filed": "2026-07-29",
+        "periods": [
+          "2025-07-31",
+          "2025-10-31",
+          "2026-01-31",
+          "2026-04-30"
+        ]
+      }
+    },
+    {
+      "id": "112610.KO",
+      "company": "CS Wind Corp",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-09-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "DE.US",
+      "company": "Deere & Company",
+      "test": "economics",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-07-31",
+        "fy": 2026,
+        "label": "LTM to Jul 2026",
+        "filed": "2026-08-27",
+        "periods": [
+          "2025-10-31",
+          "2026-01-31",
+          "2026-04-30",
+          "2026-07-31"
+        ]
+      }
+    },
+    {
+      "id": "CBOE.US",
+      "company": "Cboe Global Markets Inc",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-07-31",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "3661.TW",
+      "company": "Alchip Technologies Ltd",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-09-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "VRT.US",
+      "company": "Vertiv Holdings Co",
+      "test": "economics",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-07-29",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "ZAL.XETRA",
+      "company": "Zalando SE",
+      "test": "understandable",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-09-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "185750.KO",
+      "company": "Chong Kun Dang Pharmaceutical",
+      "test": "understandable",
+      "old": "pass",
+      "new": "fail",
+      "ltm": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-09-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      }
+    },
+    {
+      "id": "WMT.US",
+      "company": "Walmart Inc.",
+      "test": "moat",
+      "old": "fail",
+      "new": "pass",
+      "ltm": {
+        "end": "2026-07-31",
+        "fy": 2027,
+        "label": "LTM to Jul 2026",
+        "filed": "2026-08-28",
+        "periods": [
+          "2025-10-31",
+          "2026-01-31",
+          "2026-04-30",
+          "2026-07-31"
+        ]
+      }
+    }
+  ],
+  "unapproved": [],
+  "numericToNull": 0,
+  "lostHistory": [],
+  "removedSeries": [],
+  "lostPredecessors": [],
+  "frozenDifferences": [],
+  "frozenRawDifferences": [],
+  "frozenAliasDifferences": [],
+  "blankedPrice": [],
+  "priceChanges": []
+}

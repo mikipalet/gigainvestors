@@ -68,7 +68,7 @@ test('phone filters and shared search preserve query and navigation',async({page
 });
 test('currency mismatch, short history and bank book-value evidence remain distinct',async({page})=>{
  await page.goto('/value/jpm.us',{waitUntil:'networkidle'});
- await expect(page.getByTestId('insufficient-data')).toContainText('Not enough history yet');
+ await expect(page.getByTestId('insufficient-data')).toContainText('Financial history');
  await expect(page.getByRole('region',{name:'Financial highlights'})).toContainText('Book value / share');
  await expect(page.getByRole('region',{name:'Financial highlights'})).toContainText('USD 118');
  await page.goto('/value/fx.us',{waitUntil:'networkidle'});

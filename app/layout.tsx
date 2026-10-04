@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Search } from "@/components/Search";
 import "./globals.css";
+import "./value-styles";
+import "./unified.css";
+import { BottomBar } from "@/components/value/BottomBar";
+import { Brand } from "@/components/Brand";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
 
@@ -37,7 +41,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
+        <Brand />
         {children}
+        <BottomBar />
         <Search />
       </body>
     </html>

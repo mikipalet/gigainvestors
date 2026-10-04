@@ -31,5 +31,5 @@ export async function GET(request:Request,{params}:{params:Promise<{path:string[
   }
  }
  if(content===null)return md('# Not found',404);
- const response=md(content);response.headers.set('Link',`<${canonical}>; rel="canonical", <${siteUrl('value','/llms.txt')}>; rel="describedby"`);return response;
+ const response=md(content);response.headers.set('Link',`<${canonical}>; rel="canonical", <${siteUrl('main','/llms.txt')}>; rel="describedby"`);return response;
 }

@@ -83,7 +83,7 @@ export async function executeEndpoint(route:Route,pathname:string,q:Query):Promi
   const dossier=await getDossier(id!);if(!dossier)throw new DataError(404,'company_not_found','No published dossier for this company.');
   const projected=projectDossier(dossier,await getPrice(id!,dossier.company.country));
   if(route.id==='memo')return {id:dossier.id,memo:projected.memo};if(route.id==='priceStory')return {id:dossier.id,priceStory:projected.priceStory};
-  if(route.id==='verdict'){const {id,asOf,verdict,buyNow,qualityPasses,tests,priceCheck}=projected;return {id,asOf,verdict,buyNow,qualityPasses,tests:tests.map(t=>({id:t.id,result:t.result})),priceCheck};}
+  if(route.id==='verdict'){const {id,asOf,verdict,buyNow,qualityPasses,tests,priceCheck}=projected;return {id,asOf,verdict,buyNow,qualityPasses,tests:tests.map(t=>({id:t.id,result:t.result,...(t.provisional?{provisional:t.provisional}:{})})),priceCheck};}
   return projected;
  }
  case 'history':case 'quarter':{

@@ -7,6 +7,7 @@ export function PageFooter() {
       <Link href="/">the map</Link>
       <Link href="/about">about</Link>
       <Link href="/newsletter">newsletter</Link>
+      <a href="/api/v1/guide">agent API</a>
       <Link href="/privacy">privacy</Link>
       <a href="mailto:hello@gigainvestors.com">contact</a>
       <a href="/llms.txt">llms.txt</a>

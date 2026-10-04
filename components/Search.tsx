@@ -106,6 +106,7 @@ export function Search() {
         >
           contact
         </a>
+        <a href="/api/v1/guide" className="rounded-[3px] px-2 py-1 text-[12px] leading-none opacity-50 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100">agent API</a>
         <a
           href={isValue ? "https://gigainvestors.com/newsletter" : "/newsletter"}
           className="flex h-11 w-11 items-center justify-center rounded-[3px] bg-paper text-[17px] leading-none opacity-75 shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_35%,transparent)] transition-opacity hover:opacity-100 sm:h-auto sm:w-auto sm:px-2 sm:py-1 sm:text-[12px] sm:opacity-50"

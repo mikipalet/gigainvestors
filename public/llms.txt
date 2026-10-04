@@ -25,3 +25,19 @@ Do not use it for: real-time prices, short positions, non-US holdings, cash leve
 - Values are quarter-end reported values; a "price" is value ÷ shares from the filings, split-adjusted.
 - Green means buying (new or add), red means selling (reduce or sold), scaled by the size of the move.
 - One investor (Norbert Lou) has no public photo; Makaira Partners (MP) is tracked but currently reports no 13F holdings, so its page shows an empty state.
+
+## Paid agent API (x402)
+
+- API index: https://gigainvestors.com/api/v1
+- OpenAPI 3.1: https://gigainvestors.com/api/v1/openapi.json
+- Agent guide: https://gigainvestors.com/api/v1/guide
+- Prices: https://gigainvestors.com/api/v1/pricing
+- Discovery: https://gigainvestors.com/.well-known/x402
+
+Versioned JSON for investor search/list/derived quarterly holdings, company dossiers,
+verdicts, business memos, price stories, checklists/filters, quarterly time travel,
+method/changelog, forward record and bulk export. x402 v2 exact USDC only, no API keys,
+accounts or subscriptions. $0.002 basic, $0.01 detail, $0.05 history/export per call.
+The linked documents are free. Follow the published payment requirements for network
+and receiving address. Preserve the original PAYMENT-SIGNATURE on retries.
+Derived data only: no raw vendor price/fundamental series or raw Dataroma tables.

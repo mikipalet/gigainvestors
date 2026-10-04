@@ -31,3 +31,6 @@ data/newsletter/*.facts.json
 
 # Fix 5c local audit artifacts
 .fix5c/
+
+# Local agent API journals and usage logs
+.agent-api/

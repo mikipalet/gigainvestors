@@ -6,7 +6,9 @@ import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {QuarterLink} from './QuarterLink';
 export function BottomBarShell({method,investorCodes,timelineCodes}:{method:ReactNode;investorCodes:string[];timelineCodes:string[]}){
  // Classify the selected route, not the URL: Vercel ISR can render / as /index.
- const path='/'+useSelectedLayoutSegments().filter(segment=>!segment.startsWith('(')).join('/');
+ const selectedPath='/'+useSelectedLayoutSegments().filter(segment=>!segment.startsWith('(')).join('/');
+ // Historical ISR routes use the same dock as the public /value?q= URL.
+ const path=/^\/value\/(quarter|year)\//.test(selectedPath)?'/value':selectedPath;
  const investor=investorCodes.includes(path.slice(1));
  const value=path==='/value'||path.startsWith('/value/');
  const company=path.startsWith('/s/');

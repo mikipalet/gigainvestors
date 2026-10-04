@@ -24,7 +24,7 @@ describe('dock hydration',()=>{
   expect(server).not.toContain('>GigaInvestors<');
  });
  it.each([
-  ['/value',['value'],true],['/value/year/2018',['value','year','2018'],true],
+  ['/value',['value'],true],['/value?q=2018Q3',['value','quarter','2018Q3'],true],['/value/year/2018',['value','year','2018'],true],
   ['/s/AAPL',['s','AAPL'],false],['/s/KO',['s','KO'],false],
   ['/HA',['HA'],true],['/BRK',['BRK'],true],
   ['/about',['about'],false],['/newsletter',['newsletter'],false],['/value/method',['value','method'],false],

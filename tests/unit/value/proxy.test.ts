@@ -26,6 +26,15 @@ describe('one-site permanent redirects',()=>{
  it('normalizes old local dossier URLs without leaving the preview',async()=>{
   expect((await proxy(new NextRequest('http://localhost:3017/value/aapl.us?q=2018Q3'))).headers.get('location')).toBe('http://localhost:3017/s/AAPL?q=2018Q3');
  });
+ it('keys cached historical checklist HTML by quarter while retaining filters',async()=>{
+  for(const query of ['q=2018Q3&country=DE','year=2018&country=DE']){
+   const response=await proxy(new NextRequest('https://gigainvestors.com/value?'+query));
+   const target=new URL(response.headers.get('x-middleware-rewrite')!);
+   expect(target.pathname).toBe('/value/quarter/'+(query.startsWith('q=')?'2018Q3':'2018Q4'));
+   expect(target.searchParams.get('country')).toBe('DE');
+  }
+  expect((await proxy(new NextRequest('https://gigainvestors.com/value?q=invalid'))).headers.get('x-middleware-next')).toBe('1');
+ });
 });
 
 it.each([['/aapl.us.md?q=2018Q3','/s/AAPL.md?q=2018Q3'],['/index.md','/value.md'],['/tsm.us','/s/2330.TW']])('redirects legacy representation %s',async(path,target)=>{expect((await proxy(new NextRequest('https://value.gigainvestors.com'+path))).headers.get('location')).toBe('https://gigainvestors.com'+target);});

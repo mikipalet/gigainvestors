@@ -25,6 +25,11 @@ export async function proxy(request: NextRequest) {
  }
  const markdown=markdownRoute(path,false,request.headers.get('accept')??'');
  if(markdown){url.pathname=markdown;return NextResponse.rewrite(url);}
+ if(path==='/value'){
+  const q=url.searchParams.get('q')??'',year=url.searchParams.get('year')??'';
+  const frame=/^\d{4}Q[1-4]$/.test(q)?q:/^\d{4}$/.test(year)?`${year}Q4`:null;
+  if(frame){url.pathname=`/value/quarter/${frame}`;return NextResponse.rewrite(url);}
+ }
  if(path.startsWith('/s/')){
   const normalized=companyPath(decodeURIComponent(path.slice(3)));
   if(path!==normalized){url.pathname=normalized;return NextResponse.redirect(url,308);}

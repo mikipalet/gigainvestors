@@ -1,3 +1,4 @@
+import {uploadPublishedSnapshot} from '../blob-publish';
 import { assertNoPendingPublication, beginPublication } from '../post-publish';
 import { refreshPublishedBuyPrices } from '../../../lib/value/refresh-buy-prices';
 import { assertPublishInvariants } from '../publish-invariants';
@@ -424,6 +425,7 @@ export default async function publish(options: { only?: string[]; limit?: number
       refreshPublishedBuyPrices(repo);
       commitOutput({repo,asOf:new Date().toISOString().slice(0,10)});
       pushRepository(repo,true);
+      await uploadPublishedSnapshot(repo);
       await revalidatePublishedValue();
       console.log('publish: retained existing released analysis after research budget exhaustion');
     });
@@ -474,6 +476,7 @@ export default async function publish(options: { only?: string[]; limit?: number
   await withPublishRepository(async (repo) => {
     const { count, changed } = publishSnapshot({ repo, analyses, universe: companies, partial: Boolean(options.only || options.limit), force: options.force, ...holders });
     pushRepository(repo, true);
+    await uploadPublishedSnapshot(repo);
     await revalidatePublishedValue();
     console.log(`publish: ${count} companies, ${changed ? "replaced data snapshot" : "unchanged snapshot"}`);
   });

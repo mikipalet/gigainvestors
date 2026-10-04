@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { getCountryIndex, getDefaultIndex, getDossier, getMeta, getPrice, getTopIds, readStore } from "@/lib/value/store";
 
-beforeEach(()=>vi.stubEnv("VALUE_DATA_PUBLIC_FALLBACK","1"));
+beforeEach(()=>vi.stubEnv("VALUE_DATA_READ_WRITE_TOKEN","vercel_blob_rw_teststore_secret"));
 
 afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
@@ -24,14 +24,14 @@ describe("value store", () => {
   });
   it("treats remote 404 as absent but rejects server errors", async () => {
     vi.stubEnv("VALUE_STORE_DIR", "");
-    vi.stubGlobal("fetch", async () => new Response(null, { status: 404 }));
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValueOnce(Response.json({version:"a".repeat(64)})).mockResolvedValueOnce(new Response(null, {status:404})));
     expect(await readStore("meta.json")).toBeNull();
     vi.stubGlobal("fetch", async () => new Response(null, { status: 503 }));
     await expect(readStore("meta.json")).rejects.toThrow("503");
   });
   it("tags remote value reads for the authenticated publication hook", async () => {
     vi.stubEnv("VALUE_STORE_DIR", "");
-    const fetch = vi.fn(async () => new Response('{}'));
+    const fetch = vi.fn().mockResolvedValueOnce(Response.json({version:'a'.repeat(64)})).mockResolvedValueOnce(new Response('{}'));
     vi.stubGlobal("fetch", fetch);
     await readStore("meta.json");
     expect(fetch).toHaveBeenCalledWith(expect.any(String), expect.objectContaining({next:{revalidate:300,tags:['value-data']}}));

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, startTransition } from "react";
 
 interface Props {
   quarters: string[];
@@ -18,13 +18,20 @@ interface Props {
 // Timeline along the bottom. The quarter pill IS the thumb; drag it, click the track,
 // use the ‹ › buttons or arrow keys.
 export function QuarterSlider({ quarters, q, onChange, note, period = "quarter", embedded = false, label = "Quarter", onPrefetch, globalKeys = !embedded }: Props) {
-  const idx = Math.max(0, quarters.indexOf(q));
+  const [draft,setDraft]=useState<string|null>(null);
+  useEffect(()=>setDraft(null),[q]);
+  const shownQuarter=draft??q;
+  const idx = Math.max(0, quarters.indexOf(shownQuarter));
+  const change=(next:string,immediate=false)=>{
+    setDraft(next);
+    startTransition(()=>onChange(next,immediate));
+  };
   const idxRef = useRef(idx);
   idxRef.current = idx;
 
   const step = (d: number) => {
     const n = idxRef.current + d;
-    if (n >= 0 && n < quarters.length) onChange(quarters[n], true);
+    if (n >= 0 && n < quarters.length) {idxRef.current=n;change(quarters[n], true);}
   };
 
   useEffect(() => {
@@ -56,7 +63,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
     onPrefetch?.(value);
     if (timer.current) clearTimeout(timer.current);
     const delay = immediate ? 0 : Math.max(0, 80 - (performance.now() - lastEmit.current));
-    const commit = () => { lastEmit.current = performance.now(); onChange(latest.current, immediate); };
+    const commit = () => { lastEmit.current = performance.now(); change(latest.current, immediate); };
     if (delay) timer.current = setTimeout(commit, delay); else commit();
   };
   const pointerValue = (clientX: number) => {
@@ -108,7 +115,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
           onPointerCancel={() => { dragging.current = false; emit(latest.current, true); }}
           onPointerUp={e => { if (embedded) { dragging.current = false; emit(pointerValue(e.clientX), true); } else e.currentTarget.blur(); }}
           title={embedded?note:undefined}
-          aria-label={period === "year" ? "Fiscal year" : "Quarter"} aria-valuetext={q === "Today" ? "Today" : period === "year" ? `Fiscal year ${q}` : q}
+          aria-label={period === "year" ? "Fiscal year" : "Quarter"} aria-valuetext={shownQuarter === "Today" ? "Today" : period === "year" ? `Fiscal year ${shownQuarter}` : shownQuarter}
           style={embedded ? {touchAction:"none"} : undefined}
           className="slider absolute inset-x-0 top-1 z-10 m-0 h-10 w-full cursor-ew-resize appearance-none bg-transparent"
         />
@@ -128,7 +135,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
           className="pointer-events-none absolute top-[24px] z-20 -translate-y-1/2 whitespace-nowrap rounded-[3px] bg-ink px-[7px] py-[4px] text-[10px] font-semibold leading-none text-paper shadow-[0_0_0_2px_var(--paper)]"
           style={{ left: `clamp(28px, ${pct}%, calc(100% - 28px))`, transform: "translate(-50%, -50%)" }}
         >
-          {period === "year" && q !== "Today" ? `FY${q}` : q}
+          {period === "year" && shownQuarter !== "Today" ? `FY${shownQuarter}` : shownQuarter}
         </div>
       </div>
       <style>{`

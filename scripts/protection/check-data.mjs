@@ -1,12 +1,14 @@
-// PROTECT_BROWSER=1 node --env-file=.env.local scripts/protection/check-data.mjs <origin> <report.json>
+// VALUE_COMPARE_DIR=/fixed/snapshot node --env-file=/private/automation.env scripts/protection/check-data.mjs <origin> <report.json>
 import {createHash} from 'node:crypto';
-import {writeFileSync} from 'node:fs';
+import {writeFileSync,readFileSync} from 'node:fs';
+import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 const [origin, output] = process.argv.slice(2);
 if (!origin || !output) throw Error('Expected origin and report path');
-const headers = new URL(origin).hostname.endsWith('.vercel.app') && process.env.VERCEL_OIDC_TOKEN ? {'x-vercel-trusted-oidc-idp-token': process.env.VERCEL_OIDC_TOKEN} : {};
-const source = 'https://raw.githubusercontent.com/mikipalet/gigainvestors-value-data/main/';
-const meta = await fetch(source + 'meta.json').then(r => r.json());
+const headers = new URL(origin).hostname.endsWith('.vercel.app') ? (process.env.VERCEL_AUTOMATION_BYPASS_SECRET ? {'x-vercel-protection-bypass':process.env.VERCEL_AUTOMATION_BYPASS_SECRET} : process.env.VERCEL_OIDC_TOKEN ? {'x-vercel-trusted-oidc-idp-token':process.env.VERCEL_OIDC_TOKEN} : {}) : {};
+const source = process.env.VALUE_COMPARE_DIR;
+if (!source) throw Error('VALUE_COMPARE_DIR must name the uploaded snapshot');
+const meta = JSON.parse(readFileSync(path.join(source, 'meta.json'), 'utf8'));
 const views = [...new Set(JSON.stringify(meta).match(/views\/[a-f0-9]{24}\.json/g) ?? [])];
 const files = ['meta.json', 'top.json', 'aliases.json', 'history/index.json', 'search/manifest.json', 'index/default.json', 'index/US.json', 'prices/US.json', ...views].slice(0, 20);
 if (files.length !== 20) throw Error('Need exactly 20 published samples');
@@ -23,7 +25,7 @@ if (process.env.PROTECT_BROWSER === '1') {
 const report = [];
 try {
   for (const file of files) {
-    const old = await fetch(source + file), a = await old.arrayBuffer();
+    const old = {status:200}, a = readFileSync(path.join(source,file));
     const url = new URL('/data/v/' + file, origin).href;
     let next;
     if (page) {

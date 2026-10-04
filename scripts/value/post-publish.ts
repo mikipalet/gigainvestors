@@ -1,3 +1,4 @@
+import {uploadPublishedSnapshot} from './blob-publish';
 import {execFileSync} from 'node:child_process';
 import {existsSync,readFileSync,writeFileSync,renameSync,rmSync} from 'node:fs';
 import path from 'node:path';
@@ -43,10 +44,12 @@ export async function verifyPublication(repo:string,{check=checkLivePublication,
  if(receipt.rollback){
   if(git(repo,['rev-parse','HEAD'])!==receipt.rollback)throw new Error('CRITICAL: rollback checkout moved');
   if(remote!==receipt.rollback)git(repo,[...auth,'push',`--force-with-lease=refs/heads/main:${receipt.after}`,'origin','HEAD:main']);
+  await uploadPublishedSnapshot(repo);
   await revalidate();clear();throw new Error('CRITICAL: failed publication reverted; interrupted rollback completed');
  }
  if(git(repo,['rev-parse','HEAD'])!==receipt.after)throw new Error('CRITICAL: publication checkout moved; refusing rollback');
  try{
+  await uploadPublishedSnapshot(repo);
   await revalidate();await check(repo);clear();console.log(`live-check: ${receipt.after} passed quarter-back and 2018Q3`);
  }catch{
   console.error(`CRITICAL: live time travel/revalidation failed for ${receipt.after}; reverting last publication`);
@@ -60,6 +63,7 @@ export async function verifyPublication(repo:string,{check=checkLivePublication,
   git(repo,['commit','-m',`Revert failed publication ${receipt.after}`]);
   receipt.rollback=git(repo,['rev-parse','HEAD']);save(repo,receipt);
   git(repo,[...auth,'push',`--force-with-lease=refs/heads/main:${receipt.after}`,'origin','HEAD:main']);
+  await uploadPublishedSnapshot(repo);
   await revalidate();clear();
   throw new Error(`CRITICAL: failed publication ${receipt.after} reverted to prior tree ${receipt.before}`);
  }

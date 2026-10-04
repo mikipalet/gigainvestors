@@ -43,6 +43,13 @@ function largestFont(dialog:HTMLElement,property:string,fits:()=>boolean,max:num
 /** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted evidence. */
 export function SidePanel({ title, onClose, children, wide = false, compact = false }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; compact?:boolean }) {
   const [closing,setClosing]=useState(false);
+  const [contentReady,setContentReady]=useState(false);
+  // Match live: paint the modal and close control before mounting its heavy body.
+  useEffect(()=>{
+    let active=true,timer:ReturnType<typeof setTimeout>|undefined;
+    const frame=requestAnimationFrame(()=>{timer=setTimeout(()=>{if(active)setContentReady(true);},0);});
+    return()=>{active=false;cancelAnimationFrame(frame);clearTimeout(timer);};
+  },[]);
   const timer=useRef<ReturnType<typeof setTimeout>|null>(null);
   const start=useRef<{x:number;y:number}|null>(null);
   const close=()=>{if(closing)return;setClosing(true);timer.current=setTimeout(onClose,matchMedia('(prefers-reduced-motion: reduce)').matches?0:180);};
@@ -56,7 +63,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
   }, []);
   useLayoutEffect(() => {
     const dialog=ref.current;
-    if(!dialog)return;
+    if(!dialog||!contentReady)return;
     const fit=()=>{
       if(innerWidth<768){
         dialog.style.width='';delete dialog.dataset.readingColumns;delete dialog.dataset.compactMemo;
@@ -152,7 +159,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       if(active)delete dialog.dataset.fitting;
     };
     if(fitted)dialog.dataset.fitting='true';else fit();
-    let started=false;const start=()=>{if(started)return;started=true;void settle();};
+    let started=false,startQueued=false;const start=()=>{if(startQueued||!active)return;startQueued=true;requestAnimationFrame(()=>setTimeout(()=>{if(active){started=true;void settle();}},0));};
     const fallback=setTimeout(start,1500);
     document.fonts.ready.then(()=>{clearTimeout(fallback);start();});
     const schedule=()=>{if(started)void settle();};
@@ -164,7 +171,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     observer.observe(dialog,{childList:true,subtree:true});
     window.addEventListener('resize',schedule);
     return()=>{active=false;clearTimeout(fallback);observer.disconnect();resizeObserver.disconnect();window.removeEventListener('resize',schedule);};
-  },[children]);
+  },[children,contentReady]);
   return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.
     if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}
@@ -175,6 +182,6 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     if(e.shiftKey&&(document.activeElement===first||document.activeElement===e.currentTarget)){e.preventDefault();last?.focus();}
     else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}
   }} onCancel={e=>{e.preventDefault();close();}} onClick={e => { if (e.target === e.currentTarget) close(); }}>
-    <div className="panel-shell"><header onPointerDown={e=>{if(e.pointerType!=="touch")return;start.current={x:e.clientX,y:e.clientY};e.currentTarget.setPointerCapture(e.pointerId);}} onPointerUp={e=>{if(start.current&&e.clientY-start.current.y>70&&Math.abs(e.clientX-start.current.x)<70)close();start.current=null;}}><i className="sheet-handle" aria-hidden="true"/><h2>{title}</h2><button aria-label="Close panel" onClick={close}>Close <span aria-hidden="true">×</span></button></header><div className="panel-content">{children}</div></div>
+    <div className="panel-shell"><header onPointerDown={e=>{if(e.pointerType!=="touch")return;start.current={x:e.clientX,y:e.clientY};e.currentTarget.setPointerCapture(e.pointerId);}} onPointerUp={e=>{if(start.current&&e.clientY-start.current.y>70&&Math.abs(e.clientX-start.current.x)<70)close();start.current=null;}}><i className="sheet-handle" aria-hidden="true"/><h2>{title}</h2><button aria-label="Close panel" onClick={close}>Close <span aria-hidden="true">×</span></button></header><div className="panel-content" aria-busy={!contentReady}>{contentReady?children:null}</div></div>
   </dialog>;
 }

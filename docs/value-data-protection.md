@@ -1,152 +1,145 @@
 # Published data and scraping protection
 
-Browser data is served at `/data/v/<published-file>`. The old
-`/api/value/data/<file>` redirects there for previously deployed clients. HTML,
-Markdown and the paid API use the same server-only reader internally, avoiding
-an HTTP loop through our own CDN and BotID. No client module contains the
-GitHub origin or credentials. Published JSON bytes are preserved exactly.
+`/data/v/<published-file>` serves exact published bytes. HTML, Markdown, logos,
+and the paid API share a server-only private Vercel Blob reader. The old
+`/api/value/data/<file>` redirects to `/data/v`. There is no GitHub runtime reader
+or public fallback. The path allow-list rejects arbitrary URLs, traversal and
+corpus/staging files. GitHub remains the publisher's archive only.
 
-## Credentials and rollout order
+## Private store and publication
 
-1. Create a **fine-grained GitHub personal access token** owned by `mikipalet`.
-   Select **Only select repositories → gigainvestors-value-data**. Set repository
-   **Contents: Read-only**; Metadata read is implicit. No Actions, administration,
-   workflows, issues, or write permissions. Give it an expiry and arrange rotation.
-2. Set `VALUE_DATA_GITHUB_TOKEN` as a **sensitive server environment variable** in
-   Vercel's `mikipalets-projects/superinvestors`, first Preview, then Production.
-   Never prefix it with `NEXT_PUBLIC_`. Do not use the publisher's write token.
-   Preserve `VALUE_REVALIDATE_SECRET`, which must match the publishing runner.
-   Remove obsolete `NEXT_PUBLIC_VALUE_DATA_URL`; leave `VALUE_STORE_DIR` unset
-   on Vercel. Existing x402/CDP/Redis/Blob variables are unchanged.
-3. Redeploy Preview and verify authenticated upstream reads. The QA deployment
-   created for this change uses deployment-scoped `VALUE_DATA_PUBLIC_FALLBACK=1`
-   because the PAT was absent. This is explicitly ignored in Production, and
-   token authentication takes precedence even in Preview. Remove the fallback
-   for the final authenticated Preview. Its public-source tests do **not** prove
-   private-repository access.
-4. The controller deploys the approved commit to **Production with its PAT** and
-   verifies pages, `/data/v/meta.json`, a fresh hashed view, Markdown, and x402.
-5. Only after that deployment is live does the controller make
-   `mikipalet/gigainvestors-value-data` private. This branch does not change
-   repository visibility. Ensure the existing publishing credential still has
-   write access to that private repo.
-6. Call the existing authenticated `/api/value/revalidate` POST, then check the
-   same endpoints again. Test a CDN miss/new query (and a file not prerendered),
-   since a warm CDN alone cannot prove private access. The raw public URL should
-   become inaccessible without GitHub authentication. Run another publish and
-   confirm the new `meta.asOf` and its referenced view arrive.
+Project: `mikipalets-projects/superinvestors`.
+Private store: `gigainvestors-value-private` (`store_QkxHn9A2gIZCKvQ9`, iad1).
+It is connected to Development, Preview and Production with prefix `VALUE_DATA`;
+its server credential is `VALUE_DATA_READ_WRITE_TOKEN`. The existing public
+`superinvestors` store and `BLOB_READ_WRITE_TOKEN` serve unrelated consumers and
+are preserved. The private token is also in the publisher's `~/value-corpus/.env.local`
+(mode 0600). No owner-created GitHub PAT is needed.
 
-## Caching and publishing
+After the archive push, full publication and price-only publication upload every
+allowed file to `value/versions/<SHA-256-of-file-paths-and-bytes>/<file>` with
+private access. Uploads preserve the file bytes. Only after all uploads succeed
+is private `value/current.json` replaced. A failed upload cannot activate a
+partial snapshot; retry/verification resumes an already active version safely.
+The existing publish lock serializes writers. The post-publish recovery path
+also restores Blob when reverting a failed archive publication.
 
-- Hashed `views/<24 hex>.json` and `logos/<64 hex>.json`: one year, immutable.
-- Mutable metadata, indexes, search and other contracts: browser revalidation,
-  shared `s-maxage=60, stale-while-revalidate=300`.
-- Upstream fetches are tagged `value-data`; their default cache lifetime is five
-  minutes. Existing dossier/logo helpers retain their longer tagged lifetimes.
-- Responses carry `Vercel-Cache-Tag: value-data`. The existing publish webhook
-  calls `revalidateTag('value-data', {expire: 0})`; on Vercel/Next 16 this deletes
-  matching data/CDN entries. Do not replace it with a browser-only cache refresh.
-- Misses, upstream failures and BotID denials are `no-store`. Credentials are
-  only sent to the fixed GitHub Contents API with redirects forbidden.
-- `/data/` is excluded from the Next proxy matcher, so CDN hits need neither the
-  data function nor routing middleware. WAF rules run before the cache.
+Hashed views/logos are additionally retained at `value/immutable/<file>` so
+clients holding older cached metadata can still resolve them after publication.
+These paths are already content-addressed. No automatic deletion is performed;
+retention/cleanup is a separate operational choice.
 
-Next's generic CDN guide warns that an independent CDN also needs its own purge;
-this deployment uses Vercel's documented Next 16 tag integration. Verify the
-publish webhook on the final deployment before changing repository visibility.
+`publish --out <empty-directory>` remains local: no git publish, Blob upload or
+revalidation. To bootstrap from a fixed copy of the current published checkout:
 
-## BotID and the Firewall
+```sh
+node --env-file="$HOME/value-corpus/.env.local" --import tsx \
+  scripts/protection/upload-blob.ts /path/to/snapshot /tmp/blob-upload.json
+```
 
-BotID **Basic** is pinned on both sides: `instrumentation-client.ts` instruments
-same-origin `GET /data/v/*`; `checkDataBot` rejects unverified bots on origin
-misses, allows verified bots and explicit bypasses, and never caches denials.
-`withBotId` installs its challenge rewrites, which are excluded from our proxy.
-Deep Analysis is not enabled or required.
+Keep `VALUE_STORE_DIR` unset on Vercel. It remains a local fixture option.
+`VALUE_DATA_GITHUB_TOKEN`, `VALUE_DATA_PUBLIC_FALLBACK` and
+`NEXT_PUBLIC_VALUE_DATA_URL` are unused and unnecessary. Never expose the private
+token through a `NEXT_PUBLIC_` variable.
 
-**Do not claim BotID protects cached responses or initial HTML.** Browser proof
-exists only after JavaScript runs. Enforcing `checkBotId` on initial navigation
-would reject real visitors; enforcing every CDN hit in a function would defeat
-the caching goal. Initial HTML and cached data require the following WAF policy.
+## Cache contract
 
-`config/value-firewall-preview.json` and `config/value-firewall-production.json`
-are API/CLI custom-rule payloads, generated by
-`scripts/protection/firewall-policy.mjs`. In order:
+- Hashed views/logos: browser and shared cache for one year, immutable.
+- Mutable data: browser revalidation; shared `s-maxage=60, stale-while-revalidate=300`.
+- Private origin reads carry `value-data` tags, with the existing reader lifetimes.
+- The current pointer uses Blob's `?cache=0` consistent-read option, while Next's
+  tagged fetch cache remains enabled. The publisher webhook expires that cache.
+- `/api/value/revalidate` uses the existing `VALUE_REVALIDATE_SECRET` and
+  `revalidateTag('value-data', {expire:0})`. Data responses also carry
+  `Vercel-Cache-Tag: value-data` for Vercel's Next 16 CDN purge integration.
+- Failures and missing data are never cached. Credentials go only to the private
+  store hostname derived from the token; redirects are rejected.
+- `/data/` remains excluded from the Next proxy. Cache hits avoid the function.
 
-1. Bypass paid `/api/v1`, revalidation, x402 discovery, Markdown, llms, robots,
-   sitemaps and MCP routes. No challenge is installed on them.
-2. Bypass **Vercel-verified** bots, not user-agent strings. This covers recognized
-   Googlebot, Bingbot, GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot and other
-   verified crawlers. A spoofed `Googlebot` user agent is not verification.
-3. Count `/data/*` and HTML/page paths at **120 requests/60 seconds/IP**. Preview
-   starts in `log`; the desired production payload uses `challenge`. Static
-   assets and API routes are excluded. Requests without `Accept: text/html` still
-   count, so curl cannot evade the HTML rule just by omitting that header.
+## Firewall payloads and activation
 
-**Activation blocker observed on 2026-10-04:** Vercel accepts the bypass and rate
-limit rules, but rejects `bot_status = verified` with HTTP 401:
-`This feature requires a Priority project`. The team was confirmed on Pro and a retry still failed; the controller needs
-Vercel to confirm/enable this entitlement, or
-provide a tested alternative that verifies the invited bots. Do not activate
-challenge mode without that bypass. Do not substitute a user-agent allowlist.
-The AI Bots managed ruleset must remain Allow/off; Attack Mode is not needed.
+Custom-rule payloads are in `config/value-firewall-{preview,production}.json`,
+generated by `scripts/protection/firewall-policy.mjs`. Each environment has:
 
-Two Preview-only rules were staged (bypass and rate-limit/log); none were
-published. After resolving the entitlement, use `vercel firewall rules add
---json <one rule object> --yes` in the linked project, or PATCH the documented
-Firewall configuration API. Avoid duplicating the two existing draft rules.
-Place the verified-bot bypass above the limiter, inspect the complete draft with
-`vercel firewall diff`, and let the controller publish. Check logs, test Preview
-challenge mode, then stage/publish Production rules. This is independent of a
-code deployment: committing JSON alone does not activate WAF rules.
+1. Bypass for paid API, revalidation, x402 discovery, Markdown, llms, robots,
+   sitemaps and MCP.
+2. `/data/v/*` GET/HEAD: 120 requests per 60 seconds per IP, challenge.
+3. Page GET/HEAD: 120 requests per 60 seconds per IP, log only. Static assets
+   and API/data paths are excluded.
+4. Non-data paths bypass subsequent managed rules, after the page logging rule.
 
-For invited automation not present in Vercel's verified directory, the controller
-can add a narrow bypass using an agreed secret header **and** the service's IP/CIDR
-before the limiter. Never embed that secret in these policy files. Paid agents
-and Markdown/MCP consumers need no such bypass. Pro fixed-window counters are
-regional; 120/minute is not a single global or distributed-botnet ceiling.
+No User-Agent matching or plan-gated `bot_status` condition is used.
+`config/value-firewall-managed.json` is the managed Bot Protection activation
+payload, accepted by this Pro project. Vercel automatically excludes verified
+bots from that managed ruleset. **That exemption does not exempt them from the
+custom IP limiter**: verified bots over 120/minute on `/data/v/*` can still be
+challenged. Paid/Markdown/discovery routes bypass both rulesets. AI Bots stays off.
+Managed protection is a project setting; the final non-data bypass confines
+its enforcement to `/data/v/*`. Pages remain log-only.
+Counters are regional fixed windows, not a global botnet ceiling.
 
-## Verification commands
+Custom changes are drafts until `vercel firewall publish --yes`. In contrast,
+PATCH `managedRules.update` applies immediately: do not use it as a draft probe.
+The protect-2 availability probe briefly activated managed Bot Protection and
+then restored it to inactive; see the report for timestamps and evidence.
+The controller must publish the custom bypass rules first, then activate managed
+Bot Protection using the committed payload. The desired JSON is not an assertion
+that it is already active. The final report records actual active/draft state.
+
+The BotID fetch wrapper and origin check are removed: an A/B measurement
+isolated their redundant per-fetch client work as an interaction regression.
+Managed Bot Protection and the custom limiter protect both cache hits and misses
+before the application runs. Publish that WAF policy before deploying this code;
+application code does not itself enforce bot classification.
+
+If managed protection becomes unavailable, regenerate with `deny` as the second
+argument: the data limiter becomes 600/minute/IP deny and pages remain log-only.
+
+## Controller switch and verification
+
+Publish the WAF policy first, then deploy the approved commit with Production environments (do not promote a Preview
+assuming its environment changes). Check HTML, data, a fresh hashed view,
+Markdown/discovery and paid API responses. After the Blob-backed production
+reader is live, change `mikipalet/gigainvestors-value-data` to private; the
+publisher's existing `gh` account retains archive write access. POST authenticated
+revalidation, confirm data cache MISS then HIT and check unauthenticated GitHub
+access fails. No application deploy publishes
+these WAF files automatically.
 
 ```sh
 npm test
-npm run build
-node scripts/protection/check-data.mjs http://localhost:3091 .audit/protect/bytes.json
-# On a protected Preview, use existing CLI authentication and its automation bypass.
-PROTECT_VERCEL_CURL=1 node scripts/protection/check-data.mjs https://PREVIEW.vercel.app .audit/protect/preview-bytes.json
-npm run api:check-published
-node scripts/value/release-gate.mjs http://localhost:3091 .audit/protect/release
-LIVE_COMMIT=HEAD node scripts/value/change-review.mjs http://localhost:3091 .audit/protect/change-review
+npx tsc --noEmit
+VALUE_COMPARE_DIR=/path/to/uploaded/snapshot PROTECT_VERCEL_CURL=1 \
+  node scripts/protection/check-data.mjs https://PREVIEW.vercel.app /tmp/bytes.json
+node scripts/protection/check-browser.mjs https://gigainvestors.com/value /tmp/live.json
+node --env-file=/path/to/private-automation.env scripts/protection/check-browser.mjs \
+  https://PREVIEW.vercel.app/value /tmp/preview.json
 ```
 
-BotID-protected cold data requests must be made from an instrumented page (or a
-verified/bypassed agent). A plain curl can read already cached data; that is why
-the pre-cache WAF rule is essential. For cold byte comparisons, warm the 20 files
-using a real browser's instrumented `fetch` (`PROTECT_BROWSER=1`) or use the
-explicit Vercel CLI automation bypass (`PROTECT_VERCEL_CURL=1`). A headless
-browser with only a Trusted Sources OIDC header is still an unverified bot;
-Deployment Protection authentication does not by itself bypass BotID. GitHub is used only as the comparison
-source, and can be public only for the temporary QA rollout.
+The byte comparator reads the fixed local snapshot, never GitHub. Browser
+instrumentation is identical for live and Preview. Preview authenticates once
+with an origin-scoped cookie, avoiding request interception (which disables
+browser caching). Both runs skip the Vercel toolbar. The legacy 100 ms absolute
+exit status remains visible; release evaluation compares against live timings.
+The UI uses live's immediate modal-header paint and responsive slider updates.
+Its fixed number formatter is reused across checklist rows; formatted text is
+unchanged while rendering avoids constructing a formatter for every cell.
 
-The `value` and `api:check-published` npm commands use Node's `react-server`
-condition for server-only imports. If invoking their TS files directly, pass
-`node --conditions=react-server --import tsx` as well.
+References: [private Blob and consistent reads](https://vercel.com/docs/vercel-blob/private-storage),
+[managed rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets),
+[Bot Management](https://vercel.com/docs/bot-management),
+[WAF rate limits](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting),
+[Firewall API](https://vercel.com/docs/rest-api/security/update-firewall-configuration),
+[Next 16 tag purge](https://vercel.com/docs/caching/cdn-cache/purge).
 
-## Documentation consulted before implementation
+## Interaction parity with live
 
-Installed Next 16.3.3 documentation:
+The protection branch predates production's responsive drawer/slider changes.
+`SidePanel` now paints its header and close control before mounting expensive
+content, and postpones text fitting until after that paint. `QuarterSlider`
+updates its thumb immediately and wraps the expensive parent change in a React
+transition, matching live's interaction behavior. Drawer sizing rules, published
+bytes and UI labels are unchanged by these performance fixes.
 
-- `node_modules/next/dist/docs/01-app/01-getting-started/15-route-handlers.md`
-- `node_modules/next/dist/docs/01-app/02-guides/cdn-caching.md`
-- `node_modules/next/dist/docs/01-app/03-api-reference/04-functions/revalidateTag.md`
-
-Current platform documentation:
-
-- https://vercel.com/docs/botid/get-started
-- https://vercel.com/docs/botid/advanced-configuration
-- https://vercel.com/docs/botid/verified-bots
-- https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting
-- https://vercel.com/docs/vercel-firewall/vercel-waf/rule-configuration
-- https://vercel.com/docs/vercel-firewall/firewall-api
-- https://vercel.com/docs/rest-api/security/update-firewall-configuration
-- https://vercel.com/docs/caching/cache-control-headers
-- https://vercel.com/docs/caching/cdn-cache/purge
+The BotID client/server integration and dependency were removed after a native-fetch
+A/B test reduced mobile All companies latency from 231–260 ms to 99 ms.

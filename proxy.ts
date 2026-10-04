@@ -46,7 +46,7 @@ export const config = {
   matcher: [
     '/value/:path*',
     '/:path*.md',
-    { source: '/((?!_next/static|_next/image|faces/|data/|149e9513-01fa-4fb0-aad4-566afd725d1b/).*)', has: [{ type: 'host', value: '(value.gigainvestors.com|localhost)' }] },
-    { source: '/((?!_next/static|_next/image|faces/|data/|149e9513-01fa-4fb0-aad4-566afd725d1b/).*)', has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }] },
+    { source: '/((?!_next/static|_next/image|faces/|data/).*)', has: [{ type: 'host', value: '(value.gigainvestors.com|localhost)' }] },
+    { source: '/((?!_next/static|_next/image|faces/|data/).*)', has: [{ type: 'header', key: 'accept', value: '(.*text/markdown.*)' }] },
   ],
 };

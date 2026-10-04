@@ -1,15 +1,13 @@
 import {readPublishedBytes} from '@/lib/value/published-source';
 import {isImmutablePath, isPublishedPath} from '@/lib/value/published-path';
 import {VALUE_DATA_TAG} from '@/lib/value/data-source';
-import {checkDataBot} from '@/lib/value/bot-protection';
 import {gzipSync} from 'node:zlib';
 
 export async function GET(request: Request, {params}: {params: Promise<{path: string[]}>}) {
   const file = (await params).path.join('/');
   const noStore = {'Cache-Control': 'no-store'};
   if (!isPublishedPath(file)) return new Response(null, {status: 404, headers: noStore});
-  const denied = await checkDataBot(request);
-  if (denied) return denied;
+  // Managed WAF protection and the IP limiter run before CDN cache lookup.
   try {
     const bytes = await readPublishedBytes(file);
     if (bytes === null) return new Response(null, {status: 404, headers: noStore});

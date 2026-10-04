@@ -1,3 +1,4 @@
+import {uploadPublishedSnapshot} from '../blob-publish';
 import { assertPublishInvariants } from '../publish-invariants';
 import { validForwardDate, type ForwardSnapshot } from '../../../lib/value/forward';
 import { companyExclusion } from '../../../lib/value/fund-exclusion';
@@ -179,6 +180,7 @@ export default async function prices(options: { only?: string[]; limit?: number;
     checkDisk();
     const changed = commitPrices({ repo, asOf: today });
     pushRepository(repo, false);
+    await uploadPublishedSnapshot(repo);
     console.log(`prices: ${companies.length} published companies, ${changed ? "committed updated quotes" : "unchanged quotes"}`);
     if (!summary.ok) throw new Error(`Fresh price coverage below 95%: ${summary.fresh}/${summary.total}; successful updates published`);
   });

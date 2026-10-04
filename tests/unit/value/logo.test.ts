@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import sharp from 'sharp';
 import { GET } from '@/app/api/value/logo/route';
-beforeEach(()=>vi.stubEnv("VALUE_DATA_GITHUB_TOKEN","test-only"));
+beforeEach(()=>vi.stubEnv("VALUE_DATA_READ_WRITE_TOKEN","vercel_blob_rw_teststore_secret"));
 afterEach(()=>{vi.unstubAllGlobals();vi.unstubAllEnvs();});
 it('preserves bounded ICO favicons that sharp cannot decode',async()=>{
  const icon=Buffer.alloc(70);
@@ -38,7 +38,7 @@ it('serves a validated content-addressed asset from the fixed published store',a
  expect(response.status).toBe(200);expect(response.headers.get('content-type')).toBe('image/webp');
  expect(response.headers.get('cache-control')).toContain('immutable');
  expect(Buffer.from(await response.arrayBuffer())).toEqual(bytes);
- expect(fetcher.mock.calls[0][0]).toBe(`https://api.github.com/repos/mikipalet/gigainvestors-value-data/contents/logos/${asset}.json?ref=main`);
+ expect(fetcher.mock.calls[0][0]).toBe(`https://teststore.private.blob.vercel-storage.com/value/immutable/logos/${asset}.json`);
  expect((await GET(new Request('http://localhost/api/value/logo?asset=../../secret'))).status).toBe(400);
 });
 it('rejects cached assets whose bytes do not match their address',async()=>{

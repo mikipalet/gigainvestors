@@ -4,12 +4,18 @@ const [base, output] = process.argv.slice(2);
 const browser = await chromium.launch(), report = [];
 try {
   for (const [device,width,height,cpu] of [['desktop',1728,970,1],['mobile-4x',390,844,4]]) {
-    const page = await browser.newPage({viewport:{width,height}});
+    const context = await browser.newContext({viewport:{width,height},extraHTTPHeaders:{'x-vercel-skip-toolbar':'1'}});
+    const origin = new URL(base).origin;
+    if (new URL(base).hostname.endsWith('.vercel.app')) {
+      if (!process.env.VERCEL_AUTOMATION_BYPASS_SECRET) throw Error('Preview timing requires the existing automation bypass secret');
+      // Authenticate once with an origin-scoped cookie. Request interception
+      // disables browser caching and biases Preview timings relative to live.
+      const auth = await context.request.get(origin, {headers:{'x-vercel-protection-bypass':process.env.VERCEL_AUTOMATION_BYPASS_SECRET,'x-vercel-set-bypass-cookie':'true'}});
+      if (!auth.ok()) throw Error('Preview authentication failed');
+    }
+    const page = await context.newPage();
     const cdp = await page.context().newCDPSession(page);
     await cdp.send('Emulation.setCPUThrottlingRate',{rate:cpu});
-    if (new URL(base).hostname.endsWith('.vercel.app') && process.env.VERCEL_OIDC_TOKEN) {
-      await page.route(new URL(base).origin + '/**', route => route.continue({headers:{...route.request().headers(),'x-vercel-trusted-oidc-idp-token':process.env.VERCEL_OIDC_TOKEN}}));
-    }
     await page.addInitScript(()=>{
       window.__events=[];
       new PerformanceObserver(l=>window.__events.push(...l.getEntries().filter(e=>e.interactionId).map(e=>e.duration))).observe({type:'event',buffered:true,durationThreshold:16});
@@ -47,7 +53,7 @@ try {
     await page.keyboard.press('Escape');await page.waitForTimeout(200);
     await measure('search','search',()=>page.getByRole('button',{name:'Search companies',exact:true}).click());
     report.push({device,...traffic,actions});console.log(JSON.stringify(report.at(-1)));
-    await page.close();
+    await context.close();
   }
 } finally {await browser.close();writeFileSync(output,JSON.stringify(report,null,2));}
 if(report.some(r=>r.afterLoadAllBytes>250000||r.postLoadBytes>250000||r.githubRequests||r.actions.some(a=>a.paintMs>100||a.eventMs>100)))process.exitCode=1;

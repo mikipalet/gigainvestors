@@ -1,3 +1,5 @@
+vi.mock('@/scripts/value/blob-publish',()=>({uploadPublishedSnapshot:vi.fn(async()=>({}))}));
+import {uploadPublishedSnapshot} from '@/scripts/value/blob-publish';
 import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, rmSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -25,5 +27,7 @@ it.each([1,2])('publishes successful quotes before setting stage outcome at 95 p
  expect(Object.keys(JSON.parse(readFileSync(join(root,'prices/US.json'),'utf8')))).toHaveLength(20-missing);
  const runs=readdirSync(join(root,'prices-runs'));expect(JSON.parse(readFileSync(join(root,'prices-runs',runs[0]),'utf8'))).toMatchObject({total:20,fresh:20-missing,ok:missing===1});
  expect(pushRepository).toHaveBeenCalledOnce();
+ expect(uploadPublishedSnapshot).toHaveBeenCalledWith(root);
+ expect(vi.mocked(uploadPublishedSnapshot).mock.invocationCallOrder[0]).toBeGreaterThan(vi.mocked(pushRepository).mock.invocationCallOrder[0]);
  expect(bulkLastDay).toHaveBeenCalledTimes(1);
 });

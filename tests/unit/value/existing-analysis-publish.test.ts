@@ -1,3 +1,4 @@
+vi.mock('@/scripts/value/blob-publish',()=>({uploadPublishedSnapshot:vi.fn(async()=>({}))}));
 import {execFileSync} from 'node:child_process';
 import {mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';

@@ -25,32 +25,7 @@
     }
   },
   {
-    "name": "Value: verified bots (production)",
-    "active": true,
-    "conditionGroup": [
-      {
-        "conditions": [
-          {
-            "type": "environment",
-            "op": "eq",
-            "value": "production"
-          },
-          {
-            "type": "bot_status",
-            "op": "eq",
-            "value": "verified"
-          }
-        ]
-      }
-    ],
-    "action": {
-      "mitigate": {
-        "action": "bypass"
-      }
-    }
-  },
-  {
-    "name": "Value: bulk requests (production)",
+    "name": "Value: data requests (production)",
     "active": true,
     "conditionGroup": [
       {
@@ -63,7 +38,7 @@
           {
             "type": "path",
             "op": "pre",
-            "value": "/data/"
+            "value": "/data/v/"
           },
           {
             "type": "method",
@@ -74,7 +49,27 @@
             ]
           }
         ]
-      },
+      }
+    ],
+    "action": {
+      "mitigate": {
+        "action": "rate_limit",
+        "rateLimit": {
+          "algo": "fixed_window",
+          "window": 60,
+          "limit": 120,
+          "keys": [
+            "ip"
+          ],
+          "action": "challenge"
+        }
+      }
+    }
+  },
+  {
+    "name": "Value: page requests (production)",
+    "active": true,
+    "conditionGroup": [
       {
         "conditions": [
           {
@@ -121,8 +116,34 @@
           "keys": [
             "ip"
           ],
-          "action": "challenge"
+          "action": "log"
         }
+      }
+    }
+  },
+  {
+    "name": "Value: non-data managed bypass (production)",
+    "active": true,
+    "conditionGroup": [
+      {
+        "conditions": [
+          {
+            "type": "environment",
+            "op": "eq",
+            "value": "production"
+          },
+          {
+            "type": "path",
+            "op": "pre",
+            "value": "/data/v/",
+            "neg": true
+          }
+        ]
+      }
+    ],
+    "action": {
+      "mitigate": {
+        "action": "bypass"
       }
     }
   }

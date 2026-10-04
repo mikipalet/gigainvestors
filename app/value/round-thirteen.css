@@ -73,7 +73,6 @@
 .select-pages button {width:44px;height:44px;border:1px solid var(--viz-grid);}
 .select-pages button:disabled {opacity:.3;}
 .value-page .search-options .option-count {font-size:14px;}
-body:has(.value-page) #search-results {font-size:14px;}
 .panel-content .paginated-results {overflow:visible;flex:none;}
 .paginated-results table {font-size:14px;}
 .paginated-results td,.paginated-results th {padding:10px 8px;}
@@ -94,18 +93,9 @@ body:has(.value-page) #search-results {font-size:14px;}
 .value-page .panel-content .panel-chart svg text {font-size:14px!important;}
 .value-page .paginated-results small,.value-page .table-ticker {font-size:14px;}
 body:has(.value-page) .pointer-tooltip,body:has(.value-page) .pointer-tooltip small {font-size:14px!important;}
-body:has(.value-page) #search-results li,body:has(.value-page) .search-group {font-size:14px!important;}
 .value-page .company-logo.company-monogram > span {font-size:14px!important;}
 .value-page .one-dossier :is(.back-link,.company-heading p,.company-about,.holder-summary,.reference-metrics b,.mini-series figcaption,.mini-dollar figcaption,.mini-dollar span,.exact-prices dt,.mini-price figcaption),.value-page .one-dossier svg text,.value-page .panel-content .mini-dollar :is(span,figcaption) {font-size:14px!important;}
-.search-modal :is(.value-search-status,.market-access-status,.search-group),.search-modal > button {font-size:14px!important;}
 .paginated-results th:first-child > a,.paginated-results .table-ticker {display:block;line-height:1.4;}
 .value-page .dossier-source :is(span,a),.value-page .panel-content .investor-row {font-size:14px!important;}
-.search-modal #search-results .shrink-0 {font-size:14px!important;}
-.search-modal .value-search-row {display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 12px;}
-.search-modal .value-search-row > span:nth-child(2) {grid-row:2;grid-column:1/-1;min-width:0;white-space:normal;overflow:visible;text-overflow:clip;}
-.search-modal .value-search-row > span:nth-child(3) {grid-row:1;grid-column:3;}
-.search-modal .value-search-status {grid-row:1;grid-column:2;justify-self:end;}
-.search-modal .market-access-status {grid-row:3;grid-column:1/-1;max-width:none;}
-.search-modal [role=status] {font-size:14px!important;}
 .value-page .panel-shell > header h2 {order:0;}
 .dossier-checks:not(:has(.price-section)) {grid-template-columns:minmax(0,1fr);}

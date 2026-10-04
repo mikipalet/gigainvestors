@@ -25,7 +25,7 @@ describe("shared search rank", () => {
     expect(rankItems(items, "tsm")).toEqual(["alias", "small", "large"]);
   });
   it("retains the twelve-result cap", () => {
-    expect(rank({ investors: [], stocks: Array.from({length: 20}, (_, i) => ({t: `A${i}`, n: "A", h: i})) }, "a")).toHaveLength(12);
+    expect(rank({ investors: [], stocks: Array.from({length: 20}, (_, i) => ({t: `A${i}`, n: `A ${i}`, h: i})) }, "a")).toHaveLength(12);
   });
 });
 

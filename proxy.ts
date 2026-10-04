@@ -8,7 +8,7 @@ export async function proxy(request: NextRequest) {
   const valueHost = host === 'value.gigainvestors.com' || host === process.env.VALUE_SITE_HOST;
   const valuePath = pathname === "/value" || pathname.startsWith("/value/");
   const dossierPath = valuePath ? pathname.slice(6) : valueHost ? pathname : '';
-  const asset = /^\/(?:_next|api|faces)(?:\/|$)/.test(pathname)
+  const asset = pathname === '/.well-known/x402' || /^\/(?:_next|api|faces)(?:\/|$)/.test(pathname)
     || /\.(?:ico|png|svg|jpe?g|webp|avif|gif|css|js|map|woff2?|txt|html|pdf|json|webmanifest)$/i.test(pathname);
   const special = ['', '/', '/method', '/forward', '/sitemap.xml', '/robots.txt'].includes(dossierPath);
   if ((valuePath || !asset) && !special && !/^\/[a-z0-9&.-]{1,24}\.[a-z]{1,5}$/.test(dossierPath.toLowerCase())) {

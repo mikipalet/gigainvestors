@@ -1,3 +1,4 @@
+import {dateLabel} from "@/lib/value/presentation";
 import {pageAlternates} from '@/lib/agents/urls';
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -32,7 +33,7 @@ export async function generateMetadata(props: { params: Promise<{ issue: string 
   };
 }
 
-const sentOn = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+const sentOn = dateLabel;
 
 export default async function Page(props: { params: Promise<{ issue: string }> }) {
   const { issue } = await props.params;
@@ -62,7 +63,7 @@ export default async function Page(props: { params: Promise<{ issue: string }> }
   const [lead, ...rest] = prose.paragraphs;
   const stats = manifest.stats;
   return (
-    <main className="mx-auto flex min-h-[100dvh] max-w-[680px] flex-col gap-6 px-6 pb-28 pt-12 text-[16px] leading-relaxed">
+    <main className="editorial-page mx-auto flex min-h-[100dvh] max-w-[680px] flex-col gap-6 px-6 pb-28 pt-12 text-[16px] leading-relaxed">
       <div className="flex items-baseline justify-between text-[12px]">
         <Link href="/newsletter" className="font-semibold tracking-wide opacity-45 hover:opacity-100">
           ← all issues

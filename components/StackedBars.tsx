@@ -2,6 +2,8 @@
 
 import { useMemo, useRef, useState } from "react";
 import {PointerTooltip} from "./PointerTooltip";
+import { compactNumber } from "@/lib/format";
+import { sharePrice } from "@/lib/value/listing-details";
 import type { StockQuarter } from "@/lib/types";
 
 interface Props {
@@ -104,8 +106,8 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
   const shown = hover?.qi ?? index;
   const hoverSeg = hover?.code ? columns[hover.qi].segs.find((s) => s.code === hover.code) : null;
   const priceAt = prices[shown];
-  const priceText = priceAt !== null && priceAt !== undefined ? ` · $${priceAt >= 100 ? Math.round(priceAt) : priceAt.toFixed(1)}` : "";
-  const fmtShares = (n: number) => (n >= 1e9 ? `${(n / 1e9).toFixed(1)}B` : n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : n >= 1e3 ? `${Math.round(n / 1e3)}K` : `${Math.round(n)}`) + " shares";
+  const priceText = priceAt !== null && priceAt !== undefined ? ` · ${sharePrice(priceAt, "USD")}` : "";
+  const fmtShares = (n: number) => `${compactNumber(n)} shares`;
   const fmt = unit === "shares" ? fmtShares : format;
   const segName = hover?.code === "__others" ? "others" : hover?.code ? people[hover.code] ?? hover.code : null;
   const readout = (hoverSeg && segName ? `${segName} · ${fmt(hoverSeg.value)} · ${labels[shown]}` : `${fmt(columns[shown]?.total ?? 0)} · ${labels[shown]}`) + priceText;
@@ -180,8 +182,8 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
       {endPct && lastKnown >= 0 && index >= columns.length - 1 && (
         <div className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `${endPct.left}%`, top: `${endPct.top}%` }}>
           <div className="h-[7px] w-[7px] rounded-full bg-ink shadow-[0_0_0_2px_var(--paper)]" />
-          <div className="absolute right-[10px] top-1/2 -translate-y-1/2 whitespace-nowrap bg-paper px-1 text-[13px] font-semibold leading-none">
-            ${prices[lastKnown]! >= 100 ? Math.round(prices[lastKnown]!) : prices[lastKnown]!.toFixed(1)}
+          <div className="absolute right-[10px] whitespace-nowrap bg-paper px-1 text-[13px] font-semibold leading-none" style={{ top: endPct.top < 10 ? 7 : "50%", transform: endPct.top < 10 ? undefined : "translateY(-50%)" }}>
+            {sharePrice(prices[lastKnown]!, "USD")}
           </div>
         </div>
       )}
@@ -189,7 +191,7 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
       {hover&&pointer&&<PointerTooltip x={pointer.x} y={pointer.y}>{readout}</PointerTooltip>}
       <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[13px] leading-none opacity-55">
         <span>{labels[0]?.slice(0, 4)} · peak {fmt(max)}</span>
-        <span>{priceMax > 0 ? `price up to $${Math.round(priceMax)}` : ""} · {labels[labels.length - 1]?.slice(0, 4)}</span>
+        <span>{priceMax > 0 ? `price up to ${sharePrice(priceMax, "USD")}` : ""} · {labels[labels.length - 1]?.slice(0, 4)}</span>
       </div>
     </div>
   );

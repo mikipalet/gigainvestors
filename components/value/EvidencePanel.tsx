@@ -1,4 +1,5 @@
 'use client';
+import {formatRate} from '@/lib/format';
 import {ruleReading} from '@/lib/value/rule-reading';
 import {returnModelCopy} from '@/lib/value/owner-return';
 import type {Dossier,TestOutcome,PriceMap} from '@/lib/value/types';
@@ -75,7 +76,7 @@ export function EvidencePanel({dossier,test}:{dossier:Dossier;test:TestOutcome})
 export function ValuationPanel({dossier,quote}:{dossier:Dossier;quote:PriceMap[string]|null}){
  const v=dossier.valuation,comparable=comparableValuation(v,dossier.company.currency),owner=ownerReturn(v,dossier.company.currency,dossier.company.marketCapUsd,quote?.[0]??null),mos=dossier.requiredMos??.25;
  if(!v)return null;
- const pct=(n:number)=>`${(n*100).toFixed(1)}%`,money=(n:number|null)=>sharePrice(n,dossier.company.currency);
+ const pct=formatRate,money=(n:number|null)=>sharePrice(n,dossier.company.currency);
  const history=dossier.valueHistory??[],prices=dossier.priceHistory??[];
  const annualQuotes=history.flatMap(([fy])=>{const point=prices.filter(([date])=>Number(date.slice(0,4))===fy).at(-1);return point?[[fy,point[1]] as const]:[];});
  const annualPrices=annualQuotes.length>1;

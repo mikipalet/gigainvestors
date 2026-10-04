@@ -2,9 +2,11 @@ export const audit = () => {
   const vw = innerWidth;
   const root=document.querySelector("dialog[open],.search-modal")??document.body;
   const issues = [];
+  // Screen-reader table headers can have visually clipped ancestors.
+  const visuallyHidden=el=>{for(let p=el;p&&p!==document.body;p=p.parentElement){const s=getComputedStyle(p);if(p.classList.contains('sr-only')||s.clipPath==='inset(50%)'||s.clip==='rect(0px, 0px, 0px, 0px)')return true;}return false;};
   if (document.documentElement.scrollWidth > vw + 1) issues.push(`horizontal overflow: ${document.documentElement.scrollWidth}px > ${vw}px`);
   for (const el of root.querySelectorAll("*")) {
-    if(el.closest('.sr-only'))continue;
+    if(visuallyHidden(el))continue;
     const cs = getComputedStyle(el);
     if (cs.display === "none" || cs.visibility === "hidden") continue;
     const r = el.getBoundingClientRect();
@@ -34,7 +36,7 @@ export const audit = () => {
     const n = walker.currentNode; if (!n.textContent.trim()) continue;
     const el = n.parentElement; if (!el) continue;
     if (!el.checkVisibility({ opacityProperty: true, visibilityProperty: true, contentVisibilityAuto: true })) continue;
-    if (el.closest(".sr-only") || getComputedStyle(el).clipPath === "inset(50%)") continue;
+    if (visuallyHidden(el)) continue;
     { const er = el.getBoundingClientRect(); if (er.width <= 2 || er.height <= 2) continue; }
     if(parseFloat(getComputedStyle(el).fontSize)<13)issues.push(`text below 13px: "${n.textContent.trim().slice(0,40)}" (${getComputedStyle(el).fontSize})`);
     const range = document.createRange(); range.selectNodeContents(n);

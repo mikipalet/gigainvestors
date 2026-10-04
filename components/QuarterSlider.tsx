@@ -13,11 +13,12 @@ interface Props {
   period?: "quarter" | "year";
   /** Arrow keys step the timeline from anywhere on the page (as on gigainvestors.com). */
   globalKeys?: boolean;
+  source?: '13f';
 }
 
 // Timeline along the bottom. The quarter pill IS the thumb; drag it, click the track,
 // use the ‹ › buttons or arrow keys.
-export function QuarterSlider({ quarters, q, onChange, note, period = "quarter", embedded = false, label = "Quarter", onPrefetch, globalKeys = !embedded }: Props) {
+export function QuarterSlider({ quarters, q, onChange, note, period = "quarter", embedded = false, label = "Quarter", onPrefetch, globalKeys = !embedded, source }: Props) {
   const [draft,setDraft]=useState<string|null>(null);
   useEffect(()=>setDraft(null),[q]);
   const shownQuarter=draft??q;
@@ -117,7 +118,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
           onPointerCancel={() => { dragging.current = false; emit(latest.current, true); }}
           onPointerUp={e => { if (embedded) { dragging.current = false; emit(pointerValue(e.clientX), true); } else e.currentTarget.blur(); }}
           title={embedded?note:undefined}
-          aria-label={period === "year" ? "Fiscal year" : "Quarter"} aria-valuetext={shownQuarter === "Today" ? "Today" : period === "year" ? `Fiscal year ${shownQuarter}` : shownQuarter}
+          aria-label={period === "year" ? "Fiscal year" : "Quarter"} aria-valuetext={shownQuarter === "Today" ? "Today" : period === "year" ? `Fiscal year ${shownQuarter}` : shownQuarter.replace(/^(\d{4})Q/, '$1 Q')}
           style={embedded ? {touchAction:"none"} : undefined}
           className="slider absolute inset-x-0 top-1 z-10 m-0 h-10 w-full cursor-ew-resize appearance-none bg-transparent"
         />
@@ -134,11 +135,12 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
           );
         })}
         <div
-          className="pointer-events-none absolute top-[24px] z-20 -translate-y-1/2 whitespace-nowrap rounded-[3px] bg-ink px-[7px] py-[4px] text-[13px] font-semibold leading-none text-paper shadow-[0_0_0_2px_var(--paper)]"
+          className="pointer-events-none absolute top-[24px] z-20 whitespace-nowrap rounded-[3px] bg-ink px-[7px] py-[4px] text-[13px] font-semibold leading-none text-paper shadow-[0_0_0_2px_var(--paper)]"
           style={{ left: `clamp(28px, ${pct}%, calc(100% - 28px))`, transform: "translate(-50%, -50%)" }}
         >
-          {period === "year" && shownQuarter !== "Today" ? `FY${shownQuarter}` : shownQuarter}
+          {period === "year" && shownQuarter !== "Today" ? `FY${shownQuarter}` : shownQuarter.replace(/^(\d{4})Q/, '$1 Q')}
         </div>
+        {embedded&&source==='13f'&&<small className="timeline-source"><span>quarterly 13F filings · </span><a href="https://www.dataroma.com" target="_blank" rel="noopener noreferrer">dataroma.com</a></small>}
       </div>
       <style>{`
         .slider::-webkit-slider-thumb{-webkit-appearance:none;width:56px;height:40px;background:transparent}
@@ -146,7 +148,7 @@ export function QuarterSlider({ quarters, q, onChange, note, period = "quarter",
         .slider::-webkit-slider-runnable-track{background:transparent}
         .slider::-moz-range-track{background:transparent}
         .slider:focus-visible{outline:none!important}
-        .slider:focus-visible ~ div:last-child{outline:2px solid var(--ink);outline-offset:3px}
+        .slider:focus-visible ~ div:last-of-type{outline:2px solid var(--ink);outline-offset:3px}
       `}</style>
     </div>
   );

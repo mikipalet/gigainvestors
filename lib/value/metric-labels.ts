@@ -1,4 +1,5 @@
-import { compactMoney } from '@/lib/format';
+import {sharePrice} from './listing-details';
+import { compactMoney, formatRate } from '@/lib/format';
 import { T } from './config';
 export type MetricFormat = 'pct' | 'pp' | 'x' | 'money' | 'count' | 'years' | 'yesno' | 'year' | 'number';
 export const metricLabels: Record<string, { label: string; format: MetricFormat; threshold?: number; better?: 'higher' | 'lower'; strict?: boolean; nonNegative?: boolean }> = {
@@ -100,15 +101,14 @@ export function formatMetric({ value, format, currency = '', returnRatio = false
   if (format === 'number') return value.toFixed(2);
   if (format === 'yesno') return value > 0 ? 'Yes' : 'No';
   if (format === 'pct' && (returnRatio && value > 1 || value === 1.000001)) return '>100%';
-  if (format === 'pct') return `${(value * 100).toFixed(1)}%`;
+  if (format === 'pct') return formatRate(value);
   if (format === 'pp') return `${(value * 100).toFixed(1)} pp`;
   if (format === 'x') return `${value.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}×`;
   if (format === 'count' && Math.abs(value)<1000) return value.toLocaleString('en-US',{maximumFractionDigits:0});
   if (format === 'years') return `${value} years`;
-  const number = compactMoney(value);
-  return format === 'money' ? `${currency} ${number}`.trim() : number;
+  return compactMoney(value,format === 'money'?currency:'');
 }
-export const perShareMoney = (value: number, currency: string) => currency === 'GBX' ? `${value.toLocaleString('en-US', {maximumFractionDigits:0})}p` : `${currency} ${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+export const perShareMoney = (value: number, currency: string) => currency === 'GBX' ? `${value.toLocaleString('en-US', {maximumFractionDigits:0})}p` : sharePrice(value,currency);
 
 export const marginVariation = (value:number|null) => value===null?'':value>1?'>100%':`${Math.round(value*100)}%`;
 

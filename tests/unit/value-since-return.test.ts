@@ -22,7 +22,7 @@ it('uses the equal-weight mean of all analysed companies, including failures and
  ['FAIL.US','FFFFF',2,false,-.5],['WIN.US','PPPPP',.7,true,2.9],
  ]));
  expect(summary.avgReturnAtBuy).toBe(1.5);expect(summary.avgReturnAll).toBeCloseTo(.8333);
- expect(historyHeadline('2018Q3',summary)).toBe('2018Q3: 2 at a fair price. Up 150% since; all index companies +83%.');
+ expect(historyHeadline('2018Q3',summary)).toBe('2018 Q3: 2 at a fair price. Up 150% since; all index companies +83%.');
  expect(historyHeadline('2020Q1',{...summary,avgReturnAtBuy:-.48})).toContain('Down 48% since');
 });
 

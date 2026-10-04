@@ -1,4 +1,5 @@
 "use client";
+import {sharePrice} from "@/lib/value/listing-details";
 import {AgentQuarterMetadata} from '@/components/AgentQuarterMetadata';
 import {stockUrl} from '@/lib/agents/urls';
 import {StockContent} from "@/components/AgentContent";
@@ -63,7 +64,7 @@ export function Stock({ stock, investors, checklist }: { stock: StockData; inves
   const sharesBefore = sharesOf(before);
   const sharesDelta = sharesNow !== null && sharesBefore !== null ? formatDelta(sharesNow, sharesBefore) : null;
   const priceDelta = current.price && before?.price ? formatDelta(current.price, before.price) : null;
-  const priceText = current.price ? `$${current.price >= 100 ? Math.round(current.price) : current.price.toFixed(1)}` : null;
+  const priceText = current.price ? sharePrice(current.price,'USD') : null;
   const normalized = current.holders.map((h) => ({ ...h, activity: effectiveActivity(h.activity, h.change) }));
   const buying = normalized.filter((h) => h.activity === "new" || h.activity === "add").length;
   const selling = normalized.filter((h) => h.activity === "reduce" || h.activity === "sold").length;

@@ -6,7 +6,7 @@ const percent=(value:number)=>`${Math.round(Math.abs(value)*100)}%`;
 const signed=(value:number)=>`${Math.round(value*100)===0?'':value<0?'−':'+'}${percent(value)}`;
 export function sinceLabel(value:number|null|undefined):string {return finite(value)?`Since then ${signed(value)}`:'';}
 export function historyHeadline(frame:string,summary:Pick<HistorySummary,'atBuy'|'avgReturnAtBuy'|'avgReturnAll'>):string {
- const title=`${frame}: ${summary.atBuy} at a fair price.`;
+ const title=`${frame.replace(/^(\d{4})Q/, '$1 Q')}: ${summary.atBuy} at a fair price.`;
  return finite(summary.avgReturnAtBuy)&&finite(summary.avgReturnAll)
   ?`${title} ${Math.abs(summary.avgReturnAtBuy)<.005?'Flat':`${summary.avgReturnAtBuy<0?'Down':'Up'} ${percent(summary.avgReturnAtBuy)}`} since; all index companies ${Math.abs(summary.avgReturnAll)<.005?'flat':signed(summary.avgReturnAll)}.`:title;
 }

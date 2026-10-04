@@ -1,3 +1,4 @@
+import {formatRate} from '@/lib/format';
 import type { Series } from './types';
 export const dateLabel = (value?: string | null) => value && Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(value)).replace('Sept', 'Sep') : '';
 export const humanLabel = (value: string) => { const copy = value.replaceAll('_', ' '); return copy.charAt(0).toUpperCase() + copy.slice(1); };
@@ -30,7 +31,7 @@ export function returnDisplay({value, years, unlimited = false, financial = fals
   if (unlimited) return {label:'Positive earnings, nonpositive capital', note:financial?'Tangible equity (equity − goodwill − intangibles) is nonpositive with positive net income; ROE has no finite denominator':'Invested capital (equity + debt + leases − cash − goodwill) is nonpositive with positive operating earnings; ROIC has no finite denominator', sort:Infinity};
   if (value === null || !Number.isFinite(value)) return {label:years < 5 ? years ? `${years} years on file` : '' : '', note:'Available annual return observations', sort:-Infinity};
   if (value > 1) return {label:financial?'ROE >100%':'>100%',note:'High returns are sensitive to a small capital denominator',sort:value};
-  return {label:`${financial ? 'ROE ' : ''}${(value*100).toFixed(1)}%`,note:financial ? 'Return on tangible equity, the denominator used by the published model' : 'Median annual return on invested capital',sort:value};
+  return {label:`${financial ? 'ROE ' : ''}${formatRate(value)}`,note:financial ? 'Return on tangible equity, the denominator used by the published model' : 'Median annual return on invested capital',sort:value};
 }
 export function decodeEntities(value: string) {
  const entities: Record<string,string> = {amp:'&',quot:'"',apos:"'",lt:'<',gt:'>',nbsp:' ',ndash:'–',mdash:'—',rsquo:'’',lsquo:'‘',eacute:'é',uuml:'ü',ouml:'ö',auml:'ä',trade:'™',reg:'®'};

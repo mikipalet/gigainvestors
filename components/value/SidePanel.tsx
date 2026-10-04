@@ -50,8 +50,8 @@ function largestFont(dialog:HTMLElement,property:string,fits:()=>boolean,max:num
 /** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted evidence. */
 export function SidePanel({ title, onClose, children, wide = false, compact = false, kind }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; compact?:boolean; kind?:string }) {
   const [closing,setClosing]=useState(false);
-  // Method fits with CSS alone, so its complete contents can paint immediately.
-  const [contentReady,setContentReady]=useState(kind==='method');
+  // Paint the modal shell before mounting chart or table contents.
+  const [contentReady,setContentReady]=useState(false);
   // Keep modal focus/close responsive while the chart or table body mounts.
   useEffect(()=>{
     let active=true,timer:ReturnType<typeof setTimeout>|undefined;
@@ -60,13 +60,13 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
   },[]);
   const timer=useRef<ReturnType<typeof setTimeout>|null>(null);
   const start=useRef<{x:number;y:number}|null>(null);
-  const close=()=>{if(closing)return;setClosing(true);timer.current=setTimeout(onClose,matchMedia('(prefers-reduced-motion: reduce)').matches?0:180);};
+  const close=()=>{if(closing)return;setClosing(true);timer.current=setTimeout(onClose,matchMedia('(prefers-reduced-motion: reduce)').matches?0:80);};
   useEffect(()=>()=>{if(timer.current)clearTimeout(timer.current);},[]);
   const ref = useRef<HTMLDialogElement>(null);
   useLayoutEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
     const dialog = ref.current;
-    if(dialog&&innerWidth>=768){
+    if(dialog&&innerWidth>=768&&kind!=='method'){
       const article=dialog.querySelector<HTMLElement>('.evidence-layout');
       if(article){dialog.style.width=`${evidenceWidth(article.dataset.test??'price')}px`;dialog.dataset.readingColumns='1';dialog.style.setProperty('--reading-font','13px');}
       if(dialog.querySelector('.owner-memo-depth'))dialog.style.width=`${panelWidth(.35,560,620)}px`;
@@ -195,6 +195,6 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     if(e.shiftKey&&(document.activeElement===first||document.activeElement===e.currentTarget)){e.preventDefault();last?.focus();}
     else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}
   }} onCancel={e=>{e.preventDefault();close();}} onClick={e => { if (e.target === e.currentTarget) close(); }}>
-    <div className="panel-shell"><header onPointerDown={e=>{if(e.pointerType!=="touch")return;start.current={x:e.clientX,y:e.clientY};e.currentTarget.setPointerCapture(e.pointerId);}} onPointerUp={e=>{if(start.current&&e.clientY-start.current.y>70&&Math.abs(e.clientX-start.current.x)<70)close();start.current=null;}}><i className="sheet-handle" aria-hidden="true"/><h2>{title}</h2><button aria-label="Close panel" onClick={close}>Close <span aria-hidden="true">×</span></button></header><div className="panel-content" aria-busy={!contentReady}>{contentReady?children:kind==='business'?<div className="owner-memo-depth"/>:kind==='holders'?<div className="company-holders-panel"/>:kind?<div className="evidence-layout" data-test={kind}/>:null}</div></div>
+    <div className="panel-shell"><header onPointerDown={e=>{if(e.pointerType!=="touch")return;start.current={x:e.clientX,y:e.clientY};e.currentTarget.setPointerCapture(e.pointerId);}} onPointerUp={e=>{if(start.current&&e.clientY-start.current.y>70&&Math.abs(e.clientX-start.current.x)<70)close();start.current=null;}}><i className="sheet-handle" aria-hidden="true"/><h2>{title}</h2><button aria-label="Close panel" onClick={close}>Close <span aria-hidden="true">×</span></button></header><div className="panel-content" aria-busy={!contentReady}>{contentReady?children:kind==='method'?<div className="method-sections"/>:kind==='business'?<div className="owner-memo-depth"/>:kind==='holders'?<div className="company-holders-panel"/>:kind?<div className="evidence-layout" data-test={kind}/>:null}</div></div>
   </dialog>;
 }

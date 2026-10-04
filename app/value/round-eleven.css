@@ -4,7 +4,7 @@
 .value-page :is(p,li) {font-size:15px;}
 .value-page .panel-content :is(p,li) {font-size:16px;line-height:1.5;}
 .value-page .value-header button,.value-page .year-timeline * {font-size:13px!important;}
-body:has(.value-page) :is([class~="text-[9px]"],[class~="text-[10px]"],[class~="text-[11px]"],[class~="text-[12px]"],.pointer-tooltip small) {font-size:13px;}
+body:has(.value-page):not(:has(.legacy-investor)) :is([class~="text-[9px]"],[class~="text-[10px]"],[class~="text-[11px]"],[class~="text-[12px]"],.pointer-tooltip small) {font-size:13px;}
 .one-index .index-story > p:not(.eyebrow) {font-size:16px;}
 .one-index .index-story .eyebrow {font-size:13px;}
 .trust-strip .history-caveat {font-size:13px;}
@@ -70,7 +70,7 @@ body:has(.value-page) :is([class~="text-[9px]"],[class~="text-[10px]"],[class~="
 }
 .value-page .text-xs {font-size:13px;}
 .value-page .dossier-checks .test-tile .mini-series svg {height:60px;min-height:60px;max-height:60px;}
-body:has(.value-page) .value-search-row .value-viz {--viz-buy:#526452;--viz-sell:#59564e;}
+body:has(.value-page):not(:has(.legacy-investor)) .value-search-row .value-viz {--viz-buy:#526452;--viz-sell:#59564e;}
 .insufficient-dossier .test-tile {justify-content:center;gap:12px;}
 .insufficient-dossier .test-tile .tile-sentence {font-size:18px;min-height:0;margin:0;}
 .insufficient-dossier .test-tile .tile-evidence {display:block;font-size:13px;}

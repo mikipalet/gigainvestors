@@ -1,3 +1,4 @@
+import {formatRate} from '@/lib/format';
 import {modelReturn} from './return-model';
 import { METHOD_VERSION } from './method-version';
 import { bestWesternListing } from './western';
@@ -150,7 +151,7 @@ export function computeForwardRecord(input: ForwardSnapshot[]): ForwardRecord {
   return {start:first?.date??null,asOf:last?.date??null,days:first&&last?(Date.parse(last.date)-Date.parse(first.date))/86400000:0,
     snapshots:snapshots.length,all:portfolio(snapshots,'all'),western:portfolio(snapshots,'western'),picks:[...picked.values()]};
 }
-export const forwardPercent = (value: number | null) => value === null ? 'unavailable' : `${value >= 0 ? '+' : ''}${(value*100).toFixed(1)}%`;
+export const forwardPercent = (value: number | null) => value === null ? 'unavailable' : `${value >= 0 ? '+' : '−'}${formatRate(Math.abs(value))}`;
 export function forwardHeadline(record: ForwardSummary | null | undefined, scope: ForwardScope): string | null {
   if (!record || record.days < 30) return null;
   const p=record[scope];

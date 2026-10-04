@@ -1,4 +1,5 @@
 "use client";
+import {dateLabel} from "@/lib/value/presentation";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -101,7 +102,7 @@ export function NewsletterClient({ issues }: { issues: IssueRow[] }) {
                 <Link href={`/newsletter/${i.slug}`} className="font-semibold hover:opacity-70">
                   {i.quarter}
                 </Link>
-                <span className="text-[11px] opacity-50">{i.sentAt ? new Date(i.sentAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "not sent"}</span>
+                <span className="text-[11px] opacity-50">{i.sentAt ? dateLabel(i.sentAt) : "not sent"}</span>
               </div>
               <div className="truncate opacity-60">{i.headline}</div>
               {recipients !== null && (opened ?? 0) === 0 && (clicked ?? 0) === 0 && (

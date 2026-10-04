@@ -66,8 +66,9 @@
 .timeline-buttons .timeline-play{font-size:14px;width:66px}
 @media(min-width:768px) and (max-height:850px){.shelf-hero .company-logo{width:60px;height:60px}.shelf-hero .main-return{font-size:54px}.main-buy-row{padding:12px;gap:6px}.shelf-hero .shelf-identity{gap:8px}}
 @media(max-width:767px){
- .main-view{margin:8px 14px 0;gap:7px;font-size:13px}
- .shelf-body{display:flex;flex-direction:column;gap:8px}
+ .main-view{margin:8px 14px 0;gap:7px;font-size:13px;overflow-y:auto}
+ /* Short phones scroll the shelf instead of letting its cards cover The rest. */
+ .shelf-body{display:flex;flex-direction:column;gap:8px;flex-shrink:0;min-height:min-content}
  .main-buys{flex:none}
  .main-zone-heading{min-height:25px;gap:8px}
  .value-page .main-zone-heading h2{font-size:18px}
@@ -85,7 +86,7 @@
  .main-buy-row:not(.shelf-hero) .company-logo{width:25px;height:25px;padding:1px}
  .main-buy-row:not(.shelf-hero) .main-return{font-size:25px}
  .shelf-price{font-size:13px;white-space:normal}
- .main-next{flex:1;min-height:110px}
+ .main-next{flex:1;min-height:150px}
  .shelf-near-grid{gap:6px}
  .main-next-row{padding:8px;gap:6px}
  .main-next-row .shelf-identity{gap:6px;min-height:30px}

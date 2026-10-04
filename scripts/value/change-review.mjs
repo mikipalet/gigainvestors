@@ -24,6 +24,8 @@ const valueStates = [
   ['ko', '/ko.us', async () => {}],
   ['ko-business', '/ko.us', async page => { await page.getByRole('button', { name: /In depth|More/ }).first().click(); }],
   ['ko-valuation', '/ko.us', async page => { await page.getByRole('button', { name: /valuation/i }).first().click(); }],
+  ['ko-price-story', '/ko.us', async page => { await page.getByRole('button', { name: /^Price story:/ }).click(); }],
+  ['all-honest', '/all.us', async page => { await page.getByRole('button', { name: 'Open Honest profits evidence', exact: true }).click(); }],
 ];
 
 const mainStates=[
@@ -36,7 +38,7 @@ const mainStates=[
 const states=(process.env.QA_FAMILY==='main'?mainStates:valueStates).filter(([name])=>!process.env.QA_STATES||process.env.QA_STATES.split(',').includes(name));
 function mappedPath(path){
  if(process.env.QA_FAMILY==='main')return path;
- if(path.startsWith('/ko.us'))return path.replace('/ko.us','/s/KO');
+ if(/^\/[a-z0-9.-]+\.[a-z]{1,5}$/i.test(path))return '/s/'+path.slice(1).toUpperCase().replace(/\.US$/,'');
  return '/value'+(path==='/'?'':path);
 }
 

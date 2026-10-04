@@ -37,3 +37,6 @@ data/newsletter/*.facts.json
 .ttm-1/
 
 .int6/
+
+# Owner-fix browser sessions and intermediate captures
+.owner-fix/

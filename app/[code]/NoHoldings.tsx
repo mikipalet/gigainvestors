@@ -1,13 +1,13 @@
-'use client';
-import {Timeline} from '@/components/Timeline';
-import {useQuarter} from '@/lib/use-quarter';
-import { Face } from "@/components/Face";
+import Link from "next/link";
+import { Face } from "@/components/investor-legacy/Face";
 import type { IndexInvestor } from "@/lib/types";
 
-export function NoHoldings({ meta,quarters }: { meta: IndexInvestor;quarters:string[] }) {
-  const [q,setQ]=useQuarter(quarters);
+export function NoHoldings({ meta }: { meta: IndexInvestor }) {
   return (
-    <div className="flex h-[calc(100dvh-132px)] sm:h-[calc(100dvh-84px)] flex-col items-center justify-center gap-5 px-6 text-center">
+    <div className="flex h-[100dvh] flex-col items-center justify-center gap-5 px-6 text-center">
+      <Link href="/" className="fixed left-5 top-4 text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
+        GigaInvestors
+      </Link>
       {meta.sketch && (
         <div className="h-[40vh] w-full max-w-[340px]">
           <Face slug={meta.slug} size={1200} priority />
@@ -17,7 +17,7 @@ export function NoHoldings({ meta,quarters }: { meta: IndexInvestor;quarters:str
         <h1 className="text-[19px] font-semibold">{meta.person}</h1>
         <div className="opacity-55">{meta.firm}</div>
       </div>
-      <p className="max-w-[380px] text-[13px] opacity-55">0 reported 13F holdings.</p>
-    <Timeline quarters={quarters} q={q} onChange={setQ}/></div>
+      <p className="max-w-[380px] text-[13px] opacity-55">No 13F holdings on file for the latest quarter. The seat stays; the treemap returns when a filing does.</p>
+    </div>
   );
 }

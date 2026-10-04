@@ -49,7 +49,7 @@ export function Home({ index }: { index: Index }) {
     <>
       <AgentQuarterMetadata canonical={siteUrl('main')} quarter={q}/>
       <HomeContent index={index} quarter={q}/>
-      <Treemap frames={frames} q={q} label={(d) => `${d.person} · ${d.money}`} className="locks-scroll h-[calc(100dvh-132px)] sm:h-[calc(100dvh-84px)] w-screen" render={(d, tier, rect) => <InvestorTile d={d} tier={tier} rect={rect} q={q} />} />
+      <Treemap frames={frames} q={q} label={(d) => `${d.person} · ${d.money}`} className="locks-scroll h-[calc(100dvh-var(--chrome-bottom))] w-screen" render={(d, tier, rect) => <InvestorTile d={d} tier={tier} rect={rect} q={q} />} />
       <Timeline quarters={index.quarters} q={q} onChange={setQ} note={`${(frames[q] ?? []).length} of ${index.investors.length} filed`} />
     </>
   );

@@ -1,6 +1,7 @@
+@scope (body:not(:has(.legacy-investor))) {
 /* Owner decision 2026-10-04: one chrome, type scale and colour vocabulary. */
-:root{--viz-grid:#1112;--viz-muted:#62675f;--verdict-pass:#526957;--verdict-fair:#257a4a;--verdict-fails:#bf3b2b;--chrome-top:32px;--chrome-bottom:52px}
-body{padding-top:var(--chrome-top);font-size:14px}
+:scope{--viz-grid:#1112;--viz-muted:#62675f;--verdict-pass:#526957;--verdict-fair:#257a4a;--verdict-fails:#bf3b2b;--chrome-top:0px;--chrome-bottom:52px}
+:scope{padding-top:var(--chrome-top);font-size:14px}
 .site-brand{position:absolute;left:20px;top:7px;font-size:13px;font-weight:600;line-height:18px;z-index:41;color:var(--ink)}
 .value-page:has(.locks-scroll),.value-page:has(.one-dossier.locks-scroll){height:calc(100dvh - var(--chrome-top) - var(--chrome-bottom));min-height:0}
 .shared-dock.value-page.value-dock{position:fixed;inset:auto 0 0;width:100%;max-width:none;height:var(--chrome-bottom);min-height:var(--chrome-bottom);padding:0 18px;margin:0;display:flex;flex-direction:row;overflow:visible;gap:16px}
@@ -30,7 +31,7 @@ body{padding-top:var(--chrome-top);font-size:14px}
 .company-holders-table th:first-child{text-align:left;width:42%}.company-holders-table th a{display:flex;align-items:center;gap:10px}.table-face{position:relative;display:inline-block;width:48px;height:48px;flex:none}
 .company-holders-panel nav{display:flex;justify-content:space-between;align-items:center;min-height:30px;font-size:14px}.company-holders-panel nav button:disabled{opacity:.35}
 /* Min 13px also applies to legacy chart captions and footer controls. */
-:where([class*="text-[9px]"],[class*="text-[10px]"],[class*="text-[11px]"],[class*="text-[12px]"]){font-size:13px}
+:where([class*="text-[9px]"],[class*="text-[10px]"],[class*="text-[11px]"],[class*="text-[12px]"]):not(.legacy-brand){font-size:13px}
 @media(min-width:768px){
  .company-page:has(.company-holders-strip) .dossier-checks{padding-block:6px}
  .company-page .dossier-band{padding-block:6px}
@@ -39,7 +40,7 @@ body{padding-top:var(--chrome-top);font-size:14px}
  .company-page .price-card:after{content:'Price, value and return →';font-size:13px;margin-top:8px;pointer-events:none}
 }
 @media(max-width:767px){
- :root{--chrome-bottom:100px}
+ :scope{--chrome-bottom:100px}
  .site-brand{left:14px}
  .shared-dock.value-page.value-dock{height:100px;flex-direction:column;align-items:stretch;gap:0;padding:0 12px 6px}
  .shared-dock #value-timeline{height:46px;min-height:46px}
@@ -47,8 +48,8 @@ body{padding-top:var(--chrome-top);font-size:14px}
  .shared-dock .dock-tools{justify-content:space-between;gap:5px;flex-wrap:wrap;min-height:42px}
  .shared-dock .dock-tools>a,.shared-dock .dock-tools>button{font-size:13px;padding:5px}
  .shared-dock #value-market{order:2;width:100%;min-height:26px;justify-content:flex-end}
- body:has(.one-index){--chrome-bottom:126px}
- body:has(.one-index) .shared-dock.value-page.value-dock{height:126px}
+ :scope:has(.one-index){--chrome-bottom:126px}
+ :scope:has(.one-index) .shared-dock.value-page.value-dock{height:126px}
  .shared-dock .house-steps{display:flex}
  .company-holders-strip{height:62px;padding:4px 14px;gap:10px}
  .strip-holder:nth-child(n+3){display:none}
@@ -104,12 +105,12 @@ body{padding-top:var(--chrome-top);font-size:14px}
 .holders-chart{flex:1;min-height:150px}
 .company-holders-table thead th{font-size:13px;white-space:normal}
 @media(max-width:767px){.company-holders-table :is(th,td){font-size:13px}.holders-chart{flex:none;height:260px}}
-body:has(.one-index) .shared-dock #value-market{display:flex;width:140px;flex:none}
+:scope:has(.one-index) .shared-dock #value-market{display:flex;width:140px;flex:none}
 .company-holders-table small{display:block;font-size:13px;color:var(--viz-muted);line-height:1.4}
 .company-holders-table th a{height:100%;align-items:center}
 .company-holders-panel .holders-chart{flex:none;height:clamp(160px,23vh,260px)}
 .company-holders-panel .table-face{width:clamp(48px,calc(260px / var(--holder-rows)),84px);height:clamp(40px,calc((100dvh - 350px) / var(--holder-rows) - 12px),190px)}
-@media(max-width:767px){body:has(.one-index) .shared-dock #value-market{width:100%}.company-holders-panel .holders-chart{height:240px}.company-holders-table td small{display:none}}
+@media(max-width:767px){:scope:has(.one-index) .shared-dock #value-market{width:100%}.company-holders-panel .holders-chart{height:240px}.company-holders-table td small{display:none}}
 /* Reserve the pager first; the chart uses the space left by the fixed-height holder rows. */
 @media(min-width:768px){
  .company-holders-panel{display:grid;grid-template-rows:minmax(160px,1fr) auto auto;gap:10px}
@@ -155,6 +156,24 @@ body:has(.one-index) .shared-dock #value-market{display:flex;width:140px;flex:no
  .company-page .quality-section .test-tile:has(.mini-series),.company-page .quality-section .test-tile:last-child:has(.mini-series){grid-template-rows:min-content min-content minmax(55px,1fr) min-content min-content}
 }
 @media(max-width:767px){
- body:has(.one-index){--chrome-bottom:146px}
- body:has(.one-index) .shared-dock.value-page.value-dock{height:146px}
+ :scope:has(.one-index){--chrome-bottom:146px}
+ :scope:has(.one-index) .shared-dock.value-page.value-dock{height:146px}
+}
+
+
+/* Preserve the pre-release brand links against the value type-scale rule. */
+.legacy-brand{font-size:12px!important}
+
+/* Holder faces share the price band; company pages have no time-travel row. */
+.company-reference{display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0}
+.company-holders-strip{width:max-content;max-width:100%;height:36px!important;padding:0!important;border:0;gap:5px!important}
+.company-holders-strip .holders-count{font-size:13px;margin-right:5px}
+.company-holders-strip .strip-face{width:28px;height:34px}
+:scope:has(.company-page){--chrome-bottom:52px}
+:scope:has(.company-page) .shared-dock.value-page.value-dock{height:52px;min-height:52px;justify-content:flex-end}
+@media(max-width:767px){
+ :scope:has(.company-page){--chrome-bottom:70px}
+ :scope:has(.company-page) .shared-dock.value-page.value-dock{height:70px;min-height:70px;justify-content:center}
+ .company-reference{margin-top:8px}
+}
 }

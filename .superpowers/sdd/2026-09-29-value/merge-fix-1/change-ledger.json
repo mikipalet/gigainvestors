@@ -1,0 +1,418 @@
+[
+  {
+    "route": "/HA?q=2026Q2",
+    "size": "1728x970",
+    "liveChangedPixels": 800091,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "2f5daa1d7cc2c7a250b0cf071b0192dd75927432da0cb1ce29ea51898b037dcd",
+      "candidate": "2f5daa1d7cc2c7a250b0cf071b0192dd75927432da0cb1ce29ea51898b037dcd",
+      "live": "7ffda20637480b136b978de1ff1d37a1acbb33338a31f72747b53e221136b67e"
+    }
+  },
+  {
+    "route": "/BRK",
+    "size": "1728x970",
+    "liveChangedPixels": 375841,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "2d12244c42f5a0d8fa12817b50ebfe05be4e9a2f7b0b0ae1551791169b194d90",
+      "candidate": "2d12244c42f5a0d8fa12817b50ebfe05be4e9a2f7b0b0ae1551791169b194d90",
+      "live": "9253bfb34662df497b96448d8c5743f4455c3a6d8fa146e5efaece7687317466"
+    }
+  },
+  {
+    "route": "/vg",
+    "size": "1728x970",
+    "liveChangedPixels": 866820,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "69e837050ca766b540f418f9dd3534b0d5ccbeaef23c3ac7fd411178682630ee",
+      "candidate": "69e837050ca766b540f418f9dd3534b0d5ccbeaef23c3ac7fd411178682630ee",
+      "live": "35027103eaabd2ab0cc1b881ecb4e139a10e86292ffc161907f518f04688b874"
+    }
+  },
+  {
+    "route": "/psc",
+    "size": "1728x970",
+    "liveChangedPixels": 1067129,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "e30c5f6a0dd59c3533b00c82b8199b96f723bbb01638c77b5db4485143325f02",
+      "candidate": "e30c5f6a0dd59c3533b00c82b8199b96f723bbb01638c77b5db4485143325f02",
+      "live": "ec1be926e18ec34aee2be1415d8a8d95d850bed7b6a7e2b1bb295c4bd70b9a74"
+    }
+  },
+  {
+    "route": "/TGM",
+    "size": "1728x970",
+    "liveChangedPixels": 597209,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "f6f3b43b19a11d09c7875f05c089766fa222cf3dc4373542fce92f353ef7d889",
+      "candidate": "f6f3b43b19a11d09c7875f05c089766fa222cf3dc4373542fce92f353ef7d889",
+      "live": "4ed976ecec23ce4efb33d5335ca3af2e4b40cec5aaa8ede3e0443d73cad87890"
+    }
+  },
+  {
+    "route": "/s/AAPL",
+    "size": "1728x970",
+    "liveChangedPixels": 382986,
+    "previousChangedPixels": 765206,
+    "explanation": "Requests 1, 2 and 4: remove added header and timeline; put holder faces in the price band; expand remaining content into reclaimed height.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "c66bcea4fec09b095c8b95571d37de42fb087d56328ceb41aec0b614d232ddc4",
+      "candidate": "8056f6d70ab5f5441c9a9f3fed7c8169c995e73d53394277b503c5141f308077",
+      "live": "6b80bb4f0d98be80276cd73e4277f79efda4d3f04ea3d3309a9862a58207e936"
+    }
+  },
+  {
+    "route": "/s/PLX.PA",
+    "size": "1728x970",
+    "liveChangedPixels": 256434,
+    "previousChangedPixels": 376014,
+    "explanation": "Requests 1, 2 and 4: remove added header and timeline; put holder faces in the price band; expand remaining content into reclaimed height.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "f2e38fb86f70c4c3195d5d927e8e2342272bf584ba8f7f39f2f4bb15819bbb3e",
+      "candidate": "44b191de7067df40a6a345be708647ff9026d538ec279dd2ff2d9b6fccff1be9",
+      "live": "3a9d855c23a1f3092f41b142c67bbc5d790bb13d81656202e1a3578a2ad12228"
+    }
+  },
+  {
+    "route": "/value",
+    "size": "1728x970",
+    "liveChangedPixels": 267975,
+    "previousChangedPixels": 325453,
+    "explanation": "Requests 1 and 2: remove added header and its height; use product names in navigation.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "fdfd982d3af69a58cfb04035fcc111856938848e937215a247db2599ad1ad8d7",
+      "candidate": "fc34d4a00e9688a9b7531534bccd25f6b72013497e12ae7d9e1923f745be7aba",
+      "live": "32f8c00fb133d8f78c79086e7c6f4abf85d94c8471adce4ddd66ac7baa827f10"
+    }
+  },
+  {
+    "route": "/HA?q=2026Q2",
+    "size": "2056x1180",
+    "liveChangedPixels": 1135182,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "e925abcef45435ef56d4967b3ce669668cec5e2c8a79bb82ed073d86b211ff70",
+      "candidate": "e925abcef45435ef56d4967b3ce669668cec5e2c8a79bb82ed073d86b211ff70",
+      "live": "f64f79c558a5f429b7b7395d5f6e4fff5d363dd02f5db75ab28093b45476ae3c"
+    }
+  },
+  {
+    "route": "/BRK",
+    "size": "2056x1180",
+    "liveChangedPixels": 518940,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "9ad9fcd84ce54d649dc666fcb2fc92565e51282bda64072b0a541dcf7230eec9",
+      "candidate": "9ad9fcd84ce54d649dc666fcb2fc92565e51282bda64072b0a541dcf7230eec9",
+      "live": "7ca6e90b21759b1cc8da05ae64153d3bafad3dbd7ba2cb5f57f438bacbd1cc78"
+    }
+  },
+  {
+    "route": "/vg",
+    "size": "2056x1180",
+    "liveChangedPixels": 1263794,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "34225286abb0629f36dc210a267d3852b89f05cc7a0d01b5adf148651ed4f0f4",
+      "candidate": "34225286abb0629f36dc210a267d3852b89f05cc7a0d01b5adf148651ed4f0f4",
+      "live": "4a791b6164304ed110ffad813185854230a7cf970c31f11da2e21871d69cd46c"
+    }
+  },
+  {
+    "route": "/psc",
+    "size": "2056x1180",
+    "liveChangedPixels": 1598634,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "3c7166e35c466cb2d1bf1a55ab8e85708615feeae2b928b9ae4949c49146f1dd",
+      "candidate": "3c7166e35c466cb2d1bf1a55ab8e85708615feeae2b928b9ae4949c49146f1dd",
+      "live": "1c2491c6a69c29050a25a943347a0637bd7a5d996a72e9064e164e46b699a01b"
+    }
+  },
+  {
+    "route": "/TGM",
+    "size": "2056x1180",
+    "liveChangedPixels": 871244,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "bb8e10d5f8c40cbeff473474f223b4447f625b79dceeb3e56b4615b65ae38b30",
+      "candidate": "bb8e10d5f8c40cbeff473474f223b4447f625b79dceeb3e56b4615b65ae38b30",
+      "live": "93108a497b0cfdd3675dd3396c312958fa6be260bd9f963a74e0aa126641101f"
+    }
+  },
+  {
+    "route": "/s/AAPL",
+    "size": "2056x1180",
+    "liveChangedPixels": 474043,
+    "previousChangedPixels": 1199129,
+    "explanation": "Requests 1, 2 and 4: remove added header and timeline; put holder faces in the price band; expand remaining content into reclaimed height.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "0c974a96eb400ed80a216bef987b1d9870e1f7d4991fe989e4037e6de99990b3",
+      "candidate": "e613155fab10c8cf0aacfaba89611c5a27db892754f1e3f36bd2f30a6cc9cf49",
+      "live": "7bef4cfe64aa5137c40e29011e735ab51c3f27a04316b8de4ebdc1fc19ee5022"
+    }
+  },
+  {
+    "route": "/s/PLX.PA",
+    "size": "2056x1180",
+    "liveChangedPixels": 289537,
+    "previousChangedPixels": 610566,
+    "explanation": "Requests 1, 2 and 4: remove added header and timeline; put holder faces in the price band; expand remaining content into reclaimed height.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "4934657df8737e5abd92beddfb1f111ee7c2dea56a2628af981004677c0c1615",
+      "candidate": "601cf640df8931bbd924da09633b03158250b6eab31c498f51529c10bc25b828",
+      "live": "0bb903a956175fae2c81ae570845db057cf8982b7e27800f6f99019b99dfc515"
+    }
+  },
+  {
+    "route": "/value",
+    "size": "2056x1180",
+    "liveChangedPixels": 385385,
+    "previousChangedPixels": 534912,
+    "explanation": "Requests 1 and 2: remove added header and its height; use product names in navigation.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "031ca370d9c049ad0aa3c0d0d2fa9adeb0ea0811d594f705f828182d9bc2e945",
+      "candidate": "bc0477cadbd0a647c191dad7f3350721a2fff3be232cc25c644a7f56ce936420",
+      "live": "4d775599230c2a60c819e222d2c7ffc15969f924d363930d243a895a6359d865"
+    }
+  },
+  {
+    "route": "/HA?q=2026Q2",
+    "size": "1440x800",
+    "liveChangedPixels": 535564,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "0a6f3d53c15e034a31ba585a2eee552d09a4fb8cfe93a0c46e3d540119fba0dc",
+      "candidate": "0a6f3d53c15e034a31ba585a2eee552d09a4fb8cfe93a0c46e3d540119fba0dc",
+      "live": "640aa444dde828092fba16c268b51e2c0d2ab9dc703360f0994ef2d3918c9e83"
+    }
+  },
+  {
+    "route": "/BRK",
+    "size": "1440x800",
+    "liveChangedPixels": 255208,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "3d72b208531ef1a248d7de6d8d038fbe718727339b8358113f37f2b3e4e39d1e",
+      "candidate": "3d72b208531ef1a248d7de6d8d038fbe718727339b8358113f37f2b3e4e39d1e",
+      "live": "9bc5ffccddb3d1750e5a8daa17f982ea110021d458766371565df46a78e4a347"
+    }
+  },
+  {
+    "route": "/vg",
+    "size": "1440x800",
+    "liveChangedPixels": 572605,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "2a1338222a21bd7793f5483f3f16f4efd0f1e7f601fe5b71a03817465defa4e0",
+      "candidate": "2a1338222a21bd7793f5483f3f16f4efd0f1e7f601fe5b71a03817465defa4e0",
+      "live": "727516d1c93e7d04d9e051410c95954c29e9a14b6871b15c423a2e870ac90386"
+    }
+  },
+  {
+    "route": "/psc",
+    "size": "1440x800",
+    "liveChangedPixels": 694707,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "15d4f65b16663a0ed681b2a7282ed937ed5114847a99b4936e5e0efc6e825622",
+      "candidate": "15d4f65b16663a0ed681b2a7282ed937ed5114847a99b4936e5e0efc6e825622",
+      "live": "629266e337781d11a5ca268e7ca08f7c0fd198a1bdf61f385eec3c1f674a9d07"
+    }
+  },
+  {
+    "route": "/TGM",
+    "size": "1440x800",
+    "liveChangedPixels": 401352,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "c50e5c18f271725635ccb010e2e5c56a9c39bdd9aca8745554d34dbce0870fbb",
+      "candidate": "c50e5c18f271725635ccb010e2e5c56a9c39bdd9aca8745554d34dbce0870fbb",
+      "live": "c7870c234666a45c04503c46e39a035f060df7acb8e1e5568209174558edcc08"
+    }
+  },
+  {
+    "route": "/s/AAPL",
+    "size": "1440x800",
+    "liveChangedPixels": 268173,
+    "previousChangedPixels": 486438,
+    "explanation": "Requests 1, 2 and 4: remove added header and timeline; put holder faces in the price band; expand remaining content into reclaimed height.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "4726e7844cdbc46f590bbd7a09341cf2156ab3d8f839ceef16466a7f52f90cda",
+      "candidate": "b7b2dff402334c958b5e86b627e3253bf807553bf2fe055dd89dda4b5f68dedf",
+      "live": "3c757b8076c8214b3f05d5d118ea7f5e6e31cbdc8fd4a1bab6163c8b44a3612c"
+    }
+  },
+  {
+    "route": "/s/PLX.PA",
+    "size": "1440x800",
+    "liveChangedPixels": 207884,
+    "previousChangedPixels": 225960,
+    "explanation": "Requests 1, 2 and 4: remove added header and timeline; put holder faces in the price band; expand remaining content into reclaimed height.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "e007946ddaf60dcfa3dc3c38e444f35191c06e6c74f97c77dbd2397a5ea64a56",
+      "candidate": "49189901c037f57ad6f6dd20ea813d6bf2713fc1fcdde2f858ff861d8810f0f9",
+      "live": "ad40dd404c9a9e428d47b4e5b541710c7af57df0dc85038eed140b8e279c126a"
+    }
+  },
+  {
+    "route": "/value",
+    "size": "1440x800",
+    "liveChangedPixels": 209109,
+    "previousChangedPixels": 208824,
+    "explanation": "Requests 1 and 2: remove added header and its height; use product names in navigation.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "00dc9dfa8232e6127e677af94beb3dfb798f2dde9f365219f604835823eb2232",
+      "candidate": "f4c4d3f8036854fbb50831dd652d23d5457b70a8c0a67a2f6811c455d95c7c63",
+      "live": "faabd6f5700fcab9e6807489143e8fd80a07ce8195fb08d5de4d059c79c55a0b"
+    }
+  },
+  {
+    "route": "/HA?q=2026Q2",
+    "size": "390x844",
+    "liveChangedPixels": 86652,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "1d387d98199936c758de3d5ebbd440e3252a4ca071bb6e1830049c11b093aec4",
+      "candidate": "1d387d98199936c758de3d5ebbd440e3252a4ca071bb6e1830049c11b093aec4",
+      "live": "e081d739372fb8e16d55e8b04e5a10cd78a50fe4ce6fb6dfb71d1b01e6177326"
+    }
+  },
+  {
+    "route": "/BRK",
+    "size": "390x844",
+    "liveChangedPixels": 81204,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "b8e785ac8f7474cccff8e57a6810ff005b76b7692f797a561f6dc344127f74d8",
+      "candidate": "b8e785ac8f7474cccff8e57a6810ff005b76b7692f797a561f6dc344127f74d8",
+      "live": "de6c2c3fe3e593e149ef7784a592fc2dcb4917a8ea3f56ff479e320adfbe38f5"
+    }
+  },
+  {
+    "route": "/vg",
+    "size": "390x844",
+    "liveChangedPixels": 96443,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "43f620ebbac1c848ce21bec187eb5ca11cf69d5c42fa33f235dc75e685f4ddd8",
+      "candidate": "43f620ebbac1c848ce21bec187eb5ca11cf69d5c42fa33f235dc75e685f4ddd8",
+      "live": "a04c46c27a6aa78a14843f64303b638160795f2bbcb4abc96673661c9d7bb5a3"
+    }
+  },
+  {
+    "route": "/psc",
+    "size": "390x844",
+    "liveChangedPixels": 173922,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "d0db4641158d4bb1b698443d88c872e814814879d283d72a4615870b67c2dc42",
+      "candidate": "d0db4641158d4bb1b698443d88c872e814814879d283d72a4615870b67c2dc42",
+      "live": "1b1b0930dc446e33e2a410c1cd1ba2d83775a7b22394147f365fbe3f6fd1ca7d"
+    }
+  },
+  {
+    "route": "/TGM",
+    "size": "390x844",
+    "liveChangedPixels": 102365,
+    "previousChangedPixels": 0,
+    "explanation": "Request 3: restore original investor layout, portraits, colours, labels, verdict-free tiles, search and original bar.",
+    "previousNote": "Exactly identical, including complete bottom bar.",
+    "images": {
+      "previous": "f08a868976779568a8dbee8a5afaddc77b06a982d6c8d33bacfdd48c289d7cce",
+      "candidate": "f08a868976779568a8dbee8a5afaddc77b06a982d6c8d33bacfdd48c289d7cce",
+      "live": "7b2cbed3bd688376bd4c3a6a1e80490701d5ee80adb96f410bef0414d1d9d3d3"
+    }
+  },
+  {
+    "route": "/s/AAPL",
+    "size": "390x844",
+    "liveChangedPixels": 101473,
+    "previousChangedPixels": 124390,
+    "explanation": "Requests 1, 2 and 4: remove added header and timeline; put holder faces in the price band; expand remaining content into reclaimed height.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "24b2525ac3280c32cdad106e31156371c7ea75c88703a97d2752eb5fc5382f85",
+      "candidate": "59d67e1c5f653cb3a2ffa9e59dcc81f3dba207b6f4b5e5fdc7ef69ce12496df9",
+      "live": "cb37a01d1afa7eddbe7b15bc4393810f2a49e8ee52ddcc3eb917e9a1cc95f0b9"
+    }
+  },
+  {
+    "route": "/s/PLX.PA",
+    "size": "390x844",
+    "liveChangedPixels": 99756,
+    "previousChangedPixels": 76752,
+    "explanation": "Requests 1, 2 and 4: remove added header and timeline; put holder faces in the price band; expand remaining content into reclaimed height.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "0400ade65cbdeed3d81fcfd17dda93241bc4979fa4d3d1774e9d31c8b1628bc1",
+      "candidate": "1292333fd9398da32745fb94c0047fe5ba29e71be42f12c708f78dbb4fbc7626",
+      "live": "ffa4600300c53a9b31584045e059700a546209de80c88092f89279f181fba986"
+    }
+  },
+  {
+    "route": "/value",
+    "size": "390x844",
+    "liveChangedPixels": 79590,
+    "previousChangedPixels": 92098,
+    "explanation": "Requests 1 and 2: remove added header and its height; use product names in navigation.",
+    "previousNote": "Earlier one-site/LTM release already changed this surface versus 9ebf2c7; this patch keeps the merged company/data layout. PLX was a 404 at /s/PLX.PA in that commit and used the value route instead.",
+    "images": {
+      "previous": "81fc4fe690cbc8e59cc7c31811fcdab3c180003fb20cdb31d01132451483efbb",
+      "candidate": "4a181d810d6d21b072d399880f1947bea99a9b81f51ec779ab9836574a7c771c",
+      "live": "628d972c8d9cee8d803712eeb2faf137232c608e909eed9583afd6cb1fe0b90f"
+    }
+  }
+]

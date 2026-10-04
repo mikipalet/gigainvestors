@@ -3,7 +3,10 @@ import { Face } from "@/components/Face";
 
 export default function NotFound() {
   return (
-    <div className="flex h-[calc(100dvh-132px)] sm:h-[calc(100dvh-84px)] flex-col items-center justify-center gap-5 px-6 text-center">
+    <div className="flex h-[calc(100dvh-var(--chrome-bottom))] flex-col items-center justify-center gap-5 px-6 text-center">
+      <Link href="/" className="legacy-brand fixed left-5 top-4 text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
+        GigaInvestors
+      </Link>
       <div className="h-[40vh] w-full max-w-[340px]">
         <Face slug="norbert-lou" size={1200} priority />
       </div>
@@ -11,7 +14,7 @@ export default function NotFound() {
         <div className="text-[19px] font-semibold">404</div>
         <div className="opacity-55">nothing filed here</div>
       </div>
-      <Link href="/" className="rounded-[3px] bg-ink px-4 py-2 text-[14px] font-semibold text-paper transition-opacity hover:opacity-80">
+      <Link href="/" className="legacy-brand rounded-[3px] bg-ink px-4 py-2 text-[14px] font-semibold text-paper transition-opacity hover:opacity-80">
         back to the investors
       </Link>
       <nav className="flex gap-4 text-[11px] opacity-40">

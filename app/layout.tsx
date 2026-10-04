@@ -1,12 +1,12 @@
 import {websiteSchema,schemaJson} from '@/lib/agents/schema';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Search } from "@/components/Search";
+import { SiteSearch } from "@/components/SiteSearch";
 import "./globals.css";
 import "./value-styles";
 import "./unified.css";
+import { getIndex } from "@/lib/data";
 import { BottomBar } from "@/components/value/BottomBar";
-import { Brand } from "@/components/Brand";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
 
@@ -26,7 +26,8 @@ export const metadata: Metadata = {
 
 const jsonLd=websiteSchema('main');
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const index = await getIndex();
   return (
     <html lang="en" className={inter.variable}>
       <body>
@@ -41,10 +42,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        <Brand />
         {children}
         <BottomBar />
-        <Search />
+        <SiteSearch investorCodes={index?.investors.map(i=>i.code)??[]} />
       </body>
     </html>
   );

@@ -91,7 +91,7 @@ const DossierBody=memo(function DossierBody({dossier,quote=null,children,holders
 
  if(insufficient){
   const count=dossier.historyCoverage?.years??new Set(years).size;
-  return <div className="one-dossier insufficient-dossier locks-scroll"><section className="dossier-band insufficient-band">{identity}<div data-testid="insufficient-data"><h2>Financial history</h2><PriceStory dossier={dossier} quote={quote}/><p>{count} annual periods on record.</p></div></section>{holders}<BusinessSection analysis={dossier} price={quote?.[0]??null}/><FinancialHighlights dossier={dossier}/>{reportUrl&&<div className="dossier-source"><a href={reportUrl}>Original filing ↗</a></div>}</div>;
+  return <div className="one-dossier insufficient-dossier locks-scroll"><section className="dossier-band insufficient-band">{identity}<div data-testid="insufficient-data"><h2>Financial history</h2><PriceStory dossier={dossier} quote={quote}/><p>{count} annual periods on record.</p></div>{holders}</section><BusinessSection analysis={dossier} price={quote?.[0]??null}/><FinancialHighlights dossier={dossier}/>{reportUrl&&<div className="dossier-source"><a href={reportUrl}>Original filing ↗</a></div>}</div>;
  }
 
  return <div onPointerOver={warm} onFocus={warm} className="one-dossier locks-scroll" data-quality={qualityPass?'pass':failed.length?'fail':'unclear'}>
@@ -101,9 +101,8 @@ const DossierBody=memo(function DossierBody({dossier,quote=null,children,holders
     {dossier.thesis?.guidance&&<p className="thesis-guidance">Owner earnings: {dossier.thesis.guidance.before.toLocaleString('en-US',{maximumFractionDigits:0})} → {dossier.thesis.guidance.after.toLocaleString('en-US',{maximumFractionDigits:0})} {valuation?.currency}, reflecting current-year guidance.</p>}
     {dossier.thesis&&<button className="thesis-source-button" onClick={()=>setThesisOpen(true)}>Read the disclosure ↗</button>}
    </div>
-   {referenceRow}
+   <div className="company-reference">{referenceRow}{holders}</div>
   </section>
-  {holders}
   <BusinessSection analysis={dossier} price={quote?.[0]??null}/>
   <div className="dossier-checks">
    <section className="quality-section" aria-label="Five business quality tests"><h2>1. Is this a good business? </h2>

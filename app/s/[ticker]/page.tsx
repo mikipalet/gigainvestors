@@ -1,11 +1,10 @@
 import {companyAlternates} from '@/lib/agents/urls';
 import {notFound} from 'next/navigation';
-import {getDossier,getPrice,getSearchCompany,readStore} from '@/lib/value/store';
+import {getDossier,getPrice,getSearchCompany} from '@/lib/value/store';
 import {getIndex,getStock} from '@/lib/data';
 import {companyTicker,companyPath,dossierId} from '@/lib/company-route';
 import {StockContent} from '@/components/AgentContent';
 import {Company} from '@/components/company/Company';
-import type {HistoryIndex} from '@/lib/value/time-travel';
 import {Stock} from './Stock';
 export const revalidate=86400;
 export const dynamicParams=true;
@@ -29,10 +28,8 @@ export default async function Page({params,searchParams}:{params:Promise<{ticker
    const listing=await getSearchCompany(dossier.id);
    if(listing&&/^[\x00-\x7F]+$/.test(listing[1]))dossier.company={...dossier.company,name:listing[1]};
   }
-  const [quote,history]=await Promise.all([getPrice(dossier.id,dossier.company.country),readStore<HistoryIndex>('history/index.json')]);
-  const quarters=[...new Set([...(history?.quarters??[]),...(index?.quarters??[])].map(q=>q.replace(/\s/g,'')))].sort();
-  const initialQuarter=(await searchParams)?.q?.replace(/\s/g,'');
-  return <Company initialQuarter={initialQuarter} dossier={dossier} quote={quote} stock={stock} investors={investors} quarters={[...quarters,'Today']}/>;
+  const quote=await getPrice(dossier.id,dossier.company.country);
+  return <Company dossier={dossier} quote={quote} stock={stock} investors={investors}/>;
  }
  return <><Stock stock={stock!} investors={investors}/></>;
 }

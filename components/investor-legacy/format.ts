@@ -1,0 +1,55 @@
+export function formatMoney(n: number): string {
+  const abs = Math.abs(n);
+  if (abs >= 1e12) return `$${(n / 1e12).toFixed(2)}T`;
+  if (abs >= 1e9) return `$${(n / 1e9).toFixed(n >= 1e10 ? 0 : 1)}B`;
+  if (abs >= 1e6) return `$${(n / 1e6).toFixed(n >= 1e7 ? 0 : 1)}M`;
+  return `$${Math.round(n / 1e3)}K`;
+}
+
+export function formatDelta(now: number, before: number | undefined): string | null {
+  if (!before || before <= 0) return null;
+  const d = ((now - before) / before) * 100;
+  if (Math.abs(d) < 0.05) return null;
+  const r = Math.round(d * 10) / 10;
+  const s = Math.abs(r).toFixed(Math.abs(r) < 10 ? 1 : 0);
+  return `${d >= 0 ? "+" : "−"}${s}%`;
+}
+
+// A real position that rounds to 0.0% reads as an error, so say it is small instead.
+export const formatPct = (p: number) => {
+  if (p > 0 && p < 0.05) return "<0.1%";
+  const r = Math.round(p * 10) / 10;
+  return `${r.toFixed(r < 10 ? 1 : 0)}%`;
+};
+
+export function formatChange(change: number | null | undefined): string | null {
+  if (change === null || change === undefined || !Number.isFinite(change)) return null;
+  // dataroma reports a microscopic position ballooning as "+630555%": show it as a multiplier.
+  if (change >= 1000) return `×${Math.round(1 + change / 100).toLocaleString("en-US")}`;
+  const r = Math.round(Math.abs(change) * 10) / 10;
+  const s = r.toFixed(r < 10 ? 1 : 0);
+  return `${change >= 0 ? "+" : "−"}${s}%`;
+}
+
+// Text size that follows tile size, so a big tile reads big without a font ladder.
+export const scaleFor = (w: number, h: number) => Math.max(11, Math.min(26, Math.sqrt(w * h) / 14));
+
+// Trims to whole sentences under a limit, falling back to a word boundary, for meta descriptions.
+export function firstSentences(text: string, limit: number): string {
+  if (text.length <= limit) return text;
+  const cut = text.slice(0, limit);
+  const sentence = cut.lastIndexOf(". ");
+  if (sentence > limit * 0.5) return cut.slice(0, sentence + 1);
+  return `${cut.slice(0, cut.lastIndexOf(" "))}…`;
+}
+
+export const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+
+/** Financial compact amounts: three significant figures, with an explicit currency. */
+export function compactMoney(value: number, currency = ''): string {
+  if (!Number.isFinite(value)) return 'Not reported';
+  const unit = Math.abs(value) >= 1e12 ? [1e12, 'T'] as const : Math.abs(value) >= 1e9 ? [1e9, 'B'] as const : Math.abs(value) >= 1e6 ? [1e6, 'M'] as const : Math.abs(value) >= 1e3 ? [1e3, 'K'] as const : [1, ''] as const;
+  const scaled = value / unit[0];
+  const number = scaled === 0 ? '0' : new Intl.NumberFormat('en-US', { minimumSignificantDigits: 3, maximumSignificantDigits: 3 }).format(scaled);
+  return `${currency} ${number}${unit[1]}`.trim();
+}

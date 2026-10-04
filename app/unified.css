@@ -176,4 +176,17 @@
  :scope:has(.company-page) .shared-dock.value-page.value-dock{height:70px;min-height:70px;justify-content:center}
  .company-reference{margin-top:8px}
 }
+/* Value controls retain their existing borders, colours and focus indicators. */
+:scope:has(main.value-page,.company-page) .value-page :is(button,a,summary,[role="button"]),
+:scope:has(main.value-page,.company-page) .value-page :is(button,a,summary,[role="button"]) *{text-decoration:none!important}
+.value-page .main-more{border-bottom-color:transparent}
+.one-index .desktop-filters .design-toggle{white-space:nowrap}
+.mobile-market-scope{display:none}
+@media(max-width:767px){
+ .mobile-market-scope{display:block}
+ /* Preserve the former toggle's footprint so the other dock buttons stay put. */
+ :scope:has(.one-index) .shared-dock #value-market{min-height:36px}
+ .one-index .map-toolbar .mobile-market-scope .design-toggle{white-space:nowrap}
+}
+
 }

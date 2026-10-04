@@ -1,0 +1,200 @@
+{
+  "source": "https://ltg.com.ph/wp-content/uploads/bsk-pdf-manager/2026/03/2026-Feb-27-LTG-17A-December-31-2025.pdf",
+  "evidence": "Philippine SEC Form 17-A, consolidated statement pp. 98-100 and EPS note 31. Amounts in thousands of Philippine pesos; shares in thousands. These are manually transcribed source observations expressed with standard IFRS concept names, not raw XBRL.",
+  "facts": {
+    "facts": {
+      "ifrs-full": {
+        "Revenue": {
+          "units": {
+            "PHP": [
+              {
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "val": 132778425000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "val": 128965522000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "val": 115298936000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              }
+            ]
+          }
+        },
+        "ProfitLossAttributableToOwnersOfParent": {
+          "units": {
+            "PHP": [
+              {
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "val": 30975731000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "val": 28920989000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "val": 25421454000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              }
+            ]
+          }
+        },
+        "Assets": {
+          "units": {
+            "PHP": [
+              {
+                "end": "2025-12-31",
+                "val": 1493898263000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "end": "2024-12-31",
+                "val": 1374329859000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              }
+            ]
+          }
+        },
+        "EquityAttributableToOwnersOfParent": {
+          "units": {
+            "PHP": [
+              {
+                "end": "2025-12-31",
+                "val": 251075012000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "end": "2024-12-31",
+                "val": 231085580000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              }
+            ]
+          }
+        },
+        "WeightedAverageShares": {
+          "units": {
+            "shares": [
+              {
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "val": 10821389000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "val": 10821389000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "val": 10821389000,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              }
+            ]
+          }
+        },
+        "BasicEarningsLossPerShare": {
+          "units": {
+            "PHP/shares": [
+              {
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "val": 2.86,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "val": 2.67,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "val": 2.35,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              }
+            ]
+          }
+        },
+        "DilutedEarningsLossPerShare": {
+          "units": {
+            "PHP/shares": [
+              {
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "val": 2.86,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "val": 2.67,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              },
+              {
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "val": 2.35,
+                "form": "17-A",
+                "filed": "2026-02-27",
+                "accn": "issuer-annual-2025"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

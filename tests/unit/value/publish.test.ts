@@ -52,6 +52,50 @@ function repository(): string {
 }
 
 describe("buildOutput", () => {
+  it('preserves frozen identities and aliases in newly split search children',async()=>{
+    const {readVerdictFreeze,applyVerdictFreeze}=await import('@/scripts/value/verdict-freeze');
+    const a=analysis(),baseline=output([a]);
+    const row=[a.id,'Original name','US','a',100,a.id];
+    baseline['search/manifest.json']={version:1,split:[],maxPrefix:2};
+    baseline['search/us.json']={rows:[row],aliases:{'us-company':[0]}};
+    for(const [file,data]of Object.entries(baseline))writeCorpusJson(`publish-repo/${file}`,data);
+    const freeze=readVerdictFreeze(path.join(corpusDir(),'publish-repo'),{all:true});
+    const files={...output([a]),'search/manifest.json':{version:1,split:['us'],maxPrefix:3},'search/us.json':{rows:[],aliases:{}},'search/us-.json':{rows:[[a.id,'Changed name','US','a',999,a.id]],aliases:{'us-company':[0]}}};
+    expect(()=>applyVerdictFreeze(structuredClone(files),freeze)).toThrow(/routing changed/);
+    applyVerdictFreeze(files,freeze,{extendSearch:true});
+    expect(files['search/us-.json']).toEqual({rows:[row],aliases:{'us-company':[0]}});
+    expect(files['search/us.json']).toEqual({rows:[row],aliases:{'us-company':[0]}});
+  });
+  it('includes analysed multiple-failure companies in deferred list views',async()=>{
+    const {publishViews}=await import('@/lib/value/publish-views');
+    const {unpackView}=await import('@/lib/value/browser-view');
+    const a=analysis('PLXS.US');a.tests.moat.result='fail';a.tests.moat.numeric='fail';a.tests.economics.result='fail';a.tests.economics.numeric='fail';
+    const files=output([a]);
+    const manifest=publishViews(files);
+    const rows=[manifest.current,...(manifest.deferred??[])].flatMap(file=>unpackView(files[file] as Parameters<typeof unpackView>[0]));
+    expect(rows.map(r=>r.id)).toContain('PLXS.US');
+  });
+  it('adds a held nonmember locally while preserving every existing dossier and country row',async()=>{
+    const {default:publish}=await import('@/scripts/value/stages/publish');
+    const old=analysis('KO.US'),addition=analysis('PLXS.US');
+    addition.company.indexes=[];addition.company.heldBySuperinvestors=true;
+    const baseline=output([old]);
+    for(const [file,data]of Object.entries(baseline))writeCorpusJson(`publish-repo/${file}`,data);
+    const before=readFileSync(path.join(corpusDir(),`publish-repo/dossiers/${shardOf(old.id)}.json`),'utf8');
+    writeCorpusJson('analysis/KO.US.json',{...old,asOf:'2099-01-01',company:{...old.company,marketCapUsd:999}});
+    writeCorpusJson('analysis/PLXS.US.json',addition);
+    writeFileSync(path.join(corpusDir(),'universe.jsonl'),JSON.stringify(old.company)+'\n');
+    writeCorpusJson('index-membership/latest.json',{complete:true,memberships:{'KO.US':['S&P 500']}});
+    writeCorpusJson('held-membership/latest.json',{version:1,companies:[addition.company],ledger:[],quarters:[]});
+    const out=path.join(corpusDir(),'candidate');
+    await publish({out,additionsOnly:true});
+    const dossiers=JSON.parse(readFileSync(path.join(out,`dossiers/${shardOf(old.id)}.json`),'utf8'));
+    expect(dossiers[old.id]).toEqual(JSON.parse(before)[old.id]);
+    expect(JSON.parse(readFileSync(path.join(out,'index/US.json'),'utf8')).find((r:IndexRow)=>r.id===old.id)).toEqual((baseline['index/US.json'] as IndexRow[])[0]);
+    expect(JSON.parse(readFileSync(path.join(out,`dossiers/${shardOf(addition.id)}.json`),'utf8'))[addition.id]).toBeDefined();
+    expect(readFileSync(path.join(corpusDir(),`publish-repo/dossiers/${shardOf(old.id)}.json`),'utf8')).toBe(before);
+    await expect(publish({additionsOnly:true})).rejects.toThrow(/requires.*--out/);
+  });
   it('rejects an obsolete analysis before creating a candidate or refreshing returns', async()=>{
     const {default:publish}=await import('@/scripts/value/stages/publish');
     const a=analysis();a.versions.pipeline='obsolete';
@@ -115,6 +159,13 @@ describe("buildOutput", () => {
     await auditShares(undefined,{only:['NEW.US']});
     expect(readCorpusJson('enrichment-v7/share-checks/NEW.US.json')).toMatchObject({status:'verified',shares:101});
     expect(readCorpusJson('staging/share-audit.json')).toMatchObject({quality:{flagged:1,resolved:1,residual:0}});
+  });
+  it('does not replace reanalysed inputs with an older backfill memo',()=>{
+    const a=analysis();
+    a.ownerMemo={version:1,asOf:a.asOf,inputHash:'corrected-inputs',lines:[]};
+    writeCorpusJson(`analysis/${a.id}.json`,a);
+    writeCorpusJson(`business-backfill/memos/${a.id}.json`,{version:1,asOf:'2026-09-28',inputHash:'old-inputs',lines:[]});
+    expect(loadAnalyses([a.company])[0].ownerMemo?.inputHash).toBe('corrected-inputs');
   });
   it('keeps published filing memo lines when a new research memo omits them',()=>{
     const a=analysis();

@@ -1,0 +1,442 @@
+[
+  {
+    "id": "EPD.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:15:46.752Z"
+  },
+  {
+    "id": "AVTR.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:13:46.777Z"
+  },
+  {
+    "id": "LPX.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:16:58.617Z"
+  },
+  {
+    "id": "PKOH.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:17:53.102Z"
+  },
+  {
+    "id": "KARO.US",
+    "period": "2026-02-28",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:16:46.175Z"
+  },
+  {
+    "id": "UVV.US",
+    "period": "2026-03-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:19:03.950Z"
+  },
+  {
+    "id": "FINV.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:15:54.973Z"
+  },
+  {
+    "id": "CRBG.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:14:14.535Z"
+  },
+  {
+    "id": "SRRK.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:18:39.042Z"
+  },
+  {
+    "id": "DCGO.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:14:21.669Z"
+  },
+  {
+    "id": "PL.US",
+    "period": "2026-01-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:17:53.105Z"
+  },
+  {
+    "id": "NXST.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:17:31.360Z"
+  },
+  {
+    "id": "FWONA.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:16:07.127Z"
+  },
+  {
+    "id": "GHC.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T21:00:05.079Z"
+  },
+  {
+    "id": "CBL.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:14:02.247Z"
+  },
+  {
+    "id": "HZO.US",
+    "period": "2025-09-30",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:16:30.023Z"
+  },
+  {
+    "id": "ETON.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:15:48.025Z"
+  },
+  {
+    "id": "JAZZ.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:16:40.292Z"
+  },
+  {
+    "id": "POWL.US",
+    "period": "2025-09-30",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:17:54.827Z"
+  },
+  {
+    "id": "INTT.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:16:38.006Z"
+  },
+  {
+    "id": "TME.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:18:49.568Z"
+  },
+  {
+    "id": "AEBI.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:13:32.833Z"
+  },
+  {
+    "id": "TNC.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:18:49.286Z"
+  },
+  {
+    "id": "SLP.US",
+    "period": "2025-08-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:18:33.877Z"
+  },
+  {
+    "id": "GNE.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:16:10.665Z"
+  },
+  {
+    "id": "ALRS.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:47:07.649Z"
+  },
+  {
+    "id": "KVYO.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:16:50.915Z"
+  },
+  {
+    "id": "FIG.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:15:54.691Z"
+  },
+  {
+    "id": "SHAZ.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:18:31.305Z"
+  },
+  {
+    "id": "IVT.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:16:39.739Z"
+  },
+  {
+    "id": "RYAN.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:18:22.514Z"
+  },
+  {
+    "id": "FBIN.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:15:53.586Z"
+  },
+  {
+    "id": "AGL.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:13:34.555Z"
+  },
+  {
+    "id": "SD.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:18:25.347Z"
+  },
+  {
+    "id": "NXT.US",
+    "period": "2026-03-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:17:31.633Z"
+  },
+  {
+    "id": "SUN.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:18:42.615Z"
+  },
+  {
+    "id": "AXSM.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:13:47.818Z"
+  },
+  {
+    "id": "SUPN.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:18:42.823Z"
+  },
+  {
+    "id": "LESL.US",
+    "period": "2025-10-04",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:16:53.437Z"
+  },
+  {
+    "id": "PHIN.US",
+    "period": "2025-12-31",
+    "checks": {
+      "revenue": true,
+      "dilutedShares": true,
+      "currency": true,
+      "analysisTimestamp": true
+    },
+    "analysisAsOf": "2026-10-04T20:17:48.496Z"
+  }
+]

@@ -13,11 +13,10 @@ export function publishViews(files: Record<string, unknown>): ViewManifest {
     files[file] = data;
     return file;
   };
-  // Country filters also show companies with insufficient data. Keep those
-  // identities in the deferred current view, without adding them to first paint.
-  const missing=Object.entries(files).filter(([f])=>/^index\/[A-Z]{2}\.json$/.test(f))
-    .flatMap(([,data])=>(data as IndexRow[]).filter(row=>row.st==='i'||dossiers[row.id]?.predecessorHistory?.length));
-  const source=[...new Map([...(files['index/default.json'] as IndexRow[] ?? []),...missing].map(row=>[row.id,row])).values()];
+  // Every analysed company is available to the list filters, including neutral
+  // short histories and multiple failures. Passing companies retain first paint.
+  const all=Object.entries(files).filter(([f])=>/^index\/[A-Z]{2}\.json$/.test(f)).flatMap(([,data])=>data as IndexRow[]);
+  const source=[...new Map([...(files['index/default.json'] as IndexRow[] ?? []),...all].map(row=>[row.id,row])).values()];
   const rows=source.map(row => {
     const d=dossiers[row.id];
     return browserRow({...row,...(d?{quality:qualityMetric(d.company.kind,d.tests.moat.metrics)}:{}),...(d?.valuation ? {ownerReturnInputs:{valuation:d.valuation,marketCapUsd:d.company.marketCapUsd}} : {})}, prices[row.id]??null);

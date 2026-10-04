@@ -1,4 +1,6 @@
 import { compareWesternPriority } from "../../../lib/value/western";
+import {annualInlineFacts} from '../../../lib/value/annual-inline';
+import type {AnnualSourceEvidence} from '../../../lib/value/annual-source-corrections';
 import { CompanyFailures } from "../company-failures";
 import { T } from "../../../lib/value/config";
 import { pool } from "../../../lib/value/http";
@@ -25,6 +27,8 @@ export default async function reports({ only, limit, force = false }: {
   const candidateIds = new Set(candidates.map(company => company.id));
   const fallback: typeof companies = [];
   async function processCompany(company: typeof companies[number]): Promise<void> {
+    const localAnnual=readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`);
+    if(!force&&localAnnual?.kind==='17-A'&&localAnnual.sections.length&&localAnnual.sections.every(key=>existsSync(corpusPath(`reports/${company.id}/${key}.txt`))))return;
     if (company.source === "edinet") {
       const meta = readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`);
       if (meta?.kind === "EDINET" && meta.sections.every(key => existsSync(corpusPath(`reports/${company.id}/${key}.txt`)))) return;
@@ -46,7 +50,11 @@ export default async function reports({ only, limit, force = false }: {
       const response = await fetchEsef(esef.url);
       sections = cutEsefSections(await response.text());
     } else if (annual) {
-      const text = htmlToText(await (await fetchEdgar(annual.url)).text());
+      const html=await (await fetchEdgar(annual.url)).text();
+      const priorEvidence=readCorpusJson<AnnualSourceEvidence>(`raw/sec-annual/${company.id}.json`);
+      const selection={shareDimensions:priorEvidence?.shareDimensions,revenueConcept:priorEvidence?.revenueConcept,revenueComponents:priorEvidence?.revenueComponents,revenueDimensions:priorEvidence?.revenueDimensions};
+      writeCorpusJson(`raw/sec-annual/${company.id}.json`,{...priorEvidence,...selection,source:annual.url,facts:annualInlineFacts(html,{...annual,...selection})});
+      const text = htmlToText(html);
       sections = cutSections({ text, form: annual.form });
       if (!sections.business) {
         sections.business = company.description?.trim()

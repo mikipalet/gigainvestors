@@ -1,0 +1,60 @@
+{
+  "FINV.US": {
+    "ordinaryPerAds": 5,
+    "source": "https://www.sec.gov/Archives/edgar/data/1691445/000149315226019597/form20-f.htm",
+    "revenueConcept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "revenueEvidence": "Consolidated income statement net revenue CNY 13,569,483 thousand. Geographic Revenues duplicate lacks inline scale; primary statement tag uses scale 3."
+  },
+  "TME.US": {
+    "ordinaryPerAds": 2,
+    "source": "https://www.sec.gov/Archives/edgar/data/1744676/000119312526160257/tme-20251231.htm"
+  },
+  "FWONA.US": {
+    "shareDimensions": {
+      "srt:ConsolidatedEntitiesAxis": "lmca:LibertyFormulaOneGroupMember",
+      "us-gaap:StatementClassOfStockAxis": "lmca:CommonClassSeriesaSeriesbSeriescMember"
+    },
+    "source": "https://www.sec.gov/Archives/edgar/data/1560385/000110465926020653/lmca-20251231x10k.htm"
+  },
+  "RYAN.US": {
+    "shareDimensions": {
+      "us-gaap:StatementClassOfStockAxis": "us-gaap:CommonClassAMember"
+    },
+    "source": "https://www.sec.gov/Archives/edgar/data/1849253/000184925326000006/ryan-20251231.htm"
+  },
+  "SUN.US": {
+    "shareDimensions": {
+      "us-gaap:StatementEquityComponentsAxis": "sun:CommonUnitsMember"
+    },
+    "source": "https://www.sec.gov/Archives/edgar/data/1552275/000155227526000021/sun-20251231.htm"
+  },
+  "AEG.US": {
+    "source": "https://www.sec.gov/Archives/edgar/data/769218/000119312526124987/d29563d20f.htm",
+    "revenueConcept": "aeg:RevenueFromContinuingAndDiscontinuedOperations",
+    "revenueEvidence": "2025 segment-results table, consolidated column after eliminations: total revenues EUR 17,664 million; insurance revenue 9,097 + effective-interest revenue 3,320 + FVPL interest 832 + other investment income 2,024 + fees 2,390 + other revenues 0 (rounding 1). Insurance revenue alone is not total revenue."
+  },
+  "IFS.US": {
+    "source": "https://www.sec.gov/Archives/edgar/data/1615903/000119312526177617/ifs-20251231.htm",
+    "revenueConcept": "ifs:RevenueNetOfIntersegmentAdjustment",
+    "revenueEvidence": "2025 segment table, total consolidated column after eliminations: total income PEN 11,326,379 thousand. Currency independently corroborated by total assets, common equity and operating cash flow; vendor USD label is wrong."
+  },
+  "ING.US": {
+    "source": "https://www.sec.gov/Archives/edgar/data/1039765/000162828026011979/ing-20251231.htm",
+    "revenueConcept": "ifrs-full:Revenue",
+    "revenueDimensions": {
+      "ifrs-full:SignificantInvestmentsInSubsidiariesAxis": "ing:INGGroupMember",
+      "ifrs-full:DepartureFromRequirementOfIFRSAxis": "ing:IFRSEUResultsMember"
+    },
+    "revenueEvidence": "Consolidated ING Group IFRS-EU total income 23,035 million matches the input IFRS-EU net income 6,327 million. Undimensioned IFRS-IASB revenue 25,678 million corresponds to net income 8,324 million and must not be mixed with the EU basis. The reconciliation identifies the IAS 39 EU carve-out."
+  },
+  "CIB.US": {
+    "source": "https://www.sec.gov/Archives/edgar/data/2058897/000205889726000125/cib-20251231.htm",
+    "revenueComponents": [
+      "cib:NetInterestMarginAndValuationIncomeOnFinancialInstrumentsBeforeImpairmentOnLoansAndFinancialLeasesAndOffBalanceSheetCreditInstruments",
+      "ifrs-full:FeeAndCommissionIncomeExpense",
+      "ifrs-full:MiscellaneousOtherOperatingIncome",
+      "ifrs-full:ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod"
+    ],
+    "revenueEvidence": "Consolidated statement F-7: net interest and valuation before credit impairment + net fees + other operating income + dividends/equity income. FY2025 COP million: 19,426,300 + 4,354,944 + 3,572,074 + 693,011 = 28,046,329. Continues the bank net-revenue definition; gross interest is not revenue."
+  }
+}

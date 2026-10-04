@@ -278,3 +278,10 @@ it("processes SEC and ESEF reports with independent six and three company pools"
     expect(peak).toEqual({ sec: 6, esef: 3 });
   } finally { vi.useRealTimers(); }
 });
+
+it('cuts Philippine annual Form 17-A using its own business and management item numbers',()=>{
+ const business='Operating businesses and their markets. '.repeat(40),mdna='Annual results and financial condition. '.repeat(40);
+ const text=`Item 1. Business\n\n${business}\n\nItem 2. Properties\n\nProperty\n\nItem 6. Management Discussion\n\n${mdna}\n\nItem 7. Financial Statements`;
+ const result=cutSections({text,form:'17-A'});
+ expect(result.business).toContain('Operating businesses');expect(result.business).not.toContain('Properties');expect(result.mdna).toContain('Annual results');
+});

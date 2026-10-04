@@ -13,11 +13,28 @@ export async function readStore<T>(file: string, revalidate = 300): Promise<T | 
 export const getMeta = () => readStore<StoreMeta>("meta.json");
 export const getDefaultIndex = async () => await readStore<IndexRow[]>("index/default.json") ?? [];
 export const getCountryIndex = async (cc: string) => await readStore<IndexRow[]>(`index/${cc.toUpperCase()}.json`) ?? [];
+/** Catalogues include neutral and multiple-failure dossiers too. */
+export async function getAllAnalyzedIndex():Promise<IndexRow[]>{
+  const meta=await getMeta();
+  const countries=Object.keys(meta?.funnel?.byCountry??{}).filter(cc=>/^[A-Z]{2}$/.test(cc)).sort();
+  const rows=await Promise.all([getDefaultIndex(),...countries.map(getCountryIndex)]);
+  return [...new Map(rows.flat().map(row=>[row.id,row])).values()];
+}
 export async function getDossier(id: Id) {
   const key = id.toUpperCase();
   try {
     const shard = await readStore<Record<Id, Dossier>>(`dossiers/${shardOf(key)}.json`, 259200);
-    return shard?.[key] ? publicAnalysis(shard[key]) : null;
+    if(shard?.[key])return publicAnalysis(shard[key]);
+    const normalized=key.endsWith('.US')?key.slice(0,-3).replaceAll('.','-')+'.US':key;
+    if(normalized!==key){
+      const direct=await readStore<Record<Id,Dossier>>(`dossiers/${shardOf(normalized)}.json`,259200);
+      if(direct?.[normalized])return publicAnalysis(direct[normalized]);
+    }
+    const aliases=await readStore<Record<string,string>>('aliases.json');
+    const target=aliases?.[normalized]??aliases?.[key];
+    if(!target||target===key)return null;
+    const resolved=await readStore<Record<Id,Dossier>>(`dossiers/${shardOf(target)}.json`,259200);
+    return resolved?.[target]?publicAnalysis(resolved[target]):null;
   } catch { return null; }
 }
 // PriceMap quotes and IndexRow.v/cur are in the listing trading currency by contract.

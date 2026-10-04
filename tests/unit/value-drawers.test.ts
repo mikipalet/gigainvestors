@@ -3,6 +3,13 @@ import {retainedWindow,retainedSentence,yearTable} from '@/lib/value/drawer-data
 import type {Dossier,TestOutcome} from '@/lib/value/types';
 const management={key:'management',result:'pass',numeric:'pass',metrics:{retainedEarnings:-1.347e9,marketCapGain:10.258856e9,retainedStartFy:2016,retainedEndFy:2025},series:{retainedEarnings:[[2016,20],[2017,30]],marketCap:[[2016,100],[2025,200]]},jev:[],reasons:[]} as TestOutcome;
 describe('drawer evidence',()=>{
+ it('never labels owner-cash amounts as conversion ratios when the loss-year fallback is active',()=>{
+  const test={key:'economics',result:'fail',numeric:'fail',metrics:{oeToNi:null,ownerEarningsTotal:-1000000},series:{ownerEarnings:[[2025,-51572000]],netIncome:[[2025,-90000000]],nwcToRevenue:[[2025,.54]]},jev:[],reasons:[]} as TestOutcome;
+  const dossier={company:{kind:'operating'},series:{},tests:{understandable:{series:{}}}} as unknown as Dossier;
+  const table=yearTable(dossier,test);
+  expect(table.columns.some(c=>c.key==='conversion')).toBe(false);
+  expect(table.columns.find(c=>c.key==='ownerEarnings')?.format).toBe('money');
+ });
  it('describes net capital returned without a negative passing bar',()=>{
   expect(retainedSentence(management,'EUR')).toBe('Returned EUR 1.35bn more than it earned to owners while market value rose EUR 10.3bn: passes.');
  });

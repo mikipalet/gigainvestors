@@ -23,6 +23,19 @@ beforeEach(() => {
   vi.stubGlobal('fetch', () => { throw new Error('Unexpected network'); });
 });
 afterEach(() => { vi.useRealTimers(); vi.restoreAllMocks(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); rmSync(root, { recursive: true, force: true }); });
+it('honors a coverage hard cap even for the normal FX reserve',()=>{
+ vi.stubEnv('VALUE_EODHD_HARD_CAP','100000');
+ syncBudget(100000);
+ expect(()=>reserveEodhd({endpoint:'eod/EURUSD.FOREX'})).toThrow(/budget/);
+ expect(budgetUsage().used).toBe(100000);
+});
+it('preserves the nightly 40,000-call reserve for coverage, including FX',()=>{
+ vi.stubEnv('VALUE_EODHD_HARD_CAP','60000');syncBudget(59990);
+ reserveEodhd({endpoint:'fundamentals/NEW.US'});
+ expect(()=>reserveEodhd({endpoint:'fundamentals/NEXT.US'})).toThrow(/budget/);
+ expect(()=>reserveEodhd({endpoint:'eod/EURUSD.FOREX'})).toThrow(/budget/);
+ expect(budgetUsage().used).toBe(60000);
+});
 it('persists history quota across invocations, rejects overspend, and resets at UTC midnight', () => {
   vi.useFakeTimers(); vi.setSystemTime(new Date('2026-09-29T23:59:59Z'));
   writeCorpusJson('usage/eodhd-2026-09-29.json', { date: '2026-09-29', used: 99999, history: 14999 });

@@ -1,0 +1,3253 @@
+[
+  {
+    "id": "EPD.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 52596000000,
+        "reference": 52596000000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/EPD.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001061219.json",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 52596000000,
+            "accn": "0001061219-26-000006",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-27",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 2188000000,
+        "reference": 2188000000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001061219.json#0001061219-26-000006",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001061219.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 2188000000,
+            "accn": "0001061219-26-000006",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-27",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 36.02,
+        "reference": 36.02000045776367,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/EPD?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001061219.json",
+    "passed": true
+  },
+  {
+    "id": "AVTR.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 6552200000,
+        "reference": 6552200000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/AVTR.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001722482.json",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 6552200000,
+            "accn": "0001628280-26-007118",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-11",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 680600000,
+        "reference": 680600000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001722482.json#0001628280-26-007118",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001722482.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 680600000,
+            "accn": "0001628280-26-007118",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-11",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 15.24,
+        "reference": 15.239999771118164,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/AVTR?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001722482.json",
+    "passed": true
+  },
+  {
+    "id": "LPX.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 2708000000,
+        "reference": 2708000000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/LPX.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000060519.json",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 2708000000,
+            "accn": "0000060519-26-000012",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-17",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 70000000,
+        "reference": 70000000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000060519.json#0000060519-26-000012",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000060519.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 70000000,
+            "accn": "0000060519-26-000012",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-17",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 65.76,
+        "reference": 65.76000213623047,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/LPX?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000060519.json",
+    "passed": true
+  },
+  {
+    "id": "PKOH.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 1599100000,
+        "reference": 1599100000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/PKOH.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000076282.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 1599100000,
+            "accn": "0000076282-26-000007",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-05",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 13973125,
+        "reference": 13973125,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000076282.json#0000076282-26-000007",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000076282.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 13973125,
+            "accn": "0000076282-26-000007",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-05",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 47.16,
+        "reference": 47.15999984741211,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/PKOH?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000076282.json",
+    "passed": true
+  },
+  {
+    "id": "KARO.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2026-02-28",
+        "value": 5479120000,
+        "reference": 5479120000.0,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/KARO.US.json#2026-02-28",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1828102/000121390026066795/ea0293645-20f_karooooo.htm",
+        "fact": [
+          "Revenue",
+          {
+            "val": 5479120000.0,
+            "start": "2025-03-01",
+            "end": "2026-02-28",
+            "form": "20-F",
+            "filed": "2026-06-09",
+            "accn": "000121390026066795"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2026-02-28",
+        "value": 30893300,
+        "reference": 30893300.0,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1828102/000121390026066795/ea0293645-20f_karooooo.htm#000121390026066795",
+          "field": "ifrs-full:WeightedAverageShares",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-03-01 to 2026-02-28",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1828102/000121390026066795/ea0293645-20f_karooooo.htm",
+        "fact": [
+          "WeightedAverageShares",
+          {
+            "val": 30893300.0,
+            "start": "2025-03-01",
+            "end": "2026-02-28",
+            "form": "20-F",
+            "filed": "2026-06-09",
+            "accn": "000121390026066795"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares; reported basic and diluted EPS equal",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 60.83,
+        "reference": 60.83000183105469,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/KARO?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001828102.json",
+    "passed": true
+  },
+  {
+    "id": "UVV.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2026-03-31",
+        "value": 2924470000,
+        "reference": 2924470000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/UVV.US.json#2026-03-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000102037.json",
+        "fact": [
+          "RevenuesExcludingInterestAndDividends",
+          {
+            "start": "2025-04-01",
+            "end": "2026-03-31",
+            "val": 2924470000,
+            "accn": "0001628280-26-039511",
+            "fy": 2026,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-06-01",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2026-03-31",
+        "value": 25171162,
+        "reference": 25171162,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000102037.json#0001628280-26-039511",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-04-01 to 2026-03-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000102037.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-04-01",
+            "end": "2026-03-31",
+            "val": 25171162,
+            "accn": "0001628280-26-039511",
+            "fy": 2026,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-06-01",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 41.65,
+        "reference": 41.650001525878906,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/UVV?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000102037.json",
+    "passed": true
+  },
+  {
+    "id": "FINV.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 13569483000,
+        "reference": 13569483000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1691445/000149315226019597/form20-f.htm#000149315226019597",
+          "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Currency CNY"
+          ]
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1691445/000149315226019597/form20-f.htm",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 13569483000,
+            "accn": "0001493152-26-019597",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "20-F",
+            "filed": "2026-04-29",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 266847597,
+        "reference": 266847597.0,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1691445/000149315226019597/form20-f.htm#000149315226019597",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "5 ordinary shares per ADS; https://www.sec.gov/Archives/edgar/data/1691445/000149315226019597/form20-f.htm"
+          ]
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1691445/000149315226019597/form20-f.htm",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 1334237985,
+            "accn": "0001493152-26-019597",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "20-F",
+            "filed": "2026-04-29",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares / 5 ordinary shares per ADS",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 3.04,
+        "reference": 3.0399999618530273,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/FINV?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001691445.json",
+    "passed": true
+  },
+  {
+    "id": "CRBG.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 18481000000,
+        "reference": 18481000000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1889539/000188953926000022/crbg-20251231.htm#000188953926000022",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Currency USD"
+          ]
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1889539/000188953926000022/crbg-20251231.htm",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 18481000000,
+            "accn": "0001889539-26-000022",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-11",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 539300000,
+        "reference": 539300000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1889539/000188953926000022/crbg-20251231.htm#000188953926000022",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1889539/000188953926000022/crbg-20251231.htm",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 539300000,
+            "accn": "0001889539-26-000022",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-11",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 33.77,
+        "reference": 33.77000045776367,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/CRBG?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001889539.json",
+    "passed": true
+  },
+  {
+    "id": "SRRK.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 0,
+        "reference": 0,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/SRRK.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001727196.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 0,
+            "accn": "0001104659-26-022551",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-03",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 114701154,
+        "reference": 114701154,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001727196.json#0001104659-26-022551",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001727196.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 114701154,
+            "accn": "0001104659-26-022551",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-03",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 47.75,
+        "reference": 47.75,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/SRRK?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001727196.json",
+    "passed": true
+  },
+  {
+    "id": "DCGO.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 322196000,
+        "reference": 322196000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/DCGO.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001822359.json",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 322196000,
+            "accn": "0001628280-26-018214",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-16",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 99068651,
+        "reference": 99068651,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001822359.json#0001628280-26-018214",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001822359.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 99068651,
+            "accn": "0001628280-26-018214",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-16",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 0.368,
+        "reference": 0.36800000071525574,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/DCGO?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001822359.json",
+    "passed": true
+  },
+  {
+    "id": "PL.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2026-01-31",
+        "value": 307727000,
+        "reference": 307727000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/PL.US.json#2026-01-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001836833.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-02-01",
+            "end": "2026-01-31",
+            "val": 307727000,
+            "accn": "0001193125-26-119957",
+            "fy": 2026,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-23",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2026-01-31",
+        "value": 307799424,
+        "reference": 307799424,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001836833.json#0001193125-26-119957",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-02-01 to 2026-01-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001836833.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-02-01",
+            "end": "2026-01-31",
+            "val": 307799424,
+            "accn": "0001193125-26-119957",
+            "fy": 2026,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-23",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 16.38,
+        "reference": 16.3799991607666,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/PL?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001836833.json",
+    "passed": true
+  },
+  {
+    "id": "NXST.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 4949000000,
+        "reference": 4949000000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/NXST.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001142417.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 4949000000,
+            "accn": "0001193125-26-078361",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-27",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 30707000,
+        "reference": 30707000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001142417.json#0001193125-26-078361",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001142417.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 30707000,
+            "accn": "0001193125-26-078361",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-27",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 161.48,
+        "reference": 161.47999572753906,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/NXST?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001142417.json",
+    "passed": true
+  },
+  {
+    "id": "FWONA.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 4482000000,
+        "reference": 4482000000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/FWONA.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1560385/000110465926020653/lmca-20251231x10k.htm",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 4482000000,
+            "accn": "0001104659-26-020653",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-26",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 258000000,
+        "reference": 258000000.0,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1560385/000110465926020653/lmca-20251231x10k.htm#000110465926020653",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1560385/000110465926020653/lmca-20251231x10k.htm",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "val": 258000000.0,
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "form": "10-K",
+            "filed": "2026-02-26",
+            "accn": "000110465926020653"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 85.35,
+        "reference": 85.3499984741211,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/FWONA?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001560385.json",
+    "passed": true
+  },
+  {
+    "id": "GHC.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 4911563000,
+        "reference": 4911563000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/GHC.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000104889.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 4911563000,
+            "accn": "0001628280-26-011405",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-25",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 4373000,
+        "reference": 4373000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000104889.json#0001628280-26-011405",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000104889.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 4373000,
+            "accn": "0001628280-26-011405",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-25",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 1127.83,
+        "reference": 1127.8299560546875,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/GHC?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000104889.json",
+    "passed": true
+  },
+  {
+    "id": "CBL.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 578373000,
+        "reference": 578373000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/CBL.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000910612.json",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 578373000,
+            "accn": "0001193125-26-087049",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-03",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 30841000,
+        "reference": 30841000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000910612.json#0001193125-26-087049",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000910612.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 30841000,
+            "accn": "0001193125-26-087049",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-03",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 53.36,
+        "reference": 53.36000061035156,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/CBL?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000910612.json",
+    "passed": true
+  },
+  {
+    "id": "HZO.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-09-30",
+        "value": 2309288000,
+        "reference": 2309288000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/HZO.US.json#2025-09-30",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001057060.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2024-10-01",
+            "end": "2025-09-30",
+            "val": 2309288000,
+            "accn": "0001193125-25-284680",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2025-11-17",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-09-30",
+        "value": 22052177,
+        "reference": 22052177,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001057060.json#0001193125-25-284680",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-10-01 to 2025-09-30",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001057060.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2024-10-01",
+            "end": "2025-09-30",
+            "val": 22052177,
+            "accn": "0001193125-25-284680",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2025-11-17",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 52.24,
+        "reference": 52.2400016784668,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/HZO?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001057060.json",
+    "passed": true
+  },
+  {
+    "id": "ETON.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 79950000,
+        "reference": 79950000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/ETON.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001710340.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 79950000,
+            "accn": "0001437749-26-009059",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-19",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 26907725,
+        "reference": 26907725,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001710340.json#0001437749-26-009059",
+          "field": "us-gaap:WeightedAverageNumberOfSharesOutstandingBasic",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001710340.json",
+        "fact": [
+          "WeightedAverageNumberOfSharesOutstandingBasic",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 26907725,
+            "accn": "0001437749-26-009059",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-19",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 59.19,
+        "reference": 59.189998626708984,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/ETON?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001710340.json",
+    "passed": true
+  },
+  {
+    "id": "JAZZ.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 4267586000,
+        "reference": 4267586000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/JAZZ.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001232524.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 4267586000,
+            "accn": "0001232524-26-000013",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-24",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 60981000,
+        "reference": 60981000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001232524.json#0001232524-26-000013",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001232524.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 60981000,
+            "accn": "0001232524-26-000013",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-24",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 232.35,
+        "reference": 232.35000610351562,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/JAZZ?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001232524.json",
+    "passed": true
+  },
+  {
+    "id": "POWL.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-09-30",
+        "value": 1104318000,
+        "reference": 1104318000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/POWL.US.json#2025-09-30",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000080420.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2024-10-01",
+            "end": "2025-09-30",
+            "val": 1104318000,
+            "accn": "0000080420-25-000152",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2025-11-19",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-09-30",
+        "value": 36501000,
+        "reference": 36501000,
+        "splitFactor": 3,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000080420.json#0000080420-25-000152",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2024-10-01 to 2025-09-30",
+            "Weighted average diluted shares",
+            "Post-filing split factor 3; current listing units"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000080420.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2024-10-01",
+            "end": "2025-09-30",
+            "val": 12167000,
+            "accn": "0000080420-25-000152",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2025-11-19",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 188.46,
+        "reference": 188.4600067138672,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/POWL?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000080420.json",
+    "passed": true
+  },
+  {
+    "id": "INTT.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 113825000,
+        "reference": 113825000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/INTT.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001036262.json",
+        "fact": [
+          "RevenueFromContractWithCustomerIncludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 113825000,
+            "accn": "0001036262-26-000012",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-12",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 12204323,
+        "reference": 12204323,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001036262.json#0001036262-26-000012",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001036262.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 12204323,
+            "accn": "0001036262-26-000012",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-12",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 11.35,
+        "reference": 11.350000381469727,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/INTT?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001036262.json",
+    "passed": true
+  },
+  {
+    "id": "TME.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 32902000000,
+        "reference": 32902000000.0,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/TME.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1744676/000119312526160257/tme-20251231.htm",
+        "fact": [
+          "Revenue",
+          {
+            "val": 32902000000.0,
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "form": "20-F",
+            "filed": "2026-04-17",
+            "accn": "000119312526160257"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 1554401864,
+        "reference": 1554401864.0,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1744676/000119312526160257/tme-20251231.htm#000119312526160257",
+          "field": "ifrs-full:AdjustedWeightedAverageShares",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "2 ordinary shares per ADS; https://www.sec.gov/Archives/edgar/data/1744676/000119312526160257/tme-20251231.htm"
+          ]
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1744676/000119312526160257/tme-20251231.htm",
+        "fact": [
+          "AdjustedWeightedAverageShares",
+          {
+            "val": 3108803728.0,
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "form": "20-F",
+            "filed": "2026-04-17",
+            "accn": "000119312526160257"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares / 2 ordinary shares per ADS",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 7.96,
+        "reference": 7.960000038146973,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/TME?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001744676.json",
+    "passed": true
+  },
+  {
+    "id": "AEBI.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 1526625000,
+        "reference": 1526625000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/AEBI.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002048519.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 1526625000,
+            "accn": "0001628280-26-019616",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-19",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 58784000,
+        "reference": 58784000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002048519.json#0001628280-26-019616",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002048519.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 58784000,
+            "accn": "0001628280-26-019616",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-19",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 10.84,
+        "reference": 10.84000015258789,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/AEBI?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002048519.json",
+    "passed": true
+  },
+  {
+    "id": "TNC.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 1203500000,
+        "reference": 1203500000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/TNC.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000097134.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 1203500000,
+            "accn": "0000097134-26-000008",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-24",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 18579707,
+        "reference": 18579707,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000097134.json#0000097134-26-000008",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000097134.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 18579707,
+            "accn": "0000097134-26-000008",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-24",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 67.35,
+        "reference": 67.3499984741211,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/TNC?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000097134.json",
+    "passed": true
+  },
+  {
+    "id": "SLP.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-08-31",
+        "value": 79179000,
+        "reference": 79179000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/SLP.US.json#2025-08-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001023459.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2024-09-01",
+            "end": "2025-08-31",
+            "val": 79179000,
+            "accn": "0001023459-25-000060",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2025-12-01",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-08-31",
+        "value": 20101000,
+        "reference": 20101000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001023459.json#0001023459-25-000060",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-09-01 to 2025-08-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001023459.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2024-09-01",
+            "end": "2025-08-31",
+            "val": 20101000,
+            "accn": "0001023459-25-000060",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2025-12-01",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 18.48,
+        "reference": 18.479999542236328,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/SLP?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001023459.json",
+    "passed": true
+  },
+  {
+    "id": "GNE.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 501971000,
+        "reference": 501971000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/GNE.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001528356.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 501971000,
+            "accn": "0001437749-26-014294",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-05-01",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 26535000,
+        "reference": 26535000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001528356.json#0001437749-26-014294",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001528356.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 26535000,
+            "accn": "0001437749-26-014294",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-05-01",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 16.15,
+        "reference": 16.149999618530273,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/GNE?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001528356.json",
+    "passed": true
+  },
+  {
+    "id": "ALRS.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 224375000,
+        "reference": 224375000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000903419.json#0001437749-26-006820",
+          "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Currency USD",
+            "Net interest plus noninterest income; excludes interest expense"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000903419.json",
+        "fact": [
+          "InterestIncomeExpenseNet + NoninterestIncome",
+          [
+            {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "val": 172499000,
+              "accn": "0001437749-26-006820",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-03-04",
+              "frame": "CY2025"
+            },
+            {
+              "start": "2025-01-01",
+              "end": "2025-12-31",
+              "val": 51876000,
+              "accn": "0001437749-26-006820",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-03-04",
+              "frame": "CY2025"
+            }
+          ]
+        ],
+        "referenceBasis": "annual net interest plus noninterest revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 25697000,
+        "reference": 25697000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000903419.json#0001437749-26-006820",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000903419.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 25697000,
+            "accn": "0001437749-26-006820",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-04",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 31.77,
+        "reference": 31.770000457763672,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/ALRS?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000903419.json",
+    "passed": true
+  },
+  {
+    "id": "KVYO.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 1234019000,
+        "reference": 1234019000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/KVYO.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835830.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 1234019000,
+            "accn": "0001835830-26-000007",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-10",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 290896895,
+        "reference": 290896895,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835830.json#0001835830-26-000007",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835830.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 290896895,
+            "accn": "0001835830-26-000007",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-10",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 15.25,
+        "reference": 15.25,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/KVYO?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835830.json",
+    "passed": true
+  },
+  {
+    "id": "FIG.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 1055788000,
+        "reference": 1055788000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/FIG.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001579878.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 1055788000,
+            "accn": "0001628280-26-009228",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-18",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 337044000,
+        "reference": 337044000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001579878.json#0001628280-26-009228",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001579878.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 337044000,
+            "accn": "0001628280-26-009228",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-18",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 20.72,
+        "reference": 20.719999313354492,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/FIG?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001579878.json",
+    "passed": true
+  },
+  {
+    "id": "SHAZ.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 1566631,
+        "reference": 1566631,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/SHAZ.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002068385.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 1566631,
+            "accn": "0001493152-26-014068",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-31"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 9804075,
+        "reference": 9804075,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002068385.json#0001493152-26-014068",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002068385.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 9804075,
+            "accn": "0001493152-26-014068",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-31"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 54.17,
+        "reference": 54.16999816894531,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/SHAZ?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002068385.json",
+    "passed": true
+  },
+  {
+    "id": "IVT.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 299169000,
+        "reference": 299169000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/IVT.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001307748.json",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 299169000,
+            "accn": "0001307748-26-000045",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-12",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 78338449,
+        "reference": 78338449,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001307748.json#0001307748-26-000045",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001307748.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 78338449,
+            "accn": "0001307748-26-000045",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-12",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 30.53,
+        "reference": 30.530000686645508,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/IVT?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001307748.json",
+    "passed": true
+  },
+  {
+    "id": "RYAN.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 3051126000,
+        "reference": 3051126000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1849253/000184925326000006/ryan-20251231.htm#000184925326000006",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Currency USD"
+          ]
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1849253/000184925326000006/ryan-20251231.htm",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 3051126000,
+            "accn": "0001849253-26-000006",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-13",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 138246414,
+        "reference": 138246414.0,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1849253/000184925326000006/ryan-20251231.htm#000184925326000006",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1849253/000184925326000006/ryan-20251231.htm",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "val": 138246414.0,
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "form": "10-K",
+            "filed": "2026-02-13",
+            "accn": "000184925326000006"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 37.85,
+        "reference": 37.849998474121094,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/RYAN?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001849253.json",
+    "passed": true
+  },
+  {
+    "id": "FBIN.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 4463200000,
+        "reference": 4463200000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/FBIN.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001519751.json",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2024-12-29",
+            "end": "2025-12-27",
+            "val": 4463200000,
+            "accn": "0001193125-26-063960",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-23",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 121200000,
+        "reference": 121200000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001519751.json#0001193125-26-063960",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-12-29 to 2025-12-27",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001519751.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2024-12-29",
+            "end": "2025-12-27",
+            "val": 121200000,
+            "accn": "0001193125-26-063960",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-23",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 38.41,
+        "reference": 38.40999984741211,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/FBIN?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001519751.json",
+    "passed": true
+  },
+  {
+    "id": "AGL.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 5932576000,
+        "reference": 5932576000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/AGL.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001831097.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 5932576000,
+            "accn": "0001628280-26-011655",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-25",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 16558760,
+        "reference": 16558760.0,
+        "splitFactor": 0.04,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001831097.json#0001628280-26-011655",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Post-filing split factor 0.04; current listing units"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001831097.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 413969000,
+            "accn": "0001628280-26-011655",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-25",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 78.15,
+        "reference": 78.1500015258789,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/AGL?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001831097.json",
+    "passed": true
+  },
+  {
+    "id": "SD.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 156357000,
+        "reference": 156357000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/SD.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001349436.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 156357000,
+            "accn": "0001628280-26-015318",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-05",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 36908000,
+        "reference": 36908000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001349436.json#0001628280-26-015318",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001349436.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 36908000,
+            "accn": "0001628280-26-015318",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-05",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 13.42,
+        "reference": 13.420000076293945,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/SD?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001349436.json",
+    "passed": true
+  },
+  {
+    "id": "NXT.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2026-03-31",
+        "value": 3559390000,
+        "reference": 3559390000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/NXT.US.json#2026-03-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001852131.json",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2025-04-01",
+            "end": "2026-03-31",
+            "val": 3559390000,
+            "accn": "0001852131-26-000017",
+            "fy": 2026,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-05-19",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2026-03-31",
+        "value": 152710033,
+        "reference": 152710033,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001852131.json#0001852131-26-000017",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-04-01 to 2026-03-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001852131.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-04-01",
+            "end": "2026-03-31",
+            "val": 152710033,
+            "accn": "0001852131-26-000017",
+            "fy": 2026,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-05-19",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 79.31,
+        "reference": 79.30999755859375,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/NXT?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001852131.json",
+    "passed": true
+  },
+  {
+    "id": "SUN.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 25201000000,
+        "reference": 25201000000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/SUN.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1552275/000155227526000021/sun-20251231.htm",
+        "fact": [
+          "Revenues",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 25201000000,
+            "accn": "0001552275-26-000021",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-19",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 137198218,
+        "reference": 137198218.0,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1552275/000155227526000021/sun-20251231.htm#000155227526000021",
+          "field": "us-gaap:WeightedAverageLimitedPartnershipUnitsOutstandingDiluted",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://www.sec.gov/Archives/edgar/data/1552275/000155227526000021/sun-20251231.htm",
+        "fact": [
+          "WeightedAverageLimitedPartnershipUnitsOutstandingDiluted",
+          {
+            "val": 137198218.0,
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "form": "10-K",
+            "filed": "2026-02-19",
+            "accn": "000155227526000021"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 72.61,
+        "reference": 72.61000061035156,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/SUN?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001552275.json",
+    "passed": true
+  },
+  {
+    "id": "AXSM.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 638496000,
+        "reference": 638496000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/AXSM.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001579428.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 638496000,
+            "accn": "0001193125-26-064267",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-23",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 49747178,
+        "reference": 49747178,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001579428.json#0001193125-26-064267",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001579428.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 49747178,
+            "accn": "0001193125-26-064267",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-23",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 186.14,
+        "reference": 186.13999938964844,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/AXSM?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001579428.json",
+    "passed": true
+  },
+  {
+    "id": "SUPN.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 718952000,
+        "reference": 718952000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/SUPN.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001356576.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 718952000,
+            "accn": "0001356576-26-000011",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-02",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 56451136,
+        "reference": 56451136,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001356576.json#0001356576-26-000011",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001356576.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 56451136,
+            "accn": "0001356576-26-000011",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-03-02",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 43.97,
+        "reference": 43.970001220703125,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/SUPN?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001356576.json",
+    "passed": true
+  },
+  {
+    "id": "LESL.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-10-04",
+        "value": 1241915000,
+        "reference": 1241915000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001821806.json#0001193125-25-323811",
+          "field": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001821806.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2024-09-29",
+            "end": "2025-10-04",
+            "val": 1241915000,
+            "accn": "0001193125-25-323811",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2025-12-18",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-10-04",
+        "value": 9268000,
+        "reference": 9268000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001821806.json#0001193125-25-323811",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-09-29 to 2025-10-04",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001821806.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2024-09-29",
+            "end": "2025-10-04",
+            "val": 9268000,
+            "accn": "0001193125-25-323811",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2025-12-18",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 0.2178,
+        "reference": 0.21799999475479126,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/LESL?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001821806.json",
+    "passed": true
+  },
+  {
+    "id": "PHIN.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 3483000000,
+        "reference": 3483000000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "raw/eodhd/PHIN.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001968915.json",
+        "fact": [
+          "RevenueFromContractWithCustomerExcludingAssessedTax",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 3483000000,
+            "accn": "0001968915-26-000023",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-12",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual consolidated revenue",
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 40100000,
+        "reference": 40100000,
+        "splitFactor": 1,
+        "inputProvenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001968915.json#0001968915-26-000023",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001968915.json",
+        "fact": [
+          "WeightedAverageNumberOfDilutedSharesOutstanding",
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "val": 40100000,
+            "accn": "0001968915-26-000023",
+            "fy": 2025,
+            "fp": "FY",
+            "form": "10-K",
+            "filed": "2026-02-12",
+            "frame": "CY2025"
+          }
+        ],
+        "referenceBasis": "annual weighted average diluted shares",
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-09-29",
+        "value": 60.42,
+        "reference": 60.41999816894531,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/PHIN?period1=1790380800&period2=1790812800&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "filingSource": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001968915.json",
+    "passed": true
+  }
+]

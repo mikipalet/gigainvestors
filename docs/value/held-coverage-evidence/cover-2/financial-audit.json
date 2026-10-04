@@ -1,0 +1,2577 @@
+[
+  {
+    "id": "ABCB.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1207958000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000351569.json#0000351569-26-000050",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "ACIC.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 335439000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001401521.json#0001401521-26-000015",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "AEG.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "EUR",
+    "revenue": 17664000000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/769218/000119312526124987/d29563d20f.htm#000119312526124987",
+      "field": "aeg:RevenueFromContinuingAndDiscontinuedOperations",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "AFRM.US",
+    "kind": "operating",
+    "period": "2026-06-30",
+    "currency": "USD",
+    "revenue": 4261082000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001820953.json#0001628280-26-059279",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-07-01 to 2026-06-30",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "AGO.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1110000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001273813.json#0001273813-26-000011",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "ALLY.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 7914000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000040729.json#0000040729-26-000005",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "ALRS.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 224375000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000903419.json#0001437749-26-006820",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "AMG.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2074400000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001004434.json#0001628280-26-008665",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "ARX.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 912900000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001997350.json#0001997350-26-000003",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "ASB.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1487545000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000007789.json#0000007789-26-000071",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "ASIC.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 424339000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002040491.json#0002040491-26-000011",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "AVBH.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 30929000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001443575.json#0001437749-26-008852",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "AX.US",
+    "kind": "bank",
+    "period": "2026-06-30",
+    "currency": "USD",
+    "revenue": 1480493000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001299709.json#0001299709-26-000060",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-07-01 to 2026-06-30",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "AXS.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 6563678000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001214816.json#0001214816-26-000097",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "BAP.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "PEN",
+    "revenue": 28555000000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1001290/000100129026000008/bap-20251231.htm#000100129026000008",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency PEN"
+      ]
+    }
+  },
+  {
+    "id": "BBDC.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 279210000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1379785/000137978526000009/bbdc-20251231.htm#000137978526000009",
+      "field": "us-gaap:GrossInvestmentIncomeOperating",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "BFH.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 3845000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001101215.json#0001101215-26-000016",
+      "field": "us-gaap:RevenuesNetOfInterestExpense",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "BGC.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2941460000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001094831.json#0001628280-26-013162",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "BHF.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 6766000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001685040.json#0001685040-26-000011",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "BOH.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 716629000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000046195.json#0000046195-26-000015",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "BOKF.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2175474000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-26-000013",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "BUR.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 413360000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001714174.json#0001714174-26-000007",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "CACC.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2317200000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000885550.json#0000885550-26-000047",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "CASH.US",
+    "kind": "bank",
+    "period": "2025-09-30",
+    "currency": "USD",
+    "revenue": 839894000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000907471.json#0000907471-25-000116",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2024-10-01 to 2025-09-30",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "CCAP.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 167285000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1633336/000119312526071922/ccap-20251231.htm#000119312526071922",
+      "field": "us-gaap:GrossInvestmentIncomeOperating",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "CFR.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2235244000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000039263.json#0000039263-26-000011",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "CG.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 4779800000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527166.json#0001527166-26-000009",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "CIB.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "COP",
+    "revenue": 28046329000000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/2058897/000205889726000125/cib-20251231.htm#000205889726000125",
+      "field": "cib:NetInterestMarginAndValuationIncomeOnFinancialInstrumentsBeforeImpairmentOnLoansAndFinancialLeasesAndOffBalanceSheetCreditInstruments + ifrs-full:FeeAndCommissionIncomeExpense + ifrs-full:MiscellaneousOtherOperatingIncome + ifrs-full:ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency COP",
+        "Reviewed consolidated revenue components; net interest before credit impairment"
+      ]
+    }
+  },
+  {
+    "id": "CNA.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 14989000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000021175.json#0000021175-26-000011",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "CNO.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 4487400000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001224608.json#0001224608-26-000017",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "CNS.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 556116000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001284812.json#0001284812-26-000011",
+      "field": "us-gaap:RevenueFromContractWithCustomerIncludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "COLB.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2301000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000887343.json#0000887343-26-000088",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "CRBG.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 18481000000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1889539/000188953926000022/crbg-20251231.htm#000188953926000022",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "CRCL.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2746642000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001876042.json#0001876042-26-000062",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "DBRG.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 93959000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001679688.json#0001679688-26-000021",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "EBC.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 722649000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001810546.json#0001628280-26-013126",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "ECPG.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1768802000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001084961.json#0001084961-26-000009",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "EIG.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 858700000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001379041.json#0001379041-26-000011",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "EQH.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 11665000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001333986.json#0001333986-26-000012",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "ETOR.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 13837932000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001493318.json#0001213900-26-022034",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "EWBC.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2931856000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001069157.json#0001069157-26-000009",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "FAF.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 7452200000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001472787.json#0001193125-26-055516",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "FBLA.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 52138000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002013639.json#0001193125-26-126081",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "FCF.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 522911000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000712537.json#0000712537-26-000013",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "FCNCA.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 9541000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000798941.json#0000798941-26-000015",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "FG.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 5731000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001934850.json#0001934850-26-000026",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "FIBK.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1058800000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000860413.json#0000860413-26-000011",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "FIGR.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 506865000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002064124.json#0002064124-26-000009",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "FINV.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "CNY",
+    "revenue": 13569483000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1691445/000149315226019597/form20-f.htm#000149315226019597",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency CNY"
+      ]
+    }
+  },
+  {
+    "id": "FLG.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2062000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000910073.json#0000910073-26-000025",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "FNF.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 14445000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001331875.json#0001331875-26-000026",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "FOA.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 497432000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001828937.json#0001628280-26-017692",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "FULT.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1313113000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000700564.json#0000700564-26-000006",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "FUTU.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "HKD",
+    "revenue": 22846898000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001754581.json#0001104659-26-043451",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency HKD"
+      ]
+    }
+  },
+  {
+    "id": "GBCI.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1030425000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000868671.json#0000868671-26-000023",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "GCMG.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 557565000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001819796.json#0001819796-26-000010",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "GEMI.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 179572000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002055592.json#0002055592-26-000026",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "GOLD.US",
+    "kind": "operating",
+    "period": "2026-06-30",
+    "currency": "USD",
+    "revenue": 25513409000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001591588.json#0001193125-26-386799",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-07-01 to 2026-06-30",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "GSHD.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 365304000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001726978.json#0001726978-26-000010",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "HCI.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 900946000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001400810.json#0001193125-26-076743",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "HGTY.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1456389000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001840776.json#0001840776-26-000013",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "HLI.US",
+    "kind": "operating",
+    "period": "2026-03-31",
+    "currency": "USD",
+    "revenue": 2617516000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001302215.json#0001302215-26-000053",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-04-01 to 2026-03-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "HOMB.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1090869000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001331520.json#0001331520-26-000051",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "HUT.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 235118000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1964789/000110465926019392/hut-20251231x10k.htm#000110465926019392",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "IFS.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "PEN",
+    "revenue": 11326379000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1615903/000119312526177617/ifs-20251231.htm#000119312526177617",
+      "field": "ifs:RevenueNetOfIntersegmentAdjustment",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency PEN"
+      ]
+    }
+  },
+  {
+    "id": "ING.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "EUR",
+    "revenue": 23035000000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1039765/000162828026011979/ing-20251231.htm#000162828026011979",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "INTR.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "BRL",
+    "revenue": 8400938000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1864163/000207097926000185/intr-20251231.htm#000207097926000185",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency BRL"
+      ]
+    }
+  },
+  {
+    "id": "IREN.US",
+    "kind": "operating",
+    "period": "2026-06-30",
+    "currency": "USD",
+    "revenue": 707007000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001878848.json#0001878848-26-000052",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-07-01 to 2026-06-30",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "ITIC.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 272755000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000720858.json#0000720858-26-000011",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "ITUB.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "BRL",
+    "revenue": 167780000000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1132597/000113259726000132/itub-20251231.htm#000113259726000132",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency BRL"
+      ]
+    }
+  },
+  {
+    "id": "JEF.US",
+    "kind": "operating",
+    "period": "2025-11-30",
+    "currency": "USD",
+    "revenue": 10823677000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000096223.json#0000096223-26-000009",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2024-12-01 to 2025-11-30",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "JXN.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 6683000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001822993.json#0001822993-26-000022",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "KLAR.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 3509000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002003292.json#0002003292-26-000007",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "KNSL.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1873987000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001669162.json#0001669162-26-000015",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "LAZ.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 3186466000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001311370.json#0001311370-26-000008",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "LNC.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 18212000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000059558.json#0000059558-26-000016",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "LPLA.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 16989479000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397911.json#0001628280-26-010705",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "LTG.PSE",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "PHP",
+    "revenue": 132778425000,
+    "provenance": {
+      "source": "https://ltg.com.ph/wp-content/uploads/bsk-pdf-manager/2026/03/2026-Feb-27-LTG-17A-December-31-2025.pdf#issuer-annual-2025",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency PHP"
+      ]
+    }
+  },
+  {
+    "id": "MBI.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 80000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000814585.json#0001193125-26-076834",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "MC.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1516796000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1596967/000119312526076747/mc-20251231.htm#000119312526076747",
+      "field": "us-gaap:InvestmentBankingRevenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "MCY.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 5992468000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000064996.json#0000064996-26-000005",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "MKL.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 15513233000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001096343.json#0001096343-26-000020",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "MKTX.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 846268000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001278021.json#0001193125-26-067009",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "MORN.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2445500000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001289419.json#0001289419-26-000013",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "NAVI.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 610000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001593538.json#0001193125-26-076753",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "NMIH.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 706440000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001547903.json#0001547903-26-000011",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "NOAH.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "CNY",
+    "revenue": 2610240000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001499543.json#0001104659-26-050892",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency CNY"
+      ]
+    }
+  },
+  {
+    "id": "NTB.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 606792000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653242.json#0001653242-26-000006",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "NU.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 15774741000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1691493/000129281426002166/nuform20f_2025.htm#000129281426002166",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "OBDC.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1851304000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1655888/000165588826000010/obdc-20251231.htm#000165588826000010",
+      "field": "us-gaap:GrossInvestmentIncomeOperating",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "OBT.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 127204000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001754226.json#0001104659-26-028308",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "OCFC.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 404924000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001004702.json#0001004702-26-000015",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "OCSL.US",
+    "kind": "operating",
+    "period": "2025-09-30",
+    "currency": "USD",
+    "revenue": 316801000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1414932/000141493225000022/ocsl-20250930.htm#000141493225000022",
+      "field": "us-gaap:GrossInvestmentIncomeOperating",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2024-10-01 to 2025-09-30",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "OMF.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 4903000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001584207.json#0001584207-26-000008",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "ONB.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2524405000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000707179.json#0000707179-26-000010",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "ONIT.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1066700000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000873860.json#0001628280-26-008625",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "OPFI.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 381182000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001818502.json#0001818502-26-000019",
+      "field": "us-gaap:RevenuesNetOfInterestExpense",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "OPY.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1638071000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000791963.json#0001628280-26-012313",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "ORI.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 9136300000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000074260.json#0000074260-26-000008",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "OSG.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 251222000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000874501.json#0001628280-26-014653",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "OZK.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1727857000,
+    "provenance": {
+      "source": "https://ir.ozk.com/static-files/e0a9df34-ad64-4d55-9984-9a46e4a2f45f#issuer-annual-2025-pp74-108",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "PAX.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 381730000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1825570/000207097926000201/pax-20251231.htm#000207097926000201",
+      "field": "ifrs-full:RevenueFromContractsWithCustomers",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "PB.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1249793000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001068851.json#0001193125-26-077437",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "PBFS.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 96288000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1769663/000110465926027092/pbfs-20251231x10k.htm#000110465926027092",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "PDLB.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 109223000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1874071/000119312526104610/pdlb-20251231.htm#000119312526104610",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "PFS.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 870401000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001178970.json#0001628280-26-012814",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "PIPR.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1904217000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001230245.json#0001230245-26-000013",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "PLGO.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2500500000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001636639.json#0001628280-26-015356",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "PRAA.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1201837000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001185348.json#0001185348-26-000006",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "PRI.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 3291713000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001475922.json#0001193125-26-082233",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "PSEC.US",
+    "kind": "operating",
+    "period": "2026-06-30",
+    "currency": "USD",
+    "revenue": 639454000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1287032/000128703226000269/psec-20260630.htm#000128703226000269",
+      "field": "us-gaap:GrossInvestmentIncomeOperating",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-07-01 to 2026-06-30",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "PURR.US",
+    "kind": "operating",
+    "period": "2026-06-30",
+    "currency": "USD",
+    "revenue": 9460000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002078856.json#0001193125-26-370281",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-07-01 to 2026-06-30",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "PWP.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 750903000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001777835.json#0001777835-26-000022",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "QCRH.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 369544000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000906465.json#0001104659-26-021531",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "QFIN.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "CNY",
+    "revenue": 19205059000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001741530.json#0001104659-26-049501",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency CNY"
+      ]
+    }
+  },
+  {
+    "id": "RGA.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 23698000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000898174.json#0000898174-26-000006",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "RIOT.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 647435000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001167419.json#0001104659-26-022322",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "RKT.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 6695000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001805284.json#0001628280-26-013283",
+      "field": "us-gaap:RevenuesNetOfInterestExpense",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "RLI.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1882448000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000084246.json#0001104659-26-018013",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "RNR.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 12848074000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000913144.json#0000913144-26-000012",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "RRBI.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 125521000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001071236.json#0001071236-26-000027",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "RWAY.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 137329000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1653384/000119312526104117/rway-20251231.htm#000119312526104117",
+      "field": "us-gaap:GrossInvestmentIncomeOperating",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "RYAN.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 3051126000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1849253/000184925326000006/ryan-20251231.htm#000184925326000006",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "SBCF.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 652626000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000730708.json#0001628280-26-012787",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "SBSI.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 237040000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000705432.json#0000705432-26-000034",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "SEIC.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2297381000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000350894.json#0000350894-26-000013",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "SFNC.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 103233000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000090498.json#0001628280-26-011618",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "SLDE.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1155901000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001886428.json#0001193125-26-083277",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "SLM.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1984393000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001032033.json#0001032033-26-000011",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "SLQT.US",
+    "kind": "operating",
+    "period": "2026-06-30",
+    "currency": "USD",
+    "revenue": 1618499000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001794783.json#0001794783-26-000057",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-07-01 to 2026-06-30",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "SMBK.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 200456000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001038773.json#0001104659-26-028542",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "SNEX.US",
+    "kind": "operating",
+    "period": "2025-09-30",
+    "currency": "USD",
+    "revenue": 132378200000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000913760.json#0000913760-25-000196",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2024-10-01 to 2025-09-30",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "SOFI.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 3613354000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001818874.json#0001818874-26-000013",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "STC.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2921636000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000094344.json#0000094344-26-000007",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "THG.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 6594400000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000944695.json#0001193125-26-060983",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "TPG.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 4670212000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001880661.json#0001880661-26-000011",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "TRU.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 4576300000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001552033.json#0001552033-26-000012",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "TRUP.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1439305000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001371285.json#0001371285-26-000018",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "TW.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2052429000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001758730.json#0001758730-26-000015",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "TWFG.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 248512000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002007596.json#0001628280-26-016162",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "UMBF.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2652255000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000101382.json#0001193125-26-076496",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "UNM.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 13075500000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000005513.json#0000005513-26-000008",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "UVSP.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 328056000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000102212.json#0000102212-26-000012",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "VCTR.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1306131000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001570827.json#0001193125-26-077057",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "VLY.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2025770000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000714310.json#0000714310-26-000017",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "VOYA.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 8189000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535929.json#0001535929-26-000043",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "VRM.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 157547000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001580864.json#0001193125-26-126253",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-15 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "VRTS.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 852865000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000883237.json#0000883237-26-000009",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "WAL.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 3543000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001212545.json#0001628280-26-010336",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "WRLD.US",
+    "kind": "bank",
+    "period": "2026-03-31",
+    "currency": "USD",
+    "revenue": 585166700,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000108385.json#0000108385-26-000014",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-04-01 to 2026-03-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "WSFS.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 1065985000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000828944.json#0000828944-26-000006",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "WT.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 493753000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000880631.json#0001214659-26-002458",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "WTFC.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 2725992000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001015328.json#0001015328-26-000007",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  },
+  {
+    "id": "WTM.US",
+    "kind": "insurer",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 3735000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000776867.json#0001628280-26-012603",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "WU.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 4050700000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001365135.json#0001193125-26-061340",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "WULF.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 168455000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001083301.json#0001083301-26-000031",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "XP.US",
+    "kind": "operating",
+    "period": "2025-12-31",
+    "currency": "BRL",
+    "revenue": 18398597000,
+    "provenance": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1787425/000207097926000182/xp-20251231.htm#000207097926000182",
+      "field": "ifrs-full:RevenueAndOperatingIncome",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency BRL"
+      ]
+    }
+  },
+  {
+    "id": "ZION.US",
+    "kind": "bank",
+    "period": "2025-12-31",
+    "currency": "USD",
+    "revenue": 3385000000,
+    "provenance": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000109380.json#0000109380-26-000046",
+      "field": "us-gaap:InterestIncomeExpenseNet + us-gaap:NoninterestIncome",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD",
+        "Net interest plus noninterest income; excludes interest expense"
+      ]
+    }
+  }
+]

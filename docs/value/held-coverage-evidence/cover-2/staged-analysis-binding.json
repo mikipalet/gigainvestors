@@ -1,0 +1,510 @@
+{
+  "note": "Published dossiers add chart series and enrich memo lines. Checks retain analysis series, timestamp, versions, currency and memo input hash. Exposed sampled revenue/share chart values are also compared directly.",
+  "boundPublishedAdditions": 1171,
+  "missingFromStage": [
+    "ABVX.US",
+    "AGI.US",
+    "AKBLF.US",
+    "AQN.US",
+    "ASAIY.US",
+    "AVBH.US",
+    "BATRK.US",
+    "BAYRY.US",
+    "BB.US",
+    "BELFB.US",
+    "BH.US",
+    "BHC.US",
+    "BIO.US",
+    "BLCO.US",
+    "BMA.US",
+    "BMM.US",
+    "BTAI.US",
+    "BTE.US",
+    "BTG.US",
+    "BUDFF.US",
+    "BZ.US",
+    "CABJF.US",
+    "CCU.US",
+    "CENTA.US",
+    "CFRHF.US",
+    "CFRUY.US",
+    "CGAU.US",
+    "CIGI.US",
+    "CNSWF.US",
+    "COCXF.US",
+    "DCOM.US",
+    "DGEAF.US",
+    "DSGX.US",
+    "DVCMY.US",
+    "DVDCF.US",
+    "ECTXF.US",
+    "EFXT.US",
+    "EGO.US",
+    "EQX.US",
+    "ERFSF.US",
+    "ERO.US",
+    "EU.US",
+    "FBAK.US",
+    "FLMNF.US",
+    "FLUIF.US",
+    "FRFHF.US",
+    "FSM.US",
+    "FWONK.US",
+    "GDS.US",
+    "GFI.US",
+    "GFL.US",
+    "GHM.US",
+    "GOOS.US",
+    "GSK.US",
+    "GTN.US",
+    "HEINY.US",
+    "HINKF.US",
+    "HKHGF.US",
+    "HKHHF.US",
+    "HKHHY.US",
+    "HVT.US",
+    "IAG.US",
+    "IDWM.US",
+    "KGEI.US",
+    "KNCRF.US",
+    "LBTYK.US",
+    "LILAK.US",
+    "LLYVK.US",
+    "LOMA.US",
+    "LRLCF.US",
+    "LZAGY.US",
+    "MEOH.US",
+    "MINE.US",
+    "MTRBF.US",
+    "NAK.US",
+    "NG.US",
+    "NICE.US",
+    "NSRGF.US",
+    "NSRGY.US",
+    "NTPIF.US",
+    "NWSA.US",
+    "NXE.US",
+    "OGC.US",
+    "PAAS.US",
+    "PAM.US",
+    "PDRDF.US",
+    "PDS.US",
+    "PEYUF.US",
+    "PHJMF.US",
+    "PIFYF.US",
+    "PRNDY.US",
+    "PROF.US",
+    "PUIGF.US",
+    "QXO.US",
+    "RBA.US",
+    "RBGPF.US",
+    "RDY.US",
+    "RTLLF.US",
+    "RUSHB.US",
+    "RYCEY.US",
+    "SA.US",
+    "SSPPF.US",
+    "STN.US",
+    "TAC.US",
+    "TAP.US",
+    "TEO.US",
+    "TFII.US",
+    "TFIN.US",
+    "TGS.US",
+    "TPHS.US",
+    "TRMLF.US",
+    "TV.US",
+    "UAA.US",
+    "UHAL.US",
+    "WILLF.US",
+    "WRLC.US",
+    "WSO.US",
+    "ZG.US",
+    "ZH.US",
+    "ZLDSF.US"
+  ],
+  "failures": [],
+  "sampleNumericBindings": [
+    {
+      "id": "EPD.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "AVTR.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "LPX.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "PKOH.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "KARO.US",
+      "period": "2026-02-28",
+      "publishedChartChecks": {
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "UVV.US",
+      "period": "2026-03-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "FINV.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "CRBG.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "SRRK.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "DCGO.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "PL.US",
+      "period": "2026-01-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "NXST.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "FWONA.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "GHC.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "CBL.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "HZO.US",
+      "period": "2025-09-30",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "ETON.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "JAZZ.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "POWL.US",
+      "period": "2025-09-30",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "INTT.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "TME.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "AEBI.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "TNC.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "SLP.US",
+      "period": "2025-08-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "GNE.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "ALRS.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "KVYO.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "FIG.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "SHAZ.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "IVT.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "RYAN.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "FBIN.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "AGL.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "SD.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "NXT.US",
+      "period": "2026-03-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "SUN.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "AXSM.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "SUPN.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "revenue": true,
+        "dilutedShares": true,
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "LESL.US",
+      "period": "2025-10-04",
+      "publishedChartChecks": {
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    },
+    {
+      "id": "PHIN.US",
+      "period": "2025-12-31",
+      "publishedChartChecks": {
+        "currency": true
+      },
+      "note": "Unexposed chart fields are checked in analysis-source-binding.json, whose memo hash and source series are bound to this staged dossier."
+    }
+  ]
+}

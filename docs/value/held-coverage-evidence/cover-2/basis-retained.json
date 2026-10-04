@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ING.US",
+    "period": "2015-12-31",
+    "field": "revenue",
+    "before": 50128000000,
+    "after": 18007000000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001039765.json#0001193125-18-101492",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2015-01-01 to 2015-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "ING.US",
+    "period": "2016-12-31",
+    "field": "revenue",
+    "before": 48343000000,
+    "after": 17902000000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001039765.json#0001562762-19-000074",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2016-01-01 to 2016-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "ING.US",
+    "period": "2017-12-31",
+    "field": "revenue",
+    "before": 47944000000,
+    "after": 18590000000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001039765.json#0001562762-20-000105",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2017-01-01 to 2017-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "ING.US",
+    "period": "2018-12-31",
+    "field": "revenue",
+    "before": 32325000000,
+    "after": 18324000000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001039765.json#0001562762-21-000116",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2018-01-01 to 2018-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "ING.US",
+    "period": "2019-12-31",
+    "field": "revenue",
+    "before": 32437000000,
+    "after": 17125000000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001039765.json#0001562762-22-000122",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2019-01-01 to 2019-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "ING.US",
+    "period": "2020-12-31",
+    "field": "revenue",
+    "before": 26932000000,
+    "after": 17227000000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001039765.json#0001628280-23-007425",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2020-01-01 to 2020-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "ING.US",
+    "period": "2021-12-31",
+    "field": "revenue",
+    "before": 25783000000,
+    "after": 20093000000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001039765.json#0001628280-24-009782",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2021-01-01 to 2021-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "ING.US",
+    "period": "2022-12-31",
+    "field": "revenue",
+    "before": 18590000000,
+    "after": 30418000000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001039765.json#0001628280-25-010764",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2022-01-01 to 2022-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "ING.US",
+    "period": "2023-12-31",
+    "field": "revenue",
+    "before": 58901000000,
+    "after": 22575000000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1039765/000162828026011979/ing-20251231.htm#000162828026011979",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2023-01-01 to 2023-12-31",
+        "Currency EUR"
+      ]
+    }
+  },
+  {
+    "id": "ING.US",
+    "period": "2024-12-31",
+    "field": "revenue",
+    "before": 66409000000,
+    "after": 22615000000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1039765/000162828026011979/ing-20251231.htm#000162828026011979",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2024-01-01 to 2024-12-31",
+        "Currency EUR"
+      ]
+    }
+  }
+]

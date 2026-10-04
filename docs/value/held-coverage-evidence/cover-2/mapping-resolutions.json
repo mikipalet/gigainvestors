@@ -1,0 +1,1273 @@
+[
+  {
+    "ticker": "AMRZ.SW",
+    "name": "AMRIZE Ltd.",
+    "id": "AMRZ.US",
+    "status": "mapped",
+    "reason": "Same ordinary share dual-listed on SIX and NYSE; prefer US listing.",
+    "evidence": [
+      "https://investors.amrize.com/resources/faq"
+    ]
+  },
+  {
+    "ticker": "AMWD-OLD",
+    "name": "American Woodmark Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of common Stock on Form 25 dated 2026-05-28; issuer CIK 0000794619; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/794619/000135445726000504/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000794619.json",
+      "CIK:0000794619"
+    ]
+  },
+  {
+    "ticker": "ANSS-OLD",
+    "name": "ANSYS Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-07-17; issuer CIK 0001013462; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1013462/000135445725000689/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001013462.json",
+      "CIK:0001013462"
+    ]
+  },
+  {
+    "ticker": "ARCH-OLD",
+    "name": "Arch Resources Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock on Form 25 dated 2025-01-14; issuer CIK 0001037676; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1037676/000087666125000024/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001037676.json",
+      "CIK:0001037676"
+    ]
+  },
+  {
+    "ticker": "ASGN",
+    "name": "ASGN Inc.",
+    "id": "EFOR.US",
+    "status": "mapped",
+    "reason": "ASGN renamed Everforth with ticker EFOR on 2026-04-24; same CUSIP 00191U102.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/890564/000089056426000025/asgn-20260424.htm"
+    ]
+  },
+  {
+    "ticker": "ASHTF",
+    "name": "Ashtead Group plc",
+    "id": "SUNB.US",
+    "status": "mapped",
+    "reason": "Ashtead scheme completed 2026-02-27; one Sunbelt share per ordinary share, NYSE SUNB from March 2.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/2083785/000119312526085376/d121042dex991.htm"
+    ]
+  },
+  {
+    "ticker": "ASHTY",
+    "name": "Ashtead Group Plc Unspon ADR",
+    "id": "SUNB.US",
+    "status": "mapped",
+    "reason": "Legacy Ashtead receipt identifies the same operating group reorganized under Sunbelt; canonical issuer coverage uses SUNB, not the old receipt price or share unit.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/2083785/000119312526310430/d63647dars.pdf"
+    ]
+  },
+  {
+    "ticker": "ATGE",
+    "name": "Adtalem Global Education",
+    "id": "CVSA.US",
+    "status": "mapped",
+    "reason": "Adtalem became Covista; NYSE ticker CVSA effective 2026-02-24.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/730464/000110465926011611/atge-20260205xex99d1.htm"
+    ]
+  },
+  {
+    "ticker": "AVB-OLD",
+    "name": "AvalonBay Communities",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-08-17; issuer CIK 0000915912; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/915912/000087666126000689/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000915912.json",
+      "CIK:0000915912"
+    ]
+  },
+  {
+    "ticker": "AZPN-OLD",
+    "name": "Aspen Technology Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-03-12; issuer CIK 0001897982; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1897982/000135445725000196/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001897982.json",
+      "CIK:0001897982"
+    ]
+  },
+  {
+    "ticker": "AZUL",
+    "name": "Azul S.A.",
+    "id": null,
+    "status": "excluded",
+    "reason": "Held US ADS represented three preferred shares, not common equity; SEC Form 25 identifies the instrument explicitly.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1432364/000087666125000410/primary_doc.xml"
+    ]
+  },
+  {
+    "ticker": "BECN-OLD",
+    "name": "Beacon Roofing Supply Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "Beacon acquisition completed 2025-04-29; shares ceased Nasdaq trading.",
+    "evidence": [
+      "https://s204.q4cdn.com/433193842/files/doc_news/2025/Apr/29/QXO-Completes-Beacon-Acquisition.pdf"
+    ]
+  },
+  {
+    "ticker": "BPMC-OLD",
+    "name": "Blueprint Medicines Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-07-18; issuer CIK 0001597264; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1597264/000135445725000693/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001597264.json",
+      "CIK:0001597264"
+    ]
+  },
+  {
+    "ticker": "BRY-OLD",
+    "name": "Berry Petroleum Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "Berry combination with California Resources closed 2025-12-18; old shares exchanged, not a rename.",
+    "evidence": [
+      "https://www.crc.com/news-releases/news-release-details/california-resources-corporation-closes-combination-berry"
+    ]
+  },
+  {
+    "ticker": "CCRD-OLD",
+    "name": "CoreCard Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-10-31; issuer CIK 0000320340; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/320340/000087666125000817/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000320340.json",
+      "CIK:0000320340"
+    ]
+  },
+  {
+    "ticker": "CCRN-OLD",
+    "name": "Cross Country Healthcare",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-07-21; issuer CIK 0001141103; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1141103/000135445726000712/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001141103.json",
+      "CIK:0001141103"
+    ]
+  },
+  {
+    "ticker": "CIR.MI",
+    "name": "Cir SPA",
+    "id": "CIR.MI",
+    "status": "mapped",
+    "reason": "CIR ordinary shares trade on Euronext Milan; ISIN IT0000070786.",
+    "evidence": [
+      "https://www.borsaitaliana.it/borsa/azioni/listino-ufficiale.html?isin=IT0000070786&lang=it"
+    ]
+  },
+  {
+    "ticker": "CMA",
+    "name": "Comerica Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock; Depositary Shares, each representing a 1/40th interest in a share of 6.875% Fixed-Rate Reset Non-Cumulative Perpetual Preferred Stock, Series B on Form 25 dated 2026-02-02; issuer CIK 0000028412; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/28412/000087666126000079/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000028412.json",
+      "CIK:0000028412"
+    ]
+  },
+  {
+    "ticker": "COOP-OLD",
+    "name": "Mr. Cooper Group Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-10-01; issuer CIK 0000933136; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/933136/000135445725000970/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000933136.json",
+      "CIK:0000933136"
+    ]
+  },
+  {
+    "ticker": "CPRX-OLD",
+    "name": "Catalyst Pharmaceuticals Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-07-15; issuer CIK 0001369568; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1369568/000135445726000694/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001369568.json",
+      "CIK:0001369568"
+    ]
+  },
+  {
+    "ticker": "CTLP-OLD",
+    "name": "Cantaloupe Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-05-08; issuer CIK 0000896429; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/896429/000135445726000420/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000896429.json",
+      "CIK:0000896429"
+    ]
+  },
+  {
+    "ticker": "CTRA-OLD",
+    "name": "Coterra Energy Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-05-07; issuer CIK 0000858470; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/858470/000087666126000399/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000858470.json",
+      "CIK:0000858470"
+    ]
+  },
+  {
+    "ticker": "CWAN-OLD",
+    "name": "Clearwater Analytics Hds A",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock on Form 25 dated 2026-06-25; issuer CIK 0001866368; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1866368/000087666126000553/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001866368.json",
+      "CIK:0001866368"
+    ]
+  },
+  {
+    "ticker": "CWEGF",
+    "name": "Crew Energy Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "Crew acquired by Tourmaline on 2024-10-01; old issuer shares retired.",
+    "evidence": [
+      "https://crewenergy.com/wp-content/uploads/2024/10/Crew-News-Release-Completion-of-Acquisition14010640.2.pdf"
+    ]
+  },
+  {
+    "ticker": "CYBR-OLD",
+    "name": "Cyberark Software Ltd israel",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Ordinary Shares on Form 25 dated 2026-02-11; issuer CIK 0001598110; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1598110/000135445726000164/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001598110.json",
+      "CIK:0001598110"
+    ]
+  },
+  {
+    "ticker": "DAWN-OLD",
+    "name": "Day One Biopharmaceuticals Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-04-23; issuer CIK 0001845337; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1845337/000135445726000366/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001845337.json",
+      "CIK:0001845337"
+    ]
+  },
+  {
+    "ticker": "DFS-OLD",
+    "name": "Discover Financial Services",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-05-19; issuer CIK 0001393612; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1393612/000087666125000350/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001393612.json",
+      "CIK:0001393612"
+    ]
+  },
+  {
+    "ticker": "DLG.MI",
+    "name": "De'Longhi SPA",
+    "id": "DLG.MI",
+    "status": "mapped",
+    "reason": "De Longhi ordinary shares, ticker DLG, ISIN IT0003115950 on Euronext Milan.",
+    "evidence": [
+      "https://www.borsaitaliana.it/borsa/azioni/listino-ufficiale.html?isin=IT0003115950&lang=it"
+    ]
+  },
+  {
+    "ticker": "DNB-OLD",
+    "name": "Dun & Bradstreet",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-08-26; issuer CIK 0001799208; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1799208/000087666125000617/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001799208.json",
+      "CIK:0001799208"
+    ]
+  },
+  {
+    "ticker": "DNMRQ-OLD",
+    "name": "Danimer Scientific Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "Danimer liquidation became effective 2025-07-28 and cancelled DNMRQ shares; OCC explicitly removed share delivery.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1779020/000087666125000043/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001779020.json",
+      "CIK:0001779020",
+      "https://infomemo.theocc.com/infomemos?number=56959"
+    ]
+  },
+  {
+    "ticker": "DROOF",
+    "name": "Deliveroo Plc",
+    "id": null,
+    "status": "excluded",
+    "reason": "Deliveroo acquired by DoorDash on 2025-10-02.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1792789/000114036125037039/ef20056500_8k.htm"
+    ]
+  },
+  {
+    "ticker": "EA-OLD",
+    "name": "Electronic Arts",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-08-04; issuer CIK 0000712515; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/712515/000135445726000757/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000712515.json",
+      "CIK:0000712515"
+    ]
+  },
+  {
+    "ticker": "ECDA-OLD",
+    "name": "Ecd Automotive Design Inc",
+    "id": null,
+    "status": "excluded",
+    "reason": "March 12 2026 short-form merger converted public common shares into cash; company became wholly owned by Defender SPV.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1922858/000143774926009200/ecda20260319_25.htm",
+      "https://www.sec.gov/Archives/edgar/data/1922858/000143774926007837/ecda20260310_8k.htm"
+    ]
+  },
+  {
+    "ticker": "ENLC-OLD",
+    "name": "EnLink Midstream LLC",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Units Representing Limited Liability Company Interests on Form 25 dated 2025-01-31; issuer CIK 0001592000; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1592000/000087666125000059/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001592000.json",
+      "CIK:0001592000"
+    ]
+  },
+  {
+    "ticker": "EQC-OLD",
+    "name": "Equity Commonwealth",
+    "id": null,
+    "status": "excluded",
+    "reason": "Equity Commonwealth completed common-share liquidation and delisted in April 2025; dissolved June 2025.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/803649/000080364925000068/eqc-20250930.htm"
+    ]
+  },
+  {
+    "ticker": "ESGR-OLD",
+    "name": "Enstar Group Ltd.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Ordinary Shares on Form 25 dated 2025-07-02; issuer CIK 0001363829; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1363829/000135445725000610/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001363829.json",
+      "CIK:0001363829"
+    ]
+  },
+  {
+    "ticker": "EVRI-OLD",
+    "name": "Everi Holdings Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-07-01; issuer CIK 0001318568; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1318568/000087666125000476/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001318568.json",
+      "CIK:0001318568"
+    ]
+  },
+  {
+    "ticker": "EXAS-OLD",
+    "name": "Exact Sciences Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-03-23; issuer CIK 0001124140; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1124140/000135445726000277/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001124140.json",
+      "CIK:0001124140"
+    ]
+  },
+  {
+    "ticker": "GB-OLD",
+    "name": "Global Blue Group Holding AG",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Ordinary Shares on Form 25 dated 2025-08-18; issuer CIK 0001799983; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1799983/000087666125000602/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001799983.json",
+      "CIK:0001799983"
+    ]
+  },
+  {
+    "ticker": "GLBAV-OLD",
+    "name": "GCI Liberty Inc. Series A",
+    "id": "GLIBA.US",
+    "status": "mapped",
+    "reason": "GLBAV was when-issued Series A GCI trading July 11-14, 2025; regular-way GLIBA began July 15. Unrelated Series C rights delisting is not evidence against these shares.",
+    "evidence": [
+      "https://www.nasdaq.com/press-release/liberty-broadband-corporation-announces-when-issued-trading-ex-dividend-date-and"
+    ]
+  },
+  {
+    "ticker": "GTLS-OLD",
+    "name": "Chart Industries Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-07-16; issuer CIK 0000892553; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/892553/000087666126000623/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000892553.json",
+      "CIK:0000892553"
+    ]
+  },
+  {
+    "ticker": "HES-OLD",
+    "name": "Hess Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-07-18; issuer CIK 0000004447; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/4447/000087666125000523/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000004447.json",
+      "CIK:0000004447"
+    ]
+  },
+  {
+    "ticker": "HMRZF",
+    "name": "Hennes & Mauritz Ab B Shs",
+    "id": "HM-B.ST",
+    "status": "mapped",
+    "reason": "OpenFIGI ticker and primary ISIN SE0000106270 share class BBG001S75L45 agree; primary Stockholm class B.",
+    "evidence": [
+      "https://api.openfigi.com/v3/mapping",
+      "https://api.openfigi.com/v3/mapping"
+    ]
+  },
+  {
+    "ticker": "HOLX-OLD",
+    "name": "Hologic Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-04-07; issuer CIK 0000859737; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/859737/000135445726000329/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000859737.json",
+      "CIK:0000859737"
+    ]
+  },
+  {
+    "ticker": "HOUS-OLD",
+    "name": "Anywhere Real Estate Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-01-09; issuer CIK 0001398987; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1398987/000087666126000018/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001398987.json",
+      "CIK:0001398987"
+    ]
+  },
+  {
+    "ticker": "INFN-OLD",
+    "name": "Infinera Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-02-28; issuer CIK 0001138639; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1138639/000135445725000147/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001138639.json",
+      "CIK:0001138639"
+    ]
+  },
+  {
+    "ticker": "IPG-OLD",
+    "name": "Interpublic Group",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-11-28; issuer CIK 0000051644; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/51644/000087666125000918/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000051644.json",
+      "CIK:0000051644"
+    ]
+  },
+  {
+    "ticker": "JHG-OLD",
+    "name": "Janus Henderson Group",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Ordinary Shares on Form 25 dated 2026-07-01; issuer CIK 0001274173; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1274173/000087666126000587/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001274173.json",
+      "CIK:0001274173"
+    ]
+  },
+  {
+    "ticker": "JNPR-OLD",
+    "name": "Juniper Networks",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-07-02; issuer CIK 0001043604; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1043604/000087666125000489/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001043604.json",
+      "CIK:0001043604"
+    ]
+  },
+  {
+    "ticker": "JWN-OLD",
+    "name": "Nordstrom",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-05-21; issuer CIK 0000072333; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/72333/000087666125000369/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000072333.json",
+      "CIK:0000072333"
+    ]
+  },
+  {
+    "ticker": "K-OLD",
+    "name": "Kellanova",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock; 0.500% Senior Notes due 2029; 3.750% Senior Notes due 2034 on Form 25 dated 2025-12-11; issuer CIK 0000055067; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/55067/000087666125000958/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000055067.json",
+      "CIK:0000055067"
+    ]
+  },
+  {
+    "ticker": "KAR",
+    "name": "KAR Auction Services",
+    "id": "OPLN.US",
+    "status": "mapped",
+    "reason": "OPENLANE changed NYSE ticker from KAR to OPLN.",
+    "evidence": [
+      "https://corporate.openlane.com/openlane-to-change-stock-ticker-to-opln/"
+    ]
+  },
+  {
+    "ticker": "KMROF",
+    "name": "Kalmar Oyj B Share",
+    "id": "KALMAR.HE",
+    "status": "mapped",
+    "reason": "OpenFIGI ticker and primary ISIN FI4000571054 share class BBG01MC17LH2 agree; Helsinki class B.",
+    "evidence": [
+      "https://www.kalmarglobal.com/news--insights/press_releases/2024/kalmars-ten-largest-shareholders/",
+      "https://api.openfigi.com/v3/mapping"
+    ]
+  },
+  {
+    "ticker": "KW-OLD",
+    "name": "Kennedy-Wilson Holdings Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-06-16; issuer CIK 0001408100; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1408100/000087666126000537/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001408100.json",
+      "CIK:0001408100"
+    ]
+  },
+  {
+    "ticker": "LBPH-OLD",
+    "name": "Longboard Pharmaceuticals In",
+    "id": null,
+    "status": "excluded",
+    "reason": "Longboard acquisition by Lundbeck completed; common shares retired.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1832168/000114036124048133/ef20039392_8k.htm"
+    ]
+  },
+  {
+    "ticker": "LBRDA-OLD",
+    "name": "Liberty Broadband Corp. CL A",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock, Class C Common Stock, and Series A Cumulative Redeemable Preferred Stock on Form 25 dated 2026-08-20; issuer CIK 0001611983; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1611983/000135445726000811/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001611983.json",
+      "CIK:0001611983"
+    ]
+  },
+  {
+    "ticker": "LBRDK-OLD",
+    "name": "Liberty Broadband Corp. CL C",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock, Class C Common Stock, and Series A Cumulative Redeemable Preferred Stock on Form 25 dated 2026-08-20; issuer CIK 0001611983; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1611983/000135445726000811/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001611983.json",
+      "CIK:0001611983"
+    ]
+  },
+  {
+    "ticker": "LTGIF",
+    "name": "Lt Group Inc",
+    "id": "LTG.PSE",
+    "status": "mapped",
+    "reason": "OpenFIGI ticker and primary ISIN PHY5342M1000 share class BBG001S7YLS7 agree; Philippine primary listing.",
+    "evidence": [
+      "https://api.openfigi.com/v3/mapping",
+      "https://api.openfigi.com/v3/mapping"
+    ]
+  },
+  {
+    "ticker": "LTSSF",
+    "name": "Lotus Bakeries",
+    "id": "LOTB.BR",
+    "status": "mapped",
+    "reason": "OpenFIGI ticker and primary ISIN BE0003604155 share class BBG001SKKCS3 agree; Brussels primary listing.",
+    "evidence": [
+      "https://www.lotusbakeries.com/stock-information",
+      "https://api.openfigi.com/v3/mapping"
+    ]
+  },
+  {
+    "ticker": "MASI-OLD",
+    "name": "Masimo Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-06-10; issuer CIK 0000937556; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/937556/000135445726000556/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000937556.json",
+      "CIK:0000937556"
+    ]
+  },
+  {
+    "ticker": "MCG-OLD",
+    "name": "Membership Collective Grp Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "Membership Collective became Soho House; merger effective 2026-01-29 cancelled public common shares for cash.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1846510/000114036126002807/ef20064097_8k.htm"
+    ]
+  },
+  {
+    "ticker": "MRC-OLD",
+    "name": "MRC Global Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-11-06; issuer CIK 0001439095; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1439095/000087666125000846/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001439095.json",
+      "CIK:0001439095"
+    ]
+  },
+  {
+    "ticker": "MTAL-OLD",
+    "name": "MAC Copper Ltd",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Ordinary Shares on Form 25 dated 2025-10-14; issuer CIK 0001950246; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1950246/000087666125000753/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001950246.json",
+      "CIK:0001950246"
+    ]
+  },
+  {
+    "ticker": "MTSR-OLD",
+    "name": "Metsera Inc",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-11-13; issuer CIK 0002040807; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/2040807/000135445725001124/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0002040807.json",
+      "CIK:0002040807"
+    ]
+  },
+  {
+    "ticker": "NVRO-OLD",
+    "name": "Nevro Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-04-03; issuer CIK 0001444380; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1444380/000087666125000257/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001444380.json",
+      "CIK:0001444380"
+    ]
+  },
+  {
+    "ticker": "OCBI",
+    "name": "Orange County Bancorp Inc.",
+    "id": "OBT.US",
+    "status": "mapped",
+    "reason": "Former OTCQX OCBI is Orange County Bancorp; Nasdaq listing OBT identifies the same issuer.",
+    "evidence": [
+      "https://investors.orangebanktrust.com/static-files/192b41a8-c507-432c-870a-dbeb2a4862f2"
+    ]
+  },
+  {
+    "ticker": "ODP-OLD",
+    "name": "ODP Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-12-10; issuer CIK 0000800240; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/800240/000135445725001240/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000800240.json",
+      "CIK:0000800240"
+    ]
+  },
+  {
+    "ticker": "OLPX-OLD",
+    "name": "Olaplex Holdings Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-07-07; issuer CIK 0001868726; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1868726/000135445726000642/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001868726.json",
+      "CIK:0001868726"
+    ]
+  },
+  {
+    "ticker": "OMI",
+    "name": "Owens & Minor",
+    "id": "ACH.US",
+    "status": "mapped",
+    "reason": "Owens & Minor renamed Accendra Health following sale of products business; NYSE ACH effective 2026-01-02.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/75252/000110465925122553/omi-20251216xex99d1.htm"
+    ]
+  },
+  {
+    "ticker": "ORLA-OLD",
+    "name": "Orla Mining Ltd",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Shares on Form 25 dated 2026-07-31; issuer CIK 0001680056; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1680056/000114331326000045/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001680056.json",
+      "CIK:0001680056"
+    ]
+  },
+  {
+    "ticker": "OS-OLD",
+    "name": "Onestream Inc",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock on Form 25 dated 2026-04-01; issuer CIK 0001889956; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1889956/000135445726000315/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001889956.json",
+      "CIK:0001889956"
+    ]
+  },
+  {
+    "ticker": "PARA-OLD",
+    "name": "Paramount Global CL B",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock, Class B Common Stock on Form 25 dated 2025-08-07; issuer CIK 0000813828; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/813828/000135445725000781/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000813828.json",
+      "CIK:0000813828"
+    ]
+  },
+  {
+    "ticker": "PCH-OLD",
+    "name": "PotlatchDeltic Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of common stock on Form 25 dated 2026-02-02; issuer CIK 0001338749; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1338749/000135445726000123/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001338749.json",
+      "CIK:0001338749"
+    ]
+  },
+  {
+    "ticker": "PRA-OLD",
+    "name": "ProAssurance Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-06-26; issuer CIK 0001127703; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1127703/000087666126000573/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001127703.json",
+      "CIK:0001127703"
+    ]
+  },
+  {
+    "ticker": "QVCGA",
+    "name": "Qurate Group Series A",
+    "id": null,
+    "status": "excluded",
+    "reason": "Old QVC equity cancelled for no value on emergence in August 2026; new QVCG is not the held security.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1355096/000110465926092423/tm2622253d3_8k.htm"
+    ]
+  },
+  {
+    "ticker": "RDFN",
+    "name": "Redfin Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-07-01; issuer CIK 0001382821; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1382821/000135445725000602/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001382821.json",
+      "CIK:0001382821"
+    ]
+  },
+  {
+    "ticker": "ROIC-OLD",
+    "name": "Retail Opportunity Investments Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-02-12; issuer CIK 0001407623; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1407623/000135445725000100/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001407623.json",
+      "CIK:0001407623"
+    ]
+  },
+  {
+    "ticker": "RVNC",
+    "name": "Revance Therapeutics,Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-02-06; issuer CIK 0001479290; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1479290/000135445725000073/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001479290.json",
+      "CIK:0001479290"
+    ]
+  },
+  {
+    "ticker": "SCS-OLD",
+    "name": "Steelcase Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock on Form 25 dated 2025-12-10; issuer CIK 0001050825; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1050825/000087666125000952/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001050825.json",
+      "CIK:0001050825"
+    ]
+  },
+  {
+    "ticker": "SEE-OLD",
+    "name": "Sealed Air Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-04-09; issuer CIK 0001012100; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1012100/000087666126000345/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001012100.json",
+      "CIK:0001012100"
+    ]
+  },
+  {
+    "ticker": "SEMR-OLD",
+    "name": "SEMrush Holdings Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock on Form 25 dated 2026-04-28; issuer CIK 0001831840; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1831840/000087666126000368/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001831840.json",
+      "CIK:0001831840"
+    ]
+  },
+  {
+    "ticker": "SHYF-OLD",
+    "name": "Shyft Group Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-07-01; issuer CIK 0000743238; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/743238/000135445725000605/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000743238.json",
+      "CIK:0000743238"
+    ]
+  },
+  {
+    "ticker": "SKX-OLD",
+    "name": "Skechers U.S.A. Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock on Form 25 dated 2025-09-12; issuer CIK 0001065837; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1065837/000087666125000654/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001065837.json",
+      "CIK:0001065837"
+    ]
+  },
+  {
+    "ticker": "SKYT-OLD",
+    "name": "Skywater Technology Inc",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-07-31; issuer CIK 0001819974; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1819974/000135445726000745/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001819974.json",
+      "CIK:0001819974"
+    ]
+  },
+  {
+    "ticker": "SMAR-OLD",
+    "name": "Smartsheet Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock on Form 25 dated 2025-01-22; issuer CIK 0001366561; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1366561/000087666125000046/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001366561.json",
+      "CIK:0001366561"
+    ]
+  },
+  {
+    "ticker": "SMLR-OLD",
+    "name": "Semler Scientific Inc",
+    "id": null,
+    "status": "excluded",
+    "reason": "Strive completed Semler acquisition 2026-01-16; listing suspended and common shares exchanged.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1554859/000110465926004581/tm263118d3_8k.htm"
+    ]
+  },
+  {
+    "ticker": "SNREY-OLD",
+    "name": "Sunrise Communicat Cl A",
+    "id": "SUNN.SW",
+    "status": "mapped",
+    "reason": "Sunrise terminated sponsored Class A ADSs in November 2025; Class A ordinary shares continue on SIX as SUNN. Canonical issuer coverage uses Swiss share units.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/2021938/000202193826000004/snre-20251231.htm"
+    ]
+  },
+  {
+    "ticker": "SNV-OLD",
+    "name": "Synovus Financial Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock; 6.300% Fixed-To-Floating Rate Non-Cumulative Perpetual Preferred Stock, Series D; 5.875% Fixed-Rate Reset Non-Cumulative Perpetual Preferred Stock, Series E on Form 25 dated 2026-01-02; issuer CIK 0000018349; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/18349/000087666126000005/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000018349.json",
+      "CIK:0000018349"
+    ]
+  },
+  {
+    "ticker": "SPNS-OLD",
+    "name": "Sapiens International Corp",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Shares on Form 25 dated 2025-12-17; issuer CIK 0000885740; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/885740/000135445725001277/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000885740.json",
+      "CIK:0000885740"
+    ]
+  },
+  {
+    "ticker": "STKL-OLD",
+    "name": "SunOpta Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Shares on Form 25 dated 2026-05-01; issuer CIK 0000351834; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/351834/000135445726000399/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000351834.json",
+      "CIK:0000351834"
+    ]
+  },
+  {
+    "ticker": "STR-OLD",
+    "name": "Sitio Royalties Corp A",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock on Form 25 dated 2025-08-21; issuer CIK 0001949543; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1949543/000087666125000611/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001949543.json",
+      "CIK:0001949543"
+    ]
+  },
+  {
+    "ticker": "SWN-OLD",
+    "name": "Southwestern Energy",
+    "id": null,
+    "status": "excluded",
+    "reason": "Southwestern merger with Chesapeake completed 2024-10-01; acquirer renamed Expand, old Southwestern shares exchanged.",
+    "evidence": [
+      "https://investors.expandenergy.com/static-files/4fbdd539-eaf0-4d46-8aa7-06e1ae1a5504"
+    ]
+  },
+  {
+    "ticker": "TGNA-OLD",
+    "name": "TEGNA Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-03-20; issuer CIK 0000039899; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/39899/000087666126000273/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000039899.json",
+      "CIK:0000039899"
+    ]
+  },
+  {
+    "ticker": "TMHC-OLD",
+    "name": "Taylor Morrison Home Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC Form 25 of 2026-07-24 removes Taylor Morrison common stock; no current listed ticker in SEC submissions.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1562476/000087666126000640/primary_doc.xml"
+    ]
+  },
+  {
+    "ticker": "TPH-OLD",
+    "name": "TRI Pointe Group",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2026-05-14; issuer CIK 0001561680; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1561680/000087666126000432/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001561680.json",
+      "CIK:0001561680"
+    ]
+  },
+  {
+    "ticker": "TPICQ-OLD",
+    "name": "TPI Composites Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "Issuer reports transition from public to private ownership by Energy Capital Partners after 2026 restructuring; old OTC security is not a successor alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1455684/000135445725000923/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001455684.json",
+      "CIK:0001455684",
+      "https://tpicomposites.com/about/financial-restructuring-3/"
+    ]
+  },
+  {
+    "ticker": "VCSA",
+    "name": "Vacasa Inc Cl A",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock on Form 25 dated 2025-05-01; issuer CIK 0001874944; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1874944/000135445725000367/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001874944.json",
+      "CIK:0001874944"
+    ]
+  },
+  {
+    "ticker": "VOXX-OLD",
+    "name": "VOXX International Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Class A Common Stock on Form 25 dated 2025-04-01; issuer CIK 0000807707; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/807707/000135445725000266/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000807707.json",
+      "CIK:0000807707"
+    ]
+  },
+  {
+    "ticker": "VRMMQ-OLD",
+    "name": "Vroom Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "Pre-reorganization Vroom equity was cancelled 2025-01-14; new VRM equity is not the held security.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1580864/000095017025037265/vrm-20241231.htm"
+    ]
+  },
+  {
+    "ticker": "VRN-OLD",
+    "name": "Veren Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common shares on Form 25 dated 2025-05-12; issuer CIK 0001545851; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1545851/000087666125000328/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001545851.json",
+      "CIK:0001545851"
+    ]
+  },
+  {
+    "ticker": "VTLE-OLD",
+    "name": "Vital Energy Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-12-15; issuer CIK 0001528129; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1528129/000087666125000963/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001528129.json",
+      "CIK:0001528129"
+    ]
+  },
+  {
+    "ticker": "WBA-OLD",
+    "name": "Walgreens Boots Alliance",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock, 3.600% Notes due 2025, 2.125% Notes due 2026 on Form 25 dated 2025-08-28; issuer CIK 0001618921; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1618921/000135445725000854/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001618921.json",
+      "CIK:0001618921"
+    ]
+  },
+  {
+    "ticker": "WBS-OLD",
+    "name": "Webster Financial Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock; Depositary Shares, Each Representing 1/1,000th Interest in a Share of 5.25% Series F Non-Cumulative Perpetual Preferred Stock; Depositary Shares, each representing a 1/40th interest in a share of 6.50% Series G non-cumulative perpetual preferred stock on Form 25 dated 2026-08-20; issuer CIK 0000801337; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/801337/000087666126000696/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0000801337.json",
+      "CIK:0000801337"
+    ]
+  },
+  {
+    "ticker": "WNS-OLD",
+    "name": "WNS Holdings ADR",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Ordinary Shares on Form 25 dated 2025-10-17; issuer CIK 0001356570; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1356570/000087666125000781/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001356570.json",
+      "CIK:0001356570"
+    ]
+  },
+  {
+    "ticker": "WSR-OLD",
+    "name": "Whitestone REIT",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Shares on Form 25 dated 2026-07-14; issuer CIK 0001175535; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1175535/000087666126000617/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001175535.json",
+      "CIK:0001175535"
+    ]
+  },
+  {
+    "ticker": "X-OLD",
+    "name": "United States Steel Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-06-18; issuer CIK 0001163302; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1163302/000087666125000453/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001163302.json",
+      "CIK:0001163302"
+    ]
+  },
+  {
+    "ticker": "YNDX",
+    "name": "Yandex N.V.",
+    "id": "NBIS.US",
+    "status": "mapped",
+    "reason": "Same Dutch issuer renamed Nebius in August 2024 after divestiture; ticker NBIS.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1513845/000110465924109545/tm2426436d2_ex99-1.htm"
+    ]
+  },
+  {
+    "ticker": "ZI",
+    "name": "ZoomInfo Technologies Inc.",
+    "id": "GTM.US",
+    "status": "mapped",
+    "reason": "ZoomInfo changed ticker to GTM on 2025-05-13.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1794515/000179451525000097/zi-8kex991x20250512.htm"
+    ]
+  },
+  {
+    "ticker": "ZIMV-OLD",
+    "name": "ZimVie Inc.",
+    "id": null,
+    "status": "excluded",
+    "reason": "SEC-confirmed removal of Common Stock on Form 25 dated 2025-10-20; issuer CIK 0001876588; no active listing reported in SEC submissions. Retired listing, not an acquirer alias.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1876588/000135445725001034/primary_doc.xml",
+      "https://data.sec.gov/submissions/CIK0001876588.json",
+      "CIK:0001876588"
+    ]
+  },
+  {
+    "ticker": "CET",
+    "name": "Central Securities Corp.",
+    "id": null,
+    "status": "excluded",
+    "reason": "Issuer identifies itself as a closed-end investment company; excluded from operating-company coverage.",
+    "evidence": [
+      "https://centralsecurities.com/wp-content/uploads/Press-Release-2025-06-30-Report.pdf"
+    ]
+  },
+  {
+    "ticker": "CCXI",
+    "name": "Churchill Capital Corp Cl A",
+    "id": null,
+    "status": "excluded",
+    "reason": "2025 10-K says blank-check company with only organizational and IPO activity; no operating business yet.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/2074973/000121390026034863/ea0282743-10k_churchill11.htm"
+    ]
+  }
+]

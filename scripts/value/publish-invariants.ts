@@ -54,6 +54,9 @@ export function assertPublishInvariants(repo:string,baseline='HEAD'):void {
  if(!prior)return;
  const prices=(r:Reader):PriceMap=>Object.assign({},...r.files.filter(f=>/^prices\/[A-Z]{2}\.json$/.test(f)).map(f=>r.read(f)));
  const oldPrices=prices(prior),newPrices=prices(current);
+ const dossierIds=(r:Reader)=>new Set(r.files.filter(f=>/^dossiers\/\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(r.read(f))));
+ const oldIds=dossierIds(prior),newIds=dossierIds(current);
+ for(const file of prior.files.filter(f=>/^index\/(?:default|[A-Z]{2})\.json$/.test(f)))for(const row of prior.read(file)??[])oldIds.add(row.id);
  // Check the default index and every country separately, so offsetting country
  // losses cannot hide in the global total. Analysis changes need explicit review.
  const indexes=new Set([...prior.files,...current.files].filter(f=>/^index\/(?:default|[A-Z]{2})\.json$/.test(f)));
@@ -67,6 +70,7 @@ export function assertPublishInvariants(repo:string,baseline='HEAD'):void {
    if(change>0)increases++;if(change<0)decreases++;
   }
   const delta=newBuys-oldBuys;
-  if(delta>increases||delta < -decreases)fail(`${file} Buy-now changed ${oldBuys} -> ${newBuys}; prices explain at most +${increases}/-${decreases}`);
+  const addedBuys=newRows.filter(row=>row.b&&!oldIds.has(row.id)&&newIds.has(row.id)).length;
+  if(delta>increases+addedBuys||delta < -decreases)fail(`${file} Buy-now changed ${oldBuys} -> ${newBuys}; prices and new dossiers explain at most +${increases+addedBuys}/-${decreases}`);
  }
 }

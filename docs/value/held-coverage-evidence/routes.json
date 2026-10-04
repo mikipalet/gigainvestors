@@ -1,0 +1,95 @@
+[
+  {
+    "ticker": "PLXS",
+    "status": 200,
+    "companyPage": 1,
+    "datedData": 1,
+    "checklist": true
+  },
+  {
+    "ticker": "AAL",
+    "status": 200,
+    "companyPage": 1,
+    "datedData": 1,
+    "checklist": true
+  },
+  {
+    "ticker": "AAOI",
+    "status": 200,
+    "companyPage": 1,
+    "datedData": 1,
+    "checklist": true
+  },
+  {
+    "ticker": "AAON",
+    "status": 200,
+    "companyPage": 1,
+    "datedData": 1,
+    "checklist": true
+  },
+  {
+    "ticker": "AAP",
+    "status": 200,
+    "companyPage": 1,
+    "datedData": 1,
+    "checklist": true
+  },
+  {
+    "ticker": "ABCB",
+    "status": 200,
+    "companyPage": 1,
+    "datedData": 1,
+    "checklist": true
+  },
+  {
+    "ticker": "ABG",
+    "status": 200,
+    "companyPage": 1,
+    "datedData": 1,
+    "checklist": true
+  },
+  {
+    "ticker": "ABM",
+    "status": 200,
+    "companyPage": 1,
+    "datedData": 1,
+    "checklist": true
+  },
+  {
+    "ticker": "ABR",
+    "status": 200,
+    "companyPage": 1,
+    "datedData": 1,
+    "checklist": true
+  },
+  {
+    "ticker": "ACA",
+    "status": 200,
+    "companyPage": 1,
+    "datedData": 1,
+    "checklist": true
+  },
+  {
+    "path": "/s/PLXS.md",
+    "status": 200,
+    "hasPLXS": true,
+    "type": "text/markdown; charset=utf-8"
+  },
+  {
+    "path": "/sitemaps/companies.xml",
+    "status": 200,
+    "hasPLXS": true,
+    "type": "application/xml; charset=utf-8"
+  },
+  {
+    "path": "/llms.txt",
+    "status": 200,
+    "hasPLXS": false,
+    "type": "text/plain; charset=utf-8"
+  },
+  {
+    "path": "/llms-full.txt",
+    "status": 200,
+    "hasPLXS": true
+  }
+]

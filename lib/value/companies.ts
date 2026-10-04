@@ -1,12 +1,15 @@
 import { enrichedCompany } from "./enrichment";
 import { readCorpusJson, readJsonl } from "./corpus";
 import type { Company } from "./types";
+import type {HeldMembership} from './held-universe';
 
 /** Supplemental index identities participate in every downstream data stage. */
 export function universeCompanies(): Company[] {
  const snapshot=readCorpusJson<{memberships?:Record<string,string[]>;supplementalCompanies?:Company[]}>('index-membership/latest.json');
- return [...new Map([...(snapshot?.supplementalCompanies??[]),...readJsonl<Company>('universe.jsonl')].map(c=>[c.id,c])).values()]
-   .map(c=>snapshot?{...c,indexes:snapshot.memberships?.[c.id]??[]}:c);
+ const held=readCorpusJson<HeldMembership>('held-membership/latest.json');
+ const heldIds=new Set(held?.companies.map(c=>c.id));
+ return [...new Map([...(held?.companies??[]),...(snapshot?.supplementalCompanies??[]),...readJsonl<Company>('universe.jsonl')].map(c=>[c.id,c])).values()]
+   .map(c=>({...c,...(snapshot?{indexes:snapshot.memberships?.[c.id]??[]}:{}),...(heldIds.has(c.id)?{heldBySuperinvestors:true}:{})}));
 }
 
 /** Reject unsafe paths without stopping a whole stage. */

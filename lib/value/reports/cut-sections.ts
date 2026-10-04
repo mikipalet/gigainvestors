@@ -36,14 +36,19 @@ const item = (number: string) => new RegExp(`^\\s*Item\\s*${number}(?=[.\\s:])`,
 const anyItem = /^\s*Item\s*\d+[A-Z]?(?=[.\s:])/im;
 
 export function cutSections({ text, form }: {
-  text: string; form: "10-K" | "20-F" | "40-F" | "DEF 14A";
+  text: string; form: "10-K" | "20-F" | "40-F" | "17-A" | "DEF 14A";
 }): Partial<Record<SectionKey, string>> {
   const sections: Partial<Record<SectionKey, string>> = {};
   const add = ({ key, start, end }: { key: SectionKey; start: RegExp; end: RegExp }) => {
     const block = lastBlock({ text, start, end });
     if (block) sections[key] = truncateTokens(block, SECTION_TOKENS[key]);
   };
-  if (form === "10-K") {
+  if (form === "17-A") {
+    add({ key: "business", start: item("1"), end: item("2") });
+    add({ key: "mdna", start: item("6"), end: item("7") });
+    add({ key: "capital", start: item("5"), end: item("6") });
+    add({ key: "compensation", start: item("10"), end: item("11") });
+  } else if (form === "10-K") {
     add({ key: "business", start: item("1"), end: item("1A") });
     add({ key: "risk", start: item("1A"), end: item("(?:1B|2)") });
     add({ key: "mdna", start: item("7"), end: item("(?:7A|8)") });

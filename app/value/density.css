@@ -904,10 +904,6 @@
  .value-page .compact-company-list[data-historical=false] th:nth-child(3){width:28%!important}
  .value-page .compact-company-list[data-historical=false] th:nth-child(4){width:18%!important}
  .value-page .owner-memo[data-compact=true]{align-self:flex-start;width:100%;padding-block:6px}
- .value-page .owner-memo[data-compact=true] .memo-lines{display:flex;flex-wrap:wrap;gap:4px 24px;justify-content:flex-start}
- .value-page .owner-memo[data-compact=true] .memo-lines>div{display:block;flex:0 1 auto;max-width:620px}
- .value-page .owner-memo[data-compact=true] .memo-lines dt{display:inline;margin-right:8px}
- .value-page .owner-memo[data-compact=true] .memo-lines dd{display:inline}
 }
 
 .value-page .compact-company-list[data-historical=true][data-legacy=false] tbody td:nth-child(2)::before{content:'Return / yr '}

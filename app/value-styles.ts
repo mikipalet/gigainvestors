@@ -16,3 +16,4 @@ import './value/filters.css';
 import './value/judgement.css';
 import './value/side-panel.css';
 import './value/density.css';
+import './value/label-values.css';

@@ -50,8 +50,10 @@ export function CompanyList({entries}:{entries:ResultEntry[]}) {
     if(used>available)break;rows++;
    }
    if(rows<rendered.length){delete root.dataset.measuring;setReady(false);setSize(Math.max(1,rows));return;}
+   // A table can paint into the footer without increasing the root scrollHeight.
+   const tableFits=()=>{const table=root.querySelector('table'),nav=root.querySelector('nav');return !table||!nav||table.getBoundingClientRect().bottom<=nav.getBoundingClientRect().top-7;};
    let low=16,high=24;
-   for(let i=0;i<7;i++){const mid=(low+high)/2;root.style.setProperty('--list-font',`${mid}px`);if(root.scrollHeight<=root.clientHeight+1&&textFits())low=mid;else high=mid;}
+   for(let i=0;i<7;i++){const mid=(low+high)/2;root.style.setProperty('--list-font',`${mid}px`);if(root.scrollHeight<=root.clientHeight+1&&tableFits()&&textFits())low=mid;else high=mid;}
    root.style.setProperty('--list-font',`${low}px`);delete root.dataset.measuring;setReady(loaded.current);
   };
   // Paint the drawer controls before fitting its loaded rows. Coalesce all refits.

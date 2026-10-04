@@ -3,9 +3,9 @@ import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 're
 
 // Measured per screen height across the reference companies (widest content that fits at 14px); one width per drawer type.
 const EVIDENCE_WIDTHS:Record<'short'|'mid'|'tall',Record<string,number>>={
-  short:{understandable:400,moat:680,economics:600,management:480,accounting:480,price:500},
-  mid:{understandable:300,moat:400,economics:340,management:480,accounting:480,price:380},
-  tall:{understandable:320,moat:340,economics:380,management:360,accounting:340,price:300},
+  short:{understandable:400,moat:760,economics:600,management:640,accounting:600,price:620},
+  mid:{understandable:300,moat:400,economics:340,management:480,accounting:480,price:560},
+  tall:{understandable:320,moat:340,economics:380,management:360,accounting:340,price:440},
 };
 const evidenceWidth=(test:string)=>EVIDENCE_WIDTHS[innerHeight<850?'short':innerHeight<1050?'mid':'tall'][test]??400;
 // Element boxes can omit overflowing inline text, buttons and definition lists.
@@ -80,7 +80,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     const fit=()=>{
       if(innerWidth<768){
         dialog.style.width='';delete dialog.dataset.readingColumns;delete dialog.dataset.compactMemo;
-        for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font'])dialog.style.removeProperty(name);
+        for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font','--method-font'])dialog.style.removeProperty(name);
         const method=dialog.querySelector<HTMLElement>('.method-sections'),business=dialog.querySelector<HTMLElement>('.owner-memo-depth');
         if(method)method.style.columnCount='';if(business){business.style.gridTemplateColumns='';business.style.columnCount='';}
         return;
@@ -88,7 +88,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       dialog.querySelector<HTMLElement>('.drawer-chart[data-expanded]')?.style.removeProperty('height');
       // Every fit starts from the same state, so a refit with unchanged content lands on the same size.
       dialog.style.width='';delete dialog.dataset.readingColumns;delete dialog.dataset.compactMemo;
-      for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font'])dialog.style.removeProperty(name);
+      for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font','--method-font'])dialog.style.removeProperty(name);
       const method=dialog.querySelector<HTMLElement>('.method-sections');
       if(method){
         const columns=innerHeight<850?4:3;
@@ -98,6 +98,8 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
           const columnWidth=(method.clientWidth-(columns-1)*parseFloat(getComputedStyle(method).columnGap))/columns;
           if(method.scrollWidth<=method.clientWidth+1&&[...method.querySelectorAll('table')].every(table=>parseFloat(getComputedStyle(table).width)<=columnWidth+1))break;
         }
+        const fits=()=>method.scrollWidth<=method.clientWidth+1&&textFits(method,method.parentElement!);
+        largestFont(dialog,'--method-font',fits,15);
         return;
       }
       const preview=dialog.querySelector<HTMLElement>('.search-preview');

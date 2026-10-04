@@ -32,8 +32,6 @@
 /* Reserve the two portal slots before the interactive controls mount. */
 body:has(.one-index) #value-timeline{height:52px}
 body:has(.one-index) #value-timeline>.dock-home{display:none}
-body:has(.one-index) #value-market{width:140px;flex:none}
 @media(max-width:767px){body:has(.one-index) #value-timeline{height:48px}}
 
 /* Reserve the portal’s height so time travel hydration never moves dock controls. */
-#value-market{min-height:36px;display:flex;align-items:center}

@@ -9,7 +9,6 @@
 .house-track .slider~div:last-child{font-size:13px!important}
 .shared-dock #value-timeline{height:52px;min-width:140px}
 .shared-dock .dock-tools{gap:7px}
-.shared-dock #value-market:empty{display:none}
 .search-modal{font-size:14px}.search-selected{background:#1111}.search-selected:after{content:'✓';position:absolute;right:10px;top:10px}.search-modal [role=option]{position:relative;padding-right:30px}
 .search-description{white-space:normal;min-width:0}.search-modal .search-pages{display:none}
 .activity-buy{background:var(--paper);box-shadow:inset 0 0 0 2px #515c58}
@@ -47,7 +46,6 @@
  .shared-dock .house-timeline{height:46px}
  .shared-dock .dock-tools{justify-content:space-between;gap:5px;flex-wrap:wrap;min-height:42px}
  .shared-dock .dock-tools>a,.shared-dock .dock-tools>button{font-size:13px;padding:5px}
- .shared-dock #value-market{order:2;width:100%;min-height:26px;justify-content:flex-end}
  :scope:has(.one-index){--chrome-bottom:126px}
  :scope:has(.one-index) .shared-dock.value-page.value-dock{height:126px}
  .shared-dock .house-steps{display:flex}
@@ -105,12 +103,11 @@
 .holders-chart{flex:1;min-height:150px}
 .company-holders-table thead th{font-size:13px;white-space:normal}
 @media(max-width:767px){.company-holders-table :is(th,td){font-size:13px}.holders-chart{flex:none;height:260px}}
-:scope:has(.one-index) .shared-dock #value-market{display:flex;width:140px;flex:none}
 .company-holders-table small{display:block;font-size:13px;color:var(--viz-muted);line-height:1.4}
 .company-holders-table th a{height:100%;align-items:center}
 .company-holders-panel .holders-chart{flex:none;height:clamp(160px,23vh,260px)}
 .company-holders-panel .table-face{width:clamp(48px,calc(260px / var(--holder-rows)),84px);height:clamp(40px,calc((100dvh - 350px) / var(--holder-rows) - 12px),190px)}
-@media(max-width:767px){:scope:has(.one-index) .shared-dock #value-market{width:100%}.company-holders-panel .holders-chart{height:240px}.company-holders-table td small{display:none}}
+@media(max-width:767px){.company-holders-panel .holders-chart{height:240px}.company-holders-table td small{display:none}}
 /* Reserve the pager first; the chart uses the space left by the fixed-height holder rows. */
 @media(min-width:768px){
  .company-holders-panel{display:grid;grid-template-rows:minmax(160px,1fr) auto auto;gap:10px}
@@ -184,9 +181,8 @@
 .mobile-market-scope{display:none}
 @media(max-width:767px){
  .mobile-market-scope{display:block}
- /* Preserve the former toggle's footprint so the other dock buttons stay put. */
- :scope:has(.one-index) .shared-dock #value-market{min-height:36px}
  .one-index .map-toolbar .mobile-market-scope .design-toggle{white-space:nowrap}
 }
 
 }
+.shared-dock :is(button,a,summary,[role="button"]),.shared-dock :is(button,a,summary,[role="button"]) *{text-decoration:none!important}

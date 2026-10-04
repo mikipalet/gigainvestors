@@ -28,9 +28,9 @@ client.onBeforePaymentCreation(async ({ paymentRequired }) => {
 });
 let signedHeaders: Headers | undefined;
 const transport: typeof fetch = async (input, init) => {
-  const headers = new Headers(init?.headers);
-  if (headers.has('PAYMENT-SIGNATURE')) signedHeaders = headers;
-  return fetch(input, init);
+  const request = new Request(input, init);
+  if (request.headers.has('PAYMENT-SIGNATURE')) signedHeaders = new Headers(request.headers);
+  return fetch(request);
 };
 const paidFetch = wrapFetchWithPayment(transport, client);
 const url = origin + '/api/v1/companies/KO.US/verdict';

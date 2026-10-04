@@ -23,6 +23,12 @@ async function setup(options:{verify?:boolean;settle?:boolean;throwSettle?:boole
  return {deps,handler,logs,counts:()=>({settlements,executions})};
 }
 describe('pricing and configuration',()=>{
+ it('uses each deployed USDC contract signing domain',()=>{
+  expect(paymentRequirements(route(),config)).toMatchObject({asset:'0x036CbD53842c5426634e7929541eC2318f3dCF7e',extra:{name:'USDC',version:'2'}});
+  const mainnet=paymentConfig({X402_PAY_TO:payTo,X402_NETWORK:'eip155:8453'});
+  expect(mainnet.facilitatorUrl).toBe('https://api.cdp.coinbase.com/platform/v2/x402');
+  expect(paymentRequirements(route(),mainnet)).toMatchObject({network:'eip155:8453',payTo,asset:'0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913',extra:{name:'USD Coin',version:'2'}});
+ });
  it('covers paid routes in exact USDC units',()=>{expect(PRICES).toEqual({basic:2000,detail:10000,bulk:50000});expect(resolveRoute('/api/v1/companies/KO.US')?.price).toBe('detail');expect(resolveRoute('/api/v1/time-travel/2020Q1')?.price).toBe('bulk');expect(resolveRoute('/api/v1/companies/KO.US/verdict')?.price).toBe('basic');});
  it('defaults to Sepolia and requires an explicit public receiver',()=>{expect(paymentConfig({X402_PAY_TO:payTo}).network).toBe('eip155:84532');expect(()=>paymentConfig({})).toThrow();expect(()=>paymentConfig({X402_PAY_TO:payTo,X402_NETWORK:'ethereum'})).toThrow();expect(()=>paymentConfig({X402_PAY_TO:'0x'+'0'.repeat(40)})).toThrow();});
 });

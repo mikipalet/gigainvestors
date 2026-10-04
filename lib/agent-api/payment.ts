@@ -14,7 +14,8 @@ function canonical(value:unknown):string {
  return JSON.stringify(value);
 }
 export function paymentRequirements(route:Route,config:PaymentConfig):PaymentRequirements {
- return {scheme:'exact',network:config.network,asset:config.network==='eip155:8453'?'0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913':'0x036CbD53842c5426634e7929541eC2318f3dCF7e',amount:String(PRICES[route.price]),payTo:config.payTo,maxTimeoutSeconds:300,extra:{name:'USD Coin',version:'2'}};
+ // EIP-712 domain names differ between Circle's Base deployments.
+ return {scheme:'exact',network:config.network,asset:config.network==='eip155:8453'?'0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913':'0x036CbD53842c5426634e7929541eC2318f3dCF7e',amount:String(PRICES[route.price]),payTo:config.payTo,maxTimeoutSeconds:300,extra:{name:config.network==='eip155:8453'?'USD Coin':'USDC',version:'2'}};
 }
 export function apiError(status:number,code:string,message:string) {
  return Response.json({apiVersion:'v1',error:{code,message}},{status,headers:{'Cache-Control':'private, no-store','Vary':'PAYMENT-SIGNATURE'}});

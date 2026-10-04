@@ -39,3 +39,32 @@ describe('publication capitalization evidence',()=>{
   raw.General.UpdatedAt='2026-09-01';expect(publicationCapitalization(a,raw,[60,'2026-10-02'],1).capShares).toBeUndefined();
  });
 });
+
+describe('dated issuer share observations',()=>{
+ const observation={source:'issuer:sec',shares:100,date:'2026-07-31',url:'https://www.sec.gov/Archives/edgar/data/1964738/000196473826000047/solv-20260630.htm',basis:'all-ordinary-outstanding' as const};
+ it('accepts a newer issuer outstanding count instead of an annual diluted or stale vendor balance count',()=>{
+  const {a,raw}=inputs();raw.Financials.Balance_Sheet.quarterly['2026-06-30'].commonStockSharesOutstanding=110;
+  const r=publicationCapitalization(a,raw,[60,'2026-10-02'],1,[],[observation]);
+  expect(r.capShares).toBe(100);expect(r.evidence).toMatchObject({shareObservation:observation});
+ });
+ it.each([
+  {...observation,date:'2025-12-31'},
+  {...observation,date:'2026-12-31'},
+  {...observation,url:undefined},
+  {...observation,source:'eodhd'},
+  {...observation,basis:'listed-class' as const},
+  {...observation,shares:110},
+  {...observation,corroborationOnly:true},
+ ])('keeps unsupported issuer evidence guarded: %j',ob=>{
+  const {a,raw}=inputs();raw.Financials.Balance_Sheet.quarterly['2026-06-30'].commonStockSharesOutstanding=110;
+  expect(publicationCapitalization(a,raw,[60,'2026-10-02'],1,[],[ob]).capShares).toBeUndefined();
+ });
+ it('does not cherry-pick an older agreeing issuer observation over a newer conflicting one',()=>{
+  const {a,raw}=inputs();
+  expect(publicationCapitalization(a,raw,[60,'2026-10-02'],1,[],[observation,{...observation,date:'2026-08-31',shares:110}]).capShares).toBeUndefined();
+ });
+ it('preserves the same-date capitalization conflict even with issuer shares',()=>{
+  const {a,raw}=inputs();a.company.marketCapUsd=9000;
+  expect(publicationCapitalization(a,raw,[60,'2026-10-02'],1,[],[observation]).capShares).toBeUndefined();
+ });
+});

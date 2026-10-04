@@ -3,6 +3,7 @@ import { refreshPublishedBuyPrices } from '../../../lib/value/refresh-buy-prices
 import { assertPublishInvariants } from '../publish-invariants';
 import {retainPublishedHistory} from '../retain-published-history';
 import {publicationCapitalization} from '../../../lib/value/publication-capitalization';
+import issuerShareObservations from '../../../lib/value/issuer-share-observations.json';
 import {createUsdRate} from '../../../lib/value/fx';
 import {readVerdictFreeze,applyVerdictFreeze} from '../verdict-freeze';
 import {PIPELINE_VERSION} from '../../../lib/value/analyze-company';
@@ -266,7 +267,8 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   rows=rows.map(a=>{
     if(freeze.ids.has(a.id))return a;
     const f=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${a.id}.json`);
-    const result=publicationCapitalization(a,readCorpusJson(`raw/eodhd/${a.id}.json`),quotes[a.id],rate(a.company.currency),f?.splits);
+    const issuerShares=issuerShareObservations.filter(observation=>observation.id===a.id);
+    const result=publicationCapitalization(a,readCorpusJson(`raw/eodhd/${a.id}.json`),quotes[a.id],rate(a.company.currency),f?.splits,issuerShares);
     capitalization.push(result.evidence);
     if(result.capShares)capShares[a.id]=result.capShares;
     return result.analysis;

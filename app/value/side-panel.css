@@ -151,3 +151,10 @@
 .value-page dialog[data-side-panel][data-fitting] .panel-content {visibility:hidden}
 .value-page .owner-memo-depth .memo-evidence>h3 {break-after:avoid-column}
 .value-page .owner-memo-depth .memo-evidence>h3+p {break-before:avoid-column}
+/* Use tighter spacing only when no regular layout fits at the minimum font. */
+@media(min-width:768px){
+ .value-page dialog[data-compact-memo] .owner-memo-depth .memo-evidence p{line-height:1.15;margin-bottom:4px}
+ .value-page dialog[data-compact-memo] .owner-memo-depth>.memo-evidence{margin-bottom:4px;padding-bottom:4px}
+ .value-page dialog[data-compact-memo] .owner-memo-depth .memo-evidence h3{margin-bottom:4px}
+ .value-page dialog[data-compact-memo] .owner-memo-depth .memo-evidence footer{margin-top:4px;line-height:1.15}
+}

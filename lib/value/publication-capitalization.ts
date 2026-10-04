@@ -1,5 +1,6 @@
 import {currencyCode, marketCapCurrency} from './currency';
 import type {Analysis, PriceMap} from './types';
+import type {ShareObservation} from './share-check';
 
 type RecordValue = Record<string, any>;
 const record = (v: unknown): RecordValue => v && typeof v === 'object' && !Array.isArray(v) ? v as RecordValue : {};
@@ -10,7 +11,7 @@ const agrees = (a:number,b:number) => Math.abs(a/b-1)<=.02;
  * diluted denominator of an earnings model. A dated balance observation checks
  * the listing basis; it is not claimed as an independent vendor verification.
  * Ambiguous ADRs, classes and large unexplained differences stay guarded. */
-export function publicationCapitalization(analysis:Analysis, raw:unknown, quote:PriceMap[string]|undefined, usdRate:number|null, splits:Array<{date:string;factor:number}>=[]) {
+export function publicationCapitalization(analysis:Analysis, raw:unknown, quote:PriceMap[string]|undefined, usdRate:number|null, splits:Array<{date:string;factor:number}>=[], issuerObservations:ShareObservation[]=[]) {
  const unchanged=(reason:string)=>({analysis,capShares:undefined as number|undefined,evidence:{id:analysis.id,reason}});
  const data=record(raw),g=record(data.General),stats=positive(record(data.SharesStats).SharesOutstanding);
  if(!quote||!positive(quote[0])||!positive(usdRate)||!stats)return unchanged('Current listing share/quote/FX evidence unavailable');
@@ -26,8 +27,15 @@ export function publicationCapitalization(analysis:Analysis, raw:unknown, quote:
  const quarters=record(record(record(data.Financials).Balance_Sheet).quarterly);
  const observation=Object.entries(quarters).filter(([end,row])=>end<=date&&Date.parse(date)-Date.parse(end)<=200*86400000&&positive(record(row).commonStockSharesOutstanding))
    .sort(([a],[b])=>b.localeCompare(a))[0];
- if(!observation)return unchanged('No dated balance share observation supports the current share basis');
- const [end,balance]=observation,reported=positive(record(balance).commonStockSharesOutstanding)!;
+ // A reviewed filing can supersede a vendor's weighted/diluted balance field.
+ // Keep the same age and agreement limits, require the entire ordinary equity
+ // basis, and never select an older observation merely because it agrees.
+ const issuer=issuerObservations.filter(o=>o.source.startsWith('issuer:')&&!o.corroborationOnly
+   &&o.basis==='all-ordinary-outstanding'&&/^https:\/\//.test(o.url??'')&&positive(o.shares)
+   &&o.date&&o.date<=date&&Date.parse(date)-Date.parse(o.date)<=200*86400000)
+   .sort((a,b)=>b.date!.localeCompare(a.date!))[0];
+ if(!observation&&!issuer)return unchanged('No dated balance share observation supports the current share basis');
+ const end=issuer?.date??observation![0],reported=issuer?.shares??positive(record(observation![1]).commonStockSharesOutstanding)!;
  const splitFactor=splits.filter(s=>s.date>end&&s.date<=date).reduce((factor,s)=>factor*s.factor,1);
  const balanceShares=agrees(stats,reported)?reported:reported*splitFactor;
  if(!agrees(stats,balanceShares))return unchanged('Current and dated balance shares do not reconcile within 2%');
@@ -46,5 +54,5 @@ export function publicationCapitalization(analysis:Analysis, raw:unknown, quote:
      !(supportedCorrection&&/^share count corrected to current /.test(note))
      &&!(unitMismatch&&/^current share sources disagree by more than 1.5x/.test(note)))}}:{})};
  return {analysis:next,capShares:stats,evidence:{id:analysis.id,reason:unitMismatch?'Minor-unit vendor cap':updated<date&&!agrees(cap!,derived)?'Dated vendor cap refreshed at current quote':'Current issuer shares replace annual diluted shares in cap check',
-   priorCap:cap,cap:derived,currentShares:stats,valuationShares:analysis.valuation?.shares,quote,usdRate,updated,balanceDate:end,balanceShares,splitFactor}};
+   priorCap:cap,cap:derived,currentShares:stats,valuationShares:analysis.valuation?.shares,quote,usdRate,updated,balanceDate:end,balanceShares,splitFactor,...(issuer?{shareObservation:issuer}:{})}};
 }

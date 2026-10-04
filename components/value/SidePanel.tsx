@@ -50,7 +50,8 @@ function largestFont(dialog:HTMLElement,property:string,fits:()=>boolean,max:num
 /** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted evidence. */
 export function SidePanel({ title, onClose, children, wide = false, compact = false, kind }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; compact?:boolean; kind?:string }) {
   const [closing,setClosing]=useState(false);
-  const [contentReady,setContentReady]=useState(false);
+  // Method fits with CSS alone, so its complete contents can paint immediately.
+  const [contentReady,setContentReady]=useState(kind==='method');
   // Keep modal focus/close responsive while the chart or table body mounts.
   useEffect(()=>{
     let active=true,timer:ReturnType<typeof setTimeout>|undefined;
@@ -75,7 +76,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
   }, []);
   useLayoutEffect(() => {
     const dialog=ref.current;
-    if(!dialog||!contentReady)return;
+    if(!dialog||!contentReady||kind==='method')return;
     let stillFits:(()=>boolean)|undefined;
     const fit=()=>{
       if(innerWidth<768){
@@ -88,20 +89,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       dialog.querySelector<HTMLElement>('.drawer-chart[data-expanded]')?.style.removeProperty('height');
       // Every fit starts from the same state, so a refit with unchanged content lands on the same size.
       dialog.style.width='';delete dialog.dataset.readingColumns;delete dialog.dataset.compactMemo;
-      for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font','--method-font'])dialog.style.removeProperty(name);
-      const method=dialog.querySelector<HTMLElement>('.method-sections');
-      if(method){
-        const columns=innerHeight<850?4:3;
-        method.style.columnCount=String(columns);
-        for(let width=columns*230;width<=Math.min(innerWidth,1400);width+=20){
-          dialog.style.width=`${width}px`;
-          const columnWidth=(method.clientWidth-(columns-1)*parseFloat(getComputedStyle(method).columnGap))/columns;
-          if(method.scrollWidth<=method.clientWidth+1&&[...method.querySelectorAll('table')].every(table=>parseFloat(getComputedStyle(table).width)<=columnWidth+1))break;
-        }
-        const fits=()=>method.scrollWidth<=method.clientWidth+1&&textFits(method,method.parentElement!);
-        largestFont(dialog,'--method-font',fits,15);
-        return;
-      }
+      for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font'])dialog.style.removeProperty(name);
       const preview=dialog.querySelector<HTMLElement>('.search-preview');
       if(preview){
         preview.style.height=`${innerHeight-preview.getBoundingClientRect().top-16}px`;
@@ -196,7 +184,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     observer.observe(dialog,{childList:true,subtree:true});
     window.addEventListener('resize',schedule);
     return()=>{active=false;clearTimeout(fallback);observer.disconnect();resizeObserver.disconnect();window.removeEventListener('resize',schedule);};
-  },[children,contentReady]);
+  },[children,contentReady,kind]);
   return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.
     if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close();}

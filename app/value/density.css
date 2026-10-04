@@ -973,3 +973,33 @@
  .value-page .quality-section .test-tile:has(.mini-series),.value-page .quality-section .test-tile:last-child:has(.mini-series){grid-template-rows:min-content min-content minmax(32px,1fr) min-content min-content}
  .value-page .price-card .mini-price{min-height:60px}
 }
+
+/* Method has one width per viewport; compact type prevents extra overflow columns. */
+@media(min-width:768px){
+ .value-page dialog[data-side-panel]:has(.method-sections){width:min(1280px,100vw)}
+ .value-page .method-sections{column-count:4;font-size:14px;line-height:18px}
+ .value-page .method-sections p{font-size:14px;line-height:18px}
+ .value-page .method-sections :is(th,td){font-size:13px;line-height:17px;padding:1px 2px}
+ .value-page .method-sections>section>h3{font-size:15px!important;line-height:18px}
+}
+@media(min-width:768px) and (min-height:850px){
+ .value-page dialog[data-side-panel]:has(.method-sections){width:min(1400px,100vw)}
+ .value-page .method-sections{column-count:4;font-size:15px;line-height:21px}
+ .value-page .method-sections p{font-size:15px;line-height:21px}
+ .value-page .method-sections :is(th,td){font-size:14px;line-height:20px;padding:2px}
+}
+@media(min-width:768px) and (min-height:970px) and (max-height:1179px){
+ .value-page dialog[data-side-panel]:has(.method-sections){width:min(1280px,100vw)}
+ .value-page .method-sections{column-count:3}
+}
+@media(min-width:768px) and (min-height:1180px){
+ .value-page dialog[data-side-panel]:has(.method-sections){width:min(1100px,100vw)}
+ .value-page .method-sections{column-count:3}
+ .value-page .method-sections p{font-size:16px;line-height:22px}
+ .value-page .method-sections>section>h3{font-size:18px!important;line-height:21px}
+ .value-page .method-sections :is(th,td){font-size:15px;line-height:21px}
+}
+/* Method is ready in its first paint; no off-screen entrance or delayed fitting. */
+.value-page dialog[data-side-panel]:has(.method-sections) .panel-shell{animation:none}
+
+.value-page .method-sections h3{break-after:avoid-column}

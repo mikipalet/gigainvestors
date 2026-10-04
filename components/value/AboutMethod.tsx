@@ -11,5 +11,5 @@ function MethodSummary({author,meta,calibration}:MethodData & {author?:string}) 
  return <article className="method-sections"><MethodDetails meta={meta} calibration={calibration}/>{sections.map(s=><section key={s.label}><h3>{s.label}</h3>{s.content}</section>)}</article>;
 }
 export function AboutMethod({author,meta=null,calibration=[]}:Partial<MethodData> & {author?:string}){
- const [open,setOpen]=useState(false);return <><button className="about-method" onClick={()=>setOpen(true)}>Method</button>{open&&<SidePanel title="Method" onClose={()=>setOpen(false)}><MethodSummary author={author} meta={meta} calibration={calibration}/></SidePanel>}</>;
+ const [open,setOpen]=useState(false);return <><button className="about-method" onClick={()=>setOpen(true)}>Method</button>{open&&<SidePanel kind="method" title="Method" onClose={()=>setOpen(false)}><MethodSummary author={author} meta={meta} calibration={calibration}/></SidePanel>}</>;
 }

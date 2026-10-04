@@ -56,7 +56,9 @@ export function compactNumber(value: number): string {
 }
 
 export function currencyAmount(number: string, currency = ''): string {
-  return currency==='USD'?`$${number}`:currency?`${currency} ${number}`:number;
+  const sign=/^[-−]/.test(number)?number[0]:'';
+  if(currency==='USD')return `${sign}$${number.slice(sign.length)}`;
+  return currency?`${currency} ${number}`:number;
 }
 
 export function compactMoney(value: number, currency = ''): string {

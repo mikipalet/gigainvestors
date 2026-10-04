@@ -22,6 +22,10 @@ successful onchain USDC transfer, exact payer balance deduction, and two
 identical replays without additional balance loss. It then verifies one Blob
 usage entry per transaction. Total test spend is 0.062 test USDC. Output contains
 only receipts, amounts, response hashes and non-sensitive usage metadata.
+If a later tier fails, preserve that output and set `X402_TEST_RESUME_FILE` to
+its path to skip already verified tiers. Only use your own completed evidence
+with the same payer and preview. Holdings returns the complete portfolio and
+does not accept a `limit` parameter.
 
 ## Credentials that stay inside Vercel
 
@@ -40,10 +44,27 @@ Production must use `X402_NETWORK=eip155:8453`, the owner's `X402_PAY_TO`, and
 `CDP_API_KEY_ID` / `CDP_API_KEY_SECRET`. With no facilitator override, the code
 selects CDP on mainnet and x402.org on Sepolia. Retain shared Redis and Blob
 credentials. A future production build uses Base's real USDC contract
-`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`; prices and endpoint contracts stay
-the same. Payment journals separate environment, network and recipient.
+`0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913` and EIP-712 name `USD Coin`.
+Sepolia uses `0x036CbD53842c5426634e7929541eC2318f3dCF7e` and name `USDC`.
+Both use domain version `2`; prices and endpoint contracts stay the same. Payment journals separate environment, network and recipient.
 
 Changing stored Production environment variables does not update an existing
 deployment. Build the approved branch with the Production environment when
 production deployment is separately authorized. Do not promote a Sepolia
 preview artifact and assume its embedded environment changes.
+
+## Verified 2026-10-04
+
+Application commit `0c5b26b`; preview: https://superinvestors-p0pfubvcc-mikipalets-projects.vercel.app
+
+| Paid request | USDC | Settlement transaction | Block |
+|---|---:|---|---:|
+| `/api/v1/investors?limit=1` | 0.002 | [0xe79eb26cf258a20f59da88a13ce943c28a5b591d3e56fe1240ab71f3cc38c07a](https://sepolia.basescan.org/tx/0xe79eb26cf258a20f59da88a13ce943c28a5b591d3e56fe1240ab71f3cc38c07a) | 47673709 |
+| `/api/v1/investors/BRK/holdings?quarter=2020Q1` | 0.010 | [0xa1f6b27b108a56569c878065893359e20bd9b51f5efc90de644cc3edd40fdc15](https://sepolia.basescan.org/tx/0xa1f6b27b108a56569c878065893359e20bd9b51f5efc90de644cc3edd40fdc15) | 47673742 |
+| `/api/v1/export?limit=1` | 0.050 | [0x48d1118ecb76d2df8af628f6a26bce2cf175d7d6581194831e539f76c824ed78](https://sepolia.basescan.org/tx/0x48d1118ecb76d2df8af628f6a26bce2cf175d7d6581194831e539f76c824ed78) | 47673753 |
+
+All three calls completed 402 → payment → 200. Each signed request was replayed
+twice with identical results and no extra charge. Exactly three Blob usage
+entries matched the receipts. Total spend: 0.062 test USDC. CDP authenticated
+mainnet support check returned 200 (unauthenticated control: 401). No mainnet
+spend or production deployment. Temporary payer key and env file were shredded.

@@ -54,9 +54,13 @@ async function main(){
  check(await rpc.getChainId()===84532,'RPC must be Base Sepolia');
  const balance=()=>rpc.readContract({address:usdc,abi,functionName:'balanceOf',args:[account.address]});
  const transport=process.env.X402_TEST_VERCEL==='1'?vercelFetch(origin):fetch;
- const tiers=[{path:'/api/v1/investors?limit=1',amount:'2000',route:'/investors'},{path:'/api/v1/investors/BRK/holdings?quarter=2020Q1&limit=1',amount:'10000',route:'/investors/{id}/holdings'},{path:'/api/v1/export?limit=1',amount:'50000',route:'/export'}];
- const transactions:string[]=[];
- for(const tier of tiers){
+ const tiers=[{path:'/api/v1/investors?limit=1',amount:'2000',route:'/investors'},{path:'/api/v1/investors/BRK/holdings?quarter=2020Q1',amount:'10000',route:'/investors/{id}/holdings'},{path:'/api/v1/export?limit=1',amount:'50000',route:'/export'}];
+ // Resume only fully verified tiers recorded before an unrelated later failure.
+ const completed=process.env.X402_TEST_RESUME_FILE?(await readFile(process.env.X402_TEST_RESUME_FILE,'utf8')).split('\n').filter(line=>line.startsWith('{')).map(line=>JSON.parse(line)).filter(row=>row.paid===200):[];
+ check(completed.length<=tiers.length&&completed.every((row,index)=>row.path===tiers[index].path&&row.amount===tiers[index].amount&&row.network===network&&row.replay==='identical'&&row.retries===2&&/^0x[\da-f]{64}$/i.test(row.transaction)),'Invalid completed-tier evidence');
+ const transactions:string[]=completed.map(row=>row.transaction);
+ for(const row of completed)console.log(JSON.stringify(row));
+ for(const tier of tiers.slice(completed.length)){
   const url=origin+tier.path,probe=await transport(url);
   check(probe.status===402,`Expected 402 for ${tier.route}; got ${probe.status}`);
   const required=JSON.parse(Buffer.from(probe.headers.get('PAYMENT-REQUIRED')!,'base64').toString());

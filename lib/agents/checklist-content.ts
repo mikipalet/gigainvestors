@@ -1,3 +1,4 @@
+import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import type {BrowserRow} from '@/lib/value/browser-view';
 import type {StoreMeta} from '@/lib/value/types';
 import {matchesView} from '@/lib/value/view-filter';
@@ -7,7 +8,7 @@ import {cell,number,percent} from './format';
 export function checklistMarkdown(rows: BrowserRow[],meta:StoreMeta|null,frame?:string,filter:Record<string,string>={}) {
  const url=frame?siteUrl('value',`/?q=${frame}`):siteUrl('value');
  const shown=rows.filter(r=>matchesView(r,filter));
- return [`# Buffett checklist${frame?` — ${frame}`:''}`,`Canonical: ${url}`,`Published as of: ${meta?.asOf??'see each company'}. ${frame?`Quarter end: ${quarterEnd(frame)}.`:''}`,
+ return [`# ${VALUE_PRODUCT_NAME}${frame?` — ${frame}`:''}`,`Canonical: ${url}`,`Published as of: ${meta?.asOf??'see each company'}. ${frame?`Quarter end: ${quarterEnd(frame)}.`:''}`,
  'Quality code order: understandable, moat, economics, management, accounting. P = pass; F = fail; C/U = unresolved; N = not applicable. Five passes alone do not establish a Buy now verdict.',
  ...(frame?['Historical reconstruction uses current restatements and today’s surviving index universe (survivorship bias). Subsequent price changes exclude dividends and are not annualized; overlapping cohorts are not an investable portfolio.']:[]),
  `Market scope: ${filter.markets==='all'?'all covered markets':'Western-accessible listings'}. ${shown.length} matching companies.`,

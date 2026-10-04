@@ -1,3 +1,4 @@
+import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {METHOD_COPY, METHOD_SECTIONS, METHOD_RULE_COPY} from '@/lib/value/method-content';
 import {METHOD_CHANGES, METHOD_VERSION} from '@/lib/value/method-version';
 import {metricLabels, formatMetric} from '@/lib/value/metric-labels';
@@ -28,7 +29,7 @@ export const glossary = [
  ['As of','The observation or publication date of a specific value; analysis, quote, filing and quarter dates can differ.'],
 ];
 export function methodMarkdown() {
- return [`# GigaInvestors method`, `Canonical: ${siteUrl('value','/method')}`, `Method version: ${METHOD_VERSION}`, METHOD_COPY[0],
+ return [`# ${VALUE_PRODUCT_NAME} method`, `Canonical: ${siteUrl('value','/method')}`, `Method version: ${METHOD_VERSION}`, METHOD_COPY[0],
  ...METHOD_SECTIONS.flatMap(([,title,copy])=>[`## ${title}`,copy]),
  '## Required discount',METHOD_COPY[1],'## Who sets the rules?',METHOD_COPY[2],
  '## Every numerical cutoff',METHOD_RULE_COPY[0],
@@ -36,5 +37,8 @@ export function methodMarkdown() {
  METHOD_RULE_COPY[1], '## Sources and uncertainty',...METHOD_COPY.slice(3),
  '## Method changes',...METHOD_CHANGES.map(c=>`- ${c.date} — ${c.version}: ${c.changelog}`),
  '## Glossary',...glossary.map(([name,copy])=>`- **${name}**: ${copy}`),
- ].join('\n\n');
+ ].join('\n\n')
+ // Agent copy uses plain debt terms for the same financial conditions.
+ .replaceAll('leverage flag', 'debt warning')
+ .replaceAll('elevated leverage', 'high debt levels');
 }

@@ -1,9 +1,10 @@
+import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {pageCatalog} from './catalog';
 import {methodMarkdown,methodSummary} from './method';
 import {siteUrl,markdownUrl,apiUrl,type Site} from './urls';
 export async function llmsText(site: Site,full=false) {
  const {index,meta,pages,valuePages}=await pageCatalog(site);
- const title=site==='value'?'GigaInvestors — Buffett checklist':'GigaInvestors';
+ const title=site==='value'?VALUE_PRODUCT_NAME:'GigaInvestors';
  const intro=[`# ${title}`,
  '> Published investor holdings and evidence-backed company checklists. Use dated observations, original filings and the method to interpret each result.',
  'Method in 10 lines:\n'+methodSummary.map((line,i)=>`${i+1}. ${line}`).join('\n'),

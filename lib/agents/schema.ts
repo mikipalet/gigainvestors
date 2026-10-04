@@ -1,3 +1,4 @@
+import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {siteUrl, companyUrl, markdownUrl, type Site} from './urls';
 import type {Dossier} from '@/lib/value/types';
 export const schemaJson = (data: unknown) => JSON.stringify(data).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
@@ -5,7 +6,7 @@ export function websiteSchema(site: Site) {
  const url=siteUrl(site), org=siteUrl('main','/#org');
  return {'@context':'https://schema.org','@graph':[
   {'@type':'Organization','@id':org,name:'GigaInvestors',url:siteUrl('main'),email:'hello@gigainvestors.com',sameAs:['https://github.com/mikipalet/gigainvestors']},
-  {'@type':'WebSite','@id':`${url}#website`,url,name:site==='value'?'GigaInvestors Buffett checklist':'GigaInvestors',inLanguage:'en',publisher:{'@id':org},potentialAction:{'@type':'SearchAction',target:{'@type':'EntryPoint',urlTemplate:`${siteUrl(site,'/search.md')}?q={search_term_string}`},'query-input':'required name=search_term_string'}},
+  {'@type':'WebSite','@id':`${url}#website`,url,name:site==='value'?VALUE_PRODUCT_NAME:'GigaInvestors',inLanguage:'en',publisher:{'@id':org},potentialAction:{'@type':'SearchAction',target:{'@type':'EntryPoint',urlTemplate:`${siteUrl(site,'/search.md')}?q={search_term_string}`},'query-input':'required name=search_term_string'}},
  ]};
 }
 export function datasetSchema(name: string, canonical: string, asOf?: string, description?: string) {

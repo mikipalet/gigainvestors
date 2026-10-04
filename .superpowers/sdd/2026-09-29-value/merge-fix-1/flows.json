@@ -1,0 +1,206 @@
+[
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL?q=2018Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL?q=2018%20Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "holdersWithinBand": true,
+    "drawerRows": 8,
+    "pagination": true,
+    "close": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/PLX.PA?q=2018Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/PLX.PA?q=2018%20Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "valueAndMethodNoAddedBrand": true,
+    "bottomButton": "GigaValue"
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL?q=2018Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL?q=2018%20Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "holdersWithinBand": true,
+    "drawerRows": 8,
+    "pagination": true,
+    "close": true
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/PLX.PA?q=2018Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/PLX.PA?q=2018%20Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "valueAndMethodNoAddedBrand": true,
+    "bottomButton": "GigaValue"
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL?q=2018Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL?q=2018%20Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "holdersWithinBand": true,
+    "drawerRows": 8,
+    "pagination": true,
+    "close": true
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/PLX.PA?q=2018Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/PLX.PA?q=2018%20Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "valueAndMethodNoAddedBrand": true,
+    "bottomButton": "GigaValue"
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL?q=2018Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL?q=2018%20Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "holdersWithinBand": true,
+    "drawerRows": 8,
+    "pagination": true,
+    "close": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/PLX.PA?q=2018Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/PLX.PA?q=2018%20Q3",
+    "current": true,
+    "noSlider": true,
+    "noAddedBrand": true,
+    "arrowsDoNotTravel": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "valueAndMethodNoAddedBrand": true,
+    "bottomButton": "GigaValue"
+  }
+]

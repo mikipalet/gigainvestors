@@ -109,7 +109,7 @@ export function Treemap<T>({ frames, q, render, label, floor, className, compact
             style={{ transform: `translate(${r.x}px,${r.y}px)`, width: r.w, height: r.h }}
           >
             <span className="text-[15px] font-semibold">+{restCount} more</span>
-            <span className="mt-1 text-[11px] opacity-50">{onMore ? "open company list" : "tap to show every one"}</span>
+            {r.w>180&&r.h>60&&<span className="mt-1 text-[13px] opacity-50">{onMore ? "open company list" : "tap to show every one"}</span>}
           </button>
         );
       })()}
@@ -146,7 +146,7 @@ export function Treemap<T>({ frames, q, render, label, floor, className, compact
         })}
       {hoverText && hover && (
         <div
-          className="pointer-events-none fixed z-[60] max-w-[min(90vw,320px)] bg-ink px-2 py-1 text-[11px] font-medium leading-tight text-paper"
+          className="pointer-events-none fixed z-[60] max-w-[min(90vw,320px)] bg-ink px-2 py-1 text-[13px] font-medium leading-tight text-paper"
           style={{
             ...(hover.x > (typeof window !== "undefined" ? window.innerWidth : 9999) - 300
               ? { right: (typeof window !== "undefined" ? window.innerWidth : 0) - hover.x + 12 }

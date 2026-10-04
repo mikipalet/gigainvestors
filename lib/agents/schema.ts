@@ -6,7 +6,7 @@ export function websiteSchema(site: Site) {
  const url=siteUrl(site), org=siteUrl('main','/#org');
  return {'@context':'https://schema.org','@graph':[
   {'@type':'Organization','@id':org,name:'GigaInvestors',url:siteUrl('main'),email:'hello@gigainvestors.com',sameAs:['https://github.com/mikipalet/gigainvestors']},
-  {'@type':'WebSite','@id':`${url}#website`,url,name:site==='value'?VALUE_PRODUCT_NAME:'GigaInvestors',inLanguage:'en',publisher:{'@id':org},potentialAction:{'@type':'SearchAction',target:{'@type':'EntryPoint',urlTemplate:`${siteUrl(site,'/search.md')}?q={search_term_string}`},'query-input':'required name=search_term_string'}},
+  {'@type':'WebSite','@id':`${url}#website`,url,name:site==='value'?VALUE_PRODUCT_NAME:'GigaInvestors',inLanguage:'en',publisher:{'@id':org},potentialAction:{'@type':'SearchAction',target:{'@type':'EntryPoint',urlTemplate:`${siteUrl('main','/search.md')}?q={search_term_string}`},'query-input':'required name=search_term_string'}},
  ]};
 }
 export function datasetSchema(name: string, canonical: string, asOf?: string, description?: string) {

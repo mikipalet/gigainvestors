@@ -27,6 +27,6 @@ export function BusinessSection({analysis,price=null}:{analysis:Analysis;price?:
   <dl className="memo-lines">{lines.map(line=><div key={line.question} data-question={line.question}>
    <dt>{MEMO_QUESTIONS[line.question-1]}</dt><dd><button onClick={()=>open(String(line.question))}>{line.tone&&<i className={`flag-dot ${line.tone}`} aria-hidden="true"/>}{line.answer}</button></dd>
   </div>)}</dl>
-  {selected&&Depth&&<SidePanel title="The business, in depth" wide onClose={()=>setSelected(null)}><Depth analysis={analysis} price={price} selected={selected}/></SidePanel>}
+  {selected&&Depth&&<SidePanel kind="business" title="The business, in depth" wide onClose={()=>setSelected(null)}><Depth analysis={analysis} price={price} selected={selected}/></SidePanel>}
  </section>;
 }

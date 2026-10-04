@@ -16,16 +16,16 @@ export function ChangeBadge({ activity, change, size }: { activity: Activity; ch
   const label = changeLabel(activity, change);
   if (!label) return null;
   const styles: Record<Activity, string> = {
-    new: "bg-buy text-paper",
-    add: "bg-paper text-buy shadow-[inset_0_0_0_1px_var(--buy)]",
-    reduce: "bg-paper text-sell shadow-[inset_0_0_0_1px_var(--sell)]",
-    sold: "bg-sell text-paper line-through",
+    new: "activity-badge activity-buy",
+    add: "activity-badge activity-buy",
+    reduce: "activity-badge activity-sell",
+    sold: "activity-badge activity-sold line-through",
     hold: "",
   };
   return (
     <span
       className={`inline-flex shrink-0 items-center rounded-[2px] px-[0.45em] pb-[0.3em] pt-[0.34em] font-semibold leading-none tracking-wide ${styles[activity]}`}
-      style={{ fontSize: size * 0.85 }}
+      style={{ fontSize: Math.max(13,size * 0.85) }}
     >
       {label}
     </span>

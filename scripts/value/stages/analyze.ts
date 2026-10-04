@@ -1,4 +1,5 @@
 import {publicBusiness} from '../../../lib/value/flags/public';
+import {cachedQualityQuarters} from '../../../lib/value/cached-quality-quarters';
 import {numericMemo} from '../../../lib/value/owner-memo';
 import judgementTrust from '../../../lib/value/judgement/trust.json';
 import { completeCachedYears, completeCachedSplits, completeCompanyMetadata } from '../../../lib/value/completeness/cached-years';
@@ -102,6 +103,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         fundamentals.years = completeCachedYears(company,fundamentals.years,readCorpusJson);
         fundamentals.integrity = checkIntegrity(fundamentals,{source:company.source,priceHistory});
         fundamentals.years = fundamentals.years.map(y=>({...y,peerCreditLossRate:peers.get(company.id)?.get(y.end)??y.peerCreditLossRate}));
+        fundamentals.qualityQuarters=cachedQualityQuarters(company.id,readCorpusJson);
         const shareInputs = company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares
           ? await esefShareInputs(company, usdRate)
           : currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);
@@ -118,6 +120,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
             description: company.description, sector: company.sector, industry: company.industry,
           }, fundamentals, report, sections, priceHistory, priceHistoryPending, shareInputs,
           bondYieldBucket: localBondYield === null ? null : Math.round(localBondYield * 1000),
+          qualityPeriods:fundamentals.qualityQuarters.filter(q=>q.filed<new Date().toISOString().slice(0,10)).map(q=>q.year.end),
           memoInputs: 1, flags:readCorpusJson(`flags/${company.id}.json`), judgementTrust, judgement: readCorpusJson(`judgement/${company.id}.json`), questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;

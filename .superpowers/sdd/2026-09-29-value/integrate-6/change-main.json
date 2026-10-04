@@ -1,0 +1,132 @@
+{
+ "live": "https://gigainvestors.com",
+ "candidate": "http://localhost:3066",
+ "sharedChromeChanged": [
+  "components/QuarterSlider.tsx",
+  "components/Search.tsx",
+  "components/value/BottomBar.tsx",
+  "components/value/SidePanel.tsx"
+ ],
+ "states": [
+  {
+   "size": "1728x970",
+   "state": "home",
+   "changedPixels": 0.1973,
+   "file": ".int6/change-main-release/1728x970-home.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "investor",
+   "changedPixels": 0.2043,
+   "file": ".int6/change-main-release/1728x970-investor.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "company",
+   "changedPixels": 0.2769,
+   "file": ".int6/change-main-release/1728x970-company.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "search",
+   "changedPixels": 0.0857,
+   "file": ".int6/change-main-release/1728x970-search.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "2018Q3",
+   "changedPixels": 0.2236,
+   "file": ".int6/change-main-release/1728x970-2018Q3.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "home",
+   "changedPixels": 0.1883,
+   "file": ".int6/change-main-release/2056x1180-home.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "investor",
+   "changedPixels": 0.1971,
+   "file": ".int6/change-main-release/2056x1180-investor.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "company",
+   "changedPixels": 0.3058,
+   "file": ".int6/change-main-release/2056x1180-company.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "search",
+   "changedPixels": 0.0819,
+   "file": ".int6/change-main-release/2056x1180-search.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "2018Q3",
+   "changedPixels": 0.2142,
+   "file": ".int6/change-main-release/2056x1180-2018Q3.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "home",
+   "changedPixels": 0.2141,
+   "file": ".int6/change-main-release/1440x800-home.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "investor",
+   "changedPixels": 0.2035,
+   "file": ".int6/change-main-release/1440x800-investor.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "company",
+   "changedPixels": 0.3382,
+   "file": ".int6/change-main-release/1440x800-company.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "search",
+   "changedPixels": 0.093,
+   "file": ".int6/change-main-release/1440x800-search.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "2018Q3",
+   "changedPixels": 0.2226,
+   "file": ".int6/change-main-release/1440x800-2018Q3.png"
+  },
+  {
+   "size": "390x844",
+   "state": "home",
+   "changedPixels": 0.2538,
+   "file": ".int6/change-main-release/390x844-home.png"
+  },
+  {
+   "size": "390x844",
+   "state": "investor",
+   "changedPixels": 0.2226,
+   "file": ".int6/change-main-release/390x844-investor.png"
+  },
+  {
+   "size": "390x844",
+   "state": "company",
+   "changedPixels": 0.3193,
+   "file": ".int6/change-main-release/390x844-company.png"
+  },
+  {
+   "size": "390x844",
+   "state": "search",
+   "changedPixels": 0.1321,
+   "file": ".int6/change-main-release/390x844-search.png"
+  },
+  {
+   "size": "390x844",
+   "state": "2018Q3",
+   "changedPixels": 0.2353,
+   "file": ".int6/change-main-release/390x844-2018Q3.png"
+  }
+ ]
+}

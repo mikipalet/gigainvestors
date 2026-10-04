@@ -10,6 +10,15 @@ describe('same-origin published bytes',()=>{
  it('preserves exact upstream bytes, including whitespace',async()=>{
   expect(await (await call('index/default.json','identity')).text()).toBe(' { "rows": [] }\n');
  });
+ it('serves quarter snapshots for historical investor verdicts',async()=>{
+  const rows=[['AAPL.US','PPPPP',1,false]];vi.mocked(readPublishedBytes).mockResolvedValue(new TextEncoder().encode(JSON.stringify(rows)));
+  const response=await call('history/2018Q3.json','identity');
+  expect(response.status).toBe(200);expect(await response.json()).toEqual(rows);
+  expect(readPublishedBytes).toHaveBeenCalledWith('history/2018Q3.json');
+  vi.mocked(readPublishedBytes).mockClear();
+  for(const file of ['history/2018Q5.json','history/private.json','history/../meta.json'])expect((await call(file)).status).toBe(404);
+  expect(readPublishedBytes).not.toHaveBeenCalled();
+ });
  it('preserves punctuation in published search shard names',async()=>{
   for(const file of ['search/a&.json','search/b-.json','search/c..json'])expect((await call(file)).status).toBe(200);
  });

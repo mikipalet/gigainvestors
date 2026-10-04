@@ -45,7 +45,7 @@ it('does not turn unclear evidence into a failure in the company list',async()=>
  const {ResultsTable}=await import('@/app/value/_components/ResultsTable');
  const row={id:'RACE.MI',n:'Ferrari',t:'UUUUU',historyYears:6,mc:null,st:'s',k:'operating'} as IndexRow;
  const html=(r:IndexRow)=>renderToStaticMarkup(createElement(ResultsTable,{entries:[{row:r,mos:null,quote:null}],sort:'name',direction:1,sortBy:()=>{}}));
- expect(html(row)).toContain('Not enough history yet');expect(html(row)).not.toContain('Fails quality');
+ expect(html(row)).toContain('6 annual periods');expect(html(row)).not.toContain('Fails quality');
  expect(html({...row,historyYears:10})).not.toContain('Quality evidence incomplete');
  expect(html({...row,t:'UUUUF'})).toContain('Fails quality');
 });

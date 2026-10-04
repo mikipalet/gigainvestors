@@ -1,0 +1,252 @@
+{
+ "live": "https://value.gigainvestors.com",
+ "candidate": "http://localhost:3066",
+ "sharedChromeChanged": [
+  "components/QuarterSlider.tsx",
+  "components/Search.tsx",
+  "components/value/BottomBar.tsx",
+  "components/value/SidePanel.tsx"
+ ],
+ "states": [
+  {
+   "size": "1728x970",
+   "state": "home",
+   "changedPixels": 0.1876,
+   "file": ".int6/change-value-release3/1728x970-home.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "search",
+   "changedPixels": 0.1181,
+   "file": ".int6/change-value-release3/1728x970-search.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "country-filter",
+   "changedPixels": 0.1862,
+   "file": ".int6/change-value-release3/1728x970-country-filter.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "all-companies",
+   "changedPixels": 0.165,
+   "file": ".int6/change-value-release3/1728x970-all-companies.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "method",
+   "changedPixels": 0.1965,
+   "file": ".int6/change-value-release3/1728x970-method.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "quarter-step",
+   "changedPixels": 0.1693,
+   "file": ".int6/change-value-release3/1728x970-quarter-step.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "2018Q3",
+   "changedPixels": 0.1778,
+   "file": ".int6/change-value-release3/1728x970-2018Q3.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "ko",
+   "changedPixels": 0.2931,
+   "file": ".int6/change-value-release3/1728x970-ko.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "ko-business",
+   "changedPixels": 0.32,
+   "file": ".int6/change-value-release3/1728x970-ko-business.png"
+  },
+  {
+   "size": "1728x970",
+   "state": "ko-valuation",
+   "changedPixels": 0.31,
+   "file": ".int6/change-value-release3/1728x970-ko-valuation.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "home",
+   "changedPixels": 0.1797,
+   "file": ".int6/change-value-release3/2056x1180-home.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "search",
+   "changedPixels": 0.1051,
+   "file": ".int6/change-value-release3/2056x1180-search.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "country-filter",
+   "changedPixels": 0.1835,
+   "file": ".int6/change-value-release3/2056x1180-country-filter.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "all-companies",
+   "changedPixels": 0.1573,
+   "file": ".int6/change-value-release3/2056x1180-all-companies.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "method",
+   "changedPixels": 0.2092,
+   "file": ".int6/change-value-release3/2056x1180-method.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "quarter-step",
+   "changedPixels": 0.1678,
+   "file": ".int6/change-value-release3/2056x1180-quarter-step.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "2018Q3",
+   "changedPixels": 0.1675,
+   "file": ".int6/change-value-release3/2056x1180-2018Q3.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "ko",
+   "changedPixels": 0.263,
+   "file": ".int6/change-value-release3/2056x1180-ko.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "ko-business",
+   "changedPixels": 0.3119,
+   "file": ".int6/change-value-release3/2056x1180-ko-business.png"
+  },
+  {
+   "size": "2056x1180",
+   "state": "ko-valuation",
+   "changedPixels": 0.2729,
+   "file": ".int6/change-value-release3/2056x1180-ko-valuation.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "home",
+   "changedPixels": 0.1942,
+   "file": ".int6/change-value-release3/1440x800-home.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "search",
+   "changedPixels": 0.1453,
+   "file": ".int6/change-value-release3/1440x800-search.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "country-filter",
+   "changedPixels": 0.1739,
+   "file": ".int6/change-value-release3/1440x800-country-filter.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "all-companies",
+   "changedPixels": 0.1966,
+   "file": ".int6/change-value-release3/1440x800-all-companies.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "method",
+   "changedPixels": 0.0294,
+   "file": ".int6/change-value-release3/1440x800-method.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "quarter-step",
+   "changedPixels": 0.1527,
+   "file": ".int6/change-value-release3/1440x800-quarter-step.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "2018Q3",
+   "changedPixels": 0.1918,
+   "file": ".int6/change-value-release3/1440x800-2018Q3.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "ko",
+   "changedPixels": 0.2748,
+   "file": ".int6/change-value-release3/1440x800-ko.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "ko-business",
+   "changedPixels": 0.2968,
+   "file": ".int6/change-value-release3/1440x800-ko-business.png"
+  },
+  {
+   "size": "1440x800",
+   "state": "ko-valuation",
+   "changedPixels": 0.2803,
+   "file": ".int6/change-value-release3/1440x800-ko-valuation.png"
+  },
+  {
+   "size": "390x844",
+   "state": "home",
+   "changedPixels": 0.2679,
+   "file": ".int6/change-value-release3/390x844-home.png"
+  },
+  {
+   "size": "390x844",
+   "state": "search",
+   "changedPixels": 0.213,
+   "file": ".int6/change-value-release3/390x844-search.png"
+  },
+  {
+   "size": "390x844",
+   "state": "country-filter",
+   "changedPixels": 0.2679,
+   "file": ".int6/change-value-release3/390x844-country-filter.png"
+  },
+  {
+   "size": "390x844",
+   "state": "all-companies",
+   "changedPixels": 0.2033,
+   "file": ".int6/change-value-release3/390x844-all-companies.png"
+  },
+  {
+   "size": "390x844",
+   "state": "method",
+   "changedPixels": 0.0119,
+   "file": ".int6/change-value-release3/390x844-method.png"
+  },
+  {
+   "size": "390x844",
+   "state": "quarter-step",
+   "changedPixels": 0.2562,
+   "file": ".int6/change-value-release3/390x844-quarter-step.png"
+  },
+  {
+   "size": "390x844",
+   "state": "2018Q3",
+   "changedPixels": 0.2588,
+   "file": ".int6/change-value-release3/390x844-2018Q3.png"
+  },
+  {
+   "size": "390x844",
+   "state": "ko",
+   "changedPixels": 0.1781,
+   "file": ".int6/change-value-release3/390x844-ko.png"
+  },
+  {
+   "size": "390x844",
+   "state": "ko-business",
+   "changedPixels": 0.2665,
+   "file": ".int6/change-value-release3/390x844-ko-business.png"
+  },
+  {
+   "size": "390x844",
+   "state": "ko-valuation",
+   "changedPixels": 0.1149,
+   "file": ".int6/change-value-release3/390x844-ko-valuation.png"
+  }
+ ]
+}

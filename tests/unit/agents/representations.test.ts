@@ -32,7 +32,7 @@ describe('Markdown representations',()=>{
   expect(companyMarkdown(d,null)).not.toContain('Share price:');
  });
  it('emits a sitemap index with same-origin child maps',()=>{
-  const xml=sitemapIndex('value');expect(xml).toContain('<sitemapindex');expect(xml).toContain('https://value.gigainvestors.com/sitemaps/quarters.xml');expect(xml).not.toContain('<loc>http://');
+  const xml=sitemapIndex('value');expect(xml).toContain('<sitemapindex');expect(xml).toContain('https://gigainvestors.com/sitemaps/quarters.xml');expect(xml).not.toContain('<loc>http://');
  });
 });
 

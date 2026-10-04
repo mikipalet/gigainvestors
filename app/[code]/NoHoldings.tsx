@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Face } from "@/components/Face";
+import { Face } from "@/components/investor-legacy/Face";
 import type { IndexInvestor } from "@/lib/types";
 
 export function NoHoldings({ meta }: { meta: IndexInvestor }) {

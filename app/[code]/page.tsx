@@ -29,9 +29,9 @@ export default async function Page(props: { params: Promise<{ code: string }> })
   const [index, data, holders] = await Promise.all([getIndex(), getInvestor(params.code), getHolderCounts()]);
   const meta = index?.investors.find((i) => i.code === params.code);
   if (!index || !meta) notFound();
-  if (!data || data.quarters.length === 0) return <main><link rel="alternate" type="text/markdown" href={pageAlternates("main",`/${params.code}`).types["text/markdown"]}/><NoHoldings meta={meta} /></main>;
+  if (!data || data.quarters.length === 0) return <main className="legacy-investor"><link rel="alternate" type="text/markdown" href={pageAlternates("main",`/${params.code}`).types["text/markdown"]}/><NoHoldings meta={meta} /></main>;
   return (
-    <main>
+    <main className="legacy-investor">
       <Investor wire={toWire(data)} slug={meta.slug} sketch={meta.sketch} holders={holders ?? {}} />
     </main>
   );

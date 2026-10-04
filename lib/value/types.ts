@@ -42,6 +42,7 @@ export interface PredecessorBasis {
 // One fiscal year, reporting currency, absolute units. null = not reported.
 // Sign convention: capex, buybacks, dividendsPaid, acquisitions are POSITIVE amounts spent.
 export interface Year {
+  provisional?: import('./quality-ltm').ProvisionalYear;
   predecessor?: PredecessorBasis;
   maintenanceCapexJudgement?: number;
   disclosedMaintenanceCapex?: number;
@@ -142,6 +143,7 @@ export interface Year {
 }
 
 export interface Fundamentals {
+  qualityQuarters?: import('./quality-ltm').QualityQuarter[];
   id: Id;
   currency: string; // reporting currency
   ttm?: Year | null; // four quarters, or annual + current H1 - comparative H1
@@ -165,6 +167,7 @@ export interface JevAnswer {
 }
 
 export interface TestOutcome {
+  provisional?: import('./quality-ltm').ProvisionalYear;
   judgement?: HumanTest;
   rawNumeric?: Result;
   rawMetrics?: Record<string, number | null>;
@@ -312,7 +315,7 @@ export interface IndexRow {
 export type PriceMap = Record<Id, [number, string, "seed"?]>; // close, fetch/close ISO date, optional derived-price flag; trading currency
 
 export type NumericOutcome = Omit<TestOutcome, "jev" | "result">;
-export interface NumericInput { years: Year[]; kind: Kind; industry?: string | null; priceHistoryPending?: boolean }
+export interface NumericInput { years: Year[]; kind: Kind; industry?: string | null; priceHistoryPending?: boolean; qualityLtm?:Year|null; qualityLtmHistory?:Year[]; confirmQualityLtm?:boolean }
 
 export type JevQuestion =
   | { type: "noul"; instructions: string; criteria?: { true: string; false: string } }
@@ -366,7 +369,7 @@ export interface SearchShard {
 }
 
 /** Historical snapshot; r is realized cumulative price return, expected is the contemporary model IRR. */
-export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric, basis?: {annual:number;ttm:string;expected:number|null}, outcome?: {date:string;lastTraded?:boolean}];
+export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric, basis?: {annual:number;ttm:string;expected:number|null;qualityLtm?:Partial<Record<TestKey,import('./quality-ltm').ProvisionalYear>>}, outcome?: {date:string;lastTraded?:boolean}];
 export interface HistorySummary {
   analysed: number;
   qualityPasses: number;

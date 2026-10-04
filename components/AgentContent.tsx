@@ -14,8 +14,8 @@ export function HomeContent({ index, quarter }: { index: Index; quarter?:string 
     <section className={hidden}>
       <h1>GigaInvestors</h1>
       <p>
-        {index.investors.length} famous investors and every quarterly 13F move since {index.quarters[0]}. Portfolios drawn as treemaps sized by dollar value; green
-        means buying, red means selling. Latest quarter: {q}. Data from quarterly 13F filings via dataroma.com.
+        {index.investors.length} famous investors and every quarterly 13F move since {index.quarters[0]}. Portfolios drawn as treemaps sized by dollar value; outlines
+        mean buying, hatching means selling. Latest quarter: {q}. Data from quarterly 13F filings via dataroma.com.
       </p>
       <h2>Investors by portfolio value, {q}</h2>
       <ul>

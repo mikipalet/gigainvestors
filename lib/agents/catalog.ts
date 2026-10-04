@@ -9,7 +9,7 @@ export async function pageCatalog(site: Site) {
  const value=[{title:VALUE_PRODUCT_NAME,url:siteUrl('value'),asOf:meta?.asOf},{title:'Method',url:siteUrl('value','/method'),asOf:meta?.asOf},{title:'Forward record',url:siteUrl('value','/forward'),asOf:meta?.asOf},
   ...companies.map(c=>({title:`${c.nameEn??c.n} (${c.id})`,url:companyUrl(c.id),asOf:meta?.asOf})),
   ...Object.keys(meta?.views?.quarters??{}).map(q=>({title:`Checklist ${q}`,url:siteUrl('value',`/?q=${q}`),asOf:meta?.asOf})),
-  ...Object.keys(meta?.views?.years??{}).map(y=>({title:`Checklist ${y}`,url:siteUrl('value',`/year/${y}`),asOf:meta?.asOf})),
+  ...Object.keys(meta?.views?.years??{}).map(y=>({title:`Checklist ${y}`,url:siteUrl('value',`/?q=${y}Q4`),asOf:meta?.asOf})),
  ];
  const main=[{title:'Investors',url:siteUrl('main'),asOf:index?.generatedAt},
   ...['about','privacy','munger','newsletter'].map(path=>({title:path,url:siteUrl('main',`/${path}`),asOf:index?.generatedAt})),
@@ -18,7 +18,7 @@ export async function pageCatalog(site: Site) {
   ...(index?.investors??[]).flatMap(i=>[{title:`${i.person} — ${i.firm}`,url:investorUrl(i.code),asOf:index?.generatedAt},...i.series.map(q=>({title:`${i.person} ${q.q}`,url:`${investorUrl(i.code)}?q=${encodeURIComponent(q.q)}`,asOf:index?.generatedAt}))]),
   ...tickers.map(t=>({title:t,url:stockUrl(t),asOf:index?.generatedAt})),
  ];
- return {index,meta,pages:site==='value'?value:main,valuePages:value};
+ return {index,meta,pages:[...new Map([...main,...value].map(p=>[p.url,p])).values()],valuePages:value};
 }
 export async function searchMarkdown(query: string,kind:'companies'|'investors'|'all'='all',limit=10) {
  const q=query.trim().toLowerCase();

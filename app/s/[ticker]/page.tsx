@@ -1,53 +1,35 @@
-import {pageAlternates} from '@/lib/agents/urls';
-import {schemaJson} from '@/lib/agents/schema';
-import { humanVerdict } from '@/lib/value/judgement/apply';
-import { QUALITY_TESTS } from '@/lib/value/types';
-import { T } from '@/lib/value/config';
-import { getDossier, getPrice } from "@/lib/value/store";
-import { comparableValuation } from "@/lib/value/site-valuation";
-import { priceState, priceValue } from "@/lib/value/presentation";
-import { notFound } from "next/navigation";
-import { getAllStockTickers, getIndex, getStock } from "@/lib/data";
-import { Stock } from "./Stock";
-
-export const dynamic = "force-static";
-export const dynamicParams = false;
-
-export async function generateStaticParams() {
-  const tickers = await getAllStockTickers();
-  // A renamed ticker is stored under its -OLD key; serve the plain name too, since that is
-  // what a reader types and what the newsletter links to.
-  const all = new Set(tickers.flatMap((t) => (t.endsWith("-OLD") ? [t, t.replace(/-OLD$/, "")] : [t])));
-  return [...all].map((ticker) => ({ ticker }));
+import {companyAlternates} from '@/lib/agents/urls';
+import {notFound} from 'next/navigation';
+import {getDossier,getPrice,getSearchCompany} from '@/lib/value/store';
+import {getIndex,getStock} from '@/lib/data';
+import {companyTicker,companyPath,dossierId} from '@/lib/company-route';
+import {StockContent} from '@/components/AgentContent';
+import {Company} from '@/components/company/Company';
+import {Stock} from './Stock';
+export const revalidate=86400;
+export const dynamicParams=true;
+export async function generateStaticParams(){
+ // Other canonical company pages are generated on first visit and cached.
+ return ['AAPL','PLX.PA','7203.JP','ADBE','GOOGL','KO','JPM','LULU'].map(ticker=>({ticker}));
 }
-
-export async function generateMetadata(props: { params: Promise<{ ticker: string }> }) {
-  const params = await props.params;
-  const ticker = decodeURIComponent(params.ticker).toUpperCase();
-  const stock = await getStock(ticker);
-  return {
-    title: stock ? `${stock.ticker} holders · GigaInvestors` : "GigaInvestors",
-    description: stock ? `Which famous investors hold ${stock.name} (${stock.ticker}), how much, since when, and whether they are buying or selling, quarter by quarter.` : undefined,
-    alternates: {canonical:pageAlternates('main',`/s/${encodeURIComponent(ticker)}`).canonical},
-  };
+export async function generateMetadata({params}:{params:Promise<{ticker:string}>}){
+ const ticker=companyTicker(decodeURIComponent((await params).ticker));
+ const [dossier,stock]=await Promise.all([getDossier(dossierId(ticker)),getStock(ticker)]);
+ const name=dossier?.company.name??stock?.name??ticker;
+ return {title:`${name} · GigaInvestors`,description:`${name}: business quality, price, and superinvestor holdings.`,alternates:companyAlternates(ticker)};
 }
-
-export default async function Page(props: { params: Promise<{ ticker: string }> }) {
-  const params = await props.params;
-  const ticker = decodeURIComponent(params.ticker).toUpperCase();
-  const [index, stock] = await Promise.all([getIndex(), getStock(ticker)]);
-  if (!index || !stock || stock.quarters.length === 0) notFound();
-  const investors = Object.fromEntries(index.investors.map((i) => [i.code, { slug: i.slug, person: i.person, sketch: i.sketch }]));
-  const dossier=await getDossier(`${ticker}.US`);
-  const quote=dossier?await getPrice(dossier.id,dossier.company.country):null;
-  const range=dossier?comparableValuation(dossier.valuation,dossier.company.currency):null;
-  const qualityPassing=dossier?QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='pass').length:0;
-  const price=priceState({price:quote?.[0]??null,mid:range?.perShare.mid??null,b:dossier?.b});
-  const verdict=dossier?(dossier.status==='insufficient_data'||dossier.historyCoverage&&dossier.historyCoverage.years<T.minYears?'Not enough history yet':humanVerdict(dossier,Boolean(dossier.b),Boolean(range&&quote),priceValue({price:quote?.[0]??null,mid:range?.perShare.mid??null}))):'';
-  return (
-    <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:schemaJson({"@context":"https://schema.org","@type":"Corporation",name:stock.name,tickerSymbol:stock.ticker})}} />
-      <Stock stock={stock} investors={investors} checklist={dossier?{id:dossier.id,verdict,detail:`${qualityPassing} of ${QUALITY_TESTS.length} quality tests pass; price check: ${price.state==='pass'?'passes':price.state==='unclear'?'unavailable':'does not pass'}.`}:undefined} />
-    </main>
-  );
+export default async function Page({params,searchParams}:{params:Promise<{ticker:string}>;searchParams?:Promise<{q?:string}>}){
+ const ticker=companyTicker(decodeURIComponent((await params).ticker));
+ const [dossier,stock,index]=await Promise.all([getDossier(dossierId(ticker)),getStock(ticker),getIndex()]);
+ if(!dossier&&(!stock||!stock.quarters.length))notFound();
+ const investors=Object.fromEntries((index?.investors??[]).map(i=>[i.code,{slug:i.slug,person:i.person,sketch:i.sketch}]));
+ if(dossier){
+  if(/[^\x00-\x7F]/.test(dossier.company.name)){
+   const listing=await getSearchCompany(dossier.id);
+   if(listing&&/^[\x00-\x7F]+$/.test(listing[1]))dossier.company={...dossier.company,name:listing[1]};
+  }
+  const quote=await getPrice(dossier.id,dossier.company.country);
+  return <Company dossier={dossier} quote={quote} stock={stock} investors={investors}/>;
+ }
+ return <><Stock stock={stock!} investors={investors}/></>;
 }

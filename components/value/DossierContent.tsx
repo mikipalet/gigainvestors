@@ -3,7 +3,7 @@ import {PriceStory} from './PriceStory';
 import {BusinessSection, JudgementLine} from './BusinessSection';
 import {humanVerdict} from '@/lib/value/judgement/apply';
 import {ThesisDisclosure} from './ThesisDisclosure';
-import { useEffect, useState, type ReactNode } from 'react';
+import { memo, useCallback, useEffect, useState, type ReactNode } from 'react';
 import { TileNumbers, FinancialHighlights, FilingSignals } from './DossierNumbers';
 import { T } from '@/lib/value/config';
 import { QUALITY_TESTS, type Dossier, type PriceMap, type TestKey, type TestOutcome } from '@/lib/value/types';
@@ -28,13 +28,23 @@ import { ownerReturn, cashCoveredReturnCopy, expectedReturnCopy, requiredReturnC
 import { bestWesternListing, westernTradingLabel } from '@/lib/value/western';
 import { sharePrice } from '@/lib/value/listing-details';
 
-export function DossierContent({ dossier, quote = null, children }: { dossier: Dossier; quote?: PriceMap[string] | null; children?: ReactNode }) {
+type DossierProps={dossier:Dossier;quote?:PriceMap[string]|null;children?:ReactNode;holders?:ReactNode};
+export function DossierContent(props:DossierProps){
+ const {dossier,quote=null}=props;
  const [panel,setPanel]=useState<TestKey|'valuation'|null>(null);
  const [thesisOpen,setThesisOpen]=useState(false);
  const [panels,setPanels]=useState<typeof import('./EvidencePanel')|null>(null);
- const Evidence=panels?.EvidencePanel??EvidencePanel, Valuation=panels?.ValuationPanel??ValuationPanel;
+ const Evidence=panels?.EvidencePanel??EvidencePanel,Valuation=panels?.ValuationPanel??ValuationPanel;
+ const warm=useCallback(()=>{if(!panels)void loadEvidence().then(setPanels);},[panels]);
+ useEffect(()=>{const timer=setTimeout(warm,800);return()=>clearTimeout(timer);},[warm]);
+ return <><DossierBody {...props} setPanel={setPanel} setThesisOpen={setThesisOpen} warm={warm}/>
+  {thesisOpen&&dossier.thesis&&<SidePanel title={dossier.thesis.changed?'Liability disclosure':'Current-year guidance'} onClose={()=>setThesisOpen(false)}><ThesisDisclosure thesis={dossier.thesis}/></SidePanel>}
+  {panel&&<SidePanel kind={panel==='valuation'?'price':panel} title={panel==='valuation'?'Valuation':testLabels[panel]} onClose={()=>setPanel(null)}>{panel==='valuation'||panel==='price'?<Valuation dossier={dossier} quote={quote}/>:<Evidence key={panel} dossier={dossier} test={dossier.tests[panel]}/>}</SidePanel>}
+ </>;
+}
+// Opening an overlay must not redraw the unchanged financial charts underneath it.
+const DossierBody=memo(function DossierBody({dossier,quote=null,children,holders,setPanel,setThesisOpen,warm}:DossierProps&{setPanel:(panel:TestKey|'valuation'|null)=>void;setThesisOpen:(open:boolean)=>void;warm:()=>void}){
  const {company,valuation,report}=dossier;
- useEffect(()=>{const timer=setTimeout(()=>void loadEvidence().then(setPanels),800);return()=>clearTimeout(timer);},[]);
  const comparable=comparableValuation(valuation,company.currency);
  const canShowPrice=Boolean(comparable&&quote);
  const requiredMos=dossier.requiredMos??T.price.requiredMos.stable;
@@ -43,13 +53,13 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
  const price:TestOutcome={key:'price',result:state.state==='pass'?'pass':state.state==='fail'?'fail':'unclear',numeric:'unclear',metrics:{},series:{},reasons:[],jev:[]};
  const tests=[...QUALITY_TESTS.map(key=>dossier.tests[key as keyof typeof dossier.tests]!),price];
  const years=Object.values(dossier.tests).flatMap(t=>Object.values(t.series).flat().map(p=>p[0]));
- const lastFiscalYear=years.length?Math.max(...years):undefined;
+ const lastFiscalYear=dossier.historyCoverage?.last??(years.length?Math.max(...years.filter(y=>!tests.some(t=>t.provisional?.fy===y))):undefined);
  const reportUrl=report.url?.startsWith('https://')?report.url:null;
  const insufficient=dossier.status==='insufficient_data';
  useEffect(()=>{const onKey=(e:KeyboardEvent)=>{
   if((e.target as HTMLElement).closest('input,textarea,select,[contenteditable="true"]')||e.ctrlKey||e.metaKey||e.altKey||document.querySelector('[role="combobox"]'))return;
   if(!insufficient&&/^[1-6]$/.test(e.key)&&(e.key!=='6'||canShowPrice)){e.preventDefault();setPanel([...QUALITY_TESTS,'price'][Number(e.key)-1] as TestKey);}
- };window.addEventListener('keydown',onKey);return()=>window.removeEventListener('keydown',onKey);},[insufficient,canShowPrice]);
+ };window.addEventListener('keydown',onKey);return()=>window.removeEventListener('keydown',onKey);},[insufficient,canShowPrice,setPanel]);
  const pct=(n:number|null|undefined)=>formatMetric({value:n??null,format:'pct'});
  const m=(key:Exclude<TestKey,'price'>,metric:string)=>dossier.tests[key].metrics[metric]??null;
  const deciding=Object.fromEntries(tests.map(test=>{const metric=primaryTileMetric(test,company.kind,dossier.tests.understandable.series.netIncome??dossier.series.netIncome);if(test.key==='price'){metric.value=ratio;metric.threshold=1-requiredMos;}return [test.key,metric];})) as Record<TestKey,ReturnType<typeof primaryTileMetric>>;
@@ -76,27 +86,27 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
  const failed=QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='fail');
 
  const shortHistory=dossier.historyCoverage && dossier.historyCoverage.years<T.minYears;
- const verdict=shortHistory?'Not enough history yet':humanVerdict(dossier,Boolean(dossier.b),canShowPrice,ratio);
+ const verdict=shortHistory?'Financial history':humanVerdict(dossier,Boolean(dossier.b),canShowPrice,ratio);
  const identity=<div className="one-identity"><ValueLink href="/" className="back-link">← Companies</ValueLink><div className="company-heading"><CompanyLogo src={company.logo} name={name}/><div><h1>{name}</h1><p title={tradingLabel??'Not easily buyable from Western brokers'}>{company.code} · {company.exchange}</p>{Boolean(company.indexes?.length)&&<p className="company-indexes">{company.indexes!.join(" · ")}</p>}</div></div>{children}</div>;
 
  if(insufficient){
   const count=dossier.historyCoverage?.years??new Set(years).size;
-  return <div className="one-dossier insufficient-dossier locks-scroll"><section className="dossier-band insufficient-band">{identity}<div data-testid="insufficient-data"><h2>Not enough history yet</h2><PriceStory dossier={dossier} quote={quote}/><p>{count} annual periods on record. Seven are required for the quality checklist.</p></div></section><BusinessSection analysis={dossier} price={quote?.[0]??null}/><FinancialHighlights dossier={dossier}/>{reportUrl&&<div className="dossier-source"><a href={reportUrl}>Original filing ↗</a></div>}</div>;
+  return <div className="one-dossier insufficient-dossier locks-scroll"><section className="dossier-band insufficient-band">{identity}<div data-testid="insufficient-data"><h2>Financial history</h2><PriceStory dossier={dossier} quote={quote}/><p>{count} annual periods on record.</p></div>{holders}</section><BusinessSection analysis={dossier} price={quote?.[0]??null}/><FinancialHighlights dossier={dossier}/>{reportUrl&&<div className="dossier-source"><a href={reportUrl}>Original filing ↗</a></div>}</div>;
  }
 
- return <div onPointerOver={()=>{if(!panels)void loadEvidence().then(setPanels);}} onFocus={()=>{if(!panels)void loadEvidence().then(setPanels);}} className="one-dossier locks-scroll" data-quality={qualityPass?'pass':failed.length?'fail':'unclear'}>
+ return <div onPointerOver={warm} onFocus={warm} className="one-dossier locks-scroll" data-quality={qualityPass?'pass':failed.length?'fail':'unclear'}>
   <section className="dossier-band">{identity}
    <div className="one-verdict" data-testid="verdict"><p className="plain-verdict" data-verdict={dossier.thesis?.changed?'Thesis disclosure':verdict}>{verdict}</p><PriceStory dossier={dossier} quote={quote}/>{<p className="verdict-explanation">{dossier.thesis?.changed?dossier.thesis.reason:qualityPass?'Passes all 5 quality tests.':failed.length?`${failed.length} quality ${failed.length===1?'test fails':'tests fail'}. A lower price would not fix the business.`:shortHistory?`Only ${dossier.historyCoverage!.years} years of filings; the checklist needs 7.`:''}</p>}
     {dossier.thesis?.liabilities?.filter(l=>l.marketValueRatio>.1).sort((a,b)=>b.marketValueRatio-a.marketValueRatio).slice(0,1).map((l,i)=><p key={i} className="thesis-guidance">{(l.marketValueRatio*100).toFixed(1)}% of market value{l.ownerEarningsRatio!==null?`; ${l.ownerEarningsRatio.toFixed(1)} years of owner earnings`:''}{l.basis==='claimed'?'. Claimed damages; not an established loss.':''}</p>)}
     {dossier.thesis?.guidance&&<p className="thesis-guidance">Owner earnings: {dossier.thesis.guidance.before.toLocaleString('en-US',{maximumFractionDigits:0})} → {dossier.thesis.guidance.after.toLocaleString('en-US',{maximumFractionDigits:0})} {valuation?.currency}, reflecting current-year guidance.</p>}
     {dossier.thesis&&<button className="thesis-source-button" onClick={()=>setThesisOpen(true)}>Read the disclosure ↗</button>}
    </div>
-   {referenceRow}
+   <div className="company-reference">{referenceRow}{holders}</div>
   </section>
   <BusinessSection analysis={dossier} price={quote?.[0]??null}/>
   <div className="dossier-checks">
    <section className="quality-section" aria-label="Five business quality tests"><h2>1. Is this a good business? </h2>
-    <div className="test-tiles">{tests.filter(test=>test.key!=='price').map((test,i)=>{const d=deciding[test.key];return <article key={test.key} className={`test-tile ${glyph(test)}`} data-testid={`tile-${test.key}`} data-metric={d.id}><button className="tile-open" aria-label={`Open ${testLabels[test.key]} evidence`} onClick={()=>setPanel(test.key)}><header><span><small>{i+1}</small> {testLabels[test.key]}</span><span><StatusGlyph result={glyph(test)} label={`${testLabels[test.key]}: ${glyph(test)}`}/>{test.result==='unclear'?'Wait':test.result==='na'?'—':test.result}</span></header></button><p className="tile-sentence">{tileSentence(test,d,company.kind)}</p>{test.key==='management'&&m('management','retainedEarnings')!==null&&m('management','marketCapGain')!==null?<MiniDollar currency={dossier.reportingCurrency??valuation?.currency??company.currency} fluid retained={m('management','retainedEarnings')} created={m('management','marketCapGain')} first={m('management','retainedStartFy')} last={m('management','retainedEndFy')}/>:d.series.filter(p=>p[1]!==null).length===0?<FilingSignals test={test}/>:<MiniSeries currency={dossier.reportingCurrency??valuation?.currency??company.currency} fluid height={135} series={d.series} label={d.chart} format={d.chartFormat==='index'?'count':d.chartFormat==='ratio'?'x':d.chartFormat??(test.key==='understandable'?'pct':d.format)} threshold={d.chartThreshold===null?undefined:d.chartThreshold??(test.key==='understandable'?undefined:d.threshold)} better={d.chartBetter??d.better}/>}<TileNumbers metric={d} test={test} currency={dossier.reportingCurrency??valuation?.currency??company.currency}/>{test.judgement?.override&&<div className="tile-assessment"><JudgementLine test={test} adjustments={dossier.judgement?.adjustments} currency={dossier.reportingCurrency??company.currency} onExplain={()=>setPanel(test.key)}/></div>}</article>;})}</div>
+    <div className="test-tiles">{tests.filter(test=>test.key!=='price').map((test,i)=>{const d=deciding[test.key];return <article key={test.key} className={`test-tile ${glyph(test)}`} data-testid={`tile-${test.key}`} data-metric={d.id}><button className="tile-open" aria-label={`Open ${testLabels[test.key]} evidence`} onClick={()=>setPanel(test.key)}><header><span><small>{i+1}</small> {testLabels[test.key]}</span><span><StatusGlyph result={glyph(test)} label={`${testLabels[test.key]}: ${glyph(test)}`}/>{test.result==='unclear'?'Wait':test.result==='na'?'—':test.result}</span></header></button><p className="tile-sentence">{tileSentence(test,d,company.kind)}</p>{test.key==='management'&&m('management','retainedEarnings')!==null&&m('management','marketCapGain')!==null?<MiniDollar provisional={test.provisional} currency={dossier.reportingCurrency??valuation?.currency??company.currency} fluid retained={m('management','retainedEarnings')} created={m('management','marketCapGain')} first={m('management','retainedStartFy')} last={m('management','retainedEndFy')}/>:d.series.filter(p=>p[1]!==null).length===0?<FilingSignals test={test}/>:<MiniSeries provisional={test.provisional} currency={dossier.reportingCurrency??valuation?.currency??company.currency} fluid height={135} series={d.series} label={d.chart} format={d.chartFormat==='index'?'count':d.chartFormat==='ratio'?'x':d.chartFormat??(test.key==='understandable'?'pct':d.format)} threshold={d.chartThreshold===null?undefined:d.chartThreshold??(test.key==='understandable'?undefined:d.threshold)} better={d.chartBetter??d.better}/>}<TileNumbers metric={d} test={test} currency={dossier.reportingCurrency??valuation?.currency??company.currency}/>{test.judgement?.override&&<div className="tile-assessment"><JudgementLine test={test} adjustments={dossier.judgement?.adjustments} currency={dossier.reportingCurrency??company.currency} onExplain={()=>setPanel(test.key)}/></div>}</article>;})}</div>
    </section>
    {comparable&&quote&&<section className="price-section" aria-label="Separate price check"><h2>2. Is the price low enough?</h2><article className={`test-tile price-card ${glyph(price)}`} data-testid="tile-price" data-metric="priceToMid" title={[framing.headline,valuation&&!comparable?`Price is in ${company.currency}, value in ${valuation.currency}, not compared`:'',quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:''].filter(Boolean).join(' · ')}><button className="tile-open" aria-label="Open valuation" onClick={()=>setPanel('valuation')}><header><span>Price · separate check</span><span><StatusGlyph result={glyph(price)} label={`Price: ${glyph(price)}`}/>{state.label}</span></header></button>
     {comparable&&<MiniPrice dossier={dossier} quote={quote} fluid height={240} minimumHeight={50}/>}
@@ -112,7 +122,5 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
   </div>
   <FinancialHighlights dossier={dossier}/>
   <div className="dossier-source"><span className="source-date" title={quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:undefined}>{quote?`Prices ${dateLabel(quote[1])}`:''}{lastFiscalYear?` · FY${lastFiscalYear}`:''}</span><span className="source-links">{reportUrl&&<a href={reportUrl}>Original filing ↗ · </a>}</span></div>
-  {thesisOpen&&dossier.thesis&&<SidePanel title={dossier.thesis.changed?'Liability disclosure':'Current-year guidance'} onClose={()=>setThesisOpen(false)}><ThesisDisclosure thesis={dossier.thesis}/></SidePanel>}
-  {panel&&<SidePanel title={panel==='valuation'?'Valuation':testLabels[panel]} onClose={()=>setPanel(null)}>{panel==='valuation'||panel==='price'?<Valuation dossier={dossier} quote={quote}/>:<Evidence key={panel} dossier={dossier} test={dossier.tests[panel]}/>}</SidePanel>}
  </div>;
-}
+});

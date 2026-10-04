@@ -1,0 +1,21 @@
+
+> superinvestors@0.1.0 test
+> vitest run tests/unit/value-main-layout.test.ts tests/unit/value-cross-surface.test.ts tests/unit/agents/unified-company.test.ts tests/unit/search-rank.test.ts tests/unit/value/integration-review.test.ts tests/unit/value/components.test.ts tests/unit/value/investment-nav.test.ts tests/unit/value/site-round1.test.ts
+
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-zy-int6
+
+ ✓ tests/unit/value/investment-nav.test.ts (21 tests) 537ms
+   ✓ routes known holdings through NAV at analysis and historical snapshot boundaries  507ms
+ ✓ tests/unit/value-cross-surface.test.ts (17 tests) 87ms
+ ✓ tests/unit/value/components.test.ts (3 tests) 69ms
+ ✓ tests/unit/value/site-round1.test.ts (4 tests) 44ms
+ ✓ tests/unit/agents/unified-company.test.ts (3 tests) 11ms
+ ✓ tests/unit/value-main-layout.test.ts (4 tests) 18ms
+ ✓ tests/unit/value/integration-review.test.ts (8 tests) 14ms
+ ✓ tests/unit/search-rank.test.ts (4 tests) 13ms
+
+ Test Files  8 passed (8)
+      Tests  64 passed (64)
+   Start at  18:26:42
+   Duration  4.92s (transform 1.37s, setup 0ms, collect 1.84s, tests 793ms, environment 2ms, prepare 582ms)

@@ -1,0 +1,621 @@
+{
+  "pass": true,
+  "changes": [
+    {
+      "id": "002840.KO",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "002840.KO",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "2 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "opMarginCv": {
+            "annual": 0.3576165812482472,
+            "ltm": 0.3303247677813552
+          }
+        }
+      }
+    },
+    {
+      "id": "BIIB.US",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "BIIB.US",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "pass",
+        "ltm": "fail",
+        "live": "pass",
+        "candidate": "fail",
+        "cause": [
+          "5 revenue declines in the last 10 years (informational)",
+          "operating margin variation exceeds 0.35"
+        ],
+        "metrics": {
+          "opMarginCv": {
+            "annual": 0.3104944335684042,
+            "ltm": 0.37321846108975865
+          }
+        }
+      }
+    },
+    {
+      "id": "103140.KO",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "103140.KO",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "3 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "opMarginCv": {
+            "annual": 0.3525999314464471,
+            "ltm": 0.34708690370314693
+          }
+        }
+      }
+    },
+    {
+      "id": "SYF.US",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "SYF.US",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "pass",
+        "ltm": "fail",
+        "live": "pass",
+        "candidate": "fail",
+        "cause": [
+          "4 revenue declines in the last 10 years (informational)",
+          "operating margin variation exceeds 0.35"
+        ],
+        "metrics": {
+          "revenueDeclines": {
+            "annual": 3,
+            "ltm": 4
+          },
+          "opMarginCv": {
+            "annual": 0.34617984297835,
+            "ltm": 0.3515441820886088
+          }
+        }
+      }
+    },
+    {
+      "id": "SWKS.US",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "SWKS.US",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "pass",
+        "ltm": "fail",
+        "live": "pass",
+        "candidate": "fail",
+        "cause": [
+          "6 revenue declines in the last 10 years",
+          "more than 5 revenue declines in ten years",
+          "operating margin variation exceeds 0.35"
+        ],
+        "metrics": {
+          "revenueDeclines": {
+            "annual": 5,
+            "ltm": 6
+          },
+          "opMarginCv": {
+            "annual": 0.2754893795825179,
+            "ltm": 0.3654766260137609
+          }
+        }
+      }
+    },
+    {
+      "id": "CSX.US",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "CSX.US",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "5 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "revenueDeclines": {
+            "annual": 6,
+            "ltm": 5
+          },
+          "opMarginCv": {
+            "annual": 0.10422429948623514,
+            "ltm": 0.08465382951583962
+          }
+        }
+      }
+    },
+    {
+      "id": "RAIL3.SA",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "RAIL3.SA",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "2 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "lossYears": {
+            "annual": 3,
+            "ltm": 2
+          },
+          "opMarginCv": {
+            "annual": 0.33851238892778795,
+            "ltm": 0.22877766487706924
+          }
+        }
+      }
+    },
+    {
+      "id": "2327.TW",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "2327.TW",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "2 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "opMarginCv": {
+            "annual": 0.36704337752410615,
+            "ltm": 0.32014371792961005
+          }
+        }
+      }
+    },
+    {
+      "id": "PWR.US",
+      "test": "moat",
+      "pass": true,
+      "counterfactual": {
+        "id": "PWR.US",
+        "test": "moat",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [],
+        "metrics": {
+          "roicMedian": {
+            "annual": 0.1417737995905298,
+            "ltm": 0.15105553505140143
+          },
+          "roicSecondLowest": {
+            "annual": 0.10995551326090114,
+            "ltm": 0.11760575262797261
+          },
+          "capexToRevenue": {
+            "annual": 0.025315556017592302,
+            "ltm": 0.024563433849476755
+          },
+          "totalRoicMedian": {
+            "ltm": 0.06467385876406309
+          }
+        }
+      }
+    },
+    {
+      "id": "2382.TW",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "2382.TW",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "1 revenue decline in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "revenueDeclines": {
+            "annual": 2,
+            "ltm": 1
+          },
+          "opMarginCv": {
+            "annual": 0.3630428032475848,
+            "ltm": 0.34217182317859784
+          }
+        }
+      }
+    },
+    {
+      "id": "VICI.US",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "VICI.US",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "1 revenue decline in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "opMarginCv": {
+            "annual": 0.36129628332141767,
+            "ltm": 0.1261125274209626
+          }
+        }
+      }
+    },
+    {
+      "id": "FIX.US",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "FIX.US",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "pass",
+        "ltm": "fail",
+        "live": "pass",
+        "candidate": "fail",
+        "cause": [
+          "0 revenue declines in the last 10 years (informational)",
+          "operating margin variation exceeds 0.35"
+        ],
+        "metrics": {
+          "opMarginCv": {
+            "annual": 0.3428487800369454,
+            "ltm": 0.4194254715616443
+          }
+        }
+      }
+    },
+    {
+      "id": "CFG-PH.US",
+      "test": "moat",
+      "pass": true,
+      "counterfactual": {
+        "id": "CFG-PH.US",
+        "test": "moat",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "Tangible common book per share",
+          "Parent-total proxy for preferred equity and common earnings"
+        ],
+        "metrics": {
+          "roeMedian": {
+            "annual": 0.11692195842227801,
+            "ltm": 0.12562833907276505
+          },
+          "roeSecondLowest": {
+            "annual": 0.08781512605042016,
+            "ltm": 0.09478047861315245
+          }
+        }
+      }
+    },
+    {
+      "id": "BMO.TO",
+      "test": "economics",
+      "pass": true,
+      "counterfactual": {
+        "id": "BMO.TO",
+        "test": "economics",
+        "end": "2026-04-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "Tangible common book per share",
+          "Parent-total proxy for preferred equity and common earnings"
+        ],
+        "metrics": {
+          "bookReturnCagr": {
+            "annual": 0.0526124974872797,
+            "ltm": 0.07069621614122124
+          },
+          "bookStartPerShare": {
+            "annual": 97.77784676999977,
+            "ltm": 82.32396027937303
+          },
+          "bookEndPerShare": {
+            "annual": 91.9383851330145,
+            "ltm": 89.7074170933245
+          }
+        }
+      }
+    },
+    {
+      "id": "112610.KO",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "112610.KO",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "2 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "revenueDeclines": {
+            "annual": 1,
+            "ltm": 2
+          },
+          "lossYears": {
+            "annual": 1,
+            "ltm": 0
+          },
+          "opMarginCv": {
+            "annual": 0.8011269069810398,
+            "ltm": 0.2880078708253388
+          }
+        }
+      }
+    },
+    {
+      "id": "DE.US",
+      "test": "economics",
+      "pass": true,
+      "counterfactual": {
+        "id": "DE.US",
+        "test": "economics",
+        "end": "2026-07-31",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [],
+        "metrics": {
+          "oeToNi": {
+            "annual": 0.8491253850284003,
+            "ltm": 0.8352739129981878
+          },
+          "ownerEarningsTotal": {
+            "annual": 30048000000,
+            "ltm": 28647389394.098846
+          },
+          "netIncomeTotal": {
+            "annual": 35387000000,
+            "ltm": 34297000000
+          },
+          "roiic": {
+            "annual": 0.1037995817673925,
+            "ltm": 1.000001
+          },
+          "nwcToRevenueTrend": {
+            "annual": 0.017816075494821657,
+            "ltm": -0.010665857518590824
+          },
+          "nwcToRevenueChange": {
+            "annual": 0.13557947504129775,
+            "ltm": 2.8318636694946164e-05
+          },
+          "nwcToRevenueEnd": {
+            "annual": 1.2261516376340973,
+            "ltm": 0.9765514447682585
+          }
+        }
+      }
+    },
+    {
+      "id": "CBOE.US",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "CBOE.US",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "2 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "opMarginCv": {
+            "annual": 0.361222738698884,
+            "ltm": 0.27934148706824197
+          }
+        }
+      }
+    },
+    {
+      "id": "3661.TW",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "3661.TW",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "3 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "lossYears": {
+            "annual": 1,
+            "ltm": 0
+          },
+          "opMarginCv": {
+            "annual": 0.5664359691312226,
+            "ltm": 0.2954359659974995
+          }
+        }
+      }
+    },
+    {
+      "id": "VRT.US",
+      "test": "economics",
+      "pass": true,
+      "counterfactual": {
+        "id": "VRT.US",
+        "test": "economics",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [],
+        "metrics": {
+          "oeToNi": {
+            "annual": 1.1979476861167002,
+            "ltm": 1.078220334846488
+          },
+          "ownerEarningsTotal": {
+            "annual": 2976900000,
+            "ltm": 4417900000
+          },
+          "netIncomeTotal": {
+            "annual": 2485000000,
+            "ltm": 4097400000
+          },
+          "roiic": {
+            "annual": 1.0400107771754654,
+            "ltm": 0.7512463514823835
+          },
+          "nwcToRevenueTrend": {
+            "annual": 0.01831473835964807,
+            "ltm": 0.005660772571256158
+          },
+          "nwcToRevenueChange": {
+            "annual": 0.11490810612647642,
+            "ltm": 0.006483766044713957
+          },
+          "nwcToRevenueEnd": {
+            "annual": 0.28475110602192927,
+            "ltm": 0.29717535486349106
+          }
+        }
+      }
+    },
+    {
+      "id": "ZAL.XETRA",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "ZAL.XETRA",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [
+          "2 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "opMarginCv": {
+            "annual": 0.3748549879984096,
+            "ltm": 0.337178202573897
+          }
+        }
+      }
+    },
+    {
+      "id": "185750.KO",
+      "test": "understandable",
+      "pass": true,
+      "counterfactual": {
+        "id": "185750.KO",
+        "test": "understandable",
+        "end": "2026-06-30",
+        "annual": "pass",
+        "ltm": "fail",
+        "live": "pass",
+        "candidate": "fail",
+        "cause": [
+          "1 revenue decline in the last 10 years (informational)",
+          "operating margin variation exceeds 0.35"
+        ],
+        "metrics": {
+          "opMarginCv": {
+            "annual": 0.3159865246661816,
+            "ltm": 0.35869422613230806
+          }
+        }
+      }
+    },
+    {
+      "id": "WMT.US",
+      "test": "moat",
+      "pass": true,
+      "counterfactual": {
+        "id": "WMT.US",
+        "test": "moat",
+        "end": "2026-07-31",
+        "annual": "fail",
+        "ltm": "pass",
+        "live": "fail",
+        "candidate": "pass",
+        "cause": [],
+        "metrics": {
+          "roicMedian": {
+            "annual": 0.14963451722205204,
+            "ltm": 0.16081531471798716
+          },
+          "capexToRevenue": {
+            "annual": 0.02236896483402076,
+            "ltm": 0.025229289433642024
+          },
+          "totalRoicMedian": {
+            "ltm": 0.09029061407520295
+          }
+        }
+      }
+    }
+  ]
+}

@@ -38,7 +38,7 @@ test('every published alias has a home dossier and returns 308',async({request})
 test('partial-decade companies retain neutral dossiers after completion',async({page})=>{
  for(const id of ['8411.jp','stlam.mi']){
   const response=await page.goto('/'+id);expect(response?.status()).toBe(200);
-  await expect(page.getByTestId('insufficient-data')).toContainText('Not enough history yet');
+  await expect(page.getByTestId('insufficient-data')).toContainText('Financial history');
   await expect(page.getByTestId('tile-price')).toHaveCount(0);
  }
 });

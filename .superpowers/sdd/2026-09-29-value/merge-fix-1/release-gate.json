@@ -1,0 +1,16 @@
+{
+  "investorPixelPairs": 20,
+  "differentInvestorPixels": 0,
+  "pageAndDrawerStates": 96,
+  "geometryFindings": 0,
+  "interactions": 296,
+  "maximumInteractionMs": 96,
+  "flowChecks": 40,
+  "liveComparisons": 32,
+  "unitTests": 2103,
+  "unitSkipped": 1,
+  "finalAffectedUnitTests": 64,
+  "build": "pass",
+  "sourceBase": "3c7ffc1",
+  "investorBaseline": "9ebf2c7"
+}

@@ -1,4 +1,5 @@
 import {refreshReturn,type ReturnPrices} from '../../../lib/value/since-return';
+import {cachedQualityQuarters} from '../../../lib/value/cached-quality-quarters';
 import {completeCachedSplits} from '../../../lib/value/completeness/cached-years';
 import {reconcilePriceSplits} from '../../../lib/value/price-history';
 import { alignHistoryShares } from '../../../lib/value/history-split-basis';
@@ -87,7 +88,7 @@ export function latestHistoryFiles(companies: import('../../../lib/value/types')
 }
 
 /** Read-only inputs. Every run gets a NEW directory; index.json marks completion. */
-export default async function historySnapshots(options: { only?:string[]; limit?:number; memoryOnly?:boolean; asOf?:string } = {}) {
+export default async function historySnapshots(options: { only?:string[]; limit?:number; memoryOnly?:boolean; asOf?:string; auditQualityLtm?:boolean } = {}) {
   const companies = loadCompanies(options).filter(c=>options.only||options.limit||(c.indexes===undefined||c.indexes.length)), asOf = options.asOf??new Date().toISOString().slice(0,10);
   const quarters=calendarQuarters(asOf);
   const space=statfsSync('/');if(space.bavail*space.bsize<5e9)throw Error('Disk guard: less than 5GB free');
@@ -106,6 +107,8 @@ export default async function historySnapshots(options: { only?:string[]; limit?
   }
   const frames: Record<string,SnapshotRow[]> = Object.fromEntries(quarters.map(q=>[q,[]]));
   const audit:Record<string,unknown>={};
+  const ltmChanges:Array<{id:string;quarter:string;test:string;annual:string;ltm:string;period:unknown}>=[];
+  const ltmSnapshots:Array<{id:string;quarter:string;annual:SnapshotRow;ltm:SnapshotRow;periods:Record<string,unknown>}>=[];
   let processed=0, fundamentalsCount=0;
   const coverage = { filingDates:0, fallbackDates:0, withReturn:0, withValue:0, failed:[] as string[] };
   for (const company of companies) {
@@ -122,6 +125,7 @@ export default async function historySnapshots(options: { only?:string[]; limit?
       const latestMonth = [...prices].filter(([m])=>m<asOf.slice(0,7)).sort(([a],[b])=>a.localeCompare(b)).at(-1);
       const latestPrice: [number,string] | null = quotes[company.id] ? [quotes[company.id][0],quotes[company.id][1]]
         : latestMonth ? [latestMonth[1],new Date(Date.UTC(Number(latestMonth[0].slice(0,4)),Number(latestMonth[0].slice(5,7)),0)).toISOString().slice(0,10)] : null;
+      f.qualityQuarters=cachedQualityQuarters(company.id,readCorpusJson);
       const interims=eodInterims(raw);
       const sec=readCorpusJson<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
       if(sec){const dates=secAnnualFilings(sec);for(const year of f.years){
@@ -140,6 +144,13 @@ export default async function historySnapshots(options: { only?:string[]; limit?
         const filedInterims=[...new Map([...interims,...secRows].map(p=>[p.end.slice(0,7),p])).values()];
         const result=snapshotForQuarter({company,fundamentals:f,quarter,prices,latestPrice,filedByPeriod,interims:filedInterims,judgement,bondYield:bonds[company.country]?.yield??null,fxRate,asOf});
         if (!result) continue;
+        if(options.auditQualityLtm&&result.qualityLtm){
+          const annual=snapshotForQuarter({company,fundamentals:{...f,qualityQuarters:[]},quarter,prices,latestPrice,filedByPeriod,interims:filedInterims,judgement,bondYield:bonds[company.country]?.yield??null,fxRate,asOf});
+          if(annual)ltmSnapshots.push({id:company.id,quarter,annual:annual.row,ltm:result.row,periods:Object.fromEntries(Object.entries(result.numeric).flatMap(([key,test])=>test.provisional?[[key,test.provisional]]:[]))});
+          if(annual)for(const key of ['understandable','moat','economics','management','accounting'] as const){
+            if(annual.numeric[key].numeric!==result.numeric[key].numeric)ltmChanges.push({id:company.id,quarter,test:key,annual:annual.numeric[key].numeric,ltm:result.numeric[key].numeric,period:result.numeric[key].provisional});
+          }
+        }
         const {row}=result;frames[quarter].push(row);
         if (filedByPeriod[target.end]) coverage.filingDates++; else coverage.fallbackDates++;
         if (row[2]!==null) coverage.withValue++;
@@ -162,7 +173,7 @@ export default async function historySnapshots(options: { only?:string[]; limit?
     sizes[quarter]={bytes:Buffer.byteLength(text),gzipBytes:gzipSync(text).byteLength,returns:rows.filter(r=>r[4]!==null).length};
     if(!options.memoryOnly)writeNewJson(`${root}/${quarter}.json`,rows);
   }
-  const report={root,companies:companies.length,fundamentals:fundamentalsCount,coverage,sizes,audit,candidateCounts:Object.fromEntries(Object.entries(frames).map(([q,rows])=>[q,rows.length]))};
+  const report={ltmChanges,ltmSnapshots,root,companies:companies.length,fundamentals:fundamentalsCount,coverage,sizes,audit,candidateCounts:Object.fromEntries(Object.entries(frames).map(([q,rows])=>[q,rows.length]))};
   if(!options.memoryOnly)writeNewJson(`${root}/report.json`,report);
   index.western = westernHistory(index, frames, new Set(companies.filter(c=>bestWesternListing(c)!==null).map(c=>c.id))).western;
   if(!options.memoryOnly)writeNewJson(`${root}/index.json`,index);

@@ -1,0 +1,355 @@
+{
+  "result": {
+    "count": 2708,
+    "changed": true
+  },
+  "before": 2708,
+  "after": 2708,
+  "frozen": 147,
+  "freezeIds": [
+    "000858.SHE",
+    "002236.SHE",
+    "0267.HK",
+    "086280.KO",
+    "1093.HK",
+    "1299.HK",
+    "138040.KO",
+    "139130.KO",
+    "2269.HK",
+    "2269.JP",
+    "2413.JP",
+    "267270.KO",
+    "300122.SHE",
+    "300124.SHE",
+    "3092.JP",
+    "3457.JP",
+    "3659.JP",
+    "4208.JP",
+    "4507.JP",
+    "4568.JP",
+    "4751.JP",
+    "5019.JP",
+    "5713.JP",
+    "5714.JP",
+    "600000.SHG",
+    "600089.SHG",
+    "600183.SHG",
+    "600426.SHG",
+    "600875.SHG",
+    "601066.SHG",
+    "601088.SHG",
+    "601169.SHG",
+    "601229.SHG",
+    "601788.SHG",
+    "601988.SHG",
+    "601998.SHG",
+    "688036.SHG",
+    "6963.JP",
+    "6971.JP",
+    "6988.JP",
+    "7012.JP",
+    "7201.JP",
+    "7267.JP",
+    "7269.JP",
+    "7936.JP",
+    "7951.JP",
+    "8015.JP",
+    "8253.JP",
+    "8697.JP",
+    "9009.JP",
+    "9020.JP",
+    "9101.JP",
+    "9202.JP",
+    "9433.JP",
+    "9532.JP",
+    "9735.JP",
+    "ACN.US",
+    "AIZ.US",
+    "AMCR.US",
+    "ANDR.VI",
+    "ATS.VI",
+    "AXP.US",
+    "BX.US",
+    "CAI.VI",
+    "CBG.LSE",
+    "COALINDIA.NSE",
+    "CPI.VI",
+    "CSAN3.SA",
+    "DBV.PA",
+    "DLTR.US",
+    "DVP.AU",
+    "EDP.LS",
+    "EDPR.LS",
+    "EGL.LS",
+    "EVN.VI",
+    "FDS.US",
+    "GALP.LS",
+    "GIL.TO",
+    "GJF.OL",
+    "GVR.IR",
+    "H4W.F",
+    "HBAN.US",
+    "HDB.US",
+    "HFG.LSE",
+    "HMSO.LSE",
+    "HTWS.LSE",
+    "IBKR.US",
+    "INVP.LSE",
+    "IPX.AU",
+    "IR5B.IR",
+    "ITC.NSE",
+    "IWG.LSE",
+    "JBL.US",
+    "JMT.LS",
+    "KIM.US",
+    "KRZ.IR",
+    "LEN-B.US",
+    "LHX.US",
+    "LNZ.VI",
+    "MEGACPO.MX",
+    "MGM.US",
+    "MI6.AU",
+    "MS.US",
+    "MTB.US",
+    "MU.US",
+    "NDSN.US",
+    "OMV.VI",
+    "ONGC.NSE",
+    "PDI.AU",
+    "PFD.LSE",
+    "PINFRA.MX",
+    "POS.VI",
+    "POST.VI",
+    "PTC.US",
+    "PYIYF.US",
+    "RA.MX",
+    "RENT3.SA",
+    "RF.US",
+    "SANB3.SA",
+    "SATS.OL",
+    "SBO.VI",
+    "SCHW.US",
+    "SHC.LSE",
+    "SHRIRAMFIN.NSE",
+    "SON.LS",
+    "SREN.SW",
+    "SSPG.LSE",
+    "STE.US",
+    "STR.VI",
+    "TFC.US",
+    "TMPV.NSE",
+    "TPL.US",
+    "TROW.US",
+    "TSCO.US",
+    "UHS.US",
+    "ULTA.US",
+    "UOB.F",
+    "USB.US",
+    "VER.VI",
+    "VOE.VI",
+    "VTRS.US",
+    "WFC.US",
+    "WIE.VI",
+    "WSM.US",
+    "WTW.US",
+    "WYNN.US",
+    "ZBH.US"
+  ],
+  "frozenDifferences": [],
+  "changes": [
+    {
+      "id": "CSX.US",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "112610.KO",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "BIIB.US",
+      "test": "understandable",
+      "before": "pass",
+      "after": "fail"
+    },
+    {
+      "id": "RAIL3.SA",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "2327.TW",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "VRT.US",
+      "test": "economics",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "103140.KO",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "VICI.US",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "SWKS.US",
+      "test": "understandable",
+      "before": "pass",
+      "after": "fail"
+    },
+    {
+      "id": "ZAL.XETRA",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "185750.KO",
+      "test": "understandable",
+      "before": "pass",
+      "after": "fail"
+    },
+    {
+      "id": "PWR.US",
+      "test": "moat",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "002840.KO",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "3661.TW",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "CFG-PH.US",
+      "test": "moat",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "WMT.US",
+      "test": "moat",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "SYF.US",
+      "test": "understandable",
+      "before": "pass",
+      "after": "fail"
+    },
+    {
+      "id": "2382.TW",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "DE.US",
+      "test": "economics",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "CBOE.US",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "BMO.TO",
+      "test": "economics",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "FIX.US",
+      "test": "understandable",
+      "before": "pass",
+      "after": "fail"
+    }
+  ],
+  "companyVerdicts": [
+    {
+      "id": "PWR.US",
+      "before": {
+        "quality": false,
+        "buy": false
+      },
+      "after": {
+        "quality": true,
+        "buy": false
+      }
+    },
+    {
+      "id": "CFG-PH.US",
+      "before": {
+        "quality": false,
+        "buy": false
+      },
+      "after": {
+        "quality": true,
+        "buy": true
+      }
+    },
+    {
+      "id": "WMT.US",
+      "before": {
+        "quality": false,
+        "buy": false
+      },
+      "after": {
+        "quality": true,
+        "buy": false
+      }
+    },
+    {
+      "id": "CBOE.US",
+      "before": {
+        "quality": false,
+        "buy": false
+      },
+      "after": {
+        "quality": true,
+        "buy": false
+      }
+    },
+    {
+      "id": "FIX.US",
+      "before": {
+        "quality": true,
+        "buy": false
+      },
+      "after": {
+        "quality": false,
+        "buy": false
+      }
+    }
+  ],
+  "consistency": {
+    "companies": 2708,
+    "rules": 13177,
+    "returns": 1934
+  }
+}

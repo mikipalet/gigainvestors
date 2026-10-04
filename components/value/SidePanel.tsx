@@ -13,6 +13,12 @@ const evidenceWidth=(test:string)=>EVIDENCE_WIDTHS[innerHeight<850?'short':inner
 function textFits(root:Element,content:Element):boolean{
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),range=document.createRange();
   const boundary=content.getBoundingClientRect();
+  const ancestors=new Map<Element,{box:DOMRect;clipX:boolean;clipY:boolean}>();
+  const geometry=(el:Element)=>{
+    let entry=ancestors.get(el);
+    if(!entry){const style=getComputedStyle(el);entry={box:el.getBoundingClientRect(),clipX:/hidden|clip/.test(style.overflowX),clipY:/hidden|clip/.test(style.overflowY)};ancestors.set(el,entry);}
+    return entry;
+  };
   while(walker.nextNode()){
     const node=walker.currentNode,el=node.parentElement;
     if(!node.textContent?.trim()||!el||el.closest('svg,.sr-only,[popover]:not(:popover-open)'))continue;
@@ -21,30 +27,31 @@ function textFits(root:Element,content:Element):boolean{
       if(!rect.width||!rect.height)continue;
       if(rect.bottom>boundary.bottom-8||rect.top<boundary.top||rect.left<boundary.left||rect.right>boundary.right)return false;
       for(let ancestor=el;ancestor!==content;ancestor=ancestor.parentElement!){
-        const style=getComputedStyle(ancestor),box=ancestor.getBoundingClientRect();
-        if(/hidden|clip/.test(style.overflowY)&&(rect.bottom>box.bottom+1||rect.top<box.top-1))return false;
-        if(/hidden|clip/.test(style.overflowX)&&(rect.right>box.right+1||rect.left<box.left-1))return false;
+        const {box,clipX,clipY}=geometry(ancestor);
+        if(clipY&&(rect.bottom>box.bottom+1||rect.top<box.top-1))return false;
+        if(clipX&&(rect.right>box.right+1||rect.left<box.left-1))return false;
       }
     }
   }
   return true;
 }
+const lowestText=(root:Element)=>Math.max(0,...[...root.querySelectorAll('p,li,td,th,h3,h4,a,small,figcaption,blockquote')].map(el=>el.getBoundingClientRect().bottom));
 const panelWidth=(share:number,min:number,max:number)=>Math.min(innerWidth,Math.round(Math.min(max,Math.max(min,innerWidth*share))/20)*20);
 function largestFont(dialog:HTMLElement,property:string,fits:()=>boolean,max:number):number{
   let low=13,high=max;
   dialog.style.setProperty(property,`${low}px`);
   if(!fits())return 0;
   if(dialog.style.setProperty(property,`${high}px`),fits())return high;
-  for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty(property,`${mid}px`);if(fits())low=mid;else high=mid;}
+  for(let i=0;i<3;i++){const mid=(low+high)/2;dialog.style.setProperty(property,`${mid}px`);if(fits())low=mid;else high=mid;}
   dialog.style.setProperty(property,`${low}px`);
   return low;
 }
 
 /** The portfolio sidebar pattern, with native modal focus containment and viewport-fitted evidence. */
-export function SidePanel({ title, onClose, children, wide = false, compact = false }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; compact?:boolean }) {
+export function SidePanel({ title, onClose, children, wide = false, compact = false, kind }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean; compact?:boolean; kind?:string }) {
   const [closing,setClosing]=useState(false);
   const [contentReady,setContentReady]=useState(false);
-  // Match live: paint the modal and close control before mounting its heavy body.
+  // Keep modal focus/close responsive while the chart or table body mounts.
   useEffect(()=>{
     let active=true,timer:ReturnType<typeof setTimeout>|undefined;
     const frame=requestAnimationFrame(()=>{timer=setTimeout(()=>{if(active)setContentReady(true);},0);});
@@ -58,12 +65,18 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
   useLayoutEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
     const dialog = ref.current;
+    if(dialog&&innerWidth>=768){
+      const article=dialog.querySelector<HTMLElement>('.evidence-layout');
+      if(article){dialog.style.width=`${evidenceWidth(article.dataset.test??'price')}px`;dialog.dataset.readingColumns='1';dialog.style.setProperty('--reading-font','13px');}
+      if(dialog.querySelector('.owner-memo-depth'))dialog.style.width=`${panelWidth(.35,560,620)}px`;
+    }
     dialog?.showModal();
     return () => { dialog?.close(); queueMicrotask(() => previous?.focus()); };
   }, []);
   useLayoutEffect(() => {
     const dialog=ref.current;
     if(!dialog||!contentReady)return;
+    let stillFits:(()=>boolean)|undefined;
     const fit=()=>{
       if(innerWidth<768){
         dialog.style.width='';delete dialog.dataset.readingColumns;delete dialog.dataset.compactMemo;
@@ -72,6 +85,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
         if(method)method.style.columnCount='';if(business){business.style.gridTemplateColumns='';business.style.columnCount='';}
         return;
       }
+      dialog.querySelector<HTMLElement>('.drawer-chart[data-expanded]')?.style.removeProperty('height');
       // Every fit starts from the same state, so a refit with unchanged content lands on the same size.
       dialog.style.width='';delete dialog.dataset.readingColumns;delete dialog.dataset.compactMemo;
       for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font'])dialog.style.removeProperty(name);
@@ -107,10 +121,11 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       const business=dialog.querySelector<HTMLElement>('.owner-memo-depth');
       if(business){
         // One width per screen for every company (owner rule); only columns and type size adapt to the memo.
-        dialog.style.width=`${panelWidth(.35,560,680)}px`;
+        dialog.style.width=`${panelWidth(.35,560,620)}px`;
         const available=business.parentElement!.clientHeight-16;
         const fits=()=>business.scrollHeight<=available&&business.scrollWidth<=business.clientWidth+1&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1)&&textFits(business,business.parentElement!);
         dialog.style.setProperty('--memo-leading',String(innerHeight<850?1.2:1.35));
+        stillFits=fits;
         let best={columns:3,font:13,used:0};
         for(const compact of [false,true]){
           if(compact)dialog.dataset.compactMemo='true';
@@ -135,11 +150,12 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       const clipping=[...article.querySelectorAll<HTMLElement>('*')].filter(el=>!el.closest('svg')&&getComputedStyle(el).overflowY!=='visible');
       const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1)&&clipping.every(el=>el.scrollHeight<=el.clientHeight+1)&&content.scrollHeight<=content.clientHeight+1&&textFits(article,content);
       // The width is fixed; the inner layout takes whichever column count allows the larger type (two only on wide drawers).
-      let best={columns:'1',font:0};
+      let best={columns:'1',font:0,used:0};
       for(const columns of width>=480?['1','2']:['1']){
         dialog.dataset.readingColumns=columns;
-        const font=largestFont(dialog,'--reading-font',fits,20);
-        if(fits()&&font>best.font+.5)best={columns,font};
+        const font=largestFont(dialog,'--reading-font',fits,24);
+        const used=lowestText(article)-article.getBoundingClientRect().top;
+        if(fits()&&(used>best.used+24||Math.abs(used-best.used)<24&&font>best.font))best={columns,font,used};
       }
       dialog.dataset.readingColumns=best.columns;dialog.style.setProperty('--reading-font',`${best.font||13}px`);
     };
@@ -154,11 +170,18 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     const settle=async()=>{
       if(settling){again=true;return;}
       settling=true;
-      do{again=false;watch();for(let round=0;round<6&&active;round++){fit();const before=size();await frames();if(size()===before)break;}}while(again&&active);
+      do{again=false;watch();for(let round=0;round<6&&active;round++){fit();const before=size();await frames();if(size()===before||stillFits?.())break;}}while(again&&active);
+      const article=dialog.querySelector<HTMLElement>('.evidence-layout');
+      const chart=article?.querySelector<HTMLElement>('.drawer-chart');
+      if(active&&innerWidth>=768&&dialog.dataset.readingColumns==='1'&&article&&chart?.querySelector('[data-testid=threshold-series]')){
+        const spare=article.parentElement!.getBoundingClientRect().bottom-lowestText(article)-32;
+        if(spare>48){chart.dataset.expanded='true';chart.style.setProperty('height',`${chart.getBoundingClientRect().height+spare}px`,'important');await frames();}
+      }
       lastSize=size();settling=false;
       if(active)delete dialog.dataset.fitting;
     };
     if(fitted)dialog.dataset.fitting='true';else fit();
+    // Let the modal header and close control paint before the measured text fit.
     let started=false,startQueued=false;const start=()=>{if(startQueued||!active)return;startQueued=true;requestAnimationFrame(()=>setTimeout(()=>{if(active){started=true;void settle();}},0));};
     const fallback=setTimeout(start,1500);
     document.fonts.ready.then(()=>{clearTimeout(fallback);start();});
@@ -182,6 +205,6 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     if(e.shiftKey&&(document.activeElement===first||document.activeElement===e.currentTarget)){e.preventDefault();last?.focus();}
     else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}
   }} onCancel={e=>{e.preventDefault();close();}} onClick={e => { if (e.target === e.currentTarget) close(); }}>
-    <div className="panel-shell"><header onPointerDown={e=>{if(e.pointerType!=="touch")return;start.current={x:e.clientX,y:e.clientY};e.currentTarget.setPointerCapture(e.pointerId);}} onPointerUp={e=>{if(start.current&&e.clientY-start.current.y>70&&Math.abs(e.clientX-start.current.x)<70)close();start.current=null;}}><i className="sheet-handle" aria-hidden="true"/><h2>{title}</h2><button aria-label="Close panel" onClick={close}>Close <span aria-hidden="true">×</span></button></header><div className="panel-content" aria-busy={!contentReady}>{contentReady?children:null}</div></div>
+    <div className="panel-shell"><header onPointerDown={e=>{if(e.pointerType!=="touch")return;start.current={x:e.clientX,y:e.clientY};e.currentTarget.setPointerCapture(e.pointerId);}} onPointerUp={e=>{if(start.current&&e.clientY-start.current.y>70&&Math.abs(e.clientX-start.current.x)<70)close();start.current=null;}}><i className="sheet-handle" aria-hidden="true"/><h2>{title}</h2><button aria-label="Close panel" onClick={close}>Close <span aria-hidden="true">×</span></button></header><div className="panel-content" aria-busy={!contentReady}>{contentReady?children:kind==='business'?<div className="owner-memo-depth"/>:kind==='holders'?<div className="company-holders-panel"/>:kind?<div className="evidence-layout" data-test={kind}/>:null}</div></div>
   </dialog>;
 }

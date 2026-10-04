@@ -5,16 +5,16 @@ import {InvestorContent} from "@/components/AgentContent";
 
 import Link from "next/link";
 import { useMemo } from "react";
-import { effectiveActivity } from "@/components/ChangeBadge";
-import { Face } from "@/components/Face";
-import { PositionTile, type PositionTileData } from "@/components/PositionTile";
-import { QuarterSlider } from "@/components/QuarterSlider";
-import { Sparkline } from "@/components/Sparkline";
-import { Treemap, type Frame } from "@/components/Treemap";
-import { formatDelta, formatMoney, formatPct, plural } from "@/lib/format";
+import { effectiveActivity } from "@/components/investor-legacy/ChangeBadge";
+import { Face } from "@/components/investor-legacy/Face";
+import { PositionTile, type PositionTileData } from "@/components/investor-legacy/PositionTile";
+import { QuarterSlider } from "@/components/investor-legacy/QuarterSlider";
+import { Sparkline } from "@/components/investor-legacy/Sparkline";
+import { Treemap, type Frame } from "@/components/investor-legacy/Treemap";
+import { formatDelta, formatMoney, formatPct, plural } from "@/components/investor-legacy/format";
 import { prevQ } from "@/lib/quarters";
 import { fromWire, type InvestorWire } from "@/lib/wire";
-import { useQuarter } from "@/lib/use-quarter";
+import { useQuarter } from "@/components/investor-legacy/use-quarter";
 
 interface Props {
   wire: InvestorWire;

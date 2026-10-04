@@ -1,0 +1,32 @@
+[
+  {
+    "component": "Face",
+    "identicalTo9ebf2c7ExceptImportPaths": true
+  },
+  {
+    "component": "PositionTile",
+    "identicalTo9ebf2c7ExceptImportPaths": true
+  },
+  {
+    "component": "ChangeBadge",
+    "identicalTo9ebf2c7ExceptImportPaths": true
+  },
+  {
+    "component": "Treemap",
+    "identicalTo9ebf2c7ExceptImportPaths": true
+  },
+  {
+    "component": "Search",
+    "identicalTo9ebf2c7ExceptImportPaths": true
+  },
+  {
+    "component": "QuarterSlider",
+    "renderedMarkupByteIdentical": true,
+    "difference": "urgent selected marker + transitioned portfolio update only"
+  },
+  {
+    "component": "Sparkline",
+    "renderedMarkupByteIdentical": true,
+    "difference": "urgent selected marker + transitioned portfolio update only"
+  }
+]

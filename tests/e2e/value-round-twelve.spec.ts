@@ -13,7 +13,7 @@ for(const [width,height] of sizes){
   await page.setViewportSize({width,height});
   for(const id of ['race.mi','eni.mi']){
    await page.goto('/'+id,{waitUntil:'networkidle'});
-   const verdict=page.locator('.plain-verdict');await expect(verdict).toHaveText('Not enough history yet');
+   const verdict=page.locator('.plain-verdict');await expect(verdict).toHaveText('Financial history');
    expect(await verdict.evaluate(e=>getComputedStyle(e).backgroundColor)).toBe('rgb(232, 231, 223)');
    await expect(page.locator('.company-about')).toHaveCount(0);
    const logo=page.locator('.company-heading .company-logo img');await expect(logo).toBeVisible();

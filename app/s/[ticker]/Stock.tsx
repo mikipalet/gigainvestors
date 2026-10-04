@@ -8,25 +8,17 @@ import Link from "next/link";
 import { useMemo } from "react";
 import { effectiveActivity } from "@/components/ChangeBadge";
 import { HolderTile, type HolderTileData } from "@/components/HolderTile";
-import { QuarterSlider } from "@/components/QuarterSlider";
 import { StackedBars } from "@/components/StackedBars";
 import { Treemap, type Frame } from "@/components/Treemap";
 import { formatDelta, formatMoney, formatPct, plural } from "@/lib/format";
 import { prevQ } from "@/lib/quarters";
 import type { StockData } from "@/lib/types";
-import { useQuarter } from "@/lib/use-quarter";
 
 type Meta = Record<string, { slug: string; person: string; sketch: boolean }>;
 
 export function Stock({ stock, investors, checklist }: { stock: StockData; investors: Meta; checklist?: {id:string;verdict:string;detail:string} }) {
   const quarters = useMemo(() => stock.quarters.map((x) => x.q), [stock]);
-  const lastHeld = useMemo(() => {
-    for (let i = stock.quarters.length - 1; i >= 0; i--) {
-      if (stock.quarters[i].holders.some((h) => h.activity !== "sold")) return stock.quarters[i].q;
-    }
-    return quarters[quarters.length - 1];
-  }, [stock, quarters]);
-  const [q, setQ] = useQuarter(quarters, lastHeld);
+  const q = quarters[quarters.length - 1];
   const current = stock.quarters.find((x) => x.q === q) ?? stock.quarters[stock.quarters.length - 1];
   const before = stock.quarters.find((x) => x.q === prevQ(current.q));
 
@@ -79,14 +71,15 @@ export function Stock({ stock, investors, checklist }: { stock: StockData; inves
   const qIndex = quarters.indexOf(current.q);
 
   return (
-    <>
+    <main className="company-page">
       <AgentQuarterMetadata canonical={stockUrl(stock.ticker)} quarter={q}/>
       <StockContent stock={stock} people={Object.fromEntries(Object.entries(investors).map(([code,meta])=>[code,meta.person]))} quarter={q}/>
-      <div className="locks-scroll flex h-[calc(100dvh-84px)] sm:h-[calc(100dvh-48px)] w-screen flex-col md:flex-row">
+      <div className="locks-scroll flex h-[calc(100dvh-70px)] sm:h-[calc(100dvh-52px)] w-screen flex-col md:flex-row">
         <aside className="flex shrink-0 flex-col p-4 md:w-[28%] md:min-w-[240px] md:max-w-[420px] md:p-6 md:pr-4">
-          <Link href={`/?q=${encodeURIComponent(q)}`} className="text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
+          <Link href={`/?q=${encodeURIComponent(q)}`} className="legacy-brand text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
             GigaInvestors
           </Link>
+
           <div className="mt-2 text-[13px] leading-snug md:mt-6">
             <div className="text-[26px] font-semibold leading-none md:text-[34px]">{stock.ticker}</div>
             <div className="mt-1 opacity-55">{stock.name}</div>
@@ -109,14 +102,13 @@ export function Stock({ stock, investors, checklist }: { stock: StockData; inves
                 </span>
               )}
             </div>
-            {checklist&&<p className="mt-1 text-[12px] opacity-60"><a href={`https://value.gigainvestors.com/${checklist.id.toLowerCase()}`} title={checklist.detail}>{VALUE_PRODUCT_NAME}: {checklist.verdict} →</a></p>}
             <div className="mt-2 flex items-center gap-4">
-              <span className="inline-flex items-center gap-1.5 text-buy">
-                <span className="add-strong inline-block h-[10px] w-[14px] rounded-[1px]" />
+              <span className="inline-flex items-center gap-1.5 text-ink">
+                <span className="activity-buy inline-block h-[10px] w-[14px] rounded-[1px]" />
                 <span className="font-semibold">{buying}</span> buying
               </span>
-              <span className="inline-flex items-center gap-1.5 text-sell">
-                <span className="hatch-light inline-block h-[10px] w-[14px] rounded-[1px] shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--sell)_45%,transparent)]" />
+              <span className="inline-flex items-center gap-1.5 text-ink">
+                <span className="activity-sell inline-block h-[10px] w-[14px] rounded-[1px] shadow-[inset_0_0_0_1px_color-mix(in_oklab,var(--ink)_45%,transparent)]" />
                 <span className="font-semibold">{selling}</span> selling
               </span>
               {unchanged > 0 && (
@@ -126,7 +118,7 @@ export function Stock({ stock, investors, checklist }: { stock: StockData; inves
                 </span>
               )}
             </div>
-            <div className="mt-1.5 hidden text-[11px] opacity-45 md:block">Percentages are the change in shares held, not a return.</div>
+            <div className="mt-1.5 hidden text-[13px] opacity-45 md:block">Percentages are the change in shares held, not a return.</div>
           </div>
           <div className="mt-5 h-24 md:h-auto md:min-h-0 md:flex-1 md:pb-2">
             <StackedBars
@@ -137,13 +129,12 @@ export function Stock({ stock, investors, checklist }: { stock: StockData; inves
               caption="investors holding"
               format={formatMoney}
               people={Object.fromEntries(Object.entries(investors).map(([c, m]) => [c, m.person]))}
-              onSeek={(i) => setQ(quarters[i])}
+              onSeek={() => {}}
             />
           </div>
         </aside>
         <Treemap frames={frames} q={current.q} label={(d) => `${d.person} · ${d.money} · ${d.pct} of portfolio${d.since ? ` · since ${d.since}` : ""}`} floor={0.015} className="min-h-0 w-full flex-1" render={(d, tier, rect) => <HolderTile d={d} tier={tier} rect={rect} q={q} />} />
       </div>
-      <QuarterSlider quarters={quarters} q={current.q} onChange={setQ} />
-    </>
+    </main>
   );
 }

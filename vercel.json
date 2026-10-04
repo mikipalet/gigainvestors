@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npx tsx scripts/agent-api/preview-readiness.ts && next build",
+  "buildCommand": "npx tsx scripts/agent-api/preview-readiness.ts && next build --webpack",
   "headers": [
     {
       "source": "/(.*)",

@@ -26,7 +26,7 @@ export function run({ years, kind }: NumericInput) {
   const change = start === null || end === null ? null : end - start;
   return outcome({ key: "economics", metrics: { oeToNi: conversion, consolidatedCashConversion:Number(consolidated), ownerEarningsTotal:complete?ownerTotal:null, netIncomeTotal:complete?incomeTotal:null, roiic: incremental, nwcToRevenueTrend: trend, nwcToRevenueChange: change, nwcToRevenueEnd: end },
     reasons:consolidated?['Cash conversion uses consolidated free cash flow after all capital expenditure and consolidated net income (informational).']:[],
-    series: { ownerEarnings: oe, nwcToRevenue: working }, checks: [
+    series: { ownerEarnings: oe, netIncome: ys.map(y=>[y.fy,y.netIncome]), nwcToRevenue: working }, checks: [
       { core: true, pass: conversionPass, data: "owner earnings cash conversion", reason: "owner earnings cash conversion below threshold" },
       { pass: incremental === null ? null : incremental >= T.economics.roiic, data: "incremental invested capital return", reason: "incremental invested capital return below threshold" },
       ...(kind === "operating" ? [{ pass: change === null || end === null ? null : end <= 0 || change <= T.economics.maxNwcRise + Number.EPSILON, data: "three-year working capital averages at both ends of ten years", reason: `working capital as a share of revenue rose more than ${T.economics.maxNwcRise * 100}pp and ends positive` }] : []),

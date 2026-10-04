@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
+import {PointerTooltip} from "./PointerTooltip";
 import type { StockQuarter } from "@/lib/types";
 
 interface Props {
@@ -16,10 +17,12 @@ interface Props {
 
 const SHADES = [0.5, 0.36, 0.25, 0.16];
 const OTHERS = 0.09;
+const observationNumber = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
 
 // Dollars held per quarter, stacked by investor. Hover names the segment, drag travels.
 export function StackedBars({ quarters, prices, labels, index, caption, format, people, onSeek }: Props) {
   const ref = useRef<SVGSVGElement>(null);
+  const [pointer,setPointer]=useState<{x:number;y:number}|null>(null);
   const [hover, setHover] = useState<{ qi: number; code: string | null } | null>(null);
 
   // Bars stack shares held (value ÷ price) so height means accumulation, not price.
@@ -109,10 +112,10 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
 
   return (
     <div className="flex h-full min-h-0 flex-col pb-2">
-      <ul className="sr-only" aria-label={`${caption}: all observations`}>{columns.map((column,i)=><li key={i}>{labels[i]}: {column.segs.map(segment=>`${people[segment.code]??(segment.code==='__others'?'Other investors':segment.code)} ${segment.value.toLocaleString('en-US',{maximumFractionDigits:2})} ${unit==='$'?'USD':unit}`).join('; ')}{prices[i]!=null?`; share price USD ${prices[i]}`:''}</li>)}</ul>
-      <div className="mb-1 flex items-baseline justify-between gap-2 text-[11px] leading-none">
+      <ul className="sr-only" aria-label={`${caption}: all observations`}>{columns.map((column,i)=><li key={i}>{labels[i]}: {column.segs.map(segment=>`${people[segment.code]??(segment.code==='__others'?'Other investors':segment.code)} ${observationNumber.format(segment.value)} ${unit==='$'?'USD':unit}`).join('; ')}{prices[i]!=null?`; share price USD ${prices[i]}`:''}</li>)}</ul>
+      <div className="mb-1 flex items-baseline justify-between gap-2 text-[13px] leading-none">
         <span className="shrink-0 opacity-60">{unit === "shares" ? "shares held · price" : caption}</span>
-        <span className={`truncate ${hover ? "font-semibold" : "opacity-60"}`}>{readout}</span>
+        <span className={`text-right ${hover ? "font-semibold" : "opacity-60"}`}>{readout}</span>
       </div>
       <div className="relative min-h-0 flex-1">
       <svg
@@ -129,9 +132,10 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
         onPointerMove={(e) => {
           const l = locate(e.clientX, e.clientY);
           setHover(l);
+          setPointer({x:e.clientX,y:e.clientY});
           if (e.buttons > 0) onSeek(l.qi);
         }}
-        onPointerLeave={() => setHover(null)}
+        onPointerLeave={() => {setHover(null);setPointer(null);}}
       >
         {hover && (
           <rect x={hover.qi * band} y="0" width={band} height={H} fill="var(--ink)" opacity="0.07" />
@@ -158,23 +162,6 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
             );
           });
         })}
-        <g className="hidden sm:block">
-        {(() => {
-          const last = columns[index] ?? columns[columns.length - 1];
-          let acc = 0;
-          return last.segs
-            .filter((seg) => seg.code !== "__others" && seg.value / max > 0.06)
-            .map((seg) => {
-              const yMid = (acc + seg.value / 2) / max;
-              acc += seg.value;
-              return (
-                <text key={seg.code} x={Math.min(W - 0.6, (index + 1) * band - 0.6)} y={H - yMid * (H - 1) + 1} fontSize="3.2" textAnchor="end" fill="var(--paper)" stroke="var(--ink)" strokeWidth="0.9" paintOrder="stroke" style={{ fontFamily: "inherit" }}>
-                  {(people[seg.code] ?? seg.code).split(" ").pop()}
-                </text>
-              );
-            });
-        })()}
-        </g>
         {pricePath && (
           <>
             <path d={pricePath} fill="none" stroke="var(--paper)" strokeWidth="8" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
@@ -193,13 +180,14 @@ export function StackedBars({ quarters, prices, labels, index, caption, format, 
       {endPct && lastKnown >= 0 && index >= columns.length - 1 && (
         <div className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `${endPct.left}%`, top: `${endPct.top}%` }}>
           <div className="h-[7px] w-[7px] rounded-full bg-ink shadow-[0_0_0_2px_var(--paper)]" />
-          <div className="absolute right-[10px] top-1/2 -translate-y-1/2 whitespace-nowrap bg-paper px-1 text-[10px] font-semibold leading-none">
+          <div className="absolute right-[10px] top-1/2 -translate-y-1/2 whitespace-nowrap bg-paper px-1 text-[13px] font-semibold leading-none">
             ${prices[lastKnown]! >= 100 ? Math.round(prices[lastKnown]!) : prices[lastKnown]!.toFixed(1)}
           </div>
         </div>
       )}
       </div>
-      <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[10px] leading-none opacity-55">
+      {hover&&pointer&&<PointerTooltip x={pointer.x} y={pointer.y}>{readout}</PointerTooltip>}
+      <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[13px] leading-none opacity-55">
         <span>{labels[0]?.slice(0, 4)} · peak {fmt(max)}</span>
         <span>{priceMax > 0 ? `price up to $${Math.round(priceMax)}` : ""} · {labels[labels.length - 1]?.slice(0, 4)}</span>
       </div>

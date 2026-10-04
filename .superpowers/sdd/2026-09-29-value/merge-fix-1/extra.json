@@ -1,0 +1,106 @@
+[
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/about",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/newsletter",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/privacy",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/unsubscribe",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/munger",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/not-a-real-page",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/GRFS",
+    "originalBrandLayoutIdentical": true,
+    "oldHref": "/?q=2026%20Q1",
+    "newHref": "/?q=2026%20Q2",
+    "reason": "Company pages now use the latest filing, rather than the last quarter with a live holding"
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/GRFS?q=2018Q3",
+    "today": true,
+    "noSlider": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/about",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/newsletter",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/privacy",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/unsubscribe",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/munger",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/not-a-real-page",
+    "originalBrandIdentical": true
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/GRFS",
+    "originalBrandLayoutIdentical": true,
+    "oldHref": "/?q=2026%20Q1",
+    "newHref": "/?q=2026%20Q2",
+    "reason": "Company pages now use the latest filing, rather than the last quarter with a live holding"
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/GRFS?q=2018Q3",
+    "today": true,
+    "noSlider": true
+  }
+]

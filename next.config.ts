@@ -2,7 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  distDir: process.env.NEXT_DIST_DIR ?? '.next',
+  images: { qualities: [45,60,75], formats: ["image/avif", "image/webp"] },
+  distDir: '.next',
   poweredByHeader: false,
   async headers() {
     return [

@@ -1,0 +1,4034 @@
+[
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "All companies ↗",
+    "issues": [],
+    "max": 64,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 64,
+        "processing": 1,
+        "delay": 4.099999904632568
+      },
+      {
+        "name": "pointerup",
+        "duration": 64,
+        "processing": 0.19999980926513672,
+        "delay": 5.800000190734863
+      },
+      {
+        "name": "click",
+        "duration": 64,
+        "processing": 33.299999713897705,
+        "delay": 6.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "+11 more ↗",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 0.8999996185302734,
+        "delay": 1.6000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.19999980926513672,
+        "delay": 3.700000286102295
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 22.600000381469727,
+        "delay": 4
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "Next closest ↗",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1,
+        "delay": 1.799999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0,
+        "delay": 3.700000286102295
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 21.700000286102295,
+        "delay": 4
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "+236 more ↗",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.8999996185302734,
+        "delay": 1
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.20000028610229492,
+        "delay": 2.799999713897705
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 17.899999618530273,
+        "delay": 3
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value",
+    "name": "Method",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.5,
+        "delay": 1.8000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0,
+        "delay": 3.200000286102295
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 17.799999713897705,
+        "delay": 3.3000001907348633
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value?q=2018Q3",
+    "name": "All companies ↗",
+    "issues": [],
+    "max": 56,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 56,
+        "processing": 1,
+        "delay": 3.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 56,
+        "processing": 0.09999990463256836,
+        "delay": 5.300000190734863
+      },
+      {
+        "name": "click",
+        "duration": 56,
+        "processing": 23.5,
+        "delay": 5.599999904632568
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value?q=2018Q3",
+    "name": "+3 more ↗",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.8000001907348633,
+        "delay": 1.0999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 3
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 22.699999809265137,
+        "delay": 3.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value?q=2018Q3",
+    "name": "Next closest ↗",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5,
+        "delay": 0.6000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 1.3999996185302734
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 7.599999904632568,
+        "delay": 1.5
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value?q=2018Q3",
+    "name": "+203 more ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.8999996185302734,
+        "delay": 1.6000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 3.5999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 17.5,
+        "delay": 3.8999996185302734
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/value?q=2018Q3",
+    "name": "Method",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 1.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 2.5999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 17.799999713897705,
+        "delay": 2.8000001907348633
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "Open all 22 holders",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5999999046325684,
+        "delay": 2
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 3.0999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 12.900000095367432,
+        "delay": 3.3000001907348633
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "In depth ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.9000000953674316,
+        "delay": 1.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.20000028610229492,
+        "delay": 3.4000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 11.899999618530273,
+        "delay": 3.6000003814697266
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.7000002861022949,
+        "delay": 2.3999996185302734
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0,
+        "delay": 4
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 11.599999904632568,
+        "delay": 4.099999904632568
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.6000003814697266,
+        "delay": 2.3999996185302734
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 3.8999996185302734
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 17.899999618530273,
+        "delay": 4
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.39999961853027344,
+        "delay": 1.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.10000038146972656,
+        "delay": 2.1999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 7.699999809265137,
+        "delay": 2.3000001907348633
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.6000003814697266,
+        "delay": 2.3999996185302734
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 3.9000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 10,
+        "delay": 4.099999904632568
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.7999997138977051,
+        "delay": 2.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.2999997138977051,
+        "delay": 4.099999904632568
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 12.299999713897705,
+        "delay": 4.5
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.7999997138977051,
+        "delay": 2.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 4
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 14.099999904632568,
+        "delay": 4.199999809265137
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/AAPL",
+    "name": "Method",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 2.1999998092651367
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 3.1999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 11.200000286102295,
+        "delay": 3.299999713897705
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/KO",
+    "name": "Open all 9 holders",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.7000002861022949,
+        "delay": 1.9000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.19999980926513672,
+        "delay": 3
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 18.09999990463257,
+        "delay": 3.299999713897705
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/KO",
+    "name": "In depth ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.8999996185302734,
+        "delay": 1.6000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.6000003814697266,
+        "delay": 3.5
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 14.299999713897705,
+        "delay": 4.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/KO",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.3000001907348633,
+        "delay": 1.3999996185302734
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 2.0999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 6,
+        "delay": 2.1999998092651367
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/KO",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1,
+        "delay": 2.9000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.19999980926513672,
+        "delay": 5.200000286102295
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 23.699999809265137,
+        "delay": 5.600000381469727
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/KO",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.6999998092651367,
+        "delay": 2.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 4.199999809265137
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 11.599999904632568,
+        "delay": 4.300000190734863
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/KO",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.7999997138977051,
+        "delay": 2.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 4.199999809265137
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 11.899999618530273,
+        "delay": 4.400000095367432
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/KO",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.8000001907348633,
+        "delay": 2.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 4.200000286102295
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 12.599999904632568,
+        "delay": 4.400000095367432
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/KO",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5999999046325684,
+        "delay": 2.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 4
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 13.299999713897705,
+        "delay": 4.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/KO",
+    "name": "Method",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 2
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0,
+        "delay": 3.1999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 6.900000095367432,
+        "delay": 3.1999998092651367
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "In depth ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 1.0999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 2.0999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 12.400000095367432,
+        "delay": 2.4000000953674316
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5999999046325684,
+        "delay": 2.6000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 4.100000381469727
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 12.300000190734863,
+        "delay": 4.300000190734863
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 1,
+        "delay": 2.200000286102295
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 4
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 14.099999904632568,
+        "delay": 4.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 2.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 3.6999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 11.899999618530273,
+        "delay": 3.9000000953674316
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.2999997138977051,
+        "delay": 1.700000286102295
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.10000038146972656,
+        "delay": 2.299999713897705
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 6.699999809265137,
+        "delay": 2.4000000953674316
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.5999999046325684,
+        "delay": 2.6999998092651367
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 3.9000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 11.299999713897705,
+        "delay": 4
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5999999046325684,
+        "delay": 2.3000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 3.5999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 12.5,
+        "delay": 3.6999998092651367
+      }
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "route": "/s/7203.JP",
+    "name": "Method",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.5999999046325684,
+        "delay": 1.9000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.10000038146972656,
+        "delay": 3
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 10.099999904632568,
+        "delay": 3.1000003814697266
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "All companies ↗",
+    "issues": [],
+    "max": 80,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 80,
+        "processing": 0.9000000953674316,
+        "delay": 4.900000095367432
+      },
+      {
+        "name": "pointerup",
+        "duration": 80,
+        "processing": 0.09999990463256836,
+        "delay": 6.200000286102295
+      },
+      {
+        "name": "click",
+        "duration": 80,
+        "processing": 36.30000019073486,
+        "delay": 6.400000095367432
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "+11 more ↗",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1.1999998092651367,
+        "delay": 1.8000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.09999990463256836,
+        "delay": 4.400000095367432
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 23.59999990463257,
+        "delay": 4.600000381469727
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "Next closest ↗",
+    "issues": [],
+    "max": 56,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 56,
+        "processing": 1.200000286102295,
+        "delay": 1.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 56,
+        "processing": 0.09999990463256836,
+        "delay": 4
+      },
+      {
+        "name": "click",
+        "duration": 56,
+        "processing": 22.899999618530273,
+        "delay": 4.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "+226 more ↗",
+    "issues": [],
+    "max": 56,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 56,
+        "processing": 1.200000286102295,
+        "delay": 1.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 56,
+        "processing": 0,
+        "delay": 4
+      },
+      {
+        "name": "click",
+        "duration": 56,
+        "processing": 25.59999990463257,
+        "delay": 4.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value",
+    "name": "Method",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.5,
+        "delay": 1.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 2.5
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 12.199999809265137,
+        "delay": 2.5999999046325684
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value?q=2018Q3",
+    "name": "All companies ↗",
+    "issues": [],
+    "max": 64,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 64,
+        "processing": 0.8000001907348633,
+        "delay": 5.400000095367432
+      },
+      {
+        "name": "pointerup",
+        "duration": 64,
+        "processing": 0.19999980926513672,
+        "delay": 6.599999904632568
+      },
+      {
+        "name": "click",
+        "duration": 64,
+        "processing": 31.700000286102295,
+        "delay": 6.899999618530273
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value?q=2018Q3",
+    "name": "+3 more ↗",
+    "issues": [],
+    "max": 56,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 56,
+        "processing": 1.299999713897705,
+        "delay": 1.700000286102295
+      },
+      {
+        "name": "pointerup",
+        "duration": 56,
+        "processing": 0.09999990463256836,
+        "delay": 4.900000095367432
+      },
+      {
+        "name": "click",
+        "duration": 56,
+        "processing": 26.199999809265137,
+        "delay": 5.099999904632568
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value?q=2018Q3",
+    "name": "Next closest ↗",
+    "issues": [],
+    "max": 56,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 56,
+        "processing": 1.1999998092651367,
+        "delay": 1.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 56,
+        "processing": 0,
+        "delay": 3.6999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 56,
+        "processing": 20.399999618530273,
+        "delay": 3.8000001907348633
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value?q=2018Q3",
+    "name": "+194 more ↗",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.40000009536743164,
+        "delay": 0.7000002861022949
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0,
+        "delay": 1.5
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 16,
+        "delay": 1.5999999046325684
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/value?q=2018Q3",
+    "name": "Method",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.3000001907348633,
+        "delay": 1
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0,
+        "delay": 1.6999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 10,
+        "delay": 1.6999998092651367
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "Open all 22 holders",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1.1999998092651367,
+        "delay": 3
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.19999980926513672,
+        "delay": 5
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 26,
+        "delay": 5.5
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "In depth ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 0.9000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 2.1000003814697266
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 7.299999713897705,
+        "delay": 2.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 1.0999999046325684,
+        "delay": 3.0999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.10000038146972656,
+        "delay": 5.099999904632568
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 15,
+        "delay": 5.300000190734863
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.6999998092651367,
+        "delay": 2.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.19999980926513672,
+        "delay": 4.099999904632568
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 13,
+        "delay": 4.299999713897705
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.6000003814697266,
+        "delay": 3
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 4.700000286102295
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 13.599999904632568,
+        "delay": 5.100000381469727
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.2999997138977051,
+        "delay": 1.700000286102295
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 2.5
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 9,
+        "delay": 2.6000003814697266
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1,
+        "delay": 2.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.20000028610229492,
+        "delay": 4.5
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 14.299999713897705,
+        "delay": 4.700000286102295
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.40000009536743164,
+        "delay": 1.299999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0,
+        "delay": 2.0999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 6.800000190734863,
+        "delay": 2.0999999046325684
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/AAPL",
+    "name": "Method",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.5,
+        "delay": 1.700000286102295
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0,
+        "delay": 2.700000286102295
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 13,
+        "delay": 2.700000286102295
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/KO",
+    "name": "Open all 9 holders",
+    "issues": [],
+    "max": 64,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 64,
+        "processing": 1.200000286102295,
+        "delay": 3.799999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 64,
+        "processing": 0.09999990463256836,
+        "delay": 6
+      },
+      {
+        "name": "click",
+        "duration": 64,
+        "processing": 29.700000286102295,
+        "delay": 6.399999618530273
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/KO",
+    "name": "In depth ↗",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.40000009536743164,
+        "delay": 1.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.19999980926513672,
+        "delay": 2.4000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 7.700000286102295,
+        "delay": 2.5999999046325684
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/KO",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1,
+        "delay": 2.6000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0,
+        "delay": 4.800000190734863
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 14.800000190734863,
+        "delay": 4.900000095367432
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/KO",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.8000001907348633,
+        "delay": 3.0999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 4.900000095367432
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 15.599999904632568,
+        "delay": 5.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/KO",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 1.8000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0,
+        "delay": 2.799999713897705
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 9.300000190734863,
+        "delay": 2.8999996185302734
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/KO",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 0.8999996185302734,
+        "delay": 3.1000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.09999990463256836,
+        "delay": 5.300000190734863
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 17.90000009536743,
+        "delay": 5.400000095367432
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/KO",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.40000009536743164,
+        "delay": 1.799999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0,
+        "delay": 2.9000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 10,
+        "delay": 2.9000000953674316
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/KO",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.8000001907348633,
+        "delay": 2.6999998092651367
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 4.300000190734863
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 13.200000286102295,
+        "delay": 4.5
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/KO",
+    "name": "Method",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 0.5,
+        "delay": 1.8000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.09999990463256836,
+        "delay": 2.6999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 14.599999904632568,
+        "delay": 2.799999713897705
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "In depth ↗",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.5,
+        "delay": 1.6000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 2.6000003814697266
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 11.900000095367432,
+        "delay": 2.700000286102295
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 1.3000001907348633,
+        "delay": 6.599999904632568
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 9.299999713897705
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 11.599999904632568,
+        "delay": 9.5
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 1.299999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 2.1999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 9.100000381469727,
+        "delay": 2.299999713897705
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.6000003814697266,
+        "delay": 2
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 3.5
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 10,
+        "delay": 3.5999999046325684
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 1,
+        "delay": 2.9000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 5.300000190734863
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 14.400000095367432,
+        "delay": 5.599999904632568
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 1.1000003814697266,
+        "delay": 1.8999996185302734
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 4.099999904632568
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 14.900000095367432,
+        "delay": 4.299999713897705
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 1,
+        "delay": 2.799999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 5.299999713897705
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 15,
+        "delay": 5.399999618530273
+      }
+    ]
+  },
+  {
+    "width": 2056,
+    "height": 1180,
+    "route": "/s/7203.JP",
+    "name": "Method",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 0.5999999046325684,
+        "delay": 2.0999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.09999990463256836,
+        "delay": 3.200000286102295
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 16.299999713897705,
+        "delay": 3.3000001907348633
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "All companies ↗",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.5,
+        "delay": 2.8000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0,
+        "delay": 3.6999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 20.700000286102295,
+        "delay": 3.8999996185302734
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "+13 more ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.9000000953674316,
+        "delay": 1.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 3.4000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 15.600000381469727,
+        "delay": 3.5
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "Next closest ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.8000001907348633,
+        "delay": 1.3000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0,
+        "delay": 2.6999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 9.800000190734863,
+        "delay": 2.799999713897705
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "+244 more ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.40000009536743164,
+        "delay": 0.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 1.6999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 15.5,
+        "delay": 1.8999996185302734
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value",
+    "name": "Method",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 2
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 3.0999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 17,
+        "delay": 3.3000001907348633
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value?q=2018Q3",
+    "name": "All companies ↗",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.5999999046325684,
+        "delay": 3.6000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 4.5
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 23.100000381469727,
+        "delay": 4.799999713897705
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value?q=2018Q3",
+    "name": "+5 more ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5999999046325684,
+        "delay": 1.1000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 2.5
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 18.90000009536743,
+        "delay": 2.700000286102295
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value?q=2018Q3",
+    "name": "Next closest ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.7999997138977051,
+        "delay": 1.3000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 3.0999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 12.399999618530273,
+        "delay": 3.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value?q=2018Q3",
+    "name": "+210 more ↗",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.39999961853027344,
+        "delay": 0.8000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.10000038146972656,
+        "delay": 1.5999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 7.099999904632568,
+        "delay": 1.700000286102295
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/value?q=2018Q3",
+    "name": "Method",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.6000003814697266,
+        "delay": 2.1999998092651367
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 3.5999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 11.5,
+        "delay": 3.8000001907348633
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "Open all 22 holders",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1.0999999046325684,
+        "delay": 3.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.19999980926513672,
+        "delay": 5.700000286102295
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 24.800000190734863,
+        "delay": 6.099999904632568
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "In depth ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.9000000953674316,
+        "delay": 1.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.2999997138977051,
+        "delay": 3.4000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 13.200000286102295,
+        "delay": 3.6999998092651367
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.6999998092651367,
+        "delay": 2.3000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 4.399999618530273
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 13,
+        "delay": 4.599999904632568
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.2999997138977051,
+        "delay": 1.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 2.3999996185302734
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 8.399999618530273,
+        "delay": 2.5
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.3000001907348633,
+        "delay": 1.3999996185302734
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 2.1999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 9.400000095367432,
+        "delay": 2.299999713897705
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.40000009536743164,
+        "delay": 1.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 2.8000001907348633
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 10.5,
+        "delay": 2.9000000953674316
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5999999046325684,
+        "delay": 2.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 3.6999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 11.5,
+        "delay": 3.799999713897705
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.7000002861022949,
+        "delay": 2.3999996185302734
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 4
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 9.199999809265137,
+        "delay": 4.199999809265137
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/AAPL",
+    "name": "Method",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5999999046325684,
+        "delay": 2.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 3.5999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 11.5,
+        "delay": 3.6999998092651367
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/KO",
+    "name": "Open all 9 holders",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 1.1999998092651367,
+        "delay": 2.8000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.09999990463256836,
+        "delay": 4.800000190734863
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 22.300000190734863,
+        "delay": 5
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/KO",
+    "name": "In depth ↗",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.6999998092651367,
+        "delay": 1.3000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.19999980926513672,
+        "delay": 2.700000286102295
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 7.5,
+        "delay": 3
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/KO",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5,
+        "delay": 1.6999998092651367
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.20000028610229492,
+        "delay": 2.799999713897705
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 8.699999809265137,
+        "delay": 3
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/KO",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.7000002861022949,
+        "delay": 2.299999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 3.8000001907348633
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 10.400000095367432,
+        "delay": 3.9000000953674316
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/KO",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.7000002861022949,
+        "delay": 2.299999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 3.799999713897705
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 14.099999904632568,
+        "delay": 3.9000000953674316
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/KO",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5999999046325684,
+        "delay": 2.700000286102295
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 4.100000381469727
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 12.099999904632568,
+        "delay": 4.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/KO",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 0.6999998092651367,
+        "delay": 2.9000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0,
+        "delay": 4.800000190734863
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 16.90000009536743,
+        "delay": 4.900000095367432
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/KO",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.20000028610229492,
+        "delay": 1.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 2.3000001907348633
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 7,
+        "delay": 2.4000000953674316
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/KO",
+    "name": "Method",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 1.799999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.10000038146972656,
+        "delay": 2.799999713897705
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 10.699999809265137,
+        "delay": 2.9000000953674316
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "In depth ↗",
+    "issues": [],
+    "max": 40,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 40,
+        "processing": 1.0999999046325684,
+        "delay": 3.0999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 40,
+        "processing": 0.2999997138977051,
+        "delay": 5.300000190734863
+      },
+      {
+        "name": "click",
+        "duration": 40,
+        "processing": 25.5,
+        "delay": 5.900000095367432
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5,
+        "delay": 1.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 2.5999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 7.699999809265137,
+        "delay": 2.6999998092651367
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 1.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 2
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 8.099999904632568,
+        "delay": 2.0999999046325684
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.40000009536743164,
+        "delay": 1.6999998092651367
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 2.4000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 9.200000286102295,
+        "delay": 2.5999999046325684
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5999999046325684,
+        "delay": 2.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 4.099999904632568
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 11.5,
+        "delay": 4.300000190734863
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.40000009536743164,
+        "delay": 2.1999998092651367
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 3.3000001907348633
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 10.199999809265137,
+        "delay": 3.3000001907348633
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5,
+        "delay": 2.3000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.10000038146972656,
+        "delay": 3.5
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 10.599999904632568,
+        "delay": 3.6000003814697266
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 800,
+    "route": "/s/7203.JP",
+    "name": "Method",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.6999998092651367,
+        "delay": 2.3000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0,
+        "delay": 3.8000001907348633
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 11.800000190734863,
+        "delay": 3.8000001907348633
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "All companies ↗",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.5,
+        "delay": 2.9000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 3.700000286102295
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 21,
+        "delay": 3.8000001907348633
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "+13 more ↗",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.7999997138977051,
+        "delay": 1.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0,
+        "delay": 3.0999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 10.400000095367432,
+        "delay": 3.299999713897705
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "Next closest ↗",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.6999998092651367,
+        "delay": 0.9000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 2.200000286102295
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 9.199999809265137,
+        "delay": 2.4000000953674316
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "+258 more ↗",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 0.8000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 1.4000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 7.800000190734863,
+        "delay": 1.5
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value",
+    "name": "Method",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 1.9000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.10000038146972656,
+        "delay": 3.1999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 6.899999618530273,
+        "delay": 3.3000001907348633
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value?q=2018Q3",
+    "name": "All companies ↗",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 0.9000000953674316,
+        "delay": 5.599999904632568
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.10000038146972656,
+        "delay": 7.199999809265137
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 36.69999980926514,
+        "delay": 7.5
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value?q=2018Q3",
+    "name": "+5 more ↗",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.8000001907348633,
+        "delay": 1.799999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 3.299999713897705
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 9.900000095367432,
+        "delay": 3.5999999046325684
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value?q=2018Q3",
+    "name": "Next closest ↗",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.5,
+        "delay": 0.8999996185302734
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 2
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 8,
+        "delay": 2.0999999046325684
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value?q=2018Q3",
+    "name": "+220 more ↗",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.3000001907348633,
+        "delay": 0.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0,
+        "delay": 1.3000001907348633
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 4.699999809265137,
+        "delay": 1.3000001907348633
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/value?q=2018Q3",
+    "name": "Method",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.5,
+        "delay": 1.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 2.4000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 5.799999713897705,
+        "delay": 2.6000003814697266
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "Open all 22 holders",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1.0999999046325684,
+        "delay": 3.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.09999990463256836,
+        "delay": 5.400000095367432
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 32.5,
+        "delay": 5.700000286102295
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "More ↗",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.7999997138977051,
+        "delay": 1
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.19999980926513672,
+        "delay": 2.5
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 12.099999904632568,
+        "delay": 2.6999998092651367
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.9000000953674316,
+        "delay": 2.299999713897705
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 4.199999809265137
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 17.799999713897705,
+        "delay": 4.400000095367432
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5,
+        "delay": 1.8000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 3
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 12.699999809265137,
+        "delay": 3.1000003814697266
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.6000003814697266,
+        "delay": 2.0999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.10000038146972656,
+        "delay": 3.5
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 15.599999904632568,
+        "delay": 3.700000286102295
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.6999998092651367,
+        "delay": 2.4000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 4
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 12.599999904632568,
+        "delay": 4.099999904632568
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 1.6999998092651367
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 2.5
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 7.400000095367432,
+        "delay": 2.5999999046325684
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5,
+        "delay": 2.0999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 3.200000286102295
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 12.299999713897705,
+        "delay": 3.3000001907348633
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/AAPL",
+    "name": "Method",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.7999997138977051,
+        "delay": 2.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 4.099999904632568
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 14.099999904632568,
+        "delay": 4.199999809265137
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/KO",
+    "name": "Open all 9 holders",
+    "issues": [],
+    "max": 48,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 48,
+        "processing": 1,
+        "delay": 3
+      },
+      {
+        "name": "pointerup",
+        "duration": 48,
+        "processing": 0.09999990463256836,
+        "delay": 4.699999809265137
+      },
+      {
+        "name": "click",
+        "duration": 48,
+        "processing": 30.5,
+        "delay": 5
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/KO",
+    "name": "More ↗",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.8000001907348633,
+        "delay": 1.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 2.8000001907348633
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 13.100000381469727,
+        "delay": 3
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/KO",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.8000001907348633,
+        "delay": 2.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 4.200000286102295
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 12.900000095367432,
+        "delay": 4.400000095367432
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/KO",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5,
+        "delay": 1.9000000953674316
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 3.200000286102295
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 13.199999809265137,
+        "delay": 3.200000286102295
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/KO",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.6999998092651367,
+        "delay": 2.3000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.19999980926513672,
+        "delay": 3.700000286102295
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 13.5,
+        "delay": 4
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/KO",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.7999997138977051,
+        "delay": 2.700000286102295
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 5
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 14.099999904632568,
+        "delay": 5.100000381469727
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/KO",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.7999997138977051,
+        "delay": 2.8000001907348633
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.10000038146972656,
+        "delay": 4.599999904632568
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 14.5,
+        "delay": 4.700000286102295
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/KO",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5,
+        "delay": 2
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 3
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 16.299999713897705,
+        "delay": 3.0999999046325684
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/KO",
+    "name": "Method",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5999999046325684,
+        "delay": 2.0999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 3.4000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 14.099999904632568,
+        "delay": 3.5
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "More ↗",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5,
+        "delay": 2.0999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 3.0999999046325684
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 13.099999904632568,
+        "delay": 3.4000000953674316
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "Open Predictable profits evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.9000000953674316,
+        "delay": 2.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.19999980926513672,
+        "delay": 4.5
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 14.599999904632568,
+        "delay": 4.699999809265137
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "Open Lasting advantage evidence",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 1,
+        "delay": 2.700000286102295
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0.09999990463256836,
+        "delay": 4.699999809265137
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 17.5,
+        "delay": 4.799999713897705
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "Open Cash for owners evidence",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 1.5
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.20000028610229492,
+        "delay": 2.1999998092651367
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 8.699999809265137,
+        "delay": 2.4000000953674316
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "Open Value created per $1 kept evidence",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.5,
+        "delay": 1.700000286102295
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.10000038146972656,
+        "delay": 2.3999996185302734
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 7.099999904632568,
+        "delay": 2.5
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "Open Honest profits evidence",
+    "issues": [],
+    "max": 16,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 16,
+        "processing": 0.40000009536743164,
+        "delay": 1.5999999046325684
+      },
+      {
+        "name": "pointerup",
+        "duration": 16,
+        "processing": 0.09999990463256836,
+        "delay": 2.5
+      },
+      {
+        "name": "click",
+        "duration": 16,
+        "processing": 8.5,
+        "delay": 2.5999999046325684
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "Open valuation",
+    "issues": [],
+    "max": 32,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 32,
+        "processing": 0.6999998092651367,
+        "delay": 3.200000286102295
+      },
+      {
+        "name": "pointerup",
+        "duration": 32,
+        "processing": 0.09999990463256836,
+        "delay": 5
+      },
+      {
+        "name": "click",
+        "duration": 32,
+        "processing": 19.199999809265137,
+        "delay": 5.099999904632568
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "route": "/s/7203.JP",
+    "name": "Method",
+    "issues": [],
+    "max": 24,
+    "events": [
+      {
+        "name": "pointerdown",
+        "duration": 24,
+        "processing": 0.5,
+        "delay": 2.1000003814697266
+      },
+      {
+        "name": "pointerup",
+        "duration": 24,
+        "processing": 0,
+        "delay": 3.4000000953674316
+      },
+      {
+        "name": "click",
+        "duration": 24,
+        "processing": 12.300000190734863,
+        "delay": 3.4000000953674316
+      }
+    ]
+  }
+]

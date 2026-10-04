@@ -12,7 +12,7 @@ export function derivedSeries(series:Record<string,Series>={}) {return Object.fr
 // Citation metadata retains provenance without distributing extracted vendor tables/quotes.
 const source=(e:Evidence)=>({url:e.url,date:e.filed,section:e.section});
 function testProjection(t:TestOutcome) {
- return {id:t.key,result:t.result,numeric:t.numeric,reasons:t.reasons,metrics:t.metrics,series:derivedSeries(t.series),judgement:t.judgement?{result:t.judgement.result,reason:t.judgement.reason,override:t.judgement.override,source:t.judgement.evidence?source(t.judgement.evidence):null}:null};
+ return {id:t.key,result:t.result,...(t.provisional?{provisional:t.provisional}:{}),numeric:t.numeric,reasons:t.reasons,metrics:t.metrics,series:derivedSeries(t.series),judgement:t.judgement?{result:t.judgement.result,reason:t.judgement.reason,override:t.judgement.override,source:t.judgement.evidence?source(t.judgement.evidence):null}:null};
 }
 export function projectDossier(d:Dossier,quote:PriceMap[string]|null) {
  const v=d.valuation,comparable=comparableValuation(v,d.company.currency),ratio=priceValue({price:quote?.[0]??null,mid:comparable?.perShare.mid??null});

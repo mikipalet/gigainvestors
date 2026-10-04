@@ -1,0 +1,179 @@
+@scope (body:not(:has(.legacy-investor))) {
+/* Owner decision 2026-10-04: one chrome, type scale and colour vocabulary. */
+:scope{--viz-grid:#1112;--viz-muted:#62675f;--verdict-pass:#526957;--verdict-fair:#257a4a;--verdict-fails:#bf3b2b;--chrome-top:0px;--chrome-bottom:52px}
+:scope{padding-top:var(--chrome-top);font-size:14px}
+.site-brand{position:absolute;left:20px;top:7px;font-size:13px;font-weight:600;line-height:18px;z-index:41;color:var(--ink)}
+.value-page:has(.locks-scroll),.value-page:has(.one-dossier.locks-scroll){height:calc(100dvh - var(--chrome-top) - var(--chrome-bottom));min-height:0}
+.shared-dock.value-page.value-dock{position:fixed;inset:auto 0 0;width:100%;max-width:none;height:var(--chrome-bottom);min-height:var(--chrome-bottom);padding:0 18px;margin:0;display:flex;flex-direction:row;overflow:visible;gap:16px}
+.shared-dock .dock-tools>a,.shared-dock .dock-tools>button,.shared-dock .market-scope{font-size:13px}
+.house-track .slider~div:last-child{font-size:13px!important}
+.shared-dock #value-timeline{height:52px;min-width:140px}
+.shared-dock .dock-tools{gap:7px}
+.shared-dock #value-market:empty{display:none}
+.search-modal{font-size:14px}.search-selected{background:#1111}.search-selected:after{content:'✓';position:absolute;right:10px;top:10px}.search-modal [role=option]{position:relative;padding-right:30px}
+.search-description{white-space:normal;min-width:0}.search-modal .search-pages{display:none}
+.activity-buy{background:var(--paper);box-shadow:inset 0 0 0 2px #515c58}
+.activity-sell{background-color:var(--paper);background-image:repeating-linear-gradient(-45deg,transparent 0 6px,#515c5833 6px 7px)}
+.activity-sold{background:var(--paper);outline:1px dashed #515c58;outline-offset:-2px}
+.activity-badge{color:#343c38;background-color:var(--paper)}
+.checklist-mark{position:absolute;right:6px;bottom:5px;z-index:2;width:18px;height:18px;display:flex;align-items:center;justify-content:center;font-size:13px;line-height:18px;background:var(--paper);border:1px solid currentColor;border-radius:3px}
+.verdict-pass{color:var(--verdict-pass)}.verdict-fair{color:var(--verdict-fair)}.verdict-fails{color:var(--verdict-fails)}
+.tile-company-name{white-space:normal}
+.company-holders-strip{display:flex;flex:none;align-items:center;gap:22px;padding:5px 24px;border-bottom:1px solid var(--viz-grid);text-align:left;width:100%;height:58px;font-size:13px}
+.company-holders-strip small{display:block;font-size:13px;color:var(--viz-muted)}
+.strip-holder{display:flex;align-items:center;gap:7px;min-width:0}.strip-face{position:relative;width:36px;height:44px;flex:none}
+.holders-count{font-weight:600;margin-right:auto;white-space:nowrap}.holders-count small{font-weight:400}
+.value-page dialog[data-side-panel]:has(.company-holders-panel){width:min(880px,100vw)}
+.company-holders-panel{display:flex;flex-direction:column;gap:12px;height:100%;min-height:0}
+.holders-chart{flex:1;min-height:160px;position:relative}
+.company-holders-table{width:100%;border-collapse:collapse;flex:1;table-layout:fixed}
+.company-holders-table :is(th,td){font-size:14px;padding:4px 8px;text-align:right;border-bottom:1px solid var(--viz-grid);font-weight:400}
+.company-holders-table th:first-child{text-align:left;width:42%}.company-holders-table th a{display:flex;align-items:center;gap:10px}.table-face{position:relative;display:inline-block;width:48px;height:48px;flex:none}
+.company-holders-panel nav{display:flex;justify-content:space-between;align-items:center;min-height:30px;font-size:14px}.company-holders-panel nav button:disabled{opacity:.35}
+/* Min 13px also applies to legacy chart captions and footer controls. */
+:where([class*="text-[9px]"],[class*="text-[10px]"],[class*="text-[11px]"],[class*="text-[12px]"]):not(.legacy-brand){font-size:13px}
+@media(min-width:768px){
+ .company-page:has(.company-holders-strip) .dossier-checks{padding-block:6px}
+ .company-page .dossier-band{padding-block:6px}
+ .company-page .valuation-math{display:none}
+ .company-page .price-card .mini-price{flex:1;min-height:80px}
+ .company-page .price-card:after{content:'Price, value and return →';font-size:13px;margin-top:8px;pointer-events:none}
+}
+@media(max-width:767px){
+ :scope{--chrome-bottom:100px}
+ .site-brand{left:14px}
+ .shared-dock.value-page.value-dock{height:100px;flex-direction:column;align-items:stretch;gap:0;padding:0 12px 6px}
+ .shared-dock #value-timeline{height:46px;min-height:46px}
+ .shared-dock .house-timeline{height:46px}
+ .shared-dock .dock-tools{justify-content:space-between;gap:5px;flex-wrap:wrap;min-height:42px}
+ .shared-dock .dock-tools>a,.shared-dock .dock-tools>button{font-size:13px;padding:5px}
+ .shared-dock #value-market{order:2;width:100%;min-height:26px;justify-content:flex-end}
+ :scope:has(.one-index){--chrome-bottom:126px}
+ :scope:has(.one-index) .shared-dock.value-page.value-dock{height:126px}
+ .shared-dock .house-steps{display:flex}
+ .company-holders-strip{height:62px;padding:4px 14px;gap:10px}
+ .strip-holder:nth-child(n+3){display:none}
+ .strip-holder>.activity-badge{display:none}
+ .company-page:has(.one-dossier.locks-scroll){height:calc(100dvh - var(--chrome-top) - var(--chrome-bottom));overflow:hidden!important;padding-bottom:0}
+ .company-page .one-dossier{overflow-y:auto!important;flex:1}
+ .company-holders-table :is(th,td){font-size:13px;padding:4px 2px}
+ .company-holders-table th:first-child{width:38%}.table-face{display:none}
+ .holders-chart{flex:none;height:260px}
+ .company-holders-panel{min-height:100%;height:auto}
+}
+@media(min-width:768px) and (max-height:1049px){
+ .company-page .quality-section .test-tile .mini-dollar{min-height:90px}
+ .company-page .quality-section .test-tile .mini-dollar figcaption{display:none}
+ .company-page .quality-section .test-tile .mini-series{min-height:50px}
+}
+@media(min-width:768px) and (max-height:849px){
+ .company-page .financial-strip{display:none}
+ .company-page .company-holders-strip{height:48px}
+ .company-page .quality-section .test-tile,.company-page .quality-section .test-tile:last-child{grid-template-rows:min-content min-content minmax(55px,1fr) min-content min-content}
+ .company-page .dossier-band{min-height:0;padding-block:4px}
+ .company-page .business-section{padding-block:4px}
+ .company-page .business-line{line-height:17px}
+}
+@media(max-width:767px){
+ .company-page .one-dossier{display:block!important}
+ .company-page .dossier-checks,.company-page .quality-section,.company-page .quality-section .test-tiles{display:flex!important;flex-direction:column;flex:none;height:auto;min-height:0}
+ .company-page .quality-section .test-tile,.company-page .quality-section .test-tile:last-child{display:flex;flex-direction:column;min-height:260px}
+ .company-page .quality-section .test-tile .mini-series,.company-page .quality-section .test-tile .mini-dollar{min-height:110px;height:110px}
+ .company-page .financial-strip{margin-top:10px}
+ .company-page .dossier-source{height:auto;min-height:28px}
+ .company-page .valuation-math{display:none}
+}
+.historical-checks{display:flex;flex:1;min-height:0;gap:24px;padding:16px 24px}
+.historical-quality{display:flex;flex-direction:column;width:30%;min-width:280px;gap:8px}
+.historical-test{border:1px solid currentColor;padding:16px;flex:1;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.value-page .historical-test h2{font-size:16px}.historical-test strong{font-size:18px;white-space:nowrap}
+.historical-price{display:flex;flex-direction:column;flex:1;min-height:0}.value-page .historical-price h2{font-size:18px}
+.historical-price .mini-price{flex:1;min-height:0;display:flex;flex-direction:column}.historical-price .chart-interaction{flex:1;min-height:0}
+.historical-price>p{font-size:16px;padding:10px 0}
+@media(max-width:767px){.historical-checks{display:block}.historical-quality{width:100%;min-width:0;margin-bottom:18px}.historical-test{min-height:66px}.historical-price{height:340px}.historical-company .dossier-band{display:block}.historical-company .reference-metrics{margin-top:12px}}
+.value-page dialog[data-side-panel]:has(.company-holders-panel){width:min(680px,100vw)}
+.company-holders-table :is(th,td){font-size:16px}.company-holders-table th:first-child{width:40%}
+@media(min-width:768px) and (max-height:849px){
+ .company-page [data-testid=tile-management] .mini-dollar{display:none!important}
+ .company-page [data-testid=tile-management]{grid-template-rows:min-content min-content minmax(0,1fr) min-content min-content!important}
+}
+@media(max-width:767px){.company-holders-table :is(th,td){font-size:13px}}
+.value-page dialog[data-side-panel]:has(.company-holders-panel){width:min(560px,100vw)}
+.company-holders-table{table-layout:auto}.company-holders-table th:first-child{width:42%}
+.company-holders-table :is(th,td){padding:4px;font-size:16px}
+.table-face{width:54px;height:clamp(40px,6.5vh,78px)}
+.holders-chart{flex:1;min-height:150px}
+.company-holders-table thead th{font-size:13px;white-space:normal}
+@media(max-width:767px){.company-holders-table :is(th,td){font-size:13px}.holders-chart{flex:none;height:260px}}
+:scope:has(.one-index) .shared-dock #value-market{display:flex;width:140px;flex:none}
+.company-holders-table small{display:block;font-size:13px;color:var(--viz-muted);line-height:1.4}
+.company-holders-table th a{height:100%;align-items:center}
+.company-holders-panel .holders-chart{flex:none;height:clamp(160px,23vh,260px)}
+.company-holders-panel .table-face{width:clamp(48px,calc(260px / var(--holder-rows)),84px);height:clamp(40px,calc((100dvh - 350px) / var(--holder-rows) - 12px),190px)}
+@media(max-width:767px){:scope:has(.one-index) .shared-dock #value-market{width:100%}.company-holders-panel .holders-chart{height:240px}.company-holders-table td small{display:none}}
+/* Reserve the pager first; the chart uses the space left by the fixed-height holder rows. */
+@media(min-width:768px){
+ .company-holders-panel{display:grid;grid-template-rows:minmax(160px,1fr) auto auto;gap:10px}
+ .company-holders-panel .holders-chart{height:auto;min-height:160px}
+ .company-holders-table{height:calc(var(--holder-rows) * 74px + 30px);flex:none}
+ .company-holders-table tbody tr{height:74px}
+ .company-holders-panel .table-face{width:56px;height:64px}
+ .company-holders-table :is(th,td){font-size:17px}
+}
+@media(min-width:768px){
+ .value-page dialog[data-reading-columns] .evidence-layout:is([data-window-only=true],[data-test=management]) .drawer-years tbody :is(th,td),
+ .value-page dialog[data-reading-columns] .evidence-layout:is([data-window-only=true],[data-test=management]) .annual-field{font-size:var(--reading-font);line-height:1.2}
+}
+@media(min-width:768px){
+ .company-holders-panel{grid-template-rows:minmax(160px,1fr) auto auto auto}
+ .holders-recent{width:100%;border-collapse:collapse;table-layout:fixed}
+ .holders-recent :is(th,td){height:32px;font-size:16px;line-height:20px;padding:4px;text-align:right;border-bottom:1px solid var(--viz-grid);font-weight:400}
+ .holders-recent thead th{font-size:13px}.holders-recent th:first-child{text-align:left}
+}
+@media(min-width:768px){
+ .company-holders-panel{--holder-row-height:clamp(54px,6.3vh,74px)}
+ .company-holders-table{height:calc(var(--holder-rows) * var(--holder-row-height) + 30px)}
+ .company-holders-table tbody tr{height:var(--holder-row-height)}
+ .company-holders-panel .table-face{height:calc(var(--holder-row-height) - 10px)}
+}
+@media(max-width:767px){
+ .company-holders-panel .table-face{display:inline-block;width:32px;height:42px}
+ .company-holders-table th a{gap:4px}
+}
+
+@media(max-width:767px){
+ .holders-recent{width:100%;border-collapse:collapse;table-layout:fixed;flex:none}
+ .holders-recent :is(th,td){height:28px;font-size:13px;line-height:18px;padding:2px;text-align:right;border-bottom:1px solid var(--viz-grid);font-weight:400}
+ .holders-recent th:first-child{text-align:left}
+}
+/* The holder strip and dated LTM captions need the compact dossier budget.
+   The annual strip repeats the numbers and histories available in the drawers. */
+@media(min-width:768px) and (max-height:1049px){
+ .company-page .financial-strip{display:none}
+}
+@media(min-width:768px) and (max-height:849px){
+ .company-page .quality-section .test-tiles{grid-template-rows:minmax(0,1.25fr) minmax(0,1fr)}
+ .company-page .quality-section .test-tile:has(.mini-series),.company-page .quality-section .test-tile:last-child:has(.mini-series){grid-template-rows:min-content min-content minmax(55px,1fr) min-content min-content}
+}
+@media(max-width:767px){
+ :scope:has(.one-index){--chrome-bottom:146px}
+ :scope:has(.one-index) .shared-dock.value-page.value-dock{height:146px}
+}
+
+
+/* Preserve the pre-release brand links against the value type-scale rule. */
+.legacy-brand{font-size:12px!important}
+
+/* Holder faces share the price band; company pages have no time-travel row. */
+.company-reference{display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0}
+.company-holders-strip{width:max-content;max-width:100%;height:36px!important;padding:0!important;border:0;gap:5px!important}
+.company-holders-strip .holders-count{font-size:13px;margin-right:5px}
+.company-holders-strip .strip-face{width:28px;height:34px}
+:scope:has(.company-page){--chrome-bottom:52px}
+:scope:has(.company-page) .shared-dock.value-page.value-dock{height:52px;min-height:52px;justify-content:flex-end}
+@media(max-width:767px){
+ :scope:has(.company-page){--chrome-bottom:70px}
+ :scope:has(.company-page) .shared-dock.value-page.value-dock{height:70px;min-height:70px;justify-content:center}
+ .company-reference{margin-top:8px}
+}
+}

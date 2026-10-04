@@ -1,12 +1,5 @@
-import type { Activity } from "./types";
-
-// Surface strength follows the size of the move, not just its direction.
-export function surfaceFor(activity: Activity, change: number | null | undefined, strongNew = false, flat = false): string {
-  const m = Math.abs(change ?? 0);
-  const step = m >= 25 ? 3 : m >= 5 ? 2 : 1;
-  if (activity === "new") return strongNew ? "buy-solid" : "add-3";
-  if (activity === "add") return `add-${step}`;
-  if (activity === "reduce") return flat ? `sell-tint-${step}` : `hatch-${step}`;
-  if (activity === "sold") return "ghost";
-  return "";
+import type {Activity} from './types';
+// Activity is shape/texture; checklist alone owns semantic green/red.
+export function surfaceFor(activity:Activity,_change:number|null|undefined,_strongNew=false,_flat=false):string{
+ return activity==='new'||activity==='add'?'activity-buy':activity==='sold'?'activity-sold':activity==='reduce'?'activity-sell':'';
 }

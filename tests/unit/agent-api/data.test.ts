@@ -28,3 +28,10 @@ describe('endpoint contracts',()=>{
 });
 
 it('includes the stock ownership surface',()=>{expect(ROUTES.some(r=>r.id==='ownership' as string)).toBe(true);});
+it('preserves the LTM period beside derived test observations',()=>{
+ const d=structuredClone(f.dossier) as unknown as Dossier;
+ d.tests.moat.provisional={fy:2026,end:'2026-06-30',label:'LTM to Jun 2026',filed:'2026-07-29',periods:['2025-09-30','2025-12-31','2026-03-31','2026-06-30']};
+ const projected=projectDossier(d,[30,'2026-10-01']);
+ expect(projected.tests.find(t=>t.id==='moat')?.provisional).toEqual(d.tests.moat.provisional);
+ expect(schemas.dossier.parse(projected)).toMatchObject({tests:expect.arrayContaining([expect.objectContaining({id:'moat',provisional:d.tests.moat.provisional})])});
+});

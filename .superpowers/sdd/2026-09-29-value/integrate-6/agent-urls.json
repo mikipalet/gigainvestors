@@ -1,0 +1,170 @@
+[
+  {
+    "path": "/llms.txt",
+    "status": 200,
+    "type": "text/plain; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 0,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/llms-full.txt",
+    "status": 200,
+    "type": "text/plain; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 10070,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/sitemap.xml",
+    "status": 200,
+    "type": "application/xml; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 0,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/sitemaps/companies.xml",
+    "status": 200,
+    "type": "application/xml; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 4205,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/robots.txt",
+    "status": 200,
+    "type": "text/plain",
+    "oldHost": false,
+    "companyLinks": 0,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/mcp.json",
+    "status": 200,
+    "type": "application/json",
+    "oldHost": false,
+    "companyLinks": 0,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/value.md",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 280,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/value.md?q=2018Q3",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 234,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/s/AAPL.md",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 2,
+    "ltmLabels": true,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/s/PLX.PA.md",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 1,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/s/7203.JP.md",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 1,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/s/AAPL.md?q=2018Q3",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 2,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/api/v1/guide",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8",
+    "oldHost": false,
+    "companyLinks": 0,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/api/v1/openapi.json",
+    "status": 200,
+    "type": "application/json",
+    "oldHost": false,
+    "companyLinks": 0,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/api/v1/pricing",
+    "status": 200,
+    "type": "application/json",
+    "oldHost": false,
+    "companyLinks": 0,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/api/v1/companies/AAPL.US",
+    "status": 503,
+    "type": "application/json",
+    "oldHost": false,
+    "companyLinks": 0,
+    "ltmLabels": false,
+    "paymentChallenge": false
+  },
+  {
+    "path": "/value",
+    "accept": "text/markdown",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8"
+  },
+  {
+    "path": "/s/AAPL",
+    "accept": "text/markdown",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8"
+  },
+  {
+    "path": "/s/PLX.PA",
+    "accept": "text/markdown",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8"
+  },
+  {
+    "path": "/s/7203.JP",
+    "accept": "text/markdown",
+    "status": 200,
+    "type": "text/markdown; charset=utf-8"
+  }
+]

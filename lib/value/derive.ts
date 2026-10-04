@@ -6,6 +6,7 @@ const finite = (n: unknown): n is number => typeof n === 'number' && Number.isFi
 export function deriveYears(years: Year[]): Year[] {
   const completed:Year[]=[];
   return [...years].sort((a,b)=>a.end.localeCompare(b.end)).map(original => {
+    if(original.provisional){completed.push(original);return original;}
     const y: Year = { ...original, provenance: { ...original.provenance } };
     const put = (key: keyof Year, value: number | null | undefined, inputs: string[], method: ValueProvenance['method'] = 'derived') => {
       const existing=y.provenance?.[key];

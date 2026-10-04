@@ -28,7 +28,7 @@ export default function Page() {
   const issues = listIssues();
   return (
     <main className="mx-auto flex min-h-[100dvh] max-w-[640px] flex-col gap-8 px-6 pb-28 pt-16 text-[15px] leading-relaxed">
-      <Link href="/" className="text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
+      <Link href="/" className="legacy-brand text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
         GigaInvestors
       </Link>
       <div>

@@ -1,0 +1,27 @@
+[
+  {
+    "path": "/api/v1",
+    "status": 200,
+    "paymentRequired": false
+  },
+  {
+    "path": "/api/v1/guide",
+    "status": 200,
+    "paymentRequired": false
+  },
+  {
+    "path": "/api/v1/openapi.json",
+    "status": 200,
+    "paymentRequired": false
+  },
+  {
+    "path": "/api/v1/companies/AAPL.US",
+    "status": 402,
+    "paymentRequired": true
+  },
+  {
+    "path": "/api/v1/method",
+    "status": 402,
+    "paymentRequired": true
+  }
+]

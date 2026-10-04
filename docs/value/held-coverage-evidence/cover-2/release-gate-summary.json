@@ -1,0 +1,601 @@
+{
+  "exitCode": 1,
+  "routes": [
+    "/s/CBL",
+    "/s/CRBG",
+    "/s/DCGO",
+    "/s/FINV",
+    "/s/FWONA",
+    "/s/INTT",
+    "/s/KARO",
+    "/s/NXST",
+    "/s/PL",
+    "/s/TME"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "states": 196,
+  "failedStates": 60,
+  "mainPageStates": 20,
+  "failedMainPageStates": 0,
+  "nonWhitespaceFailures": [],
+  "report": "/Users/miki/data/value-cover/held-validation/cover-2-gate-final/report.json",
+  "reportSha256": "bcddd4c680df3042f491bc62e4306afbde9ff9e094e60d0bc413f1e46355053a",
+  "failedStateDetails": [
+    {
+      "path": "/s/KARO",
+      "width": 1728,
+      "height": 970,
+      "state": "Open all 1 holders",
+      "issues": [
+        "raster empty area 51.8% > 15%"
+      ]
+    },
+    {
+      "path": "/s/KARO",
+      "width": 1728,
+      "height": 970,
+      "state": "In depth \u2197",
+      "issues": [
+        "raster empty area 25.3% > 15%"
+      ]
+    },
+    {
+      "path": "/s/KARO",
+      "width": 1728,
+      "height": 970,
+      "state": "Method",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 23.2% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/FINV",
+      "width": 1728,
+      "height": 970,
+      "state": "Open all 1 holders",
+      "issues": [
+        "raster empty area 22.5% > 15%"
+      ]
+    },
+    {
+      "path": "/s/FINV",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Lasting advantage evidence",
+      "issues": [
+        "raster empty area 16.8% > 15%"
+      ]
+    },
+    {
+      "path": "/s/FINV",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Value created per $1 kept evidence",
+      "issues": [
+        "bottom empty area 10.9% >= 8%",
+        "raster empty area 21.0% > 15%"
+      ]
+    },
+    {
+      "path": "/s/FINV",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issues": [
+        "raster empty area 20.0% > 15%"
+      ]
+    },
+    {
+      "path": "/s/FINV",
+      "width": 1728,
+      "height": 970,
+      "state": "Method",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 23.2% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/CRBG",
+      "width": 1728,
+      "height": 970,
+      "state": "Open all 3 holders",
+      "issues": [
+        "raster empty area 24.6% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CRBG",
+      "width": 1728,
+      "height": 970,
+      "state": "In depth \u2197",
+      "issues": [
+        "bottom empty area 10.3% >= 8%",
+        "raster empty area 23.9% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CRBG",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Predictable profits evidence",
+      "issues": [
+        "raster empty area 15.7% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CRBG",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Lasting advantage evidence",
+      "issues": [
+        "raster empty area 15.2% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CRBG",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Cash for owners evidence",
+      "issues": [
+        "raster empty area 22.5% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CRBG",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Value created per $1 kept evidence",
+      "issues": [
+        "raster empty area 17.8% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CRBG",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issues": [
+        "raster empty area 25.2% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CRBG",
+      "width": 1728,
+      "height": 970,
+      "state": "Method",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 23.2% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/DCGO",
+      "width": 1728,
+      "height": 970,
+      "state": "In depth \u2197",
+      "issues": [
+        "bottom empty area 13.4% >= 8%",
+        "raster empty area 22.6% > 15%"
+      ]
+    },
+    {
+      "path": "/s/DCGO",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Lasting advantage evidence",
+      "issues": [
+        "raster empty area 16.3% > 15%"
+      ]
+    },
+    {
+      "path": "/s/DCGO",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Cash for owners evidence",
+      "issues": [
+        "raster empty area 20.1% > 15%"
+      ]
+    },
+    {
+      "path": "/s/DCGO",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Value created per $1 kept evidence",
+      "issues": [
+        "raster empty area 16.1% > 15%"
+      ]
+    },
+    {
+      "path": "/s/DCGO",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issues": [
+        "raster empty area 20.4% > 15%"
+      ]
+    },
+    {
+      "path": "/s/DCGO",
+      "width": 1728,
+      "height": 970,
+      "state": "Method",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 23.2% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/PL",
+      "width": 1728,
+      "height": 970,
+      "state": "Open all 1 holders",
+      "issues": [
+        "raster empty area 50.3% > 15%"
+      ]
+    },
+    {
+      "path": "/s/PL",
+      "width": 1728,
+      "height": 970,
+      "state": "In depth \u2197",
+      "issues": [
+        "raster empty area 25.7% > 15%"
+      ]
+    },
+    {
+      "path": "/s/PL",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Cash for owners evidence",
+      "issues": [
+        "raster empty area 17.3% > 15%"
+      ]
+    },
+    {
+      "path": "/s/PL",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Value created per $1 kept evidence",
+      "issues": [
+        "raster empty area 16.1% > 15%"
+      ]
+    },
+    {
+      "path": "/s/PL",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issues": [
+        "raster empty area 20.0% > 15%"
+      ]
+    },
+    {
+      "path": "/s/PL",
+      "width": 1728,
+      "height": 970,
+      "state": "Method",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 23.2% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/NXST",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Value created per $1 kept evidence",
+      "issues": [
+        "raster empty area 18.9% > 15%"
+      ]
+    },
+    {
+      "path": "/s/NXST",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issues": [
+        "raster empty area 19.5% > 15%"
+      ]
+    },
+    {
+      "path": "/s/NXST",
+      "width": 1728,
+      "height": 970,
+      "state": "Method",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 23.2% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/FWONA",
+      "width": 1728,
+      "height": 970,
+      "state": "Open all 1 holders",
+      "issues": [
+        "raster empty area 25.0% > 15%"
+      ]
+    },
+    {
+      "path": "/s/FWONA",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Value created per $1 kept evidence",
+      "issues": [
+        "bottom empty area 17.6% >= 8%",
+        "raster empty area 23.9% > 15%",
+        "empty block 154px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/FWONA",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issues": [
+        "raster empty area 22.8% > 15%"
+      ]
+    },
+    {
+      "path": "/s/FWONA",
+      "width": 1728,
+      "height": 970,
+      "state": "Method",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 23.2% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/CBL",
+      "width": 1728,
+      "height": 970,
+      "state": "In depth \u2197",
+      "issues": [
+        "raster empty area 24.7% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CBL",
+      "width": 1728,
+      "height": 970,
+      "state": "Method",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 23.2% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/INTT",
+      "width": 1728,
+      "height": 970,
+      "state": "Open all 1 holders",
+      "issues": [
+        "raster empty area 16.3% > 15%"
+      ]
+    },
+    {
+      "path": "/s/INTT",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Lasting advantage evidence",
+      "issues": [
+        "raster empty area 15.5% > 15%"
+      ]
+    },
+    {
+      "path": "/s/INTT",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Value created per $1 kept evidence",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 21.0% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/INTT",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issues": [
+        "raster empty area 20.9% > 15%"
+      ]
+    },
+    {
+      "path": "/s/INTT",
+      "width": 1728,
+      "height": 970,
+      "state": "Method",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 23.2% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/TME",
+      "width": 1728,
+      "height": 970,
+      "state": "Open all 3 holders",
+      "issues": [
+        "raster empty area 23.5% > 15%"
+      ]
+    },
+    {
+      "path": "/s/TME",
+      "width": 1728,
+      "height": 970,
+      "state": "In depth \u2197",
+      "issues": [
+        "raster empty area 36.4% > 15%"
+      ]
+    },
+    {
+      "path": "/s/TME",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Value created per $1 kept evidence",
+      "issues": [
+        "raster empty area 19.8% > 15%"
+      ]
+    },
+    {
+      "path": "/s/TME",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issues": [
+        "raster empty area 20.2% > 15%"
+      ]
+    },
+    {
+      "path": "/s/TME",
+      "width": 1728,
+      "height": 970,
+      "state": "Method",
+      "issues": [
+        "bottom empty area 14.1% >= 8%",
+        "raster empty area 23.2% > 15%",
+        "empty block 130px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/KARO",
+      "width": 390,
+      "height": 844,
+      "state": "Open all 1 holders",
+      "issues": [
+        "raster empty area 55.7% > 15%",
+        "empty block 144px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/KARO",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issues": [
+        "bottom empty area 11.2% >= 8%",
+        "raster empty area 23.1% > 15%"
+      ]
+    },
+    {
+      "path": "/s/FINV",
+      "width": 390,
+      "height": 844,
+      "state": "Open all 1 holders",
+      "issues": [
+        "raster empty area 23.0% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CRBG",
+      "width": 390,
+      "height": 844,
+      "state": "Open all 3 holders",
+      "issues": [
+        "raster empty area 17.9% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CRBG",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issues": [
+        "raster empty area 22.1% > 15%",
+        "empty block 172px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/DCGO",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issues": [
+        "raster empty area 23.0% > 15%",
+        "empty block 220px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/PL",
+      "width": 390,
+      "height": 844,
+      "state": "Open all 1 holders",
+      "issues": [
+        "raster empty area 54.6% > 15%",
+        "empty block 144px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/PL",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issues": [
+        "raster empty area 25.9% > 15%"
+      ]
+    },
+    {
+      "path": "/s/NXST",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issues": [
+        "raster empty area 17.0% > 15%",
+        "empty block 124px tall spans over half panel"
+      ]
+    },
+    {
+      "path": "/s/FWONA",
+      "width": 390,
+      "height": 844,
+      "state": "Open all 1 holders",
+      "issues": [
+        "raster empty area 26.1% > 15%"
+      ]
+    },
+    {
+      "path": "/s/CBL",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issues": [
+        "raster empty area 31.5% > 15%"
+      ]
+    },
+    {
+      "path": "/s/INTT",
+      "width": 390,
+      "height": 844,
+      "state": "Open all 1 holders",
+      "issues": [
+        "raster empty area 18.4% > 15%"
+      ]
+    },
+    {
+      "path": "/s/TME",
+      "width": 390,
+      "height": 844,
+      "state": "Open all 3 holders",
+      "issues": [
+        "raster empty area 19.3% > 15%"
+      ]
+    }
+  ]
+}

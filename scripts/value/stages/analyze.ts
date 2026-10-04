@@ -1,3 +1,4 @@
+import {correctCachedAnnualSources} from '../../../lib/value/annual-source-corrections';
 import {publicBusiness} from '../../../lib/value/flags/public';
 import {inPublicationScope} from '../../../lib/value/held-universe';
 import {cachedQualityQuarters} from '../../../lib/value/cached-quality-quarters';
@@ -102,6 +103,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         }
         fundamentals.splits = completeCachedSplits(company.id,fundamentals.splits,readCorpusJson);
         fundamentals.years = completeCachedYears(company,fundamentals.years,readCorpusJson);
+        fundamentals.years = correctCachedAnnualSources(company,fundamentals.years,raw,readCorpusJson,fundamentals.splits);
         fundamentals.integrity = checkIntegrity(fundamentals,{source:company.source,priceHistory});
         fundamentals.years = fundamentals.years.map(y=>({...y,peerCreditLossRate:peers.get(company.id)?.get(y.end)??y.peerCreditLossRate}));
         fundamentals.qualityQuarters=cachedQualityQuarters(company.id,readCorpusJson);

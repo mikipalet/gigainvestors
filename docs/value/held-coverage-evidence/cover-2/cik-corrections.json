@@ -1,0 +1,42 @@
+[
+  {
+    "id": "OZK.US",
+    "oldCik": "0001038205",
+    "currentCik": "0001569650",
+    "name": "Bank OZK",
+    "formerNames": [
+      {
+        "name": "Bank of the Ozarks",
+        "from": "2013-02-14T00:00:00.000Z",
+        "to": "2018-08-02T00:00:00.000Z"
+      }
+    ],
+    "source": "https://data.sec.gov/submissions/CIK0001569650.json",
+    "tickerMapSource": "https://www.sec.gov/files/company_tickers_exchange.json"
+  },
+  {
+    "id": "PDLB.US",
+    "oldCik": "0001703489",
+    "currentCik": "0001874071",
+    "name": "Ponce Financial Group, Inc.",
+    "formerNames": [],
+    "source": "https://data.sec.gov/submissions/CIK0001874071.json",
+    "tickerMapSource": "https://www.sec.gov/files/company_tickers_exchange.json"
+  },
+  {
+    "id": "CIB.US",
+    "oldCik": "0001071371",
+    "currentCik": "0002058897",
+    "name": "Grupo Cibest S.A.",
+    "formerNames": [],
+    "source": "https://data.sec.gov/submissions/CIK0002058897.json",
+    "tickerMapSource": "https://www.sec.gov/files/company_tickers_exchange.json"
+  },
+  {
+    "id": "HUT.US",
+    "oldCik": "0001731805",
+    "currentCik": "0001964789",
+    "source": "https://data.sec.gov/submissions/CIK0001964789.json",
+    "reason": "Successor Hut 8 Corp after 2023 combination; predecessor 40-F is not the current issuer annual report."
+  }
+]

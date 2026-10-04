@@ -29,3 +29,10 @@ describe('held universe',()=>{
   expect(securityExclusion({ticker:'X',name:'Example Fund Management'},{Type:'Common Stock'})).toBeNull();
  });
 });
+
+it('accepts a reviewed rename with public evidence and never guesses a reused symbol',()=>{
+ const evidence={ticker:'OLD-OLD',name:'Original company',id:'NEW.US',status:'mapped' as const,reason:'same issuer renamed',evidence:['https://www.sec.gov/Archives/rename.htm']};
+ expect(mapHeldSecurity({ticker:'OLD-OLD',name:'Original company'},[],evidence)).toMatchObject({id:'NEW.US',status:'mapped'});
+ expect(()=>mapHeldSecurity({ticker:'OLD-OLD',name:'Original company'},[],{...evidence,evidence:[]})).toThrow(/evidence/);
+ expect(()=>mapHeldSecurity({ticker:'OLD-OLD',name:'Different issuer'},[],evidence)).toThrow(/identity/);
+});

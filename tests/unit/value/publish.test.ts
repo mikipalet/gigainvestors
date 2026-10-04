@@ -160,6 +160,13 @@ describe("buildOutput", () => {
     expect(readCorpusJson('enrichment-v7/share-checks/NEW.US.json')).toMatchObject({status:'verified',shares:101});
     expect(readCorpusJson('staging/share-audit.json')).toMatchObject({quality:{flagged:1,resolved:1,residual:0}});
   });
+  it('does not replace reanalysed inputs with an older backfill memo',()=>{
+    const a=analysis();
+    a.ownerMemo={version:1,asOf:a.asOf,inputHash:'corrected-inputs',lines:[]};
+    writeCorpusJson(`analysis/${a.id}.json`,a);
+    writeCorpusJson(`business-backfill/memos/${a.id}.json`,{version:1,asOf:'2026-09-28',inputHash:'old-inputs',lines:[]});
+    expect(loadAnalyses([a.company])[0].ownerMemo?.inputHash).toBe('corrected-inputs');
+  });
   it('keeps published filing memo lines when a new research memo omits them',()=>{
     const a=analysis();
     const line={question:6,answer:'European data transfers are highly regulated and litigated.',basis:'filing',evidence:[{quote:'European data transfers are highly regulated and litigated.',url:'https://example.com/report',filed:'2026-01-01',section:'Risk factors'}]};

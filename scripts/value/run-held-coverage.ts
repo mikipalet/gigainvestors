@@ -23,7 +23,10 @@ process.env.VALUE_CORPUS_DIR??=path.join(os.homedir(),'data/value-cover');
 dotenv.config({path:path.join(base,'.env.local'),quiet:true});
 dotenv.config({path:process.env.VALUE_ENV_FILE??path.resolve(__dirname,'../../.env.local'),quiet:true});
 process.env.VALUE_ANALYZE_CONCURRENCY??='8';
-process.env.VALUE_EODHD_HARD_CAP='100000';
+// The nightly runner owns at least 40,000 of the account's 100,000 calls.
+const coverageCap=Math.min(60_000,Number(process.env.VALUE_EODHD_HARD_CAP??60_000));
+if(!Number.isSafeInteger(coverageCap)||coverageCap<=0)throw Error('Invalid coverage budget cap');
+process.env.VALUE_EODHD_HARD_CAP=String(coverageCap);
 let releaseAccountLock=()=>{};
 
 function disk(){const s=statfsSync('/');if(s.bavail*s.bsize<4*1024**3)throw Error('Disk below 4 GiB; commit and stop');}
@@ -52,7 +55,7 @@ async function main(){
  if(!existsSync(usage)){mkdirSync(path.join(base,'usage'),{recursive:true});symlinkSync(path.join(base,'usage'),usage,'dir');}
  if(realpathSync(usage)!==realpathSync(path.join(base,'usage')))throw Error('Coverage must share the account usage ledger');
  const used=await callsUsedToday();
- let cacheOnly=process.argv.includes('--cache-only')||used>=100_000||activeDailyRunner();
+ let cacheOnly=process.argv.includes('--cache-only')||used>=coverageCap||activeDailyRunner();
  if(!cacheOnly){
   const lock=path.join(base,'daily-runner.lock'),pidFile=path.join(lock,'pid');
   try{
@@ -78,7 +81,7 @@ async function main(){
  const ready=additions.filter(id=>!missing.includes(id));
  const quotes=cachedPrices();
  let pricePending=ready.filter(id=>!quotes[id]||quotes[id][2]==='seed'||!freshPrice(quotes[id]));
- if(!cacheOnly&&pricePending.length&&budgetUsage().used+100<=100_000){
+ if(!cacheOnly&&pricePending.length&&budgetUsage().used+100<=coverageCap){
   const companies=membership.companies.filter(c=>pricePending.includes(c.id));
   const updates=parseBulkPrices({rows:await bulkLastDay('US'),companies});
   // Write only new identities. The baseline quotes remain frozen at publication.

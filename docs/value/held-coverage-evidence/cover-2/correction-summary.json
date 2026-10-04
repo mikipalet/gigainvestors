@@ -1,0 +1,16 @@
+{
+  "journal": "/Users/miki/data/value-cover/held-validation/cover-2-corrections.json",
+  "sha256": "d3d784caa896a440fe545b6d6e533eb788df8e59ac847ba89f2735e20e590382",
+  "changes": 15043,
+  "companies": 1036,
+  "fields": {
+    "dilutedShares": 12096,
+    "revenue": 1264,
+    "currency": 253,
+    "end": 1252,
+    "fy": 178
+  },
+  "latestFinancialRevenueSources": 158,
+  "latestFinancialRevenueChanges": 109,
+  "financialSourceGaps": []
+}

@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-04T21:07:21.737Z",
+  "usage": {
+    "date": "2026-10-04",
+    "used": 100000,
+    "history": 6,
+    "providerUsed": 99734,
+    "checkedAt": "2026-10-04T21:07:21.735Z"
+  },
+  "coverageCap": 60000,
+  "nightlyReserve": 40000,
+  "paidCallsThisRun": 0
+}

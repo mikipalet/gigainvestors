@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-04T21:20:04.339102+00:00",
+  "status": "NOT",
+  "completion": "PARTIAL",
+  "tests": {
+    "passed": 319,
+    "files": 18,
+    "log": "/Users/miki/data/value-cover/held-validation/cover-2-tests-final.log"
+  },
+  "typecheck": {
+    "passed": true,
+    "separateLog": "/Users/miki/data/value-cover/held-validation/cover-2-types.log",
+    "finalBuildTypecheck": true
+  },
+  "build": {
+    "exitCode": 0,
+    "command": "VALUE_STORE_DIR=$HOME/data/value-cover/staging/coverage NODE_OPTIONS=--max-old-space-size=4096 npm run build -- --webpack",
+    "log": "/Users/miki/data/value-cover/held-validation/cover-2-build.log"
+  },
+  "publication": {
+    "exitCode": 0,
+    "command": "VALUE_CORPUS_DIR=$HOME/data/value-cover VALUE_NO_EODHD=1 NODE_OPTIONS=--max-old-space-size=1536 npm run value -- publish --additions-only --out=$HOME/data/value-cover/staging/coverage --overwrite",
+    "log": "/Users/miki/data/value-cover/held-validation/cover-2-publish.log",
+    "remote": false
+  },
+  "analysis": {
+    "ready": 1172,
+    "failures": 0,
+    "logs": [
+      "/Users/miki/data/value-cover/held-validation/cover-2-analysis-0000.log",
+      "/Users/miki/data/value-cover/held-validation/cover-2-analysis-0300.log",
+      "/Users/miki/data/value-cover/held-validation/cover-2-analysis-0600.log",
+      "/Users/miki/data/value-cover/held-validation/cover-2-analysis-0900.log"
+    ]
+  },
+  "secondSource": {
+    "companies": 40,
+    "checks": 120,
+    "unexplainedMismatches": 0,
+    "sourceFailures": 0,
+    "newSeed": 202610042
+  },
+  "stagedAnalysisBindings": {
+    "passed": 1171,
+    "failures": 0
+  },
+  "baseline": {
+    "quarters": [
+      "2024 Q3",
+      "2024 Q4",
+      "2025 Q1",
+      "2025 Q2",
+      "2025 Q3",
+      "2025 Q4",
+      "2026 Q1",
+      "2026 Q2"
+    ],
+    "stockRecords": 3608,
+    "heldTickers": 2176,
+    "coverage": {
+      "added": 1188,
+      "excluded": 295,
+      "existing": 585,
+      "outside-window": 1432,
+      "pending-fundamentals-quota": 107,
+      "pending-publication-evidence": 1
+    },
+    "baselineDossiers": 2708,
+    "stagedDossiers": 3879,
+    "addedDossiers": 1171,
+    "baselineFileChanges": [],
+    "changedExistingDossiers": [],
+    "changedExistingIndexes": [],
+    "changedExistingPrices": [],
+    "PLXS": true
+  },
+  "browserGate": {
+    "exitCode": 1,
+    "routes": [
+      "/s/CBL",
+      "/s/CRBG",
+      "/s/DCGO",
+      "/s/FINV",
+      "/s/FWONA",
+      "/s/INTT",
+      "/s/KARO",
+      "/s/NXST",
+      "/s/PL",
+      "/s/TME"
+    ],
+    "viewports": [
+      "1728x970",
+      "390x844"
+    ],
+    "states": 196,
+    "failedStates": 60,
+    "mainPageStates": 20,
+    "failedMainPageStates": 0,
+    "nonWhitespaceFailures": [],
+    "report": "/Users/miki/data/value-cover/held-validation/cover-2-gate-final/report.json",
+    "reportSha256": "bcddd4c680df3042f491bc62e4306afbde9ff9e094e60d0bc413f1e46355053a"
+  },
+  "secretScan": {
+    "at": "2026-10-04T21:20:32.904Z",
+    "filesScanned": 5184,
+    "credentialValueMatches": 0
+  },
+  "noSubagents": true,
+  "noPush": true,
+  "noRevalidation": true,
+  "localServerStopped": true
+}

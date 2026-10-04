@@ -1,0 +1,100 @@
+{
+  "source": "https://ir.ozk.com/static-files/e0a9df34-ad64-4d55-9984-9a46e4a2f45f",
+  "evidence": "Issuer annual report, signed February 25 2026, PDF pp. 88 and 122 (printed pp. 74 and 108). Manually transcribed original GAAP statement rows in thousands into canonical concepts; not SEC XBRL facts. Net interest revenue excludes interest expense; no FTE adjustment.",
+  "facts": {
+    "facts": {
+      "us-gaap": {
+        "InterestIncomeExpenseNet": {
+          "units": {
+            "USD": [
+              {
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "val": 1592160000,
+                "form": "10-K",
+                "filed": "2026-02-25",
+                "accn": "issuer-annual-2025-pp74-108"
+              },
+              {
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "val": 1533724000,
+                "form": "10-K",
+                "filed": "2026-02-25",
+                "accn": "issuer-annual-2025-pp74-108"
+              },
+              {
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "val": 1439485000,
+                "form": "10-K",
+                "filed": "2026-02-25",
+                "accn": "issuer-annual-2025-pp74-108"
+              }
+            ]
+          }
+        },
+        "NoninterestIncome": {
+          "units": {
+            "USD": [
+              {
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "val": 135697000,
+                "form": "10-K",
+                "filed": "2026-02-25",
+                "accn": "issuer-annual-2025-pp74-108"
+              },
+              {
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "val": 124413000,
+                "form": "10-K",
+                "filed": "2026-02-25",
+                "accn": "issuer-annual-2025-pp74-108"
+              },
+              {
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "val": 122549000,
+                "form": "10-K",
+                "filed": "2026-02-25",
+                "accn": "issuer-annual-2025-pp74-108"
+              }
+            ]
+          }
+        },
+        "WeightedAverageNumberOfDilutedSharesOutstanding": {
+          "units": {
+            "shares": [
+              {
+                "start": "2025-01-01",
+                "end": "2025-12-31",
+                "val": 113223000,
+                "form": "10-K",
+                "filed": "2026-02-25",
+                "accn": "issuer-annual-2025-pp74-108"
+              },
+              {
+                "start": "2024-01-01",
+                "end": "2024-12-31",
+                "val": 114015000,
+                "form": "10-K",
+                "filed": "2026-02-25",
+                "accn": "issuer-annual-2025-pp74-108"
+              },
+              {
+                "start": "2023-01-01",
+                "end": "2023-12-31",
+                "val": 114833000,
+                "form": "10-K",
+                "filed": "2026-02-25",
+                "accn": "issuer-annual-2025-pp74-108"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -10,6 +10,7 @@ export interface HeldMapping {
  ticker:string;name:string;cusip:string|null;id:string|null;
  status:'mapped'|'excluded'|'unresolved'|'outside-window';reason:string; evidence:string[];
 }
+export type HeldResolution=Pick<HeldMapping,'ticker'|'name'|'id'|'reason'|'evidence'>&{status:'mapped'|'excluded'};
 export interface HeldMembership {version:1;asOf:string;quarters:string[];companies:Company[];ledger:HeldMapping[]}
 
 export function heldStocks<T extends HeldStock>(stocks:T[],quarters:string[],tracked:string[]):T[]{
@@ -24,8 +25,14 @@ export function securityExclusion(stock:Pick<HeldStock,'ticker'|'name'>,general:
 }
 
 /** A missing symbol is pending investigation, never proof that an issuer is defunct. */
-export function mapHeldSecurity(stock:HeldStock,symbols:HeldSymbol[]):HeldMapping{
+export function mapHeldSecurity(stock:HeldStock,symbols:HeldSymbol[],resolution?:HeldResolution):HeldMapping{
  const base={ticker:stock.ticker,name:stock.name,cusip:stock.cusip??null,id:null};
+ if(resolution){
+  if(resolution.ticker!==stock.ticker||resolution.name!==stock.name)throw Error('Reviewed mapping identity mismatch');
+  if(!resolution.reason||!resolution.evidence.some(e=>/^https:\/\//.test(e)))throw Error('Reviewed mapping requires public evidence');
+  if(resolution.status==='mapped'&&(!resolution.id||!/^[-\w.&]+\.[A-Z]+$/.test(resolution.id)))throw Error('Reviewed mapping requires a valid issuer ID');
+  return {...base,...resolution};
+ }
  const nameReason=securityExclusion(stock,{});
  if(nameReason)return {...base,status:'excluded',reason:nameReason,evidence:[`holdings:${stock.ticker}`]};
  const code=stock.ticker.toUpperCase().replaceAll('.','-');

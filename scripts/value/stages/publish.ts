@@ -401,7 +401,11 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       const analysis = readCorpusJson<Analysis>(`analysis/${company.id}.json`);
       if (!analysis) continue; // The rolling download has not analysed this company yet.
       const publishedMemo=readCorpusJson<Analysis["ownerMemo"]>(`published-memos/${company.id}.json`);
-      const currentMemo=readCorpusJson<Analysis["ownerMemo"]>(`business-backfill/memos/${company.id}.json`)??analysis.ownerMemo;
+      const backfillMemo=readCorpusJson<Analysis["ownerMemo"]>(`business-backfill/memos/${company.id}.json`);
+      // Reanalysis may correct statement amounts or share basis. A memo from
+      // before that analysis must not restore its superseded numeric inputs.
+      const currentMemo=backfillMemo&&(!analysis.ownerMemo||backfillMemo.asOf>=analysis.asOf)
+        ?backfillMemo:analysis.ownerMemo;
       // Research is incremental: an omitted answer is not a retraction of a live answer.
       // New answers win; the shared public consistency gate still checks every line.
       analysis.ownerMemo=currentMemo?{...currentMemo,lines:[...new Map([...(publishedMemo?.lines??[]),...currentMemo.lines].map(line=>[line.question,line])).values()].sort((a,b)=>a.question-b.question)}:publishedMemo??undefined;

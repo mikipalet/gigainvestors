@@ -1,3 +1,5 @@
+import {kindFor} from '../../../lib/value/universe';
+import {correctCachedAnnualSources} from '../../../lib/value/annual-source-corrections';
 import { retainRefreshFacts } from '../../../lib/value/refresh-fundamentals';
 import { fetchYahooFundamentals, normalizeYahooFundamentals } from '../../../lib/value/fundamentals-yahoo';
 import { mergeIndiaYahoo } from '../../../lib/value/india/filings';
@@ -95,17 +97,29 @@ export default async function fundamentals(options: Options): Promise<void> {
         normalized.integrity = checkIntegrity(normalized);
       }
     }
-    if ((patch.kind === 'bank' || patch.kind === 'insurer' || company.kind === 'bank' || /^capital markets$/i.test(patch.industry??'')) && (patch.cik || company.cik)) {
+    // Keep an established issuer identity across a provider's stale predecessor
+    // CIK. Newly discovered identities still use the provider as the first lead.
+    if(company.cik)patch.cik=company.cik;
+    if (patch.cik || company.cik) {
       const cik = String(patch.cik || company.cik).padStart(10, '0');
       try {
         const facts = await (await fetchEdgar(`https://data.sec.gov/api/xbrl/companyfacts/CIK${cik}.json`)).json() as CompanyFacts;
         writeCorpusJson(`raw/sec-companyfacts/${company.id}.json`, facts);
+        if((patch.sector??company.sector)==='Financial Services'){
+         try {
+          const profile=await (await fetchEdgar(`https://data.sec.gov/submissions/CIK${cik}.json`)).json() as {sic?:string};
+          writeCorpusJson(`raw/sec-submissions/${company.id}.json`,profile);
+          if(Number(profile.sic)>=6310&&Number(profile.sic)<6400)patch.kind=kindFor({id:company.id,sector:patch.sector??company.sector,industry:patch.industry??company.industry,sic:profile.sic});
+         } catch { console.warn(`${company.id}: optional SEC industry classification unavailable`); }
+        }
         normalized.years = supplementFinancialFacts(normalized.years, facts);
         normalized.integrity = checkIntegrity(normalized, {source:company.source});
       } catch (error) { console.warn(`${company.id}: optional SEC financial facts unavailable: ${String(error)}`); }
     }
     const retained = retainRefreshFacts(normalized, readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`));
     Object.assign(normalized, retained.fundamentals);
+    normalized.years=correctCachedAnnualSources({...company,...patch},normalized.years,raw,readCorpusJson,normalized.splits);
+    normalized.currency=normalized.years.at(-1)?.currency??normalized.currency;
     // Validate the usable suffix without deleting retained source observations.
     normalized.integrity = checkIntegrity(structuredClone(normalized), {source:company.source});
     if (retained.snapshot) writeCorpusJson(retained.snapshot.path, retained.snapshot.value);

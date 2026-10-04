@@ -1,3 +1,4 @@
+import {unchangedCoverageBaselineIds} from './coverage-release';
 import {existsSync, readFileSync, readdirSync} from 'node:fs';
 import path from 'node:path';
 import {isDeepStrictEqual} from 'node:util';
@@ -15,7 +16,7 @@ type Files = Record<string, any>;
 export function readVerdictFreeze(repo: string, {all=false}:{all?:boolean}={}) {
   const config = readCorpusJson<{version:number;ids:string[]}>('verdict-freeze.json');
   if (config && (config.version !== 1 || !Array.isArray(config.ids) || config.ids.some(id => typeof id !== 'string' || !validCompanyId(id, 'publish')) || new Set(config.ids).size !== config.ids.length)) throw Error('Invalid verdict-freeze.json');
-  const ids = new Set(config?.ids ?? []), previous: Files = {}, dossiers: Record<string,Dossier> = {};
+  const ids = new Set([...(config?.ids ?? []),...unchangedCoverageBaselineIds()]), previous: Files = {}, dossiers: Record<string,Dossier> = {};
   if (!ids.size&&!all) return {ids, previous, dossiers};
   for (const dir of ['dossiers','index','search','history']) {
     if (!existsSync(path.join(repo,dir))) continue;

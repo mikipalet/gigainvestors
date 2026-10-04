@@ -1,5 +1,6 @@
+import {readVerdictFreeze} from '../verdict-freeze';
 import { CALIBRATION } from "../../../lib/value/calibration";
-import { readCorpusJson, readJsonl } from "../../../lib/value/corpus";
+import { corpusPath, readCorpusJson, readJsonl } from "../../../lib/value/corpus";
 import type { Analysis, Company } from "../../../lib/value/types";
 import analyze, { type Options } from "./analyze";
 
@@ -7,7 +8,7 @@ export function calibrationSummary({ entries, analyses }: { entries: typeof CALI
   const counts = { truePositive: 0, trueNegative: 0, falsePositive: 0, falseNegative: 0, unclear: 0, missing: 0, exception: 0 };
   const rows = entries.map(entry => {
     const analysis = analyses.get(entry.id);
-    const results = analysis ? Object.fromEntries(Object.entries(analysis.tests).map(([key, test]) => [key, test.result])) : {};
+    const results = analysis ? Object.fromEntries(Object.entries(analysis.tests).filter(([key])=>key!=='price').map(([key, test]) => [key, test.result])) : {};
     let verdict: string;
     if (!analysis || analysis.status !== "scored") { counts.missing++; verdict = "missing or insufficient data"; }
     else if (entry.expect === "exception") { counts.exception++; verdict = "exception"; }
@@ -40,9 +41,12 @@ export default async function calibrate(options: Options & { cachedReadings?: bo
     ask: async ({id}: {id:string}) => Object.values(cached.get(id)?.tests ?? {}).flatMap(test => test.jev),
     evidence: async () => null,
   } : {}), only: [...new Set(entries.map(entry => resolve(entry.id)))], limit: undefined });
+  // Publication calibrates the effective released records. Pending cached
+  // research must not override a verdict freeze or block that frozen release.
+  const frozen=options.existing?readVerdictFreeze(corpusPath('publish-repo')).dossiers:{};
   const analyses = new Map<string, Analysis>();
   for (const { id } of entries) {
-    const analysis = readCorpusJson<Analysis>(`analysis/${resolve(id)}.json`);
+    const analysis = frozen[resolve(id)] ?? readCorpusJson<Analysis>(`analysis/${resolve(id)}.json`);
     if (analysis) analyses.set(id, analysis);
   }
   const summary = calibrationSummary({ entries, analyses });

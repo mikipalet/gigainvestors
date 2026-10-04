@@ -96,6 +96,40 @@ describe("buildOutput", () => {
     expect(readFileSync(path.join(corpusDir(),`publish-repo/dossiers/${shardOf(old.id)}.json`),'utf8')).toBe(before);
     await expect(publish({additionsOnly:true})).rejects.toThrow(/requires.*--out/);
   });
+  it('ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions',async()=>{
+    const {default:publish}=await import('@/scripts/value/stages/publish');
+    const {baselineAnalysisHash}=await import('@/scripts/value/coverage-release');
+    const old=analysis('KO.US'),addition=analysis('PLXS.US'),held=analysis('HELD.US');
+    addition.company.indexes=[];addition.company.heldBySuperinvestors=true;
+    held.company.indexes=[];held.company.heldBySuperinvestors=true;
+    addition.report={...addition.report,kind:'10-K',sections:['business']};
+    addition.ownerMemo={version:1,asOf:addition.asOf,inputHash:'current-input',lines:[]} as any;
+    const baseline=output([old]);
+    for(const [file,data]of Object.entries(baseline))writeCorpusJson(`publish-repo/${file}`,data);
+    writeCorpusJson('verdict-freeze.json',{version:1,ids:[]});
+
+    writeCorpusJson('analysis/KO.US.json',{...old,asOf:'2099-01-01',company:{...old.company,marketCapUsd:999}});
+    writeCorpusJson('held-membership/release.json',{version:1,baselineIds:[old.id],baselineAnalysisHashes:{[old.id]:baselineAnalysisHash(old.id)},additionIds:[addition.id],held:[{id:held.id,reasons:['full-filing']}]});
+    for(const a of [addition,held])writeCorpusJson(`analysis/${a.id}.json`,a);
+    writeCorpusJson('fundamentals/PLXS.US.json',{years:[{year:2025,end:'2025-12-31'}]});
+    writeCorpusJson('reports/PLXS.US/meta.json',addition.report);
+    writeCorpusJson('analysis/inputs/PLXS.US.json',{asOf:addition.asOf,sections:{business:'Annual filing'}});
+    writeCorpusJson('prices-history/PLXS.US.json',[['2026-09',10]]);
+    writeCorpusJson('prices/US.json',{'PLXS.US':[10,new Date().toISOString().slice(0,10)]});
+    writeFileSync(path.join(corpusDir(),'universe.jsonl'),JSON.stringify(old.company)+'\n');
+    writeCorpusJson('index-membership/latest.json',{complete:true,memberships:{'KO.US':['S&P 500']}});
+    writeCorpusJson('held-membership/latest.json',{version:1,companies:[addition.company,held.company],ledger:[],quarters:[]});
+    const out=path.join(corpusDir(),'candidate');
+    await publish({out});
+    const dossier=(id:string)=>JSON.parse(readFileSync(path.join(out,`dossiers/${shardOf(id)}.json`),'utf8'))[id];
+    expect(dossier(old.id)).toEqual((baseline[`dossiers/${shardOf(old.id)}.json`] as any)[old.id]);
+    expect(dossier(addition.id)).toBeDefined();
+    const ids=readdirSync(path.join(out,'dossiers')).flatMap(f=>Object.keys(JSON.parse(readFileSync(path.join(out,'dossiers',f),'utf8'))));
+    expect(ids.sort()).toEqual([old.id,addition.id].sort());
+    // A missing input must abort, even if the id was previously approved.
+    writeCorpusJson('reports/PLXS.US/meta.json',{kind:'description',sections:[]});
+    await expect(publish({out:path.join(corpusDir(),'incomplete')})).rejects.toThrow(/incomplete.*full-filing/);
+  });
   it('rejects an obsolete analysis before creating a candidate or refreshing returns', async()=>{
     const {default:publish}=await import('@/scripts/value/stages/publish');
     const a=analysis();a.versions.pipeline='obsolete';

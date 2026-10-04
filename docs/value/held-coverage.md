@@ -104,3 +104,40 @@ For bounded cache-only replays, set `VALUE_REPLAY_START` and
 must reflect actual current analyses and missing inputs. Full raw evidence and
 screenshots stay on the data volume; compact proof is committed under
 `docs/value/held-coverage-evidence/cover-2/`.
+
+## Nightly integration (cover-3)
+
+The private `held-membership/release.json` is now consumed by ordinary publication.
+It lists accepted additions and every held ID/reason. Prepare it from the broad
+local coverage candidate with `scripts/value/prepare-coverage-release.ts`;
+`held-membership/layout-holds.json` carries the recorded geometry failures.
+Selection requires a full filing in the analysis inputs, a fresh non-seed close,
+price history, and an analysis-to-publication binding. Publication checks those
+conditions again before writing output.
+
+Integration uses `bash scripts/value/with-daily-lock.sh bash
+scripts/value/prove-coverage-nightly.sh` with `VALUE_CORPUS_DIR=~/value-corpus`.
+This waits for the nightly runner's actual mkdir/PID lock, backs up replaced
+addition inputs on the data volume, merges accepted inputs under the existing
+layout, and leaves raw filings as data-volume links. It preserves baseline
+inputs and the original verdict-freeze file. The ordinary full local publication
+and byte/binding proof run inside the same lock. Never reap a live runner.
+
+Baseline records remain byte-identical while their captured analysis-file hashes
+are unchanged; a later reanalysis can publish normally, subject to the independent
+verdict freezes. The release manifest pins the reviewed company scope until a
+later coverage release supersedes it. Calibration with `--existing` uses effective
+frozen records and checks the five quality tests, excluding the separate price
+test. It does not override calibration failures on unfrozen research.
+
+For a later quota-completion run, preserve and temporarily move aside the release
+manifest **in the isolated coverage corpus only** before generating a broad
+`--additions-only --out=<fresh path>` review candidate. Re-run preparation against
+that candidate, retain unresolved layout holds, then rerun publication/binding and
+browser checks before merging the new accepted set into the nightly corpus.
+Never remove the main-corpus release manifest to bypass a hold.
+
+The cover-3 evidence and exact controller publication commands are in
+`docs/value/held-coverage-evidence/cover-3/`. The external cover-3 report is the
+readiness authority; a local proof against live baseline records is not a
+substitute for the required full publish from the integrated main corpus.

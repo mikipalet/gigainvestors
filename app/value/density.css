@@ -989,8 +989,9 @@
  .value-page .method-sections :is(th,td){font-size:14px;line-height:20px;padding:2px}
 }
 @media(min-width:768px) and (min-height:970px) and (max-height:1179px){
- .value-page dialog[data-side-panel]:has(.method-sections){width:min(1280px,100vw)}
- .value-page .method-sections{column-count:3}
+ /* Four columns accommodate the complete coverage method and calibration table. */
+ .value-page dialog[data-side-panel]:has(.method-sections){width:min(1728px,100vw)}
+ .value-page .method-sections{column-count:4}
 }
 @media(min-width:768px) and (min-height:1180px){
  .value-page dialog[data-side-panel]:has(.method-sections){width:min(1100px,100vw)}

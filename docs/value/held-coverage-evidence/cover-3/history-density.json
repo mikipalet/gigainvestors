@@ -1,0 +1,966 @@
+{
+  "baseline": [
+    {
+      "id": "MELE.BR",
+      "historyMonths": 120,
+      "statementYears": 24,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "LYC.AU",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 16,
+      "whitespaceFailed": 11,
+      "rate": 0.6875
+    },
+    {
+      "id": "000768.SHE",
+      "historyMonths": 121,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "600346.SHG",
+      "historyMonths": 120,
+      "statementYears": 28,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "AMGN.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 20,
+      "whitespaceFailed": 13,
+      "rate": 0.65
+    },
+    {
+      "id": "138040.KO",
+      "historyMonths": 121,
+      "statementYears": 15,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "AWK.US",
+      "historyMonths": 120,
+      "statementYears": 21,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "CQR.AU",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "BAYN.XETRA",
+      "historyMonths": 120,
+      "statementYears": 28,
+      "drawers": 16,
+      "whitespaceFailed": 11,
+      "rate": 0.6875
+    },
+    {
+      "id": "DLTR.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 20,
+      "whitespaceFailed": 15,
+      "rate": 0.75
+    },
+    {
+      "id": "ENX.PA",
+      "historyMonths": 120,
+      "statementYears": 15,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "DP4A.STU",
+      "historyMonths": 120,
+      "statementYears": 8,
+      "drawers": 16,
+      "whitespaceFailed": 14,
+      "rate": 0.875
+    },
+    {
+      "id": "EW.US",
+      "historyMonths": 120,
+      "statementYears": 27,
+      "drawers": 20,
+      "whitespaceFailed": 15,
+      "rate": 0.75
+    },
+    {
+      "id": "JBL.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 20,
+      "whitespaceFailed": 14,
+      "rate": 0.7
+    },
+    {
+      "id": "COR.LS",
+      "historyMonths": 120,
+      "statementYears": 11,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "AOS.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 11,
+      "rate": 0.6111111111111112
+    },
+    {
+      "id": "1925.JP",
+      "historyMonths": 120,
+      "statementYears": 14,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "8804.JP",
+      "historyMonths": 120,
+      "statementYears": 14,
+      "drawers": 16,
+      "whitespaceFailed": 13,
+      "rate": 0.8125
+    },
+    {
+      "id": "002049.SHE",
+      "historyMonths": 121,
+      "statementYears": 23,
+      "drawers": 18,
+      "whitespaceFailed": 11,
+      "rate": 0.6111111111111112
+    },
+    {
+      "id": "KNEBV.HE",
+      "historyMonths": 120,
+      "statementYears": 26,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "MRNA.US",
+      "historyMonths": 93,
+      "statementYears": 12,
+      "drawers": 16,
+      "whitespaceFailed": 10,
+      "rate": 0.625
+    },
+    {
+      "id": "GAMA.LSE",
+      "historyMonths": 120,
+      "statementYears": 15,
+      "drawers": 18,
+      "whitespaceFailed": 10,
+      "rate": 0.5555555555555556
+    },
+    {
+      "id": "PPL.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "ALTR.LS",
+      "historyMonths": 120,
+      "statementYears": 20,
+      "drawers": 16,
+      "whitespaceFailed": 10,
+      "rate": 0.625
+    },
+    {
+      "id": "IPO.LSE",
+      "historyMonths": 120,
+      "statementYears": 25,
+      "drawers": 16,
+      "whitespaceFailed": 13,
+      "rate": 0.8125
+    },
+    {
+      "id": "SBSP3.SA",
+      "historyMonths": 120,
+      "statementYears": 26,
+      "drawers": 16,
+      "whitespaceFailed": 10,
+      "rate": 0.625
+    },
+    {
+      "id": "2432.JP",
+      "historyMonths": 120,
+      "statementYears": 14,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "ADI.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 20,
+      "whitespaceFailed": 12,
+      "rate": 0.6
+    },
+    {
+      "id": "ICAD.PA",
+      "historyMonths": 120,
+      "statementYears": 26,
+      "drawers": 16,
+      "whitespaceFailed": 12,
+      "rate": 0.75
+    },
+    {
+      "id": "307950.KO",
+      "historyMonths": 91,
+      "statementYears": 11,
+      "drawers": 18,
+      "whitespaceFailed": 12,
+      "rate": 0.6666666666666666
+    },
+    {
+      "id": "GJF.OL",
+      "historyMonths": 120,
+      "statementYears": 22,
+      "drawers": 18,
+      "whitespaceFailed": 15,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "DOM.LSE",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 12,
+      "rate": 0.6666666666666666
+    },
+    {
+      "id": "600372.SHG",
+      "historyMonths": 120,
+      "statementYears": 28,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "NUE.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 20,
+      "whitespaceFailed": 13,
+      "rate": 0.65
+    },
+    {
+      "id": "ZTS.US",
+      "historyMonths": 120,
+      "statementYears": 17,
+      "drawers": 20,
+      "whitespaceFailed": 14,
+      "rate": 0.7
+    },
+    {
+      "id": "DTG.XETRA",
+      "historyMonths": 57,
+      "statementYears": 8,
+      "drawers": 18,
+      "whitespaceFailed": 15,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "WOR.AU",
+      "historyMonths": 120,
+      "statementYears": 27,
+      "drawers": 18,
+      "whitespaceFailed": 12,
+      "rate": 0.6666666666666666
+    },
+    {
+      "id": "NIBE-B.ST",
+      "historyMonths": 120,
+      "statementYears": 24,
+      "drawers": 16,
+      "whitespaceFailed": 8,
+      "rate": 0.5
+    },
+    {
+      "id": "TTE.PA",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "EVRG.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 16,
+      "whitespaceFailed": 12,
+      "rate": 0.75
+    },
+    {
+      "id": "NDX1.XETRA",
+      "historyMonths": 120,
+      "statementYears": 21,
+      "drawers": 16,
+      "whitespaceFailed": 14,
+      "rate": 0.875
+    },
+    {
+      "id": "5803.JP",
+      "historyMonths": 120,
+      "statementYears": 14,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "009970.KO",
+      "historyMonths": 120,
+      "statementYears": 26,
+      "drawers": 18,
+      "whitespaceFailed": 11,
+      "rate": 0.6111111111111112
+    },
+    {
+      "id": "META.US",
+      "historyMonths": 120,
+      "statementYears": 19,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "CTEC.LSE",
+      "historyMonths": 120,
+      "statementYears": 11,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "SIE.XETRA",
+      "historyMonths": 120,
+      "statementYears": 27,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "600886.SHG",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 16,
+      "whitespaceFailed": 11,
+      "rate": 0.6875
+    },
+    {
+      "id": "RMD.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 20,
+      "whitespaceFailed": 12,
+      "rate": 0.6
+    },
+    {
+      "id": "2301.TW",
+      "historyMonths": 121,
+      "statementYears": 26,
+      "drawers": 18,
+      "whitespaceFailed": 12,
+      "rate": 0.6666666666666666
+    },
+    {
+      "id": "069960.KO",
+      "historyMonths": 120,
+      "statementYears": 24,
+      "drawers": 16,
+      "whitespaceFailed": 11,
+      "rate": 0.6875
+    },
+    {
+      "id": "WMB.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 12,
+      "rate": 0.6666666666666666
+    },
+    {
+      "id": "3086.JP",
+      "historyMonths": 120,
+      "statementYears": 14,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "BAG.LSE",
+      "historyMonths": 120,
+      "statementYears": 28,
+      "drawers": 18,
+      "whitespaceFailed": 10,
+      "rate": 0.5555555555555556
+    },
+    {
+      "id": "TMUS.US",
+      "historyMonths": 120,
+      "statementYears": 26,
+      "drawers": 20,
+      "whitespaceFailed": 14,
+      "rate": 0.7
+    },
+    {
+      "id": "071970.KO",
+      "historyMonths": 120,
+      "statementYears": 8,
+      "drawers": 18,
+      "whitespaceFailed": 15,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "QBE.AU",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "WIE.VI",
+      "historyMonths": 120,
+      "statementYears": 11,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "BKT.MC",
+      "historyMonths": 120,
+      "statementYears": 26,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "XPP.LSE",
+      "historyMonths": 120,
+      "statementYears": 20,
+      "drawers": 16,
+      "whitespaceFailed": 12,
+      "rate": 0.75
+    },
+    {
+      "id": "TATE.LSE",
+      "historyMonths": 120,
+      "statementYears": 26,
+      "drawers": 18,
+      "whitespaceFailed": 11,
+      "rate": 0.6111111111111112
+    }
+  ],
+  "additions": [
+    {
+      "id": "BGC.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "SWBI.US",
+      "historyMonths": 120,
+      "statementYears": 4,
+      "drawers": 6,
+      "whitespaceFailed": 5,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "ACA.US",
+      "historyMonths": 96,
+      "statementYears": 11,
+      "drawers": 20,
+      "whitespaceFailed": 14,
+      "rate": 0.7
+    },
+    {
+      "id": "RRX.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 15,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "BIDU.US",
+      "historyMonths": 120,
+      "statementYears": 23,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "KOS.US",
+      "historyMonths": 120,
+      "statementYears": 17,
+      "drawers": 16,
+      "whitespaceFailed": 12,
+      "rate": 0.75
+    },
+    {
+      "id": "RYAN.US",
+      "historyMonths": 63,
+      "statementYears": 7,
+      "drawers": 18,
+      "whitespaceFailed": 15,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "DT.US",
+      "historyMonths": 86,
+      "statementYears": 10,
+      "drawers": 18,
+      "whitespaceFailed": 12,
+      "rate": 0.6666666666666666
+    },
+    {
+      "id": "ARDT.US",
+      "historyMonths": 27,
+      "statementYears": 5,
+      "drawers": 6,
+      "whitespaceFailed": 5,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "TOST.US",
+      "historyMonths": 61,
+      "statementYears": 7,
+      "drawers": 18,
+      "whitespaceFailed": 17,
+      "rate": 0.9444444444444444
+    },
+    {
+      "id": "REZI.US",
+      "historyMonths": 96,
+      "statementYears": 11,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "AIIR.US",
+      "historyMonths": 6,
+      "statementYears": 3,
+      "drawers": 8,
+      "whitespaceFailed": 7,
+      "rate": 0.875
+    },
+    {
+      "id": "LNC.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "PLPC.US",
+      "historyMonths": 120,
+      "statementYears": 15,
+      "drawers": 20,
+      "whitespaceFailed": 13,
+      "rate": 0.65
+    },
+    {
+      "id": "W.US",
+      "historyMonths": 120,
+      "statementYears": 14,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "MNRO.US",
+      "historyMonths": 120,
+      "statementYears": 16,
+      "drawers": 18,
+      "whitespaceFailed": 12,
+      "rate": 0.6666666666666666
+    },
+    {
+      "id": "FIP.US",
+      "historyMonths": 51,
+      "statementYears": 7,
+      "drawers": 18,
+      "whitespaceFailed": 16,
+      "rate": 0.8888888888888888
+    },
+    {
+      "id": "CHEF.US",
+      "historyMonths": 120,
+      "statementYears": 17,
+      "drawers": 18,
+      "whitespaceFailed": 12,
+      "rate": 0.6666666666666666
+    },
+    {
+      "id": "ALT.US",
+      "historyMonths": 120,
+      "statementYears": 8,
+      "drawers": 18,
+      "whitespaceFailed": 17,
+      "rate": 0.9444444444444444
+    },
+    {
+      "id": "TDS.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "ASPI.US",
+      "historyMonths": 47,
+      "statementYears": 5,
+      "drawers": 8,
+      "whitespaceFailed": 7,
+      "rate": 0.875
+    },
+    {
+      "id": "BMRN.US",
+      "historyMonths": 120,
+      "statementYears": 28,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "DOLE.US",
+      "historyMonths": 63,
+      "statementYears": 7,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "AGO.US",
+      "historyMonths": 120,
+      "statementYears": 26,
+      "drawers": 18,
+      "whitespaceFailed": 15,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "JKS.US",
+      "historyMonths": 120,
+      "statementYears": 16,
+      "drawers": 16,
+      "whitespaceFailed": 12,
+      "rate": 0.75
+    },
+    {
+      "id": "MTH.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "AMPY.US",
+      "historyMonths": 120,
+      "statementYears": 17,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "SUI.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "RH.US",
+      "historyMonths": 120,
+      "statementYears": 14,
+      "drawers": 16,
+      "whitespaceFailed": 11,
+      "rate": 0.6875
+    },
+    {
+      "id": "KOP.US",
+      "historyMonths": 120,
+      "statementYears": 21,
+      "drawers": 18,
+      "whitespaceFailed": 12,
+      "rate": 0.6666666666666666
+    },
+    {
+      "id": "ZION.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "COCO.US",
+      "historyMonths": 60,
+      "statementYears": 7,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "CUZ.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 12,
+      "rate": 0.6666666666666666
+    },
+    {
+      "id": "NVGS.US",
+      "historyMonths": 120,
+      "statementYears": 19,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "SUN.US",
+      "historyMonths": 120,
+      "statementYears": 17,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "FUL.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 20,
+      "whitespaceFailed": 13,
+      "rate": 0.65
+    },
+    {
+      "id": "BRCC.US",
+      "historyMonths": 65,
+      "statementYears": 7,
+      "drawers": 18,
+      "whitespaceFailed": 16,
+      "rate": 0.8888888888888888
+    },
+    {
+      "id": "PFGC.US",
+      "historyMonths": 120,
+      "statementYears": 15,
+      "drawers": 18,
+      "whitespaceFailed": 11,
+      "rate": 0.6111111111111112
+    },
+    {
+      "id": "H.US",
+      "historyMonths": 120,
+      "statementYears": 19,
+      "drawers": 18,
+      "whitespaceFailed": 13,
+      "rate": 0.7222222222222222
+    },
+    {
+      "id": "OI.US",
+      "historyMonths": 120,
+      "statementYears": 13,
+      "drawers": 16,
+      "whitespaceFailed": 10,
+      "rate": 0.625
+    },
+    {
+      "id": "COTY.US",
+      "historyMonths": 120,
+      "statementYears": 17,
+      "drawers": 18,
+      "whitespaceFailed": 15,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "SMRT.US",
+      "historyMonths": 68,
+      "statementYears": 5,
+      "drawers": 8,
+      "whitespaceFailed": 7,
+      "rate": 0.875
+    },
+    {
+      "id": "LPTH.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 15,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "SRAD.US",
+      "historyMonths": 61,
+      "statementYears": 7,
+      "drawers": 16,
+      "whitespaceFailed": 11,
+      "rate": 0.6875
+    },
+    {
+      "id": "DLO.US",
+      "historyMonths": 64,
+      "statementYears": 7,
+      "drawers": 20,
+      "whitespaceFailed": 14,
+      "rate": 0.7
+    },
+    {
+      "id": "GRAB.US",
+      "historyMonths": 70,
+      "statementYears": 7,
+      "drawers": 16,
+      "whitespaceFailed": 15,
+      "rate": 0.9375
+    },
+    {
+      "id": "RDI.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 18,
+      "whitespaceFailed": 15,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "WLY.US",
+      "historyMonths": 120,
+      "statementYears": 17,
+      "drawers": 16,
+      "whitespaceFailed": 11,
+      "rate": 0.6875
+    },
+    {
+      "id": "SBLK.US",
+      "historyMonths": 120,
+      "statementYears": 13,
+      "drawers": 16,
+      "whitespaceFailed": 11,
+      "rate": 0.6875
+    },
+    {
+      "id": "WT.US",
+      "historyMonths": 120,
+      "statementYears": 3,
+      "drawers": 8,
+      "whitespaceFailed": 7,
+      "rate": 0.875
+    },
+    {
+      "id": "AM.US",
+      "historyMonths": 113,
+      "statementYears": 11,
+      "drawers": 20,
+      "whitespaceFailed": 15,
+      "rate": 0.75
+    },
+    {
+      "id": "QUAD.US",
+      "historyMonths": 120,
+      "statementYears": 18,
+      "drawers": 18,
+      "whitespaceFailed": 15,
+      "rate": 0.8333333333333334
+    },
+    {
+      "id": "SABR.US",
+      "historyMonths": 120,
+      "statementYears": 16,
+      "drawers": 18,
+      "whitespaceFailed": 16,
+      "rate": 0.8888888888888888
+    },
+    {
+      "id": "SE.US",
+      "historyMonths": 108,
+      "statementYears": 12,
+      "drawers": 18,
+      "whitespaceFailed": 16,
+      "rate": 0.8888888888888888
+    },
+    {
+      "id": "AMPX.US",
+      "historyMonths": 49,
+      "statementYears": 6,
+      "drawers": 8,
+      "whitespaceFailed": 7,
+      "rate": 0.875
+    },
+    {
+      "id": "IIIN.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 20,
+      "whitespaceFailed": 15,
+      "rate": 0.75
+    },
+    {
+      "id": "IESC.US",
+      "historyMonths": 120,
+      "statementYears": 21,
+      "drawers": 18,
+      "whitespaceFailed": 10,
+      "rate": 0.5555555555555556
+    },
+    {
+      "id": "PTCT.US",
+      "historyMonths": 120,
+      "statementYears": 13,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    },
+    {
+      "id": "EGP.US",
+      "historyMonths": 120,
+      "statementYears": 30,
+      "drawers": 20,
+      "whitespaceFailed": 15,
+      "rate": 0.75
+    },
+    {
+      "id": "XP.US",
+      "historyMonths": 82,
+      "statementYears": 13,
+      "drawers": 18,
+      "whitespaceFailed": 14,
+      "rate": 0.7777777777777778
+    }
+  ]
+}

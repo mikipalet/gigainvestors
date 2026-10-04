@@ -1,0 +1,140 @@
+{
+  "at": "2026-10-04T22:28:45.852046+00:00",
+  "status": "NOT",
+  "completion": "PARTIAL",
+  "branch": "value-cover-nightly",
+  "fetchedOriginMaster": "2697dc5",
+  "coverageInput": "8132dfb",
+  "mergeCommit": "15e3d2a",
+  "publishableAdditions": 1152,
+  "heldIds": 139,
+  "localDossiers": 3860,
+  "mainCorpusIntegration": "BLOCKED: live daily-runner lock; not modified",
+  "tests": {
+    "passed": 2209,
+    "skipped": 1,
+    "failures": 0,
+    "files": 221,
+    "log": "/Users/miki/data/value-cover/held-validation/cover-3-unit-verified.log"
+  },
+  "build": {
+    "passed": true,
+    "log": "/Users/miki/data/value-cover/held-validation/cover-3-build-verified.log"
+  },
+  "typecheck": {
+    "passed": true,
+    "log": "/Users/miki/data/value-cover/held-validation/cover-3-types-final.log"
+  },
+  "calibration": {
+    "nightlyCorpusReadOnly": {
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "missingOrInsufficient": 2,
+      "log": "/Users/miki/data/value-cover/held-validation/cover-3-main-calibration-final.log"
+    },
+    "releaseCandidateReadOnly": {
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "missingOrInsufficient": 6,
+      "log": "/Users/miki/data/value-cover/held-validation/cover-3-release-calibration.log"
+    }
+  },
+  "localProof": {
+    "at": "2026-10-04T22:26:31.175Z",
+    "corpus": "/Users/miki/data/value-cover",
+    "baselineRepo": "/Users/miki/value-corpus/publish-repo",
+    "output": "/Users/miki/data/value-cover/staging/cover-3-final",
+    "baseline": 2708,
+    "additions": 1152,
+    "held": 139,
+    "baselineDossierChanges": [],
+    "baselineIndexChanges": [],
+    "baselineQuoteChanges": [],
+    "bindingFailures": [],
+    "missing": [],
+    "unexpected": [],
+    "frozen": 147,
+    "freezeChanges": []
+  },
+  "releaseGate": {
+    "states": 216,
+    "companies": 10,
+    "viewports": [
+      "1728x970",
+      "390x844"
+    ],
+    "failedStates": 118,
+    "whitespaceFailedStates": 118,
+    "nonWhitespaceFailures": [],
+    "mainPageStates": 20,
+    "report": "/Users/miki/data/value-cover/held-validation/cover-3-release-gate-verified/report.json",
+    "sha256": "d43db734ad57cfb54454ce69d85f9909de6abdded6aeaf69e45bc58ca28d5065"
+  },
+  "whitespaceComparison": {
+    "baseline": {
+      "companies": 60,
+      "states": 1428,
+      "drawers": 1068,
+      "whitespaceFailedDrawers": 756,
+      "whitespaceRate": 0.7078651685393258,
+      "companyWhitespaceFailures": 60,
+      "byViewport": {
+        "1728": {
+          "drawers": 534,
+          "whitespaceFailures": 458
+        },
+        "390": {
+          "drawers": 534,
+          "whitespaceFailures": 298
+        }
+      },
+      "meanCompanyWhitespaceRate": 0.7086111111111111
+    },
+    "additions": {
+      "companies": 60,
+      "states": 1364,
+      "drawers": 1004,
+      "whitespaceFailedDrawers": 767,
+      "whitespaceRate": 0.7639442231075697,
+      "companyWhitespaceFailures": 60,
+      "byViewport": {
+        "1728": {
+          "drawers": 502,
+          "whitespaceFailures": 452
+        },
+        "390": {
+          "drawers": 502,
+          "whitespaceFailures": 315
+        }
+      },
+      "meanCompanyWhitespaceRate": 0.7708101851851852
+    }
+  },
+  "quota": {
+    "at": "2026-10-04T22:00:52.401Z",
+    "providerCalls": 99734,
+    "ledger": {
+      "date": "2026-10-04",
+      "used": 100000,
+      "history": 6,
+      "providerUsed": 99734,
+      "checkedAt": "2026-10-04T21:07:21.735Z"
+    },
+    "coverageCeiling": 60000,
+    "paidCallsThisRun": 0,
+    "utcResetConfirmed": false,
+    "nextUtcReset": "2026-10-05T00:00:00Z"
+  },
+  "diskFreeBytes": 13483151360,
+  "noSubagents": true,
+  "noPush": true,
+  "noRemoteDataPublication": true,
+  "noRevalidation": true,
+  "ownedWaiterStopped": true,
+  "localServerStopped": true,
+  "secretScan": {
+    "at": "2026-10-04T22:29:50.277Z",
+    "filesScanned": 161,
+    "credentialValueMatches": 0
+  }
+}

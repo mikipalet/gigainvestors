@@ -1,0 +1,14 @@
+{
+  "states": 216,
+  "companies": 10,
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "failedStates": 118,
+  "whitespaceFailedStates": 118,
+  "nonWhitespaceFailures": [],
+  "mainPageStates": 20,
+  "report": "/Users/miki/data/value-cover/held-validation/cover-3-release-gate-verified/report.json",
+  "sha256": "d43db734ad57cfb54454ce69d85f9909de6abdded6aeaf69e45bc58ca28d5065"
+}

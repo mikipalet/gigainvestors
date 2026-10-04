@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-04T22:27:27.657134+00:00",
+  "status": "blocked-live-daily-lock",
+  "ownerPid": 2213696,
+  "ownerCwd": "/Users/miki/GitHub/superinvestors-wt/value-daily",
+  "waiterStarted": "Sun Oct  4 21:53:15 2026",
+  "mainCorpusReleaseInstalled": false,
+  "mainPublishProofRun": false,
+  "nightlyCodeHead": "d4158fcd56eb2d10770690a6d7e56d65e7c768b1",
+  "liveArchiveHead": "825a312f9738eadfa525e26242f432ec1ac5ab26",
+  "reason": "The runner acquires its mkdir/PID lock before the initial 03:00 sleep and holds it across every cycle; EXIT is the only normal release. A live owner cannot be reaped. Controller handoff was requested; no handoff received."
+}

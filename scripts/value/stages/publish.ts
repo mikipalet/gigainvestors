@@ -1,3 +1,4 @@
+import {readCoverageRelease,additionInputProblems,assertAdditionBinding} from '../coverage-release';
 import {uploadPublishedSnapshot} from '../blob-publish';
 import { assertNoPendingPublication, beginPublication } from '../post-publish';
 import {universeCompanies} from '../../../lib/value/companies';
@@ -224,6 +225,8 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   investorNames: Record<string, string>;
 }): { count: number; changed: boolean } {
   if(additionsOnly&&commit)throw Error('Additions-only publication requires local --out');
+  const release=readCoverageRelease();
+  const preserveBaseline=additionsOnly||Boolean(release);
   const freeze=readVerdictFreeze(previousDossiers ? path.dirname(previousDossiers) : repo,{all:additionsOnly});
   // Read the fetched snapshot before replacing meta.json or creating an orphan commit.
   const metaFile = path.join(repo, "meta.json");
@@ -232,7 +235,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     ?? (previous?.counts ? previous.counts.scored + previous.counts.insufficient : 0);
   if (!Number.isInteger(previousCount) || previousCount < 0) throw new Error(`Invalid published count in ${metaFile}`);
   universe = universe.filter(inPublicationScope);
-  if(additionsOnly)universe=[...new Map([...universe,...Object.values(freeze.dossiers).map(d=>d.company)].map(c=>[c.id,c])).values()];
+  if(preserveBaseline)universe=[...new Map([...universe,...Object.values(freeze.dossiers).map(d=>d.company)].map(c=>[c.id,c])).values()];
   const allowedIds = new Set(universe.map(company => company.id));
   const merged = new Map<string, Analysis>();
   const directory = path.join(repo, "dossiers");
@@ -262,7 +265,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
       console.warn(`publish: skipped price history for ${row.id}: ${error instanceof Error ? error.message : "unreadable history"}`);
     }
   }
-  const unchangedQuotes=additionsOnly?readPrices(path.join(repo,'prices')):null;
+  const unchangedQuotes=preserveBaseline?readPrices(path.join(repo,'prices')):null;
   mergeSeedFiles(repo);
   if(unchangedQuotes)for(const country of new Set(Object.values(freeze.dossiers).map(d=>d.company.country))){
     const file=path.join(repo,'prices',`${country}.json`);
@@ -346,8 +349,17 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     if(asset){const cached=readCorpusJson(`enrichment-v7/logos/assets/${asset}.json`);if(!cached)throw Error(`Missing logo asset ${asset}`);files[`logos/${asset}.json`]=cached;}
   }
   if(additionsOnly)writeCorpusJson('staging/additions-search-manifest.json',files['search/manifest.json']);
-  applyVerdictFreeze(files,freeze,{extendSearch:additionsOnly});
-  if(additionsOnly)preserveAdditionBaseline(files,freeze);
+  applyVerdictFreeze(files,freeze,{extendSearch:preserveBaseline});
+  if(preserveBaseline)preserveAdditionBaseline(files,freeze);
+  if(release){
+    const emitted=Object.assign({},...Object.entries(files).filter(([file])=>file.startsWith('dossiers/')).map(([,data])=>data));
+    for(const id of release.additionIds){
+      const problems=additionInputProblems(id,quotes[id]);
+      if(problems.length)throw Error(`Coverage addition ${id} is incomplete: ${problems.join(', ')}`);
+      assertAdditionBinding(readCorpusJson<Analysis>(`analysis/${id}.json`)!,emitted[id]);
+    }
+    if(release.held.some(({id})=>emitted[id]))throw Error('Held coverage addition reached publication');
+  }
   forwardFiles(repo, files, universe, readPrices(path.join(repo, 'prices')), new Date().toISOString().slice(0,10));
   publishViews(files);
   writeOutput({ repo, files });
@@ -462,11 +474,13 @@ export default async function publish(options: { only?: string[]; limit?: number
   if (!T.publish.indexMembersOnly) throw new Error("Publication requires indexMembersOnly");
   const membership = readCorpusJson<{ complete: boolean; memberships: Record<string, string[]>; supplementalCompanies?: Company[] }>("index-membership/latest.json");
   if (!membership || (!membership.complete && !(out && options.force))) throw new Error("Run index-membership and resolve its coverage report before publish (incomplete snapshots may only be inspected with --out --force)");
-  const companies = universeCompanies().map(company=>({...mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{}),indexes:company.indexes,heldBySuperinvestors:company.heldBySuperinvestors})).filter(company => inPublicationScope(company) && !companyExclusion(company));
+  const release=readCoverageRelease();
+  const releasedIds=release?new Set([...release.baselineIds,...release.additionIds]):null;
+  const companies = universeCompanies().filter(c=>!releasedIds||releasedIds.has(c.id)).map(company=>({...mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{}),indexes:company.indexes,heldBySuperinvestors:company.heldBySuperinvestors})).filter(company => inPublicationScope(company) && !companyExclusion(company));
   if (!companies.length) throw new Error("Run the universe stage before publish");
   // Selection only needs IDs; do not retain a second full baseline while building output.
   const frozenIds=options.additionsOnly?new Set(readdirSync(corpusPath('publish-repo/dossiers')).filter(f=>/^\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(JSON.parse(readFileSync(corpusPath('publish-repo/dossiers',f),'utf8'))))):readVerdictFreeze(corpusPath('publish-repo')).ids;
-  const selected = companies.filter((company) => (!options.only || options.only.includes(company.id))&&(!options.additionsOnly||!frozenIds.has(company.id))).slice(0, options.limit);
+  const selected = companies.filter((company) => (!options.only || options.only.includes(company.id))&&(!(options.additionsOnly||release)||!frozenIds.has(company.id))).slice(0, options.limit);
   if (!selected.length) throw new Error("No companies selected for publish");
   // A merge changes the analysis contract, not the cached documents. Never
   // silently export pre-merge verdicts when the runner skipped/failed analysis.

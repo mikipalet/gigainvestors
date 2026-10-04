@@ -6,7 +6,7 @@ import { methodMarkdown } from '@/lib/agents/method';
 
 // Keep external publication reads deterministic; exercise the real generated copy.
 vi.mock('@/lib/data', () => ({ getIndex: async () => null, getAllStockTickers: async () => [] }));
-vi.mock('@/lib/value/store', () => ({ getMeta: async () => null, getDefaultIndex: async () => [] }));
+vi.mock('@/lib/value/store', () => ({ getMeta: async () => null, getAllAnalyzedIndex: async () => [] }));
 vi.mock('@/lib/newsletter/store', () => ({ listIssues: () => [] }));
 afterEach(() => vi.restoreAllMocks());
 

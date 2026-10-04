@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-04T22:00:52.401Z",
+  "providerCalls": 99734,
+  "ledger": {
+    "date": "2026-10-04",
+    "used": 100000,
+    "history": 6,
+    "providerUsed": 99734,
+    "checkedAt": "2026-10-04T21:07:21.735Z"
+  },
+  "coverageCeiling": 60000,
+  "paidCallsThisRun": 0,
+  "utcResetConfirmed": false,
+  "nextUtcReset": "2026-10-05T00:00:00Z"
+}

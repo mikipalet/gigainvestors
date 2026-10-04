@@ -1,0 +1,300 @@
+{
+  "baseline": {
+    "companies": 60,
+    "states": 1428,
+    "drawers": 1068,
+    "whitespaceFailedDrawers": 756,
+    "whitespaceRate": 0.7078651685393258,
+    "companyWhitespaceFailures": 60,
+    "nonWhitespaceFailures": [
+      {
+        "path": "/s/GJF.OL",
+        "width": 1728,
+        "state": "Open Honest profits evidence",
+        "issues": [
+          "overlapping text: \"2016\u20132025\" / \"Common ROE\""
+        ]
+      },
+      {
+        "path": "/s/009970.KO",
+        "width": 1728,
+        "state": "Open valuation",
+        "issues": [
+          "text cut by container: \"\u00f7 current shares\"",
+          "text below the fold on a no-scroll page: \"\u00f7 current shares\"",
+          "text cut by container: \"11.6M\"",
+          "text below the fold on a no-scroll page: \"11.6M\""
+        ]
+      },
+      {
+        "path": "/s/QBE.AU",
+        "width": 1728,
+        "state": "Open Value created per $1 kept evidence",
+        "issues": [
+          "filing bar overlaps label: \"Founder or family ownership or board role\"",
+          "filing bar overlaps label: \"Acquisitions are the main growth strategy\""
+        ]
+      },
+      {
+        "path": "/s/QBE.AU",
+        "width": 1728,
+        "state": "Open Honest profits evidence",
+        "issues": [
+          "overlapping text: \"2016\u20132025\" / \"Common ROE\""
+        ]
+      },
+      {
+        "path": "/s/BKT.MC",
+        "width": 1728,
+        "state": "Open Honest profits evidence",
+        "issues": [
+          "overlapping text: \"EUR 6.31\" / \"Book / share\"",
+          "overlapping text: \"EUR 6.31\" / \"Common ROE\"",
+          "overlapping text: \"EUR 6.31\" / \"2023\"",
+          "overlapping text: \"4.4%\" / \"2023\"",
+          "overlapping text: \"4.4%\" / \"ROTE / ROE\"",
+          "overlapping text: \"2016\u20132025\" / \"Common ROE\"",
+          "overlapping text: \"2016\u20132025\" / \"2024\""
+        ]
+      },
+      {
+        "path": "/s/138040.KO",
+        "width": 390,
+        "state": "Open valuation",
+        "issues": [
+          "overlapping text: \"71,492.42\" / \"35,746.21\"",
+          "overlapping text: \"116,779.5\" / \"58,389.75\"",
+          "overlapping text: \"84,842.74\" / \"42,421.37\"",
+          "overlapping text: \"100,711.41\" / \"50,355.7\"",
+          "overlapping text: \"207,856.16\" / \"103,928.08\""
+        ]
+      },
+      {
+        "path": "/s/307950.KO",
+        "width": 390,
+        "state": "Open valuation",
+        "issues": [
+          "overlapping text: \"52,244.34\" / \"39,183.26\"",
+          "overlapping text: \"76,515.89\" / \"57,386.92\"",
+          "overlapping text: \"87,384.46\" / \"65,538.35\""
+        ]
+      },
+      {
+        "path": "/s/009970.KO",
+        "width": 390,
+        "state": "Open valuation",
+        "issues": [
+          "overlapping text: \"100,196.52\" / \"65,127.74\"",
+          "overlapping text: \"81,150.51\" / \"52,747.83\"",
+          "overlapping text: \"139,040.37\" / \"90,376.24\"",
+          "overlapping text: \"177,516.31\" / \"115,385.6\"",
+          "overlapping text: \"192,054.2\" / \"124,835.23\"",
+          "overlapping text: \"124,835.23\" / \"\u2713\"",
+          "overlapping text: \"224,960.57\" / \"146,224.37\"",
+          "overlapping text: \"356,797.58\" / \"231,918.43\"",
+          "overlapping text: \"510,851.8\" / \"332,053.67\"",
+          "overlapping text: \"541,095.25\" / \"351,711.92\"",
+          "overlapping text: \"642,450.05\" / \"417,592.53\""
+        ]
+      },
+      {
+        "path": "/s/QBE.AU",
+        "width": 390,
+        "state": "Open Value created per $1 kept evidence",
+        "issues": [
+          "filing bar overlaps label: \"Founder or family ownership or board role\"",
+          "filing bar overlaps label: \"Acquisitions are the main growth strategy\""
+        ]
+      }
+    ],
+    "byViewport": {
+      "1728": {
+        "drawers": 534,
+        "whitespaceFailures": 458
+      },
+      "390": {
+        "drawers": 534,
+        "whitespaceFailures": 298
+      }
+    },
+    "meanCompanyWhitespaceRate": 0.7086111111111111,
+    "byDrawer": {
+      "Business detail": {
+        "states": 120,
+        "failed": 47
+      },
+      "Holders": {
+        "states": 26,
+        "failed": 26
+      },
+      "Method": {
+        "states": 120,
+        "failed": 60
+      },
+      "Open Cash for owners evidence": {
+        "states": 120,
+        "failed": 58
+      },
+      "Open Honest profits evidence": {
+        "states": 120,
+        "failed": 67
+      },
+      "Open Lasting advantage evidence": {
+        "states": 120,
+        "failed": 104
+      },
+      "Open Predictable profits evidence": {
+        "states": 120,
+        "failed": 95
+      },
+      "Open Value created per $1 kept evidence": {
+        "states": 120,
+        "failed": 109
+      },
+      "Open valuation": {
+        "states": 82,
+        "failed": 70
+      },
+      "Price story": {
+        "states": 120,
+        "failed": 120
+      }
+    }
+  },
+  "additions": {
+    "companies": 60,
+    "states": 1364,
+    "drawers": 1004,
+    "whitespaceFailedDrawers": 767,
+    "whitespaceRate": 0.7639442231075697,
+    "companyWhitespaceFailures": 60,
+    "nonWhitespaceFailures": [
+      {
+        "path": "/s/AGO.US",
+        "width": 1728,
+        "state": "Open Value created per $1 kept evidence",
+        "issues": [
+          "filing bar overlaps label: \"Founder or family ownership or board role\"",
+          "filing bar overlaps label: \"Compensation incentives\"",
+          "filing bar overlaps label: \"100%\"",
+          "filing bar overlaps label: \"Buybacks described as below intrinsic value\"",
+          "filing bar overlaps label: \"Acquisitions are the main growth strategy\""
+        ]
+      },
+      {
+        "path": "/s/TOST.US",
+        "width": 390,
+        "state": "More \u2197",
+        "issues": [
+          "off-screen right: <table class=\"memo-years\"> YearPercentChangeFY2019-133.8%\u2014FY2020-31",
+          "off-screen right: <thead class=\"\"> YearPercentChange",
+          "off-screen right: <tr class=\"\"> YearPercentChange",
+          "off-screen right: <th class=\"\"> Change",
+          "off-screen right: <tbody class=\"\"> FY2019-133.8%\u2014FY2020-31.6%102.2ppFY2021-",
+          "off-screen right: <tr class=\"\"> FY2019-133.8%\u2014",
+          "off-screen right: <td class=\"\"> \u2014",
+          "off-screen right: <tr class=\"\"> FY2020-31.6%102.2pp",
+          "off-screen right: <td class=\"\"> 102.2pp",
+          "off-screen right: <tr class=\"\"> FY2021-15.1%16.5pp",
+          "off-screen right: <td class=\"\"> 16.5pp",
+          "off-screen right: <tr class=\"\"> FY2022-474.0%-458.9pp",
+          "off-screen right: <td class=\"\"> -458.9pp",
+          "off-screen right: <tr class=\"\"> FY2023-22673.0%-22199.0pp",
+          "off-screen right: <td class=\"\"> -22199.0pp",
+          "off-screen right: <tr class=\"\"> FY202428.2%22701.2pp",
+          "off-screen right: <td class=\"\"> 22701.2pp",
+          "off-screen right: <tr class=\"\"> FY2025>100%\u2014"
+        ]
+      },
+      {
+        "path": "/s/AGO.US",
+        "width": 390,
+        "state": "page",
+        "issues": [
+          "filing bar overlaps label: \"Founder or family ownership or board role\"",
+          "filing bar overlaps label: \"Compensation incentives\"",
+          "filing bar overlaps label: \"100%\"",
+          "filing bar overlaps label: \"Buybacks described as below intrinsic value\"",
+          "filing bar overlaps label: \"Acquisitions are the main growth strategy\""
+        ]
+      },
+      {
+        "path": "/s/AGO.US",
+        "width": 390,
+        "state": "Open Value created per $1 kept evidence",
+        "issues": [
+          "filing bar overlaps label: \"Founder or family ownership or board role\"",
+          "filing bar overlaps label: \"Compensation incentives\"",
+          "filing bar overlaps label: \"100%\"",
+          "filing bar overlaps label: \"Buybacks described as below intrinsic value\"",
+          "filing bar overlaps label: \"Acquisitions are the main growth strategy\""
+        ]
+      },
+      {
+        "path": "/s/AMPY.US",
+        "width": 390,
+        "state": "Open Cash for owners evidence",
+        "issues": [
+          "overlapping text: \"-1056.7%\" / \"\u0394\""
+        ]
+      }
+    ],
+    "byViewport": {
+      "1728": {
+        "drawers": 502,
+        "whitespaceFailures": 452
+      },
+      "390": {
+        "drawers": 502,
+        "whitespaceFailures": 315
+      }
+    },
+    "meanCompanyWhitespaceRate": 0.7708101851851852,
+    "byDrawer": {
+      "Business detail": {
+        "states": 120,
+        "failed": 81
+      },
+      "Holders": {
+        "states": 98,
+        "failed": 98
+      },
+      "Method": {
+        "states": 120,
+        "failed": 60
+      },
+      "Open Cash for owners evidence": {
+        "states": 106,
+        "failed": 62
+      },
+      "Open Honest profits evidence": {
+        "states": 106,
+        "failed": 63
+      },
+      "Open Lasting advantage evidence": {
+        "states": 106,
+        "failed": 105
+      },
+      "Open Predictable profits evidence": {
+        "states": 106,
+        "failed": 80
+      },
+      "Open Value created per $1 kept evidence": {
+        "states": 106,
+        "failed": 84
+      },
+      "Open valuation": {
+        "states": 16,
+        "failed": 14
+      },
+      "Price story": {
+        "states": 120,
+        "failed": 120
+      }
+    }
+  },
+  "percentagePointDifference": 5.607905456824391,
+  "seed": 202610043,
+  "materialityMarginPercentagePoints": 10,
+  "materiallyWorse": false
+}

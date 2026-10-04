@@ -1,0 +1,36 @@
+import {expect,it} from 'vitest';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {existsSync,lstatSync,mkdtempSync,mkdirSync,readFileSync,rmSync,writeFileSync} from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+it('merges accepted inputs and quotes without changing baseline files or verdict freezes',()=>{
+ const root=mkdtempSync(path.join(os.tmpdir(),'coverage-integration-'));
+ const source=path.join(root,'coverage'),target=path.join(root,'nightly');
+ const write=(base:string,file:string,data:unknown)=>{const p=path.join(base,file);mkdirSync(path.dirname(p),{recursive:true});writeFileSync(p,JSON.stringify(data)+'\n');};
+ const read=(base:string,file:string)=>JSON.parse(readFileSync(path.join(base,file),'utf8'));
+ try{
+  write(source,'held-membership/release.json',{version:1,baselineIds:['OLD.US'],baselineAnalysisHashes:{'OLD.US':null},additionIds:['NEW.US'],held:[{id:'HELD.US',reasons:['fundamentals']}]});
+  write(target,'analysis/OLD.US.json',{id:'OLD.US',asOf:'2026-10-01'});
+  write(target,'analysis/NEW.US.json',{id:'NEW.US',asOf:'old'});
+  write(source,'analysis/NEW.US.json',{id:'NEW.US',asOf:'reviewed'});
+  write(source,'analysis/HELD.US.json',{id:'HELD.US',asOf:'incomplete'});
+  write(source,'raw/eodhd/NEW.US.json',{General:{Code:'NEW'}});
+  write(source,'reports/NEW.US/meta.json',{kind:'10-K'});
+  write(source,'held-membership/latest.json',{companies:[{id:'NEW.US'},{id:'HELD.US'}]});
+  write(source,'staging/cover-3/prices/US.json',{'OLD.US':[999,'2026-10-02'],'NEW.US':[10,'2026-10-02']});
+  write(target,'prices/US.json',{'OLD.US':[1,'2026-10-02']});
+  write(target,'verdict-freeze.json',{version:1,ids:['OLD.US']});
+  mkdirSync(path.join(target,'daily-runner.lock'));writeFileSync(path.join(target,'daily-runner.lock/pid'),String(process.pid));
+  const before=readFileSync(path.join(target,'analysis/OLD.US.json'));
+  execFileSync('python3',['scripts/value/integrate-coverage.py'],{env:{...process.env,VALUE_CORPUS_DIR:target,VALUE_COVER_CORPUS:source,VALUE_DAILY_LOCK_PID:String(process.pid)},stdio:'pipe'});
+  expect(readFileSync(path.join(target,'analysis/OLD.US.json'))).toEqual(before);
+  expect(read(target,'analysis/NEW.US.json').asOf).toBe('reviewed');
+  expect(existsSync(path.join(target,'analysis/HELD.US.json'))).toBe(false);
+  expect(read(target,'prices/US.json')).toEqual({'OLD.US':[1,'2026-10-02'],'NEW.US':[10,'2026-10-02']});
+  expect(read(target,'verdict-freeze.json')).toEqual({version:1,ids:['OLD.US']});
+  expect(lstatSync(path.join(target,'raw/eodhd/NEW.US.json')).isSymbolicLink()).toBe(true);
+  expect(read(target,'held-membership/release.json').baselineAnalysisHashes['OLD.US']).toBe(createHash('sha256').update(before).digest('hex'));
+  expect(read(source,'held-validation/cover-3-integration-backup/analysis/NEW.US.json').asOf).toBe('old');
+ }finally{rmSync(root,{recursive:true,force:true});}
+});

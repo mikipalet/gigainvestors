@@ -1,6 +1,6 @@
 'use client';
 import type {ReactNode} from 'react';
-import {usePathname} from 'next/navigation';
+import {useSelectedLayoutSegments} from 'next/navigation';
 import {InvestorSearchTools} from './InvestorSearchTools';
 import {SearchTrigger} from './Search';
 import {QuarterSlider} from './QuarterSlider';
@@ -9,7 +9,8 @@ import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {QuarterLink} from './QuarterLink';
 function DefaultTimeline({quarters}:{quarters:string[]}){const[q,setQ]=useQuarter(quarters);return <QuarterSlider embedded globalKeys quarters={quarters} q={q} onChange={setQ}/>;}
 export function BottomBarShell({method,quarters,investorCodes}:{method:ReactNode;quarters:string[];investorCodes:string[]}){
- const path=usePathname(),value=path==='/value'||path.startsWith('/value/')||path.startsWith('/s/');
+ // Classify the selected route, not the URL: Vercel ISR can render / as /index.
+ const path='/'+useSelectedLayoutSegments().filter(segment=>!segment.startsWith('(')).join('/'),value=path==='/value'||path.startsWith('/value/')||path.startsWith('/s/');
  if(investorCodes.includes(path.slice(1)))return <InvestorSearchTools/>;
  const company=path.startsWith('/s/');
  const hasTimeline=path==='/'||path==='/value'||path.startsWith('/value/year/')||path.startsWith('/s/')||investorCodes.includes(path.slice(1));

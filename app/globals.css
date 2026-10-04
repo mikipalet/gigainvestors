@@ -160,3 +160,8 @@ a.tile-edge:hover {
 .value-viz .viz-tooltip { min-height: 2.5em; }
 .value-virtual tr[data-company-row] { height: 124px; }
 .value-virtual tr[data-company-row] td:first-child > a { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+
+/* 9ebf2c7 palette typography, shared independently of the page behind it. */
+.search-modal {font-size:16px;line-height:1.5;}
+.search-modal #search-results .shrink-0 {font-size:14px!important;}
+.search-modal [role=status] {font-size:14px!important;}

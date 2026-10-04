@@ -5,7 +5,6 @@ import { SiteSearch } from "@/components/SiteSearch";
 import "./globals.css";
 import "./value-styles";
 import "./unified.css";
-import { getIndex } from "@/lib/data";
 import { BottomBar } from "@/components/value/BottomBar";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
@@ -27,7 +26,6 @@ export const metadata: Metadata = {
 const jsonLd=websiteSchema('main');
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const index = await getIndex();
   return (
     <html lang="en" className={inter.variable}>
       <body>
@@ -44,7 +42,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
         {children}
         <BottomBar />
-        <SiteSearch investorCodes={index?.investors.map(i=>i.code)??[]} />
+        <SiteSearch />
       </body>
     </html>
   );

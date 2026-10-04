@@ -9,8 +9,6 @@
 .house-track .slider~div:last-child{font-size:13px!important}
 .shared-dock #value-timeline{height:52px;min-width:140px}
 .shared-dock .dock-tools{gap:7px}
-.search-modal{font-size:14px}.search-selected{background:#1111}.search-selected:after{content:'✓';position:absolute;right:10px;top:10px}.search-modal [role=option]{position:relative;padding-right:30px}
-.search-description{white-space:normal;min-width:0}.search-modal .search-pages{display:none}
 .activity-buy{background:var(--paper);box-shadow:inset 0 0 0 2px #515c58}
 .activity-sell{background-color:var(--paper);background-image:repeating-linear-gradient(-45deg,transparent 0 6px,#515c5833 6px 7px)}
 .activity-sold{background:var(--paper);outline:1px dashed #515c58;outline-offset:-2px}

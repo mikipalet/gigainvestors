@@ -12,6 +12,15 @@ describe('same-origin published browser data',()=>{
   expect(response.status).toBe(200);expect(await response.json()).toEqual(rows);
   expect((await call('index/private.json')).status).toBe(404);
  });
+ it('serves quarter snapshots for historical investor verdicts',async()=>{
+  const rows=[['AAPL.US','PPPPP',1,false]];vi.mocked(readStore).mockResolvedValue(rows);
+  const response=await call('history/2018Q3.json','identity');
+  expect(response.status).toBe(200);expect(await response.json()).toEqual(rows);
+  expect(readStore).toHaveBeenCalledWith('history/2018Q3.json');
+  vi.mocked(readStore).mockClear();
+  for(const file of ['history/2018Q5.json','history/private.json','history/../meta.json'])expect((await call(file)).status).toBe(404);
+  expect(readStore).not.toHaveBeenCalled();
+ });
  it('preserves punctuation in published search shard names',async()=>{
   vi.mocked(readStore).mockResolvedValue({rows:[],aliases:{}});
   for(const file of ['search/a&.json','search/b-.json','search/c..json'])expect((await call(file)).status).toBe(200);

@@ -13,6 +13,8 @@ try{
  const p=await b.newPage({viewport:{width:1728,height:970}});
  await p.goto(base+'/BRK?q=2018Q3',{waitUntil:'networkidle'});
  check('Investor restores quarter',(await p.getByRole('slider',{name:'Quarter',exact:true}).getAttribute('aria-valuetext')).replaceAll(' ','')==='2018Q3');
+ check('Historical checklist snapshot served',await p.evaluate(async()=>{const r=await fetch('/api/value/data/history/2018Q3.json');return r.status===200;}));
+ await p.locator('.checklist-mark').first().waitFor();check('Historical investor verdicts render',await p.locator('.checklist-mark').count()>0);
  await p.locator('a[href^="/s/AAPL"]').last().click();await p.waitForLoadState('networkidle');
  check('Holding opens one company with quarter',p.url()===base+'/s/AAPL?q=2018Q3',p.url());
  check('Company canonical',await p.locator('link[rel=canonical]').getAttribute('href')==='https://gigainvestors.com/s/AAPL');

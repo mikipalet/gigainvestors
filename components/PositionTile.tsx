@@ -30,6 +30,7 @@ export function PositionTile({ d, tier, rect, q }: { d: PositionTileData; tier: 
   return (
     <a
       href={href}
+      aria-label={`${d.ticker} · ${d.name} · ${d.pct} of portfolio${d.verdict?` · ${verdictLabel[d.verdict]}`:''} · ${q}`}
       className={`tile-edge relative block h-full w-full overflow-hidden bg-paper ${surfaceFor(d.activity, d.change, d.strongNew)}`}
       style={{ fontSize: fs }}
     >
@@ -42,7 +43,7 @@ export function PositionTile({ d, tier, rect, q }: { d: PositionTileData; tier: 
       {tier !== "blank" && rect.w > fs * 3.2 && (
         <div className="absolute inset-0 flex flex-col justify-between leading-[1.15]" style={{ padding: pad }}>
           <div className="min-w-0" style={{ paddingRight: rect.w > fs * (d.ticker.length + 6) ? fs * 4 : 0 }}>
-            <div className={`font-semibold ${ghost ? "line-through opacity-60" : ""}`}>{d.ticker}</div>
+            <FitText className={`font-semibold ${ghost ? "line-through opacity-60" : ""}`} style={{maxWidth:d.verdict&&rect.h<fs*4?'calc(100% - 24px)':undefined}}>{d.ticker}</FitText>
             {tier === "full" && (
               <FitText className="tile-company-name opacity-60" style={{ fontSize: Math.max(13,fs*.78) }}>
                 {d.name}

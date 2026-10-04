@@ -33,7 +33,7 @@ const mainStates=[
  ['search','/',async page=>{await page.keyboard.press('/');await page.locator('.search-modal input').fill('Apple');await page.waitForTimeout(1200);}],
  ['2018Q3','/BRK?q=2018Q3',async()=>{}],
 ];
-const states=process.env.QA_FAMILY==='main'?mainStates:valueStates;
+const states=(process.env.QA_FAMILY==='main'?mainStates:valueStates).filter(([name])=>!process.env.QA_STATES||process.env.QA_STATES.split(',').includes(name));
 function mappedPath(path){
  if(process.env.QA_FAMILY==='main')return path;
  if(path.startsWith('/ko.us'))return path.replace('/ko.us','/s/KO');

@@ -1,3 +1,4 @@
+import { ResearchBudgetError } from '../../lib/value/budget';
 import { readdirSync } from "node:fs";
 import path from "node:path";
 import os from "node:os";
@@ -33,6 +34,7 @@ async function main(): Promise<void> {
   let cachedReadings = false;
   let cachedNews = false;
   let existing = false;
+  let existingAnalysis = false;
   let out: string | undefined;
   let overwrite = false;
   let from: string | undefined;
@@ -44,6 +46,7 @@ async function main(): Promise<void> {
     else if (arg === "--offline" && ["index-membership","business-backfill","price-story"].includes(stage)) offline = true;
     else if (stage === "calibrate" && arg === "--existing") existing = true;
     else if (stage === "calibrate" && arg === "--cached-readings") cachedReadings = true;
+    else if (stage === "publish" && arg === "--existing-analysis") existingAnalysis = true;
     else if (stage === "publish" && arg === "--overwrite") overwrite = true;
     else if (arg === "--force") force = true;
     else if (stage === "publish" && (arg === "--out" || arg.startsWith("--out="))) {
@@ -70,10 +73,10 @@ async function main(): Promise<void> {
 
   if (overwrite && !out) throw new Error("--overwrite requires local --out");
   const module = await import(pathToFileURL(path.join(directory, `${stage}.ts`)).href);
-  await module.default({ only, limit, force, from, to, out, overwrite, membersFirst, offline, cachedReadings, cachedNews, existing });
+  await module.default({ only, limit, force, from, to, out, overwrite, membersFirst, offline, cachedReadings, cachedNews, existing, existingAnalysis });
 }
 
 main().catch((error: unknown) => {
   console.error(error instanceof Error ? error.message : "Value stage failed");
-  process.exitCode = 1;
+  process.exitCode = error instanceof ResearchBudgetError ? 75 : 1;
 });

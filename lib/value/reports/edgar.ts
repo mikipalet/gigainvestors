@@ -1,3 +1,4 @@
+import { reportRequest } from './transport';
 import { readCorpusJson, writeCorpusJson } from "../corpus";
 import type { Company } from "../types";
 import { createLimiter, fetchWithRetry } from "../http";
@@ -18,7 +19,7 @@ const limit = createLimiter({ perSecond: 8 });
 
 export async function fetchEdgar(url: string): Promise<Response> {
   const response = await fetchWithRetry(url, {
-    beforeAttempt: () => limit(async () => {}),
+    fetcher: reportRequest as typeof fetch, retryNetworkErrors: true, beforeAttempt: () => limit(async () => {}),
     headers: { "User-Agent": process.env.SEC_USER_AGENT ?? "GigaInvestors value hello@gigainvestors.com" },
   });
   if (!response.ok) throw new Error(`SEC request failed (${response.status})`);

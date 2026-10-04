@@ -18,13 +18,19 @@ function sleep(ms: number, signal?: AbortSignal | null): Promise<void> {
 
 export async function fetchWithRetry(
   url: string,
-  init: RequestInit & { retries?: number; retryOn?: number[]; beforeAttempt?: () => void | Promise<void> } = {},
+  init: RequestInit & { retries?: number; retryOn?: number[]; beforeAttempt?: () => void | Promise<void>; fetcher?: typeof fetch; retryNetworkErrors?: boolean } = {},
 ): Promise<Response> {
-  const { retries = 3, retryOn, beforeAttempt, ...request } = init;
+  const { retries = 3, retryOn, beforeAttempt, fetcher = fetch, retryNetworkErrors = false, ...request } = init;
   if (!Number.isInteger(retries) || retries < 0) throw new RangeError("retries must be a nonnegative integer");
   for (let attempt = 0; ; attempt++) {
     await beforeAttempt?.();
-    const response = await fetch(url, request);
+    let response: Response;
+    try { response = await fetcher(url, request); }
+    catch (error) {
+      if (!retryNetworkErrors || request.signal?.aborted || attempt >= retries) throw error;
+      await sleep(Math.min(1000 * 2 ** attempt, 60_000), request.signal);
+      continue;
+    }
     const retry = retryOn
       ? retryOn.includes(response.status)
       : response.status === 429 || (response.status >= 500 && response.status < 600);

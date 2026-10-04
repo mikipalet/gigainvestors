@@ -91,6 +91,7 @@ function runner({ analyzeFails = false, yieldsFails = false, japanFails = false,
 const fs = require('node:fs');
 const { spawnSync } = require('node:child_process');
 const args = process.argv.slice(2);
+if (args[2] === 'scripts/value/post-publish-cli.ts') process.exit(0); // Browser/rollback have dedicated integration tests.
 if (args[2] !== 'scripts/value/cli.ts') {
   const result = spawnSync(${JSON.stringify(process.execPath)}, args, { stdio: 'inherit' });
   process.exit(result.status ?? 1);

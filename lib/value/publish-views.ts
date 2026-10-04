@@ -35,7 +35,11 @@ export function publishViews(files: Record<string, unknown>): ViewManifest {
     const mid=Math.ceil(rows.length/2);
     return [...chunks(rows.slice(0,mid)),...chunks(rows.slice(mid))];
   };
-  const manifest: ViewManifest = {current:bounded(rows.filter(r=>r.t==='PPPPP')),deferred:chunks(rows.filter(r=>r.t!=='PPPPP')),years:{},yearDeferred:{},quarters:{},quarterDeferred:{}};
+  // Partial writers (notably prices) supply no history. Omission must not
+  // retract released frames; supplied periods below replace both view halves.
+  const prior = (files['meta.json'] as StoreMeta).views;
+  const manifest: ViewManifest = {current:bounded(rows.filter(r=>r.t==='PPPPP')),deferred:chunks(rows.filter(r=>r.t!=='PPPPP')),
+    years:{...prior?.years},yearDeferred:{...prior?.yearDeferred},quarters:{...prior?.quarters},quarterDeferred:{...prior?.quarterDeferred}};
   const currentById=new Map(source.map(row=>[row.id,row]));
   const identities=((files['history/companies.json'] as IndexRow[] | undefined)??Object.entries(files).filter(([f])=>/^index\/[A-Z]{2}\.json$/.test(f)).flatMap(([,data])=>data as IndexRow[])).map(row=>({...row,lg:currentById.get(row.id)?.lg??row.lg}));
   for (const [file,data] of Object.entries(files)) {

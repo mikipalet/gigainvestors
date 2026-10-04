@@ -7,6 +7,8 @@ import { cutEsefSections, latestEsef } from "@/lib/value/reports/esef";
 import reports from "@/scripts/value/stages/reports";
 import type { Company } from "@/lib/value/types";
 
+vi.mock("@/lib/value/reports/transport",()=>({reportRequest:(url:string,init:RequestInit)=>fetch(url,init)}));
+
 const fixture = (name: string) => name.endsWith(".xhtml")
   ? gunzipSync(readFileSync(path.resolve("tests/fixtures/value/esef", name + ".gz"))).toString()
   : readFileSync(path.resolve("tests/fixtures/value/esef", name), "utf8");

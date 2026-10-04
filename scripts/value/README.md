@@ -387,3 +387,43 @@ rolling adjusted closes are not comparable. The level must be finite and positiv
 and match the exact quote date and currency. Missing coverage is shown as
 unavailable, never substituted with annual reported dividends or zero dividends.
 No new provider requests run during publication.
+
+### Publication incident guards (2026-10-04)
+
+`prices` and `publish` check the proposed tree before staging/committing. Historical
+periods cannot disappear (including empty frames); every view reference must exist
+and parse; actual dossier entries cannot drop more than 1%; and Buy-now changes in
+each country/default index must stay within transitions explained by published
+valuations and changed quotes. `--force` does not bypass these checks. A legitimate
+analysis-driven Buy-now change beyond that bound requires review before release.
+
+Partial view writers retain all historical manifest maps. Full publication retains
+released history rows/periods and regenerates their views. Price refreshes update
+only the current view, price decisions and price funnel counts.
+
+Research budget exhaustion exits 75, separately from ordinary failures. After a
+yields failure or thesis budget exhaustion, the runner uses
+`publish --existing-analysis`: it keeps the released snapshot's analyses/history,
+refreshes its price decisions, and publishes it without consuming partial research.
+The existing `publish.hold` is still honored. Non-budget thesis errors block publish.
+
+Every push first records its prior/proposed commit in the repository's Git directory
+(`value-publish-pending.json`) and retains the prior object at `refs/value/rollback`.
+The daily runner invokes `post-publish-cli.ts` after prices/publish, even if a stage
+exits unsuccessfully after pushing, and before a new cycle. It revalidates the site,
+then uses installed Playwright Chromium to check Today → previous quarter and the
+2018Q3 deep link, including loaded rows and Buy-now counts. Manual invocations of
+prices/publish must also run `node --import tsx scripts/value/post-publish-cli.ts`
+before another push. Provision Chromium on the runner before enabling this code.
+
+Failure restores the exact prior tree in a compensating commit, pushes with an
+explicit lease, revalidates, logs `CRITICAL`, and stops the cycle. This works for
+parentless full snapshots too. A changed remote/checkout or failed rollback stops
+for intervention instead of overwriting another writer. Pending receipts allow
+recovery after interruption. The live check and rollback are never run by local
+`publish --out` staging.
+
+SEC/ESEF downloads now use Node core HTTP with eager bounded body consumption,
+redirect/decompression handling, a one-minute request deadline and retries for
+truncated/network responses. This avoids Node 22's bundled Undici paused-parser
+assertion ([upstream report](https://github.com/nodejs/undici/issues/5360)).

@@ -35,3 +35,12 @@ it('recomputes both market summaries from fresh outcomes without changing predic
  expect(files['history/index.json']).toMatchObject({perQuarter:{'2018Q3':{analysed:2,avgReturnAtBuy:1,avgReturnAll:.25}},western:{perQuarter:{'2018Q3':{analysed:1,avgReturnAll:1}}}});
  expect((files['history/2018Q3.json'] as any[]).map(r=>r.slice(0,4))).toEqual([[us.id,'PPPPP',.8,true],[jp.id,'FFFFF',2,false]]);
 });
+
+it('retains empty released periods and their history index even when no rows are missing',async()=>{
+ const {retainPublishedHistory}=await import('@/scripts/value/retain-published-history');
+ writeCorpusJson('previous/history/index.json',{years:[2018],quarters:['2018Q3'],perYear:{2018:{analysed:0}},perQuarter:{'2018Q3':{analysed:0}}});
+ writeCorpusJson('previous/history/2018.json',[]);writeCorpusJson('previous/history/2018Q3.json',[]);
+ const files:Record<string,unknown>={};retainPublishedHistory(files,path.join(root,'previous'));
+ expect(files['history/2018Q3.json']).toEqual([]);
+ expect(files['history/index.json']).toMatchObject({years:[2018],quarters:['2018Q3']});
+});

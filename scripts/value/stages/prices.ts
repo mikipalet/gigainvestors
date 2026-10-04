@@ -1,3 +1,4 @@
+import { assertPublishInvariants } from '../publish-invariants';
 import { validForwardDate, type ForwardSnapshot } from '../../../lib/value/forward';
 import { companyExclusion } from '../../../lib/value/fund-exclusion';
 import { universeCompanies } from '../../../lib/value/companies';
@@ -149,6 +150,8 @@ export async function refreshPrices({ repo, companies, bulk = bulkLastDay, yahoo
 
 export function commitPrices({ repo, asOf }: { repo: string; asOf: string }): boolean {
   if (!git(repo, ["status", "--porcelain", "--", "prices/", "index/", "meta.json", "dossiers/", "views/"])) return false;
+  if (git(repo, ["diff", "--cached", "--name-only"]).split("\n").some(file => file && !/^(?:prices\/|index\/|dossiers\/|views\/|meta\.json$)/.test(file))) throw new Error("Publish invariant: unrelated staged files in prices commit");
+  assertPublishInvariants(repo);
   git(repo, ["add", "--", ...["prices/", "index/", "meta.json", "dossiers/", "views/"].filter(file => existsSync(path.join(repo, file)))]);
   git(repo, ["commit", "-m", `prices ${asOf}`]);
   return true;

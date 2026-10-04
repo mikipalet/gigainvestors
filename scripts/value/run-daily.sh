@@ -31,10 +31,12 @@ echo "$$" > "$lock/pid"
 trap 'if [[ "$(cat "$lock/pid" 2>/dev/null)" == "$$" ]]; then rm -f "$lock/pid"; rmdir "$lock"; fi' EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
+check_disk() {
+  df -Pk / | awk 'NR==2 { exit ($4 < 6*1024*1024) }' || { echo "Disk below 6 GiB; stopping" >&2; exit 1; }
+}
 run_stage() {
   local stage="$1" code started status detail
-  # The disk guard is a hard stop, including publication.
-  df -Pk / | awk 'NR==2 { exit ($4 < 6*1024*1024) }' || { echo "Disk below 6 GiB; stopping" >&2; exit 1; }
+  check_disk
   started=$SECONDS
   shift
   echo "$(date -u +%FT%TZ) starting $stage $*"
@@ -42,9 +44,31 @@ run_stage() {
   code=$?
   status=ok
   if [[ "$code" != 0 ]]; then status=failed; fi
+  if [[ "$code" == 75 ]]; then status=budget-exhausted; fi
   detail=$(tail -n 1 "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log")
   echo "$(date -u +%FT%TZ) stage=$stage status=$status exit=$code duration=$((SECONDS-started))s summary=$detail" | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log"
+  if [[ "$stage" == prices || "$stage" == publish ]]; then check_publication; fi
   return "$code"
+}
+check_publication() {
+  check_disk
+  node --import tsx scripts/value/post-publish-cli.ts >> "$VALUE_CORPUS_DIR/logs/$cycle_date-live-check.log" 2>&1 || {
+    echo "CRITICAL: post-publish live check failed; publication rolled back or requires intervention. See $VALUE_CORPUS_DIR/logs/$cycle_date-live-check.log" >&2
+    exit 1
+  }
+}
+publish_available() {
+  local code
+  run_stage thesis --limit=12
+  code=$?
+  if [[ "$code" == 75 ]]; then
+    retain_analysis=1
+    echo 'thesis budget exhausted; publishing existing released analysis'
+  elif [[ "$code" != 0 ]]; then
+    echo 'publish skipped: thesis failed (not budget exhaustion)'
+    return "$code"
+  fi
+  if [[ "$retain_analysis" == 1 ]]; then run_stage publish --existing-analysis; else run_stage publish; fi
 }
 run_japan() {
   local from
@@ -62,11 +86,14 @@ if [[ "${1:-}" != "--once" && -n "${1:-}" ]]; then echo 'Usage: run-daily.sh [--
 if [[ "${1:-}" != "--once" ]]; then wait_until_next_run; fi
 while true; do
   cycle_date=$(date -u +%F)
+  retain_analysis=0
+  check_publication # Recover a push interrupted before verification on the previous run.
   # Import JP issuers before both unfiltered quote stages; paid budget order stays intact.
   run_japan 2>> "$VALUE_CORPUS_DIR/logs/$cycle_date-japan.log" || :
   if ! run_stage wait-eodhd-reset; then
     echo 'paid stages skipped: EODHD reset not confirmed; publishing available data' | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-wait-eodhd-reset.log"
-    if run_stage thesis --limit=12; then run_stage publish || :; else echo "publish skipped: thesis stage failed"; fi
+    retain_analysis=1
+    publish_available || :
     run_stage status || :
     if [[ "${1:-}" == "--once" ]]; then exit 1; fi
     wait_until_next_run
@@ -89,10 +116,11 @@ while true; do
     run_stage analyze || :
     run_stage business-backfill --limit=100 || :
   else
+    retain_analysis=1
     echo "$(date -u +%FT%TZ) stage=analyze status=skipped reason=yields-failed; retaining existing analysis"
   fi
   run_stage share-checks || :
-  if run_stage thesis --limit=12; then run_stage publish || :; else echo "publish skipped: thesis stage failed"; fi
+  publish_available || :
   # Residual IDs and evidence are private and must never enter the data repository.
   node -e 'const fs=require("fs"),path=require("path");const file=path.join(process.env.VALUE_CORPUS_DIR,"staging/unresolved-shares.json");if(fs.existsSync(file)){const d=JSON.parse(fs.readFileSync(file));console.log(JSON.stringify({privateShareResidual:d.companies.length,qualityPassResidual:d.companies.filter(r=>r.qualityPass).length,file}))}' >> "$VALUE_CORPUS_DIR/logs/$cycle_date-share-checks.log"
   run_stage status || :

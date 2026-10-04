@@ -86,9 +86,8 @@ export function refreshPublishedBuyPrices(repo: string): void {
     files[file] = dossiers;
   }
   if(meta.views){
-    const years=meta.views.years;
     for(const file of readdirSync(path.join(repo,'prices')).filter(f=>/^[A-Z]{2}\.json$/.test(f)))files[`prices/${file}`]=JSON.parse(readFileSync(path.join(repo,'prices',file),'utf8'));
-    publishViews(files).years=years;
+    publishViews(files);
   }
   for (const [file, data] of Object.entries(files)) {
     const destination = path.join(repo, file), text = JSON.stringify(data) + '\n';

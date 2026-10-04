@@ -10,6 +10,7 @@ export const QUALITY_TESTS: TestKey[] = ["understandable", "moat", "economics", 
 export interface Company {
   investmentHolding?: boolean; // NAV valuation; operating earnings are not a suitable basis.
   indexes?: string[]; // Populated by the dated index-membership stage; absent in legacy corpus.
+  heldBySuperinvestors?: boolean; // Latest eight tracked 13F quarters; not index membership.
   id: Id;
   name: string;
   nativeName?: string;

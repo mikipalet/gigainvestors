@@ -1,0 +1,31 @@
+{
+  "quarters": [
+    "2024 Q3",
+    "2024 Q4",
+    "2025 Q1",
+    "2025 Q2",
+    "2025 Q3",
+    "2025 Q4",
+    "2026 Q1",
+    "2026 Q2"
+  ],
+  "stockRecords": 3608,
+  "heldTickers": 2176,
+  "coverage": {
+    "added": 1179,
+    "excluded": 202,
+    "existing": 578,
+    "outside-window": 1432,
+    "pending-fundamentals-quota": 107,
+    "pending-publication-evidence": 1,
+    "unresolved": 109
+  },
+  "baselineDossiers": 2708,
+  "stagedDossiers": 3874,
+  "addedDossiers": 1166,
+  "baselineFileChanges": [],
+  "changedExistingDossiers": [],
+  "changedExistingIndexes": [],
+  "changedExistingPrices": [],
+  "PLXS": true
+}

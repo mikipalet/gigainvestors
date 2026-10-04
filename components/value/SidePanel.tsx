@@ -91,12 +91,14 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font'])dialog.style.removeProperty(name);
       const method=dialog.querySelector<HTMLElement>('.method-sections');
       if(method){
-        const columns=innerHeight<850?4:3;
-        method.style.columnCount=String(columns);
-        for(let width=columns*230;width<=Math.min(innerWidth,1400);width+=20){
-          dialog.style.width=`${width}px`;
-          const columnWidth=(method.clientWidth-(columns-1)*parseFloat(getComputedStyle(method).columnGap))/columns;
-          if(method.scrollWidth<=method.clientWidth+1&&[...method.querySelectorAll('table')].every(table=>parseFloat(getComputedStyle(table).width)<=columnWidth+1))break;
+        const preferred=innerHeight<850?4:3;
+        for(const columns of [preferred,preferred+1]){
+          method.style.columnCount=String(columns);
+          for(let width=columns*230;width<=innerWidth;width+=20){
+            dialog.style.width=`${width}px`;
+            const columnWidth=(method.clientWidth-(columns-1)*parseFloat(getComputedStyle(method).columnGap))/columns;
+            if(method.scrollWidth<=method.clientWidth+1&&[...method.querySelectorAll('table')].every(table=>parseFloat(getComputedStyle(table).width)<=columnWidth+1))return;
+          }
         }
         return;
       }

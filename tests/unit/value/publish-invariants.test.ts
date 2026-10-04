@@ -20,6 +20,11 @@ beforeEach(()=>{
  git('add','.');git('commit','-m','baseline');
 });
 afterEach(()=>rmSync(repo,{recursive:true,force:true}));
+it('permits added-company buys while preserving the price-only rule for existing companies',()=>{
+ const ds=read('dossiers/000.json');ds['NEW.US']={id:'NEW.US'};write('dossiers/000.json',ds);
+ for(const file of ['index/US.json','index/default.json']){const rows=read(file);rows.push({...rows[0],id:'NEW.US',b:true});write(file,rows);}
+ expect(commitOutput({repo,asOf:'2026-10-04'})).toBe(true);
+});
 for(const [stage,commit]of [['prices',commitPrices],['publish',commitOutput]] as const){
  it.each(['quarters','yearDeferred','missing-file','dossiers','buy','history'])('%s refuses '+stage+' commit before changing HEAD or index',failure=>{
   const head=git('rev-parse','HEAD');

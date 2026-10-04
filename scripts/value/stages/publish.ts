@@ -1,4 +1,7 @@
 import { assertNoPendingPublication, beginPublication } from '../post-publish';
+import {universeCompanies} from '../../../lib/value/companies';
+import {inPublicationScope} from '../../../lib/value/held-universe';
+import {preserveAdditionBaseline} from '../additions-only';
 import { refreshPublishedBuyPrices } from '../../../lib/value/refresh-buy-prices';
 import { assertPublishInvariants } from '../publish-invariants';
 import {retainPublishedHistory} from '../retain-published-history';
@@ -207,25 +210,28 @@ export function commitOutput({ repo, asOf }: { repo: string; asOf: string }): bo
   return true;
 }
 
-export function publishSnapshot({ repo, analyses, universe, partial, force = false, commit = true, previousDossiers, holdersByTicker, investorNames }: {
+export function publishSnapshot({ repo, analyses, universe, partial, force = false, commit = true, additionsOnly = false, previousDossiers, holdersByTicker, investorNames }: {
   repo: string;
   analyses: Analysis[];
   universe: Company[];
   partial: boolean;
   force?: boolean;
   commit?: boolean;
+  additionsOnly?: boolean;
   previousDossiers?: string;
   holdersByTicker: Record<string, string[]>;
   investorNames: Record<string, string>;
 }): { count: number; changed: boolean } {
-  const freeze=readVerdictFreeze(previousDossiers ? path.dirname(previousDossiers) : repo);
+  if(additionsOnly&&commit)throw Error('Additions-only publication requires local --out');
+  const freeze=readVerdictFreeze(previousDossiers ? path.dirname(previousDossiers) : repo,{all:additionsOnly});
   // Read the fetched snapshot before replacing meta.json or creating an orphan commit.
   const metaFile = path.join(repo, "meta.json");
   const previous = existsSync(metaFile) ? JSON.parse(readFileSync(metaFile, "utf8")) : null;
   const previousCount = previous?.counts?.analysed
     ?? (previous?.counts ? previous.counts.scored + previous.counts.insufficient : 0);
   if (!Number.isInteger(previousCount) || previousCount < 0) throw new Error(`Invalid published count in ${metaFile}`);
-  universe = universe.filter(company => company.indexes?.length);
+  universe = universe.filter(inPublicationScope);
+  if(additionsOnly)universe=[...new Map([...universe,...Object.values(freeze.dossiers).map(d=>d.company)].map(c=>[c.id,c])).values()];
   const allowedIds = new Set(universe.map(company => company.id));
   const merged = new Map<string, Analysis>();
   const directory = path.join(repo, "dossiers");
@@ -255,7 +261,14 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
       console.warn(`publish: skipped price history for ${row.id}: ${error instanceof Error ? error.message : "unreadable history"}`);
     }
   }
+  const unchangedQuotes=additionsOnly?readPrices(path.join(repo,'prices')):null;
   mergeSeedFiles(repo);
+  if(unchangedQuotes)for(const country of new Set(Object.values(freeze.dossiers).map(d=>d.company.country))){
+    const file=path.join(repo,'prices',`${country}.json`);
+    const quotes=existsSync(file)?JSON.parse(readFileSync(file,'utf8')):{};
+    for(const id of freeze.ids)if(unchangedQuotes[id]&&freeze.dossiers[id].company.country===country)quotes[id]=unchangedQuotes[id];
+    mkdirSync(path.dirname(file),{recursive:true});writeFileSync(file,JSON.stringify(quotes)+'\n');
+  }
   const fx: Record<string, number> = {};
   const fxDir = corpusPath("raw/eodhd/universe");
   if (existsSync(fxDir)) for (const file of readdirSync(fxDir).filter(file => /^fx-[A-Z]{3}\.json$/.test(file))) {
@@ -276,7 +289,8 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   writeCorpusJson('staging/publication-capitalization.json',capitalization);
   const priorDossiers:Record<string,Dossier>={};
   const priorDirectory=previousDossiers??directory;
-  if(existsSync(priorDirectory))for(const file of readdirSync(priorDirectory).filter(f=>/^\d{3}\.json$/.test(f)))Object.assign(priorDossiers,JSON.parse(readFileSync(path.join(priorDirectory,file),'utf8')));
+  if(additionsOnly)Object.assign(priorDossiers,freeze.dossiers);
+  else if(existsSync(priorDirectory))for(const file of readdirSync(priorDirectory).filter(f=>/^\d{3}\.json$/.test(f)))Object.assign(priorDossiers,JSON.parse(readFileSync(path.join(priorDirectory,file),'utf8')));
   const { files, unresolved } = buildOutput({ previousDossiers:priorDossiers, capShares, priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx, prices: readPrices(path.join(repo, "prices")) });
   // A partial vendor response must not silently delete an existing member.
   // Membership removals are explicit in the universe; missing evidence is not.
@@ -330,7 +344,9 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     const asset=logo?.match(/^\/api\/value\/logo\?asset=([a-f0-9]{64})$/)?.[1];
     if(asset){const cached=readCorpusJson(`enrichment-v7/logos/assets/${asset}.json`);if(!cached)throw Error(`Missing logo asset ${asset}`);files[`logos/${asset}.json`]=cached;}
   }
-  applyVerdictFreeze(files,freeze);
+  if(additionsOnly)writeCorpusJson('staging/additions-search-manifest.json',files['search/manifest.json']);
+  applyVerdictFreeze(files,freeze,{extendSearch:additionsOnly});
+  if(additionsOnly)preserveAdditionBaseline(files,freeze);
   forwardFiles(repo, files, universe, readPrices(path.join(repo, 'prices')), new Date().toISOString().slice(0,10));
   publishViews(files);
   writeOutput({ repo, files });
@@ -413,7 +429,8 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
   return analyses;
 }
 
-export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string; overwrite?: boolean; existingAnalysis?: boolean }): Promise<void> {
+export default async function publish(options: { only?: string[]; limit?: number; force?: boolean; out?: string; overwrite?: boolean; existingAnalysis?: boolean; additionsOnly?: boolean }): Promise<void> {
+  if(options.additionsOnly&&!options.out)throw Error('--additions-only requires local --out');
   // Workaround: the nightly path does not yet reproduce release-script corrections (fix-5); a hold file keeps live data until it does.
   if (!options.out && existsSync(corpusPath("publish.hold"))) { console.log(`publish held: ${readFileSync(corpusPath("publish.hold"), "utf8").trim()}`); return; }
   if (options.existingAnalysis) {
@@ -439,21 +456,21 @@ export default async function publish(options: { only?: string[]; limit?: number
   if (!T.publish.indexMembersOnly) throw new Error("Publication requires indexMembersOnly");
   const membership = readCorpusJson<{ complete: boolean; memberships: Record<string, string[]>; supplementalCompanies?: Company[] }>("index-membership/latest.json");
   if (!membership || (!membership.complete && !(out && options.force))) throw new Error("Run index-membership and resolve its coverage report before publish (incomplete snapshots may only be inspected with --out --force)");
-  const companies = applyMembership([...new Map([...readJsonl<Company>("universe.jsonl"), ...(membership.supplementalCompanies ?? [])].map(c=>[c.id,c])).values()]
-    .map(company=>mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{})), membership.memberships).filter(company => company.indexes!.length && !companyExclusion(company));
+  const companies = universeCompanies().map(company=>({...mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{}),indexes:company.indexes,heldBySuperinvestors:company.heldBySuperinvestors})).filter(company => inPublicationScope(company) && !companyExclusion(company));
   if (!companies.length) throw new Error("Run the universe stage before publish");
-  const selected = companies.filter((company) => !options.only || options.only.includes(company.id)).slice(0, options.limit);
+  // Selection only needs IDs; do not retain a second full baseline while building output.
+  const frozenIds=options.additionsOnly?new Set(readdirSync(corpusPath('publish-repo/dossiers')).filter(f=>/^\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(JSON.parse(readFileSync(corpusPath('publish-repo/dossiers',f),'utf8'))))):readVerdictFreeze(corpusPath('publish-repo')).ids;
+  const selected = companies.filter((company) => (!options.only || options.only.includes(company.id))&&(!options.additionsOnly||!frozenIds.has(company.id))).slice(0, options.limit);
   if (!selected.length) throw new Error("No companies selected for publish");
   // A merge changes the analysis contract, not the cached documents. Never
   // silently export pre-merge verdicts when the runner skipped/failed analysis.
   // Frozen companies deliberately keep their exact released records.
-  const freeze=readVerdictFreeze(corpusPath('publish-repo'));
-  const stale=selected.filter(c=>!freeze.ids.has(c.id)).filter(c=>{
+  const stale=selected.filter(c=>!frozenIds.has(c.id)).filter(c=>{
     const a=readCorpusJson<Analysis>(`analysis/${c.id}.json`);
     return a&&(a.versions?.pipeline!==PIPELINE_VERSION||a.versions?.questions!==QUESTIONS_VERSION);
   });
   if(stale.length)throw new Error(`Run analyze before publish; stale analysis versions: ${stale.map(c=>c.id).join(', ')}`);
-  const returns=await historyReturns({});
+  const returns=options.additionsOnly?{failed:[]}:await historyReturns({});
   if(returns.failed.length)throw new Error(`History return refresh failed for ${returns.failed.length} companies; retaining prior publication`);
   const analyses = loadAnalyses(selected);
   const holders = loadHolders(path.resolve(__dirname, "../../../data/store"));
@@ -466,7 +483,8 @@ export default async function publish(options: { only?: string[]; limit?: number
     // Local replay must use that same history before computing today's record.
     const forward = corpusPath("publish-repo", "forward");
     if (existsSync(forward)) cpSync(forward, path.join(out, "forward"), { recursive: true, force: false });
-    const { count } = publishSnapshot({ repo: out, previousDossiers: corpusPath("publish-repo", "dossiers"), analyses, universe: companies, partial: false, force: options.force, commit: false, ...holders });
+    const { count } = publishSnapshot({ repo: out, previousDossiers: corpusPath("publish-repo", "dossiers"), analyses, universe: companies, partial: false, force: options.force, commit: false, additionsOnly:options.additionsOnly, ...holders });
+    assertPublishInvariants(out);
     console.log(`publish: ${count} companies written locally to ${out}; no commit, push or revalidation`);
     return;
   }

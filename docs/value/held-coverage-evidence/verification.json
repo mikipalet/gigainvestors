@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-04",
+  "tests": {
+    "files": 14,
+    "passed": 197,
+    "failed": 0,
+    "log": "/tmp/value-cover-tests-final.log"
+  },
+  "build": {
+    "command": "NODE_OPTIONS=--max-old-space-size=4096 VALUE_STORE_DIR=$HOME/data/value-cover/staging/coverage npm run build -- --webpack",
+    "exitCode": 0,
+    "log": "/tmp/value-cover-build.log"
+  },
+  "typecheck": {
+    "command": "NODE_OPTIONS=--max-old-space-size=4096 npx tsc --noEmit",
+    "exitCode": 0,
+    "log": "/tmp/value-cover-typecheck-final.log"
+  },
+  "publish": {
+    "mode": "local --additions-only --out",
+    "path": "/Users/miki/data/value-cover/staging/coverage",
+    "log": "/tmp/value-cover-publish.log"
+  },
+  "localServerStopped": true,
+  "backgroundCoverageScheduled": false,
+  "pushed": false,
+  "dataRepositoryPublished": false,
+  "revalidated": false
+}

@@ -30,7 +30,9 @@ export function reserveEodhd({ endpoint, monthly = false }: { endpoint: string; 
   const cost = endpoint === 'news' ? 5 : endpoint.startsWith('fundamentals/') ? T.budget.fundamentalsCost
     : endpoint === 'screener' ? T.budget.screenerCost
     : endpoint.startsWith('eod-bulk-last-day/') ? T.budget.bulkExchangeCost : T.budget.historyCost;
-  const ceiling = T.budget.dailyCalls + (endpoint.includes('.FOREX') ? T.budget.extraCalls : 0);
+  const hardCap=process.env.VALUE_EODHD_HARD_CAP===undefined?null:Number(process.env.VALUE_EODHD_HARD_CAP);
+  if(hardCap!==null&&(!Number.isSafeInteger(hardCap)||hardCap<=0||hardCap>T.budget.dailyCalls))throw new EodhdBudgetError('Invalid EODHD hard budget cap');
+  const ceiling = Math.min(hardCap??Infinity,T.budget.dailyCalls + (endpoint.includes('.FOREX') ? T.budget.extraCalls : 0));
   if (usage.used + cost > ceiling) throw new EodhdBudgetError('daily EODHD budget reached; resume after EODHD daily reset');
   if (monthly && usage.history + cost > T.budget.priceHistoryCalls) throw new EodhdBudgetError('daily price-history budget reached; resume after EODHD daily reset');
   usage.used += cost;

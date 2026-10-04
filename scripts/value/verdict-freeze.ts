@@ -1,5 +1,6 @@
 import {existsSync, readFileSync, readdirSync} from 'node:fs';
 import path from 'node:path';
+import {isDeepStrictEqual} from 'node:util';
 import {appendJsonl, readCorpusJson} from '../../lib/value/corpus';
 import {validCompanyId} from '../../lib/value/companies';
 import {shardOf} from '../../lib/value/shard';
@@ -11,16 +12,17 @@ import type {Dossier, IndexRow, StoreMeta, SnapshotRow, PublishedFunnel, FunnelC
 type Files = Record<string, any>;
 
 /** Capture the live rows before writeOutput removes/replaces their containing files. */
-export function readVerdictFreeze(repo: string) {
+export function readVerdictFreeze(repo: string, {all=false}:{all?:boolean}={}) {
   const config = readCorpusJson<{version:number;ids:string[]}>('verdict-freeze.json');
   if (config && (config.version !== 1 || !Array.isArray(config.ids) || config.ids.some(id => typeof id !== 'string' || !validCompanyId(id, 'publish')) || new Set(config.ids).size !== config.ids.length)) throw Error('Invalid verdict-freeze.json');
   const ids = new Set(config?.ids ?? []), previous: Files = {}, dossiers: Record<string,Dossier> = {};
-  if (!ids.size) return {ids, previous, dossiers};
+  if (!ids.size&&!all) return {ids, previous, dossiers};
   for (const dir of ['dossiers','index','search','history']) {
     if (!existsSync(path.join(repo,dir))) continue;
     for (const file of readdirSync(path.join(repo,dir)).filter(f=>f.endsWith('.json'))) previous[`${dir}/${file}`] = JSON.parse(readFileSync(path.join(repo,dir,file),'utf8'));
   }
   if (existsSync(path.join(repo,'aliases.json'))) previous['aliases.json']=JSON.parse(readFileSync(path.join(repo,'aliases.json'),'utf8'));
+  if(all)for(const [file,rows]of Object.entries(previous))if(file.startsWith('dossiers/'))for(const id of Object.keys(rows))ids.add(id);
   for (const id of ids) {
     const dossier=previous[`dossiers/${shardOf(id)}.json`]?.[id];
     if (!dossier || dossier.id!==id) throw Error(`Frozen company ${id}: previous live dossier missing`);
@@ -41,11 +43,27 @@ function restoreRows(current:any[], previous:any[], ids:Set<string>, key:(row:an
   return rows;
 }
 
-export function applyVerdictFreeze(files: Files, freeze: ReturnType<typeof readVerdictFreeze>): void {
+export function applyVerdictFreeze(files: Files, freeze: ReturnType<typeof readVerdictFreeze>,{extendSearch=false}:{extendSearch?:boolean}={}): void {
   const {ids,previous,dossiers}=freeze;
   if (!ids.size) return;
   // Fail closed if routing changed: preserving shard rows alone would then hide identities.
-  if (previous['search/manifest.json'] && JSON.stringify(previous['search/manifest.json'])!==JSON.stringify(files['search/manifest.json'])) throw Error('Frozen search routing changed; reconcile the prior search manifest before publication');
+  const oldManifest=previous['search/manifest.json'],newManifest=files['search/manifest.json'];
+  if(oldManifest&&!isDeepStrictEqual(oldManifest,newManifest)){
+    const extension=extendSearch&&newManifest?.version===oldManifest.version&&newManifest.maxPrefix>=oldManifest.maxPrefix
+      &&oldManifest.split.every((prefix:string)=>newManifest.split.includes(prefix))
+      &&Object.entries(oldManifest.localPrefixes??{}).every(([key,value])=>newManifest.localPrefixes?.[key]===value);
+    if(!extension)throw Error('Frozen search routing changed; reconcile the prior search manifest before publication');
+  }
+  // A newly split child has no previous file. Retain frozen identities and
+  // their previously published aliases there as well as in the parent shard.
+  const searchRows=new Map<string,any>(),searchAliases=new Map<string,Set<string>>();
+  if(extendSearch)for(const [file,shard]of Object.entries(previous))if(file.startsWith('search/')&&file!=='search/manifest.json'){
+    for(const row of shard.rows??[])if(ids.has(row[0]))searchRows.set(row[0],row);
+    for(const [alias,indices]of Object.entries(shard.aliases??{}) as [string,number[]][])for(const index of indices){
+      const id=shard.rows[index][0];if(!ids.has(id))continue;
+      const names=searchAliases.get(id)??new Set<string>();names.add(alias);searchAliases.set(id,names);
+    }
+  }
   for (const file of new Set([...Object.keys(files),...Object.keys(previous)])) {
     const old=previous[file];
     if (/^dossiers\//.test(file)) {
@@ -56,13 +74,16 @@ export function applyVerdictFreeze(files: Files, freeze: ReturnType<typeof readV
       files[file]=restoreRows(files[file]??[],old??[],ids,key);
     } else if (/^search\//.test(file) && file!=='search/manifest.json') {
       const current=files[file]??{rows:[],aliases:{}};
-      const rows=restoreRows(current.rows,old?.rows??[],ids,r=>r[0]), aliases:Record<string,number[]>={};
+      const priorRows=extendSearch?[...(old?.rows??[]),...current.rows.filter((row:any)=>ids.has(row[0])&&!(old?.rows??[]).some((r:any)=>r[0]===row[0])).flatMap((row:any)=>searchRows.has(row[0])?[searchRows.get(row[0])]:[])]:old?.rows??[];
+      const rows=restoreRows(current.rows,priorRows,ids,r=>r[0]), aliases:Record<string,number[]>={};
       const offsets=new Map(rows.map((row,i)=>[row[0],i]));
       for (const [shard,keep] of [[current,false],[old,true]] as const) {
         if (!shard) continue;
         for (const [alias,indices] of Object.entries(shard.aliases) as [string,number[]][]) for (const index of indices) {
           const id=shard.rows[index][0],offset=offsets.get(id);
-          if(ids.has(id)===keep&&offset!==undefined)(aliases[alias]??=[]).push(offset);
+          if((ids.has(id)===keep||extendSearch&&!keep&&ids.has(id)&&searchAliases.get(id)?.has(alias))&&offset!==undefined){
+            const values=aliases[alias]??=[];if(!values.includes(offset))values.push(offset);
+          }
         }
       }
       files[file]={rows,aliases};

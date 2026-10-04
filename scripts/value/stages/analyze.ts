@@ -1,4 +1,5 @@
 import {publicBusiness} from '../../../lib/value/flags/public';
+import {inPublicationScope} from '../../../lib/value/held-universe';
 import {cachedQualityQuarters} from '../../../lib/value/cached-quality-quarters';
 import {numericMemo} from '../../../lib/value/owner-memo';
 import judgementTrust from '../../../lib/value/judgement/trust.json';
@@ -171,15 +172,15 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           }
         }
         result.ownerMemo = {version:1,asOf:result.asOf,inputHash:fingerprint,lines:numericMemo(result,memoYears,null)};
-        // Only index members are published; avoid duplicating the full private
+        // Only index members and held companies are published; avoid duplicating the full private
         // universe's statements just to compose the published memos.
         const inputPayload = { sections,reportingCurrency:fundamentals.currency,derivedValues,
-          ...(company.indexes?.length ? {memoYears} : {}) };
+          ...(inPublicationScope(company) ? {memoYears} : {}) };
         const { asOf: _priorInputTime, ...priorPayload } = priorInputs ?? {};
         // Nonmember inputs are an evidence cache, not a published statement
         // snapshot. Preserve unchanged text (and overlay hardlinks) across runs.
         // Members still bind memoYears to this exact analysis timestamp.
-        if (company.indexes?.length || !isDeepStrictEqual(priorPayload, inputPayload)) {
+        if (inPublicationScope(company) || !isDeepStrictEqual(priorPayload, inputPayload)) {
           writeCorpusJson(`analysis/inputs/${company.id}.json`, { asOf: result.asOf, ...inputPayload });
         }
         result.businessDepth=publicBusiness(readCorpusJson(`flags/${company.id}.json`),result);

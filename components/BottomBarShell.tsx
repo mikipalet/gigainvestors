@@ -1,0 +1,13 @@
+'use client';
+import type {ReactNode} from 'react';
+import {usePathname} from 'next/navigation';
+import {SearchTrigger} from './Search';
+import {QuarterSlider} from './QuarterSlider';
+import {useQuarter} from '@/lib/use-quarter';
+import {QuarterLink} from './QuarterLink';
+function DefaultTimeline({quarters}:{quarters:string[]}){const[q,setQ]=useQuarter(quarters);return <QuarterSlider embedded globalKeys quarters={quarters} q={q} onChange={setQ}/>;}
+export function BottomBarShell({method,quarters,investorCodes}:{method:ReactNode;quarters:string[];investorCodes:string[]}){
+ const path=usePathname(),value=path==='/value'||path.startsWith('/value/')||path.startsWith('/s/');
+ const hasTimeline=path==='/'||path==='/value'||path.startsWith('/value/year/')||path.startsWith('/s/')||investorCodes.includes(path.slice(1));
+ return <nav className="value-viz value-page value-dock shared-dock" aria-label="Time travel and tools"><div id="value-timeline">{!hasTimeline&&quarters.length>0&&<DefaultTimeline quarters={quarters}/>}</div><div className="dock-tools"><div id="value-market"/><QuarterLink href={path==='/value'?'/':'/value'}>{path==='/value'?'Investors':'Checklist'}</QuarterLink><SearchTrigger label="Search"/>{value&&method}<QuarterLink href="/newsletter">Newsletter</QuarterLink><a href="mailto:hello@gigainvestors.com">Contact</a></div></nav>;
+}

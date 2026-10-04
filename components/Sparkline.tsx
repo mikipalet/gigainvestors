@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import {PointerTooltip} from "./PointerTooltip";
 
 interface Props {
   values: number[];
@@ -16,6 +17,7 @@ interface Props {
 // The whole history as one ink line. Hover to read a quarter, click or drag to travel to it.
 export function Sparkline({ values, labels, index, caption, format, onSeek, log, height = "h-16" }: Props) {
   const ref = useRef<SVGSVGElement>(null);
+  const [pointer,setPointer]=useState<{x:number;y:number}|null>(null);
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
   if (values.length < 2 || Math.min(...values) === Math.max(...values)) return null;
   const W = 100;
@@ -40,7 +42,7 @@ export function Sparkline({ values, labels, index, caption, format, onSeek, log,
 
   return (
     <div className="pb-2">
-      <div className="mb-1 flex items-baseline justify-between text-[11px] leading-none">
+      <div className="mb-1 flex items-baseline justify-between text-[13px] leading-none">
         <span className="opacity-55">{caption}<span className="sm:hidden"> · drag to travel</span></span>
         <span className={hoverIdx !== null ? "font-semibold" : "opacity-45"}>
           {format(values[shown])} · {labels[shown]}
@@ -60,10 +62,10 @@ export function Sparkline({ values, labels, index, caption, format, onSeek, log,
           }}
           onPointerMove={(e) => {
             const i = idxAt(e.clientX);
-            setHoverIdx(i);
+            setHoverIdx(i);setPointer({x:e.clientX,y:e.clientY});
             if (e.buttons > 0) onSeek(i);
           }}
-          onPointerLeave={() => setHoverIdx(null)}
+          onPointerLeave={() => {setHoverIdx(null);setPointer(null);}}
         >
               <path d={d} fill="none" stroke="var(--ink)" strokeWidth="1.1" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" opacity="0.75" />
               <line x1={x(index)} y1="0" x2={x(index)} y2={H} stroke="var(--ink)" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.35" />
@@ -75,10 +77,11 @@ export function Sparkline({ values, labels, index, caption, format, onSeek, log,
           className="pointer-events-none absolute h-[7px] w-[7px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink"
           style={{ left: `${dotLeft}%`, top: `${dotTop}%` }}
         />
-        <div className="pointer-events-none absolute right-[14px] top-0 bg-paper px-1 text-[10px] leading-none opacity-50">{format(max)}</div>
-        <div className="pointer-events-none absolute bottom-0 right-[14px] bg-paper px-1 text-[10px] leading-none opacity-50">{format(min)}</div>
+        <div className="pointer-events-none absolute right-[14px] top-0 bg-paper px-1 text-[13px] leading-none opacity-50">{format(max)}</div>
+        <div className="pointer-events-none absolute bottom-0 right-[14px] bg-paper px-1 text-[13px] leading-none opacity-50">{format(min)}</div>
       </div>
-      <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[10px] leading-none opacity-55">
+      {hoverIdx!==null&&pointer&&<PointerTooltip {...pointer}>{format(values[shown])} · {labels[shown]}</PointerTooltip>}
+      <div className="mt-0.5 flex justify-between border-t border-ink/15 pt-0.5 text-[13px] leading-none opacity-55">
         <span>{labels[0]}</span>
         <span>{labels[labels.length - 1]}</span>
       </div>

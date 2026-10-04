@@ -14,7 +14,7 @@ function largestFont(dialog:HTMLElement,property:string,fits:()=>boolean,max:num
   let low=13,high=max;
   dialog.style.setProperty(property,`${low}px`);
   if(dialog.style.setProperty(property,`${high}px`),fits())return high;
-  for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty(property,`${mid}px`);if(fits())low=mid;else high=mid;}
+  for(let i=0;i<3;i++){const mid=(low+high)/2;dialog.style.setProperty(property,`${mid}px`);if(fits())low=mid;else high=mid;}
   dialog.style.setProperty(property,`${low}px`);
   return low;
 }
@@ -30,12 +30,18 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
   useLayoutEffect(() => {
     const previous = document.activeElement as HTMLElement | null;
     const dialog = ref.current;
+    if(dialog&&innerWidth>=768){
+      const article=dialog.querySelector<HTMLElement>('.evidence-layout');
+      if(article){dialog.style.width=`${evidenceWidth(article.dataset.test??'price')}px`;dialog.dataset.readingColumns='1';dialog.style.setProperty('--reading-font','13px');}
+      if(dialog.querySelector('.owner-memo-depth'))dialog.style.width=`${panelWidth(.35,560,620)}px`;
+    }
     dialog?.showModal();
     return () => { dialog?.close(); queueMicrotask(() => previous?.focus()); };
   }, []);
   useLayoutEffect(() => {
     const dialog=ref.current;
     if(!dialog)return;
+    let stillFits:(()=>boolean)|undefined;
     const fit=()=>{
       if(innerWidth<768){
         dialog.style.width='';delete dialog.dataset.readingColumns;
@@ -45,6 +51,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
         return;
       }
       // Every fit starts from the same state, so a refit with unchanged content lands on the same size.
+      dialog.querySelector<HTMLElement>('.drawer-chart[data-expanded]')?.style.removeProperty('height');
       dialog.style.width='';delete dialog.dataset.readingColumns;
       for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font'])dialog.style.removeProperty(name);
       const method=dialog.querySelector<HTMLElement>('.method-sections');
@@ -79,14 +86,15 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       const business=dialog.querySelector<HTMLElement>('.owner-memo-depth');
       if(business){
         // One width per screen for every company (owner rule); only columns and type size adapt to the memo.
-        dialog.style.width=`${panelWidth(.35,560,680)}px`;
+        dialog.style.width=`${panelWidth(.35,560,620)}px`;
         const available=business.parentElement!.clientHeight-16;
         const fits=()=>business.scrollHeight<=available&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1)&&lowestText(business)<=business.parentElement!.getBoundingClientRect().bottom-8;
         dialog.style.setProperty('--memo-leading',String(innerHeight<850?1.2:1.35));
+        stillFits=fits;
         let best={columns:3,font:13,used:0};
         for(let columns=Math.max(1,Math.min(3,business.children.length));columns>=1;columns--){
           business.style.columnCount=String(columns);
-          const font=largestFont(dialog,'--memo-font',fits,20),used=business.scrollHeight;
+          const font=largestFont(dialog,'--memo-font',fits,26),used=business.scrollHeight;
           if(fits()&&used>best.used)best={columns,font,used};
           if(used>=available*.92)break;
         }
@@ -102,12 +110,14 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       dialog.style.width=`${width}px`;
       const clipping=[...article.querySelectorAll<HTMLElement>('*')].filter(el=>!el.closest('svg')&&getComputedStyle(el).overflowY!=='visible');
       const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1)&&clipping.every(el=>el.scrollHeight<=el.clientHeight+1)&&content.scrollHeight<=content.clientHeight+1&&lowestText(article)<=content.getBoundingClientRect().bottom-8;
+      stillFits=fits;
       // The width is fixed; the inner layout takes whichever column count allows the larger type (two only on wide drawers).
-      let best={columns:'1',font:0};
+      let best={columns:'1',font:0,used:0};
       for(const columns of width>=480?['1','2']:['1']){
         dialog.dataset.readingColumns=columns;
-        const font=largestFont(dialog,'--reading-font',fits,20);
-        if(fits()&&font>best.font+.5)best={columns,font};
+        const font=largestFont(dialog,'--reading-font',fits,24);
+        const used=lowestText(article)-article.getBoundingClientRect().top;
+        if(fits()&&(used>best.used+24||Math.abs(used-best.used)<24&&font>best.font))best={columns,font,used};
       }
       dialog.dataset.readingColumns=best.columns;dialog.style.setProperty('--reading-font',`${best.font||13}px`);
     };
@@ -122,12 +132,20 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     const settle=async()=>{
       if(settling){again=true;return;}
       settling=true;
-      do{again=false;watch();for(let round=0;round<6&&active;round++){fit();const before=size();await frames();if(size()===before)break;}}while(again&&active);
+      do{again=false;watch();for(let round=0;round<6&&active;round++){fit();const before=size();await frames();if(size()===before||stillFits?.())break;}}while(again&&active);
+      // A short single-column record gives its remaining height to the actual chart.
+      const article=dialog.querySelector<HTMLElement>('.evidence-layout');
+      const chart=article?.querySelector<HTMLElement>('.drawer-chart');
+      if(active&&innerWidth>=768&&dialog.dataset.readingColumns==='1'&&article&&chart?.querySelector('[data-testid=threshold-series]')){
+        const spare=article.parentElement!.getBoundingClientRect().bottom-lowestText(article)-32;
+        if(spare>48){chart.dataset.expanded='true';chart.style.setProperty('height',`${chart.getBoundingClientRect().height+spare}px`,'important');await frames();}
+      }
       settling=false;
       if(active)delete dialog.dataset.fitting;
     };
     if(fitted)dialog.dataset.fitting='true';else fit();
-    let started=false;const start=()=>{if(started)return;started=true;void settle();};
+    // Let the modal header and close control paint before the measured text fit.
+    let started=false;const start=()=>{if(started||!active)return;started=true;requestAnimationFrame(()=>requestAnimationFrame(()=>{if(active)void settle();}));};
     const fallback=setTimeout(start,1500);
     document.fonts.ready.then(()=>{clearTimeout(fallback);start();});
     const schedule=()=>{if(started)void settle();};

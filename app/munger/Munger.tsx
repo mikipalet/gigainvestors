@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useRef, useState } from "react";
 import { Face } from "@/components/Face";
 
@@ -42,10 +41,7 @@ export function Munger() {
   };
 
   return (
-    <div className="flex h-[100dvh] flex-col items-center justify-center gap-5 px-6 text-center">
-      <Link href="/" className="fixed left-5 top-4 text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
-        GigaInvestors
-      </Link>
+    <div className="flex h-[calc(100dvh-132px)] sm:h-[calc(100dvh-84px)] flex-col items-center justify-center gap-5 px-6 text-center">
       <div className="relative h-[46vh] w-full max-w-[400px]">
         <Face slug="charlie-munger" size={1200} priority />
         {answer && (

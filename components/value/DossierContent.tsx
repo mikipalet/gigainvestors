@@ -28,7 +28,7 @@ import { ownerReturn, cashCoveredReturnCopy, expectedReturnCopy, requiredReturnC
 import { bestWesternListing, westernTradingLabel } from '@/lib/value/western';
 import { sharePrice } from '@/lib/value/listing-details';
 
-export function DossierContent({ dossier, quote = null, children }: { dossier: Dossier; quote?: PriceMap[string] | null; children?: ReactNode }) {
+export function DossierContent({ dossier, quote = null, children, holders }: { dossier: Dossier; quote?: PriceMap[string] | null; children?: ReactNode; holders?: ReactNode }) {
  const [panel,setPanel]=useState<TestKey|'valuation'|null>(null);
  const [thesisOpen,setThesisOpen]=useState(false);
  const [panels,setPanels]=useState<typeof import('./EvidencePanel')|null>(null);
@@ -76,12 +76,12 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
  const failed=QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='fail');
 
  const shortHistory=dossier.historyCoverage && dossier.historyCoverage.years<T.minYears;
- const verdict=shortHistory?'Not enough history yet':humanVerdict(dossier,Boolean(dossier.b),canShowPrice,ratio);
+ const verdict=shortHistory?'Financial history':humanVerdict(dossier,Boolean(dossier.b),canShowPrice,ratio);
  const identity=<div className="one-identity"><ValueLink href="/" className="back-link">← Companies</ValueLink><div className="company-heading"><CompanyLogo src={company.logo} name={name}/><div><h1>{name}</h1><p title={tradingLabel??'Not easily buyable from Western brokers'}>{company.code} · {company.exchange}</p>{Boolean(company.indexes?.length)&&<p className="company-indexes">{company.indexes!.join(" · ")}</p>}</div></div>{children}</div>;
 
  if(insufficient){
   const count=dossier.historyCoverage?.years??new Set(years).size;
-  return <div className="one-dossier insufficient-dossier locks-scroll"><section className="dossier-band insufficient-band">{identity}<div data-testid="insufficient-data"><h2>Not enough history yet</h2><PriceStory dossier={dossier} quote={quote}/><p>{count} annual periods on record. Seven are required for the quality checklist.</p></div></section><BusinessSection analysis={dossier} price={quote?.[0]??null}/><FinancialHighlights dossier={dossier}/>{reportUrl&&<div className="dossier-source"><a href={reportUrl}>Original filing ↗</a></div>}</div>;
+  return <div className="one-dossier insufficient-dossier locks-scroll"><section className="dossier-band insufficient-band">{identity}<div data-testid="insufficient-data"><h2>Financial history</h2><PriceStory dossier={dossier} quote={quote}/><p>{count} annual periods on record.</p></div></section>{holders}<BusinessSection analysis={dossier} price={quote?.[0]??null}/><FinancialHighlights dossier={dossier}/>{reportUrl&&<div className="dossier-source"><a href={reportUrl}>Original filing ↗</a></div>}</div>;
  }
 
  return <div onPointerOver={()=>{if(!panels)void loadEvidence().then(setPanels);}} onFocus={()=>{if(!panels)void loadEvidence().then(setPanels);}} className="one-dossier locks-scroll" data-quality={qualityPass?'pass':failed.length?'fail':'unclear'}>
@@ -93,6 +93,7 @@ export function DossierContent({ dossier, quote = null, children }: { dossier: D
    </div>
    {referenceRow}
   </section>
+  {holders}
   <BusinessSection analysis={dossier} price={quote?.[0]??null}/>
   <div className="dossier-checks">
    <section className="quality-section" aria-label="Five business quality tests"><h2>1. Is this a good business? </h2>

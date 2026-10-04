@@ -120,10 +120,10 @@ try {
     };
     try {
       await page.goto(base + path, { waitUntil: 'networkidle', timeout: 90000 });
-      await page.locator('.one-dossier,.main-view').waitFor();
+      await page.locator('.one-dossier,.main-view,.locks-scroll').first().waitFor();
       await page.evaluate(() => document.fonts.ready);
       await record('page');
-      const selectors = process.env.QA_BUTTONS ?? '.main-more,.table-toggle,.about-method,.tile-open,.holder-summary,.thesis-source-button,.business-open';
+      const selectors = process.env.QA_BUTTONS ?? '.main-more,.table-toggle,.about-method,.tile-open,.holder-summary,.thesis-source-button,.business-open,.company-holders-strip';
       const buttons = page.locator(selectors);
       for (let i = 0; i < await buttons.count(); i++) {
         const b = buttons.nth(i);

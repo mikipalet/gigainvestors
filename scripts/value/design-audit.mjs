@@ -4,6 +4,7 @@ export const audit = () => {
   const issues = [];
   if (document.documentElement.scrollWidth > vw + 1) issues.push(`horizontal overflow: ${document.documentElement.scrollWidth}px > ${vw}px`);
   for (const el of root.querySelectorAll("*")) {
+    if(el.closest('.sr-only'))continue;
     const cs = getComputedStyle(el);
     if (cs.display === "none" || cs.visibility === "hidden") continue;
     const r = el.getBoundingClientRect();

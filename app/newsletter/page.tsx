@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { PageFooter } from "@/components/PageFooter";
 import { NewsletterClient } from "./NewsletterClient";
 import { issueHero, listIssues } from "@/lib/newsletter/store";
@@ -27,9 +26,6 @@ export default function Page() {
   const issues = listIssues();
   return (
     <main className="mx-auto flex min-h-[100dvh] max-w-[640px] flex-col gap-8 px-6 pb-28 pt-16 text-[15px] leading-relaxed">
-      <Link href="/" className="text-[12px] font-semibold tracking-wide opacity-45 hover:opacity-100">
-        GigaInvestors
-      </Link>
       <div>
         <h1 className="text-[26px] font-semibold leading-tight">The quarter, by email.</h1>
         <p className="mt-2 opacity-60">What 83 famous investors bought and sold last quarter, sent once the quarter&apos;s 13F filings are in. Four emails a year.</p>

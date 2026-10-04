@@ -23,10 +23,10 @@ describe('site currency and metric contracts', () => {
     expect(comparableValuation({ ...valuation, perShareTrading: { currency: "USD", fxRate: .01, low: 8, mid: 10, high: 12 } }, 'USD')?.perShare.mid).toBe(10);
   });
   it('keeps internal links in the current route namespace', () => {
-    expect(valueHref('/ko.us', '/value')).toBe('/value/ko.us');
-    expect(valueHref('/', '/value/ko.us')).toBe('/value/');
-    expect(valueHref('/ko.us', '/')).toBe('/ko.us');
-    expect(valueHref('/', '/ko.us')).toBe('/');
+    expect(valueHref('/ko.us', '/value')).toBe('/s/KO');
+    expect(valueHref('/', '/value/ko.us')).toBe('/value');
+    expect(valueHref('/ko.us', '/')).toBe('/s/KO');
+    expect(valueHref('/', '/ko.us')).toBe('/value');
   });
   it('formats units and suppresses unknown metrics', () => {
     expect(formatMetric({ value: 410e9, format: 'money', currency: 'USD' })).toBe('USD 410B');

@@ -1,3 +1,4 @@
+export const metadata = {alternates:{canonical:'https://gigainvestors.com/value/method'}};
 import { MethodChanges } from '@/components/value/MethodChanges';
 import { HindsightSimulation } from '@/components/value/HindsightSimulation';
 import { readStore } from '@/lib/value/store';

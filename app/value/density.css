@@ -1002,4 +1002,14 @@
 /* Method is ready in its first paint; no off-screen entrance or delayed fitting. */
 .value-page dialog[data-side-panel]:has(.method-sections) .panel-shell{animation:none}
 
-.value-page .method-sections h3{break-after:avoid-column}
+/* Keep a section label with its first paragraph/table, including change entries. */
+.value-page .method-sections :is(h3,h4){break-after:avoid-column}
+.value-page .method-sections :is(h3,h4)+*{break-before:avoid-column}
+.value-page .method-sections :is(.method-sources,.method-change){break-inside:avoid-column}
+
+/* Phone history rows use their full content height; the pager follows the table. */
+@media(max-width:767px){
+ .value-page dialog[data-side-panel] .compact-company-list[data-historical=true]{height:auto;min-height:100%;flex:none}
+ .value-page dialog[data-side-panel] .compact-company-list[data-historical=true] table{height:auto;flex:none}
+ .value-page .compact-company-list[data-historical=true] tbody,.value-page .compact-company-list[data-historical=true] tbody tr{flex:none}
+}

@@ -184,3 +184,9 @@
 
 }
 .shared-dock :is(button,a,summary,[role="button"]),.shared-dock :is(button,a,summary,[role="button"]) *{text-decoration:none!important}
+
+/* Wrapped investor names must fit the row budget before the chart and pager. */
+@media(min-width:768px) and (max-height:849px){
+ .company-holders-panel .company-holders-table :is(th,td){font-size:14px;line-height:16px;padding-block:3px}
+ .company-holders-panel .company-holders-table small{line-height:15px}
+}

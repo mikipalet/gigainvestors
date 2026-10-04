@@ -1,11 +1,12 @@
 'use client';
 import type {ReactNode} from 'react';
-import {usePathname} from 'next/navigation';
+import {useSelectedLayoutSegments} from 'next/navigation';
 import {SearchTrigger} from './Search';
 import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {QuarterLink} from './QuarterLink';
 export function BottomBarShell({method,investorCodes,timelineCodes}:{method:ReactNode;investorCodes:string[];timelineCodes:string[]}){
- const path=usePathname();
+ // Classify the selected route, not the URL: Vercel ISR can render / as /index.
+ const path='/'+useSelectedLayoutSegments().filter(segment=>!segment.startsWith('(')).join('/');
  const investor=investorCodes.includes(path.slice(1));
  const value=path==='/value'||path.startsWith('/value/');
  const company=path.startsWith('/s/');

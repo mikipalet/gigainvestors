@@ -123,7 +123,7 @@ try {
       await page.locator('.one-dossier,.main-view,.locks-scroll').first().waitFor();
       await page.evaluate(() => document.fonts.ready);
       await record('page');
-      const selectors = process.env.QA_BUTTONS ?? '.main-more,.table-toggle,.about-method,.tile-open,.holder-summary,.thesis-source-button,.business-open,.company-holders-strip';
+      const selectors = process.env.QA_BUTTONS ?? '.main-more,.table-toggle,.about-method,.tile-open,.holder-summary,.thesis-source-button,.business-open,.company-holders-strip,[data-testid=price-story-line]';
       const buttons = page.locator(selectors);
       for (let i = 0; i < await buttons.count(); i++) {
         const b = buttons.nth(i);
@@ -145,7 +145,7 @@ try {
         const combo = page.getByRole('combobox', { name: label, exact: true });
         if (await combo.isVisible()) { await combo.click(); await record(`Filter ${label}`); await page.keyboard.press('Escape'); }
       }
-      await page.getByRole('button', { name: 'Search companies', exact: true }).click();
+      await page.getByRole('button', { name: /^Search(?: companies)?$/ }).click();
       // Search is gigainvestors.com's shared modal: audit it as page chrome, never as a drawer.
       const searchIsSharedModal = async state => {
         if (!await page.locator('.search-modal').isVisible() || await page.locator('dialog[open]').count()) report.push({ width, height, path, state, issues: ['search must be the shared gigainvestors modal, not a drawer'] });

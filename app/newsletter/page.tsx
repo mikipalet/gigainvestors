@@ -1,3 +1,4 @@
+import {pageAlternates} from '@/lib/agents/urls';
 import Link from "next/link";
 import { PageFooter } from "@/components/PageFooter";
 import { NewsletterClient } from "./NewsletterClient";
@@ -11,7 +12,7 @@ const description = "One letter a quarter on what 83 famous investors bought and
 export const metadata = {
   title: "The quarter, by email · GigaInvestors",
   description,
-  alternates: { canonical: "https://gigainvestors.com/newsletter" },
+  alternates:pageAlternates('main','/newsletter'),
   openGraph: {
     type: "website",
     url: "https://gigainvestors.com/newsletter",

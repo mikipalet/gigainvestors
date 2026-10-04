@@ -10,6 +10,7 @@ export function ChartInteraction({points,width,height,label,children,onActive,fa
   {interaction.point&&<svg className="chart-crosshair" aria-hidden="true" viewBox={`0 0 ${width} ${height}`} style={{height}}><line x1={interaction.point.x} x2={interaction.point.x} y1={8} y2={height-18} stroke="var(--viz-muted)"/>{interaction.point.y!==undefined&&<circle cx={interaction.point.x} cy={interaction.point.y} r={4} fill="var(--paper)" stroke="var(--ink)"/>}</svg>}</div>
   {interaction.point&&interaction.position&&<PointerTooltip {...interaction.position}>{interaction.point.text}</PointerTooltip>}
   {fallback&&interaction.active===null&&<p className="chart-fallback">{fallback}</p>}
+  <span className="sr-only" style={{contain:'strict',overflow:'visible'}} aria-label={`${label}: all chart observations`}>{points.map(point=>point.text).join("; ")}</span>
   <span className="sr-only" aria-live="polite">{interaction.point?.text}</span>
  </div>;
 }

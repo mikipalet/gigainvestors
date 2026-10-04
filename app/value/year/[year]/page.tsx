@@ -1,3 +1,5 @@
+import {pageAlternates} from '@/lib/agents/urls';
+export async function generateMetadata({params}:{params:Promise<{year:string}>}){const {year}=await params;return {title:`${year} historical checklist | GigaInvestors`,description:`Retrospective business checklist at the end of ${year}, using current restatements and surviving index membership.`,alternates:{canonical:pageAlternates('value',`/year/${year}`).canonical}};}
 import { notFound } from 'next/navigation';
 import { getMeta } from '@/lib/value/store';
 import { renderValuePage } from '../../ValueHome';

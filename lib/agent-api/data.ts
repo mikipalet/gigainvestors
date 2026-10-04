@@ -1,4 +1,5 @@
-import {METHOD_TESTS} from '@/lib/value/method-content';
+import {METHOD_SECTIONS} from '@/lib/value/method-content';
+import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {z} from 'zod';
 import {getIndex,getInvestor,getSearchIndex,getStock} from '@/lib/data';
 import {getMeta,getDefaultIndex,enrichRows,getDossier,getPrice,getForwardRecord,readStore} from '@/lib/value/store';
@@ -94,7 +95,7 @@ export async function executeEndpoint(route:Route,pathname:string,q:Query):Promi
   return {...await listing(q,frame),summary:summaries[frame]??null,...common};
  }
  case 'changelog':return {version:METHOD_VERSION,changes:METHOD_CHANGES};
- case 'method':return {version:METHOD_VERSION,description:'Five independent quality tests plus price. GigaInvestors model choices inspired by Buffett; no blended score and no endorsement.',tests:METHOD_TESTS.map(([id,,description])=>({id,description})),rules:Object.entries(metricLabels).filter(([,m])=>m.threshold!==undefined&&m.better).map(([id,m])=>({id,label:m.label,threshold:m.threshold!,better:m.better!,strict:!!m.strict,explanation:metricHelp(id,m.label).why})),assumptions:['Operating valuations project ten years plus a terminal value.','Required return is at least 10%, or the local ten-year bond yield plus four percentage points.','Historical simulations have hindsight and coverage limitations; consult the time-travel caveats.','Forward record uses immutable dated observations.','Financial companies and investment holdings use their published sector-specific valuation models.','Research estimates are not forecasts or investment advice.']};
+ case 'method':return {version:METHOD_VERSION,description:`${VALUE_PRODUCT_NAME}: five independent quality tests plus a price check. Model choices inspired by principles Buffett and Munger describe; no blended score and no endorsement.`,tests:METHOD_SECTIONS.map(([id,,description])=>({id,description})),rules:Object.entries(metricLabels).filter(([,m])=>m.threshold!==undefined&&m.better).map(([id,m])=>({id,label:m.label,threshold:m.threshold!,better:m.better!,strict:!!m.strict,explanation:metricHelp(id,m.label).why})),assumptions:['Operating valuations project ten years plus a terminal value.','Required return is at least 10%, or the local ten-year bond yield plus four percentage points.','Historical simulations have hindsight and coverage limitations; consult the time-travel caveats.','Forward record uses immutable dated observations.','Financial companies and investment holdings use their published sector-specific valuation models.','Research estimates are not forecasts or investment advice.']};
  case 'forward':return getForwardRecord();
  }
 }

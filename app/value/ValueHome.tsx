@@ -1,3 +1,5 @@
+import {schemaJson,datasetSchema} from '@/lib/agents/schema';
+import {siteUrl} from '@/lib/agents/urls';
 import { assertIndexConsistency } from '@/lib/value/consistency';
 import { getDefaultIndex, getMeta, enrichRows, readStore } from '@/lib/value/store';
 import { browserRow, unpackView, type BrowserPayload, type BrowserRow } from '@/lib/value/browser-view';
@@ -18,5 +20,7 @@ export async function renderValuePage(year?: string) {
   const initialRows=meta?.views&&!year ? rows.filter(row=>row.t==='PPPPP') : rows;
   const todayPayload=year&&meta?.views?.current?await readStore<BrowserPayload>(meta.views.current):null;
   const todayRows=todayPayload?unpackView(todayPayload).filter(row=>row.t==='PPPPP'):undefined;
-  return <ValueIndex todayRows={todayRows} rows={initialRows} initialFilter={year?year.includes('Q')?{q:year}:{year}:{}} tags={meta?.tags??{}} meta={meta} initialHistory={history} />;
+  return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:schemaJson(datasetSchema(year?`Historical checklist ${year}`:"Business quality checklist",siteUrl("value",year?`/?q=${year.includes("Q")?year:year+"Q4"}`:"/"),meta?.asOf))}} />
+    <ValueIndex todayRows={todayRows} rows={initialRows} initialFilter={year?year.includes('Q')?{q:year}:{year}:{}} tags={meta?.tags??{}} meta={meta} initialHistory={history} /></>;
 }

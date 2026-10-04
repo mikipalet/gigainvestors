@@ -1,3 +1,7 @@
+import {companyAlternates} from '@/lib/agents/urls';
+import {schemaJson,corporationSchema} from '@/lib/agents/schema';
+import {companyMarkdown} from '@/lib/agents/company';
+import { VALUE_PRODUCT_NAME } from '@/lib/value/brand';
 import { requiredReturnCopy } from '@/lib/value/owner-return';
 import { holderRecord } from '@/components/value/holder-record';
 import { HolderSummary } from '@/components/value/HolderSummary';
@@ -20,8 +24,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dossier = await getDossier((await params).id.toUpperCase());
   const required=dossier?requiredReturnCopy(dossier.valuation,dossier.company.country):'';
-  const description = dossier ? dossier.status==='insufficient_data' ? `${dossier.company.name}: Not enough history yet.` : `${dossier.company.name}: five quality tests.${required?` ${required}.`:''}` : 'Company not found';
-  return { description, openGraph: { description }, title: dossier ? `${dossier.company.name}: Buffett checklist` : 'Company not found', alternates: { canonical: `/${(await params).id.toLowerCase()}` } };
+  const description = dossier ? dossier.status==='insufficient_data' ? `${dossier.company.name} | ${VALUE_PRODUCT_NAME}: Not enough history yet.` : `${dossier.company.name} | ${VALUE_PRODUCT_NAME}: five quality tests plus a price check.${required?` ${required}.`:''}` : 'Company not found';
+  return { description, openGraph: { title: dossier ? `${dossier.company.name}: ${VALUE_PRODUCT_NAME}` : 'Company not found', description, siteName: VALUE_PRODUCT_NAME }, twitter: { title: dossier ? `${dossier.company.name}: ${VALUE_PRODUCT_NAME}` : 'Company not found', description }, title: dossier ? `${dossier.company.name}: ${VALUE_PRODUCT_NAME}` : 'Company not found', alternates: companyAlternates((await params).id) };
 }
 export default async function DossierPage({ params }: Props) {
   const dossier = await getDossier((await params).id.toUpperCase());
@@ -37,7 +41,10 @@ export default async function DossierPage({ params }: Props) {
     return {...h,firm:investor?.firm,portrait:investor?.sketch?investor.slug:undefined,position:holderRecord(history,company.code)};
   }));
   const quote=await getPrice(dossier.id,company.country);
-  return <DossierContent dossier={dossier} quote={quote}>
+  return <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:schemaJson(corporationSchema(dossier))}} />
+    <section className="sr-only" aria-label="Dated company data and chart values"><pre>{companyMarkdown(dossier,quote)}</pre></section>
+    <DossierContent dossier={dossier} quote={quote}>
     {dossier.holders.length>0&&<section className="holders"><h2><HolderSummary holders={holderRows}/></h2>
       {dossier.holders.length ? <ul className="holder-stack">{dossier.holders.slice(0,5).map((holder) => {
         const investor = investors?.investors.find((item) => item.code === holder.code);
@@ -47,5 +54,5 @@ export default async function DossierPage({ params }: Props) {
       })}</ul> : <p className="text-sm text-ink/60">No tracked holders.</p>}
       {dossier.holders.length > 0 && <p>Including {dossier.holders[0].name}</p>}
     </section>}
-  </DossierContent>;
+  </DossierContent></>;
 }

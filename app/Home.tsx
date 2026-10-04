@@ -1,4 +1,7 @@
 "use client";
+import {AgentQuarterMetadata} from '@/components/AgentQuarterMetadata';
+import {siteUrl} from '@/lib/agents/urls';
+import {HomeContent} from "@/components/AgentContent";
 
 import { useMemo } from "react";
 import { InvestorTile, type InvestorTileData } from "@/components/InvestorTile";
@@ -44,6 +47,8 @@ export function Home({ index }: { index: Index }) {
 
   return (
     <>
+      <AgentQuarterMetadata canonical={siteUrl('main')} quarter={q}/>
+      <HomeContent index={index} quarter={q}/>
       <Treemap frames={frames} q={q} label={(d) => `${d.person} · ${d.money}`} className="locks-scroll h-[calc(100dvh-84px)] sm:h-[calc(100dvh-48px)] w-screen" render={(d, tier, rect) => <InvestorTile d={d} tier={tier} rect={rect} q={q} />} />
       <QuarterSlider quarters={index.quarters} q={q} onChange={setQ} note={`${(frames[q] ?? []).length} of ${index.investors.length} filed`} />
     </>

@@ -8,11 +8,32 @@ const EVIDENCE_WIDTHS:Record<'short'|'mid'|'tall',Record<string,number>>={
   tall:{understandable:320,moat:340,economics:380,management:360,accounting:340,price:300},
 };
 const evidenceWidth=(test:string)=>EVIDENCE_WIDTHS[innerHeight<850?'short':innerHeight<1050?'mid':'tall'][test]??400;
-const lowestText=(root:Element)=>Math.max(0,...[...root.querySelectorAll('p,li,td,th,h3,h4,a,small,figcaption,blockquote')].map(el=>el.getBoundingClientRect().bottom));
+// Element boxes can omit overflowing inline text, buttons and definition lists.
+// Measure painted text fragments against the actual clipping ancestors instead.
+function textFits(root:Element,content:Element):boolean{
+  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),range=document.createRange();
+  const boundary=content.getBoundingClientRect();
+  while(walker.nextNode()){
+    const node=walker.currentNode,el=node.parentElement;
+    if(!node.textContent?.trim()||!el||el.closest('svg,.sr-only,[popover]:not(:popover-open)'))continue;
+    range.selectNodeContents(node);
+    for(const rect of range.getClientRects()){
+      if(!rect.width||!rect.height)continue;
+      if(rect.bottom>boundary.bottom-8||rect.top<boundary.top||rect.left<boundary.left||rect.right>boundary.right)return false;
+      for(let ancestor=el;ancestor!==content;ancestor=ancestor.parentElement!){
+        const style=getComputedStyle(ancestor),box=ancestor.getBoundingClientRect();
+        if(/hidden|clip/.test(style.overflowY)&&(rect.bottom>box.bottom+1||rect.top<box.top-1))return false;
+        if(/hidden|clip/.test(style.overflowX)&&(rect.right>box.right+1||rect.left<box.left-1))return false;
+      }
+    }
+  }
+  return true;
+}
 const panelWidth=(share:number,min:number,max:number)=>Math.min(innerWidth,Math.round(Math.min(max,Math.max(min,innerWidth*share))/20)*20);
 function largestFont(dialog:HTMLElement,property:string,fits:()=>boolean,max:number):number{
   let low=13,high=max;
   dialog.style.setProperty(property,`${low}px`);
+  if(!fits())return 0;
   if(dialog.style.setProperty(property,`${high}px`),fits())return high;
   for(let i=0;i<6;i++){const mid=(low+high)/2;dialog.style.setProperty(property,`${mid}px`);if(fits())low=mid;else high=mid;}
   dialog.style.setProperty(property,`${low}px`);
@@ -38,14 +59,14 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     if(!dialog)return;
     const fit=()=>{
       if(innerWidth<768){
-        dialog.style.width='';delete dialog.dataset.readingColumns;
+        dialog.style.width='';delete dialog.dataset.readingColumns;delete dialog.dataset.compactMemo;
         for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font'])dialog.style.removeProperty(name);
         const method=dialog.querySelector<HTMLElement>('.method-sections'),business=dialog.querySelector<HTMLElement>('.owner-memo-depth');
         if(method)method.style.columnCount='';if(business){business.style.gridTemplateColumns='';business.style.columnCount='';}
         return;
       }
       // Every fit starts from the same state, so a refit with unchanged content lands on the same size.
-      dialog.style.width='';delete dialog.dataset.readingColumns;
+      dialog.style.width='';delete dialog.dataset.readingColumns;delete dialog.dataset.compactMemo;
       for(const name of ['--reading-font','--memo-font','--memo-leading','--preview-font'])dialog.style.removeProperty(name);
       const method=dialog.querySelector<HTMLElement>('.method-sections');
       if(method){
@@ -81,14 +102,18 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
         // One width per screen for every company (owner rule); only columns and type size adapt to the memo.
         dialog.style.width=`${panelWidth(.35,560,680)}px`;
         const available=business.parentElement!.clientHeight-16;
-        const fits=()=>business.scrollHeight<=available&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1)&&lowestText(business)<=business.parentElement!.getBoundingClientRect().bottom-8;
+        const fits=()=>business.scrollHeight<=available&&business.scrollWidth<=business.clientWidth+1&&[...business.children].every(child=>child.scrollWidth<=child.clientWidth+1)&&textFits(business,business.parentElement!);
         dialog.style.setProperty('--memo-leading',String(innerHeight<850?1.2:1.35));
         let best={columns:3,font:13,used:0};
-        for(let columns=Math.max(1,Math.min(3,business.children.length));columns>=1;columns--){
-          business.style.columnCount=String(columns);
-          const font=largestFont(dialog,'--memo-font',fits,20),used=business.scrollHeight;
-          if(fits()&&used>best.used)best={columns,font,used};
-          if(used>=available*.92)break;
+        for(const compact of [false,true]){
+          if(compact)dialog.dataset.compactMemo='true';
+          for(let columns=Math.max(1,Math.min(3,business.children.length));columns>=1;columns--){
+            business.style.columnCount=String(columns);
+            const font=largestFont(dialog,'--memo-font',fits,20),used=business.scrollHeight;
+            if(font&&fits()&&used>best.used)best={columns,font,used};
+            if(font&&fits()&&used>=available*.92)break;
+          }
+          if(best.used)break;
         }
         business.style.columnCount=String(best.columns);dialog.style.setProperty('--memo-font',`${best.font}px`);
         return;
@@ -101,7 +126,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       const width=Math.min(innerWidth,evidenceWidth(article.dataset.test??(article.dataset.valuation!==undefined?'price':'')));
       dialog.style.width=`${width}px`;
       const clipping=[...article.querySelectorAll<HTMLElement>('*')].filter(el=>!el.closest('svg')&&getComputedStyle(el).overflowY!=='visible');
-      const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1)&&clipping.every(el=>el.scrollHeight<=el.clientHeight+1)&&content.scrollHeight<=content.clientHeight+1&&lowestText(article)<=content.getBoundingClientRect().bottom-8;
+      const fits=()=>article.scrollHeight<=available&&article.scrollWidth<=article.clientWidth+1&&[...article.querySelectorAll('th,td')].every(cell=>cell.scrollWidth<=cell.clientWidth+1)&&clipping.every(el=>el.scrollHeight<=el.clientHeight+1)&&content.scrollHeight<=content.clientHeight+1&&textFits(article,content);
       // The width is fixed; the inner layout takes whichever column count allows the larger type (two only on wide drawers).
       let best={columns:'1',font:0};
       for(const columns of width>=480?['1','2']:['1']){
@@ -111,7 +136,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       }
       dialog.dataset.readingColumns=best.columns;dialog.style.setProperty('--reading-font',`${best.font||13}px`);
     };
-    let active=true,settling=false,again=false;
+    let active=true,settling=false,again=false,lastSize='';
     let observed:Element|null=null;
     const watch=()=>{const el=dialog.querySelector('.evidence-layout,.owner-memo-depth,.method-sections');if(el)observed=el;return el;};
     const fitted=watch();
@@ -123,7 +148,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
       if(settling){again=true;return;}
       settling=true;
       do{again=false;watch();for(let round=0;round<6&&active;round++){fit();const before=size();await frames();if(size()===before)break;}}while(again&&active);
-      settling=false;
+      lastSize=size();settling=false;
       if(active)delete dialog.dataset.fitting;
     };
     if(fitted)dialog.dataset.fitting='true';else fit();
@@ -131,10 +156,14 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     const fallback=setTimeout(start,1500);
     document.fonts.ready.then(()=>{clearTimeout(fallback);start();});
     const schedule=()=>{if(started)void settle();};
+    // Responsive charts can change height after the two-frame settling window.
+    // Ignore our own already-settled size, but refit subsequent layout changes.
+    const resizeObserver=new ResizeObserver(()=>{if(!settling&&size()!==lastSize)schedule();});
+    if(observed)resizeObserver.observe(observed);
     const observer=new MutationObserver(records=>{if(records.some(record=>!(record.target instanceof Element?record.target:record.target.parentElement)?.closest('svg,.chart-interaction')))schedule();});
     observer.observe(dialog,{childList:true,subtree:true});
     window.addEventListener('resize',schedule);
-    return()=>{active=false;clearTimeout(fallback);observer.disconnect();window.removeEventListener('resize',schedule);};
+    return()=>{active=false;clearTimeout(fallback);observer.disconnect();resizeObserver.disconnect();window.removeEventListener('resize',schedule);};
   },[children]);
   return <dialog ref={ref} className={`value-panel ${wide ? 'wide' : ''} ${compact?'compact-panel':''}`} data-side-panel data-closing={closing} aria-label={title} onKeyDownCapture={e=>{
     // A modal owns Escape, including when a chart tooltip has keyboard focus.

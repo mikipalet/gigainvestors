@@ -43,7 +43,7 @@ export function PositionTile({ d, tier, rect, q }: { d: PositionTileData; tier: 
               <div className="truncate opacity-60" style={{ fontSize: "0.78em" }}>
                 {d.name}
                 {rect.w > fs * (d.name.length * 0.55 + 9) && d.since && <span> · since {d.since}</span>}
-                {rect.w > fs * (d.name.length * 0.55 + 16) && d.holders !== undefined && <span> · {d.holders} holders</span>}
+                {rect.w > fs * (d.name.length * 0.55 + 16) && d.holders !== undefined && <span> · {d.holders} holder{d.holders === 1 ? '' : 's'}</span>}
               </div>
             )}
           </div>

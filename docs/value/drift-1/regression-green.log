@@ -1,0 +1,165 @@
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-nightlyfix
+
+ ✓ tests/unit/value/price-history-splits.test.ts (6 tests) 16ms
+stdout | tests/unit/value/price-history.test.ts > records monthly closes in order with the requested ten-year URL and skips fresh history
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > records monthly closes in order with the requested ten-year URL and skips fresh history
+price-history: 0 written
+price-history: 0/0 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > records monthly closes in order with the requested ten-year URL and skips fresh history
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > refreshes expired rows, filters before limit, and switches to Yahoo at the shared daily budget
+price-history: 2 written
+price-history: 0/2 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > uses Japanese local month and Yahoo ten-year monthly closes without EODHD budget calls
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > skips bad provider responses without replacing a cached file
+price-history: 0 written
+price-history: 1/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > continues through all companies despite consecutive failures and rejects above 20%
+price-history: 1 written
+price-history: 41/42 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > counts failed EODHD attempts against the daily budget
+price-history: 0 written
+price-history: 2/2 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > skips a failed Yahoo request and writes the next company
+price-history: 1 written
+price-history: 1/2 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > C7 falls back immediately on an exhausted budget and uses padded HK symbols
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > continues after malformed cached history metadata
+price-history: 4 written
+price-history: 1/5 companies failed
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING0.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING1.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING2.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING3.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING4.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING5.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING6.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING7.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING8.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING9.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING10.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING11.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING12.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING13.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING14.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING15.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING16.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING17.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING18.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING19.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING20.JP: Yahoo history unavailable
+
+stdout | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+price-history: 1 written
+price-history: 0/22 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+price-history: 0 written
+price-history: 0/0 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > limits price-history requests after ranking Western access then market cap
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > routes compatibility exchange EXAMPLE.NZ to Yahoo even with the paid history budget exhausted
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > routes compatibility exchange EXAMPLE.MI to Yahoo even with the paid history budget exhausted
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > honors VALUE_NO_EODHD for history without paid usage checks or reservations
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > caches a confirmed compatibility-exchange miss with its reason, preserves prices, and retries after the refresh window
+price-history: 0 written
+price-history: 0/1 companies failed
+
+stderr | tests/unit/value/price-history.test.ts > caches a confirmed compatibility-exchange miss with its reason, preserves prices, and retries after the refresh window
+MISSING.NZ: Yahoo history unavailable
+
+stdout | tests/unit/value/price-history.test.ts > caches a confirmed compatibility-exchange miss with its reason, preserves prices, and retries after the refresh window
+price-history: 0 written
+price-history: 0/0 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > caches a confirmed compatibility-exchange miss with its reason, preserves prices, and retries after the refresh window
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > does not cache Yahoo HTTP 429 as a permanent miss
+price-history: 0 written
+price-history: 1/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > does not cache Yahoo HTTP 500 as a permanent miss
+price-history: 0 written
+price-history: 1/1 companies failed
+
+ ✓ tests/unit/value/price-history.test.ts (41 tests) 369ms
+ ✓ tests/unit/value/reviewed-price-history.test.ts (6 tests) 30ms
+
+ Test Files  3 passed (3)
+      Tests  53 passed (53)
+   Start at  08:25:39
+   Duration  2.85s (transform 1.03s, setup 0ms, collect 1.47s, tests 415ms, environment 3ms, prepare 245ms)

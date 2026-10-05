@@ -1,0 +1,197 @@
+{
+  "shares": [
+    {
+      "id": "DCOM.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 44156595,
+      "replayedShares": 44156595,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "TFII.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 82193031,
+      "replayedShares": 82193031,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "MEOH.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 77364263,
+      "replayedShares": 77364263,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "AVBH.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 10983480,
+      "replayedShares": 10983480,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "PAAS.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 414618000,
+      "replayedShares": 414618000,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "TEO.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 430737600,
+      "replayedShares": 430737600,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "HEI-A.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 141269000,
+      "replayedShares": 141269000,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "NWSA.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 558400000,
+      "replayedShares": 558400000,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "GOOS.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 97660609,
+      "replayedShares": 97660609,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "EQX.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 1167459822,
+      "replayedShares": 1167459822,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "RYCEY.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 8229938945,
+      "replayedShares": 8229938945,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "FWONK.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 250708485,
+      "replayedShares": 250708485,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "NICE.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 58597188,
+      "replayedShares": 58597188,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "DSGX.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 85548553,
+      "replayedShares": 85548553,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "TAC.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 316300000,
+      "replayedShares": 316300000,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "GHM.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 11737033,
+      "replayedShares": 11737033,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "CENTA.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 62592598,
+      "replayedShares": 62592598,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "BUDFF.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 1969128856,
+      "replayedShares": 1969128856,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "BTG.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 1321070762,
+      "replayedShares": 1321070762,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "NSRGF.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 2572220000,
+      "replayedShares": 2572220000,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "TGS.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 150552200,
+      "replayedShares": 150552200,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "HVT.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 16426100.000000002,
+      "replayedShares": 16426100.000000002,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "FRFHF.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 22371876,
+      "replayedShares": 22371876,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "BELFB.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 12656313,
+      "replayedShares": 12656313,
+      "independentReconciliationMatches": true
+    },
+    {
+      "id": "FSM.US",
+      "checkedAt": "2026-10-05T07:03:38.848Z",
+      "shares": 295957387,
+      "replayedShares": 295957387,
+      "independentReconciliationMatches": true
+    }
+  ],
+  "histories": [
+    {
+      "id": "ITUB.US",
+      "source": "/Users/miki/data/value-cover/held-validation/cover-4/raw/ITUB.US-yahoo-1mo.json",
+      "priceDate": "2026-10-02T20:00:02.000Z",
+      "months": 120,
+      "rawSourceMatchesLive": true,
+      "fixedReaderMatchesSource": true
+    },
+    {
+      "id": "HEI-A.US",
+      "source": "/Users/miki/data/value-cover/held-validation/cover-4/raw/HEI-A.US-yahoo-1mo.json",
+      "priceDate": "2026-10-02T20:00:02.000Z",
+      "months": 120,
+      "rawSourceMatchesLive": true,
+      "fixedReaderMatchesSource": true
+    }
+  ]
+}

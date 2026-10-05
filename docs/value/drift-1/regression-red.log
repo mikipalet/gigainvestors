@@ -1,0 +1,194 @@
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-nightlyfix
+
+ ❯ tests/unit/value/reviewed-price-history.test.ts (6 tests | 4 failed) 43ms
+   × ordinary cache reads cannot replace released split-adjusted months with raw vendor closes 15ms
+     → expected [ [ '2017-01', 62.5 ], …(6) ] to deeply equal [ [ '2017-01', 32 ], …(6) ]
+   × retains the reviewed basis while accepting a new month and a current-month move 3ms
+     → expected [ [ '2017-01', 62.5 ], …(7) ] to deeply equal [ [ '2017-01', 32 ], …(7) ]
+   × does not invent adjusted older months from the conflicting source or churn retained values for vendor rounding 3ms
+     → expected [ [ '2016-12', 60 ], …(7) ] to deeply equal [ [ '2017-01', 32 ], …(6) ]
+   ✓ accepts a uniformly rebased history after a new split, including its recent closed months 2ms
+   ✓ allows an isolated provider correction and fresh history without a released baseline 2ms
+   × fetching raw EOD history seeks a compatible Yahoo series before replacing reviewed prices 18ms
+     → expected [ [ '2017-01', 62.5 ], …(6) ] to deeply equal [ [ '2017-01', 32 ], …(6) ]
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/reviewed-price-history.test.ts > ordinary cache reads cannot replace released split-adjusted months with raw vendor closes
+AssertionError: expected [ [ '2017-01', 62.5 ], …(6) ] to deeply equal [ [ '2017-01', 32 ], …(6) ]
+
+- Expected
++ Received
+
+@@ -1,17 +1,17 @@
+  [
+    [
+      "2017-01",
+-     32,
++     62.5,
+    ],
+    [
+      "2017-02",
+-     34,
++     66.40625,
+    ],
+    [
+      "2017-03",
+-     36,
++     70.3125,
+    ],
+    [
+      "2026-06",
+      90,
+    ],
+
+ ❯ tests/unit/value/reviewed-price-history.test.ts:17:41
+     15| afterEach(()=>{vi.unstubAllEnvs();rmSync(root,{recursive:true,force:tr…
+     16| it('ordinary cache reads cannot replace released split-adjusted months…
+     17|  seed(raw);expect(readPriceHistory(id)).toEqual(previous);
+       |                                         ^
+     18| });
+     19| it('retains the reviewed basis while accepting a new month and a curre…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/value/reviewed-price-history.test.ts > retains the reviewed basis while accepting a new month and a current-month move
+AssertionError: expected [ [ '2017-01', 62.5 ], …(7) ] to deeply equal [ [ '2017-01', 32 ], …(7) ]
+
+- Expected
++ Received
+
+@@ -1,17 +1,17 @@
+  [
+    [
+      "2017-01",
+-     32,
++     62.5,
+    ],
+    [
+      "2017-02",
+-     34,
++     66.40625,
+    ],
+    [
+      "2017-03",
+-     36,
++     70.3125,
+    ],
+    [
+      "2026-06",
+      90,
+    ],
+
+ ❯ tests/unit/value/reviewed-price-history.test.ts:21:31
+     19| it('retains the reviewed basis while accepting a new month and a curre…
+     20|  seed([...raw.slice(0,-1),['2026-09',102],['2026-10',103]]);
+     21|  expect(readPriceHistory(id)).toEqual([...previous.slice(0,-1),['2026-…
+       |                               ^
+     22| });
+     23| it('does not invent adjusted older months from the conflicting source …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/value/reviewed-price-history.test.ts > does not invent adjusted older months from the conflicting source or churn retained values for vendor rounding
+AssertionError: expected [ [ '2016-12', 60 ], …(7) ] to deeply equal [ [ '2017-01', 32 ], …(6) ]
+
+- Expected
++ Received
+
+  [
+    [
++     "2016-12",
++     60,
++   ],
++   [
+      "2017-01",
+-     32,
++     62.5,
+    ],
+    [
+      "2017-02",
+-     34,
++     66.40625,
+    ],
+    [
+      "2017-03",
+-     36,
++     70.3125,
+    ],
+    [
+      "2026-06",
+-     90,
++     90.0000001,
+    ],
+    [
+      "2026-07",
+-     95,
++     95.0000001,
+    ],
+    [
+      "2026-08",
+-     98,
++     98.0000001,
+    ],
+    [
+      "2026-09",
+-     100,
++     100.0000001,
+    ],
+  ]
+
+ ❯ tests/unit/value/reviewed-price-history.test.ts:25:31
+     23| it('does not invent adjusted older months from the conflicting source …
+     24|  seed([['2016-12',60],...raw.map(([m,p]):[string,number]=>[m,m>='2026'…
+     25|  expect(readPriceHistory(id)).toEqual(previous);
+       |                               ^
+     26| });
+     27| it('accepts a uniformly rebased history after a new split, including i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/value/reviewed-price-history.test.ts > fetching raw EOD history seeks a compatible Yahoo series before replacing reviewed prices
+AssertionError: expected [ [ '2017-01', 62.5 ], …(6) ] to deeply equal [ [ '2017-01', 32 ], …(6) ]
+
+- Expected
++ Received
+
+@@ -1,17 +1,17 @@
+  [
+    [
+      "2017-01",
+-     32,
++     62.5,
+    ],
+    [
+      "2017-02",
+-     34,
++     66.40625,
+    ],
+    [
+      "2017-03",
+-     36,
++     70.3125,
+    ],
+    [
+      "2026-06",
+      90,
+    ],
+
+ ❯ tests/unit/value/reviewed-price-history.test.ts:46:67
+     44|  });
+     45|  const company={id,code:'SPLIT',exchange:'US',source:'eodhd'} as any;
+     46|  try{expect(await fetchPriceHistory({company,from:'2016-01-01'})).toEq…
+       |                                                                   ^
+     47|  finally{vi.unstubAllGlobals();}
+     48| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 2 passed (6)
+   Start at  08:23:34
+   Duration  1.03s (transform 532ms, setup 0ms, collect 569ms, tests 43ms, environment 0ms, prepare 153ms)

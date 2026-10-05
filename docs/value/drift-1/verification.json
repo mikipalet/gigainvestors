@@ -1,0 +1,55 @@
+{
+  "baseCommit": "198412bd679dc9a298cbd1eb75e69ba8ad4b353a",
+  "branch": "value-drift",
+  "ordinaryBeforeFix": {
+    "output": "/Users/miki/data/value-drift-1/ordinary",
+    "log": "publish.log",
+    "exit": 0
+  },
+  "ordinaryFixed": {
+    "output": "/Users/miki/data/value-drift-1/final",
+    "log": "final-publish.log",
+    "exit": 0
+  },
+  "causalShareControl": {
+    "output": "/Users/miki/data/value-drift-1/share-control",
+    "log": "share-control.log",
+    "exit": 0
+  },
+  "tests": {
+    "files": 228,
+    "passed": 2258,
+    "skipped": 1,
+    "failed": 0,
+    "log": "unit-final.log",
+    "exit": 0
+  },
+  "typecheck": {
+    "log": "typecheck-final.log",
+    "exit": 0
+  },
+  "regressionBeforeFix": {
+    "failed": 4,
+    "passed": 2,
+    "log": "regression-red.log"
+  },
+  "regressionAfterFix": {
+    "tests": 7,
+    "passed": 7,
+    "log": "unit-final.log"
+  },
+  "allCorrections": {
+    "count": 51,
+    "savedMismatches": 0,
+    "replayMismatches": 0
+  },
+  "archiveFilesUnchanged": 5145,
+  "diskFreeBytes": {
+    "/": 10830807040,
+    "/Users/miki/data/value-drift-1": 12853129216
+  },
+  "productionFilesSha256": {
+    "lib/value/price-history.ts": "f9c47c5bc5b6afa5a2212702f7f65fc58597615bbd18521ef47b202833f246f5",
+    "lib/value/price-history-basis.ts": "12ab34836c6a22e6f16aebc287dd81f7e7fc0e9d81f33604f8a7024396e4de12"
+  }
+}

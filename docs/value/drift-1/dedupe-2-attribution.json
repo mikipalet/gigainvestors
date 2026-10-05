@@ -1,0 +1,105 @@
+{
+  "files": {
+    "upstream-control.json": "32d596bfb832447a78597bd7cc88b001ce9176407d53c76be44b3e5138f732bd",
+    "canonical-differences.json": "c281e7d8c5827670cd1d5915e78fa6120a0d4d68a4582f2e51d46d04e1226c4b"
+  },
+  "canonicalCompanies": 24,
+  "checks": [
+    {
+      "id": "DSGX.US",
+      "mismatches": []
+    },
+    {
+      "id": "BELFB.US",
+      "mismatches": []
+    },
+    {
+      "id": "AESI.US",
+      "mismatches": []
+    },
+    {
+      "id": "NOG.US",
+      "mismatches": []
+    },
+    {
+      "id": "FSM.US",
+      "mismatches": []
+    },
+    {
+      "id": "BTG.US",
+      "mismatches": []
+    },
+    {
+      "id": "GOOS.US",
+      "mismatches": []
+    },
+    {
+      "id": "TFII.US",
+      "mismatches": []
+    },
+    {
+      "id": "TGS.US",
+      "mismatches": []
+    },
+    {
+      "id": "GHM.US",
+      "mismatches": []
+    },
+    {
+      "id": "MEOH.US",
+      "mismatches": []
+    },
+    {
+      "id": "DCOM.US",
+      "mismatches": []
+    },
+    {
+      "id": "ITUB.US",
+      "mismatches": []
+    },
+    {
+      "id": "HEI-A.US",
+      "mismatches": []
+    },
+    {
+      "id": "NICE.US",
+      "mismatches": []
+    },
+    {
+      "id": "FWONK.US",
+      "mismatches": []
+    },
+    {
+      "id": "AVBH.US",
+      "mismatches": []
+    },
+    {
+      "id": "CENTA.US",
+      "mismatches": []
+    },
+    {
+      "id": "TEO.US",
+      "mismatches": []
+    },
+    {
+      "id": "EQX.US",
+      "mismatches": []
+    },
+    {
+      "id": "PAAS.US",
+      "mismatches": []
+    },
+    {
+      "id": "HVT.US",
+      "mismatches": []
+    },
+    {
+      "id": "FRFHF.US",
+      "mismatches": []
+    },
+    {
+      "id": "TAC.US",
+      "mismatches": []
+    }
+  ]
+}

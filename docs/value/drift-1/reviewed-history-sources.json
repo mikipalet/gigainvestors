@@ -1,0 +1,30 @@
+[
+  {
+    "id": "ITUB.US",
+    "reviewedRawPath": "/Users/miki/data/value-cover/held-validation/cover-4/raw/ITUB.US-yahoo-1mo.json",
+    "sha256": "48becabfc94e30c0ee2a0ebe1712d635e9d980a45ce0f9160adbbfbd923276e5",
+    "meta": {
+      "currency": "USD",
+      "symbol": "ITUB",
+      "regularMarketTime": 1790971202,
+      "exchangeTimezoneName": "America/New_York",
+      "regularMarketPrice": 8.59,
+      "longName": "Ita\u00fa Unibanco Holding S.A."
+    },
+    "events": null
+  },
+  {
+    "id": "HEI-A.US",
+    "reviewedRawPath": "/Users/miki/data/value-cover/held-validation/cover-4/raw/HEI-A.US-yahoo-1mo.json",
+    "sha256": "0a5da940d40364d116402519d1875c9f5a56c49320a92b97e6df8bdc47d0482f",
+    "meta": {
+      "currency": "USD",
+      "symbol": "HEI-A",
+      "regularMarketTime": 1790971202,
+      "exchangeTimezoneName": "America/New_York",
+      "regularMarketPrice": 224.84,
+      "longName": "HEICO Corporation"
+    },
+    "events": null
+  }
+]

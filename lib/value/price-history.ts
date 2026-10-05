@@ -1,3 +1,5 @@
+import {historyBasisConflict,retainReviewedPriceHistory} from './price-history-basis';
+import {shardOf} from './shard';
 import {alignHistoryShares} from './history-split-basis';
 import {completeCachedSplits} from './completeness/cached-years';
 import { T, YAHOO_SUFFIXES } from "./config";
@@ -36,6 +38,10 @@ export function reconcilePriceSplits(prices:PriceHistory,fundamentals:Pick<Funda
   return result;
 }
 
+function releasedPriceHistory(id:string):PriceHistory {
+  return readCorpusJson<Record<string,{priceHistory?:PriceHistory}>>(`publish-repo/dossiers/${shardOf(id)}.json`)?.[id]?.priceHistory??[];
+}
+
 /** Read canonical monthly tuples, accepting the original Task 14 cache envelope. */
 export function readPriceHistory(id: string): PriceHistory | null {
   const cached = readCorpusJson<PriceHistory | CachedPriceHistory>(`prices-history/${id}.json`);
@@ -44,9 +50,9 @@ export function readPriceHistory(id: string): PriceHistory | null {
   const valid=prices.filter(row => Array.isArray(row) && typeof row[0] === "string"
     && /^\d{4}-\d{2}$/.test(row[0]) && typeof row[1] === "number" && Number.isFinite(row[1]) && row[1] > 0);
   const fundamentals=readCorpusJson<Fundamentals>(`fundamentals/${id}.json`);
-  if(!fundamentals)return valid;
-  fundamentals.splits=completeCachedSplits(id,fundamentals.splits,readCorpusJson);
-  return reconcilePriceSplits(valid,alignHistoryShares(fundamentals,valid));
+  if(fundamentals)fundamentals.splits=completeCachedSplits(id,fundamentals.splits,readCorpusJson);
+  const reconciled=fundamentals?reconcilePriceSplits(valid,alignHistoryShares(fundamentals,valid)):valid;
+  return retainReviewedPriceHistory(reconciled,releasedPriceHistory(id));
 }
 
 function monthlyCloses(rows: Array<{ date: unknown; close: unknown }>): PriceHistory {
@@ -109,12 +115,22 @@ export function usesYahooHistory(company: Pick<Company, "id" | "exchange" | "sou
 
 const yahooLimit = createLimiter({ perSecond: T.yahoo.perSecond });
 export async function fetchPriceHistory({ company, from, useYahoo = false }: { company: Company; from: string; useYahoo?: boolean }): Promise<PriceHistory> {
-  if (!useYahoo && !usesYahooHistory(company)) return parseEodHistory(await eodhd(`eod/${encodeURIComponent(company.id)}`, { period: "m", from }));
+  const cached=readCorpusJson<PriceHistory|CachedPriceHistory>(`prices-history/${company.id}.json`);
+  const released=releasedPriceHistory(company.id);
+  const previous=cached?retainReviewedPriceHistory(Array.isArray(cached)?cached:cached.prices,released):released;
+  if (!useYahoo && !usesYahooHistory(company)) {
+    const prices=parseEodHistory(await eodhd(`eod/${encodeURIComponent(company.id)}`, { period: "m", from }));
+    if(!historyBasisConflict(prices,previous))return prices;
+    // EOD close is raw; adjusted_close includes dividends and is not a substitute.
+    // Recover a compatible split-adjusted source before overwriting the cache.
+  }
   return yahooLimit(async () => {
     const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSymbol(company))}?range=10y&interval=1mo`;
     const response = await fetchWithRetry(url, { headers: { "User-Agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(60_000), retries: 0 });
     if (response.status === 404) throw new PriceHistoryUnavailableError("Yahoo has no history for this symbol");
     if (!response.ok) throw new Error(`Yahoo price history HTTP ${response.status}`);
-    return parseYahooHistory(await response.json());
+    const prices=parseYahooHistory(await response.json());
+    if(historyBasisConflict(prices,previous))throw new Error('Refreshed price history conflicts with the released share basis');
+    return prices;
   });
 }

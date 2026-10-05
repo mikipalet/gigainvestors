@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-05T00:08:33.158800+00:00",
+  "provider": {
+    "at": "2026-10-05T00:07:49.561Z",
+    "status": 200,
+    "apiRequests": 99734,
+    "apiRequestsDate": "2026-10-04",
+    "dailyRateLimit": 100000
+  },
+  "confirmedReset": false,
+  "paidEodhdCallsByThisRun": 0,
+  "sharedLedgerWritesByThisRun": 0,
+  "reason": "Free endpoint still reports the previous provider day. Required shared-ledger write exception remains unanswered.",
+  "stoppedOwnedProcesses": [
+    {
+      "pid": 3272099,
+      "kind": "free reset poller"
+    },
+    {
+      "pid": 3408166,
+      "kind": "local preview server"
+    }
+  ]
+}

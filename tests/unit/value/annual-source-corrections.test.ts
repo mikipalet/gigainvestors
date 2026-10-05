@@ -22,6 +22,12 @@ it('does not overwrite unrelated operating revenues, currencies or periods',()=>
  const f=facts({Revenues:{units:{USD:[row(18481)],EUR:[row(22222)]}},WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(999,{end:'2024-12-31',start:'2024-01-01'})]}}});
  const [y]=correctAnnualSources([year()],f,{source:'https://data.sec.gov/test'});expect(y.revenue).toBe(2889);expect(y.dilutedShares).toBe(512.1);
 });
+it('uses an explicitly reviewed operating revenue concept without selecting bank components',()=>{
+ const f=facts({Revenues:{units:{USD:[row(2475723000)]}},InterestIncomeExpenseNet:{units:{USD:[row(10)]}},NoninterestIncome:{units:{USD:[row(20)]}}});
+ const [y]=correctAnnualSources([{...year(),revenue:2095059000}],f,{source:'https://issuer.test/annual',revenueConcept:'Revenues'});
+ expect(y.revenue).toBe(2475723000);
+ expect(y.provenance?.revenue?.field).toBe('us-gaap:Revenues');
+});
 it('uses bank net interest plus noninterest revenue without adding gross interest twice',()=>{
  const f=facts({InterestIncomeExpenseNet:{units:{USD:[row(172499)]}},NoninterestIncome:{units:{USD:[row(51876)]}},InterestAndDividendIncomeOperating:{units:{USD:[row(279636)]}}});
  const [y]=correctAnnualSources([year()],f,{source:'https://data.sec.gov/test',financial:true});expect(y.revenue).toBe(224375);expect(y.netRevenue).toBe(224375);

@@ -1,0 +1,271 @@
+{
+  "id": "AVBH.US",
+  "attempt": "Audited annual-report dividend reconciliation, then reanalysis; unchanged thresholds",
+  "previousReason": "Latest annual dividend observation is missing; consecutive book-plus-dividend compounding remains unresolved. Earlier unusual vendor dividends also require source reconciliation before release.",
+  "status": "scored",
+  "economics": {
+    "key": "economics",
+    "numeric": "pass",
+    "metrics": {
+      "bookReturnCagr": 0.10247489994190095,
+      "bookReturnYears": 10,
+      "bookStartPerShare": 12.171506093958557,
+      "bookEndPerShare": 32.287277586082475
+    },
+    "series": {
+      "bookPlusDividendReturn": [
+        [
+          2016,
+          0.1062954210237308
+        ],
+        [
+          2017,
+          0.1359213705813802
+        ],
+        [
+          2018,
+          0.11600672687975555
+        ],
+        [
+          2019,
+          0.1476453594043643
+        ],
+        [
+          2020,
+          0.08820794510841012
+        ],
+        [
+          2021,
+          0.053972721083536124
+        ],
+        [
+          2022,
+          -0.1764374028904564
+        ],
+        [
+          2023,
+          0.18426699980379824
+        ],
+        [
+          2024,
+          0.11831534060929094
+        ],
+        [
+          2025,
+          0.31747206909812187
+        ]
+      ],
+      "bookPerShare": [
+        [
+          2015,
+          12.171506093958557
+        ],
+        [
+          2016,
+          13.465281458708787
+        ],
+        [
+          2017,
+          15.295500969840534
+        ],
+        [
+          2018,
+          17.06988197333786
+        ],
+        [
+          2019,
+          19.59017083228141
+        ],
+        [
+          2020,
+          21.318179545719666
+        ],
+        [
+          2021,
+          22.468779704349537
+        ],
+        [
+          2022,
+          18.504446567196307
+        ],
+        [
+          2023,
+          21.914205419163263
+        ],
+        [
+          2024,
+          24.506992097513532
+        ],
+        [
+          2025,
+          32.287277586082475
+        ]
+      ],
+      "dividendsPerShare": [
+        [
+          2016,
+          0
+        ],
+        [
+          2017,
+          0
+        ],
+        [
+          2018,
+          0
+        ],
+        [
+          2019,
+          0
+        ],
+        [
+          2020,
+          0
+        ],
+        [
+          2021,
+          0
+        ],
+        [
+          2022,
+          0
+        ],
+        [
+          2023,
+          0
+        ],
+        [
+          2024,
+          0
+        ],
+        [
+          2025,
+          0
+        ]
+      ]
+    },
+    "reasons": [
+      "Tangible common book per share",
+      "Parent-total proxy for preferred equity and common earnings"
+    ],
+    "result": "pass",
+    "jev": [
+      {
+        "q": "revenue_model",
+        "label": "Revenue model",
+        "kind": "choice",
+        "value": "recurring",
+        "probability": 0.5590906775343862,
+        "section": "business",
+        "evidence": null,
+        "trusted": true
+      },
+      {
+        "q": "capex_purpose",
+        "label": "Capital expenditure purpose",
+        "kind": "choice",
+        "value": "maintenance",
+        "probability": 0.5510835861139198,
+        "section": "mdna",
+        "evidence": null,
+        "trusted": true
+      }
+    ],
+    "rawNumeric": "pass",
+    "rawMetrics": {
+      "bookReturnCagr": 0.10247489994190095,
+      "bookReturnYears": 10,
+      "bookStartPerShare": 12.171506093958557,
+      "bookEndPerShare": 32.287277586082475
+    },
+    "judgement": {
+      "result": "pass",
+      "reason": "A useful share of reported profit reaches the owners.",
+      "override": false
+    }
+  },
+  "annualDividendInputs": [
+    {
+      "end": "2010-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2011-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2012-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2013-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2014-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2015-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2016-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2017-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2018-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2019-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2020-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2021-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2022-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2023-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2024-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    },
+    {
+      "end": "2025-12-31",
+      "dividendsPaid": 0,
+      "commonDividendsPaid": 0
+    }
+  ],
+  "reason": "Explicit never-paid-dividends statement resolves missing 2025 and misclassified vendor historical cash flows; numeric economics now passes. Final R1 selection still required.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1443575/000143774926008852/avbh20251231_10k.htm"
+}

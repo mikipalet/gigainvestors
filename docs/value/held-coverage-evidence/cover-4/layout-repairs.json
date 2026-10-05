@@ -1,0 +1,16 @@
+{
+  "testedStates": 72,
+  "companies": [
+    "/s/AGO.US",
+    "/s/AMPY.US",
+    "/s/TOST.US"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "nonWhitespaceIssues": [],
+  "whitespaceIssueCount": 61,
+  "rawEvidence": "/Users/miki/data/value-cover/held-validation/cover-4/layout-production/report.json",
+  "whitespacePolicy": "Existing cover-3 R2 disposition retained for bottom empty area, raster empty area and empty block metrics; raw metrics and thresholds unchanged."
+}

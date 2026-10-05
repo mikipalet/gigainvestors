@@ -8,11 +8,13 @@ import random
 import urllib.request
 
 root = Path(os.environ.get('VALUE_CORPUS_DIR', str(Path.home() / 'data/value-cover')))
-out = root / 'held-validation'
+out = Path(os.environ.get('VALUE_SOURCE_EVIDENCE_DIR', str(root / 'held-validation')))
 (out / 'raw').mkdir(parents=True, exist_ok=True)
-manifest = json.loads((out / 'cover-2-sample.json').read_text())
-sample = manifest['old'] + manifest['new']
-bases = json.loads(Path('docs/value/held-coverage-evidence/cover-2/source-bases.json').read_text())
+manifest = json.loads(Path(os.environ.get('VALUE_SOURCE_SAMPLE', str(out / 'cover-2-sample.json'))).read_text())
+sample = manifest['ids'] if 'ids' in manifest else manifest['old'] + manifest['new']
+if len(sample) != len(set(sample)):
+    raise SystemExit('Second-source sample contains duplicate IDs')
+bases = json.loads(Path(os.environ.get('VALUE_SOURCE_BASES', 'docs/value/held-coverage-evidence/cover-2/source-bases.json')).read_text())
 
 # Independent HTML reader: original SEC inline facts, not pipeline-normalized
 # evidence. Explicit dimensions come from reviewed listing/share-class identity.
@@ -43,11 +45,10 @@ def filing_facts(id, meta):
         if item['tag']=='xbrli:context':
             dates=[p for p in parts if __import__('re').fullmatch(r'\d{4}-\d{2}-\d{2}',p)]
             members=[(t,v) for t,v in item['nested'] if t.endswith(':explicitmember')]
-            allowed=bases.get(id,{}).get('shareDimensions',{})
-            expected=set(allowed.values())
+            dimension_sets=bases.get(id,{}).get('shareDimensionSets') or [bases.get(id,{}).get('shareDimensions',{})]
             dimensioned=bool(members)
-            valid=dimensioned and len(members)==len(allowed) and all(v.get('dimension') in allowed for t,v in members) and expected.issubset(parts)
-            if dates:contexts[a['id']]={'start':dates[0] if len(dates)==2 else None,'end':dates[-1],'dimensioned':dimensioned,'valid':valid}
+            group=next((i for i,allowed in enumerate(dimension_sets) if dimensioned and len(members)==len(allowed) and all(v.get('dimension') in allowed for t,v in members) and set(allowed.values()).issubset(parts)),None)
+            if dates:contexts[a['id']]={'start':dates[0] if len(dates)==2 else None,'end':dates[-1],'dimensioned':dimensioned,'valid':group is not None,'group':group}
         elif item['tag']=='xbrli:unit':
             names=[p.split(':')[-1] for p in parts]
             if len(names)==1:units[a['id']]=names[0]
@@ -60,7 +61,25 @@ def filing_facts(id, meta):
         try:val=float(''.join(item['parts']).replace(',','').strip())*10**int(a.get('scale','0'))*(-1 if a.get('sign')=='-' else 1)
         except ValueError:continue
         if unit.lower().endswith('commonunits'):unit='shares'
-        facts.setdefault(name[0],{}).setdefault(name[1],{'units':{}})['units'].setdefault(unit,[]).append({'val':val,'start':ctx['start'],'end':ctx['end'],'form':meta['kind'],'filed':meta['filed'],'accn':meta['url'].split('/')[-2]})
+        facts.setdefault(name[0],{}).setdefault(name[1],{'units':{}})['units'].setdefault(unit,[]).append({'val':val,'start':ctx['start'],'end':ctx['end'],'form':meta['kind'],'filed':meta['filed'],'accn':meta['url'].split('/')[-2],**({'shareGroup':ctx['group']} if ctx['dimensioned'] else {})})
+    # Sum only explicitly reviewed, disjoint share classes. Duplicate appearances
+    # of a fact must agree; every specified class must be present for the period.
+    sets=bases.get(id,{}).get('shareDimensionSets',[])
+    if sets:
+        for tags in facts.values():
+            for tag,data in tags.items():
+                for unit,rows in data['units'].items():
+                    groups={}
+                    for row in rows:
+                        if 'shareGroup' in row:groups.setdefault((row['start'],row['end']),{}).setdefault(row['shareGroup'],[]).append(row)
+                    kept=[row for row in rows if 'shareGroup' not in row]
+                    for classes in groups.values():
+                        if set(classes)!=set(range(len(sets))) or any(len({r['val'] for r in xs})!=1 for xs in classes.values()):continue
+                        parts=[classes[i][0] for i in range(len(sets))]
+                        total={k:v for k,v in parts[0].items() if k!='shareGroup'}
+                        total.update(val=sum(r['val'] for r in parts),components=[{'dimensions':sets[i],'value':r['val']} for i,r in enumerate(parts)])
+                        kept.append(total)
+                    data['units'][unit]=kept
     return {'facts':facts}
 
 def get(url, file):
@@ -173,7 +192,9 @@ def check(id):
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
     results = list(pool.map(check, sample))
-(out / 'cover-2-second-source.json').write_text(json.dumps(results, indent=2) + '\n')
+(out / ('second-source.json' if 'VALUE_SOURCE_SAMPLE' in os.environ else 'cover-2-second-source.json')).write_text(json.dumps(results, indent=2) + '\n')
 print(json.dumps({'sample': len(sample), 'passed': sum(r['passed'] for r in results),
                   'unexplainedChecks': sum(not c['match'] for r in results for c in r['checks']),
                   'sourceFailures': sum(bool(r['errors']) for r in results)}))
+if not results or any(not r['passed'] for r in results):
+    raise SystemExit(1)

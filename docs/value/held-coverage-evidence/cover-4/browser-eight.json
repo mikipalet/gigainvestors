@@ -1,0 +1,22 @@
+{
+  "states": 180,
+  "companies": [
+    "/s/AESI.US",
+    "/s/AGO.US",
+    "/s/AMPY.US",
+    "/s/AVBH.US",
+    "/s/HEI-A.US",
+    "/s/ITUB.US",
+    "/s/NOG.US",
+    "/s/TOST.US"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "nonWhitespaceFailures": [],
+  "whitespaceIssueCount": 148,
+  "whitespaceDisposition": "Existing cover-3 R2 applies; raw thresholds unchanged",
+  "requiredTenCompanyGateCompleted": false,
+  "rawReport": "/Users/miki/data/value-cover/held-validation/cover-4/browser-repaired-eight-final/report.json"
+}

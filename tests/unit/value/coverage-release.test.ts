@@ -1,5 +1,6 @@
 import {afterEach,expect,it,vi} from 'vitest';
-import {mkdtempSync,rmSync} from 'node:fs';
+import {mkdtempSync,rmSync,mkdirSync,writeFileSync,readFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
 import os from 'node:os';
 import path from 'node:path';
 import {writeCorpusJson} from '@/lib/value/corpus';
@@ -38,4 +39,20 @@ it('retains unchanged baseline research but allows a newly analyzed baseline to 
  writeCorpusJson('analysis/OLD.US.json',{...a,id:'OLD.US',asOf:'2026-10-05'});
  expect(unchangedCoverageBaselineIds()).toEqual([]);
  expect(readCoverageRelease()!.baselineIds).toEqual(['OLD.US']);
+});
+
+it('treats previously released additions as baseline on a later coverage batch',()=>{
+ const a=fixture(),root=process.env.VALUE_CORPUS_DIR!;
+ const write=(file:string,data:unknown)=>{const p=path.join(root,file);mkdirSync(path.dirname(p),{recursive:true});writeFileSync(p,JSON.stringify(data));};
+ write('publish-repo/dossiers/001.json',{'OLD.US':{...a,id:'OLD.US'}});
+ write('publish-repo/prices/US.json',{'OLD.US':[1,'2026-10-02']});
+ write('prices/US.json',{'NEW.US':[10,new Date().toISOString().slice(0,10)]});
+ write('staging/review/dossiers/001.json',{'OLD.US':{...a,id:'OLD.US'},'NEW.US':a});
+ write('held-membership/additions.json',['OLD.US','NEW.US']);
+ execFileSync(process.execPath,['--import','tsx','scripts/value/prepare-coverage-release.ts',path.join(root,'staging/review')],{env:{...process.env,VALUE_CORPUS_DIR:root},stdio:'pipe'});
+ const release=JSON.parse(readFileSync(path.join(root,'held-membership/release.json'),'utf8'));
+ expect(release.baselineIds).toEqual(['OLD.US']);
+ expect(release.additionIds).toEqual(['NEW.US']);
+ expect(release.held).toEqual([]);
+ expect(()=>readCoverageRelease()).not.toThrow();
 });

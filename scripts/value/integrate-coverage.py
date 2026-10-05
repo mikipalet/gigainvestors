@@ -20,7 +20,13 @@ if target.resolve() == source.resolve():
 release = json.loads((source/'held-membership/release.json').read_text())
 if set(release['baselineIds']) & set(release['additionIds']):
     raise SystemExit('Baseline and additions overlap')
-backup = source/'held-validation/cover-3-integration-backup'
+batch = os.environ.get('VALUE_COVER_BATCH', 'cover-3')
+if not __import__('re').fullmatch(r'cover-\d+', batch):
+    raise SystemExit('Invalid coverage batch')
+snapshot = Path(os.environ.get('VALUE_COVER_SNAPSHOT', str(source/'staging'/batch)))
+if not (snapshot/'prices').is_dir():
+    raise SystemExit('Reviewed coverage snapshot prices are missing')
+backup = source/f'held-validation/{batch}-integration-backup'
 backup.mkdir(parents=True, exist_ok=True)
 journal = []
 freeze_file=target/'verdict-freeze.json'
@@ -57,10 +63,10 @@ prefixes=['companies','fundamentals','analysis','analysis/inputs','analysis/fing
 for id in release['additionIds']:
     for prefix in prefixes: install(f'{prefix}/{id}.json')
     install(f'reports/{id}',raw=True)
-    for prefix in ['eodhd','sec-companyfacts','yahoo-fundamentals','annual-reviewed']:
+    for prefix in ['eodhd','sec-companyfacts','sec-annual','sec-submissions','yahoo-fundamentals','annual-reviewed']:
         install(f'raw/{prefix}/{id}.json',raw=True)
 # Only addition quotes are merged. The published baseline remains untouched.
-for file in (source/'staging/cover-3/prices').glob('??.json'):
+for file in (snapshot/'prices').glob('??.json'):
     dst=target/'prices'/file.name
     prior=json.loads(dst.read_text()) if dst.exists() else {}
     updates=json.loads(file.read_text())
@@ -90,5 +96,5 @@ tmp=dst.with_name(dst.name+'.coverage-tmp');tmp.write_text(json.dumps(release,in
 if freeze_hash != (hashlib.sha256(freeze_file.read_bytes()).hexdigest() if freeze_file.exists() else None):
     raise SystemExit('Verdict freeze changed during integration')
 result={'accepted':len(release['additionIds']),'held':len(release['held']),'installedFiles':len(journal),'backup':str(backup),'verdictFreezeSha256':freeze_hash,'verdictFreezeUnchanged':True}
-(source/'held-validation/cover-3-integration.json').write_text(json.dumps(result,indent=2)+'\n')
+(source/f'held-validation/{batch}-integration.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result))

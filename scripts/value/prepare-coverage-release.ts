@@ -13,7 +13,8 @@ const prices=readPrices(corpusPath('publish-repo/prices'));
 for(const [id,quote]of Object.entries(readPrices(corpusPath('prices'))))prices[id]=mergeSeed(prices[id],quote);
 const layoutHolds=new Map((readCorpusJson<Array<{id:string;reasons:string[]}>>('held-membership/layout-holds.json')??[]).map(row=>[row.id,row.reasons]));
 const release:CoverageRelease={version:1,baselineIds,baselineAnalysisHashes:Object.fromEntries(baselineIds.map(id=>[id,baselineAnalysisHash(id)])),additionIds:[],held:[]};
-for(const id of readCorpusJson<string[]>('held-membership/additions.json')!.sort()){
+const baselineSet=new Set(baselineIds);
+for(const id of readCorpusJson<string[]>('held-membership/additions.json')!.filter(id=>!baselineSet.has(id)).sort()){
  const reasons=[...additionInputProblems(id,prices[id]),...(layoutHolds.get(id)??[])];
  const a=readCorpusJson<Analysis>(`analysis/${id}.json`);
  if(a&&reasons.length===0){if(!dossiers[id])reasons.push('publication-eligibility');else try{assertAdditionBinding(a,dossiers[id]);}catch{reasons.push('analysis-to-publication-binding');}}

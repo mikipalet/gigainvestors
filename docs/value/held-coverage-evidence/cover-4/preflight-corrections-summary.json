@@ -1,0 +1,37 @@
+{
+  "originalSample": 7,
+  "originalPassed": 4,
+  "originalFailedChecks": 4,
+  "corrections": [
+    {
+      "id": "AESI.US",
+      "field": "dilutedShares",
+      "before": 124019000,
+      "after": 122435000,
+      "reason": "Audited weighted diluted shares replace vendor annual share-count proxy."
+    },
+    {
+      "id": "NOG.US",
+      "field": "revenue",
+      "before": 2095059000,
+      "after": 2475723000,
+      "reason": "Use audited total revenue including commodity derivative gains, with explicit reviewed accounting concept."
+    },
+    {
+      "id": "ITUB.US",
+      "field": "dilutedShares",
+      "before": 13000283000,
+      "after": 11189427597,
+      "reason": "Sum audited ordinary and preference weighted diluted shares; both classes have equal diluted EPS, one preferred share per ADS."
+    },
+    {
+      "id": "ITUB.US",
+      "field": "revenue",
+      "value": 167780000000,
+      "reason": "Independent raw 20-F inline facts supply operating revenue absent from SEC companyfacts; input value unchanged."
+    }
+  ],
+  "correctedSample": 7,
+  "correctedPassed": 7,
+  "unexplainedMismatches": 0
+}

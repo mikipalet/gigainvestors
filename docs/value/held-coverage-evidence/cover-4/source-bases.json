@@ -1,0 +1,143 @@
+{
+  "FINV.US": {
+    "ordinaryPerAds": 5,
+    "source": "https://www.sec.gov/Archives/edgar/data/1691445/000149315226019597/form20-f.htm",
+    "revenueConcept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "revenueEvidence": "Consolidated income statement net revenue CNY 13,569,483 thousand. Geographic Revenues duplicate lacks inline scale; primary statement tag uses scale 3."
+  },
+  "TME.US": {
+    "ordinaryPerAds": 2,
+    "source": "https://www.sec.gov/Archives/edgar/data/1744676/000119312526160257/tme-20251231.htm"
+  },
+  "FWONA.US": {
+    "shareDimensions": {
+      "srt:ConsolidatedEntitiesAxis": "lmca:LibertyFormulaOneGroupMember",
+      "us-gaap:StatementClassOfStockAxis": "lmca:CommonClassSeriesaSeriesbSeriescMember"
+    },
+    "source": "https://www.sec.gov/Archives/edgar/data/1560385/000110465926020653/lmca-20251231x10k.htm"
+  },
+  "RYAN.US": {
+    "shareDimensions": {
+      "us-gaap:StatementClassOfStockAxis": "us-gaap:CommonClassAMember"
+    },
+    "source": "https://www.sec.gov/Archives/edgar/data/1849253/000184925326000006/ryan-20251231.htm"
+  },
+  "SUN.US": {
+    "shareDimensions": {
+      "us-gaap:StatementEquityComponentsAxis": "sun:CommonUnitsMember"
+    },
+    "source": "https://www.sec.gov/Archives/edgar/data/1552275/000155227526000021/sun-20251231.htm"
+  },
+  "AEG.US": {
+    "source": "https://www.sec.gov/Archives/edgar/data/769218/000119312526124987/d29563d20f.htm",
+    "revenueConcept": "aeg:RevenueFromContinuingAndDiscontinuedOperations",
+    "revenueEvidence": "2025 segment-results table, consolidated column after eliminations: total revenues EUR 17,664 million; insurance revenue 9,097 + effective-interest revenue 3,320 + FVPL interest 832 + other investment income 2,024 + fees 2,390 + other revenues 0 (rounding 1). Insurance revenue alone is not total revenue."
+  },
+  "IFS.US": {
+    "source": "https://www.sec.gov/Archives/edgar/data/1615903/000119312526177617/ifs-20251231.htm",
+    "revenueConcept": "ifs:RevenueNetOfIntersegmentAdjustment",
+    "revenueEvidence": "2025 segment table, total consolidated column after eliminations: total income PEN 11,326,379 thousand. Currency independently corroborated by total assets, common equity and operating cash flow; vendor USD label is wrong."
+  },
+  "ING.US": {
+    "source": "https://www.sec.gov/Archives/edgar/data/1039765/000162828026011979/ing-20251231.htm",
+    "revenueConcept": "ifrs-full:Revenue",
+    "revenueDimensions": {
+      "ifrs-full:SignificantInvestmentsInSubsidiariesAxis": "ing:INGGroupMember",
+      "ifrs-full:DepartureFromRequirementOfIFRSAxis": "ing:IFRSEUResultsMember"
+    },
+    "revenueEvidence": "Consolidated ING Group IFRS-EU total income 23,035 million matches the input IFRS-EU net income 6,327 million. Undimensioned IFRS-IASB revenue 25,678 million corresponds to net income 8,324 million and must not be mixed with the EU basis. The reconciliation identifies the IAS 39 EU carve-out."
+  },
+  "CIB.US": {
+    "source": "https://www.sec.gov/Archives/edgar/data/2058897/000205889726000125/cib-20251231.htm",
+    "revenueComponents": [
+      "cib:NetInterestMarginAndValuationIncomeOnFinancialInstrumentsBeforeImpairmentOnLoansAndFinancialLeasesAndOffBalanceSheetCreditInstruments",
+      "ifrs-full:FeeAndCommissionIncomeExpense",
+      "ifrs-full:MiscellaneousOtherOperatingIncome",
+      "ifrs-full:ShareOfProfitLossOfAssociatesAndJointVenturesAccountedForUsingEquityMethod"
+    ],
+    "revenueEvidence": "Consolidated statement F-7: net interest and valuation before credit impairment + net fees + other operating income + dividends/equity income. FY2025 COP million: 19,426,300 + 4,354,944 + 3,572,074 + 693,011 = 28,046,329. Continues the bank net-revenue definition; gross interest is not revenue."
+  },
+  "NOG.US": {
+    "revenueConcept": "Revenues",
+    "source": "https://www.sec.gov/Archives/edgar/data/1104485/000110448526000008/nog-20251231.htm",
+    "reason": "Audited consolidated total revenues include settled and unsettled commodity derivative gains; vendor sales subtotal excluded those gains."
+  },
+  "ITUB.US": {
+    "ordinaryPerAds": 1,
+    "source": "https://www.sec.gov/Archives/edgar/data/1132597/000113259726000132/itub-20251231.htm",
+    "shareDimensionSets": [
+      {
+        "ifrs-full:ClassesOfShareCapitalAxis": "ifrs-full:OrdinarySharesMember"
+      },
+      {
+        "ifrs-full:ClassesOfShareCapitalAxis": "ifrs-full:PreferenceSharesMember"
+      }
+    ],
+    "reason": "The consolidated income statement reports both ordinary and preference weighted diluted shares with equal diluted EPS. Sum both classes for total parent earnings; each ADS represents one preference share."
+  },
+  "ABVX.US": {
+    "ordinaryPerAds": 1,
+    "source": "https://www.sec.gov/Archives/edgar/data/1956827/000195682726000012/abvx-20251231.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "ASAIY.US": {
+    "ordinaryPerAds": 5,
+    "source": "https://www.sec.gov/Archives/edgar/data/1834048/000121390025026526/ea0234548-20f_sendasdis.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "BZ.US": {
+    "ordinaryPerAds": 2,
+    "source": "https://www.sec.gov/Archives/edgar/data/1842827/000110465926050959/bz-20251231x20f.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "CCU.US": {
+    "ordinaryPerAds": 2,
+    "source": "https://www.sec.gov/Archives/edgar/data/888746/000129281426002680/ccuform20f_2025.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "GDS.US": {
+    "ordinaryPerAds": 8,
+    "source": "https://www.sec.gov/Archives/edgar/data/1526125/000110465926051006/gds-20251231x20f.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "GFI.US": {
+    "ordinaryPerAds": 1,
+    "source": "https://www.sec.gov/Archives/edgar/data/1172724/000162828026021904/gfi-20251231.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "GSK.US": {
+    "ordinaryPerAds": 2,
+    "source": "https://www.sec.gov/Archives/edgar/data/1131399/000113139926000004/gsk-20251231.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "LOMA.US": {
+    "ordinaryPerAds": 5,
+    "source": "https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "NICE.US": {
+    "ordinaryPerAds": 1,
+    "source": "https://www.sec.gov/Archives/edgar/data/1003935/000100393526000010/nice-20251231.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "PAM.US": {
+    "ordinaryPerAds": 25,
+    "source": "https://www.sec.gov/Archives/edgar/data/1469395/000129281426002185/pamform20f_2025.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "RDY.US": {
+    "ordinaryPerAds": 1,
+    "source": "https://www.sec.gov/Archives/edgar/data/1135951/000157587226000381/rdy0899_20f.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "TGS.US": {
+    "ordinaryPerAds": 5,
+    "source": "https://www.sec.gov/Archives/edgar/data/931427/000114036126016167/ef20060824_20f.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  },
+  "ZH.US": {
+    "ordinaryPerAds": 3,
+    "source": "https://www.sec.gov/Archives/edgar/data/1835724/000110465926044557/zh-20251231x20f.htm",
+    "reason": "Current ADS ratio explicitly stated in annual filing; applied only to the reviewed ADR listing and ordinary-share denominator."
+  }
+}

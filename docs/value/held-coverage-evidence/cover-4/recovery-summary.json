@@ -1,0 +1,48 @@
+{
+  "pendingFundamentals": 119,
+  "filingKinds": {
+    "20-F": 20,
+    "40-F": 27,
+    "description": 41,
+    "10-K": 31
+  },
+  "annualExhibitRecoveries": 27,
+  "annualExhibitIds": [
+    "AGI.US",
+    "AQN.US",
+    "BMM.US",
+    "BTE.US",
+    "BTG.US",
+    "CGAU.US",
+    "CIGI.US",
+    "DSGX.US",
+    "EFXT.US",
+    "EGO.US",
+    "EQX.US",
+    "ERO.US",
+    "FRFHF.US",
+    "FSM.US",
+    "GFL.US",
+    "IAG.US",
+    "KGEI.US",
+    "MEOH.US",
+    "MINE.US",
+    "NAK.US",
+    "NXE.US",
+    "PAAS.US",
+    "PDS.US",
+    "SA.US",
+    "STN.US",
+    "TAC.US",
+    "TFII.US"
+  ],
+  "rawEvidence": "/Users/miki/data/value-cover/held-validation/cover-4",
+  "paidEodhdCallsByThisRun": 0,
+  "sourceAuditPreflight": {
+    "count": 8,
+    "passed": 8,
+    "unexplainedChecks": 0,
+    "requiredFreshTwentyCompleted": false
+  },
+  "requiredTenCompanyBrowserGateCompleted": false
+}

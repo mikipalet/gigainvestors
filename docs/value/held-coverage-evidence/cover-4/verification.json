@@ -1,0 +1,42 @@
+{
+  "fullUnitTests": {
+    "passed": 2223,
+    "skipped": 1,
+    "files": 223
+  },
+  "afterLastCssChange": {
+    "designTestsPassed": 43,
+    "files": 10,
+    "productionBuild": "passed",
+    "browserStates": 180,
+    "nonWhitespaceFailures": 0,
+    "whitespaceFailingStates": 106
+  },
+  "typescript": "passed",
+  "independentShareClassParserChecks": 4,
+  "browserSnapshotDataDifferences": [
+    "dossiers/495.json",
+    "dossiers/512.json",
+    "dossiers/099.json",
+    "dossiers/215.json",
+    "dossiers/354.json",
+    "dossiers/147.json",
+    "dossiers/591.json",
+    "dossiers/294.json"
+  ],
+  "snapshot": "/Users/miki/data/value-cover/staging/cover-4-final",
+  "noPublication": true,
+  "noRevalidation": true,
+  "noPush": true,
+  "browserSnapshotDifferingFields": [
+    "dossiers/495.json/AESI.US/priceStory/asOf",
+    "dossiers/512.json/AGO.US/priceStory/asOf",
+    "dossiers/099.json/NOG.US/priceStory/asOf",
+    "dossiers/215.json/TOST.US/priceStory/asOf",
+    "dossiers/354.json/AMPY.US/priceStory/asOf",
+    "dossiers/147.json/ITUB.US/priceStory/asOf",
+    "dossiers/591.json/HEI-A.US/priceStory/asOf",
+    "dossiers/294.json/AVBH.US/priceStory/asOf"
+  ],
+  "browserSnapshotFinancialAndLayoutDataIdentical": true
+}

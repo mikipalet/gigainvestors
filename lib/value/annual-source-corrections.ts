@@ -69,13 +69,13 @@ export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Opt
    y[field]=fact.value/divisor;
    y.provenance[field]={source:fact.source,field:fact.tag,method:divisor===1?'reported':'derived',inputs:[`Annual period ${fact.start} to ${fact.end}`,field==='revenue'?`Currency ${y.currency}`:'Weighted average diluted shares',...inputs]};
   };
-  if(options.financial&&y.currency){
+  if((options.financial||options.revenueConcept)&&y.currency){
    const interest=pick(['InterestIncomeExpenseNet'],y.currency),other=pick(['NoninterestIncome'],y.currency);
    const components=options.revenueComponents?.map(tag=>pick([tag],y.currency!));
    if(components?.length&&components.every((f):f is NonNullable<typeof f>=>f!==null)&&components.every(f=>f.start===components[0]!.start)){
     assign('revenue',{...components[0]!,value:components.reduce((sum,f)=>sum+f!.value,0),tag:components.map(f=>f!.tag).join(' + ')},1,['Reviewed consolidated revenue components; net interest before credit impairment']);
     y.provenance.revenue.method='derived';y.netRevenue=y.revenue;
-   }else if(interest&&other&&interest.start===other.start){
+   }else if(options.financial&&interest&&other&&interest.start===other.start){
     const total={...interest,value:interest.value+other.value,tag:`${interest.tag} + ${other.tag}`};
     assign('revenue',total,1,['Net interest plus noninterest income; excludes interest expense']);
     y.provenance.revenue.method='derived';y.netRevenue=y.revenue;

@@ -34,6 +34,9 @@
 .value-page :is(.tile-support,.drawer-numbers,.valuation-inputs) dt {white-space:nowrap}
 .value-page :is(.tile-support,.drawer-numbers,.valuation-inputs) dd {white-space:normal;overflow-wrap:normal}
 .value-page :is(.drawer-numbers,.valuation-inputs) :is(dt,dd)::after {content:none}
+/* Narrow reading columns keep the value intact and wrap longer labels. */
+.value-page dialog[data-side-panel] .drawer-numbers {grid-template-columns:minmax(0,1fr) max-content}
+.value-page dialog[data-side-panel] .drawer-numbers dt {white-space:normal}
 @media(max-width:767px){
  .value-page .owner-memo .memo-lines {grid-template-columns:max-content minmax(0,1fr);gap:8px}
  .value-page .owner-memo .memo-lines>div:is([data-question="3"],[data-question="4"],[data-question="5"]) {display:none}
@@ -72,6 +75,12 @@
 .value-page .method-rules dd {min-width:0;margin:0}
 .value-page .method-rules dd p {margin:4px 0;line-height:1.4;text-wrap:wrap}
 .value-page .memo-evidence p {text-wrap:wrap}
+@media(max-width:767px){
+ /* Annual values need their intrinsic width, including large negative ratios.
+    A single reading column leaves room for the value and its annual change. */
+ .value-page .owner-memo-depth {columns:1}
+ .value-page .drawer-years table {table-layout:auto}
+}
 @media(min-width:768px){
  /* WebKit does not shrink a 100%-height table in a flex column for its footer. */
  .value-page dialog[data-side-panel] .compact-company-list {display:grid;grid-template-rows:minmax(0,1fr) auto;row-gap:8px}

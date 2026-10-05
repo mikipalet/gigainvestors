@@ -62,13 +62,20 @@ publish_available() {
   run_stage thesis --limit=12
   code=$?
   if [[ "$code" == 75 ]]; then
-    retain_analysis=1
-    echo 'thesis budget exhausted; publishing existing released analysis'
+    echo 'thesis budget exhausted; publishing available analysis'
   elif [[ "$code" != 0 ]]; then
     echo 'publish skipped: thesis failed (not budget exhaustion)'
     return "$code"
   fi
   if [[ "$retain_analysis" == 1 ]]; then run_stage publish --existing-analysis; else run_stage publish; fi
+}
+run_analysis() {
+  if run_stage analyze; then
+    run_stage business-backfill --limit=100 || :
+  else
+    retain_analysis=1
+    echo 'analysis failed; retaining existing released analysis'
+  fi
 }
 run_japan() {
   local from
@@ -92,7 +99,8 @@ while true; do
   run_japan 2>> "$VALUE_CORPUS_DIR/logs/$cycle_date-japan.log" || :
   if ! run_stage wait-eodhd-reset; then
     echo 'paid stages skipped: EODHD reset not confirmed; publishing available data' | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-wait-eodhd-reset.log"
-    retain_analysis=1
+    VALUE_NO_EODHD=1 run_stage yields || :
+    VALUE_NO_EODHD=1 run_analysis
     publish_available || :
     run_stage status || :
     if [[ "${1:-}" == "--once" ]]; then exit 1; fi
@@ -100,12 +108,10 @@ while true; do
     continue
   fi
   # Reserve the first paid work for every missing or >90-day-old index member.
-  run_stage fundamentals --members-first || :
+  run_stage fundamentals --members-first --nightly || :
   run_stage prices || :
   run_stage price-history || :
-  # Refresh stories before residual fundamentals can spend the remaining news quota.
-  STORY_DISK_LEDGER="disk-budget-nightly-$cycle_date.json" run_stage price-story --limit=400 || :
-  run_stage fundamentals || :
+  run_stage fundamentals --nightly || :
   run_stage renormalize || :
   # EDINET reparsing needs the newly fetched Yahoo history for split checks.
   run_stage renormalize-edinet || :
@@ -113,12 +119,13 @@ while true; do
   run_stage price-seed || :
   run_stage reports || :
   if run_stage yields; then
-    run_stage analyze || :
-    run_stage business-backfill --limit=100 || :
+    run_analysis
   else
-    retain_analysis=1
-    echo "$(date -u +%FT%TZ) stage=analyze status=skipped reason=yields-failed; retaining existing analysis"
+    echo "$(date -u +%FT%TZ) yields failed; running analysis with cached EODHD inputs"
+    VALUE_NO_EODHD=1 run_analysis
   fi
+  # Optional news consumes only the budget left after yields and daily analysis.
+  STORY_DISK_LEDGER="disk-budget-nightly-$cycle_date.json" run_stage price-story --limit=400 || :
   run_stage share-checks || :
   publish_available || :
   # Residual IDs and evidence are private and must never enter the data repository.

@@ -30,6 +30,7 @@ async function main(): Promise<void> {
   let limit: number | undefined;
   let force = false;
   let membersFirst = false;
+  let nightly = false;
   let offline = false;
   let cachedReadings = false;
   let cachedNews = false;
@@ -42,7 +43,8 @@ async function main(): Promise<void> {
   let to: string | undefined;
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
-    if (arg === "--cached-news" && stage === "price-story") cachedNews = true;
+    if (arg === "--nightly" && stage === "fundamentals") nightly = true;
+    else if (arg === "--cached-news" && stage === "price-story") cachedNews = true;
     else if (arg === "--members-first" && stage === "fundamentals") membersFirst = true;
     else if (arg === "--offline" && ["index-membership","business-backfill","price-story"].includes(stage)) offline = true;
     else if (stage === "calibrate" && arg === "--existing") existing = true;
@@ -75,7 +77,7 @@ async function main(): Promise<void> {
 
   if (overwrite && !out) throw new Error("--overwrite requires local --out");
   const module = await import(pathToFileURL(path.join(directory, `${stage}.ts`)).href);
-  await module.default({ only, limit, force, from, to, out, overwrite, membersFirst, offline, cachedReadings, cachedNews, existing, existingAnalysis, additionsOnly });
+  await module.default({ only, limit, force, from, to, out, overwrite, membersFirst, nightly, offline, cachedReadings, cachedNews, existing, existingAnalysis, additionsOnly });
 }
 
 main().catch((error: unknown) => {

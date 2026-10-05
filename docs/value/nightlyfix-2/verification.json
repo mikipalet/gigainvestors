@@ -1,0 +1,20 @@
+{
+  "tests": {
+    "files": 16,
+    "passed": 185,
+    "failed": 0,
+    "log": "/Users/miki/data/nightly-test2/nightlyfix-proof/tests.log"
+  },
+  "typecheck": {
+    "exit": 0,
+    "scope": "changed source and test files plus transitive imports",
+    "config": "/Users/miki/data/nightly-test2/nightlyfix-proof/tsconfig.json"
+  },
+  "shellSyntaxExit": 0,
+  "diffCheckExit": 0,
+  "corpusCopyFiles": 710191,
+  "freeBytes": {
+    "worktree": 8662417408,
+    "copy": 15088594944
+  }
+}

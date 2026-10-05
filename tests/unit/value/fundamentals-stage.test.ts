@@ -64,7 +64,7 @@ it("counts ten calls locally and stops at the daily budget", async () => {
   await stage({});
   expect(getFundamentals).toHaveBeenCalledTimes(1);
   expect(callsUsedToday).toHaveBeenCalledTimes(1);
-  expect(console.log).toHaveBeenCalledWith("daily EODHD budget reached, resume tomorrow");
+  expect(console.log).toHaveBeenCalledWith(expect.stringContaining("fundamentals budget ceiling reached"));
 });
 
 it("resyncs usage after 200 companies and obeys the updated budget", async () => {
@@ -193,4 +193,14 @@ it('retains source history and rejects a destructive refreshed share jump',async
  expect(saved.years.map((y: {dilutedShares:number})=>y.dilutedShares)).toEqual(Array(8).fill(10));
  expect(saved.years.at(-1).provenance.dilutedShares.retainedFrom.fetchedAt).toBe('2026-09-01');
  expect(saved.integrity.ok).toBe(true);
+});
+
+it.each([false,true])('nightly fundamentals stop at the reserve ceiling (membersFirst=%s)',async membersFirst=>{
+ for(const id of ['A.US','B.US','C.US'])appendJsonl('universe.jsonl',{id,exchange:'US',country:'US',marketCapUsd:100});
+ writeCorpusJson('index-membership/latest.json',{memberships:{'A.US':['S&P 500'],'B.US':['S&P 500'],'C.US':['S&P 500']}});
+ vi.mocked(callsUsedToday).mockResolvedValue(59990);
+ await stage({nightly:true,membersFirst});
+ expect(readCorpusJson('fundamentals/A.US.json')).not.toBeNull();
+ expect(readCorpusJson('fundamentals/B.US.json')).toBeNull();
+ expect(readCorpusJson('fundamentals/C.US.json')).toBeNull();
 });

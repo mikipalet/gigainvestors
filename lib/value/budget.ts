@@ -1,8 +1,24 @@
+import { AsyncLocalStorage } from 'node:async_hooks';
 import { T } from './config';
 import { readCorpusJson, writeCorpusJson } from './corpus';
 
 export class ResearchBudgetError extends Error {}
 export class EodhdBudgetError extends ResearchBudgetError {}
+
+const stageCeiling = new AsyncLocalStorage<number>();
+/** Scope every paid attempt (including retries and FX) to this stage's ceiling. */
+export function withEodhdCeiling<Result>(ceiling: number, run: () => Result): Result {
+  if (!Number.isSafeInteger(ceiling) || ceiling < 0 || ceiling > T.budget.dailyCalls)
+    throw new EodhdBudgetError('Invalid EODHD stage budget ceiling');
+  return stageCeiling.run(Math.min(stageCeiling.getStore() ?? Infinity, ceiling), run);
+}
+export function eodhdCeiling(forex = false): number {
+  const hardCap = process.env.VALUE_EODHD_HARD_CAP === undefined ? null : Number(process.env.VALUE_EODHD_HARD_CAP);
+  if (hardCap !== null && (!Number.isSafeInteger(hardCap) || hardCap <= 0 || hardCap > T.budget.dailyCalls))
+    throw new EodhdBudgetError('Invalid EODHD hard budget cap');
+  return Math.min(hardCap ?? Infinity, stageCeiling.getStore() ?? Infinity,
+    T.budget.dailyCalls + (forex ? T.budget.extraCalls : 0));
+}
 
 export interface Usage { date: string; used: number; history: number; providerUsed?: number; checkedAt?: string }
 export function budgetUsage(): Usage {
@@ -30,9 +46,7 @@ export function reserveEodhd({ endpoint, monthly = false }: { endpoint: string; 
   const cost = endpoint === 'news' ? 5 : endpoint.startsWith('fundamentals/') ? T.budget.fundamentalsCost
     : endpoint === 'screener' ? T.budget.screenerCost
     : endpoint.startsWith('eod-bulk-last-day/') ? T.budget.bulkExchangeCost : T.budget.historyCost;
-  const hardCap=process.env.VALUE_EODHD_HARD_CAP===undefined?null:Number(process.env.VALUE_EODHD_HARD_CAP);
-  if(hardCap!==null&&(!Number.isSafeInteger(hardCap)||hardCap<=0||hardCap>T.budget.dailyCalls))throw new EodhdBudgetError('Invalid EODHD hard budget cap');
-  const ceiling = Math.min(hardCap??Infinity,T.budget.dailyCalls + (endpoint.includes('.FOREX') ? T.budget.extraCalls : 0));
+  const ceiling = eodhdCeiling(endpoint.includes('.FOREX'));
   if (usage.used + cost > ceiling) throw new EodhdBudgetError('daily EODHD budget reached; resume after EODHD daily reset');
   if (monthly && usage.history + cost > T.budget.priceHistoryCalls) throw new EodhdBudgetError('daily price-history budget reached; resume after EODHD daily reset');
   usage.used += cost;

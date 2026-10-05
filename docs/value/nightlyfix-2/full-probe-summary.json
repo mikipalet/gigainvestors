@@ -1,0 +1,8 @@
+{
+  "freshFilesObserved": 5248,
+  "errorCounts": {
+    "JEV_API_KEY is required": 304
+  },
+  "terminatedByTask": true,
+  "reason": "Uncached Jev evidence unavailable in no-paid dry run; full-universe success not claimed"
+}

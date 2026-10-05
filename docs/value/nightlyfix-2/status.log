@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-05",
+  "universe": 38086,
+  "fundamentals": 38084,
+  "cachedFundamentals": 38979,
+  "reports": {
+    "10-K": 4122,
+    "description": 27115,
+    "20-F": 925,
+    "ESEF": 1344,
+    "40-F": 141,
+    "EDINET": 4428
+  },
+  "analysed": 38077,
+  "published": {
+    "count": 3950,
+    "asOf": "2026-10-05T00:48:32.614Z",
+    "source": "published store"
+  },
+  "prices": {
+    "eodhd": 29444,
+    "yahoo": 3701,
+    "seed": 327,
+    "missing": 4614
+  },
+  "eodhd": {
+    "date": "2026-10-05",
+    "used": 99995,
+    "history": 14999
+  },
+  "jevTokens": 0,
+  "usageError": "EODHD calls disabled for this run"
+}

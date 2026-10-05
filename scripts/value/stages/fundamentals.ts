@@ -10,7 +10,8 @@ import { checkIntegrity } from '../../../lib/value/integrity';
 import { fetchEdgar } from '../../../lib/value/reports/edgar';
 import { supplementFinancialFacts, type CompanyFacts } from '../../../lib/value/financial-facts';
 import { enrichMissingCaps, compareDownloads } from "../../../lib/value/download-order";
-import { budgetUsage } from "../../../lib/value/budget";
+import { nightlyBudget } from "../../../lib/value/nightly-budget";
+import { budgetUsage, eodhdCeiling, withEodhdCeiling } from "../../../lib/value/budget";
 import { readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { T } from "../../../lib/value/config";
 import { callsUsedToday, getFundamentals } from "../../../lib/value/eodhd";
@@ -18,7 +19,7 @@ import { createUsdRate } from "../../../lib/value/fx";
 import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
 import type { Company, Fundamentals } from "../../../lib/value/types";
 
-interface Options { only?: string[]; limit?: number; force?: boolean; membersFirst?: boolean }
+interface Options { only?: string[]; limit?: number; force?: boolean; membersFirst?: boolean; nightly?: boolean }
 
 export const MEMBER_FRESHNESS_MS = 90 * 86400000;
 export function needsMemberFundamentals(existing: Pick<Fundamentals,'fetchedAt'|'years'>|null, now=Date.now()): boolean {
@@ -36,6 +37,12 @@ export function orderFundamentals(companies: Company[], fetchedAt: ReadonlyMap<s
 
 export default async function fundamentals(options: Options): Promise<void> {
   const universe = universeCompanies();
+  if (options.nightly) {
+    const plan = nightlyBudget(universe);
+    console.log(`fundamentals nightly budget: ${JSON.stringify(plan)}`);
+    return withEodhdCeiling(plan.ceiling, () => fundamentals({ ...options, nightly: false }));
+  }
+  const ceiling = eodhdCeiling();
   if (!universe.length) throw new Error("Run the universe stage before fundamentals");
   const eligible = universe.filter((company) => (!options.only || options.only.includes(company.id))
     && (!options.membersFirst || company.indexes?.length) && !companyExclusion(company));
@@ -48,14 +55,20 @@ export default async function fundamentals(options: Options): Promise<void> {
   }
   // Rolling refresh always refetches selected companies, including with --force.
   // The member catch-up must not wait for cap enrichment of the entire universe.
-  const candidates = options.membersFirst ? eligible.filter(c=>overdue.has(c.id)) : await enrichMissingCaps(eligible.filter(c=>overdue.has(c.id)||(c.source!=='edinet'&&c.source!=='esef')));
+  let used = budgetUsage().used;
+  if (eligible.some(c => c.exchange !== 'NSE' && c.exchange !== 'BSE') && process.env.VALUE_NO_EODHD !== '1')
+    used = Math.max(used, await callsUsedToday());
+  const capped = used + T.budget.fundamentalsCost > ceiling;
+  const refreshable = eligible.filter(c => overdue.has(c.id) || (c.source !== 'edinet' && c.source !== 'esef'));
+  const candidates = options.membersFirst ? eligible.filter(c => overdue.has(c.id))
+    : capped ? refreshable : await enrichMissingCaps(refreshable);
   const selected = orderFundamentals(candidates, fetchedAt)
     .sort((a,b)=>Number(overdue.has(b.id))-Number(overdue.has(a.id)) || (overdue.has(a.id)&&overdue.has(b.id) ? Number(fetchedAt.has(a.id))-Number(fetchedAt.has(b.id)) : 0))
     .slice(0, options.limit);
   if (!selected.length) { console.log('fundamentals: 0 due'); return; }
   console.log(`fundamentals selection: eligible=${eligible.length}; dueMembers=${overdue.size}; selected=${selected.length}; membersFirst=${Boolean(options.membersFirst)}`);
   const usdRate = createUsdRate(options);
-  let used = selected.some(c => c.exchange !== 'NSE' && c.exchange !== 'BSE') ? await callsUsedToday() : 0;
+  let budgetStopped = false;
   let written = 0;
   let attempted = 0;
   let paidAttempts = 0;
@@ -64,8 +77,9 @@ export default async function fundamentals(options: Options): Promise<void> {
   for (const company of selected) {
     const disk=statfsSync('/'); if(disk.bavail*disk.bsize<5*1024**3) throw new Error('Disk below 5 GB; stopping');
     const india = company.exchange === 'NSE' || company.exchange === 'BSE';
-    if (!india && Math.max(used, budgetUsage().used) + T.budget.fundamentalsCost > T.budget.dailyCalls) {
-      console.log("daily EODHD budget reached, resume tomorrow");
+    if (!india && Math.max(used, budgetUsage().used) + T.budget.fundamentalsCost > ceiling) {
+      if (!budgetStopped) console.log(`fundamentals budget ceiling reached: used=${Math.max(used, budgetUsage().used)}; ceiling=${ceiling}; deferring paid backlog`);
+      budgetStopped = true;
       continue;
     }
     if (!india) { used += T.budget.fundamentalsCost; paidAttempts++; }
@@ -138,8 +152,8 @@ export default async function fundamentals(options: Options): Promise<void> {
       failures.push({id:company.id,error:error instanceof Error?error.message:String(error)});
       console.warn(`fundamentals: ${company.id} failed; continuing backlog`);
     }
-    if (!india && paidAttempts % T.fundamentals.usageSyncCompanies === 0) used = Math.max(used, await callsUsedToday());
+    if (!india && process.env.VALUE_NO_EODHD !== '1' && paidAttempts % T.fundamentals.usageSyncCompanies === 0) used = Math.max(used, await callsUsedToday());
   }
-  writeCorpusJson(`fundamentals-runs/${new Date().toISOString().replaceAll(':','-')}.json`,{written,attempted,yahooWritten,failures,selected:selected.length,memberCatchup:Boolean(options.membersFirst)});
+  writeCorpusJson(`fundamentals-runs/${new Date().toISOString().replaceAll(':','-')}.json`,{written,attempted,yahooWritten,failures,selected:selected.length,memberCatchup:Boolean(options.membersFirst),ceiling,used:Math.max(used,budgetUsage().used),budgetStopped});
   console.log(`fundamentals summary: selected=${selected.length}; attempted=${attempted}; written=${written}; yahoo=${yahooWritten}; failed=${failures.length}; deferred=${selected.length-attempted}`);
 }

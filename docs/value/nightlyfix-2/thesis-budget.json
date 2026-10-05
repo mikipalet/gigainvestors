@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-05",
+  "selected": 12,
+  "completed": 10,
+  "logicalCalls": 240,
+  "inputTokens": 1277719,
+  "recordingsPerCompletedCompany": {
+    "1093.HK": 0,
+    "3092.JP": 5,
+    "6988.JP": 5,
+    "9735.JP": 5,
+    "LHX.US": 29,
+    "NDSN.US": 21,
+    "PINFRA.MX": 0,
+    "SANB3.SA": 78,
+    "TPL.US": 18,
+    "TSCO.US": 24
+  },
+  "completedRecordings": 185,
+  "callsOutsideCompletedRecordings": 55
+}

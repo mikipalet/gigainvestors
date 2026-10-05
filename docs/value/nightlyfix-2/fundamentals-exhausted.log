@@ -1,0 +1,4 @@
+fundamentals nightly budget: {"quotes":26000,"yields":228,"fx":500,"priceHistory":15000,"reserved":41728,"ceiling":58272}
+fundamentals selection: eligible=2; dueMembers=0; selected=2; membersFirst=false
+fundamentals budget ceiling reached: used=99995; ceiling=58272; deferring paid backlog
+fundamentals summary: selected=2; attempted=0; written=0; yahoo=0; failed=0; deferred=2

@@ -1,0 +1,33 @@
+{
+  "command": [
+    "node",
+    "--conditions=react-server",
+    "--import",
+    "tsx",
+    "scripts/value/cli.ts",
+    "analyze",
+    "--only=AAPL.US,MSFT.US,META.US,BRK-B.US,KO.US,PEP.US,TPL.US,TSCO.US"
+  ],
+  "exit": 0,
+  "seconds": 3.0,
+  "before": {
+    "AAPL.US": "2026-10-04T10:27:54.507Z",
+    "MSFT.US": "2026-10-04T10:27:54.675Z",
+    "META.US": "2026-10-04T10:27:54.901Z",
+    "BRK-B.US": "2026-10-04T10:27:55.251Z",
+    "KO.US": "2026-10-04T10:27:57.340Z",
+    "PEP.US": "2026-10-04T10:28:03.253Z",
+    "TPL.US": "2026-10-04T10:29:42.766Z",
+    "TSCO.US": "2026-10-04T10:30:20.992Z"
+  },
+  "after": {
+    "AAPL.US": "2026-10-05T07:46:47.512Z",
+    "MSFT.US": "2026-10-05T07:46:47.590Z",
+    "META.US": "2026-10-05T07:46:47.564Z",
+    "BRK-B.US": "2026-10-05T07:46:47.520Z",
+    "KO.US": "2026-10-05T07:46:47.545Z",
+    "PEP.US": "2026-10-05T07:46:47.610Z",
+    "TPL.US": "2026-10-05T07:46:47.630Z",
+    "TSCO.US": "2026-10-05T07:46:47.651Z"
+  }
+}

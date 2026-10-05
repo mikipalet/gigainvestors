@@ -1,0 +1,120 @@
+{
+  "plan": {
+    "quotes": 26000,
+    "yields": 228,
+    "fx": 500,
+    "priceHistory": 15000,
+    "reserved": 41728,
+    "ceiling": 58272
+  },
+  "copy": "/Users/miki/data/nightly-test2",
+  "originalCopyLedger": {
+    "date": "2026-10-05",
+    "used": 100000,
+    "history": 140,
+    "providerUsed": 98407,
+    "checkedAt": "2026-10-05T04:49:06.520Z"
+  },
+  "stages": [
+    {
+      "label": "fundamentals-boundary",
+      "command": [
+        "node",
+        "--conditions=react-server",
+        "--import",
+        "tsx",
+        "scripts/value/cli.ts",
+        "fundamentals",
+        "--nightly",
+        "--only=AAPL.US,MSFT.US"
+      ],
+      "exit": 0,
+      "seconds": 4.0,
+      "ledger": {
+        "date": "2026-10-05",
+        "used": 58272,
+        "history": 14999,
+        "providerUsed": 58262,
+        "checkedAt": "2026-10-05T07:35:42.375Z"
+      }
+    },
+    {
+      "label": "fundamentals-exhausted",
+      "command": [
+        "node",
+        "--conditions=react-server",
+        "--import",
+        "tsx",
+        "scripts/value/cli.ts",
+        "fundamentals",
+        "--nightly",
+        "--only=AAPL.US,MSFT.US"
+      ],
+      "exit": 0,
+      "seconds": 2.0,
+      "ledger": {
+        "date": "2026-10-05",
+        "used": 99995,
+        "history": 14999
+      }
+    },
+    {
+      "label": "yields",
+      "command": [
+        "node",
+        "--conditions=react-server",
+        "--import",
+        "tsx",
+        "scripts/value/cli.ts",
+        "yields"
+      ],
+      "exit": 0,
+      "seconds": 2.0,
+      "ledger": {
+        "date": "2026-10-05",
+        "used": 99995,
+        "history": 14999
+      }
+    },
+    {
+      "label": "analyze",
+      "command": [
+        "node",
+        "--conditions=react-server",
+        "--import",
+        "tsx",
+        "scripts/value/cli.ts",
+        "analyze"
+      ],
+      "exit": -15,
+      "seconds": 618.08,
+      "ledger": {
+        "date": "2026-10-05",
+        "used": 99995,
+        "history": 14999
+      }
+    },
+    {
+      "label": "status",
+      "command": [
+        "node",
+        "--conditions=react-server",
+        "--import",
+        "tsx",
+        "scripts/value/cli.ts",
+        "status"
+      ],
+      "exit": 0,
+      "seconds": 38.01,
+      "ledger": {
+        "date": "2026-10-05",
+        "used": 99995,
+        "history": 14999
+      }
+    }
+  ],
+  "finalFreeBytes": {
+    "worktree": 8664289280,
+    "copy": 15375466496
+  }
+}

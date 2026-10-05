@@ -17,6 +17,7 @@ fi
 if [[ "$3" == *'daily-japan.ts' ]]; then echo 2026-10-03; exit 0; fi
 if [[ "$3" == *'post-publish'* ]]; then echo LIVE-CHECK >> "$TRACE"; exit "${codes.live??0}"; fi
 stage="$4"
+if [[ "$stage" == "analyze" ]]; then echo "ANALYZE_OFFLINE=$VALUE_NO_EODHD" >> "$TRACE"; fi
 if [[ "$stage" == "price-story" ]]; then echo "LEDGER=$STORY_DISK_LEDGER" >> "$TRACE"; fi
 shift 4
 echo "$stage $*" >> "$TRACE"
@@ -30,12 +31,13 @@ exit 0
  try{execFileSync('bash',[path.join(root,'scripts/value/run-daily.sh'),'--once'],{env:{...process.env,PATH:`${root}/bin:${process.env.PATH}`,VALUE_CORPUS_DIR:path.join(root,'corpus'),TRACE:path.join(root,'trace'),STORY_DISK_LEDGER:'disk-budget-old-worktree.json'},stdio:'pipe'});}catch(e){code=(e as {status:number}).status;}
  return {trace:readFileSync(path.join(root,'trace'),'utf8'),code};
 }
-it('publishes existing analysis after yields and thesis exhaust their budgets',()=>{
+it('runs and publishes fresh analysis after yields and thesis exhaust their budgets',()=>{
  const {trace}=run({yields:75,thesis:75});
- expect(trace).not.toMatch(/^analyze /m);expect(trace).toContain('publish --existing-analysis');
+ expect(trace).toMatch(/^analyze /m);expect(trace).toContain('ANALYZE_OFFLINE=1');expect(trace).not.toContain('publish --existing-analysis');
 });
-it('also publishes existing analysis after an unconfirmed provider reset and thesis budget exhaustion',()=>{
- expect(run({'wait-eodhd-reset':1,thesis:75}).trace).toContain('publish --existing-analysis');
+it('also analyzes cached inputs after an unconfirmed provider reset and thesis budget exhaustion',()=>{
+ const {trace}=run({'wait-eodhd-reset':1,thesis:75});
+ expect(trace).toMatch(/^analyze /m);expect(trace).toContain('ANALYZE_OFFLINE=1');expect(trace).not.toContain('publish --existing-analysis');
 });
 it('does not hide a non-budget thesis failure',()=>{
  expect(run({thesis:1}).trace).not.toMatch(/^publish /m);
@@ -52,4 +54,17 @@ it('passes a UTC-cycle-specific ledger to price-story instead of inheriting an o
  const {trace,code}=run({});
  expect(code).toBe(0);
  expect(trace).toContain('LEDGER=disk-budget-nightly-2026-10-05.json');
+});
+
+it('reserves both fundamentals passes and runs analysis before optional news',()=>{
+ const {trace}=run({});
+ expect(trace).toContain('fundamentals --members-first --nightly');
+ expect(trace).toContain('fundamentals --nightly');
+ expect(trace.indexOf('analyze ')).toBeLessThan(trace.indexOf('price-story '));
+});
+it('retains prior released analysis when analysis itself fails',()=>{
+ expect(run({analyze:1}).trace).toContain('publish --existing-analysis');
+});
+it('still analyzes after non-budget yields failures',()=>{
+ expect(run({yields:1}).trace).toMatch(/^analyze /m);
 });

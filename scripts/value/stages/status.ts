@@ -1,7 +1,7 @@
 import { existsSync, readdirSync } from 'node:fs';
 import { corpusPath, readCorpusJson, readJsonl } from '../../../lib/value/corpus';
 import { validCompanyId } from '../../../lib/value/companies';
-import { readStore } from '../../../lib/value/store';
+import { readPublishedBytes } from '../../../lib/value/published-reader';
 import { budgetUsage } from '../../../lib/value/budget';
 import { callsUsedToday } from '../../../lib/value/eodhd';
 import { readPrices } from '../../../lib/value/price-files';
@@ -43,7 +43,8 @@ export default async function status(): Promise<void> {
   const result = collectStatus();
   let publishedError: string | undefined;
   try {
-    const meta = await readStore<{ asOf: string; counts: { analysed?: number; scored: number; insufficient: number } }>('meta.json');
+    const bytes = await readPublishedBytes('meta.json');
+    const meta = bytes === null ? null : JSON.parse(new TextDecoder().decode(bytes)) as { asOf: string; counts: { analysed?: number; scored: number; insufficient: number } };
     result.published = meta ? { count: meta.counts.analysed ?? meta.counts.scored + meta.counts.insufficient, asOf: meta.asOf, source: 'published store' } : { count: 0, asOf: '', source: 'published store (no snapshot)' };
   } catch (error) { publishedError = error instanceof Error ? error.message : 'Published store unavailable'; }
   console.log(JSON.stringify({ ...result, ...(usageError ? { usageError } : {}), ...(publishedError ? { publishedError } : {}) }, null, 2));

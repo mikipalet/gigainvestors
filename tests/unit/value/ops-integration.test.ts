@@ -130,9 +130,9 @@ it.each([true, false])('runner publishes available data after analysis or price 
   runner({ analyzeFails })();
   const calls = stageCalls();
   expect(calls.find(([stage])=>stage==='price-story')).toEqual(['price-story','--limit=400']);
-  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'price-story', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', 'business-backfill', 'share-checks', 'thesis', 'publish', 'status']);
+  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', ...(!analyzeFails ? ['business-backfill'] : []), 'price-story', 'share-checks', 'thesis', 'publish', 'status']);
   // No --only or --limit: newly imported JP issuers and all other sources are covered.
-  expect(calls.filter(([stage]) => ['prices', 'price-history', 'reports', 'yields', 'analyze', 'publish'].includes(stage)).every(call => call.length === 1)).toBe(true);
+  expect(calls.filter(([stage]) => ['prices', 'price-history', 'reports', 'yields', 'analyze'].includes(stage)).every(call => call.length === 1)).toBe(true);
 });
 it('runner resumes from the last successful filing day, refreshes it, and advances only after success', () => {
   const today = new Date().toISOString().slice(0, 10);
@@ -225,16 +225,16 @@ it('removes rejected legacy seeds locally and on the next publish, retaining act
 it('runner still publishes when refreshing yields fails',()=>{
  runner({yieldsFails:true})();
  const calls=stageCalls().map(([stage])=>stage);
- expect(calls).toContain('yields');expect(calls).not.toContain('analyze');expect(calls).toContain('publish');expect(calls.at(-1)).toBe('status');
+ expect(calls).toContain('yields');expect(calls).toContain('analyze');expect(calls).toContain('publish');expect(calls.at(-1)).toBe('status');
 });
-it('runner skips all EODHD-consuming stages when reset waiting fails', () => {
+it('runner skips acquisition and still analyzes cached inputs when reset waiting fails', () => {
   expect(runner({ resetFails: true })).toThrow();
   const stages = stageCalls().map(([stage]) => stage);
   expect(stages).toContain('wait-eodhd-reset');
   expect(stages).not.toContain('prices');
   expect(stages).not.toContain('price-history');
   expect(stages).not.toContain('fundamentals');
-  expect(stages).not.toContain('analyze'); // Analysis can fetch paid FX rates.
+  expect(stages).toContain('analyze'); // Runner disables EODHD while reusing cached inputs.
   expect(stages).toContain('publish');
   expect(stages).toContain('status');
 });

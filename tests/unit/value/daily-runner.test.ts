@@ -53,3 +53,11 @@ it('passes a UTC-cycle-specific ledger to price-story instead of inheriting an o
  expect(code).toBe(0);
  expect(trace).toContain('LEDGER=disk-budget-nightly-2026-10-05.json');
 });
+
+it('fetches logos before publication on normal and exhausted-budget cycles',()=>{
+ for(const codes of [{} as Record<string,number>,{'wait-eodhd-reset':1}]){
+  const {trace}=run(codes);
+  expect(trace).toMatch(/^logos /m);
+  expect(trace.indexOf('logos ')).toBeLessThan(trace.indexOf('publish '));
+ }
+});

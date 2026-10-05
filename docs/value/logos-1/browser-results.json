@@ -1,0 +1,500 @@
+[
+  {
+    "route": "/value",
+    "view": "list",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logos": [
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=91ea7ea8e8394c161cd5694f7c44b0189e66ac0c386373a849eeb77975f68f61",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=7075413437694c7a0e8b812c4cf206deba514ad2be807761400abf0249c004dc",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=6687ad927209aefa1a6d16a2a8a0bd011cc0601d9e2ce73acdee3e3031f4978b",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=daa26b5947e4ae0750ca20aef9a43db7d85b1d8e7a966587349c411d8a631562",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=ea1309fd4aeb9cd782677c2b3c96a5b0bb5aa5a6c3546cbb3e37cdd88cfa64b9",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=73af576d6aac574ca49d4810a6345dc06851c04ef57b3eb6be1533f0a2d1ac00",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=52d70b64cc7a74d9436b7ef3de908bc50b1d6a079334882ce318934c6b4f349a",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=fdf80d91ccfb33e971d65826e704aeda99c01bb27325d3c4dd64d1e562eafbbd",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=fc9655190ab1309c64d94d0bf0e0d723fff3b1241b4edd881e1fb91f1e6a2360",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=6f6fb6e783a8b1a5317f97b28e6b532db037ce114eccbaa802421031ea4d9352",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=777d784b9d94af8b15b8e3aace12debe18fc8c05fd4a5b5a28d702d243e60508",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=38d572e63b5504d95c9b3b8beda904fd8f18452c738141ec8c07adffb862986d",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=b0c6e77bab78878e0f9f740f2e7cd1b1d30ebded5316f934a0f3f6d06bb09271",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=85bf39c1e56049a6ed55f02e921879929a5d36ab08652e9ecd446172d249dd4b",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=c54079419463358f442264ab64e0aa7a10e22e8b905c877532e39d72e6f8a1cb",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=361efae7d7eeaa38f58ce2eb26b45e54a9c47812b7a5770b465793adedcf378e",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=c8003af9df348039847b7ee0d49480b47520204a9700dd4a8ca21184addf007f",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?eod=US%2FNtes.png",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=3104eab1fe19e0d14c897473da8172ef9b8a87151334717a5efe84c61629ab34",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=18594f26071689716034e11e6815339906d86d92ceb8746598f85f25b1f08b7e",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=3e4c430d9180cae82056ebde736e6723aa3faa75e4141b3d0c3eb23eb495fdeb",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=5ca17ba32537cc73ecc8880bd121623c68be0429e6a80052fb86d43ede8eee2c",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=47d9637ad5b27b95b2fbe4c9c9743d962ed373f1acc2eed721cf2e0a8b486217",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=2bb1e388a8d8c33fed7cbeb944f2e1ef17f9dfaf09541626f3a8d54b1303a6d3",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=06483f5bd2e5294862b2a49925236fb41b1147fb5568f76057c245e482f0dfbe",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=06220b66819807bc0a538802ea7232809bd9b11fa7b7fa972fdde1d53d990e49",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=f899e264b7f465dead68f10af518fe5f38f11236d1b1f92aa0c67ef435ba1861",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=1b1f83bfd5f72387aaf6e63fa76b4c72120a09bcd65923e3f3716d4945bf0928",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=764a897f81c5834b616f60b4a2ffe2384870a8fe80f3b1544e7d8211e284db25",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=753b82daf0fd8b03e0a798d5a2cfbb64b72b2809377f13ebcee0bc6dca858c22",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=25a60d12ae4ae82943f75d334cab5e2c14d8cdf8ea06f2db918fc25b51d398f2",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=afc4b0e2c4dda8268892bf8443952cabeb69f4000508fe7bf79c086630a3c75a",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=1c6e4408a130c1d1872c3b99e3af214afc7e570bcd93e0b14b92a0f6182ef2d9",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=3a5d6ad0b3349ec678e73ccc642bffb5a81b839f69f6c9d575012c5432757198",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=91ea7ea8e8394c161cd5694f7c44b0189e66ac0c386373a849eeb77975f68f61",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=7075413437694c7a0e8b812c4cf206deba514ad2be807761400abf0249c004dc",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=6687ad927209aefa1a6d16a2a8a0bd011cc0601d9e2ce73acdee3e3031f4978b",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=daa26b5947e4ae0750ca20aef9a43db7d85b1d8e7a966587349c411d8a631562",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=06483f5bd2e5294862b2a49925236fb41b1147fb5568f76057c245e482f0dfbe",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=ea1309fd4aeb9cd782677c2b3c96a5b0bb5aa5a6c3546cbb3e37cdd88cfa64b9",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=9a1c25051f30b7c87fa827fbaa7008cd9345c0857cf9592f17b194caec7c3630",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=b17ad0a8d19dfb51fb5f369232748021892faaf65f01ae15463f82d8d3af6328",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=1350889bdd757c7179576749380bb553b420505d2336ef2d11cf4e0abad74289",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "route": "/s/EWBC",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=777d784b9d94af8b15b8e3aace12debe18fc8c05fd4a5b5a28d702d243e60508"
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "EWBC",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=777d784b9d94af8b15b8e3aace12debe18fc8c05fd4a5b5a28d702d243e60508",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "RBLX",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=349e880dadc94fffe3baaa672d1ccc5c6fe9b9fa98e8dc945d179c44ea6ca704",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "ZM",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=fa049e79f2e165eee63c7d23d0607543233f791a3eb662f2f2f54ddcc8436a0f",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "BIDU",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=c6b259e6d42a9e60cb7ec6ef0f9f48f51f37b10a6f946bb18ee15f19d4546392",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "ATRO",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=b786c36317cdee6f4dd1991fcbd033d5d23e769d719a1c02e181cbfb8c740932",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "NVT",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=9317bf3f95a8c60f3170765384bc8daa5060f763aab38fc1dc11d4c20c1d78d7",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "ENTG",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=cb544019521f4a2d781f57c59af2941583d73e10f03f36aeed2be5265d0322b5",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "LPLA",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=09d20e08a20d81818748b32d9fc34cf17ddd87caee8c35842b15ad6887cc0e3f",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "CPNG",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=de7888244e6a996d0b58cedd97ced9ae84a1970db3814de010a2c0b48b44957b",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "HUBS",
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "logo": "/api/value/logo?asset=9bc8ce356ea4774f36c0fe907c1fcdab318c1dff8d4d741f7fcef4ac7479157b",
+    "loaded": true
+  },
+  {
+    "viewport": {
+      "width": 1728,
+      "height": 970
+    },
+    "pageErrors": []
+  },
+  {
+    "route": "/value",
+    "view": "list",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logos": [
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=91ea7ea8e8394c161cd5694f7c44b0189e66ac0c386373a849eeb77975f68f61",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=7075413437694c7a0e8b812c4cf206deba514ad2be807761400abf0249c004dc",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=6687ad927209aefa1a6d16a2a8a0bd011cc0601d9e2ce73acdee3e3031f4978b",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=73af576d6aac574ca49d4810a6345dc06851c04ef57b3eb6be1533f0a2d1ac00",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=52d70b64cc7a74d9436b7ef3de908bc50b1d6a079334882ce318934c6b4f349a",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=fdf80d91ccfb33e971d65826e704aeda99c01bb27325d3c4dd64d1e562eafbbd",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=fc9655190ab1309c64d94d0bf0e0d723fff3b1241b4edd881e1fb91f1e6a2360",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=6f6fb6e783a8b1a5317f97b28e6b532db037ce114eccbaa802421031ea4d9352",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=777d784b9d94af8b15b8e3aace12debe18fc8c05fd4a5b5a28d702d243e60508",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=3a5d6ad0b3349ec678e73ccc642bffb5a81b839f69f6c9d575012c5432757198",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=91ea7ea8e8394c161cd5694f7c44b0189e66ac0c386373a849eeb77975f68f61",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=7075413437694c7a0e8b812c4cf206deba514ad2be807761400abf0249c004dc",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=6687ad927209aefa1a6d16a2a8a0bd011cc0601d9e2ce73acdee3e3031f4978b",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=daa26b5947e4ae0750ca20aef9a43db7d85b1d8e7a966587349c411d8a631562",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=06483f5bd2e5294862b2a49925236fb41b1147fb5568f76057c245e482f0dfbe",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=ea1309fd4aeb9cd782677c2b3c96a5b0bb5aa5a6c3546cbb3e37cdd88cfa64b9",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=9a1c25051f30b7c87fa827fbaa7008cd9345c0857cf9592f17b194caec7c3630",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=b17ad0a8d19dfb51fb5f369232748021892faaf65f01ae15463f82d8d3af6328",
+        "loaded": true
+      },
+      {
+        "src": "http://127.0.0.1:3147/api/value/logo?asset=1350889bdd757c7179576749380bb553b420505d2336ef2d11cf4e0abad74289",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "route": "/s/EWBC",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=777d784b9d94af8b15b8e3aace12debe18fc8c05fd4a5b5a28d702d243e60508"
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "EWBC",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=777d784b9d94af8b15b8e3aace12debe18fc8c05fd4a5b5a28d702d243e60508",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "RBLX",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=349e880dadc94fffe3baaa672d1ccc5c6fe9b9fa98e8dc945d179c44ea6ca704",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "ZM",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=fa049e79f2e165eee63c7d23d0607543233f791a3eb662f2f2f54ddcc8436a0f",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "BIDU",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=c6b259e6d42a9e60cb7ec6ef0f9f48f51f37b10a6f946bb18ee15f19d4546392",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "ATRO",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=b786c36317cdee6f4dd1991fcbd033d5d23e769d719a1c02e181cbfb8c740932",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "NVT",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=9317bf3f95a8c60f3170765384bc8daa5060f763aab38fc1dc11d4c20c1d78d7",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "ENTG",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=cb544019521f4a2d781f57c59af2941583d73e10f03f36aeed2be5265d0322b5",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "LPLA",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=09d20e08a20d81818748b32d9fc34cf17ddd87caee8c35842b15ad6887cc0e3f",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "CPNG",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=de7888244e6a996d0b58cedd97ced9ae84a1970db3814de010a2c0b48b44957b",
+    "loaded": true
+  },
+  {
+    "route": "/s/EWBC",
+    "search": "HUBS",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "logo": "/api/value/logo?asset=9bc8ce356ea4774f36c0fe907c1fcdab318c1dff8d4d741f7fcef4ac7479157b",
+    "loaded": true
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "pageErrors": []
+  }
+]

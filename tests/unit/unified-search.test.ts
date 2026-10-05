@@ -51,3 +51,10 @@ it('finds a dossier by its native company name',()=>{
  const result=buildCompanyIndex({investors:[],stocks:[]},[{id:'7203.JP',n:'Toyota Motor Corporation',nameLocal:'トヨタ自動車',mc:1e11,h:0}]);
  expect(rank(result,'トヨタ')[0]).toMatchObject({ticker:'7203.JP'});
 });
+
+it('carries the canonical issuer logo into search hits and keeps namesakes separate',()=>{
+ const logo='/api/value/logo?asset='+'a'.repeat(64);
+ const result=buildCompanyIndex({investors:[],stocks:[{t:'EWBC',n:'East West Bancorp',h:1}]},[{id:'EWBC.US',n:'East West Bancorp',mc:1e10,h:1,lg:logo},{id:'EAST.US',n:'East Bancorp',mc:1e8,h:0,lg:null}]);
+ expect(rank(result,'EWBC')[0]).toMatchObject({ticker:'EWBC',logo});
+ expect(rank(result,'EAST')[0]).toMatchObject({ticker:'EAST',logo:null});
+});

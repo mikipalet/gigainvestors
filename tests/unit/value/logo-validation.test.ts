@@ -32,3 +32,11 @@ it('accepts the reviewed wide railway header dimensions without changing proport
  const bytes=await sharp({create:{width:436,height:36,channels:4,background:'#336699'}}).png().toBuffer();
  expect(await validLogo(bytes,undefined,false,true)).toBe(true);
 });
+
+it('scopes a wrong-issuer vendor image rejection to that issuer, not the rightful logo owner',async()=>{
+ const {rejectedLogoHashes}=await import('@/lib/value/logo-validation');
+ const rejected=(await import('@/lib/value/logo-issuer-rejections.json')).default;
+ const zircon=rejected.find(r=>r.id==='ZION.US')!;
+ expect(rejectedLogoHashes('ZION.US').has(zircon.sha256)).toBe(true);
+ expect(rejectedLogoHashes('ZURN.SW').has(zircon.sha256)).toBe(false);
+});

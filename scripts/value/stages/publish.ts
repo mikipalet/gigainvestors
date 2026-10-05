@@ -1,3 +1,4 @@
+import {fillPublishedLogos} from '../../../lib/value/logo-fill';
 import {readCoverageRelease,additionInputProblems,assertAdditionBinding} from '../coverage-release';
 import {uploadPublishedSnapshot} from '../blob-publish';
 import { assertNoPendingPublication, beginPublication } from '../post-publish';
@@ -360,6 +361,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     }
     if(release.held.some(({id})=>emitted[id]))throw Error('Held coverage addition reached publication');
   }
+  fillPublishedLogos(files);
   forwardFiles(repo, files, universe, readPrices(path.join(repo, 'prices')), new Date().toISOString().slice(0,10));
   publishViews(files);
   writeOutput({ repo, files });

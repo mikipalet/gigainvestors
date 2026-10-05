@@ -1,0 +1,769 @@
+{
+  "seed": 20261005,
+  "selection": "random.Random(20261005).sample(sorted(missing_before,key=id),40), selected before inspection; no redraw",
+  "reviewer": "Codex, manual visual comparison",
+  "count": 40,
+  "passed": 40,
+  "records": [
+    {
+      "id": "LBRT.US",
+      "name": "Liberty Energy Inc.",
+      "sampleWebsite": "https://www.libertyenergy.com",
+      "referenceUrl": "https://libertyenergy.com/",
+      "referenceFile": "websites/LBRT.US.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/Logo_of_Liberty_Energy_Inc.svg?utm_source=fr.wikipedia.org&utm_campaign=api&utm_content=original",
+      "asset": "d2657da4270c2a3b96cf46e6a3c26265470e0ad1e9b37e22f192c0835ed9b654",
+      "decision": "pass",
+      "note": "Red oval L / LIBERTY mark matches Liberty Energy, not Liberty media",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "WING.US",
+      "name": "Wingstop Inc",
+      "sampleWebsite": "https://www.wingstop.com",
+      "referenceUrl": "https://ir.wingstop.com/",
+      "referenceFile": "websites/WING.US.png",
+      "sourceUrl": "https://ir.wingstop.com/wp-content/uploads/2023/02/wingstop-logo.png",
+      "asset": "c8503610ae6336f9dfd9d180b27cc260548f4794492c144ea3749713113af5f9",
+      "decision": "pass",
+      "note": "Green winged Wingstop mark; shopping-bag candidate rejected",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "LYFT.US",
+      "name": "LYFT Inc",
+      "sampleWebsite": "https://www.lyft.com",
+      "referenceUrl": "https://investor.lyft.com/",
+      "referenceFile": "alternate-websites/LYFT.US.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Lyft_logo.svg?utm_source=ja.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "493ba3971db012537fe8e811cbe5d581ac5cc53dba32c35a590dca31821cd2b9",
+      "decision": "pass",
+      "note": "Pink lowercase lyft wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "PSEC.US",
+      "name": "Prospect Capital Corporation",
+      "sampleWebsite": "https://www.prospectstreet.com",
+      "referenceUrl": "https://www.prospectstreet.com/",
+      "referenceFile": "websites/PSEC.US.png",
+      "sourceUrl": "https://www.prospectstreet.com/wp-content/uploads/2026/01/Prospect-Capital-Management-Logo-1.png",
+      "asset": "00ec2eee3eea6f7aa54ffe01ea5b185043f94540403d34269384a0611f13a4b0",
+      "decision": "pass",
+      "note": "Blue Prospect Capital wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "EQX.US",
+      "name": "Equinox Gold Corp",
+      "sampleWebsite": "https://www.equinoxgold.com",
+      "referenceUrl": "https://www.equinoxgold.com/",
+      "referenceFile": "websites/EQX.US.png",
+      "sourceUrl": "https://www.equinoxgold.com/wp-content/uploads/2022/12/EQX-Logo-2020-Blue-and-Gold-1.svg",
+      "asset": "db68481e90322f94871ef5ff3bce0ed54d0698ffe9671b505f067d002fca20fc",
+      "decision": "pass",
+      "note": "Gold interlocking rings / EQUINOX GOLD",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "CNX.US",
+      "name": "CNX Resources Corp",
+      "sampleWebsite": "https://www.cnx.com",
+      "referenceUrl": "https://investors.cnx.com/",
+      "referenceFile": "alternate-websites/CNX.US.png",
+      "sourceUrl": "https://www.cnx.com/wp-content/uploads/2024/11/Main-Logo.png",
+      "asset": "d73a25dc0347f8250b7a57f7fb755635e1667e69b0db4ea7cb939fc8fdef20d0",
+      "decision": "pass",
+      "note": "Blue/gray CNX wordmark; flame artwork rejected",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "WT.US",
+      "name": "WisdomTree Inc.",
+      "sampleWebsite": "https://www.wisdomtree.com",
+      "referenceUrl": "https://ir.wisdomtree.com/",
+      "referenceFile": "alternate-websites/WT.US.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/9/90/WisdomTree_Investments_logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "f6877fc2d41b91e761a21eb481c7cde095bf5cba1941b0353f3c07032b004cb8",
+      "decision": "pass",
+      "note": "WisdomTree tree and wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "UVSP.US",
+      "name": "Univest Corporation Pennsylvania",
+      "sampleWebsite": "https://www.univest.net",
+      "referenceUrl": "https://www.univest.net/",
+      "referenceFile": "websites/UVSP.US.png",
+      "sourceUrl": "https://eodhd.com/img/logos/US/UVSP.png",
+      "asset": "eb8867758c292ad537f440cb7fc5ccadea3368195fa85d74b55a78246fd57461",
+      "decision": "pass",
+      "note": "Univest blue/gold U shield",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "ATRO.US",
+      "name": "Astronics Corporation",
+      "sampleWebsite": "https://www.astronics.com",
+      "referenceUrl": "https://www.astronics.com/",
+      "referenceFile": "websites/ATRO.US.png",
+      "sourceUrl": "https://www.astronics.com/images/default-source/default-album/astronics-logo.jpg",
+      "asset": "b786c36317cdee6f4dd1991fcbd033d5d23e769d719a1c02e181cbfb8c740932",
+      "decision": "pass",
+      "note": "Astronics wordmark; cabin photograph rejected",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "CNA.US",
+      "name": "CNA Financial Corporation",
+      "sampleWebsite": "https://www.cna.com",
+      "referenceUrl": "https://www.cna.com/",
+      "referenceFile": "CNA-official-image",
+      "sourceUrl": "https://www.cna.com/sites/default/files/CNA%2BLogo%2BRed.png",
+      "asset": "254731fea7b7ee740626fefac9e9dd077923393683da7fc3cf8762f77b9f68c2",
+      "decision": "pass",
+      "note": "Red CNA wordmark from official site header asset",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "CTRI.US",
+      "name": "Centuri Holdings, Inc.",
+      "sampleWebsite": "https://centuri.com",
+      "referenceUrl": "https://centuri.com/",
+      "referenceFile": "websites/CTRI.US.png",
+      "sourceUrl": "https://centuri.com/wp-content/uploads/2023/10/Centuri_Horizontal_RGB-WHT-text-300x81.webp",
+      "asset": "35b65aa9515b192a9ad7ee2d348627b825b9f5e7b83cf1c0e94ba34f9ff1e5f2",
+      "decision": "pass",
+      "note": "Multicolored geometric Centuri symbol and wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "LNC.US",
+      "name": "Lincoln National Corporation",
+      "sampleWebsite": "https://www.lincolnfinancial.com",
+      "referenceUrl": "https://www.lincolnfinancial.com/public/individuals",
+      "referenceFile": "websites/LNC.US.png",
+      "sourceUrl": "https://www.lincolnfinancial.com/pbl-static/image/desktop/New-Brand---logo-color---image.svg",
+      "asset": "76da391ef640f5feca2040437204fc91aa069316b6a6e9b03125a913d02c7b85",
+      "decision": "pass",
+      "note": "Updated burgundy Lincoln portrait and Financial wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "VSNT.US",
+      "name": "Versant Media Group, Inc.",
+      "sampleWebsite": "https://www.versantmedia.com",
+      "referenceUrl": "https://www.versantmedia.com/",
+      "referenceFile": "websites/VSNT.US.png",
+      "sourceUrl": "https://cdn.versantmedia.com/versantmedia/Versantlogo.svg?VersionId=QCB.PNl9FVXxjVtak1VB1Foc56BiPjJg",
+      "asset": "bfa55258fc2dfb2cb051378f7a3fd434a9f65b179ceae212d90ba3726d48eb6b",
+      "decision": "pass",
+      "note": "Versant white wordmark, dark canvas preserves contrast",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "LIND.US",
+      "name": "Lindblad Expeditions Holdings Inc",
+      "sampleWebsite": "https://www.expeditions.com",
+      "referenceUrl": "https://world.expeditions.com/en",
+      "referenceFile": "websites/LIND.US.png",
+      "sourceUrl": "https://world.expeditions.com/en#inline-logo-0",
+      "asset": "28730d8a8c09c0b642c27c3bb5ec45ebf566fc1900cb2473b9abd7204cc72bf4",
+      "decision": "pass",
+      "note": "National Geographic / Lindblad Expeditions co-brand matches company site",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "SBSI.US",
+      "name": "Southside Bancshares, Inc.",
+      "sampleWebsite": "https://www.southside.com",
+      "referenceUrl": "https://www.southside.com/",
+      "referenceFile": "websites/SBSI.US.png",
+      "sourceUrl": "https://www.southside.com/images/southside-bank-logo-white.svg",
+      "asset": "3104eab1fe19e0d14c897473da8172ef9b8a87151334717a5efe84c61629ab34",
+      "decision": "pass",
+      "note": "Southside Bank S mark and wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "RBRK.US",
+      "name": "Rubrik, Inc.",
+      "sampleWebsite": "https://www.rubrik.com",
+      "referenceUrl": "https://onepassport.rubrik.com/",
+      "referenceFile": "RBRK-official-page.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Rubrik_Logo.svg?utm_source=de.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "2872813cd806ad52eca1bdff5856c18240c191f58b010d6416ffdcaa955e834c",
+      "decision": "pass",
+      "note": "Teal geometric ring / gray rubrik wordmark matches official One Passport header",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "PDS.US",
+      "name": "Precision Drilling Corporation",
+      "sampleWebsite": "https://www.precisiondrilling.com",
+      "referenceUrl": "https://www.precisiondrilling.com/",
+      "referenceFile": "websites/PDS.US.png",
+      "sourceUrl": "https://www.precisiondrilling.com/wp-content/themes/theme-modified/images/logo-dark.svg",
+      "asset": "535db292ca6f9d65f07c0a1531d29098ec6ecd210049ef255f5225250e5c3ce4",
+      "decision": "pass",
+      "note": "Green interlocking Precision Drilling mark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "HRB.US",
+      "name": "H&R Block Inc",
+      "sampleWebsite": "https://www.hrblock.com",
+      "referenceUrl": "https://account.hrblock.com/",
+      "referenceFile": "HRB-official-page.png",
+      "sourceUrl": "https://account.hrblock.com/myblock-shell/assets/images/square-logo.svg",
+      "asset": "61afcbd20eab34807b87815035bae958db331ce56cc9e91746fd643912f6b321",
+      "decision": "pass",
+      "note": "Official H&R BLOCK green square from MyBlock header; replaces smaller horizontal version",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "AGI.US",
+      "name": "Alamos Gold Inc",
+      "sampleWebsite": "https://www.alamosgold.com",
+      "referenceUrl": "https://lynnlake.alamosgold.com/vendors/contracting-considerations/",
+      "referenceFile": "AGI-official.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/5/59/Alamos_Gold_Logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "7f49a6fc1543aa36bf6dfb3677d3a7726c2a9219246c3e1cd588b9e2624e8dc1",
+      "decision": "pass",
+      "note": "Gold/black triangular Alamos Gold corporate mark matches official project-site header",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "EMBC.US",
+      "name": "Embecta Corp",
+      "sampleWebsite": "https://www.embecta.com",
+      "referenceUrl": "https://www.embecta.com/en-us/",
+      "referenceFile": "websites/EMBC.US.png",
+      "sourceUrl": "https://www.embecta.com/content/dam/bdcom-assets/en/en-us/images/graphic/logos/bd-logs/embecta-logo-color.png",
+      "asset": "91bf8e563b41d7a2a5696cff2d9a757e0552a29b274f8ed323d0b3b8074141c0",
+      "decision": "pass",
+      "note": "Purple embecta wordmark and multicolor symbol",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "OSK.US",
+      "name": "Oshkosh Corporation",
+      "sampleWebsite": "https://www.oshkoshcorp.com",
+      "referenceUrl": "https://www.oshkoshcorp.com/",
+      "referenceFile": "websites/OSK.US.png",
+      "sourceUrl": "https://www.oshkoshcorp.com/includes/Oshkosh/OshkoshCorp/img/Main_nav_logo.png",
+      "asset": "98806852003b0269b1120ef72d2e66af5b2b124de3016174a6c038129b6fd11b",
+      "decision": "pass",
+      "note": "Black hexagonal Oshkosh symbol and wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "PYIYF.US",
+      "name": "Property For Industry Ltd.",
+      "sampleWebsite": "https://www.propertyforindustry.co.nz",
+      "referenceUrl": "https://www.propertyforindustry.co.nz/",
+      "referenceFile": "websites/PYIYF.US-loaded.png",
+      "sourceUrl": "https://www.propertyforindustry.co.nz/#inline-logo-0",
+      "asset": "a6077b7205adac96660c2a310993f1024b33369fde4e14fa95dd34b07165eb64",
+      "decision": "pass",
+      "note": "Gray PFI initials with red corner",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "OSUR.US",
+      "name": "OraSure Technologies Inc",
+      "sampleWebsite": "https://www.orasure.com",
+      "referenceUrl": "https://orasure.com/",
+      "referenceFile": "websites/OSUR.US.png",
+      "sourceUrl": "https://orasure.com/images/corp_logos/site-logo.png",
+      "asset": "87fbc8b7b9a2bbe6eca97c784424d98002723b40839045f65bc9758c1ed03150",
+      "decision": "pass",
+      "note": "OraSure Technologies wordmark and symbol",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "LTH.US",
+      "name": "Life Time Group Holdings Inc",
+      "sampleWebsite": "https://www.lifetime.life",
+      "referenceUrl": "https://www.lifetime.life/",
+      "referenceFile": "websites/LTH.US-loaded.png",
+      "sourceUrl": "https://www.lifetime.life/#inline-logo-0",
+      "asset": "6fcc73dd1ac08b45dec1dafbe0a3cafaa2c9b3b40e6375300f6c2303ca444fa5",
+      "decision": "pass",
+      "note": "Black LIFE TIME wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "PBF.US",
+      "name": "PBF Energy Inc",
+      "sampleWebsite": "https://www.pbfenergy.com",
+      "referenceUrl": "https://www.pbfenergy.com/",
+      "referenceFile": "websites/PBF.US.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/PBF_Energy_logo.svg?utm_source=de.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "0589595f8bd1054ccba79b4ac062a3ff6e74352439e2bc7ba601352d4bd96905",
+      "decision": "pass",
+      "note": "PBF Energy red oval / blue initials",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "LAB.US",
+      "name": "Standard Biotools Inc",
+      "sampleWebsite": "https://www.standardbio.com",
+      "referenceUrl": "https://standardbio.com/",
+      "referenceFile": "websites/LAB.US.png",
+      "sourceUrl": "https://standardbio.com/wp-content/uploads/2025/10/logo.svg",
+      "asset": "db8b4bd58b9f7ae3bb1ec74600197c7eb6a1a8e897ad1ff6b67f8637feee6a8b",
+      "decision": "pass",
+      "note": "Standard BioTools oval / star symbol",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "ENOV.US",
+      "name": "Enovis Corp",
+      "sampleWebsite": "https://www.enovis.com",
+      "referenceUrl": "https://enovis.com/",
+      "referenceFile": "websites/ENOV.US.png",
+      "sourceUrl": "https://enovis.com/canadaportal_en#inline-logo-0",
+      "asset": "a8d9d4a12f153b478494f1a5b8403f3d4ebb56a86e462ec58a8cb19a0d8ef302",
+      "decision": "pass",
+      "note": "Black enovis wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "BOOM.US",
+      "name": "Dmc Global Inc",
+      "sampleWebsite": "https://www.dmcglobal.com",
+      "referenceUrl": "https://dmcglobal.com/",
+      "referenceFile": "websites/BOOM.US.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/6/67/DMC_Global_Logo.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "c43c3b8486f61dca18d2f0ff85cbdfffedc4c9aa7b5b9d6307828116bf15cc86",
+      "decision": "pass",
+      "note": "DMC black spiral and initials",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "HGV.US",
+      "name": "Hilton Grand Vacations Inc",
+      "sampleWebsite": "https://www.hiltongrandvacations.com",
+      "referenceUrl": "https://www.hiltongrandvacations.com/en",
+      "referenceFile": "websites/HGV.US.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Hilton_Grand_Vacations_logo.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "881eaa38b3a80c9ab7a527717ba0c5ca2e666c84a3330834305324483711760a",
+      "decision": "pass",
+      "note": "Hilton Grand Vacations blue/teal wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "ESI.US",
+      "name": "Element Solutions Inc",
+      "sampleWebsite": "https://elementsolutionsinc.com",
+      "referenceUrl": "https://ir.elementsolutionsinc.com/Investors/overview/default.aspx",
+      "referenceFile": "alternate-websites/ESI.US.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Element_Solutions_Inc.png?utm_source=de.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "91f1fd2360fb65499d708ce4d1db0690bbbd76a0332448ea542319e2578941ec",
+      "decision": "pass",
+      "note": "Element Solutions blue geometric symbol",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "KC.US",
+      "name": "Kingsoft Cloud Holdings Ltd",
+      "sampleWebsite": "https://www.ksyun.com",
+      "referenceUrl": "https://www.ksyun.com/",
+      "referenceFile": "websites/KC.US-loaded.png",
+      "sourceUrl": "https://eodhd.com/img/logos/US/KC.png",
+      "asset": "22ab38598fef491ef7bc1505cd2c879a7b21cbad0066ea595edf964e7fb940fb",
+      "decision": "pass",
+      "note": "Kingsoft Cloud red cloud mark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "MKTX.US",
+      "name": "MarketAxess Holdings Inc",
+      "sampleWebsite": "https://www.marketaxess.com",
+      "referenceUrl": "https://www.marketaxess.com/",
+      "referenceFile": "websites/MKTX.US.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/en/a/a1/MarketAxess_Logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "076c8db77342052fa02476e61e97cc87406f68f6c5583a0eab9042a29d12b6ea",
+      "decision": "pass",
+      "note": "MarketAxess blue/gray crossed-line mark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "TPHS.US",
+      "name": "Trinity Place Holdings Inc",
+      "sampleWebsite": "https://tphs.com",
+      "referenceUrl": "https://tphs.com/",
+      "referenceFile": "websites/TPHS.US.png",
+      "sourceUrl": "https://tphs.com/media/trinity_place_holdings_logo.png",
+      "asset": "e3e7bf6e382905b2539e61f9de181c7899a91f176389c3bbffc48e799397e43e",
+      "decision": "pass",
+      "note": "Trinity Place Holdings blue wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "HUBS.US",
+      "name": "HubSpot Inc",
+      "sampleWebsite": "https://www.hubspot.com",
+      "referenceUrl": "https://www.hubspot.com/",
+      "referenceFile": "websites/HUBS.US.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg?utm_source=de.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "9bc8ce356ea4774f36c0fe907c1fcdab318c1dff8d4d741f7fcef4ac7479157b",
+      "decision": "pass",
+      "note": "HubSpot gray/orange wordmark; event badge rejected",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "AS.US",
+      "name": "Amer Sports, Inc.",
+      "sampleWebsite": "https://www.amersports.com",
+      "referenceUrl": "https://www.amersports.com/",
+      "referenceFile": "websites/AS.US.png",
+      "sourceUrl": "https://www.amersports.com/wp-content/uploads/2026/03/logo-horizontal-3.svg",
+      "asset": "993f0cbdc6b0d97663d9957d8d9ec2669e8db3230af751846a71547bcec3f7f6",
+      "decision": "pass",
+      "note": "Amer Sports blue wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "FIVN.US",
+      "name": "Five9 Inc",
+      "sampleWebsite": "https://www.five9.com",
+      "referenceUrl": "https://www.five9.com/",
+      "referenceFile": "websites/FIVN.US.png",
+      "sourceUrl": "https://www.five9.com/sites/default/files/2025-02/five9-logo.svg",
+      "asset": "e1550aeb874bb6a32b1dd02e8137436d875abf33e6ce7e9c27832f8a72a0d882",
+      "decision": "pass",
+      "note": "Five9 blue wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "UTI.US",
+      "name": "Universal Technical Institute Inc",
+      "sampleWebsite": "https://www.uti.edu",
+      "referenceUrl": "https://www.uti.edu/",
+      "referenceFile": "websites/UTI.US.png",
+      "sourceUrl": "https://res.cloudinary.com/utidinary/image/upload/f_auto,q_auto,h_200,t_Auto-Quality-and-Format/UTI-Logo-Full-Color-White_1.svg",
+      "asset": "75802cecb77e07eea94dcac1838972bae1135caba26c41779ca09b230f1299e3",
+      "decision": "pass",
+      "note": "Universal Technical Institute red/blue U",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "SSL.US",
+      "name": "Sasol Ltd",
+      "sampleWebsite": "https://www.sasol.com",
+      "referenceUrl": "https://www.sasol.com/",
+      "referenceFile": "websites/SSL.US.png",
+      "sourceUrl": "https://www.sasol.com/sites/default/files/sasol-new-logo_0.png",
+      "asset": "4b53ec71e4d3107c97d808a36bea9d7b945454fab153d988a160bbc22220b096",
+      "decision": "pass",
+      "note": "Sasol blue molecular mark and wordmark",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "DOX.US",
+      "name": "Amdocs Ltd",
+      "sampleWebsite": "https://www.amdocs.com",
+      "referenceUrl": "https://solutions.amdocs.com/rs/647-OJR-802/images/Amdocs-data-and-ai-brochure-for-financial-services-02-2025.pdf",
+      "referenceFile": "DOX-official.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Amdocs-2017-brand-mark.svg/960px-Amdocs-2017-brand-mark.svg.png",
+      "asset": "38c56a5840463e9e15cf3537b378b9ec162e9457cb15314ed668685c3b42b65a",
+      "decision": "pass",
+      "note": "Updated gradient a/amdocs mark matched to official 2025 brochure; old green mark replaced",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "id": "RIG.US",
+      "name": "Transocean Ltd",
+      "sampleWebsite": "https://www.deepwater.com",
+      "referenceUrl": "https://www.deepwater.com/",
+      "referenceFile": "websites/RIG.US.png",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/7/78/Transocean_logo.svg?utm_source=de.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "asset": "f4440e40cb6862c9634dc86b20ee5eb777124c898f4547ecbd99f726b60378c3",
+      "decision": "pass",
+      "note": "Transocean blue wordmark and red symbol",
+      "checkedSizesPx": [
+        26,
+        64
+      ],
+      "checkedBackgrounds": [
+        "light",
+        "dark"
+      ]
+    }
+  ]
+}

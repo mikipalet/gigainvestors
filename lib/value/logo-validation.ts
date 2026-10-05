@@ -1,6 +1,7 @@
 import {createHash} from 'node:crypto';
 import sharp from 'sharp';
 import reviewedRejections from './logo-rejections.json';
+import issuerRejections from './logo-issuer-rejections.json';
 export const iconHash=(bytes:Uint8Array)=>createHash('sha256').update(bytes).digest('hex');
 export const LOGO_VALIDATION_VERSION=2;
 export const REJECTED_LOGO_HASHES=new Set<string>([
@@ -15,6 +16,10 @@ export const REJECTED_LOGO_HASHES=new Set<string>([
  '04a54c8d32585edcf745a7bde7bd92ae9299c1c8e1d9b88e36be7193f21be0c8',
  '7f75386207071bac3bba1248ddda312c57a705c8f1ff50e4fc343812908200e5',
 ]);
+/** Wrong-company marks can be valid for their rightful owner. */
+export function rejectedLogoHashes(id:string):Set<string>{
+ return new Set([...REJECTED_LOGO_HASHES,...issuerRejections.filter(r=>r.id===id).map(r=>r.sha256)]);
+}
 /** Decode ICO frames, including the common uncompressed 24/32-bit DIB form. */
 export async function logoPixels(bytes:Uint8Array):Promise<Buffer> {
  if(bytes[0]===0&&bytes[1]===0&&bytes[2]===1&&bytes[3]===0){

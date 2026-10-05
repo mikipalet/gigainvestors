@@ -74,6 +74,7 @@ it('resolves an exact issuer search name without hiding independently listed sub
  expect(rank(idx,'alibaba').filter(r=>r.kind==='stock').map(r=>r.ticker)).toEqual(['BABA']);
  expect(rank(idx,'nestle india').filter(r=>r.kind==='stock').map(r=>r.ticker)).toEqual(['NESTLEIND.NSE']);
  expect(rank(idx,'alibaba health').filter(r=>r.kind==='stock').map(r=>r.ticker)).toEqual(['0241.HK']);
+});
 it('carries the canonical issuer logo into search hits and keeps namesakes separate',()=>{
  const logo='/api/value/logo?asset='+'a'.repeat(64);
  const result=buildCompanyIndex({investors:[],stocks:[{t:'EWBC',n:'East West Bancorp',h:1}]},[{id:'EWBC.US',n:'East West Bancorp',mc:1e10,h:1,lg:logo},{id:'EAST.US',n:'East Bancorp',mc:1e8,h:0,lg:null}]);

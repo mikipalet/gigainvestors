@@ -67,6 +67,7 @@ it('retains prior released analysis when analysis itself fails',()=>{
 });
 it('still analyzes after non-budget yields failures',()=>{
  expect(run({yields:1}).trace).toMatch(/^analyze /m);
+});
 it('fetches logos before publication on normal and exhausted-budget cycles',()=>{
  for(const codes of [{} as Record<string,number>,{'wait-eodhd-reset':1}]){
   const {trace}=run(codes);

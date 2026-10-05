@@ -130,8 +130,7 @@ it.each([true, false])('runner publishes available data after analysis or price 
   runner({ analyzeFails })();
   const calls = stageCalls();
   expect(calls.find(([stage])=>stage==='price-story')).toEqual(['price-story','--limit=400']);
-  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', ...(!analyzeFails ? ['business-backfill'] : []), 'price-story', 'share-checks', 'thesis', 'publish', 'status']);
-  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'price-story', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', 'business-backfill', 'share-checks', 'logos', 'thesis', 'publish', 'status']);
+  expect(calls.map(([stage]) => stage)).toEqual(['japan', 'wait-eodhd-reset', 'fundamentals', 'prices', 'price-history', 'fundamentals', 'renormalize', 'renormalize-edinet', 'dedupe', 'price-seed', 'reports', 'yields', 'analyze', ...(!analyzeFails ? ['business-backfill'] : []), 'price-story', 'share-checks', 'logos', 'thesis', 'publish', 'status']);
   // No --only or --limit: newly imported JP issuers and all other sources are covered.
   expect(calls.filter(([stage]) => ['prices', 'price-history', 'reports', 'yields', 'analyze'].includes(stage)).every(call => call.length === 1)).toBe(true);
 });

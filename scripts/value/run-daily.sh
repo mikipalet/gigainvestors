@@ -60,7 +60,7 @@ check_publication() {
 publish_available() {
   local code
   # Public logo sources do not consume the financial-data budget.
-  run_stage logos || return $?
+  run_stage logos || echo "logos failed; publishing with existing logos"
   run_stage thesis --limit=12
   code=$?
   if [[ "$code" == 75 ]]; then

@@ -1,0 +1,3124 @@
+{
+  "requested": 119,
+  "fundamentals": 119,
+  "pricesAndHistory": 119,
+  "jevFailures": [],
+  "analysisBatches": [
+    {
+      "ids": [
+        "ABVX.US",
+        "AGI.US",
+        "AKBLF.US",
+        "AQN.US",
+        "ASAIY.US",
+        "BATRK.US",
+        "BAYRY.US",
+        "BB.US",
+        "BELFB.US",
+        "BH.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "BHC.US",
+        "BIO.US",
+        "BLCO.US",
+        "BMA.US",
+        "BMM.US",
+        "BTAI.US",
+        "BTE.US",
+        "BTG.US",
+        "BUDFF.US",
+        "BZ.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "CABJF.US",
+        "CCU.US",
+        "CENTA.US",
+        "CFRHF.US",
+        "CFRUY.US",
+        "CGAU.US",
+        "CIGI.US",
+        "CNSWF.US",
+        "COCXF.US",
+        "DCOM.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "DGEAF.US",
+        "DSGX.US",
+        "DVCMY.US",
+        "DVDCF.US",
+        "ECTXF.US",
+        "EFXT.US",
+        "EGO.US",
+        "EQX.US",
+        "ERFSF.US",
+        "ERO.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "EU.US",
+        "FBAK.US",
+        "FLMNF.US",
+        "FLUIF.US",
+        "FRFHF.US",
+        "FSM.US",
+        "FWONK.US",
+        "GDS.US",
+        "GFI.US",
+        "GFL.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "GHM.US",
+        "GOOS.US",
+        "GSK.US",
+        "GTN.US",
+        "HEINY.US",
+        "HINKF.US",
+        "HKHGF.US",
+        "HKHHF.US",
+        "HKHHY.US",
+        "HVT.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "IAG.US",
+        "IDWM.US",
+        "KGEI.US",
+        "KNCRF.US",
+        "LBTYK.US",
+        "LILAK.US",
+        "LLYVK.US",
+        "LOMA.US",
+        "LRLCF.US",
+        "LZAGY.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "MEOH.US",
+        "MINE.US",
+        "MTRBF.US",
+        "NAK.US",
+        "NG.US",
+        "NICE.US",
+        "NSRGF.US",
+        "NSRGY.US",
+        "NTPIF.US",
+        "NWSA.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "NXE.US",
+        "OGC.US",
+        "PAAS.US",
+        "PAM.US",
+        "PDRDF.US",
+        "PDS.US",
+        "PEYUF.US",
+        "PHJMF.US",
+        "PIFYF.US",
+        "PRNDY.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "PROF.US",
+        "PUIGF.US",
+        "QXO.US",
+        "RBA.US",
+        "RBGPF.US",
+        "RDY.US",
+        "RTLLF.US",
+        "RUSHB.US",
+        "RYCEY.US",
+        "SA.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "SSPPF.US",
+        "STN.US",
+        "TAC.US",
+        "TAP.US",
+        "TEO.US",
+        "TFII.US",
+        "TFIN.US",
+        "TGS.US",
+        "TPHS.US",
+        "TRMLF.US"
+      ],
+      "ok": true
+    },
+    {
+      "ids": [
+        "TV.US",
+        "UAA.US",
+        "UHAL.US",
+        "WILLF.US",
+        "WRLC.US",
+        "WSO.US",
+        "ZG.US",
+        "ZH.US",
+        "ZLDSF.US"
+      ],
+      "ok": true
+    }
+  ],
+  "reportKinds": {
+    "20-F": 20,
+    "40-F": 27,
+    "ESEF": 10,
+    "10-K": 32,
+    "description": 26,
+    "annual-report": 4
+  },
+  "analysisStatuses": {
+    "scored": 72,
+    "insufficient_data": 47
+  },
+  "newlyAccepted": 92,
+  "companies": [
+    {
+      "id": "ABVX.US",
+      "report": {
+        "id": "ABVX.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1956827/000195682726000012/abvx-20251231.htm",
+        "filed": "2026-03-23",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "compensation",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "ABVX.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:33.011Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "AGI.US",
+      "report": {
+        "id": "AGI.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1178819/000117881926000048/agi-20251231_d2.htm",
+        "filed": "2026-03-26",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "AGI.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:31.048Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "AKBLF.US",
+      "report": {
+        "id": "AKBLF.US",
+        "kind": "ESEF",
+        "url": "https://filings.xbrl.org/529900SGCREUZCZ7P020/2025-12-31/ESEF/DK/0/alk-2025-12-31-en/reports/alk-2025-12-31-en.xhtml",
+        "filed": "2026-03-18",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "compensation",
+          "mdna",
+          "risk"
+        ]
+      },
+      "jev": {
+        "id": "AKBLF.US",
+        "answers": 25,
+        "report": "ESEF"
+      },
+      "analysisAsOf": "2026-10-05T00:31:33.110Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "AQN.US",
+      "report": {
+        "id": "AQN.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1174169/000117416926000015/aqunf-20251231_d2.htm",
+        "filed": "2026-03-06",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "notes",
+          "auditor",
+          "mdna"
+        ]
+      },
+      "jev": {
+        "id": "AQN.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:31.074Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "ASAIY.US",
+      "report": {
+        "id": "ASAIY.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1834048/000121390025026526/ea0234548-20f_sendasdis.htm",
+        "filed": "2025-04-01",
+        "period": "2024-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "capital",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "ASAIY.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:31.111Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "BATRK.US",
+      "report": {
+        "id": "BATRK.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1958140/000110465926020650/batra-20251231x10k.htm",
+        "filed": "2026-02-26",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "BATRK.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:31.304Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BAYRY.US",
+      "report": {
+        "id": "BAYRY.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "BAYRY.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:33.035Z",
+      "analysisStatus": "scored",
+      "accepted": false
+    },
+    {
+      "id": "BB.US",
+      "report": {
+        "id": "BB.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1070235/000107023526000039/bbry-20260228.htm",
+        "filed": "2026-04-09",
+        "period": "2026-02-28",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "BB.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:31.500Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BELFB.US",
+      "report": {
+        "id": "BELFB.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/729580/000143774926005354/belfb20251231d_10k.htm",
+        "filed": "2026-02-24",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "BELFB.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:31.706Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BH.US",
+      "report": {
+        "id": "BH.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1726173/000162828026012987/bh-20251231.htm",
+        "filed": "2026-03-02",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "BH.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:31.883Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BHC.US",
+      "report": {
+        "id": "BHC.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/885590/000088559026000023/bhc-20251231.htm",
+        "filed": "2026-02-19",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "BHC.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:36.899Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BIO.US",
+      "report": {
+        "id": "BIO.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/12208/000001220826000010/bio-20251231.htm",
+        "filed": "2026-02-13",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "BIO.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:36.923Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BLCO.US",
+      "report": {
+        "id": "BLCO.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1860742/000186074226000007/blco-20251231.htm",
+        "filed": "2026-02-18",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "BLCO.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:36.929Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BMA.US",
+      "report": {
+        "id": "BMA.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1347426/000119312526163876/d29142d20f.htm",
+        "filed": "2026-04-20",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "BMA.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:44:28.047Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "BMM.US",
+      "report": {
+        "id": "BMM.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1732379/000155485526000717/bmm40F-20251231.htm",
+        "filed": "2026-04-24",
+        "period": "2025-12-31",
+        "sections": [
+          "notes",
+          "auditor",
+          "mdna",
+          "business",
+          "risk"
+        ]
+      },
+      "jev": {
+        "id": "BMM.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:36.786Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "BTAI.US",
+      "report": {
+        "id": "BTAI.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1720893/000110465926036214/btai-20251231x10k.htm",
+        "filed": "2026-03-27",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "BTAI.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:37.185Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BTE.US",
+      "report": {
+        "id": "BTE.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1279495/000127949526000007/bte-20251231.htm",
+        "filed": "2026-03-05",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "notes",
+          "auditor",
+          "risk"
+        ]
+      },
+      "jev": {
+        "id": "BTE.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:38.537Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BTG.US",
+      "report": {
+        "id": "BTG.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1429937/000110465926026310/tm266740d1_40f.htm",
+        "filed": "2026-03-11",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "BTG.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:37.266Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BUDFF.US",
+      "report": {
+        "id": "BUDFF.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1668717/000119312526088105/d65314d20f.htm",
+        "filed": "2026-03-03",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "capital",
+          "risk",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "BUDFF.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:37.282Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "BZ.US",
+      "report": {
+        "id": "BZ.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1842827/000110465926050959/bz-20251231x20f.htm",
+        "filed": "2026-04-29",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "capital",
+          "risk",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "BZ.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:38.467Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "CABJF.US",
+      "report": {
+        "id": "CABJF.US",
+        "kind": "ESEF",
+        "url": "https://filings.xbrl.org/5299001O0WJQYB5GYZ19/2025-12-31/ESEF/DK/0/Carlsberg-2025-12-31-en/reports/Carlsberg-2025-12-31-en.xhtml",
+        "filed": "2026-03-24",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "letter",
+          "risk",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "CABJF.US",
+        "answers": 25,
+        "report": "ESEF"
+      },
+      "analysisAsOf": "2026-10-05T00:31:41.660Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "CCU.US",
+      "report": {
+        "id": "CCU.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/888746/000129281426002680/ccuform20f_2025.htm",
+        "filed": "2026-04-29",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "CCU.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:43.145Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "CENTA.US",
+      "report": {
+        "id": "CENTA.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/887733/000088773325000041/cent-20250927.htm",
+        "filed": "2025-11-26",
+        "period": "2025-09-27",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "CENTA.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:42.052Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "CFRHF.US",
+      "report": {
+        "id": "CFRHF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "CFRHF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:42.145Z",
+      "analysisStatus": "scored",
+      "accepted": false
+    },
+    {
+      "id": "CFRUY.US",
+      "report": {
+        "id": "CFRUY.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "CFRUY.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:42.164Z",
+      "analysisStatus": "scored",
+      "accepted": false
+    },
+    {
+      "id": "CGAU.US",
+      "report": {
+        "id": "CGAU.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1854640/000110465926033394/tm261243d1_40f.htm",
+        "filed": "2026-03-23",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "notes"
+        ]
+      },
+      "jev": {
+        "id": "CGAU.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:42.378Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "CIGI.US",
+      "report": {
+        "id": "CIGI.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/913353/000117184326000984/cigi20251231_40f.htm",
+        "filed": "2026-02-20",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "notes",
+          "auditor",
+          "mdna"
+        ]
+      },
+      "jev": {
+        "id": "CIGI.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:42.612Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "CNSWF.US",
+      "report": {
+        "id": "CNSWF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "CNSWF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:42.631Z",
+      "analysisStatus": "scored",
+      "accepted": false
+    },
+    {
+      "id": "COCXF.US",
+      "report": {
+        "id": "COCXF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "COCXF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:42.406Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "DCOM.US",
+      "report": {
+        "id": "DCOM.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/846617/000084661726000013/dcom-20251231x10k.htm",
+        "filed": "2026-02-20",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "DCOM.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:42.658Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "DGEAF.US",
+      "report": {
+        "id": "DGEAF.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/835403/000162828026057529/deo-20260630.htm",
+        "filed": "2026-08-18",
+        "period": "2026-06-30",
+        "sections": [
+          "auditor",
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "DGEAF.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:43.871Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "DSGX.US",
+      "report": {
+        "id": "DSGX.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1050140/000110465926026450/dsgx-20260131x40f.htm",
+        "filed": "2026-03-11",
+        "period": "2026-01-31",
+        "sections": [
+          "business",
+          "risk",
+          "auditor",
+          "mdna",
+          "notes"
+        ]
+      },
+      "jev": {
+        "id": "DSGX.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:44.342Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "DVCMY.US",
+      "report": {
+        "id": "DVCMY.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "DVCMY.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:44.014Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "DVDCF.US",
+      "report": {
+        "id": "DVDCF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "DVDCF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:44.043Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "ECTXF.US",
+      "report": {
+        "id": "ECTXF.US",
+        "kind": "ESEF",
+        "url": "https://filings.xbrl.org/254900KI62Q46ZWD8084/2024-12-31/ESEF/SE/0/EPRO-2024-12-31-0-sv/reports/EPRO-2024-12-31-0-sv.xhtml",
+        "filed": "2025-05-08",
+        "period": "2024-12-31",
+        "sections": [
+          "risk",
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "ECTXF.US",
+        "answers": 25,
+        "report": "ESEF"
+      },
+      "analysisAsOf": "2026-10-05T00:31:44.065Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "EFXT.US",
+      "report": {
+        "id": "EFXT.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1904856/000119312526072743/efxt-20251231.htm",
+        "filed": "2026-02-26",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "notes",
+          "auditor",
+          "mdna"
+        ]
+      },
+      "jev": {
+        "id": "EFXT.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:44.105Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "EGO.US",
+      "report": {
+        "id": "EGO.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/918608/000091860826000007/ego-20251231_d2.htm",
+        "filed": "2026-03-27",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "notes",
+          "auditor",
+          "risk"
+        ]
+      },
+      "jev": {
+        "id": "EGO.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:44.381Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "EQX.US",
+      "report": {
+        "id": "EQX.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1756607/000162828026022120/eqx-20251231_d2.htm",
+        "filed": "2026-03-31",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "EQX.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:44.394Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "ERFSF.US",
+      "report": {
+        "id": "ERFSF.US",
+        "kind": "ESEF",
+        "url": "https://filings.xbrl.org/529900JEHFM47DYY3S57/2024-12-31/ESEF/LU/0/529900JEHFM47DYY3S57-2024-12-31-0-en/reports/529900JEHFM47DYY3S57-2024-12-31-0-en.xhtml",
+        "filed": "2025-05-08",
+        "period": "2024-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "ERFSF.US",
+        "answers": 25,
+        "report": "ESEF"
+      },
+      "analysisAsOf": "2026-10-05T00:31:44.284Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "ERO.US",
+      "report": {
+        "id": "ERO.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1853860/000162828026022073/ero-20251231_d2.htm",
+        "filed": "2026-03-30",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "ERO.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:44.432Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "EU.US",
+      "report": {
+        "id": "EU.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1500881/000162828026022507/encr-20251231.htm",
+        "filed": "2026-03-31",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "EU.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:47.531Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "FBAK.US",
+      "report": {
+        "id": "FBAK.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "FBAK.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:47.830Z",
+      "analysisStatus": "scored",
+      "accepted": false
+    },
+    {
+      "id": "FLMNF.US",
+      "report": {
+        "id": "FLMNF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "FLMNF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:48.144Z",
+      "analysisStatus": "scored",
+      "accepted": false
+    },
+    {
+      "id": "FLUIF.US",
+      "report": {
+        "id": "FLUIF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "FLUIF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:47.639Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "FRFHF.US",
+      "report": {
+        "id": "FRFHF.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/915191/000110465926024781/ffh-20251231x40f.htm",
+        "filed": "2026-03-06",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "auditor",
+          "mdna",
+          "notes"
+        ]
+      },
+      "jev": {
+        "id": "FRFHF.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:47.842Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "FSM.US",
+      "report": {
+        "id": "FSM.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1341335/000110465926035151/tmb-20251231x40f.htm",
+        "filed": "2026-03-26",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "notes",
+          "auditor",
+          "mdna"
+        ]
+      },
+      "jev": {
+        "id": "FSM.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:44:28.515Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "FWONK.US",
+      "report": {
+        "id": "FWONK.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1560385/000110465926020653/lmca-20251231x10k.htm",
+        "filed": "2026-02-26",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "FWONK.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:48:32.614Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "GDS.US",
+      "report": {
+        "id": "GDS.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1526125/000110465926051006/gds-20251231x20f.htm",
+        "filed": "2026-04-29",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "GDS.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:44:28.747Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "GFI.US",
+      "report": {
+        "id": "GFI.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1172724/000162828026021904/gfi-20251231.htm",
+        "filed": "2026-03-30",
+        "period": "2025-12-31",
+        "sections": [
+          "notes",
+          "auditor",
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "GFI.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:48.189Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "GFL.US",
+      "report": {
+        "id": "GFL.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1780232/000110465926016748/gfl-20251231x40f.htm",
+        "filed": "2026-02-18",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "GFL.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:48.197Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "GHM.US",
+      "report": {
+        "id": "GHM.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/716314/000119312526260688/ghm-20260331.htm",
+        "filed": "2026-06-08",
+        "period": "2026-03-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "GHM.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:49.398Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "GOOS.US",
+      "report": {
+        "id": "GOOS.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1690511/000169051126000012/goos-20260329.htm",
+        "filed": "2026-05-15",
+        "period": "2026-03-29",
+        "sections": [
+          "business",
+          "mdna",
+          "capital",
+          "risk",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "GOOS.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:49.551Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "GSK.US",
+      "report": {
+        "id": "GSK.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1131399/000113139926000004/gsk-20251231.htm",
+        "filed": "2026-03-06",
+        "period": "2025-12-31",
+        "sections": [
+          "notes",
+          "auditor",
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "GSK.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:49.124Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "GTN.US",
+      "report": {
+        "id": "GTN.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/43196/000143774926005803/gtn20251231_10k.htm",
+        "filed": "2026-02-26",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "GTN.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:49.425Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "HEINY.US",
+      "report": {
+        "id": "HEINY.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "HEINY.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:49.724Z",
+      "analysisStatus": "scored",
+      "accepted": false
+    },
+    {
+      "id": "HINKF.US",
+      "report": {
+        "id": "HINKF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "HINKF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:49.454Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "HKHGF.US",
+      "report": {
+        "id": "HKHGF.US",
+        "kind": "ESEF",
+        "url": "https://filings.xbrl.org/213800XCHYNRPAYGXW28/2025-12-31/ESEF/GB/0/213800XCHYNRPAYGXW28-2025-12-31-0-en/reports/213800XCHYNRPAYGXW28-2025-12-31-0-en.xhtml",
+        "filed": "2026-04-09",
+        "period": "2025-12-31",
+        "sections": [
+          "auditor",
+          "business",
+          "mdna",
+          "risk"
+        ]
+      },
+      "jev": {
+        "id": "HKHGF.US",
+        "answers": 25,
+        "report": "ESEF"
+      },
+      "analysisAsOf": "2026-10-05T00:31:49.750Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "HKHHF.US",
+      "report": {
+        "id": "HKHHF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "HKHHF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:49.514Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "HKHHY.US",
+      "report": {
+        "id": "HKHHY.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "HKHHY.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:49.541Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "HVT.US",
+      "report": {
+        "id": "HVT.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/216085/000162828026012199/hvt-20251231.htm",
+        "filed": "2026-02-26",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "HVT.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:49.788Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "IAG.US",
+      "report": {
+        "id": "IAG.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1203464/000106299326001022/form40f.htm",
+        "filed": "2026-02-18",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "IAG.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:50.964Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "IDWM.US",
+      "report": {
+        "id": "IDWM.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1463833/000121390023003814/f10k2022_idwmedia.htm",
+        "filed": "2023-01-19",
+        "period": "2022-10-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes"
+        ]
+      },
+      "jev": {
+        "id": "IDWM.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:50.561Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "KGEI.US",
+      "report": {
+        "id": "KGEI.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1477081/000149315226011486/form40-f.htm",
+        "filed": "2026-03-19",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk"
+        ]
+      },
+      "jev": {
+        "id": "KGEI.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:50.586Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "KNCRF.US",
+      "report": {
+        "id": "KNCRF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "KNCRF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:50.617Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "LBTYK.US",
+      "report": {
+        "id": "LBTYK.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1570585/000157058526000014/lbtya-20251231.htm",
+        "filed": "2026-02-18",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "LBTYK.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:51.031Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "LILAK.US",
+      "report": {
+        "id": "LILAK.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1712184/000171218426000023/lila-20251231.htm",
+        "filed": "2026-02-18",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "LILAK.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:51.043Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "LLYVK.US",
+      "report": {
+        "id": "LLYVK.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/2078416/000110465926020657/tmb-20251231x10k.htm",
+        "filed": "2026-02-26",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "LLYVK.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:50.879Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "LOMA.US",
+      "report": {
+        "id": "LOMA.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm",
+        "filed": "2026-04-28",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "compensation",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "LOMA.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:44:28.757Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "LRLCF.US",
+      "report": {
+        "id": "LRLCF.US",
+        "kind": "ESEF",
+        "url": "https://filings.xbrl.org/529900JI1GG6F7RKVI53/2025-12-31/ESEF/FR/0/loreal-2025-12-31-1-fr/reports/loreal-2025-12-31-1-fr.xhtml",
+        "filed": "2026-03-24",
+        "period": "2025-12-31",
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "LRLCF.US",
+        "answers": 25,
+        "report": "ESEF"
+      },
+      "analysisAsOf": "2026-10-05T00:31:51.013Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "LZAGY.US",
+      "report": {
+        "id": "LZAGY.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "LZAGY.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:52.550Z",
+      "analysisStatus": "scored",
+      "accepted": false
+    },
+    {
+      "id": "MEOH.US",
+      "report": {
+        "id": "MEOH.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/886977/000162828026015362/mx-20251231.htm",
+        "filed": "2026-03-05",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "auditor",
+          "mdna",
+          "notes"
+        ]
+      },
+      "jev": {
+        "id": "MEOH.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:56.196Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "MINE.US",
+      "report": {
+        "id": "MINE.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1823255/000137647426000286/mine-20251231_40f.htm",
+        "filed": "2026-04-14",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "notes"
+        ]
+      },
+      "jev": {
+        "id": "MINE.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:55.754Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "MTRBF.US",
+      "report": {
+        "id": "MTRBF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "MTRBF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:55.761Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "NAK.US",
+      "report": {
+        "id": "NAK.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1164771/000165495426003025/ndm_40f.htm",
+        "filed": "2026-03-31",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "notes",
+          "auditor",
+          "risk",
+          "mdna"
+        ]
+      },
+      "jev": {
+        "id": "NAK.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:55.823Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "NG.US",
+      "report": {
+        "id": "NG.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1173420/000117184326000374/ng20251130_10k.htm",
+        "filed": "2026-01-22",
+        "period": "2025-11-30",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "NG.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:55.948Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "NICE.US",
+      "report": {
+        "id": "NICE.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1003935/000100393526000010/nice-20251231.htm",
+        "filed": "2026-02-26",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "compensation",
+          "capital",
+          "risk",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "NICE.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:56.314Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "NSRGF.US",
+      "report": {
+        "id": "NSRGF.US",
+        "kind": "annual-report",
+        "url": "https://www.nestle.com/investors/annual-report",
+        "filed": "2026-02-19",
+        "period": "2025-12-31",
+        "sections": [
+          "letter",
+          "business",
+          "mdna",
+          "capital",
+          "compensation",
+          "notes",
+          "risk",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "NSRGF.US",
+        "answers": 25,
+        "report": "annual-report"
+      },
+      "analysisAsOf": "2026-10-05T00:31:56.454Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "NSRGY.US",
+      "report": {
+        "id": "NSRGY.US",
+        "kind": "annual-report",
+        "url": "https://www.nestle.com/investors/annual-report",
+        "filed": "2026-02-19",
+        "period": "2025-12-31",
+        "sections": [
+          "letter",
+          "business",
+          "mdna",
+          "capital",
+          "compensation",
+          "notes",
+          "risk",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "NSRGY.US",
+        "answers": 25,
+        "report": "annual-report"
+      },
+      "analysisAsOf": "2026-10-05T00:31:56.478Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "NTPIF.US",
+      "report": {
+        "id": "NTPIF.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/829365/000119312526190806/ntpif-20251231.htm",
+        "filed": "2026-04-29",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "capital",
+          "risk",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "NTPIF.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:56.471Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "NWSA.US",
+      "report": {
+        "id": "NWSA.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1564708/000156470826000175/nws-20260630.htm",
+        "filed": "2026-08-07",
+        "period": "2026-06-30",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "NWSA.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:31:56.509Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "NXE.US",
+      "report": {
+        "id": "NXE.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1698535/000119312526089376/d84755d40f.htm",
+        "filed": "2026-03-04",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "NXE.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:00.300Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "OGC.US",
+      "report": {
+        "id": "OGC.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "OGC.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:31:59.790Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "PAAS.US",
+      "report": {
+        "id": "PAAS.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/771992/000077199226000019/paas-20251231.htm",
+        "filed": "2026-02-18",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "PAAS.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:00.255Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "PAM.US",
+      "report": {
+        "id": "PAM.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1469395/000129281426002185/pamform20f_2025.htm",
+        "filed": "2026-04-09",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "capital",
+          "risk",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "PAM.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:31:59.939Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "PDRDF.US",
+      "report": {
+        "id": "PDRDF.US",
+        "kind": "annual-report",
+        "url": "https://www.pernod-ricard.com/system/files/2026-09/PERNOD_RICARD_DEU_2025-2026_EN.pdf",
+        "filed": "2026-09-16",
+        "period": "2026-06-30",
+        "sections": [
+          "letter",
+          "business",
+          "risk",
+          "mdna",
+          "compensation",
+          "notes",
+          "auditor",
+          "capital"
+        ]
+      },
+      "jev": {
+        "id": "PDRDF.US",
+        "answers": 25,
+        "report": "annual-report"
+      },
+      "analysisAsOf": "2026-10-05T00:31:59.964Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "PDS.US",
+      "report": {
+        "id": "PDS.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1013605/000101360526000014/pds-20251231.htm",
+        "filed": "2026-03-09",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "notes",
+          "auditor",
+          "risk"
+        ]
+      },
+      "jev": {
+        "id": "PDS.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:00.336Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "PEYUF.US",
+      "report": {
+        "id": "PEYUF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "PEYUF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:32:00.126Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "PHJMF.US",
+      "report": {
+        "id": "PHJMF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "PHJMF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:32:00.165Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "PIFYF.US",
+      "report": {
+        "id": "PIFYF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "PIFYF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:32:00.233Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "PRNDY.US",
+      "report": {
+        "id": "PRNDY.US",
+        "kind": "annual-report",
+        "url": "https://www.pernod-ricard.com/system/files/2026-09/PERNOD_RICARD_DEU_2025-2026_EN.pdf",
+        "filed": "2026-09-16",
+        "period": "2026-06-30",
+        "sections": [
+          "letter",
+          "business",
+          "risk",
+          "mdna",
+          "compensation",
+          "notes",
+          "auditor",
+          "capital"
+        ]
+      },
+      "jev": {
+        "id": "PRNDY.US",
+        "answers": 25,
+        "report": "annual-report"
+      },
+      "analysisAsOf": "2026-10-05T00:32:00.277Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "PROF.US",
+      "report": {
+        "id": "PROF.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1628808/000110465926024153/prof-20251231x10k.htm",
+        "filed": "2026-03-05",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "PROF.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:44:28.676Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "PUIGF.US",
+      "report": {
+        "id": "PUIGF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "PUIGF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:32:01.086Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "QXO.US",
+      "report": {
+        "id": "QXO.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1236275/000162828026012601/qxo-20251231.htm",
+        "filed": "2026-02-27",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "QXO.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:32:01.201Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "RBA.US",
+      "report": {
+        "id": "RBA.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1046102/000162828026011682/rba-20251231.htm",
+        "filed": "2026-02-25",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "RBA.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:44:28.798Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "RBGPF.US",
+      "report": {
+        "id": "RBGPF.US",
+        "kind": "ESEF",
+        "url": "https://filings.xbrl.org/5493003JFSMOJG48V108/2025-12-31/ESEF/GB/0/5493003JFSMOJG48V108-2025-12-31/reports/5493003JFSMOJG48V108-2025-12-31-T01.xhtml",
+        "filed": "2026-04-07",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "compensation",
+          "auditor",
+          "notes"
+        ]
+      },
+      "jev": {
+        "id": "RBGPF.US",
+        "answers": 25,
+        "report": "ESEF"
+      },
+      "analysisAsOf": "2026-10-05T00:32:01.350Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "RDY.US",
+      "report": {
+        "id": "RDY.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1135951/000157587226000381/rdy0899_20f.htm",
+        "filed": "2026-05-29",
+        "period": "2026-03-31",
+        "sections": [
+          "business",
+          "mdna",
+          "capital",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "RDY.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:01.438Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "RTLLF.US",
+      "report": {
+        "id": "RTLLF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "RTLLF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:32:01.508Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "RUSHB.US",
+      "report": {
+        "id": "RUSHB.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1012019/000143774926005424/rusha20251231_10k.htm",
+        "filed": "2026-02-25",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "RUSHB.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:32:01.952Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "RYCEY.US",
+      "report": {
+        "id": "RYCEY.US",
+        "kind": "ESEF",
+        "url": "https://filings.xbrl.org/213800EC7997ZBLZJH69/2025-12-31/ESEF/GB/0/213800EC7997ZBLZJH69-2025-12-31/reports/213800EC7997ZBLZJH69-2025-12-31-T01.xhtml",
+        "filed": "2026-03-10",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "compensation",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "RYCEY.US",
+        "answers": 25,
+        "report": "ESEF"
+      },
+      "analysisAsOf": "2026-10-05T00:32:03.267Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "SA.US",
+      "report": {
+        "id": "SA.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1231346/000121390026035021/ea0282731-40f_seabridge.htm",
+        "filed": "2026-03-27",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "auditor",
+          "notes",
+          "mdna"
+        ]
+      },
+      "jev": {
+        "id": "SA.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:01.994Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "SSPPF.US",
+      "report": {
+        "id": "SSPPF.US",
+        "kind": "ESEF",
+        "url": "https://filings.xbrl.org/213800QGNIWTXFMENJ24/2025-09-30/ESEF/GB/0/213800QGNIWTXFMENJ24-2025-09-30/reports/213800QGNIWTXFMENJ24-2025-09-30-T01.xhtml",
+        "filed": "2026-02-03",
+        "period": "2025-09-30",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "letter",
+          "compensation",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "SSPPF.US",
+        "answers": 25,
+        "report": "ESEF"
+      },
+      "analysisAsOf": "2026-10-05T00:32:06.613Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "STN.US",
+      "report": {
+        "id": "STN.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1131383/000113138326000007/stn-20251231.htm",
+        "filed": "2026-02-25",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "STN.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:06.709Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "TAC.US",
+      "report": {
+        "id": "TAC.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000015/tac-20251231_d2.htm",
+        "filed": "2026-02-27",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "TAC.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:07.422Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "TAP.US",
+      "report": {
+        "id": "TAP.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/24545/000002454526000006/tap-20251231.htm",
+        "filed": "2026-02-18",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "TAP.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:32:07.241Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "TEO.US",
+      "report": {
+        "id": "TEO.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/932470/000110465926026480/teo-20251231x20f.htm",
+        "filed": "2026-03-11",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "TEO.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:07.442Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "TFII.US",
+      "report": {
+        "id": "TFII.US",
+        "kind": "40-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1588823/000119312526054689/tfii-20251231.htm",
+        "filed": "2026-02-17",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "notes",
+          "auditor",
+          "mdna"
+        ]
+      },
+      "jev": {
+        "id": "TFII.US",
+        "answers": 25,
+        "report": "40-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:07.263Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "TFIN.US",
+      "report": {
+        "id": "TFIN.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1539638/000153963826000007/tfin-20251231.htm",
+        "filed": "2026-02-11",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "TFIN.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:32:07.683Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "TGS.US",
+      "report": {
+        "id": "TGS.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/931427/000114036126016167/ef20060824_20f.htm",
+        "filed": "2026-04-22",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "TGS.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:07.769Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "TPHS.US",
+      "report": {
+        "id": "TPHS.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/724742/000155837025003553/tphs-20241231x10k.htm",
+        "filed": "2025-03-24",
+        "period": "2024-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "TPHS.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:32:07.677Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "TRMLF.US",
+      "report": {
+        "id": "TRMLF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "TRMLF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:32:07.735Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "TV.US",
+      "report": {
+        "id": "TV.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/912892/000110465926052976/tv-20251231x20f.htm",
+        "filed": "2026-04-30",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "risk",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "TV.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:32:15.431Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "UAA.US",
+      "report": {
+        "id": "UAA.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1336917/000133691726000073/ua-20260331.htm",
+        "filed": "2026-05-19",
+        "period": "2026-03-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "UAA.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:32:13.724Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "UHAL.US",
+      "report": {
+        "id": "UHAL.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/4457/000119312526241850/uhal-20260331.htm",
+        "filed": "2026-05-27",
+        "period": "2026-03-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "UHAL.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:32:14.237Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "WILLF.US",
+      "report": {
+        "id": "WILLF.US",
+        "kind": "ESEF",
+        "url": "https://filings.xbrl.org/213800RM6L9LN78BVA56/2025-12-31/ESEF/DK/0/DEMANT-2025-12-31-en/reports/DEMANT-2025-12-31-en.xhtml",
+        "filed": "2026-03-10",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "WILLF.US",
+        "answers": 25,
+        "report": "ESEF"
+      },
+      "analysisAsOf": "2026-10-05T00:32:13.896Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "WRLC.US",
+      "report": {
+        "id": "WRLC.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "WRLC.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:32:13.900Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    },
+    {
+      "id": "WSO.US",
+      "report": {
+        "id": "WSO.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/105016/000119312526082486/wso-20251231.htm",
+        "filed": "2026-02-27",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "capital",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "WSO.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:32:14.299Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "ZG.US",
+      "report": {
+        "id": "ZG.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1617640/000161764026000015/z-20251231.htm",
+        "filed": "2026-02-11",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "jev": {
+        "id": "ZG.US",
+        "answers": 25,
+        "report": "10-K"
+      },
+      "analysisAsOf": "2026-10-05T00:32:14.316Z",
+      "analysisStatus": "scored",
+      "accepted": true
+    },
+    {
+      "id": "ZH.US",
+      "report": {
+        "id": "ZH.US",
+        "kind": "20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1835724/000110465926044557/zh-20251231x20f.htm",
+        "filed": "2026-04-17",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "mdna",
+          "capital",
+          "compensation",
+          "notes",
+          "auditor"
+        ]
+      },
+      "jev": {
+        "id": "ZH.US",
+        "answers": 25,
+        "report": "20-F"
+      },
+      "analysisAsOf": "2026-10-05T00:44:28.734Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": true
+    },
+    {
+      "id": "ZLDSF.US",
+      "report": {
+        "id": "ZLDSF.US",
+        "kind": "description",
+        "url": null,
+        "filed": null,
+        "period": null,
+        "sections": [
+          "business"
+        ]
+      },
+      "jev": {
+        "id": "ZLDSF.US",
+        "answers": 25,
+        "report": "description"
+      },
+      "analysisAsOf": "2026-10-05T00:32:14.349Z",
+      "analysisStatus": "insufficient_data",
+      "accepted": false
+    }
+  ]
+}

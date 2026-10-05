@@ -1,0 +1,22 @@
+[
+  {
+    "id": "IDWM.US",
+    "reasons": [
+      "stale-full-filing"
+    ],
+    "report": {
+      "id": "IDWM.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1463833/000121390023003814/f10k2022_idwmedia.htm",
+      "filed": "2023-01-19",
+      "period": "2022-10-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes"
+      ]
+    }
+  }
+]

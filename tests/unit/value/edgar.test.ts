@@ -285,3 +285,22 @@ it('cuts Philippine annual Form 17-A using its own business and management item 
  const result=cutSections({text,form:'17-A'});
  expect(result.business).toContain('Operating businesses');expect(result.business).not.toContain('Properties');expect(result.mdna).toContain('Annual results');
 });
+
+it('retains reviewed full annual inputs while current and retries after the fiscal period changes', async () => {
+  const { writeCorpusJson } = await import('@/lib/value/corpus');
+  const root=setupCorpus([company]);
+  vi.stubGlobal('fetch',vi.fn(async()=>Response.json({filings:{recent:{form:[]}}})));
+  const meta={id:company.id,kind:'annual-report',url:'https://issuer.example/annual-2025.pdf',filed:'2026-03-01',period:'2025-12-31',sections:['business']} as ReportMeta;
+  writeCorpusJson(`reports/${company.id}/meta.json`,meta);
+  writeFileSync(path.join(root,`reports/${company.id}/business.txt`),'Reviewed annual business.');
+  writeCorpusJson(`reports/${company.id}/annual-sources.json`,{reviewedFullAnnual:true,source:meta.url});
+  writeCorpusJson(`fundamentals/${company.id}.json`,{years:[{end:'2025-12-31'}]});
+  await reports({only:[company.id]});
+  expect(fetch).not.toHaveBeenCalled();
+  expect(JSON.parse(readFileSync(path.join(root,`reports/${company.id}/meta.json`),'utf8'))).toEqual(meta);
+  vi.stubGlobal('fetch',vi.fn(async()=>Response.json({filings:{recent:{form:[]}}})));
+  writeCorpusJson(`fundamentals/${company.id}.json`,{years:[{end:'2026-12-31'}]});
+  await reports({only:[company.id]});
+  expect(fetch).toHaveBeenCalled();
+  expect(JSON.parse(readFileSync(path.join(root,`reports/${company.id}/meta.json`),'utf8')).kind).toBe('description');
+});

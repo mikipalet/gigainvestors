@@ -91,6 +91,29 @@ def get(url, file):
     file.write_text(json.dumps(data) + '\n')
     return data
 
+def reviewed_field(id, field, year):
+    """Explicitly reviewed annual table/narrative evidence, never a missing-fact pass."""
+    proof = bases.get(id, {}).get('reviewedFields', {}).get(field)
+    if not proof or proof.get('period') != year['end']:
+        return None
+    unit = 'shares' if field == 'dilutedShares' else year.get('currency')
+    file = out / 'raw' / proof.get('file', '')
+    if (proof.get('currency') != unit or not file.is_file()
+            or file.resolve().parent != (out / 'raw').resolve()
+            or not isinstance(proof.get('value'), (int, float))
+            or not __import__('math').isfinite(proof['value'])
+            or not proof.get('source', '').startswith('https://') or not proof.get('anchors')):
+        return None
+    body = file.read_bytes()
+    if __import__('hashlib').sha256(body).hexdigest() != proof.get('sha256'):
+        return None
+    normalize = lambda text: ' '.join(text.split())
+    text = normalize(body.decode())
+    if any(not anchor or normalize(anchor) not in text for anchor in proof['anchors']):
+        return None
+    return {'reference': proof['value'], 'source': proof['source'],
+            'referenceBasis': proof['referenceBasis'], 'reviewedEvidence': proof}
+
 prices = {}
 for directory in ['prices', 'publish-repo/prices']:
     for file in (root / directory).glob('*.json'):
@@ -104,7 +127,7 @@ def check(id):
     year = f['years'][-1] if f['years'] else None
     meta=json.loads((root/f'reports/{id}/meta.json').read_text())
     cik = c.get('cik') or (__import__('re').search(r'/data/(\d+)/',meta.get('url') or '') or [None,None])[1]
-    if cik and year:
+    if cik and year and meta['kind'] != 'ESEF':
         url = f'https://data.sec.gov/api/xbrl/companyfacts/CIK{int(cik):010d}.json'
         result['filingSource'] = url
         try:
@@ -166,8 +189,21 @@ def check(id):
                                          'match': value is not None and reference is not None and abs(value-reference) <= max(1, abs(reference)*.005)})
         except Exception as error:
             result['errors'].append(f'SEC: {type(error).__name__}')
-    else:
+    elif not bases.get(id, {}).get('reviewedFields'):
         result['errors'].append('No CIK or annual period; independent filing evidence pending')
+    if year:
+        for field in ['revenue', 'dilutedShares']:
+            if field not in bases.get(id, {}).get('reviewedFields', {}):
+                continue
+            reviewed = reviewed_field(id, field, year)
+            if reviewed is None:
+                result['errors'].append(f'{field}: reviewed source proof invalid')
+                continue
+            value, reference = year.get(field), reviewed['reference']
+            result['checks'] = [c for c in result['checks'] if c['field'] != field]
+            result['checks'].append({'field': field, 'period': year['end'], 'value': value,
+                                    **reviewed, 'inputProvenance': year.get('provenance', {}).get(field),
+                                    'match': value is not None and abs(value-reference) <= max(1, abs(reference)*.005)})
     quote = prices.get(id)
     if quote and (len(quote) < 3 or quote[2] != 'seed'):
         day = dt.datetime.fromisoformat(quote[1][:10]).replace(tzinfo=dt.timezone.utc)

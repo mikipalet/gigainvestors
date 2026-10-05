@@ -1,0 +1,696 @@
+[
+  {
+    "id": "BMA.US",
+    "period": "2025-12-31",
+    "field": "netRevenue",
+    "before": null,
+    "after": 4607535240000,
+    "source": null
+  },
+  {
+    "id": "BMA.US",
+    "period": "2025-12-31",
+    "field": "revenue",
+    "before": 5815025966000,
+    "after": 4607535240000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1347426/000119312526163876/d29142d20f.htm",
+      "field": "revenue",
+      "method": "derived",
+      "inputs": [
+        "Net interest + net commissions + financial instrument gains + derecognition gains + FX/gold + other operating income, before credit loss; table in thousands ARS",
+        "Reviewed source text SHA256 4e11b4782de7c5d609eb9c6c55e7fd15cd5a979b50eb71c461ca925fb349dba2"
+      ]
+    }
+  },
+  {
+    "id": "BMA.US",
+    "period": "2025-12-31",
+    "field": "dilutedShares",
+    "before": 63941300,
+    "after": 63940900,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1347426/000119312526163876/d29142d20f.htm",
+      "field": "dilutedShares",
+      "method": "derived",
+      "inputs": [
+        "639,409 thousand diluted ordinary shares / 10 ordinary shares per ADS; Citi depositary 10:1",
+        "Reviewed source text SHA256 4e11b4782de7c5d609eb9c6c55e7fd15cd5a979b50eb71c461ca925fb349dba2"
+      ]
+    }
+  },
+  {
+    "id": "FSM.US",
+    "period": "2024-12-31",
+    "field": "revenue",
+    "before": 1062037000,
+    "after": 677243000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341335.json#0001104659-26-035151",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2024-01-01 to 2024-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "FSM.US",
+    "period": "2025-12-31",
+    "field": "revenue",
+    "before": 960059206,
+    "after": 947059000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001341335.json#0001104659-26-035151",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "FWONK.US",
+    "period": "2025-12-31",
+    "field": "dilutedShares",
+    "before": 250044400,
+    "after": 258000000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1560385/000110465926020653/lmca-20251231x10k.htm",
+      "field": "Reported diluted WASO, Formula One group (millions converted to shares)",
+      "method": "reported",
+      "inputs": [
+        "Liberty Formula One A/B/C common stock, diluted WASO; excludes retired tracking groups",
+        "Reviewed source text SHA256 712e630602c8a2730d3eb12425ea10573f8ac7f7db002c93431f1975557420d4"
+      ]
+    }
+  },
+  {
+    "id": "GDS.US",
+    "period": "2025-12-31",
+    "field": "dilutedShares",
+    "before": 194287800,
+    "after": 205569623.5,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1526125/000110465926051006/gds-20251231x20f.htm#000110465926051006",
+      "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Weighted average diluted shares",
+        "8 ordinary shares per ADS; https://www.sec.gov/Archives/edgar/data/1526125/000110465926051006/gds-20251231x20f.htm"
+      ]
+    }
+  },
+  {
+    "id": "LOMA.US",
+    "period": "2020-12-31",
+    "field": "dilutedShares",
+    "before": 119217100,
+    "after": 119205298,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001711375.json#0001711375-23-000005",
+      "field": "ifrs-full:AdjustedWeightedAverageShares",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2020-01-01 to 2020-12-31",
+        "Weighted average diluted shares",
+        "5 ordinary shares per ADS; https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm"
+      ]
+    }
+  },
+  {
+    "id": "LOMA.US",
+    "period": "2021-12-31",
+    "field": "dilutedShares",
+    "before": 117600000,
+    "after": 118409200,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001711375.json#0001711375-24-000031",
+      "field": "ifrs-full:AdjustedWeightedAverageShares",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2021-01-01 to 2021-12-31",
+        "Weighted average diluted shares",
+        "5 ordinary shares per ADS; https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm"
+      ]
+    }
+  },
+  {
+    "id": "LOMA.US",
+    "period": "2022-12-31",
+    "field": "dilutedShares",
+    "before": 116800000,
+    "after": 117063400,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001711375.json#0001711375-25-000032",
+      "field": "ifrs-full:AdjustedWeightedAverageShares",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2022-01-01 to 2022-12-31",
+        "Weighted average diluted shares",
+        "5 ordinary shares per ADS; https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm"
+      ]
+    }
+  },
+  {
+    "id": "LOMA.US",
+    "period": "2023-12-31",
+    "field": "revenue",
+    "before": 919312709000,
+    "after": 1209344474000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm#000171137526000030",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2023-01-01 to 2023-12-31",
+        "Currency ARS"
+      ]
+    }
+  },
+  {
+    "id": "LOMA.US",
+    "period": "2023-12-31",
+    "field": "dilutedShares",
+    "before": 116695100,
+    "after": 116707200,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm#000171137526000030",
+      "field": "ifrs-full:AdjustedWeightedAverageShares",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2023-01-01 to 2023-12-31",
+        "Weighted average diluted shares",
+        "5 ordinary shares per ADS; https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm"
+      ]
+    }
+  },
+  {
+    "id": "LOMA.US",
+    "period": "2024-12-31",
+    "field": "revenue",
+    "before": 699178686000,
+    "after": 919760895000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm#000171137526000030",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2024-01-01 to 2024-12-31",
+        "Currency ARS"
+      ]
+    }
+  },
+  {
+    "id": "LOMA.US",
+    "period": "2024-12-31",
+    "field": "dilutedShares",
+    "before": 116600000,
+    "after": 116696200,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm#000171137526000030",
+      "field": "ifrs-full:AdjustedWeightedAverageShares",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2024-01-01 to 2024-12-31",
+        "Weighted average diluted shares",
+        "5 ordinary shares per ADS; https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm"
+      ]
+    }
+  },
+  {
+    "id": "LOMA.US",
+    "period": "2025-12-31",
+    "field": "revenue",
+    "before": 988065841000,
+    "after": 848086622000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm#000171137526000030",
+      "field": "ifrs-full:Revenue",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency ARS"
+      ]
+    }
+  },
+  {
+    "id": "LOMA.US",
+    "period": "2025-12-31",
+    "field": "dilutedShares",
+    "before": 116600000,
+    "after": 116696600,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm#000171137526000030",
+      "field": "ifrs-full:AdjustedWeightedAverageShares",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Weighted average diluted shares",
+        "5 ordinary shares per ADS; https://www.sec.gov/Archives/edgar/data/1711375/000171137526000030/loma-20251231.htm"
+      ]
+    }
+  },
+  {
+    "id": "PROF.US",
+    "period": "2024-12-31",
+    "field": "revenue",
+    "before": 10167213,
+    "after": 10680000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1628808/000110465926024153/prof-20251231x10k.htm#000110465926024153",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2024-01-01 to 2024-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "PROF.US",
+    "period": "2025-12-31",
+    "field": "revenue",
+    "before": 16379804,
+    "after": 16098000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1628808/000110465926024153/prof-20251231x10k.htm#000110465926024153",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "RBA.US",
+    "period": "2025-12-31",
+    "field": "revenue",
+    "before": 4671062653,
+    "after": 4590700000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1046102/000162828026011682/rba-20251231.htm#000162828026011682",
+      "field": "us-gaap:Revenues",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency USD"
+      ]
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "revenue",
+    "before": 2674107840,
+    "after": 2749004000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1835724/000110465926044557/zh-20251231x20f.htm#000110465926044557",
+      "field": "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Currency CNY"
+      ]
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "costOfSales",
+    "before": 1071255376,
+    "after": 1101259000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "CostOfRevenue",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "grossProfit",
+    "before": 1602852456,
+    "after": 1647745000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "GrossProfit",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "operatingIncome",
+    "before": -370565243,
+    "after": -507288000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "OperatingIncomeLoss",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "operatingExpenses",
+    "before": 1973417706,
+    "after": 2155033000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "OperatingExpenses",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "netIncome",
+    "before": -187645442,
+    "after": -192901000,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1835724/000110465926044557/zh-20251231x20f.htm",
+      "field": "NetIncomeLossAvailableToCommonStockholdersBasic",
+      "method": "reported",
+      "inputs": [
+        "2025 CNY; excludes noncontrolling interests"
+      ]
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "preTaxIncome",
+    "before": -168747723,
+    "after": -173474000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "taxExpense",
+    "before": 21096135,
+    "after": 21687000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "IncomeTaxExpenseBenefit",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "da",
+    "before": 24892000,
+    "after": 19003000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "DepreciationDepletionAndAmortization",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "sbc",
+    "before": 164656000,
+    "after": 87283000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "ShareBasedCompensation",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "ocf",
+    "before": -415527000,
+    "after": -363605000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "NetCashProvidedByUsedInOperatingActivities",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "capex",
+    "before": 8875000,
+    "after": 1319000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "PaymentsToAcquirePropertyPlantAndEquipment",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "buybacks",
+    "before": 369569000,
+    "after": 167060000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "PaymentsForRepurchaseOfCommonStock",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "receivables",
+    "before": 412212000,
+    "after": 357998000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "AccountsReceivableNetCurrent",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "payables",
+    "before": 681740844,
+    "after": null,
+    "source": null
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "cash",
+    "before": 4243870740,
+    "after": 3369154000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "CashAndCashEquivalentsAtCarryingValue",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "shortTermInvestments",
+    "before": null,
+    "after": 840938000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "ShortTermInvestments",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "liabilitiesAndStockholdersEquity",
+    "before": 5194179506,
+    "after": 5190874000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "LiabilitiesAndStockholdersEquity",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "equity",
+    "before": 543984000,
+    "after": 3804136000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "StockholdersEquity",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "totalAssets",
+    "before": 5194179506,
+    "after": 5190874000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "Assets",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "totalLiabilities",
+    "before": 1316667903,
+    "after": 1315830000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "Liabilities",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "currentAssets",
+    "before": 4735016301,
+    "after": 4732003000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "AssetsCurrent",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "currentLiabilities",
+    "before": 1269221714,
+    "after": 1268414000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "LiabilitiesCurrent",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "totalDebt",
+    "before": 72019822,
+    "after": 35000000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json",
+      "field": "totalDebt",
+      "method": "derived",
+      "inputs": [
+        "ShortTermBorrowings"
+      ]
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "shortTermDebt",
+    "before": 56382000,
+    "after": 35000000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json",
+      "field": "shortTermDebt",
+      "method": "derived",
+      "inputs": [
+        "LongTermDebtCurrent",
+        "ShortTermBorrowings"
+      ]
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "intangibles",
+    "before": 29606836,
+    "after": 29588000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "FiniteLivedIntangibleAssetsNet",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "ppe",
+    "before": 47442189,
+    "after": 5349000,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "PropertyPlantAndEquipmentNet",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "dilutedShares",
+    "before": 78505600,
+    "after": 80014549.66666667,
+    "source": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1835724/000110465926044557/zh-20251231x20f.htm#000110465926044557",
+      "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+      "method": "derived",
+      "inputs": [
+        "Annual period 2025-01-01 to 2025-12-31",
+        "Weighted average diluted shares",
+        "3 ordinary shares per ADS; https://www.sec.gov/Archives/edgar/data/1835724/000110465926044557/zh-20251231x20f.htm"
+      ]
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "dilutedEps",
+    "before": null,
+    "after": -2.4000000000000004,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "EarningsPerShareDiluted",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "basicEps",
+    "before": null,
+    "after": -2.4000000000000004,
+    "source": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001835724.json#0001104659-26-044557",
+      "field": "EarningsPerShareBasic",
+      "method": "reported"
+    }
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "currency",
+    "before": "USD",
+    "after": "CNY",
+    "source": null
+  },
+  {
+    "id": "ZH.US",
+    "period": "2025-12-31",
+    "field": "debtIncludesLeases",
+    "before": true,
+    "after": false,
+    "source": null
+  }
+]

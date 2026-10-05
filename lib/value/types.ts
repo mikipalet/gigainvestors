@@ -218,7 +218,7 @@ export type SectionKey =
 
 export interface ReportMeta {
   id: Id;
-  kind: "10-K" | "20-F" | "40-F" | "17-A" | "ESEF" | "EDINET" | "description";
+  kind: "10-K" | "20-F" | "40-F" | "17-A" | "ESEF" | "EDINET" | "annual-report" | "description";
   url: string | null;
   filed: string | null;
   period: string | null;

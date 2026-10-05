@@ -1,0 +1,19 @@
+READY
+
+Coverage batch 2 continuation from `6e6ac23`, on `value-cover4`. Ready for controller integration and its locked nightly proof; live integration/publication have not been performed.
+
+- R6 used the existing ledger-counted reset probe and confirmed EODHD day 2026-10-05 at 00:18:20 UTC. R7 used only the existing shared ledger reservation/sync functions, with a 60,000 ceiling including FX.
+- All exact 119 pending IDs have fundamentals, prices/history, filing attempts, Jev readings and saved analyses. Current analysis statuses: 72 scored, 47 insufficient_data. The latter remains an explicit outcome, without invented financial history.
+- Release: 3,860 baseline plus 100 additions (92 from the 119, eight prior candidates), 39 holds. Twenty-six of the 119 remain description-only; IDWM's available full report is stale (2022), so it also remains held.
+- The fresh fixed 20-company sample passes 60 independent comparisons (revenue, diluted shares, close), with zero unexplained mismatches or source failures. The first pass and its failures are retained. Eight companies needed source corrections; reader gaps required explicit annual table/narrative evidence. Financial tolerance remains 0.5%, close tolerance 0.1%.
+- The final corrected sample also matches every saved analysis's revenue and diluted-share inputs and analysis timestamp. Source corrections and their provenance survive pipeline replay; integration carries verified inputs.
+- Reviewed annual coverage includes full 40-F exhibits, ten ESEF annuals and four issuer PDF annual reports. Three mistakenly selected 2026 interim reports were rejected and replaced with 2025 annuals before analysis. Empty-section Heineken ESEF recoveries were not accepted as full reports. Reviewed full reports are retained only for their current fiscal period; a new fiscal period or force retries discovery.
+- Ordinary local publish output: `~/data/value-cover/staging/cover-5-final`, 3,960 dossiers. This is the ordinary `publish --out` path. All 3,860 baseline dossiers retain identical serialized bytes; baseline index rows/order and quotes are unchanged. All 100 additions pass R1 binding, with no missing/unexpected IDs. All 147 freezes are unchanged. The separate 5,136-file live archive hash proof found no changes.
+
+`release.json` is the exact manifest. `completion.json` lists every requested ID and its final report/analysis. `annual-sources.json` preserves full-report provenance. `second-source-first-pass.json`, `second-source.json`, `source-bases.json`, `source-corrections-final.json` and `source-replay-proof.json` document the independent review and repairs. Large bodies, local snapshots, logs and screenshots remain on `~/data/value-cover`; `retained-evidence-files.json` gives hashes for the source evidence. The live usage ledger is accessed through existing code only; no credentials are copied here.
+
+The concrete controller integration, local nightly proof and publication commands are in `controller-commands.md`. No live integration, publication, revalidation, runner-lock operation, push or subagent work occurred in this session.
+
+Final verification: 2,224 tests passed across 223 files, one skipped; TypeScript and the production webpack build passed; nine independent source-reader regression checks passed. The fixed ten-company browser gate covered 188 states at 1728×970 and 390×844 with zero clipping, text overlap, off-screen content, wording, page errors or interaction failures. Its raw exit is 1 for 150 whitespace-only findings across 104 states, retained under the existing R2 nonblocking ruling. Thresholds were unchanged. The exact final ordinary snapshot was served; no financial or generated-timestamp differences were introduced afterward. The preview is stopped.
+
+Final provider and conservative ledger usage: 1,420 calls, including the reset probe and FX; 98,580 remain. All paid stages used the 60,000 hard cap.

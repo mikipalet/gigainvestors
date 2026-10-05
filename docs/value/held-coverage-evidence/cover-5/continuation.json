@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-05T00:20:27.643299+00:00",
+  "baseCommit": "6e6ac23",
+  "branch": "value-cover4",
+  "R6": "Use existing ledger-counted reset probe; confirmed 2026-10-05 at 00:18:20Z",
+  "R7": "Existing usage ledger code only; hard ceiling 60000 including FX",
+  "steps": [
+    "exact 119 fundamentals",
+    "current prices and monthly history",
+    "retry description-only filings, preserve 40-F exhibits",
+    "Jev readings and analysis of exact 119",
+    "broad isolated selection and R1 binding",
+    "fixed fresh 20-company second-source sample",
+    "10-company two-viewport browser gate",
+    "ordinary local publish versus live baseline",
+    "commit and controller handoff"
+  ],
+  "prohibited": [
+    "publication",
+    "revalidation",
+    "daily-runner lock operations",
+    "live corpus writes except usage ledger",
+    "subagents",
+    "push to master"
+  ]
+}

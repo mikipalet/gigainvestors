@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-05T00:18:20.529Z",
+  "apiRequestsDate": "2026-10-05",
+  "apiRequests": 1,
+  "dailyRateLimit": 100000,
+  "ledger": {
+    "date": "2026-10-05",
+    "used": 1,
+    "history": 0,
+    "providerUsed": 1,
+    "checkedAt": "2026-10-05T00:18:20.341Z"
+  }
+}

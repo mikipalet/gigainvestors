@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-05T00:22:54.066Z",
+  "quota": {
+    "date": "2026-10-05",
+    "used": 1410,
+    "history": 119,
+    "providerUsed": 1410,
+    "checkedAt": "2026-10-05T00:22:54.065Z"
+  },
+  "priceFailures": [
+    "ATAI.US"
+  ],
+  "missingHistory": []
+}

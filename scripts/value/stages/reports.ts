@@ -28,6 +28,13 @@ export default async function reports({ only, limit, force = false }: {
   const fallback: typeof companies = [];
   async function processCompany(company: typeof companies[number]): Promise<void> {
     const localAnnual=readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`);
+    const reviewed=readCorpusJson<{reviewedFullAnnual?:boolean}>(`reports/${company.id}/annual-sources.json`);
+    const latestPeriod=readCorpusJson<{years:Array<{end:string}>}>(`fundamentals/${company.id}.json`)?.years.at(-1)?.end;
+    // Reviewed issuer PDFs and full annual exhibits must survive an OTC listing's
+    // empty SEC lookup. A new financial year or --force makes them retryable.
+    if(!force&&latestPeriod&&reviewed?.reviewedFullAnnual&&localAnnual?.kind!=='description'
+      &&localAnnual?.period===latestPeriod&&localAnnual?.sections.length
+      &&localAnnual.sections.every(key=>existsSync(corpusPath(`reports/${company.id}/${key}.txt`))))return;
     if(!force&&localAnnual?.kind==='17-A'&&localAnnual.sections.length&&localAnnual.sections.every(key=>existsSync(corpusPath(`reports/${company.id}/${key}.txt`))))return;
     if (company.source === "edinet") {
       const meta = readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`);

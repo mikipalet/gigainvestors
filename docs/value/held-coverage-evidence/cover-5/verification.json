@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-05T00:55:13.602468+00:00",
+  "testFiles": 223,
+  "testsPassed": 2224,
+  "testsSkipped": 1,
+  "typecheck": "passed",
+  "productionBuild": "passed (webpack, exact final snapshot)",
+  "sourceReaderRegressionChecks": 9,
+  "sourceSample": {
+    "companies": 20,
+    "comparisons": 60,
+    "unexplainedMismatches": 0,
+    "sourceFailures": 0
+  },
+  "browser": {
+    "companies": 10,
+    "states": 188,
+    "blockingFindings": 0,
+    "whitespaceFindings": 150,
+    "rawExit": 1,
+    "disposition": "R2 whitespace-only nonblocking"
+  },
+  "ownedPreviewStopped": true,
+  "logs": [
+    {
+      "path": "/Users/miki/data/value-cover/logs/cover5-tests-final2.log",
+      "sha256": "793b47553846ceeb6d470c18fccaa7e33bb8496e018d6f058803bab4a4af70d0"
+    },
+    {
+      "path": "/Users/miki/data/value-cover/logs/cover5-types-final.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/miki/data/value-cover/logs/cover5-build-final.log",
+      "sha256": "c726729abc402ab4323b3297f24337263ebd19099603dc1e7244e06dd6c063df"
+    },
+    {
+      "path": "/Users/miki/data/value-cover/logs/cover5-source-final2.log",
+      "sha256": "664c9455a3d094ddb17edace54b8bed4b35d6e9c1591dd5f6fdb87fcf553ce00"
+    },
+    {
+      "path": "/Users/miki/data/value-cover/logs/cover5-browser-final.log",
+      "sha256": "266588834e7f3baa00ee9ec0fbe36f2faf6c6f5544822a917bfb9b29196dad70"
+    }
+  ],
+  "secretValueScan": {
+    "changedFilesScanned": 31,
+    "secretValueMatches": 0
+  },
+  "diffCheck": "passed",
+  "freeGiB": {
+    "/": 10.811,
+    "/Users/miki/data/value-cover": 151.933
+  }
+}

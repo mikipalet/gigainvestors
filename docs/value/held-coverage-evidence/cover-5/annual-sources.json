@@ -1,0 +1,2092 @@
+[
+  {
+    "id": "AGI.US",
+    "meta": {
+      "id": "AGI.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1178819/000117881926000048/agi-20251231_d2.htm",
+      "filed": "2026-03-26",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "notes",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1178819/000117881926000048/0001178819-26-000048-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1178819/000117881926000048/ex9912026annualinformation.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/AGI.US-exhibit-1.html",
+          "textLength": 354109,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1178819/000117881926000048/ex99212312025mda.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/AGI.US-exhibit-2.html",
+          "textLength": 259266,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1178819/000117881926000048/agi-20251231.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/AGI.US-exhibit-3.html",
+          "textLength": 141753,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "AKBLF.US",
+    "meta": {
+      "id": "AKBLF.US",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/529900SGCREUZCZ7P020/2025-12-31/ESEF/DK/0/alk-2025-12-31-en/reports/alk-2025-12-31-en.xhtml",
+      "filed": "2026-03-18",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "compensation",
+        "mdna",
+        "risk"
+      ]
+    },
+    "provenance": {
+      "source": "https://filings.xbrl.org/529900SGCREUZCZ7P020/2025-12-31/ESEF/DK/0/alk-2025-12-31-en/reports/alk-2025-12-31-en.xhtml",
+      "lei": "529900SGCREUZCZ7P020",
+      "identity": {
+        "listingName": "ALK-Abell\u00f3 A/S",
+        "domesticId": "ALK-B.CO",
+        "domesticName": "ALK-Abell\u00f3 A/S",
+        "domesticIsin": "DK0061802139",
+        "method": "reviewed same legal issuer name and domestic listing LEI; filing text only, no substitution of listing financial/share inputs"
+      },
+      "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/529900SGCREUZCZ7P020-annual-2025.html",
+      "selection": "Full year ended 2025-12-31; newer 2026-06-30 interim explicitly rejected",
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "AQN.US",
+    "meta": {
+      "id": "AQN.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1174169/000117416926000015/aqunf-20251231_d2.htm",
+      "filed": "2026-03-06",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "notes",
+        "auditor",
+        "mdna"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1174169/000117416926000015/0001174169-26-000015-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1174169/000117416926000015/a2025q4exhibit991-aif.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/AQN.US-exhibit-1.html",
+          "textLength": 352403,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1174169/000117416926000015/aqunf-20251231.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/AQN.US-exhibit-2.html",
+          "textLength": 202159,
+          "sections": [
+            "business",
+            "notes",
+            "auditor"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1174169/000117416926000015/a2025q4-exhibit993xmda.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/AQN.US-exhibit-3.html",
+          "textLength": 220596,
+          "sections": [
+            "business",
+            "risk",
+            "mdna"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "BMM.US",
+    "meta": {
+      "id": "BMM.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1732379/000155485526000717/bmm40F-20251231.htm",
+      "filed": "2026-04-24",
+      "period": "2025-12-31",
+      "sections": [
+        "notes",
+        "auditor",
+        "mdna",
+        "business",
+        "risk"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1732379/000155485526000717/0001554855-26-000717-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1732379/000155485526000717/ex992_2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/BMM.US-exhibit-1.html",
+          "textLength": 103807,
+          "sections": [
+            "business",
+            "notes",
+            "auditor"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1732379/000155485526000717/ex991_1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/BMM.US-exhibit-2.html",
+          "textLength": 340491,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1732379/000155485526000717/ex993_3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/BMM.US-exhibit-3.html",
+          "textLength": 94335,
+          "sections": [
+            "business"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "BTE.US",
+    "meta": {
+      "id": "BTE.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1279495/000127949526000007/bte-20251231.htm",
+      "filed": "2026-03-05",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "mdna",
+        "notes",
+        "auditor",
+        "risk"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1279495/000127949526000007/0001279495-26-000007-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1279495/000127949526000007/a991-2025aif.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/BTE.US-exhibit-1.html",
+          "textLength": 221713,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1279495/000127949526000007/bte-20251231_d2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/BTE.US-exhibit-2.html",
+          "textLength": 112966,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1279495/000127949526000007/a993-2025mda.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/BTE.US-exhibit-3.html",
+          "textLength": 178820,
+          "sections": [
+            "business"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "BTG.US",
+    "meta": {
+      "id": "BTG.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1429937/000110465926026310/tm266740d1_40f.htm",
+      "filed": "2026-03-11",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "notes",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1429937/000110465926026310/0001104659-26-026310-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1429937/000110465926026310/tm266740d1_ex99-1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/BTG.US-exhibit-1.html",
+          "textLength": 497898,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1429937/000110465926026310/tm266740d1_ex99-2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/BTG.US-exhibit-2.html",
+          "textLength": 153132,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1429937/000110465926026310/tm266740d1_ex99-3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/BTG.US-exhibit-3.html",
+          "textLength": 173302,
+          "sections": [
+            "business"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "CABJF.US",
+    "meta": {
+      "id": "CABJF.US",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/5299001O0WJQYB5GYZ19/2025-12-31/ESEF/DK/0/Carlsberg-2025-12-31-en/reports/Carlsberg-2025-12-31-en.xhtml",
+      "filed": "2026-03-24",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "letter",
+        "risk",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "source": "https://filings.xbrl.org/5299001O0WJQYB5GYZ19/2025-12-31/ESEF/DK/0/Carlsberg-2025-12-31-en/reports/Carlsberg-2025-12-31-en.xhtml",
+      "lei": "5299001O0WJQYB5GYZ19",
+      "identity": {
+        "listingName": "Carlsberg A/S",
+        "domesticId": "CARL-B.CO",
+        "domesticName": "Carlsberg A/S",
+        "domesticIsin": "DK0010181759",
+        "method": "reviewed same legal issuer name and domestic listing LEI; filing text only, no substitution of listing financial/share inputs"
+      },
+      "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/5299001O0WJQYB5GYZ19-annual-2025.html",
+      "selection": "Full year ended 2025-12-31; newer 2026-06-30 interim explicitly rejected",
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "CGAU.US",
+    "meta": {
+      "id": "CGAU.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1854640/000110465926033394/tm261243d1_40f.htm",
+      "filed": "2026-03-23",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "notes"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1854640/000110465926033394/0001104659-26-033394-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1854640/000110465926033394/tm261243d1_ex99-1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/CGAU.US-exhibit-1.html",
+          "textLength": 358977,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1854640/000110465926033394/tm261243d1_ex99-2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/CGAU.US-exhibit-2.html",
+          "textLength": 195553,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1854640/000110465926033394/tm261243d1_ex99-3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/CGAU.US-exhibit-3.html",
+          "textLength": 177113,
+          "sections": [
+            "business",
+            "notes",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "CIGI.US",
+    "meta": {
+      "id": "CIGI.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/913353/000117184326000984/cigi20251231_40f.htm",
+      "filed": "2026-02-20",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "notes",
+        "auditor",
+        "mdna"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/913353/000117184326000984/0001171843-26-000984-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/913353/000117184326000984/ex_922493.htm",
+          "type": "EX-1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/CIGI.US-exhibit-1.html",
+          "textLength": 167106,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/913353/000117184326000984/ex_920918.htm",
+          "type": "EX-2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/CIGI.US-exhibit-2.html",
+          "textLength": 147853,
+          "sections": [
+            "business",
+            "notes",
+            "auditor"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/913353/000117184326000984/ex_922494.htm",
+          "type": "EX-3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/CIGI.US-exhibit-3.html",
+          "textLength": 56559,
+          "sections": [
+            "business"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "DSGX.US",
+    "meta": {
+      "id": "DSGX.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050140/000110465926026450/dsgx-20260131x40f.htm",
+      "filed": "2026-03-11",
+      "period": "2026-01-31",
+      "sections": [
+        "business",
+        "risk",
+        "auditor",
+        "mdna",
+        "notes"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1050140/000110465926026450/0001104659-26-026450-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1050140/000110465926026450/dsgx-20260131xex99d1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/DSGX.US-exhibit-1.html",
+          "textLength": 189059,
+          "sections": [
+            "business",
+            "risk",
+            "auditor"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1050140/000110465926026450/dsgx-20260131xex99d2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/DSGX.US-exhibit-2.html",
+          "textLength": 310416,
+          "sections": [
+            "business",
+            "notes",
+            "auditor"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "ECTXF.US",
+    "meta": {
+      "id": "ECTXF.US",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/254900KI62Q46ZWD8084/2024-12-31/ESEF/SE/0/EPRO-2024-12-31-0-sv/reports/EPRO-2024-12-31-0-sv.xhtml",
+      "filed": "2025-05-08",
+      "period": "2024-12-31",
+      "sections": [
+        "risk",
+        "business"
+      ]
+    },
+    "provenance": {
+      "source": "https://filings.xbrl.org/254900KI62Q46ZWD8084/2024-12-31/ESEF/SE/0/EPRO-2024-12-31-0-sv/reports/EPRO-2024-12-31-0-sv.xhtml",
+      "lei": "254900KI62Q46ZWD8084",
+      "identity": {
+        "listingName": "Electrolux Professional AB (publ)",
+        "domesticId": "EPRO-B.ST",
+        "domesticName": "Electrolux Professional AB (publ)",
+        "domesticIsin": "SE0013747870",
+        "method": "reviewed same legal issuer name and domestic listing LEI; filing text only, no substitution of listing financial/share inputs"
+      },
+      "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/254900KI62Q46ZWD8084.html",
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "EFXT.US",
+    "meta": {
+      "id": "EFXT.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1904856/000119312526072743/efxt-20251231.htm",
+      "filed": "2026-02-26",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "notes",
+        "auditor",
+        "mdna"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1904856/000119312526072743/0001193125-26-072743-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1904856/000119312526072743/efxt-ex99_1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/EFXT.US-exhibit-1.html",
+          "textLength": 232427,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1904856/000119312526072743/efxt-ex99_2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/EFXT.US-exhibit-2.html",
+          "textLength": 162499,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1904856/000119312526072743/efxt-ex99_3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/EFXT.US-exhibit-3.html",
+          "textLength": 174900,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "EGO.US",
+    "meta": {
+      "id": "EGO.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/918608/000091860826000007/ego-20251231_d2.htm",
+      "filed": "2026-03-27",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "mdna",
+        "notes",
+        "auditor",
+        "risk"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/918608/000091860826000007/0000918608-26-000007-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/918608/000091860826000007/a2025aifego2026-03x27991.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/EGO.US-exhibit-1.html",
+          "textLength": 528410,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/918608/000091860826000007/ego-20251231.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/EGO.US-exhibit-2.html",
+          "textLength": 180456,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/918608/000091860826000007/managementsdiscussionandan.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/EGO.US-exhibit-3.html",
+          "textLength": 341476,
+          "sections": [
+            "business"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "EQX.US",
+    "meta": {
+      "id": "EQX.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1756607/000162828026022120/eqx-20251231_d2.htm",
+      "filed": "2026-03-31",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "mdna",
+        "risk",
+        "notes",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1756607/000162828026022120/0001628280-26-022120-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1756607/000162828026022120/eqxaif2026-final.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/EQX.US-exhibit-1.html",
+          "textLength": 302070,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1756607/000162828026022120/eqx-20251231mda.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/EQX.US-exhibit-2.html",
+          "textLength": 175082,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1756607/000162828026022120/eqx-20251231.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/EQX.US-exhibit-3.html",
+          "textLength": 227973,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "ERFSF.US",
+    "meta": {
+      "id": "ERFSF.US",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/529900JEHFM47DYY3S57/2024-12-31/ESEF/LU/0/529900JEHFM47DYY3S57-2024-12-31-0-en/reports/529900JEHFM47DYY3S57-2024-12-31-0-en.xhtml",
+      "filed": "2025-05-08",
+      "period": "2024-12-31",
+      "sections": [
+        "business",
+        "mdna",
+        "risk",
+        "compensation"
+      ]
+    },
+    "provenance": {
+      "source": "https://filings.xbrl.org/529900JEHFM47DYY3S57/2024-12-31/ESEF/LU/0/529900JEHFM47DYY3S57-2024-12-31-0-en/reports/529900JEHFM47DYY3S57-2024-12-31-0-en.xhtml",
+      "lei": "529900JEHFM47DYY3S57",
+      "identity": {
+        "listingName": "Eurofins Scientific SE",
+        "method": "provider legal entity identifier"
+      },
+      "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/529900JEHFM47DYY3S57.html",
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "ERO.US",
+    "meta": {
+      "id": "ERO.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1853860/000162828026022073/ero-20251231_d2.htm",
+      "filed": "2026-03-30",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "notes",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1853860/000162828026022073/0001628280-26-022073-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1853860/000162828026022073/a991-2026aif.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/ERO.US-exhibit-1.html",
+          "textLength": 530340,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1853860/000162828026022073/erocopper-mdax2025q4.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/ERO.US-exhibit-2.html",
+          "textLength": 114731,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1853860/000162828026022073/ero-20251231.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/ERO.US-exhibit-3.html",
+          "textLength": 124111,
+          "sections": [
+            "business",
+            "notes",
+            "auditor"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "FRFHF.US",
+    "meta": {
+      "id": "FRFHF.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/915191/000110465926024781/ffh-20251231x40f.htm",
+      "filed": "2026-03-06",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "auditor",
+        "mdna",
+        "notes"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/915191/000110465926024781/0001104659-26-024781-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/915191/000110465926024781/ffh-20251231xex99d1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/FRFHF.US-exhibit-1.html",
+          "textLength": 96000,
+          "sections": [
+            "business",
+            "risk",
+            "auditor",
+            "mdna"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/915191/000110465926024781/ffh-20251231xex99d2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/FRFHF.US-exhibit-2.html",
+          "textLength": 359941,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/915191/000110465926024781/ffh-20251231xex99d3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/FRFHF.US-exhibit-3.html",
+          "textLength": 379726,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "FSM.US",
+    "meta": {
+      "id": "FSM.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1341335/000110465926035151/tmb-20251231x40f.htm",
+      "filed": "2026-03-26",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "notes",
+        "auditor",
+        "mdna"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1341335/000110465926035151/0001104659-26-035151-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1341335/000110465926035151/tmb-20251231xex99d1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/FSM.US-exhibit-1.html",
+          "textLength": 567707,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1341335/000110465926035151/tmb-20251231xex99d2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/FSM.US-exhibit-2.html",
+          "textLength": 146743,
+          "sections": [
+            "business",
+            "notes",
+            "auditor"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1341335/000110465926035151/tmb-20251231xex99d3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/FSM.US-exhibit-3.html",
+          "textLength": 156072,
+          "sections": [
+            "business"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "GFL.US",
+    "meta": {
+      "id": "GFL.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1780232/000110465926016748/gfl-20251231x40f.htm",
+      "filed": "2026-02-18",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "notes",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1780232/000110465926016748/0001104659-26-016748-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1780232/000110465926016748/gfl-20251231xex99d1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/GFL.US-exhibit-1.html",
+          "textLength": 324402,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1780232/000110465926016748/gfl-20251231xex99d2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/GFL.US-exhibit-2.html",
+          "textLength": 123902,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1780232/000110465926016748/gfl-20251231xex99d3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/GFL.US-exhibit-3.html",
+          "textLength": 130090,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "HKHGF.US",
+    "meta": {
+      "id": "HKHGF.US",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/213800XCHYNRPAYGXW28/2025-12-31/ESEF/GB/0/213800XCHYNRPAYGXW28-2025-12-31-0-en/reports/213800XCHYNRPAYGXW28-2025-12-31-0-en.xhtml",
+      "filed": "2026-04-09",
+      "period": "2025-12-31",
+      "sections": [
+        "auditor",
+        "business",
+        "mdna",
+        "risk"
+      ]
+    },
+    "provenance": {
+      "source": "https://filings.xbrl.org/213800XCHYNRPAYGXW28/2025-12-31/ESEF/GB/0/213800XCHYNRPAYGXW28-2025-12-31-0-en/reports/213800XCHYNRPAYGXW28-2025-12-31-0-en.xhtml",
+      "lei": "213800XCHYNRPAYGXW28",
+      "identity": {
+        "listingName": "Hongkong Land Holdings Limited",
+        "method": "provider legal entity identifier"
+      },
+      "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/213800XCHYNRPAYGXW28.html",
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "IAG.US",
+    "meta": {
+      "id": "IAG.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1203464/000106299326001022/form40f.htm",
+      "filed": "2026-02-18",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "mdna",
+        "notes",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1203464/000106299326001022/0001062993-26-001022-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1203464/000106299326001022/exhibit99-1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/IAG.US-exhibit-1.html",
+          "textLength": 523031,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1203464/000106299326001022/exhibit99-2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/IAG.US-exhibit-2.html",
+          "textLength": 197328,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1203464/000106299326001022/exhibit99-3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/IAG.US-exhibit-3.html",
+          "textLength": 170617,
+          "sections": [
+            "business",
+            "notes",
+            "auditor"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "KGEI.US",
+    "meta": {
+      "id": "KGEI.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1477081/000149315226011486/form40-f.htm",
+      "filed": "2026-03-19",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "mdna",
+        "risk"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1477081/000149315226011486/0001493152-26-011486-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1477081/000149315226011486/ex99-1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/KGEI.US-exhibit-1.html",
+          "textLength": 138845,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1477081/000149315226011486/ex99-2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/KGEI.US-exhibit-2.html",
+          "textLength": 58489,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1477081/000149315226011486/ex99-3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/KGEI.US-exhibit-3.html",
+          "textLength": 77121,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "LRLCF.US",
+    "meta": {
+      "id": "LRLCF.US",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/529900JI1GG6F7RKVI53/2025-12-31/ESEF/FR/0/loreal-2025-12-31-1-fr/reports/loreal-2025-12-31-1-fr.xhtml",
+      "filed": "2026-03-24",
+      "period": "2025-12-31",
+      "sections": [
+        "business"
+      ]
+    },
+    "provenance": {
+      "source": "https://filings.xbrl.org/529900JI1GG6F7RKVI53/2025-12-31/ESEF/FR/0/loreal-2025-12-31-1-fr/reports/loreal-2025-12-31-1-fr.xhtml",
+      "lei": "529900JI1GG6F7RKVI53",
+      "identity": {
+        "listingName": "L'Or\u00e9al S.A",
+        "method": "provider legal entity identifier"
+      },
+      "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/529900JI1GG6F7RKVI53.html",
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "MEOH.US",
+    "meta": {
+      "id": "MEOH.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/886977/000162828026015362/mx-20251231.htm",
+      "filed": "2026-03-05",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "auditor",
+        "mdna",
+        "notes"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/886977/000162828026015362/0001628280-26-015362-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/886977/000162828026015362/a2025aif.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/MEOH.US-exhibit-1.html",
+          "textLength": 122285,
+          "sections": [
+            "business",
+            "risk",
+            "auditor"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/886977/000162828026015362/mda-2025annualreport.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/MEOH.US-exhibit-2.html",
+          "textLength": 189499,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/886977/000162828026015362/mx-20251231_d2.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/MEOH.US-exhibit-3.html",
+          "textLength": 135246,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "MINE.US",
+    "meta": {
+      "id": "MINE.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1823255/000137647426000286/mine-20251231_40f.htm",
+      "filed": "2026-04-14",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "notes"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1823255/000137647426000286/0001376474-26-000286-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1823255/000137647426000286/mfg_ex99z1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/MINE.US-exhibit-1.html",
+          "textLength": 186299,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1823255/000137647426000286/mine-20251231_ex99z2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/MINE.US-exhibit-2.html",
+          "textLength": 59322,
+          "sections": [
+            "business",
+            "notes",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1823255/000137647426000286/mfg_ex99z3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/MINE.US-exhibit-3.html",
+          "textLength": 86390,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "NAK.US",
+    "meta": {
+      "id": "NAK.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1164771/000165495426003025/ndm_40f.htm",
+      "filed": "2026-03-31",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "notes",
+        "auditor",
+        "risk",
+        "mdna"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1164771/000165495426003025/0001654954-26-003025-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1164771/000165495426003025/ndm_ex991.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/NAK.US-exhibit-1.html",
+          "textLength": 299236,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1164771/000165495426003025/ndm_ex992.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/NAK.US-exhibit-2.html",
+          "textLength": 126810,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1164771/000165495426003025/ndm_ex993.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/NAK.US-exhibit-3.html",
+          "textLength": 181386,
+          "sections": [
+            "business"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "NSRGF.US",
+    "meta": {
+      "id": "NSRGF.US",
+      "kind": "annual-report",
+      "url": "https://www.nestle.com/investors/annual-report",
+      "filed": "2026-02-19",
+      "period": "2025-12-31",
+      "sections": [
+        "letter",
+        "business",
+        "mdna",
+        "capital",
+        "compensation",
+        "notes",
+        "risk",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "reviewedFullAnnual": true,
+      "source": "https://www.nestle.com/investors/annual-report",
+      "period": "2025-12-31",
+      "documents": [
+        {
+          "url": "https://www.nestle.com/sites/default/files/2026-02/annual-review-2025-en.pdf",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/nestle-review.pdf",
+          "sha256": "b4692b61b0275eecab67aa767bc96afa595342243329bdb637f6efd1ca988361"
+        },
+        {
+          "url": "https://www.nestle.com/sites/default/files/2026-02/corp-governance-compensation-financial-statements-2025-en.pdf",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/nestle-financials.pdf",
+          "sha256": "04f3599884c75233cd9ab888fe139280994129d0ed5489013353b3eb415acad3"
+        }
+      ],
+      "ranges": {
+        "letter": {
+          "pdfPages": [
+            7,
+            9
+          ],
+          "characters": 11636
+        },
+        "business": {
+          "pdfPages": [
+            10,
+            35
+          ],
+          "characters": 30775
+        },
+        "mdna": {
+          "pdfPages": [
+            36,
+            59
+          ],
+          "characters": 23980
+        },
+        "capital": {
+          "pdfPages": [
+            6,
+            8
+          ],
+          "characters": 11589
+        },
+        "compensation": {
+          "pdfPages": [
+            35,
+            65
+          ],
+          "characters": 12891
+        },
+        "notes": {
+          "pdfPages": [
+            89,
+            166
+          ],
+          "characters": 15610
+        },
+        "risk": {
+          "pdfPages": [
+            132,
+            149
+          ],
+          "characters": 10311
+        },
+        "auditor": {
+          "pdfPages": [
+            183,
+            193
+          ],
+          "characters": 7776
+        }
+      },
+      "method": "Issuer-hosted full annual PDFs; reviewed table-of-contents page ranges; normal section token caps; no listing/share-unit substitution"
+    }
+  },
+  {
+    "id": "NSRGY.US",
+    "meta": {
+      "id": "NSRGY.US",
+      "kind": "annual-report",
+      "url": "https://www.nestle.com/investors/annual-report",
+      "filed": "2026-02-19",
+      "period": "2025-12-31",
+      "sections": [
+        "letter",
+        "business",
+        "mdna",
+        "capital",
+        "compensation",
+        "notes",
+        "risk",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "reviewedFullAnnual": true,
+      "source": "https://www.nestle.com/investors/annual-report",
+      "period": "2025-12-31",
+      "documents": [
+        {
+          "url": "https://www.nestle.com/sites/default/files/2026-02/annual-review-2025-en.pdf",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/nestle-review.pdf",
+          "sha256": "b4692b61b0275eecab67aa767bc96afa595342243329bdb637f6efd1ca988361"
+        },
+        {
+          "url": "https://www.nestle.com/sites/default/files/2026-02/corp-governance-compensation-financial-statements-2025-en.pdf",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/nestle-financials.pdf",
+          "sha256": "04f3599884c75233cd9ab888fe139280994129d0ed5489013353b3eb415acad3"
+        }
+      ],
+      "ranges": {
+        "letter": {
+          "pdfPages": [
+            7,
+            9
+          ],
+          "characters": 11636
+        },
+        "business": {
+          "pdfPages": [
+            10,
+            35
+          ],
+          "characters": 30775
+        },
+        "mdna": {
+          "pdfPages": [
+            36,
+            59
+          ],
+          "characters": 23980
+        },
+        "capital": {
+          "pdfPages": [
+            6,
+            8
+          ],
+          "characters": 11589
+        },
+        "compensation": {
+          "pdfPages": [
+            35,
+            65
+          ],
+          "characters": 12891
+        },
+        "notes": {
+          "pdfPages": [
+            89,
+            166
+          ],
+          "characters": 15610
+        },
+        "risk": {
+          "pdfPages": [
+            132,
+            149
+          ],
+          "characters": 10311
+        },
+        "auditor": {
+          "pdfPages": [
+            183,
+            193
+          ],
+          "characters": 7776
+        }
+      },
+      "method": "Issuer-hosted full annual PDFs; reviewed table-of-contents page ranges; normal section token caps; no listing/share-unit substitution"
+    }
+  },
+  {
+    "id": "NXE.US",
+    "meta": {
+      "id": "NXE.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1698535/000119312526089376/d84755d40f.htm",
+      "filed": "2026-03-04",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "notes",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1698535/000119312526089376/0001193125-26-089376-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1698535/000119312526089376/d84755dex991.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/NXE.US-exhibit-1.html",
+          "textLength": 194762,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1698535/000119312526089376/d84755dex992.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/NXE.US-exhibit-2.html",
+          "textLength": 98416,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1698535/000119312526089376/d84755dex993.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/NXE.US-exhibit-3.html",
+          "textLength": 88537,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "PAAS.US",
+    "meta": {
+      "id": "PAAS.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/771992/000077199226000019/paas-20251231.htm",
+      "filed": "2026-02-18",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "notes",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/771992/000077199226000019/0000771992-26-000019-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/771992/000077199226000019/aif-2025ye.htm",
+          "type": "EX-1.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/PAAS.US-exhibit-1.html",
+          "textLength": 398258,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/771992/000077199226000019/paas12-31x2025mda.htm",
+          "type": "EX-1.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/PAAS.US-exhibit-2.html",
+          "textLength": 216455,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/771992/000077199226000019/paas-20251231_d2.htm",
+          "type": "EX-1.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/PAAS.US-exhibit-3.html",
+          "textLength": 160901,
+          "sections": [
+            "business",
+            "notes",
+            "auditor"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "PDRDF.US",
+    "meta": {
+      "id": "PDRDF.US",
+      "kind": "annual-report",
+      "url": "https://www.pernod-ricard.com/system/files/2026-09/PERNOD_RICARD_DEU_2025-2026_EN.pdf",
+      "filed": "2026-09-16",
+      "period": "2026-06-30",
+      "sections": [
+        "letter",
+        "business",
+        "risk",
+        "mdna",
+        "compensation",
+        "notes",
+        "auditor",
+        "capital"
+      ]
+    },
+    "provenance": {
+      "reviewedFullAnnual": true,
+      "source": "https://www.pernod-ricard.com/system/files/2026-09/PERNOD_RICARD_DEU_2025-2026_EN.pdf",
+      "period": "2026-06-30",
+      "documents": [
+        {
+          "url": "https://www.pernod-ricard.com/system/files/2026-09/PERNOD_RICARD_DEU_2025-2026_EN.pdf",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/pernod-annual-2026.pdf",
+          "sha256": "2bfb3a514a5ad002e775d6cc93752cc93be41c08f43e9cab410bddcfff84d925"
+        }
+      ],
+      "ranges": {
+        "letter": {
+          "pdfPages": [
+            4,
+            5
+          ],
+          "characters": 13965
+        },
+        "business": {
+          "pdfPages": [
+            9,
+            30
+          ],
+          "characters": 30794
+        },
+        "risk": {
+          "pdfPages": [
+            280,
+            297
+          ],
+          "characters": 9880
+        },
+        "mdna": {
+          "pdfPages": [
+            301,
+            314
+          ],
+          "characters": 22995
+        },
+        "compensation": {
+          "pdfPages": [
+            73,
+            97
+          ],
+          "characters": 15756
+        },
+        "notes": {
+          "pdfPages": [
+            322,
+            368
+          ],
+          "characters": 13037
+        },
+        "auditor": {
+          "pdfPages": [
+            369,
+            374
+          ],
+          "characters": 7508
+        },
+        "capital": {
+          "pdfPages": [
+            66,
+            70
+          ],
+          "characters": 11510
+        }
+      },
+      "method": "Issuer-hosted full annual PDFs; reviewed table-of-contents page ranges; normal section token caps; no listing/share-unit substitution"
+    }
+  },
+  {
+    "id": "PDS.US",
+    "meta": {
+      "id": "PDS.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1013605/000101360526000014/pds-20251231.htm",
+      "filed": "2026-03-09",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "mdna",
+        "notes",
+        "auditor",
+        "risk"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1013605/000101360526000014/0001013605-26-000014-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1013605/000101360526000014/pds-ex99_1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/PDS.US-exhibit-1.html",
+          "textLength": 257076,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1013605/000101360526000014/pds-ex99_2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/PDS.US-exhibit-2.html",
+          "textLength": 206679,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1013605/000101360526000014/pds-ex99_3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/PDS.US-exhibit-3.html",
+          "textLength": 124011,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "PRNDY.US",
+    "meta": {
+      "id": "PRNDY.US",
+      "kind": "annual-report",
+      "url": "https://www.pernod-ricard.com/system/files/2026-09/PERNOD_RICARD_DEU_2025-2026_EN.pdf",
+      "filed": "2026-09-16",
+      "period": "2026-06-30",
+      "sections": [
+        "letter",
+        "business",
+        "risk",
+        "mdna",
+        "compensation",
+        "notes",
+        "auditor",
+        "capital"
+      ]
+    },
+    "provenance": {
+      "reviewedFullAnnual": true,
+      "source": "https://www.pernod-ricard.com/system/files/2026-09/PERNOD_RICARD_DEU_2025-2026_EN.pdf",
+      "period": "2026-06-30",
+      "documents": [
+        {
+          "url": "https://www.pernod-ricard.com/system/files/2026-09/PERNOD_RICARD_DEU_2025-2026_EN.pdf",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/pernod-annual-2026.pdf",
+          "sha256": "2bfb3a514a5ad002e775d6cc93752cc93be41c08f43e9cab410bddcfff84d925"
+        }
+      ],
+      "ranges": {
+        "letter": {
+          "pdfPages": [
+            4,
+            5
+          ],
+          "characters": 13965
+        },
+        "business": {
+          "pdfPages": [
+            9,
+            30
+          ],
+          "characters": 30794
+        },
+        "risk": {
+          "pdfPages": [
+            280,
+            297
+          ],
+          "characters": 9880
+        },
+        "mdna": {
+          "pdfPages": [
+            301,
+            314
+          ],
+          "characters": 22995
+        },
+        "compensation": {
+          "pdfPages": [
+            73,
+            97
+          ],
+          "characters": 15756
+        },
+        "notes": {
+          "pdfPages": [
+            322,
+            368
+          ],
+          "characters": 13037
+        },
+        "auditor": {
+          "pdfPages": [
+            369,
+            374
+          ],
+          "characters": 7508
+        },
+        "capital": {
+          "pdfPages": [
+            66,
+            70
+          ],
+          "characters": 11510
+        }
+      },
+      "method": "Issuer-hosted full annual PDFs; reviewed table-of-contents page ranges; normal section token caps; no listing/share-unit substitution"
+    }
+  },
+  {
+    "id": "RBGPF.US",
+    "meta": {
+      "id": "RBGPF.US",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/5493003JFSMOJG48V108/2025-12-31/ESEF/GB/0/5493003JFSMOJG48V108-2025-12-31/reports/5493003JFSMOJG48V108-2025-12-31-T01.xhtml",
+      "filed": "2026-04-07",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "mdna",
+        "risk",
+        "compensation",
+        "auditor",
+        "notes"
+      ]
+    },
+    "provenance": {
+      "source": "https://filings.xbrl.org/5493003JFSMOJG48V108/2025-12-31/ESEF/GB/0/5493003JFSMOJG48V108-2025-12-31/reports/5493003JFSMOJG48V108-2025-12-31-T01.xhtml",
+      "lei": "5493003JFSMOJG48V108",
+      "identity": {
+        "listingName": "Reckitt Benckiser Group PLC",
+        "method": "provider legal entity identifier"
+      },
+      "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/5493003JFSMOJG48V108.html",
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "RYCEY.US",
+    "meta": {
+      "id": "RYCEY.US",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/213800EC7997ZBLZJH69/2025-12-31/ESEF/GB/0/213800EC7997ZBLZJH69-2025-12-31/reports/213800EC7997ZBLZJH69-2025-12-31-T01.xhtml",
+      "filed": "2026-03-10",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "mdna",
+        "risk",
+        "compensation",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "source": "https://filings.xbrl.org/213800EC7997ZBLZJH69/2025-12-31/ESEF/GB/0/213800EC7997ZBLZJH69-2025-12-31/reports/213800EC7997ZBLZJH69-2025-12-31-T01.xhtml",
+      "lei": "213800EC7997ZBLZJH69",
+      "identity": {
+        "listingName": "Rolls Royce Holdings plc",
+        "domesticId": "RR.LSE",
+        "domesticName": "Rolls-Royce Holdings PLC",
+        "domesticIsin": "GB00B63H8491",
+        "method": "provider legal entity identifier"
+      },
+      "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/213800EC7997ZBLZJH69.html",
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "SA.US",
+    "meta": {
+      "id": "SA.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1231346/000121390026035021/ea0282731-40f_seabridge.htm",
+      "filed": "2026-03-27",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "auditor",
+        "notes",
+        "mdna"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1231346/000121390026035021/0001213900-26-035021-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1231346/000121390026035021/ea028273101ex99-1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/SA.US-exhibit-1.html",
+          "textLength": 365355,
+          "sections": [
+            "business"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1231346/000121390026035021/ea028273101ex99-2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/SA.US-exhibit-2.html",
+          "textLength": 116586,
+          "sections": [
+            "business",
+            "auditor",
+            "notes"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1231346/000121390026035021/ea028273101ex99-3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/SA.US-exhibit-3.html",
+          "textLength": 116275,
+          "sections": [
+            "business"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "SSPPF.US",
+    "meta": {
+      "id": "SSPPF.US",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/213800QGNIWTXFMENJ24/2025-09-30/ESEF/GB/0/213800QGNIWTXFMENJ24-2025-09-30/reports/213800QGNIWTXFMENJ24-2025-09-30-T01.xhtml",
+      "filed": "2026-02-03",
+      "period": "2025-09-30",
+      "sections": [
+        "business",
+        "mdna",
+        "risk",
+        "letter",
+        "compensation",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "source": "https://filings.xbrl.org/213800QGNIWTXFMENJ24/2025-09-30/ESEF/GB/0/213800QGNIWTXFMENJ24-2025-09-30/reports/213800QGNIWTXFMENJ24-2025-09-30-T01.xhtml",
+      "lei": "213800QGNIWTXFMENJ24",
+      "identity": {
+        "listingName": "SSP Group PLC",
+        "method": "provider legal entity identifier"
+      },
+      "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/213800QGNIWTXFMENJ24.html",
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "STN.US",
+    "meta": {
+      "id": "STN.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1131383/000113138326000007/stn-20251231.htm",
+      "filed": "2026-02-25",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "notes",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1131383/000113138326000007/0001131383-26-000007-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1131383/000113138326000007/ex-991xaif2025.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/STN.US-exhibit-1.html",
+          "textLength": 95541,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1131383/000113138326000007/ex-992xmda2025.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/STN.US-exhibit-2.html",
+          "textLength": 176878,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1131383/000113138326000007/stn-20251231_d2.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/STN.US-exhibit-3.html",
+          "textLength": 159978,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "mdna"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "TAC.US",
+    "meta": {
+      "id": "TAC.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000015/tac-20251231_d2.htm",
+      "filed": "2026-02-27",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "notes",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000015/0001144800-26-000015-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000015/a20251231tacex991aif.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/TAC.US-exhibit-1.html",
+          "textLength": 159076,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000015/a20251231tacex992mda.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/TAC.US-exhibit-2.html",
+          "textLength": 318825,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1144800/000114480026000015/tac-20251231.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/TAC.US-exhibit-3.html",
+          "textLength": 277159,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "TFII.US",
+    "meta": {
+      "id": "TFII.US",
+      "kind": "40-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1588823/000119312526054689/tfii-20251231.htm",
+      "filed": "2026-02-17",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "notes",
+        "auditor",
+        "mdna"
+      ]
+    },
+    "provenance": {
+      "index": "https://www.sec.gov/Archives/edgar/data/1588823/000119312526054689/0001193125-26-054689-index.html",
+      "documents": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1588823/000119312526054689/tfii-ex99_1.htm",
+          "type": "EX-99.1",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/TFII.US-exhibit-1.html",
+          "textLength": 73849,
+          "sections": [
+            "business",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1588823/000119312526054689/tfii-ex99_2.htm",
+          "type": "EX-99.2",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/TFII.US-exhibit-2.html",
+          "textLength": 164722,
+          "sections": [
+            "business",
+            "notes",
+            "auditor",
+            "risk"
+          ]
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1588823/000119312526054689/tfii-ex99_3.htm",
+          "type": "EX-99.3",
+          "raw": "/Users/miki/data/value-cover/held-validation/cover-4/raw/TFII.US-exhibit-3.html",
+          "textLength": 205254,
+          "sections": [
+            "business"
+          ]
+        }
+      ],
+      "reviewedFullAnnual": true
+    }
+  },
+  {
+    "id": "WILLF.US",
+    "meta": {
+      "id": "WILLF.US",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/213800RM6L9LN78BVA56/2025-12-31/ESEF/DK/0/DEMANT-2025-12-31-en/reports/DEMANT-2025-12-31-en.xhtml",
+      "filed": "2026-03-10",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "auditor"
+      ]
+    },
+    "provenance": {
+      "source": "https://filings.xbrl.org/213800RM6L9LN78BVA56/2025-12-31/ESEF/DK/0/DEMANT-2025-12-31-en/reports/DEMANT-2025-12-31-en.xhtml",
+      "lei": "213800RM6L9LN78BVA56",
+      "identity": {
+        "listingName": "Demant A/S",
+        "domesticId": "DEMANT.CO",
+        "domesticName": "Demant A/S",
+        "domesticIsin": "DK0060738599",
+        "method": "reviewed same legal issuer name and domestic listing LEI; filing text only, no substitution of listing financial/share inputs"
+      },
+      "raw": "/Users/miki/data/value-cover/held-validation/cover-5/raw/213800RM6L9LN78BVA56-annual-2025.html",
+      "selection": "Full year ended 2025-12-31; newer 2026-06-30 interim explicitly rejected",
+      "reviewedFullAnnual": true
+    }
+  }
+]

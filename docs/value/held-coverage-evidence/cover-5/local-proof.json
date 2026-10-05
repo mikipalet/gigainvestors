@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-05T00:50:25.876Z",
+  "corpus": "/Users/miki/data/value-cover",
+  "baselineRepo": "/Users/miki/value-corpus/publish-repo",
+  "output": "/Users/miki/data/value-cover/staging/cover-5-final",
+  "baseline": 3860,
+  "additions": 100,
+  "held": 39,
+  "baselineDossierChanges": [],
+  "baselineIndexChanges": [],
+  "baselineQuoteChanges": [],
+  "bindingFailures": [],
+  "missing": [],
+  "unexpected": [],
+  "frozen": 147,
+  "freezeChanges": [],
+  "baselineHashesManifestSha256": "35a8bb7d59a1b18d6a427bfff8eb828b17af05180e4dcd7325dc652193e325d2"
+}

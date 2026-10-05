@@ -1,0 +1,2467 @@
+[
+  {
+    "path": "held-validation/cover-5/AKBLF.US-esef-listing.json",
+    "bytes": 19438,
+    "sha256": "fb94c308ed18c44f495ff8fa357987ffbb858fa11189cf4d21cce7c8058a10d7"
+  },
+  {
+    "path": "held-validation/cover-5/AKBLF.US-interim-rejected.json",
+    "bytes": 238,
+    "sha256": "238a689cee13e89d1f5b5a598a70b08c084e84b2030ef44dde34f0d6f7fd24ec"
+  },
+  {
+    "path": "held-validation/cover-5/CABJF.US-esef-listing.json",
+    "bytes": 7949,
+    "sha256": "ca900ec71bf0662e0b8e4252863820d0af85483de5a297ba3adde4eb257b0910"
+  },
+  {
+    "path": "held-validation/cover-5/CABJF.US-interim-rejected.json",
+    "bytes": 236,
+    "sha256": "750ddd77a6e2825c691b45d5cec792f7888c3f9e6d16ae9d946d12f42afa3dc6"
+  },
+  {
+    "path": "held-validation/cover-5/WILLF.US-esef-listing.json",
+    "bytes": 11959,
+    "sha256": "e4cee7ccf48761e7fa29d0170ba208865a698bd254524d9c72a715c2b92b143f"
+  },
+  {
+    "path": "held-validation/cover-5/WILLF.US-interim-rejected.json",
+    "bytes": 269,
+    "sha256": "d387c0e029954103e974d86351c5370b041ad434a5988f353dfd21358c9c97e7"
+  },
+  {
+    "path": "held-validation/cover-5/analysis-batches.json",
+    "bytes": 1428,
+    "sha256": "d2538833e2d7076a36520f1122638959d630d0165048c793a12b84c5666d5b09"
+  },
+  {
+    "path": "held-validation/cover-5/before-correction/BMA.US.json",
+    "bytes": 314642,
+    "sha256": "fd39b313a17aba85deef1cc7dd9baae6ab43410c66ebe763078097f5cc7b2c76"
+  },
+  {
+    "path": "held-validation/cover-5/before-correction/FSM.US.json",
+    "bytes": 439161,
+    "sha256": "8e4d286b0f99de1df8e0506d5a95640589c43c1b373c23604b2d3a0638a2678a"
+  },
+  {
+    "path": "held-validation/cover-5/before-correction/FWONK.US.json",
+    "bytes": 321943,
+    "sha256": "92276e67ddf459cc41f1bf8363b5b2c8483bc3b60eef4eb280f10f72cda64b31"
+  },
+  {
+    "path": "held-validation/cover-5/before-correction/GDS.US.json",
+    "bytes": 189409,
+    "sha256": "09afcb3081cfe50e5f85b12843a32f3d5761664f5dd53784c94c678dbd8bd820"
+  },
+  {
+    "path": "held-validation/cover-5/before-correction/LOMA.US.json",
+    "bytes": 236842,
+    "sha256": "70ba5415b1f159b54da88863fb4f7c4c0b0940bb8c45b915a07a2b84f68de641"
+  },
+  {
+    "path": "held-validation/cover-5/before-correction/PROF.US.json",
+    "bytes": 244097,
+    "sha256": "03572a5936609f100cbfe07800d7457e085ca7020f6829e891cbaaa76aa9d3cb"
+  },
+  {
+    "path": "held-validation/cover-5/before-correction/RBA.US.json",
+    "bytes": 617426,
+    "sha256": "48742aa0711b67fcd0c1f07a060e8af2196ed5e5969a9758303df613b17bd7b7"
+  },
+  {
+    "path": "held-validation/cover-5/before-correction/ZH.US.json",
+    "bytes": 100952,
+    "sha256": "9818df02921f21c18c3a1733981fcf85fc843fa31b0a58f8455ce3498f51b05a"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ASAIY_US-0-page.png",
+    "bytes": 38980,
+    "sha256": "c92e4236c95c26aa80ae3b97612e20ba960054159b5353b84eeb3b51be244d3f"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ASAIY_US-1-Price_story__Down_44__since_Nov_2022.png",
+    "bytes": 53958,
+    "sha256": "6a65e4551850114b3288f28e457dc8eedc706c29a47fac08413c71963c8a24b5"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ASAIY_US-2-In_depth__.png",
+    "bytes": 163242,
+    "sha256": "9fb0ceb8e202524a014f72eaaa2213fea544a20cc6cb021eabbc0a6491171fd4"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ASAIY_US-3-Method.png",
+    "bytes": 279256,
+    "sha256": "cd4e9a447469b0783eac7e6fa166ba49f499a24b0be249c928d5c87dfc08dbdc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ASAIY_US-4-Search.png",
+    "bytes": 39117,
+    "sha256": "82089f921e7c8ba19cf079ad9377ad5cd33ffccd9d09db65e01c9e59d07e9c1c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ASAIY_US-5-Search_results.png",
+    "bytes": 39247,
+    "sha256": "d9381a301b6dbfe7d19d48dc244e4b6b747656e23432c10d2cf8ef50ecac733c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-0-page.png",
+    "bytes": 166022,
+    "sha256": "a7c89e647ab1c972dab915cf9637457644ae68c76e40728fc0fdb6c8f0c531e6"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-1-Price_story__Down_26__since_Jun_2026___sales__2_7_.png",
+    "bytes": 192843,
+    "sha256": "1d2ae7d1ad47d99bf954ecbd55314cf6c49ce76f2af0e021350946777cff733f"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-10-Search_results.png",
+    "bytes": 139669,
+    "sha256": "822d59f3b407b9d96ffe67c155762c9c8538a9bacb5ccb0e92506123c32711c0"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-2-In_depth__.png",
+    "bytes": 289250,
+    "sha256": "c79b1aef184ad7b976bcc49b933aff70ab0aa26bb471a6983d2d0dcd85a265f8"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-3-Open_Predictable_profits_evidence.png",
+    "bytes": 247674,
+    "sha256": "d68643337f1492e5006910c852741920fe2fd00f515949fed8f55fac8c38ace2"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-4-Open_Lasting_advantage_evidence.png",
+    "bytes": 247062,
+    "sha256": "79ad1da9e217485b31fea762d8a71e601bf17493ede3f7c5d362ef9274b27a1f"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-5-Open_Cash_for_owners_evidence.png",
+    "bytes": 245867,
+    "sha256": "1b8fd96a4388976da58900d6eaed73ed1d63784689bf2595ea8dbd0db3e6a648"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-6-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 319234,
+    "sha256": "5c8d97001b0c31092089fb1e3b137f697a79188970d07231f9e1621460e1bae1"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-7-Open_Honest_profits_evidence.png",
+    "bytes": 254807,
+    "sha256": "773a02f129de7ec540728feace0a065db84445506ad4f27f7010b36cd6b4bdcf"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-8-Method.png",
+    "bytes": 279256,
+    "sha256": "cd4e9a447469b0783eac7e6fa166ba49f499a24b0be249c928d5c87dfc08dbdc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BB_US-9-Search.png",
+    "bytes": 139242,
+    "sha256": "31ebe2b1422f3614e46dd58ef54756786fd7cd83841c6d4a6774968f6e05f626"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-0-page.png",
+    "bytes": 158548,
+    "sha256": "7f5631f1bde35f6357ece5ab691e4ccc8265daf1f465a32a2150082ae6b52b2f"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-1-Price_story__Up_6__since_Oct_2023___sales__4_3_.png",
+    "bytes": 180524,
+    "sha256": "6a8f27c2c35f4e81002954d3ce1d3dba8e3de85f69f7dbafedb2f0c72dc6598c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-10-Search.png",
+    "bytes": 129779,
+    "sha256": "d7ae598d2c0b1a3388cc97f26aec3c1778b3fb83dda8e771940b43c6293b18d9"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-11-Search_results.png",
+    "bytes": 130238,
+    "sha256": "380e7c3a86f56e21679506c57f45dad2b3e8f20041bd8ecd512835f49e4a7d6a"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-2-Open_all_3_holders.png",
+    "bytes": 228163,
+    "sha256": "e5ccd12f1ed9bc5052206cb02e5f524250e125fc59438a6c0868917bfa37a7a1"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-3-In_depth__.png",
+    "bytes": 263609,
+    "sha256": "ab2d0c6cdb23baede328ce57f508efd8ee7a1ce1d675f7474d949f890676ff87"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-4-Open_Predictable_profits_evidence.png",
+    "bytes": 250549,
+    "sha256": "fde29ec7b8c9894e8eda2bb73b00d5bde48bec4f5c6c42d036732b69645381a8"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-5-Open_Lasting_advantage_evidence.png",
+    "bytes": 235062,
+    "sha256": "5c9db3dddfa67c01394d5a77f0a8813d18ec59842a8aa51d2d699662e29c1e77"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-6-Open_Cash_for_owners_evidence.png",
+    "bytes": 249163,
+    "sha256": "2f0ef1b66e89c7cb14034dc1c997a2d6a9fa25be057b449bf130a4dfc7f026db"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-7-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 297045,
+    "sha256": "378cdc3148936905f83a1246f1e7fbfa73ccbb47a0489284eaf679814e404016"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-8-Open_Honest_profits_evidence.png",
+    "bytes": 246210,
+    "sha256": "b1a88ec281849278c0278ff5f975ed77cbfb4c668d478226f226db031a2059c5"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_BLCO_US-9-Method.png",
+    "bytes": 279256,
+    "sha256": "cd4e9a447469b0783eac7e6fa166ba49f499a24b0be249c928d5c87dfc08dbdc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_DGEAF_US-0-page.png",
+    "bytes": 43958,
+    "sha256": "a7c21315022e3f57e52e16bd057128f00626d1f6cbff8e56bfbf768036a87e83"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_DGEAF_US-1-Price_story__Down_60__since_Dec_2021.png",
+    "bytes": 54142,
+    "sha256": "7ce0896722f21207ff4c41e1a5c2bafa05024e386918cee2919773ea01ac6456"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_DGEAF_US-2-In_depth__.png",
+    "bytes": 110647,
+    "sha256": "3b310199b003ce97b0d7c5b0c1369148efeef0bf39094610b4035a5c98772324"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_DGEAF_US-3-Method.png",
+    "bytes": 279256,
+    "sha256": "cd4e9a447469b0783eac7e6fa166ba49f499a24b0be249c928d5c87dfc08dbdc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_DGEAF_US-4-Search.png",
+    "bytes": 43219,
+    "sha256": "12e7e1981700b2ac12aafe7a442b4d1f2c8e1a1f49d0475d46090a64c067e82b"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_DGEAF_US-5-Search_results.png",
+    "bytes": 43394,
+    "sha256": "8f2f4e26bf31b9116dd42537cda4de6f76c7b2083aa344c57b84e83eae4b8907"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-0-page.png",
+    "bytes": 161565,
+    "sha256": "30dac6fc043dddcfe995028bc0d43561690e5d62bc608307efc5c23a6f83c325"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-1-Price_story__Up_179__since_Oct_2023___sales__30_8_.png",
+    "bytes": 181089,
+    "sha256": "14ee5b1725257e10cd23b3a5e66727e63e76e0e41f37f0cc3f9238470234d34f"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-10-Search.png",
+    "bytes": 132676,
+    "sha256": "9d8949255836c3da4a18b407c19d6a9bce3bc5a9db23bbaab0c4593bcfa59e47"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-11-Search_results.png",
+    "bytes": 133032,
+    "sha256": "61a1dac0a7ff5923f9ec1ebb041d9ebe2c8f3b28bf3f700411efa2aaa33dce2d"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-2-Open_all_2_holders.png",
+    "bytes": 208883,
+    "sha256": "8111df628a11680488723d0223fd609965a1733ecb3b658f342c1a8329b45f70"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-3-In_depth__.png",
+    "bytes": 277965,
+    "sha256": "c0edba6f99364b57cfed1e89d8a5aad404eaf7ec58c46d70e125e3f3fa7d2c2f"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-4-Open_Predictable_profits_evidence.png",
+    "bytes": 246821,
+    "sha256": "caa07241e884a8c02d4ec017b762065cd1f22896b89525e122e6dbf20db67371"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-5-Open_Lasting_advantage_evidence.png",
+    "bytes": 238024,
+    "sha256": "5346428b5a919e6ccc6790bf879fd23ed26457c5ee0458dd167603a8242e5e97"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-6-Open_Cash_for_owners_evidence.png",
+    "bytes": 246045,
+    "sha256": "ec037f65c6050af582f94d3dc4fb68a3df8079922364773db38e4890e64983a9"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-7-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 249778,
+    "sha256": "6d70be3779f3ae3979005cc19c905fc67d05d3a0d0a6b60ae3e92fc5869aa6cf"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-8-Open_Honest_profits_evidence.png",
+    "bytes": 244281,
+    "sha256": "1edb1c6d8d8539371a9932fffab7a24e763ae91364e9091d662fcefd8c25e448"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_ERO_US-9-Method.png",
+    "bytes": 279256,
+    "sha256": "cd4e9a447469b0783eac7e6fa166ba49f499a24b0be249c928d5c87dfc08dbdc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-0-page.png",
+    "bytes": 185364,
+    "sha256": "f595a4137d3c4a3d5ddb5490a29648d7fd8628a782390cc6579763fde73a8bc7"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-1-Price_story__Down_29__since_Dec_2025___sales__7_8_.png",
+    "bytes": 208063,
+    "sha256": "442fe02503ac6ece0cc2cf2e62550fef290176657cae8ada260c68b767438b2a"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-10-Search.png",
+    "bytes": 154015,
+    "sha256": "107a40bf305c72e40a18241e52a82388980baa49f3640ac271f8cce80eacbc22"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-11-Search_results.png",
+    "bytes": 154684,
+    "sha256": "b286c801331ed34d9fd9c93a1fca92dcc2c143964f2e19bf26e152ee396329d9"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-2-In_depth__.png",
+    "bytes": 265965,
+    "sha256": "3a6dfa9d04e0dcbbd5117f4475b114ae85ab2417c757ee215173db2a8fd18994"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-3-Open_Predictable_profits_evidence.png",
+    "bytes": 261705,
+    "sha256": "1babc3c00c11609240fa5bd556a9170abb1ce6aa38859ad2dcc371811adc81f0"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-4-Open_Lasting_advantage_evidence.png",
+    "bytes": 259736,
+    "sha256": "60e0c70c13da30b854917485414d9d961d635ac69eb488d87e9b7d5b067b231f"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-5-Open_Cash_for_owners_evidence.png",
+    "bytes": 267345,
+    "sha256": "2643649bdb8bd346bfc1428589c8b79a6c37c907d30ec00e5a87088b22d998af"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-6-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 322206,
+    "sha256": "b8b6513c9a83ef52a52775107e9c5d52375e3dfcfb087ed0a12ef089f3d3d5a9"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-7-Open_Honest_profits_evidence.png",
+    "bytes": 263063,
+    "sha256": "014cc228eab458d6b60863c3e728c45ef540ff457faec2c781659e87e99fe1b3"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-8-Open_valuation.png",
+    "bytes": 245155,
+    "sha256": "c06c4bb4c287f1afbe23fcd70c55705b7059813c3abe83fecc7bde61adaabccc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_LOMA_US-9-Method.png",
+    "bytes": 279256,
+    "sha256": "cd4e9a447469b0783eac7e6fa166ba49f499a24b0be249c928d5c87dfc08dbdc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-0-page.png",
+    "bytes": 164496,
+    "sha256": "0612084a0979e04c7d6a7dbe4ee2610c4296fe353ba9250cbb25892dae67057c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-1-Price_story__Down_83__since_Oct_2021___sales__64_5_.png",
+    "bytes": 182015,
+    "sha256": "b737988a7f4d4cfaef661a84db3801c5c15e000646a34dbd3363dfd2508e263b"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-10-Search_results.png",
+    "bytes": 139246,
+    "sha256": "5039ccd9470b97b81d03ae49e88d6b6d303d085421850cc6dd842118c2977874"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-2-In_depth__.png",
+    "bytes": 284442,
+    "sha256": "3a3517e0eedd95054f0abc140ae3d3a60e42346a1e5cc16deb153c7f7bd43f36"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-3-Open_Predictable_profits_evidence.png",
+    "bytes": 247888,
+    "sha256": "d37cb66e23a64143516fa15e9b7c1a38fa15efa4ccc0e43323adf69c2039f689"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-4-Open_Lasting_advantage_evidence.png",
+    "bytes": 245204,
+    "sha256": "44124107a4aae79e08e604121d846d16b57dad7b04984a16a4353928433e2d38"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-5-Open_Cash_for_owners_evidence.png",
+    "bytes": 247554,
+    "sha256": "084d79086edc3b47bd594e4b4932982ace36f7ab26d701d40f24a81ceec72b7c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-6-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 313613,
+    "sha256": "4018610f7bfc57267dd9928a427bdca3342ac87e0cd06dfacb70bee6667f865c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-7-Open_Honest_profits_evidence.png",
+    "bytes": 242152,
+    "sha256": "cfd8d4f794e62a97c0eeb1a36b54e3d97618e82697bb0d7a8ee425f9cef550b2"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-8-Method.png",
+    "bytes": 279256,
+    "sha256": "cd4e9a447469b0783eac7e6fa166ba49f499a24b0be249c928d5c87dfc08dbdc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_NTPIF_US-9-Search.png",
+    "bytes": 138689,
+    "sha256": "2271921a815ac52b2254737039a72d9f3df1686dc8a79432a431bd9340c6cef6"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RDY_US-0-page.png",
+    "bytes": 46248,
+    "sha256": "cdb6327e132c4374b9d2bef8a3ab3ff4a7b0f96c1037528da4785555ba6cdadd"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RDY_US-1-Price_story__Down_27__since_Aug_2024.png",
+    "bytes": 59403,
+    "sha256": "a123f307982b13f671be00280c380e04cc2a684d97a7e2ba37dd37adb8d28559"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RDY_US-2-In_depth__.png",
+    "bytes": 120633,
+    "sha256": "717972340f5f467b32bed4ee7338828835897f7dcb3f34089c660a0f11d8b44f"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RDY_US-3-Method.png",
+    "bytes": 279256,
+    "sha256": "cd4e9a447469b0783eac7e6fa166ba49f499a24b0be249c928d5c87dfc08dbdc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RDY_US-4-Search.png",
+    "bytes": 45280,
+    "sha256": "c6b6ae73e54d048fd43c774004eb3d3aefd284f1a7ba2eaa41a9995277e678aa"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RDY_US-5-Search_results.png",
+    "bytes": 45490,
+    "sha256": "0dec5905b67202ed856811c59666fc6edfdbd195a5ad4cd5480c99ab091d7ef7"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-0-page.png",
+    "bytes": 153849,
+    "sha256": "6c2c9cdc2af5605ca4015b2cf3308e0b04b91600dd7e447b16a01c246bddb3fe"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-1-Price_story__Down_27__since_Aug_2026___sales__4_7_.png",
+    "bytes": 174103,
+    "sha256": "6347d138d60052d93de0bc07fbcf0c5ecc11e89ea8cebeadeb238845235e0d96"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-10-Search.png",
+    "bytes": 128335,
+    "sha256": "ebb525f34ab7cd8e4b27940bc64154760b19a3cdc8fc75e48820fd3b702fad94"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-11-Search_results.png",
+    "bytes": 128808,
+    "sha256": "8800f46f8592a48bc7c030c130cba6a7ec68ec77313bb61f5a33a1e92fe32ee0"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-2-Open_all_1_holders.png",
+    "bytes": 202434,
+    "sha256": "5a43809c079cc2c341a2086d8925028f2dc7c84ab5828fee39c2302421c8e502"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-3-In_depth__.png",
+    "bytes": 258088,
+    "sha256": "509e6d3bee1b947583e28461b51bc168978cb30d3593a8a386b440de86721f86"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-4-Open_Predictable_profits_evidence.png",
+    "bytes": 243500,
+    "sha256": "57d3cc1aab51c12f620ef071297223e3cd245b0768666bb4f3e6e3d08a25707a"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-5-Open_Lasting_advantage_evidence.png",
+    "bytes": 232957,
+    "sha256": "30917d80d719357faa0fe6b60314a3c50e5828fa3a7cd9e4dac7a3e5bb0e832f"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-6-Open_Cash_for_owners_evidence.png",
+    "bytes": 245307,
+    "sha256": "e5d5967bbed9183ff913ea538f4e739abd349bf7f79c2042a937c16784480f69"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-7-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 306369,
+    "sha256": "233df66d1fde670a504eb14c6cc70ad848af42375fae5a0516af0d2affe92a18"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-8-Open_Honest_profits_evidence.png",
+    "bytes": 241468,
+    "sha256": "a88f427cb0df5a68563bdeb7a717a81043a2b0d59aefa9d9091a9e0398ce35a6"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_RUSHB_US-9-Method.png",
+    "bytes": 279256,
+    "sha256": "cd4e9a447469b0783eac7e6fa166ba49f499a24b0be249c928d5c87dfc08dbdc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_TPHS_US-0-page.png",
+    "bytes": 43797,
+    "sha256": "d74d7bc7bec44418c10d15b5d33e264f792d68fe081a8cd03330a387e23c0996"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_TPHS_US-1-Price_story__Down_99__since_Oct_2021.png",
+    "bytes": 55024,
+    "sha256": "8a40527983fcbf83d94adda73fc10a6927405b73f2f59f0b164b9dba5ead6546"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_TPHS_US-2-In_depth__.png",
+    "bytes": 121359,
+    "sha256": "7c23eac30c70d245861274cd7508408a6bf9d3ed99188eaa3fecd34cf1f9a79e"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_TPHS_US-3-Method.png",
+    "bytes": 279256,
+    "sha256": "cd4e9a447469b0783eac7e6fa166ba49f499a24b0be249c928d5c87dfc08dbdc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_TPHS_US-4-Search.png",
+    "bytes": 43108,
+    "sha256": "a9b812eb9c714d57d78462ad7fc3fb6d16d9645979af7369ca61bb42e8c6ce0e"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/1728x970-_s_TPHS_US-5-Search_results.png",
+    "bytes": 43294,
+    "sha256": "36f41519b822576410d6294ae8295871be608b852052093c53385a84f7b41a14"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ASAIY_US-0-page.png",
+    "bytes": 40423,
+    "sha256": "87a6b17f032bbbcde9be7e5e91d739fad823cda18c56d580446e4e61249a00cc"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ASAIY_US-1-Price_story__Down_44__since_Nov_2022.png",
+    "bytes": 21619,
+    "sha256": "97bf5bb26e84813efcc59ab605c0695a70b44da57a5047500b1f9b61db929e1e"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ASAIY_US-2-More__.png",
+    "bytes": 53714,
+    "sha256": "a1fceb4ceeaecd7eb2c0b2c4e80ca2333789412b9c32a14ba5fc86f10fdfef25"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ASAIY_US-3-Method.png",
+    "bytes": 69042,
+    "sha256": "5a8a592d1d8e4ab1916ed15908f7afdaba33dee172cf6300197d96c2092c9825"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ASAIY_US-4-Search.png",
+    "bytes": 33697,
+    "sha256": "201eb7b20155e3acd100b7396295186ca6fc2b0fd0ef8aef5b927ded24927598"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ASAIY_US-5-Search_results.png",
+    "bytes": 33449,
+    "sha256": "bd6903f3403adee7eb67b955e120ead9e8a8c97605d1591537f7d79c763284a1"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-0-page.png",
+    "bytes": 66677,
+    "sha256": "192de57c8e18552810bdf4510f2af607ecd5ebaa9b8126e84cf29d71619cd6a8"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-1-Price_story__Down_26__since_Jun_2026___sales__2_7_.png",
+    "bytes": 47870,
+    "sha256": "6215601e05e475a93a20c7857f0741847bbbd52ecfbfbd86d9ecc6a6ed19abe5"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-10-Search_results.png",
+    "bytes": 47786,
+    "sha256": "8ccbf92dc9a58d7b1e854d0e20de37b349d463a1bfd81a408fd387247964845c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-2-More__.png",
+    "bytes": 55217,
+    "sha256": "4edd5bc78e1983c9da4c04cc52130e57b5700c2bcddff176081906207a879cd9"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-3-Open_Predictable_profits_evidence.png",
+    "bytes": 86476,
+    "sha256": "6095db53ef02a978d490c65cf237c1650ce5506ba4983faaaaaf6d1a76a77ae5"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-4-Open_Lasting_advantage_evidence.png",
+    "bytes": 81019,
+    "sha256": "a3e982c0dda92448037f9a7a2da6802e9bb4f82a7b1b88b41da5d61fa67185d6"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-5-Open_Cash_for_owners_evidence.png",
+    "bytes": 84214,
+    "sha256": "31ec7701203469d8023a58db537c463f875fa5e6c10361382f253252980e32ab"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-6-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 93054,
+    "sha256": "405230e79638c2b17550a7aa46b4fd5167d1c1768fdea3ee380a58c366edc7e1"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-7-Open_Honest_profits_evidence.png",
+    "bytes": 83993,
+    "sha256": "4c4bc20d5ac020ad3b5adf74c94d6a93ba54cad59da1f8ce9ffe900999560a7b"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-8-Method.png",
+    "bytes": 69042,
+    "sha256": "5a8a592d1d8e4ab1916ed15908f7afdaba33dee172cf6300197d96c2092c9825"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BB_US-9-Search.png",
+    "bytes": 46437,
+    "sha256": "3a39a6f67b9c33ae2dff2235ddcd3700d06d37b788a4d28a3ec0064986983c0a"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-0-page.png",
+    "bytes": 68866,
+    "sha256": "7e7ba69776e6112290d87d519dd995e31aecb1337bbc4fe42651199112128154"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-1-Price_story__Up_6__since_Oct_2023___sales__4_3_.png",
+    "bytes": 45194,
+    "sha256": "e893b0e2552b8a56eeb7a75b3f35d1a018a4f0944b01049c0fa1dc1d993906b5"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-10-Search.png",
+    "bytes": 44729,
+    "sha256": "ccd58246a086e26affd55c44f42287f2df65aa55fb092c29a64eca1ad8c602e9"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-11-Search_results.png",
+    "bytes": 46060,
+    "sha256": "f3fa4747f2dc7b4d0d1033041aeca20bb25444540d7e7b46b1e677653b054327"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-2-Open_all_3_holders.png",
+    "bytes": 62941,
+    "sha256": "7f4b7b518e2c60efd11fad0bf13843f6b19bd1698f0ffad6dfbc5b9088d2770c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-3-More__.png",
+    "bytes": 53796,
+    "sha256": "384ce8cb69a260e6b0ba9cb81777cd1f456efd8f1d839705766e90544557c946"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-4-Open_Predictable_profits_evidence.png",
+    "bytes": 86287,
+    "sha256": "ccb5cef736fb1c902d3f31177b93e6e4fa7fc97a371babe93b007734671f0231"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-5-Open_Lasting_advantage_evidence.png",
+    "bytes": 78478,
+    "sha256": "c01d30254a234ab6dd00a4f3498c4ab8de9451dd89e3280e66934693b2f7f1a8"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-6-Open_Cash_for_owners_evidence.png",
+    "bytes": 86805,
+    "sha256": "1c31f8e25add780423f6222aa37377a4b174ba6a97af0f812f350e90c8400271"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-7-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 88464,
+    "sha256": "40913654b36fa3e830c0b955a033208da4305ac035ea2978205c6dde0a7de43c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-8-Open_Honest_profits_evidence.png",
+    "bytes": 84979,
+    "sha256": "9f60747566ba40b41353fbc00e203e821a6caba434b57f853083aabf4f52c726"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_BLCO_US-9-Method.png",
+    "bytes": 69042,
+    "sha256": "5a8a592d1d8e4ab1916ed15908f7afdaba33dee172cf6300197d96c2092c9825"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_DGEAF_US-0-page.png",
+    "bytes": 50105,
+    "sha256": "835989dfe15d186e1d47fc8500dbdcc41a0628a117755cfb9106ce24fbe04c5d"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_DGEAF_US-1-Price_story__Down_60__since_Dec_2021.png",
+    "bytes": 18824,
+    "sha256": "aa05e1bfa7b016a0e24f22590ab35e464a8424db84f66fda58c3d27884847599"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_DGEAF_US-2-More__.png",
+    "bytes": 48924,
+    "sha256": "07a4a7a34ab11cabddf7dfa259d01100c4ab4ad052da0f7491ba10bc8ac71963"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_DGEAF_US-3-Method.png",
+    "bytes": 69042,
+    "sha256": "5a8a592d1d8e4ab1916ed15908f7afdaba33dee172cf6300197d96c2092c9825"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_DGEAF_US-4-Search.png",
+    "bytes": 39103,
+    "sha256": "4ce35ba050a7893b653d9d76e65ebc3ea8cdf6007b8963925b9b6fd362df2545"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_DGEAF_US-5-Search_results.png",
+    "bytes": 40128,
+    "sha256": "3b4272cc791972652e871a17b708db1e3fe60146a87c8e6738952be7313e381e"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-0-page.png",
+    "bytes": 67759,
+    "sha256": "fe75014060922cc0d8a7da8f321e323225489f4236b730244f352a0930f139cf"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-1-Price_story__Up_179__since_Oct_2023___sales__30_8_.png",
+    "bytes": 47543,
+    "sha256": "88df97e70a770cc9583173938830f53297a1d45b182969f79b88b4f3c0a8d810"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-10-Search.png",
+    "bytes": 44187,
+    "sha256": "9ed64057c1595beaf331cfc67c36a41774928177791b3e1a54c98c8e265eeaf2"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-11-Search_results.png",
+    "bytes": 45928,
+    "sha256": "d505d0ed5257ebdbcc7c558f68813f66a7316be8e6ead488d86868f0f9a589f4"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-2-Open_all_2_holders.png",
+    "bytes": 58557,
+    "sha256": "68f30c8ef7515b886af837001eb67a393475a9de4f5e6ef030bb5020dc117c0c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-3-More__.png",
+    "bytes": 55500,
+    "sha256": "e859c773503eb2f73e69a1f4c121af83a4bd1701e0ac5c4dcd1bfb6dab4bec2c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-4-Open_Predictable_profits_evidence.png",
+    "bytes": 86725,
+    "sha256": "9c7dd80d4115b0b1db1c926a201fcec2b63c5ffbf8d58e3617490e12b9c027bd"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-5-Open_Lasting_advantage_evidence.png",
+    "bytes": 77996,
+    "sha256": "beaa36fbbd9fc81f0e0675382d72deadb7fcb560010077cfc5c951cb20608b90"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-6-Open_Cash_for_owners_evidence.png",
+    "bytes": 87869,
+    "sha256": "3e00c6a4bcf21e4ad9001b7b7f2c969355e46715cf3c356b81b8473257cef1a0"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-7-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 93264,
+    "sha256": "cd5644a581faa68c433091eab6c6544963e3a94bb0fd8e7a0efb78240733c83d"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-8-Open_Honest_profits_evidence.png",
+    "bytes": 89444,
+    "sha256": "d36c89ac5aa30c0fc90add5a517ebedd99de4e2809b014ec959c1f35f139bda9"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_ERO_US-9-Method.png",
+    "bytes": 69042,
+    "sha256": "5a8a592d1d8e4ab1916ed15908f7afdaba33dee172cf6300197d96c2092c9825"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-0-page.png",
+    "bytes": 69882,
+    "sha256": "f0f17dfa5d75b4b347eeb5dd84656960608c5e7700f5d12a244a6365b050614a"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-1-Price_story__Down_29__since_Dec_2025___sales__7_8_.png",
+    "bytes": 55403,
+    "sha256": "7c6b66b8101d799cb86dde1af4530dde7baeb46398ec26c4f4b814e9ff89318e"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-10-Search.png",
+    "bytes": 41544,
+    "sha256": "e38b5ae2a3d947f1ddfba9ed3c5471d07604c76a76144fd98a989042612ac23c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-11-Search_results.png",
+    "bytes": 42140,
+    "sha256": "3f81053875fbee2a190b1c03d49d7d1e913d9d1c1864493f7009b0087463892b"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-2-More__.png",
+    "bytes": 55084,
+    "sha256": "d075a1405bae122e3983420fb17c37050e4d9e981fd0e7b95e76ba8937984f62"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-3-Open_Predictable_profits_evidence.png",
+    "bytes": 78543,
+    "sha256": "080248bdd4a26ecb6b2b7eab961577c069401e120a4be40a2d1e4967fd74ea61"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-4-Open_Lasting_advantage_evidence.png",
+    "bytes": 76983,
+    "sha256": "9d3f8384bdb127227add40d7a98e54dba5186eeece4ee6e5fe74532b0f8992af"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-5-Open_Cash_for_owners_evidence.png",
+    "bytes": 82327,
+    "sha256": "8b794224f7bac66ae10269c7b75536dbbe87a53ecec834a85b4881b9d7908379"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-6-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 91012,
+    "sha256": "7bd775a4ea95c67203f050e8c20034bec237789a07571ace98b6a8b136c48671"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-7-Open_Honest_profits_evidence.png",
+    "bytes": 88198,
+    "sha256": "849b6bb0cbfac09c507357414b95f355c21dbca9d697a145b1546639686d5040"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-8-Open_valuation.png",
+    "bytes": 78941,
+    "sha256": "9d382f1c9fc09aba240e64ffaf81e73430bc12bc5aa69a9cd6a3877431c78f58"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_LOMA_US-9-Method.png",
+    "bytes": 69042,
+    "sha256": "5a8a592d1d8e4ab1916ed15908f7afdaba33dee172cf6300197d96c2092c9825"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-0-page.png",
+    "bytes": 68256,
+    "sha256": "13d66ee270979d1ed1f93b3b5b17e5d60bed3d2313f1513467f6015866b0574c"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-1-Price_story__Down_83__since_Oct_2021___sales__64_5_.png",
+    "bytes": 45174,
+    "sha256": "88a74f625196188ba5117a8bbd7e64810a0d45688ff4df9247ee75276ea80e72"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-10-Search_results.png",
+    "bytes": 48390,
+    "sha256": "3762e9934919afa7b4348727e1bcca68dba263da67f34d4810e3a1b28425695a"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-2-More__.png",
+    "bytes": 57528,
+    "sha256": "4acff18d49cc9e5a8fd422f5b69eae5e9b1dbc1deb9697a94e1bfff13fe2a63a"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-3-Open_Predictable_profits_evidence.png",
+    "bytes": 86203,
+    "sha256": "fd06cc8f89110caa1d6e83e2d64e65153f6624cf809f1654caeaa0b2f2b4418d"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-4-Open_Lasting_advantage_evidence.png",
+    "bytes": 80252,
+    "sha256": "5a47c90743e570c41afc222b0e8a126a65a82f57047210622cd5a05437b58576"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-5-Open_Cash_for_owners_evidence.png",
+    "bytes": 88331,
+    "sha256": "5c40e246c0c111b2019ca2b4e4dd00f298b018af117f12f5c5b777a5ec04a668"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-6-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 91520,
+    "sha256": "2bd2e33275f3cdc28db7125f7eda7facb22ec8d8b6e825684d4a4850c398afde"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-7-Open_Honest_profits_evidence.png",
+    "bytes": 81946,
+    "sha256": "3d4c21c72a9d834844ba01ff69d27bed6c0d66b068aed70c1d5618ab62ae5f29"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-8-Method.png",
+    "bytes": 69042,
+    "sha256": "5a8a592d1d8e4ab1916ed15908f7afdaba33dee172cf6300197d96c2092c9825"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_NTPIF_US-9-Search.png",
+    "bytes": 47036,
+    "sha256": "ba6aca564d9c6ef838489df8bc1b3c500b0fcf7b95cefae1c024704ba6dec0ee"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RDY_US-0-page.png",
+    "bytes": 48832,
+    "sha256": "13f53f711f9d0ab3e7fdd4258c9d282f9b42c7d1b57c868054eb1be3c48b7b05"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RDY_US-1-Price_story__Down_27__since_Aug_2024.png",
+    "bytes": 20198,
+    "sha256": "2c7cda8e81267efdfa7e166bf68f1105d6fe8698b6a4111be557000d56830ae5"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RDY_US-2-More__.png",
+    "bytes": 52432,
+    "sha256": "0d15660e1c92a8ba26d3559724d5863aa5055ddd0cff3484ae320c0411c514a7"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RDY_US-3-Method.png",
+    "bytes": 69042,
+    "sha256": "5a8a592d1d8e4ab1916ed15908f7afdaba33dee172cf6300197d96c2092c9825"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RDY_US-4-Search.png",
+    "bytes": 38648,
+    "sha256": "7d64887b4bf37084db24f6722d8a9c9293b39c4f92a5d2f83bb0524c61663ee7"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RDY_US-5-Search_results.png",
+    "bytes": 39614,
+    "sha256": "92e921899134293f0ee5fe9820cc79f823473dc50ae3039f9d717970f7a1b038"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-0-page.png",
+    "bytes": 64732,
+    "sha256": "11137cddc83c275f78e15537f68306d621b60f69153e745d6e866e3db39d81bd"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-1-Price_story__Down_27__since_Aug_2026___sales__4_7_.png",
+    "bytes": 45692,
+    "sha256": "83c6542756cbf600fdbb46b622fe391af1dda3a69d211f4fd70b122d36f2b18b"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-10-Search.png",
+    "bytes": 45388,
+    "sha256": "2e740fd478b389a2adfd83b84d30a8d99424de022ab2584d3829dd4384cebb78"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-11-Search_results.png",
+    "bytes": 47188,
+    "sha256": "be805acbed3ea1afc07903444abc74b3419dbeb6c18ae6ecff7e09823e04d749"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-2-Open_all_1_holders.png",
+    "bytes": 53212,
+    "sha256": "6a3bb510fbac9dd8c7ff5b8ef2c255cea14f41ee83a671f47a0e4e4843bcfc81"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-3-More__.png",
+    "bytes": 52939,
+    "sha256": "ae99c7edc0839a26d2980640b2a7f0498ea63f1475dd19b5c06e3801e39bb826"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-4-Open_Predictable_profits_evidence.png",
+    "bytes": 85653,
+    "sha256": "a65357b8f01d6c0b22173a166172a974bf3cce40ac697300f7f1c696d62e16b0"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-5-Open_Lasting_advantage_evidence.png",
+    "bytes": 78364,
+    "sha256": "b04d80e71f7e466cfaaaf606260f3dd3b847ffb43d723c4e5a5c17ccc495e570"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-6-Open_Cash_for_owners_evidence.png",
+    "bytes": 85432,
+    "sha256": "f43b7ce28e27ce57b2ccfe666c467417e318be75aecc2c8507fb61d7636d6da6"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-7-Open_Value_created_per__1_kept_evidence.png",
+    "bytes": 93649,
+    "sha256": "37ffb5e5ca9bbc775bc97e4e6e2465ca2772b93339000d16b519d0560dc3cbd0"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-8-Open_Honest_profits_evidence.png",
+    "bytes": 92340,
+    "sha256": "13bc2161d842e2d3f3658d423c9aebb01df5aa9735554b4934310a04e68d9596"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_RUSHB_US-9-Method.png",
+    "bytes": 69042,
+    "sha256": "5a8a592d1d8e4ab1916ed15908f7afdaba33dee172cf6300197d96c2092c9825"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_TPHS_US-0-page.png",
+    "bytes": 49213,
+    "sha256": "dca3b75dea97dcfa9e38c092a7b00f33c3107435eea78833f9ad8fabd5043597"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_TPHS_US-1-Price_story__Down_99__since_Oct_2021.png",
+    "bytes": 19103,
+    "sha256": "03d0608b193624905eaf3583cd260182571d4aa2a7b53f3383a169132810a174"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_TPHS_US-2-More__.png",
+    "bytes": 51007,
+    "sha256": "f05c7a9810490ae6081c797c64f34d21f4236cf4a4cc7d1e3bacce5ba1eefaba"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_TPHS_US-3-Method.png",
+    "bytes": 69042,
+    "sha256": "5a8a592d1d8e4ab1916ed15908f7afdaba33dee172cf6300197d96c2092c9825"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_TPHS_US-4-Search.png",
+    "bytes": 38550,
+    "sha256": "5cd857d7177ff16e2932e53ca9fc1a73d9a70321430ed324a17d46f15d8dae92"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/390x844-_s_TPHS_US-5-Search_results.png",
+    "bytes": 39247,
+    "sha256": "08d0659cb033c12fb252fa80f75266d0269c80af9a6d70c0b5595b6cef7d23c2"
+  },
+  {
+    "path": "held-validation/cover-5/browser-final/report.json",
+    "bytes": 76935,
+    "sha256": "7769c71f2620020d8098289e24d7d7f8ac253b4000416933178e9c4ea50802b2"
+  },
+  {
+    "path": "held-validation/cover-5/browser-sample.json",
+    "bytes": 1655,
+    "sha256": "73b2afcf43c9ec20462be6fb9660bb85e9c7773aee1727c87dbfeff26ba3e98b"
+  },
+  {
+    "path": "held-validation/cover-5/continuation.json",
+    "bytes": 873,
+    "sha256": "fa16b2997718944c8e9a68a953741c59fc8e8c79c49d68781cd1e6c0c2afab48"
+  },
+  {
+    "path": "held-validation/cover-5/correct-sample.mts",
+    "bytes": 4643,
+    "sha256": "b59027fe51f45b50313635b7970fc0d05f1e56d2a29ab6c8ab6106de661f4584"
+  },
+  {
+    "path": "held-validation/cover-5/demant-filings.json",
+    "bytes": 12483,
+    "sha256": "e16c6a6affac646b3c2d50cb2a4464ce2d36b50eadef83b1c261cf9c659625d2"
+  },
+  {
+    "path": "held-validation/cover-5/esef-recovery.json",
+    "bytes": 7140,
+    "sha256": "7671910c9d3d0fd470d9a4b4779f3d32e416756ba185b46be61af8924edea984"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-esef/AKBLF.US.json",
+    "bytes": 101,
+    "sha256": "d780cb80427ba97dd55fc9c5640a04e92914e754aba28fdd6025fdc332989bb1"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-esef/CABJF.US.json",
+    "bytes": 101,
+    "sha256": "30fa489d7d1405e162e8b94957c8067974d219a4e674c75ef4b7fb77dfd1017c"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-esef/ECTXF.US.json",
+    "bytes": 101,
+    "sha256": "a51a78feb7238d2f6445ea2d290300950681be939955540fe5f47ea74b8c0c90"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-esef/ERFSF.US.json",
+    "bytes": 101,
+    "sha256": "ed22afaa5fbc3260553b8040ec9fd358d6c6f5fa895bc66e5e76bfe666db2348"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-esef/HKHGF.US.json",
+    "bytes": 101,
+    "sha256": "aad83c46301ded1f416a9b5852b2dd61b16565fb23c3599296824fc05bacbef1"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-esef/LRLCF.US.json",
+    "bytes": 101,
+    "sha256": "b12ed0d77ea61fc033fec8f44c36a465730147bda5bd6f99cf2f245d5da7f692"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-esef/RBGPF.US.json",
+    "bytes": 101,
+    "sha256": "06b548395a028e4e9c69ae8b65c21693be392c7f9002d947cc8a4ff64ca5c56f"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-esef/RYCEY.US.json",
+    "bytes": 101,
+    "sha256": "10399f2ac9a83d8d9376dedbf2f5c7e009ebfb5683a073336129ee69a9d4e372"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-esef/SSPPF.US.json",
+    "bytes": 101,
+    "sha256": "117a7cbc8541d7053713f2c96cfeaa7f944666786978382e6deb797783b2bf04"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-esef/WILLF.US.json",
+    "bytes": 101,
+    "sha256": "99e2414a873d03888d0da02e5f969bfbe5af8673fd78699b7f6e750af07ed7c3"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-pdf/NSRGF.US.json",
+    "bytes": 101,
+    "sha256": "b410c95257744836b3d780d773852659f423cb7c12eeb1f43ec2d1d1d3df890a"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-pdf/NSRGY.US.json",
+    "bytes": 101,
+    "sha256": "333e3e767e5667d88360b4bada121e61de5c946dfa28f534cd62bc2d37207684"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-pdf/PDRDF.US.json",
+    "bytes": 231,
+    "sha256": "e011784c28a67f762644ac1bb8f704621798b237a8ebe6f7d471d3840d044f86"
+  },
+  {
+    "path": "held-validation/cover-5/filing-before-pdf/PRNDY.US.json",
+    "bytes": 231,
+    "sha256": "1d651400bc0363b18aa4e482643fc946b92e3aebb21930bde19099fc948d78ea"
+  },
+  {
+    "path": "held-validation/cover-5/filing-retry-after.json",
+    "bytes": 25511,
+    "sha256": "b45a9d103101c6a37787926a039ce14797af869cd0f45aa6b8f0d9fa89ba2bcc"
+  },
+  {
+    "path": "held-validation/cover-5/filing-retry-before.json",
+    "bytes": 4748,
+    "sha256": "07d964ad4b9188f6f2f84d198251d168e5c83478ece91ebb3e0c88d6b6fd4f3e"
+  },
+  {
+    "path": "held-validation/cover-5/final-local-proof.json",
+    "bytes": 321344,
+    "sha256": "8208d6fe7fc801870d82bfbc1b0579a6881778fcc8bdd56da540233422d923f0"
+  },
+  {
+    "path": "held-validation/cover-5/final-usage.json",
+    "bytes": 302,
+    "sha256": "35a821556a65453803f6ab5abcb447b233217bec230457b90a39eb44db19574e"
+  },
+  {
+    "path": "held-validation/cover-5/final-usage.mts",
+    "bytes": 1027,
+    "sha256": "4c49aa66617e4f5a9085add67d5fdb3da1be3647399bff9e795c8c077e4f953f"
+  },
+  {
+    "path": "held-validation/cover-5/finish-inputs.mts",
+    "bytes": 3190,
+    "sha256": "9bd62312fd992be8cf076f2114cea72e55d9901a99e168e080130c16b95bbee3"
+  },
+  {
+    "path": "held-validation/cover-5/fix-interim.mts",
+    "bytes": 2000,
+    "sha256": "c5cc6c03d5e608b8895c3f489c7bf178be681bcb79547bf8994a105b86ea11db"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/ABVX.US.json",
+    "bytes": 178734,
+    "sha256": "e998b3d7b51fc1d569543b691284e8bff29fcdbb6b37956e8f5580086e294fe5"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/AGI.US.json",
+    "bytes": 551757,
+    "sha256": "01ba448ecf08fe4b40f2403b5857a41f910f54150e03ac65e5d3c384b8dc1acb"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/AKBLF.US.json",
+    "bytes": 311813,
+    "sha256": "fb1be5f3fedb11cdde5746f0660dde147c71aeb5e82f995fb1a56ed0c1182e81"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/AQN.US.json",
+    "bytes": 609024,
+    "sha256": "ef9f633e30a2ddec8882215a2a0ebb30a4d818d7a61a541d2ccbabd057b0d95a"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/ASAIY.US.json",
+    "bytes": 56246,
+    "sha256": "e7226923146cbb102f2a6d4b5eba4a315a61a0f003398fcef9c9925d2c9ce753"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BATRK.US.json",
+    "bytes": 251304,
+    "sha256": "67d21b175c8170c14186d45ccbea5848dfc8c1c8b144abebc72bd2c4c2603339"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BAYRY.US.json",
+    "bytes": 550239,
+    "sha256": "2ebcee03bbe06fe1e34255223b4e0576e5edb1920a3980d69359a03c0658d4ea"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BB.US.json",
+    "bytes": 609521,
+    "sha256": "44dc495e6807e0c4265c9ecb22f4458931d6b583b8efb4b8a3df7671fcda3c7c"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BELFB.US.json",
+    "bytes": 756238,
+    "sha256": "e28571eb3de1f817a41cd68f5d63855f053ac1e5ccf56982dcbf8f101bcb33f3"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BH.US.json",
+    "bytes": 724683,
+    "sha256": "3949da85d6a641643b2f088121053b9a8c40f3c451dfa4fcc4d11eedb50dabe0"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BHC.US.json",
+    "bytes": 669325,
+    "sha256": "70f1dae9c223d30a3593c9d685823635cd5260f6c42e1feb4f761fc635b784ce"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BIO.US.json",
+    "bytes": 757844,
+    "sha256": "f405c093a6846f75d43b4fefeb52011e2dc9dffd7277121bd14f663592b45052"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BLCO.US.json",
+    "bytes": 135220,
+    "sha256": "56ed0a53f03534101769ed9a42188834a7af64f5ef796517b4920211cda10c5b"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BMA.US.json",
+    "bytes": 314642,
+    "sha256": "fd39b313a17aba85deef1cc7dd9baae6ab43410c66ebe763078097f5cc7b2c76"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BMM.US.json",
+    "bytes": 35343,
+    "sha256": "884568ee7298e4d96b75c219f898a14a3a997006343e3282e8266cbb8beb9379"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BTAI.US.json",
+    "bytes": 202218,
+    "sha256": "75fdd1584bcd550e22fe872538451993a92afcac720d8deb1470e9b6a9c46ec6"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BTE.US.json",
+    "bytes": 648752,
+    "sha256": "601015081aaf5771583c633947e9b2f279b6dc79e29e543ed64a8fa655a65564"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BTG.US.json",
+    "bytes": 400672,
+    "sha256": "1c9a6f5c52cbe33d0067be25ab380b6eb2b0ef1df42907d7a9cc9800264296ab"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BUDFF.US.json",
+    "bytes": 296218,
+    "sha256": "bbc513ceddccf8101918cebdc6d5ebc7075f2baa194c8df7341c7e4c638a0ebe"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/BZ.US.json",
+    "bytes": 138477,
+    "sha256": "b0f7b01faa0dfefde4607bd1732c5f3d2598c3e922bdbd8104361ec84b4c9553"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/CABJF.US.json",
+    "bytes": 24791,
+    "sha256": "46c1e2a3b92be35d6f27237421995fdb9f868d4150025807ffffcbb2bcb1eaf4"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/CCU.US.json",
+    "bytes": 592203,
+    "sha256": "25903859617736e0cbf9fd6388faefca0793e17f9fb2c0cf8f8820502c94e08d"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/CENTA.US.json",
+    "bytes": 701799,
+    "sha256": "0f5481412169645e2c832a4eec5e9e89e9057c1825976780872353819a337607"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/CFRHF.US.json",
+    "bytes": 67598,
+    "sha256": "77f817d5db3d9cfe8f60f71aaad63a93ec26e91241e727f484c42027cac2ea55"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/CFRUY.US.json",
+    "bytes": 273869,
+    "sha256": "8dc3b78566b954469f1a917bafce565ca322e6f7d53f56af93b0e20819686776"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/CGAU.US.json",
+    "bytes": 440715,
+    "sha256": "8e7f1cfededc3b8ad8af85217a013c884c37d2410d630a43af24a50af0dfc22e"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/CIGI.US.json",
+    "bytes": 678836,
+    "sha256": "c7bfa2be702f97db70da9cc874fa74ce6c5c7f825e12e3f2b23200842ea7d3af"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/CNSWF.US.json",
+    "bytes": 476306,
+    "sha256": "39ca4c69d42fc52e46c6c344c32baa981444543bfcd5aaac06ac0e2f70289275"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/COCXF.US.json",
+    "bytes": 18306,
+    "sha256": "b4ee13694ce1cdeb7eb0ce11099ce89bb58bac8703103cfbb25eac0af0e3df05"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/DCOM.US.json",
+    "bytes": 635663,
+    "sha256": "5a30cd158ce87455fa57f3e05fe6814437c5db67efaba824b8dbea18eef5683f"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/DGEAF.US.json",
+    "bytes": 213356,
+    "sha256": "f9b4d41ebae9047696989d3dd6dd42d91f48911da04bc23a10e856eade6d9577"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/DSGX.US.json",
+    "bytes": 611894,
+    "sha256": "d8f9c43ceb5f6c27f4994ac6259033c744efb0357333d010aaf564b096ba0cfb"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/DVCMY.US.json",
+    "bytes": 6344,
+    "sha256": "6665ce335a92132cd6ae0c8d987331d42a51c2e019d379e337dfab52f0f3aa6d"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/DVDCF.US.json",
+    "bytes": 24470,
+    "sha256": "8c0146d5c2a0654f2a12af124549b747d01d1701eb6872947293334553fd8e5d"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/ECTXF.US.json",
+    "bytes": 102874,
+    "sha256": "c05b7d64eb10ef38af391ad2cb3db12a2da0f3ce0cff49e0bba62b68e183eeff"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/EFXT.US.json",
+    "bytes": 275708,
+    "sha256": "44bcde13e02ece73144361d1ccaa5be7668cbfb06c8363c54b2bda3e73fde214"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/EGO.US.json",
+    "bytes": 654763,
+    "sha256": "0701ef108ce946407e5e2cb45bf443a5da5da5ac22d3d3f76fbd044dd93e8a0c"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/EQX.US.json",
+    "bytes": 346154,
+    "sha256": "ba82c5455f0a095eae8b1692a1d5e8697dfb7c7dcc623eb7db5d52b24b4d3c1b"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/ERFSF.US.json",
+    "bytes": 6377,
+    "sha256": "8ae501be522c00c00f54b26a550fc464b4ebaafc86693beba00e782b9ca3c92f"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/ERO.US.json",
+    "bytes": 205829,
+    "sha256": "abe7b91bd028ebfa34d1549311787a04504c9e4481404ec026c346c71d679555"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/EU.US.json",
+    "bytes": 217716,
+    "sha256": "54f2510fcbc8359fde581e32cfb0e594eb9de2bc8eabf7cb0d2eb04b58222aaa"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/FBAK.US.json",
+    "bytes": 212969,
+    "sha256": "6edaf86dee73c100291a388225499e37d9d36a30a09d98b438922e27146f3921"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/FLMNF.US.json",
+    "bytes": 188451,
+    "sha256": "cd146ab23fdf14ac883762f88cfccdf2de453fe8fa57bdd65d0a91047419095c"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/FLUIF.US.json",
+    "bytes": 121880,
+    "sha256": "f11e2fde868e758f81b44680603f9c42d6341a582f4a1ed035b40ea88c01bf91"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/FRFHF.US.json",
+    "bytes": 661140,
+    "sha256": "28808bad9bcc5228dde2d0b583e1962f613a27fcd18b8da4c7fade6ebf98a3de"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/FSM.US.json",
+    "bytes": 439161,
+    "sha256": "8e4d286b0f99de1df8e0506d5a95640589c43c1b373c23604b2d3a0638a2678a"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/FWONK.US.json",
+    "bytes": 321943,
+    "sha256": "92276e67ddf459cc41f1bf8363b5b2c8483bc3b60eef4eb280f10f72cda64b31"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/GDS.US.json",
+    "bytes": 189409,
+    "sha256": "09afcb3081cfe50e5f85b12843a32f3d5761664f5dd53784c94c678dbd8bd820"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/GFI.US.json",
+    "bytes": 512344,
+    "sha256": "b91c38876cf6f1f95a3d901461b0cd1640292f06a7b76c6fd0f19679dca35b67"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/GFL.US.json",
+    "bytes": 172766,
+    "sha256": "0a17cc445db0d4701ccf4832be08f5b8ab5a84452d9c3f34cc28a9f03703732a"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/GHM.US.json",
+    "bytes": 752889,
+    "sha256": "46bbd89e65b805eb39bb1f37b23d52fe1fb41949d56bb105835e2e1a573b6d7c"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/GOOS.US.json",
+    "bytes": 254873,
+    "sha256": "de3a00504edb6525608b431458051ae5335ac36d184391ef504b812ff2b355c6"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/GSK.US.json",
+    "bytes": 535624,
+    "sha256": "77e8dde99c788028aa77d2bacf92db9caaa22874ad4ee48b02aaf0ae9e4c70ef"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/GTN.US.json",
+    "bytes": 725009,
+    "sha256": "bbff2a49e2ce59c644e55a86e2677f03ddb74b3c7713698bc0317e774dee6b95"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/HEINY.US.json",
+    "bytes": 192753,
+    "sha256": "ef06a5f5590338f914637a7feeee3ff8aa37a0dab67fddb57e1abb2b53dcda10"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/HINKF.US.json",
+    "bytes": 120402,
+    "sha256": "022caa4588f9be246335c542b3b3ddcf47a3cc649baa0e062fc686f5e92cb121"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/HKHGF.US.json",
+    "bytes": 170049,
+    "sha256": "53b06c008146c40c594cb6285b8e298499e23fa95cadd74eeb9143f8a30f9d41"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/HKHHF.US.json",
+    "bytes": 118918,
+    "sha256": "bd332f056a5577760c248f1bd355b3b28a2b96f0e19ff461d8247b9a44f9932d"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/HKHHY.US.json",
+    "bytes": 119118,
+    "sha256": "034db52fa053a5262c2725c8e833b59d4f19e0ffe957318f115ce5a95d492ee5"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/HVT.US.json",
+    "bytes": 748388,
+    "sha256": "a5c7cfcfa3ce7696d02cb4d0f652029501d40119c3b5b7fa528f54618c960db4"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/IAG.US.json",
+    "bytes": 619134,
+    "sha256": "cbed9d7def7bc9290a9c63940e22bcadefcfdb8a85fb1e4bf22310d912e9968d"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/IDWM.US.json",
+    "bytes": 197812,
+    "sha256": "744b09fbea9a3f71ab1e6835792b58803a79e8cf10ed2bc6ad0572f74af6e1e6"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/KGEI.US.json",
+    "bytes": 123034,
+    "sha256": "df1ced0ee0f9a0ee4f77a6c205d29591eba8e4cb1f83e415106a81697abd245f"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/KNCRF.US.json",
+    "bytes": 168971,
+    "sha256": "6fe4c54f7d8164fa529eb4778f3ff63587b936933537921108b7c5df99bef6c7"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/LBTYK.US.json",
+    "bytes": 514834,
+    "sha256": "f51b17819d8f5b348475ff75de4628f37d10e79becb8ce93676d300fc983ca3b"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/LILAK.US.json",
+    "bytes": 271351,
+    "sha256": "3bc15e03e2b5d098a82e03d99ad48c2966c3eccecc97dd079069bbf4b2b7f66f"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/LLYVK.US.json",
+    "bytes": 70507,
+    "sha256": "4af0b0fb96cdacbc7969525117705accb9e22b8e163762bf26e86ae54c846dad"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/LOMA.US.json",
+    "bytes": 236842,
+    "sha256": "70ba5415b1f159b54da88863fb4f7c4c0b0940bb8c45b915a07a2b84f68de641"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/LRLCF.US.json",
+    "bytes": 24755,
+    "sha256": "6e92577362c3335df5fc5e48c728ac2daab54e4c5d85cddf375f98177e810d1c"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/LZAGY.US.json",
+    "bytes": 131540,
+    "sha256": "78ffabea3906d76f75e384ea37f1f9be1ecddde7caf67e644bf1473affa9b7cd"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/MEOH.US.json",
+    "bytes": 669152,
+    "sha256": "11f5b41022c2dda0e80d321aba148e1ae66b8a3da0db70c66039eed51c10d63c"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/MINE.US.json",
+    "bytes": 106793,
+    "sha256": "fbed5793650eab5f45d38e8dbdf9b7ba71150cb854a309525f3376f5f6f055c5"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/MTRBF.US.json",
+    "bytes": 23098,
+    "sha256": "f6e9446cca8ace70ca7b26409925f94ecbd57f5e3e8f45fea0ed55fef2e9f1a8"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/NAK.US.json",
+    "bytes": 423503,
+    "sha256": "01959ab9013b20aea6ef999366c2bd443a1ebc93f140968946db55c046fe8640"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/NG.US.json",
+    "bytes": 627833,
+    "sha256": "cd61dfae64606a8edcccdd03b1087d1927057a730bde7398665b943e460c780b"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/NICE.US.json",
+    "bytes": 613864,
+    "sha256": "f9574b2e887d8cdfa39028d0387b52a9067b7f3eee579fa41daff2dd5081d508"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/NSRGF.US.json",
+    "bytes": 61289,
+    "sha256": "0e1f1a920cca07fb24312300ac1f0d3d4e154ffeb4dc91ca2a42e433669d4864"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/NSRGY.US.json",
+    "bytes": 61290,
+    "sha256": "1b98fac1bdb015658e7c0321d430be210709b82bab64635698f61aedc5b3aaab"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/NTPIF.US.json",
+    "bytes": 205827,
+    "sha256": "ead66448563ab3b337f0be76b78d54d8f41b633e5756dec4cfbef401ae361ee3"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/NWSA.US.json",
+    "bytes": 338578,
+    "sha256": "5d680ba3bd144ca64e26068ae6b955f32163d970bde0d57a3ced4c73d3bc307c"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/NXE.US.json",
+    "bytes": 306437,
+    "sha256": "a3779bd41265b3bdcf6fb968cb5fef279d7d452291b0185675a495e909848f11"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/OGC.US.json",
+    "bytes": 50475,
+    "sha256": "10b9e7209cb89301772a8d037e605385dd969eaaf39458e7b0607746c50a99b8"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/PAAS.US.json",
+    "bytes": 623987,
+    "sha256": "65a8b82c92691de6a8b9df76b89cb61da13004c55835a725301eb2466f7473b0"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/PAM.US.json",
+    "bytes": 325091,
+    "sha256": "bda0aceb64dc720dfce5fa611c8610858fa45e7ec691966875410c6dfa3d6503"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/PDRDF.US.json",
+    "bytes": 18635,
+    "sha256": "cc2c8e588d510ac951ed33813e7dce70036d00031ad8ca1ca99bf93e67b658e9"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/PDS.US.json",
+    "bytes": 665299,
+    "sha256": "a6902a3460e3b59f9fb115d5b7612b460351d078c941edd44f3f9e0657a20a6f"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/PEYUF.US.json",
+    "bytes": 457153,
+    "sha256": "af705ef3701e236029b12c5d237d53e722f484d06f8be41a815f848d9dfd575d"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/PHJMF.US.json",
+    "bytes": 227754,
+    "sha256": "6ebbbe61f2b6ad110504200c8ae637cab563fd611029c1357c107a61aaad8aa4"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/PIFYF.US.json",
+    "bytes": 315795,
+    "sha256": "0fcad3cc043b15b95aa5973785454b9fb1c250d194cf909f60fe063a84e37920"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/PRNDY.US.json",
+    "bytes": 18710,
+    "sha256": "2544a3ad3229a6059d649f70fa443c35de30a6ec35e0f228465c2af054949765"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/PROF.US.json",
+    "bytes": 244097,
+    "sha256": "03572a5936609f100cbfe07800d7457e085ca7020f6829e891cbaaa76aa9d3cb"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/PUIGF.US.json",
+    "bytes": 28237,
+    "sha256": "92e88dd7943b1254d03a9bef563f5c6fdf4b7ec41984e21def3a048263b4ac90"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/QXO.US.json",
+    "bytes": 359439,
+    "sha256": "4d57507bc48289c33ba2136fe6e2bba44cd54e8bfc882f37813eeae37bc40403"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/RBA.US.json",
+    "bytes": 617426,
+    "sha256": "48742aa0711b67fcd0c1f07a060e8af2196ed5e5969a9758303df613b17bd7b7"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/RBGPF.US.json",
+    "bytes": 12360,
+    "sha256": "5b0d766b1d2b88c0ba761312884fe5a62f70200fcbc5de1f38beb1184bc7b099"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/RDY.US.json",
+    "bytes": 411951,
+    "sha256": "fb52c6b651e72136a960fc54f542b8f44181a2df61646a62058f3a845c763016"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/RTLLF.US.json",
+    "bytes": 260262,
+    "sha256": "22918ace09a081fb163dac6e5cb43066d065ed9e44b8b7686cddea3b2adb72b4"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/RUSHB.US.json",
+    "bytes": 641502,
+    "sha256": "c6e521ce9b93d4dfd59f603a15eb87fc6cf7042e43f0d303e42472beaf695586"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/RYCEY.US.json",
+    "bytes": 179310,
+    "sha256": "c3c338ca0d25de097d8c30a0373ddf4ed9ad1f70fe5a85e4bdb0e2928f088712"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/SA.US.json",
+    "bytes": 524142,
+    "sha256": "28a2fb7796462658d19e6239f962dafd54db8c115a12da047408018a57d8b061"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/SSPPF.US.json",
+    "bytes": 18665,
+    "sha256": "42fac04500b456873ec208adfbf4d9cca7e1a319cccea1d9d676da35660c91e2"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/STN.US.json",
+    "bytes": 476563,
+    "sha256": "b67bc908ee080023b18a1f96d4c1c8666b8d73f48d352ca85e93edc5e326669d"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/TAC.US.json",
+    "bytes": 649292,
+    "sha256": "8c4921745851438c7cfe38ac34503b029b0a07455bf576a917c67fada1e8684c"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/TAP.US.json",
+    "bytes": 772839,
+    "sha256": "e97909fc612fb7101c66b4813695ae30b679bdfe2f6b4d465cce8d9dce8e6262"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/TEO.US.json",
+    "bytes": 584840,
+    "sha256": "89245bc207cef4d6d68de33ae5feaadbfe7ee4f878420d303cc1629968c35c01"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/TFII.US.json",
+    "bytes": 592309,
+    "sha256": "3bb08e04802ef25ece605564a7ecb7b2979c665881df988f57549d46db566071"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/TFIN.US.json",
+    "bytes": 265933,
+    "sha256": "4a2ec3534a8ec0d89b7af6dce28547cd62c0ee5a2b4a4c6ba8acac8087c9d65f"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/TGS.US.json",
+    "bytes": 575871,
+    "sha256": "347f9bf0b50df7765fe33fc2a409f366f6c5e2050e676948a5b1af7d24ebfc51"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/TPHS.US.json",
+    "bytes": 692815,
+    "sha256": "cab5e9b150f76ff15a64236da83e7ac281600f22e3f6176131176d6a1cbac896"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/TRMLF.US.json",
+    "bytes": 279850,
+    "sha256": "20217a1e499851f58aa8734b357629901c3093227096e08feaceb00683bc749a"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/TV.US.json",
+    "bytes": 543009,
+    "sha256": "efa5bf2c247e3a6b57732ba6e230065d03b653390d231b533d1125dc8c85cde1"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/UAA.US.json",
+    "bytes": 480538,
+    "sha256": "0109df84a8fbbd2725d5b46b48609494659decb30125bd959022bacaf7be0bbe"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/UHAL.US.json",
+    "bytes": 661130,
+    "sha256": "b876f75f8be595cd1d3846fe9868a7ccd7c0eab249d864844d823d722aa8ee47"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/WILLF.US.json",
+    "bytes": 6565,
+    "sha256": "d01fd220c864f7e8e5f61c38b6f33152954dda2ca409b20edf5112914485f607"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/WRLC.US.json",
+    "bytes": 203,
+    "sha256": "ec11774d7f856352665770c60faaa236cbdb547ee5243899917663a6968d3ae1"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/WSO.US.json",
+    "bytes": 761761,
+    "sha256": "9875f4ba5cfd83dfb6ccd5fba7f172c34576cb07c7f4286a550540e0e72fd948"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/ZG.US.json",
+    "bytes": 363005,
+    "sha256": "e0d8426708eac87f52e72235d8791e95201de593b2c53ae8bd3cfb017de34f6d"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/ZH.US.json",
+    "bytes": 100952,
+    "sha256": "9818df02921f21c18c3a1733981fcf85fc843fa31b0a58f8455ce3498f51b05a"
+  },
+  {
+    "path": "held-validation/cover-5/fundamentals-before-source-review/ZLDSF.US.json",
+    "bytes": 161519,
+    "sha256": "b72759ef1975156c667af553d41d47745da6f863a185ff0760f9942c03e0ddee"
+  },
+  {
+    "path": "held-validation/cover-5/input-completion.json",
+    "bytes": 12509,
+    "sha256": "a9691fb68dcb5bece88582791d1518b49fc8fad5877db6fdb6ce04232bd77c6a"
+  },
+  {
+    "path": "held-validation/cover-5/install-pdf-annuals.mts",
+    "bytes": 3410,
+    "sha256": "9f800ebe03a8d06dc8a67f6436d8f4342cb56662e4efa73817b9548648204e38"
+  },
+  {
+    "path": "held-validation/cover-5/interim-corrections.json",
+    "bytes": 719,
+    "sha256": "cc0ada96a278a03eacb10eb1d4e4510e5066bbcc883f8921a2185d3a53e1e61d"
+  },
+  {
+    "path": "held-validation/cover-5/jev-results.json",
+    "bytes": 5690,
+    "sha256": "5b4257b817ade1adca2187c1d607c87e330601b4545c5e46ee0879e75da9a494"
+  },
+  {
+    "path": "held-validation/cover-5/live-archive-proof.json",
+    "bytes": 181,
+    "sha256": "ea30c7f8d7e2d63f662670800d108011d3e9a91acdff9da789211c36ab113e72"
+  },
+  {
+    "path": "held-validation/cover-5/manual-input-holds.json",
+    "bytes": 429,
+    "sha256": "70d1bac5b3968e76a9cf4c1b1736f0b70415bc30d771a48c8ad13dbc69145078"
+  },
+  {
+    "path": "held-validation/cover-5/pdf-recovery.json",
+    "bytes": 2412,
+    "sha256": "76d159a135afa143fa32cf497d080adce7b2d5a76c962ae1f61908ec95c43a58"
+  },
+  {
+    "path": "held-validation/cover-5/raw/213800EC7997ZBLZJH69.html",
+    "bytes": 33490804,
+    "sha256": "1ddcdc54406bc3fd5383d477d32ae6cc62a4605f472dc9f1697c0acdae7301a9"
+  },
+  {
+    "path": "held-validation/cover-5/raw/213800QGNIWTXFMENJ24.html",
+    "bytes": 22672846,
+    "sha256": "fd6b132d38bfa5da20f2b99e3a1e1f6680f4ff1d540dbc802919ed010e935ca7"
+  },
+  {
+    "path": "held-validation/cover-5/raw/213800RM6L9LN78BVA56-annual-2025.html",
+    "bytes": 40191405,
+    "sha256": "6ca712a02c04a2a12bbc466dcd7667d9ef9a7adccc7131a2270079e9a1e3e07d"
+  },
+  {
+    "path": "held-validation/cover-5/raw/213800RM6L9LN78BVA56.html",
+    "bytes": 3545550,
+    "sha256": "ac84640a9b91ea8a385af6dd65a5e282373a08de7e46f19fece03b0f3cf55a24"
+  },
+  {
+    "path": "held-validation/cover-5/raw/213800XCHYNRPAYGXW28.html",
+    "bytes": 18687654,
+    "sha256": "0c6ca9060d6fb2de1be8f47b675237c3e07657353d6db6fbc2453b363a5af3ba"
+  },
+  {
+    "path": "held-validation/cover-5/raw/254900KI62Q46ZWD8084.html",
+    "bytes": 24006919,
+    "sha256": "bf3bac7fd9603cbe2e89139f9358e7ebbfceef8783c3d443db078bd6928ce339"
+  },
+  {
+    "path": "held-validation/cover-5/raw/5299001O0WJQYB5GYZ19-annual-2025.html",
+    "bytes": 27450031,
+    "sha256": "30821ad3e6a2d51b6f29d6e3c46d50647214d74b55a659cda188b9810617d25a"
+  },
+  {
+    "path": "held-validation/cover-5/raw/5299001O0WJQYB5GYZ19.html",
+    "bytes": 4930442,
+    "sha256": "84d32f41f5a9771d6e91b6b270d512aae05965c84c18e6875066441a29c38485"
+  },
+  {
+    "path": "held-validation/cover-5/raw/529900JEHFM47DYY3S57.html",
+    "bytes": 39365519,
+    "sha256": "8d08b08c10e1c0004bcec4c76288b577cd1e62b98089043f8779c252245a1a77"
+  },
+  {
+    "path": "held-validation/cover-5/raw/529900JI1GG6F7RKVI53.html",
+    "bytes": 37693910,
+    "sha256": "ff36942e8c8f6fbfb594cc2051cb8b7c3eea2647c6c835ae8b575472868d996a"
+  },
+  {
+    "path": "held-validation/cover-5/raw/529900SGCREUZCZ7P020-annual-2025.html",
+    "bytes": 36831435,
+    "sha256": "d9300b898cbf1f75c8390ee0e9ddda151cde34ae90c8aa3393d4285f0895de5b"
+  },
+  {
+    "path": "held-validation/cover-5/raw/529900SGCREUZCZ7P020.html",
+    "bytes": 3331439,
+    "sha256": "112f9d36eba94f97b31ea802a01bb36b73a91cd2936b9409014ceba5cdb99557"
+  },
+  {
+    "path": "held-validation/cover-5/raw/5493003JFSMOJG48V108.html",
+    "bytes": 22797747,
+    "sha256": "b89e100d26b7133822f403cff813c6dc1aa4dc0f347fcb33df983b8fe1a27718"
+  },
+  {
+    "path": "held-validation/cover-5/raw/724500K5PTPSST86UQ23.html",
+    "bytes": 57644020,
+    "sha256": "647d8cac5bffe7f996961094be7b40a20cc7de589fa05b16936ef7e74365e498"
+  },
+  {
+    "path": "held-validation/cover-5/raw/issuer-pdf-sources.json",
+    "bytes": 376,
+    "sha256": "fc61752574564b4a981958d02c1d5b4179bc6a5b9255b37673b30880eba10b2c"
+  },
+  {
+    "path": "held-validation/cover-5/raw/nestle-financials.pdf",
+    "bytes": 3671551,
+    "sha256": "04f3599884c75233cd9ab888fe139280994129d0ed5489013353b3eb415acad3"
+  },
+  {
+    "path": "held-validation/cover-5/raw/nestle-financials.txt",
+    "bytes": 755051,
+    "sha256": "92f378102afaff5199341698c52fffc39e8e91d84cdc59d7d680b9a8bf43f4e5"
+  },
+  {
+    "path": "held-validation/cover-5/raw/nestle-review.pdf",
+    "bytes": 10319848,
+    "sha256": "b4692b61b0275eecab67aa767bc96afa595342243329bdb637f6efd1ca988361"
+  },
+  {
+    "path": "held-validation/cover-5/raw/nestle-review.txt",
+    "bytes": 204227,
+    "sha256": "6c0117bed72bccd5598dc8a2e6514e92a98f4daa32185ac7e7cd3df68b8e250a"
+  },
+  {
+    "path": "held-validation/cover-5/raw/pernod-annual-2026.pdf",
+    "bytes": 15168361,
+    "sha256": "2bfb3a514a5ad002e775d6cc93752cc93be41c08f43e9cab410bddcfff84d925"
+  },
+  {
+    "path": "held-validation/cover-5/raw/pernod-annual-2026.txt",
+    "bytes": 2520200,
+    "sha256": "4bdb72e5fb75896a0e7ba2daef372a0458ee50f940e96a73cc3f25bfe9e7a448"
+  },
+  {
+    "path": "held-validation/cover-5/raw/pernod-annual.pdf",
+    "bytes": 13379661,
+    "sha256": "f6b12e861a122ea893051fa1b127f8b37fef07feab8f5053c7d1a7b6af0dde3a"
+  },
+  {
+    "path": "held-validation/cover-5/raw/pernod-annual.txt",
+    "bytes": 2720746,
+    "sha256": "ef8d73553eb8f26ccec80ffbf4f1421ae6b28ceeede9de204b92c5ded961eaf3"
+  },
+  {
+    "path": "held-validation/cover-5/raw/pernod-links.html",
+    "bytes": 232294,
+    "sha256": "28cb3d2dc80b5302ee4e62aea870d8d6d30f004e338b77bd4f74d651e3bef52f"
+  },
+  {
+    "path": "held-validation/cover-5/read-sa.mts",
+    "bytes": 397,
+    "sha256": "748553937bdd75cc02670e9aed4ab5ea7cc8af9c084e538e9ffe4e4cd262646c"
+  },
+  {
+    "path": "held-validation/cover-5/recover-esef.mts",
+    "bytes": 3225,
+    "sha256": "8bef4b35a6b34dfe979e83269ec2764a176d5949acbb1258edb390b1b3927dda"
+  },
+  {
+    "path": "held-validation/cover-5/release-before-broad.json",
+    "bytes": 183242,
+    "sha256": "032b70e07e00328966f7f64303ac3a72d3271da5434c474d48c27860cf6a5969"
+  },
+  {
+    "path": "held-validation/cover-5/release-before-final-broad.json",
+    "bytes": 183501,
+    "sha256": "a746aa8f0c321b576eeae59c2fee260ca772960f74b914ef2cf44a6deab6f9ed"
+  },
+  {
+    "path": "held-validation/cover-5/source-bases.json",
+    "bytes": 7045,
+    "sha256": "91e45735d040ee4b6c82231ce8664c0aa6d1adc217318eb94b81456e4e8cb77c"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/AKBLF.US.json",
+    "bytes": 2602,
+    "sha256": "29723880d5021d07c65d25c59e82fed1f1146d0b65c265614177703ef12aa6d9"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/BLCO.US.json",
+    "bytes": 2470,
+    "sha256": "f32e571f2ed772b69fe169c2aa7d301c31a5a7bce8c56b55e71adaba67625dbc"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/BMA.US.json",
+    "bytes": 3618,
+    "sha256": "f9ddaf7c337ec76b95276a9696ad824d049771063665e19d1f9873fad5e5f440"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/BTAI.US.json",
+    "bytes": 2469,
+    "sha256": "20aef603368b0d01b8f6ac5d18fcdd997e53b15bd37ca53452ed0219739cb0c6"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/CABJF.US.json",
+    "bytes": 2713,
+    "sha256": "ab62be1e8fbd356e3e5e23c2be19f3f4ff0a326cb55ea18dc7b3c57cacfdfd35"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/FSM.US.json",
+    "bytes": 2526,
+    "sha256": "a86bf0dd7c6bd0e943a85c43244b01a632cc8c9580b6df73bb017016cfe9c901"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/FWONK.US.json",
+    "bytes": 2836,
+    "sha256": "17d4eb43a0d56b237ff703be2944a5b75320c3c9e1534c3317ded4a2a06fa9b8"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/GDS.US.json",
+    "bytes": 2638,
+    "sha256": "743b5aca45524d118a52e7b0e1bdbd78d834d0fbde5e257950a856da1d9d4fdf"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/LBTYK.US.json",
+    "bytes": 2461,
+    "sha256": "ee66624a69c9dd34705c1db840910ca07b0bf873530b46cb6eff2ec7f873851f"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/LOMA.US.json",
+    "bytes": 2593,
+    "sha256": "c6190d6b194ae2c90c5e593c5967a70d9dda6ef917f466dea736a56751b663fb"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/LRLCF.US.json",
+    "bytes": 2657,
+    "sha256": "beb1f88119a303c56de26f1aecc0b56336af33b191c959319416917480e47aa9"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/NG.US.json",
+    "bytes": 2391,
+    "sha256": "8061da8e42ccef94d8d4dbdf93c09d5baf201f3efa1a8a811105224801ddde5b"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/PDS.US.json",
+    "bytes": 2362,
+    "sha256": "f5dfa68f81a2c4d4a7f73cf6725ee9048a3511f031399ec0715eaff453bc1099"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/PROF.US.json",
+    "bytes": 2619,
+    "sha256": "a534e1e39e8604f43e2253988a4a9b343d1f93e0cde6a118075eef8565edcb43"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/QXO.US.json",
+    "bytes": 2462,
+    "sha256": "cf3cc43ce10c3df884e95296d7a75adc4a1db4c4e6b4686e021773712a98aef9"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/RBA.US.json",
+    "bytes": 2607,
+    "sha256": "e4f64c7cf7b9e8158d51b4362d5e9fee51f93417f1616bbc313da1f6be26d71e"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/SA.US.json",
+    "bytes": 2648,
+    "sha256": "bdba4fcc403c09b6d6b8160c5922c5be22e21bc595ac5ce77cf98c73c1ad5e93"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/TFIN.US.json",
+    "bytes": 3129,
+    "sha256": "ba508d0fb13fb87ce9825ff49f3e37ba92219b041f5344ae299ac4cb1d448139"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/ZG.US.json",
+    "bytes": 2454,
+    "sha256": "22960fd7192807d1dc7f191d927c8c67085f4f1c68edbbfa52304bd77938254a"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/ZH.US.json",
+    "bytes": 2872,
+    "sha256": "1b4f091d07b82890b30103af42e7f2e1482cd755a6e12405cb42750913950f54"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/first-pass.json",
+    "bytes": 44057,
+    "sha256": "e7d554dcfeff2f5f24a9eedf6c65bac06e77195f16991a4a226bf8cff03a866b"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/AKBLF.US-annual.html",
+    "bytes": 36831435,
+    "sha256": "d9300b898cbf1f75c8390ee0e9ddda151cde34ae90c8aa3393d4285f0895de5b"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/AKBLF.US-annual.txt",
+    "bytes": 444372,
+    "sha256": "ae72ffe11e47b9505ec4110a56903f9c7be394de244a3c8b398b8624c1c2e359"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/AKBLF.US-yahoo.json",
+    "bytes": 1559,
+    "sha256": "d55cb84769a535945f0e383654ab0b77cd223385146fb0487cb338d7c3793463"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BLCO.US-annual.html",
+    "bytes": 3876791,
+    "sha256": "522c5223302f2e29b8b76cd743ee5d6c686c8a897b5fb146b6e2472f758d97ec"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BLCO.US-annual.txt",
+    "bytes": 762382,
+    "sha256": "cef5993d44382e1e88ca58284209fef6426740a7d61e798aa83dbb374ec141db"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BLCO.US-sec.json",
+    "bytes": 1003798,
+    "sha256": "90950aba16986300b7f3ba91a9fa6c33feaf53eee64c39a292b20ca4e5ad199c"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BLCO.US-yahoo.json",
+    "bytes": 1753,
+    "sha256": "c7552b19b4bce53ba8931a7ffc1d92bae9f265c1ee89bed802876b78d1204b6a"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BMA.US-annual.html",
+    "bytes": 11221251,
+    "sha256": "489072a3322efe64313456338dc182b841c7219c3df31d799b58e6473e515548"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BMA.US-annual.txt",
+    "bytes": 1504544,
+    "sha256": "4e11b4782de7c5d609eb9c6c55e7fd15cd5a979b50eb71c461ca925fb349dba2"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BMA.US-sec.json",
+    "bytes": 378311,
+    "sha256": "bb6e38a1a842b1c6d3eff15ff5bcad5508928953aa24217076440666e75caa88"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BMA.US-yahoo.json",
+    "bytes": 1731,
+    "sha256": "57469aee8987829bf1e748c00741408ee01bca0cc1b5955df3c0bf86eea41eb8"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BTAI.US-annual.html",
+    "bytes": 4254724,
+    "sha256": "1b3be5719fc75883ae78f8efe7508b0f2c0343c327abeceab7e0eac5a22afe11"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BTAI.US-annual.txt",
+    "bytes": 891615,
+    "sha256": "6e553015542210f198da6879ab26dcc8eca36d27dbd73679f580e69d81d4c046"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BTAI.US-sec.json",
+    "bytes": 1058678,
+    "sha256": "68ba8a3156dd6d4108cb8671f9086ef69ab3f5f533adf2fb1b8198d2196763b6"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/BTAI.US-yahoo.json",
+    "bytes": 1788,
+    "sha256": "d91100ffa14d9aaf63a6146b16352fcc54cfc34ac34ebf2d10986384018bfbbf"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/CABJF.US-annual.html",
+    "bytes": 27450031,
+    "sha256": "30821ad3e6a2d51b6f29d6e3c46d50647214d74b55a659cda188b9810617d25a"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/CABJF.US-annual.txt",
+    "bytes": 790637,
+    "sha256": "2142589d4882f3254d7a3142dbac3e9a6c030a4d4c6dd074da9bba873b792121"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/CABJF.US-yahoo.json",
+    "bytes": 1755,
+    "sha256": "9779dc15d02aca8edcbd7c04322b15055b823d6decba06878e9fe54bd31115ec"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/FSM.US-annual.html",
+    "bytes": 454411,
+    "sha256": "3b53a5a848f8045061d6224cc0b50d33499b1b7f5725e62e9472aba10b46501f"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/FSM.US-annual.txt",
+    "bytes": 17733,
+    "sha256": "672a468b30de57c372da1653d82a2adfd1e1890670c006fe1ac85c327ca13db1"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/FSM.US-sec.json",
+    "bytes": 431391,
+    "sha256": "3f8d7002622c4495ad25ccec272c7b1c43114e5d85591cbb74f0b62bf7aa0df1"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/FSM.US-yahoo.json",
+    "bytes": 1758,
+    "sha256": "1cf56507a20cb892b7b7714d2e3266b2c52aa52e1713aa85acf19e3f2aa7a93e"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/FWONK.US-annual.html",
+    "bytes": 4184333,
+    "sha256": "cfab647bae0592c3a3907a49dad14dcbd2f15f1de7bcc8873f955ed2f297f6a8"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/FWONK.US-annual.txt",
+    "bytes": 414408,
+    "sha256": "712e630602c8a2730d3eb12425ea10573f8ac7f7db002c93431f1975557420d4"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/FWONK.US-sec.json",
+    "bytes": 2493961,
+    "sha256": "855aed0705d5900ce6cb3fed90c1b43969cc7941c70b64f2210c81f75192141b"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/FWONK.US-yahoo.json",
+    "bytes": 1776,
+    "sha256": "02cc400cafbaf3d68e4072c6d4444ed62730ed79bc11d3951fdcc3c48beb467b"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/GDS.US-annual.html",
+    "bytes": 6921789,
+    "sha256": "a11f6076b825b7f1b5f4f9b6150bc392c7d8efda7c44659453c5021a9f8507f0"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/GDS.US-annual.txt",
+    "bytes": 1319179,
+    "sha256": "aad48440a5e73db55cb28af7752ffcc996482f3f89507eac7f005997eef3713b"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/GDS.US-sec.json",
+    "bytes": 1172239,
+    "sha256": "0ec09cbeb8e9b393a16e3a5bd90e7f5b6f921513bc65c8f07cda0f33bcf6ee9f"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/GDS.US-yahoo.json",
+    "bytes": 1788,
+    "sha256": "1d06acb5cd6e1f872a890eae4b52b708360e586ffb85888dfd169b6f6d0b2c49"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LBTYK.US-annual.html",
+    "bytes": 4636385,
+    "sha256": "203633cdba389e7b40a0f9559990734f74475a2fe4e5e4c640092fa7b5878540"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LBTYK.US-annual.txt",
+    "bytes": 618774,
+    "sha256": "48b9319589308453518aae9c96f016bff06b726224f85303b07d1eb68d77f25e"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LBTYK.US-sec.json",
+    "bytes": 3867827,
+    "sha256": "fbbfde9d55a73022833c84c59763d2e2d349f6dee15629ad5a62eb3fb9e837af"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LBTYK.US-yahoo.json",
+    "bytes": 1723,
+    "sha256": "cc1f02dd2dbb88fe1abe5759217aebc554808facfe02c73df4401fdb56a36e8e"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LOMA.US-annual.html",
+    "bytes": 3977249,
+    "sha256": "958867b6ea3384d430135a31f92043730a34d519c7fd42be940f29ac6701239c"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LOMA.US-annual.txt",
+    "bytes": 818947,
+    "sha256": "0ed950169291629b74279953c0b2860015a873bc8a928369312a6f029551df2a"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LOMA.US-sec.json",
+    "bytes": 525130,
+    "sha256": "85a74d54942e8e6b45959eb75bd2c25f628d4e280fba3f41d039a9dcb730234a"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LOMA.US-yahoo.json",
+    "bytes": 1807,
+    "sha256": "7a2a8a3b722bdd7c16225a34cd622d9ec578717ba1163245c18bebc99cf0df3f"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LRLCF.US-annual.html",
+    "bytes": 37693910,
+    "sha256": "ff36942e8c8f6fbfb594cc2051cb8b7c3eea2647c6c835ae8b575472868d996a"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LRLCF.US-annual.txt",
+    "bytes": 1836752,
+    "sha256": "4493bfa7face61e70e4b852084c0bd7866a1b081a611672f65b509d1d3a32c85"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/LRLCF.US-yahoo.json",
+    "bytes": 1650,
+    "sha256": "538061057a33f9674f95574f895b007afc53299d2304e075afd3abc613fb207a"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/NG.US-annual.html",
+    "bytes": 2436051,
+    "sha256": "f40068a5f661a20f14e02d8f716f77ebd1c19be9f4db064c566be53b512c0c5d"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/NG.US-annual.txt",
+    "bytes": 397663,
+    "sha256": "717495e85479b9a3d0deb621da9571c53e223241c2dc9272026a7c7d495d218f"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/NG.US-sec.json",
+    "bytes": 2155059,
+    "sha256": "103419f2926c4c8675ead9413bfbb68389a7e44cdb15aff59744986200492620"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/NG.US-yahoo.json",
+    "bytes": 1744,
+    "sha256": "a5dfe4dd68f4ddb043737f3db34bc1c88da0fe1f179d14b5964b498351b414f0"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/PDS.US-annual.html",
+    "bytes": 359481,
+    "sha256": "de0c8d6de781657cf1c667362ea972695db149b4e4d4bb25ebb950e4d098de06"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/PDS.US-annual.txt",
+    "bytes": 11011,
+    "sha256": "3ab14d88bf097d912f97b43dd29d5000095b1905ab03041001ee9b85cf14da0f"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/PDS.US-sec.json",
+    "bytes": 374148,
+    "sha256": "e3db7a6665f9ad7a124a395cafca470d8b98896e66f5ffc29a78544b6327e73a"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/PDS.US-yahoo.json",
+    "bytes": 1765,
+    "sha256": "a2280e659c29e4e10b74631aff90480ea8aa5a2ba8afb1c197477ba844c18709"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/PROF.US-annual.html",
+    "bytes": 3042860,
+    "sha256": "33bff5634b0a7b570cad72c2522896fda3f2ee7b65455bcf7f41897b22597523"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/PROF.US-annual.txt",
+    "bytes": 561270,
+    "sha256": "ea0c46815e576439048bf2649dbd2141bc21df7749a25008bafe3ad7cd918c0c"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/PROF.US-sec.json",
+    "bytes": 552420,
+    "sha256": "1d82ff2482eb114aefc036d9b0d2309acf88fd5cea0431276eac20d6a940484a"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/PROF.US-yahoo.json",
+    "bytes": 1742,
+    "sha256": "5a5479d283c6a129577de90580f5b4bcde3274045f765eb0df0cc0128b33a3fa"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/QXO.US-annual.html",
+    "bytes": 1704584,
+    "sha256": "7b57bc15d7244e5b38afab178b6963f1cd251be3dad28e46bdf8f3999d2d620d"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/QXO.US-annual.txt",
+    "bytes": 303237,
+    "sha256": "abbad896c4ffdf0bbe51e3660c64e487e80b2091c79faa457c5cb5ef33172cd1"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/QXO.US-sec.json",
+    "bytes": 2833693,
+    "sha256": "a92d61159d62e183bd9ee5c286f73f5f58b875093262978f1c2654300af26080"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/QXO.US-yahoo.json",
+    "bytes": 1760,
+    "sha256": "5a1c3404cd539ca801cc6f9197caa962586d388452e15eb4d9832a3df756261b"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/RBA.US-annual.html",
+    "bytes": 2536920,
+    "sha256": "a76d86db39d261d13ccd7dc69203dfe43a5f258f03e314f0d77660fe4b7c1a29"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/RBA.US-annual.txt",
+    "bytes": 364691,
+    "sha256": "ea639b05bc12c874a5a7364b7cac84babf2bf80eb4a5333fc43b89da541dc36a"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/RBA.US-sec.json",
+    "bytes": 2653003,
+    "sha256": "f76191d9c53e4907e4b86674d11004cf1d496eb3dec1af158c05fa52df654fa4"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/RBA.US-yahoo.json",
+    "bytes": 1741,
+    "sha256": "d23c48c3a999130b38371ea22ab42f38e1db72cba7f1f2fc354097842ec460c6"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/SA.US-annual.html",
+    "bytes": 441485,
+    "sha256": "10b4de4b538d603a3c83f9d567a44a9cd7d17153a9c70339b863490343d63990"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/SA.US-annual.txt",
+    "bytes": 38521,
+    "sha256": "009ecfbd1d4401edec7af0991ccbc4714e8e2c39cd3073c4cf4ab534b8957f49"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/SA.US-exhibit-1.txt",
+    "bytes": 367499,
+    "sha256": "401a136a44d430ee0e31680e59686aa3858e7caa8efe1edbac233b637d3c54ba"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/SA.US-exhibit-2.txt",
+    "bytes": 117058,
+    "sha256": "3de414a87e28dc97b7be4e1ea5b4fc0c79aee2c0f2e0a1d0520f921b5540fbf2"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/SA.US-exhibit-3.txt",
+    "bytes": 116877,
+    "sha256": "4d622c0a8cc8921ac8b072d0379c5551a6f62384a18e812d7b7b9cf862842db1"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/SA.US-sec.json",
+    "bytes": 394737,
+    "sha256": "0fb605a47aac1ced6d059937df5f783a621364d3da57b13afa3711f529ee39dc"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/SA.US-yahoo.json",
+    "bytes": 1726,
+    "sha256": "49612d69f36cdede163392a3fa09f3a1c56e2b2981125cdc0bd375b339240306"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/TFIN.US-annual.html",
+    "bytes": 6882184,
+    "sha256": "58c47f213d74f17a710e94b4fa1572f58de9cb746656c8e08d74b0f5303f0019"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/TFIN.US-annual.txt",
+    "bytes": 696069,
+    "sha256": "d067b1454f75d878079d399dbabfeeb9f47742b0a5052ae20c193327fd23ce0d"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/TFIN.US-sec.json",
+    "bytes": 3971768,
+    "sha256": "8b4e59be19a6a07d37606c60ce0eeb1b7439972ceb473a73c123bdf5cc2242aa"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/TFIN.US-yahoo.json",
+    "bytes": 1773,
+    "sha256": "2839b38ba2ed7c73332b3a7bd604d9f96245f580ce0e5a34b30b85308bdd7ccd"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/ZG.US-annual.html",
+    "bytes": 2007220,
+    "sha256": "7f0d6122dd6a37f267ceb3baeb18d45b63e2d9cf57d072a4172cc10a906100c0"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/ZG.US-annual.txt",
+    "bytes": 447206,
+    "sha256": "6d5fa77e24ada81a904cde57c7b6fbd52eda1715c7d103b00b3fc2fff0ae3906"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/ZG.US-sec.json",
+    "bytes": 2357895,
+    "sha256": "5a011904b9f29fa3a720c9d36f44298c95f3094ebfaab67baf7e89a919afc509"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/ZG.US-yahoo.json",
+    "bytes": 1742,
+    "sha256": "a554158c4d12a67242eb67a77447a85fa86543711fdce655d95991ec68622486"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/ZH.US-annual.html",
+    "bytes": 5214347,
+    "sha256": "2fad77f057474b7ddad961ad603d7e038ca7c40939f6e260cc0f04751de28c2c"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/ZH.US-annual.txt",
+    "bytes": 898603,
+    "sha256": "5a03e2c73fa5296fc3bc2cc82a8ca91faa666088f07a2493e3261c8b371bd866"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/ZH.US-sec.json",
+    "bytes": 431113,
+    "sha256": "1047921350eca7c29346f0eb71683004a2eadd402a0d0dac5b78197cea4a22b6"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/raw/ZH.US-yahoo.json",
+    "bytes": 1743,
+    "sha256": "549e02a866bdb18b0ad1bffff179628a816cfa70dd0fcff91cc974c314b16007"
+  },
+  {
+    "path": "held-validation/cover-5/source-check/second-source.json",
+    "bytes": 56404,
+    "sha256": "0ba0e3b25cb3fd91bc0f072dab7e20e803f90bdb3214e39a25af656df2d23357"
+  },
+  {
+    "path": "held-validation/cover-5/source-corrections-final.json",
+    "bytes": 20265,
+    "sha256": "ecabaf1ed7c41dbb306ba7b61be587520603b8baeb1c10ffe050c2f22388e3b3"
+  },
+  {
+    "path": "held-validation/cover-5/source-corrections.json",
+    "bytes": 15817,
+    "sha256": "be7a4e71e074536d7c1939afe5da3cda3a211456a7f110e2652f4ad439f5768b"
+  },
+  {
+    "path": "held-validation/cover-5/source-prefetch.mts",
+    "bytes": 1428,
+    "sha256": "e13b3aa0b87b6d805182b8b9cb941ddd7c13131942e535505aaeabc00c012315"
+  },
+  {
+    "path": "held-validation/cover-5/source-replay-proof.json",
+    "bytes": 130,
+    "sha256": "a3509b33ea61e5cd47e811bdbf77835f97ad0564ea7c66a1c1e85d649db64242"
+  },
+  {
+    "path": "held-validation/cover-5/source-sample.json",
+    "bytes": 1894,
+    "sha256": "4979ce5e1c6d2c0250c894d8a47783647800c8131ababee12c8fc936d2dbbcae"
+  },
+  {
+    "path": "held-validation/cover-5/source-text.mts",
+    "bytes": 513,
+    "sha256": "1d55e2942d827d8b527060a067c12a545e722726f708ad886dac826da9764e08"
+  }
+]

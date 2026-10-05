@@ -1,0 +1,147 @@
+{
+  "states": 188,
+  "companies": 10,
+  "viewportRuns": 20,
+  "viewports": [
+    [
+      1728,
+      970
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "statesWithFindings": 104,
+  "blockingFindings": [],
+  "whitespaceFindings": 150,
+  "disposition": "Existing controller R2: whitespace only is nonblocking; gate thresholds unchanged; raw gate exit 1 retained",
+  "rawReport": "/Users/miki/data/value-cover/held-validation/cover-5/browser-final/report.json",
+  "rawReportSha256": "7769c71f2620020d8098289e24d7d7f8ac253b4000416933178e9c4ea50802b2",
+  "runs": [
+    {
+      "path": "/s/BLCO.US",
+      "width": 1728,
+      "height": 970,
+      "states": 12
+    },
+    {
+      "path": "/s/RDY.US",
+      "width": 1728,
+      "height": 970,
+      "states": 6
+    },
+    {
+      "path": "/s/ERO.US",
+      "width": 1728,
+      "height": 970,
+      "states": 12
+    },
+    {
+      "path": "/s/NTPIF.US",
+      "width": 1728,
+      "height": 970,
+      "states": 11
+    },
+    {
+      "path": "/s/ASAIY.US",
+      "width": 1728,
+      "height": 970,
+      "states": 6
+    },
+    {
+      "path": "/s/DGEAF.US",
+      "width": 1728,
+      "height": 970,
+      "states": 6
+    },
+    {
+      "path": "/s/LOMA.US",
+      "width": 1728,
+      "height": 970,
+      "states": 12
+    },
+    {
+      "path": "/s/RUSHB.US",
+      "width": 1728,
+      "height": 970,
+      "states": 12
+    },
+    {
+      "path": "/s/BB.US",
+      "width": 1728,
+      "height": 970,
+      "states": 11
+    },
+    {
+      "path": "/s/TPHS.US",
+      "width": 1728,
+      "height": 970,
+      "states": 6
+    },
+    {
+      "path": "/s/BLCO.US",
+      "width": 390,
+      "height": 844,
+      "states": 12
+    },
+    {
+      "path": "/s/RDY.US",
+      "width": 390,
+      "height": 844,
+      "states": 6
+    },
+    {
+      "path": "/s/ERO.US",
+      "width": 390,
+      "height": 844,
+      "states": 12
+    },
+    {
+      "path": "/s/NTPIF.US",
+      "width": 390,
+      "height": 844,
+      "states": 11
+    },
+    {
+      "path": "/s/ASAIY.US",
+      "width": 390,
+      "height": 844,
+      "states": 6
+    },
+    {
+      "path": "/s/DGEAF.US",
+      "width": 390,
+      "height": 844,
+      "states": 6
+    },
+    {
+      "path": "/s/LOMA.US",
+      "width": 390,
+      "height": 844,
+      "states": 12
+    },
+    {
+      "path": "/s/RUSHB.US",
+      "width": 390,
+      "height": 844,
+      "states": 12
+    },
+    {
+      "path": "/s/BB.US",
+      "width": 390,
+      "height": 844,
+      "states": 11
+    },
+    {
+      "path": "/s/TPHS.US",
+      "width": 390,
+      "height": 844,
+      "states": 6
+    }
+  ],
+  "visuallyInspected": [
+    "1728x970-_s_LOMA_US-0-page.png",
+    "390x844-_s_NTPIF_US-2-More__.png"
+  ]
+}

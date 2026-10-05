@@ -59,7 +59,7 @@ def install(rel, raw=False):
     journal.append({'path':rel,'sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'rawSymlink':raw})
     if len(journal)%100==0: (backup/'journal.json').write_text(json.dumps(journal,indent=2)+'\n')
 
-prefixes=['companies','fundamentals','analysis','analysis/inputs','analysis/fingerprints','jev','judgement','prices-history','prices-history/meta','flags','enrichment-v7/share-checks','business-fit/overview','business-backfill/memos','business-backfill/facts','enrichment-v7/companies','enrichment-v7/names','enrichment-v7/about','thesis','price-story/readings']
+prefixes=['completeness/verified','companies','fundamentals','analysis','analysis/inputs','analysis/fingerprints','jev','judgement','prices-history','prices-history/meta','flags','enrichment-v7/share-checks','business-fit/overview','business-backfill/memos','business-backfill/facts','enrichment-v7/companies','enrichment-v7/names','enrichment-v7/about','thesis','price-story/readings']
 for id in release['additionIds']:
     for prefix in prefixes: install(f'{prefix}/{id}.json')
     install(f'reports/{id}',raw=True)

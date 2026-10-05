@@ -1,0 +1,704 @@
+[
+  {
+    "id": "ARX.US",
+    "sha256": "6ca287adaeb69034c0f5b66823c1cd2cea7f569e0278e0059e87875a4a8835ce",
+    "sourceUrl": "https://eodhd.com/img/logos/US/ARX.png",
+    "reason": "Vendor returned Aeroflex, a different company"
+  },
+  {
+    "id": "ARX.US",
+    "sha256": "c2e1e0a33622fd972ed87e9c8ee011c4d10768088bd1491d14a1f39a8e68741f",
+    "sourceUrl": "https://eodhd.com/img/logos/US/ARX.png",
+    "reason": "Vendor returned Aeroflex, a different company"
+  },
+  {
+    "id": "ATRO.US",
+    "sha256": "a53c21210884f2641f6793155485e08ecf43139f3145870ee21c7f5f0822c1b2",
+    "sourceUrl": "https://www.astronics.com/images/default-source/atro/menu/menu-power.jpg?sfvrsn=af02b258_2",
+    "reason": "Photograph of an aircraft cabin, not the company logo"
+  },
+  {
+    "id": "ATRO.US",
+    "sha256": "2ab4c12cfb17452b5c06ddec16c2529e073534174d86b92c0c90ffa961eb031e",
+    "sourceUrl": "https://www.astronics.com/images/default-source/atro/menu/menu-power.jpg?sfvrsn=af02b258_2",
+    "reason": "Photograph of an aircraft cabin, not the company logo"
+  },
+  {
+    "id": "BCO.US",
+    "sha256": "1dfac3d75fba2e55d8e3bdab3d5d300138694fb22e7f3dbe1cb09e61bce25cee",
+    "sourceUrl": "https://brinksglobal.com/o/brinks-website-theme/images/icons/search-blue.svg",
+    "reason": "Official discovery picked a search magnifying-glass UI icon"
+  },
+  {
+    "id": "BCO.US",
+    "sha256": "c0999f4b7d4618bcf0a350f31642f1ff98342977f10d57f34f4afe2fefac3b14",
+    "sourceUrl": "https://brinksglobal.com/o/brinks-website-theme/images/icons/search-blue.svg",
+    "reason": "Official discovery picked a search magnifying-glass UI icon"
+  },
+  {
+    "id": "BILI.US",
+    "sha256": "acfc44cdc84d5dfdc44135a616a4a005cb9c1a01fe508c48c83a4477b28360dd",
+    "sourceUrl": "https://eodhd.com/img/logos/US/BILI.png",
+    "reason": "Mascot illustration rather than a clean company logo"
+  },
+  {
+    "id": "BILI.US",
+    "sha256": "181d6e534875ce0b997cf2b8345396c38cd62b46e796719a70663c979c0d4e46",
+    "sourceUrl": "https://eodhd.com/img/logos/US/BILI.png",
+    "reason": "Mascot illustration rather than a clean company logo"
+  },
+  {
+    "id": "CASH.US",
+    "sha256": "dc3b7092944f2bc2f1189414763dc0e6afeeb4ca038b9383bee0b6302e346836",
+    "sourceUrl": "https://eodhd.com/img/logos/US/CASH.png",
+    "reason": "Legacy Meta Financial branding; issuer now Pathward"
+  },
+  {
+    "id": "CASH.US",
+    "sha256": "8bd68bfd38d56711cdd2407dbf8de3a2336fc8ca367e45134d531b0daa447399",
+    "sourceUrl": "https://eodhd.com/img/logos/US/CASH.png",
+    "reason": "Legacy Meta Financial branding; issuer now Pathward"
+  },
+  {
+    "id": "CNR.US",
+    "sha256": "552020cfac549ea29ac42f463c459bcacabe2434f09f3a787d58cd1170653297",
+    "sourceUrl": "https://eodhd.com/img/logos/US/CNR.png",
+    "reason": "Cornerstone Building Brands image belongs to another issuer"
+  },
+  {
+    "id": "CNR.US",
+    "sha256": "e5ba9ab00510e9cfb44880d0b91dd0961108f3cef384338b2bcaebfb5f5f82a5",
+    "sourceUrl": "https://eodhd.com/img/logos/US/CNR.png",
+    "reason": "Cornerstone Building Brands image belongs to another issuer"
+  },
+  {
+    "id": "CNX.US",
+    "sha256": "3992c90f908e8cac9779b3ed73230799ae794e6acd7fd2523de89691eab4f0e7",
+    "sourceUrl": "https://eodhd.com/img/logos/US/cnx.png",
+    "reason": "Official investors.cnx.com uses blue/gray CNX; legacy CONSOL mark is outdated."
+  },
+  {
+    "id": "CNX.US",
+    "sha256": "281d21b156772cfa93c7be1837a18ae2c48a49c13543f66d2c3cb89f5e473155",
+    "sourceUrl": "https://eodhd.com/img/logos/US/cnx.png",
+    "reason": "Official investors.cnx.com uses blue/gray CNX; legacy CONSOL mark is outdated."
+  },
+  {
+    "id": "CTRI.US",
+    "sha256": "64580f32fe7c6551cd48c94b6d609532d425f6d92b33e144a0064f3dc145799e",
+    "sourceUrl": "https://centuri.com/#inline-logo-0",
+    "reason": "Malformed SVG rendering: tiny partial mark in corner"
+  },
+  {
+    "id": "CTRI.US",
+    "sha256": "e3653f9f25a43b77311e6524b1576829ca459c4e06ac2d789acecc71ced433e6",
+    "sourceUrl": "https://centuri.com/#inline-logo-0",
+    "reason": "Malformed SVG rendering: tiny partial mark in corner"
+  },
+  {
+    "id": "DOCS.US",
+    "sha256": "e0771594fd04f3196022d1b2168fcd969d83d7c6f23d643c9b1fe67db1ad48bd",
+    "sourceUrl": "https://eodhd.com/img/logos/US/DOCS.png",
+    "reason": "Dr Martens logo returned for Doximity ticker; unrelated namesake"
+  },
+  {
+    "id": "DOCS.US",
+    "sha256": "d6415c0509e046870ff4c60546659f23467309fbb3f5706f38fc28c43612d1d2",
+    "sourceUrl": "https://eodhd.com/img/logos/US/DOCS.png",
+    "reason": "Dr Martens logo returned for Doximity ticker; unrelated namesake"
+  },
+  {
+    "id": "DSGX.US",
+    "sha256": "be65bdaa7ee231dc2a8743856bdf185dc1fbbb1cc8d920f2e7e0835a61cc728f",
+    "sourceUrl": "https://www.descartes.com/themes/descartes/images/menu/solutions-b2b.svg",
+    "reason": "Decorative network diagram from header, not Descartes company mark"
+  },
+  {
+    "id": "DSGX.US",
+    "sha256": "777df73923ce677b177fada4c830fc48f9116b309a4ef356dcf8419bcdec8221",
+    "sourceUrl": "https://www.descartes.com/themes/descartes/images/menu/solutions-b2b.svg",
+    "reason": "Decorative network diagram from header, not Descartes company mark"
+  },
+  {
+    "id": "FLG.US",
+    "sha256": "a953bbe5ac9069168910abd65aa9c4fc9b8961d8927d224adf3ef2a32efac89e",
+    "sourceUrl": "https://eodhd.com/img/logos/US/FLG.png",
+    "reason": "Old NYCB mark; current Flagstar branding requires replacement"
+  },
+  {
+    "id": "FLG.US",
+    "sha256": "3c302632dd89d01d940290b466971b3f7af63030b6a5869326c457275d08b09e",
+    "sourceUrl": "https://eodhd.com/img/logos/US/FLG.png",
+    "reason": "Old NYCB mark; current Flagstar branding requires replacement"
+  },
+  {
+    "id": "FTI.US",
+    "sha256": "7b60f1e712c887027623e573fba31b7e8fb306dda5b640cd838fa33342f7d3ff",
+    "sourceUrl": "https://eodhd.com/img/logos/US/fti.png",
+    "reason": "FMC mark instead of current TechnipFMC branding"
+  },
+  {
+    "id": "FTI.US",
+    "sha256": "e6f0f5d2689e7171226f70db525995c8fdd072ec825b578953810fa0b1490ede",
+    "sourceUrl": "https://eodhd.com/img/logos/US/fti.png",
+    "reason": "FMC mark instead of current TechnipFMC branding"
+  },
+  {
+    "id": "GH.US",
+    "sha256": "8820f4359d1e06ba3a8bd20165b2bfe971f01a7fa5f000cc4feadd1a4bcc369d",
+    "sourceUrl": "https://eodhd.com/img/logos/US/GH.png",
+    "reason": "Blood-drop illustration does not establish Guardant Health identity"
+  },
+  {
+    "id": "GH.US",
+    "sha256": "94883eb6f66f85d2fa9ad299cdf8762f642631a97189aa2a924ddf86fdd8c0f0",
+    "sourceUrl": "https://eodhd.com/img/logos/US/GH.png",
+    "reason": "Blood-drop illustration does not establish Guardant Health identity"
+  },
+  {
+    "id": "GLIBK.US",
+    "sha256": "4bc59a3f3952530bdb76a5934450cc0e01bd6a5a13abca4931dc9fec3be3e8af",
+    "sourceUrl": "https://d1io3yog0oux5.cloudfront.net/_03644d19e2f2305141ff659441e59c2c/gciliberty/files/theme/images/favicons/apple-touch-icon.png",
+    "reason": "Liberty Capital mark does not establish GCI Liberty identity"
+  },
+  {
+    "id": "GLIBK.US",
+    "sha256": "22ebc161df15ce3159dd91a8da3325eb9787f3c2c2257b12120524001c1b3a65",
+    "sourceUrl": "https://d1io3yog0oux5.cloudfront.net/_03644d19e2f2305141ff659441e59c2c/gciliberty/files/theme/images/favicons/apple-touch-icon.png",
+    "reason": "Liberty Capital mark does not establish GCI Liberty identity"
+  },
+  {
+    "id": "GPRK.US",
+    "sha256": "4c4a95a4c2c46146a5afdb360a8a75cb1cf914a8fbb3cb169953bbadf12b5cd8",
+    "sourceUrl": "https://eodhd.com/img/logos/US/GPRK.png",
+    "reason": "Visibly pixelated mark fails small-tile quality"
+  },
+  {
+    "id": "GPRK.US",
+    "sha256": "2d8403dec36a569e89f0d5818f821bbe69932e0f5e0185a175e390a7f8e83839",
+    "sourceUrl": "https://eodhd.com/img/logos/US/GPRK.png",
+    "reason": "Visibly pixelated mark fails small-tile quality"
+  },
+  {
+    "id": "HUBS.US",
+    "sha256": "1cdeea3c3c161d0c966859c55d8b6678e602f4a6a6d5011ee34e81b1562ea2f0",
+    "sourceUrl": "https://www.hubspot.com/hs-fs/hubfs/spotlight_resized_518x225.png?width=518&height=225&name=spotlight_resized_518x225.png",
+    "reason": "Spotlight event mark, not HubSpot company logo"
+  },
+  {
+    "id": "HUBS.US",
+    "sha256": "eb4bac48475d8add2ba2d1c462921d94d18c55f2077766e637006d5e1a7b146e",
+    "sourceUrl": "https://www.hubspot.com/hs-fs/hubfs/spotlight_resized_518x225.png?width=518&height=225&name=spotlight_resized_518x225.png",
+    "reason": "Spotlight event mark, not HubSpot company logo"
+  },
+  {
+    "id": "IBP.US",
+    "sha256": "b33e23530b149e5ab6e7c55ebe0ab63b0e3fef5f1275f51cfbd50165d84c1749",
+    "sourceUrl": "https://eodhd.com/img/logos/US/IBP.png",
+    "reason": "Vendor placeholder explicitly says replace this icon"
+  },
+  {
+    "id": "IBP.US",
+    "sha256": "d354c3bcc9e9f0f474ff2209c71d7dc4a11cb13ece10f63886de3cab97fc262d",
+    "sourceUrl": "https://eodhd.com/img/logos/US/IBP.png",
+    "reason": "Vendor placeholder explicitly says replace this icon"
+  },
+  {
+    "id": "JBTM.US",
+    "sha256": "e3e0247e4e1f9cfad4a514b443f95a668f22e50a1e9232121cacc816065ecf7e",
+    "sourceUrl": "https://eodhd.com/img/logos/US/JBTM.png",
+    "reason": "Marel subsidiary branding, not current JBT Marel combined issuer"
+  },
+  {
+    "id": "JBTM.US",
+    "sha256": "4ab91b2ce5ff9b8e08cd428dd6c697fbf7492eb9c065eb79154962a6de8e2f23",
+    "sourceUrl": "https://eodhd.com/img/logos/US/JBTM.png",
+    "reason": "Marel subsidiary branding, not current JBT Marel combined issuer"
+  },
+  {
+    "id": "JOYY.US",
+    "sha256": "114ff4f91663c7ca56c37e8fa9cc6b2f6d4c811bdce2e7e199d36c86d4fe8dcd",
+    "sourceUrl": "https://joyy.sg/img/download-button-active.png",
+    "reason": "Rendered mark is nearly empty at tile size"
+  },
+  {
+    "id": "JOYY.US",
+    "sha256": "c537fb9b8204ed8ee7b3ce2567b00be8bdfd0ddd3fbc9ec1c088eea87ec027a0",
+    "sourceUrl": "https://joyy.sg/img/download-button-active.png",
+    "reason": "Rendered mark is nearly empty at tile size"
+  },
+  {
+    "id": "KNX.US",
+    "sha256": "bcd035ec66173154add7bd31f86bc1397b3c5f6b475ff2ce59c2447959aa9341",
+    "sourceUrl": "https://eodhd.com/img/logos/US/KNX.png",
+    "reason": "Empty bordered vendor image"
+  },
+  {
+    "id": "KNX.US",
+    "sha256": "bc90e8cd1b01c73bcd96ecf3e59dfe36e8bef746be975e63fb55b181fc0f4893",
+    "sourceUrl": "https://eodhd.com/img/logos/US/KNX.png",
+    "reason": "Empty bordered vendor image"
+  },
+  {
+    "id": "MEDP.US",
+    "sha256": "ca339cbe242c700c308edc941787535628051a3d44324a96a0868d5322217037",
+    "sourceUrl": "https://www.medpace.com/wp-content/uploads/2023/03/Trusted-by-Biotech-Call-to-Action-300x159.png",
+    "reason": "Trusted by biotech badge, not Medpace logo"
+  },
+  {
+    "id": "MEDP.US",
+    "sha256": "754259a85e780c3802298d947ca8231c7b591b278d3553841b182d1972cf9f2c",
+    "sourceUrl": "https://www.medpace.com/wp-content/uploads/2023/03/Trusted-by-Biotech-Call-to-Action-300x159.png",
+    "reason": "Trusted by biotech badge, not Medpace logo"
+  },
+  {
+    "id": "MINE.US",
+    "sha256": "052bc20d2fb477eec6fc1a15026dcadcf26879cc81b3540dd2d76a859572deab",
+    "sourceUrl": "https://eodhd.com/img/logos/US/MINE.png",
+    "reason": "Minerco logo for Mayfair Gold; reused ticker"
+  },
+  {
+    "id": "MINE.US",
+    "sha256": "d3f259f6cafea20bfd349a1941e68381ef3654b0850aabdcec3ebbd4fe04bfbf",
+    "sourceUrl": "https://eodhd.com/img/logos/US/MINE.png",
+    "reason": "Minerco logo for Mayfair Gold; reused ticker"
+  },
+  {
+    "id": "NATL.US",
+    "sha256": "6f3dc815d227ff744144ddfdb9deefe868d6827f6a820a7c7200d8f41b706922",
+    "sourceUrl": "https://eodhd.com/img/logos/US/NATL.png",
+    "reason": "Shield logo does not establish NCR Atleos identity"
+  },
+  {
+    "id": "NATL.US",
+    "sha256": "599a65899cc99e5db61e47cbced757ef3318dbddc15352ee25887ae2717d15b6",
+    "sourceUrl": "https://eodhd.com/img/logos/US/NATL.png",
+    "reason": "Shield logo does not establish NCR Atleos identity"
+  },
+  {
+    "id": "PAGS.US",
+    "sha256": "5841452ca39e3729c352ffdbe4a5b44d25dffe582de7d2ccc436c2d4a34b1aa6",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PAGS.png",
+    "reason": "UOL parent logo instead of PagSeguro/PagBank"
+  },
+  {
+    "id": "PAGS.US",
+    "sha256": "760880d0fd6f110cf421607fbf783dcfc454f253a25f2a85c7dab203523c2b18",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PAGS.png",
+    "reason": "UOL parent logo instead of PagSeguro/PagBank"
+  },
+  {
+    "id": "PAHC.US",
+    "sha256": "6c1a05743fe9d93911e48fd0a575756c87c0ba8376c0d61522643498ef727c73",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PAHC.png",
+    "reason": "Regional Europe collateral, not clean primary corporate mark"
+  },
+  {
+    "id": "PAHC.US",
+    "sha256": "02b5563403724b7b8f4f42f3f6b174ba83985188574c05075d7413e6b82288f5",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PAHC.png",
+    "reason": "Regional Europe collateral, not clean primary corporate mark"
+  },
+  {
+    "id": "PATH.US",
+    "sha256": "4adf856fbc654269a36d2ed0fd4830699fc88a7f438a5a05c648684c7d54d417",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PATH.png",
+    "reason": "NuPathe logo for UiPath; reused ticker"
+  },
+  {
+    "id": "PATH.US",
+    "sha256": "0c3d3668635508350d7ef3bb3fbd828a71dd7cecde7766a57d8d32c558785350",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PATH.png",
+    "reason": "NuPathe logo for UiPath; reused ticker"
+  },
+  {
+    "id": "PCOR.US",
+    "sha256": "1fd6b4cafd7cf1828ea57d84b286286697d8a4df19391087a0cf13c509654bb6",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PCOR.png",
+    "reason": "PIMCO logo for Procore; unrelated issuer"
+  },
+  {
+    "id": "PCOR.US",
+    "sha256": "bd536fa417f50dacd3b6e53b4f5476aeef8e248aa71efe10c26307517a992d06",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PCOR.png",
+    "reason": "PIMCO logo for Procore; unrelated issuer"
+  },
+  {
+    "id": "PRG.US",
+    "sha256": "503960c7ada30e4cdabebc423b7b46a87e5592a026c677d02085ba347a550527",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PRG.png",
+    "reason": "Legacy Aarons parent brand, not current PROG Holdings"
+  },
+  {
+    "id": "PRG.US",
+    "sha256": "e8a18df790f436a331d834e51cac7b4f536301487897002a1129061263ebcfe1",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PRG.png",
+    "reason": "Legacy Aarons parent brand, not current PROG Holdings"
+  },
+  {
+    "id": "PRM.US",
+    "sha256": "1b13d1a570e5231ff87f3d825c15dea0583c5462e1caa03d54833ee1e685a225",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PRM.png",
+    "reason": "RentPath logo instead of Perimeter Solutions; reused ticker"
+  },
+  {
+    "id": "PRM.US",
+    "sha256": "e95e2d192fc75a2a46613ee3f259837e412b7afd7ac25760fc792d52db4fddf5",
+    "sourceUrl": "https://eodhd.com/img/logos/US/PRM.png",
+    "reason": "RentPath logo instead of Perimeter Solutions; reused ticker"
+  },
+  {
+    "id": "RBC.US",
+    "sha256": "78960ced52c1964b36b66923102689a8ff671e24b17731dd3390d0c411fb931f",
+    "sourceUrl": "https://eodhd.com/img/logos/US/RBC.png",
+    "reason": "Regal logo instead of RBC Bearings; reused ticker"
+  },
+  {
+    "id": "RBC.US",
+    "sha256": "f6e5d1f0c7b0cb390ce4f9bc31785710872031ba74574b282c01be59dfbc5ac9",
+    "sourceUrl": "https://eodhd.com/img/logos/US/RBC.png",
+    "reason": "Regal logo instead of RBC Bearings; reused ticker"
+  },
+  {
+    "id": "RYN.US",
+    "sha256": "82d2b36ba094baad3b496af73854815bfb157fa7b6dc33a22480dee3f61a9b70",
+    "sourceUrl": "https://eodhd.com/img/logos/MX/RYn.png",
+    "reason": "Royal Bank of Canada logo for Rayonier"
+  },
+  {
+    "id": "RYN.US",
+    "sha256": "ce9f5cf5f28d0ac14c56df0f821e80c1a8f3b555f1999441e562906c1ac92a87",
+    "sourceUrl": "https://eodhd.com/img/logos/MX/RYn.png",
+    "reason": "Royal Bank of Canada logo for Rayonier"
+  },
+  {
+    "id": "SG.US",
+    "sha256": "b8c4b8aef7959892fe541ec275aae63153d64c3c84c92064a5faa8e15b4761bb",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SG.png",
+    "reason": "Sirius Group logo for Sweetgreen; reused ticker"
+  },
+  {
+    "id": "SG.US",
+    "sha256": "c50efa735b355711ea0954aef8095f43df4b420f308e7f95dd5d269f52ffafae",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SG.png",
+    "reason": "Sirius Group logo for Sweetgreen; reused ticker"
+  },
+  {
+    "id": "SGI.US",
+    "sha256": "3f23b5246e55bbc6af5dd0b682f0bbc83a58fa41d572633592c83d67f73fba64",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SGI.png",
+    "reason": "HPE mark does not establish Somnigroup identity"
+  },
+  {
+    "id": "SGI.US",
+    "sha256": "2a31a7255eb8e8908a1f9242136816a6ee64d5afbc3812ad0d0a9cf3045b15c9",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SGI.png",
+    "reason": "HPE mark does not establish Somnigroup identity"
+  },
+  {
+    "id": "SMRT.US",
+    "sha256": "0e852b1c16a8037caf2107e26f4fb28bf41df9cb7822f981eec137e02c8f4d94",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SMRT.png",
+    "reason": "Pink sm mark appears to be former ticker user Stein Mart, not SmartRent"
+  },
+  {
+    "id": "SMRT.US",
+    "sha256": "b52e6b4af64677588060407d9e576328e7f47150a29a306be177e276df7072b1",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SMRT.png",
+    "reason": "Pink sm mark appears to be former ticker user Stein Mart, not SmartRent"
+  },
+  {
+    "id": "SPCX.US",
+    "sha256": "c52363dd1895b3fc6cc05b29caceba09fcf465487ae4dbf47464e4c6fc284a81",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SPCX.png",
+    "reason": "Generic globe does not establish SpaceX identity"
+  },
+  {
+    "id": "SPCX.US",
+    "sha256": "04bfa5a26a5649689c75aa2a78d42addbfaef27b47d14c61f81b46d6732d249a",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SPCX.png",
+    "reason": "Generic globe does not establish SpaceX identity"
+  },
+  {
+    "id": "SRG.US",
+    "sha256": "ad71abcb18a193160cf30cfc0e0c948295c5e441b9435c4b53534f1e56b2bb4d",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SRG.png",
+    "reason": "SRG Global mark for Seritage Growth Properties"
+  },
+  {
+    "id": "SRG.US",
+    "sha256": "7edbbb82820c122b9402766c064034a716f44b54ca480c0d947126fcda79c637",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SRG.png",
+    "reason": "SRG Global mark for Seritage Growth Properties"
+  },
+  {
+    "id": "SSPPF.US",
+    "sha256": "cb95921cbb8343ed8bba962399448d89ede8cd1e9679057408948a3067a8d1b2",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SSPPF.png",
+    "reason": "Recruitment slogan rather than SSP corporate logo"
+  },
+  {
+    "id": "SSPPF.US",
+    "sha256": "17e162cbd8455e1623d2d37d87f65720df57a6bb4d4a33e3480c6d280a16afd3",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SSPPF.png",
+    "reason": "Recruitment slogan rather than SSP corporate logo"
+  },
+  {
+    "id": "SUI.US",
+    "sha256": "3ea03220fdf94cb819a5fbb1e3926df2d28d3a9c69d27efa42bc31da7f5c81e9",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SUI.png",
+    "reason": "Red SUN vendor mark does not establish Sun Communities identity"
+  },
+  {
+    "id": "SUI.US",
+    "sha256": "bcbbb54c6c88d4e59da1ed5a834fdf9ea462f9d4f60d3a950c5b11605de769d8",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SUI.png",
+    "reason": "Red SUN vendor mark does not establish Sun Communities identity"
+  },
+  {
+    "id": "SVC.US",
+    "sha256": "a272cf7cbf08de0099f25672c1c8394850d3c420b183ce8f957ebefec50b7e69",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SVC.png",
+    "reason": "Telephone icon, not Service Properties Trust logo"
+  },
+  {
+    "id": "SVC.US",
+    "sha256": "5d0f71114776cb503615a39ffdd6957628a2a1fe68a139e1c295952494711f34",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SVC.png",
+    "reason": "Telephone icon, not Service Properties Trust logo"
+  },
+  {
+    "id": "SWIM.US",
+    "sha256": "a63e1f10c4ec9cf9dcce808cb8de4c4d83242fc8e326ee0ec790eb6474dbf4b0",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SWIM.png",
+    "reason": "TD Ameritrade logo for Latham Group; reused ticker"
+  },
+  {
+    "id": "SWIM.US",
+    "sha256": "0ef69000f87700386c974a2380acdafd0e5be18038b578c63b5fb9acc0bbb153",
+    "sourceUrl": "https://eodhd.com/img/logos/US/SWIM.png",
+    "reason": "TD Ameritrade logo for Latham Group; reused ticker"
+  },
+  {
+    "id": "TRS.US",
+    "sha256": "8c87b6b2bc320737c1d5d0821710514b3a1abcb33cb1b51a642885c2eacec8c4",
+    "sourceUrl": "https://eodhd.com/img/logos/US/TRS.png",
+    "reason": "The Reject Shop logo for TriMas; exchange mismatch"
+  },
+  {
+    "id": "TRS.US",
+    "sha256": "3ad240596d3c9283e8cdabeeb217381deb3899812da983df8c7c974ce5d0666e",
+    "sourceUrl": "https://eodhd.com/img/logos/US/TRS.png",
+    "reason": "The Reject Shop logo for TriMas; exchange mismatch"
+  },
+  {
+    "id": "TTAN.US",
+    "sha256": "29830d881e2150ef82b031cad0128282c2c5357a4fde78a871a5103d3567afee",
+    "sourceUrl": "https://eodhd.com/img/logos/US/TTAN.png",
+    "reason": "Tiger mark does not establish ServiceTitan identity"
+  },
+  {
+    "id": "TTAN.US",
+    "sha256": "b5a46315564b716dad4ee532d584701b012039b80a7c46b76de9022072642d35",
+    "sourceUrl": "https://eodhd.com/img/logos/US/TTAN.png",
+    "reason": "Tiger mark does not establish ServiceTitan identity"
+  },
+  {
+    "id": "VNOM.US",
+    "sha256": "f3cea7fb0cd9b85c6be5e00f1cb9ca5d2dec25d5b06986f27c79488b45f03110",
+    "sourceUrl": "https://eodhd.com/img/logos/US/VNOM.png",
+    "reason": "Tiny partial rendering fails tile quality"
+  },
+  {
+    "id": "VNOM.US",
+    "sha256": "e77e1f20bfa676735b5a81209bf4ac29fdae13d63ced7282e6a68be5c68843ec",
+    "sourceUrl": "https://eodhd.com/img/logos/US/VNOM.png",
+    "reason": "Tiny partial rendering fails tile quality"
+  },
+  {
+    "id": "WING.US",
+    "sha256": "8f2b2795f10996a2a11794478dee5a74fa26a124507b3d57b82b0578ed3c8c5a",
+    "sourceUrl": "https://wingstop.com.mx/static/media/perfil.b5212374.png",
+    "reason": "Account/profile UI icon, not Wingstop logo"
+  },
+  {
+    "id": "WING.US",
+    "sha256": "d82b6f7bce23c89cc4c5eedd47cd5ce8a0b047fdee8d3ab280545ccd4e54d3b1",
+    "sourceUrl": "https://wingstop.com.mx/static/media/perfil.b5212374.png",
+    "reason": "Account/profile UI icon, not Wingstop logo"
+  },
+  {
+    "id": "YOU.US",
+    "sha256": "0826ed8d1cc8f4fdef89bf7e2734bc4f1b3af7c594058364b28ac6e3aa86c1a6",
+    "sourceUrl": "https://eodhd.com/img/logos/US/YOU.png",
+    "reason": "Pink Y does not establish Clear Secure identity"
+  },
+  {
+    "id": "YOU.US",
+    "sha256": "f9888cb2a24814e2e146c2dfa83cd91e81023a144f8ee8b0d136ddd6eefdb2de",
+    "sourceUrl": "https://eodhd.com/img/logos/US/YOU.png",
+    "reason": "Pink Y does not establish Clear Secure identity"
+  },
+  {
+    "id": "ZION.US",
+    "sha256": "07613d896873e544aa8e234bcc2988a4429b6b7225a95285f1dfb5bc00a41d69",
+    "sourceUrl": "https://eodhd.com/img/logos/US/zion.png",
+    "reason": "Zurich Insurance logo for Zions Bancorporation"
+  },
+  {
+    "id": "ZION.US",
+    "sha256": "5cc66eb6a3e9d31b8185866206c131dee9c9d32874d3fe7cd1b175b69ae5dcee",
+    "sourceUrl": "https://eodhd.com/img/logos/US/zion.png",
+    "reason": "Zurich Insurance logo for Zions Bancorporation"
+  },
+  {
+    "id": "ZM.US",
+    "sha256": "4f2351603ef8455e0cfd239249a1863dc9302bc66199edec01d0c934b68b7c38",
+    "sourceUrl": "https://st1.zoom.us/homepage/20260930-1234/primary/dist/assets/zoommedia/CaretDown.svg",
+    "reason": "Navigation chevron, not Zoom logo"
+  },
+  {
+    "id": "ZM.US",
+    "sha256": "0f661ff853792143e249905955911b998e63434be36543e554a5c1fa3fc32105",
+    "sourceUrl": "https://st1.zoom.us/homepage/20260930-1234/primary/dist/assets/zoommedia/CaretDown.svg",
+    "reason": "Navigation chevron, not Zoom logo"
+  },
+  {
+    "id": "ATRO.US",
+    "sha256": "9be997c2d3bb12a413845a1a1f06f46ee6fe96a3e5a161ad3e4d23464912afcd",
+    "sourceUrl": "https://www.astronics.com/images/default-source/atro/menu/menu-lighting.jpg?sfvrsn=d302b258_2",
+    "reason": "Aircraft cabin photograph"
+  },
+  {
+    "id": "BCO.US",
+    "sha256": "d3f525b5580ae42ee8301850ddb7e12be479869f74d8f270e4a89ac09662f932",
+    "sourceUrl": "https://brinksglobal.com/o/brinks-website-theme/images/icons/search-white.svg",
+    "reason": "Second candidate is search UI icon"
+  },
+  {
+    "id": "BCO.US",
+    "sha256": "c223b18559ff235c90fdd471a7fe8ecea774430f6ebaa1e0451e0e7a7240f182",
+    "sourceUrl": "https://brinksglobal.com/o/brinks-website-theme/images/icons/search-white.svg",
+    "reason": "Second candidate is search UI icon"
+  },
+  {
+    "id": "CASH.US",
+    "sha256": "eb8fd31136973abcb7ef41a71fba10e8ed7803421773ba30c55ec3d60027f6b4",
+    "sourceUrl": "https://www.pathward.com/content/experience-fragments/pathward/us/en/site/header/master/_jcr_content/root/header/fdic-logo.coreimg.svg/1760552692766/fdic-logo-header.svg",
+    "reason": "FDIC badge, not Pathward logo"
+  },
+  {
+    "id": "CASH.US",
+    "sha256": "de845e41ae8c6bb5d52a42bd73c70e07a4ed824f18c5db3b9683fca5ede4214c",
+    "sourceUrl": "https://www.pathward.com/content/experience-fragments/pathward/us/en/site/header/master/_jcr_content/root/header/fdic-logo.coreimg.svg/1760552692766/fdic-logo-header.svg",
+    "reason": "FDIC badge, not Pathward logo"
+  },
+  {
+    "id": "CNX.US",
+    "sha256": "7fc17c70162608d47ebc7415a5868eeb658bd13d83671348c27aee6de0043561",
+    "sourceUrl": "https://www.cnx.com/wp-content/uploads/2024/10/cropped-icon1-1-180x180.png",
+    "reason": "Flame artwork, not the corporate wordmark"
+  },
+  {
+    "id": "DSGX.US",
+    "sha256": "f45b7f6d56c3cd595795b0bb80ac1f4f34aa272fa6adc02f790364ef30841fe0",
+    "sourceUrl": "https://www.descartes.com/themes/descartes/images/menu/solutions-lsp.svg",
+    "reason": "Generic logistics globe, no unambiguous corporate mark"
+  },
+  {
+    "id": "DSGX.US",
+    "sha256": "a70dfffd5afc18d615f58146801233b7050989f609f755bfe04eb179e606c5a8",
+    "sourceUrl": "https://www.descartes.com/themes/descartes/images/menu/solutions-lsp.svg",
+    "reason": "Generic logistics globe, no unambiguous corporate mark"
+  },
+  {
+    "id": "GLIBK.US",
+    "sha256": "d8249e5781a2264a7e55330d34667affb60c512225443b124a389943df1d7867",
+    "sourceUrl": "https://d1io3yog0oux5.cloudfront.net/_03644d19e2f2305141ff659441e59c2c/gciliberty/db/964/9084/image.png",
+    "reason": "Official metadata redirects to Liberty Capital, not GCI Liberty"
+  },
+  {
+    "id": "GLIBK.US",
+    "sha256": "d2166e146be032a7d8082ba5edbd823da3aed9e7114b2e29047351df60c58e04",
+    "sourceUrl": "https://d1io3yog0oux5.cloudfront.net/_03644d19e2f2305141ff659441e59c2c/gciliberty/db/964/9084/image.png",
+    "reason": "Official metadata redirects to Liberty Capital, not GCI Liberty"
+  },
+  {
+    "id": "JOYY.US",
+    "sha256": "6086ee060ad73105c92d78eb98e5596b8af741f282a2b1294a4fab655c033d0b",
+    "sourceUrl": "https://joyy.sg/img/download-button.png",
+    "reason": "Near-empty sprite or CSS asset"
+  },
+  {
+    "id": "JOYY.US",
+    "sha256": "1cac45b253ad1097b743096132afc2bcbe62254bc3725535755b951cbc37cea0",
+    "sourceUrl": "https://joyy.sg/img/download-button.png",
+    "reason": "Near-empty sprite or CSS asset"
+  },
+  {
+    "id": "MEDP.US",
+    "sha256": "db59f09ff7e7d0c0d85efdd5be563c9cbaac37e242b7e904e7033f26c8b80cd8",
+    "sourceUrl": "https://www.medpace.com/wp-content/uploads/2025/10/790290141-thumbnail-eagle-award-winner-2025-graphic-72ppi-300x189.jpg",
+    "reason": "SCRS award badge, not corporate logo"
+  },
+  {
+    "id": "MEDP.US",
+    "sha256": "8723cb5c57bf5406ed706c07466cffb38bb85c34931fbb448e55b4fe4c6b4870",
+    "sourceUrl": "https://www.medpace.com/wp-content/uploads/2025/10/790290141-thumbnail-eagle-award-winner-2025-graphic-72ppi-300x189.jpg",
+    "reason": "SCRS award badge, not corporate logo"
+  },
+  {
+    "id": "PAHC.US",
+    "sha256": "4b076d7e49ba69fc4c350d865543774d15afd88621eb0a0a648ad4e59eeee684",
+    "sourceUrl": "https://www.pahc.com/wp-content/themes/phibro/images/nav-globe.png",
+    "reason": "Language-selector globe"
+  },
+  {
+    "id": "PAHC.US",
+    "sha256": "abfb6d46a06709b4703bcfbbf0af2e3debd3b8270d5513cd8f846b64c0d17af6",
+    "sourceUrl": "https://www.pahc.com/wp-content/themes/phibro/images/nav-globe.png",
+    "reason": "Language-selector globe"
+  },
+  {
+    "id": "RBC.US",
+    "sha256": "8d510050dd736b717e7eb9cf6112f5f5fbd6893a525cb80f4c63ad65ae67bc7e",
+    "sourceUrl": "https://www.rbcbearings.com/img/pt-place-logo.svg",
+    "reason": "PT Place portal branding, not RBC Bearings"
+  },
+  {
+    "id": "RBC.US",
+    "sha256": "263b9a5634a8e410ec361c6fba140104e8013b145d5188470fe98cb165fd1f68",
+    "sourceUrl": "https://www.rbcbearings.com/img/pt-place-logo.svg",
+    "reason": "PT Place portal branding, not RBC Bearings"
+  },
+  {
+    "id": "SGI.US",
+    "sha256": "8f5fb4c08f3f2375e30279673885a457f19675bc70633f0f48b2e07399de829f",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Silicon_Graphics_International_logo.svg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=original",
+    "reason": "SGI computing logo cannot establish Somnigroup identity"
+  },
+  {
+    "id": "SGI.US",
+    "sha256": "81a294b641316dda92ef87280046993a5dbd6d4fae9715071d197f858396a65c",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Silicon_Graphics_International_logo.svg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=original",
+    "reason": "SGI computing logo cannot establish Somnigroup identity"
+  },
+  {
+    "id": "SMRT.US",
+    "sha256": "af940730170c60ac8c76cf8f4652cf637490f4284b4a77fda5e94e2ac75d3ef6",
+    "sourceUrl": "https://steinmart.com/#inline-logo-2",
+    "reason": "Metadata points to former ticker owner Stein Mart; not SmartRent"
+  },
+  {
+    "id": "SMRT.US",
+    "sha256": "bce27f3003cc6308ee46ebb7ccfeeced72cd24ccaf53ee8b1e25fbba5685ae78",
+    "sourceUrl": "https://steinmart.com/#inline-logo-2",
+    "reason": "Metadata points to former ticker owner Stein Mart; not SmartRent"
+  },
+  {
+    "id": "WING.US",
+    "sha256": "ce69d10bcf733420e903734c3cd9db1d162c6f724bbcd4d24b1cde3612724d4c",
+    "sourceUrl": "https://wingstop.com.mx/static/media/iconoBolsaBlack.23c03294.png",
+    "reason": "Shopping bag UI icon"
+  }
+]

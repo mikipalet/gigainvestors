@@ -69,5 +69,5 @@ export type StockShard = Record<string, StockData>;
 
 export interface SearchIndex {
   investors: { code: string; person: string; firm: string }[];
-  stocks: { t: string; n: string; h: number }[];
+  stocks: { t: string; n: string; h: number; lg?: string | null }[];
 }

@@ -1,0 +1,21 @@
+{
+  "copy": {
+    "checked": 2609,
+    "changedOrMissing": 0,
+    "failures": []
+  },
+  "live_read_only": {
+    "checked": 2609,
+    "changedOrMissing": 0,
+    "failures": []
+  },
+  "index": {
+    "before": 3950,
+    "after": 3950,
+    "missingBefore": 1165,
+    "missingAfter": 28,
+    "financialOrOtherFieldChanges": [],
+    "existingLogoUrlChanges": [],
+    "idSetUnchanged": true
+  }
+}

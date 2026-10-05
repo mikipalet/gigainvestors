@@ -1,5 +1,6 @@
 "use client";
 
+import {CompanyLogo} from './value/CompanyLogo';
 import {useEffect,useLayoutEffect,useMemo,useRef,useState} from 'react';
 import {usePathname} from 'next/navigation';
 import {companyPath,withQuarter} from '@/lib/company-route';
@@ -100,6 +101,7 @@ export function Search() {
     {hits.map((h,i)=><li key={h.kind==='munger'?'munger':h.kind==='investor'?`i${h.code}`:`s${h.ticker}`} id={`search-hit-${i}`} role="option" aria-selected={i===sel} data-company={h.kind==='stock'?h.ticker:undefined}
      onMouseEnter={()=>setSel(i)} onClick={()=>go(h)} className={`flex cursor-pointer items-center gap-3 px-4 py-2 text-[13px] ${i===sel?'bg-ink text-paper':''}`}>
      {h.kind==='investor'&&<img src={`/faces/png/v2/${slugOf(h.title)}.png`} width={26} height={32} alt="" onLoad={()=>{rowHeights.current.delete('investor');fitResults.current?.();}} className="-my-1 block shrink-0"/>}
+     {h.kind==='stock'&&<span className="search-company-logo"><CompanyLogo src={h.logo} name={h.sub}/></span>}
      <span className="shrink-0 whitespace-nowrap font-semibold">{h.kind==='munger'?'Charlie Munger':h.title}</span>
      <span className="truncate opacity-60" title={h.kind==='stock'?h.sub:undefined}>{h.kind==='munger'?'1924 – 2023':h.sub}</span>
      {h.kind==='stock'&&<span className="ml-auto shrink-0 opacity-60">{plural(h.holders,'holder')}</span>}

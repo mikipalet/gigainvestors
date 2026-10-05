@@ -71,7 +71,7 @@ it('recovers a transient vendor-logo failure in new files without replacing exis
   writeCorpusJson('enrichment-v7/companies/TEST.US.json',patch);
   writeCorpusJson('enrichment-v7/wikidata/websites.json',[]);
   vi.stubGlobal('fetch',async(url:string)=>url.includes('wikidata')?Response.json({results:{bindings:[]}}):new Response(new Uint8Array(await sharp({create:{width:64,height:64,channels:4,background:url.includes('.invalid')?'#ffffff':'#112233'}}).png().toBuffer()),{status:200,headers:{'content-type':'image/png'}}));
-  await logos();
+  await logos({only:[company.id]});
   expect(readCorpusJson('enrichment-v7/companies/TEST.US.json')).toEqual(patch);
   expect(loadCompanies({})[0].logo).toBeNull();
   expect(readCorpusJson<{pendingLogo:string}>('enrichment-v7/logos/TEST.US.json')?.pendingLogo).toMatch(/^\/api\/value\/logo\?asset=[a-f0-9]{64}$/);

@@ -165,3 +165,9 @@ a.tile-edge:hover {
 .search-modal {font-size:16px;line-height:1.5;}
 .search-modal #search-results .shrink-0 {font-size:14px!important;}
 .search-modal [role=status] {font-size:14px!important;}
+
+/* Reuse the company mark and neutral initials in the shared search palette. */
+.search-company-logo{flex:none;width:26px;height:26px;}
+.search-company-logo .company-logo{display:flex;align-items:center;justify-content:center;width:26px;height:26px;padding:2px;border-radius:4px;background:#fff;color:#173e2b;}
+.search-company-logo .company-logo img{width:100%;height:100%;object-fit:contain;}
+.search-company-logo .company-monogram{background:#d8e4d5;font:600 11px Georgia,serif;}

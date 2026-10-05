@@ -23,9 +23,9 @@ export const extraCompanyAliases:Record<string,string[]> = {
  'PETR3.SA':['PBR.A','PBR-A.US'],
 };
 
-export function buildCompanyIndex(holdings:SearchIndex, dossiers:Pick<IndexRow,'id'|'n'|'mc'|'h'|'nameEn'|'nameLocal'>[]=[], listingAliases:Record<string,string>={}):UnifiedSearchIndex {
+export function buildCompanyIndex(holdings:SearchIndex, dossiers:(Pick<IndexRow,'id'|'n'|'mc'|'h'|'nameEn'|'nameLocal'> & {lg?:string|null})[]=[], listingAliases:Record<string,string>={}):UnifiedSearchIndex {
  const rows = [
-  ...dossiers.map(r=>({t:companyTicker(r.id),n:r.n,h:r.h,mc:r.mc,dossier:true,names:[r.n,r.nameEn,r.nameLocal].filter((name):name is string=>Boolean(name))})),
+  ...dossiers.map(r=>({t:companyTicker(r.id),n:r.n,h:r.h,mc:r.mc,lg:r.lg??null,dossier:true,names:[r.n,r.nameEn,r.nameLocal].filter((name):name is string=>Boolean(name))})),
   ...holdings.stocks.map(r=>({...r,mc:null as number|null,dossier:false,names:[r.n]})),
  ];
  const parents=rows.map((_,i)=>i);
@@ -51,7 +51,7 @@ export function buildCompanyIndex(holdings:SearchIndex, dossiers:Pick<IndexRow,'
  for(const [key,indices] of groups){
   indices.sort((a,b)=>Number(rows[b].dossier)-Number(rows[a].dossier)||Number(aliasTargets.has(listingKey(rows[b].t)))-Number(aliasTargets.has(listingKey(rows[a].t)))||(rows[b].mc??0)-(rows[a].mc??0)||rows[b].h-rows[a].h||rows[a].t.localeCompare(rows[b].t));
   const r=rows[indices[0]];
-  result.set(key,{t:r.t.replace(/-OLD(?:\d+)?$/,''),n:r.n,h:Math.max(...indices.map(i=>rows[i].h)),mc:Math.max(0,...indices.map(i=>rows[i].mc??0)),aliases:[...new Set(indices.flatMap(i=>[rows[i].t,...(!/\.[A-Z]{2,5}$/.test(rows[i].t)?[`${rows[i].t}.US`]:[])]))],names:[...new Set(indices.flatMap(i=>rows[i].names))]});
+  result.set(key,{lg:r.lg??null,t:r.t.replace(/-OLD(?:\d+)?$/,''),n:r.n,h:Math.max(...indices.map(i=>rows[i].h)),mc:Math.max(0,...indices.map(i=>rows[i].mc??0)),aliases:[...new Set(indices.flatMap(i=>[rows[i].t,...(!/\.[A-Z]{2,5}$/.test(rows[i].t)?[`${rows[i].t}.US`]:[])]))],names:[...new Set(indices.flatMap(i=>rows[i].names))]});
  }
  for(const [from,to] of Object.entries(aliases)) {
   const i=keys.get(listingKey(to));

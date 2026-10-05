@@ -1,0 +1,51 @@
+{
+  "tests": {
+    "filesPassed": 227,
+    "passed": 2246,
+    "skipped": 1,
+    "log": "evidence/full-tests-final.log"
+  },
+  "build": {
+    "status": "passed",
+    "command": "next build --webpack",
+    "includesTypeScript": true,
+    "log": "evidence/build-final.log"
+  },
+  "browser": {
+    "status": "passed",
+    "production": true,
+    "requiredScreenshots": 24,
+    "additionalFallbackScreenshots": 2,
+    "viewports": [
+      [
+        1728,
+        970
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "pageErrors": 0,
+    "log": "evidence/browser-proof-final.log"
+  },
+  "data": {
+    "companiesBefore": 3950,
+    "companiesAfter": 3950,
+    "missingBefore": 1165,
+    "missingAfter": 28,
+    "approvedAdded": 1137,
+    "uniqueNewAssets": 1129,
+    "baselineFilesChecked": 2609,
+    "baselineFilesChanged": 0,
+    "nonLogoIndexChanges": 0
+  },
+  "identityAudit": {
+    "seed": 20261005,
+    "randomSample": 40,
+    "verified": 40
+  },
+  "liveWrites": false,
+  "published": false,
+  "subagents": false
+}

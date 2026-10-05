@@ -4,7 +4,7 @@ import {buildCompanyIndex, type SearchCompany} from "./companies";
 
 export type Hit =
   | { kind: "investor"; code: string; title: string; sub: string }
-  | { kind: "stock"; ticker: string; title: string; sub: string; holders: number }
+  | { kind: "stock"; ticker: string; title: string; sub: string; holders: number; logo?: string | null }
   | { kind: "munger" };
 
 export interface RankItem<T> {
@@ -82,7 +82,7 @@ export function rank(index: SearchIndex, query: string): Hit[] {
   }
   const stocks = index.stocks.some(st => "aliases" in st) ? index.stocks as SearchCompany[] : buildCompanyIndex(index).stocks;
   for (const st of stocks) {
-    items.push({ value: { kind: "stock", ticker: st.t, title: st.t, sub: st.n, holders: st.h },
+    items.push({ value: { kind: "stock", ticker: st.t, title: st.t, sub: st.n, holders: st.h, logo:st.lg??null },
       fields: [...[...new Set([st.t,...(st.aliases??[])])].map(text=>({text,weight:1.1})), ...[...new Set([st.n,...(st.names??[])])].map(text=>({text}))], marketCap:st.mc, bonus: Math.min(st.h, 40) / 200 });
   }
   palettes.set(index,items);

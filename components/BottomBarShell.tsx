@@ -17,7 +17,7 @@ export function BottomBarShell({method,investorCodes,timelineCodes}:{method:Reac
   <div id="value-timeline" hidden={!hasTimeline}/>
   <div className="dock-tools">
    {path!=='/'&&!investor&&<QuarterLink href="/">GigaInvestors</QuarterLink>}
-   {path!=='/value'&&<QuarterLink href="/value">{VALUE_PRODUCT_NAME}</QuarterLink>}
+   {path!=='/value'&&<a href="/value">{VALUE_PRODUCT_NAME}</a>}
    <SearchTrigger/>
    {(value||company)&&method}
    <QuarterLink href="/newsletter">Newsletter</QuarterLink>

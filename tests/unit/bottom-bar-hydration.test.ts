@@ -33,4 +33,8 @@ describe('dock hydration',()=>{
   expect(html).toContain('site-dock');
   expect(html).toContain(`data-timeline="${timeline}"`);
  });
+ it('sends the GigaValue button to today, never a time-travel quarter',()=>{
+  expect(render('/HA',['HA'])).toContain('<a href="/value">GigaValue</a>');
+  expect(render('/s/AAPL',['s','AAPL'])).toContain('<a href="/value">GigaValue</a>');
+ });
 });

@@ -1,3 +1,4 @@
+import {HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY} from '@/lib/value/history-copy';
 import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {METHOD_COPY, METHOD_SECTIONS, METHOD_RULE_COPY} from '@/lib/value/method-content';
 import {METHOD_CHANGES, METHOD_VERSION} from '@/lib/value/method-version';
@@ -24,7 +25,7 @@ export const glossary = [
  ['Buy price','Central estimated per-share value after the required margin-of-safety discount; a buy also requires the return hurdle and five quality passes.'],
  ['Margin of safety','Required discount from modeled central value, expressed as a percentage.'],
  ['13F','Quarter-end reported US securities holdings, generally filed up to 45 days later; excludes a complete view of cash, shorts and non-reportable positions.'],
- ['Time travel','Retrospective checklist reconstruction using current restatements and today’s surviving index universe; it is not a contemporaneous investable portfolio.'],
+ ['Time travel',HISTORY_POPULATION_COPY],
  ['Price return','Change in share price, excluding dividends; historical total change is not an annualized return.'],
  ['As of','The observation or publication date of a specific value; analysis, quote, filing and quarter dates can differ.'],
 ];
@@ -34,7 +35,7 @@ export function methodMarkdown() {
  '## Required discount',METHOD_COPY[1],'## Who sets the rules?',METHOD_COPY[2],
  '## Every numerical cutoff',METHOD_RULE_COPY[0],
  ...Object.entries(metricLabels).filter(([,m])=>m.threshold!==undefined&&m.better).map(([id,m])=>`- ${m.label}: ${m.better==='higher'?(m.strict?'>':'≥'):(m.strict?'<':'≤')} ${formatMetric({value:m.threshold!,format:m.format})}. ${metricHelp(id,m.label).why}`),
- METHOD_RULE_COPY[1], '## Sources and uncertainty',...METHOD_COPY.slice(3),
+ METHOD_RULE_COPY[1], '## Sources and uncertainty',...METHOD_COPY.slice(3),HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY,
  '## Method changes',...METHOD_CHANGES.map(c=>`- ${c.date} — ${c.version}: ${c.changelog}`),
  '## Glossary',...glossary.map(([name,copy])=>`- **${name}**: ${copy}`),
  ].join('\n\n')

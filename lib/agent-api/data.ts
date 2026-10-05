@@ -1,3 +1,4 @@
+import {HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY} from '@/lib/value/history-copy';
 import {METHOD_SECTIONS} from '@/lib/value/method-content';
 import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {z} from 'zod';
@@ -89,13 +90,13 @@ export async function executeEndpoint(route:Route,pathname:string,q:Query):Promi
  case 'history':case 'quarter':{
   const history=await readStore<HistoryIndex>('history/index.json');if(!history)throw new DataError(503,'history_unavailable','History is unavailable.');
   const summaries=(q.markets==='western'?history.western?.perQuarter:history.perQuarter)??{};
-  const common={assumptions:history.assumptions??[],caveats:history.caveats??[]};
+  const common={assumptions:[HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY,...(history.assumptions??[]).filter(copy=>!copy.startsWith('The population is'))],caveats:history.caveats??[]};
   if(route.id==='history')return {asOf:history.asOf??null,markets:q.markets,quarters:history.quarters??Object.keys(summaries).sort(),summaries,...common};
   const frame=parts[4];if(!quarter.safeParse(frame).success)throw new DataError(400,'invalid_quarter','Use YYYYQ1 through YYYYQ4.');
   return {...await listing(q,frame),summary:summaries[frame]??null,...common};
  }
  case 'changelog':return {version:METHOD_VERSION,changes:METHOD_CHANGES};
- case 'method':return {version:METHOD_VERSION,description:`${VALUE_PRODUCT_NAME}: five independent quality tests plus a price check. Model choices inspired by principles Buffett and Munger describe; no blended score and no endorsement.`,tests:METHOD_SECTIONS.map(([id,,description])=>({id,description})),rules:Object.entries(metricLabels).filter(([,m])=>m.threshold!==undefined&&m.better).map(([id,m])=>({id,label:m.label,threshold:m.threshold!,better:m.better!,strict:!!m.strict,explanation:metricHelp(id,m.label).why})),assumptions:['Operating valuations project ten years plus a terminal value.','Required return is at least 10%, or the local ten-year bond yield plus four percentage points.','Historical simulations have hindsight and coverage limitations; consult the time-travel caveats.','Forward record uses immutable dated observations.','Financial companies and investment holdings use their published sector-specific valuation models.','Research estimates are not forecasts or investment advice.']};
+ case 'method':return {version:METHOD_VERSION,description:`${VALUE_PRODUCT_NAME}: five independent quality tests plus a price check. Model choices inspired by principles Buffett and Munger describe; no blended score and no endorsement.`,tests:METHOD_SECTIONS.map(([id,,description])=>({id,description})),rules:Object.entries(metricLabels).filter(([,m])=>m.threshold!==undefined&&m.better).map(([id,m])=>({id,label:m.label,threshold:m.threshold!,better:m.better!,strict:!!m.strict,explanation:metricHelp(id,m.label).why})),assumptions:['Operating valuations project ten years plus a terminal value.','Required return is at least 10%, or the local ten-year bond yield plus four percentage points.',HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY,'Forward record uses immutable dated observations.','Financial companies and investment holdings use their published sector-specific valuation models.','Research estimates are not forecasts or investment advice.']};
  case 'forward':return getForwardRecord();
  }
 }

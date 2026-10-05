@@ -1,3 +1,4 @@
+import {HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY} from '@/lib/value/history-copy';
 import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {pageCatalog} from './catalog';
 import {methodMarkdown,methodSummary} from './method';
@@ -11,7 +12,7 @@ export async function llmsText(site: Site,full=false) {
  'Reading a verdict: Buy now requires all five quality passes, the published buy-price discount and the annual return hurdle. Wait is not a buy. A failed quality test cannot be repaired by a lower price. Model estimates are not guarantees or investment advice.',
  `Freshness: investor publication ${index?.generatedAt??'see investor page'}; latest holding quarter ${index?.quarters.at(-1)??'see investor page'}. Checklist publication ${meta?.asOf??'see company page'}. Always cite the separate quote, analysis, fiscal-period and filing dates. 13F holdings lag quarter end; prices are not a real-time feed.`,
  'Sources and licensing: SEC 13F filings via Dataroma; company statements via SEC EDGAR, EDINET, ESEF, EODHD and Yahoo. Cite the original filing and canonical GigaInvestors URL. Underlying third-party licenses apply; public access grants no blanket right to redistribute source datasets.',
- 'Historical checklist frames use current restatements and today’s surviving index membership (survivorship bias). Price changes exclude dividends; overlapping cohorts are not a tradable portfolio.',
+ HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY,
  '## Key pages',
  `- [Investor map](${markdownUrl(siteUrl('main'))}): holdings and portfolio values.`,
  `- [Checklist](${markdownUrl(siteUrl('value'))}): quality passes and current prices.`,

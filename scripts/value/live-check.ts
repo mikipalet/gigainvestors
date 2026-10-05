@@ -1,3 +1,4 @@
+import {historyHeadline} from '../../lib/value/since-return';
 import {chromium,expect,type Page} from '@playwright/test';
 import {readFileSync} from 'node:fs';
 import path from 'node:path';
@@ -14,8 +15,10 @@ export async function checkTimeTravel(page:Page,history:HistoryIndex,url='https:
   await assert(view).toHaveAttribute('aria-busy','false');
   await assert(slider).toHaveAttribute('aria-valuetext',q.replace(/^(\d{4})Q(\d)$/,'$1 Q$2'));
   if(q!=='Today'){
-   const count=history.western?.perQuarter?.[q]?.atBuy;
-   if(count===undefined)throw new Error(`Missing Western quarter summary: ${q}`);
+   const summary=history.western?.perQuarter?.[q];
+   const count=summary?.atBuy;
+   if(count===undefined||!summary)throw new Error(`Missing Western quarter summary: ${q}`);
+   await assert(page.locator('.index-story h1')).toHaveText(historyHeadline(q,summary));
    await assert(page.locator('.one-index')).toHaveAttribute('data-buy-count',String(count));
    // A manifest can render the header from history/index while failing to load rows.
    await assert(view).toHaveAttribute('data-buy-count',String(count));

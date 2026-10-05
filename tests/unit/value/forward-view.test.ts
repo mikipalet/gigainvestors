@@ -26,5 +26,5 @@ it('shows version history and explains in-sample design and the three hindsight 
  expect(changes).toContain('3.0.0');expect(changes).toContain('1 Oct 2026');expect(changes).toContain('never to improve past returns');expect(changes).toContain('in-sample');
  const simulation=renderToStaticMarkup(createElement(HindsightSimulation,{history:null}));
  expect(simulation).toContain('Hindsight simulation, not a track record');
- for(const bias of ['designed in 2026','restatements','today’s index membership'])expect(simulation).toContain(bias);
+ for(const bias of ['designed in 2026','restatements','Today’s index membership'])expect(simulation).toContain(bias);
 });

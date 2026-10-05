@@ -8,7 +8,7 @@ export function sinceLabel(value:number|null|undefined):string {return finite(va
 export function historyHeadline(frame:string,summary:Pick<HistorySummary,'atBuy'|'avgReturnAtBuy'|'avgReturnAll'>):string {
  const title=`${frame.replace(/^(\d{4})Q/, '$1 Q')}: ${summary.atBuy} at a fair price.`;
  return finite(summary.avgReturnAtBuy)&&finite(summary.avgReturnAll)
-  ?`${title} ${Math.abs(summary.avgReturnAtBuy)<.005?'Flat':`${summary.avgReturnAtBuy<0?'Down':'Up'} ${percent(summary.avgReturnAtBuy)}`} since; all index companies ${Math.abs(summary.avgReturnAll)<.005?'flat':signed(summary.avgReturnAll)}.`:title;
+  ?`${title} ${Math.abs(summary.avgReturnAtBuy)<.005?'Flat':`${summary.avgReturnAtBuy<0?'Down':'Up'} ${percent(summary.avgReturnAtBuy)}`} since; analysed index companies ${Math.abs(summary.avgReturnAll)<.005?'flat':signed(summary.avgReturnAll)}.`:title;
 }
 /** A separately refreshed, same-provider price basis leaves the prediction untouched. */
 export function refreshReturn(row:SnapshotRow,frame:string,prices:ReturnPrices|undefined):SnapshotRow {

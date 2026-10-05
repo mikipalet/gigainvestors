@@ -9,7 +9,7 @@ export type MethodData={meta:StoreMeta|null;calibration:Array<{id:string;name:st
 export function MethodDetails({meta,calibration}:MethodData){
  const populations=[['Western',meta?.western?.story],['All markets',meta?.story]] as const;
  return <>
-  {meta&&<section className="method-funnel"><h3>From universe to buy zone</h3><p>{meta.counts.universe.toLocaleString('en-US')} covered companies · {dateLabel(meta.asOf)}</p><table><thead><tr><th>Stage</th><th>Western</th><th>All markets</th></tr></thead><tbody>{[
+  {meta&&<section className="method-funnel"><h3>Current universe to buy zone</h3><p>{meta.counts.universe.toLocaleString('en-US')} covered companies today · {dateLabel(meta.asOf)}</p><table><thead><tr><th>Stage</th><th>Western</th><th>All markets</th></tr></thead><tbody>{[
    {label:'Analysed',counts:populations.map(([,s])=>s?.analysed)},
    ...(meta.funnel?.gates??[]).filter(g=>g.key!=='price').map(g=>({label:g.label,counts:[meta.western?.funnel.gates.find(w=>w.key===g.key)?.passing,g.passing]})),
    {label:'Quality passes',counts:populations.map(([,s])=>s?.qualityPasses)},

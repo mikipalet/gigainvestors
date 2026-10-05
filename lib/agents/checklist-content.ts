@@ -1,3 +1,4 @@
+import {HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY} from '@/lib/value/history-copy';
 import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import type {BrowserRow} from '@/lib/value/browser-view';
 import type {StoreMeta} from '@/lib/value/types';
@@ -11,7 +12,7 @@ export function checklistMarkdown(rows: BrowserRow[],meta:StoreMeta|null,frame?:
  const shown=rows.filter(r=>matchesView(r,filter));
  return [`# ${VALUE_PRODUCT_NAME}${frame?` — ${frame}`:''}`,`Canonical: ${url}`,`Published as of: ${meta?.asOf??'see each company'}. ${frame?`Quarter end: ${quarterEnd(frame)}.`:''}`,
  'Quality code order: understandable, moat, economics, management, accounting. P = pass; F = fail; C/U = unresolved; N = not applicable. Five passes alone do not establish a Buy now verdict.',
- ...(frame?['Historical reconstruction uses current restatements and today’s surviving index universe (survivorship bias). Subsequent price changes exclude dividends and are not annualized; overlapping cohorts are not an investable portfolio.']:[]),
+ ...(frame?[HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY]:[]),
  `Market scope: ${filter.markets==='all'?'all covered markets':'Western-accessible listings'}. ${shown.length} matching companies.`,
  ['| Company | Quality code | Buy qualified | Price per share | Price as of | Expected return per year | Subsequent price change |',
  '|---|---|---|---|---|---|---|',

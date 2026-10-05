@@ -16,7 +16,9 @@ type Files = Record<string, any>;
 export function readVerdictFreeze(repo: string, {all=false}:{all?:boolean}={}) {
   const config = readCorpusJson<{version:number;ids:string[]}>('verdict-freeze.json');
   if (config && (config.version !== 1 || !Array.isArray(config.ids) || config.ids.some(id => typeof id !== 'string' || !validCompanyId(id, 'publish')) || new Set(config.ids).size !== config.ids.length)) throw Error('Invalid verdict-freeze.json');
-  const ids = new Set([...(config?.ids ?? []),...unchangedCoverageBaselineIds()]), previous: Files = {}, dossiers: Record<string,Dossier> = {};
+  const aliasesFile=path.join(repo,'aliases.json');
+  const aliases=existsSync(aliasesFile)?JSON.parse(readFileSync(aliasesFile,'utf8')):{};
+  const ids = new Set([...(config?.ids ?? []),...unchangedCoverageBaselineIds().filter(id=>!aliases[id])]), previous: Files = {}, dossiers: Record<string,Dossier> = {};
   if (!ids.size&&!all) return {ids, previous, dossiers};
   for (const dir of ['dossiers','index','search','history']) {
     if (!existsSync(path.join(repo,dir))) continue;
@@ -94,6 +96,11 @@ export function applyVerdictFreeze(files: Files, freeze: ReturnType<typeof readV
   const aliases=files['aliases.json']??={};
   for(const [alias,id] of Object.entries(aliases))if(ids.has(id as string))delete aliases[alias];
   for(const [alias,id] of Object.entries(previous['aliases.json']??{}))if(ids.has(id as string))aliases[alias]=id;
+  refreshPublishedSummaries(files);
+  for(const id of ids)appendJsonl('staging/verdict-freeze.jsonl',{at:new Date().toISOString(),id,reason:'frozen until second-source check',publishedAsOf:dossiers[id].asOf});
+}
+
+export function refreshPublishedSummaries(files:Files):void {
   // Summaries and browser views must describe the restored rows, not rejected analyses.
   const history=files['history/index.json'];
   if(history){
@@ -125,5 +132,4 @@ export function applyVerdictFreeze(files: Files, freeze: ReturnType<typeof readV
   meta.funnel=funnel;meta.story=storyFromFunnel(funnel);meta.western={funnel:western,story:storyFromFunnel(western)};
   meta.counts={...meta.counts,analysed:rows.length,scored:rows.filter(r=>r.st==='s').length,insufficient:rows.filter(r=>r.st==='i').length};
   assertIndexConsistency({meta,rows:files['index/default.json']});
-  for(const id of ids)appendJsonl('staging/verdict-freeze.jsonl',{at:new Date().toISOString(),id,reason:'frozen until second-source check',publishedAsOf:dossiers[id].asOf});
 }

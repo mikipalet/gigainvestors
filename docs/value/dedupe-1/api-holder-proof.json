@@ -1,0 +1,1106 @@
+{
+  "rows": [
+    {
+      "id": "2015.HK",
+      "canonical": "LI.US",
+      "resolved": "LI.US",
+      "pass": true
+    },
+    {
+      "id": "600938.SHG",
+      "canonical": "0883.HK",
+      "resolved": "0883.HK",
+      "pass": true
+    },
+    {
+      "id": "600941.SHG",
+      "canonical": "0941.HK",
+      "resolved": "0941.HK",
+      "pass": true
+    },
+    {
+      "id": "6690.HK",
+      "canonical": "600690.SHG",
+      "resolved": "600690.SHG",
+      "pass": true
+    },
+    {
+      "id": "688981.SHG",
+      "canonical": "0981.HK",
+      "resolved": "0981.HK",
+      "pass": true
+    },
+    {
+      "id": "9888.HK",
+      "canonical": "BIDU.US",
+      "resolved": "BIDU.US",
+      "pass": true
+    },
+    {
+      "id": "9988.HK",
+      "canonical": "BABA.US",
+      "resolved": "BABA.US",
+      "pass": true
+    },
+    {
+      "id": "9999.HK",
+      "canonical": "NTES.US",
+      "resolved": "NTES.US",
+      "pass": true
+    },
+    {
+      "id": "ABVX.PA",
+      "canonical": "ABVX.US",
+      "resolved": "ABVX.US",
+      "pass": true
+    },
+    {
+      "id": "AGN.AS",
+      "canonical": "AEG.US",
+      "resolved": "AEG.US",
+      "pass": true
+    },
+    {
+      "id": "AKBLF.US",
+      "canonical": "ALK-B.CO",
+      "resolved": "ALK-B.CO",
+      "pass": true
+    },
+    {
+      "id": "AMC.AU",
+      "canonical": "AMCR.US",
+      "resolved": "AMCR.US",
+      "pass": true
+    },
+    {
+      "id": "ASAIY.US",
+      "canonical": "ASAI3.SA",
+      "resolved": "ASAI3.SA",
+      "pass": true
+    },
+    {
+      "id": "BATRK.US",
+      "canonical": "BATRA.US",
+      "resolved": "BATRA.US",
+      "pass": true
+    },
+    {
+      "id": "BDRFY.US",
+      "canonical": "BEI.XETRA",
+      "resolved": "BEI.XETRA",
+      "pass": true
+    },
+    {
+      "id": "BH-A.US",
+      "canonical": "BH.US",
+      "resolved": "BH.US",
+      "pass": true
+    },
+    {
+      "id": "BUDFF.US",
+      "canonical": "ABI.BR",
+      "resolved": "ABI.BR",
+      "pass": true
+    },
+    {
+      "id": "CABJF.US",
+      "canonical": "CARL-B.CO",
+      "resolved": "CARL-B.CO",
+      "pass": true
+    },
+    {
+      "id": "DGEAF.US",
+      "canonical": "DGE.LSE",
+      "resolved": "DGE.LSE",
+      "pass": true
+    },
+    {
+      "id": "ERFSF.US",
+      "canonical": "ERF.PA",
+      "resolved": "ERF.PA",
+      "pass": true
+    },
+    {
+      "id": "FEMSAUBD.MX",
+      "canonical": "FMX.US",
+      "resolved": "FMX.US",
+      "pass": true
+    },
+    {
+      "id": "FFH.TO",
+      "canonical": "FRFHF.US",
+      "resolved": "FRFHF.US",
+      "pass": true
+    },
+    {
+      "id": "FME.XETRA",
+      "canonical": "FMS.US",
+      "resolved": "FMS.US",
+      "pass": true
+    },
+    {
+      "id": "FWONA.US",
+      "canonical": "FWONK.US",
+      "resolved": "FWONK.US",
+      "pass": true
+    },
+    {
+      "id": "GLIBK.US",
+      "canonical": "GLIBA.US",
+      "resolved": "GLIBA.US",
+      "pass": true
+    },
+    {
+      "id": "GSK.US",
+      "canonical": "GSK.LSE",
+      "resolved": "GSK.LSE",
+      "pass": true
+    },
+    {
+      "id": "HEN3.XETRA",
+      "canonical": "HEN.XETRA",
+      "resolved": "HEN.XETRA",
+      "pass": true
+    },
+    {
+      "id": "HESAY.US",
+      "canonical": "RMS.PA",
+      "resolved": "RMS.PA",
+      "pass": true
+    },
+    {
+      "id": "HKLB.LSE",
+      "canonical": "HKHGF.US",
+      "resolved": "HKHGF.US",
+      "pass": true
+    },
+    {
+      "id": "HXGBY.US",
+      "canonical": "HEXA-B.ST",
+      "resolved": "HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "id": "ING.US",
+      "canonical": "INGA.AS",
+      "resolved": "INGA.AS",
+      "pass": true
+    },
+    {
+      "id": "ITUB3.SA",
+      "canonical": "ITUB.US",
+      "resolved": "ITUB.US",
+      "pass": true
+    },
+    {
+      "id": "JHX.AU",
+      "canonical": "JHX.US",
+      "resolved": "JHX.US",
+      "pass": true
+    },
+    {
+      "id": "LBTYK.US",
+      "canonical": "LBTYA.US",
+      "resolved": "LBTYA.US",
+      "pass": true
+    },
+    {
+      "id": "LILAK.US",
+      "canonical": "LILA.US",
+      "resolved": "LILA.US",
+      "pass": true
+    },
+    {
+      "id": "LLYVK.US",
+      "canonical": "LLYVA.US",
+      "resolved": "LLYVA.US",
+      "pass": true
+    },
+    {
+      "id": "LRLCF.US",
+      "canonical": "OR.PA",
+      "resolved": "OR.PA",
+      "pass": true
+    },
+    {
+      "id": "NESN.SW",
+      "canonical": "NSRGY.US",
+      "resolved": "NSRGY.US",
+      "pass": true
+    },
+    {
+      "id": "NSRGF.US",
+      "canonical": "NSRGY.US",
+      "resolved": "NSRGY.US",
+      "pass": true
+    },
+    {
+      "id": "NWS.AU",
+      "canonical": "NWS.US",
+      "resolved": "NWS.US",
+      "pass": true
+    },
+    {
+      "id": "NWSA.US",
+      "canonical": "NWS.US",
+      "resolved": "NWS.US",
+      "pass": true
+    },
+    {
+      "id": "NXG.AU",
+      "canonical": "NXE.US",
+      "resolved": "NXE.US",
+      "pass": true
+    },
+    {
+      "id": "PDRDF.US",
+      "canonical": "RI.PA",
+      "resolved": "RI.PA",
+      "pass": true
+    },
+    {
+      "id": "PRNDY.US",
+      "canonical": "RI.PA",
+      "resolved": "RI.PA",
+      "pass": true
+    },
+    {
+      "id": "RBGPF.US",
+      "canonical": "RKT.LSE",
+      "resolved": "RKT.LSE",
+      "pass": true
+    },
+    {
+      "id": "RDY.US",
+      "canonical": "DRREDDY.NSE",
+      "resolved": "DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "id": "RTO.US",
+      "canonical": "RTO.LSE",
+      "resolved": "RTO.LSE",
+      "pass": true
+    },
+    {
+      "id": "RUSHB.US",
+      "canonical": "RUSHA.US",
+      "resolved": "RUSHA.US",
+      "pass": true
+    },
+    {
+      "id": "RYCEY.US",
+      "canonical": "RR.LSE",
+      "resolved": "RR.LSE",
+      "pass": true
+    },
+    {
+      "id": "SN.LSE",
+      "canonical": "SNN.US",
+      "resolved": "SNN.US",
+      "pass": true
+    },
+    {
+      "id": "SSPPF.US",
+      "canonical": "SSPG.LSE",
+      "resolved": "SSPG.LSE",
+      "pass": true
+    },
+    {
+      "id": "UA.US",
+      "canonical": "UAA.US",
+      "resolved": "UAA.US",
+      "pass": true
+    },
+    {
+      "id": "UHAL.US",
+      "canonical": "UHAL-B.US",
+      "resolved": "UHAL-B.US",
+      "pass": true
+    },
+    {
+      "id": "VESTA.MX",
+      "canonical": "VTMX.US",
+      "resolved": "VTMX.US",
+      "pass": true
+    },
+    {
+      "id": "VOW3.XETRA",
+      "canonical": "VOW.XETRA",
+      "resolved": "VOW.XETRA",
+      "pass": true
+    },
+    {
+      "id": "WILLF.US",
+      "canonical": "DEMANT.CO",
+      "resolved": "DEMANT.CO",
+      "pass": true
+    },
+    {
+      "id": "Z.US",
+      "canonical": "ZG.US",
+      "resolved": "ZG.US",
+      "pass": true
+    },
+    {
+      "id": "ZTO.US",
+      "canonical": "2057.HK",
+      "resolved": "2057.HK",
+      "pass": true
+    }
+  ],
+  "holders": [
+    {
+      "id": "0883.HK",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "holders": []
+    },
+    {
+      "id": "0941.HK",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "holders": []
+    },
+    {
+      "id": "0981.HK",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "holders": []
+    },
+    {
+      "id": "2057.HK",
+      "dossierHolders": [
+        "PIM"
+      ],
+      "listings": [
+        "ZTO"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "PIM"
+      ]
+    },
+    {
+      "id": "600690.SHG",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "holders": []
+    },
+    {
+      "id": "ABI.BR",
+      "dossierHolders": [
+        "CAU",
+        "DAC",
+        "GFT",
+        "GR",
+        "mc"
+      ],
+      "listings": [
+        "BUD",
+        "BUDFF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "DAC",
+        "GFT",
+        "CAU",
+        "GR",
+        "mc"
+      ]
+    },
+    {
+      "id": "ABVX.US",
+      "dossierHolders": [
+        "mc"
+      ],
+      "listings": [
+        "ABVX"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "mc"
+      ]
+    },
+    {
+      "id": "AEG.US",
+      "dossierHolders": [
+        "DAC"
+      ],
+      "listings": [
+        "AEG"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "DAC"
+      ]
+    },
+    {
+      "id": "ALK-B.CO",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "AKBLF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "GR"
+      ]
+    },
+    {
+      "id": "AMCR.US",
+      "dossierHolders": [
+        "MPF"
+      ],
+      "listings": [
+        "AMCR"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "MPF"
+      ]
+    },
+    {
+      "id": "ASAI3.SA",
+      "dossierHolders": [],
+      "listings": [
+        "ASAIY"
+      ],
+      "latest": "2025 Q1",
+      "holders": []
+    },
+    {
+      "id": "BABA.US",
+      "dossierHolders": [
+        "AM",
+        "ca",
+        "CAU",
+        "DAC",
+        "HA",
+        "HH",
+        "PIM",
+        "SP",
+        "TB"
+      ],
+      "listings": [
+        "BABA"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "DAC",
+        "AM",
+        "CAU",
+        "SP",
+        "HH",
+        "ca",
+        "PIM",
+        "HA",
+        "TB"
+      ]
+    },
+    {
+      "id": "BATRA.US",
+      "dossierHolders": [
+        "SE",
+        "TA"
+      ],
+      "listings": [
+        "BATRA",
+        "BATRK"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "SE",
+        "TA"
+      ]
+    },
+    {
+      "id": "BEI.XETRA",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "holders": []
+    },
+    {
+      "id": "BH.US",
+      "dossierHolders": [],
+      "listings": [
+        "BH",
+        "BH.A"
+      ],
+      "latest": "2026 Q2",
+      "holders": []
+    },
+    {
+      "id": "BIDU.US",
+      "dossierHolders": [
+        "AM",
+        "DAC",
+        "FPA",
+        "PIM"
+      ],
+      "listings": [
+        "BIDU"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "AM",
+        "PIM",
+        "DAC",
+        "FPA"
+      ]
+    },
+    {
+      "id": "CARL-B.CO",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "CABJF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "GR"
+      ]
+    },
+    {
+      "id": "DEMANT.CO",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "WILLF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "GR"
+      ]
+    },
+    {
+      "id": "DGE.LSE",
+      "dossierHolders": [
+        "CAU",
+        "DAC",
+        "FE",
+        "HA",
+        "HCM",
+        "MKL",
+        "TB"
+      ],
+      "listings": [
+        "DEO",
+        "DGEAF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "MKL",
+        "CAU",
+        "FE",
+        "TB",
+        "HCM",
+        "DAC",
+        "HA",
+        "FPA"
+      ]
+    },
+    {
+      "id": "DRREDDY.NSE",
+      "dossierHolders": [],
+      "listings": [
+        "RDY"
+      ],
+      "latest": "2025 Q4",
+      "holders": []
+    },
+    {
+      "id": "ERF.PA",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "ERFSF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "GR"
+      ]
+    },
+    {
+      "id": "FMS.US",
+      "dossierHolders": [
+        "DAC",
+        "PIM"
+      ],
+      "listings": [
+        "FMS"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "PIM",
+        "DAC"
+      ]
+    },
+    {
+      "id": "FMX.US",
+      "dossierHolders": [
+        "FE",
+        "HA"
+      ],
+      "listings": [
+        "FMX"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "FE",
+        "HA"
+      ]
+    },
+    {
+      "id": "FRFHF.US",
+      "dossierHolders": [
+        "CHE",
+        "KB"
+      ],
+      "listings": [
+        "FRFHF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "CHE",
+        "KB"
+      ]
+    },
+    {
+      "id": "FWONK.US",
+      "dossierHolders": [
+        "RC",
+        "SP",
+        "TGM"
+      ],
+      "listings": [
+        "FWONK",
+        "FWONA"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "RC",
+        "TGM",
+        "SP"
+      ]
+    },
+    {
+      "id": "GLIBA.US",
+      "dossierHolders": [
+        "RC",
+        "SE"
+      ],
+      "listings": [
+        "GLIBA",
+        "GLIBK"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "SE",
+        "RC"
+      ]
+    },
+    {
+      "id": "GSK.LSE",
+      "dossierHolders": [
+        "CAU",
+        "DAC",
+        "HCM",
+        "KB",
+        "PIM",
+        "TB"
+      ],
+      "listings": [
+        "GSK"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "DAC",
+        "KB",
+        "HCM",
+        "TB",
+        "PIM",
+        "CAU"
+      ]
+    },
+    {
+      "id": "HEN.XETRA",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "holders": []
+    },
+    {
+      "id": "HEXA-B.ST",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "holders": []
+    },
+    {
+      "id": "HKHGF.US",
+      "dossierHolders": [
+        "TA"
+      ],
+      "listings": [
+        "HKHGF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "TA"
+      ]
+    },
+    {
+      "id": "INGA.AS",
+      "dossierHolders": [
+        "CAU",
+        "PIM"
+      ],
+      "listings": [
+        "ING"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "CAU",
+        "PIM"
+      ]
+    },
+    {
+      "id": "ITUB.US",
+      "dossierHolders": [
+        "oc"
+      ],
+      "listings": [
+        "ITUB"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "oc"
+      ]
+    },
+    {
+      "id": "JHX.US",
+      "dossierHolders": [
+        "FE",
+        "MPF"
+      ],
+      "listings": [
+        "JHX"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "MPF",
+        "FE"
+      ]
+    },
+    {
+      "id": "LBTYA.US",
+      "dossierHolders": [
+        "BAUPOST",
+        "DAC",
+        "GLRE",
+        "oc"
+      ],
+      "listings": [
+        "LBTYA",
+        "LBTYK"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "oc",
+        "BAUPOST",
+        "DAC",
+        "GLRE"
+      ]
+    },
+    {
+      "id": "LI.US",
+      "dossierHolders": [],
+      "listings": [
+        "LI"
+      ],
+      "latest": "2025 Q2",
+      "holders": []
+    },
+    {
+      "id": "LILA.US",
+      "dossierHolders": [
+        "oc"
+      ],
+      "listings": [
+        "LILA",
+        "LILAK"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "oc"
+      ]
+    },
+    {
+      "id": "LLYVA.US",
+      "dossierHolders": [
+        "BRK",
+        "VA"
+      ],
+      "listings": [
+        "LLYVA",
+        "LLYVK"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "BRK",
+        "VA"
+      ]
+    },
+    {
+      "id": "NSRGY.US",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "NSRGY",
+        "NSRGF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "GR"
+      ]
+    },
+    {
+      "id": "NTES.US",
+      "dossierHolders": [
+        "CAU",
+        "DAC",
+        "DAV"
+      ],
+      "listings": [
+        "NTES"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "DAC",
+        "DAV",
+        "CAU"
+      ]
+    },
+    {
+      "id": "NWS.US",
+      "dossierHolders": [
+        "DAC",
+        "YAM"
+      ],
+      "listings": [
+        "NWS",
+        "NWSA"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "DAC",
+        "YAM"
+      ]
+    },
+    {
+      "id": "NXE.US",
+      "dossierHolders": [
+        "pcm"
+      ],
+      "listings": [
+        "NXE"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "pcm"
+      ]
+    },
+    {
+      "id": "OR.PA",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "LRLCF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "GR"
+      ]
+    },
+    {
+      "id": "RI.PA",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "PDRDF",
+        "PRNDY"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "GR"
+      ]
+    },
+    {
+      "id": "RKT.LSE",
+      "dossierHolders": [],
+      "listings": [
+        "RBGPF"
+      ],
+      "latest": "2024 Q4",
+      "holders": []
+    },
+    {
+      "id": "RMS.PA",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "holders": []
+    },
+    {
+      "id": "RR.LSE",
+      "dossierHolders": [
+        "T"
+      ],
+      "listings": [
+        "RYCEY"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "T"
+      ]
+    },
+    {
+      "id": "RTO.LSE",
+      "dossierHolders": [],
+      "listings": [
+        "RTO"
+      ],
+      "latest": "2025 Q1",
+      "holders": []
+    },
+    {
+      "id": "RUSHA.US",
+      "dossierHolders": [
+        "FPA",
+        "MUHL"
+      ],
+      "listings": [
+        "RUSHA",
+        "RUSHB"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "MUHL",
+        "FPA"
+      ]
+    },
+    {
+      "id": "SNN.US",
+      "dossierHolders": [
+        "CAU"
+      ],
+      "listings": [
+        "SNN"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "CAU"
+      ]
+    },
+    {
+      "id": "SSPG.LSE",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "SSPPF"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "GR"
+      ]
+    },
+    {
+      "id": "UAA.US",
+      "dossierHolders": [
+        "FFH"
+      ],
+      "listings": [
+        "UAA",
+        "UA"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "FFH"
+      ]
+    },
+    {
+      "id": "UHAL-B.US",
+      "dossierHolders": [
+        "abc",
+        "TA",
+        "TB",
+        "YAM"
+      ],
+      "listings": [
+        "UHAL.B",
+        "UHAL"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "YAM",
+        "abc",
+        "TB",
+        "TA"
+      ]
+    },
+    {
+      "id": "VOW.XETRA",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "holders": []
+    },
+    {
+      "id": "VTMX.US",
+      "dossierHolders": [],
+      "listings": [
+        "VTMX"
+      ],
+      "latest": "2025 Q2",
+      "holders": []
+    },
+    {
+      "id": "ZG.US",
+      "dossierHolders": [
+        "KB"
+      ],
+      "listings": [
+        "ZG",
+        "Z"
+      ],
+      "latest": "2026 Q2",
+      "holders": [
+        "KB"
+      ]
+    }
+  ],
+  "failures": []
+}

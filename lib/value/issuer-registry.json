@@ -1,0 +1,5693 @@
+{
+  "version": 1,
+  "asOf": "2026-10-05",
+  "groups": [
+    {
+      "ids": [
+        "0883.HK",
+        "600938.SHG"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.cnoocltd.com/english/investorrelations/stockinformation/",
+          "detail": "Issuer explicitly gives Hong Kong 00883 and Shanghai 600938."
+        }
+      ],
+      "canonical": "0883.HK",
+      "selection": {
+        "0883.HK": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            28
+          ],
+          "history": {
+            "years": 28,
+            "first": 1998,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Hang Seng"
+          ],
+          "frozen": false
+        },
+        "600938.SHG": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            22
+          ],
+          "history": {
+            "years": 22,
+            "first": 2004,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "CSI 300"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "0883.HK": {
+          "Name": "CNOOC Ltd",
+          "ISIN": "HK0883013259",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "0883.HK",
+          "Listings": {
+            "0": {
+              "Code": "CEO",
+              "Exchange": "US",
+              "Name": "CNOOC Limited"
+            },
+            "1": {
+              "Code": "CNU",
+              "Exchange": "TO",
+              "Name": "CNOOC Limited"
+            }
+          },
+          "WebURL": "https://www.cnoocltd.com"
+        },
+        "600938.SHG": {
+          "Name": "CNOOC Limited",
+          "ISIN": "CNE100005980",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": null,
+          "Listings": {},
+          "WebURL": "https://www.cnoocltd.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "0941.HK",
+        "600941.SHG"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.chinamobileltd.com/en/ir/webcasts/pre220323.pdf",
+          "detail": "Same issuer Hong Kong shares and Shanghai A shares; page 14 gives both codes."
+        }
+      ],
+      "canonical": "0941.HK",
+      "selection": {
+        "0941.HK": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            29
+          ],
+          "history": {
+            "years": 29,
+            "first": 1997,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Hang Seng"
+          ],
+          "frozen": false
+        },
+        "600941.SHG": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            29
+          ],
+          "history": {
+            "years": 29,
+            "first": 1997,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "CSI 300"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "0941.HK": {
+          "Name": "China Mobile Ltd",
+          "ISIN": "HK0941009539",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "0941.HK",
+          "Listings": {
+            "0": {
+              "Code": "CHL",
+              "Exchange": "US",
+              "Name": "China Mobile Limited"
+            }
+          },
+          "WebURL": "https://www.chinamobileltd.com"
+        },
+        "600941.SHG": {
+          "Name": "China Mobile Limited",
+          "ISIN": "CNE1000055G1",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": null,
+          "Listings": {},
+          "WebURL": "https://www.chinamobileltd.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "0981.HK",
+        "688981.SHG"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.hkexnews.hk/listedco/listconews/sehk/2025/0807/2025080700636.pdf",
+          "detail": "Issuer SMIC identifies SEHK 00981 and SSE STAR 688981."
+        }
+      ],
+      "canonical": "0981.HK",
+      "selection": {
+        "0981.HK": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            22
+          ],
+          "history": {
+            "years": 22,
+            "first": 2004,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Hang Seng"
+          ],
+          "frozen": false
+        },
+        "688981.SHG": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            22
+          ],
+          "history": {
+            "years": 22,
+            "first": 2004,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "CSI 300"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "0981.HK": {
+          "Name": "Semiconductor Manufacturing International Corp",
+          "ISIN": "KYG8020E1199",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "0981.HK",
+          "Listings": {},
+          "WebURL": "https://www.smics.com"
+        },
+        "688981.SHG": {
+          "Name": "Semiconductor Manufacturing Intl Co",
+          "ISIN": "CNE1000041W8",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "688981.SHG",
+          "Listings": {},
+          "WebURL": "https://www.smics.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "2057.HK",
+        "ZTO.US"
+      ],
+      "evidence": [
+        {
+          "a": "2057.HK",
+          "b": "ZTOB.F",
+          "keys": [
+            "LEI:549300SCJPK3YZJTJR78",
+            "ISIN:KYG9897K1058"
+          ]
+        },
+        {
+          "a": "2057.HK",
+          "b": "ZTO.US",
+          "keys": [
+            "LEI:549300SCJPK3YZJTJR78"
+          ]
+        }
+      ],
+      "canonical": "2057.HK",
+      "selection": {
+        "2057.HK": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            12
+          ],
+          "history": {
+            "years": 12,
+            "first": 2014,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Hang Seng"
+          ],
+          "frozen": false
+        },
+        "ZTO.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "history": {
+            "years": 1,
+            "first": 2025,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "2057.HK": {
+          "Name": "Zto Express Cayman Inc",
+          "ISIN": "KYG9897K1058",
+          "LEI": "549300SCJPK3YZJTJR78",
+          "CIK": null,
+          "OpenFigi": "BBG00XDF30K3",
+          "PrimaryTicker": "2057.HK",
+          "Listings": {},
+          "WebURL": "https://www.zto.com"
+        },
+        "ZTO.US": {
+          "Name": "ZTO Express (Cayman) Inc",
+          "ISIN": "US98980A1051",
+          "LEI": "549300SCJPK3YZJTJR78",
+          "CIK": "0001677250",
+          "OpenFigi": "BBG00DY7QWH1",
+          "PrimaryTicker": "ZTO.US",
+          "Listings": {},
+          "WebURL": "https://www.zto.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "600690.SHG",
+        "6690.HK"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.haier.com/global/investor-relationship/",
+          "detail": "Issuer gives SH600690 and 06690."
+        }
+      ],
+      "canonical": "600690.SHG",
+      "selection": {
+        "600690.SHG": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "CSI 300"
+          ],
+          "frozen": false
+        },
+        "6690.HK": {
+          "score": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            9
+          ],
+          "history": {
+            "years": 9,
+            "first": 2017,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Hang Seng"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "600690.SHG": {
+          "Name": "Qingdao Haier Co Ltd",
+          "ISIN": "CNE000000CG9",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "600690.SHG",
+          "Listings": {},
+          "WebURL": "https://smart-home.haier.com"
+        },
+        "6690.HK": {
+          "Name": "Haier Smart Home Co Ltd",
+          "ISIN": "CNE1000048K8",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG00Y6QRDM9",
+          "PrimaryTicker": "6690.HK",
+          "Listings": {},
+          "WebURL": "https://smart-home.haier.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "ABI.BR",
+        "BUDFF.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://api.openfigi.com/v3/mapping",
+          "detail": "Equal shareClassFIGI BBG00DQ4YZ27; mapping raw archived in figi.json."
+        }
+      ],
+      "canonical": "ABI.BR",
+      "selection": {
+        "ABI.BR": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            26
+          ],
+          "history": {
+            "years": 26,
+            "first": 2000,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "Euro Stoxx 50",
+            "STOXX Europe 600",
+            "BEL 20"
+          ],
+          "frozen": false
+        },
+        "BUDFF.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            24
+          ],
+          "history": {
+            "years": 24,
+            "first": 2002,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "ABI.BR": {
+          "Name": "Anheuser Busch Inbev SA NV",
+          "ISIN": "BE0974293251",
+          "LEI": "5493008H3828EMEXB082",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "ABI.BR",
+          "Listings": {},
+          "WebURL": "https://www.ab-inbev.com"
+        },
+        "BUDFF.US": {
+          "Name": "Anheuser-Busch InBev SA/NV",
+          "ISIN": null,
+          "LEI": null,
+          "CIK": "0001668717",
+          "OpenFigi": "BBG00F0JWQ83",
+          "PrimaryTicker": null,
+          "Listings": {},
+          "WebURL": "https://www.ab-inbev.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "ABVX.PA",
+        "ABVX.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://ir.abivax.com/news-releases/news-release-details/abivax-announces-launch-public-offering/",
+          "detail": "ADS represents one FR0012333284 ordinary share on Euronext."
+        }
+      ],
+      "canonical": "ABVX.US",
+      "selection": {
+        "ABVX.PA": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            13
+          ],
+          "history": {
+            "years": 13,
+            "first": 2013,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "STOXX Europe 600",
+            "SBF 120"
+          ],
+          "frozen": false
+        },
+        "ABVX.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            13
+          ],
+          "history": {
+            "years": 13,
+            "first": 2013,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "ABVX.PA": {
+          "Name": "Abivax SA",
+          "ISIN": "FR0012333284",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "ABVX.PA",
+          "Listings": {},
+          "WebURL": "https://www.abivax.com"
+        },
+        "ABVX.US": {
+          "Name": "Abivax SA American Depositary Shares",
+          "ISIN": "US00370M1036",
+          "LEI": null,
+          "CIK": "0001956827",
+          "OpenFigi": "BBG01JLQNZ03",
+          "PrimaryTicker": "ABVX.US",
+          "Listings": {},
+          "WebURL": "https://www.abivax.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "AEG.US",
+        "AGN.AS"
+      ],
+      "evidence": [
+        {
+          "a": "AEG.US",
+          "b": "AGN.AS",
+          "keys": [
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "0Q0Y.LSE",
+          "b": "AGN.AS",
+          "keys": [
+            "vendor listing/primary"
+          ]
+        }
+      ],
+      "canonical": "AEG.US",
+      "selection": {
+        "AEG.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        },
+        "AGN.AS": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "STOXX Europe 600",
+            "AEX"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "AEG.US": {
+          "Name": "Aegon NV ADR",
+          "ISIN": "US0076CA1045",
+          "LEI": null,
+          "CIK": "0000769218",
+          "OpenFigi": "BBG000CKQSN6",
+          "PrimaryTicker": "AGN.AS",
+          "Listings": {
+            "0": {
+              "Code": "AEB",
+              "Exchange": "US",
+              "Name": "Aegon N.V. PERP CAP FLTG RT"
+            }
+          },
+          "WebURL": "https://www.aegon.com"
+        },
+        "AGN.AS": {
+          "Name": "Aegon NV",
+          "ISIN": "BMG0112X1056",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "AGN.AS",
+          "Listings": {},
+          "WebURL": "https://www.aegon.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "AKBLF.US",
+        "ALK-B.CO"
+      ],
+      "evidence": [
+        {
+          "source": "https://ir.alk-abello.com/news-releases/news-release-details/decision-complete-share-split-ratio-120",
+          "detail": "ALK ISIN changed DK0060027142 to DK0061802139 after 1:20 split; cached OTC retains old ISIN."
+        }
+      ],
+      "canonical": "ALK-B.CO",
+      "selection": {
+        "AKBLF.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            10
+          ],
+          "history": {
+            "years": 10,
+            "first": 2016,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [],
+          "frozen": false
+        },
+        "ALK-B.CO": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            22
+          ],
+          "history": {
+            "years": 22,
+            "first": 2004,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "AKBLF.US": {
+          "Name": "ALK-Abelló A/S",
+          "ISIN": "DK0060027142",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG000NQV0V7",
+          "PrimaryTicker": "AKBLF.US",
+          "Listings": {},
+          "WebURL": "https://www.alk.net"
+        },
+        "ALK-B.CO": {
+          "Name": "ALK-Abelló A/S",
+          "ISIN": "DK0061802139",
+          "LEI": "529900SGCREUZCZ7P020",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "ALK-B.CO",
+          "Listings": {},
+          "WebURL": "https://www.alk.net"
+        }
+      }
+    },
+    {
+      "ids": [
+        "AMC.AU",
+        "AMCR.US"
+      ],
+      "evidence": [
+        {
+          "a": "485B.STU",
+          "b": "AMC.AU",
+          "keys": [
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "485B.F",
+          "b": "AMCR.US",
+          "keys": [
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "AMC.AU",
+          "b": "AMCR.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "485B.F",
+          "b": "AMC.AU",
+          "keys": [
+            "ISIN:AU000000AMC4",
+            "LEI:549300GSODGFCDQ3DI89"
+          ]
+        },
+        {
+          "a": "485B.F",
+          "b": "485B.STU",
+          "keys": [
+            "ISIN:AU000000AMC4",
+            "LEI:549300GSODGFCDQ3DI89"
+          ]
+        }
+      ],
+      "canonical": "AMCR.US",
+      "selection": {
+        "AMC.AU": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            10
+          ],
+          "history": {
+            "years": 10,
+            "first": 2017,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "S&P/ASX 200"
+          ],
+          "frozen": false
+        },
+        "AMCR.US": {
+          "score": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            10
+          ],
+          "history": {
+            "years": 10,
+            "first": 2017,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [
+            "S&P 500"
+          ],
+          "frozen": true
+        }
+      },
+      "identifiers": {
+        "AMC.AU": {
+          "Name": "Amcor Plc",
+          "ISIN": "AU000000AMC4",
+          "LEI": "549300GSODGFCDQ3DI89",
+          "CIK": null,
+          "OpenFigi": "BBG00LNJRW24",
+          "PrimaryTicker": "AMC.AU",
+          "Listings": {
+            "0": {
+              "Code": "AMCR",
+              "Exchange": "US",
+              "Name": "Amcor PLC"
+            }
+          },
+          "WebURL": "https://www.amcor.com"
+        },
+        "AMCR.US": {
+          "Name": "Amcor PLC",
+          "ISIN": "JE00BV7DQ550",
+          "LEI": null,
+          "CIK": "0001748790",
+          "OpenFigi": "BBG00LNJRQ09",
+          "PrimaryTicker": "AMCR.US",
+          "Listings": {
+            "0": {
+              "Code": "AMC",
+              "Exchange": "AU",
+              "Name": "Amcor Plc"
+            }
+          },
+          "WebURL": "https://www.amcor.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "ASAI3.SA",
+        "ASAIY.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://ri.assai.com.br/en/investor-services/quotes-and-charts-bovespa/asaiy/",
+          "detail": "Issuer investor relations ASAIY ADR listing for Sendas/ASAI3."
+        }
+      ],
+      "canonical": "ASAI3.SA",
+      "selection": {
+        "ASAI3.SA": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            14
+          ],
+          "history": {
+            "years": 14,
+            "first": 2012,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Ibovespa"
+          ],
+          "frozen": false
+        },
+        "ASAIY.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "history": {
+            "years": 1,
+            "first": 2025,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "ASAI3.SA": {
+          "Name": "Sendas Distribuidora S.A.",
+          "ISIN": "BRASAIACNOR0",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "ASAI3.SA",
+          "Listings": {},
+          "WebURL": "https://www.assai.com.br"
+        },
+        "ASAIY.US": {
+          "Name": "Sendas Distribuidora S.A.",
+          "ISIN": null,
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG00ZDRF751",
+          "PrimaryTicker": null,
+          "Listings": {},
+          "WebURL": "https://www.assai.com.br"
+        }
+      }
+    },
+    {
+      "ids": [
+        "9988.HK",
+        "BABA.US"
+      ],
+      "evidence": [
+        {
+          "a": "9988.HK",
+          "b": "BABA.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary",
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "2RR.F",
+          "b": "9988.HK",
+          "keys": [
+            "vendor listing/primary",
+            "LEI:5493001NTNQJDH60PM02",
+            "ISIN:KYG017191142"
+          ]
+        },
+        {
+          "a": "9988.HK",
+          "b": "BABAF.US",
+          "keys": [
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "2RR.F",
+          "b": "BABAF.US",
+          "keys": [
+            "LEI:5493001NTNQJDH60PM02",
+            "ISIN:KYG017191142"
+          ]
+        },
+        {
+          "a": "2RR.F",
+          "b": "BABA.US",
+          "keys": [
+            "LEI:5493001NTNQJDH60PM02"
+          ]
+        },
+        {
+          "a": "BABA.US",
+          "b": "BABAF.US",
+          "keys": [
+            "CIK:1577552"
+          ]
+        }
+      ],
+      "canonical": "BABA.US",
+      "selection": {
+        "9988.HK": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            11
+          ],
+          "history": {
+            "years": 11,
+            "first": 2016,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Hang Seng"
+          ],
+          "frozen": false
+        },
+        "BABA.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            20
+          ],
+          "history": {
+            "years": 20,
+            "first": 2007,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "9988.HK": {
+          "Name": "Alibaba Group Holding Ltd",
+          "ISIN": "KYG017191142",
+          "LEI": "5493001NTNQJDH60PM02",
+          "CIK": null,
+          "OpenFigi": "BBG00QV37ZP9",
+          "PrimaryTicker": "9988.HK",
+          "Listings": {
+            "0": {
+              "Code": "BABA",
+              "Exchange": "US",
+              "Name": "Alibaba Group Holding Ltd"
+            },
+            "1": {
+              "Code": "BABA34",
+              "Exchange": "SA",
+              "Name": "Alibaba Group Holding Limited"
+            }
+          },
+          "WebURL": "https://www.alibabagroup.com"
+        },
+        "BABA.US": {
+          "Name": "Alibaba Group Holding Ltd",
+          "ISIN": "US01609W1027",
+          "LEI": "5493001NTNQJDH60PM02",
+          "CIK": "0001577552",
+          "OpenFigi": "BBG006G2JVL2",
+          "PrimaryTicker": "9988.HK",
+          "Listings": {
+            "0": {
+              "Code": "9988",
+              "Exchange": "HK",
+              "Name": "Alibaba Group Holding Ltd"
+            },
+            "1": {
+              "Code": "BABA34",
+              "Exchange": "SA",
+              "Name": "Alibaba Group Holding Limited"
+            }
+          },
+          "WebURL": "https://www.alibabagroup.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "BATRA.US",
+        "BATRK.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.sec.gov/Archives/edgar/data/1958140/000110465926020650/batra-20251231x10k.htm",
+          "detail": "Same issuer CIK 1958140; classes A and C. Vendor old Liberty CIK rejected."
+        }
+      ],
+      "canonical": "BATRA.US",
+      "selection": {
+        "BATRA.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            10
+          ],
+          "history": {
+            "years": 10,
+            "first": 2016,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "BATRK.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            10
+          ],
+          "history": {
+            "years": 10,
+            "first": 2016,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "BATRA.US": {
+          "Name": "Atlanta Braves Holdings, Inc. Series A Common Stock",
+          "ISIN": "US0477261046",
+          "LEI": null,
+          "CIK": "0001560385",
+          "OpenFigi": "BBG00BFHD1D0",
+          "PrimaryTicker": "BATRA.US",
+          "Listings": {},
+          "WebURL": "https://www.bravesholdings.com"
+        },
+        "BATRK.US": {
+          "Name": "Atlanta Braves Holdings, Inc. Series C Common Stock",
+          "ISIN": "US0477263026",
+          "LEI": null,
+          "CIK": "0001560385",
+          "OpenFigi": "BBG00BFHD5R6",
+          "PrimaryTicker": "BATRK.US",
+          "Listings": {},
+          "WebURL": "https://www.bravesholdings.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "BDRFY.US",
+        "BEI.XETRA"
+      ],
+      "evidence": [
+        {
+          "a": "BDRFY.US",
+          "b": "BEI.XETRA",
+          "keys": [
+            "LEI:L47NHHI0Z9X22DV46U41"
+          ]
+        }
+      ],
+      "canonical": "BEI.XETRA",
+      "selection": {
+        "BDRFY.US": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            10
+          ],
+          "history": {
+            "years": 10,
+            "first": 2016,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        },
+        "BEI.XETRA": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            24
+          ],
+          "history": {
+            "years": 24,
+            "first": 2002,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "DAX 40"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "BDRFY.US": {
+          "Name": "Beiersdorf AG ADR",
+          "ISIN": "US07724U1034",
+          "LEI": "L47NHHI0Z9X22DV46U41",
+          "CIK": "0001450275",
+          "OpenFigi": "BBG000PK4PR8",
+          "PrimaryTicker": "BEIA.F",
+          "Listings": {},
+          "WebURL": "https://www.beiersdorf.com"
+        },
+        "BEI.XETRA": {
+          "Name": "Beiersdorf Aktiengesellschaft",
+          "ISIN": "DE0005200000",
+          "LEI": "L47NHHI0Z9X22DV46U41",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "BEI.F",
+          "Listings": {},
+          "WebURL": "https://www.beiersdorf.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "BH-A.US",
+        "BH.US"
+      ],
+      "evidence": [
+        {
+          "a": "BH-A.US",
+          "b": "BH.US",
+          "keys": [
+            "LEI:549300J4OQ973AEQEG06",
+            "CIK:1726173"
+          ]
+        }
+      ],
+      "canonical": "BH.US",
+      "selection": {
+        "BH-A.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            4
+          ],
+          "history": {
+            "years": 4,
+            "first": 2022,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "BH.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "BH-A.US": {
+          "Name": "Biglari Holdings Inc",
+          "ISIN": "US08986R4083",
+          "LEI": "549300J4OQ973AEQEG06",
+          "CIK": "0001726173",
+          "OpenFigi": null,
+          "PrimaryTicker": "BH-A.US",
+          "Listings": {},
+          "WebURL": "https://www.biglariholdings.com"
+        },
+        "BH.US": {
+          "Name": "Biglari Holdings Inc",
+          "ISIN": "US08986R3093",
+          "LEI": "549300J4OQ973AEQEG06",
+          "CIK": "0001726173",
+          "OpenFigi": "BBG00JPRDQH1",
+          "PrimaryTicker": "BH.US",
+          "Listings": {},
+          "WebURL": "https://www.biglariholdings.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "9888.HK",
+        "BIDU.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://ir.baidu.com/news-releases/news-release-details/baidu-pursue-voluntary-conversion-dual-primary-listing-main/",
+          "detail": "BIDU ADS represents eight 9888 Class A ordinary shares."
+        }
+      ],
+      "canonical": "BIDU.US",
+      "selection": {
+        "9888.HK": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            23
+          ],
+          "history": {
+            "years": 23,
+            "first": 2003,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Hang Seng"
+          ],
+          "frozen": false
+        },
+        "BIDU.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            23
+          ],
+          "history": {
+            "years": 23,
+            "first": 2003,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "9888.HK": {
+          "Name": "Baidu Inc",
+          "ISIN": "KYG070341048",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG00ZMFX1S5",
+          "PrimaryTicker": "9888.HK",
+          "Listings": {},
+          "WebURL": "https://ir.baidu.com"
+        },
+        "BIDU.US": {
+          "Name": "Baidu Inc",
+          "ISIN": "US0567521085",
+          "LEI": "254900AL64IANZYI1E02",
+          "CIK": "0001329099",
+          "OpenFigi": "BBG000QXWHD1",
+          "PrimaryTicker": "BIDU.US",
+          "Listings": {},
+          "WebURL": "https://ir.baidu.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "CABJF.US",
+        "CARL-B.CO"
+      ],
+      "evidence": [
+        {
+          "source": "https://api.openfigi.com/v3/mapping",
+          "detail": "Equal shareClassFIGI BBG001S97P77; mapping raw archived in figi.json."
+        }
+      ],
+      "canonical": "CARL-B.CO",
+      "selection": {
+        "CABJF.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            4
+          ],
+          "history": {
+            "years": 4,
+            "first": 2022,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [],
+          "frozen": false
+        },
+        "CARL-B.CO": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            24
+          ],
+          "history": {
+            "years": 24,
+            "first": 2002,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "STOXX Europe 600",
+            "OMXC25"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "CABJF.US": {
+          "Name": "Carlsberg A/S",
+          "ISIN": null,
+          "LEI": null,
+          "CIK": "0001436647",
+          "OpenFigi": "BBG000BWLNF6",
+          "PrimaryTicker": null,
+          "Listings": {},
+          "WebURL": "https://www.carlsberggroup.com"
+        },
+        "CARL-B.CO": {
+          "Name": "Carlsberg A/S",
+          "ISIN": "DK0010181759",
+          "LEI": "5299001O0WJQYB5GYZ19",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "CARL-B.CO",
+          "Listings": {},
+          "WebURL": "https://www.carlsberggroup.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "DEMANT.CO",
+        "WILLF.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://api.openfigi.com/v3/mapping",
+          "detail": "Equal shareClassFIGI BBG001S6BY88; mapping raw archived in figi.json."
+        }
+      ],
+      "canonical": "DEMANT.CO",
+      "selection": {
+        "DEMANT.CO": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            24
+          ],
+          "history": {
+            "years": 24,
+            "first": 2002,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "STOXX Europe 600",
+            "OMXC25"
+          ],
+          "frozen": false
+        },
+        "WILLF.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "history": {
+            "years": 1,
+            "first": 2025,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "DEMANT.CO": {
+          "Name": "Demant A/S",
+          "ISIN": "DK0060738599",
+          "LEI": "213800RM6L9LN78BVA56",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "DEMANT.CO",
+          "Listings": {},
+          "WebURL": "https://www.demant.com"
+        },
+        "WILLF.US": {
+          "Name": "Demant A/S",
+          "ISIN": null,
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG000PBDTM5",
+          "PrimaryTicker": null,
+          "Listings": {},
+          "WebURL": "https://www.demant.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "DGE.LSE",
+        "DGEAF.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://api.openfigi.com/v3/mapping",
+          "detail": "Equal shareClassFIGI BBG001S6TB61; mapping raw archived in figi.json."
+        }
+      ],
+      "canonical": "DGE.LSE",
+      "selection": {
+        "DGE.LSE": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            11
+          ],
+          "history": {
+            "years": 11,
+            "first": 2016,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "FTSE 100",
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        },
+        "DGEAF.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            3
+          ],
+          "history": {
+            "years": 3,
+            "first": 2024,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "DGE.LSE": {
+          "Name": "Diageo PLC",
+          "ISIN": "GB0002374006",
+          "LEI": "213800ZVIELEA55JMJ32",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "DGE.LSE",
+          "Listings": {
+            "0": {
+              "Code": "DEO",
+              "Exchange": "US",
+              "Name": "Diageo PLC ADR"
+            },
+            "1": {
+              "Code": "DEO",
+              "Exchange": "BA",
+              "Name": "Diageo PLC CEDEAR"
+            }
+          },
+          "WebURL": "https://www.diageo.com"
+        },
+        "DGEAF.US": {
+          "Name": "Diageo plc",
+          "ISIN": null,
+          "LEI": null,
+          "CIK": "0000835403",
+          "OpenFigi": "BBG000BZS1F0",
+          "PrimaryTicker": null,
+          "Listings": {},
+          "WebURL": "https://www.diageo.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "DRREDDY.NSE",
+        "RDY.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.sec.gov/Archives/edgar/data/1135951/000157587225000393/rdy-20250331.htm",
+          "detail": "20-F identifies RDY ADS and DRREDDY NSE ordinary shares."
+        }
+      ],
+      "canonical": "DRREDDY.NSE",
+      "selection": {
+        "DRREDDY.NSE": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            12
+          ],
+          "history": {
+            "years": 12,
+            "first": 2015,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Nifty 50"
+          ],
+          "frozen": false
+        },
+        "RDY.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            3
+          ],
+          "history": {
+            "years": 3,
+            "first": 2024,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "DRREDDY.NSE": {
+          "ISIN": "INE089A01031"
+        },
+        "RDY.US": {
+          "Name": "Dr. Reddy’s Laboratories Ltd ADR",
+          "ISIN": "US2561352038",
+          "LEI": "335800OVDPY3DVZR2798",
+          "CIK": "0001135951",
+          "OpenFigi": "BBG000NJ96L6",
+          "PrimaryTicker": "RDY.US",
+          "Listings": {},
+          "WebURL": "https://www.drreddys.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "ERF.PA",
+        "ERFSF.US"
+      ],
+      "evidence": [
+        {
+          "a": "ERF.PA",
+          "b": "ERFSF.US",
+          "keys": [
+            "vendor listing/primary",
+            "ISIN:FR0014000MR3",
+            "LEI:529900JEHFM47DYY3S57"
+          ]
+        }
+      ],
+      "canonical": "ERF.PA",
+      "selection": {
+        "ERF.PA": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            24
+          ],
+          "history": {
+            "years": 24,
+            "first": 2002,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "STOXX Europe 600",
+            "CAC 40",
+            "SBF 120"
+          ],
+          "frozen": false
+        },
+        "ERFSF.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "history": {
+            "years": 1,
+            "first": 2025,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "ERF.PA": {
+          "Name": "Eurofins Scientific SE",
+          "ISIN": "FR0014000MR3",
+          "LEI": "529900JEHFM47DYY3S57",
+          "CIK": null,
+          "OpenFigi": "BBG000BH7B07",
+          "PrimaryTicker": "ERF.PA",
+          "Listings": {},
+          "WebURL": "https://www.eurofins.com"
+        },
+        "ERFSF.US": {
+          "Name": "Eurofins Scientific SE",
+          "ISIN": "FR0014000MR3",
+          "LEI": "529900JEHFM47DYY3S57",
+          "CIK": null,
+          "OpenFigi": "BBG000DL55C8",
+          "PrimaryTicker": "ERF.PA",
+          "Listings": {},
+          "WebURL": "https://www.eurofins.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "FME.XETRA",
+        "FMS.US"
+      ],
+      "evidence": [
+        {
+          "a": "FME.XETRA",
+          "b": "FMS.US",
+          "keys": [
+            "vendor listing/primary",
+            "LEI:549300CP8NY40UP89Q40"
+          ]
+        }
+      ],
+      "canonical": "FMS.US",
+      "selection": {
+        "FME.XETRA": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            29
+          ],
+          "history": {
+            "years": 29,
+            "first": 1997,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "DAX 40"
+          ],
+          "frozen": false
+        },
+        "FMS.US": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            29
+          ],
+          "history": {
+            "years": 29,
+            "first": 1997,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "FME.XETRA": {
+          "Name": "Fresenius Medical Care AG & Co. KGaA",
+          "ISIN": "DE0005785802",
+          "LEI": "549300CP8NY40UP89Q40",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "FME.XETRA",
+          "Listings": {
+            "0": {
+              "Code": "FMS",
+              "Exchange": "US",
+              "Name": "Fresenius Medical Care Corporation"
+            }
+          },
+          "WebURL": "https://www.freseniusmedicalcare.com"
+        },
+        "FMS.US": {
+          "Name": "Fresenius Medical Care Corporation",
+          "ISIN": "US3580291066",
+          "LEI": "549300CP8NY40UP89Q40",
+          "CIK": "0001333141",
+          "OpenFigi": "BBG000HDMR99",
+          "PrimaryTicker": "FMEA.F",
+          "Listings": {},
+          "WebURL": "https://www.freseniusmedicalcare.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "FEMSAUBD.MX",
+        "FMX.US"
+      ],
+      "evidence": [
+        {
+          "a": "FEMSAUBD.MX",
+          "b": "FMX.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "FEMSAUBD.MX",
+          "b": "FOMC.F",
+          "keys": [
+            "vendor listing/primary",
+            "ISIN:MXP320321310"
+          ]
+        }
+      ],
+      "canonical": "FMX.US",
+      "selection": {
+        "FEMSAUBD.MX": {
+          "score": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            8
+          ],
+          "history": {
+            "years": 8,
+            "first": 2018,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "IPC"
+          ],
+          "frozen": false
+        },
+        "FMX.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "history": {
+            "years": 1,
+            "first": 2025,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "FEMSAUBD.MX": {
+          "Name": "Fomento Económico Mexicano S.A.B. de C.V",
+          "ISIN": "MXP320321310",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "FEMSAUBD.MX",
+          "Listings": {},
+          "WebURL": "https://www.femsa.com"
+        },
+        "FMX.US": {
+          "Name": "Fomento Economico Mexicano",
+          "ISIN": "US3444191064",
+          "LEI": "549300A8MDWDJNMLV153",
+          "CIK": "0001061736",
+          "OpenFigi": "BBG000BD33X2",
+          "PrimaryTicker": "FEMSAUBD.MX",
+          "Listings": {
+            "0": {
+              "Code": "FEMSAUBD",
+              "Exchange": "MX",
+              "Name": "Fomento Económico Mexicano S.A.B. de C.V"
+            }
+          },
+          "WebURL": "https://www.femsa.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "FFH.TO",
+        "FRFHF.US"
+      ],
+      "evidence": [
+        {
+          "a": "FFH.TO",
+          "b": "FRFHF.US",
+          "keys": [
+            "vendor listing/primary",
+            "ISIN:CA3039011026"
+          ]
+        }
+      ],
+      "canonical": "FRFHF.US",
+      "selection": {
+        "FFH.TO": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "S&P/TSX 60"
+          ],
+          "frozen": false
+        },
+        "FRFHF.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "40-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "FFH.TO": {
+          "Name": "Fairfax Financial Holdings Ltd",
+          "ISIN": "CA3039011026",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "FFH.TO",
+          "Listings": {},
+          "WebURL": "https://www.fairfax.ca"
+        },
+        "FRFHF.US": {
+          "Name": "Fairfax Financial Holdings Ltd",
+          "ISIN": "CA3039011026",
+          "LEI": null,
+          "CIK": "0000915191",
+          "OpenFigi": "BBG000GTW565",
+          "PrimaryTicker": "FFH.TO",
+          "Listings": {},
+          "WebURL": "https://www.fairfax.ca"
+        }
+      }
+    },
+    {
+      "ids": [
+        "FWONA.US",
+        "FWONK.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.libertymedia.com/investors/stock-cost-basis",
+          "detail": "Liberty Media CIK 1560385; classes A and C; split-offs excluded."
+        }
+      ],
+      "canonical": "FWONK.US",
+      "selection": {
+        "FWONA.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            16
+          ],
+          "history": {
+            "years": 16,
+            "first": 2010,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "FWONK.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            17
+          ],
+          "history": {
+            "years": 17,
+            "first": 2009,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "FWONA.US": {
+          "Name": "Liberty Media Corporation Series A Liberty Formula One Common Stock",
+          "ISIN": "US5312297717",
+          "LEI": null,
+          "CIK": "0001560385",
+          "OpenFigi": "BBG00BFHDCV6",
+          "PrimaryTicker": "FWONA.US",
+          "Listings": {
+            "0": {
+              "Code": "BATRA",
+              "Exchange": "US",
+              "Name": "Atlanta Braves Holdings, Inc. Series A Common Stock"
+            },
+            "1": {
+              "Code": "BATRK",
+              "Exchange": "US",
+              "Name": "Atlanta Braves Holdings, Inc. Series C Common Stock"
+            },
+            "2": {
+              "Code": "FWONK",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series C Liberty Formula One Common Stock"
+            },
+            "3": {
+              "Code": "LSXMA",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series A Liberty SiriusXM Common Stock"
+            },
+            "4": {
+              "Code": "LSXMB",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series B Liberty SiriusXM Common Stock"
+            },
+            "5": {
+              "Code": "LSXMK",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series C Liberty SiriusXM Common Stock"
+            }
+          },
+          "WebURL": "https://www.libertymedia.com/formula-one-group"
+        },
+        "FWONK.US": {
+          "Name": "Liberty Media Corporation Series C Liberty Formula One Common Stock",
+          "ISIN": "US5312297550",
+          "LEI": null,
+          "CIK": "0001560385",
+          "OpenFigi": "BBG01HLMBCG3",
+          "PrimaryTicker": "FWONK.US",
+          "Listings": {
+            "0": {
+              "Code": "BATRA",
+              "Exchange": "US",
+              "Name": "Atlanta Braves Holdings, Inc. Series A Common Stock"
+            },
+            "1": {
+              "Code": "BATRK",
+              "Exchange": "US",
+              "Name": "Atlanta Braves Holdings, Inc. Series C Common Stock"
+            },
+            "2": {
+              "Code": "FWONA",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series A Liberty Formula One Common Stock"
+            },
+            "3": {
+              "Code": "LSXMA",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series A Liberty SiriusXM Common Stock"
+            },
+            "4": {
+              "Code": "LSXMB",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series B Liberty SiriusXM Common Stock"
+            },
+            "5": {
+              "Code": "LSXMK",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series C Liberty SiriusXM Common Stock"
+            }
+          },
+          "WebURL": "https://www.libertymedia.com/formula-one-group"
+        }
+      }
+    },
+    {
+      "ids": [
+        "GLIBA.US",
+        "GLIBK.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.libertycapitalcorp.com/investors/stock-data/faq",
+          "detail": "Same issuer series A and C; US36164V issuer NSIN prefix."
+        }
+      ],
+      "canonical": "GLIBA.US",
+      "selection": {
+        "GLIBA.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            3
+          ],
+          "history": {
+            "years": 3,
+            "first": 2023,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "GLIBK.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            3
+          ],
+          "history": {
+            "years": 3,
+            "first": 2023,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "GLIBA.US": {
+          "Name": "GCI Liberty, Inc. - Series A GCI Group",
+          "ISIN": "US36164V6020",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG00L2SFJT0",
+          "PrimaryTicker": "GLIBA.US",
+          "Listings": {},
+          "WebURL": "https://www.libertycapitalcorp.com"
+        },
+        "GLIBK.US": {
+          "Name": "GCI Liberty, Inc.",
+          "ISIN": "US36164V8000",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG01VV3SMG3",
+          "PrimaryTicker": "GLIBK.US",
+          "Listings": {},
+          "WebURL": "https://www.libertycapitalcorp.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "GSK.LSE",
+        "GSK.US"
+      ],
+      "evidence": [
+        {
+          "a": "GSK.LSE",
+          "b": "GSK.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary",
+            "LEI:5493000HZTVUYLO1D793"
+          ]
+        }
+      ],
+      "canonical": "GSK.LSE",
+      "selection": {
+        "GSK.LSE": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "FTSE 100",
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        },
+        "GSK.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "history": {
+            "years": 1,
+            "first": 2025,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "GSK.LSE": {
+          "Name": "GSK plc",
+          "ISIN": "GB00BN7SWP63",
+          "LEI": "5493000HZTVUYLO1D793",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "GSK.LSE",
+          "Listings": {
+            "0": {
+              "Code": null,
+              "Exchange": null,
+              "Name": null
+            },
+            "1": {
+              "Code": "GSK",
+              "Exchange": "US",
+              "Name": "GlaxoSmithKline PLC ADR"
+            }
+          },
+          "WebURL": "https://www.gsk.com"
+        },
+        "GSK.US": {
+          "Name": "GlaxoSmithKline PLC ADR",
+          "ISIN": "US37733W2044",
+          "LEI": "5493000HZTVUYLO1D793",
+          "CIK": "0001131399",
+          "OpenFigi": "BBG000BLB481",
+          "PrimaryTicker": "GSK.US",
+          "Listings": {
+            "0": {
+              "Code": null,
+              "Exchange": null,
+              "Name": null
+            },
+            "1": {
+              "Code": "GSK",
+              "Exchange": "LSE",
+              "Name": "GSK plc"
+            }
+          },
+          "WebURL": "https://www.gsk.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "HEN.XETRA",
+        "HEN3.XETRA"
+      ],
+      "evidence": [
+        {
+          "a": "HEN.XETRA",
+          "b": "HEN3.XETRA",
+          "keys": [
+            "LEI:549300VZCL1HTH4O4Y49"
+          ]
+        }
+      ],
+      "canonical": "HEN.XETRA",
+      "selection": {
+        "HEN.XETRA": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            29
+          ],
+          "history": {
+            "years": 29,
+            "first": 1997,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "DAX 40"
+          ],
+          "frozen": false
+        },
+        "HEN3.XETRA": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            29
+          ],
+          "history": {
+            "years": 29,
+            "first": 1997,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "HEN.XETRA": {
+          "Name": "Henkel AG & Co. KGaA",
+          "ISIN": "DE0006048408",
+          "LEI": "549300VZCL1HTH4O4Y49",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "HEN.XETRA",
+          "Listings": {},
+          "WebURL": "https://www.henkel.com"
+        },
+        "HEN3.XETRA": {
+          "Name": "Henkel AG & Co. KGaA vz. (Pref Shares)",
+          "ISIN": "DE0006048432",
+          "LEI": "549300VZCL1HTH4O4Y49",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "HEN3.XETRA",
+          "Listings": {},
+          "WebURL": "https://www.henkel.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "HEXA-B.ST",
+        "HXGBY.US"
+      ],
+      "evidence": [
+        {
+          "a": "HEXA-B.ST",
+          "b": "HXGBY.US",
+          "keys": [
+            "LEI:549300WJFW6ILNI4TA80"
+          ]
+        }
+      ],
+      "canonical": "HEXA-B.ST",
+      "selection": {
+        "HEXA-B.ST": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            24
+          ],
+          "history": {
+            "years": 24,
+            "first": 2002,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "OMXS30"
+          ],
+          "frozen": false
+        },
+        "HXGBY.US": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            24
+          ],
+          "history": {
+            "years": 24,
+            "first": 2002,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "HEXA-B.ST": {
+          "Name": "Hexagon AB (publ)",
+          "ISIN": "SE0015961909",
+          "LEI": "549300WJFW6ILNI4TA80",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "HEXA-B.ST",
+          "Listings": {},
+          "WebURL": "https://www.hexagon.com"
+        },
+        "HXGBY.US": {
+          "Name": "Hexagon AB ADR",
+          "ISIN": "US4282631070",
+          "LEI": "549300WJFW6ILNI4TA80",
+          "CIK": "0001538510",
+          "OpenFigi": "BBG002D1B8H0",
+          "PrimaryTicker": "HXGBY.US",
+          "Listings": {},
+          "WebURL": "https://www.hexagon.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "HKHGF.US",
+        "HKLB.LSE"
+      ],
+      "evidence": [
+        {
+          "a": "HKHGF.US",
+          "b": "HKLB.LSE",
+          "keys": [
+            "ISIN:BMG4587L1090",
+            "LEI:213800XCHYNRPAYGXW28"
+          ]
+        }
+      ],
+      "canonical": "HKHGF.US",
+      "selection": {
+        "HKHGF.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            29
+          ],
+          "history": {
+            "years": 29,
+            "first": 1997,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [],
+          "frozen": false
+        },
+        "HKLB.LSE": {
+          "score": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            8
+          ],
+          "history": {
+            "years": 8,
+            "first": 2018,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "STI"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "HKHGF.US": {
+          "Name": "Hongkong Land Holdings Limited",
+          "ISIN": "BMG4587L1090",
+          "LEI": "213800XCHYNRPAYGXW28",
+          "CIK": "0000871464",
+          "OpenFigi": "BBG000BSPN16",
+          "PrimaryTicker": "H78.SG",
+          "Listings": {},
+          "WebURL": "https://www.hkland.com"
+        },
+        "HKLB.LSE": {
+          "Name": "Hong Kong Land Holdings Ltd",
+          "ISIN": "BMG4587L1090",
+          "LEI": "213800XCHYNRPAYGXW28",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "H78.SG",
+          "Listings": {},
+          "WebURL": "https://www.hkland.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "ING.US",
+        "INGA.AS"
+      ],
+      "evidence": [
+        {
+          "a": "ING.US",
+          "b": "INGA.AS",
+          "keys": [
+            "vendor listing/primary",
+            "LEI:549300NYKK9MWM7GGW15"
+          ]
+        }
+      ],
+      "canonical": "INGA.AS",
+      "selection": {
+        "ING.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            29
+          ],
+          "history": {
+            "years": 29,
+            "first": 1997,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        },
+        "INGA.AS": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            29
+          ],
+          "history": {
+            "years": 29,
+            "first": 1997,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "Euro Stoxx 50",
+            "STOXX Europe 600",
+            "AEX"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "ING.US": {
+          "Name": "ING Group NV ADR",
+          "ISIN": "US4568371037",
+          "LEI": "549300NYKK9MWM7GGW15",
+          "CIK": "0001039765",
+          "OpenFigi": "BBG000BM0LB9",
+          "PrimaryTicker": "ING.US",
+          "Listings": {
+            "0": {
+              "Code": "INGA",
+              "Exchange": "AS",
+              "Name": "ING Groep NV"
+            },
+            "1": {
+              "Code": "INN1",
+              "Exchange": "XETRA",
+              "Name": "ING Groep NV"
+            }
+          },
+          "WebURL": "https://www.ing.com"
+        },
+        "INGA.AS": {
+          "Name": "ING Groep NV",
+          "ISIN": "NL0011821202",
+          "LEI": "549300NYKK9MWM7GGW15",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "INGA.AS",
+          "Listings": {},
+          "WebURL": "https://www.ing.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "ITUB.US",
+        "ITUB3.SA"
+      ],
+      "evidence": [
+        {
+          "a": "ITUB.US",
+          "b": "ITUB3.SA",
+          "keys": [
+            "vendor listing/primary"
+          ]
+        }
+      ],
+      "canonical": "ITUB.US",
+      "selection": {
+        "ITUB.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            26
+          ],
+          "history": {
+            "years": 26,
+            "first": 2000,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        },
+        "ITUB3.SA": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            11
+          ],
+          "history": {
+            "years": 11,
+            "first": 2015,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Ibovespa"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "ITUB.US": {
+          "Name": "Itau Unibanco Banco Holding SA",
+          "ISIN": "US4655621062",
+          "LEI": "5493002W2IVG62O3ZJ94",
+          "CIK": "0001132597",
+          "OpenFigi": "BBG000BPVKZ4",
+          "PrimaryTicker": "ITUB.US",
+          "Listings": {
+            "0": {
+              "Code": "ITUB3",
+              "Exchange": "SA",
+              "Name": "Itaú Unibanco Holding S.A."
+            },
+            "1": {
+              "Code": "ITUB4",
+              "Exchange": "SA",
+              "Name": "Itaú Unibanco Holding S.A"
+            }
+          },
+          "WebURL": "https://www.itau.com.br"
+        },
+        "ITUB3.SA": {
+          "Name": "Itaú Unibanco Holding S.A.",
+          "ISIN": "BRITUBACNOR4",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "ITUB3.SA",
+          "Listings": {},
+          "WebURL": "https://www.itau.com.br"
+        }
+      }
+    },
+    {
+      "ids": [
+        "JHX.AU",
+        "JHX.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.sec.gov/Archives/edgar/data/1159152/000115915225000068/ex991statementofcdisonis.htm",
+          "detail": "ASX JHX CDIs represent same issuer 1:1; CIK 1159152."
+        }
+      ],
+      "canonical": "JHX.US",
+      "selection": {
+        "JHX.AU": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            25
+          ],
+          "history": {
+            "years": 25,
+            "first": 2002,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "S&P/ASX 200"
+          ],
+          "frozen": false
+        },
+        "JHX.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            27
+          ],
+          "history": {
+            "years": 27,
+            "first": 2000,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "JHX.AU": {
+          "Name": "James Hardie Industries Plc",
+          "ISIN": "AU000000JHX1",
+          "LEI": "635400NSGXKTVOO7JU45",
+          "CIK": null,
+          "OpenFigi": "BBG000D01850",
+          "PrimaryTicker": "JHX.AU",
+          "Listings": {},
+          "WebURL": "https://www.jameshardie.com"
+        },
+        "JHX.US": {
+          "Name": "James Hardie Industries PLC ADR",
+          "ISIN": "IE000R94NGM2",
+          "LEI": null,
+          "CIK": "0001159152",
+          "OpenFigi": "BBG000C1HL99",
+          "PrimaryTicker": "JHX.US",
+          "Listings": {},
+          "WebURL": "https://www.jameshardie.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "LBTYA.US",
+        "LBTYK.US"
+      ],
+      "evidence": [
+        {
+          "a": "LBTYA.US",
+          "b": "LBTYK.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary",
+            "vendor listing/primary",
+            "CIK:1570585"
+          ]
+        }
+      ],
+      "canonical": "LBTYA.US",
+      "selection": {
+        "LBTYA.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            26
+          ],
+          "history": {
+            "years": 26,
+            "first": 2000,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "LBTYK.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            26
+          ],
+          "history": {
+            "years": 26,
+            "first": 2000,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "LBTYA.US": {
+          "Name": "Liberty Global PLC Class A",
+          "ISIN": "BMG611881019",
+          "LEI": null,
+          "CIK": "0001570585",
+          "OpenFigi": "BBG000H0QBS7",
+          "PrimaryTicker": "LBTYA.US",
+          "Listings": {
+            "0": {
+              "Code": "1LG",
+              "Exchange": "F",
+              "Name": "Liberty Global PLC"
+            },
+            "1": {
+              "Code": "LBTYB",
+              "Exchange": "US",
+              "Name": "Liberty Global PLC Class B"
+            },
+            "2": {
+              "Code": "LBTYK",
+              "Exchange": "US",
+              "Name": "Liberty Global PLC Class C"
+            }
+          },
+          "WebURL": "https://www.libertyglobal.com"
+        },
+        "LBTYK.US": {
+          "Name": "Liberty Global PLC Class C",
+          "ISIN": "BMG611881274",
+          "LEI": null,
+          "CIK": "0001570585",
+          "OpenFigi": "BBG000BXWBN9",
+          "PrimaryTicker": "LBTYA.US",
+          "Listings": {
+            "0": {
+              "Code": "1LG",
+              "Exchange": "F",
+              "Name": "Liberty Global PLC"
+            },
+            "1": {
+              "Code": "LBTYA",
+              "Exchange": "US",
+              "Name": "Liberty Global PLC Class A"
+            },
+            "2": {
+              "Code": "LBTYB",
+              "Exchange": "US",
+              "Name": "Liberty Global PLC Class B"
+            }
+          },
+          "WebURL": "https://www.libertyglobal.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "2015.HK",
+        "LI.US"
+      ],
+      "evidence": [
+        {
+          "a": "2015.HK",
+          "b": "LI.US",
+          "keys": [
+            "LEI:2549003R73Q70J5H4I65"
+          ]
+        }
+      ],
+      "canonical": "LI.US",
+      "selection": {
+        "2015.HK": {
+          "score": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            8
+          ],
+          "history": {
+            "years": 8,
+            "first": 2018,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Hang Seng"
+          ],
+          "frozen": false
+        },
+        "LI.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            8
+          ],
+          "history": {
+            "years": 8,
+            "first": 2018,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "2015.HK": {
+          "Name": "Li Auto Inc",
+          "ISIN": "KYG5479M1050",
+          "LEI": "2549003R73Q70J5H4I65",
+          "CIK": null,
+          "OpenFigi": "BBG0120WC125",
+          "PrimaryTicker": "2015.HK",
+          "Listings": {},
+          "WebURL": "https://www.lixiang.com"
+        },
+        "LI.US": {
+          "Name": "Li Auto Inc",
+          "ISIN": "US50202M1027",
+          "LEI": "2549003R73Q70J5H4I65",
+          "CIK": "0001791706",
+          "OpenFigi": "BBG00W0KZD98",
+          "PrimaryTicker": "LI.US",
+          "Listings": {},
+          "WebURL": "https://www.lixiang.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "LILA.US",
+        "LILAK.US"
+      ],
+      "evidence": [
+        {
+          "a": "LILA.US",
+          "b": "LILAK.US",
+          "keys": [
+            "vendor listing/primary",
+            "LEI:213800YWQHEAX7CAVO83",
+            "CIK:1712184"
+          ]
+        }
+      ],
+      "canonical": "LILA.US",
+      "selection": {
+        "LILA.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            14
+          ],
+          "history": {
+            "years": 14,
+            "first": 2012,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "LILAK.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            14
+          ],
+          "history": {
+            "years": 14,
+            "first": 2012,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "LILA.US": {
+          "Name": "Liberty Latin America Ltd",
+          "ISIN": "BMG9001E1021",
+          "LEI": "213800YWQHEAX7CAVO83",
+          "CIK": "0001712184",
+          "OpenFigi": "BBG00JHP6GP5",
+          "PrimaryTicker": "LILA.US",
+          "Listings": {
+            "0": {
+              "Code": "LILAK",
+              "Exchange": "US",
+              "Name": "Liberty Latin America Ltd Class C"
+            }
+          },
+          "WebURL": "https://www.lla.com"
+        },
+        "LILAK.US": {
+          "Name": "Liberty Latin America Ltd Class C",
+          "ISIN": "BMG9001E1286",
+          "LEI": "213800YWQHEAX7CAVO83",
+          "CIK": "0001712184",
+          "OpenFigi": "BBG00JKWHZ81",
+          "PrimaryTicker": "LILAK.US",
+          "Listings": {},
+          "WebURL": "https://www.lla.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "LLYVA.US",
+        "LLYVK.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.sec.gov/Archives/edgar/data/0002078416/000110465926035278/tm265250d4_ars.pdf",
+          "detail": "Liberty Live CIK 2078416, independent since December 2025; A and C."
+        }
+      ],
+      "canonical": "LLYVA.US",
+      "selection": {
+        "LLYVA.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            5
+          ],
+          "history": {
+            "years": 5,
+            "first": 2021,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "LLYVK.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            5
+          ],
+          "history": {
+            "years": 5,
+            "first": 2021,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "LLYVA.US": {
+          "Name": "Liberty Live Holdings, Inc. Series A Liberty Live Group Common Stock",
+          "ISIN": "US5309091008",
+          "LEI": null,
+          "CIK": "0001560385",
+          "OpenFigi": "BBG01HMFL081",
+          "PrimaryTicker": "LLYVA.US",
+          "Listings": {},
+          "WebURL": "https://libertyliveholdings.com"
+        },
+        "LLYVK.US": {
+          "Name": "Liberty Live Holdings, Inc. Series C Liberty Live Group Common Stock",
+          "ISIN": "US5309093087",
+          "LEI": null,
+          "CIK": "0001560385",
+          "OpenFigi": "BBG01HMFLTN1",
+          "PrimaryTicker": "LLYVK.US",
+          "Listings": {},
+          "WebURL": "https://libertyliveholdings.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "NESN.SW",
+        "NSRGF.US",
+        "NSRGY.US"
+      ],
+      "evidence": [
+        {
+          "a": "NESN.SW",
+          "b": "NSRGF.US",
+          "keys": [
+            "vendor listing/primary",
+            "LEI:KY37LUS27QQX7BB93L28",
+            "ISIN:CH0038863350"
+          ]
+        },
+        {
+          "a": "NESN.SW",
+          "b": "NSRGY.US",
+          "keys": [
+            "LEI:KY37LUS27QQX7BB93L28"
+          ]
+        }
+      ],
+      "canonical": "NSRGY.US",
+      "selection": {
+        "NESN.SW": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            28
+          ],
+          "history": {
+            "years": 28,
+            "first": 1998,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "STOXX Europe 600",
+            "SMI"
+          ],
+          "frozen": false
+        },
+        "NSRGF.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            10
+          ],
+          "history": {
+            "years": 10,
+            "first": 2016,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "annual-report",
+          "indexes": [],
+          "frozen": false
+        },
+        "NSRGY.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            10
+          ],
+          "history": {
+            "years": 10,
+            "first": 2016,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "annual-report",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "NESN.SW": {
+          "Name": "Nestle S.A.",
+          "ISIN": "CH0038863350",
+          "LEI": "KY37LUS27QQX7BB93L28",
+          "CIK": null,
+          "OpenFigi": "BBG000CPBD63",
+          "PrimaryTicker": "NESN.SW",
+          "Listings": {},
+          "WebURL": "https://www.nestle.com"
+        },
+        "NSRGF.US": {
+          "Name": "Nestle SA",
+          "ISIN": "CH0038863350",
+          "LEI": "KY37LUS27QQX7BB93L28",
+          "CIK": "0000800921",
+          "OpenFigi": "BBG000CDL5J2",
+          "PrimaryTicker": "NESN.SW",
+          "Listings": {},
+          "WebURL": "https://www.nestle.com"
+        },
+        "NSRGY.US": {
+          "Name": "Nestle SA ADR",
+          "ISIN": "US6410694060",
+          "LEI": "KY37LUS27QQX7BB93L28",
+          "CIK": null,
+          "OpenFigi": "BBG000BSDQZ5",
+          "PrimaryTicker": "NSRGY.US",
+          "Listings": {},
+          "WebURL": "https://www.nestle.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "9999.HK",
+        "NTES.US"
+      ],
+      "evidence": [
+        {
+          "a": "9999.HK",
+          "b": "NTES.US",
+          "keys": [
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "4Y01.F",
+          "b": "NETTF.US",
+          "keys": [
+            "ISIN:KYG6427A1022",
+            "LEI:5299004AF4DSJDB0PA32"
+          ]
+        },
+        {
+          "a": "4Y01.F",
+          "b": "9999.HK",
+          "keys": [
+            "ISIN:KYG6427A1022",
+            "LEI:5299004AF4DSJDB0PA32"
+          ]
+        },
+        {
+          "a": "4Y01.F",
+          "b": "NTES.US",
+          "keys": [
+            "LEI:5299004AF4DSJDB0PA32"
+          ]
+        },
+        {
+          "a": "NETTF.US",
+          "b": "NTES.US",
+          "keys": [
+            "CIK:1110646"
+          ]
+        }
+      ],
+      "canonical": "NTES.US",
+      "selection": {
+        "9999.HK": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            27
+          ],
+          "history": {
+            "years": 27,
+            "first": 1999,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Hang Seng"
+          ],
+          "frozen": false
+        },
+        "NTES.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            27
+          ],
+          "history": {
+            "years": 27,
+            "first": 1999,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "9999.HK": {
+          "Name": "NetEase Inc",
+          "ISIN": "KYG6427A1022",
+          "LEI": "5299004AF4DSJDB0PA32",
+          "CIK": null,
+          "OpenFigi": "BBG00V6PS1F0",
+          "PrimaryTicker": "9999.HK",
+          "Listings": {},
+          "WebURL": "https://ir.netease.com"
+        },
+        "NTES.US": {
+          "Name": "NetEase Inc",
+          "ISIN": "US64110W1027",
+          "LEI": "5299004AF4DSJDB0PA32",
+          "CIK": "0001110646",
+          "OpenFigi": "BBG000BX72V8",
+          "PrimaryTicker": "NTES.US",
+          "Listings": {
+            "0": {
+              "Code": "9999",
+              "Exchange": "HK",
+              "Name": "NetEase Inc"
+            }
+          },
+          "WebURL": "https://ir.netease.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "NWS.AU",
+        "NWS.US",
+        "NWSA.US"
+      ],
+      "evidence": [
+        {
+          "a": "NWS.AU",
+          "b": "NWS.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary",
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "NWS.AU",
+          "b": "NWSA.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "NC0E.STU",
+          "b": "NWS.AU",
+          "keys": [
+            "vendor listing/primary"
+          ]
+        },
+        {
+          "a": "NWS.US",
+          "b": "NWSA.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary",
+            "CIK:1564708"
+          ]
+        },
+        {
+          "a": "NC0E.F",
+          "b": "NWS.US",
+          "keys": [
+            "vendor listing/primary",
+            "LEI:549300ITS31QK8VRBQ14"
+          ]
+        },
+        {
+          "a": "NC0E.F",
+          "b": "NC0E.STU",
+          "keys": [
+            "ISIN:AU000000NWS2",
+            "LEI:549300ITS31QK8VRBQ14"
+          ]
+        },
+        {
+          "a": "NC0E.F",
+          "b": "NWS.AU",
+          "keys": [
+            "ISIN:AU000000NWS2",
+            "LEI:549300ITS31QK8VRBQ14"
+          ]
+        },
+        {
+          "a": "NC0E.F",
+          "b": "NWSA.US",
+          "keys": [
+            "LEI:549300ITS31QK8VRBQ14"
+          ]
+        }
+      ],
+      "canonical": "NWS.US",
+      "selection": {
+        "NWS.AU": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            17
+          ],
+          "history": {
+            "years": 17,
+            "first": 2010,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "S&P/ASX 200"
+          ],
+          "frozen": false
+        },
+        "NWS.US": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            17
+          ],
+          "history": {
+            "years": 17,
+            "first": 2010,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [
+            "S&P 500"
+          ],
+          "frozen": false
+        },
+        "NWSA.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            17
+          ],
+          "history": {
+            "years": 17,
+            "first": 2010,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "NWS.AU": {
+          "Name": "News Corporation",
+          "ISIN": "AU000000NWS2",
+          "LEI": "549300ITS31QK8VRBQ14",
+          "CIK": null,
+          "OpenFigi": "BBG004MH6B99",
+          "PrimaryTicker": "NWS.US",
+          "Listings": {
+            "0": {
+              "Code": "NC0",
+              "Exchange": "F",
+              "Name": "News Corporation"
+            },
+            "1": {
+              "Code": "NWS",
+              "Exchange": "US",
+              "Name": "News Corp B"
+            },
+            "2": {
+              "Code": "NWSA",
+              "Exchange": "US",
+              "Name": "News Corp A"
+            },
+            "3": {
+              "Code": "NWSLV",
+              "Exchange": "AU",
+              "Name": "News Corporation"
+            }
+          },
+          "WebURL": "https://newscorp.com"
+        },
+        "NWS.US": {
+          "Name": "News Corp B",
+          "ISIN": "US65249B2088",
+          "LEI": "549300ITS31QK8VRBQ14",
+          "CIK": "0001564708",
+          "OpenFigi": "BBG0035M2ZB7",
+          "PrimaryTicker": "NWS.US",
+          "Listings": {
+            "0": {
+              "Code": "NC0",
+              "Exchange": "F",
+              "Name": "News Corporation"
+            },
+            "1": {
+              "Code": "NWS",
+              "Exchange": "AU",
+              "Name": "News Corporation"
+            },
+            "2": {
+              "Code": "NWSA",
+              "Exchange": "US",
+              "Name": "News Corp A"
+            },
+            "3": {
+              "Code": "NWSLV",
+              "Exchange": "AU",
+              "Name": "News Corporation"
+            }
+          },
+          "WebURL": "https://newscorp.com"
+        },
+        "NWSA.US": {
+          "Name": "News Corp A",
+          "ISIN": "US65249B1098",
+          "LEI": "549300ITS31QK8VRBQ14",
+          "CIK": "0001564708",
+          "OpenFigi": "BBG0035LY913",
+          "PrimaryTicker": "NWSA.US",
+          "Listings": {
+            "0": {
+              "Code": "NC0",
+              "Exchange": "F",
+              "Name": "News Corporation"
+            },
+            "1": {
+              "Code": "NWS",
+              "Exchange": "US",
+              "Name": "News Corp B"
+            },
+            "2": {
+              "Code": "NWS",
+              "Exchange": "AU",
+              "Name": "News Corporation"
+            },
+            "3": {
+              "Code": "NWSLV",
+              "Exchange": "AU",
+              "Name": "News Corporation"
+            }
+          },
+          "WebURL": "https://newscorp.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "NXE.US",
+        "NXG.AU"
+      ],
+      "evidence": [
+        {
+          "source": "https://announcements.asx.com.au/asxpdf/20250617/pdf/06kt43r5lr47b7.pdf",
+          "detail": "Same issuer TSX/NYSE NXE and ASX NXG."
+        }
+      ],
+      "canonical": "NXE.US",
+      "selection": {
+        "NXE.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            14
+          ],
+          "history": {
+            "years": 14,
+            "first": 2012,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "40-F",
+          "indexes": [],
+          "frozen": false
+        },
+        "NXG.AU": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            14
+          ],
+          "history": {
+            "years": 14,
+            "first": 2012,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "S&P/ASX 200"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "NXE.US": {
+          "Name": "NexGen Energy Ltd.",
+          "ISIN": "CA65340P1062",
+          "LEI": null,
+          "CIK": "0001698535",
+          "OpenFigi": "BBG004WG63P0",
+          "PrimaryTicker": "NXE.TO",
+          "Listings": {
+            "0": {
+              "Code": "NXE",
+              "Exchange": "TO",
+              "Name": "NexGen Energy Ltd."
+            }
+          },
+          "WebURL": "https://www.nexgenenergy.ca"
+        },
+        "NXG.AU": {
+          "Name": "Nexgen Energy (Canada) Ltd",
+          "ISIN": "AU0000159329",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG011KL0890",
+          "PrimaryTicker": "NXG.AU",
+          "Listings": {},
+          "WebURL": "https://www.nexgenenergy.ca"
+        }
+      }
+    },
+    {
+      "ids": [
+        "LRLCF.US",
+        "OR.PA"
+      ],
+      "evidence": [
+        {
+          "a": "LRLCF.US",
+          "b": "OR.PA",
+          "keys": [
+            "vendor listing/primary",
+            "ISIN:FR0000120321",
+            "LEI:529900JI1GG6F7RKVI53"
+          ]
+        }
+      ],
+      "canonical": "OR.PA",
+      "selection": {
+        "LRLCF.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            4
+          ],
+          "history": {
+            "years": 4,
+            "first": 2022,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [],
+          "frozen": false
+        },
+        "OR.PA": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            28
+          ],
+          "history": {
+            "years": 28,
+            "first": 1998,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "Euro Stoxx 50",
+            "STOXX Europe 600",
+            "CAC 40",
+            "SBF 120"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "LRLCF.US": {
+          "Name": "L'Oréal S.A",
+          "ISIN": "FR0000120321",
+          "LEI": "529900JI1GG6F7RKVI53",
+          "CIK": null,
+          "OpenFigi": "BBG000BY9BM4",
+          "PrimaryTicker": "OR.PA",
+          "Listings": {},
+          "WebURL": "https://www.loreal.com"
+        },
+        "OR.PA": {
+          "Name": "LOréal S.A.",
+          "ISIN": "FR0000120321",
+          "LEI": "529900JI1GG6F7RKVI53",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "OR.PA",
+          "Listings": {},
+          "WebURL": "https://www.loreal.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "PDRDF.US",
+        "PRNDY.US",
+        "RI.PA"
+      ],
+      "evidence": [
+        {
+          "a": "PDRDF.US",
+          "b": "PRNDY.US",
+          "keys": [
+            "CIK:899108"
+          ]
+        },
+        {
+          "source": "https://www.pernod-ricard.com/sr/node/116",
+          "detail": "Issuer pairs PRNDY US7142643060 with underlying FR0000120693; PDRDF same CIK as PRNDY."
+        }
+      ],
+      "canonical": "RI.PA",
+      "selection": {
+        "PDRDF.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            3
+          ],
+          "history": {
+            "years": 3,
+            "first": 2024,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "annual-report",
+          "indexes": [],
+          "frozen": false
+        },
+        "PRNDY.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            3
+          ],
+          "history": {
+            "years": 3,
+            "first": 2024,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "annual-report",
+          "indexes": [],
+          "frozen": false
+        },
+        "RI.PA": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            24
+          ],
+          "history": {
+            "years": 24,
+            "first": 2003,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "STOXX Europe 600",
+            "CAC 40",
+            "SBF 120"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "PDRDF.US": {
+          "Name": "Pernod Ricard SA",
+          "ISIN": null,
+          "LEI": null,
+          "CIK": "0000899108",
+          "OpenFigi": "BBG000BZ4HL4",
+          "PrimaryTicker": null,
+          "Listings": {},
+          "WebURL": "https://www.pernod-ricard.com"
+        },
+        "PRNDY.US": {
+          "Name": "Pernod Ricard SA.",
+          "ISIN": "US7142643060",
+          "LEI": null,
+          "CIK": "0000899108",
+          "OpenFigi": "BBG013CYP248",
+          "PrimaryTicker": "PRNDY.US",
+          "Listings": {},
+          "WebURL": "https://www.pernod-ricard.com"
+        },
+        "RI.PA": {
+          "Name": "Pernod Ricard S.A.",
+          "ISIN": "FR0000120693",
+          "LEI": "52990097YFPX9J0H5D87",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "RI.PA",
+          "Listings": {},
+          "WebURL": "https://www.pernod-ricard.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "RBGPF.US",
+        "RKT.LSE"
+      ],
+      "evidence": [
+        {
+          "a": "RBGPF.US",
+          "b": "RKT.LSE",
+          "keys": [
+            "vendor listing/primary"
+          ]
+        }
+      ],
+      "canonical": "RKT.LSE",
+      "selection": {
+        "RBGPF.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            2
+          ],
+          "history": {
+            "years": 2,
+            "first": 2024,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [],
+          "frozen": false
+        },
+        "RKT.LSE": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            24
+          ],
+          "history": {
+            "years": 24,
+            "first": 2002,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "FTSE 100",
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "RBGPF.US": {
+          "Name": "Reckitt Benckiser Group PLC",
+          "ISIN": "GB00B24CGK77",
+          "LEI": "5493003JFSMOJG48V108",
+          "CIK": "0001420798",
+          "OpenFigi": "BBG000HD3F23",
+          "PrimaryTicker": "RKT.LSE",
+          "Listings": {},
+          "WebURL": "https://www.reckitt.com"
+        },
+        "RKT.LSE": {
+          "Name": "Reckitt Benckiser Group PLC",
+          "ISIN": "GB00BSZBP530",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG000C38NP3",
+          "PrimaryTicker": "RKT.LSE",
+          "Listings": {},
+          "WebURL": "https://www.reckitt.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "HESAY.US",
+        "RMS.PA"
+      ],
+      "evidence": [
+        {
+          "source": "https://depositaryreceipts.citi.com/adr/guides/viewDocument.aspx?annid=4&divid=037&secid=HESAY&type=P",
+          "detail": "Depositary identifies HESAY as Hermes International ADR."
+        }
+      ],
+      "canonical": "RMS.PA",
+      "selection": {
+        "HESAY.US": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            25
+          ],
+          "history": {
+            "years": 25,
+            "first": 2001,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        },
+        "RMS.PA": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            25
+          ],
+          "history": {
+            "years": 25,
+            "first": 2001,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "Euro Stoxx 50",
+            "CAC 40",
+            "SBF 120"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "HESAY.US": {
+          "Name": "Hermes International SA",
+          "ISIN": "US42751Q1058",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG000PS06W1",
+          "PrimaryTicker": "HESAY.US",
+          "Listings": {},
+          "WebURL": "https://finance.hermes.com"
+        },
+        "RMS.PA": {
+          "Name": "Hermes International SCA",
+          "ISIN": "FR0000052292",
+          "LEI": "969500Y4IJGHJE2MTJ13",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "RMS.PA",
+          "Listings": {},
+          "WebURL": "https://finance.hermes.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "RR.LSE",
+        "RYCEY.US"
+      ],
+      "evidence": [
+        {
+          "a": "RR.LSE",
+          "b": "RYCEY.US",
+          "keys": [
+            "LEI:213800EC7997ZBLZJH69"
+          ]
+        }
+      ],
+      "canonical": "RR.LSE",
+      "selection": {
+        "RR.LSE": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "FTSE 100",
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        },
+        "RYCEY.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "RR.LSE": {
+          "Name": "Rolls-Royce Holdings PLC",
+          "ISIN": "GB00B63H8491",
+          "LEI": "213800EC7997ZBLZJH69",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "RR.LSE",
+          "Listings": {},
+          "WebURL": "https://www.rolls-royce.com"
+        },
+        "RYCEY.US": {
+          "Name": "Rolls Royce Holdings plc",
+          "ISIN": "US7757812067",
+          "LEI": "213800EC7997ZBLZJH69",
+          "CIK": null,
+          "OpenFigi": "BBG000BSGVL6",
+          "PrimaryTicker": "RYCEY.US",
+          "Listings": {},
+          "WebURL": "https://www.rolls-royce.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "RTO.LSE",
+        "RTO.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://www.rentokil-initial.com/investors/shareholder-centre/adr_information.aspx",
+          "detail": "RTO ADS represents five issuer ordinary shares."
+        }
+      ],
+      "canonical": "RTO.LSE",
+      "selection": {
+        "RTO.LSE": {
+          "score": [
+            0,
+            1,
+            1,
+            1,
+            1,
+            10
+          ],
+          "history": {
+            "years": 10,
+            "first": 2016,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [
+            "FTSE 100",
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        },
+        "RTO.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "history": {
+            "years": 1,
+            "first": 2025,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "RTO.LSE": {
+          "Name": "Rentokil Initial PLC",
+          "ISIN": "GB00B082RF11",
+          "LEI": "549300VN4WV7Z6T14K68",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "RTO.LSE",
+          "Listings": {},
+          "WebURL": "https://www.rentokil-initial.com"
+        },
+        "RTO.US": {
+          "Name": "Rentokil Initial PLC",
+          "ISIN": "US7601251041",
+          "LEI": null,
+          "CIK": "0000930157",
+          "OpenFigi": "BBG000BVPG41",
+          "PrimaryTicker": "RTO.US",
+          "Listings": {},
+          "WebURL": "https://www.rentokil-initial.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "RUSHA.US",
+        "RUSHB.US"
+      ],
+      "evidence": [
+        {
+          "a": "RUSHA.US",
+          "b": "RUSHB.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary",
+            "LEI:529900V3XHTN7A6DFT17",
+            "CIK:1012019"
+          ]
+        }
+      ],
+      "canonical": "RUSHA.US",
+      "selection": {
+        "RUSHA.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "RUSHB.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "RUSHA.US": {
+          "Name": "Rush Enterprises A Inc",
+          "ISIN": "US7818462092",
+          "LEI": "529900V3XHTN7A6DFT17",
+          "CIK": "0001012019",
+          "OpenFigi": "BBG000PLLP24",
+          "PrimaryTicker": "RUSHA.US",
+          "Listings": {
+            "0": {
+              "Code": "RUSHB",
+              "Exchange": "US",
+              "Name": "Rush Enterprises B Inc"
+            }
+          },
+          "WebURL": "https://www.rushenterprises.com"
+        },
+        "RUSHB.US": {
+          "Name": "Rush Enterprises B Inc",
+          "ISIN": "US7818463082",
+          "LEI": "529900V3XHTN7A6DFT17",
+          "CIK": "0001012019",
+          "OpenFigi": "BBG000PLMQP6",
+          "PrimaryTicker": "RUSHB.US",
+          "Listings": {
+            "0": {
+              "Code": "RUSHA",
+              "Exchange": "US",
+              "Name": "Rush Enterprises A Inc"
+            }
+          },
+          "WebURL": "https://www.rushenterprises.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "SN.LSE",
+        "SNN.US"
+      ],
+      "evidence": [
+        {
+          "a": "SN.LSE",
+          "b": "SNN.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary",
+            "LEI:213800ZTMDN8S67S1H61"
+          ]
+        }
+      ],
+      "canonical": "SNN.US",
+      "selection": {
+        "SN.LSE": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            20
+          ],
+          "history": {
+            "years": 20,
+            "first": 2006,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "FTSE 100",
+            "STOXX Europe 600"
+          ],
+          "frozen": false
+        },
+        "SNN.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1996,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "SN.LSE": {
+          "Name": "Smith & Nephew PLC",
+          "ISIN": "GB0009223206",
+          "LEI": "213800ZTMDN8S67S1H61",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "SN.LSE",
+          "Listings": {
+            "0": {
+              "Code": "SNN",
+              "Exchange": "US",
+              "Name": "Smith & Nephew SNATS Inc"
+            }
+          },
+          "WebURL": "https://www.smith-nephew.com"
+        },
+        "SNN.US": {
+          "Name": "Smith & Nephew SNATS Inc",
+          "ISIN": "US83175M2052",
+          "LEI": "213800ZTMDN8S67S1H61",
+          "CIK": "0000845982",
+          "OpenFigi": "BBG000C2W4K5",
+          "PrimaryTicker": "SNN.US",
+          "Listings": {
+            "0": {
+              "Code": "SN",
+              "Exchange": "LSE",
+              "Name": "Smith & Nephew PLC"
+            }
+          },
+          "WebURL": "https://www.smith-nephew.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "SSPG.LSE",
+        "SSPPF.US"
+      ],
+      "evidence": [
+        {
+          "a": "SSPG.LSE",
+          "b": "SSPPF.US",
+          "keys": [
+            "vendor listing/primary",
+            "ISIN:GB00BGBN7C04",
+            "LEI:213800QGNIWTXFMENJ24"
+          ]
+        }
+      ],
+      "canonical": "SSPG.LSE",
+      "selection": {
+        "SSPG.LSE": {
+          "score": [
+            1,
+            1,
+            0,
+            1,
+            1,
+            15
+          ],
+          "history": {
+            "years": 15,
+            "first": 2011,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "FTSE 250"
+          ],
+          "frozen": true
+        },
+        "SSPPF.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            3
+          ],
+          "history": {
+            "years": 3,
+            "first": 2023,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "ESEF",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "SSPG.LSE": {
+          "Name": "SSP Group PLC",
+          "ISIN": "GB00BGBN7C04",
+          "LEI": "213800QGNIWTXFMENJ24",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "SSPG.LSE",
+          "Listings": {},
+          "WebURL": "https://www.foodtravelexperts.com"
+        },
+        "SSPPF.US": {
+          "Name": "SSP Group PLC",
+          "ISIN": "GB00BGBN7C04",
+          "LEI": "213800QGNIWTXFMENJ24",
+          "CIK": null,
+          "OpenFigi": "BBG00FQKKFT6",
+          "PrimaryTicker": "SSPG.LSE",
+          "Listings": {},
+          "WebURL": "https://www.foodtravelexperts.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "UA.US",
+        "UAA.US"
+      ],
+      "evidence": [
+        {
+          "a": "UA.US",
+          "b": "UAA.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary",
+            "LEI:549300D4549QKWETZ406",
+            "CIK:1336917"
+          ]
+        }
+      ],
+      "canonical": "UAA.US",
+      "selection": {
+        "UA.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            4
+          ],
+          "history": {
+            "years": 4,
+            "first": 2023,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "UAA.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            6
+          ],
+          "history": {
+            "years": 6,
+            "first": 2021,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "UA.US": {
+          "Name": "Under Armour Inc C",
+          "ISIN": "US9043112062",
+          "LEI": "549300D4549QKWETZ406",
+          "CIK": "0001336917",
+          "OpenFigi": "BBG009DTD8H2",
+          "PrimaryTicker": "UA.US",
+          "Listings": {
+            "0": {
+              "Code": "UAA",
+              "Exchange": "US",
+              "Name": "Under Armour Inc A"
+            }
+          },
+          "WebURL": "https://www.underarmour.com"
+        },
+        "UAA.US": {
+          "Name": "Under Armour Inc A",
+          "ISIN": "US9043111072",
+          "LEI": "549300D4549QKWETZ406",
+          "CIK": "0001336917",
+          "OpenFigi": "BBG000BXM6V2",
+          "PrimaryTicker": "UAA.US",
+          "Listings": {
+            "0": {
+              "Code": "UA",
+              "Exchange": "US",
+              "Name": "Under Armour Inc C"
+            }
+          },
+          "WebURL": "https://www.underarmour.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "UHAL-B.US",
+        "UHAL.US"
+      ],
+      "evidence": [
+        {
+          "a": "UHAL-B.US",
+          "b": "UHAL.US",
+          "keys": [
+            "CIK:4457"
+          ]
+        }
+      ],
+      "canonical": "UHAL-B.US",
+      "selection": {
+        "UHAL-B.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1997,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "UHAL.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            30
+          ],
+          "history": {
+            "years": 30,
+            "first": 1997,
+            "last": 2026,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "UHAL-B.US": {
+          "Name": "U-Haul Holding Company",
+          "ISIN": "US0235865062",
+          "LEI": null,
+          "CIK": "0000004457",
+          "OpenFigi": null,
+          "PrimaryTicker": "UHAL-B.US",
+          "Listings": {},
+          "WebURL": "https://uhaul.com"
+        },
+        "UHAL.US": {
+          "Name": "U-Haul Holding Company",
+          "ISIN": "US0235861004",
+          "LEI": "5493003WIDMLDHYC6Y24",
+          "CIK": "0000004457",
+          "OpenFigi": "BBG000BCFXT0",
+          "PrimaryTicker": "UHAL.US",
+          "Listings": {},
+          "WebURL": "https://uhaul.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "VOW.XETRA",
+        "VOW3.XETRA"
+      ],
+      "evidence": [
+        {
+          "a": "VOW.XETRA",
+          "b": "VOW3.XETRA",
+          "keys": [
+            "LEI:529900NNUPAGGOMPXZ31"
+          ]
+        }
+      ],
+      "canonical": "VOW.XETRA",
+      "selection": {
+        "VOW.XETRA": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            26
+          ],
+          "history": {
+            "years": 26,
+            "first": 2000,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "Euro Stoxx 50"
+          ],
+          "frozen": false
+        },
+        "VOW3.XETRA": {
+          "score": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            26
+          ],
+          "history": {
+            "years": 26,
+            "first": 2000,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "STOXX Europe 600",
+            "DAX 40"
+          ],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "VOW.XETRA": {
+          "Name": "Volkswagen AG",
+          "ISIN": "DE0007664005",
+          "LEI": "529900NNUPAGGOMPXZ31",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "VOW.XETRA",
+          "Listings": {},
+          "WebURL": "https://www.volkswagen-group.com"
+        },
+        "VOW3.XETRA": {
+          "Name": "Volkswagen AG VZO O.N.",
+          "ISIN": "DE0007664039",
+          "LEI": "529900NNUPAGGOMPXZ31",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "VOW3.XETRA",
+          "Listings": {},
+          "WebURL": "https://www.volkswagen-group.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "VESTA.MX",
+        "VTMX.US"
+      ],
+      "evidence": [
+        {
+          "source": "https://ir.vesta.com.mx/sec-filings/all-sec-filings/content/0001140361-23-031309/0001140361-23-031309.pdf",
+          "detail": "F-1: VTMX ADS represents 10 VESTA common shares."
+        }
+      ],
+      "canonical": "VTMX.US",
+      "selection": {
+        "VESTA.MX": {
+          "score": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            8
+          ],
+          "history": {
+            "years": 8,
+            "first": 2018,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "description",
+          "indexes": [
+            "IPC"
+          ],
+          "frozen": false
+        },
+        "VTMX.US": {
+          "score": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          "history": {
+            "years": 2,
+            "first": 2024,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "20-F",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "VESTA.MX": {
+          "Name": "Corporación Inmobiliaria Vesta S.A.B. de C.V",
+          "ISIN": "MX01VE0M0003",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "VESTA.MX",
+          "Listings": {},
+          "WebURL": "https://www.vesta.com.mx"
+        },
+        "VTMX.US": {
+          "Name": "CorporaciÃ³n Inmobiliaria Vesta, S.A.B de C.V.",
+          "ISIN": "US92540K1097",
+          "LEI": null,
+          "CIK": "0001969373",
+          "OpenFigi": "BBG01H6X3BN9",
+          "PrimaryTicker": "VTMX.US",
+          "Listings": {},
+          "WebURL": "https://www.vesta.com.mx"
+        }
+      }
+    },
+    {
+      "ids": [
+        "Z.US",
+        "ZG.US"
+      ],
+      "evidence": [
+        {
+          "a": "Z.US",
+          "b": "ZG.US",
+          "keys": [
+            "vendor listing/primary",
+            "vendor listing/primary",
+            "LEI:2549002XEELQDIR6FU05",
+            "CIK:1617640"
+          ]
+        }
+      ],
+      "canonical": "ZG.US",
+      "selection": {
+        "Z.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            17
+          ],
+          "history": {
+            "years": 17,
+            "first": 2009,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        },
+        "ZG.US": {
+          "score": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            20
+          ],
+          "history": {
+            "years": 20,
+            "first": 2006,
+            "last": 2025,
+            "source": "eodhd"
+          },
+          "reportKind": "10-K",
+          "indexes": [],
+          "frozen": false
+        }
+      },
+      "identifiers": {
+        "Z.US": {
+          "Name": "Zillow Group Inc Class C",
+          "ISIN": "US98954M2008",
+          "LEI": "2549002XEELQDIR6FU05",
+          "CIK": "0001617640",
+          "OpenFigi": "BBG009NRSWJ4",
+          "PrimaryTicker": "Z.US",
+          "Listings": {
+            "0": {
+              "Code": "0ZG",
+              "Exchange": "F",
+              "Name": "Zillow Group Inc"
+            },
+            "1": {
+              "Code": "ZG",
+              "Exchange": "US",
+              "Name": "Zillow Group Inc"
+            }
+          },
+          "WebURL": "https://www.zillow.com"
+        },
+        "ZG.US": {
+          "Name": "Zillow Group Inc",
+          "ISIN": "US98954M1018",
+          "LEI": "2549002XEELQDIR6FU05",
+          "CIK": "0001617640",
+          "OpenFigi": "BBG000D13GN8",
+          "PrimaryTicker": "ZG.US",
+          "Listings": {
+            "0": {
+              "Code": "0ZG",
+              "Exchange": "F",
+              "Name": "Zillow Group Inc"
+            },
+            "1": {
+              "Code": "Z",
+              "Exchange": "US",
+              "Name": "Zillow Group Inc Class C"
+            }
+          },
+          "WebURL": "https://www.zillow.com"
+        }
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "ids": [
+        "RBC.US",
+        "RRX.US"
+      ],
+      "reason": "Stale vendor CIK/LEI on RBC; SEC RBC CIK is 1324948, RRX 82811.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1324948/000121390026087860/0001213900-26-087860-index.htm",
+      "identifiers": {
+        "RBC.US": {
+          "Name": "RBC Bearings Incorporated",
+          "ISIN": "US75524B1044",
+          "LEI": "QH78R09VCJGQKPBPYU33",
+          "CIK": "0000082811",
+          "OpenFigi": "BBG000GMGNB3",
+          "PrimaryTicker": "RBC.US",
+          "Listings": {},
+          "WebURL": "https://www.rbcbearings.com"
+        },
+        "RRX.US": {
+          "Name": "Regal Beloit Corporation",
+          "ISIN": "US7587501039",
+          "LEI": "QH78R09VCJGQKPBPYU33",
+          "CIK": "0000082811",
+          "OpenFigi": "BBG000BRXTR8",
+          "PrimaryTicker": "RRX.US",
+          "Listings": {},
+          "WebURL": "https://www.regalrexnord.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "NAVI.US",
+        "SLM.US"
+      ],
+      "reason": "Distinct CIK 1593538 vs 1032033; vendor reused LEI across 2014 spin-off.",
+      "source": "https://www.navient.com/about",
+      "identifiers": {
+        "NAVI.US": {
+          "Name": "Navient Corp",
+          "ISIN": "US63938C1080",
+          "LEI": "54930067J0ZNOEBRW338",
+          "CIK": "0001593538",
+          "OpenFigi": "BBG004MN1R41",
+          "PrimaryTicker": "NAVI.US",
+          "Listings": {
+            "0": {
+              "Code": "10D",
+              "Exchange": "F",
+              "Name": "Navient Corp"
+            },
+            "1": {
+              "Code": "JSM",
+              "Exchange": "US",
+              "Name": "Navient Corporation SR NT 6% 121543"
+            }
+          },
+          "WebURL": "https://www.navient.com"
+        },
+        "SLM.US": {
+          "Name": "SLM Corp",
+          "ISIN": "US78442P1066",
+          "LEI": "54930067J0ZNOEBRW338",
+          "CIK": "0001032033",
+          "OpenFigi": "BBG000BBCQD7",
+          "PrimaryTicker": "SLM.US",
+          "Listings": {
+            "0": {
+              "Code": "SLMBP",
+              "Exchange": "US",
+              "Name": "SLM Corp Pb Pref"
+            }
+          },
+          "WebURL": "https://www.salliemae.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "BATRA.US",
+        "FWONA.US",
+        "LLYVA.US"
+      ],
+      "reason": "Separate issuers after split-offs: CIK 1958140 / 1560385 / 2078416.",
+      "source": "https://www.libertymedia.com/investors/stock-cost-basis",
+      "identifiers": {
+        "BATRA.US": {
+          "Name": "Atlanta Braves Holdings, Inc. Series A Common Stock",
+          "ISIN": "US0477261046",
+          "LEI": null,
+          "CIK": "0001560385",
+          "OpenFigi": "BBG00BFHD1D0",
+          "PrimaryTicker": "BATRA.US",
+          "Listings": {},
+          "WebURL": "https://www.bravesholdings.com"
+        },
+        "FWONA.US": {
+          "Name": "Liberty Media Corporation Series A Liberty Formula One Common Stock",
+          "ISIN": "US5312297717",
+          "LEI": null,
+          "CIK": "0001560385",
+          "OpenFigi": "BBG00BFHDCV6",
+          "PrimaryTicker": "FWONA.US",
+          "Listings": {
+            "0": {
+              "Code": "BATRA",
+              "Exchange": "US",
+              "Name": "Atlanta Braves Holdings, Inc. Series A Common Stock"
+            },
+            "1": {
+              "Code": "BATRK",
+              "Exchange": "US",
+              "Name": "Atlanta Braves Holdings, Inc. Series C Common Stock"
+            },
+            "2": {
+              "Code": "FWONK",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series C Liberty Formula One Common Stock"
+            },
+            "3": {
+              "Code": "LSXMA",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series A Liberty SiriusXM Common Stock"
+            },
+            "4": {
+              "Code": "LSXMB",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series B Liberty SiriusXM Common Stock"
+            },
+            "5": {
+              "Code": "LSXMK",
+              "Exchange": "US",
+              "Name": "Liberty Media Corporation Series C Liberty SiriusXM Common Stock"
+            }
+          },
+          "WebURL": "https://www.libertymedia.com/formula-one-group"
+        },
+        "LLYVA.US": {
+          "Name": "Liberty Live Holdings, Inc. Series A Liberty Live Group Common Stock",
+          "ISIN": "US5309091008",
+          "LEI": null,
+          "CIK": "0001560385",
+          "OpenFigi": "BBG01HMFL081",
+          "PrimaryTicker": "LLYVA.US",
+          "Listings": {},
+          "WebURL": "https://libertyliveholdings.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "GHC.US",
+        "GHM.US"
+      ],
+      "reason": "Graham Holdings and Graham Corporation: distinct CIK/LEI; name stem not identity.",
+      "source": null,
+      "identifiers": {
+        "GHC.US": {
+          "Name": "Graham Holdings Co",
+          "ISIN": "US3846371041",
+          "LEI": "529900BOSCEEEMAFQJ29",
+          "CIK": "0000104889",
+          "OpenFigi": "BBG000C3FGH9",
+          "PrimaryTicker": "GHC.US",
+          "Listings": {},
+          "WebURL": "https://www.ghco.com"
+        },
+        "GHM.US": {
+          "Name": "Graham Corporation",
+          "ISIN": "US3845561063",
+          "LEI": "254900EI9P4LTY524J77",
+          "CIK": "0000716314",
+          "OpenFigi": "BBG000BKB811",
+          "PrimaryTicker": "GHM.US",
+          "Listings": {},
+          "WebURL": "https://grahamcorp.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "9434.JP",
+        "9984.JP"
+      ],
+      "reason": "SoftBank Corp and SoftBank Group: subsidiary vs parent; separate Japanese issuers.",
+      "source": null,
+      "identifiers": {
+        "9434.JP": {},
+        "9984.JP": {}
+      }
+    },
+    {
+      "ids": [
+        "APA.US",
+        "APA.AU"
+      ],
+      "reason": "Unrelated US exploration issuer and Australian infrastructure issuer.",
+      "source": null,
+      "identifiers": {
+        "APA.US": {
+          "Name": "APA Corporation",
+          "ISIN": "US03743Q1085",
+          "LEI": null,
+          "CIK": "0000006769",
+          "OpenFigi": "BBG00YTS96G2",
+          "PrimaryTicker": "APA.US",
+          "Listings": {},
+          "WebURL": "https://www.apacorp.com"
+        },
+        "APA.AU": {
+          "Name": "APA Group",
+          "ISIN": "AU000000APA1",
+          "LEI": "984500M36D4QE6DC2N32",
+          "CIK": null,
+          "OpenFigi": "BBG000BC42W6",
+          "PrimaryTicker": "APA.AU",
+          "Listings": {},
+          "WebURL": "https://www.apa.com.au"
+        }
+      }
+    },
+    {
+      "ids": [
+        "MRK.US",
+        "MRK.XETRA"
+      ],
+      "reason": "Merck & Co and Merck KGaA: unrelated legal issuers.",
+      "source": null,
+      "identifiers": {
+        "MRK.US": {
+          "Name": "Merck & Company Inc",
+          "ISIN": "US58933Y1055",
+          "LEI": "MZK1AT00SJV4XB7WNL71",
+          "CIK": "0000310158",
+          "OpenFigi": "BBG000BPD168",
+          "PrimaryTicker": "MRK.US",
+          "Listings": {
+            "0": {
+              "Code": "MRCK34",
+              "Exchange": "SA",
+              "Name": "Merck & Co. Inc"
+            }
+          },
+          "WebURL": "https://www.merck.com"
+        },
+        "MRK.XETRA": {
+          "Name": "Merck KGaA",
+          "ISIN": "DE0006599905",
+          "LEI": "529900OAREIS0MOPTW25",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "MRK.XETRA",
+          "Listings": {},
+          "WebURL": "https://www.merckgroup.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "JKS.US",
+        "688223.SHG"
+      ],
+      "reason": "JinkoSolar Holding and its separately listed operating subsidiary.",
+      "source": "https://ir.jinkosolar.com/news-releases/news-release-details/jinkosolar-announces-proposed-change-company-name-jinko-holdings",
+      "identifiers": {
+        "JKS.US": {
+          "Name": "JinkoSolar Holding Company Limited",
+          "ISIN": "US47759T1007",
+          "LEI": "529900Y93WNCS05FG852",
+          "CIK": "0001481513",
+          "OpenFigi": "BBG000Q72QF9",
+          "PrimaryTicker": "JKS.US",
+          "Listings": {},
+          "WebURL": "https://www.jinkosolar.com"
+        },
+        "688223.SHG": {
+          "Name": "JinkoSolar Co. Ltd. A",
+          "ISIN": "CNE100005R96",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": null,
+          "Listings": {},
+          "WebURL": "https://www.jinkosolar.com/en/"
+        }
+      }
+    },
+    {
+      "ids": [
+        "009970.KO",
+        "111770.KO"
+      ],
+      "reason": "Youngone Holdings and Youngone operating issuer.",
+      "source": null,
+      "identifiers": {
+        "009970.KO": {
+          "Name": "Youngone Holdi",
+          "ISIN": "KR7009970005",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "009970.KO",
+          "Listings": {},
+          "WebURL": "https://www.youngone.co.kr"
+        },
+        "111770.KO": {
+          "Name": "Youngone",
+          "ISIN": "KR7111770004",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "111770.KO",
+          "Listings": {},
+          "WebURL": "https://www.youngone.co.kr"
+        }
+      }
+    },
+    {
+      "ids": [
+        "002790.KO",
+        "090430.KO"
+      ],
+      "reason": "Amorepacific Holdings and Amorepacific operating issuer.",
+      "source": null,
+      "identifiers": {
+        "002790.KO": {
+          "Name": "Amore Group",
+          "ISIN": "KR7002790004",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "002790.KO",
+          "Listings": {},
+          "WebURL": "https://www.apgroup.com"
+        },
+        "090430.KO": {
+          "Name": "Amorepacific Corp. (New)",
+          "ISIN": "KR7090430000",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "090430.KO",
+          "Listings": {},
+          "WebURL": "https://www.apgroup.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "CLW.AU",
+        "CQR.AU",
+        "CHC.AU"
+      ],
+      "reason": "Separately listed trusts and manager, same website not identity.",
+      "source": null,
+      "identifiers": {
+        "CLW.AU": {
+          "Name": "Charter Hall Long Wale REIT",
+          "ISIN": "AU000000CLW0",
+          "LEI": "25490085H6GRZKHWFL78",
+          "CIK": null,
+          "OpenFigi": "BBG00DY7NVH6",
+          "PrimaryTicker": "CLW.AU",
+          "Listings": {},
+          "WebURL": "https://www.charterhall.com.au"
+        },
+        "CQR.AU": {
+          "Name": "Charter Hall Retail REIT",
+          "ISIN": "AU000000CQR9",
+          "LEI": "254900SH49MQ8WY4NO45",
+          "CIK": null,
+          "OpenFigi": "BBG000KWGX79",
+          "PrimaryTicker": "CQR.AU",
+          "Listings": {},
+          "WebURL": "https://www.charterhall.com.au"
+        },
+        "CHC.AU": {
+          "Name": "Charter Hall Group",
+          "ISIN": "AU000000CHC0",
+          "LEI": "254900PJ75X7THUAD153",
+          "CIK": null,
+          "OpenFigi": "BBG000FJ5657",
+          "PrimaryTicker": "CHC.AU",
+          "Listings": {},
+          "WebURL": "https://www.charterhall.com.au"
+        }
+      }
+    },
+    {
+      "ids": [
+        "CNI.AU",
+        "CIP.AU"
+      ],
+      "reason": "Centuria manager and separately listed industrial REIT.",
+      "source": null,
+      "identifiers": {
+        "CNI.AU": {
+          "Name": "Centuria Capital Group",
+          "ISIN": "AU000000CNI5",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG00DZQQRX1",
+          "PrimaryTicker": "CNI.AU",
+          "Listings": {},
+          "WebURL": "https://www.centuria.com.au"
+        },
+        "CIP.AU": {
+          "Name": "Centuria Industrial REIT",
+          "ISIN": "AU000000CIP0",
+          "LEI": "984500D6B1D6BC3F7B08",
+          "CIK": null,
+          "OpenFigi": "BBG003Q1QNZ5",
+          "PrimaryTicker": "CIP.AU",
+          "Listings": {},
+          "WebURL": "https://www.centuria.com.au/industrial-reit"
+        }
+      }
+    },
+    {
+      "ids": [
+        "FRZCF.US",
+        "FRLOF.US"
+      ],
+      "reason": "Frasers Centrepoint Trust and Frasers Logistics & Commercial Trust: separate trusts.",
+      "source": null,
+      "identifiers": {
+        "FRZCF.US": {
+          "Name": "Frasers Centrepoint Trust",
+          "ISIN": "SG1T60930966",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG001PR6BT8",
+          "PrimaryTicker": "FRZCF.US",
+          "Listings": {},
+          "WebURL": "https://www.frasersproperty.com/reits/fct"
+        },
+        "FRLOF.US": {
+          "Name": "Frasers Logistics & Commercial Trust",
+          "ISIN": null,
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": "BBG00SMQ83T0",
+          "PrimaryTicker": null,
+          "Listings": {},
+          "WebURL": "https://www.frasersproperty.com/reits/flct"
+        }
+      }
+    },
+    {
+      "ids": [
+        "KMAR.OL",
+        "KOG.OL"
+      ],
+      "reason": "Kongsberg Maritime and Kongsberg Gruppen: separate listed issuers after split.",
+      "source": "https://www.kongsbergmaritime.com/news-and-events/news-archive/2026/kongsberg-maritime-begins-trading-on-oslo-stock-exchange/",
+      "identifiers": {
+        "KMAR.OL": {
+          "Name": "KONGSBERG MARITIME ASA",
+          "ISIN": "NO0013697029",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "KMAR.OL",
+          "Listings": {},
+          "WebURL": "https://www.kongsberg.com/maritime"
+        },
+        "KOG.OL": {
+          "Name": "Kongsberg Gruppen ASA",
+          "ISIN": "NO0013536151",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "KOG.OL",
+          "Listings": {},
+          "WebURL": "https://www.kongsberg.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "DIM.PA",
+        "SRT3.XETRA"
+      ],
+      "reason": "Sartorius Stedim Biotech and Sartorius: separately listed subsidiary and parent.",
+      "source": null,
+      "identifiers": {
+        "DIM.PA": {
+          "Name": "Sartorius Stedim Biotech SA",
+          "ISIN": "FR0013154002",
+          "LEI": "52990006IVXY7GCSSR39",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "DIM.PA",
+          "Listings": {},
+          "WebURL": "https://www.sartorius.com"
+        },
+        "SRT3.XETRA": {
+          "Name": "Sartorius Aktiengesellschaft",
+          "ISIN": "DE0007165631",
+          "LEI": "529900EQV2DY4FOAMU38",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "SRT3.XETRA",
+          "Listings": {},
+          "WebURL": "https://www.sartorius.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "COMP.US",
+        "CPG.LSE"
+      ],
+      "reason": "Compass real-estate issuer vs UK catering issuer.",
+      "source": null,
+      "identifiers": {
+        "COMP.US": {
+          "Name": "Compass Inc",
+          "ISIN": "US20464U1007",
+          "LEI": null,
+          "CIK": "0001563190",
+          "OpenFigi": "BBG00J5SXTH3",
+          "PrimaryTicker": "COMP.US",
+          "Listings": {},
+          "WebURL": "https://www.compass.com"
+        },
+        "CPG.LSE": {
+          "Name": "Compass Group PLC",
+          "ISIN": "GB00BD6K4575",
+          "LEI": "2138008M6MH9OZ6U2T68",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "CPG.LSE",
+          "Listings": {},
+          "WebURL": "https://www.compass-group.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "AGX.US",
+        "ARG.PA"
+      ],
+      "reason": "Argan US engineering vs French property issuer.",
+      "source": null,
+      "identifiers": {
+        "AGX.US": {
+          "Name": "Argan Inc",
+          "ISIN": "US04010E1091",
+          "LEI": "529900E4KZWBV9KGBS83",
+          "CIK": "0000100591",
+          "OpenFigi": "BBG000K4J3T0",
+          "PrimaryTicker": "AGX.US",
+          "Listings": {},
+          "WebURL": "https://www.arganinc.com"
+        },
+        "ARG.PA": {
+          "Name": "Argan SA",
+          "ISIN": "FR0010481960",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "ARG.PA",
+          "Listings": {},
+          "WebURL": "https://www.argan.fr/"
+        }
+      }
+    },
+    {
+      "ids": [
+        "NNBR.US",
+        "NN.AS"
+      ],
+      "reason": "NN industrial vs NN Group insurance issuer.",
+      "source": null,
+      "identifiers": {
+        "NNBR.US": {
+          "Name": "NN Inc",
+          "ISIN": "US6293371067",
+          "LEI": "549300SU3TUM6VH84645",
+          "CIK": "0000918541",
+          "OpenFigi": "BBG000BHCJX8",
+          "PrimaryTicker": "NNBR.US",
+          "Listings": {},
+          "WebURL": "https://www.nninc.com"
+        },
+        "NN.AS": {
+          "Name": "NN Group NV",
+          "ISIN": "NL0010773842",
+          "LEI": "724500OHYNDT9OY6Q215",
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "NN.AS",
+          "Listings": {},
+          "WebURL": "https://www.nn-group.com"
+        }
+      }
+    },
+    {
+      "ids": [
+        "NSRGY.US",
+        "NESTLEIND.NSE"
+      ],
+      "reason": "Nestle SA parent and separately listed Nestle India; parent-name exact search is not an identity merge.",
+      "source": "https://www.nestle.in/investors",
+      "identifiers": {
+        "NSRGY.US": {
+          "Name": "Nestle SA ADR",
+          "ISIN": "US6410694060",
+          "LEI": "KY37LUS27QQX7BB93L28",
+          "CIK": null,
+          "OpenFigi": "BBG000BSDQZ5",
+          "PrimaryTicker": "NSRGY.US",
+          "Listings": {},
+          "WebURL": "https://www.nestle.com"
+        },
+        "NESTLEIND.NSE": {}
+      }
+    },
+    {
+      "ids": [
+        "BABA.US",
+        "0241.HK"
+      ],
+      "reason": "Alibaba Group and separately listed Alibaba Health; distinct legal issuers.",
+      "source": "https://www.alihealth.cn/",
+      "identifiers": {
+        "BABA.US": {
+          "Name": "Alibaba Group Holding Ltd",
+          "ISIN": "US01609W1027",
+          "LEI": "5493001NTNQJDH60PM02",
+          "CIK": "0001577552",
+          "OpenFigi": "BBG006G2JVL2",
+          "PrimaryTicker": "9988.HK",
+          "Listings": {
+            "0": {
+              "Code": "9988",
+              "Exchange": "HK",
+              "Name": "Alibaba Group Holding Ltd"
+            },
+            "1": {
+              "Code": "BABA34",
+              "Exchange": "SA",
+              "Name": "Alibaba Group Holding Limited"
+            }
+          },
+          "WebURL": "https://www.alibabagroup.com"
+        },
+        "0241.HK": {
+          "Name": "Alibaba Health Information Technology Ltd",
+          "ISIN": "BMG0171K1018",
+          "LEI": null,
+          "CIK": null,
+          "OpenFigi": null,
+          "PrimaryTicker": "0241.HK",
+          "Listings": {},
+          "WebURL": "https://www.alihealth.cn"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# One company across listings
+
+The owner specification in this session is the approved scope. Work inline, without subagents, publication, master pushes, daily lock operations or live corpus writes. Corpus replay and large artifacts stay in a dereferenced copy under ~/data/value-dedupe. Stop and commit if root free space falls below 4 GiB.
+
+1. Audit every live dossier against cached security identifiers and explicit depositary/primary-listing links. Review identifier conflicts and candidate look-alikes. Commit an evidence-bearing issuer registry and a reproducible audit with coverage gaps disclosed.
+2. Add failing tests for identity grouping, canonical selection, freeze conflicts, alias removal, holder unions and search look-alikes. Implement a final publisher reconciliation after baseline restoration, before browser views. Preserve original canonical dossier bytes except holder unions; retain every true frozen dossier. Keep old historical observations but deduplicate current/historical company presentation and counts.
+3. Resolve all listing aliases before routing and API lookup. Redirect both /s and legacy /value in proxy before streaming. Build search using explicit identities only. Combine listing holdings without mixing share prices or share counts from different securities.
+4. Run ordinary publish --out from the copy. Verify canonical serialized bytes, all 147 freezes, every removed baseline id and redirect, index/search issuer uniqueness, seven requested searches, ten merged-company browser gates at both sizes, and the full unit suite. Record exact commands and artifacts, then commit with the requested message and write the controller report. READY only if all required proof succeeds.

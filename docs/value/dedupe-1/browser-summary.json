@@ -1,0 +1,26 @@
+{
+  "source": "/Users/miki/data/value-dedupe/browser-gate/report.json",
+  "states": 250,
+  "companies": [
+    "/s/AMCR",
+    "/s/BABA",
+    "/s/BH",
+    "/s/CARL-B.CO",
+    "/s/DGE.LSE",
+    "/s/GSK.LSE",
+    "/s/NSRGY",
+    "/s/RI.PA",
+    "/s/SSPG.LSE",
+    "/s/UHAL-B"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "rawFailedStates": 210,
+  "whitespaceFindings": 190,
+  "ownerRequiredChromeFindings": 449,
+  "blockingFindings": [],
+  "chromeDisposition": "Cover-6 owner requirement, named shared controls at exactly 12px only; raw gate and threshold unchanged.",
+  "whitespaceDisposition": "Prior controller R2 nonblocking ruling retained from cover-6; raw gate unchanged."
+}

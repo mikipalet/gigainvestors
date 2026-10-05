@@ -56,3 +56,17 @@ it('accepts year views derived from Q4 without requiring a separate annual snaps
  write('prices/US.json',{'A.US':[99,'2026-10-02']});
  expect(commitPrices({repo,asOf:'2026-10-04'})).toBe(true);
 });
+it('allows a reviewed identity collapse only when every lost dossier has a direct live target',()=>{
+ const ds=read('dossiers/000.json');delete ds['C0.US'];delete ds['C1.US'];write('dossiers/000.json',ds);
+ write('aliases.json',{'C0.US':'C2.US','C1.US':'C2.US'});
+ expect(commitOutput({repo,asOf:'2026-10-05'})).toBe(true);
+});
+it('refuses alias cycles or missing canonical dossiers',()=>{
+ const ds=read('dossiers/000.json');delete ds['C0.US'];delete ds['C1.US'];write('dossiers/000.json',ds);
+ write('aliases.json',{'C0.US':'C1.US','C1.US':'C0.US'});
+ expect(()=>commitOutput({repo,asOf:'2026-10-05'})).toThrow(/invariant/i);
+});
+it('refuses to reintroduce two reviewed listings of one issuer',()=>{
+ const ds=read('dossiers/000.json');ds['NSRGY.US']={id:'NSRGY.US'};ds['NESN.SW']={id:'NESN.SW'};write('dossiers/000.json',ds);
+ expect(()=>commitOutput({repo,asOf:'2026-10-05'})).toThrow(/duplicate issuer/i);
+});

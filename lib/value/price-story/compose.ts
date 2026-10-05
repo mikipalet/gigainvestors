@@ -83,3 +83,10 @@ export function refreshQueue(ids:string[],checked:Record<string,string>,weeklyMo
  const rotation=[...ids].filter(id=>!checked[id]||Date.parse(now)-Date.parse(checked[id])>=6*86400000).sort((a,b)=>(checked[a]??'').localeCompare(checked[b]??'')||a.localeCompare(b,undefined,{numeric:true})).slice(0,limit);
  return [...new Set([...rotation,...ids.filter(id=>weeklyMovers.has(id)&&checked[id]?.slice(0,10)!==now.slice(0,10))])];
 }
+
+/** Rendering the same observations is not a new dated research event. */
+export function retainStoryTimestamp(current:PriceStory,previous?:PriceStory):PriceStory {
+ if(!previous)return current;
+ const {asOf:_now,...next}=current,{asOf:_then,...old}=previous;
+ return JSON.stringify(next)===JSON.stringify(old)?previous:current;
+}

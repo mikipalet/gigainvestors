@@ -1,0 +1,19 @@
+import {existsSync,readdirSync,readFileSync} from 'node:fs';
+import path from 'node:path';
+export function retiredIssuerAliases(aliases:Record<string,string>,published:ReadonlySet<string>):Record<string,string>{
+ const retired:Record<string,string>={};
+ for(const [id,target]of Object.entries(aliases)){
+  if(aliases[target])throw Error(`Issuer alias must be direct: ${id}`);
+  if(!published.has(target))throw Error(`Issuer alias target missing: ${id}`);
+  if(!published.has(id))retired[id]=target;
+ }
+ return retired;
+}
+export function readRetiredIssuerAliases(repo:string):Record<string,string>{
+ const file=path.join(repo,'aliases.json');if(!existsSync(file))return {};
+ const aliases=JSON.parse(readFileSync(file,'utf8'));
+ const ids=new Set<string>();
+ const dir=path.join(repo,'dossiers');
+ if(existsSync(dir))for(const f of readdirSync(dir).filter(f=>/^\d{3}\.json$/.test(f)))for(const id of Object.keys(JSON.parse(readFileSync(path.join(dir,f),'utf8'))))ids.add(id);
+ return retiredIssuerAliases(aliases,ids);
+}

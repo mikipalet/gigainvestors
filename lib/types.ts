@@ -59,6 +59,7 @@ export interface StockQuarter {
 }
 
 export interface StockData {
+  combinedListings?: string[];
   ticker: string;
   name: string;
   quarters: StockQuarter[];

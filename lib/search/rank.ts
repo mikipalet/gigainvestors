@@ -1,3 +1,4 @@
+import {issuerSearchNames,normalizedIssuerQuery} from '../value/issuer-search';
 import type { SearchIndex } from "../types";
 import {buildCompanyIndex, type SearchCompany} from "./companies";
 
@@ -13,7 +14,7 @@ export interface RankItem<T> {
   bonus?: number;
   marketCap?: number | null;
 }
-const lowercase=(text:string)=>text.toLowerCase();
+const lowercase=(text:string)=>text.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'');
 type Prepared<T>={item:RankItem<T>;fields:Array<{text:string;words:string[];weight:number}>};
 const prepared=new WeakMap<object,{normalize:(text:string)=>string;items:Prepared<unknown>[];buckets:Map<string,Prepared<unknown>[]>} >();
 const palettes=new WeakMap<SearchIndex,RankItem<Hit>[]>();
@@ -86,7 +87,9 @@ export function rank(index: SearchIndex, query: string): Hit[] {
   }
   palettes.set(index,items);
   }
-  const result=rankItems(items,query,{marketCapTiebreak:true});
+  const exact=items.filter(item=>item.value.kind==='stock'&&(issuerSearchNames[item.value.ticker]??issuerSearchNames[`${item.value.ticker}.US`]??[]).some(name=>name===normalizedIssuerQuery(query)));
+  const candidates=exact.length?items.filter(item=>item.value.kind!=='stock'||exact.includes(item)):items;
+  const result=rankItems(candidates,query,{marketCapTiebreak:true});
   return "charlie munger".includes(qn)&&qn.length>=3?[{kind:'munger'},...result].slice(0,12) as Hit[]:result;
 }
 

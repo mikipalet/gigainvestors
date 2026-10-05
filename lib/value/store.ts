@@ -20,21 +20,25 @@ export async function getAllAnalyzedIndex():Promise<IndexRow[]>{
   const rows=await Promise.all([getDefaultIndex(),...countries.map(getCountryIndex)]);
   return [...new Map(rows.flat().map(row=>[row.id,row])).values()];
 }
+async function withIssuerHolders(dossier:Dossier):Promise<Dossier>{
+  const holders=await readStore<Record<string,Dossier['holders']>>('issuer-holders.json');
+  return publicAnalysis(holders?.[dossier.id]?{...dossier,holders:holders[dossier.id]}:dossier);
+}
 export async function getDossier(id: Id) {
   const key = id.toUpperCase();
   try {
     const shard = await readStore<Record<Id, Dossier>>(`dossiers/${shardOf(key)}.json`, 259200);
-    if(shard?.[key])return publicAnalysis(shard[key]);
+    if(shard?.[key])return withIssuerHolders(shard[key]);
     const normalized=key.endsWith('.US')?key.slice(0,-3).replaceAll('.','-')+'.US':key;
     if(normalized!==key){
       const direct=await readStore<Record<Id,Dossier>>(`dossiers/${shardOf(normalized)}.json`,259200);
-      if(direct?.[normalized])return publicAnalysis(direct[normalized]);
+      if(direct?.[normalized])return withIssuerHolders(direct[normalized]);
     }
     const aliases=await readStore<Record<string,string>>('aliases.json');
     const target=aliases?.[normalized]??aliases?.[key];
     if(!target||target===key)return null;
     const resolved=await readStore<Record<Id,Dossier>>(`dossiers/${shardOf(target)}.json`,259200);
-    return resolved?.[target]?publicAnalysis(resolved[target]):null;
+    return resolved?.[target]?withIssuerHolders(resolved[target]):null;
   } catch { return null; }
 }
 // PriceMap quotes and IndexRow.v/cur are in the listing trading currency by contract.
@@ -83,4 +87,12 @@ export async function getForwardRecord() {
     return snapshot;
   }));
   return computeForwardRecord(snapshots);
+}
+
+/** All routed listing tickers contribute their 13F history to the issuer page. */
+export async function getCompanyStock(dossier:Dossier){
+ const [{getStock},{mergeListingHoldings},aliases]=await Promise.all([import('../data'),import('./company-holders'),readStore<Record<string,string>>('aliases.json')]);
+ const ids=[dossier.id,...Object.entries(aliases??{}).filter(([,id])=>id===dossier.id).map(([id])=>id)];
+ const tickers=[...new Set(ids.filter(id=>id.endsWith('.US')).map(id=>id.slice(0,-3).replaceAll('-','.')))];
+ return mergeListingHoldings(dossier.id,dossier.company.name,await Promise.all(tickers.map(getStock)));
 }

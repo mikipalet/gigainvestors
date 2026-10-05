@@ -1,6 +1,6 @@
 import {companyAlternates} from '@/lib/agents/urls';
 import {notFound} from 'next/navigation';
-import {getDossier,getPrice,getSearchCompany} from '@/lib/value/store';
+import {getDossier,getPrice,getSearchCompany,getCompanyStock} from '@/lib/value/store';
 import {getIndex,getStock} from '@/lib/data';
 import {companyTicker,companyPath,dossierId} from '@/lib/company-route';
 import {StockContent} from '@/components/AgentContent';
@@ -29,7 +29,7 @@ export default async function Page({params,searchParams}:{params:Promise<{ticker
    if(listing&&/^[\x00-\x7F]+$/.test(listing[1]))dossier.company={...dossier.company,name:listing[1]};
   }
   const quote=await getPrice(dossier.id,dossier.company.country);
-  return <Company dossier={dossier} quote={quote} stock={stock} investors={investors}/>;
+  return <Company dossier={dossier} quote={quote} stock={await getCompanyStock(dossier)} investors={investors}/>;
  }
  return <><Stock stock={stock!} investors={investors}/></>;
 }

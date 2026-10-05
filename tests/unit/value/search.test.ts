@@ -28,7 +28,7 @@ describe("value search shards", () => {
     const c = { ...companies[4], isin: "CH0038863350" };
     expect(searchTokens(c)).toEqual(expect.arrayContaining(["nestle", "nesn", "ch0038863350"]));
     expect(searchTokens(c)).not.toEqual(expect.arrayContaining(["sa"]));
-    expect(searchTokens(company("X.US", "Élan Inc Ltd PLC SA AG Corp Holdings", null))).toEqual(["elan", "x"]);
+    expect(searchTokens(company("X.US", "Élan Inc Ltd PLC SA AG Corp Holdings", null))).toEqual(["elan", "x", "x.us"]);
     const shards = buildSearchShards([c], new Set());
     expect(searchShard(shards.ch, "CH0038863350")[0][0]).toBe("NESN.SW");
     expect(searchShard(shards.ne, "NESTLÉ")[0][0]).toBe("NESN.SW");
@@ -85,4 +85,14 @@ it('refuses a head that cannot satisfy both top-300 and the raw byte budget', as
   const { buildAdaptiveSearchShards } = await import('@/lib/value/search');
   const rows = Array.from({ length: 301 }, (_, i) => company(`XY${i}.US`, 'É'.repeat(200), i));
   expect(() => buildAdaptiveSearchShards(rows, new Set())).toThrow(/head .* exceeds 60000 bytes/);
+});
+
+it('finds hyphenated company names and full listing identifiers',()=>{
+ const shard:any={rows:[['UHAL-B.US','U-Haul Holding Company','US','a',100,null]],aliases:{'uhal.us':[0]}};
+ expect(searchShard(shard,'u-haul').map(r=>r[0])).toEqual(['UHAL-B.US']);
+ expect(searchShard(shard,'UHAL.US').map(r=>r[0])).toEqual(['UHAL-B.US']);
+});
+it('routes a hyphenated issuer query to a shard containing that issuer',()=>{
+ const shards=buildSearchShards([company('UHAL-B.US','U-Haul Holding Company',100)],new Set(['UHAL-B.US']));
+ expect(searchShard(shards['u-'],'u-haul').map(r=>r[0])).toEqual(['UHAL-B.US']);
 });

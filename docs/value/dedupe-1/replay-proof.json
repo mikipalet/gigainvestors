@@ -1,0 +1,1056 @@
+{
+  "baseline": "/Users/miki/data/value-dedupe/corpus/publish-repo",
+  "output": "/Users/miki/data/value-dedupe/staging/replay",
+  "baselineCount": 3957,
+  "canonicalCount": 3899,
+  "indexCount": 3892,
+  "groups": 55,
+  "removed": [
+    {
+      "id": "2015.HK",
+      "canonical": "LI.US"
+    },
+    {
+      "id": "600938.SHG",
+      "canonical": "0883.HK"
+    },
+    {
+      "id": "600941.SHG",
+      "canonical": "0941.HK"
+    },
+    {
+      "id": "6690.HK",
+      "canonical": "600690.SHG"
+    },
+    {
+      "id": "688981.SHG",
+      "canonical": "0981.HK"
+    },
+    {
+      "id": "9888.HK",
+      "canonical": "BIDU.US"
+    },
+    {
+      "id": "9988.HK",
+      "canonical": "BABA.US"
+    },
+    {
+      "id": "9999.HK",
+      "canonical": "NTES.US"
+    },
+    {
+      "id": "ABVX.PA",
+      "canonical": "ABVX.US"
+    },
+    {
+      "id": "AGN.AS",
+      "canonical": "AEG.US"
+    },
+    {
+      "id": "AKBLF.US",
+      "canonical": "ALK-B.CO"
+    },
+    {
+      "id": "AMC.AU",
+      "canonical": "AMCR.US"
+    },
+    {
+      "id": "ASAIY.US",
+      "canonical": "ASAI3.SA"
+    },
+    {
+      "id": "BATRK.US",
+      "canonical": "BATRA.US"
+    },
+    {
+      "id": "BDRFY.US",
+      "canonical": "BEI.XETRA"
+    },
+    {
+      "id": "BH-A.US",
+      "canonical": "BH.US"
+    },
+    {
+      "id": "BUDFF.US",
+      "canonical": "ABI.BR"
+    },
+    {
+      "id": "CABJF.US",
+      "canonical": "CARL-B.CO"
+    },
+    {
+      "id": "DGEAF.US",
+      "canonical": "DGE.LSE"
+    },
+    {
+      "id": "ERFSF.US",
+      "canonical": "ERF.PA"
+    },
+    {
+      "id": "FEMSAUBD.MX",
+      "canonical": "FMX.US"
+    },
+    {
+      "id": "FFH.TO",
+      "canonical": "FRFHF.US"
+    },
+    {
+      "id": "FME.XETRA",
+      "canonical": "FMS.US"
+    },
+    {
+      "id": "FWONA.US",
+      "canonical": "FWONK.US"
+    },
+    {
+      "id": "GLIBK.US",
+      "canonical": "GLIBA.US"
+    },
+    {
+      "id": "GSK.US",
+      "canonical": "GSK.LSE"
+    },
+    {
+      "id": "HEN3.XETRA",
+      "canonical": "HEN.XETRA"
+    },
+    {
+      "id": "HESAY.US",
+      "canonical": "RMS.PA"
+    },
+    {
+      "id": "HKLB.LSE",
+      "canonical": "HKHGF.US"
+    },
+    {
+      "id": "HXGBY.US",
+      "canonical": "HEXA-B.ST"
+    },
+    {
+      "id": "ING.US",
+      "canonical": "INGA.AS"
+    },
+    {
+      "id": "ITUB3.SA",
+      "canonical": "ITUB.US"
+    },
+    {
+      "id": "JHX.AU",
+      "canonical": "JHX.US"
+    },
+    {
+      "id": "LBTYK.US",
+      "canonical": "LBTYA.US"
+    },
+    {
+      "id": "LILAK.US",
+      "canonical": "LILA.US"
+    },
+    {
+      "id": "LLYVK.US",
+      "canonical": "LLYVA.US"
+    },
+    {
+      "id": "LRLCF.US",
+      "canonical": "OR.PA"
+    },
+    {
+      "id": "NESN.SW",
+      "canonical": "NSRGY.US"
+    },
+    {
+      "id": "NSRGF.US",
+      "canonical": "NSRGY.US"
+    },
+    {
+      "id": "NWS.AU",
+      "canonical": "NWS.US"
+    },
+    {
+      "id": "NWSA.US",
+      "canonical": "NWS.US"
+    },
+    {
+      "id": "NXG.AU",
+      "canonical": "NXE.US"
+    },
+    {
+      "id": "PDRDF.US",
+      "canonical": "RI.PA"
+    },
+    {
+      "id": "PRNDY.US",
+      "canonical": "RI.PA"
+    },
+    {
+      "id": "RBGPF.US",
+      "canonical": "RKT.LSE"
+    },
+    {
+      "id": "RDY.US",
+      "canonical": "DRREDDY.NSE"
+    },
+    {
+      "id": "RTO.US",
+      "canonical": "RTO.LSE"
+    },
+    {
+      "id": "RUSHB.US",
+      "canonical": "RUSHA.US"
+    },
+    {
+      "id": "RYCEY.US",
+      "canonical": "RR.LSE"
+    },
+    {
+      "id": "SN.LSE",
+      "canonical": "SNN.US"
+    },
+    {
+      "id": "SSPPF.US",
+      "canonical": "SSPG.LSE"
+    },
+    {
+      "id": "UA.US",
+      "canonical": "UAA.US"
+    },
+    {
+      "id": "UHAL.US",
+      "canonical": "UHAL-B.US"
+    },
+    {
+      "id": "VESTA.MX",
+      "canonical": "VTMX.US"
+    },
+    {
+      "id": "VOW3.XETRA",
+      "canonical": "VOW.XETRA"
+    },
+    {
+      "id": "WILLF.US",
+      "canonical": "DEMANT.CO"
+    },
+    {
+      "id": "Z.US",
+      "canonical": "ZG.US"
+    },
+    {
+      "id": "ZTO.US",
+      "canonical": "2057.HK"
+    }
+  ],
+  "canonicalBytesChanged": [],
+  "freezeCount": 147,
+  "freezeHashes": {
+    "000858.SHE": "b6f71ce868d92bbaecc27416eeccf4c261c3fa7c89aa548f533d07116a9b5014",
+    "002236.SHE": "273e86639d008f68dff3cd1219db68b42f7cc66049a8e527399d9e025ca1aa13",
+    "0267.HK": "e12a0077df23a4826a17953e00902b55b9ae31c3ad12996ba09132ee1c2f89cd",
+    "086280.KO": "875a0d7c9663a1b41db8b375ed3c11d290a48b6e46c452297a2b9c30628afb51",
+    "1093.HK": "fe2a2005f134cce9cba2b32f3bd8a91c16c7ef6d15d88d1e27d4f0707ebd44a2",
+    "1299.HK": "500536f9e2122556131885d844d309d203b6a64c27bd5176a344527a9c4b5d5d",
+    "138040.KO": "2bc4f907d503c9e6bcf0967ab91d257542c4286d87b897d4d79a58db5da78ac0",
+    "139130.KO": "ab0337ccf0d46cf2af44ca117ea19fc1689f4cd821106026fe3d387364852a56",
+    "2269.HK": "1dbfa41e4a86aaead1b96576db6c4847489f8e9c34db298265f5af5eba1b0829",
+    "2269.JP": "ee32db712b95d3a0a88d465ec83bfcae2bb40f342d18e643272354619ea8c2dc",
+    "2413.JP": "2bf6299cb0c6dddf816c01c54679173998d64ba30594b4a22dff9ae0bd23ff52",
+    "267270.KO": "a1d7fb712bcc792619cd01c7c39d0eb0e1bcf35bb36b14065fe1f2b996d91784",
+    "300122.SHE": "c35bb2174a550292eb9cc583d3822dcbfe01b25da63018bef199532eb95ce174",
+    "300124.SHE": "255b6f9394fc6d1b4c7e1fe4df880b20f985b2bf96367121f2f2a4c30fba625c",
+    "3092.JP": "bf301947f7e5b344e211eee90e96e3be9da11517dd491e9932b6b8d11168e6e1",
+    "3457.JP": "2168a00c3945cc2fc66cf2f80d2fd9885cdc353772de349f08bcee8f31730fec",
+    "3659.JP": "1cbd04ed38dfa81d8e4b2c07832a930ebbb165474fc815663302e993ea597816",
+    "4208.JP": "f95f89ea8cebb7b69ab90d13c5282535ddc602ebb9782a6bf115fd5262762b13",
+    "4507.JP": "6eb1c5dd8ec79625bd84dc8338e8261f46a5ac91814e67da55238515320a17a0",
+    "4568.JP": "4c40fdbc12cdc601c35b7c9cdf0cfa3ca37e2c192201b26e7aa8a1a72e3e725c",
+    "4751.JP": "f5cead493a8fb0bdde1f95081564abe6f532971aef2f57944ee87f9c4c08ab76",
+    "5019.JP": "1ca8c7553ff1106f8e81c84115ecf8c15213078a8194a65bd0216a2cf36730f2",
+    "5713.JP": "fa3653beed986886260d1af9212e61c120b9b597ee33b898fb3e5d7e32e53879",
+    "5714.JP": "b0df2a39e4a305e36a1af9ca7fe81f0cba2a5270f742e20bd92ad88bfd67f842",
+    "600000.SHG": "6235b7d8c3c8594d2929ccaeabd25a11183205a79c47316b4c7099287abb75df",
+    "600089.SHG": "fe5934851b95177b6fcb57bdf8f79d2f18d68770b97b6b6631ab5a9ae26b1660",
+    "600183.SHG": "e0f70d7d5f56858bb2c35ca2f149fed7ca5c03a777bc8a9f7edfc6af4f760bf4",
+    "600426.SHG": "056a3e3f157ca2905724e0777c4f929e0ed468448178dadb6588b5191f1fa909",
+    "600875.SHG": "c772cc4ee63fc57cd94ddb47b65622275063e3353d93c5c93db0b2ed5f6ed945",
+    "601066.SHG": "4066ab3ece15f21e889cc281133d3ee7901e98890ccb7d5e3ad45122f681d83a",
+    "601088.SHG": "d1d5ba381fd1162f952b44ed8b792013be00992031f6b6c30005416303c402f1",
+    "601169.SHG": "ada7df4bd68c881d1e60ac0132547fab51d2cb1a51c55107983ff06e459e4829",
+    "601229.SHG": "48c1b0a20578b33c1168eb6a68d7efb0232ab4b16f6a41511f2315942c804d05",
+    "601788.SHG": "6272de29e0655caa96df39735282f73692e23215876a2aea1af3079adab38d3e",
+    "601988.SHG": "aacfcaf8fb04929654bba090d70a8122d80f885dc7fc0b628cd1a162cc78f7a1",
+    "601998.SHG": "e83db9db438860b359c5f90be6c73ee46877a36e4764d8c01e095f5063783c10",
+    "688036.SHG": "804d7ab1bb6f6f4efd27dc6efc4e12917068929b6094eef8181f73e11095d9bd",
+    "6963.JP": "97053f28c935eee9d9d8324cb2bb8d702cd9ee6c14afbf6ace5cab045387df20",
+    "6971.JP": "65898faf5c36712a17cb7b7e31146ed819bb9bd6b3322fa62bbc6afff10e39f0",
+    "6988.JP": "7c3b9fab69f42476cd9ea0a17bbd6a851c4a592ff9192458eca6524568e8b173",
+    "7012.JP": "bfd018db53883b4ebd1ddeb529d232ca77126d7402ce1e5a29f86adac1a1f19f",
+    "7201.JP": "019b606fc9e01739253c59a52d29d401bb5e035f0384b1e7d1c4dc9781227308",
+    "7267.JP": "a0a7c9cd5444410f125a78d10116fe30070218e330553323dee64bd833e4b2e5",
+    "7269.JP": "fcd897683675d5e02e7cd03b1b61ad1bcee9b6023f4dc8316b19dbd658bef98a",
+    "7936.JP": "5696c889a55e6dbe4a36d9f27adc34eaaa4d427c6930449dae8bd23bf89cce85",
+    "7951.JP": "5c81713564be076f14c50d70d4e5b3ff7fcf91b0ff7b33546c663c6357df62f7",
+    "8015.JP": "98282beee70edbed38d87245c78522b4385aedf1770f7e8bc7fd2158179fc11c",
+    "8253.JP": "aa90f39ac15071dc3c96626b321494d784a813a4c19e3af0c32aef210f508c89",
+    "8697.JP": "337a02a5819124075be0f90db7a700216a278cda8342da6584bb87c6f5243d6c",
+    "9009.JP": "8f2c74cf640d9ac57639a655336dc75fe6ea31321a14ce517c770e6fdebabea9",
+    "9020.JP": "55043e3d0106cd7ce1f3bb2ccfe87b2a24a00f7a1db7f99ed264b5cd6e84b3e2",
+    "9101.JP": "bf7f410a4ce7060f30cc71f7a21840a3a18ce38ef44ba6f154f0dc9558ec02cf",
+    "9202.JP": "663d5f20ed5d5ab863d007f317ae0557619b5d1a67da0406b2fae63775ef660c",
+    "9433.JP": "cf988810e1d7314065cd32f88e5fb59cb93d383d6ae394fbcab5f939e01247a5",
+    "9532.JP": "d69306439e012358fc1a072a72d76a004a00e0869bb3c53211cd9a84d75ca0a1",
+    "9735.JP": "aca6aa88fa953751e2a0e74b6f7357a41d6c448f7d499f79ba668495939d384d",
+    "ACN.US": "fc453e00f39cc6264b2c746942cf0045d1723db781f41bf0061d597443a13f8a",
+    "AIZ.US": "b6ea7600cc62368853aefd5d38f6519f9c43736a2562bdcc328e16cdfcfad8c1",
+    "AMCR.US": "ec25e4cd0014a7aea130de0770e846075413c96ce63413b1296c8e1e1f42a329",
+    "ANDR.VI": "c6d74c6a4dedf890a33e2b680c07ae3e1604b926601e1db9d8ca4b650e9bd92b",
+    "ATS.VI": "c5257600d61052530fb6c658bbca543de22b4f6ce1b463022bb2b7de2c098fc4",
+    "AXP.US": "79cd76a79e36b6a9deb28b0d181ed06a8603b9c2ff13b5d4bc327909ae4e960a",
+    "BX.US": "c053c07b3af5ae1446b565e113cb6d165c04ac0c4d33ea315392d1d815228089",
+    "CAI.VI": "11bcf5173ae91ac8e1943726156c168104ff78ed3167609f3199418a46408286",
+    "CBG.LSE": "5f62278384609133a13bd7e4a2b637a2d3a200100339187dc3e28207a9434eb1",
+    "COALINDIA.NSE": "50c7e3f9ac5239009c2e123b534844dc9061df48b5f349d2b98ae9ff30a280ea",
+    "CPI.VI": "4332fbce857b2ed904c408cda969807645d45d43691d74913f4878cde0f4d17e",
+    "CSAN3.SA": "e41f57d9967285973c535fbc9fdc58b287a00fb46fdafb19cedd005b3a4f6308",
+    "DBV.PA": "42af9714fe5ade692125115c607c92b84290afa2733bff2222a109a1116b60c2",
+    "DLTR.US": "e79e3d3aa5fdf512e69bd07dced269a798a38e9992c1b97147a1771ed31fd1a3",
+    "DVP.AU": "8be21488cb9b15beadb86a65224b5a81f9dd75ea0e9ff28c82392c1c45fe0ee3",
+    "EDP.LS": "2c7589963bb6c854ec77fc3472c1b9bb46547c5bfd75a2b06a8b308297597436",
+    "EDPR.LS": "70703cda345bc4ecececf04f6d57cc1c5c9e509c349433f6df2aa520bbee8baa",
+    "EGL.LS": "8a548e85758ca74939642a6ebbcda24746236a77e904fe5ca6f45c59cafecea8",
+    "EVN.VI": "ba82a72e9733b009ecbdb5bd1135255acd056b814ce31a25a69adfc72e14455c",
+    "FDS.US": "e18c8541455b60524f13599b905b7687dc787afff87c380518f749bc4fea86d9",
+    "GALP.LS": "77bdff6cce086733c1f7b69929e5f2c88672b6853bc0ec28ff34fac636d515e4",
+    "GIL.TO": "036210b84e26fb689d791bd43eab943db1b031c1a70185a32a61984f630285af",
+    "GJF.OL": "78bde538f2841fd1cdcce2066ddf7c9d9c4488a371e7add8970d8ce48acb0696",
+    "GVR.IR": "3d570c272a00e42dbada643ec37d319f668a2d46abf16293f92eda3c3a4f7069",
+    "H4W.F": "7111dd99509bf1438c01ccb7f366d07643371ddb6bf71f5032187a93f8d9d441",
+    "HBAN.US": "3eb7aec767d0170e13a062ff27d31873b7cc34b4eb10c6957f04bf8f59e83300",
+    "HDB.US": "141947fafb0c23b4a64e46a9a08253d17b9c017996645c2211ae782f8b53a1c3",
+    "HFG.LSE": "3eeb2972b4aa66f3ddbc4643a596f4cbe731bce4f005627f6940740d91194b71",
+    "HMSO.LSE": "0791109e1647f215a9889a6fb55af97ce96e761807c0a5fde85bb8c9d404765a",
+    "HTWS.LSE": "079fc7bbd350369d3320420209ddf8308affb315325e4142dd8805b344dd91cb",
+    "IBKR.US": "accd86e7d1f096eba52b1cda89a147f24e14c1dcf2771cf9a2ffc1d433b307e6",
+    "INVP.LSE": "d5e52ce23d41d30a67476299d64f6026ce8848e8c82fba340d5ee896f167a987",
+    "IPX.AU": "4337071d98eab54dd9535e530941f638fe971264070807467bf64619627e8e16",
+    "IR5B.IR": "173933ec4659b4325de409e32bd4583bc99dd58f0ba56ec7ed357bf4295cd1c4",
+    "ITC.NSE": "25aa34c1a5601fb9e1d4592e9394f8f8ac5bdbb474519cbc6cb570118a0e5ce2",
+    "IWG.LSE": "ad3491d4029f10a9d09ed7c45f25f60097c00d0872097320e37d457df1f19bc7",
+    "JBL.US": "478ea254598f1b71707d1a601790e57aced53f1f2140ceda94183d8f6e003abd",
+    "JMT.LS": "18a56bd591f48b9455cd72b4f6e3fa00422111755f40ee51ba7e6b7214627308",
+    "KIM.US": "1d570f717c3d0a4a385b1da19bdbaa39225e6bdf9370550670791b3c45b54f15",
+    "KRZ.IR": "ac77d84583ac8e9aa64b8aec41e358fef82ce5cc0061d035d8aea1b379a74629",
+    "LEN-B.US": "64af0242b6ea489cfc31e54615634211b0c307e464b943d1aa282f0a792ce9ce",
+    "LHX.US": "d3440c7e9386d84d476e9c56c4ac46819f0c721c76586babaff60a8142f05e46",
+    "LNZ.VI": "0050eee5edaa4e8a16eefe8da0f3675cc9c94786c6245e28717058d6c7ab7552",
+    "MEGACPO.MX": "b30465dc3e8a5eb897fb989497d0672e0f48ba01e71d0123fa5cc946a0011582",
+    "MGM.US": "63cae028aeddaa1db1656af3698c2c647053613493299b596f980064a4394d01",
+    "MI6.AU": "44dcfd6e20ccd39a7cec07da41674990fd59f5ff1711529f71debcfb1a0e7554",
+    "MS.US": "adce9955863c3e03f32c3774d2dd96397458b8f1316a1cbdc037d6ebaf249b9a",
+    "MTB.US": "4a52068f9561d9c702ca5a449b1bbdc82f4180b8db1d37fb17ba13ad0cda5715",
+    "MU.US": "03568c82cd323efe4e67a763152f84d12461a2b99df2bdf97a271201b45c7841",
+    "NDSN.US": "40fb0e30502f167b3f25d83c1b6a39a8d025bd8f1ab222e8a262093822c8d9e7",
+    "OMV.VI": "68e42f9c82bf452a092b9e96ea166104490c1be4268ceecb5c7bca0adaf17763",
+    "ONGC.NSE": "e0c09ef6654f1506fdc3503ea5b51e822aaef45e46c2e3a4f619055b1dcf3ad6",
+    "PDI.AU": "71ad8617dc2c185c18ed36e0be9bb891ccd3c423d67858b0667d70cd24f73bfe",
+    "PFD.LSE": "0ca2053f38626003eb7df5b2fb665a64fa740a293db9e8aeb704d5d6f9447045",
+    "PINFRA.MX": "b05f844d5aa55e5462f7b826cc232919f35c337b044a2f9ee64223e9f7eafaa1",
+    "POS.VI": "4f78280208ab209ff759e9680b11fa9d04799b34215f3930051a177370c2bcea",
+    "POST.VI": "4088f15be92a1e602f520abeaf750a0fc6ef1e9eed9443ece4333e2a5a2e8231",
+    "PTC.US": "37ed200edb647f252f4f60a62b5d465351d31199ae3c3e0d6a5b7240e4635ea5",
+    "PYIYF.US": "56b6e4a9f0952ad7ec35943830940d3a3ee6e0b6de04fe0014c3d5753709a6cb",
+    "RA.MX": "12903d182dd43862741ab4a8552d109e61cdc09209b01b6e8f6c47a9caaeb989",
+    "RENT3.SA": "e75136b8a7842e88996af150a6f5869e123e3a77a4770afa96a60cd6bdc5afe5",
+    "RF.US": "9cd3abfbbe4f01fd81884cdfc102b1235a43d05e605f74847706d219c279bac8",
+    "SANB3.SA": "49294c64f8c9ebbd579cd0dbaaf54fad678cf51bafef82f65ca22ca7c890cd5c",
+    "SATS.OL": "b5ed82cdb91bba2593d526eb57e0cd77cb7f04cffba12c866f35dbfe6a7157a1",
+    "SBO.VI": "9f2359f5b063a2de89c4b6366fb91e87d74dcd6564deefb13dd3751954068650",
+    "SCHW.US": "2c8820848873db2bf709f01f4b1acd5a3ae0ee62b655b9e96e36475b9be88270",
+    "SHC.LSE": "ce0234087ba39ec478a405bb1127f45e34a6bb2210658eff7a13bdaaaf51af45",
+    "SHRIRAMFIN.NSE": "ad77aa3e4180612a47ef1f786f72eea6ca2b882186c0d16bfa3edc451a8ef41f",
+    "SON.LS": "213f433b5138c25a29bdf63e3f1149855a85121c65f250e0f4a83ce035eecf4a",
+    "SREN.SW": "a960a8c229841541caaa9ae1853b76d6197f2cadd8209354910534411757e280",
+    "SSPG.LSE": "92d0b839975b278b8bf9c489fdcadc394ca473b10e9dbf510bf19dbb80e805a5",
+    "STE.US": "02e526edea0e55edd90e278621121064fa41d68d5fdfd7f811153e7898938b31",
+    "STR.VI": "fce689931284c916196154f62d6c6115be7a15333a671a6595198ef19495f21e",
+    "TFC.US": "723fd068c341a1c141bffe9637bdb6d5fac152ef8428b456af5c44be11529cf3",
+    "TMPV.NSE": "f4c0f1c32694cbb4f692c5f28cc149bc10a220a38a0b1215ce42a13b24787fa2",
+    "TPL.US": "1e4b8e6b8cb9a71342875a5c0cce1969a7f2bab55cebb0af5b23f374f47ee79a",
+    "TROW.US": "b979c57e927d50b329fdc7e204392897151b3df4f34ecf42b06ea548c5bc97f8",
+    "TSCO.US": "eee2351e9fe53efaae30bd57e421c2d5110594d0c99a7131f5050e044827e665",
+    "UHS.US": "157a1c5fb4ca3351e602812815c06503b2ee97dd36a1fbf11f5412d16843bdd1",
+    "ULTA.US": "d3824b4a6aaa86bfd9003ec87319d5d5c8d11f710c2fb57b4d7894d4f45768d0",
+    "UOB.F": "064b973e2d9f7000e8bbde34fd3241cf23726672bdd1888e55ffab99d94e41e4",
+    "USB.US": "7d6ed1313e6343cc37c80a26e2237d08b6fe2039b7708e3f7d72a88bdf6cad12",
+    "VER.VI": "a3e0ae992b489040ea90d9e339147ecaa01d0bbf48041bbcbd55dbf375bd8ce7",
+    "VOE.VI": "8ba1438f23c7edf26e8ef012cc6d480c022c299d3d29be38411fa245d6d513d7",
+    "VTRS.US": "80a47722d90c3beff7028567a170269bc3ebe1c9b2d22745d6c3a58bc6f576cb",
+    "WFC.US": "750fdde56f68d4963d0d23b1c0997cda920e3990647bad0b7ed204d30d0bfc93",
+    "WIE.VI": "bef84fd6dd02b6aae5db88e008735a6f0892ab0fa20915d825b46f15dbbeab72",
+    "WSM.US": "a3b1cbb582a33e45d74e615be3d148fbc1d2d603defea65fa708ce3aa3e097dc",
+    "WTW.US": "be55a226faf66ea00f1b502e22db7ee16bbbf71f56515aa584706f1da3834ab4",
+    "WYNN.US": "df85d9c297d133befecaf0c674d4fc0176d800744f8ef3eeb628069d6f05f7be",
+    "ZBH.US": "f2585ea954abc1f136bdf1de0eb7b5c8a6c979692aabbce06b0958cae5591a61"
+  },
+  "searches": [
+    {
+      "query": "nestle",
+      "shard": [
+        "NSRGY.US"
+      ],
+      "global": [
+        "NSRGY"
+      ]
+    },
+    {
+      "query": "diageo",
+      "shard": [
+        "DGE.LSE"
+      ],
+      "global": [
+        "DGE.LSE"
+      ]
+    },
+    {
+      "query": "alibaba",
+      "shard": [
+        "BABA.US"
+      ],
+      "global": [
+        "BABA"
+      ]
+    },
+    {
+      "query": "gsk",
+      "shard": [
+        "GSK.LSE"
+      ],
+      "global": [
+        "GSK.LSE"
+      ]
+    },
+    {
+      "query": "carlsberg",
+      "shard": [
+        "CARL-B.CO"
+      ],
+      "global": [
+        "CARL-B.CO"
+      ]
+    },
+    {
+      "query": "u-haul",
+      "shard": [
+        "UHAL-B.US"
+      ],
+      "global": [
+        "UHAL-B"
+      ]
+    },
+    {
+      "query": "biglari",
+      "shard": [
+        "BH.US"
+      ],
+      "global": [
+        "BH"
+      ]
+    }
+  ],
+  "aliasSearches": [
+    {
+      "id": "2015.HK",
+      "canonical": "LI.US",
+      "shard": [
+        "LI.US"
+      ],
+      "global": [
+        "LI"
+      ]
+    },
+    {
+      "id": "600938.SHG",
+      "canonical": "0883.HK",
+      "shard": [
+        "0883.HK"
+      ],
+      "global": [
+        "0883.HK"
+      ]
+    },
+    {
+      "id": "600941.SHG",
+      "canonical": "0941.HK",
+      "shard": [
+        "0941.HK"
+      ],
+      "global": [
+        "0941.HK"
+      ]
+    },
+    {
+      "id": "6690.HK",
+      "canonical": "600690.SHG",
+      "shard": [
+        "600690.SHG"
+      ],
+      "global": [
+        "600690.SHG"
+      ]
+    },
+    {
+      "id": "688981.SHG",
+      "canonical": "0981.HK",
+      "shard": [
+        "0981.HK"
+      ],
+      "global": [
+        "0981.HK"
+      ]
+    },
+    {
+      "id": "9888.HK",
+      "canonical": "BIDU.US",
+      "shard": [
+        "BIDU.US"
+      ],
+      "global": [
+        "BIDU"
+      ]
+    },
+    {
+      "id": "9988.HK",
+      "canonical": "BABA.US",
+      "shard": [
+        "BABA.US"
+      ],
+      "global": [
+        "BABA"
+      ]
+    },
+    {
+      "id": "9999.HK",
+      "canonical": "NTES.US",
+      "shard": [
+        "NTES.US"
+      ],
+      "global": [
+        "NTES"
+      ]
+    },
+    {
+      "id": "ABVX.PA",
+      "canonical": "ABVX.US",
+      "shard": [
+        "ABVX.US"
+      ],
+      "global": [
+        "ABVX"
+      ]
+    },
+    {
+      "id": "AGN.AS",
+      "canonical": "AEG.US",
+      "shard": [
+        "AEG.US"
+      ],
+      "global": [
+        "AEG"
+      ]
+    },
+    {
+      "id": "AKBLF.US",
+      "canonical": "ALK-B.CO",
+      "shard": [
+        "ALK-B.CO"
+      ],
+      "global": [
+        "ALK-B.CO"
+      ]
+    },
+    {
+      "id": "AMC.AU",
+      "canonical": "AMCR.US",
+      "shard": [
+        "AMCR.US"
+      ],
+      "global": [
+        "AMCR"
+      ]
+    },
+    {
+      "id": "ASAIY.US",
+      "canonical": "ASAI3.SA",
+      "shard": [
+        "ASAI3.SA"
+      ],
+      "global": [
+        "ASAI3.SA"
+      ]
+    },
+    {
+      "id": "BATRK.US",
+      "canonical": "BATRA.US",
+      "shard": [
+        "BATRA.US"
+      ],
+      "global": [
+        "BATRA"
+      ]
+    },
+    {
+      "id": "BDRFY.US",
+      "canonical": "BEI.XETRA",
+      "shard": [
+        "BEI.XETRA"
+      ],
+      "global": [
+        "BEI.XETRA"
+      ]
+    },
+    {
+      "id": "BH-A.US",
+      "canonical": "BH.US",
+      "shard": [
+        "BH.US"
+      ],
+      "global": [
+        "BH"
+      ]
+    },
+    {
+      "id": "BUDFF.US",
+      "canonical": "ABI.BR",
+      "shard": [
+        "ABI.BR"
+      ],
+      "global": [
+        "ABI.BR"
+      ]
+    },
+    {
+      "id": "CABJF.US",
+      "canonical": "CARL-B.CO",
+      "shard": [
+        "CARL-B.CO"
+      ],
+      "global": [
+        "CARL-B.CO"
+      ]
+    },
+    {
+      "id": "DGEAF.US",
+      "canonical": "DGE.LSE",
+      "shard": [
+        "DGE.LSE"
+      ],
+      "global": [
+        "DGE.LSE"
+      ]
+    },
+    {
+      "id": "ERFSF.US",
+      "canonical": "ERF.PA",
+      "shard": [
+        "ERF.PA"
+      ],
+      "global": [
+        "ERF.PA"
+      ]
+    },
+    {
+      "id": "FEMSAUBD.MX",
+      "canonical": "FMX.US",
+      "shard": [
+        "FMX.US"
+      ],
+      "global": [
+        "FMX"
+      ]
+    },
+    {
+      "id": "FFH.TO",
+      "canonical": "FRFHF.US",
+      "shard": [
+        "FRFHF.US"
+      ],
+      "global": [
+        "FRFHF"
+      ]
+    },
+    {
+      "id": "FME.XETRA",
+      "canonical": "FMS.US",
+      "shard": [
+        "FMS.US"
+      ],
+      "global": [
+        "FMS"
+      ]
+    },
+    {
+      "id": "FWONA.US",
+      "canonical": "FWONK.US",
+      "shard": [
+        "FWONK.US"
+      ],
+      "global": [
+        "FWONK"
+      ]
+    },
+    {
+      "id": "GLIBK.US",
+      "canonical": "GLIBA.US",
+      "shard": [
+        "GLIBA.US"
+      ],
+      "global": [
+        "GLIBA"
+      ]
+    },
+    {
+      "id": "GSK.US",
+      "canonical": "GSK.LSE",
+      "shard": [
+        "GSK.LSE"
+      ],
+      "global": [
+        "GSK.LSE"
+      ]
+    },
+    {
+      "id": "HEN3.XETRA",
+      "canonical": "HEN.XETRA",
+      "shard": [
+        "HEN.XETRA"
+      ],
+      "global": [
+        "HEN.XETRA"
+      ]
+    },
+    {
+      "id": "HESAY.US",
+      "canonical": "RMS.PA",
+      "shard": [
+        "RMS.PA"
+      ],
+      "global": [
+        "RMS.PA"
+      ]
+    },
+    {
+      "id": "HKLB.LSE",
+      "canonical": "HKHGF.US",
+      "shard": [
+        "HKHGF.US"
+      ],
+      "global": [
+        "HKHGF"
+      ]
+    },
+    {
+      "id": "HXGBY.US",
+      "canonical": "HEXA-B.ST",
+      "shard": [
+        "HEXA-B.ST"
+      ],
+      "global": [
+        "HEXA-B.ST"
+      ]
+    },
+    {
+      "id": "ING.US",
+      "canonical": "INGA.AS",
+      "shard": [
+        "INGA.AS"
+      ],
+      "global": [
+        "INGA.AS",
+        "WING"
+      ]
+    },
+    {
+      "id": "ITUB3.SA",
+      "canonical": "ITUB.US",
+      "shard": [
+        "ITUB.US"
+      ],
+      "global": [
+        "ITUB"
+      ]
+    },
+    {
+      "id": "JHX.AU",
+      "canonical": "JHX.US",
+      "shard": [
+        "JHX.US"
+      ],
+      "global": [
+        "JHX"
+      ]
+    },
+    {
+      "id": "LBTYK.US",
+      "canonical": "LBTYA.US",
+      "shard": [
+        "LBTYA.US"
+      ],
+      "global": [
+        "LBTYA"
+      ]
+    },
+    {
+      "id": "LILAK.US",
+      "canonical": "LILA.US",
+      "shard": [
+        "LILA.US"
+      ],
+      "global": [
+        "LILA"
+      ]
+    },
+    {
+      "id": "LLYVK.US",
+      "canonical": "LLYVA.US",
+      "shard": [
+        "LLYVA.US"
+      ],
+      "global": [
+        "LLYVA"
+      ]
+    },
+    {
+      "id": "LRLCF.US",
+      "canonical": "OR.PA",
+      "shard": [
+        "OR.PA"
+      ],
+      "global": [
+        "OR.PA"
+      ]
+    },
+    {
+      "id": "NESN.SW",
+      "canonical": "NSRGY.US",
+      "shard": [
+        "NSRGY.US"
+      ],
+      "global": [
+        "NSRGY"
+      ]
+    },
+    {
+      "id": "NSRGF.US",
+      "canonical": "NSRGY.US",
+      "shard": [
+        "NSRGY.US"
+      ],
+      "global": [
+        "NSRGY"
+      ]
+    },
+    {
+      "id": "NWS.AU",
+      "canonical": "NWS.US",
+      "shard": [
+        "NWS.US"
+      ],
+      "global": [
+        "NWS"
+      ]
+    },
+    {
+      "id": "NWSA.US",
+      "canonical": "NWS.US",
+      "shard": [
+        "NWS.US"
+      ],
+      "global": [
+        "NWS"
+      ]
+    },
+    {
+      "id": "NXG.AU",
+      "canonical": "NXE.US",
+      "shard": [
+        "NXE.US"
+      ],
+      "global": [
+        "NXE"
+      ]
+    },
+    {
+      "id": "PDRDF.US",
+      "canonical": "RI.PA",
+      "shard": [
+        "RI.PA"
+      ],
+      "global": [
+        "RI.PA"
+      ]
+    },
+    {
+      "id": "PRNDY.US",
+      "canonical": "RI.PA",
+      "shard": [
+        "RI.PA"
+      ],
+      "global": [
+        "RI.PA"
+      ]
+    },
+    {
+      "id": "RBGPF.US",
+      "canonical": "RKT.LSE",
+      "shard": [
+        "RKT.LSE"
+      ],
+      "global": [
+        "RKT.LSE"
+      ]
+    },
+    {
+      "id": "RDY.US",
+      "canonical": "DRREDDY.NSE",
+      "shard": [
+        "DRREDDY.NSE"
+      ],
+      "global": [
+        "DRREDDY.NSE"
+      ]
+    },
+    {
+      "id": "RTO.US",
+      "canonical": "RTO.LSE",
+      "shard": [
+        "RTO.LSE"
+      ],
+      "global": [
+        "RTO.LSE"
+      ]
+    },
+    {
+      "id": "RUSHB.US",
+      "canonical": "RUSHA.US",
+      "shard": [
+        "RUSHA.US"
+      ],
+      "global": [
+        "RUSHA"
+      ]
+    },
+    {
+      "id": "RYCEY.US",
+      "canonical": "RR.LSE",
+      "shard": [
+        "RR.LSE"
+      ],
+      "global": [
+        "RR.LSE"
+      ]
+    },
+    {
+      "id": "SN.LSE",
+      "canonical": "SNN.US",
+      "shard": [
+        "SNN.US"
+      ],
+      "global": [
+        "SNN",
+        "005930.KO",
+        "PSN.LSE",
+        "CSN.LSE"
+      ]
+    },
+    {
+      "id": "SSPPF.US",
+      "canonical": "SSPG.LSE",
+      "shard": [
+        "SSPG.LSE"
+      ],
+      "global": [
+        "SSPG.LSE"
+      ]
+    },
+    {
+      "id": "UA.US",
+      "canonical": "UAA.US",
+      "shard": [
+        "UAA.US"
+      ],
+      "global": [
+        "UAA"
+      ]
+    },
+    {
+      "id": "UHAL.US",
+      "canonical": "UHAL-B.US",
+      "shard": [
+        "UHAL-B.US"
+      ],
+      "global": [
+        "UHAL-B"
+      ]
+    },
+    {
+      "id": "VESTA.MX",
+      "canonical": "VTMX.US",
+      "shard": [
+        "VTMX.US"
+      ],
+      "global": [
+        "VTMX"
+      ]
+    },
+    {
+      "id": "VOW3.XETRA",
+      "canonical": "VOW.XETRA",
+      "shard": [
+        "VOW.XETRA"
+      ],
+      "global": [
+        "VOW.XETRA"
+      ]
+    },
+    {
+      "id": "WILLF.US",
+      "canonical": "DEMANT.CO",
+      "shard": [
+        "DEMANT.CO"
+      ],
+      "global": [
+        "DEMANT.CO"
+      ]
+    },
+    {
+      "id": "Z.US",
+      "canonical": "ZG.US",
+      "shard": [
+        "ZG.US"
+      ],
+      "global": [
+        "ZG",
+        "CMCSA",
+        "VZ",
+        "MDLZ",
+        "STZ",
+        "AMRZ",
+        "CORZ",
+        "XYZ",
+        "MTZ",
+        "DPZ",
+        "LAZ",
+        "SHAZ"
+      ]
+    },
+    {
+      "id": "ZTO.US",
+      "canonical": "2057.HK",
+      "shard": [
+        "2057.HK"
+      ],
+      "global": [
+        "2057.HK"
+      ]
+    }
+  ],
+  "failures": []
+}

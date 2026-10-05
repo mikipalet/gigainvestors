@@ -1,3 +1,4 @@
+import {issuerSearchNames} from '../value/issuer-search';
 import type {SearchIndex} from '../types';
 import type {IndexRow} from '../value/types';
 import {companyTicker} from '../company-route';
@@ -31,11 +32,9 @@ export function buildCompanyIndex(holdings:SearchIndex, dossiers:Pick<IndexRow,'
  const root=(i:number):number=>parents[i]===i?i:(parents[i]=root(parents[i]));
  const join=(a:number,b:number)=>{parents[root(b)]=root(a);};
  const keys=new Map<string,number>();
- const names=new Map<string,number>();
  rows.forEach((r,i)=>{
-  const key=listingKey(r.t), name=companyNameKey(r.n);
+  const key=listingKey(r.t);
   if(keys.has(key))join(keys.get(key)!,i);else keys.set(key,i);
-  if(name&&names.has(name))join(names.get(name)!,i);else if(name)names.set(name,i);
  });
  // Provider name matching conflates these distinct legal issuers.
  const rejectedAliases:Record<string,string>={'COMP.US':'CPG.LSE','AGX.US':'ARG.PA','NNBR.US':'NN.AS'};
@@ -59,7 +58,7 @@ export function buildCompanyIndex(holdings:SearchIndex, dossiers:Pick<IndexRow,'
   if(i!==undefined)result.get(root(i))!.aliases!.push(from,companyTicker(from));
  }
  for(const row of result.values()) {
-  row.aliases=[...new Set([...(row.aliases??[]),row.t,...(row.aliases??[]).map(a=>a.replace(/\.[A-Z]{2,5}$/,'')).flatMap(a=>[a,a.replace(/^([A-Z]+)-([A-Z])$/,'$1.$2')])])];
+  row.aliases=[...new Set([...(row.aliases??[]),...(issuerSearchNames[row.t]??issuerSearchNames[`${row.t}.US`]??[]),row.t,...(row.aliases??[]).map(a=>a.replace(/\.[A-Z]{2,5}$/,'')).flatMap(a=>[a,a.replace(/^([A-Z]+)-([A-Z])$/,'$1.$2')])])];
  }
  return {investors:holdings.investors,stocks:[...result.values()]};
 }

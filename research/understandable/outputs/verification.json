@@ -1,0 +1,16 @@
+{
+  "paired": 93961,
+  "changed": 107,
+  "research1_US_parity": {
+    "train": {
+      "cagr": true,
+      "max_drawdown": true
+    },
+    "later": {
+      "cagr": true,
+      "max_drawdown": true
+    }
+  },
+  "candidate_hash": "d7e49409c26c3c99354e4e981b7a8360f0c8762da5b87314bbdc06002917d84c",
+  "no_other_quality_tests_changed": true
+}

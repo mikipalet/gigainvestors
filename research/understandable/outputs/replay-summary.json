@@ -1,0 +1,12 @@
+{
+  "identities": 2058,
+  "rows": 99691,
+  "paired": 93961,
+  "changed": 107,
+  "status": {
+    "paired": 93961,
+    "snapshot unavailable": 158,
+    "reporting/trading currency mismatch": 5572
+  },
+  "errors": []
+}

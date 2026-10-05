@@ -1,0 +1,184 @@
+{
+  "performance_gate_passes": true,
+  "gates": [
+    {
+      "scope": "US",
+      "period": "train",
+      "required": true,
+      "cagr_change_pp": 0.0,
+      "drawdown_change_pp": 0.0,
+      "passes": true,
+      "baseline_missing": 0,
+      "candidate_missing": 0
+    },
+    {
+      "scope": "US",
+      "period": "later",
+      "required": false,
+      "cagr_change_pp": 0.0,
+      "drawdown_change_pp": 0.0,
+      "passes": true,
+      "baseline_missing": 0,
+      "candidate_missing": 0
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "train",
+      "required": true,
+      "cagr_change_pp": 0.0,
+      "drawdown_change_pp": 0.0,
+      "passes": true,
+      "baseline_missing": 2,
+      "candidate_missing": 2
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "later",
+      "required": true,
+      "cagr_change_pp": 0.0,
+      "drawdown_change_pp": 0.0,
+      "passes": true,
+      "baseline_missing": 0,
+      "candidate_missing": 0
+    },
+    {
+      "scope": "all_markets",
+      "period": "train",
+      "required": true,
+      "cagr_change_pp": 0.0,
+      "drawdown_change_pp": 0.0,
+      "passes": true,
+      "baseline_missing": 37,
+      "candidate_missing": 37
+    },
+    {
+      "scope": "all_markets",
+      "period": "later",
+      "required": true,
+      "cagr_change_pp": 0.0,
+      "drawdown_change_pp": 0.0,
+      "passes": true,
+      "baseline_missing": 348,
+      "candidate_missing": 348
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "train",
+      "required": true,
+      "cagr_change_pp": 0.0,
+      "drawdown_change_pp": 0.0,
+      "passes": true,
+      "baseline_missing": 37,
+      "candidate_missing": 37
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "later",
+      "required": true,
+      "cagr_change_pp": 0.0,
+      "drawdown_change_pp": 0.0,
+      "passes": true,
+      "baseline_missing": 348,
+      "candidate_missing": 348
+    }
+  ],
+  "new_passes": [
+    {
+      "scope": "US",
+      "period": "train",
+      "new_pass_records": 2,
+      "unique_companies": 1,
+      "observed": 2,
+      "top_decile": 0,
+      "losers": 0,
+      "below_median": 2,
+      "new_all_quality": 0,
+      "new_buys": 0
+    },
+    {
+      "scope": "US",
+      "period": "later",
+      "new_pass_records": 3,
+      "unique_companies": 1,
+      "observed": 3,
+      "top_decile": 0,
+      "losers": 0,
+      "below_median": 3,
+      "new_all_quality": 3,
+      "new_buys": 0
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "train",
+      "new_pass_records": 0,
+      "unique_companies": 0,
+      "observed": 0,
+      "top_decile": 0,
+      "losers": 0,
+      "below_median": 0,
+      "new_all_quality": 0,
+      "new_buys": 0
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "later",
+      "new_pass_records": 14,
+      "unique_companies": 5,
+      "observed": 14,
+      "top_decile": 0,
+      "losers": 6,
+      "below_median": 11,
+      "new_all_quality": 0,
+      "new_buys": 0
+    },
+    {
+      "scope": "all_markets",
+      "period": "train",
+      "new_pass_records": 7,
+      "unique_companies": 2,
+      "observed": 6,
+      "top_decile": 2,
+      "losers": 0,
+      "below_median": 2,
+      "new_all_quality": 0,
+      "new_buys": 0
+    },
+    {
+      "scope": "all_markets",
+      "period": "later",
+      "new_pass_records": 29,
+      "unique_companies": 10,
+      "observed": 26,
+      "top_decile": 0,
+      "losers": 14,
+      "below_median": 22,
+      "new_all_quality": 3,
+      "new_buys": 0
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "train",
+      "new_pass_records": 5,
+      "unique_companies": 1,
+      "observed": 4,
+      "top_decile": 3,
+      "losers": 0,
+      "below_median": 0,
+      "new_all_quality": 0,
+      "new_buys": 0
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "later",
+      "new_pass_records": 26,
+      "unique_companies": 9,
+      "observed": 23,
+      "top_decile": 0,
+      "losers": 14,
+      "below_median": 19,
+      "new_all_quality": 0,
+      "new_buys": 0
+    }
+  ],
+  "candidate_sha256": "d7e49409c26c3c99354e4e981b7a8360f0c8762da5b87314bbdc06002917d84c"
+}

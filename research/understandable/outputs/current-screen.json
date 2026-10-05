@@ -1,0 +1,1449 @@
+{
+  "n": 3899,
+  "eligible": 3546,
+  "changes": [
+    {
+      "id": "601898.SHG",
+      "name": "China Coal Energy Co Ltd",
+      "frozen": false,
+      "published": "fail",
+      "baseline": "fail",
+      "candidate": "pass",
+      "baselineMatchesPublished": true,
+      "cvBefore": 0.3703893589366915,
+      "cvAfter": 0.3703893589366915,
+      "reason": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "series": {
+        "revenue": [
+          [
+            2016,
+            60664109000
+          ],
+          [
+            2017,
+            81512560000
+          ],
+          [
+            2018,
+            104140084000
+          ],
+          [
+            2019,
+            129334706000
+          ],
+          [
+            2020,
+            140964681000
+          ],
+          [
+            2021,
+            239828439000
+          ],
+          [
+            2022,
+            220576859000
+          ],
+          [
+            2023,
+            192968833000
+          ],
+          [
+            2024,
+            189398754000
+          ],
+          [
+            2025,
+            147071819000
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2016,
+            0.054039151881386735
+          ],
+          [
+            2017,
+            0.07338945065643872
+          ],
+          [
+            2018,
+            0.08471529560125955
+          ],
+          [
+            2019,
+            0.09262112522218127
+          ],
+          [
+            2020,
+            0.08746258220525466
+          ],
+          [
+            2021,
+            0.10844459109371929
+          ],
+          [
+            2022,
+            0.15035916346963668
+          ],
+          [
+            2023,
+            0.17152744039240783
+          ],
+          [
+            2024,
+            0.1662389394599713
+          ],
+          [
+            2025,
+            0.17798109915265276
+          ]
+        ],
+        "netIncome": [
+          [
+            2016,
+            2027593000
+          ],
+          [
+            2017,
+            2291775000
+          ],
+          [
+            2018,
+            3352389000
+          ],
+          [
+            2019,
+            5628607000
+          ],
+          [
+            2020,
+            5907091000
+          ],
+          [
+            2021,
+            13739271000
+          ],
+          [
+            2022,
+            18259055000
+          ],
+          [
+            2023,
+            19534049000
+          ],
+          [
+            2024,
+            19322936000
+          ],
+          [
+            2025,
+            17883577000
+          ]
+        ]
+      },
+      "otherTests": {
+        "moat": "fail",
+        "economics": "fail",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      }
+    },
+    {
+      "id": "NFLX.US",
+      "name": "Netflix Inc",
+      "frozen": false,
+      "published": "fail",
+      "baseline": "fail",
+      "candidate": "pass",
+      "baselineMatchesPublished": true,
+      "cvBefore": 0.3809724946026969,
+      "cvAfter": 0.3809724946026969,
+      "reason": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "series": {
+        "shares": [
+          [
+            2017,
+            4481420000
+          ],
+          [
+            2018,
+            4511160000
+          ],
+          [
+            2019,
+            4513670000
+          ],
+          [
+            2020,
+            4552830000
+          ],
+          [
+            2021,
+            4557950000
+          ],
+          [
+            2022,
+            4516490000
+          ],
+          [
+            2023,
+            4494980000
+          ],
+          [
+            2024,
+            4377860000
+          ],
+          [
+            2025,
+            4317144000
+          ],
+          [
+            2026,
+            4307430250
+          ]
+        ],
+        "revenue": [
+          [
+            2017,
+            11692713000
+          ],
+          [
+            2018,
+            15794341000
+          ],
+          [
+            2019,
+            20156447000
+          ],
+          [
+            2020,
+            24996056000
+          ],
+          [
+            2021,
+            29697844000
+          ],
+          [
+            2022,
+            31615550000
+          ],
+          [
+            2023,
+            33723297000
+          ],
+          [
+            2024,
+            39000966000
+          ],
+          [
+            2025,
+            45183036000
+          ],
+          [
+            2026,
+            48370764000
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2017,
+            0.07172663863382261
+          ],
+          [
+            2018,
+            0.10163298361102878
+          ],
+          [
+            2019,
+            0.12920203645017397
+          ],
+          [
+            2020,
+            0.18344049957321268
+          ],
+          [
+            2021,
+            0.20858446828665408
+          ],
+          [
+            2022,
+            0.17816647187855345
+          ],
+          [
+            2023,
+            0.2062076848535895
+          ],
+          [
+            2024,
+            0.26711169154117875
+          ],
+          [
+            2025,
+            0.29494704605507255
+          ],
+          [
+            2026,
+            0.2967601876207703
+          ]
+        ],
+        "netIncome": [
+          [
+            2017,
+            558929000
+          ],
+          [
+            2018,
+            1211242000
+          ],
+          [
+            2019,
+            1866916000
+          ],
+          [
+            2020,
+            2761395000
+          ],
+          [
+            2021,
+            5116228000
+          ],
+          [
+            2022,
+            4491924000
+          ],
+          [
+            2023,
+            5407990000
+          ],
+          [
+            2024,
+            8711631000
+          ],
+          [
+            2025,
+            10981201000
+          ],
+          [
+            2026,
+            13649642000
+          ]
+        ]
+      },
+      "provisional": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-07-17",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      },
+      "otherTests": {
+        "moat": "pass",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      }
+    },
+    {
+      "id": "KOG.OL",
+      "name": "Kongsberg Gruppen ASA",
+      "frozen": false,
+      "published": "fail",
+      "baseline": "fail",
+      "candidate": "pass",
+      "baselineMatchesPublished": true,
+      "cvBefore": 0.49186138914292193,
+      "cvAfter": 0.49186138914292193,
+      "reason": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "series": {
+        "revenue": [
+          [
+            2016,
+            15845000000
+          ],
+          [
+            2017,
+            14490000000
+          ],
+          [
+            2018,
+            14381000000
+          ],
+          [
+            2019,
+            24081000000
+          ],
+          [
+            2020,
+            25612000000
+          ],
+          [
+            2021,
+            27449000000
+          ],
+          [
+            2022,
+            31803000000
+          ],
+          [
+            2023,
+            40617000000
+          ],
+          [
+            2024,
+            24648000000
+          ],
+          [
+            2025,
+            31562000000
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2016,
+            0.030735247712212053
+          ],
+          [
+            2017,
+            0.04313319530710835
+          ],
+          [
+            2018,
+            0.05354286906334747
+          ],
+          [
+            2019,
+            0.048959760807275446
+          ],
+          [
+            2020,
+            0.07886928002498829
+          ],
+          [
+            2021,
+            0.10470326787861124
+          ],
+          [
+            2022,
+            0.11621545137251203
+          ],
+          [
+            2023,
+            0.12204249452199818
+          ],
+          [
+            2024,
+            0.14784160986692632
+          ],
+          [
+            2025,
+            0.16824028895507256
+          ]
+        ],
+        "netIncome": [
+          [
+            2016,
+            653000000
+          ],
+          [
+            2017,
+            554000000
+          ],
+          [
+            2018,
+            701000000
+          ],
+          [
+            2019,
+            700000000
+          ],
+          [
+            2020,
+            2891000000
+          ],
+          [
+            2021,
+            2159000000
+          ],
+          [
+            2022,
+            2774000000
+          ],
+          [
+            2023,
+            3712000000
+          ],
+          [
+            2024,
+            5127000000
+          ],
+          [
+            2025,
+            7953000000
+          ]
+        ]
+      },
+      "otherTests": {
+        "moat": "fail",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      }
+    },
+    {
+      "id": "FTNT.US",
+      "name": "Fortinet Inc",
+      "frozen": false,
+      "published": "fail",
+      "baseline": "fail",
+      "candidate": "pass",
+      "baselineMatchesPublished": true,
+      "cvBefore": 0.4544185778071028,
+      "cvAfter": 0.4544185778071028,
+      "reason": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "series": {
+        "revenue": [
+          [
+            2016,
+            1275400000
+          ],
+          [
+            2017,
+            1494900000
+          ],
+          [
+            2018,
+            1804600000
+          ],
+          [
+            2019,
+            2163000000
+          ],
+          [
+            2020,
+            2594400000
+          ],
+          [
+            2021,
+            3342200000
+          ],
+          [
+            2022,
+            4417400000
+          ],
+          [
+            2023,
+            5304800000
+          ],
+          [
+            2024,
+            5955800000
+          ],
+          [
+            2025,
+            6799600000
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2016,
+            0.03363650619413518
+          ],
+          [
+            2017,
+            0.07344972907886815
+          ],
+          [
+            2018,
+            0.12989028039454728
+          ],
+          [
+            2019,
+            0.1622746185852982
+          ],
+          [
+            2020,
+            0.2049799568300956
+          ],
+          [
+            2021,
+            0.19460235772844234
+          ],
+          [
+            2022,
+            0.21949563091411237
+          ],
+          [
+            2023,
+            0.2339579248982054
+          ],
+          [
+            2024,
+            0.30279727324624733
+          ],
+          [
+            2025,
+            0.3061944820283546
+          ]
+        ],
+        "netIncome": [
+          [
+            2016,
+            32200000
+          ],
+          [
+            2017,
+            31400000
+          ],
+          [
+            2018,
+            334900000
+          ],
+          [
+            2019,
+            331700000
+          ],
+          [
+            2020,
+            488500000
+          ],
+          [
+            2021,
+            606800000
+          ],
+          [
+            2022,
+            857300000
+          ],
+          [
+            2023,
+            1147800000
+          ],
+          [
+            2024,
+            1745200000
+          ],
+          [
+            2025,
+            1853400000
+          ]
+        ]
+      },
+      "otherTests": {
+        "moat": "pass",
+        "economics": "fail",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      }
+    },
+    {
+      "id": "LRN.US",
+      "name": "Stride Inc",
+      "frozen": false,
+      "published": "fail",
+      "baseline": "fail",
+      "candidate": "pass",
+      "baselineMatchesPublished": true,
+      "cvBefore": 0.6340627067897405,
+      "cvAfter": 0.6340627067897405,
+      "reason": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "series": {
+        "revenue": [
+          [
+            2017,
+            888519000
+          ],
+          [
+            2018,
+            917734000
+          ],
+          [
+            2019,
+            1015752000
+          ],
+          [
+            2020,
+            1040765000
+          ],
+          [
+            2021,
+            1536760000
+          ],
+          [
+            2022,
+            1686666000
+          ],
+          [
+            2023,
+            1837358000
+          ],
+          [
+            2024,
+            2040069000
+          ],
+          [
+            2025,
+            2405317000
+          ],
+          [
+            2026,
+            2518081000
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2017,
+            0.014776273776925423
+          ],
+          [
+            2018,
+            0.027834862825175923
+          ],
+          [
+            2019,
+            0.04478061574085013
+          ],
+          [
+            2020,
+            0.031185714354345122
+          ],
+          [
+            2021,
+            0.07187589473958197
+          ],
+          [
+            2022,
+            0.09286248729742581
+          ],
+          [
+            2023,
+            0.09007444384817766
+          ],
+          [
+            2024,
+            0.12234880290813693
+          ],
+          [
+            2025,
+            0.1497075021712315
+          ],
+          [
+            2026,
+            0.17901211279541843
+          ]
+        ],
+        "netIncome": [
+          [
+            2017,
+            451000
+          ],
+          [
+            2018,
+            27620000
+          ],
+          [
+            2019,
+            37209000
+          ],
+          [
+            2020,
+            24506000
+          ],
+          [
+            2021,
+            71451000
+          ],
+          [
+            2022,
+            107130000
+          ],
+          [
+            2023,
+            126867000
+          ],
+          [
+            2024,
+            204183000
+          ],
+          [
+            2025,
+            287941000
+          ],
+          [
+            2026,
+            338192000
+          ]
+        ]
+      },
+      "otherTests": {
+        "moat": "fail",
+        "economics": "pass",
+        "management": "fail",
+        "accounting": "pass"
+      }
+    },
+    {
+      "id": "0291.HK",
+      "name": "China Resources Beer Holdings Co Ltd",
+      "frozen": false,
+      "published": "fail",
+      "baseline": "fail",
+      "candidate": "pass",
+      "baselineMatchesPublished": true,
+      "cvBefore": 0.5442036131887844,
+      "cvAfter": 0.5442036131887844,
+      "reason": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "series": {
+        "revenue": [
+          [
+            2016,
+            28694000000
+          ],
+          [
+            2017,
+            29732000000
+          ],
+          [
+            2018,
+            31867000000
+          ],
+          [
+            2019,
+            33190000000
+          ],
+          [
+            2020,
+            31448000000
+          ],
+          [
+            2021,
+            33387000000
+          ],
+          [
+            2022,
+            35263000000
+          ],
+          [
+            2023,
+            38932000000
+          ],
+          [
+            2024,
+            38635000000
+          ],
+          [
+            2025,
+            37985000000
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2016,
+            0.03850979298808113
+          ],
+          [
+            2017,
+            0.035012780842190235
+          ],
+          [
+            2018,
+            0.02428844886559764
+          ],
+          [
+            2019,
+            0.042693582404338654
+          ],
+          [
+            2020,
+            0.0884316967692699
+          ],
+          [
+            2021,
+            0.10177614041393357
+          ],
+          [
+            2022,
+            0.11312140203612853
+          ],
+          [
+            2023,
+            0.142813110038015
+          ],
+          [
+            2024,
+            0.14194383331176394
+          ],
+          [
+            2025,
+            0.16114255627221272
+          ]
+        ],
+        "netIncome": [
+          [
+            2016,
+            629000000
+          ],
+          [
+            2017,
+            1175000000
+          ],
+          [
+            2018,
+            977000000
+          ],
+          [
+            2019,
+            1312000000
+          ],
+          [
+            2020,
+            2094000000
+          ],
+          [
+            2021,
+            4587000000
+          ],
+          [
+            2022,
+            4344000000
+          ],
+          [
+            2023,
+            5153000000
+          ],
+          [
+            2024,
+            4739000000
+          ],
+          [
+            2025,
+            3371000000
+          ]
+        ]
+      },
+      "otherTests": {
+        "moat": "fail",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass"
+      }
+    },
+    {
+      "id": "1209.HK",
+      "name": "China Resources Mixc Lifestyle Serv",
+      "frozen": false,
+      "published": "fail",
+      "baseline": "fail",
+      "candidate": "pass",
+      "baselineMatchesPublished": true,
+      "cvBefore": 0.44666544638884653,
+      "cvAfter": 0.44666544638884653,
+      "reason": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "series": {
+        "revenue": [
+          [
+            2017,
+            3129425000
+          ],
+          [
+            2018,
+            4431727000
+          ],
+          [
+            2019,
+            5868103000
+          ],
+          [
+            2020,
+            6778911000
+          ],
+          [
+            2021,
+            8875384000
+          ],
+          [
+            2022,
+            12016179000
+          ],
+          [
+            2023,
+            14766952000
+          ],
+          [
+            2024,
+            17042658000
+          ],
+          [
+            2025,
+            18021618000
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2017,
+            0.061812952858752004
+          ],
+          [
+            2018,
+            0.07081979553343426
+          ],
+          [
+            2019,
+            0.09380765811370387
+          ],
+          [
+            2020,
+            0.15188590025743073
+          ],
+          [
+            2021,
+            0.21198620814603628
+          ],
+          [
+            2022,
+            0.200308184490261
+          ],
+          [
+            2023,
+            0.23429113875361687
+          ],
+          [
+            2024,
+            0.2572582281472761
+          ],
+          [
+            2025,
+            0.28006525274256727
+          ]
+        ],
+        "netIncome": [
+          [
+            2017,
+            388343000
+          ],
+          [
+            2018,
+            422918000
+          ],
+          [
+            2019,
+            364928000
+          ],
+          [
+            2020,
+            817710000
+          ],
+          [
+            2021,
+            1724925000
+          ],
+          [
+            2022,
+            2206126000
+          ],
+          [
+            2023,
+            2928749000
+          ],
+          [
+            2024,
+            3629375000
+          ],
+          [
+            2025,
+            3969023000
+          ]
+        ]
+      },
+      "otherTests": {
+        "moat": "pass",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      }
+    },
+    {
+      "id": "STRL.US",
+      "name": "Sterling Infrastructure, Inc.",
+      "frozen": false,
+      "published": "fail",
+      "baseline": "fail",
+      "candidate": "pass",
+      "baselineMatchesPublished": true,
+      "cvBefore": 0.5472871661457593,
+      "cvAfter": 0.5472871661457593,
+      "reason": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "series": {
+        "shares": [
+          [
+            2017,
+            26712000
+          ],
+          [
+            2018,
+            27194000
+          ],
+          [
+            2019,
+            27119000
+          ],
+          [
+            2020,
+            28195000
+          ],
+          [
+            2021,
+            29101000
+          ],
+          [
+            2022,
+            30564000
+          ],
+          [
+            2023,
+            31208000
+          ],
+          [
+            2024,
+            31146000
+          ],
+          [
+            2025,
+            30947000
+          ],
+          [
+            2026,
+            31067250
+          ]
+        ],
+        "revenue": [
+          [
+            2017,
+            957958000
+          ],
+          [
+            2018,
+            1037667000
+          ],
+          [
+            2019,
+            1126278000
+          ],
+          [
+            2020,
+            1226738000
+          ],
+          [
+            2021,
+            1414374000
+          ],
+          [
+            2022,
+            1769436000
+          ],
+          [
+            2023,
+            1972229000
+          ],
+          [
+            2024,
+            2115756000
+          ],
+          [
+            2025,
+            2490049000
+          ],
+          [
+            2026,
+            3438486000
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2017,
+            0.027324788769445007
+          ],
+          [
+            2018,
+            0.04106423351614728
+          ],
+          [
+            2019,
+            0.033518367578874844
+          ],
+          [
+            2020,
+            0.07549696838281687
+          ],
+          [
+            2021,
+            0.07565962043985537
+          ],
+          [
+            2022,
+            0.09081820421874541
+          ],
+          [
+            2023,
+            0.10444983822872496
+          ],
+          [
+            2024,
+            0.12751895776261535
+          ],
+          [
+            2025,
+            0.1660658083435306
+          ],
+          [
+            2026,
+            0.18060565027747677
+          ]
+        ],
+        "netIncome": [
+          [
+            2017,
+            11617000
+          ],
+          [
+            2018,
+            25187000
+          ],
+          [
+            2019,
+            39901000
+          ],
+          [
+            2020,
+            42306000
+          ],
+          [
+            2021,
+            62645000
+          ],
+          [
+            2022,
+            106461000
+          ],
+          [
+            2023,
+            138655000
+          ],
+          [
+            2024,
+            257461000
+          ],
+          [
+            2025,
+            290153000
+          ],
+          [
+            2026,
+            431480000
+          ]
+        ]
+      },
+      "provisional": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-08-04",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      },
+      "otherTests": {
+        "moat": "pass",
+        "economics": "pass",
+        "management": "fail",
+        "accounting": "pass"
+      }
+    },
+    {
+      "id": "IDT.US",
+      "name": "IDT Corporation",
+      "frozen": false,
+      "published": "fail",
+      "baseline": "fail",
+      "candidate": "pass",
+      "baselineMatchesPublished": true,
+      "cvBefore": 0.7850200633737319,
+      "cvAfter": 0.7850200633737319,
+      "reason": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "series": {
+        "revenue": [
+          [
+            2017,
+            1501729000
+          ],
+          [
+            2018,
+            1547495000
+          ],
+          [
+            2019,
+            1409172000
+          ],
+          [
+            2020,
+            1345769000
+          ],
+          [
+            2021,
+            1446990000
+          ],
+          [
+            2022,
+            1364057000
+          ],
+          [
+            2023,
+            1238854000
+          ],
+          [
+            2024,
+            1205778000
+          ],
+          [
+            2025,
+            1231495000
+          ],
+          [
+            2026,
+            1297960000
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2017,
+            0.0036950741445360646
+          ],
+          [
+            2018,
+            0.0054139108688557955
+          ],
+          [
+            2019,
+            0.001327730042890435
+          ],
+          [
+            2020,
+            0.018538099777896503
+          ],
+          [
+            2021,
+            0.0393852065321806
+          ],
+          [
+            2022,
+            0.044051678192333604
+          ],
+          [
+            2023,
+            0.04903160501560313
+          ],
+          [
+            2024,
+            0.05370225696604184
+          ],
+          [
+            2025,
+            0.08154641309952537
+          ],
+          [
+            2026,
+            0.09426792813337853
+          ]
+        ],
+        "netIncome": [
+          [
+            2017,
+            8177000
+          ],
+          [
+            2018,
+            4208000
+          ],
+          [
+            2019,
+            330000
+          ],
+          [
+            2020,
+            21430000
+          ],
+          [
+            2021,
+            96475000
+          ],
+          [
+            2022,
+            27028000
+          ],
+          [
+            2023,
+            40492000
+          ],
+          [
+            2024,
+            64454000
+          ],
+          [
+            2025,
+            76094000
+          ],
+          [
+            2026,
+            86633000
+          ]
+        ]
+      },
+      "otherTests": {
+        "moat": "fail",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass"
+      }
+    }
+  ],
+  "errors": []
+}

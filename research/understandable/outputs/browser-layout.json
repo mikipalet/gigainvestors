@@ -1,0 +1,597 @@
+[
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nflx.us",
+    "state": "page",
+    "file": "1728x970-_s_nflx_us-0-page.png",
+    "issues": [
+      "text below 13px: \"In depth\" (12px)",
+      "text below 13px: \"↗\" (12px)",
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"/\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)",
+      "Invalid or unexpected token"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nflx.us",
+    "state": "interaction failure",
+    "issues": [
+      "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('dialog[open]') to be visible\u001b[22m\n"
+    ]
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ftnt.us",
+    "state": "page",
+    "file": "1728x970-_s_ftnt_us-0-page.png",
+    "issues": [
+      "text below 13px: \"In depth\" (12px)",
+      "text below 13px: \"↗\" (12px)",
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"/\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ftnt.us",
+    "state": "Open Predictable profits evidence",
+    "file": "1728x970-_s_ftnt_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1428,
+    "right": 1728,
+    "emptyBottomPct": 1.5882731958762886,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 10.64742268041237,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ftnt.us",
+    "state": "Search",
+    "file": "1728x970-_s_ftnt_us-2-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ftnt.us",
+    "state": "Search results",
+    "file": "1728x970-_s_ftnt_us-3-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/strl.us",
+    "state": "page",
+    "file": "1728x970-_s_strl_us-0-page.png",
+    "issues": [
+      "text below 13px: \"In depth\" (12px)",
+      "text below 13px: \"↗\" (12px)",
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"/\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/strl.us",
+    "state": "Open Predictable profits evidence",
+    "file": "1728x970-_s_strl_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "text cut by container: \"Positive operating margins fol\"",
+      "text below the fold on a no-scroll page: \"Positive operating margins fol\""
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1428,
+    "right": 1728,
+    "emptyBottomPct": 0,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 10.004123711340206,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/strl.us",
+    "state": "Search",
+    "file": "1728x970-_s_strl_us-2-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/strl.us",
+    "state": "Search results",
+    "file": "1728x970-_s_strl_us-3-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/idt.us",
+    "state": "page",
+    "file": "1728x970-_s_idt_us-0-page.png",
+    "issues": [
+      "text below 13px: \"In depth\" (12px)",
+      "text below 13px: \"↗\" (12px)",
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"/\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/idt.us",
+    "state": "Open Predictable profits evidence",
+    "file": "1728x970-_s_idt_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1428,
+    "right": 1728,
+    "emptyBottomPct": 1.5882731958762886,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 10.845360824742269,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/idt.us",
+    "state": "Search",
+    "file": "1728x970-_s_idt_us-2-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/idt.us",
+    "state": "Search results",
+    "file": "1728x970-_s_idt_us-3-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/kog.ol",
+    "state": "page",
+    "file": "1728x970-_s_kog_ol-0-page.png",
+    "issues": [
+      "text below 13px: \"In depth\" (12px)",
+      "text below 13px: \"↗\" (12px)",
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"/\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/kog.ol",
+    "state": "Open Predictable profits evidence",
+    "file": "1728x970-_s_kog_ol-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1428,
+    "right": 1728,
+    "emptyBottomPct": 1.2789948453608246,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 11.835051546391753,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/kog.ol",
+    "state": "Search",
+    "file": "1728x970-_s_kog_ol-2-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/kog.ol",
+    "state": "Search results",
+    "file": "1728x970-_s_kog_ol-3-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nflx.us",
+    "state": "page",
+    "file": "390x844-_s_nflx_us-0-page.png",
+    "issues": [
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nflx.us",
+    "state": "Open Predictable profits evidence",
+    "file": "390x844-_s_nflx_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 17.3% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 17.273058694859643,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nflx.us",
+    "state": "Search",
+    "file": "390x844-_s_nflx_us-2-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nflx.us",
+    "state": "Search results",
+    "file": "390x844-_s_nflx_us-3-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ftnt.us",
+    "state": "page",
+    "file": "390x844-_s_ftnt_us-0-page.png",
+    "issues": [
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ftnt.us",
+    "state": "Open Predictable profits evidence",
+    "file": "390x844-_s_ftnt_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 17.7% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 17.710535909588042,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ftnt.us",
+    "state": "Search",
+    "file": "390x844-_s_ftnt_us-2-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ftnt.us",
+    "state": "Search results",
+    "file": "390x844-_s_ftnt_us-3-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/strl.us",
+    "state": "page",
+    "file": "390x844-_s_strl_us-0-page.png",
+    "issues": [
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/strl.us",
+    "state": "Open Predictable profits evidence",
+    "file": "390x844-_s_strl_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 17.3% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 17.273058694859643,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/strl.us",
+    "state": "Search",
+    "file": "390x844-_s_strl_us-2-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/strl.us",
+    "state": "Search results",
+    "file": "390x844-_s_strl_us-3-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/idt.us",
+    "state": "page",
+    "file": "390x844-_s_idt_us-0-page.png",
+    "issues": [
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/idt.us",
+    "state": "Open Predictable profits evidence",
+    "file": "390x844-_s_idt_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 17.7% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 17.710535909588042,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/idt.us",
+    "state": "Search",
+    "file": "390x844-_s_idt_us-2-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/idt.us",
+    "state": "Search results",
+    "file": "390x844-_s_idt_us-3-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/kog.ol",
+    "state": "page",
+    "file": "390x844-_s_kog_ol-0-page.png",
+    "issues": [
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/kog.ol",
+    "state": "Open Predictable profits evidence",
+    "file": "390x844-_s_kog_ol-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 20.3% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 20.33539919795844,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/kog.ol",
+    "state": "Search",
+    "file": "390x844-_s_kog_ol-2-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/kog.ol",
+    "state": "Search results",
+    "file": "390x844-_s_kog_ol-3-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  }
+]

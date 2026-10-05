@@ -1,0 +1,92 @@
+[
+  {
+    "id": "601898.SHG",
+    "before": "fail",
+    "after": "pass",
+    "reason": [
+      "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+      "4 revenue declines in the last 10 years (informational)"
+    ],
+    "valuationChanged": false
+  },
+  {
+    "id": "NFLX.US",
+    "before": "fail",
+    "after": "pass",
+    "reason": [
+      "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+      "0 revenue declines in the last 10 years (informational)"
+    ],
+    "valuationChanged": false
+  },
+  {
+    "id": "KOG.OL",
+    "before": "fail",
+    "after": "pass",
+    "reason": [
+      "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+      "4 revenue declines in the last 10 years (informational)"
+    ],
+    "valuationChanged": false
+  },
+  {
+    "id": "FTNT.US",
+    "before": "fail",
+    "after": "pass",
+    "reason": [
+      "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+      "0 revenue declines in the last 10 years (informational)"
+    ],
+    "valuationChanged": false
+  },
+  {
+    "id": "LRN.US",
+    "before": "fail",
+    "after": "pass",
+    "reason": [
+      "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+      "0 revenue declines in the last 10 years (informational)"
+    ],
+    "valuationChanged": false
+  },
+  {
+    "id": "0291.HK",
+    "before": "fail",
+    "after": "pass",
+    "reason": [
+      "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+      "4 revenue declines in the last 10 years (informational)"
+    ],
+    "valuationChanged": false
+  },
+  {
+    "id": "1209.HK",
+    "before": "fail",
+    "after": "pass",
+    "reason": [
+      "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+      "0 revenue declines in the last 10 years (informational)"
+    ],
+    "valuationChanged": false
+  },
+  {
+    "id": "STRL.US",
+    "before": "fail",
+    "after": "pass",
+    "reason": [
+      "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+      "0 revenue declines in the last 10 years (informational)"
+    ],
+    "valuationChanged": false
+  },
+  {
+    "id": "IDT.US",
+    "before": "fail",
+    "after": "pass",
+    "reason": [
+      "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+      "5 revenue declines in the last 10 years (informational)"
+    ],
+    "valuationChanged": false
+  }
+]

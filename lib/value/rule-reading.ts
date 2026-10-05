@@ -37,7 +37,8 @@ export function ruleReading(t:TestOutcome,kind:Kind){
    compare('lossYears','Loss years',T.understandable.maxLossYears,false,true,String);
    {const margins=(t.series.operatingMargin??[]).flatMap(p=>p[1]==null?[]:[p[1]]),average=margins.reduce((a,b)=>a+b,0)/margins.length;
    add(`Mean margin ${pct(average)} ${average>=0?'≥':'<'} 0%`,margins.length<5?null:average>=0,true);
-   compare('opMarginCv','Margin variation',T.understandable.maxOpMarginCv,false,average>0,num);}
+   compare('opMarginCv','Margin variation',T.understandable.maxOpMarginCv,false,average>0,num);
+   if(m.opMarginImproving===1){const check=checks.at(-1)!;check.pass=true;check.text=`Margin variation ${num(m.opMarginCv!)}; sustained improvement with no loss years`;}}
    break;
   case 'moat':
    compare(m.roicMedian!=null?'roicMedian':'returnFloorMedian',m.roicMedian!=null?'ROIC ex acquisitions median':'Conservative return floor median',.15,true,true);

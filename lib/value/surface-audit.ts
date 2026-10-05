@@ -90,7 +90,7 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
    expected.push(['Window',`${first[0]}–${yearLabel(last[0])}`]);same(drawer.stats,expected,`${where} financial accounting context`);
   }
  }else if(summary){
-  const bar=m.id==='opMarginCv'?`CV ≤ ${fmt(m.threshold,'x')}`:m.chartThreshold===null?'Over the window':`${(m.chartBetter??m.better)==='higher'?'≥':'<'} ${fmt(m.chartThreshold??m.threshold)}`;
+  const bar=m.id==='opMarginCv'&&t.metrics.opMarginImproving===1?'Steady or improving':m.id==='opMarginCv'?`CV ≤ ${fmt(m.threshold,'x')}`:m.chartThreshold===null?'Over the window':`${(m.chartBetter??m.better)==='higher'?'≥':'<'} ${fmt(m.chartThreshold??m.threshold)}`;
   same(drawer.stats.slice(3),[['Passing bar',bar],['Window',`${m.series.filter(p=>p[1]!=null&&Number.isFinite(p[1]))[0]?.[0]}–${yearLabel(m.series.filter(p=>p[1]!=null&&Number.isFinite(p[1])).at(-1)?.[0])}`]],`${where} threshold and observation count`);
  }else{
   same(drawer.stats,[[m.label,fmt(m.value,m.format)],['Passing bar',fmt(m.threshold,m.format)],['Years',String(table.rows.length)]],`${where} scalar drawer numbers`);

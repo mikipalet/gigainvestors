@@ -3,7 +3,7 @@ const labels:Record<string,[string,string]> = {
  historyYears:['Years of financial history','A long record helps distinguish a durable business from a lucky year.'],
  revenueDeclines:['Years when sales shrank','Resilient demand makes future cash easier to estimate.'],
  lossYears:['Years when the business lost money','Repeated losses make future owner cash less dependable.'],
- opMarginCv:['How steady profit margins are','Predictable margins make future earnings easier to estimate; lower variation is better.'],
+ opMarginCv:['How steady profit margins are','Predictable margins make future earnings easier to estimate. A sustained, loss-free improvement can pass even with high variation.'],
  roicMedian:['Return on the money invested in the business','High returns suggest a durable advantage and less cash needed to grow.'],
  roicSecondLowest:['Return on invested money in a bad year','A durable advantage should hold up even in a weak year.'],
  roeMedian:['Return on shareholders’ money','For banks and insurers, equity is the capital that supports their business.'],

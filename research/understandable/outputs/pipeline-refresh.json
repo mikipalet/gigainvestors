@@ -1,0 +1,99 @@
+[
+  {
+    "id": "601898.SHG",
+    "before": {
+      "pipeline": "26",
+      "questions": "2"
+    },
+    "after": {
+      "pipeline": "27",
+      "questions": "2"
+    },
+    "changedTests": [
+      "moat",
+      "economics"
+    ],
+    "verdictChanges": []
+  },
+  {
+    "id": "NFLX.US",
+    "before": {
+      "pipeline": "26",
+      "questions": "2"
+    },
+    "after": {
+      "pipeline": "27",
+      "questions": "2"
+    },
+    "changedTests": [
+      "understandable",
+      "moat",
+      "economics"
+    ],
+    "verdictChanges": []
+  },
+  {
+    "id": "KOG.OL",
+    "before": {
+      "pipeline": "26",
+      "questions": "2"
+    },
+    "after": {
+      "pipeline": "27",
+      "questions": "2"
+    },
+    "changedTests": [
+      "moat",
+      "economics"
+    ],
+    "verdictChanges": []
+  },
+  {
+    "id": "FTNT.US",
+    "before": {
+      "pipeline": "26",
+      "questions": "2"
+    },
+    "after": {
+      "pipeline": "27",
+      "questions": "2"
+    },
+    "changedTests": [
+      "moat",
+      "economics"
+    ],
+    "verdictChanges": []
+  },
+  {
+    "id": "0291.HK",
+    "before": {
+      "pipeline": "26",
+      "questions": "2"
+    },
+    "after": {
+      "pipeline": "27",
+      "questions": "2"
+    },
+    "changedTests": [
+      "moat",
+      "economics"
+    ],
+    "verdictChanges": []
+  },
+  {
+    "id": "1209.HK",
+    "before": {
+      "pipeline": "26",
+      "questions": "2"
+    },
+    "after": {
+      "pipeline": "27",
+      "questions": "2"
+    },
+    "changedTests": [
+      "moat",
+      "economics"
+    ],
+    "verdictChanges": []
+  }
+]

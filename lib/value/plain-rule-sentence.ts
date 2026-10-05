@@ -17,7 +17,7 @@ export function plainRuleSentence(t:TestOutcome,kind:Kind):string {
    case 'positiveIncomeYears':return `profits were positive in ${n(v)} years (at least ${n(bar)} needed)`;
    case 'revenueDeclines':return `sales fell in ${n(v)} years (limit ${n(bar)})`;
    case 'lossYears':return `${v===0?'no loss years':`${n(v)} loss years`} were recorded (limit ${n(bar)})`;
-   case 'opMarginCv':return `margins varied ${p(v)} around their average (limit ${p(bar)})`;
+   case 'opMarginCv':if(m.opMarginImproving===1)return 'margins improved consistently with no loss years';return `margins varied ${p(v)} around their average (limit ${p(bar)})`;
    case 'roicMedian':return `capital return excluding acquisitions: median ${v!=null&&v>1?'>100%':p(v)} (minimum ${p(bar)})`;
    case 'returnFloorMedian':return `the conservative return floor was ${p(v)} (minimum ${p(bar)})`;
    case 'roicSecondLowest':case 'returnFloorSecondLowest':case 'roeSecondLowest':return `the second-worst year ${p(v)} (minimum ${p(bar)})`;

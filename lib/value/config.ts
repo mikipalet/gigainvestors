@@ -19,7 +19,7 @@ export const T = {
   fundamentals: { maxYears: 30, usageSyncCompanies: 200 },
   eodhd: { perSecond: 5, timeoutMs: 180_000, screenerPageSize: 100, screenerMaxOffset: 999 },
   publish: { indexMembersOnly: true, maxCountDrop: 0.20, lockMaxAgeMs: 6 * 60 * 60 * 1000 },
-  understandable: { years: 10, maxRevenueDeclines: 5, maxLossYears: 2, maxOpMarginCv: 0.35 },
+  understandable: { years: 10, maxRevenueDeclines: 5, maxLossYears: 2, maxOpMarginCv: 0.35, minImprovementR2: 0.90 },
   moat: { badYearsAllowed: 1, roicMedian: 0.15, roicSecondLowest: 0.10, gmDropPp: 0.04, roeMedianFin: 0.12, roeSecondLowestFin: 0.08 },
   economics: { oeToNi: 0.8, roiic: 0.12, maxNwcRise: 0.10 },
   management: {

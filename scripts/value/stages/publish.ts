@@ -1,3 +1,5 @@
+import {readRetiredIssuerAliases} from '../retired-issuer-aliases';
+import {reconcileIssuers} from '../issuer-publication';
 import {readCoverageRelease,additionInputProblems,assertAdditionBinding} from '../coverage-release';
 import {uploadPublishedSnapshot} from '../blob-publish';
 import { assertNoPendingPublication, beginPublication } from '../post-publish';
@@ -169,7 +171,7 @@ export function loadHolders(store: string): { holdersByTicker: Record<string, st
 }
 
 export function writeOutput({ repo, files }: { repo: string; files: Record<string, unknown> }): void {
-  const allowed = /^(?:logos\/[a-f0-9]{64}|views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4}(?:Q[1-4])?)|forward\/(?:index|[0-9]{4}-[0-9]{2}-[0-9]{2})|aliases|meta|top)\.json$/;
+  const allowed = /^(?:logos\/[a-f0-9]{64}|views\/[a-f0-9]{24}|index\/(?:[A-Z]{2}|default)|dossiers\/\d{3}|prices\/[A-Z]{2}|search\/(?:manifest|[a-z0-9][a-z0-9_&.\-]+)|history\/(?:index|companies|[0-9]{4}(?:Q[1-4])?)|forward\/(?:index|[0-9]{4}-[0-9]{2}-[0-9]{2})|aliases|issuer-holders|meta|top)\.json$/;
   for (const file of Object.keys(files)) if (!allowed.test(file)) throw new Error("Invalid publish output path");
   // Preflight the entire batch before replacing any published output.
   const unchanged = new Set<string>();
@@ -352,19 +354,22 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   applyVerdictFreeze(files,freeze,{extendSearch:preserveBaseline});
   if(preserveBaseline)preserveAdditionBaseline(files,freeze);
   if(release){
+    const retired=readRetiredIssuerAliases(previousDossiers?path.dirname(previousDossiers):repo);
     const emitted=Object.assign({},...Object.entries(files).filter(([file])=>file.startsWith('dossiers/')).map(([,data])=>data));
     for(const id of release.additionIds){
+      if(!emitted[id]&&retired[id]&&emitted[retired[id]])continue;
       const problems=additionInputProblems(id,quotes[id]);
       if(problems.length)throw Error(`Coverage addition ${id} is incomplete: ${problems.join(', ')}`);
       assertAdditionBinding(readCorpusJson<Analysis>(`analysis/${id}.json`)!,emitted[id]);
     }
     if(release.held.some(({id})=>emitted[id]))throw Error('Held coverage addition reached publication');
   }
+  reconcileIssuers(files,holdersByTicker,investorNames);
   forwardFiles(repo, files, universe, readPrices(path.join(repo, 'prices')), new Date().toISOString().slice(0,10));
   publishViews(files);
   writeOutput({ repo, files });
   const changed = commit ? commitOutput({ repo, asOf }) : true;
-  return { count: rows.length, changed };
+  return { count: (files['meta.json'] as any).counts.analysed, changed };
 }
 
 export function runCalibration(cli = path.resolve(__dirname, "../cli.ts")): void {
@@ -476,7 +481,8 @@ export default async function publish(options: { only?: string[]; limit?: number
   if (!membership || (!membership.complete && !(out && options.force))) throw new Error("Run index-membership and resolve its coverage report before publish (incomplete snapshots may only be inspected with --out --force)");
   const release=readCoverageRelease();
   const releasedIds=release?new Set([...release.baselineIds,...release.additionIds]):null;
-  const companies = universeCompanies().filter(c=>!releasedIds||releasedIds.has(c.id)).map(company=>({...mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{}),indexes:company.indexes,heldBySuperinvestors:company.heldBySuperinvestors})).filter(company => inPublicationScope(company) && !companyExclusion(company));
+  const retired=readRetiredIssuerAliases(corpusPath('publish-repo'));
+  const companies = universeCompanies().filter(c=>!retired[c.id]).filter(c=>!releasedIds||releasedIds.has(c.id)).map(company=>({...mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{}),indexes:company.indexes,heldBySuperinvestors:company.heldBySuperinvestors})).filter(company => inPublicationScope(company) && !companyExclusion(company));
   if (!companies.length) throw new Error("Run the universe stage before publish");
   // Selection only needs IDs; do not retain a second full baseline while building output.
   const frozenIds=options.additionsOnly?new Set(readdirSync(corpusPath('publish-repo/dossiers')).filter(f=>/^\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(JSON.parse(readFileSync(corpusPath('publish-repo/dossiers',f),'utf8'))))):readVerdictFreeze(corpusPath('publish-repo')).ids;

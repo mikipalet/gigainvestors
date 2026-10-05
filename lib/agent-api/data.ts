@@ -1,9 +1,10 @@
 import {HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY} from '@/lib/value/history-copy';
+import {dossierId} from '../company-route';
 import {METHOD_SECTIONS} from '@/lib/value/method-content';
 import {VALUE_PRODUCT_NAME} from '@/lib/value/brand';
 import {z} from 'zod';
 import {getIndex,getInvestor,getSearchIndex,getStock} from '@/lib/data';
-import {getMeta,getDefaultIndex,enrichRows,getDossier,getPrice,getForwardRecord,readStore} from '@/lib/value/store';
+import {getMeta,getDefaultIndex,enrichRows,getDossier,getPrice,getForwardRecord,getCompanyStock,readStore} from '@/lib/value/store';
 import {unpackView,browserRow,type BrowserPayload,type BrowserRow} from '@/lib/value/browser-view';
 import {matchesView} from '@/lib/value/view-filter';
 import {mainCompanies,mainZones} from '@/lib/value/main-layout';
@@ -73,16 +74,17 @@ export async function executeEndpoint(route:Route,pathname:string,q:Query):Promi
  case 'investors':{const index=await getIndex();if(!index)throw new DataError(503,'data_unavailable','Investor directory unavailable.');return {asOf:index.generatedAt,...pagination(index.investors.filter(i=>!q.q||`${i.person} ${i.firm} ${i.code}`.toLowerCase().includes(q.q.toLowerCase())).map(i=>({id:i.code,name:i.person,firm:i.firm,quarters:i.series.map(s=>s.q.replace(/\s/g,''))})),q)};}
  case 'holdings':{const source=await getInvestor(id!);const investor=source?{...source,quarters:source.quarters.map(q=>({...q,q:q.q.replace(/\s/g,'')}))}:null;if(!investor)throw new DataError(404,'investor_not_found','Investor not found.');const frame=q.quarter??[...investor.quarters].map(x=>x.q).sort().at(-1);if(!frame||!investor.quarters.some(x=>x.q===frame))throw new DataError(404,'quarter_unavailable','Investor quarter unavailable.');return projectHoldings(investor,frame);}
  case 'ownership':{
-  const stock=await getStock(id!);if(!stock)throw new DataError(404,'stock_not_found','Tracked stock not found. Use its ticker from search.');
+  const dossier=await getDossier(dossierId(id!));
+  const stock=dossier?await getCompanyStock(dossier):await getStock(id!);if(!stock)throw new DataError(404,'stock_not_found','Tracked stock not found. Use its ticker from search.');
   const quarters=stock.quarters.map(v=>({...v,q:v.q.replace(/\s/g,'')})).sort((a,b)=>a.q.localeCompare(b.q));
   const selected=q.quarter?quarters.find(v=>v.q===q.quarter):quarters.at(-1);if(!selected)throw new DataError(404,'quarter_unavailable','Stock quarter unavailable.');
   const index=await getIndex(),names=new Map(index?.investors.map(i=>[i.code,i.person])??[]),total=selected.holders.reduce((s,h)=>s+h.value,0);
-  return {id:stock.ticker,name:stock.name,quarter:selected.q,quarters:quarters.map(v=>v.q),holderCount:selected.holders.length,holders:[...selected.holders].sort((a,b)=>b.value-a.value).map((h,i)=>({id:h.code,name:names.get(h.code)??h.code,rank:i+1,shareOfTrackedCapital:total?h.value/total:0})),basis:'Relative shares of capital held by tracked investors, computed from reported 13F positions. Not shares outstanding or raw position values.'};
+  return {id:dossier?.id??stock.ticker,name:dossier?.company.name??stock.name,quarter:selected.q,quarters:quarters.map(v=>v.q),holderCount:selected.holders.length,holders:[...selected.holders].sort((a,b)=>b.value-a.value).map((h,i)=>({id:h.code,name:names.get(h.code)??h.code,rank:i+1,shareOfTrackedCapital:total?h.value/total:0})),basis:'Relative shares of capital held by tracked investors, computed from reported 13F positions. Not shares outstanding or raw position values.'};
  }
  case 'companies':case 'checklists':case 'export':return listing(q);
  case 'dossier':case 'verdict':case 'memo':case 'priceStory':{
   const dossier=await getDossier(id!);if(!dossier)throw new DataError(404,'company_not_found','No published dossier for this company.');
-  const projected=projectDossier(dossier,await getPrice(id!,dossier.company.country));
+  const projected=projectDossier(dossier,await getPrice(dossier.id,dossier.company.country));
   if(route.id==='memo')return {id:dossier.id,memo:projected.memo};if(route.id==='priceStory')return {id:dossier.id,priceStory:projected.priceStory};
   if(route.id==='verdict'){const {id,asOf,verdict,buyNow,qualityPasses,tests,priceCheck}=projected;return {id,asOf,verdict,buyNow,qualityPasses,tests:tests.map(t=>({id:t.id,result:t.result,...(t.provisional?{provisional:t.provisional}:{})})),priceCheck};}
   return projected;

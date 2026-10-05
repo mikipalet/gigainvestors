@@ -1,0 +1,4878 @@
+{
+  "requests": 696,
+  "failures": [],
+  "rows": [
+    {
+      "accept": "text/html",
+      "path": "/s/2015.HK",
+      "status": 308,
+      "location": "/s/LI",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/2015.HK",
+      "status": 308,
+      "location": "/s/LI",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/2015.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LI?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/2015.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LI?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/2015.HK",
+      "status": 308,
+      "location": "/s/LI",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/2015.HK",
+      "status": 308,
+      "location": "/s/LI",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/2015.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LI?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/2015.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LI?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/2015.HK",
+      "status": 308,
+      "location": "/s/LI",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/2015.HK",
+      "status": 308,
+      "location": "/s/LI",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/2015.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LI?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/2015.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LI?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/600938.SHG",
+      "status": 308,
+      "location": "/s/0883.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/600938.SHG",
+      "status": 308,
+      "location": "/s/0883.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/600938.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0883.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/600938.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0883.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/600938.SHG",
+      "status": 308,
+      "location": "/s/0883.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/600938.SHG",
+      "status": 308,
+      "location": "/s/0883.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/600938.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0883.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/600938.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0883.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/600938.SHG",
+      "status": 308,
+      "location": "/s/0883.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/600938.SHG",
+      "status": 308,
+      "location": "/s/0883.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/600938.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0883.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/600938.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0883.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/600941.SHG",
+      "status": 308,
+      "location": "/s/0941.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/600941.SHG",
+      "status": 308,
+      "location": "/s/0941.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/600941.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0941.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/600941.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0941.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/600941.SHG",
+      "status": 308,
+      "location": "/s/0941.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/600941.SHG",
+      "status": 308,
+      "location": "/s/0941.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/600941.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0941.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/600941.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0941.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/600941.SHG",
+      "status": 308,
+      "location": "/s/0941.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/600941.SHG",
+      "status": 308,
+      "location": "/s/0941.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/600941.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0941.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/600941.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0941.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/6690.HK",
+      "status": 308,
+      "location": "/s/600690.SHG",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/6690.HK",
+      "status": 308,
+      "location": "/s/600690.SHG",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/6690.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/600690.SHG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/6690.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/600690.SHG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/6690.HK",
+      "status": 308,
+      "location": "/s/600690.SHG",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/6690.HK",
+      "status": 308,
+      "location": "/s/600690.SHG",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/6690.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/600690.SHG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/6690.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/600690.SHG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/6690.HK",
+      "status": 308,
+      "location": "/s/600690.SHG",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/6690.HK",
+      "status": 308,
+      "location": "/s/600690.SHG",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/6690.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/600690.SHG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/6690.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/600690.SHG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/688981.SHG",
+      "status": 308,
+      "location": "/s/0981.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/688981.SHG",
+      "status": 308,
+      "location": "/s/0981.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/688981.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0981.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/688981.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0981.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/688981.SHG",
+      "status": 308,
+      "location": "/s/0981.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/688981.SHG",
+      "status": 308,
+      "location": "/s/0981.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/688981.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0981.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/688981.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0981.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/688981.SHG",
+      "status": 308,
+      "location": "/s/0981.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/688981.SHG",
+      "status": 308,
+      "location": "/s/0981.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/688981.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0981.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/688981.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0981.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9888.HK",
+      "status": 308,
+      "location": "/s/BIDU",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9888.HK",
+      "status": 308,
+      "location": "/s/BIDU",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9888.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BIDU?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9888.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BIDU?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9888.HK",
+      "status": 308,
+      "location": "/s/BIDU",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9888.HK",
+      "status": 308,
+      "location": "/s/BIDU",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9888.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BIDU?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9888.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BIDU?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/9888.HK",
+      "status": 308,
+      "location": "/s/BIDU",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/9888.HK",
+      "status": 308,
+      "location": "/s/BIDU",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/9888.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BIDU?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/9888.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BIDU?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9988.HK",
+      "status": 308,
+      "location": "/s/BABA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9988.HK",
+      "status": 308,
+      "location": "/s/BABA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9988.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BABA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9988.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BABA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9988.HK",
+      "status": 308,
+      "location": "/s/BABA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9988.HK",
+      "status": 308,
+      "location": "/s/BABA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9988.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BABA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9988.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BABA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/9988.HK",
+      "status": 308,
+      "location": "/s/BABA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/9988.HK",
+      "status": 308,
+      "location": "/s/BABA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/9988.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BABA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/9988.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BABA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9999.HK",
+      "status": 308,
+      "location": "/s/NTES",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9999.HK",
+      "status": 308,
+      "location": "/s/NTES",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9999.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/NTES?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9999.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/NTES?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9999.HK",
+      "status": 308,
+      "location": "/s/NTES",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9999.HK",
+      "status": 308,
+      "location": "/s/NTES",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/9999.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/NTES?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/9999.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/NTES?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/9999.HK",
+      "status": 308,
+      "location": "/s/NTES",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/9999.HK",
+      "status": 308,
+      "location": "/s/NTES",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/9999.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/NTES?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/9999.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/NTES?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ABVX.PA",
+      "status": 308,
+      "location": "/s/ABVX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ABVX.PA",
+      "status": 308,
+      "location": "/s/ABVX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ABVX.PA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABVX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ABVX.PA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABVX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ABVX.PA",
+      "status": 308,
+      "location": "/s/ABVX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ABVX.PA",
+      "status": 308,
+      "location": "/s/ABVX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ABVX.PA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABVX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ABVX.PA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABVX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ABVX.PA",
+      "status": 308,
+      "location": "/s/ABVX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ABVX.PA",
+      "status": 308,
+      "location": "/s/ABVX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ABVX.PA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABVX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ABVX.PA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABVX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AGN.AS",
+      "status": 308,
+      "location": "/s/AEG",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AGN.AS",
+      "status": 308,
+      "location": "/s/AEG",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AGN.AS?q=2025Q4",
+      "status": 308,
+      "location": "/s/AEG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AGN.AS?q=2025Q4",
+      "status": 308,
+      "location": "/s/AEG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AGN.AS",
+      "status": 308,
+      "location": "/s/AEG",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AGN.AS",
+      "status": 308,
+      "location": "/s/AEG",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AGN.AS?q=2025Q4",
+      "status": 308,
+      "location": "/s/AEG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AGN.AS?q=2025Q4",
+      "status": 308,
+      "location": "/s/AEG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/AGN.AS",
+      "status": 308,
+      "location": "/s/AEG",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/AGN.AS",
+      "status": 308,
+      "location": "/s/AEG",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/AGN.AS?q=2025Q4",
+      "status": 308,
+      "location": "/s/AEG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/AGN.AS?q=2025Q4",
+      "status": 308,
+      "location": "/s/AEG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AKBLF",
+      "status": 308,
+      "location": "/s/ALK-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AKBLF",
+      "status": 308,
+      "location": "/s/ALK-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AKBLF?q=2025Q4",
+      "status": 308,
+      "location": "/s/ALK-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AKBLF?q=2025Q4",
+      "status": 308,
+      "location": "/s/ALK-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AKBLF.US",
+      "status": 308,
+      "location": "/s/ALK-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AKBLF.US",
+      "status": 308,
+      "location": "/s/ALK-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AKBLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ALK-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AKBLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ALK-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/AKBLF.US",
+      "status": 308,
+      "location": "/s/ALK-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/AKBLF.US",
+      "status": 308,
+      "location": "/s/ALK-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/AKBLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ALK-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/AKBLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ALK-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AMC.AU",
+      "status": 308,
+      "location": "/s/AMCR",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AMC.AU",
+      "status": 308,
+      "location": "/s/AMCR",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AMC.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/AMCR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AMC.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/AMCR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AMC.AU",
+      "status": 308,
+      "location": "/s/AMCR",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AMC.AU",
+      "status": 308,
+      "location": "/s/AMCR",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/AMC.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/AMCR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/AMC.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/AMCR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/AMC.AU",
+      "status": 308,
+      "location": "/s/AMCR",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/AMC.AU",
+      "status": 308,
+      "location": "/s/AMCR",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/AMC.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/AMCR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/AMC.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/AMCR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ASAIY",
+      "status": 308,
+      "location": "/s/ASAI3.SA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ASAIY",
+      "status": 308,
+      "location": "/s/ASAI3.SA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ASAIY?q=2025Q4",
+      "status": 308,
+      "location": "/s/ASAI3.SA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ASAIY?q=2025Q4",
+      "status": 308,
+      "location": "/s/ASAI3.SA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ASAIY.US",
+      "status": 308,
+      "location": "/s/ASAI3.SA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ASAIY.US",
+      "status": 308,
+      "location": "/s/ASAI3.SA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ASAIY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ASAI3.SA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ASAIY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ASAI3.SA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ASAIY.US",
+      "status": 308,
+      "location": "/s/ASAI3.SA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ASAIY.US",
+      "status": 308,
+      "location": "/s/ASAI3.SA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ASAIY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ASAI3.SA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ASAIY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ASAI3.SA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BATRK",
+      "status": 308,
+      "location": "/s/BATRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BATRK",
+      "status": 308,
+      "location": "/s/BATRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BATRK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BATRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BATRK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BATRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BATRK.US",
+      "status": 308,
+      "location": "/s/BATRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BATRK.US",
+      "status": 308,
+      "location": "/s/BATRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BATRK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BATRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BATRK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BATRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/BATRK.US",
+      "status": 308,
+      "location": "/s/BATRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/BATRK.US",
+      "status": 308,
+      "location": "/s/BATRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/BATRK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BATRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/BATRK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BATRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BDRFY",
+      "status": 308,
+      "location": "/s/BEI.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BDRFY",
+      "status": 308,
+      "location": "/s/BEI.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BDRFY?q=2025Q4",
+      "status": 308,
+      "location": "/s/BEI.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BDRFY?q=2025Q4",
+      "status": 308,
+      "location": "/s/BEI.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BDRFY.US",
+      "status": 308,
+      "location": "/s/BEI.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BDRFY.US",
+      "status": 308,
+      "location": "/s/BEI.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BDRFY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BEI.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BDRFY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BEI.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/BDRFY.US",
+      "status": 308,
+      "location": "/s/BEI.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/BDRFY.US",
+      "status": 308,
+      "location": "/s/BEI.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/BDRFY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BEI.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/BDRFY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BEI.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BH-A",
+      "status": 308,
+      "location": "/s/BH",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BH-A",
+      "status": 308,
+      "location": "/s/BH",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BH-A?q=2025Q4",
+      "status": 308,
+      "location": "/s/BH?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BH-A?q=2025Q4",
+      "status": 308,
+      "location": "/s/BH?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BH-A.US",
+      "status": 308,
+      "location": "/s/BH",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BH-A.US",
+      "status": 308,
+      "location": "/s/BH",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BH-A.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BH?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BH-A.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BH?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/BH-A.US",
+      "status": 308,
+      "location": "/s/BH",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/BH-A.US",
+      "status": 308,
+      "location": "/s/BH",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/BH-A.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BH?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/BH-A.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BH?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BUDFF",
+      "status": 308,
+      "location": "/s/ABI.BR",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BUDFF",
+      "status": 308,
+      "location": "/s/ABI.BR",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BUDFF?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABI.BR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BUDFF?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABI.BR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BUDFF.US",
+      "status": 308,
+      "location": "/s/ABI.BR",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BUDFF.US",
+      "status": 308,
+      "location": "/s/ABI.BR",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/BUDFF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABI.BR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/BUDFF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABI.BR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/BUDFF.US",
+      "status": 308,
+      "location": "/s/ABI.BR",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/BUDFF.US",
+      "status": 308,
+      "location": "/s/ABI.BR",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/BUDFF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABI.BR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/BUDFF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABI.BR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/CABJF",
+      "status": 308,
+      "location": "/s/CARL-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/CABJF",
+      "status": 308,
+      "location": "/s/CARL-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/CABJF?q=2025Q4",
+      "status": 308,
+      "location": "/s/CARL-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/CABJF?q=2025Q4",
+      "status": 308,
+      "location": "/s/CARL-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/CABJF.US",
+      "status": 308,
+      "location": "/s/CARL-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/CABJF.US",
+      "status": 308,
+      "location": "/s/CARL-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/CABJF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/CARL-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/CABJF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/CARL-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/CABJF.US",
+      "status": 308,
+      "location": "/s/CARL-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/CABJF.US",
+      "status": 308,
+      "location": "/s/CARL-B.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/CABJF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/CARL-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/CABJF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/CARL-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/DGEAF",
+      "status": 308,
+      "location": "/s/DGE.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/DGEAF",
+      "status": 308,
+      "location": "/s/DGE.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/DGEAF?q=2025Q4",
+      "status": 308,
+      "location": "/s/DGE.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/DGEAF?q=2025Q4",
+      "status": 308,
+      "location": "/s/DGE.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/DGEAF.US",
+      "status": 308,
+      "location": "/s/DGE.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/DGEAF.US",
+      "status": 308,
+      "location": "/s/DGE.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/DGEAF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DGE.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/DGEAF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DGE.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/DGEAF.US",
+      "status": 308,
+      "location": "/s/DGE.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/DGEAF.US",
+      "status": 308,
+      "location": "/s/DGE.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/DGEAF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DGE.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/DGEAF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DGE.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ERFSF",
+      "status": 308,
+      "location": "/s/ERF.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ERFSF",
+      "status": 308,
+      "location": "/s/ERF.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ERFSF?q=2025Q4",
+      "status": 308,
+      "location": "/s/ERF.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ERFSF?q=2025Q4",
+      "status": 308,
+      "location": "/s/ERF.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ERFSF.US",
+      "status": 308,
+      "location": "/s/ERF.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ERFSF.US",
+      "status": 308,
+      "location": "/s/ERF.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ERFSF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ERF.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ERFSF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ERF.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ERFSF.US",
+      "status": 308,
+      "location": "/s/ERF.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ERFSF.US",
+      "status": 308,
+      "location": "/s/ERF.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ERFSF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ERF.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ERFSF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ERF.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FEMSAUBD.MX",
+      "status": 308,
+      "location": "/s/FMX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FEMSAUBD.MX",
+      "status": 308,
+      "location": "/s/FMX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FEMSAUBD.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FEMSAUBD.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FEMSAUBD.MX",
+      "status": 308,
+      "location": "/s/FMX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FEMSAUBD.MX",
+      "status": 308,
+      "location": "/s/FMX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FEMSAUBD.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FEMSAUBD.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/FEMSAUBD.MX",
+      "status": 308,
+      "location": "/s/FMX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/FEMSAUBD.MX",
+      "status": 308,
+      "location": "/s/FMX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/FEMSAUBD.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/FEMSAUBD.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FFH.TO",
+      "status": 308,
+      "location": "/s/FRFHF",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FFH.TO",
+      "status": 308,
+      "location": "/s/FRFHF",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FFH.TO?q=2025Q4",
+      "status": 308,
+      "location": "/s/FRFHF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FFH.TO?q=2025Q4",
+      "status": 308,
+      "location": "/s/FRFHF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FFH.TO",
+      "status": 308,
+      "location": "/s/FRFHF",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FFH.TO",
+      "status": 308,
+      "location": "/s/FRFHF",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FFH.TO?q=2025Q4",
+      "status": 308,
+      "location": "/s/FRFHF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FFH.TO?q=2025Q4",
+      "status": 308,
+      "location": "/s/FRFHF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/FFH.TO",
+      "status": 308,
+      "location": "/s/FRFHF",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/FFH.TO",
+      "status": 308,
+      "location": "/s/FRFHF",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/FFH.TO?q=2025Q4",
+      "status": 308,
+      "location": "/s/FRFHF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/FFH.TO?q=2025Q4",
+      "status": 308,
+      "location": "/s/FRFHF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FME.XETRA",
+      "status": 308,
+      "location": "/s/FMS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FME.XETRA",
+      "status": 308,
+      "location": "/s/FMS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FME.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FME.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FME.XETRA",
+      "status": 308,
+      "location": "/s/FMS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FME.XETRA",
+      "status": 308,
+      "location": "/s/FMS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FME.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FME.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/FME.XETRA",
+      "status": 308,
+      "location": "/s/FMS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/FME.XETRA",
+      "status": 308,
+      "location": "/s/FMS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/FME.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/FME.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FWONA",
+      "status": 308,
+      "location": "/s/FWONK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FWONA",
+      "status": 308,
+      "location": "/s/FWONK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FWONA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FWONK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FWONA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FWONK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FWONA.US",
+      "status": 308,
+      "location": "/s/FWONK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FWONA.US",
+      "status": 308,
+      "location": "/s/FWONK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/FWONA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/FWONK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/FWONA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/FWONK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/FWONA.US",
+      "status": 308,
+      "location": "/s/FWONK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/FWONA.US",
+      "status": 308,
+      "location": "/s/FWONK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/FWONA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/FWONK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/FWONA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/FWONK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/GLIBK",
+      "status": 308,
+      "location": "/s/GLIBA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/GLIBK",
+      "status": 308,
+      "location": "/s/GLIBA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/GLIBK?q=2025Q4",
+      "status": 308,
+      "location": "/s/GLIBA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/GLIBK?q=2025Q4",
+      "status": 308,
+      "location": "/s/GLIBA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/GLIBK.US",
+      "status": 308,
+      "location": "/s/GLIBA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/GLIBK.US",
+      "status": 308,
+      "location": "/s/GLIBA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/GLIBK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GLIBA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/GLIBK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GLIBA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/GLIBK.US",
+      "status": 308,
+      "location": "/s/GLIBA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/GLIBK.US",
+      "status": 308,
+      "location": "/s/GLIBA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/GLIBK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GLIBA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/GLIBK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GLIBA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/GSK",
+      "status": 308,
+      "location": "/s/GSK.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/GSK",
+      "status": 308,
+      "location": "/s/GSK.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/GSK?q=2025Q4",
+      "status": 308,
+      "location": "/s/GSK.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/GSK?q=2025Q4",
+      "status": 308,
+      "location": "/s/GSK.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/GSK.US",
+      "status": 308,
+      "location": "/s/GSK.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/GSK.US",
+      "status": 308,
+      "location": "/s/GSK.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/GSK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GSK.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/GSK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GSK.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/GSK.US",
+      "status": 308,
+      "location": "/s/GSK.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/GSK.US",
+      "status": 308,
+      "location": "/s/GSK.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/GSK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GSK.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/GSK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GSK.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HEN3.XETRA",
+      "status": 308,
+      "location": "/s/HEN.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HEN3.XETRA",
+      "status": 308,
+      "location": "/s/HEN.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HEN3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEN.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HEN3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEN.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HEN3.XETRA",
+      "status": 308,
+      "location": "/s/HEN.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HEN3.XETRA",
+      "status": 308,
+      "location": "/s/HEN.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HEN3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEN.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HEN3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEN.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/HEN3.XETRA",
+      "status": 308,
+      "location": "/s/HEN.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/HEN3.XETRA",
+      "status": 308,
+      "location": "/s/HEN.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/HEN3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEN.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/HEN3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEN.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HESAY",
+      "status": 308,
+      "location": "/s/RMS.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HESAY",
+      "status": 308,
+      "location": "/s/RMS.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HESAY?q=2025Q4",
+      "status": 308,
+      "location": "/s/RMS.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HESAY?q=2025Q4",
+      "status": 308,
+      "location": "/s/RMS.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HESAY.US",
+      "status": 308,
+      "location": "/s/RMS.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HESAY.US",
+      "status": 308,
+      "location": "/s/RMS.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HESAY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RMS.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HESAY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RMS.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/HESAY.US",
+      "status": 308,
+      "location": "/s/RMS.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/HESAY.US",
+      "status": 308,
+      "location": "/s/RMS.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/HESAY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RMS.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/HESAY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RMS.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HKLB.LSE",
+      "status": 308,
+      "location": "/s/HKHGF",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HKLB.LSE",
+      "status": 308,
+      "location": "/s/HKHGF",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HKLB.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/HKHGF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HKLB.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/HKHGF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HKLB.LSE",
+      "status": 308,
+      "location": "/s/HKHGF",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HKLB.LSE",
+      "status": 308,
+      "location": "/s/HKHGF",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HKLB.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/HKHGF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HKLB.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/HKHGF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/HKLB.LSE",
+      "status": 308,
+      "location": "/s/HKHGF",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/HKLB.LSE",
+      "status": 308,
+      "location": "/s/HKHGF",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/HKLB.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/HKHGF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/HKLB.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/HKHGF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HXGBY",
+      "status": 308,
+      "location": "/s/HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HXGBY",
+      "status": 308,
+      "location": "/s/HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HXGBY?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEXA-B.ST?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HXGBY?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEXA-B.ST?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HXGBY.US",
+      "status": 308,
+      "location": "/s/HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HXGBY.US",
+      "status": 308,
+      "location": "/s/HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/HXGBY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEXA-B.ST?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/HXGBY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEXA-B.ST?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/HXGBY.US",
+      "status": 308,
+      "location": "/s/HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/HXGBY.US",
+      "status": 308,
+      "location": "/s/HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/HXGBY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEXA-B.ST?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/HXGBY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEXA-B.ST?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ING",
+      "status": 308,
+      "location": "/s/INGA.AS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ING",
+      "status": 308,
+      "location": "/s/INGA.AS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ING?q=2025Q4",
+      "status": 308,
+      "location": "/s/INGA.AS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ING?q=2025Q4",
+      "status": 308,
+      "location": "/s/INGA.AS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ING.US",
+      "status": 308,
+      "location": "/s/INGA.AS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ING.US",
+      "status": 308,
+      "location": "/s/INGA.AS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ING.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/INGA.AS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ING.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/INGA.AS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ING.US",
+      "status": 308,
+      "location": "/s/INGA.AS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ING.US",
+      "status": 308,
+      "location": "/s/INGA.AS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ING.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/INGA.AS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ING.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/INGA.AS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ITUB3.SA",
+      "status": 308,
+      "location": "/s/ITUB",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ITUB3.SA",
+      "status": 308,
+      "location": "/s/ITUB",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ITUB3.SA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ITUB?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ITUB3.SA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ITUB?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ITUB3.SA",
+      "status": 308,
+      "location": "/s/ITUB",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ITUB3.SA",
+      "status": 308,
+      "location": "/s/ITUB",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ITUB3.SA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ITUB?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ITUB3.SA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ITUB?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ITUB3.SA",
+      "status": 308,
+      "location": "/s/ITUB",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ITUB3.SA",
+      "status": 308,
+      "location": "/s/ITUB",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ITUB3.SA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ITUB?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ITUB3.SA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ITUB?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/JHX.AU",
+      "status": 308,
+      "location": "/s/JHX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/JHX.AU",
+      "status": 308,
+      "location": "/s/JHX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/JHX.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/JHX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/JHX.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/JHX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/JHX.AU",
+      "status": 308,
+      "location": "/s/JHX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/JHX.AU",
+      "status": 308,
+      "location": "/s/JHX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/JHX.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/JHX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/JHX.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/JHX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/JHX.AU",
+      "status": 308,
+      "location": "/s/JHX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/JHX.AU",
+      "status": 308,
+      "location": "/s/JHX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/JHX.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/JHX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/JHX.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/JHX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LBTYK",
+      "status": 308,
+      "location": "/s/LBTYA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LBTYK",
+      "status": 308,
+      "location": "/s/LBTYA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LBTYK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LBTYA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LBTYK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LBTYA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LBTYK.US",
+      "status": 308,
+      "location": "/s/LBTYA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LBTYK.US",
+      "status": 308,
+      "location": "/s/LBTYA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LBTYK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LBTYA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LBTYK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LBTYA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/LBTYK.US",
+      "status": 308,
+      "location": "/s/LBTYA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/LBTYK.US",
+      "status": 308,
+      "location": "/s/LBTYA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/LBTYK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LBTYA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/LBTYK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LBTYA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LILAK",
+      "status": 308,
+      "location": "/s/LILA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LILAK",
+      "status": 308,
+      "location": "/s/LILA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LILAK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LILA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LILAK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LILA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LILAK.US",
+      "status": 308,
+      "location": "/s/LILA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LILAK.US",
+      "status": 308,
+      "location": "/s/LILA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LILAK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LILA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LILAK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LILA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/LILAK.US",
+      "status": 308,
+      "location": "/s/LILA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/LILAK.US",
+      "status": 308,
+      "location": "/s/LILA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/LILAK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LILA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/LILAK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LILA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LLYVK",
+      "status": 308,
+      "location": "/s/LLYVA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LLYVK",
+      "status": 308,
+      "location": "/s/LLYVA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LLYVK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LLYVA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LLYVK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LLYVA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LLYVK.US",
+      "status": 308,
+      "location": "/s/LLYVA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LLYVK.US",
+      "status": 308,
+      "location": "/s/LLYVA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LLYVK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LLYVA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LLYVK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LLYVA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/LLYVK.US",
+      "status": 308,
+      "location": "/s/LLYVA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/LLYVK.US",
+      "status": 308,
+      "location": "/s/LLYVA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/LLYVK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LLYVA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/LLYVK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LLYVA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LRLCF",
+      "status": 308,
+      "location": "/s/OR.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LRLCF",
+      "status": 308,
+      "location": "/s/OR.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LRLCF?q=2025Q4",
+      "status": 308,
+      "location": "/s/OR.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LRLCF?q=2025Q4",
+      "status": 308,
+      "location": "/s/OR.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LRLCF.US",
+      "status": 308,
+      "location": "/s/OR.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LRLCF.US",
+      "status": 308,
+      "location": "/s/OR.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/LRLCF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/OR.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/LRLCF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/OR.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/LRLCF.US",
+      "status": 308,
+      "location": "/s/OR.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/LRLCF.US",
+      "status": 308,
+      "location": "/s/OR.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/LRLCF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/OR.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/LRLCF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/OR.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NESN.SW",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NESN.SW",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NESN.SW?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NESN.SW?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NESN.SW",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NESN.SW",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NESN.SW?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NESN.SW?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/NESN.SW",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/NESN.SW",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/NESN.SW?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/NESN.SW?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NSRGF",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NSRGF",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NSRGF?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NSRGF?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NSRGF.US",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NSRGF.US",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NSRGF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NSRGF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/NSRGF.US",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/NSRGF.US",
+      "status": 308,
+      "location": "/s/NSRGY",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/NSRGF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/NSRGF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NWS.AU",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NWS.AU",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NWS.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NWS.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NWS.AU",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NWS.AU",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NWS.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NWS.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/NWS.AU",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/NWS.AU",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/NWS.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/NWS.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NWSA",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NWSA",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NWSA?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NWSA?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NWSA.US",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NWSA.US",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NWSA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NWSA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/NWSA.US",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/NWSA.US",
+      "status": 308,
+      "location": "/s/NWS",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/NWSA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/NWSA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NXG.AU",
+      "status": 308,
+      "location": "/s/NXE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NXG.AU",
+      "status": 308,
+      "location": "/s/NXE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NXG.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NXE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NXG.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NXE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NXG.AU",
+      "status": 308,
+      "location": "/s/NXE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NXG.AU",
+      "status": 308,
+      "location": "/s/NXE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/NXG.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NXE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/NXG.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NXE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/NXG.AU",
+      "status": 308,
+      "location": "/s/NXE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/NXG.AU",
+      "status": 308,
+      "location": "/s/NXE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/NXG.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NXE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/NXG.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NXE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/PDRDF",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/PDRDF",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/PDRDF?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/PDRDF?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/PDRDF.US",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/PDRDF.US",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/PDRDF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/PDRDF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/PDRDF.US",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/PDRDF.US",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/PDRDF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/PDRDF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/PRNDY",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/PRNDY",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/PRNDY?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/PRNDY?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/PRNDY.US",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/PRNDY.US",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/PRNDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/PRNDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/PRNDY.US",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/PRNDY.US",
+      "status": 308,
+      "location": "/s/RI.PA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/PRNDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/PRNDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RBGPF",
+      "status": 308,
+      "location": "/s/RKT.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RBGPF",
+      "status": 308,
+      "location": "/s/RKT.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RBGPF?q=2025Q4",
+      "status": 308,
+      "location": "/s/RKT.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RBGPF?q=2025Q4",
+      "status": 308,
+      "location": "/s/RKT.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RBGPF.US",
+      "status": 308,
+      "location": "/s/RKT.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RBGPF.US",
+      "status": 308,
+      "location": "/s/RKT.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RBGPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RKT.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RBGPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RKT.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/RBGPF.US",
+      "status": 308,
+      "location": "/s/RKT.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/RBGPF.US",
+      "status": 308,
+      "location": "/s/RKT.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/RBGPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RKT.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/RBGPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RKT.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RDY",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RDY",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RDY?q=2025Q4",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RDY?q=2025Q4",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RDY.US",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RDY.US",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/RDY.US",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/RDY.US",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/RDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/RDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RTO",
+      "status": 308,
+      "location": "/s/RTO.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RTO",
+      "status": 308,
+      "location": "/s/RTO.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RTO?q=2025Q4",
+      "status": 308,
+      "location": "/s/RTO.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RTO?q=2025Q4",
+      "status": 308,
+      "location": "/s/RTO.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RTO.US",
+      "status": 308,
+      "location": "/s/RTO.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RTO.US",
+      "status": 308,
+      "location": "/s/RTO.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RTO.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RTO.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/RTO.US",
+      "status": 308,
+      "location": "/s/RTO.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/RTO.US",
+      "status": 308,
+      "location": "/s/RTO.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/RTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RTO.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/RTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RTO.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RUSHB",
+      "status": 308,
+      "location": "/s/RUSHA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RUSHB",
+      "status": 308,
+      "location": "/s/RUSHA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RUSHB?q=2025Q4",
+      "status": 308,
+      "location": "/s/RUSHA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RUSHB?q=2025Q4",
+      "status": 308,
+      "location": "/s/RUSHA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RUSHB.US",
+      "status": 308,
+      "location": "/s/RUSHA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RUSHB.US",
+      "status": 308,
+      "location": "/s/RUSHA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RUSHB.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RUSHA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RUSHB.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RUSHA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/RUSHB.US",
+      "status": 308,
+      "location": "/s/RUSHA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/RUSHB.US",
+      "status": 308,
+      "location": "/s/RUSHA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/RUSHB.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RUSHA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/RUSHB.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RUSHA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RYCEY",
+      "status": 308,
+      "location": "/s/RR.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RYCEY",
+      "status": 308,
+      "location": "/s/RR.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RYCEY?q=2025Q4",
+      "status": 308,
+      "location": "/s/RR.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RYCEY?q=2025Q4",
+      "status": 308,
+      "location": "/s/RR.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RYCEY.US",
+      "status": 308,
+      "location": "/s/RR.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RYCEY.US",
+      "status": 308,
+      "location": "/s/RR.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/RYCEY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RR.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/RYCEY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RR.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/RYCEY.US",
+      "status": 308,
+      "location": "/s/RR.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/RYCEY.US",
+      "status": 308,
+      "location": "/s/RR.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/RYCEY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RR.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/RYCEY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RR.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/SN.LSE",
+      "status": 308,
+      "location": "/s/SNN",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/SN.LSE",
+      "status": 308,
+      "location": "/s/SNN",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/SN.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/SNN?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/SN.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/SNN?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/SN.LSE",
+      "status": 308,
+      "location": "/s/SNN",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/SN.LSE",
+      "status": 308,
+      "location": "/s/SNN",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/SN.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/SNN?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/SN.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/SNN?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/SN.LSE",
+      "status": 308,
+      "location": "/s/SNN",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/SN.LSE",
+      "status": 308,
+      "location": "/s/SNN",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/SN.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/SNN?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/SN.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/SNN?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/SSPPF",
+      "status": 308,
+      "location": "/s/SSPG.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/SSPPF",
+      "status": 308,
+      "location": "/s/SSPG.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/SSPPF?q=2025Q4",
+      "status": 308,
+      "location": "/s/SSPG.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/SSPPF?q=2025Q4",
+      "status": 308,
+      "location": "/s/SSPG.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/SSPPF.US",
+      "status": 308,
+      "location": "/s/SSPG.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/SSPPF.US",
+      "status": 308,
+      "location": "/s/SSPG.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/SSPPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/SSPG.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/SSPPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/SSPG.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/SSPPF.US",
+      "status": 308,
+      "location": "/s/SSPG.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/SSPPF.US",
+      "status": 308,
+      "location": "/s/SSPG.LSE",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/SSPPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/SSPG.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/SSPPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/SSPG.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/UA",
+      "status": 308,
+      "location": "/s/UAA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/UA",
+      "status": 308,
+      "location": "/s/UAA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/UA?q=2025Q4",
+      "status": 308,
+      "location": "/s/UAA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/UA?q=2025Q4",
+      "status": 308,
+      "location": "/s/UAA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/UA.US",
+      "status": 308,
+      "location": "/s/UAA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/UA.US",
+      "status": 308,
+      "location": "/s/UAA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/UA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UAA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/UA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UAA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/UA.US",
+      "status": 308,
+      "location": "/s/UAA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/UA.US",
+      "status": 308,
+      "location": "/s/UAA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/UA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UAA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/UA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UAA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/UHAL",
+      "status": 308,
+      "location": "/s/UHAL-B",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/UHAL",
+      "status": 308,
+      "location": "/s/UHAL-B",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/UHAL?q=2025Q4",
+      "status": 308,
+      "location": "/s/UHAL-B?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/UHAL?q=2025Q4",
+      "status": 308,
+      "location": "/s/UHAL-B?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/UHAL.US",
+      "status": 308,
+      "location": "/s/UHAL-B",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/UHAL.US",
+      "status": 308,
+      "location": "/s/UHAL-B",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/UHAL.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UHAL-B?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/UHAL.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UHAL-B?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/UHAL.US",
+      "status": 308,
+      "location": "/s/UHAL-B",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/UHAL.US",
+      "status": 308,
+      "location": "/s/UHAL-B",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/UHAL.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UHAL-B?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/UHAL.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UHAL-B?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/VESTA.MX",
+      "status": 308,
+      "location": "/s/VTMX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/VESTA.MX",
+      "status": 308,
+      "location": "/s/VTMX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/VESTA.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/VTMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/VESTA.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/VTMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/VESTA.MX",
+      "status": 308,
+      "location": "/s/VTMX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/VESTA.MX",
+      "status": 308,
+      "location": "/s/VTMX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/VESTA.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/VTMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/VESTA.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/VTMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/VESTA.MX",
+      "status": 308,
+      "location": "/s/VTMX",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/VESTA.MX",
+      "status": 308,
+      "location": "/s/VTMX",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/VESTA.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/VTMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/VESTA.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/VTMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/VOW3.XETRA",
+      "status": 308,
+      "location": "/s/VOW.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/VOW3.XETRA",
+      "status": 308,
+      "location": "/s/VOW.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/VOW3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/VOW.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/VOW3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/VOW.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/VOW3.XETRA",
+      "status": 308,
+      "location": "/s/VOW.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/VOW3.XETRA",
+      "status": 308,
+      "location": "/s/VOW.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/VOW3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/VOW.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/VOW3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/VOW.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/VOW3.XETRA",
+      "status": 308,
+      "location": "/s/VOW.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/VOW3.XETRA",
+      "status": 308,
+      "location": "/s/VOW.XETRA",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/VOW3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/VOW.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/VOW3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/VOW.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/WILLF",
+      "status": 308,
+      "location": "/s/DEMANT.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/WILLF",
+      "status": 308,
+      "location": "/s/DEMANT.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/WILLF?q=2025Q4",
+      "status": 308,
+      "location": "/s/DEMANT.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/WILLF?q=2025Q4",
+      "status": 308,
+      "location": "/s/DEMANT.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/WILLF.US",
+      "status": 308,
+      "location": "/s/DEMANT.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/WILLF.US",
+      "status": 308,
+      "location": "/s/DEMANT.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/WILLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DEMANT.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/WILLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DEMANT.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/WILLF.US",
+      "status": 308,
+      "location": "/s/DEMANT.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/WILLF.US",
+      "status": 308,
+      "location": "/s/DEMANT.CO",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/WILLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DEMANT.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/WILLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DEMANT.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/Z",
+      "status": 308,
+      "location": "/s/ZG",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/Z",
+      "status": 308,
+      "location": "/s/ZG",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/Z?q=2025Q4",
+      "status": 308,
+      "location": "/s/ZG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/Z?q=2025Q4",
+      "status": 308,
+      "location": "/s/ZG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/Z.US",
+      "status": 308,
+      "location": "/s/ZG",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/Z.US",
+      "status": 308,
+      "location": "/s/ZG",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/Z.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ZG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/Z.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ZG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/Z.US",
+      "status": 308,
+      "location": "/s/ZG",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/Z.US",
+      "status": 308,
+      "location": "/s/ZG",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/Z.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ZG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/Z.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ZG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ZTO",
+      "status": 308,
+      "location": "/s/2057.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ZTO",
+      "status": 308,
+      "location": "/s/2057.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ZTO?q=2025Q4",
+      "status": 308,
+      "location": "/s/2057.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ZTO?q=2025Q4",
+      "status": 308,
+      "location": "/s/2057.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ZTO.US",
+      "status": 308,
+      "location": "/s/2057.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ZTO.US",
+      "status": 308,
+      "location": "/s/2057.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/s/ZTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/2057.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/s/ZTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/2057.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ZTO.US",
+      "status": 308,
+      "location": "/s/2057.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ZTO.US",
+      "status": 308,
+      "location": "/s/2057.HK",
+      "pass": true
+    },
+    {
+      "accept": "text/html",
+      "path": "/value/ZTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/2057.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "accept": "text/markdown",
+      "path": "/value/ZTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/2057.HK?q=2025Q4",
+      "pass": true
+    }
+  ]
+}

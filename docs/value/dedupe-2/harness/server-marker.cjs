@@ -1,0 +1,1 @@
+const Module=require('node:module');const resolve=Module._resolveFilename;Module._resolveFilename=function(id,...args){return resolve.call(this,id==='server-only'?'next/dist/compiled/server-only/empty.js':id,...args)};

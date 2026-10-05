@@ -1,0 +1,173 @@
+{
+  "rows": [
+    {
+      "width": 1728,
+      "height": 970,
+      "query": "nestle",
+      "hits": [
+        {
+          "id": "NSRGY",
+          "text": "NSRGYNestle SA ADR1 holder"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1728,
+      "height": 970,
+      "query": "diageo",
+      "hits": [
+        {
+          "id": "DGE.LSE",
+          "text": "DGE.LSEDiageo PLC8 holders"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1728,
+      "height": 970,
+      "query": "alibaba",
+      "hits": [
+        {
+          "id": "BABA",
+          "text": "BABAAlibaba Group Holding Ltd9 holders"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1728,
+      "height": 970,
+      "query": "gsk",
+      "hits": [
+        {
+          "id": "GSK.LSE",
+          "text": "GSK.LSEGSK plc6 holders"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1728,
+      "height": 970,
+      "query": "carlsberg",
+      "hits": [
+        {
+          "id": "CARL-B.CO",
+          "text": "CARL-B.COCarlsberg A/S1 holder"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1728,
+      "height": 970,
+      "query": "u-haul",
+      "hits": [
+        {
+          "id": "UHAL-B",
+          "text": "UHAL-BU-Haul Holding Company4 holders"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 1728,
+      "height": 970,
+      "query": "biglari",
+      "hits": [
+        {
+          "id": "BH",
+          "text": "BHBiglari Holdings Inc0 holders"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "query": "nestle",
+      "hits": [
+        {
+          "id": "NSRGY",
+          "text": "NSRGYNestle SA ADR1 holder"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "query": "diageo",
+      "hits": [
+        {
+          "id": "DGE.LSE",
+          "text": "DGE.LSEDiageo PLC8 holders"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "query": "alibaba",
+      "hits": [
+        {
+          "id": "BABA",
+          "text": "BABAAlibaba Group Holding Ltd9 holders"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "query": "gsk",
+      "hits": [
+        {
+          "id": "GSK.LSE",
+          "text": "GSK.LSEGSK plc6 holders"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "query": "carlsberg",
+      "hits": [
+        {
+          "id": "CARL-B.CO",
+          "text": "CARL-B.COCarlsberg A/S1 holder"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "query": "u-haul",
+      "hits": [
+        {
+          "id": "UHAL-B",
+          "text": "UHAL-BU-Haul Holding Company4 holders"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "query": "biglari",
+      "hits": [
+        {
+          "id": "BH",
+          "text": "BHBiglari Holdings Inc0 holders"
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "failures": []
+}

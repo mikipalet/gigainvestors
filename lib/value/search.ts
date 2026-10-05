@@ -1,3 +1,4 @@
+import {issuerSearchNames,normalizedIssuerQuery} from './issuer-search';
 import { bestWesternListing } from "./western";
 import { rankItems, type RankItem } from "../search/rank";
 import type { Company, SearchRow, SearchShard } from "./types";
@@ -11,12 +12,12 @@ function nameWords(name: string): string[] {
 }
 
 function aliases(company: Company): string[] {
-  return [...new Set([company.code, ...company.listings.map(id => id.slice(0, id.lastIndexOf("."))), company.isin ?? "", company.nameLocal ?? company.nativeName ?? ""]
+  return [...new Set([...(issuerSearchNames[company.id]??[]),company.id,...company.listings,company.code, ...company.listings.map(id => id.slice(0, id.lastIndexOf("."))), company.isin ?? "", company.nameLocal ?? company.nativeName ?? ""]
     .map(normalizeSearch).filter(Boolean))].sort();
 }
 
 export function searchTokens(company: Company): string[] {
-  return [...new Set([...nameWords(company.nameEn ?? company.name), ...nameWords(company.nameLocal ?? company.nativeName ?? ""), ...aliases(company)])];
+  return [...new Set([...nameWords(company.nameEn ?? company.name), ...(normalizeSearch(company.nameEn??company.name).match(/[a-z0-9]+(?:-[a-z0-9]+)+/g)??[]), ...nameWords(company.nameLocal ?? company.nativeName ?? ""), ...aliases(company)])];
 }
 
 /** Legacy base-prefix helper. Clients must use shardKeyFor(query, manifest). */
@@ -125,11 +126,12 @@ export function searchShard(shard: SearchShard, query: string, limit = 12): Sear
   }
   items=shard.rows.map((row, i) => ({
     value: row,
-    fields: [nameWords(row[1]).join(" "), ...nameWords(row[1])].map(text => ({ text })),
+    fields: [normalizeSearch(row[1]),nameWords(row[1]).join(" "), ...nameWords(row[1])].map(text => ({ text })),
     aliases: rowAliases[i],
     marketCap: row[4],
   }));
   rankedShards.set(shard,items);
   }
-  return rankItems(items, query, { normalize: normalizeSearch, marketCapTiebreak: true, limit });
+  const exact=items.filter(item=>issuerSearchNames[item.value[0]]?.some(name=>name===normalizedIssuerQuery(query)));
+  return rankItems(exact.length?exact:items, query, { normalize: normalizeSearch, marketCapTiebreak: true, limit });
 }

@@ -4,6 +4,7 @@ import path from 'node:path';
 import {isDeepStrictEqual} from 'node:util';
 import {publishedBuyPrice} from '../../lib/value/buy-price';
 import type {IndexRow,PriceMap} from '../../lib/value/types';
+import issuerRegistry from '../../lib/value/issuer-registry.json';
 
 type Reader = {files:string[]; read:(file:string)=>any};
 function git(repo:string,args:string[]):string {
@@ -50,12 +51,19 @@ export function assertPublishInvariants(repo:string,baseline='HEAD'):void {
  if(meta.views)checkRefs(meta.views);
  const count=(r:Reader)=>r.files.filter(f=>/^dossiers\/\d{3}\.json$/.test(f)).reduce((n,f)=>n+Object.keys(r.read(f)).length,0);
  const before=prior?count(prior):0,after=count(current);
- if(after<before*.99)fail(`dossier count dropped more than 1% (${before} -> ${after})`);
+ const dossierIds=(r:Reader)=>new Set(r.files.filter(f=>/^dossiers\/\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(r.read(f))));
+ const oldIds=prior?dossierIds(prior):new Set<string>(),newIds=dossierIds(current);
+ for(const group of issuerRegistry.groups){
+  const present=group.ids.filter(id=>newIds.has(id));
+  if(present.length>1)fail(`duplicate issuer: ${present.join(', ')}`);
+ }
+ const aliases:Record<string,string>=current.read('aliases.json')??{};
+ for(const [id,target]of Object.entries(aliases))if(id===target||aliases[target]||!newIds.has(target)||newIds.has(id))fail(`invalid issuer alias ${id} -> ${target}`);
+ const aliasedRemovals=[...oldIds].filter(id=>!newIds.has(id)&&aliases[id]&&newIds.has(aliases[id])).length;
+ if(after+aliasedRemovals<before*.99)fail(`dossier count dropped more than 1% (${before} -> ${after})`);
  if(!prior)return;
  const prices=(r:Reader):PriceMap=>Object.assign({},...r.files.filter(f=>/^prices\/[A-Z]{2}\.json$/.test(f)).map(f=>r.read(f)));
  const oldPrices=prices(prior),newPrices=prices(current);
- const dossierIds=(r:Reader)=>new Set(r.files.filter(f=>/^dossiers\/\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(r.read(f))));
- const oldIds=dossierIds(prior),newIds=dossierIds(current);
  for(const file of prior.files.filter(f=>/^index\/(?:default|[A-Z]{2})\.json$/.test(f)))for(const row of prior.read(file)??[])oldIds.add(row.id);
  // Check the default index and every country separately, so offsetting country
  // losses cannot hide in the global total. Analysis changes need explicit review.
@@ -71,6 +79,7 @@ export function assertPublishInvariants(repo:string,baseline='HEAD'):void {
   }
   const delta=newBuys-oldBuys;
   const addedBuys=newRows.filter(row=>row.b&&!oldIds.has(row.id)&&newIds.has(row.id)).length;
-  if(delta>increases+addedBuys||delta < -decreases)fail(`${file} Buy-now changed ${oldBuys} -> ${newBuys}; prices and new dossiers explain at most +${increases+addedBuys}/-${decreases}`);
+  const removedBuys=oldRows.filter(row=>row.b&&!newIds.has(row.id)&&aliases[row.id]&&newIds.has(aliases[row.id])).length;
+  if(delta>increases+addedBuys||delta < -decreases-removedBuys)fail(`${file} Buy-now changed ${oldBuys} -> ${newBuys}; prices and new dossiers explain at most +${increases+addedBuys}/-${decreases}`);
  }
 }

@@ -23,16 +23,20 @@ export async function proxy(request: NextRequest) {
   if(legacyYear){target.pathname='/value'+markdownSuffix;if(!target.searchParams.has('q'))target.searchParams.set('q',`${legacyYear[1]}Q4`);}
   return NextResponse.redirect(target,308);
  }
+ // Resolve identity before content negotiation: streamed pages cannot guarantee 308.
+ if(routePath.startsWith('/s/')){
+  const requested=decodeURIComponent(routePath.slice(3));
+  const id=dossierId(requested).replace(/([A-Z]+)\.([A-Z])\.US$/, '$1-$2.US');
+  const aliases=await readStore<Record<string,string>>('aliases.json');
+  const normalized=companyPath(aliases?.[id]??requested)+markdownSuffix;
+  if(path!==normalized){url.pathname=normalized;return NextResponse.redirect(url,308);}
+ }
  const markdown=markdownRoute(path,false,request.headers.get('accept')??'');
  if(markdown){url.pathname=markdown;return NextResponse.rewrite(url);}
  if(path==='/value'){
   const q=url.searchParams.get('q')??'',year=url.searchParams.get('year')??'';
   const frame=/^\d{4}Q[1-4]$/.test(q)?q:/^\d{4}$/.test(year)?`${year}Q4`:null;
   if(frame){url.pathname=`/value/quarter/${frame}`;return NextResponse.rewrite(url);}
- }
- if(path.startsWith('/s/')){
-  const normalized=companyPath(decodeURIComponent(path.slice(3)));
-  if(path!==normalized){url.pathname=normalized;return NextResponse.redirect(url,308);}
  }
  return NextResponse.next();
 }

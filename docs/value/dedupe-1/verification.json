@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-05T02:27:55.709765+00:00",
+  "unit": {
+    "files": 228,
+    "passed": 2247,
+    "skipped": 1
+  },
+  "browser": {
+    "companies": 10,
+    "states": 250,
+    "viewports": [
+      "1728x970",
+      "390x844"
+    ],
+    "blocking": 0,
+    "rawExit": 1
+  },
+  "ordinaryOutputs": [
+    "/Users/miki/data/value-dedupe/staging/release",
+    "/Users/miki/data/value-dedupe/staging/replay"
+  ],
+  "rootFreeGiB": 8.908683776855469,
+  "logs": {
+    "/Users/miki/data/value-dedupe/logs/unit-final-verified.log": "17b1c2c6d88cf0b8f5511b1b789b5678c5499502990eb4d4c794f246ea589d2b",
+    "/Users/miki/data/value-dedupe/logs/build-verified.log": "edb2338b86403a432e12001c473a674a3e23acde1c33d91b88a83b7b5e968f72",
+    "/Users/miki/data/value-dedupe/logs/tsc-final.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/miki/data/value-dedupe/logs/publish-release-final.log": "73ea364c6f4c7268724518496556a9947e990bab32b0ff349a323c396d3c3191",
+    "/Users/miki/data/value-dedupe/logs/browser-gate.log": "5631a0c67a6e3a98dab6d70d66b570508f9e44fd539df171a3a3aeb6ae855da7",
+    "/Users/miki/data/value-dedupe/logs/green-reintroduction.log": "a68a602933a7bd72120fa756ba11e7eea9fb92c440351028b050855f865be61c",
+    "/Users/miki/data/value-dedupe/logs/live-proof.log": "ffcd5d204fc4b028c57b529665813e20b35b0e2ac338ab4c911073504effa412",
+    "/Users/miki/data/value-dedupe/logs/replay-proof-final.log": "ffcd5d204fc4b028c57b529665813e20b35b0e2ac338ab4c911073504effa412"
+  },
+  "commands": [
+    "VALUE_CORPUS_DIR=/Users/miki/data/value-dedupe/corpus VALUE_NO_EODHD=1 VALUE_MIN_FREE_GB=4 NODE_OPTIONS=--max-old-space-size=1536 node --conditions=react-server --import tsx scripts/value/cli.ts publish --out /Users/miki/data/value-dedupe/staging/release --overwrite",
+    "VALUE_STORE_DIR=/Users/miki/data/value-dedupe/staging/release NEXT_TELEMETRY_DISABLED=1 NODE_OPTIONS=--max-old-space-size=2048 npx next build --webpack",
+    "npx vitest run tests/unit",
+    "npx tsc --noEmit --incremental false",
+    "QA_VIEWPORTS=1728x970,390x844 VALUE_MIN_FREE_GB=4 node scripts/value/release-gate.mjs http://localhost:3037 /Users/miki/data/value-dedupe/browser-gate /s/NSRGY,/s/DGE.LSE,/s/BABA,/s/GSK.LSE,/s/CARL-B.CO,/s/UHAL-B,/s/BH,/s/SSPG.LSE,/s/AMCR,/s/RI.PA"
+  ]
+}

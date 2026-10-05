@@ -1,0 +1,2853 @@
+{
+  "rows": [
+    {
+      "id": "2015.HK",
+      "canonical": "LI.US",
+      "endpoint": "dossier",
+      "resolved": "LI.US",
+      "pass": true
+    },
+    {
+      "id": "2015.HK",
+      "canonical": "LI.US",
+      "endpoint": "verdict",
+      "resolved": "LI.US",
+      "pass": true
+    },
+    {
+      "id": "2015.HK",
+      "canonical": "LI.US",
+      "endpoint": "memo",
+      "resolved": "LI.US",
+      "pass": true
+    },
+    {
+      "id": "2015.HK",
+      "canonical": "LI.US",
+      "endpoint": "priceStory",
+      "resolved": "LI.US",
+      "pass": true
+    },
+    {
+      "id": "600938.SHG",
+      "canonical": "0883.HK",
+      "endpoint": "dossier",
+      "resolved": "0883.HK",
+      "pass": true
+    },
+    {
+      "id": "600938.SHG",
+      "canonical": "0883.HK",
+      "endpoint": "verdict",
+      "resolved": "0883.HK",
+      "pass": true
+    },
+    {
+      "id": "600938.SHG",
+      "canonical": "0883.HK",
+      "endpoint": "memo",
+      "resolved": "0883.HK",
+      "pass": true
+    },
+    {
+      "id": "600938.SHG",
+      "canonical": "0883.HK",
+      "endpoint": "priceStory",
+      "resolved": "0883.HK",
+      "pass": true
+    },
+    {
+      "id": "600941.SHG",
+      "canonical": "0941.HK",
+      "endpoint": "dossier",
+      "resolved": "0941.HK",
+      "pass": true
+    },
+    {
+      "id": "600941.SHG",
+      "canonical": "0941.HK",
+      "endpoint": "verdict",
+      "resolved": "0941.HK",
+      "pass": true
+    },
+    {
+      "id": "600941.SHG",
+      "canonical": "0941.HK",
+      "endpoint": "memo",
+      "resolved": "0941.HK",
+      "pass": true
+    },
+    {
+      "id": "600941.SHG",
+      "canonical": "0941.HK",
+      "endpoint": "priceStory",
+      "resolved": "0941.HK",
+      "pass": true
+    },
+    {
+      "id": "6690.HK",
+      "canonical": "600690.SHG",
+      "endpoint": "dossier",
+      "resolved": "600690.SHG",
+      "pass": true
+    },
+    {
+      "id": "6690.HK",
+      "canonical": "600690.SHG",
+      "endpoint": "verdict",
+      "resolved": "600690.SHG",
+      "pass": true
+    },
+    {
+      "id": "6690.HK",
+      "canonical": "600690.SHG",
+      "endpoint": "memo",
+      "resolved": "600690.SHG",
+      "pass": true
+    },
+    {
+      "id": "6690.HK",
+      "canonical": "600690.SHG",
+      "endpoint": "priceStory",
+      "resolved": "600690.SHG",
+      "pass": true
+    },
+    {
+      "id": "688981.SHG",
+      "canonical": "0981.HK",
+      "endpoint": "dossier",
+      "resolved": "0981.HK",
+      "pass": true
+    },
+    {
+      "id": "688981.SHG",
+      "canonical": "0981.HK",
+      "endpoint": "verdict",
+      "resolved": "0981.HK",
+      "pass": true
+    },
+    {
+      "id": "688981.SHG",
+      "canonical": "0981.HK",
+      "endpoint": "memo",
+      "resolved": "0981.HK",
+      "pass": true
+    },
+    {
+      "id": "688981.SHG",
+      "canonical": "0981.HK",
+      "endpoint": "priceStory",
+      "resolved": "0981.HK",
+      "pass": true
+    },
+    {
+      "id": "9888.HK",
+      "canonical": "BIDU.US",
+      "endpoint": "dossier",
+      "resolved": "BIDU.US",
+      "pass": true
+    },
+    {
+      "id": "9888.HK",
+      "canonical": "BIDU.US",
+      "endpoint": "verdict",
+      "resolved": "BIDU.US",
+      "pass": true
+    },
+    {
+      "id": "9888.HK",
+      "canonical": "BIDU.US",
+      "endpoint": "memo",
+      "resolved": "BIDU.US",
+      "pass": true
+    },
+    {
+      "id": "9888.HK",
+      "canonical": "BIDU.US",
+      "endpoint": "priceStory",
+      "resolved": "BIDU.US",
+      "pass": true
+    },
+    {
+      "id": "9988.HK",
+      "canonical": "BABA.US",
+      "endpoint": "dossier",
+      "resolved": "BABA.US",
+      "pass": true
+    },
+    {
+      "id": "9988.HK",
+      "canonical": "BABA.US",
+      "endpoint": "verdict",
+      "resolved": "BABA.US",
+      "pass": true
+    },
+    {
+      "id": "9988.HK",
+      "canonical": "BABA.US",
+      "endpoint": "memo",
+      "resolved": "BABA.US",
+      "pass": true
+    },
+    {
+      "id": "9988.HK",
+      "canonical": "BABA.US",
+      "endpoint": "priceStory",
+      "resolved": "BABA.US",
+      "pass": true
+    },
+    {
+      "id": "9999.HK",
+      "canonical": "NTES.US",
+      "endpoint": "dossier",
+      "resolved": "NTES.US",
+      "pass": true
+    },
+    {
+      "id": "9999.HK",
+      "canonical": "NTES.US",
+      "endpoint": "verdict",
+      "resolved": "NTES.US",
+      "pass": true
+    },
+    {
+      "id": "9999.HK",
+      "canonical": "NTES.US",
+      "endpoint": "memo",
+      "resolved": "NTES.US",
+      "pass": true
+    },
+    {
+      "id": "9999.HK",
+      "canonical": "NTES.US",
+      "endpoint": "priceStory",
+      "resolved": "NTES.US",
+      "pass": true
+    },
+    {
+      "id": "ABVX.PA",
+      "canonical": "ABVX.US",
+      "endpoint": "dossier",
+      "resolved": "ABVX.US",
+      "pass": true
+    },
+    {
+      "id": "ABVX.PA",
+      "canonical": "ABVX.US",
+      "endpoint": "verdict",
+      "resolved": "ABVX.US",
+      "pass": true
+    },
+    {
+      "id": "ABVX.PA",
+      "canonical": "ABVX.US",
+      "endpoint": "memo",
+      "resolved": "ABVX.US",
+      "pass": true
+    },
+    {
+      "id": "ABVX.PA",
+      "canonical": "ABVX.US",
+      "endpoint": "priceStory",
+      "resolved": "ABVX.US",
+      "pass": true
+    },
+    {
+      "id": "AGN.AS",
+      "canonical": "AEG.US",
+      "endpoint": "dossier",
+      "resolved": "AEG.US",
+      "pass": true
+    },
+    {
+      "id": "AGN.AS",
+      "canonical": "AEG.US",
+      "endpoint": "verdict",
+      "resolved": "AEG.US",
+      "pass": true
+    },
+    {
+      "id": "AGN.AS",
+      "canonical": "AEG.US",
+      "endpoint": "memo",
+      "resolved": "AEG.US",
+      "pass": true
+    },
+    {
+      "id": "AGN.AS",
+      "canonical": "AEG.US",
+      "endpoint": "priceStory",
+      "resolved": "AEG.US",
+      "pass": true
+    },
+    {
+      "id": "AKBLF.US",
+      "canonical": "ALK-B.CO",
+      "endpoint": "dossier",
+      "resolved": "ALK-B.CO",
+      "pass": true
+    },
+    {
+      "id": "AKBLF.US",
+      "canonical": "ALK-B.CO",
+      "endpoint": "verdict",
+      "resolved": "ALK-B.CO",
+      "pass": true
+    },
+    {
+      "id": "AKBLF.US",
+      "canonical": "ALK-B.CO",
+      "endpoint": "memo",
+      "resolved": "ALK-B.CO",
+      "pass": true
+    },
+    {
+      "id": "AKBLF.US",
+      "canonical": "ALK-B.CO",
+      "endpoint": "priceStory",
+      "resolved": "ALK-B.CO",
+      "pass": true
+    },
+    {
+      "id": "AMC.AU",
+      "canonical": "AMCR.US",
+      "endpoint": "dossier",
+      "resolved": "AMCR.US",
+      "pass": true
+    },
+    {
+      "id": "AMC.AU",
+      "canonical": "AMCR.US",
+      "endpoint": "verdict",
+      "resolved": "AMCR.US",
+      "pass": true
+    },
+    {
+      "id": "AMC.AU",
+      "canonical": "AMCR.US",
+      "endpoint": "memo",
+      "resolved": "AMCR.US",
+      "pass": true
+    },
+    {
+      "id": "AMC.AU",
+      "canonical": "AMCR.US",
+      "endpoint": "priceStory",
+      "resolved": "AMCR.US",
+      "pass": true
+    },
+    {
+      "id": "ASAIY.US",
+      "canonical": "ASAI3.SA",
+      "endpoint": "dossier",
+      "resolved": "ASAI3.SA",
+      "pass": true
+    },
+    {
+      "id": "ASAIY.US",
+      "canonical": "ASAI3.SA",
+      "endpoint": "verdict",
+      "resolved": "ASAI3.SA",
+      "pass": true
+    },
+    {
+      "id": "ASAIY.US",
+      "canonical": "ASAI3.SA",
+      "endpoint": "memo",
+      "resolved": "ASAI3.SA",
+      "pass": true
+    },
+    {
+      "id": "ASAIY.US",
+      "canonical": "ASAI3.SA",
+      "endpoint": "priceStory",
+      "resolved": "ASAI3.SA",
+      "pass": true
+    },
+    {
+      "id": "BATRK.US",
+      "canonical": "BATRA.US",
+      "endpoint": "dossier",
+      "resolved": "BATRA.US",
+      "pass": true
+    },
+    {
+      "id": "BATRK.US",
+      "canonical": "BATRA.US",
+      "endpoint": "verdict",
+      "resolved": "BATRA.US",
+      "pass": true
+    },
+    {
+      "id": "BATRK.US",
+      "canonical": "BATRA.US",
+      "endpoint": "memo",
+      "resolved": "BATRA.US",
+      "pass": true
+    },
+    {
+      "id": "BATRK.US",
+      "canonical": "BATRA.US",
+      "endpoint": "priceStory",
+      "resolved": "BATRA.US",
+      "pass": true
+    },
+    {
+      "id": "BDRFY.US",
+      "canonical": "BEI.XETRA",
+      "endpoint": "dossier",
+      "resolved": "BEI.XETRA",
+      "pass": true
+    },
+    {
+      "id": "BDRFY.US",
+      "canonical": "BEI.XETRA",
+      "endpoint": "verdict",
+      "resolved": "BEI.XETRA",
+      "pass": true
+    },
+    {
+      "id": "BDRFY.US",
+      "canonical": "BEI.XETRA",
+      "endpoint": "memo",
+      "resolved": "BEI.XETRA",
+      "pass": true
+    },
+    {
+      "id": "BDRFY.US",
+      "canonical": "BEI.XETRA",
+      "endpoint": "priceStory",
+      "resolved": "BEI.XETRA",
+      "pass": true
+    },
+    {
+      "id": "BH-A.US",
+      "canonical": "BH.US",
+      "endpoint": "dossier",
+      "resolved": "BH.US",
+      "pass": true
+    },
+    {
+      "id": "BH-A.US",
+      "canonical": "BH.US",
+      "endpoint": "verdict",
+      "resolved": "BH.US",
+      "pass": true
+    },
+    {
+      "id": "BH-A.US",
+      "canonical": "BH.US",
+      "endpoint": "memo",
+      "resolved": "BH.US",
+      "pass": true
+    },
+    {
+      "id": "BH-A.US",
+      "canonical": "BH.US",
+      "endpoint": "priceStory",
+      "resolved": "BH.US",
+      "pass": true
+    },
+    {
+      "id": "BUDFF.US",
+      "canonical": "ABI.BR",
+      "endpoint": "dossier",
+      "resolved": "ABI.BR",
+      "pass": true
+    },
+    {
+      "id": "BUDFF.US",
+      "canonical": "ABI.BR",
+      "endpoint": "verdict",
+      "resolved": "ABI.BR",
+      "pass": true
+    },
+    {
+      "id": "BUDFF.US",
+      "canonical": "ABI.BR",
+      "endpoint": "memo",
+      "resolved": "ABI.BR",
+      "pass": true
+    },
+    {
+      "id": "BUDFF.US",
+      "canonical": "ABI.BR",
+      "endpoint": "priceStory",
+      "resolved": "ABI.BR",
+      "pass": true
+    },
+    {
+      "id": "CABJF.US",
+      "canonical": "CARL-B.CO",
+      "endpoint": "dossier",
+      "resolved": "CARL-B.CO",
+      "pass": true
+    },
+    {
+      "id": "CABJF.US",
+      "canonical": "CARL-B.CO",
+      "endpoint": "verdict",
+      "resolved": "CARL-B.CO",
+      "pass": true
+    },
+    {
+      "id": "CABJF.US",
+      "canonical": "CARL-B.CO",
+      "endpoint": "memo",
+      "resolved": "CARL-B.CO",
+      "pass": true
+    },
+    {
+      "id": "CABJF.US",
+      "canonical": "CARL-B.CO",
+      "endpoint": "priceStory",
+      "resolved": "CARL-B.CO",
+      "pass": true
+    },
+    {
+      "id": "DGEAF.US",
+      "canonical": "DGE.LSE",
+      "endpoint": "dossier",
+      "resolved": "DGE.LSE",
+      "pass": true
+    },
+    {
+      "id": "DGEAF.US",
+      "canonical": "DGE.LSE",
+      "endpoint": "verdict",
+      "resolved": "DGE.LSE",
+      "pass": true
+    },
+    {
+      "id": "DGEAF.US",
+      "canonical": "DGE.LSE",
+      "endpoint": "memo",
+      "resolved": "DGE.LSE",
+      "pass": true
+    },
+    {
+      "id": "DGEAF.US",
+      "canonical": "DGE.LSE",
+      "endpoint": "priceStory",
+      "resolved": "DGE.LSE",
+      "pass": true
+    },
+    {
+      "id": "ERFSF.US",
+      "canonical": "ERF.PA",
+      "endpoint": "dossier",
+      "resolved": "ERF.PA",
+      "pass": true
+    },
+    {
+      "id": "ERFSF.US",
+      "canonical": "ERF.PA",
+      "endpoint": "verdict",
+      "resolved": "ERF.PA",
+      "pass": true
+    },
+    {
+      "id": "ERFSF.US",
+      "canonical": "ERF.PA",
+      "endpoint": "memo",
+      "resolved": "ERF.PA",
+      "pass": true
+    },
+    {
+      "id": "ERFSF.US",
+      "canonical": "ERF.PA",
+      "endpoint": "priceStory",
+      "resolved": "ERF.PA",
+      "pass": true
+    },
+    {
+      "id": "FEMSAUBD.MX",
+      "canonical": "FMX.US",
+      "endpoint": "dossier",
+      "resolved": "FMX.US",
+      "pass": true
+    },
+    {
+      "id": "FEMSAUBD.MX",
+      "canonical": "FMX.US",
+      "endpoint": "verdict",
+      "resolved": "FMX.US",
+      "pass": true
+    },
+    {
+      "id": "FEMSAUBD.MX",
+      "canonical": "FMX.US",
+      "endpoint": "memo",
+      "resolved": "FMX.US",
+      "pass": true
+    },
+    {
+      "id": "FEMSAUBD.MX",
+      "canonical": "FMX.US",
+      "endpoint": "priceStory",
+      "resolved": "FMX.US",
+      "pass": true
+    },
+    {
+      "id": "FFH.TO",
+      "canonical": "FRFHF.US",
+      "endpoint": "dossier",
+      "resolved": "FRFHF.US",
+      "pass": true
+    },
+    {
+      "id": "FFH.TO",
+      "canonical": "FRFHF.US",
+      "endpoint": "verdict",
+      "resolved": "FRFHF.US",
+      "pass": true
+    },
+    {
+      "id": "FFH.TO",
+      "canonical": "FRFHF.US",
+      "endpoint": "memo",
+      "resolved": "FRFHF.US",
+      "pass": true
+    },
+    {
+      "id": "FFH.TO",
+      "canonical": "FRFHF.US",
+      "endpoint": "priceStory",
+      "resolved": "FRFHF.US",
+      "pass": true
+    },
+    {
+      "id": "FME.XETRA",
+      "canonical": "FMS.US",
+      "endpoint": "dossier",
+      "resolved": "FMS.US",
+      "pass": true
+    },
+    {
+      "id": "FME.XETRA",
+      "canonical": "FMS.US",
+      "endpoint": "verdict",
+      "resolved": "FMS.US",
+      "pass": true
+    },
+    {
+      "id": "FME.XETRA",
+      "canonical": "FMS.US",
+      "endpoint": "memo",
+      "resolved": "FMS.US",
+      "pass": true
+    },
+    {
+      "id": "FME.XETRA",
+      "canonical": "FMS.US",
+      "endpoint": "priceStory",
+      "resolved": "FMS.US",
+      "pass": true
+    },
+    {
+      "id": "FWONA.US",
+      "canonical": "FWONK.US",
+      "endpoint": "dossier",
+      "resolved": "FWONK.US",
+      "pass": true
+    },
+    {
+      "id": "FWONA.US",
+      "canonical": "FWONK.US",
+      "endpoint": "verdict",
+      "resolved": "FWONK.US",
+      "pass": true
+    },
+    {
+      "id": "FWONA.US",
+      "canonical": "FWONK.US",
+      "endpoint": "memo",
+      "resolved": "FWONK.US",
+      "pass": true
+    },
+    {
+      "id": "FWONA.US",
+      "canonical": "FWONK.US",
+      "endpoint": "priceStory",
+      "resolved": "FWONK.US",
+      "pass": true
+    },
+    {
+      "id": "GLIBK.US",
+      "canonical": "GLIBA.US",
+      "endpoint": "dossier",
+      "resolved": "GLIBA.US",
+      "pass": true
+    },
+    {
+      "id": "GLIBK.US",
+      "canonical": "GLIBA.US",
+      "endpoint": "verdict",
+      "resolved": "GLIBA.US",
+      "pass": true
+    },
+    {
+      "id": "GLIBK.US",
+      "canonical": "GLIBA.US",
+      "endpoint": "memo",
+      "resolved": "GLIBA.US",
+      "pass": true
+    },
+    {
+      "id": "GLIBK.US",
+      "canonical": "GLIBA.US",
+      "endpoint": "priceStory",
+      "resolved": "GLIBA.US",
+      "pass": true
+    },
+    {
+      "id": "GSK.US",
+      "canonical": "GSK.LSE",
+      "endpoint": "dossier",
+      "resolved": "GSK.LSE",
+      "pass": true
+    },
+    {
+      "id": "GSK.US",
+      "canonical": "GSK.LSE",
+      "endpoint": "verdict",
+      "resolved": "GSK.LSE",
+      "pass": true
+    },
+    {
+      "id": "GSK.US",
+      "canonical": "GSK.LSE",
+      "endpoint": "memo",
+      "resolved": "GSK.LSE",
+      "pass": true
+    },
+    {
+      "id": "GSK.US",
+      "canonical": "GSK.LSE",
+      "endpoint": "priceStory",
+      "resolved": "GSK.LSE",
+      "pass": true
+    },
+    {
+      "id": "HEN3.XETRA",
+      "canonical": "HEN.XETRA",
+      "endpoint": "dossier",
+      "resolved": "HEN.XETRA",
+      "pass": true
+    },
+    {
+      "id": "HEN3.XETRA",
+      "canonical": "HEN.XETRA",
+      "endpoint": "verdict",
+      "resolved": "HEN.XETRA",
+      "pass": true
+    },
+    {
+      "id": "HEN3.XETRA",
+      "canonical": "HEN.XETRA",
+      "endpoint": "memo",
+      "resolved": "HEN.XETRA",
+      "pass": true
+    },
+    {
+      "id": "HEN3.XETRA",
+      "canonical": "HEN.XETRA",
+      "endpoint": "priceStory",
+      "resolved": "HEN.XETRA",
+      "pass": true
+    },
+    {
+      "id": "HESAY.US",
+      "canonical": "RMS.PA",
+      "endpoint": "dossier",
+      "resolved": "RMS.PA",
+      "pass": true
+    },
+    {
+      "id": "HESAY.US",
+      "canonical": "RMS.PA",
+      "endpoint": "verdict",
+      "resolved": "RMS.PA",
+      "pass": true
+    },
+    {
+      "id": "HESAY.US",
+      "canonical": "RMS.PA",
+      "endpoint": "memo",
+      "resolved": "RMS.PA",
+      "pass": true
+    },
+    {
+      "id": "HESAY.US",
+      "canonical": "RMS.PA",
+      "endpoint": "priceStory",
+      "resolved": "RMS.PA",
+      "pass": true
+    },
+    {
+      "id": "HKLB.LSE",
+      "canonical": "HKHGF.US",
+      "endpoint": "dossier",
+      "resolved": "HKHGF.US",
+      "pass": true
+    },
+    {
+      "id": "HKLB.LSE",
+      "canonical": "HKHGF.US",
+      "endpoint": "verdict",
+      "resolved": "HKHGF.US",
+      "pass": true
+    },
+    {
+      "id": "HKLB.LSE",
+      "canonical": "HKHGF.US",
+      "endpoint": "memo",
+      "resolved": "HKHGF.US",
+      "pass": true
+    },
+    {
+      "id": "HKLB.LSE",
+      "canonical": "HKHGF.US",
+      "endpoint": "priceStory",
+      "resolved": "HKHGF.US",
+      "pass": true
+    },
+    {
+      "id": "HXGBY.US",
+      "canonical": "HEXA-B.ST",
+      "endpoint": "dossier",
+      "resolved": "HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "id": "HXGBY.US",
+      "canonical": "HEXA-B.ST",
+      "endpoint": "verdict",
+      "resolved": "HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "id": "HXGBY.US",
+      "canonical": "HEXA-B.ST",
+      "endpoint": "memo",
+      "resolved": "HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "id": "HXGBY.US",
+      "canonical": "HEXA-B.ST",
+      "endpoint": "priceStory",
+      "resolved": "HEXA-B.ST",
+      "pass": true
+    },
+    {
+      "id": "ING.US",
+      "canonical": "INGA.AS",
+      "endpoint": "dossier",
+      "resolved": "INGA.AS",
+      "pass": true
+    },
+    {
+      "id": "ING.US",
+      "canonical": "INGA.AS",
+      "endpoint": "verdict",
+      "resolved": "INGA.AS",
+      "pass": true
+    },
+    {
+      "id": "ING.US",
+      "canonical": "INGA.AS",
+      "endpoint": "memo",
+      "resolved": "INGA.AS",
+      "pass": true
+    },
+    {
+      "id": "ING.US",
+      "canonical": "INGA.AS",
+      "endpoint": "priceStory",
+      "resolved": "INGA.AS",
+      "pass": true
+    },
+    {
+      "id": "ITUB3.SA",
+      "canonical": "ITUB.US",
+      "endpoint": "dossier",
+      "resolved": "ITUB.US",
+      "pass": true
+    },
+    {
+      "id": "ITUB3.SA",
+      "canonical": "ITUB.US",
+      "endpoint": "verdict",
+      "resolved": "ITUB.US",
+      "pass": true
+    },
+    {
+      "id": "ITUB3.SA",
+      "canonical": "ITUB.US",
+      "endpoint": "memo",
+      "resolved": "ITUB.US",
+      "pass": true
+    },
+    {
+      "id": "ITUB3.SA",
+      "canonical": "ITUB.US",
+      "endpoint": "priceStory",
+      "resolved": "ITUB.US",
+      "pass": true
+    },
+    {
+      "id": "JHX.AU",
+      "canonical": "JHX.US",
+      "endpoint": "dossier",
+      "resolved": "JHX.US",
+      "pass": true
+    },
+    {
+      "id": "JHX.AU",
+      "canonical": "JHX.US",
+      "endpoint": "verdict",
+      "resolved": "JHX.US",
+      "pass": true
+    },
+    {
+      "id": "JHX.AU",
+      "canonical": "JHX.US",
+      "endpoint": "memo",
+      "resolved": "JHX.US",
+      "pass": true
+    },
+    {
+      "id": "JHX.AU",
+      "canonical": "JHX.US",
+      "endpoint": "priceStory",
+      "resolved": "JHX.US",
+      "pass": true
+    },
+    {
+      "id": "LBTYK.US",
+      "canonical": "LBTYA.US",
+      "endpoint": "dossier",
+      "resolved": "LBTYA.US",
+      "pass": true
+    },
+    {
+      "id": "LBTYK.US",
+      "canonical": "LBTYA.US",
+      "endpoint": "verdict",
+      "resolved": "LBTYA.US",
+      "pass": true
+    },
+    {
+      "id": "LBTYK.US",
+      "canonical": "LBTYA.US",
+      "endpoint": "memo",
+      "resolved": "LBTYA.US",
+      "pass": true
+    },
+    {
+      "id": "LBTYK.US",
+      "canonical": "LBTYA.US",
+      "endpoint": "priceStory",
+      "resolved": "LBTYA.US",
+      "pass": true
+    },
+    {
+      "id": "LILAK.US",
+      "canonical": "LILA.US",
+      "endpoint": "dossier",
+      "resolved": "LILA.US",
+      "pass": true
+    },
+    {
+      "id": "LILAK.US",
+      "canonical": "LILA.US",
+      "endpoint": "verdict",
+      "resolved": "LILA.US",
+      "pass": true
+    },
+    {
+      "id": "LILAK.US",
+      "canonical": "LILA.US",
+      "endpoint": "memo",
+      "resolved": "LILA.US",
+      "pass": true
+    },
+    {
+      "id": "LILAK.US",
+      "canonical": "LILA.US",
+      "endpoint": "priceStory",
+      "resolved": "LILA.US",
+      "pass": true
+    },
+    {
+      "id": "LLYVK.US",
+      "canonical": "LLYVA.US",
+      "endpoint": "dossier",
+      "resolved": "LLYVA.US",
+      "pass": true
+    },
+    {
+      "id": "LLYVK.US",
+      "canonical": "LLYVA.US",
+      "endpoint": "verdict",
+      "resolved": "LLYVA.US",
+      "pass": true
+    },
+    {
+      "id": "LLYVK.US",
+      "canonical": "LLYVA.US",
+      "endpoint": "memo",
+      "resolved": "LLYVA.US",
+      "pass": true
+    },
+    {
+      "id": "LLYVK.US",
+      "canonical": "LLYVA.US",
+      "endpoint": "priceStory",
+      "resolved": "LLYVA.US",
+      "pass": true
+    },
+    {
+      "id": "LRLCF.US",
+      "canonical": "OR.PA",
+      "endpoint": "dossier",
+      "resolved": "OR.PA",
+      "pass": true
+    },
+    {
+      "id": "LRLCF.US",
+      "canonical": "OR.PA",
+      "endpoint": "verdict",
+      "resolved": "OR.PA",
+      "pass": true
+    },
+    {
+      "id": "LRLCF.US",
+      "canonical": "OR.PA",
+      "endpoint": "memo",
+      "resolved": "OR.PA",
+      "pass": true
+    },
+    {
+      "id": "LRLCF.US",
+      "canonical": "OR.PA",
+      "endpoint": "priceStory",
+      "resolved": "OR.PA",
+      "pass": true
+    },
+    {
+      "id": "NESN.SW",
+      "canonical": "NSRGY.US",
+      "endpoint": "dossier",
+      "resolved": "NSRGY.US",
+      "pass": true
+    },
+    {
+      "id": "NESN.SW",
+      "canonical": "NSRGY.US",
+      "endpoint": "verdict",
+      "resolved": "NSRGY.US",
+      "pass": true
+    },
+    {
+      "id": "NESN.SW",
+      "canonical": "NSRGY.US",
+      "endpoint": "memo",
+      "resolved": "NSRGY.US",
+      "pass": true
+    },
+    {
+      "id": "NESN.SW",
+      "canonical": "NSRGY.US",
+      "endpoint": "priceStory",
+      "resolved": "NSRGY.US",
+      "pass": true
+    },
+    {
+      "id": "NSRGF.US",
+      "canonical": "NSRGY.US",
+      "endpoint": "dossier",
+      "resolved": "NSRGY.US",
+      "pass": true
+    },
+    {
+      "id": "NSRGF.US",
+      "canonical": "NSRGY.US",
+      "endpoint": "verdict",
+      "resolved": "NSRGY.US",
+      "pass": true
+    },
+    {
+      "id": "NSRGF.US",
+      "canonical": "NSRGY.US",
+      "endpoint": "memo",
+      "resolved": "NSRGY.US",
+      "pass": true
+    },
+    {
+      "id": "NSRGF.US",
+      "canonical": "NSRGY.US",
+      "endpoint": "priceStory",
+      "resolved": "NSRGY.US",
+      "pass": true
+    },
+    {
+      "id": "NWS.AU",
+      "canonical": "NWS.US",
+      "endpoint": "dossier",
+      "resolved": "NWS.US",
+      "pass": true
+    },
+    {
+      "id": "NWS.AU",
+      "canonical": "NWS.US",
+      "endpoint": "verdict",
+      "resolved": "NWS.US",
+      "pass": true
+    },
+    {
+      "id": "NWS.AU",
+      "canonical": "NWS.US",
+      "endpoint": "memo",
+      "resolved": "NWS.US",
+      "pass": true
+    },
+    {
+      "id": "NWS.AU",
+      "canonical": "NWS.US",
+      "endpoint": "priceStory",
+      "resolved": "NWS.US",
+      "pass": true
+    },
+    {
+      "id": "NWSA.US",
+      "canonical": "NWS.US",
+      "endpoint": "dossier",
+      "resolved": "NWS.US",
+      "pass": true
+    },
+    {
+      "id": "NWSA.US",
+      "canonical": "NWS.US",
+      "endpoint": "verdict",
+      "resolved": "NWS.US",
+      "pass": true
+    },
+    {
+      "id": "NWSA.US",
+      "canonical": "NWS.US",
+      "endpoint": "memo",
+      "resolved": "NWS.US",
+      "pass": true
+    },
+    {
+      "id": "NWSA.US",
+      "canonical": "NWS.US",
+      "endpoint": "priceStory",
+      "resolved": "NWS.US",
+      "pass": true
+    },
+    {
+      "id": "NXG.AU",
+      "canonical": "NXE.US",
+      "endpoint": "dossier",
+      "resolved": "NXE.US",
+      "pass": true
+    },
+    {
+      "id": "NXG.AU",
+      "canonical": "NXE.US",
+      "endpoint": "verdict",
+      "resolved": "NXE.US",
+      "pass": true
+    },
+    {
+      "id": "NXG.AU",
+      "canonical": "NXE.US",
+      "endpoint": "memo",
+      "resolved": "NXE.US",
+      "pass": true
+    },
+    {
+      "id": "NXG.AU",
+      "canonical": "NXE.US",
+      "endpoint": "priceStory",
+      "resolved": "NXE.US",
+      "pass": true
+    },
+    {
+      "id": "PDRDF.US",
+      "canonical": "RI.PA",
+      "endpoint": "dossier",
+      "resolved": "RI.PA",
+      "pass": true
+    },
+    {
+      "id": "PDRDF.US",
+      "canonical": "RI.PA",
+      "endpoint": "verdict",
+      "resolved": "RI.PA",
+      "pass": true
+    },
+    {
+      "id": "PDRDF.US",
+      "canonical": "RI.PA",
+      "endpoint": "memo",
+      "resolved": "RI.PA",
+      "pass": true
+    },
+    {
+      "id": "PDRDF.US",
+      "canonical": "RI.PA",
+      "endpoint": "priceStory",
+      "resolved": "RI.PA",
+      "pass": true
+    },
+    {
+      "id": "PRNDY.US",
+      "canonical": "RI.PA",
+      "endpoint": "dossier",
+      "resolved": "RI.PA",
+      "pass": true
+    },
+    {
+      "id": "PRNDY.US",
+      "canonical": "RI.PA",
+      "endpoint": "verdict",
+      "resolved": "RI.PA",
+      "pass": true
+    },
+    {
+      "id": "PRNDY.US",
+      "canonical": "RI.PA",
+      "endpoint": "memo",
+      "resolved": "RI.PA",
+      "pass": true
+    },
+    {
+      "id": "PRNDY.US",
+      "canonical": "RI.PA",
+      "endpoint": "priceStory",
+      "resolved": "RI.PA",
+      "pass": true
+    },
+    {
+      "id": "RBGPF.US",
+      "canonical": "RKT.LSE",
+      "endpoint": "dossier",
+      "resolved": "RKT.LSE",
+      "pass": true
+    },
+    {
+      "id": "RBGPF.US",
+      "canonical": "RKT.LSE",
+      "endpoint": "verdict",
+      "resolved": "RKT.LSE",
+      "pass": true
+    },
+    {
+      "id": "RBGPF.US",
+      "canonical": "RKT.LSE",
+      "endpoint": "memo",
+      "resolved": "RKT.LSE",
+      "pass": true
+    },
+    {
+      "id": "RBGPF.US",
+      "canonical": "RKT.LSE",
+      "endpoint": "priceStory",
+      "resolved": "RKT.LSE",
+      "pass": true
+    },
+    {
+      "id": "RDY.US",
+      "canonical": "DRREDDY.NSE",
+      "endpoint": "dossier",
+      "resolved": "DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "id": "RDY.US",
+      "canonical": "DRREDDY.NSE",
+      "endpoint": "verdict",
+      "resolved": "DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "id": "RDY.US",
+      "canonical": "DRREDDY.NSE",
+      "endpoint": "memo",
+      "resolved": "DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "id": "RDY.US",
+      "canonical": "DRREDDY.NSE",
+      "endpoint": "priceStory",
+      "resolved": "DRREDDY.NSE",
+      "pass": true
+    },
+    {
+      "id": "RTO.US",
+      "canonical": "RTO.LSE",
+      "endpoint": "dossier",
+      "resolved": "RTO.LSE",
+      "pass": true
+    },
+    {
+      "id": "RTO.US",
+      "canonical": "RTO.LSE",
+      "endpoint": "verdict",
+      "resolved": "RTO.LSE",
+      "pass": true
+    },
+    {
+      "id": "RTO.US",
+      "canonical": "RTO.LSE",
+      "endpoint": "memo",
+      "resolved": "RTO.LSE",
+      "pass": true
+    },
+    {
+      "id": "RTO.US",
+      "canonical": "RTO.LSE",
+      "endpoint": "priceStory",
+      "resolved": "RTO.LSE",
+      "pass": true
+    },
+    {
+      "id": "RUSHB.US",
+      "canonical": "RUSHA.US",
+      "endpoint": "dossier",
+      "resolved": "RUSHA.US",
+      "pass": true
+    },
+    {
+      "id": "RUSHB.US",
+      "canonical": "RUSHA.US",
+      "endpoint": "verdict",
+      "resolved": "RUSHA.US",
+      "pass": true
+    },
+    {
+      "id": "RUSHB.US",
+      "canonical": "RUSHA.US",
+      "endpoint": "memo",
+      "resolved": "RUSHA.US",
+      "pass": true
+    },
+    {
+      "id": "RUSHB.US",
+      "canonical": "RUSHA.US",
+      "endpoint": "priceStory",
+      "resolved": "RUSHA.US",
+      "pass": true
+    },
+    {
+      "id": "RYCEY.US",
+      "canonical": "RR.LSE",
+      "endpoint": "dossier",
+      "resolved": "RR.LSE",
+      "pass": true
+    },
+    {
+      "id": "RYCEY.US",
+      "canonical": "RR.LSE",
+      "endpoint": "verdict",
+      "resolved": "RR.LSE",
+      "pass": true
+    },
+    {
+      "id": "RYCEY.US",
+      "canonical": "RR.LSE",
+      "endpoint": "memo",
+      "resolved": "RR.LSE",
+      "pass": true
+    },
+    {
+      "id": "RYCEY.US",
+      "canonical": "RR.LSE",
+      "endpoint": "priceStory",
+      "resolved": "RR.LSE",
+      "pass": true
+    },
+    {
+      "id": "SN.LSE",
+      "canonical": "SNN.US",
+      "endpoint": "dossier",
+      "resolved": "SNN.US",
+      "pass": true
+    },
+    {
+      "id": "SN.LSE",
+      "canonical": "SNN.US",
+      "endpoint": "verdict",
+      "resolved": "SNN.US",
+      "pass": true
+    },
+    {
+      "id": "SN.LSE",
+      "canonical": "SNN.US",
+      "endpoint": "memo",
+      "resolved": "SNN.US",
+      "pass": true
+    },
+    {
+      "id": "SN.LSE",
+      "canonical": "SNN.US",
+      "endpoint": "priceStory",
+      "resolved": "SNN.US",
+      "pass": true
+    },
+    {
+      "id": "SSPPF.US",
+      "canonical": "SSPG.LSE",
+      "endpoint": "dossier",
+      "resolved": "SSPG.LSE",
+      "pass": true
+    },
+    {
+      "id": "SSPPF.US",
+      "canonical": "SSPG.LSE",
+      "endpoint": "verdict",
+      "resolved": "SSPG.LSE",
+      "pass": true
+    },
+    {
+      "id": "SSPPF.US",
+      "canonical": "SSPG.LSE",
+      "endpoint": "memo",
+      "resolved": "SSPG.LSE",
+      "pass": true
+    },
+    {
+      "id": "SSPPF.US",
+      "canonical": "SSPG.LSE",
+      "endpoint": "priceStory",
+      "resolved": "SSPG.LSE",
+      "pass": true
+    },
+    {
+      "id": "UA.US",
+      "canonical": "UAA.US",
+      "endpoint": "dossier",
+      "resolved": "UAA.US",
+      "pass": true
+    },
+    {
+      "id": "UA.US",
+      "canonical": "UAA.US",
+      "endpoint": "verdict",
+      "resolved": "UAA.US",
+      "pass": true
+    },
+    {
+      "id": "UA.US",
+      "canonical": "UAA.US",
+      "endpoint": "memo",
+      "resolved": "UAA.US",
+      "pass": true
+    },
+    {
+      "id": "UA.US",
+      "canonical": "UAA.US",
+      "endpoint": "priceStory",
+      "resolved": "UAA.US",
+      "pass": true
+    },
+    {
+      "id": "UHAL.US",
+      "canonical": "UHAL-B.US",
+      "endpoint": "dossier",
+      "resolved": "UHAL-B.US",
+      "pass": true
+    },
+    {
+      "id": "UHAL.US",
+      "canonical": "UHAL-B.US",
+      "endpoint": "verdict",
+      "resolved": "UHAL-B.US",
+      "pass": true
+    },
+    {
+      "id": "UHAL.US",
+      "canonical": "UHAL-B.US",
+      "endpoint": "memo",
+      "resolved": "UHAL-B.US",
+      "pass": true
+    },
+    {
+      "id": "UHAL.US",
+      "canonical": "UHAL-B.US",
+      "endpoint": "priceStory",
+      "resolved": "UHAL-B.US",
+      "pass": true
+    },
+    {
+      "id": "VESTA.MX",
+      "canonical": "VTMX.US",
+      "endpoint": "dossier",
+      "resolved": "VTMX.US",
+      "pass": true
+    },
+    {
+      "id": "VESTA.MX",
+      "canonical": "VTMX.US",
+      "endpoint": "verdict",
+      "resolved": "VTMX.US",
+      "pass": true
+    },
+    {
+      "id": "VESTA.MX",
+      "canonical": "VTMX.US",
+      "endpoint": "memo",
+      "resolved": "VTMX.US",
+      "pass": true
+    },
+    {
+      "id": "VESTA.MX",
+      "canonical": "VTMX.US",
+      "endpoint": "priceStory",
+      "resolved": "VTMX.US",
+      "pass": true
+    },
+    {
+      "id": "VOW3.XETRA",
+      "canonical": "VOW.XETRA",
+      "endpoint": "dossier",
+      "resolved": "VOW.XETRA",
+      "pass": true
+    },
+    {
+      "id": "VOW3.XETRA",
+      "canonical": "VOW.XETRA",
+      "endpoint": "verdict",
+      "resolved": "VOW.XETRA",
+      "pass": true
+    },
+    {
+      "id": "VOW3.XETRA",
+      "canonical": "VOW.XETRA",
+      "endpoint": "memo",
+      "resolved": "VOW.XETRA",
+      "pass": true
+    },
+    {
+      "id": "VOW3.XETRA",
+      "canonical": "VOW.XETRA",
+      "endpoint": "priceStory",
+      "resolved": "VOW.XETRA",
+      "pass": true
+    },
+    {
+      "id": "WILLF.US",
+      "canonical": "DEMANT.CO",
+      "endpoint": "dossier",
+      "resolved": "DEMANT.CO",
+      "pass": true
+    },
+    {
+      "id": "WILLF.US",
+      "canonical": "DEMANT.CO",
+      "endpoint": "verdict",
+      "resolved": "DEMANT.CO",
+      "pass": true
+    },
+    {
+      "id": "WILLF.US",
+      "canonical": "DEMANT.CO",
+      "endpoint": "memo",
+      "resolved": "DEMANT.CO",
+      "pass": true
+    },
+    {
+      "id": "WILLF.US",
+      "canonical": "DEMANT.CO",
+      "endpoint": "priceStory",
+      "resolved": "DEMANT.CO",
+      "pass": true
+    },
+    {
+      "id": "Z.US",
+      "canonical": "ZG.US",
+      "endpoint": "dossier",
+      "resolved": "ZG.US",
+      "pass": true
+    },
+    {
+      "id": "Z.US",
+      "canonical": "ZG.US",
+      "endpoint": "verdict",
+      "resolved": "ZG.US",
+      "pass": true
+    },
+    {
+      "id": "Z.US",
+      "canonical": "ZG.US",
+      "endpoint": "memo",
+      "resolved": "ZG.US",
+      "pass": true
+    },
+    {
+      "id": "Z.US",
+      "canonical": "ZG.US",
+      "endpoint": "priceStory",
+      "resolved": "ZG.US",
+      "pass": true
+    },
+    {
+      "id": "ZTO.US",
+      "canonical": "2057.HK",
+      "endpoint": "dossier",
+      "resolved": "2057.HK",
+      "pass": true
+    },
+    {
+      "id": "ZTO.US",
+      "canonical": "2057.HK",
+      "endpoint": "verdict",
+      "resolved": "2057.HK",
+      "pass": true
+    },
+    {
+      "id": "ZTO.US",
+      "canonical": "2057.HK",
+      "endpoint": "memo",
+      "resolved": "2057.HK",
+      "pass": true
+    },
+    {
+      "id": "ZTO.US",
+      "canonical": "2057.HK",
+      "endpoint": "priceStory",
+      "resolved": "2057.HK",
+      "pass": true
+    }
+  ],
+  "ownership": [
+    {
+      "id": "2057.HK",
+      "canonical": "2057.HK",
+      "holderCount": 1
+    },
+    {
+      "id": "ZTO.US",
+      "canonical": "2057.HK",
+      "holderCount": 1
+    },
+    {
+      "id": "ABI.BR",
+      "canonical": "ABI.BR",
+      "holderCount": 5
+    },
+    {
+      "id": "BUD.US",
+      "canonical": "ABI.BR",
+      "holderCount": 5
+    },
+    {
+      "id": "ANH.JSE",
+      "canonical": "ABI.BR",
+      "holderCount": 5
+    },
+    {
+      "id": "BUDFF.US",
+      "canonical": "ABI.BR",
+      "holderCount": 5
+    },
+    {
+      "id": "ABVX.US",
+      "canonical": "ABVX.US",
+      "holderCount": 1
+    },
+    {
+      "id": "ABVX.PA",
+      "canonical": "ABVX.US",
+      "holderCount": 1
+    },
+    {
+      "id": "AEG.US",
+      "canonical": "AEG.US",
+      "holderCount": 1
+    },
+    {
+      "id": "AGN.AS",
+      "canonical": "AEG.US",
+      "holderCount": 1
+    },
+    {
+      "id": "ALK-B.CO",
+      "canonical": "ALK-B.CO",
+      "holderCount": 1
+    },
+    {
+      "id": "AKBLF.US",
+      "canonical": "ALK-B.CO",
+      "holderCount": 1
+    },
+    {
+      "id": "AMCR.US",
+      "canonical": "AMCR.US",
+      "holderCount": 1
+    },
+    {
+      "id": "AMC.AU",
+      "canonical": "AMCR.US",
+      "holderCount": 1
+    },
+    {
+      "id": "ASAI3.SA",
+      "canonical": "ASAI3.SA",
+      "holderCount": 1
+    },
+    {
+      "id": "ASAIY.US",
+      "canonical": "ASAI3.SA",
+      "holderCount": 1
+    },
+    {
+      "id": "BABA.US",
+      "canonical": "BABA.US",
+      "holderCount": 9
+    },
+    {
+      "id": "9988.HK",
+      "canonical": "BABA.US",
+      "holderCount": 9
+    },
+    {
+      "id": "BATRA.US",
+      "canonical": "BATRA.US",
+      "holderCount": 2
+    },
+    {
+      "id": "BATRK.US",
+      "canonical": "BATRA.US",
+      "holderCount": 2
+    },
+    {
+      "id": "BH.US",
+      "canonical": "BH.US",
+      "holderCount": 1
+    },
+    {
+      "id": "BH-A.US",
+      "canonical": "BH.US",
+      "holderCount": 1
+    },
+    {
+      "id": "BIDU.US",
+      "canonical": "BIDU.US",
+      "holderCount": 4
+    },
+    {
+      "id": "9888.HK",
+      "canonical": "BIDU.US",
+      "holderCount": 4
+    },
+    {
+      "id": "CARL-B.CO",
+      "canonical": "CARL-B.CO",
+      "holderCount": 1
+    },
+    {
+      "id": "CARL-A.CO",
+      "canonical": "CARL-B.CO",
+      "holderCount": 1
+    },
+    {
+      "id": "CABJF.US",
+      "canonical": "CARL-B.CO",
+      "holderCount": 1
+    },
+    {
+      "id": "DEMANT.CO",
+      "canonical": "DEMANT.CO",
+      "holderCount": 1
+    },
+    {
+      "id": "WILLF.US",
+      "canonical": "DEMANT.CO",
+      "holderCount": 1
+    },
+    {
+      "id": "DGE.LSE",
+      "canonical": "DGE.LSE",
+      "holderCount": 8
+    },
+    {
+      "id": "DEO.US",
+      "canonical": "DGE.LSE",
+      "holderCount": 8
+    },
+    {
+      "id": "DGED.LSE",
+      "canonical": "DGE.LSE",
+      "holderCount": 8
+    },
+    {
+      "id": "DGEAF.US",
+      "canonical": "DGE.LSE",
+      "holderCount": 8
+    },
+    {
+      "id": "DRREDDY.NSE",
+      "canonical": "DRREDDY.NSE",
+      "holderCount": 1
+    },
+    {
+      "id": "RDY.US",
+      "canonical": "DRREDDY.NSE",
+      "holderCount": 1
+    },
+    {
+      "id": "ERF.PA",
+      "canonical": "ERF.PA",
+      "holderCount": 1
+    },
+    {
+      "id": "ERFSF.US",
+      "canonical": "ERF.PA",
+      "holderCount": 1
+    },
+    {
+      "id": "FMS.US",
+      "canonical": "FMS.US",
+      "holderCount": 2
+    },
+    {
+      "id": "FME.F",
+      "canonical": "FMS.US",
+      "holderCount": 2
+    },
+    {
+      "id": "FME.STU",
+      "canonical": "FMS.US",
+      "holderCount": 2
+    },
+    {
+      "id": "FME.XETRA",
+      "canonical": "FMS.US",
+      "holderCount": 2
+    },
+    {
+      "id": "FMX.US",
+      "canonical": "FMX.US",
+      "holderCount": 2
+    },
+    {
+      "id": "FEMSAUBD.MX",
+      "canonical": "FMX.US",
+      "holderCount": 2
+    },
+    {
+      "id": "FRFHF.US",
+      "canonical": "FRFHF.US",
+      "holderCount": 2
+    },
+    {
+      "id": "FFH.TO",
+      "canonical": "FRFHF.US",
+      "holderCount": 2
+    },
+    {
+      "id": "FWONK.US",
+      "canonical": "FWONK.US",
+      "holderCount": 4
+    },
+    {
+      "id": "FWONA.US",
+      "canonical": "FWONK.US",
+      "holderCount": 4
+    },
+    {
+      "id": "GLIBA.US",
+      "canonical": "GLIBA.US",
+      "holderCount": 2
+    },
+    {
+      "id": "GLIBK.US",
+      "canonical": "GLIBA.US",
+      "holderCount": 2
+    },
+    {
+      "id": "GSK.LSE",
+      "canonical": "GSK.LSE",
+      "holderCount": 6
+    },
+    {
+      "id": "GSK.US",
+      "canonical": "GSK.LSE",
+      "holderCount": 6
+    },
+    {
+      "id": "HKHGF.US",
+      "canonical": "HKHGF.US",
+      "holderCount": 1
+    },
+    {
+      "id": "HKLB.LSE",
+      "canonical": "HKHGF.US",
+      "holderCount": 1
+    },
+    {
+      "id": "INGA.AS",
+      "canonical": "INGA.AS",
+      "holderCount": 2
+    },
+    {
+      "id": "ING.US",
+      "canonical": "INGA.AS",
+      "holderCount": 2
+    },
+    {
+      "id": "ITUB.US",
+      "canonical": "ITUB.US",
+      "holderCount": 1
+    },
+    {
+      "id": "ITUB3.SA",
+      "canonical": "ITUB.US",
+      "holderCount": 1
+    },
+    {
+      "id": "JHX.US",
+      "canonical": "JHX.US",
+      "holderCount": 2
+    },
+    {
+      "id": "JHX.AU",
+      "canonical": "JHX.US",
+      "holderCount": 2
+    },
+    {
+      "id": "LBTYA.US",
+      "canonical": "LBTYA.US",
+      "holderCount": 4
+    },
+    {
+      "id": "LBTYB.US",
+      "canonical": "LBTYA.US",
+      "holderCount": 4
+    },
+    {
+      "id": "LBTYK.US",
+      "canonical": "LBTYA.US",
+      "holderCount": 4
+    },
+    {
+      "id": "LI.US",
+      "canonical": "LI.US",
+      "holderCount": 1
+    },
+    {
+      "id": "2015.HK",
+      "canonical": "LI.US",
+      "holderCount": 1
+    },
+    {
+      "id": "LILA.US",
+      "canonical": "LILA.US",
+      "holderCount": 1
+    },
+    {
+      "id": "LILAK.US",
+      "canonical": "LILA.US",
+      "holderCount": 1
+    },
+    {
+      "id": "LLYVA.US",
+      "canonical": "LLYVA.US",
+      "holderCount": 2
+    },
+    {
+      "id": "LLYVK.US",
+      "canonical": "LLYVA.US",
+      "holderCount": 2
+    },
+    {
+      "id": "NSRGY.US",
+      "canonical": "NSRGY.US",
+      "holderCount": 1
+    },
+    {
+      "id": "NESN.SW",
+      "canonical": "NSRGY.US",
+      "holderCount": 1
+    },
+    {
+      "id": "NSRGF.US",
+      "canonical": "NSRGY.US",
+      "holderCount": 1
+    },
+    {
+      "id": "NTES.US",
+      "canonical": "NTES.US",
+      "holderCount": 3
+    },
+    {
+      "id": "9999.HK",
+      "canonical": "NTES.US",
+      "holderCount": 3
+    },
+    {
+      "id": "NWS.US",
+      "canonical": "NWS.US",
+      "holderCount": 2
+    },
+    {
+      "id": "NWSA.US",
+      "canonical": "NWS.US",
+      "holderCount": 2
+    },
+    {
+      "id": "NWSLV.AU",
+      "canonical": "NWS.US",
+      "holderCount": 2
+    },
+    {
+      "id": "NWS.AU",
+      "canonical": "NWS.US",
+      "holderCount": 2
+    },
+    {
+      "id": "NXE.US",
+      "canonical": "NXE.US",
+      "holderCount": 1
+    },
+    {
+      "id": "NXG.AU",
+      "canonical": "NXE.US",
+      "holderCount": 1
+    },
+    {
+      "id": "OR.PA",
+      "canonical": "OR.PA",
+      "holderCount": 1
+    },
+    {
+      "id": "LRLCF.US",
+      "canonical": "OR.PA",
+      "holderCount": 1
+    },
+    {
+      "id": "RI.PA",
+      "canonical": "RI.PA",
+      "holderCount": 1
+    },
+    {
+      "id": "PDRDF.US",
+      "canonical": "RI.PA",
+      "holderCount": 1
+    },
+    {
+      "id": "PRNDY.US",
+      "canonical": "RI.PA",
+      "holderCount": 1
+    },
+    {
+      "id": "RKT.LSE",
+      "canonical": "RKT.LSE",
+      "holderCount": 1
+    },
+    {
+      "id": "RBGPF.US",
+      "canonical": "RKT.LSE",
+      "holderCount": 1
+    },
+    {
+      "id": "RR.LSE",
+      "canonical": "RR.LSE",
+      "holderCount": 1
+    },
+    {
+      "id": "RYCEY.US",
+      "canonical": "RR.LSE",
+      "holderCount": 1
+    },
+    {
+      "id": "RTO.LSE",
+      "canonical": "RTO.LSE",
+      "holderCount": 1
+    },
+    {
+      "id": "RTO.US",
+      "canonical": "RTO.LSE",
+      "holderCount": 1
+    },
+    {
+      "id": "RUSHA.US",
+      "canonical": "RUSHA.US",
+      "holderCount": 2
+    },
+    {
+      "id": "RUSHB.US",
+      "canonical": "RUSHA.US",
+      "holderCount": 2
+    },
+    {
+      "id": "SNN.US",
+      "canonical": "SNN.US",
+      "holderCount": 1
+    },
+    {
+      "id": "SN.LSE",
+      "canonical": "SNN.US",
+      "holderCount": 1
+    },
+    {
+      "id": "SSPG.LSE",
+      "canonical": "SSPG.LSE",
+      "holderCount": 1
+    },
+    {
+      "id": "SSPPF.US",
+      "canonical": "SSPG.LSE",
+      "holderCount": 1
+    },
+    {
+      "id": "UAA.US",
+      "canonical": "UAA.US",
+      "holderCount": 1
+    },
+    {
+      "id": "UA.US",
+      "canonical": "UAA.US",
+      "holderCount": 1
+    },
+    {
+      "id": "UHAL-B.US",
+      "canonical": "UHAL-B.US",
+      "holderCount": 4
+    },
+    {
+      "id": "UHAL.US",
+      "canonical": "UHAL-B.US",
+      "holderCount": 4
+    },
+    {
+      "id": "VTMX.US",
+      "canonical": "VTMX.US",
+      "holderCount": 1
+    },
+    {
+      "id": "VESTA.MX",
+      "canonical": "VTMX.US",
+      "holderCount": 1
+    },
+    {
+      "id": "ZG.US",
+      "canonical": "ZG.US",
+      "holderCount": 2
+    },
+    {
+      "id": "Z.US",
+      "canonical": "ZG.US",
+      "holderCount": 2
+    }
+  ],
+  "holders": [
+    {
+      "id": "0883.HK",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "quarters": 0,
+      "positions": 0,
+      "pass": true
+    },
+    {
+      "id": "0941.HK",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "quarters": 0,
+      "positions": 0,
+      "pass": true
+    },
+    {
+      "id": "0981.HK",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "quarters": 0,
+      "positions": 0,
+      "pass": true
+    },
+    {
+      "id": "2057.HK",
+      "dossierHolders": [
+        "PIM"
+      ],
+      "listings": [
+        "ZTO"
+      ],
+      "quarters": 38,
+      "positions": 13,
+      "pass": true
+    },
+    {
+      "id": "600690.SHG",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "quarters": 0,
+      "positions": 0,
+      "pass": true
+    },
+    {
+      "id": "ABI.BR",
+      "dossierHolders": [
+        "CAU",
+        "DAC",
+        "GFT",
+        "GR",
+        "mc"
+      ],
+      "listings": [
+        "BUD",
+        "BUDFF"
+      ],
+      "quarters": 79,
+      "positions": 145,
+      "pass": true
+    },
+    {
+      "id": "ABVX.US",
+      "dossierHolders": [
+        "mc"
+      ],
+      "listings": [
+        "ABVX"
+      ],
+      "quarters": 1,
+      "positions": 1,
+      "pass": true
+    },
+    {
+      "id": "AEG.US",
+      "dossierHolders": [
+        "DAC"
+      ],
+      "listings": [
+        "AEG"
+      ],
+      "quarters": 10,
+      "positions": 10,
+      "pass": true
+    },
+    {
+      "id": "ALK-B.CO",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "AKBLF"
+      ],
+      "quarters": 3,
+      "positions": 3,
+      "pass": true
+    },
+    {
+      "id": "AMCR.US",
+      "dossierHolders": [
+        "MPF"
+      ],
+      "listings": [
+        "AMCR"
+      ],
+      "quarters": 10,
+      "positions": 12,
+      "pass": true
+    },
+    {
+      "id": "ASAI3.SA",
+      "dossierHolders": [],
+      "listings": [
+        "ASAIY"
+      ],
+      "quarters": 5,
+      "positions": 5,
+      "pass": true
+    },
+    {
+      "id": "BABA.US",
+      "dossierHolders": [
+        "AM",
+        "ca",
+        "CAU",
+        "DAC",
+        "HA",
+        "HH",
+        "PIM",
+        "SP",
+        "TB"
+      ],
+      "listings": [
+        "BABA"
+      ],
+      "quarters": 48,
+      "positions": 365,
+      "pass": true
+    },
+    {
+      "id": "BATRA.US",
+      "dossierHolders": [
+        "SE",
+        "TA"
+      ],
+      "listings": [
+        "BATRA",
+        "BATRK"
+      ],
+      "quarters": 41,
+      "positions": 53,
+      "pass": true
+    },
+    {
+      "id": "BEI.XETRA",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "quarters": 0,
+      "positions": 0,
+      "pass": true
+    },
+    {
+      "id": "BH.US",
+      "dossierHolders": [],
+      "listings": [
+        "BH",
+        "BH.A"
+      ],
+      "quarters": 45,
+      "positions": 12,
+      "pass": true
+    },
+    {
+      "id": "BIDU.US",
+      "dossierHolders": [
+        "AM",
+        "DAC",
+        "FPA",
+        "PIM"
+      ],
+      "listings": [
+        "BIDU"
+      ],
+      "quarters": 51,
+      "positions": 104,
+      "pass": true
+    },
+    {
+      "id": "CARL-B.CO",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "CABJF"
+      ],
+      "quarters": 25,
+      "positions": 25,
+      "pass": true
+    },
+    {
+      "id": "DEMANT.CO",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "WILLF"
+      ],
+      "quarters": 6,
+      "positions": 6,
+      "pass": true
+    },
+    {
+      "id": "DGE.LSE",
+      "dossierHolders": [
+        "CAU",
+        "DAC",
+        "FE",
+        "HA",
+        "HCM",
+        "MKL",
+        "TB"
+      ],
+      "listings": [
+        "DEO",
+        "DGEAF"
+      ],
+      "quarters": 79,
+      "positions": 200,
+      "pass": true
+    },
+    {
+      "id": "DRREDDY.NSE",
+      "dossierHolders": [],
+      "listings": [
+        "RDY"
+      ],
+      "quarters": 13,
+      "positions": 13,
+      "pass": true
+    },
+    {
+      "id": "ERF.PA",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "ERFSF"
+      ],
+      "quarters": 2,
+      "positions": 2,
+      "pass": true
+    },
+    {
+      "id": "FMS.US",
+      "dossierHolders": [
+        "DAC",
+        "PIM"
+      ],
+      "listings": [
+        "FMS"
+      ],
+      "quarters": 10,
+      "positions": 23,
+      "pass": true
+    },
+    {
+      "id": "FMX.US",
+      "dossierHolders": [
+        "FE",
+        "HA"
+      ],
+      "listings": [
+        "FMX"
+      ],
+      "quarters": 66,
+      "positions": 105,
+      "pass": true
+    },
+    {
+      "id": "FRFHF.US",
+      "dossierHolders": [
+        "CHE",
+        "KB"
+      ],
+      "listings": [
+        "FRFHF"
+      ],
+      "quarters": 71,
+      "positions": 21,
+      "pass": true
+    },
+    {
+      "id": "FWONK.US",
+      "dossierHolders": [
+        "RC",
+        "SP",
+        "TGM"
+      ],
+      "listings": [
+        "FWONK",
+        "FWONA"
+      ],
+      "quarters": 59,
+      "positions": 100,
+      "pass": true
+    },
+    {
+      "id": "GLIBA.US",
+      "dossierHolders": [
+        "RC",
+        "SE"
+      ],
+      "listings": [
+        "GLIBA",
+        "GLIBK"
+      ],
+      "quarters": 26,
+      "positions": 16,
+      "pass": true
+    },
+    {
+      "id": "GSK.LSE",
+      "dossierHolders": [
+        "CAU",
+        "DAC",
+        "HCM",
+        "KB",
+        "PIM",
+        "TB"
+      ],
+      "listings": [
+        "GSK"
+      ],
+      "quarters": 75,
+      "positions": 137,
+      "pass": true
+    },
+    {
+      "id": "HEN.XETRA",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "quarters": 0,
+      "positions": 0,
+      "pass": true
+    },
+    {
+      "id": "HEXA-B.ST",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "quarters": 0,
+      "positions": 0,
+      "pass": true
+    },
+    {
+      "id": "HKHGF.US",
+      "dossierHolders": [
+        "TA"
+      ],
+      "listings": [
+        "HKHGF"
+      ],
+      "quarters": 1,
+      "positions": 1,
+      "pass": true
+    },
+    {
+      "id": "INGA.AS",
+      "dossierHolders": [
+        "CAU",
+        "PIM"
+      ],
+      "listings": [
+        "ING"
+      ],
+      "quarters": 15,
+      "positions": 25,
+      "pass": true
+    },
+    {
+      "id": "ITUB.US",
+      "dossierHolders": [
+        "oc"
+      ],
+      "listings": [
+        "ITUB"
+      ],
+      "quarters": 55,
+      "positions": 35,
+      "pass": true
+    },
+    {
+      "id": "JHX.US",
+      "dossierHolders": [
+        "FE",
+        "MPF"
+      ],
+      "listings": [
+        "JHX"
+      ],
+      "quarters": 4,
+      "positions": 7,
+      "pass": true
+    },
+    {
+      "id": "LBTYA.US",
+      "dossierHolders": [
+        "BAUPOST",
+        "DAC",
+        "GLRE",
+        "oc"
+      ],
+      "listings": [
+        "LBTYA",
+        "LBTYK"
+      ],
+      "quarters": 61,
+      "positions": 262,
+      "pass": true
+    },
+    {
+      "id": "LI.US",
+      "dossierHolders": [],
+      "listings": [
+        "LI"
+      ],
+      "quarters": 20,
+      "positions": 23,
+      "pass": true
+    },
+    {
+      "id": "LILA.US",
+      "dossierHolders": [
+        "oc"
+      ],
+      "listings": [
+        "LILA",
+        "LILAK"
+      ],
+      "quarters": 44,
+      "positions": 88,
+      "pass": true
+    },
+    {
+      "id": "LLYVA.US",
+      "dossierHolders": [
+        "BRK",
+        "VA"
+      ],
+      "listings": [
+        "LLYVA",
+        "LLYVK"
+      ],
+      "quarters": 12,
+      "positions": 34,
+      "pass": true
+    },
+    {
+      "id": "NSRGY.US",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "NSRGY",
+        "NSRGF"
+      ],
+      "quarters": 68,
+      "positions": 68,
+      "pass": true
+    },
+    {
+      "id": "NTES.US",
+      "dossierHolders": [
+        "CAU",
+        "DAC",
+        "DAV"
+      ],
+      "listings": [
+        "NTES"
+      ],
+      "quarters": 62,
+      "positions": 61,
+      "pass": true
+    },
+    {
+      "id": "NWS.US",
+      "dossierHolders": [
+        "DAC",
+        "YAM"
+      ],
+      "listings": [
+        "NWS",
+        "NWSA"
+      ],
+      "quarters": 52,
+      "positions": 49,
+      "pass": true
+    },
+    {
+      "id": "NXE.US",
+      "dossierHolders": [
+        "pcm"
+      ],
+      "listings": [
+        "NXE"
+      ],
+      "quarters": 4,
+      "positions": 4,
+      "pass": true
+    },
+    {
+      "id": "OR.PA",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "LRLCF"
+      ],
+      "quarters": 60,
+      "positions": 60,
+      "pass": true
+    },
+    {
+      "id": "RI.PA",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "PDRDF",
+        "PRNDY"
+      ],
+      "quarters": 62,
+      "positions": 62,
+      "pass": true
+    },
+    {
+      "id": "RKT.LSE",
+      "dossierHolders": [],
+      "listings": [
+        "RBGPF"
+      ],
+      "quarters": 56,
+      "positions": 56,
+      "pass": true
+    },
+    {
+      "id": "RMS.PA",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "quarters": 0,
+      "positions": 0,
+      "pass": true
+    },
+    {
+      "id": "RR.LSE",
+      "dossierHolders": [
+        "T"
+      ],
+      "listings": [
+        "RYCEY"
+      ],
+      "quarters": 9,
+      "positions": 7,
+      "pass": true
+    },
+    {
+      "id": "RTO.LSE",
+      "dossierHolders": [],
+      "listings": [
+        "RTO"
+      ],
+      "quarters": 4,
+      "positions": 4,
+      "pass": true
+    },
+    {
+      "id": "RUSHA.US",
+      "dossierHolders": [
+        "FPA",
+        "MUHL"
+      ],
+      "listings": [
+        "RUSHA",
+        "RUSHB"
+      ],
+      "quarters": 11,
+      "positions": 21,
+      "pass": true
+    },
+    {
+      "id": "SNN.US",
+      "dossierHolders": [
+        "CAU"
+      ],
+      "listings": [
+        "SNN"
+      ],
+      "quarters": 7,
+      "positions": 7,
+      "pass": true
+    },
+    {
+      "id": "SSPG.LSE",
+      "dossierHolders": [
+        "GR"
+      ],
+      "listings": [
+        "SSPPF"
+      ],
+      "quarters": 6,
+      "positions": 6,
+      "pass": true
+    },
+    {
+      "id": "UAA.US",
+      "dossierHolders": [
+        "FFH"
+      ],
+      "listings": [
+        "UAA",
+        "UA"
+      ],
+      "quarters": 49,
+      "positions": 52,
+      "pass": true
+    },
+    {
+      "id": "UHAL-B.US",
+      "dossierHolders": [
+        "abc",
+        "TA",
+        "TB",
+        "YAM"
+      ],
+      "listings": [
+        "UHAL.B",
+        "UHAL"
+      ],
+      "quarters": 41,
+      "positions": 130,
+      "pass": true
+    },
+    {
+      "id": "VOW.XETRA",
+      "dossierHolders": [],
+      "listings": [
+        null
+      ],
+      "quarters": 0,
+      "positions": 0,
+      "pass": true
+    },
+    {
+      "id": "VTMX.US",
+      "dossierHolders": [],
+      "listings": [
+        "VTMX"
+      ],
+      "quarters": 5,
+      "positions": 5,
+      "pass": true
+    },
+    {
+      "id": "ZG.US",
+      "dossierHolders": [
+        "KB"
+      ],
+      "listings": [
+        "ZG",
+        "Z"
+      ],
+      "quarters": 23,
+      "positions": 13,
+      "pass": true
+    }
+  ],
+  "historyCopy": [
+    "History covers analysed companies from today’s selected indexes, with coverage varying by quarter. Held companies outside those indexes are not included. Today’s index membership and restated accounts create survivorship and hindsight bias.",
+    "The fair-price count includes every buy-qualified company in that quarter and market scope. Headline gains are equal-weight average price changes for those picks and for all analysed index companies with available returns, including failed quality tests. Companies without a measured price change are excluded from averages. The headline follows the market switch, not the other list filters. Returns exclude dividends and are not annualised; overlapping cohorts are not an investable portfolio.",
+    "Calendar-quarter close; annual quality uses reports filed strictly before quarter end, with a 90-day fallback when filing dates are unknown or equal period end.",
+    "Valuation uses the existing annual normalization capped by filed trailing owner earnings: four consecutive quarters, two consecutive halves, otherwise the last annual report. Expected return is the IRR of the same valuation.",
+    "Stored judgement is restricted to annual periods and evidence filed before quarter end. Current report readings and current share-count overrides are excluded.",
+    "Cached financials may be restated. Current issuer classification, bond yields, FX and surviving universe are retained; this is not a vintage point-in-time backtest.",
+    "Monthly close series are not interpolated; cached split bases may differ. Realized price gains exclude dividends.",
+    "Hit rates are the share of finite cohort returns strictly above the unrounded median return of all analysed companies for that fiscal year; ties are not hits. Empty return cohorts have null statistics."
+  ],
+  "failures": []
+}

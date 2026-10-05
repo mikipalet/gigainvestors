@@ -4,7 +4,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import type { Dossier } from '@/lib/value/types';
 import DossierPage from '@/app/s/[ticker]/page';
 import { getDossier, getPrice } from '@/lib/value/store';
-vi.mock('@/lib/value/store', () => ({ getDossier: vi.fn(), getPrice: vi.fn(), getTopIds: vi.fn(),getSearchCompany:vi.fn(),readStore:vi.fn(async()=>null) }));
+vi.mock('@/lib/value/store', () => ({ getDossier: vi.fn(), getCompanyStock:vi.fn(async()=>null), getPrice: vi.fn(), getTopIds: vi.fn(),getSearchCompany:vi.fn(),readStore:vi.fn(async()=>null) }));
 vi.mock('@/lib/data',()=>({getStock:vi.fn(async()=>null),getIndex:vi.fn(async()=>null)}));
 const fixture: Dossier = JSON.parse(readFileSync('tests/fixtures/value/store/dossiers/027.json', 'utf8'))['KO.US'];
 let dossier: Dossier;

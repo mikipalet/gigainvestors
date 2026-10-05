@@ -1,0 +1,517 @@
+{
+  "openFigi": {
+    "APN.LSE": {
+      "data": [
+        {
+          "figi": "BBG01Q6SCRV6",
+          "name": "APPLIED NUTRITION PLC",
+          "ticker": "APN",
+          "exchCode": "LN",
+          "compositeFIGI": "BBG01KQ6BQF6",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG01KQ6BQG5",
+          "securityType2": "Common Stock",
+          "securityDescription": "APN"
+        }
+      ]
+    },
+    "454910.KO": {
+      "data": [
+        {
+          "figi": "BBG00CX1V045",
+          "name": "DOOSAN ROBOTICS INC",
+          "ticker": "454910",
+          "exchCode": "KS",
+          "compositeFIGI": "BBG00CX1V045",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG00CX1V036",
+          "securityType2": "Common Stock",
+          "securityDescription": "454910"
+        }
+      ]
+    },
+    "VIVA3.SA": {
+      "data": [
+        {
+          "figi": "BBG00Q29WNZ6",
+          "name": "VIVARA PARTICIPACOES SA",
+          "ticker": "VIVA3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG00Q29WNZ6",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG00Q29WP09",
+          "securityType2": "Common Stock",
+          "securityDescription": "VIVA3"
+        }
+      ]
+    },
+    "CFG-PH.US": {
+      "warning": "No identifier found."
+    },
+    "COGN3.SA": {
+      "data": [
+        {
+          "figi": "BBG000DN7YR3",
+          "name": "COGNA EDUCACAO",
+          "ticker": "COGN3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG000DN7YR3",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001SJ2841",
+          "securityType2": "Common Stock",
+          "securityDescription": "COGN3"
+        }
+      ]
+    },
+    "064400.KO": {
+      "data": [
+        {
+          "figi": "BBG000S84792",
+          "name": "LG CNS CO LTD",
+          "ticker": "064400",
+          "exchCode": "KS",
+          "compositeFIGI": "BBG000S84792",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001T2BS25",
+          "securityType2": "Common Stock",
+          "securityDescription": "064400"
+        }
+      ]
+    },
+    "SHAW.LSE": {
+      "data": [
+        {
+          "figi": "BBG01XX5QDL8",
+          "name": "SHAWBROOK GROUP PLC",
+          "ticker": "SHAW",
+          "exchCode": "LN",
+          "compositeFIGI": "BBG01XX5QDK9",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG01XX5QDP4",
+          "securityType2": "Common Stock",
+          "securityDescription": "SHAW"
+        }
+      ]
+    },
+    "ORBIA.MX": {
+      "warning": "No identifier found."
+    },
+    "450080.KO": {
+      "data": [
+        {
+          "figi": "BBG00JC3TVM4",
+          "name": "ECOPRO MATERIALS CO LTD",
+          "ticker": "450080",
+          "exchCode": "KS",
+          "compositeFIGI": "BBG00JC3TVM4",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG00JC3TVN3",
+          "securityType2": "Common Stock",
+          "securityDescription": "450080"
+        }
+      ]
+    },
+    "022100.KO": {
+      "data": [
+        {
+          "figi": "BBG000FH5T60",
+          "name": "POSCO DX CO LTD",
+          "ticker": "022100",
+          "exchCode": "KS",
+          "compositeFIGI": "BBG000FH5T60",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001SGJ536",
+          "securityType2": "Common Stock",
+          "securityDescription": "022100"
+        }
+      ]
+    },
+    "278470.KO": {
+      "data": [
+        {
+          "figi": "BBG00LPLPXF3",
+          "name": "APR CORP/KOREA",
+          "ticker": "278470",
+          "exchCode": "KS",
+          "compositeFIGI": "BBG00LPLPXF3",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG00LPLPXG2",
+          "securityType2": "Common Stock",
+          "securityDescription": "278470"
+        }
+      ]
+    },
+    "MBRF3.SA": {
+      "data": [
+        {
+          "figi": "BBG000R7TF54",
+          "name": "MBRF GLOBAL FOODS COMPANY SA",
+          "ticker": "MBRF3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG000R7TF54",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001ST8DJ6",
+          "securityType2": "Common Stock",
+          "securityDescription": "MBRF3"
+        }
+      ]
+    },
+    "062040.KO": {
+      "data": [
+        {
+          "figi": "BBG001WT5DH6",
+          "name": "SANIL ELECTRIC CO LTD",
+          "ticker": "062040",
+          "exchCode": "KS",
+          "compositeFIGI": "BBG001WT5DH6",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001WT5DJ4",
+          "securityType2": "Common Stock",
+          "securityDescription": "062040"
+        }
+      ]
+    },
+    "TIMS3.SA": {
+      "data": [
+        {
+          "figi": "BBG000BMG9B9",
+          "name": "TIM SA",
+          "ticker": "TIMS3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG000BMG9B9",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001SDGZP6",
+          "securityType2": "Common Stock",
+          "securityDescription": "TIMS3"
+        }
+      ]
+    },
+    "NATU3.SA": {
+      "data": [
+        {
+          "figi": "BBG000DK4GJ0",
+          "name": "NATURA COSMETICOS SA",
+          "ticker": "NATU3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG000DK4GJ0",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001SHNN58",
+          "securityType2": "Common Stock",
+          "securityDescription": "NATU3"
+        }
+      ]
+    },
+    "CEAB3.SA": {
+      "data": [
+        {
+          "figi": "BBG00Q883N02",
+          "name": "C&A MODAS LTDA",
+          "ticker": "CEAB3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG00Q883N02",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG00Q883N11",
+          "securityType2": "Common Stock",
+          "securityDescription": "CEAB3"
+        }
+      ]
+    },
+    "CXSE3.SA": {
+      "data": [
+        {
+          "figi": "BBG009WP3DD3",
+          "name": "CAIXA SEGURIDADE PARTICIPACO",
+          "ticker": "CXSE3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG009WP3DD3",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG009WP3DF1",
+          "securityType2": "Common Stock",
+          "securityDescription": "CXSE3"
+        }
+      ]
+    },
+    "443060.KO": {
+      "data": [
+        {
+          "figi": "BBG00YC8BJQ2",
+          "name": "HD HYUNDAI MARINE SOLUTION C",
+          "ticker": "443060",
+          "exchCode": "KS",
+          "compositeFIGI": "BBG00YC8BJQ2",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG00YC8BJR1",
+          "securityType2": "Common Stock",
+          "securityDescription": "443060"
+        }
+      ]
+    },
+    "034230.KO": {
+      "data": [
+        {
+          "figi": "BBG000BLBPN7",
+          "name": "PARADISE CO LTD",
+          "ticker": "034230",
+          "exchCode": "KS",
+          "compositeFIGI": "BBG000BLBPN7",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001S9Y3G6",
+          "securityType2": "Common Stock",
+          "securityDescription": "034230"
+        }
+      ]
+    },
+    "483650.KO": {
+      "data": [
+        {
+          "figi": "BBG00R1RYLV1",
+          "name": "D'ALBA GLOBAL CO LTD",
+          "ticker": "483650",
+          "exchCode": "KS",
+          "compositeFIGI": "BBG00R1RYLV1",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG00R1RYLW0",
+          "securityType2": "Common Stock",
+          "securityDescription": "483650"
+        }
+      ]
+    },
+    "6919.TW": {
+      "data": [
+        {
+          "figi": "BBG01C1NTWH0",
+          "name": "CALIWAY BIOPHARMACEUTICALS C",
+          "ticker": "6919",
+          "exchCode": "TT (Taiwan Stock Exchange)",
+          "compositeFIGI": "BBG01C1NTWG1",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG01C1NTWK6",
+          "securityType2": "Common Stock",
+          "securityDescription": "6919"
+        }
+      ]
+    },
+    "0H2Z.LSE": {
+      "warning": "No identifier found."
+    },
+    "1T5.MU": {
+      "data": [
+        {
+          "figi": "BBG00328N882",
+          "name": "TAURON POLSKA ENERGIA SA",
+          "ticker": "1T5",
+          "exchCode": "GM",
+          "compositeFIGI": "BBG00328N837",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001SV5823",
+          "securityType2": "Common Stock",
+          "securityDescription": "1T5"
+        }
+      ]
+    },
+    "PTSB.IR": {
+      "data": [
+        {
+          "figi": "BBG000BMQGD0",
+          "name": "PERMANENT TSB GROUP HOLDINGS",
+          "ticker": "PTSB",
+          "exchCode": "ID",
+          "compositeFIGI": "BBG000BMQG40",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001S6P693",
+          "securityType2": "Common Stock",
+          "securityDescription": "PTSB"
+        }
+      ]
+    },
+    "BRAV3.SA": {
+      "data": [
+        {
+          "figi": "BBG00Y4RJKF0",
+          "name": "BRAVA ENERGIA",
+          "ticker": "BRAV3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG00Y4RJKF0",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG00Y4RJKK4",
+          "securityType2": "Common Stock",
+          "securityDescription": "BRAV3"
+        }
+      ]
+    },
+    "ISAE3.SA": {
+      "data": [
+        {
+          "figi": "BBG000D5HVZ8",
+          "name": "ISA ENERGIA BRASIL SA",
+          "ticker": "ISAE3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG000D5HVZ8",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001SD2470",
+          "securityType2": "Common Stock",
+          "securityDescription": "ISAE3"
+        }
+      ]
+    },
+    "0126Z0.KO": {
+      "data": [
+        {
+          "figi": "BBG01V5FHRK1",
+          "name": "SAMSUNG EPISHOLDINGS CO LTD",
+          "ticker": "0126Z0",
+          "exchCode": "KS",
+          "compositeFIGI": "BBG01V5FHRK1",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG01V5FHRT2",
+          "securityType2": "Common Stock",
+          "securityDescription": "0126Z0"
+        }
+      ]
+    },
+    "001289.SHE": {
+      "data": [
+        {
+          "figi": "BBG014R34VM7",
+          "name": "CHINA LONGYUAN POWER GROUP-A",
+          "ticker": "001289",
+          "exchCode": "CH",
+          "compositeFIGI": "BBG014R34VM7",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG014R34VQ3",
+          "securityType2": "Common Stock",
+          "securityDescription": "001289"
+        }
+      ]
+    },
+    "IOS.DU": {
+      "data": [
+        {
+          "figi": "BBG01DHXXZF9",
+          "name": "IONOS GROUP SE",
+          "ticker": "IOS",
+          "exchCode": "GD",
+          "compositeFIGI": "BBG009L329P1",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG009L329Q0",
+          "securityType2": "Common Stock",
+          "securityDescription": "IOS"
+        }
+      ]
+    },
+    "TTST.LSE": {
+      "warning": "No identifier found."
+    },
+    "YDUQ3.SA": {
+      "data": [
+        {
+          "figi": "BBG000RPWPQ5",
+          "name": "YDUQS PARTICIPACOES SA",
+          "ticker": "YDUQ3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG000RPWPQ5",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001SV1ST4",
+          "securityType2": "Common Stock",
+          "securityDescription": "YDUQ3"
+        }
+      ]
+    },
+    "DFIB.LSE": {
+      "data": [
+        {
+          "figi": "BBG000RP00R4",
+          "name": "DFI RETAIL GRP HLD-SING REG",
+          "ticker": "DFIB",
+          "exchCode": "LN",
+          "compositeFIGI": "BBG000RP0076",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001S6NB58",
+          "securityType2": "Common Stock",
+          "securityDescription": "DFIB"
+        }
+      ]
+    },
+    "PRN.LSE": {
+      "data": [
+        {
+          "figi": "BBG01Y38GLB7",
+          "name": "PRINCES GROUP PLC",
+          "ticker": "PRN",
+          "exchCode": "LN",
+          "compositeFIGI": "BBG000C3WGZ0",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001SBXMJ7",
+          "securityType2": "Common Stock",
+          "securityDescription": "PRN"
+        }
+      ]
+    },
+    "AZZA3.SA": {
+      "data": [
+        {
+          "figi": "BBG001BGWLL4",
+          "name": "AZZAS 2154 SA",
+          "ticker": "AZZA3",
+          "exchCode": "BZ",
+          "compositeFIGI": "BBG001BGWLL4",
+          "securityType": "Common Stock",
+          "marketSector": "Equity",
+          "shareClassFIGI": "BBG001TMXPQ7",
+          "securityType2": "Common Stock",
+          "securityDescription": "AZZA3"
+        }
+      ]
+    }
+  },
+  "issuerSources": {
+    "CFG-PH.US": {
+      "cik": "759944",
+      "source": "https://www.sec.gov/Archives/edgar/data/759944/000075994426000028/cfg-20251231.htm",
+      "detail": "Series H preferred and CFG common registered by same issuer; only preferred dossier present."
+    },
+    "ORBIA.MX": {
+      "isin": "MX01OR010004",
+      "source": "https://www.orbia.com/investor-relations/new-ticker/"
+    },
+    "0H2Z.LSE": {
+      "isin": "SE0017832488",
+      "source": "https://www.balder.se/en/about-balder/press/05192022-0800/balder-performs-share-split--6-1--and-resolves-record-date",
+      "listingSource": "https://www.londonstockexchange.com/market-stock/0H2Z/fastighets-ab-balder/trade-recap"
+    },
+    "TTST.LSE": {
+      "isin": "US87656Y4061",
+      "underlying": "INE081A01020",
+      "source": "https://citiadr.factsetdigitalsolutions.com/stocks/profile.idms?cusip=87656Y406&pageId=15&subpageID=151"
+    }
+  }
+}

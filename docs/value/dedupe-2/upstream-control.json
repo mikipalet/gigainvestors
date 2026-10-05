@@ -1,0 +1,542 @@
+{
+  "upstreamCommit": "a95f4c71dc9d345c385133258eb38f6b1af53390",
+  "upstreamWorktree": "/Users/miki/GitHub/superinvestors-wt/value-daily",
+  "liveCount": 3957,
+  "upstreamOutputCount": 3957,
+  "upstreamChanged": [
+    "QXO.US",
+    "DSGX.US",
+    "TAP.US",
+    "BTE.US",
+    "ERO.US",
+    "BELFB.US",
+    "TPHS.US",
+    "BMM.US",
+    "AESI.US",
+    "CGAU.US",
+    "RDY.US",
+    "BHC.US",
+    "BZ.US",
+    "CCU.US",
+    "NWSA.US",
+    "KGEI.US",
+    "NOG.US",
+    "EGO.US",
+    "RBA.US",
+    "FSM.US",
+    "BIO.US",
+    "TV.US",
+    "BTG.US",
+    "GOOS.US",
+    "WSO.US",
+    "TFII.US",
+    "NSRGF.US",
+    "TGS.US",
+    "GHM.US",
+    "RBGPF.US",
+    "PDRDF.US",
+    "RYCEY.US",
+    "BMA.US",
+    "LLYVK.US",
+    "SSPPF.US",
+    "RUSHB.US",
+    "ERFSF.US",
+    "ZH.US",
+    "BH.US",
+    "MEOH.US",
+    "UAA.US",
+    "NTPIF.US",
+    "DCOM.US",
+    "ITUB.US",
+    "LOMA.US",
+    "GFL.US",
+    "ABVX.US",
+    "HEI-A.US",
+    "NICE.US",
+    "PROF.US",
+    "EFXT.US",
+    "BATRK.US",
+    "WILLF.US",
+    "PAM.US",
+    "ASAIY.US",
+    "FWONK.US",
+    "AVBH.US",
+    "ECTXF.US",
+    "NAK.US",
+    "NSRGY.US",
+    "LBTYK.US",
+    "GDS.US",
+    "CENTA.US",
+    "EU.US",
+    "BUDFF.US",
+    "GSK.US",
+    "TEO.US",
+    "CABJF.US",
+    "BLCO.US",
+    "GTN.US",
+    "EQX.US",
+    "DGEAF.US",
+    "PAAS.US",
+    "ZG.US",
+    "UHAL.US",
+    "NXE.US",
+    "HVT.US",
+    "AGI.US",
+    "SA.US",
+    "PRNDY.US",
+    "LRLCF.US",
+    "IAG.US",
+    "PDS.US",
+    "CIGI.US",
+    "MINE.US",
+    "NG.US",
+    "BB.US",
+    "FRFHF.US",
+    "AKBLF.US",
+    "TAC.US",
+    "AQN.US",
+    "TFIN.US",
+    "LILAK.US",
+    "GFI.US",
+    "BTAI.US",
+    "HKHGF.US",
+    "STN.US"
+  ],
+  "dedupeChanged": [
+    "DSGX.US",
+    "BELFB.US",
+    "AESI.US",
+    "NOG.US",
+    "FSM.US",
+    "BTG.US",
+    "GOOS.US",
+    "TFII.US",
+    "TGS.US",
+    "GHM.US",
+    "MEOH.US",
+    "DCOM.US",
+    "ITUB.US",
+    "HEI-A.US",
+    "NICE.US",
+    "FWONK.US",
+    "AVBH.US",
+    "CENTA.US",
+    "TEO.US",
+    "EQX.US",
+    "PAAS.US",
+    "HVT.US",
+    "FRFHF.US",
+    "TAC.US"
+  ],
+  "rows": [
+    {
+      "id": "DSGX.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "BELFB.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "AESI.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "NOG.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "FSM.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "BTG.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "GOOS.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "TFII.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "TGS.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "GHM.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "MEOH.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "DCOM.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "ITUB.US",
+      "upstreamFields": [
+        "priceHistory",
+        "priceStory"
+      ],
+      "dedupeFields": [
+        "priceHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "HEI-A.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceHistory",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceHistory",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "NICE.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "FWONK.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "AVBH.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "CENTA.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "TEO.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "EQX.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "PAAS.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "HVT.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "FRFHF.US",
+      "upstreamFields": [
+        "b",
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "b",
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    },
+    {
+      "id": "TAC.US",
+      "upstreamFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "dedupeFields": [
+        "ownerMemo",
+        "priceStory",
+        "tests",
+        "valuation",
+        "valueHistory"
+      ],
+      "matchesUpstreamExceptStoryTimestamp": true
+    }
+  ],
+  "dedupeOnlyChanged": [],
+  "normalizationForAttributionOnly": "priceStory.asOf removed only for upstream attribution; byte-identity proof remains FAILED without normalization"
+}

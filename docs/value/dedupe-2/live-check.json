@@ -1,0 +1,51 @@
+{
+  "source": "scripts/value/live-check.ts:checkTimeTravel",
+  "base": "http://localhost:3047",
+  "rows": [
+    {
+      "width": 1728,
+      "height": 970,
+      "suffix": "?q=2018Q3",
+      "frame": "2018Q3",
+      "status": 200,
+      "rewrite": "/value/quarter/2018Q3?q=2018Q3"
+    },
+    {
+      "width": 1728,
+      "height": 970,
+      "suffix": "?year=2018",
+      "frame": "2018Q4",
+      "status": 200,
+      "rewrite": "/value/quarter/2018Q4?year=2018"
+    },
+    {
+      "width": 1728,
+      "height": 970,
+      "checkTimeTravel": "pass",
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "suffix": "?q=2018Q3",
+      "frame": "2018Q3",
+      "status": 200,
+      "rewrite": "/value/quarter/2018Q3?q=2018Q3"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "suffix": "?year=2018",
+      "frame": "2018Q4",
+      "status": 200,
+      "rewrite": "/value/quarter/2018Q4?year=2018"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "checkTimeTravel": "pass",
+      "pageErrors": []
+    }
+  ],
+  "failures": []
+}

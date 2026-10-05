@@ -1,0 +1,1050 @@
+{
+  "requests": 174,
+  "failures": [],
+  "rows": [
+    {
+      "path": "/s/2015.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LI?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/2015.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LI?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/2015.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LI?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/600938.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0883.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/600938.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0883.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/600938.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0883.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/600941.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0941.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/600941.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0941.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/600941.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0941.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/6690.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/600690.SHG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/6690.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/600690.SHG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/6690.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/600690.SHG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/688981.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0981.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/688981.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0981.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/688981.SHG?q=2025Q4",
+      "status": 308,
+      "location": "/s/0981.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/9888.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BIDU?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/9888.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BIDU?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/9888.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BIDU?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/9988.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BABA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/9988.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BABA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/9988.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BABA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/9999.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/NTES?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/9999.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/NTES?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/9999.HK?q=2025Q4",
+      "status": 308,
+      "location": "/s/NTES?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ABVX.PA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABVX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ABVX.PA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABVX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/ABVX.PA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABVX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/AGN.AS?q=2025Q4",
+      "status": 308,
+      "location": "/s/AEG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/AGN.AS?q=2025Q4",
+      "status": 308,
+      "location": "/s/AEG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/AGN.AS?q=2025Q4",
+      "status": 308,
+      "location": "/s/AEG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/AKBLF?q=2025Q4",
+      "status": 308,
+      "location": "/s/ALK-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/AKBLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ALK-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/AKBLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ALK-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/AMC.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/AMCR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/AMC.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/AMCR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/AMC.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/AMCR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ASAIY?q=2025Q4",
+      "status": 308,
+      "location": "/s/ASAI3.SA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ASAIY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ASAI3.SA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/ASAIY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ASAI3.SA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/BATRK?q=2025Q4",
+      "status": 308,
+      "location": "/s/BATRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/BATRK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BATRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/BATRK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BATRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/BDRFY?q=2025Q4",
+      "status": 308,
+      "location": "/s/BEI.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/BDRFY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BEI.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/BDRFY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BEI.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/BH-A?q=2025Q4",
+      "status": 308,
+      "location": "/s/BH?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/BH-A.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BH?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/BH-A.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/BH?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/BUDFF?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABI.BR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/BUDFF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABI.BR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/BUDFF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ABI.BR?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/CABJF?q=2025Q4",
+      "status": 308,
+      "location": "/s/CARL-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/CABJF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/CARL-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/CABJF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/CARL-B.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/DGEAF?q=2025Q4",
+      "status": 308,
+      "location": "/s/DGE.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/DGEAF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DGE.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/DGEAF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DGE.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ERFSF?q=2025Q4",
+      "status": 308,
+      "location": "/s/ERF.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ERFSF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ERF.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/ERFSF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ERF.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/FEMSAUBD.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/FEMSAUBD.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/FEMSAUBD.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/FFH.TO?q=2025Q4",
+      "status": 308,
+      "location": "/s/FRFHF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/FFH.TO?q=2025Q4",
+      "status": 308,
+      "location": "/s/FRFHF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/FFH.TO?q=2025Q4",
+      "status": 308,
+      "location": "/s/FRFHF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/FME.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/FME.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/FME.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FMS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/FWONA?q=2025Q4",
+      "status": 308,
+      "location": "/s/FWONK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/FWONA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/FWONK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/FWONA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/FWONK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/GLIBK?q=2025Q4",
+      "status": 308,
+      "location": "/s/GLIBA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/GLIBK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GLIBA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/GLIBK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GLIBA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/GSK?q=2025Q4",
+      "status": 308,
+      "location": "/s/GSK.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/GSK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GSK.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/GSK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/GSK.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/HEN3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEN.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/HEN3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEN.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/HEN3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEN.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/HESAY?q=2025Q4",
+      "status": 308,
+      "location": "/s/RMS.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/HESAY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RMS.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/HESAY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RMS.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/HKLB.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/HKHGF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/HKLB.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/HKHGF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/HKLB.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/HKHGF?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/HXGBY?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEXA-B.ST?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/HXGBY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEXA-B.ST?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/HXGBY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/HEXA-B.ST?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ING?q=2025Q4",
+      "status": 308,
+      "location": "/s/INGA.AS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ING.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/INGA.AS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/ING.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/INGA.AS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ITUB3.SA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ITUB?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ITUB3.SA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ITUB?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/ITUB3.SA?q=2025Q4",
+      "status": 308,
+      "location": "/s/ITUB?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/JHX.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/JHX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/JHX.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/JHX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/JHX.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/JHX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/LBTYK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LBTYA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/LBTYK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LBTYA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/LBTYK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LBTYA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/LILAK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LILA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/LILAK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LILA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/LILAK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LILA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/LLYVK?q=2025Q4",
+      "status": 308,
+      "location": "/s/LLYVA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/LLYVK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LLYVA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/LLYVK.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/LLYVA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/LRLCF?q=2025Q4",
+      "status": 308,
+      "location": "/s/OR.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/LRLCF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/OR.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/LRLCF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/OR.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/NESN.SW?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/NESN.SW?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/NESN.SW?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/NSRGF?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/NSRGF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/NSRGF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NSRGY?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/NWS.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/NWS.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/NWS.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/NWSA?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/NWSA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/NWSA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/NWS?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/NXG.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NXE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/NXG.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NXE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/NXG.AU?q=2025Q4",
+      "status": 308,
+      "location": "/s/NXE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/PDRDF?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/PDRDF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/PDRDF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/PRNDY?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/PRNDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/PRNDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RI.PA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/RBGPF?q=2025Q4",
+      "status": 308,
+      "location": "/s/RKT.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/RBGPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RKT.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/RBGPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RKT.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/RDY?q=2025Q4",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/RDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/RDY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DRREDDY.NSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/RTO?q=2025Q4",
+      "status": 308,
+      "location": "/s/RTO.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/RTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RTO.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/RTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RTO.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/RUSHB?q=2025Q4",
+      "status": 308,
+      "location": "/s/RUSHA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/RUSHB.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RUSHA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/RUSHB.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RUSHA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/RYCEY?q=2025Q4",
+      "status": 308,
+      "location": "/s/RR.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/RYCEY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RR.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/RYCEY.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/RR.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/SN.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/SNN?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/SN.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/SNN?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/SN.LSE?q=2025Q4",
+      "status": 308,
+      "location": "/s/SNN?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/SSPPF?q=2025Q4",
+      "status": 308,
+      "location": "/s/SSPG.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/SSPPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/SSPG.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/SSPPF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/SSPG.LSE?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/UA?q=2025Q4",
+      "status": 308,
+      "location": "/s/UAA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/UA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UAA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/UA.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UAA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/UHAL?q=2025Q4",
+      "status": 308,
+      "location": "/s/UHAL-B?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/UHAL.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UHAL-B?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/UHAL.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/UHAL-B?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/VESTA.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/VTMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/VESTA.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/VTMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/VESTA.MX?q=2025Q4",
+      "status": 308,
+      "location": "/s/VTMX?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/VOW3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/VOW.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/VOW3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/VOW.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/VOW3.XETRA?q=2025Q4",
+      "status": 308,
+      "location": "/s/VOW.XETRA?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/WILLF?q=2025Q4",
+      "status": 308,
+      "location": "/s/DEMANT.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/WILLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DEMANT.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/WILLF.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/DEMANT.CO?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/Z?q=2025Q4",
+      "status": 308,
+      "location": "/s/ZG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/Z.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ZG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/Z.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/ZG?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ZTO?q=2025Q4",
+      "status": 308,
+      "location": "/s/2057.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/s/ZTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/2057.HK?q=2025Q4",
+      "pass": true
+    },
+    {
+      "path": "/value/ZTO.US?q=2025Q4",
+      "status": 308,
+      "location": "/s/2057.HK?q=2025Q4",
+      "pass": true
+    }
+  ]
+}

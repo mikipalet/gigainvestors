@@ -1,0 +1,22 @@
+{
+  "source": "/Users/miki/data/value-dedupe-2/browser-gate/report.json",
+  "states": 250,
+  "companies": [
+    "/s/AMCR",
+    "/s/BABA",
+    "/s/BH",
+    "/s/CARL-B.CO",
+    "/s/DGE.LSE",
+    "/s/GSK.LSE",
+    "/s/NSRGY",
+    "/s/RI.PA",
+    "/s/SSPG.LSE",
+    "/s/UHAL-B"
+  ],
+  "rawFailedStates": 210,
+  "whitespaceFindings": 190,
+  "ownerRequiredChromeFindings": 449,
+  "blockingFindings": [],
+  "chromeDisposition": "Exact named 12px shared-control findings from dedupe-1 and cover-6 only; raw thresholds unchanged.",
+  "whitespaceDisposition": "Existing cover-6 controller R2 ruling retained; raw findings preserved."
+}

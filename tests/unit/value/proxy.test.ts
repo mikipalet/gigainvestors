@@ -38,3 +38,20 @@ describe('one-site permanent redirects',()=>{
 });
 
 it.each([['/aapl.us.md?q=2018Q3','/s/AAPL.md?q=2018Q3'],['/index.md','/value.md'],['/tsm.us','/s/2330.TW']])('redirects legacy representation %s',async(path,target)=>{expect((await proxy(new NextRequest('https://value.gigainvestors.com'+path))).headers.get('location')).toBe('https://gigainvestors.com'+target);});
+
+it.each(['/s/TSM','/s/tsm.us','/s/TSM.md','/value/TSM.US'])('redirects listing aliases before streaming or markdown rewrite: %s',async path=>{
+ const response=await proxy(new NextRequest(`https://gigainvestors.com${path}?q=2025Q4`));
+ expect(response.status).toBe(308);
+ expect(response.headers.get('location')).toBe(`https://gigainvestors.com/s/2330.TW${path.endsWith('.md')?'.md':''}?q=2025Q4`);
+});
+
+it.each(['/s/TSM','/value/TSM.US'])('keeps alias redirects ahead of Accept negotiation: %s',async path=>{
+ const response=await proxy(new NextRequest(`https://gigainvestors.com${path}?q=2018Q3`,{headers:{accept:'text/markdown'}}));
+ expect(response.status).toBe(308);
+ expect(response.headers.get('location')).toBe('https://gigainvestors.com/s/2330.TW?q=2018Q3');
+ expect(response.headers.get('x-middleware-rewrite')).toBeNull();
+});
+it('negotiates historical markdown before the HTML quarter cache rewrite',async()=>{
+ const response=await proxy(new NextRequest('https://gigainvestors.com/value?q=2018Q3',{headers:{accept:'text/markdown'}}));
+ expect(new URL(response.headers.get('x-middleware-rewrite')!).pathname).toBe('/md/value');
+});

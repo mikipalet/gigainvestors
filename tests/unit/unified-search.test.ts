@@ -51,3 +51,27 @@ it('finds a dossier by its native company name',()=>{
  const result=buildCompanyIndex({investors:[],stocks:[]},[{id:'7203.JP',n:'Toyota Motor Corporation',nameLocal:'トヨタ自動車',mc:1e11,h:0}]);
  expect(rank(result,'トヨタ')[0]).toMatchObject({ticker:'7203.JP'});
 });
+
+it('never merges legal issuers from normalized names or a shared ticker stem',()=>{
+ const result=buildCompanyIndex({investors:[],stocks:[]},[
+  {id:'GHC.US',n:'Graham Holdings',h:0,mc:1}, {id:'GHM.US',n:'Graham Corp',h:0,mc:1},
+  {id:'9434.JP',n:'SoftBank Corp',h:0,mc:1}, {id:'9984.JP',n:'SoftBank Group',h:0,mc:1},
+  {id:'APA.US',n:'APA Corporation',h:0,mc:1}, {id:'APA.AU',n:'APA',h:0,mc:1},
+  {id:'ONE.US',n:'Identical Company',h:0,mc:1}, {id:'TWO.US',n:'Identical Company',h:0,mc:1},
+ ]);
+ expect(result.stocks).toHaveLength(8);
+});
+it('searches accented issuer names without requiring accents',()=>{
+ const index=buildCompanyIndex({investors:[],stocks:[]},[{id:'NSRGY.US',n:'Nestlé SA',h:0,mc:1}],{'NSRGF.US':'NSRGY.US'});
+ expect(rank(index,'nestle')).toHaveLength(1);
+});
+it('resolves an exact issuer search name without hiding independently listed subsidiaries on their own queries',()=>{
+ const idx=buildCompanyIndex({investors:[],stocks:[]},[
+  {id:'NSRGY.US',n:'Nestlé SA ADR',h:1,mc:10},{id:'NESTLEIND.NSE',n:'Nestle India Limited',h:0,mc:1},
+  {id:'BABA.US',n:'Alibaba Group Holding Ltd',h:1,mc:10},{id:'0241.HK',n:'Alibaba Health Information',h:0,mc:1},
+ ]);
+ expect(rank(idx,'nestle').filter(r=>r.kind==='stock').map(r=>r.ticker)).toEqual(['NSRGY']);
+ expect(rank(idx,'alibaba').filter(r=>r.kind==='stock').map(r=>r.ticker)).toEqual(['BABA']);
+ expect(rank(idx,'nestle india').filter(r=>r.kind==='stock').map(r=>r.ticker)).toEqual(['NESTLEIND.NSE']);
+ expect(rank(idx,'alibaba health').filter(r=>r.kind==='stock').map(r=>r.ticker)).toEqual(['0241.HK']);
+});

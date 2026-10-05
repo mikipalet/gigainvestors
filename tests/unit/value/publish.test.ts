@@ -8,6 +8,7 @@ import { QUESTIONS_VERSION } from '@/lib/value/jev/questions';
 import { corpusDir, writeCorpusJson } from "@/lib/value/corpus";
 import { parseYahooPrice, yahooPrice } from "@/lib/value/prices-yahoo";
 import { shardOf } from "@/lib/value/shard";
+import { baselineAnalysisHash } from '@/scripts/value/coverage-release';
 import type { Analysis, Dossier, IndexRow, JevAnswer, StoreMeta, PriceMap } from "@/lib/value/types";
 import { syncRepository, acquirePublishLock, resetRepository, loadAnalyses, commitOutput, loadHolders, publishSnapshot, runCalibration, writeOutput } from "@/scripts/value/stages/publish";
 import { parseBulkPrices, refreshPrices, commitPrices } from "@/scripts/value/stages/prices";
@@ -1125,6 +1126,37 @@ describe('coverage additions retired by the issuer registry', () => {
     const {canonical,publish}=retiredAdditionFixture();
     const changed={...canonical,ownerMemo:{...canonical.ownerMemo!,inputHash:'unreviewed'}};
     expect(()=>publish(changed)).toThrow(/binding failed: ALK-B.CO/);
+  });
+  it.each(['unchanged baseline','explicit freeze'])('binds a retired addition to its preserved canonical research (%s)',mode=>{
+    const {repo,canonical,publish}=retiredAdditionFixture();
+    const file=path.join(repo,`dossiers/${shardOf(canonical.id)}.json`);
+    const released=JSON.parse(readFileSync(file,'utf8'))[canonical.id];
+    // The reviewed released dossier can predate/differ from the private cache.
+    const cached={...canonical,asOf:'2026-10-01',versions:{...canonical.versions,pipeline:'older-cache'},ownerMemo:{...canonical.ownerMemo!,inputHash:'cached-inputs'}};
+    writeCorpusJson(`analysis/${canonical.id}.json`,cached);
+    writeCorpusJson(`analysis/inputs/${canonical.id}.json`,{asOf:cached.asOf,sections:{business:'Annual filing'}});
+    if(mode==='unchanged baseline')writeCorpusJson('held-membership/release.json',{version:1,baselineIds:[canonical.id],baselineAnalysisHashes:{[canonical.id]:baselineAnalysisHash(canonical.id)},additionIds:['AKBLF.US'],held:[]});
+    else writeCorpusJson('verdict-freeze.json',{version:1,ids:[canonical.id]});
+    expect(publish(cached,true).count).toBe(1);
+    expect(JSON.parse(readFileSync(file,'utf8'))[canonical.id]).toEqual(released);
+    expect(JSON.parse(readFileSync(path.join(repo,'aliases.json'),'utf8'))['AKBLF.US']).toBe(canonical.id);
+  });
+  it('preserves a reviewed canonical when its private cache lacks new-addition filing inputs',()=>{
+    const {repo,canonical,publish}=retiredAdditionFixture();
+    writeCorpusJson('held-membership/release.json',{version:1,baselineIds:[canonical.id],baselineAnalysisHashes:{[canonical.id]:baselineAnalysisHash(canonical.id)},additionIds:['AKBLF.US'],held:[]});
+    writeCorpusJson('reports/ALK-B.CO/meta.json',{kind:'description',sections:[]});
+    const file=path.join(repo,`dossiers/${shardOf(canonical.id)}.json`);
+    const released=JSON.parse(readFileSync(file,'utf8'))[canonical.id];
+    expect(publish(undefined,true).count).toBe(1);
+    expect(JSON.parse(readFileSync(file,'utf8'))[canonical.id]).toEqual(released);
+  });
+  it('rejects an invalid preserved canonical rather than treating its alias as complete',()=>{
+    const {repo,canonical,publish}=retiredAdditionFixture();
+    writeCorpusJson('verdict-freeze.json',{version:1,ids:[canonical.id]});
+    const file=path.join(repo,`dossiers/${shardOf(canonical.id)}.json`);
+    const rows=JSON.parse(readFileSync(file,'utf8'));rows[canonical.id].status='invalid';
+    writeFileSync(file,JSON.stringify(rows));
+    expect(()=>publish()).toThrow(/preserved canonical.*invalid.*ALK-B.CO/);
   });
   it('requires complete canonical inputs even when the retired addition has complete inputs',()=>{
     const {publish}=retiredAdditionFixture();

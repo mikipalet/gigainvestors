@@ -1,0 +1,41 @@
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-pubfix
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=false)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope
+Private share residual: 1; quality passes: 1
+publish: 1 companies written locally to /Users/miki/data/pubfix-2/test-corpus/publish-test-H9KNdB/canonical-scope; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > does not let a retired addition bypass canonical input binding
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (unchanged baseline)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (explicit freeze)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > requires complete canonical inputs even when the retired addition has complete inputs (frozen=false)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > requires complete canonical inputs even when the retired addition has complete inputs (frozen=true)
+Private share residual: 1; quality passes: 1
+
+ ✓ tests/unit/value/publish.test.ts (90 tests | 82 skipped) 2232ms
+   ✓ coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)  396ms
+   ✓ coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope  362ms
+   ✓ coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (unchanged baseline)  469ms
+   ✓ coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (explicit freeze)  452ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed | 82 skipped (90)
+   Start at  09:56:14
+   Duration  5.34s (transform 1.52s, setup 0ms, collect 2.75s, tests 2.23s, environment 0ms, prepare 75ms)

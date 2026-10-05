@@ -1,0 +1,13 @@
+import {readCoverageRelease,additionInputProblems} from '../../../../scripts/value/coverage-release';
+import {reviewedIssuerAliases} from '../../../../scripts/value/retired-issuer-aliases';
+import {readPrices} from '../../../../lib/value/price-files';
+import {corpusPath} from '../../../../lib/value/corpus';
+import {isAnalysis} from '../../../../scripts/value/stages/publish';
+import {readVerdictFreeze} from '../../../../scripts/value/verdict-freeze';
+import {writeFileSync} from 'node:fs';
+import path from 'node:path';
+const quotes={...readPrices(corpusPath('publish-repo/prices')),...readPrices(corpusPath('prices'))};
+const freeze=readVerdictFreeze(corpusPath('publish-repo'));
+const rows=[...new Set(readCoverageRelease()!.additionIds.map(id=>reviewedIssuerAliases[id]??id))].map(id=>({id,preserved:!!freeze.dossiers[id],problems:freeze.dossiers[id]?(isAnalysis(freeze.dossiers[id])?[]:['invalid-preserved-analysis']):additionInputProblems(id,quotes[id])}));
+writeFileSync(path.join(process.env.PUBFIX_ROOT!,'evidence/canonical-input-completeness.json'),JSON.stringify(rows,null,2));
+console.log(JSON.stringify({checked:rows.length,incomplete:rows.filter(r=>r.problems.length)}));

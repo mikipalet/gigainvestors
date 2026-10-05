@@ -25,6 +25,7 @@ import {alignHistoryShares} from '../../../lib/value/history-split-basis';
 import {completeCachedSplits,completeCachedYears} from '../../../lib/value/completeness/cached-years';
 import { forwardFiles } from './forward';
 import { METHOD_VERSION } from '../../../lib/value/method-version';
+import {shardOf} from '../../../lib/value/shard';
 import { isDeepStrictEqual } from 'node:util';
 import {publicBusiness} from '../../../lib/value/flags/public';
 import {applyAdjustments} from '../../../lib/value/judgement/apply';
@@ -366,9 +367,18 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
         throw Error(`Coverage retired listing ${releasedId}: canonical ${id} missing or alias invalid`);
       if(checked.has(id))continue;
       checked.add(id);
-      const problems=additionInputProblems(id,quotes[id]);
-      if(problems.length)throw Error(`Coverage addition ${id} is incomplete: ${problems.join(', ')}`);
-      assertAdditionBinding(readCorpusJson<Analysis>(`analysis/${id}.json`)!,emitted[id]);
+      // Unchanged coverage baselines and explicit freezes bind to the reviewed
+      // released record, not today's private new-addition inputs. Read it afresh
+      // so an in-place transformation cannot also mutate the binding reference.
+      if(freeze.dossiers[id]){
+        const preserved=JSON.parse(readFileSync(path.join(previousDossiers??directory,`${shardOf(id)}.json`),'utf8'))[id];
+        if(!isAnalysis(preserved)||preserved.id!==id)throw Error(`Coverage preserved canonical is invalid: ${id}`);
+        if(!isDeepStrictEqual(preserved,emitted[id]))throw Error(`Coverage preserved analysis-to-publication binding failed: ${id}`);
+      }else{
+        const problems=additionInputProblems(id,quotes[id]);
+        if(problems.length)throw Error(`Coverage addition ${id} is incomplete: ${problems.join(', ')}`);
+        assertAdditionBinding(readCorpusJson<Analysis>(`analysis/${id}.json`)!,emitted[id]);
+      }
     }
     if(release.held.some(({id})=>emitted[id]))throw Error('Held coverage addition reached publication');
   }

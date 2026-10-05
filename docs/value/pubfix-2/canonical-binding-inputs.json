@@ -1,0 +1,288 @@
+[
+  {
+    "id": "ABI.BR",
+    "aliases": [
+      "BUDFF.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:28:12.142Z",
+    "releasedAsOf": "2026-10-04T10:28:12.142Z"
+  },
+  {
+    "id": "ALK-B.CO",
+    "aliases": [
+      "AKBLF.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:31:38.730Z",
+    "releasedAsOf": "2026-10-04T10:31:38.730Z"
+  },
+  {
+    "id": "ASAI3.SA",
+    "aliases": [
+      "ASAIY.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:32:44.418Z",
+    "releasedAsOf": "2026-10-04T10:32:44.418Z"
+  },
+  {
+    "id": "BATRA.US",
+    "aliases": [
+      "BATRK.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [],
+    "rawAsOf": "2026-10-04T20:13:49.544Z",
+    "releasedAsOf": "2026-10-04T20:13:49.544Z"
+  },
+  {
+    "id": "CARL-B.CO",
+    "aliases": [
+      "CABJF.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:30:18.526Z",
+    "releasedAsOf": "2026-10-04T10:30:18.526Z"
+  },
+  {
+    "id": "DEMANT.CO",
+    "aliases": [
+      "WILLF.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:31:09.904Z",
+    "releasedAsOf": "2026-10-04T10:31:09.904Z"
+  },
+  {
+    "id": "DGE.LSE",
+    "aliases": [
+      "DGEAF.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:28:49.355Z",
+    "releasedAsOf": "2026-10-04T10:28:49.355Z"
+  },
+  {
+    "id": "DRREDDY.NSE",
+    "aliases": [
+      "RDY.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:27:43.538Z",
+    "releasedAsOf": "2026-10-04T10:27:43.538Z"
+  },
+  {
+    "id": "ERF.PA",
+    "aliases": [
+      "ERFSF.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:30:29.124Z",
+    "releasedAsOf": "2026-10-04T10:30:29.124Z"
+  },
+  {
+    "id": "GSK.LSE",
+    "aliases": [
+      "GSK.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:28:13.890Z",
+    "releasedAsOf": "2026-10-04T10:28:13.890Z"
+  },
+  {
+    "id": "LBTYA.US",
+    "aliases": [
+      "LBTYK.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [],
+    "rawAsOf": "2026-10-04T20:16:53.208Z",
+    "releasedAsOf": "2026-10-04T20:16:53.208Z"
+  },
+  {
+    "id": "LILA.US",
+    "aliases": [
+      "LILAK.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [],
+    "rawAsOf": "2026-10-04T20:16:56.005Z",
+    "releasedAsOf": "2026-10-04T20:16:56.005Z"
+  },
+  {
+    "id": "LLYVA.US",
+    "aliases": [
+      "LLYVK.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [],
+    "rawAsOf": "2026-10-04T20:16:56.804Z",
+    "releasedAsOf": "2026-10-04T20:16:56.804Z"
+  },
+  {
+    "id": "NSRGY.US",
+    "aliases": [
+      "NSRGF.US"
+    ],
+    "unchangedBaseline": false,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [],
+    "rawAsOf": "2026-10-05T00:31:56.478Z",
+    "releasedAsOf": "2026-10-05T00:31:56.478Z"
+  },
+  {
+    "id": "NWS.US",
+    "aliases": [
+      "NWSA.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [],
+    "rawAsOf": "2026-10-04T20:17:31.020Z",
+    "releasedAsOf": "2026-10-04T20:17:31.020Z"
+  },
+  {
+    "id": "OR.PA",
+    "aliases": [
+      "LRLCF.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:28:00.289Z",
+    "releasedAsOf": "2026-10-04T10:28:00.289Z"
+  },
+  {
+    "id": "RI.PA",
+    "aliases": [
+      "PDRDF.US",
+      "PRNDY.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:30:19.032Z",
+    "releasedAsOf": "2026-10-04T10:30:19.032Z"
+  },
+  {
+    "id": "RKT.LSE",
+    "aliases": [
+      "RBGPF.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:28:48.296Z",
+    "releasedAsOf": "2026-10-04T10:28:48.296Z"
+  },
+  {
+    "id": "RR.LSE",
+    "aliases": [
+      "RYCEY.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:28:04.175Z",
+    "releasedAsOf": "2026-10-04T10:28:04.175Z"
+  },
+  {
+    "id": "RUSHA.US",
+    "aliases": [
+      "RUSHB.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [],
+    "rawAsOf": "2026-10-04T20:18:18.618Z",
+    "releasedAsOf": "2026-10-04T20:18:18.618Z"
+  },
+  {
+    "id": "SSPG.LSE",
+    "aliases": [
+      "SSPPF.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": true,
+    "rawVsReleasedBindingDifferences": [
+      "asOf",
+      "versions",
+      "ownerMemo.inputHash"
+    ],
+    "rawAsOf": "2026-10-04T10:33:14.214Z",
+    "releasedAsOf": "2026-10-01T09:22:45.390Z"
+  },
+  {
+    "id": "UHAL-B.US",
+    "aliases": [
+      "UHAL.US"
+    ],
+    "unchangedBaseline": true,
+    "explicitFreeze": false,
+    "rawVsReleasedBindingDifferences": [],
+    "rawAsOf": "2026-10-04T21:06:57.062Z",
+    "releasedAsOf": "2026-10-04T21:06:57.062Z"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "removed": [
+    "baseline",
+    "build",
+    "corpus",
+    "dry-run",
+    "failed-dry-run",
+    "failed-dry-run-2",
+    "harness-bin",
+    "node_modules",
+    "storage",
+    "test-corpus",
+    "tmp"
+  ],
+  "corpusCopyExists": false,
+  "sourceHeadUnchanged": "489655590f2848f06f99e562cb0f33613fd7c3c1",
+  "freeAfterBytes": {
+    "/": 9147031552,
+    "/Users/miki/data": 95648403456
+  }
+}

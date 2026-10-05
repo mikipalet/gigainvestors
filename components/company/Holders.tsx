@@ -5,7 +5,7 @@ import {Face} from '@/components/Face';
 import {ChangeBadge,effectiveActivity} from '@/components/ChangeBadge';
 import {SidePanel} from '@/components/value/SidePanel';
 import {StackedBars} from '@/components/StackedBars';
-import {formatMoney,formatPct,compactNumber} from '@/lib/format';
+import {formatMoney,formatPct,compactNumber,plural} from '@/lib/format';
 export type InvestorMeta=Record<string,{slug:string;person:string;sketch:boolean}>;
 export function Holders({stock,investors}:{stock:StockData;investors:InvestorMeta}){
  const [open,setOpen]=useState(false),[page,setPage]=useState(0),[height,setHeight]=useState(0);
@@ -21,13 +21,13 @@ export function Holders({stock,investors}:{stock:StockData;investors:InvestorMet
  const recent=stock.quarters.filter(x=>x.q<=quarter!.q).slice(-historyRows);
  const held=(x:StockData['quarters'][number])=>x.holders.filter(h=>h.activity!=='sold').reduce((sum,h)=>sum+h.value,0);
  return <>
-  <button className="company-holders-strip" onClick={()=>setOpen(true)} aria-label={`Open all ${live.length} holders`}>
-   <span className="holders-count">{live.length} holders ↗</span>
+  <button className="company-holders-strip" onClick={()=>setOpen(true)} aria-label={`Open all ${plural(live.length,'holder')}`}>
+   <span className="holders-count">{plural(live.length,'holder')} ↗</span>
    {live.slice(0,4).map(h=><span className="strip-face" key={h.code} title={investors[h.code].person}>
     {investors[h.code].sketch&&<Face slug={investors[h.code].slug} size={320} sizes="28px"/>}
    </span>)}
   </button>
-  {open&&<SidePanel kind="holders" title={`${stock.ticker} · ${live.length} holders · ${quarter!.q}`} onClose={()=>setOpen(false)}>
+  {open&&<SidePanel kind="holders" title={`${stock.ticker} · ${plural(live.length,'holder')} · ${quarter!.q}`} onClose={()=>setOpen(false)}>
    <div className="company-holders-panel" style={{'--holder-rows':shown.length} as React.CSSProperties}>
     <div className="holders-chart"><StackedBars quarters={stock.quarters} prices={stock.quarters.map(x=>x.price)} labels={stock.quarters.map(x=>x.q)} index={stock.quarters.findIndex(x=>x.q===quarter!.q)} caption={stock.combinedListings?"Value held · all listings":"shares held · price"} format={formatMoney} people={Object.fromEntries(Object.entries(investors).map(([k,v])=>[k,v.person]))} onSeek={()=>{}}/></div>
     <table className="company-holders-table"><thead><tr><th>Investor</th><th>Portfolio</th><th>Value held</th><th>{stock.combinedListings?"Change":"Shares change"}</th></tr></thead><tbody>{shown.map(h=><tr key={h.code} data-activity={h.activity}><th><a href={`/${h.code}?q=${quarter!.q.replace(/\s/g,'')}`}>

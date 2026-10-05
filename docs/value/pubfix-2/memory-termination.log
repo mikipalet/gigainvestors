@@ -1,0 +1,8 @@
+Oct 05 10:07:02 coding-hel1 earlyoom[4044375]: mem avail:  3054 of 31337 MiB ( 9.75%), swap free:    0 of 16383 MiB ( 0.00%)
+Oct 05 10:07:02 coding-hel1 earlyoom[4044375]: low memory! at or below SIGTERM limits: mem 10.00%, swap 95.00%
+Oct 05 10:07:02 coding-hel1 earlyoom[4044375]: sending SIGTERM to process 693938 uid 1000 "node": badness 1054, VmRSS 6107 MiB
+Oct 05 10:07:02 coding-hel1 earlyoom[4044375]: process exited after 0.1 seconds
+Oct 05 10:07:26 coding-hel1 earlyoom[4044375]: mem avail:  2881 of 31337 MiB ( 9.19%), swap free:    0 of 16383 MiB ( 0.00%)
+Oct 05 10:07:26 coding-hel1 earlyoom[4044375]: low memory! at or below SIGTERM limits: mem 10.00%, swap 95.00%
+Oct 05 10:07:26 coding-hel1 earlyoom[4044375]: sending SIGTERM to process 692835 uid 1000 "node": badness 997, VmRSS 2144 MiB
+Oct 05 10:07:26 coding-hel1 earlyoom[4044375]: process exited after 0.1 seconds

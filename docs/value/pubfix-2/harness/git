@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+"""Real git operations on the copied repository, with local-only transport.
+The production identity guard expects its hard-coded GitHub URL; adapt that
+single read while origin itself points to the local bare clone.
+"""
+import os,sys,json
+from pathlib import Path
+root=Path(os.environ['PUBFIX_ROOT']).resolve()
+args=sys.argv[1:]
+if '-C' not in args or not Path(args[args.index('-C')+1]).resolve().is_relative_to(root):
+ raise SystemExit('Sandbox git requires a sandbox repository')
+if args[-3:]==['remote','get-url','origin']:
+ print('https://github.com/mikipalet/gigainvestors-value-data.git');sys.exit(0)
+if any(x in args for x in ['fetch','push','ls-remote','clone']):
+ with (root/'evidence/git-transports.jsonl').open('a') as f:f.write(json.dumps({'args':args,'remote':str(root/'storage/remote.git')})+'\n')
+os.execv('/usr/bin/git',['git','-c','protocol.allow=never','-c','protocol.file.allow=always',*args])

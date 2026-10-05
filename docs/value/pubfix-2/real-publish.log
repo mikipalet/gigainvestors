@@ -1,0 +1,46 @@
+history returns: 0 refreshed, 2079 cached, 0 failed
+┌─────────┬───────────┬───────────────┬────────────────┬───────────┬───────────┬────────────┬────────────┬────────────────────────────────────────────────────────┐
+│ (index) │ id        │ expect        │ understandable │ moat      │ economics │ management │ accounting │ verdict                                                │
+├─────────┼───────────┼───────────────┼────────────────┼───────────┼───────────┼────────────┼────────────┼────────────────────────────────────────────────────────┤
+│ 0       │ 'KO.US'   │ 'quality'     │ 'pass'         │ 'pass'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct'                                              │
+│ 1       │ 'AAPL.US' │ 'quality'     │ 'pass'         │ 'pass'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct'                                              │
+│ 2       │ 'AXP.US'  │ 'quality'     │ 'pass'         │ 'pass'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct'                                              │
+│ 3       │ 'MCO.US'  │ 'quality'     │ 'pass'         │ 'pass'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct'                                              │
+│ 4       │ 'VRSN.US' │ 'quality'     │ 'pass'         │ 'pass'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct'                                              │
+│ 5       │ 'V.US'    │ 'quality'     │ 'pass'         │ 'pass'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct'                                              │
+│ 6       │ 'MA.US'   │ 'quality'     │ 'pass'         │ 'pass'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct'                                              │
+│ 7       │ 'CB.US'   │ 'quality'     │ 'pass'         │ 'pass'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct'                                              │
+│ 8       │ 'DPZ.US'  │ 'quality'     │ 'pass'         │ 'pass'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct'                                              │
+│ 9       │ 'POOL.US' │ 'quality'     │ 'pass'         │ 'pass'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct'                                              │
+│ 10      │ 'CHTR.US' │ 'exception'   │ 'pass'         │ 'fail'    │ 'fail'    │ 'fail'     │ 'pass'     │ 'exception'                                            │
+│ 11      │ '8058.JP' │ 'exception'   │ 'pass'         │ 'fail'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'exception'                                            │
+│ 12      │ '8031.JP' │ 'exception'   │ 'pass'         │ 'fail'    │ 'fail'    │ 'pass'     │ 'pass'     │ 'exception'                                            │
+│ 13      │ '8001.JP' │ 'exception'   │ 'pass'         │ 'fail'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'exception'                                            │
+│ 14      │ '8002.JP' │ 'exception'   │ 'fail'         │ 'fail'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'exception'                                            │
+│ 15      │ '8053.JP' │ 'exception'   │ 'fail'         │ 'fail'    │ 'pass'    │ 'fail'     │ 'pass'     │ 'exception'                                            │
+│ 16      │ 'DAL.US'  │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'pass'     │ 'pass'     │ 'correct: understandable, moat, economics'             │
+│ 17      │ 'UAL.US'  │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'pass'     │ 'pass'     │ 'correct: understandable, moat, economics'             │
+│ 18      │ 'AAL.US'  │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'fail'     │ 'pass'     │ 'correct: understandable, moat, economics, management' │
+│ 19      │ 'LUV.US'  │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'fail'     │ 'pass'     │ 'correct: understandable, moat, economics, management' │
+│ 20      │ 'JBLU.US' │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'fail'     │ 'pass'     │ 'correct: understandable, moat, economics, management' │
+│ 21      │ 'GT.US'   │ 'not_quality' │ 'na'           │ 'na'      │ 'na'      │ 'na'       │ 'na'       │ 'missing or insufficient data'                         │
+│ 22      │ 'NCLH.US' │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'fail'     │ 'pass'     │ 'correct: understandable, moat, economics, management' │
+│ 23      │ 'FCX.US'  │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'pass'     │ 'pass'     │ 'correct: understandable, moat, economics'             │
+│ 24      │ 'VALE.US' │ 'not_quality' │ 'pass'         │ 'fail'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct: moat'                                        │
+│ 25      │ 'CLF.US'  │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'fail'     │ 'pass'     │ 'correct: understandable, moat, economics, management' │
+│ 26      │ 'AA.US'   │ 'not_quality' │ 'fail'         │ 'fail'    │ 'pass'    │ 'fail'     │ 'pass'     │ 'correct: understandable, moat, management'            │
+│ 27      │ 'BHC.US'  │ 'not_quality' │ 'fail'         │ 'fail'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'correct: understandable, moat'                        │
+│ 28      │ 'PLUG.US' │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'fail'     │ 'pass'     │ 'correct: understandable, moat, economics, management' │
+│ 29      │ 'AMC.US'  │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'fail'     │ 'pass'     │ 'correct: understandable, moat, economics, management' │
+│ 30      │ 'LCID.US' │ 'not_quality' │ 'unclear'      │ 'unclear' │ 'unclear' │ 'unclear'  │ 'unclear'  │ 'missing or insufficient data'                         │
+│ 31      │ 'RIVN.US' │ 'not_quality' │ 'unclear'      │ 'unclear' │ 'unclear' │ 'unclear'  │ 'unclear'  │ 'missing or insufficient data'                         │
+│ 32      │ 'CCL.US'  │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'fail'     │ 'pass'     │ 'correct: understandable, moat, economics, management' │
+│ 33      │ 'M.US'    │ 'not_quality' │ 'fail'         │ 'fail'    │ 'fail'    │ 'fail'     │ 'pass'     │ 'correct: understandable, moat, economics, management' │
+│ 34      │ 'OXY.US'  │ 'exception'   │ 'fail'         │ 'fail'    │ 'pass'    │ 'fail'     │ 'pass'     │ 'exception'                                            │
+│ 35      │ 'CVX.US'  │ 'exception'   │ 'fail'         │ 'fail'    │ 'pass'    │ 'pass'     │ 'pass'     │ 'exception'                                            │
+└─────────┴───────────┴───────────────┴────────────────┴───────────┴───────────┴────────────┴────────────┴────────────────────────────────────────────────────────┘
+Confusion counts: {"truePositive":10,"trueNegative":15,"falsePositive":0,"falseNegative":0,"unclear":0,"missing":3,"exception":8}
+Private share residual: 77; quality passes: 2
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+blob publish: 6249 files, 207282732 bytes, version 05febde8674a0aeae568c7f64891044c17f3c01214ae4a2fdf20d738dd4d536d
+publish: 3892 companies, replaced data snapshot

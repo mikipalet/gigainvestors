@@ -48,7 +48,7 @@ export function PositionTile({ d, tier, rect, q }: { d: PositionTileData; tier: 
               <FitText className="tile-company-name opacity-60" style={{ fontSize: Math.max(13,fs*.78) }}>
                 {d.name}
                 {rect.w > fs * (d.name.length * 0.55 + 9) && d.since && <span> · since {d.since}</span>}
-                {rect.w > fs * (d.name.length * 0.55 + 16) && d.holders !== undefined && <span> · {d.holders} holders</span>}
+                {rect.w > fs * (d.name.length * 0.55 + 16) && d.holders !== undefined && <span> · {d.holders} holder{d.holders === 1 ? '' : 's'}</span>}
               </FitText>
             )}
           </div>

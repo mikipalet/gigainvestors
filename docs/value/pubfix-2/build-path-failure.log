@@ -1,0 +1,52 @@
+▲ Next.js 16.3.3 (webpack)
+✓ Running next.config.ts took 190ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 24.6s
+  Running TypeScript ...
+  Finished TypeScript in 30.9s ...
+  Collecting page data using 15 workers ...
+Error: Cannot find module 'next/dist/compiled/next-server/app-route.runtime.prod.js'
+Require stack:
+- /mnt/HC_Volume_107024928/pubfix-2/build/server/app/apple-icon.png/route.js
+- /Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/server/require.js
+- /Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/server/load-components.js
+- /Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/build/utils.js
+- /Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/build/worker.js
+- /Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._load (docs/value/pubfix-2/harness/preload.cjs:18:133) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/mnt/HC_Volume_107024928/pubfix-2/build/server/app/apple-icon.png/route.js',
+    '/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/server/require.js',
+    '/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/server/load-components.js',
+    '/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/build/utils.js',
+    '/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/build/worker.js',
+    '/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ]
+}
+Error: Cannot find module 'next/dist/compiled/next-server/app-route.runtime.prod.js'
+Require stack:
+- /mnt/HC_Volume_107024928/pubfix-2/build/server/app/robots.txt/route.js
+- /Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/server/require.js
+- /Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/server/load-components.js
+- /Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/build/utils.js
+- /Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/build/worker.js
+- /Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/compiled/jest-worker/processChild.js
+    at Module._load (docs/value/pubfix-2/harness/preload.cjs:18:133) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/mnt/HC_Volume_107024928/pubfix-2/build/server/app/robots.txt/route.js',
+    '/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/server/require.js',
+    '/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/server/load-components.js',
+    '/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/build/utils.js',
+    '/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/build/worker.js',
+    '/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/next/dist/compiled/jest-worker/processChild.js'
+  ]
+}
+
+> Build error occurred
+Error: Failed to collect page data for /apple-icon.png
+    at ignore-listed frames {
+  type: 'Error'
+}

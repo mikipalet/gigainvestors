@@ -1,0 +1,30 @@
+{
+  "unitFilesPassed": 236,
+  "unitTestsPassed": 2303,
+  "unitTestsSkipped": 1,
+  "unitFailures": 0,
+  "productionBuild": "passed including TypeScript",
+  "standaloneRealPublish": "exit 0",
+  "nightlyPublishAvailable": "exit 0",
+  "snapshotFiles": 6249,
+  "snapshotBytes": 207282732,
+  "snapshotSha256": "05febde8674a0aeae568c7f64891044c17f3c01214ae4a2fdf20d738dd4d536d",
+  "blobPointerMatchesSnapshot": true,
+  "bothLiveChecksPassed": true,
+  "pendingReceiptCleared": true,
+  "sourceHeadUnchanged": "489655590f2848f06f99e562cb0f33613fd7c3c1",
+  "freezeFileSha256Unchanged": "ff2e1900b9b4bdb812f7bf6e2659ef94567988cc3f65a632d464f3228baf2f49",
+  "minimumFreeBytes": {
+    "/": 9128615936,
+    "/Users/miki/data": 36396580864
+  },
+  "blobPutCalls": 33010,
+  "localRevalidationCalls": 5,
+  "isolation": {
+    "interfaces": [
+      "lo"
+    ],
+    "sourceCorpusReadOnly": true,
+    "externalRoutes": 0
+  }
+}

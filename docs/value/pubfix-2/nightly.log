@@ -1,0 +1,8 @@
+2026-10-05T10:24:35Z starting logos
+2026-10-05T10:24:35Z stage=logos status=failed exit=1 duration=0s summary=sandbox: logo acquisition unavailable; cached approved logos retained
+logos failed; publishing with existing logos
+2026-10-05T10:24:35Z starting thesis --limit=12
+2026-10-05T10:24:35Z stage=thesis status=budget-exhausted exit=75 duration=0s summary=sandbox: thesis budget exhausted; cached thesis retained
+thesis budget exhausted; publishing available analysis
+2026-10-05T10:24:35Z starting publish
+2026-10-05T10:29:06Z stage=publish status=ok exit=0 duration=271s summary=publish: 3892 companies, replaced data snapshot

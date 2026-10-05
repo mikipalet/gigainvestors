@@ -100,13 +100,20 @@ export function yahooSymbol(company: Pick<Company, "code" | "exchange">): string
 
 export class PriceHistoryUnavailableError extends Error {}
 
+/** Compatibility venues have Yahoo symbols but no matching EODHD exchange.
+ * Keep stage budgeting and direct fetches on the same provider policy. */
+export function usesYahooHistory(company: Pick<Company, "id" | "exchange" | "source">): boolean {
+  return process.env.VALUE_NO_EODHD === "1" || company.id.endsWith(".JP") || company.source === "esef"
+    || ["NSE", "MI", "NZ"].includes(company.exchange);
+}
+
 const yahooLimit = createLimiter({ perSecond: T.yahoo.perSecond });
 export async function fetchPriceHistory({ company, from, useYahoo = false }: { company: Company; from: string; useYahoo?: boolean }): Promise<PriceHistory> {
-  if (!useYahoo && !company.id.endsWith(".JP") && company.source !== "esef" && company.exchange !== "NSE") return parseEodHistory(await eodhd(`eod/${encodeURIComponent(company.id)}`, { period: "m", from }));
+  if (!useYahoo && !usesYahooHistory(company)) return parseEodHistory(await eodhd(`eod/${encodeURIComponent(company.id)}`, { period: "m", from }));
   return yahooLimit(async () => {
     const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSymbol(company))}?range=10y&interval=1mo`;
     const response = await fetchWithRetry(url, { headers: { "User-Agent": "Mozilla/5.0" }, signal: AbortSignal.timeout(60_000), retries: 0 });
-    if (response.status === 404 && (company.id.endsWith(".JP") || company.source === "esef" || company.exchange === "NSE")) throw new PriceHistoryUnavailableError("Yahoo has no history for this symbol");
+    if (response.status === 404) throw new PriceHistoryUnavailableError("Yahoo has no history for this symbol");
     if (!response.ok) throw new Error(`Yahoo price history HTTP ${response.status}`);
     return parseYahooHistory(await response.json());
   });

@@ -17,6 +17,7 @@ fi
 if [[ "$3" == *'daily-japan.ts' ]]; then echo 2026-10-03; exit 0; fi
 if [[ "$3" == *'post-publish'* ]]; then echo LIVE-CHECK >> "$TRACE"; exit "${codes.live??0}"; fi
 stage="$4"
+if [[ "$stage" == "price-story" ]]; then echo "LEDGER=$STORY_DISK_LEDGER" >> "$TRACE"; fi
 shift 4
 echo "$stage $*" >> "$TRACE"
 case "$stage" in
@@ -24,8 +25,9 @@ ${Object.entries(codes).map(([s,n])=>`${s}) exit ${n};;`).join('\n')}
 esac
 exit 0
 `,{mode:0o755});
+ writeFileSync(path.join(root,'bin/date'),'#!/usr/bin/env bash\necho 2026-10-05\n',{mode:0o755});
  let code=0;
- try{execFileSync('bash',[path.join(root,'scripts/value/run-daily.sh'),'--once'],{env:{...process.env,PATH:`${root}/bin:${process.env.PATH}`,VALUE_CORPUS_DIR:path.join(root,'corpus'),TRACE:path.join(root,'trace')},stdio:'pipe'});}catch(e){code=(e as {status:number}).status;}
+ try{execFileSync('bash',[path.join(root,'scripts/value/run-daily.sh'),'--once'],{env:{...process.env,PATH:`${root}/bin:${process.env.PATH}`,VALUE_CORPUS_DIR:path.join(root,'corpus'),TRACE:path.join(root,'trace'),STORY_DISK_LEDGER:'disk-budget-old-worktree.json'},stdio:'pipe'});}catch(e){code=(e as {status:number}).status;}
  return {trace:readFileSync(path.join(root,'trace'),'utf8'),code};
 }
 it('publishes existing analysis after yields and thesis exhaust their budgets',()=>{
@@ -44,4 +46,10 @@ it('runs the live check after prices and publish, including a partial prices exi
 });
 it('stops the cycle loudly when post-publication verification or rollback fails',()=>{
  const result=run({live:1});expect(result.code).not.toBe(0);expect(result.trace).not.toMatch(/^price-history /m);
+});
+
+it('passes a UTC-cycle-specific ledger to price-story instead of inheriting an old worktree ledger',()=>{
+ const {trace,code}=run({});
+ expect(code).toBe(0);
+ expect(trace).toContain('LEDGER=disk-budget-nightly-2026-10-05.json');
 });

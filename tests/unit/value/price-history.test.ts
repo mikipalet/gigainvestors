@@ -207,3 +207,64 @@ it('routes NSE symbols to Yahoo .NS without requesting unsupported EODHD symbols
  await Promise.all([task,vi.runAllTimersAsync()]);
  expect(urls).toHaveLength(1);expect(urls[0]).toContain('/chart/TCS.NS?');
 });
+
+it.each([['EXAMPLE.NZ','EXAMPLE.NZ'],['EXAMPLE.MI','EXAMPLE.MI']])('routes compatibility exchange %s to Yahoo even with the paid history budget exhausted',async(id,symbol)=>{
+ appendJsonl('universe.jsonl',company(id));
+ writeCorpusJson('usage/eodhd-2026-09-29.json',{date:'2026-09-29',used:100000,history:15000});
+ vi.stubGlobal('fetch',async(url:string)=>{
+  expect(new URL(url).hostname).toBe('query1.finance.yahoo.com');
+  expect(new URL(url).pathname).toBe(`/v8/finance/chart/${symbol}`);
+  return Response.json(yahoo);
+ });
+ await run();
+ expect(readCorpusJson<PriceHistory>(`prices-history/${id}.json`)?.length).toBeGreaterThan(100);
+ expect(readCorpusJson('usage/eodhd-2026-09-29.json')).toEqual({date:'2026-09-29',used:100000,history:15000});
+});
+
+it('honors VALUE_NO_EODHD for history without paid usage checks or reservations',async()=>{
+ vi.stubEnv('VALUE_NO_EODHD','1');appendJsonl('universe.jsonl',company('KO.US'));
+ vi.stubGlobal('fetch',async(url:string)=>{
+  expect(new URL(url).hostname).toBe('query1.finance.yahoo.com');return Response.json(yahoo);
+ });
+ await run();
+ expect(readCorpusJson<PriceHistory>('prices-history/KO.US.json')?.length).toBeGreaterThan(100);
+ expect(readCorpusJson('usage/eodhd-2026-09-29.json')).toBeNull();
+});
+
+it('caches a confirmed compatibility-exchange miss with its reason, preserves prices, and retries after the refresh window',async()=>{
+ appendJsonl('universe.jsonl',company('MISSING.NZ'));
+ writeCorpusJson('prices-history/MISSING.NZ.json',[['2020-01',42]]);
+ vi.stubGlobal('fetch',async(url:string)=>{
+  expect(new URL(url).hostname).toBe('query1.finance.yahoo.com');return new Response('',{status:404});
+ });
+ await run();
+ expect(readCorpusJson('prices-history/MISSING.NZ.json')).toEqual([['2020-01',42]]);
+ expect(readCorpusJson('prices-history/meta/MISSING.NZ.json')).toMatchObject({status:'unavailable',reason:'Yahoo has no history for this symbol'});
+ vi.stubGlobal('fetch',()=>{throw Error('must skip fresh miss')});await run();
+ vi.setSystemTime(new Date('2026-10-07T12:00:00Z'));
+ vi.stubGlobal('fetch',async()=>Response.json(yahoo));await run();
+ expect(readCorpusJson<PriceHistory>('prices-history/MISSING.NZ.json')?.length).toBeGreaterThan(100);
+});
+
+it.each([429,500])('does not cache Yahoo HTTP %s as a permanent miss',async status=>{
+ appendJsonl('universe.jsonl',company('EXAMPLE.NZ'));
+ vi.spyOn(console,'error').mockImplementation(()=>{});
+ vi.stubGlobal('fetch',async(url:string)=>{
+  expect(new URL(url).hostname).toBe('query1.finance.yahoo.com');return new Response('',{status});
+ });
+ await expect(run()).rejects.toThrow(/more than 20%/);
+ expect(readCorpusJson('prices-history/meta/EXAMPLE.NZ.json')).toMatchObject({failures:1});
+ expect(readCorpusJson<{status?:string}>('prices-history/meta/EXAMPLE.NZ.json')?.status).toBeUndefined();
+});
+
+it.each(['NZ','MI'])('direct history consumers also route the %s compatibility exchange to Yahoo',async exchange=>{
+ const {fetchPriceHistory}=await import('@/lib/value/price-history');
+ vi.stubGlobal('fetch',async(url:string)=>{
+  expect(new URL(url).hostname).toBe('query1.finance.yahoo.com');
+  expect(new URL(url).pathname).toBe(`/v8/finance/chart/EXAMPLE.${exchange}`);
+  return Response.json(yahoo);
+ });
+ const work=fetchPriceHistory({company:company(`EXAMPLE.${exchange}`),from:'2016-01-01'});
+ const [history]=await Promise.all([work,vi.runAllTimersAsync()]);
+ expect(history.length).toBeGreaterThan(100);
+});

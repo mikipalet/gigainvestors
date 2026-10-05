@@ -6,7 +6,7 @@ import { T } from "../../../lib/value/config";
 import { loadCompanies } from "../../../lib/value/companies";
 import { readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import { callsUsedToday } from "../../../lib/value/eodhd";
-import { PriceHistoryUnavailableError, fetchPriceHistory, type CachedPriceHistory } from "../../../lib/value/price-history";
+import { PriceHistoryUnavailableError, fetchPriceHistory, usesYahooHistory, type CachedPriceHistory } from "../../../lib/value/price-history";
 
 export default async function priceHistory({ only, limit, force = false }: { only?: string[]; limit?: number; force?: boolean }): Promise<void> {
   const now = new Date();
@@ -36,16 +36,16 @@ export default async function priceHistory({ only, limit, force = false }: { onl
   const failures = new CompanyFailures();
   let attempted = 0;
   for (const company of companies) {
-    const isJapan = company.id.endsWith(".JP") || company.source === "esef" || company.exchange === "NSE";
-    if (!preparationErrors.has(company.id) && !isJapan && budgetUsage().history >= T.budget.priceHistoryCalls) {
+    const yahooOnly = usesYahooHistory(company);
+    if (!preparationErrors.has(company.id) && !yahooOnly && budgetUsage().history >= T.budget.priceHistoryCalls) {
       console.log("daily price-history budget reached, resume tomorrow");
       continue;
     }
     attempted++;
     try {
       if (preparationErrors.has(company.id)) throw preparationErrors.get(company.id);
-      if (!isJapan) used ??= await callsUsedToday();
-      const useYahoo = isJapan || Math.max(used!, budgetUsage().used) + T.budget.historyCost > T.budget.dailyCalls;
+      if (!yahooOnly) used ??= await callsUsedToday();
+      const useYahoo = yahooOnly || Math.max(used!, budgetUsage().used) + T.budget.historyCost > T.budget.dailyCalls;
       let prices: PriceHistory;
       try {
         prices = await fetchPriceHistory({ company, from: from.toISOString().slice(0, 10), useYahoo });
@@ -62,7 +62,7 @@ export default async function priceHistory({ only, limit, force = false }: { onl
     } catch (error) {
       if (error instanceof PriceHistoryUnavailableError) {
         // Preserve older prices and cache confirmed misses without stopping later symbols.
-        writeCorpusJson(`prices-history/meta/${company.id}.json`, { fetchedAt: now.toISOString(), status: "unavailable" });
+        writeCorpusJson(`prices-history/meta/${company.id}.json`, { fetchedAt: now.toISOString(), status: "unavailable", reason: error.message });
         console.warn(`${company.id}: Yahoo history unavailable`);
         continue;
       }

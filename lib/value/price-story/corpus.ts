@@ -16,7 +16,7 @@ let diskStopped=false;
 export function storyDiskGuard(){
  if(diskStopped)throw Error('DISK STOP: this process already crossed its floor');
  const disk=statfsSync('.');if(disk.bavail*disk.bsize<Number(process.env.STORY_MIN_FREE_GIB??6)*1024**3){diskStopped=true;throw Error('DISK STOP: below configured free-space floor');}
- if(Date.now()-lastCheck<10000)return;lastCheck=Date.now();
+ if(Date.now()-lastCheck<10000)return;
  mkdirSync(root(),{recursive:true});
  const paths=[process.cwd(),root()];
  const bytes=execFileSync('du',['-sk',...paths],{encoding:'utf8'}).trim().split('\n').reduce((n,s)=>n+Number(s.split(/\s/)[0])*1024,0);
@@ -24,6 +24,8 @@ export function storyDiskGuard(){
  if(prior.worktree!==process.cwd())throw Error('Story budget belongs to another worktree');
  if(bytes-prior.baselineBytes>Number(process.env.STORY_MAX_NEW_BYTES??1_900_000_000))throw Error('DISK STOP: new-artifact ceiling');
  writeFileSync(file,JSON.stringify({...prior,newBytes:Math.max(0,bytes-prior.baselineBytes),freeBytes:disk.bavail*disk.bsize}));
+ // A failed check must never grant the next write a ten-second bypass.
+ lastCheck=Date.now();
 }
 export function readGzip<T>(file:string):T|null{return existsSync(file)?JSON.parse(gunzipSync(readFileSync(file)).toString()):null;}
 export function writeGzip(file:string,value:unknown){storyDiskGuard();mkdirSync(path.dirname(file),{recursive:true});writeFileSync(file+'.tmp',gzipSync(JSON.stringify(value)));renameSync(file+'.tmp',file);}

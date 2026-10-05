@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-05T23:07:04.748400+00:00",
+  "status": "NOT",
+  "reason": "Source sample, existing layout holds and provisional issuer/baseline preservation fail; no additions accepted.",
+  "unitTests": {
+    "filesPassed": 237,
+    "passed": 2310,
+    "skipped": 1,
+    "failed": 0,
+    "privateCorpus": "/Users/miki/data/value-holds/test-corpus",
+    "log": "/Users/miki/data/value-holds/logs/unit-private.log"
+  },
+  "typecheck": {
+    "exitCode": 0,
+    "log": "/Users/miki/data/value-holds/logs/typecheck.log"
+  },
+  "productionBuild": {
+    "exitCode": 0,
+    "log": "/Users/miki/data/value-holds/logs/build-2.log",
+    "note": "Build before publisher-only all-held guard change; no UI files changed. Final code typechecked and full suite passed."
+  },
+  "sourceSample": {
+    "sample": 6,
+    "passed": 1,
+    "numericFailures": 5,
+    "httpSourceErrors": 4,
+    "priceChecksPassed": 6
+  },
+  "browser": {
+    "viewports": [
+      "1728x970",
+      "390x844"
+    ],
+    "baseline": {
+      "states": 154,
+      "blockingFindings": 8
+    },
+    "additions": {
+      "states": 192,
+      "blockingFindings": 0
+    },
+    "layoutHolds": {
+      "states": 72,
+      "blockingFindings": 22
+    }
+  },
+  "ordinaryFinalProof": {
+    "baseline": 3899,
+    "additions": 0,
+    "held": 42,
+    "frozen": 148,
+    "failures": 0,
+    "at": "2026-10-05T23:12:45.004Z",
+    "log": "/Users/miki/data/value-holds/logs/publish-final-terminal.log",
+    "terminalPriceCorrectionIncluded": true
+  },
+  "ordinaryProvisionalProof": {
+    "baseline": 3899,
+    "proposedAdditions": 26,
+    "bindingFailuresOnEmitted": 0,
+    "missingIds": 5,
+    "changedBaselineIndexShards": [
+      "CA.json",
+      "DE.json"
+    ]
+  },
+  "liveArchive": {
+    "at": "2026-10-05T23:07:04.748400+00:00",
+    "filesCompared": 6249,
+    "changed": [],
+    "missing": [],
+    "new": [],
+    "freezeBytesIdentical": true,
+    "freezeSha256": "ff2e1900b9b4bdb812f7bf6e2659ef94567988cc3f65a632d464f3228baf2f49"
+  },
+  "diskFreeGiB": {
+    "/": 11.19,
+    "/Users/miki/data": 16.78
+  },
+  "eodhdRequestsSent": 0,
+  "constraintIncident": "See constraint-audit.json; initial suite did not isolate fixture root."
+}

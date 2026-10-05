@@ -1,0 +1,26 @@
+{
+  "source": "/Users/miki/data/value-holds/evidence/browser-additions/report.json",
+  "states": 192,
+  "companies": [
+    "/s/BAYRY.US",
+    "/s/CFRHF.US",
+    "/s/CFRUY.US",
+    "/s/FLUIF.US",
+    "/s/HEINY.US",
+    "/s/KNCRF.US",
+    "/s/MTRBF.US",
+    "/s/OGC.US",
+    "/s/TRMLF.US",
+    "/s/ZLDSF.US"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "rawFailedStates": 152,
+  "whitespaceFindings": 157,
+  "ownerRequiredChromeFindings": 363,
+  "blockingFindings": [],
+  "chromeDisposition": "Explicit cover-6 owner instruction: controls remain exactly as master, 12px compact. Raw gate and threshold unchanged.",
+  "whitespaceDisposition": "Prior controller R2 nonblocking ruling retained. Raw gate and thresholds unchanged."
+}

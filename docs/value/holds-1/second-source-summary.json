@@ -1,0 +1,66 @@
+{
+  "seed": 202610051,
+  "population": 26,
+  "sample": 6,
+  "passed": 1,
+  "numericFailures": [
+    {
+      "id": "BAYRY.US",
+      "field": "dilutedShares",
+      "input": 982424100,
+      "primary": 3929680000,
+      "relativeError": -0.7499989566580485,
+      "basis": "Annual weighted-average diluted shares multiplied by 4 ADRs per ordinary; https://www.bayer.com/en/investors/shareholder-information/adr-program"
+    },
+    {
+      "id": "FBAK.US",
+      "field": "revenue",
+      "input": 214043000,
+      "primary": 217863000,
+      "relativeError": -0.01753395482482112,
+      "basis": "Net interest before credit loss 188791 + noninterest income 29072, USD thousand"
+    },
+    {
+      "id": "KNCRF.US",
+      "field": "dilutedShares",
+      "input": 240986800,
+      "primary": 238653000,
+      "relativeError": 0.009779051593736598,
+      "basis": "Annual weighted-average diluted shares multiplied by March 2026 3-for-1 split; https://investors.konecranes.com/share-split"
+    },
+    {
+      "id": "PEYUF.US",
+      "field": "dilutedShares",
+      "input": 205511800,
+      "primary": 203130517,
+      "relativeError": 0.011722920982867313,
+      "basis": "Annual weighted-average diluted shares"
+    },
+    {
+      "id": "ZLDSF.US",
+      "field": "dilutedShares",
+      "input": 258154635,
+      "primary": 263200000,
+      "relativeError": -0.01916931990881454,
+      "basis": "Annual weighted-average diluted shares"
+    }
+  ],
+  "transportErrors": {
+    "BAYRY.US": [
+      "SEC: HTTPError"
+    ],
+    "FBAK.US": [
+      "SEC: HTTPError"
+    ],
+    "KNCRF.US": [
+      "SEC: HTTPError"
+    ],
+    "ZLDSF.US": [
+      "SEC: HTTPError"
+    ]
+  },
+  "priceChecksPassed": 6,
+  "numericTolerance": 0.005,
+  "priceTolerance": 0.001,
+  "disposition": "Retain failed sample. No recovered-report listing accepted. SEC lookup errors remain disclosed; valid independent PDF proofs still establish the five numeric discrepancies."
+}

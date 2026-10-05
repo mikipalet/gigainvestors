@@ -505,7 +505,9 @@ export default async function publish(options: { only?: string[]; limit?: number
   // Selection only needs IDs; do not retain a second full baseline while building output.
   const frozenIds=options.additionsOnly?new Set(readdirSync(corpusPath('publish-repo/dossiers')).filter(f=>/^\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(JSON.parse(readFileSync(corpusPath('publish-repo/dossiers',f),'utf8'))))):readVerdictFreeze(corpusPath('publish-repo')).ids;
   const selected = companies.filter((company) => (!options.only || options.only.includes(company.id))&&(!(options.additionsOnly||release)||!frozenIds.has(company.id))).slice(0, options.limit);
-  if (!selected.length) throw new Error("No companies selected for publish");
+  // An all-held coverage review still has a real, frozen baseline to replay.
+  // Do not require an accepted addition merely to prove baseline preservation.
+  if (!selected.length && !release?.baselineIds.some(id=>frozenIds.has(id))) throw new Error("No companies selected for publish");
   // A merge changes the analysis contract, not the cached documents. Never
   // silently export pre-merge verdicts when the runner skipped/failed analysis.
   // Frozen companies deliberately keep their exact released records.

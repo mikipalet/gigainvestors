@@ -1,0 +1,174 @@
+{
+  "source": "/Users/miki/data/value-holds/evidence/browser-layout/report.json",
+  "states": 72,
+  "companies": [
+    "/s/AGO.US",
+    "/s/AMPY.US",
+    "/s/TOST.US"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "rawFailedStates": 60,
+  "whitespaceFindings": 63,
+  "ownerRequiredChromeFindings": 129,
+  "blockingFindings": [
+    {
+      "path": "/s/AGO.US",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "filing bar overlaps label: \"100%\""
+    },
+    {
+      "path": "/s/AGO.US",
+      "width": 390,
+      "height": 844,
+      "state": "page",
+      "issue": "filing bar overlaps label: \"100%\""
+    },
+    {
+      "path": "/s/AGO.US",
+      "width": 390,
+      "height": 844,
+      "state": "Open Value created per $1 kept evidence",
+      "issue": "filing bar overlaps label: \"100%\""
+    },
+    {
+      "path": "/s/AMPY.US",
+      "width": 390,
+      "height": 844,
+      "state": "Open Cash for owners evidence",
+      "issue": "overlapping text: \"-1056.7%\" / \"\u0394\""
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <table class=\"memo-years\"> YearPercentChangeFY2019-133.8%\u2014FY2020-31"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <thead class=\"\"> YearPercentChange"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <tr class=\"\"> YearPercentChange"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <th class=\"\"> Change"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <tbody class=\"\"> FY2019-133.8%\u2014FY2020-31.6%102.2ppFY2021-"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <tr class=\"\"> FY2019-133.8%\u2014"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <td class=\"\"> \u2014"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <tr class=\"\"> FY2020-31.6%102.2pp"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <td class=\"\"> 102.2pp"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <tr class=\"\"> FY2021-15.1%16.5pp"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <td class=\"\"> 16.5pp"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <tr class=\"\"> FY2022-474.0%-458.9pp"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <td class=\"\"> -458.9pp"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <tr class=\"\"> FY2023-22673.0%-22199.0pp"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <td class=\"\"> -22199.0pp"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <tr class=\"\"> FY202428.2%22701.2pp"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <td class=\"\"> 22701.2pp"
+    },
+    {
+      "path": "/s/TOST.US",
+      "width": 390,
+      "height": 844,
+      "state": "More \u2197",
+      "issue": "off-screen right: <tr class=\"\"> FY2025>100%\u2014"
+    }
+  ],
+  "chromeDisposition": "Explicit cover-6 owner instruction: controls remain exactly as master, 12px compact. Raw gate and threshold unchanged.",
+  "whitespaceDisposition": "Prior controller R2 nonblocking ruling retained. Raw gate and thresholds unchanged."
+}

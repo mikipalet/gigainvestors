@@ -4,13 +4,24 @@ export type ShareCheck={status:'verified'|'pending';shares:number|null;observati
 export function reconcileShares(observations:ShareObservation[]):ShareCheck {
  const valid=observations.filter(o=>Number.isFinite(o.shares)&&o.shares>0);
  const independent=[...new Map(valid.map(o=>[o.source,o])).values()];
- const pair=independent.flatMap((a,i)=>independent.slice(i+1).filter(b=>!a.corroborationOnly&&!b.corroborationOnly&&a.source.split(':')[0]!==b.source.split(':')[0]&&(!a.basis||!b.basis||a.basis===b.basis)&&Math.max(a.shares,b.shares)/Math.min(a.shares,b.shares)<=1.02).map(b=>[a,b])).sort((a,b)=>(b.map(o=>o.date??'').sort()[0]).localeCompare(a.map(o=>o.date??'').sort()[0]))[0];
+ // A vendor's old annual count cannot corroborate another provider after that
+ // same vendor has reported a materially different, newer count. Preserve all
+ // observations for review, but remove superseded values from the voting pool.
+ const voters=independent.filter(a=>!a.corroborationOnly&&!independent.some(b=>
+  !b.corroborationOnly&&a.date&&b.date&&b.date>a.date
+  &&a.source.split(':')[0]===b.source.split(':')[0]
+  &&(!a.basis||!b.basis||a.basis===b.basis)
+  &&Math.max(a.shares,b.shares)/Math.min(a.shares,b.shares)>1.02));
+ const pair=voters.flatMap((a,i)=>voters.slice(i+1).filter(b=>a.source.split(':')[0]!==b.source.split(':')[0]&&(!a.basis||!b.basis||a.basis===b.basis)&&Math.max(a.shares,b.shares)/Math.min(a.shares,b.shares)<=1.02).map(b=>[a,b])).sort((a,b)=>(b.map(o=>o.date??'').sort()[0]).localeCompare(a.map(o=>o.date??'').sort()[0]))[0];
  return {status:pair?'verified':'pending',shares:pair?[...pair].sort((a,b)=>(a.date??'').localeCompare(b.date??'')).at(-1)!.shares:null,observations:independent,reason:pair?'Independent share counts agree within 2%':'Share count being checked'};
 }
 
 /** Re-denominate the existing enterprise valuation; do not recompute business economics. */
 export function applyShareCheck<T extends import('./types').Analysis>(analysis:T,check:ShareCheck|null):T {
  if(!analysis.valuation||!check)return analysis;
+ // Recheck stored provider evidence as well: deploying a reconciliation fix
+ // must not keep trusting a previously accepted, now-invalid cached vote.
+ if(check.observations.length)check={...check,...reconcileShares(check.observations)};
  if(check.status!=='verified'||!check.shares||check.checkedAt&&Date.now()-Date.parse(check.checkedAt)>7*86400_000)return {...analysis,valuation:{...analysis.valuation,assumptions:[...analysis.valuation.assumptions,'Unverified share count: independent sources do not yet reconcile']}};
  // Reported NAV/share is already a per-share observation. Current share-count
  // corroboration must not re-denominate it as though it were aggregate earnings.

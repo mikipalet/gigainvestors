@@ -1,0 +1,456 @@
+{
+  "CBRS": {
+    "name": "Cerebras Systems Inc.",
+    "cik": 2021728,
+    "annual": [
+      {
+        "form": "424B4",
+        "filed": "2026-05-14",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026035214/cerebras-424b4.htm"
+      },
+      {
+        "form": "S-1",
+        "filed": "2026-04-17",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026025762/cerebras-sx1april2026.htm"
+      },
+      {
+        "form": "S-1",
+        "filed": "2024-09-30",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2021728/000162828024041596/cerebras-sx1.htm"
+      }
+    ],
+    "forms": [
+      "10-Q",
+      "144",
+      "3",
+      "4",
+      "424B4",
+      "8-A12B",
+      "8-K",
+      "CERT",
+      "DRS",
+      "DRS/A",
+      "EFFECT",
+      "RW",
+      "S-1",
+      "S-1/A",
+      "S-8",
+      "S-8 POS",
+      "SCHEDULE 13D",
+      "SCHEDULE 13D/A",
+      "SCHEDULE 13G",
+      "SCHEDULE 13G/A"
+    ]
+  },
+  "DPC": {
+    "name": "DPC Holdings PLC",
+    "cik": 2107018,
+    "annual": [
+      {
+        "form": "424B4",
+        "filed": "2026-06-26",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2107018/000110465926077968/tm269965-19_424b4.htm"
+      },
+      {
+        "form": "S-1",
+        "filed": "2026-05-26",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2107018/000110465926066058/tm269965-2_s1.htm"
+      }
+    ],
+    "forms": [
+      "10-Q",
+      "3",
+      "4",
+      "424B4",
+      "8-A12B",
+      "8-K",
+      "CERT",
+      "DRS",
+      "EFFECT",
+      "FWP",
+      "S-1",
+      "S-1/A",
+      "S-1MEF",
+      "S-8",
+      "SCHEDULE 13G"
+    ]
+  },
+  "EROC": {
+    "name": "ERock, Inc.",
+    "cik": 2110029,
+    "annual": [
+      {
+        "form": "424B4",
+        "filed": "2026-06-10",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2110029/000119312526265898/d12401d424b4.htm"
+      },
+      {
+        "form": "S-1",
+        "filed": "2026-05-15",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2110029/000119312526227199/d12401ds1.htm"
+      }
+    ],
+    "forms": [
+      "10-Q",
+      "3",
+      "4",
+      "424B4",
+      "8-A12B",
+      "8-K",
+      "CERT",
+      "DRS",
+      "DRS/A",
+      "EFFECT",
+      "S-1",
+      "S-1/A",
+      "S-8",
+      "SCHEDULE 13D",
+      "SCHEDULE 13G",
+      "SCHEDULE 13G/A"
+    ]
+  },
+  "FRVO": {
+    "name": "Fervo Energy Co",
+    "cik": 1853868,
+    "annual": [
+      {
+        "form": "424B4",
+        "filed": "2026-05-14",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1853868/000162828026034849/fervoenergy-424b4.htm"
+      },
+      {
+        "form": "S-1",
+        "filed": "2026-04-17",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1853868/000162828026025821/fervoenergy-sx1.htm"
+      }
+    ],
+    "forms": [
+      "10-Q",
+      "3",
+      "4",
+      "424B4",
+      "8-A12B",
+      "8-K",
+      "CERT",
+      "D",
+      "D/A",
+      "DRS",
+      "DRS/A",
+      "EFFECT",
+      "S-1",
+      "S-1/A",
+      "S-8",
+      "S-8 POS",
+      "SCHEDULE 13G"
+    ]
+  },
+  "JAN": {
+    "name": "Janus Living, Inc.",
+    "cik": 2100805,
+    "annual": [
+      {
+        "form": "424B4",
+        "filed": "2026-08-11",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2100805/000110465926094083/tm2621355-9_424b4.htm"
+      },
+      {
+        "form": "S-11",
+        "filed": "2026-08-10",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2100805/000110465926093344/tmb-20260630xs11.htm"
+      },
+      {
+        "form": "424B4",
+        "filed": "2026-06-03",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2100805/000110465926070188/tm2614872-10_424b4.htm"
+      },
+      {
+        "form": "S-11",
+        "filed": "2026-06-01",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2100805/000110465926068606/tmb-20260331xs11.htm"
+      },
+      {
+        "form": "424B4",
+        "filed": "2026-03-23",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2100805/000110465926032901/tm2533329-13_424b4.htm"
+      }
+    ],
+    "forms": [
+      "10-Q",
+      "3",
+      "4",
+      "424B4",
+      "8-A12B",
+      "8-K",
+      "CERT",
+      "CORRESP",
+      "DRS",
+      "EFFECT",
+      "S-11",
+      "S-11/A",
+      "S-11MEF",
+      "S-8",
+      "SCHEDULE 13G",
+      "UPLOAD"
+    ]
+  },
+  "MAIR": {
+    "name": "Madison Air Solutions Corp",
+    "cik": 2098430,
+    "annual": [
+      {
+        "form": "424B4",
+        "filed": "2026-04-17",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2098430/000119312526160250/project_breathe_form_424.htm"
+      },
+      {
+        "form": "S-1",
+        "filed": "2026-03-09",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2098430/000119312526098829/ck0002098430-20260309.htm"
+      }
+    ],
+    "forms": [
+      "10-Q",
+      "3",
+      "4",
+      "424B4",
+      "8-A12B",
+      "8-K",
+      "CERT",
+      "D",
+      "DRS",
+      "DRS/A",
+      "EFFECT",
+      "S-1",
+      "S-1/A",
+      "S-8",
+      "SCHEDULE 13G"
+    ]
+  },
+  "OGC": {
+    "name": "OceanaGold Corp",
+    "cik": 1487326,
+    "annual": [],
+    "forms": [
+      "15F-12G",
+      "40FR12B",
+      "6-K",
+      "8-K12G3",
+      "CERT",
+      "D",
+      "F-X",
+      "S-8",
+      "SC 13G",
+      "SC 13G/A",
+      "SCHEDULE 13G/A",
+      "SD",
+      "SEC STAFF ACTION"
+    ]
+  },
+  "PSUS": {
+    "name": "Pershing Square USA, Ltd.",
+    "cik": 2002660,
+    "annual": [
+      {
+        "form": "N-CSRS",
+        "filed": "2026-08-21",
+        "period": "2026-06-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/2002660/000119312526360100/d87027dncsrs.htm"
+      },
+      {
+        "form": "424B4",
+        "filed": "2026-04-30",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2002660/000114036126018104/ny20064799x11_424b4.htm"
+      }
+    ],
+    "forms": [
+      "3",
+      "4",
+      "40-17G",
+      "40-APP",
+      "424B4",
+      "497AD",
+      "8-A12B",
+      "CERT",
+      "DRS",
+      "EFFECT",
+      "FWP",
+      "N-2",
+      "N-2/A",
+      "N-8A",
+      "N-CSRS",
+      "N-PX",
+      "NPORT-P",
+      "RW",
+      "SCHEDULE 13D",
+      "SCHEDULE 13G"
+    ]
+  },
+  "QNT": {
+    "name": "Quantinuum Inc.",
+    "cik": 2110105,
+    "annual": [
+      {
+        "form": "424B4",
+        "filed": "2026-06-05",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2110105/000162828026041003/quantinuum-424b4.htm"
+      },
+      {
+        "form": "S-1",
+        "filed": "2026-05-08",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2110105/000162828026032836/quantinuum-sx1.htm"
+      }
+    ],
+    "forms": [
+      "10-Q",
+      "3",
+      "4",
+      "4/A",
+      "424B4",
+      "8-A12B",
+      "8-K",
+      "CERT",
+      "DRS",
+      "DRS/A",
+      "EFFECT",
+      "S-1",
+      "S-1/A",
+      "S-1MEF",
+      "S-8",
+      "SCHEDULE 13G"
+    ]
+  },
+  "VGNT": {
+    "name": "Versigent PLC",
+    "cik": 2078008,
+    "annual": [
+      {
+        "form": "10-12B",
+        "filed": "2025-11-14",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2078008/000119312525282972/d51729d1012b.htm"
+      }
+    ],
+    "forms": [
+      "10-12B",
+      "10-12B/A",
+      "10-Q",
+      "144",
+      "3",
+      "4",
+      "8-K",
+      "CERT",
+      "DRS",
+      "DRS/A",
+      "S-8",
+      "SCHEDULE 13G",
+      "SCHEDULE 13G/A",
+      "SEC STAFF ACTION"
+    ]
+  },
+  "WHK": {
+    "name": "WhiteHawk Minerals Corp.",
+    "cik": 1921603,
+    "annual": [
+      {
+        "form": "S-1",
+        "filed": "2026-10-01",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1921603/000119312526410790/whk-20261001.htm"
+      },
+      {
+        "form": "424B4",
+        "filed": "2026-06-09",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1921603/000119312526264014/d86452d424b4.htm"
+      },
+      {
+        "form": "S-1",
+        "filed": "2026-05-11",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/1921603/000119312526215605/d86452ds1.htm"
+      }
+    ],
+    "forms": [
+      "10-Q",
+      "3",
+      "3/A",
+      "4",
+      "424B4",
+      "425",
+      "8-A12B",
+      "8-K",
+      "8-K/A",
+      "CERT",
+      "D",
+      "D/A",
+      "DRS",
+      "DRS/A",
+      "EFFECT",
+      "S-1",
+      "S-1/A",
+      "S-1MEF",
+      "S-8",
+      "SC TO-C",
+      "SC TO-T",
+      "SC TO-T/A",
+      "SCHEDULE 13D",
+      "SCHEDULE 13D/A",
+      "SCHEDULE 13G"
+    ]
+  },
+  "XE": {
+    "name": "X-Energy, Inc.",
+    "cik": 2088896,
+    "annual": [
+      {
+        "form": "424B4",
+        "filed": "2026-04-27",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926049515/tm2527015-22_424b4.htm"
+      },
+      {
+        "form": "S-1",
+        "filed": "2026-03-20",
+        "period": "",
+        "url": "https://www.sec.gov/Archives/edgar/data/2088896/000110465926032794/tm2527015-8_drsa.htm"
+      }
+    ],
+    "forms": [
+      "10-Q",
+      "3",
+      "3/A",
+      "4",
+      "424B4",
+      "8-A12B",
+      "8-K",
+      "CERT",
+      "DRS",
+      "DRS/A",
+      "EFFECT",
+      "S-1",
+      "S-1/A",
+      "S-1MEF",
+      "S-8",
+      "SCHEDULE 13G"
+    ]
+  }
+}

@@ -1,0 +1,619 @@
+[
+  {
+    "ids": [
+      "BAYRY.US"
+    ],
+    "document": "BAYRY",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "letter": [
+        6,
+        10
+      ],
+      "business": [
+        28,
+        55
+      ],
+      "mdna": [
+        56,
+        81
+      ],
+      "risk": [
+        84,
+        101
+      ],
+      "notes": [
+        269,
+        363
+      ],
+      "auditor": [
+        365,
+        373
+      ],
+      "compensation": [
+        386,
+        418
+      ]
+    }
+  },
+  {
+    "ids": [
+      "CFRHF.US",
+      "CFRUY.US"
+    ],
+    "document": "CFRHF",
+    "period": "2026-03-31",
+    "filed": null,
+    "sections": {
+      "letter": [
+        4,
+        5
+      ],
+      "business": [
+        6,
+        35
+      ],
+      "mdna": [
+        36,
+        43
+      ],
+      "notes": [
+        88,
+        140
+      ],
+      "risk": [
+        127,
+        134
+      ],
+      "compensation": [
+        66,
+        82
+      ],
+      "auditor": [
+        141,
+        144
+      ]
+    }
+  },
+  {
+    "ids": [
+      "COCXF.US"
+    ],
+    "document": "COCXF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "letter": [
+        5,
+        8
+      ],
+      "business": [
+        9,
+        24
+      ],
+      "mdna": [
+        13,
+        21
+      ],
+      "notes": [
+        176,
+        213
+      ],
+      "risk": [
+        186,
+        189
+      ],
+      "auditor": [
+        214,
+        218
+      ],
+      "compensation": [
+        143,
+        167
+      ]
+    }
+  },
+  {
+    "ids": [
+      "FLMNF.US"
+    ],
+    "document": "FLMNF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "letter": [
+        6,
+        9
+      ],
+      "business": [
+        22,
+        31
+      ],
+      "mdna": [
+        32,
+        50
+      ],
+      "risk": [
+        126,
+        140
+      ],
+      "notes": [
+        153,
+        230
+      ],
+      "auditor": [
+        233,
+        244
+      ]
+    }
+  },
+  {
+    "ids": [
+      "MTRBF.US"
+    ],
+    "document": "MTRBF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "letter": [
+        6,
+        6
+      ],
+      "business": [
+        12,
+        16
+      ],
+      "mdna": [
+        17,
+        19
+      ],
+      "risk": [
+        107,
+        140
+      ],
+      "notes": [
+        154,
+        195
+      ],
+      "auditor": [
+        142,
+        148
+      ],
+      "compensation": [
+        79,
+        102
+      ]
+    }
+  },
+  {
+    "ids": [
+      "PIFYF.US"
+    ],
+    "document": "PIFYF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "business": [
+        2,
+        4
+      ],
+      "mdna": [
+        7,
+        31
+      ],
+      "risk": [
+        26,
+        30
+      ],
+      "notes": [
+        40,
+        58
+      ],
+      "auditor": [
+        33,
+        35
+      ]
+    }
+  },
+  {
+    "ids": [
+      "PEYUF.US"
+    ],
+    "document": "PEYUF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "business": [
+        3,
+        5
+      ],
+      "mdna": [
+        6,
+        38
+      ],
+      "risk": [
+        29,
+        32
+      ],
+      "notes": [
+        49,
+        69
+      ],
+      "auditor": [
+        40,
+        43
+      ]
+    }
+  },
+  {
+    "ids": [
+      "RTLLF.US"
+    ],
+    "document": "RTLLF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "business": [
+        10,
+        13
+      ],
+      "mdna": [
+        14,
+        19
+      ],
+      "risk": [
+        20,
+        31
+      ],
+      "notes": [
+        106,
+        144
+      ],
+      "auditor": [
+        146,
+        151
+      ]
+    }
+  },
+  {
+    "ids": [
+      "PUIGF.US"
+    ],
+    "document": "PUIGF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "business": [
+        11,
+        13
+      ],
+      "mdna": [
+        131,
+        150
+      ],
+      "risk": [
+        99,
+        106
+      ],
+      "notes": [
+        10,
+        122
+      ]
+    }
+  },
+  {
+    "ids": [
+      "FBAK.US"
+    ],
+    "document": "FBAK",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "business": [
+        13,
+        15
+      ],
+      "notes": [
+        13,
+        54
+      ],
+      "auditor": [
+        3,
+        5
+      ]
+    }
+  },
+  {
+    "ids": [
+      "CNSWF.US"
+    ],
+    "document": "CNSWF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "business": [
+        3,
+        5
+      ],
+      "mdna": [
+        2,
+        32
+      ],
+      "risk": [
+        28,
+        32
+      ],
+      "notes": [
+        45,
+        100
+      ],
+      "auditor": [
+        33,
+        38
+      ]
+    }
+  },
+  {
+    "ids": [
+      "HEINY.US",
+      "HINKF.US"
+    ],
+    "document": "HEINY",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "letter": [
+        9,
+        10
+      ],
+      "business": [
+        12,
+        29
+      ],
+      "mdna": [
+        47,
+        52
+      ],
+      "risk": [
+        39,
+        46
+      ],
+      "notes": [
+        89,
+        141
+      ],
+      "auditor": [
+        265,
+        271
+      ],
+      "compensation": [
+        70,
+        82
+      ]
+    }
+  },
+  {
+    "ids": [
+      "HKHHF.US",
+      "HKHHY.US"
+    ],
+    "document": "HKHHF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "business": [
+        2,
+        2
+      ],
+      "mdna": [
+        6,
+        9
+      ],
+      "risk": [
+        30,
+        54
+      ],
+      "notes": [
+        67,
+        112
+      ],
+      "auditor": [
+        113,
+        119
+      ]
+    }
+  },
+  {
+    "ids": [
+      "KNCRF.US"
+    ],
+    "document": "KNCRF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "business": [
+        38,
+        43
+      ],
+      "mdna": [
+        38,
+        50
+      ],
+      "risk": [
+        34,
+        36
+      ],
+      "notes": [
+        132,
+        180
+      ],
+      "auditor": [
+        187,
+        190
+      ],
+      "compensation": [
+        22,
+        33
+      ]
+    }
+  },
+  {
+    "ids": [
+      "OGC.US"
+    ],
+    "document": "OGC",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "notes": [
+        15,
+        43
+      ],
+      "auditor": [
+        2,
+        7
+      ]
+    }
+  },
+  {
+    "ids": [
+      "TRMLF.US"
+    ],
+    "document": "TRMLF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "business": [
+        3,
+        6
+      ],
+      "mdna": [
+        3,
+        37
+      ],
+      "risk": [
+        26,
+        28
+      ],
+      "notes": [
+        46,
+        90
+      ],
+      "auditor": [
+        38,
+        41
+      ]
+    }
+  },
+  {
+    "ids": [
+      "ZLDSF.US"
+    ],
+    "document": "ZLDSF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "letter": [
+        5,
+        8
+      ],
+      "business": [
+        65,
+        76
+      ],
+      "mdna": [
+        77,
+        87
+      ],
+      "risk": [
+        88,
+        96
+      ],
+      "notes": [
+        240,
+        309
+      ],
+      "auditor": [
+        311,
+        323
+      ],
+      "compensation": [
+        17,
+        57
+      ]
+    }
+  },
+  {
+    "ids": [
+      "PHJMF.US"
+    ],
+    "document": "PHJMF",
+    "period": "2025-12-31",
+    "filed": null,
+    "sections": {
+      "letter": [
+        19,
+        43
+      ],
+      "business": [
+        53,
+        73
+      ],
+      "mdna": [
+        85,
+        123
+      ],
+      "risk": [
+        193,
+        195
+      ],
+      "notes": [
+        300,
+        377
+      ],
+      "auditor": [
+        288,
+        294
+      ]
+    }
+  },
+  {
+    "document": "FLUIF",
+    "ids": [
+      "FLUIF.US"
+    ],
+    "period": "2025-12-31",
+    "filed": "2026-03-26",
+    "sections": {
+      "letter": [
+        5,
+        10
+      ],
+      "business": [
+        12,
+        32
+      ],
+      "mdna": [
+        43,
+        65
+      ],
+      "risk": [
+        493,
+        495
+      ],
+      "notes": [
+        447,
+        528
+      ],
+      "auditor": [
+        439,
+        446
+      ],
+      "compensation": [
+        380,
+        408
+      ]
+    }
+  }
+]

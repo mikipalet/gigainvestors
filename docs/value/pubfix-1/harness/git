@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+"""Keep origin identity checks real; redirect only transport to a local bare repo."""
+import os,sys,json
+from pathlib import Path
+root=Path(os.environ['PUBFIX_ROOT']).resolve()
+args=sys.argv[1:]
+if '-C' not in args or not Path(args[args.index('-C')+1]).resolve().is_relative_to(root):
+ raise SystemExit('Sandbox git requires a sandbox repository')
+transport=any(x in args for x in ['fetch','push','ls-remote','clone'])
+if transport:
+ with (root/'evidence/git-transports.jsonl').open('a') as f:f.write(json.dumps({'args':args,'remote':str(root/'storage/remote.git')})+'\n')
+ args=['-c','protocol.allow=never','-c','protocol.file.allow=always','-c',f'url.{root}/storage/remote.git.insteadOf=https://github.com/mikipalet/gigainvestors-value-data.git',*args]
+os.execv('/usr/bin/git',['git',*args])

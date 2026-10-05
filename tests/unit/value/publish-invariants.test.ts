@@ -70,3 +70,23 @@ it('refuses to reintroduce two reviewed listings of one issuer',()=>{
  const ds=read('dossiers/000.json');ds['NSRGY.US']={id:'NSRGY.US'};ds['NESN.SW']={id:'NESN.SW'};write('dossiers/000.json',ds);
  expect(()=>commitOutput({repo,asOf:'2026-10-05'})).toThrow(/duplicate issuer/i);
 });
+it('permits retired Buy-now rows to disappear from country and default indexes',()=>{
+ const ds=read('dossiers/000.json');delete ds['C0.US'];write('dossiers/000.json',ds);
+ write('aliases.json',{'C0.US':'C2.US'});
+ for(const file of ['index/US.json','index/default.json']){
+  const rows=read(file);rows.push({...rows[0],id:'C0.US',b:true});write(file,rows);
+ }
+ git('add','index');git('commit','-m','old alias buy');
+ for(const file of ['index/US.json','index/default.json'])write(file,read(file).filter((r:any)=>r.id!=='C0.US'));
+ expect(commitOutput({repo,asOf:'2026-10-05'})).toBe(true);
+});
+it('does not count retired-listing price moves as explanations for surviving Buy-now flips',()=>{
+ const row=read('index/US.json')[0];
+ for(const file of ['index/US.json','index/default.json'])write(file,[row,{...row,id:'C0.US'}]);
+ write('prices/US.json',{'A.US':[100,'2026-10-01'],'C0.US':[100,'2026-10-01']});
+ git('add','.');git('commit','-m','alias before retirement');
+ const ds=read('dossiers/000.json');delete ds['C0.US'];write('dossiers/000.json',ds);write('aliases.json',{'C0.US':'C2.US'});
+ write('prices/US.json',{'A.US':[100,'2026-10-01'],'C0.US':[50,'2026-10-02']});
+ for(const file of ['index/US.json','index/default.json'])write(file,[{...row,b:true}]);
+ expect(()=>commitOutput({repo,asOf:'2026-10-05'})).toThrow(/Buy-now changed/);
+});

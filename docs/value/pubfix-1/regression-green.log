@@ -1,0 +1,27 @@
+
+> superinvestors@0.1.0 test
+> vitest run tests/unit/value/publish.test.ts -t coverage additions retired
+
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/pubfix/repo
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=false)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > does not let a retired addition bypass canonical input binding
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > requires complete canonical inputs even when the retired addition has complete inputs
+Private share residual: 1; quality passes: 1
+
+ ✓ tests/unit/value/publish.test.ts (86 tests | 82 skipped) 822ms
+   ✓ coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)  372ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed | 82 skipped (86)
+   Start at  09:15:04
+   Duration  3.89s (transform 1.56s, setup 0ms, collect 2.73s, tests 822ms, environment 0ms, prepare 72ms)
+

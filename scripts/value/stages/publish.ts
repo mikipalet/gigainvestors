@@ -1,4 +1,4 @@
-import {readRetiredIssuerAliases} from '../retired-issuer-aliases';
+import {readRetiredIssuerAliases,reviewedIssuerAliases} from '../retired-issuer-aliases';
 import {reconcileIssuers} from '../issuer-publication';
 import {fillPublishedLogos} from '../../../lib/value/logo-fill';
 import {readCoverageRelease,additionInputProblems,assertAdditionBinding} from '../coverage-release';
@@ -354,18 +354,24 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   if(additionsOnly)writeCorpusJson('staging/additions-search-manifest.json',files['search/manifest.json']);
   applyVerdictFreeze(files,freeze,{extendSearch:preserveBaseline});
   if(preserveBaseline)preserveAdditionBaseline(files,freeze);
+  // Validate the snapshot that will actually ship, including first-time retirements.
+  reconcileIssuers(files,holdersByTicker,investorNames);
   if(release){
-    const retired=readRetiredIssuerAliases(previousDossiers?path.dirname(previousDossiers):repo);
+    const aliases=files['aliases.json'] as Record<string,string>??{};
     const emitted=Object.assign({},...Object.entries(files).filter(([file])=>file.startsWith('dossiers/')).map(([,data])=>data));
-    for(const id of release.additionIds){
-      if(!emitted[id]&&retired[id]&&emitted[retired[id]])continue;
+    const checked=new Set<string>();
+    for(const releasedId of release.additionIds){
+      const id=reviewedIssuerAliases[releasedId]??aliases[releasedId]??releasedId;
+      if(id!==releasedId&&(emitted[releasedId]||aliases[releasedId]!==id||!emitted[id]))
+        throw Error(`Coverage retired listing ${releasedId}: canonical ${id} missing or alias invalid`);
+      if(checked.has(id))continue;
+      checked.add(id);
       const problems=additionInputProblems(id,quotes[id]);
       if(problems.length)throw Error(`Coverage addition ${id} is incomplete: ${problems.join(', ')}`);
       assertAdditionBinding(readCorpusJson<Analysis>(`analysis/${id}.json`)!,emitted[id]);
     }
     if(release.held.some(({id})=>emitted[id]))throw Error('Held coverage addition reached publication');
   }
-  reconcileIssuers(files,holdersByTicker,investorNames);
   fillPublishedLogos(files);
   forwardFiles(repo, files, universe, readPrices(path.join(repo, 'prices')), new Date().toISOString().slice(0,10));
   publishViews(files);
@@ -482,9 +488,9 @@ export default async function publish(options: { only?: string[]; limit?: number
   const membership = readCorpusJson<{ complete: boolean; memberships: Record<string, string[]>; supplementalCompanies?: Company[] }>("index-membership/latest.json");
   if (!membership || (!membership.complete && !(out && options.force))) throw new Error("Run index-membership and resolve its coverage report before publish (incomplete snapshots may only be inspected with --out --force)");
   const release=readCoverageRelease();
-  const releasedIds=release?new Set([...release.baselineIds,...release.additionIds]):null;
+  const releasedIds=release?new Set([...release.baselineIds,...release.additionIds].map(id=>reviewedIssuerAliases[id]??id)):null;
   const retired=readRetiredIssuerAliases(corpusPath('publish-repo'));
-  const companies = universeCompanies().filter(c=>!retired[c.id]).filter(c=>!releasedIds||releasedIds.has(c.id)).map(company=>({...mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{}),indexes:company.indexes,heldBySuperinvestors:company.heldBySuperinvestors})).filter(company => inPublicationScope(company) && !companyExclusion(company));
+  const companies = universeCompanies().filter(c=>!retired[c.id]&&!reviewedIssuerAliases[c.id]).filter(c=>!releasedIds||releasedIds.has(c.id)).map(company=>({...mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{}),indexes:company.indexes,heldBySuperinvestors:company.heldBySuperinvestors})).filter(company => inPublicationScope(company) && !companyExclusion(company));
   if (!companies.length) throw new Error("Run the universe stage before publish");
   // Selection only needs IDs; do not retain a second full baseline while building output.
   const frozenIds=options.additionsOnly?new Set(readdirSync(corpusPath('publish-repo/dossiers')).filter(f=>/^\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(JSON.parse(readFileSync(corpusPath('publish-repo/dossiers',f),'utf8'))))):readVerdictFreeze(corpusPath('publish-repo')).ids;

@@ -2,7 +2,6 @@ import {uploadPublishedSnapshot} from './blob-publish';
 import {execFileSync} from 'node:child_process';
 import {existsSync,readFileSync,writeFileSync,renameSync,rmSync} from 'node:fs';
 import path from 'node:path';
-import {assertPublishInvariants} from './publish-invariants';
 import {revalidatePublishedValue} from './revalidate';
 import {checkLivePublication} from './live-check';
 interface Receipt {before:string|null;after:string;rollback?:string}
@@ -59,7 +58,10 @@ export async function verifyPublication(repo:string,{check=checkLivePublication,
   // A full publish is an orphan. Restore the exact previous tree and create a
   // compensating commit (also works for prices), rather than assuming HEAD^ exists.
   git(repo,['restore',`--source=${receipt.before}`,'--staged','--worktree','--','.']);
-  assertPublishInvariants(repo,receipt.before);
+  // Restore the exact released tree, even if it predates today's issuer rules.
+  // Applying candidate invariants here can block recovery from a failed dedupe.
+  if(git(repo,['write-tree'])!==git(repo,['rev-parse',`${receipt.before}^{tree}`])
+    ||git(repo,['diff','--name-only']))throw Error('CRITICAL: rollback differs from prior publication');
   git(repo,['commit','-m',`Revert failed publication ${receipt.after}`]);
   receipt.rollback=git(repo,['rev-parse','HEAD']);save(repo,receipt);
   git(repo,[...auth,'push',`--force-with-lease=refs/heads/main:${receipt.after}`,'origin','HEAD:main']);

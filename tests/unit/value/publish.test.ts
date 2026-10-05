@@ -1083,3 +1083,52 @@ it('prices keeps all 87 quarterly views, deferred views, annual views and histor
  expect(readFileSync(path.join(repo,'history/index.json'),'utf8')).toBe(history);
  for(const q of quarters)expect(existsSync(path.join(repo,meta.views.quarters[q]))).toBe(true);
 });
+
+
+describe('coverage additions retired by the issuer registry', () => {
+  function retiredAdditionFixture() {
+    const canonical=analysis('ALK-B.CO'),alias=analysis('AKBLF.US');
+    for(const a of [canonical,alias]) {
+      a.report={...a.report,kind:'10-K',sections:['business']};
+      a.ownerMemo={version:1,asOf:a.asOf,inputHash:`input-${a.id}`,lines:[]} as any;
+      writeCorpusJson(`analysis/${a.id}.json`,a);
+      writeCorpusJson(`fundamentals/${a.id}.json`,{years:[{year:2025,end:'2025-12-31'}]});
+      writeCorpusJson(`reports/${a.id}/meta.json`,a.report);
+      writeCorpusJson(`analysis/inputs/${a.id}.json`,{asOf:a.asOf,sections:{business:'Annual filing'}});
+      writeCorpusJson(`prices-history/${a.id}.json`,[['2026-09',10]]);
+    }
+    writeCorpusJson('prices/US.json',Object.fromEntries([canonical,alias].map(a=>[a.id,[10,new Date().toISOString().slice(0,10)]])));
+    writeCorpusJson('held-membership/release.json',{version:1,baselineIds:[],baselineAnalysisHashes:{},additionIds:[alias.id],held:[]});
+    // prepareRepository resets to a committed pre-dedupe snapshot: no aliases.json.
+    const repo=repository();writeOutput({repo,files:output([canonical])});
+    git(repo,['add','.']);git(repo,['commit','-m','pre-dedupe remote']);
+    const publish=(a=canonical,commit=false)=>publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit,holdersByTicker:{},investorNames:{}});
+    return {repo,canonical,publish};
+  }
+  it.each([false,true])('binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=%s)',commit=>{
+    const {repo,publish}=retiredAdditionFixture();
+    expect(publish(undefined,commit).count).toBe(1);
+    expect(JSON.parse(readFileSync(path.join(repo,'aliases.json'),'utf8'))['AKBLF.US']).toBe('ALK-B.CO');
+    const ids=readdirSync(path.join(repo,'dossiers')).flatMap(f=>Object.keys(JSON.parse(readFileSync(path.join(repo,'dossiers',f),'utf8'))));
+    expect(ids).toEqual(['ALK-B.CO']);
+  });
+  it('selects the canonical when only its retired listing appears in release scope',async()=>{
+    const {canonical}=retiredAdditionFixture();
+    writeFileSync(path.join(corpusDir(),'universe.jsonl'),JSON.stringify(canonical.company)+'\n');
+    writeCorpusJson('index-membership/latest.json',{complete:true,memberships:{[canonical.id]:['S&P 500']}});
+    const {default:publish}=await import('@/scripts/value/stages/publish');
+    const out=path.join(corpusDir(),'canonical-scope');
+    await publish({out});
+    expect(JSON.parse(readFileSync(path.join(out,`dossiers/${shardOf(canonical.id)}.json`),'utf8'))[canonical.id]).toBeDefined();
+  });
+  it('does not let a retired addition bypass canonical input binding',()=>{
+    const {canonical,publish}=retiredAdditionFixture();
+    const changed={...canonical,ownerMemo:{...canonical.ownerMemo!,inputHash:'unreviewed'}};
+    expect(()=>publish(changed)).toThrow(/binding failed: ALK-B.CO/);
+  });
+  it('requires complete canonical inputs even when the retired addition has complete inputs',()=>{
+    const {publish}=retiredAdditionFixture();
+    writeCorpusJson('reports/ALK-B.CO/meta.json',{kind:'description',sections:[]});
+    expect(()=>publish()).toThrow(/ALK-B.CO.*incomplete.*full-filing/);
+  });
+});

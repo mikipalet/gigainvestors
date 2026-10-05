@@ -1,5 +1,10 @@
+import registry from '../../lib/value/issuer-registry.json';
 import {existsSync,readdirSync,readFileSync} from 'node:fs';
 import path from 'node:path';
+/** Reviewed retirements survive a reset to a snapshot predating aliases.json. */
+export const reviewedIssuerAliases:Readonly<Record<string,string>>=Object.fromEntries(
+ registry.groups.flatMap(group=>group.ids.filter(id=>id!==group.canonical).map(id=>[id,group.canonical])),
+);
 export function retiredIssuerAliases(aliases:Record<string,string>,published:ReadonlySet<string>):Record<string,string>{
  const retired:Record<string,string>={};
  for(const [id,target]of Object.entries(aliases)){

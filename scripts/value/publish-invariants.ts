@@ -73,6 +73,8 @@ export function assertPublishInvariants(repo:string,baseline='HEAD'):void {
   const oldBuys=oldRows.filter(r=>r.b).length,newBuys=newRows.filter(r=>r.b).length;
   let increases=0,decreases=0;
   for(const row of oldRows){
+   // A retired quote cannot explain a verdict change in a surviving dossier.
+   if(!newIds.has(row.id)&&aliases[row.id])continue;
    if(isDeepStrictEqual(oldPrices[row.id],newPrices[row.id]))continue;
    const change=Number(publishedBuyPrice(row,newPrices[row.id]).b)-Number(publishedBuyPrice(row,oldPrices[row.id]).b);
    if(change>0)increases++;if(change<0)decreases++;

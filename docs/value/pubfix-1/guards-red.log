@@ -1,0 +1,105 @@
+
+> superinvestors@0.1.0 test
+> vitest run tests/unit/value/publish-invariants.test.ts tests/unit/value/post-publish.test.ts
+
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/pubfix/repo
+
+ ❯ tests/unit/value/publish-invariants.test.ts (22 tests | 1 failed) 2779ms
+   ✓ permits added-company buys while preserving the price-only rule for existing companies 165ms
+   ✓ quarters refuses prices commit before changing HEAD or index 102ms
+   ✓ yearDeferred refuses prices commit before changing HEAD or index 94ms
+   ✓ missing-file refuses prices commit before changing HEAD or index 106ms
+   ✓ dossiers refuses prices commit before changing HEAD or index 113ms
+   ✓ buy refuses prices commit before changing HEAD or index 127ms
+   ✓ history refuses prices commit before changing HEAD or index 120ms
+   ✓ prices permits an exactly 1% dossier drop and a price-explained Buy-now transition 157ms
+   ✓ quarters refuses publish commit before changing HEAD or index 103ms
+   ✓ yearDeferred refuses publish commit before changing HEAD or index 103ms
+   ✓ missing-file refuses publish commit before changing HEAD or index 95ms
+   ✓ dossiers refuses publish commit before changing HEAD or index 97ms
+   ✓ buy refuses publish commit before changing HEAD or index 129ms
+   ✓ history refuses publish commit before changing HEAD or index 96ms
+   ✓ publish permits an exactly 1% dossier drop and a price-explained Buy-now transition 190ms
+   ✓ does not let pre-staged unrelated changes bypass the prices gate 70ms
+   ✓ accepts year views derived from Q4 without requiring a separate annual snapshot 161ms
+   ✓ allows a reviewed identity collapse only when every lost dossier has a direct live target 180ms
+   ✓ refuses alias cycles or missing canonical dossiers 94ms
+   ✓ refuses to reintroduce two reviewed listings of one issuer 90ms
+   ✓ permits retired Buy-now rows to disappear from country and default indexes 195ms
+   × does not count retired-listing price moves as explanations for surviving Buy-now flips 189ms
+     → expected [Function] to throw an error
+stderr | tests/unit/value/post-publish.test.ts > reverts the failed pushed snapshot (orphan=false), republishes and revalidates the prior tree
+CRITICAL: live time travel/revalidation failed for 4d4170d7860d1aeb678e11bc37744cbeef76cc38; reverting last publication
+
+stderr | tests/unit/value/post-publish.test.ts > reverts the failed pushed snapshot (orphan=true), republishes and revalidates the prior tree
+CRITICAL: live time travel/revalidation failed for 4f853e6d0a2c6172d9056346790f9821efa387e8; reverting last publication
+
+stdout | tests/unit/value/post-publish.test.ts > checks a successful publication once and clears the durable receipt
+live-check: 819cb648cff248aa0dd0b56330449215b9a03846 passed quarter-back and 2018Q3
+
+stdout | tests/unit/value/post-publish.test.ts > does not check or revert a failed push
+live-check: push did not reach origin; retained prior publication
+
+stderr | tests/unit/value/post-publish.test.ts > rolls back when revalidation fails, without declaring an unvalidated site healthy
+CRITICAL: live time travel/revalidation failed for 14231ee8328ffa1dd109ac0787358a388bff46dc; reverting last publication
+
+stderr | tests/unit/value/post-publish.test.ts > can restore the exact pre-dedupe snapshot if publication verification fails
+CRITICAL: live time travel/revalidation failed for 6c5e4f51f2bfaf2ae44512ad50ede4c0f6350e03; reverting last publication
+
+ ❯ tests/unit/value/post-publish.test.ts (7 tests | 1 failed) 2285ms
+   ✓ reverts the failed pushed snapshot (orphan=false), republishes and revalidates the prior tree  413ms
+   ✓ reverts the failed pushed snapshot (orphan=true), republishes and revalidates the prior tree  358ms
+   ✓ checks a successful publication once and clears the durable receipt 258ms
+   ✓ does not check or revert a failed push 170ms
+   ✓ refuses to revert if another writer advanced the remote  379ms
+   ✓ rolls back when revalidation fails, without declaring an unvalidated site healthy  340ms
+   × can restore the exact pre-dedupe snapshot if publication verification fails 366ms
+     → expected [Function] to throw error matching /CRITICAL.*reverted/ but got 'Publish invariant: duplicate issuer: …'
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/post-publish.test.ts > can restore the exact pre-dedupe snapshot if publication verification fails
+AssertionError: expected [Function] to throw error matching /CRITICAL.*reverted/ but got 'Publish invariant: duplicate issuer: …'
+
+- Expected: 
+/CRITICAL.*reverted/
+
++ Received: 
+"Publish invariant: duplicate issuer: AKBLF.US, ALK-B.CO"
+
+ ❯ tests/unit/value/post-publish.test.ts:59:2
+     57|  write('dossiers/000.json',{'ALK-B.CO':{id:'ALK-B.CO'}});write('aliase…
+     58|  candidate(true);
+     59|  await expect(verifyPublication(repo,{check:async()=>{throw Error('fai…
+       |  ^
+     60|  expect(git(repo,'rev-parse','HEAD^{tree}')).toBe(git(repo,'rev-parse'…
+     61|  expect(git(remote,'rev-parse','main')).toBe(git(repo,'rev-parse','HEA…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/value/publish-invariants.test.ts > does not count retired-listing price moves as explanations for surviving Buy-now flips
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ tests/unit/value/publish-invariants.test.ts:91:53
+     89|  write('prices/US.json',{'A.US':[100,'2026-10-01'],'C0.US':[50,'2026-1…
+     90|  for(const file of ['index/US.json','index/default.json'])write(file,[…
+     91|  expect(()=>commitOutput({repo,asOf:'2026-10-05'})).toThrow(/Buy-now c…
+       |                                                     ^
+     92| });
+     93| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 27 passed (29)
+   Start at  09:16:21
+   Duration  8.99s (transform 1.64s, setup 0ms, collect 3.33s, tests 5.06s, environment 0ms, prepare 142ms)
+

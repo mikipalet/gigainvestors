@@ -51,3 +51,12 @@ it('rolls back when revalidation fails, without declaring an unvalidated site he
  await expect(verifyPublication(repo,{check:async()=>{},revalidate:async()=>{if(++calls===1)throw new Error('revalidation failed');}})).rejects.toThrow(/CRITICAL.*reverted/);
  expect(git(repo,'rev-parse','HEAD^{tree}')).toBe(git(repo,'rev-parse',`${before}^{tree}`));
 });
+it('can restore the exact pre-dedupe snapshot if publication verification fails',async()=>{
+ write('dossiers/000.json',{'AKBLF.US':{id:'AKBLF.US'},'ALK-B.CO':{id:'ALK-B.CO'}});
+ git(repo,'add','.');git(repo,'commit','-m','legacy duplicate listings');git(repo,'push');before=git(repo,'rev-parse','HEAD');
+ write('dossiers/000.json',{'ALK-B.CO':{id:'ALK-B.CO'}});write('aliases.json',{'AKBLF.US':'ALK-B.CO'});
+ candidate(true);
+ await expect(verifyPublication(repo,{check:async()=>{throw Error('failed local check');},revalidate:async()=>{}})).rejects.toThrow(/CRITICAL.*reverted/);
+ expect(git(repo,'rev-parse','HEAD^{tree}')).toBe(git(repo,'rev-parse',`${before}^{tree}`));
+ expect(git(remote,'rev-parse','main')).toBe(git(repo,'rev-parse','HEAD'));
+});

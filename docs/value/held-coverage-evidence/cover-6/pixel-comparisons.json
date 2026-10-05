@@ -1,0 +1,8381 @@
+[
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ff6d6d657392f36d6821891d010f5fedcad98d9a1d53a6ee8a8898c3ab793d39",
+      "ff6d6d657392f36d6821891d010f5fedcad98d9a1d53a6ee8a8898c3ab793d39"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "dbaab771a3a6493fe7bda7899b3623e583dd27816ca76328b83bb35f36d03c9e",
+      "dbaab771a3a6493fe7bda7899b3623e583dd27816ca76328b83bb35f36d03c9e"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4b4949553745acf0282d2f84003e7ba937581bd560e08dceb4f926d7d07d0fed",
+      "4b4949553745acf0282d2f84003e7ba937581bd560e08dceb4f926d7d07d0fed"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "49a08c357a7ac7dbf3233c47ebad3d954f26f6bb87ad0c90bd9c369252bfbb63",
+      "49a08c357a7ac7dbf3233c47ebad3d954f26f6bb87ad0c90bd9c369252bfbb63"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "df1b0a188dd8ad985d9f5da9534fa7ec4d5b50e3ccf0051f068508cc049585d4",
+      "df1b0a188dd8ad985d9f5da9534fa7ec4d5b50e3ccf0051f068508cc049585d4"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "970b5f1158906614ea35f84b539eddfc4542c89829001679631d680ede5892e2",
+      "970b5f1158906614ea35f84b539eddfc4542c89829001679631d680ede5892e2"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cceba9a92f883b612af2bb561e6fdb5021ce45b7fdc12f3d5432b2b82bf6abf9",
+      "cceba9a92f883b612af2bb561e6fdb5021ce45b7fdc12f3d5432b2b82bf6abf9"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e21e031c1d2319afd13e35e05a628c07dbdefb1029363738cb36364fba0458b0",
+      "e21e031c1d2319afd13e35e05a628c07dbdefb1029363738cb36364fba0458b0"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "180887f836f3fff47286f4ee154e76be1d759b215b5b02b1e780870d3a3de0bc",
+      "180887f836f3fff47286f4ee154e76be1d759b215b5b02b1e780870d3a3de0bc"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4e4181850c8c36c9ef48e3a2631ca4c9e76bc68d51be9aa6a4ea82e9305d7e03",
+      "4e4181850c8c36c9ef48e3a2631ca4c9e76bc68d51be9aa6a4ea82e9305d7e03"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "73bdca253ef83086e5d821ae357d3484688880cf3706e041aa2d0209ef0385db",
+      "73bdca253ef83086e5d821ae357d3484688880cf3706e041aa2d0209ef0385db"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "c97625ffbace26b9fc8627a3a8481e9c80d25f43c1658becdb6ad2545fde172e",
+      "c97625ffbace26b9fc8627a3a8481e9c80d25f43c1658becdb6ad2545fde172e"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f83a20a0c4bf55302148f74e3538d057765aad61bd9b280b5cc35d590d6a7b8a",
+      "f83a20a0c4bf55302148f74e3538d057765aad61bd9b280b5cc35d590d6a7b8a"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 391
+      },
+      {
+        "width": 374,
+        "height": 391
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6d78fe6c9aa44ad744b2c9b70ecf5bbb8d8687a230597f9ae700a93677851249",
+      "6d78fe6c9aa44ad744b2c9b70ecf5bbb8d8687a230597f9ae700a93677851249"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "bb08a1d300ac4dc3b8aecd9d83d60607019051c00d2dd980ed9cffb0e1c89fb0",
+      "bb08a1d300ac4dc3b8aecd9d83d60607019051c00d2dd980ed9cffb0e1c89fb0"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "affb38fc685f61ec68ad35754fb4ced00608b427fb8741fe7696384f97a65a03",
+      "affb38fc685f61ec68ad35754fb4ced00608b427fb8741fe7696384f97a65a03"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1f1af4c17833f6758c3900b82a889b1eeab6f833e0a96edd44bdd14ca47a629c",
+      "1f1af4c17833f6758c3900b82a889b1eeab6f833e0a96edd44bdd14ca47a629c"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 506
+      },
+      {
+        "width": 374,
+        "height": 506
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4280eb270bb3ad16a55163b0448b6bd19d6603614010ff90c2466b3460c488c0",
+      "4280eb270bb3ad16a55163b0448b6bd19d6603614010ff90c2466b3460c488c0"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9968c707d8c802531570355246be3a4f322c3ba0b33911d878b7e012f5d302c3",
+      "9968c707d8c802531570355246be3a4f322c3ba0b33911d878b7e012f5d302c3"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 331
+      },
+      {
+        "width": 374,
+        "height": 331
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b6ee3509a977f085a902829a76d3b1431a66a0725547cd841078dca91ff7f881",
+      "b6ee3509a977f085a902829a76d3b1431a66a0725547cd841078dca91ff7f881"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ba77754fc3855f1b1654737173e7d33cb895cf96d5da18dee437270c4d6ab1c5",
+      "ba77754fc3855f1b1654737173e7d33cb895cf96d5da18dee437270c4d6ab1c5"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 533
+      },
+      {
+        "width": 374,
+        "height": 533
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "c545d27df59f80cb4d4ecd2c30af2db8fd8a74c8c8a97902837a5542dd98594d",
+      "c545d27df59f80cb4d4ecd2c30af2db8fd8a74c8c8a97902837a5542dd98594d"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d706ba795ef6b39df588c4e0546b0defe6eac775fb4c3315e2cac95dc93e9f79",
+      "d706ba795ef6b39df588c4e0546b0defe6eac775fb4c3315e2cac95dc93e9f79"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 533
+      },
+      {
+        "width": 374,
+        "height": 533
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "792c60cd5cc52ca8f0a54f3d742299503b9335ee4ff88cba934a0a59f214a513",
+      "792c60cd5cc52ca8f0a54f3d742299503b9335ee4ff88cba934a0a59f214a513"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f24ab2c10c5af028c82cb0601f7c486ddf097155a0e924b30a7fd6cd5331e25b",
+      "f24ab2c10c5af028c82cb0601f7c486ddf097155a0e924b30a7fd6cd5331e25b"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 791
+      },
+      {
+        "width": 374,
+        "height": 791
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "45863e9ee796dcc3164018a280de664363142bfa26fa21e1b3d5c821dc2c2bc3",
+      "45863e9ee796dcc3164018a280de664363142bfa26fa21e1b3d5c821dc2c2bc3"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e136328e37597352ef0c0c2f388b820afe3adc657beb06848b6b139a8db80a0d",
+      "e136328e37597352ef0c0c2f388b820afe3adc657beb06848b6b139a8db80a0d"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 391
+      },
+      {
+        "width": 374,
+        "height": 391
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "5185aafa9c0564eda428a1d742172776b250c99a8318d036265a5f2e553c0880",
+      "5185aafa9c0564eda428a1d742172776b250c99a8318d036265a5f2e553c0880"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b17f9912b36cf062abc969661af3c6f48dae08f7da86a644b42455a7200a8eb9",
+      "b17f9912b36cf062abc969661af3c6f48dae08f7da86a644b42455a7200a8eb9"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8ed86a844971c7771e8f7bf1df2a2f6b66886102fa872a04b9e26e4ffc01383e",
+      "8ed86a844971c7771e8f7bf1df2a2f6b66886102fa872a04b9e26e4ffc01383e"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "fce5e8f3056f248ba6628db5eca629a5d151b3b69d24e38cca69f720416f038d",
+      "fce5e8f3056f248ba6628db5eca629a5d151b3b69d24e38cca69f720416f038d"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 499
+      },
+      {
+        "width": 374,
+        "height": 499
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8ce7d7e5b4a36ac2ac154b0dcf74ed568b3d68379382b38d0b6af124c18def63",
+      "8ce7d7e5b4a36ac2ac154b0dcf74ed568b3d68379382b38d0b6af124c18def63"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2cb083c58d65d7aacaa3870b3bbcb8fad29880aa22fd3f48c8a46d80f3317f99",
+      "2cb083c58d65d7aacaa3870b3bbcb8fad29880aa22fd3f48c8a46d80f3317f99"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2bed87ac3ebc7a906fa9c0493a8d48a8da3ab659043d0120a595442cc64a6d46",
+      "2bed87ac3ebc7a906fa9c0493a8d48a8da3ab659043d0120a595442cc64a6d46"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "49b4f721e0ea8849decc10baa4bfcab5205fc2f318697b669439cdf28ae54596",
+      "49b4f721e0ea8849decc10baa4bfcab5205fc2f318697b669439cdf28ae54596"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "3ea6b35880d05137e982a870fedc4273d9c78b40f03d63da4c7eb56e030cf9e1",
+      "3ea6b35880d05137e982a870fedc4273d9c78b40f03d63da4c7eb56e030cf9e1"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ef597f3acf9de87de965a73f9dd6e766c83db197cacb6f6aec2fea6bbfc7d44a",
+      "ef597f3acf9de87de965a73f9dd6e766c83db197cacb6f6aec2fea6bbfc7d44a"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8984703731b04f5ea0199c01633ce042e616dec1d832847ff66211b63d7a6caf",
+      "8984703731b04f5ea0199c01633ce042e616dec1d832847ff66211b63d7a6caf"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "11ecc112c91d682e89a45422d76a10603339aacd55a861623823a7a190d8b868",
+      "11ecc112c91d682e89a45422d76a10603339aacd55a861623823a7a190d8b868"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "699f9331030bfa2d2385334d415c623107984fca5750897cfd66c0b39d3c0a4c",
+      "699f9331030bfa2d2385334d415c623107984fca5750897cfd66c0b39d3c0a4c"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8f89c6130c56027f46b38b753c37e4d7cbe19339b1fbcffbe6796378ae69db54",
+      "8f89c6130c56027f46b38b753c37e4d7cbe19339b1fbcffbe6796378ae69db54"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 354
+      },
+      {
+        "width": 374,
+        "height": 354
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f8db88248f6df483c9f7bfa4717a8a4044867f9b5e28b6aa0dad7c1fa61bfb34",
+      "f8db88248f6df483c9f7bfa4717a8a4044867f9b5e28b6aa0dad7c1fa61bfb34"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "73268d3e54b5ce4b3f96843055262b1a548c3f3ff318274f003212e84adb8a79",
+      "73268d3e54b5ce4b3f96843055262b1a548c3f3ff318274f003212e84adb8a79"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9ecf2ae2bff08193b69295cca2978c21f59b6a146ae6c3641a1b4f9125e44238",
+      "9ecf2ae2bff08193b69295cca2978c21f59b6a146ae6c3641a1b4f9125e44238"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4a4bde3fbbef258be59bed6dc8e908d65ddf2aabfd696a015da6769365ddbebb",
+      "4a4bde3fbbef258be59bed6dc8e908d65ddf2aabfd696a015da6769365ddbebb"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 341
+      },
+      {
+        "width": 374,
+        "height": 341
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2682016a4c3194f4d8d61dc868b98bc3701e577de7e507513c6d1b4fdabfacc7",
+      "2682016a4c3194f4d8d61dc868b98bc3701e577de7e507513c6d1b4fdabfacc7"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "abfa4e63eb501d08ea9ac9ad6faf8d932dc0e68eedeec5ad6442f260452ed71e",
+      "abfa4e63eb501d08ea9ac9ad6faf8d932dc0e68eedeec5ad6442f260452ed71e"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 341
+      },
+      {
+        "width": 374,
+        "height": 341
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e454460a8580ce5460d57273975b5a0a8c1ed9ba7c5613bebe4d9fed82f0bbce",
+      "e454460a8580ce5460d57273975b5a0a8c1ed9ba7c5613bebe4d9fed82f0bbce"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6345b1804a3dae95d096842073f92422055a03c48f0266ea9e4583c9e2408b10",
+      "6345b1804a3dae95d096842073f92422055a03c48f0266ea9e4583c9e2408b10"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 358
+      },
+      {
+        "width": 374,
+        "height": 358
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ab632da9741c27f504b651970208045d82955feaf9670633b764e75b04e91029",
+      "ab632da9741c27f504b651970208045d82955feaf9670633b764e75b04e91029"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "bf52f4b86879e4e6e7743a9e668d025a327272488fdd18610cfff49674873215",
+      "bf52f4b86879e4e6e7743a9e668d025a327272488fdd18610cfff49674873215"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 365
+      },
+      {
+        "width": 374,
+        "height": 365
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2a0c5305dcd4c9a4e1be616da1aecb6ae2689138618aa9ad06ee9e57842728c2",
+      "2a0c5305dcd4c9a4e1be616da1aecb6ae2689138618aa9ad06ee9e57842728c2"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ca0d2a3b006d68bbfaf2a8587af9d6217c87adffcb7b6b78c8c27fc4e47b64d8",
+      "ca0d2a3b006d68bbfaf2a8587af9d6217c87adffcb7b6b78c8c27fc4e47b64d8"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 358
+      },
+      {
+        "width": 374,
+        "height": 358
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1c748581151f65ed4101d117facbe23f7ee21677e252ba21e9c37c6b53bcceb9",
+      "1c748581151f65ed4101d117facbe23f7ee21677e252ba21e9c37c6b53bcceb9"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "76315e4dd105a606e9c71f739b5be1b3677713b3d284c2316e1d42011458eaaa",
+      "76315e4dd105a606e9c71f739b5be1b3677713b3d284c2316e1d42011458eaaa"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 164
+      },
+      {
+        "width": 374,
+        "height": 164
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "51be56f9894eae12f84aa50e0ec8976c04adbfa7c17e1aa8537271026ba116ed",
+      "51be56f9894eae12f84aa50e0ec8976c04adbfa7c17e1aa8537271026ba116ed"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cd624c267c16108286fed1883c357800d7c0c98de04cf068522d50728efb8f63",
+      "cd624c267c16108286fed1883c357800d7c0c98de04cf068522d50728efb8f63"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9160285183cde28d1caecb046ec6c253e79b5c44b229b99d4250e58596e7afd4",
+      "9160285183cde28d1caecb046ec6c253e79b5c44b229b99d4250e58596e7afd4"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6f49d279dcb9ffed00335cf8986e1a83785c2716f1f54b84aadfedf2ad309116",
+      "6f49d279dcb9ffed00335cf8986e1a83785c2716f1f54b84aadfedf2ad309116"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 499
+      },
+      {
+        "width": 374,
+        "height": 499
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "25d50eda4538d9ea15b8cc8fbb9db3a8247c65986ca90c05bdcb3520af68f931",
+      "25d50eda4538d9ea15b8cc8fbb9db3a8247c65986ca90c05bdcb3520af68f931"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ed5f85a22af71a28e3f1a1d7bc3071e908a5afe3a239db6a4b2c91609011c8f7",
+      "ed5f85a22af71a28e3f1a1d7bc3071e908a5afe3a239db6a4b2c91609011c8f7"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "5d63745898613019497224a649e4387cff7f2d27c27c93171e48fe54b3b06b98",
+      "5d63745898613019497224a649e4387cff7f2d27c27c93171e48fe54b3b06b98"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cc427dc5de0853ca493d1c5bad21727d5ecea24a0b69126980d6bd64fdb8738d",
+      "cc427dc5de0853ca493d1c5bad21727d5ecea24a0b69126980d6bd64fdb8738d"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "40f0fca405971772b9c0b469b4948f00739ad573f9b8a74dbbc2347d8bc7ce27",
+      "40f0fca405971772b9c0b469b4948f00739ad573f9b8a74dbbc2347d8bc7ce27"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8ddd202879883294cfba2293c0e41ad3328cb1eff84d923932545a6d03f5e894",
+      "8ddd202879883294cfba2293c0e41ad3328cb1eff84d923932545a6d03f5e894"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "983b99b996cf17fd55fe91acdf425a2cd0c36c919c194ba70165b3054891e171",
+      "983b99b996cf17fd55fe91acdf425a2cd0c36c919c194ba70165b3054891e171"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4899dcc8c02e4f8eac7d569d03d5ce92e6366bc73a9f29430afb663f78d38a8a",
+      "4899dcc8c02e4f8eac7d569d03d5ce92e6366bc73a9f29430afb663f78d38a8a"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "822c2c13a14e998a3193b92a2afa80ce472349322366408dfd7d3c2b6fa414d8",
+      "822c2c13a14e998a3193b92a2afa80ce472349322366408dfd7d3c2b6fa414d8"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "53fa6caf9e37c3ac1e4ab3506bd34782214273a54add21d5f74bd4e01c664b32",
+      "53fa6caf9e37c3ac1e4ab3506bd34782214273a54add21d5f74bd4e01c664b32"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "0229b378af932322a191e0ab07bf100eed1b568183a63a3a8161c738c9a49ddc",
+      "0229b378af932322a191e0ab07bf100eed1b568183a63a3a8161c738c9a49ddc"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ce9a475b69de2eca84d82fdb170cd1ab9e879353bb65bcd496416776c8c4d002",
+      "ce9a475b69de2eca84d82fdb170cd1ab9e879353bb65bcd496416776c8c4d002"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "54ccdb6025092e7b395910ffb080fc8d3391dd259c8bdde5e82b92846e1ff914",
+      "54ccdb6025092e7b395910ffb080fc8d3391dd259c8bdde5e82b92846e1ff914"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9dc4d18c7868fb4b02f4204f970f2479e09f0c7a1c82e653910bfcc47c36d44a",
+      "9dc4d18c7868fb4b02f4204f970f2479e09f0c7a1c82e653910bfcc47c36d44a"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e6bde74c7cffd8784d1ff63b7d739752925f30ca23a1c967b9f6086d64318db0",
+      "e6bde74c7cffd8784d1ff63b7d739752925f30ca23a1c967b9f6086d64318db0"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "788aa07ab8be0ea3d628eaee1074b8f9b22257d23785626c5dadb025562dfdb2",
+      "788aa07ab8be0ea3d628eaee1074b8f9b22257d23785626c5dadb025562dfdb2"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9f9558e618daf966e7eeb89acc84b8a02489c6024ac75dbbfc670ac473f48969",
+      "9f9558e618daf966e7eeb89acc84b8a02489c6024ac75dbbfc670ac473f48969"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "aae7c1a60f08a9b900ae25bc847a10b95f2edc6fbe7a49bd6378e4850819dd3d",
+      "aae7c1a60f08a9b900ae25bc847a10b95f2edc6fbe7a49bd6378e4850819dd3d"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e44c59ef382c953f4d3f3304c4f98cfbd5727559ce67bbdb70814583d490951",
+      "8e44c59ef382c953f4d3f3304c4f98cfbd5727559ce67bbdb70814583d490951"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "201a6819f858004e8eb98c736363bc2106b99cd26c710fc10bb35a0e247fa9dd",
+      "201a6819f858004e8eb98c736363bc2106b99cd26c710fc10bb35a0e247fa9dd"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8fb67a5aa985c7e6158da4e682c623a5794fa3122109ba5faa49a932e6917ea9",
+      "8fb67a5aa985c7e6158da4e682c623a5794fa3122109ba5faa49a932e6917ea9"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2b476d9b7cd203c710ba94b152caf1716876897b0f4aa085a26651bd8d97e71b",
+      "2b476d9b7cd203c710ba94b152caf1716876897b0f4aa085a26651bd8d97e71b"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 391
+      },
+      {
+        "width": 374,
+        "height": 391
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4b9e57c60bb1320e3ee518208fbbfd12a9bc8bb8f2f7fb5c86ec23d6f375b1a3",
+      "4b9e57c60bb1320e3ee518208fbbfd12a9bc8bb8f2f7fb5c86ec23d6f375b1a3"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4f22064297bbaac78c4555929341fc5c955e8823d8a9c93d21269ae169c8be51",
+      "4f22064297bbaac78c4555929341fc5c955e8823d8a9c93d21269ae169c8be51"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d08166da0131272c0815dd77e65e538d7a9260647be8827b8583bc84083ddb7f",
+      "d08166da0131272c0815dd77e65e538d7a9260647be8827b8583bc84083ddb7f"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1999cc38a24d4d4358f3b6451196a84d4e9ffbb38a412b62dae0015eab64a36a",
+      "1999cc38a24d4d4358f3b6451196a84d4e9ffbb38a412b62dae0015eab64a36a"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b3198ce6f3199806548674990ff908d4e4ea30b7f0f250b4f635d1a53bf204ff",
+      "b3198ce6f3199806548674990ff908d4e4ea30b7f0f250b4f635d1a53bf204ff"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "a78890375b0295c333f0d200208a6d87f6e63ff3c547203847681fc29b361f63",
+      "a78890375b0295c333f0d200208a6d87f6e63ff3c547203847681fc29b361f63"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d43bbe75fc06f7709dd6c00ca1efe5e383c080b6e64206505236ead1e43aa84e",
+      "d43bbe75fc06f7709dd6c00ca1efe5e383c080b6e64206505236ead1e43aa84e"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d900423de329baec0d5752531f7943907adc0cd19ec53f74c51302f38242f314",
+      "d900423de329baec0d5752531f7943907adc0cd19ec53f74c51302f38242f314"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4e84ce37d6f3b0c02fae5885630f3e28a3bb8c0b1fb9ada5596c58733f7f84a8",
+      "4e84ce37d6f3b0c02fae5885630f3e28a3bb8c0b1fb9ada5596c58733f7f84a8"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ddd87c82c9024084feefa1ece7e01d174c952eded6419b8b96301839550984f9",
+      "ddd87c82c9024084feefa1ece7e01d174c952eded6419b8b96301839550984f9"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "3cd8384b5ca1e34398a4920d2e522866d56f294c19bbdf9d97047c410474f8a2",
+      "3cd8384b5ca1e34398a4920d2e522866d56f294c19bbdf9d97047c410474f8a2"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "54fc08d63aafb5d2130a72b9391faa244c870bf580dc8a07c47a26535a6b2002",
+      "54fc08d63aafb5d2130a72b9391faa244c870bf580dc8a07c47a26535a6b2002"
+    ]
+  },
+  {
+    "id": "HAS.LSE",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "c4809a4128d51569bb48065826fe6151c6a560f4dc887fbd632c694dceb98ba8",
+      "c4809a4128d51569bb48065826fe6151c6a560f4dc887fbd632c694dceb98ba8"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "caa27252b1d8df8c1488739af45654c7a09a0d7a7fefb3e72b81741ece7048d4",
+      "caa27252b1d8df8c1488739af45654c7a09a0d7a7fefb3e72b81741ece7048d4"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8a91bf1f135d2781fccd0f47c0abece6cbadca176f696d99ed238e17f8bb6bdb",
+      "8a91bf1f135d2781fccd0f47c0abece6cbadca176f696d99ed238e17f8bb6bdb"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7366b71cc3b286aa496d9546ba84c1d2f7c7e7f9752ca63f54138b9dadac404c",
+      "7366b71cc3b286aa496d9546ba84c1d2f7c7e7f9752ca63f54138b9dadac404c"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 506
+      },
+      {
+        "width": 374,
+        "height": 506
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "725cd81e3498fd90ea3722e99cd5723c35613bacf58ec158d12e0f6c25c9e0be",
+      "725cd81e3498fd90ea3722e99cd5723c35613bacf58ec158d12e0f6c25c9e0be"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "fafea7c2ef113a3ed07ef03cf8cc7ec359c3b0911e65820fe03ad14c7f428d68",
+      "fafea7c2ef113a3ed07ef03cf8cc7ec359c3b0911e65820fe03ad14c7f428d68"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cc29d39b75c6d461466cf71c3dfd9ae7752673fcf586ce0e44a37c6e01f758ea",
+      "cc29d39b75c6d461466cf71c3dfd9ae7752673fcf586ce0e44a37c6e01f758ea"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f484ce8dcfb44f5107c49654108c2b97805897e3a18ad58c3a1b2531d7d13f4e",
+      "f484ce8dcfb44f5107c49654108c2b97805897e3a18ad58c3a1b2531d7d13f4e"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 533
+      },
+      {
+        "width": 374,
+        "height": 533
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "63c89c8ce8b2befb2e5b67e9f085598ad3fc16857f6e8774748ebdd598f487b7",
+      "63c89c8ce8b2befb2e5b67e9f085598ad3fc16857f6e8774748ebdd598f487b7"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "77894fa0c9d6785d2199a67473afbd34421eabfa10fccdcf5ee5dd21ea07e624",
+      "77894fa0c9d6785d2199a67473afbd34421eabfa10fccdcf5ee5dd21ea07e624"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 533
+      },
+      {
+        "width": 374,
+        "height": 533
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "69ea29c392925ac496dc3c51fecf62aa2c5c24e732362bb10ea34beea4101b8c",
+      "69ea29c392925ac496dc3c51fecf62aa2c5c24e732362bb10ea34beea4101b8c"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "bceb79b144d3a7d2273cb0c92014e928730f7b50f9e2619ae663879b2f3045ba",
+      "bceb79b144d3a7d2273cb0c92014e928730f7b50f9e2619ae663879b2f3045ba"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 551
+      },
+      {
+        "width": 374,
+        "height": 551
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "45bca4fd36d3ac81c6f4028ce1891a0b8345b9fd891d3967b5e3167a58f95985",
+      "45bca4fd36d3ac81c6f4028ce1891a0b8345b9fd891d3967b5e3167a58f95985"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "3ef7d405cc12445f8a043624428bdafa2bb85b1b73290b30c1cb909d90aa1845",
+      "3ef7d405cc12445f8a043624428bdafa2bb85b1b73290b30c1cb909d90aa1845"
+    ]
+  },
+  {
+    "id": "8725.JP",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 354
+      },
+      {
+        "width": 374,
+        "height": 354
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "bb34ebed7c623d86159a34a90b7bbcfd9d5e20d7abd5f46a67192cb1ace40513",
+      "bb34ebed7c623d86159a34a90b7bbcfd9d5e20d7abd5f46a67192cb1ace40513"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cb6183cfb54a100ec40c3dca31695e147a51ff6786d4c6dc17049694880111e8",
+      "cb6183cfb54a100ec40c3dca31695e147a51ff6786d4c6dc17049694880111e8"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b8b3d63c2fab4fd7a0f52fb59fffa9b52bff937a5e07bd40f3377b645d5ab14a",
+      "b8b3d63c2fab4fd7a0f52fb59fffa9b52bff937a5e07bd40f3377b645d5ab14a"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6c3ec18259d80e637d2a9be2a5e5fa743a9dfdbe2fc84c8ca963f0a3b639e372",
+      "6c3ec18259d80e637d2a9be2a5e5fa743a9dfdbe2fc84c8ca963f0a3b639e372"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ac03057b150677ad9a0d16dfffb68764bbe0fb95db37fc81b21b361da6455aca",
+      "ac03057b150677ad9a0d16dfffb68764bbe0fb95db37fc81b21b361da6455aca"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "336c2abe6e1e516fc889df419f2264d2f1910806843877d2d31ba3b5afa7445a",
+      "336c2abe6e1e516fc889df419f2264d2f1910806843877d2d31ba3b5afa7445a"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "338dbb9b05d9e55611dc3ea54a363ce0c5999f0f3d4b4dc48b6be977c9b8a1e5",
+      "338dbb9b05d9e55611dc3ea54a363ce0c5999f0f3d4b4dc48b6be977c9b8a1e5"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "60e1c63167ac16da57f0426af544fad3a84b3ed4629a34c5346356978939ed8b",
+      "60e1c63167ac16da57f0426af544fad3a84b3ed4629a34c5346356978939ed8b"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "63f138727094f19ceaa47ade826b76bc7b5599d4fd9d1ff6c32e767b7b3fd4c9",
+      "63f138727094f19ceaa47ade826b76bc7b5599d4fd9d1ff6c32e767b7b3fd4c9"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "277445cbe9cf78a77120742efe19df1262340ec49901deae3eecc30ff8aba812",
+      "277445cbe9cf78a77120742efe19df1262340ec49901deae3eecc30ff8aba812"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "59246c3e561f7bc053644efa8bbdfc3cb8f373a242264cd7a4dc9ca46db9ab0d",
+      "59246c3e561f7bc053644efa8bbdfc3cb8f373a242264cd7a4dc9ca46db9ab0d"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "865c7ad43160baba08a294c45c5e6caaddc232fee8983a94991c1269eef7a2d1",
+      "865c7ad43160baba08a294c45c5e6caaddc232fee8983a94991c1269eef7a2d1"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1b65975d0b63896e26e02a65435c649a67dea201d3876478fae7869c026eda84",
+      "1b65975d0b63896e26e02a65435c649a67dea201d3876478fae7869c026eda84"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9f2a99dd90425fc6748e08849d9fdafc4d3ee25a7a3349e0f23b3cbd7c3b0155",
+      "9f2a99dd90425fc6748e08849d9fdafc4d3ee25a7a3349e0f23b3cbd7c3b0155"
+    ]
+  },
+  {
+    "id": "SCG.AU",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 317
+      },
+      {
+        "width": 374,
+        "height": 317
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b4ad3ce2c2a961302dde7c549017b002bf4219256041f7b68fd9b00774309467",
+      "b4ad3ce2c2a961302dde7c549017b002bf4219256041f7b68fd9b00774309467"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e6b93cccc39bb15c1ba4cab0a20257191165068472b416af139d7e5df0f47aea",
+      "e6b93cccc39bb15c1ba4cab0a20257191165068472b416af139d7e5df0f47aea"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "fdfc104d9e4fb4df7e8db570d77ecd13313e6992dc0dafa355e95c98afb07ef8",
+      "fdfc104d9e4fb4df7e8db570d77ecd13313e6992dc0dafa355e95c98afb07ef8"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cbba37d0c4df8161f181c90e0e13e34740ec4d21013c3c040dcb1ba377f7560a",
+      "cbba37d0c4df8161f181c90e0e13e34740ec4d21013c3c040dcb1ba377f7560a"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7fef057d9a4bf4917aad8723e0507ea0d8c2fe940ea28956bd6c087c9deb5fde",
+      "7fef057d9a4bf4917aad8723e0507ea0d8c2fe940ea28956bd6c087c9deb5fde"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "811a74f8a42bd9eb2c218a6a72566b2612f76fd29009b491c92cb2a436e4d0b4",
+      "811a74f8a42bd9eb2c218a6a72566b2612f76fd29009b491c92cb2a436e4d0b4"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ccf8bc23cffe70ca3b7b32896be8f00a7ab4411d93afcebc2bb5b2d9eb0fae35",
+      "ccf8bc23cffe70ca3b7b32896be8f00a7ab4411d93afcebc2bb5b2d9eb0fae35"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "81be58708120a586ff6be5782343b4dd275d25dea36e403e797bef274f460f7d",
+      "81be58708120a586ff6be5782343b4dd275d25dea36e403e797bef274f460f7d"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "817913f13b1f3ef7df6036808bca3b260d8db3f3c0b34583b6b4515e3560dfb4",
+      "817913f13b1f3ef7df6036808bca3b260d8db3f3c0b34583b6b4515e3560dfb4"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8bd72534e54d7b53866a1417586f181043d2454ddc94988069032c07999f0f0a",
+      "8bd72534e54d7b53866a1417586f181043d2454ddc94988069032c07999f0f0a"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "fde1c39cd0c449faa8618751d6d568e20a36fd59c077aa49fce4ebc824ab09f7",
+      "fde1c39cd0c449faa8618751d6d568e20a36fd59c077aa49fce4ebc824ab09f7"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "74b9d9a3e37dc1511b07dcebc5a879d5164031287fa4a14b806be609e85c2587",
+      "74b9d9a3e37dc1511b07dcebc5a879d5164031287fa4a14b806be609e85c2587"
+    ]
+  },
+  {
+    "id": "IRM.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "5dea1ef694408c06614167c071a37999a5c4a8971d9508d643767052cd99f0e1",
+      "5dea1ef694408c06614167c071a37999a5c4a8971d9508d643767052cd99f0e1"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "bb1928ae2b896a11a80bf247bada6b68683adc43929b178bddce920ea5036645",
+      "bb1928ae2b896a11a80bf247bada6b68683adc43929b178bddce920ea5036645"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2f47042fbc6418b0c6e72fee3bdef59016079679e27a46bb33243387fe27b572",
+      "2f47042fbc6418b0c6e72fee3bdef59016079679e27a46bb33243387fe27b572"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "99a1201a67a3fd53883171f5cccd698307c498c37f5cf0583087ae5fcd82e756",
+      "99a1201a67a3fd53883171f5cccd698307c498c37f5cf0583087ae5fcd82e756"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "eb8ee46f2622ca41b5a52bfda1f457a335b7a81d1f867601503de6f6fb71b6c6",
+      "eb8ee46f2622ca41b5a52bfda1f457a335b7a81d1f867601503de6f6fb71b6c6"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6be3aba401e779681f7323d07a8067c0dfe08676412b330e15399c248c0e7748",
+      "6be3aba401e779681f7323d07a8067c0dfe08676412b330e15399c248c0e7748"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8a02f9ead0b0d07c417362825028aab544f9d806f084d5034629596061c54c61",
+      "8a02f9ead0b0d07c417362825028aab544f9d806f084d5034629596061c54c61"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "077a1f3dcff16fabb9e9398e4d70c497edee2e963b39508b410ecc479f30f701",
+      "077a1f3dcff16fabb9e9398e4d70c497edee2e963b39508b410ecc479f30f701"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e0223a8b0199e7c92fe3b6ed82d5639f5cf3e1bacb84a83eae4eb867a6e6a53c",
+      "e0223a8b0199e7c92fe3b6ed82d5639f5cf3e1bacb84a83eae4eb867a6e6a53c"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8abb7db660d23384092311593b7457862a3fc130e6a179809881413421432561",
+      "8abb7db660d23384092311593b7457862a3fc130e6a179809881413421432561"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "0de2a6def5ba2c9b34703bc9de55c054243c11f4f094576ef51a0c2b41ad1416",
+      "0de2a6def5ba2c9b34703bc9de55c054243c11f4f094576ef51a0c2b41ad1416"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "bf4a4b31dac2801f791d14090557524b7a900981db35b486f206998e36bb17bb",
+      "bf4a4b31dac2801f791d14090557524b7a900981db35b486f206998e36bb17bb"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "226c6c44cff53bb2285a313b28d1cf75d3c4234c3721dcecde9a526904932505",
+      "226c6c44cff53bb2285a313b28d1cf75d3c4234c3721dcecde9a526904932505"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "5579d9289ad2ed9c2f21332e6941c649f290f0d1c498a384f3334d5399005b54",
+      "5579d9289ad2ed9c2f21332e6941c649f290f0d1c498a384f3334d5399005b54"
+    ]
+  },
+  {
+    "id": "AIR.US",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 391
+      },
+      {
+        "width": 374,
+        "height": 391
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "95da82c86538ad88f601d56dc89aba123ca303c7f47d965a798bb38a91300eaf",
+      "95da82c86538ad88f601d56dc89aba123ca303c7f47d965a798bb38a91300eaf"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "126afbc1974dd38ce91d16f0125e39eba27cf81e1b03bdbd0d6d8c22c30f82e2",
+      "126afbc1974dd38ce91d16f0125e39eba27cf81e1b03bdbd0d6d8c22c30f82e2"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7e2f1b74fd1a51287fb4330cef784909f7c26874dcdb011b2f92ecf0744c6f9a",
+      "7e2f1b74fd1a51287fb4330cef784909f7c26874dcdb011b2f92ecf0744c6f9a"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1ab807e3ebffd56ec81f6885dea6419afa7f72897b65bfd5ee005d59c4086b5d",
+      "1ab807e3ebffd56ec81f6885dea6419afa7f72897b65bfd5ee005d59c4086b5d"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6cfcbeda10469db3653876016c7605501b3cba9d81c6060f24a8313db1932667",
+      "6cfcbeda10469db3653876016c7605501b3cba9d81c6060f24a8313db1932667"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4c5dc162b7370f65e304a0dffe6f9a3c00eca272ed21018f7760a9a3b6371b23",
+      "4c5dc162b7370f65e304a0dffe6f9a3c00eca272ed21018f7760a9a3b6371b23"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d82ed95ddd29db7846d86862278ecb55ea1c45a4c4caaa77139bb6290e824326",
+      "d82ed95ddd29db7846d86862278ecb55ea1c45a4c4caaa77139bb6290e824326"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "bebe0d3b6554cd502b8574d351477501bade8b0f01f59fd416f50b4d73fff453",
+      "bebe0d3b6554cd502b8574d351477501bade8b0f01f59fd416f50b4d73fff453"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "056d288e0890f95bbd93b0f33e5a5c4a2d83b426d33dd285bf07f01f63be4077",
+      "056d288e0890f95bbd93b0f33e5a5c4a2d83b426d33dd285bf07f01f63be4077"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "0f0477de4c9efe6c7b1560b8d9f971479741de828354adcdb4fc0d913b36ed52",
+      "0f0477de4c9efe6c7b1560b8d9f971479741de828354adcdb4fc0d913b36ed52"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "31e944d3feb29483016112fb275e1c11378f2c44cbbfab485cc64fc9792e6259",
+      "31e944d3feb29483016112fb275e1c11378f2c44cbbfab485cc64fc9792e6259"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "0d218ca50b16df5ddd9eecb8dbbaf76d7305965f17f3caf195affc837be5a56d",
+      "0d218ca50b16df5ddd9eecb8dbbaf76d7305965f17f3caf195affc837be5a56d"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8bd2fd5a8ab64dfefa72de330ed445611093fc5f3787f0a1d1b645efd9baa61b",
+      "8bd2fd5a8ab64dfefa72de330ed445611093fc5f3787f0a1d1b645efd9baa61b"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d71938aaf983b8ea499a6cb4b388a0b8e2742e88c0b020c5fc9b6de1dcbc3f17",
+      "d71938aaf983b8ea499a6cb4b388a0b8e2742e88c0b020c5fc9b6de1dcbc3f17"
+    ]
+  },
+  {
+    "id": "HO.PA",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 391
+      },
+      {
+        "width": 374,
+        "height": 391
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9038ae4e65c245959c7e0bdab8ac6c4f3d4ca1288bf895f6e5aeaf0c51558cf8",
+      "9038ae4e65c245959c7e0bdab8ac6c4f3d4ca1288bf895f6e5aeaf0c51558cf8"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9009478487c9e88018b24894228d046b70a0b4cd1118cd5ceac503f307a4e3d6",
+      "9009478487c9e88018b24894228d046b70a0b4cd1118cd5ceac503f307a4e3d6"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1e1fa5c0f714fc3b0be91f315685437ed9283451e3bc578a2c4edbdc281b0902",
+      "1e1fa5c0f714fc3b0be91f315685437ed9283451e3bc578a2c4edbdc281b0902"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2ab000169a66cfa428b1fc966555885b3c4ac47786b5169c2936ec74212b12c4",
+      "2ab000169a66cfa428b1fc966555885b3c4ac47786b5169c2936ec74212b12c4"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 499
+      },
+      {
+        "width": 374,
+        "height": 499
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1c38ee357c97b46cfd4974d000df277da9d2d1f695f32d581d2ec3272584e41e",
+      "1c38ee357c97b46cfd4974d000df277da9d2d1f695f32d581d2ec3272584e41e"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d532c7e77afcb7d7f7cf6b9a5bfbae15dfb8239abb864452c7c32c7df0d1b985",
+      "d532c7e77afcb7d7f7cf6b9a5bfbae15dfb8239abb864452c7c32c7df0d1b985"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "73a5481207bf87df8fc7012f476e94f7ad544f09cb60ad3957b21c0b018a4ed0",
+      "73a5481207bf87df8fc7012f476e94f7ad544f09cb60ad3957b21c0b018a4ed0"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "0491aa29c12acdfe1d9c0572f3e44fa4e1557d7de102dfa9d4858e4cfd572cf6",
+      "0491aa29c12acdfe1d9c0572f3e44fa4e1557d7de102dfa9d4858e4cfd572cf6"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1df53a2cf4d0177f4b504e2dde473fca78e2433a908c63444c89821bda4c3d12",
+      "1df53a2cf4d0177f4b504e2dde473fca78e2433a908c63444c89821bda4c3d12"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "245f5688d7197e3422775bc92f865a674b8016e51789cf94ff3a81ed638622ca",
+      "245f5688d7197e3422775bc92f865a674b8016e51789cf94ff3a81ed638622ca"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "87c8c3d4e3d721b0ce9cfc6b36ae9bf06a3072a4c092fa05044b736dd9d17f30",
+      "87c8c3d4e3d721b0ce9cfc6b36ae9bf06a3072a4c092fa05044b736dd9d17f30"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ecc349dbf157834699d451551f74bfd730ced077b1884ef3752e957122678f4c",
+      "ecc349dbf157834699d451551f74bfd730ced077b1884ef3752e957122678f4c"
+    ]
+  },
+  {
+    "id": "MEDP.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "c1fc019d8484c7fa17b0ada9f18f2a26a972e7f72dc96bda9bacdec13b847175",
+      "c1fc019d8484c7fa17b0ada9f18f2a26a972e7f72dc96bda9bacdec13b847175"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cecd09b35bac908f7ee76c56e2d3df20a6987af007724660bca302a065554132",
+      "cecd09b35bac908f7ee76c56e2d3df20a6987af007724660bca302a065554132"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "343cc0b29fb18177c99b756215b7ef4d95d3af026cb88c66126d21a1676ed285",
+      "343cc0b29fb18177c99b756215b7ef4d95d3af026cb88c66126d21a1676ed285"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e46f349cb663bdeb0cd7f620e1b093083a77c63ee8513809c6be9e4ff463eeb3",
+      "e46f349cb663bdeb0cd7f620e1b093083a77c63ee8513809c6be9e4ff463eeb3"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7976e60d6d1aa5f251bb8e84f2d5428ac86ecacef5f60ab9baf44b888489dfae",
+      "7976e60d6d1aa5f251bb8e84f2d5428ac86ecacef5f60ab9baf44b888489dfae"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8bd5d56f3f5cedf589848431b27332d951aa2a95571169c1bcd1111204b97448",
+      "8bd5d56f3f5cedf589848431b27332d951aa2a95571169c1bcd1111204b97448"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2784cbc8cc59df62b2a2b5d5432a6a8ad6073c12c56ba2f555da89659c31086a",
+      "2784cbc8cc59df62b2a2b5d5432a6a8ad6073c12c56ba2f555da89659c31086a"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "a0b2fed083c97603d9294e5fa41a0224c8ab776dc3941935b00011764cbcd092",
+      "a0b2fed083c97603d9294e5fa41a0224c8ab776dc3941935b00011764cbcd092"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "03d57a90a96b391663f01c0c45fae4a2fcc7e5559c2f862151c475d3fb4afadb",
+      "03d57a90a96b391663f01c0c45fae4a2fcc7e5559c2f862151c475d3fb4afadb"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "96e1d38d3d338eb06fd318c09bede622080b7f4b3da9af36ff522a617c1494fc",
+      "96e1d38d3d338eb06fd318c09bede622080b7f4b3da9af36ff522a617c1494fc"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "689e035f3f5a226e0d0efbee29961b6c902d9eab525cc53155bec2ab8ad56211",
+      "689e035f3f5a226e0d0efbee29961b6c902d9eab525cc53155bec2ab8ad56211"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "392f31038d4891e9acdc008422a1249e7320c60fa05b6c8bcf607588472b2c24",
+      "392f31038d4891e9acdc008422a1249e7320c60fa05b6c8bcf607588472b2c24"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9acc2775c65f0b32cbc50e42b6d953129526210f84002c91aee59f0bf330138e",
+      "9acc2775c65f0b32cbc50e42b6d953129526210f84002c91aee59f0bf330138e"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "aeefb8d9c03a4a9f3dca78dc94866f6fcd81cf370f4405d15a3d0ea2f27bcc15",
+      "aeefb8d9c03a4a9f3dca78dc94866f6fcd81cf370f4405d15a3d0ea2f27bcc15"
+    ]
+  },
+  {
+    "id": "HOLN.SW",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 391
+      },
+      {
+        "width": 374,
+        "height": 391
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9968724d47447751a4de62a65ffff3e0674863e931dcb94bf2ce87bffb336318",
+      "9968724d47447751a4de62a65ffff3e0674863e931dcb94bf2ce87bffb336318"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "a8a677c0bea62325f31cf8582e641ed5e7fe3a7110aebbab435a124d4429e5b0",
+      "a8a677c0bea62325f31cf8582e641ed5e7fe3a7110aebbab435a124d4429e5b0"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "82a486bd06f759b548c896805bb831343ff4d5c44acc90322cf90023f4f8802d",
+      "82a486bd06f759b548c896805bb831343ff4d5c44acc90322cf90023f4f8802d"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "127b1bfa2f25f7d64bb42b7f2436a84f01a044d137793318a06e9708e03cfcc6",
+      "127b1bfa2f25f7d64bb42b7f2436a84f01a044d137793318a06e9708e03cfcc6"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "5338aef856d14afbc90dac059f20c7482c31319cac3f749e34f2f3c84fca8f40",
+      "5338aef856d14afbc90dac059f20c7482c31319cac3f749e34f2f3c84fca8f40"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "a03b4f2adf8884b6ce1b46fdf1a2bdf7f2cc42feaa571bfb0fecc382fb49ada1",
+      "a03b4f2adf8884b6ce1b46fdf1a2bdf7f2cc42feaa571bfb0fecc382fb49ada1"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d49fac5377bdc610097f87dc1c72f4ddabc681404392c7d01c9be5c2e6ca6811",
+      "d49fac5377bdc610097f87dc1c72f4ddabc681404392c7d01c9be5c2e6ca6811"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4691411d72fe0ae88fc8fcd87e53238b02fa07bb44b23473598c71afda312ff8",
+      "4691411d72fe0ae88fc8fcd87e53238b02fa07bb44b23473598c71afda312ff8"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "65a167b76f75ba56af5ff44924b6a616c3d8e70907967c0f2f83436c0546c9c8",
+      "65a167b76f75ba56af5ff44924b6a616c3d8e70907967c0f2f83436c0546c9c8"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b93a50a3961b77e3a9686715cdbef9d2c2ba89ce2d20a6817a199a3f16ce876d",
+      "b93a50a3961b77e3a9686715cdbef9d2c2ba89ce2d20a6817a199a3f16ce876d"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "a40d8954332163bb1a20c577fa8cca04095a11fdc553298bdf589e5ab345c85d",
+      "a40d8954332163bb1a20c577fa8cca04095a11fdc553298bdf589e5ab345c85d"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9e7fa78a725668d57f056888e89e550d4da604bf23db97155d06a71c5933c3ca",
+      "9e7fa78a725668d57f056888e89e550d4da604bf23db97155d06a71c5933c3ca"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "696ce63a6ab1c3bbcff65cd591a97228f7e953149f0127b1c03693b90abcf40c",
+      "696ce63a6ab1c3bbcff65cd591a97228f7e953149f0127b1c03693b90abcf40c"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "75626da2641fc4c4138506f76b604cc111984cfd612f15c0a766051d44f11b5b",
+      "75626da2641fc4c4138506f76b604cc111984cfd612f15c0a766051d44f11b5b"
+    ]
+  },
+  {
+    "id": "PEP.US",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 391
+      },
+      {
+        "width": 374,
+        "height": 391
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f2e98f5c68b93129962fbbc234b5144c873ac3b25d88a17ca3192e99c74ded50",
+      "f2e98f5c68b93129962fbbc234b5144c873ac3b25d88a17ca3192e99c74ded50"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9849e0912486fcf195f8dd56280b181855d7cda8b3a5dc505cedf61507319ae5",
+      "9849e0912486fcf195f8dd56280b181855d7cda8b3a5dc505cedf61507319ae5"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9849e0912486fcf195f8dd56280b181855d7cda8b3a5dc505cedf61507319ae5",
+      "9849e0912486fcf195f8dd56280b181855d7cda8b3a5dc505cedf61507319ae5"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2b7c78aaed59a966e89f535010ca7ba73d9e6503694f33dfa1ff57edd7f33994",
+      "2b7c78aaed59a966e89f535010ca7ba73d9e6503694f33dfa1ff57edd7f33994"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "532d651a882194c8a572d9c064fd8c9d8f7a10ce5de0f7f5696888dc1ec81480",
+      "532d651a882194c8a572d9c064fd8c9d8f7a10ce5de0f7f5696888dc1ec81480"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8b1dcaade7ec88ac60cf64ce30990557d04c0c895621973794ab2eafa895275f",
+      "8b1dcaade7ec88ac60cf64ce30990557d04c0c895621973794ab2eafa895275f"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d447063cfd4d41ceade5d58f03d0608ba19e4b2905ac1cd3cdd01df0f1013161",
+      "d447063cfd4d41ceade5d58f03d0608ba19e4b2905ac1cd3cdd01df0f1013161"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "32f53ecb3b9a4cb1ecd85c913334d7ef0c366568a9772ef8fc202771f7f7d344",
+      "32f53ecb3b9a4cb1ecd85c913334d7ef0c366568a9772ef8fc202771f7f7d344"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "83d4420616d1470c36f1946de02eeb885ffac43e098d509a23007033db51e6d5",
+      "83d4420616d1470c36f1946de02eeb885ffac43e098d509a23007033db51e6d5"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9786fb42544360afaa4350d9190285dbc70f0fc25915d6ff88bb8b58208b530e",
+      "9786fb42544360afaa4350d9190285dbc70f0fc25915d6ff88bb8b58208b530e"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "510e1141e3361e7ac5bb7c4411321b1ea01ce9aaa2b68b18f58bc2d4e8aefb08",
+      "510e1141e3361e7ac5bb7c4411321b1ea01ce9aaa2b68b18f58bc2d4e8aefb08"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "31449a77825f7cb311ea21d11d65f661dfd1f0c132081398d4b6ea6f8988fe61",
+      "31449a77825f7cb311ea21d11d65f661dfd1f0c132081398d4b6ea6f8988fe61"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "990e2dddc63ffe648793c8ecd405809a7472cfeb2ff2da60119ad53ea29cb414",
+      "990e2dddc63ffe648793c8ecd405809a7472cfeb2ff2da60119ad53ea29cb414"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "a01c489c7ebb36ae067f293df9d31da6b68e8e9e0c384b854e0faade22cd37ae",
+      "a01c489c7ebb36ae067f293df9d31da6b68e8e9e0c384b854e0faade22cd37ae"
+    ]
+  },
+  {
+    "id": "III.LSE",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 206
+      },
+      {
+        "width": 374,
+        "height": 206
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4101515a1892f2866921987f2e134048d745d407b90bb6f968277d596c854b3f",
+      "4101515a1892f2866921987f2e134048d745d407b90bb6f968277d596c854b3f"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "0642fe81786f243a086a9e4162040dd30b6faedd339e8c840ee0256818d5e2f9",
+      "0642fe81786f243a086a9e4162040dd30b6faedd339e8c840ee0256818d5e2f9"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b6eae0bfbba37cc3d672786b5448d839002d9a2c3722896c9869727c34f484cb",
+      "b6eae0bfbba37cc3d672786b5448d839002d9a2c3722896c9869727c34f484cb"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e4e550a5778dcde092a2aed8084ef3fc7dc2814b88f3688e4e663a869b31ceb9",
+      "e4e550a5778dcde092a2aed8084ef3fc7dc2814b88f3688e4e663a869b31ceb9"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "74c0559838f356f8d9262b4c1c09bd29f61c9b14d9ad45fdbc01dc301fbfd974",
+      "74c0559838f356f8d9262b4c1c09bd29f61c9b14d9ad45fdbc01dc301fbfd974"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "68671c2ba2db3856e22783700014c3e96434e0635c0f8377ff3630fff0b66faf",
+      "68671c2ba2db3856e22783700014c3e96434e0635c0f8377ff3630fff0b66faf"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d810300c61c05864d0629ff78989b64be0b420616f9e87f006d13289fe58c9fc",
+      "d810300c61c05864d0629ff78989b64be0b420616f9e87f006d13289fe58c9fc"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e3fa102c5c0b256984a6e6654ff3005a12c408c8926b90d9a1e16dd7de8fbe19",
+      "e3fa102c5c0b256984a6e6654ff3005a12c408c8926b90d9a1e16dd7de8fbe19"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "950e392dca52f1cc3d928318875b83122896490d373dffb526281931ac1bee48",
+      "950e392dca52f1cc3d928318875b83122896490d373dffb526281931ac1bee48"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f6226686fa328ed9acdba013c9ce6d5d0fdba26dd09de3149781ebcc1e06124a",
+      "f6226686fa328ed9acdba013c9ce6d5d0fdba26dd09de3149781ebcc1e06124a"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "c62cc8c239c9ab671b9000ced6b8cba29a9cc84c039fc13b2b6adfcf8f0aae5c",
+      "c62cc8c239c9ab671b9000ced6b8cba29a9cc84c039fc13b2b6adfcf8f0aae5c"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "3f390910dac3e5fcf7311b12e203d4cfffa72d91cbfaad87439db41b96ba652c",
+      "3f390910dac3e5fcf7311b12e203d4cfffa72d91cbfaad87439db41b96ba652c"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d467d68b631d5184119f7754e6e746980a10e2284f519cc32ccecbc8cefa46cb",
+      "d467d68b631d5184119f7754e6e746980a10e2284f519cc32ccecbc8cefa46cb"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "5f9026369d7d6bff889fb55b6ba0dc74e3103641ff39891c5f19b6497972cb9c",
+      "5f9026369d7d6bff889fb55b6ba0dc74e3103641ff39891c5f19b6497972cb9c"
+    ]
+  },
+  {
+    "id": "TPG.AU",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 206
+      },
+      {
+        "width": 374,
+        "height": 206
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1526f5a241c863b8dac7fb12266c62e29e91027e3a901551b720b975c442d682",
+      "1526f5a241c863b8dac7fb12266c62e29e91027e3a901551b720b975c442d682"
+    ]
+  },
+  {
+    "id": "RHLD.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "RHLD.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4573e0b853ecdc331b46e1847979465f0d008395f07300a2cbc40325155194e5",
+      "4573e0b853ecdc331b46e1847979465f0d008395f07300a2cbc40325155194e5"
+    ]
+  },
+  {
+    "id": "RHLD.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4573e0b853ecdc331b46e1847979465f0d008395f07300a2cbc40325155194e5",
+      "4573e0b853ecdc331b46e1847979465f0d008395f07300a2cbc40325155194e5"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "954dc50d1f3df0c93922bad7e62accdf196b520fe62c46b99068eca4c5e25c62",
+      "954dc50d1f3df0c93922bad7e62accdf196b520fe62c46b99068eca4c5e25c62"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "979e7948c064f78d4bef3d1b6c947c295e51c5bba98c0f3c799b030143fb57c5",
+      "979e7948c064f78d4bef3d1b6c947c295e51c5bba98c0f3c799b030143fb57c5"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4df47d677c06af0a8a8865eb9e3daf2ca17ecd63164bb7e128d6811bd563e23d",
+      "4df47d677c06af0a8a8865eb9e3daf2ca17ecd63164bb7e128d6811bd563e23d"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 499
+      },
+      {
+        "width": 374,
+        "height": 499
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2e6c4711e4cbb2b40efd51150d2d77ab131eacc315c6e5be0a5ee6b006bb0ab5",
+      "2e6c4711e4cbb2b40efd51150d2d77ab131eacc315c6e5be0a5ee6b006bb0ab5"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "a6d58be8c6558023e20e500f971da2461fb1ff800f659262cdfa8469281ad63d",
+      "a6d58be8c6558023e20e500f971da2461fb1ff800f659262cdfa8469281ad63d"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 499
+      },
+      {
+        "width": 374,
+        "height": 499
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f77333a980e962f8206518d6502c4fa7fceaad387a51cd6e9a6ca5a8403d9f7a",
+      "f77333a980e962f8206518d6502c4fa7fceaad387a51cd6e9a6ca5a8403d9f7a"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b4db7ee70333462971cf40999b0b5ec09fd74a99700cb90f2073c8e04fc3eb43",
+      "b4db7ee70333462971cf40999b0b5ec09fd74a99700cb90f2073c8e04fc3eb43"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e320a5ce4545ac47d1a860fbe79542cfe294bd5cf99af075bc32935d9af42e29",
+      "e320a5ce4545ac47d1a860fbe79542cfe294bd5cf99af075bc32935d9af42e29"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6158a2c6a29a5802aa81b2016aa5c922727c75f88abb4d9c8675085034566a83",
+      "6158a2c6a29a5802aa81b2016aa5c922727c75f88abb4d9c8675085034566a83"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 543
+      },
+      {
+        "width": 374,
+        "height": 543
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1dd579bbc5a19ad1239fbdeab638206cd5e39d276e275f422504c35e8a7665bd",
+      "1dd579bbc5a19ad1239fbdeab638206cd5e39d276e275f422504c35e8a7665bd"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "c9ee91f20ad1367d319c48ea56493082f1c00d1b8150e4d061a042100420902c",
+      "c9ee91f20ad1367d319c48ea56493082f1c00d1b8150e4d061a042100420902c"
+    ]
+  },
+  {
+    "id": "RMBS.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "527d0941b2fce72ee8537d80bab1974615372058dfc0ace0acf2f400fbce95a8",
+      "527d0941b2fce72ee8537d80bab1974615372058dfc0ace0acf2f400fbce95a8"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "aa12d0cd200b378765212aea912d234f72f63f0ca260df99df151e82add24e50",
+      "aa12d0cd200b378765212aea912d234f72f63f0ca260df99df151e82add24e50"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ea08e1dd61c6c4b2d4bee19106cc0c2851739a107a6f419a12d1e126a3ea1238",
+      "ea08e1dd61c6c4b2d4bee19106cc0c2851739a107a6f419a12d1e126a3ea1238"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ab96d09ed151d274e61520a533b302598acb73b8f60b53a4de141da95073ed1a",
+      "ab96d09ed151d274e61520a533b302598acb73b8f60b53a4de141da95073ed1a"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "de5621c5ae05b61405ed776b1bc2a800a75168dd44ac70be0833be26d0f3570e",
+      "de5621c5ae05b61405ed776b1bc2a800a75168dd44ac70be0833be26d0f3570e"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "62531c35e0c8def56d9f5ba638271ff8250e4cee3fca3a58917ddb05855e5554",
+      "62531c35e0c8def56d9f5ba638271ff8250e4cee3fca3a58917ddb05855e5554"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e518a6df876c4adedc75dbc840a9334bfb51db745d48ef78ec10636416119bd2",
+      "e518a6df876c4adedc75dbc840a9334bfb51db745d48ef78ec10636416119bd2"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cd5c1637388849f80028cac9d4e49c0f3a45a39d91b97da9efc0f2cd4f975177",
+      "cd5c1637388849f80028cac9d4e49c0f3a45a39d91b97da9efc0f2cd4f975177"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "69f32d7ebae0f1f008d901aa6d0695f7f56e61b585c60c19873f5e2b2c49c219",
+      "69f32d7ebae0f1f008d901aa6d0695f7f56e61b585c60c19873f5e2b2c49c219"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "fd658c42fe2adb8988040501f96c2ca004f8a52b22ea38ff4ee0bd1f6a307351",
+      "fd658c42fe2adb8988040501f96c2ca004f8a52b22ea38ff4ee0bd1f6a307351"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 469
+      },
+      {
+        "width": 374,
+        "height": 469
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9366f80aadaff7d83a61efa13ab75312e6e0cb1ff6cd0b455ff7d18d5e7cd9ee",
+      "9366f80aadaff7d83a61efa13ab75312e6e0cb1ff6cd0b455ff7d18d5e7cd9ee"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "98385b867f7b2d3a05dac2d7c7fd2e5aa9f6017ad706377decb2f64bba6a1f0b",
+      "98385b867f7b2d3a05dac2d7c7fd2e5aa9f6017ad706377decb2f64bba6a1f0b"
+    ]
+  },
+  {
+    "id": "006400.KO",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8b48dc99145a7708c056b888c872b5ef65959a7ec4817aab04990a2cfee8fa77",
+      "8b48dc99145a7708c056b888c872b5ef65959a7ec4817aab04990a2cfee8fa77"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ff6d6d657392f36d6821891d010f5fedcad98d9a1d53a6ee8a8898c3ab793d39",
+      "ff6d6d657392f36d6821891d010f5fedcad98d9a1d53a6ee8a8898c3ab793d39"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "dbaab771a3a6493fe7bda7899b3623e583dd27816ca76328b83bb35f36d03c9e",
+      "dbaab771a3a6493fe7bda7899b3623e583dd27816ca76328b83bb35f36d03c9e"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4b4949553745acf0282d2f84003e7ba937581bd560e08dceb4f926d7d07d0fed",
+      "4b4949553745acf0282d2f84003e7ba937581bd560e08dceb4f926d7d07d0fed"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "49a08c357a7ac7dbf3233c47ebad3d954f26f6bb87ad0c90bd9c369252bfbb63",
+      "49a08c357a7ac7dbf3233c47ebad3d954f26f6bb87ad0c90bd9c369252bfbb63"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "df1b0a188dd8ad985d9f5da9534fa7ec4d5b50e3ccf0051f068508cc049585d4",
+      "df1b0a188dd8ad985d9f5da9534fa7ec4d5b50e3ccf0051f068508cc049585d4"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "970b5f1158906614ea35f84b539eddfc4542c89829001679631d680ede5892e2",
+      "970b5f1158906614ea35f84b539eddfc4542c89829001679631d680ede5892e2"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cceba9a92f883b612af2bb561e6fdb5021ce45b7fdc12f3d5432b2b82bf6abf9",
+      "cceba9a92f883b612af2bb561e6fdb5021ce45b7fdc12f3d5432b2b82bf6abf9"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e21e031c1d2319afd13e35e05a628c07dbdefb1029363738cb36364fba0458b0",
+      "e21e031c1d2319afd13e35e05a628c07dbdefb1029363738cb36364fba0458b0"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "180887f836f3fff47286f4ee154e76be1d759b215b5b02b1e780870d3a3de0bc",
+      "180887f836f3fff47286f4ee154e76be1d759b215b5b02b1e780870d3a3de0bc"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4e4181850c8c36c9ef48e3a2631ca4c9e76bc68d51be9aa6a4ea82e9305d7e03",
+      "4e4181850c8c36c9ef48e3a2631ca4c9e76bc68d51be9aa6a4ea82e9305d7e03"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "73bdca253ef83086e5d821ae357d3484688880cf3706e041aa2d0209ef0385db",
+      "73bdca253ef83086e5d821ae357d3484688880cf3706e041aa2d0209ef0385db"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "c97625ffbace26b9fc8627a3a8481e9c80d25f43c1658becdb6ad2545fde172e",
+      "c97625ffbace26b9fc8627a3a8481e9c80d25f43c1658becdb6ad2545fde172e"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f83a20a0c4bf55302148f74e3538d057765aad61bd9b280b5cc35d590d6a7b8a",
+      "f83a20a0c4bf55302148f74e3538d057765aad61bd9b280b5cc35d590d6a7b8a"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 391
+      },
+      {
+        "width": 374,
+        "height": 391
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6d78fe6c9aa44ad744b2c9b70ecf5bbb8d8687a230597f9ae700a93677851249",
+      "6d78fe6c9aa44ad744b2c9b70ecf5bbb8d8687a230597f9ae700a93677851249"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "bb08a1d300ac4dc3b8aecd9d83d60607019051c00d2dd980ed9cffb0e1c89fb0",
+      "bb08a1d300ac4dc3b8aecd9d83d60607019051c00d2dd980ed9cffb0e1c89fb0"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "affb38fc685f61ec68ad35754fb4ced00608b427fb8741fe7696384f97a65a03",
+      "affb38fc685f61ec68ad35754fb4ced00608b427fb8741fe7696384f97a65a03"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1f1af4c17833f6758c3900b82a889b1eeab6f833e0a96edd44bdd14ca47a629c",
+      "1f1af4c17833f6758c3900b82a889b1eeab6f833e0a96edd44bdd14ca47a629c"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 506
+      },
+      {
+        "width": 374,
+        "height": 506
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4280eb270bb3ad16a55163b0448b6bd19d6603614010ff90c2466b3460c488c0",
+      "4280eb270bb3ad16a55163b0448b6bd19d6603614010ff90c2466b3460c488c0"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9968c707d8c802531570355246be3a4f322c3ba0b33911d878b7e012f5d302c3",
+      "9968c707d8c802531570355246be3a4f322c3ba0b33911d878b7e012f5d302c3"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 331
+      },
+      {
+        "width": 374,
+        "height": 331
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b6ee3509a977f085a902829a76d3b1431a66a0725547cd841078dca91ff7f881",
+      "b6ee3509a977f085a902829a76d3b1431a66a0725547cd841078dca91ff7f881"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ba77754fc3855f1b1654737173e7d33cb895cf96d5da18dee437270c4d6ab1c5",
+      "ba77754fc3855f1b1654737173e7d33cb895cf96d5da18dee437270c4d6ab1c5"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 533
+      },
+      {
+        "width": 374,
+        "height": 533
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "c545d27df59f80cb4d4ecd2c30af2db8fd8a74c8c8a97902837a5542dd98594d",
+      "c545d27df59f80cb4d4ecd2c30af2db8fd8a74c8c8a97902837a5542dd98594d"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d706ba795ef6b39df588c4e0546b0defe6eac775fb4c3315e2cac95dc93e9f79",
+      "d706ba795ef6b39df588c4e0546b0defe6eac775fb4c3315e2cac95dc93e9f79"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 533
+      },
+      {
+        "width": 374,
+        "height": 533
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "792c60cd5cc52ca8f0a54f3d742299503b9335ee4ff88cba934a0a59f214a513",
+      "792c60cd5cc52ca8f0a54f3d742299503b9335ee4ff88cba934a0a59f214a513"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f24ab2c10c5af028c82cb0601f7c486ddf097155a0e924b30a7fd6cd5331e25b",
+      "f24ab2c10c5af028c82cb0601f7c486ddf097155a0e924b30a7fd6cd5331e25b"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 791
+      },
+      {
+        "width": 374,
+        "height": 791
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "45863e9ee796dcc3164018a280de664363142bfa26fa21e1b3d5c821dc2c2bc3",
+      "45863e9ee796dcc3164018a280de664363142bfa26fa21e1b3d5c821dc2c2bc3"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e136328e37597352ef0c0c2f388b820afe3adc657beb06848b6b139a8db80a0d",
+      "e136328e37597352ef0c0c2f388b820afe3adc657beb06848b6b139a8db80a0d"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 391
+      },
+      {
+        "width": 374,
+        "height": 391
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "5185aafa9c0564eda428a1d742172776b250c99a8318d036265a5f2e553c0880",
+      "5185aafa9c0564eda428a1d742172776b250c99a8318d036265a5f2e553c0880"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b17f9912b36cf062abc969661af3c6f48dae08f7da86a644b42455a7200a8eb9",
+      "b17f9912b36cf062abc969661af3c6f48dae08f7da86a644b42455a7200a8eb9"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8ed86a844971c7771e8f7bf1df2a2f6b66886102fa872a04b9e26e4ffc01383e",
+      "8ed86a844971c7771e8f7bf1df2a2f6b66886102fa872a04b9e26e4ffc01383e"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "fce5e8f3056f248ba6628db5eca629a5d151b3b69d24e38cca69f720416f038d",
+      "fce5e8f3056f248ba6628db5eca629a5d151b3b69d24e38cca69f720416f038d"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 499
+      },
+      {
+        "width": 374,
+        "height": 499
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8ce7d7e5b4a36ac2ac154b0dcf74ed568b3d68379382b38d0b6af124c18def63",
+      "8ce7d7e5b4a36ac2ac154b0dcf74ed568b3d68379382b38d0b6af124c18def63"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2cb083c58d65d7aacaa3870b3bbcb8fad29880aa22fd3f48c8a46d80f3317f99",
+      "2cb083c58d65d7aacaa3870b3bbcb8fad29880aa22fd3f48c8a46d80f3317f99"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2bed87ac3ebc7a906fa9c0493a8d48a8da3ab659043d0120a595442cc64a6d46",
+      "2bed87ac3ebc7a906fa9c0493a8d48a8da3ab659043d0120a595442cc64a6d46"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "49b4f721e0ea8849decc10baa4bfcab5205fc2f318697b669439cdf28ae54596",
+      "49b4f721e0ea8849decc10baa4bfcab5205fc2f318697b669439cdf28ae54596"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "3ea6b35880d05137e982a870fedc4273d9c78b40f03d63da4c7eb56e030cf9e1",
+      "3ea6b35880d05137e982a870fedc4273d9c78b40f03d63da4c7eb56e030cf9e1"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ef597f3acf9de87de965a73f9dd6e766c83db197cacb6f6aec2fea6bbfc7d44a",
+      "ef597f3acf9de87de965a73f9dd6e766c83db197cacb6f6aec2fea6bbfc7d44a"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8984703731b04f5ea0199c01633ce042e616dec1d832847ff66211b63d7a6caf",
+      "8984703731b04f5ea0199c01633ce042e616dec1d832847ff66211b63d7a6caf"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "11ecc112c91d682e89a45422d76a10603339aacd55a861623823a7a190d8b868",
+      "11ecc112c91d682e89a45422d76a10603339aacd55a861623823a7a190d8b868"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "699f9331030bfa2d2385334d415c623107984fca5750897cfd66c0b39d3c0a4c",
+      "699f9331030bfa2d2385334d415c623107984fca5750897cfd66c0b39d3c0a4c"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8f89c6130c56027f46b38b753c37e4d7cbe19339b1fbcffbe6796378ae69db54",
+      "8f89c6130c56027f46b38b753c37e4d7cbe19339b1fbcffbe6796378ae69db54"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 354
+      },
+      {
+        "width": 374,
+        "height": 354
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f8db88248f6df483c9f7bfa4717a8a4044867f9b5e28b6aa0dad7c1fa61bfb34",
+      "f8db88248f6df483c9f7bfa4717a8a4044867f9b5e28b6aa0dad7c1fa61bfb34"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "73268d3e54b5ce4b3f96843055262b1a548c3f3ff318274f003212e84adb8a79",
+      "73268d3e54b5ce4b3f96843055262b1a548c3f3ff318274f003212e84adb8a79"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9ecf2ae2bff08193b69295cca2978c21f59b6a146ae6c3641a1b4f9125e44238",
+      "9ecf2ae2bff08193b69295cca2978c21f59b6a146ae6c3641a1b4f9125e44238"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4a4bde3fbbef258be59bed6dc8e908d65ddf2aabfd696a015da6769365ddbebb",
+      "4a4bde3fbbef258be59bed6dc8e908d65ddf2aabfd696a015da6769365ddbebb"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 341
+      },
+      {
+        "width": 374,
+        "height": 341
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2682016a4c3194f4d8d61dc868b98bc3701e577de7e507513c6d1b4fdabfacc7",
+      "2682016a4c3194f4d8d61dc868b98bc3701e577de7e507513c6d1b4fdabfacc7"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "abfa4e63eb501d08ea9ac9ad6faf8d932dc0e68eedeec5ad6442f260452ed71e",
+      "abfa4e63eb501d08ea9ac9ad6faf8d932dc0e68eedeec5ad6442f260452ed71e"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 341
+      },
+      {
+        "width": 374,
+        "height": 341
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e454460a8580ce5460d57273975b5a0a8c1ed9ba7c5613bebe4d9fed82f0bbce",
+      "e454460a8580ce5460d57273975b5a0a8c1ed9ba7c5613bebe4d9fed82f0bbce"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6345b1804a3dae95d096842073f92422055a03c48f0266ea9e4583c9e2408b10",
+      "6345b1804a3dae95d096842073f92422055a03c48f0266ea9e4583c9e2408b10"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 358
+      },
+      {
+        "width": 374,
+        "height": 358
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ab632da9741c27f504b651970208045d82955feaf9670633b764e75b04e91029",
+      "ab632da9741c27f504b651970208045d82955feaf9670633b764e75b04e91029"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "bf52f4b86879e4e6e7743a9e668d025a327272488fdd18610cfff49674873215",
+      "bf52f4b86879e4e6e7743a9e668d025a327272488fdd18610cfff49674873215"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 365
+      },
+      {
+        "width": 374,
+        "height": 365
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2a0c5305dcd4c9a4e1be616da1aecb6ae2689138618aa9ad06ee9e57842728c2",
+      "2a0c5305dcd4c9a4e1be616da1aecb6ae2689138618aa9ad06ee9e57842728c2"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ca0d2a3b006d68bbfaf2a8587af9d6217c87adffcb7b6b78c8c27fc4e47b64d8",
+      "ca0d2a3b006d68bbfaf2a8587af9d6217c87adffcb7b6b78c8c27fc4e47b64d8"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 358
+      },
+      {
+        "width": 374,
+        "height": 358
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1c748581151f65ed4101d117facbe23f7ee21677e252ba21e9c37c6b53bcceb9",
+      "1c748581151f65ed4101d117facbe23f7ee21677e252ba21e9c37c6b53bcceb9"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "76315e4dd105a606e9c71f739b5be1b3677713b3d284c2316e1d42011458eaaa",
+      "76315e4dd105a606e9c71f739b5be1b3677713b3d284c2316e1d42011458eaaa"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 164
+      },
+      {
+        "width": 374,
+        "height": 164
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "51be56f9894eae12f84aa50e0ec8976c04adbfa7c17e1aa8537271026ba116ed",
+      "51be56f9894eae12f84aa50e0ec8976c04adbfa7c17e1aa8537271026ba116ed"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cd624c267c16108286fed1883c357800d7c0c98de04cf068522d50728efb8f63",
+      "cd624c267c16108286fed1883c357800d7c0c98de04cf068522d50728efb8f63"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9160285183cde28d1caecb046ec6c253e79b5c44b229b99d4250e58596e7afd4",
+      "9160285183cde28d1caecb046ec6c253e79b5c44b229b99d4250e58596e7afd4"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6f49d279dcb9ffed00335cf8986e1a83785c2716f1f54b84aadfedf2ad309116",
+      "6f49d279dcb9ffed00335cf8986e1a83785c2716f1f54b84aadfedf2ad309116"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 499
+      },
+      {
+        "width": 374,
+        "height": 499
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "25d50eda4538d9ea15b8cc8fbb9db3a8247c65986ca90c05bdcb3520af68f931",
+      "25d50eda4538d9ea15b8cc8fbb9db3a8247c65986ca90c05bdcb3520af68f931"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ed5f85a22af71a28e3f1a1d7bc3071e908a5afe3a239db6a4b2c91609011c8f7",
+      "ed5f85a22af71a28e3f1a1d7bc3071e908a5afe3a239db6a4b2c91609011c8f7"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "5d63745898613019497224a649e4387cff7f2d27c27c93171e48fe54b3b06b98",
+      "5d63745898613019497224a649e4387cff7f2d27c27c93171e48fe54b3b06b98"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "cc427dc5de0853ca493d1c5bad21727d5ecea24a0b69126980d6bd64fdb8738d",
+      "cc427dc5de0853ca493d1c5bad21727d5ecea24a0b69126980d6bd64fdb8738d"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "40f0fca405971772b9c0b469b4948f00739ad573f9b8a74dbbc2347d8bc7ce27",
+      "40f0fca405971772b9c0b469b4948f00739ad573f9b8a74dbbc2347d8bc7ce27"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8ddd202879883294cfba2293c0e41ad3328cb1eff84d923932545a6d03f5e894",
+      "8ddd202879883294cfba2293c0e41ad3328cb1eff84d923932545a6d03f5e894"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 521
+      },
+      {
+        "width": 374,
+        "height": 521
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "983b99b996cf17fd55fe91acdf425a2cd0c36c919c194ba70165b3054891e171",
+      "983b99b996cf17fd55fe91acdf425a2cd0c36c919c194ba70165b3054891e171"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4899dcc8c02e4f8eac7d569d03d5ce92e6366bc73a9f29430afb663f78d38a8a",
+      "4899dcc8c02e4f8eac7d569d03d5ce92e6366bc73a9f29430afb663f78d38a8a"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "822c2c13a14e998a3193b92a2afa80ce472349322366408dfd7d3c2b6fa414d8",
+      "822c2c13a14e998a3193b92a2afa80ce472349322366408dfd7d3c2b6fa414d8"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 1728,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 1728,
+        "height": 48
+      },
+      {
+        "width": 1728,
+        "height": 48
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7896913dc5319657e2d61f59e4d6f7c7bd4902579d56f67e0f742972fba9904c",
+      "7896913dc5319657e2d61f59e4d6f7c7bd4902579d56f67e0f742972fba9904c"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 1728,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 600,
+        "height": 970
+      },
+      {
+        "width": 600,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "99dc214136f926802af6b05d39b6d91096007ad770fb251cf606bafb6eb3427f",
+      "99dc214136f926802af6b05d39b6d91096007ad770fb251cf606bafb6eb3427f"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 1728,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 600,
+        "height": 970
+      },
+      {
+        "width": 600,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "99dc214136f926802af6b05d39b6d91096007ad770fb251cf606bafb6eb3427f",
+      "99dc214136f926802af6b05d39b6d91096007ad770fb251cf606bafb6eb3427f"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 1728,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 300,
+        "height": 970
+      },
+      {
+        "width": 300,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "0e9ca4f53058cbfde3ad41b8636f2c2974db6641932931bb9f9900f6fffbf9e0",
+      "0e9ca4f53058cbfde3ad41b8636f2c2974db6641932931bb9f9900f6fffbf9e0"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 1728,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 283,
+        "height": 309
+      },
+      {
+        "width": 283,
+        "height": 309
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "3041ba2d254760c482f06ead6867708c39ab5cbd760911142f4ab5d418e9b30e",
+      "3041ba2d254760c482f06ead6867708c39ab5cbd760911142f4ab5d418e9b30e"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 1728,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 560,
+        "height": 970
+      },
+      {
+        "width": 560,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "0ec87574f78aecd83be28f94738e81f05dfc8fc0ba5a829778e8fcb4a8812b05",
+      "0ec87574f78aecd83be28f94738e81f05dfc8fc0ba5a829778e8fcb4a8812b05"
+    ]
+  },
+  {
+    "id": "GLOB.US",
+    "width": 1728,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 543,
+        "height": 279
+      },
+      {
+        "width": 543,
+        "height": 279
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "813882d96654fb4b34a3be26614973bab79e02a9cec4804f0d79104e678c7ce7",
+      "813882d96654fb4b34a3be26614973bab79e02a9cec4804f0d79104e678c7ce7"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 1728,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 1728,
+        "height": 48
+      },
+      {
+        "width": 1728,
+        "height": 48
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7896913dc5319657e2d61f59e4d6f7c7bd4902579d56f67e0f742972fba9904c",
+      "7896913dc5319657e2d61f59e4d6f7c7bd4902579d56f67e0f742972fba9904c"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 1728,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 600,
+        "height": 970
+      },
+      {
+        "width": 600,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "073a790eaacf26c63c5ed345d96ec7658c91e07d095b381d28496a559cacf2fd",
+      "073a790eaacf26c63c5ed345d96ec7658c91e07d095b381d28496a559cacf2fd"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 1728,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 600,
+        "height": 970
+      },
+      {
+        "width": 600,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "073a790eaacf26c63c5ed345d96ec7658c91e07d095b381d28496a559cacf2fd",
+      "073a790eaacf26c63c5ed345d96ec7658c91e07d095b381d28496a559cacf2fd"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 1728,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 300,
+        "height": 970
+      },
+      {
+        "width": 300,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7df01afc4705bf155a8a7b6058e83aee3b270ec464438497b7ecd0b3cce5e288",
+      "7df01afc4705bf155a8a7b6058e83aee3b270ec464438497b7ecd0b3cce5e288"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 1728,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 283,
+        "height": 356
+      },
+      {
+        "width": 283,
+        "height": 356
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "e3aa603174ffa02c04b9a89428ed02283df91dfffd420ee6097c2a7378508f5e",
+      "e3aa603174ffa02c04b9a89428ed02283df91dfffd420ee6097c2a7378508f5e"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 1728,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 560,
+        "height": 970
+      },
+      {
+        "width": 560,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9d072b59eb54ebe8b763479fe08ba7362fc2b76508303329caa5bb3eb0f5769a",
+      "9d072b59eb54ebe8b763479fe08ba7362fc2b76508303329caa5bb3eb0f5769a"
+    ]
+  },
+  {
+    "id": "2388.HK",
+    "width": 1728,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 543,
+        "height": 326
+      },
+      {
+        "width": 543,
+        "height": 326
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "c54fa785cd9f88f3a71a9490d67461a43e57be94826099a3a51b3ccceb9bd59d",
+      "c54fa785cd9f88f3a71a9490d67461a43e57be94826099a3a51b3ccceb9bd59d"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 1728,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 1728,
+        "height": 48
+      },
+      {
+        "width": 1728,
+        "height": 48
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7896913dc5319657e2d61f59e4d6f7c7bd4902579d56f67e0f742972fba9904c",
+      "7896913dc5319657e2d61f59e4d6f7c7bd4902579d56f67e0f742972fba9904c"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 1728,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 600,
+        "height": 970
+      },
+      {
+        "width": 600,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7b58c6a2dd5b300f22a7e1feffa9d59bcd75f7e0eb8f920fc092f4167193048a",
+      "7b58c6a2dd5b300f22a7e1feffa9d59bcd75f7e0eb8f920fc092f4167193048a"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 1728,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 600,
+        "height": 970
+      },
+      {
+        "width": 600,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7b58c6a2dd5b300f22a7e1feffa9d59bcd75f7e0eb8f920fc092f4167193048a",
+      "7b58c6a2dd5b300f22a7e1feffa9d59bcd75f7e0eb8f920fc092f4167193048a"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 1728,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 300,
+        "height": 970
+      },
+      {
+        "width": 300,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "34642a77dc6a4a226b9d6cd006b31a100be0cb1b4b7ff637892ea0a5b623ae8c",
+      "34642a77dc6a4a226b9d6cd006b31a100be0cb1b4b7ff637892ea0a5b623ae8c"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 1728,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 283,
+        "height": 334
+      },
+      {
+        "width": 283,
+        "height": 334
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "116f5ea4c0adc14fa2e77f130accfa89b0b82dadc6f79f284caf2a197c00dfcf",
+      "116f5ea4c0adc14fa2e77f130accfa89b0b82dadc6f79f284caf2a197c00dfcf"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 1728,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 560,
+        "height": 970
+      },
+      {
+        "width": 560,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "659c39dbe4e53d4a76ac7df622e60e6cf6b5d5317f3e64607416444338c68623",
+      "659c39dbe4e53d4a76ac7df622e60e6cf6b5d5317f3e64607416444338c68623"
+    ]
+  },
+  {
+    "id": "NTES.US",
+    "width": 1728,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 543,
+        "height": 253
+      },
+      {
+        "width": 543,
+        "height": 253
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "30402bc7d26e5ea2858eca69fd524263cb742f45911b80b4bc224f39bf56ff33",
+      "30402bc7d26e5ea2858eca69fd524263cb742f45911b80b4bc224f39bf56ff33"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 1728,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 1728,
+        "height": 48
+      },
+      {
+        "width": 1728,
+        "height": 48
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7896913dc5319657e2d61f59e4d6f7c7bd4902579d56f67e0f742972fba9904c",
+      "7896913dc5319657e2d61f59e4d6f7c7bd4902579d56f67e0f742972fba9904c"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 1728,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 600,
+        "height": 970
+      },
+      {
+        "width": 600,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "237406420b8a2be83f8764c46c1cc2dc5f3bba203fafeb75bcd677aef91674f8",
+      "237406420b8a2be83f8764c46c1cc2dc5f3bba203fafeb75bcd677aef91674f8"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 1728,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 600,
+        "height": 970
+      },
+      {
+        "width": 600,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "237406420b8a2be83f8764c46c1cc2dc5f3bba203fafeb75bcd677aef91674f8",
+      "237406420b8a2be83f8764c46c1cc2dc5f3bba203fafeb75bcd677aef91674f8"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 1728,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 300,
+        "height": 970
+      },
+      {
+        "width": 300,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "a97ca94b03d8025ca8ef933093963c792dd9d54fe248bb4129d8a7f375705968",
+      "a97ca94b03d8025ca8ef933093963c792dd9d54fe248bb4129d8a7f375705968"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 1728,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 283,
+        "height": 249
+      },
+      {
+        "width": 283,
+        "height": 249
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "b9b7af146d440e19e60fedbeb42e8af590375d0d4e68c68eed92e5faf1018bcc",
+      "b9b7af146d440e19e60fedbeb42e8af590375d0d4e68c68eed92e5faf1018bcc"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 1728,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 560,
+        "height": 970
+      },
+      {
+        "width": 560,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "89022f402302c1d6224d49411d792d68cfb9df5a539cba9833b3222f445819e2",
+      "89022f402302c1d6224d49411d792d68cfb9df5a539cba9833b3222f445819e2"
+    ]
+  },
+  {
+    "id": "BAM.TO",
+    "width": 1728,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 543,
+        "height": 91
+      },
+      {
+        "width": 543,
+        "height": 91
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "aa3eaada505c85b2a2623064a4878da9750910dba41bf951a578424920935036",
+      "aa3eaada505c85b2a2623064a4878da9750910dba41bf951a578424920935036"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 1728,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 1728,
+        "height": 48
+      },
+      {
+        "width": 1728,
+        "height": 48
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7896913dc5319657e2d61f59e4d6f7c7bd4902579d56f67e0f742972fba9904c",
+      "7896913dc5319657e2d61f59e4d6f7c7bd4902579d56f67e0f742972fba9904c"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 1728,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 600,
+        "height": 970
+      },
+      {
+        "width": 600,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7eae393de6bae3a35710390b733e9248dfa1808c371a1b6d85ad03661c3ec69e",
+      "7eae393de6bae3a35710390b733e9248dfa1808c371a1b6d85ad03661c3ec69e"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 1728,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 600,
+        "height": 970
+      },
+      {
+        "width": 600,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "7eae393de6bae3a35710390b733e9248dfa1808c371a1b6d85ad03661c3ec69e",
+      "7eae393de6bae3a35710390b733e9248dfa1808c371a1b6d85ad03661c3ec69e"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 1728,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 300,
+        "height": 970
+      },
+      {
+        "width": 300,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "78507f4b362f420ca05a52541759818e10303ddc2178ad26218cb13453572ed3",
+      "78507f4b362f420ca05a52541759818e10303ddc2178ad26218cb13453572ed3"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 1728,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 283,
+        "height": 334
+      },
+      {
+        "width": 283,
+        "height": 334
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2ef500cd6b48e58b8b32b5358a01a0879619a1f513b8d18cae930390a5b6f888",
+      "2ef500cd6b48e58b8b32b5358a01a0879619a1f513b8d18cae930390a5b6f888"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 1728,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 480,
+        "height": 970
+      },
+      {
+        "width": 480,
+        "height": 970
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f11f635014318fd7c695819513856010d63c99bca82c81feb59bb7f021b93518",
+      "f11f635014318fd7c695819513856010d63c99bca82c81feb59bb7f021b93518"
+    ]
+  },
+  {
+    "id": "WEX.US",
+    "width": 1728,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 463,
+        "height": 310
+      },
+      {
+        "width": 463,
+        "height": 310
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "f280675a66fb79066337b7ca0ce9cbae3bd9d1392305d585d8334aa78af658a0",
+      "f280675a66fb79066337b7ca0ce9cbae3bd9d1392305d585d8334aa78af658a0"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "bottom-bar",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 70
+      },
+      {
+        "width": 390,
+        "height": 70
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f",
+      "8e8d22573a8604ce2ea1b4ffdc07a1a1789144d5b48e49c42e8a5c03bc161d0f"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "in-depth",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "625db17e62c6bf1fb375ebb6173aa017ccee98f15674bdf06b099935cd108aa1",
+      "625db17e62c6bf1fb375ebb6173aa017ccee98f15674bdf06b099935cd108aa1"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "in-depth-bottom",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "ec26d80fa981033b7290720bfab4e30453663b2eabd75c1f525dc69d56d4bb36",
+      "ec26d80fa981033b7290720bfab4e30453663b2eabd75c1f525dc69d56d4bb36"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-1",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "1dbd0bdcecf8974fe6e87a75ca88f89547f7d029731ae617c491194265c6ed4f",
+      "1dbd0bdcecf8974fe6e87a75ca88f89547f7d029731ae617c491194265c6ed4f"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-1-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2a7fb4da70f16ee0f8ea3f713a290bd18b42011eb9c93f695d7c91d4e0900cf8",
+      "2a7fb4da70f16ee0f8ea3f713a290bd18b42011eb9c93f695d7c91d4e0900cf8"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-2",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "83cdacc0ecf55db5f08fab9ba9deb5d5e8fc8b770dd59c985dc250d89fba4110",
+      "83cdacc0ecf55db5f08fab9ba9deb5d5e8fc8b770dd59c985dc250d89fba4110"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-2-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 485
+      },
+      {
+        "width": 374,
+        "height": 485
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "d169f7767d4d76fae941b8d8a8603afa85089ef2039e829468902d6c468d12d4",
+      "d169f7767d4d76fae941b8d8a8603afa85089ef2039e829468902d6c468d12d4"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-3",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "9fa62be7a4702b5177e7797defdf79a5540e0d2857a34235c69f62d705760894",
+      "9fa62be7a4702b5177e7797defdf79a5540e0d2857a34235c69f62d705760894"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-3-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "6ae991c1e315272dceb91a0f69b761d4fd440b3c99f11950626cb219f5a5de6c",
+      "6ae991c1e315272dceb91a0f69b761d4fd440b3c99f11950626cb219f5a5de6c"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-4",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "de44001636a0c639b89656807e49921be57377d7448ca221be54fa7cbb7c59f5",
+      "de44001636a0c639b89656807e49921be57377d7448ca221be54fa7cbb7c59f5"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-4-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 469
+      },
+      {
+        "width": 374,
+        "height": 469
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "2d9ab9e31d2045477221e91cbbe47211b9fafad42842a53359b604d052ddbc6a",
+      "2d9ab9e31d2045477221e91cbbe47211b9fafad42842a53359b604d052ddbc6a"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-5",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "995305141cae069288e663c4674a25f90cd2ecfcd6f6fb08d01f13dc81cea49e",
+      "995305141cae069288e663c4674a25f90cd2ecfcd6f6fb08d01f13dc81cea49e"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-5-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 502
+      },
+      {
+        "width": 374,
+        "height": 502
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "4235b9a6e119aaba68ac35153c0541db0f9ddff6de3dc83a082457d7a8a54073",
+      "4235b9a6e119aaba68ac35153c0541db0f9ddff6de3dc83a082457d7a8a54073"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-6",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "a8c7689fdf546e9a4d111c692925b658937d7decde6c78e246fd318bf83a0379",
+      "a8c7689fdf546e9a4d111c692925b658937d7decde6c78e246fd318bf83a0379"
+    ]
+  },
+  {
+    "id": "3697.JP",
+    "width": 390,
+    "state": "year-drawer-6-table",
+    "index": 0,
+    "dimensions": [
+      {
+        "width": 374,
+        "height": 280
+      },
+      {
+        "width": 374,
+        "height": 280
+      }
+    ],
+    "differentPixels": 0,
+    "sha256": [
+      "a53822341717fd040c9f3a2cbb39f756c22d6d439171a455f6c85b1186138e54",
+      "a53822341717fd040c9f3a2cbb39f756c22d6d439171a455f6c85b1186138e54"
+    ]
+  }
+]

@@ -1,0 +1,56 @@
+{
+  "baselineSeed": 20261006,
+  "baseline": [
+    "GLOB.US",
+    "2388.HK",
+    "NTES.US",
+    "BAM.TO",
+    "WEX.US",
+    "BATS.LSE",
+    "HAS.LSE",
+    "8725.JP",
+    "SCG.AU",
+    "IRM.US",
+    "AIR.US",
+    "HO.PA",
+    "MEDP.US",
+    "HOLN.SW",
+    "PEP.US",
+    "III.LSE",
+    "TPG.AU",
+    "RHLD.US",
+    "RMBS.US",
+    "006400.KO"
+  ],
+  "additionsSeed": 202610061,
+  "additions": [
+    "SA.US",
+    "LLYVK.US",
+    "LBTYK.US",
+    "GOOS.US",
+    "FWONK.US",
+    "DSGX.US",
+    "GFL.US",
+    "KGEI.US",
+    "BH.US",
+    "FSM.US"
+  ],
+  "excludedPriorSample": [
+    "BLCO.US",
+    "RDY.US",
+    "ERO.US",
+    "NTPIF.US",
+    "ASAIY.US",
+    "DGEAF.US",
+    "LOMA.US",
+    "RUSHB.US",
+    "BB.US",
+    "TPHS.US"
+  ],
+  "layoutRechecks": [
+    "AGO.US",
+    "AMPY.US",
+    "TOST.US"
+  ],
+  "baselineRef": "af8ab5fcf9fe4e4d1b1eb4dc3a715d67d41f50d2"
+}

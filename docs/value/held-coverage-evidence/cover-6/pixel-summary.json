@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-05T01:15:01.743510+00:00",
+  "masterRef": "af8ab5fcf9fe4e4d1b1eb4dc3a715d67d41f50d2",
+  "live": "https://gigainvestors.com",
+  "masking": false,
+  "tolerance": 0,
+  "differentPixels": 0,
+  "changedComparisons": 0,
+  "totalComparisons": 399,
+  "originalRandomPhoneCompanies": 20,
+  "originalPhoneComparisons": 276,
+  "phoneCompaniesWithYearTablesIncludingSupplement": 20,
+  "supplementalCompany": "3697.JP",
+  "originalSampleWithoutYearTables": [
+    "RHLD.US"
+  ],
+  "yearTableComparisons": 114,
+  "finalSnapshotFive": {
+    "ids": [
+      "GLOB.US",
+      "2388.HK",
+      "NTES.US",
+      "BAM.TO",
+      "WEX.US"
+    ],
+    "viewports": [
+      "390x844",
+      "1728x970"
+    ],
+    "comparisons": 108,
+    "drawers": [
+      "In depth",
+      "Predictable profits",
+      "Valuation (Honest profits for WEX, which has no valuation drawer)"
+    ],
+    "errors": []
+  },
+  "originalHarnessCorrection": "Initial desktop script assumed six evidence buttons; WEX has five on both local and live. No raster differed. Fixed the selector to use the last existing evidence drawer and reran all five against cover-6-final. The initial raw report is retained.",
+  "snapshotNote": "Original twenty used cover-5-final with restored final UI; five-company and supplemental runs used cover-6-final. The ordinary publish proof establishes identical serialized baseline data in both snapshots against live.",
+  "rawReports": [
+    "/Users/miki/data/value-cover/held-validation/cover-6/pixels/report.json",
+    "/Users/miki/data/value-cover/held-validation/cover-6/pixels-final-five/report.json",
+    "/Users/miki/data/value-cover/held-validation/cover-6/pixels-supplemental/report.json"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "baselineRef": "af8ab5fcf9fe4e4d1b1eb4dc3a715d67d41f50d2",
+  "files": {
+    "app/controls.css": {
+      "identical": true,
+      "sha256": "5c28a711e67e64b176a254cc7cd71d8202c5e7b35a772ff1c263212ceac3afdd"
+    },
+    "app/value/label-values.css": {
+      "identical": true,
+      "sha256": "dca56a203d7a45403162725fe4c5f781cc06145031eacf7494bf58dea2be9ff5"
+    }
+  },
+  "compactChartRightOffset": 36,
+  "onlyRemainingDossierNumbersChange": "Approved human-readable flag labels: founder_led, compensation_basis, buyback_below_value, acquisition_led."
+}

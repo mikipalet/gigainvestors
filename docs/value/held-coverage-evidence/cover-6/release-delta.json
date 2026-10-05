@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-05T01:14:08.935246+00:00",
+  "baselineUnchanged": true,
+  "baselineAnalysisHashesUnchanged": true,
+  "removedAdditions": [
+    "AGO.US",
+    "AMPY.US",
+    "TOST.US"
+  ],
+  "newAdditions": [],
+  "newHolds": [
+    {
+      "id": "AGO.US",
+      "reasons": [
+        "layout"
+      ]
+    },
+    {
+      "id": "AMPY.US",
+      "reasons": [
+        "layout"
+      ]
+    },
+    {
+      "id": "TOST.US",
+      "reasons": [
+        "layout"
+      ]
+    }
+  ],
+  "counts": {
+    "baseline": 3860,
+    "additions": 97,
+    "held": 42
+  }
+}

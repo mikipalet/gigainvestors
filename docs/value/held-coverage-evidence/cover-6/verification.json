@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-05T01:15:01.750888+00:00",
+  "testFilesPassed": 223,
+  "testsPassed": 2224,
+  "testsSkipped": 1,
+  "productionBuild": "passed (webpack); built-in TypeScript passed",
+  "sourceReaderChecksPassed": 9,
+  "browserStates": 214,
+  "browserBlockingFindings": 0,
+  "browserRawExit": 1,
+  "browserDisposition": "172 whitespace findings under prior R2 ruling; 393 required owner-approved 12px chrome findings. Raw gate unchanged.",
+  "pixelComparisons": 399,
+  "pixelDiffs": 0,
+  "diffCheck": "passed",
+  "logs": {
+    "/Users/miki/data/value-cover/logs/cover6-browser.log": "8d380357ecdcaa4bfe54b231554383dfd9b1ac8c8adff75a24623a4c0784269c",
+    "/Users/miki/data/value-cover/logs/cover6-build.log": "30f089e7c6349fe33447849048a44fab2a4ee19ddc21bf166a3021aeebd46c6d",
+    "/Users/miki/data/value-cover/logs/cover6-final-preview.log": "f9dd5262f11b30c3fd5e2316dc692306a99012d9dcda68e59c00047223391f92",
+    "/Users/miki/data/value-cover/logs/cover6-layout.log": "6f8e99e4275b118b3e93d423db29f4928bc5c693d7ffca0e77e5434dbf8c1c53",
+    "/Users/miki/data/value-cover/logs/cover6-pixels-final-five.log": "d4cf707dc5fe3812a636ceb52ae1a96cab8ea61ce7ec4a65fec467adc6b94b1f",
+    "/Users/miki/data/value-cover/logs/cover6-pixels-supplemental.log": "dab12593604a95e212bd756a616743b1b21f383276eaccdbb485500aafd8c821",
+    "/Users/miki/data/value-cover/logs/cover6-pixels.log": "35f6e376b3c4f1d9c9a77b1401782d4e5e2b36f3608091f760eacb0afe2bff26",
+    "/Users/miki/data/value-cover/logs/cover6-preview.log": "c8a7f66ed1554db599329767c59703fa2836f7846f7e3c978e76f55dd1173e20",
+    "/Users/miki/data/value-cover/logs/cover6-publish.log": "e0dda1fbd0abefbcb32c4b77e53771f833409b42ed9afc46c4a22ab47501919f",
+    "/Users/miki/data/value-cover/logs/cover6-source-reader.log": "663a792e9f32e1f91c39e6dac36d6e5192bac263531ccc98c3b203c9f6df1fc9",
+    "/Users/miki/data/value-cover/logs/cover6-tests.log": "96c9b9085f4fc2227abd960cd06328ec5d7e308a0044fad2873c2c8b66af8f8d"
+  },
+  "freeGiB": {
+    "/": 10.396,
+    "/Users/miki/data/value-cover": 151.638
+  },
+  "ownedPreviewsStopped": true
+}

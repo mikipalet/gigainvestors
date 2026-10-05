@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-05T01:08:20.371Z",
+  "corpus": "/Users/miki/data/value-cover",
+  "baselineRepo": "/Users/miki/value-corpus/publish-repo",
+  "output": "/Users/miki/data/value-cover/staging/cover-6-final",
+  "baseline": 3860,
+  "additions": 97,
+  "held": 42,
+  "baselineDossierChanges": [],
+  "baselineIndexChanges": [],
+  "baselineQuoteChanges": [],
+  "bindingFailures": [],
+  "missing": [],
+  "unexpected": [],
+  "frozen": 147,
+  "freezeChanges": []
+}

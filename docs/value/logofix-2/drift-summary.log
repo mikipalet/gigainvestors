@@ -1,0 +1,411 @@
+{
+  "companies": 762,
+  "fields": {
+    "historyAssumptions": 696,
+    "priceStory": 70,
+    "valuation": 4,
+    "series": 1,
+    "tests": 1
+  },
+  "paths": {
+    "historyAssumptions": 696,
+    "priceStory.asOf": 70,
+    "valuation.assumptions": 4,
+    "series.sbcToOcf": 1,
+    "tests.accounting.series.sbcToOcf": 1
+  }
+}
+{
+  "id": "IBS.LS",
+  "changes": [
+    {
+      "path": "historyAssumptions",
+      "before": [
+        "Historical values use today's bond yield for every fiscal year",
+        "Historical values use today's FX rate into trading currency for every fiscal year",
+        "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates",
+        "Prior published observations retained from 2026-10-04T10:34:25.643Z where newer inputs omit a numeric field or fiscal period."
+      ],
+      "after": [
+        "Historical values use today's bond yield for every fiscal year",
+        "Historical values use today's FX rate into trading currency for every fiscal year",
+        "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates",
+        "Prior published observations retained from 2026-10-06T10:13:05.664Z where newer inputs omit a numeric field or fiscal period."
+      ]
+    },
+    {
+      "path": "valuation.assumptions",
+      "before": [
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use the median owner earnings observation",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (PT10Y.GBOND, observed 2026-09-30; checked 2026-09-30)",
+        "Previously published valuation from 2026-10-04T10:34:25.643Z retained pending review of refreshed inputs."
+      ],
+      "after": [
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use the median owner earnings observation",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (PT10Y.GBOND, observed 2026-09-30; checked 2026-09-30)",
+        "Previously published valuation from 2026-10-04T10:34:25.643Z retained pending review of refreshed inputs.",
+        "Previously published valuation from 2026-10-06T10:13:05.664Z retained pending review of refreshed inputs."
+      ]
+    }
+  ]
+}
+{
+  "id": "LPP.WAR",
+  "changes": [
+    {
+      "path": "valuation.assumptions",
+      "before": [
+        "TTM ending 2026-07-31; zero-growth rule compares TTM revenue with FY2023 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use TTM owner earnings; full TTM capex deducted; latest annual lease liabilities used",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (PL10Y.GBOND, observed 2026-09-29; checked 2026-09-30)",
+        "Previously published valuation from 2026-10-04T10:30:53.399Z retained pending review of refreshed inputs."
+      ],
+      "after": [
+        "TTM ending 2026-07-31; zero-growth rule compares TTM revenue with FY2023 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use TTM owner earnings; full TTM capex deducted; latest annual lease liabilities used",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (PL10Y.GBOND, observed 2026-09-29; checked 2026-09-30)",
+        "Previously published valuation from 2026-10-04T10:30:53.399Z retained pending review of refreshed inputs.",
+        "Previously published valuation from 2026-10-06T10:47:54.977Z retained pending review of refreshed inputs."
+      ]
+    }
+  ]
+}
+{
+  "id": "TDW.US",
+  "changes": [
+    {
+      "path": "historyAssumptions",
+      "before": [
+        "Historical values use today's bond yield for every fiscal year",
+        "Historical values use today's FX rate into trading currency for every fiscal year",
+        "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates"
+      ],
+      "after": [
+        "Historical values use today's bond yield for every fiscal year",
+        "Historical values use today's FX rate into trading currency for every fiscal year",
+        "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates",
+        "Prior published observations retained from 2026-10-06T11:01:11.555Z where newer inputs omit a numeric field or fiscal period."
+      ]
+    },
+    {
+      "path": "series.sbcToOcf",
+      "before": [
+        [
+          2016,
+          0.052174771076728764
+        ],
+        [
+          2017,
+          0.1099225378089266
+        ],
+        [
+          2017,
+          null
+        ],
+        [
+          2018,
+          3.401674701852322
+        ],
+        [
+          2019,
+          null
+        ],
+        [
+          2020,
+          1.2837431008529854
+        ],
+        [
+          2021,
+          0.37571638011462083
+        ],
+        [
+          2022,
+          0.1832645552627654
+        ],
+        [
+          2023,
+          0.10271715772885727
+        ],
+        [
+          2024,
+          0.04995818863680349
+        ],
+        [
+          2025,
+          0.03820283402091225
+        ]
+      ],
+      "after": [
+        [
+          2016,
+          0.052174771076728764
+        ],
+        [
+          2017,
+          0.1099225378089266
+        ],
+        [
+          2017,
+          0.1099225378089266
+        ],
+        [
+          2018,
+          3.401674701852322
+        ],
+        [
+          2019,
+          null
+        ],
+        [
+          2020,
+          1.2837431008529854
+        ],
+        [
+          2021,
+          0.37571638011462083
+        ],
+        [
+          2022,
+          0.1832645552627654
+        ],
+        [
+          2023,
+          0.10271715772885727
+        ],
+        [
+          2024,
+          0.04995818863680349
+        ],
+        [
+          2025,
+          0.03820283402091225
+        ]
+      ]
+    },
+    {
+      "path": "tests.accounting.series.sbcToOcf",
+      "before": [
+        [
+          2016,
+          0.052174771076728764
+        ],
+        [
+          2017,
+          0.1099225378089266
+        ],
+        [
+          2017,
+          null
+        ],
+        [
+          2018,
+          3.401674701852322
+        ],
+        [
+          2019,
+          null
+        ],
+        [
+          2020,
+          1.2837431008529854
+        ],
+        [
+          2021,
+          0.37571638011462083
+        ],
+        [
+          2022,
+          0.1832645552627654
+        ],
+        [
+          2023,
+          0.10271715772885727
+        ],
+        [
+          2024,
+          0.04995818863680349
+        ],
+        [
+          2025,
+          0.03820283402091225
+        ]
+      ],
+      "after": [
+        [
+          2016,
+          0.052174771076728764
+        ],
+        [
+          2017,
+          0.1099225378089266
+        ],
+        [
+          2017,
+          0.1099225378089266
+        ],
+        [
+          2018,
+          3.401674701852322
+        ],
+        [
+          2019,
+          null
+        ],
+        [
+          2020,
+          1.2837431008529854
+        ],
+        [
+          2021,
+          0.37571638011462083
+        ],
+        [
+          2022,
+          0.1832645552627654
+        ],
+        [
+          2023,
+          0.10271715772885727
+        ],
+        [
+          2024,
+          0.04995818863680349
+        ],
+        [
+          2025,
+          0.03820283402091225
+        ]
+      ]
+    }
+  ]
+}
+{
+  "id": "FG.US",
+  "changes": [
+    {
+      "path": "valuation.assumptions",
+      "before": [
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "sustainable tangible ROE: ten-year median capped at 25%; at least five finite observations",
+        "growth = sustainable ROE \u00d7 median dividend retention, capped at 6%; residual earnings distributable",
+        "returns use net income divided by tangible equity",
+        "valuation uses tangible book value per share",
+        "cash and debt are included in book value",
+        "equity bond yield uses median net income",
+        "Local 10-year yield: EODHD latest (US10Y.GBOND, observed 2026-10-01; checked 2026-10-01)",
+        "Bond yield flags: second-source-confirmed",
+        "Previously published valuation from 2026-10-04T20:15:54.475Z retained pending review of refreshed inputs.",
+        "Expected return is the IRR of the same perpetual distributable earnings, with a fixed payout haircut for the 4\u00d7 book cap at the required rate"
+      ],
+      "after": [
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "sustainable tangible ROE: ten-year median capped at 25%; at least five finite observations",
+        "growth = sustainable ROE \u00d7 median dividend retention, capped at 6%; residual earnings distributable",
+        "returns use net income divided by tangible equity",
+        "valuation uses tangible book value per share",
+        "cash and debt are included in book value",
+        "equity bond yield uses median net income",
+        "Local 10-year yield: EODHD latest (US10Y.GBOND, observed 2026-10-01; checked 2026-10-01)",
+        "Bond yield flags: second-source-confirmed",
+        "Previously published valuation from 2026-10-04T20:15:54.475Z retained pending review of refreshed inputs.",
+        "Previously published valuation from 2026-10-06T10:42:21.739Z retained pending review of refreshed inputs.",
+        "Expected return is the IRR of the same perpetual distributable earnings, with a fixed payout haircut for the 4\u00d7 book cap at the required rate"
+      ]
+    }
+  ]
+}
+{
+  "id": "WN.TO",
+  "changes": [
+    {
+      "path": "valuation.assumptions",
+      "before": [
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use TTM owner earnings; full TTM capex deducted; latest annual lease liabilities used",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (CA10Y.GBOND, observed 2026-10-01; checked 2026-10-02)",
+        "Previously published valuation from 2026-10-04T10:29:24.742Z retained pending review of refreshed inputs."
+      ],
+      "after": [
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use TTM owner earnings; full TTM capex deducted; latest annual lease liabilities used",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (CA10Y.GBOND, observed 2026-10-01; checked 2026-10-02)",
+        "Previously published valuation from 2026-10-04T10:29:24.742Z retained pending review of refreshed inputs.",
+        "Previously published valuation from 2026-10-06T10:10:21.440Z retained pending review of refreshed inputs."
+      ]
+    }
+  ]
+}
+{
+  "id": "NWG.LSE",
+  "path": "priceStory.asOf",
+  "before": "2026-10-06T14:09:58.478Z",
+  "after": "2026-10-06T15:41:40.459Z"
+}

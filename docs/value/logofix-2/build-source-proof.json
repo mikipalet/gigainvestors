@@ -1,0 +1,9 @@
+{
+  "lib/value/logo-restoration.ts": "519d43158df96072d9989956face15483b7ee0194e3cf4e077bd1f63a030c931",
+  "lib/value/logo-restorations.json": "2b66e76437f90cfeba1a4c15e0b3d86703e03bfd301eaf164564096bbc50a453",
+  "lib/value/logo-fill.ts": "f424a62115bf41da4978708fe0117700decad31e99fcd4e9e2152ac3e954a984",
+  "scripts/value/stages/logos.ts": "1a513fdedb519a6fc3c10e41c7473834f5ed70dc536cd61a76dae54c02dae0f0",
+  "scripts/value/install-logo-recovery.ts": "5dd534b65cd43cc1e68557bb1561882d0601e22372c6ff46fb23cf4fc32489a6",
+  "scripts/value/publication-coverage.ts": "d9f7bec85925a9df37ca76dd4064fbab932780c27e18485016ed51b19ac080a1",
+  "scripts/value/publish-invariants.ts": "2e7b7baba07e995096e954f9da2df522284593b2d59dbdc8dee9eedfd3f08157"
+}

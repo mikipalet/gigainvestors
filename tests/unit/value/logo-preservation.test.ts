@@ -47,3 +47,10 @@ it('does not alter an approval installed during discovery, even with the same ve
  await logos();
  expect(readFileSync(path.join(dir,file),'utf8')).toBe(JSON.stringify(approved)+'\n');
 });
+
+it('keeps an exactly restored uncached historical logo even while the current archive is demoted',async()=>{
+ put('universe.jsonl',{id:'AAL.US',name:'American Airlines',code:'AAL',exchange:'US',country:'US',listings:['AAL.US'],indexes:['SP500']});
+ put('publish-repo/index/US.json',[{id:'AAL.US',lg:null}]);
+ await logos();
+ expect(existsSync(path.join(dir,'enrichment-v7/logos/AAL.US.json'))).toBe(false);
+});

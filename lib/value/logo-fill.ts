@@ -1,4 +1,5 @@
 import {readCorpusJson} from './corpus';
+import {restoredPublishedLogo} from './logo-restoration';
 import {iconHash,LOGO_VALIDATION_VERSION,rejectedLogoHashes} from './logo-validation';
 import type {Dossier,IndexRow} from './types';
 
@@ -9,7 +10,7 @@ export function fillPublishedLogos(files:Record<string,unknown>):void {
  const logoFor=(id:string):string|null=>{
   if(resolved.has(id))return resolved.get(id)!;
   const r=readCorpusJson<{asset?:string;logo?:string;validated?:boolean;validationVersion?:number;identityReview?:string;originalHash?:string}>(`enrichment-v7/logos/${id}.json`);
-  let logo:string|null=null;
+  let logo:string|null=restoredPublishedLogo(id,r);
   if(r?.validated&&r.validationVersion===LOGO_VALIDATION_VERSION&&!['pending','rejected'].includes(r.identityReview??'')&&r.asset&&/^[a-f0-9]{64}$/.test(r.asset)&&r.logo===`/api/value/logo?asset=${r.asset}`&&!rejectedLogoHashes(id).has(r.originalHash??'')&&!rejectedLogoHashes(id).has(r.asset)){
    const asset=readCorpusJson<{data:string}>(`enrichment-v7/logos/assets/${r.asset}.json`);
    if(!asset||iconHash(Buffer.from(asset.data,'base64'))!==r.asset)throw Error(`Invalid approved logo asset for ${id}`);

@@ -1,0 +1,14 @@
+{
+  total: 4107,
+  checked: 12,
+  cached: 4095,
+  recovered: 10,
+  unavailable: 2,
+  sources: {
+    'official-header': 6,
+    'official-css-logo': 1,
+    'official-manifest': 1,
+    'official-inline-svg': 1,
+    'official-icon': 1
+  }
+}

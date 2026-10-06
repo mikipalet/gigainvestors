@@ -1,0 +1,47 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-logofix
+
+stdout | tests/unit/value/ops-integration.test.ts > does not request history for companies without fundamentals
+price-history: 0 written
+price-history: 0/0 companies failed
+
+stdout | tests/unit/value/ops-integration.test.ts > preserves actual screener closes when publishing and rejects older quotes
+price-seed: 2 cached/validated quotes written, 0 unverified seeds removed (local; published by publish)
+
+stderr | tests/unit/value/ops-integration.test.ts > preserves actual screener closes when publishing and rejects older quotes
+prices: skipped NEW.US: Unexpected network
+
+stdout | tests/unit/value/ops-integration.test.ts > preserves actual screener closes when publishing and rejects older quotes
+prices summary: 0/1 fresh (0.00%); Yahoo 0; failed exchanges none; missing 1; status=partial
+
+stdout | tests/unit/value/ops-integration.test.ts > fetches never-seen history before stale history and observes persisted daily capacity
+daily price-history budget reached, resume tomorrow
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/ops-integration.test.ts > fetches never-seen history before stale history and observes persisted daily capacity
+daily price-history budget reached, resume tomorrow
+daily price-history budget reached, resume tomorrow
+price-history: 0 written
+price-history: 0/0 companies failed
+
+stdout | tests/unit/value/ops-integration.test.ts > removes rejected legacy seeds locally and on the next publish, retaining actual closes
+price-seed: 0 cached/validated quotes written, 1 unverified seeds removed (local; published by publish)
+
+ ✓ tests/unit/value/ops-integration.test.ts (25 tests) 33825ms
+   ✓ runner publishes available data after analysis or price failures: true  2343ms
+   ✓ runner publishes available data after analysis or price failures: false  2573ms
+   ✓ runner resumes from the last successful filing day, refreshes it, and advances only after success  4948ms
+   ✓ runner retains the pending filing range after Japan is failure  4234ms
+   ✓ runner retains the pending filing range after Japan is skipped  4439ms
+   ✓ runner retains the pending filing range after Japan is interrupted  4332ms
+   ✓ runner retries an existing failed Japan summary from its original start day  2163ms
+   ✓ runner checks dead owner PID before acquiring the lock  2311ms
+   ✓ runner still publishes when refreshing yields fails  2355ms
+   ✓ runner skips acquisition and still analyzes cached inputs when reset waiting fails  1385ms
+   ✓ bounds thesis before publication and skips publication on thesis failure  2171ms
+
+ Test Files  1 passed (1)
+      Tests  25 passed (25)
+   Start at  16:24:40
+   Duration  37.31s (transform 1.81s, setup 0ms, collect 3.12s, tests 33.82s, environment 0ms, prepare 71ms)

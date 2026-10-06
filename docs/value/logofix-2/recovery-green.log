@@ -1,0 +1,91 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-logofix
+
+stdout | tests/unit/value/logo-preservation.test.ts > preserves approved old matcher byte-for-byte
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > preserves approved old validator byte-for-byte
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > preserves approved current record byte-for-byte
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > preserves approved forced retry byte-for-byte
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > preserves validated legacy record byte-for-byte
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > keeps a published logo without a cache record instead of shadowing it with a pending result
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > does not alter an approval installed during discovery, even with the same verifiedAt
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > keeps an exactly restored uncached historical logo even while the current archive is demoted
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+ ✓ tests/unit/value/logo-preservation.test.ts (8 tests) 539ms
+   ✓ does not alter an approval installed during discovery, even with the same verifiedAt  461ms
+ ✓ tests/unit/value/logo-fill.test.ts (3 tests) 15ms
+
+ Test Files  2 passed (2)
+      Tests  11 passed (11)
+   Start at  16:11:51
+   Duration  3.06s (transform 862ms, setup 0ms, collect 1.72s, tests 553ms, environment 0ms, prepare 143ms)

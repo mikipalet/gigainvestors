@@ -104,6 +104,7 @@ function runner({ analyzeFails = false, yieldsFails = false, japanFails = false,
 const fs = require('node:fs');
 const { spawnSync } = require('node:child_process');
 const args = process.argv.slice(2);
+if (args[2] === 'scripts/value/coverage-summary-cli.ts') { console.log('coverage: fixture baseline'); process.exit(0); } // Coverage rejection has dedicated runner/guard tests.
 if (args[2] === 'scripts/value/post-publish-cli.ts') process.exit(0); // Browser/rollback have dedicated integration tests.
 if (args[2] !== 'scripts/value/cli.ts') {
   const result = spawnSync(${JSON.stringify(process.execPath)}, args, { stdio: 'inherit' });
@@ -134,6 +135,8 @@ it.each([true, false])('runner publishes available data after analysis or price 
   // No --only or --limit: newly imported JP issuers and all other sources are covered.
   expect(calls.filter(([stage]) => ['prices', 'price-history', 'reports', 'yields', 'analyze'].includes(stage)).every(call => call.length === 1)).toBe(true);
 });
+// Two real scheduler cycles (including tsx bookkeeping) take 5.2–5.4s on the
+// shared worker. Bound the integration work without changing any assertions.
 it('runner resumes from the last successful filing day, refreshes it, and advances only after success', () => {
   const today = new Date().toISOString().slice(0, 10);
   writeCorpusJson('raw/edinet/summary.json', { from: '2024-09-01', to: '2026-09-27', errors: [] });
@@ -143,7 +146,7 @@ it('runner resumes from the last successful filing day, refreshes it, and advanc
   expect(readCorpusJson('raw/edinet/days/2026-09-27.json')).toBeNull();
   runner()();
   expect(stageCalls().filter(([stage]) => stage === 'japan')[1]).toEqual(['japan', `--from=${today}`, `--to=${today}`]);
-});
+}, 10_000);
 it.each(['failure', 'skipped', 'interrupted'])('runner retains the pending filing range after Japan is %s', outcome => {
   const today = new Date().toISOString().slice(0, 10);
   writeCorpusJson('raw/edinet/summary.json', { from: '2024-09-01', to: '2026-09-27', errors: [] });
@@ -159,7 +162,7 @@ it.each(['failure', 'skipped', 'interrupted'])('runner retains the pending filin
   ]);
   expect(stageCalls().some(([stage]) => stage === 'status')).toBe(true);
   if (outcome === 'interrupted') expect(readCorpusJson('raw/edinet/days/2026-09-28.json')).toBeNull();
-});
+}, 10_000);
 it('runner retries an existing failed Japan summary from its original start day', () => {
   const today = new Date().toISOString().slice(0, 10);
   writeCorpusJson('raw/edinet/summary.json', { from: '2026-09-25', to: '2026-09-27', errors: [{ id: '8058.JP' }] });

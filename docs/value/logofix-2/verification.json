@@ -1,0 +1,30 @@
+{
+  "ready": true,
+  "historicalStatesRestored": 155,
+  "originalRequestedStates": 154,
+  "additionalDossierRecovery": "TLC.AU",
+  "newReviewedLogos": 19,
+  "protectedNonNullRecordsUnchanged": 13808,
+  "indexCompanies": 3910,
+  "indexLogos": 3883,
+  "indexMonograms": 27,
+  "USIndexMonograms": 13,
+  "dossiers": 3915,
+  "guardLogos": 3885,
+  "guardMissing": 30,
+  "guardBaselinesPassed": [
+    "9037c38327d6b688e95ffab6543610a57c2f9081",
+    "2d7f1d84db5b28e474a04b8b7f94b29621acbb5f"
+  ],
+  "coverageApprovalsAdded": 0,
+  "renderedPagesPerBaseline": 20,
+  "ordinaryPublishInvariantsPassed": true,
+  "unitFiles": 255,
+  "unitPassed": 2472,
+  "unitSkipped": 1,
+  "buildExit": 0,
+  "staticPages": 222,
+  "nonLogoDossierDifferences": 762,
+  "nonLogoIndexDifferences": 0,
+  "priceShardDifferences": 0
+}

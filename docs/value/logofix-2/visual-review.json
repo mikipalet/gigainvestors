@@ -1,0 +1,192 @@
+{
+  "ALHC.US": {
+    "decision": "pass",
+    "asset": "986eedd278c6599b1983731d46fd2519ea86386be63eeb408407b612b775bfa1",
+    "at": "2026-10-06T16:20:31.046727+00:00",
+    "note": "Alignment multicolour interlocking cross, official site icon. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.alignmenthealth.com/",
+      "https://images.squarespace-cdn.com/content/v1/66ca19d2955ff62a438530f7/203b117a-326d-4f0a-bcf7-8e3f596b06fa/favicon.ico?format=100w"
+    ]
+  },
+  "CFRUY.US": {
+    "decision": "pass",
+    "asset": "e9cf098193d9ccc9ab773297591bde04399cb5a1ce62e4c8ae581a883a58cc65",
+    "at": "2026-10-06T16:20:31.046751+00:00",
+    "note": "Richemont blue serif wordmark, official header. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.richemont.com/",
+      "https://www.richemont.com/media/ruchy3dr/richmontlogo.svg"
+    ]
+  },
+  "DFH.US": {
+    "decision": "pass",
+    "asset": "d721eb257d1fad56805286c68bd32940495d9d531b06140b406471202d7e2c52",
+    "at": "2026-10-06T16:20:31.046755+00:00",
+    "note": "Replaced rejected navigation search icon with official gold DF seal and Dream Finders Homes wordmark. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://dreamfindershomes.com/",
+      "https://static.dreamfindershomes.com/dreamfindershomes/images/logo_dream_finders_homes_header.png?v=c8f73b1"
+    ]
+  },
+  "DVDCF.US": {
+    "decision": "pass",
+    "asset": "58d0bb2e0f45c5a4538cbdda6cbef40ac15194c4e87ceb90972b80bf621b4f83",
+    "at": "2026-10-06T16:20:31.046761+00:00",
+    "note": "Campari Group navy wordmark, issuer-matched Wikipedia candidate. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.camparigroup.com",
+      "https://upload.wikimedia.org/wikipedia/commons/c/ce/Campari_Group_-_logo_%28Italy%2C_2008-%29.svg?utm_source=ja.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+    ]
+  },
+  "FLMNF.US": {
+    "decision": "pass",
+    "asset": "4c2639ec2dbd70094b05dd477fb4e0d1f955d3fdbf230f8e979137b0abe9e8b9",
+    "at": "2026-10-06T16:20:31.046763+00:00",
+    "note": "Fielmann Group black geometric mark and wordmark, issuer-matched Wikipedia candidate. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.fielmann-group.com",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f9/Fielmann_Group_AG_Logo.svg?utm_source=de.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+    ]
+  },
+  "FLUIF.US": {
+    "decision": "pass",
+    "asset": "2dc266d8cd9085dae4020690f6653f485b9f4d2a805c042fde3250b45278eaf3",
+    "at": "2026-10-06T16:20:31.046766+00:00",
+    "note": "Fluidra blue wordmark, issuer-matched Wikipedia candidate. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.fluidra.com",
+      "https://upload.wikimedia.org/wikipedia/commons/0/06/Fluidra_Logo_2018.svg?utm_source=de.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+    ]
+  },
+  "GCMG.US": {
+    "decision": "pass",
+    "asset": "18509fa7d204df7bbf93086edcf863c84d0f0d1fffeeebc802982bfaef2b6b6c",
+    "at": "2026-10-06T16:20:31.046769+00:00",
+    "note": "GCM Grosvenor white/grey wordmark on dark canvas, official header. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.gcmgrosvenor.com/",
+      "https://www.gcmgrosvenor.com/wp-content/uploads/gcm-logo-white.png"
+    ]
+  },
+  "HEINY.US": {
+    "decision": "pass",
+    "asset": "cdf8c833419b3de944a37614a0446f61586b966ae0e02f0b76e592f15ee5d2d7",
+    "at": "2026-10-06T16:20:31.046772+00:00",
+    "note": "Heineken red star with green issuer wordmark, issuer-matched Wikipedia candidate. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.theheinekencompany.com",
+      "https://upload.wikimedia.org/wikipedia/commons/0/0d/Heineken_Logo.svg?utm_source=ja.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+    ]
+  },
+  "HKHHF.US": {
+    "decision": "pass",
+    "asset": "a490ae4482b1461d41988b352e1ed80e3ebf930327976d89ecd45aedb98f5f0d",
+    "at": "2026-10-06T16:20:31.046775+00:00",
+    "note": "Replaced ambiguous standalone red star with official Heineken Holding NV header wordmark. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.heinekenholding.com/",
+      "https://www.heinekenholding.com/sites/heinekenholding-v2/files/heineken-holding/logo/logo.png"
+    ]
+  },
+  "HKHHY.US": {
+    "decision": "pass",
+    "asset": "a490ae4482b1461d41988b352e1ed80e3ebf930327976d89ecd45aedb98f5f0d",
+    "at": "2026-10-06T16:20:31.046778+00:00",
+    "note": "Same official Heineken Holding NV header for its ADR. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.heinekenholding.com/",
+      "https://www.heinekenholding.com/sites/heinekenholding-v2/files/heineken-holding/logo/logo.png"
+    ]
+  },
+  "KNCRF.US": {
+    "decision": "pass",
+    "asset": "f2ed11d33a2ae6dfadc7f3017788203182b38073cee06852b6700c06ceeb11b1",
+    "at": "2026-10-06T16:20:31.046780+00:00",
+    "note": "Konecranes orange wordmark, official inline SVG. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.konecranes.com/",
+      "https://www.konecranes.com/#inline-logo-0"
+    ]
+  },
+  "MTRBF.US": {
+    "decision": "pass",
+    "asset": "875708452bd9c68bea970970da4f2611848953d4ed031f4d833b7306628a3275",
+    "at": "2026-10-06T16:20:31.046783+00:00",
+    "note": "Metro Bank red M and blue/white wordmark, issuer-matched Wikipedia candidate. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.metrobankonline.co.uk",
+      "https://upload.wikimedia.org/wikipedia/en/6/6d/Metro_Bank_logo.svg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+    ]
+  },
+  "OGC.US": {
+    "decision": "pass",
+    "asset": "5638d1446566409c28827776d35c5f195604a37b5ec170c6005038457a8c0ab7",
+    "at": "2026-10-06T16:20:31.046788+00:00",
+    "note": "OceanaGold white/gold wordmark and emblem, official inline SVG. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://oceanagold.com/",
+      "https://oceanagold.com/#inline-logo-0"
+    ]
+  },
+  "PEYUF.US": {
+    "decision": "pass",
+    "asset": "22aebcc9ca4a26382d639071a8c9390ee0fae3d587845caa60a72b4318d009ba",
+    "at": "2026-10-06T16:20:31.046791+00:00",
+    "note": "Replaced isolated portrait candidate with the complete official Peyto header lockup: Bill portrait plus Peyto Exploration & Development Corp wordmark. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.peyto.com/",
+      "https://www.peyto.com/Images/Bill.Gif"
+    ]
+  },
+  "PHJMF.US": {
+    "decision": "pass",
+    "asset": "8e415f3588734355fdb994f138adec8185e8cd03dd58efbde2ce016b4d8c6030",
+    "at": "2026-10-06T16:20:31.046794+00:00",
+    "note": "Sampoerna official gold/red crest with PT HM Sampoerna Tbk wordmark. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.sampoerna.com/en/home",
+      "https://www.sampoerna.com/content/dam/pmicom/affiliates/sampoerna/images/sampoerna_logo.png"
+    ]
+  },
+  "PIFYF.US": {
+    "decision": "pass",
+    "asset": "6e7819fe3e689b4bb6508a45d941f88f65afeefc3f684cb7a4598824ca5f5271",
+    "at": "2026-10-06T16:20:31.046796+00:00",
+    "note": "Pine Cliff Energy white geometric emblem and wordmark, official header. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.pinecliffenergy.com/",
+      "https://cdn.prod.website-files.com/64dcf83dc7b2e3793ab75d1e/64dcf83dc7b2e3793ab75d8e_PineCliffLogo.svg"
+    ]
+  },
+  "PUIGF.US": {
+    "decision": "pass",
+    "asset": "bfb2e97b71d8d4c7d0add14a6c65c9633cdee74d7c84e94f64eff43601dcc9a6",
+    "at": "2026-10-06T16:20:31.046798+00:00",
+    "note": "Puig black wordmark, official header. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.puig.com/en/",
+      "https://www.puig.com/logo.svg"
+    ]
+  },
+  "RTLLF.US": {
+    "decision": "pass",
+    "asset": "e455018d29f753134cdcb3507dd5f1eb6e0492235d33fcaf8f772f9b8058ba59",
+    "at": "2026-10-06T16:20:31.046800+00:00",
+    "note": "Rational red/blue wordmark in white rectangle, official inline SVG. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://www.rational-online.com/en_xx/home/",
+      "https://www.rational-online.com/en_xx/home/#inline-logo-0"
+    ]
+  },
+  "ZLDSF.US": {
+    "decision": "pass",
+    "asset": "420ae202a531b3d28694737e6da516f8edef3562d8e94824baa28b70081ac2b7",
+    "at": "2026-10-06T16:20:31.046803+00:00",
+    "note": "Zalando orange symbol and black wordmark, issuer-matched Wikipedia candidate. Visually inspected on white/dark backgrounds at large and 26px tile size.",
+    "evidence": [
+      "https://corporate.zalando.com",
+      "https://upload.wikimedia.org/wikipedia/commons/6/62/Zalando_Logo_2024.svg?utm_source=ja.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+    ]
+  }
+}

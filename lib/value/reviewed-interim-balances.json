@@ -1,0 +1,8 @@
+{
+  "GAMA.LSE": [{
+    "end": "2026-06-30", "filed": "2026-09-07", "currency": "GBP", "basis": "filed",
+    "source": "https://gammagroup.co/wp-content/uploads/2026/09/HY-RNS-2026-Final.pdf",
+    "evidence": "Condensed consolidated statement of financial position, p17, GBP millions: cash 21.8, assets 626.5, parent equity 365.3, non-controlling interest 0.4. Note 10 pp27-28 and net-debt reconciliation p35: borrowings 25.6; lease liabilities 14.7. Total debt here is borrowings plus leases, 40.3; excludes derivative and contingent acquisition consideration. Separate intangibles breakdown not imported.",
+    "values": {"cash": 21800000, "totalDebt": 40300000, "debtIncludesLeases": true, "equity": 365300000, "totalAssets": 626500000, "minorityInterest": 400000, "leaseLiabilities": 14700000, "sharesOutstanding": 89827758, "goodwill": null, "intangibles": null}
+  }]
+}

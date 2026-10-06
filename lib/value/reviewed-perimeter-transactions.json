@@ -1,0 +1,10 @@
+{
+  "YUMC.US": [{
+    "baseEnd": "2026-06-30", "closed": "2026-08-07", "filed": "2026-08-07", "currency": "USD",
+    "source": "https://www.sec.gov/Archives/edgar/data/1673358/000119312526339048/yumc-ex99_1.htm",
+    "evidence": "Issuer closing release: Pizza Hut Mainland China brand ownership acquired for US$1.2 billion. To fund it the company secured an offshore RMB bridge loan equivalent to approximately US$1.2 billion, up to 12 months, interest around 2%.",
+    "cashChange": 0, "debtChange": 1200000000, "assetsChange": 1200000000,
+    "annualEarningsAdjustment": -24000000,
+    "assumption": "Approximate closing pro-forma: USD 1.2bn loan funds USD 1.2bn purchase, so cash is unchanged and debt increases USD 1.2bn. Charge USD 24m annual pretax interest with no tax benefit, licence-fee savings or synergies credited. Actual FX, fees and purchase-price allocation are unreported here; this is not a subsequently filed balance sheet. Reconcile at the next interim."
+  }]
+}

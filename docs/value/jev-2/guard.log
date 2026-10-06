@@ -1,0 +1,17 @@
+/mnt/HC_Volume_107024928/value-jev/scripts/value/publish-invariants.ts:19
+const fail=(message:string):never=>{throw new Error(`Publish invariant: ${message}`);};
+                                          ^
+
+Error: Publish invariant: index/ES.json Buy-now changed 0 -> 1; prices and new dossiers explain at most +0/-0
+    at fail (/mnt/HC_Volume_107024928/value-jev/scripts/value/publish-invariants.ts:19:43)
+    at assertPublishInvariants (/mnt/HC_Volume_107024928/value-jev/scripts/value/publish-invariants.ts:98:64)
+    at <anonymous> (/mnt/HC_Volume_107024928/value-jev/docs/value/jev-2/harness/guard.ts:7:1)
+    at Object.<anonymous> (/mnt/HC_Volume_107024928/value-jev/docs/value/jev-2/harness/guard.ts:7:40)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object.transformer (/Users/miki/GitHub/superinvestors-wt/value-daily/node_modules/tsx/dist/register-OY9cqBEN.cjs:9:3619)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:335:3)
+
+Node.js v22.23.2

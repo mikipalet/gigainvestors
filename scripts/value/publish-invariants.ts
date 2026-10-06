@@ -4,6 +4,7 @@ import path from 'node:path';
 import {isDeepStrictEqual} from 'node:util';
 import {publishedBuyPrice} from '../../lib/value/buy-price';
 import type {IndexRow,PriceMap} from '../../lib/value/types';
+import approvedChanges from './approved-verdict-changes.json';
 import issuerRegistry from '../../lib/value/issuer-registry.json';
 
 type Reader = {files:string[]; read:(file:string)=>any};
@@ -20,7 +21,8 @@ const fail=(message:string):never=>{throw new Error(`Publish invariant: ${messag
 /** Compare the proposed working tree to the released commit, never to mutable meta counts.
  * Every commit entry point calls this BEFORE staging or creating an orphan branch.
  */
-export function assertPublishInvariants(repo:string,baseline='HEAD'):void {
+export interface ApprovedVerdictChange {id:string;before:{b:boolean;v:number[]|null;m:number};after:{b:boolean;v:number[]|null;m:number};reason:string;evidence:string[]}
+export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:ApprovedVerdictChange[]=approvedChanges):void {
  const prior=committed(repo,baseline);
  const files=['meta.json',...['index','dossiers','prices','history'].flatMap(dir=>existsSync(path.join(repo,dir))?readdirSync(path.join(repo,dir)).map(f=>`${dir}/${f}`):[])];
  const current:Reader={files,read:file=>existsSync(path.join(repo,file))?JSON.parse(readFileSync(path.join(repo,file),'utf8')):null};
@@ -72,7 +74,18 @@ export function assertPublishInvariants(repo:string,baseline='HEAD'):void {
   const oldRows:IndexRow[]=prior.read(file)??[],newRows:IndexRow[]=current.read(file)??[];
   const oldBuys=oldRows.filter(r=>r.b).length,newBuys=newRows.filter(r=>r.b).length;
   let increases=0,decreases=0;
+  const reviewed=new Set<string>();
+  for(const approval of approvals){
+   if(!approval.reason?.trim()||!approval.evidence?.length||approval.evidence.some(url=>!/^https:\/\//.test(url)))fail('Invalid approved verdict change');
+   const old=oldRows.find(r=>r.id===approval.id),next=newRows.find(r=>r.id===approval.id);
+   const state=(r:IndexRow)=>({b:r.b,v:r.v,m:r.m});
+   if(!old||!next||old.t!==next.t||!isDeepStrictEqual(state(old),approval.before)||!isDeepStrictEqual(state(next),approval.after))continue;
+   if(reviewed.has(approval.id))fail('Duplicate approved verdict change');
+   reviewed.add(approval.id);
+   if(next.b&&!old.b)increases++;if(old.b&&!next.b)decreases++;
+  }
   for(const row of oldRows){
+   if(reviewed.has(row.id))continue;
    // A retired quote cannot explain a verdict change in a surviving dossier.
    if(!newIds.has(row.id)&&aliases[row.id])continue;
    if(isDeepStrictEqual(oldPrices[row.id],newPrices[row.id]))continue;

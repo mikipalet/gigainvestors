@@ -1,3 +1,4 @@
+import {latestBalanceAt} from './latest-balance';
 import { isInvestmentHolding } from './investment-nav';
 import {qualityLtmAt,qualityLtmHistoryAt} from './quality-ltm';
 import { qualityMetric } from './quality-metric';
@@ -15,7 +16,7 @@ import { applyAdjustments } from './judgement/apply';
 import trust from './judgement/trust.json';
 import type { JudgementRecord } from './judgement/types';
 
-type QuarterBasis={priceDate:string;annual:number;annualEnd:string;annualFiled:string;ttmEnd:string;periods:Array<{end:string;filed:string;source:string}>};
+type QuarterBasis={priceDate:string;annual:number;annualEnd:string;annualFiled:string;balanceSheet?:import('./types').Valuation['balanceSheet'];ttmEnd:string;periods:Array<{end:string;filed:string;source:string}>};
 const positive=(n:number|null|undefined):n is number=>typeof n==='number'&&Number.isFinite(n)&&n>0;
 const compact=(n:number|null)=>n===null||!Number.isFinite(n)?null:Number(n.toFixed(6));
 export const QUARTER_ASSUMPTIONS=[
@@ -56,14 +57,14 @@ export function snapshotForQuarter({company,fundamentals,quarter,prices,latestPr
  const investmentHolding=isInvestmentHolding(company,prefix.years);
  const trailing=trailingAt(interims,{...target,currency},cutoff);
  const valuation=prefix.integrity.ok&&(investmentHolding||bondYield!==null&&Number.isFinite(bondYield))&&positive(fxRate)
-  ?valueCompany({investmentHolding,years:prefix.years,ttm:trailing?.year,kind:company.kind,currency,bondYield,cyclical:volatility==='volatile',priceHistory:pastPrices,qualityPass:t5==='PPPPP'}).valuation:null;
+  ?valueCompany({investmentHolding,years:prefix.years,ttm:trailing?.year,balance:latestBalanceAt(fundamentals.balanceSheets??[],cutoff,currency,target),kind:company.kind,currency,bondYield,cyclical:volatility==='volatile',priceHistory:pastPrices,qualityPass:t5==='PPPPP'}).valuation:null;
  const v:[number,number,number]|null=valuation?[valuation.perShare.low*fxRate!,valuation.perShare.mid*fxRate!,valuation.perShare.high*fxRate!]:null;
  if(valuation&&fxRate)valuation.perShareTrading={currency:company.currency,fxRate,low:v![0],mid:v![1],high:v![2]};
  const flags=valuationFlags({price,mid:v?.[1]??null,assumptions:valuation?.assumptions??[]}),mos=valuationMargin(valuation,volatility);
  const buy=publishedBuyPrice({buyReturnInputs:buyReturnInputs(valuation,company.currency),st:prefix.integrity.ok?'s':'i',t:t5,v,m:mos,dataQualityFlags:flags},[price,cutoff]);
  const expected=flags.length?null:ownerReturn(valuation,company.currency,null,price)?.expected??null;
  const gain=latestPrice&&positive(latestPrice[0])&&latestPrice[1]>=cutoff&&latestPrice[1]<=asOf?compact(latestPrice[0]/price-1):null;
- const basis:QuarterBasis={priceDate:cutoff,annual:target.fy,annualEnd:target.end,annualFiled:availableOn(target.end,filedByPeriod[target.end]),ttmEnd:trailing?.year.end??target.end,periods:trailing?.periods.map(({end,filed,source})=>({end,filed,source}))??[]};
+ const basis:QuarterBasis={balanceSheet:valuation?.balanceSheet,priceDate:cutoff,annual:target.fy,annualEnd:target.end,annualFiled:availableOn(target.end,filedByPeriod[target.end]),ttmEnd:trailing?.year.end??target.end,periods:trailing?.periods.map(({end,filed,source})=>({end,filed,source}))??[]};
  const provisional=Object.fromEntries(Object.entries(numeric).flatMap(([key,test])=>test.provisional?[[key,test.provisional]]:[]));
  const row:SnapshotRow=[company.id,t5,v&&positive(v[1])?compact(price/v[1]):null,buy.b,gain,{discount:mos,price,buyPrice:v&&positive(v[1])?v[1]*(1-mos):null},qualityMetric(company.kind,numeric.moat.metrics),{annual:basis.annual,ttm:basis.ttmEnd,expected:compact(expected),...(Object.keys(provisional).length?{qualityLtm:provisional}:{})}];
  return {row,basis,valuation,ttm:trailing?.year??null,integrity:prefix.integrity,numeric,qualityLtm};

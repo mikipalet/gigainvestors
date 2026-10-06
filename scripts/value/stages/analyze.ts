@@ -1,3 +1,4 @@
+import {balanceSheetsFor} from '../../../lib/value/latest-balance';
 import {correctCachedAnnualSources} from '../../../lib/value/annual-source-corrections';
 import {publicBusiness} from '../../../lib/value/flags/public';
 import {inPublicationScope} from '../../../lib/value/held-universe';
@@ -95,6 +96,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           }
           fundamentals.integrity = checkIntegrity(fundamentals, { source: company.source, priceHistory });
           fundamentals.ttm = trailingInputs(raw, fundamentals.years.at(-1));
+          fundamentals.balanceSheets = balanceSheetsFor(company.id,raw);
         }
         const sectorFacts = readCorpusJson<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
         if (sectorFacts) {
@@ -106,6 +108,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         fundamentals.years = correctCachedAnnualSources(company,fundamentals.years,raw,readCorpusJson,fundamentals.splits);
         fundamentals.integrity = checkIntegrity(fundamentals,{source:company.source,priceHistory});
         fundamentals.years = fundamentals.years.map(y=>({...y,peerCreditLossRate:peers.get(company.id)?.get(y.end)??y.peerCreditLossRate}));
+        if(!raw)fundamentals.balanceSheets=[...(fundamentals.balanceSheets??[]),...balanceSheetsFor(company.id,null)];
         fundamentals.qualityQuarters=cachedQualityQuarters(company.id,readCorpusJson);
         const shareInputs = company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares
           ? await esefShareInputs(company, usdRate)

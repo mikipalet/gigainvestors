@@ -1,0 +1,45 @@
+{
+  "beforeCount": 3899,
+  "afterCount": 3899,
+  "changedDossiers": 1529,
+  "changedValuationsOrPriceTests": 1529,
+  "changedBuyVerdicts": [
+    {
+      "id": "ALSN.US",
+      "before": true,
+      "after": false
+    },
+    {
+      "id": "ELV.US",
+      "before": false,
+      "after": true
+    },
+    {
+      "id": "FCN.US",
+      "before": true,
+      "after": false
+    },
+    {
+      "id": "FDJU.PA",
+      "before": true,
+      "after": false
+    },
+    {
+      "id": "LOG.MC",
+      "before": false,
+      "after": true
+    },
+    {
+      "id": "PLUS.LSE",
+      "before": false,
+      "after": true
+    },
+    {
+      "id": "PRDO.US",
+      "before": false,
+      "after": true
+    }
+  ],
+  "unrelated": [],
+  "frozenChanges": []
+}

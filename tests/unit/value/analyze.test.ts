@@ -280,6 +280,7 @@ it("converts GBP reporting units to GBX trading units at 100", async () => {
 it("marks operating margin CV above 0.35 as cyclical without commodity exposure", async () => {
   const { makeYears } = await import("./synthetic");
   const args = input();
+  args.fundamentals.balanceSheets = []; // This test isolates annual margin volatility.
   args.fundamentals.years = makeYears({ overrides: (_, i) => ({ operatingIncome: i % 2 ? 50 : 200 }) });
   const result = await analyzeCompany(args);
   expect(result.tests.understandable.metrics.opMarginCv).toBeGreaterThan(0.35);
@@ -354,6 +355,7 @@ it.each([
 ])("scales the required discount for margin variation $amplitude", async ({ amplitude, volatility, requiredMos }) => {
   const { makeYears } = await import("./synthetic");
   const args = input();
+  args.fundamentals.balanceSheets = []; // This test isolates annual margin volatility.
   args.fundamentals.years = makeYears({ overrides: (_, i) => ({ operatingIncome: 100 * (1 + (i % 2 ? amplitude : -amplitude)) }) });
   expect(await analyzeCompany(args)).toMatchObject({ volatility, requiredMos });
 });
@@ -587,6 +589,10 @@ it('W3/W5 refreshes cached annual currency and balance mappings from raw periods
   const args = input();
   const raw = structuredClone(ko) as any;
   const end = args.fundamentals.years.at(-1)!.end;
+  // Exercise annual mapping without a newer quarterly balance taking precedence.
+  raw.Financials.Balance_Sheet.quarterly = {};
+  raw.Financials.Income_Statement.quarterly = {};
+  raw.Financials.Cash_Flow.quarterly = {};
   raw.Financials.Balance_Sheet.yearly[end].cashAndShortTermInvestments = null;
   raw.Financials.Balance_Sheet.yearly[end].cash = '7000000000';
   raw.Financials.Balance_Sheet.yearly[end].shortTermInvestments = '2000000000';

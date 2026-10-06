@@ -1,0 +1,14 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-jev
+
+ ✓ tests/unit/value/live-check.test.ts (5 tests) 3834ms
+   ✓ uses a real browser to step back and load the deep link  365ms
+   ✓ rejects a broken step despite a successful page response  683ms
+   ✓ rejects a broken deep-link despite a successful page response  710ms
+   ✓ rejects a broken rows despite a successful page response  661ms
+   ✓ rejects a broken headline despite a successful page response  681ms
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  23:35:31
+   Duration  4.74s (transform 139ms, setup 0ms, collect 545ms, tests 3.83s, environment 0ms, prepare 72ms)

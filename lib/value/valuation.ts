@@ -1,3 +1,4 @@
+import type {BalanceSheet} from './latest-balance';
 import {earningsPath,modelValue} from './return-model';
 import { valueInvestmentHolding } from './investment-nav';
 import { parentShare } from "./parent-share";
@@ -69,8 +70,8 @@ function reinvestmentRate(years: Year[]): number | null {
   return investments.some(x => x === null) || profits.some(x => x === null) ? null : ratio(sum(present(investments)), sum(present(profits)));
 }
 
-export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, priceHistory = null, qualityPass = false, investmentHolding = false, version = T.valuation.version }: {
-  investmentHolding?: boolean; qualityPass?: boolean; version?: 1 | 2; years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; priceHistory?: PriceHistory | null;
+export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, balance = null, priceHistory = null, qualityPass = false, investmentHolding = false, version = T.valuation.version }: {
+  investmentHolding?: boolean; qualityPass?: boolean; version?: 1 | 2; years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; balance?: BalanceSheet | null; priceHistory?: PriceHistory | null;
 }): { valuation: Valuation | null; reason: string | null } {
   if (investmentHolding) return valueInvestmentHolding(years, currency);
   const ys = withZeroDefaults(years).sort((a, b) => a.fy - b.fy), latest = ys.at(-1);
@@ -89,6 +90,11 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   if (latest.edinetShares) assumptions.push(latest.edinetShares.reason);
   if (postSplit) assumptions.push('share count adjusted for post-year split/bonus');
   if (corrected) assumptions.push(`share count corrected to current ${shares}`);
+  const stock = balance && balance.end > latest.end && balance.currency === currency ? balance : null;
+  const currentBalance = stock ? {...latest,...stock.values,tangibleEquity:undefined} : latest;
+  assumptions.push(stock ? `${stock.basis} balance sheet ${stock.end}, ${stock.filingDateAssumed?'assumed available (90-day fallback)':'filed'} ${stock.filed}; source: ${stock.source}` : `balance sheet ${latest.end}; latest annual report`);
+  if(ttm && (stock?.end ?? latest.end) < ttm.end) assumptions.push('balance sheet predates TTM; newer balance-sheet coverage unavailable');
+  const balanceSheet = {...(stock?.filingDateAssumed?{filingDateAssumed:true}:{}),end:stock?.end??latest.end,filed:stock?.filed??null,source:stock?.source??'annual fundamentals',basis:stock?.basis??'annual'};
   const priorRevenue = ys.find(y => y.fy === latest.fy - 3)?.revenue;
   const trailing = ttm && ttm.end > latest.end && (!ttm.currency || !currency || ttm.currency === currency) ? ttm : null;
   if (trailing?.sbc === null) assumptions.push('TTM stock compensation not reported; assumed zero');
@@ -100,10 +106,10 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   assumptions.push(decliningRevenue ? "three-year revenue trend is negative; growth set to zero"
     : "growth set to zero when latest revenue is below three years earlier");
   if (!currency) assumptions.push("reporting currency not supplied");
-  const common = { version, ...(fallback ? { sharesSource: shareSource } : {}), currency, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
+  const common = { version, ...(fallback ? { sharesSource: shareSource } : {}), currency, balanceSheet, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
 
   if (kind !== "operating") {
-    const book = version === 2 ? ratio(tangibleEquity(latest), shares) : financialBvps({ ...latest, dilutedShares: shares });
+    const book = version === 2 ? ratio(tangibleEquity(currentBalance), shares) : financialBvps({ ...currentBalance, dilutedShares: shares });
     if (book === null || book <= 0) return { valuation: null, reason: "book value not positive" };
     const returns = last(ys, 10).map(roe).filter((value): value is number => value !== null && (version === 1 || Number.isFinite(value)));
     if (returns.length < 5) return { valuation: null, reason: "insufficient return on tangible equity history" };
@@ -123,11 +129,11 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
     return { reason: null, valuation: { ...common, ...(version === 2 ? {financialReturn:{roe:normalizedRoe,retention,payout:normalizedRoe > 0 ? 1-growth/normalizedRoe : 0,cashPerShare:book*(normalizedRoe-growth)}} : {}), method: "book_value", normalized: book, growth, netCash: 0,
       perShare: { low: multiple(discountRate + 0.01) * book, mid: multiple(discountRate) * book, high: multiple(highRate) * book },
       equityBondYield: ratio(median(present(last(ys, 10).map(y => y.netIncome))), latest.marketCap),
-      bridge: [{ label: tangibleEquity(latest)! > 0 ? "tangible book value per share" : "reported book value per share", value: book },
+      bridge: [{ label: tangibleEquity(currentBalance)! > 0 ? "tangible book value per share" : "reported book value per share", value: book },
         ...(Number.isFinite(normalizedRoe) ? [{ label: "normalized return on tangible equity", value: normalizedRoe }] : []),
         { label: "justified price to book", value: multiple(discountRate) }],
       assumptions: [...assumptions, ...(version === 2 ? ['sustainable tangible ROE: ten-year median capped at 25%; at least five finite observations', 'growth = sustainable ROE × median dividend retention, capped at 6%; residual earnings distributable', 'expected return is the IRR of the same perpetual distributable earnings; the 4x book cap at the required rate is a fixed payout haircut'] : []), "returns use net income divided by tangible equity",
-        tangibleEquity(latest)! > 0 ? "valuation uses tangible book value per share" : "nonpositive tangible equity: valuation uses reported book value per share",
+        tangibleEquity(currentBalance)! > 0 ? "valuation uses tangible book value per share" : "nonpositive tangible equity: valuation uses reported book value per share",
         ...(!Number.isFinite(normalizedRoe) ? ["tangible equity is nonpositive: returns effectively unlimited; price to book capped at 4"] : []),
         "cash and debt are included in book value", "equity bond yield uses median net income"],
     } };
@@ -139,16 +145,21 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const medianEarnings = median(recent.map(row => row.value))!;
   const latestRow = recent.at(-1)!;
   // Full trailing capex is conservative and avoids treating a partial fiscal interval as annual growth capex.
-  const ttmRow = trailing ? ownerEarningsBridge([trailing])[0] : null;
+  const currentLeases = stock?.values.leaseLiabilities;
+  if(trailing?.leaseDepreciationIncluded && stock && currentLeases == null && (trailing.leaseLiabilities??0)>0)assumptions.push('Quarterly lease obligations absent; annual lease estimate retained in TTM owner earnings');
+  const ttmRow = trailing ? ownerEarningsBridge([currentLeases != null ? {...trailing,leaseLiabilities:currentLeases} : trailing])[0] : null;
   if (ttmRow && ttmRow.value === null) assumptions.push('TTM owner earnings unavailable: quarterly NI, D&A or capex incomplete; annual normalization retained');
-  const normalized = Math.min(medianEarnings, latestRow.value, ttmRow?.value ?? Infinity);
+  const financingAdjustment = stock?.annualEarningsAdjustment && (trailing?.end??latest.end) <= (stock.earningsThrough??'') ? stock.annualEarningsAdjustment : 0;
+  if(stock?.assumption)assumptions.push(stock.assumption);
+  if(stock?.annualEarningsAdjustment && !financingAdjustment)assumptions.push('Newer earnings overlap the closing financing; reconcile actual interest before applying any further pro-forma charge');
+  const normalized = Math.min(medianEarnings, latestRow.value, ttmRow?.value ?? Infinity) + financingAdjustment;
   if (normalized <= 0) return { valuation: null, reason: "owner earnings not positive" };
-  if (latest.cash === null || latest.totalDebt === null) return { valuation: null, reason: "net cash unavailable" };
-  const allocation = parentShare(latest);
+  if (currentBalance.cash === null || currentBalance.totalDebt === null) return { valuation: null, reason: "net cash unavailable" };
+  const allocation = parentShare({...currentBalance,netIncome:trailing?.netIncome??latest.netIncome,totalNetIncome:trailing?.totalNetIncome??latest.totalNetIncome});
   if (allocation === null) return { valuation: null, reason: "Parent share of consolidated earnings unavailable with material minority interests" };
-  if (version === 2 && (latest.revenue === null || latest.revenue < 0)) return {valuation:null,reason:'operating cash reserve unavailable'};
-  const netDebt = (latest.totalDebt - latest.cash) * allocation;
-  const netCash = version === 2 ? Math.max(0, latest.cash - T.valuation.operatingCashRatio * latest.revenue!) * allocation : -netDebt;
+  if (version === 2 && (currentRevenue === null || currentRevenue < 0)) return {valuation:null,reason:'operating cash reserve unavailable'};
+  const netDebt = (currentBalance.totalDebt - currentBalance.cash) * allocation;
+  const netCash = version === 2 ? Math.max(0, currentBalance.cash - T.valuation.operatingCashRatio * currentRevenue!) * allocation : -netDebt;
   const debtYears = netDebt / normalized;
   const leverage = version === 1 || debtYears <= T.valuation.leverageModerate ? 'normal' : debtYears > T.valuation.leverageVolatile ? 'volatile' : 'moderate';
   const riskFlags = leverage === 'normal' ? [] : [leverage === 'volatile' ? 'High leverage: net debt exceeds 5 years of owner earnings' : 'Elevated leverage: net debt exceeds 3 years of owner earnings'];
@@ -180,13 +191,13 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   assumptions.push(organicGrowth === null ? 'organic growth proxy unavailable' : 'revenue CAGR reduced by acquisition proxy share of positive assets added over ten years', tier === 'compounder' ? 'durable compounder: winsorised ten-year per-share owner-earnings CAGR capped at 12%, fading to 3% over ten years' : 'operating growth capped at 8%');
   assumptions.push('Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt − excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged');
   assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", `owner earnings use the ${window}-year median capped at latest-year owner earnings and complete newer TTM owner earnings`, "maintenance capex floored at the smaller of capex and D&A",
-    ttmRow?.value === normalized ? "bridge components use TTM owner earnings; full TTM capex deducted; latest annual lease liabilities used" : normalized < medianEarnings ? "bridge components use the latest owner earnings observation" : "bridge components use the median owner earnings observation");
+    ttmRow?.value === normalized - financingAdjustment ? "bridge components use TTM owner earnings; full TTM capex deducted; selected balance-sheet lease liabilities used" : normalized - financingAdjustment < medianEarnings ? "bridge components use the latest owner earnings observation" : "bridge components use the median owner earnings observation");
   if (recent.some(row => row.year.leaseCash != null)) assumptions.push("Reported capitalized lease repayments charged in owner earnings; corresponding lease obligations excluded from debt");
   if (recent.some(row => row.leaseCashCost > 0 && row.year.leaseCash == null)) assumptions.push("lease payments estimated at 20% of lease liabilities");
   if (recent.some(row=>row.cashFlowBasis)) assumptions.push("Cash-flow owner earnings deduct all capital spending");
   const ordered = [...recent].sort((a, b) => a.value - b.value);
   const center = Math.floor(ordered.length / 2);
-  const representative = ttmRow?.value === normalized ? [ttmRow as typeof latestRow] : normalized < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
+  const representative = ttmRow?.value === normalized - financingAdjustment ? [ttmRow as typeof latestRow] : normalized - financingAdjustment < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
   return { reason: null, valuation: { ...common, tier, capitalReturns, netDebt, leverage, riskFlags, method: "owner_earnings", normalized, growth, netCash,
     perShare: { low: (pv(growth / 2, discountRate + 0.01) + netCash) / shares, mid: (midPv + netCash) / shares, high: (pv(growth, highRate) + netCash) / shares },
     equityBondYield: ratio(normalized, latest.marketCap),
@@ -198,6 +209,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
       { label: "− maintenance capex", value: -mean(representative.map(row => row.maintenanceCapex * row.allocation!))! },
       { label: "− stock compensation", value: -mean(representative.map(row => (row.year.sbc ?? 0) * row.allocation!))! },
       ...(representative.some(row => row.leaseCashCost > 0) ? [{ label: representative.some(row => row.year.leaseCash != null) ? "− lease payments" : "− estimated lease payments", value: -mean(representative.map(row => row.leaseCashCost * row.allocation!))! }] : []),
+      ...(financingAdjustment ? [{label:"− pro-forma financing cost",value:financingAdjustment}] : []),
       { label: "= owner earnings", value: normalized },
       { label: "× PV factor", value: midPv / normalized },
       { label: version === 2 ? "+ excess cash" : "+ net cash", value: netCash },

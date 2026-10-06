@@ -1,3 +1,4 @@
+import {availableOn} from './quarterly-inputs';
 import { sameCurrency, currencyCode, marketCapCurrency } from './currency';
 import type { Year } from './types';
 
@@ -60,12 +61,12 @@ export function balanceInputs(balance: Record<string, unknown>, leaseDeducted: b
 }
 
 /** A separate trailing observation, never a synthetic fiscal year in the annual history. */
-export function trailingInputs(raw: unknown, latest: Year | undefined): Year | null {
+export function trailingInputs(raw: unknown, latest: Year | undefined, cutoff = new Date().toISOString().slice(0,10)): Year | null {
   if (!latest) return null;
   const financials = record(record(raw).Financials);
   const incomes = record(record(financials.Income_Statement).quarterly);
   const flows = record(record(financials.Cash_Flow).quarterly);
-  const ends = Object.keys(incomes).filter(end => /^\d{4}-\d{2}-\d{2}$/.test(end)).sort().slice(-4);
+  const ends = Object.keys(incomes).filter(end => /^\d{4}-\d{2}-\d{2}$/.test(end) && end < cutoff && availableOn(end, String(record(incomes[end]).filing_date??'')) < cutoff && availableOn(end, String(record(flows[end]).filing_date??'')) < cutoff).sort().slice(-4);
   if (ends.length !== 4 || ends[3] <= latest.end) return null;
   const month = (end: string) => Number(end.slice(0, 4)) * 12 + Number(end.slice(5, 7));
   if (ends.some((end, i) => i > 0 && month(end) - month(ends[i - 1]) !== 3)) return null;

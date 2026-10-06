@@ -1,0 +1,9 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-jev
+
+ ✓ tests/unit/value/latest-balance-extra.test.ts (2 tests) 26ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  23:31:37
+   Duration  727ms (transform 340ms, setup 0ms, collect 389ms, tests 26ms, environment 0ms, prepare 79ms)

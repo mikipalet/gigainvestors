@@ -1,3 +1,4 @@
+import {publishBalances} from '../publish-balances';
 import {readRetiredIssuerAliases,reviewedIssuerAliases} from '../retired-issuer-aliases';
 import {reconcileIssuers} from '../issuer-publication';
 import {fillPublishedLogos} from '../../../lib/value/logo-fill';
@@ -382,6 +383,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     }
     if(release.held.some(({id})=>emitted[id]))throw Error('Held coverage addition reached publication');
   }
+  if(!additionsOnly)publishBalances(files,readPrices(path.join(repo,'prices')),fx);
   fillPublishedLogos(files);
   forwardFiles(repo, files, universe, readPrices(path.join(repo, 'prices')), new Date().toISOString().slice(0,10));
   publishViews(files);

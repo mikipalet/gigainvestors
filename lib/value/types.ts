@@ -144,6 +144,7 @@ export interface Year {
 }
 
 export interface Fundamentals {
+  balanceSheets?: import('./latest-balance').BalanceSheet[];
   qualityQuarters?: import('./quality-ltm').QualityQuarter[];
   id: Id;
   currency: string; // reporting currency
@@ -185,6 +186,7 @@ export interface TestOutcome {
 }
 
 export interface Valuation {
+  balanceSheet?: {end:string;filed:string|null;source:string;basis:string;filingDateAssumed?:boolean};
   capitalReturns?: { excludingGoodwill: number | null; includingAcquisitions: number | null; observations: number; basis: "owner_earnings" };
   shareSources?: 2;
   method: "owner_earnings" | "book_value" | "nav";

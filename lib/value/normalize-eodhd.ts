@@ -1,3 +1,4 @@
+import {balanceSheetsFor} from './latest-balance';
 import { deriveYears } from './derive';
 import {qualityQuarters} from './quality-ltm';
 import {annualFiscalYear} from './fiscal-period';
@@ -205,6 +206,7 @@ export function normalizeEodhd(raw: unknown, id: Id, {corroboratingYears=[],curr
   onSourceYears?.(structuredClone(fundamentals.years));
   fundamentals.integrity = checkIntegrity(fundamentals, { source: "eodhd" });
   fundamentals.ttm = trailingInputs(raw, fundamentals.years.at(-1));
+  fundamentals.balanceSheets = balanceSheetsFor(id,raw);
   fundamentals.qualityQuarters=qualityQuarters(raw);
   const sector = text(general.Sector);
   const industry = text(general.Industry);

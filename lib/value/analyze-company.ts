@@ -1,3 +1,4 @@
+import {latestBalanceAt} from './latest-balance';
 import {alignHistoryShares} from './history-split-basis';
 import {qualityLtmAt,qualityLtmHistoryAt} from './quality-ltm';
 import {reconcilePriceSplits} from './price-history';
@@ -84,7 +85,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
     : resolvedBondYield === null && !company.investmentHolding
       ? { valuation: null, reason: "Local government bond yield unavailable" }
-      : valueCompany({ investmentHolding: company.investmentHolding, years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm, qualityPass: Object.values(tests).every(test => test.result === "pass") });
+      : valueCompany({ investmentHolding: company.investmentHolding, years, kind: company.kind, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm, balance: years.length ? latestBalanceAt(fundamentals.balanceSheets??[],cutoff,fundamentals.currency,years.at(-1)!) : null, qualityPass: Object.values(tests).every(test => test.result === "pass") });
   const requiredMos = valuationMargin(valuation, volatility);
   if (valuation) {
     if(adjusted.adjustments.length) valuation.assumptions.push(...adjusted.adjustments.map(a=>a.reason));

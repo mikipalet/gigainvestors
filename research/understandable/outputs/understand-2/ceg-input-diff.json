@@ -1,0 +1,82 @@
+[
+  {
+    "fy": 2020,
+    "field": "dilutedShares",
+    "before": 326664000,
+    "after": null,
+    "beforeSource": {
+      "source": "raw/eodhd/CEG.US.json#2020-12-31",
+      "field": "annual shares (weighted-share proxy)",
+      "method": "estimate"
+    },
+    "afterSource": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001868275.json#0001868275-23-000014",
+      "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2020-01-01 to 2020-12-31",
+        "Weighted average diluted shares"
+      ]
+    }
+  },
+  {
+    "fy": 2021,
+    "field": "dilutedShares",
+    "before": 326664000,
+    "after": null,
+    "beforeSource": {
+      "source": "raw/eodhd/CEG.US.json#2021-12-31",
+      "field": "annual shares (weighted-share proxy)",
+      "method": "estimate"
+    },
+    "afterSource": {
+      "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001868275.json#0001868275-24-000014",
+      "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2021-01-01 to 2021-12-31",
+        "Weighted average diluted shares"
+      ]
+    }
+  },
+  {
+    "fy": 2023,
+    "field": "dilutedShares",
+    "before": 320000000,
+    "after": 324000000,
+    "beforeSource": {
+      "source": "raw/eodhd/CEG.US.json#2023-12-31",
+      "field": "annual shares (weighted-share proxy)",
+      "method": "estimate"
+    },
+    "afterSource": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm#000186827526000032",
+      "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2023-01-01 to 2023-12-31",
+        "Weighted average diluted shares"
+      ]
+    }
+  },
+  {
+    "fy": 2024,
+    "field": "dilutedShares",
+    "before": 314000000,
+    "after": 315000000,
+    "beforeSource": {
+      "source": "raw/eodhd/CEG.US.json#2024-12-31",
+      "field": "annual shares (weighted-share proxy)",
+      "method": "estimate"
+    },
+    "afterSource": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm#000186827526000032",
+      "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+      "method": "reported",
+      "inputs": [
+        "Annual period 2024-01-01 to 2024-12-31",
+        "Weighted average diluted shares"
+      ]
+    }
+  }
+]

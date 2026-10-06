@@ -1,0 +1,22 @@
+▲ Next.js 16.3.3 (webpack)
+- Local:         http://127.0.0.1:3048
+- Network:       http://127.0.0.1:3048
+✓ Ready in 652ms
+✓ Running next.config.ts took 49ms
+
+✓ Generated CLAUDE.md for AI agents. Set `agentRules: false` in next.config to disable.
+○ Compiling /s/[ticker] ...
+ GET /s/NFLX 200 in 21.0s (next.js: 10.3s, proxy.ts: 33ms, generate-params: 921ms, application-code: 9.7s)
+○ Compiling /api/value/logo ...
+ GET /api/value/logo?asset=26c2e73dd1c375bd50e41cd43106abf1eed133389606de521684c983a4817ee3 200 in 4.2s (next.js: 4.1s, proxy.ts: 33ms, application-code: 45ms)
+○ Compiling /api/search ...
+ GET /s/NFLX 200 in 748ms (next.js: 121ms, proxy.ts: 8ms, generate-params: 36ms, application-code: 583ms)
+ GET /api/value/logo?asset=26c2e73dd1c375bd50e41cd43106abf1eed133389606de521684c983a4817ee3 200 in 81ms (next.js: 19ms, proxy.ts: 14ms, application-code: 48ms)
+[browser] Can't perform a React state update on a component that hasn't mounted yet. This indicates that you have a side-effect in your render function that asynchronously tries to update the component. Move this work to useEffect instead.
+ GET /s/NFLX 200 in 3.7s (next.js: 44ms, proxy.ts: 69ms, generate-params: 27ms, application-code: 3.5s)
+ GET /s/NFLX 200 in 3.7s (next.js: 19ms, proxy.ts: 12ms, generate-params: 36ms, application-code: 3.6s)
+ GET /s/NFLX 200 in 406ms (next.js: 11ms, proxy.ts: 12ms, generate-params: 32ms, application-code: 351ms)
+ GET /s/NFLX 200 in 507ms (next.js: 16ms, proxy.ts: 12ms, generate-params: 36ms, application-code: 443ms)
+ GET /api/value/logo?asset=26c2e73dd1c375bd50e41cd43106abf1eed133389606de521684c983a4817ee3 200 in 31ms (next.js: 4ms, proxy.ts: 7ms, application-code: 20ms)
+ GET /api/search 200 in 182ms (next.js: 5ms, proxy.ts: 8ms, application-code: 170ms)
+[?25h

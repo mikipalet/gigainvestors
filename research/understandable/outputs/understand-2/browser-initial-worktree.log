@@ -1,0 +1,17 @@
+master 1 {"status":200,"errors":0,"drawerOpened":true}
+candidate 1 {"errors":0,"failure":"page.goto: Timeout 90000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3048/s/nflx.us\", waiting until \"networkidle\"\u001b[22m\n"}
+master 2 {"status":200,"errors":0,"drawerOpened":true}
+candidate 2 {"status":200,"errors":1,"failure":"locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('dialog[open]') to be visible\u001b[22m\n"}
+master 3 {"status":200,"errors":0,"drawerOpened":true}
+candidate 3 {"errors":0,"failure":"page.goto: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3048/s/nflx.us\", waiting until \"networkidle\"\u001b[22m\n"}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+browserContext.close: Protocol error (Target.disposeBrowserContext): Failed to find context with id A89C26496EA2458F5994C0FFD90C2403
+    at async file:///mnt/HC_Volume_107024928/value-understand/research/understandable/understand-2/browser-compare.mjs:24:3 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v22.23.2

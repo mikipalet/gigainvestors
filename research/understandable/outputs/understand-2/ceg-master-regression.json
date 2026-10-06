@@ -1,0 +1,53 @@
+{
+  "id": "CEG.US",
+  "before": {
+    "result": "pass",
+    "numeric": "pass",
+    "reasons": [
+      "potential debt-funded buybacks (informational)",
+      "buybacks leaned toward cheaper years (informational)",
+      "ROIC first 3 years vs last 3 years: 4.3% vs 10.6%",
+      "Per-share earnings: 4.20 to 7.39 (three-year endpoint medians)"
+    ]
+  },
+  "after": {
+    "result": "unclear",
+    "numeric": "unclear",
+    "reasons": [
+      "potential debt-funded buybacks (informational)",
+      "buybacks leaned toward cheaper years (informational)",
+      "ROIC first 3 years vs last 3 years: 4.3% vs 10.6%",
+      "not enough data for the $1 test or per-share value growth"
+    ]
+  },
+  "metricChanges": {
+    "shareCagr5": {
+      "before": -0.007876642150873026,
+      "after": null
+    },
+    "nonAcquisitionShareCagr5": {
+      "before": -0.007876642150873026,
+      "after": null
+    },
+    "perShareValueGrowth": {
+      "before": 0.07294944109214829,
+      "after": null
+    },
+    "perShareValueChange": {
+      "before": 3.180630735265698,
+      "after": null
+    },
+    "perShareEnd": {
+      "before": 7.385350318471337,
+      "after": null
+    },
+    "averageBuybackYield": {
+      "before": 0.014782769153466518,
+      "after": 0.014658581252095236
+    },
+    "perShareStart": {
+      "before": 4.204719583205639,
+      "after": null
+    }
+  }
+}

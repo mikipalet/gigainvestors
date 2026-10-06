@@ -1,0 +1,212 @@
+
+> superinvestors@0.1.0 test
+> vitest run tests/unit/value/publish.test.ts -t ^prices
+
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-daily
+
+stdout | tests/unit/value/publish.test.ts > prices > keeps a failed Japanese quote while publishing successful quotes
+prices summary: 1/2 fresh (50.00%); Yahoo 1; failed exchanges none; missing 1; status=partial
+
+stderr | tests/unit/value/publish.test.ts > prices > writes fetched US prices even when every Japanese quote fails
+prices: skipped KO.US: Yahoo HTTP 403
+
+stdout | tests/unit/value/publish.test.ts > prices > writes fetched US prices even when every Japanese quote fails
+prices summary: 0/2 fresh (0.00%); Yahoo 0; failed exchanges none; missing 2; status=partial
+
+stderr | tests/unit/value/publish.test.ts > prices > writes fetched US prices even when every Japanese quote fails
+prices: skipped 8058.JP: Yahoo HTTP 403
+
+stderr | tests/unit/value/publish.test.ts > prices > routes Japanese companies to Yahoo and separates same-country exchanges
+prices: skipped KO.US: Invalid or stale Yahoo quote
+
+stderr | tests/unit/value/publish.test.ts > prices > routes Japanese companies to Yahoo and separates same-country exchanges
+prices: skipped 8058.JP: Invalid or stale Yahoo quote
+
+stdout | tests/unit/value/publish.test.ts > prices > routes Japanese companies to Yahoo and separates same-country exchanges
+prices summary: 0/3 fresh (0.00%); Yahoo 0; failed exchanges none; missing 3; status=partial
+
+stderr | tests/unit/value/publish.test.ts > prices > routes Japanese companies to Yahoo and separates same-country exchanges
+prices: skipped KO.L: Invalid or stale Yahoo quote
+
+stderr | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+prices: skipped KO.US: Tests must not use the network
+
+stdout | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+prices summary: 0/2 fresh (0.00%); Yahoo 0; failed exchanges none; missing 2; status=partial
+
+stderr | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+prices: skipped BRK-B.US: Tests must not use the network
+
+stdout | tests/unit/value/publish.test.ts > prices keeps all 87 quarterly views, deferred views, annual views and history bytes
+prices summary: 1/1 fresh (100.00%); Yahoo 0; failed exchanges none; missing 0; status=ok
+
+ ❯ tests/unit/value/publish.test.ts (91 tests | 3 failed | 84 skipped) 1088ms
+   ↓ buildOutput > preserves frozen identities and aliases in newly split search children
+   ↓ buildOutput > includes analysed multiple-failure companies in deferred list views
+   ↓ buildOutput > adds a held nonmember locally while preserving every existing dossier and country row
+   ↓ buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+   ↓ buildOutput > rejects an obsolete analysis before creating a candidate or refreshing returns
+   ↓ buildOutput > uses enriched identities for search and historical identities with the same live since refresh
+   ↓ buildOutput > does not replace a released filing answer with a computed price-story fallback
+   ↓ buildOutput > keeps completed predecessor years when publication refreshes capital-return series
+   ↓ buildOutput > retains reported NAV when independent share counts reconcile despite a stale market cap
+   ↓ buildOutput > audits newly analysed companies before the first publication exists
+   ↓ buildOutput > does not replace reanalysed inputs with an older backfill memo
+   ↓ buildOutput > keeps published filing memo lines when a new research memo omits them
+   ↓ buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+   ↓ buildOutput > refuses publication without index membership and excludes nonmembers
+   ↓ buildOutput > writes a local snapshot without requiring or changing a git repository
+   ↓ buildOutput > uses cached FX to retain non-USD share-basis verification during publication
+   ↓ buildOutput > publishes only all-pass and exact one-fail scored rows by market cap, and shards dossiers
+   ↓ buildOutput > keeps unresolved quality rows private; excludes na and multiple failures from the default view
+   ↓ buildOutput > only emits trusted confident configured tags and applies the recurring choice rule
+   ↓ buildOutput > joins class-share tickers and explicit US ADR listings without foreign ticker collisions
+   ↓ buildOutput > publishes trading values and computes the sixth test in that currency without storing the quote
+   ↓ buildOutput > converts with USD FX rates including minor units, and leaves missing FX unavailable
+   ↓ buildOutput > caps top.json at 2000 and orders unknown market caps last
+   ↓ publish repository > requires the calibration command to succeed before publishing
+   ↓ publish repository > preserves price bytes, removes obsolete generated files and replaces history with one commit
+   ↓ publish repository > creates an initial snapshot in an empty repository
+   ↓ publish repository > collapses intervening price commits even when the snapshot files are unchanged
+   ↓ publish repository > stages a partial snapshot but refuses to commit a greater than 1% delisting drop
+   ↓ publish repository > loads only active latest-quarter holders from stock shards and resolves investor names
+   ✓ prices > normalizes recorded bulk closes and dates, excluding unknown or invalid rows 15ms
+   ✓ prices > reads the recorded Yahoo market price and uses the JST market date 6ms
+   ✓ prices > keeps a failed Japanese quote while publishing successful quotes 20ms
+   × prices > writes fetched US prices even when every Japanese quote fails 19ms
+     → expected [ 70, '2026-09-25' ] to deeply equal [ 87.18, '2026-09-28' ]
+   × prices > routes Japanese companies to Yahoo and separates same-country exchanges 3ms
+     → ENOENT: no such file or directory, open '/Users/miki/value-corpus/publish-test-NrfuLS/publish-test-aIn28a/prices/JP.json'
+   × prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op 973ms
+     → expected { …(2) } to deeply equal { …(3) }
+   ↓ publish rollout safeguards > publishes available analyses and skips missing and unreadable files
+   ↓ publish rollout safeguards > reports the modal version pair and the count on other versions
+   ↓ publish rollout safeguards > rejects a published count of 0 before changing the prior snapshot
+   ↓ publish rollout safeguards > rejects a published count of 7 before changing the prior snapshot
+   ↓ publish rollout safeguards > allows exactly a 20% decline and compares published count rather than universe
+   ↓ publish rollout safeguards > guards legacy metadata and rejects even a forced empty commit
+   ↓ publish rollout safeguards > guards a legacy nonempty count drop and permits --force
+   ↓ publish rollout safeguards > rejects an empty first publish
+   ↓ publish rollout safeguards > does not release a replacement owner's lock
+   ↓ publish rollout safeguards > resets tracked changes and removes leftover untracked output
+   ↓ publish rollout safeguards > records lock ownership, blocks live owners with the path, and releases
+   ↓ publish rollout safeguards > breaks a expired lock automatically
+   ↓ publish rollout safeguards > breaks a dead lock automatically
+   ↓ Yahoo rate limiting > limits Yahoo requests to two per second
+   ↓ publishes volatility discount, compact ROIC and the added dossier data
+   ↓ loads analysis with a cheap shape check without building output
+   ↓ joins the corpus monthly history at publish time and preserves it on partial publish
+   ↓ pads unavailable ROIC years with nulls without substituting financial-company ROE
+   ↓ C4 publish skips invalid IDs and loads ampersand analyses
+   ↓ preserves an unpushed prices commit when preparing the next publish
+   ↓ published funnel > counts all analyses cumulatively and isolates quality failures independently of price by country
+   ↓ published funnel > publishes zero counts for an empty snapshot
+   ↓ publishes English names, logos, about and story counts consistently
+   ↓ joins new enrichment and completed numeric history when the controller publishes
+   ↓ uses current universe listings consistently across dossier, index and search on republish
+   ↓ refreshes hashed browser views without dropping quotes outside the analysed index
+   ↓ excludes current nonmembers from current surfaces but retains their historical returns on partial republish
+   ↓ withholds investment holdings without NAV from indexes and dossiers, including short history
+   ↓ publishes every alias of decided companies without shadowing a home dossier
+   ↓ retains a neutral dossier when completion crosses seven years but core decade checks remain unresolved
+   ↓ commits regenerated browser views together with refreshed prices
+   ↓ routes a verified NSE symbol to the existing depositary dossier without changing quote units
+   ↓ stamps every published dossier and index row with the live method
+   ↓ publishes immutable daily records through orphan commits and reads the forward view from snapshots
+   ↓ records optional dividend levels only for matching quote dates and carries split basis across provider truncation
+   ↓ blocks a previously published member disappearing when refreshed analysis becomes undecided
+   ↓ makes short histories searchable and browsable without placing them in investment lists
+   ↓ keeps predecessor-backed test verdicts findable when a different test remains undecided
+   ↓ freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+   ↓ rejects a freeze without its previous live dossier before writing output
+   ↓ uses current issuer shares for the cap check instead of last annual diluted shares
+   ↓ replaces a dated vendor cap with the current quote times supported issuer shares
+   ↓ keeps only the live price test through unresolved shares and later quote refreshes
+   ↓ keeps unresolved ADR or class-share capitalization conflicts guarded
+   ↓ freezes the last live price test when a quote refresh introduces an unresolved ratio
+   ↓ retains released historical rows omitted by a newer quarterly run
+   ✓ prices keeps all 87 quarterly views, deferred views, annual views and history bytes 47ms
+   ↓ coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=false)
+   ↓ coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)
+   ↓ coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope
+   ↓ coverage additions retired by the issuer registry > does not let a retired addition bypass canonical input binding
+   ↓ coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (unchanged baseline)
+   ↓ coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (explicit freeze)
+   ↓ coverage additions retired by the issuer registry > preserves a reviewed canonical when its private cache lacks new-addition filing inputs
+   ↓ coverage additions retired by the issuer registry > rejects an invalid preserved canonical rather than treating its alias as complete
+   ↓ coverage additions retired by the issuer registry > requires complete canonical inputs even when the retired addition has complete inputs
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/publish.test.ts > prices > writes fetched US prices even when every Japanese quote fails
+AssertionError: expected [ 70, '2026-09-25' ] to deeply equal [ 87.18, '2026-09-28' ]
+
+- Expected
++ Received
+
+  [
+-   87.18,
+-   "2026-09-28",
++   70,
++   "2026-09-25",
+  ]
+
+ ❯ tests/unit/value/publish.test.ts:458:90
+    456|     const raw = JSON.parse(readFileSync("tests/fixtures/value/prices/e…
+    457|     await refreshPrices({ repo, companies: [analysis().company, japan.…
+    458|     expect(JSON.parse(readFileSync(path.join(repo, "prices/US.json"), …
+       |                                                                                          ^
+    459|   });
+    460|   it("routes Japanese companies to Yahoo and separates same-country ex…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/value/publish.test.ts > prices > routes Japanese companies to Yahoo and separates same-country exchanges
+Error: ENOENT: no such file or directory, open '/Users/miki/value-corpus/publish-test-NrfuLS/publish-test-aIn28a/prices/JP.json'
+ ❯ tests/unit/value/publish.test.ts:468:23
+    466|       yahoo: async () => [3400, "2026-09-28"],
+    467|     });
+    468|     expect(JSON.parse(readFileSync(path.join(repo, "prices/JP.json"), …
+       |                       ^
+    469|     expect(JSON.parse(readFileSync(path.join(repo, "prices/GB.json"), …
+    470|     expect(JSON.parse(readFileSync(path.join(repo, "prices/US.json"), …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+AssertionError: expected { …(2) } to deeply equal { …(3) }
+
+- Expected
++ Received
+
+  {
+    "BRK-B.US": [
+      999,
+      "2026-09-29",
+    ],
+-   "KO.US": [
+-     87.18,
+-     "2026-09-28",
+-   ],
+    "OTHER.US": [
+      5,
+      "2026-09-28",
+    ],
+  }
+
+ ❯ tests/unit/value/publish.test.ts:482:81
+    480|     vi.stubGlobal("fetch", () => { throw new Error("Tests must not use…
+    481|     await refreshPrices({ repo, companies: [analysis().company, analys…
+    482|     expect(JSON.parse(readFileSync(path.join(repo, "prices/US.json"), …
+       |                                                                                 ^
+    483|     expect(readFileSync(path.join(repo, "prices/JP.json"), "utf8")).to…
+    484|     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 4 passed | 84 skipped (91)
+   Start at  00:10:07
+   Duration  4.44s (transform 1.72s, setup 0ms, collect 2.99s, tests 1.09s, environment 0ms, prepare 74ms)

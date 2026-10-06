@@ -1,0 +1,60 @@
+[
+  {
+    "id": "AEG.US",
+    "cachedAnswers": true,
+    "answerCacheMatchesCurrentFiling": false,
+    "filingUrlChanged": false,
+    "changedSectionKeys": [
+      "business"
+    ],
+    "priorPipeline": "27"
+  },
+  {
+    "id": "AERO.US",
+    "cachedAnswers": false,
+    "answerCacheMatchesCurrentFiling": false,
+    "filingUrlChanged": false,
+    "changedSectionKeys": [],
+    "priorPipeline": "27"
+  },
+  {
+    "id": "BRCC.US",
+    "cachedAnswers": true,
+    "answerCacheMatchesCurrentFiling": false,
+    "filingUrlChanged": true,
+    "changedSectionKeys": [
+      "auditor",
+      "business",
+      "capital",
+      "compensation",
+      "mdna",
+      "notes",
+      "risk"
+    ],
+    "priorPipeline": "27"
+  },
+  {
+    "id": "CRIS.US",
+    "cachedAnswers": false,
+    "answerCacheMatchesCurrentFiling": false,
+    "filingUrlChanged": false,
+    "changedSectionKeys": [],
+    "priorPipeline": "27"
+  },
+  {
+    "id": "DCOM.US",
+    "cachedAnswers": true,
+    "answerCacheMatchesCurrentFiling": false,
+    "filingUrlChanged": true,
+    "changedSectionKeys": [
+      "auditor",
+      "business",
+      "capital",
+      "compensation",
+      "mdna",
+      "notes",
+      "risk"
+    ],
+    "priorPipeline": "27"
+  }
+]

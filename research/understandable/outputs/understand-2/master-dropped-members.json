@@ -1,0 +1,84 @@
+[
+  {
+    "id": "AERO.US",
+    "findableBefore": true,
+    "findableAfter": false,
+    "historyYears": 15,
+    "unresolved": [
+      "management: potential debt-funded buybacks (informational)",
+      "management: buybacks unrelated to price (informational)",
+      "management: ROIC first 3 years vs last 3 years: 5.8% vs 63.8%",
+      "management: not enough data for the $1 test or per-share value growth"
+    ],
+    "testChanges": [
+      {
+        "test": "understandable",
+        "before": "unclear",
+        "after": "fail"
+      },
+      {
+        "test": "moat",
+        "before": "unclear",
+        "after": "fail"
+      },
+      {
+        "test": "economics",
+        "before": "unclear",
+        "after": "fail"
+      },
+      {
+        "test": "accounting",
+        "before": "unclear",
+        "after": "pass"
+      }
+    ]
+  },
+  {
+    "id": "CEG.US",
+    "findableBefore": true,
+    "findableAfter": false,
+    "historyYears": 14,
+    "unresolved": [
+      "management: potential debt-funded buybacks (informational)",
+      "management: buybacks leaned toward cheaper years (informational)",
+      "management: ROIC first 3 years vs last 3 years: 4.3% vs 10.6%",
+      "management: not enough data for the $1 test or per-share value growth"
+    ],
+    "testChanges": [
+      {
+        "test": "management",
+        "before": "pass",
+        "after": "unclear"
+      }
+    ]
+  },
+  {
+    "id": "JBS.US",
+    "findableBefore": true,
+    "findableAfter": false,
+    "historyYears": 12,
+    "unresolved": [
+      "economics: not enough data for owner earnings cash conversion",
+      "management: buybacks unrelated to price (informational)",
+      "management: ROIC first 3 years vs last 3 years: 12.7% vs 16.6%",
+      "management: not enough data for the $1 test or per-share value growth"
+    ],
+    "testChanges": [
+      {
+        "test": "understandable",
+        "before": "unclear",
+        "after": "fail"
+      },
+      {
+        "test": "moat",
+        "before": "unclear",
+        "after": "fail"
+      },
+      {
+        "test": "accounting",
+        "before": "unclear",
+        "after": "pass"
+      }
+    ]
+  }
+]

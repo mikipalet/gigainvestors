@@ -322,6 +322,9 @@ it('refreshes a weekly mover even when its recent source set is unchanged',async
  const {writeCorpusJson,readCorpusJson}=await import('../../../lib/value/corpus');
  const {default:run}=await import('../../../scripts/value/stages/price-story');
  const directory=mkdtempSync(join(tmpdir(),'value-story-mover-'));
+ // The real disk guard scans cwd as well as the corpus. Keep both inside this
+ // fixture so unrelated research/build artifacts cannot block the unit test.
+ const cwd=vi.spyOn(process,'cwd').mockReturnValue(directory);
  const now=new Date(),today=now.toISOString().slice(0,10),ago=(days:number)=>new Date(now.getTime()-days*86400000).toISOString();
  vi.stubEnv('VALUE_CORPUS_DIR',directory);vi.stubEnv('STORY_MIN_FREE_GIB','4');vi.stubEnv('JEV_API_KEY','unit-test-placeholder');
  const fetcher=vi.fn(async(_url:unknown,init?:RequestInit)=>{
@@ -338,5 +341,5 @@ it('refreshes a weekly mover even when its recent source set is unchanged',async
   await run({only:['T.US'],cachedNews:true});
   const reading=readCorpusJson<any>('price-story/readings/T.US.json');
   expect(reading.asOf.slice(0,10)).toBe(today);expect(reading.price.selected?.text).toBe(rows[0].title);expect(fetcher).toHaveBeenCalledTimes(2);
- }finally{vi.unstubAllGlobals();vi.unstubAllEnvs();rmSync(directory,{recursive:true,force:true});}
+ }finally{cwd.mockRestore();vi.unstubAllGlobals();vi.unstubAllEnvs();rmSync(directory,{recursive:true,force:true});}
 });

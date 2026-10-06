@@ -1,0 +1,74 @@
+{
+  "compared": 3899,
+  "verdictChanges": [
+    {
+      "id": "0291.HK",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "1209.HK",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "601898.SHG",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "FTNT.US",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "IDT.US",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "KOG.OL",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "LRN.US",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "NFLX.US",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "STRL.US",
+      "test": "understandable",
+      "before": "fail",
+      "after": "pass"
+    }
+  ],
+  "unexpectedVerdictChanges": [],
+  "missingExpectedIds": [],
+  "valuationChanges": [],
+  "qualityPassChanges": [
+    {
+      "id": "1209.HK",
+      "before": false,
+      "after": true
+    },
+    {
+      "id": "NFLX.US",
+      "before": false,
+      "after": true
+    }
+  ]
+}

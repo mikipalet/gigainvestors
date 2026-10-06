@@ -1,0 +1,34 @@
+▲ Next.js 16.3.3 (webpack)
+- Local:         http://127.0.0.1:3048
+- Network:       http://127.0.0.1:3048
+✓ Ready in 570ms
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /mnt/HC_Volume_107024928/value-understand/package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles:
+   * /mnt/HC_Volume_107024928/value-understand/.audit/understand-2/candidate/package-lock.json
+
+✓ Running next.config.ts took 51ms
+
+✓ Generated AGENTS.md and CLAUDE.md for AI agents. Set `agentRules: false` in next.config to disable.
+○ Compiling /s/[ticker] ...
+ GET /s/NFLX 200 in 16.9s (next.js: 15.1s, proxy.ts: 8ms, generate-params: 1015ms, application-code: 802ms)
+○ Compiling /api/value/logo ...
+ GET /api/value/logo?asset=26c2e73dd1c375bd50e41cd43106abf1eed133389606de521684c983a4817ee3 200 in 5.5s (next.js: 5.4s, proxy.ts: 12ms, application-code: 89ms)
+ GET /api/search 200 in 2.9s (next.js: 1956ms, proxy.ts: 272ms, application-code: 622ms)
+ GET /s/NFLX 200 in 2.9s (next.js: 2000ms, proxy.ts: 33ms, generate-params: 72ms, application-code: 828ms)
+ GET /s/NFLX 200 in 713ms (next.js: 43ms, proxy.ts: 360ms, generate-params: 0.1ms, application-code: 309ms)
+ GET /s/NFLX 200 in 715ms (next.js: 6ms, proxy.ts: 8ms, generate-params: 60ms, application-code: 641ms)
+ GET /api/value/logo?asset=26c2e73dd1c375bd50e41cd43106abf1eed133389606de521684c983a4817ee3 200 in 43ms (next.js: 9ms, proxy.ts: 22ms, application-code: 11ms)
+ GET /api/search 200 in 174ms (next.js: 9ms, proxy.ts: 11ms, application-code: 155ms)
+ GET /s/NFLX 200 in 518ms (next.js: 6ms, proxy.ts: 7ms, generate-params: 55ms, application-code: 450ms)
+ GET /api/value/logo?asset=26c2e73dd1c375bd50e41cd43106abf1eed133389606de521684c983a4817ee3 200 in 20ms (next.js: 5ms, proxy.ts: 8ms, application-code: 7ms)
+ GET /api/search 200 in 164ms (next.js: 10ms, proxy.ts: 8ms, application-code: 145ms)
+ GET /s/NFLX 200 in 595ms (next.js: 23ms, proxy.ts: 16ms, generate-params: 91ms, application-code: 465ms)
+ GET /api/value/logo?asset=26c2e73dd1c375bd50e41cd43106abf1eed133389606de521684c983a4817ee3 200 in 25ms (next.js: 4ms, proxy.ts: 8ms, application-code: 12ms)
+ GET /api/search 200 in 210ms (next.js: 6ms, proxy.ts: 7ms, application-code: 197ms)
+ GET /s/NFLX 200 in 474ms (next.js: 7ms, proxy.ts: 9ms, generate-params: 79ms, application-code: 379ms)
+ GET /api/value/logo?asset=26c2e73dd1c375bd50e41cd43106abf1eed133389606de521684c983a4817ee3 200 in 24ms (next.js: 4ms, proxy.ts: 9ms, application-code: 11ms)
+ GET /api/search 200 in 155ms (next.js: 3ms, proxy.ts: 8ms, application-code: 144ms)
+[?25h

@@ -1,0 +1,16 @@
+
+> superinvestors@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.3.3 (webpack)
+✓ Running next.config.ts took 33ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 17.2s
+  Running TypeScript ...
+  Finished TypeScript in 10.5s ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/222) ...
+  Generating static pages using 15 workers (55/222)
+  Generating static pages using 15 workers (110/222)
+⨯ Next.js build worker exited with code: null and signal: SIGTERM

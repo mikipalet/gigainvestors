@@ -1,0 +1,17 @@
+
+> superinvestors@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.3.3 (webpack)
+✓ Running next.config.ts took 36ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 25.7s
+  Running TypeScript ...
+tests/unit/value/understandable-improvement.test.ts(20,79): error TS2322: Type 'null' is not assignable to type 'number | undefined'.
+tests/unit/value/understandable-improvement.test.ts(71,14): error TS2322: Type '{ marginOperatingIncomeJudgement: number | null; operatingIncome: number; provisional?: ProvisionalYear | undefined; predecessor?: PredecessorBasis | undefined; ... 91 more ...; marketCap: number | null; }[]' is not assignable to type 'Year[]'.
+  Type '{ marginOperatingIncomeJudgement: number | null; operatingIncome: number; provisional?: import("/mnt/HC_Volume_107024928/value-understand/lib/value/quality-ltm").ProvisionalYear; predecessor?: PredecessorBasis; ... 91 more ...; marketCap: number | null; }' is not assignable to type 'Year'.
+    Types of property 'marginOperatingIncomeJudgement' are incompatible.
+      Type 'number | null' is not assignable to type 'number | undefined'.
+        Type 'null' is not assignable to type 'number | undefined'.
+Failed to type check.

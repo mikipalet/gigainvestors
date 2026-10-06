@@ -17,7 +17,7 @@ it.each(['decline','swing','operating loss','net loss','missing margin','missing
  if(failure==='swing')ys[6].operatingIncome=5;
  if(failure==='operating loss')ys[0].operatingIncome=-1;
  if(failure==='net loss')ys[2].netIncome=-1;
- if(failure==='missing margin'){ys[2].revenue=null;ys[2].operatingIncome=null;ys[2].marginOperatingIncomeJudgement=null;}
+ if(failure==='missing margin'){ys[2].revenue=null;ys[2].operatingIncome=null;delete ys[2].marginOperatingIncomeJudgement;}
  if(failure==='missing income')ys[2].netIncome=null;
  if(failure==='gap')ys.splice(2,1);
  if(failure==='duplicate year')ys[2].fy=ys[1].fy;
@@ -67,7 +67,7 @@ it.each([[.90001,'pass'],[.89999,'fail']] as const)('applies the frozen R-square
  expect(run({years:ys,kind:'operating'}).numeric).toBe(state);
 });
 it('uses judged operating income consistently with the existing margin series',()=>{
- const ys=rising().map(y=>({...y,marginOperatingIncomeJudgement:y.operatingIncome,operatingIncome:-1}));
+ const ys=rising().map(y=>({...y,marginOperatingIncomeJudgement:y.operatingIncome!,operatingIncome:-1}));
  expect(run({years:ys,kind:'operating'}).numeric).toBe('pass');
 });
 import {ruleReading} from '../../../lib/value/rule-reading';

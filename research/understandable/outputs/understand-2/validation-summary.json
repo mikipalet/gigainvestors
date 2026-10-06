@@ -1,0 +1,33 @@
+{
+  "unit": {
+    "filesPassed": 237,
+    "testsPassed": 2323,
+    "testsSkipped": 1,
+    "failures": 0,
+    "seconds": 289.93,
+    "log": "unit-final.log"
+  },
+  "build": {
+    "command": "CIRCLE_NODE_TOTAL=2 VALUE_STORE_DIR=<local-copy> NEXT_TELEMETRY_DISABLED=1 NODE_OPTIONS=--max-old-space-size=1536 npm run build -- --webpack",
+    "exitCode": 0,
+    "staticPages": 222,
+    "workers": 1,
+    "log": "build-single-worker.log"
+  },
+  "browser": {
+    "masterCommit": "ab804f2",
+    "candidateCommit": "bd413a7",
+    "store": "same redesigned local snapshot",
+    "page": "/s/nflx.us",
+    "freshContextsPerArm": 5,
+    "pageErrors": 0,
+    "requestFailures": 0,
+    "drawerOpenAndCloseSuccesses": 10,
+    "log": "browser-compare.json"
+  },
+  "productionChangesInThisTurn": 0,
+  "diagnosticAttemptsExcludedFromNightlyDecision": [
+    "master-full-universe-attempt.log",
+    "master-incomplete-copy-attempt.log"
+  ]
+}

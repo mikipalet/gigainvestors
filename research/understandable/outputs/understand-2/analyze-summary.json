@@ -1,0 +1,52 @@
+{
+  "masterInitial": {
+    "written": 3766,
+    "unchanged": 4,
+    "missingEvidence": 129
+  },
+  "masterRecovery": {
+    "written": 129,
+    "unchanged": 0,
+    "failed": 0
+  },
+  "completedPublishedCohort": 3899,
+  "jevRequests": 280,
+  "jevInputTokens": 877005,
+  "masterPublication": {
+    "exitCode": 1,
+    "blockedMissingMembers": [
+      "AERO.US",
+      "CEG.US",
+      "JBS.US"
+    ],
+    "log": "master-publish.log"
+  },
+  "candidate": {
+    "written": 3899,
+    "unchanged": 0,
+    "failed": 0,
+    "exitCode": 0
+  },
+  "candidateNetwork": {
+    "blockedRequests": 0,
+    "jevRequests": 0,
+    "fixedTime": "2026-10-06T03:00:00.000Z"
+  },
+  "candidatePublication": {
+    "exitCode": 1,
+    "blockedMissingMembers": [
+      "AERO.US",
+      "CEG.US",
+      "JBS.US"
+    ],
+    "log": "candidate-publish.log"
+  },
+  "methodComparison": {
+    "understandableChanges": 9,
+    "otherQualityVerdictChanges": 0,
+    "valuationChanges": 0,
+    "pricingInputChanges": 0,
+    "newBuysFromMethod": 0
+  },
+  "nightlyReleaseReady": false
+}

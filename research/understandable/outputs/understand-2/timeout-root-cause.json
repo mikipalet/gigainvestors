@@ -1,0 +1,17 @@
+{
+  "failedTest": "refreshes a weekly mover even when its recent source set is unchanged",
+  "beforeMilliseconds": 32705,
+  "unchangedTimeoutMilliseconds": 5000,
+  "blockingCall": "storyDiskGuard -> execFileSync('du', ['-sk', process.cwd(), root()])",
+  "observedChildCommand": "du -sk /mnt/HC_Volume_107024928/value-understand /tmp/value-story-mover-C3psqF/price-story",
+  "observedChildElapsedSeconds": 25,
+  "worktreeScratchGiB": 22,
+  "copiedCorpusFiles": 527319,
+  "priceStoryProductionDiffAgainstMaster": "empty",
+  "methodVersionInThisPath": false,
+  "fix": "Scope process.cwd() to the same temporary fixture as VALUE_CORPUS_DIR; restore it in finally. Real disk guard, file writes, selection and fetch response validation remain exercised.",
+  "afterMilliseconds": 377,
+  "focusedTestsPassed": 56,
+  "controlCommit": "623a488",
+  "controlMilliseconds": 1718
+}

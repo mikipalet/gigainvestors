@@ -1,0 +1,67 @@
+{
+  "compared": 3899,
+  "changedPricingInputs": [],
+  "newAllQualityPass": [
+    {
+      "id": "1209.HK",
+      "before": false,
+      "after": true,
+      "checks": [
+        {
+          "source": "corpus",
+          "quote": [
+            37.1800012407448,
+            "2026-10-05",
+            "seed"
+          ],
+          "result": {
+            "result": "fail",
+            "mos": -0.9584409331954564
+          }
+        },
+        {
+          "source": "released",
+          "quote": [
+            37.18,
+            "2026-10-02"
+          ],
+          "result": {
+            "result": "fail",
+            "mos": -0.9584408678397456
+          }
+        }
+      ]
+    },
+    {
+      "id": "NFLX.US",
+      "before": false,
+      "after": true,
+      "checks": [
+        {
+          "source": "corpus",
+          "quote": [
+            69.23,
+            "2026-09-28"
+          ],
+          "result": {
+            "result": "fail",
+            "mos": -0.21318707113935997
+          }
+        },
+        {
+          "source": "released",
+          "quote": [
+            67.06,
+            "2026-10-02"
+          ],
+          "result": {
+            "result": "fail",
+            "mos": -0.17515997386401083
+          }
+        }
+      ]
+    }
+  ],
+  "noNewBuysFromMethod": true,
+  "fullPublicationInvariant": "blocked before export"
+}

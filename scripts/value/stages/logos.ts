@@ -51,7 +51,12 @@ export function publishedLogoRows():IndexRow[]{
  const dir=corpusPath('publish-repo/index');if(!existsSync(dir))return [];
  return [...new Map(readdirSync(dir).filter(f=>/^[A-Z]{2}\.json$/.test(f)||f==='default.json').flatMap(f=>readCorpusJson<IndexRow[]>('publish-repo/index/'+f)??[]).map(r=>[r.id,r])).values()];
 }
-/** Only logo caches are written. Re-running resumes validated v2 assets; --force retries misses. */
+/** Approval is durable: validator/matcher upgrades and --force must not revoke it.
+ * Legacy validated records predate identityReview and validationVersion. */
+function preservedLogo(record:{logo?:string|null;validated?:boolean;identityReview?:string}|null):boolean {
+ return Boolean(record?.logo&&record.validated&&(record.identityReview===undefined||['approved','passed'].includes(record.identityReview)));
+}
+/** Only fill missing logos. Explicit reviewed installation owns approved replacements. */
 export default async function logos(options:{only?:string[];limit?:number;force?:boolean}={}){
  checkLogoDisk();const request=logoRequest(),published=publishedLogoRows(),byId=new Map(published.map(r=>[r.id,r]));
  const meta=readCorpusJson<{views?:{current:string}}>('publish-repo/meta.json');
@@ -64,7 +69,8 @@ export default async function logos(options:{only?:string[];limit?:number;force?
  }).slice(0,options.limit);
  const stats={total:companies.length,checked:0,cached:0,recovered:0,unavailable:0,sources:{} as Record<string,number>};
  const due=companies.filter(company=>{
-  const previous=readCorpusJson<{logo?:string;validationVersion?:number;source?:string;matcherVersion?:number;retryable?:boolean;verifiedAt?:string;identityReview?:string;originalHash?:string}>(`enrichment-v7/logos/${company.id}.json`);
+  const previous=readCorpusJson<{logo?:string;validated?:boolean;validationVersion?:number;source?:string;matcherVersion?:number;retryable?:boolean;verifiedAt?:string;identityReview?:string;originalHash?:string}>(`enrichment-v7/logos/${company.id}.json`);
+  if(preservedLogo(previous)||(!previous&&byId.get(company.id)?.lg)){stats.cached++;return false;}
   const cached=!(options.force&&options.only)&&!rejectedLogoHashes(company.id).has(previous?.originalHash??'')&&previous?.validationVersion===LOGO_VALIDATION_VERSION&&(previous.source!=='wikidata-p154'||previous.matcherVersion===2)&&(previous.logo||previous.identityReview==='pending'||(!options.force&&!previous.retryable&&Date.now()-Date.parse(previous.verifiedAt??'')<7*86400000));
   if(cached){stats.cached++;return false;}return true;
  });
@@ -83,7 +89,8 @@ export default async function logos(options:{only?:string[];limit?:number;force?
  try{await pool({items:due,concurrency:6,run:async company=>{
   checkLogoDisk();const file=`enrichment-v7/logos/${company.id}.json`;
   const companyHashes=new Set([...hashes,...rejectedLogoHashes(company.id)]);
-  const previous=readCorpusJson<{logo?:string;validationVersion?:number;source?:string;matcherVersion?:number;retryable?:boolean;verifiedAt?:string;identityReview?:string;originalHash?:string;attempts?:unknown[]}>(file);
+  const previous=readCorpusJson<{logo?:string;validated?:boolean;validationVersion?:number;source?:string;matcherVersion?:number;retryable?:boolean;verifiedAt?:string;identityReview?:string;originalHash?:string;attempts?:unknown[]}>(file);
+  if(preservedLogo(previous)||(!previous&&byId.get(company.id)?.lg)){stats.cached++;return;}
   if(!(options.force&&options.only)&&!rejectedLogoHashes(company.id).has(previous?.originalHash??'')&&previous?.validationVersion===LOGO_VALIDATION_VERSION&&(previous.source!=='wikidata-p154'||previous.matcherVersion===2)&&(previous.logo||previous.identityReview==='pending'||(!options.force&&!previous.retryable&&Date.now()-Date.parse(previous.verifiedAt??'')<7*86400000))){stats.cached++;return;}
   const general=generalInfoFor(company),patch=readCorpusJson<Enrichment>(`enrichment-v7/companies/${company.id}.json`);
   const existing=patch?.logo??company.logo;
@@ -103,6 +110,8 @@ export default async function logos(options:{only?:string[];limit?:number;force?
   const {bytes,originalBytes,...result}=resolved;
   checkLogoDisk();
   const latest=readCorpusJson<any>(file);
+  // Re-read after network work: a controller may have installed an approval meanwhile.
+  if(preservedLogo(latest)){stats.cached++;return;}
   if(latest?.verifiedAt!==previous?.verifiedAt&&(latest?.logo||latest?.identityReview==='pending')&&!companyHashes.has(latest.originalHash??'')){writeCorpusJson(file,{...latest,attempts:[...(latest.attempts??[]),...result.attempts]});stats.cached++;return;}
   if(originalBytes&&result.originalHash){const dir=corpusPath('enrichment-v7/logos/originals');mkdirSync(dir,{recursive:true});writeFileSync(`${dir}/${result.originalHash}.${result.format??'bin'}`,originalBytes);}
   if(bytes&&result.asset)writeCorpusJson(`enrichment-v7/logos/assets/${result.asset}.json`,{data:bytes.toString('base64')});

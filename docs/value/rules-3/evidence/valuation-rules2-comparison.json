@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "historicalCodeCommit": "63a3d4fa5df829f759a9821a213fa8d26212053b",
+  "historicalCandidateSha256": "a6f678f9932326e0017bb3c0f70b6fbf2596bfd6fe4776afb8690dcb35337988",
+  "explanation": "Live-to-candidate valuation effects were already in reviewed rules-2; no new rules-3 valuation tuple or margin difference is permitted.",
+  "proofs": [
+    {
+      "arm": "candidate-final",
+      "rowsCompared": 3910,
+      "differences": []
+    },
+    {
+      "arm": "corpus/publish-repo",
+      "rowsCompared": 3910,
+      "differences": []
+    }
+  ]
+}

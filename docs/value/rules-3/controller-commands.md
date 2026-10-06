@@ -40,16 +40,8 @@ git diff --cached --exit-code
 python3 docs/value/regress-2/harness/controller-runner.py pause "$paused"
 git push origin "$release_commit:refs/heads/master"
 
-# Supply the exact deployment URL produced for this commit.
-vercel inspect "${VERCEL_DEPLOYMENT_URL:?Set the exact release deployment URL}" \
-  --wait --timeout 10m --json > "$TMPDIR/rules-3-deployment.json"
-python3 - "$TMPDIR/rules-3-deployment.json" "$release_commit" <<'PY'
-import json,sys
-d=json.load(open(sys.argv[1]))
-assert d.get('readyState',d.get('state'))=='READY', 'Deployment is not Ready'
-assert d.get('meta',{}).get('githubCommitSha')==sys.argv[2], 'Deployment commit differs'
-assert d.get('target')=='production', 'Deployment is not production'
-PY
+# Bind GitHub's Vercel status to this exact release SHA and require production Ready.
+python3 docs/value/logofix-2/controller-wait-vercel.py "$release_commit"
 
 git -C "$daily" diff --exit-code
 git -C "$daily" diff --cached --exit-code
@@ -61,7 +53,7 @@ npm --prefix "$daily" ci --no-audit --no-fund
 check_disk
 test ! -e "$stage"
 mkdir -p "$stage"
-rsync -a --exclude='/daily-runner*' --exclude='/publish.hold*' \
+rsync -aL --exclude='/daily-runner*' --exclude='/publish.hold*' \
   --exclude='/.env*' --exclude='/backups' --exclude='/logs' "$live/" "$stage/"
 python3 docs/value/regress-1/harness/stage-bundle.py "$bundle" "$stage"
 export VALUE_CORPUS_DIR="$stage"

@@ -1,0 +1,456 @@
+{
+  "passed": true,
+  "currentChecks": 2997,
+  "retainedLegacyDiagnostics": [
+    {
+      "id": "6857.JP",
+      "value": -0.013261673785520345,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "6113.JP",
+      "value": -0.00982691612262776,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "MNG.LSE",
+      "value": -0.4206282231598688,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "8513.HK",
+      "value": 0.22809007003264603,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "ABVX.US",
+      "value": -7315.608876660381,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "ALT.US",
+      "value": -2.046988849273191,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "PROF.US",
+      "value": -0.08458463739562927,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "4151.JP",
+      "value": -0.005045767085654962,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "4452.JP",
+      "value": 0.06554854365642876,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "7272.JP",
+      "value": -0.07716042762674075,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "5411.JP",
+      "value": 0.0077397628217805575,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "3086.JP",
+      "value": -0.025110576845424726,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "DQ7A.IR",
+      "value": 0.02875375723718565,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "OCA.AU",
+      "value": 0.27856486230670874,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "AM.US",
+      "value": -0.00505928914615561,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "4902.JP",
+      "value": 0.04442708397832623,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "2802.JP",
+      "value": 0.014717750202290047,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "PBYI.US",
+      "value": 0.11094582854916624,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "INSM.US",
+      "value": 0.0048812145076166935,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "4519.JP",
+      "value": 0.00426165183228655,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "TDW.US",
+      "value": -0.2018068775010104,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "5020.JP",
+      "value": 0.012236763866199499,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "AKTS.US",
+      "value": 0.0895859917299322,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "2432.JP",
+      "value": 0.05714563224638641,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "6305.JP",
+      "value": -0.019940874377579687,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "2503.JP",
+      "value": -0.015784631212008682,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "8113.JP",
+      "value": 0.014587949440913794,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "LI.US",
+      "value": -0.3157242870672558,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "7731.JP",
+      "value": -0.05847592774364496,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "4578.JP",
+      "value": -0.013346731494817798,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "INDU-C.ST",
+      "value": 0,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "GANX.US",
+      "value": 0,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "000776.SHE",
+      "value": 0.0831483383026862,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "ERO.US",
+      "value": 0.12884937278761305,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "9766.JP",
+      "value": 0.004561262475905159,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "ETON.US",
+      "value": -3.568452871153661,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "5101.JP",
+      "value": -0.01079739293869414,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "002736.SHE",
+      "value": 0.04722472794115529,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "4523.JP",
+      "value": -0.03088698362108422,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "7270.JP",
+      "value": -0.008374180551843219,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "601688.SHG",
+      "value": 0,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "INVE-B.ST",
+      "value": 0,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "8252.JP",
+      "value": -0.10612632705940772,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "LTR.AU",
+      "value": 2.191155404333619,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "PLS.AU",
+      "value": -0.9422542862768288,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "7752.JP",
+      "value": 0.020806762339901308,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "STJ.LSE",
+      "value": 0.0546480085601804,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "9983.JP",
+      "value": -0.03191273288214236,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "4503.JP",
+      "value": -0.028271369729502616,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "KNTK.US",
+      "value": -0.07826790889764351,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "6326.JP",
+      "value": -0.000040280066042508444,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "6723.JP",
+      "value": -0.12805177136589846,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "SRL.AU",
+      "value": -14.712005167611556,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "BBIO.US",
+      "value": 0.2321073974355794,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "4689.JP",
+      "value": -0.110083034335272,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "NANO.PA",
+      "value": 40.93382352941177,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "ELME.US",
+      "value": -0.006928066883795325,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "DYL.AU",
+      "value": 0,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "SOF.BR",
+      "value": 0.006405277565355583,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "PTGX.US",
+      "value": 0,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "BBOX.LSE",
+      "value": 0.004345964419327775,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "ANE.MC",
+      "value": -0.03417312396865613,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "601881.SHG",
+      "value": -0.2873494380822993,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "6503.JP",
+      "value": 0.007727471939951269,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "6902.JP",
+      "value": 0.005919544564490342,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "6752.JP",
+      "value": 0.015294077034906928,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "CIA.AU",
+      "value": 0.12844865232217667,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "4188.JP",
+      "value": 0.01032034004026594,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "6471.JP",
+      "value": -0.023099861578889408,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "PAH3.XETRA",
+      "value": -0.1758527702524333,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "QLT.LSE",
+      "value": 0.553327929386999,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "6473.JP",
+      "value": 0.0029442153904055968,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "2914.JP",
+      "value": 0.0003891328702503305,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "2502.JP",
+      "value": 0.012359371061769986,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    },
+    {
+      "id": "6724.JP",
+      "value": 0.011987821167175727,
+      "label": "FY2019–20 minus FY2023 gross margin (prior assessment)",
+      "currentCheckApplied": false
+    }
+  ]
+}

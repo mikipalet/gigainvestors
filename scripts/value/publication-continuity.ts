@@ -2,6 +2,7 @@ import {readCorpusJson,writeCorpusJson} from '../../lib/value/corpus';
 import {retainPublishedNumbers} from '../../lib/value/retain-published-numbers';
 import {applyVerdictFreeze,type readVerdictFreeze} from './verdict-freeze';
 import approved from './approved-verdict-changes.json';
+import type {ApprovedVerdictChange} from './publish-invariants';
 import {publishedBuyPrice} from '../../lib/value/buy-price';
 import {isDeepStrictEqual} from 'node:util';
 import type {Dossier,IndexRow,PriceMap} from '../../lib/value/types';
@@ -29,7 +30,7 @@ export function applyPublicationContinuity(files:Record<string,any>,baseline:Ret
  for(const [file,rows]of Object.entries(baseline.previous))if(/^index\/[A-Z]{2}\.json$/.test(file))for(const row of rows as IndexRow[])priorRows.set(row.id,row);
  const ids=new Set<string>(),transitions:any[]=[];
  for(const [file,rows]of Object.entries(files))if(/^index\/[A-Z]{2}\.json$/.test(file))for(const row of rows as IndexRow[]){
-  const before=priorRows.get(row.id);if(!before||before.b===row.b||approved.some(a=>a.id===row.id))continue;
+  const before=priorRows.get(row.id);if(!before||before.b===row.b||approved.some((a:ApprovedVerdictChange)=>a.id===row.id))continue;
   const oldPrice=baseline.previous[`prices/${before.c}.json`]?.[row.id];
   if(!isDeepStrictEqual(oldPrice,prices[row.id])&&publishedBuyPrice(before,prices[row.id]).b===row.b)continue;
   ids.add(row.id);transitions.push({id:row.id,before:{b:before.b,v:before.v,m:before.m,t:before.t},proposed:{b:row.b,v:row.v,m:row.m,t:row.t}});

@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "method": "3.5.0",
+  "baselineCode": "5e21e2e85abfffb300c7fad02f825aee062bf550",
+  "baselineArchive": "6d6cb59f9dbf63d7ea4b91ad3951053657eb6dd1",
+  "dossiers": 3915,
+  "unitSuite": "PASS",
+  "build": "PASS including TypeScript",
+  "ordinaryExport": "PASS",
+  "realPublishHarness": "PASS, local bare remote and stub Blob only",
+  "localPostPublish": "PASS",
+  "browser": "zero new findings; legacy findings listed separately",
+  "blobFiles": 6269,
+  "blobBytes": 211782802,
+  "blobVersion": "8ff93dfc7595c3453a3b3f97a8643589ccb7d0152a2d8cd72b0b055550646901",
+  "realLocalCommit": "278cf86d6c146c00c9a201dfc0931674a673902e",
+  "candidateCoreFilesMatchRealPublish": 2175,
+  "sourceBindings": 782884,
+  "liveArchiveFiles": 6269,
+  "minimumFreeBytes": {
+    "/": 11595493376,
+    "/Users/miki/data": 19170435072
+  },
+  "isolation": {
+    "interfaces": [
+      "lo"
+    ],
+    "sourceCorpusReadOnly": true,
+    "externalRoutes": 0
+  },
+  "externalTransport": false,
+  "ownerBuyApproval": "Controller rejected all proposals; zero Buy changes",
+  "buyChanges": []
+}

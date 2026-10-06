@@ -7,7 +7,7 @@ import json,shutil
 from pathlib import Path
 root=Path('/Users/miki/data/value-rules');build=root/'.next'
 routes=json.loads((build/'prerender-manifest.json').read_text())['routes']
-names={'nvda','nvda.us','eme','eme.us','rsg.us','rok.us','tmo.us'}
+names={'nvda','nvda.us','eme','eme.us','rsg','rsg.us','rok','rok.us','tmo','tmo.us'}
 assert not any(route.lower().removeprefix('/s/')in names for route in routes)
 removed=[]
 for p in (build/'server/app/s').iterdir():

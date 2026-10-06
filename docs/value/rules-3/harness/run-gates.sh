@@ -21,6 +21,7 @@ run_gate() {
 
 # Cache misses are enumerated and restored from their exact bound source bytes.
 # Any unexpected analysis failure is fatal in verify-cache-failures.py.
+if [[ "${1:-}" != --after-publication && "${1:-}" != --after-preservation ]]; then
 run_gate analyze-candidate env VALUE_ANALYZE_CONCURRENCY=2 REGRESS_RUN=candidate \
   node --conditions=react-server --import tsx docs/value/rules-3/harness/analyze.ts || \
   test "$(cat "$root/evidence/analyze-candidate.exit")" = 1
@@ -30,11 +31,16 @@ python3 docs/value/rules-3/harness/audit.py > "$root/evidence/release-audit.log"
 run_gate price-gate node --conditions=react-server --import tsx docs/value/rules-3/harness/check-price-gate.ts
 run_gate diagnostic-basis node --conditions=react-server --import tsx docs/value/rules-3/harness/diagnostic-basis.ts
 run_gate real-publication bash docs/value/rules-3/harness/publish-real.sh
+fi
+if [[ "${1:-}" != --after-preservation ]]; then
+python3 docs/value/rules-3/harness/compare-valuations.py
+python3 docs/value/rules-3/harness/audit-logo-files.py
 run_gate coverage-proof node --conditions=react-server --import tsx docs/value/rules-3/harness/coverage-proof.ts
 python3 docs/value/rules-3/harness/preserved-bytes.py
+fi
 run_gate full-unit bash docs/value/rules-3/harness/unit.sh
 run_gate build-candidate bash docs/value/rules-3/harness/build.sh
-run_gate final-types node node_modules/typescript/bin/tsc --noEmit
+run_gate final-types env NODE_OPTIONS="--max-old-space-size=3072 --require=$PWD/docs/value/pubfix-2/harness/preload.cjs" node node_modules/typescript/bin/tsc --noEmit
 
 # Retain strict findings; the comparison permits only exact existing findings
 # and previously accepted chrome/whitespace, with every interaction completed.

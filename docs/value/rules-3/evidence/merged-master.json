@@ -1,0 +1,17 @@
+{
+  "masterCommit": "5e21e2e85abfffb300c7fad02f825aee062bf550",
+  "mergedCommit": "05ca5abdd14f8dd899c198b6fa492c795dc73933",
+  "coverageSourcesUnmodified": [
+    "scripts/value/publication-coverage.ts",
+    "scripts/value/publication-pages.ts",
+    "scripts/value/approved-coverage-changes.json"
+  ],
+  "rulesUnchangedFrom": "63a3d4f",
+  "rulesFiles": [
+    "lib/value/method-version.ts",
+    "lib/value/tests/understandable.ts",
+    "lib/value/tests/moat.ts"
+  ],
+  "buyApprovals": [],
+  "coverageApprovals": []
+}

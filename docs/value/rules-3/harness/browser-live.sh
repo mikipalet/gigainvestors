@@ -4,8 +4,8 @@ root=/Users/miki/data/value-rules/.audit/rules-3
 export VALUE_STORE_DIR="$root/baseline"
 export NODE_OPTIONS="$NODE_OPTIONS --max-old-space-size=3072"
 export NEXT_FONT_GOOGLE_MOCKED_RESPONSES="$PWD/docs/value/pubfix-2/harness/fonts.cjs"
-# Reuse the verified build: production files have not changed. Only the two
-# archived canonical identities were restored in the runtime candidate store.
+# Reuse the verified build against the bound live archive. Clear runtime page
+# caches before each arm so baseline and candidate read their own stores.
 test "$(cat "$root/evidence/build-candidate.exit")" = 0 || exit 1
 python3 docs/value/rules-3/harness/clear-browser-pages.py || exit 1
 node node_modules/next/dist/bin/next start --hostname 127.0.0.1 --port 3193 > "$root/evidence/server-live.log" 2>&1 &

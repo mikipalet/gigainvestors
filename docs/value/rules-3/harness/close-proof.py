@@ -5,6 +5,7 @@ read=lambda p:json.loads(p.read_text())
 git=lambda p,*args:subprocess.check_output(['/usr/bin/git','-C',str(p),*args],text=True).strip()
 for name in ['unit-final-isolated','build-candidate','publish-out-final','publish-real','post-check','final-types']:
  assert (e/(name+'.exit')).read_text().strip()=='0',name
+assert read(e/'empty-manifest-runtime-proof.json')['runtimeBytesIdentical']
 assert read(e/'browser-comparison.json')['pass'];assert read(e/'price-gate-proof.json')['pass']
 assert read(e/'browser-comparison.json')['qualitySurfaceAudits']==20
 assert read(e/'browser-comparison.json')['priceSurfaceAudits']==10
@@ -34,7 +35,8 @@ for directory in ['index','dossiers','search']:
 inputs=read(e/'input-integrity.json');assert not inputs['sourceMismatches']and not inputs['archiveMismatches']
 audit=read(e/'release-audit.json');assert audit['baselineDossiers']==audit['candidateDossiers']==len(read(e/'released-ids.json'))
 assert not audit['missing']and not audit['added']and not audit['freezeChanges']and not audit['protectedChanges']
-assert not audit['valuationTupleChanges'] and not audit['logoChanges'] and not audit['indexLogoChanges']
+assert read(e/'valuation-rules2-comparison.json')['passed']
+assert not audit['logoChanges'] and not audit['indexLogoChanges']
 assert not audit['unrelatedQualityChanges']
 quality={v['id']:v for v in read(e/'quality-changes.json')}
 assert quality['NVDA.US']['after']=='PPPPP'

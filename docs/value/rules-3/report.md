@@ -1,31 +1,58 @@
-NOT
+READY
 
-# rules-3 — zero approved Buy changes; waiting for logofix
+rules-3 — 3.5.0 with zero approved Buy changes
 
-IN PROGRESS. The earlier attempt misread the cutoff. This continuation uses the explicit deadline **2026-10-07T01:30:00Z** and polls the shipped marker every three minutes. The marker was absent at the last recorded poll; no fetch, merge, or fresh-corpus run has occurred. NOT currently means the sequencing and verification gates are pending.
+All requested local release gates pass. The controller has approved zero Buy changes. This report authorizes no external action by the agent; deployment and publication remain controller steps below.
 
-The existing isolated worktree is `~/data/value-rules`, branch `value-rules`. Initial HEAD was `46f0c10`, the local zero-approval commit following the supplied `63a3d4f`. The rules-2 report and evidence have been reviewed. Their historical passing gates do not establish rules-3 readiness.
+The logofix-2 shipped marker was observed on 2026-10-06 at 17:20:23Z, before the 2026-10-07T01:30Z deadline. Only then was origin/master `5e21e2e85abfffb300c7fad02f825aee062bf550` fetched and merged as `05ca5abdd14f8dd899c198b6fa492c795dc73933`. Verification used a fresh, independent copy of the live corpus, with all 361 source symlinks dereferenced. The bound live archive was `6d6cb59f9dbf63d7ea4b91ad3951053657eb6dd1`.
 
-## Controller ruling
+The controller approved **NONE** of the proposed Buy changes. Both approval manifests contain exactly `[]`; the publication has **zero Buy changes**. IPS.PA (likely vendor gross-margin reclassification), 001800.KO (wrong-issuer filing; cash-only case), and 000786.SHE (no primary filing) retain their complete live records through the existing publication-continuity mechanism. NTB.US and CFG-PH.US remain preserved by that same mechanism.
 
-Both approval files contain exactly `[]`. IPS.PA, 001800.KO, and 000786.SHE must retain their complete live records using the existing publication continuity mechanism, as NTB.US and CFG-PH.US do. The vendor gross-margin discontinuity for Ipsos, wrong-issuer filing and cash-only case for Orion Korea, and missing primary filing for 000786 do not authorize Buy changes. The rejected manifest will not be regenerated.
+| Preserved ID | Exact serialized records checked | Result |
+|---|---:|---|
+| IPS.PA | 80 | Byte-identical to live |
+| 001800.KO | 11 | Byte-identical to live |
+| 000786.SHE | 118 | Byte-identical to live |
+| NTB.US | 12 | Byte-identical to live |
+| CFG-PH.US | 21 | Byte-identical to live |
 
-The reviewed 3.5.0 rule sources remain unchanged. NVDA is expected to become PPPPP. The previous 185 exposed quality changes included the three rejected records; full-record preservation would yield 182 against that same baseline. The actual count will be measured after logofix rather than forced.
+The checks cover each available dossier, index, history, search and price record in the ordinary export and real publication. All 151 explicit frozen dossiers also remain unchanged.
 
-## Preparation completed
+The earlier **185** quality-mask changes included the three rejected records. Complete-record preservation leaves **182 exposed quality changes**; the other three stay entirely live. There are no unrelated quality changes. NVDA changes FFPPP → **PPPPP**. The other browser targets are EME FPPPP → PPPPP, RSG PFPPP → PPPPP, ROK PFPFP → PPPFP, and TMO PFPPP → PPPPP.
 
-- Three-minute marker polling and five-second disk monitoring, deadline bound to the explicit UTC date.
-- Independent rules-3 harness, using isolated network namespaces and a read-only live-corpus bind. No production publication guard is stubbed.
-- Fresh-copy, full cached nightly analysis, ordinary export, local bare-remote/stub-Blob real publish, merged coverage/page guard, preserved record-byte comparison, browser, unit suite, build, integrity, packaging and cleanup checks prepared.
-- Browser targets: NVDA plus EME, RSG, ROK, TMO, subject to confirmation that all four remain changed after logofix.
-- Exact Inter font dependency staged under task TMPDIR, SHA-256 matching prior verification; no company-data acquisition.
-- Python/shell syntax and `git diff --check` pass. Runtime gates remain pending.
+| Gate | Result |
+|---|---|
+| Full cached nightly analysis | 38,281 jobs; 38,193 written; 20,597 validated cached readings; zero unexpected failures |
+| Expected cache misses | 88 enumerated misses; exact prior analysis/input/fingerprint bytes retained; excluded from installation overlay |
+| Ordinary `publish --out` | Pass; 3,915 dossiers / 3,910 indexed companies |
+| REAL publication harness | Pass using a local bare remote and stub Blob; production calibration, invariant, coverage and page guards executed |
+| Local post-publish | Pass; production check, coverage guard and rendered-page verification |
+| Browser | NVDA + EME/RSG/ROK/TMO; 128 states per arm, desktop 1728×970 and mobile 390×844; zero new visual or semantic findings |
+| Surface checks | 20 quality and 10 price audits; drawer arithmetic checked |
+| Full unit suite | 257 test files; 2,489 passed, 1 existing skip; no failures |
+| Production build | Pass, 222 prerendered pages; TypeScript passes |
 
-## Pending release proof
+The browser gate retains its strict raw results: 108 states have the previously accepted small-text/whitespace findings. Four NVDA test-versus-dossier share-series findings and ten hidden valuation-table findings match live exactly. All 14 legacy semantic findings are recorded separately; none is new. A harness comment edit interrupted the first baseline semantic run; the complete baseline arm was rerun successfully without changing the comparison policy.
 
-Observe `/Users/miki/GitHub/superinvestors-wt/value/.superpowers/sdd/2026-09-29-value/logofix-2.shipped`, fetch and merge `origin/master`, then run every requested gate on a fresh independent copy. Require zero Buy changes, byte-identical complete records for the three rejected IDs, no logo/valuation/coverage regressions, and zero new browser findings. If the marker remains absent at the deadline, record NOT and checkpoint the prepared work.
+Master's production coverage guard is unchanged and passes in both export and real-publication checks. Dossiers remain 3,915, logo coverage 3,885, missing logos 30, quality coverage 3,670 and price-history coverage 3,910. Valuation coverage increases 2,425 → 2,435. Buy counts remain 27 overall, 14 US and 21 western. No country membership is lost; default-index membership increases 1,019 → 1,022.
 
-No external push/publication, live-corpus write, daily-runner lock access, runner signal, subagent, EODHD acquisition, or fresh Jev call has occurred. No disposable corpus copy has yet been created. All task scratch files and TMPDIR are under `~/data/value-rules`. Both disks remain above 4 GiB. The historical rules-2 bundle is still NOT and is not an installable rules-3 release.
+The real publication retains all **3,737 baseline logo files byte-for-byte**. The empty-directory ordinary export contains 3,712 identical files and omits 25 assets proven unreferenced anywhere in the baseline JSON. No published dossier/index logo reference changes. Both arms pass 20/20 rendered-page/logo checks.
+
+There are no removed numeric values, new numeric nulls, valuation losses, or price/history/forward changes apart from identity ordering. Fifty-one rows have valuation-tuple and/or margin differences from live that were already present in reviewed rules-2. Every valuation tuple and margin for all 3,910 indexed companies matches that reviewed candidate exactly in both publication arms. The historical candidate is bound to `63a3d4fa5df829f759a9821a213fa8d26212053b` and SHA-256 `a6f678f9932326e0017bb3c0f70b6fbf2596bfd6fe4776afb8690dcb35337988`. No separate 3.4 control analysis was run for rules-3.
+
+The reviewed method files and thresholds are unchanged. Emptying the approval JSON exposed TypeScript's `never[]` inference; an explicit type on its predicate fixes the build. Transpiled JavaScript before/after that annotation is byte-identical (SHA-256 `7e3c1cb13c07a04294d78c43b56833692f289817cf22cae61f6560b3577bcef6`). The final-source full unit suite, build and TypeScript check were rerun after that type-only fix.
+
+The real local publication contains **6,269 files / 211,782,802 bytes**, with Blob version `8ff93dfc7595c3453a3b3f97a8643589ccb7d0152a2d8cd72b0b055550646901`. Its final commit, hashes and archive/source bindings are recorded in the verification receipts and release bundle.
+
+No external code push, external data publication, runner signal, runner-lock access, live-corpus modification, subagent, EODHD acquisition or fresh Jev call was performed. Runtime gates used a network namespace with loopback only and a read-only live-corpus mount; all fixtures and TMPDIR were under `~/data/value-rules`.
+
+Final integrity rehashed all **782,884 source files and 6,269 archive files** with zero mismatches; the live archive commit is unchanged. Ordinary-export and real-publication contents agree across 2,175 index/dossier/search files, apart from run-clock price-story timestamps. Local archive commit `278cf86d6c146c00c9a201dfc0931674a673902e` equals the local bare remote; the pending-publication receipt is cleared and the archive is clean. Stub Blob bytes match the committed snapshot and its version hash exactly.
+
+The release bundle at `~/data/value-rules/release-bundle` contains an **80,487-file overlay**, the candidate archive, full evidence, source/archive bindings and empty approval manifest. All six artifact hashes and every overlay member were validated. The secret scan covered 81,406 files and 11 known secret values with **zero findings**. The final `manifest.json` binds READY to the exact final `value-rules` commit (`codeCommit`); its subject is `value: 3.5.0 without unproven buy changes`.
+
+Cleanup is complete: the fresh corpus, baseline/candidate stores, local bare remote, stub Blob, temporary caches and build output were deleted. The existing dependency symlink target was left intact. Minimum free space was 10.80 GiB on `/` and 17.85 GiB on `~/data`; after cleanup it was 11.86 GiB and 75.56 GiB respectively. The 4 GiB stop condition never occurred.
+
+Committed review receipts are in `docs/value/rules-3/evidence/`, with cleanup in `docs/value/rules-3/cleanup.json`. The full browser screenshots, strict results, cache-failure retention proofs and execution logs are in `release-bundle/evidence.tar.gz`. Any controller-time source/archive drift requires a fresh proof; the installer checks these bindings before release.
 
 # Controller only — do not execute unless rules-3 is READY
 
@@ -69,16 +96,8 @@ git diff --cached --exit-code
 python3 docs/value/regress-2/harness/controller-runner.py pause "$paused"
 git push origin "$release_commit:refs/heads/master"
 
-# Supply the exact deployment URL produced for this commit.
-vercel inspect "${VERCEL_DEPLOYMENT_URL:?Set the exact release deployment URL}" \
-  --wait --timeout 10m --json > "$TMPDIR/rules-3-deployment.json"
-python3 - "$TMPDIR/rules-3-deployment.json" "$release_commit" <<'PY'
-import json,sys
-d=json.load(open(sys.argv[1]))
-assert d.get('readyState',d.get('state'))=='READY', 'Deployment is not Ready'
-assert d.get('meta',{}).get('githubCommitSha')==sys.argv[2], 'Deployment commit differs'
-assert d.get('target')=='production', 'Deployment is not production'
-PY
+# Bind GitHub's Vercel status to this exact release SHA and require production Ready.
+python3 docs/value/logofix-2/controller-wait-vercel.py "$release_commit"
 
 git -C "$daily" diff --exit-code
 git -C "$daily" diff --cached --exit-code
@@ -90,7 +109,7 @@ npm --prefix "$daily" ci --no-audit --no-fund
 check_disk
 test ! -e "$stage"
 mkdir -p "$stage"
-rsync -a --exclude='/daily-runner*' --exclude='/publish.hold*' \
+rsync -aL --exclude='/daily-runner*' --exclude='/publish.hold*' \
   --exclude='/.env*' --exclude='/backups' --exclude='/logs' "$live/" "$stage/"
 python3 docs/value/regress-1/harness/stage-bundle.py "$bundle" "$stage"
 export VALUE_CORPUS_DIR="$stage"

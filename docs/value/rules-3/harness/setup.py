@@ -8,6 +8,9 @@ def digest(p):
   for b in iter(lambda:f.read(1024*1024),b''):h.update(b)
  return h.hexdigest()
 assert min(shutil.disk_usage(p).free for p in ['/',str(root)])>=4*1024**3
+for base,dirs,names in os.walk(c):
+ for name in dirs+names:
+  assert not (Path(base)/name).is_symlink(), 'Fresh corpus must contain independent files, not symlinks'
 head=subprocess.check_output(['git','-C',str(c/'publish-repo'),'rev-parse','HEAD'],text=True).strip()
 archive={}
 for p in (c/'publish-repo').rglob('*'):

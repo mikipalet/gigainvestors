@@ -1,0 +1,6 @@
+{
+  "runtimeBytesIdentical": true,
+  "sha256": "7e3c1cb13c07a04294d78c43b56833692f289817cf22cae61f6560b3577bcef6",
+  "file": "scripts/value/publication-continuity.ts",
+  "change": "Type-only annotation for an empty Buy approval manifest"
+}

@@ -14,7 +14,7 @@ assert json.loads(Path('scripts/value/approved-verdict-changes.json').read_text(
 PY
 mkdir -p "$root/corpus" "$root/storage" "$root/harness-bin" "$root/tmp"
 cp "$root/tmp/inter.woff2" "$root/storage/inter.woff2"
-rsync -a --exclude='/daily-runner*' --exclude='/publish.hold*' \
+rsync -aL --exclude='/daily-runner*' --exclude='/publish.hold*' \
   --exclude='/.env*' --exclude='/backups' --exclude='/logs' \
   /Users/miki/value-corpus/ "$root/corpus/"
 cp docs/value/pubfix-2/harness/git "$root/harness-bin/git"

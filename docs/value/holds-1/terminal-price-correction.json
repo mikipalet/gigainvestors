@@ -1,0 +1,31 @@
+{
+  "id": "ATAI.US",
+  "source": "https://query1.finance.yahoo.com/v8/finance/chart/ATAI?range=10y&interval=1mo",
+  "basis": "Metadata last actual trade date, USD. Completed merger verified by September 11 SEC 8-K. Terminal quote remains stale/ineligible under the unchanged current-price gate.",
+  "changes": [
+    {
+      "file": "prices/US.json",
+      "before": [
+        7.349999770401424,
+        "2026-10-05",
+        "seed"
+      ],
+      "after": [
+        7.35,
+        "2026-09-10"
+      ]
+    },
+    {
+      "file": "publish-repo/prices/US.json",
+      "before": [
+        7.349999770401424,
+        "2026-10-05",
+        "seed"
+      ],
+      "after": [
+        7.35,
+        "2026-09-10"
+      ]
+    }
+  ]
+}

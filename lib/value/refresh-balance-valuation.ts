@@ -1,8 +1,9 @@
 import {balanceSheetsFor,latestBalanceAt} from './latest-balance';
+import {correctCachedTrailingSources} from './annual-source-corrections';
 import {ownerCash} from './owner-cash';
 import {trailingInputs} from './valuation-inputs';
 import {valueCompany,valuationMargin} from './valuation';
-import {applyShareCheck} from './share-check';
+import {applyShareCheck,withShareDenominator,type ShareCheck} from './share-check';
 import {consistentValuation} from './return-model';
 import type {Analysis,Fundamentals,Year,PriceHistory} from './types';
 
@@ -17,21 +18,23 @@ export function refreshBalanceValuation<T extends Analysis>(a:T,read:(file:strin
  if(!years?.length)return a;
  const annual=years.at(-1)!;
  const raw=read(`raw/eodhd/${a.id}.json`);
+ const currentCommonBalance=(read(`raw/reviewed-common-balance/${a.id}.json`) as Fundamentals['currentCommonBalance'])??fundamentals?.currentCommonBalance;
  const balance=latestBalanceAt(balanceSheetsFor(a.id,raw),cutoff,old.currency,annual);
- if(!balance&&(a.company.kind!=='operating'||!ownerCash(annual,a.company.industry).reason))return a;
+ if(!balance&&!currentCommonBalance&&(a.company.kind!=='operating'||!ownerCash(annual,a.company.industry).reason))return a;
  // TTM is constructed from the original annual row: annual capex judgements
  // must not leak into quarterly flows through the carried annual fields.
  const flowAnnual=fundamentals?.years.find(y=>y.end===annual.end)??annual;
- const result=valueCompany({years,ttm:trailingInputs(raw,flowAnnual,cutoff),balance,
+ const result=valueCompany({years,ttm:correctCachedTrailingSources(a.id,trailingInputs(raw,flowAnnual,cutoff),read as any),balance,currentCommonBalance,cutoff,
   kind:a.company.kind,industry:a.company.industry,currency:old.currency,bondYield:old.bondYield,
   cyclical:a.volatility==='volatile',qualityPass:old.tier==='compounder',version:old.version,
   priceHistory:read(`prices-history/${a.id}.json`) as PriceHistory|null});
  let valuation=result.valuation;
  if(valuation){
-  valuation=applyShareCheck({...a,valuation},{status:'verified',shares:old.shares,observations:[],reason:'Retain reviewed denominator'}).valuation!;
-  valuation={...valuation,shareSources:old.shareSources,bondSource:old.bondSource,bondFlags:old.bondFlags,
+  if(valuation.shareBasis==='effective-common')valuation=applyShareCheck({...a,valuation},read(`enrichment-v7/share-checks/${a.id}.json`) as ShareCheck|null).valuation!;
+  else valuation=withShareDenominator(valuation,old.shares);
+  valuation={...valuation,shareBasis:valuation.shareBasis??(old.shareBasis==='listing-ADS'?'listing-ADS':undefined),shareSources:valuation.shareBasis==='effective-common'?valuation.shareSources:old.shareSources,bondSource:old.bondSource,bondFlags:old.bondFlags,
    capitalReturns:old.capitalReturns,
-   assumptions:[...valuation.assumptions.filter(s=>!s.startsWith('Share count verified')), ...old.assumptions.filter(s=>/Local 10-year yield:|Bond yield flags:|upkeep ≈|Share count verified/.test(s))],
+   assumptions:[...valuation.assumptions.filter(s=>!s.startsWith('Share count verified')), ...old.assumptions.filter(s=>/Local 10-year yield:|Bond yield flags:|upkeep ≈/.test(s)||valuation?.shareBasis!=='effective-common'&&/Share count verified/.test(s))],
    ...(old.perShareTrading?{perShareTrading:{...old.perShareTrading,low:valuation.perShare.low*old.perShareTrading.fxRate,mid:valuation.perShare.mid*old.perShareTrading.fxRate,high:valuation.perShare.high*old.perShareTrading.fxRate}}:{})};
   valuation=consistentValuation(valuation);
  }

@@ -19,7 +19,7 @@
       ],
       "m": 0.35
     },
-    "reason": "Controller approved 2026-10-05: H1 cash EUR 794.1m \u2192 419.2m, debt EUR 2261.7m \u2192 2211.7m; unchanged 35% required margin. Balance-sheet correction only.",
+    "reason": "Owner reaffirmed approval 2026-10-06 08:40: H1 cash EUR 794.1m \u2192 419.2m, debt EUR 2261.7m \u2192 2211.7m; unchanged 35% required margin. Balance-sheet correction only.",
     "evidence": [
       "https://www.fdjunited.com/wp-content/uploads/2026/07/20260729-FDJUNITEDpressrelease-H12026results.pdf"
     ]
@@ -44,9 +44,34 @@
       ],
       "m": 0.5
     },
-    "reason": "Controller approved 2026-10-05: June debt USD 2.921bn \u2192 4.114bn and cash USD 1.495bn \u2192 0.399bn; existing leverage rule raises required margin to 50%. Normalized earnings unchanged.",
+    "reason": "Owner reaffirmed approval 2026-10-06 08:40: June debt USD 2.921bn \u2192 4.114bn and cash USD 1.495bn \u2192 0.399bn; existing leverage rule raises required margin to 50%. Normalized earnings unchanged.",
     "evidence": [
       "https://www.sec.gov/Archives/edgar/data/1411207/000119312526334039/alsn-20260630.htm"
+    ]
+  },
+  {
+    "id": "FCN.US",
+    "before": {
+      "b": true,
+      "v": [
+        127.6623765873837,
+        179.43074267684204,
+        209.5755551532103
+      ],
+      "m": 0.25
+    },
+    "after": {
+      "b": false,
+      "v": [
+        123.89434452112165,
+        175.66271061057995,
+        205.80752308694824
+      ],
+      "m": 0.35
+    },
+    "reason": "Owner approved 2026-10-06 08:40: June 2026 issuer 10-Q reconciles USD 1,267.516m lease-inclusive debt (USD 1,019.320m borrowings net of issuance costs plus USD 248.196m operating leases), versus USD 626.721m annually. Corporate cash USD 163.747m. Existing three-year leverage rule raises required margin from 25% to 35%; normalized owner earnings unchanged. See docs/value/jev-3/cash-policy.md.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/887936/000088793626000088/fcn-20260630.htm"
     ]
   }
 ]

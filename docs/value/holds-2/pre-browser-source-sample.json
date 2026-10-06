@@ -1,0 +1,44 @@
+{
+  "seed": 202610052,
+  "population": [
+    "CFRUY.US",
+    "CNSWF.US",
+    "DVDCF.US",
+    "FBAK.US",
+    "FLMNF.US",
+    "FLUIF.US",
+    "HEINY.US",
+    "HKHHF.US",
+    "HKHHY.US",
+    "KNCRF.US",
+    "MTRBF.US",
+    "OGC.US",
+    "PEYUF.US",
+    "PHJMF.US",
+    "PIFYF.US",
+    "PUIGF.US",
+    "RTLLF.US",
+    "ZLDSF.US"
+  ],
+  "ids": [
+    "CFRUY.US",
+    "CNSWF.US",
+    "HEINY.US",
+    "HKHHF.US",
+    "HKHHY.US",
+    "OGC.US",
+    "PIFYF.US",
+    "ZLDSF.US"
+  ],
+  "method": "Python random.Random(seed).sample(sorted population, 8); fixed before reading numeric results",
+  "scopeExclusions": {
+    "AGO.US": "unresolved layout hold",
+    "AMPY.US": "unresolved layout hold",
+    "BAYRY.US": "existing issuer identity or reviewed alias",
+    "CFRHF.US": "existing issuer identity or reviewed alias",
+    "DVCMY.US": "existing issuer identity or reviewed alias",
+    "HINKF.US": "existing issuer identity or reviewed alias",
+    "TOST.US": "unresolved layout hold",
+    "TRMLF.US": "existing issuer identity or reviewed alias"
+  }
+}

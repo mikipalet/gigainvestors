@@ -1,0 +1,42 @@
+{
+  "effectiveShares": 19969895,
+  "shareBasis": "effective-common",
+  "tangibleBookPerShare": 896.6396668585388,
+  "underlyingPerShare": {
+    "low": 2869.2469339473246,
+    "mid": 3586.5586674341553,
+    "high": 4782.078223245539
+  },
+  "financialReturn": {
+    "roe": 0.2451427578895204,
+    "retention": 0.9062943559833803,
+    "payout": 0.7552446561483147,
+    "cashPerShare": 166.00634075533068
+  },
+  "quality": {
+    "understandable": "pass",
+    "moat": "pass",
+    "economics": "pass",
+    "management": "pass",
+    "accounting": "pass"
+  },
+  "assumptions": [
+    "Issuer effective-common book and shares at 2026-06-30; https://www.fairfax.ca/wp-content/uploads/2026/07/FFH-2026-Q2-Interim-Report-Final-Bh5r66R43.pdf#page=19; annual weighted diluted history retained; independent confidence unchanged",
+    "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+    "growth set to zero when latest revenue is below three years earlier",
+    "sustainable tangible ROE: ten-year median capped at 25%; at least five finite observations",
+    "growth = sustainable ROE \u00d7 median dividend retention, capped at 6%; residual earnings distributable",
+    "expected return is the IRR of the same perpetual distributable earnings; the 4x book cap at the required rate is a fixed payout haircut",
+    "returns use net income divided by tangible equity",
+    "valuation uses tangible book value per share",
+    "cash and debt are included in book value",
+    "equity bond yield uses median net income",
+    "Local 10-year yield: EODHD latest (US10Y.GBOND, observed 2026-10-01; checked 2026-10-01)",
+    "Bond yield flags: second-source-confirmed"
+  ],
+  "liveBuy": false,
+  "proposedBuy": false,
+  "publicValuation": null,
+  "controllerApprovalRequired": true,
+  "note": "Old-algorithm Buy true was counterfactual, not the current LIVE dossier."
+}

@@ -10,7 +10,7 @@ it('refreshes current stocks while retaining quality, reviewed denominator and F
  a.valuation=valueCompany({years,kind:'operating',currency:'USD',bondYield:.04,cyclical:false}).valuation;
  a.valuation!.perShareTrading={...a.valuation!.perShare,currency:'USD',fxRate:1};
  const raw={General:{CurrencyCode:'USD'},Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{filing_date:'2026-08-01',cash:40,shortLongTermDebtTotal:700}}}}};
- const read=(p:string)=>p.startsWith('fundamentals/')?{years}:p.startsWith('analysis/inputs/')?{memoYears:years}:p.startsWith('raw/')?raw:null;
+ const read=(p:string)=>p.startsWith('fundamentals/')?{years}:p.startsWith('analysis/inputs/')?{memoYears:years}:p.startsWith('raw/eodhd/')?raw:null;
  const next=refreshBalanceValuation(a,read,'2026-10-05');
  expect(next.tests).toEqual(a.tests);expect(next.valuation!.shares).toBe(a.valuation!.shares);
  expect(next.valuation!.normalized).toBe(a.valuation!.normalized);
@@ -18,4 +18,26 @@ it('refreshes current stocks while retaining quality, reviewed denominator and F
  expect(next.valuation!.perShareTrading!.mid).toBe(next.valuation!.perShare.mid);
  expect(refreshBalanceValuation(next,read,'2026-10-05')).toEqual(next);
  expect(refreshBalanceValuation(a,read,'2026-08-01')).toBe(a);
+});
+it('retains a reviewed denominator without claiming a new independent share check',()=>{
+ const years=makeYears({from:2015}),a=structuredClone(base);
+ a.valuation=valueCompany({years,kind:'operating',currency:'USD',bondYield:.04,cyclical:false}).valuation;
+ a.valuation!.shares/=2;a.valuation!.shareSources=2;
+ const raw={General:{CurrencyCode:'USD'},Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{filing_date:'2026-08-01',cash:40,shortLongTermDebtTotal:700}}}}};
+ const read=(p:string)=>p.startsWith('fundamentals/')?{years}:p.startsWith('analysis/inputs/')?{memoYears:years}:p.startsWith('raw/eodhd/')?raw:null;
+ const next=refreshBalanceValuation(a,read,'2026-10-06');
+ expect(next.valuation?.shares).toBe(a.valuation!.shares);
+ expect(next.valuation?.shareSources).toBe(2);
+ expect(next.valuation?.assumptions.some(s=>s.includes('Unverified share count'))).toBe(false);
+});
+it('refreshes a reviewed common balance without reverting to the prior denominator or confidence',()=>{
+ const years=makeYears({from:2015}).map(y=>({...y,equity:100,goodwill:10,intangibles:0,netIncome:12,dilutedShares:10,dividendsPaid:3})),a=structuredClone(base);
+ a.company.kind='insurer';a.valuation=valueCompany({years,kind:'insurer',currency:'USD',bondYield:.04,cyclical:false}).valuation;
+ a.valuation!.shareSources=2;
+ const common={end:'2026-06-30',currency:'USD',commonEquity:95,goodwillAndIntangibles:9,shares:8,source:'https://issuer.test/interim',basis:'effective-common'};
+ const read=(p:string)=>p.startsWith('fundamentals/')?{years}:p.startsWith('analysis/inputs/')?{memoYears:years}:p.startsWith('raw/reviewed-common-balance/')?common:null;
+ const next=refreshBalanceValuation(a,read,'2026-10-06');
+ expect(next.valuation?.shares).toBe(8);expect(next.valuation?.normalized).toBe(86/8);
+ expect(next.valuation?.shareSources).toBeUndefined();expect(next.valuation?.shareBasis).toBe('effective-common');
+ expect(next.valuation?.balanceSheet?.end).toBe(common.end);
 });

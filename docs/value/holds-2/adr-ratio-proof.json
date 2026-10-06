@@ -1,0 +1,9 @@
+{
+  "id": "CFRUY.US",
+  "source": "https://depositaryreceipts.citi.com/adr/guides/pgm_dispaDivd.aspx?cusip=204319107&pageId=15&subpageID=113",
+  "ratioOrdinaryPerAdr": 0.1,
+  "file": "downloads/CFRUY-adr.html",
+  "sha256": "bf39cb6226c52492b92881545590adce2d7d06a835e5a03e8523115addcf0e65",
+  "observed": "2026-10-05",
+  "basis": "Citi depositary directory ORD:DR 1:10"
+}

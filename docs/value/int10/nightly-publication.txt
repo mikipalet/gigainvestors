@@ -1,0 +1,5 @@
+2026-10-06T08:37:27Z starting publish
+2026-10-06T08:46:09Z stage=publish status=failed exit=1 duration=522s summary=Calibration failed; publish aborted
+2026-10-06T08:46:10Z starting status
+2026-10-06T08:46:42Z stage=status status=ok exit=0 duration=32s summary=}
+Waiting 65598 seconds until next 03:00 UTC

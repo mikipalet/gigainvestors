@@ -5,6 +5,8 @@ import os from 'node:os';
 import path from 'node:path';
 import {businessSources,hasBusinessText,topicalSources} from '../../../lib/value/business/sources';
 import type {Analysis} from '../../../lib/value/types';
+// Source-cache behavior is independent of transient disk pressure on the host.
+vi.mock('node:fs',async original=>({...await original<typeof import('node:fs')>(),statfsSync:()=>({bavail:20*1024**3,bsize:1})}));
 it('an empty compressed cache cannot hide existing home-filing sections',async()=>{
  const root=mkdtempSync(path.join(os.tmpdir(),'memo-sources-'));vi.stubEnv('VALUE_CORPUS_DIR',root);
  try{

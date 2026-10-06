@@ -131,6 +131,25 @@ describe("buildOutput", () => {
     writeCorpusJson('reports/PLXS.US/meta.json',{kind:'description',sections:[]});
     await expect(publish({out:path.join(corpusDir(),'incomplete')})).rejects.toThrow(/incomplete.*full-filing/);
   });
+  it('ordinary local publication preserves the baseline when every proposed addition remains held',async()=>{
+    const {default:publish}=await import('@/scripts/value/stages/publish');
+    const old=analysis('KO.US'),held=analysis('HELD.US');
+    held.company.indexes=[];held.company.heldBySuperinvestors=true;
+    const baseline=output([old]);
+    for(const [file,data]of Object.entries(baseline))writeCorpusJson(`publish-repo/${file}`,data);
+    writeCorpusJson('analysis/KO.US.json',old);
+    writeCorpusJson('analysis/HELD.US.json',held);
+    writeCorpusJson('held-membership/release.json',{version:1,baselineIds:[old.id],baselineAnalysisHashes:{[old.id]:baselineAnalysisHash(old.id)},additionIds:[],held:[{id:held.id,reasons:['full-filing']}]});
+    writeFileSync(path.join(corpusDir(),'universe.jsonl'),JSON.stringify(old.company)+'\n');
+    writeCorpusJson('index-membership/latest.json',{complete:true,memberships:{'KO.US':['S&P 500']}});
+    writeCorpusJson('held-membership/latest.json',{version:1,companies:[held.company],ledger:[],quarters:[]});
+    const out=path.join(corpusDir(),'all-held');
+    await publish({out});
+    const dossiers=Object.assign({},...readdirSync(path.join(out,'dossiers')).map(f=>JSON.parse(readFileSync(path.join(out,'dossiers',f),'utf8'))));
+    expect(Object.keys(dossiers)).toEqual([old.id]);
+    expect(dossiers[old.id]).toEqual((baseline[`dossiers/${shardOf(old.id)}.json`] as any)[old.id]);
+    expect(JSON.parse(readFileSync(path.join(out,'index/US.json'),'utf8'))).toEqual(baseline['index/US.json']);
+  });
   it('rejects an obsolete analysis before creating a candidate or refreshing returns', async()=>{
     const {default:publish}=await import('@/scripts/value/stages/publish');
     const a=analysis();a.versions.pipeline='obsolete';

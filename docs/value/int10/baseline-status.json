@@ -1,0 +1,25 @@
+{
+  "sourceDataHead": "9037c38327d6b688e95ffab6543610a57c2f9081",
+  "freezeCount": 151,
+  "freezeSha256": "ac87b33211045624d33899639569d7665d9bcd42aa856eb88c6649b652b20100",
+  "nightlyPublished": false,
+  "corpusCopied": false,
+  "reason": "2026-10-06T08:46:09Z stage=publish status=failed exit=1; Calibration failed; publish aborted; followed by Waiting",
+  "calibrationFalseNegatives": {
+    "CB.US": [
+      "management"
+    ],
+    "DPZ.US": [
+      "management"
+    ]
+  },
+  "calibrationMissing": [
+    "GT.US",
+    "LCID.US"
+  ],
+  "approvalIds": [
+    "ALSN.US",
+    "FCN.US",
+    "FDJU.PA"
+  ]
+}

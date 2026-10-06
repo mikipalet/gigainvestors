@@ -1,5 +1,6 @@
 import type {BalanceSheet} from './latest-balance';
 import {ownerCash} from './owner-cash';
+import type {CurrentCommonBalance} from './types';
 import {earningsPath,modelValue} from './return-model';
 import { valueInvestmentHolding } from './investment-nav';
 import { parentShare } from "./parent-share";
@@ -71,7 +72,8 @@ function reinvestmentRate(years: Year[]): number | null {
   return investments.some(x => x === null) || profits.some(x => x === null) ? null : ratio(sum(present(investments)), sum(present(profits)));
 }
 
-export function valueCompany({ years, kind, industry, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, balance = null, priceHistory = null, qualityPass = false, investmentHolding = false, version = T.valuation.version }: {
+export function valueCompany({ years, kind, industry, bondYield, cyclical, currency = "", currentCommonBalance, cutoff = new Date().toISOString().slice(0,10), currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, balance = null, priceHistory = null, qualityPass = false, investmentHolding = false, version = T.valuation.version }: {
+  currentCommonBalance?:CurrentCommonBalance; cutoff?:string;
   industry?:string|null;
   investmentHolding?: boolean; qualityPass?: boolean; version?: 1 | 2; years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; balance?: BalanceSheet | null; priceHistory?: PriceHistory | null;
 }): { valuation: Valuation | null; reason: string | null } {
@@ -79,24 +81,36 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
   const ys = withZeroDefaults(years).sort((a, b) => a.fy - b.fy), latest = ys.at(-1);
   const fallback = latest && !(latest.dilutedShares && latest.dilutedShares > 0) && shareSource === 'yahoo-shares' && reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0;
   if (!latest || (!(latest.dilutedShares && latest.dilutedShares > 0) && !fallback)) return { valuation: null, reason: "no share count" };
+  // Keep interim book and its common denominator on the same reporting date.
+  // This changes the economic basis, never manufactures an independent vote.
+  const datedBalance=balance && balance.end>latest.end && balance.end<cutoff && balance.filed<cutoff && balance.filed>=balance.end && balance.currency===currency ? balance : null;
+  const observation=currentCommonBalance;
+  const reviewedBalance=kind!=='operating'&&observation&&observation.basis==='effective-common'
+    &&observation.currency===currency&&(observation.end>=latest.end||observation.authoritative===true)&&observation.end<cutoff
+    &&(!observation.filed||(observation.filed>=observation.end&&observation.filed<cutoff))
+    &&(!datedBalance||observation.end>=datedBalance.end||observation.authoritative===true)
+    &&/^https:\/\//.test(observation.source)&&[observation.commonEquity,observation.goodwillAndIntangibles,observation.shares].every(Number.isFinite)
+    &&observation.commonEquity>0&&observation.goodwillAndIntangibles>=0&&observation.shares>0?observation:null;
+  const documentedAds=latest.dilutedShareBasis==='listing-ADS';
   const taggedShares = latest.dilutedShares ?? 0;
-  const postSplit = !fallback && reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
+  const postSplit = !documentedAds && !reviewedBalance && !fallback && reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
     && Math.abs(currentShares / taggedShares - 1) > 0.1
     && postYearSplit(priceHistory, latest.end, currentShares / taggedShares);
-  const corrected = !fallback && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
+  const corrected = !documentedAds && !reviewedBalance && !fallback && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
     && Math.max(currentShares / taggedShares, taggedShares / currentShares) > 1.5 || postSplit;
-  const shares = (fallback || corrected ? currentShares : latest.dilutedShares)!;
+  const shares = reviewedBalance?.shares ?? (fallback || corrected ? currentShares : latest.dilutedShares)!;
   if (bondYield === null || !Number.isFinite(bondYield)) return { valuation: null, reason: "local government bond yield unavailable" };
   const discountRate = Math.max(T.valuation.minDiscount, bondYield + T.valuation.bondSpread);
   const assumptions: string[] = [...shareAssumptions];
+  if(reviewedBalance) assumptions.push(`Issuer ${reviewedBalance.basis} book and shares at ${reviewedBalance.end}; ${reviewedBalance.source}; annual weighted diluted history retained; independent confidence unchanged`);
   if (latest.edinetShares) assumptions.push(latest.edinetShares.reason);
   if (postSplit) assumptions.push('share count adjusted for post-year split/bonus');
   if (corrected) assumptions.push(`share count corrected to current ${shares}`);
-  const stock = balance && balance.end > latest.end && balance.currency === currency ? balance : null;
-  const currentBalance = stock ? {...latest,cashExclusion:undefined,clientAssets:null,currentAssets:null,currentLiabilities:null,shortTermDebt:null,...stock.values,tangibleEquity:undefined} : latest;
-  assumptions.push(stock ? `${stock.basis} balance sheet ${stock.end}, ${stock.filingDateAssumed?'assumed available (90-day fallback)':'filed'} ${stock.filed}; source: ${stock.source}` : `balance sheet ${latest.end}; latest annual report`);
-  if(ttm && (stock?.end ?? latest.end) < ttm.end) assumptions.push('balance sheet predates TTM; newer balance-sheet coverage unavailable');
-  const balanceSheet = {...(stock?.filingDateAssumed?{filingDateAssumed:true}:{}),end:stock?.end??latest.end,filed:stock?.filed??null,source:stock?.source??'annual fundamentals',basis:stock?.basis??'annual'};
+  const stock = reviewedBalance ? null : datedBalance;
+  const currentBalance = stock ? {...latest,cashExclusion:undefined,clientAssets:null,currentAssets:null,currentLiabilities:null,shortTermDebt:null,...stock.values,tangibleEquity:undefined} : reviewedBalance ? {...latest,end:reviewedBalance.end,equity:reviewedBalance.commonEquity,minorityInterest:0,preferredEquity:0,goodwill:reviewedBalance.goodwillAndIntangibles,intangibles:0,tangibleEquity:reviewedBalance.commonEquity-reviewedBalance.goodwillAndIntangibles} : latest;
+  if(!reviewedBalance) assumptions.push(stock ? `${stock.basis} balance sheet ${stock.end}, ${stock.filingDateAssumed?'assumed available (90-day fallback)':'filed'} ${stock.filed}; source: ${stock.source}` : `balance sheet ${latest.end}; latest annual report`);
+  if(ttm && (reviewedBalance?.end ?? stock?.end ?? latest.end) < ttm.end) assumptions.push('balance sheet predates TTM; newer balance-sheet coverage unavailable');
+  const balanceSheet = reviewedBalance ? {end:reviewedBalance.end,filed:reviewedBalance.filed??null,source:reviewedBalance.source,basis:reviewedBalance.basis} : {...(stock?.filingDateAssumed?{filingDateAssumed:true}:{}),end:stock?.end??latest.end,filed:stock?.filed??null,source:stock?.source??'annual fundamentals',basis:stock?.basis??'annual'};
   const priorRevenue = ys.find(y => y.fy === latest.fy - 3)?.revenue;
   const trailing = ttm && ttm.end > latest.end && (!ttm.currency || !currency || ttm.currency === currency) ? ttm : null;
   if (trailing?.sbc === null) assumptions.push('TTM stock compensation not reported; assumed zero');
@@ -108,10 +122,10 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
   assumptions.push(decliningRevenue ? "three-year revenue trend is negative; growth set to zero"
     : "growth set to zero when latest revenue is below three years earlier");
   if (!currency) assumptions.push("reporting currency not supplied");
-  const common = { version, ...(fallback ? { sharesSource: shareSource } : {}), currency, balanceSheet, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
+  const common = { version, ...(reviewedBalance?{shareBasis:"effective-common" as const}:documentedAds?{shareBasis:"listing-ADS" as const}:{}), ...(fallback ? { sharesSource: shareSource } : {}), currency, balanceSheet, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
 
   if (kind !== "operating") {
-    const book = version === 2 ? ratio(tangibleEquity(currentBalance), shares) : financialBvps({ ...currentBalance, dilutedShares: shares });
+    const book = reviewedBalance && version === 1 ? reviewedBalance.commonEquity / shares : version === 2 ? ratio(tangibleEquity(currentBalance), shares) : financialBvps({ ...currentBalance, dilutedShares: shares });
     if (book === null || book <= 0) return { valuation: null, reason: "book value not positive" };
     const returns = last(ys, 10).map(roe).filter((value): value is number => value !== null && (version === 1 || Number.isFinite(value)));
     if (returns.length < 5) return { valuation: null, reason: "insufficient return on tangible equity history" };

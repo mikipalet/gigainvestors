@@ -141,12 +141,23 @@ export interface Year {
   currentLiabilities: number | null;
   basicEps?: number | null;
   sharesOutstanding?: number | null;
+  dilutedShareBasis?:'listing-ADS';
   dilutedShares: number | null;
   marketCap: number | null; // year-end, reporting currency, when derivable
 }
 
+/** A dated issuer observation; confidence still requires independent share checks. */
+export interface CurrentCommonBalance {
+  end:string; currency:string; commonEquity:number; goodwillAndIntangibles:number;
+  shares:number; source:string; basis:'effective-common';
+  /** Explicit reviewed authority may supersede a newer provider observation. */
+  authoritative?:boolean; filed?:string;
+}
+
 export interface Fundamentals {
   balanceSheets?: import('./latest-balance').BalanceSheet[];
+  currentCommonBalance?:CurrentCommonBalance;
+
   qualityQuarters?: import('./quality-ltm').QualityQuarter[];
   id: Id;
   currency: string; // reporting currency
@@ -189,6 +200,7 @@ export interface TestOutcome {
 
 export interface Valuation {
   balanceSheet?: {end:string;filed:string|null;source:string;basis:string;filingDateAssumed?:boolean};
+  shareBasis?:'listing-ADS'|'effective-common';
   capitalReturns?: { excludingGoodwill: number | null; includingAcquisitions: number | null; observations: number; basis: "owner_earnings" };
   shareSources?: 2;
   method: "owner_earnings" | "book_value" | "nav";

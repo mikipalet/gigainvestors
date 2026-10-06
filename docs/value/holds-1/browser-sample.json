@@ -1,0 +1,53 @@
+{
+  "seed": 202610052,
+  "population": [
+    "BAYRY.US",
+    "CFRHF.US",
+    "CFRUY.US",
+    "CNSWF.US",
+    "DVCMY.US",
+    "DVDCF.US",
+    "FBAK.US",
+    "FLMNF.US",
+    "FLUIF.US",
+    "HEINY.US",
+    "HINKF.US",
+    "HKHHF.US",
+    "HKHHY.US",
+    "KNCRF.US",
+    "MTRBF.US",
+    "OGC.US",
+    "PEYUF.US",
+    "PHJMF.US",
+    "PIFYF.US",
+    "PUIGF.US",
+    "RTLLF.US",
+    "TRMLF.US",
+    "ZLDSF.US"
+  ],
+  "additions": [
+    "BAYRY.US",
+    "CFRHF.US",
+    "CFRUY.US",
+    "FLUIF.US",
+    "HEINY.US",
+    "KNCRF.US",
+    "MTRBF.US",
+    "OGC.US",
+    "TRMLF.US",
+    "ZLDSF.US"
+  ],
+  "layoutRechecks": [
+    "AGO.US",
+    "AMPY.US",
+    "TOST.US"
+  ],
+  "baseline": [
+    "AVBH.US",
+    "GLOB.US",
+    "NTES.US",
+    "BAM.TO",
+    "WEX.US",
+    "PEP.US"
+  ]
+}

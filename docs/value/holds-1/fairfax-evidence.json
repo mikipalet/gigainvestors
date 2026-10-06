@@ -1,0 +1,212 @@
+{
+  "decision": "KEEP FROZEN",
+  "asOf": "2026-10-05",
+  "primarySources": [
+    {
+      "url": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+      "sha256": "930465f1e4fe82e3f536f7d96d9c9e89c472b77c4c3b4932107b872d36ccb0d7",
+      "pages": {
+        "balanceSheet": 47,
+        "earnings": 48,
+        "cashFlow": 51,
+        "shares": 95,
+        "EPS": 99
+      }
+    },
+    {
+      "url": "https://www.fairfax.ca/wp-content/uploads/2026/07/FFH-2026-Q2-Interim-Report-Final-Bh5r66R43.pdf",
+      "sha256": "688046ec73e20577082e5c29f1fd1d3087fd8a3ac67d3f83525a1018973ee147",
+      "sharesPage": 19
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/915191/000110465926024781/0001104659-26-024781-index.htm",
+      "form": "40-F",
+      "filed": "2026-03-06",
+      "period": "2025-12-31"
+    }
+  ],
+  "annual2025": {
+    "subordinateGrossIssued": 21880169,
+    "treasury": 1772853,
+    "subordinateNet": 20107316,
+    "multipleVoting": 1548000,
+    "interestHeldThroughShareholder": 799230,
+    "effectiveCommonOutstanding": 20856086,
+    "weightedBasic": 21449822,
+    "weightedDiluted": 23084027,
+    "commonEquityUSDm": 26282.6,
+    "preferredEquityUSDm": 231.7,
+    "parentEquityUSDm": 26514.3,
+    "noncontrollingEquityUSDm": 4359.8,
+    "totalAssetsUSDm": 107787.7,
+    "goodwillAndIntangiblesUSDm": 8339.4,
+    "netEarningsParentUSDm": 4772.4,
+    "netEarningsCommonAfterPreferredAdjustmentsUSDm": 4935.0,
+    "ocfUSDm": 2419.4
+  },
+  "interim2026June": {
+    "subordinateNet": 19221125,
+    "multipleVoting": 1548000,
+    "interestHeldThroughShareholder": 799230,
+    "effectiveCommonOutstanding": 19969895,
+    "commonEquityUSDm": 26048.5,
+    "bookPerShareUSD": 1304.39
+  },
+  "cachedAnnualInputs": {
+    "end": "2025-12-31",
+    "currency": "USD",
+    "revenue": 30405400000,
+    "netIncome": 4855943408,
+    "ocf": 2992993000,
+    "equity": 26466048000,
+    "totalAssets": 107591543000,
+    "goodwill": 4230400000,
+    "intangibles": 4109000000,
+    "dilutedShares": 21509000,
+    "sharesOutstanding": 22324000
+  },
+  "cachedShareCheck": {
+    "status": "verified",
+    "shares": 22371876,
+    "observations": [
+      {
+        "source": "eodhd:current",
+        "shares": 19221125,
+        "date": "2026-10-03",
+        "basis": "issuer shares in listing units",
+        "corroborationOnly": false
+      },
+      {
+        "source": "eodhd:annual",
+        "shares": 21509000,
+        "date": "2025-12-31",
+        "basis": "issuer shares in listing units",
+        "corroborationOnly": false
+      },
+      {
+        "source": "eodhd:balance-annual",
+        "shares": 22324000,
+        "date": "2025-12-31",
+        "basis": "issuer shares in listing units",
+        "corroborationOnly": false
+      },
+      {
+        "source": "eodhd:quarterly",
+        "shares": 15602600,
+        "date": "2026-06-30",
+        "basis": "issuer shares in listing units",
+        "corroborationOnly": false
+      },
+      {
+        "source": "eodhd:balance-quarterly",
+        "shares": 15602606,
+        "date": "2026-06-30",
+        "basis": "issuer shares in listing units",
+        "corroborationOnly": false
+      },
+      {
+        "source": "yahoo",
+        "shares": 22371876,
+        "date": "2026-10-05",
+        "url": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/FRFHF?type=shares_out&period1=1756623832&period2=1791183832",
+        "basis": "issuer shares in listing units",
+        "corroborationOnly": false
+      },
+      {
+        "source": "implied-cap",
+        "shares": 20769124.23276078,
+        "date": "2026-10-02",
+        "basis": "issuer shares in listing units",
+        "corroborationOnly": true
+      }
+    ],
+    "reason": "Independent share counts agree within 2%",
+    "checkedAt": "2026-10-05T07:03:38.848Z",
+    "attempts": {
+      "eodhd": "Cached fundamentals: SharesStats, outstandingShares annual/quarterly, balance sheet shares",
+      "yahoo": "HTTP 200",
+      "yahooQuote": "sharesOutstanding/impliedSharesOutstanding: cached enrichment inspected; live quoteSummary requires Yahoo authentication",
+      "edinet": "Not an EDINET issuer",
+      "esef": "No ESEF issuer mapping",
+      "adr": "Not an ADR listing",
+      "sec": "HTTP 200",
+      "cover": "No cached raw cover page",
+      "impliedCap": "Inspected 121 monthly closes; cap/price observation is corroboration only (dates may differ), never an independent vote"
+    }
+  },
+  "cachedValuation": {
+    "version": 2,
+    "currency": "USD",
+    "discountRate": 0.1,
+    "terminalGrowth": 0.03,
+    "bondYield": 0.05283,
+    "shares": 19221125,
+    "assumptions": [
+      "share count adjusted for post-year split/bonus",
+      "share count corrected to current 19221125",
+      "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+      "growth set to zero when latest revenue is below three years earlier",
+      "sustainable tangible ROE: ten-year median capped at 25%; at least five finite observations",
+      "growth = sustainable ROE \u00d7 median dividend retention, capped at 6%; residual earnings distributable",
+      "expected return is the IRR of the same perpetual distributable earnings; the 4x book cap at the required rate is a fixed payout haircut",
+      "returns use net income divided by tangible equity",
+      "valuation uses tangible book value per share",
+      "cash and debt are included in book value",
+      "equity bond yield uses median net income",
+      "Local 10-year yield: EODHD latest (US10Y.GBOND, observed 2026-10-02; checked 2026-10-05)",
+      "Bond yield flags: second-source-confirmed"
+    ],
+    "financialReturn": {
+      "roe": 0.2451427578895204,
+      "retention": 0.8937520968283053,
+      "payout": 0.7552446561483147,
+      "cashPerShare": 174.6004774440913
+    },
+    "method": "book_value",
+    "normalized": 943.0586399079139,
+    "growth": 0.06,
+    "netCash": 0,
+    "perShare": {
+      "low": 3017.787647705325,
+      "mid": 3772.2345596316554,
+      "high": 5029.646079508872
+    },
+    "equityBondYield": 0.06105502900250272,
+    "bridge": [
+      {
+        "label": "tangible book value per share",
+        "value": 943.0586399079139
+      },
+      {
+        "label": "normalized return on tangible equity",
+        "value": 0.2451427578895204
+      },
+      {
+        "label": "justified price to book",
+        "value": 4
+      }
+    ],
+    "perShareTrading": {
+      "currency": "USD",
+      "fxRate": 1,
+      "low": 3017.787647705325,
+      "mid": 3772.2345596316554,
+      "high": 5029.646079508872
+    },
+    "bondSource": "EODHD latest",
+    "bondFlags": [
+      "second-source-confirmed"
+    ]
+  },
+  "priceBasis": {
+    "quote": "FRFHF OTC USD, subordinate voting share; not CAD FFH.TO",
+    "date": "2026-10-02",
+    "otcUSD": 1558.51,
+    "tsxCAD": 2219.23,
+    "bankOfCanadaCADperUSD": 1.4246,
+    "tsxConvertedUSD": 1557.7916608170715,
+    "differencePercent": -0.04609140672363621,
+    "fxSource": "https://www.bankofcanada.ca/valet/observations/FXUSDCAD/json?start_date=2026-10-01&end_date=2026-10-05",
+    "issuerListingSource": "https://www.fairfax.ca/investors/"
+  }
+}

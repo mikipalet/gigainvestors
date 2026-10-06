@@ -1,0 +1,7 @@
+{
+  "requestsSent": 0,
+  "usageIncrement": 0,
+  "blocked": "Existing global daily ceiling reached before HTTP; do not reset or bypass",
+  "evidenceRecordedAt": "2026-10-05T22:50:04.643734+00:00",
+  "requestWindow": "After 05:00 UTC on 2026-10-05; runtime UTC-hour guard enforced"
+}

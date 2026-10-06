@@ -1,0 +1,616 @@
+[
+  {
+    "id": "CFRUY.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2026-03-31",
+        "value": 22420000000,
+        "reference": 22420000000.0,
+        "source": "https://www.richemont.com/media/ud3bety3/richemont-fy26-annual-report.pdf",
+        "referenceBasis": "Annual consolidated revenue",
+        "reviewedEvidence": {
+          "period": "2026-03-31",
+          "currency": "EUR",
+          "value": 22420000000.0,
+          "source": "https://www.richemont.com/media/ud3bety3/richemont-fy26-annual-report.pdf",
+          "file": "CFRHF.txt",
+          "sha256": "ff43bc45c1277723d301547e6dff447d9896b03ad1318b87976c737c24aa1846",
+          "anchors": [
+            "22 420"
+          ],
+          "referenceBasis": "Annual consolidated revenue"
+        },
+        "inputProvenance": {
+          "source": "https://www.richemont.com/media/ud3bety3/richemont-fy26-annual-report.pdf#reviewed-original-annual-table",
+          "field": "issuer:ReviewedNetRevenue",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-04-01 to 2026-03-31",
+            "Currency EUR"
+          ]
+        },
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2026-03-31",
+        "value": 5896000000,
+        "reference": 5896000000.0,
+        "source": "https://www.richemont.com/media/ud3bety3/richemont-fy26-annual-report.pdf",
+        "referenceBasis": "Annual A-share equivalent diluted shares / 0.1 ordinary shares per ADR; depositary https://citiadr.factsetdigitalsolutions.com/stocks/profile.idms?cusip=204319107",
+        "reviewedEvidence": {
+          "period": "2026-03-31",
+          "currency": "shares",
+          "value": 5896000000.0,
+          "source": "https://www.richemont.com/media/ud3bety3/richemont-fy26-annual-report.pdf",
+          "file": "CFRHF.txt",
+          "sha256": "ff43bc45c1277723d301547e6dff447d9896b03ad1318b87976c737c24aa1846",
+          "anchors": [
+            "589.6"
+          ],
+          "referenceBasis": "Annual A-share equivalent diluted shares / 0.1 ordinary shares per ADR; depositary https://citiadr.factsetdigitalsolutions.com/stocks/profile.idms?cusip=204319107"
+        },
+        "inputProvenance": {
+          "source": "https://www.richemont.com/media/ud3bety3/richemont-fy26-annual-report.pdf#reviewed-original-annual-table",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2025-04-01 to 2026-03-31",
+            "Weighted average diluted shares",
+            "0.1 ordinary shares per ADS; https://citiadr.factsetdigitalsolutions.com/stocks/profile.idms?cusip=204319107"
+          ]
+        },
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-10-02",
+        "value": 20.86,
+        "reference": 20.860000610351562,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/CFRUY?period1=1790640000&period2=1791072000&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "sourceStrategy": "hash-bound original annual tables",
+    "passed": true
+  },
+  {
+    "id": "DVDCF.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 3051100000,
+        "reference": 3051200000.0,
+        "source": "https://www.camparigroup.com/sites/default/files/downloads/01.1%20Campari%20Group_Annual%20Report%20for%20the%20year%20ended%2031%20December%202025.pdf",
+        "referenceBasis": "Annual consolidated revenue",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "EUR",
+          "value": 3051200000.0,
+          "source": "https://www.camparigroup.com/sites/default/files/downloads/01.1%20Campari%20Group_Annual%20Report%20for%20the%20year%20ended%2031%20December%202025.pdf",
+          "file": "DVCMY.txt",
+          "sha256": "2d29dd83171461d4ae57b58788c1fe927efaa21a8983ada783a16fcad6ad3d73",
+          "anchors": [
+            "3,051.2"
+          ],
+          "referenceBasis": "Annual consolidated revenue"
+        },
+        "inputProvenance": {
+          "source": "raw/eodhd/DVDCF.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 1198785300,
+        "reference": 1259199529,
+        "source": "https://www.camparigroup.com/sites/default/files/downloads/01.1%20Campari%20Group_Annual%20Report%20for%20the%20year%20ended%2031%20December%202025.pdf",
+        "referenceBasis": "Annual weighted diluted shares including share awards and convertible bond dilution",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "shares",
+          "value": 1259199529,
+          "source": "https://www.camparigroup.com/sites/default/files/downloads/01.1%20Campari%20Group_Annual%20Report%20for%20the%20year%20ended%2031%20December%202025.pdf",
+          "file": "DVCMY.txt",
+          "sha256": "2d29dd83171461d4ae57b58788c1fe927efaa21a8983ada783a16fcad6ad3d73",
+          "anchors": [
+            "Weighted average of ordinary shares outstanding net of dilution",
+            "1,259,199,529"
+          ],
+          "referenceBasis": "Annual weighted diluted shares including share awards and convertible bond dilution"
+        },
+        "inputProvenance": {
+          "source": "raw/eodhd/DVDCF.US.json#2025-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        },
+        "match": false
+      },
+      {
+        "field": "price",
+        "date": "2026-10-02",
+        "value": 6.88,
+        "reference": 6.880000114440918,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/DVDCF?period1=1790640000&period2=1791072000&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "sourceStrategy": "hash-bound original annual tables",
+    "passed": false
+  },
+  {
+    "id": "FLMNF.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 2434423871,
+        "reference": 2435336000,
+        "source": "https://www.fielmann-group.com/fileadmin/fielmann/Dokumente/Publikationen/Geschaeftsberichte/EN/Fielmann_Annual_Report_2025.pdf",
+        "referenceBasis": "Annual consolidated revenue",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "EUR",
+          "value": 2435336000,
+          "source": "https://www.fielmann-group.com/fileadmin/fielmann/Dokumente/Publikationen/Geschaeftsberichte/EN/Fielmann_Annual_Report_2025.pdf",
+          "file": "FLMNF.txt",
+          "sha256": "94120f27c0078db4cc7a526f92493f0b94be3aea010bb5d4d6d5857b26367ef0",
+          "anchors": [
+            "Total consolidated sales",
+            "2,435,336"
+          ],
+          "referenceBasis": "Annual consolidated revenue"
+        },
+        "inputProvenance": {
+          "source": "raw/eodhd/FLMNF.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 83958000,
+        "reference": 83958000,
+        "source": "https://www.fielmann-group.com/fileadmin/fielmann/Dokumente/Publikationen/Geschaeftsberichte/EN/Fielmann_Annual_Report_2025.pdf",
+        "referenceBasis": "Annual basic equals diluted shares, report units thousands",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "shares",
+          "value": 83958000,
+          "source": "https://www.fielmann-group.com/fileadmin/fielmann/Dokumente/Publikationen/Geschaeftsberichte/EN/Fielmann_Annual_Report_2025.pdf",
+          "file": "FLMNF.txt",
+          "sha256": "94120f27c0078db4cc7a526f92493f0b94be3aea010bb5d4d6d5857b26367ef0",
+          "anchors": [
+            "Number of shares in thousands",
+            "83,958",
+            "There was no dilution of earnings"
+          ],
+          "referenceBasis": "Annual basic equals diluted shares, report units thousands"
+        },
+        "inputProvenance": {
+          "source": "raw/eodhd/FLMNF.US.json#2025-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        },
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-10-02",
+        "value": 42.5,
+        "reference": 42.5,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/FLMNF?period1=1790640000&period2=1791072000&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "sourceStrategy": "hash-bound original annual tables",
+    "passed": true
+  },
+  {
+    "id": "HKHHY.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 28753000000,
+        "reference": 28753000000.0,
+        "source": "https://www.heinekenholding.com/sites/heinekenholding-v2/files/2026-02/heineken-holding-nv-annual-report-2025-FINAL.pdf",
+        "referenceBasis": "Net revenue excluding excise duties",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "EUR",
+          "value": 28753000000.0,
+          "source": "https://www.heinekenholding.com/sites/heinekenholding-v2/files/2026-02/heineken-holding-nv-annual-report-2025-FINAL.pdf",
+          "file": "HKHHF.txt",
+          "sha256": "1fcab9717cd5d63f430052a5485006220f9d20fb84eba8a6136a0b5a457213cf",
+          "anchors": [
+            "28,753"
+          ],
+          "referenceBasis": "Net revenue excluding excise duties"
+        },
+        "inputProvenance": {
+          "source": "https://www.heinekenholding.com/sites/heinekenholding-v2/files/2026-02/heineken-holding-nv-annual-report-2025-FINAL.pdf#reviewed-original-annual-table",
+          "field": "issuer:ReviewedNetRevenue",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Currency EUR"
+          ]
+        },
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 562222068,
+        "reference": 562222068,
+        "source": "https://www.heinekenholding.com/sites/heinekenholding-v2/files/2026-02/heineken-holding-nv-annual-report-2025-FINAL.pdf",
+        "referenceBasis": "Annual diluted ordinary shares \u00d7 2 ADRs per ordinary; https://www.heinekenholding.com/investors/share-information/american-depository-receipts",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "shares",
+          "value": 562222068,
+          "source": "https://www.heinekenholding.com/sites/heinekenholding-v2/files/2026-02/heineken-holding-nv-annual-report-2025-FINAL.pdf",
+          "file": "HKHHF.txt",
+          "sha256": "1fcab9717cd5d63f430052a5485006220f9d20fb84eba8a6136a0b5a457213cf",
+          "anchors": [
+            "281,111,034"
+          ],
+          "referenceBasis": "Annual diluted ordinary shares \u00d7 2 ADRs per ordinary; https://www.heinekenholding.com/investors/share-information/american-depository-receipts"
+        },
+        "inputProvenance": {
+          "source": "https://www.heinekenholding.com/sites/heinekenholding-v2/files/2026-02/heineken-holding-nv-annual-report-2025-FINAL.pdf#reviewed-original-annual-table",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "0.5 ordinary shares per ADS; https://www.heinekenholding.com/investors/share-information/american-depository-receipts"
+          ]
+        },
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-10-02",
+        "value": 36.86,
+        "reference": 36.86000061035156,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/HKHHY?period1=1790640000&period2=1791072000&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "sourceStrategy": "hash-bound original annual tables",
+    "passed": true
+  },
+  {
+    "id": "KNCRF.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 4186231505,
+        "reference": 4187800000,
+        "source": "https://investors.konecranes.com/sites/konecranes/files/Annual_report_2025/governance_sustainability_and_financial_review_2025.pdf",
+        "referenceBasis": "Annual reported consolidated revenue",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "EUR",
+          "value": 4187800000,
+          "source": "https://investors.konecranes.com/sites/konecranes/files/Annual_report_2025/governance_sustainability_and_financial_review_2025.pdf",
+          "file": "KNCRF.txt",
+          "sha256": "d84bb5a184c86bd8339afe111dbc8b8559c82ea7ce46fedfb970e4051dc52e9c",
+          "anchors": [
+            "4,187.8"
+          ],
+          "referenceBasis": "Annual reported consolidated revenue"
+        },
+        "inputProvenance": {
+          "source": "raw/eodhd/KNCRF.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 238653000,
+        "reference": 238653000,
+        "source": "https://investors.konecranes.com/sites/konecranes/files/Annual_report_2025/governance_sustainability_and_financial_review_2025.pdf",
+        "referenceBasis": "Annual weighted-average diluted shares multiplied by March 2026 3-for-1 split; https://investors.konecranes.com/share-split",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "shares",
+          "value": 238653000,
+          "source": "https://investors.konecranes.com/sites/konecranes/files/Annual_report_2025/governance_sustainability_and_financial_review_2025.pdf",
+          "file": "KNCRF.txt",
+          "sha256": "d84bb5a184c86bd8339afe111dbc8b8559c82ea7ce46fedfb970e4051dc52e9c",
+          "anchors": [
+            "79,551",
+            "outstanding, diluted (1,000 pcs)"
+          ],
+          "referenceBasis": "Annual weighted-average diluted shares multiplied by March 2026 3-for-1 split; https://investors.konecranes.com/share-split"
+        },
+        "inputProvenance": {
+          "source": "https://investors.konecranes.com/sites/konecranes/files/Annual_report_2025/governance_sustainability_and_financial_review_2025.pdf#reviewed-original-annual-table",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Post-basis split factor 3; current listing units; basis 2025-12-31; https://investors.konecranes.com/share-split"
+          ]
+        },
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-10-02",
+        "value": 37.95,
+        "reference": 37.95000076293945,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/KNCRF?period1=1790640000&period2=1791072000&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "sourceStrategy": "hash-bound original annual tables",
+    "passed": true
+  },
+  {
+    "id": "OGC.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 1893200000,
+        "reference": 1893200000.0,
+        "source": "https://assets.oceanagold.com/documents/Reports/Quarterly-Results/2025/Q4/OceanaGold-FS-2025-Q4-FINAL.pdf",
+        "referenceBasis": "Annual consolidated revenue",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "USD",
+          "value": 1893200000.0,
+          "source": "https://assets.oceanagold.com/documents/Reports/Quarterly-Results/2025/Q4/OceanaGold-FS-2025-Q4-FINAL.pdf",
+          "file": "OGC.txt",
+          "sha256": "fe1a194d7c235b54a6200aa9ea36aa41e1da9f08092647e12ad13135efc4110e",
+          "anchors": [
+            "1,893.2"
+          ],
+          "referenceBasis": "Annual consolidated revenue"
+        },
+        "inputProvenance": {
+          "source": "https://assets.oceanagold.com/documents/Reports/Quarterly-Results/2025/Q4/OceanaGold-FS-2025-Q4-FINAL.pdf#reviewed-original-annual-table",
+          "field": "issuer:ReviewedNetRevenue",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Currency USD"
+          ]
+        },
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 233500000,
+        "reference": 233500000.0,
+        "source": "https://assets.oceanagold.com/documents/Reports/Quarterly-Results/2025/Q4/OceanaGold-FS-2025-Q4-FINAL.pdf",
+        "referenceBasis": "Annual weighted diluted shares; 2025 one-for-three consolidation already reflected",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "shares",
+          "value": 233500000.0,
+          "source": "https://assets.oceanagold.com/documents/Reports/Quarterly-Results/2025/Q4/OceanaGold-FS-2025-Q4-FINAL.pdf",
+          "file": "OGC.txt",
+          "sha256": "fe1a194d7c235b54a6200aa9ea36aa41e1da9f08092647e12ad13135efc4110e",
+          "anchors": [
+            "233.5"
+          ],
+          "referenceBasis": "Annual weighted diluted shares; 2025 one-for-three consolidation already reflected"
+        },
+        "inputProvenance": {
+          "source": "https://assets.oceanagold.com/documents/Reports/Quarterly-Results/2025/Q4/OceanaGold-FS-2025-Q4-FINAL.pdf#reviewed-original-annual-table",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-10-02",
+        "value": 27.11,
+        "reference": 27.110000610351562,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/OGC?period1=1790640000&period2=1791072000&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "sourceStrategy": "hash-bound original annual tables",
+    "passed": true
+  },
+  {
+    "id": "PUIGF.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 5042026000,
+        "reference": 5042026000,
+        "source": "https://uploads.puig.com/uploads/PUIG_BRANDS_Consolidated_Annual_Accounts_2025_eng_33d2988396.pdf",
+        "referenceBasis": "Annual consolidated revenue",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "EUR",
+          "value": 5042026000,
+          "source": "https://uploads.puig.com/uploads/PUIG_BRANDS_Consolidated_Annual_Accounts_2025_eng_33d2988396.pdf",
+          "file": "PUIGF.txt",
+          "sha256": "39fabea919c7f81c88268954cb5cf9c06254a653a5f094ce0089f6905238d2e7",
+          "anchors": [
+            "5,042,026"
+          ],
+          "referenceBasis": "Annual consolidated revenue"
+        },
+        "inputProvenance": {
+          "source": "raw/eodhd/PUIGF.US.json#2025-12-31",
+          "field": "revenue",
+          "method": "reported"
+        },
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 563300400,
+        "reference": 563300359,
+        "source": "https://uploads.puig.com/uploads/PUIG_BRANDS_Consolidated_Annual_Accounts_2025_eng_33d2988396.pdf",
+        "referenceBasis": "Annual weighted shares less treasury shares, basic equals diluted",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "shares",
+          "value": 563300359,
+          "source": "https://uploads.puig.com/uploads/PUIG_BRANDS_Consolidated_Annual_Accounts_2025_eng_33d2988396.pdf",
+          "file": "PUIGF.txt",
+          "sha256": "39fabea919c7f81c88268954cb5cf9c06254a653a5f094ce0089f6905238d2e7",
+          "anchors": [
+            "563,300,359",
+            "There are no differences between diluted earnings per share and basic"
+          ],
+          "referenceBasis": "Annual weighted shares less treasury shares, basic equals diluted"
+        },
+        "inputProvenance": {
+          "source": "raw/eodhd/PUIGF.US.json#2025-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        },
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-10-02",
+        "value": 21.25,
+        "reference": 21.25,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/PUIGF?period1=1790640000&period2=1791072000&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "sourceStrategy": "hash-bound original annual tables",
+    "passed": true
+  },
+  {
+    "id": "ZLDSF.US",
+    "checks": [
+      {
+        "field": "revenue",
+        "period": "2025-12-31",
+        "value": 12346100000,
+        "reference": 12346100000,
+        "source": "https://corporate.zalando.com/public/media-download/zalando-se_annual-report-2025_eng_261003_s.pdf?VersionId=NigyLbpXizEX3JRpWbGFjm2b6HWXnsnW",
+        "referenceBasis": "Annual reported consolidated revenue",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "EUR",
+          "value": 12346100000,
+          "source": "https://corporate.zalando.com/public/media-download/zalando-se_annual-report-2025_eng_261003_s.pdf?VersionId=NigyLbpXizEX3JRpWbGFjm2b6HWXnsnW",
+          "file": "ZLDSF.txt",
+          "sha256": "0111c045e31961c9ce2488e1b6efe2524ae1b42b299fcc3d0c4fc2e727401cd3",
+          "anchors": [
+            "12,346.1"
+          ],
+          "referenceBasis": "Annual reported consolidated revenue"
+        },
+        "inputProvenance": {
+          "source": "https://corporate.zalando.com/public/media-download/zalando-se_annual-report-2025_eng_261003_s.pdf?VersionId=NigyLbpXizEX3JRpWbGFjm2b6HWXnsnW#reviewed-original-annual-table",
+          "field": "issuer:ReviewedNetRevenue",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Currency EUR"
+          ]
+        },
+        "match": true
+      },
+      {
+        "field": "dilutedShares",
+        "period": "2025-12-31",
+        "value": 263200000,
+        "reference": 263200000,
+        "source": "https://corporate.zalando.com/public/media-download/zalando-se_annual-report-2025_eng_261003_s.pdf?VersionId=NigyLbpXizEX3JRpWbGFjm2b6HWXnsnW",
+        "referenceBasis": "Annual weighted-average diluted shares",
+        "reviewedEvidence": {
+          "period": "2025-12-31",
+          "currency": "shares",
+          "value": 263200000,
+          "source": "https://corporate.zalando.com/public/media-download/zalando-se_annual-report-2025_eng_261003_s.pdf?VersionId=NigyLbpXizEX3JRpWbGFjm2b6HWXnsnW",
+          "file": "ZLDSF.txt",
+          "sha256": "0111c045e31961c9ce2488e1b6efe2524ae1b42b299fcc3d0c4fc2e727401cd3",
+          "anchors": [
+            "Diluted weighted average number of shares (in millions)",
+            "263.2"
+          ],
+          "referenceBasis": "Annual weighted-average diluted shares"
+        },
+        "inputProvenance": {
+          "source": "https://corporate.zalando.com/public/media-download/zalando-se_annual-report-2025_eng_261003_s.pdf?VersionId=NigyLbpXizEX3JRpWbGFjm2b6HWXnsnW#reviewed-original-annual-table",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "match": true
+      },
+      {
+        "field": "price",
+        "date": "2026-10-02",
+        "value": 26.4,
+        "reference": 26.399999618530273,
+        "currency": "USD",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/ZLDSF?period1=1790640000&period2=1791072000&interval=1d",
+        "inputCurrency": "USD",
+        "currencyMatch": true,
+        "match": true
+      }
+    ],
+    "errors": [],
+    "sourceStrategy": "hash-bound original annual tables",
+    "passed": true
+  }
+]

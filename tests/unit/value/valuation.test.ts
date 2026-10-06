@@ -121,3 +121,8 @@ it.each([0.25, 0.35, 0.5])("uses the supplied %s margin at the exact boundary", 
   expect(priceTest({ valuation, price: 100 * (1 - requiredMos), requiredMos }).result).toBe("pass");
   expect(priceTest({ valuation, price: 100 * (1 - requiredMos) + 0.01, requiredMos }).result).toBe("unclear");
 });
+it('preserves documented ADS annual units when vendor current-share units are unknown',()=>{
+ const years=makeYears().map(y=>({...y,dilutedShares:40,dilutedShareBasis:'listing-ADS' as const}));
+ const result=valueCompany({years,kind:'operating',bondYield:.04,cyclical:false,currentShares:10,reportedShares:true});
+ expect(result.valuation?.shares).toBe(40);expect((result.valuation as any)?.shareBasis).toBe('listing-ADS');
+});

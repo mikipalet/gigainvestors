@@ -1,0 +1,9 @@
+{
+  "liveCorpusConstraintIncident": "First full-suite invocation omitted VALUE_CORPUS_DIR. Existing publish-test helpers created and removed temporary directories beneath default ~/value-corpus. Subsequent runs explicitly use ~/data/value-holds/test-corpus. No archive/freeze bytes changed in the 6249-file hash comparison; the first invocation violated the read-only constraint.",
+  "eodhdRequestsSent": 0,
+  "publicationExecuted": false,
+  "dailyRunnerLockTouched": false,
+  "subagentsUsed": false,
+  "pushExecuted": false,
+  "diskFloorGiB": 4
+}

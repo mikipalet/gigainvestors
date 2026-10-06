@@ -1,0 +1,114 @@
+[
+  {
+    "id": "CFRUY.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "7b7deb1b8b52f40d3e476d4db20253a8d76b6a1ad303c5b846d19da9b00425ae",
+    "finalSha256": "5a5b348f3a97224ddac207ebfc6b74ce842546bc1a8bbc08263dbc059a91345f"
+  },
+  {
+    "id": "DVDCF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "d4865bf90a2576b8cb2e59536d5703786cb731301711c36b83f48b5293e8040a",
+    "finalSha256": "2807fa261fb7709b94cc070288929477f25f1e5c916dd2e4f6ef661c0a6314a9"
+  },
+  {
+    "id": "FLMNF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "ed6b530f90fd59b1bec36d588ae28779b8cbc7a58492d7e54bcb01f3581b5c02",
+    "finalSha256": "58c37646b6138efbd3744506e9981be1c0f337eb0f1383da4506f57ab3cf4b60"
+  },
+  {
+    "id": "FLUIF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "cce91156ea22bbce7e0ac2385a73798e3c0c7991d3b315dc8fe8b4c4616324f3",
+    "finalSha256": "475db810806f9d94fc9d200e3354a2fca727c7f6ebe9ec01875685efa381dc95"
+  },
+  {
+    "id": "HEINY.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "a4253749c6c875c842e5a9047799d2ab0030d737abf7f30f646072c565f5b9db",
+    "finalSha256": "b60672636c0bccdb589d544243ed3a79e331e665ec9d30e3e8211d0401cf6266"
+  },
+  {
+    "id": "HKHHF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "811e568e1279c751791ca04a2ce4ba442249b0e9e53e655003119acd877989dd",
+    "finalSha256": "082990baa89b5805a17d7f68cb508cadf54b32f37cfad76cbdd82cd7550564d7"
+  },
+  {
+    "id": "HKHHY.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "1f69c92bb1e438350fe25f41efd7bcbea3562dbe9bc9f3e97a464cfda19eab63",
+    "finalSha256": "de189d88e60e7cd31e65328cf00ab4da2c3fe3a22792c77d3f0bd26d67eb2f3d"
+  },
+  {
+    "id": "KNCRF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "52123680d7c1055d4c53b0ba466e8874d04412d7f027ac471250a41c35ced89f",
+    "finalSha256": "5d9eadb1f70a9dc692d08b2abf10574df2265384271a91c2cb267195acbcb055"
+  },
+  {
+    "id": "MTRBF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "ae5d8fc46d600101dae6ce7eb2a6c332110f909d0824e610afc209c093b78c50",
+    "finalSha256": "522bf74cbcffd31edaa9670bff0e804136f45a396f587c78a0e466fa4392f3cd"
+  },
+  {
+    "id": "OGC.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "108d6d29dd970b65531d51c17023939d7afdf23842a887fd17ee8f5f61fb8f33",
+    "finalSha256": "bb08029f36475d932ec45486325a3048ae4c5ea979c94382df4d435ba728f834"
+  },
+  {
+    "id": "PEYUF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "ccc32d873d77a5e8c4327fc14ede10d2a0dba58a6672fb563c3b22d00d1369a8",
+    "finalSha256": "4bd43f404bbbe3b1b28580a1df34a57197321b35d1c01f10483995394567ae40"
+  },
+  {
+    "id": "PHJMF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "4552f7c339c4d97ec7c0b7d37f6dc917a3cbc17ba6f1a02420b8fe96ab41bc80",
+    "finalSha256": "7dadf6c3f4d4f0fc4ea5ef910e83c97eae913c98e1276af58049e7bf4e902906"
+  },
+  {
+    "id": "PIFYF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "49983b77ca03fba51e9cc75cfab7ca7d8ac3d387ecfc7e7dc875d45807be67ed",
+    "finalSha256": "8159328186e4c880980184be0bf5573d4cc92aea625ab8fb8119f6dce8face5c"
+  },
+  {
+    "id": "PUIGF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "b443e9a387589b9c719d7effe01fe9e20d02ca84f8d7cc165747c39a68c0b9c0",
+    "finalSha256": "b98e3e058a0d5314a1459e536d7729e97050fb8bf37eef67e709537f6e521656"
+  },
+  {
+    "id": "RTLLF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "2c886efa0b83dd051391ae5b5bd072b829b1d3f4c33e2e2e2affa7c00a8ee75f",
+    "finalSha256": "45e742bf04c631f3d483f3a564008594aa5a7c193c64b9e858b122be48154f74"
+  },
+  {
+    "id": "ZLDSF.US",
+    "unchangedFromFullBrowserSweep": false,
+    "retestRequired": true,
+    "beforeSha256": "45b48ab3935cc1d09c6b986b6cb851eb83e64700071292178bd332438b6a6495",
+    "finalSha256": "6ebee8b9fba0fb3fb7f5c2e72f8536e088ec6de29b37c3f933b119ef4aaded83"
+  }
+]

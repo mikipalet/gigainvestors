@@ -1,0 +1,34 @@
+{
+  "status": "NOT",
+  "unitFiles": 244,
+  "unitPassed": 2381,
+  "unitSkipped": 1,
+  "unitFailures": 0,
+  "unitExit": 0,
+  "productionBuildExit": 0,
+  "typecheckExit": 143,
+  "ordinaryPublishOut": "blocked by failed nightly baseline",
+  "realPublishHarness": "not run",
+  "browserGate": "not run",
+  "corpusCopied": false,
+  "cleanupRemoved": [
+    "/Users/miki/data/int10/test-home",
+    "/Users/miki/data/int10/tmp",
+    "/Users/miki/data/int10/build"
+  ],
+  "corpusCopiesRemaining": 0,
+  "minimumFreeBytes": {
+    "/": 6025863168,
+    "/Users/miki/data": 150294065152
+  },
+  "finalFreeBytes": {
+    "/": 6189998080,
+    "/Users/miki/data": 150680518656
+  },
+  "approvedVerdicts": [
+    "ALSN.US",
+    "FCN.US",
+    "FDJU.PA"
+  ],
+  "typecheckNote": "Additional standalone invocation interrupted; production build TypeScript completed successfully"
+}

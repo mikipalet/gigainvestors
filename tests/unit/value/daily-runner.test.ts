@@ -26,6 +26,8 @@ ${Object.entries(codes).map(([s,n])=>`${s}) exit ${n};;`).join('\n')}
 esac
 exit 0
 `,{mode:0o755});
+ // Runner ordering tests use a stable disk observation; disk-pressure policy is tested separately.
+ writeFileSync(path.join(root,'bin/df'),'#!/usr/bin/env bash\nprintf \"Filesystem 1024-blocks Used Available Capacity Mounted\\nfixture 20000000 1000000 19000000 5%% /\\n\"\n',{mode:0o755});
  writeFileSync(path.join(root,'bin/date'),'#!/usr/bin/env bash\necho 2026-10-05\n',{mode:0o755});
  let code=0;
  try{execFileSync('bash',[path.join(root,'scripts/value/run-daily.sh'),'--once'],{env:{...process.env,PATH:`${root}/bin:${process.env.PATH}`,VALUE_CORPUS_DIR:path.join(root,'corpus'),TRACE:path.join(root,'trace'),STORY_DISK_LEDGER:'disk-budget-old-worktree.json'},stdio:'pipe'});}catch(e){code=(e as {status:number}).status;}

@@ -1,0 +1,1031 @@
+[
+  {
+    "id": "BAYRY.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "BAYRY",
+        "url": "https://reports.bayer.com/annual-report-2025/en/_assets/downloads/entire-bayer-ar25.pdf",
+        "sha256": "0af4a9d19fd9d4cba72c1ec062802199873f2379f84112dc2db5dc9605ce769b",
+        "pdfPages": {
+          "letter": [
+            6,
+            10
+          ],
+          "business": [
+            28,
+            55
+          ],
+          "mdna": [
+            56,
+            81
+          ],
+          "risk": [
+            84,
+            101
+          ],
+          "notes": [
+            269,
+            363
+          ],
+          "auditor": [
+            365,
+            373
+          ],
+          "compensation": [
+            386,
+            418
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "7e5ee54a71bd615c8e864b81069392497a5d7399da9eeab8f4d9e3de9a05a9ef",
+      "business": "97ce2234363fcd64a3c40c9c4e1b9b1f7edfa515fda163b6f33e1c52c4732572",
+      "mdna": "e8f17fea7872d6cb10712a589999b2f2348b430d9b804ece349d716b82b4f138",
+      "risk": "1ff8401920b35f3cc862a7be01f20a3d042d4e20d365367e764b051709db4643",
+      "notes": "cbe95e264a81d45ebceda455bf5f10b8710da59af411914bec92cc2ab4db3d22",
+      "auditor": "7c2d57ac74f271ad76ca5cabe6490ef4ca1aecd2c0127fcb58cd5519d4b2eb7e",
+      "compensation": "890283b545e925e24605a501e64990f3ba8f30c56bf65eee0024f3c249060ee8"
+    }
+  },
+  {
+    "id": "CFRHF.US",
+    "reviewedFullAnnual": true,
+    "period": "2026-03-31",
+    "sources": [
+      {
+        "document": "CFRHF",
+        "url": "https://www.richemont.com/media/ud3bety3/richemont-fy26-annual-report.pdf",
+        "sha256": "765a5cb07503df81c4022ab099d4558ae3a8702de8694a829cbc89da62da4722",
+        "pdfPages": {
+          "letter": [
+            4,
+            5
+          ],
+          "business": [
+            6,
+            35
+          ],
+          "mdna": [
+            36,
+            43
+          ],
+          "notes": [
+            88,
+            140
+          ],
+          "risk": [
+            127,
+            134
+          ],
+          "compensation": [
+            66,
+            82
+          ],
+          "auditor": [
+            141,
+            144
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "8467ed25ad1bb8fe7432d3375b66f395565a9e5cdbbc9374da192acbc9514ee3",
+      "business": "d686e658e4046a4317ab1f73c13e84eba4e9bdfd04d7520fa7075c4742a4ed98",
+      "mdna": "2ccdd25f6f8adae43f75d105c7fa2f50d36bf446f7e32b1b7106b0e556192012",
+      "notes": "0a637040513b1bdbb2498b9f1942830d700b9959216bea819308ed5b43a819de",
+      "risk": "2f25bf3a4c44840ef843bbec07a51db51066a22f730def7f0fa51f5f0fa3fd9c",
+      "compensation": "b68d90f7e23010de899d4123440205a4c2bf21c765599d5af2e0af5da5229a35",
+      "auditor": "c2371c6ceaabcb0cbd44692bc91a816a693d3d3301d70510229d09737f9e00fd"
+    }
+  },
+  {
+    "id": "CFRUY.US",
+    "reviewedFullAnnual": true,
+    "period": "2026-03-31",
+    "sources": [
+      {
+        "document": "CFRHF",
+        "url": "https://www.richemont.com/media/ud3bety3/richemont-fy26-annual-report.pdf",
+        "sha256": "765a5cb07503df81c4022ab099d4558ae3a8702de8694a829cbc89da62da4722",
+        "pdfPages": {
+          "letter": [
+            4,
+            5
+          ],
+          "business": [
+            6,
+            35
+          ],
+          "mdna": [
+            36,
+            43
+          ],
+          "notes": [
+            88,
+            140
+          ],
+          "risk": [
+            127,
+            134
+          ],
+          "compensation": [
+            66,
+            82
+          ],
+          "auditor": [
+            141,
+            144
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "8467ed25ad1bb8fe7432d3375b66f395565a9e5cdbbc9374da192acbc9514ee3",
+      "business": "d686e658e4046a4317ab1f73c13e84eba4e9bdfd04d7520fa7075c4742a4ed98",
+      "mdna": "2ccdd25f6f8adae43f75d105c7fa2f50d36bf446f7e32b1b7106b0e556192012",
+      "notes": "0a637040513b1bdbb2498b9f1942830d700b9959216bea819308ed5b43a819de",
+      "risk": "2f25bf3a4c44840ef843bbec07a51db51066a22f730def7f0fa51f5f0fa3fd9c",
+      "compensation": "b68d90f7e23010de899d4123440205a4c2bf21c765599d5af2e0af5da5229a35",
+      "auditor": "c2371c6ceaabcb0cbd44692bc91a816a693d3d3301d70510229d09737f9e00fd"
+    }
+  },
+  {
+    "id": "COCXF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "COCXF",
+        "url": "https://www.lindt-spruengli.com/amfile/file/download/id/10512/file/Integrated-Annual-Report-2025.pdf",
+        "sha256": "0fc98f344e306e2ac93de9e4dc66b80c2790b087aa5eae12aaab97fec7614d64",
+        "pdfPages": {
+          "letter": [
+            5,
+            8
+          ],
+          "business": [
+            9,
+            24
+          ],
+          "mdna": [
+            13,
+            21
+          ],
+          "notes": [
+            176,
+            213
+          ],
+          "risk": [
+            186,
+            189
+          ],
+          "auditor": [
+            214,
+            218
+          ],
+          "compensation": [
+            143,
+            167
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "f30f525bf3460bdac7385801ff18ca32663038af133fea1aaf2ec0a7f7313137",
+      "business": "b8c4b65322a2e691ac419d8a94dddb88ee66be3d00f7d7383d87651fdeb5acd7",
+      "mdna": "11b04ad224175d50a35c01a52a93d938b37dced950df3d870be666d5cb5039ee",
+      "notes": "114eb576e5c766a4a651471b468b3a6b60ac2e60d6c4e00d10eb56d72784e1c9",
+      "risk": "4d0d59d000bfc009e94f19cfac8e97227d941cea1962e5dd04f054cf01034ac2",
+      "auditor": "ea4537428af3a24b7f20b02ad590eb56dd5b12befab2a456038b7958a788d35e",
+      "compensation": "6115c01cdef2e8d70db662e7a073e6729e3409269100666d2cb2a9720511cfea"
+    }
+  },
+  {
+    "id": "FLMNF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "FLMNF",
+        "url": "https://www.fielmann-group.com/fileadmin/fielmann/Dokumente/Publikationen/Geschaeftsberichte/EN/Fielmann_Annual_Report_2025.pdf",
+        "sha256": "a1690a39fcdcf7db08a8a55e153517380214a7030b5f520e2a5138557a2bcd8d",
+        "pdfPages": {
+          "letter": [
+            6,
+            9
+          ],
+          "business": [
+            22,
+            31
+          ],
+          "mdna": [
+            32,
+            50
+          ],
+          "risk": [
+            126,
+            140
+          ],
+          "notes": [
+            153,
+            230
+          ],
+          "auditor": [
+            233,
+            244
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "6938158ed1d6428c7704ff32944cd9043bc509452178e445c8b2a0c91ba99873",
+      "business": "0aa619259a1399d891de9fe018665edb279054f64944a889e10d3dd012bec284",
+      "mdna": "ce324f3c4f867593d1f49e6bc389ab61f687b8dd872f558a49ea1ba25ce98f34",
+      "risk": "6a1d00c52e93cac968cb380e42f943b6a0564255d4946098cfa84a059374efb0",
+      "notes": "d03fedeb1115340cab0e0588e19e1e29470935e3c4663babd38ec9c8ebef9b6a",
+      "auditor": "18fff3fdf5e2c01152fcb8f00678cb210618ce58841200c6c0e5b781f69cf780"
+    }
+  },
+  {
+    "id": "MTRBF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "MTRBF",
+        "url": "https://www.metrobankonline.co.uk/globalassets/documents/investor_documents/metro-bank---annual-report-2025.pdf",
+        "sha256": "564030e958b705099fb93eddae744a82d2e39d84c12a5b1b8d5ae392d8f8faba",
+        "pdfPages": {
+          "letter": [
+            6,
+            6
+          ],
+          "business": [
+            12,
+            16
+          ],
+          "mdna": [
+            17,
+            19
+          ],
+          "risk": [
+            107,
+            140
+          ],
+          "notes": [
+            154,
+            195
+          ],
+          "auditor": [
+            142,
+            148
+          ],
+          "compensation": [
+            79,
+            102
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "0549a0b3e4d57c881f3848d5181b070e4a3b60ba1c497b5a4cc7a614eb1805fa",
+      "business": "71bb010566b6ca3669c6141482631fb6e469ad064bbd64fe7f497a95c9184744",
+      "mdna": "827568f69e0944b85ab1d6c3553926fa46eaf43bcb4c1dc3c0b061813626e2a2",
+      "risk": "06f19f58b320c8c5b16c6362436dc4201a3ca0dcc38f776a2b4a5391d6352e50",
+      "notes": "a9ded2a672233ec87cb03d1ef0557c4ce2634bb30d69092f022f6f2cee53cbdf",
+      "auditor": "bfff50f7e0a522e28dc4537044486290e8c52936c05200ce6a98f77aa907b4fe",
+      "compensation": "10cf7e40c1eebb6338141f313973fe0b3b8516fb07ef732d327a670f02df9231"
+    }
+  },
+  {
+    "id": "PIFYF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "PIFYF",
+        "url": "https://cdn.prod.website-files.com/64dcf83dc7b2e3793ab75d23/69ab3405c4278d6685d2b39c_Q4%202025%20Annual%20Report%20final.pdf",
+        "sha256": "e620f90d71477ce9a134623581c4a2d561ad7bc074f74c0db0460b33363066c0",
+        "pdfPages": {
+          "business": [
+            2,
+            4
+          ],
+          "mdna": [
+            7,
+            31
+          ],
+          "risk": [
+            26,
+            30
+          ],
+          "notes": [
+            40,
+            58
+          ],
+          "auditor": [
+            33,
+            35
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "business": "a77be942e55755788d72d8bd8a1e50df7b48ec92754e1ddff01cad9a91f76568",
+      "mdna": "fa4c9a1059ee363b6d1be92e466396fe635b9bdada8934c869558d4839c13597",
+      "risk": "72b6c7591a472f390cd326b8032b3391ebf37475ac2678ff6b9c51acde54b775",
+      "notes": "53d74dd6b831323a04d29cbc6e267129ffeb7574333a2179ce1827524c82ff7c",
+      "auditor": "067fe4d9d6925fa293ed922875d75fdff988096a04863533b056c4c760e7a300"
+    }
+  },
+  {
+    "id": "PEYUF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "PEYUF",
+        "url": "https://www.peyto.com/Files/Financials/2025/2025AnnualReport.pdf",
+        "sha256": "e90bd5918635b07ab7aba0e24c23269a2c55273498fbe3b58b01ad61abab77c8",
+        "pdfPages": {
+          "business": [
+            3,
+            5
+          ],
+          "mdna": [
+            6,
+            38
+          ],
+          "risk": [
+            29,
+            32
+          ],
+          "notes": [
+            49,
+            69
+          ],
+          "auditor": [
+            40,
+            43
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "business": "1fc69f529a6637af382ce5aa2166c820ad2e1a4354624f0e34ce6d4c611813ff",
+      "mdna": "be15d798e364f4a000d3a32c7a5b5426d7d1851e229454b272c54470be7cd2fc",
+      "risk": "1a9d310d99fdc82ef3648c5d788bedc9c497e336a7d253e32baedeb423a0f0dd",
+      "notes": "2bf03eab123bcfa1919c7ff00f18431e1bba870bed62759ef0c8a0f8531b5a61",
+      "auditor": "8c3b9d98acd31fa6f037c90ecc1cf94f01b9116e8d5ae770013bd14db93b108b"
+    }
+  },
+  {
+    "id": "RTLLF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "RTLLF",
+        "url": "https://www.rational-online.com/media/investor-relations/veroeffentlichungen-gj-2025/rational-ag---annual-report-fy-2025-(single-pages).pdf",
+        "sha256": "84ff01a4178f91d552252e51db0acb7bb539e89e66e4845e4233662f1975cd81",
+        "pdfPages": {
+          "business": [
+            10,
+            13
+          ],
+          "mdna": [
+            14,
+            19
+          ],
+          "risk": [
+            20,
+            31
+          ],
+          "notes": [
+            106,
+            144
+          ],
+          "auditor": [
+            146,
+            151
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "business": "a7df726d0d5753cff7c900e108444414b85a166b963ad77256be6d036ce72bf3",
+      "mdna": "f15091503f968e6ad538b781e1d73c90bb96fec59193ca515d2cc3ba49980f23",
+      "risk": "94b900ebbba72b319f44f87932b5e2b5a304d9a4edb366b0e53c3cf8ed37577b",
+      "notes": "73341409f2a18a671754a77c9a200300da5ffa7ee343fbe72791120a1017e043",
+      "auditor": "464bc54c60d80e5c6b09c4fc9a0133576d074bcb33ab2891803708baeb21a928"
+    }
+  },
+  {
+    "id": "PUIGF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "PUIGF",
+        "url": "https://uploads.puig.com/uploads/PUIG_BRANDS_Consolidated_Annual_Accounts_2025_eng_33d2988396.pdf",
+        "sha256": "48d3e1e0c75f239e65f6006b3d300ad3d7dae47f6eaf08fa61a21c0baa985649",
+        "pdfPages": {
+          "business": [
+            11,
+            13
+          ],
+          "mdna": [
+            131,
+            150
+          ],
+          "risk": [
+            99,
+            106
+          ],
+          "notes": [
+            10,
+            122
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "business": "a1ee46b27c700bd66c3be9a61ff16218ac7cc832ab8a5afc8ca843f096c5647f",
+      "mdna": "4a01eabfdc2f9600203af4f97633a2e3f8d9cc0c2c147499b34561a58c109a28",
+      "risk": "769ed7e1715cb83850bfa5822cb0236303b1805c1b1d4e85cb1ce5dc9fdf6167",
+      "notes": "6395fa2456baed32357c5688dbeba1631b2efb7a6c9b89d4b971da96fb8892e9"
+    }
+  },
+  {
+    "id": "FBAK.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "FBAK",
+        "url": "https://www.fnbalaska.com/wp-content/uploads/2026/03/2025-FNBA-Financial-Statements-FINAL.pdf",
+        "sha256": "627e09ab18414eed5687d078d65ded91d0a6c00f0ced388e2a99a09eb90619cb",
+        "pdfPages": {
+          "business": [
+            13,
+            15
+          ],
+          "notes": [
+            13,
+            54
+          ],
+          "auditor": [
+            3,
+            5
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "business": "787ac48dee4cb1cd0c50fa9b7b119268a516cb21f5f79368735569b8e4869030",
+      "notes": "ff00d7c3aa64bf281dcd1f125746e69d4686aee37470bd947b0492413f67c1c6",
+      "auditor": "021bc1b558096806c382c64f40b539ac8728be238cd38d13401d47a76945e307"
+    }
+  },
+  {
+    "id": "CNSWF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "CNSWF",
+        "url": "https://www.csisoftware.com/wp-content/uploads/2026/04/Q4-2025-Shareholder-Report.pdf",
+        "sha256": "6283a9311f991999a57cc73e6cc265128a464b046c155b7b9ee9952487a27513",
+        "pdfPages": {
+          "business": [
+            3,
+            5
+          ],
+          "mdna": [
+            2,
+            32
+          ],
+          "risk": [
+            28,
+            32
+          ],
+          "notes": [
+            45,
+            100
+          ],
+          "auditor": [
+            33,
+            38
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "business": "33c35cc0f412c19c96a8be15c532666ffff5b91fb651fd2d6519dfaace2b47c4",
+      "mdna": "e8571407109dd954f1e15af5f201759046533e15083e86b54c40c41ba91e1601",
+      "risk": "446d0c8a0d7b8d208c59410515ed5ac8dfce7ff88a9c69097b9a1828b6b59d71",
+      "notes": "d22eb669b321cc13c20a1b0882dab00ea2efdd35b955d6b7bd1786deb938f2a6",
+      "auditor": "9ce8782d5d516859f26ab11f07c0a4a2e92ec85552e82351d511bb05bdc771ec"
+    }
+  },
+  {
+    "id": "HEINY.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "HEINY",
+        "url": "https://www.theheinekencompany.com/sites/heineken-corp/files/2026-02/2025_Heineken_NV_Annual_Report_Interactive_100226_FINAL.pdf",
+        "sha256": "2dee3a7ac14103566f798aff09ce15bc354815c0848d2831fcb99d71bdfad259",
+        "pdfPages": {
+          "letter": [
+            9,
+            10
+          ],
+          "business": [
+            12,
+            29
+          ],
+          "mdna": [
+            47,
+            52
+          ],
+          "risk": [
+            39,
+            46
+          ],
+          "notes": [
+            89,
+            141
+          ],
+          "auditor": [
+            265,
+            271
+          ],
+          "compensation": [
+            70,
+            82
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "eba748a7616bf06b861510a379f4d665e80668dd67e4cf76b7c985e10ea467bd",
+      "business": "17495c9bbdaea0b1c0fb030588682975999d5e9a03d7e79d38ad719483a6d5bf",
+      "mdna": "dd4b3bc291b68f05cf8d853f38b028a1965e279a1d48d61c06d6315ca322a3f3",
+      "risk": "c09d1be1784e0a3e2c09ce737385da4f4042d008065e7b214e893600fe5ae800",
+      "notes": "865d5d0962c656552c259e849faf3a161a06eaacf538dc668a9fa2b3fbf83360",
+      "auditor": "db53cadd740ff9734194651c2dbc6badd4d507c196a551a2d6bf42a0023b6144",
+      "compensation": "34c9fbb5718a4dc9fde0e70227ff413fda1488ba0e998d63abea3e22df7647fd"
+    }
+  },
+  {
+    "id": "HINKF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "HEINY",
+        "url": "https://www.theheinekencompany.com/sites/heineken-corp/files/2026-02/2025_Heineken_NV_Annual_Report_Interactive_100226_FINAL.pdf",
+        "sha256": "2dee3a7ac14103566f798aff09ce15bc354815c0848d2831fcb99d71bdfad259",
+        "pdfPages": {
+          "letter": [
+            9,
+            10
+          ],
+          "business": [
+            12,
+            29
+          ],
+          "mdna": [
+            47,
+            52
+          ],
+          "risk": [
+            39,
+            46
+          ],
+          "notes": [
+            89,
+            141
+          ],
+          "auditor": [
+            265,
+            271
+          ],
+          "compensation": [
+            70,
+            82
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "eba748a7616bf06b861510a379f4d665e80668dd67e4cf76b7c985e10ea467bd",
+      "business": "17495c9bbdaea0b1c0fb030588682975999d5e9a03d7e79d38ad719483a6d5bf",
+      "mdna": "dd4b3bc291b68f05cf8d853f38b028a1965e279a1d48d61c06d6315ca322a3f3",
+      "risk": "c09d1be1784e0a3e2c09ce737385da4f4042d008065e7b214e893600fe5ae800",
+      "notes": "865d5d0962c656552c259e849faf3a161a06eaacf538dc668a9fa2b3fbf83360",
+      "auditor": "db53cadd740ff9734194651c2dbc6badd4d507c196a551a2d6bf42a0023b6144",
+      "compensation": "34c9fbb5718a4dc9fde0e70227ff413fda1488ba0e998d63abea3e22df7647fd"
+    }
+  },
+  {
+    "id": "HKHHF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "HKHHF",
+        "url": "https://www.heinekenholding.com/sites/heinekenholding-v2/files/2026-02/heineken-holding-nv-annual-report-2025-FINAL.pdf",
+        "sha256": "a7fcb93794a2afc65d3454162492f391d2eb40043bfda97fac6fcd74d3a90c1c",
+        "pdfPages": {
+          "business": [
+            2,
+            2
+          ],
+          "mdna": [
+            6,
+            9
+          ],
+          "risk": [
+            30,
+            54
+          ],
+          "notes": [
+            67,
+            112
+          ],
+          "auditor": [
+            113,
+            119
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "business": "890481390ac34e52a266405f8173903a0587a26205f4b06a6e2ed24defa152c4",
+      "mdna": "6cff44aff900fd219aaf974415467458358253a45bceadc8f06c773b65c17bc1",
+      "risk": "65f34157c899a3649292e1add0abdae68e3f9f77c68fd94290da1f585d34ff98",
+      "notes": "a8f9540c63c72a276b6b623e7e4c9dd87208de91fd99803c4dc1e484b14989a1",
+      "auditor": "a8f563ab300b67eb52ae2de708c07d5fe002eaa91abd119b6edd624ff2edc7af"
+    }
+  },
+  {
+    "id": "HKHHY.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "HKHHF",
+        "url": "https://www.heinekenholding.com/sites/heinekenholding-v2/files/2026-02/heineken-holding-nv-annual-report-2025-FINAL.pdf",
+        "sha256": "a7fcb93794a2afc65d3454162492f391d2eb40043bfda97fac6fcd74d3a90c1c",
+        "pdfPages": {
+          "business": [
+            2,
+            2
+          ],
+          "mdna": [
+            6,
+            9
+          ],
+          "risk": [
+            30,
+            54
+          ],
+          "notes": [
+            67,
+            112
+          ],
+          "auditor": [
+            113,
+            119
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "business": "890481390ac34e52a266405f8173903a0587a26205f4b06a6e2ed24defa152c4",
+      "mdna": "6cff44aff900fd219aaf974415467458358253a45bceadc8f06c773b65c17bc1",
+      "risk": "65f34157c899a3649292e1add0abdae68e3f9f77c68fd94290da1f585d34ff98",
+      "notes": "a8f9540c63c72a276b6b623e7e4c9dd87208de91fd99803c4dc1e484b14989a1",
+      "auditor": "a8f563ab300b67eb52ae2de708c07d5fe002eaa91abd119b6edd624ff2edc7af"
+    }
+  },
+  {
+    "id": "KNCRF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "KNCRF",
+        "url": "https://investors.konecranes.com/sites/konecranes/files/Annual_report_2025/governance_sustainability_and_financial_review_2025.pdf",
+        "sha256": "0790a168f382dfc607e5ccdb78cb2ed51488fbcf650e878f1c9ac68adf018e2c",
+        "pdfPages": {
+          "business": [
+            38,
+            43
+          ],
+          "mdna": [
+            38,
+            50
+          ],
+          "risk": [
+            34,
+            36
+          ],
+          "notes": [
+            132,
+            180
+          ],
+          "auditor": [
+            187,
+            190
+          ],
+          "compensation": [
+            22,
+            33
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "business": "b5670af84c3db1952551844eac967080784abc62395d4b965c950125f480a551",
+      "mdna": "aa3e1af332c6c9e96bd7510e8bf3bf6299044d76a6716073df7d2cebeb5f07e1",
+      "risk": "b895c2169b6c8977b2e61048b0526559c82549147e49e656b9cd15fd5ce64ff5",
+      "notes": "7c1685eb572339bc59434443877d8284049e70210fb5b1ea9d9969270f2ce2af",
+      "auditor": "9a9e1c6f4e49a2d79bebeb953fdfa74c861f10763d0443ef280a4e3e488a851d",
+      "compensation": "05ce2cd2f6c8b0071602cb0833181220b948b6470978d6ddd36348797ceb9340"
+    }
+  },
+  {
+    "id": "OGC.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "OGC",
+        "url": "https://assets.oceanagold.com/documents/Reports/Quarterly-Results/2025/Q4/OceanaGold-FS-2025-Q4-FINAL.pdf",
+        "sha256": "1067e3f994d3a4ba7477147f97bf5fc84a6fa86236dcdf4faf03de9469f7f799",
+        "pdfPages": {
+          "notes": [
+            15,
+            43
+          ],
+          "auditor": [
+            2,
+            7
+          ]
+        }
+      },
+      {
+        "document": "OGC-aif",
+        "url": "https://assets.oceanagold.com/documents/Reports/Annual-Information/2025/OceanaGold-Annual-Information-Form-2025.pdf",
+        "sha256": "6edaba75d51409b18e63e8f84d8b0ef6f1b7f0d944664cca444abd9b16279abb",
+        "pdfPages": {
+          "business": [
+            9,
+            29
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "notes": "9b861d1690076f06190c6515b199bd14fba7ffbd8cb82bf3b391d5cf6b02c8b3",
+      "auditor": "8a75b06fdd1e8b3e267909bc61d937805ec8fc1a3912a5d46a00fab39eb3c4cd",
+      "business": "605cb5611d513ea50a349a71a36ecfa4cfe405f7c9f219f4e9d6c801b23c514f"
+    }
+  },
+  {
+    "id": "TRMLF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "TRMLF",
+        "url": "https://tourmaline.cdn.prismic.io/tourmaline/aaidt1xvIZEnjVXx_FinalQ42025MDAFinancialStatements.pdf",
+        "sha256": "16c2e1132c1b3928745739c3f9bea7d015242c86e8fc12af68ce982960e72214",
+        "pdfPages": {
+          "business": [
+            3,
+            6
+          ],
+          "mdna": [
+            3,
+            37
+          ],
+          "risk": [
+            26,
+            28
+          ],
+          "notes": [
+            46,
+            90
+          ],
+          "auditor": [
+            38,
+            41
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "business": "af6dd04f982cc9c82943d1cac04e1949558c63b6d60250c759e0020ec4031e08",
+      "mdna": "e01b2e6b14dda256e602203b22d6fa73534db77f10e72437805042d4ad91d7ab",
+      "risk": "51010639d924171bc1288b60b11fb5946dce132152ace82841fb247241393854",
+      "notes": "58f41a16c2bd1e38a1288412ede47254054ffa410eb3f2f507bc287472ce0a95",
+      "auditor": "e167097a2791d03896998c3ff0e881a9f248d2af16b110338589e20dc4486428"
+    }
+  },
+  {
+    "id": "ZLDSF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "ZLDSF",
+        "url": "https://corporate.zalando.com/public/media-download/zalando-se_annual-report-2025_eng_261003_s.pdf?VersionId=NigyLbpXizEX3JRpWbGFjm2b6HWXnsnW",
+        "sha256": "817ebceed415077f3508e1c785924a6cf1b7a67431410cf444e363f3bdd05136",
+        "pdfPages": {
+          "letter": [
+            5,
+            8
+          ],
+          "business": [
+            65,
+            76
+          ],
+          "mdna": [
+            77,
+            87
+          ],
+          "risk": [
+            88,
+            96
+          ],
+          "notes": [
+            240,
+            309
+          ],
+          "auditor": [
+            311,
+            323
+          ],
+          "compensation": [
+            17,
+            57
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "aa807b4f05ff67e55a1a9351b2c0f51feaf94e48445a0603a4fc0ed97a080696",
+      "business": "ed6a807419a406f97926a80ecb69867b7724c0badfcc9681c253f02e1d0eafce",
+      "mdna": "cd03a03ce34d5acbc6b1ac253966d318e68284da49f659405f8db0a3edd75936",
+      "risk": "f0ad5a8f638584c3e1126528820f023a5cf54885e860a8cc80f03ad0c39e6933",
+      "notes": "b036cc3d3e8cd86b8a8b564b822be26c176c7ac86d8a4ee22a957cbdd5555368",
+      "auditor": "1a441d58e864239a0e5cf881a5ce78689a625a01324805d220146d7ba7f303b6",
+      "compensation": "cb7e11703319b4506bc9ad59e09bc32dc57706bf8dfa83212f4b9f3e9771aa54"
+    }
+  },
+  {
+    "id": "PHJMF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "PHJMF",
+        "url": "https://www.sampoerna.com/content/dam/pmicom/affiliates/sampoerna/docs/annua-report-and-sustainability-report-2025.pdf",
+        "sha256": "c0ccb8dbbb71929de53f3b5591c6b1d7332cf6c7edb8e810a82d1cadace54371",
+        "pdfPages": {
+          "letter": [
+            19,
+            43
+          ],
+          "business": [
+            53,
+            73
+          ],
+          "mdna": [
+            85,
+            123
+          ],
+          "risk": [
+            193,
+            195
+          ],
+          "notes": [
+            300,
+            377
+          ],
+          "auditor": [
+            288,
+            294
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "86fb00650850057337a7794faa782a9262315cd7bead49b5a9302522323cc0e4",
+      "business": "4a0361d5c1f232ef8ae99d48c6c22bea829132332dbabc2dca628051db6d45b9",
+      "mdna": "ed262e2ea380bcf05fef40c38b8fc9a550780e7085a1a889e8e3acec7fea8050",
+      "risk": "e0c80b5c14e8fc1963db52f56d8fc292b35439120a0609906be93e716faf31e3",
+      "notes": "6e51b59e78124ceb37c53d259cfa2e87e0afe052b51ad96802cc796cc4f0a9a0",
+      "auditor": "87c2f5b94671d565108b59741a12c6c3dfaff2864fd61008c3712b4ae4d85d4d"
+    }
+  },
+  {
+    "id": "FLUIF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "document": "FLUIF",
+        "url": "https://www.cnmv.es/webservices/verdocumento/ver?e=9psaeLxyZn4huC%2FJnyqEFyJs3cK80xVpwaYndxidzOuEhY8wWp9yOrsFup0pipEp",
+        "sha256": "f34f29aa1d84d4fdb15d4eda2ee65e2da339b38ab370bcc2fa4c7937695f642d",
+        "pdfPages": {
+          "letter": [
+            5,
+            10
+          ],
+          "business": [
+            12,
+            32
+          ],
+          "mdna": [
+            43,
+            65
+          ],
+          "risk": [
+            493,
+            495
+          ],
+          "notes": [
+            447,
+            528
+          ],
+          "auditor": [
+            439,
+            446
+          ],
+          "compensation": [
+            380,
+            408
+          ]
+        }
+      }
+    ],
+    "sectionHashes": {
+      "letter": "2c1e95ee003aa08865612eaafed7caf2c551bba731e9a1fa1fdd793fd0d39683",
+      "business": "7e0c097fecc9057a046b8a9107f51b9b340bef8fc209cfb4d3092aa121223047",
+      "mdna": "e33814e9eb2d5f4f14b2dc5d8626bd09e74f9ee798fe245b806296141a69ace1",
+      "risk": "e5cc3400b508c31dc5c47514669752a79b9e84b01c591451a946a91d3ac97e3f",
+      "notes": "3154d315e58f33b8895c2f4b0de037bec35d3adcc534d5a3f95281389268d73e",
+      "auditor": "37c35d84abdccf5b03ec995afdbeebbf203daad85aa536b5b83ec79918ca7d52",
+      "compensation": "0ec720a237d834bb278b4b65ec381b4cc2cec9a02c3aacc368643a9030c10378"
+    }
+  },
+  {
+    "id": "DVCMY.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "url": "https://filings.xbrl.org/213800ED5AN2J56N6Z02/2025-12-31/ESEF/NL/0/davidecamparimilano-2025-12-31-0-en/reports/davidecamparimilano-2025-12-31-0-en.xhtml",
+        "sha256": "77f425bf122ed66d83e17e0b785e770d5431d35465d4fb8a7cbe7c44e6462109",
+        "lei": "213800ED5AN2J56N6Z02"
+      }
+    ],
+    "sectionHashes": {
+      "business": "5802e0eed69e462bd3f69806310e290cec2c01218a8b2ea2e230aafe539f1280",
+      "risk": "2ba055cc79e0ccdf8ee01d6a4a41c58477e930fc381bec16ab368c4390e5fb3e",
+      "mdna": "32f481cb033f5b03ca223f5eaffbc26544fac7ce81b4c02af0436d2d4d7b6388",
+      "compensation": "d7c94294b0a7cdf4ae2929b291eb27766295cac115fce8d8f0e8eeed05b5cdc2",
+      "notes": "cafa1ec2479e0a1807fabf74f50f94c82a4759b425b12871a629056cb51bee10",
+      "auditor": "f0c06adedfe94295005a36cc755abcfbf03b969e13b551a24e008a361a942cd0"
+    }
+  },
+  {
+    "id": "DVDCF.US",
+    "reviewedFullAnnual": true,
+    "period": "2025-12-31",
+    "sources": [
+      {
+        "url": "https://filings.xbrl.org/213800ED5AN2J56N6Z02/2025-12-31/ESEF/NL/0/davidecamparimilano-2025-12-31-0-en/reports/davidecamparimilano-2025-12-31-0-en.xhtml",
+        "sha256": "77f425bf122ed66d83e17e0b785e770d5431d35465d4fb8a7cbe7c44e6462109",
+        "lei": "213800ED5AN2J56N6Z02"
+      }
+    ],
+    "sectionHashes": {
+      "business": "5802e0eed69e462bd3f69806310e290cec2c01218a8b2ea2e230aafe539f1280",
+      "risk": "2ba055cc79e0ccdf8ee01d6a4a41c58477e930fc381bec16ab368c4390e5fb3e",
+      "mdna": "32f481cb033f5b03ca223f5eaffbc26544fac7ce81b4c02af0436d2d4d7b6388",
+      "compensation": "d7c94294b0a7cdf4ae2929b291eb27766295cac115fce8d8f0e8eeed05b5cdc2",
+      "notes": "cafa1ec2479e0a1807fabf74f50f94c82a4759b425b12871a629056cb51bee10",
+      "auditor": "f0c06adedfe94295005a36cc755abcfbf03b969e13b551a24e008a361a942cd0"
+    }
+  }
+]

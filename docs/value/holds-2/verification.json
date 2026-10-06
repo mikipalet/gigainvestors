@@ -1,0 +1,45 @@
+{
+  "unit": {
+    "filesPassed": 238,
+    "testsPassed": 2326,
+    "skipped": 1,
+    "failed": 0
+  },
+  "typecheck": "passed",
+  "productionBuild": "next build --webpack passed; default Turbopack external-node_modules-symlink failure retained",
+  "secondSource": {
+    "sample": 8,
+    "comparisons": 24,
+    "unexplained": 0,
+    "sourceFailures": 0
+  },
+  "browser": {
+    "acceptedCompanies": 16,
+    "states": 252,
+    "blockingFindings": 0,
+    "fairfaxStates": 24,
+    "fairfaxBlockingFindings": 0,
+    "heldLayoutBlockingFindings": 25,
+    "baselineExistingBlockingFindings": 8,
+    "disposition": "Unchanged cover-6 thresholds and prior exact chrome/whitespace rulings"
+  },
+  "ordinaryLocalPublish": "passed with 3899 baseline records unchanged and 16 bound additions",
+  "logs": {
+    "unit-final.log": "cc3b62cd43b32b86317bb3f817a41f0bf97e59a1f5d17755d398df131f887f33",
+    "typecheck-final.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build.log": "2f7a9689eb413dd066ae0915f7f2d09f03470810cc4521107f2cca6d5b9326e8",
+    "second-source-final.log": "c76ef10f2b341cac688e3ed6cb8d3bfe8bd4f355e66c2d112d4c371e3a2c6245",
+    "publish-release.log": "e8718d7c511fde2145eb1e55b0acfeb781516f8677e682ae4ddbc5b86c1a96ee",
+    "final-proof.log": "4278d8b39d5375f8aaf60acfaa0aa0eecd9fa37eeba41c26631902bfcc7df9b9",
+    "browser-final.log": "23ff8b51b66f21a16b99c6a78f8325a71d5028f2f379267e09412cc5b32e6e82",
+    "browser-final-rest-1.log": "26e0cabd8a466cfeb87b6b36d26da70b729f371eb2a00bb8f07be8cd87dc6d3c",
+    "browser-final-rest-2.log": "8bd2839ca336e8f1a81407e4d19383b7b999337c27244fca738808567956a106",
+    "browser-fairfax.log": "d33935db8fa96a09561b530fda53a41ff3d663a083f1e0fb4a96883c39af4e19"
+  },
+  "eodhdRequests": 0,
+  "subagents": 0,
+  "publication": false,
+  "push": false,
+  "dailyRunnerLockTouched": false,
+  "liveCorpusWrites": false
+}

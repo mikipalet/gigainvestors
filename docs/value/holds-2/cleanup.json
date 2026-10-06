@@ -1,0 +1,25 @@
+{
+  "removed": [
+    "/Users/miki/data/value-holds/corpus",
+    "/Users/miki/data/value-holds/scratch",
+    "/Users/miki/data/value-holds/test-corpus",
+    "/Users/miki/data/value-holds/build",
+    "/Users/miki/data/value-holds/staging/holds-2",
+    "/Users/miki/data/value-holds/staging/holds-2-final",
+    "/Users/miki/data/value-holds/staging/final",
+    "/Users/miki/data/value-holds/staging/provisional"
+  ],
+  "retained": [
+    "downloads and recovered reports",
+    "evidence and screenshots",
+    "logs",
+    "handoff scoped inputs and hashes",
+    "staging/holds-2-release",
+    "staging/fairfax-unfreeze"
+  ],
+  "freeBytes": {
+    "/": 11593830400,
+    "/Users/miki/data": 69202681856
+  },
+  "minimumRequiredBytes": 4294967296
+}

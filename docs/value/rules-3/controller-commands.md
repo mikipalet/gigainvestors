@@ -1,32 +1,3 @@
-NOT
-
-# rules-3 — zero approved Buy changes; waiting for logofix
-
-IN PROGRESS. The earlier attempt misread the cutoff. This continuation uses the explicit deadline **2026-10-07T01:30:00Z** and polls the shipped marker every three minutes. The marker was absent at the last recorded poll; no fetch, merge, or fresh-corpus run has occurred. NOT currently means the sequencing and verification gates are pending.
-
-The existing isolated worktree is `~/data/value-rules`, branch `value-rules`. Initial HEAD was `46f0c10`, the local zero-approval commit following the supplied `63a3d4f`. The rules-2 report and evidence have been reviewed. Their historical passing gates do not establish rules-3 readiness.
-
-## Controller ruling
-
-Both approval files contain exactly `[]`. IPS.PA, 001800.KO, and 000786.SHE must retain their complete live records using the existing publication continuity mechanism, as NTB.US and CFG-PH.US do. The vendor gross-margin discontinuity for Ipsos, wrong-issuer filing and cash-only case for Orion Korea, and missing primary filing for 000786 do not authorize Buy changes. The rejected manifest will not be regenerated.
-
-The reviewed 3.5.0 rule sources remain unchanged. NVDA is expected to become PPPPP. The previous 185 exposed quality changes included the three rejected records; full-record preservation would yield 182 against that same baseline. The actual count will be measured after logofix rather than forced.
-
-## Preparation completed
-
-- Three-minute marker polling and five-second disk monitoring, deadline bound to the explicit UTC date.
-- Independent rules-3 harness, using isolated network namespaces and a read-only live-corpus bind. No production publication guard is stubbed.
-- Fresh-copy, full cached nightly analysis, ordinary export, local bare-remote/stub-Blob real publish, merged coverage/page guard, preserved record-byte comparison, browser, unit suite, build, integrity, packaging and cleanup checks prepared.
-- Browser targets: NVDA plus EME, RSG, ROK, TMO, subject to confirmation that all four remain changed after logofix.
-- Exact Inter font dependency staged under task TMPDIR, SHA-256 matching prior verification; no company-data acquisition.
-- Python/shell syntax and `git diff --check` pass. Runtime gates remain pending.
-
-## Pending release proof
-
-Observe `/Users/miki/GitHub/superinvestors-wt/value/.superpowers/sdd/2026-09-29-value/logofix-2.shipped`, fetch and merge `origin/master`, then run every requested gate on a fresh independent copy. Require zero Buy changes, byte-identical complete records for the three rejected IDs, no logo/valuation/coverage regressions, and zero new browser findings. If the marker remains absent at the deadline, record NOT and checkpoint the prepared work.
-
-No external push/publication, live-corpus write, daily-runner lock access, runner signal, subagent, EODHD acquisition, or fresh Jev call has occurred. No disposable corpus copy has yet been created. All task scratch files and TMPDIR are under `~/data/value-rules`. Both disks remain above 4 GiB. The historical rules-2 bundle is still NOT and is not an installable rules-3 release.
-
 # Controller only — do not execute unless rules-3 is READY
 
 The agent has not pushed code, published data, paused the runner, or changed the live corpus. These commands are the controller's release procedure. Any failure leaves the runner paused for inspection. No command opens or modifies the runner lock.

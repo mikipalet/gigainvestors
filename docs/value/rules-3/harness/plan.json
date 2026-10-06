@@ -1,0 +1,18 @@
+{
+  "status": "waiting-logofix",
+  "deadline": "2026-10-07T01:30:00Z",
+  "pollSeconds": 180,
+  "startingCommit": "46f0c10",
+  "approvalManifest": [],
+  "steps": [
+    "observe shipped marker",
+    "fetch and merge origin/master",
+    "fresh independent corpus and baseline bindings",
+    "full cached nightly analysis",
+    "ordinary export and real local publish with master guards",
+    "NVDA plus four changed browser comparison",
+    "unit suite and build",
+    "source integrity and three byte-identical preserved ids",
+    "package, commit, report and delete disposable copies"
+  ]
+}

@@ -1,4 +1,5 @@
 import {T} from './config';
+import {grossMarginBasis} from './gross-margin-basis';
 import type {Kind,Result,TestOutcome} from './types';
 export interface RuleCheck {text:string;pass:boolean|null;core?:boolean;decisive?:boolean;key?:string;value?:number|null;bar?:number}
 const pct=(n:number)=>`${(n*100).toFixed(1)}%`;
@@ -47,7 +48,9 @@ export function ruleReading(t:TestOutcome,kind:Kind){
   case 'moat':
    compare(m.roicMedian!=null?'roicMedian':'returnFloorMedian',m.roicMedian!=null?'ROIC ex acquisitions median':'Conservative return floor median',.15,true,true);
    compare(m.roicSecondLowest!=null?'roicSecondLowest':'returnFloorSecondLowest','Second-lowest return (one bad year allowed)',.10,true,true);
-   compare('grossMarginDrop','Typical minus recent gross margin',.04);
+   {const basis=grossMarginBasis(t);
+   if(basis.applied)compare('grossMarginDrop',basis.label,.04);
+   else add('Recent/typical gross-margin check does not apply to this history',null);}
    break;
   case 'economics':
    if(m.oeToNi!=null)compare('oeToNi','Cash per $1 profit',.8,true,true,num);

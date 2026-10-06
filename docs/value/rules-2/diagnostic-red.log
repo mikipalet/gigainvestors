@@ -1,0 +1,57 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ❯ tests/unit/value/rule-reading.test.ts (11 tests | 2 failed | 1 skipped) 76ms
+   ✓ explains the actual moat rule, independently of the including-acquisitions chart 42ms
+   ✓ the tile explains the numbers in plain language 5ms
+   ↓ derives every published quality verdict from its displayed rules and measurements
+   ✓ retains enough precision to explain a near-threshold failure 0ms
+   × retains a legacy gross-margin observation without applying it as the new check 18ms
+     → expected 'fail' to be 'pass' // Object.is equality
+   × describes a frozen legacy gross-margin rule on its original fiscal basis 2ms
+     → expected 'Typical minus recent gross margin 6.5…' to contain 'FY2019–20 minus FY2023'
+   ✓ hides a judgement that did not override the numbers 4ms
+   ✓ shows the rule basis even when acquired capital earns a different return 0ms
+   ✓ preserves a cash-conversion shortfall that would round to the minimum 0ms
+   ✓ does not substitute parent cash history for a consolidated rule 0ms
+   ✓ shows only the five years used for operating cash conversion 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/rule-reading.test.ts > retains a legacy gross-margin observation without applying it as the new check
+AssertionError: expected 'fail' to be 'pass' // Object.is equality
+
+Expected: "pass"
+Received: "fail"
+
+ ❯ tests/unit/value/rule-reading.test.ts:55:48
+     53|  const test=published.tests.moat;
+     54|  expect(test.metrics.grossMarginDrop).toBe(.065);
+     55|  expect(ruleReading(test,'operating').derived).toBe('pass');
+       |                                                ^
+     56|  const html=renderToStaticMarkup(React.createElement(TestSection,{test…
+     57|  expect(html).toContain('FY2019–20 minus FY2023 gross margin (prior as…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/value/rule-reading.test.ts > describes a frozen legacy gross-margin rule on its original fiscal basis
+AssertionError: expected 'Typical minus recent gross margin 6.5…' to contain 'FY2019–20 minus FY2023'
+
+Expected: "FY2019–20 minus FY2023"
+Received: "Typical minus recent gross margin 6.5% > 4.0%"
+
+ ❯ tests/unit/value/rule-reading.test.ts:63:57
+     61|  const t={key:'moat',result:'fail',numeric:'fail',metrics:{roicMedian:…
+     62|  expect(ruleReading(t,'operating').derived).toBe('fail');
+     63|  expect(ruleReading(t,'operating').checks.at(-1)?.text).toContain('FY2…
+       |                                                         ^
+     64| });
+     65| it('hides a judgement that did not override the numbers',()=>{
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 8 passed | 1 skipped (11)
+   Start at  15:30:43
+   Duration  1.71s (transform 875ms, setup 0ms, collect 1.24s, tests 76ms, environment 0ms, prepare 93ms)

@@ -40,3 +40,6 @@ data/newsletter/*.facts.json
 
 # Owner-fix browser sessions and intermediate captures
 .owner-fix/
+
+# Local, controller-reviewed release artifacts (never publication inputs in git)
+/release-bundle/

@@ -1,0 +1,57 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ❯ tests/unit/value/publish-invariants.test.ts (25 tests | 1 failed) 20233ms
+   ✓ permits added-company buys while preserving the price-only rule for existing companies  923ms
+   ✓ quarters refuses prices commit before changing HEAD or index  637ms
+   ✓ yearDeferred refuses prices commit before changing HEAD or index  661ms
+   ✓ missing-file refuses prices commit before changing HEAD or index  570ms
+   ✓ dossiers refuses prices commit before changing HEAD or index  706ms
+   ✓ buy refuses prices commit before changing HEAD or index  924ms
+   ✓ history refuses prices commit before changing HEAD or index  581ms
+   ✓ prices permits an exactly 1% dossier drop and a price-explained Buy-now transition  926ms
+   ✓ quarters refuses publish commit before changing HEAD or index  629ms
+   ✓ yearDeferred refuses publish commit before changing HEAD or index  566ms
+   ✓ missing-file refuses publish commit before changing HEAD or index  566ms
+   ✓ dossiers refuses publish commit before changing HEAD or index  615ms
+   ✓ buy refuses publish commit before changing HEAD or index  711ms
+   ✓ history refuses publish commit before changing HEAD or index  515ms
+   ✓ publish permits an exactly 1% dossier drop and a price-explained Buy-now transition  936ms
+   ✓ does not let pre-staged unrelated changes bypass the prices gate  330ms
+   ✓ accepts year views derived from Q4 without requiring a separate annual snapshot  854ms
+   ✓ allows a reviewed identity collapse only when every lost dossier has a direct live target  917ms
+   ✓ refuses alias cycles or missing canonical dossiers  432ms
+   ✓ refuses to reintroduce two reviewed listings of one issuer  484ms
+   ✓ permits retired Buy-now rows to disappear from country and default indexes  1061ms
+   ✓ does not count retired-listing price moves as explanations for surviving Buy-now flips  748ms
+   ✓ accepts only an exact controller-reviewed valuation transition  1459ms
+   ✓ binds a reviewed method transition to both exact quality masks as well as valuation and margin  2758ms
+   × rejects unapproved offsetting Buy flips even when country and default totals are unchanged 722ms
+     → expected [Function] to throw an error
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/publish-invariants.test.ts > rejects unapproved offsetting Buy flips even when country and default totals are unchanged
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/unit/value/publish-invariants.test.ts:127:54
+    125|  git('add','.');git('commit','-m','two-company baseline');
+    126|  for(const file of ['index/US.json','index/default.json'])write(file,[…
+    127|  expect(()=>assertPublishInvariants(repo,'HEAD',[])).toThrow(/Buy-now …
+       |                                                      ^
+    128| });
+    129|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 24 passed (25)
+   Start at  14:59:55
+   Duration  23.83s (transform 1.93s, setup 0ms, collect 3.24s, tests 20.23s, environment 0ms, prepare 80ms)

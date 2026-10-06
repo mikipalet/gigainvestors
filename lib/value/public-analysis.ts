@@ -15,7 +15,7 @@ export function publicAnalysis<T extends Analysis & {b?:boolean}>(analysis:T):T 
   if(key==='price'&&analysis.priceTestFreeze)return [[key,analysis.priceTestFreeze.test]];
   if(key==='price'&&(hideValue||test.result==='unclear'))return [];
   if(short)return [[key,{key:test.key,result:'na',numeric:'na',metrics:{},series:{},reasons:[],jev:[]}]];
-  return [[key,{...test,...(!researched?{judgement:undefined}:{}),metrics:Object.fromEntries(Object.entries(test.metrics).filter(([,v])=>v!==null&&Number.isFinite(v))),
+  return [[key,{...test,...(key==='moat'&&'grossMarginTypical' in test.metrics?{grossMarginBasis:'recent-typical' as const}:{}),...(!researched?{judgement:undefined}:{}),metrics:Object.fromEntries(Object.entries(test.metrics).filter(([,v])=>v!==null&&Number.isFinite(v))),
    series:Object.fromEntries(Object.entries(test.series).filter(([,s])=>s.some(([,v])=>v!==null&&Number.isFinite(v)))),
    reasons:test.reasons.filter(publicText),jev:test.jev.filter(a=>a.value!==null&&a.probability!==null&&publicText(a.label)).map(a=>({...a,evidence:a.evidence&&publicText(a.evidence)?a.evidence:null})),
   }]];

@@ -1,0 +1,34 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ✓ tests/unit/value/publish-invariants.test.ts (25 tests) 19586ms
+   ✓ permits added-company buys while preserving the price-only rule for existing companies  906ms
+   ✓ quarters refuses prices commit before changing HEAD or index  543ms
+   ✓ yearDeferred refuses prices commit before changing HEAD or index  647ms
+   ✓ missing-file refuses prices commit before changing HEAD or index  566ms
+   ✓ dossiers refuses prices commit before changing HEAD or index  641ms
+   ✓ buy refuses prices commit before changing HEAD or index  849ms
+   ✓ history refuses prices commit before changing HEAD or index  604ms
+   ✓ prices permits an exactly 1% dossier drop and a price-explained Buy-now transition  808ms
+   ✓ quarters refuses publish commit before changing HEAD or index  452ms
+   ✓ yearDeferred refuses publish commit before changing HEAD or index  453ms
+   ✓ missing-file refuses publish commit before changing HEAD or index  495ms
+   ✓ dossiers refuses publish commit before changing HEAD or index  587ms
+   ✓ buy refuses publish commit before changing HEAD or index  809ms
+   ✓ history refuses publish commit before changing HEAD or index  451ms
+   ✓ publish permits an exactly 1% dossier drop and a price-explained Buy-now transition  902ms
+   ✓ does not let pre-staged unrelated changes bypass the prices gate  344ms
+   ✓ accepts year views derived from Q4 without requiring a separate annual snapshot  892ms
+   ✓ allows a reviewed identity collapse only when every lost dossier has a direct live target  880ms
+   ✓ refuses alias cycles or missing canonical dossiers  562ms
+   ✓ refuses to reintroduce two reviewed listings of one issuer  547ms
+   ✓ permits retired Buy-now rows to disappear from country and default indexes  937ms
+   ✓ does not count retired-listing price moves as explanations for surviving Buy-now flips  720ms
+   ✓ accepts only an exact controller-reviewed valuation transition  1464ms
+   ✓ binds a reviewed method transition to both exact quality masks as well as valuation and margin  2764ms
+   ✓ rejects unapproved offsetting Buy flips even when country and default totals are unchanged  759ms
+
+ Test Files  1 passed (1)
+      Tests  25 passed (25)
+   Start at  15:01:07
+   Duration  22.92s (transform 1.71s, setup 0ms, collect 2.99s, tests 19.59s, environment 1ms, prepare 75ms)

@@ -1,0 +1,56 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ❯ tests/unit/value/publish-invariants.test.ts (24 tests | 1 failed) 20352ms
+   ✓ permits added-company buys while preserving the price-only rule for existing companies  935ms
+   ✓ quarters refuses prices commit before changing HEAD or index  586ms
+   ✓ yearDeferred refuses prices commit before changing HEAD or index  614ms
+   ✓ missing-file refuses prices commit before changing HEAD or index  636ms
+   ✓ dossiers refuses prices commit before changing HEAD or index  759ms
+   ✓ buy refuses prices commit before changing HEAD or index  807ms
+   ✓ history refuses prices commit before changing HEAD or index  533ms
+   ✓ prices permits an exactly 1% dossier drop and a price-explained Buy-now transition  904ms
+   ✓ quarters refuses publish commit before changing HEAD or index  468ms
+   ✓ yearDeferred refuses publish commit before changing HEAD or index  561ms
+   ✓ missing-file refuses publish commit before changing HEAD or index  611ms
+   ✓ dossiers refuses publish commit before changing HEAD or index  688ms
+   ✓ buy refuses publish commit before changing HEAD or index  758ms
+   ✓ history refuses publish commit before changing HEAD or index  601ms
+   ✓ publish permits an exactly 1% dossier drop and a price-explained Buy-now transition  1033ms
+   ✓ does not let pre-staged unrelated changes bypass the prices gate  445ms
+   ✓ accepts year views derived from Q4 without requiring a separate annual snapshot  1229ms
+   ✓ allows a reviewed identity collapse only when every lost dossier has a direct live target  1616ms
+   ✓ refuses alias cycles or missing canonical dossiers  741ms
+   ✓ refuses to reintroduce two reviewed listings of one issuer  974ms
+   ✓ permits retired Buy-now rows to disappear from country and default indexes  1485ms
+   ✓ does not count retired-listing price moves as explanations for surviving Buy-now flips  841ms
+   ✓ accepts only an exact controller-reviewed valuation transition  1567ms
+   × binds a reviewed method transition to both exact quality masks as well as valuation and margin 957ms
+     → expected [Function] to not throw an error but 'Error: Publish invariant: index/US.js…' was thrown
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/publish-invariants.test.ts > binds a reviewed method transition to both exact quality masks as well as valuation and margin
+AssertionError: expected [Function] to not throw an error but 'Error: Publish invariant: index/US.js…' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: Publish invariant: index/US.json Buy-now changed 0 -> 1; prices and new dossiers explain at most +0/-0"
+
+ ❯ tests/unit/value/publish-invariants.test.ts:112:66
+    110|  const approval={id:'A.US',before:state(before),after:state(after),rea…
+    111|  for(const file of ['index/US.json','index/default.json'])write(file,[…
+    112|  expect(()=>assertPublishInvariants(repo,'HEAD',[approval])).not.toThr…
+       |                                                                  ^
+    113|  for(const change of [{before:{...approval.before,t:'FPPPP'}},{after:{…
+    114|   expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,...chan…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 23 passed (24)
+   Start at  14:23:44
+   Duration  24.19s (transform 1.89s, setup 0ms, collect 3.50s, tests 20.35s, environment 0ms, prepare 75ms)

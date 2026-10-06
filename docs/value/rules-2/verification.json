@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "method": "3.5.0",
+  "baselineCode": "c75d682",
+  "baselineArchive": "2d7f1d84db5b28e474a04b8b7f94b29621acbb5f",
+  "dossiers": 3915,
+  "unitSuite": "PASS",
+  "build": "PASS including TypeScript",
+  "ordinaryExport": "PASS",
+  "realPublishHarness": "PASS, local bare remote and stub Blob only",
+  "localPostPublish": "PASS",
+  "browser": "zero new findings; legacy findings listed separately",
+  "blobFiles": 6251,
+  "blobBytes": 211699582,
+  "blobVersion": "779cdbcb24a52529bb6697f41270272d43b550183e035b96ebd2a05e3418fb57",
+  "realLocalCommit": "791df6cf91360d06eec7990b3e13629fe420e55e",
+  "candidateCoreFilesMatchRealPublish": 2175,
+  "sourceBindings": 718850,
+  "liveArchiveFiles": 6251,
+  "minimumFreeBytes": {
+    "/": 11782995968,
+    "/Users/miki/data": 77814587392
+  },
+  "isolation": {
+    "interfaces": [
+      "lo"
+    ],
+    "sourceCorpusReadOnly": true,
+    "externalRoutes": 0
+  },
+  "externalTransport": false,
+  "ownerBuyApproval": "PENDING; local harness proof only",
+  "buyChanges": [
+    "000786.SHE",
+    "001800.KO",
+    "IPS.PA"
+  ],
+  "cleanupComplete": true
+}

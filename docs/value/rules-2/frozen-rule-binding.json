@@ -1,0 +1,25 @@
+{
+  "files": [
+    {
+      "file": "lib/value/tests/moat.ts",
+      "sha256": "794254e5e79a56be09e6a127d1f0ef6dbfa3d6d63ade70a6e5fe0186777bd6ad",
+      "identicalToOwnerReviewedRules1": true
+    },
+    {
+      "file": "lib/value/tests/understandable.ts",
+      "sha256": "4347d01553fcc3187a595fddef1a8b32dc693d9a82be34edee450abfc6a9a5c0",
+      "identicalToOwnerReviewedRules1": true
+    },
+    {
+      "file": "lib/value/completeness/needs.ts",
+      "sha256": "7a097e0bc43700436fda3238d65ea7520a0748f9a03d9034afedd00d6a27d671",
+      "identicalToOwnerReviewedRules1": true
+    },
+    {
+      "file": "lib/value/method-version.ts",
+      "sha256": "77463bc9ac21e47b8728c63db30a823bbf402723fd541c9b887dad3efca100b4",
+      "identicalToOwnerReviewedRules1": true
+    }
+  ],
+  "valuationAndPriceRulesUnchangedFromLive": true
+}

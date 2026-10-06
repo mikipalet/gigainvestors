@@ -1,0 +1,10 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ✓ tests/unit/value/rule-reading.test.ts (11 tests | 1 skipped) 66ms
+ ✓ tests/unit/value/completeness.test.ts (34 tests) 116ms
+
+ Test Files  2 passed (2)
+      Tests  44 passed | 1 skipped (45)
+   Start at  15:31:52
+   Duration  2.76s (transform 1.35s, setup 0ms, collect 1.90s, tests 182ms, environment 1ms, prepare 154ms)

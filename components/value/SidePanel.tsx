@@ -5,7 +5,7 @@ import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 're
 const EVIDENCE_WIDTHS:Record<'short'|'compact'|'mid'|'tall',Record<string,number>>={
   short:{understandable:520,moat:760,economics:600,management:640,accounting:600,price:620},
   compact:{understandable:520,moat:600,economics:600,management:480,accounting:600,price:560},
-  mid:{understandable:300,moat:400,economics:340,management:480,accounting:480,price:560},
+  mid:{understandable:360,moat:400,economics:340,management:480,accounting:480,price:560},
   tall:{understandable:320,moat:340,economics:380,management:360,accounting:340,price:440},
 };
 const evidenceWidth=(test:string)=>EVIDENCE_WIDTHS[innerHeight<850?'short':innerHeight<970?'compact':innerHeight<1050?'mid':'tall'][test]??400;

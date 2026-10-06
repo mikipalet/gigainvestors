@@ -21,7 +21,7 @@ const fail=(message:string):never=>{throw new Error(`Publish invariant: ${messag
 /** Compare the proposed working tree to the released commit, never to mutable meta counts.
  * Every commit entry point calls this BEFORE staging or creating an orphan branch.
  */
-export interface ApprovedVerdictChange {id:string;before:{b:boolean;v:number[]|null;m:number};after:{b:boolean;v:number[]|null;m:number};reason:string;evidence:string[]}
+export interface ApprovedVerdictChange {id:string;before:{b:boolean;v:number[]|null;m:number;t?:string};after:{b:boolean;v:number[]|null;m:number;t?:string};reason:string;evidence:string[]}
 export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:ApprovedVerdictChange[]=approvedChanges):void {
  const prior=committed(repo,baseline);
  const files=['meta.json',...['index','dossiers','prices','history'].flatMap(dir=>existsSync(path.join(repo,dir))?readdirSync(path.join(repo,dir)).map(f=>`${dir}/${f}`):[])];
@@ -78,8 +78,11 @@ export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:Ap
   for(const approval of approvals){
    if(!approval.reason?.trim()||!approval.evidence?.length||approval.evidence.some(url=>!/^https:\/\//.test(url)))fail('Invalid approved verdict change');
    const old=oldRows.find(r=>r.id===approval.id),next=newRows.find(r=>r.id===approval.id);
-   const state=(r:IndexRow)=>({b:r.b,v:r.v,m:r.m});
-   if(!old||!next||old.t!==next.t||!isDeepStrictEqual(state(old),approval.before)||!isDeepStrictEqual(state(next),approval.after))continue;
+   // A method approval binds both quality masks; older balance approvals
+   // still require quality to remain unchanged. Partial bindings fail closed.
+   const masksBound=approval.before.t!==undefined&&approval.after.t!==undefined;
+   const state=(r:IndexRow)=>({b:r.b,v:r.v,m:r.m,...(masksBound?{t:r.t}:{})});
+   if(!old||!next||(!masksBound&&old.t!==next.t)||!isDeepStrictEqual(state(old),approval.before)||!isDeepStrictEqual(state(next),approval.after))continue;
    if(reviewed.has(approval.id))fail('Duplicate approved verdict change');
    reviewed.add(approval.id);
    if(next.b&&!old.b)increases++;if(old.b&&!next.b)decreases++;
@@ -88,6 +91,11 @@ export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:Ap
    if(reviewed.has(row.id))continue;
    // A retired quote cannot explain a verdict change in a surviving dossier.
    if(!newIds.has(row.id)&&aliases[row.id])continue;
+   const next=newRows.find(r=>r.id===row.id);
+   const priceExplains=!isDeepStrictEqual(oldPrices[row.id],newPrices[row.id])
+     && publishedBuyPrice(row,oldPrices[row.id]).b===row.b
+     && publishedBuyPrice(row,newPrices[row.id]).b===next?.b;
+   if(next&&row.b!==next.b&&!priceExplains)fail(`${file} Buy-now changed for unapproved ${row.id}`);
    if(isDeepStrictEqual(oldPrices[row.id],newPrices[row.id]))continue;
    const change=Number(publishedBuyPrice(row,newPrices[row.id]).b)-Number(publishedBuyPrice(row,oldPrices[row.id]).b);
    if(change>0)increases++;if(change<0)decreases++;

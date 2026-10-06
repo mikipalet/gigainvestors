@@ -1,0 +1,179 @@
+{
+  "baselineDossiers": 3915,
+  "candidateDossiers": 3915,
+  "missing": [],
+  "added": [],
+  "qualityMaskChanges": 185,
+  "qualityGained": [
+    "001800.KO",
+    "002475.SHE",
+    "002555.SHE",
+    "268280.KO",
+    "ABBV.US",
+    "BCG.LSE",
+    "BSY.US",
+    "CPU.AU",
+    "CR.US",
+    "DSV.CO",
+    "DSY.PA",
+    "EME.US",
+    "EXPN.LSE",
+    "GD.US",
+    "IEX.US",
+    "KARO.US",
+    "MNST.US",
+    "MRK.US",
+    "MYCR.ST",
+    "NEM.XETRA",
+    "NVDA.US",
+    "RSG.US",
+    "SIKA.SW",
+    "SUN.SW",
+    "TGS.US",
+    "TMO.US"
+  ],
+  "qualityLost": [
+    "000786.SHE",
+    "300316.SHE",
+    "600436.SHG",
+    "601225.SHG",
+    "ATE.PA",
+    "BAH.US",
+    "BLK.US",
+    "CRL.US",
+    "DEMANT.CO",
+    "FDJU.PA",
+    "GEBN.SW",
+    "GMAB.CO",
+    "HSY.US",
+    "IMCD.AS",
+    "INMD.US",
+    "IPN.PA",
+    "IPS.PA",
+    "IQV.US",
+    "KFY.US",
+    "KNIN.SW",
+    "LOTB.BR",
+    "LOV.AU",
+    "PRDO.US",
+    "SCMN.SW",
+    "SPX.LSE",
+    "STMN.SW",
+    "TIETO.HE",
+    "UMG.AS",
+    "UNH.US",
+    "VIS.MC",
+    "WTC.AU"
+  ],
+  "buyChanges": [
+    {
+      "id": "000786.SHE",
+      "before": {
+        "b": true,
+        "v": [
+          23.530973027599693,
+          30.95762408939952,
+          35.87135455072787
+        ],
+        "m": 0.25,
+        "t": "PPPPP"
+      },
+      "control": {
+        "b": true,
+        "v": [
+          23.530973027599693,
+          30.95762408939952,
+          35.87135455072787
+        ],
+        "m": 0.25,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": false,
+        "v": [
+          23.530973027599693,
+          30.95762408939952,
+          35.87135455072787
+        ],
+        "m": 0.25,
+        "t": "PFPPP"
+      }
+    },
+    {
+      "id": "001800.KO",
+      "before": {
+        "b": false,
+        "v": [
+          44998.20250452077,
+          47907.39037855468,
+          51780.136513859965
+        ],
+        "m": 0.35,
+        "t": "PFPPP"
+      },
+      "control": {
+        "b": false,
+        "v": [
+          44998.20250452077,
+          47907.39037855468,
+          51780.136513859965
+        ],
+        "m": 0.35,
+        "t": "PFPPP"
+      },
+      "after": {
+        "b": true,
+        "v": [
+          44998.20250452077,
+          47907.39037855468,
+          51780.136513859965
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      }
+    },
+    {
+      "id": "IPS.PA",
+      "before": {
+        "b": true,
+        "v": [
+          47.22764710184408,
+          52.94189844163409,
+          60.54877903874361
+        ],
+        "m": 0.25,
+        "t": "PPPPP"
+      },
+      "control": {
+        "b": true,
+        "v": [
+          47.22764710184408,
+          52.94189844163409,
+          60.54877903874361
+        ],
+        "m": 0.25,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": false,
+        "v": [
+          47.22764710184408,
+          52.94189844163409,
+          60.54877903874361
+        ],
+        "m": 0.25,
+        "t": "PFPPP"
+      }
+    }
+  ],
+  "controlDrift": [],
+  "freezeCount": 151,
+  "freezeChanges": [],
+  "numericNulls": 0,
+  "numericRemoved": 0,
+  "valuationLosses": [],
+  "protectedChanges": [],
+  "identityOrderOnly": [
+    "history/companies.json"
+  ]
+}

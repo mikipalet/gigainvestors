@@ -42,6 +42,26 @@ it('retains enough precision to explain a near-threshold failure',()=>{
 import React from 'react';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {JudgementLine} from '@/components/value/BusinessSection';
+import {TestSection} from '@/components/value/TestSection';
+import {publicAnalysis} from '@/lib/value/public-analysis';
+import {retainPublishedNumbers} from '@/lib/value/retain-published-numbers';
+it('retains a legacy gross-margin observation without applying it as the new check',()=>{
+ const old={tests:{moat:{metrics:{grossMarginDrop:.065}}}};
+ const raw={status:'scored',historyCoverage:{years:11},tests:{moat:{key:'moat',result:'pass',numeric:'pass',metrics:{roicMedian:.2,roicSecondLowest:.15,grossMarginDrop:null,grossMarginTypical:null,grossMarginRecent:null},series:{},reasons:[],jev:[]}},valuation:null} as any;
+ const published=publicAnalysis(raw);
+ retainPublishedNumbers(old as any,published);
+ const test=published.tests.moat;
+ expect(test.metrics.grossMarginDrop).toBe(.065);
+ expect(ruleReading(test,'operating').derived).toBe('pass');
+ const html=renderToStaticMarkup(React.createElement(TestSection,{test}));
+ expect(html).toContain('FY2019–20 minus FY2023 gross margin (prior assessment)');
+ expect(html).not.toContain('Typical minus recent gross margin');
+});
+it('describes a frozen legacy gross-margin rule on its original fiscal basis',()=>{
+ const t={key:'moat',result:'fail',numeric:'fail',metrics:{roicMedian:.2,roicSecondLowest:.15,grossMarginDrop:.065},series:{},reasons:[],jev:[]} as TestOutcome;
+ expect(ruleReading(t,'operating').derived).toBe('fail');
+ expect(ruleReading(t,'operating').checks.at(-1)?.text).toContain('FY2019–20 minus FY2023');
+});
 it('hides a judgement that did not override the numbers',()=>{
  const test={key:'moat',judgement:{result:'pass',override:false,reason:'The numbers pass.'}} as TestOutcome;
  expect(renderToStaticMarkup(React.createElement(JudgementLine,{test,onExplain:()=>{}}))).toBe('');

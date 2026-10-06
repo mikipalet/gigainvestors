@@ -1,0 +1,119 @@
+{
+  "rows": 3910,
+  "buys": 26,
+  "frozenBuys": 0,
+  "examples": [
+    {
+      "id": "NVDA.US",
+      "quality": "PPPPP",
+      "buy": false,
+      "quote": [
+        238.9,
+        "2026-10-05"
+      ],
+      "value": [
+        18.868461548660797,
+        25.29814284347939,
+        29.04215780003
+      ],
+      "requiredMargin": 0.5,
+      "buyCeiling": 12.649071421739695,
+      "gate": {
+        "result": "fail",
+        "mos": -8.443380942153887,
+        "dataQualityFlags": [],
+        "b": false
+      }
+    },
+    {
+      "id": "EME.US",
+      "quality": "PPPPP",
+      "buy": false,
+      "quote": [
+        779.2,
+        "2026-10-05"
+      ],
+      "value": [
+        215.88331485520794,
+        303.0282547614413,
+        353.7729096574113
+      ],
+      "requiredMargin": 0.5,
+      "buyCeiling": 151.51412738072065,
+      "gate": {
+        "result": "fail",
+        "mos": -1.571377380678328,
+        "dataQualityFlags": [],
+        "b": false
+      }
+    },
+    {
+      "id": "001800.KO",
+      "quality": "PPPPP",
+      "buy": true,
+      "quote": [
+        22900,
+        "2026-10-02"
+      ],
+      "value": [
+        44998.20250452077,
+        47907.39037855468,
+        51780.136513859965
+      ],
+      "requiredMargin": 0.35,
+      "buyCeiling": 31139.80374606054,
+      "gate": {
+        "result": "pass",
+        "mos": 0.5219944184175187,
+        "dataQualityFlags": [],
+        "b": true
+      }
+    },
+    {
+      "id": "000786.SHE",
+      "quality": "PFPPP",
+      "buy": false,
+      "quote": [
+        16.6,
+        "2026-09-30"
+      ],
+      "value": [
+        23.530973027599693,
+        30.95762408939952,
+        35.87135455072787
+      ],
+      "requiredMargin": 0.25,
+      "buyCeiling": 23.21821806704964,
+      "gate": {
+        "result": "pass",
+        "mos": 0.46378313942754545,
+        "dataQualityFlags": [],
+        "b": false
+      }
+    },
+    {
+      "id": "IPS.PA",
+      "quality": "PFPPP",
+      "buy": false,
+      "quote": [
+        35.08,
+        "2026-10-05"
+      ],
+      "value": [
+        47.22764710184408,
+        52.94189844163409,
+        60.54877903874361
+      ],
+      "requiredMargin": 0.25,
+      "buyCeiling": 39.706423831225564,
+      "gate": {
+        "result": "pass",
+        "mos": 0.3373868139867704,
+        "dataQualityFlags": [],
+        "b": false
+      }
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

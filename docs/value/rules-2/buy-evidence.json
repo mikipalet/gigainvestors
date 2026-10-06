@@ -1,0 +1,2018 @@
+[
+  {
+    "id": "000786.SHE",
+    "before": {
+      "b": true,
+      "v": [
+        23.530973027599693,
+        30.95762408939952,
+        35.87135455072787
+      ],
+      "m": 0.25,
+      "t": "PPPPP"
+    },
+    "control": {
+      "b": true,
+      "v": [
+        23.530973027599693,
+        30.95762408939952,
+        35.87135455072787
+      ],
+      "m": 0.25,
+      "t": "PPPPP"
+    },
+    "after": {
+      "b": false,
+      "v": [
+        23.530973027599693,
+        30.95762408939952,
+        35.87135455072787
+      ],
+      "m": 0.25,
+      "t": "PFPPP"
+    },
+    "name": "Beijing New Building Materials Public Ltd Co",
+    "quote": [
+      16.6,
+      "2026-09-30"
+    ],
+    "currency": "CNY",
+    "buyCeiling": 23.21821806704964,
+    "gate": {
+      "result": "pass",
+      "mos": 0.46378313942754545,
+      "dataQualityFlags": [],
+      "b": false
+    },
+    "expectedReturn": 0.16708652873958874,
+    "cashCoversPrice": false,
+    "returnInputs": {
+      "cashPerShare": 2.787737129341439,
+      "growth": 0.05990021701790976,
+      "requiredReturn": 0.1,
+      "model": {
+        "cashNow": 2.3212483138844267,
+        "annual": [
+          1.7465088216985187,
+          1.8511250791419538,
+          1.962007873109852,
+          2.0795325704999796,
+          2.20409702276874,
+          2.322942316899254,
+          2.4343044740434556,
+          2.5364481010893867,
+          2.627709613857516,
+          2.7065409022732414
+        ],
+        "terminalCash": 2.787737129341439,
+        "terminalGrowth": 0.03
+      }
+    },
+    "requiredReturn": 0.1,
+    "methodEvidence": {
+      "key": "moat",
+      "numeric": "fail",
+      "metrics": {
+        "roicMedian": 0.18930404687483815,
+        "roicSecondLowest": 0.13843874034472228,
+        "grossMarginDrop": 0.04695597666535606,
+        "grossMarginTypical": 0.3173046626156125,
+        "grossMarginRecent": 0.27034868595025646,
+        "capitalFallbackYears": 0,
+        "capexToRevenue": 0.0761653701046332,
+        "totalRoicMedian": 0.17314910624948612
+      },
+      "series": {
+        "roic": [
+          [
+            2016,
+            0.135965296347064
+          ],
+          [
+            2017,
+            0.20537681574114897
+          ],
+          [
+            2018,
+            0.20899399212198336
+          ],
+          [
+            2019,
+            0.13843874034472228
+          ],
+          [
+            2020,
+            0.19023648766688922
+          ],
+          [
+            2021,
+            0.18837160608278705
+          ],
+          [
+            2022,
+            0.1756451470148169
+          ],
+          [
+            2023,
+            0.19989167517214507
+          ],
+          [
+            2024,
+            0.20610288943131028
+          ],
+          [
+            2025,
+            0.13846768549421018
+          ]
+        ],
+        "grossMargin": [
+          [
+            2016,
+            0.3410856484522258
+          ],
+          [
+            2017,
+            0.3714660147358809
+          ],
+          [
+            2018,
+            0.3516979261711919
+          ],
+          [
+            2019,
+            0.31720059544826773
+          ],
+          [
+            2020,
+            0.33578486448157746
+          ],
+          [
+            2021,
+            0.3174087297829573
+          ],
+          [
+            2022,
+            0.29066211853708956
+          ],
+          [
+            2023,
+            0.2983232169002144
+          ],
+          [
+            2024,
+            0.29820080644049424
+          ],
+          [
+            2025,
+            0.27034868595025646
+          ]
+        ],
+        "totalRoic": [
+          [
+            2016,
+            0.10709230063981078
+          ],
+          [
+            2017,
+            0.19649699484262026
+          ],
+          [
+            2018,
+            0.18906611511946986
+          ],
+          [
+            2019,
+            -0.034375454626746405
+          ],
+          [
+            2020,
+            0.17480097358596716
+          ],
+          [
+            2021,
+            0.17812809294133342
+          ],
+          [
+            2022,
+            0.13695957558312552
+          ],
+          [
+            2023,
+            0.18246512375306703
+          ],
+          [
+            2024,
+            0.17149723891300508
+          ],
+          [
+            2025,
+            0.11582478164227632
+          ]
+        ]
+      },
+      "reasons": [
+        "Recent gross margin fell 4.7pp below the typical margin (limit 4pp)"
+      ],
+      "result": "fail",
+      "jev": [
+        {
+          "q": "brand",
+          "label": "Describes brand advantage",
+          "kind": "noul",
+          "value": 0.02,
+          "probability": 0.02,
+          "section": "description",
+          "evidence": null,
+          "trusted": true
+        },
+        {
+          "q": "switching_costs",
+          "label": "Describes switching costs",
+          "kind": "noul",
+          "value": 0.02,
+          "probability": 0.02,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "network",
+          "label": "Describes network effects",
+          "kind": "noul",
+          "value": 0.02,
+          "probability": 0.02,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "low_cost",
+          "label": "Describes low-cost production",
+          "kind": "noul",
+          "value": 0.02,
+          "probability": 0.02,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "regulatory_moat",
+          "label": "Describes regulatory protection",
+          "kind": "noul",
+          "value": 0.02,
+          "probability": 0.02,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "scale",
+          "label": "Describes scale advantage",
+          "kind": "noul",
+          "value": 0.02,
+          "probability": 0.02,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "no_moat",
+          "label": "No moat source described",
+          "kind": "noul",
+          "value": 0.37,
+          "probability": 0.37,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "pricing_power",
+          "label": "Describes pricing power",
+          "kind": "noul",
+          "value": 0.01,
+          "probability": 0.01,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "commodity_product",
+          "label": "Commodity product sold on price",
+          "kind": "noul",
+          "value": 0.12,
+          "probability": 0.12,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        }
+      ],
+      "rawNumeric": "fail",
+      "rawMetrics": {
+        "roicMedian": 0.18930404687483815,
+        "roicSecondLowest": 0.13843874034472228,
+        "grossMarginDrop": 0.04695597666535606,
+        "grossMarginTypical": 0.3173046626156125,
+        "grossMarginRecent": 0.27034868595025646,
+        "capitalFallbackYears": 0,
+        "capexToRevenue": 0.0761653701046332
+      },
+      "judgement": {
+        "result": "fail",
+        "reason": "The returns do not yet demonstrate a durable advantage.",
+        "override": false
+      }
+    },
+    "operatingMarginEvidence": {
+      "key": "understandable",
+      "numeric": "pass",
+      "metrics": {
+        "historyYears": 10,
+        "revenueDeclines": 2,
+        "lossYears": 0,
+        "opMarginCv": 0.18525034054912137
+      },
+      "series": {
+        "revenue": [
+          [
+            2016,
+            8156079145
+          ],
+          [
+            2017,
+            11164343454
+          ],
+          [
+            2018,
+            12564910661
+          ],
+          [
+            2019,
+            13323011973
+          ],
+          [
+            2020,
+            16848095538
+          ],
+          [
+            2021,
+            21091199598
+          ],
+          [
+            2022,
+            20154701058
+          ],
+          [
+            2023,
+            22425895636
+          ],
+          [
+            2024,
+            25821124000
+          ],
+          [
+            2025,
+            25164380049
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2016,
+            0.2036452744598765
+          ],
+          [
+            2017,
+            0.2455345610151273
+          ],
+          [
+            2018,
+            0.2411345745898734
+          ],
+          [
+            2019,
+            0.20251335317177982
+          ],
+          [
+            2020,
+            0.19613222399807595
+          ],
+          [
+            2021,
+            0.1788057025147878
+          ],
+          [
+            2022,
+            0.1649267382053571
+          ],
+          [
+            2023,
+            0.17301820408774865
+          ],
+          [
+            2024,
+            0.15392118484075287
+          ],
+          [
+            2025,
+            0.12817896724335073
+          ]
+        ],
+        "netIncome": [
+          [
+            2016,
+            1171068651
+          ],
+          [
+            2017,
+            2343985440
+          ],
+          [
+            2018,
+            2465980212
+          ],
+          [
+            2019,
+            441144308
+          ],
+          [
+            2020,
+            2861439667
+          ],
+          [
+            2021,
+            3512703178
+          ],
+          [
+            2022,
+            3144419797
+          ],
+          [
+            2023,
+            3524001200
+          ],
+          [
+            2024,
+            3646942000
+          ],
+          [
+            2025,
+            2906380291
+          ]
+        ]
+      },
+      "reasons": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "result": "pass",
+      "jev": [
+        {
+          "q": "same_10y",
+          "label": "Core product likely to remain recognisable",
+          "kind": "noul",
+          "value": 0.81,
+          "probability": 0.81,
+          "section": "description",
+          "evidence": null,
+          "trusted": true
+        },
+        {
+          "q": "technology_change",
+          "label": "Exposure to technology change",
+          "kind": "score",
+          "value": 0.41,
+          "probability": 0.38,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "commodity",
+          "label": "Revenue depends on commodity prices",
+          "kind": "noul",
+          "value": 0.10000000000000002,
+          "probability": 0.10000000000000002,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "government_dependence",
+          "label": "Revenue depends on government permission",
+          "kind": "noul",
+          "value": 0.13,
+          "probability": 0.13,
+          "section": "description",
+          "evidence": null,
+          "trusted": false
+        }
+      ],
+      "rawNumeric": "pass",
+      "rawMetrics": {
+        "historyYears": 10,
+        "revenueDeclines": 2,
+        "lossYears": 0,
+        "opMarginCv": 0.18525034054912137
+      },
+      "judgement": {
+        "result": "pass",
+        "reason": "The business has earned money through different conditions.",
+        "override": false
+      }
+    },
+    "valuationUnchanged": true,
+    "marginUnchanged": true,
+    "annualMargins": [
+      {
+        "fy": 2016,
+        "revenue": 8156079145,
+        "grossProfit": 2781921544,
+        "grossMargin": 0.3410856484522258,
+        "operatingIncome": 1660946976,
+        "provenance": {
+          "source": "raw/eodhd/000786.SHE.json#2016-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2017,
+        "revenue": 11164343454,
+        "grossProfit": 4147174170,
+        "grossMargin": 0.3714660147358809,
+        "operatingIncome": 2741232169,
+        "provenance": {
+          "source": "raw/eodhd/000786.SHE.json#2017-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2018,
+        "revenue": 12564910661,
+        "grossProfit": 4419053022,
+        "grossMargin": 0.3516979261711919,
+        "operatingIncome": 3029834387,
+        "provenance": {
+          "source": "raw/eodhd/000786.SHE.json#2018-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2019,
+        "revenue": 13323011973,
+        "grossProfit": 4226067331,
+        "grossMargin": 0.31720059544826773,
+        "operatingIncome": 2698087829,
+        "provenance": {
+          "source": "raw/eodhd/000786.SHE.json#2019-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2020,
+        "revenue": 16848095538,
+        "grossProfit": 5657335477,
+        "grossMargin": 0.33578486448157746,
+        "operatingIncome": 3304454448,
+        "provenance": {
+          "source": "raw/eodhd/000786.SHE.json#2020-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2021,
+        "revenue": 21091199598,
+        "grossProfit": 6694530874,
+        "grossMargin": 0.3174087297829573,
+        "operatingIncome": 3771226761,
+        "provenance": {
+          "source": "raw/eodhd/000786.SHE.json#2021-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2022,
+        "revenue": 20154701058,
+        "grossProfit": 5858208108,
+        "grossMargin": 0.29066211853708956,
+        "operatingIncome": 3324049105,
+        "provenance": {
+          "source": "raw/eodhd/000786.SHE.json#2022-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2023,
+        "revenue": 22425895636,
+        "grossProfit": 6690165328,
+        "grossMargin": 0.2983232169002144,
+        "operatingIncome": 3880088188,
+        "provenance": {
+          "source": "raw/eodhd/000786.SHE.json#2023-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2024,
+        "revenue": 25821124000,
+        "grossProfit": 7699880000,
+        "grossMargin": 0.29820080644049424,
+        "operatingIncome": 3974418000,
+        "provenance": {
+          "source": "raw/eodhd/000786.SHE.json#2024-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2025,
+        "revenue": 25164380049,
+        "grossProfit": 6803157079,
+        "grossMargin": 0.27034868595025646,
+        "operatingIncome": 3225544246,
+        "provenance": {
+          "source": "raw/eodhd/000786.SHE.json#2025-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      }
+    ],
+    "sourceFiles": {
+      "analysis/inputs/000786.SHE.json": "df2b3c3743577c2d3a911762bef27e4e1335a8130c9fc39ab52cb71b0dd24d83",
+      "raw/eodhd/000786.SHE.json": "88dbe6caceded09fff877d74a3fa5110ae3f2119fcd5758ab81b77cbb16366b8",
+      "fundamentals/000786.SHE.json": "794878562df9dc2c8f93b5d8191cdc48763366b62e38513f7134911634598a79"
+    },
+    "cachedFiling": {
+      "id": "000786.SHE",
+      "kind": "description",
+      "url": null,
+      "filed": null,
+      "period": null,
+      "sections": [
+        "business"
+      ]
+    }
+  },
+  {
+    "id": "001800.KO",
+    "before": {
+      "b": false,
+      "v": [
+        44998.20250452077,
+        47907.39037855468,
+        51780.136513859965
+      ],
+      "m": 0.35,
+      "t": "PFPPP"
+    },
+    "control": {
+      "b": false,
+      "v": [
+        44998.20250452077,
+        47907.39037855468,
+        51780.136513859965
+      ],
+      "m": 0.35,
+      "t": "PFPPP"
+    },
+    "after": {
+      "b": true,
+      "v": [
+        44998.20250452077,
+        47907.39037855468,
+        51780.136513859965
+      ],
+      "m": 0.35,
+      "t": "PPPPP"
+    },
+    "name": "ORION Holdings Corp",
+    "quote": [
+      22900,
+      "2026-10-02"
+    ],
+    "currency": "KRW",
+    "buyCeiling": 31139.80374606054,
+    "gate": {
+      "result": "pass",
+      "mos": 0.5219944184175187,
+      "dataQualityFlags": [],
+      "b": true
+    },
+    "expectedReturn": null,
+    "cashCoversPrice": true,
+    "returnInputs": {
+      "cashPerShare": 2173.436712164225,
+      "growth": 0,
+      "requiredReturn": 0.1,
+      "model": {
+        "cashNow": 23898.499640372273,
+        "annual": [
+          1930.3956102477246,
+          1930.3956102477246,
+          1930.3956102477246,
+          1930.3956102477246,
+          1930.3956102477246,
+          1941.977983909211,
+          1965.2817197161214,
+          2000.6567906710115,
+          2048.672553647116,
+          2110.132730256529
+        ],
+        "terminalCash": 2173.436712164225,
+        "terminalGrowth": 0.03
+      }
+    },
+    "requiredReturn": 0.1,
+    "methodEvidence": {
+      "key": "moat",
+      "numeric": "pass",
+      "metrics": {
+        "roicMedian": 0.28125105294279784,
+        "roicSecondLowest": 0.1350790917601776,
+        "grossMarginDrop": 0.025329031391134182,
+        "grossMarginTypical": 0.38684451909354667,
+        "grossMarginRecent": 0.3615154877024125,
+        "capitalFallbackYears": 0,
+        "capexToRevenue": 0.061856493200789515,
+        "totalRoicMedian": 0.1352170942817307
+      },
+      "series": {
+        "roic": [
+          [
+            2017,
+            0.0030670272988436204
+          ],
+          [
+            2018,
+            0.1350790917601776
+          ],
+          [
+            2019,
+            0.1574152892994712
+          ],
+          [
+            2020,
+            0.21920000869954032
+          ],
+          [
+            2021,
+            0.28125105294279784
+          ],
+          [
+            2022,
+            0.6570254572360358
+          ],
+          [
+            2023,
+            0.9533150025480064
+          ],
+          [
+            2024,
+            0.7059505727028842
+          ],
+          [
+            2025,
+            0.7402758393747522
+          ]
+        ],
+        "grossMargin": [
+          [
+            2017,
+            0.24394329363572215
+          ],
+          [
+            2018,
+            0.44921808985260386
+          ],
+          [
+            2019,
+            0.44125918542411235
+          ],
+          [
+            2020,
+            0.42245433314637393
+          ],
+          [
+            2021,
+            0.40127174007422306
+          ],
+          [
+            2022,
+            0.37709935055257904
+          ],
+          [
+            2023,
+            0.3780014588257699
+          ],
+          [
+            2024,
+            0.38684451909354667
+          ],
+          [
+            2025,
+            0.3615154877024125
+          ]
+        ],
+        "totalRoic": [
+          [
+            2017,
+            0.705861462647725
+          ],
+          [
+            2018,
+            0.09066151800202683
+          ],
+          [
+            2019,
+            0.04921550018938174
+          ],
+          [
+            2020,
+            0.07005764144166753
+          ],
+          [
+            2021,
+            0.10101790251538582
+          ],
+          [
+            2022,
+            0.20563515543284475
+          ],
+          [
+            2023,
+            0.1352170942817307
+          ],
+          [
+            2024,
+            0.18446874025027182
+          ],
+          [
+            2025,
+            0.13551015224584734
+          ]
+        ]
+      },
+      "reasons": [],
+      "result": "pass",
+      "jev": [
+        {
+          "q": "brand",
+          "label": "Describes brand advantage",
+          "kind": "noul",
+          "value": 0.46,
+          "probability": 0.46,
+          "section": "business",
+          "evidence": null,
+          "trusted": true
+        },
+        {
+          "q": "switching_costs",
+          "label": "Describes switching costs",
+          "kind": "noul",
+          "value": 0.08,
+          "probability": 0.08,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "network",
+          "label": "Describes network effects",
+          "kind": "noul",
+          "value": 0.02,
+          "probability": 0.02,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "low_cost",
+          "label": "Describes low-cost production",
+          "kind": "noul",
+          "value": 0.08,
+          "probability": 0.08,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "regulatory_moat",
+          "label": "Describes regulatory protection",
+          "kind": "noul",
+          "value": 0.6,
+          "probability": 0.6,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "scale",
+          "label": "Describes scale advantage",
+          "kind": "noul",
+          "value": 0.06,
+          "probability": 0.06,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "no_moat",
+          "label": "No moat source described",
+          "kind": "noul",
+          "value": 0.13269305172359114,
+          "probability": 0.13269305172359114,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "pricing_power",
+          "label": "Describes pricing power",
+          "kind": "noul",
+          "value": 0.05,
+          "probability": 0.05,
+          "section": "mdna",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "commodity_product",
+          "label": "Commodity product sold on price",
+          "kind": "noul",
+          "value": 0.0776158310341547,
+          "probability": 0.0776158310341547,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        }
+      ],
+      "rawNumeric": "pass",
+      "rawMetrics": {
+        "roicMedian": 0.28125105294279784,
+        "roicSecondLowest": 0.1350790917601776,
+        "grossMarginDrop": 0.025329031391134182,
+        "grossMarginTypical": 0.38684451909354667,
+        "grossMarginRecent": 0.3615154877024125,
+        "capitalFallbackYears": 0,
+        "capexToRevenue": 0.061856493200789515
+      },
+      "judgement": {
+        "result": "pass",
+        "reason": "The business earns attractive returns on the capital it needs.",
+        "override": false
+      }
+    },
+    "operatingMarginEvidence": {
+      "key": "understandable",
+      "numeric": "pass",
+      "metrics": {
+        "historyYears": 10,
+        "revenueDeclines": 0,
+        "lossYears": 0,
+        "opMarginCv": 0.23824163685037844
+      },
+      "series": {
+        "shares": [
+          [
+            2017,
+            60155284
+          ],
+          [
+            2018,
+            60155500
+          ],
+          [
+            2019,
+            60156600
+          ],
+          [
+            2020,
+            60156653
+          ],
+          [
+            2021,
+            60156653
+          ],
+          [
+            2022,
+            60143997
+          ],
+          [
+            2023,
+            60171491
+          ],
+          [
+            2024,
+            60163447
+          ],
+          [
+            2025,
+            60165015
+          ],
+          [
+            2026,
+            60156652.25
+          ]
+        ],
+        "revenue": [
+          [
+            2017,
+            112748277930
+          ],
+          [
+            2018,
+            1997682828010
+          ],
+          [
+            2019,
+            2103591289160
+          ],
+          [
+            2020,
+            2280487378280
+          ],
+          [
+            2021,
+            2415059149470
+          ],
+          [
+            2022,
+            2934623360630
+          ],
+          [
+            2023,
+            2953806265850
+          ],
+          [
+            2024,
+            3195245858430
+          ],
+          [
+            2025,
+            3393126199450
+          ],
+          [
+            2026,
+            3753726701600
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2017,
+            0.04346771729003915
+          ],
+          [
+            2018,
+            0.11538998478533555
+          ],
+          [
+            2019,
+            0.12676393703193253
+          ],
+          [
+            2020,
+            0.13533450681615933
+          ],
+          [
+            2021,
+            0.1307203591097476
+          ],
+          [
+            2022,
+            0.13624399463792392
+          ],
+          [
+            2023,
+            0.13726800544358728
+          ],
+          [
+            2024,
+            0.15843539180385435
+          ],
+          [
+            2025,
+            0.14374019507705227
+          ],
+          [
+            2026,
+            0.15255256095919714
+          ]
+        ],
+        "netIncome": [
+          [
+            2017,
+            1480312927910
+          ],
+          [
+            2018,
+            56332235660
+          ],
+          [
+            2019,
+            48378510220
+          ],
+          [
+            2020,
+            77512476210
+          ],
+          [
+            2021,
+            85985012800
+          ],
+          [
+            2022,
+            102966522180
+          ],
+          [
+            2023,
+            85624031640
+          ],
+          [
+            2024,
+            160636402910
+          ],
+          [
+            2025,
+            120991845510
+          ],
+          [
+            2026,
+            140366367090
+          ]
+        ]
+      },
+      "reasons": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "provisional": {
+        "end": "2026-06-30",
+        "fy": 2026,
+        "label": "LTM to Jun 2026",
+        "filed": "2026-09-28",
+        "periods": [
+          "2025-09-30",
+          "2025-12-31",
+          "2026-03-31",
+          "2026-06-30"
+        ]
+      },
+      "result": "pass",
+      "jev": [
+        {
+          "q": "same_10y",
+          "label": "Core product likely to remain recognisable",
+          "kind": "noul",
+          "value": 0.7900000000000001,
+          "probability": 0.7900000000000001,
+          "section": "business",
+          "evidence": null,
+          "trusted": true
+        },
+        {
+          "q": "technology_change",
+          "label": "Exposure to technology change",
+          "kind": "score",
+          "value": 0.17285724233983288,
+          "probability": 0.7389124883936862,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "commodity",
+          "label": "Revenue depends on commodity prices",
+          "kind": "noul",
+          "value": 0.05733194057567316,
+          "probability": 0.05733194057567316,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "government_dependence",
+          "label": "Revenue depends on government permission",
+          "kind": "noul",
+          "value": 0.3788922934076137,
+          "probability": 0.3788922934076137,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        }
+      ],
+      "rawNumeric": "pass",
+      "rawMetrics": {
+        "historyYears": 10,
+        "revenueDeclines": 0,
+        "lossYears": 0,
+        "opMarginCv": 0.23824163685037844
+      },
+      "judgement": {
+        "result": "pass",
+        "reason": "The business has earned money through different conditions.",
+        "override": false
+      }
+    },
+    "valuationUnchanged": true,
+    "marginUnchanged": true,
+    "annualMargins": [
+      {
+        "fy": 2017,
+        "revenue": 112748277930,
+        "grossProfit": 27504186270,
+        "grossMargin": 0.24394329363572215,
+        "operatingIncome": 4900910270,
+        "provenance": {
+          "source": "raw/eodhd/001800.KO.json#2017-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2018,
+        "revenue": 1997682828010,
+        "grossProfit": 897395264130,
+        "grossMargin": 0.44921808985260386,
+        "operatingIncome": 230512591130,
+        "provenance": {
+          "source": "raw/eodhd/001800.KO.json#2018-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2019,
+        "revenue": 2103591289160,
+        "grossProfit": 928228978720,
+        "grossMargin": 0.44125918542411235,
+        "operatingIncome": 266659513720,
+        "provenance": {
+          "source": "raw/eodhd/001800.KO.json#2019-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2020,
+        "revenue": 2280487378280,
+        "grossProfit": 963401774640,
+        "grossMargin": 0.42245433314637393,
+        "operatingIncome": 308628634640,
+        "provenance": {
+          "source": "raw/eodhd/001800.KO.json#2020-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2021,
+        "revenue": 2415059149470,
+        "grossProfit": 969094987290,
+        "grossMargin": 0.40127174007422306,
+        "operatingIncome": 315697399290,
+        "provenance": {
+          "source": "raw/eodhd/001800.KO.json#2021-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2022,
+        "revenue": 2934623360630,
+        "grossProfit": 1106644563410,
+        "grossMargin": 0.37709935055257904,
+        "operatingIncome": 399824809410,
+        "provenance": {
+          "source": "raw/eodhd/001800.KO.json#2022-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2023,
+        "revenue": 2953806265850,
+        "grossProfit": 1116543077580,
+        "grossMargin": 0.3780014588257699,
+        "operatingIncome": 405463094580,
+        "provenance": {
+          "source": "raw/eodhd/001800.KO.json#2023-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2024,
+        "revenue": 3195245858430,
+        "grossProfit": 1236063347490,
+        "grossMargin": 0.38684451909354667,
+        "operatingIncome": 506240029490,
+        "provenance": {
+          "source": "raw/eodhd/001800.KO.json#2024-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2025,
+        "revenue": 3393126199450,
+        "grossProfit": 1226667672830,
+        "grossMargin": 0.3615154877024125,
+        "operatingIncome": 487728621830,
+        "provenance": {
+          "source": "raw/eodhd/001800.KO.json#2025-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      }
+    ],
+    "sourceFiles": {
+      "analysis/inputs/001800.KO.json": "9591c533a4d980d60ac97b5950df1cfc6b44512bc5dac348019080ebf0728ff1",
+      "raw/eodhd/001800.KO.json": "47dd2c219cec6caf2410e07cf6ce4f39887ec181096cdc6d4c208cbe537f7f0b",
+      "fundamentals/001800.KO.json": "3216f6389f5002b837baabdc8a06105fbc97d5a71ea0eabd6bf5f29ccfaeec6b"
+    },
+    "cachedFiling": {
+      "id": "001800.KO",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1402829/000140282926000011/orn-20251231x10k.htm",
+      "filed": "2026-03-04",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    }
+  },
+  {
+    "id": "IPS.PA",
+    "before": {
+      "b": true,
+      "v": [
+        47.22764710184408,
+        52.94189844163409,
+        60.54877903874361
+      ],
+      "m": 0.25,
+      "t": "PPPPP"
+    },
+    "control": {
+      "b": true,
+      "v": [
+        47.22764710184408,
+        52.94189844163409,
+        60.54877903874361
+      ],
+      "m": 0.25,
+      "t": "PPPPP"
+    },
+    "after": {
+      "b": false,
+      "v": [
+        47.22764710184408,
+        52.94189844163409,
+        60.54877903874361
+      ],
+      "m": 0.25,
+      "t": "PFPPP"
+    },
+    "name": "Ipsos SA",
+    "quote": [
+      35.08,
+      "2026-10-05"
+    ],
+    "currency": "EUR",
+    "buyCeiling": 39.706423831225564,
+    "gate": {
+      "result": "pass",
+      "mos": 0.3373868139867704,
+      "dataQualityFlags": [],
+      "b": false
+    },
+    "expectedReturn": 0.14471104873980123,
+    "cashCoversPrice": false,
+    "returnInputs": {
+      "cashPerShare": 4.2690827069934665,
+      "growth": 0,
+      "requiredReturn": 0.1,
+      "model": {
+        "cashNow": 5.7834329152058634,
+        "annual": [
+          3.7916993263441143,
+          3.7916993263441143,
+          3.7916993263441143,
+          3.7916993263441143,
+          3.7916993263441143,
+          3.814449522302179,
+          3.860222916569805,
+          3.929706929068062,
+          4.024019895365695,
+          4.144740492226666
+        ],
+        "terminalCash": 4.2690827069934665,
+        "terminalGrowth": 0.03
+      }
+    },
+    "requiredReturn": 0.1,
+    "methodEvidence": {
+      "key": "moat",
+      "numeric": "fail",
+      "metrics": {
+        "roicMedian": 0.5698677079697421,
+        "roicSecondLowest": 0.37951111441345725,
+        "grossMarginDrop": 0.4504681338238886,
+        "grossMarginTypical": 0.6501675849300337,
+        "grossMarginRecent": 0.1996994511061451,
+        "capitalFallbackYears": 0,
+        "capexToRevenue": 0.022186682704408156,
+        "totalRoicMedian": 0.08363569185076304
+      },
+      "series": {
+        "roic": [
+          [
+            2016,
+            0.6117488311963046
+          ],
+          [
+            2017,
+            0.5752925335495819
+          ],
+          [
+            2018,
+            0.40126580322745947
+          ],
+          [
+            2019,
+            0.2455784994657297
+          ],
+          [
+            2020,
+            0.37951111441345725
+          ],
+          [
+            2021,
+            0.6739502133047724
+          ],
+          [
+            2022,
+            0.7478309930444723
+          ],
+          [
+            2023,
+            0.5644428823899023
+          ],
+          [
+            2024,
+            0.6408823730444081
+          ],
+          [
+            2025,
+            0.5643886659931158
+          ]
+        ],
+        "grossMargin": [
+          [
+            2016,
+            0.6509518475159184
+          ],
+          [
+            2017,
+            0.6496470280316301
+          ],
+          [
+            2018,
+            0.6506881418284373
+          ],
+          [
+            2019,
+            0.643185216060861
+          ],
+          [
+            2020,
+            0.6424875260146814
+          ],
+          [
+            2021,
+            0.6471876928810164
+          ],
+          [
+            2022,
+            0.662731207204061
+          ],
+          [
+            2023,
+            0.6748678765257489
+          ],
+          [
+            2024,
+            0.6873524037397881
+          ],
+          [
+            2025,
+            0.1996994511061451
+          ]
+        ],
+        "totalRoic": [
+          [
+            2016,
+            0.0703774351607211
+          ],
+          [
+            2017,
+            0.08712843343435267
+          ],
+          [
+            2018,
+            0.05058152990121838
+          ],
+          [
+            2019,
+            0.05016564436366893
+          ],
+          [
+            2020,
+            0.07069912222664114
+          ],
+          [
+            2021,
+            0.10664832799190042
+          ],
+          [
+            2022,
+            0.12075514349977799
+          ],
+          [
+            2023,
+            0.10650434984267641
+          ],
+          [
+            2024,
+            0.10141570336472994
+          ],
+          [
+            2025,
+            0.08014295026717341
+          ]
+        ]
+      },
+      "reasons": [
+        "Recent gross margin fell 45.0pp below the typical margin (limit 4pp)"
+      ],
+      "result": "fail",
+      "jev": [
+        {
+          "q": "brand",
+          "label": "Describes brand advantage",
+          "kind": "noul",
+          "value": 0.88,
+          "probability": 0.88,
+          "section": "business",
+          "evidence": null,
+          "trusted": true
+        },
+        {
+          "q": "switching_costs",
+          "label": "Describes switching costs",
+          "kind": "noul",
+          "value": 0.07,
+          "probability": 0.07,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "network",
+          "label": "Describes network effects",
+          "kind": "noul",
+          "value": 0.07,
+          "probability": 0.07,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "low_cost",
+          "label": "Describes low-cost production",
+          "kind": "noul",
+          "value": 0.03,
+          "probability": 0.03,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "regulatory_moat",
+          "label": "Describes regulatory protection",
+          "kind": "noul",
+          "value": 0.04,
+          "probability": 0.04,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "scale",
+          "label": "Describes scale advantage",
+          "kind": "noul",
+          "value": 0.06,
+          "probability": 0.06,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "no_moat",
+          "label": "No moat source described",
+          "kind": "noul",
+          "value": 0.1308071636557187,
+          "probability": 0.1308071636557187,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "pricing_power",
+          "label": "Describes pricing power",
+          "kind": "noul",
+          "value": 0.03,
+          "probability": 0.03,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "commodity_product",
+          "label": "Commodity product sold on price",
+          "kind": "noul",
+          "value": 0.04719934875857103,
+          "probability": 0.04719934875857103,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        }
+      ],
+      "rawNumeric": "fail",
+      "rawMetrics": {
+        "roicMedian": 0.5698677079697421,
+        "roicSecondLowest": 0.37951111441345725,
+        "grossMarginDrop": 0.4504681338238886,
+        "grossMarginTypical": 0.6501675849300337,
+        "grossMarginRecent": 0.1996994511061451,
+        "capitalFallbackYears": 0,
+        "capexToRevenue": 0.022186682704408156
+      },
+      "judgement": {
+        "result": "fail",
+        "reason": "The returns do not yet demonstrate a durable advantage.",
+        "override": false
+      }
+    },
+    "operatingMarginEvidence": {
+      "key": "understandable",
+      "numeric": "pass",
+      "metrics": {
+        "historyYears": 10,
+        "revenueDeclines": 5,
+        "lossYears": 0,
+        "opMarginCv": 0.13680194194363876
+      },
+      "series": {
+        "revenue": [
+          [
+            2016,
+            1782691000
+          ],
+          [
+            2017,
+            1780453000
+          ],
+          [
+            2018,
+            1749494000
+          ],
+          [
+            2019,
+            2003255000
+          ],
+          [
+            2020,
+            1837424000
+          ],
+          [
+            2021,
+            2146725000
+          ],
+          [
+            2022,
+            2405310000
+          ],
+          [
+            2023,
+            2389810000
+          ],
+          [
+            2024,
+            2440780000
+          ],
+          [
+            2025,
+            2524714000
+          ]
+        ],
+        "operatingMargin": [
+          [
+            2016,
+            0.0983855306387927
+          ],
+          [
+            2017,
+            0.09180809602949362
+          ],
+          [
+            2018,
+            0.09337099755700791
+          ],
+          [
+            2019,
+            0.08812607481324145
+          ],
+          [
+            2020,
+            0.096645629968913
+          ],
+          [
+            2021,
+            0.12497595174044183
+          ],
+          [
+            2022,
+            0.12894179960171454
+          ],
+          [
+            2023,
+            0.10825756022445299
+          ],
+          [
+            2024,
+            0.12077573562549676
+          ],
+          [
+            2025,
+            0.12126205186013149
+          ]
+        ],
+        "netIncome": [
+          [
+            2016,
+            106897000
+          ],
+          [
+            2017,
+            128507000
+          ],
+          [
+            2018,
+            107520000
+          ],
+          [
+            2019,
+            104785000
+          ],
+          [
+            2020,
+            109498000
+          ],
+          [
+            2021,
+            183923000
+          ],
+          [
+            2022,
+            215160000
+          ],
+          [
+            2023,
+            159725000
+          ],
+          [
+            2024,
+            204525000
+          ],
+          [
+            2025,
+            186551000
+          ]
+        ]
+      },
+      "reasons": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "result": "pass",
+      "jev": [
+        {
+          "q": "same_10y",
+          "label": "Core product likely to remain recognisable",
+          "kind": "noul",
+          "value": 0.69,
+          "probability": 0.69,
+          "section": "business",
+          "evidence": null,
+          "trusted": true
+        },
+        {
+          "q": "technology_change",
+          "label": "Exposure to technology change",
+          "kind": "score",
+          "value": 1.110404740200547,
+          "probability": 0.7457206016408386,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "commodity",
+          "label": "Revenue depends on commodity prices",
+          "kind": "noul",
+          "value": 0.03,
+          "probability": 0.03,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        },
+        {
+          "q": "government_dependence",
+          "label": "Revenue depends on government permission",
+          "kind": "noul",
+          "value": 0.08251891522333638,
+          "probability": 0.08251891522333638,
+          "section": "business",
+          "evidence": null,
+          "trusted": false
+        }
+      ],
+      "rawNumeric": "pass",
+      "rawMetrics": {
+        "historyYears": 10,
+        "revenueDeclines": 5,
+        "lossYears": 0,
+        "opMarginCv": 0.13680194194363876
+      },
+      "judgement": {
+        "result": "pass",
+        "reason": "The business has earned money through different conditions.",
+        "override": false
+      }
+    },
+    "valuationUnchanged": true,
+    "marginUnchanged": true,
+    "annualMargins": [
+      {
+        "fy": 2016,
+        "revenue": 1782691000,
+        "grossProfit": 1160446000,
+        "grossMargin": 0.6509518475159184,
+        "operatingIncome": 175391000,
+        "provenance": {
+          "source": "raw/eodhd/IPS.PA.json#2016-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2017,
+        "revenue": 1780453000,
+        "grossProfit": 1156666000,
+        "grossMargin": 0.6496470280316301,
+        "operatingIncome": 163460000,
+        "provenance": {
+          "source": "raw/eodhd/IPS.PA.json#2017-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2018,
+        "revenue": 1749494000,
+        "grossProfit": 1138375000,
+        "grossMargin": 0.6506881418284373,
+        "operatingIncome": 163352000,
+        "provenance": {
+          "source": "raw/eodhd/IPS.PA.json#2018-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2019,
+        "revenue": 2003255000,
+        "grossProfit": 1288464000,
+        "grossMargin": 0.643185216060861,
+        "operatingIncome": 176539000,
+        "provenance": {
+          "source": "raw/eodhd/IPS.PA.json#2019-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2020,
+        "revenue": 1837424000,
+        "grossProfit": 1180522000,
+        "grossMargin": 0.6424875260146814,
+        "operatingIncome": 177579000,
+        "provenance": {
+          "source": "raw/eodhd/IPS.PA.json#2020-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2021,
+        "revenue": 2146725000,
+        "grossProfit": 1389334000,
+        "grossMargin": 0.6471876928810164,
+        "operatingIncome": 268289000,
+        "provenance": {
+          "source": "raw/eodhd/IPS.PA.json#2021-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2022,
+        "revenue": 2405310000,
+        "grossProfit": 1594074000,
+        "grossMargin": 0.662731207204061,
+        "operatingIncome": 310145000,
+        "provenance": {
+          "source": "raw/eodhd/IPS.PA.json#2022-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2023,
+        "revenue": 2389810000,
+        "grossProfit": 1612806000,
+        "grossMargin": 0.6748678765257489,
+        "operatingIncome": 258715000,
+        "provenance": {
+          "source": "raw/eodhd/IPS.PA.json#2023-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2024,
+        "revenue": 2440780000,
+        "grossProfit": 1677676000,
+        "grossMargin": 0.6873524037397881,
+        "operatingIncome": 294787000,
+        "provenance": {
+          "source": "raw/eodhd/IPS.PA.json#2024-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      },
+      {
+        "fy": 2025,
+        "revenue": 2524714000,
+        "grossProfit": 504184000,
+        "grossMargin": 0.1996994511061451,
+        "operatingIncome": 306152000,
+        "provenance": {
+          "source": "raw/eodhd/IPS.PA.json#2025-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        }
+      }
+    ],
+    "sourceFiles": {
+      "analysis/inputs/IPS.PA.json": "93a5c5ca03de87322e6e29eea78911267233c5be1d455e63a212831c8913b76f",
+      "raw/eodhd/IPS.PA.json": "796a66054bfdb9e69924e96bd8a5f0fdc3c18461eca4b4eb6ab7c922d8986a44",
+      "fundamentals/IPS.PA.json": "6bb4acc1ad5978f8795d4f15b2d9ad679e21afbf07788c1b44bd6e364615a399"
+    },
+    "cachedFiling": {
+      "id": "IPS.PA",
+      "kind": "ESEF",
+      "url": "https://filings.xbrl.org/9695002OY2X35E9X8W87/2025-12-31/ESEF/FR/0/ipsos-2025-12-31-fr/reports/ipsos-2025-12-31-fr.xhtml",
+      "filed": "2026-04-21",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "compensation",
+        "risk",
+        "mdna",
+        "auditor",
+        "notes"
+      ]
+    }
+  }
+]

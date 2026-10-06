@@ -1,0 +1,23 @@
+{
+  "complete": true,
+  "removed": [
+    "/Users/miki/data/value-rules/.audit/rules-2/corpus",
+    "/Users/miki/data/value-rules/.audit/rules-2/baseline",
+    "/Users/miki/data/value-rules/.audit/rules-2/control-code",
+    "/Users/miki/data/value-rules/.audit/rules-2/control-analyses",
+    "/Users/miki/data/value-rules/.audit/rules-2/control-store",
+    "/Users/miki/data/value-rules/.audit/rules-2/candidate-final",
+    "/Users/miki/data/value-rules/.audit/rules-2/candidate-proposal",
+    "/Users/miki/data/value-rules/.audit/rules-2/candidate-pre-basis",
+    "/Users/miki/data/value-rules/.audit/rules-2/storage",
+    "/Users/miki/data/value-rules/.audit/rules-2/tmp",
+    "/Users/miki/data/value-rules/.audit/rules-2/harness-bin",
+    "/Users/miki/data/value-rules/.audit/rules-2/harness.env",
+    "/Users/miki/data/value-rules/.next"
+  ],
+  "retained": "Source worktree, committed review evidence and local release bundle only; pre-existing dependency symlink target untouched",
+  "freeBytes": {
+    "/": 12101070848,
+    "/Users/miki/data": 111544881152
+  }
+}

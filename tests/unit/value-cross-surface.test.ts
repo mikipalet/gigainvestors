@@ -7,7 +7,7 @@ import {primaryTileMetric} from '@/lib/value/tile-metric';
 import {perShareSeries} from '@/lib/value/history';
 import {emptyYear} from '@/lib/value/completeness/second-sources';
 import type {Dossier,Fundamentals,TestOutcome} from '@/lib/value/types';
-const test:TestOutcome={key:'moat',numeric:'pass',result:'pass',metrics:{roicMedian:.47,roicSecondLowest:.33,grossMarginDrop:0,totalRoicMedian:.365},series:{roic:[[2023,.45],[2024,.47],[2025,.33]],totalRoic:[[2023,.35],[2024,.38],[2025,.365]]},reasons:[],jev:[]};
+const test:TestOutcome={key:'moat',numeric:'pass',result:'pass',metrics:{roicMedian:.47,roicSecondLowest:.33,grossMarginDrop:0,grossMarginTypical:.5,grossMarginRecent:.5,totalRoicMedian:.365},series:{roic:[[2023,.45],[2024,.47],[2025,.33]],totalRoic:[[2023,.35],[2024,.38],[2025,.365]]},reasons:[],jev:[]};
 const dossier={id:'AUDIT.US',company:{kind:'operating',currency:'USD'},report:{},series:{},tests:{understandable:{series:{}},moat:test}} as unknown as Dossier;
 describe('cross-surface regression',()=>{
  it('renders the same excluding-acquisitions ROIC in the tile and drawer',()=>{

@@ -1,0 +1,33 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ✓ tests/unit/value/publish-invariants.test.ts (24 tests) 21600ms
+   ✓ permits added-company buys while preserving the price-only rule for existing companies  1051ms
+   ✓ quarters refuses prices commit before changing HEAD or index  531ms
+   ✓ yearDeferred refuses prices commit before changing HEAD or index  580ms
+   ✓ missing-file refuses prices commit before changing HEAD or index  636ms
+   ✓ dossiers refuses prices commit before changing HEAD or index  767ms
+   ✓ buy refuses prices commit before changing HEAD or index  958ms
+   ✓ history refuses prices commit before changing HEAD or index  628ms
+   ✓ prices permits an exactly 1% dossier drop and a price-explained Buy-now transition  937ms
+   ✓ quarters refuses publish commit before changing HEAD or index  529ms
+   ✓ yearDeferred refuses publish commit before changing HEAD or index  601ms
+   ✓ missing-file refuses publish commit before changing HEAD or index  611ms
+   ✓ dossiers refuses publish commit before changing HEAD or index  695ms
+   ✓ buy refuses publish commit before changing HEAD or index  814ms
+   ✓ history refuses publish commit before changing HEAD or index  694ms
+   ✓ publish permits an exactly 1% dossier drop and a price-explained Buy-now transition  936ms
+   ✓ does not let pre-staged unrelated changes bypass the prices gate  360ms
+   ✓ accepts year views derived from Q4 without requiring a separate annual snapshot  988ms
+   ✓ allows a reviewed identity collapse only when every lost dossier has a direct live target  992ms
+   ✓ refuses alias cycles or missing canonical dossiers  488ms
+   ✓ refuses to reintroduce two reviewed listings of one issuer  640ms
+   ✓ permits retired Buy-now rows to disappear from country and default indexes  1553ms
+   ✓ does not count retired-listing price moves as explanations for surviving Buy-now flips  1128ms
+   ✓ accepts only an exact controller-reviewed valuation transition  1619ms
+   ✓ binds a reviewed method transition to both exact quality masks as well as valuation and margin  2861ms
+
+ Test Files  1 passed (1)
+      Tests  24 passed (24)
+   Start at  14:24:44
+   Duration  25.30s (transform 1.88s, setup 0ms, collect 3.35s, tests 21.60s, environment 0ms, prepare 79ms)

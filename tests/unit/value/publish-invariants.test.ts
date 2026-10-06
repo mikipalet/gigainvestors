@@ -100,3 +100,29 @@ it('accepts only an exact controller-reviewed valuation transition',async()=>{
  expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,after:{...approval.after,v:[1,2,3]}}])).toThrow(/Buy-now changed/);
  expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,evidence:[]}])).toThrow();
 });
+
+it('binds a reviewed method transition to both exact quality masks as well as valuation and margin',async()=>{
+ const {assertPublishInvariants}=await import('@/scripts/value/publish-invariants');
+ const before={...read('index/US.json')[0],t:'PFPPP'},after={...before,t:'PPPPP',b:true};
+ for(const file of ['index/US.json','index/default.json'])write(file,[before]);
+ git('add','index');git('commit','-m','quality baseline');
+ const state=(r:any)=>({b:r.b,v:r.v,m:r.m,t:r.t});
+ const approval={id:'A.US',before:state(before),after:state(after),reason:'Reviewed 3.5.0 margin rule',evidence:['https://example.com/filing']};
+ for(const file of ['index/US.json','index/default.json'])write(file,[after]);
+ expect(()=>assertPublishInvariants(repo,'HEAD',[approval])).not.toThrow();
+ for(const change of [{before:{...approval.before,t:'FPPPP'}},{after:{...approval.after,t:'PFPPP'}},{after:{...approval.after,v:[1,2,3]}},{after:{...approval.after,m:.1}}]){
+  expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,...change}])).toThrow(/Buy-now changed/);
+ }
+ const legacy={...approval,before:{b:false,v:before.v,m:before.m},after:{b:true,v:after.v,m:after.m}};
+ expect(()=>assertPublishInvariants(repo,'HEAD',[legacy])).toThrow(/Buy-now changed/);
+});
+
+it('rejects unapproved offsetting Buy flips even when country and default totals are unchanged',async()=>{
+ const {assertPublishInvariants}=await import('@/scripts/value/publish-invariants');
+ const row=read('index/US.json')[0];
+ for(const file of ['index/US.json','index/default.json'])write(file,[row,{...row,id:'B.US',b:true}]);
+ write('prices/US.json',{'A.US':[100,'2026-10-01'],'B.US':[50,'2026-10-01']});
+ git('add','.');git('commit','-m','two-company baseline');
+ for(const file of ['index/US.json','index/default.json'])write(file,[{...row,b:true},{...row,id:'B.US',b:false}]);
+ expect(()=>assertPublishInvariants(repo,'HEAD',[])).toThrow(/Buy-now changed/);
+});

@@ -182,6 +182,8 @@ export interface JevAnswer {
 }
 
 export interface TestOutcome {
+  /** Survives public omission of unavailable supporting measurements. */
+  grossMarginBasis?: 'recent-typical';
   provisional?: import('./quality-ltm').ProvisionalYear;
   judgement?: HumanTest;
   rawNumeric?: Result;

@@ -1,0 +1,14 @@
+{
+  "baseCode": "c75d682",
+  "baseData": "2d7f1d84",
+  "method": "3.5.0",
+  "steps": [
+    "rebase rules-1 preserving R1-R6",
+    "fresh corpus; read-only live bind; offline namespaces",
+    "full cached nightly analysis; same-input 3.4 control; exact change attribution",
+    "ordinary export; proposed exact Buy manifest; real local publish harness",
+    "NVDA plus four changed companies desktop/mobile compared with live",
+    "unit suite and build",
+    "source/archive integrity; review bundle; report; requested commit; remove copies"
+  ]
+}

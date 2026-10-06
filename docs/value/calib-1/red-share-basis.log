@@ -1,0 +1,51 @@
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-calib
+
+ ❯ tests/unit/value/annual-source-corrections.test.ts (23 tests | 1 failed) 45ms
+   ✓ uses consolidated financial revenue instead of an investment-income component 4ms
+   ✓ replaces a calendar-share proxy with fiscal weighted diluted shares, never a quarterly count 1ms
+   ✓ requires an evidenced ADS ratio before converting ordinary share facts 2ms
+   ✓ does not overwrite unrelated operating revenues, currencies or periods 1ms
+   ✓ uses an explicitly reviewed operating revenue concept without selecting bank components 1ms
+   ✓ uses bank net interest plus noninterest revenue without adding gross interest twice 0ms
+   ✓ rejects conflicting facts at the same reporting date instead of picking an arbitrary value 14ms
+   ✓ uses corroborated full-scale revenue when an alternate SEC tag omits the thousand scale 1ms
+   ✓ reads diluted partnership units as shares of the listed unit 1ms
+   ✓ uses IFRS basic weighted shares only when reported basic and diluted EPS are equal 0ms
+   ✓ converts pre-split annual shares to current listing units exactly once 1ms
+   ✓ aligns a rounded vendor end only with an independently matching annual total 0ms
+   ✓ uses a reviewed consolidated extension concept without substituting insurance premiums alone 0ms
+   ✓ uses total investment income including paid-in-kind income for investment companies 0ms
+   ✓ corrects a currency label only when two independent annual/instant values corroborate the alternative 1ms
+   ✓ prefers total IFRS revenue and income over fee revenue alone 0ms
+   ✓ sums reviewed financial revenue components only when every component covers the same period 1ms
+   ✓ does not replace older same-basis inputs with an undimensioned alternative accounting basis 1ms
+   ✓ repairs a vendor fiscal-year shift only with three exact independent statement anchors 2ms
+   ✓ keeps fiscal-end outstanding shares separate from weighted diluted earnings shares 1ms
+   ✓ does not turn an off-date cover-page count or ambiguous fiscal-end count into capitalization 0ms
+   ✓ converts fiscal-instant shares to evidenced ADS and split units independently of diluted shares 2ms
+   × keeps matching reported share bases together when comparative diluted facts were filed after a corporate action 10ms
+     → expected 122.42159999999998 to be 88.2 // Object.is equality
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/annual-source-corrections.test.ts > keeps matching reported share bases together when comparative diluted facts were filed after a corporate action
+AssertionError: expected 122.42159999999998 to be 88.2 // Object.is equality
+
+- Expected
++ Received
+
+- 88.2
++ 122.42159999999998
+
+ ❯ tests/unit/value/annual-source-corrections.test.ts:121:65
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 22 passed (23)
+   Start at  09:08:50
+   Duration  541ms (transform 177ms, setup 0ms, collect 185ms, tests 45ms, environment 0ms, prepare 102ms)
+

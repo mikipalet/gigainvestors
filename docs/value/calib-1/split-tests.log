@@ -1,0 +1,10 @@
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-calib
+
+ ✓ tests/unit/value/split-scope.test.ts (4 tests) 17ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  09:11:43
+   Duration  593ms (transform 249ms, setup 0ms, collect 283ms, tests 17ms, environment 0ms, prepare 81ms)
+

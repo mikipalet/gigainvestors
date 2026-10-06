@@ -143,3 +143,24 @@ it('repairs trailing concepts separately without creating a synthetic annual yea
  expect(correctCachedTrailingSources('TEST.US',year(),read)).toEqual(year());
  expect(correctCachedTrailingSources('TEST.US',null,read)).toBeNull();
 });
+it('keeps fiscal-end outstanding shares separate from weighted diluted earnings shares',()=>{
+ const f=facts({CommonStockSharesOutstanding:{units:{shares:[row(450,{start:undefined}),row(999,{start:undefined,end:'2026-02-01'})]}},WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(539.3)]}}});
+ const [y]=correctAnnualSources([year()],f,{source:'https://data.sec.gov/test'});
+ expect(y.sharesOutstanding).toBe(450);expect(y.dilutedShares).toBe(539.3);
+ expect(y.provenance?.sharesOutstanding?.inputs).toContain('Fiscal-end common shares outstanding');
+});
+it('does not turn an off-date cover-page count or ambiguous fiscal-end count into capitalization',()=>{
+ const f=facts({CommonStockSharesOutstanding:{units:{shares:[row(450,{start:undefined}),row(451,{start:undefined}),row(999,{start:undefined,end:'2026-02-01'})]}}});
+ expect(correctAnnualSources([year()],f,{source:'https://data.sec.gov/test'})[0].sharesOutstanding).toBeUndefined();
+});
+it('converts fiscal-instant shares to evidenced ADS and split units independently of diluted shares',()=>{
+ const f=facts({CommonStockSharesOutstanding:{units:{shares:[row(450,{start:undefined})]}}});
+ const opts={source:'https://data.sec.gov/test',adr:true,ordinaryPerAds:5,shareBasisSource:'https://issuer.test/20-f',splits:[{date:'2026-03-01',factor:2}]};
+ expect(correctAnnualSources([year()],f,opts)[0].sharesOutstanding).toBe(180);
+ expect(correctAnnualSources([year()],f,{...opts,shareBasisSource:undefined})[0].sharesOutstanding).toBeUndefined();
+});
+it('keeps matching reported share bases together when comparative diluted facts were filed after a corporate action',()=>{
+ const f=facts({CommonStockSharesOutstanding:{units:{shares:[row(88.2,{start:undefined,filed:'2026-02-11'})]}},WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(88.4,{filed:'2026-04-01'})]}}});
+ const [y]=correctAnnualSources([year()],f,{source:'https://data.sec.gov/test',splits:[{date:'2026-03-01',factor:1.388}]});
+ expect(y.dilutedShares).toBe(88.4);expect(y.sharesOutstanding).toBe(88.2);
+});

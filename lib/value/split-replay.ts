@@ -5,7 +5,7 @@ import type {Dossier,Series,TestOutcome,Year} from './types';
 
 /** Explicit dependency boundary for a unit repair. Unknown fields are protected. */
 export const splitSeries = new Set(['shares','marketCap','perShareValue','revenuePerShare','ownerEarningsPerShare','bookValuePerShare','tangibleBookValuePerShare','navPerShare','bookPerShare','dividendsPerShare','bookPlusDividendReturn']);
-export const splitMetrics = new Set(['shareCagr','shareCagr5','nonAcquisitionShareCagr','nonAcquisitionShareCagr5','shareCagrExCrisis','perShareStart','perShareEnd','perShareValueChange','perShareValueGrowth','marketCapGain','buybackYieldSpearman','averageBuybackYield','buybackYears','bookReturnCagr','bookStartPerShare','bookEndPerShare','retainedBookGain','retainedPerShare','retainedBookRatio']);
+export const splitMetrics = new Set(['shareCagr','shareCagr5','nonAcquisitionShareCagr','nonAcquisitionShareCagr5','shareCagrExCrisis','shareCagr5ExCrisis','perShareStart','perShareEnd','perShareValueChange','perShareValueGrowth','marketCapGain','buybackYieldSpearman','averageBuybackYield','buybackYears','bookReturnCagr','bookStartPerShare','bookEndPerShare','retainedBookGain','retainedPerShare','retainedBookRatio']);
 const same=(a:unknown,b:unknown)=>JSON.stringify(a)===JSON.stringify(b);
 
 /** Fail closed: even an otherwise plausible source refresh cannot enter a split release. */
@@ -87,6 +87,11 @@ export function applyPublishedSplitFactors(dossier:Dossier,factors:Map<number,nu
    put(management,'shareCagr',cagr({first:first[1],last:last[1],years:last[0]-first[0]}));
    const ordinary=sh.slice(1).flatMap(([fy,n],i)=>[2008,2009].includes(fy)&&dossier.tests.management.series.shares[i][1]!>0&&dossier.tests.management.series.shares[i+1][1]!/dossier.tests.management.series.shares[i][1]!>1.1?[]:[n!/sh[i][1]!]);
    put(management,'shareCagrExCrisis',Math.exp(ordinary.reduce((s,n)=>s+Math.log(n),0)/ordinary.length)-1);
+   if('shareCagr5ExCrisis' in management.metrics){
+    const recent=sh.filter(([fy])=>fy>=last[0]-5);
+    const factors=recent.slice(1).flatMap(([fy,n],i)=>{const at=sh.findIndex(p=>p[0]===fy);return [2008,2009].includes(fy)&&dossier.tests.management.series.shares[at-1][1]!>0&&dossier.tests.management.series.shares[at][1]!/dossier.tests.management.series.shares[at-1][1]!>1.1?[]:[n!/recent[i][1]!];});
+    put(management,'shareCagr5ExCrisis',recent.length===6&&recent.every(([fy,n],i)=>n!=null&&n>0&&(!i||fy===recent[i-1][0]+1))&&factors.length?Math.exp(factors.reduce((s,n)=>s+Math.log(n),0)/factors.length)-1:null);
+   }
    refresh(economics);
   }
  }else{

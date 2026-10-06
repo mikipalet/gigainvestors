@@ -1,0 +1,66 @@
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-calib
+
+ ❯ tests/unit/value/annual-source-corrections.test.ts (21 tests | 1 failed) 44ms
+   ✓ uses consolidated financial revenue instead of an investment-income component 4ms
+   ✓ replaces a calendar-share proxy with fiscal weighted diluted shares, never a quarterly count 1ms
+   ✓ requires an evidenced ADS ratio before converting ordinary share facts 2ms
+   ✓ does not overwrite unrelated operating revenues, currencies or periods 1ms
+   ✓ uses an explicitly reviewed operating revenue concept without selecting bank components 1ms
+   ✓ uses bank net interest plus noninterest revenue without adding gross interest twice 0ms
+   ✓ rejects conflicting facts at the same reporting date instead of picking an arbitrary value 13ms
+   ✓ uses corroborated full-scale revenue when an alternate SEC tag omits the thousand scale 0ms
+   ✓ reads diluted partnership units as shares of the listed unit 1ms
+   ✓ uses IFRS basic weighted shares only when reported basic and diluted EPS are equal 0ms
+   ✓ converts pre-split annual shares to current listing units exactly once 0ms
+   ✓ aligns a rounded vendor end only with an independently matching annual total 0ms
+   ✓ uses a reviewed consolidated extension concept without substituting insurance premiums alone 0ms
+   ✓ uses total investment income including paid-in-kind income for investment companies 0ms
+   ✓ corrects a currency label only when two independent annual/instant values corroborate the alternative 1ms
+   ✓ prefers total IFRS revenue and income over fee revenue alone 0ms
+   ✓ sums reviewed financial revenue components only when every component covers the same period 1ms
+   ✓ does not replace older same-basis inputs with an undimensioned alternative accounting basis 1ms
+   ✓ repairs a vendor fiscal-year shift only with three exact independent statement anchors 2ms
+   × keeps fiscal-end outstanding shares separate from weighted diluted earnings shares 13ms
+     → expected undefined to be 450 // Object.is equality
+   ✓ does not turn an off-date cover-page count or ambiguous fiscal-end count into capitalization 0ms
+ ❯ tests/unit/value/nightly-management.test.ts (3 tests | 1 failed) 93ms
+   ✓ recognizes sustained financial share shrinkage after an older acquisition without changing per-share capital 8ms
+   ✓ still rejects persistent financial dilution and requires a complete recent window 2ms
+   × values a first-week fiscal year end with the nearby preceding month, not the following month-end 82ms
+     → expected 21270360753.9693 to be close to 20393912219.68744, received difference is 876448534.2818604, but expected 0.005
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/annual-source-corrections.test.ts > keeps fiscal-end outstanding shares separate from weighted diluted earnings shares
+AssertionError: expected undefined to be 450 // Object.is equality
+
+- Expected: 
+450
+
++ Received: 
+undefined
+
+ ❯ tests/unit/value/annual-source-corrections.test.ts:105:30
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/value/nightly-management.test.ts > values a first-week fiscal year end with the nearby preceding month, not the following month-end
+AssertionError: expected 21270360753.9693 to be close to 20393912219.68744, received difference is 876448534.2818604, but expected 0.005
+ ❯ tests/unit/value/nightly-management.test.ts:29:48
+     27|   priceHistory:dpz.priceHistory as PriceHistory,onMemoYears:y=>{years=…
+     28|  // 2 January 2022 is a Sunday: December's close, not 31 January's, be…
+     29|  expect(years.find(y=>y.fy===2021)!.marketCap).toBeCloseTo(36138273*56…
+       |                                                ^
+     30|  expect(a.tests.management.result).toBe('pass');
+     31|  expect(a.tests.management.metrics.buybackYieldSpearman).toBeCloseTo(-…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 22 passed (24)
+   Start at  08:54:26
+   Duration  2.04s (transform 948ms, setup 0ms, collect 1.29s, tests 137ms, environment 0ms, prepare 155ms)
+

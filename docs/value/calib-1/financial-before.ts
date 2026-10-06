@@ -1,6 +1,6 @@
-import { T } from '../config';
-import { cagr, last, mean, median, outcome, present, ratio, sum, type Check } from '../metrics';
-import type { NumericInput, NumericOutcome, Year } from '../types';
+import { T } from '/Users/miki/GitHub/superinvestors-wt/value-calib/lib/value/config';
+import { cagr, last, mean, median, outcome, present, ratio, sum, type Check } from '/Users/miki/GitHub/superinvestors-wt/value-calib/lib/value/metrics';
+import type { NumericInput, NumericOutcome, Year } from '/Users/miki/GitHub/superinvestors-wt/value-calib/lib/value/types';
 
 // Sector fields are optional. Never interpret their absence as a measured zero.
 const commonIncome = (y: Year) => y.commonNetIncome ?? y.netIncome;
@@ -57,15 +57,6 @@ export function financialTests({years,kind,industry}:NumericInput):Record<Exclud
  const recap=history.slice(1).filter((y,i)=>[2008,2009].includes(y.fy)&&(rate(y.dilutedShares,history[i].dilutedShares)??0)>.1);
  const ordinaryFactors=history.slice(1).filter(y=>!recap.includes(y)).map(y=>rate(y.dilutedShares,history[history.indexOf(y)-1].dilutedShares));
  const adjusted=complete&&ordinaryFactors.every(known)&&ordinaryFactors.length?Math.exp(sum((ordinaryFactors as number[]).map(n=>Math.log(1+n)))/ordinaryFactors.length)-1:null;
- // As for operating companies, use both the full and recent five-year record.
- // A historic acquisition must not imply continuing dilution after years of
- // repurchases. Keep actual shares in every book/earnings denominator.
- const recent=history.filter(y=>end&&y.fy>=end.fy-5);
- const recentComplete=complete&&recent.length===6&&recent.every(y=>known(y.dilutedShares)&&y.dilutedShares>0);
- const shareGrowth5=recentComplete?cagr({first:recent[0].dilutedShares,last:end!.dilutedShares,years:5}):null;
- const recentFactors=recent.slice(1).filter(y=>!recap.includes(y)).map((y)=>rate(y.dilutedShares,history[history.indexOf(y)-1].dilutedShares));
- const adjusted5=recentComplete&&recentFactors.every(known)&&recentFactors.length?Math.exp(sum((recentFactors as number[]).map(n=>Math.log(1+n)))/recentFactors.length)-1:null;
- const dilutionPass=[adjusted,adjusted5].some(n=>n!==null&&n<=.02+Number.EPSILON)?true:adjusted===null||adjusted5===null?null:false;
  // Earnings distributed through repurchases are not retained. Compare the
  // remaining earnings per share with book creation; dilution is tested separately.
  const retained=history.slice(1).map(y=>{
@@ -114,8 +105,8 @@ export function financialTests({years,kind,industry}:NumericInput):Record<Exclud
  economics:make('economics',{bookReturnCagr:growth,bookReturnYears:complete?interval:null,bookStartPerShare:books[0]??null,bookEndPerShare:books.at(-1)??null},{bookPlusDividendReturn:history.slice(1).map((y,i)=>[y.fy,factors[i]===null?null:factors[i]!-1]),bookPerShare:history.map((y,i)=>[y.fy,books[i]]),dividendsPerShare:ys.map(y=>[y.fy,commonDividendPerShare(y)])},[
   {pass:books.some(n=>n!==null&&n<=0)?false:growth===null?null:growth>=.07,core:true,data:'at least seven consecutive book observations with annual dividends',reason:books.some(n=>n!==null&&n<=0)?'nonpositive book value in the compounding window':'book value per share plus dividends compounded below 7% annually'},
  ],basis),
- management:make('management',{shareCagr:shareGrowth,shareCagr5:shareGrowth5,shareCagrExCrisis:adjusted,shareCagr5ExCrisis:adjusted5,crisisRecapitalizations:recap.length,retainedBookRatio:retainedRatio,retainedBookGain:bookGain,retainedPerShare:retainedTotal},{shares:history.map(y=>[y.fy,y.dilutedShares]),bookPerShare:history.map((y,i)=>[y.fy,books[i]])},[
-  {pass:dilutionPass,core:true,data:'full-window and five-year share growth excluding flagged crisis recapitalisations',reason:'ordinary share count growth exceeds 2% annually in both the full and five-year windows'},
+ management:make('management',{shareCagr:shareGrowth,shareCagrExCrisis:adjusted,crisisRecapitalizations:recap.length,retainedBookRatio:retainedRatio,retainedBookGain:bookGain,retainedPerShare:retainedTotal},{shares:history.map(y=>[y.fy,y.dilutedShares]),bookPerShare:history.map((y,i)=>[y.fy,books[i]])},[
+  {pass:adjusted===null?null:adjusted<=.02+Number.EPSILON,core:true,data:'annualized share growth excluding flagged crisis recapitalisations',reason:'ordinary share count growth exceeds 2% annually'},
   {pass:retainedTotal===null||bookGain===null?null:retainedTotal<=0?bookGain>=0:bookGain+1e-9*Math.max(1,Math.abs(retainedTotal))>=retainedTotal,core:true,data:'retained earnings versus book per share',reason:'book per share gain below retained common earnings per share'},
  ],[...basis,...(ys.some(y=>y.buybacks==null)?['Unreported buybacks treated as zero; retained-earnings test is conservative']:[]),...recap.map(y=>`Crisis recapitalisation flagged in FY${y.fy}; full share CAGR remains displayed`)]),
  accounting:make('accounting',{financialRedFlags:accountingChecks.filter(c=>c.pass===false).length,loanCagr,depositCagr,restatementYears:restatements,loanGrowthExcessYears:growthPairs.length?excessive:null,peerLossExcessYears:peerPairs.length?excessLosses:null,adverseReserveYears:present(reserve).length?adverse:null},{loanGrowth:ys.map((y,i)=>[y.fy,loanGrowth[i]??null]),depositGrowth:ys.map((y,i)=>[y.fy,depositGrowth[i]??null]),reserveDevelopment:ys.map((y,i)=>[y.fy,reserve[i]])},accountingChecks,[

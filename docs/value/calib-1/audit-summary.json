@@ -1,0 +1,517 @@
+{
+  "counts": {
+    "live": 3899,
+    "matched": 3899
+  },
+  "missing": [],
+  "testFlipCompanies": 479,
+  "qualityFlips": [
+    {
+      "id": "DVA.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "AXP.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "moat": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "SBSI.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "WFC.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "moat": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "MCD.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "understandable": [
+          "pass",
+          "unclear"
+        ],
+        "moat": [
+          "pass",
+          "unclear"
+        ],
+        "economics": [
+          "pass",
+          "unclear"
+        ],
+        "management": [
+          "pass",
+          "unclear"
+        ],
+        "accounting": [
+          "pass",
+          "unclear"
+        ]
+      }
+    },
+    {
+      "id": "STE.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "moat": [
+          "pass",
+          "fail"
+        ],
+        "management": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "NDSN.US",
+      "live": false,
+      "today": true,
+      "tests": {
+        "economics": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "WRB.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "understandable": [
+          "pass",
+          "unclear"
+        ],
+        "moat": [
+          "pass",
+          "unclear"
+        ],
+        "economics": [
+          "pass",
+          "unclear"
+        ],
+        "management": [
+          "pass",
+          "unclear"
+        ],
+        "accounting": [
+          "pass",
+          "unclear"
+        ]
+      }
+    },
+    {
+      "id": "MTB.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "2413.JP",
+      "live": true,
+      "today": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "GRMN.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "understandable": [
+          "pass",
+          "unclear"
+        ],
+        "moat": [
+          "pass",
+          "unclear"
+        ],
+        "economics": [
+          "pass",
+          "unclear"
+        ],
+        "management": [
+          "pass",
+          "unclear"
+        ],
+        "accounting": [
+          "pass",
+          "unclear"
+        ]
+      }
+    },
+    {
+      "id": "8697.JP",
+      "live": false,
+      "today": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "9735.JP",
+      "live": false,
+      "today": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "MS.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "moat": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "3092.JP",
+      "live": false,
+      "today": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "HON.US",
+      "live": false,
+      "today": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "LAMR.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "SANB3.SA",
+      "live": false,
+      "today": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "6988.JP",
+      "live": false,
+      "today": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "UHS.US",
+      "live": false,
+      "today": true,
+      "tests": {
+        "economics": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "CBG.LSE",
+      "live": true,
+      "today": false,
+      "tests": {
+        "understandable": [
+          "pass",
+          "fail"
+        ],
+        "moat": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "PINFRA.MX",
+      "live": false,
+      "today": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "VCTR.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "WSM.US",
+      "live": false,
+      "today": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "HDB.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "LHX.US",
+      "live": false,
+      "today": true,
+      "tests": {
+        "moat": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "USB.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "NOVT.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "ITC.NSE",
+      "live": true,
+      "today": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "1093.HK",
+      "live": false,
+      "today": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "CFG-PH.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "moat": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "CB.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "TSCO.US",
+      "live": false,
+      "today": true,
+      "tests": {
+        "economics": [
+          "fail",
+          "pass"
+        ],
+        "management": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "TPL.US",
+      "live": false,
+      "today": true,
+      "tests": {
+        "economics": [
+          "fail",
+          "pass"
+        ]
+      }
+    },
+    {
+      "id": "BOKF.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "RA.MX",
+      "live": true,
+      "today": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "DPZ.US",
+      "live": true,
+      "today": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      }
+    },
+    {
+      "id": "COALINDIA.NSE",
+      "live": true,
+      "today": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      }
+    }
+  ],
+  "nullCompanies": 86,
+  "nullFields": 723,
+  "nullPathCounts": {
+    "tests.management.rawMetrics.shareCagr": 23,
+    "tests.management.rawMetrics.nonAcquisitionShareCagr": 20,
+    "tests.accounting.series.sbcToOcf[2024]": 19,
+    "tests.management.rawMetrics.acquisitionSpend": 19,
+    "tests.management.rawMetrics.cumulativeNetIncome": 19,
+    "tests.accounting.series.sbcToOcf[2023]": 18,
+    "tests.economics.rawMetrics.nwcToRevenueChange": 18,
+    "tests.economics.rawMetrics.nwcToRevenueEnd": 18,
+    "tests.management.rawMetrics.perShareValueChange": 17,
+    "tests.management.rawMetrics.perShareStart": 17,
+    "tests.management.rawMetrics.perShareEnd": 17,
+    "tests.management.rawMetrics.averageBuybackYield": 17,
+    "tests.economics.rawMetrics.roiic": 16,
+    "tests.management.rawMetrics.marketCapGain": 16,
+    "tests.management.rawMetrics.retainedEarnings": 16,
+    "tests.management.rawMetrics.retainedStartFy": 16,
+    "tests.management.rawMetrics.retainedEndFy": 16,
+    "tests.management.rawMetrics.buybackYieldSpearman": 16,
+    "tests.moat.rawMetrics.grossMarginDrop": 14,
+    "tests.management.rawMetrics.nonAcquisitionShareCagr5": 14,
+    "tests.management.rawMetrics.shareCagr5": 14,
+    "tests.accounting.metrics.sbcToOcf": 14,
+    "tests.accounting.series.sbcToOcf[2025]": 13,
+    "tests.management.rawMetrics.debtFundedBuybacks": 12,
+    "tests.management.rawMetrics.perShareValueGrowth": 11
+  }
+}

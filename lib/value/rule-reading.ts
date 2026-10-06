@@ -17,7 +17,10 @@ export function ruleReading(t:TestOutcome,kind:Kind){
  if(m.positiveIncomeYears!=null){compare('positiveIncomeYears','Profitable years',m.requiredPositiveYears??9,true,true,String);}
  else if(m.bookReturnYears!=null||'bookReturnCagr' in m){compare('bookReturnCagr','Book + dividends / year',.07,true,true);if(Object.values(t.series.bookPerShare??[]).some(p=>p[1]!=null&&p[1]<=0))add('Book value nonpositive in the window',false,true);}
  else if('retainedBookGain' in m||'shareCagrExCrisis' in m){
-  compare('shareCagrExCrisis','Ordinary shares / year',.02,false,true);
+  if('shareCagr5ExCrisis' in m){
+   const rates=[m.shareCagrExCrisis,m.shareCagr5ExCrisis],known=rates.filter((v):v is number=>v!=null);
+   add(`Ordinary share growth ${rates.map(v=>v==null?'—':pct(v)).join(' / ')} (full / 5y); either ≤2%`,known.some(v=>v<=.02+Number.EPSILON)?true:known.length<2?null:false,true);
+  }else compare('shareCagrExCrisis','Ordinary shares / year',.02,false,true);
   const kept=m.retainedPerShare,gain=m.retainedBookGain;
   add(kept!=null&&gain!=null?`Book gain ${num(gain)} ${gain>=Math.max(0,kept)?'≥':'<'} ${num(Math.max(0,kept))} retained per share`:'Book gain / retained: no observation',kept==null||gain==null?null:kept<=0?gain>=0:gain+1e-9*Math.max(1,Math.abs(kept))>=kept,true);
  }else if('financialRedFlags' in m){

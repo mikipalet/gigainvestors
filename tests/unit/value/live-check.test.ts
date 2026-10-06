@@ -19,3 +19,13 @@ async function check(broken:string){
 }
 it('uses a real browser to step back and load the deep link',async()=>{await check('');});
 it.each(['step','deep-link','rows','headline'])('rejects a broken %s despite a successful page response',async broken=>{await expect(check(broken)).rejects.toThrow();},40_000);
+
+it.each(['ok','no-image','broken-image','no-page','http-error'])('checks company page rendering and decoded logo pixels (%s)',async state=>{
+ const {checkCompanyPages}=await import('@/scripts/value/live-check');
+ const page=await browser.newPage();
+ await page.route('https://company.test/**',route=>route.fulfill({status:state==='http-error'?500:200,contentType:'text/html',body:state==='no-page'?'<h1>Error</h1>':`<main class="company-page"><div class="one-dossier"><div class="company-heading"><h1>Acme</h1><span class="company-logo">${state==='no-image'?'':`<img width="20" height="20" src="${state==='broken-image'?'data:image/png;base64,invalid':'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'}">`}</span></div></div></main>`}));
+ try{
+  const run=checkCompanyPages(page,[{id:'ACME.US',file:'dossiers/000.json',country:'US',logo:'expected'}],'https://company.test',300);
+  if(state==='ok')await run;else await expect(run).rejects.toThrow(/CRITICAL.*ACME.US/);
+ }finally{await page.close();}
+});

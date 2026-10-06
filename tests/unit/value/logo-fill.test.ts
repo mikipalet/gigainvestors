@@ -21,3 +21,18 @@ it.each(['pending','rejected'])('fills approved logos while withholding %s ident
   expect(files[`logos/${asset}.json`].data).toBe(bytes.toString('base64'));
  }finally{vi.unstubAllEnvs();rmSync(dir,{recursive:true,force:true});}
 });
+
+it('restores archive-proven legacy and absent-cache logos without approving their demoted candidates',async()=>{
+ const dir=mkdtempSync(path.join(tmpdir(),'logo-recovery-fill-'));
+ const put=(id:string,r:unknown)=>{mkdirSync(path.join(dir,'enrichment-v7/logos'),{recursive:true});writeFileSync(path.join(dir,`enrichment-v7/logos/${id}.json`),JSON.stringify(r));};
+ try{
+  vi.stubEnv('VALUE_CORPUS_DIR',dir);
+  const legacy={logo:'https://eodhd.com/img/logos/US/alsn.png',source:'eodhd',validated:true,verifiedAt:'2026-09-30T20:08:54.967Z'};
+  put('ALSN.US',legacy);put('AFYA.US',{logo:null,validated:true,identityReview:'pending'});
+  const files:Record<string,any>={'index/US.json':[{id:'ALSN.US',lg:null},{id:'AAL.US',lg:null},{id:'AFYA.US',lg:null},{id:'UNKNOWN.US',lg:null}]};
+  fillPublishedLogos(files);
+  expect(files['index/US.json'].map((r:any)=>r.lg)).toEqual([legacy.logo,'https://eodhd.com/img/logos/US/aal.png',null,null]);
+  put('ALSN.US',{...legacy,verifiedAt:'later-rejection',logo:null});
+  const rejected:Record<string,any>={'index/US.json':[{id:'ALSN.US',lg:null}]};fillPublishedLogos(rejected);expect(rejected['index/US.json'][0].lg).toBeNull();
+ }finally{vi.unstubAllEnvs();rmSync(dir,{recursive:true,force:true});}
+});

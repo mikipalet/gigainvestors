@@ -1,0 +1,38 @@
+{
+  "companies": 762,
+  "fields": {
+    "historyAssumptions": 696,
+    "priceStory": 70,
+    "valuation": 4,
+    "series": 1,
+    "tests": 1
+  },
+  "paths": {
+    "historyAssumptions": 696,
+    "priceStory.asOf": 70,
+    "valuation.assumptions": 4,
+    "series.sbcToOcf": 1,
+    "tests.accounting.series.sbcToOcf": 1
+  },
+  "valuationIds": [
+    "IBS.LS",
+    "LPP.WAR",
+    "FG.US",
+    "WN.TO"
+  ],
+  "historyNotesOnly": 696,
+  "priceStoryOnlyAsOf": 70,
+  "numericalChange": {
+    "id": "TDW.US",
+    "paths": [
+      "series.sbcToOcf",
+      "tests.accounting.series.sbcToOcf"
+    ],
+    "year": 2017,
+    "before": null,
+    "after": 0.1099225378089266,
+    "reason": "Existing ordinary retention fills the duplicate 2017 null cell from the already published numeric 2017 observation; no verdict change."
+  },
+  "normalReplay": true,
+  "source": "Same input corpus, old logofix-1 --out and final ordinary --out; no new data acquisition required."
+}

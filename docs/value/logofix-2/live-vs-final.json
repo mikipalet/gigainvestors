@@ -1,0 +1,5000 @@
+{
+  "baseline": {
+    "total": 3910,
+    "missing": 197,
+    "USMissing": 148,
+    "missingIds": [
+      "0126Z0.KO",
+      "022100.KO",
+      "034230.KO",
+      "062040.KO",
+      "064400.KO",
+      "360.AU",
+      "383220.KO",
+      "402340.KO",
+      "443060.KO",
+      "450080.KO",
+      "457190.KO",
+      "483650.KO",
+      "543A.JP",
+      "601059.SHG",
+      "6526.JP",
+      "688271.SHG",
+      "AAL.US",
+      "AAOI.US",
+      "AAON.US",
+      "AAP.US",
+      "ABCB.US",
+      "ABG.US",
+      "ABM.US",
+      "ABR.US",
+      "ACA.US",
+      "ACDC.US",
+      "ACH.US",
+      "ACHC.US",
+      "ACIC.US",
+      "ACIW.US",
+      "ACLS.US",
+      "ACMR.US",
+      "ACVA.US",
+      "AD.US",
+      "ADEA.US",
+      "ADMA.US",
+      "ADNT.US",
+      "ADPT.US",
+      "ADTN.US",
+      "AEBI.US",
+      "AEG.US",
+      "AEHR.US",
+      "AEIS.US",
+      "AER.US",
+      "AESI.US",
+      "AFRM.US",
+      "AFYA.US",
+      "AGCO.US",
+      "AGL.US",
+      "AGRO.US",
+      "AIIR.US",
+      "AIN.US",
+      "AIR.US",
+      "AIRJ.US",
+      "AIT.US",
+      "AKTS.US",
+      "ALAB.US",
+      "ALG.US",
+      "ALGM.US",
+      "ALGT.US",
+      "ALH.US",
+      "ALHC.US",
+      "ALIT.US",
+      "ALK.US",
+      "ALKS.US",
+      "ALKT.US",
+      "ALLY.US",
+      "ALRS.US",
+      "ALSN.US",
+      "ALT.US",
+      "ALV.US",
+      "ALVO.US",
+      "AM.US",
+      "AMBA.US",
+      "AMBQ.US",
+      "AMG.US",
+      "AMH.US",
+      "AMKR.US",
+      "AMN.US",
+      "AMPX.US",
+      "AMR.US",
+      "AMRC.US",
+      "AMRZ.US",
+      "AMTM.US",
+      "AN.US",
+      "ANDG.US",
+      "ANGI.US",
+      "APEI.US",
+      "APG.US",
+      "APLD.US",
+      "APN.LSE",
+      "AR.US",
+      "ARCO.US",
+      "ARDT.US",
+      "ARLO.US",
+      "ARLP.US",
+      "ARM.US",
+      "ARMK.US",
+      "ATG.LSE",
+      "ATO.PA",
+      "AU.US",
+      "BABA.US",
+      "BCO.US",
+      "BRAV3.SA",
+      "CASH.US",
+      "CDNL.US",
+      "CFRUY.US",
+      "CLF.US",
+      "CRDO.US",
+      "CRWV.US",
+      "CVC.AS",
+      "DFH.US",
+      "DSGX.US",
+      "DVDCF.US",
+      "EC.US",
+      "EPD.US",
+      "ET.US",
+      "ETERNAL.NSE",
+      "EXENS.PA",
+      "FDXF.US",
+      "FLMNF.US",
+      "FLUIF.US",
+      "FMX.US",
+      "GALD.SW",
+      "GCMG.US",
+      "GEV.US",
+      "GNZ.NZ",
+      "GT.US",
+      "HDN.AU",
+      "HEINY.US",
+      "HKHHF.US",
+      "HKHHY.US",
+      "IOS.DU",
+      "JBLU.US",
+      "JIOFIN.NSE",
+      "JOYY.US",
+      "KALMAR.HE",
+      "KNCRF.US",
+      "LTG.PSE",
+      "LTMC.MI",
+      "M.US",
+      "MANTA.HE",
+      "MDB.US",
+      "MEDP.US",
+      "MICC.AS",
+      "MPLX.US",
+      "MTRBF.US",
+      "NTES.US",
+      "NTRA.US",
+      "NU.US",
+      "OGC.US",
+      "OKTA.US",
+      "OSG.US",
+      "PAHC.US",
+      "PEYUF.US",
+      "PHJMF.US",
+      "PIFYF.US",
+      "PLX.PA",
+      "POOL.US",
+      "PUIGF.US",
+      "Q.US",
+      "R3NK.XETRA",
+      "RBC.US",
+      "RDDT.US",
+      "RKT.US",
+      "ROSE.LSE",
+      "RPRX.US",
+      "RTLLF.US",
+      "S3Z.F",
+      "SCCO.US",
+      "SDZ.SW",
+      "SE.US",
+      "SGI.US",
+      "SIGMAFA.MX",
+      "SMRT.US",
+      "SNDK.US",
+      "SNOW.US",
+      "SOLV.US",
+      "SPOT.US",
+      "SRG.US",
+      "SUNN.SW",
+      "SVC.US",
+      "SYENS.BR",
+      "TEAM.US",
+      "TEVA.US",
+      "THG.LSE",
+      "TKMS.XETRA",
+      "TLX.AU",
+      "TPRO.MI",
+      "TWLO.US",
+      "VAR.OL",
+      "VLTO.US",
+      "VSURE.ST",
+      "ZAB.WAR",
+      "ZEG.LSE",
+      "ZLDSF.US",
+      "ZS.US"
+    ]
+  },
+  "candidate": {
+    "total": 3910,
+    "missing": 27,
+    "USMissing": 13,
+    "missingIds": [
+      "0126Z0.KO",
+      "022100.KO",
+      "034230.KO",
+      "062040.KO",
+      "443060.KO",
+      "450080.KO",
+      "457190.KO",
+      "601059.SHG",
+      "6526.JP",
+      "BCO.US",
+      "CASH.US",
+      "CDNL.US",
+      "DSGX.US",
+      "ETERNAL.NSE",
+      "GNZ.NZ",
+      "IOS.DU",
+      "JIOFIN.NSE",
+      "JOYY.US",
+      "MEDP.US",
+      "OSG.US",
+      "PAHC.US",
+      "RBC.US",
+      "S3Z.F",
+      "SGI.US",
+      "SMRT.US",
+      "SRG.US",
+      "SVC.US"
+    ]
+  },
+  "dossierIdsAdded": [],
+  "dossierIdsRemoved": [],
+  "nonLogoDossierChanges": [
+    {
+      "id": "000063.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "000080.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "000157.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "000240.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "000270.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "000333.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "000338.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "000596.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "000625.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "000720.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "000810.KO",
+      "topLevelFields": [
+        "priceStory",
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "001430.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "001440.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "001450.KO",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "002050.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "002380.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "002460.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "002475.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "002714.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "002790.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "002821.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "002840.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "003030.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "003090.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "003230.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "003490.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "003550.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "004000.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "004020.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "004170.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "004990.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "005250.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "005300.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "005380.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "005420.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "005830.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "005850.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "005930.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "006040.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "006650.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "007070.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "007340.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "007660.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "008730.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "009150.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "009240.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "009420.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "009540.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "009970.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "010120.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "010140.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "011070.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "011170.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "011210.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "011790.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "012330.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "012750.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "014680.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "014820.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "015760.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "017670.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "017800.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "017960.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "018260.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "021240.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "024110.KO",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "026960.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "027410.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "028050.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "028260.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "030000.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "030200.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "033780.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "034020.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "034220.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "034730.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "035250.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "036570.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "042700.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "047040.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "047810.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "051600.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "051900.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "064350.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "066570.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "069260.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "069960.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "073240.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "078930.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "079550.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "081660.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "0883.HK",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "093050.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "093370.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "0981.HK",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "103140.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "1099.HK",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "112610.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "120110.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "1303.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "139480.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "161390.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "161890.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "180640.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "1810.HK",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "183190.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "185750.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "192080.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "192820.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "1T5.MU",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2057.HK",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2303.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2317.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2327.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2330.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2382.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2388.HK",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "2412.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2454.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2501.JP",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2603.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2615.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2884.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "2886.TW",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "2892.TW",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "300223.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "300308.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "300347.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "300408.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "300450.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "300661.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "300759.SHE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "316140.KO",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "326030.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "3661.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "3711.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "383220.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "402340.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "4307.JP",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "443060.KO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "4506.JP",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "4904.TW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "5706.JP",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "5803.JP",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "5876.TW",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "600015.SHG",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "600016.SHG",
+      "topLevelFields": [
+        "priceStory",
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600031.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600036.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600188.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600196.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600276.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600332.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600362.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600547.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600585.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600600.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600660.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600690.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "600845.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601318.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601319.SHG",
+      "topLevelFields": [
+        "priceStory",
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601328.SHG",
+      "topLevelFields": [
+        "priceStory",
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601336.SHG",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "601600.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601601.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601607.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601628.SHG",
+      "topLevelFields": [
+        "priceStory",
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601633.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601658.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601728.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601766.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601808.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601818.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601857.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601898.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601899.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601916.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601919.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601939.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "601995.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "603259.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "603501.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "603986.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "603993.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "605499.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "6098.JP",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "61L0.F",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "688008.SHG",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "8309.JP",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "8331.JP",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "8766.JP",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "9633.HK",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "A.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AAPL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ABI.BR",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ABNB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ABT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ABX.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AD.AS",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ADDT-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ADI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ADSK.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AEE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AEM.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AEP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AFL.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "AFYA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AGS.BR",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "AIR.PA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AJG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AKAM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ALAB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ALC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ALIT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ALK-B.CO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ALL.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "ALLE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ALNY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ALOS3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ALSYDB.CO",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "ALTR.LS",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AMAT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AMBU-B.CO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AMD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AME.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AMRZ.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AMT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AMXB.MX",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AMZN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ANET.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AOS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "APA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "APAM.AS",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "APD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "APH.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "APO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "APTV.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ARE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ASAI3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ASML.AS",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ASSA-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ASURB.MX",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ATCO-A.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ATO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ATS.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AVBH.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AVGO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AVY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AWK.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AXIA3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "AZN.LSE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "B3SA3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BARC.LSE",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "BAX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BAYN.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BBAS3.SA",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "BBDC3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BBOX.LSE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BBVA.MC",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BBY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BCE.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BDX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BELFB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BEN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BF-A.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BGEO.LSE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BIIB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BKNG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BKR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BKT.MC",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "BLK.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BMO.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BMY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BNY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BRAP3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BRC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BRK-B.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "BSX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CARL-B.CO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CASH.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "CASY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CAT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CBOE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CCI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CCL-B.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CCL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CDNS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CDR.WAR",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CDW.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CENTA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CHD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CHRW.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CHTR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CIB.US",
+      "topLevelFields": [
+        "priceStory",
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CIEN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CLS.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CMCSA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CME.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CMG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CMIG4.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CMS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CNC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CNP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CNR.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "COLO-B.CO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CON.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "COO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "COP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "COR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CPAY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CPFE3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CPT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CRM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CROX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CRWD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CSCO.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "CSN.LSE",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "CSX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CTC-A.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CTVA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CURY3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CVX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "CYRE3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "D.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DAL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DANSKE.CO",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "DBX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DECK.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DFH.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DHI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DHR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DIS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DLG.MI",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DNP.WAR",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DOC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DOV.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DPZ.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DSY.PA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DUK.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DVA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DVN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "DXCM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EBAY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ECHO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ED.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EFX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EG7.IR",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "EGIE3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ELV.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EMA.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EME.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EMR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ENX.PA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EOG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EPI-A.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EQIX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EQNR.OL",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EQT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ERIC-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ERIE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ES.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ESS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ETN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EVD.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EVRG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EW.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EWBC.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "EXC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EXPD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EXPE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "EXR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FAF.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "FANG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FAST.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FCX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FFIV.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FG.US",
+      "topLevelFields": [
+        "valuation"
+      ]
+    },
+    {
+      "id": "FIBK.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "FICO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FINV.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FISV.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FIX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FLG.US",
+      "topLevelFields": [
+        "priceStory",
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FLRY3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FN.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "FOA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FORTUM.HE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FOX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FPE3.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FRO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FSLR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FTNT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FTS.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FTV.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "FULT.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "FWONK.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "G1A.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GAPB.MX",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GBF.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GCMG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GDDY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GDS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GETI-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GGBR3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GH.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GIB-A.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GL.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "GLW.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GNRC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GOOGL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GOOS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GRF.MC",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GRMN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "GSK.LSE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "H.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HAL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HAS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HCA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HEI-A.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HEN.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HER.MI",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HEXA-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HLI.AU",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "HLT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HM-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HNR1.XETRA",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "HOLM-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HRI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HRL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HSBA.LSE",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "HSY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HUBB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HUBS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HUM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HVT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "HWM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IBM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IBN.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "IBS.LS",
+      "topLevelFields": [
+        "historyAssumptions",
+        "valuation"
+      ]
+    },
+    {
+      "id": "ICE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ICG.LSE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IDXX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IEX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IFC.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IIIN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ILMN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "INCY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "INDU-C.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "INFY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ING.WAR",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "INVE-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "INW.MI",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IQ.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IQV.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ISAE3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ISRG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ITSA3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ITUB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ITW.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "IVZ.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "JBHT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "JCI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "JDW.LSE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "JEN.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "JNJ.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "JPM.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "JYSK.CO",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "KBC.BR",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "KDP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KGH.WAR",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KIMBERA.MX",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KKR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KLAR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KLBN3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KLIC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KMB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KMI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KNEBV.HE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KNSL.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "KO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KOFUBL.MX",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KRN.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "KVUE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "L.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LAGR-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LATO-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LDOS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LH.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LIFCO-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LII.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LIN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LIVEPOLC-1.MX",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LLOY.LSE",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "LLY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LMT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LNT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LNW.AU",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LOGI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LOW.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LPP.WAR",
+      "topLevelFields": [
+        "valuation"
+      ]
+    },
+    {
+      "id": "LVS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "LYB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MAA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MAERSK-B.CO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MAMA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MAR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MAS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MCD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MCHP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MCK.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MCO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MDLZ.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MDT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MELI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MET.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "META.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MFC.TO",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "MIL.WAR",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "MKC-V.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MLM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MNST.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MOD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MOMO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MPC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MPWR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MRK.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MRNA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MRSH.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MRVL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MSCI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MSI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MSTR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MT.AS",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "MTD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "N91.LSE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NBIS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NDA-FI.HE",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "NDAQ.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NEE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NEM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NFLX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NIBE-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NKE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NMIH.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "NOC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NOG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NOMD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NOS.LS",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NOVO-B.CO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NOW.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NRG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NSC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NSIS-B.CO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NTAP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NTR.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NTRS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NUE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NVDA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NVG.LS",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NVR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "NWG.LSE",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "NWS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "O.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ODFL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "OGS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "OKE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "OMAB.MX",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ONON.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ORCL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ORK.OL",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ORLY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ORNBV.HE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "OZK.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "P911.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PBYI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PCAR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PCG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PCOR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PDD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PEG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PFE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PFG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PFS.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "PHM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PKO.WAR",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "PLXS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PNR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PODD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "POMO3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "POW.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "POWL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PPL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PPLI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PRAA.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "PRI.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "PSSA3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PUIG.MC",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "PWR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "Q.MX",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "Q.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "QGEN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "QSR.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "R3NK.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RAIL3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RAT.LSE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RBREW.CO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RCI-B.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RCL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "REC.MI",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "REGN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RENE.LS",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RFL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RHM.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RIO.AU",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RMNI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RNR.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "ROL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ROP.SW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ROP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ROST.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RRBI.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "RSG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RTX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RVTY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "RYA.IR",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SAB.MC",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "SAGA-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SANM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SAP.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SBAC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SBCF.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "SBNOR.OL",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "SBSP3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SBUX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SCA-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SCHP.SW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SCMN.SW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SCR.PA",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "SCWO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SDF.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SESG.PA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SHB-A.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SHOP.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SHW.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SJM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SKF-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SLB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SLF.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SNA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SNPS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SNZ.AU",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SPG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SPGI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SRE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SRT3.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "STERV.HE",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "STLAM.MI",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "STLD.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "STT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "STZ.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SVC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SW.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SWEC-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SWK.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SWKS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "SYF.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "T.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "T6W.F",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TDG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TDW.US",
+      "topLevelFields": [
+        "series",
+        "tests",
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TDY.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TEN.MI",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TEO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TGS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TGT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TIMS3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TJX.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TKA.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TKO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TMO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TMUS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TPC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TPG.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TREL-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TRGP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TRI.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TRMB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TRP.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TSLA.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TSN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TTWO.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TW.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TXN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "TYL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "UAL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "UBER.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "UBS.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "UGI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "UHR.SW",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "UNH.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "UNI.MC",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "UNM.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "UNP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "UPS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "UQA.VI",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "URI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "V.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VAMO3.SA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VEEV.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VICI.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VIPS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VMC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VOLV-B.ST",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VRSK.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VRSN.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VRT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VTR.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "VZ.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "WBC.AU",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "WCN.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "WEC.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "WELL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "WM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "WMB.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "WMT.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "WN.TO",
+      "topLevelFields": [
+        "valuation"
+      ]
+    },
+    {
+      "id": "WPM.TO",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "WRB.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "WSFS.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "WST.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "WVE.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "XEL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "XP.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "XYL.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "XYZ.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "YMM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "YUM.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ZAB.WAR",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ZAL.XETRA",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    },
+    {
+      "id": "ZION.US",
+      "topLevelFields": [
+        "priceStory"
+      ]
+    },
+    {
+      "id": "ZTS.US",
+      "topLevelFields": [
+        "historyAssumptions"
+      ]
+    }
+  ],
+  "logoDossierChanges": [
+    "064400.KO",
+    "360.AU",
+    "383220.KO",
+    "402340.KO",
+    "483650.KO",
+    "543A.JP",
+    "688271.SHG",
+    "AAL.US",
+    "AAOI.US",
+    "AAON.US",
+    "AAP.US",
+    "ABCB.US",
+    "ABG.US",
+    "ABM.US",
+    "ABR.US",
+    "ACA.US",
+    "ACDC.US",
+    "ACH.US",
+    "ACHC.US",
+    "ACIC.US",
+    "ACIW.US",
+    "ACLS.US",
+    "ACMR.US",
+    "ACVA.US",
+    "AD.US",
+    "ADEA.US",
+    "ADMA.US",
+    "ADNT.US",
+    "ADPT.US",
+    "ADTN.US",
+    "AEBI.US",
+    "AEG.US",
+    "AEHR.US",
+    "AEIS.US",
+    "AER.US",
+    "AESI.US",
+    "AFRM.US",
+    "AFYA.US",
+    "AGCO.US",
+    "AGL.US",
+    "AGRO.US",
+    "AIIR.US",
+    "AIN.US",
+    "AIR.US",
+    "AIRJ.US",
+    "AIT.US",
+    "AKTS.US",
+    "ALAB.US",
+    "ALG.US",
+    "ALGM.US",
+    "ALGT.US",
+    "ALH.US",
+    "ALHC.US",
+    "ALIT.US",
+    "ALK.US",
+    "ALKS.US",
+    "ALKT.US",
+    "ALLY.US",
+    "ALRS.US",
+    "ALSN.US",
+    "ALT.US",
+    "ALV.US",
+    "ALVO.US",
+    "AM.US",
+    "AMBA.US",
+    "AMBQ.US",
+    "AMG.US",
+    "AMH.US",
+    "AMKR.US",
+    "AMN.US",
+    "AMPX.US",
+    "AMR.US",
+    "AMRC.US",
+    "AMRZ.US",
+    "AMTM.US",
+    "AN.US",
+    "ANDG.US",
+    "ANGI.US",
+    "APEI.US",
+    "APG.US",
+    "APLD.US",
+    "APN.LSE",
+    "AR.US",
+    "ARCO.US",
+    "ARDT.US",
+    "ARLO.US",
+    "ARLP.US",
+    "ARM.US",
+    "ARMK.US",
+    "ATG.LSE",
+    "ATO.PA",
+    "AU.US",
+    "BABA.US",
+    "BRAV3.SA",
+    "CFRUY.US",
+    "CLF.US",
+    "CRDO.US",
+    "CRWV.US",
+    "CVC.AS",
+    "DFH.US",
+    "DVDCF.US",
+    "EC.US",
+    "EPD.US",
+    "ET.US",
+    "EXENS.PA",
+    "FDXF.US",
+    "FLMNF.US",
+    "FLUIF.US",
+    "FMX.US",
+    "GALD.SW",
+    "GCMG.US",
+    "GEV.US",
+    "GT.US",
+    "HDN.AU",
+    "HEINY.US",
+    "HKHHF.US",
+    "HKHHY.US",
+    "JBLU.US",
+    "KALMAR.HE",
+    "KNCRF.US",
+    "LTG.PSE",
+    "LTMC.MI",
+    "M.US",
+    "MANTA.HE",
+    "MDB.US",
+    "MICC.AS",
+    "MPLX.US",
+    "MTRBF.US",
+    "NTES.US",
+    "NTRA.US",
+    "NU.US",
+    "OGC.US",
+    "OKTA.US",
+    "PEYUF.US",
+    "PHJMF.US",
+    "PIFYF.US",
+    "PLX.PA",
+    "POOL.US",
+    "PUIGF.US",
+    "Q.US",
+    "R3NK.XETRA",
+    "RDDT.US",
+    "RKT.US",
+    "ROSE.LSE",
+    "RPRX.US",
+    "RTLLF.US",
+    "SCCO.US",
+    "SDZ.SW",
+    "SE.US",
+    "SIGMAFA.MX",
+    "SNDK.US",
+    "SNOW.US",
+    "SOLV.US",
+    "SPOT.US",
+    "SUNN.SW",
+    "SYENS.BR",
+    "TEAM.US",
+    "TEVA.US",
+    "THG.LSE",
+    "TKMS.XETRA",
+    "TLC.AU",
+    "TLX.AU",
+    "TPRO.MI",
+    "TWLO.US",
+    "VAR.OL",
+    "VLTO.US",
+    "VSURE.ST",
+    "ZAB.WAR",
+    "ZEG.LSE",
+    "ZLDSF.US",
+    "ZS.US"
+  ],
+  "nonLogoIndexChanges": []
+}

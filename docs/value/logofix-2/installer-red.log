@@ -1,0 +1,26 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-logofix
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/logo-recovery-install.test.ts [ tests/unit/value/logo-recovery-install.test.ts ]
+Error: Cannot find module '@/scripts/value/install-logo-recovery' imported from '/mnt/HC_Volume_107024928/value-logofix/tests/unit/value/logo-recovery-install.test.ts'.
+
+- If you rely on tsconfig.json's "paths" to resolve modules, please install "vite-tsconfig-paths" plugin to handle module resolution.
+- Make sure you don't have relative aliases in your Vitest config. Use absolute paths instead. Read more: https://vitest.dev/guide/common-errors
+ ❯ tests/unit/value/logo-recovery-install.test.ts:7:1
+      5| import {iconHash} from '@/lib/value/logo-validation';
+      6| import recovery from '@/lib/value/logo-restorations.json';
+      7| import {installRecoveryBundle} from '@/scripts/value/install-logo-reco…
+       | ^
+      8|
+      9| it('preflights a pinned recovery, restores exact legacy/absent records…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  16:12:37
+   Duration  526ms (transform 141ms, setup 0ms, collect 0ms, tests 0ms, environment 0ms, prepare 74ms)

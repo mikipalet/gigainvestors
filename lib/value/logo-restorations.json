@@ -1,0 +1,1342 @@
+{
+  "archive": "9037c38327d6b688e95ffab6543610a57c2f9081",
+  "snapshot": "1791275081726-before.json",
+  "entries": {
+    "064400.KO": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.lgcns.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.lgcns.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:49:52.143Z"
+      }
+    },
+    "360.AU": {
+      "logo": "https://eodhd.com/img/logos/AU/360.png",
+      "cache": null
+    },
+    "383220.KO": {
+      "logo": "https://eodhd.com/img/logos/KO/007700.png",
+      "cache": null
+    },
+    "402340.KO": {
+      "logo": "https://eodhd.com/img/logos/KO/402340.png",
+      "cache": null
+    },
+    "483650.KO": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.dalbaglobal.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.dalbaglobal.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T14:04:34.591Z"
+      }
+    },
+    "543A.JP": {
+      "logo": "https://icons.duckduckgo.com/ip3/archion.co.jp.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/archion.co.jp.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T17:02:41.630Z"
+      }
+    },
+    "688271.SHG": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.united-imaging.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.united-imaging.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T15:08:24.410Z"
+      }
+    },
+    "AAL.US": {
+      "logo": "https://eodhd.com/img/logos/US/aal.png",
+      "cache": null
+    },
+    "AAOI.US": {
+      "logo": "https://eodhd.com/img/logos/US/AAOI.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AAOI.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T18:58:23.217Z"
+      }
+    },
+    "AAON.US": {
+      "logo": "https://eodhd.com/img/logos/US/AAON.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AAON.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T18:58:22.818Z"
+      }
+    },
+    "AAP.US": {
+      "logo": "https://eodhd.com/img/logos/US/aap.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/aap.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T18:58:23.067Z"
+      }
+    },
+    "ABCB.US": {
+      "logo": "https://eodhd.com/img/logos/US/ABCB.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ABCB.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:23.378Z"
+      }
+    },
+    "ABG.US": {
+      "logo": "https://eodhd.com/img/logos/US/ABG.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ABG.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:23.663Z"
+      }
+    },
+    "ABM.US": {
+      "logo": "https://eodhd.com/img/logos/US/abm.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/abm.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:23.940Z"
+      }
+    },
+    "ABR.US": {
+      "logo": "https://eodhd.com/img/logos/US/ABR.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ABR.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:24.300Z"
+      }
+    },
+    "ACA.US": {
+      "logo": "https://eodhd.com/img/logos/US/ACA.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ACA.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:25.679Z"
+      }
+    },
+    "ACDC.US": {
+      "logo": "https://eodhd.com/img/logos/US/ACDC.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ACDC.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:26.312Z"
+      }
+    },
+    "ACH.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.accendrahealth.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.accendrahealth.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:28.542Z"
+      }
+    },
+    "ACHC.US": {
+      "logo": "https://eodhd.com/img/logos/US/ACHC.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ACHC.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:27.180Z"
+      }
+    },
+    "ACIC.US": {
+      "logo": "https://eodhd.com/img/logos/US/UIHC.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/UIHC.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:27.805Z"
+      }
+    },
+    "ACIW.US": {
+      "logo": "https://eodhd.com/img/logos/US/ACIW.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ACIW.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:28.062Z"
+      }
+    },
+    "ACLS.US": {
+      "logo": "https://eodhd.com/img/logos/US/ACLS.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ACLS.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:08:28.715Z"
+      }
+    },
+    "ACMR.US": {
+      "logo": "https://eodhd.com/img/logos/US/ACMR.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ACMR.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:18:26.774Z"
+      }
+    },
+    "ACVA.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.acvauto.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.acvauto.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:18:28.801Z"
+      }
+    },
+    "AD.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.arrayinc.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.arrayinc.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:18:30.186Z"
+      }
+    },
+    "ADEA.US": {
+      "logo": "https://eodhd.com/img/logos/US/ADEA.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ADEA.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:18:30.558Z"
+      }
+    },
+    "ADMA.US": {
+      "logo": "https://eodhd.com/img/logos/US/ADMA.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ADMA.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:18:31.558Z"
+      }
+    },
+    "ADNT.US": {
+      "logo": "https://eodhd.com/img/logos/US/ADNT.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ADNT.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:18:31.814Z"
+      }
+    },
+    "ADPT.US": {
+      "logo": "https://eodhd.com/img/logos/US/ADPT.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ADPT.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:18:32.058Z"
+      }
+    },
+    "ADTN.US": {
+      "logo": "https://eodhd.com/img/logos/US/ADTN.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ADTN.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:18:32.693Z"
+      }
+    },
+    "AEBI.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.aebi-schmidt.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.aebi-schmidt.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:28:32.155Z"
+      }
+    },
+    "AEG.US": {
+      "logo": "https://eodhd.com/img/logos/US/AEG.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AEG.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:28:32.895Z"
+      }
+    },
+    "AEHR.US": {
+      "logo": "https://eodhd.com/img/logos/US/AEHR.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AEHR.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:28:33.145Z"
+      }
+    },
+    "AEIS.US": {
+      "logo": "https://eodhd.com/img/logos/US/AEIS.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AEIS.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:28:33.646Z"
+      }
+    },
+    "AER.US": {
+      "logo": "https://eodhd.com/img/logos/US/aer.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/aer.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:28:34.647Z"
+      }
+    },
+    "AERO.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.aeromexico.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.aeromexico.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:28:35.749Z"
+      }
+    },
+    "AESI.US": {
+      "logo": "https://eodhd.com/img/logos/US/AESI.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AESI.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:28:35.458Z"
+      }
+    },
+    "AFRM.US": {
+      "logo": "https://eodhd.com/img/logos/US/AFRM.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AFRM.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:28:37.148Z"
+      }
+    },
+    "AFYA.US": {
+      "logo": "https://eodhd.com/img/logos/US/AFYA.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AFYA.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:28:37.274Z"
+      }
+    },
+    "AGCO.US": {
+      "logo": "https://eodhd.com/img/logos/US/AGCO.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AGCO.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:38:37.553Z"
+      }
+    },
+    "AGL.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.agilonhealth.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.agilonhealth.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:38:38.459Z"
+      }
+    },
+    "AGRO.US": {
+      "logo": "https://eodhd.com/img/logos/US/agro.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/agro.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:38:39.520Z"
+      }
+    },
+    "AIIR.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/air.global.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/air.global.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:48:44.315Z"
+      }
+    },
+    "AIN.US": {
+      "logo": "https://eodhd.com/img/logos/US/AIN.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AIN.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:48:44.930Z"
+      }
+    },
+    "AIR.US": {
+      "logo": "https://eodhd.com/img/logos/US/air.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/air.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:48:45.339Z"
+      }
+    },
+    "AIRJ.US": {
+      "logo": "https://eodhd.com/img/logos/US/AIRJ.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AIRJ.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:48:45.985Z"
+      }
+    },
+    "AIT.US": {
+      "logo": "https://eodhd.com/img/logos/US/AIT.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AIT.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:48:46.714Z"
+      }
+    },
+    "AKTS.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.aktisoncology.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.aktisoncology.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:58:51.001Z"
+      }
+    },
+    "ALAB.US": {
+      "logo": "https://eodhd.com/img/logos/US/ALAB.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ALAB.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:47:59.383Z"
+      }
+    },
+    "ALG.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.alamo-group.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.alamo-group.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:58:51.940Z"
+      }
+    },
+    "ALGM.US": {
+      "logo": "https://eodhd.com/img/logos/US/ALGM.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ALGM.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:58:50.921Z"
+      }
+    },
+    "ALGT.US": {
+      "logo": "https://eodhd.com/img/logos/US/algt.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/algt.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:58:51.454Z"
+      }
+    },
+    "ALH.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/alliancelaundry.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/alliancelaundry.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:58:51.328Z"
+      }
+    },
+    "ALIT.US": {
+      "logo": "https://eodhd.com/img/logos/US/ALIT.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ALIT.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:58:51.656Z"
+      }
+    },
+    "ALK.US": {
+      "logo": "https://eodhd.com/img/logos/US/ALK.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ALK.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:58:51.915Z"
+      }
+    },
+    "ALKS.US": {
+      "logo": "https://eodhd.com/img/logos/US/ALKS.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ALKS.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:58:52.041Z"
+      }
+    },
+    "ALKT.US": {
+      "logo": "https://eodhd.com/img/logos/US/ALKT.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ALKT.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:58:52.164Z"
+      }
+    },
+    "ALLY.US": {
+      "logo": "https://eodhd.com/img/logos/US/ALLY.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ALLY.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T19:58:52.796Z"
+      }
+    },
+    "ALRS.US": {
+      "logo": "https://eodhd.com/img/logos/US/ALRS.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ALRS.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:08:54.549Z"
+      }
+    },
+    "ALSN.US": {
+      "logo": "https://eodhd.com/img/logos/US/alsn.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/alsn.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:08:54.967Z"
+      }
+    },
+    "ALT.US": {
+      "logo": "https://eodhd.com/img/logos/US/ALT.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ALT.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:08:55.224Z"
+      }
+    },
+    "ALV.US": {
+      "logo": "https://eodhd.com/img/logos/US/alv.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/alv.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:08:56.003Z"
+      }
+    },
+    "ALVO.US": {
+      "logo": "https://eodhd.com/img/logos/US/ALVO.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ALVO.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:08:56.120Z"
+      }
+    },
+    "AM.US": {
+      "logo": "https://eodhd.com/img/logos/US/AM.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AM.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:08:56.998Z"
+      }
+    },
+    "AMBA.US": {
+      "logo": "https://eodhd.com/img/logos/US/amba.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/amba.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:08:57.619Z"
+      }
+    },
+    "AMBQ.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/ambiq.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/ambiq.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:08:57.978Z"
+      }
+    },
+    "AMG.US": {
+      "logo": "https://eodhd.com/img/logos/US/AMG.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AMG.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:18:59.997Z"
+      }
+    },
+    "AMH.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.amh.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.amh.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:19:01.567Z"
+      }
+    },
+    "AMKR.US": {
+      "logo": "https://eodhd.com/img/logos/US/AMKR.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AMKR.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:19:00.917Z"
+      }
+    },
+    "AMN.US": {
+      "logo": "https://eodhd.com/img/logos/US/AMN.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AMN.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:19:01.561Z"
+      }
+    },
+    "AMPX.US": {
+      "logo": "https://eodhd.com/img/logos/US/AMPX.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AMPX.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:19:02.807Z"
+      }
+    },
+    "AMR.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.alphametresources.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.alphametresources.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:19:03.771Z"
+      }
+    },
+    "AMRC.US": {
+      "logo": "https://eodhd.com/img/logos/US/AMRC.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AMRC.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:19:03.183Z"
+      }
+    },
+    "AMRZ.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.amrize.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.amrize.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:19:03.540Z"
+      }
+    },
+    "AMTM.US": {
+      "logo": "https://eodhd.com/img/logos/US/AMTM.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AMTM.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:19:05.058Z"
+      }
+    },
+    "AN.US": {
+      "logo": "https://eodhd.com/img/logos/US/AN.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/AN.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:29:07.435Z"
+      }
+    },
+    "ANDG.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.andersen.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.andersen.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:49:17.474Z"
+      }
+    },
+    "ANGI.US": {
+      "logo": "https://eodhd.com/img/logos/US/angi.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/angi.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:29:08.564Z"
+      }
+    },
+    "APEI.US": {
+      "logo": "https://eodhd.com/img/logos/US/APEI.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/APEI.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:39:15.613Z"
+      }
+    },
+    "APG.US": {
+      "logo": "https://eodhd.com/img/logos/US/APG.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/APG.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:39:15.737Z"
+      }
+    },
+    "APLD.US": {
+      "logo": "https://eodhd.com/img/logos/US/APLD.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/APLD.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:39:16.368Z"
+      }
+    },
+    "APN.LSE": {
+      "logo": "https://icons.duckduckgo.com/ip3/appliednutrition.uk.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/appliednutrition.uk.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:49:18.711Z"
+      }
+    },
+    "AR.US": {
+      "logo": "https://eodhd.com/img/logos/US/ar.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ar.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:49:21.604Z"
+      }
+    },
+    "ARCO.US": {
+      "logo": "https://eodhd.com/img/logos/US/ARCO.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ARCO.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:59:26.340Z"
+      }
+    },
+    "ARDT.US": {
+      "logo": "https://eodhd.com/img/logos/US/ARDT.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ARDT.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T20:59:26.717Z"
+      }
+    },
+    "ARLO.US": {
+      "logo": "https://eodhd.com/img/logos/US/ARLO.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ARLO.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:09:32.038Z"
+      }
+    },
+    "ARLP.US": {
+      "logo": "https://eodhd.com/img/logos/US/ARLP.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ARLP.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:09:32.684Z"
+      }
+    },
+    "ARM.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.arm.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.arm.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:47:48.163Z"
+      }
+    },
+    "ARMK.US": {
+      "logo": "https://eodhd.com/img/logos/US/ARMK.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ARMK.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:09:32.304Z"
+      }
+    },
+    "ATG.LSE": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.auctiontechnologygroup.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.auctiontechnologygroup.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:50:32.298Z"
+      }
+    },
+    "ATO.PA": {
+      "logo": "https://eodhd.com/img/logos/PA/ATO.png",
+      "cache": null
+    },
+    "AU.US": {
+      "logo": "https://eodhd.com/img/logos/US/au.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/au.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:03.327Z"
+      }
+    },
+    "BABA.US": {
+      "logo": "https://eodhd.com/img/logos/US/baba.png",
+      "cache": null
+    },
+    "BRAV3.SA": {
+      "logo": "https://icons.duckduckgo.com/ip3/bravaenergia.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/bravaenergia.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:53:27.319Z"
+      }
+    },
+    "CLF.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.clevelandcliffs.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.clevelandcliffs.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:49:25.543Z"
+      }
+    },
+    "CRDO.US": {
+      "logo": "https://eodhd.com/img/logos/US/CRDO.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/CRDO.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:10.412Z"
+      }
+    },
+    "CRWV.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.coreweave.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.coreweave.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:04.608Z"
+      }
+    },
+    "CVC.AS": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.cvc.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.cvc.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:35.226Z"
+      }
+    },
+    "DBV.PA": {
+      "logo": "https://eodhd.com/img/logos/PA/DBV.png",
+      "cache": null
+    },
+    "EC.US": {
+      "logo": "https://eodhd.com/img/logos/US/EC.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/EC.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:11.921Z"
+      }
+    },
+    "EPD.US": {
+      "logo": "https://eodhd.com/img/logos/US/EPD.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/EPD.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:46:07.606Z"
+      }
+    },
+    "ET.US": {
+      "logo": "https://eodhd.com/img/logos/US/ET.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/ET.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:47:57.801Z"
+      }
+    },
+    "EXENS.PA": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.exosens.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.exosens.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:50:35.527Z"
+      }
+    },
+    "FDXF.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.fedexfreight.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.fedexfreight.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:50:44.176Z"
+      }
+    },
+    "FMX.US": {
+      "logo": "https://eodhd.com/img/logos/US/FMX.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/FMX.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:08.421Z"
+      }
+    },
+    "GALD.SW": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.galderma.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.galderma.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:05.775Z"
+      }
+    },
+    "GEV.US": {
+      "logo": "https://eodhd.com/img/logos/US/GEV.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/GEV.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:47:48.725Z"
+      }
+    },
+    "GT.US": {
+      "logo": "https://eodhd.com/img/logos/US/gt.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/gt.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:53:55.953Z"
+      }
+    },
+    "HDN.AU": {
+      "logo": "https://eodhd.com/img/logos/AU/HDN.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/AU/HDN.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:53:38.243Z"
+      }
+    },
+    "IWG.LSE": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.iwgplc.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.iwgplc.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:50:51.944Z"
+      }
+    },
+    "JBLU.US": {
+      "logo": "https://eodhd.com/img/logos/US/jblu.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/jblu.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:53:27.114Z"
+      }
+    },
+    "KALMAR.HE": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.kalmarglobal.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.kalmarglobal.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:51:09.144Z"
+      }
+    },
+    "LTG.PSE": {
+      "logo": "https://icons.duckduckgo.com/ip3/ltg.com.ph.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/ltg.com.ph.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:53:44.266Z"
+      }
+    },
+    "LTMC.MI": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.lottomaticagroup.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.lottomaticagroup.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:51:09.324Z"
+      }
+    },
+    "M.US": {
+      "logo": "https://eodhd.com/img/logos/US/m.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/m.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:49:28.951Z"
+      }
+    },
+    "MANTA.HE": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.mandatum.fi.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.mandatum.fi.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:50:34.800Z"
+      }
+    },
+    "MDB.US": {
+      "logo": "https://eodhd.com/img/logos/US/MDB.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/MDB.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:13.268Z"
+      }
+    },
+    "MICC.AS": {
+      "logo": "https://icons.duckduckgo.com/ip3/corporate.magnumicecream.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/corporate.magnumicecream.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:49.937Z"
+      }
+    },
+    "MPLX.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.mplx.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.mplx.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:00.409Z"
+      }
+    },
+    "NTES.US": {
+      "logo": "https://eodhd.com/img/logos/US/Ntes.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/Ntes.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:46:07.923Z"
+      }
+    },
+    "NTRA.US": {
+      "logo": "https://eodhd.com/img/logos/US/NTRA.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/NTRA.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:00.051Z"
+      }
+    },
+    "NU.US": {
+      "logo": "https://eodhd.com/img/logos/US/NU.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/NU.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:47:58.552Z"
+      }
+    },
+    "OKTA.US": {
+      "logo": "https://eodhd.com/img/logos/US/OKTA.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/OKTA.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:11.000Z"
+      }
+    },
+    "PLX.PA": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.pluxeegroup.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.pluxeegroup.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:51:51.552Z"
+      }
+    },
+    "POOL.US": {
+      "logo": "https://eodhd.com/img/logos/US/pool.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/pool.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:46:30.205Z"
+      }
+    },
+    "Q.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.qnityelectronics.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.qnityelectronics.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:50:58.588Z"
+      }
+    },
+    "R3NK.XETRA": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.renk.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.renk.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:50:00.820Z"
+      }
+    },
+    "RDDT.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.reddit.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.reddit.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:50:58.960Z"
+      }
+    },
+    "RKT.US": {
+      "logo": "https://eodhd.com/img/logos/US/RKT.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/RKT.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:11.582Z"
+      }
+    },
+    "ROSE.LSE": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.rosebankindustries.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.rosebankindustries.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T15:37:44.159Z"
+      }
+    },
+    "RPRX.US": {
+      "logo": "https://eodhd.com/img/logos/US/RPRX.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/RPRX.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:12.535Z"
+      }
+    },
+    "SCCO.US": {
+      "logo": "https://eodhd.com/img/logos/US/scco.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/scco.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:46:02.894Z"
+      }
+    },
+    "SDZ.SW": {
+      "logo": "https://eodhd.com/img/logos/SW/SDZ.png",
+      "cache": null
+    },
+    "SE.US": {
+      "logo": "https://eodhd.com/img/logos/US/se.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/se.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:47:59.636Z"
+      }
+    },
+    "SIGMAFA.MX": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.sigmafoods.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.sigmafoods.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:49:36.001Z"
+      }
+    },
+    "SNDK.US": {
+      "logo": "https://eodhd.com/img/logos/US/SNDK.png",
+      "cache": null
+    },
+    "SNOW.US": {
+      "logo": "https://eodhd.com/img/logos/US/SNOW.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/SNOW.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:47:52.387Z"
+      }
+    },
+    "SOLV.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.solventum.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.solventum.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:51:00.462Z"
+      }
+    },
+    "SPOT.US": {
+      "logo": "https://eodhd.com/img/logos/US/SPOT.png",
+      "cache": null
+    },
+    "SUNN.SW": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.sunrise.ch.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.sunrise.ch.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:50:35.002Z"
+      }
+    },
+    "SYENS.BR": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.syensqo.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.syensqo.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:49:00.318Z"
+      }
+    },
+    "TEAM.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.atlassian.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.atlassian.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:07.431Z"
+      }
+    },
+    "TEVA.US": {
+      "logo": "https://eodhd.com/img/logos/US/teva.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/teva.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:06.000Z"
+      }
+    },
+    "THG.LSE": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.thehutgroup.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.thehutgroup.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:51:02.355Z"
+      }
+    },
+    "TKMS.XETRA": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.tkmsgroup.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.tkmsgroup.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:49:30.902Z"
+      }
+    },
+    "TLX.AU": {
+      "logo": "https://eodhd.com/img/logos/AU/TLX.png",
+      "cache": null
+    },
+    "TPRO.MI": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.technoprobe.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.technoprobe.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:51:06.874Z"
+      }
+    },
+    "TWLO.US": {
+      "logo": "https://eodhd.com/img/logos/US/TWLO.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/US/TWLO.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:06.833Z"
+      }
+    },
+    "VAR.OL": {
+      "logo": "https://icons.duckduckgo.com/ip3/varenergi.no.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/varenergi.no.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T14:01:39.919Z"
+      }
+    },
+    "VLTO.US": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.veralto.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.veralto.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T21:51:04.113Z"
+      }
+    },
+    "VSURE.ST": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.verisure.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.verisure.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:48:56.243Z"
+      }
+    },
+    "ZAB.WAR": {
+      "logo": "https://icons.duckduckgo.com/ip3/zabkagroup.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/zabkagroup.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T13:49:07.067Z"
+      }
+    },
+    "ZEG.LSE": {
+      "logo": "https://eodhd.com/img/logos/LSE/ZEG.png",
+      "cache": {
+        "logo": "https://eodhd.com/img/logos/LSE/ZEG.png",
+        "source": "eodhd",
+        "validated": true,
+        "verifiedAt": "2026-09-30T15:36:20.630Z"
+      }
+    },
+    "ZS.US": {
+      "logo": "https://eodhd.com/img/logos/US/ZS.png",
+      "cache": null
+    },
+    "TLC.AU": {
+      "logo": "https://icons.duckduckgo.com/ip3/www.thelotterycorporation.com.ico",
+      "cache": {
+        "logo": "https://icons.duckduckgo.com/ip3/www.thelotterycorporation.com.ico",
+        "source": "favicon",
+        "validated": true,
+        "verifiedAt": "2026-09-30T15:28:51.417Z"
+      },
+      "surface": "dossier"
+    }
+  }
+}

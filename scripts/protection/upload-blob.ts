@@ -5,4 +5,4 @@ async function main(){
  const [repo,report]=process.argv.slice(2);if(!repo||!report)throw new Error('Expected snapshot and report paths');
  writeFileSync(report,JSON.stringify(await uploadPublishedSnapshot(repo),null,2));
 }
-main().catch(()=>{console.error('Private Blob upload failed; current pointer was not advanced unless all files completed.');process.exitCode=1;});
+main().catch(error=>{console.error(error instanceof Error&&error.message.startsWith('CRITICAL:')?error.message:'CRITICAL: private Blob upload failed; inspect publication receipt before retrying.');process.exitCode=1;});

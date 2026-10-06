@@ -1,0 +1,162 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-logofix
+
+stdout | tests/unit/value/logo-preservation.test.ts > preserves approved old matcher byte-for-byte
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > preserves approved old validator byte-for-byte
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > preserves approved current record byte-for-byte
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > preserves approved forced retry byte-for-byte
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > preserves validated legacy record byte-for-byte
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > keeps a published logo without a cache record instead of shadowing it with a pending result
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stdout | tests/unit/value/logo-preservation.test.ts > does not alter an approval installed during discovery, even with the same verifiedAt
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+stderr | tests/unit/value/logo-preservation.test.ts > keeps an exactly restored uncached historical logo even while the current archive is demoted
+Error: Wikidata P154 HTTP 404
+
+stderr | tests/unit/value/logo-preservation.test.ts > keeps an exactly restored uncached historical logo even while the current archive is demoted
+Error: Wikidata P154 HTTP 404
+
+stderr | tests/unit/value/logo-preservation.test.ts > keeps an exactly restored uncached historical logo even while the current archive is demoted
+Error: Wikidata P154 HTTP 404
+
+stderr | tests/unit/value/logo-preservation.test.ts > keeps an exactly restored uncached historical logo even while the current archive is demoted
+Error: Wikidata P154 HTTP 404
+
+stdout | tests/unit/value/logo-preservation.test.ts > keeps an exactly restored uncached historical logo even while the current archive is demoted
+{
+  total: 1,
+  checked: 1,
+  cached: 0,
+  recovered: 0,
+  unavailable: 1,
+  sources: {}
+}
+
+ ❯ tests/unit/value/logo-preservation.test.ts (8 tests | 1 failed) 4458ms
+   ✓ preserves approved old matcher byte-for-byte 22ms
+   ✓ preserves approved old validator byte-for-byte 6ms
+   ✓ preserves approved current record byte-for-byte 5ms
+   ✓ preserves approved forced retry byte-for-byte 5ms
+   ✓ preserves validated legacy record byte-for-byte 3ms
+   ✓ keeps a published logo without a cache record instead of shadowing it with a pending result 3ms
+   ✓ does not alter an approval installed during discovery, even with the same verifiedAt  372ms
+   × keeps an exactly restored uncached historical logo even while the current archive is demoted 4039ms
+     → expected true to be false // Object.is equality
+ ❯ tests/unit/value/logo-fill.test.ts (3 tests | 1 failed) 25ms
+   ✓ fills approved logos while withholding pending identities and preserving existing logos/financials 8ms
+   ✓ fills approved logos while withholding rejected identities and preserving existing logos/financials 2ms
+   × restores archive-proven legacy and absent-cache logos without approving their demoted candidates 13ms
+     → expected [ null, null, null, null ] to deeply equal [ …(4) ]
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/logo-fill.test.ts > restores archive-proven legacy and absent-cache logos without approving their demoted candidates
+AssertionError: expected [ null, null, null, null ] to deeply equal [ …(4) ]
+
+- Expected
++ Received
+
+  [
+-   "https://eodhd.com/img/logos/US/alsn.png",
+-   "https://eodhd.com/img/logos/US/aal.png",
++   null,
++   null,
+    null,
+    null,
+  ]
+
+ ❯ tests/unit/value/logo-fill.test.ts:34:53
+     32|   const files:Record<string,any>={'index/US.json':[{id:'ALSN.US',lg:nu…
+     33|   fillPublishedLogos(files);
+     34|   expect(files['index/US.json'].map((r:any)=>r.lg)).toEqual([legacy.lo…
+       |                                                     ^
+     35|   put('ALSN.US',{...legacy,verifiedAt:'later-rejection',logo:null});
+     36|   const rejected:Record<string,any>={'index/US.json':[{id:'ALSN.US',lg…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/value/logo-preservation.test.ts > keeps an exactly restored uncached historical logo even while the current archive is demoted
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ tests/unit/value/logo-preservation.test.ts:55:71
+     53|  put('publish-repo/index/US.json',[{id:'AAL.US',lg:null}]);
+     54|  await logos();
+     55|  expect(existsSync(path.join(dir,'enrichment-v7/logos/AAL.US.json'))).…
+       |                                                                       ^
+     56| });
+     57|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 9 passed (11)
+   Start at  16:11:18
+   Duration  7.00s (transform 956ms, setup 0ms, collect 1.85s, tests 4.48s, environment 0ms, prepare 144ms)

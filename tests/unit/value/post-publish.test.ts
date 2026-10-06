@@ -9,6 +9,7 @@ let root:string,repo:string,remote:string;
 const git=(dir:string,...args:string[])=>execFileSync('git',['-C',dir,...args],{encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
 const write=(file:string,data:unknown)=>{mkdirSync(path.dirname(path.join(repo,file)),{recursive:true});writeFileSync(path.join(repo,file),JSON.stringify(data));};
 let before:string;
+const dossier=(id:string)=>{const d=JSON.parse(readFileSync('tests/fixtures/value/store/dossiers/027.json','utf8'))['KO.US'];return {...d,id,company:{...d.company,id,logo:null}};};
 beforeEach(()=>{
  root=mkdtempSync(path.join(tmpdir(),'post-publish-'));repo=path.join(root,'repo');remote=path.join(root,'remote');mkdirSync(repo);mkdirSync(remote);
  git(remote,'init','--bare','-b','main');git(repo,'init','-b','main');git(repo,'config','user.name','Test');git(repo,'config','user.email','test@example.com');
@@ -36,7 +37,7 @@ it('checks a successful publication once and clears the durable receipt',async()
  expect(check).toHaveBeenCalledOnce();expect(revalidate).toHaveBeenCalledOnce();
 });
 it('does not check or revert a failed push',async()=>{
- write('meta.json',{unpublished:true});git(repo,'add','.');git(repo,'commit','-m','unpublished');beginPublication(repo);
+ write('meta.json',{...JSON.parse(readFileSync(path.join(repo,'meta.json'),'utf8')),unpublished:true});git(repo,'add','.');git(repo,'commit','-m','unpublished');beginPublication(repo);
  const check=vi.fn(async()=>{});await verifyPublication(repo,{check,revalidate:async()=>{}});expect(check).not.toHaveBeenCalled();
  expect(git(remote,'rev-parse','main')).toBe(before);
 });
@@ -52,11 +53,30 @@ it('rolls back when revalidation fails, without declaring an unvalidated site he
  expect(git(repo,'rev-parse','HEAD^{tree}')).toBe(git(repo,'rev-parse',`${before}^{tree}`));
 });
 it('can restore the exact pre-dedupe snapshot if publication verification fails',async()=>{
- write('dossiers/000.json',{'AKBLF.US':{id:'AKBLF.US'},'ALK-B.CO':{id:'ALK-B.CO'}});
+ write('dossiers/000.json',{'AKBLF.US':dossier('AKBLF.US'),'ALK-B.CO':dossier('ALK-B.CO')});
  git(repo,'add','.');git(repo,'commit','-m','legacy duplicate listings');git(repo,'push');before=git(repo,'rev-parse','HEAD');
- write('dossiers/000.json',{'ALK-B.CO':{id:'ALK-B.CO'}});write('aliases.json',{'AKBLF.US':'ALK-B.CO'});
+ write('dossiers/000.json',{'ALK-B.CO':dossier('ALK-B.CO')});write('aliases.json',{'AKBLF.US':'ALK-B.CO'});
  candidate(true);
  await expect(verifyPublication(repo,{check:async()=>{throw Error('failed local check');},revalidate:async()=>{}})).rejects.toThrow(/CRITICAL.*reverted/);
+ expect(git(repo,'rev-parse','HEAD^{tree}')).toBe(git(repo,'rev-parse',`${before}^{tree}`));
+ expect(git(remote,'rev-parse','main')).toBe(git(repo,'rev-parse','HEAD'));
+});
+
+it('refuses a committed logo regression before creating a publication receipt',()=>{
+ const old=dossier('KO.US');old.company.logo='https://example.com/logo.png';
+ write('dossiers/000.json',{'KO.US':old});git(repo,'add','.');git(repo,'commit','-m','logo baseline');git(repo,'push');
+ old.company.logo=null;write('dossiers/000.json',{'KO.US':old});git(repo,'add','.');git(repo,'commit','-m','logo regression');
+ expect(()=>beginPublication(repo)).toThrow(/CRITICAL[\s\S]*logos[\s\S]*KO.US/);
+ expect(()=>readFileSync(path.join(repo,'.git/value-publish-pending.json'))).toThrow();
+});
+it('rolls back a pushed logo regression using the prior archive even if a legacy publisher bypassed preflight',async()=>{
+ const old=dossier('KO.US');old.company.logo='https://example.com/logo.png';
+ write('dossiers/000.json',{'KO.US':old});git(repo,'add','.');git(repo,'commit','-m','approved logo');git(repo,'push');before=git(repo,'rev-parse','HEAD');
+ old.company.logo=null;write('dossiers/000.json',{'KO.US':old});git(repo,'add','.');git(repo,'commit','-m','legacy regression');const after=git(repo,'rev-parse','HEAD');
+ writeFileSync(path.join(repo,'.git/value-publish-pending.json'),JSON.stringify({before,after}));git(repo,'push');
+ const check=vi.fn(async()=>{}),revalidate=vi.fn(async()=>{});
+ await expect(verifyPublication(repo,{check,revalidate})).rejects.toThrow(/CRITICAL[\s\S]*logos[\s\S]*KO.US[\s\S]*reverted/);
+ expect(check).not.toHaveBeenCalled();expect(revalidate).toHaveBeenCalledOnce();
  expect(git(repo,'rev-parse','HEAD^{tree}')).toBe(git(repo,'rev-parse',`${before}^{tree}`));
  expect(git(remote,'rev-parse','main')).toBe(git(repo,'rev-parse','HEAD'));
 });

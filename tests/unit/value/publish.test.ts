@@ -372,6 +372,7 @@ describe("publish repository", () => {
     const repo = repository();
     mkdirSync(path.join(repo, "prices")); writeFileSync(path.join(repo, "prices/US.json"), '{"KO.US":[70,"2026-09-28"]}\n');
     mkdirSync(path.join(repo, "index")); writeFileSync(path.join(repo, "index/OLD.json"), "[]");
+    writeFileSync(path.join(repo, 'meta.json'), '{}');
     git(repo, ["add", "."]); git(repo, ["commit", "-m", "old"]);
     const files = output([analysis()]);
     writeOutput({ repo, files }); commitOutput({ repo, asOf: "2026-09-29" });
@@ -398,17 +399,17 @@ describe("publish repository", () => {
     expect(commitOutput({ repo, asOf: "2026-09-29" })).toBe(true);
     expect(git(repo, ["rev-list", "--count", "HEAD"])).toBe("1");
   });
-  it("stages a partial snapshot but refuses to commit a greater than 1% delisting drop", () => {
+  it("stages a partial snapshot but refuses a delisting drop beyond the five-company floor", () => {
     const repo = repository();
     const axp = analysis("AXP.US"); axp.valuation!.shares = 2; // cap 100 = quote 50 × shares 2
-    writeOutput({ repo, files: output([analysis(), axp, analysis("DELISTED.US")]) });
+    writeOutput({ repo, files: output([analysis(), axp, analysis("DELISTED.US"),...Array.from({length:5},(_,i)=>analysis(`DELISTED${i}.US`))]) });
     commitOutput({ repo, asOf: "2026-09-29" });
     mkdirSync(path.join(corpusDir(), "prices"), { recursive: true });
     writeFileSync(path.join(corpusDir(), "prices/US.json"), JSON.stringify({ "AXP.US": [50, "2026-09-29", "seed"] }));
     mkdirSync(path.join(repo, "search"), { recursive: true });
     writeFileSync(path.join(repo, "search/a.json"), "{}");
     const updated = analysis(); updated.tests.moat.result = "fail";
-    expect(() => publishSnapshot({ repo, analyses: [updated], universe: ["KO.US", "AXP.US", "PENDING.US"].map(id => analysis(id).company), partial: true, force: true, holdersByTicker: {}, investorNames: {} })).toThrow(/invariant.*dossier count/i);
+    expect(() => publishSnapshot({ repo, analyses: [updated], universe: ["KO.US", "AXP.US", "PENDING.US"].map(id => analysis(id).company), partial: true, force: true, holdersByTicker: {}, investorNames: {} })).toThrow(/invariant.*dossiers/i);
     const rows = JSON.parse(readFileSync(path.join(repo, "index/default.json"), "utf8")) as IndexRow[];
     expect(rows.map((row) => [row.id, row.t])).toEqual([["AXP.US", "PPPPP"], ["KO.US", "PFPPP"]]);
     const search = (key: string) => JSON.parse(readFileSync(path.join(repo, `search/${key}.json`), "utf8"));
@@ -541,11 +542,11 @@ describe("publish rollout safeguards", () => {
     expect(git(repo, ["rev-parse", "HEAD"])).toBe(before);
     expect(git(repo, ["status", "--porcelain"])).toBe("");
   });
-  it("allows exactly a 20% decline and compares published count rather than universe", () => {
+  it("compares published count rather than universe while admitting additions with logos", () => {
     const repo = repository();
     writeOutput({ repo, files: { ...output([analysis()]), "meta.json": { counts: { universe: 60000, analysed: 7, scored: 10, insufficient: 0 } } } });
     commitOutput({ repo, asOf: "2026-09-29" });
-    const analyses = Array.from({ length: 8 }, (_, i) => analysis(`${i}.US`));
+    const analyses = Array.from({ length: 8 }, (_, i) => {const a=analysis(`${i}.US`);a.company.logo="https://example.com/logo.png";return a;});
     expect(publishSnapshot({ repo, analyses, universe: analyses.map(row => row.company), partial: false, holdersByTicker: {}, investorNames: {} }).count).toBe(8);
   });
   it("guards legacy metadata and rejects even a forced empty commit", () => {
@@ -554,7 +555,7 @@ describe("publish rollout safeguards", () => {
     commitOutput({ repo, asOf: "2026-09-29" });
     const args = { repo, analyses: [], universe: [], partial: false, holdersByTicker: {}, investorNames: {} };
     expect(() => publishSnapshot(args)).toThrow(/--force/);
-    expect(() => publishSnapshot({ ...args, force: true })).toThrow(/invariant.*dossier count/i);
+    expect(() => publishSnapshot({ ...args, force: true })).toThrow(/invariant.*dossiers/i);
     expect(JSON.parse(readFileSync(path.join(repo, "meta.json"), "utf8")).counts.analysed).toBe(0);
   });
   it("guards a legacy nonempty count drop and permits --force", () => {

@@ -1,0 +1,97 @@
+{
+  "status": "NOT",
+  "baselineArchive": "2d7f1d84",
+  "approvedBundleRecords": 1137,
+  "approvedBundleRecordsUnchangedAfterInstallAndStage": 1137,
+  "preservedValidatedRecords": 13646,
+  "changedValidatedRecords": [],
+  "baseline": {
+    "total": 3910,
+    "missing": 197,
+    "USMissing": 148
+  },
+  "candidate": {
+    "total": 3910,
+    "missing": 197,
+    "USMissing": 148
+  },
+  "nonLogoDossierChanges": 762,
+  "nonLogoIndexChanges": 0,
+  "dossierLogoChanges": 0,
+  "materialChanges": [
+    {
+      "id": "FG.US",
+      "topLevelFields": [
+        "valuation"
+      ]
+    },
+    {
+      "id": "IBS.LS",
+      "topLevelFields": [
+        "historyAssumptions",
+        "valuation"
+      ]
+    },
+    {
+      "id": "LPP.WAR",
+      "topLevelFields": [
+        "valuation"
+      ]
+    },
+    {
+      "id": "TDW.US",
+      "topLevelFields": [
+        "historyAssumptions",
+        "series",
+        "tests"
+      ]
+    },
+    {
+      "id": "WN.TO",
+      "topLevelFields": [
+        "valuation"
+      ]
+    }
+  ],
+  "tests": {
+    "filesPassed": 251,
+    "passed": 2435,
+    "skipped": 1,
+    "exit": 0
+  },
+  "build": {
+    "command": "npm run build -- --webpack",
+    "exit": 0,
+    "typeScript": true,
+    "staticPages": 222
+  },
+  "ordinaryPublishOutExit": 0,
+  "liveWrites": false,
+  "push": false,
+  "publication": false,
+  "runnerLockAccess": false,
+  "freeBytes": {
+    "/": 12121980928,
+    "/Users/miki/data": 78287286272
+  },
+  "evidenceRoot": "~/data/value-logofix/evidence",
+  "sha256": {
+    "regression-red.log": "ecc34895370992cde28787bc53d9c7708509697c713cb37ba7b0f52b05a3d319",
+    "regression-green.log": "5d7e408ac1dea4106b1a59cc872376b121541f6aca889e6db009769e5e17442b",
+    "unit.log": "509db0b84f41e28cc395c5bad1f8f91203074b97947f9356eb05bf7f367d7000",
+    "unit-final.log": "24d84da6169ffa68bd03e40fd13175630b36c2936f9cca064c9dd96639c2fbc7",
+    "build.log": "f171c4f23b7ae6e0e2fc3ee27e42b278fbaac7218fee4e5a6ba79cbbd0278607",
+    "build-final.log": "2129795d27abedd78e2442f710d2c14796cc1f6d6a08ea0604c2c6f32fabbea6",
+    "install-dry-run.log": "e8276a62d9b9a012b30b19357ead40c7052f00a1ba398f51d42c1a67304b9f31",
+    "install-apply.log": "a61bb63e211f5d927db2f16f49c188865b449d056b5826d8e40de9204b8d85ce",
+    "logos.log": "cc9f893c8c06315f2f2ca5d4331f54cfa7007671f42aad8a1e87ac717bfe4f7b",
+    "publish-out.log": "2807fa6dda67ad3de3fd2c269c55e8260155e5104a242090dc01768dd86d7c93",
+    "live-vs-publish.json": "6a205f42dd9ef0d1f7520e043d17aeaa1a3d88d91ed571cbd6b52d66f8dadf83",
+    "copy-baseline-vs-live.json": "2242c3c93c3b4cf7a4609735b42de5f57fbdcf26aabd970d505c615189deaf29",
+    "copy-bundle-before.json": "b23ec20fc4c3be2c9f31808b6d52ddf8bf783ad9bce517564691b83b4bd8886f",
+    "copy-bundle-after-install.json": "b23ec20fc4c3be2c9f31808b6d52ddf8bf783ad9bce517564691b83b4bd8886f",
+    "copy-bundle-after-stage.json": "b23ec20fc4c3be2c9f31808b6d52ddf8bf783ad9bce517564691b83b4bd8886f",
+    "all-preserved-records.json": "5f543538ccb28e9b643f4a819403e4081eebe4b2d92d8f672a6d199168252144",
+    "nightly-demotions.json": "3cf423077ed5f62f05adc37b923133a4d1976f3e0fa4992efab8153f3e689c32"
+  }
+}

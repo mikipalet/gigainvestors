@@ -1,0 +1,15 @@
+{
+  total: 19,
+  checked: 19,
+  cached: 0,
+  recovered: 16,
+  unavailable: 3,
+  sources: {
+    'official-header': 6,
+    'wikipedia-ja': 3,
+    'official-inline-svg': 3,
+    'wikipedia-de': 2,
+    'official-icon': 1,
+    'wikipedia-en': 1
+  }
+}

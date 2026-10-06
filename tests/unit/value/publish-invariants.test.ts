@@ -31,7 +31,7 @@ for(const [stage,commit]of [['prices',commitPrices],['publish',commitOutput]] as
   if(failure==='quarters'){const meta=read('meta.json');meta.views.quarters={};write('meta.json',meta);}
   if(failure==='yearDeferred'){const meta=read('meta.json');meta.views.yearDeferred={};write('meta.json',meta);}
   if(failure==='missing-file')rmSync(path.join(repo,view));
-  if(failure==='dossiers'){const ds=read('dossiers/000.json');delete ds['C0.US'];delete ds['C1.US'];write('dossiers/000.json',ds);}
+  if(failure==='dossiers'){const ds=read('dossiers/000.json');for(let i=0;i<6;i++)delete ds[`C${i}.US`];write('dossiers/000.json',ds);}
   if(failure==='buy'){for(const f of ['index/US.json','index/default.json']){const rows=read(f);rows[0].b=true;write(f,rows);}}
   if(failure==='history'){write('history/index.json',{years:[],quarters:[]});const m=read('meta.json');m.views.quarters={};m.views.years={};write('meta.json',m);}
   expect(()=>commit({repo,asOf:'2026-10-04'})).toThrow(/invariant/i);
@@ -125,4 +125,22 @@ it('rejects unapproved offsetting Buy flips even when country and default totals
  git('add','.');git('commit','-m','two-company baseline');
  for(const file of ['index/US.json','index/default.json'])write(file,[{...row,b:true},{...row,id:'B.US',b:false}]);
  expect(()=>assertPublishInvariants(repo,'HEAD',[])).toThrow(/Buy-now changed/);
+});
+
+it('blocks the 2026-10-06 logo demotion: US missing logos 13 -> 148 before staging',()=>{
+ const rows=Array.from({length:200},(_,i)=>({id:`LOGO${i}.US`,c:'US',lg:i<13?null:'https://example.com/logo.png',t:'PPPPP',v:null,b:false}));
+ const ds=Object.fromEntries(rows.map(r=>[r.id,{id:r.id,company:{country:'US',logo:r.lg}}]));
+ write('index/US.json',rows);write('index/default.json',rows);write('dossiers/000.json',ds);
+ git('add','.');git('commit','-m','13 missing approved baseline');const head=git('rev-parse','HEAD');
+ for(let i=13;i<148;i++){rows[i].lg=null;ds[rows[i].id].company.logo=null;}
+ write('index/US.json',rows);write('index/default.json',rows);write('dossiers/000.json',ds);
+ expect(()=>commitOutput({repo,asOf:'2026-10-06'})).toThrow(/CRITICAL[\s\S]*logos[\s\S]*LOGO13.US/);
+ expect(git('rev-parse','HEAD')).toBe(head);expect(git('diff','--cached','--name-only')).toBe('');
+});
+it('uses origin/main rather than an unpublished local HEAD as the coverage baseline',()=>{
+ const rows=Array.from({length:10},(_,i)=>({id:`L${i}.US`,c:'US',lg:'https://example.com/logo.png',b:false}));
+ write('index/US.json',rows);write('index/default.json',rows);write('dossiers/000.json',Object.fromEntries(rows.map(r=>[r.id,{id:r.id,company:{logo:r.lg}}])));
+ git('add','.');git('commit','-m','released logos');git('update-ref','refs/remotes/origin/main','HEAD');
+ for(const r of rows)r.lg='';write('index/US.json',rows);write('index/default.json',rows);git('add','.');git('commit','-m','unpublished bad local commit');
+ expect(()=>commitOutput({repo,asOf:'2026-10-06'})).toThrow(/CRITICAL.*logos.*L0.US/);
 });

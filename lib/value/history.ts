@@ -23,7 +23,7 @@ export function valueHistory({ fundamentals, kind, bondYield, fxRate, commodity,
     const prefix = years.filter(y => y.fy <= year.fy);
     const numeric = runNumericTests({ years: prefix, kind, industry, priceHistoryPending: false });
     const cv = (numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null);
-    const { valuation } = valueCompany({ investmentHolding, years: prefix, kind, currency: fundamentals.currency, bondYield,
+    const { valuation } = valueCompany({ investmentHolding, years: prefix, kind, industry, currency: fundamentals.currency, bondYield,
       qualityPass: Object.values(numeric).every(test => test.numeric === "pass"), cyclical: commodity || cv !== null && earningsVolatility({ opMarginCv: cv }) === "volatile" });
     if (!valuation) return [];
     const { low, mid, high } = valuation.perShare;

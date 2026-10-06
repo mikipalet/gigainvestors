@@ -1,0 +1,28 @@
+{
+  "addedIds": [
+    "AERO.US",
+    "CEG.US",
+    "JBS.US"
+  ],
+  "removedIds": [],
+  "newSourceNotes": [
+    "2026-10-06 controller: AERO/JBS unresolved management/economics after full reanalysis; CEG 2020-21 diluted shares null (data regression) - kept at live bytes until investigated (understand-2 report)"
+  ],
+  "newlyFrozenDossiers": [
+    {
+      "id": "AERO.US",
+      "present": true,
+      "unchanged": true
+    },
+    {
+      "id": "CEG.US",
+      "present": true,
+      "unchanged": false
+    },
+    {
+      "id": "JBS.US",
+      "present": true,
+      "unchanged": true
+    }
+  ]
+}

@@ -57,7 +57,7 @@ export function snapshotForQuarter({company,fundamentals,quarter,prices,latestPr
  const investmentHolding=isInvestmentHolding(company,prefix.years);
  const trailing=trailingAt(interims,{...target,currency},cutoff);
  const valuation=prefix.integrity.ok&&(investmentHolding||bondYield!==null&&Number.isFinite(bondYield))&&positive(fxRate)
-  ?valueCompany({investmentHolding,years:prefix.years,ttm:trailing?.year,balance:latestBalanceAt(fundamentals.balanceSheets??[],cutoff,currency,target),kind:company.kind,currency,bondYield,cyclical:volatility==='volatile',priceHistory:pastPrices,qualityPass:t5==='PPPPP'}).valuation:null;
+  ?valueCompany({investmentHolding,years:prefix.years,ttm:trailing?.year,balance:latestBalanceAt(fundamentals.balanceSheets??[],cutoff,currency,target),kind:company.kind,industry:company.industry,currency,bondYield,cyclical:volatility==='volatile',priceHistory:pastPrices,qualityPass:t5==='PPPPP'}).valuation:null;
  const v:[number,number,number]|null=valuation?[valuation.perShare.low*fxRate!,valuation.perShare.mid*fxRate!,valuation.perShare.high*fxRate!]:null;
  if(valuation&&fxRate)valuation.perShareTrading={currency:company.currency,fxRate,low:v![0],mid:v![1],high:v![2]};
  const flags=valuationFlags({price,mid:v?.[1]??null,assumptions:valuation?.assumptions??[]}),mos=valuationMargin(valuation,volatility);

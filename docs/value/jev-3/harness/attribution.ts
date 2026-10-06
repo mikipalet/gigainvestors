@@ -1,0 +1,31 @@
+import {readFileSync,readdirSync,writeFileSync} from 'node:fs';
+import {valueCompany as baselineValue} from '../../jev-2/harness/baseline-valuation';
+import {trailingInputs as baselineTrailing} from '../../jev-2/harness/baseline-inputs';
+import {balanceSheetsFor,latestBalanceAt} from '../../../../lib/value/latest-balance';
+import {applyShareCheck} from '../../../../lib/value/share-check';
+import {consistentValuation} from '../../../../lib/value/return-model';
+import {refreshBalanceValuation} from '../../../../lib/value/refresh-balance-valuation';
+const root=process.env.PUBFIX_ROOT!,corpus=root+'/corpus';
+const read=(p:string)=>{try{return JSON.parse(readFileSync(corpus+'/'+p,'utf8'))}catch{return null}};
+const frozen=new Set(read('verdict-freeze.json').ids),rows=[];
+const close=(a:any,b:any)=>a===b||typeof a==='number'&&typeof b==='number'&&Math.abs(a-b)<=1e-7*Math.max(1,Math.abs(a));
+for(const f of readdirSync(root+'/baseline/dossiers'))for(const d of Object.values(JSON.parse(readFileSync(root+'/baseline/dossiers/'+f,'utf8'))) as any[]){
+ if(frozen.has(d.id)||!d.valuation||d.valuation.method==='nav')continue;
+ const id=d.id,fund=read(`fundamentals/${id}.json`),input=read(`analysis/inputs/${id}.json`),raw=read(`raw/eodhd/${id}.json`),years=input?.memoYears??fund?.years;
+ if(!years?.length)continue;
+ const annual=years.at(-1),balance=latestBalanceAt(balanceSheetsFor(id,raw),'2026-10-05',d.valuation.currency,annual);
+
+ const flowAnnual=fund?.years.find((y:any)=>y.end===annual.end)??annual;
+ const args={years,ttm:baselineTrailing(raw,flowAnnual),kind:d.company.kind,currency:d.valuation.currency,bondYield:d.valuation.bondYield,cyclical:d.volatility==='volatile',qualityPass:d.valuation.tier==='compounder',version:d.valuation.version,priceHistory:read(`prices-history/${id}.json`)};
+ let before=baselineValue(args).valuation;
+ if(before)before=consistentValuation(applyShareCheck({...d,valuation:before},{status:'verified',shares:d.valuation.shares,observations:[],reason:'Retained shares'}).valuation);
+ const after=refreshBalanceValuation(d,read,'2026-10-05');
+ const fields=['normalized','growth','discountRate','shares','netCash','netDebt','leverage'];
+ const mismatch=fields.filter(k=>!close(d.valuation[k],(before as any)?.[k]));
+ for(const k of ['low','mid','high'])if(!close(d.valuation.perShare[k],before?.perShare[k as 'mid']))mismatch.push('perShare.'+k);
+ if(after===d)continue;
+ const nonBalance=after.valuation&&['growth','discountRate','shares','tier'].filter(k=>!close(d.valuation[k],(after.valuation as any)[k]));
+ rows.push({id,balance,annual:{end:annual.end,cash:annual.cash,totalDebt:annual.totalDebt,leaseLiabilities:annual.leaseLiabilities},baselineMismatch:mismatch,nonBalanceChanges:nonBalance??[],reason:after.valuationReason??null});
+}
+writeFileSync(root+'/evidence/attribution.json',JSON.stringify(rows,null,2)+'\n');
+console.log(JSON.stringify({checked:rows.length,baselineMismatches:rows.filter(r=>r.baselineMismatch.length),nonBalanceChanges:rows.filter(r=>r.nonBalanceChanges.length)},null,2));

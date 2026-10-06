@@ -1,0 +1,128 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-jev
+
+ ❯ tests/unit/value/excess-cash.test.ts (11 tests | 10 failed) 42ms
+   × does not distribute unverified regulated/client/student cash for Healthcare Plans 25ms
+     → expected 480 to be +0 // Object.is equality
+   × does not distribute unverified regulated/client/student cash for Managed Health Care 2ms
+     → expected 480 to be +0 // Object.is equality
+   × does not distribute unverified regulated/client/student cash for Insurance - Life 1ms
+     → expected 480 to be +0 // Object.is equality
+   × does not distribute unverified regulated/client/student cash for Capital Markets 1ms
+     → expected 480 to be +0 // Object.is equality
+   × does not distribute unverified regulated/client/student cash for Investment Banking & Brokerage 1ms
+     → expected 480 to be +0 // Object.is equality
+   × does not distribute unverified regulated/client/student cash for Education & Training Services 1ms
+     → expected 480 to be +0 // Object.is equality
+   ✓ retains ordinary operating cash after the revenue reserve 2ms
+   × reserves logistics float against non-borrowing current obligations 2ms
+     → expected 2447 to be +0 // Object.is equality
+   × does not zero all logistics cash when obligations are covered 1ms
+     → expected 480 to be 380 // Object.is equality
+   × does not credit a vendor cash aggregate larger than current assets 2ms
+     → expected 1448.828 to be +0 // Object.is equality
+   × uses current restrictions and liquidity without carrying annual balances forward 2ms
+     → expected 480 to be +0 // Object.is equality
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/excess-cash.test.ts > does not distribute unverified regulated/client/student cash for Healthcare Plans
+ FAIL  tests/unit/value/excess-cash.test.ts > does not distribute unverified regulated/client/student cash for Managed Health Care
+ FAIL  tests/unit/value/excess-cash.test.ts > does not distribute unverified regulated/client/student cash for Insurance - Life
+ FAIL  tests/unit/value/excess-cash.test.ts > does not distribute unverified regulated/client/student cash for Capital Markets
+ FAIL  tests/unit/value/excess-cash.test.ts > does not distribute unverified regulated/client/student cash for Investment Banking & Brokerage
+ FAIL  tests/unit/value/excess-cash.test.ts > does not distribute unverified regulated/client/student cash for Education & Training Services
+AssertionError: expected 480 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 480
+
+ ❯ tests/unit/value/excess-cash.test.ts:11:20
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  tests/unit/value/excess-cash.test.ts > reserves logistics float against non-borrowing current obligations
+AssertionError: expected 2447 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 2447
+
+ ❯ tests/unit/value/excess-cash.test.ts:20:69
+     18| it('reserves logistics float against non-borrowing current obligations…
+     19|  const ys=years();Object.assign(ys.at(-1)!,{cash:2467,currentAssets:67…
+     20|  expect(value('Integrated Freight & Logistics',{years:ys}).netCash).to…
+       |                                                                     ^
+     21|  expect(value('Integrated Freight & Logistics',{years:ys}).netDebt).to…
+     22| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  tests/unit/value/excess-cash.test.ts > does not zero all logistics cash when obligations are covered
+AssertionError: expected 480 to be 380 // Object.is equality
+
+- Expected
++ Received
+
+- 380
++ 480
+
+ ❯ tests/unit/value/excess-cash.test.ts:26:69
+     24|  const ys=years();Object.assign(ys.at(-1)!,{cash:500,currentAssets:800…
+     25|  // 400 operating liabilities less 300 noncash current assets reserve …
+     26|  expect(value('Integrated Freight & Logistics',{years:ys}).netCash).to…
+       |                                                                     ^
+     27| });
+     28| it('does not credit a vendor cash aggregate larger than current assets…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  tests/unit/value/excess-cash.test.ts > does not credit a vendor cash aggregate larger than current assets
+AssertionError: expected 1448.828 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1448.828
+
+ ❯ tests/unit/value/excess-cash.test.ts:30:58
+     28| it('does not credit a vendor cash aggregate larger than current assets…
+     29|  const ys=years();Object.assign(ys.at(-1)!,{cash:1468.828,currentAsset…
+     30|  expect(value('Consulting Services',{years:ys}).netCash).toBe(0);
+       |                                                          ^
+     31| });
+     32| it('uses current restrictions and liquidity without carrying annual ba…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  tests/unit/value/excess-cash.test.ts > uses current restrictions and liquidity without carrying annual balances forward
+AssertionError: expected 480 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 480
+
+ ❯ tests/unit/value/excess-cash.test.ts:37:77
+     35|   filing_date:'2026-08-01',currency_symbol:'USD',cash:500,shortLongTer…
+     36|  }}}}})[0];
+     37|  expect(value('Integrated Freight & Logistics',{years:ys,balance}).net…
+       |                                                                             ^
+     38| });
+     39|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  10 failed | 1 passed (11)
+   Start at  00:50:58
+   Duration  1.04s (transform 352ms, setup 0ms, collect 424ms, tests 42ms, environment 0ms, prepare 89ms)

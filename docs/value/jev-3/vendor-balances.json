@@ -1,0 +1,97 @@
+[
+  {
+    "id": "ELV.US",
+    "industry": "Healthcare Plans",
+    "period": "2026-06-30",
+    "vendorFields": {
+      "filing_date": "2026-07-15",
+      "cash": "10232000000.00",
+      "cashAndShortTermInvestments": "37514000000.00",
+      "shortTermInvestments": "27282000000.00",
+      "shortTermDebt": "375000000.00",
+      "longTermDebt": "30669000000.00",
+      "shortLongTermDebtTotal": "31044000000.00",
+      "capitalLeaseObligations": null,
+      "totalCurrentAssets": "67184000000.00",
+      "totalCurrentLiabilities": "32779000000.00",
+      "totalAssets": "126438000000.00",
+      "accountsPayable": "25095000000.00"
+    }
+  },
+  {
+    "id": "LOG.MC",
+    "industry": "Integrated Freight & Logistics",
+    "period": "2026-06-30",
+    "vendorFields": {
+      "filing_date": "2026-06-30",
+      "cash": "2467000000.00",
+      "cashAndShortTermInvestments": "2467000000.00",
+      "shortTermInvestments": null,
+      "shortTermDebt": "67000000.00",
+      "longTermDebt": null,
+      "shortLongTermDebtTotal": "67000000.00",
+      "capitalLeaseObligations": null,
+      "totalCurrentAssets": "6732000000.00",
+      "totalCurrentLiabilities": "7381000000.00",
+      "totalAssets": "8458000000.00",
+      "accountsPayable": "7307000000.00"
+    }
+  },
+  {
+    "id": "PRDO.US",
+    "industry": "Education & Training Services",
+    "period": "2026-06-30",
+    "vendorFields": {
+      "filing_date": "2026-08-06",
+      "cash": "897713000.00",
+      "cashAndShortTermInvestments": "1468828000.00",
+      "shortTermInvestments": "571115000.00",
+      "shortTermDebt": "14225000.00",
+      "longTermDebt": null,
+      "shortLongTermDebtTotal": "56595000.00",
+      "capitalLeaseObligations": "113773000.00",
+      "totalCurrentAssets": "802632000.00",
+      "totalCurrentLiabilities": "171074000.00",
+      "totalAssets": "1334491000.00",
+      "accountsPayable": "17310000.00"
+    }
+  },
+  {
+    "id": "PLUS.LSE",
+    "industry": "Capital Markets",
+    "period": "2026-06-30",
+    "vendorFields": {
+      "filing_date": "2026-06-30",
+      "cash": "865771166.00",
+      "cashAndShortTermInvestments": "865771166.00",
+      "shortTermInvestments": null,
+      "shortTermDebt": "3300000.00",
+      "longTermDebt": null,
+      "shortLongTermDebtTotal": "23219914.00",
+      "capitalLeaseObligations": "23100000.00",
+      "totalCurrentAssets": "934626761.00",
+      "totalCurrentLiabilities": "3317129.00",
+      "totalAssets": "1029114733.00",
+      "accountsPayable": "90100000.00"
+    }
+  },
+  {
+    "id": "FCN.US",
+    "industry": "Consulting Services",
+    "period": "2026-06-30",
+    "vendorFields": {
+      "filing_date": "2026-07-30",
+      "cash": "163747000.00",
+      "cashAndShortTermInvestments": "163747000.00",
+      "shortTermInvestments": null,
+      "shortTermDebt": "39535000.00",
+      "longTermDebt": "1019320000.00",
+      "shortLongTermDebtTotal": "1267516000.00",
+      "capitalLeaseObligations": "208661000.00",
+      "totalCurrentAssets": "1586669000.00",
+      "totalCurrentLiabilities": "782387000.00",
+      "totalAssets": "3534725000.00",
+      "accountsPayable": "179781000.00"
+    }
+  }
+]

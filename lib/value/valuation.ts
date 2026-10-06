@@ -1,4 +1,5 @@
 import type {BalanceSheet} from './latest-balance';
+import {ownerCash} from './owner-cash';
 import {earningsPath,modelValue} from './return-model';
 import { valueInvestmentHolding } from './investment-nav';
 import { parentShare } from "./parent-share";
@@ -70,7 +71,8 @@ function reinvestmentRate(years: Year[]): number | null {
   return investments.some(x => x === null) || profits.some(x => x === null) ? null : ratio(sum(present(investments)), sum(present(profits)));
 }
 
-export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, balance = null, priceHistory = null, qualityPass = false, investmentHolding = false, version = T.valuation.version }: {
+export function valueCompany({ years, kind, industry, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, balance = null, priceHistory = null, qualityPass = false, investmentHolding = false, version = T.valuation.version }: {
+  industry?:string|null;
   investmentHolding?: boolean; qualityPass?: boolean; version?: 1 | 2; years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; balance?: BalanceSheet | null; priceHistory?: PriceHistory | null;
 }): { valuation: Valuation | null; reason: string | null } {
   if (investmentHolding) return valueInvestmentHolding(years, currency);
@@ -91,7 +93,7 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   if (postSplit) assumptions.push('share count adjusted for post-year split/bonus');
   if (corrected) assumptions.push(`share count corrected to current ${shares}`);
   const stock = balance && balance.end > latest.end && balance.currency === currency ? balance : null;
-  const currentBalance = stock ? {...latest,...stock.values,tangibleEquity:undefined} : latest;
+  const currentBalance = stock ? {...latest,cashExclusion:undefined,clientAssets:null,currentAssets:null,currentLiabilities:null,shortTermDebt:null,...stock.values,tangibleEquity:undefined} : latest;
   assumptions.push(stock ? `${stock.basis} balance sheet ${stock.end}, ${stock.filingDateAssumed?'assumed available (90-day fallback)':'filed'} ${stock.filed}; source: ${stock.source}` : `balance sheet ${latest.end}; latest annual report`);
   if(ttm && (stock?.end ?? latest.end) < ttm.end) assumptions.push('balance sheet predates TTM; newer balance-sheet coverage unavailable');
   const balanceSheet = {...(stock?.filingDateAssumed?{filingDateAssumed:true}:{}),end:stock?.end??latest.end,filed:stock?.filed??null,source:stock?.source??'annual fundamentals',basis:stock?.basis??'annual'};
@@ -158,8 +160,10 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   const allocation = parentShare({...currentBalance,netIncome:trailing?.netIncome??latest.netIncome,totalNetIncome:trailing?.totalNetIncome??latest.totalNetIncome});
   if (allocation === null) return { valuation: null, reason: "Parent share of consolidated earnings unavailable with material minority interests" };
   if (version === 2 && (currentRevenue === null || currentRevenue < 0)) return {valuation:null,reason:'operating cash reserve unavailable'};
-  const netDebt = (currentBalance.totalDebt - currentBalance.cash) * allocation;
-  const netCash = version === 2 ? Math.max(0, currentBalance.cash - T.valuation.operatingCashRatio * currentRevenue!) * allocation : -netDebt;
+  const eligible = version === 2 ? ownerCash(currentBalance,industry) : {cash:currentBalance.cash,reason:null};
+  if(eligible.reason)assumptions.push(eligible.reason);
+  const netDebt = (currentBalance.totalDebt - eligible.cash) * allocation;
+  const netCash = version === 2 ? Math.max(0, eligible.cash - T.valuation.operatingCashRatio * currentRevenue!) * allocation : -netDebt;
   const debtYears = netDebt / normalized;
   const leverage = version === 1 || debtYears <= T.valuation.leverageModerate ? 'normal' : debtYears > T.valuation.leverageVolatile ? 'volatile' : 'moderate';
   const riskFlags = leverage === 'normal' ? [] : [leverage === 'volatile' ? 'High leverage: net debt exceeds 5 years of owner earnings' : 'Elevated leverage: net debt exceeds 3 years of owner earnings'];

@@ -1,0 +1,11 @@
+{
+  "samples": 559,
+  "firstTime": 1791247743.6045618,
+  "lastTime": 1791250534.0372033,
+  "minimumFreeBytes": {
+    "/": 11763912704,
+    "/Users/miki/data": 56997302272
+  },
+  "thresholdBytes": 4294967296,
+  "thresholdBreached": false
+}

@@ -43,7 +43,7 @@ const current=withFinancialPeers(prepared).map(({company,years,a,f,factsHash,inp
  const t5=Object.values(numeric).map(t=>combine({numeric:t.numeric,kind:company.kind,jev:a.tests[t.key as keyof typeof a.tests].jev??[]})[0].toUpperCase()).join('');
  const beforeT5=Object.values(a.tests).filter(t=>t.key!=='price').map(t=>t.result[0].toUpperCase()).join('');
  const old=a.valuation,vol=earningsVolatility({opMarginCv:numeric.understandable.metrics.roeCv??null});
- const v=old?valueCompany({years,kind:company.kind,currency:f.currency,bondYield:old.bondYield,cyclical:vol==='volatile',currentShares:old.shares,ttm:f.ttm,qualityPass:t5==='PPPPP'}).valuation:null;
+ const v=old?valueCompany({years,kind:company.kind,industry:company.industry,currency:f.currency,bondYield:old.bondYield,cyclical:vol==='volatile',currentShares:old.shares,ttm:f.ttm,qualityPass:t5==='PPPPP'}).valuation:null;
  if(v&&old?.perShareTrading){const {currency,fxRate}=old.perShareTrading;v.perShareTrading={currency,fxRate,low:v.perShare.low*fxRate,mid:v.perShare.mid*fxRate,high:v.perShare.high*fxRate};}
  const mos=valuationMargin(v,vol),quote=quotes[company.id],price=quote?.[0]??null;
  const flags=[...(a.dataQualityFlags??[]),...valuationFlags({price,mid:v?.perShareTrading?.mid??v?.perShare.mid??null,assumptions:v?.assumptions??[]})];
@@ -65,7 +65,7 @@ const purchases=oldPurchases.map((p:any)=>{
  const facts=read(path.join(out,`${p.id}.companyfacts.json`));if(facts)years=supplementFinancialFacts(years,facts,p.cutoff);
  const tests=runNumericTests({years,kind:input.kind,industry:c?.industry}),t5=code(tests);
  const vol=earningsVolatility({opMarginCv:tests.understandable.metrics.roeCv??null});
- const v=valueCompany({years,kind:input.kind,currency:input.reporting,bondYield:input.bondYield,cyclical:vol==='volatile',qualityPass:t5==='PPPPP'}).valuation;
+ const v=valueCompany({years,kind:input.kind,industry:c?.industry,currency:input.reporting,bondYield:input.bondYield,cyclical:vol==='volatile',qualityPass:t5==='PPPPP'}).valuation;
  if(v&&p.proposedValuation?.perShareTrading){const {currency,fxRate}=p.proposedValuation.perShareTrading;v.perShareTrading={currency,fxRate,low:v.perShare.low*fxRate,mid:v.perShare.mid*fxRate,high:v.perShare.high*fxRate};}
  const flags=valuationFlags({price:p.price,mid:v?.perShareTrading?.mid??v?.perShare.mid??null,assumptions:v?.assumptions??[]});
  const after=scorePurchase(v,valuationMargin(v,vol),p.price,t5,p.integrity?.ok&&p.afterFlags?.length===0&&flags.length===0);

@@ -1,4 +1,5 @@
 import {balanceSheetsFor,latestBalanceAt} from './latest-balance';
+import {ownerCash} from './owner-cash';
 import {trailingInputs} from './valuation-inputs';
 import {valueCompany,valuationMargin} from './valuation';
 import {applyShareCheck} from './share-check';
@@ -17,12 +18,12 @@ export function refreshBalanceValuation<T extends Analysis>(a:T,read:(file:strin
  const annual=years.at(-1)!;
  const raw=read(`raw/eodhd/${a.id}.json`);
  const balance=latestBalanceAt(balanceSheetsFor(a.id,raw),cutoff,old.currency,annual);
- if(!balance)return a;
+ if(!balance&&(a.company.kind!=='operating'||!ownerCash(annual,a.company.industry).reason))return a;
  // TTM is constructed from the original annual row: annual capex judgements
  // must not leak into quarterly flows through the carried annual fields.
  const flowAnnual=fundamentals?.years.find(y=>y.end===annual.end)??annual;
  const result=valueCompany({years,ttm:trailingInputs(raw,flowAnnual,cutoff),balance,
-  kind:a.company.kind,currency:old.currency,bondYield:old.bondYield,
+  kind:a.company.kind,industry:a.company.industry,currency:old.currency,bondYield:old.bondYield,
   cyclical:a.volatility==='volatile',qualityPass:old.tier==='compounder',version:old.version,
   priceHistory:read(`prices-history/${a.id}.json`) as PriceHistory|null});
  let valuation=result.valuation;

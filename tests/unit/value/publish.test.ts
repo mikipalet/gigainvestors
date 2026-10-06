@@ -440,7 +440,7 @@ describe("prices", () => {
     writeFileSync(path.join(repo, "prices/JP.json"), '{"8058.JP":[4500,"2026-09-28"]}');
     const companies = ["8058.JP", "8031.JP"].map(id => ({ ...analysis(id).company, country: "JP" }));
     const log = vi.spyOn(console, "warn").mockImplementation(() => {});
-    await refreshPrices({ repo, companies, yahoo: async company => {
+    await refreshPrices({ now: Date.parse("2026-09-29T12:00:00Z"), repo, companies, yahoo: async company => {
       if (company.id === "8058.JP") throw new Error("HTTP 404");
       return [3200, "2026-09-29"];
     } });
@@ -454,14 +454,14 @@ describe("prices", () => {
     writeFileSync(path.join(repo, "prices/US.json"), before);
     const japan = analysis("8058.JP"); japan.company.country = "JP";
     const raw = JSON.parse(readFileSync("tests/fixtures/value/prices/eodhd-US.json", "utf8"));
-    await refreshPrices({ repo, companies: [analysis().company, japan.company], bulk: async () => raw, yahoo: async () => { throw new Error("Yahoo HTTP 403"); } });
+    await refreshPrices({ now: Date.parse("2026-09-29T12:00:00Z"), repo, companies: [analysis().company, japan.company], bulk: async () => raw, yahoo: async () => { throw new Error("Yahoo HTTP 403"); } });
     expect(JSON.parse(readFileSync(path.join(repo, "prices/US.json"), "utf8"))["KO.US"]).toEqual([87.18, "2026-09-28"]);
   });
   it("routes Japanese companies to Yahoo and separates same-country exchanges", async () => {
     const repo = directory();
     const japan = analysis("8058.JP"); japan.company.country = "JP";
     const uk = analysis("KO.L"); uk.company.country = "GB";
-    await refreshPrices({ repo, companies: [analysis().company, japan.company, uk.company],
+    await refreshPrices({ now: Date.parse("2026-09-29T12:00:00Z"), repo, companies: [analysis().company, japan.company, uk.company],
       bulk: async (exchange) => [{ code: "KO", date: "2026-09-28", close: exchange === "US" ? 70 : 150 }],
       yahoo: async () => [3400, "2026-09-28"],
     });
@@ -478,14 +478,14 @@ describe("prices", () => {
     commitPrices({ repo, asOf: "2026-09-28" });
     const raw = JSON.parse(readFileSync("tests/fixtures/value/prices/eodhd-US.json", "utf8"));
     vi.stubGlobal("fetch", () => { throw new Error("Tests must not use the network"); });
-    await refreshPrices({ repo, companies: [analysis().company, analysis("BRK-B.US").company], bulk: async () => raw });
+    await refreshPrices({ now: Date.parse("2026-09-29T12:00:00Z"), repo, companies: [analysis().company, analysis("BRK-B.US").company], bulk: async () => raw });
     expect(JSON.parse(readFileSync(path.join(repo, "prices/US.json"), "utf8"))).toEqual({ "OTHER.US": [5, "2026-09-28"], "KO.US": [87.18, "2026-09-28"], "BRK-B.US": [999, "2026-09-29"] });
     expect(readFileSync(path.join(repo, "prices/JP.json"), "utf8")).toBe('{"8058.JP":[1,"2026-09-28"]}\n');
     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(true);
     expect(git(repo, ["rev-list", "--count", "HEAD"])).toBe("3");
     const paths = git(repo, ["diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"]);
     expect(paths.split("\n")).toEqual(["meta.json", "prices/US.json"]);
-    await refreshPrices({ repo, companies: [analysis().company], bulk: async () => raw });
+    await refreshPrices({ now: Date.parse("2026-09-29T12:00:00Z"), repo, companies: [analysis().company], bulk: async () => raw });
     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(false);
   });
 });

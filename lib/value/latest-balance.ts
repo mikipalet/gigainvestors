@@ -9,7 +9,7 @@ export interface BalanceSheet {
  filingDateAssumed?:boolean;
  annualEarningsAdjustment?:number; earningsThrough?:string; assumption?:string;
  end:string; filed:string; currency:string; source:string; basis:'filed'|'pro-forma';
- values:Pick<Year,'cash'|'totalDebt'|'equity'|'goodwill'|'intangibles'|'totalAssets'|'minorityInterest'|'leaseLiabilities'|'sharesOutstanding'|'debtIncludesLeases'>;
+ values:Pick<Year,'cash'|'cashExclusion'|'clientAssets'|'shortTermDebt'|'totalDebt'|'equity'|'goodwill'|'intangibles'|'totalAssets'|'minorityInterest'|'leaseLiabilities'|'sharesOutstanding'|'debtIncludesLeases'> & Partial<Pick<Year,'currentAssets'|'currentLiabilities'>>;
 }
 const obj=(v:unknown):Record<string,any>=>v&&typeof v==='object'?v as Record<string,any>:{};
 const num=(v:unknown):number|null=>v==null||v===''||typeof v==='boolean'||!Number.isFinite(Number(v))?null:Number(v);
@@ -25,7 +25,8 @@ export function balanceSheets(raw:unknown):BalanceSheet[] {
   const debt=pick(r,'shortLongTermDebtTotal');
   const filingDateAssumed=typeof r.filing_date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(r.filing_date)||!Number.isFinite(Date.parse(r.filing_date))||r.filing_date<=end;
   return [{end,filed:availableOn(end,r.filing_date),filingDateAssumed,currency:String(r.currency_symbol??obj(data.General).CurrencyCode??''),source:`EODHD ${frequency} balance sheet`,basis:'filed' as const,values:{
-   cash:mapped.cash,totalDebt:mapped.totalDebt,
+   cash:mapped.cash,cashExclusion:mapped.cashExclusion,clientAssets:mapped.clientAssets,totalDebt:mapped.totalDebt,
+   currentAssets:pick(r,'totalCurrentAssets'),currentLiabilities:pick(r,'totalCurrentLiabilities'),shortTermDebt:pick(r,'shortTermDebt','shortLongTermDebt'),
    debtIncludesLeases:debt!==null||pick(r,'capitalLeaseObligations')!==null,
    equity:pick(r,'totalStockholderEquity'),goodwill:pick(r,'goodWill'),intangibles:pick(r,'intangibleAssets'),
    totalAssets:pick(r,'totalAssets'),minorityInterest:pick(r,'noncontrollingInterestInConsolidatedEntity','minorityInterest'),

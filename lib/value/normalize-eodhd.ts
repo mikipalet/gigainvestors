@@ -26,6 +26,7 @@ export function refreshEodhdBalance(year:Year,fresh:Year|undefined,raw:unknown,c
     result[field]=fresh[field];
     if(fresh.provenance?.[field])result.provenance[field]=fresh.provenance[field];
     if(field==='totalDebt')result.debtIncludesLeases=fresh.debtIncludesLeases;
+    if(field==='cash')result.cashExclusion=fresh.cashExclusion;
   }
   if(leases.leaseLiabilities!=null&&fresh?.provenance?.leaseLiabilities)result.provenance.leaseLiabilities=fresh.provenance.leaseLiabilities;
   return result;

@@ -51,6 +51,8 @@ it("persists raw data, merges company metadata and refreshes on every rolling pa
   const { join } = await import("node:path");
   const { appendJsonl, readCorpusJson, writeCorpusJson } = await import("../../../lib/value/corpus");
   const { default: stage } = await import("../../../scripts/value/stages/fundamentals");
+  // Optional SEC enrichment uses core HTTP, independently of the vendor fetch mock.
+  const sec = vi.spyOn(await import("../../../lib/value/reports/transport"), "reportRequest").mockImplementation(async () => Response.json({facts:{}}));
   const root = join(homedir(), "value-corpus");
   mkdirSync(root, { recursive: true });
   const directory = mkdtempSync(join(root, "fundamentals-test-"));
@@ -85,7 +87,7 @@ it("persists raw data, merges company metadata and refreshes on every rolling pa
     usage = 99991;
     await stage({ only: ["KO.US"], force: true });
     expect(requested).toEqual(["/api/user"]);
-  } finally { rmSync(directory, { recursive: true, force: true }); }
+  } finally { sec.mockRestore(); rmSync(directory, { recursive: true, force: true }); }
 });
 
 it("does not reset classification when the response has no sector or industry", () => {

@@ -34,6 +34,8 @@ for directory in ['index','dossiers','search']:
 inputs=read(e/'input-integrity.json');assert not inputs['sourceMismatches']and not inputs['archiveMismatches']
 audit=read(e/'release-audit.json');assert audit['baselineDossiers']==audit['candidateDossiers']==len(read(e/'released-ids.json'))
 assert not audit['missing']and not audit['added']and not audit['freezeChanges']and not audit['protectedChanges']
+assert not audit['valuationTupleChanges'] and not audit['logoChanges'] and not audit['indexLogoChanges']
+assert not audit['unrelatedQualityChanges']
 assert not audit['numericNulls']and not audit['numericRemoved']and not audit['valuationLosses']
 manifest=read(Path('scripts/value/approved-verdict-changes.json'));buys={v['id']:v for v in audit['buyChanges']}
 assert manifest==[] and buys=={}

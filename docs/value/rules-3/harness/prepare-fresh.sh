@@ -13,6 +13,7 @@ assert min(shutil.disk_usage(p).free for p in ['/', '/Users/miki/data']) >= 4*10
 assert json.loads(Path('scripts/value/approved-verdict-changes.json').read_text()) == []
 PY
 mkdir -p "$root/corpus" "$root/storage" "$root/harness-bin" "$root/tmp"
+cp "$root/tmp/inter.woff2" "$root/storage/inter.woff2"
 rsync -a --exclude='/daily-runner*' --exclude='/publish.hold*' \
   --exclude='/.env*' --exclude='/backups' --exclude='/logs' \
   /Users/miki/value-corpus/ "$root/corpus/"

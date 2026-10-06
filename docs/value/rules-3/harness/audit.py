@@ -58,6 +58,10 @@ for directory in ['prices','history','forward']:
    x,y=sorted(x,key=lambda v:v['id']),sorted(y,key=lambda v:v['id'])
   if x!=y:protected.append(directory+'/'+p.name)
 summary={'baselineDossiers':len(old),'candidateDossiers':len(new),'missing':sorted(set(old)-set(new)),'added':sorted(set(new)-set(old)),'qualityMaskChanges':len(changes),'qualityGained':[v['id']for v in changes if not v['qualityBefore']and v['qualityAfter']],'qualityLost':[v['id']for v in changes if v['qualityBefore']and not v['qualityAfter']],'buyChanges':buys,'controlDrift':drift,'freezeCount':len(freeze),'freezeChanges':[id for id in freeze if old.get(id)!=new.get(id)],'numericNulls':len(nulls),'numericRemoved':len(missing),'valuationLosses':[id for id,d in old.items()if d.get('valuation')and not new.get(id,{}).get('valuation')],'protectedChanges':protected,'identityOrderOnly':orderOnly}
+summary['valuationTupleChanges']=[id for id in a if id in z and any(a[id].get(k)!=z[id].get(k) for k in ['v','m'])]
+summary['logoChanges']=[id for id in old if id in new and old[id]['company'].get('logo')!=new[id]['company'].get('logo')]
+summary['indexLogoChanges']=[id for id in a if id in z and a[id].get('lg')!=z[id].get('lg')]
+summary['unrelatedQualityChanges']=[v['id'] for v in changes if any(k not in ['understandable','moat'] for k in v['changedTests'])]
 for name,data in [('release-audit',summary),('quality-changes',changes),('numeric-nulls',nulls),('numeric-removed',missing)]:
  (e/(name+'.json')).write_text(json.dumps(data,indent=2)+'\n')
 print(json.dumps(summary,indent=2))

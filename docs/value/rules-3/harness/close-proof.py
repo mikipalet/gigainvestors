@@ -36,6 +36,9 @@ audit=read(e/'release-audit.json');assert audit['baselineDossiers']==audit['cand
 assert not audit['missing']and not audit['added']and not audit['freezeChanges']and not audit['protectedChanges']
 assert not audit['valuationTupleChanges'] and not audit['logoChanges'] and not audit['indexLogoChanges']
 assert not audit['unrelatedQualityChanges']
+quality={v['id']:v for v in read(e/'quality-changes.json')}
+assert quality['NVDA.US']['after']=='PPPPP'
+assert all(id in quality for id in ['EME.US','RSG.US','ROK.US','TMO.US'])
 assert not audit['numericNulls']and not audit['numericRemoved']and not audit['valuationLosses']
 manifest=read(Path('scripts/value/approved-verdict-changes.json'));buys={v['id']:v for v in audit['buyChanges']}
 assert manifest==[] and buys=={}

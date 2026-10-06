@@ -1,0 +1,11 @@
+{
+  "initialHead": "badfe5c93302353468695c5314380f100f5e66ad",
+  "localHead": "25b44f7bd697de1dba066ee56058b81cde5f1f92",
+  "bareHead": "25b44f7bd697de1dba066ee56058b81cde5f1f92",
+  "sourceHead": "badfe5c93302353468695c5314380f100f5e66ad",
+  "pendingReceipt": false,
+  "realExit": 0,
+  "sourceFreezeSha256": "ac87b33211045624d33899639569d7665d9bcd42aa856eb88c6649b652b20100",
+  "initialFreezeSha256": "ff2e1900b9b4bdb812f7bf6e2659ef94567988cc3f65a632d464f3228baf2f49",
+  "testedFreezeSha256": "ac87b33211045624d33899639569d7665d9bcd42aa856eb88c6649b652b20100"
+}

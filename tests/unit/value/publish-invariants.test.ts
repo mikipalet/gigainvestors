@@ -90,3 +90,13 @@ it('does not count retired-listing price moves as explanations for surviving Buy
  for(const file of ['index/US.json','index/default.json'])write(file,[{...row,b:true}]);
  expect(()=>commitOutput({repo,asOf:'2026-10-05'})).toThrow(/Buy-now changed/);
 });
+
+it('accepts only an exact controller-reviewed valuation transition',async()=>{
+ const {assertPublishInvariants}=await import('@/scripts/value/publish-invariants');
+ const before=read('index/US.json')[0],after={...before,v:[70,90,110],b:true};
+ const approval={id:'A.US',before:{b:false,v:before.v,m:before.m},after:{b:true,v:after.v,m:after.m},reason:'Controller-approved filed balance correction',evidence:['https://example.com/filing']};
+ for(const file of ['index/US.json','index/default.json'])write(file,[after]);
+ expect(()=>assertPublishInvariants(repo,'HEAD',[approval])).not.toThrow();
+ expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,after:{...approval.after,v:[1,2,3]}}])).toThrow(/Buy-now changed/);
+ expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,evidence:[]}])).toThrow();
+});

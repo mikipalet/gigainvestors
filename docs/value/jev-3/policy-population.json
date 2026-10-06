@@ -1,0 +1,892 @@
+[
+  {
+    "id": "000938.SHE",
+    "industry": "Electronics & Computer Distribution",
+    "buy": false,
+    "cashCredit": 4914731245.4293995,
+    "netDebt": 17973012575.690002,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "002352.SHE",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 26570781120,
+    "netDebt": 10047599000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "008930.KO",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 71098587901.2,
+    "netDebt": 85028301150,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "026960.KO",
+    "industry": "Food Distribution",
+    "buy": false,
+    "cashCredit": 760124448132.2,
+    "netDebt": -769447459300,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "033780.KO",
+    "industry": "Tobacco",
+    "buy": false,
+    "cashCredit": 1500223980000,
+    "netDebt": 338182000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "1099.HK",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 50083526460,
+    "netDebt": 47040513000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "2057.HK",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 26740254289.02,
+    "netDebt": -5779442000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "2618.HK",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 15179523060,
+    "netDebt": 3833368000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "600233.SHG",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 4655063975.621597,
+    "netDebt": 1297849347.420003,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "600332.SHG",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 11730993935.774,
+    "netDebt": 4774352831.57,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "601607.SHG",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 40200718268.2956,
+    "netDebt": 5289553427.160004,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "8604.JP",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 17681781000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "ADDT-B.ST",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 936280000,
+    "netDebt": 5437000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "AFYA.US",
+    "industry": "Education & Training Services",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 3113337371,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "AIT.US",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 27796280,
+    "netDebt": 356314000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "AJG.US",
+    "industry": "Insurance Brokers",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 2017000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "AON.US",
+    "industry": "Insurance Brokers",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 15874000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "AUB.AU",
+    "industry": "Insurance Brokers",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 1202014000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "BATS.LSE",
+    "industry": "Tobacco",
+    "buy": false,
+    "cashCredit": 1150800000,
+    "netDebt": 33400000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "BNZL.LSE",
+    "industry": "Food Distribution",
+    "buy": false,
+    "cashCredit": 361192000,
+    "netDebt": 2111500000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "BPAC11.SA",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 441835559000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "BRO.US",
+    "industry": "Insurance Brokers",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 8007000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "CAH.US",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 9948000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "CHRW.US",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 1817981000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "CI.US",
+    "industry": "Healthcare Plans",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 31878000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "CNS.US",
+    "industry": "Asset Management",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 134390000,
+    "reasons": [
+      "Vendor cash aggregate fails same-statement asset reconciliation; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "COR.US",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 11723241000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "CPU.AU",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 1197800000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "CTT.LS",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 580184301,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "CVS.US",
+    "industry": "Healthcare Plans",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 76306000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "CVSA.US",
+    "industry": "Education & Training Services",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 905495000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "DHL.XETRA",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 2590860000,
+    "netDebt": 23681000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "DPLM.LSE",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 38210000,
+    "netDebt": 432700000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "DSV.CO",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 4242560000,
+    "netDebt": 85469000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "EBO.AU",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 1656305865,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "EDU.US",
+    "industry": "Education & Training Services",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 848828756,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "ELV.US",
+    "industry": "Healthcare Plans",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 31044000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "ERIE.US",
+    "industry": "Insurance Brokers",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 63157000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "EXPD.US",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 790727960,
+    "netDebt": -464163000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "FAST.US",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 29714000,
+    "netDebt": 236800000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "FDX.US",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 11416600000,
+    "netDebt": 29632000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "FERG.US",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 261980000,
+    "netDebt": 5973000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "FRT.US",
+    "industry": "REIT - Retail",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 4851821000,
+    "reasons": [
+      "Vendor cash aggregate fails same-statement asset reconciliation; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "FRW.AU",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 328642000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "GALE.SW",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 1087189000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "GFTU.LSE",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 344519940,
+    "netDebt": 315376000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "GWW.US",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 212100000,
+    "netDebt": 2208000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "HSIC.US",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 3656000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "HUB.AU",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 71655000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "HUM.US",
+    "industry": "Healthcare Plans",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 14247000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "IDL.PA",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 183049000,
+    "netDebt": 1574266000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "IGG.LSE",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 597600000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "IMB.LSE",
+    "industry": "Tobacco",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 11232000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "INDT.ST",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 699540000,
+    "netDebt": 4486000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "INPST.AS",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 300903707.4,
+    "netDebt": 10071779328,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "JBHT.US",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 1141175000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "KNIN.SW",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 132680000,
+    "netDebt": 3467000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "LOG.MC",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 67000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "LSTR.US",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 248033400,
+    "netDebt": -209079000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "MCK.US",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 11701000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "MKTX.US",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 178913000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "MO.US",
+    "industry": "Tobacco",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 24577000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "MQG.AU",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 175300000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "MRSH.US",
+    "industry": "Insurance Brokers",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 22382000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "MTS.AU",
+    "industry": "Food Distribution",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 1833800000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "NDAQ.US",
+    "industry": "Financial Data & Stock Exchanges",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 9243000000,
+    "reasons": [
+      "Vendor cash aggregate fails same-statement asset reconciliation; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "NK7.F",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 55065086.56,
+    "netDebt": 1280130554,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "NSIT.US",
+    "industry": "Electronics & Computer Distribution",
+    "buy": false,
+    "cashCredit": 191889500,
+    "netDebt": 1378243000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "PIPR.US",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 175009000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "PLUS.LSE",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 23219914,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "PM.US",
+    "industry": "Tobacco",
+    "buy": false,
+    "cashCredit": 5148100000,
+    "netDebt": 43114000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "POOL.US",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 1666404000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "PRDO.US",
+    "industry": "Education & Training Services",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 56595000,
+    "reasons": [
+      "Vendor cash aggregate fails same-statement asset reconciliation; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "REH.AU",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 140099380,
+    "netDebt": 1925523000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "RS1.LSE",
+    "industry": "Industrial Distribution",
+    "buy": false,
+    "cashCredit": 108878000,
+    "netDebt": 328900000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "RXL.PA",
+    "industry": "Electronics & Computer Distribution",
+    "buy": false,
+    "cashCredit": 641236000,
+    "netDebt": 4856600000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "SCSC.US",
+    "industry": "Electronics & Computer Distribution",
+    "buy": false,
+    "cashCredit": 23852760,
+    "netDebt": 22523000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "SCT.LSE",
+    "industry": "Electronics & Computer Distribution",
+    "buy": false,
+    "cashCredit": 176842780,
+    "netDebt": -168608000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "SOL.AU",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 835000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "SQN.SW",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 275980398,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "SYY.US",
+    "industry": "Food Distribution",
+    "buy": false,
+    "cashCredit": 94940000,
+    "netDebt": 13181000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "TCAP.LSE",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 1148000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "TPB.US",
+    "industry": "Tobacco",
+    "buy": false,
+    "cashCredit": 258162400,
+    "netDebt": 42362000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "TW.US",
+    "industry": "Capital Markets",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 150337000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "UNH.US",
+    "industry": "Healthcare Plans",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 73328000000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  },
+  {
+    "id": "UPR.IR",
+    "industry": "Medical Distribution",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 520936000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "UPS.US",
+    "industry": "Integrated Freight & Logistics",
+    "buy": false,
+    "cashCredit": 2228400000,
+    "netDebt": 24646000000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "UVV.US",
+    "industry": "Tobacco",
+    "buy": false,
+    "cashCredit": 116503260,
+    "netDebt": 1043616000,
+    "reasons": [
+      "Distribution float: cash reserved for current non-borrowing liabilities not covered by noncash current assets"
+    ]
+  },
+  {
+    "id": "YDUQ3.SA",
+    "industry": "Education & Training Services",
+    "buy": false,
+    "cashCredit": 0,
+    "netDebt": 5042132000,
+    "reasons": [
+      "Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset"
+    ]
+  }
+]

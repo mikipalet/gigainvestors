@@ -1,0 +1,542 @@
+{
+  "beforeCount": 3899,
+  "afterCount": 3899,
+  "changedDossiers": 1529,
+  "changedValuationsOrPriceTests": 1529,
+  "changedBuyVerdicts": [
+    {
+      "id": "ALSN.US",
+      "before": true,
+      "after": false
+    },
+    {
+      "id": "ELV.US",
+      "before": false,
+      "after": true
+    },
+    {
+      "id": "FCN.US",
+      "before": true,
+      "after": false
+    },
+    {
+      "id": "FDJU.PA",
+      "before": true,
+      "after": false
+    },
+    {
+      "id": "LOG.MC",
+      "before": false,
+      "after": true
+    },
+    {
+      "id": "PLUS.LSE",
+      "before": false,
+      "after": true
+    },
+    {
+      "id": "PRDO.US",
+      "before": false,
+      "after": true
+    }
+  ],
+  "changedPriceTests": [
+    {
+      "id": "000792.SHE",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "000810.KO",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "001450.KO",
+      "before": null,
+      "after": "pass"
+    },
+    {
+      "id": "005380.KO",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "005940.KO",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "012330.KO",
+      "before": null,
+      "after": "pass"
+    },
+    {
+      "id": "016360.KO",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "017800.KO",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "029780.KO",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "035720.KO",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "039490.KO",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "071050.KO",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "105560.KO",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "139480.KO",
+      "before": null,
+      "after": "pass"
+    },
+    {
+      "id": "1876.HK",
+      "before": null,
+      "after": "pass"
+    },
+    {
+      "id": "300033.SHE",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "377300.KO",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "600030.SHG",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "600362.SHG",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "600999.SHG",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "601211.SHG",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "601236.SHG",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "601377.SHG",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "601398.SHG",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "601600.SHG",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "601688.SHG",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "601881.SHG",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "688303.SHG",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "ACS.MC",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "AKE.PA",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "AKZA.AS",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "ALSN.US",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "AMP.AU",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "AMP.US",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "AMXB.MX",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "ANET.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "APO.US",
+      "before": "pass",
+      "after": "fail"
+    },
+    {
+      "id": "AR.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "AVBH.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "BAER.SW",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "BCO.US",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "BCVN.SW",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "BOL.PA",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "BUCN.SW",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "CFR.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "COR.LS",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "CPAY.US",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "CSG.AS",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "CXSE3.SA",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "DHI.US",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "DIRR3.SA",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "DNB.OL",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "DQ7A.IR",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "EBS.VI",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "ELV.US",
+      "before": null,
+      "after": "pass"
+    },
+    {
+      "id": "FCN.US",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "FDJU.PA",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "FIS.US",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "FITB.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "FNV.TO",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "FULT.US",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "GENTERA.MX",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "HIAB.HE",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "HUBN.SW",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "ISRG.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "ITUB.US",
+      "before": null,
+      "after": "pass"
+    },
+    {
+      "id": "KBC.BR",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "LABB.MX",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "LDOS.US",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "LOG.MC",
+      "before": "fail",
+      "after": "pass"
+    },
+    {
+      "id": "LPP.WAR",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "LUND-B.ST",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "MIO.IR",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "MMT.PA",
+      "before": "pass",
+      "after": null
+    },
+    {
+      "id": "MNST.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "NEU.AU",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "NOC.US",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "NRG.US",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "NYT.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "OCBA.F",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "PFG.US",
+      "before": "pass",
+      "after": "fail"
+    },
+    {
+      "id": "PFS.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "PGR.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "PLUS.LSE",
+      "before": null,
+      "after": "pass"
+    },
+    {
+      "id": "PRDO.US",
+      "before": null,
+      "after": "pass"
+    },
+    {
+      "id": "PRTH.US",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "RTO.LSE",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "SAP.XETRA",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "SAVE.ST",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "SB1NO.OL",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "SIA1.F",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "SJX.F",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "STT.US",
+      "before": "pass",
+      "after": "fail"
+    },
+    {
+      "id": "TE.PA",
+      "before": null,
+      "after": "pass"
+    },
+    {
+      "id": "TGS.OL",
+      "before": null,
+      "after": "fail"
+    },
+    {
+      "id": "VATN.SW",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "VPK.AS",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "WN.TO",
+      "before": "fail",
+      "after": null
+    },
+    {
+      "id": "WPR.AU",
+      "before": "fail",
+      "after": null
+    }
+  ],
+  "unrelated": [],
+  "frozenChanges": []
+}

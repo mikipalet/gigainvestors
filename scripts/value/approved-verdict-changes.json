@@ -1,0 +1,52 @@
+[
+  {
+    "id": "FDJU.PA",
+    "before": {
+      "b": true,
+      "v": [
+        27.793668656830615,
+        32.00903544852957,
+        36.60283614467411
+      ],
+      "m": 0.35
+    },
+    "after": {
+      "b": false,
+      "v": [
+        25.764979342725656,
+        29.980346134424614,
+        34.57414683056915
+      ],
+      "m": 0.35
+    },
+    "reason": "Controller approved 2026-10-05: H1 cash EUR 794.1m \u2192 419.2m, debt EUR 2261.7m \u2192 2211.7m; unchanged 35% required margin. Balance-sheet correction only.",
+    "evidence": [
+      "https://www.fdjunited.com/wp-content/uploads/2026/07/20260729-FDJUNITEDpressrelease-H12026results.pdf"
+    ]
+  },
+  {
+    "id": "ALSN.US",
+    "before": {
+      "b": true,
+      "v": [
+        108.98839358894946,
+        151.0182565972158,
+        174.45986706921735
+      ],
+      "m": 0.15
+    },
+    "after": {
+      "b": false,
+      "v": [
+        95.54995369770381,
+        137.57981670597013,
+        161.0214271779717
+      ],
+      "m": 0.5
+    },
+    "reason": "Controller approved 2026-10-05: June debt USD 2.921bn \u2192 4.114bn and cash USD 1.495bn \u2192 0.399bn; existing leverage rule raises required margin to 50%. Normalized earnings unchanged.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/1411207/000119312526334039/alsn-20260630.htm"
+    ]
+  }
+]

@@ -1,0 +1,174 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-jev
+
+ ❯ tests/unit/value/latest-balance.test.ts (7 tests | 4 failed) 65ms
+   × filed balance sheet > uses Discovery March cash/debt and preserves annual earnings history 47ms
+     → expected 7476000000 to be 18555000000 // Object.is equality
+   ✓ filed balance sheet > excludes filings on/after cutoff and mismatched currency 1ms
+   × filed balance sheet > does not fill a missing new cash figure with old cash 6ms
+     → expected { version: 2, currency: 'USD', …(17) } to be null
+   × filed balance sheet > does not treat carried annual fields on a TTM row as a new balance 2ms
+     → expected undefined to be '2023-12-31' // Object.is equality
+   ✓ admits reviewed native interim only after filing and preserves the currency boundary 2ms
+   ✓ uses disclosed post-quarter financing without double-counting it in a later filed balance 2ms
+   × charges a disclosed pro-forma funding cost once and reconciles the earnings bridge 2ms
+     → expected 100000000 to be 76000000 // Object.is equality
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/latest-balance.test.ts > filed balance sheet > uses Discovery March cash/debt and preserves annual earnings history
+AssertionError: expected 7476000000 to be 18555000000 // Object.is equality
+
+- Expected
++ Received
+
+- 18555000000
++ 7476000000
+
+ ❯ tests/unit/value/latest-balance.test.ts:12:37
+     10|   const balance=latestBalanceAt(balanceSheets(raw),'2018-06-30','USD',…
+     11|   const result=valueCompany({years,kind:'operating',currency:'USD',bon…
+     12|   expect(result.valuation?.netDebt).toBe(18555e6);
+       |                                     ^
+     13|   expect(result.valuation?.netCash).toBeCloseTo(812e6-.02*6873e6);
+     14|   expect(years.at(-1)!.cash).toBe(7309e6);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/unit/value/latest-balance.test.ts > filed balance sheet > does not fill a missing new cash figure with old cash
+AssertionError: expected { version: 2, currency: 'USD', …(17) } to be null
+
+- Expected:
+null
+
++ Received:
+{
+  "assumptions": [
+    "complete newer TTM unavailable; zero-growth rule uses latest annual revenue",
+    "growth set to zero when latest revenue is below three years earlier",
+    "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+    "only cash above 2% of revenue is added to equity value",
+    "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+    "operating growth capped at 8%",
+    "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt − excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+    "owner earnings normalized over 5 years",
+    "growth capex uses trailing five-year PPE to revenue",
+    "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+    "maintenance capex floored at the smaller of capex and D&A",
+    "bridge components use the median owner earnings observation",
+  ],
+  "bondYield": 0.04,
+  "bridge": [
+    {
+      "label": "net income",
+      "value": 100,
+    },
+    {
+      "label": "+ D&A",
+      "value": 20,
+    },
+    {
+      "label": "− maintenance capex",
+      "value": -20,
+    },
+    {
+      "label": "− stock compensation",
+      "value": -0,
+    },
+    {
+      "label": "= owner earnings",
+      "value": 100,
+    },
+    {
+      "label": "× PV factor",
+      "value": 12.43729037236123,
+    },
+    {
+      "label": "+ excess cash",
+      "value": 80,
+    },
+    {
+      "label": "÷ shares",
+      "value": 10,
+    },
+  ],
+  "capitalReturns": {
+    "basis": "owner_earnings",
+    "excludingGoodwill": 0.2,
+    "includingAcquisitions": 0.19230769230769232,
+    "observations": 10,
+  },
+  "currency": "USD",
+  "discountRate": 0.1,
+  "equityBondYield": 0.05,
+  "growth": 0,
+  "leverage": "normal",
+  "method": "owner_earnings",
+  "netCash": 80,
+  "netDebt": 0,
+  "normalized": 100,
+  "perShare": {
+    "high": 152.43483359304614,
+    "low": 117.30248054926324,
+    "mid": 132.3729037236123,
+  },
+  "riskFlags": [],
+  "shares": 10,
+  "terminalGrowth": 0.03,
+  "tier": "standard",
+  "version": 2,
+}
+
+ ❯ tests/unit/value/latest-balance.test.ts:26:112
+     24|   const years=makeYears();years.at(-1)!.end='2017-12-31';
+     25|   const balance=latestBalanceAt(balanceSheets(missing),'2018-06-30','U…
+     26|   expect(valueCompany({years,kind:'operating',currency:'USD',bondYield…
+       |                                                                                                                ^
+     27|  });
+     28|  it('does not treat carried annual fields on a TTM row as a new balanc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/unit/value/latest-balance.test.ts > filed balance sheet > does not treat carried annual fields on a TTM row as a new balance
+AssertionError: expected undefined to be '2023-12-31' // Object.is equality
+
+- Expected:
+"2023-12-31"
+
++ Received:
+undefined
+
+ ❯ tests/unit/value/latest-balance.test.ts:31:32
+     29|   const years=makeYears(),ttm={...years.at(-1)!,end:'2030-03-31'};
+     30|   const v=valueCompany({years,ttm,kind:'operating',currency:'USD',bond…
+     31|   expect(v?.balanceSheet?.end).toBe(years.at(-1)!.end);
+       |                                ^
+     32|   expect(v?.assumptions.join(' ')).toContain('predates TTM');
+     33|  });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/unit/value/latest-balance.test.ts > charges a disclosed pro-forma funding cost once and reconciles the earnings bridge
+AssertionError: expected 100000000 to be 76000000 // Object.is equality
+
+- Expected
++ Received
+
+- 76000000
++ 100000000
+
+ ❯ tests/unit/value/latest-balance.test.ts:60:23
+     58|  const balance=latestBalanceAt(rows,'2026-10-05','USD',years.at(-1)!);
+     59|  const v=valueCompany({years,currency:'USD',kind:'operating',bondYield…
+     60|  expect(v.normalized).toBe(76e6);
+       |                       ^
+     61|  const end=v.bridge.findIndex(r=>r.label==='= owner earnings');
+     62|  expect(v.bridge.slice(0,end).reduce((sum,r)=>sum+r.value,0)).toBe(v.n…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 3 passed (7)
+   Start at  23:22:57
+   Duration  792ms (transform 322ms, setup 0ms, collect 378ms, tests 65ms, environment 0ms, prepare 76ms)

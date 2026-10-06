@@ -1,3 +1,4 @@
+import {balanceSheetsFor} from './latest-balance';
 import { deriveYears } from './derive';
 import {qualityQuarters} from './quality-ltm';
 import {annualFiscalYear} from './fiscal-period';
@@ -25,6 +26,7 @@ export function refreshEodhdBalance(year:Year,fresh:Year|undefined,raw:unknown,c
     result[field]=fresh[field];
     if(fresh.provenance?.[field])result.provenance[field]=fresh.provenance[field];
     if(field==='totalDebt')result.debtIncludesLeases=fresh.debtIncludesLeases;
+    if(field==='cash')result.cashExclusion=fresh.cashExclusion;
   }
   if(leases.leaseLiabilities!=null&&fresh?.provenance?.leaseLiabilities)result.provenance.leaseLiabilities=fresh.provenance.leaseLiabilities;
   return result;
@@ -205,6 +207,7 @@ export function normalizeEodhd(raw: unknown, id: Id, {corroboratingYears=[],curr
   onSourceYears?.(structuredClone(fundamentals.years));
   fundamentals.integrity = checkIntegrity(fundamentals, { source: "eodhd" });
   fundamentals.ttm = trailingInputs(raw, fundamentals.years.at(-1));
+  fundamentals.balanceSheets = balanceSheetsFor(id,raw);
   fundamentals.qualityQuarters=qualityQuarters(raw);
   const sector = text(general.Sector);
   const industry = text(general.Industry);

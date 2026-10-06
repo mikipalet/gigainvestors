@@ -1,0 +1,51 @@
+[
+  {
+    "id": "ALSN.US",
+    "before": 151.0182565972158,
+    "after": 137.57981670597013,
+    "balance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-05",
+      "source": "https://eodhd.com/api/fundamentals/ALSN.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    },
+    "requiredMos": 0.5
+  },
+  {
+    "id": "FDJU.PA",
+    "before": 32.00903544852957,
+    "after": 29.980346134424614,
+    "balance": {
+      "filingDateAssumed": true,
+      "end": "2026-06-30",
+      "filed": "2026-09-28",
+      "source": "https://eodhd.com/api/fundamentals/FDJU.PA#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    },
+    "requiredMos": 0.35
+  },
+  {
+    "id": "YUMC.US",
+    "before": 50.76271166582262,
+    "after": 49.22841498815448,
+    "balance": {
+      "end": "2026-08-07",
+      "filed": "2026-08-10",
+      "source": "https://www.sec.gov/Archives/edgar/data/1673358/000119312526339048/yumc-ex99_1.htm",
+      "basis": "pro-forma"
+    },
+    "requiredMos": 0.15
+  },
+  {
+    "id": "GAMA.LSE",
+    "before": 15.404022629166139,
+    "after": 15.382742477753606,
+    "balance": {
+      "end": "2026-06-30",
+      "filed": "2026-09-07",
+      "source": "https://gammagroup.co/wp-content/uploads/2026/09/HY-RNS-2026-Final.pdf",
+      "basis": "filed"
+    },
+    "requiredMos": 0.15
+  }
+]

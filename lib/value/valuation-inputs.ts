@@ -1,3 +1,4 @@
+import {availableOn} from './quarterly-inputs';
 import { sameCurrency, currencyCode, marketCapCurrency } from './currency';
 import type { Year } from './types';
 
@@ -45,27 +46,35 @@ export function currentShareInputs(raw: unknown, price: number | null, tradingCu
 }
 
 /** Totals win; otherwise retain every reported non-overlapping component. */
-export function balanceInputs(balance: Record<string, unknown>, leaseDeducted: boolean): Pick<Year, 'cash' | 'totalDebt' | 'clientAssets'> {
+export function balanceInputs(balance: Record<string, unknown>, leaseDeducted: boolean): Pick<Year, 'cash' | 'cashExclusion' | 'totalDebt' | 'clientAssets'> {
   const long = number(balance.longTermDebtTotal) ?? number(balance.longTermDebt);
   const short = number(balance.shortTermDebt) ?? number(balance.shortLongTermDebt);
   const lease = leaseDeducted ? null : number(balance.capitalLeaseObligations);
   const parts = [long, short, lease].filter((v): v is number => v !== null);
   const cash = number(balance.cash) ?? number(balance.cashAndEquivalents);
   const investments = number(balance.shortTermInvestments);
+  const combinedRestricted=number(balance.cashAndCashEquivalentsAndRestrictedCash);
+  const aggregate=number(balance.cashAndShortTermInvestments) ?? (cash === null && investments === null && combinedRestricted === null ? null : (cash ?? combinedRestricted ?? 0) + (investments ?? 0));
+  const assets=number(balance.totalCurrentAssets)??number(balance.totalAssets);
+  const invalid=aggregate!==null&&(aggregate<0||assets!==null&&aggregate>assets*1.01);
+  // A separate restricted/segregated balance is not necessarily IN cash.
+  // Deduct only when the selected aggregate explicitly includes it.
+  const restricted=combinedRestricted!==null&&cash===null&&number(balance.cashAndShortTermInvestments)===null ? number(balance.restrictedCash)??combinedRestricted : 0;
   return {
-    cash: number(balance.cashAndShortTermInvestments) ?? (cash === null && investments === null ? null : (cash ?? 0) + (investments ?? 0)),
+    cash: aggregate,
+    ...(invalid?{cashExclusion:{amount:Math.max(0,aggregate!),invalid:true,reason:'Vendor cash aggregate fails same-statement asset reconciliation; no cash credit or debt offset'}}:restricted>0?{cashExclusion:{amount:restricted,reason:'Restricted cash explicitly included in the selected cash aggregate is excluded'}}:{}),
     totalDebt: number(balance.shortLongTermDebtTotal) ?? (parts.length ? parts.reduce((a, b) => a + b, 0) : null),
     clientAssets: number(balance.clientAssets) ?? number(balance.customerAssets) ?? number(balance.cashHeldForClients),
   };
 }
 
 /** A separate trailing observation, never a synthetic fiscal year in the annual history. */
-export function trailingInputs(raw: unknown, latest: Year | undefined): Year | null {
+export function trailingInputs(raw: unknown, latest: Year | undefined, cutoff = new Date().toISOString().slice(0,10)): Year | null {
   if (!latest) return null;
   const financials = record(record(raw).Financials);
   const incomes = record(record(financials.Income_Statement).quarterly);
   const flows = record(record(financials.Cash_Flow).quarterly);
-  const ends = Object.keys(incomes).filter(end => /^\d{4}-\d{2}-\d{2}$/.test(end)).sort().slice(-4);
+  const ends = Object.keys(incomes).filter(end => /^\d{4}-\d{2}-\d{2}$/.test(end) && end < cutoff && availableOn(end, String(record(incomes[end]).filing_date??'')) < cutoff && availableOn(end, String(record(flows[end]).filing_date??'')) < cutoff).sort().slice(-4);
   if (ends.length !== 4 || ends[3] <= latest.end) return null;
   const month = (end: string) => Number(end.slice(0, 4)) * 12 + Number(end.slice(5, 7));
   if (ends.some((end, i) => i > 0 && month(end) - month(ends[i - 1]) !== 3)) return null;

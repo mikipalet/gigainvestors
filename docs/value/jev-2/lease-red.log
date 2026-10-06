@@ -1,0 +1,36 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-jev
+
+ ❯ tests/unit/value/latest-balance-extra.test.ts (4 tests | 1 failed) 28ms
+   ✓ uses current tangible equity with the original return history and shares 15ms
+   ✓ uses TTM revenue for the reserve and current leases only in the trailing bridge 3ms
+   ✓ keeps the established same-statement debt-component mapping for interims 0ms
+   × does not erase a TTM lease charge when the new balance omits lease obligations 9ms
+     → expected 50 to be 30 // Object.is equality
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/latest-balance-extra.test.ts > does not erase a TTM lease charge when the new balance omits lease obligations
+AssertionError: expected 50 to be 30 // Object.is equality
+
+- Expected
++ Received
+
+- 30
++ 50
+
+ ❯ tests/unit/value/latest-balance-extra.test.ts:35:28
+     33|  const balance=latestBalanceAt(balanceSheets(raw),'2026-10-05','USD',y…
+     34|  const result=valueCompany({years,ttm,balance,kind:'operating',currenc…
+     35|  expect(result.normalized).toBe(30);
+       |                            ^
+     36|  expect(result.assumptions.join(' ')).toContain('annual lease estimate…
+     37| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  23:54:51
+   Duration  1.12s (transform 594ms, setup 0ms, collect 640ms, tests 28ms, environment 0ms, prepare 133ms)

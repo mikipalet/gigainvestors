@@ -1,0 +1,21 @@
+import {expect,it} from 'vitest';
+import {readFileSync,readdirSync} from 'node:fs';
+import {refreshBalanceValuation} from '@/lib/value/refresh-balance-valuation';
+import {valueCompany} from '@/lib/value/valuation';
+import {makeYears} from './synthetic';
+import type {Analysis} from '@/lib/value/types';
+const base=readdirSync('tests/fixtures/value/store/dossiers').flatMap(f=>Object.values(JSON.parse(readFileSync(`tests/fixtures/value/store/dossiers/${f}`,'utf8')))).find((a:any)=>a.id==='KO.US') as Analysis;
+it('refreshes current stocks while retaining quality, reviewed denominator and FX',()=>{
+ const years=makeYears({from:2015}),a=structuredClone(base);
+ a.valuation=valueCompany({years,kind:'operating',currency:'USD',bondYield:.04,cyclical:false}).valuation;
+ a.valuation!.perShareTrading={...a.valuation!.perShare,currency:'USD',fxRate:1};
+ const raw={General:{CurrencyCode:'USD'},Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{filing_date:'2026-08-01',cash:40,shortLongTermDebtTotal:700}}}}};
+ const read=(p:string)=>p.startsWith('fundamentals/')?{years}:p.startsWith('analysis/inputs/')?{memoYears:years}:p.startsWith('raw/')?raw:null;
+ const next=refreshBalanceValuation(a,read,'2026-10-05');
+ expect(next.tests).toEqual(a.tests);expect(next.valuation!.shares).toBe(a.valuation!.shares);
+ expect(next.valuation!.normalized).toBe(a.valuation!.normalized);
+ expect(next.valuation!.netDebt).toBe(660);expect(next.valuation!.netCash).toBe(20);
+ expect(next.valuation!.perShareTrading!.mid).toBe(next.valuation!.perShare.mid);
+ expect(refreshBalanceValuation(next,read,'2026-10-05')).toEqual(next);
+ expect(refreshBalanceValuation(a,read,'2026-08-01')).toBe(a);
+});

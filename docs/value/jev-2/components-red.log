@@ -1,0 +1,35 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-jev
+
+ ❯ tests/unit/value/latest-balance-extra.test.ts (3 tests | 1 failed) 36ms
+   ✓ uses current tangible equity with the original return history and shares 22ms
+   ✓ uses TTM revenue for the reserve and current leases only in the trailing bridge 3ms
+   × keeps the established same-statement debt-component mapping for interims 9ms
+     → expected null to be 430 // Object.is equality
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/latest-balance-extra.test.ts > keeps the established same-statement debt-component mapping for interims
+AssertionError: expected null to be 430 // Object.is equality
+
+- Expected:
+430
+
++ Received:
+null
+
+ ❯ tests/unit/value/latest-balance-extra.test.ts:26:49
+     24| it('keeps the established same-statement debt-component mapping for in…
+     25|  const raw={General:{CurrencyCode:'USD'},Financials:{Balance_Sheet:{qu…
+     26|  expect(balanceSheets(raw)[0].values.totalDebt).toBe(430);
+       |                                                 ^
+     27|  expect(balanceSheets(raw)[0].values.debtIncludesLeases).toBe(true);
+     28| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  23:37:51
+   Duration  704ms (transform 304ms, setup 0ms, collect 358ms, tests 36ms, environment 0ms, prepare 84ms)

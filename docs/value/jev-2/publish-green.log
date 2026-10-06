@@ -1,0 +1,234 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-jev
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > adds a held nonmember locally while preserving every existing dossier and country row
+Private share residual: 0; quality passes: 0
+publish: 2 companies written locally to /Users/miki/value-corpus/publish-test-rHS4if/candidate; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+Private share residual: 1; quality passes: 1
+publish: 2 companies written locally to /Users/miki/value-corpus/publish-test-JNOCjU/candidate; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > uses enriched identities for search and historical identities with the same live since refresh
+history returns: 0 refreshed, 1 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > uses enriched identities for search and historical identities with the same live since refresh
+Private share residual: 0; quality passes: 0
+publish: 1 companies written locally to /Users/miki/value-corpus/publish-test-20fAoy/candidate; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > audits newly analysed companies before the first publication exists
+{"all":{"flagged":1,"resolved":1,"residual":0},"quality":{"flagged":1,"resolved":1,"residual":0}}
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+Private share residual: 1; quality passes: 1
+publish: 1 companies written locally to /Users/miki/value-corpus/publish-test-v98HSL/staging; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+Private share residual: 1; quality passes: 1
+publish: 1 companies written locally to /Users/miki/value-corpus/publish-test-v98HSL/staging; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > refuses publication without index membership and excludes nonmembers
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > refuses publication without index membership and excludes nonmembers
+Private share residual: 0; quality passes: 0
+publish: 1 companies written locally to /Users/miki/value-corpus/publish-test-ORfqfD/scoped; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > writes a local snapshot without requiring or changing a git repository
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > uses cached FX to retain non-USD share-basis verification during publication
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > publish repository > stages a partial snapshot but refuses to commit a greater than 1% delisting drop
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > prices > keeps a failed Japanese quote while publishing successful quotes
+prices summary: 1/2 fresh (50.00%); Yahoo 1; failed exchanges none; missing 1; status=partial
+
+stdout | tests/unit/value/publish.test.ts > prices > writes fetched US prices even when every Japanese quote fails
+prices summary: 1/2 fresh (50.00%); Yahoo 0; failed exchanges none; missing 1; status=partial
+
+stderr | tests/unit/value/publish.test.ts > prices > writes fetched US prices even when every Japanese quote fails
+prices: skipped 8058.JP: Yahoo HTTP 403
+
+stdout | tests/unit/value/publish.test.ts > prices > routes Japanese companies to Yahoo and separates same-country exchanges
+prices summary: 3/3 fresh (100.00%); Yahoo 1; failed exchanges none; missing 0; status=ok
+
+stdout | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+prices summary: 1/2 fresh (50.00%); Yahoo 0; failed exchanges none; missing 1; status=partial
+
+stdout | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+prices summary: 1/1 fresh (100.00%); Yahoo 0; failed exchanges none; missing 0; status=ok
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > publishes available analyses and skips missing and unreadable files
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > allows exactly a 20% decline and compares published count rather than universe
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > guards legacy metadata and rejects even a forced empty commit
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > guards a legacy nonempty count drop and permits --force
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > joins the corpus monthly history at publish time and preserves it on partial publish
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > joins new enrichment and completed numeric history when the controller publishes
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > uses current universe listings consistently across dossier, index and search on republish
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > excludes current nonmembers from current surfaces but retains their historical returns on partial republish
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > publishes immutable daily records through orphan commits and reads the forward view from snapshots
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+
+stderr | tests/unit/value/publish.test.ts > publishes immutable daily records through orphan commits and reads the forward view from snapshots
+publish: kept existing forward/2026-10-01.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > makes short histories searchable and browsable without placing them in investment lists
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > keeps predecessor-backed test verdicts findable when a different test remains undecided
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stderr | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+Private share residual: 0; quality passes: 0
+publish: 2 companies written locally to /Users/miki/value-corpus/publish-test-P7A40M/out; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+
+stderr | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > uses current issuer shares for the cap check instead of last annual diluted shares
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > replaces a dated vendor cap with the current quote times supported issuer shares
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > keeps only the live price test through unresolved shares and later quote refreshes
+Private share residual: 0; quality passes: 0
+Private share residual: 1; quality passes: 1
+Private share residual: 1; quality passes: 0
+
+stderr | tests/unit/value/publish.test.ts > keeps only the live price test through unresolved shares and later quote refreshes
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > keeps only the live price test through unresolved shares and later quote refreshes
+Private share residual: 0; quality passes: 0
+
+stderr | tests/unit/value/publish.test.ts > keeps only the live price test through unresolved shares and later quote refreshes
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > keeps unresolved ADR or class-share capitalization conflicts guarded
+Private share residual: 1; quality passes: 1
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > freezes the last live price test when a quote refresh introduces an unresolved ratio
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > retains released historical rows omitted by a newer quarterly run
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > prices keeps all 87 quarterly views, deferred views, annual views and history bytes
+prices summary: 1/1 fresh (100.00%); Yahoo 0; failed exchanges none; missing 0; status=ok
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=false)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope
+Private share residual: 1; quality passes: 1
+publish: 1 companies written locally to /Users/miki/value-corpus/publish-test-tqGUIb/canonical-scope; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > does not let a retired addition bypass canonical input binding
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (unchanged baseline)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (explicit freeze)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > preserves a reviewed canonical when its private cache lacks new-addition filing inputs
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > rejects an invalid preserved canonical rather than treating its alias as complete
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > requires complete canonical inputs even when the retired addition has complete inputs
+Private share residual: 1; quality passes: 1
+
+ ✓ tests/unit/value/publish.test.ts (91 tests) 15856ms
+   ✓ buildOutput > adds a held nonmember locally while preserving every existing dossier and country row  592ms
+   ✓ buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions  543ms
+   ✓ buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository  545ms
+   ✓ publish repository > collapses intervening price commits even when the snapshot files are unchanged  327ms
+   ✓ publish repository > stages a partial snapshot but refuses to commit a greater than 1% delisting drop  334ms
+   ✓ prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op  389ms
+   ✓ publish rollout safeguards > publishes available analyses and skips missing and unreadable files  311ms
+   ✓ publish rollout safeguards > allows exactly a 20% decline and compares published count rather than universe  520ms
+   ✓ publish rollout safeguards > guards legacy metadata and rejects even a forced empty commit  317ms
+   ✓ publish rollout safeguards > guards a legacy nonempty count drop and permits --force  464ms
+   ✓ joins the corpus monthly history at publish time and preserves it on partial publish  713ms
+   ✓ preserves an unpushed prices commit when preparing the next publish  388ms
+   ✓ joins new enrichment and completed numeric history when the controller publishes  312ms
+   ✓ excludes current nonmembers from current surfaces but retains their historical returns on partial republish  772ms
+   ✓ publishes immutable daily records through orphan commits and reads the forward view from snapshots  1348ms
+   ✓ freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal  899ms
+   ✓ keeps only the live price test through unresolved shares and later quote refreshes  519ms
+   ✓ coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)  489ms
+   ✓ coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope  364ms
+   ✓ coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (unchanged baseline)  465ms
+   ✓ coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (explicit freeze)  426ms
+   ✓ coverage additions retired by the issuer registry > preserves a reviewed canonical when its private cache lacks new-addition filing inputs  456ms
+ ✓ tests/unit/value/latest-balance.test.ts (7 tests) 23ms
+
+ Test Files  2 passed (2)
+      Tests  98 passed (98)
+   Start at  23:27:18
+   Duration  19.80s (transform 2.00s, setup 0ms, collect 3.30s, tests 15.88s, environment 0ms, prepare 134ms)

@@ -65,7 +65,7 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
   const volatility = earningsVolatility({ opMarginCv: (numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null) });
   const investmentHolding = isInvestmentHolding(company, prefix.years);
   const valuation = prefix.integrity.ok && (investmentHolding || bondYield !== null && Number.isFinite(bondYield)) && positive(fxRate)
-    ? valueCompany({ investmentHolding, years: prefix.years, kind:company.kind, currency:prefix.currency, bondYield,
+    ? valueCompany({ investmentHolding, years: prefix.years, kind:company.kind, industry:company.industry, currency:prefix.currency, bondYield,
       cyclical:(numeric.understandable.metrics.roeCv ?? numeric.understandable.metrics.opMarginCv ?? null) !== null && volatility === 'volatile', priceHistory:pastPrices, qualityPass:t5 === "PPPPP" }).valuation : null;
   if (investmentHolding && !valuation) return null;
   const v: [number,number,number] | null = valuation ? [valuation.perShare.low*fxRate!, valuation.perShare.mid*fxRate!, valuation.perShare.high*fxRate!] : null;

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "FCN.US",
+    "before": {
+      "b": true,
+      "v": [
+        127.6623765873837,
+        179.43074267684204,
+        209.5755551532103
+      ],
+      "m": 0.25
+    },
+    "after": {
+      "b": false,
+      "v": [
+        123.89434452112165,
+        175.66271061057995,
+        205.80752308694824
+      ],
+      "m": 0.35
+    },
+    "reason": "PROPOSED for controller approval: June 2026 issuer 10-Q reconciles USD 1,267.516m lease-inclusive debt (USD 1,019.320m borrowings net of issuance costs plus USD 248.196m operating leases), versus USD 626.721m annually. Corporate cash USD 163.747m. Existing three-year leverage rule raises required margin from 25% to 35%; normalized owner earnings unchanged. See docs/value/jev-3/cash-policy.md. Local review scenario only; not yet approved for production.",
+    "evidence": [
+      "https://www.sec.gov/Archives/edgar/data/887936/000088793626000088/fcn-20260630.htm"
+    ]
+  }
+]

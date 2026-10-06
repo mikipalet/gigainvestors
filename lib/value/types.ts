@@ -121,6 +121,8 @@ export interface Year {
   payables: number | null;
   /** Cash/deposits plus separately reported short-term investments; excludes strategic holdings. */
   cash: number | null;
+  /** Same-statement restrictions known to be INSIDE cash, or invalid vendor aggregate. */
+  cashExclusion?: {amount:number;reason:string;invalid?:boolean};
   cashAndDeposits?: number | null;
   cashAndCashEquivalents?: number | null;
   shortTermInvestments?: number | null;
@@ -144,6 +146,7 @@ export interface Year {
 }
 
 export interface Fundamentals {
+  balanceSheets?: import('./latest-balance').BalanceSheet[];
   qualityQuarters?: import('./quality-ltm').QualityQuarter[];
   id: Id;
   currency: string; // reporting currency
@@ -185,6 +188,7 @@ export interface TestOutcome {
 }
 
 export interface Valuation {
+  balanceSheet?: {end:string;filed:string|null;source:string;basis:string;filingDateAssumed?:boolean};
   capitalReturns?: { excludingGoodwill: number | null; includingAcquisitions: number | null; observations: number; basis: "owner_earnings" };
   shareSources?: 2;
   method: "owner_earnings" | "book_value" | "nav";
@@ -200,7 +204,7 @@ export interface Valuation {
   version?: 1 | 2;
   tier?: "standard" | "compounder" | "nav";
   navReturn?: { cagr: number; uncappedCagr: number; years?: number };
-  netDebt?: number; // Actual debt less cash, for risk/display only
+  netDebt?: number; // Debt less eligible owner cash, for risk/display only (see assumptions)
   leverage?: "normal" | "moderate" | "volatile";
   riskFlags?: string[];
   financialReturn?: { roe: number; retention: number; payout: number; cashPerShare: number };

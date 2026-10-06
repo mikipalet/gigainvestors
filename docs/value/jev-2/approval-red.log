@@ -1,0 +1,55 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-jev
+
+ ❯ tests/unit/value/publish-invariants.test.ts (23 tests | 1 failed) 3086ms
+   ✓ permits added-company buys while preserving the price-only rule for existing companies 217ms
+   ✓ quarters refuses prices commit before changing HEAD or index 130ms
+   ✓ yearDeferred refuses prices commit before changing HEAD or index 132ms
+   ✓ missing-file refuses prices commit before changing HEAD or index 122ms
+   ✓ dossiers refuses prices commit before changing HEAD or index 133ms
+   ✓ buy refuses prices commit before changing HEAD or index 155ms
+   ✓ history refuses prices commit before changing HEAD or index 94ms
+   ✓ prices permits an exactly 1% dossier drop and a price-explained Buy-now transition 168ms
+   ✓ quarters refuses publish commit before changing HEAD or index 92ms
+   ✓ yearDeferred refuses publish commit before changing HEAD or index 98ms
+   ✓ missing-file refuses publish commit before changing HEAD or index 99ms
+   ✓ dossiers refuses publish commit before changing HEAD or index 107ms
+   ✓ buy refuses publish commit before changing HEAD or index 143ms
+   ✓ history refuses publish commit before changing HEAD or index 86ms
+   ✓ publish permits an exactly 1% dossier drop and a price-explained Buy-now transition 169ms
+   ✓ does not let pre-staged unrelated changes bypass the prices gate 63ms
+   ✓ accepts year views derived from Q4 without requiring a separate annual snapshot 201ms
+   ✓ allows a reviewed identity collapse only when every lost dossier has a direct live target 166ms
+   ✓ refuses alias cycles or missing canonical dossiers 105ms
+   ✓ refuses to reintroduce two reviewed listings of one issuer 108ms
+   ✓ permits retired Buy-now rows to disappear from country and default indexes 193ms
+   ✓ does not count retired-listing price moves as explanations for surviving Buy-now flips 155ms
+   × accepts only an exact controller-reviewed valuation transition 149ms
+     → expected [Function] to not throw an error but 'Error: Publish invariant: index/US.js…' was thrown
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/publish-invariants.test.ts > accepts only an exact controller-reviewed valuation transition
+AssertionError: expected [Function] to not throw an error but 'Error: Publish invariant: index/US.js…' was thrown
+
+- Expected:
+undefined
+
++ Received:
+"Error: Publish invariant: index/US.json Buy-now changed 0 -> 1; prices and new dossiers explain at most +0/-0"
+
+ ❯ tests/unit/value/publish-invariants.test.ts:99:66
+     97|  const approval={id:'A.US',before:{b:false,v:before.v,m:before.m},afte…
+     98|  for(const file of ['index/US.json','index/default.json'])write(file,[…
+     99|  expect(()=>assertPublishInvariants(repo,'HEAD',[approval])).not.toThr…
+       |                                                                  ^
+    100|  expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,after:{.…
+    101|  expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,evidence…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 22 passed (23)
+   Start at  23:24:16
+   Duration  6.36s (transform 1.72s, setup 0ms, collect 2.95s, tests 3.09s, environment 0ms, prepare 70ms)

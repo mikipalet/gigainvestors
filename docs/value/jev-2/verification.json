@@ -1,0 +1,13 @@
+{
+  "ordinaryOutExit": 0,
+  "typecheckExit": 0,
+  "unitExit": 0,
+  "unitFilesPassed": 240,
+  "unitTestsPassed": 2318,
+  "unitTestsSkipped": 1,
+  "unitTimeoutMs": 15000,
+  "unitWorkers": 2,
+  "browserPassed": true,
+  "unitHome": "/Users/miki/data/jev-2/test-home",
+  "outHeapMiB": 1536
+}

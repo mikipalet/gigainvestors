@@ -1,0 +1,18 @@
+{
+  "removed": [
+    "/mnt/HC_Volume_107024928/jev-2/corpus",
+    "/mnt/HC_Volume_107024928/jev-2/baseline",
+    "/mnt/HC_Volume_107024928/jev-2/baseline-out",
+    "/mnt/HC_Volume_107024928/jev-2/dry-run",
+    "/mnt/HC_Volume_107024928/jev-2/baseline-code",
+    "/mnt/HC_Volume_107024928/jev-2/storage",
+    "/mnt/HC_Volume_107024928/jev-2/tmp",
+    "/mnt/HC_Volume_107024928/jev-2/test-home",
+    "/mnt/HC_Volume_107024928/jev-2/node_modules"
+  ],
+  "remainingCorpusCopies": [],
+  "freeBytes": {
+    "/": 11828080640,
+    "/Users/miki/data": 113895092224
+  }
+}

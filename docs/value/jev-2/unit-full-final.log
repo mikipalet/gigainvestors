@@ -1,0 +1,1464 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-jev
+
+stdout | tests/unit/value/ops-integration.test.ts > does not request history for companies without fundamentals
+price-history: 0 written
+price-history: 0/0 companies failed
+
+stdout | tests/unit/value/ops-integration.test.ts > preserves actual screener closes when publishing and rejects older quotes
+price-seed: 2 cached/validated quotes written, 0 unverified seeds removed (local; published by publish)
+
+stderr | tests/unit/value/ops-integration.test.ts > preserves actual screener closes when publishing and rejects older quotes
+prices: skipped NEW.US: Unexpected network
+
+stdout | tests/unit/value/ops-integration.test.ts > preserves actual screener closes when publishing and rejects older quotes
+prices summary: 0/1 fresh (0.00%); Yahoo 0; failed exchanges none; missing 1; status=partial
+
+stdout | tests/unit/value/ops-integration.test.ts > fetches never-seen history before stale history and observes persisted daily capacity
+daily price-history budget reached, resume tomorrow
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/ops-integration.test.ts > fetches never-seen history before stale history and observes persisted daily capacity
+daily price-history budget reached, resume tomorrow
+daily price-history budget reached, resume tomorrow
+price-history: 0 written
+price-history: 0/0 companies failed
+
+stdout | tests/unit/value/ops-integration.test.ts > removes rejected legacy seeds locally and on the next publish, retaining actual closes
+price-seed: 0 cached/validated quotes written, 1 unverified seeds removed (local; published by publish)
+
+stdout | tests/unit/value/data-stages-round7.test.ts > runs both stages without changing any preexisting corpus bytes and publishes history paths
+enrich: {"companies":300,"cached":0,"namesFixed":300,"edinet":0,"eodhd":300,"yahoo":0,"unresolved":0,"logos":0,"eodhdLogos":0,"favicons":0,"about":300,"logoPercent":0,"asOf":"2026-10-05T23:33:05.535Z"}
+
+stdout | tests/unit/value/data-stages-round7.test.ts > runs both stages without changing any preexisting corpus bytes and publishes history paths
+enrich: {"companies":300,"cached":300,"namesFixed":300,"edinet":0,"eodhd":300,"yahoo":0,"unresolved":0,"logos":0,"eodhdLogos":0,"favicons":0,"about":300,"logoPercent":0,"asOf":"2026-10-05T23:33:05.657Z"}
+
+stdout | tests/unit/value/data-stages-round7.test.ts > runs both stages without changing any preexisting corpus bytes and publishes history paths
+history: 100/300
+history: 200/300
+history: 300/300
+history: {"root":"history-v7/20261005T233305681-4c5d930c","companies":300,"quarters":87,"coverage":{"filingDates":600,"fallbackDates":0,"withReturn":600,"withValue":600,"failed":[]}}
+
+ ✓ tests/unit/value/ops-integration.test.ts (25 tests) 33179ms
+   ✓ runner publishes available data after analysis or price failures: true  2369ms
+   ✓ runner publishes available data after analysis or price failures: false  2227ms
+   ✓ runner resumes from the last successful filing day, refreshes it, and advances only after success  4554ms
+   ✓ runner retains the pending filing range after Japan is failure  4430ms
+   ✓ runner retains the pending filing range after Japan is skipped  4804ms
+   ✓ runner retains the pending filing range after Japan is interrupted  4537ms
+   ✓ runner retries an existing failed Japan summary from its original start day  1975ms
+   ✓ runner checks dead owner PID before acquiring the lock  2184ms
+   ✓ runner still publishes when refreshing yields fails  2096ms
+   ✓ runner skips acquisition and still analyzes cached inputs when reset waiting fails  1422ms
+   ✓ bounds thesis before publication and skips publication on thesis failure  2104ms
+stdout | tests/unit/value/data-stages-round7.test.ts > runs both stages without changing any preexisting corpus bytes and publishes history paths
+history: 100/300
+history: 200/300
+history: 300/300
+history: {"root":"history-v7/20261005T233307741-641e8053","companies":300,"quarters":87,"coverage":{"filingDates":600,"fallbackDates":0,"withReturn":600,"withValue":600,"failed":[]}}
+
+stdout | tests/unit/value/data-stages-round7.test.ts > recovers a transient vendor-logo failure in new files without replacing existing enrichment
+{
+  total: 1,
+  checked: 1,
+  cached: 0,
+  recovered: 1,
+  unavailable: 0,
+  sources: { eodhd: 1 }
+}
+
+stdout | tests/unit/value/data-stages-round7.test.ts > recovers an English first sentence into a new about cache without changing old enrichment
+enrich: {"companies":1,"cached":1,"namesFixed":0,"edinet":0,"eodhd":1,"yahoo":0,"unresolved":0,"logos":0,"eodhdLogos":0,"favicons":0,"about":1,"logoPercent":0,"asOf":"2026-10-05T23:33:13.371Z"}
+
+ ✓ tests/unit/value/data-stages-round7.test.ts (5 tests) 38162ms
+   ✓ runs both stages without changing any preexisting corpus bytes and publishes history paths  34109ms
+   ✓ recovers a transient vendor-logo failure in new files without replacing existing enrichment  4047ms
+stdout | tests/unit/value/publish.test.ts > buildOutput > adds a held nonmember locally while preserving every existing dossier and country row
+Private share residual: 0; quality passes: 0
+publish: 2 companies written locally to /Users/miki/data/jev-2/test-home/value-corpus/publish-test-k1pETH/candidate; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+Private share residual: 1; quality passes: 1
+publish: 2 companies written locally to /Users/miki/data/jev-2/test-home/value-corpus/publish-test-cJEdMt/candidate; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > uses enriched identities for search and historical identities with the same live since refresh
+history returns: 0 refreshed, 1 cached, 0 failed
+
+stdout | tests/unit/value/esef.test.ts > routes an EU company with an LEI to ESEF even when it also has a CIK, and resumes
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/esef.test.ts > routes an EU company with an LEI to ESEF even when it also has a CIK, and resumes
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > uses enriched identities for search and historical identities with the same live since refresh
+Private share residual: 0; quality passes: 0
+publish: 1 companies written locally to /Users/miki/data/jev-2/test-home/value-corpus/publish-test-Soz3Vo/candidate; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > audits newly analysed companies before the first publication exists
+{"all":{"flagged":1,"resolved":1,"residual":0},"quality":{"flagged":1,"resolved":1,"residual":0}}
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+Private share residual: 1; quality passes: 1
+publish: 1 companies written locally to /Users/miki/data/jev-2/test-home/value-corpus/publish-test-RWlC8o/staging; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+Private share residual: 1; quality passes: 1
+publish: 1 companies written locally to /Users/miki/data/jev-2/test-home/value-corpus/publish-test-RWlC8o/staging; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > refuses publication without index membership and excludes nonmembers
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > refuses publication without index membership and excludes nonmembers
+Private share residual: 0; quality passes: 0
+publish: 1 companies written locally to /Users/miki/data/jev-2/test-home/value-corpus/publish-test-79ACaX/scoped; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > writes a local snapshot without requiring or changing a git repository
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > uses cached FX to retain non-USD share-basis verification during publication
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > publish repository > stages a partial snapshot but refuses to commit a greater than 1% delisting drop
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > prices > keeps a failed Japanese quote while publishing successful quotes
+prices summary: 1/2 fresh (50.00%); Yahoo 1; failed exchanges none; missing 1; status=partial
+
+stdout | tests/unit/value/publish.test.ts > prices > writes fetched US prices even when every Japanese quote fails
+prices summary: 1/2 fresh (50.00%); Yahoo 0; failed exchanges none; missing 1; status=partial
+
+stderr | tests/unit/value/publish.test.ts > prices > writes fetched US prices even when every Japanese quote fails
+prices: skipped 8058.JP: Yahoo HTTP 403
+
+stdout | tests/unit/value/publish.test.ts > prices > routes Japanese companies to Yahoo and separates same-country exchanges
+prices summary: 3/3 fresh (100.00%); Yahoo 1; failed exchanges none; missing 0; status=ok
+
+stdout | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+prices summary: 1/2 fresh (50.00%); Yahoo 0; failed exchanges none; missing 1; status=partial
+
+stdout | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+prices summary: 1/1 fresh (100.00%); Yahoo 0; failed exchanges none; missing 0; status=ok
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > publishes available analyses and skips missing and unreadable files
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/esef.test.ts > routes an EU company with an LEI to ESEF even when it also has a CIK, and resumes
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/esef.test.ts > falls back to the description for a UK company without a matched report
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/esef.test.ts > keeps non-European companies without CIKs on the description path
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > allows exactly a 20% decline and compares published count rather than universe
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > guards legacy metadata and rejects even a forced empty commit
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > guards a legacy nonempty count drop and permits --force
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > joins the corpus monthly history at publish time and preserves it on partial publish
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > joins new enrichment and completed numeric history when the controller publishes
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > uses current universe listings consistently across dossier, index and search on republish
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > excludes current nonmembers from current surfaces but retains their historical returns on partial republish
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/esef.test.ts > falls back and clears stale sections after a SEC metadata failure
+reports: 1/1 companies failed
+
+stdout | tests/unit/value/esef.test.ts > falls back and clears stale sections after a SEC report failure
+reports: 1/1 companies failed
+
+stdout | tests/unit/value/esef.test.ts > falls back and clears stale sections after a ESEF report failure
+reports: 1/1 companies failed
+
+stdout | tests/unit/value/esef.test.ts > falls back and clears stale sections after a cached metadata failure
+reports: 1/1 companies failed
+
+ ✓ tests/unit/value/esef.test.ts (27 tests) 16001ms
+   ✓ returns null for an unmatched LEI and exposes HTTP failures  664ms
+   ✓ extracts substantive ASML business, risk and compensation sections  2984ms
+   ✓ routes an EU company with an LEI to ESEF even when it also has a CIK, and resumes  7077ms
+   ✓ does not label repeated navigation as compensation or an appendix glossary as MD&A  2887ms
+   ✓ isolates incomplete ESEF metadata and applies the failure threshold across 5 companies  676ms
+   ✓ isolates incomplete ESEF metadata and applies the failure threshold across 4 companies  999ms
+   ✓ falls back and clears stale sections after a ESEF report failure  409ms
+stdout | tests/unit/value/publish.test.ts > publishes immutable daily records through orphan commits and reads the forward view from snapshots
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+
+stderr | tests/unit/value/publish.test.ts > publishes immutable daily records through orphan commits and reads the forward view from snapshots
+publish: kept existing forward/2026-10-01.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > makes short histories searchable and browsable without placing them in investment lists
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > keeps predecessor-backed test verdicts findable when a different test remains undecided
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stderr | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+Private share residual: 0; quality passes: 0
+publish: 2 companies written locally to /Users/miki/data/jev-2/test-home/value-corpus/publish-test-xdBs1Q/out; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+
+stderr | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > uses current issuer shares for the cap check instead of last annual diluted shares
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > replaces a dated vendor cap with the current quote times supported issuer shares
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/edgar.test.ts > writes filing sections, skips unchanged downloads, and repairs missing outputs
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/edgar.test.ts > writes filing sections, skips unchanged downloads, and repairs missing outputs
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/publish.test.ts > keeps only the live price test through unresolved shares and later quote refreshes
+Private share residual: 0; quality passes: 0
+Private share residual: 1; quality passes: 1
+Private share residual: 1; quality passes: 0
+
+stderr | tests/unit/value/publish.test.ts > keeps only the live price test through unresolved shares and later quote refreshes
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > keeps only the live price test through unresolved shares and later quote refreshes
+Private share residual: 0; quality passes: 0
+
+stderr | tests/unit/value/publish.test.ts > keeps only the live price test through unresolved shares and later quote refreshes
+publish: kept existing forward/2026-10-05.json; forward records are immutable
+
+stdout | tests/unit/value/edgar.test.ts > writes filing sections, skips unchanged downloads, and repairs missing outputs
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/edgar.test.ts > falls back to description, applies filters, and updates changed descriptions
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/edgar.test.ts > falls back to description, applies filters, and updates changed descriptions
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/publish.test.ts > keeps unresolved ADR or class-share capitalization conflicts guarded
+Private share residual: 1; quality passes: 1
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > freezes the last live price test when a quote refresh introduces an unresolved ratio
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > retains released historical rows omitted by a newer quarterly run
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > prices keeps all 87 quarterly views, deferred views, annual views and history bytes
+prices summary: 1/1 fresh (100.00%); Yahoo 0; failed exchanges none; missing 0; status=ok
+
+stdout | tests/unit/value/edgar.test.ts > fills missing filing business using description or document: Beverage business.
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=false)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/edgar.test.ts > fills missing filing business using description or document: null
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope
+Private share residual: 1; quality passes: 1
+publish: 1 companies written locally to /Users/miki/data/jev-2/test-home/value-corpus/publish-test-QAMmCA/canonical-scope; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > does not let a retired addition bypass canonical input binding
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/edgar.test.ts > falls back from an empty EU ESEF search to SAP's EDGAR 20-F via its US listing
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/edgar.test.ts > processes SEC and ESEF reports with independent six and three company pools
+reports: 0/16 companies failed
+
+stdout | tests/unit/value/edgar.test.ts > retains reviewed full annual inputs while current and retries after the fiscal period changes
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (unchanged baseline)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (explicit freeze)
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > preserves a reviewed canonical when its private cache lacks new-addition filing inputs
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > rejects an invalid preserved canonical rather than treating its alias as complete
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > requires complete canonical inputs even when the retired addition has complete inputs
+Private share residual: 1; quality passes: 1
+
+ ✓ tests/unit/value/publish.test.ts (91 tests) 16389ms
+   ✓ buildOutput > adds a held nonmember locally while preserving every existing dossier and country row  540ms
+   ✓ buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions  577ms
+   ✓ buildOutput > uses enriched identities for search and historical identities with the same live since refresh  305ms
+   ✓ buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository  583ms
+   ✓ publish repository > requires the calibration command to succeed before publishing  302ms
+   ✓ publish repository > preserves price bytes, removes obsolete generated files and replaces history with one commit  310ms
+   ✓ publish repository > collapses intervening price commits even when the snapshot files are unchanged  342ms
+   ✓ publish repository > stages a partial snapshot but refuses to commit a greater than 1% delisting drop  352ms
+   ✓ prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op  385ms
+   ✓ publish rollout safeguards > publishes available analyses and skips missing and unreadable files  346ms
+   ✓ publish rollout safeguards > allows exactly a 20% decline and compares published count rather than universe  523ms
+   ✓ publish rollout safeguards > guards legacy metadata and rejects even a forced empty commit  325ms
+   ✓ publish rollout safeguards > guards a legacy nonempty count drop and permits --force  493ms
+   ✓ joins the corpus monthly history at publish time and preserves it on partial publish  739ms
+   ✓ preserves an unpushed prices commit when preparing the next publish  402ms
+   ✓ uses current universe listings consistently across dossier, index and search on republish  317ms
+   ✓ excludes current nonmembers from current surfaces but retains their historical returns on partial republish  659ms
+   ✓ publishes immutable daily records through orphan commits and reads the forward view from snapshots  1464ms
+   ✓ freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal  928ms
+   ✓ keeps only the live price test through unresolved shares and later quote refreshes  566ms
+   ✓ coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)  442ms
+   ✓ coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope  361ms
+   ✓ coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (unchanged baseline)  446ms
+   ✓ coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (explicit freeze)  474ms
+   ✓ coverage additions retired by the issuer registry > preserves a reviewed canonical when its private cache lacks new-addition filing inputs  431ms
+stdout | tests/unit/value/edgar.test.ts > retains reviewed full annual inputs while current and retries after the fiscal period changes
+reports: 0/1 companies failed
+
+ ✓ tests/unit/value/edgar.test.ts (25 tests) 5962ms
+   ✓ writes filing sections, skips unchanged downloads, and repairs missing outputs  1268ms
+   ✓ falls back from an empty EU ESEF search to SAP's EDGAR 20-F via its US listing  698ms
+   ✓ retains reviewed full annual inputs while current and retries after the fiscal period changes  1982ms
+stderr | tests/unit/value/analyze.test.ts > caches bond yields per day, preserves concurrent countries, and converts FX minor units
+yields: US {"version":3,"date":"2026-10-05","yield":0.0425,"source":"EODHD latest","symbol":"US10Y.GBOND","observedAt":"2026-10-05","rawYield":0.0425,"median":null,"secondSource":null,"flags":["insufficient-median-history","second-source-unavailable"]}
+
+stderr | tests/unit/value/analyze.test.ts > caches bond yields per day, preserves concurrent countries, and converts FX minor units
+yields: GB {"version":3,"date":"2026-10-05","yield":0.0425,"source":"EODHD latest","symbol":"UK10Y.GBOND","observedAt":"2026-10-05","rawYield":0.0425,"median":null,"secondSource":null,"flags":["symbol-map:GB->UK","insufficient-median-history"]}
+
+stdout | tests/unit/value/analyze.test.ts > writes analysis and resumes, invalidating on text changes and force
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > writes analysis and resumes, invalidating on text changes and force
+analyze: 0 written, 1 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > writes analysis and resumes, invalidating on text changes and force
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > writes analysis and resumes, invalidating on text changes and force
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > persists the final split-adjusted statement basis for indexed-company memos
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > rebuilds an obsolete analysis even when a copied fingerprint matches current inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > rebuilds an obsolete analysis even when a copied fingerprint matches current inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > exports up to thirty distinct answers per question with source text
+jev-sample: 25 questions, up to 30 answers each
+
+stdout | tests/unit/value/analyze.test.ts > runs paragraph evidence only when no numeric quality test fails
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > runs paragraph evidence only when no numeric quality test fails
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > samples the exact analyzed text after source reports change
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > samples the exact analyzed text after source reports change
+jev-sample: 25 questions, up to 30 answers each
+
+stderr | tests/unit/value/analyze.test.ts > reads the newest live-recorded bond close as a fraction and refreshes tomorrow
+yields: US {"version":3,"date":"2026-10-05","yield":0.05239,"source":"EODHD latest","symbol":"US10Y.GBOND","observedAt":"2026-10-05","rawYield":0.05239,"median":null,"secondSource":null,"flags":["insufficient-median-history","second-source-unavailable"]}
+
+stderr | tests/unit/value/analyze.test.ts > reads the newest live-recorded bond close as a fraction and refreshes tomorrow
+yields: US {"version":3,"date":"2026-10-05","yield":0.05,"source":"EODHD latest","symbol":"US10Y.GBOND","observedAt":"2026-10-05","rawYield":0.05,"median":null,"secondSource":null,"flags":["insufficient-median-history","second-source-unavailable"]}
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 0 written, 1 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > maps ISO GB to UK10Y while leaving other bond country codes unchanged
+yields: GB {"version":3,"date":"2026-10-05","yield":0.0475,"source":"EODHD latest","symbol":"UK10Y.GBOND","observedAt":"2026-10-05","rawYield":0.0475,"median":null,"secondSource":null,"flags":["symbol-map:GB->UK","insufficient-median-history"]}
+
+stderr | tests/unit/value/analyze.test.ts > maps ISO GB to UK10Y while leaving other bond country codes unchanged
+yields: DE {"version":3,"date":"2026-10-05","yield":0.025,"source":"EODHD latest","symbol":"DE10Y.GBOND","observedAt":"2026-10-05","rawYield":0.025,"median":null,"secondSource":null,"flags":["insufficient-median-history"]}
+
+stderr | tests/unit/value/analyze.test.ts > leaves value unavailable for a empty local bond series without substituting a foreign yield
+yields: ZZ {"version":3,"date":"2026-10-05","yield":null,"source":"unavailable","symbol":"ZZ10Y.GBOND","observedAt":null,"rawYield":null,"median":null,"secondSource":null,"flags":["missing-or-stale-series","outside-plausible-band","insufficient-median-history","no-local-yield"]}
+
+stdout | tests/unit/value/analyze.test.ts > leaves value unavailable for a empty local bond series without substituting a foreign yield
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > leaves value unavailable for a not-found local bond series without substituting a foreign yield
+yields: ZZ {"version":3,"date":"2026-10-05","yield":null,"source":"unavailable","symbol":"ZZ10Y.GBOND","observedAt":null,"rawYield":null,"median":null,"secondSource":null,"flags":["eodhd-unavailable","missing-or-stale-series","outside-plausible-band","insufficient-median-history","no-local-yield"]}
+
+stdout | tests/unit/value/analyze.test.ts > leaves value unavailable for a not-found local bond series without substituting a foreign yield
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > logs each failed company's error and still writes successful companies
+analyze: 1 written, 0 unchanged, 1 failed
+
+stdout | tests/unit/value/analyze.test.ts > calibrates BHC.US through the BHC.TO primary analysis
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > calibrates BHC.US through the BHC.TO primary analysis
+Confusion counts: {"truePositive":0,"trueNegative":1,"falsePositive":0,"falseNegative":0,"unclear":0,"missing":0,"exception":0}
+
+stdout | tests/unit/value/analyze.test.ts > R3 derives the $1 test from fiscal-end monthly closes through the corpus stage
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > R3 derives the $1 test from fiscal-end monthly closes through the corpus stage
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > R3 derives the $1 test from fiscal-end monthly closes through the corpus stage
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > R3 uses the inverse valuation FX for historical market caps, including pence
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > M1 runs the $1 test through the stage with the real KO corpus and 120 monthly closes
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > C5 reclassifies cached Credit Services enrichment with lending assets
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > C4 analyze and jev-sample skip unsafe IDs and process ampersand IDs
+analyze: 4 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > C4 analyze and jev-sample skip unsafe IDs and process ampersand IDs
+jev-sample: 25 questions, up to 30 answers each
+
+stdout | tests/unit/value/analyze.test.ts > C5 clears the stale bank kind of a payment network in saved analysis
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > reanalyzes explicitly selected cached companies outside the universe without repopulating it
+analyze: 0 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > reanalyzes explicitly selected cached companies outside the universe without repopulating it
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > V3/V4 reads raw valuation inputs for old corpus files and invalidates their fingerprint
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > V3/V4 reads raw valuation inputs for old corpus files and invalidates their fingerprint
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > W3/W5 refreshes cached annual currency and balance mappings from raw periods during analysis
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > W3/W5 refreshes cached annual currency and balance mappings from raw periods during analysis
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > revalues on a 0.1pp yield bucket change, but skips noise in the same bucket
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > revalues on a 0.1pp yield bucket change, but skips noise in the same bucket
+analyze: 0 written, 1 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > revalues on a 0.1pp yield bucket change, but skips noise in the same bucket
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/logo-round-twelve.test.ts > uses the ADR website chain for an ESEF issuer with no enrichment cache
+{
+  total: 1,
+  checked: 1,
+  cached: 0,
+  recovered: 1,
+  unavailable: 0,
+  sources: { 'official-icon': 1 }
+}
+
+ ✓ tests/unit/value/logo-round-twelve.test.ts (2 tests) 5580ms
+   ✓ uses the ADR website chain for an ESEF issuer with no enrichment cache  5577ms
+stdout | tests/unit/value/analyze.test.ts > loads statement payloads only for selected jobs, so later files cannot abort a limited run
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > preserves unchanged nonmember evidence inputs when only the analysis clock changes
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > preserves unchanged nonmember evidence inputs when only the analysis clock changes
+analyze: 1 written, 0 unchanged, 0 failed
+
+ ✓ tests/unit/value/analyze.test.ts (50 tests) 5837ms
+   ✓ ignores market cap and unused metadata changes but invalidates analysis inputs  1202ms
+   ✓ maps ISO GB to UK10Y while leaving other bond country codes unchanged  390ms
+stdout | tests/unit/value/universe.test.ts > writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs and converts caps
+universe: 4 companies; counts per country {"US":2,"NL":1,"HK":1}
+
+stdout | tests/unit/value/universe.test.ts > writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs and converts caps
+universe: 4 companies; counts per country {"US":2,"NL":1,"HK":1}
+
+stdout | tests/unit/value/universe.test.ts > nulls standalone GDR caps and caps above 1.3x the largest US company before sorting
+universe: 5 companies; counts per country {"GB":4,"US":1}
+
+stdout | tests/unit/value/universe.test.ts > passes cached class volumes and ADR metadata into collapse and admits Brazilian PN
+universe: 4 companies; counts per country {"SE":1,"ES":1,"BR":2}
+
+ ✓ tests/unit/value/universe.test.ts (12 tests) 4154ms
+   ✓ reads daily API usage and rejects a missing usage counter  398ms
+   ✓ writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs and converts caps  2516ms
+   ✓ nulls standalone GDR caps and caps above 1.3x the largest US company before sorting  994ms
+ ✓ tests/unit/value/coverage-lock.test.ts (1 test) 5091ms
+   ✓ waits without changing a live nightly lock and releases only its own lock after handoff  5090ms
+ ✓ tests/unit/value/daily-runner.test.ts (10 tests) 3621ms
+   ✓ runs and publishes fresh analysis after yields and thesis exhaust their budgets  408ms
+   ✓ does not hide a non-budget thesis failure  383ms
+   ✓ runs the live check after prices and publish, including a partial prices exit  413ms
+   ✓ passes a UTC-cycle-specific ledger to price-story instead of inheriting an old worktree ledger  372ms
+   ✓ reserves both fundamentals passes and runs analysis before optional news  395ms
+   ✓ retains prior released analysis when analysis itself fails  380ms
+   ✓ still analyzes after non-budget yields failures  363ms
+   ✓ fetches logos before publication on normal and exhausted-budget cycles  658ms
+ ✓ tests/unit/value/publish-invariants.test.ts (23 tests) 2797ms
+ ✓ tests/unit/value/download-order.test.ts (8 tests) 3564ms
+   ✓ uses a reported Yahoo market cap for ADRs instead of multiplying the ADS price by underlying shares  529ms
+   ✓ leaves an unverified ADR share basis unknown when a reported cap is absent  1005ms
+   ✓ fetches verified shares even when Yahoo also reports cap, and rejects an ADR basis mismatch  2009ms
+ ✓ tests/unit/value/nightly-entrypoint.test.ts (1 test) 3148ms
+   ✓ the real CLI stops fundamentals at its ceiling and leaves yields and analysis runnable  3147ms
+ ❯ tests/unit/value/live-check.test.ts (5 tests | 5 skipped) 29ms
+   ↓ uses a real browser to step back and load the deep link
+   ↓ rejects a broken step despite a successful page response
+   ↓ rejects a broken deep-link despite a successful page response
+   ↓ rejects a broken rows despite a successful page response
+   ↓ rejects a broken headline despite a successful page response
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+KO.US: 30 annual periods, integrity ok
+fundamentals summary: selected=1; attempted=1; written=1; yahoo=0; failed=0; deferred=0
+
+stderr | tests/unit/value/post-publish.test.ts > reverts the failed pushed snapshot (orphan=false), republishes and revalidates the prior tree
+CRITICAL: live time travel/revalidation failed for fc111d4e9070ef2c573f16b675b8fb0655f0efd6; reverting last publication
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+
+stderr | tests/unit/value/post-publish.test.ts > reverts the failed pushed snapshot (orphan=true), republishes and revalidates the prior tree
+CRITICAL: live time travel/revalidation failed for 4992c29e1d30520aa4bfa35ee3d3350ba7993d3b; reverting last publication
+
+stdout | tests/unit/value/post-publish.test.ts > checks a successful publication once and clears the durable receipt
+live-check: 241182bb3abe51faca3d61bde1f1ccde35c0bfe5 passed quarter-back and 2018Q3
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+KO.US: 30 annual periods, integrity ok
+fundamentals summary: selected=1; attempted=1; written=1; yahoo=0; failed=0; deferred=0
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+
+stdout | tests/unit/value/post-publish.test.ts > does not check or revert a failed push
+live-check: push did not reach origin; retained prior publication
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+KO.US: 30 annual periods, integrity ok
+fundamentals summary: selected=1; attempted=1; written=1; yahoo=0; failed=0; deferred=0
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+
+stderr | tests/unit/value/post-publish.test.ts > rolls back when revalidation fails, without declaring an unvalidated site healthy
+CRITICAL: live time travel/revalidation failed for cf5b7567f87803137097fa0d3c954ebae4cfe88f; reverting last publication
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+KO.US: 30 annual periods, integrity ok
+fundamentals summary: selected=1; attempted=1; written=1; yahoo=0; failed=0; deferred=0
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+fundamentals budget ceiling reached: used=99991; ceiling=100000; deferring paid backlog
+fundamentals summary: selected=1; attempted=0; written=0; yahoo=0; failed=0; deferred=1
+
+stderr | tests/unit/value/post-publish.test.ts > can restore the exact pre-dedupe snapshot if publication verification fails
+CRITICAL: live time travel/revalidation failed for aa4dd735f49a6d41ccde5e11f267e6ec401acde5; reverting last publication
+
+ ✓ tests/unit/value/normalize.test.ts (8 tests) 2878ms
+   ✓ persists raw data, merges company metadata and refreshes on every rolling pass, including when forced  2756ms
+ ✓ tests/unit/value/post-publish.test.ts (7 tests) 2257ms
+   ✓ reverts the failed pushed snapshot (orphan=false), republishes and revalidates the prior tree  350ms
+   ✓ reverts the failed pushed snapshot (orphan=true), republishes and revalidates the prior tree  361ms
+   ✓ refuses to revert if another writer advanced the remote  330ms
+   ✓ rolls back when revalidation fails, without declaring an unvalidated site healthy  337ms
+   ✓ can restore the exact pre-dedupe snapshot if publication verification fails  435ms
+ ✓ tests/unit/value/report-transport.test.ts (3 tests) 2059ms
+   ✓ ESEF retries a truncated report body before returning a complete buffered response  1033ms
+   ✓ SEC retries a truncated report body before returning a complete buffered response  1017ms
+stderr | tests/unit/value/valuation-round-4.test.ts > maps Swiss ISO CH to SW, rejecting an implausible close in favour of the median
+yields: CH {"version":3,"date":"2026-10-05","yield":0.01,"source":"EODHD 30-day median","symbol":"SW10Y.GBOND","observedAt":"2026-10-05","rawYield":0.060599999999999994,"median":0.01,"secondSource":null,"flags":["symbol-map:CH->SW","outside-plausible-band","median-outlier"]}
+
+stderr | tests/unit/value/valuation-round-4.test.ts > uses a documented Swiss default when the entire series is broken
+yields: CH {"version":3,"date":"2026-10-05","yield":0.01,"source":"country default (2026-09-30)","symbol":"SW10Y.GBOND","observedAt":null,"rawYield":0.060599999999999994,"median":0.060599999999999994,"secondSource":null,"flags":["symbol-map:CH->SW","outside-plausible-band","country-default"]}
+
+stderr | tests/unit/value/valuation-round-4.test.ts > rejects an in-band spike against the 30-day median
+yields: DE {"version":3,"date":"2026-10-05","yield":0.03,"source":"EODHD 30-day median","symbol":"DE10Y.GBOND","observedAt":"2026-10-05","rawYield":0.07,"median":0.03,"secondSource":null,"flags":["median-outlier"]}
+
+ ✓ tests/unit/value/coverage-release.test.ts (5 tests) 2125ms
+   ✓ treats previously released additions as baseline on a later coverage batch  2108ms
+stderr | tests/unit/value/valuation-round-4.test.ts > cross-checks US with Yahoo TNX in percent, caches daily, and refreshes next day
+yields: US {"version":3,"date":"2026-10-05","yield":0.042,"source":"Yahoo ^TNX","symbol":"US10Y.GBOND","observedAt":null,"rawYield":0.053,"median":0.053,"secondSource":0.042,"flags":["second-source-disagreement"]}
+
+stderr | tests/unit/value/valuation-round-4.test.ts > cross-checks US with Yahoo TNX in percent, caches daily, and refreshes next day
+yields: US {"version":3,"date":"2026-10-05","yield":0.042,"source":"Yahoo ^TNX","symbol":"US10Y.GBOND","observedAt":null,"rawYield":0.053,"median":0.053,"secondSource":0.042,"flags":["second-source-disagreement"]}
+
+stderr | tests/unit/value/valuation-round-4.test.ts > does not accept stale quotes or invent a local yield for an unsupported country
+yields: ZZ {"version":3,"date":"2026-10-05","yield":null,"source":"unavailable","symbol":"ZZ10Y.GBOND","observedAt":null,"rawYield":null,"median":null,"secondSource":null,"flags":["missing-or-stale-series","outside-plausible-band","insufficient-median-history","no-local-yield"]}
+
+ ✓ tests/unit/value/valuation-round-4.test.ts (23 tests) 1831ms
+   ✓ cross-checks US with Yahoo TNX in percent, caches daily, and refreshes next day  402ms
+ ✓ tests/unit/value/italy-client.test.ts (4 tests) 1684ms
+   ✓ follows every filing page, deduplicates filing IDs and orders restatements chronologically  687ms
+   ✓ resolves an exact recorded legal name when no ISIN is held  311ms
+   ✓ retries an interrupted body without caching a partial response  666ms
+ ✓ tests/unit/value/italy-stage.test.ts (4 tests) 1557ms
+   ✓ retains a listed company and its prices when no ESEF filing is available  424ms
+   ✓ preserves recorded bf history with no usable current quote  515ms
+   ✓ preserves recorded illa history with no usable current quote  505ms
+ ✓ tests/unit/value/jev.test.ts (27 tests) 1133ms
+11:34:02 PM [vite] (ssr) warning: invalid import "../../../scripts/value/stages/${name}". A file extension must be included in the static part of the import. For example: import(`./foo/${bar}.js`).
+  Plugin: vite:dynamic-import-vars
+  File: /mnt/HC_Volume_107024928/value-jev/tests/unit/value/renormalize.test.ts
+stdout | tests/unit/value/renormalize.test.ts > rebuilds every raw ID offline, preserves fetchedAt, skips fresh files and leaves no temporary files
+renormalize: 2 written, 1 skipped (unchanged, recent or changed raw); 0 failed integrity
+integrity failure breakdown (companies; reasons may overlap): {}
+split-adjusted: 0 companies []
+
+stdout | tests/unit/value/renormalize.test.ts > skips a raw file replaced during normalization
+renormalize: 0 written, 1 skipped (unchanged, recent or changed raw); 0 failed integrity
+integrity failure breakdown (companies; reasons may overlap): {}
+split-adjusted: 0 companies []
+
+stdout | tests/unit/value/renormalize.test.ts > rebuilds EDINET from raw with cached prices, restoring prior false adjustments offline
+renormalize-edinet: 2 written, 1 missing cached issuer years or fundamentals
+split-adjusted: 1 companies ["YES.JP"]
+
+stdout | tests/unit/value/renormalize.test.ts > rebuilds EDINET from raw with cached prices, restoring prior false adjustments offline
+renormalize-edinet: 2 written, 1 missing cached issuer years or fundamentals
+split-adjusted: 1 companies ["YES.JP"]
+
+stdout | tests/unit/value/renormalize.test.ts > rebuilds JP integrity from untruncated EDINET years without using EODHD or the network
+renormalize: 1 written, 0 skipped (unchanged, recent or changed raw); 0 failed integrity
+integrity failure breakdown (companies; reasons may overlap): {}
+split-adjusted: 0 companies []
+
+stdout | tests/unit/value/renormalize.test.ts > preserves existing integrity notes when an older JP checkpoint has no raw years
+renormalize: 1 written, 0 skipped (unchanged, recent or changed raw); 0 failed integrity
+integrity failure breakdown (companies; reasons may overlap): {}
+split-adjusted: 0 companies []
+
+stdout | tests/unit/value/renormalize.test.ts > renormalize applies only price-corroborated EDINET splits and preserves raw years
+renormalize: 2 written, 0 skipped (unchanged, recent or changed raw); 1 failed integrity
+integrity failure breakdown (companies; reasons may overlap): {"fewer than 7 annual periods":1}
+split-adjusted: 1 companies ["YES.JP"]
+
+stdout | tests/unit/value/buy-consistency.test.ts > refreshes the published flags and funnel in the same price snapshot
+prices summary: 1/1 fresh (100.00%); Yahoo 0; failed exchanges none; missing 0; status=ok
+
+stdout | tests/unit/value/renormalize.test.ts > renormalize applies only price-corroborated EDINET splits and preserves raw years
+renormalize: 0 written, 2 skipped (unchanged, recent or changed raw); 1 failed integrity
+integrity failure breakdown (companies; reasons may overlap): {"fewer than 7 annual periods":1}
+split-adjusted: 1 companies ["YES.JP"]
+
+stdout | tests/unit/value/renormalize.test.ts > renormalize-edinet applies only price-corroborated EDINET splits and preserves raw years
+renormalize-edinet: 2 written, 0 missing cached issuer years or fundamentals
+split-adjusted: 1 companies ["YES.JP"]
+
+stdout | tests/unit/value/renormalize.test.ts > renormalize-edinet applies only price-corroborated EDINET splits and preserves raw years
+renormalize-edinet: 2 written, 0 missing cached issuer years or fundamentals
+split-adjusted: 1 companies ["YES.JP"]
+
+stdout | tests/unit/value/renormalize.test.ts > reparses every cached filing in submission order instead of reusing stale issuer mappings
+renormalize-edinet: 1 written, 0 missing cached issuer years or fundamentals
+split-adjusted: 0 companies []
+
+stdout | tests/unit/value/renormalize.test.ts > does not overwrite Yahoo fallback fundamentals with an older EODHD cache
+renormalize: 0 written, 1 skipped (unchanged, recent or changed raw); 0 failed integrity
+integrity failure breakdown (companies; reasons may overlap): {}
+split-adjusted: 0 companies []
+
+ ✓ tests/unit/value/renormalize.test.ts (9 tests) 993ms
+   ✓ rebuilds EDINET from raw with cached prices, restoring prior false adjustments offline  341ms
+ ✓ tests/unit/value/buy-consistency.test.ts (7 tests) 1165ms
+   ✓ refreshes the published flags and funnel in the same price snapshot  1078ms
+ ✓ tests/unit/value/design-round-twelve.test.ts (5 tests) 921ms
+   ✓ hides the about line when a dossier has no real description  608ms
+ ✓ tests/unit/value/logo-fetch.test.ts (2 tests) 1014ms
+   ✓ identifies the bot to Wikimedia and stops sending requests during Retry-After  1008ms
+ ✓ tests/unit/value/japan-stage.test.ts (9 tests) 525ms
+   ✓ does not cache API error payloads or leak the API key in errors  336ms
+ ✓ tests/unit/value/japan-4.test.ts (14 tests) 780ms
+ ✓ tests/unit/value/status-entrypoint.test.ts (2 tests) 631ms
+   ✓ runs the status CLI without web-only dependencies ({"conditions":[]})  338ms
+ ✓ tests/unit/value/search.test.ts (19 tests) 572ms
+   ✓ adaptive shards > splits recursively, keeps bounded market-cap heads and remaps aliases  465ms
+stdout | tests/unit/value/price-history.test.ts > records monthly closes in order with the requested ten-year URL and skips fresh history
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > records monthly closes in order with the requested ten-year URL and skips fresh history
+price-history: 0 written
+price-history: 0/0 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > records monthly closes in order with the requested ten-year URL and skips fresh history
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > refreshes expired rows, filters before limit, and switches to Yahoo at the shared daily budget
+price-history: 2 written
+price-history: 0/2 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > uses Japanese local month and Yahoo ten-year monthly closes without EODHD budget calls
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > skips bad provider responses without replacing a cached file
+price-history: 0 written
+price-history: 1/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > continues through all companies despite consecutive failures and rejects above 20%
+price-history: 1 written
+price-history: 41/42 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > counts failed EODHD attempts against the daily budget
+price-history: 0 written
+price-history: 2/2 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > skips a failed Yahoo request and writes the next company
+price-history: 1 written
+price-history: 1/2 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > C7 falls back immediately on an exhausted budget and uses padded HK symbols
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > continues after malformed cached history metadata
+price-history: 4 written
+price-history: 1/5 companies failed
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING0.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING1.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING2.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING3.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING4.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING5.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING6.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING7.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING8.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING9.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING10.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING11.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING12.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING13.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING14.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING15.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING16.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING17.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING18.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING19.JP: Yahoo history unavailable
+
+stderr | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+MISSING20.JP: Yahoo history unavailable
+
+stdout | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+price-history: 1 written
+price-history: 0/22 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > records unavailable Japanese symbols without starving later history or replacing old prices
+price-history: 0 written
+price-history: 0/0 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > limits price-history requests after ranking Western access then market cap
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > routes compatibility exchange EXAMPLE.NZ to Yahoo even with the paid history budget exhausted
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > routes compatibility exchange EXAMPLE.MI to Yahoo even with the paid history budget exhausted
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > honors VALUE_NO_EODHD for history without paid usage checks or reservations
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > caches a confirmed compatibility-exchange miss with its reason, preserves prices, and retries after the refresh window
+price-history: 0 written
+price-history: 0/1 companies failed
+
+stderr | tests/unit/value/price-history.test.ts > caches a confirmed compatibility-exchange miss with its reason, preserves prices, and retries after the refresh window
+MISSING.NZ: Yahoo history unavailable
+
+stdout | tests/unit/value/price-history.test.ts > caches a confirmed compatibility-exchange miss with its reason, preserves prices, and retries after the refresh window
+price-history: 0 written
+price-history: 0/0 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > caches a confirmed compatibility-exchange miss with its reason, preserves prices, and retries after the refresh window
+price-history: 1 written
+price-history: 0/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > does not cache Yahoo HTTP 429 as a permanent miss
+price-history: 0 written
+price-history: 1/1 companies failed
+
+stdout | tests/unit/value/price-history.test.ts > does not cache Yahoo HTTP 500 as a permanent miss
+price-history: 0 written
+price-history: 1/1 companies failed
+
+ ✓ tests/unit/value/price-history.test.ts (41 tests) 266ms
+ ✓ tests/unit/value/design-snapshot.test.ts (1 test) 372ms
+   ✓ freezes published data without mixing in local analyses or seed prices  370ms
+stdout | tests/unit/value/selected-sources.test.ts > refreshes a weekly mover even when its recent source set is unchanged
+price-story 1/1 T.US price=true risk=false pricing=false news=cached
+
+stdout | tests/unit/value/selected-sources.test.ts > refreshes a weekly mover even when its recent source set is unchanged
+price-story: 1/1 processed; published universe 1; weekly movers 1
+
+ ✓ tests/unit/value/selected-sources.test.ts (53 tests) 359ms
+ ✓ tests/unit/value/reviewed-price-history.test.ts (7 tests) 534ms
+   ✓ rejects a second source that also conflicts rather than installing another unreviewed basis  502ms
+ ✓ tests/unit/value/logo-sources.test.ts (17 tests) 455ms
+ ✓ tests/unit/value/enrichment-round7.test.ts (6 tests) 461ms
+ ✓ tests/unit/value/budget-exit.test.ts (1 test) 474ms
+   ✓ the real CLI reports exhausted yields as exit 75 before making an HTTP request  472ms
+stdout | tests/unit/value/japan.test.ts > reports preserves EDINET prose even when forced, with no SEC or ESEF requests
+reports: 0/1 companies failed
+
+ ✓ tests/unit/value/japan.test.ts (25 tests) 461ms
+ ✓ tests/unit/value/japan-full-statements.test.ts (13 tests) 442ms
+ ✓ tests/unit/value/esef-css.test.ts (1 test) 411ms
+   ✓ extracts headings promptly when CSS includes large embedded images  409ms
+stdout | tests/unit/value/existing-analysis-publish.test.ts > budget fallback publishes the released tree without loading changed or invalid local analysis
+publish: retained existing released analysis after research budget exhaustion
+
+ ✓ tests/unit/value/existing-analysis-publish.test.ts (1 test) 304ms
+   ✓ budget fallback publishes the released tree without loading changed or invalid local analysis  303ms
+stdout | tests/unit/value/japan-4-stage.test.ts > reuses a recorded H1 ZIP through the fetch stage and offline renormalization, preserving annual history on replay
+japan-interim: 1 processed, 0 failed
+
+stdout | tests/unit/value/japan-4-stage.test.ts > reuses a recorded H1 ZIP through the fetch stage and offline renormalization, preserving annual history on replay
+renormalize-edinet: 1 written, 0 missing cached issuer years or fundamentals
+split-adjusted: 0 companies []
+
+stdout | tests/unit/value/japan-4-stage.test.ts > reuses a recorded H1 ZIP through the fetch stage and offline renormalization, preserving annual history on replay
+renormalize-edinet: 1 written, 0 missing cached issuer years or fundamentals
+split-adjusted: 0 companies []
+
+ ✓ tests/unit/value/japan-4-stage.test.ts (1 test) 266ms
+stdout | tests/unit/value/logo-new-members.test.ts > fetches an unpublished in-scope company and resumes approved assets without network
+{
+  total: 1,
+  checked: 1,
+  cached: 0,
+  recovered: 1,
+  unavailable: 0,
+  sources: { manual: 1 }
+}
+
+stdout | tests/unit/value/logo-new-members.test.ts > fetches an unpublished in-scope company and resumes approved assets without network
+{
+  total: 1,
+  checked: 0,
+  cached: 1,
+  recovered: 0,
+  unavailable: 0,
+  sources: {}
+}
+
+ ✓ tests/unit/value/logo-new-members.test.ts (1 test) 357ms
+   ✓ fetches an unpublished in-scope company and resumes approved assets without network  356ms
+ ✓ tests/unit/value-india.test.ts (26 tests) 268ms
+stderr | tests/unit/value/fundamentals-stage.test.ts > continues the member backlog after a failed company
+fundamentals: BAD.US EODHD 404; falling back to Yahoo annual statements
+
+stderr | tests/unit/value/fundamentals-stage.test.ts > continues the member backlog after a failed company
+fundamentals: BAD.US failed; continuing backlog
+
+stderr | tests/unit/value/fundamentals-stage.test.ts > stores Yahoo annual fallback for RELIANCE.NZ with source evidence
+fundamentals: RELIANCE.NZ EODHD 404; falling back to Yahoo annual statements
+
+stderr | tests/unit/value/fundamentals-stage.test.ts > does not turn provider authentication failures into Yahoo fallback
+fundamentals: BAD.US failed; continuing backlog
+
+stderr | tests/unit/value/fundamentals-stage.test.ts > rejects an incompatible reporting currency refresh before replacing source records
+fundamentals: FX.US failed; continuing backlog
+
+ ✓ tests/unit/value/fundamentals-stage.test.ts (21 tests) 277ms
+ ✓ tests/unit/value/design-round-6.test.ts (8 tests) 332ms
+ ✓ tests/unit/value-format-surfaces.test.ts (6 tests) 275ms
+ ✓ tests/unit/value/thesis-recorded.test.ts (24 tests) 257ms
+ ✓ tests/unit/value/logo-validation.test.ts (6 tests) 195ms
+ ✓ tests/unit/value/checking.test.ts (6 tests) 216ms
+ ✓ tests/unit/value/dossier-currency.test.ts (9 tests) 229ms
+ ✓ tests/unit/value/italy.test.ts (14 tests) 172ms
+ ✓ tests/unit/value/check-universe.test.ts (29 tests) 197ms
+ ✓ tests/unit/value/logo-deep.test.ts (3 tests) 210ms
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis: eligible=1 cached=0 due=1 selected=1 deferred=0 callLimit=240
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis TEST.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis: Jev calls=1/240; selected=1
+thesis: 1 candidates processed; results in thesis/
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis: eligible=1 cached=1 due=0 selected=0 deferred=0 callLimit=240
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis: Jev calls=0/240; selected=0
+thesis: 0 candidates processed; results in thesis/
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis: eligible=1 cached=1 due=0 selected=0 deferred=0 callLimit=240
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis: Jev calls=0/240; selected=0
+thesis: 0 candidates processed; results in thesis/
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis: eligible=1 cached=0 due=1 selected=1 deferred=0 callLimit=240
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis TEST.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis: Jev calls=1/240; selected=1
+thesis: 1 candidates processed; results in thesis/
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis: eligible=1 cached=0 due=1 selected=1 deferred=0 callLimit=240
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis TEST.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > makes no provider calls for unchanged inputs, refreshes changed inputs and 31-day-old results
+thesis: Jev calls=1/240; selected=1
+thesis: 1 candidates processed; results in thesis/
+
+stdout | tests/unit/value/thesis-stage.test.ts > filters cached and out-of-scope companies before applying the company limit
+thesis: eligible=1 cached=0 due=1 selected=1 deferred=0 callLimit=240
+
+stdout | tests/unit/value/thesis-stage.test.ts > filters cached and out-of-scope companies before applying the company limit
+thesis TEST.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > filters cached and out-of-scope companies before applying the company limit
+thesis: Jev calls=1/240; selected=1
+thesis: 1 candidates processed; results in thesis/
+
+stdout | tests/unit/value/thesis-stage.test.ts > filters cached and out-of-scope companies before applying the company limit
+thesis: eligible=2 cached=1 due=1 selected=1 deferred=0 callLimit=240
+
+stdout | tests/unit/value/thesis-stage.test.ts > filters cached and out-of-scope companies before applying the company limit
+thesis NEXT.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > filters cached and out-of-scope companies before applying the company limit
+thesis: Jev calls=1/240; selected=1
+thesis: 1 candidates processed; results in thesis/
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis: eligible=15 cached=0 due=15 selected=12 deferred=3 callLimit=240
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C0.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C1.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C10.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C11.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C12.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C13.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C14.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C2.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C3.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C4.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C5.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis C6.US: ; 0 coverage gaps; 0 identical recorded calls reused
+
+stdout | tests/unit/value/thesis-stage.test.ts > caps default work at twelve companies and reports the actual call count
+thesis: Jev calls=12/240; selected=12
+thesis: 12 candidates processed; results in thesis/
+
+stdout | tests/unit/value/thesis-stage.test.ts > stops at the Jev call budget without saving a partial thesis
+thesis: eligible=1 cached=0 due=1 selected=1 deferred=0 callLimit=240
+
+stdout | tests/unit/value/thesis-stage.test.ts > stops at the Jev call budget without saving a partial thesis
+thesis: Jev calls=240/240; selected=1
+
+ ✓ tests/unit/value/thesis-stage.test.ts (4 tests) 60ms
+ ✓ tests/unit/value/judgement.test.ts (17 tests) 152ms
+ ✓ tests/unit/value/financial-quality.test.ts (28 tests) 144ms
+ ✓ tests/unit/value/acquisition-capital.test.ts (11 tests) 156ms
+ ✓ tests/unit/value/investment-nav.test.ts (21 tests) 166ms
+ ✓ tests/unit/value/search-round7.test.ts (2 tests) 149ms
+ ✓ tests/unit/value/valuation-methodology.test.ts (24 tests) 132ms
+ ✓ tests/unit/value/story-disk.test.ts (3 tests) 83ms
+ ✓ tests/unit/value-since-return.test.ts (6 tests) 115ms
+ ✓ tests/unit/value/coverage-integration.test.ts (1 test) 65ms
+ ✓ tests/unit/value/eodhd-reset.test.ts (6 tests) 130ms
+ ✓ tests/unit/value/logo-manual.test.ts (3 tests) 118ms
+ ✓ tests/unit/value/completeness.test.ts (34 tests) 98ms
+ ✓ tests/unit/value/quality-ltm.test.ts (17 tests) 99ms
+ ✓ tests/unit/agent-api/client.test.ts (1 test) 108ms
+ ✓ tests/unit/value/thesis-production.test.ts (7 tests) 113ms
+ ✓ tests/unit/value/dedupe.test.ts (14 tests) 58ms
+ ✓ tests/unit/value/integrity.test.ts (30 tests) 70ms
+ ✓ tests/unit/value/design-round-ten-b.test.ts (6 tests) 68ms
+ ✓ tests/unit/value-cross-surface.test.ts (17 tests) 89ms
+ ✓ tests/unit/value/memo-pdf-order.test.ts (1 test) 50ms
+ ✓ tests/unit/value/complete-2.test.ts (29 tests) 67ms
+stdout | tests/unit/value/companies.test.ts > writes enriched descriptions to business.txt for description-only reports
+reports: 0/1 companies failed
+
+stdout | tests/unit/value/companies.test.ts > C4 shared company loading and reports skip bad IDs and allow ampersands
+reports: 0/4 companies failed
+
+stdout | tests/unit/value/companies.test.ts > reports continues with the universe description when company enrichment is malformed
+reports: 1/5 companies failed
+
+stdout | tests/unit/value/companies.test.ts > spends a limited report run on Western access first, then market cap
+reports: 0/1 companies failed
+
+ ✓ tests/unit/value/companies.test.ts (16 tests) 46ms
+ ✓ tests/unit/value/esef-share-fallback.test.ts (3 tests) 81ms
+ ✓ tests/unit/value/history.test.ts (11 tests) 59ms
+ ✓ tests/unit/parsers.test.ts (9 tests) 58ms
+ ✓ tests/unit/inbound.test.ts (12 tests) 66ms
+ ✓ tests/unit/value/verdict-attribution.test.ts (5 tests) 47ms
+ ✓ tests/unit/value/components.test.ts (3 tests) 56ms
+ ✓ tests/unit/no-slop.test.ts (16 tests) 60ms
+ ✓ tests/unit/value/final-fixes.test.ts (17 tests) 55ms
+ ✓ tests/unit/value/calibration-round-1.test.ts (40 tests) 53ms
+ ✓ tests/unit/agent-api/http.test.ts (3 tests) 62ms
+stdout | tests/unit/value/index-membership-stage.test.ts > uses the parsed dated fallback without spending beyond the remaining budget
+S&P 500: 1/1 mapped; 0 excluded; 0 unmatched
+index-membership: 1 companies; complete=true; EODHD ledger=99997
+
+stdout | tests/unit/value/index-membership-stage.test.ts > keeps unmatched evidence and fails the coverage gate
+S&P 500: 0/1 mapped; 0 excluded; 1 unmatched
+index-membership: 0 companies; complete=false; EODHD ledger=99997
+
+stdout | tests/unit/value/index-membership-stage.test.ts > retains a verified missing listing identity without rewriting the upstream universe
+S&P 500: 1/1 mapped; 0 excluded; 0 unmatched
+index-membership: 1 companies; complete=true; EODHD ledger=99997
+
+stdout | tests/unit/value/index-membership-stage.test.ts > uses all cached exchanges to identify constituents absent from the home exchange cache
+S&P 500: 1/1 mapped; 0 excluded; 0 unmatched
+index-membership: 1 companies; complete=true; EODHD ledger=99997
+
+stdout | tests/unit/value/index-membership-stage.test.ts > audits excluded fund rows as resolved while omitting their site memberships
+S&P 500: 0/1 mapped; 1 excluded; 0 unmatched
+index-membership: 0 companies; complete=true; EODHD ledger=99997
+
+stdout | tests/unit/value/index-membership-stage.test.ts > does not classify an operating issuer using a colliding vendor ETF ticker
+S&P 500: 1/1 mapped; 0 excluded; 0 unmatched
+index-membership: 1 companies; complete=true; EODHD ledger=99997
+
+stdout | tests/unit/value/index-membership-stage.test.ts > keeps a missing issuer unmatched when its vendor mnemonic collides with an unrelated ETF
+S&P 500: 0/1 mapped; 0 excluded; 1 unmatched
+index-membership: 0 companies; complete=false; EODHD ledger=99997
+
+ ✓ tests/unit/value/index-membership-stage.test.ts (7 tests) 58ms
+ ✓ tests/unit/value/completion-retention.test.ts (23 tests) 53ms
+ ✓ tests/unit/value/site-round1.test.ts (4 tests) 43ms
+ ✓ tests/unit/value/flags-inline.test.ts (4 tests) 42ms
+ ✓ tests/unit/value/western.test.ts (37 tests) 65ms
+ ✓ tests/unit/value/performance.test.ts (15 tests) 52ms
+stdout | tests/unit/value/blob-publish.test.ts > uploads byte-identical allowed files under a version before switching the pointer
+blob publish: 1 files, 13 bytes, version f42ca84c3fb6e9e3dbf9ffadc495ba050fa6e8319f2259e74d853d0c01398582
+
+stdout | tests/unit/value/blob-publish.test.ts > changes version when bytes change and safely resumes an already active snapshot
+blob publish: 1 files, 13 bytes, version f42ca84c3fb6e9e3dbf9ffadc495ba050fa6e8319f2259e74d853d0c01398582
+
+stdout | tests/unit/value/blob-publish.test.ts > changes version when bytes change and safely resumes an already active snapshot
+blob publish: 1 files, 2 bytes, version 45f058a27b5d735f02499616380526b62cd3d4e7fcfe6bf0d298d9567d725ed0
+
+stdout | tests/unit/value/blob-publish.test.ts > retains hashed files in a shared immutable namespace as well as the versioned snapshot
+blob publish: 2 files, 25 bytes, version 45f790d4bae45db957ebe55165a81d47e263deb9797e7127cdadf997419345c2
+
+ ✓ tests/unit/value/blob-publish.test.ts (4 tests) 40ms
+ ✓ tests/unit/agent-api/payment.test.ts (10 tests) 71ms
+ ✓ tests/unit/value/valuation-round-3.test.ts (17 tests) 50ms
+ ✓ tests/unit/value/logo-discovery.test.ts (11 tests) 72ms
+ ✓ tests/unit/value/http.test.ts (9 tests) 52ms
+ ✓ tests/unit/value-design-sixteen.test.ts (5 tests) 48ms
+ ✓ tests/unit/value/tests.test.ts (36 tests) 54ms
+ ✓ tests/unit/unified-format.test.ts (5 tests) 29ms
+ ✓ tests/unit/value/fix-round-1.test.ts (21 tests) 60ms
+ ✓ tests/unit/value/calibration-freeze.test.ts (1 test) 11ms
+ ✓ tests/unit/agent-api/data.test.ts (22 tests) 44ms
+ ✓ tests/unit/value/logo.test.ts (5 tests) 49ms
+ ✓ tests/unit/value/quarterly.test.ts (14 tests) 62ms
+ ✓ tests/unit/value/universe-collapse.test.ts (78 tests) 57ms
+ ✓ tests/unit/value/rule-reading.test.ts (9 tests | 1 skipped) 30ms
+ ✓ tests/unit/value/polish.test.ts (12 tests) 43ms
+ ✓ tests/unit/value/design-round-4.test.ts (5 tests) 43ms
+stdout | tests/unit/value-india-write.test.ts > writes only the selected canonical India fundamentals and its single cache; analysis and other issuers remain byte-identical
+TCS.NSE: obtained=1, retained=1, balance=1, cashFlow=1, written=true, failures=0
+
+ ✓ tests/unit/value-india-write.test.ts (1 test) 42ms
+ ✓ tests/unit/value/snapshots-round7.test.ts (10 tests) 56ms
+ ✓ tests/unit/value/fix-five.test.ts (9 tests) 58ms
+ ✓ tests/unit/value/brand.test.ts (2 tests) 36ms
+ ✓ tests/unit/value/design-round-nine.test.ts (2 tests) 48ms
+ ✓ tests/unit/value/viz.test.ts (7 tests) 58ms
+ ✓ tests/unit/value/owner-memo.test.ts (25 tests) 29ms
+ ✓ tests/unit/value/universe-round6.test.ts (42 tests) 36ms
+stderr | tests/unit/value/resilient-prices.test.ts > recovers a recorded NSE bulk 404 with Yahoo and continues later exchanges
+prices: exchange NSE failed: EODHD HTTP 404; falling back to Yahoo
+
+stdout | tests/unit/value/resilient-prices.test.ts > recovers a recorded NSE bulk 404 with Yahoo and continues later exchanges
+prices summary: 2/2 fresh (100.00%); Yahoo 1; failed exchanges NSE; missing 0; status=ok
+
+stdout | tests/unit/value/resilient-prices.test.ts > persists successes and requires >=95 percent fresh closes (1 failed)
+prices summary: 19/20 fresh (95.00%); Yahoo 0; failed exchanges none; missing 1; status=ok
+
+stderr | tests/unit/value/resilient-prices.test.ts > persists successes and requires >=95 percent fresh closes (1 failed)
+prices: skipped C0.US: unavailable
+
+stderr | tests/unit/value/resilient-prices.test.ts > persists successes and requires >=95 percent fresh closes (2 failed)
+prices: skipped C0.US: unavailable
+
+stdout | tests/unit/value/resilient-prices.test.ts > persists successes and requires >=95 percent fresh closes (2 failed)
+prices summary: 18/20 fresh (90.00%); Yahoo 0; failed exchanges none; missing 2; status=partial
+
+stderr | tests/unit/value/resilient-prices.test.ts > persists successes and requires >=95 percent fresh closes (2 failed)
+prices: skipped C1.US: unavailable
+
+stderr | tests/unit/value/resilient-prices.test.ts > does not count stale/future closes or older responses rejected by the price merge
+prices: skipped STALE.US: unavailable
+
+stdout | tests/unit/value/resilient-prices.test.ts > does not count stale/future closes or older responses rejected by the price merge
+prices summary: 0/3 fresh (0.00%); Yahoo 0; failed exchanges none; missing 3; status=partial
+
+stderr | tests/unit/value/resilient-prices.test.ts > does not count stale/future closes or older responses rejected by the price merge
+prices: skipped FUTURE.US: unavailable
+
+ ✓ tests/unit/value/resilient-prices.test.ts (8 tests) 31ms
+stdout | tests/unit/value/prices-stage.test.ts > publishes successful quotes before setting stage outcome at 95 percent (1 missing)
+prices summary: 19/20 fresh (95.00%); Yahoo 0; failed exchanges none; missing 1; status=ok
+
+stderr | tests/unit/value/prices-stage.test.ts > publishes successful quotes before setting stage outcome at 95 percent (1 missing)
+prices: skipped C0.US: Unavailable
+
+stdout | tests/unit/value/prices-stage.test.ts > publishes successful quotes before setting stage outcome at 95 percent (1 missing)
+prices: 20 published companies, unchanged quotes
+
+stderr | tests/unit/value/prices-stage.test.ts > publishes successful quotes before setting stage outcome at 95 percent (2 missing)
+prices: skipped C0.US: Unavailable
+
+stdout | tests/unit/value/prices-stage.test.ts > publishes successful quotes before setting stage outcome at 95 percent (2 missing)
+prices summary: 18/20 fresh (90.00%); Yahoo 0; failed exchanges none; missing 2; status=partial
+
+stderr | tests/unit/value/prices-stage.test.ts > publishes successful quotes before setting stage outcome at 95 percent (2 missing)
+prices: skipped C1.US: Unavailable
+
+stdout | tests/unit/value/prices-stage.test.ts > publishes successful quotes before setting stage outcome at 95 percent (2 missing)
+prices: 20 published companies, unchanged quotes
+
+ ✓ tests/unit/value/prices-stage.test.ts (2 tests) 54ms
+ ✓ tests/unit/agents/discovery.test.ts (4 tests) 45ms
+ ✓ tests/unit/value/refresh-fundamentals.test.ts (9 tests) 33ms
+ ✓ tests/unit/value/nightly-history.test.ts (4 tests) 18ms
+ ✓ tests/unit/value/calibration-round-4.test.ts (27 tests) 57ms
+ ✓ tests/unit/value/forward-view.test.ts (3 tests) 51ms
+ ✓ tests/unit/value/return-consistency.test.ts (6 tests) 41ms
+ ✓ tests/unit/json-reader.test.ts (1 test) 8ms
+ ✓ tests/unit/value/predecessor-history.test.ts (11 tests) 28ms
+ ✓ tests/unit/value/valuation.test.ts (32 tests) 34ms
+ ✓ tests/unit/unified-search.test.ts (32 tests) 19ms
+ ✓ tests/unit/value/valuation-v2.test.ts (9 tests) 25ms
+ ✓ tests/unit/value/design-contract.test.ts (6 tests) 28ms
+ ✓ tests/unit/value/fx.test.ts (4 tests) 26ms
+stderr | tests/unit/value/forward.test.ts > forward snapshot > writes once, accepts identical reordered content, and keeps the first record of a day when later content differs
+publish: kept existing forward/2026-10-01.json; forward records are immutable
+
+ ✓ tests/unit/value/forward.test.ts (9 tests) 31ms
+ ✓ tests/unit/bottom-bar-hydration.test.ts (12 tests) 30ms
+ ✓ tests/unit/value/logo-install.test.ts (1 test) 39ms
+ ✓ tests/unit/agents/mcp.test.ts (8 tests) 26ms
+ ✓ tests/unit/value/targeted-story.test.ts (3 tests) 32ms
+ ✓ tests/unit/value/calibration-round-2.test.ts (16 tests) 28ms
+ ✓ tests/unit/value/reported-facts.test.ts (8 tests) 20ms
+ ✓ tests/unit/value/buffett-calibration.test.ts (10 tests) 23ms
+ ✓ tests/unit/value/thesis-v2.test.ts (9 tests) 21ms
+ ✓ tests/unit/value/store.test.ts (5 tests) 22ms
+ ✓ tests/unit/value/latest-balance-extra.test.ts (2 tests) 19ms
+ ✓ tests/unit/value/calibration-round-3.test.ts (11 tests) 26ms
+ ✓ tests/unit/value/thesis-evidence.test.ts (8 tests) 25ms
+ ✓ tests/unit/value/annual-source-corrections.test.ts (19 tests) 47ms
+ ✓ tests/unit/value/flags-materiality.test.ts (11 tests) 43ms
+ ✓ tests/unit/value/thesis-amounts.test.ts (11 tests) 14ms
+ ✓ tests/unit/value/latest-balance.test.ts (7 tests) 22ms
+ ✓ tests/unit/format.test.ts (3 tests) 20ms
+ ✓ tests/unit/value/logo-publication.test.ts (1 test) 21ms
+ ✓ tests/unit/value/proxy.test.ts (37 tests) 21ms
+ ✓ tests/unit/value/memo-claims.test.ts (2 tests) 11ms
+ ✓ tests/unit/value/publication-capitalization.test.ts (15 tests) 28ms
+ ✓ tests/unit/value/financial-v2.test.ts (7 tests) 21ms
+ ✓ tests/unit/value/yahoo-fundamentals.test.ts (3 tests) 21ms
+ ✓ tests/unit/value/logo-report.test.ts (1 test) 28ms
+ ✓ tests/unit/value/refresh-balance-valuation.test.ts (1 test) 22ms
+ ✓ tests/unit/value/design-thirteen.test.ts (4 tests) 21ms
+ ✓ tests/unit/agents/representations.test.ts (15 tests) 12ms
+ ✓ tests/unit/value/source-currency.test.ts (3 tests) 22ms
+ ✓ tests/unit/agents/unified-company.test.ts (3 tests) 10ms
+ ✓ tests/unit/value/browser-data-route.test.ts (9 tests) 23ms
+ ✓ tests/unit/reconstruct.test.ts (7 tests) 18ms
+stdout | tests/unit/value/history-returns-cache-only.test.ts > retains a dated cached return without network or freshness changes (force=false)
+history returns: 0 refreshed, 1 cached, 0 failed
+
+stdout | tests/unit/value/history-returns-cache-only.test.ts > retains a dated cached return without network or freshness changes (force=true)
+history returns: 0 refreshed, 1 cached, 0 failed
+
+ ✓ tests/unit/value/price-history-splits.test.ts (6 tests) 20ms
+stdout | tests/unit/value/history-returns-cache-only.test.ts > reports missing return caches without attempting any provider
+history returns: 0 refreshed, 0 cached, 1 failed
+
+ ✓ tests/unit/value/history-returns-cache-only.test.ts (3 tests) 17ms
+ ✓ tests/unit/value/shard.test.ts (3 tests) 19ms
+ ✓ tests/unit/value/presentation-currency.test.ts (3 tests) 19ms
+ ✓ tests/unit/value/history-split-basis.test.ts (1 test) 14ms
+ ✓ tests/unit/value/business-queue.test.ts (3 tests) 13ms
+ ✓ tests/unit/value/memo-plain.test.ts (20 tests) 17ms
+ ✓ tests/unit/value/memo-typed-facts.test.ts (2 tests) 8ms
+ ✓ tests/unit/value/held-universe.test.ts (6 tests) 9ms
+ ✓ tests/unit/value-main-layout.test.ts (4 tests) 18ms
+ ✓ tests/unit/value/nightly-budget.test.ts (4 tests) 19ms
+ ✓ tests/unit/value/private-source.test.ts (7 tests) 16ms
+ ✓ tests/unit/value/judgement-budget.test.ts (1 test) 7ms
+ ✓ tests/unit/value/issuer-store.test.ts (1 test) 18ms
+ ✓ tests/unit/value/screener.test.ts (2 tests) 9ms
+ ✓ tests/unit/value/capital-series-consistency.test.ts (2 tests) 15ms
+ ✓ tests/unit/value-holder-record.test.ts (3 tests) 15ms
+ ✓ tests/unit/value/integration-review.test.ts (8 tests) 14ms
+ ✓ tests/unit/value/bond-fallback.test.ts (2 tests) 16ms
+ ✓ tests/unit/value/held-routes.test.ts (3 tests) 16ms
+ ✓ tests/unit/value/ltm-stability.test.ts (2 tests) 14ms
+ ✓ tests/unit/value/flags.test.ts (12 tests) 12ms
+ ✓ tests/unit/value/predecessor-ui.test.ts (3 tests) 27ms
+ ✓ tests/unit/search-rank.test.ts (4 tests) 10ms
+ ✓ tests/unit/value/flags-extract.test.ts (5 tests) 14ms
+ ✓ tests/unit/value/memo-sources.test.ts (2 tests) 16ms
+ ✓ tests/unit/value/revalidate.test.ts (4 tests) 11ms
+ ✓ tests/unit/value/memo-reader.test.ts (4 tests) 25ms
+ ✓ tests/unit/value/memo-facts.test.ts (3 tests) 5ms
+ ✓ tests/unit/value/index-membership.test.ts (11 tests) 21ms
+ ✓ tests/unit/value/search-shard.test.ts (12 tests) 6ms
+ ✓ tests/unit/value/design-round-ten.test.ts (3 tests) 6ms
+ ✓ tests/unit/value/targeted-store.test.ts (4 tests) 8ms
+ ✓ tests/unit/value/issuer-identity.test.ts (5 tests) 7ms
+ ✓ tests/unit/value/esef-parent-totals.test.ts (3 tests) 8ms
+ ✓ tests/unit/value/thesis-refresh.test.ts (4 tests) 7ms
+ ✓ tests/unit/value/business-fit.test.ts (6 tests) 22ms
+ ✓ tests/unit/agent-api/proxy.test.ts (1 test) 7ms
+ ✓ tests/unit/newsletter.test.ts (5 tests) 11ms
+ ✓ tests/unit/value/robots.test.ts (3 tests) 14ms
+ ✓ tests/unit/value/annual-inline.test.ts (4 tests) 10ms
+ ✓ tests/unit/value/logo-fill.test.ts (2 tests) 10ms
+ ✓ tests/unit/value/memo-consistency.test.ts (2 tests) 8ms
+ ✓ tests/unit/value/reported-periods.test.ts (5 tests) 8ms
+ ✓ tests/unit/value/firewall-policy.test.ts (2 tests) 7ms
+ ✓ tests/unit/value/split-scope.test.ts (4 tests) 9ms
+ ✓ tests/unit/value/us-gaap-text.test.ts (3 tests) 10ms
+ ✓ tests/unit/value/round-eight.test.ts (3 tests) 6ms
+ ✓ tests/unit/value/flags-consistency.test.ts (3 tests) 7ms
+ ✓ tests/unit/value/memo-price-reference.test.ts (2 tests) 9ms
+ ✓ tests/unit/value/round-seven.test.ts (3 tests) 7ms
+ ✓ tests/unit/value-drawers.test.ts (4 tests) 7ms
+ ✓ tests/unit/value/cached-calibration.test.ts (1 test) 8ms
+ ✓ tests/unit/value/thesis.test.ts (4 tests) 11ms
+ ✓ tests/unit/value/viz-round3.test.ts (4 tests) 5ms
+ ✓ tests/unit/value/protection-routing.test.ts (1 test) 9ms
+ ✓ tests/unit/treemap.test.ts (4 tests) 6ms
+ ✓ tests/unit/value/ops.test.ts (9 tests) 6ms
+ ✓ tests/unit/value/fund-exclusion.test.ts (4 tests) 8ms
+ ✓ tests/unit/value-description.test.ts (5 tests) 5ms
+ ✓ tests/unit/value/view-filter.test.ts (2 tests) 5ms
+ ✓ tests/unit/value/memo-inputs.test.ts (2 tests) 8ms
+ ✓ tests/unit/value-share-basis.test.ts (1 test) 6ms
+ ✓ tests/unit/value-density.test.ts (3 tests) 10ms
+ ✓ tests/unit/value/ltm-evidence.test.ts (1 test) 4ms
+ ✓ tests/unit/value-quality.test.ts (3 tests) 10ms
+ ✓ tests/unit/value/retired-issuer-aliases.test.ts (1 test) 4ms
+ ✓ tests/unit/value/design-presentation.test.ts (3 tests) 9ms
+ ✓ tests/unit/checklist-verdict.test.ts (3 tests) 5ms
+ ✓ tests/unit/value/company-holders.test.ts (2 tests) 9ms
+ ✓ tests/unit/fingerprint.test.ts (1 test) 4ms
+ ✓ tests/unit/value/financial-sic.test.ts (2 tests) 5ms
+ ✓ tests/unit/value/stable-story.test.ts (1 test) 4ms
+ ✓ tests/unit/value/business-lines.test.ts (1 test) 2ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/live-check.test.ts [ tests/unit/value/live-check.test.ts ]
+Error: browserType.launch: Executable doesn't exist at /Users/miki/data/jev-2/test-home/.cache/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     npx playwright install                                 ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+ ❯ tests/unit/value/live-check.test.ts:6:44
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 238 passed (239)
+      Tests  2310 passed | 6 skipped (2316)
+   Start at  23:32:32
+   Duration  144.83s (transform 8.60s, setup 0ms, collect 39.68s, tests 179.91s, environment 60ms, prepare 17.43s)

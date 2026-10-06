@@ -1,0 +1,17 @@
+{
+  "ordinaryExportExit": 0,
+  "ordinaryRealPublishExit": 1,
+  "localBareHead": "829efab95634dd399475fe7c32aa531947c84e9d",
+  "localWorkingHead": "829efab95634dd399475fe7c32aa531947c84e9d",
+  "onlyLocalTransport": true,
+  "blobPuts": 0,
+  "revalidations": 0,
+  "approvalManifestUnchanged": true,
+  "failure": "Publish invariant: index/US.json Buy-now changed 16 -> 17; prices and new dossiers explain at most +0/-2",
+  "transportOperationCounts": {
+    "push": 184,
+    "clone": 16,
+    "fetch": 20,
+    "ls-remote": 152
+  }
+}

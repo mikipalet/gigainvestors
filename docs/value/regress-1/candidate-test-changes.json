@@ -1,0 +1,5469 @@
+[
+  {
+    "id": "DTE.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 6.6% vs 6.4%"
+      ]
+    }
+  },
+  {
+    "id": "OMC.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 19.3% vs 15.2%"
+      ]
+    }
+  },
+  {
+    "id": "HLT.US",
+    "tests": {
+      "moat": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "moat": [
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "VISN.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "Sloan accruals exceed 10%",
+        "restructuring or one-time charges in at least three of five years"
+      ]
+    }
+  },
+  {
+    "id": "NUVB.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -16.0% vs -53.3%",
+        "Per-share earnings: -0.14 to -0.60 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "XMTR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "POW.TO",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity"
+      ]
+    }
+  },
+  {
+    "id": "JOYY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 8.7% vs 1.6%"
+      ],
+      "accounting": [
+        "Sloan accruals exceed 10%",
+        "latest-year receivables to sales index (DSRI) exceeds 1.465"
+      ]
+    }
+  },
+  {
+    "id": "DVA.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 20.3% vs 39.5%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "HBAN.SW",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity and common earnings"
+      ]
+    }
+  },
+  {
+    "id": "SNAP.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "GPN.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 27.9% vs 9.9%",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ]
+    }
+  },
+  {
+    "id": "IREN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -1.2% vs -3.1%",
+        "Per-share earnings: -2.93 to -0.29 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465"
+      ]
+    }
+  },
+  {
+    "id": "ALGM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 7.3% vs 3.9%",
+        "Per-share earnings: 0.19 to -0.08 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "SPRY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -250.8% vs -67.3%",
+        "Per-share earnings: -0.53 to -0.57 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465"
+      ]
+    }
+  },
+  {
+    "id": "SRTA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -166.9% vs -30.3%",
+        "Per-share earnings: -0.57 to -0.35 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "Sloan accruals exceed 10%",
+        "latest-year receivables to sales index (DSRI) exceeds 1.465",
+        "earnings not backed by cash"
+      ]
+    }
+  },
+  {
+    "id": "NG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -5.7% vs -489.8%",
+        "five-year and ten-year diluted share growth both above threshold",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "PCVX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -20.5% vs -53.9%",
+        "Per-share earnings: -1.99 to -4.14 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "SWBI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 6.9% vs 5.7%",
+        "market cap gain below cumulative retained earnings"
+      ],
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years"
+      ]
+    }
+  },
+  {
+    "id": "PDLB.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "credit provisions persistently exceed same-year peers"
+      ]
+    }
+  },
+  {
+    "id": "TSLA.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -5.2% vs 11.3%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ]
+    }
+  },
+  {
+    "id": "HXL.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 14.3% vs 8.2%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "HIMS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 0.0% vs 13.1%",
+        "Per-share earnings: -1.12 to 0.50 (three-year endpoint medians)"
+      ],
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "LAD.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 7.9% vs 6.7%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "PTEN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -6.4% vs -0.6%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "WT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "pass"
+      ],
+      "moat": [
+        "na",
+        "pass"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 44.6% vs 17.2%",
+        "market cap gain below cumulative retained earnings"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "ABCB.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Tangible common book per share"
+      ]
+    }
+  },
+  {
+    "id": "PHVS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -37.9% vs -42.8%",
+        "Per-share earnings: -0.28 to -2.63 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "DNOW.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -3.2% vs 12.0%"
+      ]
+    }
+  },
+  {
+    "id": "VPG.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 11.5% vs 4.4%",
+        "acquisition spending exceeds half of ten-year net income with low and deteriorating ROIC"
+      ]
+    }
+  },
+  {
+    "id": "BAM.TO",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "SBSI.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "credit provisions persistently exceed same-year peers"
+      ]
+    }
+  },
+  {
+    "id": "DFH.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "pass"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold"
+      ],
+      "economics": [
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 11.2% vs 17.1%",
+        "Per-share earnings: 0.85 to 2.79 (three-year endpoint medians)"
+      ],
+      "accounting": [
+        "earnings not backed by cash"
+      ]
+    }
+  },
+  {
+    "id": "RRBI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "pass"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [],
+      "moat": [
+        "Tangible common book per share",
+        "median return on common equity below threshold"
+      ],
+      "economics": [
+        "Tangible common book per share"
+      ],
+      "management": [
+        "Tangible common book per share"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "MITK.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "PATH.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "MTCH.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 35.1% vs 127.9%"
+      ]
+    }
+  },
+  {
+    "id": "D.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 6.2% vs 4.3%"
+      ]
+    }
+  },
+  {
+    "id": "TPHS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -7.9% vs -3.1%",
+        "market cap gain below cumulative retained earnings",
+        "five-year and ten-year diluted share growth both above threshold"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "RUSHA.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 6.6% vs 11.1%"
+      ]
+    }
+  },
+  {
+    "id": "TDW.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -5.9% vs 17.1%",
+        "Per-share earnings: -6.45 to 3.40 (three-year endpoint medians)"
+      ],
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years"
+      ]
+    }
+  },
+  {
+    "id": "HTHT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 0.3% vs 10.9%",
+        "Per-share earnings: -0.15 to 1.22 (three-year endpoint medians)"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "VMRK.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 5.2% vs 9.4%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "FUTU.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity"
+      ]
+    }
+  },
+  {
+    "id": "EVLV.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 0.0% vs -71.2%",
+        "Per-share earnings: -0.14 to -0.34 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "LXU.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -2.7% vs 5.1%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "WDAY.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -15.4% vs 38.0%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ]
+    }
+  },
+  {
+    "id": "BMI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "pass"
+      ],
+      "moat": [
+        "na",
+        "pass"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 14.9% vs 54.7%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "WDC.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 15.5% vs 64.7%"
+      ]
+    }
+  },
+  {
+    "id": "DOLE.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 36.6% vs 10.7%",
+        "Per-share earnings: 0.10 to 1.30 (three-year endpoint medians)",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ]
+    }
+  },
+  {
+    "id": "LSCC.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "ALRS.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "credit provisions persistently exceed same-year peers"
+      ]
+    }
+  },
+  {
+    "id": "PLOW.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "FY2023 gross margin fell 4.5pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 19.7% vs 10.4%",
+        "market cap gain below cumulative retained earnings",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "WFRD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -25.5% vs 32.4%",
+        "Per-share earnings: -6.43 to 5.94 (three-year endpoint medians)"
+      ],
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years"
+      ]
+    }
+  },
+  {
+    "id": "WEX.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "CRC.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 1.2% vs 12.6%",
+        "Per-share earnings: -6.26 to 4.62 (three-year endpoint medians)"
+      ]
+    }
+  },
+  {
+    "id": "VSTM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -40.4% vs -100.3%",
+        "five-year and ten-year diluted share growth both above threshold",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465"
+      ]
+    }
+  },
+  {
+    "id": "LKFT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -3.1% vs -2.0%",
+        "market cap gain below cumulative retained earnings",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": [
+        "Sloan accruals exceed 10%",
+        "earnings not backed by cash"
+      ]
+    }
+  },
+  {
+    "id": "CIGI.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 318.2% vs 27.6%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ]
+    }
+  },
+  {
+    "id": "LVS.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 23.3% vs 17.1%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "PIPR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "SGI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "pass"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 18.4% vs 12.6%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "IQ.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "na"
+      ],
+      "moat": [
+        "fail",
+        "na"
+      ],
+      "economics": [
+        "pass",
+        "na"
+      ],
+      "management": [
+        "fail",
+        "na"
+      ],
+      "accounting": [
+        "pass",
+        "na"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [],
+      "moat": [],
+      "economics": [],
+      "management": [],
+      "accounting": []
+    }
+  },
+  {
+    "id": "AXGN.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -53.2% vs -3.9%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ]
+    }
+  },
+  {
+    "id": "SWKS.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "601898.SHG",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "4 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "ACVA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "Per-share earnings: -0.27 to -0.47 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "TEM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 0.0% vs -33.7%",
+        "Per-share earnings: -1.53 to -1.41 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "SD.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2017 to 2025 (8 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -1.0% vs 13.5%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "601995.SHG",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity and common earnings"
+      ]
+    }
+  },
+  {
+    "id": "UCTT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 10.0% vs 3.2%",
+        "five-year and ten-year diluted share growth both above threshold",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "DAN.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 12.1% vs -0.5%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "BUR.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 26.8% vs 6.4%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "NFLX.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "0 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "ESTC.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2019 to 2026 (7 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 0.0% vs -7.7%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "PBFS.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity and common earnings"
+      ]
+    }
+  },
+  {
+    "id": "KOG.OL",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "4 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "UVSP.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity and common earnings"
+      ]
+    }
+  },
+  {
+    "id": "MLI.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 16.0% vs 58.3%"
+      ]
+    }
+  },
+  {
+    "id": "CDLX.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2018 to 2025 (7 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 0.0% vs -231.8%",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ]
+    }
+  },
+  {
+    "id": "SDGR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 0.0% vs -90.7%",
+        "Per-share earnings: -0.51 to -1.41 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "MXL.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "GCMG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 48.9% vs 10.1%",
+        "Per-share earnings: 0.49 to 0.10 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "VAC.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "TNC.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "SMTC.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "HON.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 77.0% vs 37.0%"
+      ]
+    }
+  },
+  {
+    "id": "TILE.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "ROIC first 3 years vs last 3 years: 15.5% vs 10.8%",
+        "material buybacks concentrated at lower earnings yields (Spearman rho below threshold)"
+      ]
+    }
+  },
+  {
+    "id": "GPOR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "incremental invested capital return below threshold",
+        "working capital as a share of revenue rose more than 10pp and ends positive"
+      ],
+      "management": [
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 6.7% vs 15.3%",
+        "Per-share earnings: -7.97 to 23.20 (three-year endpoint medians)"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "GUTS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -30.7% vs -107.6%",
+        "Per-share earnings: -0.64 to -1.41 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "NWL.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "SIMO.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 83.9% vs 12.9%"
+      ]
+    }
+  },
+  {
+    "id": "NMIH.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity"
+      ]
+    }
+  },
+  {
+    "id": "LAMR.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 24.5% vs 14.9%",
+        "acquisition spending exceeds half of ten-year net income with low and deteriorating ROIC"
+      ]
+    }
+  },
+  {
+    "id": "CRIS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -14.2% vs -170.0%",
+        "Per-share earnings: -12.29 to -6.88 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "Sloan accruals exceed 10%"
+      ]
+    }
+  },
+  {
+    "id": "QRVO.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "HCI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "pass"
+      ],
+      "moat": [
+        "na",
+        "pass"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [],
+      "moat": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity",
+        "Underwriting economics assessed through return on tangible common equity"
+      ],
+      "economics": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity"
+      ],
+      "management": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "RGEN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "FY2023 gross margin fell 7.6pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 20.7% vs 3.8%",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "BLND.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "NTNX.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -62.3% vs 19.5%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ]
+    }
+  },
+  {
+    "id": "FRPT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "FY2023 gross margin fell 11.4pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -1.9% vs 3.1%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "MAGN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "FY2023 gross margin fell 6.7pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 2.2% vs 0.2%",
+        "market cap gain below cumulative retained earnings",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "600015.SHG",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity and common earnings"
+      ]
+    }
+  },
+  {
+    "id": "INOD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -11.6% vs 114.6%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "FND.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2017 to 2025 (8 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 24.9% vs 6.1%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "ALHC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -30.3% vs -18.7%",
+        "Per-share earnings: -0.30 to -0.67 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "NAVI.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465",
+        "restructuring or one-time charges in at least three of five years"
+      ]
+    }
+  },
+  {
+    "id": "BRKR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "pass"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 30.3% vs 7.0%",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "NFE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -10.9% vs 4.2%",
+        "Per-share earnings: -26.99 to -56.96 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465",
+        "restructuring or one-time charges in at least three of five years"
+      ]
+    }
+  },
+  {
+    "id": "OPFI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "positive earnings in fewer than 7 of 7 years"
+      ],
+      "moat": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity",
+        "return on tangible common equity below 5% in more than one year"
+      ],
+      "economics": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity",
+        "nonpositive book value in the compounding window"
+      ],
+      "management": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity",
+        "ordinary share count growth exceeds 2% annually in both the full and five-year windows",
+        "book per share gain below retained common earnings per share"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "KALU.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ],
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 12.1% vs 4.8%",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "KLIC.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2017 to 2025 (8 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 32.3% vs -0.7%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "TALO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 5.1% vs 3.5%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "RXO.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "CYD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "incremental invested capital return below threshold",
+        "working capital as a share of revenue rose more than 10pp and ends positive"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 25.2% vs 9.1%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "FTNT.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "0 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "DMRA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -82.2% vs -88.4%",
+        "Per-share earnings: -34.48 to -36.08 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "RMNI.US",
+    "tests": {
+      "moat": [
+        "fail",
+        "pass"
+      ],
+      "management": [
+        "pass",
+        "fail"
+      ],
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "management": [
+        "$1 retained earnings test: 2017 to 2025 (8 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 100.0% vs 34.4%",
+        "market cap gain below cumulative retained earnings"
+      ],
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "CPNG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 0.0% vs 14.5%",
+        "Per-share earnings: -0.44 to 0.11 (three-year endpoint medians)"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "HUBG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "6 revenue declines in the last 10 years",
+        "more than 5 revenue declines in ten years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2024 (8 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 19.5% vs 13.2%",
+        "market cap gain below cumulative retained earnings"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "KEX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 3.0% vs 8.1%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "VCTR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "IESC.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2017 to 2025 (8 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 9.8% vs 41.7%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ]
+    }
+  },
+  {
+    "id": "AXISBANK.NSE",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity and common earnings"
+      ]
+    }
+  },
+  {
+    "id": "ASLE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 6.7% vs 1.4%",
+        "Per-share earnings: 0.24 to 0.11 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "earnings not backed by cash"
+      ]
+    }
+  },
+  {
+    "id": "UCG.MI",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity and common earnings"
+      ]
+    }
+  },
+  {
+    "id": "QXO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold",
+        "working capital as a share of revenue rose more than 10pp and ends positive"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 27.3% vs -0.9%",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "AIG.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity"
+      ]
+    }
+  },
+  {
+    "id": "ASTS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -127.4% vs -203.7%",
+        "Per-share earnings: -0.59 to -1.34 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465"
+      ]
+    }
+  },
+  {
+    "id": "LRN.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "0 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "KGEI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "FY2023 gross margin fell 28.7pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 0.4% vs 9.6%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "PRGO.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "AGRO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "FY2023 gross margin fell 4.7pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ],
+      "economics": [
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 9.8% vs 7.9%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ],
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465"
+      ]
+    }
+  },
+  {
+    "id": "TRIP.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "HGTY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "positive earnings in fewer than 6 of 7 years"
+      ],
+      "moat": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity and common earnings",
+        "Underwriting economics assessed through return on tangible common equity",
+        "median return on common equity below threshold"
+      ],
+      "economics": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity and common earnings",
+        "nonpositive book value in the compounding window"
+      ],
+      "management": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity and common earnings"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "SG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "Per-share earnings: -0.59 to -1.01 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years"
+      ]
+    }
+  },
+  {
+    "id": "W.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "DUK.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 5.0% vs 6.1%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ]
+    }
+  },
+  {
+    "id": "SPHR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold",
+        "working capital as a share of revenue rose more than 10pp and ends positive"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -5.4% vs -5.4%",
+        "Per-share earnings: -3.16 to 0.74 (three-year endpoint medians)"
+      ],
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "FIBK.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "credit provisions persistently exceed same-year peers"
+      ]
+    }
+  },
+  {
+    "id": "NTGR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "OZK.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity and common earnings"
+      ]
+    }
+  },
+  {
+    "id": "FICO.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "0291.HK",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "4 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "COLB.US",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ],
+      "management": [
+        "fail",
+        "pass"
+      ],
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "economics": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity"
+      ],
+      "management": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity"
+      ],
+      "accounting": [
+        "credit provisions persistently exceed same-year peers"
+      ]
+    }
+  },
+  {
+    "id": "LINC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -5.2% vs 6.3%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "DHI.US",
+    "tests": {
+      "moat": [
+        "fail",
+        "pass"
+      ],
+      "economics": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "moat": [],
+      "economics": [
+        "incremental invested capital return below threshold"
+      ]
+    }
+  },
+  {
+    "id": "1209.HK",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "0 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "RNG.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "SEI.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2017 to 2025 (8 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 50.2% vs 9.1%",
+        "five-year and ten-year diluted share growth both above threshold",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ]
+    }
+  },
+  {
+    "id": "STRL.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "0 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "NOVT.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "WHR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "TME.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2018 to 2025 (7 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 26.6% vs 26.3%",
+        "market cap gain below cumulative retained earnings"
+      ]
+    }
+  },
+  {
+    "id": "GNE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -10.7% vs 10.3%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "CFG-PH.US",
+    "tests": {
+      "moat": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "moat": [
+        "Tangible common book per share",
+        "Parent-total proxy for preferred equity and common earnings",
+        "median return on common equity below threshold"
+      ]
+    }
+  },
+  {
+    "id": "SYF.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "SNX.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 11.9% vs 14.7%",
+        "five-year and ten-year diluted share growth both above threshold"
+      ]
+    }
+  },
+  {
+    "id": "KARO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "pass"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "FY2023 gross margin fell 6.1pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ],
+      "economics": [],
+      "management": [
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 63.4% vs 33.6%",
+        "Per-share earnings: 13.46 to 29.81 (three-year endpoint medians)"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "EWTX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -12.4% vs -28.7%",
+        "Per-share earnings: -0.84 to -1.57 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "DOC.US",
+    "tests": {
+      "economics": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "economics": [
+        "incremental invested capital return below threshold",
+        "working capital as a share of revenue rose more than 10pp and ends positive"
+      ]
+    }
+  },
+  {
+    "id": "DE.US",
+    "tests": {
+      "economics": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "economics": [
+        "incremental invested capital return below threshold",
+        "working capital as a share of revenue rose more than 10pp and ends positive"
+      ]
+    }
+  },
+  {
+    "id": "ZH.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -15.8% vs -18.2%",
+        "Per-share earnings: -10.11 to -2.41 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "LASR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "JLL.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 24.6% vs 14.9%"
+      ]
+    }
+  },
+  {
+    "id": "BOKF.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "credit provisions persistently exceed same-year peers"
+      ]
+    }
+  },
+  {
+    "id": "PRAX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -68.0% vs -138.3%",
+        "Per-share earnings: -29.99 to -13.48 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "MRVI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "FY2023 gross margin fell 14.1pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 6.7% vs -16.2%",
+        "Per-share earnings: -0.07 to -0.91 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years"
+      ]
+    }
+  },
+  {
+    "id": "PEPG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -284.5% vs -451.8%",
+        "Per-share earnings: -0.08 to -2.85 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "SNN.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 20.1% vs 11.0%"
+      ]
+    }
+  },
+  {
+    "id": "ZLAB.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2018 to 2025 (7 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -396.3% vs -103.8%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "INTC.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 20.0% vs -1.4%"
+      ]
+    }
+  },
+  {
+    "id": "DQ.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold",
+        "working capital as a share of revenue rose more than 10pp and ends positive"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 11.3% vs -9.1%"
+      ],
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "SOFI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -2.8% vs 13.1%",
+        "Per-share earnings: -0.34 to 0.38 (three-year endpoint medians)"
+      ],
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "earnings not backed by cash"
+      ]
+    }
+  },
+  {
+    "id": "IDT.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check",
+        "5 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  },
+  {
+    "id": "KN.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "QTRX.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "$1 retained earnings test: 2017 to 2025 (8 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: -64.7% vs -51.8%",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ]
+    }
+  },
+  {
+    "id": "TRN.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "accounting": [
+        "latest-year receivables to sales index (DSRI) exceeds 1.465",
+        "restructuring or one-time charges in at least three of five years"
+      ]
+    }
+  },
+  {
+    "id": "VSXY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "Per-share earnings: -0.82 to 1.94 (three-year endpoint medians)"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "LFST.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold"
+      ],
+      "management": [
+        "potential debt-funded buybacks (informational)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 4.9% vs -5.2%",
+        "Per-share earnings: -0.12 to -0.15 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "BRSL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "7 revenue declines in the last 10 years",
+        "more than 5 revenue declines in ten years",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 6.8% vs 12.3%",
+        "market cap gain below cumulative retained earnings"
+      ],
+      "accounting": [
+        "restructuring or one-time charges in at least three of five years",
+        "earnings not backed by cash"
+      ]
+    }
+  },
+  {
+    "id": "032830.KO",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "management": [
+        "Common book per share",
+        "Parent-total proxy for preferred equity and common earnings"
+      ]
+    }
+  },
+  {
+    "id": "GT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "6 revenue declines in the last 10 years",
+        "more than 5 revenue declines in ten years",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 10.6% vs 5.0%",
+        "market cap gain below cumulative retained earnings",
+        "acquired goodwill and intangibles (proxy) exceeds half of ten-year net income with low and deteriorating ROIC"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "ORIC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    },
+    "frozen": false,
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ],
+      "economics": [
+        "owner earnings cash conversion below threshold",
+        "incremental invested capital return below threshold"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: -25.5% vs -98.7%",
+        "Per-share earnings: -2.05 to -1.83 (three-year endpoint medians)",
+        "per-share value declined or ends nonpositive"
+      ],
+      "accounting": []
+    }
+  }
+]

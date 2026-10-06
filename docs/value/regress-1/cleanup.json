@@ -1,0 +1,33 @@
+{
+  "completed": true,
+  "at": "2026-10-06T11:55:11Z",
+  "removed": [
+    "corpus",
+    "baseline",
+    "candidate",
+    "candidate-final",
+    "dry-run",
+    "node_modules",
+    "storage",
+    "tmp",
+    "test-home",
+    "harness-bin",
+    "repo/.next",
+    "repo/node_modules",
+    "repo/tsconfig.tsbuildinfo"
+  ],
+  "remaining": [
+    "repo",
+    "watch-disk.py",
+    "release-bundle",
+    "evidence",
+    "plan.md"
+  ],
+  "freeBytes": {
+    "/": 8280276992,
+    "data": 148476514304
+  },
+  "trackedBaselineRestored": [
+    "repo/tsconfig.tsbuildinfo"
+  ]
+}

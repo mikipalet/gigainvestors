@@ -1,0 +1,78 @@
+{
+  "frozen": 151,
+  "frozenDossiersChanged": [],
+  "missingDossiers": [],
+  "added": [
+    "CFRUY.US",
+    "DVDCF.US",
+    "FLMNF.US",
+    "FLUIF.US",
+    "HEINY.US",
+    "HKHHF.US",
+    "HKHHY.US",
+    "KNCRF.US",
+    "MTRBF.US",
+    "OGC.US",
+    "PEYUF.US",
+    "PHJMF.US",
+    "PIFYF.US",
+    "PUIGF.US",
+    "RTLLF.US",
+    "ZLDSF.US"
+  ],
+  "invalidAliases": {},
+  "exactApprovals": {
+    "FDJU.PA": true,
+    "ALSN.US": true,
+    "FCN.US": true
+  },
+  "originalScaleRegressions": {
+    "BRO.US": {
+      "rawValuationRestored": true,
+      "publicValuationPresent": true,
+      "historyYears": 28
+    },
+    "COP.US": {
+      "rawValuationRestored": true,
+      "publicValuationPresent": true,
+      "historyYears": 30
+    },
+    "EG.US": {
+      "rawValuationRestored": true,
+      "publicValuationPresent": true,
+      "historyYears": 30
+    },
+    "GRMN.US": {
+      "rawValuationRestored": true,
+      "publicValuationPresent": true,
+      "historyYears": 27
+    },
+    "HST.US": {
+      "rawValuationRestored": true,
+      "publicValuationPresent": true,
+      "historyYears": 30
+    },
+    "MCD.US": {
+      "rawValuationRestored": true,
+      "publicValuationPresent": true,
+      "historyYears": 30
+    },
+    "MRK.XETRA": {
+      "rawValuationRestored": true,
+      "publicValuationPresent": false,
+      "historyYears": 24
+    },
+    "VIVT3.SA": {
+      "rawValuationRestored": true,
+      "publicValuationPresent": true,
+      "historyYears": 28
+    },
+    "WRB.US": {
+      "rawValuationRestored": true,
+      "publicValuationPresent": true,
+      "historyYears": 30
+    }
+  },
+  "pipeline": "29",
+  "approvalManifestSha256": "f926d6a4433ad8a7a8431b1c051394dc3938844f3d9731806a46608502184f11"
+}

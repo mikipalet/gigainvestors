@@ -1,0 +1,1091 @@
+{
+  "baseline": 3899,
+  "candidate": 3915,
+  "missing": [],
+  "added": [
+    "CFRUY.US",
+    "DVDCF.US",
+    "FLMNF.US",
+    "FLUIF.US",
+    "HEINY.US",
+    "HKHHF.US",
+    "HKHHY.US",
+    "KNCRF.US",
+    "MTRBF.US",
+    "OGC.US",
+    "PEYUF.US",
+    "PHJMF.US",
+    "PIFYF.US",
+    "PUIGF.US",
+    "RTLLF.US",
+    "ZLDSF.US"
+  ],
+  "changedTests": 184,
+  "qualityChanges": [
+    {
+      "id": "DVA.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "SBSI.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "BMI.US",
+      "before": false,
+      "after": true,
+      "tests": {
+        "understandable": [
+          "na",
+          "pass"
+        ],
+        "moat": [
+          "na",
+          "pass"
+        ],
+        "economics": [
+          "na",
+          "pass"
+        ],
+        "management": [
+          "na",
+          "pass"
+        ],
+        "accounting": [
+          "na",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "NFLX.US",
+      "before": false,
+      "after": true,
+      "tests": {
+        "understandable": [
+          "fail",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "HON.US",
+      "before": false,
+      "after": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "NMIH.US",
+      "before": false,
+      "after": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "LAMR.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "HCI.US",
+      "before": false,
+      "after": true,
+      "tests": {
+        "understandable": [
+          "na",
+          "pass"
+        ],
+        "moat": [
+          "na",
+          "pass"
+        ],
+        "economics": [
+          "na",
+          "pass"
+        ],
+        "management": [
+          "na",
+          "pass"
+        ],
+        "accounting": [
+          "na",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "VCTR.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "1209.HK",
+      "before": false,
+      "after": true,
+      "tests": {
+        "understandable": [
+          "fail",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "NOVT.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "CFG-PH.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "moat": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "BOKF.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    }
+  ],
+  "numericNullFields": 79,
+  "numericNullCompanies": 22,
+  "numericRemovedFields": 6209,
+  "valuationNulls": [
+    "UPS.US",
+    "MAS.US",
+    "105560.KO",
+    "ITSA3.SA",
+    "300308.SHE",
+    "IBS.LS",
+    "ROP.SW",
+    "005380.KO",
+    "BBDC3.SA",
+    "MRVL.US",
+    "POW.TO",
+    "SAGA-B.ST",
+    "KLBN3.SA",
+    "SWEC-B.ST",
+    "ISRG.US",
+    "SAVE.ST",
+    "300450.SHE",
+    "601818.SHG",
+    "8309.JP",
+    "SCHP.SW",
+    "UHR.SW",
+    "4307.JP",
+    "LUND-B.ST",
+    "300661.SHE",
+    "AR.US",
+    "600016.SHG",
+    "601808.SHG",
+    "603259.SHG",
+    "HGH.AU",
+    "GOOS.US",
+    "BRAP3.SA",
+    "ISAE3.SA",
+    "5803.JP",
+    "600660.SHG",
+    "N91.LSE",
+    "NKE.US",
+    "300347.SHE",
+    "002460.SHE",
+    "HEXA-B.ST",
+    "TGS.US",
+    "9633.HK",
+    "LPP.WAR",
+    "005940.KO",
+    "JHX.US",
+    "SRT3.XETRA",
+    "RCI-B.TO",
+    "ICG.LSE",
+    "BF-A.US",
+    "STERV.HE",
+    "GIGNF.US",
+    "601766.SHG",
+    "LAGR-B.ST",
+    "BCVN.SW",
+    "039490.KO",
+    "CTC-A.TO",
+    "601919.SHG",
+    "600188.SHG",
+    "600999.SHG",
+    "ADDT-B.ST",
+    "SKF-B.ST",
+    "601916.SHG",
+    "8766.JP",
+    "EXR.US",
+    "SNZ.AU",
+    "605499.SHG",
+    "ITUB.US",
+    "TREL-B.ST",
+    "600547.SHG",
+    "688303.SHG",
+    "000063.SHE",
+    "2884.TW",
+    "LIVEPOLC-1.MX",
+    "603993.SHG",
+    "ATCO-A.ST",
+    "029780.KO",
+    "2501.JP",
+    "603501.SHG",
+    "055550.KO",
+    "P911.XETRA",
+    "009540.KO",
+    "0981.HK",
+    "GHC.US",
+    "VOLV-B.ST",
+    "HVT.US",
+    "61L0.F",
+    "600031.SHG",
+    "AFYA.US",
+    "INDU-C.ST",
+    "601658.SHG",
+    "601211.SHG",
+    "BRC.US",
+    "DNB.OL",
+    "601898.SHG",
+    "TSN.US",
+    "601995.SHG",
+    "NOVO-B.CO",
+    "LIFCO-B.ST",
+    "601857.SHG",
+    "GRF.MC",
+    "SHOP.TO",
+    "SESG.PA",
+    "CINF.US",
+    "601939.SHG",
+    "CARL-B.CO",
+    "ERIE.US",
+    "6098.JP",
+    "FG.US",
+    "POMO3.SA",
+    "MRK.XETRA",
+    "120110.KO",
+    "HUBN.SW",
+    "300759.SHE",
+    "WN.TO",
+    "600036.SHG",
+    "CFR.US",
+    "COLO-B.CO",
+    "000157.SHE",
+    "CLB.US",
+    "SAAB-B.ST",
+    "FOX.US",
+    "AVBH.US",
+    "601728.SHG",
+    "600196.SHG",
+    "066570.KO",
+    "601628.SHG",
+    "COR.LS",
+    "EPI-A.ST",
+    "TEO.US",
+    "ASSA-B.ST",
+    "601607.SHG",
+    "NWS.US",
+    "CCU.US",
+    "009150.KO",
+    "600600.SHG",
+    "016360.KO",
+    "005930.KO",
+    "1099.HK",
+    "002050.SHE",
+    "603986.SHG",
+    "601688.SHG",
+    "000625.SHE",
+    "600030.SHG",
+    "ORNBV.HE",
+    "FPE3.XETRA",
+    "INVE-B.ST",
+    "AMBU-B.CO",
+    "SIA1.F",
+    "ABNB.US",
+    "GIB-A.TO",
+    "MNST.US",
+    "CENTA.US",
+    "OCBA.F",
+    "VPK.AS",
+    "601236.SHG",
+    "SPM.MI",
+    "002790.KO",
+    "051900.KO",
+    "CCL-B.TO",
+    "CIB.US",
+    "FINV.US",
+    "HEN.XETRA",
+    "5706.JP",
+    "TEN.MI",
+    "601899.SHG",
+    "601318.SHG",
+    "SSL.US",
+    "600276.SHG",
+    "601377.SHG",
+    "688008.SHG",
+    "NEU.AU",
+    "600690.SHG",
+    "NYT.US",
+    "000333.SHE",
+    "KIMBERA.MX",
+    "T6W.F",
+    "071050.KO",
+    "0883.HK",
+    "600362.SHG",
+    "RMR.US",
+    "ERIC-B.ST",
+    "000596.SHE",
+    "ASURB.MX",
+    "601633.SHG",
+    "BBOX.LSE",
+    "SJX.F",
+    "MIO.IR",
+    "BELFB.US",
+    "VATN.SW",
+    "601319.SHG",
+    "AMXB.MX",
+    "FNV.TO",
+    "KNEBV.HE",
+    "OMAB.MX",
+    "601881.SHG",
+    "HM-B.ST",
+    "005300.KO",
+    "000810.KO",
+    "DBX.US",
+    "002475.SHE",
+    "CMIG4.SA",
+    "NSIS-B.CO",
+    "HIAB.HE",
+    "000338.SHE",
+    "601328.SHG",
+    "300033.SHE",
+    "PGR.US",
+    "GETI-B.ST",
+    "600585.SHG",
+    "SB1NO.OL",
+    "EBS.VI",
+    "PUIG.MC",
+    "LATO-B.ST",
+    "300408.SHE",
+    "300223.SHE",
+    "SCA-B.ST",
+    "AOS.US",
+    "RL.US",
+    "601600.SHG",
+    "601398.SHG",
+    "CXSE3.SA",
+    "RIO.AU",
+    "SAP.XETRA",
+    "002714.SHE",
+    "RAT.LSE",
+    "BRK-B.US",
+    "ANET.US",
+    "DEVL.F",
+    "ABI.BR",
+    "1810.HK",
+    "2057.HK",
+    "600845.SHG",
+    "GENTERA.MX",
+    "HOLM-B.ST",
+    "601601.SHG",
+    "FWONK.US",
+    "002821.SHE",
+    "HEI-A.US",
+    "MAERSK-B.CO",
+    "4506.JP",
+    "600332.SHG",
+    "TW.US"
+  ],
+  "buyChanges": [
+    {
+      "id": "FDJU.PA",
+      "before": {
+        "b": true,
+        "v": [
+          27.793668656830615,
+          32.00903544852957,
+          36.60283614467411
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": false,
+        "v": [
+          25.764979342725656,
+          29.980346134424614,
+          34.57414683056915
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      }
+    },
+    {
+      "id": "GL.US",
+      "before": {
+        "b": false,
+        "v": null,
+        "m": 0.35,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": true,
+        "v": [
+          219.81805155656687,
+          274.77256444570855,
+          366.3634192609446
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      }
+    },
+    {
+      "id": "ALSN.US",
+      "before": {
+        "b": true,
+        "v": [
+          108.98839358894946,
+          151.0182565972158,
+          174.45986706921735
+        ],
+        "m": 0.15,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": false,
+        "v": [
+          95.54995369770381,
+          137.57981670597013,
+          161.0214271779717
+        ],
+        "m": 0.5,
+        "t": "PPPPP"
+      }
+    },
+    {
+      "id": "FCN.US",
+      "before": {
+        "b": true,
+        "v": [
+          127.6623765873837,
+          179.43074267684204,
+          209.5755551532103
+        ],
+        "m": 0.25,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": false,
+        "v": [
+          123.89434452112165,
+          175.66271061057995,
+          205.80752308694824
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      }
+    },
+    {
+      "id": "NMIH.US",
+      "before": {
+        "b": false,
+        "v": null,
+        "m": 0.35,
+        "t": "PPPFP"
+      },
+      "after": {
+        "b": true,
+        "v": [
+          63.679860841674376,
+          79.59982605209295,
+          106.13310140279059
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      }
+    },
+    {
+      "id": "NTB.US",
+      "before": {
+        "b": false,
+        "v": null,
+        "m": 0.35,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": true,
+        "v": [
+          79.64968406236753,
+          99.56210507795939,
+          132.74947343727916
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      }
+    },
+    {
+      "id": "INMD.US",
+      "before": {
+        "b": false,
+        "v": null,
+        "m": 0.35,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": true,
+        "v": [
+          21.01720530342566,
+          22.732279257781574,
+          25.015406479566906
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      }
+    },
+    {
+      "id": "CFG-PH.US",
+      "before": {
+        "b": true,
+        "v": [
+          47.0959390756952,
+          58.86992384461899,
+          78.4932317928253
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": false,
+        "v": [
+          46.53393910089801,
+          58.167423876122506,
+          77.55656516816332
+        ],
+        "m": 0.35,
+        "t": "PFPPP"
+      }
+    }
+  ],
+  "unfrozen": {
+    "changedTests": 184,
+    "qualityChanges": [
+      {
+        "id": "DVA.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "management": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "SBSI.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "BMI.US",
+        "before": false,
+        "after": true,
+        "tests": {
+          "understandable": [
+            "na",
+            "pass"
+          ],
+          "moat": [
+            "na",
+            "pass"
+          ],
+          "economics": [
+            "na",
+            "pass"
+          ],
+          "management": [
+            "na",
+            "pass"
+          ],
+          "accounting": [
+            "na",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "NFLX.US",
+        "before": false,
+        "after": true,
+        "tests": {
+          "understandable": [
+            "fail",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "HON.US",
+        "before": false,
+        "after": true,
+        "tests": {
+          "management": [
+            "fail",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "NMIH.US",
+        "before": false,
+        "after": true,
+        "tests": {
+          "management": [
+            "fail",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "LAMR.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "management": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "HCI.US",
+        "before": false,
+        "after": true,
+        "tests": {
+          "understandable": [
+            "na",
+            "pass"
+          ],
+          "moat": [
+            "na",
+            "pass"
+          ],
+          "economics": [
+            "na",
+            "pass"
+          ],
+          "management": [
+            "na",
+            "pass"
+          ],
+          "accounting": [
+            "na",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "VCTR.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "1209.HK",
+        "before": false,
+        "after": true,
+        "tests": {
+          "understandable": [
+            "fail",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "NOVT.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "moat": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "BOKF.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      }
+    ],
+    "numericNullFields": 79,
+    "numericNullCompanies": [
+      "AVBH.US",
+      "BE.US",
+      "CL.US",
+      "DELL.US",
+      "DVA.US",
+      "FLG.US",
+      "GH.US",
+      "HCA.US",
+      "IIIN.US",
+      "KLIC.US",
+      "KMB.US",
+      "LDOS.US",
+      "LYV.US",
+      "MAS.US",
+      "MCK.US",
+      "PLXS.US",
+      "RFL.US",
+      "RMNI.US",
+      "SANM.US",
+      "STLAM.MI",
+      "TPG.US",
+      "TRMB.US"
+    ],
+    "valuationNulls": [
+      "UPS.US",
+      "MAS.US",
+      "105560.KO",
+      "ITSA3.SA",
+      "300308.SHE",
+      "IBS.LS",
+      "ROP.SW",
+      "005380.KO",
+      "BBDC3.SA",
+      "MRVL.US",
+      "POW.TO",
+      "SAGA-B.ST",
+      "KLBN3.SA",
+      "SWEC-B.ST",
+      "ISRG.US",
+      "SAVE.ST",
+      "300450.SHE",
+      "601818.SHG",
+      "8309.JP",
+      "SCHP.SW",
+      "UHR.SW",
+      "4307.JP",
+      "LUND-B.ST",
+      "300661.SHE",
+      "AR.US",
+      "600016.SHG",
+      "601808.SHG",
+      "603259.SHG",
+      "HGH.AU",
+      "GOOS.US",
+      "BRAP3.SA",
+      "ISAE3.SA",
+      "5803.JP",
+      "600660.SHG",
+      "N91.LSE",
+      "NKE.US",
+      "300347.SHE",
+      "002460.SHE",
+      "HEXA-B.ST",
+      "TGS.US",
+      "9633.HK",
+      "LPP.WAR",
+      "005940.KO",
+      "JHX.US",
+      "SRT3.XETRA",
+      "RCI-B.TO",
+      "ICG.LSE",
+      "BF-A.US",
+      "STERV.HE",
+      "GIGNF.US",
+      "601766.SHG",
+      "LAGR-B.ST",
+      "BCVN.SW",
+      "039490.KO",
+      "CTC-A.TO",
+      "601919.SHG",
+      "600188.SHG",
+      "600999.SHG",
+      "ADDT-B.ST",
+      "SKF-B.ST",
+      "601916.SHG",
+      "8766.JP",
+      "EXR.US",
+      "SNZ.AU",
+      "605499.SHG",
+      "ITUB.US",
+      "TREL-B.ST",
+      "600547.SHG",
+      "688303.SHG",
+      "000063.SHE",
+      "2884.TW",
+      "LIVEPOLC-1.MX",
+      "603993.SHG",
+      "ATCO-A.ST",
+      "029780.KO",
+      "2501.JP",
+      "603501.SHG",
+      "055550.KO",
+      "P911.XETRA",
+      "009540.KO",
+      "0981.HK",
+      "GHC.US",
+      "VOLV-B.ST",
+      "HVT.US",
+      "61L0.F",
+      "600031.SHG",
+      "AFYA.US",
+      "INDU-C.ST",
+      "601658.SHG",
+      "601211.SHG",
+      "BRC.US",
+      "DNB.OL",
+      "601898.SHG",
+      "TSN.US",
+      "601995.SHG",
+      "NOVO-B.CO",
+      "LIFCO-B.ST",
+      "601857.SHG",
+      "GRF.MC",
+      "SHOP.TO",
+      "SESG.PA",
+      "CINF.US",
+      "601939.SHG",
+      "CARL-B.CO",
+      "ERIE.US",
+      "6098.JP",
+      "FG.US",
+      "POMO3.SA",
+      "MRK.XETRA",
+      "120110.KO",
+      "HUBN.SW",
+      "300759.SHE",
+      "WN.TO",
+      "600036.SHG",
+      "CFR.US",
+      "COLO-B.CO",
+      "000157.SHE",
+      "CLB.US",
+      "SAAB-B.ST",
+      "FOX.US",
+      "AVBH.US",
+      "601728.SHG",
+      "600196.SHG",
+      "066570.KO",
+      "601628.SHG",
+      "COR.LS",
+      "EPI-A.ST",
+      "TEO.US",
+      "ASSA-B.ST",
+      "601607.SHG",
+      "NWS.US",
+      "CCU.US",
+      "009150.KO",
+      "600600.SHG",
+      "016360.KO",
+      "005930.KO",
+      "1099.HK",
+      "002050.SHE",
+      "603986.SHG",
+      "601688.SHG",
+      "000625.SHE",
+      "600030.SHG",
+      "ORNBV.HE",
+      "FPE3.XETRA",
+      "INVE-B.ST",
+      "AMBU-B.CO",
+      "SIA1.F",
+      "ABNB.US",
+      "GIB-A.TO",
+      "MNST.US",
+      "CENTA.US",
+      "OCBA.F",
+      "VPK.AS",
+      "601236.SHG",
+      "SPM.MI",
+      "002790.KO",
+      "051900.KO",
+      "CCL-B.TO",
+      "CIB.US",
+      "FINV.US",
+      "HEN.XETRA",
+      "5706.JP",
+      "TEN.MI",
+      "601899.SHG",
+      "601318.SHG",
+      "SSL.US",
+      "600276.SHG",
+      "601377.SHG",
+      "688008.SHG",
+      "NEU.AU",
+      "600690.SHG",
+      "NYT.US",
+      "000333.SHE",
+      "KIMBERA.MX",
+      "T6W.F",
+      "071050.KO",
+      "0883.HK",
+      "600362.SHG",
+      "RMR.US",
+      "ERIC-B.ST",
+      "000596.SHE",
+      "ASURB.MX",
+      "601633.SHG",
+      "BBOX.LSE",
+      "SJX.F",
+      "MIO.IR",
+      "BELFB.US",
+      "VATN.SW",
+      "601319.SHG",
+      "AMXB.MX",
+      "FNV.TO",
+      "KNEBV.HE",
+      "OMAB.MX",
+      "601881.SHG",
+      "HM-B.ST",
+      "005300.KO",
+      "000810.KO",
+      "DBX.US",
+      "002475.SHE",
+      "CMIG4.SA",
+      "NSIS-B.CO",
+      "HIAB.HE",
+      "000338.SHE",
+      "601328.SHG",
+      "300033.SHE",
+      "PGR.US",
+      "GETI-B.ST",
+      "600585.SHG",
+      "SB1NO.OL",
+      "EBS.VI",
+      "PUIG.MC",
+      "LATO-B.ST",
+      "300408.SHE",
+      "300223.SHE",
+      "SCA-B.ST",
+      "AOS.US",
+      "RL.US",
+      "601600.SHG",
+      "601398.SHG",
+      "CXSE3.SA",
+      "RIO.AU",
+      "SAP.XETRA",
+      "002714.SHE",
+      "RAT.LSE",
+      "BRK-B.US",
+      "ANET.US",
+      "DEVL.F",
+      "ABI.BR",
+      "1810.HK",
+      "2057.HK",
+      "600845.SHG",
+      "GENTERA.MX",
+      "HOLM-B.ST",
+      "601601.SHG",
+      "FWONK.US",
+      "002821.SHE",
+      "HEI-A.US",
+      "MAERSK-B.CO",
+      "4506.JP",
+      "600332.SHG",
+      "TW.US"
+    ]
+  }
+}

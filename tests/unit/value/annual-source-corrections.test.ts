@@ -15,7 +15,7 @@ it('replaces a calendar-share proxy with fiscal weighted diluted shares, never a
 it('requires an evidenced ADS ratio before converting ordinary share facts',()=>{
  const f=facts({WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(1334237985)]}}});
  expect(correctAnnualSources([year()],f,{source:'https://data.sec.gov/test',adr:true})[0].dilutedShares).toBe(512.1);
- const [y]=correctAnnualSources([year()],f,{source:'https://data.sec.gov/test',adr:true,ordinaryPerAds:5,shareBasisSource:'https://issuer.test/20-f'});
+ const [y]=correctAnnualSources([{...year(),dilutedShares:260000000}],f,{source:'https://data.sec.gov/test',adr:true,ordinaryPerAds:5,shareBasisSource:'https://issuer.test/20-f'});
  expect(y.dilutedShares).toBe(266847597);expect(y.provenance?.dilutedShares?.inputs).toContain('5 ordinary shares per ADS; https://issuer.test/20-f');
 });
 it('does not overwrite unrelated operating revenues, currencies or periods',()=>{
@@ -40,20 +40,20 @@ it('uses corroborated full-scale revenue when an alternate SEC tag omits the tho
  expect(correctAnnualSources([y],f,{source:'https://data.sec.gov/test',financial:true})[0].revenue).toBe(13569483000);
 });
 it('reads diluted partnership units as shares of the listed unit',()=>{
- const [y]=correctAnnualSources([year()],facts({WeightedAverageLimitedPartnershipUnitsOutstandingDiluted:{units:{shares:[row(137198218)]}}}),{source:'https://data.sec.gov/test'});expect(y.dilutedShares).toBe(137198218);
+ const [y]=correctAnnualSources([{...year(),dilutedShares:137000000}],facts({WeightedAverageLimitedPartnershipUnitsOutstandingDiluted:{units:{shares:[row(137198218)]}}}),{source:'https://data.sec.gov/test'});expect(y.dilutedShares).toBe(137198218);
 });
 it('uses IFRS basic weighted shares only when reported basic and diluted EPS are equal',()=>{
  const f={facts:{'ifrs-full':{WeightedAverageShares:{units:{shares:[row(30893300)]}},BasicEarningsLossPerShare:{units:{'USD/shares':[row(32.17)]}},DilutedEarningsLossPerShare:{units:{'USD/shares':[row(32.17)]}}}}};
- expect(correctAnnualSources([year()],f,{source:'https://data.sec.gov/test'})[0].dilutedShares).toBe(30893300);
+ expect(correctAnnualSources([{...year(),dilutedShares:30000000}],f,{source:'https://data.sec.gov/test'})[0].dilutedShares).toBe(30893300);
 });
 it('converts pre-split annual shares to current listing units exactly once',()=>{
  const f=facts({WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(12167000)]}}});
  const options={source:'https://data.sec.gov/test',splits:[{date:'2026-04-06',factor:3}]};
- const once=correctAnnualSources([year()],f,options);expect(once[0].dilutedShares).toBe(36501000);expect(correctAnnualSources(once,f,options)[0].dilutedShares).toBe(36501000);
+ const once=correctAnnualSources([{...year(),dilutedShares:36000000}],f,options);expect(once[0].dilutedShares).toBe(36501000);expect(correctAnnualSources(once,f,options)[0].dilutedShares).toBe(36501000);
 });
 it('aligns a rounded vendor end only with an independently matching annual total',()=>{
  const f=facts({Revenues:{units:{USD:[row(2889,{end:'2025-12-28'})]}},WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(121.2,{end:'2025-12-28'})]}}});
- expect(correctAnnualSources([year()],f,{source:'https://data.sec.gov/test'})[0].dilutedShares).toBe(121.2);
+ expect(correctAnnualSources([{...year(),dilutedShares:121}],f,{source:'https://data.sec.gov/test'})[0].dilutedShares).toBe(121.2);
  expect(correctAnnualSources([{...year(),revenue:1}],f,{source:'https://data.sec.gov/test'})[0].dilutedShares).toBe(512.1);
 });
 it('uses a reviewed consolidated extension concept without substituting insurance premiums alone',()=>{
@@ -79,7 +79,7 @@ it('prefers total IFRS revenue and income over fee revenue alone',()=>{
 it('sums reviewed financial revenue components only when every component covers the same period',()=>{
  const f=facts({NetInterest:{units:{USD:[row(10)]}},OtherIncome:{units:{USD:[row(4)]}}});
  const opts={source:'https://issuer.test/annual',financial:true,revenueComponents:['us-gaap:NetInterest','us-gaap:OtherIncome']};
- expect(correctAnnualSources([year()],f,opts)[0].revenue).toBe(14);
+ expect(correctAnnualSources([{...year(),dilutedShares:181}],f,opts)[0].revenue).toBe(14);
  expect(correctAnnualSources([year()],f,{...opts,revenueComponents:[...opts.revenueComponents,'us-gaap:Missing']})[0].revenue).toBe(2889);
 });
 it('does not replace older same-basis inputs with an undimensioned alternative accounting basis',()=>{
@@ -105,7 +105,7 @@ it('carries fractional ADR ratios from reviewed annual evidence through cached c
   source:'https://issuer.test/annual',ordinaryPerAds:.25,shareBasisSource:'https://issuer.test/adr',
   facts:facts({WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(982420000)]}}})}};
  const read=<T>(file:string)=>cache[file] as T??null;
- const corrected=correctCachedAnnualSources(company,[year()],{General:{Type:'Common Stock',HomeCategory:'ADR'}},read);
+ const corrected=correctCachedAnnualSources(company,[{...year(),dilutedShares:3900000000}],{General:{Type:'Common Stock',HomeCategory:'ADR'}},read);
  expect(corrected[0].dilutedShares).toBe(3929680000);
  expect(correctCachedAnnualSources(company,corrected,{General:{HomeCategory:'ADR'}},read)[0].dilutedShares).toBe(3929680000);
 });
@@ -116,7 +116,7 @@ it('uses explicit pre-split basis even if the reviewed report was filed after th
   facts:facts({WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(79551000,{filed:'2026-04-01'})]}}})}};
  const read=<T>(file:string)=>cache[file] as T??null;
  const splits=[{date:'2026-03-26',factor:3}];
- const corrected=correctCachedAnnualSources(company,[year()],null,read,splits);
+ const corrected=correctCachedAnnualSources(company,[{...year(),dilutedShares:238000000}],null,read,splits);
  expect(corrected[0].dilutedShares).toBe(238653000);
  expect(correctCachedAnnualSources(company,corrected,null,read,splits)[0].dilutedShares).toBe(238653000);
 });
@@ -156,11 +156,11 @@ it('does not turn an off-date cover-page count or ambiguous fiscal-end count int
 it('converts fiscal-instant shares to evidenced ADS and split units independently of diluted shares',()=>{
  const f=facts({CommonStockSharesOutstanding:{units:{shares:[row(450,{start:undefined})]}}});
  const opts={source:'https://data.sec.gov/test',adr:true,ordinaryPerAds:5,shareBasisSource:'https://issuer.test/20-f',splits:[{date:'2026-03-01',factor:2}]};
- expect(correctAnnualSources([year()],f,opts)[0].sharesOutstanding).toBe(180);
- expect(correctAnnualSources([year()],f,{...opts,shareBasisSource:undefined})[0].sharesOutstanding).toBeUndefined();
+ expect(correctAnnualSources([{...year(),dilutedShares:181}],f,opts)[0].sharesOutstanding).toBe(180);
+ expect(correctAnnualSources([{...year(),dilutedShares:181}],f,{...opts,shareBasisSource:undefined})[0].sharesOutstanding).toBeUndefined();
 });
 it('keeps matching reported share bases together when comparative diluted facts were filed after a corporate action',()=>{
  const f=facts({CommonStockSharesOutstanding:{units:{shares:[row(88.2,{start:undefined,filed:'2026-02-11'})]}},WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(88.4,{filed:'2026-04-01'})]}}});
- const [y]=correctAnnualSources([year()],f,{source:'https://data.sec.gov/test',splits:[{date:'2026-03-01',factor:1.388}]});
+ const [y]=correctAnnualSources([{...year(),dilutedShares:88.5}],f,{source:'https://data.sec.gov/test',splits:[{date:'2026-03-01',factor:1.388}]});
  expect(y.dilutedShares).toBe(88.4);expect(y.sharesOutstanding).toBe(88.2);
 });

@@ -2,12 +2,13 @@
 import { execFileSync } from 'node:child_process';
 import { cpSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
+import { tmpdir } from 'node:os';
 import { corpusPath } from '../../lib/value/corpus';
 import { assertIndexConsistency } from '../../lib/value/consistency';
 import type { IndexRow, StoreMeta } from '../../lib/value/types';
 
 const out = process.argv[2];
-if (!out?.startsWith('/tmp/')) throw new Error('Supply an isolated /tmp output directory');
+if (!out || !path.resolve(out).startsWith(path.resolve(tmpdir()) + path.sep)) throw new Error('Supply an isolated output directory under TMPDIR');
 const source = corpusPath('publish-repo');
 const git = (...args: string[]) => execFileSync('git', ['-C', source, ...args], { encoding: 'utf8' }).trim();
 const commit = git('rev-parse', 'HEAD');

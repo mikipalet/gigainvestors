@@ -1,0 +1,80 @@
+{
+  "beforeSha256": "a28e5fe482546969e12b833ce053f0c4550605b817ed6ad21115d68803b62f06",
+  "afterSha256": "1855933b5c6f5b4b48f71ea8b5171e0855c8b961144437b5587c9562bf00b606",
+  "added": [
+    {
+      "id": "RACE.MI",
+      "company": {
+        "id": "RACE.MI",
+        "name": "FERRARI",
+        "code": "RACE",
+        "exchange": "MI",
+        "country": "IT",
+        "currency": "EUR",
+        "isin": "NL0011585146",
+        "cik": "0001648416",
+        "sector": "Consumer Cyclical",
+        "industry": "Auto Manufacturers",
+        "kind": "operating",
+        "listings": [
+          "RACE.MI",
+          "RACE.US"
+        ],
+        "marketCapUsd": 72211464192,
+        "description": "Ferrari N.V., through its subsidiaries, engages in design, engineering, production, and sale of luxury performance sports cars worldwide. It offers sports, track, one-off, and road cars, as well as supercars. The company also provides spare parts and engines, as well as after sales, repair, maintenance, and restoration services for cars; and licenses its Ferrari brand to various producers and retailers of luxury and lifestyle goods. In addition, it operates Ferrari museums in Modena and Maranello; Il Cavallino restaurant in Maranello; and theme parks in Abu Dhabi and Spain. Further, the company provides direct or indirect finance and leasing services; range of financial and ancillary services; special financing arrangements; and operates franchised and owned Ferrari stores. The company was founded in 1947 and is headquartered in Maranello, Italy.",
+        "source": "esef",
+        "listingExchange": "Euronext Milan",
+        "lei": "549300RIVY5EX8RCON76",
+        "edinetCode": null,
+        "indexes": [
+          "Euro Stoxx 50",
+          "STOXX Europe 600",
+          "FTSE MIB"
+        ],
+        "investmentHolding": false,
+        "nameEn": "FERRARI",
+        "logo": "/api/value/logo?asset=af5e12cb06d03d2126fe9de9624226b7f873f452d730961296549b5c7b87a3b4",
+        "about": null
+      },
+      "evidence": "Unchanged archived identity and matching current index-membership/latest.json memberships"
+    },
+    {
+      "id": "STLAM.MI",
+      "company": {
+        "id": "STLAM.MI",
+        "name": "Stellantis NV",
+        "code": "STLAM",
+        "exchange": "MI",
+        "country": "IT",
+        "currency": "EUR",
+        "isin": "NL00150001Q9",
+        "kind": "operating",
+        "listings": [
+          "STLAM.MI",
+          "STLA.US",
+          "STLAP.PA"
+        ],
+        "source": "esef",
+        "nameEn": "Stellantis NV",
+        "listingExchange": "Euronext Milan",
+        "lei": "549300LKT9PW7ZIBDF31",
+        "cik": "0001605484",
+        "edinetCode": null,
+        "sector": "Consumer Cyclical",
+        "industry": "Auto Manufacturers",
+        "marketCapUsd": 17696161956.04008,
+        "description": null,
+        "indexes": [
+          "STOXX Europe 600",
+          "CAC 40",
+          "SBF 120",
+          "FTSE MIB"
+        ],
+        "investmentHolding": false,
+        "logo": "/api/value/logo?asset=daf9ac10591a80287ae42d85f95968171828d6e25700ae9d615cf9e1a716234a",
+        "about": null
+      },
+      "evidence": "Unchanged archived identity and matching current index-membership/latest.json memberships"
+    }
+  ]
+}

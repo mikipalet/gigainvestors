@@ -1,0 +1,2439 @@
+[
+  {
+    "id": "MCD.US",
+    "beforeYears": 30,
+    "correctedYears": 30,
+    "integrityYears": 30,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 919900000,
+        "after": 944600000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000063908.json#0000063908-18-000010",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2015-01-01 to 2015-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 829700000,
+        "after": 861200000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000063908.json#0000063908-19-000010",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2016-01-01 to 2016-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 803000000,
+        "after": 815500000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000063908.json#0000063908-20-000022",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2017-01-01 to 2017-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 776600000,
+        "after": 785600000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000063908.json#0000063908-21-000013",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2018-01-01 to 2018-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 755600000,
+        "after": 764900000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000063908.json#0000063908-22-000011",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2019-01-01 to 2019-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 751000000,
+        "after": 750100000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000063908.json#0000063908-23-000012",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2020-01-01 to 2020-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 751600000,
+        "after": 751800000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000063908.json#0000063908-24-000072",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2021-01-01 to 2021-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 736000000,
+        "after": 741300000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000063908.json#0000063908-25-000012",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 727800000,
+        "after": 732300000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm#000006390826000035",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 719700000,
+        "after": 721900000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm#000006390826000035",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 714200000,
+        "after": 716400000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm#000006390826000035",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000000; independent annual/source share counts"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "WRB.US",
+    "beforeYears": 30,
+    "correctedYears": 30,
+    "integrityYears": 30,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 439387422.75,
+        "after": 439387422.75,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000011544.json#0000011544-18-000012",
+          "field": "dilutedShares",
+          "method": "derived",
+          "inputs": [
+            "XBRL net income 503694000; diluted EPS 3.87; weighted diluted shares tag 130188866.",
+            "Correct share tag scale by 1 (income / EPS corroborates shares in thousands); multiply by 3.375 for subsequent 3:2 splits in 2019, 2022 and 2024 not yet reflected in that comparative filing."
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 433865828.25,
+        "after": 433865828.25,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000011544.json#0000011544-19-000016",
+          "field": "dilutedShares",
+          "method": "derived",
+          "inputs": [
+            "XBRL net income 601916000; diluted EPS 4.68; weighted diluted shares tag 128552838.",
+            "Correct share tag scale by 1 (income / EPS corroborates shares in thousands); multiply by 3.375 for subsequent 3:2 splits in 2019, 2022 and 2024 not yet reflected in that comparative filing."
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 435435750,
+        "after": 435435750,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000011544.json#0000011544-20-000016",
+          "field": "dilutedShares",
+          "method": "derived",
+          "inputs": [
+            "XBRL net income 549094000; diluted EPS 2.84; weighted diluted shares tag 193527.",
+            "Correct share tag scale by 1000 (income / EPS corroborates shares in thousands); multiply by 2.25 for subsequent 3:2 splits in 2019, 2022 and 2024 not yet reflected in that comparative filing."
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 432888750,
+        "after": 432888750,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000011544.json#0000011544-21-000013",
+          "field": "dilutedShares",
+          "method": "derived",
+          "inputs": [
+            "XBRL net income 640749000; diluted EPS 3.33; weighted diluted shares tag 192395.",
+            "Correct share tag scale by 1000 (income / EPS corroborates shares in thousands); multiply by 2.25 for subsequent 3:2 splits in 2019, 2022 and 2024 not yet reflected in that comparative filing."
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 435422250,
+        "after": 435422250,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000011544.json#0000011544-22-000007",
+          "field": "dilutedShares",
+          "method": "derived",
+          "inputs": [
+            "XBRL net income 681944000; diluted EPS 3.52; weighted diluted shares tag 193521.",
+            "Correct share tag scale by 1000 (income / EPS corroborates shares in thousands); multiply by 2.25 for subsequent 3:2 splits in 2019, 2022 and 2024 not yet reflected in that comparative filing."
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 424717500,
+        "after": 424717500,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000011544.json#0000011544-23-000004",
+          "field": "dilutedShares",
+          "method": "derived",
+          "inputs": [
+            "XBRL net income 530670000; diluted EPS 1.87; weighted diluted shares tag 283145.",
+            "Correct share tag scale by 1000 (income / EPS corroborates shares in thousands); multiply by 1.5 for subsequent 3:2 splits in 2019, 2022 and 2024 not yet reflected in that comparative filing."
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 419623500,
+        "after": 419623500,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000011544.json#0000011544-24-000005",
+          "field": "dilutedShares",
+          "method": "derived",
+          "inputs": [
+            "XBRL net income 1022490000; diluted EPS 3.66; weighted diluted shares tag 279749.",
+            "Correct share tag scale by 1000 (income / EPS corroborates shares in thousands); multiply by 1.5 for subsequent 3:2 splits in 2019, 2022 and 2024 not yet reflected in that comparative filing."
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 419192000,
+        "after": 419192000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000011544.json#0000011544-25-000005",
+          "field": "dilutedShares",
+          "method": "derived",
+          "inputs": [
+            "XBRL net income 1381062000; diluted EPS 3.29; weighted diluted shares tag 419192.",
+            "Correct share tag scale by 1000 (income / EPS corroborates shares in thousands); multiply by 1 for subsequent 3:2 splits in 2019, 2022 and 2024 not yet reflected in that comparative filing."
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 406522500,
+        "after": 409948000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/11544/000001154426000005/wrb-20251231.htm#000001154426000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 400888000,
+        "after": 403224000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/11544/000001154426000005/wrb-20251231.htm#000001154426000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 399135000,
+        "after": 399861000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/11544/000001154426000005/wrb-20251231.htm#000001154426000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "GRMN.US",
+    "beforeYears": 27,
+    "correctedYears": 27,
+    "integrityYears": 27,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 189900000,
+        "after": 191107000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001121788.json#0001615774-18-001344",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2014-12-28 to 2015-12-26",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 189171000,
+        "after": 189343000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001121788.json#0001615774-19-002739",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2015-12-27 to 2016-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 188915000,
+        "after": 188732000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001121788.json#0001564590-20-005133",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2017-01-01 to 2017-12-30",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 190177000,
+        "after": 189734000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001121788.json#0001564590-21-006192",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2017-12-31 to 2018-12-29",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 191225000,
+        "after": 190899000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001121788.json#0000950170-22-001303",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2018-12-30 to 2019-12-28",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 192303000,
+        "after": 191895000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001121788.json#0000950170-23-003566",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2019-12-29 to 2020-12-26",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 193306000,
+        "after": 193043000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001121788.json#0000950170-24-017559",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2020-12-27 to 2021-12-25",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 192104000,
+        "after": 193042000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001121788.json#0000950170-25-022760",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2021-12-26 to 2022-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 192557000,
+        "after": 192058000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1121788/000119312526056028/grmn-20251227.htm#000119312526056028",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-30",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 193759000,
+        "after": 193281000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1121788/000119312526056028/grmn-20251227.htm#000119312526056028",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-12-31 to 2024-12-28",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 193777000,
+        "after": 193616000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1121788/000119312526056028/grmn-20251227.htm#000119312526056028",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-12-29 to 2025-12-27",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "CEG.US",
+    "beforeYears": 14,
+    "correctedYears": 14,
+    "integrityYears": 14,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 326300000,
+        "after": 326300000,
+        "provenance": {
+          "source": "raw/eodhd/CEG.US.json#2015-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 326300000,
+        "after": 326300000,
+        "provenance": {
+          "source": "raw/eodhd/CEG.US.json#2016-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 326300000,
+        "after": 326300000,
+        "provenance": {
+          "source": "raw/eodhd/CEG.US.json#2017-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 326300000,
+        "after": 326300000,
+        "provenance": {
+          "source": "raw/eodhd/CEG.US.json#2018-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 326663900,
+        "after": 326663900,
+        "provenance": {
+          "source": "raw/eodhd/CEG.US.json#2019-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 326664000,
+        "after": 326664000,
+        "provenance": {
+          "source": "raw/eodhd/CEG.US.json#2020-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 326664000,
+        "after": 326664000,
+        "provenance": {
+          "source": "raw/eodhd/CEG.US.json#2021-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 329000000,
+        "after": 329000000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001868275.json#0001868275-25-000023",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 320000000,
+        "after": 324000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm#000186827526000032",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 314000000,
+        "after": 315000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm#000186827526000032",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 314000000,
+        "after": 314000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1868275/000186827526000032/ceg-20251231.htm#000186827526000032",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "GE.US",
+    "beforeYears": 30,
+    "correctedYears": 30,
+    "integrityYears": 30,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 1227625000,
+        "after": 1227625000,
+        "provenance": {
+          "source": "raw/eodhd/GE.US.json#2015-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 1112625000,
+        "after": 1112625000,
+        "provenance": {
+          "source": "raw/eodhd/GE.US.json#2016-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 1086947000,
+        "after": 1086947000,
+        "provenance": {
+          "source": "raw/eodhd/GE.US.json#2017-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 1087625000,
+        "after": 1087625000,
+        "provenance": {
+          "source": "raw/eodhd/GE.US.json#2018-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 1092750000,
+        "after": 1367022999.9999998,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000040545.json#0000040545-22-000008",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2019-01-01 to 2019-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-basis split factor 1.253; current listing units; basis 2022-02-11; https://data.sec.gov/api/xbrl/companyfacts/CIK0000040545.json"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 1095125000,
+        "after": 1372034999.9999998,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000040545.json#0000040545-23-000023",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2020-01-01 to 2020-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-basis split factor 1.253; current listing units; basis 2023-02-10; https://data.sec.gov/api/xbrl/companyfacts/CIK0000040545.json"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 1099000000,
+        "after": 1375793999.9999998,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000040545.json#0000040545-24-000027",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2021-01-01 to 2021-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-basis split factor 1.253; current listing units; basis 2024-02-02; https://data.sec.gov/api/xbrl/companyfacts/CIK0000040545.json"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 1097000000,
+        "after": 1101000000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000040545.json#0000040545-25-000015",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 1100000000,
+        "after": 1099000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/40545/000004054526000008/ge-20251231.htm#000004054526000008",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 1085142900,
+        "after": 1094000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/40545/000004054526000008/ge-20251231.htm#000004054526000008",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 1067000000,
+        "after": 1068000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/40545/000004054526000008/ge-20251231.htm#000004054526000008",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "KDP.US",
+    "beforeYears": 26,
+    "correctedYears": 26,
+    "integrityYears": 26,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 951000000,
+        "after": 951000000,
+        "provenance": {
+          "source": "raw/eodhd/KDP.US.json#2015-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 923500000,
+        "after": 923500000,
+        "provenance": {
+          "source": "raw/eodhd/KDP.US.json#2016-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 899500000,
+        "after": 899500000,
+        "provenance": {
+          "source": "raw/eodhd/KDP.US.json#2017-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 1406200000,
+        "after": 1097600000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001418135.json#0001418135-21-000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2018-01-01 to 2018-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 1419900000,
+        "after": 1419100000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001418135.json#0001418135-22-000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2019-01-01 to 2019-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 1423800000,
+        "after": 1422100000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001418135.json#0001418135-23-000003",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2020-01-01 to 2020-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 1429000000,
+        "after": 1427900000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001418135.json#0001418135-24-000007",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2021-01-01 to 2021-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 1427500000,
+        "after": 1428500000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001418135.json#0001418135-25-000013",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 1401300000,
+        "after": 1408400000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1418135/000141813526000016/kdp-20251231.htm#000141813526000016",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 1368300000,
+        "after": 1368300000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1418135/000141813526000016/kdp-20251231.htm#000141813526000016",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 1362800000,
+        "after": 1362800000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1418135/000141813526000016/kdp-20251231.htm#000141813526000016",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "TSLA.US",
+    "beforeYears": 20,
+    "correctedYears": 20,
+    "integrityYears": 20,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 1966500000,
+        "after": 1966500000,
+        "provenance": {
+          "source": "raw/eodhd/TSLA.US.json#2015-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 2325360000,
+        "after": 2325360000,
+        "provenance": {
+          "source": "raw/eodhd/TSLA.US.json#2016-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 2524710000,
+        "after": 2524710000,
+        "provenance": {
+          "source": "raw/eodhd/TSLA.US.json#2017-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 2685390000,
+        "after": 2559000000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json#0001564590-21-004599",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2018-01-01 to 2018-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-basis split factor 3; current listing units; basis 2021-02-08; https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 2805000000,
+        "after": 2661000000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json#0000950170-22-000796",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2019-01-01 to 2019-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-basis split factor 3; current listing units; basis 2022-02-07; https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 3372000000,
+        "after": 3249000000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json#0000950170-23-001409",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2020-01-01 to 2020-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 3100522800,
+        "after": 3386000000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json#0001628280-24-002390",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2021-01-01 to 2021-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 3471000000,
+        "after": 3475000000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json#0001628280-25-003063",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 3492000000,
+        "after": 3485000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm#000162828026003952",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 3517000000,
+        "after": 3498000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm#000162828026003952",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 3528000000,
+        "after": 3528000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm#000162828026003952",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "CSNA3.SA",
+    "beforeYears": 29,
+    "correctedYears": 29,
+    "integrityYears": 29,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 1357133000,
+        "after": 1357133000,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2015-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 1357133000,
+        "after": 1357133000,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2016-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 1357133000,
+        "after": 1357133000,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2017-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 1380114500,
+        "after": 1380114500,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2018-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 1380114500,
+        "after": 1380114500,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2019-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 1380114500,
+        "after": 1380114500,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2020-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 1341734000,
+        "after": 1341734000,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2021-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 1327028600,
+        "after": 1327028600,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2022-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 1326093900,
+        "after": 1326093900,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2023-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 1326093900,
+        "after": 1326093900,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2024-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 1326093900,
+        "after": 1326093900,
+        "provenance": {
+          "source": "raw/eodhd/CSNA3.SA.json#2025-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      }
+    ]
+  },
+  {
+    "id": "KOFUBL.MX",
+    "beforeYears": 11,
+    "correctedYears": 11,
+    "integrityYears": 11,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": null,
+        "after": null
+      },
+      {
+        "fy": 2016,
+        "before": null,
+        "after": null
+      },
+      {
+        "fy": 2017,
+        "before": 2100832262,
+        "after": 2100832262,
+        "provenance": {
+          "source": "raw/eodhd/KOFUBL.MX.json#2017-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 2100879399.9999998,
+        "after": 2100879399.9999998,
+        "provenance": {
+          "source": "raw/eodhd/KOFUBL.MX.json#2018-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 2100837500,
+        "after": 2100837500,
+        "provenance": {
+          "source": "https://coca-colafemsa.com/KOF2020/pdf/04_Appendix.pdf",
+          "field": "dilutedShares",
+          "method": "derived",
+          "inputs": [
+            "Computed based on the weighted average number of shares outstanding during the periods presented: 16,806.7 million for 2020, 2019 and 2018",
+            "Convert ordinary shares to the listed eight-share unit: 3 Series B + 5 Series L. Unit structure and the 11 April 2019 split: https://www.sec.gov/Archives/edgar/data/1061736/000155837021004287/fmx-20201231x20f.htm. Reported average ordinary shares are a proxy for diluted units."
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 2100837500,
+        "after": 2100837500,
+        "provenance": {
+          "source": "https://coca-colafemsa.com/KOF2020/pdf/04_Appendix.pdf",
+          "field": "dilutedShares",
+          "method": "derived",
+          "inputs": [
+            "Computed based on the weighted average number of shares outstanding during the periods presented: 16,806.7 million for 2020, 2019 and 2018",
+            "Convert ordinary shares to the listed eight-share unit: 3 Series B + 5 Series L. Unit structure and the 11 April 2019 split: https://www.sec.gov/Archives/edgar/data/1061736/000155837021004287/fmx-20201231x20f.htm. Reported average ordinary shares are a proxy for diluted units."
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 2100832262,
+        "after": 2100832262,
+        "provenance": {
+          "source": "raw/eodhd/KOFUBL.MX.json#2021-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 2100832262,
+        "after": 2100832262,
+        "provenance": {
+          "source": "raw/eodhd/KOFUBL.MX.json#2022-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 2100832262,
+        "after": 2100832262,
+        "provenance": {
+          "source": "raw/eodhd/KOFUBL.MX.json#2023-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 2100832262,
+        "after": 2100832262,
+        "provenance": {
+          "source": "raw/eodhd/KOFUBL.MX.json#2024-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 2100832262,
+        "after": 2100832262,
+        "provenance": {
+          "source": "raw/eodhd/KOFUBL.MX.json#2025-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      }
+    ]
+  },
+  {
+    "id": "BRO.US",
+    "beforeYears": 28,
+    "correctedYears": 28,
+    "integrityYears": 28,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": [
+        "share count jumped 18.57x in 1997; history retained from 1997",
+        "share count jumped 0.13x in 1998; history retained from 1998"
+      ]
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 278226000,
+        "after": 280224000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000079282.json#0000079282-18-000006",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2015-01-01 to 2015-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-basis split factor 2; current listing units; basis 2018-02-28; https://data.sec.gov/api/xbrl/companyfacts/CIK0000079282.json"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 276810000,
+        "after": 275608000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000079282.json#0000079282-19-000006",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2016-01-01 to 2016-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 276202000,
+        "after": 277586000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000079282.json#0001564590-20-006075",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2017-01-01 to 2017-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 275273000,
+        "after": 275521000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000079282.json#0001564590-21-007624",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2018-01-01 to 2018-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 274814000,
+        "after": 274616000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000079282.json#0000950170-22-001654",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2019-01-01 to 2019-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 277398000,
+        "after": 275800000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000079282.json#0000950170-23-004717",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2020-01-01 to 2020-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 278128000,
+        "after": 277400000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000079282.json#0000950170-24-018890",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2021-01-01 to 2021-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 279018000,
+        "after": 279000000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000079282.json#0000950170-25-019039",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 281900000,
+        "after": 281000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/79282/000119312526046984/bro-20251231.htm#000119312526046984",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 284000000,
+        "after": 284000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/79282/000119312526046984/bro-20251231.htm#000119312526046984",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 339000000,
+        "after": 313000000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/79282/000119312526046984/bro-20251231.htm#000119312526046984",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "COP.US",
+    "beforeYears": 30,
+    "correctedYears": 30,
+    "integrityYears": 30,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 1243699000,
+        "after": 1241919000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001193125-18-049729",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2015-01-01 to 2015-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 1246337000,
+        "after": 1245440000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001193125-19-043841",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2016-01-01 to 2016-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 1198276000,
+        "after": 1221038000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001193125-20-039954",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2017-01-01 to 2017-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 1159305000,
+        "after": 1175538000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001562762-21-000027",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2018-01-01 to 2018-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 1099786000,
+        "after": 1123536000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001562762-22-000031",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2019-01-01 to 2019-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 1073579999.9999999,
+        "after": 1078030000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001163165-23-000006",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2020-01-01 to 2020-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 1320829000,
+        "after": 1328151000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001163165-24-000010",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2021-01-01 to 2021-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 1223856100,
+        "after": 1278163000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001163165-25-000012",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 1189903000,
+        "after": 1205675000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001163165-26-000009",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 1209163000,
+        "after": 1180871000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001163165-26-000009",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 1233956000,
+        "after": 1253446000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001163165.json#0001163165-26-000009",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "EG.US",
+    "beforeYears": 30,
+    "correctedYears": 30,
+    "integrityYears": 30,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 43254400,
+        "after": 43795000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001095073.json#0001095073-18-000008",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2015-01-01 to 2015-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 41142300,
+        "after": 41628000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001095073.json#0001095073-19-000011",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2016-01-01 to 2016-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 41229200,
+        "after": 40843000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001095073.json#0001095073-20-000006",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2017-01-01 to 2017-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 40239400,
+        "after": 40586000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001095073.json#0001095073-21-000006",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2018-01-01 to 2018-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 40910500,
+        "after": 40420000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001095073.json#0001095073-22-000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2019-01-01 to 2019-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 39519000,
+        "after": 40000000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001095073.json#0001095073-23-000007",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2020-01-01 to 2020-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 39197000,
+        "after": 39300000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001095073.json#0001095073-24-000009",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2021-01-01 to 2021-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 39000000,
+        "after": 38800000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001095073.json#0001095073-25-000015",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 43400000,
+        "after": 41300000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1095073/000109507326000006/eg-20251231.htm#000109507326000006",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 42700000,
+        "after": 42700000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1095073/000109507326000006/eg-20251231.htm#000109507326000006",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 41411300,
+        "after": 41600000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1095073/000109507326000006/eg-20251231.htm#000109507326000006",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "HST.US",
+    "beforeYears": 30,
+    "correctedYears": 30,
+    "integrityYears": 30,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 761900000,
+        "after": 752900000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0001564590-18-003330",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2015-01-01 to 2015-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 738600000,
+        "after": 743700000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0001564590-19-004191",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2016-01-01 to 2016-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 739600000,
+        "after": 739100000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0001564590-20-006404",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2017-01-01 to 2017-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 741000000,
+        "after": 740600000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0001564590-21-008676",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2018-01-01 to 2018-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 717100000,
+        "after": 731100000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0000950170-22-001965",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2019-01-01 to 2019-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 705300000,
+        "after": 705900000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0000950170-23-003778",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2020-01-01 to 2020-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 716100000,
+        "after": 710300000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0001070750-24-000081",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2021-01-01 to 2021-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 717700000,
+        "after": 717500000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0001070750-25-000071",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 707600000,
+        "after": 712800000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0001070750-26-000054",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 700900000,
+        "after": 704000000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0001070750-26-000054",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 693900000,
+        "after": 694100000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001070750.json#0001070750-26-000054",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "MRK.XETRA",
+    "beforeYears": 24,
+    "correctedYears": 24,
+    "integrityYears": 24,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 433333300,
+        "after": 433333300,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2015-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 435238100,
+        "after": 435238100,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2016-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 435810800,
+        "after": 435810800,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2017-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 435897400,
+        "after": 435897400,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2018-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 434177200,
+        "after": 434177200,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2019-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 435135100,
+        "after": 435135100,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2020-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 434857100,
+        "after": 434857100,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2021-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 434777900,
+        "after": 434777900,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2022-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 434777900,
+        "after": 434777900,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2023-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 434777900,
+        "after": 434777900,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2024-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 434777900,
+        "after": 434777900,
+        "provenance": {
+          "source": "raw/eodhd/MRK.XETRA.json#2025-12-31",
+          "field": "annual shares (weighted-share proxy)",
+          "method": "estimate"
+        }
+      }
+    ]
+  },
+  {
+    "id": "VIVT3.SA",
+    "beforeYears": 28,
+    "correctedYears": 28,
+    "integrityYears": 28,
+    "integrity": {
+      "ok": true,
+      "reasons": [],
+      "notes": []
+    },
+    "shares": [
+      {
+        "fy": 2015,
+        "before": 3377388000,
+        "after": 3377388000,
+        "provenance": {
+          "source": "raw/eodhd/VIVT3.SA.json#2015-12-31",
+          "field": "split-adjusted diluted shares",
+          "method": "derived",
+          "inputs": [
+            "original shares: 1688694000",
+            "split factor: 2"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "before": 3377388800,
+        "after": 3377388800,
+        "provenance": {
+          "source": "raw/eodhd/VIVT3.SA.json#2016-12-31",
+          "field": "split-adjusted diluted shares",
+          "method": "derived",
+          "inputs": [
+            "original shares: 1688694400",
+            "split factor: 2"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "before": 3377387600,
+        "after": 3377387600,
+        "provenance": {
+          "source": "raw/eodhd/VIVT3.SA.json#2017-12-31",
+          "field": "split-adjusted diluted shares",
+          "method": "derived",
+          "inputs": [
+            "original shares: 1688693800",
+            "split factor: 2"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "before": 3377387600,
+        "after": 3377387600,
+        "provenance": {
+          "source": "raw/eodhd/VIVT3.SA.json#2018-12-31",
+          "field": "split-adjusted diluted shares",
+          "method": "derived",
+          "inputs": [
+            "original shares: 1688693800",
+            "split factor: 2"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "before": 3377387600,
+        "after": 3377387600,
+        "provenance": {
+          "source": "raw/eodhd/VIVT3.SA.json#2019-12-31",
+          "field": "split-adjusted diluted shares",
+          "method": "derived",
+          "inputs": [
+            "original shares: 1688693800",
+            "split factor: 2"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "before": 3376348400,
+        "after": 3376348400,
+        "provenance": {
+          "source": "raw/eodhd/VIVT3.SA.json#2020-12-31",
+          "field": "split-adjusted diluted shares",
+          "method": "derived",
+          "inputs": [
+            "original shares: 1688174200",
+            "split factor: 2"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "before": 3353876600,
+        "after": 3353876600,
+        "provenance": {
+          "source": "raw/eodhd/VIVT3.SA.json#2021-12-31",
+          "field": "split-adjusted diluted shares",
+          "method": "derived",
+          "inputs": [
+            "original shares: 1676938300",
+            "split factor: 2"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "before": 3340437000,
+        "after": 3340437000,
+        "provenance": {
+          "source": "raw/eodhd/VIVT3.SA.json#2022-12-31",
+          "field": "split-adjusted diluted shares",
+          "method": "derived",
+          "inputs": [
+            "original shares: 1670218500",
+            "split factor: 2"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "before": 3301031000,
+        "after": 1658604000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1066119/000207097926000018/viv-20251231.htm#000207097926000018",
+          "field": "ifrs-full:AdjustedWeightedAverageShares",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "before": 3264814800,
+        "after": 1643132000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1066119/000207097926000018/viv-20251231.htm#000207097926000018",
+          "field": "ifrs-full:AdjustedWeightedAverageShares",
+          "method": "derived",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Corroborated source scale 1000; independent annual/source share counts"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "before": 3223658000,
+        "after": 3223658000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1066119/000207097926000018/viv-20251231.htm#000207097926000018",
+          "field": "ifrs-full:WeightedAverageShares",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      }
+    ]
+  }
+]

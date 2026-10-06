@@ -1,0 +1,352 @@
+{
+  "states": 128,
+  "companies": [
+    "/s/ALSN.US",
+    "/s/CFRUY.US",
+    "/s/FCN.US",
+    "/s/MCD.US",
+    "/s/NFLX.US"
+  ],
+  "rawFailedStates": 108,
+  "ownerRequiredChromeFindings": 231,
+  "previouslyAcceptedWhitespaceFindings": 81,
+  "blockingFindings": [
+    {
+      "path": "/s/ALSN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2021\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"Annual report\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"\u00b7\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"2025\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"\u2197\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"Annual report\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"\u00b7\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"\u201d\" / \"2025\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2021\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"Annual report\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"\u00b7\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"2025\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"\u2197\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"Annual report\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"\u00b7\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"2025\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"\u2197\""
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\""
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2017\" / \"return on capital\""
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping chart labels: \"0.0%\" / \"2017 \u2013 LTM to Jun 2026\""
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-2-In_depth__.png",
+      "issue": "overlapping text: \"2017\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-2-In_depth__.png",
+      "issue": "overlapping text: \"2017\" / \"return on capital\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\""
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping chart labels: \"5%\" / \"2017 \u2013 LTM to Jun 2026\""
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\""
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping chart labels: \"0%\" / \"2017 \u2013 LTM to Jun 2026\""
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-3-More__.png",
+      "issue": "overlapping text: \"2017\" / \"return on capital\""
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping chart labels: \"30%\" / \"2017 \u2013 LTM to Jun 2026\""
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping chart labels: \"0.0%\" / \"2017 \u2013 LTM to Jun 2026\""
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-2-More__.png",
+      "issue": "overlapping text: \"2017\" / \"Gross margin\""
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-2-More__.png",
+      "issue": "overlapping text: \"2017\" / \"return on capital\""
+    }
+  ],
+  "disposition": "Exact named 12px shared-control findings from dedupe-1/cover-6 and existing cover-6 controller R2 whitespace ruling only; raw thresholds unchanged."
+}

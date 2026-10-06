@@ -44,3 +44,13 @@ it('retains empty released periods and their history index even when no rows are
  expect(files['history/2018Q3.json']).toEqual([]);
  expect(files['history/index.json']).toMatchObject({years:[2018],quarters:['2018Q3']});
 });
+it('retains an archived identity when its historical row already exists in the new snapshot',async()=>{
+ const {retainPublishedHistory}=await import('@/scripts/value/retain-published-history');
+ const row=['OLD.US','PPPPP',.8,true,1],identity={id:'OLD.US',n:'Old Company',c:'US',cur:'USD'};
+ writeCorpusJson('previous/history/index.json',{years:[2018],perYear:{}});
+ writeCorpusJson('previous/history/2018.json',[row]);
+ writeCorpusJson('previous/history/companies.json',[identity]);
+ const files:Record<string,unknown>={'history/2018.json':[row],'history/companies.json':[]};
+ expect(retainPublishedHistory(files,path.join(root,'previous'))).toEqual([]);
+ expect(files['history/companies.json']).toEqual([identity]);
+});

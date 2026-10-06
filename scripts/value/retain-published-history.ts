@@ -24,7 +24,10 @@ export function retainPublishedHistory(files:Record<string,unknown>,previousRepo
  files['history/index.json']=index;
  const hadIdentities=files['history/companies.json']!==undefined||existsSync(path.join(directory,'companies.json'));
  const identities=(files['history/companies.json']??[]) as IndexRow[],seen=new Set(identities.map(row=>row.id));
- const needed=new Set(retained.map(row=>row.id));
+ // A regenerated historical row can survive while its current company drops
+ // out of the identity builder. Restore identities for every emitted period,
+ // not only rows appended above.
+ const needed=new Set(Object.entries(files).filter(([file])=>/^history\/\d{4}(?:Q[1-4])?\.json$/.test(file)).flatMap(([,rows])=>(rows as SnapshotRow[]).map(row=>row[0])));
  const append=(rows:IndexRow[])=>{for(const row of rows)if(needed.has(row.id)&&!seen.has(row.id)){identities.push(row);seen.add(row.id);}};
  if(existsSync(path.join(directory,'companies.json')))append(read('companies.json'));
  // Legacy snapshots may have only the ordinary index identity.

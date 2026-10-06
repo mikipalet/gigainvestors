@@ -28,7 +28,7 @@ const SPENT = new Set('capex dividendsPaid buybacks acquisitions'.split(' '));
 export function emptyYear(end:string,currency:string):Year {
  return { ...Object.fromEntries([...Object.keys(FIELD_TAGS),'marketCap'].map(k=>[k,null])),fy:annualFiscalYear(end),end,currency } as unknown as Year;
 }
-type Fact = {val:number;start?:string;end:string;filed?:string;form?:string;fp?:string;accn?:string};
+type Fact = {val:number;decimals?:number|string;start?:string;end:string;filed?:string;form?:string;fp?:string;accn?:string};
 const annualFiling=(f:Fact)=>['10-K','10-K/A','20-F','20-F/A','40-F','40-F/A'].includes(f.form??'')
  || ['6-K','6-K/A'].includes(f.form??'')&&f.fp==='FY';
 export type CompanyFacts = {facts:Record<string,Record<string,{units:Record<string,Fact[]>}>>};

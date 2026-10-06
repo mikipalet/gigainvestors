@@ -33,7 +33,7 @@ export function annualInlineFacts(html:string,meta:{url:string;filed:string;form
   const value=text(n).replace(/[,\s]/g,'');if(!/\d/.test(value))continue;
   const val=Number(value.replace(/[()]/g,''))*10**Number(a.scale??0)*(a.sign==='-'||value.startsWith('(')?-1:1);
   if(!Number.isFinite(val))continue;
-  const data={start:ctx.start,end:ctx.end,val,filed:meta.filed,form:meta.form,accn:meta.url.split('/').at(-2)};
+  const data={start:ctx.start,end:ctx.end,val,...(a.decimals!==undefined?{decimals:a.decimals}:{}),filed:meta.filed,form:meta.form,accn:meta.url.split('/').at(-2)};
   facts[ns]??={};facts[ns][tag]??={units:{}};(facts[ns][tag].units[unit]??=[]).push(data);
  }
  return {facts};

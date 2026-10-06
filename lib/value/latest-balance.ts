@@ -23,6 +23,10 @@ export function balanceSheets(raw:unknown):BalanceSheet[] {
   if(!['absolute','1','units'].includes(String(r.units??r.unit??'absolute').toLowerCase()))return [];
   const mapped=balanceInputs(r,false);
   const debt=pick(r,'shortLongTermDebtTotal');
+  // Providers also cache date-only placeholders. They are not statements and
+  // cannot supersede an actual filed balance. Partial real statements still
+  // retain their unknown fields; no annual values are spliced into them.
+  if([mapped.cash,mapped.totalDebt,pick(r,'totalAssets'),pick(r,'totalStockholderEquity')].every(v=>v===null))return [];
   const filingDateAssumed=typeof r.filing_date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(r.filing_date)||!Number.isFinite(Date.parse(r.filing_date))||r.filing_date<=end;
   return [{end,filed:availableOn(end,r.filing_date),filingDateAssumed,currency:String(r.currency_symbol??obj(data.General).CurrencyCode??''),source:`EODHD ${frequency} balance sheet`,basis:'filed' as const,values:{
    cash:mapped.cash,cashExclusion:mapped.cashExclusion,clientAssets:mapped.clientAssets,totalDebt:mapped.totalDebt,

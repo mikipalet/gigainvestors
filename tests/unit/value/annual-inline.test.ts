@@ -15,3 +15,8 @@ it('selects an explicit accounting basis for revenue without mixing the undimens
  const f=annualInlineFacts(source,{...meta,revenueConcept:'us-gaap:Revenues',revenueDimensions:{'srt:ConsolidatedEntitiesAxis':'issuer:GroupMember'}});
  expect(f.facts['us-gaap'].Revenues.units.USD.map(x=>x.val)).toEqual([23035000000]);
 });
+it('retains decimals precision after expanding the inline scale exactly once',()=>{
+ const source=html.replace('scale="6">18,481','scale="6" decimals="-5">18,481');
+ const f=annualInlineFacts(source,meta).facts['us-gaap'].Revenues.units.USD[0];
+ expect(f.val).toBe(18481000000);expect(f.decimals).toBe('-5');
+});

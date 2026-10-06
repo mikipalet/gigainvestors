@@ -52,6 +52,8 @@ export function applyReportedFacts(years:Year[],facts:ReportedFacts[]):Year[]{
   for(const [field,reported] of Object.entries(f.values)){
    if(!Number.isFinite(reported))throw Error('Reported value must be finite');
    if(f.absenceInCompleteStatement&&reported!==0)throw Error('An absent line must be zero');
+   // A pre-spin / unavailable share count is not evidence of no shares.
+   if((field==='dilutedShares'||field==='sharesOutstanding')&&reported<=0)continue;
    if(y[field as keyof Year]!=null&&!f.correction)continue;
    const perShare=['navPerShare','dividendsPerShare','dilutedEps','basicEps'].includes(field);
    Object.assign(y,{[field]:perShare?reported/split:reported});

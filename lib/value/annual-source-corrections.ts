@@ -1,3 +1,4 @@
+import {shareUnitScale,resolveShareScale,retainShareContinuity} from './share-fact-scale';
 import {applyReportedFacts,type ReportedFacts} from './completeness/reported-facts';
 import type {Company,Year} from './types';
 import type {CompanyFacts} from './completeness/second-sources';
@@ -54,33 +55,69 @@ export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Opt
    }
   }
   const sourceEnd=anchors.has(y.end)?y.end:anchors.size===1?[...anchors][0]:y.end;
+  // Shares have no currency dimension. Do not let a mismatched issuer filing
+  // bypass the statement-currency checks merely because its share tag matches.
+  const statementCurrencies=new Set<string>();
+  for(const ns of Object.values(facts.facts))for(const tag of [...anchorFields.netIncome,'Revenues','Revenue'])
+   for(const [unit,rows] of Object.entries(ns[tag]?.units??{}))if(/^[A-Z]{3}$/.test(unit)&&rows.some(f=>{
+    const days=f.start?(Date.parse(f.end)-Date.parse(f.start))/86400000:0;
+    return f.end===sourceEnd&&Number.isFinite(f.val)&&f.val!==0&&days>=330&&days<=400
+     &&/^(10-K|20-F|40-F|17-A|annual-report)(\/A)?$/.test(f.form??'')&&(f.filed??'')<=new Date().toISOString().slice(0,10);
+   }))statementCurrencies.add(unit);
   const pick=(tags:string[],unit:string,instant=false)=>{
+   if(unit==='shares'&&y.currency&&statementCurrencies.size&&!statementCurrencies.has(y.currency))return null;
    for(const concept of tags)for(const ns of concept.includes(':')?[concept.split(':')[0]]:['us-gaap','ifrs-full']){
     const tag=concept.split(':').at(-1)!;
-    const rows=(facts.facts[ns]?.[tag]?.units[unit]??[]).filter(f=>f.end===sourceEnd
+    const units=facts.facts[ns]?.[tag]?.units??{};
+    const observations=unit==='shares'?Object.entries(units).flatMap(([u,fs])=>{const scale=shareUnitScale(u);return scale===null?[]:fs.map(f=>({...f,val:f.val*scale,unit:u,unitScale:scale}));}):(units[unit]??[]).map(f=>({...f,unit,unitScale:1}));
+    const rows=observations.filter(f=>f.end===sourceEnd
      && /^(10-K|20-F|40-F|17-A|annual-report)(\/A)?$/.test(f.form??'')&&Number.isFinite(f.val)
      &&(instant?!f.start:Boolean(f.start&&(Date.parse(f.end)-Date.parse(f.start))/86400000>=330&&(Date.parse(f.end)-Date.parse(f.start))/86400000<=400))
      &&(f.filed??'')<=new Date().toISOString().slice(0,10)).sort((a,b)=>(b.filed??'').localeCompare(a.filed??''));
     if(!rows.length)continue;
     const f=rows[0];if(rows.some(r=>r.filed===f.filed&&r.val!==f.val))return null;
-    return {value:f.val,tag:`${ns}:${tag}`,source:`${options.source}#${f.accn??f.filed}`,start:f.start!,end:f.end,filed:f.filed??''};
+    let scale=1;
+    if(unit==='shares'){
+     const ratio=options.adr?options.ordinaryPerAds:1;
+     const basis=options.shareBasisDate&&options.shareBasisSource?options.shareBasisDate:f.filed;
+     const split=(options.splits??[]).filter(s=>s.date>f.end&&s.date>(basis??'')&&s.date<=new Date().toISOString().slice(0,10)).reduce((a,s)=>a*s.factor,1);
+     // Compare on the source's ordinary, pre-action basis, before ADS conversion.
+     const toSource=(v:number|null|undefined)=>v!=null&&ratio?v*ratio/split:null;
+     const baseline=toSource(instant?y.sharesOutstanding??y.dilutedShares:y.dilutedShares);
+     const neighbours=years.filter(v=>v!==year&&Math.abs(Date.parse(v.end)-Date.parse(y.end))<=2*366*86400000)
+      .flatMap(v=>{const n=toSource(v.dilutedShares);return n!=null?[n]:[];});
+     const earlier=rows.filter(r=>r!==f&&r.val>0&&r.filed!==f.filed).map(r=>r.val);
+     const resolved=resolveShareScale(f.val,baseline,[...earlier,...neighbours],neighbours);
+     if(resolved===null)return null;
+     scale=resolved;
+    }
+    return {value:f.val*scale,scale:scale*f.unitScale,unit:f.unit,decimals:f.decimals,tag:`${ns}:${tag}`,source:`${options.source}#${f.accn??f.filed}`,start:f.start!,end:f.end,filed:f.filed??''};
    }return null;
   };
   const assign=(field:'revenue'|'dilutedShares'|'sharesOutstanding',fact:NonNullable<ReturnType<typeof pick>>,divisor=1,inputs:string[]=[])=>{
+   if(fact.value===0&&y[field]!=null&&y[field]!==0)return false;
+   const reviewed=y.provenance[field];
+   // A reviewed conversion of this very accession already includes its unit /
+   // split basis. Re-reading the unconverted tag is not new source evidence.
+   if(y[field]!=null&&y[field]!>0&&reviewed?.source===fact.source&&reviewed.field===field
+    &&reviewed.method==='derived'&&reviewed.inputs?.length)return false;
    y[field]=fact.value/divisor;
    if(field==='dilutedShares'&&options.adr)y.dilutedShareBasis='listing-ADS';
-   y.provenance[field]={source:fact.source,field:fact.tag,method:divisor===1?'reported':'derived',inputs:[field==='sharesOutstanding'?`Fiscal end ${fact.end}`:`Annual period ${fact.start} to ${fact.end}`,field==='revenue'?`Currency ${y.currency}`:field==='sharesOutstanding'?'Fiscal-end common shares outstanding':'Weighted average diluted shares',...inputs]};
+   y.provenance[field]={source:fact.source,field:fact.tag,method:divisor===1&&fact.scale===1?'reported':'derived',inputs:[field==='sharesOutstanding'?`Fiscal end ${fact.end}`:`Annual period ${fact.start} to ${fact.end}`,field==='revenue'?`Currency ${y.currency}`:field==='sharesOutstanding'?'Fiscal-end common shares outstanding':'Weighted average diluted shares',...(field!=='revenue'?[`Source unit ${fact.unit}; decimals ${fact.decimals??'unspecified'} (precision only)`,...(fact.scale!==1?[`Corroborated source scale ${fact.scale}; independent annual/source share counts`]:[])]:[]),...inputs]};
+   return true;
   };
   if((options.financial||options.revenueConcept)&&y.currency){
    const interest=pick(['InterestIncomeExpenseNet'],y.currency),other=pick(['NoninterestIncome'],y.currency);
    const components=options.revenueComponents?.map(tag=>pick([tag],y.currency!));
    if(components?.length&&components.every((f):f is NonNullable<typeof f>=>f!==null)&&components.every(f=>f.start===components[0]!.start)){
-    assign('revenue',{...components[0]!,value:components.reduce((sum,f)=>sum+f!.value,0),tag:components.map(f=>f!.tag).join(' + ')},1,['Reviewed consolidated revenue components; net interest before credit impairment']);
-    y.provenance.revenue.method='derived';y.netRevenue=y.revenue;
+    if(assign('revenue',{...components[0]!,value:components.reduce((sum,f)=>sum+f!.value,0),tag:components.map(f=>f!.tag).join(' + ')},1,['Reviewed consolidated revenue components; net interest before credit impairment'])){
+     y.provenance.revenue.method='derived';y.netRevenue=y.revenue;
+    }
    }else if(options.financial&&interest&&other&&interest.start===other.start){
     const total={...interest,value:interest.value+other.value,tag:`${interest.tag} + ${other.tag}`};
-    assign('revenue',total,1,['Net interest plus noninterest income; excludes interest expense']);
-    y.provenance.revenue.method='derived';y.netRevenue=y.revenue;
+    if(assign('revenue',total,1,['Net interest plus noninterest income; excludes interest expense'])){
+     y.provenance.revenue.method='derived';y.netRevenue=y.revenue;
+    }
    }else{
     let total=pick([...(options.revenueConcept?[options.revenueConcept]:[]),'Revenues','RevenuesNetOfInterestExpense','RevenueAndOperatingIncome','Revenue','GrossInvestmentIncomeOperating','InvestmentBankingRevenue','RevenueFromContractsWithCustomers','RevenueFromContractWithCustomerExcludingAssessedTax','RevenueFromContractWithCustomerIncludingAssessedTax'],y.currency);
     const contracts=pick(['RevenueFromContractWithCustomerExcludingAssessedTax','RevenueFromContractsWithCustomers'],y.currency);
@@ -120,7 +157,7 @@ export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Opt
  });
  // A proven fiscal-date shift can expose two vendor rows labelled as the same
  // fiscal year. Keep the later, source-aligned full year, not the overlapping proxy.
- const unique=[...new Map(corrected.map(y=>[y.end,y])).values()];
+ const unique=[...new Map(retainShareContinuity(years,corrected).map(y=>[y.end,y])).values()];
  return unique.filter(y=>!unique.some(other=>other!==y&&other.fy===y.fy&&other.end>y.end&&other.provenance?.end?.field==='annual-period-alignment')).sort((a,b)=>a.end.localeCompare(b.end));
 }
 

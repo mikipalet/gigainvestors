@@ -61,3 +61,9 @@ it('charges a disclosed pro-forma funding cost once and reconciles the earnings 
  const end=v.bridge.findIndex(r=>r.label==='= owner earnings');
  expect(v.bridge.slice(0,end).reduce((sum,r)=>sum+r.value,0)).toBe(v.normalized);
 });
+it('ignores date-only vendor placeholders when selecting the latest actual balance sheet',()=>{
+ const placeholder=structuredClone(raw) as any;
+ placeholder.Financials.Balance_Sheet.quarterly['2018-06-30']={filing_date:'2018-07-15',currency_symbol:'USD',totalAssets:null,cashAndShortTermInvestments:null,shortLongTermDebtTotal:null};
+ const annual=makeYears().at(-1)!;annual.end='2017-12-31';
+ expect(latestBalanceAt(balanceSheets(placeholder),'2018-08-01','USD',annual)?.end).toBe('2018-03-31');
+});

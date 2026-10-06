@@ -1,0 +1,27 @@
+[
+  {
+    "id": "AEG.US",
+    "path": "reports/AEG.US/business.txt",
+    "source": "https://www.sec.gov/Archives/edgar/data/769218/000119312526124987/d29563d20f.htm",
+    "filed": "2026-03-26",
+    "readingHash": "3313bd097cd3db296af93945d3414d64302f5287a22140bcb1455946a1467ef8",
+    "fromBytes": 389,
+    "toBytes": 31723,
+    "beforeSha256": "afd3f571c4855af300f43cafd6d1f692f54ede056e02414b44522fc192c81853",
+    "afterSha256": "6f373f75e02efe883cde2c622ddcb2410700893393b6a8b717bc1c6eb936abaa",
+    "reason": "Provider description overwrote the same full filing section; restore exact existing source-bound reading text"
+  },
+  {
+    "id": "NFE.US",
+    "restoredFrom": "/Users/miki/data/value-cover",
+    "path": "reports/NFE.US/business.txt",
+    "source": "https://www.sec.gov/Archives/edgar/data/1749723/000174972326000032/nfe-20251231.htm",
+    "filed": "2026-04-13",
+    "readingHash": "0e60c71cedf3bc5a38d2e2ca050b4220c7b7f97a3f24e66f186e0e78af2b3d91",
+    "fromBytes": 905,
+    "toBytes": 31749,
+    "beforeSha256": "daa1260a3a33e1671524de8548bf1529ca7995be376bada05df516db0d42b993",
+    "afterSha256": "b97d625a5fd0455006923c6a889b3652692546fdead3d4ecdea9ffb0d82ba652",
+    "reason": "Provider description overwrote the same full filing section; restore exact existing source-bound reading text"
+  }
+]

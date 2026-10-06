@@ -1,6 +1,6 @@
 vi.mock('@/scripts/value/blob-publish',()=>({uploadPublishedSnapshot:vi.fn(async()=>({}))}));
 import {execFileSync} from 'node:child_process';
-import {mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';
+import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {afterEach,expect,it,vi} from 'vitest';
@@ -22,7 +22,7 @@ it('budget fallback publishes the released tree without loading changed or inval
  const view='views/0123456789abcdef01234567.json';write(view,{});
  write('meta.json',{views:{current:view,deferred:[],quarters:{'2018Q3':view},quarterDeferred:{'2018Q3':[]},years:{},yearDeferred:{}}});
  write('history/index.json',{years:[],quarters:['2018Q3']});write('history/2018Q3.json',[]);
- write('index/default.json',[]);write('index/US.json',[]);write('dossiers/000.json',{'A.US':{id:'A.US',memo:'released analysis'}});
+ write('index/default.json',[]);write('index/US.json',[]);const d=JSON.parse(readFileSync('tests/fixtures/value/store/dossiers/027.json','utf8'))['KO.US'];write('dossiers/000.json',{'A.US':{...d,id:'A.US',company:{...d.company,id:'A.US',logo:null},memo:'released analysis'}});
  git(repo,'add','.');git(repo,'commit','-m','released');git(repo,'remote','add','origin',remote);git(repo,'push','-u','origin','main');
  const tree=git(repo,'rev-parse','HEAD^{tree}');
  mkdirSync(path.join(root,'analysis'));writeFileSync(path.join(root,'analysis/A.US.json'),'invalid partial research');

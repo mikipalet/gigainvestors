@@ -14,9 +14,11 @@ if [[ "$1" == "-e" ]]; then
  if [[ "$2" == *'dotenv'* ]]; then echo "$VALUE_CORPUS_DIR"; fi
  exit 0
 fi
+if [[ "$3" == *'coverage-summary-cli.ts' ]]; then echo "coverage: missingLogos=13->13"; echo COVERAGE >> "$TRACE"; exit 0; fi
 if [[ "$3" == *'daily-japan.ts' ]]; then echo 2026-10-03; exit 0; fi
 if [[ "$3" == *'post-publish'* ]]; then echo LIVE-CHECK >> "$TRACE"; exit "${codes.live??0}"; fi
 stage="$4"
+if [[ "$stage" == "publish" && "${codes.coverageFailure??0}" == "1" ]]; then echo "CRITICAL: publication coverage invariant: logos ids=KO.US"; exit 1; fi
 if [[ "$stage" == "analyze" ]]; then echo "ANALYZE_OFFLINE=$VALUE_NO_EODHD" >> "$TRACE"; fi
 if [[ "$stage" == "price-story" ]]; then echo "LEDGER=$STORY_DISK_LEDGER" >> "$TRACE"; fi
 shift 4
@@ -29,9 +31,9 @@ exit 0
  // Runner ordering tests use a stable disk observation; disk-pressure policy is tested separately.
  writeFileSync(path.join(root,'bin/df'),'#!/usr/bin/env bash\nprintf \"Filesystem 1024-blocks Used Available Capacity Mounted\\nfixture 20000000 1000000 19000000 5%% /\\n\"\n',{mode:0o755});
  writeFileSync(path.join(root,'bin/date'),'#!/usr/bin/env bash\necho 2026-10-05\n',{mode:0o755});
- let code=0;
- try{execFileSync('bash',[path.join(root,'scripts/value/run-daily.sh'),'--once'],{env:{...process.env,PATH:`${root}/bin:${process.env.PATH}`,VALUE_CORPUS_DIR:path.join(root,'corpus'),TRACE:path.join(root,'trace'),STORY_DISK_LEDGER:'disk-budget-old-worktree.json'},stdio:'pipe'});}catch(e){code=(e as {status:number}).status;}
- return {trace:readFileSync(path.join(root,'trace'),'utf8'),code};
+ let code=0,output="";
+ try{output=execFileSync('bash',[path.join(root,'scripts/value/run-daily.sh'),'--once'],{env:{...process.env,PATH:`${root}/bin:${process.env.PATH}`,VALUE_CORPUS_DIR:path.join(root,'corpus'),TRACE:path.join(root,'trace'),STORY_DISK_LEDGER:'disk-budget-old-worktree.json'},stdio:'pipe',encoding:'utf8'});}catch(e){code=(e as {status:number}).status;output=String((e as {stdout?:string}).stdout??'');}
+ return {trace:readFileSync(path.join(root,'trace'),'utf8'),code,output};
 }
 it('runs and publishes fresh analysis after yields and thesis exhaust their budgets',()=>{
  const {trace}=run({yields:75,thesis:75});
@@ -76,4 +78,10 @@ it('fetches logos before publication on normal and exhausted-budget cycles',()=>
   expect(trace).toMatch(/^logos /m);
   expect(trace.indexOf('logos ')).toBeLessThan(trace.indexOf('publish '));
  }
+});
+
+it('prints coverage even when publication is skipped or budget reset fails',()=>{for(const codes of [{thesis:1},{'wait-eodhd-reset':1}] as Record<string,number>[])expect(run(codes).output).toContain('coverage: missingLogos=13->13');});
+
+it('exits unsuccessfully and prints affected ids when the publication gate rejects coverage',()=>{
+ const result=run({coverageFailure:1});expect(result.code).toBe(1);expect(result.output).toContain('CRITICAL: publication coverage invariant: logos ids=KO.US');expect(result.trace).not.toMatch(/^status /m);
 });

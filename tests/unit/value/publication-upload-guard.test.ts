@@ -1,0 +1,23 @@
+import {execFileSync} from 'node:child_process';
+import {mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import path from 'node:path';
+import {expect,it,afterEach,vi} from 'vitest';
+const {put,get}=vi.hoisted(()=>({put:vi.fn(),get:vi.fn()}));
+vi.mock('@vercel/blob',()=>({put,get}));
+import {uploadPublishedSnapshot} from '@/scripts/value/blob-publish';
+const roots:string[]=[];
+afterEach(()=>{roots.splice(0).forEach(r=>rmSync(r,{recursive:true,force:true}));vi.clearAllMocks();});
+it.each(['no-receipt','logo-loss','dirty','bad-rollback'])('blocks Blob I/O on %s',async failure=>{
+ const repo=mkdtempSync(path.join(tmpdir(),'upload-guard-'));roots.push(repo);
+ const git=(...args:string[])=>execFileSync('git',['-C',repo,...args],{encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+ git('init','-b','main');git('config','user.name','Test');git('config','user.email','test@example.com');
+ mkdirSync(path.join(repo,'dossiers'));writeFileSync(path.join(repo,'meta.json'),'{}');
+ const file=path.join(repo,'dossiers/000.json'),d={id:'A.US',company:{logo:'https://example.com/logo.png'}};
+ writeFileSync(file,JSON.stringify({'A.US':d}));git('add','.');git('commit','-m','baseline');const before=git('rev-parse','HEAD');
+ d.company.logo='';writeFileSync(file,JSON.stringify({'A.US':d}));git('add','.');git('commit','-m','regression');const after=git('rev-parse','HEAD');
+ if(failure!=='no-receipt')writeFileSync(path.join(repo,'.git/value-publish-pending.json'),JSON.stringify({before,after,...(failure==='bad-rollback'?{rollback:after}:{})}));
+ if(failure==='dirty')writeFileSync(path.join(repo,'meta.json'),'{"dirty":true}');
+ await expect(uploadPublishedSnapshot(repo)).rejects.toThrow(/CRITICAL/);
+ expect(get).not.toHaveBeenCalled();expect(put).not.toHaveBeenCalled();
+});

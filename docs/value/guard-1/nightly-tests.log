@@ -1,0 +1,19 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-guard
+
+ ✓ tests/unit/value/daily-runner.test.ts (12 tests) 4942ms
+   ✓ runs and publishes fresh analysis after yields and thesis exhaust their budgets  434ms
+   ✓ does not hide a non-budget thesis failure  403ms
+   ✓ runs the live check after prices and publish, including a partial prices exit  487ms
+   ✓ passes a UTC-cycle-specific ledger to price-story instead of inheriting an old worktree ledger  393ms
+   ✓ reserves both fundamentals passes and runs analysis before optional news  403ms
+   ✓ retains prior released analysis when analysis itself fails  400ms
+   ✓ still analyzes after non-budget yields failures  382ms
+   ✓ fetches logos before publication on normal and exhausted-budget cycles  850ms
+   ✓ prints coverage even when publication is skipped or budget reset fails  581ms
+   ✓ exits unsuccessfully and prints affected ids when the publication gate rejects coverage  364ms
+
+ Test Files  1 passed (1)
+      Tests  12 passed (12)
+   Start at  15:49:55
+   Duration  5.37s (transform 86ms, setup 0ms, collect 70ms, tests 4.94s, environment 0ms, prepare 90ms)

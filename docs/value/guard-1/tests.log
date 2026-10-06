@@ -1,0 +1,481 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-guard
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > adds a held nonmember locally while preserving every existing dossier and country row
+Private share residual: 0; quality passes: 0
+publish: 2 companies written locally to /Users/miki/data/value-guard/tmp/test-corpus/publish-test-uR5GOg/candidate; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+Private share residual: 1; quality passes: 1
+publish: 2 companies written locally to /Users/miki/data/value-guard/tmp/test-corpus/publish-test-iJkgFH/candidate; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary local publication preserves the baseline when every proposed addition remains held
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > ordinary local publication preserves the baseline when every proposed addition remains held
+Private share residual: 0; quality passes: 0
+publish: 1 companies written locally to /Users/miki/data/value-guard/tmp/test-corpus/publish-test-LteNjf/all-held; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > uses enriched identities for search and historical identities with the same live since refresh
+history returns: 0 refreshed, 1 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > uses enriched identities for search and historical identities with the same live since refresh
+Private share residual: 0; quality passes: 0
+publish: 1 companies written locally to /Users/miki/data/value-guard/tmp/test-corpus/publish-test-dgx4gJ/candidate; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > audits newly analysed companies before the first publication exists
+{"all":{"flagged":1,"resolved":1,"residual":0},"quality":{"flagged":1,"resolved":1,"residual":0}}
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+Private share residual: 1; quality passes: 1
+publish: 1 companies written locally to /Users/miki/data/value-guard/tmp/test-corpus/publish-test-ig3uyv/staging; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository
+Private share residual: 1; quality passes: 1
+publish: 1 companies written locally to /Users/miki/data/value-guard/tmp/test-corpus/publish-test-ig3uyv/staging; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > refuses publication without index membership and excludes nonmembers
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > refuses publication without index membership and excludes nonmembers
+Private share residual: 0; quality passes: 0
+publish: 1 companies written locally to /Users/miki/data/value-guard/tmp/test-corpus/publish-test-59UaJs/scoped; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > writes a local snapshot without requiring or changing a git repository
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > buildOutput > uses cached FX to retain non-USD share-basis verification during publication
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > publish repository > preserves price bytes, removes obsolete generated files and replaces history with one commit
+coverage: missingLogos=0->1 buy:US=0->0 buy:default=0->0 dossiers=0->1 index:US=0->1 index:default=0->1 logos=0->0 priceHistory=0->0 quality=0->1 valuation=0->1 missingLogos:US=0->1
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > publish repository > collapses intervening price commits even when the snapshot files are unchanged
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > publish repository > stages a partial snapshot but refuses a delisting drop beyond the five-company floor
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=8->2 buy:US=0->1 buy:all=0->1 buy:default=0->1 buy:western=0->1 dossiers=8->2 index:US=8->2 index:default=8->2 logos=0->0 priceHistory=0->0 quality=8->2 valuation=8->2 missingLogos:US=8->2
+
+stdout | tests/unit/value/publish.test.ts > prices > keeps a failed Japanese quote while publishing successful quotes
+prices summary: 1/2 fresh (50.00%); Yahoo 1; failed exchanges none; missing 1; status=partial
+
+stdout | tests/unit/value/publish.test.ts > prices > writes fetched US prices even when every Japanese quote fails
+prices summary: 1/2 fresh (50.00%); Yahoo 0; failed exchanges none; missing 1; status=partial
+
+stderr | tests/unit/value/publish.test.ts > prices > writes fetched US prices even when every Japanese quote fails
+prices: skipped 8058.JP: Yahoo HTTP 403
+
+stdout | tests/unit/value/publish.test.ts > prices > routes Japanese companies to Yahoo and separates same-country exchanges
+prices summary: 3/3 fresh (100.00%); Yahoo 1; failed exchanges none; missing 0; status=ok
+
+stdout | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+prices summary: 1/2 fresh (50.00%); Yahoo 0; failed exchanges none; missing 1; status=partial
+
+stdout | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op
+prices summary: 1/1 fresh (100.00%); Yahoo 0; failed exchanges none; missing 0; status=ok
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > publishes available analyses and skips missing and unreadable files
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > compares published count rather than universe while admitting additions with logos
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->0 buy:US=0->0 buy:default=0->0 dossiers=1->8 index:US=1->8 index:default=1->8 logos=0->8 priceHistory=0->0 quality=1->8 valuation=1->8 missingLogos:US=1->0
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > guards legacy metadata and rejects even a forced empty commit
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->0 buy:US=0->0 buy:default=0->0 dossiers=1->0 index:US=1->0 index:default=1->0 logos=0->0 priceHistory=0->0 quality=1->0 valuation=1->0 missingLogos:US=1->0
+
+stdout | tests/unit/value/publish.test.ts > publish rollout safeguards > guards a legacy nonempty count drop and permits --force
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > joins the corpus monthly history at publish time and preserves it on partial publish
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=2->2 buy:US=0->0 buy:default=0->0 dossiers=2->2 index:US=2->2 index:default=2->2 logos=0->0 priceHistory=1->1 quality=2->2 valuation=2->2 missingLogos:US=2->2
+
+stdout | tests/unit/value/publish.test.ts > preserves an unpushed prices commit when preparing the next publish
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+
+stdout | tests/unit/value/publish.test.ts > joins new enrichment and completed numeric history when the controller publishes
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > uses current universe listings consistently across dossier, index and search on republish
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > excludes current nonmembers from current surfaces but retains their historical returns on partial republish
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > commits regenerated browser views together with refreshed prices
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > publishes immutable daily records through orphan commits and reads the forward view from snapshots
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->1 buy:US=1->1 buy:all=1->1 buy:default=1->1 buy:western=1->1 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->1 buy:US=1->1 buy:all=1->1 buy:default=1->1 buy:western=1->1 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->1 buy:US=1->1 buy:all=1->1 buy:default=1->1 buy:western=1->1 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stderr | tests/unit/value/publish.test.ts > publishes immutable daily records through orphan commits and reads the forward view from snapshots
+publish: kept existing forward/2026-10-01.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > makes short histories searchable and browsable without placing them in investment lists
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > keeps predecessor-backed test verdicts findable when a different test remains undecided
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stderr | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+publish: kept existing forward/2026-10-06.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+Private share residual: 0; quality passes: 0
+publish: 2 companies written locally to /Users/miki/data/value-guard/tmp/test-corpus/publish-test-GclV8X/out; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+
+stderr | tests/unit/value/publish.test.ts > freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal
+publish: kept existing forward/2026-10-06.json; forward records are immutable
+publish: kept existing forward/2026-10-06.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > uses current issuer shares for the cap check instead of last annual diluted shares
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > replaces a dated vendor cap with the current quote times supported issuer shares
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > retains published shares, preserves unapproved Buy changes, and still reprices later quotes
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+Private share residual: 0; quality passes: 0
+
+stderr | tests/unit/value/publish.test.ts > retains published shares, preserves unapproved Buy changes, and still reprices later quotes
+publish: kept existing forward/2026-10-06.json; forward records are immutable
+
+stdout | tests/unit/value/publish.test.ts > retains published shares, preserves unapproved Buy changes, and still reprices later quotes
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > keeps unresolved ADR or class-share capitalization conflicts guarded
+Private share residual: 1; quality passes: 1
+Private share residual: 1; quality passes: 1
+
+stdout | tests/unit/value/publish.test.ts > freezes the last live price test when a quote refresh introduces an unresolved ratio
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > retains released historical rows omitted by a newer quarterly run
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > prices keeps all 87 quarterly views, deferred views, annual views and history bytes
+prices summary: 1/1 fresh (100.00%); Yahoo 0; failed exchanges none; missing 0; status=ok
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=false)
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope
+history returns: 0 refreshed, 0 cached, 0 failed
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope
+Private share residual: 1; quality passes: 1
+publish: 1 companies written locally to /Users/miki/data/value-guard/tmp/test-corpus/publish-test-mgjOQ1/canonical-scope; no commit, push or revalidation
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > does not let a retired addition bypass canonical input binding
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (unchanged baseline)
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (explicit freeze)
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > preserves a reviewed canonical when its private cache lacks new-addition filing inputs
+Private share residual: 0; quality passes: 0
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=1->1 valuation=1->1 missingLogos:US=1->1
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > rejects an invalid preserved canonical rather than treating its alias as complete
+Private share residual: 0; quality passes: 0
+
+stdout | tests/unit/value/publish.test.ts > coverage additions retired by the issuer registry > requires complete canonical inputs even when the retired addition has complete inputs
+Private share residual: 0; quality passes: 0
+
+ ✓ tests/unit/value/publish.test.ts (92 tests) 17510ms
+   ✓ buildOutput > adds a held nonmember locally while preserving every existing dossier and country row  343ms
+   ✓ buildOutput > ordinary publication consumes coverage scope, freezes baseline and holds incomplete additions  516ms
+   ✓ buildOutput > ordinary local publication preserves the baseline when every proposed addition remains held  302ms
+   ✓ buildOutput > uses enriched identities for search and historical identities with the same live since refresh  303ms
+   ✓ buildOutput > stages existing analyses and cached closes without running calibration or touching the cached repository  539ms
+   ✓ publish repository > requires the calibration command to succeed before publishing  352ms
+   ✓ publish repository > preserves price bytes, removes obsolete generated files and replaces history with one commit  388ms
+   ✓ publish repository > collapses intervening price commits even when the snapshot files are unchanged  448ms
+   ✓ publish repository > stages a partial snapshot but refuses a delisting drop beyond the five-company floor  343ms
+   ✓ prices > refreshes selected companies while preserving newer prices and other countries; repeat is a no-op  440ms
+   ✓ publish rollout safeguards > publishes available analyses and skips missing and unreadable files  318ms
+   ✓ publish rollout safeguards > compares published count rather than universe while admitting additions with logos  522ms
+   ✓ publish rollout safeguards > guards legacy metadata and rejects even a forced empty commit  323ms
+   ✓ publish rollout safeguards > guards a legacy nonempty count drop and permits --force  549ms
+   ✓ joins the corpus monthly history at publish time and preserves it on partial publish  786ms
+   ✓ preserves an unpushed prices commit when preparing the next publish  451ms
+   ✓ joins new enrichment and completed numeric history when the controller publishes  312ms
+   ✓ uses current universe listings consistently across dossier, index and search on republish  305ms
+   ✓ excludes current nonmembers from current surfaces but retains their historical returns on partial republish  896ms
+   ✓ commits regenerated browser views together with refreshed prices  300ms
+   ✓ publishes immutable daily records through orphan commits and reads the forward view from snapshots  1661ms
+   ✓ freezes the live dossier, every index/history row and search identity in normal and local publication, and unfreezes by removal  935ms
+   ✓ retains published shares, preserves unapproved Buy changes, and still reprices later quotes  643ms
+   ✓ coverage additions retired by the issuer registry > binds retired AKBLF.US to ALK-B.CO after reconciliation (commit=true)  462ms
+   ✓ coverage additions retired by the issuer registry > selects the canonical when only its retired listing appears in release scope  406ms
+   ✓ coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (unchanged baseline)  501ms
+   ✓ coverage additions retired by the issuer registry > binds a retired addition to its preserved canonical research (explicit freeze)  436ms
+   ✓ coverage additions retired by the issuer registry > preserves a reviewed canonical when its private cache lacks new-addition filing inputs  474ms
+stdout | tests/unit/value/publish-invariants.test.ts > permits added-company buys while preserving the price-only rule for existing companies
+coverage: missingLogos=101->102 buy:US=0->1 buy:all=0->1 buy:default=0->1 dossiers=100->101 index:US=1->2 index:default=1->2 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->101
+
+stdout | tests/unit/value/publish-invariants.test.ts > quarters refuses prices commit before changing HEAD or index
+coverage: missingLogos=101->101 buy:US=0->0 buy:default=0->0 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > yearDeferred refuses prices commit before changing HEAD or index
+coverage: missingLogos=101->101 buy:US=0->0 buy:default=0->0 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > missing-file refuses prices commit before changing HEAD or index
+coverage: missingLogos=101->101 buy:US=0->0 buy:default=0->0 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > dossiers refuses prices commit before changing HEAD or index
+coverage: missingLogos=101->95 buy:US=0->0 buy:default=0->0 dossiers=100->94 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->94
+
+stdout | tests/unit/value/publish-invariants.test.ts > buy refuses prices commit before changing HEAD or index
+coverage: missingLogos=101->101 buy:US=0->1 buy:all=0->1 buy:default=0->1 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > history refuses prices commit before changing HEAD or index
+coverage: missingLogos=101->101 buy:US=0->0 buy:default=0->0 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > prices permits an exactly 1% dossier drop and a price-explained Buy-now transition
+coverage: missingLogos=101->100 buy:US=0->1 buy:all=0->1 buy:default=0->1 dossiers=100->99 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->99
+
+stdout | tests/unit/value/publish-invariants.test.ts > quarters refuses publish commit before changing HEAD or index
+coverage: missingLogos=101->101 buy:US=0->0 buy:default=0->0 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > yearDeferred refuses publish commit before changing HEAD or index
+coverage: missingLogos=101->101 buy:US=0->0 buy:default=0->0 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > missing-file refuses publish commit before changing HEAD or index
+coverage: missingLogos=101->101 buy:US=0->0 buy:default=0->0 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > dossiers refuses publish commit before changing HEAD or index
+coverage: missingLogos=101->95 buy:US=0->0 buy:default=0->0 dossiers=100->94 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->94
+
+stdout | tests/unit/value/publish-invariants.test.ts > buy refuses publish commit before changing HEAD or index
+coverage: missingLogos=101->101 buy:US=0->1 buy:all=0->1 buy:default=0->1 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > history refuses publish commit before changing HEAD or index
+coverage: missingLogos=101->101 buy:US=0->0 buy:default=0->0 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > publish permits an exactly 1% dossier drop and a price-explained Buy-now transition
+coverage: missingLogos=101->100 buy:US=0->1 buy:all=0->1 buy:default=0->1 dossiers=100->99 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->99
+
+stdout | tests/unit/value/publish-invariants.test.ts > accepts year views derived from Q4 without requiring a separate annual snapshot
+coverage: missingLogos=101->101 buy:US=0->0 buy:default=0->0 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > allows a reviewed identity collapse only when every lost dossier has a direct live target
+coverage: missingLogos=101->99 buy:US=0->0 buy:default=0->0 dossiers=100->98 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->98
+
+stdout | tests/unit/value/publish-invariants.test.ts > refuses alias cycles or missing canonical dossiers
+coverage: missingLogos=101->99 buy:US=0->0 buy:default=0->0 dossiers=100->98 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->98
+
+stdout | tests/unit/value/publish-invariants.test.ts > refuses to reintroduce two reviewed listings of one issuer
+coverage: missingLogos=101->103 buy:US=0->0 buy:default=0->0 dossiers=100->102 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:SW=0->1 missingLogos:US=100->101
+
+stdout | tests/unit/value/publish-invariants.test.ts > permits retired Buy-now rows to disappear from country and default indexes
+coverage: missingLogos=101->100 buy:US=1->0 buy:all=1->0 buy:default=1->0 dossiers=100->99 index:US=2->1 index:default=2->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->99
+
+stdout | tests/unit/value/publish-invariants.test.ts > does not count retired-listing price moves as explanations for surviving Buy-now flips
+coverage: missingLogos=101->100 buy:US=0->1 buy:all=0->1 buy:default=0->1 dossiers=100->99 index:US=2->1 index:default=2->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->99
+
+stdout | tests/unit/value/publish-invariants.test.ts > accepts only an exact controller-reviewed valuation transition
+coverage: missingLogos=101->101 buy:US=0->1 buy:all=0->1 buy:default=0->1 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+coverage: missingLogos=101->101 buy:US=0->1 buy:all=0->1 buy:default=0->1 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+coverage: missingLogos=101->101 buy:US=0->1 buy:all=0->1 buy:default=0->1 dossiers=100->100 index:US=1->1 index:default=1->1 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=100->100
+
+stdout | tests/unit/value/publish-invariants.test.ts > blocks the 2026-10-06 logo demotion: US missing logos 13 -> 148 before staging
+coverage: missingLogos=13->148 buy:US=0->0 buy:default=0->0 dossiers=200->200 index:US=200->200 index:default=200->200 logos=187->52 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=13->148
+
+stdout | tests/unit/value/publish-invariants.test.ts > uses origin/main rather than an unpublished local HEAD as the coverage baseline
+coverage: missingLogos=0->10 buy:US=0->0 buy:default=0->0 dossiers=10->10 index:US=10->10 index:default=10->10 logos=10->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=0->10
+
+ ✓ tests/unit/value/publish-invariants.test.ts (25 tests) 4550ms
+   ✓ accepts only an exact controller-reviewed valuation transition  420ms
+stdout | tests/unit/value/post-publish.test.ts > reverts the failed pushed snapshot (orphan=false), republishes and revalidates the prior tree
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+coverage: pages=0/0 rendered; logo img checked
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+
+stderr | tests/unit/value/post-publish.test.ts > reverts the failed pushed snapshot (orphan=false), republishes and revalidates the prior tree
+CRITICAL: live page/revalidation check failed
+CRITICAL: live coverage/time travel/revalidation failed for 271cd287f75ff1560614f95908d0cc891befb540; reverting last publication
+
+stdout | tests/unit/value/post-publish.test.ts > reverts the failed pushed snapshot (orphan=true), republishes and revalidates the prior tree
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+coverage: pages=0/0 rendered; logo img checked
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+
+stderr | tests/unit/value/post-publish.test.ts > reverts the failed pushed snapshot (orphan=true), republishes and revalidates the prior tree
+CRITICAL: live page/revalidation check failed
+CRITICAL: live coverage/time travel/revalidation failed for 85189e886c73df36e73b1a9bf118ee6cbe411801; reverting last publication
+
+stdout | tests/unit/value/post-publish.test.ts > checks a successful publication once and clears the durable receipt
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+coverage: pages=0/0 rendered; logo img checked
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+
+stdout | tests/unit/value/post-publish.test.ts > checks a successful publication once and clears the durable receipt
+live-check: 18d2c941292ad9df491b3ab30f68ac7b4af80e43 passed coverage, company pages, quarter-back and 2018Q3
+
+stdout | tests/unit/value/post-publish.test.ts > does not check or revert a failed push
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+coverage: pages=0/0 rendered; logo img checked
+live-check: push did not reach origin; retained prior publication
+
+stdout | tests/unit/value/post-publish.test.ts > refuses to revert if another writer advanced the remote
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+coverage: pages=0/0 rendered; logo img checked
+
+stdout | tests/unit/value/post-publish.test.ts > rolls back when revalidation fails, without declaring an unvalidated site healthy
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+coverage: pages=0/0 rendered; logo img checked
+coverage: missingLogos=0->0 dossiers=0->0 logos=0->0 priceHistory=0->0 quality=0->0 valuation=0->0
+
+stderr | tests/unit/value/post-publish.test.ts > rolls back when revalidation fails, without declaring an unvalidated site healthy
+CRITICAL: live page/revalidation check failed
+CRITICAL: live coverage/time travel/revalidation failed for 5a942ccd3f2d688b815c58dfcda4da2862bd6a86; reverting last publication
+
+stdout | tests/unit/value/post-publish.test.ts > can restore the exact pre-dedupe snapshot if publication verification fails
+coverage: missingLogos=2->1 dossiers=2->1 logos=0->0 priceHistory=2->1 quality=2->1 valuation=2->1 missingLogos:US=2->1
+coverage: pages=2/2 rendered; logo img checked
+coverage: missingLogos=2->1 dossiers=2->1 logos=0->0 priceHistory=2->1 quality=2->1 valuation=2->1 missingLogos:US=2->1
+
+stderr | tests/unit/value/post-publish.test.ts > can restore the exact pre-dedupe snapshot if publication verification fails
+CRITICAL: live page/revalidation check failed
+CRITICAL: live coverage/time travel/revalidation failed for 2a57aee3a492540d9cba93bc732b397333bd21c4; reverting last publication
+
+stdout | tests/unit/value/post-publish.test.ts > refuses a committed logo regression before creating a publication receipt
+coverage: missingLogos=0->1 dossiers=1->1 logos=1->0 priceHistory=1->1 quality=1->1 valuation=1->1 missingLogos:US=0->1
+
+stdout | tests/unit/value/post-publish.test.ts > rolls back a pushed logo regression using the prior archive even if a legacy publisher bypassed preflight
+coverage: missingLogos=0->1 dossiers=1->1 logos=1->0 priceHistory=1->1 quality=1->1 valuation=1->1 missingLogos:US=0->1
+
+stderr | tests/unit/value/post-publish.test.ts > rolls back a pushed logo regression using the prior archive even if a legacy publisher bypassed preflight
+CRITICAL: publication coverage invariant: logos 1->0, drop=1, tolerance=0; ids=KO.US
+CRITICAL: live coverage/time travel/revalidation failed for c9962e31e9a3bc0a9f5688e86cbfbfcd02ee7851; reverting last publication
+
+ ✓ tests/unit/value/post-publish.test.ts (9 tests) 6892ms
+   ✓ reverts the failed pushed snapshot (orphan=false), republishes and revalidates the prior tree  949ms
+   ✓ reverts the failed pushed snapshot (orphan=true), republishes and revalidates the prior tree  929ms
+   ✓ checks a successful publication once and clears the durable receipt  708ms
+   ✓ does not check or revert a failed push  701ms
+   ✓ refuses to revert if another writer advanced the remote  827ms
+   ✓ rolls back when revalidation fails, without declaring an unvalidated site healthy  899ms
+   ✓ can restore the exact pre-dedupe snapshot if publication verification fails  1163ms
+   ✓ refuses a committed logo regression before creating a publication receipt  315ms
+   ✓ rolls back a pushed logo regression using the prior archive even if a legacy publisher bypassed preflight  400ms
+ ✓ tests/unit/value/daily-runner.test.ts (12 tests) 5851ms
+   ✓ runs and publishes fresh analysis after yields and thesis exhaust their budgets  540ms
+   ✓ does not hide a non-budget thesis failure  499ms
+   ✓ runs the live check after prices and publish, including a partial prices exit  503ms
+   ✓ passes a UTC-cycle-specific ledger to price-story instead of inheriting an old worktree ledger  451ms
+   ✓ reserves both fundamentals passes and runs analysis before optional news  433ms
+   ✓ retains prior released analysis when analysis itself fails  511ms
+   ✓ still analyzes after non-budget yields failures  512ms
+   ✓ fetches logos before publication on normal and exhausted-budget cycles  825ms
+   ✓ prints coverage even when publication is skipped or budget reset fails  725ms
+   ✓ exits unsuccessfully and prints affected ids when the publication gate rejects coverage  521ms
+stdout | tests/unit/value/live-check.test.ts > checks company page rendering and decoded logo pixels (ok)
+coverage: pages=1/1 live; logo img loaded
+
+ ✓ tests/unit/value/live-check.test.ts (10 tests) 4303ms
+   ✓ uses a real browser to step back and load the deep link  347ms
+   ✓ rejects a broken step despite a successful page response  623ms
+   ✓ rejects a broken deep-link despite a successful page response  663ms
+   ✓ rejects a broken rows despite a successful page response  626ms
+   ✓ rejects a broken headline despite a successful page response  643ms
+   ✓ checks company page rendering and decoded logo pixels (no-image)  425ms
+   ✓ checks company page rendering and decoded logo pixels (no-page)  358ms
+stdout | tests/unit/value/existing-analysis-publish.test.ts > budget fallback publishes the released tree without loading changed or invalid local analysis
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=0->0 index:default=0->0 logos=0->0 priceHistory=1->1 quality=1->1 valuation=1->1 missingLogos:US=1->1
+coverage: missingLogos=1->1 buy:US=0->0 buy:default=0->0 dossiers=1->1 index:US=0->0 index:default=0->0 logos=0->0 priceHistory=1->1 quality=1->1 valuation=1->1 missingLogos:US=1->1
+coverage: pages=1/1 rendered; logo img checked
+
+stdout | tests/unit/value/existing-analysis-publish.test.ts > budget fallback publishes the released tree without loading changed or invalid local analysis
+publish: retained existing released analysis after research budget exhaustion
+
+ ✓ tests/unit/value/existing-analysis-publish.test.ts (1 test) 957ms
+   ✓ budget fallback publishes the released tree without loading changed or invalid local analysis  956ms
+ ✓ tests/unit/value/publication-coverage.test.ts (16 tests) 307ms
+stdout | tests/unit/value/blob-publish.test.ts > uploads byte-identical allowed files under a version before switching the pointer
+blob publish: 1 files, 13 bytes, version f42ca84c3fb6e9e3dbf9ffadc495ba050fa6e8319f2259e74d853d0c01398582
+
+stdout | tests/unit/value/blob-publish.test.ts > changes version when bytes change and safely resumes an already active snapshot
+blob publish: 1 files, 13 bytes, version f42ca84c3fb6e9e3dbf9ffadc495ba050fa6e8319f2259e74d853d0c01398582
+
+stdout | tests/unit/value/blob-publish.test.ts > changes version when bytes change and safely resumes an already active snapshot
+blob publish: 1 files, 2 bytes, version 45f058a27b5d735f02499616380526b62cd3d4e7fcfe6bf0d298d9567d725ed0
+
+stdout | tests/unit/value/blob-publish.test.ts > retains hashed files in a shared immutable namespace as well as the versioned snapshot
+blob publish: 2 files, 25 bytes, version 45f790d4bae45db957ebe55165a81d47e263deb9797e7127cdadf997419345c2
+
+ ✓ tests/unit/value/blob-publish.test.ts (4 tests) 26ms
+stdout | tests/unit/value/publication-upload-guard.test.ts > blocks Blob I/O on logo-loss
+coverage: missingLogos=0->1 dossiers=1->1 logos=1->0 priceHistory=0->0 quality=0->0 valuation=0->0 missingLogos:US=0->1
+
+ ✓ tests/unit/value/publication-upload-guard.test.ts (4 tests) 380ms
+stdout | tests/unit/value/publication-pages.test.ts > renders 20 actual company pages including logo img markup in a separate React process
+coverage: pages=20/20 rendered; logo img checked
+
+ ✓ tests/unit/value/publication-pages.test.ts (3 tests) 2946ms
+   ✓ renders 20 actual company pages including logo img markup in a separate React process  980ms
+   ✓ fails closed with sampled ids when logo rendering regresses  1033ms
+   ✓ fails closed with sampled ids when broken rendering regresses  932ms
+
+ Test Files  10 passed (10)
+      Tests  176 passed (176)
+   Start at  15:54:40
+   Duration  52.43s (transform 1.90s, setup 0ms, collect 5.75s, tests 43.72s, environment 2ms, prepare 730ms)

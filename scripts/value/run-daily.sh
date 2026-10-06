@@ -45,17 +45,26 @@ run_stage() {
   status=ok
   if [[ "$code" != 0 ]]; then status=failed; fi
   if [[ "$code" == 75 ]]; then status=budget-exhausted; fi
+  if [[ "$stage" == prices || "$stage" == publish ]]; then
+    awk '/^(coverage:|CRITICAL:)/' "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log"
+  fi
   detail=$(tail -n 1 "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log")
   echo "$(date -u +%FT%TZ) stage=$stage status=$status exit=$code duration=$((SECONDS-started))s summary=$detail" | tee -a "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log"
-  if [[ "$stage" == prices || "$stage" == publish ]]; then check_publication; fi
+  if [[ "$stage" == prices || "$stage" == publish ]]; then
+    check_publication
+    if [[ "$code" != 0 ]] && awk '/^CRITICAL:/ {failed=1} END {exit !failed}' "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log"; then exit "$code"; fi
+  fi
   return "$code"
 }
 check_publication() {
   check_disk
+  local verify_log="$VALUE_CORPUS_DIR/logs/$cycle_date-live-check.log"
   node --import tsx scripts/value/post-publish-cli.ts >> "$VALUE_CORPUS_DIR/logs/$cycle_date-live-check.log" 2>&1 || {
+    awk '/^(coverage:|CRITICAL:)/' "$verify_log"
     echo "CRITICAL: post-publish live check failed; publication rolled back or requires intervention. See $VALUE_CORPUS_DIR/logs/$cycle_date-live-check.log" >&2
     exit 1
   }
+  awk '/^coverage:/' "$verify_log"
 }
 publish_available() {
   local code
@@ -96,7 +105,11 @@ if [[ "${1:-}" != "--once" ]]; then wait_until_next_run; fi
 while true; do
   cycle_date=$(date -u +%F)
   retain_analysis=0
-  check_publication # Recover a push interrupted before verification on the previous run.
+  node --import tsx scripts/value/coverage-summary-cli.ts > "$VALUE_CORPUS_DIR/logs/$cycle_date-coverage.log" 2>&1
+  coverage_code=$?
+  cat "$VALUE_CORPUS_DIR/logs/$cycle_date-coverage.log"
+  check_publication # Recover first, even when the candidate coverage cannot be read.
+  if [[ "$coverage_code" != 0 ]]; then exit "$coverage_code"; fi
   # Import JP issuers before both unfiltered quote stages; paid budget order stays intact.
   run_japan 2>> "$VALUE_CORPUS_DIR/logs/$cycle_date-japan.log" || :
   if ! run_stage wait-eodhd-reset; then

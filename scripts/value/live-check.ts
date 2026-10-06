@@ -1,3 +1,5 @@
+import {approvedIds,assertCoverage,critical,samplePages,type PageSample} from './publication-coverage';
+import {companyPath} from '../../lib/company-route';
 import {historyHeadline} from '../../lib/value/since-return';
 import {chromium,expect,type Page} from '@playwright/test';
 import {readFileSync} from 'node:fs';
@@ -33,9 +35,34 @@ export async function checkTimeTravel(page:Page,history:HistoryIndex,url='https:
  await assert(page).toHaveURL(new RegExp(`[?&]q=${latest}(?:&|$)`));
  await open('?q=2018Q3');await frame('2018Q3');
 }
-export async function checkLivePublication(repo:string):Promise<void>{
+export async function checkLivePublication(repo:string,baseline?:string):Promise<void>{
+ if(!baseline)critical('live page check requires previous archive');
+ const coverage=assertCoverage(repo,baseline);
+ const approvals=approvedIds(coverage.baseline,'pages'),logos=approvedIds(coverage.baseline,'logos');
+ const current=new Map(coverage.after.pages.map(p=>[p.id,p]));
+ const samples=samplePages(coverage.before).filter(p=>!approvals.has(p.id)).map(p=>({...p,logo:logos.has(p.id)?current.get(p.id)?.logo??null:current.get(p.id)?.logo||p.logo}));
  const history=JSON.parse(readFileSync(path.join(repo,'history/index.json'),'utf8')) as HistoryIndex;
  const browser=await chromium.launch({headless:true});
- try{const page=await browser.newPage({viewport:{width:1440,height:900}});await checkTimeTravel(page,history);}
+ try{const page=await browser.newPage({viewport:{width:1440,height:900}});await checkTimeTravel(page,history);await checkCompanyPages(page,samples);}
  finally{await browser.close();}
+}
+
+/** Every sampled page must render; existing approved logos must actually load. */
+export async function checkCompanyPages(page:Page,samples:PageSample[],url='https://gigainvestors.com',timeout=30_000):Promise<void>{
+ const failed:string[]=[];page.setDefaultTimeout(timeout);const assert=expect.configure({timeout});
+ for(const sample of samples){
+  try{
+   const response=await page.goto(new URL(companyPath(sample.id),url).toString(),{waitUntil:'domcontentloaded',timeout});
+   if(!response?.ok())throw Error('Company page failed');
+   await assert(page.locator('main.company-page .company-heading h1')).toBeVisible();
+   await assert(page.locator('main.company-page .one-dossier')).toBeVisible();
+   if(sample.logo){
+    const img=page.locator('main.company-page .company-heading .company-logo img');
+    await assert(img).toBeVisible();
+    await assert.poll(()=>img.evaluate((node:HTMLImageElement)=>node.complete&&node.naturalWidth>0)).toBe(true);
+   }
+  }catch{failed.push(sample.id);}
+ }
+ if(failed.length)critical(`pages failed; ids=${failed.join(',')}`);
+ console.log(`coverage: pages=${samples.length}/${samples.length} live; logo img loaded`);
 }

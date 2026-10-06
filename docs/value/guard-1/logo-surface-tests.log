@@ -1,0 +1,9 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-guard
+
+ ✓ tests/unit/value/publication-coverage.test.ts (16 tests) 318ms
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  15:54:10
+   Duration  764ms (transform 118ms, setup 0ms, collect 136ms, tests 318ms, environment 0ms, prepare 66ms)

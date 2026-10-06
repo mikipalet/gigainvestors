@@ -1,0 +1,46 @@
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-calib
+
+ ❯ tests/unit/value/nightly-management.test.ts (3 tests | 2 failed) 79ms
+   × recognizes sustained financial share shrinkage after an older acquisition without changing per-share capital 18ms
+     → expected 'fail' to be 'pass' // Object.is equality
+   ✓ still rejects persistent financial dilution and requires a complete recent window 2ms
+   × values a first-week fiscal year end with the nearby preceding month, not the following month-end 57ms
+     → expected 17136372502.10025 to be close to 21270360753.9693, received difference is 4133988251.869049, but expected 0.005
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/nightly-management.test.ts > recognizes sustained financial share shrinkage after an older acquisition without changing per-share capital
+AssertionError: expected 'fail' to be 'pass' // Object.is equality
+
+Expected: "pass"
+Received: "fail"
+
+ ❯ tests/unit/value/nightly-management.test.ts:10:23
+      8| it('recognizes sustained financial share shrinkage after an older acqu…
+      9|  const test=runNumericTests({years:cb.years as Year[],kind:'insurer'})…
+     10|  expect(test.numeric).toBe('pass');
+       |                       ^
+     11|  expect(test.metrics.shareCagr).toBeCloseTo(.020169051016474482,12);
+     12|  expect(test.metrics.shareCagr5).toBeCloseTo(-.024026,5);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/unit/value/nightly-management.test.ts > values a first-week fiscal year end with the nearby preceding month, not the following month-end
+AssertionError: expected 17136372502.10025 to be close to 21270360753.9693, received difference is 4133988251.869049, but expected 0.005
+ ❯ tests/unit/value/nightly-management.test.ts:28:48
+     26|   priceHistory:dpz.priceHistory as PriceHistory,onMemoYears:y=>{years=…
+     27|  // 2 January 2022 is a Sunday: December's close, not 31 January's, be…
+     28|  expect(years.find(y=>y.fy===2021)!.marketCap).toBeCloseTo(37691351*56…
+       |                                                ^
+     29|  expect(a.tests.management.result).toBe('pass');
+     30|  expect(a.tests.management.metrics.buybackYieldSpearman).toBeCloseTo(-…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  08:51:36
+   Duration  1.70s (transform 956ms, setup 0ms, collect 1.29s, tests 79ms, environment 0ms, prepare 75ms)
+

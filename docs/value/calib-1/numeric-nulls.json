@@ -1,0 +1,3617 @@
+[
+  {
+    "id": "MAS.US",
+    "path": "tests.accounting.metrics.goodwillIntangiblesToEquity",
+    "live": 11.04
+  },
+  {
+    "id": "MAS.US",
+    "path": "tests.accounting.rawMetrics.goodwillIntangiblesToEquity",
+    "live": 11.04
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2015]",
+    "live": 0.21700879765395895
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2017]",
+    "live": 0.4308176100628931
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2018]",
+    "live": 0.2247557003257329
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2021]",
+    "live": 0.3107569721115538
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2023]",
+    "live": 0.5132743362831859
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2025]",
+    "live": 0.35714285714285715
+  },
+  {
+    "id": "KRZ.IR",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "KRZ.IR",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.understandable.rawMetrics.revenueDeclines",
+    "live": 0
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": 0.09458472436523224
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 0.03484525032609934
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": 0.19968056481352636
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": -0.09384676348816406
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.09218573223298288
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": 0.04573891919883755
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 38699333675.23956
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": -5143302000
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.09218573223298288
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": 0.04573891919883755
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.05394039808478368
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 1.0647686884297678
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 2.038229862820964
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 3.1029985512507317
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": 0.08571428571428572
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.009584713976624729
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 1
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 14045195000
+  },
+  {
+    "id": "DLR.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 6888711000
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.understandable.rawMetrics.roeCv",
+    "live": 0.14949137962377368
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.moat.rawMetrics.roeMedian",
+    "live": 0.14822724067014198
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.moat.rawMetrics.roeSecondLowest",
+    "live": 0.1150711424229866
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.economics.rawMetrics.bookReturnCagr",
+    "live": 0.16356335784736653
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.economics.rawMetrics.bookReturnYears",
+    "live": 6
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.08809342097289341
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.management.rawMetrics.shareCagrExCrisis",
+    "live": 0.08809342097289341
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.management.rawMetrics.retainedBookRatio",
+    "live": 1.0255819278211458
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.management.rawMetrics.retainedBookGain",
+    "live": 182.12288831613046
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.management.rawMetrics.retainedPerShare",
+    "live": 177.5800483370953
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.accounting.rawMetrics.loanCagr",
+    "live": 0.1654494635116055
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "path": "tests.accounting.rawMetrics.depositCagr",
+    "live": 0.34077035713119463
+  },
+  {
+    "id": "EG.US",
+    "path": "tests.economics.rawMetrics.bookReturnCagr",
+    "live": 0.10510694356949712
+  },
+  {
+    "id": "EG.US",
+    "path": "tests.economics.rawMetrics.bookReturnYears",
+    "live": 10
+  },
+  {
+    "id": "EG.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": -0.004345050022607211
+  },
+  {
+    "id": "EG.US",
+    "path": "tests.management.rawMetrics.shareCagrExCrisis",
+    "live": -0.004345050022607211
+  },
+  {
+    "id": "EG.US",
+    "path": "tests.management.rawMetrics.retainedBookRatio",
+    "live": 1.7617470231977033
+  },
+  {
+    "id": "EG.US",
+    "path": "tests.management.rawMetrics.retainedBookGain",
+    "live": 197.44905585573997
+  },
+  {
+    "id": "EG.US",
+    "path": "tests.management.rawMetrics.retainedPerShare",
+    "live": 112.07571419496716
+  },
+  {
+    "id": "9101.JP",
+    "path": "tests.management.metrics.perShareValueGrowth",
+    "live": 0.2713252965102544
+  },
+  {
+    "id": "DVA.US",
+    "path": "tests.accounting.metrics.goodwillIntangiblesToEquity",
+    "live": 6.70490780973612
+  },
+  {
+    "id": "DVA.US",
+    "path": "tests.accounting.rawMetrics.goodwillIntangiblesToEquity",
+    "live": 6.70490780973612
+  },
+  {
+    "id": "DVA.US",
+    "path": "series.bookValuePerShare[2025]",
+    "live": 15.265704697898135
+  },
+  {
+    "id": "IPX.AU",
+    "path": "tests.moat.series.totalRoic[2018]",
+    "live": -2.529073351860569
+  },
+  {
+    "id": "IPX.AU",
+    "path": "tests.moat.series.totalRoic[2019]",
+    "live": -0.7157177722333264
+  },
+  {
+    "id": "IPX.AU",
+    "path": "series.totalRoic[2018]",
+    "live": -2.529073351860569
+  },
+  {
+    "id": "IPX.AU",
+    "path": "series.totalRoic[2019]",
+    "live": -0.7157177722333264
+  },
+  {
+    "id": "LNZ.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "LNZ.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "LNZ.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "LNZ.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": -0.15886895539860682
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 1.000001
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.003511635715237313
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.03370039372624987
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": -0.0007861643286909414
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 53019285493.85071
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": 37316000000
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": -0.0007861643286909414
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 10.546284352873652
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": -2.900499624098458
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 7.645784728775194
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": 0.6121212121212121
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.039061649687852765
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 0
+  },
+  {
+    "id": "COP.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 61224000000
+  },
+  {
+    "id": "WIE.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "WIE.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "WIE.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "WIE.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "PYIYF.US",
+    "path": "series.tangibleBookValuePerShare[2025]",
+    "live": 2.835515004513462
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.economics.metrics.nwcToRevenueChange",
+    "live": -0.019391047812428945
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.economics.metrics.nwcToRevenueEnd",
+    "live": 0.035470068687479345
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.019391047812428945
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.035470068687479345
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.management.metrics.nonAcquisitionShareCagr",
+    "live": 0.0601894117866113
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.management.metrics.shareCagr",
+    "live": 0.0601894117866113
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.management.metrics.acquisitionSpend",
+    "live": 2669923000
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.management.metrics.cumulativeNetIncome",
+    "live": 40375086000
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.0601894117866113
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.0601894117866113
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 2669923000
+  },
+  {
+    "id": "TSLA.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 40375086000
+  },
+  {
+    "id": "SSPG.LSE",
+    "path": "tests.moat.series.totalRoic[2022]",
+    "live": -0.04474474643704459
+  },
+  {
+    "id": "SSPG.LSE",
+    "path": "tests.moat.series.totalRoic[2025]",
+    "live": -0.06676235057841431
+  },
+  {
+    "id": "SSPG.LSE",
+    "path": "series.totalRoic[2022]",
+    "live": -0.04474474643704459
+  },
+  {
+    "id": "SSPG.LSE",
+    "path": "series.totalRoic[2025]",
+    "live": -0.06676235057841431
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.economics.metrics.nwcToRevenueChange",
+    "live": -0.04867479266445864
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.economics.metrics.nwcToRevenueEnd",
+    "live": -0.012066445489067726
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.04867479266445864
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": -0.012066445489067726
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.management.metrics.nonAcquisitionShareCagr",
+    "live": 0.03663331224707855
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.management.metrics.shareCagr",
+    "live": 0.03663331224707855
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.management.metrics.acquisitionSpend",
+    "live": 39357000000
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.management.metrics.cumulativeNetIncome",
+    "live": 14371000000
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.03663331224707855
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.03663331224707855
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 39357000000
+  },
+  {
+    "id": "KDP.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 14371000000
+  },
+  {
+    "id": "HTWS.LSE",
+    "path": "tests.moat.series.totalRoic[2022]",
+    "live": -0.1303082036436813
+  },
+  {
+    "id": "HTWS.LSE",
+    "path": "tests.moat.series.totalRoic[2024]",
+    "live": -0.00883327607035588
+  },
+  {
+    "id": "HTWS.LSE",
+    "path": "series.totalRoic[2022]",
+    "live": -0.1303082036436813
+  },
+  {
+    "id": "HTWS.LSE",
+    "path": "series.totalRoic[2024]",
+    "live": -0.00883327607035588
+  },
+  {
+    "id": "GJF.OL",
+    "path": "series.ownerEarningsPerShare[2024]",
+    "live": 6.943465086281046
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.understandable.rawMetrics.revenueDeclines",
+    "live": 1
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.understandable.rawMetrics.lossYears",
+    "live": 0
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.understandable.rawMetrics.opMarginCv",
+    "live": 0.12825986541160347
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.moat.rawMetrics.roicMedian",
+    "live": 0.11397389009595386
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.moat.rawMetrics.roicSecondLowest",
+    "live": 0.09675981370595882
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": 0.051213339416653014
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.economics.rawMetrics.oeToNi",
+    "live": 1.267734190579698
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.economics.rawMetrics.ownerEarningsTotal",
+    "live": 34317082800
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.economics.rawMetrics.netIncomeTotal",
+    "live": 27069620000
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 1.000001
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueTrend",
+    "live": -0.004569480506369569
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.02702124030866676
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.08633501094589169
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": -0.004647754611846744
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": -0.009212904890458784
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 45234596144.34509
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": -80423000
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": -0.004647754611846744
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": -0.009212904890458784
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.04340914249049366
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 0.4897288285376724
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 1.2095859381069778
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 1.6993147666446502
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": 0.047619047619047616
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.01152963580515027
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 0
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 9143133000
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 54463451000
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.roicFirst3Median",
+    "live": 0.10497377013915397
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.management.rawMetrics.roicLast3Median",
+    "live": 0.12454407057887523
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.accounting.rawMetrics.dsri",
+    "live": 1.015678360454569
+  },
+  {
+    "id": "VIVT3.SA",
+    "path": "tests.accounting.rawMetrics.restructuringYears",
+    "live": 0
+  },
+  {
+    "id": "TPG.US",
+    "path": "series.totalRoic[2022]",
+    "live": -0.20372303876551798
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 0.7951029645731387
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": 0.007138660590728985
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.054018903770919204
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": -0.02499257568602009
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": -0.009998205590957099
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 117289864474.4873
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": 24059300000
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": -0.02499257568602009
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": -0.009998205590957099
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.09455242826822041
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 5.988011439687424
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 5.648427142340605
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 11.63643858202803
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": 0.6848484848484848
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.028263166364446146
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 1
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 4288800000
+  },
+  {
+    "id": "MCD.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 65536200000
+  },
+  {
+    "id": "STR.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "STR.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "STR.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "STR.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "000858.SHE",
+    "path": "tests.management.metrics.averageBuybackYield",
+    "live": 5.611170027813797e-05
+  },
+  {
+    "id": "000858.SHE",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 5.611170027813797e-05
+  },
+  {
+    "id": "EGL.LS",
+    "path": "tests.moat.series.totalRoic[2020]",
+    "live": -0.043416205603440144
+  },
+  {
+    "id": "EGL.LS",
+    "path": "series.totalRoic[2020]",
+    "live": -0.043416205603440144
+  },
+  {
+    "id": "OMV.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "OMV.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "OMV.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "OMV.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "INVP.LSE",
+    "path": "tests.accounting.series.sbcToOcf[2021]",
+    "live": 0
+  },
+  {
+    "id": "INVP.LSE",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0.14852867081219626
+  },
+  {
+    "id": "4568.JP",
+    "path": "tests.management.metrics.averageBuybackYield",
+    "live": 0.02635119264217192
+  },
+  {
+    "id": "4568.JP",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.02635119264217192
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": 0.11643577465004601
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 1.000001
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": 0.14830567637361103
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.49409392438379857
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.019953091416603286
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 20809451700
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": 4854360000
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.019953091416603286
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.16280684401705803
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 2.1789360965462077
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 0.9302084462266537
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 3.1091445427728615
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": 0.45454545454545453
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.0068012052174053735
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 16687393000
+  },
+  {
+    "id": "BRO.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 6056790000
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.moat.rawMetrics.roicMedian",
+    "live": 0.10283199266426415
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.moat.rawMetrics.roicSecondLowest",
+    "live": 0.07938170321574152
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": 0.03177523773231583
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.economics.rawMetrics.oeToNi",
+    "live": 1.390573307806537
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.economics.rawMetrics.ownerEarningsTotal",
+    "live": 37534756600
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.economics.rawMetrics.netIncomeTotal",
+    "live": 26992289000
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 1.000001
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueTrend",
+    "live": -0.0002856257341771263
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.0022507272245176346
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.12259219837469998
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.00033298516320323657
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": 0.0006660812055254706
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 14449895729.659128
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": 15303572000
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.00033298516320323657
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": 0.0006660812055254706
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.1630370980328355
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 8.653310120276338
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 3.6858427361476402
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 12.339152856423977
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": -0.5
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.029330355004651674
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 0
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 38063324000
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 39634600000
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.roicFirst3Median",
+    "live": 0.10369928628611973
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.management.rawMetrics.roicLast3Median",
+    "live": 0.12676737721106504
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.accounting.rawMetrics.dsri",
+    "live": 1.1324810571626949
+  },
+  {
+    "id": "SBSP3.SA",
+    "path": "tests.accounting.rawMetrics.restructuringYears",
+    "live": 0
+  },
+  {
+    "id": "EDPR.LS",
+    "path": "tests.moat.series.totalRoic[2024]",
+    "live": -0.1700376517931327
+  },
+  {
+    "id": "EDPR.LS",
+    "path": "series.totalRoic[2024]",
+    "live": -0.1700376517931327
+  },
+  {
+    "id": "SREN.SW",
+    "path": "tests.moat.metrics.totalRoicMedian",
+    "live": 0.0991990777050077
+  },
+  {
+    "id": "SREN.SW",
+    "path": "tests.moat.series.totalRoic[2025]",
+    "live": 0.0991990777050077
+  },
+  {
+    "id": "SREN.SW",
+    "path": "series.totalRoic[2025]",
+    "live": 0.0991990777050077
+  },
+  {
+    "id": "ATS.VI",
+    "path": "tests.management.series.retainedEarnings[2025]",
+    "live": 89695000
+  },
+  {
+    "id": "ATS.VI",
+    "path": "tests.management.series.retainedEarnings[2026]",
+    "live": -25590000
+  },
+  {
+    "id": "ATS.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "ATS.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "ATS.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "ATS.VI",
+    "path": "tests.accounting.series.sbcToOcf[2026]",
+    "live": 0
+  },
+  {
+    "id": "WRB.US",
+    "path": "tests.understandable.rawMetrics.roeCv",
+    "live": 0.2960859849613051
+  },
+  {
+    "id": "WRB.US",
+    "path": "tests.moat.rawMetrics.roeMedian",
+    "live": 0.15046660803902387
+  },
+  {
+    "id": "WRB.US",
+    "path": "tests.moat.rawMetrics.roeSecondLowest",
+    "live": 0.11744924079708771
+  },
+  {
+    "id": "WRB.US",
+    "path": "tests.economics.rawMetrics.bookReturnCagr",
+    "live": 0.13815734631274457
+  },
+  {
+    "id": "WRB.US",
+    "path": "tests.economics.rawMetrics.bookReturnYears",
+    "live": 10
+  },
+  {
+    "id": "WRB.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": -0.009382165161608058
+  },
+  {
+    "id": "WRB.US",
+    "path": "tests.management.rawMetrics.shareCagrExCrisis",
+    "live": -0.009382165161608058
+  },
+  {
+    "id": "WRB.US",
+    "path": "tests.management.rawMetrics.retainedBookRatio",
+    "live": 1.1231803430983085
+  },
+  {
+    "id": "WRB.US",
+    "path": "tests.management.rawMetrics.retainedBookGain",
+    "live": 13.715776782168854
+  },
+  {
+    "id": "WRB.US",
+    "path": "tests.management.rawMetrics.retainedPerShare",
+    "live": 12.21155343970292
+  },
+  {
+    "id": "VER.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "VER.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "VER.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "VER.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.economics.metrics.nwcToRevenueChange",
+    "live": 0.6245186852044304
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.economics.metrics.nwcToRevenueEnd",
+    "live": 0.6465151934317792
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": 0.6245186852044304
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.6465151934317792
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.management.metrics.nonAcquisitionShareCagr",
+    "live": -0.000765559368826163
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.management.metrics.shareCagr",
+    "live": -0.000765559368826163
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.management.metrics.acquisitionSpend",
+    "live": 34576070.900000006
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.management.metrics.cumulativeNetIncome",
+    "live": 24096800000
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": -0.000765559368826163
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": -0.000765559368826163
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 34576070.900000006
+  },
+  {
+    "id": "PCAR.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 24096800000
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": -0.26784449827805434
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 1.000001
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": 0.1557042346614442
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": -0.04325179146698055
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.05190680700622674
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": 0.05235490465207149
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": -59813472457.74082
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": -20506194000
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.05190680700622674
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": 0.05235490465207149
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2018
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 5.221120680062644
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": -4.427447346985538
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 0.7936733330771061
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 0
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 3433381000
+  },
+  {
+    "id": "IQ.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": -37047537000
+  },
+  {
+    "id": "CL.US",
+    "path": "series.bookValuePerShare[2016]",
+    "live": 0.019036954087346025
+  },
+  {
+    "id": "CL.US",
+    "path": "series.bookValuePerShare[2017]",
+    "live": 0.27510472093286537
+  },
+  {
+    "id": "CL.US",
+    "path": "series.bookValuePerShare[2018]",
+    "live": 0.22722029988465975
+  },
+  {
+    "id": "GIL.TO",
+    "path": "series.tangibleBookValuePerShare[2014]",
+    "live": 6.3962362416547744
+  },
+  {
+    "id": "GIL.TO",
+    "path": "series.bookValuePerShare[2014]",
+    "live": 8.29820136804291
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.moat.rawMetrics.roicMedian",
+    "live": 0.13498499432102185
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.moat.rawMetrics.roicSecondLowest",
+    "live": 0.10977399636534572
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": -0.0018383249990732153
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.economics.rawMetrics.oeToNi",
+    "live": 0.8829202044547133
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.economics.rawMetrics.ownerEarningsTotal",
+    "live": 89927188664.12146
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.economics.rawMetrics.netIncomeTotal",
+    "live": 101852000000
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 0.26929809504400837
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.economics.rawMetrics.nwcToRevenueTrend",
+    "live": -0.0023729036995816786
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.010093005748039017
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.008355878312905152
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.001389533862994119
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": -4.986587704980394e-07
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.001389533862994119
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": -4.986587704980394e-07
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.11145859837254246
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 6.445047410120171
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 4.85
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 11.295047410120171
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 0
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 35631000000
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 135439000000
+  },
+  {
+    "id": "KOFUBL.MX",
+    "path": "tests.accounting.rawMetrics.restructuringYears",
+    "live": 0
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.economics.rawMetrics.oeToNi",
+    "live": 0.8977922184718781
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.economics.rawMetrics.ownerEarningsTotal",
+    "live": 5764494000
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.economics.rawMetrics.netIncomeTotal",
+    "live": 6420744000
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 0.4633942772469659
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueTrend",
+    "live": 0.010431607862467138
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": 0.06950486703883707
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.35586223618291174
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.0020230832314866998
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": 0.0015283187437482582
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 30134763525.203705
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": 4913480000
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.0020230832314866998
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": 0.0015283187437482582
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.1320715706926312
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 4.584216121874183
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 2.7002764694377044
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 7.284492591311888
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": 0.44242424242424244
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.004676952316589901
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 1
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 832127000
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 10265403000
+  },
+  {
+    "id": "GRMN.US",
+    "path": "tests.accounting.rawMetrics.restructuringYears",
+    "live": 0
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.understandable.rawMetrics.revenueDeclines",
+    "live": 3
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.understandable.rawMetrics.lossYears",
+    "live": 0
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.understandable.rawMetrics.opMarginCv",
+    "live": 0.2090255655770436
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.moat.rawMetrics.roicMedian",
+    "live": 0.09000607699115401
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.moat.rawMetrics.roicSecondLowest",
+    "live": 0.05637979349359371
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": 0.012206399777195953
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.economics.rawMetrics.oeToNi",
+    "live": 0.9630151739033338
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.economics.rawMetrics.ownerEarningsTotal",
+    "live": 14049428372.075737
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.economics.rawMetrics.netIncomeTotal",
+    "live": 14589000000
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 2.4719323752801743
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueTrend",
+    "live": -0.0019058135110502404
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.016934599274593065
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.3448725989214541
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.0003328702019893548
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": -0.00016423283123112586
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 10149911597.460938
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": 15965000000
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.0003328702019893548
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": -0.00016423283123112586
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.06909003150196091
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 2.6443902205561374
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 3.742778952486007
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 6.387169173042144
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": -0.42857142857142855
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.08116469752833921
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 1
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 8617000000
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 23260000000
+  },
+  {
+    "id": "MRK.XETRA",
+    "path": "tests.accounting.rawMetrics.restructuringYears",
+    "live": 0
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2020]",
+    "live": 0.6524040928776347
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2021]",
+    "live": 1.6240676960362894
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2022]",
+    "live": 3.301699878407151
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2023]",
+    "live": 6.347388291287904
+  },
+  {
+    "id": "LDOS.US",
+    "path": "tests.economics.metrics.roiic",
+    "live": 3.599059378224247
+  },
+  {
+    "id": "LDOS.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 3.599059378224247
+  },
+  {
+    "id": "LDOS.US",
+    "path": "tests.management.metrics.nonAcquisitionShareCagr",
+    "live": 0.05991067781833692
+  },
+  {
+    "id": "LDOS.US",
+    "path": "tests.management.metrics.shareCagr",
+    "live": 0.05991067781833692
+  },
+  {
+    "id": "LDOS.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.05991067781833692
+  },
+  {
+    "id": "LDOS.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.05991067781833692
+  },
+  {
+    "id": "DASH.US",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": -0.0010446563938952824
+  },
+  {
+    "id": "DASH.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 12.97376481500567
+  },
+  {
+    "id": "DASH.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": 0.07902196836874653
+  },
+  {
+    "id": "DASH.US",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": 0.07902196836874653
+  },
+  {
+    "id": "DASH.US",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 1.8175625169768255
+  },
+  {
+    "id": "DASH.US",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": -1.5226380943573212
+  },
+  {
+    "id": "DASH.US",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 0.29492442261950436
+  },
+  {
+    "id": "DASH.US",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": -1
+  },
+  {
+    "id": "DASH.US",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.015505819805368658
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.moat.rawMetrics.roicMedian",
+    "live": 0.1913791607001863
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.moat.rawMetrics.roicSecondLowest",
+    "live": 0.14464758526772778
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": -0.1501644037819198
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.economics.rawMetrics.oeToNi",
+    "live": 0.3941635836249338
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.economics.rawMetrics.ownerEarningsTotal",
+    "live": 16929101637.611824
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.economics.rawMetrics.netIncomeTotal",
+    "live": 42949431000
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 0.2797990453991635
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.economics.rawMetrics.nwcToRevenueTrend",
+    "live": -0.004180033532230686
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.030182760790449355
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": -0.01528249947108548
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": -0.019294639855801488
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 148030968692.77686
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": 10172861000
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": -0.019294639855801488
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.11436782637654996
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 10.036320320974493
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 8.850158257456624
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 18.886478578431117
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": -1
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.01746047244025677
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 0
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 34981597000
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 63196658000
+  },
+  {
+    "id": "GAPB.MX",
+    "path": "tests.accounting.rawMetrics.restructuringYears",
+    "live": 0
+  },
+  {
+    "id": "BE.US",
+    "path": "series.bookValuePerShare[2018]",
+    "live": 0.8110548809928292
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.understandable.rawMetrics.revenueDeclines",
+    "live": 3
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": -0.12374260918582936
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 1.000001
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.03146802470464445
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": -0.03790766086596453
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": -0.009305181896487436
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": -0.003253772234156904
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": -1612377000
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": 337000000
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": -0.009305181896487436
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": -0.003253772234156904
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.04026793417904506
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 0.28321421659791357
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 0.7625743645213628
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 1.0457885811192764
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": 0.35714285714285715
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.015601413178082132
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 1
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 0
+  },
+  {
+    "id": "HST.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 5425000000
+  },
+  {
+    "id": "KMB.US",
+    "path": "series.bookValuePerShare[2015]",
+    "live": 0.10973936899862825
+  },
+  {
+    "id": "KMB.US",
+    "path": "series.bookValuePerShare[2016]",
+    "live": 0.3253615127919911
+  },
+  {
+    "id": "AVBH.US",
+    "path": "tests.management.metrics.retainedBookRatio",
+    "live": 1.0032267095332643
+  },
+  {
+    "id": "AVBH.US",
+    "path": "tests.management.rawMetrics.retainedBookRatio",
+    "live": 1.0032267095332643
+  },
+  {
+    "id": "GALP.LS",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "GALP.LS",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "TRMB.US",
+    "path": "tests.management.metrics.nonAcquisitionShareCagr",
+    "live": -0.0067795366288400105
+  },
+  {
+    "id": "TRMB.US",
+    "path": "tests.management.metrics.shareCagr",
+    "live": -0.0067795366288400105
+  },
+  {
+    "id": "TRMB.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": -0.0067795366288400105
+  },
+  {
+    "id": "TRMB.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": -0.0067795366288400105
+  },
+  {
+    "id": "EDP.LS",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "EDP.LS",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "JMT.LS",
+    "path": "tests.accounting.series.sbcToOcf[2022]",
+    "live": 0
+  },
+  {
+    "id": "688036.SHG",
+    "path": "tests.management.metrics.buybackYieldSpearman",
+    "live": 1
+  },
+  {
+    "id": "688036.SHG",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": 1
+  },
+  {
+    "id": "CPI.VI",
+    "path": "tests.management.series.retainedEarnings[2022]",
+    "live": 142601000
+  },
+  {
+    "id": "CPI.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "CPI.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "CPI.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "CPI.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "1299.HK",
+    "path": "tests.moat.metrics.totalRoicMedian",
+    "live": 0.09214840782937835
+  },
+  {
+    "id": "1299.HK",
+    "path": "tests.moat.series.totalRoic[2025]",
+    "live": 0.09214840782937835
+  },
+  {
+    "id": "1299.HK",
+    "path": "series.totalRoic[2025]",
+    "live": 0.09214840782937835
+  },
+  {
+    "id": "HCA.US",
+    "path": "series.bookValuePerShare[2021]",
+    "live": 4.720719806732653
+  },
+  {
+    "id": "HCA.US",
+    "path": "series.bookValuePerShare[2023]",
+    "live": 3.9087563517290715
+  },
+  {
+    "id": "HCA.US",
+    "path": "series.bookValuePerShare[2024]",
+    "live": 2.173827895499589
+  },
+  {
+    "id": "SON.LS",
+    "path": "tests.moat.series.totalRoic[2020]",
+    "live": -0.019156806018821804
+  },
+  {
+    "id": "SON.LS",
+    "path": "series.totalRoic[2020]",
+    "live": -0.019156806018821804
+  },
+  {
+    "id": "CIB.US",
+    "path": "valuation.equityBondYield",
+    "live": 0.07128809953066227
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.moat.series.roic[2023]",
+    "live": 0.1857136783850208
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.economics.series.nwcToRevenue[2023]",
+    "live": -0.057432432432432436
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.management.metrics.retainedEarnings",
+    "live": 2369400000
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.management.metrics.acquisitionSpend",
+    "live": 85500000
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.management.series.acquisitions[2023]",
+    "live": 35200000
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.management.series.acquisitions[2024]",
+    "live": 17600000
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.management.series.roic[2023]",
+    "live": 0.1857136783850208
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.management.series.retainedEarnings[2023]",
+    "live": 81300000
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.accounting.series.ocfToNi[2023]",
+    "live": 0.9519650655021834
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.accounting.series.accruals[2023]",
+    "live": 0.0018288374412901618
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "series.tangibleBookValuePerShare[2023]",
+    "live": 0.48900226757369614
+  },
+  {
+    "id": "PFD.LSE",
+    "path": "series.bookValuePerShare[2023]",
+    "live": 1.5941043083900226
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.understandable.rawMetrics.revenueDeclines",
+    "live": 2
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.understandable.rawMetrics.lossYears",
+    "live": 4
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.understandable.rawMetrics.opMarginCv",
+    "live": 0.457563194713749
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.moat.rawMetrics.roicMedian",
+    "live": 0.10775828602534615
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.moat.rawMetrics.roicSecondLowest",
+    "live": 0.07060210681302426
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": 0.09388406841283764
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.economics.rawMetrics.oeToNi",
+    "live": 1.3867884400689785
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.economics.rawMetrics.ownerEarningsTotal",
+    "live": 12342773521.243006
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.economics.rawMetrics.netIncomeTotal",
+    "live": 8900257000
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 0.3288556394536944
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueTrend",
+    "live": -0.012510379836163137
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.09446734897716993
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.1687085675191364
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": -0.0023109937956747872
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": -0.007953951187865016
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": -2869614658.1562996
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": 1098972000
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": -0.0023109937956747872
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": -0.007953951187865016
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": -0.8212130944861119
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": -0.6887659499842683
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": -1.5099790444703802
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": 0.3
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.019331300180195563
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 1
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 4137949000
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": 18633280000
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.roicFirst3Median",
+    "live": 0.07060210681302426
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.management.rawMetrics.roicLast3Median",
+    "live": 0.08094228834737228
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.accounting.rawMetrics.dsri",
+    "live": 0.8896707467842435
+  },
+  {
+    "id": "CSNA3.SA",
+    "path": "tests.accounting.rawMetrics.restructuringYears",
+    "live": 0
+  },
+  {
+    "id": "ANDR.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "ANDR.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "ANDR.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "ANDR.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "ANDR.VI",
+    "path": "tests.accounting.rawMetrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "SATS.OL",
+    "path": "tests.management.series.retainedEarnings[2023]",
+    "live": 224000000
+  },
+  {
+    "id": "SATS.OL",
+    "path": "tests.management.series.retainedEarnings[2024]",
+    "live": 326000000
+  },
+  {
+    "id": "SATS.OL",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "SATS.OL",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.economics.metrics.nwcToRevenueChange",
+    "live": -0.0040746681673862195
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.economics.metrics.nwcToRevenueEnd",
+    "live": 0.3730435365313685
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.0040746681673862195
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": 0.3730435365313685
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.metrics.nonAcquisitionShareCagr",
+    "live": -0.013925178730071597
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.metrics.marketCapGain",
+    "live": 160170938501.35803
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.metrics.retainedEarnings",
+    "live": -51869000000
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.metrics.shareCagr",
+    "live": -0.013925178730071597
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.metrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.metrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.metrics.acquisitionSpend",
+    "live": 22777000000
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.metrics.cumulativeNetIncome",
+    "live": -3917000000
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": -0.013925178730071597
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 160170938501.35803
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": -51869000000
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": -0.013925178730071597
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 22777000000
+  },
+  {
+    "id": "GE.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": -3917000000
+  },
+  {
+    "id": "RKLB.US",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": -0.38934467878367374
+  },
+  {
+    "id": "RKLB.US",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": -0.25211923998541275
+  },
+  {
+    "id": "RKLB.US",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": -0.1228010562609897
+  },
+  {
+    "id": "RKLB.US",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": -0.37492029624640244
+  },
+  {
+    "id": "RKLB.US",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": -1
+  },
+  {
+    "id": "RKLB.US",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.009668799723607638
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.moat.series.roic[2016]",
+    "live": 0.4537042159263888
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.economics.metrics.nwcToRevenueChange",
+    "live": 0.00749856524119897
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.economics.series.ownerEarnings[2016]",
+    "live": 26737000
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.economics.series.nwcToRevenue[2016]",
+    "live": -0.003013377939967355
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.management.metrics.acquisitionSpend",
+    "live": 236042000
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.management.metrics.roicFirst3Median",
+    "live": 0.3001084867109065
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.management.series.buybacks[2016]",
+    "live": 0
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.management.series.acquisitions[2016]",
+    "live": 0
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.management.series.roic[2016]",
+    "live": 0.4537042159263888
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.management.series.retainedEarnings[2016]",
+    "live": 13590000
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.accounting.series.ocfToNi[2016]",
+    "live": 1.6797436001460506
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.accounting.series.accruals[2016]",
+    "live": -0.05833669902371767
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "tests.accounting.series.sbcToOcf[2016]",
+    "live": 0.045261327407979904
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "series.ownerEarningsPerShare[2016]",
+    "live": 0.3607793925164285
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "series.tangibleBookValuePerShare[2016]",
+    "live": 1.0781146689335979
+  },
+  {
+    "id": "HFG.LSE",
+    "path": "series.bookValuePerShare[2016]",
+    "live": 1.1939440553778893
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.understandable.rawMetrics.revenueDeclines",
+    "live": 6
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.understandable.rawMetrics.lossYears",
+    "live": 10
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.understandable.rawMetrics.opMarginCv",
+    "live": 2.164252472283764
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.moat.metrics.totalRoicMedian",
+    "live": -15.455475177026651
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.moat.rawMetrics.roicMedian",
+    "live": -1.1578371356029353
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.moat.rawMetrics.roicSecondLowest",
+    "live": -13.867824441243844
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.moat.rawMetrics.grossMarginDrop",
+    "live": 40.93382352941177
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.economics.rawMetrics.ownerEarningsTotal",
+    "live": -252519000
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.economics.rawMetrics.netIncomeTotal",
+    "live": -235837000
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.economics.rawMetrics.roiic",
+    "live": 1.000001
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.economics.rawMetrics.nwcToRevenueTrend",
+    "live": -4.708915008838568
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.1353056382688731
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": 0.11231559823087212
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 683760026.5468597
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": -2080489
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.1353056382688731
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": 0.11231559823087212
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 0.35776483277120996
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": -1.3804520012672932
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": -1.0226871684960832
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.debtFundedBuybacks",
+    "live": 0
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 202547
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": -398710511
+  },
+  {
+    "id": "NANO.PA",
+    "path": "tests.accounting.rawMetrics.restructuringYears",
+    "live": 0
+  },
+  {
+    "id": "DVP.AU",
+    "path": "tests.economics.metrics.nwcToRevenueChange",
+    "live": 4.04791835305069
+  },
+  {
+    "id": "POS.VI",
+    "path": "tests.management.metrics.retainedEarnings",
+    "live": 206590000
+  },
+  {
+    "id": "POS.VI",
+    "path": "tests.management.series.retainedEarnings[2024]",
+    "live": 47591000
+  },
+  {
+    "id": "POS.VI",
+    "path": "tests.management.series.retainedEarnings[2025]",
+    "live": 65731000
+  },
+  {
+    "id": "POS.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "POS.VI",
+    "path": "tests.accounting.series.ocfToNi[2020]",
+    "live": 2.537886386432023
+  },
+  {
+    "id": "POS.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "POS.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "POS.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "IBKR.US",
+    "path": "series.bookValuePerShare[2010]",
+    "live": 26.974950801378316
+  },
+  {
+    "id": "LHX.US",
+    "path": "tests.management.series.marketCap[2016]",
+    "live": 12849738153.076172
+  },
+  {
+    "id": "601088.SHG",
+    "path": "tests.management.metrics.averageBuybackYield",
+    "live": 5.275170970529573e-05
+  },
+  {
+    "id": "601088.SHG",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 5.275170970529573e-05
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.economics.metrics.nwcToRevenueChange",
+    "live": -0.36934785130499
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.economics.metrics.nwcToRevenueEnd",
+    "live": -0.3143450287766165
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "live": -0.36934785130499
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "live": -0.3143450287766165
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.metrics.nonAcquisitionShareCagr",
+    "live": 0.11409789830103811
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.metrics.marketCapGain",
+    "live": 658285770.0000001
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.metrics.retainedEarnings",
+    "live": -2207300000
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.metrics.shareCagr",
+    "live": 0.11409789830103811
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.metrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.metrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.metrics.acquisitionSpend",
+    "live": 0
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.metrics.cumulativeNetIncome",
+    "live": -3017300000
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "live": 0.11409789830103811
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 658285770.0000001
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": -2207300000
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "live": 0.11409789830103811
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "live": 0
+  },
+  {
+    "id": "HMSO.LSE",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "live": -3017300000
+  },
+  {
+    "id": "MCK.US",
+    "path": "series.bookValuePerShare[2021]",
+    "live": 9.538258575197888
+  },
+  {
+    "id": "GVR.IR",
+    "path": "tests.management.series.retainedEarnings[2023]",
+    "live": 47108000
+  },
+  {
+    "id": "GVR.IR",
+    "path": "tests.management.series.retainedEarnings[2024]",
+    "live": 97755000
+  },
+  {
+    "id": "GVR.IR",
+    "path": "tests.management.series.retainedEarnings[2025]",
+    "live": 107612000
+  },
+  {
+    "id": "DELL.US",
+    "path": "series.bookValuePerShare[2020]",
+    "live": 10.408560311284047
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.metrics.marketCapGain",
+    "live": 5844608676557.227
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.metrics.retainedEarnings",
+    "live": 10854299974000
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.metrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.metrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.metrics.buybackYieldSpearman",
+    "live": 0.01818181818181818
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.metrics.averageBuybackYield",
+    "live": 0.0661447570805557
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.series.marketCap[2016]",
+    "live": 62017681423731.17
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.series.marketCap[2017]",
+    "live": 100256206320905.38
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.series.marketCap[2018]",
+    "live": 108822184237572.05
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.series.marketCap[2019]",
+    "live": 136781529099423.73
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.series.marketCap[2020]",
+    "live": 88469418877681.73
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.series.marketCap[2021]",
+    "live": 88332366629382.78
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.series.marketCap[2022]",
+    "live": 71748632859890.31
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.series.marketCap[2023]",
+    "live": 81685165936159.14
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.series.marketCap[2024]",
+    "live": 54274036602825.805
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.series.marketCap[2025]",
+    "live": 67862290100288.4
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.rawMetrics.marketCapGain",
+    "live": 5844608676557.227
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.rawMetrics.retainedEarnings",
+    "live": 10854299974000
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.rawMetrics.retainedStartFy",
+    "live": 2016
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.rawMetrics.retainedEndFy",
+    "live": 2025
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": 0.01818181818181818
+  },
+  {
+    "id": "EC.US",
+    "path": "tests.management.rawMetrics.averageBuybackYield",
+    "live": 0.0661447570805557
+  },
+  {
+    "id": "EC.US",
+    "path": "valuation.equityBondYield",
+    "live": 0.2026586043541368
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.moat.series.efficiencyRatio[2016]",
+    "live": 0.45475709618033794
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.moat.series.efficiencyRatio[2017]",
+    "live": 0.47622993236977523
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.moat.series.efficiencyRatio[2018]",
+    "live": 0.4869507274934903
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.moat.series.efficiencyRatio[2019]",
+    "live": 0.4908741594620557
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.metrics.depositCagr",
+    "live": 0.08788167261721758
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.loanGrowth[2016]",
+    "live": 0.04515802974386851
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.loanGrowth[2017]",
+    "live": 0.027011641171583278
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.loanGrowth[2018]",
+    "live": 0.046460017904822015
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.loanGrowth[2019]",
+    "live": 0.04350410367542068
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.loanGrowth[2020]",
+    "live": 0.022600280641376536
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.depositGrowth[2016]",
+    "live": 0.01622221570254334
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.depositGrowth[2017]",
+    "live": 0.007416945425218202
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.depositGrowth[2018]",
+    "live": 0.057118331719879345
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.depositGrowth[2019]",
+    "live": 0.029017342430852855
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.depositGrowth[2020]",
+    "live": 0.02463482794335259
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.rawMetrics.depositCagr",
+    "live": 0.08788167261721758
+  },
+  {
+    "id": "EVN.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "EVN.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "EVN.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "CAI.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "CAI.VI",
+    "path": "tests.accounting.series.sbcToOcf[2022]",
+    "live": 0
+  },
+  {
+    "id": "CAI.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "CAI.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "CAI.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.metrics.nonAcquisitionShareCagr5",
+    "live": -0.007876642150873026
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.metrics.shareCagr5",
+    "live": -0.007876642150873026
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.metrics.perShareValueGrowth",
+    "live": 0.07294944109214829
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.metrics.perShareValueChange",
+    "live": 3.180630735265698
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.metrics.perShareStart",
+    "live": 4.204719583205639
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.metrics.perShareEnd",
+    "live": 7.385350318471337
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.series.perShareValue[2020]",
+    "live": 1.8030759434770895
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.series.perShareValue[2021]",
+    "live": -0.6275561433154556
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.series.shares[2020]",
+    "live": 326664000
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.series.shares[2021]",
+    "live": 326664000
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr5",
+    "live": -0.007876642150873026
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.rawMetrics.shareCagr5",
+    "live": -0.007876642150873026
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.rawMetrics.perShareValueGrowth",
+    "live": 0.07294944109214829
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.rawMetrics.perShareValueChange",
+    "live": 3.180630735265698
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.rawMetrics.perShareStart",
+    "live": 4.204719583205639
+  },
+  {
+    "id": "CEG.US",
+    "path": "tests.management.rawMetrics.perShareEnd",
+    "live": 7.385350318471337
+  },
+  {
+    "id": "CEG.US",
+    "path": "series.revenuePerShare[2020]",
+    "live": 53.88717458918032
+  },
+  {
+    "id": "CEG.US",
+    "path": "series.revenuePerShare[2021]",
+    "live": 60.150491024416525
+  },
+  {
+    "id": "CEG.US",
+    "path": "series.ownerEarningsPerShare[2020]",
+    "live": 5.779639017461367
+  },
+  {
+    "id": "CEG.US",
+    "path": "series.ownerEarningsPerShare[2021]",
+    "live": 5.213307863737663
+  },
+  {
+    "id": "CEG.US",
+    "path": "series.tangibleBookValuePerShare[2020]",
+    "live": 37.668674846325274
+  },
+  {
+    "id": "CEG.US",
+    "path": "series.tangibleBookValuePerShare[2021]",
+    "live": 26.28694928121862
+  },
+  {
+    "id": "CEG.US",
+    "path": "series.bookValuePerShare[2020]",
+    "live": 37.95643229740651
+  },
+  {
+    "id": "CEG.US",
+    "path": "series.bookValuePerShare[2021]",
+    "live": 34.344157911493156
+  },
+  {
+    "id": "POST.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "POST.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "POST.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "POST.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "SBO.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "SBO.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "SBO.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "SBO.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "VOE.VI",
+    "path": "tests.accounting.metrics.sbcToOcf",
+    "live": 0
+  },
+  {
+    "id": "VOE.VI",
+    "path": "tests.accounting.series.sbcToOcf[2023]",
+    "live": 0
+  },
+  {
+    "id": "VOE.VI",
+    "path": "tests.accounting.series.sbcToOcf[2024]",
+    "live": 0
+  },
+  {
+    "id": "VOE.VI",
+    "path": "tests.accounting.series.sbcToOcf[2025]",
+    "live": 0
+  },
+  {
+    "id": "VOE.VI",
+    "path": "tests.accounting.series.sbcToOcf[2026]",
+    "live": 0
+  },
+  {
+    "id": "600183.SHG",
+    "path": "tests.management.metrics.buybackYieldSpearman",
+    "live": -1
+  },
+  {
+    "id": "600183.SHG",
+    "path": "tests.management.rawMetrics.buybackYieldSpearman",
+    "live": -1
+  },
+  {
+    "id": "IR5B.IR",
+    "path": "tests.management.series.retainedEarnings[2020]",
+    "live": -19000000
+  },
+  {
+    "id": "IR5B.IR",
+    "path": "tests.management.series.retainedEarnings[2021]",
+    "live": -4900000
+  },
+  {
+    "id": "SHC.LSE",
+    "path": "tests.accounting.series.sbcToOcf[2021]",
+    "live": 3
+  }
+]

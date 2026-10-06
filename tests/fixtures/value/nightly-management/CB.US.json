@@ -1,0 +1,4128 @@
+{
+  "company": {
+    "id": "CB.US",
+    "name": "Chubb Ltd",
+    "code": "CB",
+    "exchange": "US",
+    "country": "US",
+    "currency": "USD",
+    "isin": "CH0044328745",
+    "cik": "0000896159",
+    "lei": "E0JAN6VLUDI1HITHT809",
+    "edinetCode": null,
+    "sector": "Financial Services",
+    "industry": "Insurance - Property & Casualty",
+    "kind": "insurer",
+    "listings": [
+      "CB.US"
+    ],
+    "marketCapUsd": 127502999552,
+    "description": "Chubb Limited provides insurance and reinsurance products worldwide. It operates in six segments: North America Commercial Property and Casualty (P&C) Insurance, North America Personal P&C Insurance, North America Agricultural Insurance, Overseas General Insurance, Global Reinsurance, and Life Insurance. The company offers property and general liability, workers' compensation, and umbrella; professional and management liability; environmental, health, and international coverages; and claims and risk management products and services, loss control, and engineering and complex claims management. It also provides homeowners, automobile and collector cars, valuable articles, and personal and excess liability insurance. In addition, the company offers multiple peril crop insurance and crop-hail insurance for farm, ranch, specialty (P&C), and commercial agriculture products; product and employer liability, business interruption, and specialty risk; property insurance products, including traditional commercial fire coverage, energy industry-related, marine, construction, and other technical coverages; personal accident and supplemental medical coverages, such as accidental death, business/holiday travel, specified disease, disability, medical and hospital indemnity, and income protection; and directors and officers, professional indemnity, cyber, surety, aviation, political risk, and specialty personal lines products. Further, it provides property catastrophe reinsurance; traditional and specialty P&C reinsurance; and protection and savings products, which includes individual and group term life, dental, critical illness, dementia, hospital cash, credit life, group employee benefits, whole life, universal life, unit linked contracts, endowment plans, and annuities. The company was formerly known as ACE Limited and changed its name to Chubb Limited in January 2016. Chubb Limited was incorporated in 1985 and is headquartered in Zurich, Switzerland.",
+    "source": "eodhd",
+    "nameEn": "Chubb Ltd",
+    "logo": "/api/value/logo?asset=a7af65c2bb6b8c97106ac6ded664cebed01bdac46da9b0dfe031b8e413abcfb6",
+    "about": "Chubb Limited provides insurance and reinsurance products worldwide.",
+    "indexes": [
+      "S&P 500"
+    ],
+    "listingExchange": "NYSE",
+    "heldBySuperinvestors": true,
+    "investmentHolding": false
+  },
+  "years": [
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 328835378,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 18968000000,
+      "commonNetIncome": 2834000000,
+      "preferredEquity": 0,
+      "commonDividendsPaid": 862000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": 12968000000,
+      "operatingExpenses": 2704000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 12147000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 19478000000,
+      "fy": 2015,
+      "end": "2015-12-31",
+      "currency": "USD",
+      "minorityInterest": 0,
+      "revenue": 18987000000,
+      "grossProfit": 6000000000,
+      "operatingIncome": 3296000000,
+      "preTaxIncome": 3296000000,
+      "taxExpense": 462000000,
+      "netIncome": 2834000000,
+      "interestExpense": 300000000,
+      "da": 171000000,
+      "sbc": 174000000,
+      "nonRecurring": 0,
+      "ocf": 3864000000,
+      "capex": 0,
+      "dividendsPaid": 862000000,
+      "buybacks": 758000000,
+      "issuance": 0,
+      "acquisitions": 0,
+      "acquisitionsProxy": true,
+      "receivables": 16709000000,
+      "loans": null,
+      "inventory": 187000000,
+      "payables": 11879000000,
+      "cash": 55808000000,
+      "totalDebt": 21903000000,
+      "clientAssets": null,
+      "equity": 29135000000,
+      "goodwill": 4796000000,
+      "intangibles": 887000000,
+      "ppe": -318000000,
+      "totalAssets": 102366000000,
+      "totalLiabilities": 73231000000,
+      "liabilitiesAndStockholdersEquity": 102366000000,
+      "currentAssets": 73349000000,
+      "currentLiabilities": 63475000000,
+      "dilutedShares": 328835378,
+      "marketCap": null,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-18-000002",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2015-01-01 to 2015-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "preferredEquity": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "preferredEquity",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "minorityInterest": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "minorityInterest",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-18-000002",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2015-01-01 to 2015-12-31",
+            "Currency USD"
+          ]
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "sbc",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "inventory": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "inventory",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "cash",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2015-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        }
+      },
+      "retainedEarningsChange": 2834000000,
+      "averageSharePrice": null
+    },
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 465949399,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 31480000000,
+      "commonNetIncome": 4135000000,
+      "preferredEquity": 0,
+      "commonDividendsPaid": 1173000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": 22544000000,
+      "operatingExpenses": 3986000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 500000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 23613000000,
+      "fy": 2016,
+      "end": "2016-12-31",
+      "currency": "USD",
+      "minorityInterest": 0,
+      "revenue": 31469000000,
+      "grossProfit": 8936000000,
+      "operatingIncome": 4950000000,
+      "preTaxIncome": 4950000000,
+      "taxExpense": 815000000,
+      "netIncome": 4135000000,
+      "interestExpense": 605000000,
+      "da": 1578000000,
+      "sbc": 301000000,
+      "nonRecurring": 0,
+      "ocf": 5292000000,
+      "capex": 0,
+      "dividendsPaid": 1173000000,
+      "buybacks": 0,
+      "issuance": 0,
+      "acquisitions": 16412000000,
+      "acquisitionsProxy": true,
+      "receivables": 22547000000,
+      "loans": null,
+      "inventory": 182000000,
+      "payables": 15657000000,
+      "cash": 84102000000,
+      "totalDebt": 13418000000,
+      "clientAssets": null,
+      "equity": 48275000000,
+      "goodwill": 15332000000,
+      "intangibles": 6763000000,
+      "ppe": 1200000000,
+      "totalAssets": 159786000000,
+      "totalLiabilities": 111511000000,
+      "liabilitiesAndStockholdersEquity": 159786000000,
+      "currentAssets": 109049000000,
+      "currentLiabilities": 98593000000,
+      "dilutedShares": 465949399,
+      "marketCap": 61561232320.73645,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-19-000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2016-01-01 to 2016-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "preferredEquity": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "preferredEquity",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "minorityInterest": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "minorityInterest",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-19-000005",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2016-01-01 to 2016-12-31",
+            "Currency USD"
+          ]
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "sbc",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "inventory": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "inventory",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "cash",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2016-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        },
+        "marketCap": {
+          "source": "prices-history/CB.US",
+          "field": "fiscal-end close \u00d7 diluted shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "close: 132.1199951171875",
+            "dilutedShares: 465949399",
+            "FX: 1"
+          ]
+        }
+      },
+      "retainedEarningsChange": 4135000000,
+      "averageSharePrice": null
+    },
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 471196901,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 32340000000,
+      "commonNetIncome": 3861000000,
+      "preferredEquity": 0,
+      "commonDividendsPaid": 1308000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": 24911000000,
+      "operatingExpenses": 3707000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 1013000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 27474000000,
+      "fy": 2017,
+      "end": "2017-12-31",
+      "currency": "USD",
+      "minorityInterest": 0,
+      "revenue": 32243000000,
+      "grossProfit": 7429000000,
+      "operatingIncome": 3722000000,
+      "preTaxIncome": 3722000000,
+      "taxExpense": -139000000,
+      "netIncome": 3861000000,
+      "interestExpense": 607000000,
+      "da": 260000000,
+      "sbc": 300000000,
+      "nonRecurring": 0,
+      "ocf": 4503000000,
+      "capex": 0,
+      "dividendsPaid": 1308000000,
+      "buybacks": 801000000,
+      "issuance": 0,
+      "acquisitions": 0,
+      "acquisitionsProxy": true,
+      "receivables": 24368000000,
+      "loans": null,
+      "inventory": 184000000,
+      "payables": 16821000000,
+      "cash": 83228000000,
+      "totalDebt": 12877000000,
+      "clientAssets": null,
+      "equity": 51172000000,
+      "goodwill": 15541000000,
+      "intangibles": 6513000000,
+      "ppe": 1300000000,
+      "totalAssets": 167022000000,
+      "totalLiabilities": 115850000000,
+      "liabilitiesAndStockholdersEquity": 167022000000,
+      "currentAssets": 112506000000,
+      "currentLiabilities": 103986000000,
+      "dilutedShares": 471196901,
+      "marketCap": 68856005443.89612,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-20-000003",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2017-01-01 to 2017-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "preferredEquity": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "preferredEquity",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "minorityInterest": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "minorityInterest",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-20-000003",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2017-01-01 to 2017-12-31",
+            "Currency USD"
+          ]
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "sbc",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "inventory": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "inventory",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "cash",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2017-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        },
+        "averageSharePrice": {
+          "source": "prices-history/CB.US",
+          "field": "mean monthly close converted to reporting currency",
+          "method": "estimate",
+          "inputs": [
+            "fiscal end: 2017-12-31",
+            "monthly observations: 12",
+            "reporting-to-trading FX: 1"
+          ]
+        },
+        "marketCap": {
+          "source": "prices-history/CB.US",
+          "field": "fiscal-end close \u00d7 diluted shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "close: 146.1300048828125",
+            "dilutedShares: 471196901",
+            "FX: 1"
+          ]
+        }
+      },
+      "retainedEarningsChange": 3861000000,
+      "averageSharePrice": 142.60166931152344
+    },
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 466802348,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 32679000000,
+      "commonNetIncome": 3962000000,
+      "preferredEquity": null,
+      "commonDividendsPaid": 1337000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": 24569000000,
+      "operatingExpenses": 3453000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 509000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 31700000000,
+      "fy": 2018,
+      "end": "2018-12-31",
+      "currency": "USD",
+      "minorityInterest": null,
+      "revenue": 32717000000,
+      "grossProfit": 8110000000,
+      "operatingIncome": 4657000000,
+      "preTaxIncome": 4657000000,
+      "taxExpense": 695000000,
+      "netIncome": 3962000000,
+      "interestExpense": 641000000,
+      "da": 339000000,
+      "sbc": 285000000,
+      "nonRecurring": 0,
+      "ocf": 5480000000,
+      "capex": 980000000,
+      "dividendsPaid": 1337000000,
+      "buybacks": 1044000000,
+      "issuance": 0,
+      "acquisitions": 0,
+      "acquisitionsProxy": true,
+      "receivables": 26068000000,
+      "loans": null,
+      "inventory": 202000000,
+      "payables": 18327000000,
+      "cash": 82733000000,
+      "totalDebt": 12904000000,
+      "clientAssets": null,
+      "equity": 50312000000,
+      "goodwill": 15271000000,
+      "intangibles": 6143000000,
+      "ppe": 1700000000,
+      "totalAssets": 167771000000,
+      "totalLiabilities": 117459000000,
+      "liabilitiesAndStockholdersEquity": 167771000000,
+      "currentAssets": 112290000000,
+      "currentLiabilities": 105064000000,
+      "dilutedShares": 466802348,
+      "marketCap": 60301523895.67749,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-21-000003",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2018-01-01 to 2018-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-21-000003",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2018-01-01 to 2018-12-31",
+            "Currency USD"
+          ]
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "sbc",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "inventory": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "inventory",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "cash",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2018-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        },
+        "averageSharePrice": {
+          "source": "prices-history/CB.US",
+          "field": "mean monthly close converted to reporting currency",
+          "method": "estimate",
+          "inputs": [
+            "fiscal end: 2018-12-31",
+            "monthly observations: 12",
+            "reporting-to-trading FX: 1"
+          ]
+        },
+        "marketCap": {
+          "source": "prices-history/CB.US",
+          "field": "fiscal-end close \u00d7 diluted shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "close: 129.17999267578125",
+            "dilutedShares: 466802348",
+            "FX: 1"
+          ]
+        }
+      },
+      "retainedEarningsChange": 4226000000,
+      "averageSharePrice": 135.38750012715658
+    },
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 458914663,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 34230000000,
+      "commonNetIncome": 4454000000,
+      "preferredEquity": null,
+      "commonDividendsPaid": 1354000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": 25623000000,
+      "operatingExpenses": 3358000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 1299000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 36142000000,
+      "fy": 2019,
+      "end": "2019-12-31",
+      "currency": "USD",
+      "minorityInterest": null,
+      "revenue": 34186000000,
+      "grossProfit": 8607000000,
+      "operatingIncome": 5249000000,
+      "preTaxIncome": 5249000000,
+      "taxExpense": 795000000,
+      "netIncome": 4454000000,
+      "interestExpense": 552000000,
+      "da": 305000000,
+      "sbc": 925000000,
+      "nonRecurring": 0,
+      "ocf": 6342000000,
+      "capex": 1390000000,
+      "dividendsPaid": 1354000000,
+      "buybacks": 1530000000,
+      "issuance": 0,
+      "acquisitions": 0,
+      "acquisitionsProxy": true,
+      "receivables": 25538000000,
+      "loans": null,
+      "inventory": -22606000000,
+      "payables": 17957000000,
+      "cash": 1537000000,
+      "totalDebt": 15166000000,
+      "clientAssets": null,
+      "equity": 55331000000,
+      "goodwill": 15296000000,
+      "intangibles": 6063000000,
+      "ppe": 2451000000,
+      "totalAssets": 176943000000,
+      "totalLiabilities": 121612000000,
+      "liabilitiesAndStockholdersEquity": 176943000000,
+      "currentAssets": 27075000000,
+      "currentLiabilities": 19256000000,
+      "dilutedShares": 458914663,
+      "marketCap": 71434658123.17569,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-22-000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2019-01-01 to 2019-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-22-000005",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2019-01-01 to 2019-12-31",
+            "Currency USD"
+          ]
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "sbc",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "inventory": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "inventory",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "cash",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2019-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        },
+        "averageSharePrice": {
+          "source": "prices-history/CB.US",
+          "field": "mean monthly close converted to reporting currency",
+          "method": "estimate",
+          "inputs": [
+            "fiscal end: 2019-12-31",
+            "monthly observations: 12",
+            "reporting-to-trading FX: 1"
+          ]
+        },
+        "marketCap": {
+          "source": "prices-history/CB.US",
+          "field": "fiscal-end close \u00d7 diluted shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "close: 155.66000366210938",
+            "dilutedShares: 458914663",
+            "FX: 1"
+          ]
+        }
+      },
+      "retainedEarningsChange": 4442000000,
+      "averageSharePrice": 147.9758326212565
+    },
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 453441512,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 36052000000,
+      "commonNetIncome": 3533000000,
+      "preferredEquity": null,
+      "commonDividendsPaid": 1388000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": 29041000000,
+      "operatingExpenses": 2849000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 1555000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 39337000000,
+      "fy": 2020,
+      "end": "2020-12-31",
+      "currency": "USD",
+      "minorityInterest": null,
+      "revenue": 35994000000,
+      "grossProfit": 7011000000,
+      "operatingIncome": 4162000000,
+      "preTaxIncome": 4162000000,
+      "taxExpense": 629000000,
+      "netIncome": 3533000000,
+      "interestExpense": 516000000,
+      "da": 290000000,
+      "sbc": 865000000,
+      "nonRecurring": 0,
+      "ocf": 9785000000,
+      "capex": 907000000,
+      "dividendsPaid": 1388000000,
+      "buybacks": 523000000,
+      "issuance": 0,
+      "acquisitions": 0,
+      "acquisitionsProxy": true,
+      "receivables": 26072000000,
+      "loans": null,
+      "inventory": -25363000000,
+      "payables": 20760000000,
+      "cash": 1747000000,
+      "totalDebt": 16503000000,
+      "clientAssets": null,
+      "equity": 59441000000,
+      "goodwill": 15400000000,
+      "intangibles": 5811000000,
+      "ppe": 2473000000,
+      "totalAssets": 190774000000,
+      "totalLiabilities": 131333000000,
+      "liabilitiesAndStockholdersEquity": 190774000000,
+      "currentAssets": 27819000000,
+      "currentLiabilities": 20760000000,
+      "dilutedShares": 453441512,
+      "marketCap": 69793716696.7638,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-23-000007",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2020-01-01 to 2020-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-23-000007",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2020-01-01 to 2020-12-31",
+            "Currency USD"
+          ]
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "sbc",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "inventory": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "inventory",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "cash",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2020-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        },
+        "averageSharePrice": {
+          "source": "prices-history/CB.US",
+          "field": "mean monthly close converted to reporting currency",
+          "method": "estimate",
+          "inputs": [
+            "fiscal end: 2020-12-31",
+            "monthly observations: 12",
+            "reporting-to-trading FX: 1"
+          ]
+        },
+        "marketCap": {
+          "source": "prices-history/CB.US",
+          "field": "fiscal-end close \u00d7 diluted shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "close: 153.9199981689453",
+            "dilutedShares: 453441512",
+            "FX: 1"
+          ]
+        }
+      },
+      "retainedEarningsChange": 3195000000,
+      "averageSharePrice": 130.44166819254556
+    },
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 443200000,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 40770000000,
+      "commonNetIncome": 8539000000,
+      "preferredEquity": null,
+      "commonDividendsPaid": 1401000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": 29437000000,
+      "operatingExpenses": 1539000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 999000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 47365000000,
+      "fy": 2021,
+      "end": "2021-12-31",
+      "currency": "USD",
+      "minorityInterest": null,
+      "revenue": 40869000000,
+      "grossProfit": 11333000000,
+      "operatingIncome": 9794000000,
+      "preTaxIncome": 9794000000,
+      "taxExpense": 1269000000,
+      "netIncome": 8525000000,
+      "interestExpense": 492000000,
+      "da": 287000000,
+      "sbc": -3253000000,
+      "nonRecurring": 0,
+      "ocf": 11149000000,
+      "capex": 1421000000,
+      "dividendsPaid": 1401000000,
+      "buybacks": 4861000000,
+      "issuance": 0,
+      "acquisitions": 0,
+      "acquisitionsProxy": true,
+      "receivables": 28901000000,
+      "loans": null,
+      "inventory": -24317000000,
+      "payables": 7243000000,
+      "cash": 97913000000,
+      "totalDebt": 16168000000,
+      "clientAssets": null,
+      "equity": 58328000000,
+      "goodwill": 15213000000,
+      "intangibles": 5455000000,
+      "ppe": 2445000000,
+      "totalAssets": 200054000000,
+      "totalLiabilities": 140340000000,
+      "liabilitiesAndStockholdersEquity": 200054000000,
+      "currentAssets": 1659000000,
+      "currentLiabilities": 67272000000,
+      "dilutedShares": 443197278,
+      "marketCap": 85674464728.1554,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-24-000003",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2021-01-01 to 2021-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-24-000003",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2021-01-01 to 2021-12-31",
+            "Currency USD"
+          ]
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "sbc",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "inventory": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "inventory",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "cash",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2021-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        },
+        "averageSharePrice": {
+          "source": "prices-history/CB.US",
+          "field": "mean monthly close converted to reporting currency",
+          "method": "estimate",
+          "inputs": [
+            "fiscal end: 2021-12-31",
+            "monthly observations: 12",
+            "reporting-to-trading FX: 1"
+          ]
+        },
+        "marketCap": {
+          "source": "prices-history/CB.US",
+          "field": "fiscal-end close \u00d7 diluted shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "close: 193.30999755859375",
+            "dilutedShares: 443197278",
+            "FX: 1"
+          ]
+        }
+      },
+      "retainedEarningsChange": 8028000000,
+      "averageSharePrice": 171.75333404541016
+    },
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 423527444,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 42975000000,
+      "commonNetIncome": 5313000000,
+      "preferredEquity": null,
+      "commonDividendsPaid": 1375000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": 32145000000,
+      "operatingExpenses": 4345000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 475000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 48334000000,
+      "fy": 2022,
+      "end": "2022-12-31",
+      "currency": "USD",
+      "minorityInterest": 0,
+      "revenue": 43097000000,
+      "grossProfit": 10830000000,
+      "operatingIncome": 6485000000,
+      "preTaxIncome": 6485000000,
+      "taxExpense": 1239000000,
+      "netIncome": 5246000000,
+      "interestExpense": 570000000,
+      "da": 285000000,
+      "sbc": 264000000,
+      "nonRecurring": 0,
+      "ocf": 11243000000,
+      "capex": 0,
+      "dividendsPaid": 1375000000,
+      "buybacks": 2894000000,
+      "issuance": 0,
+      "acquisitions": 1001000000,
+      "acquisitionsProxy": true,
+      "receivables": 30834000000,
+      "loans": 0,
+      "inventory": 65034000000,
+      "payables": 23382000000,
+      "cash": 2012000000,
+      "totalDebt": 15660000000,
+      "clientAssets": null,
+      "equity": 50519000000,
+      "goodwill": 16228000000,
+      "intangibles": 5441000000,
+      "ppe": 3007000000,
+      "totalAssets": 199124000000,
+      "totalLiabilities": 148584000000,
+      "liabilitiesAndStockholdersEquity": 199124000000,
+      "currentAssets": 123329000000,
+      "currentLiabilities": 23857000000,
+      "dilutedShares": 423527444,
+      "marketCap": 93430156731.40637,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-25-000004",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "minorityInterest": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "minorityInterest",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000896159.json#0000896159-25-000004",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2022-01-01 to 2022-12-31",
+            "Currency USD"
+          ]
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "sbc",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "inventory": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "inventory",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "cash",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2022-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        },
+        "averageSharePrice": {
+          "source": "prices-history/CB.US",
+          "field": "mean monthly close converted to reporting currency",
+          "method": "estimate",
+          "inputs": [
+            "fiscal end: 2022-12-31",
+            "monthly observations: 12",
+            "reporting-to-trading FX: 1"
+          ]
+        },
+        "marketCap": {
+          "source": "prices-history/CB.US",
+          "field": "fiscal-end close \u00d7 diluted shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "close: 220.60000610351562",
+            "dilutedShares: 423527444",
+            "FX: 1"
+          ]
+        }
+      },
+      "retainedEarningsChange": 969000000,
+      "averageSharePrice": 203.64916610717773
+    },
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 414202568,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 49997000000,
+      "commonNetIncome": 9028000000,
+      "preferredEquity": null,
+      "commonDividendsPaid": 1394000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": -505000000,
+      "operatingExpenses": 12883000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 1460000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 54810000000,
+      "fy": 2023,
+      "end": "2023-12-31",
+      "currency": "USD",
+      "minorityInterest": 4184000000,
+      "revenue": 49735000000,
+      "grossProfit": 49997000000,
+      "operatingIncome": 9448000000,
+      "preTaxIncome": 9526000000,
+      "taxExpense": 511000000,
+      "netIncome": 9028000000,
+      "interestExpense": 672000000,
+      "da": 310000000,
+      "sbc": 324000000,
+      "nonRecurring": 0,
+      "ocf": 12632000000,
+      "capex": 0,
+      "dividendsPaid": 1394000000,
+      "buybacks": 2411000000,
+      "issuance": 0,
+      "acquisitions": 4792000000,
+      "acquisitionsProxy": true,
+      "receivables": 33611000000,
+      "loans": 2553000000,
+      "inventory": -61276000000,
+      "payables": 8302000000,
+      "cash": 33787000000,
+      "totalDebt": 14495000000,
+      "clientAssets": null,
+      "equity": 59507000000,
+      "goodwill": 19686000000,
+      "intangibles": 6775000000,
+      "ppe": 1984000000,
+      "totalAssets": 230682000000,
+      "totalLiabilities": 166991000000,
+      "liabilitiesAndStockholdersEquity": 230682000000,
+      "currentAssets": 21151000000,
+      "currentLiabilities": 1460000000,
+      "dilutedShares": 414202568,
+      "marketCap": 93609780368,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm#000089615926000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "minorityInterest": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "minorityInterest",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm#000089615926000005",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2023-01-01 to 2023-12-31",
+            "Currency USD"
+          ]
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "sbc",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "inventory": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "inventory",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "cash",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2023-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        },
+        "averageSharePrice": {
+          "source": "prices-history/CB.US",
+          "field": "mean monthly close converted to reporting currency",
+          "method": "estimate",
+          "inputs": [
+            "fiscal end: 2023-12-31",
+            "monthly observations: 12",
+            "reporting-to-trading FX: 1"
+          ]
+        },
+        "marketCap": {
+          "source": "prices-history/CB.US",
+          "field": "fiscal-end close \u00d7 diluted shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "close: 226",
+            "dilutedShares: 414202568",
+            "FX: 1"
+          ]
+        }
+      },
+      "retainedEarningsChange": 6476000000,
+      "averageSharePrice": 208.0099983215332
+    },
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 411905820,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 56150000000,
+      "commonNetIncome": 9272000000,
+      "preferredEquity": null,
+      "commonDividendsPaid": 1436000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": 39978000000,
+      "operatingExpenses": 4717000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 800000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 61561000000,
+      "fy": 2024,
+      "end": "2024-12-31",
+      "currency": "USD",
+      "minorityInterest": 4373000000,
+      "revenue": 55753000000,
+      "grossProfit": 16172000000,
+      "operatingIncome": 11455000000,
+      "preTaxIncome": 11455000000,
+      "taxExpense": 1815000000,
+      "netIncome": 9272000000,
+      "interestExpense": 741000000,
+      "da": 323000000,
+      "sbc": 356000000,
+      "nonRecurring": 0,
+      "ocf": 16182000000,
+      "capex": 0,
+      "dividendsPaid": 1436000000,
+      "buybacks": 1801000000,
+      "issuance": 0,
+      "acquisitions": 0,
+      "acquisitionsProxy": true,
+      "receivables": 35652000000,
+      "loans": null,
+      "inventory": 0,
+      "payables": 8121000000,
+      "cash": 39185000000,
+      "totalDebt": 15598000000,
+      "clientAssets": null,
+      "equity": 64021000000,
+      "goodwill": 19579000000,
+      "intangibles": 6377000000,
+      "ppe": 3924000000,
+      "totalAssets": 246548000000,
+      "totalLiabilities": 178154000000,
+      "liabilitiesAndStockholdersEquity": 246548000000,
+      "currentAssets": 79921000000,
+      "currentLiabilities": 130205000000,
+      "dilutedShares": 408486435,
+      "marketCap": 112864797004.09332,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm#000089615926000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "inventory": {
+          "source": "statements",
+          "field": "inventory",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete balance sheet"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "minorityInterest": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "minorityInterest",
+          "method": "reported"
+        },
+        "revenue": {
+          "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm#000089615926000005",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2024-01-01 to 2024-12-31",
+            "Currency USD"
+          ]
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "sbc": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "sbc",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "cash": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "cash",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2024-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        },
+        "averageSharePrice": {
+          "source": "prices-history/CB.US",
+          "field": "mean monthly close converted to reporting currency",
+          "method": "estimate",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "monthly observations: 12",
+            "reporting-to-trading FX: 1"
+          ]
+        },
+        "marketCap": {
+          "source": "prices-history/CB.US",
+          "field": "fiscal-end close \u00d7 diluted shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "close: 276.29998779296875",
+            "dilutedShares: 408486435",
+            "FX: 1"
+          ]
+        }
+      },
+      "retainedEarningsChange": 6751000000,
+      "averageSharePrice": 268.83666865030926
+    },
+    {
+      "navPerShare": null,
+      "investmentNav": null,
+      "sharesOutstanding": 396500000,
+      "dividendsPerShare": null,
+      "fairValueGains": null,
+      "totalIncome": 59783000000,
+      "commonNetIncome": 10310000000,
+      "preferredEquity": null,
+      "commonDividendsPaid": 1505000000,
+      "deposits": null,
+      "creditLossProvision": null,
+      "nonInterestExpense": null,
+      "netRevenue": null,
+      "efficiencyRatio": null,
+      "combinedRatio": null,
+      "insuranceFloat": null,
+      "insuranceReserves": null,
+      "adverseReserveDevelopment": null,
+      "leaseLiabilities": null,
+      "leaseDepreciationIncluded": false,
+      "statementCoverage": {
+        "income": true,
+        "balance": true,
+        "cashFlow": true
+      },
+      "costOfSales": 42178000000,
+      "operatingExpenses": 4561000000,
+      "dilutedEps": null,
+      "basicEps": null,
+      "shortTermDebt": 1499000000,
+      "debtIncludesLeases": true,
+      "retainedEarnings": 69950000000,
+      "fy": 2025,
+      "end": "2025-12-31",
+      "currency": "USD",
+      "minorityInterest": 6022000000,
+      "revenue": 59402000000,
+      "grossProfit": 17605000000,
+      "operatingIncome": 13044000000,
+      "preTaxIncome": 13044000000,
+      "taxExpense": 2422000000,
+      "netIncome": 10310000000,
+      "interestExpense": 764000000,
+      "da": 301000000,
+      "sbc": 0,
+      "nonRecurring": 0,
+      "ocf": 14537000000,
+      "capex": 0,
+      "dividendsPaid": 1505000000,
+      "buybacks": 3694000000,
+      "issuance": 0,
+      "acquisitions": 492000000,
+      "acquisitionsProxy": true,
+      "receivables": 37873000000,
+      "loans": null,
+      "inventory": 0,
+      "payables": 8349000000,
+      "cash": 7112000000,
+      "totalDebt": 17649000000,
+      "clientAssets": null,
+      "equity": 73757000000,
+      "goodwill": 20207000000,
+      "intangibles": 6241000000,
+      "ppe": 4525000000,
+      "totalAssets": 272327000000,
+      "totalLiabilities": 192548000000,
+      "liabilitiesAndStockholdersEquity": 272327000000,
+      "currentAssets": 87030000000,
+      "currentLiabilities": 140286000000,
+      "dilutedShares": 401513338,
+      "marketCap": 125320341096.04565,
+      "provenance": {
+        "dilutedShares": {
+          "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm#000089615926000005",
+          "field": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Weighted average diluted shares"
+          ]
+        },
+        "nonRecurring": {
+          "source": "statements",
+          "field": "nonRecurring",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete income statement"
+          ]
+        },
+        "sbc": {
+          "source": "statements",
+          "field": "sbc",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "issuance": {
+          "source": "statements",
+          "field": "issuance",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete cash-flow statement"
+          ]
+        },
+        "inventory": {
+          "source": "statements",
+          "field": "inventory",
+          "method": "absent-in-complete-statement",
+          "inputs": [
+            "complete balance sheet"
+          ]
+        },
+        "retainedEarningsChange": {
+          "source": "statements",
+          "field": "retainedEarningsChange",
+          "method": "derived",
+          "inputs": [
+            "retainedEarnings",
+            "previous.retainedEarnings"
+          ]
+        },
+        "revenue": {
+          "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm#000089615926000005",
+          "field": "us-gaap:Revenues",
+          "method": "reported",
+          "inputs": [
+            "Annual period 2025-01-01 to 2025-12-31",
+            "Currency USD"
+          ]
+        },
+        "cash": {
+          "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm",
+          "field": "cash",
+          "method": "derived",
+          "inputs": [
+            "Total revenues 59,402m; cash 2,470m less restricted cash 198m plus short-term investments 4,840m; excludes fixed maturities and other long-term investments.",
+            "Total revenues 59,402m; cash 2,470m less restricted cash 198m plus short-term investments 4,840m; excludes fixed maturities and other long-term investments."
+          ]
+        },
+        "cashAndCashEquivalents": {
+          "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm",
+          "field": "cashAndCashEquivalents",
+          "method": "derived",
+          "inputs": [
+            "Total revenues 59,402m; cash 2,470m less restricted cash 198m plus short-term investments 4,840m; excludes fixed maturities and other long-term investments.",
+            "Total revenues 59,402m; cash 2,470m less restricted cash 198m plus short-term investments 4,840m; excludes fixed maturities and other long-term investments."
+          ]
+        },
+        "shortTermInvestments": {
+          "source": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm",
+          "field": "shortTermInvestments",
+          "method": "derived",
+          "inputs": [
+            "Total revenues 59,402m; cash 2,470m less restricted cash 198m plus short-term investments 4,840m; excludes fixed maturities and other long-term investments.",
+            "Total revenues 59,402m; cash 2,470m less restricted cash 198m plus short-term investments 4,840m; excludes fixed maturities and other long-term investments."
+          ]
+        },
+        "sharesOutstanding": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "sharesOutstanding",
+          "method": "reported"
+        },
+        "totalIncome": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "totalIncome",
+          "method": "reported"
+        },
+        "commonNetIncome": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "commonNetIncome",
+          "method": "reported"
+        },
+        "costOfSales": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "costOfSales",
+          "method": "reported"
+        },
+        "operatingExpenses": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "operatingExpenses",
+          "method": "reported"
+        },
+        "shortTermDebt": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "shortTermDebt",
+          "method": "reported"
+        },
+        "retainedEarnings": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "retainedEarnings",
+          "method": "reported"
+        },
+        "fy": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "fy",
+          "method": "reported"
+        },
+        "minorityInterest": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "minorityInterest",
+          "method": "reported"
+        },
+        "grossProfit": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "grossProfit",
+          "method": "reported"
+        },
+        "operatingIncome": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "operatingIncome",
+          "method": "reported"
+        },
+        "preTaxIncome": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "preTaxIncome",
+          "method": "reported"
+        },
+        "taxExpense": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "taxExpense",
+          "method": "reported"
+        },
+        "netIncome": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "netIncome",
+          "method": "reported"
+        },
+        "interestExpense": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "interestExpense",
+          "method": "reported"
+        },
+        "da": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "da",
+          "method": "reported"
+        },
+        "ocf": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "ocf",
+          "method": "reported"
+        },
+        "capex": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "capex",
+          "method": "reported"
+        },
+        "dividendsPaid": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "dividendsPaid",
+          "method": "reported"
+        },
+        "buybacks": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "buybacks",
+          "method": "reported"
+        },
+        "acquisitions": {
+          "source": "statements",
+          "field": "acquisitions",
+          "method": "derived",
+          "inputs": [
+            "goodwill",
+            "intangibles",
+            "previous.goodwill",
+            "previous.intangibles"
+          ]
+        },
+        "receivables": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "receivables",
+          "method": "reported"
+        },
+        "payables": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "payables",
+          "method": "reported"
+        },
+        "totalDebt": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "totalDebt",
+          "method": "reported"
+        },
+        "equity": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "equity",
+          "method": "reported"
+        },
+        "goodwill": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "goodwill",
+          "method": "reported"
+        },
+        "intangibles": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "intangibles",
+          "method": "reported"
+        },
+        "ppe": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "ppe",
+          "method": "reported"
+        },
+        "totalAssets": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "totalAssets",
+          "method": "reported"
+        },
+        "totalLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "totalLiabilities",
+          "method": "reported"
+        },
+        "liabilitiesAndStockholdersEquity": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "liabilitiesAndStockholdersEquity",
+          "method": "reported"
+        },
+        "currentAssets": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "currentAssets",
+          "method": "reported"
+        },
+        "currentLiabilities": {
+          "source": "raw/eodhd/CB.US.json#2025-12-31",
+          "field": "currentLiabilities",
+          "method": "reported"
+        },
+        "averageSharePrice": {
+          "source": "prices-history/CB.US",
+          "field": "mean monthly close converted to reporting currency",
+          "method": "estimate",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "monthly observations: 12",
+            "reporting-to-trading FX: 1"
+          ]
+        },
+        "marketCap": {
+          "source": "prices-history/CB.US",
+          "field": "fiscal-end close \u00d7 diluted shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "close: 312.1199951171875",
+            "dilutedShares: 401513338",
+            "FX: 1"
+          ]
+        }
+      },
+      "retainedEarningsChange": 8389000000,
+      "cashAndCashEquivalents": 2272000000,
+      "shortTermInvestments": 4840000000,
+      "averageSharePrice": 286.74583435058594
+    }
+  ],
+  "report": {
+    "id": "CB.US",
+    "kind": "10-K",
+    "url": "https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm",
+    "filed": "2026-02-27",
+    "period": "2025-12-31",
+    "sections": [
+      "business",
+      "risk",
+      "mdna",
+      "capital",
+      "notes",
+      "auditor"
+    ]
+  },
+  "priceHistory": [
+    [
+      "2016-10",
+      127
+    ],
+    [
+      "2016-11",
+      128
+    ],
+    [
+      "2016-12",
+      132.1199951171875
+    ],
+    [
+      "2017-01",
+      131.49000549316406
+    ],
+    [
+      "2017-02",
+      138.1699981689453
+    ],
+    [
+      "2017-03",
+      136.25
+    ],
+    [
+      "2017-04",
+      137.25
+    ],
+    [
+      "2017-05",
+      143.19000244140625
+    ],
+    [
+      "2017-06",
+      145.3800048828125
+    ],
+    [
+      "2017-07",
+      146.4600067138672
+    ],
+    [
+      "2017-08",
+      141.4199981689453
+    ],
+    [
+      "2017-09",
+      142.5500030517578
+    ],
+    [
+      "2017-10",
+      150.82000732421875
+    ],
+    [
+      "2017-11",
+      152.11000061035156
+    ],
+    [
+      "2017-12",
+      146.1300048828125
+    ],
+    [
+      "2018-01",
+      156.14999389648438
+    ],
+    [
+      "2018-02",
+      141.9199981689453
+    ],
+    [
+      "2018-03",
+      136.77000427246094
+    ],
+    [
+      "2018-04",
+      135.6699981689453
+    ],
+    [
+      "2018-05",
+      130.69000244140625
+    ],
+    [
+      "2018-06",
+      127.0199966430664
+    ],
+    [
+      "2018-07",
+      139.72000122070312
+    ],
+    [
+      "2018-08",
+      135.24000549316406
+    ],
+    [
+      "2018-09",
+      133.63999938964844
+    ],
+    [
+      "2018-10",
+      124.91000366210938
+    ],
+    [
+      "2018-11",
+      133.74000549316406
+    ],
+    [
+      "2018-12",
+      129.17999267578125
+    ],
+    [
+      "2019-01",
+      133.0500030517578
+    ],
+    [
+      "2019-02",
+      133.89999389648438
+    ],
+    [
+      "2019-03",
+      140.0800018310547
+    ],
+    [
+      "2019-04",
+      145.1999969482422
+    ],
+    [
+      "2019-05",
+      146.07000732421875
+    ],
+    [
+      "2019-06",
+      147.2899932861328
+    ],
+    [
+      "2019-07",
+      152.83999633789062
+    ],
+    [
+      "2019-08",
+      156.27999877929688
+    ],
+    [
+      "2019-09",
+      161.44000244140625
+    ],
+    [
+      "2019-10",
+      152.4199981689453
+    ],
+    [
+      "2019-11",
+      151.47999572753906
+    ],
+    [
+      "2019-12",
+      155.66000366210938
+    ],
+    [
+      "2020-01",
+      151.99000549316406
+    ],
+    [
+      "2020-02",
+      145.02999877929688
+    ],
+    [
+      "2020-03",
+      111.69000244140625
+    ],
+    [
+      "2020-04",
+      108.01000213623047
+    ],
+    [
+      "2020-05",
+      121.94000244140625
+    ],
+    [
+      "2020-06",
+      126.62000274658203
+    ],
+    [
+      "2020-07",
+      127.23999786376953
+    ],
+    [
+      "2020-08",
+      125
+    ],
+    [
+      "2020-09",
+      116.12000274658203
+    ],
+    [
+      "2020-10",
+      129.91000366210938
+    ],
+    [
+      "2020-11",
+      147.8300018310547
+    ],
+    [
+      "2020-12",
+      153.9199981689453
+    ],
+    [
+      "2021-01",
+      145.6699981689453
+    ],
+    [
+      "2021-02",
+      162.5800018310547
+    ],
+    [
+      "2021-03",
+      157.97000122070312
+    ],
+    [
+      "2021-04",
+      171.58999633789062
+    ],
+    [
+      "2021-05",
+      169.99000549316406
+    ],
+    [
+      "2021-06",
+      158.94000244140625
+    ],
+    [
+      "2021-07",
+      168.74000549316406
+    ],
+    [
+      "2021-08",
+      183.9199981689453
+    ],
+    [
+      "2021-09",
+      173.47999572753906
+    ],
+    [
+      "2021-10",
+      195.3800048828125
+    ],
+    [
+      "2021-11",
+      179.47000122070312
+    ],
+    [
+      "2021-12",
+      193.30999755859375
+    ],
+    [
+      "2022-01",
+      197.27999877929688
+    ],
+    [
+      "2022-02",
+      203.63999938964844
+    ],
+    [
+      "2022-03",
+      213.89999389648438
+    ],
+    [
+      "2022-04",
+      206.4499969482422
+    ],
+    [
+      "2022-05",
+      211.2899932861328
+    ],
+    [
+      "2022-06",
+      196.5800018310547
+    ],
+    [
+      "2022-07",
+      188.63999938964844
+    ],
+    [
+      "2022-08",
+      189.0500030517578
+    ],
+    [
+      "2022-09",
+      181.8800048828125
+    ],
+    [
+      "2022-10",
+      214.88999938964844
+    ],
+    [
+      "2022-11",
+      219.58999633789062
+    ],
+    [
+      "2022-12",
+      220.60000610351562
+    ],
+    [
+      "2023-01",
+      227.49000549316406
+    ],
+    [
+      "2023-02",
+      211.02000427246094
+    ],
+    [
+      "2023-03",
+      194.17999267578125
+    ],
+    [
+      "2023-04",
+      201.55999755859375
+    ],
+    [
+      "2023-05",
+      185.8000030517578
+    ],
+    [
+      "2023-06",
+      192.55999755859375
+    ],
+    [
+      "2023-07",
+      204.41000366210938
+    ],
+    [
+      "2023-08",
+      200.8699951171875
+    ],
+    [
+      "2023-09",
+      208.17999267578125
+    ],
+    [
+      "2023-10",
+      214.6199951171875
+    ],
+    [
+      "2023-11",
+      229.42999267578125
+    ],
+    [
+      "2023-12",
+      226
+    ],
+    [
+      "2024-01",
+      245
+    ],
+    [
+      "2024-02",
+      251.6699981689453
+    ],
+    [
+      "2024-03",
+      259.1300048828125
+    ],
+    [
+      "2024-04",
+      248.63999938964844
+    ],
+    [
+      "2024-05",
+      270.82000732421875
+    ],
+    [
+      "2024-06",
+      255.0800018310547
+    ],
+    [
+      "2024-07",
+      275.6600036621094
+    ],
+    [
+      "2024-08",
+      284.17999267578125
+    ],
+    [
+      "2024-09",
+      288.3900146484375
+    ],
+    [
+      "2024-10",
+      282.44000244140625
+    ],
+    [
+      "2024-11",
+      288.7300109863281
+    ],
+    [
+      "2024-12",
+      276.29998779296875
+    ],
+    [
+      "2025-01",
+      271.8800048828125
+    ],
+    [
+      "2025-02",
+      285.4800109863281
+    ],
+    [
+      "2025-03",
+      301.989990234375
+    ],
+    [
+      "2025-04",
+      286.0799865722656
+    ],
+    [
+      "2025-05",
+      297.20001220703125
+    ],
+    [
+      "2025-06",
+      289.7200012207031
+    ],
+    [
+      "2025-07",
+      266.0400085449219
+    ],
+    [
+      "2025-08",
+      275.07000732421875
+    ],
+    [
+      "2025-09",
+      282.25
+    ],
+    [
+      "2025-10",
+      276.94000244140625
+    ],
+    [
+      "2025-11",
+      296.17999267578125
+    ],
+    [
+      "2025-12",
+      312.1199951171875
+    ],
+    [
+      "2026-01",
+      309.55999755859375
+    ],
+    [
+      "2026-02",
+      340.8599853515625
+    ],
+    [
+      "2026-03",
+      325.92999267578125
+    ],
+    [
+      "2026-04",
+      327
+    ],
+    [
+      "2026-05",
+      311.7300109863281
+    ],
+    [
+      "2026-06",
+      340.739990234375
+    ],
+    [
+      "2026-07",
+      350.67999267578125
+    ],
+    [
+      "2026-08",
+      338.6000061035156
+    ],
+    [
+      "2026-09",
+      331.3699951171875
+    ]
+  ],
+  "integrity": {
+    "ok": true,
+    "reasons": [],
+    "notes": []
+  },
+  "managementBefore": {
+    "shareCagr": 0.020169051016474482,
+    "shareCagrExCrisis": 0.020169051016474482,
+    "crisisRecapitalizations": 0,
+    "retainedBookRatio": 1.3948737474465644,
+    "retainedBookGain": 95.09694480797913,
+    "retainedPerShare": 68.17602308600489
+  }
+}

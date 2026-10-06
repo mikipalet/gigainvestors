@@ -1,0 +1,209 @@
+
+ RUN  v3.2.7 /Users/miki/GitHub/superinvestors-wt/value-calib
+
+ ✓ tests/unit/value/annual-source-corrections.test.ts (23 tests) 27ms
+stderr | tests/unit/value/analyze.test.ts > caches bond yields per day, preserves concurrent countries, and converts FX minor units
+yields: US {"version":3,"date":"2026-10-06","yield":0.0425,"source":"EODHD latest","symbol":"US10Y.GBOND","observedAt":"2026-10-06","rawYield":0.0425,"median":null,"secondSource":null,"flags":["insufficient-median-history","second-source-unavailable"]}
+
+stderr | tests/unit/value/analyze.test.ts > caches bond yields per day, preserves concurrent countries, and converts FX minor units
+yields: GB {"version":3,"date":"2026-10-06","yield":0.0425,"source":"EODHD latest","symbol":"UK10Y.GBOND","observedAt":"2026-10-06","rawYield":0.0425,"median":null,"secondSource":null,"flags":["symbol-map:GB->UK","insufficient-median-history"]}
+
+stdout | tests/unit/value/analyze.test.ts > writes analysis and resumes, invalidating on text changes and force
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > writes analysis and resumes, invalidating on text changes and force
+analyze: 0 written, 1 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > writes analysis and resumes, invalidating on text changes and force
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > writes analysis and resumes, invalidating on text changes and force
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > persists the final split-adjusted statement basis for indexed-company memos
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > rebuilds an obsolete analysis even when a copied fingerprint matches current inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > rebuilds an obsolete analysis even when a copied fingerprint matches current inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > exports up to thirty distinct answers per question with source text
+jev-sample: 25 questions, up to 30 answers each
+
+stdout | tests/unit/value/analyze.test.ts > runs paragraph evidence only when no numeric quality test fails
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > runs paragraph evidence only when no numeric quality test fails
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > samples the exact analyzed text after source reports change
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > samples the exact analyzed text after source reports change
+jev-sample: 25 questions, up to 30 answers each
+
+stderr | tests/unit/value/analyze.test.ts > reads the newest live-recorded bond close as a fraction and refreshes tomorrow
+yields: US {"version":3,"date":"2026-10-06","yield":0.05239,"source":"EODHD latest","symbol":"US10Y.GBOND","observedAt":"2026-10-06","rawYield":0.05239,"median":null,"secondSource":null,"flags":["insufficient-median-history","second-source-unavailable"]}
+
+stderr | tests/unit/value/analyze.test.ts > reads the newest live-recorded bond close as a fraction and refreshes tomorrow
+yields: US {"version":3,"date":"2026-10-06","yield":0.05,"source":"EODHD latest","symbol":"US10Y.GBOND","observedAt":"2026-10-06","rawYield":0.05,"median":null,"secondSource":null,"flags":["insufficient-median-history","second-source-unavailable"]}
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 0 written, 1 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+EUR: USD conversion unavailable
+
+stdout | tests/unit/value/analyze.test.ts > ignores market cap and unused metadata changes but invalidates analysis inputs
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > maps ISO GB to UK10Y while leaving other bond country codes unchanged
+yields: GB {"version":3,"date":"2026-10-06","yield":0.0475,"source":"EODHD latest","symbol":"UK10Y.GBOND","observedAt":"2026-10-06","rawYield":0.0475,"median":null,"secondSource":null,"flags":["symbol-map:GB->UK","insufficient-median-history"]}
+
+stderr | tests/unit/value/analyze.test.ts > maps ISO GB to UK10Y while leaving other bond country codes unchanged
+yields: DE {"version":3,"date":"2026-10-06","yield":0.025,"source":"EODHD latest","symbol":"DE10Y.GBOND","observedAt":"2026-10-06","rawYield":0.025,"median":null,"secondSource":null,"flags":["insufficient-median-history"]}
+
+stderr | tests/unit/value/analyze.test.ts > leaves value unavailable for a empty local bond series without substituting a foreign yield
+yields: ZZ {"version":3,"date":"2026-10-06","yield":null,"source":"unavailable","symbol":"ZZ10Y.GBOND","observedAt":null,"rawYield":null,"median":null,"secondSource":null,"flags":["missing-or-stale-series","outside-plausible-band","insufficient-median-history","no-local-yield"]}
+
+stdout | tests/unit/value/analyze.test.ts > leaves value unavailable for a empty local bond series without substituting a foreign yield
+analyze: 1 written, 0 unchanged, 0 failed
+
+stderr | tests/unit/value/analyze.test.ts > leaves value unavailable for a not-found local bond series without substituting a foreign yield
+yields: ZZ {"version":3,"date":"2026-10-06","yield":null,"source":"unavailable","symbol":"ZZ10Y.GBOND","observedAt":null,"rawYield":null,"median":null,"secondSource":null,"flags":["eodhd-unavailable","missing-or-stale-series","outside-plausible-band","insufficient-median-history","no-local-yield"]}
+
+stdout | tests/unit/value/analyze.test.ts > leaves value unavailable for a not-found local bond series without substituting a foreign yield
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > logs each failed company's error and still writes successful companies
+analyze: 1 written, 0 unchanged, 1 failed
+
+stdout | tests/unit/value/analyze.test.ts > calibrates BHC.US through the BHC.TO primary analysis
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > calibrates BHC.US through the BHC.TO primary analysis
+Confusion counts: {"truePositive":0,"trueNegative":1,"falsePositive":0,"falseNegative":0,"unclear":0,"missing":0,"exception":0}
+
+stdout | tests/unit/value/analyze.test.ts > R3 derives the $1 test from fiscal-end monthly closes through the corpus stage
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > R3 derives the $1 test from fiscal-end monthly closes through the corpus stage
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > R3 derives the $1 test from fiscal-end monthly closes through the corpus stage
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > R3 uses the inverse valuation FX for historical market caps, including pence
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > M1 runs the $1 test through the stage with the real KO corpus and 120 monthly closes
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > C5 reclassifies cached Credit Services enrichment with lending assets
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > C4 analyze and jev-sample skip unsafe IDs and process ampersand IDs
+analyze: 4 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > C4 analyze and jev-sample skip unsafe IDs and process ampersand IDs
+jev-sample: 25 questions, up to 30 answers each
+
+stdout | tests/unit/value/analyze.test.ts > C5 clears the stale bank kind of a payment network in saved analysis
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > reanalyzes explicitly selected cached companies outside the universe without repopulating it
+analyze: 0 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > reanalyzes explicitly selected cached companies outside the universe without repopulating it
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > V3/V4 reads raw valuation inputs for old corpus files and invalidates their fingerprint
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > V3/V4 reads raw valuation inputs for old corpus files and invalidates their fingerprint
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > W3/W5 refreshes cached annual currency and balance mappings from raw periods during analysis
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > W3/W5 refreshes cached annual currency and balance mappings from raw periods during analysis
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > revalues on a 0.1pp yield bucket change, but skips noise in the same bucket
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > revalues on a 0.1pp yield bucket change, but skips noise in the same bucket
+analyze: 0 written, 1 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > revalues on a 0.1pp yield bucket change, but skips noise in the same bucket
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > loads statement payloads only for selected jobs, so later files cannot abort a limited run
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > preserves unchanged nonmember evidence inputs when only the analysis clock changes
+analyze: 1 written, 0 unchanged, 0 failed
+
+stdout | tests/unit/value/analyze.test.ts > preserves unchanged nonmember evidence inputs when only the analysis clock changes
+analyze: 1 written, 0 unchanged, 0 failed
+
+ ✓ tests/unit/value/analyze.test.ts (50 tests) 6057ms
+   ✓ ignores market cap and unused metadata changes but invalidates analysis inputs  1186ms
+   ✓ maps ISO GB to UK10Y while leaving other bond country codes unchanged  390ms
+   ✓ C4 analyze and jev-sample skip unsafe IDs and process ampersand IDs  301ms
+   ✓ W3/W5 refreshes cached annual currency and balance mappings from raw periods during analysis  308ms
+ ✓ tests/unit/value/financial-quality.test.ts (28 tests) 508ms
+   ✓ shows the financial worst-year bar used by the decision, without imposing it on insurers  427ms
+ ✓ tests/unit/value/calibration-round-2.test.ts (16 tests) 31ms
+ ✓ tests/unit/value/calibration-round-1.test.ts (40 tests) 70ms
+ ✓ tests/unit/value/nightly-management.test.ts (4 tests) 62ms
+ ✓ tests/unit/value/site-round1.test.ts (4 tests) 51ms
+ ✓ tests/unit/value/calibration-round-4.test.ts (27 tests) 38ms
+ ✓ tests/unit/value/calibration-round-3.test.ts (11 tests) 44ms
+ ✓ tests/unit/value/rule-reading.test.ts (9 tests | 1 skipped) 36ms
+ ✓ tests/unit/value/buffett-calibration.test.ts (10 tests) 25ms
+ ✓ tests/unit/value/fiscal-price-month.test.ts (7 tests) 4ms
+
+ Test Files  12 passed (12)
+      Tests  228 passed | 1 skipped (229)
+   Start at  09:09:19
+   Duration  14.02s (transform 2.06s, setup 0ms, collect 4.22s, tests 6.95s, environment 3ms, prepare 928ms)
+

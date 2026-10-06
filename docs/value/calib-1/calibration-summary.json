@@ -1,0 +1,374 @@
+{
+  "rows": [
+    {
+      "id": "KO.US",
+      "expect": "quality",
+      "understandable": "pass",
+      "moat": "pass",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct"
+    },
+    {
+      "id": "AAPL.US",
+      "expect": "quality",
+      "understandable": "pass",
+      "moat": "pass",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct"
+    },
+    {
+      "id": "AXP.US",
+      "expect": "quality",
+      "understandable": "pass",
+      "moat": "pass",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct"
+    },
+    {
+      "id": "MCO.US",
+      "expect": "quality",
+      "understandable": "pass",
+      "moat": "pass",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct"
+    },
+    {
+      "id": "VRSN.US",
+      "expect": "quality",
+      "understandable": "pass",
+      "moat": "pass",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct"
+    },
+    {
+      "id": "V.US",
+      "expect": "quality",
+      "understandable": "pass",
+      "moat": "pass",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct"
+    },
+    {
+      "id": "MA.US",
+      "expect": "quality",
+      "understandable": "pass",
+      "moat": "pass",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct"
+    },
+    {
+      "id": "CB.US",
+      "expect": "quality",
+      "understandable": "pass",
+      "moat": "pass",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct"
+    },
+    {
+      "id": "DPZ.US",
+      "expect": "quality",
+      "understandable": "pass",
+      "moat": "pass",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct"
+    },
+    {
+      "id": "POOL.US",
+      "expect": "quality",
+      "understandable": "pass",
+      "moat": "pass",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct"
+    },
+    {
+      "id": "CHTR.US",
+      "expect": "exception",
+      "understandable": "pass",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "exception"
+    },
+    {
+      "id": "8058.JP",
+      "expect": "exception",
+      "understandable": "pass",
+      "moat": "fail",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "exception"
+    },
+    {
+      "id": "8031.JP",
+      "expect": "exception",
+      "understandable": "pass",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "exception"
+    },
+    {
+      "id": "8001.JP",
+      "expect": "exception",
+      "understandable": "pass",
+      "moat": "fail",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "exception"
+    },
+    {
+      "id": "8002.JP",
+      "expect": "exception",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "exception"
+    },
+    {
+      "id": "8053.JP",
+      "expect": "exception",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "pass",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "exception"
+    },
+    {
+      "id": "DAL.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics"
+    },
+    {
+      "id": "UAL.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics"
+    },
+    {
+      "id": "AAL.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics, management"
+    },
+    {
+      "id": "LUV.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics, management"
+    },
+    {
+      "id": "JBLU.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics, management"
+    },
+    {
+      "id": "GT.US",
+      "expect": "not_quality",
+      "understandable": "unclear",
+      "moat": "unclear",
+      "economics": "unclear",
+      "management": "unclear",
+      "accounting": "unclear",
+      "verdict": "missing or insufficient data"
+    },
+    {
+      "id": "NCLH.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics, management"
+    },
+    {
+      "id": "FCX.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics"
+    },
+    {
+      "id": "VALE.US",
+      "expect": "not_quality",
+      "understandable": "pass",
+      "moat": "fail",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct: moat"
+    },
+    {
+      "id": "CLF.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics, management"
+    },
+    {
+      "id": "AA.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "pass",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, management"
+    },
+    {
+      "id": "BHC.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat"
+    },
+    {
+      "id": "PLUG.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics, management"
+    },
+    {
+      "id": "AMC.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics, management"
+    },
+    {
+      "id": "LCID.US",
+      "expect": "not_quality",
+      "understandable": "unclear",
+      "moat": "unclear",
+      "economics": "unclear",
+      "management": "unclear",
+      "accounting": "unclear",
+      "verdict": "missing or insufficient data"
+    },
+    {
+      "id": "RIVN.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics, management"
+    },
+    {
+      "id": "CCL.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics, management"
+    },
+    {
+      "id": "M.US",
+      "expect": "not_quality",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "fail",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "correct: understandable, moat, economics, management"
+    },
+    {
+      "id": "OXY.US",
+      "expect": "exception",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "pass",
+      "management": "fail",
+      "accounting": "pass",
+      "verdict": "exception"
+    },
+    {
+      "id": "CVX.US",
+      "expect": "exception",
+      "understandable": "fail",
+      "moat": "fail",
+      "economics": "pass",
+      "management": "pass",
+      "accounting": "pass",
+      "verdict": "exception"
+    }
+  ],
+  "counts": {
+    "truePositive": 10,
+    "trueNegative": 16,
+    "falsePositive": 0,
+    "falseNegative": 0,
+    "unclear": 0,
+    "missing": 2,
+    "exception": 8
+  },
+  "failed": false
+}

@@ -1,4 +1,5 @@
 import {alignHistoryShares} from './history-split-basis';
+import {fiscalPriceMonth} from './fiscal-price-month';
 import {qualityLtmAt,qualityLtmHistoryAt} from './quality-ltm';
 import {reconcilePriceSplits} from './price-history';
 import {netCashSeries} from './net-cash';
@@ -20,7 +21,7 @@ import { runNumericTests } from "./tests";
 import { valueCompany, valuationMargin } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory, Year } from "./types";
 
-export const PIPELINE_VERSION = "27";
+export const PIPELINE_VERSION = "28";
 export type Sections = Partial<Record<SectionKey | "description", string>>;
 export type Ask = (input: { id: string; sections: Sections }) => Promise<JevAnswer[]>;
 
@@ -40,14 +41,20 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     ? await tradingRate({ reporting: fundamentals.currency, trading: company.currency, usdRate }) : null;
   const monthly = new Map(priceHistory?.map(([month, close]) => [month.slice(0, 7), close]));
   let years = deriveYears(fundamentals.years.map(year => {
-    const close = monthly.get(year.end.slice(0, 7));
+    const priceMonth = fiscalPriceMonth(year.end);
+    const close = monthly.get(priceMonth);
+    // Vendor balance templates can repeat the EPS denominator in this field.
+    // Prefer outstanding shares only when an exact fiscal-instant source exists.
+    const capitalizationShares = year.sharesOutstanding != null && year.sharesOutstanding > 0
+      && year.provenance?.sharesOutstanding?.inputs?.includes('Fiscal-end common shares outstanding')
+      ? year.sharesOutstanding : year.dilutedShares;
     const marketCap = rate !== null && rate > 0 && close !== undefined && Number.isFinite(close) && close > 0
-      && year.dilutedShares !== null && year.dilutedShares > 0 ? close * year.dilutedShares / rate : null;
-    const prices=(priceHistory??[]).filter(([month])=>month > `${Number(year.end.slice(0,4))-1}${year.end.slice(4,7)}` && month <= year.end.slice(0,7)).map(([,close])=>close);
+      && capitalizationShares !== null && capitalizationShares > 0 ? close * capitalizationShares / rate : null;
+    const prices=(priceHistory??[]).filter(([month])=>month > `${Number(priceMonth.slice(0,4))-1}${priceMonth.slice(4)}` && month <= priceMonth).map(([,close])=>close);
     const averageSharePrice=rate!==null&&rate>0&&prices.length>=6 ? prices.reduce((s,n)=>s+n,0)/prices.length/rate : null;
     return {...year,marketCap,averageSharePrice,provenance:{...year.provenance,
       ...(averageSharePrice!==null?{averageSharePrice:{source:`prices-history/${company.id}`,field:'mean monthly close converted to reporting currency',method:'estimate' as const,inputs:[`fiscal end: ${year.end}`,`monthly observations: ${prices.length}`,`reporting-to-trading FX: ${rate}`]}}:{}),
-      ...(marketCap!==null?{marketCap:{source:`prices-history/${company.id}`,field:'fiscal-end close × diluted shares / reporting-to-trading FX',method:'derived' as const,inputs:[`close: ${close}`,`dilutedShares: ${year.dilutedShares}`,`FX: ${rate}`]}}:{}),
+      ...(marketCap!==null?{marketCap:{source:`prices-history/${company.id}`,field:'fiscal-end close × capitalization shares / reporting-to-trading FX',method:'derived' as const,inputs:[`fiscal end: ${year.end}`,`price month: ${priceMonth}`,`close: ${close}`,`capitalization shares: ${capitalizationShares}`,capitalizationShares===year.sharesOutstanding&&year.provenance?.sharesOutstanding?.inputs?.includes('Fiscal-end common shares outstanding')?'Reported fiscal-end shares':'Weighted diluted share proxy',`FX: ${rate}`]}}:{}),
     }};
   }));
   company = { ...company, investmentHolding: isInvestmentHolding(company, years) };
@@ -55,7 +62,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   const cutoff=new Date().toISOString().slice(0,10);
   const qualityLtm=qualityLtmAt(fundamentals.qualityQuarters??[],years,cutoff,fundamentals.splits);
   const qualityLtmHistory=qualityLtmHistoryAt(fundamentals.qualityQuarters??[],years,cutoff,fundamentals.splits,qualityLtm);
-  for(const ltm of qualityLtmHistory)if(rate&&ltm.dilutedShares&&monthly.get(ltm.end.slice(0,7)))ltm.marketCap=monthly.get(ltm.end.slice(0,7))!*ltm.dilutedShares/rate;
+  for(const ltm of qualityLtmHistory)if(rate&&ltm.dilutedShares&&monthly.get(fiscalPriceMonth(ltm.end)))ltm.marketCap=monthly.get(fiscalPriceMonth(ltm.end))!*ltm.dilutedShares/rate;
   const rawNumeric = runNumericTests({ years, qualityLtm, qualityLtmHistory, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
   const adjusted = applyAdjustments(years, fundamentals.integrity.ok && company.kind==='operating' ? judgement : null, judgementTrust, fundamentals.currency);
   years = adjusted.years;

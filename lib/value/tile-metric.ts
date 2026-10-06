@@ -13,7 +13,8 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
  if ('retainedBookRatio' in m) {
   const shares=m.crisisRecapitalizations?[]:(test.series.shares??[]),base=shares.find(([,value])=>value!==null&&value>0)?.[1];
   const indexed:Series=shares.map(([year,value])=>[year,base&&value!==null?value/base*100:null]);
-  return {...metric('shareCagrExCrisis','ordinary share growth','pct',.02,'lower',indexed,'Shares (first year = 100)'),series:indexed,chartFormat:'index',chartThreshold:null};
+  const recent=m.shareCagr5ExCrisis!=null&&m.shareCagr5ExCrisis<=.02+Number.EPSILON&&(m.shareCagrExCrisis==null||m.shareCagrExCrisis>.02+Number.EPSILON);
+  return {...metric(recent?'shareCagr5ExCrisis':'shareCagrExCrisis',recent?'five-year ordinary share growth':'ordinary share growth','pct',.02,'lower',indexed,'Shares (first year = 100)'),series:indexed,chartFormat:'index',chartThreshold:null};
  }
  if ('financialRedFlags' in m) return metric('financialRedFlags','accounting warnings','count',0,'lower');
  if ('combinedReportedYears' in m) {

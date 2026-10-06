@@ -22,6 +22,7 @@ export const metricLabels: Record<string, { label: string; format: MetricFormat;
   bookStartPerShare: { label: 'Starting book value per share', format: 'money' },
   bookEndPerShare: { label: 'Ending book value per share', format: 'money' },
   shareCagrExCrisis: { label: 'Share growth excluding flagged crisis recapitalisations', format: 'pct',threshold:.02,better:'lower' },
+  shareCagr5ExCrisis: { label: 'Five-year share growth excluding flagged crisis recapitalisations', format: 'pct',threshold:.02,better:'lower' },
   crisisRecapitalizations: { label: 'Flagged crisis recapitalisations', format: 'count' },
   retainedBookRatio: { label: 'Book created / earnings retained after dividends and buybacks', format: 'x' },
   retainedBookGain: { label: 'Book value created per share', format: 'money' },

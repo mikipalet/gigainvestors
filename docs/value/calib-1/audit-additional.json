@@ -1,0 +1,593 @@
+{
+  "statusChanges": [
+    {
+      "id": "JBS.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": true,
+      "reasons": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "ALHC.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "BRO.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "DASH.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "AGRO.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "4 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ]
+    },
+    {
+      "id": "TLC.AU",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "2 revenue declines in the last 10 years (informational)"
+      ]
+    },
+    {
+      "id": "GPGI.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "278470.KO",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "DBV.PA",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": true,
+      "reasons": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "not enough data for average operating margin"
+      ]
+    },
+    {
+      "id": "VIVT3.SA",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "IREN.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "JOYY.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "5 revenue declines in the last 10 years (informational)",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "SHRIRAMFIN.NSE",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": true,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "HTHT.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "1 revenue decline in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "MCD.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "DQ.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "CSNA3.SA",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "VSXY.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "NANO.PA",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "GAPB.MX",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "IQ.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "CYD.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "ZLAB.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "DLR.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "HST.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "GRMN.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "MRK.XETRA",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "WRB.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "COP.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "EG.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "BRSL.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "7 revenue declines in the last 10 years",
+        "more than 5 revenue declines in ten years",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "CRIS.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "6 revenue declines in the last 10 years",
+        "more than 5 revenue declines in ten years",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "SGI.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "LKFT.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "5 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "negative average operating margin",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "KOFUBL.MX",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "TPG.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "RKLB.US",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "GCMG.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ]
+    },
+    {
+      "id": "DFH.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "2 revenue declines in the last 10 years (informational)"
+      ]
+    },
+    {
+      "id": "SBSP3.SA",
+      "live": "scored",
+      "today": "insufficient_data",
+      "frozen": false,
+      "reasons": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    {
+      "id": "BRBR.US",
+      "live": "insufficient_data",
+      "today": "scored",
+      "frozen": false,
+      "reasons": [
+        "0 revenue declines in the last 10 years (informational)"
+      ]
+    }
+  ],
+  "valuationToNull": [
+    {
+      "id": "BRO.US",
+      "frozen": false,
+      "reason": "fewer than 7 annual periods",
+      "liveMid": 49.70218500790503
+    },
+    {
+      "id": "VIVT3.SA",
+      "frozen": false,
+      "reason": "fewer than 7 annual periods",
+      "liveMid": 15.09302418840767
+    },
+    {
+      "id": "MCD.US",
+      "frozen": false,
+      "reason": "fewer than 7 annual periods",
+      "liveMid": 200.07910775546415
+    },
+    {
+      "id": "HST.US",
+      "frozen": false,
+      "reason": "fewer than 7 annual periods",
+      "liveMid": 14.67808288744929
+    },
+    {
+      "id": "GRMN.US",
+      "frozen": false,
+      "reason": "fewer than 7 annual periods",
+      "liveMid": 143.95218763904225
+    },
+    {
+      "id": "MRK.XETRA",
+      "frozen": false,
+      "reason": "fewer than 7 annual periods",
+      "liveMid": 85.12157651470716
+    },
+    {
+      "id": "WRB.US",
+      "frozen": false,
+      "reason": "fewer than 7 annual periods",
+      "liveMid": 51.88159741822912
+    },
+    {
+      "id": "COP.US",
+      "frozen": false,
+      "reason": "fewer than 7 annual periods",
+      "liveMid": 62.898963046980874
+    },
+    {
+      "id": "EG.US",
+      "frozen": false,
+      "reason": "fewer than 7 annual periods",
+      "liveMid": 476.03934639146195
+    }
+  ],
+  "effectiveFrozenCount": 154,
+  "unfrozenNullCompanies": [
+    "AVBH.US",
+    "BE.US",
+    "BRO.US",
+    "CIB.US",
+    "CL.US",
+    "COP.US",
+    "CSNA3.SA",
+    "DASH.US",
+    "DELL.US",
+    "DLR.US",
+    "DVA.US",
+    "EC.US",
+    "EG.US",
+    "FLG.US",
+    "GAPB.MX",
+    "GE.US",
+    "GRMN.US",
+    "HCA.US",
+    "HST.US",
+    "IQ.US",
+    "KDP.US",
+    "KMB.US",
+    "KOFUBL.MX",
+    "LDOS.US",
+    "LYV.US",
+    "MAS.US",
+    "MCD.US",
+    "MCK.US",
+    "MRK.XETRA",
+    "NANO.PA",
+    "PCAR.US",
+    "RKLB.US",
+    "SBSP3.SA",
+    "TPG.US",
+    "TRMB.US",
+    "TSLA.US",
+    "VIVT3.SA",
+    "WRB.US"
+  ],
+  "nullsByCompany": {
+    "VIVT3.SA": 34,
+    "CSNA3.SA": 33,
+    "SBSP3.SA": 31,
+    "MRK.XETRA": 31,
+    "GAPB.MX": 26,
+    "NANO.PA": 26,
+    "GRMN.US": 25,
+    "CEG.US": 24,
+    "EC.US": 23,
+    "DLR.US": 22,
+    "KOFUBL.MX": 22,
+    "HST.US": 22,
+    "MCD.US": 20,
+    "GE.US": 20,
+    "HMSO.LSE": 20,
+    "BRO.US": 18,
+    "IQ.US": 18,
+    "COP.US": 17,
+    "HFG.LSE": 16,
+    "FLG.US": 16,
+    "PFD.LSE": 13,
+    "SHRIRAMFIN.NSE": 12,
+    "TSLA.US": 12,
+    "KDP.US": 12,
+    "PCAR.US": 12,
+    "WRB.US": 10,
+    "DASH.US": 9,
+    "MAS.US": 8,
+    "POS.VI": 8,
+    "EG.US": 7,
+    "ATS.VI": 6,
+    "LDOS.US": 6,
+    "RKLB.US": 6,
+    "CPI.VI": 5,
+    "ANDR.VI": 5,
+    "CAI.VI": 5,
+    "VOE.VI": 5,
+    "IPX.AU": 4,
+    "LNZ.VI": 4,
+    "WIE.VI": 4,
+    "SSPG.LSE": 4,
+    "HTWS.LSE": 4,
+    "STR.VI": 4,
+    "OMV.VI": 4,
+    "VER.VI": 4,
+    "LYV.US": 4,
+    "TRMB.US": 4,
+    "SATS.OL": 4,
+    "POST.VI": 4,
+    "SBO.VI": 4,
+    "DVA.US": 3,
+    "SREN.SW": 3,
+    "CL.US": 3,
+    "1299.HK": 3,
+    "HCA.US": 3,
+    "GVR.IR": 3,
+    "EVN.VI": 3,
+    "KRZ.IR": 2,
+    "000858.SHE": 2,
+    "EGL.LS": 2,
+    "INVP.LSE": 2,
+    "4568.JP": 2,
+    "EDPR.LS": 2,
+    "GIL.TO": 2,
+    "KMB.US": 2,
+    "AVBH.US": 2,
+    "GALP.LS": 2,
+    "EDP.LS": 2,
+    "688036.SHG": 2,
+    "SON.LS": 2,
+    "601088.SHG": 2,
+    "600183.SHG": 2,
+    "IR5B.IR": 2,
+    "9101.JP": 1,
+    "PYIYF.US": 1,
+    "GJF.OL": 1,
+    "TPG.US": 1,
+    "BE.US": 1,
+    "JMT.LS": 1,
+    "CIB.US": 1,
+    "DVP.AU": 1,
+    "IBKR.US": 1,
+    "LHX.US": 1,
+    "MCK.US": 1,
+    "DELL.US": 1,
+    "SHC.LSE": 1
+  }
+}

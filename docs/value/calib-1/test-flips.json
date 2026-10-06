@@ -1,0 +1,9361 @@
+[
+  {
+    "id": "MRP.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "9009.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "DTE.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "JIOFIN.NSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "REPX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "7269.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ALKT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "UAA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "JOBY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "6971.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "DLR.US",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "fail",
+        "unclear"
+      ],
+      "management": [
+        "fail",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "pass",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "fail",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VTRS.US",
+    "tests": {
+      "economics": [
+        "pass",
+        "fail"
+      ],
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "CRCL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "HLT.US",
+    "tests": {
+      "moat": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "VISN.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "KGS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "NUVB.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "XMTR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "CTRI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "OM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "FPS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "8729.JP",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "EG.US",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "pass",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "JOYY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "9101.JP",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "PTC.US",
+    "tests": {
+      "moat": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "TPRO.MI",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "KRMN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DVA.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "NATL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "UOB.F",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "SNAP.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "601059.SHG",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AMBQ.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "FIG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AXP.US",
+    "tests": {
+      "moat": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "GPN.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "IREN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ALGM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "LOAR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SPRY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SRTA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VSTS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "267270.KO",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "COP.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "pass",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "NG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PYIYF.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PCVX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SWBI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MGM.US",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "PDLB.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "SSPG.LSE",
+    "tests": {
+      "economics": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "TFC.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "BKV.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "HIMS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "300122.SHE",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "TROW.US",
+    "tests": {
+      "moat": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "BLTE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "IFS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TLN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VSURE.ST",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "278470.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "pass"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "KDP.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "PTEN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "WT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TLC.AU",
+    "tests": {
+      "understandable": [
+        "na",
+        "pass"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "HDN.AU",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "KMAR.OL",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SUNB.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "XNDU.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PHVS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AMVIF.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VPG.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "VIVT3.SA",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "pass",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BAM.TO",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "SBSI.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "BRBR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "pass"
+      ],
+      "moat": [
+        "na",
+        "pass"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "VELO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TPG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "WFC.US",
+    "tests": {
+      "moat": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "3457.JP",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "CDNL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "LTMC.MI",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MCD.US",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "pass",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "pass",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RELY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DFH.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "pass"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "FVR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MICC.AS",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RRBI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DLTR.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "MITK.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "AMCR.US",
+    "tests": {
+      "economics": [
+        "pass",
+        "fail"
+      ],
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "FIGR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PATH.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "VRM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "APN.LSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "FBLA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "9202.JP",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "SOLS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TTAN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "STE.US",
+    "tests": {
+      "moat": [
+        "pass",
+        "fail"
+      ],
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "ARM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "7012.JP",
+    "tests": {
+      "understandable": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "GPGI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "pass"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "601788.SHG",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "FLOC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "3659.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "R3NK.XETRA",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "OMV.VI",
+    "tests": {
+      "economics": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "CVRX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VTS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "D.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "RBRK.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "600426.SHG",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "TPHS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "INVP.LSE",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "AIIR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BRO.US",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "fail",
+        "unclear"
+      ],
+      "management": [
+        "fail",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RUSHA.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "TDW.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "HTHT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "5714.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "MI6.AU",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "MANTA.HE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "KVYO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "5713.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "NDSN.US",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "543A.JP",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "THG.LSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "HBAN.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "EVLV.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "LXU.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "WDAY.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "BMI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "WDC.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "AEBI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SLDE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SBSP3.SA",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "fail",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "INFQ.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RDDT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ECG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "7936.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "LSCC.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "7951.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "2269.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "8253.JP",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ],
+      "management": [
+        "fail",
+        "pass"
+      ],
+      "accounting": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ALRS.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "PLOW.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ODD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PHIN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "WFRD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "KIM.US",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ONGC.NSE",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "450080.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "WEX.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "WRB.US",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "pass",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "pass",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VSTM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RHLD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "LKFT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "MDLN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TIC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SHAZ.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PIPR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "TWFG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SGI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "pass"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "0267.HK",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "IQ.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "fail",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SPCX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SWKS.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ACVA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BLSH.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "CIR.MI",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TEM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "002236.SHE",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "MTB.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "UCTT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MEGACPO.MX",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "0126Z0.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "GLIBA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MINE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ATO.PA",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ARTV.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "2413.JP",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "4751.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "KOFUBL.MX",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "pass",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MANE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "064400.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BLLN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MLI.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "4507.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "AIRJ.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "GRMN.US",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "pass",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "pass",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "8697.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "MRK.XETRA",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "fail",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "IVVD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SION.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "9735.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "SDGR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ETERNAL.NSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MXL.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "Q.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "GCMG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "MS.US",
+    "tests": {
+      "moat": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "CRWV.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VAC.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "EQPT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AERO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TNC.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "DNTH.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VTMX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SMTC.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "3092.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "601229.SHG",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "IWG.LSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "FLYX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RPI.LSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DASH.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "fail",
+        "unclear"
+      ],
+      "management": [
+        "pass",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "APLD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "GAPB.MX",
+    "tests": {
+      "understandable": [
+        "pass",
+        "unclear"
+      ],
+      "moat": [
+        "pass",
+        "unclear"
+      ],
+      "economics": [
+        "fail",
+        "unclear"
+      ],
+      "management": [
+        "pass",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "HON.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "COYA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "HST.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "fail",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "GPOR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "GUTS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TBBB.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TMPV.NSE",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "EU.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "483650.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "EFXT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "KNF.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RGLD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ZKH.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "NWL.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "PURR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SIMO.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "HNGE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "LAMR.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "NESTLEIND.NSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "CRIS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "BX.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "IOS.DU",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SANB3.SA",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "CIFR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "LEN-B.US",
+    "tests": {
+      "moat": [
+        "pass",
+        "fail"
+      ],
+      "economics": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "QRVO.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "FRMI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "HCI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "373220.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RGEN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "375500.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "6988.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "BLND.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "FRPT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "NTSK.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MNTN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BFLY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SARO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MAGN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "WYNN.US",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "AVBP.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ATG.LSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "7267.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "022100.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "WULF.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AMTM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BULL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "INOD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ALHC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "NAVI.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "TLX.AU",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BRKR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "NFE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "OPFI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TBN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "KALU.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ],
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "MNST.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "TALO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "139130.KO",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "SCHW.US",
+    "tests": {
+      "moat": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "RF.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "UHS.US",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ETOR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RXO.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "CYD.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "WTW.US",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "DMRA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "EIKN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RMNI.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "CBG.LSE",
+    "tests": {
+      "understandable": [
+        "pass",
+        "fail"
+      ],
+      "moat": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "CPNG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "HUBG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "WYFI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PFD.LSE",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "KEX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ARX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PAM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PINFRA.MX",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "CBL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "NU.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VCTR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "CSNA3.SA",
+    "tests": {
+      "understandable": [
+        "fail",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "pass",
+        "unclear"
+      ],
+      "management": [
+        "fail",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "360.AU",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "457190.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ALH.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "443060.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VSNT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DBV.PA",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ASLE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "LLYVA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "STN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AMRZ.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "NOAH.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "QXO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AIG.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ASTS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "NAMS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ZAB.WAR",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "300124.SHE",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "RKLB.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "fail",
+        "unclear"
+      ],
+      "management": [
+        "fail",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "8015.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "5019.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "9532.JP",
+    "tests": {
+      "understandable": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "HUT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "KGEI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "6963.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "PRGO.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "SAIL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PAYP.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AGRO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "TRIP.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "688271.SHG",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "HGTY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "6526.JP",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "W.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "EXENS.PA",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BAP.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DUK.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "SPHR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "FIBK.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "WSM.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "NTGR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "WEST.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "601998.SHG",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "2269.HK",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "BMM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "383220.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "454910.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "FICO.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "NANO.PA",
+    "tests": {
+      "understandable": [
+        "fail",
+        "unclear"
+      ],
+      "moat": [
+        "fail",
+        "unclear"
+      ],
+      "economics": [
+        "fail",
+        "unclear"
+      ],
+      "management": [
+        "fail",
+        "unclear"
+      ],
+      "accounting": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "600875.SHG",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "600732.SHG",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PRN.LSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SEG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ASIC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DVP.AU",
+    "tests": {
+      "accounting": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "SMRT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "JBS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "HDB.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "COLB.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "LINC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DHI.US",
+    "tests": {
+      "moat": [
+        "fail",
+        "pass"
+      ],
+      "economics": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "RAL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PLGO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SIGMAFA.MX",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "IBKR.US",
+    "tests": {
+      "moat": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "TTMI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RNG.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "WLTH.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "601988.SHG",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "LHX.US",
+    "tests": {
+      "moat": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ECTXF.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "USB.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "FMX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AMPX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "CART.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "AESI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ARDT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "600000.SHG",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "NOVT.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "WHR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "FTRE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TME.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "INTR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "086280.KO",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "138040.KO",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "MIR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ITC.NSE",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "1093.HK",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "MU.US",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "062040.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "GALD.SW",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "GNE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "FLUT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ULS.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "CFG-PH.US",
+    "tests": {
+      "moat": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "601066.SHG",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "PSNY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SYF.US",
+    "tests": {
+      "understandable": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ORKA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PXED.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SNX.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "GNZ.NZ",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "KARO.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "CVC.AS",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BRAV3.SA",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "LGN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "LESL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "CON.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "OSCR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "EC.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "EWTX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "CB.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "SDHC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "OCTV-SDB.ST",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DOC.US",
+    "tests": {
+      "economics": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "GEV.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "CAI.VI",
+    "tests": {
+      "understandable": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "TSCO.US",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ],
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "DE.US",
+    "tests": {
+      "economics": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "PONY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ZH.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "TPL.US",
+    "tests": {
+      "economics": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "LASR.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "CEG.US",
+    "tests": {
+      "management": [
+        "pass",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ASPI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "FOA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SUNN.SW",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "JLL.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "MNO.LSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SN.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BIRK.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BOKF.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "DDL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ROSE.LSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "600089.SHG",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "9433.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "CHYM.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RA.MX",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "PRAX.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MRVI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "RKT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "034230.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "PEPG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ZEG.LSE",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SNN.US",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "402340.KO",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ZLAB.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "ANDG.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "NAK.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "GEMI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "MRKR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DQ.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "fail"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "SOFI.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "KN.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "VTOL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "ALAB.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "DPZ.US",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "TRN.US",
+    "tests": {
+      "accounting": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "IR5B.IR",
+    "tests": {
+      "economics": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "BMA.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VSXY.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "pass"
+      ],
+      "accounting": [
+        "na",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "601169.SHG",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "LFST.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "4208.JP",
+    "tests": {
+      "understandable": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "COALINDIA.NSE",
+    "tests": {
+      "management": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "BRLT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BTDR.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "BRSL.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "fail"
+      ],
+      "moat": [
+        "na",
+        "fail"
+      ],
+      "economics": [
+        "na",
+        "pass"
+      ],
+      "management": [
+        "na",
+        "fail"
+      ],
+      "accounting": [
+        "na",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "RERE.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "9020.JP",
+    "tests": {
+      "management": [
+        "fail",
+        "pass"
+      ]
+    }
+  },
+  {
+    "id": "S3Z.F",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "VAR.OL",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "GT.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SHC.LSE",
+    "tests": {
+      "economics": [
+        "pass",
+        "fail"
+      ]
+    }
+  },
+  {
+    "id": "ORIC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  },
+  {
+    "id": "SOC.US",
+    "tests": {
+      "understandable": [
+        "na",
+        "unclear"
+      ],
+      "moat": [
+        "na",
+        "unclear"
+      ],
+      "economics": [
+        "na",
+        "unclear"
+      ],
+      "management": [
+        "na",
+        "unclear"
+      ],
+      "accounting": [
+        "na",
+        "unclear"
+      ]
+    }
+  }
+]

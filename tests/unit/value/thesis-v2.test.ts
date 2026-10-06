@@ -43,7 +43,7 @@ describe('specific liabilities sized against market value',()=>{
  });
  it('sizes the same verified share count used by publication',()=>{
   const a:any={company:{currency:'GBX',marketCapUsd:100},valuation:{currency:'GBP',shares:100,normalized:200,method:'owner_earnings',perShare:{low:1,mid:2,high:3},perShareTrading:{currency:'GBX',fxRate:100,low:100,mid:200,high:300},bridge:[],assumptions:[]}};
-  const check:any={status:'verified',shares:90,observations:[],reason:'Independent sources agree'};
+  const check:any={status:'verified',shares:90,observations:[{source:'issuer',shares:90},{source:'provider',shares:90}],reason:'Independent sources agree'};
   expect(marketContext(a,[400,'2026-09-30'],{},'GBP',check)).toMatchObject({marketValue:360,ownerEarnings:200});
  });
  it('uses the latest provision for a matter and preserves the separate dividend evidence',()=>{

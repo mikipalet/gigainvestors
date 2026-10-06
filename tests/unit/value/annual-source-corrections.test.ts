@@ -99,3 +99,47 @@ it('repairs a vendor fiscal-year shift only with three exact independent stateme
  expect(correctAnnualSources([...corrected,y],f,{source:'https://sec.gov/annual',financial:true})).toHaveLength(1);
  expect(correctAnnualSources([{...y,equity:1}],f,{source:'https://sec.gov/annual',financial:true})[0].end).toBe('2026-06-30');
 });
+it('carries fractional ADR ratios from reviewed annual evidence through cached correction',()=>{
+ const company={id:'DEPOSITARY.US',sector:'Industrials',kind:'operating'} as any;
+ const cache:Record<string,unknown>={'raw/annual-reviewed/DEPOSITARY.US.json':{
+  source:'https://issuer.test/annual',ordinaryPerAds:.25,shareBasisSource:'https://issuer.test/adr',
+  facts:facts({WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(982420000)]}}})}};
+ const read=<T>(file:string)=>cache[file] as T??null;
+ const corrected=correctCachedAnnualSources(company,[year()],{General:{Type:'Common Stock',HomeCategory:'ADR'}},read);
+ expect(corrected[0].dilutedShares).toBe(3929680000);
+ expect(correctCachedAnnualSources(company,corrected,{General:{HomeCategory:'ADR'}},read)[0].dilutedShares).toBe(3929680000);
+});
+it('uses explicit pre-split basis even if the reviewed report was filed after the split',()=>{
+ const company={id:'SPLIT.US',sector:'Industrials',kind:'operating'} as any;
+ const cache:Record<string,unknown>={'raw/annual-reviewed/SPLIT.US.json':{
+  source:'https://issuer.test/annual',shareBasisDate:'2025-12-31',shareBasisSource:'https://issuer.test/split',
+  facts:facts({WeightedAverageNumberOfDilutedSharesOutstanding:{units:{shares:[row(79551000,{filed:'2026-04-01'})]}}})}};
+ const read=<T>(file:string)=>cache[file] as T??null;
+ const splits=[{date:'2026-03-26',factor:3}];
+ const corrected=correctCachedAnnualSources(company,[year()],null,read,splits);
+ expect(corrected[0].dilutedShares).toBe(238653000);
+ expect(correctCachedAnnualSources(company,corrected,null,read,splits)[0].dilutedShares).toBe(238653000);
+});
+it('carries reviewed bank component definitions and never substitutes after-provision net interest',()=>{
+ const company={id:'BANK.US',sector:'Financial Services',kind:'bank'} as any;
+ const cache:Record<string,unknown>={'raw/annual-reviewed/BANK.US.json':{
+  source:'https://issuer.test/annual',revenueComponents:['bank:InterestBeforeLosses','bank:OtherIncome'],
+  facts:{facts:{bank:{InterestBeforeLosses:{units:{USD:[row(188791000)]}},OtherIncome:{units:{USD:[row(29072000)]}}},'us-gaap':{Revenues:{units:{USD:[row(214043000)]}}}}}}};
+ const [corrected]=correctCachedAnnualSources(company,[year()],null,<T>(file:string)=>cache[file] as T??null);
+ expect(corrected.revenue).toBe(217863000);expect(corrected.netRevenue).toBe(217863000);
+});
+it('reapplies source-bound annual balance and earnings corrections after provider refresh',()=>{
+ const company={id:'FINANCIAL.US',kind:'insurer'} as any;
+ const source={source:'https://issuer.test/annual',facts:{facts:{}},reportedFacts:[{end:'2025-12-31',currency:'USD',source:'https://issuer.test/annual',quote:'Common equity and annual cash flow table',correction:true,values:{equity:95,netIncome:12,commonNetIncome:11,ocf:8,dilutedShares:10,sharesOutstanding:9}}]};
+ const read=<T>(p:string)=>p==='raw/annual-reviewed/FINANCIAL.US.json'?source as T:null;
+ expect(correctCachedAnnualSources(company,[year()],null,read)[0]).toMatchObject({equity:95,netIncome:12,commonNetIncome:11,ocf:8,dilutedShares:10,sharesOutstanding:9});
+});
+it('repairs trailing concepts separately without creating a synthetic annual year',async()=>{
+ const {correctCachedTrailingSources}=await import('@/lib/value/annual-source-corrections');
+ const ttm={...year(),end:'2026-06-30',revenue:1};
+ const facts=[{end:'2026-06-30',currency:'USD',source:'https://issuer.test/interim',quote:'Annual plus current half minus prior half',values:{revenue:45600,ocf:-32},correction:true}];
+ const read=<T>(p:string)=>p==='raw/reviewed-trailing/TEST.US.json'?facts as T:null;
+ expect(correctCachedTrailingSources('TEST.US',ttm,read)).toMatchObject({end:'2026-06-30',revenue:45600,ocf:-32});
+ expect(correctCachedTrailingSources('TEST.US',year(),read)).toEqual(year());
+ expect(correctCachedTrailingSources('TEST.US',null,read)).toBeNull();
+});

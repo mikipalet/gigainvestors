@@ -1,3 +1,4 @@
+import type {CurrentCommonBalance} from './types';
 import {earningsPath,modelValue} from './return-model';
 import { valueInvestmentHolding } from './investment-nav';
 import { parentShare } from "./parent-share";
@@ -69,23 +70,32 @@ function reinvestmentRate(years: Year[]): number | null {
   return investments.some(x => x === null) || profits.some(x => x === null) ? null : ratio(sum(present(investments)), sum(present(profits)));
 }
 
-export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, priceHistory = null, qualityPass = false, investmentHolding = false, version = T.valuation.version }: {
-  investmentHolding?: boolean; qualityPass?: boolean; version?: 1 | 2; years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; priceHistory?: PriceHistory | null;
+export function valueCompany({ years, kind, bondYield, cyclical, currency = "", currentCommonBalance, currentShares = null, reportedShares = true, shareAssumptions = [], shareSource, ttm = null, priceHistory = null, qualityPass = false, investmentHolding = false, version = T.valuation.version }: {
+  currentCommonBalance?:CurrentCommonBalance; investmentHolding?: boolean; qualityPass?: boolean; version?: 1 | 2; years: Year[]; kind: Kind; bondYield: number | null; cyclical: boolean; currency?: string; currentShares?: number | null; reportedShares?: boolean; shareAssumptions?: string[]; shareSource?: "yahoo-shares"; ttm?: Year | null; priceHistory?: PriceHistory | null;
 }): { valuation: Valuation | null; reason: string | null } {
   if (investmentHolding) return valueInvestmentHolding(years, currency);
   const ys = withZeroDefaults(years).sort((a, b) => a.fy - b.fy), latest = ys.at(-1);
   const fallback = latest && !(latest.dilutedShares && latest.dilutedShares > 0) && shareSource === 'yahoo-shares' && reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0;
   if (!latest || (!(latest.dilutedShares && latest.dilutedShares > 0) && !fallback)) return { valuation: null, reason: "no share count" };
+  // Keep interim book and its common denominator on the same reporting date.
+  // This changes the economic basis, never manufactures an independent vote.
+  const observation=currentCommonBalance;
+  const balance=kind!=='operating'&&observation&&observation.basis==='effective-common'
+    &&observation.currency===currency&&observation.end>=latest.end&&observation.end<=new Date().toISOString().slice(0,10)
+    &&/^https:\/\//.test(observation.source)&&[observation.commonEquity,observation.goodwillAndIntangibles,observation.shares].every(Number.isFinite)
+    &&observation.commonEquity>0&&observation.goodwillAndIntangibles>=0&&observation.shares>0?observation:null;
+  const documentedAds=latest.dilutedShareBasis==='listing-ADS';
   const taggedShares = latest.dilutedShares ?? 0;
-  const postSplit = !fallback && reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
+  const postSplit = !documentedAds && !balance && !fallback && reportedShares && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
     && Math.abs(currentShares / taggedShares - 1) > 0.1
     && postYearSplit(priceHistory, latest.end, currentShares / taggedShares);
-  const corrected = !fallback && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
+  const corrected = !documentedAds && !balance && !fallback && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
     && Math.max(currentShares / taggedShares, taggedShares / currentShares) > 1.5 || postSplit;
-  const shares = (fallback || corrected ? currentShares : latest.dilutedShares)!;
+  const shares = balance?.shares ?? (fallback || corrected ? currentShares : latest.dilutedShares)!;
   if (bondYield === null || !Number.isFinite(bondYield)) return { valuation: null, reason: "local government bond yield unavailable" };
   const discountRate = Math.max(T.valuation.minDiscount, bondYield + T.valuation.bondSpread);
   const assumptions: string[] = [...shareAssumptions];
+  if(balance) assumptions.push(`Issuer ${balance.basis} book and shares at ${balance.end}; ${balance.source}; annual weighted diluted history retained; independent confidence unchanged`);
   if (latest.edinetShares) assumptions.push(latest.edinetShares.reason);
   if (postSplit) assumptions.push('share count adjusted for post-year split/bonus');
   if (corrected) assumptions.push(`share count corrected to current ${shares}`);
@@ -100,10 +110,10 @@ export function valueCompany({ years, kind, bondYield, cyclical, currency = "", 
   assumptions.push(decliningRevenue ? "three-year revenue trend is negative; growth set to zero"
     : "growth set to zero when latest revenue is below three years earlier");
   if (!currency) assumptions.push("reporting currency not supplied");
-  const common = { version, ...(fallback ? { sharesSource: shareSource } : {}), currency, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
+  const common = { version, ...(balance?{shareBasis:'effective-common' as const}:documentedAds?{shareBasis:'listing-ADS' as const}:{}), ...(fallback ? { sharesSource: shareSource } : {}), currency, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
 
   if (kind !== "operating") {
-    const book = version === 2 ? ratio(tangibleEquity(latest), shares) : financialBvps({ ...latest, dilutedShares: shares });
+    const book = balance ? (version===2?balance.commonEquity-balance.goodwillAndIntangibles:balance.commonEquity)/shares : version === 2 ? ratio(tangibleEquity(latest), shares) : financialBvps({ ...latest, dilutedShares: shares });
     if (book === null || book <= 0) return { valuation: null, reason: "book value not positive" };
     const returns = last(ys, 10).map(roe).filter((value): value is number => value !== null && (version === 1 || Number.isFinite(value)));
     if (returns.length < 5) return { valuation: null, reason: "insufficient return on tangible equity history" };

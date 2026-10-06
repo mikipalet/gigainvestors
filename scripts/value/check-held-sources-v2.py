@@ -127,7 +127,11 @@ def check(id):
     year = f['years'][-1] if f['years'] else None
     meta=json.loads((root/f'reports/{id}/meta.json').read_text())
     cik = c.get('cik') or (__import__('re').search(r'/data/(\d+)/',meta.get('url') or '') or [None,None])[1]
-    if cik and year and meta['kind'] != 'ESEF':
+    # A complete, independently hash-bound original annual table is a primary
+    # source path, not a fallback that requires an unrelated SEC transport.
+    reviewed_complete = year and all(reviewed_field(id, field, year) for field in ['revenue', 'dilutedShares'])
+    result['sourceStrategy'] = 'hash-bound original annual tables' if reviewed_complete else 'SEC facts with optional reviewed fields'
+    if cik and year and meta['kind'] != 'ESEF' and not reviewed_complete:
         url = f'https://data.sec.gov/api/xbrl/companyfacts/CIK{int(cik):010d}.json'
         result['filingSource'] = url
         try:

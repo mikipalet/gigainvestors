@@ -1,0 +1,20 @@
+{
+  "baselineDossierChanges": [
+    "FRFHF.US"
+  ],
+  "missing": [],
+  "expectedOnly": [
+    "FRFHF.US"
+  ],
+  "privateFreezeRestored": true,
+  "baselineCount": 3899,
+  "scope": "Separate local ordinary-publish proposal; Fairfax-only baseline exception. No approval applied.",
+  "otherBaselineIndexChanges": [],
+  "baselineQuoteChanges": [],
+  "otherFrozenUnchanged": 147,
+  "actualLiveBuy": false,
+  "proposedBuy": false,
+  "proposedPublicValuation": null,
+  "browserStates": 24,
+  "browserBlockingFindings": 0
+}

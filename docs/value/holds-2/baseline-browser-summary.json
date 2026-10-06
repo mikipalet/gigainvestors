@@ -1,0 +1,79 @@
+{
+  "source": "/Users/miki/data/value-holds/evidence/holds-2/browser-baseline/report.json",
+  "states": 154,
+  "companies": [
+    "/s/AVBH.US",
+    "/s/BAM.TO",
+    "/s/GLOB.US",
+    "/s/NTES.US",
+    "/s/PEP.US",
+    "/s/WEX.US"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "rawFailedStates": 130,
+  "whitespaceFindings": 111,
+  "ownerRequiredChromeFindings": 273,
+  "blockingFindings": [
+    {
+      "path": "/s/AVBH.US",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issue": "overlapping text: \"$32.29\" / \"Book / share\""
+    },
+    {
+      "path": "/s/AVBH.US",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issue": "overlapping text: \"$32.29\" / \"Common ROE\""
+    },
+    {
+      "path": "/s/NTES.US",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Lasting advantage evidence",
+      "issue": "text cut by container: \"Years with nonpositive investe\""
+    },
+    {
+      "path": "/s/NTES.US",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Lasting advantage evidence",
+      "issue": "text below the fold on a no-scroll page: \"Years with nonpositive investe\""
+    },
+    {
+      "path": "/s/PEP.US",
+      "width": 1728,
+      "height": 970,
+      "state": "Open all 11 holders",
+      "issue": "text below 13px: \"\u2190 Previous\" (12px)"
+    },
+    {
+      "path": "/s/PEP.US",
+      "width": 1728,
+      "height": 970,
+      "state": "Open all 11 holders",
+      "issue": "text below 13px: \"Next \u2192\" (12px)"
+    },
+    {
+      "path": "/s/PEP.US",
+      "width": 390,
+      "height": 844,
+      "state": "Open all 11 holders",
+      "issue": "text below 13px: \"\u2190 Previous\" (12px)"
+    },
+    {
+      "path": "/s/PEP.US",
+      "width": 390,
+      "height": 844,
+      "state": "Open all 11 holders",
+      "issue": "text below 13px: \"Next \u2192\" (12px)"
+    }
+  ],
+  "chromeDisposition": "Explicit cover-6 owner instruction: controls remain exactly as master, 12px compact. Raw gate and threshold unchanged.",
+  "whitespaceDisposition": "Prior controller R2 nonblocking ruling retained. Raw gate and thresholds unchanged."
+}

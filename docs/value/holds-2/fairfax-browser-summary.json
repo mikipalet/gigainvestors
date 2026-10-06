@@ -1,0 +1,17 @@
+{
+  "source": "/Users/miki/data/value-holds/evidence/holds-2/browser-fairfax/report.json",
+  "states": 24,
+  "companies": [
+    "/s/FRFHF.US"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "rawFailedStates": 20,
+  "whitespaceFindings": 19,
+  "ownerRequiredChromeFindings": 43,
+  "blockingFindings": [],
+  "chromeDisposition": "Explicit cover-6 owner instruction: controls remain exactly as master, 12px compact. Raw gate and threshold unchanged.",
+  "whitespaceDisposition": "Prior controller R2 nonblocking ruling retained. Raw gate and thresholds unchanged."
+}

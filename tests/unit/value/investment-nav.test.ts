@@ -65,7 +65,7 @@ describe('NAV valuation',()=>{
 it('keeps reported NAV/share and quote-sensitive returns consistent after share corroboration and FX',async()=>{
  const {applyShareCheck}=await import('@/lib/value/share-check');
  const v=value().valuation!;v.perShareTrading={currency:'GBX',fxRate:100,low:v.normalized*100,mid:v.normalized*100,high:v.normalized*100};
- const checked=applyShareCheck({valuation:v} as Analysis,{status:'verified',shares:v.shares*2,observations:[],reason:''}).valuation!;
+ const checked=applyShareCheck({valuation:v} as Analysis,{status:'verified',shares:v.shares*2,observations:[{source:'issuer',shares:v.shares*2},{source:'provider',shares:v.shares*2}],reason:''}).valuation!;
  expect(checked.perShare.mid).toBe(v.perShare.mid);
  expect(ownerReturn(checked,'GBX',null,checked.perShareTrading!.mid*.8)?.expected).toBeCloseTo(1.1*(1/.8)**.1-1);
 });

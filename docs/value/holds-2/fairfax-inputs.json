@@ -1,0 +1,215 @@
+{
+  "annual": {
+    "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+    "facts": {
+      "facts": {}
+    },
+    "reportedFacts": [
+      {
+        "end": "2016-12-31",
+        "currency": "USD",
+        "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "quote": "2025 annual report PDF pages 3, 46-51, 95 and 99; FY2016 parent equity, separately identified preferred, and annual statement amounts. Historical summary amounts rounded to USD million.",
+        "correction": true,
+        "values": {
+          "revenue": 9300000000.0
+        },
+        "calculation": "Revenue = insurance revenue + non-insurance revenue + interest/dividends + share of profit of associates + net investment gains. Annual equity is parent equity including preferred but excluding noncontrolling interests; preferred is separately stored, so commonBook subtracts it once. Current-common balance explicitly excludes preferred. Earnings fields distinguish parent and common."
+      },
+      {
+        "end": "2017-12-31",
+        "currency": "USD",
+        "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "quote": "2025 annual report PDF pages 3, 46-51, 95 and 99; FY2017 parent equity, separately identified preferred, and annual statement amounts. Historical summary amounts rounded to USD million.",
+        "correction": true,
+        "values": {
+          "revenue": 16225000000.0
+        },
+        "calculation": "Revenue = insurance revenue + non-insurance revenue + interest/dividends + share of profit of associates + net investment gains. Annual equity is parent equity including preferred but excluding noncontrolling interests; preferred is separately stored, so commonBook subtracts it once. Current-common balance explicitly excludes preferred. Earnings fields distinguish parent and common."
+      },
+      {
+        "end": "2018-12-31",
+        "currency": "USD",
+        "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "quote": "2025 annual report PDF pages 3, 46-51, 95 and 99; FY2018 parent equity, separately identified preferred, and annual statement amounts. Historical summary amounts rounded to USD million.",
+        "correction": true,
+        "values": {
+          "revenue": 17758000000.0
+        },
+        "calculation": "Revenue = insurance revenue + non-insurance revenue + interest/dividends + share of profit of associates + net investment gains. Annual equity is parent equity including preferred but excluding noncontrolling interests; preferred is separately stored, so commonBook subtracts it once. Current-common balance explicitly excludes preferred. Earnings fields distinguish parent and common."
+      },
+      {
+        "end": "2019-12-31",
+        "currency": "USD",
+        "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "quote": "2025 annual report PDF pages 3, 46-51, 95 and 99; FY2019 parent equity, separately identified preferred, and annual statement amounts. Historical summary amounts rounded to USD million.",
+        "correction": true,
+        "values": {
+          "revenue": 21533000000.0
+        },
+        "calculation": "Revenue = insurance revenue + non-insurance revenue + interest/dividends + share of profit of associates + net investment gains. Annual equity is parent equity including preferred but excluding noncontrolling interests; preferred is separately stored, so commonBook subtracts it once. Current-common balance explicitly excludes preferred. Earnings fields distinguish parent and common."
+      },
+      {
+        "end": "2020-12-31",
+        "currency": "USD",
+        "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "quote": "2025 annual report PDF pages 3, 46-51, 95 and 99; FY2020 parent equity, separately identified preferred, and annual statement amounts. Historical summary amounts rounded to USD million.",
+        "correction": true,
+        "values": {
+          "revenue": 19795000000.0
+        },
+        "calculation": "Revenue = insurance revenue + non-insurance revenue + interest/dividends + share of profit of associates + net investment gains. Annual equity is parent equity including preferred but excluding noncontrolling interests; preferred is separately stored, so commonBook subtracts it once. Current-common balance explicitly excludes preferred. Earnings fields distinguish parent and common."
+      },
+      {
+        "end": "2021-12-31",
+        "currency": "USD",
+        "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "quote": "2025 annual report PDF pages 3, 46-51, 95 and 99; FY2021 parent equity, separately identified preferred, and annual statement amounts. Historical summary amounts rounded to USD million.",
+        "correction": true,
+        "values": {
+          "revenue": 26468000000.0
+        },
+        "calculation": "Revenue = insurance revenue + non-insurance revenue + interest/dividends + share of profit of associates + net investment gains. Annual equity is parent equity including preferred but excluding noncontrolling interests; preferred is separately stored, so commonBook subtracts it once. Current-common balance explicitly excludes preferred. Earnings fields distinguish parent and common."
+      },
+      {
+        "end": "2022-12-31",
+        "currency": "USD",
+        "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "quote": "2025 annual report PDF pages 3, 46-51, 95 and 99; FY2022 parent equity, separately identified preferred, and annual statement amounts. Historical summary amounts rounded to USD million.",
+        "correction": true,
+        "values": {
+          "revenue": 30696000000.0
+        },
+        "calculation": "Revenue = insurance revenue + non-insurance revenue + interest/dividends + share of profit of associates + net investment gains. Annual equity is parent equity including preferred but excluding noncontrolling interests; preferred is separately stored, so commonBook subtracts it once. Current-common balance explicitly excludes preferred. Earnings fields distinguish parent and common."
+      },
+      {
+        "end": "2023-12-31",
+        "currency": "USD",
+        "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "quote": "2025 annual report PDF pages 3, 46-51, 95 and 99; FY2023 parent equity, separately identified preferred, and annual statement amounts. Historical summary amounts rounded to USD million.",
+        "correction": true,
+        "values": {
+          "revenue": 38417000000.0
+        },
+        "calculation": "Revenue = insurance revenue + non-insurance revenue + interest/dividends + share of profit of associates + net investment gains. Annual equity is parent equity including preferred but excluding noncontrolling interests; preferred is separately stored, so commonBook subtracts it once. Current-common balance explicitly excludes preferred. Earnings fields distinguish parent and common."
+      },
+      {
+        "end": "2024-12-31",
+        "currency": "USD",
+        "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "quote": "2025 annual report PDF pages 3, 46-51, 95 and 99; FY2024 parent equity, separately identified preferred, and annual statement amounts. Historical summary amounts rounded to USD million.",
+        "correction": true,
+        "values": {
+          "equity": 24068000000.0,
+          "preferredEquity": 1108200000.0,
+          "netIncome": 3874900000.0,
+          "commonNetIncome": 3879800000.0,
+          "ocf": 3993900000.0,
+          "totalAssets": 96777300000.0,
+          "dilutedShares": 24163460,
+          "sharesOutstanding": 21668466,
+          "revenue": 42282300000.0,
+          "dividendsPaid": 363100000.0,
+          "commonDividendsPaid": 363100000.0
+        },
+        "calculation": "Revenue = insurance revenue + non-insurance revenue + interest/dividends + share of profit of associates + net investment gains. Annual equity is parent equity including preferred but excluding noncontrolling interests; preferred is separately stored, so commonBook subtracts it once. Current-common balance explicitly excludes preferred. Earnings fields distinguish parent and common."
+      },
+      {
+        "end": "2025-12-31",
+        "currency": "USD",
+        "source": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "quote": "2025 annual report PDF pages 3, 46-51, 95 and 99; FY2025 parent equity, separately identified preferred, and annual statement amounts. Historical summary amounts rounded to USD million.",
+        "correction": true,
+        "values": {
+          "equity": 26514300000.0,
+          "preferredEquity": 231700000.0,
+          "netIncome": 4772400000.0,
+          "commonNetIncome": 4935000000.0,
+          "ocf": 2419400000.0,
+          "totalAssets": 107787700000.0,
+          "dilutedShares": 23084027,
+          "sharesOutstanding": 20856086,
+          "revenue": 46674100000.0,
+          "dividendsPaid": 343600000.0,
+          "commonDividendsPaid": 343600000.0
+        },
+        "calculation": "Revenue = insurance revenue + non-insurance revenue + interest/dividends + share of profit of associates + net investment gains. Annual equity is parent equity including preferred but excluding noncontrolling interests; preferred is separately stored, so commonBook subtracts it once. Current-common balance explicitly excludes preferred. Earnings fields distinguish parent and common."
+      }
+    ],
+    "evidence": [
+      {
+        "url": "https://www.fairfax.ca/wp-content/uploads/2026/03/FFH_Fairfax-Financial-2025-Annual-Report-144860.pdf",
+        "sha256": "930465f1e4fe82e3f536f7d96d9c9e89c472b77c4c3b4932107b872d36ccb0d7",
+        "pages": {
+          "balanceSheet": 47,
+          "earnings": 48,
+          "cashFlow": 51,
+          "shares": 95,
+          "EPS": 99
+        }
+      },
+      {
+        "url": "https://www.fairfax.ca/wp-content/uploads/2026/07/FFH-2026-Q2-Interim-Report-Final-Bh5r66R43.pdf",
+        "sha256": "688046ec73e20577082e5c29f1fd1d3087fd8a3ac67d3f83525a1018973ee147",
+        "sharesPage": 19
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/915191/000110465926024781/0001104659-26-024781-index.htm",
+        "form": "40-F",
+        "filed": "2026-03-06",
+        "period": "2025-12-31"
+      }
+    ],
+    "revenueReconciliation": {
+      "2025": [
+        31595,
+        8537.6,
+        2574,
+        816.1,
+        3151.4
+      ],
+      "2024": [
+        31064.1,
+        6682.8,
+        2511.9,
+        956.3,
+        1067.2
+      ]
+    }
+  },
+  "currentCommonBalance": {
+    "end": "2026-06-30",
+    "currency": "USD",
+    "commonEquity": 26048500000.0,
+    "goodwillAndIntangibles": 8142700000.0,
+    "shares": 19969895,
+    "source": "https://www.fairfax.ca/wp-content/uploads/2026/07/FFH-2026-Q2-Interim-Report-Final-Bh5r66R43.pdf#page=19",
+    "basis": "effective-common",
+    "evidence": {
+      "pdfSha256": "688046ec73e20577082e5c29f1fd1d3087fd8a3ac67d3f83525a1018973ee147",
+      "balancePage": 2,
+      "sharesPage": 19,
+      "calculation": "19,221,125 + 1,548,000 - 799,230 = 19,969,895",
+      "bookPerShare": 1304.388430685289
+    }
+  },
+  "limitations": [
+    "Pre-2024 goodwill/intangibles and diluted observations remain cached provider data; only fields bound above are independently corrected.",
+    "Parent net income remains the existing model numerator; common earnings are separately stored. No new historical common-earnings methodology is introduced."
+  ],
+  "trailing": [
+    {
+      "end": "2026-06-30",
+      "currency": "USD",
+      "source": "https://www.fairfax.ca/wp-content/uploads/2026/07/FFH-2026-Q2-Interim-Report-Final-Bh5r66R43.pdf",
+      "quote": "Interim PDF pages 3 and 6: H1 2026 and H1 2025 comparative income and cash flow. 2025 annual PDF pages 48 and 51.",
+      "correction": true,
+      "values": {
+        "revenue": 45600900000,
+        "netIncome": 4478400000.0,
+        "ocf": -32600000
+      },
+      "calculation": "TTM = FY2025 + H1 2026 - H1 2025, identical income concepts; no annual row added."
+    }
+  ]
+}

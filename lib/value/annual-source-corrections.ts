@@ -1,7 +1,8 @@
+import {applyReportedFacts,type ReportedFacts} from './completeness/reported-facts';
 import type {Company,Year} from './types';
 import type {CompanyFacts} from './completeness/second-sources';
 
-type Options={source:string;financial?:boolean;revenueConcept?:string;revenueComponents?:string[];adr?:boolean;ordinaryPerAds?:number;shareBasisSource?:string;splits?:Array<{date:string;factor:number}>};
+type Options={source:string;financial?:boolean;revenueConcept?:string;revenueComponents?:string[];adr?:boolean;ordinaryPerAds?:number;shareBasisSource?:string;shareBasisDate?:string;splits?:Array<{date:string;factor:number}>};
 /** Source selection is by accounting concept, annual period, currency and share
  * basis. Never infer a depositary ratio from the discrepancy being corrected. */
 export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Options):Year[]{
@@ -12,7 +13,7 @@ export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Opt
   for(const [field,tags]of Object.entries(anchorFields)){
    const value=y[field as keyof typeof anchorFields];if(value==null||value===0)continue;
    for(const ns of Object.values(facts.facts))for(const tag of tags)for(const f of ns[tag]?.units[y.currency??'']??[]){
-    if(f.val!==value||Math.abs(Date.parse(f.end)-Date.parse(y.end))>366*86400000||!/^(10-K|20-F|40-F|17-A)(\/A)?$/.test(f.form??'')||(f.filed??'')>new Date().toISOString().slice(0,10))continue;
+    if(f.val!==value||Math.abs(Date.parse(f.end)-Date.parse(y.end))>366*86400000||!/^(10-K|20-F|40-F|17-A|annual-report)(\/A)?$/.test(f.form??'')||(f.filed??'')>new Date().toISOString().slice(0,10))continue;
     const instant=['totalAssets','equity'].includes(field),duration=f.start?(Date.parse(f.end)-Date.parse(f.start))/86400000:0;
     if(instant?Boolean(f.start):duration<330||duration>400)continue;
     if(!periods.has(f.end))periods.set(f.end,new Set());periods.get(f.end)!.add(field);
@@ -32,7 +33,7 @@ export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Opt
    for(const ns of Object.values(facts.facts))for(const tag of tags)for(const [unit,rows]of Object.entries(ns[tag]?.units??{})){
     if(!/^[A-Z]{3}$/.test(unit))continue;
     if(rows.some(f=>f.end===y.end&&f.val!==0&&Math.abs(value/f.val-1)<.005
-     && /^(10-K|20-F|40-F|17-A)(\/A)?$/.test(f.form??'')&&(f.filed??'')<=new Date().toISOString().slice(0,10)
+     && /^(10-K|20-F|40-F|17-A|annual-report)(\/A)?$/.test(f.form??'')&&(f.filed??'')<=new Date().toISOString().slice(0,10)
      &&(['totalAssets','equity'].includes(field)?!f.start:Boolean(f.start&&(Date.parse(f.end)-Date.parse(f.start))/86400000>=330&&(Date.parse(f.end)-Date.parse(f.start))/86400000<=400)))){
       if(!currencyMatches.has(unit))currencyMatches.set(unit,new Set());currencyMatches.get(unit)!.add(field);
     }
@@ -49,7 +50,7 @@ export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Opt
    const value=y[field as 'revenue'|'netIncome'];if(value==null||value===0)continue;
    for(const ns of Object.values(facts.facts))for(const tag of tags)for(const f of ns[tag]?.units[y.currency??'']??[]){
     const days=f.start?(Date.parse(f.end)-Date.parse(f.start))/86400000:0;
-    if(f.val===value&&Math.abs(Date.parse(f.end)-Date.parse(y.end))<=7*86400000&&days>=330&&days<=400&&/^(10-K|20-F|40-F|17-A)(\/A)?$/.test(f.form??''))anchors.add(f.end);
+    if(f.val===value&&Math.abs(Date.parse(f.end)-Date.parse(y.end))<=7*86400000&&days>=330&&days<=400&&/^(10-K|20-F|40-F|17-A|annual-report)(\/A)?$/.test(f.form??''))anchors.add(f.end);
    }
   }
   const sourceEnd=anchors.has(y.end)?y.end:anchors.size===1?[...anchors][0]:y.end;
@@ -57,7 +58,7 @@ export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Opt
    for(const concept of tags)for(const ns of concept.includes(':')?[concept.split(':')[0]]:['us-gaap','ifrs-full']){
     const tag=concept.split(':').at(-1)!;
     const rows=(facts.facts[ns]?.[tag]?.units[unit]??[]).filter(f=>f.end===sourceEnd&&f.start
-     && /^(10-K|20-F|40-F|17-A)(\/A)?$/.test(f.form??'')&&Number.isFinite(f.val)
+     && /^(10-K|20-F|40-F|17-A|annual-report)(\/A)?$/.test(f.form??'')&&Number.isFinite(f.val)
      &&(Date.parse(f.end)-Date.parse(f.start))/86400000>=330&&(Date.parse(f.end)-Date.parse(f.start))/86400000<=400
      &&(f.filed??'')<=new Date().toISOString().slice(0,10)).sort((a,b)=>(b.filed??'').localeCompare(a.filed??''));
     if(!rows.length)continue;
@@ -67,6 +68,7 @@ export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Opt
   };
   const assign=(field:'revenue'|'dilutedShares',fact:NonNullable<ReturnType<typeof pick>>,divisor=1,inputs:string[]=[])=>{
    y[field]=fact.value/divisor;
+   if(field==='dilutedShares'&&options.adr)y.dilutedShareBasis='listing-ADS';
    y.provenance[field]={source:fact.source,field:fact.tag,method:divisor===1?'reported':'derived',inputs:[`Annual period ${fact.start} to ${fact.end}`,field==='revenue'?`Currency ${y.currency}`:'Weighted average diluted shares',...inputs]};
   };
   if((options.financial||options.revenueConcept)&&y.currency){
@@ -98,9 +100,10 @@ export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Opt
   }
   if(!shares&&y.netIncome!==null&&y.netIncome<0)shares=pick(['WeightedAverageNumberOfShareOutstandingBasicAndDiluted','WeightedAverageNumberOfSharesOutstandingBasic'],'shares');
   const ratio=options.adr?options.ordinaryPerAds:1;
-  const splitFactor=shares?(options.splits??[]).filter(s=>s.date>shares!.end&&s.date>shares!.filed&&s.date<=new Date().toISOString().slice(0,10)).reduce((a,s)=>a*s.factor,1):1;
+  const basisDate=options.shareBasisDate&&options.shareBasisSource?options.shareBasisDate:shares?.filed;
+  const splitFactor=shares?(options.splits??[]).filter(s=>s.date>shares!.end&&s.date>(basisDate??'')&&s.date<=new Date().toISOString().slice(0,10)).reduce((a,s)=>a*s.factor,1):1;
   if(shares&&ratio&&ratio>0&&(!options.adr||options.shareBasisSource))assign('dilutedShares',shares,ratio/splitFactor,
-   [...(options.adr?[`${ratio} ordinary shares per ADS; ${options.shareBasisSource}`]:[]),...(splitFactor!==1?[`Post-filing split factor ${splitFactor}; current listing units`]:[])]);
+   [...(options.adr?[`${ratio} ordinary shares per ADS; ${options.shareBasisSource}`]:[]),...(splitFactor!==1?[`Post-basis split factor ${splitFactor}; current listing units; basis ${basisDate}; ${options.shareBasisSource??options.source}`]:[])]);
   return y;
  });
  // A proven fiscal-date shift can expose two vendor rows labelled as the same
@@ -110,19 +113,29 @@ export function correctAnnualSources(years:Year[],facts:CompanyFacts,options:Opt
 }
 
 export interface AnnualSourceEvidence {
- facts:CompanyFacts;source:string;ordinaryPerAds?:number;shareBasisSource?:string;revenueConcept?:string;revenueComponents?:string[];shareDimensions?:Record<string,string>;revenueDimensions?:Record<string,string>;
+ reportedFacts?:ReportedFacts[];
+ facts:CompanyFacts;source:string;ordinaryPerAds?:number;shareBasisSource?:string;shareBasisDate?:string;revenueConcept?:string;revenueComponents?:string[];shareDimensions?:Record<string,string>;revenueDimensions?:Record<string,string>;
 }
 /** All cache, fetch and analysis paths consume the same general correction. */
 export function correctCachedAnnualSources(company:Company,years:Year[],raw:unknown,read:<T>(file:string)=>T|null,splits:Options['splits']=[]):Year[]{
  const provider=raw as {General?:{HomeCategory?:string;Type?:string}}|null;
  const adr=/ADR|GDR|depositary/i.test(`${provider?.General?.HomeCategory??''} ${provider?.General?.Type??''}`);
  const evidence=read<AnnualSourceEvidence>(`raw/sec-annual/${company.id}.json`);
+ const reviewed=read<AnnualSourceEvidence>(`raw/annual-reviewed/${company.id}.json`);
  const facts=read<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
  const options={splits,financial:company.sector==='Financial Services'||company.kind==='bank'||company.kind==='insurer',adr,
   ordinaryPerAds:evidence?.ordinaryPerAds,shareBasisSource:evidence?.shareBasisSource};
  let result=facts?correctAnnualSources(years,facts,{...options,financial:options.financial&&!evidence?.revenueDimensions,source:`https://data.sec.gov/api/xbrl/companyfacts/CIK${String(company.cik??'').padStart(10,'0')}.json`}):years;
- if(evidence)result=correctAnnualSources(result,evidence.facts,{...options,source:evidence.source,revenueConcept:evidence.revenueConcept,revenueComponents:evidence.revenueComponents});
- const reviewed=read<AnnualSourceEvidence>(`raw/annual-reviewed/${company.id}.json`);
- if(reviewed)result=correctAnnualSources(result,reviewed.facts,{...options,source:reviewed.source,revenueConcept:reviewed.revenueConcept});
- return result;
+ if(evidence)result=correctAnnualSources(result,evidence.facts,{...options,source:evidence.source,revenueConcept:evidence.revenueConcept,revenueComponents:evidence.revenueComponents,shareBasisDate:evidence.shareBasisDate});
+ if(reviewed)result=correctAnnualSources(result,reviewed.facts,{...options,...reviewed,adr:adr||reviewed.ordinaryPerAds!==undefined,
+  ordinaryPerAds:reviewed.ordinaryPerAds??options.ordinaryPerAds,shareBasisSource:reviewed.shareBasisSource??options.shareBasisSource});
+ return reviewed?.reportedFacts?applyReportedFacts(result,reviewed.reportedFacts):result;
+}
+
+/** Trailing statements are a separate observation, never a new annual row. */
+export function correctCachedTrailingSources(id:string,trailing:Year|null|undefined,read:<T>(file:string)=>T|null):Year|null {
+ if(!trailing)return null;
+ const facts=read<ReportedFacts[]>(`raw/reviewed-trailing/${id}.json`)??[];
+ const matching=facts.filter(f=>f.end===trailing.end&&f.currency===trailing.currency);
+ return matching.length?applyReportedFacts([trailing],matching)[0]:trailing;
 }

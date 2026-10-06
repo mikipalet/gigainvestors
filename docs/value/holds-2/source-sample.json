@@ -1,0 +1,33 @@
+{
+  "seed": 202610053,
+  "population": [
+    "CFRUY.US",
+    "DVDCF.US",
+    "FLMNF.US",
+    "FLUIF.US",
+    "HEINY.US",
+    "HKHHF.US",
+    "HKHHY.US",
+    "KNCRF.US",
+    "MTRBF.US",
+    "OGC.US",
+    "PEYUF.US",
+    "PHJMF.US",
+    "PIFYF.US",
+    "PUIGF.US",
+    "RTLLF.US",
+    "ZLDSF.US"
+  ],
+  "ids": [
+    "CFRUY.US",
+    "DVDCF.US",
+    "FLMNF.US",
+    "HKHHY.US",
+    "KNCRF.US",
+    "OGC.US",
+    "PUIGF.US",
+    "ZLDSF.US"
+  ],
+  "method": "Python random.Random(202610053).sample(sorted browser-qualified population, 8)",
+  "priorSample": "pre-browser-source-sample.json: all 8 passed numerically. Scope changed only after complete browser gate found CNSWF and FBAK overlaps; no failed financial comparison was removed to obtain a pass."
+}

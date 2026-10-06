@@ -1,0 +1,47 @@
+{
+  "source": "/Users/miki/data/value-holds/evidence/holds-2/browser-additions-1/report.json",
+  "states": 178,
+  "companies": [
+    "/s/CFRUY.US",
+    "/s/CNSWF.US",
+    "/s/DVDCF.US",
+    "/s/FBAK.US",
+    "/s/FLMNF.US",
+    "/s/FLUIF.US",
+    "/s/HEINY.US",
+    "/s/HKHHF.US",
+    "/s/HKHHY.US"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "rawFailedStates": 142,
+  "whitespaceFindings": 132,
+  "ownerRequiredChromeFindings": 334,
+  "blockingFindings": [
+    {
+      "path": "/s/FBAK.US",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issue": "overlapping text: \"$179.75\" / \"Book / share\""
+    },
+    {
+      "path": "/s/FBAK.US",
+      "width": 1728,
+      "height": 970,
+      "state": "Open Honest profits evidence",
+      "issue": "overlapping text: \"$179.75\" / \"Common ROE\""
+    },
+    {
+      "path": "/s/CNSWF.US",
+      "width": 390,
+      "height": 844,
+      "state": "Open valuation",
+      "issue": "overlapping text: \"$2,399.74\" / \"$1,208.55\""
+    }
+  ],
+  "chromeDisposition": "Explicit cover-6 owner instruction: controls remain exactly as master, 12px compact. Raw gate and threshold unchanged.",
+  "whitespaceDisposition": "Prior controller R2 nonblocking ruling retained. Raw gate and thresholds unchanged."
+}

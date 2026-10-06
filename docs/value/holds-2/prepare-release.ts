@@ -1,0 +1,17 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
+import {readCorpusJson,writeCorpusJson} from '../../../lib/value/corpus';
+import {baselineAnalysisHash,type CoverageRelease} from '../../../scripts/value/coverage-release';
+const root=path.join(os.homedir(),'data/value-holds');
+if(process.env.VALUE_CORPUS_DIR!==path.join(root,'corpus'))throw Error('Private corpus required');
+const prior=JSON.parse(readFileSync('docs/value/holds-1/release.json','utf8')) as CoverageRelease;
+const additions:string[]=JSON.parse(readFileSync('docs/value/holds-2/source-sample.json','utf8')).population;
+const original=JSON.parse(readFileSync('docs/value/holds-1/provisional-release.json','utf8')) as CoverageRelease;
+const reasons=new Map(original.held.map(row=>[row.id,row.reasons]));
+for(const id of ['AGO.US','AMPY.US','TOST.US','CNSWF.US','FBAK.US'])reasons.set(id,['current-UI-layout-gate']);
+for(const [id,canonical]of Object.entries(JSON.parse(readFileSync('docs/value/holds-1/issuer-alias-findings.json','utf8'))))reasons.set(id,[`existing-issuer-alias:${canonical}`]);
+reasons.set('BAYRY.US',['existing-baseline-issuer:BAYN.XETRA; cannot displace baseline identity']);
+const release:CoverageRelease={version:1,baselineIds:prior.baselineIds,baselineAnalysisHashes:Object.fromEntries(prior.baselineIds.map(id=>[id,baselineAnalysisHash(id)])),additionIds:additions,held:prior.held.filter(r=>!additions.includes(r.id)).map(r=>({id:r.id,reasons:reasons.get(r.id)??r.reasons}))};
+writeCorpusJson('held-membership/release.json',release);writeFileSync('docs/value/holds-2/release.json',JSON.stringify(release,null,2)+'\n');
+console.log(JSON.stringify({baseline:release.baselineIds.length,accepted:release.additionIds.length,held:release.held.length}));

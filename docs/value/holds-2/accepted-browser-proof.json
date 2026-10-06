@@ -1,0 +1,16 @@
+{
+  "accepted": 16,
+  "states": 252,
+  "blockingFindings": [],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "finalSnapshot": "~/data/value-holds/staging/holds-2-release",
+  "scope": "All accepted IDs retested against final ordinary publish output, including unchanged numbers with newly generated priceStory timestamps",
+  "summaries": [
+    "final-browser-summary.json",
+    "final-rest-1-browser-summary.json",
+    "final-rest-2-browser-summary.json"
+  ]
+}

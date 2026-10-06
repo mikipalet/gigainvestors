@@ -1,5 +1,5 @@
 import { mkdirSync, mkdtempSync, rmSync } from "node:fs";
-import { homedir } from "node:os";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { createUsdRate } from "../../../lib/value/fx";
@@ -9,7 +9,7 @@ import { eodhd } from "../../../lib/value/eodhd";
 vi.mock("../../../lib/value/eodhd", () => ({ eodhd: vi.fn() }));
 let directory: string;
 beforeEach(() => {
-  const root = join(homedir(), "value-corpus");
+  const root = (process.env.VALUE_TEST_TEMP_ROOT ?? join(tmpdir(), "value-corpus-tests"));
   mkdirSync(root, { recursive: true });
   directory = mkdtempSync(join(root, "fx-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", directory);

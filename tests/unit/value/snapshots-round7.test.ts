@@ -3,7 +3,7 @@ import { snapshotForYear, filingMonth, summarizeSnapshots } from '@/lib/value/sn
 import { makeYears } from './synthetic';
 import type { Company, Fundamentals, PriceHistory, SnapshotRow } from '@/lib/value/types';
 const company: Company = { id:'TEST.US', code:'TEST', name:'Test', exchange:'US', country:'US', currency:'USD', isin:null,cik:null,lei:null,edinetCode:null,sector:null,industry:null,kind:'operating',listings:['TEST.US'],marketCapUsd:null,description:null,source:'eodhd' };
-const fundamentals: Fundamentals = { id:company.id, currency:'USD', years:makeYears({from:2006,n:11,overrides:(_,i)=>({netIncome:100+i*10,operatingIncome:150+i*10,preTaxIncome:150+i*10,ocf:140+i*10,revenue:1000+i*100})}), integrity:{ok:true,reasons:[]}, fetchedAt:'2026-09-29' };
+const fundamentals: Fundamentals = { id:company.id, currency:'USD', years:makeYears({from:2006,n:11,overrides:(_,i)=>({netIncome:100+i*10,operatingIncome:150+i*10,preTaxIncome:150+i*10,ocf:140+i*10,revenue:1000+i*100,grossProfit:(1000+i*100)*.6})}), integrity:{ok:true,reasons:[]}, fetchedAt:'2026-09-29' };
 const prices: PriceHistory = [...fundamentals.years.map((y,i)=>[y.end.slice(0,7),50+i*30] as [string,number]), ['2017-02',50],['2017-03',100],['2026-08',150]];
 const base = { company, fundamentals, prices, latestPrice:[150,'2026-09-28'] as [number,string], filedByPeriod:{'2016-12-31':'2017-02-20'}, bondYield:0.04, fxRate:1, asOf:'2026-09-29' };
 describe('code-only fiscal snapshots', () => {

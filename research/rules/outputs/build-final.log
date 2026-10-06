@@ -1,0 +1,24 @@
+
+> superinvestors@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.3.3 (webpack)
+✓ Running next.config.ts took 179ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 47s
+  Running TypeScript ...
+  Finished TypeScript in 34.0s ...
+  Collecting page data using 15 workers ...
+Error: VALUE_DATA_READ_WRITE_TOKEN is required
+    at <unknown> (.next/server/chunks/7055.js:1:12495)
+    at i (.next/server/chunks/7055.js:1:12553)
+    at v (.next/server/chunks/7055.js:1:16249)
+    at w (.next/server/chunks/7055.js:1:16326)
+    at j (.next/server/app/value/year/[year]/page.js:1:11093)
+
+> Build error occurred
+Error: Failed to collect page data for /value/year/[year]
+    at ignore-listed frames {
+  type: 'Error'
+}

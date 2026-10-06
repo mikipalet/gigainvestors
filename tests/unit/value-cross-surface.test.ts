@@ -27,7 +27,7 @@ describe('cross-surface regression',()=>{
 import {auditTestSurfaces,type SurfaceSnapshot} from '@/lib/value/surface-audit';
 describe('audit detects drift',()=>{
  const snapshot:SurfaceSnapshot={text:'Capital return excluding acquisitions: median 47% (minimum 15%), and the second-worst year 33% (minimum 10%). ROIC ex acquisitions median 47.0% ≥ 15.0%; Second-lowest return (one bad year allowed) 33.0% ≥ 10.0%; 3/3 applied checks met.',numbers:[],charts:[{label:'ROIC excluding acquisitions',series:test.series.roic,format:'pct',currency:'USD'}],stats:[['Median','45.0%'],['Worst','33.0%'],['Latest','33.0%']],table:[],windows:[],priceCharts:[]};
- const drawer={...snapshot,text:snapshot.text+' ✓ History years 10 ≥ 10 ✓ ROIC ex acquisitions median 47.0% ≥ 15.0% ✓ Second-lowest return (one bad year allowed) 33.0% ≥ 10.0% ✓ Gross-margin drop 0.0% ≤ 4.0%',stats:[...snapshot.stats,['Passing bar','≥ 15.0%'],['Window','2023–2025']] as Array<[string,string]>,table:[['2023','35.0%','45.0%','✓'],['2024','38.0%','47.0%','✓'],['2025','36.5%','33.0%','✓']]};
+ const drawer={...snapshot,text:snapshot.text+' ✓ History years 10 ≥ 10 ✓ ROIC ex acquisitions median 47.0% ≥ 15.0% ✓ Second-lowest return (one bad year allowed) 33.0% ≥ 10.0% ✓ Typical minus recent gross margin 0.0% ≤ 4.0%',stats:[...snapshot.stats,['Passing bar','≥ 15.0%'],['Window','2023–2025']] as Array<[string,string]>,table:[['2023','35.0%','45.0%','✓'],['2024','38.0%','47.0%','✓'],['2025','36.5%','33.0%','✓']]};
  it('accepts matching captured surfaces',()=>expect(()=>auditTestSurfaces(dossier,test,snapshot,drawer)).not.toThrow());
  it.each(['series','currency','format','rounding','year','threshold','count'])('rejects %s drift',field=>{
   const changed=structuredClone(drawer);

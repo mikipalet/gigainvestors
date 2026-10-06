@@ -54,3 +54,17 @@ it('retains an archived identity when its historical row already exists in the n
  expect(retainPublishedHistory(files,path.join(root,'previous'))).toEqual([]);
  expect(files['history/companies.json']).toEqual([identity]);
 });
+
+it('retains a retired listing identity even when its prediction row is already present',async()=>{
+ const {retainPublishedHistory}=await import('@/scripts/value/retain-published-history');
+ const {historyView}=await import('@/lib/value/browser-view');
+ const row=['RACE.MI','PPPPP',.5,true,2];
+ const identity={id:'RACE.MI',n:'Ferrari',c:'IT',cur:'EUR',w:'RACE.MI',k:'operating'};
+ writeCorpusJson('previous/history/index.json',{years:[],quarters:['2018Q3'],perYear:{}});
+ writeCorpusJson('previous/history/2018Q3.json',[row]);
+ writeCorpusJson('previous/history/companies.json',[identity]);
+ const files:Record<string,unknown>={'history/index.json':{years:[],quarters:['2018Q3'],perYear:{}},'history/2018Q3.json':[row],'history/companies.json':[]};
+ expect(retainPublishedHistory(files,path.join(root,'previous'))).toEqual([]);
+ expect(files['history/2018Q3.json']).toEqual([row]);
+ expect(historyView(files['history/2018Q3.json'] as any,files['history/companies.json'] as any)[0]).toMatchObject({id:'RACE.MI',cur:'EUR',t:'PPPPP',b:true,gain:2});
+});

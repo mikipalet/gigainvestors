@@ -17,12 +17,12 @@ afterEach(()=>dirs.splice(0).forEach(dir=>rmSync(dir,{recursive:true,force:true}
 
 describe('forward snapshot',()=>{
  it('starts at the live method and records picks, quotes and the complete benchmark',()=>{
-  expect(METHOD_VERSION).toBe('3.4.0');
-  expect(METHOD_CHANGES[0]).toMatchObject({version:'3.4.0',date:'2026-10-05'});
+  expect(METHOD_VERSION).toBe('3.5.0');
+  expect(METHOD_CHANGES[0]).toMatchObject({version:'3.5.0',date:'2026-10-06'});
   expect(METHOD_CHANGES.at(-1)).toMatchObject({version:'3.0.0',date:'2026-10-01'});
   const s=snapshot('2026-10-01',{'A.US':50,'B.SHG':100},['A.US']);
-  expect(s).toMatchObject({date:'2026-10-01',methodVersion:'3.4.0',picks:{all:['A.US'],western:['A.US']},universe:{all:['A.US','B.SHG'],western:['A.US']}});
-  expect(s.observations['A.US']).toMatchObject({price:50,priceDate:'2026-10-01',buyPrice:75,methodVersion:'3.4.0'});
+  expect(s).toMatchObject({date:'2026-10-01',methodVersion:'3.5.0',picks:{all:['A.US'],western:['A.US']},universe:{all:['A.US','B.SHG'],western:['A.US']}});
+  expect(s.observations['A.US']).toMatchObject({price:50,priceDate:'2026-10-01',buyPrice:75,methodVersion:'3.5.0'});
   expect(s.observations['A.US'].expectedReturn).toBeCloseTo(.17,12);
  });
  it('writes once, accepts identical reordered content, and keeps the first record of a day when later content differs',()=>{

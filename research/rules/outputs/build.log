@@ -1,0 +1,36 @@
+
+> superinvestors@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.3.3 (webpack)
+✓ Running next.config.ts took 170ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 40s
+  Running TypeScript ...
+
+<--- Last few GCs --->
+
+[2679540:0x3adf5000]    20960 ms: Mark-Compact 1020.7 (1043.7) -> 1019.4 (1044.5) MB, pooled: 1 MB, 506.01 / 0.00 ms  (average mu = 0.110, current mu = 0.020) allocation failure; scavenge might not succeed
+[2679540:0x3adf5000]    21437 ms: Mark-Compact (reduce) 1021.6 (1044.5) -> 1020.8 (1042.7) MB, pooled: 0 MB, 398.87 / 0.00 ms  (+ 11.0 ms in 0 steps since start of marking, biggest step 0.0 ms, walltime since start of marking 425 ms) (average mu = 0.125,
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
+----- Native stack trace -----
+
+ 1: 0xe46bbe node::OOMErrorHandler(char const*, v8::OOMDetails const&) [/usr/bin/node]
+ 2: 0x1244310 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/usr/bin/node]
+ 3: 0x12445e7 v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/usr/bin/node]
+ 4: 0x14734f5  [/usr/bin/node]
+ 5: 0x148cd89 v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/usr/bin/node]
+ 6: 0x1461488 v8::internal::HeapAllocator::AllocateRawWithLightRetrySlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/usr/bin/node]
+ 7: 0x14623b5 v8::internal::HeapAllocator::AllocateRawWithRetryOrFailSlowPath(int, v8::internal::AllocationType, v8::internal::AllocationOrigin, v8::internal::AllocationAlignment) [/usr/bin/node]
+ 8: 0x143a6de v8::internal::Factory::AllocateRaw(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [/usr/bin/node]
+ 9: 0x1428a6a v8::internal::FactoryBase<v8::internal::Factory>::AllocateRawArray(int, v8::internal::AllocationType, v8::internal::AllocationAlignment) [/usr/bin/node]
+10: 0x1428bc6 v8::internal::FactoryBase<v8::internal::Factory>::NewFixedArrayWithFiller(v8::internal::Handle<v8::internal::Map>, int, v8::internal::Handle<v8::internal::HeapObject>, v8::internal::AllocationType) [/usr/bin/node]
+11: 0x175d067 v8::internal::OrderedHashTable<v8::internal::OrderedHashMap, 2>::Allocate(v8::internal::Isolate*, int, v8::internal::AllocationType) [/usr/bin/node]
+12: 0x175d0f2 v8::internal::OrderedHashTable<v8::internal::OrderedHashMap, 2>::Rehash(v8::internal::Isolate*, v8::internal::Handle<v8::internal::OrderedHashMap>, int) [/usr/bin/node]
+13: 0x1892dd6 v8::internal::Runtime_MapGrow(int, unsigned long*, v8::internal::Isolate*) [/usr/bin/node]
+14: 0x1dfdaf6  [/usr/bin/node]
+Failed to type check.

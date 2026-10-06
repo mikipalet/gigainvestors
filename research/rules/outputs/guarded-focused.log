@@ -1,0 +1,40 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+
+ ❯ tests/unit/value/normalize.test.ts (8 tests | 1 failed) 5156ms
+   ✓ EODHD annual normalization > normalizes KO in absolute units with positive spending and ascending fiscal years 67ms
+   ✓ EODHD annual normalization > classifies JPM as a bank without requiring gross profit 24ms
+   ✓ EODHD annual normalization > preserves the reporting currency for fixture 0 29ms
+   ✓ EODHD annual normalization > preserves the reporting currency for fixture 1 22ms
+   ✓ EODHD annual normalization > preserves nulls, honors fallback fields, and matches shares by year instead of object key 1ms
+   × persists raw data, merges company metadata and refreshes on every rolling pass, including when forced 5009ms
+     → Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+   ✓ does not reset classification when the response has no sector or industry 1ms
+   ✓ maps the reported balance identity and normalizes zero share sources to null 1ms
+ ✓ tests/unit/value/calibration-round-1.test.ts (40 tests) 60ms
+ ✓ tests/unit/value/tests.test.ts (36 tests) 58ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/unit/value/normalize.test.ts:48:1
+     46| });
+     47|
+     48| it("persists raw data, merges company metadata and refreshes on every …
+       | ^
+     49|   const { mkdirSync, mkdtempSync, rmSync } = await import("node:fs");
+     50|   const { tmpdir } = await import("node:os");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 83 passed (84)
+   Start at  09:43:01
+   Duration  7.37s (transform 1.13s, setup 0ms, collect 1.12s, tests 5.27s, environment 1ms, prepare 267ms)

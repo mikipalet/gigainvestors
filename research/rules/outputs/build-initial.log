@@ -1,0 +1,9 @@
+
+> superinvestors@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.3.3 (webpack)
+✓ Running next.config.ts took 166ms
+
+  Creating an optimized production build ...
+Next.js build worker exited with code: null and signal: SIGTERM

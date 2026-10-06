@@ -1,0 +1,5277 @@
+[
+  {
+    "id": "000786.SHE",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "000938.SHE",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "001800.KO",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "002001.SHE",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "002007.SHE",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "002475.SHE",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "002555.SHE",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "002821.SHE",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "005930.KO",
+    "variant": "combined",
+    "before": "FFPPP",
+    "after": "FPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "0288.HK",
+    "variant": "combined",
+    "before": "FFPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "FY2023 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "1093.HK",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "2057.HK",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "2313.HK",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "2327.TW",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "2382.HK",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "268280.KO",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "300316.SHE",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 9.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "300450.SHE",
+    "variant": "combined",
+    "before": "FPFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "FY2024 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "300750.SHE",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "300979.SHE",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "3659.JP",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "4452.JP",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "600362.SHG",
+    "variant": "combined",
+    "before": "FFPPF",
+    "after": "PFPPF",
+    "reasons": {
+      "understandable": [
+        "FY2020 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "600436.SHG",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "601225.SHG",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 17.5pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "601799.SHG",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "601888.SHG",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "603288.SHG",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "603986.SHG",
+    "variant": "combined",
+    "before": "FFPPP",
+    "after": "FPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "6273.JP",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "688036.SHG",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 16.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "7309.JP",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "7974.JP",
+    "variant": "combined",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 12.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "A2A.MI",
+    "variant": "combined",
+    "before": "FFFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "A2M.AU",
+    "variant": "combined",
+    "before": "FFPPP",
+    "after": "FPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "ABBV.US",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "ABI.BR",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "ADI.US",
+    "variant": "combined",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ARB.AU",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 26.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ATE.PA",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 9.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "BABA.US",
+    "variant": "combined",
+    "before": "FFFFP",
+    "after": "FPFFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "BAH.US",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 32.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "BCG.LSE",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "BEIJ-B.ST",
+    "variant": "combined",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 21.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "BF-A.US",
+    "variant": "combined",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "BKG.LSE",
+    "variant": "combined",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "BLK.US",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "BNZL.LSE",
+    "variant": "combined",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "BRG.AU",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "BSY.US",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "CARR.US",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CBRE.US",
+    "variant": "combined",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CDA.AU",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "CGNX.US",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CHH.US",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CI.US",
+    "variant": "combined",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CIGI.US",
+    "variant": "combined",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 6.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CLX.US",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "CNA.LSE",
+    "variant": "combined",
+    "before": "FFPFP",
+    "after": "FPPFP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "CNS.US",
+    "variant": "combined",
+    "before": "PPFFF",
+    "after": "PFFFF",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CPAY.US",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 9.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CPB.US",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CPU.AU",
+    "variant": "combined",
+    "before": "FFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "CR.US",
+    "variant": "combined",
+    "before": "FPPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "CRL.US",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CSL.AU",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "DEMANT.CO",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "DIA.MI",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "DOL.TO",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "DSV.CO",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "DSY.PA",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "EBAY.US",
+    "variant": "combined",
+    "before": "PFPFF",
+    "after": "PPPFF",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "EBO.AU",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "EDEN.PA",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "EFX.US",
+    "variant": "combined",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 12.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ELG.XETRA",
+    "variant": "combined",
+    "before": "FFPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "FY2020 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "ELI.BR",
+    "variant": "combined",
+    "before": "FFFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "EMBC.US",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 7.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "EME.US",
+    "variant": "combined",
+    "before": "FPPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "FY2020 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "EMSN.SW",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 7.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "EN.PA",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 48.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "EQT.ST",
+    "variant": "combined",
+    "before": "FFPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "FY2023 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "EXPN.LSE",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "FDJU.PA",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 7.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "FFIV.US",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "FMS.US",
+    "variant": "combined",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "FPH.AU",
+    "variant": "combined",
+    "before": "FFFPP",
+    "after": "FPFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "FSG.LSE",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "FSV.TO",
+    "variant": "combined",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "GD.US",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "GEBN.SW",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 29.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "GMAB.CO",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "GNS.LSE",
+    "variant": "combined",
+    "before": "FFPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "FY2024 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "GPGI.US",
+    "variant": "combined",
+    "before": "FPFUP",
+    "after": "FFFUP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 4.5pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "HIK.LSE",
+    "variant": "combined",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "HSY.US",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 12.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "HYPE3.SA",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 7.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "IEX.US",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "IMCD.AS",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 13.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "INMD.US",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "INTU.US",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "IPN.PA",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 11.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "IPS.PA",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 45.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "IQV.US",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ISS.CO",
+    "variant": "combined",
+    "before": "FPPFP",
+    "after": "FFPFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 86.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "JBS.US",
+    "variant": "combined",
+    "before": "FFUUP",
+    "after": "FPUUP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "KBX.XETRA",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 29.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "KCR.HE",
+    "variant": "combined",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 31.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "KFY.US",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 79.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "KGF.LSE",
+    "variant": "combined",
+    "before": "FFFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "FY2025 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "KNIN.SW",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 4.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "KSPI.US",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 4.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "LAMR.US",
+    "variant": "combined",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 27.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "LDO.MI",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "LEA.US",
+    "variant": "combined",
+    "before": "FFFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold"
+      ]
+    }
+  },
+  {
+    "id": "LH.US",
+    "variant": "combined",
+    "before": "FFPFP",
+    "after": "FPPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "LOTB.BR",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 10.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "LOV.AU",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 40.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "LPX.US",
+    "variant": "combined",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.5pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "LSTR.US",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 7.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "MELE.BR",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "MGAM.LSE",
+    "variant": "combined",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "MMT.PA",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 12.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "MNST.US",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "MONY.LSE",
+    "variant": "combined",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "MRK.US",
+    "variant": "combined",
+    "before": "FPPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "FY2023 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "MTS.AU",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "MYCR.ST",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "NCK.AU",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 25.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "NEM.XETRA",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "NVDA.US",
+    "variant": "combined",
+    "before": "FFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "FY2023 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "NWH.AU",
+    "variant": "combined",
+    "before": "FFPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "FY2025 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "Recent gross margin fell 16.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ORNBV.HE",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "PAYC.US",
+    "variant": "combined",
+    "before": "PPFPF",
+    "after": "PFFPF",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "PFE.US",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "PMV.AU",
+    "variant": "combined",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 34.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "POST.VI",
+    "variant": "combined",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "PRDO.US",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 4.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "PRIO3.SA",
+    "variant": "combined",
+    "before": "FPFFP",
+    "after": "FFFFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 21.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "PUIG.MC",
+    "variant": "combined",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 34.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "QCOM.US",
+    "variant": "combined",
+    "before": "FFFPP",
+    "after": "FPFPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "RADL3.SA",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "RCI-B.TO",
+    "variant": "combined",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 17.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "REYN.US",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "RHM.XETRA",
+    "variant": "combined",
+    "before": "FFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "FY2020 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "RMR.US",
+    "variant": "combined",
+    "before": "FFFFP",
+    "after": "FPFFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "ROK.US",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "RSG.US",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "RUI.PA",
+    "variant": "combined",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 9.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "RUSHA.US",
+    "variant": "combined",
+    "before": "FFFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "FY2020 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "RYAN.US",
+    "variant": "combined",
+    "before": "FPPFP",
+    "after": "FFPFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 9.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "SCMN.SW",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 24.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "SGU.US",
+    "variant": "combined",
+    "before": "FFPFP",
+    "after": "FPPFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "SHL.AU",
+    "variant": "combined",
+    "before": "FPPFP",
+    "after": "FFPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "SIKA.SW",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "SIMO.US",
+    "variant": "combined",
+    "before": "FFFPP",
+    "after": "FPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "SMTC.US",
+    "variant": "combined",
+    "before": "FPFFF",
+    "after": "FFFFF",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "SPSN.SW",
+    "variant": "combined",
+    "before": "FFFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "FY2023 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "SPX.LSE",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.5pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "STMN.SW",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "STNE.US",
+    "variant": "combined",
+    "before": "FFFFP",
+    "after": "FPFFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "STX.US",
+    "variant": "combined",
+    "before": "FFPPP",
+    "after": "FPPPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "SUN.SW",
+    "variant": "combined",
+    "before": "FPPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "SVS.LSE",
+    "variant": "combined",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 4.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "SWK.US",
+    "variant": "combined",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "SWKS.US",
+    "variant": "combined",
+    "before": "PPFFF",
+    "after": "PFFFF",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TEP.PA",
+    "variant": "combined",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 19.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TGS.US",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TGT.US",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TIETO.HE",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 9.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TMO.US",
+    "variant": "combined",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TMUS.US",
+    "variant": "combined",
+    "before": "FFPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "Recent gross margin fell 9.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TPL.US",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TRI.PA",
+    "variant": "combined",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 23.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TRI.TO",
+    "variant": "combined",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TROW.US",
+    "variant": "combined",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TXN.US",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "UMG.AS",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "UNH.US",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "UNIT.US",
+    "variant": "combined",
+    "before": "FPPFP",
+    "after": "FFPFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Recent gross margin fell 49.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "UPS.US",
+    "variant": "combined",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "UTHR.US",
+    "variant": "combined",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "VIS.MC",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 31.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "VIVA3.SA",
+    "variant": "combined",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "VWS.CO",
+    "variant": "combined",
+    "before": "FFFPP",
+    "after": "FPFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "WRT1V.HE",
+    "variant": "combined",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 23.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "WTC.AU",
+    "variant": "combined",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 9.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "WU.US",
+    "variant": "combined",
+    "before": "FPFFP",
+    "after": "FFFFP",
+    "reasons": {
+      "understandable": [
+        "7 revenue declines in the last 10 years",
+        "more than 5 revenue declines in ten years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 11.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ZD.US",
+    "variant": "combined",
+    "before": "FPFFP",
+    "after": "FFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 14.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ZM.US",
+    "variant": "combined",
+    "before": "FFFPP",
+    "after": "FPFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "000786.SHE",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "000938.SHE",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "001800.KO",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "002001.SHE",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "002007.SHE",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "002475.SHE",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "002555.SHE",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "002821.SHE",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "005930.KO",
+    "variant": "recent_typical_margin",
+    "before": "FFPPP",
+    "after": "FPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "1093.HK",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "2057.HK",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "2313.HK",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "2327.TW",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "2382.HK",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "268280.KO",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "300316.SHE",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 9.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "300750.SHE",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "300979.SHE",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "3659.JP",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "4452.JP",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "600436.SHG",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "601225.SHG",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 17.5pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "601799.SHG",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "601888.SHG",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "603288.SHG",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "603986.SHG",
+    "variant": "recent_typical_margin",
+    "before": "FFPPP",
+    "after": "FPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "6273.JP",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "688036.SHG",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 16.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "7309.JP",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "7974.JP",
+    "variant": "recent_typical_margin",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 12.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "A2M.AU",
+    "variant": "recent_typical_margin",
+    "before": "FFPPP",
+    "after": "FPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "ABBV.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "ABI.BR",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "ADI.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ARB.AU",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 26.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ATE.PA",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 9.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "BABA.US",
+    "variant": "recent_typical_margin",
+    "before": "FFFFP",
+    "after": "FPFFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "BAH.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 32.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "BCG.LSE",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "BEIJ-B.ST",
+    "variant": "recent_typical_margin",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 21.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "BF-A.US",
+    "variant": "recent_typical_margin",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "BKG.LSE",
+    "variant": "recent_typical_margin",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "BLK.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "BNZL.LSE",
+    "variant": "recent_typical_margin",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "BRG.AU",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "BSY.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "CARR.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CBRE.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CDA.AU",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "CGNX.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CHH.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CI.US",
+    "variant": "recent_typical_margin",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CIGI.US",
+    "variant": "recent_typical_margin",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 6.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CLX.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "CNA.LSE",
+    "variant": "recent_typical_margin",
+    "before": "FFPFP",
+    "after": "FPPFP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "CNS.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFFF",
+    "after": "PFFFF",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CPAY.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 9.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CPB.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CPU.AU",
+    "variant": "recent_typical_margin",
+    "before": "FFPPP",
+    "after": "FPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "CRL.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CSL.AU",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "DEMANT.CO",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "DIA.MI",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "DOL.TO",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "DSV.CO",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "DSY.PA",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "EBAY.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPFF",
+    "after": "PPPFF",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "EBO.AU",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "EDEN.PA",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "EFX.US",
+    "variant": "recent_typical_margin",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 12.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "EMBC.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 7.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "EMSN.SW",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 7.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "EN.PA",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 48.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "EXPN.LSE",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "FDJU.PA",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 7.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "FFIV.US",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "FMS.US",
+    "variant": "recent_typical_margin",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "FPH.AU",
+    "variant": "recent_typical_margin",
+    "before": "FFFPP",
+    "after": "FPFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "FSG.LSE",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "FSV.TO",
+    "variant": "recent_typical_margin",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "GD.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "GEBN.SW",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 29.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "GMAB.CO",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "GPGI.US",
+    "variant": "recent_typical_margin",
+    "before": "FPFUP",
+    "after": "FFFUP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 4.5pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "HIK.LSE",
+    "variant": "recent_typical_margin",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "HSY.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 12.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "HYPE3.SA",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 7.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "IEX.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "IMCD.AS",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 13.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "INMD.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "INTU.US",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "IPN.PA",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 11.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "IPS.PA",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 45.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "IQV.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ISS.CO",
+    "variant": "recent_typical_margin",
+    "before": "FPPFP",
+    "after": "FFPFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 86.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "JBS.US",
+    "variant": "recent_typical_margin",
+    "before": "FFUUP",
+    "after": "FPUUP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "KBX.XETRA",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 29.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "KCR.HE",
+    "variant": "recent_typical_margin",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 31.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "KFY.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 79.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "KNIN.SW",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 4.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "KSPI.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 4.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "LAMR.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 27.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "LDO.MI",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "LH.US",
+    "variant": "recent_typical_margin",
+    "before": "FFPFP",
+    "after": "FPPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "LOTB.BR",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 10.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "LOV.AU",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 40.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "LPX.US",
+    "variant": "recent_typical_margin",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.5pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "LSTR.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 7.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "MELE.BR",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "MGAM.LSE",
+    "variant": "recent_typical_margin",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "MMT.PA",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 12.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "MNST.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "MONY.LSE",
+    "variant": "recent_typical_margin",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "MTS.AU",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "MYCR.ST",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "NCK.AU",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 25.3pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "NEM.XETRA",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "NVDA.US",
+    "variant": "recent_typical_margin",
+    "before": "FFPPP",
+    "after": "FPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "ORNBV.HE",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "PAYC.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFPF",
+    "after": "PFFPF",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "PFE.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "PMV.AU",
+    "variant": "recent_typical_margin",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 34.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "POST.VI",
+    "variant": "recent_typical_margin",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "PRDO.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 4.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "PRIO3.SA",
+    "variant": "recent_typical_margin",
+    "before": "FPFFP",
+    "after": "FFFFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 21.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "PUIG.MC",
+    "variant": "recent_typical_margin",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 34.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "QCOM.US",
+    "variant": "recent_typical_margin",
+    "before": "FFFPP",
+    "after": "FPFPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "RADL3.SA",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "RCI-B.TO",
+    "variant": "recent_typical_margin",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 17.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "REYN.US",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "RHM.XETRA",
+    "variant": "recent_typical_margin",
+    "before": "FFFFP",
+    "after": "FPFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "RMR.US",
+    "variant": "recent_typical_margin",
+    "before": "FFFFP",
+    "after": "FPFFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "ROK.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "RSG.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "RUI.PA",
+    "variant": "recent_typical_margin",
+    "before": "PPFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 9.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "RYAN.US",
+    "variant": "recent_typical_margin",
+    "before": "FPPFP",
+    "after": "FFPFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 9.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "SCMN.SW",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 24.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "SGU.US",
+    "variant": "recent_typical_margin",
+    "before": "FFPFP",
+    "after": "FPPFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "SHL.AU",
+    "variant": "recent_typical_margin",
+    "before": "FPPFP",
+    "after": "FFPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "SIKA.SW",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "SIMO.US",
+    "variant": "recent_typical_margin",
+    "before": "FFFPP",
+    "after": "FPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "SMTC.US",
+    "variant": "recent_typical_margin",
+    "before": "FPFFF",
+    "after": "FFFFF",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)",
+        "more than 2 net loss years",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "SPX.LSE",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.5pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "STMN.SW",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "STNE.US",
+    "variant": "recent_typical_margin",
+    "before": "FFFFP",
+    "after": "FPFFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "STX.US",
+    "variant": "recent_typical_margin",
+    "before": "FFPPP",
+    "after": "FPPPP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "SVS.LSE",
+    "variant": "recent_typical_margin",
+    "before": "FPFPP",
+    "after": "FFFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 4.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "SWK.US",
+    "variant": "recent_typical_margin",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "SWKS.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFFF",
+    "after": "PFFFF",
+    "reasons": {
+      "understandable": [
+        "5 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TEP.PA",
+    "variant": "recent_typical_margin",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 19.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TGS.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TGT.US",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TIETO.HE",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 9.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TMO.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TPL.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 8.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TRI.PA",
+    "variant": "recent_typical_margin",
+    "before": "PPPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 23.4pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "TRI.TO",
+    "variant": "recent_typical_margin",
+    "before": "PFFPP",
+    "after": "PPFPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TROW.US",
+    "variant": "recent_typical_margin",
+    "before": "PFPFP",
+    "after": "PPPFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TXN.US",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.9pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "UMG.AS",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 6.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "UNH.US",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 5.0pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "UNIT.US",
+    "variant": "recent_typical_margin",
+    "before": "FPPFP",
+    "after": "FFPFP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "more than 2 net loss years"
+      ],
+      "moat": [
+        "Recent gross margin fell 49.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "UPS.US",
+    "variant": "recent_typical_margin",
+    "before": "PFFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "UTHR.US",
+    "variant": "recent_typical_margin",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.2pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "VIS.MC",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 31.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "VIVA3.SA",
+    "variant": "recent_typical_margin",
+    "before": "PPFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Recent gross margin fell 4.1pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "VWS.CO",
+    "variant": "recent_typical_margin",
+    "before": "FFFPP",
+    "after": "FPFPP",
+    "reasons": {
+      "understandable": [
+        "2 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "WRT1V.HE",
+    "variant": "recent_typical_margin",
+    "before": "FPPPP",
+    "after": "FFPPP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 23.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "WTC.AU",
+    "variant": "recent_typical_margin",
+    "before": "PPPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 9.8pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "WU.US",
+    "variant": "recent_typical_margin",
+    "before": "FPFFP",
+    "after": "FFFFP",
+    "reasons": {
+      "understandable": [
+        "7 revenue declines in the last 10 years",
+        "more than 5 revenue declines in ten years"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%.",
+        "Recent gross margin fell 11.7pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ZD.US",
+    "variant": "recent_typical_margin",
+    "before": "FPFFP",
+    "after": "FFFFP",
+    "reasons": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Recent gross margin fell 14.6pp below the typical margin (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "ZM.US",
+    "variant": "recent_typical_margin",
+    "before": "FFFPP",
+    "after": "FPFPP",
+    "reasons": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)",
+        "operating margin variation exceeds 0.35"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ]
+    }
+  },
+  {
+    "id": "0288.HK",
+    "variant": "recovered_dip",
+    "before": "FFPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "FY2023 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "FY2023 gross margin fell 4.2pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "300450.SHE",
+    "variant": "recovered_dip",
+    "before": "FPFFP",
+    "after": "PPFFP",
+    "reasons": {
+      "understandable": [
+        "FY2024 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "600362.SHG",
+    "variant": "recovered_dip",
+    "before": "FFPPF",
+    "after": "PFPPF",
+    "reasons": {
+      "understandable": [
+        "FY2020 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "A2A.MI",
+    "variant": "recovered_dip",
+    "before": "FFFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "FY2023 gross margin fell 8.6pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CPU.AU",
+    "variant": "recovered_dip",
+    "before": "FFPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "FY2023 gross margin fell 6.6pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "CR.US",
+    "variant": "recovered_dip",
+    "before": "FPPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "ELG.XETRA",
+    "variant": "recovered_dip",
+    "before": "FFPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "FY2020 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "ELI.BR",
+    "variant": "recovered_dip",
+    "before": "FFFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "EME.US",
+    "variant": "recovered_dip",
+    "before": "FPPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "FY2020 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "EQT.ST",
+    "variant": "recovered_dip",
+    "before": "FFPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "FY2023 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "GNS.LSE",
+    "variant": "recovered_dip",
+    "before": "FFPFP",
+    "after": "PFPFP",
+    "reasons": {
+      "understandable": [
+        "FY2024 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "KGF.LSE",
+    "variant": "recovered_dip",
+    "before": "FFFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "FY2025 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "LEA.US",
+    "variant": "recovered_dip",
+    "before": "FFFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold"
+      ]
+    }
+  },
+  {
+    "id": "MRK.US",
+    "variant": "recovered_dip",
+    "before": "FPPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "FY2023 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "NVDA.US",
+    "variant": "recovered_dip",
+    "before": "FFPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "FY2023 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "FY2023 gross margin fell 4.7pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "NWH.AU",
+    "variant": "recovered_dip",
+    "before": "FFPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "FY2025 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC worst years below threshold (more than 1 bad year allowed)",
+        "FY2023 gross margin fell 20.3pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "RHM.XETRA",
+    "variant": "recovered_dip",
+    "before": "FFFFP",
+    "after": "PFFFP",
+    "reasons": {
+      "understandable": [
+        "FY2020 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "FY2023 gross margin fell 28.4pp versus the FY2019/FY2020 mean (limit 4pp)"
+      ]
+    }
+  },
+  {
+    "id": "RUSHA.US",
+    "variant": "recovered_dip",
+    "before": "FFFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "FY2020 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "SPSN.SW",
+    "variant": "recovered_dip",
+    "before": "FFFPP",
+    "after": "PFFPP",
+    "reasons": {
+      "understandable": [
+        "FY2023 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "4 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  },
+  {
+    "id": "SUN.SW",
+    "variant": "recovered_dip",
+    "before": "FPPPP",
+    "after": "PPPPP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": []
+    }
+  },
+  {
+    "id": "TMUS.US",
+    "variant": "recovered_dip",
+    "before": "FFPPP",
+    "after": "PFPPP",
+    "reasons": {
+      "understandable": [
+        "FY2022 operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.",
+        "2 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "ROIC median below threshold",
+        "ROIC worst years below threshold (more than 1 bad year allowed)"
+      ]
+    }
+  }
+]

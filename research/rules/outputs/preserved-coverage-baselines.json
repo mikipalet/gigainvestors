@@ -1,0 +1,65 @@
+[
+  {
+    "id": "ASAI3.SA",
+    "alias": "ASAIY.US",
+    "problems": [
+      "full-filing"
+    ],
+    "unchangedNumeric": true,
+    "reason": "The input corpus already differs from the reviewed coverage baseline; preserve the exact released dossier in both local proof arms."
+  },
+  {
+    "id": "ABI.BR",
+    "alias": "BUDFF.US",
+    "problems": [
+      "full-filing"
+    ],
+    "unchangedNumeric": false,
+    "reason": "The input corpus already differs from the reviewed coverage baseline; preserve the exact released dossier in both local proof arms."
+  },
+  {
+    "id": "DGE.LSE",
+    "alias": "DGEAF.US",
+    "problems": [
+      "full-filing"
+    ],
+    "unchangedNumeric": true,
+    "reason": "The input corpus already differs from the reviewed coverage baseline; preserve the exact released dossier in both local proof arms."
+  },
+  {
+    "id": "RI.PA",
+    "alias": "PDRDF.US",
+    "problems": [
+      "full-filing"
+    ],
+    "unchangedNumeric": true,
+    "reason": "The input corpus already differs from the reviewed coverage baseline; preserve the exact released dossier in both local proof arms."
+  },
+  {
+    "id": "RI.PA",
+    "alias": "PRNDY.US",
+    "problems": [
+      "full-filing"
+    ],
+    "unchangedNumeric": true,
+    "reason": "The input corpus already differs from the reviewed coverage baseline; preserve the exact released dossier in both local proof arms."
+  },
+  {
+    "id": "RKT.LSE",
+    "alias": "RBGPF.US",
+    "problems": [
+      "full-filing"
+    ],
+    "unchangedNumeric": true,
+    "reason": "The input corpus already differs from the reviewed coverage baseline; preserve the exact released dossier in both local proof arms."
+  },
+  {
+    "id": "DRREDDY.NSE",
+    "alias": "RDY.US",
+    "problems": [
+      "full-filing"
+    ],
+    "unchangedNumeric": true,
+    "reason": "The input corpus already differs from the reviewed coverage baseline; preserve the exact released dossier in both local proof arms."
+  }
+]

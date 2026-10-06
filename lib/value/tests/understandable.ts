@@ -34,16 +34,31 @@ export function run({ years }: NumericInput) {
     && fit(margins.slice(0, half)).slope > 0 && fit(margins.slice(half)).slope > 0
     && margins[margins.length - 1] >= margins[margins.length - 2];
   const improving = monotone || trendConsistent;
+  // Hold one fully recovered interior dip at its preceding level, without
+  // changing observed margins, chronology, raw risk or price requirements.
+  let recoveredCv: number | null = null, recoveredFy: number | null = null;
+  if (complete && cv !== null && cv > T.understandable.maxOpMarginCv && !improving) {
+    for (let i = 1; i < margins.length - 1; i++) {
+      if (margins[i] >= margins[i - 1] || margins.slice(i + 1).some(x => x < margins[i - 1])) continue;
+      const adjusted = margins.map((x, j) => j === i ? margins[i - 1] : x);
+      const level = mean(adjusted)!;
+      const adjustedCv = Math.sqrt(mean(adjusted.map(x => (x - level) ** 2))!) / level;
+      if (adjustedCv <= T.understandable.maxOpMarginCv) {
+        recoveredCv = adjustedCv; recoveredFy = ys[i].fy; break;
+      }
+    }
+  }
+  const recovered = recoveredFy !== null;
   const exception = cv !== null && cv > T.understandable.maxOpMarginCv && improving;
-  return outcome({ key: "understandable", metrics: { historyYears: ys.length, revenueDeclines: declines, lossYears: losses, opMarginCv: cv, ...(exception ? { opMarginImproving: 1, opMarginTrendR2: trend!.r2, opMarginResidualCv: trend!.residualCv } : {}) },
+  return outcome({ key: "understandable", metrics: { historyYears: ys.length, revenueDeclines: declines, lossYears: losses, opMarginCv: cv, ...(recovered ? { opMarginRecoveredDip: 1, opMarginRecoveredCv: recoveredCv, opMarginRecoveredFy: recoveredFy } : {}), ...(exception ? { opMarginImproving: 1, opMarginTrendR2: trend!.r2, opMarginResidualCv: trend!.residualCv } : {}) },
     series: { revenue: ys.map(y => [y.fy, y.revenue]), operatingMargin: ys.map(y => [y.fy, opMargin(y)]), netIncome: ys.map(y => [y.fy, y.netIncome]) },
-    reasons: [...(exception ? [monotone ? "Positive, nondecreasing operating margins with no net loss years; sustained improvement passes the margin-variation check" : "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check"] : []), ...(declines === null ? [] : [`${declines} revenue decline${declines === 1 ? '' : 's'} in the last ${T.understandable.years} years${declines <= T.understandable.maxRevenueDeclines ? " (informational)" : ""}`])],
+    reasons: [...(recovered ? [`FY${recoveredFy} operating-margin dip fully recovered the next year and stayed recovered; holding that year at the preceding margin meets the existing variation limit. Raw variation still determines the price discount.`] : []), ...(exception ? [monotone ? "Positive, nondecreasing operating margins with no net loss years; sustained improvement passes the margin-variation check" : "Positive operating margins follow a sustained upward trend (at least 90% explained, low residual variation), with no net losses or latest decline; improvement passes the margin-variation check"] : []), ...(declines === null ? [] : [`${declines} revenue decline${declines === 1 ? '' : 's'} in the last ${T.understandable.years} years${declines <= T.understandable.maxRevenueDeclines ? " (informational)" : ""}`])],
     checks: [
       { pass: ys.length >= T.minYears, data: "history length", reason: `only ${ys.length} years of history` },
       { pass: declines === null ? null : declines <= T.understandable.maxRevenueDeclines, data: "revenue declines", reason: `more than ${T.understandable.maxRevenueDeclines} revenue declines in ten years` },
       { core: true, pass: losses === null ? null : losses <= T.understandable.maxLossYears, data: "net loss years", reason: `more than ${T.understandable.maxLossYears} net loss years` },
       { core: true, pass: margins.length < 5 || average === null ? null : average >= 0, data: "average operating margin", reason: "negative average operating margin" },
-      { core: average !== null && average > 0, pass: cv === null ? null : cv <= T.understandable.maxOpMarginCv || improving, data: "operating margin variation", reason: `operating margin variation exceeds ${T.understandable.maxOpMarginCv}` },
+      { core: average !== null && average > 0, pass: cv === null ? null : cv <= T.understandable.maxOpMarginCv || improving || recovered, data: "operating margin variation", reason: `operating margin variation exceeds ${T.understandable.maxOpMarginCv}` },
     ],
   });
 }

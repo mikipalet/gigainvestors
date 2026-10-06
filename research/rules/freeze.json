@@ -1,0 +1,10 @@
+{
+  "sealed_at": "2026-10-06T09:15:23.920737+00:00",
+  "files": {
+    "protocol.json": "7238d8542e234fd38ff81e94d3d5c579d9f34645d4647892f6597fdc238426d6",
+    "phase-1-report.md": "b81423280228e4815027bec1a89633ee1457b4bb531eda0887d2eb323b399a18",
+    "audit-inventory.md": "9fcd64a4804dd54d6cfc53a22b50dc1d3298c5f17f8f6d00d99a4fcc6e100592"
+  },
+  "changelog_sha256": "0d067842124722803d05805e10dca3b08749b07875558d2337488502a7488421",
+  "candidate_returns_opened": false
+}

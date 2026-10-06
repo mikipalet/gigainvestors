@@ -1,0 +1,9 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ✓ tests/unit/value/nightly-history.test.ts (5 tests) 45ms
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  10:22:14
+   Duration  1.54s (transform 907ms, setup 0ms, collect 1.17s, tests 45ms, environment 0ms, prepare 86ms)

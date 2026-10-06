@@ -1,0 +1,32 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ❯ tests/unit/value/nightly-history.test.ts (5 tests | 1 failed) 54ms
+   ✓ never replaces complete quarterly history with a later annual-only run 11ms
+   ✓ does not erase enriched historical metadata with a null current-universe overlay 6ms
+   ✓ recomputes both market summaries from fresh outcomes without changing predictions 5ms
+   ✓ retains empty released periods and their history index even when no rows are missing 11ms
+   × retains a retired listing identity even when its prediction row is already present 20ms
+     → Historical identity missing: RACE.MI
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/nightly-history.test.ts > retains a retired listing identity even when its prediction row is already present
+Error: Historical identity missing: RACE.MI
+ ❯ lib/value/browser-view.ts:33:26
+     31|   return snapshots.filter(row => row[1]==='PPPPP' || /^P*FP*$/.test(ro…
+     32|     const identity = byId.get(id);
+     33|     if (!identity) throw new Error(`Historical identity missing: ${id}…
+       |                          ^
+     34|     const {n,c,s,k,mc,cur,w,lg,exchange,nameEn,nameLocal,h,methodVersi…
+     35|     // Presentation-only ratios: eight significant digits exceed the v…
+ ❯ historyView lib/value/browser-view.ts:31:78
+ ❯ tests/unit/value/nightly-history.test.ts:59:9
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  10:21:55
+   Duration  1.48s (transform 786ms, setup 0ms, collect 1.09s, tests 54ms, environment 0ms, prepare 75ms)

@@ -1,0 +1,40 @@
+US train baseline 6.825 -52.8333 missing 0
+US train recovered_dip 6.825 -52.8333 missing 0
+US train recent_typical_margin 7.6813 -50.8018 missing 0
+US train combined 7.6813 -50.8018 missing 0
+US later baseline 19.0234 -38.1425 missing 0
+US later recovered_dip 19.0234 -38.1425 missing 0
+US later recent_typical_margin 19.7013 -38.1425 missing 0
+US later combined 19.7013 -38.1425 missing 0
+Western_nonUS train baseline -6.3629 -73.6566 missing 2
+Western_nonUS train recovered_dip -6.3629 -73.6566 missing 2
+Western_nonUS train recent_typical_margin -3.4142 -67.57 missing 2
+Western_nonUS train combined -3.4142 -67.57 missing 2
+Western_nonUS later baseline 14.2036 -51.6814 missing 0
+Western_nonUS later recovered_dip 14.2902 -51.6814 missing 0
+Western_nonUS later recent_typical_margin 14.4186 -51.6814 missing 0
+Western_nonUS later combined 14.5357 -51.6814 missing 0
+all_nonUS train baseline -5.8463 -71.8204 missing 37
+all_nonUS train recovered_dip -5.8463 -71.8204 missing 37
+all_nonUS train recent_typical_margin -2.8738 -65.3096 missing 35
+all_nonUS train combined -2.8738 -65.3096 missing 35
+all_nonUS later baseline 9.4793 -32.541 missing 348
+all_nonUS later recovered_dip 9.5427 -32.541 missing 348
+all_nonUS later recent_typical_margin 9.3197 -32.541 missing 329
+all_nonUS later combined 9.396 -32.541 missing 329
+all_markets train baseline 2.8463 -59.3883 missing 37
+all_markets train recovered_dip 2.8463 -59.3883 missing 37
+all_markets train recent_typical_margin 4.5131 -55.0239 missing 35
+all_markets train combined 4.5131 -55.0239 missing 35
+all_markets later baseline 12.0543 -32.8956 missing 348
+all_markets later recovered_dip 12.0989 -32.8956 missing 348
+all_markets later recent_typical_margin 12.0785 -32.8956 missing 329
+all_markets later combined 12.1292 -32.8956 missing 329
+{
+  "accepted": {
+    "recovered_dip": true,
+    "recent_typical_margin": true,
+    "combined": true
+  },
+  "required_failures": []
+}

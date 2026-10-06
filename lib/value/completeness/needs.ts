@@ -19,7 +19,7 @@ export function completionYears(f:Fundamentals,kind:Kind):Set<number>{
  need(latest,['ocf','sbc','netIncome']);
  if(kind==='operating'){
   need(latest,['totalAssets','receivables','revenue']);need(history.at(-2),['receivables','revenue']);
-  for(const fy of [2019,2020,2023]){const y=f.years.find(y=>y.fy===fy);if(!y||grossMargin(y)===null)needed.add(fy);}
+  for(const y of recent)if(grossMargin(y)===null)needed.add(y.fy);
  }
  return needed;
 }

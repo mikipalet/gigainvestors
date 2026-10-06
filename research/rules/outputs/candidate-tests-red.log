@@ -1,0 +1,78 @@
+
+> superinvestors@0.1.0 test
+> vitest run tests/unit/value/rules-candidates.test.ts --maxWorkers=1
+
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ❯ tests/unit/value/rules-candidates.test.ts (11 tests | 3 failed) 33ms
+   × admits one fully recovered dip while retaining raw risk and observed margins 24ms
+     → expected 'fail' to be 'pass' // Object.is equality
+   ✓ does not waive latest dip 1ms
+   ✓ does not waive partial recovery 0ms
+   ✓ does not waive repeat dip 0ms
+   ✓ does not waive net loss 0ms
+   ✓ does not waive negative margin 0ms
+   ✓ does not waive gap 0ms
+   ✓ does not waive missing margin 0ms
+   × ignores a recovered old gross-margin dip but rejects current deterioration 3ms
+     → expected 'fail' to be 'pass' // Object.is equality
+   × uses typical and recent margins on every historical calendar, including latest-three weakness 1ms
+     → expected 'pass' to be 'fail' // Object.is equality
+   ✓ retains the four-point boundary and leaves gapped optional history unknown 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/rules-candidates.test.ts > admits one fully recovered dip while retaining raw risk and observed margins
+AssertionError: expected 'fail' to be 'pass' // Object.is equality
+
+Expected: "pass"
+Received: "fail"
+
+ ❯ tests/unit/value/rules-candidates.test.ts:10:51
+      8| it('admits one fully recovered dip while retaining raw risk and observ…
+      9|  const ys=years(),b=baseline({years:ys,kind:'operating'}),c=understand…
+     10|  expect(b.numeric).toBe('fail');expect(c.numeric).toBe('pass');
+       |                                                   ^
+     11|  expect(c.metrics.opMarginCv).toBe(b.metrics.opMarginCv);expect(c.seri…
+     12|  expect(c.metrics.opMarginRecoveredDip).toBe(1);expect(c.metrics.opMar…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/unit/value/rules-candidates.test.ts > ignores a recovered old gross-margin dip but rejects current deterioration
+AssertionError: expected 'fail' to be 'pass' // Object.is equality
+
+Expected: "pass"
+Received: "fail"
+
+ ❯ tests/unit/value/rules-candidates.test.ts:29:54
+     27| it('ignores a recovered old gross-margin dip but rejects current deter…
+     28|  const good=gm([.60,.60,.60,.60,.60,.60,.60,.55,.70,.75]);
+     29|  expect(moat({years:good,kind:'operating'}).numeric).toBe('pass');
+       |                                                      ^
+     30|  good.at(-1)!.grossProfit=550;
+     31|  expect(moat({years:good,kind:'operating'}).numeric).toBe('fail');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/value/rules-candidates.test.ts > uses typical and recent margins on every historical calendar, including latest-three weakness
+AssertionError: expected 'pass' to be 'fail' // Object.is equality
+
+Expected: "fail"
+Received: "pass"
+
+ ❯ tests/unit/value/rules-candidates.test.ts:35:98
+     33| it('uses typical and recent margins on every historical calendar, incl…
+     34|  const xs=[.6,.6,.6,.6,.6,.6,.6,.5,.5,.65];
+     35|  for(const start of [2000,2016,2030])expect(moat({years:gm(xs,start),k…
+       |                                                                                                  ^
+     36| });
+     37| it('retains the four-point boundary and leaves gapped optional history…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 8 passed (11)
+   Start at  09:16:20
+   Duration  535ms (transform 154ms, setup 0ms, collect 170ms, tests 33ms, environment 0ms, prepare 89ms)

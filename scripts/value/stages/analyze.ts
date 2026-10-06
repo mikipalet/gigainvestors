@@ -1,5 +1,6 @@
 import {balanceSheetsFor,correctFinancialBalances} from '../../../lib/value/latest-balance';
 import {correctCachedAnnualSources,correctCachedTrailingSources} from '../../../lib/value/annual-source-corrections';
+import {METHOD_VERSION} from '../../../lib/value/method-version';
 import {publicBusiness} from '../../../lib/value/flags/public';
 import {inPublicationScope} from '../../../lib/value/held-universe';
 import {cachedQualityQuarters} from '../../../lib/value/cached-quality-quarters';
@@ -130,7 +131,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
           }, fundamentals, report, sections, priceHistory, priceHistoryPending, shareInputs,
           bondYieldBucket: localBondYield === null ? null : Math.round(localBondYield * 1000),
           qualityPeriods:fundamentals.qualityQuarters.filter(q=>q.filed<new Date().toISOString().slice(0,10)).map(q=>q.year.end),
-          memoInputs: 1, balanceSelection: 2, flags:readCorpusJson(`flags/${company.id}.json`), judgementTrust, judgement: readCorpusJson(`judgement/${company.id}.json`), questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
+          memoInputs: 1, method: METHOD_VERSION, balanceSelection: 2, flags:readCorpusJson(`flags/${company.id}.json`), judgementTrust, judgement: readCorpusJson(`judgement/${company.id}.json`), questions: QUESTIONS_VERSION, pipeline: PIPELINE_VERSION, thresholds: T, trust })).digest("hex");
         const file = `analysis/${company.id}.json`;
         const fingerprintFile = `analysis/fingerprints/${company.id}.json`;
         const prior = readCorpusJson<Analysis>(file);

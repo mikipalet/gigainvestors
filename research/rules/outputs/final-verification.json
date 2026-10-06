@@ -1,0 +1,91 @@
+{
+  "overall": "NOT",
+  "method": "3.5.0",
+  "units": {
+    "files_passed": 239,
+    "tests_passed": 2336,
+    "skipped": 1
+  },
+  "build": "PASS",
+  "frozen_numeric_ship_gates": "PASS",
+  "ordinary_publish": {
+    "baseline_exit": 1,
+    "candidate_exit": 1,
+    "final_error": "Publish invariant: invalid issuer alias RACE.US -> RACE.MI",
+    "copy_only_filing_holds": 6
+  },
+  "comparison": {
+    "exposed_company_quality_changes": 181,
+    "proposed_numeric_changes": 190,
+    "all_quality_gained": 24,
+    "all_quality_lost": 31,
+    "buys_gained": [
+      "001800.KO"
+    ],
+    "buys_lost": [
+      "000786.SHE",
+      "FDJU.PA",
+      "INMD.US",
+      "IPS.PA"
+    ],
+    "all_28_buys_pass_production_price_gate": true
+  },
+  "browser": {
+    "companies": [
+      "NVDA.US",
+      "EME.US",
+      "MRK.US",
+      "RHM.XETRA",
+      "IPS.PA"
+    ],
+    "viewports": [
+      "1728x970",
+      "390x844"
+    ],
+    "quality_surface_checks_passed": 20,
+    "price_surface_checks_failed": 10,
+    "layout_states_failed": 70,
+    "layout_states": 90
+  },
+  "cleanup": {
+    "completed_at": "2026-10-06T10:54:25.649310+00:00",
+    "removed": [
+      "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/audit",
+      "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/current",
+      "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/candidate",
+      "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/current-candidates",
+      "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/unpaired",
+      "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/staged-baseline",
+      "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/staged-candidate",
+      "/mnt/HC_Volume_107024928/value-rules/.audit/rules",
+      "/mnt/HC_Volume_107024928/value-rules/.next"
+    ],
+    "archive_verified": true,
+    "archive_sha256": "c2b8499468084f8e8e8957eaed63d61dbad9f20cabeb903c0e4d94d3d329a467",
+    "archive_records": 20264,
+    "local_server_stopped": true,
+    "disk_free_bytes_before": {
+      "/": 9264697344,
+      "/Users/miki/data": 62280941568
+    },
+    "disk_free_bytes_after": {
+      "/": 9261764608,
+      "/Users/miki/data": 87088615424
+    },
+    "live_corpus_leftover_exists": true,
+    "live_corpus_cleanup_approval": "pending; no deletion performed"
+  },
+  "corpus_constraint_incident": {
+    "description": "Existing unit fixtures created temporary directories under the real corpus before setting their fixture corpus environment. Five test files now use a separate temporary parent; final units and server use filesystem/network guards.",
+    "verified_leftover": "/Users/miki/value-corpus/fundamentals-test-Xxanes",
+    "cleanup_approval_received": false,
+    "leftover_removed": false
+  },
+  "restrictions": {
+    "subagents": false,
+    "push": false,
+    "remote_publication": false,
+    "eodhd_data_acquisition": false,
+    "daily_runner_lock_touched": false
+  }
+}

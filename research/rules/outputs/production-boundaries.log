@@ -1,0 +1,15 @@
+
+> superinvestors@0.1.0 test
+> vitest run tests/unit/value/rules-completeness.test.ts tests/unit/value/calibration-round-1.test.ts tests/unit/value/tests.test.ts --maxWorkers=1
+
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ✓ tests/unit/value/rules-completeness.test.ts (1 test) 5ms
+ ✓ tests/unit/value/tests.test.ts (36 tests) 54ms
+ ✓ tests/unit/value/calibration-round-1.test.ts (40 tests) 69ms
+
+ Test Files  3 passed (3)
+      Tests  77 passed (77)
+   Start at  09:39:15
+   Duration  1.58s (transform 399ms, setup 0ms, collect 532ms, tests 127ms, environment 1ms, prepare 246ms)

@@ -1,0 +1,11 @@
+NVDA.US 1728 AssertionError [ERR_ASSERTION]: NVDA.US price math: expected $11.92
+EME.US 1728 AssertionError [ERR_ASSERTION]: EME.US price math: expected $154.01
+MRK.US 1728 AssertionError [ERR_ASSERTION]: MRK.US price math: expected $15.32
+RHM.XETRA 1728 AssertionError [ERR_ASSERTION]: RHM.XETRA price math: expected EUR 53.94
+IPS.PA 1728 AssertionError [ERR_ASSERTION]: IPS.PA price math: expected EUR 40.20
+NVDA.US 390 AssertionError [ERR_ASSERTION]: NVDA.US price math: expected $11.92
+EME.US 390 AssertionError [ERR_ASSERTION]: EME.US price math: expected $154.01
+MRK.US 390 AssertionError [ERR_ASSERTION]: MRK.US price math: expected $15.32
+RHM.XETRA 390 AssertionError [ERR_ASSERTION]: RHM.XETRA price math: expected EUR 53.94
+IPS.PA 390 AssertionError [ERR_ASSERTION]: IPS.PA price math: expected EUR 40.20
+Browser gate failed

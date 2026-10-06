@@ -1,5 +1,5 @@
 import { mkdirSync, mkdtempSync, rmSync } from "node:fs";
-import { homedir } from "node:os";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { appendJsonl, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
@@ -13,7 +13,7 @@ vi.mock("../../../lib/value/eodhd", () => ({ callsUsedToday: vi.fn(), getFundame
 vi.mock("../../../lib/value/fundamentals-yahoo", async importOriginal => ({...await importOriginal<typeof import("../../../lib/value/fundamentals-yahoo")>(), fetchYahooFundamentals: vi.fn()}));
 let directory: string;
 beforeEach(() => {
-  const root = join(homedir(), "value-corpus");
+  const root = (process.env.VALUE_TEST_TEMP_ROOT ?? join(tmpdir(), "value-corpus-tests"));
   mkdirSync(root, { recursive: true });
   directory = mkdtempSync(join(root, "fundamentals-fixes-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", directory);

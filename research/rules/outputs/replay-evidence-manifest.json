@@ -1,0 +1,15 @@
+{
+  "archive": "replay-evidence.tar.gz",
+  "files": 20264,
+  "bytes": 61784340,
+  "sha256": "c2b8499468084f8e8e8957eaed63d61dbad9f20cabeb903c0e4d94d3d329a467",
+  "directories": [
+    "audit",
+    "current",
+    "candidate",
+    "current-candidates",
+    "unpaired",
+    "staged-baseline",
+    "staged-candidate"
+  ]
+}

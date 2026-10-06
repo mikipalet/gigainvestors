@@ -1,0 +1,41 @@
+
+> superinvestors@0.1.0 test
+> vitest run tests/unit/value/rules-completeness.test.ts --maxWorkers=1
+
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ❯ tests/unit/value/rules-completeness.test.ts (1 test | 1 failed) 14ms
+   × requests a missing recent gross margin instead of permanently requesting old calendar years 13ms
+     → expected [ 2019, 2020, 2023 ] to deeply equal [ 2034 ]
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/rules-completeness.test.ts > requests a missing recent gross margin instead of permanently requesting old calendar years
+AssertionError: expected [ 2019, 2020, 2023 ] to deeply equal [ 2034 ]
+
+- Expected
++ Received
+
+  [
+-   2034,
++   2019,
++   2020,
++   2023,
+  ]
+
+ ❯ tests/unit/value/rules-completeness.test.ts:8:46
+      6|  const years=makeYears({n:10,from:2030,overrides:y=>({grossProfit:y.fy…
+      7|  const f={id:'TEST.US',currency:'USD',years,integrity:{ok:true,reasons…
+      8|  expect([...completionYears(f,'operating')]).toEqual([2034]);
+       |                                              ^
+      9| });
+     10|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  09:38:50
+   Duration  492ms (transform 146ms, setup 0ms, collect 145ms, tests 14ms, environment 0ms, prepare 88ms)

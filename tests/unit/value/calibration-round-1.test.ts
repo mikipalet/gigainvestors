@@ -114,11 +114,11 @@ describe("live calibration round 1", () => {
     expect(result.metrics.roicSecondLowest).toBeCloseTo(0.2);
   });
   it.each([
-    { gp2019: 380, gp2020: 400, gp2023: 367, drop: 0.023, want: "pass" },
-    { gp2019: 400, gp2020: 400, gp2023: 360, drop: 0.04, want: "pass" },
-    { gp2019: 400, gp2020: 400, gp2023: 359, drop: 0.041, want: "fail" },
-  ])("R8 compares 2023 with mean 2019/2020: $drop", ({ gp2019, gp2020, gp2023, drop, want }) => {
-    const result = run(makeYears({ overrides: y => ({ grossProfit: y.fy === 2019 ? gp2019 : y.fy === 2020 ? gp2020 : y.fy === 2023 ? gp2023 : 500 }) })).moat;
+    { latest: 377, drop: 0.023, want: "pass" },
+    { latest: 360, drop: 0.04, want: "pass" },
+    { latest: 359, drop: 0.041, want: "fail" },
+  ])("R8 compares recent margin with the typical rolling record: $drop", ({ latest, drop, want }) => {
+    const result = run(makeYears({ from: 2030, overrides: y => ({ grossProfit: y.fy === 2040 ? latest : 400 }) })).moat;
     expect(result.metrics.grossMarginDrop).toBeCloseTo(drop);
     expect(result.numeric).toBe(want);
   });
@@ -128,7 +128,7 @@ describe("live calibration round 1", () => {
     expect(result.metrics.redFlags).toBe(1);
     expect(result.numeric).toBe("pass");
   });
-  it("R8 does not substitute FY2020 alone when FY2019 is unavailable", () => {
+  it("R8 does not compress a missing margin into the typical record", () => {
     const result = run(makeYears({ overrides: y => ({ grossProfit: y.fy === 2019 ? null : y.fy === 2023 ? 300 : 400 }) })).moat;
     expect(result.metrics.grossMarginDrop).toBeNull();
     expect(result.numeric).toBe("pass");

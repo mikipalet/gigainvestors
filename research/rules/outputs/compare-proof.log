@@ -1,0 +1,28 @@
+{
+  "before_dossiers": 3897,
+  "after_dossiers": 3897,
+  "changed_dossiers": 3739,
+  "numeric_changed_ids": 190,
+  "held_numeric_changes": [
+    "1093.HK",
+    "3659.JP",
+    "688036.SHG",
+    "ABI.BR",
+    "GPGI.US",
+    "JBS.US",
+    "POST.VI",
+    "TPL.US",
+    "TROW.US"
+  ],
+  "unexpected_numeric_changes": [],
+  "frozen_count": 157,
+  "frozen_differences": [],
+  "protected_changes": [],
+  "history_version_relabels": [
+    "history/companies.json"
+  ],
+  "new_forward_record_changes": [
+    "forward/2026-10-06.json"
+  ],
+  "method_version": "3.5.0"
+}

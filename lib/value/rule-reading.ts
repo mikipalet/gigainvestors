@@ -41,12 +41,13 @@ export function ruleReading(t:TestOutcome,kind:Kind){
    {const margins=(t.series.operatingMargin??[]).flatMap(p=>p[1]==null?[]:[p[1]]),average=margins.reduce((a,b)=>a+b,0)/margins.length;
    add(`Mean margin ${pct(average)} ${average>=0?'≥':'<'} 0%`,margins.length<5?null:average>=0,true);
    compare('opMarginCv','Margin variation',T.understandable.maxOpMarginCv,false,average>0,num);
+   if(m.opMarginRecoveredDip===1){const check=checks.at(-1)!;check.pass=true;check.text=`Raw margin variation ${num(m.opMarginCv!)}; one fully recovered dip, adjusted variation ${num(m.opMarginRecoveredCv!)} ≤ ${T.understandable.maxOpMarginCv}`;}
    if(m.opMarginImproving===1){const check=checks.at(-1)!;check.pass=true;check.text=`Margin variation ${num(m.opMarginCv!)}; sustained improvement with no loss years`;}}
    break;
   case 'moat':
    compare(m.roicMedian!=null?'roicMedian':'returnFloorMedian',m.roicMedian!=null?'ROIC ex acquisitions median':'Conservative return floor median',.15,true,true);
    compare(m.roicSecondLowest!=null?'roicSecondLowest':'returnFloorSecondLowest','Second-lowest return (one bad year allowed)',.10,true,true);
-   compare('grossMarginDrop','Gross-margin drop',.04);
+   compare('grossMarginDrop','Typical minus recent gross margin',.04);
    break;
   case 'economics':
    if(m.oeToNi!=null)compare('oeToNi','Cash per $1 profit',.8,true,true,num);

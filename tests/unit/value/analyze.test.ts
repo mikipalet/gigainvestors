@@ -1,6 +1,6 @@
 import trust from "@/lib/value/jev-trust.json";
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
-import { homedir } from "node:os";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import ko from "../../fixtures/value/eodhd/fund-KO.US.json";
@@ -30,7 +30,7 @@ function answers(): JevAnswer[] {
 }
 let directory: string;
 beforeEach(() => {
-  const root = join(homedir(), "value-corpus");
+  const root = (process.env.VALUE_TEST_TEMP_ROOT ?? join(tmpdir(), "value-corpus-tests"));
   mkdirSync(root, { recursive: true });
   directory = mkdtempSync(join(root, "analyze-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", directory);

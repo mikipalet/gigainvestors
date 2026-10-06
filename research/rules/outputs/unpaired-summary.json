@@ -1,0 +1,7726 @@
+{
+  "counts": {
+    "currency-invariant numeric only; FX=1 NOT used for valuation or returns": 5572,
+    "recovered_dip_changed": 54,
+    "recovered_dip_new_all_quality": 5,
+    "recent_typical_margin_changed": 428,
+    "recent_typical_margin_new_all_quality": 9,
+    "combined_changed": 482,
+    "combined_new_all_quality": 14
+  },
+  "changes": [
+    {
+      "id": "VALE3.SA",
+      "quarter": "2010Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "VALE3.SA",
+      "quarter": "2010Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "VALE3.SA",
+      "quarter": "2010Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "VALE3.SA",
+      "quarter": "2010Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "VALE3.SA",
+      "quarter": "2010Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "VALE3.SA",
+      "quarter": "2010Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "VALE3.SA",
+      "quarter": "2011Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "VALE3.SA",
+      "quarter": "2011Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2006Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2006Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2006Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2006Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2006Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2006Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2007Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2007Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2007Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2007Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2007Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2007Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2007Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2007Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2022Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2022Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2022Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2022Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2022Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2022Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2023Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2023Q1",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2023Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2023Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2023Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2023Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2023Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2023Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2024Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2024Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2024Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2024Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2024Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2024Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2024Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2024Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2025Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AZN.LSE",
+      "quarter": "2025Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BP.LSE",
+      "quarter": "2011Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BP.LSE",
+      "quarter": "2011Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BP.LSE",
+      "quarter": "2011Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BP.LSE",
+      "quarter": "2011Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BP.LSE",
+      "quarter": "2011Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BP.LSE",
+      "quarter": "2011Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMBJ.US",
+      "quarter": "2018Q1",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMBJ.US",
+      "quarter": "2018Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMBJ.US",
+      "quarter": "2018Q2",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMBJ.US",
+      "quarter": "2018Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMBJ.US",
+      "quarter": "2018Q3",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMBJ.US",
+      "quarter": "2018Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMBJ.US",
+      "quarter": "2018Q4",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMBJ.US",
+      "quarter": "2018Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMBJ.US",
+      "quarter": "2019Q1",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMBJ.US",
+      "quarter": "2019Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2013Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2013Q2",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2013Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2013Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2014Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2016Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2016Q1",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2016Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2016Q2",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2016Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2016Q3",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2016Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2016Q4",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2017Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TGS.OL",
+      "quarter": "2017Q1",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2013Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2013Q2",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2013Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2013Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2014Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSU.TO",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MG.TO",
+      "quarter": "2007Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MG.TO",
+      "quarter": "2007Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MG.TO",
+      "quarter": "2007Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MG.TO",
+      "quarter": "2007Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MG.TO",
+      "quarter": "2007Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MG.TO",
+      "quarter": "2007Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "RIO.AU",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "RIO.AU",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "RIO.AU",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "RIO.AU",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "RIO.AU",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "RIO.AU",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "RIO.AU",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "RIO.AU",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABI.BR",
+      "quarter": "2023Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABI.BR",
+      "quarter": "2023Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABI.BR",
+      "quarter": "2023Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABI.BR",
+      "quarter": "2023Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABI.BR",
+      "quarter": "2023Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABI.BR",
+      "quarter": "2023Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABI.BR",
+      "quarter": "2026Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABI.BR",
+      "quarter": "2026Q2",
+      "variant": "combined",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2011Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2011Q2",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2011Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2011Q3",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2011Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2011Q4",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2012Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2012Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2012Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2012Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2012Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2012Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2012Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2012Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2013Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2013Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2013Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2013Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2013Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2013Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2014Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TTE.PA",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "VWS.CO",
+      "quarter": "2026Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "VWS.CO",
+      "quarter": "2026Q2",
+      "variant": "combined",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EBO.AU",
+      "quarter": "2019Q3",
+      "variant": "recovered_dip",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EBO.AU",
+      "quarter": "2019Q3",
+      "variant": "combined",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EBO.AU",
+      "quarter": "2019Q4",
+      "variant": "recovered_dip",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EBO.AU",
+      "quarter": "2019Q4",
+      "variant": "combined",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EBO.AU",
+      "quarter": "2020Q1",
+      "variant": "recovered_dip",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EBO.AU",
+      "quarter": "2020Q1",
+      "variant": "combined",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EBO.AU",
+      "quarter": "2020Q2",
+      "variant": "recovered_dip",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EBO.AU",
+      "quarter": "2020Q2",
+      "variant": "combined",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2012Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2012Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2012Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2012Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2012Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2012Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2012Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2012Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2013Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2013Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2016Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2016Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2016Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2016Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2016Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2016Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2016Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2016Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2017Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2017Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2017Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2017Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2017Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2017Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2017Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2017Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2018Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NOVN.SW",
+      "quarter": "2018Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2009Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2009Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2009Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2009Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2009Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2009Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2010Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2010Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2011Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2011Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2011Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2011Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2011Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2011Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2012Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2012Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2012Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2012Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2012Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2012Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2012Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2012Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2013Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2013Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2013Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2013Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2013Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2013Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2014Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "PETR3.SA",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2012Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2012Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2012Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2012Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2012Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2012Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2012Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2012Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2013Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2013Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2016Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2016Q1",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2016Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2016Q2",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2016Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2016Q3",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2016Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2016Q4",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2017Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANTO.LSE",
+      "quarter": "2017Q1",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FPH.AU",
+      "quarter": "2025Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FPH.AU",
+      "quarter": "2025Q2",
+      "variant": "combined",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FPH.AU",
+      "quarter": "2025Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FPH.AU",
+      "quarter": "2025Q3",
+      "variant": "combined",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FPH.AU",
+      "quarter": "2025Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FPH.AU",
+      "quarter": "2025Q4",
+      "variant": "combined",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FPH.AU",
+      "quarter": "2026Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FPH.AU",
+      "quarter": "2026Q1",
+      "variant": "combined",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FPH.AU",
+      "quarter": "2026Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FPH.AU",
+      "quarter": "2026Q2",
+      "variant": "combined",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2010Q3",
+      "variant": "recovered_dip",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2010Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2010Q4",
+      "variant": "recovered_dip",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2010Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2011Q1",
+      "variant": "recovered_dip",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2011Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2011Q2",
+      "variant": "recovered_dip",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2011Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2014Q3",
+      "variant": "recovered_dip",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2014Q4",
+      "variant": "recovered_dip",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2015Q1",
+      "variant": "recovered_dip",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2015Q2",
+      "variant": "recovered_dip",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "OTEX.TO",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PPPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BHP.AU",
+      "quarter": "2012Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BHP.AU",
+      "quarter": "2012Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BHP.AU",
+      "quarter": "2012Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BHP.AU",
+      "quarter": "2012Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BHP.AU",
+      "quarter": "2013Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BHP.AU",
+      "quarter": "2013Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BHP.AU",
+      "quarter": "2013Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "BHP.AU",
+      "quarter": "2013Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FSV.TO",
+      "quarter": "2026Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FSV.TO",
+      "quarter": "2026Q2",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2013Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2013Q2",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2013Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2013Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2014Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2021Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2021Q2",
+      "variant": "combined",
+      "mask": "FFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2021Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2021Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2021Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2021Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2022Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2022Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2022Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2022Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2022Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2022Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2022Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2022Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2023Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2023Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2023Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2023Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2023Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2023Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2023Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2023Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2024Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2024Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2024Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2024Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2024Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2024Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2024Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2024Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2025Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TEMN.SW",
+      "quarter": "2025Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2013Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2013Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2014Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2016Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2016Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2016Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2016Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2017Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2017Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2017Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2017Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2018Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2018Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2018Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2018Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2018Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2018Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2018Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2018Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2019Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2019Q1",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2019Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2019Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2019Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2019Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2019Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2019Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2020Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2020Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2020Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2020Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2020Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2020Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2020Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2020Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2021Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2021Q1",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2021Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2021Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2021Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2021Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2021Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2021Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2022Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2022Q1",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2022Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2022Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2022Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2022Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2022Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2022Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2023Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2023Q1",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2023Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2023Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2025Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2025Q3",
+      "variant": "combined",
+      "mask": "FPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2025Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2025Q4",
+      "variant": "combined",
+      "mask": "FPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2026Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2026Q1",
+      "variant": "combined",
+      "mask": "FPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2026Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "SKT.AU",
+      "quarter": "2026Q2",
+      "variant": "combined",
+      "mask": "FPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2011Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2011Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2011Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2011Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2011Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2011Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2016Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2016Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2016Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2016Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2016Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2016Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2016Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2016Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2017Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2017Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2017Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2017Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2017Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2017Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2017Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2017Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2018Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2018Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2018Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2018Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2018Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2018Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2018Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2018Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2019Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2019Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2021Q2",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2021Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2021Q3",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2021Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2021Q4",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2021Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2022Q1",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2022Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2022Q2",
+      "variant": "recovered_dip",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2022Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2022Q3",
+      "variant": "recovered_dip",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2022Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2022Q4",
+      "variant": "recovered_dip",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2022Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2023Q1",
+      "variant": "recovered_dip",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2023Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2023Q2",
+      "variant": "recovered_dip",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2023Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2023Q3",
+      "variant": "recovered_dip",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2023Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2023Q4",
+      "variant": "recovered_dip",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2023Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2024Q1",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2024Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2024Q2",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2024Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2024Q3",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2024Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2024Q4",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2024Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2025Q1",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2025Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2025Q2",
+      "variant": "recovered_dip",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2025Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2025Q3",
+      "variant": "recovered_dip",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2025Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2025Q4",
+      "variant": "recovered_dip",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2025Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2026Q1",
+      "variant": "recovered_dip",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "AEP.LSE",
+      "quarter": "2026Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "CSL.AU",
+      "quarter": "2013Q3",
+      "variant": "recovered_dip",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "CSL.AU",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "CSL.AU",
+      "quarter": "2013Q4",
+      "variant": "recovered_dip",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "CSL.AU",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "CSL.AU",
+      "quarter": "2014Q1",
+      "variant": "recovered_dip",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "CSL.AU",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "CSL.AU",
+      "quarter": "2014Q2",
+      "variant": "recovered_dip",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "CSL.AU",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2021Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2021Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2021Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2021Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2021Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2021Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2022Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2022Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2022Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2022Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2022Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2022Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2022Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2022Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2023Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2023Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2024Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2024Q2",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2024Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2024Q3",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2024Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2024Q4",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2025Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2025Q1",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2025Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2025Q2",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2025Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2025Q3",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2025Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2025Q4",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2026Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2026Q1",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2026Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "EXPN.LSE",
+      "quarter": "2026Q2",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2022Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2022Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2022Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2022Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2022Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2022Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2022Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2022Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2023Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2023Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2023Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2023Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2023Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2023Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2023Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2023Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2026Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2026Q1",
+      "variant": "combined",
+      "mask": "PPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2026Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FMS.US",
+      "quarter": "2026Q2",
+      "variant": "combined",
+      "mask": "PPFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2011Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2011Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2011Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2011Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2011Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2011Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2016Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2016Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2016Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2016Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2016Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2016Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2016Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2016Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2017Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EQNR.OL",
+      "quarter": "2017Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2013Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2013Q2",
+      "variant": "combined",
+      "mask": "FFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2013Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "FFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2013Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "FFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2014Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "FFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFPPF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2016Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2016Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2016Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2016Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2016Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2016Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2016Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2016Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2017Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2017Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2017Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2017Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2017Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2017Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2017Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2017Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2018Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2018Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2018Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2018Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2018Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2018Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2018Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2018Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2019Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2019Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2021Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2021Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2021Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2021Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2021Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2021Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2022Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FOUR.LSE",
+      "quarter": "2022Q1",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2022Q2",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2022Q2",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2022Q3",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2022Q3",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2022Q4",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2022Q4",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2023Q1",
+      "variant": "recovered_dip",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "FRES.LSE",
+      "quarter": "2023Q1",
+      "variant": "combined",
+      "mask": "PFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2012Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2012Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2012Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2012Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2012Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2012Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2012Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2012Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2013Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2013Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2025Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2025Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2025Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2025Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2025Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2025Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2026Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2026Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2026Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HIK.LSE",
+      "quarter": "2026Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NTR.TO",
+      "quarter": "2018Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "NTR.TO",
+      "quarter": "2018Q1",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANN.AU",
+      "quarter": "2022Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANN.AU",
+      "quarter": "2022Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANN.AU",
+      "quarter": "2022Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANN.AU",
+      "quarter": "2022Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANN.AU",
+      "quarter": "2023Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANN.AU",
+      "quarter": "2023Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANN.AU",
+      "quarter": "2023Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ANN.AU",
+      "quarter": "2023Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MNDI.LSE",
+      "quarter": "2023Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MNDI.LSE",
+      "quarter": "2023Q2",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MNDI.LSE",
+      "quarter": "2023Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MNDI.LSE",
+      "quarter": "2023Q3",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MNDI.LSE",
+      "quarter": "2023Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MNDI.LSE",
+      "quarter": "2023Q4",
+      "variant": "combined",
+      "mask": "PFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MOWI.OL",
+      "quarter": "2023Q2",
+      "variant": "recovered_dip",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MOWI.OL",
+      "quarter": "2023Q2",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MOWI.OL",
+      "quarter": "2023Q3",
+      "variant": "recovered_dip",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MOWI.OL",
+      "quarter": "2023Q3",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MOWI.OL",
+      "quarter": "2023Q4",
+      "variant": "recovered_dip",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "MOWI.OL",
+      "quarter": "2023Q4",
+      "variant": "combined",
+      "mask": "PFPFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2024Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2024Q1",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2024Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2024Q2",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2024Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2024Q3",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2024Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2024Q4",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2025Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2025Q1",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2025Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2025Q2",
+      "variant": "combined",
+      "mask": "FPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2025Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2025Q3",
+      "variant": "combined",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2025Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2025Q4",
+      "variant": "combined",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2026Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2026Q1",
+      "variant": "combined",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2026Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "TRI.TO",
+      "quarter": "2026Q2",
+      "variant": "combined",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABBN.SW",
+      "quarter": "2022Q2",
+      "variant": "recovered_dip",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "ABBN.SW",
+      "quarter": "2022Q2",
+      "variant": "combined",
+      "mask": "PPPPP",
+      "changed": true,
+      "new_all_quality": true
+    },
+    {
+      "id": "ABBN.SW",
+      "quarter": "2023Q2",
+      "variant": "recovered_dip",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABBN.SW",
+      "quarter": "2023Q2",
+      "variant": "combined",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABBN.SW",
+      "quarter": "2023Q3",
+      "variant": "recovered_dip",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ABBN.SW",
+      "quarter": "2023Q3",
+      "variant": "combined",
+      "mask": "PPFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HOC.LSE",
+      "quarter": "2013Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HOC.LSE",
+      "quarter": "2013Q2",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HOC.LSE",
+      "quarter": "2013Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HOC.LSE",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HOC.LSE",
+      "quarter": "2013Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HOC.LSE",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HOC.LSE",
+      "quarter": "2014Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HOC.LSE",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2016Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2016Q1",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2016Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2016Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2016Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2016Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2016Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2016Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2017Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2017Q1",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2017Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2017Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2017Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2017Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2017Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2017Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2018Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2018Q1",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2018Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2018Q2",
+      "variant": "combined",
+      "mask": "FFFFF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2018Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2018Q3",
+      "variant": "combined",
+      "mask": "FFFFF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2018Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2018Q4",
+      "variant": "combined",
+      "mask": "FFFFF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2019Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2019Q1",
+      "variant": "combined",
+      "mask": "FFFFF",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2019Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2019Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2019Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2019Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2019Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2019Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2020Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2020Q1",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2020Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2020Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2020Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2020Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2020Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2020Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2021Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2021Q1",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2022Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2022Q2",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2022Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2022Q3",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2022Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2022Q4",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2023Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "EMG.LSE",
+      "quarter": "2023Q1",
+      "variant": "combined",
+      "mask": "FFFFP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2012Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2012Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2012Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2012Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2012Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2012Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2012Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2012Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2013Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2013Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2013Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2013Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2013Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2013Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2014Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2014Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2014Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2014Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2014Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2014Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2014Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2015Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2015Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2015Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2015Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2015Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2015Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2015Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "ULVR.LSE",
+      "quarter": "2015Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2023Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2023Q3",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2023Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2023Q4",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2024Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2024Q1",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2024Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2024Q2",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2024Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2024Q3",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2024Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2024Q4",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2025Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2025Q1",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2025Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2025Q2",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2025Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2025Q3",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2025Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2025Q4",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2026Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2026Q1",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2026Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "A2M.AU",
+      "quarter": "2026Q2",
+      "variant": "combined",
+      "mask": "FPPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HEXA-B.ST",
+      "quarter": "2012Q3",
+      "variant": "recovered_dip",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HEXA-B.ST",
+      "quarter": "2012Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HEXA-B.ST",
+      "quarter": "2012Q4",
+      "variant": "recovered_dip",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HEXA-B.ST",
+      "quarter": "2012Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HEXA-B.ST",
+      "quarter": "2013Q1",
+      "variant": "recovered_dip",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "HEXA-B.ST",
+      "quarter": "2013Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2010Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2010Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2010Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2010Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2010Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2010Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2011Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2011Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2012Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2012Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2012Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2012Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2012Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2012Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2012Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2012Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2013Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2013Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2013Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2013Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2013Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2013Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2013Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2013Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2014Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2014Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2020Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2020Q4",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2021Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2021Q1",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2021Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2021Q2",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2021Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GIL.TO",
+      "quarter": "2021Q3",
+      "variant": "combined",
+      "mask": "FFFPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2006Q2",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2006Q2",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2006Q3",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2006Q3",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2006Q4",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2006Q4",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2007Q1",
+      "variant": "recent_typical_margin",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2007Q1",
+      "variant": "combined",
+      "mask": "FFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2020Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2020Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2020Q2",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2020Q2",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2020Q3",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2020Q3",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2020Q4",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2020Q4",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2021Q1",
+      "variant": "recent_typical_margin",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    },
+    {
+      "id": "GL9.IR",
+      "quarter": "2021Q1",
+      "variant": "combined",
+      "mask": "PFPPP",
+      "changed": true,
+      "new_all_quality": false
+    }
+  ],
+  "errors": []
+}

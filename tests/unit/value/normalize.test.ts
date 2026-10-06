@@ -5,6 +5,8 @@ import asml from "../../fixtures/value/eodhd/fund-ASML.AS.json";
 import dal from "../../fixtures/value/eodhd/fund-DAL.US.json";
 import { normalizeEodhd } from "../../../lib/value/normalize-eodhd";
 
+vi.mock("../../../lib/value/reports/transport", () => ({ reportRequest: (url: string) => fetch(url) }));
+
 afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 
 describe("EODHD annual normalization", () => {
@@ -47,13 +49,13 @@ describe("EODHD annual normalization", () => {
 
 it("persists raw data, merges company metadata and refreshes on every rolling pass, including when forced", async () => {
   const { mkdirSync, mkdtempSync, rmSync } = await import("node:fs");
-  const { homedir } = await import("node:os");
+  const { tmpdir } = await import("node:os");
   const { join } = await import("node:path");
   const { appendJsonl, readCorpusJson, writeCorpusJson } = await import("../../../lib/value/corpus");
   const { default: stage } = await import("../../../scripts/value/stages/fundamentals");
   // Optional SEC enrichment uses core HTTP, independently of the vendor fetch mock.
   const sec = vi.spyOn(await import("../../../lib/value/reports/transport"), "reportRequest").mockImplementation(async () => Response.json({facts:{}}));
-  const root = join(homedir(), "value-corpus");
+  const root = (process.env.VALUE_TEST_TEMP_ROOT ?? join(tmpdir(), "value-corpus-tests"));
   mkdirSync(root, { recursive: true });
   const directory = mkdtempSync(join(root, "fundamentals-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", directory);
@@ -65,6 +67,7 @@ it("persists raw data, merges company metadata and refreshes on every rolling pa
     requested.push(route);
     if (route === "/api/user") return Response.json({ apiRequests: usage });
     if (route === "/api/fundamentals/KO.US") return Response.json(ko);
+    if (route === "/api/xbrl/companyfacts/CIK0000021344.json") return Response.json({ facts: {} });
     throw new Error(`Unexpected fixture route ${route}`);
   });
   try {

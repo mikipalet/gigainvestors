@@ -1,0 +1,30 @@
+{
+  "baseline": "78141da",
+  "method_target": "3.5.0",
+  "frozen_at": "2026-10-06T09:15:00Z",
+  "audit": "phase-1-report.md",
+  "candidates": {
+    "recovered_dip": {
+      "principle": "One positive-margin dip fully recovered the following year and sustained thereafter should not outweigh an otherwise dependable, profitable record.",
+      "rule": "Retain every existing understandable path. For a high raw CV and a complete consecutive 7-10-year window with strictly positive finite margins and finite nonnegative net income every year, consider one interior year whose margin is below its predecessor; the next year and every later year must be at least the predecessor. Hold that one year at its preceding margin, preserving chronological positions. Admit only if the adjusted CV is at most the existing 0.35 cutoff. Do not apply a trend exception to this repaired series, do not remove any loss, and do not repair two years. Keep raw CV for disclosure, cyclicality, valuation and margin of safety.",
+      "parameters": "One dip from the existing moat one-bad-year principle; full next-year sustained recovery, no new tolerance; existing 7-year minimum and 0.35 CV. No return fitting."
+    },
+    "recent_typical_margin": {
+      "principle": "Pricing power is supported by recent and typical margins, while a recovered historic trough should not impose a permanent veto.",
+      "rule": "Replace the fixed FY2023 versus FY2019/20 comparison with typical gross margin = median of the latest 7-10 complete consecutive annual gross margins and recent margin = minimum(latest gross margin, median of latest three). Require typical minus recent at most the existing 4 percentage points. Missing, nonfinite or gapped annual gross-margin history leaves this optional subtest unavailable. ROIC median, second-lowest return, financial paths, LTM confirmation and all price rules remain unchanged.",
+      "parameters": "Existing 7-year minimum, ten-year window, 4pp tolerance; three-year median from existing management endpoint smoothing, plus latest-year floor to avoid excusing current deterioration. No return fitting."
+    }
+  },
+  "evaluations": ["baseline", "recovered_dip", "recent_typical_margin", "combined"],
+  "measurement": "research-1 local-entry corrected quarterly portfolios; next local close after signal, 10bp per side, dividend-adjusted total returns, USD FX, cash for missing allocations; US 2005Q1-2015Q3 ending 2015-12-31, later 2016Q1-2026Q2 ending 2026-09-30. Three-year cohorts must mature inside their period.",
+  "ship": {
+    "required_scopes": ["US_train", "Western_nonUS_train", "Western_nonUS_later", "all_nonUS_train", "all_nonUS_later"],
+    "diagnostic_scopes": ["US_later_CONTAMINATED", "all_markets_train", "all_markets_later"],
+    "cagr_change_min_pp": -0.25,
+    "drawdown_change_min_pp": -2,
+    "loser_dominance": "For each required scope/period, negative three-year total returns must not exceed half of observed newly passing subtest records. Report top-decile, below-median and negative counts and company counts separately, including missing outcomes. Zero changes is vacuous parity, not demonstrated improvement.",
+    "combination": "Each component must pass individually. A combination ships only if its component gates and its combined portfolio and newly-passing quality-record gates also pass. A rejected component is not rescued by a stronger component.",
+    "price": "All buys recomputed by unchanged production value, MOS and expected-return gates; no manual forced buy."
+  },
+  "restrictions": "No retuning after candidate returns, no subagents, no network data acquisition, no EODHD, no publication/push, corpus read-only, daily-runner lock untouched. Stop and commit below 4 GiB on / or ~/data. Delete temporary copies at end."
+}

@@ -14,12 +14,12 @@ describe("numeric quality tests", () => {
     expect(result.numeric).toBe("fail");
     expect(result.reasons.join(" ")).toContain("worst");
   });
-  it("fails an inflation gross margin drop beyond four points", () => {
+  it("fails a latest gross margin drop beyond four points", () => {
     const result = run(makeYears({ overrides: y => ({ grossProfit: y.fy === 2023 ? 350 : 400 }) })).moat;
     expect(result.numeric).toBe("fail");
-    expect(result.reasons).toContain("FY2023 gross margin fell 5.0pp versus the FY2019/FY2020 mean (limit 4pp)");
+    expect(result.reasons).toContain("Recent gross margin fell 5.0pp below the typical margin (limit 4pp)");
   });
-  it("omits missing supporting inflation margins", () => {
+  it("omits missing supporting gross margins", () => {
     const result = run(makeYears({ overrides: { grossProfit: null } })).moat;
     expect(result.numeric).toBe("pass");
     expect(result.reasons.join(" ")).not.toContain("not enough data for");

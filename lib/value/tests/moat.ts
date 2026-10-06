@@ -22,14 +22,15 @@ export function run({ years, kind }: NumericInput) {
   const floorValues=present(floors),floorMedian=floorValues.length>=5?median(floorValues):null;
   const floorWorst=floorValues.length>=5?[...floorValues].sort((a,b)=>a-b)[k-1]:null;
   const floorUsed=!financial&&returns.some((n,i)=>n===null&&floors[i]!==null);
-  const gm2019 = years.find(y => y.fy === 2019), gm2020 = years.find(y => y.fy === 2020), gm2023 = years.find(y => y.fy === 2023);
-  const margin2019 = gm2019 ? grossMargin(gm2019) : null, margin2020 = gm2020 ? grossMargin(gm2020) : null;
-  const start = margin2019 === null || margin2020 === null ? null : (margin2019 + margin2020) / 2;
-  const end = gm2023 ? grossMargin(gm2023) : null;
-  const drop = start === null || end === null ? null : start - end;
+  const gross = ys.map(grossMargin);
+  const completeMargins = ys.length >= T.minYears && gross.every(x => x !== null && Number.isFinite(x))
+    && ys.every((y, i) => i === 0 || y.fy === ys[i - 1].fy + 1);
+  const typicalMargin = completeMargins ? median(gross as number[]) : null;
+  const recentMargin = completeMargins ? Math.min(gross.at(-1)!, median(gross.slice(-3) as number[])!) : null;
+  const drop = typicalMargin === null || recentMargin === null ? null : typicalMargin - recentMargin;
   const name = financial ? "roe" : "roic";
   const label = financial ? "Return on tangible equity" : "ROIC";
-  return outcome({ key: "moat", metrics: { [`${name}Median`]: typical, [`${name}SecondLowest`]: worst, grossMarginDrop: financial ? null : drop,
+  return outcome({ key: "moat", metrics: { [`${name}Median`]: typical, [`${name}SecondLowest`]: worst, grossMarginDrop: financial ? null : drop, ...(!financial ? { grossMarginTypical: typicalMargin, grossMarginRecent: recentMargin } : {}),
     ...(floorUsed?{returnFloorMedian:floorMedian,returnFloorSecondLowest:floorWorst}:{}),
     capitalFallbackYears: ys.filter(y=>{const c=financial?tangibleEquity(y):investedCapital(y);return c!==null&&c<=0;}).length,
     capexToRevenue: median(present(ys.map(y => ratio(y.capex, y.revenue)))) },
@@ -37,7 +38,7 @@ export function run({ years, kind }: NumericInput) {
     checks: [
       { core: true, pass: typical === null ? floorUsed&&floorMedian!==null&&floorMedian>=T.moat.roicMedian?true:null : typical >= (financial ? T.moat.roeMedianFin : T.moat.roicMedian), data: `${label} median`, reason: `${label} median below threshold` },
       { core: true, pass: worst === null ? floorUsed&&floorWorst!==null&&floorWorst>=T.moat.roicSecondLowest?true:null : worst >= (financial ? T.moat.roeSecondLowestFin : T.moat.roicSecondLowest), data: `${label} worst years`, reason: `${label} worst years below threshold (more than ${T.moat.badYearsAllowed} bad year allowed)` },
-      ...(!financial ? [{ pass: drop === null ? null : drop <= T.moat.gmDropPp + Number.EPSILON, data: "FY2019, FY2020 and FY2023 gross margins", reason: `FY2023 gross margin fell ${((drop ?? 0) * 100).toFixed(1)}pp versus the FY2019/FY2020 mean (limit ${T.moat.gmDropPp * 100}pp)` }] : []),
+      ...(!financial ? [{ pass: drop === null ? null : drop <= T.moat.gmDropPp + Number.EPSILON, data: "complete consecutive recent and typical gross margins", reason: `Recent gross margin fell ${((drop ?? 0) * 100).toFixed(1)}pp below the typical margin (limit ${T.moat.gmDropPp * 100}pp)` }] : []),
     ], reasons: [
       ...(floorUsed?['The return floor includes all equity, debt and leases without deducting cash or goodwill. Only a floor above the hurdle establishes a pass.']:[]),
       ...(!financial && ys.some(y=>{const c=investedCapital(y);return c!==null&&c<=0;}) ? ["Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."] : []),

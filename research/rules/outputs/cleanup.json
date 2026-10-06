@@ -1,0 +1,28 @@
+{
+  "completed_at": "2026-10-06T10:54:25.649310+00:00",
+  "removed": [
+    "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/audit",
+    "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/current",
+    "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/candidate",
+    "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/current-candidates",
+    "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/unpaired",
+    "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/staged-baseline",
+    "/mnt/HC_Volume_107024928/value-rules/research/rules/outputs/staged-candidate",
+    "/mnt/HC_Volume_107024928/value-rules/.audit/rules",
+    "/mnt/HC_Volume_107024928/value-rules/.next"
+  ],
+  "archive_verified": true,
+  "archive_sha256": "c2b8499468084f8e8e8957eaed63d61dbad9f20cabeb903c0e4d94d3d329a467",
+  "archive_records": 20264,
+  "local_server_stopped": true,
+  "disk_free_bytes_before": {
+    "/": 9264697344,
+    "/Users/miki/data": 62280941568
+  },
+  "disk_free_bytes_after": {
+    "/": 9261764608,
+    "/Users/miki/data": 87088615424
+  },
+  "live_corpus_leftover_exists": true,
+  "live_corpus_cleanup_approval": "pending; no deletion performed"
+}

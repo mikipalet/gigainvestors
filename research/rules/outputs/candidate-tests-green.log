@@ -1,0 +1,13 @@
+
+> superinvestors@0.1.0 test
+> vitest run tests/unit/value/rules-candidates.test.ts --maxWorkers=1
+
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ✓ tests/unit/value/rules-candidates.test.ts (11 tests) 22ms
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  09:16:49
+   Duration  586ms (transform 188ms, setup 0ms, collect 205ms, tests 22ms, environment 1ms, prepare 91ms)

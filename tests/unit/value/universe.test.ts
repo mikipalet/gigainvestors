@@ -1,5 +1,5 @@
 import { mkdirSync, mkdtempSync, rmSync } from "node:fs";
-import { homedir } from "node:os";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
 import symbols from "../../fixtures/value/eodhd/symbols-US.json";
@@ -9,7 +9,7 @@ import { eodhd, screenerPage, callsUsedToday } from "../../../lib/value/eodhd";
 const listings = symbols.map((r) => ({ code: r.Code, exchange: "US", isin: r.Isin, name: r.Name }));
 let usageDirectory: string;
 beforeEach(() => {
-  const root = join(homedir(), "value-corpus");
+  const root = (process.env.VALUE_TEST_TEMP_ROOT ?? join(tmpdir(), "value-corpus-tests"));
   mkdirSync(root, { recursive: true });
   usageDirectory = mkdtempSync(join(root, "universe-usage-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", usageDirectory);
@@ -74,11 +74,11 @@ it("reads daily API usage and rejects a missing usage counter", async () => {
 
 it("writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs and converts caps", async () => {
   const { mkdtempSync, mkdirSync, rmSync } = await import("node:fs");
-  const { homedir } = await import("node:os");
+  const { tmpdir } = await import("node:os");
   const { join } = await import("node:path");
   const { readJsonl } = await import("../../../lib/value/corpus");
   const { default: stage } = await import("../../../scripts/value/stages/universe");
-  const root = join(homedir(), "value-corpus");
+  const root = (process.env.VALUE_TEST_TEMP_ROOT ?? join(tmpdir(), "value-corpus-tests"));
   mkdirSync(root, { recursive: true });
   const directory = mkdtempSync(join(root, "universe-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", directory);
@@ -122,11 +122,11 @@ it("writes sorted companies, excludes OTC ordinary shares, keeps Japanese ADRs a
 
 it("nulls standalone GDR caps and caps above 1.3x the largest US company before sorting", async () => {
   const { mkdtempSync, rmSync } = await import("node:fs");
-  const { homedir } = await import("node:os");
+  const { tmpdir } = await import("node:os");
   const { join } = await import("node:path");
   const { writeCorpusJson, readJsonl } = await import("../../../lib/value/corpus");
   const { default: stage } = await import("../../../scripts/value/stages/universe");
-  const directory = mkdtempSync(join(homedir(), "value-corpus/universe-test-"));
+  const directory = mkdtempSync(join(process.env.VALUE_TEST_TEMP_ROOT ?? join(tmpdir(), "value-corpus-tests"), "universe-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", directory);
   const cache = (key: string, data: unknown) => writeCorpusJson(`raw/eodhd/universe/${key}.json`, { date: new Date().toISOString().slice(0, 10), data });
   const warnings: string[] = [];
@@ -151,11 +151,11 @@ it("nulls standalone GDR caps and caps above 1.3x the largest US company before 
 
 it("passes cached class volumes and ADR metadata into collapse and admits Brazilian PN", async () => {
   const { mkdtempSync, rmSync } = await import("node:fs");
-  const { homedir } = await import("node:os");
+  const { tmpdir } = await import("node:os");
   const { join } = await import("node:path");
   const { writeCorpusJson, readJsonl } = await import("../../../lib/value/corpus");
   const { default: stage } = await import("../../../scripts/value/stages/universe");
-  const directory = mkdtempSync(join(homedir(), "value-corpus/universe-test-"));
+  const directory = mkdtempSync(join(process.env.VALUE_TEST_TEMP_ROOT ?? join(tmpdir(), "value-corpus-tests"), "universe-test-"));
   vi.stubEnv("VALUE_CORPUS_DIR", directory);
   vi.stubGlobal("fetch", () => { throw new Error("Cached run must stay offline"); });
   const cache = (key: string, data: unknown) => writeCorpusJson(`raw/eodhd/universe/${key}.json`, { date: new Date().toISOString().slice(0, 10), data });

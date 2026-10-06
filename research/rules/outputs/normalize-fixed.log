@@ -1,0 +1,43 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+KO.US: 30 annual periods, integrity ok
+fundamentals summary: selected=1; attempted=1; written=1; yahoo=0; failed=0; deferred=0
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+KO.US: 30 annual periods, integrity ok
+fundamentals summary: selected=1; attempted=1; written=1; yahoo=0; failed=0; deferred=0
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+KO.US: 30 annual periods, integrity ok
+fundamentals summary: selected=1; attempted=1; written=1; yahoo=0; failed=0; deferred=0
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+KO.US: 30 annual periods, integrity ok
+fundamentals summary: selected=1; attempted=1; written=1; yahoo=0; failed=0; deferred=0
+
+stdout | tests/unit/value/normalize.test.ts > persists raw data, merges company metadata and refreshes on every rolling pass, including when forced
+fundamentals selection: eligible=1; dueMembers=0; selected=1; membersFirst=false
+fundamentals budget ceiling reached: used=99991; ceiling=100000; deferring paid backlog
+fundamentals summary: selected=1; attempted=0; written=0; yahoo=0; failed=0; deferred=1
+
+ ✓ tests/unit/value/normalize.test.ts (8 tests) 2310ms
+   ✓ persists raw data, merges company metadata and refreshes on every rolling pass, including when forced  2148ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  09:49:22
+   Duration  3.99s (transform 1.44s, setup 0ms, collect 1.31s, tests 2.31s, environment 0ms, prepare 103ms)

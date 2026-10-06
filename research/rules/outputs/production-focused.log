@@ -1,0 +1,16 @@
+
+> superinvestors@0.1.0 test
+> vitest run tests/unit/value/rules-candidates.test.ts tests/unit/value/understandable-improvement.test.ts tests/unit/value-quality.test.ts tests/unit/value/valuation-methodology.test.ts --maxWorkers=1
+
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-rules
+
+ ✓ tests/unit/value/valuation-methodology.test.ts (24 tests) 279ms
+ ✓ tests/unit/value/understandable-improvement.test.ts (19 tests) 47ms
+ ✓ tests/unit/value/rules-candidates.test.ts (11 tests) 27ms
+ ✓ tests/unit/value-quality.test.ts (3 tests) 5ms
+
+ Test Files  4 passed (4)
+      Tests  57 passed (57)
+   Start at  09:37:49
+   Duration  2.42s (transform 747ms, setup 0ms, collect 825ms, tests 358ms, environment 1ms, prepare 306ms)

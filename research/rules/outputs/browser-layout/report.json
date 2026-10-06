@@ -1,0 +1,1797 @@
+[
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nvda.us",
+    "state": "page",
+    "file": "1728x970-_s_nvda_us-0-page.png",
+    "issues": [
+      "text below 13px: \"In depth\" (12px)",
+      "text below 13px: \"↗\" (12px)",
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"/\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nvda.us",
+    "state": "Open Predictable profits evidence",
+    "file": "1728x970-_s_nvda_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "text cut by container: \"FY2023 operating-margin dip fu\"",
+      "text below the fold on a no-scroll page: \"FY2023 operating-margin dip fu\""
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1428,
+    "right": 1728,
+    "emptyBottomPct": 0,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 10.515463917525773,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nvda.us",
+    "state": "Open Lasting advantage evidence",
+    "file": "1728x970-_s_nvda_us-2-Open_Lasting_advantage_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1328,
+    "right": 1728,
+    "emptyBottomPct": 3.1024484536082473,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 12.597938144329897,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nvda.us",
+    "state": "Open Cash for owners evidence",
+    "file": "1728x970-_s_nvda_us-3-Open_Cash_for_owners_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1388,
+    "right": 1728,
+    "emptyBottomPct": 4.859858247422681,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 14.668283808368708,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nvda.us",
+    "state": "Open Value created per $1 kept evidence",
+    "file": "1728x970-_s_nvda_us-4-Open_Value_created_per__1_kept_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 24.2% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1248,
+    "right": 1728,
+    "emptyBottomPct": 6.920103092783505,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 24.237113402061855,
+    "largestBlockHeight": 58
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nvda.us",
+    "state": "Open Honest profits evidence",
+    "file": "1728x970-_s_nvda_us-5-Open_Honest_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 22.9% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1248,
+    "right": 1728,
+    "emptyBottomPct": 3.129832474226804,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 22.876288659793815,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nvda.us",
+    "state": "Open valuation",
+    "file": "1728x970-_s_nvda_us-6-Open_valuation.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 33.0% > 15%",
+      "empty block 202px tall spans over half panel"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1168,
+    "right": 1728,
+    "emptyBottomPct": 5.260953608247423,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 33.01030927835052,
+    "largestBlockHeight": 202
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nvda.us",
+    "state": "Search",
+    "file": "1728x970-_s_nvda_us-7-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/nvda.us",
+    "state": "Search results",
+    "file": "1728x970-_s_nvda_us-8-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/eme.us",
+    "state": "page",
+    "file": "1728x970-_s_eme_us-0-page.png",
+    "issues": [
+      "text below 13px: \"In depth\" (12px)",
+      "text below 13px: \"↗\" (12px)",
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"/\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/eme.us",
+    "state": "Open Predictable profits evidence",
+    "file": "1728x970-_s_eme_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "text cut by container: \"FY2020 operating-margin dip fu\"",
+      "text below the fold on a no-scroll page: \"FY2020 operating-margin dip fu\""
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1428,
+    "right": 1728,
+    "emptyBottomPct": 0,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 10.729896907216494,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/eme.us",
+    "state": "Open Lasting advantage evidence",
+    "file": "1728x970-_s_eme_us-2-Open_Lasting_advantage_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 16.6% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1328,
+    "right": 1728,
+    "emptyBottomPct": 5.251288659793815,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 16.60618556701031,
+    "largestBlockHeight": 96
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/eme.us",
+    "state": "Open Cash for owners evidence",
+    "file": "1728x970-_s_eme_us-3-Open_Cash_for_owners_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1388,
+    "right": 1728,
+    "emptyBottomPct": 4.859858247422681,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 14.668283808368708,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/eme.us",
+    "state": "Open Value created per $1 kept evidence",
+    "file": "1728x970-_s_eme_us-4-Open_Value_created_per__1_kept_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 19.5% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1248,
+    "right": 1728,
+    "emptyBottomPct": 2.9606958762886597,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 19.536082474226806,
+    "largestBlockHeight": 10
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/eme.us",
+    "state": "Open Honest profits evidence",
+    "file": "1728x970-_s_eme_us-5-Open_Honest_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 24.0% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1248,
+    "right": 1728,
+    "emptyBottomPct": 3.2989690721649483,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 23.989690721649485,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/eme.us",
+    "state": "Open valuation",
+    "file": "1728x970-_s_eme_us-6-Open_valuation.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 32.5% > 15%",
+      "empty block 202px tall spans over half panel"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1168,
+    "right": 1728,
+    "emptyBottomPct": 5.260953608247423,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 32.480117820324004,
+    "largestBlockHeight": 202
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/eme.us",
+    "state": "Search",
+    "file": "1728x970-_s_eme_us-7-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/eme.us",
+    "state": "Search results",
+    "file": "1728x970-_s_eme_us-8-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/mrk.us",
+    "state": "page",
+    "file": "1728x970-_s_mrk_us-0-page.png",
+    "issues": [
+      "text below 13px: \"In depth\" (12px)",
+      "text below 13px: \"↗\" (12px)",
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"/\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/mrk.us",
+    "state": "Open Predictable profits evidence",
+    "file": "1728x970-_s_mrk_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "text cut by container: \"FY2023 operating-margin dip fu\"",
+      "text below the fold on a no-scroll page: \"FY2023 operating-margin dip fu\""
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1428,
+    "right": 1728,
+    "emptyBottomPct": 0,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 10.515463917525773,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/mrk.us",
+    "state": "Open Lasting advantage evidence",
+    "file": "1728x970-_s_mrk_us-2-Open_Lasting_advantage_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1328,
+    "right": 1728,
+    "emptyBottomPct": 3.1024484536082473,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 13.439175257731959,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/mrk.us",
+    "state": "Open Cash for owners evidence",
+    "file": "1728x970-_s_mrk_us-3-Open_Cash_for_owners_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1388,
+    "right": 1728,
+    "emptyBottomPct": 3.2989690721649483,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 12.747119466343237,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/mrk.us",
+    "state": "Open Value created per $1 kept evidence",
+    "file": "1728x970-_s_mrk_us-4-Open_Value_created_per__1_kept_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 24.4% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1248,
+    "right": 1728,
+    "emptyBottomPct": 6.920103092783505,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 24.36082474226804,
+    "largestBlockHeight": 58
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/mrk.us",
+    "state": "Open Honest profits evidence",
+    "file": "1728x970-_s_mrk_us-5-Open_Honest_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 23.1% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1248,
+    "right": 1728,
+    "emptyBottomPct": 3.129832474226804,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 23.123711340206185,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/mrk.us",
+    "state": "Open valuation",
+    "file": "1728x970-_s_mrk_us-6-Open_valuation.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 35.8% > 15%",
+      "empty block 226px tall spans over half panel"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1168,
+    "right": 1728,
+    "emptyBottomPct": 7.934922680412371,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 35.767304860088366,
+    "largestBlockHeight": 226
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/mrk.us",
+    "state": "Search",
+    "file": "1728x970-_s_mrk_us-7-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/mrk.us",
+    "state": "Search results",
+    "file": "1728x970-_s_mrk_us-8-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/rhm.xetra",
+    "state": "page",
+    "file": "1728x970-_s_rhm_xetra-0-page.png",
+    "issues": [
+      "text below 13px: \"In depth\" (12px)",
+      "text below 13px: \"↗\" (12px)",
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"/\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/rhm.xetra",
+    "state": "Open Predictable profits evidence",
+    "file": "1728x970-_s_rhm_xetra-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "text cut by container: \"FY2020 operating-margin dip fu\"",
+      "text below the fold on a no-scroll page: \"FY2020 operating-margin dip fu\""
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1428,
+    "right": 1728,
+    "emptyBottomPct": 0,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 12.412371134020619,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/rhm.xetra",
+    "state": "Open Lasting advantage evidence",
+    "file": "1728x970-_s_rhm_xetra-2-Open_Lasting_advantage_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1328,
+    "right": 1728,
+    "emptyBottomPct": 2.8656572164948453,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 14.329896907216495,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/rhm.xetra",
+    "state": "Open Cash for owners evidence",
+    "file": "1728x970-_s_rhm_xetra-3-Open_Cash_for_owners_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 21.3% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1388,
+    "right": 1728,
+    "emptyBottomPct": 6.81701030927835,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 21.305033353547604,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/rhm.xetra",
+    "state": "Open Value created per $1 kept evidence",
+    "file": "1728x970-_s_rhm_xetra-4-Open_Value_created_per__1_kept_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "bottom empty area 16.8% >= 8%",
+      "raster empty area 26.3% > 15%",
+      "empty block 154px tall spans over half panel"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1248,
+    "right": 1728,
+    "emptyBottomPct": 16.813788659793815,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 26.34020618556701,
+    "largestBlockHeight": 154
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/rhm.xetra",
+    "state": "Open Honest profits evidence",
+    "file": "1728x970-_s_rhm_xetra-5-Open_Honest_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 25.0% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1248,
+    "right": 1728,
+    "emptyBottomPct": 4.916237113402062,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 24.97938144329897,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/rhm.xetra",
+    "state": "Open valuation",
+    "file": "1728x970-_s_rhm_xetra-6-Open_valuation.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 35.4% > 15%",
+      "empty block 226px tall spans over half panel"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1168,
+    "right": 1728,
+    "emptyBottomPct": 5.678157216494846,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 35.44918998527246,
+    "largestBlockHeight": 226
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/rhm.xetra",
+    "state": "Search",
+    "file": "1728x970-_s_rhm_xetra-7-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/rhm.xetra",
+    "state": "Search results",
+    "file": "1728x970-_s_rhm_xetra-8-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ips.pa",
+    "state": "page",
+    "file": "1728x970-_s_ips_pa-0-page.png",
+    "issues": [
+      "text below 13px: \"In depth\" (12px)",
+      "text below 13px: \"↗\" (12px)",
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"/\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ips.pa",
+    "state": "Open Predictable profits evidence",
+    "file": "1728x970-_s_ips_pa-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 16.2% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1428,
+    "right": 1728,
+    "emptyBottomPct": 6.968427835051546,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 16.189690721649484,
+    "largestBlockHeight": 58
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ips.pa",
+    "state": "Open Lasting advantage evidence",
+    "file": "1728x970-_s_ips_pa-2-Open_Lasting_advantage_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1328,
+    "right": 1728,
+    "emptyBottomPct": 2.4838917525773194,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 14.676288659793814,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ips.pa",
+    "state": "Open Cash for owners evidence",
+    "file": "1728x970-_s_ips_pa-3-Open_Cash_for_owners_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 15.5% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1388,
+    "right": 1728,
+    "emptyBottomPct": 4.859858247422681,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 15.541540327471195,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ips.pa",
+    "state": "Open Value created per $1 kept evidence",
+    "file": "1728x970-_s_ips_pa-4-Open_Value_created_per__1_kept_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 20.3% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1248,
+    "right": 1728,
+    "emptyBottomPct": 2.9606958762886597,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 20.278350515463917,
+    "largestBlockHeight": 10
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ips.pa",
+    "state": "Open Honest profits evidence",
+    "file": "1728x970-_s_ips_pa-5-Open_Honest_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 24.0% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1248,
+    "right": 1728,
+    "emptyBottomPct": 3.2989690721649483,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 23.989690721649485,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ips.pa",
+    "state": "Open valuation",
+    "file": "1728x970-_s_ips_pa-6-Open_valuation.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "text below 13px: \"×\" (12px)",
+      "raster empty area 31.2% > 15%",
+      "empty block 202px tall spans over half panel"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 970,
+    "left": 1168,
+    "right": 1728,
+    "emptyBottomPct": 3.3134664948453607,
+    "scrolling": [],
+    "tabs": 0,
+    "emptyAreaPct": 31.207658321060382,
+    "largestBlockHeight": 202
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ips.pa",
+    "state": "Search",
+    "file": "1728x970-_s_ips_pa-7-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 1728,
+    "height": 970,
+    "path": "/s/ips.pa",
+    "state": "Search results",
+    "file": "1728x970-_s_ips_pa-8-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nvda.us",
+    "state": "page",
+    "file": "390x844-_s_nvda_us-0-page.png",
+    "issues": [
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nvda.us",
+    "state": "Open Predictable profits evidence",
+    "file": "390x844-_s_nvda_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 14.210718191760845,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nvda.us",
+    "state": "Open Lasting advantage evidence",
+    "file": "390x844-_s_nvda_us-2-Open_Lasting_advantage_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 15.6% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 15.610645278891724,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nvda.us",
+    "state": "Open Cash for owners evidence",
+    "file": "390x844-_s_nvda_us-3-Open_Cash_for_owners_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 12.519139628144368,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nvda.us",
+    "state": "Open Value created per $1 kept evidence",
+    "file": "390x844-_s_nvda_us-4-Open_Value_created_per__1_kept_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 16.3% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 16.281443674808603,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nvda.us",
+    "state": "Open Honest profits evidence",
+    "file": "390x844-_s_nvda_us-5-Open_Honest_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 12.344148742253008,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nvda.us",
+    "state": "Open valuation",
+    "file": "390x844-_s_nvda_us-6-Open_valuation.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 16.5% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 16.485599708348524,
+    "largestBlockHeight": 96
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nvda.us",
+    "state": "Search",
+    "file": "390x844-_s_nvda_us-7-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/nvda.us",
+    "state": "Search results",
+    "file": "390x844-_s_nvda_us-8-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/eme.us",
+    "state": "page",
+    "file": "390x844-_s_eme_us-0-page.png",
+    "issues": [
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/eme.us",
+    "state": "Open Predictable profits evidence",
+    "file": "390x844-_s_eme_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 13.948231862923807,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/eme.us",
+    "state": "Open Lasting advantage evidence",
+    "file": "390x844-_s_eme_us-2-Open_Lasting_advantage_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 19.5% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 19.54794021144732,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/eme.us",
+    "state": "Open Cash for owners evidence",
+    "file": "390x844-_s_eme_us-3-Open_Cash_for_owners_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 12.169157856361648,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/eme.us",
+    "state": "Open Value created per $1 kept evidence",
+    "file": "390x844-_s_eme_us-4-Open_Value_created_per__1_kept_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 15.6% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 15.581480131243165,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/eme.us",
+    "state": "Open Honest profits evidence",
+    "file": "390x844-_s_eme_us-5-Open_Honest_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 12.169157856361648,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/eme.us",
+    "state": "Open valuation",
+    "file": "390x844-_s_eme_us-6-Open_valuation.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 14.735690849434926,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/eme.us",
+    "state": "Search",
+    "file": "390x844-_s_eme_us-7-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/eme.us",
+    "state": "Search results",
+    "file": "390x844-_s_eme_us-8-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/mrk.us",
+    "state": "page",
+    "file": "390x844-_s_mrk_us-0-page.png",
+    "issues": [
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/mrk.us",
+    "state": "Open Predictable profits evidence",
+    "file": "390x844-_s_mrk_us-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 14.735690849434926,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/mrk.us",
+    "state": "Open Lasting advantage evidence",
+    "file": "390x844-_s_mrk_us-2-Open_Lasting_advantage_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 19.1% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 19.08129784907036,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/mrk.us",
+    "state": "Open Cash for owners evidence",
+    "file": "390x844-_s_mrk_us-3-Open_Cash_for_owners_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 12.344148742253008,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/mrk.us",
+    "state": "Open Value created per $1 kept evidence",
+    "file": "390x844-_s_mrk_us-4-Open_Value_created_per__1_kept_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 15.6% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 15.581480131243165,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/mrk.us",
+    "state": "Open Honest profits evidence",
+    "file": "390x844-_s_mrk_us-5-Open_Honest_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 12.344148742253008,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/mrk.us",
+    "state": "Open valuation",
+    "file": "390x844-_s_mrk_us-6-Open_valuation.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 15.3% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 15.318993802406125,
+    "largestBlockHeight": 96
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/mrk.us",
+    "state": "Search",
+    "file": "390x844-_s_mrk_us-7-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/mrk.us",
+    "state": "Search results",
+    "file": "390x844-_s_mrk_us-8-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/rhm.xetra",
+    "state": "page",
+    "file": "390x844-_s_rhm_xetra-0-page.png",
+    "issues": [
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/rhm.xetra",
+    "state": "Open Predictable profits evidence",
+    "file": "390x844-_s_rhm_xetra-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 15.9% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 15.873131607728764,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/rhm.xetra",
+    "state": "Open Lasting advantage evidence",
+    "file": "390x844-_s_rhm_xetra-2-Open_Lasting_advantage_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 16.8% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 16.835581480131243,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/rhm.xetra",
+    "state": "Open Cash for owners evidence",
+    "file": "390x844-_s_rhm_xetra-3-Open_Cash_for_owners_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 12.110827561064529,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/rhm.xetra",
+    "state": "Open Value created per $1 kept evidence",
+    "file": "390x844-_s_rhm_xetra-4-Open_Value_created_per__1_kept_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 17.7% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 17.710535909588042,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/rhm.xetra",
+    "state": "Open Honest profits evidence",
+    "file": "390x844-_s_rhm_xetra-5-Open_Honest_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 12.344148742253008,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/rhm.xetra",
+    "state": "Open valuation",
+    "file": "390x844-_s_rhm_xetra-6-Open_valuation.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 16.4% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 16.368939117754284,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/rhm.xetra",
+    "state": "Search",
+    "file": "390x844-_s_rhm_xetra-7-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/rhm.xetra",
+    "state": "Search results",
+    "file": "390x844-_s_rhm_xetra-8-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ips.pa",
+    "state": "page",
+    "file": "390x844-_s_ips_pa-0-page.png",
+    "issues": [
+      "text below 13px: \"GigaInvestors\" (12px)",
+      "text below 13px: \"GigaValue\" (12px)",
+      "text below 13px: \"Search\" (12px)",
+      "text below 13px: \"Method\" (12px)",
+      "text below 13px: \"Newsletter\" (12px)",
+      "text below 13px: \"Agent API\" (12px)",
+      "text below 13px: \"Contact\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ips.pa",
+    "state": "Open Predictable profits evidence",
+    "file": "390x844-_s_ips_pa-1-Open_Predictable_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 19.6% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 19.635435654393,
+    "largestBlockHeight": 48
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ips.pa",
+    "state": "Open Lasting advantage evidence",
+    "file": "390x844-_s_ips_pa-2-Open_Lasting_advantage_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 17.4% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 17.448049580751004,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ips.pa",
+    "state": "Open Cash for owners evidence",
+    "file": "390x844-_s_ips_pa-3-Open_Cash_for_owners_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 12.344148742253008,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ips.pa",
+    "state": "Open Value created per $1 kept evidence",
+    "file": "390x844-_s_ips_pa-4-Open_Value_created_per__1_kept_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 16.3% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 16.310608822457162,
+    "largestBlockHeight": 24
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ips.pa",
+    "state": "Open Honest profits evidence",
+    "file": "390x844-_s_ips_pa-5-Open_Honest_profits_evidence.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 12.344148742253008,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ips.pa",
+    "state": "Open valuation",
+    "file": "390x844-_s_ips_pa-6-Open_valuation.png",
+    "issues": [
+      "text below 13px: \"Close\" (12px)",
+      "raster empty area 15.1% > 15%"
+    ],
+    "widthUse": 1,
+    "screens": 1,
+    "top": 0,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "emptyBottomPct": 0,
+    "scrolling": [
+      "panel-content"
+    ],
+    "tabs": 0,
+    "emptyAreaPct": 15.085672621217645,
+    "largestBlockHeight": 72
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ips.pa",
+    "state": "Search",
+    "file": "390x844-_s_ips_pa-7-Search.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "path": "/s/ips.pa",
+    "state": "Search results",
+    "file": "390x844-_s_ips_pa-8-Search_results.png",
+    "issues": [],
+    "widthUse": 1,
+    "screens": 1
+  }
+]

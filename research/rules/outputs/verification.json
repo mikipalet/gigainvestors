@@ -1,0 +1,76 @@
+{
+  "paired": 93961,
+  "baseline_parity_with_3_4_research": [
+    {
+      "scope": "US",
+      "period": "train",
+      "metrics": {
+        "cagr": true,
+        "max_drawdown": true
+      }
+    },
+    {
+      "scope": "US",
+      "period": "later",
+      "metrics": {
+        "cagr": true,
+        "max_drawdown": true
+      }
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "train",
+      "metrics": {
+        "cagr": true,
+        "max_drawdown": true
+      }
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "later",
+      "metrics": {
+        "cagr": true,
+        "max_drawdown": true
+      }
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "train",
+      "metrics": {
+        "cagr": true,
+        "max_drawdown": true
+      }
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "later",
+      "metrics": {
+        "cagr": true,
+        "max_drawdown": true
+      }
+    },
+    {
+      "scope": "all_markets",
+      "period": "train",
+      "metrics": {
+        "cagr": true,
+        "max_drawdown": true
+      }
+    },
+    {
+      "scope": "all_markets",
+      "period": "later",
+      "metrics": {
+        "cagr": true,
+        "max_drawdown": true
+      }
+    }
+  ],
+  "frozen_sources": {
+    "candidate-understandable.ts": "90c9979b558995eef233ad5f5a00a5c0c4613edd653d907a6c8f6f5b59253cfc",
+    "candidate-moat.ts": "d482199c11bc2064bfa8a6ce2693cfc3f6990df0fa7d6ee5f9d6c48b805108b4",
+    "protocol.json": "7238d8542e234fd38ff81e94d3d5c579d9f34645d4647892f6597fdc238426d6"
+  },
+  "other_three_quality_verdicts_unchanged": true,
+  "every_replayed_buy_satisfies_price_gate": true
+}

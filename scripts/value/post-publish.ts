@@ -1,3 +1,6 @@
+import {assertCoverage,critical} from './publication-coverage';
+import {assertCandidatePages} from './publication-pages';
+import {assertPublishInvariants} from './publish-invariants';
 import {uploadPublishedSnapshot} from './blob-publish';
 import {execFileSync} from 'node:child_process';
 import {existsSync,readFileSync,writeFileSync,renameSync,rmSync} from 'node:fs';
@@ -22,6 +25,11 @@ export function assertNoPendingPublication(repo:string):void{
 export function beginPublication(repo:string):void{
  assertNoPendingPublication(repo);
  const before=remoteHead(repo),after=git(repo,['rev-parse','HEAD']);
+ if(!before)critical('previous published archive is required before push');
+ if(git(repo,['status','--porcelain']))critical('candidate checkout is dirty before push');
+ const coverage=assertPublishInvariants(repo,before);
+ if(!coverage)critical('previous published archive missing');
+ assertCandidatePages(repo,coverage.before,coverage.after,coverage.baseline);
  if(before){
   // Protect even an orphan snapshot's predecessor from garbage collection.
   git(repo,['update-ref','refs/value/rollback',before]);
@@ -30,7 +38,7 @@ export function beginPublication(repo:string):void{
 }
 
 export async function verifyPublication(repo:string,{check=checkLivePublication,revalidate=revalidatePublishedValue}: {
- check?:(repo:string)=>Promise<void>;revalidate?:()=>Promise<void>;
+ check?:(repo:string,baseline?:string)=>Promise<void>;revalidate?:()=>Promise<void>;
 }={}):Promise<void>{
  if(!existsSync(path.join(repo,'.git'))||!existsSync(receiptPath(repo)))return;
  const receipt:Receipt=JSON.parse(readFileSync(receiptPath(repo),'utf8'));
@@ -48,10 +56,14 @@ export async function verifyPublication(repo:string,{check=checkLivePublication,
  }
  if(git(repo,['rev-parse','HEAD'])!==receipt.after)throw new Error('CRITICAL: publication checkout moved; refusing rollback');
  try{
+  if(!receipt.before)critical('previous published archive missing from receipt');
+  assertCoverage(repo,receipt.before);
   await uploadPublishedSnapshot(repo);
-  await revalidate();await check(repo);clear();console.log(`live-check: ${receipt.after} passed quarter-back and 2018Q3`);
- }catch{
-  console.error(`CRITICAL: live time travel/revalidation failed for ${receipt.after}; reverting last publication`);
+  await revalidate();await check(repo,receipt.before);clear();console.log(`live-check: ${receipt.after} passed coverage, company pages, quarter-back and 2018Q3`);
+ }catch(error){
+  const detail=error instanceof Error&&error.message.startsWith('CRITICAL:')?error.message:'CRITICAL: live page/revalidation check failed';
+  console.error(detail);
+  console.error(`CRITICAL: live coverage/time travel/revalidation failed for ${receipt.after}; reverting last publication`);
   if(!receipt.before||receipt.before===receipt.after)throw new Error('CRITICAL: live check failed; no distinct prior publication to restore');
   remote=remoteHead(repo);
   if(remote!==receipt.after)throw new Error('CRITICAL: publication remote moved during check; refusing rollback');
@@ -67,6 +79,6 @@ export async function verifyPublication(repo:string,{check=checkLivePublication,
   git(repo,[...auth,'push',`--force-with-lease=refs/heads/main:${receipt.after}`,'origin','HEAD:main']);
   await uploadPublishedSnapshot(repo);
   await revalidate();clear();
-  throw new Error(`CRITICAL: failed publication ${receipt.after} reverted to prior tree ${receipt.before}`);
+  throw new Error(`${detail}\nCRITICAL: failed publication ${receipt.after} reverted to prior tree ${receipt.before}`);
  }
 }

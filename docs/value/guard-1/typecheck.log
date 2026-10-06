@@ -1,0 +1,3 @@
+PASS: tsc --noEmit --incremental false
+PASS: bash -n scripts/value/run-daily.sh
+PASS: git diff --check

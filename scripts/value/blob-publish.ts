@@ -1,3 +1,4 @@
+import {assertUploadReady} from './publication-upload-guard';
 import {put, get} from '@vercel/blob';
 import {createHash} from 'node:crypto';
 import {readFile, readdir} from 'node:fs/promises';
@@ -7,6 +8,7 @@ import {isImmutablePath, isPublishedPath} from '../../lib/value/published-path';
 
 /** The publish lock protects this tree; the pointer switches only after all uploads. */
 export async function uploadPublishedSnapshot(repo: string) {
+  assertUploadReady(repo);
   const token = privateBlobToken();
   const files: string[] = [];
   async function walk(dir = '') {
@@ -45,6 +47,8 @@ export async function uploadPublishedSnapshot(repo: string) {
       if (isImmutablePath(file)) await put(`${BLOB_IMMUTABLE}/${file}`, data, options);
     }
   }));
+  // The locked, committed candidate must still match the receipt at the switch.
+  assertUploadReady(repo);
   // Only this mutable pointer is overwritten. Readers never observe a partial snapshot.
   await put(BLOB_CURRENT, JSON.stringify({version, schema:2}), {access:'private', token, addRandomSuffix:false, allowOverwrite:true, contentType:'application/json', cacheControlMaxAge:60});
   console.log(`blob publish: ${files.length} files, ${bytes} bytes, version ${version}`);

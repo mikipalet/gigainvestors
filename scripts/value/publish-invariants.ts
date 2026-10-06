@@ -1,3 +1,4 @@
+import {assertCoverage,approvedIds,committedArchive,critical} from './publication-coverage';
 import {execFileSync} from 'node:child_process';
 import {existsSync,readFileSync,readdirSync,statSync} from 'node:fs';
 import path from 'node:path';
@@ -12,9 +13,9 @@ function git(repo:string,args:string[]):string {
  return execFileSync('git',['-C',repo,...args],{encoding:'utf8',stdio:['ignore','pipe','pipe'],maxBuffer:64*1024*1024}).trim();
 }
 function committed(repo:string,ref:string):Reader|null {
+ if(!existsSync(path.join(repo,'.git')))return null;
  try{git(repo,['rev-parse','--verify',ref]);}catch{return null;}
- const files=git(repo,['ls-tree','-r','--name-only',ref]).split('\n');
- return {files,read:file=>files.includes(file)?JSON.parse(git(repo,['show',`${ref}:${file}`])):null};
+ return committedArchive(repo,ref);
 }
 const fail=(message:string):never=>{throw new Error(`Publish invariant: ${message}`);};
 
@@ -22,8 +23,11 @@ const fail=(message:string):never=>{throw new Error(`Publish invariant: ${messag
  * Every commit entry point calls this BEFORE staging or creating an orphan branch.
  */
 export interface ApprovedVerdictChange {id:string;before:{b:boolean;v:number[]|null;m:number};after:{b:boolean;v:number[]|null;m:number};reason:string;evidence:string[]}
-export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:ApprovedVerdictChange[]=approvedChanges):void {
+export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:ApprovedVerdictChange[]=approvedChanges):ReturnType<typeof assertCoverage>|undefined {
+ if(baseline==='HEAD'&&committed(repo,'origin/main'))baseline='origin/main';
  const prior=committed(repo,baseline);
+ if(!prior&&existsSync(path.join(repo,'.git'))&&committed(repo,'HEAD'))critical('previous published archive missing');
+ const coverage=prior?assertCoverage(repo,baseline):undefined;
  const files=['meta.json',...['index','dossiers','prices','history'].flatMap(dir=>existsSync(path.join(repo,dir))?readdirSync(path.join(repo,dir)).map(f=>`${dir}/${f}`):[])];
  const current:Reader={files,read:file=>existsSync(path.join(repo,file))?JSON.parse(readFileSync(path.join(repo,file),'utf8')):null};
  const meta=current.read('meta.json');
@@ -51,8 +55,6 @@ export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:Ap
   else fail('invalid view reference');
  };
  if(meta.views)checkRefs(meta.views);
- const count=(r:Reader)=>r.files.filter(f=>/^dossiers\/\d{3}\.json$/.test(f)).reduce((n,f)=>n+Object.keys(r.read(f)).length,0);
- const before=prior?count(prior):0,after=count(current);
  const dossierIds=(r:Reader)=>new Set(r.files.filter(f=>/^dossiers\/\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(r.read(f))));
  const oldIds=prior?dossierIds(prior):new Set<string>(),newIds=dossierIds(current);
  for(const group of issuerRegistry.groups){
@@ -61,9 +63,8 @@ export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:Ap
  }
  const aliases:Record<string,string>=current.read('aliases.json')??{};
  for(const [id,target]of Object.entries(aliases))if(id===target||aliases[target]||!newIds.has(target)||newIds.has(id))fail(`invalid issuer alias ${id} -> ${target}`);
- const aliasedRemovals=[...oldIds].filter(id=>!newIds.has(id)&&aliases[id]&&newIds.has(aliases[id])).length;
- if(after+aliasedRemovals<before*.99)fail(`dossier count dropped more than 1% (${before} -> ${after})`);
- if(!prior)return;
+
+ if(!prior)return coverage;
  const prices=(r:Reader):PriceMap=>Object.assign({},...r.files.filter(f=>/^prices\/[A-Z]{2}\.json$/.test(f)).map(f=>r.read(f)));
  const oldPrices=prices(prior),newPrices=prices(current);
  for(const file of prior.files.filter(f=>/^index\/(?:default|[A-Z]{2})\.json$/.test(f)))for(const row of prior.read(file)??[])oldIds.add(row.id);
@@ -75,6 +76,10 @@ export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:Ap
   const oldBuys=oldRows.filter(r=>r.b).length,newBuys=newRows.filter(r=>r.b).length;
   let increases=0,decreases=0;
   const reviewed=new Set<string>();
+  for(const id of approvedIds(git(repo,['rev-parse',baseline]),`buy:${path.basename(file,'.json')}`)){
+   const old=oldRows.find(r=>r.id===id),next=newRows.find(r=>r.id===id);
+   if(old?.b&&!next?.b){decreases++;reviewed.add(id);}
+  }
   for(const approval of approvals){
    if(!approval.reason?.trim()||!approval.evidence?.length||approval.evidence.some(url=>!/^https:\/\//.test(url)))fail('Invalid approved verdict change');
    const old=oldRows.find(r=>r.id===approval.id),next=newRows.find(r=>r.id===approval.id);
@@ -97,4 +102,5 @@ export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:Ap
   const removedBuys=oldRows.filter(row=>row.b&&!newIds.has(row.id)&&aliases[row.id]&&newIds.has(aliases[row.id])).length;
   if(delta>increases+addedBuys||delta < -decreases-removedBuys)fail(`${file} Buy-now changed ${oldBuys} -> ${newBuys}; prices and new dossiers explain at most +${increases+addedBuys}/-${decreases}`);
  }
+ return coverage;
 }

@@ -1,0 +1,56 @@
+
+ RUN  v3.2.7 /mnt/HC_Volume_107024928/value-guard
+
+ ❯ tests/unit/value/publish-invariants.test.ts (24 tests | 1 failed | 23 skipped) 206ms
+   ↓ permits added-company buys while preserving the price-only rule for existing companies
+   ↓ quarters refuses prices commit before changing HEAD or index
+   ↓ yearDeferred refuses prices commit before changing HEAD or index
+   ↓ missing-file refuses prices commit before changing HEAD or index
+   ↓ dossiers refuses prices commit before changing HEAD or index
+   ↓ buy refuses prices commit before changing HEAD or index
+   ↓ history refuses prices commit before changing HEAD or index
+   ↓ prices permits an exactly 1% dossier drop and a price-explained Buy-now transition
+   ↓ quarters refuses publish commit before changing HEAD or index
+   ↓ yearDeferred refuses publish commit before changing HEAD or index
+   ↓ missing-file refuses publish commit before changing HEAD or index
+   ↓ dossiers refuses publish commit before changing HEAD or index
+   ↓ buy refuses publish commit before changing HEAD or index
+   ↓ history refuses publish commit before changing HEAD or index
+   ↓ publish permits an exactly 1% dossier drop and a price-explained Buy-now transition
+   ↓ does not let pre-staged unrelated changes bypass the prices gate
+   ↓ accepts year views derived from Q4 without requiring a separate annual snapshot
+   ↓ allows a reviewed identity collapse only when every lost dossier has a direct live target
+   ↓ refuses alias cycles or missing canonical dossiers
+   ↓ refuses to reintroduce two reviewed listings of one issuer
+   ↓ permits retired Buy-now rows to disappear from country and default indexes
+   ↓ does not count retired-listing price moves as explanations for surviving Buy-now flips
+   ↓ accepts only an exact controller-reviewed valuation transition
+   × blocks the 2026-10-06 logo demotion: US missing logos 13 -> 148 before staging 203ms
+     → expected [Function] to throw an error
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/value/publish-invariants.test.ts > blocks the 2026-10-06 logo demotion: US missing logos 13 -> 148 before staging
+AssertionError: expected [Function] to throw an error
+
+- Expected:
+null
+
++ Received:
+undefined
+
+ ❯ tests/unit/value/publish-invariants.test.ts:111:53
+    109|  for(let i=13;i<148;i++){rows[i].lg=null;ds[rows[i].id].company.logo=n…
+    110|  write('index/US.json',rows);write('index/default.json',rows);write('d…
+    111|  expect(()=>commitOutput({repo,asOf:'2026-10-06'})).toThrow(/CRITICAL.…
+       |                                                     ^
+    112|  expect(git('rev-parse','HEAD')).toBe(head);expect(git('diff','--cache…
+    113| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 23 skipped (24)
+   Start at  15:32:00
+   Duration  3.56s (transform 1.68s, setup 0ms, collect 2.97s, tests 206ms, environment 0ms, prepare 82ms)

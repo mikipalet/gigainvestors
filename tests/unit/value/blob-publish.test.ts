@@ -1,3 +1,4 @@
+vi.mock('@/scripts/value/publication-upload-guard',()=>({assertUploadReady:vi.fn()}));
 import {mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
